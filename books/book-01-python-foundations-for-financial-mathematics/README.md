@@ -14,8 +14,9 @@ Current canonical progress:
 - 1.4 — Financial Mathematics vs. Quantitative Finance vs. Financial Engineering — Revised Final / Canonical Edition
 - 1.5 — Setting Up the Python Environment — Revised Final / Canonical Edition
 - 1.6 — Your First Python Program for Financial Mathematics — Revised Final / Canonical Edition
+- 1.7 — Python Variables, Data Types, and Financial Data Representation — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.6 complete.
+**Canonical progress:** 1.1–1.7 complete.
 
 The full Book 1 Master TOC will be maintained as the authoritative planning index for subsequent drafting.
 
