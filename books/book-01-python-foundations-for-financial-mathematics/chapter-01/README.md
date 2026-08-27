@@ -10,11 +10,11 @@
 | 1.4 | Financial Mathematics vs. Quantitative Finance vs. Financial Engineering | Canonical / Complete |
 | 1.5 | Setting Up the Python Environment | Canonical / Complete |
 | 1.6 | Your First Python Program for Financial Mathematics | Canonical / Complete |
-| 1.7 | Python Variables, Data Types, and Financial Data Representation | Draft |
+| 1.7 | Python Variables, Data Types, and Financial Data Representation | Canonical / Complete |
 
 ## Publication Policy
 
-Canonical sections must retain verified references, use authoritative/primary implementation documentation where available, distinguish source-supported technical claims from original instructional synthesis, and pass technical/source plus production/copyright review before being marked complete.
+Canonical sections must retain verified references, use authoritative/primary implementation documentation where available, distinguish source-supported technical claims from original instructional synthesis, and pass Technical + Source Review plus Production + Copyright Review before being marked complete.
 
 ## Recovery Note
 
