@@ -11,6 +11,15 @@
 | 1.5 | Setting Up the Python Environment | Canonical / Complete |
 | 1.6 | Your First Python Program for Financial Mathematics | Canonical / Complete |
 | 1.7 | Python Variables, Data Types, and Financial Data Representation | Canonical / Complete |
+| 1.8 | Operators and Financial Calculations | Canonical / Complete |
+| 1.9 | Expressions, Precedence, and Mathematical Translation | Planned |
+| 1.10 | Working with Financial Inputs and Outputs | Planned |
+| 1.11 | Numerical Precision, Rounding, and Tolerances | Planned |
+| 1.12 | Chapter Project — Basic Financial Calculator | Planned |
+| 1.13 | Exercises and Applied Problems | Planned |
+
+**Canonical progress:** 1.1–1.8 complete.  
+**Next locked section:** 1.9 — Expressions, Precedence, and Mathematical Translation.
 
 ## Publication Policy
 
