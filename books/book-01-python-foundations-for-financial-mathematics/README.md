@@ -37,6 +37,27 @@ The solution companion is maintained under `chapter-01/solutions/` and remains s
 **Chapter 1 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 1 status:** Canonical / Complete.
 
+## Chapter 2 — Python Control Flow for Financial Models
+
+Current canonical progress:
+
+- 2.1 — Boolean Expressions and Financial Conditions — Revised Final / Canonical Edition
+- 2.2 — Comparison and Logical Operators — Planned
+- 2.3 — `if`, `elif`, and `else` — Planned
+- 2.4 — Modeling Financial Decision Rules — Planned
+- 2.5 — `for` Loops — Planned
+- 2.6 — `while` Loops — Planned
+- 2.7 — Iterating Across Cash Flows and Periods — Planned
+- 2.8 — `range()` and Financial Time Periods — Planned
+- 2.9 — Nested Control Flow — Planned
+- 2.10 — `break`, `continue`, and Loop Control — Planned
+- 2.11 — Defensive Input Validation — Planned
+- 2.12 — Chapter Project — Investment Scenario Analyzer — Planned
+- 2.13 — Exercises and Applied Problems — Planned
+
+**Canonical progress:** 2.1 complete.  
+**Chapter 2 status:** In Progress.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
