@@ -4,7 +4,11 @@
 
 Book 1 establishes the programming and conceptual foundation required for the rest of the series. It connects Python programming with financial mathematics and quantitative computation while building disciplined habits around numerical work, reproducibility, validation, and source attribution.
 
-## Chapter 1 — Financial Mathematics and Python
+## Authoritative Structure
+
+The complete, approved, and locked Book 1 structure is maintained in `MASTER-TOC.md` as **Master Table of Contents v1.0**. Chapter and section numbers/titles must follow that file unless an explicit approved TOC version change is recorded.
+
+## Chapter 1 — Introduction to Python for Financial Mathematics
 
 Current canonical progress:
 
@@ -15,10 +19,10 @@ Current canonical progress:
 - 1.5 — Setting Up the Python Environment — Revised Final / Canonical Edition
 - 1.6 — Your First Python Program for Financial Mathematics — Revised Final / Canonical Edition
 - 1.7 — Python Variables, Data Types, and Financial Data Representation — Revised Final / Canonical Edition
+- 1.8 — Operators and Financial Calculations — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.7 complete.
-
-The full Book 1 Master TOC will be maintained as the authoritative planning index for subsequent drafting.
+**Canonical progress:** 1.1–1.8 complete.  
+**Next locked section:** 1.9 — Expressions, Precedence, and Mathematical Translation.
 
 ## Editorial Requirement
 
