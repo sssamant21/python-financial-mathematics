@@ -26,13 +26,21 @@ Current canonical progress:
 - 1.12 — Chapter Project — Basic Financial Calculator — Revised Final / Canonical Edition
 - 1.13 — Exercises and Applied Problems — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.13 complete.  
+### Chapter 1 Solutions Companion
+
+- 1.13 — Solutions and Reference Implementations — Revised Final / Canonical Edition
+
+The solution companion is maintained under `chapter-01/solutions/` and remains separate from the student-facing exercise manuscript.
+
+**Canonical manuscript progress:** 1.1–1.13 complete.  
+**Chapter 1 solutions:** Canonical / Complete.  
+**Chapter 1 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 1 status:** Canonical / Complete.
 
 ## Editorial Requirement
 
-Every new section must follow:
+Every new manuscript section and companion solution artifact must follow:
 
 **Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition**
 
-Verified references must remain with the canonical section. Python language and standard-library claims should preferentially cite official Python documentation or applicable PEPs. Financial theory claims should use authoritative primary or established academic/professional references as the subject matter becomes more advanced. Examples, exercises, explanatory prose, and diagrams should remain independently developed unless a source is explicitly licensed and attributed for reuse.
+Verified references must remain with the canonical artifact. Python language and standard-library claims should preferentially cite official Python documentation or applicable PEPs. Financial theory claims should use authoritative primary or established academic/professional references as the subject matter becomes more advanced. Examples, exercises, explanatory prose, diagrams, and solution implementations should remain independently developed unless a source is explicitly licensed and attributed for reuse.
