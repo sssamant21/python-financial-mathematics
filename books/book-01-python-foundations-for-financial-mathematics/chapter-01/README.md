@@ -13,13 +13,13 @@
 | 1.7 | Python Variables, Data Types, and Financial Data Representation | Canonical / Complete |
 | 1.8 | Operators and Financial Calculations | Canonical / Complete |
 | 1.9 | Expressions, Precedence, and Mathematical Translation | Canonical / Complete |
-| 1.10 | Working with Financial Inputs and Outputs | Planned |
+| 1.10 | Working with Financial Inputs and Outputs | Canonical / Complete |
 | 1.11 | Numerical Precision, Rounding, and Tolerances | Planned |
 | 1.12 | Chapter Project — Basic Financial Calculator | Planned |
 | 1.13 | Exercises and Applied Problems | Planned |
 
-**Canonical progress:** 1.1–1.9 complete.  
-**Next locked section:** 1.10 — Working with Financial Inputs and Outputs.
+**Canonical progress:** 1.1–1.10 complete.  
+**Next locked section:** 1.11 — Numerical Precision, Rounding, and Tolerances.
 
 ## Publication Policy
 
