@@ -44,7 +44,7 @@ Current canonical progress:
 - 2.1 — Boolean Expressions and Financial Conditions — Revised Final / Canonical Edition
 - 2.2 — Comparison and Logical Operators — Revised Final / Canonical Edition
 - 2.3 — `if`, `elif`, and `else` — Revised Final / Canonical Edition
-- 2.4 — Modeling Financial Decision Rules — Planned
+- 2.4 — Modeling Financial Decision Rules — Revised Final / Canonical Edition
 - 2.5 — `for` Loops — Planned
 - 2.6 — `while` Loops — Planned
 - 2.7 — Iterating Across Cash Flows and Periods — Planned
@@ -55,7 +55,7 @@ Current canonical progress:
 - 2.12 — Chapter Project — Investment Scenario Analyzer — Planned
 - 2.13 — Exercises and Applied Problems — Planned
 
-**Canonical progress:** 2.1–2.3 complete.  
+**Canonical progress:** 2.1–2.4 complete.  
 **Chapter 2 status:** In Progress.
 
 ## Editorial Requirement
