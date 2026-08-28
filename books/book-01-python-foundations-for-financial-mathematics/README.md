@@ -20,9 +20,10 @@ Current canonical progress:
 - 1.6 — Your First Python Program for Financial Mathematics — Revised Final / Canonical Edition
 - 1.7 — Python Variables, Data Types, and Financial Data Representation — Revised Final / Canonical Edition
 - 1.8 — Operators and Financial Calculations — Revised Final / Canonical Edition
+- 1.9 — Expressions, Precedence, and Mathematical Translation — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.8 complete.  
-**Next locked section:** 1.9 — Expressions, Precedence, and Mathematical Translation.
+**Canonical progress:** 1.1–1.9 complete.  
+**Next locked section:** 1.10 — Working with Financial Inputs and Outputs.
 
 ## Editorial Requirement
 
