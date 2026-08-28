@@ -5,7 +5,7 @@
 | Section | Title | Status |
 |---|---|---|
 | 2.1 | Boolean Expressions and Financial Conditions | Canonical / Complete |
-| 2.2 | Comparison and Logical Operators | Planned |
+| 2.2 | Comparison and Logical Operators | Canonical / Complete |
 | 2.3 | `if`, `elif`, and `else` | Planned |
 | 2.4 | Modeling Financial Decision Rules | Planned |
 | 2.5 | `for` Loops | Planned |
@@ -18,7 +18,7 @@
 | 2.12 | Chapter Project — Investment Scenario Analyzer | Planned |
 | 2.13 | Exercises and Applied Problems | Planned |
 
-**Canonical progress:** 2.1 complete.  
+**Canonical progress:** 2.1–2.2 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
