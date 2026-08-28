@@ -21,9 +21,10 @@ Current canonical progress:
 - 1.7 — Python Variables, Data Types, and Financial Data Representation — Revised Final / Canonical Edition
 - 1.8 — Operators and Financial Calculations — Revised Final / Canonical Edition
 - 1.9 — Expressions, Precedence, and Mathematical Translation — Revised Final / Canonical Edition
+- 1.10 — Working with Financial Inputs and Outputs — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.9 complete.  
-**Next locked section:** 1.10 — Working with Financial Inputs and Outputs.
+**Canonical progress:** 1.1–1.10 complete.  
+**Next locked section:** 1.11 — Numerical Precision, Rounding, and Tolerances.
 
 ## Editorial Requirement
 
