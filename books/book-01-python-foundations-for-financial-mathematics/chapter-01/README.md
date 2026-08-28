@@ -18,12 +18,21 @@
 | 1.12 | Chapter Project — Basic Financial Calculator | Canonical / Complete |
 | 1.13 | Exercises and Applied Problems | Canonical / Complete |
 
-**Canonical progress:** 1.1–1.13 complete.  
+## Solutions Companion
+
+| Companion | Title | Status |
+|---|---|---|
+| 1.13 | Solutions and Reference Implementations | Canonical / Complete |
+
+The solutions companion is maintained separately under `solutions/` so the student-facing exercise manuscript remains suitable for independent practice.
+
+**Canonical manuscript progress:** 1.1–1.13 complete.  
+**Solutions companion:** Canonical / Complete.  
 **Chapter status:** Canonical / Complete.
 
 ## Publication Policy
 
-Canonical sections must retain verified references, use authoritative/primary implementation documentation where available, distinguish source-supported technical claims from original instructional synthesis, and pass Technical + Source Review plus Production + Copyright Review before being marked complete.
+Canonical sections and solution companions must retain verified references, use authoritative/primary implementation documentation where available, distinguish source-supported technical claims from original instructional synthesis, and pass Technical + Source Review plus Production + Copyright Review before being marked complete.
 
 ## Recovery Note
 
