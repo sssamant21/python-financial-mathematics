@@ -22,9 +22,10 @@ Current canonical progress:
 - 1.8 — Operators and Financial Calculations — Revised Final / Canonical Edition
 - 1.9 — Expressions, Precedence, and Mathematical Translation — Revised Final / Canonical Edition
 - 1.10 — Working with Financial Inputs and Outputs — Revised Final / Canonical Edition
+- 1.11 — Numerical Precision, Rounding, and Tolerances — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.10 complete.  
-**Next locked section:** 1.11 — Numerical Precision, Rounding, and Tolerances.
+**Canonical progress:** 1.1–1.11 complete.  
+**Next locked section:** 1.12 — Chapter Project — Basic Financial Calculator.
 
 ## Editorial Requirement
 
