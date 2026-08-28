@@ -24,9 +24,10 @@ Current canonical progress:
 - 1.10 — Working with Financial Inputs and Outputs — Revised Final / Canonical Edition
 - 1.11 — Numerical Precision, Rounding, and Tolerances — Revised Final / Canonical Edition
 - 1.12 — Chapter Project — Basic Financial Calculator — Revised Final / Canonical Edition
+- 1.13 — Exercises and Applied Problems — Revised Final / Canonical Edition
 
-**Canonical progress:** 1.1–1.12 complete.  
-**Next locked section:** 1.13 — Exercises and Applied Problems.
+**Canonical progress:** 1.1–1.13 complete.  
+**Chapter 1 status:** Canonical / Complete.
 
 ## Editorial Requirement
 
