@@ -16,10 +16,10 @@
 | 1.10 | Working with Financial Inputs and Outputs | Canonical / Complete |
 | 1.11 | Numerical Precision, Rounding, and Tolerances | Canonical / Complete |
 | 1.12 | Chapter Project — Basic Financial Calculator | Canonical / Complete |
-| 1.13 | Exercises and Applied Problems | Planned |
+| 1.13 | Exercises and Applied Problems | Canonical / Complete |
 
-**Canonical progress:** 1.1–1.12 complete.  
-**Next locked section:** 1.13 — Exercises and Applied Problems.
+**Canonical progress:** 1.1–1.13 complete.  
+**Chapter status:** Canonical / Complete.
 
 ## Publication Policy
 
