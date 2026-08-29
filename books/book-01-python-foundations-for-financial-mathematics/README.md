@@ -46,16 +46,16 @@ Current canonical progress:
 - 2.3 — `if`, `elif`, and `else` — Revised Final / Canonical Edition
 - 2.4 — Modeling Financial Decision Rules — Revised Final / Canonical Edition
 - 2.5 — `for` Loops — Revised Final / Canonical Edition
-- 2.6 — `while` Loops — Planned
+- 2.6 — `while` Loops — Revised Final / Canonical Edition
 - 2.7 — Iterating Across Cash Flows and Periods — Planned
 - 2.8 — `range()` and Financial Time Periods — Planned
 - 2.9 — Nested Control Flow — Planned
-- 2.10 — `break`, `continue`, and Loop Control | Planned
+- 2.10 — `break`, `continue`, and Loop Control — Planned
 - 2.11 — Defensive Input Validation — Planned
 - 2.12 — Chapter Project — Investment Scenario Analyzer — Planned
 - 2.13 — Exercises and Applied Problems — Planned
 
-**Canonical progress:** 2.1–2.5 complete.  
+**Canonical progress:** 2.1–2.6 complete.  
 **Chapter 2 status:** In Progress.
 
 ## Editorial Requirement
