@@ -6,7 +6,7 @@
 |---|---|---|
 | 3.1 | Why Functions Matter in Financial Computing | Canonical / Complete |
 | 3.2 | Defining and Calling Functions | Canonical / Complete |
-| 3.3 | Parameters and Arguments | Planned |
+| 3.3 | Parameters and Arguments | Canonical / Complete |
 | 3.4 | Return Values | Planned |
 | 3.5 | Default and Keyword Arguments | Planned |
 | 3.6 | Variable Scope | Planned |
@@ -20,7 +20,7 @@
 | 3.14 | Chapter Project — Financial Mathematics Function Library | Planned |
 | 3.15 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 3.1–3.2 complete.  
+**Canonical manuscript progress:** 3.1–3.3 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
