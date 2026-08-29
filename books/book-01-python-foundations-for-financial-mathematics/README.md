@@ -55,8 +55,15 @@ Current canonical progress:
 - 2.12 — Chapter Project — Investment Scenario Analyzer — Revised Final / Canonical Edition
 - 2.13 — Exercises and Applied Problems — Revised Final / Canonical Edition
 
+### Chapter 2 Solutions Companion
+
+- 2.13 — Solutions and Reference Implementations — Revised Final / Canonical Edition
+
+The solution companion is maintained under `chapter-02/solutions/` and remains separate from the student-facing exercise manuscript.
+
 **Canonical manuscript progress:** 2.1–2.13 complete.  
-**Chapter 2 publication set:** Manuscript — Canonical / Complete.  
+**Chapter 2 solutions:** Canonical / Complete.  
+**Chapter 2 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 2 status:** Canonical / Complete.
 
 ## Editorial Requirement
