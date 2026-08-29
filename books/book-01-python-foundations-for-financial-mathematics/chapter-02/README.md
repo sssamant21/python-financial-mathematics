@@ -14,11 +14,11 @@
 | 2.8 | `range()` and Financial Time Periods | Canonical / Complete |
 | 2.9 | Nested Control Flow | Canonical / Complete |
 | 2.10 | `break`, `continue`, and Loop Control | Canonical / Complete |
-| 2.11 | Defensive Input Validation | Planned |
+| 2.11 | Defensive Input Validation | Canonical / Complete |
 | 2.12 | Chapter Project — Investment Scenario Analyzer | Planned |
 | 2.13 | Exercises and Applied Problems | Planned |
 
-**Canonical progress:** 2.1–2.10 complete.  
+**Canonical progress:** 2.1–2.11 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
