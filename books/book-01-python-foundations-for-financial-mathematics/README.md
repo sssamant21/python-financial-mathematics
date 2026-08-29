@@ -52,10 +52,10 @@ Current canonical progress:
 - 2.9 — Nested Control Flow — Revised Final / Canonical Edition
 - 2.10 — `break`, `continue`, and Loop Control — Revised Final / Canonical Edition
 - 2.11 — Defensive Input Validation — Revised Final / Canonical Edition
-- 2.12 — Chapter Project — Investment Scenario Analyzer — Planned
+- 2.12 — Chapter Project — Investment Scenario Analyzer — Revised Final / Canonical Edition
 - 2.13 — Exercises and Applied Problems — Planned
 
-**Canonical progress:** 2.1–2.11 complete.  
+**Canonical progress:** 2.1–2.12 complete.  
 **Chapter 2 status:** In Progress.
 
 ## Editorial Requirement
