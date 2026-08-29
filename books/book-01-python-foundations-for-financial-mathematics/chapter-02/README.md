@@ -15,10 +15,10 @@
 | 2.9 | Nested Control Flow | Canonical / Complete |
 | 2.10 | `break`, `continue`, and Loop Control | Canonical / Complete |
 | 2.11 | Defensive Input Validation | Canonical / Complete |
-| 2.12 | Chapter Project — Investment Scenario Analyzer | Planned |
+| 2.12 | Chapter Project — Investment Scenario Analyzer | Canonical / Complete |
 | 2.13 | Exercises and Applied Problems | Planned |
 
-**Canonical progress:** 2.1–2.11 complete.  
+**Canonical progress:** 2.1–2.12 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
