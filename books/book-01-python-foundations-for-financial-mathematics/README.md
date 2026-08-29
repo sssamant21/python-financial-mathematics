@@ -53,10 +53,11 @@ Current canonical progress:
 - 2.10 — `break`, `continue`, and Loop Control — Revised Final / Canonical Edition
 - 2.11 — Defensive Input Validation — Revised Final / Canonical Edition
 - 2.12 — Chapter Project — Investment Scenario Analyzer — Revised Final / Canonical Edition
-- 2.13 — Exercises and Applied Problems — Planned
+- 2.13 — Exercises and Applied Problems — Revised Final / Canonical Edition
 
-**Canonical progress:** 2.1–2.12 complete.  
-**Chapter 2 status:** In Progress.
+**Canonical manuscript progress:** 2.1–2.13 complete.  
+**Chapter 2 publication set:** Manuscript — Canonical / Complete.  
+**Chapter 2 status:** Canonical / Complete.
 
 ## Editorial Requirement
 
