@@ -16,10 +16,10 @@
 | 2.10 | `break`, `continue`, and Loop Control | Canonical / Complete |
 | 2.11 | Defensive Input Validation | Canonical / Complete |
 | 2.12 | Chapter Project — Investment Scenario Analyzer | Canonical / Complete |
-| 2.13 | Exercises and Applied Problems | Planned |
+| 2.13 | Exercises and Applied Problems | Canonical / Complete |
 
-**Canonical progress:** 2.1–2.12 complete.  
-**Chapter status:** In Progress.
+**Canonical progress:** 2.1–2.13 complete.  
+**Chapter status:** Canonical / Complete.
 
 ## Publication Policy
 
