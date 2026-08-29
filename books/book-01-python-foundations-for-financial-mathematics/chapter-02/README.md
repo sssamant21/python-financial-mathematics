@@ -18,11 +18,19 @@
 | 2.12 | Chapter Project — Investment Scenario Analyzer | Canonical / Complete |
 | 2.13 | Exercises and Applied Problems | Canonical / Complete |
 
-**Canonical progress:** 2.1–2.13 complete.  
+## Solutions Companion
+
+- 2.13 — Solutions and Reference Implementations — Canonical / Complete
+
+The solutions companion is maintained under `chapter-02/solutions/` and remains separate from the student-facing exercise manuscript.
+
+**Canonical manuscript progress:** 2.1–2.13 complete.  
+**Chapter 2 solutions:** Canonical / Complete.  
+**Chapter 2 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter status:** Canonical / Complete.
 
 ## Publication Policy
 
-Canonical sections must retain verified references, use authoritative or primary implementation documentation where available, distinguish source-supported technical claims from original instructional synthesis, and pass Technical + Source Review plus Production + Copyright Review before being marked complete.
+Canonical sections and companion solution artifacts must retain verified references, use authoritative or primary implementation documentation where available, distinguish source-supported technical claims from original instructional synthesis, and pass Technical + Source Review plus Production + Copyright Review before being marked complete.
 
 The approved section numbering and titles are governed by the locked Book 1 `MASTER-TOC.md`.
