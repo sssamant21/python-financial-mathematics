@@ -66,6 +66,29 @@ The solution companion is maintained under `chapter-02/solutions/` and remains s
 **Chapter 2 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 2 status:** Canonical / Complete.
 
+## Chapter 3 — Functions and Reusable Financial Models
+
+Current canonical progress:
+
+- 3.1 — Why Functions Matter in Financial Computing — Revised Final / Canonical Edition
+- 3.2 — Defining and Calling Functions — Planned
+- 3.3 — Parameters and Arguments — Planned
+- 3.4 — Return Values — Planned
+- 3.5 — Default and Keyword Arguments — Planned
+- 3.6 — Variable Scope — Planned
+- 3.7 — Type Hints for Financial Functions — Planned
+- 3.8 — Docstrings and Financial Assumptions — Planned
+- 3.9 — Designing Present- and Future-Value Functions — Planned
+- 3.10 — Reusable Rate and Discounting Functions — Planned
+- 3.11 — Function Composition — Planned
+- 3.12 — Pure Functions and Reproducibility — Planned
+- 3.13 — Testing Financial Functions — Planned
+- 3.14 — Chapter Project — Financial Mathematics Function Library — Planned
+- 3.15 — Exercises and Applied Problems — Planned
+
+**Canonical manuscript progress:** 3.1 complete.  
+**Chapter 3 status:** In Progress.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
