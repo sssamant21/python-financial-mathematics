@@ -9,7 +9,7 @@
 | 3.3 | Parameters and Arguments | Canonical / Complete |
 | 3.4 | [Return Values](3.04-return-values.md) | Canonical / Complete |
 | 3.5 | [Default and Keyword Arguments](3.05-default-and-keyword-arguments.md) | Canonical / Complete |
-| 3.6 | Variable Scope | Planned |
+| 3.6 | [Variable Scope](3.06-variable-scope.md) | Canonical / Complete |
 | 3.7 | Type Hints for Financial Functions | Planned |
 | 3.8 | Docstrings and Financial Assumptions | Planned |
 | 3.9 | Designing Present- and Future-Value Functions | Planned |
@@ -20,7 +20,7 @@
 | 3.14 | Chapter Project — Financial Mathematics Function Library | Planned |
 | 3.15 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 3.1–3.5 complete.  
+**Canonical manuscript progress:** 3.1–3.6 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
