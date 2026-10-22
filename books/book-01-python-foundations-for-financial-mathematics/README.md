@@ -164,6 +164,16 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
+## Chapter 7 — pandas for Financial Data Analysis
+
+- [7.1 — Why pandas?](chapter-07/7.01-why-pandas.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1 complete (1/18 sections).  
+**Chapter 7 status:** In Progress.  
+**Next:** 7.2 — `Series`.
+
+See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
