@@ -99,9 +99,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.6 — `pip` and Dependency Management](chapter-05/5.06-pip-and-dependency-management.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.6 complete (6/13 sections).  
+- [5.7 — Virtual Environments](chapter-05/5.07-virtual-environments.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.7 complete (7/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.7 — Virtual Environments.
+**Next:** 5.8 — Dependency Pinning and Reproducibility.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
