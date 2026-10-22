@@ -17,10 +17,10 @@
 | 3.11 | [Function Composition](3.11-function-composition.md) | Canonical / Complete |
 | 3.12 | [Pure Functions and Reproducibility](3.12-pure-functions-and-reproducibility.md) | Canonical / Complete |
 | 3.13 | [Testing Financial Functions](3.13-testing-financial-functions.md) | Canonical / Complete |
-| 3.14 | Chapter Project — Financial Mathematics Function Library | Planned |
+| 3.14 | [Chapter Project — Financial Mathematics Function Library](3.14-chapter-project-financial-mathematics-function-library.md) | Canonical / Complete |
 | 3.15 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 3.1–3.13 complete.  
+**Canonical manuscript progress:** 3.1–3.14 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
