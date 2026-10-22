@@ -40,10 +40,14 @@ Current canonical progress:
 - 3.12 — Pure Functions and Reproducibility — Revised Final / Canonical Edition
 - 3.13 — Testing Financial Functions — Revised Final / Canonical Edition
 - 3.14 — Chapter Project — Financial Mathematics Function Library — Revised Final / Canonical Edition
-- 3.15 — Exercises and Applied Problems — Planned
+- 3.15 — Exercises and Applied Problems — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 3.1–3.14 complete.  
-**Chapter 3 status:** In Progress.
+**Canonical manuscript progress:** 3.1–3.15 complete.  
+**Chapter 3 solutions:** [Canonical / Complete](chapter-03/solutions/3.15-solutions-and-reference-implementations.md).  
+**Chapter 3 publication set:** Manuscript + Solutions — Canonical / Complete.  
+**Chapter 3 status:** Canonical / Complete.
+
+**Next:** 4.1 — Financial Data as Structured Information.
 
 ## Editorial Requirement
 
