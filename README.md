@@ -36,6 +36,6 @@ Each canonical section should retain its verified references so source provenanc
 
 ## Current Work
 
-Book 1, Chapters 1 and 2 have complete canonical manuscripts and companion solutions. Chapter 3 is in progress, with Sections 3.1–3.9 complete. Next: **3.10 — Reusable Rate and Discounting Functions**.
+Book 1, Chapters 1 and 2 have complete canonical manuscripts and companion solutions. Chapter 3 is in progress, with Sections 3.1–3.10 complete. Next: **3.11 — Function Composition**.
 
 See the [Book 1 progress index](books/book-01-python-foundations-for-financial-mathematics/README.md) and [locked Master TOC v1.0](books/book-01-python-foundations-for-financial-mathematics/MASTER-TOC.md).
