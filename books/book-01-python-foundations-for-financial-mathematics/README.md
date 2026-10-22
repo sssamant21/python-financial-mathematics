@@ -57,9 +57,11 @@ Current canonical progress:
 
 - [4.4 — Dictionaries](chapter-04/4.04-dictionaries.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.4 complete (4/14 sections).  
+- [4.5 — Sets](chapter-04/4.05-sets.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.5 complete (5/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.5 — Sets.
+**Next:** 4.6 — Nested Financial Structures.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
