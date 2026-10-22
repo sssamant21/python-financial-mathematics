@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 6.7 — Aggregation and Statistical Operations.**
+**Next locked manuscript section: 6.8 — Cash-Flow Vectors.**
