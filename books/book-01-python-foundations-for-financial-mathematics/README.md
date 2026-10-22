@@ -135,9 +135,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.6 — Broadcasting](chapter-06/6.06-broadcasting.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.6 complete (6/17 sections).  
+- [6.7 — Aggregation and Statistical Operations](chapter-06/6.07-aggregation-and-statistical-operations.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.7 complete (7/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.7 — Aggregation and Statistical Operations.
+**Next:** 6.8 — Cash-Flow Vectors.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
