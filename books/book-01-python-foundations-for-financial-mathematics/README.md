@@ -149,9 +149,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.13 — Random Number Generation](chapter-06/6.13-random-number-generation.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.13 complete (13/17 sections).  
+- [6.14 — Numerical Precision and NumPy](chapter-06/6.14-numerical-precision-and-numpy.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.14 complete (14/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.14 — Numerical Precision and NumPy.
+**Next:** 6.15 — Performance: Python Loops vs. Vectorization.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
