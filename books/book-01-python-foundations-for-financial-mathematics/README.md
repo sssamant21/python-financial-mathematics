@@ -151,9 +151,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.14 — Numerical Precision and NumPy](chapter-06/6.14-numerical-precision-and-numpy.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.14 complete (14/17 sections).  
+- [6.15 — Performance: Python Loops vs. Vectorization](chapter-06/6.15-performance-python-loops-vs-vectorization.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.15 complete (15/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.15 — Performance: Python Loops vs. Vectorization.
+**Next:** 6.16 — Chapter Project — Vectorized Portfolio Calculator.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
