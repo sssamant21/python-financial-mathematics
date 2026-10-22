@@ -29,7 +29,7 @@ Current canonical progress:
 - 3.1 — Why Functions Matter in Financial Computing — Revised Final / Canonical Edition
 - 3.2 — Defining and Calling Functions — Revised Final / Canonical Edition
 - 3.3 — Parameters and Arguments — Revised Final / Canonical Edition
-- 3.4 — Return Values — Planned
+- 3.4 — Return Values — Revised Final / Canonical Edition
 - 3.5 — Default and Keyword Arguments — Planned
 - 3.6 — Variable Scope — Planned
 - 3.7 — Type Hints for Financial Functions — Planned
@@ -42,7 +42,7 @@ Current canonical progress:
 - 3.14 — Chapter Project — Financial Mathematics Function Library — Planned
 - 3.15 — Exercises and Applied Problems — Planned
 
-**Canonical manuscript progress:** 3.1–3.3 complete.  
+**Canonical manuscript progress:** 3.1–3.4 complete.  
 **Chapter 3 status:** In Progress.
 
 ## Editorial Requirement
