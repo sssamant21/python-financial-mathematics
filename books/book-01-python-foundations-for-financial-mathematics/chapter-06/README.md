@@ -17,14 +17,14 @@
 | 6.11 | [Matrices and Financial Models](6.11-matrices-and-financial-models.md) | Canonical / Complete |
 | 6.12 | [Linear Algebra with NumPy](6.12-linear-algebra-with-numpy.md) | Canonical / Complete |
 | 6.13 | [Random Number Generation](6.13-random-number-generation.md) | Canonical / Complete |
-| 6.14 | Numerical Precision and NumPy | Planned |
+| 6.14 | [Numerical Precision and NumPy](6.14-numerical-precision-and-numpy.md) | Canonical / Complete |
 | 6.15 | Performance: Python Loops vs. Vectorization | Planned |
 | 6.16 | Chapter Project — Vectorized Portfolio Calculator | Planned |
 | 6.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 6.1–6.13 complete (13/17 sections).  
+**Canonical manuscript progress:** 6.1–6.14 complete (14/17 sections).  
 **Chapter status:** In Progress.  
-**Next:** 6.14 — Numerical Precision and NumPy.
+**Next:** 6.15 — Performance: Python Loops vs. Vectorization.
 
 ## Publication Policy
 
