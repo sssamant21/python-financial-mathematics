@@ -1,0 +1,31 @@
+# Chapter 6 — NumPy for Financial Mathematics
+
+## Manuscript Status
+
+| Section | Title | Status |
+|---|---|---|
+| 6.1 | [Why NumPy?](6.01-why-numpy.md) | Canonical / Complete |
+| 6.2 | NumPy Arrays | Planned |
+| 6.3 | Array Creation and Data Types | Planned |
+| 6.4 | Indexing and Slicing | Planned |
+| 6.5 | Vectorized Financial Calculations | Planned |
+| 6.6 | Broadcasting | Planned |
+| 6.7 | Aggregation and Statistical Operations | Planned |
+| 6.8 | Cash-Flow Vectors | Planned |
+| 6.9 | Return Vectors | Planned |
+| 6.10 | Portfolio Weight Vectors | Planned |
+| 6.11 | Matrices and Financial Models | Planned |
+| 6.12 | Linear Algebra with NumPy | Planned |
+| 6.13 | Random Number Generation | Planned |
+| 6.14 | Numerical Precision and NumPy | Planned |
+| 6.15 | Performance: Python Loops vs. Vectorization | Planned |
+| 6.16 | Chapter Project — Vectorized Portfolio Calculator | Planned |
+| 6.17 | Exercises and Applied Problems | Planned |
+
+**Canonical manuscript progress:** 6.1 complete (1/17 sections).  
+**Chapter status:** In Progress.  
+**Next:** 6.2 — NumPy Arrays.
+
+## Publication Policy
+
+Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Chapter-wide exercises and companion solutions are scheduled for Section 6.17.
