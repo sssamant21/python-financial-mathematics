@@ -67,9 +67,11 @@ Current canonical progress:
 
 - [4.9 — Representing Cash-Flow Schedules](chapter-04/4.09-representing-cash-flow-schedules.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.9 complete (9/14 sections).  
+- [4.10 — Representing Securities and Portfolios](chapter-04/4.10-representing-securities-and-portfolios.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.10 complete (10/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.10 — Representing Securities and Portfolios.
+**Next:** 4.11 — Mutable vs. Immutable Data.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
