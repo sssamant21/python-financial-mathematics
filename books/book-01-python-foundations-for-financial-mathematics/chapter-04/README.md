@@ -16,12 +16,12 @@
 | 4.10 | [Representing Securities and Portfolios](4.10-representing-securities-and-portfolios.md) | Canonical / Complete |
 | 4.11 | [Mutable vs. Immutable Data](4.11-mutable-vs-immutable-data.md) | Canonical / Complete |
 | 4.12 | [Choosing Appropriate Data Structures](4.12-choosing-appropriate-data-structures.md) | Canonical / Complete |
-| 4.13 | Chapter Project — Portfolio Holdings Manager | Planned |
+| 4.13 | [Chapter Project — Portfolio Holdings Manager](4.13-chapter-project-portfolio-holdings-manager.md) | Canonical / Complete |
 | 4.14 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 4.1–4.12 complete (12/14 sections).  
+**Canonical manuscript progress:** 4.1–4.13 complete (13/14 sections).  
 **Chapter status:** In Progress.  
-**Next:** 4.13 — Chapter Project — Portfolio Holdings Manager.
+**Next:** 4.14 — Exercises and Applied Problems.
 
 ## Publication Policy
 
