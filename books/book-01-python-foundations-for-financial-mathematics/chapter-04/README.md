@@ -15,13 +15,13 @@
 | 4.9 | [Representing Cash-Flow Schedules](4.09-representing-cash-flow-schedules.md) | Canonical / Complete |
 | 4.10 | [Representing Securities and Portfolios](4.10-representing-securities-and-portfolios.md) | Canonical / Complete |
 | 4.11 | [Mutable vs. Immutable Data](4.11-mutable-vs-immutable-data.md) | Canonical / Complete |
-| 4.12 | Choosing Appropriate Data Structures | Planned |
+| 4.12 | [Choosing Appropriate Data Structures](4.12-choosing-appropriate-data-structures.md) | Canonical / Complete |
 | 4.13 | Chapter Project — Portfolio Holdings Manager | Planned |
 | 4.14 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 4.1–4.11 complete (11/14 sections).  
+**Canonical manuscript progress:** 4.1–4.12 complete (12/14 sections).  
 **Chapter status:** In Progress.  
-**Next:** 4.12 — Choosing Appropriate Data Structures.
+**Next:** 4.13 — Chapter Project — Portfolio Holdings Manager.
 
 ## Publication Policy
 
