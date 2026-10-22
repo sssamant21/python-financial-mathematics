@@ -89,9 +89,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.1 — Python Modules](chapter-05/5.01-python-modules.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1 complete (1/13 sections).  
+- [5.2 — Importing Modules](chapter-05/5.02-importing-modules.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.2 complete (2/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.2 — Importing Modules.
+**Next:** 5.3 — The Python Standard Library.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
