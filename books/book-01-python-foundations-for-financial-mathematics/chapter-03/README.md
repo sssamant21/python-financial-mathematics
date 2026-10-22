@@ -13,14 +13,14 @@
 | 3.7 | [Type Hints for Financial Functions](3.07-type-hints-for-financial-functions.md) | Canonical / Complete |
 | 3.8 | [Docstrings and Financial Assumptions](3.08-docstrings-and-financial-assumptions.md) | Canonical / Complete |
 | 3.9 | [Designing Present- and Future-Value Functions](3.09-designing-present-and-future-value-functions.md) | Canonical / Complete |
-| 3.10 | Reusable Rate and Discounting Functions | Planned |
+| 3.10 | [Reusable Rate and Discounting Functions](3.10-reusable-rate-and-discounting-functions.md) | Canonical / Complete |
 | 3.11 | Function Composition | Planned |
 | 3.12 | Pure Functions and Reproducibility | Planned |
 | 3.13 | Testing Financial Functions | Planned |
 | 3.14 | Chapter Project — Financial Mathematics Function Library | Planned |
 | 3.15 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 3.1–3.9 complete.  
+**Canonical manuscript progress:** 3.1–3.10 complete.  
 **Chapter status:** In Progress.
 
 ## Publication Policy
