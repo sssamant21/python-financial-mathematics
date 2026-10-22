@@ -14,7 +14,7 @@
 | 6.8 | [Cash-Flow Vectors](6.08-cash-flow-vectors.md) | Canonical / Complete |
 | 6.9 | [Return Vectors](6.09-return-vectors.md) | Canonical / Complete |
 | 6.10 | [Portfolio Weight Vectors](6.10-portfolio-weight-vectors.md) | Canonical / Complete |
-| 6.11 | Matrices and Financial Models | Planned |
+| 6.11 | [Matrices and Financial Models](6.11-matrices-and-financial-models.md) | Canonical / Complete |
 | 6.12 | Linear Algebra with NumPy | Planned |
 | 6.13 | Random Number Generation | Planned |
 | 6.14 | Numerical Precision and NumPy | Planned |
@@ -22,9 +22,9 @@
 | 6.16 | Chapter Project — Vectorized Portfolio Calculator | Planned |
 | 6.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 6.1–6.10 complete (10/17 sections).  
+**Canonical manuscript progress:** 6.1–6.11 complete (11/17 sections).  
 **Chapter status:** In Progress.  
-**Next:** 6.11 — Matrices and Financial Models.
+**Next:** 6.12 — Linear Algebra with NumPy.
 
 ## Publication Policy
 
