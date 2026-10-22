@@ -34,7 +34,7 @@ Current canonical progress:
 - 3.6 — Variable Scope — Revised Final / Canonical Edition
 - 3.7 — Type Hints for Financial Functions — Revised Final / Canonical Edition
 - 3.8 — Docstrings and Financial Assumptions — Revised Final / Canonical Edition
-- 3.9 — Designing Present- and Future-Value Functions — Planned
+- 3.9 — Designing Present- and Future-Value Functions — Revised Final / Canonical Edition
 - 3.10 — Reusable Rate and Discounting Functions — Planned
 - 3.11 — Function Composition — Planned
 - 3.12 — Pure Functions and Reproducibility — Planned
@@ -42,7 +42,7 @@ Current canonical progress:
 - 3.14 — Chapter Project — Financial Mathematics Function Library — Planned
 - 3.15 — Exercises and Applied Problems — Planned
 
-**Canonical manuscript progress:** 3.1–3.8 complete.  
+**Canonical manuscript progress:** 3.1–3.9 complete.  
 **Chapter 3 status:** In Progress.
 
 ## Editorial Requirement
