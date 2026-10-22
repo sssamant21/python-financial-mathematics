@@ -168,9 +168,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.1 — Why pandas?](chapter-07/7.01-why-pandas.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1 complete (1/18 sections).  
+- [7.2 — `Series`](chapter-07/7.02-series.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.2 complete (2/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.2 — `Series`.
+**Next:** 7.3 — `DataFrame`.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
