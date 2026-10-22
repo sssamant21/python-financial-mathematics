@@ -145,9 +145,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.11 — Matrices and Financial Models](chapter-06/6.11-matrices-and-financial-models.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.11 complete (11/17 sections).  
+- [6.12 — Linear Algebra with NumPy](chapter-06/6.12-linear-algebra-with-numpy.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.12 complete (12/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.12 — Linear Algebra with NumPy.
+**Next:** 6.13 — Random Number Generation.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
