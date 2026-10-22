@@ -174,9 +174,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.4 — Indexing and Selection](chapter-07/7.04-indexing-and-selection.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.4 complete (4/18 sections).  
+- [7.5 — Reading Financial Data](chapter-07/7.05-reading-financial-data.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.5 complete (5/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.5 — Reading Financial Data.
+**Next:** 7.6 — Data Types and Conversion.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
