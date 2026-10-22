@@ -139,9 +139,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.8 — Cash-Flow Vectors](chapter-06/6.08-cash-flow-vectors.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.8 complete (8/17 sections).  
+- [6.9 — Return Vectors](chapter-06/6.09-return-vectors.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.9 complete (9/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.9 — Return Vectors.
+**Next:** 6.10 — Portfolio Weight Vectors.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
