@@ -131,9 +131,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.4 — Indexing and Slicing](chapter-06/6.04-indexing-and-slicing.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.4 complete (4/17 sections).  
+- [6.5 — Vectorized Financial Calculations](chapter-06/6.05-vectorized-financial-calculations.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.5 complete (5/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.5 — Vectorized Financial Calculations.
+**Next:** 6.6 — Broadcasting.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
