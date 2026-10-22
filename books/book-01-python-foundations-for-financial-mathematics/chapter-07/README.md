@@ -9,7 +9,7 @@
 | 7.3 | [`DataFrame`](7.03-dataframe.md) | Canonical / Complete |
 | 7.4 | [Indexing and Selection](7.04-indexing-and-selection.md) | Canonical / Complete |
 | 7.5 | [Reading Financial Data](7.05-reading-financial-data.md) | Canonical / Complete |
-| 7.6 | Data Types and Conversion | Planned |
+| 7.6 | [Data Types and Conversion](7.06-data-types-and-conversion.md) | Canonical / Complete |
 | 7.7 | Missing Financial Data | Planned |
 | 7.8 | Cleaning Financial Datasets | Planned |
 | 7.9 | Date and Time Indexes | Planned |
@@ -23,9 +23,9 @@
 | 7.17 | Chapter Project — Financial Time-Series Analyzer | Planned |
 | 7.18 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 7.1–7.5 complete (5/18 sections).  
+**Canonical manuscript progress:** 7.1–7.6 complete (6/18 sections).  
 **Chapter status:** In Progress.  
-**Next:** 7.6 — Data Types and Conversion.
+**Next:** 7.7 — Missing Financial Data.
 
 ## Publication Policy
 
