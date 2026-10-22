@@ -105,9 +105,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.9 — Project Directory Structure](chapter-05/5.09-project-directory-structure.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.9 complete (9/13 sections).  
+- [5.10 — Configuration and Environment Separation](chapter-05/5.10-configuration-and-environment-separation.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.10 complete (10/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.10 — Configuration and Environment Separation.
+**Next:** 5.11 — Reproducible Financial Research.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
