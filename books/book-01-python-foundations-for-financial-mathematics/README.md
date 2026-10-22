@@ -71,9 +71,11 @@ Current canonical progress:
 
 - [4.11 — Mutable vs. Immutable Data](chapter-04/4.11-mutable-vs-immutable-data.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.11 complete (11/14 sections).  
+- [4.12 — Choosing Appropriate Data Structures](chapter-04/4.12-choosing-appropriate-data-structures.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.12 complete (12/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.12 — Choosing Appropriate Data Structures.
+**Next:** 4.13 — Chapter Project — Portfolio Holdings Manager.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
