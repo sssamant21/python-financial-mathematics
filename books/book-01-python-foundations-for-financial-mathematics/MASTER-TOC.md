@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 6.14 — Numerical Precision and NumPy.**
+**Next locked manuscript section: 6.15 — Performance: Python Loops vs. Vectorization.**
