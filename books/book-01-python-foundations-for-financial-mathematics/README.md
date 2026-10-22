@@ -65,9 +65,11 @@ Current canonical progress:
 
 - [4.8 — Sorting and Filtering Financial Records](chapter-04/4.08-sorting-and-filtering-financial-records.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.8 complete (8/14 sections).  
+- [4.9 — Representing Cash-Flow Schedules](chapter-04/4.09-representing-cash-flow-schedules.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.9 complete (9/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.9 — Representing Cash-Flow Schedules.
+**Next:** 4.10 — Representing Securities and Portfolios.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
