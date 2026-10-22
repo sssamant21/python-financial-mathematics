@@ -121,6 +121,16 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
+## Chapter 6 — NumPy for Financial Mathematics
+
+- [6.1 — Why NumPy?](chapter-06/6.01-why-numpy.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1 complete (1/17 sections).  
+**Chapter 6 status:** In Progress.  
+**Next:** 6.2 — NumPy Arrays.
+
+See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
