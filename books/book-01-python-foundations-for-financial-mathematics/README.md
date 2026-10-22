@@ -75,9 +75,13 @@ Current canonical progress:
 
 - [4.13 — Chapter Project — Portfolio Holdings Manager](chapter-04/4.13-chapter-project-portfolio-holdings-manager.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.13 complete (13/14 sections).  
-**Chapter 4 status:** In Progress.  
-**Next:** 4.14 — Exercises and Applied Problems.
+- [4.14 — Exercises and Applied Problems](chapter-04/4.14-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.14 complete (14/14 sections).  
+**Chapter 4 solutions:** [Canonical / Complete](chapter-04/solutions/4.14-solutions-and-reference-implementations.md).  
+**Chapter 4 publication set:** Manuscript + Solutions — Canonical / Complete.  
+**Chapter 4 status:** Canonical / Complete.  
+**Next:** 5.1 — Python Modules.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
