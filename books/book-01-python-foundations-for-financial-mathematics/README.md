@@ -61,9 +61,11 @@ Current canonical progress:
 
 - [4.6 — Nested Financial Structures](chapter-04/4.06-nested-financial-structures.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.6 complete (6/14 sections).  
+- [4.7 — List and Dictionary Comprehensions](chapter-04/4.07-list-and-dictionary-comprehensions.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.7 complete (7/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.7 — List and Dictionary Comprehensions.
+**Next:** 4.8 — Sorting and Filtering Financial Records.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
