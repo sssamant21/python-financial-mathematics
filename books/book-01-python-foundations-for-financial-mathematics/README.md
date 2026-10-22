@@ -95,9 +95,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.4 — Creating Financial Utility Modules](chapter-05/5.04-creating-financial-utility-modules.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.4 complete (4/13 sections).  
+- [5.5 — Python Packages](chapter-05/5.05-python-packages.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.5 complete (5/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.5 — Python Packages.
+**Next:** 5.6 — `pip` and Dependency Management.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
