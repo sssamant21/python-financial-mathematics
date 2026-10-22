@@ -12,7 +12,7 @@
 | 7.6 | [Data Types and Conversion](7.06-data-types-and-conversion.md) | Canonical / Complete |
 | 7.7 | [Missing Financial Data](7.07-missing-financial-data.md) | Canonical / Complete |
 | 7.8 | [Cleaning Financial Datasets](7.08-cleaning-financial-datasets.md) | Canonical / Complete |
-| 7.9 | Date and Time Indexes | Planned |
+| 7.9 | [Date and Time Indexes](7.09-date-and-time-indexes.md) | Canonical / Complete |
 | 7.10 | Sorting, Filtering, and Querying | Planned |
 | 7.11 | Grouping and Aggregation | Planned |
 | 7.12 | Joining and Merging Financial Data | Planned |
@@ -23,9 +23,9 @@
 | 7.17 | Chapter Project — Financial Time-Series Analyzer | Planned |
 | 7.18 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 7.1–7.8 complete (8/18 sections).  
+**Canonical manuscript progress:** 7.1–7.9 complete (9/18 sections).  
 **Chapter status:** In Progress.  
-**Next:** 7.9 — Date and Time Indexes.
+**Next:** 7.10 — Sorting, Filtering, and Querying.
 
 ## Publication Policy
 
