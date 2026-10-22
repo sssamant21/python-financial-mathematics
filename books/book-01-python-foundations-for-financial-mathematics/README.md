@@ -155,9 +155,12 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.16 — Chapter Project — Vectorized Portfolio Calculator](chapter-06/6.16-chapter-project-vectorized-portfolio-calculator.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.16 complete (16/17 sections).  
-**Chapter 6 status:** In Progress.  
-**Next:** 6.17 — Exercises and Applied Problems.
+- [6.17 — Exercises and Applied Problems](chapter-06/6.17-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
+- [6.17 — Solutions and Reference Implementations](chapter-06/6.17-solutions-and-reference-implementations.md) — Companion solutions for all twenty chapter-wide problems
+
+**Canonical manuscript progress:** 6.1–6.17 complete (17/17 sections).  
+**Chapter 6 status:** Complete, with twenty chapter-wide exercises and companion solutions.  
+**Next:** 7.1 — Why pandas?
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
