@@ -11,7 +11,7 @@
 | 6.5 | [Vectorized Financial Calculations](6.05-vectorized-financial-calculations.md) | Canonical / Complete |
 | 6.6 | [Broadcasting](6.06-broadcasting.md) | Canonical / Complete |
 | 6.7 | [Aggregation and Statistical Operations](6.07-aggregation-and-statistical-operations.md) | Canonical / Complete |
-| 6.8 | Cash-Flow Vectors | Planned |
+| 6.8 | [Cash-Flow Vectors](6.08-cash-flow-vectors.md) | Canonical / Complete |
 | 6.9 | Return Vectors | Planned |
 | 6.10 | Portfolio Weight Vectors | Planned |
 | 6.11 | Matrices and Financial Models | Planned |
@@ -22,9 +22,9 @@
 | 6.16 | Chapter Project — Vectorized Portfolio Calculator | Planned |
 | 6.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 6.1–6.7 complete (7/17 sections).  
+**Canonical manuscript progress:** 6.1–6.8 complete (8/17 sections).  
 **Chapter status:** In Progress.  
-**Next:** 6.8 — Cash-Flow Vectors.
+**Next:** 6.9 — Return Vectors.
 
 ## Publication Policy
 
