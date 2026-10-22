@@ -91,9 +91,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.2 — Importing Modules](chapter-05/5.02-importing-modules.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.2 complete (2/13 sections).  
+- [5.3 — The Python Standard Library](chapter-05/5.03-the-python-standard-library.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.3 complete (3/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.3 — The Python Standard Library.
+**Next:** 5.4 — Creating Financial Utility Modules.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
