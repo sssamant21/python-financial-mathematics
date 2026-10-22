@@ -36,6 +36,6 @@ Each canonical section should retain its verified references so source provenanc
 
 ## Current Work
 
-Book 1, Chapters 1–4 have complete canonical manuscripts and companion solutions. Chapter 4 includes Sections 4.1–4.14, the Portfolio Holdings Manager project, and answers to all 20 chapter-wide exercises. **Chapter 4: 14/14 sections complete.** Next: **5.1 — Python Modules**.
+Book 1, Chapters 1–4 have complete canonical manuscripts and companion solutions. Chapter 4 includes Sections 4.1–4.14, the Portfolio Holdings Manager project, and answers to all 20 chapter-wide exercises. **Chapter 4: 14/14 sections complete.** Chapter 5 has **5.1 complete (1/13 sections)**. Next: **5.2 — Importing Modules**.
 
 See the [Book 1 progress index](books/book-01-python-foundations-for-financial-mathematics/README.md) and [locked Master TOC v1.0](books/book-01-python-foundations-for-financial-mathematics/MASTER-TOC.md).
