@@ -69,9 +69,11 @@ Current canonical progress:
 
 - [4.10 — Representing Securities and Portfolios](chapter-04/4.10-representing-securities-and-portfolios.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.10 complete (10/14 sections).  
+- [4.11 — Mutable vs. Immutable Data](chapter-04/4.11-mutable-vs-immutable-data.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.11 complete (11/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.11 — Mutable vs. Immutable Data.
+**Next:** 4.12 — Choosing Appropriate Data Structures.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
