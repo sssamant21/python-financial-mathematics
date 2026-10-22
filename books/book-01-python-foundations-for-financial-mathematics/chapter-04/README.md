@@ -10,7 +10,7 @@
 | 4.4 | [Dictionaries](4.04-dictionaries.md) | Canonical / Complete |
 | 4.5 | [Sets](4.05-sets.md) | Canonical / Complete |
 | 4.6 | [Nested Financial Structures](4.06-nested-financial-structures.md) | Canonical / Complete |
-| 4.7 | List and Dictionary Comprehensions | Planned |
+| 4.7 | [List and Dictionary Comprehensions](4.07-list-and-dictionary-comprehensions.md) | Canonical / Complete |
 | 4.8 | Sorting and Filtering Financial Records | Planned |
 | 4.9 | Representing Cash-Flow Schedules | Planned |
 | 4.10 | Representing Securities and Portfolios | Planned |
@@ -19,9 +19,9 @@
 | 4.13 | Chapter Project — Portfolio Holdings Manager | Planned |
 | 4.14 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 4.1–4.6 complete (6/14 sections).  
+**Canonical manuscript progress:** 4.1–4.7 complete (7/14 sections).  
 **Chapter status:** In Progress.  
-**Next:** 4.7 — List and Dictionary Comprehensions.
+**Next:** 4.8 — Sorting and Filtering Financial Records.
 
 ## Publication Policy
 
