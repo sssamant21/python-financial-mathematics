@@ -36,4 +36,6 @@ Each canonical section should retain its verified references so source provenanc
 
 ## Current Work
 
-Book 1, Chapter 1 is underway. Sections 1.1–1.4 have progressed through the editorial workflow and will be added as canonical manuscripts with verified references retained.
+Book 1, Chapters 1 and 2 have complete canonical manuscripts and companion solutions. Chapter 3 is in progress, with Sections 3.1–3.4 complete. Next: **3.5 — Default and Keyword Arguments**.
+
+See the [Book 1 progress index](books/book-01-python-foundations-for-financial-mathematics/README.md) and [locked Master TOC v1.0](books/book-01-python-foundations-for-financial-mathematics/MASTER-TOC.md).
