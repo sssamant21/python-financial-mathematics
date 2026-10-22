@@ -172,9 +172,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.3 — `DataFrame`](chapter-07/7.03-dataframe.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.3 complete (3/18 sections).  
+- [7.4 — Indexing and Selection](chapter-07/7.04-indexing-and-selection.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.4 complete (4/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.4 — Indexing and Selection.
+**Next:** 7.5 — Reading Financial Data.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
