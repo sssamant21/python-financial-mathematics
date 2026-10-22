@@ -111,9 +111,13 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.12 — Chapter Project — Reusable Financial Python Package](chapter-05/5.12-chapter-project-reusable-financial-python-package.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.12 complete (12/13 sections).  
-**Chapter 5 status:** In Progress.  
-**Next:** 5.13 — Exercises and Applied Problems.
+- [5.13 — Exercises and Applied Problems](chapter-05/5.13-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.13 complete (13/13 sections).  
+**Chapter 5 solutions:** [Canonical / Complete](chapter-05/solutions/5.13-solutions-and-reference-implementations.md).  
+**Chapter 5 publication set:** Manuscript + Solutions — Canonical / Complete.  
+**Chapter 5 status:** Canonical / Complete.  
+**Next:** 6.1 — Why NumPy?
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
