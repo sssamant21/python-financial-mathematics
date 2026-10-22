@@ -7,7 +7,7 @@
 | 5.1 | [Python Modules](5.01-python-modules.md) | Canonical / Complete |
 | 5.2 | [Importing Modules](5.02-importing-modules.md) | Canonical / Complete |
 | 5.3 | [The Python Standard Library](5.03-the-python-standard-library.md) | Canonical / Complete |
-| 5.4 | Creating Financial Utility Modules | Planned |
+| 5.4 | [Creating Financial Utility Modules](5.04-creating-financial-utility-modules.md) | Canonical / Complete |
 | 5.5 | Python Packages | Planned |
 | 5.6 | `pip` and Dependency Management | Planned |
 | 5.7 | Virtual Environments | Planned |
@@ -18,9 +18,9 @@
 | 5.12 | Chapter Project — Reusable Financial Python Package | Planned |
 | 5.13 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 5.1–5.3 complete (3/13 sections).  
+**Canonical manuscript progress:** 5.1–5.4 complete (4/13 sections).  
 **Chapter status:** In Progress.  
-**Next:** 5.4 — Creating Financial Utility Modules.
+**Next:** 5.5 — Python Packages.
 
 ## Publication Policy
 
