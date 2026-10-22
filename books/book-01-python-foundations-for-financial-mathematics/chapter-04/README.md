@@ -7,7 +7,7 @@
 | 4.1 | [Financial Data as Structured Information](4.01-financial-data-as-structured-information.md) | Canonical / Complete |
 | 4.2 | [Lists](4.02-lists.md) | Canonical / Complete |
 | 4.3 | [Tuples](4.03-tuples.md) | Canonical / Complete |
-| 4.4 | Dictionaries | Planned |
+| 4.4 | [Dictionaries](4.04-dictionaries.md) | Canonical / Complete |
 | 4.5 | Sets | Planned |
 | 4.6 | Nested Financial Structures | Planned |
 | 4.7 | List and Dictionary Comprehensions | Planned |
@@ -19,9 +19,9 @@
 | 4.13 | Chapter Project — Portfolio Holdings Manager | Planned |
 | 4.14 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 4.1–4.3 complete (3/14 sections).  
+**Canonical manuscript progress:** 4.1–4.4 complete (4/14 sections).  
 **Chapter status:** In Progress.  
-**Next:** 4.4 — Dictionaries.
+**Next:** 4.5 — Sets.
 
 ## Publication Policy
 
