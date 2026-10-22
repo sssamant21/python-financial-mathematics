@@ -107,9 +107,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.10 — Configuration and Environment Separation](chapter-05/5.10-configuration-and-environment-separation.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.10 complete (10/13 sections).  
+- [5.11 — Reproducible Financial Research](chapter-05/5.11-reproducible-financial-research.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.11 complete (11/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.11 — Reproducible Financial Research.
+**Next:** 5.12 — Chapter Project — Reusable Financial Python Package.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
