@@ -5,7 +5,7 @@
 | Section | Title | Status |
 |---|---|---|
 | 6.1 | [Why NumPy?](6.01-why-numpy.md) | Canonical / Complete |
-| 6.2 | NumPy Arrays | Planned |
+| 6.2 | [NumPy Arrays](6.02-numpy-arrays.md) | Canonical / Complete |
 | 6.3 | Array Creation and Data Types | Planned |
 | 6.4 | Indexing and Slicing | Planned |
 | 6.5 | Vectorized Financial Calculations | Planned |
@@ -22,9 +22,9 @@
 | 6.16 | Chapter Project — Vectorized Portfolio Calculator | Planned |
 | 6.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 6.1 complete (1/17 sections).  
+**Canonical manuscript progress:** 6.1–6.2 complete (2/17 sections).  
 **Chapter status:** In Progress.  
-**Next:** 6.2 — NumPy Arrays.
+**Next:** 6.3 — Array Creation and Data Types.
 
 ## Publication Policy
 
