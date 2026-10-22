@@ -103,9 +103,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.8 — Dependency Pinning and Reproducibility](chapter-05/5.08-dependency-pinning-and-reproducibility.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.8 complete (8/13 sections).  
+- [5.9 — Project Directory Structure](chapter-05/5.09-project-directory-structure.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.9 complete (9/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.9 — Project Directory Structure.
+**Next:** 5.10 — Configuration and Environment Separation.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
