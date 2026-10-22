@@ -36,13 +36,13 @@ Current canonical progress:
 - 3.8 — Docstrings and Financial Assumptions — Revised Final / Canonical Edition
 - 3.9 — Designing Present- and Future-Value Functions — Revised Final / Canonical Edition
 - 3.10 — Reusable Rate and Discounting Functions — Revised Final / Canonical Edition
-- 3.11 — Function Composition — Planned
+- 3.11 — Function Composition — Revised Final / Canonical Edition
 - 3.12 — Pure Functions and Reproducibility — Planned
 - 3.13 — Testing Financial Functions — Planned
 - 3.14 — Chapter Project — Financial Mathematics Function Library — Planned
 - 3.15 — Exercises and Applied Problems — Planned
 
-**Canonical manuscript progress:** 3.1–3.10 complete.  
+**Canonical manuscript progress:** 3.1–3.11 complete.  
 **Chapter 3 status:** In Progress.
 
 ## Editorial Requirement
