@@ -15,12 +15,12 @@
 | 5.9 | [Project Directory Structure](5.09-project-directory-structure.md) | Canonical / Complete |
 | 5.10 | [Configuration and Environment Separation](5.10-configuration-and-environment-separation.md) | Canonical / Complete |
 | 5.11 | [Reproducible Financial Research](5.11-reproducible-financial-research.md) | Canonical / Complete |
-| 5.12 | Chapter Project — Reusable Financial Python Package | Planned |
+| 5.12 | [Chapter Project — Reusable Financial Python Package](5.12-chapter-project-reusable-financial-python-package.md) | Canonical / Complete |
 | 5.13 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 5.1–5.11 complete (11/13 sections).  
+**Canonical manuscript progress:** 5.1–5.12 complete (12/13 sections).  
 **Chapter status:** In Progress.  
-**Next:** 5.12 — Chapter Project — Reusable Financial Python Package.
+**Next:** 5.13 — Exercises and Applied Problems.
 
 ## Publication Policy
 
