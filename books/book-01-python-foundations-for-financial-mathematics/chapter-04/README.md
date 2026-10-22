@@ -12,16 +12,16 @@
 | 4.6 | [Nested Financial Structures](4.06-nested-financial-structures.md) | Canonical / Complete |
 | 4.7 | [List and Dictionary Comprehensions](4.07-list-and-dictionary-comprehensions.md) | Canonical / Complete |
 | 4.8 | [Sorting and Filtering Financial Records](4.08-sorting-and-filtering-financial-records.md) | Canonical / Complete |
-| 4.9 | Representing Cash-Flow Schedules | Planned |
+| 4.9 | [Representing Cash-Flow Schedules](4.09-representing-cash-flow-schedules.md) | Canonical / Complete |
 | 4.10 | Representing Securities and Portfolios | Planned |
 | 4.11 | Mutable vs. Immutable Data | Planned |
 | 4.12 | Choosing Appropriate Data Structures | Planned |
 | 4.13 | Chapter Project — Portfolio Holdings Manager | Planned |
 | 4.14 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 4.1–4.8 complete (8/14 sections).  
+**Canonical manuscript progress:** 4.1–4.9 complete (9/14 sections).  
 **Chapter status:** In Progress.  
-**Next:** 4.9 — Representing Cash-Flow Schedules.
+**Next:** 4.10 — Representing Securities and Portfolios.
 
 ## Publication Policy
 
