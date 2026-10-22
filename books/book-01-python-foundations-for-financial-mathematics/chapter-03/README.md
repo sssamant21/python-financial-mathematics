@@ -18,10 +18,14 @@
 | 3.12 | [Pure Functions and Reproducibility](3.12-pure-functions-and-reproducibility.md) | Canonical / Complete |
 | 3.13 | [Testing Financial Functions](3.13-testing-financial-functions.md) | Canonical / Complete |
 | 3.14 | [Chapter Project — Financial Mathematics Function Library](3.14-chapter-project-financial-mathematics-function-library.md) | Canonical / Complete |
-| 3.15 | Exercises and Applied Problems | Planned |
+| 3.15 | [Exercises and Applied Problems](3.15-exercises-and-applied-problems.md) | Canonical / Complete |
 
-**Canonical manuscript progress:** 3.1–3.14 complete.  
-**Chapter status:** In Progress.
+**Canonical manuscript progress:** 3.1–3.15 complete.  
+**Solutions:** [Canonical / Complete](solutions/3.15-solutions-and-reference-implementations.md).  
+**Publication set:** Manuscript + Solutions — Canonical / Complete.  
+**Chapter status:** Canonical / Complete.
+
+**Next:** Chapter 4, Section 4.1 — Financial Data as Structured Information.
 
 ## Publication Policy
 
