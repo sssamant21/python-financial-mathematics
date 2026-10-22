@@ -47,7 +47,15 @@ Current canonical progress:
 **Chapter 3 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 3 status:** Canonical / Complete.
 
-**Next:** 4.1 — Financial Data as Structured Information.
+## Chapter 4 — Python Data Structures for Financial Information
+
+- [4.1 — Financial Data as Structured Information](chapter-04/4.01-financial-data-as-structured-information.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1 complete (1/14 sections).  
+**Chapter 4 status:** In Progress.  
+**Next:** 4.2 — Lists.
+
+See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
 ## Editorial Requirement
 
