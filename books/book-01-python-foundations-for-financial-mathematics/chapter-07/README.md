@@ -5,7 +5,7 @@
 | Section | Title | Status |
 |---|---|---|
 | 7.1 | [Why pandas?](7.01-why-pandas.md) | Canonical / Complete |
-| 7.2 | `Series` | Planned |
+| 7.2 | [`Series`](7.02-series.md) | Canonical / Complete |
 | 7.3 | `DataFrame` | Planned |
 | 7.4 | Indexing and Selection | Planned |
 | 7.5 | Reading Financial Data | Planned |
@@ -23,9 +23,9 @@
 | 7.17 | Chapter Project — Financial Time-Series Analyzer | Planned |
 | 7.18 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 7.1 complete (1/18 sections).  
+**Canonical manuscript progress:** 7.1–7.2 complete (2/18 sections).  
 **Chapter status:** In Progress.  
-**Next:** 7.2 — `Series`.
+**Next:** 7.3 — `DataFrame`.
 
 ## Publication Policy
 
