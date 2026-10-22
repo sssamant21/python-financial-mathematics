@@ -36,6 +36,6 @@ Each canonical section should retain its verified references so source provenanc
 
 ## Current Work
 
-Book 1, Chapters 1–3 have complete canonical manuscripts and companion solutions. Chapter 3 includes Sections 3.1–3.15, its function-library project, and answers to all 20 chapter-wide exercises. Chapter 4 is in progress with **4.1–4.4 complete**. Next: **4.5 — Sets**.
+Book 1, Chapters 1–3 have complete canonical manuscripts and companion solutions. Chapter 3 includes Sections 3.1–3.15, its function-library project, and answers to all 20 chapter-wide exercises. Chapter 4 is in progress with **4.1–4.5 complete**. Next: **4.6 — Nested Financial Structures**.
 
 See the [Book 1 progress index](books/book-01-python-foundations-for-financial-mathematics/README.md) and [locked Master TOC v1.0](books/book-01-python-foundations-for-financial-mathematics/MASTER-TOC.md).
