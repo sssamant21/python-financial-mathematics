@@ -127,9 +127,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.2 — NumPy Arrays](chapter-06/6.02-numpy-arrays.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.2 complete (2/17 sections).  
+- [6.3 — Array Creation and Data Types](chapter-06/6.03-array-creation-and-data-types.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.3 complete (3/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.3 — Array Creation and Data Types.
+**Next:** 6.4 — Indexing and Slicing.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
