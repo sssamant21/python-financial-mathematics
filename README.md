@@ -36,6 +36,6 @@ Each canonical section should retain its verified references so source provenanc
 
 ## Current Work
 
-Book 1, Chapters 1–3 have complete canonical manuscripts and companion solutions. Chapter 3 includes Sections 3.1–3.15, its function-library project, and answers to all 20 chapter-wide exercises. Chapter 4 is in progress with **4.1–4.13 complete**. Next: **4.14 — Exercises and Applied Problems**.
+Book 1, Chapters 1–4 have complete canonical manuscripts and companion solutions. Chapter 4 includes Sections 4.1–4.14, the Portfolio Holdings Manager project, and answers to all 20 chapter-wide exercises. **Chapter 4: 14/14 sections complete.** Next: **5.1 — Python Modules**.
 
 See the [Book 1 progress index](books/book-01-python-foundations-for-financial-mathematics/README.md) and [locked Master TOC v1.0](books/book-01-python-foundations-for-financial-mathematics/MASTER-TOC.md).
