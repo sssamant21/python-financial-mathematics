@@ -101,9 +101,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.7 — Virtual Environments](chapter-05/5.07-virtual-environments.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.7 complete (7/13 sections).  
+- [5.8 — Dependency Pinning and Reproducibility](chapter-05/5.08-dependency-pinning-and-reproducibility.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.8 complete (8/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.8 — Dependency Pinning and Reproducibility.
+**Next:** 5.9 — Project Directory Structure.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
