@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 5.3 — The Python Standard Library.**
+**Next locked manuscript section: 5.4 — Creating Financial Utility Modules.**
