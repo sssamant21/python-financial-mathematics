@@ -10,7 +10,7 @@
 | 5.4 | [Creating Financial Utility Modules](5.04-creating-financial-utility-modules.md) | Canonical / Complete |
 | 5.5 | [Python Packages](5.05-python-packages.md) | Canonical / Complete |
 | 5.6 | [`pip` and Dependency Management](5.06-pip-and-dependency-management.md) | Canonical / Complete |
-| 5.7 | Virtual Environments | Planned |
+| 5.7 | [Virtual Environments](5.07-virtual-environments.md) | Canonical / Complete |
 | 5.8 | Dependency Pinning and Reproducibility | Planned |
 | 5.9 | Project Directory Structure | Planned |
 | 5.10 | Configuration and Environment Separation | Planned |
@@ -18,9 +18,9 @@
 | 5.12 | Chapter Project — Reusable Financial Python Package | Planned |
 | 5.13 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 5.1–5.6 complete (6/13 sections).  
+**Canonical manuscript progress:** 5.1–5.7 complete (7/13 sections).  
 **Chapter status:** In Progress.  
-**Next:** 5.7 — Virtual Environments.
+**Next:** 5.8 — Dependency Pinning and Reproducibility.
 
 ## Publication Policy
 
