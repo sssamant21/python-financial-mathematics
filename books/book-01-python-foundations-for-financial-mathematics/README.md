@@ -170,9 +170,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.2 — `Series`](chapter-07/7.02-series.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.2 complete (2/18 sections).  
+- [7.3 — `DataFrame`](chapter-07/7.03-dataframe.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.3 complete (3/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.3 — `DataFrame`.
+**Next:** 7.4 — Indexing and Selection.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
