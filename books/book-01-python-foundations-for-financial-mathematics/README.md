@@ -143,9 +143,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.10 — Portfolio Weight Vectors](chapter-06/6.10-portfolio-weight-vectors.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.10 complete (10/17 sections).  
+- [6.11 — Matrices and Financial Models](chapter-06/6.11-matrices-and-financial-models.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.11 complete (11/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.11 — Matrices and Financial Models.
+**Next:** 6.12 — Linear Algebra with NumPy.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
