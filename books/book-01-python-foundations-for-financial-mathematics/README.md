@@ -85,6 +85,16 @@ Current canonical progress:
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
+## Chapter 5 — Modules, Packages, Environments, and Reproducibility
+
+- [5.1 — Python Modules](chapter-05/5.01-python-modules.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1 complete (1/13 sections).  
+**Chapter 5 status:** In Progress.  
+**Next:** 5.2 — Importing Modules.
+
+See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
