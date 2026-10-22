@@ -97,9 +97,11 @@ See the [Chapter 4 progress index](chapter-04/README.md) for all planned section
 
 - [5.5 — Python Packages](chapter-05/5.05-python-packages.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 5.1–5.5 complete (5/13 sections).  
+- [5.6 — `pip` and Dependency Management](chapter-05/5.06-pip-and-dependency-management.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 5.1–5.6 complete (6/13 sections).  
 **Chapter 5 status:** In Progress.  
-**Next:** 5.6 — `pip` and Dependency Management.
+**Next:** 5.7 — Virtual Environments.
 
 See the [Chapter 5 progress index](chapter-05/README.md) for all planned sections.
 
