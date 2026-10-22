@@ -9,7 +9,7 @@
 | 6.3 | [Array Creation and Data Types](6.03-array-creation-and-data-types.md) | Canonical / Complete |
 | 6.4 | [Indexing and Slicing](6.04-indexing-and-slicing.md) | Canonical / Complete |
 | 6.5 | [Vectorized Financial Calculations](6.05-vectorized-financial-calculations.md) | Canonical / Complete |
-| 6.6 | Broadcasting | Planned |
+| 6.6 | [Broadcasting](6.06-broadcasting.md) | Canonical / Complete |
 | 6.7 | Aggregation and Statistical Operations | Planned |
 | 6.8 | Cash-Flow Vectors | Planned |
 | 6.9 | Return Vectors | Planned |
@@ -22,9 +22,9 @@
 | 6.16 | Chapter Project — Vectorized Portfolio Calculator | Planned |
 | 6.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 6.1–6.5 complete (5/17 sections).  
+**Canonical manuscript progress:** 6.1–6.6 complete (6/17 sections).  
 **Chapter status:** In Progress.  
-**Next:** 6.6 — Broadcasting.
+**Next:** 6.7 — Aggregation and Statistical Operations.
 
 ## Publication Policy
 
