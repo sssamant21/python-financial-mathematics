@@ -53,9 +53,11 @@ Current canonical progress:
 
 - [4.2 — Lists](chapter-04/4.02-lists.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.2 complete (2/14 sections).  
+- [4.3 — Tuples](chapter-04/4.03-tuples.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.3 complete (3/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.3 — Tuples.
+**Next:** 4.4 — Dictionaries.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
