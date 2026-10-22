@@ -20,12 +20,12 @@
 | 6.14 | [Numerical Precision and NumPy](6.14-numerical-precision-and-numpy.md) | Canonical / Complete |
 | 6.15 | [Performance: Python Loops vs. Vectorization](6.15-performance-python-loops-vs-vectorization.md) | Canonical / Complete |
 | 6.16 | [Chapter Project — Vectorized Portfolio Calculator](6.16-chapter-project-vectorized-portfolio-calculator.md) | Canonical / Complete |
-| 6.17 | Exercises and Applied Problems | Planned |
+| 6.17 | [Exercises and Applied Problems](6.17-exercises-and-applied-problems.md) | Canonical / Complete |
 
-**Canonical manuscript progress:** 6.1–6.16 complete (16/17 sections).  
-**Chapter status:** In Progress.  
-**Next:** 6.17 — Exercises and Applied Problems.
+**Canonical manuscript progress:** 6.1–6.17 complete (17/17 sections).  
+**Chapter status:** Complete, with twenty chapter-wide exercises and [companion solutions](6.17-solutions-and-reference-implementations.md).  
+**Next:** 7.1 — Why pandas?
 
 ## Publication Policy
 
-Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Chapter-wide exercises and companion solutions are scheduled for Section 6.17.
+Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Section 6.17 includes twenty chapter-wide exercises and companion solutions with twenty passing executable reference checks.
