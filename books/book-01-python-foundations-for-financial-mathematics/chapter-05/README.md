@@ -16,12 +16,14 @@
 | 5.10 | [Configuration and Environment Separation](5.10-configuration-and-environment-separation.md) | Canonical / Complete |
 | 5.11 | [Reproducible Financial Research](5.11-reproducible-financial-research.md) | Canonical / Complete |
 | 5.12 | [Chapter Project — Reusable Financial Python Package](5.12-chapter-project-reusable-financial-python-package.md) | Canonical / Complete |
-| 5.13 | Exercises and Applied Problems | Planned |
+| 5.13 | [Exercises and Applied Problems](5.13-exercises-and-applied-problems.md) | Canonical / Complete |
 
-**Canonical manuscript progress:** 5.1–5.12 complete (12/13 sections).  
-**Chapter status:** In Progress.  
-**Next:** 5.13 — Exercises and Applied Problems.
+**Canonical manuscript progress:** 5.1–5.13 complete (13/13 sections).  
+**Chapter solutions:** [Canonical / Complete](solutions/5.13-solutions-and-reference-implementations.md).  
+**Publication set:** Manuscript + Solutions — Canonical / Complete.  
+**Chapter status:** Canonical / Complete.  
+**Next:** 6.1 — Why NumPy?
 
 ## Publication Policy
 
-Follow the locked Book 1 Master TOC v1.0 and the repository editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified references and original examples in canonical manuscripts. Chapter-wide exercises and companion solutions are scheduled for Section 5.13.
+Follow the locked Book 1 Master TOC v1.0 and the repository editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified references and original examples in canonical manuscripts. Section 5.13 and its companion provide twenty chapter-wide problems with matched solutions and a tested installed-package extension.
