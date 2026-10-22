@@ -51,9 +51,11 @@ Current canonical progress:
 
 - [4.1 — Financial Data as Structured Information](chapter-04/4.01-financial-data-as-structured-information.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1 complete (1/14 sections).  
+- [4.2 — Lists](chapter-04/4.02-lists.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.2 complete (2/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.2 — Lists.
+**Next:** 4.3 — Tuples.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
