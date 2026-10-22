@@ -14,13 +14,13 @@
 | 5.8 | [Dependency Pinning and Reproducibility](5.08-dependency-pinning-and-reproducibility.md) | Canonical / Complete |
 | 5.9 | [Project Directory Structure](5.09-project-directory-structure.md) | Canonical / Complete |
 | 5.10 | [Configuration and Environment Separation](5.10-configuration-and-environment-separation.md) | Canonical / Complete |
-| 5.11 | Reproducible Financial Research | Planned |
+| 5.11 | [Reproducible Financial Research](5.11-reproducible-financial-research.md) | Canonical / Complete |
 | 5.12 | Chapter Project — Reusable Financial Python Package | Planned |
 | 5.13 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 5.1–5.10 complete (10/13 sections).  
+**Canonical manuscript progress:** 5.1–5.11 complete (11/13 sections).  
 **Chapter status:** In Progress.  
-**Next:** 5.11 — Reproducible Financial Research.
+**Next:** 5.12 — Chapter Project — Reusable Financial Python Package.
 
 ## Publication Policy
 
