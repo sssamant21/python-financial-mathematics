@@ -147,9 +147,11 @@ See the [Chapter 5 progress index](chapter-05/README.md) for all planned section
 
 - [6.12 — Linear Algebra with NumPy](chapter-06/6.12-linear-algebra-with-numpy.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 6.1–6.12 complete (12/17 sections).  
+- [6.13 — Random Number Generation](chapter-06/6.13-random-number-generation.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 6.1–6.13 complete (13/17 sections).  
 **Chapter 6 status:** In Progress.  
-**Next:** 6.13 — Random Number Generation.
+**Next:** 6.14 — Numerical Precision and NumPy.
 
 See the [Chapter 6 progress index](chapter-06/README.md) for all planned sections.
 
