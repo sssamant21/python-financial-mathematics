@@ -73,9 +73,11 @@ Current canonical progress:
 
 - [4.12 — Choosing Appropriate Data Structures](chapter-04/4.12-choosing-appropriate-data-structures.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 4.1–4.12 complete (12/14 sections).  
+- [4.13 — Chapter Project — Portfolio Holdings Manager](chapter-04/4.13-chapter-project-portfolio-holdings-manager.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 4.1–4.13 complete (13/14 sections).  
 **Chapter 4 status:** In Progress.  
-**Next:** 4.13 — Chapter Project — Portfolio Holdings Manager.
+**Next:** 4.14 — Exercises and Applied Problems.
 
 See the [Chapter 4 progress index](chapter-04/README.md) for all planned sections.
 
