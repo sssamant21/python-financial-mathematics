@@ -39,10 +39,10 @@ Current canonical progress:
 - 3.11 — Function Composition — Revised Final / Canonical Edition
 - 3.12 — Pure Functions and Reproducibility — Revised Final / Canonical Edition
 - 3.13 — Testing Financial Functions — Revised Final / Canonical Edition
-- 3.14 — Chapter Project — Financial Mathematics Function Library — Planned
+- 3.14 — Chapter Project — Financial Mathematics Function Library — Revised Final / Canonical Edition
 - 3.15 — Exercises and Applied Problems — Planned
 
-**Canonical manuscript progress:** 3.1–3.13 complete.  
+**Canonical manuscript progress:** 3.1–3.14 complete.  
 **Chapter 3 status:** In Progress.
 
 ## Editorial Requirement
