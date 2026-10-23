@@ -5,7 +5,7 @@
 | Section | Title | Status |
 |---|---|---|
 | 8.1 | [Why Visualization Matters](8.01-why-visualization-matters.md) | Canonical / Complete |
-| 8.2 | Matplotlib Fundamentals | Planned |
+| 8.2 | [Matplotlib Fundamentals](8.02-matplotlib-fundamentals.md) | Canonical / Complete |
 | 8.3 | Line Charts | Planned |
 | 8.4 | Financial Time-Series Charts | Planned |
 | 8.5 | Return Charts | Planned |
@@ -19,10 +19,10 @@
 | 8.13 | Chapter Project — Financial Analytics Dashboard | Planned |
 | 8.14 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 8.1 complete (1/14 sections).  
+**Canonical manuscript progress:** 8.1–8.2 complete (2/14 sections).  
 **Chapter status:** In progress.  
-**Next:** 8.2 — Matplotlib Fundamentals.
+**Next:** 8.3 — Line Charts.
 
 ## Publication Policy
 
-Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Section 8.1 includes a complete plotting lab with eight passing reference tests and a visually inspected PNG export.
+Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Section 8.2 adds a standalone Matplotlib objects and export lab with eight passing tests, PNG visual inspection, and SVG structure validation. Section 8.1 includes a complete plotting lab with eight passing reference tests and a visually inspected PNG export.
