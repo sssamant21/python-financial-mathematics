@@ -192,9 +192,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.13 — Resampling Time Series](chapter-07/7.13-resampling-time-series.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.13 complete (13/18 sections).  
+- [7.14 — Rolling and Expanding Calculations](chapter-07/7.14-rolling-and-expanding-calculations.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.14 complete (14/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.14 — Rolling and Expanding Calculations.
+**Next:** 7.15 — Price-to-Return Transformation.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
