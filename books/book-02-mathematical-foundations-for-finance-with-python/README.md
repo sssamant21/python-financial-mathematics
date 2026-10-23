@@ -9,21 +9,21 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 0/215.  
+**Manuscript sections published:** 1/215 (Section 1.1 — Draft; examples validated).  
 **Canonical chapters:** 0/21.  
-**Current status:** TOC established; manuscript writing has not started in the repository.
+**Current status:** [Section 1.1 — Why Mathematical Foundations Matter in Finance](chapter-01/1.01-why-mathematical-foundations-matter-in-finance.md) published as Draft. [Chapter 01 index](chapter-01/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
 Complete, validate, and push one numbered section before proceeding to the next. Finish all sections, the project, exercises, and companion solutions for Chapter 01 before beginning Chapter 02. Update progress indexes with actual publication and review status; planned content must not be counted as completed.
 
-**Next:** 1.1 — Why Mathematical Foundations Matter in Finance.
+**Next:** 1.2 — Mathematical Objects and Number Systems.
 
 ## Chapter Plan
 
 | Chapter | Title | Status |
 |---|---|---|
-| 01 | Mathematical Language, Notation, and Reasoning | Planned |
+| 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 1/15 sections published as Draft |
 | 02 | Algebra and Equations for Financial Models | Planned |
 | 03 | Functions and Financial Relationships | Planned |
 | 04 | Exponential and Logarithmic Functions | Planned |
@@ -52,3 +52,4 @@ Complete, validate, and push one numbered section before proceeding to the next.
 Keep verified references with canonical artifacts. Use original explanations, examples, exercises, and code. Executable validation does not replace mathematical, source, production, and copyright review.
 
 See the [editorial workflow](../../docs/EDITORIAL-WORKFLOW.md) and [source and copyright policy](../../references/SOURCE-AND-COPYRIGHT-POLICY.md).
+

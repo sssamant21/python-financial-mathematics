@@ -1,0 +1,42 @@
+# Chapter 1 — Mathematical Language, Notation, and Reasoning
+
+## Manuscript Progress
+
+| Section | Title | Status |
+|---|---|---|
+| 1.1 | [Why Mathematical Foundations Matter in Finance](1.01-why-mathematical-foundations-matter-in-finance.md) | Draft — examples validated |
+| 1.2 | Mathematical Objects and Number Systems | Planned |
+| 1.3 | Variables, Constants, and Parameters | Planned |
+| 1.4 | Sets, Intervals, and Financial Domains | Planned |
+| 1.5 | Mathematical Notation and Indexed Quantities | Planned |
+| 1.6 | Expressions, Equations, and Identities | Planned |
+| 1.7 | Inequalities and Financial Constraints | Planned |
+| 1.8 | Logic, Assumptions, and Implications | Planned |
+| 1.9 | Definitions, Propositions, and Counterexamples | Planned |
+| 1.10 | Units, Dimensions, and Financial Conventions | Planned |
+| 1.11 | Translating Financial Questions into Mathematics | Planned |
+| 1.12 | Translating Mathematical Expressions into Python | Planned |
+| 1.13 | Checking Mathematical and Computational Results | Planned |
+| 1.14 | Chapter Project — Financial Formula Validation Toolkit | Planned |
+| 1.15 | Exercises and Applied Problems | Planned |
+
+**Published manuscript sections:** 1/15.  
+**Canonical sections:** 0/15; canonical editorial review pending.  
+**Next:** 1.2 — Mathematical Objects and Number Systems.
+
+## Section 1.1 Companion Material
+
+- [Executable example](code/section_1_01.py)
+- [Reference checks](code/check_section_1_01.py)
+- [Runtime evidence](validation/section-1.01.json)
+
+The example uses only the Python standard library. Run commands are included in the manuscript. The recorded execution used Python 3.12 on Linux; Windows commands are provided but have not been executed on Windows in this session.
+
+## Writing and Editorial Workflow
+
+Complete, validate, and push one section at a time. Finish this chapter's project, exercises, and companion solutions before beginning Chapter 02.
+
+Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
+
+[Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
+

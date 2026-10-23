@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Planned — no Book 02 manuscript sections are included in this TOC publication.
+**Manuscript status:** Section 1.1 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -40,13 +40,13 @@ Retain references in each substantive section from the Draft stage. Prefer offic
 - Chapter 01 solutions: `chapter-01/solutions/1.15-solutions-and-reference-implementations.md`.
 - Chapter code and evidence should accompany the relevant manuscript when they are created.
 
-The following entries are plain text because their manuscript files have not yet been published.
+Published sections link to their manuscript files; planned sections remain plain text.
 
 ---
 
 # Chapter 1 — Mathematical Language, Notation, and Reasoning
 
-1.1 — Why Mathematical Foundations Matter in Finance  
+1.1 — [Why Mathematical Foundations Matter in Finance](chapter-01/1.01-why-mathematical-foundations-matter-in-finance.md)  
 1.2 — Mathematical Objects and Number Systems  
 1.3 — Variables, Constants, and Parameters  
 1.4 — Sets, Intervals, and Financial Domains  
@@ -332,4 +332,5 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 1.1 — Why Mathematical Foundations Matter in Finance.
+**Next manuscript section:** 1.2 — Mathematical Objects and Number Systems.
+

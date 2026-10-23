@@ -1,0 +1,40 @@
+{
+  "section": "1.1",
+  "title": "Why Mathematical Foundations Matter in Finance",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "known_growth_cases": 7,
+    "inverse_and_recurrence_scenarios": 36,
+    "invalid_input_and_range_cases": 13,
+    "worked_exercise_checks": "PASS",
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_01.py",
+      "return_code": 0,
+      "stdout": "Compound value: 1102.50\nSimple-interest value: 1100.00\nRecovered principal: 1000.00\nFee at year end: 1040.00\nFee before growth: 1039.50",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_01.py",
+      "return_code": 0,
+      "stdout": "PASS: 7 known growth cases; 36 inverse/recurrence scenarios; 13 rejection/range cases; fee, discount, and exercise checks",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.01-why-mathematical-foundations-matter-in-finance.md": "e1038fe41545bc3342e7a2822e5510d06cc38d2288d06900be3e968661444979",
+    "section_1_01.py": "561ddfe631db45906a5e9db7f108aba6adca2ff032dda5b642493686adf40201",
+    "check_section_1_01.py": "831230d34568b00f5475041902b6b7fc70af9e9016acb9367671992988c2f72c"
+  },
+  "scope_limits": [
+    "Deterministic examples only; no real contract or market validation.",
+    "Canonical editorial review pending; runtime success is not a canonical designation.",
+    "Direct power evaluation is introductory; extreme/tiny-input numerical methods are developed later."
+  ]
+}
