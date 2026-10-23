@@ -190,9 +190,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.12 — Joining and Merging Financial Data](chapter-07/7.12-joining-and-merging-financial-data.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.12 complete (12/18 sections).  
+- [7.13 — Resampling Time Series](chapter-07/7.13-resampling-time-series.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.13 complete (13/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.13 — Resampling Time Series.
+**Next:** 7.14 — Rolling and Expanding Calculations.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
