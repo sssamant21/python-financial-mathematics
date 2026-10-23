@@ -1,0 +1,40 @@
+{
+  "section": "1.9",
+  "title": "Definitions, Propositions, and Counterexamples",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "exact_pair_cases": 54,
+    "rejected_calls": 16,
+    "search_cases": 18,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_09.py",
+      "return_code": 0,
+      "stdout": "Amount 100: total=6, effective=3/50\nAmount 200: total=7, effective=7/200\nStrict claim witness: {'a': Fraction(100, 1), 'b': Fraction(200, 1), 'effective_a': Fraction(1, 100), 'effective_b': Fraction(1, 100)}\nNon-strict claim witness: None\nPairs checked per search: 3\nScope: supplied finite candidate pairs only",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_09.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"exact_pair_cases\": 54, \"rejected_calls\": 16, \"search_cases\": 18}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.09-definitions-propositions-and-counterexamples.md": "993a2de40965f15f46dd5fc481d17a35caf339d79244ec95064670dfb999fe09",
+    "section_1_09.py": "3047c73e2e661a9fa0c4ebb6705120e4ceea1e5471a354ef29c93fbf66376313",
+    "check_section_1_09.py": "499fc8775a2d032ccf8504bf1878d4285966eec0aecda5e1ceb1b539104d067f"
+  },
+  "scope_limits": [
+    "Affine fee schedule with fixed nonnegative parameters and positive transaction amounts.",
+    "Exact rational computations; no rounding, tiers, or contractual transaction increments.",
+    "Finite searches do not prove statements over untested real inputs; symbolic proof provided separately.",
+    "Canonical editorial review pending."
+  ]
+}
