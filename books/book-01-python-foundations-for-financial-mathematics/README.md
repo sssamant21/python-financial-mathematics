@@ -215,9 +215,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.2 — Matplotlib Fundamentals](chapter-08/8.02-matplotlib-fundamentals.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.2 complete (2/14 sections).  
+- [8.3 — Line Charts](chapter-08/8.03-line-charts.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.3 complete (3/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.3 — Line Charts.
+**Next:** 8.4 — Financial Time-Series Charts.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
