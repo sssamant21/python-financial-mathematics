@@ -1,0 +1,28 @@
+# Chapter 8 — Visualization for Financial Mathematics
+
+## Manuscript Status
+
+| Section | Title | Status |
+|---|---|---|
+| 8.1 | [Why Visualization Matters](8.01-why-visualization-matters.md) | Canonical / Complete |
+| 8.2 | Matplotlib Fundamentals | Planned |
+| 8.3 | Line Charts | Planned |
+| 8.4 | Financial Time-Series Charts | Planned |
+| 8.5 | Return Charts | Planned |
+| 8.6 | Histograms and Return Distributions | Planned |
+| 8.7 | Scatter Plots and Relationships | Planned |
+| 8.8 | Portfolio Visualizations | Planned |
+| 8.9 | Payoff Diagrams | Planned |
+| 8.10 | Interest and Investment Growth Curves | Planned |
+| 8.11 | Sensitivity and Scenario Charts | Planned |
+| 8.12 | Effective Financial Chart Design | Planned |
+| 8.13 | Chapter Project — Financial Analytics Dashboard | Planned |
+| 8.14 | Exercises and Applied Problems | Planned |
+
+**Canonical manuscript progress:** 8.1 complete (1/14 sections).  
+**Chapter status:** In progress.  
+**Next:** 8.2 — Matplotlib Fundamentals.
+
+## Publication Policy
+
+Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Section 8.1 includes a complete plotting lab with eight passing reference tests and a visually inspected PNG export.
