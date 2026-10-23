@@ -9,21 +9,21 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 2/215 (Sections 1.1–1.2 — Draft; examples validated).  
+**Manuscript sections published:** 3/215 (Sections 1.1–1.3 — Draft; examples validated).  
 **Canonical chapters:** 0/21.  
-**Current status:** Sections 1.1–1.2 published as Draft. Latest: [1.2 — Mathematical Objects and Number Systems](chapter-01/1.02-mathematical-objects-and-number-systems.md). [Chapter 01 index](chapter-01/README.md) tracks the remaining sections.
+**Current status:** Sections 1.1–1.3 published as Draft. Latest: [1.3 — Variables, Constants, and Parameters](chapter-01/1.03-variables-constants-and-parameters.md). [Chapter 01 index](chapter-01/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
 Complete, validate, and push one numbered section before proceeding to the next. Finish all sections, the project, exercises, and companion solutions for Chapter 01 before beginning Chapter 02. Update progress indexes with actual publication and review status; planned content must not be counted as completed.
 
-**Next:** 1.3 — Variables, Constants, and Parameters.
+**Next:** 1.4 — Sets, Intervals, and Financial Domains.
 
 ## Chapter Plan
 
 | Chapter | Title | Status |
 |---|---|---|
-| 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 2/15 sections published as Draft |
+| 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 3/15 sections published as Draft |
 | 02 | Algebra and Equations for Financial Models | Planned |
 | 03 | Functions and Financial Relationships | Planned |
 | 04 | Exponential and Logarithmic Functions | Planned |

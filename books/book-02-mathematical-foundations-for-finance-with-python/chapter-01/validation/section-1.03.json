@@ -1,0 +1,45 @@
+{
+  "section": "1.3",
+  "title": "Variables, Constants, and Parameters",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "exact_finite_change_scenarios": 36,
+    "invalid_input_cases": 12,
+    "recurrence_and_scaling_scenarios": 64,
+    "reference_checks": 22,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_03.py",
+      "return_code": 0,
+      "stdout": "Rate 0.00%: 1000.00\nRate 3.00%: 1060.90\nRate 5.00%: 1102.50\n100-basis-point scenario change: 21.10\nImplied one-year effective rate: 10.00%",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_03.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"exact_finite_change_scenarios\": 36, \"invalid_input_cases\": 12, \"recurrence_and_scaling_scenarios\": 64, \"reference_checks\": 22}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.03-variables-constants-and-parameters.md": "f73c8ef5dcb13bd010a9791e446b04745916952b2c90ff0773197af989a599f5",
+    "section_1_03.py": "5db4d265d137496f8eb8a08dfb888e32215e00e6ce894863b82d55b08064e094",
+    "check_section_1_03.py": "a53ab0f9bf9280f914842e8f06f0c74546b595f19aa5906293be514f57254dfb"
+  },
+  "dependency": {
+    "repository_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-01/code/section_1_01.py",
+    "sha256": "561ddfe631db45906a5e9db7f108aba6adca2ff032dda5b642493686adf40201"
+  },
+  "scope_limits": [
+    "Deterministic scenario model; no market or contractual validation.",
+    "Canonical editorial review pending.",
+    "Empty rate iterables perform no row-level input validation.",
+    "The numerical kernel retains Section 1.1 whole-period and finite-range restrictions."
+  ]
+}

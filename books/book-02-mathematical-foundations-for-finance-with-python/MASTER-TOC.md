@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.2 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.3 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -48,7 +48,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 1.1 — [Why Mathematical Foundations Matter in Finance](chapter-01/1.01-why-mathematical-foundations-matter-in-finance.md)  
 1.2 — [Mathematical Objects and Number Systems](chapter-01/1.02-mathematical-objects-and-number-systems.md)  
-1.3 — Variables, Constants, and Parameters  
+1.3 — [Variables, Constants, and Parameters](chapter-01/1.03-variables-constants-and-parameters.md)  
 1.4 — Sets, Intervals, and Financial Domains  
 1.5 — Mathematical Notation and Indexed Quantities  
 1.6 — Expressions, Equations, and Identities  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 1.3 — Variables, Constants, and Parameters.
+**Next manuscript section:** 1.4 — Sets, Intervals, and Financial Domains.
