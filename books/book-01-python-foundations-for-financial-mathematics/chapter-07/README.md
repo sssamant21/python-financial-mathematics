@@ -15,7 +15,7 @@
 | 7.9 | [Date and Time Indexes](7.09-date-and-time-indexes.md) | Canonical / Complete |
 | 7.10 | [Sorting, Filtering, and Querying](7.10-sorting-filtering-and-querying.md) | Canonical / Complete |
 | 7.11 | [Grouping and Aggregation](7.11-grouping-and-aggregation.md) | Canonical / Complete |
-| 7.12 | Joining and Merging Financial Data | Planned |
+| 7.12 | [Joining and Merging Financial Data](7.12-joining-and-merging-financial-data.md) | Canonical / Complete |
 | 7.13 | Resampling Time Series | Planned |
 | 7.14 | Rolling and Expanding Calculations | Planned |
 | 7.15 | Price-to-Return Transformation | Planned |
@@ -23,9 +23,9 @@
 | 7.17 | Chapter Project — Financial Time-Series Analyzer | Planned |
 | 7.18 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 7.1–7.11 complete (11/18 sections).  
+**Canonical manuscript progress:** 7.1–7.12 complete (12/18 sections).  
 **Chapter status:** In Progress.  
-**Next:** 7.12 — Joining and Merging Financial Data.
+**Next:** 7.13 — Resampling Time Series.
 
 ## Publication Policy
 
