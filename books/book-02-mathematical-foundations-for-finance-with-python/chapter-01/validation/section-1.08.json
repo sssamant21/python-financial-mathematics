@@ -1,0 +1,42 @@
+{
+  "section": "1.8",
+  "title": "Logic, Assumptions, and Implications",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "boolean_rows": 4,
+    "checklist_rows": 8,
+    "exact_sign_cases": 25,
+    "input_cases": 432,
+    "rejected_calls": 15,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_08.py",
+      "return_code": 0,
+      "stdout": "True -> True: True\nTrue -> False: False\nFalse -> True: True\nFalse -> False: True\nValid inputs: True\nInvalid inputs accepted: False\nFailed conditions: ('rate_domain',)\nall([]): True",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_08.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"boolean_rows\": 4, \"checklist_rows\": 8, \"exact_sign_cases\": 25, \"input_cases\": 432, \"rejected_calls\": 15}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.08-logic-assumptions-and-implications.md": "e5cba3e79013794aeba63019a8f556878f93f89bc1256316d89bf892a365c6b1",
+    "section_1_08.py": "fdb0bfc563ec7593afb7e02eb0bdc30eb068713625b812625b2a1d13aae84a2e",
+    "check_section_1_08.py": "de7c475b10e8e808e6306dafaf35f89ecd485fafe9a9b798ce1edf65930ce366"
+  },
+  "scope_limits": [
+    "Classical two-valued logic on well-defined propositions; missing evidence requires explicit policy.",
+    "Finite built-in int/float input interface; overflowing isfinite conversions rejected.",
+    "Checklist completeness is relative to declared schema, not economic completeness.",
+    "Canonical editorial review pending; no future financial outcome established."
+  ]
+}

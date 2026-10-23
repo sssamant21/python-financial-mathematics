@@ -11,7 +11,7 @@
 | 1.5 | [Mathematical Notation and Indexed Quantities](1.05-mathematical-notation-and-indexed-quantities.md) | Draft — examples validated |
 | 1.6 | [Expressions, Equations, and Identities](1.06-expressions-equations-and-identities.md) | Draft — examples validated |
 | 1.7 | [Inequalities and Financial Constraints](1.07-inequalities-and-financial-constraints.md) | Draft — examples validated |
-| 1.8 | Logic, Assumptions, and Implications | Planned |
+| 1.8 | [Logic, Assumptions, and Implications](1.08-logic-assumptions-and-implications.md) | Draft — examples validated |
 | 1.9 | Definitions, Propositions, and Counterexamples | Planned |
 | 1.10 | Units, Dimensions, and Financial Conventions | Planned |
 | 1.11 | Translating Financial Questions into Mathematics | Planned |
@@ -20,9 +20,9 @@
 | 1.14 | Chapter Project — Financial Formula Validation Toolkit | Planned |
 | 1.15 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 7/15.  
+**Published manuscript sections:** 8/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 1.8 — Logic, Assumptions, and Implications.
+**Next:** 1.9 — Definitions, Propositions, and Counterexamples.
 
 ## Section 1.1 Companion Material
 
@@ -68,6 +68,12 @@ The example uses only the Python standard library. Run commands are included in 
 - [Reference checks](code/check_section_1_07.py)
 - [Runtime evidence](validation/section-1.07.json)
 
+## Section 1.8 Companion Material
+
+- [Executable logic lab](code/section_1_08.py)
+- [Reference checks](code/check_section_1_08.py)
+- [Runtime evidence](validation/section-1.08.json)
+
 ## Writing and Editorial Workflow
 
 Complete, validate, and push one section at a time. Finish this chapter's project, exercises, and companion solutions before beginning Chapter 02.
@@ -75,3 +81,4 @@ Complete, validate, and push one section at a time. Finish this chapter's projec
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
+
