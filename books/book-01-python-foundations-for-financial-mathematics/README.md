@@ -188,9 +188,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.11 — Grouping and Aggregation](chapter-07/7.11-grouping-and-aggregation.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.11 complete (11/18 sections).  
+- [7.12 — Joining and Merging Financial Data](chapter-07/7.12-joining-and-merging-financial-data.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.12 complete (12/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.12 — Joining and Merging Financial Data.
+**Next:** 7.13 — Resampling Time Series.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
