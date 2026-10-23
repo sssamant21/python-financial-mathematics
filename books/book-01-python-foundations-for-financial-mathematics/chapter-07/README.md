@@ -19,13 +19,13 @@
 | 7.13 | [Resampling Time Series](7.13-resampling-time-series.md) | Canonical / Complete |
 | 7.14 | [Rolling and Expanding Calculations](7.14-rolling-and-expanding-calculations.md) | Canonical / Complete |
 | 7.15 | [Price-to-Return Transformation](7.15-price-to-return-transformation.md) | Canonical / Complete |
-| 7.16 | Multi-Asset Datasets | Planned |
+| 7.16 | [Multi-Asset Datasets](7.16-multi-asset-datasets.md) | Canonical / Complete |
 | 7.17 | Chapter Project — Financial Time-Series Analyzer | Planned |
 | 7.18 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 7.1–7.15 complete (15/18 sections).  
+**Canonical manuscript progress:** 7.1–7.16 complete (16/18 sections).  
 **Chapter status:** In Progress.  
-**Next:** 7.16 — Multi-Asset Datasets.
+**Next:** 7.17 — Chapter Project — Financial Time-Series Analyzer.
 
 ## Publication Policy
 
