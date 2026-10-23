@@ -17,15 +17,15 @@
 | 7.11 | [Grouping and Aggregation](7.11-grouping-and-aggregation.md) | Canonical / Complete |
 | 7.12 | [Joining and Merging Financial Data](7.12-joining-and-merging-financial-data.md) | Canonical / Complete |
 | 7.13 | [Resampling Time Series](7.13-resampling-time-series.md) | Canonical / Complete |
-| 7.14 | Rolling and Expanding Calculations | Planned |
+| 7.14 | [Rolling and Expanding Calculations](7.14-rolling-and-expanding-calculations.md) | Canonical / Complete |
 | 7.15 | Price-to-Return Transformation | Planned |
 | 7.16 | Multi-Asset Datasets | Planned |
 | 7.17 | Chapter Project — Financial Time-Series Analyzer | Planned |
 | 7.18 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 7.1–7.13 complete (13/18 sections).  
+**Canonical manuscript progress:** 7.1–7.14 complete (14/18 sections).  
 **Chapter status:** In Progress.  
-**Next:** 7.14 — Rolling and Expanding Calculations.
+**Next:** 7.15 — Price-to-Return Transformation.
 
 ## Publication Policy
 
