@@ -21,12 +21,12 @@
 | 7.15 | [Price-to-Return Transformation](7.15-price-to-return-transformation.md) | Canonical / Complete |
 | 7.16 | [Multi-Asset Datasets](7.16-multi-asset-datasets.md) | Canonical / Complete |
 | 7.17 | [Chapter Project — Financial Time-Series Analyzer](7.17-chapter-project-financial-time-series-analyzer.md) | Canonical / Complete |
-| 7.18 | Exercises and Applied Problems | Planned |
+| 7.18 | [Exercises and Applied Problems](7.18-exercises-and-applied-problems.md) | Canonical / Complete |
 
-**Canonical manuscript progress:** 7.1–7.17 complete (17/18 sections).  
-**Chapter status:** In Progress.  
-**Next:** 7.18 — Exercises and Applied Problems.
+**Canonical manuscript progress:** 7.1–7.18 complete (18/18 sections).  
+**Chapter status:** Complete, with twenty chapter-wide exercises and [companion solutions](7.18-solutions-and-reference-implementations.md).  
+**Next:** 8.1 — Why Visualization Matters.
 
 ## Publication Policy
 
-Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Chapter-wide exercises and companion solutions are scheduled for Section 7.18.
+Follow the locked Book 1 Master TOC v1.0 and the editorial workflow: Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Retain verified primary references and original examples. Section 7.18 includes twenty chapter-wide exercises and companion solutions with twenty passing executable reference checks.
