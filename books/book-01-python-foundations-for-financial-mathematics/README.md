@@ -209,6 +209,16 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
+## Chapter 8 — Visualization for Financial Mathematics
+
+- [8.1 — Why Visualization Matters](chapter-08/8.01-why-visualization-matters.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1 complete (1/14 sections).  
+**Chapter 8 status:** In progress.  
+**Next:** 8.2 — Matplotlib Fundamentals.
+
+See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
