@@ -213,9 +213,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.1 — Why Visualization Matters](chapter-08/8.01-why-visualization-matters.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1 complete (1/14 sections).  
+- [8.2 — Matplotlib Fundamentals](chapter-08/8.02-matplotlib-fundamentals.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.2 complete (2/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.2 — Matplotlib Fundamentals.
+**Next:** 8.3 — Line Charts.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
