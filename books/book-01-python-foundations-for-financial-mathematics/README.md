@@ -186,9 +186,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.10 — Sorting, Filtering, and Querying](chapter-07/7.10-sorting-filtering-and-querying.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.10 complete (10/18 sections).  
+- [7.11 — Grouping and Aggregation](chapter-07/7.11-grouping-and-aggregation.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.11 complete (11/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.11 — Grouping and Aggregation.
+**Next:** 7.12 — Joining and Merging Financial Data.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
