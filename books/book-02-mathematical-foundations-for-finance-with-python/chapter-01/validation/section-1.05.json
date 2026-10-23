@@ -1,0 +1,44 @@
+{
+  "section": "1.5",
+  "title": "Mathematical Notation and Indexed Quantities",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "minimum_python_version": "3.10",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "asset_orderings": 2,
+    "invalid_input_and_range_cases": 20,
+    "record_permutations": 24,
+    "reference_checks": 27,
+    "scenario_cases": 54,
+    "strict_iteration_failure": "PASS",
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_05.py",
+      "return_code": 0,
+      "stdout": "Position 0 -> period 1: 100.00\nPosition 1 -> period 2: 120.00\nEnd-period PV: 190.082645\nOne-period-earlier PV: 209.090909\nRepeated-date records retained: 3\nValue matched by instrument label: 80.00",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_05.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"asset_orderings\": 2, \"invalid_input_and_range_cases\": 20, \"record_permutations\": 24, \"reference_checks\": 27, \"scenario_cases\": 54, \"strict_iteration_failure\": \"PASS\"}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.05-mathematical-notation-and-indexed-quantities.md": "3b2b1d18c2712281e7f543e58a6f2827eb15d05465edc7b25980e2756c2f9847",
+    "section_1_05.py": "bb33f1d7ee37e55d8743034ea9711696f3c165f31cc72a01dbfc95487a328207",
+    "check_section_1_05.py": "6ee6eebde36ced21811a7fec2d1cde045f5c0457058f6ac94e4ad058fe6b6c77"
+  },
+  "scope_limits": [
+    "Small finite schedules; no calendar, currency conversion, or source-data completeness inference.",
+    "One currency, constant effective period rate, nonnegative whole-period dates.",
+    "Direct power evaluation is introductory and rejects unsupported numeric ranges.",
+    "Canonical editorial review pending; runtime tests do not prove universal identities."
+  ]
+}
