@@ -42,4 +42,4 @@ See the [Book 1 progress index](books/book-01-python-foundations-for-financial-m
 
 ## Book 2 Progress
 
-[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.5** published as Draft with executable examples and recorded runtime checks. Latest: **1.5 — Mathematical Notation and Indexed Quantities**. Progress: **5/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.6 — Expressions, Equations, and Identities**. Work proceeds one section at a time.
+[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.6** published as Draft with executable examples and recorded runtime checks. Latest: **1.6 — Expressions, Equations, and Identities**. Progress: **6/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.7 — Inequalities and Financial Constraints**. Work proceeds one section at a time.

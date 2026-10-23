@@ -9,7 +9,7 @@
 | 1.3 | [Variables, Constants, and Parameters](1.03-variables-constants-and-parameters.md) | Draft — examples validated |
 | 1.4 | [Sets, Intervals, and Financial Domains](1.04-sets-intervals-and-financial-domains.md) | Draft — examples validated |
 | 1.5 | [Mathematical Notation and Indexed Quantities](1.05-mathematical-notation-and-indexed-quantities.md) | Draft — examples validated |
-| 1.6 | Expressions, Equations, and Identities | Planned |
+| 1.6 | [Expressions, Equations, and Identities](1.06-expressions-equations-and-identities.md) | Draft — examples validated |
 | 1.7 | Inequalities and Financial Constraints | Planned |
 | 1.8 | Logic, Assumptions, and Implications | Planned |
 | 1.9 | Definitions, Propositions, and Counterexamples | Planned |
@@ -20,9 +20,9 @@
 | 1.14 | Chapter Project — Financial Formula Validation Toolkit | Planned |
 | 1.15 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 5/15.  
+**Published manuscript sections:** 6/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 1.6 — Expressions, Equations, and Identities.
+**Next:** 1.7 — Inequalities and Financial Constraints.
 
 ## Section 1.1 Companion Material
 
@@ -55,6 +55,12 @@ The example uses only the Python standard library. Run commands are included in 
 - [Executable schedule-translation lab](code/section_1_05.py)
 - [Reference checks](code/check_section_1_05.py)
 - [Runtime evidence](validation/section-1.05.json)
+
+## Section 1.6 Companion Material
+
+- [Executable exact-equation lab](code/section_1_06.py)
+- [Reference checks](code/check_section_1_06.py)
+- [Runtime evidence](validation/section-1.06.json)
 
 ## Writing and Editorial Workflow
 

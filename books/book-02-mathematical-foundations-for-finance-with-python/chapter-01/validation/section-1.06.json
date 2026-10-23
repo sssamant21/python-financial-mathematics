@@ -1,0 +1,47 @@
+{
+  "section": "1.6",
+  "title": "Expressions, Equations, and Identities",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "classification_counts": {
+      "all": 25,
+      "none": 100,
+      "unique": 500
+    },
+    "coefficient_cases": 625,
+    "identity_samples": 55,
+    "invalid_input_cases": 14,
+    "reference_checks": 26,
+    "restricted_quotient_samples": 5,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_06.py",
+      "return_code": 0,
+      "stdout": "Evaluated two-period expression: 1102.50\nOne-period rate solution: 1/10\nOriginal-equation residual: 0\nIdentical linear expressions: all\nInconsistent linear equation: none\nResidual at rate 0.0999: -1/100",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_06.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"classification_counts\": {\"all\": 25, \"none\": 100, \"unique\": 500}, \"coefficient_cases\": 625, \"identity_samples\": 55, \"invalid_input_cases\": 14, \"reference_checks\": 26, \"restricted_quotient_samples\": 5}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.06-expressions-equations-and-identities.md": "f23e6207f68eec2ea65b379608189d9fa7098c937e13a0827c69df1408f9089b",
+    "section_1_06.py": "db49fb998f285ea71d4099ba6fe265ef0e8745f8c8d2c230ab59dd6e96289d89",
+    "check_section_1_06.py": "9c07a471998fad7466c50aa725ec03b400a7d9121f504c029235092020edfbc0"
+  },
+  "scope_limits": [
+    "Exact rational-coefficient linear equations; not a general symbolic or nonlinear solver.",
+    "Financial domains are applied separately from algebraic classification.",
+    "Finite identity samples illustrate the algebraic derivation; they are not a universal proof.",
+    "Canonical editorial review and real-contract suitability remain outside these runtime checks."
+  ]
+}
