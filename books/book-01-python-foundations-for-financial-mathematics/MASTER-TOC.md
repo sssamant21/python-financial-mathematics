@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 8.5 — Return Charts.**
+**Next locked manuscript section: 8.6 — Histograms and Return Distributions.**
