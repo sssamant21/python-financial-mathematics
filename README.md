@@ -36,7 +36,7 @@ Each canonical section should retain its verified references so source provenanc
 
 ## Current Work
 
-Book 1, Chapters 1–6 have complete canonical manuscripts and companion solutions. Chapter 4 includes Sections 4.1–4.14, the Portfolio Holdings Manager project, and answers to all 20 chapter-wide exercises. **Chapter 4: 14/14 sections complete.** Chapter 5 has **5.1–5.13 complete (13/13 sections)**, twenty chapter-wide problems with companion solutions, and a twelve-test installed-package acceptance extension. Chapter 6 has **6.1–6.17 complete (17/17 sections)**, twenty chapter-wide exercises, and companion solutions with twenty passing reference checks. Chapter 7 has **7.1–7.10 complete (10/18 sections)**. Next: **7.11 — Grouping and Aggregation**.
+Book 1, Chapters 1–6 have complete canonical manuscripts and companion solutions. Chapter 4 includes Sections 4.1–4.14, the Portfolio Holdings Manager project, and answers to all 20 chapter-wide exercises. **Chapter 4: 14/14 sections complete.** Chapter 5 has **5.1–5.13 complete (13/13 sections)**, twenty chapter-wide problems with companion solutions, and a twelve-test installed-package acceptance extension. Chapter 6 has **6.1–6.17 complete (17/17 sections)**, twenty chapter-wide exercises, and companion solutions with twenty passing reference checks. Chapter 7 has **7.1–7.11 complete (11/18 sections)**. Next: **7.12 — Joining and Merging Financial Data**.
 
 See the [Book 1 progress index](books/book-01-python-foundations-for-financial-mathematics/README.md) and [locked Master TOC v1.0](books/book-01-python-foundations-for-financial-mathematics/MASTER-TOC.md).
 
