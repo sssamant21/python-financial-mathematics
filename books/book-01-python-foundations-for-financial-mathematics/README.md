@@ -219,9 +219,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.4 — Financial Time-Series Charts](chapter-08/8.04-financial-time-series-charts.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.4 complete (4/14 sections).  
+- [8.5 — Return Charts](chapter-08/8.05-return-charts.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.5 complete (5/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.5 — Return Charts.
+**Next:** 8.6 — Histograms and Return Distributions.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
