@@ -1,0 +1,40 @@
+{
+  "section": "1.2",
+  "title": "Mathematical Objects and Number Systems",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "representation_and_reference_checks": 27,
+    "allocation_scenarios": 408,
+    "invalid_input_cases": 16,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_02.py",
+      "return_code": 0,
+      "stdout": "Exact rational third: 1/3\nQuoted rate as fraction: 7/200\nOne-period rational balance: 1035\nDecimal sum: 0.3\nDecimal third at precision 28: 0.3333333333333333333333333333\nHalf-even / half-up: 2.68 / 2.69\nMinor-unit allocation: [53, 52]",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_02.py",
+      "return_code": 0,
+      "stdout": "PASS: 27 representation/reference checks; 408 allocation scenarios; 16 invalid-input cases",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.02-mathematical-objects-and-number-systems.md": "697fb95222ec92f83c4e1568e6670fa54de76d663be79bd01021439c051faf04",
+    "section_1_02.py": "9ead67d14502a80bdf19b89c49085492906598ff2dfbaa94fb6cd7803ff8534f",
+    "check_section_1_02.py": "8cd8d3b345804d14aaac26c0019feba392dba337eb80823e99c9b30c9467dfb5"
+  },
+  "scope_limits": [
+    "No real contract, currency-specific settlement, or market-data validation.",
+    "Canonical editorial review remains pending.",
+    "Runtime checks illustrate definitions; finite numerical samples do not prove universal propositions.",
+    "Allocation implementation is intended for small instructional recipient counts."
+  ]
+}

@@ -5,7 +5,7 @@
 | Section | Title | Status |
 |---|---|---|
 | 1.1 | [Why Mathematical Foundations Matter in Finance](1.01-why-mathematical-foundations-matter-in-finance.md) | Draft — examples validated |
-| 1.2 | Mathematical Objects and Number Systems | Planned |
+| 1.2 | [Mathematical Objects and Number Systems](1.02-mathematical-objects-and-number-systems.md) | Draft — examples validated |
 | 1.3 | Variables, Constants, and Parameters | Planned |
 | 1.4 | Sets, Intervals, and Financial Domains | Planned |
 | 1.5 | Mathematical Notation and Indexed Quantities | Planned |
@@ -20,9 +20,9 @@
 | 1.14 | Chapter Project — Financial Formula Validation Toolkit | Planned |
 | 1.15 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 1/15.  
+**Published manuscript sections:** 2/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 1.2 — Mathematical Objects and Number Systems.
+**Next:** 1.3 — Variables, Constants, and Parameters.
 
 ## Section 1.1 Companion Material
 
@@ -32,6 +32,12 @@
 
 The example uses only the Python standard library. Run commands are included in the manuscript. The recorded execution used Python 3.12 on Linux; Windows commands are provided but have not been executed on Windows in this session.
 
+## Section 1.2 Companion Material
+
+- [Executable representation lab](code/section_1_02.py)
+- [Reference checks](code/check_section_1_02.py)
+- [Runtime evidence](validation/section-1.02.json)
+
 ## Writing and Editorial Workflow
 
 Complete, validate, and push one section at a time. Finish this chapter's project, exercises, and companion solutions before beginning Chapter 02.
@@ -39,4 +45,3 @@ Complete, validate, and push one section at a time. Finish this chapter's projec
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
-
