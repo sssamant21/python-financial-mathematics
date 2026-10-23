@@ -1,0 +1,42 @@
+{
+  "section": "1.4",
+  "title": "Sets, Intervals, and Financial Domains",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "coupled_weight_cases": 225,
+    "growth_domain_cases": 60,
+    "interval_cases": 40,
+    "invalid_configuration_cases": 11,
+    "reference_checks": 32,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_04.py",
+      "return_code": 0,
+      "stdout": "Intersection: ['EUR']\nUnion: ['EUR', 'JPY', 'USD']\nDiscount rate -1.0: False\nDiscount rate -0.05: True\nDiscount rate 0.0: True\n[0,1] contains 0: True\n(0,1) contains 0: False\nGrowth triple (1000,0.05,2): True\nWeights (0.4,0.6): True\nWeights (0.8,0.8): False",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_04.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"coupled_weight_cases\": 225, \"growth_domain_cases\": 60, \"interval_cases\": 40, \"invalid_configuration_cases\": 11, \"reference_checks\": 32}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.04-sets-intervals-and-financial-domains.md": "ff488d01879081a5331613c2ed1dfcd32ed7be125da3a5a2acd2271ea4a203dd",
+    "section_1_04.py": "cbad32e5d667f700f3df557aa435a446cb82d252ff06007f97af53cb623401b2",
+    "check_section_1_04.py": "efa8d64835288d87da88ffe40ae6c5d9b1f9244b61c3b66d372fd06e9cb8ec3e"
+  },
+  "scope_limits": [
+    "Instructional domains and policies; no actual financial contract validation.",
+    "Interval observations and bounds use finite float conversion; exact large-integer ordering is not guaranteed.",
+    "Weight-budget tolerance is an explicit approximation; component bounds remain strict as represented.",
+    "Canonical editorial review pending; finite numerical checks are not proofs of universal claims."
+  ]
+}

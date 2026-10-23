@@ -42,4 +42,4 @@ See the [Book 1 progress index](books/book-01-python-foundations-for-financial-m
 
 ## Book 2 Progress
 
-[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.3** published as Draft with executable examples and recorded runtime checks. Latest: **1.3 — Variables, Constants, and Parameters**. Progress: **3/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.4 — Sets, Intervals, and Financial Domains**. Work proceeds one section at a time.
+[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.4** published as Draft with executable examples and recorded runtime checks. Latest: **1.4 — Sets, Intervals, and Financial Domains**. Progress: **4/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.5 — Mathematical Notation and Indexed Quantities**. Work proceeds one section at a time.
