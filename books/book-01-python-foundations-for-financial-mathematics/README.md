@@ -198,9 +198,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.16 — Multi-Asset Datasets](chapter-07/7.16-multi-asset-datasets.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.16 complete (16/18 sections).  
+- [7.17 — Chapter Project — Financial Time-Series Analyzer](chapter-07/7.17-chapter-project-financial-time-series-analyzer.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.17 complete (17/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.17 — Chapter Project — Financial Time-Series Analyzer.
+**Next:** 7.18 — Exercises and Applied Problems.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
