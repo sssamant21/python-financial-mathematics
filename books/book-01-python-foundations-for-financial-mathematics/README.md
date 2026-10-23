@@ -200,9 +200,12 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.17 — Chapter Project — Financial Time-Series Analyzer](chapter-07/7.17-chapter-project-financial-time-series-analyzer.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.17 complete (17/18 sections).  
-**Chapter 7 status:** In Progress.  
-**Next:** 7.18 — Exercises and Applied Problems.
+- [7.18 — Exercises and Applied Problems](chapter-07/7.18-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
+- [7.18 — Solutions and Reference Implementations](chapter-07/7.18-solutions-and-reference-implementations.md) — Companion solutions for all twenty chapter-wide problems
+
+**Canonical manuscript progress:** 7.1–7.18 complete (18/18 sections).  
+**Chapter 7 status:** Complete, with twenty chapter-wide exercises and companion solutions.  
+**Next:** 8.1 — Why Visualization Matters.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
