@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.6 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.7 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -52,7 +52,7 @@ Published sections link to their manuscript files; planned sections remain plain
 1.4 — [Sets, Intervals, and Financial Domains](chapter-01/1.04-sets-intervals-and-financial-domains.md)  
 1.5 — [Mathematical Notation and Indexed Quantities](chapter-01/1.05-mathematical-notation-and-indexed-quantities.md)  
 1.6 — [Expressions, Equations, and Identities](chapter-01/1.06-expressions-equations-and-identities.md)  
-1.7 — Inequalities and Financial Constraints  
+1.7 — [Inequalities and Financial Constraints](chapter-01/1.07-inequalities-and-financial-constraints.md)  
 1.8 — Logic, Assumptions, and Implications  
 1.9 — Definitions, Propositions, and Counterexamples  
 1.10 — Units, Dimensions, and Financial Conventions  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 1.7 — Inequalities and Financial Constraints.
+**Next manuscript section:** 1.8 — Logic, Assumptions, and Implications.

@@ -1,0 +1,43 @@
+{
+  "section": "1.7",
+  "title": "Inequalities and Financial Constraints",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "band_cases": 150,
+    "invalid_input_cases": 16,
+    "policy_cases": 180,
+    "proposal_cases": 1080,
+    "reference_checks": 27,
+    "sign_cases": 225,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_07.py",
+      "return_code": 0,
+      "stdout": "Amount 800: fee=13, feasible=True\n  fee slack=2, amount slack=0\nAmount 900: fee=14, feasible=False\n  fee slack=1, amount slack=-100\nMaximum feasible amount: 800\nFixed fee above budget: None\nWeight 0.6 in band: True\nWeight 0.6001 in band: False",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_07.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"band_cases\": 150, \"invalid_input_cases\": 16, \"policy_cases\": 180, \"proposal_cases\": 1080, \"reference_checks\": 27, \"sign_cases\": 225}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.07-inequalities-and-financial-constraints.md": "f0990ca51bdb26f48dbadbd4d79c412a6bfe4c34e7572399fdab8c992aae3160",
+    "section_1_07.py": "ebb52501c4192d203929e5c1670452ac8af0507fda8eb23d060411de3befa285",
+    "check_section_1_07.py": "6849bcead398450a8823d8b438c26bd25c79ace0b5f23bc268ae3924da6f8890"
+  },
+  "scope_limits": [
+    "Hypothetical nonnegative affine fee parameters and finite transaction cap; non-strict limits.",
+    "Exact rational arithmetic; no contractual rounding or transaction-increment rules.",
+    "Scalar weight-band membership does not validate a complete portfolio.",
+    "Canonical editorial review pending; numerical samples illustrate independently written derivations."
+  ]
+}
