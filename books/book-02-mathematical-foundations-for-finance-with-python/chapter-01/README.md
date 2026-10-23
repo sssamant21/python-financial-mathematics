@@ -13,16 +13,16 @@
 | 1.7 | [Inequalities and Financial Constraints](1.07-inequalities-and-financial-constraints.md) | Draft — examples validated |
 | 1.8 | [Logic, Assumptions, and Implications](1.08-logic-assumptions-and-implications.md) | Draft — examples validated |
 | 1.9 | [Definitions, Propositions, and Counterexamples](1.09-definitions-propositions-and-counterexamples.md) | Draft — examples validated |
-| 1.10 | Units, Dimensions, and Financial Conventions | Planned |
+| 1.10 | [Units, Dimensions, and Financial Conventions](1.10-units-dimensions-and-financial-conventions.md) | Draft — examples validated |
 | 1.11 | Translating Financial Questions into Mathematics | Planned |
 | 1.12 | Translating Mathematical Expressions into Python | Planned |
 | 1.13 | Checking Mathematical and Computational Results | Planned |
 | 1.14 | Chapter Project — Financial Formula Validation Toolkit | Planned |
 | 1.15 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 9/15.  
+**Published manuscript sections:** 10/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 1.10 — Units, Dimensions, and Financial Conventions.
+**Next:** 1.11 — Translating Financial Questions into Mathematics.
 
 ## Section 1.1 Companion Material
 
@@ -80,6 +80,12 @@ The example uses only the Python standard library. Run commands are included in 
 - [Reference checks](code/check_section_1_09.py)
 - [Runtime evidence](validation/section-1.09.json)
 
+## Section 1.10 Companion Material
+
+- [Executable rate and accrual lab](code/section_1_10.py)
+- [Reference checks](code/check_section_1_10.py)
+- [Runtime evidence](validation/section-1.10.json)
+
 ## Writing and Editorial Workflow
 
 Complete, validate, and push one section at a time. Finish this chapter's project, exercises, and companion solutions before beginning Chapter 02.
@@ -87,5 +93,6 @@ Complete, validate, and push one section at a time. Finish this chapter's projec
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
+
 
 

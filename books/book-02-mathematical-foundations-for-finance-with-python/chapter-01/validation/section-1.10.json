@@ -1,0 +1,42 @@
+{
+  "section": "1.10",
+  "title": "Units, Dimensions, and Financial Conventions",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "accrual_cases": 162,
+    "additivity_cases": 2,
+    "calendar_cases": 18,
+    "rate_cases": 15,
+    "rejected_calls": 16,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_10.py",
+      "return_code": 0,
+      "stdout": "Equivalent rate quotations: 3/50 3/50 3/50\nACT/360: fraction=1/12, interest=50 USD\nACT/365F: fraction=6/73, interest=3600/73 USD\nLeap interval: 2/365",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_10.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"accrual_cases\": 162, \"additivity_cases\": 2, \"calendar_cases\": 18, \"rate_cases\": 15, \"rejected_calls\": 16}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.10-units-dimensions-and-financial-conventions.md": "db2747ba11bd389745ef20fac9b65901e477d45b469cbef031703817d81e23d9",
+    "section_1_10.py": "1aa3a56c207e912c1bf8dd8df19bce6f2447d5a0e2537d965032376621955fe9",
+    "check_section_1_10.py": "8458d4828a3e2eeb134106683daade790d9fb430601b17b84c46ad115bece999"
+  },
+  "scope_limits": [
+    "Constant-principal simple annual interest with explicit rate representation and currency label.",
+    "ACT/360 and ACT/365F only; unrounded exact results; no business-day adjustment.",
+    "Currency syntax checked, not membership in a registry; no FX or compounding conversion.",
+    "Canonical editorial review pending."
+  ]
+}

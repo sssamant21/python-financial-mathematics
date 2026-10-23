@@ -42,6 +42,7 @@ See the [Book 1 progress index](books/book-01-python-foundations-for-financial-m
 
 ## Book 2 Progress
 
-[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.9** published as Draft with executable examples and recorded runtime checks. Latest: **1.9 — Definitions, Propositions, and Counterexamples**. Progress: **9/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.10 — Units, Dimensions, and Financial Conventions**. Work proceeds one section at a time.
+[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.10** published as Draft with executable examples and recorded runtime checks. Latest: **1.10 — Units, Dimensions, and Financial Conventions**. Progress: **10/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.11 — Translating Financial Questions into Mathematics**. Work proceeds one section at a time.
+
 
 
