@@ -196,9 +196,11 @@ See the [Chapter 6 progress index](chapter-06/README.md) for all planned section
 
 - [7.15 — Price-to-Return Transformation](chapter-07/7.15-price-to-return-transformation.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 7.1–7.15 complete (15/18 sections).  
+- [7.16 — Multi-Asset Datasets](chapter-07/7.16-multi-asset-datasets.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 7.1–7.16 complete (16/18 sections).  
 **Chapter 7 status:** In Progress.  
-**Next:** 7.16 — Multi-Asset Datasets.
+**Next:** 7.17 — Chapter Project — Financial Time-Series Analyzer.
 
 See the [Chapter 7 progress index](chapter-07/README.md) for all planned sections.
 
