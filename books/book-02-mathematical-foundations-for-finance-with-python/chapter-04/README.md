@@ -19,9 +19,14 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 | 4.7 | [Stable Numerical Evaluation](4.07-stable-numerical-evaluation.md) | Draft — runtime validation pending |
 | 4.8 | [Numerical Conditioning and Model Limits](4.08-numerical-conditioning-and-model-limits.md) | Draft — runtime validation pending |
 | 4.9 | [Chapter Project — Growth and Rate Conversion Explorer](4.09-growth-and-rate-conversion-explorer.md) | Draft — runtime validation pending |
-| 4.10 | Exercises and Applied Problems | Planned |
+| 4.10 | [Exercises and Applied Problems](4.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
 
-**Published manuscript sections:** 9/10.
+**Published manuscript sections:** 10/10.
+
+## Section 4.10 companion material
+
+- [Integrated chapter assessment](code/section_4_10.py)
+- [Reference checks](code/check_section_4_10.py)
 
 ## Section 4.9 companion material
 
@@ -68,6 +73,6 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 - [Exact growth and decay lab](code/section_4_01.py)
 - [Reference checks](code/check_section_4_01.py)
 
-Runtime validation and editorial review are pending for Sections 4.1–4.9.
+Runtime validation and editorial review are pending for Sections 4.1–4.10.
 
-**Next:** 4.10 — Exercises and Applied Problems.
+**Next:** Chapter 05, Section 5.1 — Sequences and Time Indexing.
