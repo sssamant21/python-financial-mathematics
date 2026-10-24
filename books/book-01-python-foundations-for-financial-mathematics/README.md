@@ -270,10 +270,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 - [9.11 — Compounding Frequency](chapter-09/9.11-compounding-frequency.md) — Revised Final / Canonical Edition
 - [9.12 — Continuous Compounding](chapter-09/9.12-continuous-compounding.md) — Revised Final / Canonical Edition
 - [9.13 — Solving for Rate](chapter-09/9.13-solving-for-rate.md) — Revised Final / Canonical Edition
+- [9.14 — Solving for Time](chapter-09/9.14-solving-for-time.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1–9.13 complete (13/17 sections).  
+**Canonical manuscript progress:** 9.1–9.14 complete (14/17 sections).  
 **Chapter 9 status:** In progress.  
-**Next:** 9.14 — Solving for Time.
+**Next:** 9.15 — Python TVM Functions.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
