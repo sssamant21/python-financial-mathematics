@@ -16,13 +16,13 @@
 | 9.12 | [Continuous Compounding](9.12-continuous-compounding.md) | Canonical / Complete |
 | 9.13 | [Solving for Rate](9.13-solving-for-rate.md) | Canonical / Complete |
 | 9.14 | [Solving for Time](9.14-solving-for-time.md) | Canonical / Complete |
-| 9.15 | Python TVM Functions | Planned |
+| 9.15 | [Python TVM Functions](9.15-python-tvm-functions.md) | Canonical / Complete |
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.14 complete (14/17 sections).  
+**Canonical manuscript progress:** 9.1–9.15 complete (15/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.15 — Python TVM Functions.
+**Next:** 9.16 — Chapter Project — Time Value of Money Engine.
 
 ## Publication Policy
 
@@ -53,3 +53,5 @@ Section 9.12 adds a standalone continuous-compounding lab with exponential accum
 Section 9.13 adds a standalone rate-solving lab with periodic, effective annual, nominal annual, and continuous inversions, boundary validation, and eight reference tests (runtime verification pending).
 
 Section 9.14 adds a standalone logarithmic time-solving lab with periodic, effective, nominal, and continuous conventions, feasibility checks, and eight reference tests (runtime verification pending).
+
+Section 9.15 adds a reusable standard-library TVM module with discrete and continuous valuation, rate conversions, inverse solvers, signed cash-flow NPV, and eight reference tests (runtime verification pending).
