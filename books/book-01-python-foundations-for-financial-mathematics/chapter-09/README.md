@@ -17,12 +17,12 @@
 | 9.13 | [Solving for Rate](9.13-solving-for-rate.md) | Canonical / Complete |
 | 9.14 | [Solving for Time](9.14-solving-for-time.md) | Canonical / Complete |
 | 9.15 | [Python TVM Functions](9.15-python-tvm-functions.md) | Canonical / Complete |
-| 9.16 | Chapter Project — Time Value of Money Engine | Planned |
+| 9.16 | [Chapter Project — Time Value of Money Engine](9.16-chapter-project-time-value-of-money-engine.md) | Canonical / Complete |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.15 complete (15/17 sections).  
+**Canonical manuscript progress:** 9.1–9.16 complete (16/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.16 — Chapter Project — Time Value of Money Engine.
+**Next:** 9.17 — Exercises and Applied Problems.
 
 ## Publication Policy
 
@@ -55,3 +55,5 @@ Section 9.13 adds a standalone rate-solving lab with periodic, effective annual,
 Section 9.14 adds a standalone logarithmic time-solving lab with periodic, effective, nominal, and continuous conventions, feasibility checks, and eight reference tests (runtime verification pending).
 
 Section 9.15 adds a reusable standard-library TVM module with discrete and continuous valuation, rate conversions, inverse solvers, signed cash-flow NPV, and eight reference tests (runtime verification pending).
+
+Section 9.16 publishes the Time Value of Money Engine capstone with CSV ingestion, JSON audit reporting, financial inverse solvers, and twelve acceptance tests (independent runtime verification pending).
