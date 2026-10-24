@@ -287,10 +287,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [10.1 — Cash-Flow Mathematics](chapter-10/10.01-cash-flow-mathematics.md) — Manuscript published; runtime and editorial validation pending
 - [10.2 — Cash-Flow Timelines](chapter-10/10.02-cash-flow-timelines.md) — Manuscript published; runtime and editorial validation pending
 - [10.3 — Level Annuities](chapter-10/10.03-level-annuities.md) — Manuscript published; runtime and editorial validation pending
+- [10.4 — Ordinary Annuities](chapter-10/10.04-ordinary-annuities.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 10.1–10.3 complete (3/15 sections).  
+**Manuscript progress:** 10.1–10.4 complete (4/15 sections).  
 **Chapter 10 status:** In progress.  
-**Next:** 10.4 — Ordinary Annuities.
+**Next:** 10.5 — Annuities Due.
 
 ## Editorial Requirement
 
