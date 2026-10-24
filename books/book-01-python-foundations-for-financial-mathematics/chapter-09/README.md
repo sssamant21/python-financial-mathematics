@@ -15,14 +15,14 @@
 | 9.11 | [Compounding Frequency](9.11-compounding-frequency.md) | Canonical / Complete |
 | 9.12 | [Continuous Compounding](9.12-continuous-compounding.md) | Canonical / Complete |
 | 9.13 | [Solving for Rate](9.13-solving-for-rate.md) | Canonical / Complete |
-| 9.14 | Solving for Time | Planned |
+| 9.14 | [Solving for Time](9.14-solving-for-time.md) | Canonical / Complete |
 | 9.15 | Python TVM Functions | Planned |
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.13 complete (13/17 sections).  
+**Canonical manuscript progress:** 9.1–9.14 complete (14/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.14 — Solving for Time.
+**Next:** 9.15 — Python TVM Functions.
 
 ## Publication Policy
 
@@ -51,3 +51,5 @@ Section 9.11 adds a standalone compounding-frequency lab with fixed-nominal vers
 Section 9.12 adds a standalone continuous-compounding lab with exponential accumulation, discounting, rate-convention conversion, numerical boundary checks, and eight reference tests (execution verification pending).
 
 Section 9.13 adds a standalone rate-solving lab with periodic, effective annual, nominal annual, and continuous inversions, boundary validation, and eight reference tests (runtime verification pending).
+
+Section 9.14 adds a standalone logarithmic time-solving lab with periodic, effective, nominal, and continuous conventions, feasibility checks, and eight reference tests (runtime verification pending).
