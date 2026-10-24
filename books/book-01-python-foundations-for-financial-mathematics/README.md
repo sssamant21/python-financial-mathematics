@@ -256,9 +256,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 
 - [9.4 — Compound Interest](chapter-09/9.04-compound-interest.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1–9.4 complete (4/17 sections).  
+- [9.5 — Present Value](chapter-09/9.05-present-value.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 9.1–9.5 complete (5/17 sections).  
 **Chapter 9 status:** In progress.  
-**Next:** 9.5 — Present Value.
+**Next:** 9.6 — Future Value.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
