@@ -235,9 +235,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.12 — Effective Financial Chart Design](chapter-08/8.12-effective-financial-chart-design.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.12 complete (12/14 sections).  
+- [8.13 — Chapter Project — Financial Analytics Dashboard](chapter-08/8.13-chapter-project-financial-analytics-dashboard.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.13 complete (13/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.13 — Chapter Project — Financial Analytics Dashboard.
+**Next:** 8.14 — Exercises and Applied Problems.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
