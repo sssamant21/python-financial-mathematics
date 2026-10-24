@@ -11,7 +11,7 @@
 | 9.7 | [Discount Factors](9.07-discount-factors.md) | Canonical / Complete |
 | 9.8 | [Multiple Cash Flows](9.08-multiple-cash-flows.md) | Canonical / Complete |
 | 9.9 | [Net Present Value](9.09-net-present-value.md) | Canonical / Complete |
-| 9.10 | Effective vs. Nominal Rates | Planned |
+| 9.10 | [Effective vs. Nominal Rates](9.10-effective-vs-nominal-rates.md) | Canonical / Complete |
 | 9.11 | Compounding Frequency | Planned |
 | 9.12 | Continuous Compounding | Planned |
 | 9.13 | Solving for Rate | Planned |
@@ -20,9 +20,9 @@
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.9 complete (9/17 sections).  
+**Canonical manuscript progress:** 9.1–9.10 complete (10/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.10 — Effective vs. Nominal Rates.
+**Next:** 9.11 — Compounding Frequency.
 
 ## Publication Policy
 
@@ -43,3 +43,5 @@ Section 9.7 adds a standalone discount-factor lab with reciprocal accumulation, 
 Section 9.8 adds a standalone multiple-cash-flow lab with event-level audit rows, same-date netting, common-target reconciliation, and eight passing reference tests; compilation succeeds.
 
 Section 9.9 adds a standalone NPV lab with explicit initial-cost handling, break-even pricing, rate scenarios, incremental comparison, and eight passing reference tests; compilation succeeds.
+
+Section 9.10 adds a standalone nominal/effective rate-conversion lab with reverse conversion, equivalent balances, common-basis comparison, and eight passing reference tests; compilation succeeds.
