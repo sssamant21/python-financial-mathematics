@@ -11,7 +11,7 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.1 | [Algebraic Expressions and Equivalent Forms](2.01-algebraic-expressions-and-equivalent-forms.md) | Draft — examples validated |
 | 2.2 | [Linear Equations and Rearrangement](2.02-linear-equations-and-rearrangement.md) | Draft — examples validated |
 | 2.3 | [Fractions and Rational Equations](2.03-fractions-and-rational-equations.md) | Draft — examples validated |
-| 2.4 | Powers, Roots, and Fractional Exponents | Planned |
+| 2.4 | [Powers, Roots, and Fractional Exponents](2.04-powers-roots-and-fractional-exponents.md) | Draft — examples validated |
 | 2.5 | Quadratic Equations | Planned |
 | 2.6 | Inequalities and Absolute Values | Planned |
 | 2.7 | Simultaneous Equations | Planned |
@@ -19,9 +19,9 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.9 | Chapter Project — Break-Even and Formula Rearrangement Analyzer | Planned |
 | 2.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 3/10.  
+**Published manuscript sections:** 4/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** 2.4 — Powers, Roots, and Fractional Exponents.
+**Next:** 2.5 — Quadratic Equations.
 
 ## Section 2.1 Companion Material
 
@@ -43,6 +43,12 @@ The lab uses only the Python standard library and has no Chapter 01 code depende
 - [Reference checks](code/check_section_2_03.py)
 - [Runtime evidence](validation/section-2.03.json)
 
+## Section 2.4 Companion Material
+
+- [Executable powers, roots, and rate-inference lab](code/section_2_04.py)
+- [Reference checks](code/check_section_2_04.py)
+- [Runtime evidence](validation/section-2.04.json)
+
 ## Writing and Editorial Workflow
 
 Finish and validate one section before proceeding. Do not label planned sections as written or passing runtime checks as canonical designation.
@@ -50,5 +56,6 @@ Finish and validate one section before proceeding. Do not label planned sections
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md) · [Chapter 01](../chapter-01/README.md)
+
 
 

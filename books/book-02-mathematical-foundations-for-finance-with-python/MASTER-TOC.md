@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15 and 2.1–2.3 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.15 and 2.1–2.4 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -67,7 +67,7 @@ Published sections link to their manuscript files; planned sections remain plain
 2.1 — [Algebraic Expressions and Equivalent Forms](chapter-02/2.01-algebraic-expressions-and-equivalent-forms.md)  
 2.2 — [Linear Equations and Rearrangement](chapter-02/2.02-linear-equations-and-rearrangement.md)  
 2.3 — [Fractions and Rational Equations](chapter-02/2.03-fractions-and-rational-equations.md)  
-2.4 — Powers, Roots, and Fractional Exponents  
+2.4 — [Powers, Roots, and Fractional Exponents](chapter-02/2.04-powers-roots-and-fractional-exponents.md)  
 2.5 — Quadratic Equations  
 2.6 — Inequalities and Absolute Values  
 2.7 — Simultaneous Equations  
@@ -332,7 +332,8 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 2.4 — Powers, Roots, and Fractional Exponents.
+**Next manuscript section:** 2.5 — Quadratic Equations.
+
 
 
 

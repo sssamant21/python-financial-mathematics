@@ -1,0 +1,43 @@
+{
+  "section": "2.4",
+  "title": "Powers, Roots, and Fractional Exponents",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "endpoint_reconstruction_cases": 40,
+    "exact_power_cases": 60,
+    "negative_odd_root_cases": 12,
+    "planted_root_cases": 32,
+    "rejected_calls": 26,
+    "square_root_reference_cases": 7,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_04.py",
+      "return_code": 0,
+      "stdout": "Exact discount factor: 400/441\nPrincipal square root of 9: 3.000000\nReal cube root of -8: -2.000000\n16 to the power 3/4: 8.000000\nEnding 1210 over 2 periods: rate=0.100000, factor=1.100000\nEnding 810 over 2 periods: rate=-0.100000, factor=0.900000\nEnding 1331 over 3 periods: rate=0.100000, factor=1.100000",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_04.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"endpoint_reconstruction_cases\": 40, \"exact_power_cases\": 60, \"negative_odd_root_cases\": 12, \"planted_root_cases\": 32, \"rejected_calls\": 26, \"square_root_reference_cases\": 7}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.04-powers-roots-and-fractional-exponents.md": "2494cd0ec28b9b1bb0fabdfebbf34f25f657802bb21049d28785b2550d812c8b",
+    "section_2_04.py": "59fe88d822d627b1b5ee82550ea6463e6916236c515e6d4e7db9a60a8e86e640",
+    "check_section_2_04.py": "e7b8b9880fe510f31d473fab6205459d723a396efd4ac74278909b6d09942060"
+  },
+  "scope_limits": [
+    "Exact rational integer powers; zero base with nonpositive exponent excluded by explicit interface policy.",
+    "Approximate real-root interface supports finite built-in int/float inputs and integer indices 1 through 120.",
+    "Equivalent constant period rates require positive endpoints and no intermediate flows; unsupported float ratios or rounded rate -1 rejected.",
+    "Finite numerical checks do not establish universal root accuracy, contractual tolerances, or economic rate validity; canonical editorial review pending."
+  ]
+}
