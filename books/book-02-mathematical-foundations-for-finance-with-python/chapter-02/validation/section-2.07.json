@@ -1,0 +1,45 @@
+{
+  "section": "2.7",
+  "title": "Simultaneous Equations",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "allocation_boundary_cases": 240,
+    "grid_systems": 729,
+    "line_membership_cases": 480,
+    "planted_unique_pairs": 1488,
+    "rejected_calls": 11,
+    "swap_and_scale_cases": 729,
+    "display_output": "PASS",
+    "exercise_answers": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_07.py",
+      "return_code": 0,
+      "stdout": "Unique pair: (4, 6)\nLine: base (0, 10) direction (1, -1)\nContradictory: none\nZero equations: all_pairs\nInterest 52: (400, 600); feasible=unique; residuals=(0, 0)\nInterest 70: (-500, 1500); feasible=empty; residuals=(0, 0)\nEqual rates: feasible=segment; x in (0, 1000); y = budget - x\nZero budget: algebraic=line; feasible=unique; point=(0, 0)",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_07.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"allocation_boundary_cases\": 240, \"grid_systems\": 729, \"line_membership_cases\": 480, \"planted_unique_pairs\": 1488, \"rejected_calls\": 11, \"swap_and_scale_cases\": 729}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.07-simultaneous-equations.md": "f671cf35fe403d2b3f451030517893ad6a42bc4804b3d45530e54c7681b99648",
+    "section_2_07.py": "67065aadfa0fe83cf204831feb7b07e88460e19d2c5acab4595b3c04f0d340bd",
+    "check_section_2_07.py": "4338a72faec3f7ce2e64f4adcd73badf43fc373ae90dd3912dde5233df8a39b3"
+  },
+  "scope_limits": [
+    "Two real unknowns and two linear equations with exact rational coefficients; independent row-reduction reference.",
+    "Solution line base and direction describe real parameters, despite rational sample checks.",
+    "Allocation wrapper assumes synthetic single-period interest, no fees, and nonnegative currency allocations.",
+    "No general linear inequality intersection, floating-point tolerance, optimization, or market-model validation.",
+    "Linux runtime recorded; canonical editorial review pending."
+  ]
+}

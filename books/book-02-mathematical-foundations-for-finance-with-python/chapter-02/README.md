@@ -14,14 +14,14 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.4 | [Powers, Roots, and Fractional Exponents](2.04-powers-roots-and-fractional-exponents.md) | Draft — examples validated |
 | 2.5 | [Quadratic Equations](2.05-quadratic-equations.md) | Draft — examples validated |
 | 2.6 | [Inequalities and Absolute Values](2.06-inequalities-and-absolute-values.md) | Draft — examples validated |
-| 2.7 | Simultaneous Equations | Planned |
+| 2.7 | [Simultaneous Equations](2.07-simultaneous-equations.md) | Draft — examples validated |
 | 2.8 | Scaling and Algebraic Validation | Planned |
 | 2.9 | Chapter Project — Break-Even and Formula Rearrangement Analyzer | Planned |
 | 2.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 6/10.  
+**Published manuscript sections:** 7/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** 2.7 — Simultaneous Equations.
+**Next:** 2.8 — Scaling and Algebraic Validation.
 
 ## Section 2.1 Companion Material
 
@@ -61,6 +61,12 @@ The lab uses only the Python standard library and has no Chapter 01 code depende
 - [Reference checks](code/check_section_2_06.py)
 - [Runtime evidence](validation/section-2.06.json)
 
+## Section 2.7 Companion Material
+
+- [Executable simultaneous-equation and allocation lab](code/section_2_07.py)
+- [Reference checks](code/check_section_2_07.py)
+- [Runtime evidence](validation/section-2.07.json)
+
 ## Writing and Editorial Workflow
 
 Finish and validate one section before proceeding. Do not label planned sections as written or passing runtime checks as canonical designation.
@@ -68,8 +74,3 @@ Finish and validate one section before proceeding. Do not label planned sections
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md) · [Chapter 01](../chapter-01/README.md)
-
-
-
-
-
