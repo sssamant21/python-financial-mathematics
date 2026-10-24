@@ -17,11 +17,11 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.7 | [Simultaneous Equations](2.07-simultaneous-equations.md) | Draft — examples validated |
 | 2.8 | [Scaling and Algebraic Validation](2.08-scaling-and-algebraic-validation.md) | Draft — runtime validation pending |
 | 2.9 | [Chapter Project — Break-Even and Formula Rearrangement Analyzer](2.09-chapter-project-break-even-and-formula-rearrangement-analyzer.md) | Draft — runtime validation pending |
-| 2.10 | Exercises and Applied Problems | Planned |
+| 2.10 | [Exercises and Applied Problems](2.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
 
-**Published manuscript sections:** 9/10.  
+**Published manuscript sections:** 10/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** Validate Sections 2.8–2.9; then 2.10 — Exercises and Applied Problems.
+**Next:** Validate Sections 2.8–2.10, complete chapter review, then begin Chapter 03.
 
 ## Section 2.1 Companion Material
 
@@ -80,6 +80,13 @@ Runtime validation remains pending; no passing execution is claimed.
 - [Reference checks](code/check_section_2_09.py)
 
 Runtime validation remains pending; no passing execution is claimed.
+
+## Section 2.10 Companion Material
+
+- [Exercises and worked solutions](2.10-exercises-and-applied-problems.md)
+- [Reference checks](code/check_section_2_10.py)
+
+Runtime validation remains pending for Sections 2.8–2.10.
 
 ## Writing and Editorial Workflow
 
