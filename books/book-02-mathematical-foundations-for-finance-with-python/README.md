@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 22/215 (Sections 1.1–1.15 and 2.1–2.7 — Draft; examples validated).  
+**Manuscript sections published:** 23/215 (Sections 1.1–1.15 and 2.1–2.8 — Draft; Section 2.8 runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.7 published as Draft. Latest: [2.7 — Simultaneous Equations](chapter-02/2.07-simultaneous-equations.md). [Chapter 02 index](chapter-02/README.md) tracks the remaining sections.
+**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.8 published as Draft. Latest: [2.8 — Scaling and Algebraic Validation](chapter-02/2.08-scaling-and-algebraic-validation.md). [Chapter 02 index](chapter-02/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,14 +19,14 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** 2.8 — Scaling and Algebraic Validation.
+**Next:** Validate Section 2.8 reference checks; then 2.9 — Chapter Project — Break-Even and Formula Rearrangement Analyzer.
 
 ## Chapter Plan
 
 | Chapter | Title | Status |
 |---|---|---|
 | 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 15/15 sections published as Draft |
-| 02 | [Algebra and Equations for Financial Models](chapter-02/README.md) | 7/10 sections published as Draft |
+| 02 | [Algebra and Equations for Financial Models](chapter-02/README.md) | 8/10 sections published as Draft |
 | 03 | Functions and Financial Relationships | Planned |
 | 04 | Exponential and Logarithmic Functions | Planned |
 | 05 | Sequences, Recurrences, and Financial Growth | Planned |
