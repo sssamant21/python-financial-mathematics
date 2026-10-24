@@ -16,12 +16,12 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.6 | [Inequalities and Absolute Values](2.06-inequalities-and-absolute-values.md) | Draft — examples validated |
 | 2.7 | [Simultaneous Equations](2.07-simultaneous-equations.md) | Draft — examples validated |
 | 2.8 | [Scaling and Algebraic Validation](2.08-scaling-and-algebraic-validation.md) | Draft — runtime validation pending |
-| 2.9 | Chapter Project — Break-Even and Formula Rearrangement Analyzer | Planned |
+| 2.9 | [Chapter Project — Break-Even and Formula Rearrangement Analyzer](2.09-chapter-project-break-even-and-formula-rearrangement-analyzer.md) | Draft — runtime validation pending |
 | 2.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 8/10.  
+**Published manuscript sections:** 9/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** Validate Section 2.8; then 2.9 — Chapter Project — Break-Even and Formula Rearrangement Analyzer.
+**Next:** Validate Sections 2.8–2.9; then 2.10 — Exercises and Applied Problems.
 
 ## Section 2.1 Companion Material
 
@@ -71,6 +71,13 @@ The lab uses only the Python standard library and has no Chapter 01 code depende
 
 - [Executable scaling and validation lab](code/section_2_08.py)
 - [Reference checks](code/check_section_2_08.py)
+
+Runtime validation remains pending; no passing execution is claimed.
+
+## Section 2.9 Companion Material
+
+- [Break-even and rearrangement analyzer](code/section_2_09.py)
+- [Reference checks](code/check_section_2_09.py)
 
 Runtime validation remains pending; no passing execution is claimed.
 
