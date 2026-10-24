@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 37/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, and 4.1–4.2 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 38/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, and 4.1–4.3 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.10 published as Draft. Latest: [4.2 — Natural Exponential and Logarithm](chapter-04/4.02-natural-exponential-and-logarithm.md). [Chapter 03 index](chapter-03/README.md) tracks the remaining sections.
+**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.10 published as Draft. Latest: [4.3 — Logarithm Rules and Their Domains](chapter-04/4.03-logarithm-rules-and-their-domains.md). [Chapter 03 index](chapter-03/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** 4.3 — Logarithm Rules and Their Domains. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.2 and Chapters 02–03 editorial review remain pending.
+**Next:** 4.4 — Discrete and Continuous Compounding. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.3 and Chapters 02–03 editorial review remain pending.
 
 ## Chapter Plan
 
