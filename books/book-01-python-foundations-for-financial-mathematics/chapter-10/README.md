@@ -5,7 +5,7 @@
 | 10.1 | [Cash-Flow Mathematics](10.01-cash-flow-mathematics.md) | Manuscript published |
 | 10.2 | [Cash-Flow Timelines](10.02-cash-flow-timelines.md) | Manuscript published |
 | 10.3 | [Level Annuities](10.03-level-annuities.md) | Manuscript published |
-| 10.4 | Ordinary Annuities | Planned |
+| 10.4 | [Ordinary Annuities](10.04-ordinary-annuities.md) | Manuscript published |
 | 10.5 | Annuities Due | Planned |
 | 10.6 | Deferred Annuities | Planned |
 | 10.7 | Growing Annuities | Planned |
@@ -18,9 +18,9 @@
 | 10.14 | Chapter Project — Cash-Flow Valuation Engine | Planned |
 | 10.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 10.1–10.3 complete (3/15 sections).  
+**Manuscript progress:** 10.1–10.4 complete (4/15 sections).  
 **Chapter status:** In progress.  
-**Next:** 10.4 — Ordinary Annuities.
+**Next:** 10.5 — Annuities Due.
 
 ## Publication and validation policy
 
@@ -29,3 +29,5 @@ Follow the locked Master TOC v1.0. Section 10.1 contains an original standalone 
 Section 10.2 adds cash-flow calendar timelines, ACT/365F and ACT/360 conventions, ten exercises, and ten Python reference tests (independent runtime validation pending).
 
 Section 10.3 covers level annuity PV/FV factors, timeline reconciliation, ten exercises, and ten Python reference tests (independent runtime verification pending).
+
+Section 10.4 includes ordinary annuity PV/FV, inverse payment calculation, twelve exercises and twelve reference tests (independent runtime verification pending).
