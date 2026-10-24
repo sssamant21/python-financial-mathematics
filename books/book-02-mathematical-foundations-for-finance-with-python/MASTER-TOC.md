@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.2 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.2; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.3 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.3; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -105,7 +105,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 5.1 — [Sequences and Time Indexing](chapter-05/5.01-sequences-and-time-indexing.md)  
 5.2 — [Arithmetic and Geometric Sequences](chapter-05/5.02-arithmetic-and-geometric-sequences.md)  
-5.3 — First-Order Balance Recurrences  
+5.3 — [First-Order Balance Recurrences](chapter-05/5.03-first-order-balance-recurrences.md)  
 5.4 — Closed Forms from Repeated Substitution  
 5.5 — Fixed Points and Equilibria  
 5.6 — Convergence and Stability  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 5.3 — First-Order Balance Recurrences.
+**Next manuscript section:** 5.4 — Closed Forms from Repeated Substitution.
