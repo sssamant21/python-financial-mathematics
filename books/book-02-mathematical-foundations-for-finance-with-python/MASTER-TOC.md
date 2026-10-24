@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, and 4.1–4.4 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.4; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, and 4.1–4.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.5; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -94,7 +94,7 @@ Published sections link to their manuscript files; planned sections remain plain
 4.2 — [Natural Exponential and Logarithm](chapter-04/4.02-natural-exponential-and-logarithm.md)  
 4.3 — [Logarithm Rules and Their Domains](chapter-04/4.03-logarithm-rules-and-their-domains.md)  
 4.4 — [Discrete and Continuous Compounding](chapter-04/4.04-discrete-and-continuous-compounding.md)  
-4.5 — Solving for Time and Growth Rate  
+4.5 — [Solving for Time and Growth Rate](chapter-04/4.05-solving-for-time-and-growth-rate.md)  
 4.6 — Products and Additive Log Changes  
 4.7 — Stable Evaluation Near Zero  
 4.8 — Growth Assumptions and Model Limits  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 4.5 — Solving for Time and Growth Rate.
+**Next manuscript section:** 4.6 — Products and Additive Log Changes.
