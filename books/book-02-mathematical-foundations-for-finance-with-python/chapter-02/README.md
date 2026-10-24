@@ -15,13 +15,13 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.5 | [Quadratic Equations](2.05-quadratic-equations.md) | Draft — examples validated |
 | 2.6 | [Inequalities and Absolute Values](2.06-inequalities-and-absolute-values.md) | Draft — examples validated |
 | 2.7 | [Simultaneous Equations](2.07-simultaneous-equations.md) | Draft — examples validated |
-| 2.8 | Scaling and Algebraic Validation | Planned |
+| 2.8 | [Scaling and Algebraic Validation](2.08-scaling-and-algebraic-validation.md) | Draft — runtime validation pending |
 | 2.9 | Chapter Project — Break-Even and Formula Rearrangement Analyzer | Planned |
 | 2.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 7/10.  
+**Published manuscript sections:** 8/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** 2.8 — Scaling and Algebraic Validation.
+**Next:** Validate Section 2.8; then 2.9 — Chapter Project — Break-Even and Formula Rearrangement Analyzer.
 
 ## Section 2.1 Companion Material
 
@@ -66,6 +66,13 @@ The lab uses only the Python standard library and has no Chapter 01 code depende
 - [Executable simultaneous-equation and allocation lab](code/section_2_07.py)
 - [Reference checks](code/check_section_2_07.py)
 - [Runtime evidence](validation/section-2.07.json)
+
+## Section 2.8 Companion Material
+
+- [Executable scaling and validation lab](code/section_2_08.py)
+- [Reference checks](code/check_section_2_08.py)
+
+Runtime validation remains pending; no passing execution is claimed.
 
 ## Writing and Editorial Workflow
 
