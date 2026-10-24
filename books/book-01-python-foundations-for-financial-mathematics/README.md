@@ -246,6 +246,16 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
+## Chapter 9 — Time Value of Money with Python
+
+- [9.1 — The Time Value of Money](chapter-09/9.01-the-time-value-of-money.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 9.1 complete (1/17 sections).  
+**Chapter 9 status:** In progress.  
+**Next:** 9.2 — Financial Timelines.
+
+See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
