@@ -9,21 +9,21 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 12/215 (Sections 1.1–1.12 — Draft; examples validated).  
+**Manuscript sections published:** 13/215 (Sections 1.1–1.13 — Draft; examples validated).  
 **Canonical chapters:** 0/21.  
-**Current status:** Sections 1.1–1.12 published as Draft. Latest: [1.12 — Translating Mathematical Expressions into Python](chapter-01/1.12-translating-mathematical-expressions-into-python.md). [Chapter 01 index](chapter-01/README.md) tracks the remaining sections.
+**Current status:** Sections 1.1–1.13 published as Draft. Latest: [1.13 — Checking Mathematical and Computational Results](chapter-01/1.13-checking-mathematical-and-computational-results.md). [Chapter 01 index](chapter-01/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
 Complete, validate, and push one numbered section before proceeding to the next. Finish all sections, the project, exercises, and companion solutions for Chapter 01 before beginning Chapter 02. Update progress indexes with actual publication and review status; planned content must not be counted as completed.
 
-**Next:** 1.13 — Checking Mathematical and Computational Results.
+**Next:** 1.14 — Chapter Project — Financial Formula Validation Toolkit.
 
 ## Chapter Plan
 
 | Chapter | Title | Status |
 |---|---|---|
-| 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 12/15 sections published as Draft |
+| 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 13/15 sections published as Draft |
 | 02 | Algebra and Equations for Financial Models | Planned |
 | 03 | Functions and Financial Relationships | Planned |
 | 04 | Exponential and Logarithmic Functions | Planned |
@@ -52,6 +52,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 Keep verified references with canonical artifacts. Use original explanations, examples, exercises, and code. Executable validation does not replace mathematical, source, production, and copyright review.
 
 See the [editorial workflow](../../docs/EDITORIAL-WORKFLOW.md) and [source and copyright policy](../../references/SOURCE-AND-COPYRIGHT-POLICY.md).
+
 
 
 

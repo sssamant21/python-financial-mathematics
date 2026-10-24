@@ -1,0 +1,47 @@
+{
+  "section": "1.13",
+  "title": "Checking Mathematical and Computational Results",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "deliberate_error_cases": 5,
+    "exact_audit_cases": 60,
+    "property_cases": 72,
+    "rejected_calls": 16,
+    "tolerance_cases": 13,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_13.py",
+      "return_code": 0,
+      "stdout": "Correct candidate passed: True\nMissing-period candidate passed: False\nMissing-period discrepancy: -11\nWeak bounds passed: True and True\nFloat equality: False\nExplicit close comparison: True\nNear zero, relative only: False\nNear zero, absolute tolerance: True",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_13.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"deliberate_error_cases\": 5, \"exact_audit_cases\": 60, \"property_cases\": 72, \"rejected_calls\": 16, \"tolerance_cases\": 13}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.13-checking-mathematical-and-computational-results.md": "572c28165b8824b3d5360e95ca0cba007d5d3ad09b7abc845bef5a1c047b85e1",
+    "section_1_13.py": "ce97856cacfd73cc1b92c79de54ab0095934f2850407ba332f36cc067877e031",
+    "check_section_1_13.py": "4814da73c7ff722243e3318a6a51f5888d5091120ad90b372bf900bf561dd89d",
+    "section_1_12.py": "7ec8453ec33d69c25d7d6b353b0f6823142e184d1d4d8d69412b1f4f957f3c0f"
+  },
+  "dependency": {
+    "repository_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-01/code/section_1_12.py",
+    "execution_note": "Unmodified repository dependency made importable via PYTHONPATH for isolated section execution; full repository keeps it in code/."
+  },
+  "scope_limits": [
+    "Exact fixed-rate growth audit under Section 1.12 domain; finite test cases and related checks are not independent proofs.",
+    "Finite built-in float comparison interface, explicitly supplied tolerances; no business-constraint relaxation.",
+    "No production accuracy policy, external data verification, or economic model validation.",
+    "Canonical editorial review pending."
+  ]
+}
