@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15 and 2.1–2.7 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1 published as Draft. Runtime validation remains pending for Sections 2.8–2.10 and 3.1; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -77,7 +77,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 3 — Functions and Financial Relationships
 
-3.1 — Inputs, Outputs, Domain, and Range  
+3.1 — [Inputs, Outputs, Domain, and Range](chapter-03/3.01-inputs-outputs-domain-and-range.md)  
 3.2 — Graphs and Financial Interpretation  
 3.3 — Composition of Functions  
 3.4 — Inverse Functions  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 3.1 — Inputs, Outputs, Domain, and Range (after Chapter 02 runtime validation and review).
+**Next manuscript section:** 3.2 — Graphs and Financial Interpretation.
