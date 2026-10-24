@@ -229,9 +229,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.9 — Payoff Diagrams](chapter-08/8.09-payoff-diagrams.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.9 complete (9/14 sections).  
+- [8.10 — Interest and Investment Growth Curves](chapter-08/8.10-interest-and-investment-growth-curves.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.10 complete (10/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.10 — Interest and Investment Growth Curves.
+**Next:** 8.11 — Sensitivity and Scenario Charts.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
