@@ -13,14 +13,14 @@
 | 10.9 | [Growing Perpetuities](10.09-growing-perpetuities.md) | Manuscript published |
 | 10.10 | [Present and Future Values of Payment Streams](10.10-present-and-future-values-of-payment-streams.md) | Manuscript published |
 | 10.11 | [Irregular Cash Flows](10.11-irregular-cash-flows.md) | Manuscript published |
-| 10.12 | NPV | Planned |
+| 10.12 | [NPV](10.12-net-present-value.md) | Manuscript published |
 | 10.13 | IRR and Numerical Root Finding | Planned |
 | 10.14 | Chapter Project — Cash-Flow Valuation Engine | Planned |
 | 10.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 10.1–10.11 complete (11/15 sections).  
+**Manuscript progress:** 10.1–10.12 complete (12/15 sections).  
 **Chapter status:** In progress.  
-**Next:** 10.12 — NPV.
+**Next:** 10.13 — IRR and Numerical Root Finding.
 
 ## Publication and validation policy
 
@@ -45,3 +45,5 @@ Section 10.9 covers growing perpetuities, convergence, due/deferred timing, twel
 Section 10.10 integrates present/future value of signed payment streams with twelve exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 10.11 covers irregular dated cash flows, Actual/365 Fixed valuation, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 10.12 covers NPV, project selection, sensitivity, profitability index, twelve exercises and twelve Python reference tests (independent runtime verification pending).
