@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 29/215 (Sections 1.1–1.15, 2.1–2.10, and 3.1–3.4 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 30/215 (Sections 1.1–1.15, 2.1–2.10, and 3.1–3.5 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.10 published as Draft. Latest: [3.4 — Inverse Functions](chapter-03/3.04-inverse-functions.md). [Chapter 03 index](chapter-03/README.md) tracks the remaining sections.
+**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.10 published as Draft. Latest: [3.5 — Piecewise Functions and Thresholds](chapter-03/3.05-piecewise-functions-and-thresholds.md). [Chapter 03 index](chapter-03/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** 3.5 — Piecewise Functions and Thresholds. Runtime validation for Sections 2.8–2.10 and 3.1–3.4 and Chapter 02 editorial review remain pending.
+**Next:** 3.6 — Monotonicity and Bounds. Runtime validation for Sections 2.8–2.10 and 3.1–3.5 and Chapter 02 editorial review remain pending.
 
 ## Chapter Plan
 
@@ -27,7 +27,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 |---|---|---|
 | 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 15/15 sections published as Draft |
 | 02 | [Algebra and Equations for Financial Models](chapter-02/README.md) | 10/10 sections published as Draft |
-| 03 | [Functions and Financial Relationships](chapter-03/README.md) | 4/10 sections published as Draft |
+| 03 | [Functions and Financial Relationships](chapter-03/README.md) | 5/10 sections published as Draft |
 | 04 | Exponential and Logarithmic Functions | Planned |
 | 05 | Sequences, Recurrences, and Financial Growth | Planned |
 | 06 | Summation, Series, and Cash-Flow Derivations | Planned |
