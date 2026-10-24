@@ -11,7 +11,7 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 | Section | Title | Status |
 |---|---|---|
 | 4.1 | [Exponential Growth and Decay](4.01-exponential-growth-and-decay.md) | Draft — runtime validation pending |
-| 4.2 | Natural Exponential and Logarithm | Planned |
+| 4.2 | [Natural Exponential and Logarithm](4.02-natural-exponential-and-logarithm.md) | Draft — runtime validation pending |
 | 4.3 | Logarithm Rules and Their Domains | Planned |
 | 4.4 | Discrete and Continuous Compounding | Planned |
 | 4.5 | Solving for Time and Growth Rate | Planned |
@@ -21,13 +21,18 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 | 4.9 | Chapter Project — Growth and Rate Conversion Explorer | Planned |
 | 4.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 1/10.
+**Published manuscript sections:** 2/10.
+
+## Section 4.2 companion material
+
+- [Continuous growth and logarithm lab](code/section_4_02.py)
+- [Reference checks](code/check_section_4_02.py)
 
 ## Section 4.1 companion material
 
 - [Exact growth and decay lab](code/section_4_01.py)
 - [Reference checks](code/check_section_4_01.py)
 
-Runtime validation and editorial review are pending for Section 4.1.
+Runtime validation and editorial review are pending for Sections 4.1–4.2.
 
-**Next:** 4.2 — Natural Exponential and Logarithm.
+**Next:** 4.3 — Logarithm Rules and Their Domains.
