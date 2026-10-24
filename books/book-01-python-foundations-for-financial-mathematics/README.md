@@ -252,9 +252,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 
 - [9.2 — Financial Timelines](chapter-09/9.02-financial-timelines.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1–9.2 complete (2/17 sections).  
+- [9.3 — Simple Interest](chapter-09/9.03-simple-interest.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 9.1–9.3 complete (3/17 sections).  
 **Chapter 9 status:** In progress.  
-**Next:** 9.3 — Simple Interest.
+**Next:** 9.4 — Compound Interest.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
