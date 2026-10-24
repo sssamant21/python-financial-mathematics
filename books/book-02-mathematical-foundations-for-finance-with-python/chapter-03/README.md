@@ -16,10 +16,15 @@ Develop mathematical functions, their domains, ranges, graphs, compositions, inv
 | 3.6 | [Monotonicity and Bounds](3.06-monotonicity-and-bounds.md) | Draft — runtime validation pending |
 | 3.7 | [Convexity and Concavity Intuition](3.07-convexity-and-concavity-intuition.md) | Draft — runtime validation pending |
 | 3.8 | [Function Specifications and Validation](3.08-function-specifications-and-validation.md) | Draft — runtime validation pending |
-| 3.9 | Chapter Project — Financial Function Explorer | Planned |
+| 3.9 | [Chapter Project — Financial Function Explorer](3.09-chapter-project-financial-function-explorer.md) | Draft — runtime validation pending |
 | 3.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 8/10. **Canonical sections:** 0/10.
+**Published manuscript sections:** 9/10. **Canonical sections:** 0/10.
+
+## Section 3.9 companion material
+
+- [Financial Function Explorer](code/section_3_09.py)
+- [Reference checks](code/check_section_3_09.py)
 
 ## Section 3.8 companion material
 
@@ -61,8 +66,8 @@ Develop mathematical functions, their domains, ranges, graphs, compositions, inv
 - [Executable functions lab](code/section_3_01.py)
 - [Reference checks](code/check_section_3_01.py)
 
-Runtime execution and editorial review are pending for Sections 3.1–3.8.
+Runtime execution and editorial review are pending for Sections 3.1–3.9.
 
-**Next:** 3.9 — Chapter Project: Financial Function Explorer.
+**Next:** 3.10 — Exercises and Applied Problems.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
