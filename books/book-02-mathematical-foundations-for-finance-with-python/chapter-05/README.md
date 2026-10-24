@@ -1,6 +1,6 @@
 # Chapter 05 — Sequences and Recurrences
 
-**Manuscript status:** 9/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -17,7 +17,12 @@
 | 5.7 | [Variable Rates and Payment Schedules](5.07-variable-rates-and-payment-schedules.md) | Draft — runtime validation pending |
 | 5.8 | [Withdrawal and Depletion Boundaries](5.08-withdrawal-and-depletion-boundaries.md) | Draft — runtime validation pending |
 | 5.9 | [Chapter Project — Contribution and Withdrawal Recurrence Engine](5.09-contribution-and-withdrawal-recurrence-engine.md) | Draft — runtime validation pending |
-| 5.10 | Exercises and Applied Problems | Planned |
+| 5.10 | [Exercises and Applied Problems](5.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 5.10 companion material
+
+- [Cumulative assessment calculations](code/section_5_10.py)
+- [Reference checks](code/check_section_5_10.py)
 
 ## Section 5.9 companion material
 
@@ -68,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 5.10 — Exercises and Applied Problems.
+**Next:** Chapter 06, Section 6.1 — Summation and Product Notation.
