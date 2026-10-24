@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10 and 3.1–3.5; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.6 published as Draft. Runtime validation remains pending for Sections 2.8–2.10 and 3.1–3.6; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -82,7 +82,7 @@ Published sections link to their manuscript files; planned sections remain plain
 3.3 — [Composition of Functions](chapter-03/3.03-composition-of-functions.md)  
 3.4 — [Inverse Functions](chapter-03/3.04-inverse-functions.md)  
 3.5 — [Piecewise Functions and Thresholds](chapter-03/3.05-piecewise-functions-and-thresholds.md)  
-3.6 — Monotonicity and Bounds  
+3.6 — [Monotonicity and Bounds](chapter-03/3.06-monotonicity-and-bounds.md)  
 3.7 — Convexity and Concavity Intuition  
 3.8 — Function Specifications and Validation  
 3.9 — Chapter Project — Financial Function Explorer  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 3.6 — Monotonicity and Bounds.
+**Next manuscript section:** 3.7 — Convexity and Concavity Intuition.
