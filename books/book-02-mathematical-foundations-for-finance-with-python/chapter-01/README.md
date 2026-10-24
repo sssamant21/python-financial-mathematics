@@ -18,11 +18,11 @@
 | 1.12 | [Translating Mathematical Expressions into Python](1.12-translating-mathematical-expressions-into-python.md) | Draft — examples validated |
 | 1.13 | [Checking Mathematical and Computational Results](1.13-checking-mathematical-and-computational-results.md) | Draft — examples validated |
 | 1.14 | [Chapter Project — Financial Formula Validation Toolkit](1.14-chapter-project-financial-formula-validation-toolkit.md) | Draft — examples validated |
-| 1.15 | Exercises and Applied Problems | Planned |
+| 1.15 | [Exercises and Applied Problems](1.15-exercises-and-applied-problems.md) | Draft — examples validated |
 
-**Published manuscript sections:** 14/15.  
+**Published manuscript sections:** 15/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 1.15 — Exercises and Applied Problems.
+**Next:** 2.1 — Algebraic Expressions and Equivalent Forms.
 
 ## Section 1.1 Companion Material
 
@@ -112,6 +112,20 @@ The example uses only the Python standard library. Run commands are included in 
 - [Project walkthrough and challenge answers](solutions/1.14-project-walkthrough.md)
 - [Runtime evidence and dependency hashes](validation/section-1.14.json)
 
+## Section 1.15 Companion Material
+
+- [Chapter-wide worked solutions](solutions/1.15-solutions-and-reference-implementations.md)
+- [Twenty reference calculations](code/section_1_15.py)
+- [Exercise reference checks](code/check_section_1_15.py)
+- [Chapter regression runner](code/check_chapter_01.py)
+- [Runtime and chapter regression evidence](validation/section-1.15.json)
+
+## Chapter 01 Manuscript Completion
+
+All 15 sections, the Section 1.14 project and its walkthrough, and all 20 chapter-wide problem solutions are published as Draft. All 15 section reference-check scripts passed on the recorded Linux runtime. Written reasoning and canonical editorial review remain separate; Windows execution has not been recorded.
+
+The next manuscript section is 2.1 — Algebraic Expressions and Equivalent Forms in Chapter 02. No Chapter 02 manuscript is included here.
+
 ## Writing and Editorial Workflow
 
 Complete, validate, and push one section at a time. Finish this chapter's project, exercises, and companion solutions before beginning Chapter 02.
@@ -119,6 +133,7 @@ Complete, validate, and push one section at a time. Finish this chapter's projec
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
+
 
 
 

@@ -1,0 +1,180 @@
+{
+  "section": "1.15",
+  "title": "Exercises and Applied Problems",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "batch_immutability": true,
+    "duplicate_id_rejected": true,
+    "invalid_growth_cases": 3,
+    "problem_reference_checks": 20,
+    "problem_solution_pairs": 20,
+    "chapter_reference_scripts_passed": 15,
+    "displayed_reference_rows": 20
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_15.py",
+      "return_code": 0,
+      "stdout": "Problem 01: [26, 25, 25, 25]\nProblem 02: [\"2601/5\", \"2704/5\"]\nProblem 03: [true, true, false, false]\nProblem 04: \"0\"\nProblem 05: [[\"unique\", \"5\"], [\"all\", null], [\"none\", null]]\nProblem 06: {\"maximum\": \"500\", \"slacks\": [\"0\", \"-1/10\"]}\nProblem 07: [false, true, true]\nProblem 08: {\"implication\": false, \"profit\": -20}\nProblem 09: [1, 2]\nProblem 10: [\"1/200\", \"1/200\"]\nProblem 11: {\"basis_points\": \"75\", \"percentage_points\": \"3/4\", \"relative_change\": \"1/4\", \"value\": \"1000\"}\nProblem 12: [\"2\", \"144/73\"]\nProblem 13: {\"destination_after\": \"650\", \"fee\": \"16\", \"higher_target\": null, \"minimum\": \"500\", \"source_after\": \"684\"}\nProblem 14: {\"correct\": \"125\", \"power\": 8, \"wrong_grouping\": \"10000\", \"xor\": 1}\nProblem 15: {\"discounted\": \"0\", \"time_one\": \"110\", \"time_two\": \"100\", \"zero_rate\": \"62/5\"}\nProblem 16: [false, true]\nProblem 17: {\"discrepancy\": \"-33\", \"reference\": \"363\", \"relative_error\": \"1/11\", \"weak_checks\": [true, true]}\nProblem 18: {\"counts\": {\"FAIL\": 1, \"INVALID\": 1, \"PASS\": 1}, \"success\": false}\nProblem 19: {\"counts\": {\"FAIL\": 0, \"INVALID\": 0, \"PASS\": 3}, \"success\": true}\nProblem 20: {\"balance\": \"11592740743/100000000\", \"mistake_rejected\": true, \"scaled\": \"11592740743/25000000\", \"scaling_holds\": true}",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_chapter_01.py --output <local-evidence-path>",
+      "return_code": 0,
+      "stdout": "Section 1.01: PASS\nSection 1.02: PASS\nSection 1.03: PASS\nSection 1.04: PASS\nSection 1.05: PASS\nSection 1.06: PASS\nSection 1.07: PASS\nSection 1.08: PASS\nSection 1.09: PASS\nSection 1.10: PASS\nSection 1.11: PASS\nSection 1.12: PASS\nSection 1.13: PASS\nSection 1.14: PASS\nSection 1.15: PASS\nChapter reference checks: 15/15 passed",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.15-exercises-and-applied-problems.md": "9364ba365678f71309160d3a1bf54d7ddd566c4b550f993b2fb22db6e22896e6",
+    "solutions/1.15-solutions-and-reference-implementations.md": "2b6948d17f1446d7327d080729e06c1a6d55d69aa17c6de697769abf68377744",
+    "code/check_chapter_01.py": "7dc6a9650d5e1c51ebaab26764cbbbfe602ae4e343010c7fa3c5fc9613b8850c",
+    "code/check_section_1_15.py": "3b29a491c3f9e99be3e878b64a9afb7849469e8f0695316133626f571f07c9c5",
+    "code/section_1_15.py": "a0141cd36a5b32a3541fe2fb95487eef6e03af1b7b2891945f65113befa4ffb9"
+  },
+  "chapter_regression": {
+    "python_version": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "scope": "fifteen section reference-check scripts; written reasoning and canonical review separate",
+    "passed": 15,
+    "required": 15,
+    "success": true,
+    "commands": [
+      {
+        "command": "python code/check_section_1_01.py",
+        "return_code": 0,
+        "stdout": "PASS: 7 known growth cases; 36 inverse/recurrence scenarios; 13 rejection/range cases; fee, discount, and exercise checks",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_02.py",
+        "return_code": 0,
+        "stdout": "PASS: 27 representation/reference checks; 408 allocation scenarios; 16 invalid-input cases",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_03.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"exact_finite_change_scenarios\": 36, \"invalid_input_cases\": 12, \"recurrence_and_scaling_scenarios\": 64, \"reference_checks\": 22}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_04.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"coupled_weight_cases\": 225, \"growth_domain_cases\": 60, \"interval_cases\": 40, \"invalid_configuration_cases\": 11, \"reference_checks\": 32}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_05.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"asset_orderings\": 2, \"invalid_input_and_range_cases\": 20, \"record_permutations\": 24, \"reference_checks\": 27, \"scenario_cases\": 54, \"strict_iteration_failure\": \"PASS\"}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_06.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"classification_counts\": {\"all\": 25, \"none\": 100, \"unique\": 500}, \"coefficient_cases\": 625, \"identity_samples\": 55, \"invalid_input_cases\": 14, \"reference_checks\": 26, \"restricted_quotient_samples\": 5}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_07.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"band_cases\": 150, \"invalid_input_cases\": 16, \"policy_cases\": 180, \"proposal_cases\": 1080, \"reference_checks\": 27, \"sign_cases\": 225}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_08.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"boolean_rows\": 4, \"checklist_rows\": 8, \"exact_sign_cases\": 25, \"input_cases\": 432, \"rejected_calls\": 15}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_09.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"exact_pair_cases\": 54, \"rejected_calls\": 16, \"search_cases\": 18}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_10.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"accrual_cases\": 162, \"additivity_cases\": 2, \"calendar_cases\": 18, \"rate_cases\": 15, \"rejected_calls\": 16}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_11.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"boundary_cases\": 6, \"proposal_cases\": 1296, \"rejected_calls\": 13, \"scenario_cases\": 324}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_12.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"growth_cases\": 60, \"rejected_calls\": 17, \"schedule_cases\": 360}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_13.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"deliberate_error_cases\": 5, \"exact_audit_cases\": 60, \"property_cases\": 72, \"rejected_calls\": 16, \"tolerance_cases\": 13}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_14.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"accrual_exact_cases\": 1, \"batch_rejection_cases\": 7, \"cli_cases\": 12, \"domain_rejection_cases\": 17, \"fixture_cases\": 1, \"growth_reference_cases\": 27, \"rate_equivalence_cases\": 3, \"schema_rejection_cases\": 20, \"transfer_observation_cases\": 3, \"zero_transfer_cases\": 1}",
+        "stderr": ""
+      },
+      {
+        "command": "python code/check_section_1_15.py",
+        "return_code": 0,
+        "stdout": "PASS: {\"batch_immutability\": true, \"duplicate_id_rejected\": true, \"invalid_growth_cases\": 3, \"problem_reference_checks\": 20}",
+        "stderr": ""
+      }
+    ],
+    "sha256": {
+      "code/check_chapter_01.py": "7dc6a9650d5e1c51ebaab26764cbbbfe602ae4e343010c7fa3c5fc9613b8850c",
+      "code/check_section_1_01.py": "831230d34568b00f5475041902b6b7fc70af9e9016acb9367671992988c2f72c",
+      "code/check_section_1_02.py": "8cd8d3b345804d14aaac26c0019feba392dba337eb80823e99c9b30c9467dfb5",
+      "code/check_section_1_03.py": "a53ab0f9bf9280f914842e8f06f0c74546b595f19aa5906293be514f57254dfb",
+      "code/check_section_1_04.py": "efa8d64835288d87da88ffe40ae6c5d9b1f9244b61c3b66d372fd06e9cb8ec3e",
+      "code/check_section_1_05.py": "6ee6eebde36ced21811a7fec2d1cde045f5c0457058f6ac94e4ad058fe6b6c77",
+      "code/check_section_1_06.py": "9c07a471998fad7466c50aa725ec03b400a7d9121f504c029235092020edfbc0",
+      "code/check_section_1_07.py": "6849bcead398450a8823d8b438c26bd25c79ace0b5f23bc268ae3924da6f8890",
+      "code/check_section_1_08.py": "de7c475b10e8e808e6306dafaf35f89ecd485fafe9a9b798ce1edf65930ce366",
+      "code/check_section_1_09.py": "499fc8775a2d032ccf8504bf1878d4285966eec0aecda5e1ceb1b539104d067f",
+      "code/check_section_1_10.py": "8458d4828a3e2eeb134106683daade790d9fb430601b17b84c46ad115bece999",
+      "code/check_section_1_11.py": "51bb1a6a377e045b1a6823c0901f9766be93790944baf54755c07d5de138ee36",
+      "code/check_section_1_12.py": "de1784824466d82aec3c8f682d0a5913a3c6de980c3f910125e00a59b929992e",
+      "code/check_section_1_13.py": "4814da73c7ff722243e3318a6a51f5888d5091120ad90b372bf900bf561dd89d",
+      "code/check_section_1_14.py": "6995c3ed419138084c7cfaeba6667361b116e1cf77f598cf6f1e1d393268b105",
+      "code/check_section_1_15.py": "3b29a491c3f9e99be3e878b64a9afb7849469e8f0695316133626f571f07c9c5",
+      "code/section_1_01.py": "561ddfe631db45906a5e9db7f108aba6adca2ff032dda5b642493686adf40201",
+      "code/section_1_02.py": "9ead67d14502a80bdf19b89c49085492906598ff2dfbaa94fb6cd7803ff8534f",
+      "code/section_1_03.py": "5db4d265d137496f8eb8a08dfb888e32215e00e6ce894863b82d55b08064e094",
+      "code/section_1_04.py": "cbad32e5d667f700f3df557aa435a446cb82d252ff06007f97af53cb623401b2",
+      "code/section_1_05.py": "bb33f1d7ee37e55d8743034ea9711696f3c165f31cc72a01dbfc95487a328207",
+      "code/section_1_06.py": "db49fb998f285ea71d4099ba6fe265ef0e8745f8c8d2c230ab59dd6e96289d89",
+      "code/section_1_07.py": "ebb52501c4192d203929e5c1670452ac8af0507fda8eb23d060411de3befa285",
+      "code/section_1_08.py": "fdb0bfc563ec7593afb7e02eb0bdc30eb068713625b812625b2a1d13aae84a2e",
+      "code/section_1_09.py": "3047c73e2e661a9fa0c4ebb6705120e4ceea1e5471a354ef29c93fbf66376313",
+      "code/section_1_10.py": "1aa3a56c207e912c1bf8dd8df19bce6f2447d5a0e2537d965032376621955fe9",
+      "code/section_1_11.py": "606e5a78e80c3d0adb0f81fa6f7b60a6eb293abeae5fa5913a59bfb3e681d554",
+      "code/section_1_12.py": "7ec8453ec33d69c25d7d6b353b0f6823142e184d1d4d8d69412b1f4f957f3c0f",
+      "code/section_1_13.py": "ce97856cacfd73cc1b92c79de54ab0095934f2850407ba332f36cc067877e031",
+      "code/section_1_14.py": "64c4adab72e386e8f4d2b8749d049cb8f48ab0a02e39e0ff1fb08b71a9b95b5e",
+      "code/section_1_15.py": "a0141cd36a5b32a3541fe2fb95487eef6e03af1b7b2891945f65113befa4ffb9",
+      "data/section-1.14-cases.json": "4aac65de62e09d71e03154fd7b3096fa56a4b76f0b3b78235f95efd528589cff"
+    }
+  },
+  "snapshot_note": "Published code and fixture files fetched at one repository commit; unmodified sources copied together for chapter regression.",
+  "scope_limits": [
+    "Twenty executable reference examples support calculations and logical instances; prose proofs and modeling explanations require human review.",
+    "All fifteen section check scripts passed on the recorded Linux runtime; Windows execution not claimed.",
+    "Chapter manuscript, project, and companion solutions are published as Draft; canonical editorial gates remain pending."
+  ],
+  "snapshot_commit": "18fbfa2eed1ad5f9aba5a0c08a7e41706cc76879"
+}
