@@ -273,10 +273,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 - [9.14 — Solving for Time](chapter-09/9.14-solving-for-time.md) — Revised Final / Canonical Edition
 - [9.15 — Python TVM Functions](chapter-09/9.15-python-tvm-functions.md) — Revised Final / Canonical Edition
 - [9.16 — Chapter Project — Time Value of Money Engine](chapter-09/9.16-chapter-project-time-value-of-money-engine.md) — Revised Final / Canonical Edition
+- [9.17 — Exercises and Applied Problems](chapter-09/9.17-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1–9.16 complete (16/17 sections).  
-**Chapter 9 status:** In progress.  
-**Next:** 9.17 — Exercises and Applied Problems.
+**Canonical manuscript progress:** 9.1–9.17 complete (17/17 sections).  
+**Chapter 9 status:** Manuscript complete; independent runtime and editorial review pending.  
+**Next:** 10.1 — Cash-Flow Mathematics.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
