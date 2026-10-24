@@ -7,7 +7,7 @@
 | 10.3 | [Level Annuities](10.03-level-annuities.md) | Manuscript published |
 | 10.4 | [Ordinary Annuities](10.04-ordinary-annuities.md) | Manuscript published |
 | 10.5 | [Annuities Due](10.05-annuities-due.md) | Manuscript published |
-| 10.6 | Deferred Annuities | Planned |
+| 10.6 | [Deferred Annuities](10.06-deferred-annuities.md) | Manuscript published |
 | 10.7 | Growing Annuities | Planned |
 | 10.8 | Perpetuities | Planned |
 | 10.9 | Growing Perpetuities | Planned |
@@ -18,9 +18,9 @@
 | 10.14 | Chapter Project — Cash-Flow Valuation Engine | Planned |
 | 10.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 10.1–10.5 complete (5/15 sections).  
+**Manuscript progress:** 10.1–10.6 complete (6/15 sections).  
 **Chapter status:** In progress.  
-**Next:** 10.6 — Deferred Annuities.
+**Next:** 10.7 — Growing Annuities.
 
 ## Publication and validation policy
 
@@ -33,3 +33,5 @@ Section 10.3 covers level annuity PV/FV factors, timeline reconciliation, ten ex
 Section 10.4 includes ordinary annuity PV/FV, inverse payment calculation, twelve exercises and twelve reference tests (independent runtime verification pending).
 
 Section 10.5 adds annuity-due timing, PV/FV, inverse payment, twelve exercises, and twelve Python reference tests (independent runtime verification pending).
+
+Section 10.6 covers deferred-annuity timing, PV and inverse payment, twelve exercises and twelve reference tests (independent runtime verification pending).
