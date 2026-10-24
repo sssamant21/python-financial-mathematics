@@ -18,10 +18,15 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 | 4.6 | [Products and Additive Log Changes](4.06-products-and-additive-log-changes.md) | Draft — runtime validation pending |
 | 4.7 | [Stable Numerical Evaluation](4.07-stable-numerical-evaluation.md) | Draft — runtime validation pending |
 | 4.8 | [Numerical Conditioning and Model Limits](4.08-numerical-conditioning-and-model-limits.md) | Draft — runtime validation pending |
-| 4.9 | Chapter Project — Growth and Rate Conversion Explorer | Planned |
+| 4.9 | [Chapter Project — Growth and Rate Conversion Explorer](4.09-growth-and-rate-conversion-explorer.md) | Draft — runtime validation pending |
 | 4.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 8/10.
+**Published manuscript sections:** 9/10.
+
+## Section 4.9 companion material
+
+- [Growth and rate conversion CLI](code/section_4_09.py)
+- [Reference checks](code/check_section_4_09.py)
 
 ## Section 4.8 companion material
 
@@ -63,6 +68,6 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 - [Exact growth and decay lab](code/section_4_01.py)
 - [Reference checks](code/check_section_4_01.py)
 
-Runtime validation and editorial review are pending for Sections 4.1–4.8.
+Runtime validation and editorial review are pending for Sections 4.1–4.9.
 
-**Next:** 4.9 — Chapter Project: Growth and Rate Conversion Explorer.
+**Next:** 4.10 — Exercises and Applied Problems.
