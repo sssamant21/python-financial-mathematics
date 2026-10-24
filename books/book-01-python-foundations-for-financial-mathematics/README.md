@@ -260,9 +260,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 
 - [9.6 — Future Value](chapter-09/9.06-future-value.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1–9.6 complete (6/17 sections).  
+- [9.7 — Discount Factors](chapter-09/9.07-discount-factors.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 9.1–9.7 complete (7/17 sections).  
 **Chapter 9 status:** In progress.  
-**Next:** 9.7 — Discount Factors.
+**Next:** 9.8 — Multiple Cash Flows.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
