@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"id":"growth-correct","formula":"growth","currency":"USD","inputs":{"principal":100,"rate":10,"representation":"percent","periods":2},"observed":121},
+    {"id":"growth-missing-period","formula":"growth","currency":"USD","inputs":{"principal":100,"rate":10,"representation":"percent","periods":2},"observed":110},
+    {"id":"growth-missing-rate","formula":"growth","currency":"USD","inputs":{"principal":100,"representation":"percent","periods":2},"observed":121},
+    {"id":"accrual-act360","formula":"simple_accrual","currency":"USD","inputs":{"principal":10000,"rate":6,"representation":"percent","start":"2025-01-01","end":"2025-01-31","convention":"ACT/360"},"observed":50},
+    {"id":"accrual-unsupported","formula":"simple_accrual","currency":"USD","inputs":{"principal":10000,"rate":6,"representation":"percent","start":"2025-01-01","end":"2025-01-31","convention":"ACT/365"},"observed":50},
+    {"id":"transfer-feasible","formula":"transfer","currency":"USD","inputs":{"source":1000,"destination":200,"reserve":300,"target":700,"fixed_fee":5,"fee_rate":"0.01","transfer":500},"observed":{"fee":10,"source_after":490,"destination_after":700}},
+    {"id":"transfer-reserve-breach","formula":"transfer","currency":"USD","inputs":{"source":1000,"destination":200,"reserve":300,"target":900,"fixed_fee":5,"fee_rate":"0.01","transfer":700},"observed":{"fee":12,"source_after":288,"destination_after":900}},
+    {"id":"growth-zero-periods","formula":"growth","currency":"USD","inputs":{"principal":100,"rate":10,"representation":"percent","periods":0},"observed":100}
+  ]
+}

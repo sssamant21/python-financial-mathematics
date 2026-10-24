@@ -1,0 +1,56 @@
+{
+  "section": "1.14",
+  "title": "Chapter Project \u2014 Financial Formula Validation Toolkit",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "accrual_exact_cases": 1,
+    "batch_rejection_cases": 7,
+    "cli_cases": 12,
+    "domain_rejection_cases": 17,
+    "fixture_cases": 1,
+    "growth_reference_cases": 27,
+    "rate_equivalence_cases": 3,
+    "schema_rejection_cases": 20,
+    "transfer_observation_cases": 3,
+    "zero_transfer_cases": 1,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_14.py",
+      "return_code": 1,
+      "expected_return_code": 1,
+      "stdout": "growth-correct: PASS\ngrowth-missing-period: FAIL\ngrowth-missing-rate: INVALID\naccrual-act360: PASS\naccrual-unsupported: INVALID\ntransfer-feasible: PASS\ntransfer-reserve-breach: FAIL\ngrowth-zero-periods: PASS\nPASS=4 FAIL=2 INVALID=2",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_14.py",
+      "return_code": 0,
+      "expected_return_code": 0,
+      "stdout": "PASS: {\"accrual_exact_cases\": 1, \"batch_rejection_cases\": 7, \"cli_cases\": 12, \"domain_rejection_cases\": 17, \"fixture_cases\": 1, \"growth_reference_cases\": 27, \"rate_equivalence_cases\": 3, \"schema_rejection_cases\": 20, \"transfer_observation_cases\": 3, \"zero_transfer_cases\": 1}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.14-chapter-project-financial-formula-validation-toolkit.md": "bf3de3a1c550ccd787276051553dbbfd4a000d5e2092e52ec281ae39922746d9",
+    "code/section_1_14.py": "64c4adab72e386e8f4d2b8749d049cb8f48ab0a02e39e0ff1fb08b71a9b95b5e",
+    "code/check_section_1_14.py": "6995c3ed419138084c7cfaeba6667361b116e1cf77f598cf6f1e1d393268b105",
+    "data/section-1.14-cases.json": "4aac65de62e09d71e03154fd7b3096fa56a4b76f0b3b78235f95efd528589cff",
+    "solutions/1.14-project-walkthrough.md": "4cf656d94b738975a014dc4b682bb19219d16d0185f70873ef55f5c308844831",
+    "dependency/section_1_11.py": "606e5a78e80c3d0adb0f81fa6f7b60a6eb293abeae5fa5913a59bfb3e681d554",
+    "dependency/section_1_13.py": "ce97856cacfd73cc1b92c79de54ab0095934f2850407ba332f36cc067877e031",
+    "dependency/section_1_12.py": "7ec8453ec33d69c25d7d6b353b0f6823142e184d1d4d8d69412b1f4f957f3c0f",
+    "dependency/section_1_10.py": "1aa3a56c207e912c1bf8dd8df19bce6f2447d5a0e2537d965032376621955fe9"
+  },
+  "dependency_execution": "Unmodified repository modules made importable via PYTHONPATH for isolated execution; full repository keeps them together in code/.",
+  "scope_limits": [
+    "Three exact registered models, one labeled currency per record; label syntax is not registry validation.",
+    "Mixed fixture intentionally returns 1; acceptance status PASS verifies expected failures and invalid records.",
+    "Small local teaching workload, no live data, FX conversion, rounding policy, or additional financial conventions.",
+    "Canonical editorial review pending; Windows execution not claimed."
+  ]
+}

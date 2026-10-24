@@ -42,7 +42,8 @@ See the [Book 1 progress index](books/book-01-python-foundations-for-financial-m
 
 ## Book 2 Progress
 
-[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.13** published as Draft with executable examples and recorded runtime checks. Latest: **1.13 — Checking Mathematical and Computational Results**. Progress: **13/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.14 — Chapter Project — Financial Formula Validation Toolkit**. Work proceeds one section at a time.
+[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.14** published as Draft with executable examples and recorded runtime checks. Latest: **1.14 — Chapter Project — Financial Formula Validation Toolkit**. Progress: **14/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.15 — Exercises and Applied Problems**. Work proceeds one section at a time.
+
 
 
 

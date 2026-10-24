@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.13 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.14 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -59,7 +59,7 @@ Published sections link to their manuscript files; planned sections remain plain
 1.11 — [Translating Financial Questions into Mathematics](chapter-01/1.11-translating-financial-questions-into-mathematics.md)  
 1.12 — [Translating Mathematical Expressions into Python](chapter-01/1.12-translating-mathematical-expressions-into-python.md)  
 1.13 — [Checking Mathematical and Computational Results](chapter-01/1.13-checking-mathematical-and-computational-results.md)  
-1.14 — Chapter Project — Financial Formula Validation Toolkit  
+1.14 — [Chapter Project — Financial Formula Validation Toolkit](chapter-01/1.14-chapter-project-financial-formula-validation-toolkit.md)  
 1.15 — Exercises and Applied Problems
 
 # Chapter 2 — Algebra and Equations for Financial Models
@@ -332,7 +332,8 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 1.14 — Chapter Project — Financial Formula Validation Toolkit.
+**Next manuscript section:** 1.15 — Exercises and Applied Problems.
+
 
 
 

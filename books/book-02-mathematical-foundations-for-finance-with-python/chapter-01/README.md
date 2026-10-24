@@ -17,12 +17,12 @@
 | 1.11 | [Translating Financial Questions into Mathematics](1.11-translating-financial-questions-into-mathematics.md) | Draft — examples validated |
 | 1.12 | [Translating Mathematical Expressions into Python](1.12-translating-mathematical-expressions-into-python.md) | Draft — examples validated |
 | 1.13 | [Checking Mathematical and Computational Results](1.13-checking-mathematical-and-computational-results.md) | Draft — examples validated |
-| 1.14 | Chapter Project — Financial Formula Validation Toolkit | Planned |
+| 1.14 | [Chapter Project — Financial Formula Validation Toolkit](1.14-chapter-project-financial-formula-validation-toolkit.md) | Draft — examples validated |
 | 1.15 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 13/15.  
+**Published manuscript sections:** 14/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 1.14 — Chapter Project — Financial Formula Validation Toolkit.
+**Next:** 1.15 — Exercises and Applied Problems.
 
 ## Section 1.1 Companion Material
 
@@ -104,6 +104,14 @@ The example uses only the Python standard library. Run commands are included in 
 - [Reference checks](code/check_section_1_13.py)
 - [Runtime evidence and dependency hash](validation/section-1.13.json)
 
+## Section 1.14 Companion Material
+
+- [Executable validation toolkit](code/section_1_14.py)
+- [Demonstration cases](data/section-1.14-cases.json)
+- [Acceptance checks](code/check_section_1_14.py)
+- [Project walkthrough and challenge answers](solutions/1.14-project-walkthrough.md)
+- [Runtime evidence and dependency hashes](validation/section-1.14.json)
+
 ## Writing and Editorial Workflow
 
 Complete, validate, and push one section at a time. Finish this chapter's project, exercises, and companion solutions before beginning Chapter 02.
@@ -111,6 +119,7 @@ Complete, validate, and push one section at a time. Finish this chapter's projec
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
+
 
 
 
