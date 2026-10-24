@@ -290,10 +290,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [10.4 — Ordinary Annuities](chapter-10/10.04-ordinary-annuities.md) — Manuscript published; runtime and editorial validation pending
 - [10.5 — Annuities Due](chapter-10/10.05-annuities-due.md) — Manuscript published; runtime and editorial validation pending
 - [10.6 — Deferred Annuities](chapter-10/10.06-deferred-annuities.md) — Manuscript published; runtime and editorial validation pending
+- [10.7 — Growing Annuities](chapter-10/10.07-growing-annuities.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 10.1–10.6 complete (6/15 sections).  
+**Manuscript progress:** 10.1–10.7 complete (7/15 sections).  
 **Chapter 10 status:** In progress.  
-**Next:** 10.7 — Growing Annuities.
+**Next:** 10.8 — Perpetuities.
 
 ## Editorial Requirement
 
