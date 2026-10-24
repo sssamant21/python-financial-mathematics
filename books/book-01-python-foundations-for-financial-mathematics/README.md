@@ -296,10 +296,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [10.10 — Present and Future Values of Payment Streams](chapter-10/10.10-present-and-future-values-of-payment-streams.md) — Manuscript published; runtime and editorial validation pending
 - [10.11 — Irregular Cash Flows](chapter-10/10.11-irregular-cash-flows.md) — Manuscript published; runtime and editorial validation pending
 - [10.12 — NPV](chapter-10/10.12-net-present-value.md) — Manuscript published; runtime and editorial validation pending
+- [10.13 — IRR and Numerical Root Finding](chapter-10/10.13-irr-and-numerical-root-finding.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 10.1–10.12 complete (12/15 sections).  
+**Manuscript progress:** 10.1–10.13 complete (13/15 sections).  
 **Chapter 10 status:** In progress.  
-**Next:** 10.13 — IRR and Numerical Root Finding.
+**Next:** 10.14 — Chapter Project — Cash-Flow Valuation Engine.
 
 ## Editorial Requirement
 
