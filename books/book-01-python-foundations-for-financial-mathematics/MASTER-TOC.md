@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 9.7 — Discount Factors.**
+**Next locked manuscript section: 9.8 — Multiple Cash Flows.**
