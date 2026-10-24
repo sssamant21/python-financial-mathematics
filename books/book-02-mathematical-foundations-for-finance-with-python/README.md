@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 19/215 (Sections 1.1–1.15 and 2.1–2.4 — Draft; examples validated).  
+**Manuscript sections published:** 20/215 (Sections 1.1–1.15 and 2.1–2.5 — Draft; examples validated).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.4 published as Draft. Latest: [2.4 — Powers, Roots, and Fractional Exponents](chapter-02/2.04-powers-roots-and-fractional-exponents.md). [Chapter 02 index](chapter-02/README.md) tracks the remaining sections.
+**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.5 published as Draft. Latest: [2.5 — Quadratic Equations](chapter-02/2.05-quadratic-equations.md). [Chapter 02 index](chapter-02/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,14 +19,14 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** 2.5 — Quadratic Equations.
+**Next:** 2.6 — Inequalities and Absolute Values.
 
 ## Chapter Plan
 
 | Chapter | Title | Status |
 |---|---|---|
 | 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 15/15 sections published as Draft |
-| 02 | [Algebra and Equations for Financial Models](chapter-02/README.md) | 4/10 sections published as Draft |
+| 02 | [Algebra and Equations for Financial Models](chapter-02/README.md) | 5/10 sections published as Draft |
 | 03 | Functions and Financial Relationships | Planned |
 | 04 | Exponential and Logarithmic Functions | Planned |
 | 05 | Sequences, Recurrences, and Financial Growth | Planned |
@@ -54,6 +54,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 Keep verified references with canonical artifacts. Use original explanations, examples, exercises, and code. Executable validation does not replace mathematical, source, production, and copyright review.
 
 See the [editorial workflow](../../docs/EDITORIAL-WORKFLOW.md) and [source and copyright policy](../../references/SOURCE-AND-COPYRIGHT-POLICY.md).
+
 
 
 

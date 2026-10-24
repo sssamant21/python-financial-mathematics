@@ -1,0 +1,42 @@
+{
+  "section": "2.5",
+  "title": "Quadratic Equations",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "break_even_original_cases": 2,
+    "irrational_description_cases": 27,
+    "no_real_cases": 12,
+    "planted_rational_cases": 60,
+    "rejected_calls": 12,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_05.py",
+      "return_code": 0,
+      "stdout": "Factored roots: 2, 3\nRepeated root: 2\nNegative discriminant: no_real\nIrrational root approximations: -1.414214, 1.414214\nBreak-even quantities: 20, 80\nGrowth rate candidates: -21/10, 1/10\nAdmissible growth rates: 1/10",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_05.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"break_even_original_cases\": 2, \"irrational_description_cases\": 27, \"no_real_cases\": 12, \"planted_rational_cases\": 60, \"rejected_calls\": 12}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.05-quadratic-equations.md": "3f3ffa0bb288b6e5a347259fda64f6bbf7f17eb910f6ccc97b4426c1ac9d3767",
+    "section_2_05.py": "a270ff07c263937077a6c1fc8a23cb7f3b70314467e4ea2ed8a5b292beb69bcc",
+    "check_section_2_05.py": "0398f111a0a4a9fd0b133c4495920e71ea58d40cc9966fbf45b07f2dc8bc75b3"
+  },
+  "scope_limits": [
+    "Nonzero quadratic coefficient and exact rational coefficients; real roots only.",
+    "Exact discriminant and center/spread description; rational roots exact, optional Decimal outputs approximate.",
+    "Forty-digit Decimal checks use scaled residual tolerance 1e-34 on selected small cases; no universal numerical stability or contractual precision guarantee.",
+    "Synthetic break-even and constant two-period growth examples require separate financial-domain checks; canonical editorial review pending."
+  ]
+}

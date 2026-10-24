@@ -42,7 +42,8 @@ See the [Book 1 progress index](books/book-01-python-foundations-for-financial-m
 
 ## Book 2 Progress
 
-[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.15 and 2.1–2.4** published as Draft with executable examples and recorded runtime checks. Latest: **2.4 — Powers, Roots, and Fractional Exponents**. Progress: **19/215 manuscript sections published**. Chapter 01 has all 15 sections, its project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical editorial review remains pending. Next: **2.5 — Quadratic Equations**. Work proceeds one section at a time.
+[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.15 and 2.1–2.5** published as Draft with executable examples and recorded runtime checks. Latest: **2.5 — Quadratic Equations**. Progress: **20/215 manuscript sections published**. Chapter 01 has all 15 sections, its project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical editorial review remains pending. Next: **2.6 — Inequalities and Absolute Values**. Work proceeds one section at a time.
+
 
 
 
