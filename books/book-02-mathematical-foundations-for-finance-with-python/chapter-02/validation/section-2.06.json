@@ -1,0 +1,47 @@
+{
+  "section": "2.6",
+  "title": "Inequalities and Absolute Values",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "absolute_membership_cases": 648,
+    "absolute_solutions": 72,
+    "intersection_membership_cases": 900,
+    "intersection_pairs": 100,
+    "linear_membership_cases": 486,
+    "linear_solutions": 54,
+    "profit_sign_cases": 127,
+    "rational_sign_cases": 26,
+    "rejected_calls": 11,
+    "weight_boundary_cases": 6,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_06.py",
+      "return_code": 0,
+      "stdout": "Negative-coefficient bound: [3, +inf)\nAbsolute affine band: [1, 3]\nWeight band and strict cap: [2/5, 11/20)\nUpper weight boundary accepted: False\nStrict zero-width band: empty\nNonnegative profit with capacity 60: [20, 60]",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_06.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"absolute_membership_cases\": 648, \"absolute_solutions\": 72, \"intersection_membership_cases\": 900, \"intersection_pairs\": 100, \"linear_membership_cases\": 486, \"linear_solutions\": 54, \"profit_sign_cases\": 127, \"rational_sign_cases\": 26, \"rejected_calls\": 11, \"weight_boundary_cases\": 6}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.06-inequalities-and-absolute-values.md": "7f7867a5ea834d31160204d481a94c27242d9e01608f2d1d10bb2d18ea85ee84",
+    "section_2_06.py": "a079c92b240503ca78e921325c4d77d6eb51aae2434c324c24b8d300265a5dac",
+    "check_section_2_06.py": "b9c0f8c1612e38590684176b608556e3d1eed1453a39c7d7ca34e43ea1ad895d"
+  },
+  "scope_limits": [
+    "Exact rational linear upper bounds, absolute affine inside bands, and single-interval intersections.",
+    "Empty set uses None; missing interval endpoints mean unboundedness; strictness is explicit.",
+    "Quadratic and rational sign regions are derived in prose and cross-checked, not solved by a general code routine.",
+    "No rounding, numerical feasibility tolerance, or whole-portfolio validation; canonical editorial review pending."
+  ]
+}
