@@ -281,6 +281,15 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
+
+## Chapter 10 — Cash Flows, Annuities, and Perpetuities
+
+- [10.1 — Cash-Flow Mathematics](chapter-10/10.01-cash-flow-mathematics.md) — Manuscript published; runtime and editorial validation pending
+
+**Manuscript progress:** 10.1 complete (1/15 sections).  
+**Chapter 10 status:** In progress.  
+**Next:** 10.2 — Cash-Flow Timelines.
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
