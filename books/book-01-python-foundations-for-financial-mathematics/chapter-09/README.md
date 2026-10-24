@@ -4,7 +4,7 @@
 |---|---|---|
 | 9.1 | [The Time Value of Money](9.01-the-time-value-of-money.md) | Canonical / Complete |
 | 9.2 | [Financial Timelines](9.02-financial-timelines.md) | Canonical / Complete |
-| 9.3 | Simple Interest | Planned |
+| 9.3 | [Simple Interest](9.03-simple-interest.md) | Canonical / Complete |
 | 9.4 | Compound Interest | Planned |
 | 9.5 | Present Value | Planned |
 | 9.6 | Future Value | Planned |
@@ -20,12 +20,14 @@
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.2 complete (2/17 sections).  
+**Canonical manuscript progress:** 9.1–9.3 complete (3/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.3 — Simple Interest.
+**Next:** 9.4 — Compound Interest.
 
 ## Publication Policy
 
 Follow the locked Book 1 Master TOC v1.0 and Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Section 9.1 includes a standalone standard-library lab with eight passing reference tests and a successful compilation check. Original examples use explicit periodic rates, matching whole-period terms, common valuation dates, and stated numerical limits. Author review is not independent certification.
 
 Section 9.2 adds a standalone financial-timeline lab with event retention, period netting, explicit completeness assumptions, and eight passing reference tests; compilation succeeds.
+
+Section 9.3 adds a standalone simple-interest lab with matching rate/time units, explicit fixed day bases, rollover distinctions, and eight passing reference tests; compilation succeeds.
