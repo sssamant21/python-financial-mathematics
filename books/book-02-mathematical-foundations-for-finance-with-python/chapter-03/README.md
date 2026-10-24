@@ -11,7 +11,7 @@ Develop mathematical functions, their domains, ranges, graphs, compositions, inv
 | 3.1 | [Inputs, Outputs, Domain, and Range](3.01-inputs-outputs-domain-and-range.md) | Draft — runtime validation pending |
 | 3.2 | [Graphs and Financial Interpretation](3.02-graphs-and-financial-interpretation.md) | Draft — runtime validation pending |
 | 3.3 | [Composition of Functions](3.03-composition-of-functions.md) | Draft — runtime validation pending |
-| 3.4 | Inverse Functions | Planned |
+| 3.4 | [Inverse Functions](3.04-inverse-functions.md) | Draft — runtime validation pending |
 | 3.5 | Piecewise Functions and Thresholds | Planned |
 | 3.6 | Monotonicity and Bounds | Planned |
 | 3.7 | Convexity and Concavity Intuition | Planned |
@@ -19,7 +19,12 @@ Develop mathematical functions, their domains, ranges, graphs, compositions, inv
 | 3.9 | Chapter Project — Financial Function Explorer | Planned |
 | 3.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 3/10. **Canonical sections:** 0/10.
+**Published manuscript sections:** 4/10. **Canonical sections:** 0/10.
+
+## Section 3.4 companion material
+
+- [Exact inverse functions lab](code/section_3_04.py)
+- [Reference checks](code/check_section_3_04.py)
 
 ## Section 3.3 companion material
 
@@ -36,8 +41,8 @@ Develop mathematical functions, their domains, ranges, graphs, compositions, inv
 - [Executable functions lab](code/section_3_01.py)
 - [Reference checks](code/check_section_3_01.py)
 
-Runtime execution and editorial review are pending for Sections 3.1–3.3.
+Runtime execution and editorial review are pending for Sections 3.1–3.4.
 
-**Next:** 3.4 — Inverse Functions.
+**Next:** 3.5 — Piecewise Functions and Thresholds.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
