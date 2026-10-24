@@ -1,0 +1,40 @@
+{
+  "section": "1.12",
+  "title": "Translating Mathematical Expressions into Python",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "growth_cases": 60,
+    "rejected_calls": 17,
+    "schedule_cases": 360,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_12.py",
+      "return_code": 0,
+      "stdout": "Compound balance: 121\nt=0: discounted cash flow=-100\nt=1: discounted cash flow=50\nt=2: discounted cash flow=50\nTime-zero value: 0\nAt zero rate: 31/2\nPower versus XOR: 8 versus 1",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_12.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"growth_cases\": 60, \"rejected_calls\": 17, \"schedule_cases\": 360}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.12-translating-mathematical-expressions-into-python.md": "e0a2b1cdc3b80b6846518afd30d3028916539145e34803a162774af7741a0ab6",
+    "section_1_12.py": "7ec8453ec33d69c25d7d6b353b0f6823142e184d1d4d8d69412b1f4f957f3c0f",
+    "check_section_1_12.py": "de1784824466d82aec3c8f682d0a5913a3c6de980c3f910125e00a59b929992e"
+  },
+  "scope_limits": [
+    "Fixed effective decimal period rate greater than -1; time-zero sequence position is explicit.",
+    "Exact rational arithmetic, nonnegative integer horizon, no rounding or irregular dates.",
+    "Growth requires nonnegative principal; cash flows may have either sign.",
+    "Finite implementation checks do not validate economic rate selection; canonical editorial review pending."
+  ]
+}

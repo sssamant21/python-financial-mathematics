@@ -42,7 +42,8 @@ See the [Book 1 progress index](books/book-01-python-foundations-for-financial-m
 
 ## Book 2 Progress
 
-[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.11** published as Draft with executable examples and recorded runtime checks. Latest: **1.11 — Translating Financial Questions into Mathematics**. Progress: **11/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.12 — Translating Mathematical Expressions into Python**. Work proceeds one section at a time.
+[Book 2](books/book-02-mathematical-foundations-for-finance-with-python/README.md) has Sections **1.1–1.12** published as Draft with executable examples and recorded runtime checks. Latest: **1.12 — Translating Mathematical Expressions into Python**. Progress: **12/215 manuscript sections published**. Canonical editorial review remains pending. Next: **1.13 — Checking Mathematical and Computational Results**. Work proceeds one section at a time.
+
 
 
 
