@@ -250,9 +250,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 
 - [9.1 — The Time Value of Money](chapter-09/9.01-the-time-value-of-money.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1 complete (1/17 sections).  
+- [9.2 — Financial Timelines](chapter-09/9.02-financial-timelines.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 9.1–9.2 complete (2/17 sections).  
 **Chapter 9 status:** In progress.  
-**Next:** 9.2 — Financial Timelines.
+**Next:** 9.3 — Simple Interest.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
