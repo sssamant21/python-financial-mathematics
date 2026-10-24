@@ -1,0 +1,42 @@
+{
+  "section": "2.3",
+  "title": "Fractions and Rational Equations",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "common_denominator_cases": 9,
+    "fee_target_cases": 36,
+    "original_membership_cases": 1215,
+    "ratio_classification_cases": 243,
+    "rejected_calls": 10,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_03.py",
+      "return_code": 0,
+      "stdout": "Valid ratio root: 8/3, residual=0\nExcluded candidate: 1, kind=none\nFee target principal: 500, admissible=True\nZero fixed fee, matching target: all\nZero fixed fee, other target: none, candidate=0\nNegative ratio root: -1000, admissible=False",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_03.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"common_denominator_cases\": 9, \"fee_target_cases\": 36, \"original_membership_cases\": 1215, \"ratio_classification_cases\": 243, \"rejected_calls\": 10}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.03-fractions-and-rational-equations.md": "4f6e4afd9d8cc82f88314fe7088eb19bcdcc0e93ff4b6fb17e23d8faa27009fc",
+    "section_2_03.py": "785d026e4703dde961d9ba64e22f17028a58d027b6ef102c88bbdcc5c60a311f",
+    "check_section_2_03.py": "5e781dff7044acc97b50b05ab0cf9b2e4883d86851719f5bf2d68f260c2b687e"
+  },
+  "scope_limits": [
+    "Restricted equation (a*x+b)/(c*x+d)=target, not a general rational-equation solver.",
+    "Original denominator exclusions and empty-domain cases preserved; positive principal checked separately.",
+    "Hypothetical nonnegative fixed/proportional fee parameters and target fraction; no contractual rounding or increments.",
+    "Exact rational finite checks complement domain reasoning; canonical editorial review pending."
+  ]
+}
