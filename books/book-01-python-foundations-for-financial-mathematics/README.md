@@ -237,9 +237,12 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.13 — Chapter Project — Financial Analytics Dashboard](chapter-08/8.13-chapter-project-financial-analytics-dashboard.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.13 complete (13/14 sections).  
-**Chapter 8 status:** In progress.  
-**Next:** 8.14 — Exercises and Applied Problems.
+- [8.14 — Exercises and Applied Problems](chapter-08/8.14-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
+- [8.14 — Solutions and Reference Implementations](chapter-08/8.14-solutions-and-reference-implementations.md) — Companion solutions for twenty chapter-wide problems
+
+**Canonical manuscript progress:** 8.1–8.14 complete (14/14 sections).  
+**Chapter 8 status:** Complete, with twenty chapter-wide exercises and tested companion solutions.  
+**Next:** 9.1 — The Time Value of Money.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
