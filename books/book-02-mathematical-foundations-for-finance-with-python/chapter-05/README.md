@@ -1,6 +1,6 @@
 # Chapter 05 — Sequences and Recurrences
 
-**Manuscript status:** 8/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 9/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -16,8 +16,13 @@
 | 5.6 | [Convergence and Stability](5.06-convergence-and-stability.md) | Draft — runtime validation pending |
 | 5.7 | [Variable Rates and Payment Schedules](5.07-variable-rates-and-payment-schedules.md) | Draft — runtime validation pending |
 | 5.8 | [Withdrawal and Depletion Boundaries](5.08-withdrawal-and-depletion-boundaries.md) | Draft — runtime validation pending |
-| 5.9 | Chapter Project — Contribution and Withdrawal Recurrence Engine | Planned |
+| 5.9 | [Chapter Project — Contribution and Withdrawal Recurrence Engine](5.09-contribution-and-withdrawal-recurrence-engine.md) | Draft — runtime validation pending |
 | 5.10 | Exercises and Applied Problems | Planned |
+
+## Section 5.9 companion material
+
+- [Contribution and withdrawal recurrence engine](code/section_5_09.py)
+- [Reference checks](code/check_section_5_09.py)
 
 ## Section 5.8 companion material
 
@@ -63,4 +68,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 5.9 — Chapter Project: Contribution and Withdrawal Recurrence Engine.
+**Next:** 5.10 — Exercises and Applied Problems.
