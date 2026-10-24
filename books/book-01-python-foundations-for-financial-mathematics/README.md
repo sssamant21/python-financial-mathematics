@@ -267,10 +267,11 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 - [9.9 — Net Present Value](chapter-09/9.09-net-present-value.md) — Revised Final / Canonical Edition
 
 - [9.10 — Effective vs. Nominal Rates](chapter-09/9.10-effective-vs-nominal-rates.md) — Revised Final / Canonical Edition
+- [9.11 — Compounding Frequency](chapter-09/9.11-compounding-frequency.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 9.1–9.10 complete (10/17 sections).  
+**Canonical manuscript progress:** 9.1–9.11 complete (11/17 sections).  
 **Chapter 9 status:** In progress.  
-**Next:** 9.11 — Compounding Frequency.
+**Next:** 9.12 — Continuous Compounding.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
