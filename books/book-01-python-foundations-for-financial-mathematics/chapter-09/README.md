@@ -6,7 +6,7 @@
 | 9.2 | [Financial Timelines](9.02-financial-timelines.md) | Canonical / Complete |
 | 9.3 | [Simple Interest](9.03-simple-interest.md) | Canonical / Complete |
 | 9.4 | [Compound Interest](9.04-compound-interest.md) | Canonical / Complete |
-| 9.5 | Present Value | Planned |
+| 9.5 | [Present Value](9.05-present-value.md) | Canonical / Complete |
 | 9.6 | Future Value | Planned |
 | 9.7 | Discount Factors | Planned |
 | 9.8 | Multiple Cash Flows | Planned |
@@ -20,9 +20,9 @@
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.4 complete (4/17 sections).  
+**Canonical manuscript progress:** 9.1–9.5 complete (5/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.5 — Present Value.
+**Next:** 9.6 — Future Value.
 
 ## Publication Policy
 
@@ -33,3 +33,5 @@ Section 9.2 adds a standalone financial-timeline lab with event retention, perio
 Section 9.3 adds a standalone simple-interest lab with matching rate/time units, explicit fixed day bases, rollover distinctions, and eight passing reference tests; compilation succeeds.
 
 Section 9.4 adds a standalone compound-interest lab with a retained-interest schedule, closed-form reconciliation, composition checks, and eight passing reference tests; compilation succeeds.
+
+Section 9.5 adds a standalone signed single-payment present-value lab with inverse accumulation, common-date comparisons, negative-rate boundaries, and eight passing reference tests; compilation succeeds.
