@@ -298,10 +298,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [10.12 — NPV](chapter-10/10.12-net-present-value.md) — Manuscript published; runtime and editorial validation pending
 - [10.13 — IRR and Numerical Root Finding](chapter-10/10.13-irr-and-numerical-root-finding.md) — Manuscript published; runtime and editorial validation pending
 - [10.14 — Chapter Project — Cash-Flow Valuation Engine](chapter-10/10.14-chapter-project-cash-flow-valuation-engine.md) — Manuscript published; runtime and editorial validation pending
+- [10.15 — Exercises and Applied Problems](chapter-10/10.15-exercises-and-applied-problems.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 10.1–10.14 complete (14/15 sections).  
-**Chapter 10 status:** In progress.  
-**Next:** 10.15 — Exercises and Applied Problems.
+**Manuscript progress:** 10.1–10.15 complete (15/15 sections).  
+**Chapter 10 status:** Manuscript complete; independent runtime and editorial review pending.  
+**Next:** 11.1 — Loan Mathematics.
 
 ## Editorial Requirement
 
