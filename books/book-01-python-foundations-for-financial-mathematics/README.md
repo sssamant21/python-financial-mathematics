@@ -293,10 +293,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [10.7 — Growing Annuities](chapter-10/10.07-growing-annuities.md) — Manuscript published; runtime and editorial validation pending
 - [10.8 — Perpetuities](chapter-10/10.08-perpetuities.md) — Manuscript published; runtime and editorial validation pending
 - [10.9 — Growing Perpetuities](chapter-10/10.09-growing-perpetuities.md) — Manuscript published; runtime and editorial validation pending
+- [10.10 — Present and Future Values of Payment Streams](chapter-10/10.10-present-and-future-values-of-payment-streams.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 10.1–10.9 complete (9/15 sections).  
+**Manuscript progress:** 10.1–10.10 complete (10/15 sections).  
 **Chapter 10 status:** In progress.  
-**Next:** 10.10 — Present and Future Values of Payment Streams.
+**Next:** 10.11 — Irregular Cash Flows.
 
 ## Editorial Requirement
 
