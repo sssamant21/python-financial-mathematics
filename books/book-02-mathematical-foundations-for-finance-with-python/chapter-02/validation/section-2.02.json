@@ -1,0 +1,41 @@
+{
+  "section": "2.2",
+  "title": "Linear Equations and Rearrangement",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "forward_inverse_cases": 43,
+    "linear_classification_cases": 125,
+    "principal_domain_cases": 54,
+    "rejected_calls": 14,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_02.py",
+      "return_code": 0,
+      "stdout": "Principal: 1000, admissible=True, residual=0\nPeriod rate: 3/50, admissible=True, residual=0\nZero coefficient, zero target: all\nZero coefficient, fixed fee 3: none\nNegative real root: -100, admissible=False, residual=0",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_02.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"forward_inverse_cases\": 43, \"linear_classification_cases\": 125, \"principal_domain_cases\": 54, \"rejected_calls\": 14}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.02-linear-equations-and-rearrangement.md": "2a5446a7fe18c9287e2f270f97044d426f67d33e73dd8b0c7aecd71f1d767e52",
+    "section_2_02.py": "a09a09ed160f0b7e9121347606566ee06e450ab3024f07341242b223110da1ec",
+    "check_section_2_02.py": "c5ce191a6ee38e4f9a74f5311b65643f76be027ef0ec986e9592a87837f50fa2"
+  },
+  "scope_limits": [
+    "One-variable exact linear equations and a hypothetical one-period fee model.",
+    "Real-solution classification is separate from positive-principal or rate-greater-than-minus-one admissibility.",
+    "Exact rational arithmetic; no threshold-based zero classification, rounding, or external financial model verification.",
+    "Finite implementation evidence complements symbolic case analysis; canonical editorial review pending."
+  ]
+}

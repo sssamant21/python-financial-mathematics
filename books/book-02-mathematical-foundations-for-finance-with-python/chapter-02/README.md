@@ -9,7 +9,7 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | Section | Title | Status |
 |---|---|---|
 | 2.1 | [Algebraic Expressions and Equivalent Forms](2.01-algebraic-expressions-and-equivalent-forms.md) | Draft — examples validated |
-| 2.2 | Linear Equations and Rearrangement | Planned |
+| 2.2 | [Linear Equations and Rearrangement](2.02-linear-equations-and-rearrangement.md) | Draft — examples validated |
 | 2.3 | Fractions and Rational Equations | Planned |
 | 2.4 | Powers, Roots, and Fractional Exponents | Planned |
 | 2.5 | Quadratic Equations | Planned |
@@ -19,9 +19,9 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 | 2.9 | Chapter Project — Break-Even and Formula Rearrangement Analyzer | Planned |
 | 2.10 | Exercises and Applied Problems | Planned |
 
-**Published manuscript sections:** 1/10.  
+**Published manuscript sections:** 2/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** 2.2 — Linear Equations and Rearrangement.
+**Next:** 2.3 — Fractions and Rational Equations.
 
 ## Section 2.1 Companion Material
 
@@ -31,6 +31,12 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 
 The lab uses only the Python standard library and has no Chapter 01 code dependency. Run commands appear in the manuscript. The runtime evidence records Linux execution; Windows execution has not been recorded.
 
+## Section 2.2 Companion Material
+
+- [Executable linear-equation and rearrangement lab](code/section_2_02.py)
+- [Reference checks](code/check_section_2_02.py)
+- [Runtime evidence](validation/section-2.02.json)
+
 ## Writing and Editorial Workflow
 
 Finish and validate one section before proceeding. Do not label planned sections as written or passing runtime checks as canonical designation.
@@ -38,3 +44,4 @@ Finish and validate one section before proceeding. Do not label planned sections
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md) · [Chapter 01](../chapter-01/README.md)
+
