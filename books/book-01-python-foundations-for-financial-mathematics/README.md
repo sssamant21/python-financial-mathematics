@@ -231,9 +231,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.10 — Interest and Investment Growth Curves](chapter-08/8.10-interest-and-investment-growth-curves.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.10 complete (10/14 sections).  
+- [8.11 — Sensitivity and Scenario Charts](chapter-08/8.11-sensitivity-and-scenario-charts.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.11 complete (11/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.11 — Sensitivity and Scenario Charts.
+**Next:** 8.12 — Effective Financial Chart Design.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
