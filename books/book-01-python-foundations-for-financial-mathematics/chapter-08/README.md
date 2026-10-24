@@ -17,11 +17,13 @@
 | 8.11 | [Sensitivity and Scenario Charts](8.11-sensitivity-and-scenario-charts.md) | Canonical / Complete |
 | 8.12 | [Effective Financial Chart Design](8.12-effective-financial-chart-design.md) | Canonical / Complete |
 | 8.13 | [Chapter Project — Financial Analytics Dashboard](8.13-chapter-project-financial-analytics-dashboard.md) | Canonical / Complete |
-| 8.14 | Exercises and Applied Problems | Planned |
+| 8.14 | [Exercises and Applied Problems](8.14-exercises-and-applied-problems.md) | Canonical / Complete |
 
-**Canonical manuscript progress:** 8.1–8.13 complete (13/14 sections).  
-**Chapter status:** In progress.  
-**Next:** 8.14 — Exercises and Applied Problems.
+[Companion solutions](8.14-solutions-and-reference-implementations.md) cover twenty chapter-wide problems with twenty passing reference tests.
+
+**Canonical manuscript progress:** 8.1–8.14 complete (14/14 sections).  
+**Chapter status:** Complete, with twenty chapter-wide exercises and tested companion solutions.  
+**Next:** 9.1 — The Time Value of Money.
 
 ## Publication Policy
 
