@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.10 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.11 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -56,7 +56,7 @@ Published sections link to their manuscript files; planned sections remain plain
 1.8 — [Logic, Assumptions, and Implications](chapter-01/1.08-logic-assumptions-and-implications.md)  
 1.9 — [Definitions, Propositions, and Counterexamples](chapter-01/1.09-definitions-propositions-and-counterexamples.md)  
 1.10 — [Units, Dimensions, and Financial Conventions](chapter-01/1.10-units-dimensions-and-financial-conventions.md)  
-1.11 — Translating Financial Questions into Mathematics  
+1.11 — [Translating Financial Questions into Mathematics](chapter-01/1.11-translating-financial-questions-into-mathematics.md)  
 1.12 — Translating Mathematical Expressions into Python  
 1.13 — Checking Mathematical and Computational Results  
 1.14 — Chapter Project — Financial Formula Validation Toolkit  
@@ -332,7 +332,8 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 1.11 — Translating Financial Questions into Mathematics.
+**Next manuscript section:** 1.12 — Translating Mathematical Expressions into Python.
+
 
 
 

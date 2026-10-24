@@ -1,0 +1,41 @@
+{
+  "section": "1.11",
+  "title": "Translating Financial Questions into Mathematics",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "boundary_cases": 6,
+    "proposal_cases": 1296,
+    "rejected_calls": 13,
+    "scenario_cases": 324,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_1_11.py",
+      "return_code": 0,
+      "stdout": "Minimum transfer: 500\nFee: 10\nFinal balances: source=490, destination=700\nHigher target feasible: False\nHigher target transfer: None\nAlready at target: transfer=0, fee=0",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_1_11.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"boundary_cases\": 6, \"proposal_cases\": 1296, \"rejected_calls\": 13, \"scenario_cases\": 324}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "1.11-translating-financial-questions-into-mathematics.md": "c030a2aa181e788950df3dc3a1baa6b1437ff37163e2c10621ffa740780edb4c",
+    "section_1_11.py": "606e5a78e80c3d0adb0f81fa6f7b60a6eb293abeae5fa5913a59bfb3e681d554",
+    "check_section_1_11.py": "51bb1a6a377e045b1a6823c0901f9766be93790944baf54755c07d5de138ee36"
+  },
+  "scope_limits": [
+    "One-currency immediate outgoing transfer, fixed and proportional fees paid extra by source.",
+    "No-action fee is zero; input balances and fee parameters are nonnegative.",
+    "Exact rational arithmetic; no rounding or transaction increments; no settlement calendar.",
+    "Independent finite cases complement the symbolic derivation; canonical editorial review pending."
+  ]
+}
