@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.3 published as Draft. Runtime validation remains pending for Sections 2.8–2.10 and 3.1–3.3; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.4 published as Draft. Runtime validation remains pending for Sections 2.8–2.10 and 3.1–3.4; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -80,7 +80,7 @@ Published sections link to their manuscript files; planned sections remain plain
 3.1 — [Inputs, Outputs, Domain, and Range](chapter-03/3.01-inputs-outputs-domain-and-range.md)  
 3.2 — [Graphs and Financial Interpretation](chapter-03/3.02-graphs-and-financial-interpretation.md)  
 3.3 — [Composition of Functions](chapter-03/3.03-composition-of-functions.md)  
-3.4 — Inverse Functions  
+3.4 — [Inverse Functions](chapter-03/3.04-inverse-functions.md)  
 3.5 — Piecewise Functions and Thresholds  
 3.6 — Monotonicity and Bounds  
 3.7 — Convexity and Concavity Intuition  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 3.4 — Inverse Functions.
+**Next manuscript section:** 3.5 — Piecewise Functions and Thresholds.
