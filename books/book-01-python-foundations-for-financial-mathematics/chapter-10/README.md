@@ -11,16 +11,16 @@
 | 10.7 | [Growing Annuities](10.07-growing-annuities.md) | Manuscript published |
 | 10.8 | [Perpetuities](10.08-perpetuities.md) | Manuscript published |
 | 10.9 | [Growing Perpetuities](10.09-growing-perpetuities.md) | Manuscript published |
-| 10.10 | Present and Future Values of Payment Streams | Planned |
+| 10.10 | [Present and Future Values of Payment Streams](10.10-present-and-future-values-of-payment-streams.md) | Manuscript published |
 | 10.11 | Irregular Cash Flows | Planned |
 | 10.12 | NPV | Planned |
 | 10.13 | IRR and Numerical Root Finding | Planned |
 | 10.14 | Chapter Project — Cash-Flow Valuation Engine | Planned |
 | 10.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 10.1–10.9 complete (9/15 sections).  
+**Manuscript progress:** 10.1–10.10 complete (10/15 sections).  
 **Chapter status:** In progress.  
-**Next:** 10.10 — Present and Future Values of Payment Streams.
+**Next:** 10.11 — Irregular Cash Flows.
 
 ## Publication and validation policy
 
@@ -41,3 +41,5 @@ Section 10.7 covers growing-annuity valuation, equal-rate limits, future value, 
 Section 10.8 covers level perpetuities, convergence, due and deferred cases, twelve exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 10.9 covers growing perpetuities, convergence, due/deferred timing, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 10.10 integrates present/future value of signed payment streams with twelve exercises and twelve Python reference tests (independent runtime verification pending).
