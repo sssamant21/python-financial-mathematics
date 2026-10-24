@@ -223,9 +223,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.6 — Histograms and Return Distributions](chapter-08/8.06-histograms-and-return-distributions.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.6 complete (6/14 sections).  
+- [8.7 — Scatter Plots and Relationships](chapter-08/8.07-scatter-plots-and-relationships.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.7 complete (7/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.7 — Scatter Plots and Relationships.
+**Next:** 8.8 — Portfolio Visualizations.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
