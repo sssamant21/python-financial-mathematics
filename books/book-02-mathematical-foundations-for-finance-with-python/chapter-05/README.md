@@ -1,6 +1,6 @@
 # Chapter 05 — Sequences and Recurrences
 
-**Manuscript status:** 5/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 6/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -13,11 +13,16 @@
 | 5.3 | [First-Order Balance Recurrences](5.03-first-order-balance-recurrences.md) | Draft — runtime validation pending |
 | 5.4 | [Closed Forms from Repeated Substitution](5.04-closed-forms-from-repeated-substitution.md) | Draft — runtime validation pending |
 | 5.5 | [Fixed Points and Equilibria](5.05-fixed-points-and-equilibria.md) | Draft — runtime validation pending |
-| 5.6 | Convergence and Stability | Planned |
+| 5.6 | [Convergence and Stability](5.06-convergence-and-stability.md) | Draft — runtime validation pending |
 | 5.7 | Variable Rates and Payment Schedules | Planned |
 | 5.8 | Withdrawal and Depletion Boundaries | Planned |
 | 5.9 | Chapter Project — Contribution and Withdrawal Recurrence Engine | Planned |
 | 5.10 | Exercises and Applied Problems | Planned |
+
+## Section 5.6 companion material
+
+- [Convergence and stability lab](code/section_5_06.py)
+- [Reference checks](code/check_section_5_06.py)
 
 ## Section 5.5 companion material
 
@@ -48,4 +53,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 5.6 — Convergence and Stability.
+**Next:** 5.7 — Variable Rates and Payment Schedules.
