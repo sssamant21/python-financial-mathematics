@@ -22,7 +22,7 @@
 
 **Published manuscript sections:** 15/15.  
 **Canonical sections:** 0/15; canonical editorial review pending.  
-**Next:** 2.1 — Algebraic Expressions and Equivalent Forms.
+**Continue:** [Chapter 02 — Algebra and Equations for Financial Models](../chapter-02/README.md).
 
 ## Section 1.1 Companion Material
 
@@ -124,7 +124,7 @@ The example uses only the Python standard library. Run commands are included in 
 
 All 15 sections, the Section 1.14 project and its walkthrough, and all 20 chapter-wide problem solutions are published as Draft. All 15 section reference-check scripts passed on the recorded Linux runtime. Written reasoning and canonical editorial review remain separate; Windows execution has not been recorded.
 
-The next manuscript section is 2.1 — Algebraic Expressions and Equivalent Forms in Chapter 02. No Chapter 02 manuscript is included here.
+Continue with the [Chapter 02 index](../chapter-02/README.md), beginning with Section 2.1 — Algebraic Expressions and Equivalent Forms.
 
 ## Writing and Editorial Workflow
 
@@ -133,6 +133,7 @@ Complete, validate, and push one section at a time. Finish this chapter's projec
 Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition. Passing runtime checks is separate from canonical editorial designation.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
+
 
 
 

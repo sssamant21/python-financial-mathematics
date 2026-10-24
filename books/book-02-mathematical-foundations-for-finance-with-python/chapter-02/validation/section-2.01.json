@@ -1,0 +1,42 @@
+{
+  "section": "2.1",
+  "title": "Algebraic Expressions and Equivalent Forms",
+  "editorial_status": "Draft",
+  "runtime_status": "PASS",
+  "python_version": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "windows_runtime_tested": false,
+  "checks": {
+    "cancellation_cases": 7,
+    "growth_form_cases": 15,
+    "principal_comparison_cases": 12,
+    "rejected_calls": 13,
+    "return_form_cases": 81,
+    "display_output": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python code/section_2_01.py",
+      "return_code": 0,
+      "stdout": "Principal 1000: value=1045, net return=9/200, agree=True\nPrincipal 2000: value=2095, net return=19/400, agree=True\nGrowth: factored=121, expanded=121, agree=True\nCancellation at 0.10: 21/10 = 21/10\nCancellation at zero: excluded by original domain",
+      "stderr": ""
+    },
+    {
+      "command": "python code/check_section_2_01.py",
+      "return_code": 0,
+      "stdout": "PASS: {\"cancellation_cases\": 7, \"growth_form_cases\": 15, \"principal_comparison_cases\": 12, \"rejected_calls\": 13, \"return_form_cases\": 81}",
+      "stderr": ""
+    }
+  ],
+  "sha256": {
+    "2.01-algebraic-expressions-and-equivalent-forms.md": "2dba74b113847dfb6e82ad91695436581b4d1cbfbe93008fc421f1df4a331481",
+    "section_2_01.py": "a9a075d975b65e868ad4915c8c7fadd2141ed5c66286f6a03236b8a7fa13270c",
+    "check_section_2_01.py": "3fe28129c613295e7665bc499a44be7c62eb1f2f08a91828c15d11a7d5ab0274"
+  },
+  "scope_limits": [
+    "Hypothetical one-period net return with fee proportional to initial principal; positive principal and explicit decimal rates.",
+    "Two-period growth domain differs from general cancellation identity domain; zero quotient denominator remains excluded.",
+    "Exact rational arithmetic, no rounding, contractual verification, or finite-precision stability claim.",
+    "Finite implementation checks complement symbolic identities; canonical editorial review pending."
+  ]
+}

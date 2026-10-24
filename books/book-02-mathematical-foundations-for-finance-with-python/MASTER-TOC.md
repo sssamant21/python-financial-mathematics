@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15 published as Draft with validated examples; all remaining manuscript sections are Planned.
+**Manuscript status:** Sections 1.1–1.15 and 2.1 published as Draft with validated examples; all remaining manuscript sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -64,7 +64,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 2 — Algebra and Equations for Financial Models
 
-2.1 — Algebraic Expressions and Equivalent Forms  
+2.1 — [Algebraic Expressions and Equivalent Forms](chapter-02/2.01-algebraic-expressions-and-equivalent-forms.md)  
 2.2 — Linear Equations and Rearrangement  
 2.3 — Fractions and Rational Equations  
 2.4 — Powers, Roots, and Fractional Exponents  
@@ -332,7 +332,8 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 2.1 — Algebraic Expressions and Equivalent Forms.
+**Next manuscript section:** 2.2 — Linear Equations and Rearrangement.
+
 
 
 

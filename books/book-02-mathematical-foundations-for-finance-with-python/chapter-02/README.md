@@ -1,0 +1,40 @@
+# Chapter 2 — Algebra and Equations for Financial Models
+
+## Purpose and Prerequisites
+
+Develop algebraic transformations, equation solving, and domain checks for financial formulas. Chapter 01 supplies notation, logic, conventions, and implementation-checking methods. Complete this chapter one numbered section at a time, including its project, exercises, and companion solutions.
+
+## Manuscript Progress
+
+| Section | Title | Status |
+|---|---|---|
+| 2.1 | [Algebraic Expressions and Equivalent Forms](2.01-algebraic-expressions-and-equivalent-forms.md) | Draft — examples validated |
+| 2.2 | Linear Equations and Rearrangement | Planned |
+| 2.3 | Fractions and Rational Equations | Planned |
+| 2.4 | Powers, Roots, and Fractional Exponents | Planned |
+| 2.5 | Quadratic Equations | Planned |
+| 2.6 | Inequalities and Absolute Values | Planned |
+| 2.7 | Simultaneous Equations | Planned |
+| 2.8 | Scaling and Algebraic Validation | Planned |
+| 2.9 | Chapter Project — Break-Even and Formula Rearrangement Analyzer | Planned |
+| 2.10 | Exercises and Applied Problems | Planned |
+
+**Published manuscript sections:** 1/10.  
+**Canonical sections:** 0/10; canonical editorial review pending.  
+**Next:** 2.2 — Linear Equations and Rearrangement.
+
+## Section 2.1 Companion Material
+
+- [Executable equivalent-forms lab](code/section_2_01.py)
+- [Reference checks](code/check_section_2_01.py)
+- [Runtime evidence](validation/section-2.01.json)
+
+The lab uses only the Python standard library and has no Chapter 01 code dependency. Run commands appear in the manuscript. The runtime evidence records Linux execution; Windows execution has not been recorded.
+
+## Writing and Editorial Workflow
+
+Finish and validate one section before proceeding. Do not label planned sections as written or passing runtime checks as canonical designation.
+
+Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition.
+
+[Book index](../README.md) · [Master TOC](../MASTER-TOC.md) · [Chapter 01](../chapter-01/README.md)
