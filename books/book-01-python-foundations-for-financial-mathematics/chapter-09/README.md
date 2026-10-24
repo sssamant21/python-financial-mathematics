@@ -18,11 +18,11 @@
 | 9.14 | [Solving for Time](9.14-solving-for-time.md) | Canonical / Complete |
 | 9.15 | [Python TVM Functions](9.15-python-tvm-functions.md) | Canonical / Complete |
 | 9.16 | [Chapter Project — Time Value of Money Engine](9.16-chapter-project-time-value-of-money-engine.md) | Canonical / Complete |
-| 9.17 | Exercises and Applied Problems | Planned |
+| 9.17 | [Exercises and Applied Problems](9.17-exercises-and-applied-problems.md) | Canonical / Complete |
 
-**Canonical manuscript progress:** 9.1–9.16 complete (16/17 sections).  
-**Chapter status:** In progress.  
-**Next:** 9.17 — Exercises and Applied Problems.
+**Canonical manuscript progress:** 9.1–9.17 complete (17/17 sections).  
+**Chapter status:** Manuscript complete; independent runtime and editorial review pending.  
+**Next:** 10.1 — Cash-Flow Mathematics.
 
 ## Publication Policy
 
@@ -57,3 +57,5 @@ Section 9.14 adds a standalone logarithmic time-solving lab with periodic, effec
 Section 9.15 adds a reusable standard-library TVM module with discrete and continuous valuation, rate conversions, inverse solvers, signed cash-flow NPV, and eight reference tests (runtime verification pending).
 
 Section 9.16 publishes the Time Value of Money Engine capstone with CSV ingestion, JSON audit reporting, financial inverse solvers, and twelve acceptance tests (independent runtime verification pending).
+
+Section 9.17 publishes twenty chapter-wide exercises, worked answers, and twenty Python reference checks (independent runtime verification pending). Chapter 9 manuscript coverage is complete (17/17).
