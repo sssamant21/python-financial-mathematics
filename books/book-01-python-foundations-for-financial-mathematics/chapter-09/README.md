@@ -13,16 +13,16 @@
 | 9.9 | [Net Present Value](9.09-net-present-value.md) | Canonical / Complete |
 | 9.10 | [Effective vs. Nominal Rates](9.10-effective-vs-nominal-rates.md) | Canonical / Complete |
 | 9.11 | [Compounding Frequency](9.11-compounding-frequency.md) | Canonical / Complete |
-| 9.12 | Continuous Compounding | Planned |
+| 9.12 | [Continuous Compounding](9.12-continuous-compounding.md) | Canonical / Complete |
 | 9.13 | Solving for Rate | Planned |
 | 9.14 | Solving for Time | Planned |
 | 9.15 | Python TVM Functions | Planned |
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.11 complete (11/17 sections).  
+**Canonical manuscript progress:** 9.1–9.12 complete (12/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.12 — Continuous Compounding.
+**Next:** 9.13 — Solving for Rate.
 
 ## Publication Policy
 
@@ -47,3 +47,5 @@ Section 9.9 adds a standalone NPV lab with explicit initial-cost handling, break
 Section 9.10 adds a standalone nominal/effective rate-conversion lab with reverse conversion, equivalent balances, common-basis comparison, and eight passing reference tests; compilation succeeds.
 
 Section 9.11 adds a standalone compounding-frequency lab with fixed-nominal versus fixed-effective comparisons, annual-to-daily schedules, limiting behavior, and eight reference tests.
+
+Section 9.12 adds a standalone continuous-compounding lab with exponential accumulation, discounting, rate-convention conversion, numerical boundary checks, and eight reference tests (execution verification pending).
