@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.6 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.6; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.7 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.7; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -109,7 +109,7 @@ Published sections link to their manuscript files; planned sections remain plain
 5.4 — [Closed Forms from Repeated Substitution](chapter-05/5.04-closed-forms-from-repeated-substitution.md)  
 5.5 — [Fixed Points and Equilibria](chapter-05/5.05-fixed-points-and-equilibria.md)  
 5.6 — [Convergence and Stability](chapter-05/5.06-convergence-and-stability.md)  
-5.7 — Variable Rates and Payment Schedules  
+5.7 — [Variable Rates and Payment Schedules](chapter-05/5.07-variable-rates-and-payment-schedules.md)  
 5.8 — Withdrawal and Depletion Boundaries  
 5.9 — Chapter Project — Contribution and Withdrawal Recurrence Engine  
 5.10 — Exercises and Applied Problems
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 5.7 — Variable Rates and Payment Schedules.
+**Next manuscript section:** 5.8 — Withdrawal and Depletion Boundaries.
