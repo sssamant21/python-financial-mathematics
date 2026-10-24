@@ -8,7 +8,7 @@
 | 9.4 | [Compound Interest](9.04-compound-interest.md) | Canonical / Complete |
 | 9.5 | [Present Value](9.05-present-value.md) | Canonical / Complete |
 | 9.6 | [Future Value](9.06-future-value.md) | Canonical / Complete |
-| 9.7 | Discount Factors | Planned |
+| 9.7 | [Discount Factors](9.07-discount-factors.md) | Canonical / Complete |
 | 9.8 | Multiple Cash Flows | Planned |
 | 9.9 | Net Present Value | Planned |
 | 9.10 | Effective vs. Nominal Rates | Planned |
@@ -20,9 +20,9 @@
 | 9.16 | Chapter Project — Time Value of Money Engine | Planned |
 | 9.17 | Exercises and Applied Problems | Planned |
 
-**Canonical manuscript progress:** 9.1–9.6 complete (6/17 sections).  
+**Canonical manuscript progress:** 9.1–9.7 complete (7/17 sections).  
 **Chapter status:** In progress.  
-**Next:** 9.7 — Discount Factors.
+**Next:** 9.8 — Multiple Cash Flows.
 
 ## Publication Policy
 
@@ -37,3 +37,5 @@ Section 9.4 adds a standalone compound-interest lab with a retained-interest sch
 Section 9.5 adds a standalone signed single-payment present-value lab with inverse accumulation, common-date comparisons, negative-rate boundaries, and eight passing reference tests; compilation succeeds.
 
 Section 9.6 adds a standalone future-value lab with explicit start/target coordinates, common-future-date comparisons, signed equivalents, and eight passing reference tests; compilation succeeds.
+
+Section 9.7 adds a standalone discount-factor lab with reciprocal accumulation, interval composition and factor ratios, signed payments, and eight passing reference tests; compilation succeeds.
