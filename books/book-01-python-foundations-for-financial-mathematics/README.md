@@ -225,9 +225,11 @@ See the [Chapter 7 progress index](chapter-07/README.md) for all planned section
 
 - [8.7 — Scatter Plots and Relationships](chapter-08/8.07-scatter-plots-and-relationships.md) — Revised Final / Canonical Edition
 
-**Canonical manuscript progress:** 8.1–8.7 complete (7/14 sections).  
+- [8.8 — Portfolio Visualizations](chapter-08/8.08-portfolio-visualizations.md) — Revised Final / Canonical Edition
+
+**Canonical manuscript progress:** 8.1–8.8 complete (8/14 sections).  
 **Chapter 8 status:** In progress.  
-**Next:** 8.8 — Portfolio Visualizations.
+**Next:** 8.9 — Payoff Diagrams.
 
 See the [Chapter 8 progress index](chapter-08/README.md) for all planned sections.
 
