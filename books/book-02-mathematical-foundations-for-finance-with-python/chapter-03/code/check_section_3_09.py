@@ -30,7 +30,7 @@ def run():
     assert stepped["increments"][5] == -20
     assert not stepped["nondecreasing"]
     assert stepped["break_even"] == (4, 7)
-    assert stepped["argmax"] == (8,)
+    assert stepped["argmax"] == (5, 8)
     assert stepped["maximum_profit"] == 10
     assert not stepped["convex_on_grid"]
     assert not stepped["concave_on_grid"]
