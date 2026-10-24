@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.5; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.6 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.6; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -108,7 +108,7 @@ Published sections link to their manuscript files; planned sections remain plain
 5.3 — [First-Order Balance Recurrences](chapter-05/5.03-first-order-balance-recurrences.md)  
 5.4 — [Closed Forms from Repeated Substitution](chapter-05/5.04-closed-forms-from-repeated-substitution.md)  
 5.5 — [Fixed Points and Equilibria](chapter-05/5.05-fixed-points-and-equilibria.md)  
-5.6 — Convergence and Stability  
+5.6 — [Convergence and Stability](chapter-05/5.06-convergence-and-stability.md)  
 5.7 — Variable Rates and Payment Schedules  
 5.8 — Withdrawal and Depletion Boundaries  
 5.9 — Chapter Project — Contribution and Withdrawal Recurrence Engine  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 5.6 — Convergence and Stability.
+**Next manuscript section:** 5.7 — Variable Rates and Payment Schedules.
