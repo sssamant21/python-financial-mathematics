@@ -72,7 +72,7 @@ Published sections link to their manuscript files; planned sections remain plain
 2.6 — [Inequalities and Absolute Values](chapter-02/2.06-inequalities-and-absolute-values.md)  
 2.7 — [Simultaneous Equations](chapter-02/2.07-simultaneous-equations.md)  
 2.8 — [Scaling and Algebraic Validation](chapter-02/2.08-scaling-and-algebraic-validation.md)  
-2.9 — Chapter Project — Break-Even and Formula Rearrangement Analyzer  
+2.9 — [Chapter Project — Break-Even and Formula Rearrangement Analyzer](chapter-02/2.09-chapter-project-break-even-and-formula-rearrangement-analyzer.md)  
 2.10 — Exercises and Applied Problems
 
 # Chapter 3 — Functions and Financial Relationships
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 2.9 — Chapter Project — Break-Even and Formula Rearrangement Analyzer (after Section 2.8 runtime validation).
+**Next manuscript section:** 2.10 — Exercises and Applied Problems (after Sections 2.8–2.9 runtime validation).
