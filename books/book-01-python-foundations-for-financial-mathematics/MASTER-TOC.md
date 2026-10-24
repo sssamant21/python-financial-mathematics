@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 8.13 — Chapter Project — Financial Analytics Dashboard.**
+**Next locked manuscript section: 8.14 — Exercises and Applied Problems.**
