@@ -422,5 +422,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [15.6 — Correlation](chapter-15/15.06-correlation.md) — Published draft; independent QA deferred.
 - [15.7 — Sampling and Estimation](chapter-15/15.07-sampling-and-estimation.md) — Published draft; independent QA deferred.
 - [15.8 — Confidence Intervals](chapter-15/15.08-confidence-intervals.md) — Published draft; independent QA deferred.
+- [15.9 — Hypothesis Testing Foundations](chapter-15/15.09-hypothesis-testing-foundations.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 8/15 sections (53.3%). **Next:** 15.9 — Hypothesis Testing Foundations. [Chapter 15 progress index](chapter-15/README.md).
+**Manuscript progress:** 9/15 sections (60%). **Next:** 15.10 — Linear Regression. [Chapter 15 progress index](chapter-15/README.md).
