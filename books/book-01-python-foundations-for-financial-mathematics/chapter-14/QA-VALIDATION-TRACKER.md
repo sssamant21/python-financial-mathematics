@@ -54,6 +54,14 @@ For each section, extract Python fenced blocks, distinguish standalone code from
 
 Do not label a section "runtime validated" if its tests were only read or counted.
 
+
+## Phase 2 automation — source-fidelity workflow published
+
+- [Source-fidelity Python runner](../../../tools/chapter14_source_qa.py) — extracts the published Markdown Python unittest block verbatim, compiles it, executes it, checks for 12 tests, and writes JSON evidence with source/code SHA-256 hashes.
+- [GitHub Actions workflow](../../../.github/workflows/chapter14-source-qa.yml) — configured for Python 3.13, on relevant pushes and manual dispatch, with JSON artifact upload.
+- **Workflow publication:** complete. **GitHub Actions run and artifact verification:** pending; no additional section is marked passed until actual results are retrieved and reviewed.
+- **Caveat:** The runner focuses on the single reference unittest block in each section; additional Python example snippets require separate editorial and execution review.
+
 ## Phase 3 — Mathematical and editorial review
 
 - Independently recalculate all probability examples, distribution moments, default probabilities, and portfolio risk formulas.
