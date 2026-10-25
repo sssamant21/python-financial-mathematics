@@ -16,13 +16,13 @@
 | 13.9 | [Time-Weighted Return](13.09-time-weighted-return.md) | Manuscript published; independent QA pending |
 | 13.10 | [Money-Weighted Return](13.10-money-weighted-return.md) | Manuscript published; independent QA pending |
 | 13.11 | [Volatility](13.11-volatility.md) | Manuscript published; independent QA pending |
-| 13.12 | Drawdowns | Planned |
+| 13.12 | [Drawdowns](13.12-drawdowns.md) | Manuscript published; independent QA pending |
 | 13.13 | Risk-Adjusted Performance Concepts | Planned |
 | 13.14 | Chapter Project — Investment Performance Analyzer | Planned |
 | 13.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 11/15 sections published (73.3%).  
-**Next:** 13.12 — Drawdowns.
+**Manuscript progress:** 12/15 sections published (80.0%).  
+**Next:** 13.13 — Risk-Adjusted Performance Concepts.
 
 ## Quality gates
 
@@ -71,3 +71,7 @@ Each section must undergo mathematical/source review, independent Python lab exe
 ## Section 13.11
 
 [Volatility](13.11-volatility.md) includes 18 worked exercises, a volatility-monitoring mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 13.12
+
+[Drawdowns](13.12-drawdowns.md) includes 18 worked exercises, a drawdown incident dashboard mini-project, and 12 reference unit tests; independent runtime verification pending.
