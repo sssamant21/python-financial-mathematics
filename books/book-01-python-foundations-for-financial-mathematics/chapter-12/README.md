@@ -19,13 +19,13 @@
 | 12.12 | [Interest-Rate Sensitivity](12.12-interest-rate-sensitivity.md) | Manuscript published |
 | 12.13 | [Yield Curves](12.13-yield-curves.md) | Manuscript published |
 | 12.14 | [Discount Factors and Spot Rates](12.14-discount-factors-and-spot-rates.md) | Manuscript published |
-| 12.15 | Forward Rates | Planned |
+| 12.15 | [Forward Rates](12.15-forward-rates.md) | Manuscript published |
 | 12.16 | Chapter Project — Bond Analytics Engine | Planned |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.14 complete (14/17 sections).  
+**Manuscript progress:** 12.1–12.15 complete (15/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.15 — Forward Rates.
+**Next:** 12.16 — Chapter Project — Bond Analytics Engine.
 
 ## Validation policy
 
@@ -58,3 +58,5 @@ Section 12.12 includes interest-rate scenario analysis, portfolio DV01 and stres
 Section 12.13 includes yield-curve shapes, spot-rate interpolation, discount factors, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.14 includes discount factors, spot-rate inversion, multi-cash-flow pricing, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.15 includes forward-rate conventions, curve reconstruction, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
