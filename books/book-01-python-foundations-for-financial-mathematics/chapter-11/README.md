@@ -12,16 +12,16 @@
 | 11.6 | [Outstanding Loan Balance](11.06-outstanding-loan-balance.md) | Manuscript published |
 | 11.7 | [Amortization Schedules](11.07-amortization-schedules.md) | Manuscript published |
 | 11.8 | [Mortgages](11.08-mortgages.md) | Manuscript published |
-| 11.9 | Extra Payments and Prepayment | Planned |
+| 11.9 | [Extra Payments and Prepayment](11.09-extra-payments-and-prepayment.md) | Manuscript published |
 | 11.10 | Refinancing Analysis | Planned |
 | 11.11 | Effective Borrowing Cost | Planned |
 | 11.12 | Numerical and Rounding Considerations | Planned |
 | 11.13 | Chapter Project — Loan and Mortgage Analyzer | Planned |
 | 11.14 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 11.1–11.8 complete (8/14 sections).  
+**Manuscript progress:** 11.1–11.9 complete (9/14 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 11.9 — Extra Payments and Prepayment.
+**Next:** 11.10 — Refinancing Analysis.
 
 ## Validation policy
 
@@ -40,3 +40,5 @@ Section 11.6 includes prospective and retrospective balance methods, principal p
 Section 11.7 includes amortization schedules, reconciliation, two rounding policies, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 11.8 includes mortgage payment and LTV calculations, housing-cost components, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 11.9 includes prepayment scenarios, payoff and interest-savings reconciliation, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
