@@ -419,4 +419,4 @@ Any structural change requires:
 **Chapter 14 manuscript complete: 17/17 sections published as drafts. Next: independent runtime QA and editorial review.**
 
 
-**Chapter 15 publication status:** 15.1–15.5 published as drafts (5/15). Next locked manuscript section: 15.6 — Correlation. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 15 publication status:** 15.1–15.6 published as drafts (6/15). Next locked manuscript section: 15.7 — Sampling and Estimation. Comprehensive QA deferred until all Book 1 chapters are written.
