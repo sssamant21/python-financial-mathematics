@@ -1,6 +1,6 @@
 # Chapter 10 — Integration and Continuous Cash Flows
 
-**Manuscript status:** 9/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -17,7 +17,12 @@
 | 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — runtime validation pending |
 | 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — runtime validation pending |
 | 10.9 | [Chapter Project — Continuous Cash-Flow Valuation Engine](10.09-continuous-cash-flow-valuation-engine.md) | Draft — runtime validation pending |
-| 10.10 | Exercises and Applied Problems | Planned |
+| 10.10 | [Exercises and Applied Problems](10.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 10.10 companion material
+
+- [Integrated exercises and applied problems lab](code/section_10_10.py)
+- [Independent reference checks](code/check_section_10_10.py)
 
 ## Section 10.9 companion material
 
@@ -68,4 +73,4 @@
 
 Draft manuscript and reference-check source are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 10.10 — Exercises and Applied Problems.
+**Next:** Chapter 11, Section 11.1 (see Master TOC for planned title).
