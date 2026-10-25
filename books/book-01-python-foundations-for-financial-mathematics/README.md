@@ -313,10 +313,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [11.5 — Interest and Principal Components](chapter-11/11.05-interest-and-principal-components.md) — Manuscript published; runtime and editorial validation pending
 - [11.6 — Outstanding Loan Balance](chapter-11/11.06-outstanding-loan-balance.md) — Manuscript published; runtime and editorial validation pending
 - [11.7 — Amortization Schedules](chapter-11/11.07-amortization-schedules.md) — Manuscript published; runtime and editorial validation pending
+- [11.8 — Mortgages](chapter-11/11.08-mortgages.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 11.1–11.7 complete (7/14 sections).  
+**Manuscript progress:** 11.1–11.8 complete (8/14 sections).  
 **Chapter 11 status:** In progress.  
-**Next:** 11.8 — Mortgages.
+**Next:** 11.9 — Extra Payments and Prepayment.
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
