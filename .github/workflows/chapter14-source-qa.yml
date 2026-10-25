@@ -1,0 +1,26 @@
+name: Chapter 14 source-fidelity QA
+on:
+  push:
+    paths:
+      - 'books/book-01-python-foundations-for-financial-mathematics/chapter-14/14.*.md'
+      - 'tools/chapter14_source_qa.py'
+      - '.github/workflows/chapter14-source-qa.yml'
+  workflow_dispatch:
+jobs:
+  source-fidelity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run all 17 published section reference labs
+        run: python tools/chapter14_source_qa.py --output chapter14-qa-results.json
+      - name: Upload retained QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chapter14-source-fidelity-evidence
+          path: chapter14-qa-results.json
+          if-no-files-found: warn
