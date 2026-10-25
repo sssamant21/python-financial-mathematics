@@ -1,6 +1,6 @@
 # Chapter 10 — Integration and Continuous Cash Flows
 
-**Manuscript status:** 6/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 7/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -14,10 +14,15 @@
 | 10.4 | [Substitution and Integration by Parts](10.04-substitution-and-integration-by-parts.md) | Draft — runtime validation pending |
 | 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — runtime validation pending |
 | 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — runtime validation pending |
-| 10.7 | Numerical Quadrature | Planned |
+| 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — runtime validation pending |
 | 10.8 | Discrete versus Continuous Payments | Planned |
 | 10.9 | Chapter Project — Continuous Cash-Flow Valuation Engine | Planned |
 | 10.10 | Exercises and Applied Problems | Planned |
+
+## Section 10.7 companion material
+
+- [Numerical quadrature lab](code/section_10_07.py)
+- [Independent reference checks](code/check_section_10_07.py)
 
 ## Section 10.6 companion material
 
@@ -53,4 +58,4 @@
 
 Draft manuscript and reference-check source are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 10.7 — Numerical Quadrature.
+**Next:** 10.8 — Discrete versus Continuous Payments.
