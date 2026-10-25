@@ -1,6 +1,6 @@
 # Chapter 10 — Integration and Continuous Cash Flows
 
-**Manuscript status:** 7/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 8/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -15,9 +15,14 @@
 | 10.5 | [Discounting Continuous Payment Streams](10.05-discounting-continuous-payment-streams.md) | Draft — runtime validation pending |
 | 10.6 | [Improper Integrals and Infinite Horizons](10.06-improper-integrals-and-infinite-horizons.md) | Draft — runtime validation pending |
 | 10.7 | [Numerical Quadrature](10.07-numerical-quadrature.md) | Draft — runtime validation pending |
-| 10.8 | Discrete versus Continuous Payments | Planned |
+| 10.8 | [Discrete versus Continuous Payments](10.08-discrete-versus-continuous-payments.md) | Draft — runtime validation pending |
 | 10.9 | Chapter Project — Continuous Cash-Flow Valuation Engine | Planned |
 | 10.10 | Exercises and Applied Problems | Planned |
+
+## Section 10.8 companion material
+
+- [Discrete versus continuous payments lab](code/section_10_08.py)
+- [Independent reference checks](code/check_section_10_08.py)
 
 ## Section 10.7 companion material
 
@@ -58,4 +63,4 @@
 
 Draft manuscript and reference-check source are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 10.8 — Discrete versus Continuous Payments.
+**Next:** 10.9 — Chapter Project — Continuous Cash-Flow Valuation Engine.
