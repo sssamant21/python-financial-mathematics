@@ -11,7 +11,7 @@
 | 12.4 | [Zero-Coupon Bonds](12.04-zero-coupon-bonds.md) | Manuscript published |
 | 12.5 | [Bond Pricing](12.05-bond-pricing.md) | Manuscript published |
 | 12.6 | [Yield to Maturity](12.06-yield-to-maturity.md) | Manuscript published |
-| 12.7 | Yield and Price Relationships | Planned |
+| 12.7 | [Yield and Price Relationships](12.07-yield-and-price-relationships.md) | Manuscript published |
 | 12.8 | Accrued Interest and Clean vs. Dirty Price | Planned |
 | 12.9 | Duration | Planned |
 | 12.10 | Modified Duration | Planned |
@@ -23,9 +23,9 @@
 | 12.16 | Chapter Project — Bond Analytics Engine | Planned |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.6 complete (6/17 sections).  
+**Manuscript progress:** 12.1–12.7 complete (7/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.7 — Yield and Price Relationships.
+**Next:** 12.8 — Accrued Interest and Clean vs. Dirty Price.
 
 ## Validation policy
 
@@ -42,3 +42,5 @@ Section 12.4 includes zero-coupon pricing and implied yield, discount factors, d
 Section 12.5 includes flat-yield and discount-factor bond pricing, annuity/direct reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.6 includes yield-to-maturity root solving, repricing validation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.7 includes bond price/yield derivatives, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
