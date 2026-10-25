@@ -338,10 +338,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 - [12.7 — Yield and Price Relationships](chapter-12/12.07-yield-and-price-relationships.md) — Manuscript published; runtime and editorial validation pending
 - [12.8 — Accrued Interest and Clean vs. Dirty Price](chapter-12/12.08-accrued-interest-and-clean-vs-dirty-price.md) — Manuscript published; runtime and editorial validation pending
 - [12.9 — Duration](chapter-12/12.09-duration.md) — Manuscript published; runtime and editorial validation pending
+- [12.10 — Modified Duration](chapter-12/12.10-modified-duration.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.9 complete (9/17 sections).  
+**Manuscript progress:** 12.1–12.10 complete (10/17 sections).  
 **Chapter 12 status:** In progress.  
-**Next:** 12.10 — Modified Duration.
+**Next:** 12.11 — Convexity.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
