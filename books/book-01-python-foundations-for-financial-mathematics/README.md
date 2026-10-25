@@ -304,6 +304,16 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 **Chapter 10 status:** Manuscript complete; independent runtime and editorial review pending.  
 **Next:** 11.1 — Loan Mathematics.
 
+## Chapter 11 — Loans, Mortgages, and Amortization
+
+- [11.1 — Loan Mathematics](chapter-11/11.01-loan-mathematics.md) — Manuscript published; runtime and editorial validation pending
+
+**Manuscript progress:** 11.1 complete (1/14 sections).  
+**Chapter 11 status:** In progress.  
+**Next:** 11.2 — Principal, Rate, Term, and Payment.
+
+See the [Chapter 11 progress index](chapter-11/README.md).
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
