@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 56/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 57/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.2 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.10 published as Draft. Latest: [6.1 — Summation and Product Notation](chapter-06/6.01-summation-and-product-notation.md). [Chapter 06 index](chapter-06/README.md) tracks the remaining sections.
+**Current status:** Chapter 01 Sections 1.1–1.15 and Sections 2.1–2.10 published as Draft. Latest: [6.2 — Finite Geometric Sums](chapter-06/6.02-finite-geometric-sums.md). [Chapter 06 index](chapter-06/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** Chapter 06, Section 6.2 — Finite Geometric Sums. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
+**Next:** Chapter 06, Section 6.3 — Infinite Geometric Series. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
 
 ## Chapter Plan
 
