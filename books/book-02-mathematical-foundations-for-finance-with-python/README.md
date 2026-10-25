@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 113/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.8 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 114/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.9 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapters 01–10 manuscripts complete as Draft. Latest: [11.8 — Shape, Broadcasting, and Alignment Checks](chapter-11/11.08-shape-broadcasting-and-alignment-checks.md). [Chapter 11 index](chapter-11/README.md) tracks the remaining sections.
+**Current status:** Chapters 01–10 manuscripts complete as Draft. Latest: [11.9 — Chapter Project — Vectorized Portfolio Exposure Calculator](chapter-11/11.09-chapter-project-vectorized-portfolio-exposure-calculator.md). [Chapter 11 index](chapter-11/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** Chapter 11, Section 11.9 — Chapter Project — Vectorized Portfolio Exposure Calculator. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
+**Next:** Chapter 11, Section 11.10 — Exercises and Applied Problems. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
 
 ## Chapter Plan
 
@@ -35,7 +35,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 | 08 | [Derivatives and Differentiation](chapter-08/README.md) | 10/10 sections published as Draft |
 | 09 | [Financial Sensitivity and Taylor Approximation](chapter-09/README.md) | 10/10 sections published as Draft |
 | 10 | [Integration and Continuous Cash Flows](chapter-10/README.md) | 10/10 sections published as Draft |
-| 11 | [Vectors and Financial Quantities](chapter-11/README.md) | 8/10 sections published as Draft |
+| 11 | [Vectors and Financial Quantities](chapter-11/README.md) | 9/10 sections published as Draft |
 | 12 | Matrices and Linear Systems | Planned |
 | 13 | Vector Spaces, Projections, and Least Squares | Planned |
 | 14 | Eigenvalues, Quadratic Forms, and Matrix Decompositions | Planned |
