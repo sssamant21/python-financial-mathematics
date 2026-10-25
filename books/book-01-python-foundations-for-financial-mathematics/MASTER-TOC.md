@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 12.2 — Bond Cash Flows.**
+**Next locked manuscript section: 12.3 — Coupon Bonds.**
