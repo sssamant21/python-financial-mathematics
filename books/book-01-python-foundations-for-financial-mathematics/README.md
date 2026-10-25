@@ -318,10 +318,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [11.10 — Refinancing Analysis](chapter-11/11.10-refinancing-analysis.md) — Manuscript published; runtime and editorial validation pending
 - [11.11 — Effective Borrowing Cost](chapter-11/11.11-effective-borrowing-cost.md) — Manuscript published; runtime and editorial validation pending
 - [11.12 — Numerical and Rounding Considerations](chapter-11/11.12-numerical-and-rounding-considerations.md) — Manuscript published; runtime and editorial validation pending
+- [11.13 — Chapter Project — Loan and Mortgage Analyzer](chapter-11/11.13-chapter-project-loan-and-mortgage-analyzer.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 11.1–11.12 complete (12/14 sections).  
+**Manuscript progress:** 11.1–11.13 complete (13/14 sections).  
 **Chapter 11 status:** In progress.  
-**Next:** 11.13 — Chapter Project — Loan and Mortgage Analyzer.
+**Next:** 11.14 — Exercises and Applied Problems.
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
