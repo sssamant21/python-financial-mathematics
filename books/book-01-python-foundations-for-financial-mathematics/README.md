@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 14.17 — Exercises and Applied Problems.
+**Next:** Chapter 14 independent QA and editorial review.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -381,7 +381,7 @@ Verified references must remain with the canonical artifact. Python language and
 
 **Manuscript progress:** 13.1–13.15 complete (15/15 sections).  
 **Chapter 13 status:** Manuscript complete; independent runtime and editorial QA pending.  
-**Next:** 14.17 — Exercises and Applied Problems.
+**Next:** Chapter 14 independent QA and editorial review.
 
 See the [Chapter 13 progress index](chapter-13/README.md).
 
@@ -403,9 +403,10 @@ See the [Chapter 13 progress index](chapter-13/README.md).
 - [14.14 — Sampling with Python](chapter-14/14.14-sampling-with-python.md) — Manuscript published; independent runtime and editorial QA pending
 - [14.15 — Random Number Generation and Reproducibility](chapter-14/14.15-random-number-generation-and-reproducibility.md) — Manuscript published; independent runtime and editorial QA pending
 - [14.16 — Chapter Project — Financial Probability Simulator](chapter-14/14.16-chapter-project-financial-probability-simulator.md) — Manuscript published; independent runtime and editorial QA pending
+- [14.17 — Exercises and Applied Problems](chapter-14/14.17-exercises-and-applied-problems.md) — Manuscript published; independent runtime and editorial QA pending
 
-**Manuscript progress:** 14.1–14.16 complete (16/17 sections).  
+**Manuscript progress:** 14.1–14.17 complete (17/17 sections).  
 **Chapter 14 status:** In progress.  
-**Next:** 14.17 — Exercises and Applied Problems.
+**Next:** Chapter 14 independent QA and editorial review.
 
 See the [Chapter 14 progress index](chapter-14/README.md).
