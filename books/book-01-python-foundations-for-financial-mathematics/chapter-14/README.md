@@ -1,6 +1,6 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 4/17 sections published (23.5%).
+**Manuscript progress:** 5/17 sections published (29.4%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
@@ -9,7 +9,7 @@
 | 14.2 | [Sample Spaces and Events](14.02-sample-spaces-and-events.md) | Manuscript published; independent QA pending |
 | 14.3 | [Probability Rules](14.03-probability-rules.md) | Manuscript published; independent QA pending |
 | 14.4 | [Conditional Probability](14.04-conditional-probability.md) | Manuscript published; independent QA pending |
-| 14.5 | Independence | Planned |
+| 14.5 | [Independence](14.05-independence.md) | Manuscript published; independent QA pending |
 | 14.6 | Random Variables | Planned |
 | 14.7 | Discrete Random Variables | Planned |
 | 14.8 | Continuous Random Variables | Planned |
@@ -23,7 +23,7 @@
 | 14.16 | Chapter Project — Financial Probability Simulator | Planned |
 | 14.17 | Exercises and Applied Problems | Planned |
 
-**Next:** 14.5 — Independence.
+**Next:** 14.6 — Random Variables.
 
 ## Section 14.1
 
@@ -40,3 +40,7 @@
 ## Section 14.4
 
 [Conditional Probability](14.04-conditional-probability.md) includes 24 worked exercises, a conditional credit-risk dashboard mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 14.5
+
+[Independence](14.05-independence.md) includes 24 worked exercises, a loan portfolio dependence stress-test mini-project, and 12 reference unit tests; independent runtime verification pending.
