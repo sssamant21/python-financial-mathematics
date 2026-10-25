@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 13.14 — Chapter Project — Investment Performance Analyzer.
+**Next:** 13.15 — Exercises and Applied Problems.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -376,8 +376,9 @@ Verified references must remain with the canonical artifact. Python language and
 - [13.11 — Volatility](chapter-13/13.11-volatility.md) — Manuscript published; independent runtime and editorial validation pending
 - [13.12 — Drawdowns](chapter-13/13.12-drawdowns.md) — Manuscript published; independent runtime and editorial validation pending
 - [13.13 — Risk-Adjusted Performance Concepts](chapter-13/13.13-risk-adjusted-performance-concepts.md) — Manuscript published; independent runtime and editorial validation pending
+- [13.14 — Chapter Project — Investment Performance Analyzer](chapter-13/13.14-chapter-project-investment-performance-analyzer.md) — Manuscript published; independent runtime and editorial validation pending
 
-**Manuscript progress:** 13.1–13.13 complete (13/15 sections).  
+**Manuscript progress:** 13.1–13.14 complete (14/15 sections).  
 **Chapter 13 status:** In progress.  
 **Next:** 13.2 — Simple Returns.
 
