@@ -1,6 +1,6 @@
 # Chapter 08 — Derivatives and Differentiation
 
-**Manuscript status:** 5/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 6/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -13,11 +13,16 @@
 | 8.3 | [Product and Quotient Rules](8.03-product-and-quotient-rules.md) | Draft — runtime validation pending |
 | 8.4 | [The Chain Rule](8.04-the-chain-rule.md) | Draft — runtime validation pending |
 | 8.5 | [Exponential and Logarithmic Derivatives](8.05-exponential-and-logarithmic-derivatives.md) | Draft — runtime validation pending |
-| 8.6 | Higher Derivatives and Curvature | Planned |
+| 8.6 | [Higher Derivatives and Curvature](8.06-higher-derivatives-and-curvature.md) | Draft — runtime validation pending |
 | 8.7 | Implicit Differentiation | Planned |
 | 8.8 | Numerical Derivatives and Step Selection | Planned |
 | 8.9 | Chapter Project — Analytic and Numerical Derivative Comparator | Planned |
 | 8.10 | Exercises and Applied Problems | Planned |
+
+## Section 8.6 companion material
+
+- [Higher derivatives and PV convexity lab](code/section_8_06.py)
+- [Reference checks](code/check_section_8_06.py)
 
 ## Section 8.5 companion material
 
@@ -48,4 +53,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 8.6 — Higher Derivatives and Curvature.
+**Next:** 8.7 — Implicit Differentiation.
