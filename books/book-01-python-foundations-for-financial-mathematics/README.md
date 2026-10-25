@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 14.2 — Sample Spaces and Events.
+**Next:** 14.3 — Probability Rules.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -381,16 +381,17 @@ Verified references must remain with the canonical artifact. Python language and
 
 **Manuscript progress:** 13.1–13.15 complete (15/15 sections).  
 **Chapter 13 status:** Manuscript complete; independent runtime and editorial QA pending.  
-**Next:** 14.2 — Sample Spaces and Events.
+**Next:** 14.3 — Probability Rules.
 
 See the [Chapter 13 progress index](chapter-13/README.md).
 
 ## Chapter 14 — Probability for Financial Mathematics
 
 - [14.1 — Why Probability Matters in Finance](chapter-14/14.01-why-probability-matters-in-finance.md) — Manuscript published; independent runtime and editorial QA pending
+- [14.2 — Sample Spaces and Events](chapter-14/14.02-sample-spaces-and-events.md) — Manuscript published; independent runtime and editorial QA pending
 
-**Manuscript progress:** 14.1 complete (1/17 sections).  
+**Manuscript progress:** 14.1–14.2 complete (2/17 sections).  
 **Chapter 14 status:** In progress.  
-**Next:** 14.2 — Sample Spaces and Events.
+**Next:** 14.3 — Probability Rules.
 
 See the [Chapter 14 progress index](chapter-14/README.md).
