@@ -315,10 +315,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [11.7 — Amortization Schedules](chapter-11/11.07-amortization-schedules.md) — Manuscript published; runtime and editorial validation pending
 - [11.8 — Mortgages](chapter-11/11.08-mortgages.md) — Manuscript published; runtime and editorial validation pending
 - [11.9 — Extra Payments and Prepayment](chapter-11/11.09-extra-payments-and-prepayment.md) — Manuscript published; runtime and editorial validation pending
+- [11.10 — Refinancing Analysis](chapter-11/11.10-refinancing-analysis.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 11.1–11.9 complete (9/14 sections).  
+**Manuscript progress:** 11.1–11.10 complete (10/14 sections).  
 **Chapter 11 status:** In progress.  
-**Next:** 11.10 — Refinancing Analysis.
+**Next:** 11.11 — Effective Borrowing Cost.
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
