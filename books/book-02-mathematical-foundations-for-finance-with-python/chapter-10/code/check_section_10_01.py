@@ -16,8 +16,8 @@ def run():
     for n in (1,2,4,8,16,64):
         row=uniform_sums(lambda t:100+20*t,0,2,n)
         close(row["midpoint"],240)
-        close(row["left"],240-20/n)
-        close(row["right"],240+20/n)
+        close(row["left"],240-40/n)
+        close(row["right"],240+40/n)
         assert row["left"]<=240<=row["right"]
     for n in (1,2,4,8,16,64):
         row=uniform_sums(lambda t:t*t,0,1,n)
