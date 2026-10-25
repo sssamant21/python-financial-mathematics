@@ -410,3 +410,10 @@ See the [Chapter 13 progress index](chapter-13/README.md).
 **Next:** [Chapter 14 QA validation tracker](chapter-14/QA-VALIDATION-TRACKER.md).
 
 See the [Chapter 14 progress index](chapter-14/README.md).
+
+
+## Chapter 15 — Statistics for Financial Data
+
+- [15.1 — Descriptive Statistics](chapter-15/15.01-descriptive-statistics.md) — Published draft; independent QA deferred.
+
+**Manuscript progress:** 1/15 sections (6.7%). **Next:** 15.2 — Mean, Median, and Quantiles. [Chapter 15 progress index](chapter-15/README.md).
