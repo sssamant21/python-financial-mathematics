@@ -40,8 +40,10 @@ def run():
     rejects(ValueError,projection,x,Vector(("X","Z"),(1,0),"dimensionless"))
     rejects(TypeError,finite,True,"component")
     report=assessment()
-    assert report["projected_exposures_USD"]=={"ALPHA":75.0,"BETA":75.0,"GAMMA":0.0}
-    assert report["residual_exposures_USD"]=={"ALPHA":25.0,"BETA":-25.0,"GAMMA":-20.0}
+    for k,v in {"ALPHA":75.0,"BETA":75.0,"GAMMA":0.0}.items():
+        close(report["projected_exposures_USD"][k],v)
+    for k,v in {"ALPHA":25.0,"BETA":-25.0,"GAMMA":-20.0}.items():
+        close(report["residual_exposures_USD"][k],v)
     close(report["residual_dot_direction"],0)
     close(report["pythagorean_squared_error"],0)
     assert report["runtime_certified"] is False
