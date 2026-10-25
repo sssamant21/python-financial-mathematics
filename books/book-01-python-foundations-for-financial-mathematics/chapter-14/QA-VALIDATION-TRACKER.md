@@ -20,7 +20,7 @@
 
 | Section | Manuscript | Reference tests | Python runtime | Numerical/editorial review | Acceptance |
 |---|---|---|---|---|---|
-| 14.01 | Located | 12 test methods found | Not executed | Pending | Pending |
+| 14.01 | Located | 12/12 passed in transcribed local reference implementation | Initial smoke PASS; source fidelity pending | Pending | NOT CERTIFIED |
 | 14.02 | Located | 12 test methods found | Not executed | Pending | Pending |
 | 14.03 | Located | 12 test methods found | Not executed | Pending | Pending |
 | 14.04 | Located | 12 test methods found | Not executed | Pending | Pending |
@@ -38,7 +38,7 @@
 | 14.16 | Located | 12 test methods found | Not executed | Pending | Pending |
 | 14.17 | Located | 12 test methods found | Not executed | Pending | Pending |
 
-**Interpretation:** "12 test methods found" does not mean "12 tests passed." All sections remain **NOT CERTIFIED** until independent runtime and editorial evidence is collected.
+**Interpretation:** For 14.01, 12/12 tests passed on a manually transcribed reference implementation in Python 3.13.5; byte-for-byte source fidelity to the published Markdown is still unverified. The other 16 sections have only been statically inventoried. All sections remain **NOT CERTIFIED** until independent source-fidelity runtime and editorial evidence is collected. See [14.01 initial runtime evidence](qa-evidence-14.01.md).
 
 ## Phase 2 — Python extraction and execution
 
@@ -83,8 +83,8 @@ Do not label a section "runtime validated" if its tests were only read or counte
 
 **Manuscript publication: COMPLETE (17/17).**  
 **Structural inventory: COMPLETE (17/17).**  
-**Independent Python runtime: PENDING (0/17 independently certified).**  
+**Independent Python runtime: IN PROGRESS (1/17 initial smoke-tested; 0/17 source-fidelity validated or independently certified).**  
 **Mathematical/editorial review: PENDING.**  
 **Enterprise or academic certification: NOT CERTIFIED.**
 
-**Next action:** Extract and execute the reference Python labs, record results and failures, then remediate section by section.
+**Next action:** Establish source-fidelity execution for 14.01, then extract and execute 14.02 onward, recording results and failures section by section.
