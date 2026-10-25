@@ -1,6 +1,6 @@
 # Chapter 07 — Limits and Continuity
 
-**Manuscript status:** 8/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 9/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -16,8 +16,13 @@
 | 7.6 | [Important Small-Change Limits](7.06-important-small-change-limits.md) | Draft — runtime validation pending |
 | 7.7 | [Intermediate Values and Root Existence](7.07-intermediate-values-and-root-existence.md) | Draft — runtime validation pending |
 | 7.8 | [Numerical Investigation versus Proof](7.08-numerical-investigation-versus-proof.md) | Draft — runtime validation pending |
-| 7.9 | Chapter Project — Boundary and Continuity Investigation Lab | Planned |
+| 7.9 | [Chapter Project — Boundary and Continuity Investigation Lab](7.09-chapter-project-boundary-and-continuity-investigation-lab.md) | Draft — runtime validation pending |
 | 7.10 | Exercises and Applied Problems | Planned |
+
+## Section 7.9 companion material
+
+- [Boundary and continuity capstone lab](code/section_7_09.py)
+- [Reference checks](code/check_section_7_09.py)
 
 ## Section 7.8 companion material
 
@@ -63,4 +68,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 7.9 — Chapter Project — Boundary and Continuity Investigation Lab.
+**Next:** 7.10 — Exercises and Applied Problems.
