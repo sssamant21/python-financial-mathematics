@@ -311,10 +311,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [11.3 — Level-Payment Loans](chapter-11/11.03-level-payment-loans.md) — Manuscript published; runtime and editorial validation pending
 - [11.4 — Solving for Payment](chapter-11/11.04-solving-for-payment.md) — Manuscript published; runtime and editorial validation pending
 - [11.5 — Interest and Principal Components](chapter-11/11.05-interest-and-principal-components.md) — Manuscript published; runtime and editorial validation pending
+- [11.6 — Outstanding Loan Balance](chapter-11/11.06-outstanding-loan-balance.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 11.1–11.5 complete (5/14 sections).  
+**Manuscript progress:** 11.1–11.6 complete (6/14 sections).  
 **Chapter 11 status:** In progress.  
-**Next:** 11.6 — Outstanding Loan Balance.
+**Next:** 11.7 — Amortization Schedules.
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
