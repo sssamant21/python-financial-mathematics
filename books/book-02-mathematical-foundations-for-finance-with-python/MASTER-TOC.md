@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.3 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.3; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.4 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.4; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -132,7 +132,7 @@ Published sections link to their manuscript files; planned sections remain plain
 7.1 — [Limits and Approaching a Point](chapter-07/7.01-limits-and-approaching-a-point.md)  
 7.2 — [One-Sided Limits](chapter-07/7.02-one-sided-limits.md)  
 7.3 — [Continuity and Types of Discontinuity](chapter-07/7.03-continuity-and-types-of-discontinuity.md)  
-7.4 — Limits at Infinity and Asymptotes  
+7.4 — [Limits at Infinity and Asymptotes](chapter-07/7.04-limits-at-infinity-and-asymptotes.md)  
 7.5 — Exponential Limits and Continuous Compounding  
 7.6 — Important Small-Change Limits  
 7.7 — Intermediate Values and Root Existence  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 7.4 — Limits at Infinity and Asymptotes.
+**Next manuscript section:** 7.5 — Exponential Limits and Continuous Compounding.
