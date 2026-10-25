@@ -11,7 +11,7 @@
 | 11.5 | [Interest and Principal Components](11.05-interest-and-principal-components.md) | Manuscript published |
 | 11.6 | [Outstanding Loan Balance](11.06-outstanding-loan-balance.md) | Manuscript published |
 | 11.7 | [Amortization Schedules](11.07-amortization-schedules.md) | Manuscript published |
-| 11.8 | Mortgages | Planned |
+| 11.8 | [Mortgages](11.08-mortgages.md) | Manuscript published |
 | 11.9 | Extra Payments and Prepayment | Planned |
 | 11.10 | Refinancing Analysis | Planned |
 | 11.11 | Effective Borrowing Cost | Planned |
@@ -19,9 +19,9 @@
 | 11.13 | Chapter Project — Loan and Mortgage Analyzer | Planned |
 | 11.14 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 11.1–11.7 complete (7/14 sections).  
+**Manuscript progress:** 11.1–11.8 complete (8/14 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 11.8 — Mortgages.
+**Next:** 11.9 — Extra Payments and Prepayment.
 
 ## Validation policy
 
@@ -38,3 +38,5 @@ Section 11.5 includes interest/principal decomposition, reconciliation, twelve e
 Section 11.6 includes prospective and retrospective balance methods, principal prepayment interpretation, twelve exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 11.7 includes amortization schedules, reconciliation, two rounding policies, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 11.8 includes mortgage payment and LTV calculations, housing-cost components, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
