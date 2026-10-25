@@ -345,10 +345,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 - [12.14 — Discount Factors and Spot Rates](chapter-12/12.14-discount-factors-and-spot-rates.md) — Manuscript published; runtime and editorial validation pending
 - [12.15 — Forward Rates](chapter-12/12.15-forward-rates.md) — Manuscript published; runtime and editorial validation pending
 - [12.16 — Chapter Project — Bond Analytics Engine](chapter-12/12.16-chapter-project-bond-analytics-engine.md) — Manuscript published; runtime and editorial validation pending
+- [12.17 — Exercises and Applied Problems](chapter-12/12.17-exercises-and-applied-problems.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.16 complete (16/17 sections).  
-**Chapter 12 status:** In progress.  
-**Next:** 12.17 — Exercises and Applied Problems.
+**Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
+**Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
+**Next:** 13.1 — Measuring Investment Returns.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
