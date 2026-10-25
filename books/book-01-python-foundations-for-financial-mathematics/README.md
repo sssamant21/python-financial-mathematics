@@ -335,10 +335,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 - [12.4 — Zero-Coupon Bonds](chapter-12/12.04-zero-coupon-bonds.md) — Manuscript published; runtime and editorial validation pending
 - [12.5 — Bond Pricing](chapter-12/12.05-bond-pricing.md) — Manuscript published; runtime and editorial validation pending
 - [12.6 — Yield to Maturity](chapter-12/12.06-yield-to-maturity.md) — Manuscript published; runtime and editorial validation pending
+- [12.7 — Yield and Price Relationships](chapter-12/12.07-yield-and-price-relationships.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.6 complete (6/17 sections).  
+**Manuscript progress:** 12.1–12.7 complete (7/17 sections).  
 **Chapter 12 status:** In progress.  
-**Next:** 12.7 — Yield and Price Relationships.
+**Next:** 12.8 — Accrued Interest and Clean vs. Dirty Price.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
