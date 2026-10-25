@@ -15,7 +15,7 @@
 | 12.8 | [Accrued Interest and Clean vs. Dirty Price](12.08-accrued-interest-and-clean-vs-dirty-price.md) | Manuscript published |
 | 12.9 | [Duration](12.09-duration.md) | Manuscript published |
 | 12.10 | [Modified Duration](12.10-modified-duration.md) | Manuscript published |
-| 12.11 | Convexity | Planned |
+| 12.11 | [Convexity](12.11-convexity.md) | Manuscript published |
 | 12.12 | Interest-Rate Sensitivity | Planned |
 | 12.13 | Yield Curves | Planned |
 | 12.14 | Discount Factors and Spot Rates | Planned |
@@ -23,9 +23,9 @@
 | 12.16 | Chapter Project — Bond Analytics Engine | Planned |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.10 complete (10/17 sections).  
+**Manuscript progress:** 12.1–12.11 complete (11/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.11 — Convexity.
+**Next:** 12.12 — Interest-Rate Sensitivity.
 
 ## Validation policy
 
@@ -50,3 +50,5 @@ Section 12.8 includes settlement accrued interest, clean/dirty price reconciliat
 Section 12.9 includes Macaulay duration, present-value cash-flow weights, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.10 includes modified duration, DV01 and first-order price risk, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.11 includes analytical convexity, second-order yield-shock approximations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
