@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.10 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -125,11 +125,11 @@ Published sections link to their manuscript files; planned sections remain plain
 6.7 — [Truncation and Approximation Error](chapter-06/6.07-truncation-and-approximation-error.md)  
 6.8 — [Zero Rates and Independent Verification](chapter-06/6.08-zero-rates-and-independent-verification.md)  
 6.9 — [Chapter Project — Cash-Flow Series Derivation and Verification Engine](chapter-06/6.09-cash-flow-series-derivation-and-verification-engine.md)  
-6.10 — Exercises and Applied Problems
+6.10 — [Exercises and Applied Problems](chapter-06/6.10-exercises-and-applied-problems.md)
 
 # Chapter 7 — Limits and Continuity
 
-7.1 — Limits and Approaching a Point  
+7.1 — [Limits and Approaching a Point](chapter-07/7.01-limits-and-approaching-a-point.md)  
 7.2 — One-Sided Limits  
 7.3 — Continuity and Types of Discontinuity  
 7.4 — Limits at Infinity and Asymptotes  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 7.1 — see Chapter 07 plan.
+**Next manuscript section:** 7.2 — One-Sided Limits.
