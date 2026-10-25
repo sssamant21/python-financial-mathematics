@@ -17,11 +17,11 @@
 | 11.11 | [Effective Borrowing Cost](11.11-effective-borrowing-cost.md) | Manuscript published |
 | 11.12 | [Numerical and Rounding Considerations](11.12-numerical-and-rounding-considerations.md) | Manuscript published |
 | 11.13 | [Chapter Project — Loan and Mortgage Analyzer](11.13-chapter-project-loan-and-mortgage-analyzer.md) | Manuscript published |
-| 11.14 | Exercises and Applied Problems | Planned |
+| 11.14 | [Exercises and Applied Problems](11.14-exercises-and-applied-problems.md) | Manuscript published |
 
-**Manuscript progress:** 11.1–11.13 complete (13/14 sections).  
-**Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 11.14 — Exercises and Applied Problems.
+**Manuscript progress:** 11.1–11.14 complete (14/14 sections).  
+**Chapter status:** Manuscript complete; independent runtime and editorial review pending.  
+**Next:** 12.1 — Introduction to Fixed Income.
 
 ## Validation policy
 
@@ -50,3 +50,5 @@ Section 11.11 includes effective borrowing-cost IRR, fee analysis, annualization
 Section 11.12 includes stable loan formulas, decimal rounding, reconciliation, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 11.13 contains the loan and mortgage analyzer capstone, fourteen exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 11.14 contains twenty-five worked exercises, a chapter-wide case study and twelve Python reference tests (independent runtime verification pending).
