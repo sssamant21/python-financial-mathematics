@@ -1,6 +1,6 @@
 # Chapter 07 — Limits and Continuity
 
-**Manuscript status:** 9/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -17,7 +17,12 @@
 | 7.7 | [Intermediate Values and Root Existence](7.07-intermediate-values-and-root-existence.md) | Draft — runtime validation pending |
 | 7.8 | [Numerical Investigation versus Proof](7.08-numerical-investigation-versus-proof.md) | Draft — runtime validation pending |
 | 7.9 | [Chapter Project — Boundary and Continuity Investigation Lab](7.09-chapter-project-boundary-and-continuity-investigation-lab.md) | Draft — runtime validation pending |
-| 7.10 | Exercises and Applied Problems | Planned |
+| 7.10 | [Exercises and Applied Problems](7.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 7.10 companion material
+
+- [Chapter review assessment lab](code/section_7_10.py)
+- [Reference checks](code/check_section_7_10.py)
 
 ## Section 7.9 companion material
 
@@ -68,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 7.10 — Exercises and Applied Problems.
+**Next:** Chapter 08 — Differentiation and Financial Sensitivity (confirm the Chapter 08 plan in the Master TOC).
