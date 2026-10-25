@@ -1,6 +1,6 @@
 # Chapter 08 — Derivatives and Differentiation
 
-**Manuscript status:** 9/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -17,7 +17,12 @@
 | 8.7 | [Implicit Differentiation](8.07-implicit-differentiation.md) | Draft — runtime validation pending |
 | 8.8 | [Numerical Derivatives and Step Selection](8.08-numerical-derivatives-and-step-selection.md) | Draft — runtime validation pending |
 | 8.9 | [Chapter Project — Analytic and Numerical Derivative Comparator](8.09-analytic-and-numerical-derivative-comparator.md) | Draft — runtime validation pending |
-| 8.10 | Exercises and Applied Problems | Planned |
+| 8.10 | [Exercises and Applied Problems](8.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 8.10 companion material
+
+- [Chapter assessment lab](code/section_8_10.py)
+- [Independent acceptance checks](code/check_section_8_10.py)
 
 ## Section 8.9 companion material
 
@@ -68,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 8.10 — Exercises and Applied Problems.
+**Next:** Chapter 09, Section 9.1 — Absolute and Relative Sensitivity.
