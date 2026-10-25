@@ -1,6 +1,6 @@
 # Chapter 06 — Summation, Series, and Cash-Flow Derivations
 
-**Manuscript status:** 7/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 8/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -15,9 +15,14 @@
 | 6.5 | [Growing Payment Streams](6.05-growing-payment-streams.md) | Draft — runtime validation pending |
 | 6.6 | [Perpetuities and Tail Conditions](6.06-perpetuities-and-tail-conditions.md) | Draft — runtime validation pending |
 | 6.7 | [Truncation and Approximation Error](6.07-truncation-and-approximation-error.md) | Draft — runtime validation pending |
-| 6.8 | Zero Rates and Independent Verification | Planned |
+| 6.8 | [Zero Rates and Independent Verification](6.08-zero-rates-and-independent-verification.md) | Draft — runtime validation pending |
 | 6.9 | Chapter Project — Cash-Flow Series Derivation and Verification Engine | Planned |
 | 6.10 | Exercises and Applied Problems | Planned |
+
+## Section 6.8 companion material
+
+- [Zero rates and verification lab](code/section_6_08.py)
+- [Reference checks](code/check_section_6_08.py)
 
 ## Section 6.7 companion material
 
@@ -58,4 +63,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 6.8 — Zero Rates and Independent Verification.
+**Next:** 6.9 — Chapter Project — Cash-Flow Series Derivation and Verification Engine.
