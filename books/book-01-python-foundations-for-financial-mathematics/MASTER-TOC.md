@@ -419,4 +419,4 @@ Any structural change requires:
 **Chapter 14 manuscript complete: 17/17 sections published as drafts. Next: independent runtime QA and editorial review.**
 
 
-**Chapter 15 publication status:** 15.1 published as draft (1/15). Next locked manuscript section: 15.2 — Mean, Median, and Quantiles. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 15 publication status:** 15.1–15.2 published as drafts (2/15). Next locked manuscript section: 15.3 — Variance and Standard Deviation. Comprehensive QA deferred until all Book 1 chapters are written.
