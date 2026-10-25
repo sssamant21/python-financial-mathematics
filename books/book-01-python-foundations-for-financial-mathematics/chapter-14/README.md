@@ -23,7 +23,7 @@
 | 14.16 | [Chapter Project — Financial Probability Simulator](14.16-chapter-project-financial-probability-simulator.md) | Manuscript published; independent QA pending |
 | 14.17 | [Exercises and Applied Problems](14.17-exercises-and-applied-problems.md) | Manuscript published; independent QA pending |
 
-**Next:** Chapter 14 independent QA and editorial review.
+**Next:** [Independent QA validation tracker](QA-VALIDATION-TRACKER.md) — structural inventory complete; runtime/editorial QA pending.
 
 ## Section 14.1
 
