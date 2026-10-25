@@ -309,10 +309,11 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 - [11.1 — Loan Mathematics](chapter-11/11.01-loan-mathematics.md) — Manuscript published; runtime and editorial validation pending
 - [11.2 — Principal, Rate, Term, and Payment](chapter-11/11.02-principal-rate-term-and-payment.md) — Manuscript published; runtime and editorial validation pending
 - [11.3 — Level-Payment Loans](chapter-11/11.03-level-payment-loans.md) — Manuscript published; runtime and editorial validation pending
+- [11.4 — Solving for Payment](chapter-11/11.04-solving-for-payment.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 11.1–11.3 complete (3/14 sections).  
+**Manuscript progress:** 11.1–11.4 complete (4/14 sections).  
 **Chapter 11 status:** In progress.  
-**Next:** 11.4 — Solving for Payment.
+**Next:** 11.5 — Interest and Principal Components.
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
