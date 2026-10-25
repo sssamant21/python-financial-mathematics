@@ -339,10 +339,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 - [12.8 — Accrued Interest and Clean vs. Dirty Price](chapter-12/12.08-accrued-interest-and-clean-vs-dirty-price.md) — Manuscript published; runtime and editorial validation pending
 - [12.9 — Duration](chapter-12/12.09-duration.md) — Manuscript published; runtime and editorial validation pending
 - [12.10 — Modified Duration](chapter-12/12.10-modified-duration.md) — Manuscript published; runtime and editorial validation pending
+- [12.11 — Convexity](chapter-12/12.11-convexity.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.10 complete (10/17 sections).  
+**Manuscript progress:** 12.1–12.11 complete (11/17 sections).  
 **Chapter 12 status:** In progress.  
-**Next:** 12.11 — Convexity.
+**Next:** 12.12 — Interest-Rate Sensitivity.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
