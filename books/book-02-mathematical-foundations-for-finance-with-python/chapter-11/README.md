@@ -1,6 +1,6 @@
 # Chapter 11 — Vectors and Financial Quantities
 
-**Manuscript status:** 7/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 8/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -15,9 +15,14 @@
 | 11.5 | [Orthogonality and Angles](11.05-orthogonality-and-angles.md) | Draft — runtime validation pending |
 | 11.6 | [Projection onto a Direction](11.06-projection-onto-a-direction.md) | Draft — runtime validation pending |
 | 11.7 | [Portfolio Weights and Exposure Constraints](11.07-portfolio-weights-and-exposure-constraints.md) | Draft — runtime validation pending |
-| 11.8 | Shape, Broadcasting, and Alignment Checks | Planned |
+| 11.8 | [Shape, Broadcasting, and Alignment Checks](11.08-shape-broadcasting-and-alignment-checks.md) | Draft — runtime validation pending |
 | 11.9 | Chapter Project — Vectorized Portfolio Exposure Calculator | Planned |
 | 11.10 | Exercises and Applied Problems | Planned |
+
+## Section 11.8 companion material
+
+- [Shape, broadcasting, and alignment lab](code/section_11_08.py)
+- [Independent reference checks](code/check_section_11_08.py)
 
 ## Section 11.7 companion material
 
@@ -58,4 +63,4 @@
 
 Draft manuscript and reference-check source are published. Runtime execution, independent code and mathematical review, and canonical approval are pending.
 
-**Next:** 11.8 — Shape, Broadcasting, and Alignment Checks.
+**Next:** 11.9 — Chapter Project — Vectorized Portfolio Exposure Calculator.
