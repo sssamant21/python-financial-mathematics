@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 12.7 — Yield and Price Relationships.**
+**Next locked manuscript section: 12.8 — Accrued Interest and Clean vs. Dirty Price.**
