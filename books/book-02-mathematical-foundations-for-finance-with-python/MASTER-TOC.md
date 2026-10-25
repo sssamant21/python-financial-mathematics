@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.7 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.7; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.8 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.8; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -136,7 +136,7 @@ Published sections link to their manuscript files; planned sections remain plain
 7.5 — [Exponential Limits and Continuous Compounding](chapter-07/7.05-exponential-limits-and-continuous-compounding.md)  
 7.6 — [Important Small-Change Limits](chapter-07/7.06-important-small-change-limits.md)  
 7.7 — [Intermediate Values and Root Existence](chapter-07/7.07-intermediate-values-and-root-existence.md)  
-7.8 — Numerical Investigation versus Proof  
+7.8 — [Numerical Investigation versus Proof](chapter-07/7.08-numerical-investigation-versus-proof.md)  
 7.9 — Chapter Project — Boundary and Continuity Investigation Lab  
 7.10 — Exercises and Applied Problems
 
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 7.8 — Numerical Investigation versus Proof.
+**Next manuscript section:** 7.9 — Chapter Project — Boundary and Continuity Investigation Lab.
