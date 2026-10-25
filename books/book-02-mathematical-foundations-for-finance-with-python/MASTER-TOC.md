@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.5; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.6 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1–6.6; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -121,7 +121,7 @@ Published sections link to their manuscript files; planned sections remain plain
 6.3 — [Infinite Geometric Series](chapter-06/6.03-infinite-geometric-series.md)  
 6.4 — [Ordinary Annuities and Annuities Due](chapter-06/6.04-ordinary-annuities-and-annuities-due.md)  
 6.5 — [Growing Payment Streams](chapter-06/6.05-growing-payment-streams.md)  
-6.6 — Perpetuities and Tail Conditions  
+6.6 — [Perpetuities and Tail Conditions](chapter-06/6.06-perpetuities-and-tail-conditions.md)  
 6.7 — Truncation and Approximation Error  
 6.8 — Zero Rates and Independent Verification  
 6.9 — Chapter Project — Cash-Flow Series Derivation and Verification Engine  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 6.6 — Perpetuities and Tail Conditions.
+**Next manuscript section:** 6.7 — Truncation and Approximation Error.
