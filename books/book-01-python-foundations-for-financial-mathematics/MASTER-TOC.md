@@ -419,4 +419,4 @@ Any structural change requires:
 **Chapter 14 manuscript complete: 17/17 sections published as drafts. Next: independent runtime QA and editorial review.**
 
 
-**Chapter 15 publication status:** 15.1–15.9 published as drafts (9/15). Next locked manuscript section: 15.10 — Linear Regression. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 15 publication status:** 15.1–15.10 published as drafts (10/15). Next locked manuscript section: 15.11 — Financial Return Statistics. Comprehensive QA deferred until all Book 1 chapters are written.
