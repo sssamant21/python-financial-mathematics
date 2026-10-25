@@ -1,6 +1,6 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 11/17 sections published (64.7%).
+**Manuscript progress:** 12/17 sections published (70.6%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
@@ -16,14 +16,14 @@
 | 14.9 | [Expected Value](14.09-expected-value.md) | Manuscript published; independent QA pending |
 | 14.10 | [Variance and Standard Deviation](14.10-variance-and-standard-deviation.md) | Manuscript published; independent QA pending |
 | 14.11 | [Covariance and Correlation](14.11-covariance-and-correlation.md) | Manuscript published; independent QA pending |
-| 14.12 | Common Probability Distributions | Planned |
+| 14.12 | [Common Probability Distributions](14.12-common-probability-distributions.md) | Manuscript published; independent QA pending |
 | 14.13 | Normal Distribution | Planned |
 | 14.14 | Sampling with Python | Planned |
 | 14.15 | Random Number Generation and Reproducibility | Planned |
 | 14.16 | Chapter Project — Financial Probability Simulator | Planned |
 | 14.17 | Exercises and Applied Problems | Planned |
 
-**Next:** 14.12 — Common Probability Distributions.
+**Next:** 14.13 — Normal Distribution.
 
 ## Section 14.1
 
@@ -68,3 +68,7 @@
 ## Section 14.11
 
 [Covariance and Correlation](14.11-covariance-and-correlation.md) includes 24 worked exercises, a portfolio diversification mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 14.12
+
+[Common Probability Distributions](14.12-common-probability-distributions.md) includes 24 worked exercises, a distribution-selection and default-count stress-test mini-project, and 12 reference unit tests; independent runtime verification pending.
