@@ -1,6 +1,6 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 10/17 sections published (58.8%).
+**Manuscript progress:** 11/17 sections published (64.7%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
@@ -15,7 +15,7 @@
 | 14.8 | [Continuous Random Variables](14.08-continuous-random-variables.md) | Manuscript published; independent QA pending |
 | 14.9 | [Expected Value](14.09-expected-value.md) | Manuscript published; independent QA pending |
 | 14.10 | [Variance and Standard Deviation](14.10-variance-and-standard-deviation.md) | Manuscript published; independent QA pending |
-| 14.11 | Covariance and Correlation | Planned |
+| 14.11 | [Covariance and Correlation](14.11-covariance-and-correlation.md) | Manuscript published; independent QA pending |
 | 14.12 | Common Probability Distributions | Planned |
 | 14.13 | Normal Distribution | Planned |
 | 14.14 | Sampling with Python | Planned |
@@ -23,7 +23,7 @@
 | 14.16 | Chapter Project — Financial Probability Simulator | Planned |
 | 14.17 | Exercises and Applied Problems | Planned |
 
-**Next:** 14.11 — Covariance and Correlation.
+**Next:** 14.12 — Common Probability Distributions.
 
 ## Section 14.1
 
@@ -64,3 +64,7 @@
 ## Section 14.10
 
 [Variance and Standard Deviation](14.10-variance-and-standard-deviation.md) includes 24 worked exercises, an investment volatility and credit-risk dispersion mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 14.11
+
+[Covariance and Correlation](14.11-covariance-and-correlation.md) includes 24 worked exercises, a portfolio diversification mini-project, and 12 reference unit tests; independent runtime verification pending.
