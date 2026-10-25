@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.2 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -195,7 +195,7 @@ Published sections link to their manuscript files; planned sections remain plain
 # Chapter 12 — Matrices and Linear Systems
 
 12.1 — [Matrices and Dimensions](chapter-12/12.01-matrices-and-dimensions.md)  
-12.2 — Matrix Multiplication and Transformations  
+12.2 — [Matrix Multiplication and Transformations](chapter-12/12.02-matrix-multiplication-and-transformations.md)  
 12.3 — Transpose, Identity, and Diagonal Matrices  
 12.4 — Linear Systems and Elimination  
 12.5 — Rank and Existence of Solutions  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 12.2 — Matrix Multiplication and Transformations.
+**Next manuscript section:** 12.3 — Transpose, Identity, and Diagonal Matrices.
