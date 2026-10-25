@@ -1,6 +1,6 @@
 # Chapter 15 — Statistics for Financial Data
 
-**Manuscript progress:** 4/15 sections published (26.7%).  
+**Manuscript progress:** 5/15 sections published (33.3%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Lightweight manuscript checks during publication; runtime and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -9,7 +9,7 @@
 | 15.2 | [Mean, Median, and Quantiles](15.02-mean-median-and-quantiles.md) | Published draft; QA deferred |
 | 15.3 | [Variance and Standard Deviation](15.03-variance-and-standard-deviation.md) | Published draft; QA deferred |
 | 15.4 | [Skewness and Kurtosis](15.04-skewness-and-kurtosis.md) | Published draft; QA deferred |
-| 15.5 | Covariance | Planned |
+| 15.5 | [Covariance](15.05-covariance.md) | Published draft; QA deferred |
 | 15.6 | Correlation | Planned |
 | 15.7 | Sampling and Estimation | Planned |
 | 15.8 | Confidence Intervals | Planned |
@@ -21,6 +21,6 @@
 | 15.14 | Chapter Project — Financial Statistical Analysis Toolkit | Planned |
 | 15.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 15.5 — Covariance.
+**Next:** 15.6 — Correlation.
 
 **Chapter status:** Manuscript in progress; not certified.
