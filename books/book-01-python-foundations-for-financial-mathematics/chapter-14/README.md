@@ -1,13 +1,13 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 2/17 sections published (11.8%).
+**Manuscript progress:** 3/17 sections published (17.6%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
 |---|---|---|
 | 14.1 | [Why Probability Matters in Finance](14.01-why-probability-matters-in-finance.md) | Manuscript published; independent QA pending |
 | 14.2 | [Sample Spaces and Events](14.02-sample-spaces-and-events.md) | Manuscript published; independent QA pending |
-| 14.3 | Probability Rules | Planned |
+| 14.3 | [Probability Rules](14.03-probability-rules.md) | Manuscript published; independent QA pending |
 | 14.4 | Conditional Probability | Planned |
 | 14.5 | Independence | Planned |
 | 14.6 | Random Variables | Planned |
@@ -23,7 +23,7 @@
 | 14.16 | Chapter Project — Financial Probability Simulator | Planned |
 | 14.17 | Exercises and Applied Problems | Planned |
 
-**Next:** 14.3 — Probability Rules.
+**Next:** 14.4 — Conditional Probability.
 
 ## Section 14.1
 
@@ -32,3 +32,7 @@
 ## Section 14.2
 
 [Sample Spaces and Events](14.02-sample-spaces-and-events.md) includes 24 worked exercises, a joint credit-and-market event monitor mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 14.3
+
+[Probability Rules](14.03-probability-rules.md) includes 24 worked exercises, a credit stress probability validator project, and 12 reference unit tests; independent runtime verification pending.
