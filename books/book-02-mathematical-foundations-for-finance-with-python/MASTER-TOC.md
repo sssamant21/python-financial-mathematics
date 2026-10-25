@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, and 8.1–8.4 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, and 8.1–8.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -146,7 +146,7 @@ Published sections link to their manuscript files; planned sections remain plain
 8.2 — [Power, Sum, and Constant Rules](chapter-08/8.02-power-sum-and-constant-rules.md)  
 8.3 — [Product and Quotient Rules](chapter-08/8.03-product-and-quotient-rules.md)  
 8.4 — [The Chain Rule](chapter-08/8.04-the-chain-rule.md)  
-8.5 — Exponential and Logarithmic Derivatives  
+8.5 — [Exponential and Logarithmic Derivatives](chapter-08/8.05-exponential-and-logarithmic-derivatives.md)  
 8.6 — Higher Derivatives and Curvature  
 8.7 — Implicit Differentiation  
 8.8 — Numerical Derivatives and Step Selection  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 8.5 — Exponential and Logarithmic Derivatives.
+**Next manuscript section:** 8.6 — Higher Derivatives and Curvature.
