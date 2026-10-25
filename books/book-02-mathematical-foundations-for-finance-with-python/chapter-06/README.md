@@ -1,6 +1,6 @@
 # Chapter 06 — Summation, Series, and Cash-Flow Derivations
 
-**Manuscript status:** 9/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -17,7 +17,12 @@
 | 6.7 | [Truncation and Approximation Error](6.07-truncation-and-approximation-error.md) | Draft — runtime validation pending |
 | 6.8 | [Zero Rates and Independent Verification](6.08-zero-rates-and-independent-verification.md) | Draft — runtime validation pending |
 | 6.9 | [Chapter Project — Cash-Flow Series Derivation and Verification Engine](6.09-cash-flow-series-derivation-and-verification-engine.md) | Draft — runtime validation pending |
-| 6.10 | Exercises and Applied Problems | Planned |
+| 6.10 | [Exercises and Applied Problems](6.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 6.10 companion material
+
+- [Chapter 06 assessment lab](code/section_6_10.py)
+- [Reference checks](code/check_section_6_10.py)
 
 ## Section 6.9 companion material
 
@@ -68,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 6.10 — Exercises and Applied Problems.
+**Next:** Chapter 07 — see the Master TOC for its opening section.
