@@ -19,10 +19,10 @@
 | 13.12 | [Drawdowns](13.12-drawdowns.md) | Manuscript published; independent QA pending |
 | 13.13 | [Risk-Adjusted Performance Concepts](13.13-risk-adjusted-performance-concepts.md) | Manuscript published; independent QA pending |
 | 13.14 | [Chapter Project — Investment Performance Analyzer](13.14-chapter-project-investment-performance-analyzer.md) | Manuscript published; independent QA pending |
-| 13.15 | Exercises and Applied Problems | Planned |
+| 13.15 | [Exercises and Applied Problems](13.15-exercises-and-applied-problems.md) | Manuscript published; independent QA pending |
 
-**Manuscript progress:** 14/15 sections published (93.3%).  
-**Next:** 13.15 — Exercises and Applied Problems.
+**Manuscript progress:** 15/15 sections published (100.0%).  
+**Next:** 14.1 — Why Probability Matters in Finance.
 
 ## Quality gates
 
@@ -83,3 +83,7 @@ Each section must undergo mathematical/source review, independent Python lab exe
 ## Section 13.14
 
 [Chapter Project — Investment Performance Analyzer](13.14-chapter-project-investment-performance-analyzer.md) integrates return and risk analytics, 18 worked exercises, a capstone acceptance lab, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 13.15
+
+[Exercises and Applied Problems](13.15-exercises-and-applied-problems.md) concludes the chapter with 30 worked exercises, five applied problems, an acceptance project, and 12 reference unit tests. **Chapter 13 manuscript complete (15/15); independent runtime and editorial QA pending.**
