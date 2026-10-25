@@ -341,10 +341,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 - [12.10 — Modified Duration](chapter-12/12.10-modified-duration.md) — Manuscript published; runtime and editorial validation pending
 - [12.11 — Convexity](chapter-12/12.11-convexity.md) — Manuscript published; runtime and editorial validation pending
 - [12.12 — Interest-Rate Sensitivity](chapter-12/12.12-interest-rate-sensitivity.md) — Manuscript published; runtime and editorial validation pending
+- [12.13 — Yield Curves](chapter-12/12.13-yield-curves.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.12 complete (12/17 sections).  
+**Manuscript progress:** 12.1–12.13 complete (13/17 sections).  
 **Chapter 12 status:** In progress.  
-**Next:** 12.13 — Yield Curves.
+**Next:** 12.14 — Discount Factors and Spot Rates.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
