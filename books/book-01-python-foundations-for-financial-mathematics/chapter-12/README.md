@@ -20,12 +20,12 @@
 | 12.13 | [Yield Curves](12.13-yield-curves.md) | Manuscript published |
 | 12.14 | [Discount Factors and Spot Rates](12.14-discount-factors-and-spot-rates.md) | Manuscript published |
 | 12.15 | [Forward Rates](12.15-forward-rates.md) | Manuscript published |
-| 12.16 | Chapter Project — Bond Analytics Engine | Planned |
+| 12.16 | [Chapter Project — Bond Analytics Engine](12.16-chapter-project-bond-analytics-engine.md) | Manuscript published |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.15 complete (15/17 sections).  
+**Manuscript progress:** 12.1–12.16 complete (16/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.16 — Chapter Project — Bond Analytics Engine.
+**Next:** 12.17 — Exercises and Applied Problems.
 
 ## Validation policy
 
@@ -60,3 +60,5 @@ Section 12.13 includes yield-curve shapes, spot-rate interpolation, discount fac
 Section 12.14 includes discount factors, spot-rate inversion, multi-cash-flow pricing, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.15 includes forward-rate conventions, curve reconstruction, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.16 includes the integrated bond analytics engine, twelve Python reference tests, eighteen worked exercises and portfolio stress-report acceptance criteria (independent runtime verification pending).
