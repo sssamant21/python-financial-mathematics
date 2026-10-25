@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.8 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.9 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -189,7 +189,7 @@ Published sections link to their manuscript files; planned sections remain plain
 11.6 — [Projection onto a Direction](chapter-11/11.06-projection-onto-a-direction.md)  
 11.7 — [Portfolio Weights and Exposure Constraints](chapter-11/11.07-portfolio-weights-and-exposure-constraints.md)  
 11.8 — [Shape, Broadcasting, and Alignment Checks](chapter-11/11.08-shape-broadcasting-and-alignment-checks.md)  
-11.9 — Chapter Project — Vectorized Portfolio Exposure Calculator  
+11.9 — [Chapter Project — Vectorized Portfolio Exposure Calculator](chapter-11/11.09-chapter-project-vectorized-portfolio-exposure-calculator.md)  
 11.10 — Exercises and Applied Problems
 
 # Chapter 12 — Matrices and Linear Systems
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 11.9 — Chapter Project — Vectorized Portfolio Exposure Calculator.
+**Next manuscript section:** 11.10 — Exercises and Applied Problems.
