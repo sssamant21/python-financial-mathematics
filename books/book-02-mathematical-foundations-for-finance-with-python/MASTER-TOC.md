@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, and 8.1–8.8 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, and 8.1–8.9 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -150,7 +150,7 @@ Published sections link to their manuscript files; planned sections remain plain
 8.6 — [Higher Derivatives and Curvature](chapter-08/8.06-higher-derivatives-and-curvature.md)  
 8.7 — [Implicit Differentiation](chapter-08/8.07-implicit-differentiation.md)  
 8.8 — [Numerical Derivatives and Step Selection](chapter-08/8.08-numerical-derivatives-and-step-selection.md)  
-8.9 — Chapter Project — Analytic and Numerical Derivative Comparator  
+8.9 — [Chapter Project — Analytic and Numerical Derivative Comparator](chapter-08/8.09-analytic-and-numerical-derivative-comparator.md)  
 8.10 — Exercises and Applied Problems
 
 # Chapter 9 — Financial Sensitivity and Taylor Approximation
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 8.9 — Chapter Project: Analytic and Numerical Derivative Comparator.
+**Next manuscript section:** 8.10 — Exercises and Applied Problems.
