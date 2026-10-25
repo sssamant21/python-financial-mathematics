@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, and 5.1–5.10 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, and 5.1–5.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, and 6.1; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -116,7 +116,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 6 — Summation, Series, and Cash-Flow Derivations
 
-6.1 — Summation and Product Notation  
+6.1 — [Summation and Product Notation](chapter-06/6.01-summation-and-product-notation.md)  
 6.2 — Finite Geometric Sums  
 6.3 — Infinite Geometric Series  
 6.4 — Ordinary Annuities and Annuities Due  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 6.1 — Summation and Product Notation.
+**Next manuscript section:** 6.2 — Finite Geometric Sums.
