@@ -18,11 +18,11 @@
 | 13.11 | [Volatility](13.11-volatility.md) | Manuscript published; independent QA pending |
 | 13.12 | [Drawdowns](13.12-drawdowns.md) | Manuscript published; independent QA pending |
 | 13.13 | [Risk-Adjusted Performance Concepts](13.13-risk-adjusted-performance-concepts.md) | Manuscript published; independent QA pending |
-| 13.14 | Chapter Project — Investment Performance Analyzer | Planned |
+| 13.14 | [Chapter Project — Investment Performance Analyzer](13.14-chapter-project-investment-performance-analyzer.md) | Manuscript published; independent QA pending |
 | 13.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 13/15 sections published (86.7%).  
-**Next:** 13.14 — Chapter Project — Investment Performance Analyzer.
+**Manuscript progress:** 14/15 sections published (93.3%).  
+**Next:** 13.15 — Exercises and Applied Problems.
 
 ## Quality gates
 
@@ -79,3 +79,7 @@ Each section must undergo mathematical/source review, independent Python lab exe
 ## Section 13.13
 
 [Risk-Adjusted Performance Concepts](13.13-risk-adjusted-performance-concepts.md) includes 18 worked exercises, a risk-adjusted strategy scorecard project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 13.14
+
+[Chapter Project — Investment Performance Analyzer](13.14-chapter-project-investment-performance-analyzer.md) integrates return and risk analytics, 18 worked exercises, a capstone acceptance lab, and 12 reference unit tests; independent runtime verification pending.
