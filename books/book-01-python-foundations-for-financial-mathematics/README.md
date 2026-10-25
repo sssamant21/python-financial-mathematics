@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 14.12 — Common Probability Distributions.
+**Next:** 14.13 — Normal Distribution.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -381,7 +381,7 @@ Verified references must remain with the canonical artifact. Python language and
 
 **Manuscript progress:** 13.1–13.15 complete (15/15 sections).  
 **Chapter 13 status:** Manuscript complete; independent runtime and editorial QA pending.  
-**Next:** 14.12 — Common Probability Distributions.
+**Next:** 14.13 — Normal Distribution.
 
 See the [Chapter 13 progress index](chapter-13/README.md).
 
@@ -398,9 +398,10 @@ See the [Chapter 13 progress index](chapter-13/README.md).
 - [14.9 — Expected Value](chapter-14/14.09-expected-value.md) — Manuscript published; independent runtime and editorial QA pending
 - [14.10 — Variance and Standard Deviation](chapter-14/14.10-variance-and-standard-deviation.md) — Manuscript published; independent runtime and editorial QA pending
 - [14.11 — Covariance and Correlation](chapter-14/14.11-covariance-and-correlation.md) — Manuscript published; independent runtime and editorial QA pending
+- [14.12 — Common Probability Distributions](chapter-14/14.12-common-probability-distributions.md) — Manuscript published; independent runtime and editorial QA pending
 
-**Manuscript progress:** 14.1–14.11 complete (11/17 sections).  
+**Manuscript progress:** 14.1–14.12 complete (12/17 sections).  
 **Chapter 14 status:** In progress.  
-**Next:** 14.12 — Common Probability Distributions.
+**Next:** 14.13 — Normal Distribution.
 
 See the [Chapter 14 progress index](chapter-14/README.md).
