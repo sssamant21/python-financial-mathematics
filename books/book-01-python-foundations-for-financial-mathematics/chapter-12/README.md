@@ -9,7 +9,7 @@
 | 12.2 | [Bond Cash Flows](12.02-bond-cash-flows.md) | Manuscript published |
 | 12.3 | [Coupon Bonds](12.03-coupon-bonds.md) | Manuscript published |
 | 12.4 | [Zero-Coupon Bonds](12.04-zero-coupon-bonds.md) | Manuscript published |
-| 12.5 | Bond Pricing | Planned |
+| 12.5 | [Bond Pricing](12.05-bond-pricing.md) | Manuscript published |
 | 12.6 | Yield to Maturity | Planned |
 | 12.7 | Yield and Price Relationships | Planned |
 | 12.8 | Accrued Interest and Clean vs. Dirty Price | Planned |
@@ -23,9 +23,9 @@
 | 12.16 | Chapter Project — Bond Analytics Engine | Planned |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.4 complete (4/17 sections).  
+**Manuscript progress:** 12.1–12.5 complete (5/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.5 — Bond Pricing.
+**Next:** 12.6 — Yield to Maturity.
 
 ## Validation policy
 
@@ -38,3 +38,5 @@ Section 12.2 includes contractual coupon and principal cash-flow schedules, disc
 Section 12.3 includes coupon bond valuation, annuity/direct price reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.4 includes zero-coupon pricing and implied yield, discount factors, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.5 includes flat-yield and discount-factor bond pricing, annuity/direct reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
