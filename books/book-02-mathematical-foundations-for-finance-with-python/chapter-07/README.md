@@ -1,6 +1,6 @@
 # Chapter 07 — Limits and Continuity
 
-**Manuscript status:** 6/10 sections published as Draft. Runtime execution and editorial review pending.
+**Manuscript status:** 7/10 sections published as Draft. Runtime execution and editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -14,10 +14,15 @@
 | 7.4 | [Limits at Infinity and Asymptotes](7.04-limits-at-infinity-and-asymptotes.md) | Draft — runtime validation pending |
 | 7.5 | [Exponential Limits and Continuous Compounding](7.05-exponential-limits-and-continuous-compounding.md) | Draft — runtime validation pending |
 | 7.6 | [Important Small-Change Limits](7.06-important-small-change-limits.md) | Draft — runtime validation pending |
-| 7.7 | Intermediate Values and Root Existence | Planned |
+| 7.7 | [Intermediate Values and Root Existence](7.07-intermediate-values-and-root-existence.md) | Draft — runtime validation pending |
 | 7.8 | Numerical Investigation versus Proof | Planned |
 | 7.9 | Chapter Project — Boundary and Continuity Investigation Lab | Planned |
 | 7.10 | Exercises and Applied Problems | Planned |
+
+## Section 7.7 companion material
+
+- [IVT and bisection lab](code/section_7_07.py)
+- [Reference checks](code/check_section_7_07.py)
 
 ## Section 7.6 companion material
 
@@ -53,4 +58,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 7.7 — Intermediate Values and Root Existence.
+**Next:** 7.8 — Numerical Investigation versus Proof.
