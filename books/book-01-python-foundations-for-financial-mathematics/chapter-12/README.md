@@ -12,7 +12,7 @@
 | 12.5 | [Bond Pricing](12.05-bond-pricing.md) | Manuscript published |
 | 12.6 | [Yield to Maturity](12.06-yield-to-maturity.md) | Manuscript published |
 | 12.7 | [Yield and Price Relationships](12.07-yield-and-price-relationships.md) | Manuscript published |
-| 12.8 | Accrued Interest and Clean vs. Dirty Price | Planned |
+| 12.8 | [Accrued Interest and Clean vs. Dirty Price](12.08-accrued-interest-and-clean-vs-dirty-price.md) | Manuscript published |
 | 12.9 | Duration | Planned |
 | 12.10 | Modified Duration | Planned |
 | 12.11 | Convexity | Planned |
@@ -23,9 +23,9 @@
 | 12.16 | Chapter Project — Bond Analytics Engine | Planned |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.7 complete (7/17 sections).  
+**Manuscript progress:** 12.1–12.8 complete (8/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.8 — Accrued Interest and Clean vs. Dirty Price.
+**Next:** 12.9 — Duration.
 
 ## Validation policy
 
@@ -44,3 +44,5 @@ Section 12.5 includes flat-yield and discount-factor bond pricing, annuity/direc
 Section 12.6 includes yield-to-maturity root solving, repricing validation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.7 includes bond price/yield derivatives, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.8 includes settlement accrued interest, clean/dirty price reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
