@@ -1,6 +1,6 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 8/17 sections published (47.1%).
+**Manuscript progress:** 9/17 sections published (52.9%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
@@ -13,7 +13,7 @@
 | 14.6 | [Random Variables](14.06-random-variables.md) | Manuscript published; independent QA pending |
 | 14.7 | [Discrete Random Variables](14.07-discrete-random-variables.md) | Manuscript published; independent QA pending |
 | 14.8 | [Continuous Random Variables](14.08-continuous-random-variables.md) | Manuscript published; independent QA pending |
-| 14.9 | Expected Value | Planned |
+| 14.9 | [Expected Value](14.09-expected-value.md) | Manuscript published; independent QA pending |
 | 14.10 | Variance and Standard Deviation | Planned |
 | 14.11 | Covariance and Correlation | Planned |
 | 14.12 | Common Probability Distributions | Planned |
@@ -23,7 +23,7 @@
 | 14.16 | Chapter Project — Financial Probability Simulator | Planned |
 | 14.17 | Exercises and Applied Problems | Planned |
 
-**Next:** 14.9 — Expected Value.
+**Next:** 14.10 — Variance and Standard Deviation.
 
 ## Section 14.1
 
@@ -56,3 +56,7 @@
 ## Section 14.8
 
 [Continuous Random Variables](14.08-continuous-random-variables.md) includes 24 worked exercises, a settlement waiting-time risk monitor mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 14.9
+
+[Expected Value](14.09-expected-value.md) includes 24 worked exercises, an expected-loss and investment scenario analysis project, and 12 reference unit tests; independent runtime verification pending.
