@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, and 10.1–10.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, and 10.1–10.6 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -173,7 +173,7 @@ Published sections link to their manuscript files; planned sections remain plain
 10.3 — [The Fundamental Theorem of Calculus](chapter-10/10.03-fundamental-theorem-of-calculus.md)  
 10.4 — [Substitution and Integration by Parts](chapter-10/10.04-substitution-and-integration-by-parts.md)  
 10.5 — [Discounting Continuous Payment Streams](chapter-10/10.05-discounting-continuous-payment-streams.md)  
-10.6 — Improper Integrals and Infinite Horizons  
+10.6 — [Improper Integrals and Infinite Horizons](chapter-10/10.06-improper-integrals-and-infinite-horizons.md)  
 10.7 — Numerical Quadrature  
 10.8 — Discrete versus Continuous Payments  
 10.9 — Chapter Project — Continuous Cash-Flow Valuation Engine  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 10.6 — Improper Integrals and Infinite Horizons.
+**Next manuscript section:** 10.7 — Numerical Quadrature.
