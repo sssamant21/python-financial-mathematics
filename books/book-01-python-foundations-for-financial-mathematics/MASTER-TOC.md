@@ -416,4 +416,4 @@ Any structural change requires:
 4. Reconciliation of affected manuscript/status indexes.
 5. Verification that canonical files are not silently orphaned, overwritten, or renumbered.
 
-**Next locked manuscript section: 14.17 — Exercises and Applied Problems.**
+**Chapter 14 manuscript complete: 17/17 sections published as drafts. Next: independent runtime QA and editorial review.**
