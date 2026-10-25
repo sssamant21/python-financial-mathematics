@@ -1,6 +1,6 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 16/17 sections published (94.1%).
+**Manuscript progress:** 17/17 sections published (100%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
@@ -21,9 +21,9 @@
 | 14.14 | [Sampling with Python](14.14-sampling-with-python.md) | Manuscript published; independent QA pending |
 | 14.15 | [Random Number Generation and Reproducibility](14.15-random-number-generation-and-reproducibility.md) | Manuscript published; independent QA pending |
 | 14.16 | [Chapter Project — Financial Probability Simulator](14.16-chapter-project-financial-probability-simulator.md) | Manuscript published; independent QA pending |
-| 14.17 | Exercises and Applied Problems | Planned |
+| 14.17 | [Exercises and Applied Problems](14.17-exercises-and-applied-problems.md) | Manuscript published; independent QA pending |
 
-**Next:** 14.17 — Exercises and Applied Problems.
+**Next:** Chapter 14 independent QA and editorial review.
 
 ## Section 14.1
 
@@ -88,3 +88,7 @@
 ## Section 14.16
 
 [Chapter Project — Financial Probability Simulator](14.16-chapter-project-financial-probability-simulator.md) integrates an end-to-end Monte Carlo capstone, 24 worked exercises, 12 reference unit tests, and acceptance gates; independent runtime verification pending.
+
+## Section 14.17
+
+[Exercises and Applied Problems](14.17-exercises-and-applied-problems.md) concludes Chapter 14 with 24 worked exercises, three applied financial cases, and 12 reference unit tests. **Manuscript complete: 17/17 published drafts. Independent runtime and editorial QA pending; not certified.**
