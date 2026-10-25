@@ -419,4 +419,4 @@ Any structural change requires:
 **Chapter 14 manuscript complete: 17/17 sections published as drafts. Next: independent runtime QA and editorial review.**
 
 
-**Chapter 15 publication status:** 15.1–15.7 published as drafts (7/15). Next locked manuscript section: 15.8 — Confidence Intervals. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 15 publication status:** 15.1–15.8 published as drafts (8/15). Next locked manuscript section: 15.9 — Hypothesis Testing Foundations. Comprehensive QA deferred until all Book 1 chapters are written.
