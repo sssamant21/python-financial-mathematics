@@ -1,6 +1,6 @@
 # Chapter 14 — Probability for Financial Mathematics
 
-**Manuscript progress:** 14/17 sections published (82.4%).
+**Manuscript progress:** 15/17 sections published (88.2%).
 **Chapter status:** In progress; independent runtime and editorial QA pending.
 
 | Section | Title | Status |
@@ -19,11 +19,11 @@
 | 14.12 | [Common Probability Distributions](14.12-common-probability-distributions.md) | Manuscript published; independent QA pending |
 | 14.13 | [Normal Distribution](14.13-normal-distribution.md) | Manuscript published; independent QA pending |
 | 14.14 | [Sampling with Python](14.14-sampling-with-python.md) | Manuscript published; independent QA pending |
-| 14.15 | Random Number Generation and Reproducibility | Planned |
+| 14.15 | [Random Number Generation and Reproducibility](14.15-random-number-generation-and-reproducibility.md) | Manuscript published; independent QA pending |
 | 14.16 | Chapter Project — Financial Probability Simulator | Planned |
 | 14.17 | Exercises and Applied Problems | Planned |
 
-**Next:** 14.15 — Random Number Generation and Reproducibility.
+**Next:** 14.16 — Chapter Project — Financial Probability Simulator.
 
 ## Section 14.1
 
@@ -80,3 +80,7 @@
 ## Section 14.14
 
 [Sampling with Python](14.14-sampling-with-python.md) includes 24 worked exercises, a financial scenario sampling mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 14.15
+
+[Random Number Generation and Reproducibility](14.15-random-number-generation-and-reproducibility.md) includes 24 worked exercises, a reproducible financial Monte Carlo mini-project, and 12 reference unit tests; independent runtime verification pending.
