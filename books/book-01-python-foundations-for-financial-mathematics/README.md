@@ -336,10 +336,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 - [12.5 — Bond Pricing](chapter-12/12.05-bond-pricing.md) — Manuscript published; runtime and editorial validation pending
 - [12.6 — Yield to Maturity](chapter-12/12.06-yield-to-maturity.md) — Manuscript published; runtime and editorial validation pending
 - [12.7 — Yield and Price Relationships](chapter-12/12.07-yield-and-price-relationships.md) — Manuscript published; runtime and editorial validation pending
+- [12.8 — Accrued Interest and Clean vs. Dirty Price](chapter-12/12.08-accrued-interest-and-clean-vs-dirty-price.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.7 complete (7/17 sections).  
+**Manuscript progress:** 12.1–12.8 complete (8/17 sections).  
 **Chapter 12 status:** In progress.  
-**Next:** 12.8 — Accrued Interest and Clean vs. Dirty Price.
+**Next:** 12.9 — Duration.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
