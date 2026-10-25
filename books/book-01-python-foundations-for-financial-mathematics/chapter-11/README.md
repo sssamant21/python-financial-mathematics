@@ -9,7 +9,7 @@
 | 11.3 | [Level-Payment Loans](11.03-level-payment-loans.md) | Manuscript published |
 | 11.4 | [Solving for Payment](11.04-solving-for-payment.md) | Manuscript published |
 | 11.5 | [Interest and Principal Components](11.05-interest-and-principal-components.md) | Manuscript published |
-| 11.6 | Outstanding Loan Balance | Planned |
+| 11.6 | [Outstanding Loan Balance](11.06-outstanding-loan-balance.md) | Manuscript published |
 | 11.7 | Amortization Schedules | Planned |
 | 11.8 | Mortgages | Planned |
 | 11.9 | Extra Payments and Prepayment | Planned |
@@ -19,9 +19,9 @@
 | 11.13 | Chapter Project — Loan and Mortgage Analyzer | Planned |
 | 11.14 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 11.1–11.5 complete (5/14 sections).  
+**Manuscript progress:** 11.1–11.6 complete (6/14 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 11.6 — Outstanding Loan Balance.
+**Next:** 11.7 — Amortization Schedules.
 
 ## Validation policy
 
@@ -34,3 +34,5 @@ Section 11.3 covers fixed payments, balance methods, schedule reconciliation, tw
 Section 11.4 covers payment derivation, PV reconciliation, balloon-payment extensions, twelve exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 11.5 includes interest/principal decomposition, reconciliation, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 11.6 includes prospective and retrospective balance methods, principal prepayment interpretation, twelve exercises and twelve Python reference tests (independent runtime verification pending).
