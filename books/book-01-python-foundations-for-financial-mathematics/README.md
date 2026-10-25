@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 14.9 — Expected Value.
+**Next:** 14.10 — Variance and Standard Deviation.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -381,7 +381,7 @@ Verified references must remain with the canonical artifact. Python language and
 
 **Manuscript progress:** 13.1–13.15 complete (15/15 sections).  
 **Chapter 13 status:** Manuscript complete; independent runtime and editorial QA pending.  
-**Next:** 14.9 — Expected Value.
+**Next:** 14.10 — Variance and Standard Deviation.
 
 See the [Chapter 13 progress index](chapter-13/README.md).
 
@@ -395,9 +395,10 @@ See the [Chapter 13 progress index](chapter-13/README.md).
 - [14.6 — Random Variables](chapter-14/14.06-random-variables.md) — Manuscript published; independent runtime and editorial QA pending
 - [14.7 — Discrete Random Variables](chapter-14/14.07-discrete-random-variables.md) — Manuscript published; independent runtime and editorial QA pending
 - [14.8 — Continuous Random Variables](chapter-14/14.08-continuous-random-variables.md) — Manuscript published; independent runtime and editorial QA pending
+- [14.9 — Expected Value](chapter-14/14.09-expected-value.md) — Manuscript published; independent runtime and editorial QA pending
 
-**Manuscript progress:** 14.1–14.8 complete (8/17 sections).  
+**Manuscript progress:** 14.1–14.9 complete (9/17 sections).  
 **Chapter 14 status:** In progress.  
-**Next:** 14.9 — Expected Value.
+**Next:** 14.10 — Variance and Standard Deviation.
 
 See the [Chapter 14 progress index](chapter-14/README.md).
