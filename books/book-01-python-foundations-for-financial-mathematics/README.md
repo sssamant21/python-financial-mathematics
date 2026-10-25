@@ -418,5 +418,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [15.2 — Mean, Median, and Quantiles](chapter-15/15.02-mean-median-and-quantiles.md) — Published draft; independent QA deferred.
 - [15.3 — Variance and Standard Deviation](chapter-15/15.03-variance-and-standard-deviation.md) — Published draft; independent QA deferred.
 - [15.4 — Skewness and Kurtosis](chapter-15/15.04-skewness-and-kurtosis.md) — Published draft; independent QA deferred.
+- [15.5 — Covariance](chapter-15/15.05-covariance.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 4/15 sections (26.7%). **Next:** 15.5 — Covariance. [Chapter 15 progress index](chapter-15/README.md).
+**Manuscript progress:** 5/15 sections (33.3%). **Next:** 15.6 — Correlation. [Chapter 15 progress index](chapter-15/README.md).
