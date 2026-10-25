@@ -7,7 +7,7 @@
 |---|---|---|
 | 13.1 | [Measuring Investment Returns](13.01-measuring-investment-returns.md) | Manuscript published; independent QA pending |
 | 13.2 | [Simple Returns](13.02-simple-returns.md) | Manuscript published; independent QA pending |
-| 13.3 | Gross Returns | Planned |
+| 13.3 | [Gross Returns](13.03-gross-returns.md) | Manuscript published; independent QA pending |
 | 13.4 | Logarithmic Returns | Planned |
 | 13.5 | Multi-Period Returns | Planned |
 | 13.6 | Annualization | Planned |
@@ -21,8 +21,8 @@
 | 13.14 | Chapter Project — Investment Performance Analyzer | Planned |
 | 13.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 2/15 sections published (13.3%).  
-**Next:** 13.3 — Gross Returns.
+**Manuscript progress:** 3/15 sections published (20.0%).  
+**Next:** 13.4 — Logarithmic Returns.
 
 ## Quality gates
 
@@ -35,3 +35,7 @@ Each section must undergo mathematical/source review, independent Python lab exe
 ## Section 13.2
 
 [Simple Returns](13.02-simple-returns.md) includes 18 worked exercises, a price-return reconciliation mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 13.3
+
+[Gross Returns](13.03-gross-returns.md) includes 18 worked exercises, a gross-return reconciliation mini-project, and 12 reference unit tests; independent runtime verification pending.
