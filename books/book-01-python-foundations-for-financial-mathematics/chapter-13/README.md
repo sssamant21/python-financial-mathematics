@@ -12,7 +12,7 @@
 | 13.5 | [Multi-Period Returns](13.05-multi-period-returns.md) | Manuscript published; independent QA pending |
 | 13.6 | [Annualization](13.06-annualization.md) | Manuscript published; independent QA pending |
 | 13.7 | [Dividends and Total Return](13.07-dividends-and-total-return.md) | Manuscript published; independent QA pending |
-| 13.8 | Arithmetic vs. Geometric Mean Return | Planned |
+| 13.8 | [Arithmetic vs. Geometric Mean Return](13.08-arithmetic-vs-geometric-mean-return.md) | Manuscript published; independent QA pending |
 | 13.9 | Time-Weighted Return | Planned |
 | 13.10 | Money-Weighted Return | Planned |
 | 13.11 | Volatility | Planned |
@@ -21,8 +21,8 @@
 | 13.14 | Chapter Project — Investment Performance Analyzer | Planned |
 | 13.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 7/15 sections published (46.7%).  
-**Next:** 13.8 — Arithmetic vs. Geometric Mean Return.
+**Manuscript progress:** 8/15 sections published (53.3%).  
+**Next:** 13.9 — Time-Weighted Return.
 
 ## Quality gates
 
@@ -55,3 +55,7 @@ Each section must undergo mathematical/source review, independent Python lab exe
 ## Section 13.7
 
 [Dividends and Total Return](13.07-dividends-and-total-return.md) includes 18 worked exercises, a dividend-aware total-return ledger mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 13.8
+
+[Arithmetic vs. Geometric Mean Return](13.08-arithmetic-vs-geometric-mean-return.md) includes 18 worked exercises, an average-return diagnostic mini-project, and 12 reference unit tests; independent runtime verification pending.
