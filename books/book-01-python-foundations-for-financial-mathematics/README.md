@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 13.10 — Money-Weighted Return.
+**Next:** 13.11 — Volatility.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -372,8 +372,9 @@ Verified references must remain with the canonical artifact. Python language and
 - [13.7 — Dividends and Total Return](chapter-13/13.07-dividends-and-total-return.md) — Manuscript published; independent runtime and editorial validation pending
 - [13.8 — Arithmetic vs. Geometric Mean Return](chapter-13/13.08-arithmetic-vs-geometric-mean-return.md) — Manuscript published; independent runtime and editorial validation pending
 - [13.9 — Time-Weighted Return](chapter-13/13.09-time-weighted-return.md) — Manuscript published; independent runtime and editorial validation pending
+- [13.10 — Money-Weighted Return](chapter-13/13.10-money-weighted-return.md) — Manuscript published; independent runtime and editorial validation pending
 
-**Manuscript progress:** 13.1–13.9 complete (9/15 sections).  
+**Manuscript progress:** 13.1–13.10 complete (10/15 sections).  
 **Chapter 13 status:** In progress.  
 **Next:** 13.2 — Simple Returns.
 
