@@ -21,11 +21,11 @@
 | 12.14 | [Discount Factors and Spot Rates](12.14-discount-factors-and-spot-rates.md) | Manuscript published |
 | 12.15 | [Forward Rates](12.15-forward-rates.md) | Manuscript published |
 | 12.16 | [Chapter Project — Bond Analytics Engine](12.16-chapter-project-bond-analytics-engine.md) | Manuscript published |
-| 12.17 | Exercises and Applied Problems | Planned |
+| 12.17 | [Exercises and Applied Problems](12.17-exercises-and-applied-problems.md) | Manuscript published |
 
-**Manuscript progress:** 12.1–12.16 complete (16/17 sections).  
+**Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.17 — Exercises and Applied Problems.
+**Next:** 13.1 — Measuring Investment Returns.
 
 ## Validation policy
 
@@ -62,3 +62,5 @@ Section 12.14 includes discount factors, spot-rate inversion, multi-cash-flow pr
 Section 12.15 includes forward-rate conventions, curve reconstruction, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.16 includes the integrated bond analytics engine, twelve Python reference tests, eighteen worked exercises and portfolio stress-report acceptance criteria (independent runtime verification pending).
+
+**Chapter 12 manuscript completion:** All 17 sections published as drafts. Independent runtime verification and editorial QA pending; the chapter is not runtime-certified.
