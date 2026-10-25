@@ -16,16 +16,16 @@
 | 12.9 | [Duration](12.09-duration.md) | Manuscript published |
 | 12.10 | [Modified Duration](12.10-modified-duration.md) | Manuscript published |
 | 12.11 | [Convexity](12.11-convexity.md) | Manuscript published |
-| 12.12 | Interest-Rate Sensitivity | Planned |
+| 12.12 | [Interest-Rate Sensitivity](12.12-interest-rate-sensitivity.md) | Manuscript published |
 | 12.13 | Yield Curves | Planned |
 | 12.14 | Discount Factors and Spot Rates | Planned |
 | 12.15 | Forward Rates | Planned |
 | 12.16 | Chapter Project — Bond Analytics Engine | Planned |
 | 12.17 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 12.1–12.11 complete (11/17 sections).  
+**Manuscript progress:** 12.1–12.12 complete (12/17 sections).  
 **Chapter status:** In progress; independent runtime and editorial review pending.  
-**Next:** 12.12 — Interest-Rate Sensitivity.
+**Next:** 12.13 — Yield Curves.
 
 ## Validation policy
 
@@ -52,3 +52,5 @@ Section 12.9 includes Macaulay duration, present-value cash-flow weights, eighte
 Section 12.10 includes modified duration, DV01 and first-order price risk, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
 
 Section 12.11 includes analytical convexity, second-order yield-shock approximations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+
+Section 12.12 includes interest-rate scenario analysis, portfolio DV01 and stress testing, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
