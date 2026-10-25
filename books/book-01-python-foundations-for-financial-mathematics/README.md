@@ -425,5 +425,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [15.9 — Hypothesis Testing Foundations](chapter-15/15.09-hypothesis-testing-foundations.md) — Published draft; independent QA deferred.
 - [15.10 — Linear Regression](chapter-15/15.10-linear-regression.md) — Published draft; independent QA deferred.
 - [15.11 — Financial Return Statistics](chapter-15/15.11-financial-return-statistics.md) — Published draft; independent QA deferred.
+- [15.12 — Rolling Statistics](chapter-15/15.12-rolling-statistics.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 11/15 sections (73.3%). **Next:** 15.12 — Rolling Statistics. [Chapter 15 progress index](chapter-15/README.md).
+**Manuscript progress:** 12/15 sections (80%). **Next:** 15.13 — Statistical Pitfalls in Financial Data. [Chapter 15 progress index](chapter-15/README.md).
