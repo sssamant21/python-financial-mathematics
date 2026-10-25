@@ -419,5 +419,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [15.3 — Variance and Standard Deviation](chapter-15/15.03-variance-and-standard-deviation.md) — Published draft; independent QA deferred.
 - [15.4 — Skewness and Kurtosis](chapter-15/15.04-skewness-and-kurtosis.md) — Published draft; independent QA deferred.
 - [15.5 — Covariance](chapter-15/15.05-covariance.md) — Published draft; independent QA deferred.
+- [15.6 — Correlation](chapter-15/15.06-correlation.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 5/15 sections (33.3%). **Next:** 15.6 — Correlation. [Chapter 15 progress index](chapter-15/README.md).
+**Manuscript progress:** 6/15 sections (40%). **Next:** 15.7 — Sampling and Estimation. [Chapter 15 progress index](chapter-15/README.md).
