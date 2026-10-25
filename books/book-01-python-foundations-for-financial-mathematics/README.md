@@ -327,6 +327,16 @@ See the [Chapter 9 progress index](chapter-09/README.md) for all planned section
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
+## Chapter 12 — Fixed-Income Mathematics and Bond Analytics
+
+- [12.1 — Introduction to Fixed Income](chapter-12/12.01-introduction-to-fixed-income.md) — Manuscript published; runtime and editorial validation pending
+
+**Manuscript progress:** 12.1 complete (1/17 sections).  
+**Chapter 12 status:** In progress.  
+**Next:** 12.2 — Bond Cash Flows.
+
+See the [Chapter 12 progress index](chapter-12/README.md).
+
 ## Editorial Requirement
 
 Every new manuscript section and companion solution artifact must follow:
