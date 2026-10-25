@@ -14,15 +14,15 @@
 | 13.7 | [Dividends and Total Return](13.07-dividends-and-total-return.md) | Manuscript published; independent QA pending |
 | 13.8 | [Arithmetic vs. Geometric Mean Return](13.08-arithmetic-vs-geometric-mean-return.md) | Manuscript published; independent QA pending |
 | 13.9 | [Time-Weighted Return](13.09-time-weighted-return.md) | Manuscript published; independent QA pending |
-| 13.10 | Money-Weighted Return | Planned |
+| 13.10 | [Money-Weighted Return](13.10-money-weighted-return.md) | Manuscript published; independent QA pending |
 | 13.11 | Volatility | Planned |
 | 13.12 | Drawdowns | Planned |
 | 13.13 | Risk-Adjusted Performance Concepts | Planned |
 | 13.14 | Chapter Project — Investment Performance Analyzer | Planned |
 | 13.15 | Exercises and Applied Problems | Planned |
 
-**Manuscript progress:** 9/15 sections published (60.0%).  
-**Next:** 13.10 — Money-Weighted Return.
+**Manuscript progress:** 10/15 sections published (66.7%).  
+**Next:** 13.11 — Volatility.
 
 ## Quality gates
 
@@ -63,3 +63,7 @@ Each section must undergo mathematical/source review, independent Python lab exe
 ## Section 13.9
 
 [Time-Weighted Return](13.09-time-weighted-return.md) includes 18 worked exercises, an auditable portfolio performance mini-project, and 12 reference unit tests; independent runtime verification pending.
+
+## Section 13.10
+
+[Money-Weighted Return](13.10-money-weighted-return.md) includes 18 worked exercises, an investor cash-flow IRR reconciliation mini-project, and 12 reference unit tests; independent runtime verification pending.
