@@ -331,10 +331,11 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 - [12.1 — Introduction to Fixed Income](chapter-12/12.01-introduction-to-fixed-income.md) — Manuscript published; runtime and editorial validation pending
 - [12.2 — Bond Cash Flows](chapter-12/12.02-bond-cash-flows.md) — Manuscript published; runtime and editorial validation pending
+- [12.3 — Coupon Bonds](chapter-12/12.03-coupon-bonds.md) — Manuscript published; runtime and editorial validation pending
 
-**Manuscript progress:** 12.1–12.2 complete (2/17 sections).  
+**Manuscript progress:** 12.1–12.3 complete (3/17 sections).  
 **Chapter 12 status:** In progress.  
-**Next:** 12.3 — Coupon Bonds.
+**Next:** 12.4 — Zero-Coupon Bonds.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
