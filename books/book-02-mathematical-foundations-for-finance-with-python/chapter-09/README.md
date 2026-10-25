@@ -1,6 +1,6 @@
 # Chapter 09 — Financial Sensitivity and Taylor Approximation
 
-**Manuscript status:** 9/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 10/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -17,7 +17,12 @@
 | 9.7 | [Kinks and One-Sided Sensitivities](9.07-kinks-and-one-sided-sensitivities.md) | Draft — runtime validation pending |
 | 9.8 | [Sensitivity Reports and Scenario Revaluation](9.08-sensitivity-reports-and-scenario-revaluation.md) | Draft — runtime validation pending |
 | 9.9 | [Chapter Project — Valuation Sensitivity and Approximation Report](9.09-valuation-sensitivity-and-approximation-report-project.md) | Draft — runtime validation pending |
-| 9.10 | Exercises and Applied Problems | Planned |
+| 9.10 | [Exercises and Applied Problems](9.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 9.10 companion material
+
+- [Cumulative assessment lab](code/section_9_10.py)
+- [Independent reference checks](code/check_section_9_10.py)
 
 ## Section 9.9 companion material
 
@@ -68,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 9.10 — Exercises and Applied Problems.
+**Next:** Chapter 10, Section 10.1 — Accumulation and Riemann Sums.
