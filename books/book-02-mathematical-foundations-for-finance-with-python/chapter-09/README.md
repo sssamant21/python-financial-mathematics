@@ -1,6 +1,6 @@
 # Chapter 09 — Financial Sensitivity and Taylor Approximation
 
-**Manuscript status:** 7/10 sections published as Draft. Runtime execution and independent editorial review pending.
+**Manuscript status:** 8/10 sections published as Draft. Runtime execution and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -15,9 +15,14 @@
 | 9.5 | [Remainder and Error Bounds](9.05-remainder-and-error-bounds.md) | Draft — runtime validation pending |
 | 9.6 | [Discounted-Value Sensitivity](9.06-discounted-value-sensitivity.md) | Draft — runtime validation pending |
 | 9.7 | [Kinks and One-Sided Sensitivities](9.07-kinks-and-one-sided-sensitivities.md) | Draft — runtime validation pending |
-| 9.8 | Sensitivity Reports and Scenario Revaluation | Planned |
+| 9.8 | [Sensitivity Reports and Scenario Revaluation](9.08-sensitivity-reports-and-scenario-revaluation.md) | Draft — runtime validation pending |
 | 9.9 | Chapter Project — Valuation Sensitivity and Approximation Report | Planned |
 | 9.10 | Exercises and Applied Problems | Planned |
+
+## Section 9.8 companion material
+
+- [Sensitivity report and scenario revaluation lab](code/section_9_08.py)
+- [Independent reference checks](code/check_section_9_08.py)
 
 ## Section 9.7 companion material
 
@@ -58,4 +63,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** 9.8 — Sensitivity Reports and Scenario Revaluation.
+**Next:** 9.9 — Chapter Project — Valuation Sensitivity and Approximation Report.
