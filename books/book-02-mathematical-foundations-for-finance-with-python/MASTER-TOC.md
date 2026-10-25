@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, and 9.1–9.3 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, and 9.1–9.4 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -158,7 +158,7 @@ Published sections link to their manuscript files; planned sections remain plain
 9.1 — [Absolute and Relative Sensitivity](chapter-09/9.01-absolute-and-relative-sensitivity.md)  
 9.2 — [Elasticity](chapter-09/9.02-elasticity.md)  
 9.3 — [First-Order Taylor Approximation](chapter-09/9.03-first-order-taylor-approximation.md)  
-9.4 — Second-Order Taylor Approximation  
+9.4 — [Second-Order Taylor Approximation](chapter-09/9.04-second-order-taylor-approximation.md)  
 9.5 — Remainder and Error Bounds  
 9.6 — Discounted-Value Sensitivity  
 9.7 — Kinks and One-Sided Sensitivities  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 9.4 — Second-Order Taylor Approximation.
+**Next manuscript section:** 9.5 — Remainder and Error Bounds.
