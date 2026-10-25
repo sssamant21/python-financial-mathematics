@@ -349,7 +349,7 @@ See the [Chapter 11 progress index](chapter-11/README.md).
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
 **Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
-**Next:** 13.1 — Measuring Investment Returns.
+**Next:** 13.2 — Simple Returns.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
 
@@ -360,3 +360,13 @@ Every new manuscript section and companion solution artifact must follow:
 **Draft → Technical + Source Review → Production + Copyright Review → Revised Final / Canonical Edition**
 
 Verified references must remain with the canonical artifact. Python language and standard-library claims should preferentially cite official Python documentation or applicable PEPs. Financial theory claims should use authoritative primary or established academic/professional references as the subject matter becomes more advanced. Examples, exercises, explanatory prose, diagrams, and solution implementations should remain independently developed unless a source is explicitly licensed and attributed for reuse.
+
+## Chapter 13 — Returns and Investment Performance
+
+- [13.1 — Measuring Investment Returns](chapter-13/13.01-measuring-investment-returns.md) — Manuscript published; independent runtime and editorial validation pending
+
+**Manuscript progress:** 13.1 complete (1/15 sections).  
+**Chapter 13 status:** In progress.  
+**Next:** 13.2 — Simple Returns.
+
+See the [Chapter 13 progress index](chapter-13/README.md).
