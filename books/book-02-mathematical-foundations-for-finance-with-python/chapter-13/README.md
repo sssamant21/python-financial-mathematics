@@ -1,6 +1,6 @@
 # Chapter 13 — Vector Spaces, Projections, and Least Squares
 
-**Status:** 8/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 [Book 02 index](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -14,8 +14,13 @@
 | 13.6 | [QR Factorization and Stable Solvers](13.06-qr-factorization-and-stable-solvers.md) | Draft — runtime validation pending |
 | 13.7 | [Weighted Least Squares and Units](13.07-weighted-least-squares-and-units.md) | Draft — runtime validation pending |
 | 13.8 | [Rank Deficiency and Regularization](13.08-rank-deficiency-and-regularization.md) | Draft — runtime validation pending |
-| 13.9 | Chapter Project — Least-Squares Replication Analyzer | Planned |
+| 13.9 | [Chapter Project — Least-Squares Replication Analyzer](13.09-chapter-project-least-squares-replication-analyzer.md) | Draft — runtime validation pending |
 | 13.10 | Exercises and Applied Problems | Planned |
+
+## Section 13.9 companion material
+
+- [Replication analyzer project](code/section_13_09.py)
+- [Independent project acceptance checks](code/check_section_13_09.py)
 
 ## Section 13.8 companion material
 
@@ -57,4 +62,4 @@
 - [Linear combinations and span lab](code/section_13_01.py)
 - [Independent reference checks](code/check_section_13_01.py)
 
-**Next:** 13.9 — Chapter Project — Least-Squares Replication Analyzer.
+**Next:** 13.10 — Exercises and Applied Problems.
