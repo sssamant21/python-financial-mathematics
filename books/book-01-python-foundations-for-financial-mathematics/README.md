@@ -456,5 +456,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 ## Chapter 17 — Numerical Methods with SciPy
 
 - [17.1 — Why Numerical Methods Are Needed](chapter-17/17.01-why-numerical-methods-are-needed.md) — Published draft; independent QA deferred.
+- [17.2 — Closed-Form vs. Numerical Solutions](chapter-17/17.02-closed-form-vs-numerical-solutions.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 1/15 sections (6.67%). **Next:** 17.2 — Closed-Form vs. Numerical Solutions. [Chapter 17 progress index](chapter-17/README.md).
+**Manuscript progress:** 2/15 sections (13.33%). **Next:** 17.3 — Numerical Root Finding. [Chapter 17 progress index](chapter-17/README.md).
