@@ -452,3 +452,9 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [16.16 — Exercises and Applied Problems](chapter-16/16.16-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
 **Manuscript progress:** 16/16 sections (100%); Chapter 16 manuscript complete, QA deferred. **Next:** Chapter 17, Section 17.1. [Chapter 16 progress index](chapter-16/README.md).
+
+## Chapter 17 — Numerical Methods with SciPy
+
+- [17.1 — Why Numerical Methods Are Needed](chapter-17/17.01-why-numerical-methods-are-needed.md) — Published draft; independent QA deferred.
+
+**Manuscript progress:** 1/15 sections (6.67%). **Next:** 17.2 — Closed-Form vs. Numerical Solutions. [Chapter 17 progress index](chapter-17/README.md).
