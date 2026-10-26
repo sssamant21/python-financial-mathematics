@@ -1,6 +1,6 @@
 # Chapter 12 — Matrices and Linear Systems
 
-**Manuscript status:** 8/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Manuscript status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 [Book README](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -16,8 +16,13 @@
 | 12.6 | [Inverse and Determinant](12.06-inverse-and-determinant.md) | Draft — runtime validation pending |
 | 12.7 | [Condition Numbers and Perturbations](12.07-condition-numbers-and-perturbations.md) | Draft — runtime validation pending |
 | 12.8 | [Residuals and Financial Interpretation](12.08-residuals-and-financial-interpretation.md) | Draft — runtime validation pending |
-| 12.9 | Chapter Project — Exposure Matching Linear Solver | Planned |
+| 12.9 | [Chapter Project — Exposure Matching Linear Solver](12.09-chapter-project-exposure-matching-linear-solver.md) | Draft — runtime validation pending |
 | 12.10 | Exercises and Applied Problems | Planned |
+
+## Section 12.9 companion material
+
+- [Exposure matching solver capstone](code/section_12_09.py)
+- [Independent reference checks](code/check_section_12_09.py)
 
 ## Section 12.8 companion material
 
@@ -63,4 +68,4 @@
 
 Draft source; runtime and independent review pending.
 
-**Next:** 12.9 — Chapter Project — Exposure Matching Linear Solver.
+**Next:** 12.10 — Exercises and Applied Problems.
