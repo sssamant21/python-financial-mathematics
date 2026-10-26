@@ -435,5 +435,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 ## Chapter 16 — Portfolio Mathematics
 
 - [16.1 — Portfolio Fundamentals](chapter-16/16.01-portfolio-fundamentals.md) — Published draft; independent QA deferred.
+- [16.2 — Portfolio Weights](chapter-16/16.02-portfolio-weights.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 1/16 sections (6.25%). **Next:** 16.2 — Portfolio Weights. [Chapter 16 progress index](chapter-16/README.md).
+**Manuscript progress:** 2/16 sections (12.5%). **Next:** 16.3 — Portfolio Return. [Chapter 16 progress index](chapter-16/README.md).
