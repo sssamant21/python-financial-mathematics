@@ -1,6 +1,6 @@
 # Chapter 17 — Numerical Methods with SciPy
 
-**Manuscript progress:** 12/15 sections published (80.00%).  
+**Manuscript progress:** 13/15 sections published (86.67%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical, and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -17,10 +17,10 @@
 | 17.10 | [Curve Construction Concepts](17.10-curve-construction-concepts.md) | Published draft; QA deferred |
 | 17.11 | [Numerical Stability](17.11-numerical-stability.md) | Published draft; QA deferred |
 | 17.12 | [Convergence and Error](17.12-convergence-and-error.md) | Published draft; QA deferred |
-| 17.13 | Validation of Numerical Results | Planned |
+| 17.13 | [Validation of Numerical Results](17.13-validation-of-numerical-results.md) | Published draft; QA deferred |
 | 17.14 | Chapter Project — Financial Numerical Solver | Planned |
 | 17.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 17.13 — Validation of Numerical Results.
+**Next:** 17.14 — Chapter Project — Financial Numerical Solver.
 
 **Chapter status:** Manuscript in progress; not certified.
