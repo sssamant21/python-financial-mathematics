@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.10 and 13.1–13.5 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.10 and 13.1–13.6 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -212,7 +212,7 @@ Published sections link to their manuscript files; planned sections remain plain
 13.3 — [Column Space and Null Space](chapter-13/13.03-column-space-and-null-space.md)  
 13.4 — [Orthogonal Projection onto a Subspace](chapter-13/13.04-orthogonal-projection-onto-a-subspace.md)  
 13.5 — [Least-Squares Objectives](chapter-13/13.05-least-squares-objectives.md)  
-13.6 — QR Factorization and Stable Solvers  
+13.6 — [QR Factorization and Stable Solvers](chapter-13/13.06-qr-factorization-and-stable-solvers.md)  
 13.7 — Weighted Least Squares and Units  
 13.8 — Rank Deficiency and Regularization  
 13.9 — Chapter Project — Least-Squares Replication Analyzer  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 13.6 — QR Factorization and Stable Solvers.
+**Next manuscript section:** 13.7 — Weighted Least Squares and Units.
