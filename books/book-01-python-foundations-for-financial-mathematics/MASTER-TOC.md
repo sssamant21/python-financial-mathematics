@@ -421,4 +421,4 @@ Any structural change requires:
 
 **Chapter 15 publication status:** 15.1–15.15 published as drafts (15/15); Chapter 15 manuscript complete. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 16 publication status:** 16.1–16.13 published as drafts (13/16). Next locked manuscript section: 16.14 — Rebalancing Mathematics. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 16 publication status:** 16.1–16.14 published as drafts (14/16). Next locked manuscript section: 16.15 — Chapter Project — Portfolio Risk and Return Engine. Comprehensive QA deferred until all Book 1 chapters are written.
