@@ -428,5 +428,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [15.12 — Rolling Statistics](chapter-15/15.12-rolling-statistics.md) — Published draft; independent QA deferred.
 - [15.13 — Statistical Pitfalls in Financial Data](chapter-15/15.13-statistical-pitfalls-in-financial-data.md) — Published draft; independent QA deferred.
 - [15.14 — Chapter Project — Financial Statistical Analysis Toolkit](chapter-15/15.14-chapter-project-financial-statistical-analysis-toolkit.md) — Published draft; independent QA deferred.
+- [15.15 — Exercises and Applied Problems](chapter-15/15.15-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 14/15 sections (93.3%). **Next:** 15.15 — Exercises and Applied Problems. [Chapter 15 progress index](chapter-15/README.md).
+**Manuscript progress:** 15/15 sections (100%); Chapter 15 manuscript complete, QA deferred. [Chapter 15 progress index](chapter-15/README.md).
