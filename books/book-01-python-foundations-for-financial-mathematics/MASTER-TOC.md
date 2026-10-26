@@ -419,4 +419,4 @@ Any structural change requires:
 **Chapter 14 manuscript complete: 17/17 sections published as drafts. Next: independent runtime QA and editorial review.**
 
 
-**Chapter 15 publication status:** 15.1–15.14 published as drafts (14/15). Next locked manuscript section: 15.15 — Exercises and Applied Problems. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 15 publication status:** 15.1–15.15 published as drafts (15/15); Chapter 15 manuscript complete. Comprehensive QA deferred until all Book 1 chapters are written.
