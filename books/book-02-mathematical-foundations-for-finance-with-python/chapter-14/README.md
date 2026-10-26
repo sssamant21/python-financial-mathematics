@@ -1,6 +1,6 @@
 # Chapter 14 — Eigenvalues, Quadratic Forms, and Matrix Decompositions
 
-**Status:** 7/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 8/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 [Book 02 index](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -13,9 +13,14 @@
 | 14.5 | [Cholesky Factorization](14.05-cholesky-factorization.md) | Draft — runtime validation pending |
 | 14.6 | [Singular Value Decomposition](14.06-singular-value-decomposition.md) | Draft — runtime validation pending |
 | 14.7 | [Low-Rank Approximation](14.07-low-rank-approximation.md) | Draft — runtime validation pending |
-| 14.8 | Decomposition Validation and Interpretation | Planned |
+| 14.8 | [Decomposition Validation and Interpretation](14.08-decomposition-validation-and-interpretation.md) | Draft — runtime validation pending |
 | 14.9 | Chapter Project — Quadratic Exposure and Decomposition Lab | Planned |
 | 14.10 | Exercises and Applied Problems | Planned |
+
+## Section 14.8 companion material
+
+- [Decomposition validation Python lab](code/section_14_08.py)
+- [Independent reference checks](code/check_section_14_08.py)
 
 ## Section 14.7 companion material
 
@@ -52,4 +57,4 @@
 - [Eigenpair Python lab](code/section_14_01.py)
 - [Independent reference checks](code/check_section_14_01.py)
 
-**Next:** 14.8 — Decomposition Validation and Interpretation.
+**Next:** 14.9 — Chapter Project — Quadratic Exposure and Decomposition Lab.
