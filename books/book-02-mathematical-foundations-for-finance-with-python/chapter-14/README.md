@@ -1,6 +1,6 @@
 # Chapter 14 — Eigenvalues, Quadratic Forms, and Matrix Decompositions
 
-**Status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 10/10 sections published as Draft; manuscript complete, not canonical. Runtime validation and independent editorial review pending.
 
 [Book 02 index](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -15,7 +15,12 @@
 | 14.7 | [Low-Rank Approximation](14.07-low-rank-approximation.md) | Draft — runtime validation pending |
 | 14.8 | [Decomposition Validation and Interpretation](14.08-decomposition-validation-and-interpretation.md) | Draft — runtime validation pending |
 | 14.9 | [Chapter Project — Quadratic Exposure and Decomposition Lab](14.09-chapter-project-quadratic-exposure-and-decomposition-lab.md) | Draft — runtime validation pending |
-| 14.10 | Exercises and Applied Problems | Planned |
+| 14.10 | [Exercises and Applied Problems](14.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 14.10 companion material
+
+- [Chapter assessment Python lab](code/section_14_10.py)
+- [Independent reference checks](code/check_section_14_10.py)
 
 ## Section 14.9 companion material
 
@@ -62,4 +67,4 @@
 - [Eigenpair Python lab](code/section_14_01.py)
 - [Independent reference checks](code/check_section_14_01.py)
 
-**Next:** 14.10 — Exercises and Applied Problems.
+**Next:** Chapter 15, Section 15.1 (see Master TOC for approved title).
