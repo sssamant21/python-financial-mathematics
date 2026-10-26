@@ -421,4 +421,4 @@ Any structural change requires:
 
 **Chapter 15 publication status:** 15.1–15.15 published as drafts (15/15); Chapter 15 manuscript complete. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 16 publication status:** 16.1–16.6 published as drafts (6/16). Next locked manuscript section: 16.7 — Portfolio Volatility. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 16 publication status:** 16.1–16.7 published as drafts (7/16). Next locked manuscript section: 16.8 — Diversification. Comprehensive QA deferred until all Book 1 chapters are written.
