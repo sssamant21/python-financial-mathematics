@@ -446,5 +446,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [16.10 — Multi-Asset Portfolios](chapter-16/16.10-multi-asset-portfolios.md) — Published draft; independent QA deferred.
 - [16.11 — Correlation and Diversification](chapter-16/16.11-correlation-and-diversification.md) — Published draft; independent QA deferred.
 - [16.12 — Efficient Portfolio Concepts](chapter-16/16.12-efficient-portfolio-concepts.md) — Published draft; independent QA deferred.
+- [16.13 — Portfolio Constraints](chapter-16/16.13-portfolio-constraints.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 12/16 sections (75%). **Next:** 16.13 — Portfolio Constraints. [Chapter 16 progress index](chapter-16/README.md).
+**Manuscript progress:** 13/16 sections (81.25%). **Next:** 16.14 — Rebalancing Mathematics. [Chapter 16 progress index](chapter-16/README.md).
