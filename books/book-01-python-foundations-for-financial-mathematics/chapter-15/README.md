@@ -1,6 +1,6 @@
 # Chapter 15 — Statistics for Financial Data
 
-**Manuscript progress:** 12/15 sections published (80%).  
+**Manuscript progress:** 13/15 sections published (86.7%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Lightweight manuscript checks during publication; runtime and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -17,10 +17,10 @@
 | 15.10 | [Linear Regression](15.10-linear-regression.md) | Published draft; QA deferred |
 | 15.11 | [Financial Return Statistics](15.11-financial-return-statistics.md) | Published draft; QA deferred |
 | 15.12 | [Rolling Statistics](15.12-rolling-statistics.md) | Published draft; QA deferred |
-| 15.13 | Statistical Pitfalls in Financial Data | Planned |
+| 15.13 | [Statistical Pitfalls in Financial Data](15.13-statistical-pitfalls-in-financial-data.md) | Published draft; QA deferred |
 | 15.14 | Chapter Project — Financial Statistical Analysis Toolkit | Planned |
 | 15.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 15.13 — Statistical Pitfalls in Financial Data.
+**Next:** 15.14 — Chapter Project — Financial Statistical Analysis Toolkit.
 
 **Chapter status:** Manuscript in progress; not certified.
