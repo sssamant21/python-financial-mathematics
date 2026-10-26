@@ -467,5 +467,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [17.10 — Curve Construction Concepts](chapter-17/17.10-curve-construction-concepts.md) — Published draft; independent QA deferred.
 - [17.11 — Numerical Stability](chapter-17/17.11-numerical-stability.md) — Published draft; independent QA deferred.
 - [17.12 — Convergence and Error](chapter-17/17.12-convergence-and-error.md) — Published draft; independent QA deferred.
+- [17.13 — Validation of Numerical Results](chapter-17/17.13-validation-of-numerical-results.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 12/15 sections (80.00%). **Next:** 17.13 — Validation of Numerical Results. [Chapter 17 progress index](chapter-17/README.md).
+**Manuscript progress:** 13/15 sections (86.67%). **Next:** 17.14 — Chapter Project — Financial Numerical Solver. [Chapter 17 progress index](chapter-17/README.md).
