@@ -423,4 +423,4 @@ Any structural change requires:
 
 **Chapter 16 publication status:** 16.1–16.16 published as drafts (16/16); Chapter 16 manuscript complete. Next: Chapter 17, Section 17.1, per locked Master TOC. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 17 publication status:** 17.1 published as a draft (1/15). Next locked manuscript section: 17.2 — Closed-Form vs. Numerical Solutions. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 17 publication status:** 17.1–17.2 published as drafts (2/15). Next locked manuscript section: 17.3 — Numerical Root Finding. Comprehensive QA deferred until all Book 1 chapters are written.
