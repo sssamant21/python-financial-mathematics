@@ -1,6 +1,6 @@
 # Chapter 13 — Vector Spaces, Projections, and Least Squares
 
-**Status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 10/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 [Book 02 index](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -15,7 +15,12 @@
 | 13.7 | [Weighted Least Squares and Units](13.07-weighted-least-squares-and-units.md) | Draft — runtime validation pending |
 | 13.8 | [Rank Deficiency and Regularization](13.08-rank-deficiency-and-regularization.md) | Draft — runtime validation pending |
 | 13.9 | [Chapter Project — Least-Squares Replication Analyzer](13.09-chapter-project-least-squares-replication-analyzer.md) | Draft — runtime validation pending |
-| 13.10 | Exercises and Applied Problems | Planned |
+| 13.10 | [Exercises and Applied Problems](13.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 13.10 companion material
+
+- [Chapter assessment runner](code/section_13_10.py)
+- [Independent chapter-wide reference checks](code/check_section_13_10.py)
 
 ## Section 13.9 companion material
 
@@ -62,4 +67,4 @@
 - [Linear combinations and span lab](code/section_13_01.py)
 - [Independent reference checks](code/check_section_13_01.py)
 
-**Next:** 13.10 — Exercises and Applied Problems.
+**Next:** Chapter 14, Section 14.1 — Eigenvalues and Eigenvectors.
