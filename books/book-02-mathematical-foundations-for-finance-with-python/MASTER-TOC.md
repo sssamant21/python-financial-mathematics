@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.7 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.8 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -201,7 +201,7 @@ Published sections link to their manuscript files; planned sections remain plain
 12.5 — [Rank and Existence of Solutions](chapter-12/12.05-rank-and-existence-of-solutions.md)  
 12.6 — [Inverse and Determinant](chapter-12/12.06-inverse-and-determinant.md)  
 12.7 — [Condition Numbers and Perturbations](chapter-12/12.07-condition-numbers-and-perturbations.md)  
-12.8 — Residuals and Financial Interpretation  
+12.8 — [Residuals and Financial Interpretation](chapter-12/12.08-residuals-and-financial-interpretation.md)  
 12.9 — Chapter Project — Exposure Matching Linear Solver  
 12.10 — Exercises and Applied Problems
 
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 12.8 — Residuals and Financial Interpretation.
+**Next manuscript section:** 12.9 — Chapter Project — Exposure Matching Linear Solver.
