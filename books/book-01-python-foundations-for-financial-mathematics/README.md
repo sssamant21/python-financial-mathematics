@@ -462,5 +462,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [17.5 — Optimization Fundamentals](chapter-17/17.05-optimization-fundamentals.md) — Published draft; independent QA deferred.
 - [17.6 — Constrained Optimization](chapter-17/17.06-constrained-optimization.md) — Published draft; independent QA deferred.
 - [17.7 — Portfolio Optimization](chapter-17/17.07-portfolio-optimization.md) — Published draft; independent QA deferred.
+- [17.8 — Numerical Integration](chapter-17/17.08-numerical-integration.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 7/15 sections (46.67%). **Next:** 17.8 — Numerical Integration. [Chapter 17 progress index](chapter-17/README.md).
+**Manuscript progress:** 8/15 sections (53.33%). **Next:** 17.9 — Interpolation. [Chapter 17 progress index](chapter-17/README.md).
