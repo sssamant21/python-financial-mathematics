@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.10 and 13.1–13.10 and 14.1–14.2 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.10 and 13.1–13.10 and 14.1–14.3 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
 
 ## Purpose and Prerequisites
 
@@ -222,7 +222,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 14.1 — [Eigenvalues and Eigenvectors](chapter-14/14.01-eigenvalues-and-eigenvectors.md)  
 14.2 — [Symmetric Matrices and Spectral Decomposition](chapter-14/14.02-symmetric-matrices-and-spectral-decomposition.md)  
-14.3 — Quadratic Forms  
+14.3 — [Quadratic Forms](chapter-14/14.03-quadratic-forms.md)  
 14.4 — Positive Definite and Semidefinite Matrices  
 14.5 — Cholesky Factorization  
 14.6 — Singular Value Decomposition  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 14.3 — Quadratic Forms.
+**Next manuscript section:** 14.4 — Positive Definite and Semidefinite Matrices.
