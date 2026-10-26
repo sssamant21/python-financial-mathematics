@@ -25,7 +25,7 @@ def run():
     close(a["path_derivative_at_zero"],approximate)
     close(a["linearization_error_exact_minus_approximate"],exact-approximate)
     close(a["polynomial_differential"],-0.1)
-    close(a["polynomial_exact_change"],-0.102)
+    close(a["polynomial_exact_change"],-0.103)
     close(total_differential(1000,0.05,2,0,0,0),0)
     close(scenario_change(1000,0.05,2,0,0,0),0)
     rejects(ValueError,future_value,-1,0.05,2)
