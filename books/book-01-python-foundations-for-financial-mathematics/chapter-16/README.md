@@ -1,6 +1,6 @@
 # Chapter 16 — Portfolio Mathematics
 
-**Manuscript progress:** 4/16 sections published (25%).  
+**Manuscript progress:** 5/16 sections published (31.25%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -9,7 +9,7 @@
 | 16.2 | [Portfolio Weights](16.02-portfolio-weights.md) | Published draft; QA deferred |
 | 16.3 | [Portfolio Return](16.03-portfolio-return.md) | Published draft; QA deferred |
 | 16.4 | [Expected Portfolio Return](16.04-expected-portfolio-return.md) | Published draft; QA deferred |
-| 16.5 | Covariance Matrices | Planned |
+| 16.5 | [Covariance Matrices](16.05-covariance-matrices.md) | Published draft; QA deferred |
 | 16.6 | Portfolio Variance | Planned |
 | 16.7 | Portfolio Volatility | Planned |
 | 16.8 | Diversification | Planned |
@@ -22,6 +22,6 @@
 | 16.15 | Chapter Project — Portfolio Risk and Return Engine | Planned |
 | 16.16 | Exercises and Applied Problems | Planned |
 
-**Next:** 16.5 — Covariance Matrices.
+**Next:** 16.6 — Portfolio Variance.
 
 **Chapter status:** Manuscript in progress; not certified.
