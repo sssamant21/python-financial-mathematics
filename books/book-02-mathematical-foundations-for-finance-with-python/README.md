@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 139/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.4 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 140/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.5 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapters 01–13 manuscripts complete as Draft. Chapter 14 is in progress. Latest: [14.4 — Positive Definite and Semidefinite Matrices](chapter-14/14.04-positive-definite-and-semidefinite-matrices.md). [Chapter 14 index](chapter-14/README.md) tracks the remaining sections.
+**Current status:** Chapters 01–13 manuscripts complete as Draft. Chapter 14 is in progress. Latest: [14.5 — Cholesky Factorization](chapter-14/14.05-cholesky-factorization.md). [Chapter 14 index](chapter-14/README.md) tracks the remaining sections.
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** Chapter 14, Section 14.5 — Cholesky Factorization. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
+**Next:** Chapter 14, Section 14.6 — Singular Value Decomposition. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
 
 ## Chapter Plan
 
@@ -38,7 +38,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 | 11 | [Vectors and Financial Quantities](chapter-11/README.md) | 10/10 sections published as Draft |
 | 12 | [Matrices and Linear Systems](chapter-12/README.md) | 10/10 sections published as Draft |
 | 13 | [Vector Spaces, Projections, and Least Squares](chapter-13/README.md) | 10/10 sections published as Draft |
-| 14 | [Eigenvalues, Quadratic Forms, and Matrix Decompositions](chapter-14/README.md) | 4/10 sections published as Draft |
+| 14 | [Eigenvalues, Quadratic Forms, and Matrix Decompositions](chapter-14/README.md) | 5/10 sections published as Draft |
 | 15 | Multivariable Calculus | Planned |
 | 16 | Unconstrained Optimization and Convexity | Planned |
 | 17 | Constrained Optimization | Planned |
