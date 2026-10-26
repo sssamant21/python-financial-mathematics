@@ -239,7 +239,7 @@ Published sections link to their manuscript files; planned sections remain plain
 15.4 — [Gradients and Directional Derivatives](chapter-15/15.04-gradients-and-directional-derivatives.md)  
 15.5 — [Jacobians of Vector Functions](chapter-15/15.05-jacobians-of-vector-functions.md)  
 15.6 — [Hessians and Mixed Partials](chapter-15/15.06-hessians-and-mixed-partials.md)  
-15.7 — Multivariable Taylor Approximation  
+15.7 — [Multivariable Taylor Approximation](chapter-15/15.07-multivariable-taylor-approximation.md)  
 15.8 — Level Sets and Sensitivity Interpretation  
 15.9 — Chapter Project — Multi-Input Valuation Sensitivity Engine  
 15.10 — Exercises and Applied Problems
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 15.7 — Multivariable Taylor Approximation.
+**Next manuscript section:** 15.8 — Level Sets and Sensitivity Interpretation.
