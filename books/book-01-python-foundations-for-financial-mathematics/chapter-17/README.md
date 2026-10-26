@@ -1,0 +1,26 @@
+# Chapter 17 — Numerical Methods with SciPy
+
+**Manuscript progress:** 1/15 sections published (6.67%).  
+**Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical, and editorial certification deferred.
+
+| Section | Topic | Status |
+|---|---|---|
+| 17.1 | [Why Numerical Methods Are Needed](17.01-why-numerical-methods-are-needed.md) | Published draft; QA deferred |
+| 17.2 | Closed-Form vs. Numerical Solutions | Planned |
+| 17.3 | Numerical Root Finding | Planned |
+| 17.4 | Solving Yield and IRR Problems | Planned |
+| 17.5 | Optimization Fundamentals | Planned |
+| 17.6 | Constrained Optimization | Planned |
+| 17.7 | Portfolio Optimization | Planned |
+| 17.8 | Numerical Integration | Planned |
+| 17.9 | Interpolation | Planned |
+| 17.10 | Curve Construction Concepts | Planned |
+| 17.11 | Numerical Stability | Planned |
+| 17.12 | Convergence and Error | Planned |
+| 17.13 | Validation of Numerical Results | Planned |
+| 17.14 | Chapter Project — Financial Numerical Solver | Planned |
+| 17.15 | Exercises and Applied Problems | Planned |
+
+**Next:** 17.2 — Closed-Form vs. Numerical Solutions.
+
+**Chapter status:** Manuscript in progress; not certified.
