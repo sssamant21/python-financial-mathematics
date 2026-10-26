@@ -236,7 +236,7 @@ Published sections link to their manuscript files; planned sections remain plain
 15.1 — [Functions of Several Variables](chapter-15/15.01-functions-of-several-variables.md)  
 15.2 — [Partial Derivatives](chapter-15/15.02-partial-derivatives.md)  
 15.3 — [Total Differentials and the Chain Rule](chapter-15/15.03-total-differentials-and-the-chain-rule.md)  
-15.4 — Gradients and Directional Derivatives  
+15.4 — [Gradients and Directional Derivatives](chapter-15/15.04-gradients-and-directional-derivatives.md)  
 15.5 — Jacobians of Vector Functions  
 15.6 — Hessians and Mixed Partials  
 15.7 — Multivariable Taylor Approximation  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 15.4 — Gradients and Directional Derivatives.
+**Next manuscript section:** 15.5 — Jacobians of Vector Functions.
