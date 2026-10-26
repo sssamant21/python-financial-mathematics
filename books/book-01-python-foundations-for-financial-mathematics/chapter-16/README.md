@@ -1,6 +1,6 @@
 # Chapter 16 — Portfolio Mathematics
 
-**Manuscript progress:** 13/16 sections published (81.25%).  
+**Manuscript progress:** 14/16 sections published (87.5%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -18,10 +18,10 @@
 | 16.11 | [Correlation and Diversification](16.11-correlation-and-diversification.md) | Published draft; QA deferred |
 | 16.12 | [Efficient Portfolio Concepts](16.12-efficient-portfolio-concepts.md) | Published draft; QA deferred |
 | 16.13 | [Portfolio Constraints](16.13-portfolio-constraints.md) | Published draft; QA deferred |
-| 16.14 | Rebalancing Mathematics | Planned |
+| 16.14 | [Rebalancing Mathematics](16.14-rebalancing-mathematics.md) | Published draft; QA deferred |
 | 16.15 | Chapter Project — Portfolio Risk and Return Engine | Planned |
 | 16.16 | Exercises and Applied Problems | Planned |
 
-**Next:** 16.14 — Rebalancing Mathematics.
+**Next:** 16.15 — Chapter Project — Portfolio Risk and Return Engine.
 
 **Chapter status:** Manuscript in progress; not certified.
