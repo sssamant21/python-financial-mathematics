@@ -233,7 +233,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 15 — Multivariable Calculus
 
-15.1 — Functions of Several Variables  
+15.1 — [Functions of Several Variables](chapter-15/15.01-functions-of-several-variables.md)  
 15.2 — Partial Derivatives  
 15.3 — Total Differentials and the Chain Rule  
 15.4 — Gradients and Directional Derivatives  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** Chapter 15, Section 15.1 (approved title above).
+**Next manuscript section:** 15.2 — Partial Derivatives.
