@@ -1,6 +1,6 @@
 # Chapter 13 — Vector Spaces, Projections, and Least Squares
 
-**Status:** 5/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 6/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 [Book 02 index](../README.md) · [Master TOC](../MASTER-TOC.md)
 
@@ -11,11 +11,16 @@
 | 13.3 | [Column Space and Null Space](13.03-column-space-and-null-space.md) | Draft — runtime validation pending |
 | 13.4 | [Orthogonal Projection onto a Subspace](13.04-orthogonal-projection-onto-a-subspace.md) | Draft — runtime validation pending |
 | 13.5 | [Least-Squares Objectives](13.05-least-squares-objectives.md) | Draft — runtime validation pending |
-| 13.6 | QR Factorization and Stable Solvers | Planned |
+| 13.6 | [QR Factorization and Stable Solvers](13.06-qr-factorization-and-stable-solvers.md) | Draft — runtime validation pending |
 | 13.7 | Weighted Least Squares and Units | Planned |
 | 13.8 | Rank Deficiency and Regularization | Planned |
 | 13.9 | Chapter Project — Least-Squares Replication Analyzer | Planned |
 | 13.10 | Exercises and Applied Problems | Planned |
+
+## Section 13.6 companion material
+
+- [Householder QR lab](code/section_13_06.py)
+- [Independent reference checks](code/check_section_13_06.py)
 
 ## Section 13.5 companion material
 
@@ -42,4 +47,4 @@
 - [Linear combinations and span lab](code/section_13_01.py)
 - [Independent reference checks](code/check_section_13_01.py)
 
-**Next:** 13.6 — QR Factorization and Stable Solvers.
+**Next:** 13.7 — Weighted Least Squares and Units.
