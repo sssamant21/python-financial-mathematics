@@ -1,6 +1,6 @@
 # Chapter 16 — Portfolio Mathematics
 
-**Manuscript progress:** 9/16 sections published (56.25%).  
+**Manuscript progress:** 10/16 sections published (62.5%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -14,7 +14,7 @@
 | 16.7 | [Portfolio Volatility](16.07-portfolio-volatility.md) | Published draft; QA deferred |
 | 16.8 | [Diversification](16.08-diversification.md) | Published draft; QA deferred |
 | 16.9 | [Two-Asset Portfolios](16.09-two-asset-portfolios.md) | Published draft; QA deferred |
-| 16.10 | Multi-Asset Portfolios | Planned |
+| 16.10 | [Multi-Asset Portfolios](16.10-multi-asset-portfolios.md) | Published draft; QA deferred |
 | 16.11 | Correlation and Diversification | Planned |
 | 16.12 | Efficient Portfolio Concepts | Planned |
 | 16.13 | Portfolio Constraints | Planned |
@@ -22,6 +22,6 @@
 | 16.15 | Chapter Project — Portfolio Risk and Return Engine | Planned |
 | 16.16 | Exercises and Applied Problems | Planned |
 
-**Next:** 16.10 — Multi-Asset Portfolios.
+**Next:** 16.11 — Correlation and Diversification.
 
 **Chapter status:** Manuscript in progress; not certified.
