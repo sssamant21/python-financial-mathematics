@@ -465,5 +465,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [17.8 — Numerical Integration](chapter-17/17.08-numerical-integration.md) — Published draft; independent QA deferred.
 - [17.9 — Interpolation](chapter-17/17.09-interpolation.md) — Published draft; independent QA deferred.
 - [17.10 — Curve Construction Concepts](chapter-17/17.10-curve-construction-concepts.md) — Published draft; independent QA deferred.
+- [17.11 — Numerical Stability](chapter-17/17.11-numerical-stability.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 10/15 sections (66.67%). **Next:** 17.11 — Numerical Stability. [Chapter 17 progress index](chapter-17/README.md).
+**Manuscript progress:** 11/15 sections (73.33%). **Next:** 17.12 — Convergence and Error. [Chapter 17 progress index](chapter-17/README.md).
