@@ -1,6 +1,6 @@
 # Chapter 17 — Numerical Methods with SciPy
 
-**Manuscript progress:** 4/15 sections published (26.67%).  
+**Manuscript progress:** 5/15 sections published (33.33%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical, and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -9,7 +9,7 @@
 | 17.2 | [Closed-Form vs. Numerical Solutions](17.02-closed-form-vs-numerical-solutions.md) | Published draft; QA deferred |
 | 17.3 | [Numerical Root Finding](17.03-numerical-root-finding.md) | Published draft; QA deferred |
 | 17.4 | [Solving Yield and IRR Problems](17.04-solving-yield-and-irr-problems.md) | Published draft; QA deferred |
-| 17.5 | Optimization Fundamentals | Planned |
+| 17.5 | [Optimization Fundamentals](17.05-optimization-fundamentals.md) | Published draft; QA deferred |
 | 17.6 | Constrained Optimization | Planned |
 | 17.7 | Portfolio Optimization | Planned |
 | 17.8 | Numerical Integration | Planned |
@@ -21,6 +21,6 @@
 | 17.14 | Chapter Project — Financial Numerical Solver | Planned |
 | 17.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 17.5 — Optimization Fundamentals.
+**Next:** 17.6 — Constrained Optimization.
 
 **Chapter status:** Manuscript in progress; not certified.
