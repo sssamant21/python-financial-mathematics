@@ -421,4 +421,4 @@ Any structural change requires:
 
 **Chapter 15 publication status:** 15.1–15.15 published as drafts (15/15); Chapter 15 manuscript complete. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 16 publication status:** 16.1–16.15 published as drafts (15/16). Next locked manuscript section: 16.16 — Exercises and Applied Problems. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 16 publication status:** 16.1–16.16 published as drafts (16/16); Chapter 16 manuscript complete. Next: Chapter 17, Section 17.1, per locked Master TOC. Comprehensive QA deferred until all Book 1 chapters are written.
