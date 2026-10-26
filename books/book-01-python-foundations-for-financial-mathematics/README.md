@@ -460,5 +460,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [17.3 — Numerical Root Finding](chapter-17/17.03-numerical-root-finding.md) — Published draft; independent QA deferred.
 - [17.4 — Solving Yield and IRR Problems](chapter-17/17.04-solving-yield-and-irr-problems.md) — Published draft; independent QA deferred.
 - [17.5 — Optimization Fundamentals](chapter-17/17.05-optimization-fundamentals.md) — Published draft; independent QA deferred.
+- [17.6 — Constrained Optimization](chapter-17/17.06-constrained-optimization.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 5/15 sections (33.33%). **Next:** 17.6 — Constrained Optimization. [Chapter 17 progress index](chapter-17/README.md).
+**Manuscript progress:** 6/15 sections (40%). **Next:** 17.7 — Portfolio Optimization. [Chapter 17 progress index](chapter-17/README.md).
