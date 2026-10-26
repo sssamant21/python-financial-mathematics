@@ -431,3 +431,9 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [15.15 — Exercises and Applied Problems](chapter-15/15.15-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
 **Manuscript progress:** 15/15 sections (100%); Chapter 15 manuscript complete, QA deferred. [Chapter 15 progress index](chapter-15/README.md).
+
+## Chapter 16 — Portfolio Mathematics
+
+- [16.1 — Portfolio Fundamentals](chapter-16/16.01-portfolio-fundamentals.md) — Published draft; independent QA deferred.
+
+**Manuscript progress:** 1/16 sections (6.25%). **Next:** 16.2 — Portfolio Weights. [Chapter 16 progress index](chapter-16/README.md).
