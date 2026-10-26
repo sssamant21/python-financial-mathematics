@@ -449,5 +449,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [16.13 — Portfolio Constraints](chapter-16/16.13-portfolio-constraints.md) — Published draft; independent QA deferred.
 - [16.14 — Rebalancing Mathematics](chapter-16/16.14-rebalancing-mathematics.md) — Published draft; independent QA deferred.
 - [16.15 — Chapter Project — Portfolio Risk and Return Engine](chapter-16/16.15-chapter-project-portfolio-risk-and-return-engine.md) — Published draft; independent QA deferred.
+- [16.16 — Exercises and Applied Problems](chapter-16/16.16-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 15/16 sections (93.75%). **Next:** 16.16 — Exercises and Applied Problems. [Chapter 16 progress index](chapter-16/README.md).
+**Manuscript progress:** 16/16 sections (100%); Chapter 16 manuscript complete, QA deferred. **Next:** Chapter 17, Section 17.1. [Chapter 16 progress index](chapter-16/README.md).
