@@ -1,6 +1,6 @@
 # Chapter 15 — Statistics for Financial Data
 
-**Manuscript progress:** 14/15 sections published (93.3%).  
+**Manuscript progress:** 15/15 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Lightweight manuscript checks during publication; runtime and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -19,8 +19,8 @@
 | 15.12 | [Rolling Statistics](15.12-rolling-statistics.md) | Published draft; QA deferred |
 | 15.13 | [Statistical Pitfalls in Financial Data](15.13-statistical-pitfalls-in-financial-data.md) | Published draft; QA deferred |
 | 15.14 | [Chapter Project — Financial Statistical Analysis Toolkit](15.14-chapter-project-financial-statistical-analysis-toolkit.md) | Published draft; QA deferred |
-| 15.15 | Exercises and Applied Problems | Planned |
+| 15.15 | [Exercises and Applied Problems](15.15-exercises-and-applied-problems.md) | Published draft; QA deferred |
 
-**Next:** 15.15 — Exercises and Applied Problems.
+**Next:** Consult Book 1 master TOC for the next manuscript chapter; comprehensive QA deferred.
 
-**Chapter status:** Manuscript in progress; not certified.
+**Chapter status:** Manuscript complete (15/15); not certified.
