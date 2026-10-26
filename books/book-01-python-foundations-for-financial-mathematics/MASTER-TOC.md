@@ -423,4 +423,4 @@ Any structural change requires:
 
 **Chapter 16 publication status:** 16.1–16.16 published as drafts (16/16); Chapter 16 manuscript complete. Next: Chapter 17, Section 17.1, per locked Master TOC. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 17 publication status:** 17.1–17.4 published as drafts (4/15). Next locked manuscript section: 17.5 — Optimization Fundamentals. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 17 publication status:** 17.1–17.5 published as drafts (5/15). Next locked manuscript section: 17.6 — Constrained Optimization. Comprehensive QA deferred until all Book 1 chapters are written.
