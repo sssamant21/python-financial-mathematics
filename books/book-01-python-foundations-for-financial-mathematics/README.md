@@ -442,5 +442,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [16.6 — Portfolio Variance](chapter-16/16.06-portfolio-variance.md) — Published draft; independent QA deferred.
 - [16.7 — Portfolio Volatility](chapter-16/16.07-portfolio-volatility.md) — Published draft; independent QA deferred.
 - [16.8 — Diversification](chapter-16/16.08-diversification.md) — Published draft; independent QA deferred.
+- [16.9 — Two-Asset Portfolios](chapter-16/16.09-two-asset-portfolios.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 8/16 sections (50%). **Next:** 16.9 — Two-Asset Portfolios. [Chapter 16 progress index](chapter-16/README.md).
+**Manuscript progress:** 9/16 sections (56.25%). **Next:** 16.10 — Multi-Asset Portfolios. [Chapter 16 progress index](chapter-16/README.md).
