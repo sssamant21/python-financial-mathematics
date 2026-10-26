@@ -438,5 +438,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [16.2 — Portfolio Weights](chapter-16/16.02-portfolio-weights.md) — Published draft; independent QA deferred.
 - [16.3 — Portfolio Return](chapter-16/16.03-portfolio-return.md) — Published draft; independent QA deferred.
 - [16.4 — Expected Portfolio Return](chapter-16/16.04-expected-portfolio-return.md) — Published draft; independent QA deferred.
+- [16.5 — Covariance Matrices](chapter-16/16.05-covariance-matrices.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 4/16 sections (25%). **Next:** 16.5 — Covariance Matrices. [Chapter 16 progress index](chapter-16/README.md).
+**Manuscript progress:** 5/16 sections (31.25%). **Next:** 16.6 — Portfolio Variance. [Chapter 16 progress index](chapter-16/README.md).
