@@ -1,13 +1,13 @@
 # Chapter 20 — Testing and Engineering Financial Python
 
-**Manuscript progress:** 2/16 sections published (12.50%).  
+**Manuscript progress:** 3/16 sections published (18.75%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
 |---|---|---|
 | 20.1 | [Why Financial Code Must Be Tested](20.01-why-financial-code-must-be-tested.md) | Published draft; QA deferred |
 | 20.2 | [Assertions and Known-Value Tests](20.02-assertions-and-known-value-tests.md) | Published draft; QA deferred |
-| 20.3 | Unit Testing | Planned |
+| 20.3 | [Unit Testing](20.03-unit-testing.md) | Published draft; QA deferred |
 | 20.4 | Boundary and Edge Cases | Planned |
 | 20.5 | Testing Floating-Point Results | Planned |
 | 20.6 | Testing Decimal Calculations | Planned |
@@ -22,6 +22,6 @@
 | 20.15 | Chapter Project — Production-Quality Financial Library | Planned |
 | 20.16 | Exercises and Applied Problems | Planned |
 
-**Next:** 20.3 — Unit Testing.
+**Next:** 20.4 — Boundary and Edge Cases.
 
 **Chapter status:** Manuscript in progress; not certified.
