@@ -272,7 +272,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 18 — Numerical Methods and Computational Reliability
 
-18.1 — Error Taxonomy  
+18.1 — [Error Taxonomy](chapter-18/18.01-error-taxonomy.md)  
 18.2 — Floating-Point Arithmetic and Cancellation  
 18.3 — Bracketing and Bisection  
 18.4 — Newton and Safeguarded Root Finding  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 18.1 — Error Taxonomy.
+**Next manuscript section:** 18.2 — Floating-Point Arithmetic and Cancellation.
