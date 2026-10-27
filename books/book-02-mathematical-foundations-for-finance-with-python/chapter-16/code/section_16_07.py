@@ -54,7 +54,11 @@ def local_descent(start,step=0.05,tolerance=1e-9,max_iterations=2000):
         if k==max_iterations:
             break
         trial=finite(x-alpha*g,"trial point")
-        if double_well(trial)>double_well(x):
+        # Exact polynomial difference, evaluated locally to avoid subtracting
+        # nearly equal objective values at a stationary point.
+        delta=trial-x
+        change=finite(g*delta+(6*x*x-2)*delta**2+4*x*delta**3+delta**4,"objective change")
+        if delta==0 or change>0:
             status="no_descent"
             break
         x=trial
