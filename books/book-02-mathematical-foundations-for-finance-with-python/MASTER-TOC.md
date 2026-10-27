@@ -279,7 +279,7 @@ Published sections link to their manuscript files; planned sections remain plain
 18.5 — [Multiple Roots and Cash-Flow Equations](chapter-18/18.05-multiple-roots-and-cash-flow-equations.md)  
 18.6 — [Interpolation and Extrapolation](chapter-18/18.06-interpolation-and-extrapolation.md)  
 18.7 — [Numerical Differentiation and Integration](chapter-18/18.07-numerical-differentiation-and-integration.md)  
-18.8 — Stopping Rules and Diagnostics  
+18.8 — [Stopping Rules and Diagnostics](chapter-18/18.08-stopping-rules-and-diagnostics.md)  
 18.9 — Chapter Project — Financial Numerical Solver and Diagnostics  
 18.10 — Exercises and Applied Problems
 
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 18.8 — Stopping Rules and Diagnostics.
+**Next manuscript section:** 18.9 — Chapter Project — Financial Numerical Solver and Diagnostics.
