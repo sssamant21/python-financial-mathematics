@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–20.9 published as Draft. Comprehensive runtime validation and independent review remain pending.
+**Manuscript status:** Sections 1.1–20.10 published as Draft. Comprehensive runtime validation and independent review remain pending.
 
 ## Purpose and Prerequisites
 
@@ -307,7 +307,7 @@ Published sections link to their manuscript files; planned sections remain plain
 20.7 — [Reproducibility and Evidence](chapter-20/20.07-reproducibility-and-evidence.md)  
 20.8 — [Review Findings and Release Gates](chapter-20/20.08-review-findings-and-release-gates.md)  
 20.9 — [Chapter Project — Mathematical Model Validation Dossier](chapter-20/20.09-chapter-project-mathematical-model-validation-dossier.md)  
-20.10 — Exercises and Applied Problems
+20.10 — [Exercises and Applied Problems](chapter-20/20.10-exercises-and-applied-problems.md)
 
 # Chapter 21 — Integrated Capstone: Financial Mathematics Foundations Toolkit
 
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 20.10 — Exercises and Applied Problems.
+**Next manuscript section:** 21.1 — Capstone Requirements and Assumptions.
