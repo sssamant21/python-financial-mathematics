@@ -268,7 +268,7 @@ Published sections link to their manuscript files; planned sections remain plain
 17.7 — [Financial Allocation Assumptions](chapter-17/17.07-financial-allocation-assumptions.md)  
 17.8 — [Feasibility and Independent Optimality Checks](chapter-17/17.08-feasibility-and-independent-optimality-checks.md)  
 17.9 — [Chapter Project — Constrained Allocation Decision Engine](chapter-17/17.09-chapter-project-constrained-allocation-decision-engine.md)  
-17.10 — Exercises and Applied Problems
+17.10 — [Exercises and Applied Problems](chapter-17/17.10-exercises-and-applied-problems.md)
 
 # Chapter 18 — Numerical Methods and Computational Reliability
 
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 17.10 — Exercises and Applied Problems.
+**Next manuscript section:** 18.1 — Error Taxonomy.
