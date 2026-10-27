@@ -1,6 +1,6 @@
 # Chapter 20 — Testing and Validating Mathematical Models
 
-**Status:** 8/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
+**Status:** 9/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -12,8 +12,13 @@
 | 20.6 | [Property and Metamorphic Checks](20.06-property-and-metamorphic-checks.md) | Draft — runtime validation pending |
 | 20.7 | [Reproducibility and Evidence](20.07-reproducibility-and-evidence.md) | Draft — runtime validation pending |
 | 20.8 | [Review Findings and Release Gates](20.08-review-findings-and-release-gates.md) | Draft — runtime validation pending |
-| 20.9 | Chapter Project — Mathematical Model Validation Dossier | Planned |
+| 20.9 | [Chapter Project — Mathematical Model Validation Dossier](20.09-chapter-project-mathematical-model-validation-dossier.md) | Draft — runtime validation pending |
 | 20.10 | Exercises and Applied Problems | Planned |
+
+## Section 20.9 companion material
+
+- [Project implementation and dossier template](code/section_20_09.py)
+- [Independent reference checks](code/check_section_20_09.py)
 
 ## Section 20.8 companion material
 
@@ -55,4 +60,4 @@
 - [Model verification Python lab](code/section_20_01.py)
 - [Independent reference checks](code/check_section_20_01.py)
 
-**Next:** 20.9 — Chapter Project — Mathematical Model Validation Dossier.
+**Next:** 20.10 — Exercises and Applied Problems.
