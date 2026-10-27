@@ -504,5 +504,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.7 — Schema and Data Types](chapter-19/19.07-schema-and-data-types.md) — Published draft; independent QA deferred.
 - [19.8 — Missing and Invalid Values](chapter-19/19.08-missing-and-invalid-values.md) — Published draft; independent QA deferred.
 - [19.9 — Date and Timestamp Normalization](chapter-19/19.09-date-and-timestamp-normalization.md) — Published draft; independent QA deferred.
+- [19.10 — Currency and Unit Normalization](chapter-19/19.10-currency-and-unit-normalization.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 9/15 sections (60.00%). **Next:** 19.10 — Currency and Unit Normalization. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 10/15 sections (66.67%). **Next:** 19.11 — Data Quality Checks. [Chapter 19 progress index](chapter-19/README.md).
