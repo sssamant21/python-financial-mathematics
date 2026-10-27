@@ -1,6 +1,6 @@
 # Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit
 
-**Manuscript progress:** 4/18 sections published (22.22%).  
+**Manuscript progress:** 5/18 sections published (27.78%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -9,7 +9,7 @@
 | 21.2 | [Requirements and Assumptions](21.02-requirements-and-assumptions.md) | Published draft; QA deferred |
 | 21.3 | [Project Structure](21.03-project-structure.md) | Published draft; QA deferred |
 | 21.4 | [Numerical and Decimal Policies](21.04-numerical-and-decimal-policies.md) | Published draft; QA deferred |
-| 21.5 | Time-Value-of-Money Module | Planned |
+| 21.5 | [Time-Value-of-Money Module](21.05-time-value-of-money-module.md) | Published draft; QA deferred |
 | 21.6 | Cash-Flow Module | Planned |
 | 21.7 | Loan Module | Planned |
 | 21.8 | Bond Module | Planned |
@@ -24,6 +24,6 @@
 | 21.17 | Final Integrated Case Study | Planned |
 | 21.18 | Further Study and Transition to Book 2 | Planned |
 
-**Next:** 21.5 — Time-Value-of-Money Module.
+**Next:** 21.6 — Cash-Flow Module.
 
 **Chapter status:** Manuscript in progress; not certified.
