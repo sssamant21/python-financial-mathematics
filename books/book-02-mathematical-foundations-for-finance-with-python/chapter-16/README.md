@@ -1,6 +1,6 @@
 # Chapter 16 — Unconstrained Optimization and Convexity
 
-**Status:** 7/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 8/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -11,9 +11,14 @@
 | 16.5 | [Gradient Descent](16.05-gradient-descent.md) | Draft — runtime validation pending |
 | 16.6 | [Newton and Quasi-Newton Methods](16.06-newton-and-quasi-newton-methods.md) | Draft — runtime validation pending |
 | 16.7 | [Scaling, Initial Guesses, and Local Methods](16.07-scaling-initial-guesses-and-local-methods.md) | Draft — runtime validation pending |
-| 16.8 | Calibration Residuals and Validation | Planned |
+| 16.8 | [Calibration Residuals and Validation](16.08-calibration-residuals-and-validation.md) | Draft — runtime validation pending |
 | 16.9 | Chapter Project — Deterministic Calibration Optimizer | Planned |
 | 16.10 | Exercises and Applied Problems | Planned |
+
+## Section 16.8 companion material
+
+- [Calibration residuals Python lab](code/section_16_08.py)
+- [Independent reference checks](code/check_section_16_08.py)
 
 ## Section 16.7 companion material
 
@@ -50,4 +55,4 @@
 - [Objectives and decision variables Python lab](code/section_16_01.py)
 - [Independent reference checks](code/check_section_16_01.py)
 
-**Next:** 16.8 — Calibration Residuals and Validation.
+**Next:** 16.9 — Chapter Project — Deterministic Calibration Optimizer.
