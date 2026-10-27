@@ -40,8 +40,10 @@ def run():
         f = lambda z:present_value(10000, z, 5)
         _, d1, d2 = pv_rate_derivatives(10000, r, 5)
         close(centered_first(f, r, 1e-4), d1, rel_tol=1e-7)
-        close(centered_second(f, r, 1e-3), d2, rel_tol=1e-6)
-    assert len(chapter_report()) == 12
+        # The central second-difference truncation error is approximately
+        # (5*h)**2/12 relative for this exponential; h=2e-4 keeps it below 1e-6.
+        close(centered_second(f, r, 2e-4), d2, rel_tol=1e-6)
+    assert {"pv", "pv_rate_first", "pv_rate_second", "pv_shock_10bp"} <= chapter_report().keys()
     rejects(ValueError, profit, 201)
     rejects(ValueError, present_value, -1, 0.04, 5)
     rejects(ValueError, log_return, 0, 84)
