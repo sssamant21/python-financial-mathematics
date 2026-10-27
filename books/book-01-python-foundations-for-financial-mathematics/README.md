@@ -552,5 +552,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.14 — Visualization Layer](chapter-21/21.14-visualization-layer.md) — Published draft; independent QA deferred.
 - [21.15 — Testing and Verification](chapter-21/21.15-testing-and-verification.md) — Published draft; independent QA deferred.
 - [21.16 — Documentation and Reproducibility](chapter-21/21.16-documentation-and-reproducibility.md) — Published draft; independent QA deferred.
+- [21.17 — Final Integrated Case Study](chapter-21/21.17-final-integrated-case-study.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 16/18 sections (88.89%). **Next:** 21.17 — Final Integrated Case Study. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 17/18 sections (94.44%). **Next:** 21.18 — Further Study and Transition to Book 2. [Chapter 21 progress index](chapter-21/README.md).
