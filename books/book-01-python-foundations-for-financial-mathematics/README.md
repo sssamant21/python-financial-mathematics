@@ -478,5 +478,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [18.1 — Simulation Fundamentals](chapter-18/18.01-simulation-fundamentals.md) — Published draft; independent QA deferred.
 - [18.2 — Random Number Generators](chapter-18/18.02-random-number-generators.md) — Published draft; independent QA deferred.
 - [18.3 — Reproducible Simulation](chapter-18/18.03-reproducible-simulation.md) — Published draft; independent QA deferred.
+- [18.4 — Simulating Financial Outcomes](chapter-18/18.04-simulating-financial-outcomes.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 3/15 sections (20.00%). **Next:** 18.4 — Simulating Financial Outcomes. [Chapter 18 progress index](chapter-18/README.md).
+**Manuscript progress:** 4/15 sections (26.67%). **Next:** 18.5 — Return Simulations. [Chapter 18 progress index](chapter-18/README.md).
