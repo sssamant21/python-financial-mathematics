@@ -428,3 +428,5 @@ Any structural change requires:
 **Chapter 18 publication status:** 18.1–18.15 published as drafts (15/15); Chapter 18 manuscript complete. Next locked manuscript section: 19.1 — Financial Data Sources and Formats. Comprehensive QA deferred until all Book 1 chapters are written.
 
 **Chapter 19 publication status:** 19.1–19.15 published as drafts (15/15); Chapter 19 manuscript complete. Next locked manuscript section: 20.1 — Why Financial Code Must Be Tested. Comprehensive QA deferred until all Book 1 chapters are written.
+
+**Chapter 20 publication status:** 20.1 published as a draft (1/16). Next locked manuscript section: 20.2 — Assertions and Known-Value Tests. Comprehensive QA deferred until all Book 1 chapters are written.
