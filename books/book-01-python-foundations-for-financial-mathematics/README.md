@@ -500,5 +500,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.3 — JSON Data](chapter-19/19.03-json-data.md) — Published draft; independent QA deferred.
 - [19.4 — Excel Data](chapter-19/19.04-excel-data.md) — Published draft; independent QA deferred.
 - [19.5 — APIs and Financial Data](chapter-19/19.05-apis-and-financial-data.md) — Published draft; independent QA deferred.
+- [19.6 — Parsing and Validation](chapter-19/19.06-parsing-and-validation.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 5/15 sections (33.33%). **Next:** 19.6 — Parsing and Validation. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 6/15 sections (40.00%). **Next:** 19.7 — Schema and Data Types. [Chapter 19 progress index](chapter-19/README.md).
