@@ -499,5 +499,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.2 — CSV and Text Data](chapter-19/19.02-csv-and-text-data.md) — Published draft; independent QA deferred.
 - [19.3 — JSON Data](chapter-19/19.03-json-data.md) — Published draft; independent QA deferred.
 - [19.4 — Excel Data](chapter-19/19.04-excel-data.md) — Published draft; independent QA deferred.
+- [19.5 — APIs and Financial Data](chapter-19/19.05-apis-and-financial-data.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 4/15 sections (26.67%). **Next:** 19.5 — APIs and Financial Data. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 5/15 sections (33.33%). **Next:** 19.6 — Parsing and Validation. [Chapter 19 progress index](chapter-19/README.md).
