@@ -46,7 +46,11 @@ def cholesky_2x2(matrix):
             "runtime_certified":False}
 
 def solve_2x2(matrix,rhs):
-    result=cholesky_2x2(matrix)
+    try:
+        rows=tuple(tuple(row) for row in matrix)
+    except TypeError as exc:
+        raise ValueError("matrix must be a 2x2 sequence") from exc
+    result=cholesky_2x2(rows)
     try:
         vector=tuple(rhs)
     except TypeError as exc:
@@ -59,7 +63,7 @@ def solve_2x2(matrix,rhs):
     y1=finite((b1-l21*y0)/l22,"forward solve")
     x1=finite(y1/l22,"backward solve")
     x0=finite((y0-l21*x1)/l11,"backward solve")
-    rows=tuple(tuple(float(v) for v in row) for row in matrix)
+    rows=tuple(tuple(float(v) for v in row) for row in rows)
     residual=(finite(math.fsum((rows[0][0]*x0,rows[0][1]*x1))-b0,"solve residual"),
               finite(math.fsum((rows[1][0]*x0,rows[1][1]*x1))-b1,"solve residual"))
     return {"solution":(x0,x1),"forward_solution":(y0,y1),
