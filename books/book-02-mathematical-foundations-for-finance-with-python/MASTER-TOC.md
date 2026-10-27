@@ -298,7 +298,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 20 — Testing and Validating Mathematical Models
 
-20.1 — Model Validation and Software Verification  
+20.1 — [Model Validation and Software Verification](chapter-20/20.01-model-validation-and-software-verification.md)  
 20.2 — Known-Value and Analytic Benchmarks  
 20.3 — Financial and Mathematical Invariants  
 20.4 — Boundary and Invalid Inputs  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 20.1 — Model Validation and Software Verification.
+**Next manuscript section:** 20.2 — Known-Value and Analytic Benchmarks.
