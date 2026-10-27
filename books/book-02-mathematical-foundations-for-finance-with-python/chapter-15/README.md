@@ -65,4 +65,4 @@
 - [Functions of several variables Python lab](code/section_15_01.py)
 - [Independent reference checks](code/check_section_15_01.py)
 
-**Next:** Chapter 16, Section 16.1 — Objectives and Decision Variables.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
