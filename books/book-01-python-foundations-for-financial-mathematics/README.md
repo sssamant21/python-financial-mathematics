@@ -533,3 +533,9 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [20.16 — Exercises and Applied Problems](chapter-20/20.16-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
 **Manuscript progress:** 16/16 sections (100%); manuscript complete, comprehensive QA deferred. **Next:** 21.1 — Capstone Architecture. [Chapter 20 progress index](chapter-20/README.md).
+
+## Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit
+
+- [21.1 — Capstone Architecture](chapter-21/21.01-capstone-architecture.md) — Published draft; independent QA deferred.
+
+**Manuscript progress:** 1/18 sections (5.56%). **Next:** 21.2 — Requirements and Assumptions. [Chapter 21 progress index](chapter-21/README.md).
