@@ -5,6 +5,7 @@ from section_21_07 import transition, scenario_report
 
 class ScenarioChecks(unittest.TestCase):
     def test_zero_rate(self): self.assertEqual(transition(1000, 0, 200, 3), 1600)
+    def test_subnormal_rate_limit(self): self.assertEqual(transition(0, 5e-324, 100, .5), 50)
     def test_zero_time(self): self.assertEqual(transition(100, .1, 10, 0), 100)
     def test_double(self): self.assertAlmostEqual(transition(1000, math.log(2), 0, 1), 2000)
     def test_withdrawal(self): self.assertEqual(transition(100, 0, -60, 2), -20)
