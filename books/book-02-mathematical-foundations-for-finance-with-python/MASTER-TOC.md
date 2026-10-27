@@ -293,7 +293,7 @@ Published sections link to their manuscript files; planned sections remain plain
 19.6 — [Runge-Kutta and Adaptive Solvers](chapter-19/19.06-runge-kutta-and-adaptive-solvers.md)  
 19.7 — [Depletion, Events, and Boundary Rules](chapter-19/19.07-depletion-events-and-boundary-rules.md)  
 19.8 — [Validation and Discrete-Time Comparison](chapter-19/19.08-validation-and-discrete-time-comparison.md)  
-19.9 — Chapter Project — Continuous Account Growth and Depletion Simulator  
+19.9 — [Chapter Project — Continuous Account Growth and Depletion Simulator](chapter-19/19.09-chapter-project-continuous-account-growth-and-depletion-simulator.md)  
 19.10 — Exercises and Applied Problems
 
 # Chapter 20 — Testing and Validating Mathematical Models
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 19.9 — Chapter Project — Continuous Account Growth and Depletion Simulator.
+**Next manuscript section:** 19.10 — Exercises and Applied Problems.
