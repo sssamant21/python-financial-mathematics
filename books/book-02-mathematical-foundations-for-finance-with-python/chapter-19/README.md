@@ -1,6 +1,6 @@
 # Chapter 19 — Differential Equations and Continuous-Time Models
 
-**Status:** 7/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
+**Status:** 8/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -11,9 +11,14 @@
 | 19.5 | [Euler Time Stepping](19.05-euler-time-stepping.md) | Draft — runtime validation pending |
 | 19.6 | [Runge-Kutta and Adaptive Solvers](19.06-runge-kutta-and-adaptive-solvers.md) | Draft — runtime validation pending |
 | 19.7 | [Depletion, Events, and Boundary Rules](19.07-depletion-events-and-boundary-rules.md) | Draft — runtime validation pending |
-| 19.8 | Validation and Discrete-Time Comparison | Planned |
+| 19.8 | [Validation and Discrete-Time Comparison](19.08-validation-and-discrete-time-comparison.md) | Draft — runtime validation pending |
 | 19.9 | Chapter Project — Continuous Account Growth and Depletion Simulator | Planned |
 | 19.10 | Exercises and Applied Problems | Planned |
+
+## Section 19.8 companion material
+
+- [Validation and comparison Python lab](code/section_19_08.py)
+- [Independent reference checks](code/check_section_19_08.py)
 
 ## Section 19.7 companion material
 
@@ -50,4 +55,4 @@
 - [Differential models Python lab](code/section_19_01.py)
 - [Independent reference checks](code/check_section_19_01.py)
 
-**Next:** 19.8 — Validation and Discrete-Time Comparison.
+**Next:** 19.9 — Chapter Project — Continuous Account Growth and Depletion Simulator.
