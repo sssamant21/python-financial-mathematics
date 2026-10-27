@@ -13,13 +13,17 @@ The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-
 **Canonical chapters:** 0/21.  
 **Current status:** Chapters 01–20 manuscripts complete as Draft; runtime validation and independent editorial review pending. Chapter 21 manuscript is complete as Draft. Latest: [21.10 — Exercises and Applied Problems](chapter-21/21.10-exercises-and-applied-problems.md).
 
+## Validation Progress
+
+Follow the [validation progress tracker](validation/PROGRESS.md) for runtime evidence, findings, review status and remaining work. The initial runtime pass succeeded on a defined snapshot; independent review and final-revision validation remain pending.
+
 ## Writing Workflow
 
 Complete, validate, and push one numbered section before proceeding to the next. Finish all sections, the project, exercises, and companion solutions for Chapter 01 before beginning Chapter 02. Update progress indexes with actual publication and review status; planned content must not be counted as completed.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** Book-wide inventory, comprehensive runtime validation and independent review. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
+**Next:** Audit links, indexes, coverage and numerical findings; complete independent review and final-revision validation.
 
 ## Chapter Plan
 
