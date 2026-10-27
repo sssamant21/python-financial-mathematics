@@ -539,5 +539,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.1 — Capstone Architecture](chapter-21/21.01-capstone-architecture.md) — Published draft; independent QA deferred.
 - [21.2 — Requirements and Assumptions](chapter-21/21.02-requirements-and-assumptions.md) — Published draft; independent QA deferred.
 - [21.3 — Project Structure](chapter-21/21.03-project-structure.md) — Published draft; independent QA deferred.
+- [21.4 — Numerical and Decimal Policies](chapter-21/21.04-numerical-and-decimal-policies.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 3/18 sections (16.67%). **Next:** 21.4 — Numerical and Decimal Policies. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 4/18 sections (22.22%). **Next:** 21.5 — Time-Value-of-Money Module. [Chapter 21 progress index](chapter-21/README.md).
