@@ -1,6 +1,6 @@
 # Chapter 20 — Testing and Engineering Financial Python
 
-**Manuscript progress:** 11/16 sections published (68.75%).  
+**Manuscript progress:** 12/16 sections published (75.00%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -16,12 +16,12 @@
 | 20.9 | [Exception Handling](20.09-exception-handling.md) | Published draft; QA deferred |
 | 20.10 | [Logging](20.10-logging.md) | Published draft; QA deferred |
 | 20.11 | [Type Hints](20.11-type-hints.md) | Published draft; QA deferred |
-| 20.12 | Documentation | Planned |
+| 20.12 | [Documentation](20.12-documentation.md) | Published draft; QA deferred |
 | 20.13 | Reproducibility | Planned |
 | 20.14 | Model Validation vs. Software Validation | Planned |
 | 20.15 | Chapter Project — Production-Quality Financial Library | Planned |
 | 20.16 | Exercises and Applied Problems | Planned |
 
-**Next:** 20.12 — Documentation.
+**Next:** 20.13 — Reproducibility.
 
 **Chapter status:** Manuscript in progress; not certified.
