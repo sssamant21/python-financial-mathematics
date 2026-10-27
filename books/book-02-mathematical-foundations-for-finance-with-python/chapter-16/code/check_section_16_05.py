@@ -39,6 +39,10 @@ def run():
     assert abs(diverging["x"]-0.05)>0.05
     assert a["armijo"]["status"]=="accepted"
     assert a["armijo"]["new_objective"]<normalized_loss(0)
+    stagnant=armijo_step(1.0,lambda x:x,lambda x:1,initial_step=1e-20)
+    assert stagnant["status"]=="stagnation" and stagnant["new_x"]==1.0
+    flat=armijo_step(1.0,lambda x:1.0,lambda x:1,initial_step=0.1,max_backtracks=2)
+    assert flat["status"]=="line_search_failed"
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,gradient_descent,0,normalized_loss,normalized_gradient,step=0)
     rejects(ValueError,gradient_descent,0,normalized_loss,normalized_gradient,max_iterations=0)
