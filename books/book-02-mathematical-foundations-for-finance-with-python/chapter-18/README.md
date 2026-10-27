@@ -1,6 +1,6 @@
 # Chapter 18 — Numerical Methods and Computational Reliability
 
-**Status:** 7/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 8/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -11,9 +11,14 @@
 | 18.5 | [Multiple Roots and Cash-Flow Equations](18.05-multiple-roots-and-cash-flow-equations.md) | Draft — runtime validation pending |
 | 18.6 | [Interpolation and Extrapolation](18.06-interpolation-and-extrapolation.md) | Draft — runtime validation pending |
 | 18.7 | [Numerical Differentiation and Integration](18.07-numerical-differentiation-and-integration.md) | Draft — runtime validation pending |
-| 18.8 | Stopping Rules and Diagnostics | Planned |
+| 18.8 | [Stopping Rules and Diagnostics](18.08-stopping-rules-and-diagnostics.md) | Draft — runtime validation pending |
 | 18.9 | Chapter Project — Financial Numerical Solver and Diagnostics | Planned |
 | 18.10 | Exercises and Applied Problems | Planned |
+
+## Section 18.8 companion material
+
+- [Stopping rules and diagnostics Python lab](code/section_18_08.py)
+- [Independent reference checks](code/check_section_18_08.py)
 
 ## Section 18.7 companion material
 
@@ -50,4 +55,4 @@
 - [Error taxonomy Python lab](code/section_18_01.py)
 - [Independent reference checks](code/check_section_18_01.py)
 
-**Next:** 18.8 — Stopping Rules and Diagnostics.
+**Next:** 18.9 — Chapter Project — Financial Numerical Solver and Diagnostics.
