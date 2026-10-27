@@ -472,3 +472,9 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [17.15 — Exercises and Applied Problems](chapter-17/17.15-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
 **Manuscript progress:** 15/15 sections (100%); manuscript complete, comprehensive QA deferred. **Next:** Chapter 18, Section 18.1 — Simulation Fundamentals. [Chapter 17 progress index](chapter-17/README.md).
+
+## Chapter 18 — Monte Carlo Simulation for Finance
+
+- [18.1 — Simulation Fundamentals](chapter-18/18.01-simulation-fundamentals.md) — Published draft; independent QA deferred.
+
+**Manuscript progress:** 1/15 sections (6.67%). **Next:** 18.2 — Random Number Generators. [Chapter 18 progress index](chapter-18/README.md).
