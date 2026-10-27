@@ -517,5 +517,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 
 - [20.1 — Why Financial Code Must Be Tested](chapter-20/20.01-why-financial-code-must-be-tested.md) — Published draft; independent QA deferred.
 - [20.2 — Assertions and Known-Value Tests](chapter-20/20.02-assertions-and-known-value-tests.md) — Published draft; independent QA deferred.
+- [20.3 — Unit Testing](chapter-20/20.03-unit-testing.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 2/16 sections (12.50%). **Next:** 20.3 — Unit Testing. [Chapter 20 progress index](chapter-20/README.md).
+**Manuscript progress:** 3/16 sections (18.75%). **Next:** 20.4 — Boundary and Edge Cases. [Chapter 20 progress index](chapter-20/README.md).
