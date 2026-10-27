@@ -39,7 +39,7 @@ def run():
     assert endpoint["status"]=="endpoint_root"
     rejects(ValueError,safeguarded_newton,lambda x:x*x+1,lambda x:2*x,-1,1)
     rejects(ValueError,safeguarded_newton,lambda x:x,lambda x:1,2,1)
-    rejects(ValueError,safeguarded_newton,lambda x:x,lambda x:float("nan"),-1,1)
+    rejects(ValueError,safeguarded_newton,lambda x:x-0.25,lambda x:float("nan"),-1,1)
     rejects(ValueError,zero_coupon,-1)
     rejects(TypeError,finite,True,"value")
     exhausted=safeguarded_newton(lambda x:x*x-2,lambda x:0,1,2,1e-15,0,1)
