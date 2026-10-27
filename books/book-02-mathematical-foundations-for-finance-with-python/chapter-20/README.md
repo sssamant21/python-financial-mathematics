@@ -65,4 +65,4 @@
 - [Model verification Python lab](code/section_20_01.py)
 - [Independent reference checks](code/check_section_20_01.py)
 
-**Next:** 21.1 — Capstone Requirements and Assumptions.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
