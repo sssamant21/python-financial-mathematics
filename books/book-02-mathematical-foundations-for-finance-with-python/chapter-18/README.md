@@ -65,4 +65,4 @@
 - [Error taxonomy Python lab](code/section_18_01.py)
 - [Independent reference checks](code/check_section_18_01.py)
 
-**Next:** Chapter 19, Section 19.1 — Differential Models and Initial Conditions.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
