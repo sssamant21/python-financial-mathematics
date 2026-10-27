@@ -246,7 +246,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 16 — Unconstrained Optimization and Convexity
 
-16.1 — Objectives and Decision Variables  
+16.1 — [Objectives and Decision Variables](chapter-16/16.01-objectives-and-decision-variables.md)  
 16.2 — Stationary Points and First-Order Conditions  
 16.3 — Second-Order Classification  
 16.4 — Convex Sets and Convex Objectives  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 16.1 — Objectives and Decision Variables.
+**Next manuscript section:** 16.2 — Stationary Points and First-Order Conditions.
