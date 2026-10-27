@@ -427,4 +427,4 @@ Any structural change requires:
 
 **Chapter 18 publication status:** 18.1–18.15 published as drafts (15/15); Chapter 18 manuscript complete. Next locked manuscript section: 19.1 — Financial Data Sources and Formats. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 19 publication status:** 19.1–19.7 published as drafts (7/15). Next locked manuscript section: 19.8 — Missing and Invalid Values. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 19 publication status:** 19.1–19.8 published as drafts (8/15). Next locked manuscript section: 19.9 — Date and Timestamp Normalization. Comprehensive QA deferred until all Book 1 chapters are written.
