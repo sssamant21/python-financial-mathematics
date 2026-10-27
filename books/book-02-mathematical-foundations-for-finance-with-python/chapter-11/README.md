@@ -73,4 +73,4 @@
 
 Draft manuscript and reference-check source are published. Runtime execution, independent code and mathematical review, and canonical approval are pending.
 
-**Next:** Chapter 12, Section 12.1 — Matrices and Dimensions.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
