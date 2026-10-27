@@ -537,5 +537,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 ## Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit
 
 - [21.1 — Capstone Architecture](chapter-21/21.01-capstone-architecture.md) — Published draft; independent QA deferred.
+- [21.2 — Requirements and Assumptions](chapter-21/21.02-requirements-and-assumptions.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 1/18 sections (5.56%). **Next:** 21.2 — Requirements and Assumptions. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 2/18 sections (11.11%). **Next:** 21.3 — Project Structure. [Chapter 21 progress index](chapter-21/README.md).
