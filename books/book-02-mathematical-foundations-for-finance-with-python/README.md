@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 160/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.10, and 15.1–15.10, and 16.1–16.5 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 161/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.10, and 15.1–15.10, and 16.1–16.6 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapters 01–15 manuscripts complete as Draft; runtime validation and independent editorial review pending. Chapter 16 is in progress. Latest: [16.5 — Gradient Descent](chapter-16/16.05-gradient-descent.md).
+**Current status:** Chapters 01–15 manuscripts complete as Draft; runtime validation and independent editorial review pending. Chapter 16 is in progress. Latest: [16.6 — Newton and Quasi-Newton Methods](chapter-16/16.06-newton-and-quasi-newton-methods.md).
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** Chapter 16, Section 16.6 — Newton and Quasi-Newton Methods. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
+**Next:** Chapter 16, Section 16.7 — Scaling, Initial Guesses, and Local Methods. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
 
 ## Chapter Plan
 
@@ -40,7 +40,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 | 13 | [Vector Spaces, Projections, and Least Squares](chapter-13/README.md) | 10/10 sections published as Draft |
 | 14 | [Eigenvalues, Quadratic Forms, and Matrix Decompositions](chapter-14/README.md) | 10/10 sections published as Draft — editorial review pending |
 | 15 | [Multivariable Calculus](chapter-15/README.md) | 10/10 sections published as Draft |
-| 16 | [Unconstrained Optimization and Convexity](chapter-16/README.md) | 5/10 sections published as Draft |
+| 16 | [Unconstrained Optimization and Convexity](chapter-16/README.md) | 6/10 sections published as Draft |
 | 17 | Constrained Optimization | Planned |
 | 18 | Numerical Methods and Computational Reliability | Planned |
 | 19 | Differential Equations and Continuous-Time Models | Planned |
