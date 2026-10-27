@@ -1,0 +1,289 @@
+=== Section 19.1 ===
+return: 0.015
+sha256 of UTF-8 text: 54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f
+test_bad_currency (__main__.DataTests.test_bad_currency) ... ok
+test_bad_date (__main__.DataTests.test_bad_date) ... ok
+test_bad_price (__main__.DataTests.test_bad_price) ... ok
+test_decimal (__main__.DataTests.test_decimal) ... ok
+test_duplicate_date (__main__.DataTests.test_duplicate_date) ... ok
+test_hash_replay (__main__.DataTests.test_hash_replay) ... ok
+test_missing_header (__main__.DataTests.test_missing_header) ... ok
+test_parse (__main__.DataTests.test_parse) ... ok
+test_return (__main__.DataTests.test_return) ... ok
+test_zero_start (__main__.DataTests.test_zero_start) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 19.2 ===
+simple return: 0.015
+raw sha256: 54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f
+test_bad_encoding (__main__.CsvTests.test_bad_encoding) ... ok
+test_bom (__main__.CsvTests.test_bom) ... ok
+test_duplicate_header (__main__.CsvTests.test_duplicate_header) ... ok
+test_duplicate_key (__main__.CsvTests.test_duplicate_key) ... ok
+test_extra_field (__main__.CsvTests.test_extra_field) ... ok
+test_missing_value (__main__.CsvTests.test_missing_value) ... ok
+test_nonfinite_price (__main__.CsvTests.test_nonfinite_price) ... ok
+test_parse (__main__.CsvTests.test_parse) ... ok
+test_raw_hash (__main__.CsvTests.test_raw_hash) ... ok
+test_return (__main__.CsvTests.test_return) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 19.3 ===
+record: {'instrument': 'EXAMPLE', 'observation_date': datetime.date(2026, 1, 6), 'close': Decimal('101.50'), 'currency': 'USD', 'price_type': 'unadjusted_close'}
+return: 0.015
+raw sha256: 972090fccd64b545b783ffb391622820a93d95d641872492d184b07096ddc232
+test_bad_date (__main__.JsonTests.test_bad_date) ... ok
+test_duplicate (__main__.JsonTests.test_duplicate) ... ok
+test_hash (__main__.JsonTests.test_hash) ... ok
+test_invalid_encoding (__main__.JsonTests.test_invalid_encoding) ... ok
+test_missing (__main__.JsonTests.test_missing) ... ok
+test_nan (__main__.JsonTests.test_nan) ... ok
+test_null (__main__.JsonTests.test_null) ... ok
+test_numeric_not_string (__main__.JsonTests.test_numeric_not_string) ... ok
+test_parse (__main__.JsonTests.test_parse) ... ok
+test_return (__main__.JsonTests.test_return) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+=== Section 19.4 ===
+return: 0.015
+raw workbook sha256: 3a39a60e83fd925c4cb9c7589ead02a47b58303b7578965d203d24fd6ead6c6d
+test_bad_date (__main__.ExcelTests.test_bad_date) ... ok
+test_bad_price (__main__.ExcelTests.test_bad_price) ... ok
+test_boolean_price (__main__.ExcelTests.test_boolean_price) ... ok
+test_formula_rejected (__main__.ExcelTests.test_formula_rejected) ... ok
+test_hash (__main__.ExcelTests.test_hash) ... ok
+test_nonmidnight (__main__.ExcelTests.test_nonmidnight) ... ok
+test_parse (__main__.ExcelTests.test_parse) ... ok
+test_price_text (__main__.ExcelTests.test_price_text) ... ok
+test_return (__main__.ExcelTests.test_return) ... ok
+test_zero_start (__main__.ExcelTests.test_zero_start) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.018s
+
+OK
+
+=== Section 19.5 ===
+records: [{'instrument': 'EXAMPLE', 'date': datetime.date(2026, 1, 5), 'close': Decimal('100.00'), 'currency': 'USD'}, {'instrument': 'EXAMPLE', 'date': datetime.date(2026, 1, 6), 'close': Decimal('101.50'), 'currency': 'USD'}]
+simple return: 0.015
+test_bad_cursor (__main__.ApiTests.test_bad_cursor) ... ok
+test_duplicate_records (__main__.ApiTests.test_duplicate_records) ... ok
+test_empty_complete (__main__.ApiTests.test_empty_complete) ... ok
+test_missing_field (__main__.ApiTests.test_missing_field) ... ok
+test_nonfinite_price (__main__.ApiTests.test_nonfinite_price) ... ok
+test_null_price (__main__.ApiTests.test_null_price) ... ok
+test_page_limit (__main__.ApiTests.test_page_limit) ... ok
+test_repeated_cursor (__main__.ApiTests.test_repeated_cursor) ... ok
+test_return (__main__.ApiTests.test_return) ... ok
+test_two_pages (__main__.ApiTests.test_two_pages) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+=== Section 19.6 ===
+accepted: 2 rejected: 0 complete: True
+return: 0.015
+test_bad_currency (__main__.ValidationTests.test_bad_currency) ... ok
+test_bad_date (__main__.ValidationTests.test_bad_date) ... ok
+test_bad_start (__main__.ValidationTests.test_bad_start) ... ok
+test_complete (__main__.ValidationTests.test_complete) ... ok
+test_duplicate (__main__.ValidationTests.test_duplicate) ... ok
+test_empty (__main__.ValidationTests.test_empty) ... ok
+test_missing (__main__.ValidationTests.test_missing) ... ok
+test_nonfinite (__main__.ValidationTests.test_nonfinite) ... ok
+test_null (__main__.ValidationTests.test_null) ... ok
+test_return (__main__.ValidationTests.test_return) ... ok
+test_valid (__main__.ValidationTests.test_valid) ... ok
+test_zero_price (__main__.ValidationTests.test_zero_price) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 19.7 ===
+records: [{'instrument': 'EXAMPLE', 'observation_date': datetime.date(2026, 1, 5), 'close': Decimal('100.00'), 'currency': 'USD', 'price_type': 'unadjusted_close'}, {'instrument': 'EXAMPLE', 'observation_date': datetime.date(2026, 1, 6), 'close': Decimal('101.50'), 'currency': 'USD', 'price_type': 'unadjusted_close'}]
+simple return: 0.015
+test_currency (__main__.SchemaTests.test_currency) ... ok
+test_date (__main__.SchemaTests.test_date) ... ok
+test_duplicate (__main__.SchemaTests.test_duplicate) ... ok
+test_extra_field (__main__.SchemaTests.test_extra_field) ... ok
+test_integral_width (__main__.SchemaTests.test_integral_width) ... ok
+test_missing (__main__.SchemaTests.test_missing) ... ok
+test_notation (__main__.SchemaTests.test_notation) ... ok
+test_null (__main__.SchemaTests.test_null) ... ok
+test_return (__main__.SchemaTests.test_return) ... ok
+test_scale (__main__.SchemaTests.test_scale) ... ok
+test_valid (__main__.SchemaTests.test_valid) ... ok
+test_zero (__main__.SchemaTests.test_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 19.8 ===
+{'accepted': [{'record_number': 1, 'close': Decimal('100.00')}, {'record_number': 3, 'close': Decimal('102.00')}], 'rejected': [{'record_number': 2, 'reason': 'empty'}, {'record_number': 4, 'reason': 'nonfinite'}], 'submitted': 4, 'complete': False}
+observed-interval return: 0.02
+test_bad_start (__main__.MissingValueTests.test_bad_start) ... ok
+test_batch_incomplete (__main__.MissingValueTests.test_batch_incomplete) ... ok
+test_empty (__main__.MissingValueTests.test_empty) ... ok
+test_invalid_type (__main__.MissingValueTests.test_invalid_type) ... ok
+test_malformed (__main__.MissingValueTests.test_malformed) ... ok
+test_missing_key (__main__.MissingValueTests.test_missing_key) ... ok
+test_nonfinite (__main__.MissingValueTests.test_nonfinite) ... ok
+test_null (__main__.MissingValueTests.test_null) ... ok
+test_return (__main__.MissingValueTests.test_return) ... ok
+test_source_marker (__main__.MissingValueTests.test_source_marker) ... ok
+test_valid (__main__.MissingValueTests.test_valid) ... ok
+test_zero (__main__.MissingValueTests.test_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 19.9 ===
+2026-01-05T14:30:00+00:00
+available: True
+test_available (__main__.TimestampTests.test_available) ... ok
+test_bad_date (__main__.TimestampTests.test_bad_date) ... ok
+test_bad_type (__main__.TimestampTests.test_bad_type) ... ok
+test_compact_date_rejected (__main__.TimestampTests.test_compact_date_rejected) ... ok
+test_date (__main__.TimestampTests.test_date) ... ok
+test_equal (__main__.TimestampTests.test_equal) ... ok
+test_fractional (__main__.TimestampTests.test_fractional) ... ok
+test_invalid_offset (__main__.TimestampTests.test_invalid_offset) ... ok
+test_naive_rejected (__main__.TimestampTests.test_naive_rejected) ... ok
+test_not_available (__main__.TimestampTests.test_not_available) ... ok
+test_offset (__main__.TimestampTests.test_offset) ... ok
+test_z (__main__.TimestampTests.test_z) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 19.10 ===
+5 percent: 0.05
+100 EUR in USD: 110.00
+USD per EUR reciprocal: 0.9090909090909090909090909091
+test_basis_points (__main__.UnitTests.test_basis_points) ... ok
+test_cents (__main__.UnitTests.test_cents) ... ok
+test_fx (__main__.UnitTests.test_fx) ... ok
+test_fx_pnl (__main__.UnitTests.test_fx_pnl) ... ok
+test_invalid_rate (__main__.UnitTests.test_invalid_rate) ... ok
+test_missing (__main__.UnitTests.test_missing) ... ok
+test_negative_amount (__main__.UnitTests.test_negative_amount) ... ok
+test_nonfinite (__main__.UnitTests.test_nonfinite) ... ok
+test_one_basis_point (__main__.UnitTests.test_one_basis_point) ... ok
+test_percent (__main__.UnitTests.test_percent) ... ok
+test_reciprocal (__main__.UnitTests.test_reciprocal) ... ok
+test_round_half_even (__main__.UnitTests.test_round_half_even) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 19.11 ===
+{'submitted': 2, 'accepted': [{'instrument': 'EXAMPLE', 'date': datetime.date(2026, 1, 5), 'close': Decimal('100.00'), 'currency': 'USD'}], 'rejected': 1, 'reasons': {'missing_close': 1}, 'missing_close_rate': 0.5, 'complete': False}
+test_complete (__main__.QualityTests.test_complete) ... ok
+test_currency (__main__.QualityTests.test_currency) ... ok
+test_date (__main__.QualityTests.test_date) ... ok
+test_duplicate (__main__.QualityTests.test_duplicate) ... ok
+test_empty (__main__.QualityTests.test_empty) ... ok
+test_invalid_row (__main__.QualityTests.test_invalid_row) ... ok
+test_missing (__main__.QualityTests.test_missing) ... ok
+test_nonfinite (__main__.QualityTests.test_nonfinite) ... ok
+test_null (__main__.QualityTests.test_null) ... ok
+test_rate (__main__.QualityTests.test_rate) ... ok
+test_valid (__main__.QualityTests.test_valid) ... ok
+test_zero (__main__.QualityTests.test_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 19.12 ===
+{"currency":"USD","end_date":"2026-01-06","instrument":"EXAMPLE","simple_return":"0.015","start_date":"2026-01-05"}
+{"input_sha256": "0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2", "output_sha256": "1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa", "python_version": "3.12.14", "record_count": 2, "schema_version": 1}
+test_bad_currency (__main__.PipelineTests.test_bad_currency) ... ok
+test_bad_encoding (__main__.PipelineTests.test_bad_encoding) ... ok
+test_bad_order (__main__.PipelineTests.test_bad_order) ... ok
+test_duplicate_key (__main__.PipelineTests.test_duplicate_key) ... ok
+test_input_hash_changes (__main__.PipelineTests.test_input_hash_changes) ... ok
+test_missing (__main__.PipelineTests.test_missing) ... ok
+test_nonfinite (__main__.PipelineTests.test_nonfinite) ... ok
+test_nonstandard_json (__main__.PipelineTests.test_nonstandard_json) ... ok
+test_output_hash (__main__.PipelineTests.test_output_hash) ... ok
+test_replay (__main__.PipelineTests.test_replay) ... ok
+test_return (__main__.PipelineTests.test_return) ... ok
+test_wrong_type (__main__.PipelineTests.test_wrong_type) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 19.13 ===
+2026-04-15T00:00:00Z None
+2026-05-05T00:00:00Z {'instrument': 'EXAMPLE', 'effective_date': datetime.date(2026, 3, 31), 'published_at': datetime.datetime(2026, 5, 1, 12, 0, tzinfo=datetime.timezone.utc), 'ingested_at': datetime.datetime(2026, 5, 1, 12, 1, tzinfo=datetime.timezone.utc), 'value': Decimal('100')}
+2026-05-12T00:00:00Z {'instrument': 'EXAMPLE', 'effective_date': datetime.date(2026, 3, 31), 'published_at': datetime.datetime(2026, 5, 10, 12, 0, tzinfo=datetime.timezone.utc), 'ingested_at': datetime.datetime(2026, 5, 10, 12, 1, tzinfo=datetime.timezone.utc), 'value': Decimal('105')}
+test_bad_date (__main__.PointInTimeTests.test_bad_date) ... ok
+test_before_publication (__main__.PointInTimeTests.test_before_publication) ... ok
+test_equal_cutoff (__main__.PointInTimeTests.test_equal_cutoff) ... ok
+test_ingestion_delay (__main__.PointInTimeTests.test_ingestion_delay) ... ok
+test_initial (__main__.PointInTimeTests.test_initial) ... ok
+test_missing_field (__main__.PointInTimeTests.test_missing_field) ... ok
+test_naive (__main__.PointInTimeTests.test_naive) ... ok
+test_nonfinite (__main__.PointInTimeTests.test_nonfinite) ... ok
+test_offset (__main__.PointInTimeTests.test_offset) ... ok
+test_other_instrument (__main__.PointInTimeTests.test_other_instrument) ... ok
+test_revision (__main__.PointInTimeTests.test_revision) ... ok
+test_tie (__main__.PointInTimeTests.test_tie) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 19.14 ===
+{"currency":"USD","end_date":"2026-01-06","instrument":"EXAMPLE","price_type":"unadjusted_close","simple_return":"0.015","start_date":"2026-01-05"}
+{"decimal_precision": 28, "decision_utc": "2026-01-07T12:00:00+00:00", "input_sha256": "1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b", "output_sha256": "d3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a", "python_version": "3.12.14", "record_count": 2, "rounding": "ROUND_HALF_EVEN", "schema_version": 1}
+test_bad_date_order (__main__.PipelineTests.test_bad_date_order) ... ok
+test_duplicate_key (__main__.PipelineTests.test_duplicate_key) ... ok
+test_equal_cutoff (__main__.PipelineTests.test_equal_cutoff) ... ok
+test_future_availability (__main__.PipelineTests.test_future_availability) ... ok
+test_input_hash (__main__.PipelineTests.test_input_hash) ... ok
+test_missing (__main__.PipelineTests.test_missing) ... ok
+test_naive_cutoff (__main__.PipelineTests.test_naive_cutoff) ... ok
+test_nonfinite (__main__.PipelineTests.test_nonfinite) ... ok
+test_output_hash (__main__.PipelineTests.test_output_hash) ... ok
+test_replay (__main__.PipelineTests.test_replay) ... ok
+test_return (__main__.PipelineTests.test_return) ... ok
+test_wrong_currency (__main__.PipelineTests.test_wrong_currency) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 19.15 ===
+simple return: 0.015
+
