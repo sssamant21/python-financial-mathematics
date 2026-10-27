@@ -250,7 +250,7 @@ Published sections link to their manuscript files; planned sections remain plain
 16.2 — [Stationary Points and First-Order Conditions](chapter-16/16.02-stationary-points-and-first-order-conditions.md)  
 16.3 — [Second-Order Classification](chapter-16/16.03-second-order-classification.md)  
 16.4 — [Convex Sets and Convex Objectives](chapter-16/16.04-convex-sets-and-convex-objectives.md)  
-16.5 — Gradient Descent  
+16.5 — [Gradient Descent](chapter-16/16.05-gradient-descent.md)  
 16.6 — Newton and Quasi-Newton Methods  
 16.7 — Scaling, Initial Guesses, and Local Methods  
 16.8 — Calibration Residuals and Validation  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 16.5 — Gradient Descent.
+**Next manuscript section:** 16.6 — Newton and Quasi-Newton Methods.
