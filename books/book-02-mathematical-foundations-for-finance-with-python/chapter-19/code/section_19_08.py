@@ -58,7 +58,14 @@ def end_period_contributions(initial,rate,flow,years,periods):
     h=t/periods
     if r==0 or t==0:
         return finite(a+u*t,"balance")
-    return finite(a*math.exp(r*t)+u*h*math.expm1(r*t)/math.expm1(r*h),"balance")
+    total_exponent=r*t
+    period_exponent=r*h
+    # expm1(x)/x has the continuous value 1 at zero, including when
+    # a nonzero mathematical product rounds to zero in floating point.
+    def exprel(x):
+        return 1.0 if x==0 else math.expm1(x)/x
+    factor=t*(exprel(total_exponent)/exprel(period_exponent))
+    return finite(a*math.exp(total_exponent)+u*factor,"balance")
 
 def euler_account(initial,rate,flow,years,steps):
     a,r,u,t=(finite(v,n) for v,n in
