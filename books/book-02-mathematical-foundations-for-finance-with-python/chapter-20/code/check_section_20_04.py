@@ -10,6 +10,8 @@ class BoundaryChecks(unittest.TestCase):
     def test_negative_rate(self): self.assertAlmostEqual(present_value(100, -.1, 2), 100 / .81)
     def test_one_period(self): self.assertAlmostEqual(annuity_pv(100, .25, 1), 80)
     def test_near_zero(self): self.assertTrue(math.isclose(annuity_pv(100, 1e-12, 3), 300, rel_tol=1e-10))
+    def test_subnormal_rate_small_payment(self):
+        self.assertTrue(math.isclose(annuity_pv(.1, 5e-324, 3), .3, rel_tol=1e-15))
     def test_bad_rate(self):
         for r in (-1, -2):
             with self.subTest(rate=r), self.assertRaises(ValueError): present_value(100, r, 2)
