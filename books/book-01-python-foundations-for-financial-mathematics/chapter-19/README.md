@@ -1,6 +1,6 @@
 # Chapter 19 — Financial Data Engineering Foundations
 
-**Manuscript progress:** 9/15 sections published (60.00%).  
+**Manuscript progress:** 10/15 sections published (66.67%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -14,13 +14,13 @@
 | 19.7 | [Schema and Data Types](19.07-schema-and-data-types.md) | Published draft; QA deferred |
 | 19.8 | [Missing and Invalid Values](19.08-missing-and-invalid-values.md) | Published draft; QA deferred |
 | 19.9 | [Date and Timestamp Normalization](19.09-date-and-timestamp-normalization.md) | Published draft; QA deferred |
-| 19.10 | Currency and Unit Normalization | Planned |
+| 19.10 | [Currency and Unit Normalization](19.10-currency-and-unit-normalization.md) | Published draft; QA deferred |
 | 19.11 | Data Quality Checks | Planned |
 | 19.12 | Reproducible Data Pipelines | Planned |
 | 19.13 | Avoiding Look-Ahead and Data Leakage | Planned |
 | 19.14 | Chapter Project — Financial Data Pipeline | Planned |
 | 19.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 19.10 — Currency and Unit Normalization.
+**Next:** 19.11 — Data Quality Checks.
 
 **Chapter status:** Manuscript in progress; not certified.
