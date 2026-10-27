@@ -22,7 +22,10 @@ def transition(initial, rate, flow, years):
         if not math.isfinite(exponent): raise OverflowError("exponent exceeds float range")
         try:
             growth = math.exp(exponent)
-            contribution = flow * (math.expm1(exponent) / rate)
+            # Use the continuous limit if rate*years rounds to zero. Dividing
+            # expm1(exponent) by exponent avoids losing a tiny product first.
+            factor = years if exponent == 0 else years * (math.expm1(exponent) / exponent)
+            contribution = flow * factor
             result = initial * growth + contribution
         except OverflowError as exc:
             raise OverflowError("transition exceeds float range") from exc
