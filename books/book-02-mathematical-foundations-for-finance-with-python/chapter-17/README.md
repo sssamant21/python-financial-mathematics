@@ -65,4 +65,4 @@
 - [Feasible sets Python lab](code/section_17_01.py)
 - [Independent reference checks](code/check_section_17_01.py)
 
-**Next:** Chapter 18, Section 18.1 — Error Taxonomy.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
