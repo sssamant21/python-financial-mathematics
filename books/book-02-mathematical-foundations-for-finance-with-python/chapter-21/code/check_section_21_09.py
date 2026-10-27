@@ -22,5 +22,9 @@ class IntegratedChecks(unittest.TestCase):
         self.assertEqual(report["independent_review"], "pending")
         self.assertEqual(report["approval"], "pending")
     def test_limitations(self): self.assertTrue(build_report()["limitations"])
+    def test_replication_inputs_recorded(self):
+        self.assertEqual(build_report()["replication"]["inputs"]["target"], [3, 5])
+    def test_allocation_inputs_recorded(self):
+        self.assertEqual(build_report()["allocation"]["inputs"]["target_a"], .7)
 
 if __name__ == "__main__": unittest.main()
