@@ -15,7 +15,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 - **Manuscript inventory:** 322 of 322 locked section numbers have matching manuscript files at the initial baseline. This is a filename inventory, not a content or QA pass.
 - **Initial syntax screening:** 1,152 fenced Python blocks parsed without syntax errors at that baseline; execution, numerical correctness and illustrative fragments were not established by this check.
-- **Reference runtime evidence:** Scoped runs exist for Chapters **10–21**: 2,196 passing test methods in the recorded runs (174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **12 chapters with scoped evidence**, not twelve comprehensively validated chapters.
+- **Reference runtime evidence:** Scoped runs exist for Chapters **9–21**: 2,348 passing test methods in the recorded runs (152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **13 chapters with scoped evidence**, not thirteen comprehensively validated chapters.
 - **Visualization:** One Chapter 21 synthetic chart was rendered and visually inspected; a complete visualization and accessibility review is pending.
 - **Certification:** No Book 1-wide canonical, production, mathematical or model certification is implied.
 
@@ -27,7 +27,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | IN PROGRESS — initial heuristic only |
 | V03 | External references | Check availability, relevance, authoritative source attribution and version sensitivity; record unavailable links. | NOT STARTED |
 | V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | IN PROGRESS — initial syntax screen only |
-| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 10–21 have scoped evidence |
+| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 9–21 have scoped evidence |
 | V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | NOT STARTED |
 | V07 | Mathematical and financial correctness | Independently derive formulas and benchmarks; verify units, signs, timelines, rates, assumptions and edge cases. | NOT STARTED |
 | V08 | Numerical behavior | Assess precision, cancellation, overflow, underflow, convergence, tolerances and supported ranges. | IN PROGRESS — Section 10.7 and other scoped numerical findings addressed; broader review pending |
@@ -37,7 +37,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V12 | Packaging and platform | Build and hash artifacts, install in clean environments, run outside checkout, review dependency versions and test supported operating systems. | NOT STARTED |
 | V13 | Security and privacy | Review secrets, sensitive data, file/network behavior, dependencies and evidence handling appropriate to the work. | NOT STARTED |
 | V14 | Editorial, source and copyright | Review clarity, consistency, accessibility, attribution, original expression and verified references. | NOT STARTED |
-| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — ten corrections and one open audit finding recorded |
+| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — eleven corrections and one open audit finding recorded |
 | V16 | Final acceptance | Reconcile all evidence against agreed criteria and obtain required independent review and decision. | NOT STARTED |
 
 ## Chapter-by-chapter progress
@@ -54,7 +54,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 | 06 | NumPy for Financial Mathematics | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
 | 07 | pandas for Financial Data Analysis | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
 | 08 | Visualization for Financial Mathematics | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
-| 09 | Time Value of Money with Python | Not assessed here | Pending | Pending | Pending |
+| 09 | Time Value of Money with Python | PASS — 152 extracted reference tests after formatting corrections; [evidence](chapter-09-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 10 | Cash Flows, Annuities, and Perpetuities | PASS — 174 extracted reference tests after corrections; [evidence](chapter-10-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 11 | Loans, Mortgages, and Amortization | PASS — 168 extracted reference tests; [evidence](chapter-11-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 12 | Fixed-Income Mathematics and Bond Analytics | PASS — 204 extracted reference tests; [evidence](chapter-12-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
@@ -85,15 +85,16 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F09 | Section 13.14 compared computed float returns with decimal literals using exact list equality. | Test now checks length and uses an absolute return tolerance; original failure and rerun retained in [Chapter 13 evidence](chapter-13-runtime/README.md). | Broader financial, numerical and performance-method review pending. |
 | F10 | Section 10.1 used escaped Markdown backticks, preventing its reference code fences from rendering. | Markdown fences and inline code corrected; the extracted suite passed in [Chapter 10 evidence](chapter-10-runtime/README.md). | Broader Markdown and link review pending. |
 | F11 | Section 10.7 lost precision near equal discount and growth rates when subtracting nearly equal logarithms. | Uses a stable log-ratio where representable; Decimal benchmark and fallback regressions passed; original failure retained in [Chapter 10 evidence](chapter-10-runtime/README.md). | Extreme inputs, error bounds and financial review pending. |
+| F12 | Sections 9.11–9.17 used escaped Markdown backticks, preventing fenced code and inline code from rendering as intended. | Backticks corrected; 152 Chapter 9 reference tests passed in [Chapter 9 evidence](chapter-09-runtime/README.md). | Broader Markdown, source and mathematical review pending. |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
 ## Execution order and update rule
 
-1. Continue the current reference-runtime sequence with **Chapter 9**; reconcile the previously recorded evidence for Chapters 1–8 and Chapter 14 rather than treating historical claims as automatically current.
+1. Continue with **Chapter 8** by reconciling its recorded runtime and visual evidence and running appropriate current-reference checks; then reconcile Chapters 7–1 rather than treating historical claims as automatically current.
 2. Perform the cross-book checks V01–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
 3. Record each scoped run or review in a durable evidence directory, link it from this tracker, and update the chapter row and checklist only to the scope actually verified.
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** Chapter 9 reference runtime validation. Broader Book 1 QA remains in progress.
+**Next action:** Chapter 8 runtime and visual-evidence reconciliation. Broader Book 1 QA remains in progress.
