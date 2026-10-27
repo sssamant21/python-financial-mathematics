@@ -73,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** Chapter 10, Section 10.1 — Accumulation and Riemann Sums.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
