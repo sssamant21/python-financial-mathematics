@@ -519,5 +519,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [20.2 — Assertions and Known-Value Tests](chapter-20/20.02-assertions-and-known-value-tests.md) — Published draft; independent QA deferred.
 - [20.3 — Unit Testing](chapter-20/20.03-unit-testing.md) — Published draft; independent QA deferred.
 - [20.4 — Boundary and Edge Cases](chapter-20/20.04-boundary-and-edge-cases.md) — Published draft; independent QA deferred.
+- [20.5 — Testing Floating-Point Results](chapter-20/20.05-testing-floating-point-results.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 4/16 sections (25.00%). **Next:** 20.5 — Testing Floating-Point Results. [Chapter 20 progress index](chapter-20/README.md).
+**Manuscript progress:** 5/16 sections (31.25%). **Next:** 20.6 — Testing Decimal Calculations. [Chapter 20 progress index](chapter-20/README.md).
