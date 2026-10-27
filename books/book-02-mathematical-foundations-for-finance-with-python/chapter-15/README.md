@@ -1,6 +1,6 @@
 # Chapter 15 — Multivariable Calculus
 
-**Status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 10/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -13,7 +13,12 @@
 | 15.7 | [Multivariable Taylor Approximation](15.07-multivariable-taylor-approximation.md) | Draft — runtime validation pending |
 | 15.8 | [Level Sets and Sensitivity Interpretation](15.08-level-sets-and-sensitivity-interpretation.md) | Draft — runtime validation pending |
 | 15.9 | [Chapter Project — Multi-Input Valuation Sensitivity Engine](15.09-chapter-project-multi-input-valuation-sensitivity-engine.md) | Draft — runtime validation pending |
-| 15.10 | Exercises and Applied Problems | Planned |
+| 15.10 | [Exercises and Applied Problems](15.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 15.10 companion material
+
+- [Chapter 15 integrated assessment lab](code/section_15_10.py)
+- [Independent reference checks](code/check_section_15_10.py)
 
 ## Section 15.9 companion material
 
@@ -60,4 +65,4 @@
 - [Functions of several variables Python lab](code/section_15_01.py)
 - [Independent reference checks](code/check_section_15_01.py)
 
-**Next:** 15.10 — Exercises and Applied Problems.
+**Next:** Chapter 16, Section 16.1 — Objectives and Decision Variables.
