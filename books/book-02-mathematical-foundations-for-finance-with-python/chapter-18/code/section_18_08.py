@@ -44,6 +44,8 @@ def audited_bisection(function,lower,upper,atol=1e-10,rtol=1e-10,max_iter=100):
         return report(b,0.0,"endpoint_root",0,[],(b,b))
     if not opposite(fa,fb):
         raise ValueError("endpoints must have opposite signs")
+    if not math.isfinite(b-a) or not math.isfinite(atol+rtol*max(abs(a),abs(b))):
+        raise OverflowError("bracket width or tolerance exceeds float range")
     trace=[]
     for iteration in range(max_iter+1):
         width=b-a
