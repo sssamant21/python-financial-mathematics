@@ -1,6 +1,6 @@
 # Chapter 18 — Monte Carlo Simulation for Finance
 
-**Manuscript progress:** 9/15 sections published (60.00%).  
+**Manuscript progress:** 10/15 sections published (66.67%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -14,13 +14,13 @@
 | 18.7 | [Scenario Analysis](18.07-scenario-analysis.md) | Published draft; QA deferred |
 | 18.8 | [Monte Carlo Estimation](18.08-monte-carlo-estimation.md) | Published draft; QA deferred |
 | 18.9 | [Convergence](18.09-convergence.md) | Published draft; QA deferred |
-| 18.10 | Confidence and Simulation Error | Planned |
+| 18.10 | [Confidence and Simulation Error](18.10-confidence-and-simulation-error.md) | Published draft; QA deferred |
 | 18.11 | Portfolio Simulation | Planned |
 | 18.12 | Risk Simulation | Planned |
 | 18.13 | Computational Performance | Planned |
 | 18.14 | Chapter Project — Monte Carlo Financial Simulator | Planned |
 | 18.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 18.10 — Confidence and Simulation Error.
+**Next:** 18.11 — Portfolio Simulation.
 
 **Chapter status:** Manuscript in progress; not certified.
