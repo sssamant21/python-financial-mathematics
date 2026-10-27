@@ -1,6 +1,6 @@
 # Chapter 20 — Testing and Validating Mathematical Models
 
-**Status:** 6/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
+**Status:** 7/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -10,10 +10,15 @@
 | 20.4 | [Boundary and Invalid Inputs](20.04-boundary-and-invalid-inputs.md) | Draft — runtime validation pending |
 | 20.5 | [Floating-Point Tolerances](20.05-floating-point-tolerances.md) | Draft — runtime validation pending |
 | 20.6 | [Property and Metamorphic Checks](20.06-property-and-metamorphic-checks.md) | Draft — runtime validation pending |
-| 20.7 | Reproducibility and Evidence | Planned |
+| 20.7 | [Reproducibility and Evidence](20.07-reproducibility-and-evidence.md) | Draft — runtime validation pending |
 | 20.8 | Review Findings and Release Gates | Planned |
 | 20.9 | Chapter Project — Mathematical Model Validation Dossier | Planned |
 | 20.10 | Exercises and Applied Problems | Planned |
+
+## Section 20.7 companion material
+
+- [Evidence manifest Python lab](code/section_20_07.py)
+- [Independent reference checks](code/check_section_20_07.py)
 
 ## Section 20.6 companion material
 
@@ -45,4 +50,4 @@
 - [Model verification Python lab](code/section_20_01.py)
 - [Independent reference checks](code/check_section_20_01.py)
 
-**Next:** 20.7 — Reproducibility and Evidence.
+**Next:** 20.8 — Review Findings and Release Gates.
