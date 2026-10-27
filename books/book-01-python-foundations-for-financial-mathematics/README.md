@@ -485,5 +485,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [18.8 — Monte Carlo Estimation](chapter-18/18.08-monte-carlo-estimation.md) — Published draft; independent QA deferred.
 - [18.9 — Convergence](chapter-18/18.09-convergence.md) — Published draft; independent QA deferred.
 - [18.10 — Confidence and Simulation Error](chapter-18/18.10-confidence-and-simulation-error.md) — Published draft; independent QA deferred.
+- [18.11 — Portfolio Simulation](chapter-18/18.11-portfolio-simulation.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 10/15 sections (66.67%). **Next:** 18.11 — Portfolio Simulation. [Chapter 18 progress index](chapter-18/README.md).
+**Manuscript progress:** 11/15 sections (73.33%). **Next:** 18.12 — Risk Simulation. [Chapter 18 progress index](chapter-18/README.md).
