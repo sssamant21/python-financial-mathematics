@@ -67,4 +67,4 @@
 - [Eigenpair Python lab](code/section_14_01.py)
 - [Independent reference checks](code/check_section_14_01.py)
 
-**Next:** Chapter 15, Section 15.1 (see Master TOC for approved title).
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
