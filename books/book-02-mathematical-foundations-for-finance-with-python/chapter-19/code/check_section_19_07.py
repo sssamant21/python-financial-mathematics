@@ -14,6 +14,10 @@ def rejects(exc,fn,*args,**kwargs):
     raise AssertionError("expected "+exc.__name__)
 
 def run():
+    near(account(100,5e-324,100,0.5),50)
+    near(depletion_time(0.5,5e-324,1),0.5)
+    simultaneous=simulate_jumps(100,0,50,2,[(2,1000)])
+    assert simultaneous["status"]=="completed" and simultaneous["final_balance"]==1000
     a=assessment()
     t=-math.log(0.6)/0.04
     near(a["depletion_positive_rate"],t)
