@@ -67,4 +67,4 @@
 - [Linear combinations and span lab](code/section_13_01.py)
 - [Independent reference checks](code/check_section_13_01.py)
 
-**Next:** Chapter 14, Section 14.1 — Eigenvalues and Eigenvectors.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
