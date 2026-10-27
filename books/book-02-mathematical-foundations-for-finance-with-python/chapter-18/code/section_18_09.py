@@ -52,6 +52,8 @@ def solve(f,df,lower,upper,atol=1e-12,rtol=1e-12,max_iter=200):
         return report(b,0.0,"endpoint_root",0,(b,b))
     if not opposite(fa,fb):
         raise ValueError("initial bracket must have opposite signs")
+    if not math.isfinite(b-a) or not math.isfinite(atol+rtol*max(abs(a),abs(b))):
+        raise OverflowError("bracket width or tolerance exceeds float range")
     x=a+(b-a)/2
     for k in range(max_iter+1):
         width=b-a
