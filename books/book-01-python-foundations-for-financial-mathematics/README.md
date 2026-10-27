@@ -507,5 +507,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.10 — Currency and Unit Normalization](chapter-19/19.10-currency-and-unit-normalization.md) — Published draft; independent QA deferred.
 - [19.11 — Data Quality Checks](chapter-19/19.11-data-quality-checks.md) — Published draft; independent QA deferred.
 - [19.12 — Reproducible Data Pipelines](chapter-19/19.12-reproducible-data-pipelines.md) — Published draft; independent QA deferred.
+- [19.13 — Avoiding Look-Ahead and Data Leakage](chapter-19/19.13-avoiding-look-ahead-and-data-leakage.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 12/15 sections (80.00%). **Next:** 19.13 — Avoiding Look-Ahead and Data Leakage. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 13/15 sections (86.67%). **Next:** 19.14 — Chapter Project — Financial Data Pipeline. [Chapter 19 progress index](chapter-19/README.md).
