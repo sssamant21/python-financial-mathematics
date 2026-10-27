@@ -19,7 +19,7 @@ def finite(value,name):
 
 def validate_caps(cap1,cap2):
     u,v=finite(cap1,"cap1"),finite(cap2,"cap2")
-    if not (0<=u<=1 and 0<=v<=1) or u+v<1-1e-14:
+    if not (0<=u<=1 and 0<=v<=1) or 1.0-v>u:
         raise ValueError("infeasible or invalid asset caps")
     return u,v
 
@@ -62,7 +62,7 @@ def optimize(cap1=0.6,cap2=1.0):
     u,v=validate_caps(cap1,cap2)
     lo=max(0.0,1-v)
     hi=min(1.0,u)
-    if lo>hi+1e-14:
+    if lo>hi:
         raise ValueError("empty feasible interval")
     x=min(hi,max(lo,BASELINE))
     y=1-x
