@@ -496,5 +496,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 ## Chapter 19 — Financial Data Engineering Foundations
 
 - [19.1 — Financial Data Sources and Formats](chapter-19/19.01-financial-data-sources-and-formats.md) — Published draft; independent QA deferred.
+- [19.2 — CSV and Text Data](chapter-19/19.02-csv-and-text-data.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 1/15 sections (6.67%). **Next:** 19.2 — CSV and Text Data. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 2/15 sections (13.33%). **Next:** 19.3 — JSON Data. [Chapter 19 progress index](chapter-19/README.md).
