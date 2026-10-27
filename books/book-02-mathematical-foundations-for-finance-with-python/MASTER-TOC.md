@@ -252,7 +252,7 @@ Published sections link to their manuscript files; planned sections remain plain
 16.4 — [Convex Sets and Convex Objectives](chapter-16/16.04-convex-sets-and-convex-objectives.md)  
 16.5 — [Gradient Descent](chapter-16/16.05-gradient-descent.md)  
 16.6 — [Newton and Quasi-Newton Methods](chapter-16/16.06-newton-and-quasi-newton-methods.md)  
-16.7 — Scaling, Initial Guesses, and Local Methods  
+16.7 — [Scaling, Initial Guesses, and Local Methods](chapter-16/16.07-scaling-initial-guesses-and-local-methods.md)  
 16.8 — Calibration Residuals and Validation  
 16.9 — Chapter Project — Deterministic Calibration Optimizer  
 16.10 — Exercises and Applied Problems
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 16.7 — Scaling, Initial Guesses, and Local Methods.
+**Next manuscript section:** 16.8 — Calibration Residuals and Validation.
