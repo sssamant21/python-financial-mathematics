@@ -32,6 +32,8 @@ def bisection(function,lower,upper,atol=1e-12,rtol=1e-12,max_iter=200):
                 "residual":0.0,"iterations":0,"status":"endpoint_root"}
     if not opposite_signs(fa,fb):
         raise ValueError("endpoints must have opposite function signs")
+    if not math.isfinite(b-a) or not math.isfinite(atol+rtol*max(abs(a),abs(b))):
+        raise OverflowError("bracket width or tolerance exceeds float range")
     for iteration in range(max_iter+1):
         midpoint=a+(b-a)/2
         if midpoint==a or midpoint==b:
