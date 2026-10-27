@@ -553,5 +553,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.15 — Testing and Verification](chapter-21/21.15-testing-and-verification.md) — Published draft; independent QA deferred.
 - [21.16 — Documentation and Reproducibility](chapter-21/21.16-documentation-and-reproducibility.md) — Published draft; independent QA deferred.
 - [21.17 — Final Integrated Case Study](chapter-21/21.17-final-integrated-case-study.md) — Published draft; independent QA deferred.
+- [21.18 — Further Study and Transition to Book 2](chapter-21/21.18-further-study-and-transition-to-book-2.md) — Published draft; independent QA pending.
 
-**Manuscript progress:** 17/18 sections (94.44%). **Next:** 21.18 — Further Study and Transition to Book 2. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 18/18 sections (100%); Chapter 21 manuscript complete. **Book 1:** all 322 locked sections drafted; comprehensive validation and review pending. [Chapter 21 progress index](chapter-21/README.md).
