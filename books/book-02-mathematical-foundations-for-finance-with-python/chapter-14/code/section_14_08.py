@@ -24,8 +24,9 @@ def frobenius_error(matrix,reconstruction):
         raise ValueError("matrix must be nonempty and rectangular")
     if len(rows)!=len(approx) or any(len(a)!=len(b) for a,b in zip(rows,approx)):
         raise ValueError("matrix dimensions must match")
-    return finite(math.sqrt(math.fsum((a-b)**2 for row_a,row_b in zip(rows,approx)
-                                      for a,b in zip(row_a,row_b))),"Frobenius error")
+    # hypot scales its inputs to avoid avoidable overflow in squaring.
+    return finite(math.hypot(*(a-b for row_a,row_b in zip(rows,approx)
+                               for a,b in zip(row_a,row_b))),"Frobenius error")
 
 def assessment():
     root=math.sqrt(2)
