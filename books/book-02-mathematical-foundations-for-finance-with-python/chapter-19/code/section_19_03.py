@@ -20,7 +20,9 @@ def account(initial,rate,flow,years):
         raise ValueError("years must be nonnegative")
     if r==0:
         return finite(a+u*t,"balance")
-    return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
+    exponent=r*t
+    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
+    return finite(a*math.exp(exponent)+u*factor,"balance")
 
 def depletion_time(initial,rate,withdrawal):
     a,r,w=(finite(v,n) for v,n in
@@ -31,7 +33,10 @@ def depletion_time(initial,rate,withdrawal):
         return a/w
     if w<=r*a:
         return None
-    return finite(math.log(w/(w-r*a))/r,"depletion time")
+    ratio=r*a/w
+    if ratio==0:
+        return finite(a/w,"depletion time")
+    return finite(-math.log1p(-ratio)/r,"depletion time")
 
 def variable_rate_no_flow(initial,base,slope,years):
     a,r,b,t=(finite(v,n) for v,n in
