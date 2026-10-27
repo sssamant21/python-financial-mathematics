@@ -259,7 +259,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 17 — Constrained Optimization
 
-17.1 — Feasible Sets and Constraint Types  
+17.1 — [Feasible Sets and Constraint Types](chapter-17/17.01-feasible-sets-and-constraint-types.md)  
 17.2 — Equality Constraints and Lagrange Multipliers  
 17.3 — Inequality Constraints and KKT Conditions  
 17.4 — Active Constraints and Complementarity  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 17.1 — Feasible Sets and Constraint Types.
+**Next manuscript section:** 17.2 — Equality Constraints and Lagrange Multipliers.
