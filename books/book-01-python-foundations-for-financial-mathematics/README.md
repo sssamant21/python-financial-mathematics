@@ -476,5 +476,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 ## Chapter 18 — Monte Carlo Simulation for Finance
 
 - [18.1 — Simulation Fundamentals](chapter-18/18.01-simulation-fundamentals.md) — Published draft; independent QA deferred.
+- [18.2 — Random Number Generators](chapter-18/18.02-random-number-generators.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 1/15 sections (6.67%). **Next:** 18.2 — Random Number Generators. [Chapter 18 progress index](chapter-18/README.md).
+**Manuscript progress:** 2/15 sections (13.33%). **Next:** 18.3 — Reproducible Simulation. [Chapter 18 progress index](chapter-18/README.md).
