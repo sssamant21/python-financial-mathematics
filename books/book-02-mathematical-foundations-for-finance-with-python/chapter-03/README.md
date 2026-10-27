@@ -72,6 +72,6 @@ Develop mathematical functions, their domains, ranges, graphs, compositions, inv
 
 Runtime execution and editorial review are pending for Sections 3.1–3.10.
 
-**Next:** Chapter 04, Section 4.1 (per Master TOC).
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
 
 [Book index](../README.md) · [Master TOC](../MASTER-TOC.md)
