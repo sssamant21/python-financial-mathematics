@@ -52,6 +52,9 @@ def decimal_cents(text):
 
 def assessment():
     x=1e-12
+    naive=0.0
+    for value in (1e16,1.0,-1e16):
+        naive += value
     return {"machine_epsilon":sys.float_info.epsilon,
             "unit_roundoff":2**-53,
             "decimal_float_example":0.1+0.2,
@@ -64,7 +67,7 @@ def assessment():
             "discount_change":discount_change(1e-12,12),
             "annuity_pv":annuity_present_value(100,0.05,12),
             "zero_rate_annuity_pv":annuity_present_value(100,0,12),
-            "naive_sum":sum([1e16,1.0,-1e16]),
+            "naive_sum":naive,
             "accurate_sum":math.fsum([1e16,1.0,-1e16]),
             "decimal_cents":decimal_cents("907.025"),
             "runtime_certified":False,
