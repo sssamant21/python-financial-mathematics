@@ -65,4 +65,4 @@
 - [Differential models Python lab](code/section_19_01.py)
 - [Independent reference checks](code/check_section_19_01.py)
 
-**Next:** Chapter 20, Section 20.1 — Model Validation and Software Verification.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
