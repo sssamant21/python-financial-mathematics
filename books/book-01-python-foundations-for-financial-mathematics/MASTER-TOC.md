@@ -425,4 +425,4 @@ Any structural change requires:
 
 **Chapter 17 publication status:** 17.1–17.15 published as drafts (15/15); Chapter 17 manuscript complete. Next locked manuscript section: 18.1 — Simulation Fundamentals. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 18 publication status:** 18.1–18.10 published as drafts (10/15). Next locked manuscript section: 18.11 — Portfolio Simulation. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 18 publication status:** 18.1–18.11 published as drafts (11/15). Next locked manuscript section: 18.12 — Risk Simulation. Comprehensive QA deferred until all Book 1 chapters are written.
