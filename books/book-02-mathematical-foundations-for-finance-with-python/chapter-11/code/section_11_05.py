@@ -60,7 +60,19 @@ def cosine(left,right):
     return min(1.0,max(-1.0,finite(value,"cosine")))
 
 def angle_degrees(left,right):
-    return math.degrees(math.acos(cosine(left,right)))
+    # Validate types, labels, units and nonzero vectors via the shared contract.
+    cosine(left,right)
+    aligned=right.align(left.labels)
+    ax=max(abs(v) for v in left.values)
+    ay=max(abs(v) for v in aligned.values)
+    x=tuple(v/ax for v in left.values)
+    y=tuple(v/ay for v in aligned.values)
+    nx,ny=math.hypot(*x),math.hypot(*y)
+    u=tuple(v/nx for v in x)
+    v=tuple(w/ny for w in y)
+    # atan2 of sums/differences is stable near zero and 180 degrees.
+    return math.degrees(2*math.atan2(math.hypot(*(a-b for a,b in zip(u,v))),
+                                     math.hypot(*(a+b for a,b in zip(u,v)))))
 
 def orthogonal(left,right,tolerance=1e-12):
     tolerance=finite(tolerance,"tolerance")
