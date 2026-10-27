@@ -73,4 +73,4 @@
 
 Draft source; runtime and independent review pending.
 
-**Next:** Chapter 13, Section 13.1 (see the Book 02 Master TOC).
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
