@@ -469,5 +469,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [17.12 — Convergence and Error](chapter-17/17.12-convergence-and-error.md) — Published draft; independent QA deferred.
 - [17.13 — Validation of Numerical Results](chapter-17/17.13-validation-of-numerical-results.md) — Published draft; independent QA deferred.
 - [17.14 — Chapter Project — Financial Numerical Solver](chapter-17/17.14-chapter-project-financial-numerical-solver.md) — Published draft; independent QA deferred.
+- [17.15 — Exercises and Applied Problems](chapter-17/17.15-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 14/15 sections (93.33%). **Next:** 17.15 — Exercises and Applied Problems. [Chapter 17 progress index](chapter-17/README.md).
+**Manuscript progress:** 15/15 sections (100%); manuscript complete, comprehensive QA deferred. **Next:** Chapter 18, Section 18.1 — Simulation Fundamentals. [Chapter 17 progress index](chapter-17/README.md).
