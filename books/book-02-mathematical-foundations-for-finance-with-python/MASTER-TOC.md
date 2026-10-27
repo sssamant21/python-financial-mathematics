@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–1.15, 2.1–2.10, and 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10 and 12.1–12.10 and 13.1–13.10 and 14.1–14.10 published as Draft. Runtime validation remains pending for Sections 2.8–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, and 7.1–7.10; later sections are Planned.
+**Manuscript status:** Sections 1.1–20.4 published as Draft. Comprehensive runtime validation and independent review remain pending.
 
 ## Purpose and Prerequisites
 
@@ -301,7 +301,7 @@ Published sections link to their manuscript files; planned sections remain plain
 20.1 — [Model Validation and Software Verification](chapter-20/20.01-model-validation-and-software-verification.md)  
 20.2 — [Known-Value and Analytic Benchmarks](chapter-20/20.02-known-value-and-analytic-benchmarks.md)  
 20.3 — [Financial and Mathematical Invariants](chapter-20/20.03-financial-and-mathematical-invariants.md)  
-20.4 — Boundary and Invalid Inputs  
+20.4 — [Boundary and Invalid Inputs](chapter-20/20.04-boundary-and-invalid-inputs.md)  
 20.5 — Floating-Point Tolerances  
 20.6 — Property and Metamorphic Checks  
 20.7 — Reproducibility and Evidence  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 20.4 — Boundary and Invalid Inputs.
+**Next manuscript section:** 20.5 — Floating-Point Tolerances.
