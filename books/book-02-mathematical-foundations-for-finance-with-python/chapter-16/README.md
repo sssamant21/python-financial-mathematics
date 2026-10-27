@@ -65,4 +65,4 @@
 - [Objectives and decision variables Python lab](code/section_16_01.py)
 - [Independent reference checks](code/check_section_16_01.py)
 
-**Next:** Chapter 17, Section 17.1 — Feasible Sets and Constraint Types.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
