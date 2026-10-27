@@ -424,3 +424,5 @@ Any structural change requires:
 **Chapter 16 publication status:** 16.1–16.16 published as drafts (16/16); Chapter 16 manuscript complete. Next: Chapter 17, Section 17.1, per locked Master TOC. Comprehensive QA deferred until all Book 1 chapters are written.
 
 **Chapter 17 publication status:** 17.1–17.15 published as drafts (15/15); Chapter 17 manuscript complete. Next locked manuscript section: 18.1 — Simulation Fundamentals. Comprehensive QA deferred until all Book 1 chapters are written.
+
+**Chapter 18 publication status:** 18.1 published as a draft (1/15). Next locked manuscript section: 18.2 — Random Number Generators. Comprehensive QA deferred until all Book 1 chapters are written.
