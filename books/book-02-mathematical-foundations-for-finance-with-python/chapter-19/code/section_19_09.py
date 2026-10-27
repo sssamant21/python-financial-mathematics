@@ -20,7 +20,9 @@ def transition(balance,rate,flow,years):
         raise ValueError("years must be nonnegative")
     if r==0:
         return finite(a+u*t,"balance")
-    return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
+    exponent=r*t
+    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
+    return finite(a*math.exp(exponent)+u*factor,"balance")
 
 def depletion_time(balance,rate,flow):
     a,r,u=finite(balance,"balance"),finite(rate,"rate"),finite(flow,"flow")
@@ -34,6 +36,8 @@ def depletion_time(balance,rate,flow):
     if r==0:
         return a/w
     ratio=r*a/w
+    if ratio==0:
+        return finite(a/w,"depletion time")
     if ratio>=1:
         return None
     return finite(-math.log1p(-ratio)/r,"depletion time")
