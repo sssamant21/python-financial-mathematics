@@ -65,6 +65,11 @@ def centered_financial_column(rate,years,column,step=1e-5):
         raise ValueError("step must be positive")
     if type(column) is not int or column not in (0,1):
         raise ValueError("column must be 0 or 1")
+    center=r if column==0 else t
+    if not math.isfinite(center+h) or not math.isfinite(center-h) or center+h==center or center-h==center:
+        raise ValueError("step must produce finite distinct perturbations")
+    if not math.isfinite(2*h):
+        raise OverflowError("finite-difference denominator exceeds float range")
     if column==0:
         plus=financial_outputs(r+h,t)
         minus=financial_outputs(r-h,t)
