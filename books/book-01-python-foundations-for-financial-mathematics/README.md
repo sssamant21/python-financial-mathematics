@@ -509,5 +509,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.12 — Reproducible Data Pipelines](chapter-19/19.12-reproducible-data-pipelines.md) — Published draft; independent QA deferred.
 - [19.13 — Avoiding Look-Ahead and Data Leakage](chapter-19/19.13-avoiding-look-ahead-and-data-leakage.md) — Published draft; independent QA deferred.
 - [19.14 — Chapter Project — Financial Data Pipeline](chapter-19/19.14-chapter-project-financial-data-pipeline.md) — Published draft; independent QA deferred.
+- [19.15 — Exercises and Applied Problems](chapter-19/19.15-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 14/15 sections (93.33%). **Next:** 19.15 — Exercises and Applied Problems. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 15/15 sections (100%); manuscript complete, comprehensive QA deferred. **Next:** Chapter 20, Section 20.1 — Why Financial Code Must Be Tested. [Chapter 19 progress index](chapter-19/README.md).
