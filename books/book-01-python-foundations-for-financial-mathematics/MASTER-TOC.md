@@ -429,4 +429,4 @@ Any structural change requires:
 
 **Chapter 19 publication status:** 19.1–19.15 published as drafts (15/15); Chapter 19 manuscript complete. Next locked manuscript section: 20.1 — Why Financial Code Must Be Tested. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 20 publication status:** 20.1–20.7 published as drafts (7/16). Next locked manuscript section: 20.8 — Input Validation. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 20 publication status:** 20.1–20.8 published as drafts (8/16). Next locked manuscript section: 20.9 — Exception Handling. Comprehensive QA deferred until all Book 1 chapters are written.
