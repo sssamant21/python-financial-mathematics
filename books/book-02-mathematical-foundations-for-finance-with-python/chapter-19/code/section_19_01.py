@@ -25,7 +25,9 @@ def account(initial,rate,flow,years):
         raise ValueError("years must be nonnegative")
     if r==0:
         return finite(a+u*t,"balance")
-    return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
+    exponent=r*t
+    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
+    return finite(a*math.exp(exponent)+u*factor,"balance")
 
 def continuous_from_effective(rate):
     r=finite(rate,"effective rate")
