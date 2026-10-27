@@ -488,5 +488,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [18.11 — Portfolio Simulation](chapter-18/18.11-portfolio-simulation.md) — Published draft; independent QA deferred.
 - [18.12 — Risk Simulation](chapter-18/18.12-risk-simulation.md) — Published draft; independent QA deferred.
 - [18.13 — Computational Performance](chapter-18/18.13-computational-performance.md) — Published draft; independent QA deferred.
+- [18.14 — Chapter Project — Monte Carlo Financial Simulator](chapter-18/18.14-chapter-project-monte-carlo-financial-simulator.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 13/15 sections (86.67%). **Next:** 18.14 — Chapter Project — Monte Carlo Financial Simulator. [Chapter 18 progress index](chapter-18/README.md).
+**Manuscript progress:** 14/15 sections (93.33%). **Next:** 18.15 — Exercises and Applied Problems. [Chapter 18 progress index](chapter-18/README.md).
