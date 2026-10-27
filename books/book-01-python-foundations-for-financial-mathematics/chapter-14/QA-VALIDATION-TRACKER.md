@@ -4,41 +4,41 @@
 **Chapter:** 14 — Probability for Financial Mathematics  
 **Manuscript:** 17/17 sections published as drafts  
 **Certification:** **NOT CERTIFIED**  
-**Audit phase:** Phase 1 — GitHub manuscript inventory and structural review  
+**Audit phase:** Scoped source-extracted reference runtime complete; independent mathematical and editorial review pending.  
 **Scope:** Sections 14.01–14.17 only. Book 2 is out of scope.
 
-## Verified structural observations
+## Initial structural observations (historical)
 
 - All 17 expected section Markdown files were retrieved from the GitHub default branch.
 - Each section includes at least one Python fenced code block and exactly 12 `def test_` methods in the fetched manuscript.
 - Total reference test methods located: **204**.
 - Each section's Markdown has an even number of triple-backtick fence markers in this initial structural scan.
 - The Chapter 14 index lists all 17 sections and indicates 100% manuscript publication.
-- These are **static inventory findings only**; Python syntax, runtime behavior, mathematical correctness, and link targets have **not** been independently verified by this scan.
+- These were **static inventory findings only**. A later scoped runtime run is recorded below; mathematical correctness and link targets remain outside that run.
 
 ## Section-by-section QA matrix
 
 | Section | Manuscript | Reference tests | Python runtime | Numerical/editorial review | Acceptance |
 |---|---|---|---|---|---|
-| 14.01 | Located | 12/12 passed in transcribed local reference implementation | Initial smoke PASS; source fidelity pending | Pending | NOT CERTIFIED |
-| 14.02 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.03 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.04 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.05 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.06 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.07 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.08 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.09 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.10 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.11 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.12 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.13 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.14 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.15 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.16 | Located | 12 test methods found | Not executed | Pending | Pending |
-| 14.17 | Located | 12 test methods found | Not executed | Pending | Pending |
+| 14.01 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.02 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.03 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.04 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.05 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.06 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.07 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.08 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.09 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.10 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.11 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.12 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.13 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.14 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.15 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.16 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
+| 14.17 | Located | 12/12 passed in scoped run | PASS — extracted reference suite, Python 3.12/Linux | Pending | NOT CERTIFIED |
 
-**Interpretation:** For 14.01, 12/12 tests passed on a manually transcribed reference implementation in Python 3.13.5; byte-for-byte source fidelity to the published Markdown is still unverified. The other 16 sections have only been statically inventoried. All sections remain **NOT CERTIFIED** until independent source-fidelity runtime and editorial evidence is collected. See [14.01 initial runtime evidence](qa-evidence-14.01.md).
+**Interpretation:** All 17 reference unittest blocks were extracted from the pinned manuscripts and run with Python's unittest module: 204 tests passed in the recorded Linux/Python 3.12 environment, including Section 14.03 after its standalone exit-status fix. This is scoped runtime evidence, not comprehensive validation or certification. The earlier manually transcribed 14.01 smoke remains historical evidence; see [14.01 initial runtime evidence](qa-evidence-14.01.md) and the [new Chapter 14 runtime record](../qa/chapter-14-runtime/README.md).
 
 ## Phase 2 — Python extraction and execution
 
@@ -81,18 +81,17 @@ Do not label a section "runtime validated" if its tests were only read or counte
 - Obtain independent technical, mathematical/editorial, and application-owner signoff.
 - Mark **CERTIFIED** only when all gates have retained evidence and approvals.
 
-## Known issues identified during Phase 1
+## Known issues identified during Phase 1 (historical)
 
 1. The root README contained unrelated "Next" references for earlier chapters that were changed by overly broad progress-index replacements. Restore those references without changing Book 2 or manuscript content.
 2. The Book 1 README displayed "Chapter 14 status: In progress" despite 17/17 manuscript publication. Clarify "manuscript complete; independent QA pending."
-3. The earlier publication flow reported reference tests but did not retain independent Python runtime execution evidence for Chapter 14. The tests therefore remain unverified.
+3. The earlier publication flow reported reference tests but did not retain independent Python runtime execution evidence for Chapter 14. At that stage the tests remained unverified; the later scoped runtime record above now provides execution evidence.
 
 ## Current decision
 
-**Manuscript publication: COMPLETE (17/17).**  
-**Structural inventory: COMPLETE (17/17).**  
-**Independent Python runtime: IN PROGRESS (1/17 initial smoke-tested; 0/17 source-fidelity validated or independently certified).**  
-**Mathematical/editorial review: PENDING.**  
-**Enterprise or academic certification: NOT CERTIFIED.**
+**Manuscript publication:** COMPLETE (17/17).  
+**Reference runtime:** PASS — 17/17 extracted suites, 204 tests in the recorded environment; broader labs and platforms pending.  
+**Mathematical, data and editorial review:** PENDING.  
+**Enterprise or academic certification:** NOT CERTIFIED.
 
-**Next action:** Establish source-fidelity execution for 14.01, then extract and execute 14.02 onward, recording results and failures section by section.
+**Next action:** Independent mathematical and editorial review and additional lab, platform and source checks; continue Book 1's runtime sequence with Chapter 13.

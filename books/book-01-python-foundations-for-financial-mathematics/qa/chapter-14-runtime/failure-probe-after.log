@@ -1,0 +1,29 @@
+test_01_total (__main__.ProbabilityRulesTests.test_01_total) ... ok
+test_02_empty (__main__.ProbabilityRulesTests.test_02_empty) ... ok
+test_03_complement (__main__.ProbabilityRulesTests.test_03_complement) ... ok
+test_04_stress (__main__.ProbabilityRulesTests.test_04_stress) ... ok
+test_05_default (__main__.ProbabilityRulesTests.test_05_default) ... ok
+test_06_intersection (__main__.ProbabilityRulesTests.test_06_intersection) ... ok
+test_07_union (__main__.ProbabilityRulesTests.test_07_union) ... ok
+test_08_conditional (__main__.ProbabilityRulesTests.test_08_conditional) ... ok
+test_09_dependent (__main__.ProbabilityRulesTests.test_09_dependent) ... ok
+test_10_disjoint_addition (__main__.ProbabilityRulesTests.test_10_disjoint_addition) ... ok
+test_11_invalid_weights (__main__.ProbabilityRulesTests.test_11_invalid_weights) ... ok
+test_12_invalid_events (__main__.ProbabilityRulesTests.test_12_invalid_events) ... ok
+unittest.case.FunctionTestCase (<lambda>) ... FAIL
+
+======================================================================
+FAIL: unittest.case.FunctionTestCase (<lambda>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/book1_ch14_01_17/failure_probe_after.py", line 72, in <lambda>
+    suite.addTest(unittest.FunctionTestCase(lambda: (_ for _ in ()).throw(AssertionError("intentional failure probe"))))
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/book1_ch14_01_17/failure_probe_after.py", line 72, in <genexpr>
+    suite.addTest(unittest.FunctionTestCase(lambda: (_ for _ in ()).throw(AssertionError("intentional failure probe"))))
+AssertionError: intentional failure probe
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+FAILED (failures=1)
