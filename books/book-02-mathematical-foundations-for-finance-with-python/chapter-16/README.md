@@ -1,6 +1,6 @@
 # Chapter 16 — Unconstrained Optimization and Convexity
 
-**Status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 10/10 sections published as Draft — manuscript complete. Runtime validation and independent editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -13,7 +13,12 @@
 | 16.7 | [Scaling, Initial Guesses, and Local Methods](16.07-scaling-initial-guesses-and-local-methods.md) | Draft — runtime validation pending |
 | 16.8 | [Calibration Residuals and Validation](16.08-calibration-residuals-and-validation.md) | Draft — runtime validation pending |
 | 16.9 | [Chapter Project — Deterministic Calibration Optimizer](16.09-chapter-project-deterministic-calibration-optimizer.md) | Draft — runtime validation pending |
-| 16.10 | Exercises and Applied Problems | Planned |
+| 16.10 | [Exercises and Applied Problems](16.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 16.10 companion material
+
+- [Chapter exercises Python lab](code/section_16_10.py)
+- [Independent reference checks](code/check_section_16_10.py)
 
 ## Section 16.9 companion material
 
@@ -60,4 +65,4 @@
 - [Objectives and decision variables Python lab](code/section_16_01.py)
 - [Independent reference checks](code/check_section_16_01.py)
 
-**Next:** 16.10 — Exercises and Applied Problems.
+**Next:** Chapter 17, Section 17.1 — Feasible Sets and Constraint Types.
