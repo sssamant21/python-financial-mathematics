@@ -1,6 +1,7 @@
 """Floating-point comparison examples; educational draft."""
 import math
 from numbers import Real
+from fractions import Fraction
 
 def _finite(x, name):
     if isinstance(x, bool) or not isinstance(x, Real):
@@ -24,11 +25,10 @@ def close_to_reference(actual, reference, *, atol, rtol):
     atol, rtol = _finite(atol, "atol"), _finite(rtol, "rtol")
     if atol < 0 or rtol < 0:
         raise ValueError("tolerances must be nonnegative")
-    # Avoid overflow in subtraction and threshold calculation by scaling.
-    scale = max(abs(a), abs(b), atol)
-    if scale == 0:
-        return True
-    return abs(a / scale - b / scale) <= atol / scale + rtol * abs(b / scale)
+    # Evaluate the rule exactly for the represented binary floats. This avoids
+    # overflow and extra rounding at a tolerance boundary; it is not a fast path.
+    a, b, atol, rtol = map(Fraction.from_float, (a, b, atol, rtol))
+    return abs(a - b) <= atol + rtol * abs(b)
 
 if __name__ == "__main__":
     print("0.1 + 0.2:", 0.1 + 0.2)
