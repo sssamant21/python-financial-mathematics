@@ -1,0 +1,284 @@
+=== Section 18.1 ===
+{'count': 10000, 'mean': 99.98, 'sample_sd': 10.000480036483056, 'standard_error': 0.10000480036483056, 'loss_frequency': 0.501}
+test_all_down (__main__.SimulationTests.test_all_down) ... ok
+test_all_up (__main__.SimulationTests.test_all_up) ... ok
+test_bad_count (__main__.SimulationTests.test_bad_count) ... ok
+test_bad_probability (__main__.SimulationTests.test_bad_probability) ... ok
+test_bad_rate (__main__.SimulationTests.test_bad_rate) ... ok
+test_bad_return (__main__.SimulationTests.test_bad_return) ... ok
+test_constant_standard_error (__main__.SimulationTests.test_constant_standard_error) ... ok
+test_discount (__main__.SimulationTests.test_discount) ... ok
+test_known_sample (__main__.SimulationTests.test_known_sample) ... ok
+test_seed_reproducibility (__main__.SimulationTests.test_seed_reproducibility) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 18.2 ===
+{'count': 10000, 'mean': 101.914, 'sample_variance': 96.34623862386252, 'standard_error': 0.09815611984174115}
+test_bad_probability (__main__.GeneratorTests.test_bad_probability) ... ok
+test_bad_return (__main__.GeneratorTests.test_bad_return) ... ok
+test_bad_sd (__main__.GeneratorTests.test_bad_sd) ... ok
+test_known_summary (__main__.GeneratorTests.test_known_summary) ... ok
+test_normal_zero_sd (__main__.GeneratorTests.test_normal_zero_sd) ... ok
+test_probability_one (__main__.GeneratorTests.test_probability_one) ... ok
+test_probability_zero (__main__.GeneratorTests.test_probability_zero) ... ok
+test_range (__main__.GeneratorTests.test_range) ... ok
+test_replay (__main__.GeneratorTests.test_replay) ... ok
+test_terminal_value (__main__.GeneratorTests.test_terminal_value) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+=== Section 18.3 ===
+{"count":10000,"down_value":90,"generator":"random.Random / Mersenne Twister","initial_value":100,"mean":101.914,"model":"two-outcome-terminal-value","python_implementation":"CPython","python_version":"3.12.14","schema_version":1,"seed":42,"up_count":5957,"up_probability":0.6,"up_value":110}
+manifest_sha256: e01929a9367342d652ee617ccc88fb4b30bae184f179c18e6e494effe840d62e
+test_all_down (__main__.ReproducibilityTests.test_all_down) ... ok
+test_all_up (__main__.ReproducibilityTests.test_all_up) ... ok
+test_canonical_key_order (__main__.ReproducibilityTests.test_canonical_key_order) ... ok
+test_digest_changes (__main__.ReproducibilityTests.test_digest_changes) ... ok
+test_digest_replay (__main__.ReproducibilityTests.test_digest_replay) ... ok
+test_invalid_count (__main__.ReproducibilityTests.test_invalid_count) ... ok
+test_invalid_probability (__main__.ReproducibilityTests.test_invalid_probability) ... ok
+test_replay (__main__.ReproducibilityTests.test_replay) ... ok
+test_tolerance_fail (__main__.ReproducibilityTests.test_tolerance_fail) ... ok
+test_tolerance_pass (__main__.ReproducibilityTests.test_tolerance_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 18.4 ===
+{'count': 10000, 'mean_terminal': 99.96, 'mean_profit': -0.04000000000000625, 'standard_error_mean': 0.1406051812050259, 'loss_count': 2481, 'loss_frequency': 0.2481}
+test_bad_count (__main__.OutcomeTests.test_bad_count) ... ok
+test_bad_fee (__main__.OutcomeTests.test_bad_fee) ... ok
+test_bad_rate (__main__.OutcomeTests.test_bad_rate) ... ok
+test_constant_sample (__main__.OutcomeTests.test_constant_sample) ... ok
+test_discount (__main__.OutcomeTests.test_discount) ... ok
+test_fee (__main__.OutcomeTests.test_fee) ... ok
+test_known_summary (__main__.OutcomeTests.test_known_summary) ... ok
+test_replay (__main__.OutcomeTests.test_replay) ... ok
+test_strict_threshold (__main__.OutcomeTests.test_strict_threshold) ... ok
+test_values_in_model (__main__.OutcomeTests.test_values_in_model) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 18.5 ===
+simulation: {'count': 10000, 'mean_terminal': 106.1983037392661, 'mean_simple_return': 0.06198303739266087, 'standard_error_terminal': 0.2180687518022898, 'loss_frequency': 0.4237}
+analytical mean: 106.18365465453596
+test_bad_count (__main__.ReturnTests.test_bad_count) ... ok
+test_bad_initial (__main__.ReturnTests.test_bad_initial) ... ok
+test_bad_volatility (__main__.ReturnTests.test_bad_volatility) ... ok
+test_constant_summary (__main__.ReturnTests.test_constant_summary) ... ok
+test_expectation (__main__.ReturnTests.test_expectation) ... ok
+test_loss_threshold (__main__.ReturnTests.test_loss_threshold) ... ok
+test_seed_replay (__main__.ReturnTests.test_seed_replay) ... ok
+test_terminal_known (__main__.ReturnTests.test_terminal_known) ... ok
+test_terminal_zero_return (__main__.ReturnTests.test_terminal_zero_return) ... ok
+test_zero_volatility (__main__.ReturnTests.test_zero_volatility) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 18.6 ===
+terminal summary: {'count': 10000, 'mean': 105.08580059649347, 'standard_error': 0.2125429648228984}
+analytical mean: 105.12710963760242
+test_barrier (__main__.PathTests.test_barrier) ... ok
+test_benchmark (__main__.PathTests.test_benchmark) ... ok
+test_initial (__main__.PathTests.test_initial) ... ok
+test_invalid_steps (__main__.PathTests.test_invalid_steps) ... ok
+test_invalid_volatility (__main__.PathTests.test_invalid_volatility) ... ok
+test_positive (__main__.PathTests.test_positive) ... ok
+test_replay (__main__.PathTests.test_replay) ... ok
+test_shape (__main__.PathTests.test_shape) ... ok
+test_summary (__main__.PathTests.test_summary) ... ok
+test_zero_volatility (__main__.PathTests.test_zero_volatility) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK
+
+=== Section 18.7 ===
+scenarios: [{'baseline': 100.0, 'terminal': 103.8, 'pnl': 3.799999999999997}, {'baseline': 100.0, 'terminal': 84.0, 'pnl': -16.0}, {'baseline': 100.0, 'terminal': 112.2, 'pnl': 12.200000000000003}]
+weighted: {'expected_terminal': 99.53999999999999, 'expected_pnl': -0.4600000000000004, 'loss_probability': 0.3}
+test_bad_length (__main__.ScenarioTests.test_bad_length) ... ok
+test_bad_probabilities (__main__.ScenarioTests.test_bad_probabilities) ... ok
+test_bad_return (__main__.ScenarioTests.test_bad_return) ... ok
+test_base (__main__.ScenarioTests.test_base) ... ok
+test_downside (__main__.ScenarioTests.test_downside) ... ok
+test_fee (__main__.ScenarioTests.test_fee) ... ok
+test_nonfinite (__main__.ScenarioTests.test_nonfinite) ... ok
+test_upside (__main__.ScenarioTests.test_upside) ... ok
+test_weighted (__main__.ScenarioTests.test_weighted) ... ok
+test_zero_shock (__main__.ScenarioTests.test_zero_shock) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+
+=== Section 18.8 ===
+terminal: {'count': 10000, 'mean': 99.96, 'sample_sd': 14.060518120502591, 'standard_error': 0.1406051812050259, 'normal_95_interval': (99.68441384483815, 100.23558615516184)}
+loss frequency: 0.2481
+discounted: {'count': 10000, 'mean': 95.2, 'sample_sd': 13.390969638573893, 'standard_error': 0.13390969638573894, 'normal_95_interval': (94.93753699508396, 95.46246300491605)}
+test_bad_count (__main__.EstimationTests.test_bad_count) ... ok
+test_bad_rate (__main__.EstimationTests.test_bad_rate) ... ok
+test_constant (__main__.EstimationTests.test_constant) ... ok
+test_discount (__main__.EstimationTests.test_discount) ... ok
+test_frequency (__main__.EstimationTests.test_frequency) ... ok
+test_known_mean (__main__.EstimationTests.test_known_mean) ... ok
+test_known_sd (__main__.EstimationTests.test_known_sd) ... ok
+test_known_se (__main__.EstimationTests.test_known_se) ... ok
+test_nonfinite (__main__.EstimationTests.test_nonfinite) ... ok
+test_replay (__main__.EstimationTests.test_replay) ... ok
+test_strict_threshold (__main__.EstimationTests.test_strict_threshold) ... ok
+test_support (__main__.EstimationTests.test_support) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 18.9 ===
+{'count': 100, 'mean': 98.6, 'estimated_se': 1.4285685425656274, 'absolute_error': 1.4000000000000057}
+{'count': 400, 'mean': 100.15, 'estimated_se': 0.7237079057410387, 'absolute_error': 0.15000000000000568}
+{'count': 10000, 'mean': 99.96, 'estimated_se': 0.1406051812050259, 'absolute_error': 0.04000000000000625}
+test_bad_count (__main__.ConvergenceTests.test_bad_count) ... ok
+test_bad_sd (__main__.ConvergenceTests.test_bad_sd) ... ok
+test_bad_sizes (__main__.ConvergenceTests.test_bad_sizes) ... ok
+test_constant (__main__.ConvergenceTests.test_constant) ... ok
+test_error (__main__.ConvergenceTests.test_error) ... ok
+test_fourfold (__main__.ConvergenceTests.test_fourfold) ... ok
+test_known_mean (__main__.ConvergenceTests.test_known_mean) ... ok
+test_known_se (__main__.ConvergenceTests.test_known_se) ... ok
+test_nonfinite (__main__.ConvergenceTests.test_nonfinite) ... ok
+test_prefix_counts (__main__.ConvergenceTests.test_prefix_counts) ... ok
+test_replay (__main__.ConvergenceTests.test_replay) ... ok
+test_support (__main__.ConvergenceTests.test_support) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 18.10 ===
+mean example: {'count': 3, 'mean': 100, 'standard_error': 11.547005383792516, 'interval': (77.36786944776667, 122.63213055223333), 'critical_value': 1.96}
+zero events Wilson: (0.0, 0.03699480747600191)
+planned paths: 6147
+test_bad_count (__main__.ErrorTests.test_bad_count) ... ok
+test_bad_events (__main__.ErrorTests.test_bad_events) ... ok
+test_bad_width (__main__.ErrorTests.test_bad_width) ... ok
+test_constant (__main__.ErrorTests.test_constant) ... ok
+test_mean (__main__.ErrorTests.test_mean) ... ok
+test_nonfinite (__main__.ErrorTests.test_nonfinite) ... ok
+test_planning (__main__.ErrorTests.test_planning) ... ok
+test_se (__main__.ErrorTests.test_se) ... ok
+test_short_sample (__main__.ErrorTests.test_short_sample) ... ok
+test_wilson_boundary (__main__.ErrorTests.test_wilson_boundary) ... ok
+test_wilson_bounds (__main__.ErrorTests.test_wilson_bounds) ... ok
+test_wilson_center (__main__.ErrorTests.test_wilson_center) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 18.11 ===
+simulation: {'count': 10000, 'mean_return': 0.06490227947066025, 'return_sd': 0.1357176162355833, 'mean_terminal': 106.49022794706603, 'standard_error_terminal': 0.13571761623558326, 'loss_frequency': 0.3155, 'paths_with_asset_return_below_minus_one': 0}
+analytical mean and variance: (0.064, 0.0184)
+test_analytical_mean (__main__.PortfolioTests.test_analytical_mean) ... ok
+test_analytical_variance (__main__.PortfolioTests.test_analytical_variance) ... ok
+test_count (__main__.PortfolioTests.test_count) ... ok
+test_invalid_correlation (__main__.PortfolioTests.test_invalid_correlation) ... ok
+test_invalid_initial (__main__.PortfolioTests.test_invalid_initial) ... ok
+test_invalid_return_count (__main__.PortfolioTests.test_invalid_return_count) ... ok
+test_invalid_sd (__main__.PortfolioTests.test_invalid_sd) ... ok
+test_invalid_weights (__main__.PortfolioTests.test_invalid_weights) ... ok
+test_replay (__main__.PortfolioTests.test_replay) ... ok
+test_singular_correlation (__main__.PortfolioTests.test_singular_correlation) ... ok
+test_summary (__main__.PortfolioTests.test_summary) ... ok
+test_zero_volatility (__main__.PortfolioTests.test_zero_volatility) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 18.12 ===
+loss probability: 0.5
+VaR 75%: 20
+ES 75%: 40.0
+test_bad_alpha (__main__.RiskTests.test_bad_alpha) ... ok
+test_boundary_mass (__main__.RiskTests.test_boundary_mass) ... ok
+test_constant (__main__.RiskTests.test_constant) ... ok
+test_empty (__main__.RiskTests.test_empty) ... ok
+test_es (__main__.RiskTests.test_es) ... ok
+test_fractional_es (__main__.RiskTests.test_fractional_es) ... ok
+test_loss_frequency (__main__.RiskTests.test_loss_frequency) ... ok
+test_loss_sign (__main__.RiskTests.test_loss_sign) ... ok
+test_negative_terminal (__main__.RiskTests.test_negative_terminal) ... ok
+test_nonfinite (__main__.RiskTests.test_nonfinite) ... ok
+test_sorting (__main__.RiskTests.test_sorting) ... ok
+test_var (__main__.RiskTests.test_var) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+
+=== Section 18.13 ===
+count: 10000 mean: 99.96000000000006 standard error: 0.1406051812050256 seconds: 0.004176069000095595
+test_array_size (__main__.PerformanceTests.test_array_size) ... ok
+test_bad_batch (__main__.PerformanceTests.test_bad_batch) ... ok
+test_bad_count (__main__.PerformanceTests.test_bad_count) ... ok
+test_bad_dimensions (__main__.PerformanceTests.test_bad_dimensions) ... ok
+test_batches_match_stream_order (__main__.PerformanceTests.test_batches_match_stream_order) ... ok
+test_constant (__main__.PerformanceTests.test_constant) ... ok
+test_mean (__main__.PerformanceTests.test_mean) ... ok
+test_nonfinite (__main__.PerformanceTests.test_nonfinite) ... ok
+test_replay (__main__.PerformanceTests.test_replay) ... ok
+test_short_sample (__main__.PerformanceTests.test_short_sample) ... ok
+test_standard_error (__main__.PerformanceTests.test_standard_error) ... ok
+test_variance (__main__.PerformanceTests.test_variance) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 18.14 ===
+model: three-state one-period; generator: random.Random
+seed: 42 paths: 10000 alpha: 0.75
+{'count': 10000, 'mean_terminal': 99.96, 'sample_sd': 14.060518120502591, 'standard_error_mean': 0.1406051812050259, 'loss_frequency': 0.2481, 'alpha': 0.75, 'var_nearest_rank': 0.0, 'es_fractional_tail': 19.848}
+test_bad_alpha (__main__.SimulatorTests.test_bad_alpha) ... ok
+test_bad_count (__main__.SimulatorTests.test_bad_count) ... ok
+test_es (__main__.SimulatorTests.test_es) ... ok
+test_fractional_tail (__main__.SimulatorTests.test_fractional_tail) ... ok
+test_known_mean (__main__.SimulatorTests.test_known_mean) ... ok
+test_known_sd (__main__.SimulatorTests.test_known_sd) ... ok
+test_loss_frequency (__main__.SimulatorTests.test_loss_frequency) ... ok
+test_loss_sign (__main__.SimulatorTests.test_loss_sign) ... ok
+test_nonfinite (__main__.SimulatorTests.test_nonfinite) ... ok
+test_replay (__main__.SimulatorTests.test_replay) ... ok
+test_support (__main__.SimulatorTests.test_support) ... ok
+test_var (__main__.SimulatorTests.test_var) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+=== Section 18.15 ===
+mean: 99.96 estimated SE: 0.1406051812050259
+
