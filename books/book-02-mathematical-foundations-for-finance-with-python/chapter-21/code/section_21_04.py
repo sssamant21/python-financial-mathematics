@@ -39,6 +39,8 @@ def central_difference(amount, rate, years, step):
     up, down = rate + step, rate - step
     if not math.isfinite(up) or not math.isfinite(down) or up == rate or down == rate:
         raise ValueError("step does not produce finite distinct perturbations")
+    if not math.isfinite(2 * step):
+        raise OverflowError("central-difference denominator exceeds float range")
     return checked((pv(amount, up, years) - pv(amount, down, years)) / (2 * step))
 
 def approximations(amount, rate, years, change):
