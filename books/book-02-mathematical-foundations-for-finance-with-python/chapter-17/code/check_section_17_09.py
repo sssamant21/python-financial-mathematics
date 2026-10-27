@@ -54,6 +54,9 @@ def run():
     wrong_sign=verify_candidate((0.6,0.4),-0.084,(0,0,-0.028,0))
     assert not wrong_sign["passes"]
     rejects(ValueError,validate_caps,0.4,0.4)
+    # A tolerance in the certificate must not turn an empty interval feasible.
+    rejects(ValueError,optimize,0.5,0.499999999999995)
+    assert optimize(0.5,0.5)["certificate"]["passes"]
     rejects(ValueError,optimize,-0.1,1)
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,financial_report,(0.6,0.4),(0.5,0.5),-1)
