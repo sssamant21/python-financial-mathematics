@@ -103,6 +103,11 @@ def centered_jacobian_column(base, index, step):
     h=real(step,"finite-difference step")
     if h<=0:
         raise ValueError("step must be positive")
+    center=x[index]
+    if not math.isfinite(center+h) or not math.isfinite(center-h) or center+h==center or center-h==center:
+        raise ValueError("step must produce finite distinct perturbations")
+    if not math.isfinite(2*h):
+        raise OverflowError("finite-difference denominator exceeds float range")
     plus=x.copy()
     minus=x.copy()
     plus[index]+=h
