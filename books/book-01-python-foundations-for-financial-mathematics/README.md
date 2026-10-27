@@ -544,5 +544,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.6 — Cash-Flow Module](chapter-21/21.06-cash-flow-module.md) — Published draft; independent QA deferred.
 - [21.7 — Loan Module](chapter-21/21.07-loan-module.md) — Published draft; independent QA deferred.
 - [21.8 — Bond Module](chapter-21/21.08-bond-module.md) — Published draft; independent QA deferred.
+- [21.9 — Return and Performance Module](chapter-21/21.09-return-and-performance-module.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 8/18 sections (44.44%). **Next:** 21.9 — Return and Performance Module. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 9/18 sections (50.00%). **Next:** 21.10 — Portfolio Module. [Chapter 21 progress index](chapter-21/README.md).

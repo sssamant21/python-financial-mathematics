@@ -1,6 +1,6 @@
 # Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit
 
-**Manuscript progress:** 8/18 sections published (44.44%).  
+**Manuscript progress:** 9/18 sections published (50.00%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -13,7 +13,7 @@
 | 21.6 | [Cash-Flow Module](21.06-cash-flow-module.md) | Published draft; QA deferred |
 | 21.7 | [Loan Module](21.07-loan-module.md) | Published draft; QA deferred |
 | 21.8 | [Bond Module](21.08-bond-module.md) | Published draft; QA deferred |
-| 21.9 | Return and Performance Module | Planned |
+| 21.9 | [Return and Performance Module](21.09-return-and-performance-module.md) | Published draft; QA deferred |
 | 21.10 | Portfolio Module | Planned |
 | 21.11 | Statistical Module | Planned |
 | 21.12 | Simulation Module | Planned |
@@ -24,6 +24,6 @@
 | 21.17 | Final Integrated Case Study | Planned |
 | 21.18 | Further Study and Transition to Book 2 | Planned |
 
-**Next:** 21.9 — Return and Performance Module.
+**Next:** 21.10 — Portfolio Module.
 
 **Chapter status:** Manuscript in progress; not certified.
