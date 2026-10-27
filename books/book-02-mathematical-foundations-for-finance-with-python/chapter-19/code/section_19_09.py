@@ -67,7 +67,7 @@ def simulate(initial,rate,flow,horizon,jumps=()):
     if a<=0:
         log.append({"type":"depletion","time":0.0})
         return _result("depleted",0,0,0.0,len(jumps),applied,log)
-    for event_time,jump in scheduled+[(T,0.0)]:
+    for event_time,jump,is_scheduled in [(t,j,True) for t,j in scheduled]+[(T,0.0,False)]:
         dt=event_time-time
         crossing=depletion_time(a,r,u)
         # Depletion takes precedence when simultaneous with a scheduled jump.
@@ -81,10 +81,7 @@ def simulate(initial,rate,flow,horizon,jumps=()):
         if a<=0:
             log.append({"type":"depletion","time":time})
             return _result("depleted",time,0.0,time,len(jumps),applied,log)
-        if (event_time,jump)!=(T,0.0) or (scheduled and scheduled[-1]==(T,0.0)):
-            # All explicit events are processed before the final sentinel.
-            pass
-        if jump!=0.0 or (event_time,jump) in scheduled:
+        if is_scheduled:
             a=finite(a+jump,"post-jump balance")
             applied+=1
             log.append({"type":"jump","time":time,"amount":jump,"balance":a})
