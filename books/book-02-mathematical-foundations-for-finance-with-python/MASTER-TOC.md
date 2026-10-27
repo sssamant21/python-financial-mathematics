@@ -86,7 +86,7 @@ Published sections link to their manuscript files; planned sections remain plain
 3.7 — [Convexity and Concavity Intuition](chapter-03/3.07-convexity-and-concavity-intuition.md)  
 3.8 — [Function Specifications and Validation](chapter-03/3.08-function-specifications-and-validation.md)  
 3.9 — [Chapter Project — Financial Function Explorer](chapter-03/3.09-chapter-project-financial-function-explorer.md)  
-3.10 — Exercises and Applied Problems
+3.10 — [Exercises and Applied Problems](chapter-03/3.10-exercises-and-applied-problems.md)  
 
 # Chapter 4 — Exponential and Logarithmic Functions
 
@@ -96,8 +96,8 @@ Published sections link to their manuscript files; planned sections remain plain
 4.4 — [Discrete and Continuous Compounding](chapter-04/4.04-discrete-and-continuous-compounding.md)  
 4.5 — [Solving for Time and Growth Rate](chapter-04/4.05-solving-for-time-and-growth-rate.md)  
 4.6 — [Products and Additive Log Changes](chapter-04/4.06-products-and-additive-log-changes.md)  
-4.7 — Stable Evaluation Near Zero  
-4.8 — Growth Assumptions and Model Limits  
+4.7 — [Stable Evaluation Near Zero](chapter-04/4.07-stable-numerical-evaluation.md)  
+4.8 — [Growth Assumptions and Model Limits](chapter-04/4.08-numerical-conditioning-and-model-limits.md)  
 4.9 — [Chapter Project — Growth and Rate Conversion Explorer](chapter-04/4.09-growth-and-rate-conversion-explorer.md)  
 4.10 — [Exercises and Applied Problems](chapter-04/4.10-exercises-and-applied-problems.md)
 
@@ -112,7 +112,7 @@ Published sections link to their manuscript files; planned sections remain plain
 5.7 — [Variable Rates and Payment Schedules](chapter-05/5.07-variable-rates-and-payment-schedules.md)  
 5.8 — [Withdrawal and Depletion Boundaries](chapter-05/5.08-withdrawal-and-depletion-boundaries.md)  
 5.9 — [Chapter Project — Contribution and Withdrawal Recurrence Engine](chapter-05/5.09-contribution-and-withdrawal-recurrence-engine.md)  
-5.10 — Exercises and Applied Problems
+5.10 — [Exercises and Applied Problems](chapter-05/5.10-exercises-and-applied-problems.md)  
 
 # Chapter 6 — Summation, Series, and Cash-Flow Derivations
 
@@ -138,7 +138,7 @@ Published sections link to their manuscript files; planned sections remain plain
 7.7 — [Intermediate Values and Root Existence](chapter-07/7.07-intermediate-values-and-root-existence.md)  
 7.8 — [Numerical Investigation versus Proof](chapter-07/7.08-numerical-investigation-versus-proof.md)  
 7.9 — [Chapter Project — Boundary and Continuity Investigation Lab](chapter-07/7.09-chapter-project-boundary-and-continuity-investigation-lab.md)  
-7.10 — Exercises and Applied Problems
+7.10 — [Exercises and Applied Problems](chapter-07/7.10-exercises-and-applied-problems.md)  
 
 # Chapter 8 — Derivatives and Differentiation
 
@@ -177,7 +177,7 @@ Published sections link to their manuscript files; planned sections remain plain
 10.7 — [Numerical Quadrature](chapter-10/10.07-numerical-quadrature.md)  
 10.8 — [Discrete versus Continuous Payments](chapter-10/10.08-discrete-versus-continuous-payments.md)  
 10.9 — [Chapter Project — Continuous Cash-Flow Valuation Engine](chapter-10/10.09-continuous-cash-flow-valuation-engine.md)  
-10.10 — Exercises and Applied Problems
+10.10 — [Exercises and Applied Problems](chapter-10/10.10-exercises-and-applied-problems.md)  
 
 # Chapter 11 — Vectors and Financial Quantities
 
@@ -203,7 +203,7 @@ Published sections link to their manuscript files; planned sections remain plain
 12.7 — [Condition Numbers and Perturbations](chapter-12/12.07-condition-numbers-and-perturbations.md)  
 12.8 — [Residuals and Financial Interpretation](chapter-12/12.08-residuals-and-financial-interpretation.md)  
 12.9 — [Chapter Project — Exposure Matching Linear Solver](chapter-12/12.09-chapter-project-exposure-matching-linear-solver.md)  
-12.10 — Exercises and Applied Problems
+12.10 — [Exercises and Applied Problems](chapter-12/12.10-exercises-and-applied-problems.md)  
 
 # Chapter 13 — Vector Spaces, Projections, and Least Squares
 
@@ -229,7 +229,7 @@ Published sections link to their manuscript files; planned sections remain plain
 14.7 — [Low-Rank Approximation](chapter-14/14.07-low-rank-approximation.md)  
 14.8 — [Decomposition Validation and Interpretation](chapter-14/14.08-decomposition-validation-and-interpretation.md)  
 14.9 — [Chapter Project — Quadratic Exposure and Decomposition Lab](chapter-14/14.09-chapter-project-quadratic-exposure-and-decomposition-lab.md)  
-14.10 — Exercises and Applied Problems
+14.10 — [Exercises and Applied Problems](chapter-14/14.10-exercises-and-applied-problems.md)  
 
 # Chapter 15 — Multivariable Calculus
 
@@ -242,7 +242,7 @@ Published sections link to their manuscript files; planned sections remain plain
 15.7 — [Multivariable Taylor Approximation](chapter-15/15.07-multivariable-taylor-approximation.md)  
 15.8 — [Level Sets and Sensitivity Interpretation](chapter-15/15.08-level-sets-and-sensitivity-interpretation.md)  
 15.9 — [Chapter Project — Multi-Input Valuation Sensitivity Engine](chapter-15/15.09-chapter-project-multi-input-valuation-sensitivity-engine.md)  
-15.10 — Exercises and Applied Problems
+15.10 — [Exercises and Applied Problems](chapter-15/15.10-exercises-and-applied-problems.md)  
 
 # Chapter 16 — Unconstrained Optimization and Convexity
 
@@ -255,7 +255,7 @@ Published sections link to their manuscript files; planned sections remain plain
 16.7 — [Scaling, Initial Guesses, and Local Methods](chapter-16/16.07-scaling-initial-guesses-and-local-methods.md)  
 16.8 — [Calibration Residuals and Validation](chapter-16/16.08-calibration-residuals-and-validation.md)  
 16.9 — [Chapter Project — Deterministic Calibration Optimizer](chapter-16/16.09-chapter-project-deterministic-calibration-optimizer.md)  
-16.10 — Exercises and Applied Problems
+16.10 — [Exercises and Applied Problems](chapter-16/16.10-exercises-and-applied-problems.md)  
 
 # Chapter 17 — Constrained Optimization
 
