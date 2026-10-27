@@ -512,3 +512,9 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.15 — Exercises and Applied Problems](chapter-19/19.15-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
 **Manuscript progress:** 15/15 sections (100%); manuscript complete, comprehensive QA deferred. **Next:** Chapter 20, Section 20.1 — Why Financial Code Must Be Tested. [Chapter 19 progress index](chapter-19/README.md).
+
+## Chapter 20 — Testing and Engineering Financial Python
+
+- [20.1 — Why Financial Code Must Be Tested](chapter-20/20.01-why-financial-code-must-be-tested.md) — Published draft; independent QA deferred.
+
+**Manuscript progress:** 1/16 sections (6.25%). **Next:** 20.2 — Assertions and Known-Value Tests. [Chapter 20 progress index](chapter-20/README.md).
