@@ -73,4 +73,4 @@
 
 Draft manuscript and reference-check source are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** Chapter 11, Section 11.1 (see Master TOC for planned title).
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
