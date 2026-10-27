@@ -15,6 +15,7 @@ def rejects(exc,fn,*args):
     raise AssertionError("expected "+exc.__name__)
 
 def run():
+    near(account(0,5e-324,100,0.5),50)
     a=assessment()
     exact=1000*math.exp(0.1)
     near(a["growth_2_years"],exact)
