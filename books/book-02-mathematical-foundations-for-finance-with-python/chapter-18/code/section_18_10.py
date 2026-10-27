@@ -36,8 +36,10 @@ def bisect(f,a,b,tol=1e-12,max_iter=200):
         return {"root":a,"bracket":(a,a),"status":"endpoint_root","iterations":0}
     if fb==0:
         return {"root":b,"bracket":(b,b),"status":"endpoint_root","iterations":0}
-    if fa*fb>=0:
+    if not ((fa<0<fb) or (fb<0<fa)):
         raise ValueError("no sign change")
+    if not math.isfinite(b-a):
+        raise OverflowError("bracket width exceeds float range")
     for k in range(max_iter+1):
         m=a+(b-a)/2
         if m==a or m==b:
