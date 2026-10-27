@@ -545,5 +545,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.7 — Loan Module](chapter-21/21.07-loan-module.md) — Published draft; independent QA deferred.
 - [21.8 — Bond Module](chapter-21/21.08-bond-module.md) — Published draft; independent QA deferred.
 - [21.9 — Return and Performance Module](chapter-21/21.09-return-and-performance-module.md) — Published draft; independent QA deferred.
+- [21.10 — Portfolio Module](chapter-21/21.10-portfolio-module.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 9/18 sections (50.00%). **Next:** 21.10 — Portfolio Module. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 10/18 sections (55.56%). **Next:** 21.11 — Statistical Module. [Chapter 21 progress index](chapter-21/README.md).
