@@ -9,7 +9,7 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 215/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.10, and 15.1–15.10, and 16.1–16.10, and 17.1–17.10, and 18.1–18.10, and 19.1–19.10, and 20.1–20.10, and 21.1–21.10 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 215/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.10, and 15.1–15.10, and 16.1–16.10, and 17.1–17.10, and 18.1–18.10, and 19.1–19.10, and 20.1–20.10, and 21.1–21.10 — Draft; see validation tracker for runtime evidence and pending review).  
 **Canonical chapters:** 0/21.  
 **Current status:** Chapters 01–20 manuscripts complete as Draft; runtime validation and independent editorial review pending. Chapter 21 manuscript is complete as Draft. Latest: [21.10 — Exercises and Applied Problems](chapter-21/21.10-exercises-and-applied-problems.md).
 
@@ -32,8 +32,8 @@ Complete, validate, and push one numbered section before proceeding to the next.
 | 01 | [Mathematical Language, Notation, and Reasoning](chapter-01/README.md) | 15/15 sections published as Draft |
 | 02 | [Algebra and Equations for Financial Models](chapter-02/README.md) | 10/10 sections published as Draft |
 | 03 | [Functions and Financial Relationships](chapter-03/README.md) | 10/10 sections published as Draft |
-| 04 | Exponential and Logarithmic Functions | Planned |
-| 05 | Sequences, Recurrences, and Financial Growth | Planned |
+| 04 | [Exponential and Logarithmic Functions](chapter-04/README.md) | 10/10 sections published as Draft |
+| 05 | [Sequences, Recurrences, and Financial Growth](chapter-05/README.md) | 10/10 sections published as Draft |
 | 06 | [Summation, Series, and Cash-Flow Derivations](chapter-06/README.md) | 10/10 sections published as Draft |
 | 07 | [Limits and Continuity](chapter-07/README.md) | 10/10 sections published as Draft |
 | 08 | [Derivatives and Differentiation](chapter-08/README.md) | 10/10 sections published as Draft |
@@ -46,7 +46,6 @@ Complete, validate, and push one numbered section before proceeding to the next.
 | 15 | [Multivariable Calculus](chapter-15/README.md) | 10/10 sections published as Draft |
 | 16 | [Unconstrained Optimization and Convexity](chapter-16/README.md) | 10/10 sections published as Draft — manuscript complete |
 | 17 | [Constrained Optimization](chapter-17/README.md) | 10/10 sections published as Draft — manuscript complete |
-| 17 | Constrained Optimization | Planned |
 | 18 | [Numerical Methods and Computational Reliability](chapter-18/README.md) | 10/10 sections published as Draft |
 | 19 | [Differential Equations and Continuous-Time Models](chapter-19/README.md) | 10/10 sections published as Draft |
 | 20 | [Testing and Validating Mathematical Models](chapter-20/README.md) | 10/10 sections published as Draft |
