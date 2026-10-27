@@ -69,7 +69,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-08 | Coverage and executable examples | In progress | Filename mapping complete; focused Chapter 21 review and fixes recorded. Review remaining assertions, exercise coverage, dependencies and executable examples. [Inventory](section-check-inventory.md) · [Chapter 21 review](chapter-21-capstone-review.md) |
 | V-10 | Chapter 21 numerical and report gaps | Fixes applied; independent review pending | Review small-rate transition, finite-difference overflow and scenario inputs; rerun final revision. [Evidence](chapter-21-capstone-review.md) |
 | V-11 | Chapter 20 tiny-rate annuity underflow | Fix applied; independent review pending | Review extreme-rate numerical behavior and Section 20.6 input contract. [Evidence](chapter-20-boundary-review.md) |
-| V-12 | Chapter 19 continuous-time boundaries | Fixes applied; related analysis pending | Review Section 19.8 discrete contributions, event tolerances, numerical extremes and independent evidence. [Review](chapter-19-continuous-time-review.md) |
+| V-12 | Chapter 19 continuous-time boundaries | Fixes applied; independent review pending | Section 19.8 near-zero discrete contributions fixed and checked; review event tolerances, numerical extremes and final-revision evidence. [Review](chapter-19-continuous-time-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
