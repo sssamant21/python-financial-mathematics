@@ -35,7 +35,9 @@ def annuity_pv(payment, rate, periods):
         raise ValueError("periods must be nonnegative and rate must exceed -1")
     if periods == 0: return 0.0
     try:
-        result = payment * periods if rate == 0 else payment * (-math.expm1(-periods * math.log1p(rate))) / rate
+        # Form the annuity factor before applying the payment to avoid
+        # underflow in payment * expm1(...) for tiny nonzero rates.
+        result = payment * periods if rate == 0 else payment * ((-math.expm1(-periods * math.log1p(rate))) / rate)
     except OverflowError as exc:
         raise OverflowError("annuity exceeds numerical range") from exc
     if not math.isfinite(result):
