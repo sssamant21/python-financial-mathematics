@@ -8,6 +8,10 @@ Book 1 establishes the programming and conceptual foundation required for the re
 
 The complete, approved, and locked Book 1 structure is maintained in `MASTER-TOC.md` as **Master Table of Contents v1.0**. Chapter and section numbers/titles must follow that file unless an explicit approved TOC version change is recorded.
 
+## Validation progress
+
+The [Book 1 validation plan and progress tracker](qa/VALIDATION-TRACKER.md) records scoped evidence, outstanding work and findings. Manuscript completion does not imply comprehensive validation or certification.
+
 ## Chapter 1 — Introduction to Python for Financial Mathematics
 
 **Canonical manuscript progress:** 1.1–1.13 complete.  
