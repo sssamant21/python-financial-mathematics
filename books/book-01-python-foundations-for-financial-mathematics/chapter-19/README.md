@@ -1,6 +1,6 @@
 # Chapter 19 — Financial Data Engineering Foundations
 
-**Manuscript progress:** 12/15 sections published (80.00%).  
+**Manuscript progress:** 13/15 sections published (86.67%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -17,10 +17,10 @@
 | 19.10 | [Currency and Unit Normalization](19.10-currency-and-unit-normalization.md) | Published draft; QA deferred |
 | 19.11 | [Data Quality Checks](19.11-data-quality-checks.md) | Published draft; QA deferred |
 | 19.12 | [Reproducible Data Pipelines](19.12-reproducible-data-pipelines.md) | Published draft; QA deferred |
-| 19.13 | Avoiding Look-Ahead and Data Leakage | Planned |
+| 19.13 | [Avoiding Look-Ahead and Data Leakage](19.13-avoiding-look-ahead-and-data-leakage.md) | Published draft; QA deferred |
 | 19.14 | Chapter Project — Financial Data Pipeline | Planned |
 | 19.15 | Exercises and Applied Problems | Planned |
 
-**Next:** 19.13 — Avoiding Look-Ahead and Data Leakage.
+**Next:** 19.14 — Chapter Project — Financial Data Pipeline.
 
 **Chapter status:** Manuscript in progress; not certified.
