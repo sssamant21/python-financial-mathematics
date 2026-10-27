@@ -1,6 +1,6 @@
 # Chapter 17 — Constrained Optimization
 
-**Status:** 7/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 8/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -11,9 +11,14 @@
 | 17.5 | [Linear Programming](17.05-linear-programming.md) | Draft — runtime validation pending |
 | 17.6 | [Quadratic Programming](17.06-quadratic-programming.md) | Draft — runtime validation pending |
 | 17.7 | [Financial Allocation Assumptions](17.07-financial-allocation-assumptions.md) | Draft — runtime validation pending |
-| 17.8 | Feasibility and Independent Optimality Checks | Planned |
+| 17.8 | [Feasibility and Independent Optimality Checks](17.08-feasibility-and-independent-optimality-checks.md) | Draft — runtime validation pending |
 | 17.9 | Chapter Project — Constrained Allocation Decision Engine | Planned |
 | 17.10 | Exercises and Applied Problems | Planned |
+
+## Section 17.8 companion material
+
+- [Independent optimality Python lab](code/section_17_08.py)
+- [Independent reference checks](code/check_section_17_08.py)
 
 ## Section 17.7 companion material
 
@@ -50,4 +55,4 @@
 - [Feasible sets Python lab](code/section_17_01.py)
 - [Independent reference checks](code/check_section_17_01.py)
 
-**Next:** 17.8 — Feasibility and Independent Optimality Checks.
+**Next:** 17.9 — Chapter Project — Constrained Allocation Decision Engine.
