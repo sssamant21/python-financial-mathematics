@@ -497,5 +497,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 
 - [19.1 — Financial Data Sources and Formats](chapter-19/19.01-financial-data-sources-and-formats.md) — Published draft; independent QA deferred.
 - [19.2 — CSV and Text Data](chapter-19/19.02-csv-and-text-data.md) — Published draft; independent QA deferred.
+- [19.3 — JSON Data](chapter-19/19.03-json-data.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 2/15 sections (13.33%). **Next:** 19.3 — JSON Data. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 3/15 sections (20.00%). **Next:** 19.4 — Excel Data. [Chapter 19 progress index](chapter-19/README.md).
