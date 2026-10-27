@@ -73,8 +73,11 @@ def armijo_step(x,objective,gradient,initial_step=1.0,
         return {"step":0.0,"new_x":x,"new_objective":f0,"status":"stationary"}
     for attempt in range(max_backtracks+1):
         trial=finite(x-alpha*g,"trial point")
+        if trial==x:
+            return {"step":0.0,"new_x":x,"new_objective":f0,
+                    "status":"stagnation","backtracks":attempt}
         ft=finite(objective(trial),"trial objective")
-        if ft<=f0-c*alpha*g*g:
+        if ft<f0 and ft<=f0-c*alpha*g*g:
             return {"step":alpha,"new_x":trial,"new_objective":ft,
                     "status":"accepted","backtracks":attempt}
         alpha=finite(alpha*beta,"reduced step")
