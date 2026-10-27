@@ -1,0 +1,26 @@
+Return distribution shape: {'n': 5, 'mean': 0.01, 'm2': 0.0016000000000000003, 'skewness': 0.6562499999999999, 'kurtosis': 2.378125, 'excess_kurtosis': -0.6218750000000002}
+test_01_symmetric_skew (__main__.ShapeTests.test_01_symmetric_skew) ... ok
+test_02_symmetric_kurtosis (__main__.ShapeTests.test_02_symmetric_kurtosis) ... ok
+test_03_symmetric_excess (__main__.ShapeTests.test_03_symmetric_excess) ... ok
+test_04_positive_skew (__main__.ShapeTests.test_04_positive_skew) ... ok
+test_05_negative_skew (__main__.ShapeTests.test_05_negative_skew) ... ok
+test_06_translation (__main__.ShapeTests.test_06_translation) ... ok
+test_07_positive_scaling (__main__.ShapeTests.test_07_positive_scaling) ... ok
+test_08_negative_scaling (__main__.ShapeTests.test_08_negative_scaling) ... ok
+test_09_adjusted_skew (__main__.ShapeTests.test_09_adjusted_skew) ... ok
+test_10_adjusted_kurtosis (__main__.ShapeTests.test_10_adjusted_kurtosis) ... FAIL
+test_11_downside_frequency (__main__.ShapeTests.test_11_downside_frequency) ... ok
+test_12_validation (__main__.ShapeTests.test_12_validation) ... ok
+
+======================================================================
+FAIL: test_10_adjusted_kurtosis (__main__.ShapeTests.test_10_adjusted_kurtosis)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/book1_ch15_01_15/section_04.py", line 71, in test_10_adjusted_kurtosis
+    self.assertAlmostEqual(adjusted_sample_excess_kurtosis([-2,-1,1,2]),-1.2)
+AssertionError: -3.299999999999999 != -1.2 within 7 places (2.0999999999999988 difference)
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+FAILED (failures=1)

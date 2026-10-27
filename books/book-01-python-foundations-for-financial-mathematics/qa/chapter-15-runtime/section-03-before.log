@@ -1,0 +1,28 @@
+Sample: {'count': 4, 'mean': 0.01, 'sum_squared_deviations': 0.0009999999999999998, 'variance': 0.00033333333333333327, 'standard_deviation': 0.018257418583505537, 'ddof': 1}
+Population: {'count': 4, 'mean': 0.01, 'sum_squared_deviations': 0.0009999999999999998, 'variance': 0.00024999999999999995, 'standard_deviation': 0.015811388300841896, 'ddof': 0}
+test_01_count (__main__.VarianceSDTests.test_01_count) ... ok
+test_02_mean (__main__.VarianceSDTests.test_02_mean) ... ok
+test_03_ss (__main__.VarianceSDTests.test_03_ss) ... ok
+test_04_sample_variance (__main__.VarianceSDTests.test_04_sample_variance) ... ok
+test_05_population_variance (__main__.VarianceSDTests.test_05_population_variance) ... ok
+test_06_sample_sd (__main__.VarianceSDTests.test_06_sample_sd) ... ok
+test_07_constant (__main__.VarianceSDTests.test_07_constant) ... FAIL
+test_08_single_population (__main__.VarianceSDTests.test_08_single_population) ... ok
+test_09_downside (__main__.VarianceSDTests.test_09_downside) ... ok
+test_10_annualization (__main__.VarianceSDTests.test_10_annualization) ... ok
+test_11_portfolio (__main__.VarianceSDTests.test_11_portfolio) ... ok
+test_12_invalid (__main__.VarianceSDTests.test_12_invalid) ... ok
+
+======================================================================
+FAIL: test_07_constant (__main__.VarianceSDTests.test_07_constant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/book1_ch15_01_15/section_03.py", line 55, in test_07_constant
+    def test_07_constant(self): self.assertEqual(moments([.05,.05,.05])["variance"],0)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 7.222237291452134e-35 != 0
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+FAILED (failures=1)
