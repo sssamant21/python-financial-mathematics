@@ -502,5 +502,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.5 — APIs and Financial Data](chapter-19/19.05-apis-and-financial-data.md) — Published draft; independent QA deferred.
 - [19.6 — Parsing and Validation](chapter-19/19.06-parsing-and-validation.md) — Published draft; independent QA deferred.
 - [19.7 — Schema and Data Types](chapter-19/19.07-schema-and-data-types.md) — Published draft; independent QA deferred.
+- [19.8 — Missing and Invalid Values](chapter-19/19.08-missing-and-invalid-values.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 7/15 sections (46.67%). **Next:** 19.8 — Missing and Invalid Values. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 8/15 sections (53.33%). **Next:** 19.9 — Date and Timestamp Normalization. [Chapter 19 progress index](chapter-19/README.md).
