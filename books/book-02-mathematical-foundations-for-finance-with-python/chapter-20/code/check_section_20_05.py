@@ -12,6 +12,10 @@ class ToleranceChecks(unittest.TestCase):
     def test_absolute(self): self.assertTrue(close_to_reference(.125, 0, atol=.125, rtol=0))
     def test_relative(self): self.assertTrue(close_to_reference(101, 100, atol=0, rtol=.011))
     def test_zero_tolerance(self): self.assertFalse(close_to_reference(.125, 0, atol=0, rtol=0))
+    def test_adjacent_values_with_zero_tolerance(self):
+        self.assertFalse(close_to_reference(math.nextafter(1.0, math.inf), 1.0, atol=0, rtol=0))
+    def test_large_opposite_signs(self):
+        self.assertFalse(close_to_reference(1e308, -1e308, atol=0, rtol=1))
     def test_negative_tolerance(self):
         with self.assertRaises(ValueError): close_to_reference(1, 1, atol=-1, rtol=0)
     def test_nonfinite(self):
