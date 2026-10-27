@@ -530,5 +530,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [20.13 — Reproducibility](chapter-20/20.13-reproducibility.md) — Published draft; independent QA deferred.
 - [20.14 — Model Validation vs. Software Validation](chapter-20/20.14-model-validation-vs-software-validation.md) — Published draft; independent QA deferred.
 - [20.15 — Chapter Project — Production-Quality Financial Library](chapter-20/20.15-chapter-project-production-quality-financial-library.md) — Published draft; independent QA deferred.
+- [20.16 — Exercises and Applied Problems](chapter-20/20.16-exercises-and-applied-problems.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 15/16 sections (93.75%). **Next:** 20.16 — Exercises and Applied Problems. [Chapter 20 progress index](chapter-20/README.md).
+**Manuscript progress:** 16/16 sections (100%); manuscript complete, comprehensive QA deferred. **Next:** 21.1 — Capstone Architecture. [Chapter 20 progress index](chapter-20/README.md).
