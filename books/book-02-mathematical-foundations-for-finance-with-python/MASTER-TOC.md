@@ -285,7 +285,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 19 — Differential Equations and Continuous-Time Models
 
-19.1 — Differential Models and Initial Conditions  
+19.1 — [Differential Models and Initial Conditions](chapter-19/19.01-differential-models-and-initial-conditions.md)  
 19.2 — Separable Equations  
 19.3 — Linear First-Order Equations  
 19.4 — Equilibria and Local Stability  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 19.1 — Differential Models and Initial Conditions.
+**Next manuscript section:** 19.2 — Separable Equations.
