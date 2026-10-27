@@ -1,6 +1,6 @@
 # Chapter 21 — Integrated Capstone: Financial Mathematics Foundations Toolkit
 
-**Status:** 8/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
+**Status:** 9/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -12,8 +12,13 @@
 | 21.6 | [Optimization and Feasibility Module](21.06-optimization-and-feasibility-module.md) | Draft — runtime validation pending |
 | 21.7 | [Continuous-Time Module and Scenario Report](21.07-continuous-time-module-and-scenario-report.md) | Draft — runtime validation pending |
 | 21.8 | [Testing, Documentation, and Transition to Book 03](21.08-testing-documentation-and-transition-to-book-03.md) | Draft — runtime validation pending |
-| 21.9 | Chapter Project — Financial Mathematics Foundations Toolkit | Planned |
+| 21.9 | [Chapter Project — Financial Mathematics Foundations Toolkit](21.09-chapter-project-financial-mathematics-foundations-toolkit.md) | Draft — runtime validation pending |
 | 21.10 | Exercises and Applied Problems | Planned |
+
+## Section 21.9 companion material
+
+- [Integrated project Python lab](code/section_21_09.py)
+- [Independent reference checks](code/check_section_21_09.py)
 
 ## Section 21.8 companion material
 
@@ -55,4 +60,4 @@
 - [Requirements catalog Python lab](code/section_21_01.py)
 - [Independent reference checks](code/check_section_21_01.py)
 
-**Next:** 21.9 — Chapter Project — Financial Mathematics Foundations Toolkit.
+**Next:** 21.10 — Exercises and Applied Problems.
