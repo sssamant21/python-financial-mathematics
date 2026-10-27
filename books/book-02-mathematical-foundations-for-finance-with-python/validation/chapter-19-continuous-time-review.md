@@ -3,7 +3,7 @@
 **Date:** 2026-10-27  
 **Scope:** Selected constant-rate account and event cases, not a complete chapter or independent mathematical review.
 
-The local Chapter 19 code matched tree `76b6e049be0447647c6986a1a56d028e974aeafa` except for the six files modified in this review. Those changes were published through `0eeff9a6b382cb7f39de7b24324042e007375ae8`. The event-policy clarification was subsequently added to Section 19.7.
+The local Chapter 19 code matched tree `76b6e049be0447647c6986a1a56d028e974aeafa` except for the six files modified in this review. Additional changes addressed related implementations in Sections 19.3, 19.5, 19.6, 19.8 and 19.10, with a shared regression script; all code changes were published through `507073bec27cd7248eb6c9e6f9ea81d2aa6fee3d`. The event-policy clarification was subsequently added to Section 19.7.
 
 ## Findings and changes
 
@@ -13,11 +13,11 @@ The local Chapter 19 code matched tree `76b6e049be0447647c6986a1a56d028e974aeafa
 
 ## Evidence
 
-All ten Section 19.1–19.10 check scripts exited zero on the local snapshot using Python 3.12.14/Linux, with each invoked from its own directory and a 15-second timeout. These are script exits, not proof of complete mathematical or exercise coverage. No whole-book or cross-platform rerun was performed.
+All ten Section 19.1–19.10 check scripts and the new shared small-rate regression script exited zero on the local snapshot using Python 3.12.14/Linux, with each invoked from its own directory and a 15-second timeout. These are script exits, not proof of complete mathematical or exercise coverage. No whole-book or cross-platform rerun was performed.
 
 ## Open findings
 
-- **Related implementations still require correction or scoped numerical limits:** Sections 19.3, 19.5, 19.6, 19.8 and 19.10 contain similar `u*expm1(r*t)/r` account expressions. Sections 19.8 and 19.10 also contain depletion formulas vulnerable when the ratio rounds to zero. Section 19.8's discrete-contribution expression needs separate analysis near zero. The ten passing scripts did not cover these edge cases.
+- **Section 19.8 discrete contributions:** The distinct discrete-contribution expression needs separate numerical analysis near zero, including a case where its denominator underflows. The continuous-account changes do not resolve this.
 - Review the changed formulas with independent high-precision references over near-zero, subnormal and large-magnitude inputs. The zero-ratio fallback does not establish accuracy for every subnormal ratio or avoid all intermediate overflow.
 - Define and test a practical tolerance for near-simultaneous events; floating-point comparisons can affect event ordering.
 - Review all Chapter 19 exercises, numerical solvers and assumptions; conduct independent mathematical review and rerun the final exact revision across supported environments.
