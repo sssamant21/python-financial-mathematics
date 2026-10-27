@@ -20,7 +20,9 @@ def exact_account(initial,rate,flow,years):
         raise ValueError("years must be nonnegative")
     if r==0:
         return finite(a+u*t,"balance")
-    return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
+    exponent=r*t
+    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
+    return finite(a*math.exp(exponent)+u*factor,"balance")
 
 def classify_equilibrium(derivative):
     d=finite(derivative,"derivative")
@@ -62,9 +64,12 @@ def depletion_time(initial,rate,withdrawal):
         return None
     if r==0:
         return a/w
-    if r*a/w>=1:
+    ratio=r*a/w
+    if ratio>=1:
         return None
-    return finite(-math.log1p(-r*a/w)/r,"depletion time")
+    if ratio==0:
+        return finite(a/w,"depletion time")
+    return finite(-math.log1p(-ratio)/r,"depletion time")
 
 def deposit_at(initial,rate,deposit,deposit_year,horizon):
     a,r,j,tj,T=(finite(v,n) for v,n in
