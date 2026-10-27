@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–20.10 published as Draft. Comprehensive runtime validation and independent review remain pending.
+**Manuscript status:** Sections 1.1–21.1 published as Draft. Comprehensive runtime validation and independent review remain pending.
 
 ## Purpose and Prerequisites
 
@@ -311,7 +311,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 # Chapter 21 — Integrated Capstone: Financial Mathematics Foundations Toolkit
 
-21.1 — Capstone Requirements and Assumptions  
+21.1 — [Capstone Requirements and Assumptions](chapter-21/21.01-capstone-requirements-and-assumptions.md)  
 21.2 — Architecture and Module Interfaces  
 21.3 — Cash-Flow and Rate Module  
 21.4 — Sensitivity and Approximation Module  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 21.1 — Capstone Requirements and Assumptions.
+**Next manuscript section:** 21.2 — Architecture and Module Interfaces.
