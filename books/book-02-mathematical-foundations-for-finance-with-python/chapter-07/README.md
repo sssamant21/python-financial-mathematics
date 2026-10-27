@@ -73,4 +73,4 @@
 
 Draft source and reference checks are published. Runtime execution, independent code review, mathematical review, and canonical approval are pending.
 
-**Next:** Chapter 08 — Differentiation and Financial Sensitivity (confirm the Chapter 08 plan in the Master TOC).
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
