@@ -266,7 +266,7 @@ Published sections link to their manuscript files; planned sections remain plain
 17.5 — [Linear Programming](chapter-17/17.05-linear-programming.md)  
 17.6 — [Quadratic Programming](chapter-17/17.06-quadratic-programming.md)  
 17.7 — [Financial Allocation Assumptions](chapter-17/17.07-financial-allocation-assumptions.md)  
-17.8 — Feasibility and Independent Optimality Checks  
+17.8 — [Feasibility and Independent Optimality Checks](chapter-17/17.08-feasibility-and-independent-optimality-checks.md)  
 17.9 — Chapter Project — Constrained Allocation Decision Engine  
 17.10 — Exercises and Applied Problems
 
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 17.8 — Feasibility and Independent Optimality Checks.
+**Next manuscript section:** 17.9 — Chapter Project — Constrained Allocation Decision Engine.
