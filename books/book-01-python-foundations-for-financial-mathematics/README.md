@@ -541,5 +541,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.3 — Project Structure](chapter-21/21.03-project-structure.md) — Published draft; independent QA deferred.
 - [21.4 — Numerical and Decimal Policies](chapter-21/21.04-numerical-and-decimal-policies.md) — Published draft; independent QA deferred.
 - [21.5 — Time-Value-of-Money Module](chapter-21/21.05-time-value-of-money-module.md) — Published draft; independent QA deferred.
+- [21.6 — Cash-Flow Module](chapter-21/21.06-cash-flow-module.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 5/18 sections (27.78%). **Next:** 21.6 — Cash-Flow Module. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 6/18 sections (33.33%). **Next:** 21.7 — Loan Module. [Chapter 21 progress index](chapter-21/README.md).
