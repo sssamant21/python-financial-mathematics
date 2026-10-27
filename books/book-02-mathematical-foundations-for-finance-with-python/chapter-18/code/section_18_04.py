@@ -31,6 +31,8 @@ def safeguarded_newton(f,df,lower,upper,atol=1e-12,rtol=1e-12,max_iter=200):
                 "bisection_steps":0,"status":"endpoint_root"}
     if not opposite(fa,fb):
         raise ValueError("endpoints must have opposite signs")
+    if not math.isfinite(b-a) or not math.isfinite(atol+rtol*max(abs(a),abs(b))):
+        raise OverflowError("bracket width or tolerance exceeds float range")
     x=a+(b-a)/2
     newton_steps=bisection_steps=0
     for k in range(max_iter+1):
@@ -52,6 +54,10 @@ def safeguarded_newton(f,df,lower,upper,atol=1e-12,rtol=1e-12,max_iter=200):
                     "newton_steps":newton_steps,
                     "bisection_steps":bisection_steps,"status":"max_iter"}
         fx=finite(f(x),"f(iterate)")
+        if fx==0:
+            return {"root":x,"bracket":(x,x),"width":0.0,
+                    "residual":0.0,"iterations":k,"newton_steps":newton_steps,
+                    "bisection_steps":bisection_steps,"status":"exact_root"}
         deriv=finite(df(x),"df(iterate)")
         proposal=None
         if deriv!=0:
