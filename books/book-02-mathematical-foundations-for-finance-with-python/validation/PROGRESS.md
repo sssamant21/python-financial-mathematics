@@ -72,6 +72,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-12 | Chapter 19 continuous-time boundaries | Fixes applied; independent review pending | Section 19.8 near-zero discrete contributions fixed and checked; review event tolerances, numerical extremes and final-revision evidence. [Review](chapter-19-continuous-time-review.md) |
 | V-13 | Chapter 18 solver boundaries | Fixes applied; independent review pending | Review solver stopping, numerical range, integration and final-revision evidence. [Review](chapter-18-solver-boundary-review.md) |
 | V-14 | Chapter 17 cap feasibility | Fix applied; independent review pending | Assess near-boundary floating-point policy, KKT scaling and final-revision evidence. [Review](chapter-17-feasibility-review.md) |
+| V-15 | Chapter 16 line-search stagnation | Fix applied; independent review pending | Review additional optimizer stagnation, Armijo arithmetic and final-revision evidence. [Review](chapter-16-stopping-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
