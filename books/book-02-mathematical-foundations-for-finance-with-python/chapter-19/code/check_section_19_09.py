@@ -13,6 +13,8 @@ def rejects(exc,fn,*args):
     raise AssertionError("expected "+exc.__name__)
 
 def run():
+    near(transition(0,5e-324,100,0.5),50)
+    near(depletion_time(0.5,5e-324,-1),0.5)
     a=assessment()
     growth=a["growth"]
     assert growth["status"]=="completed"
