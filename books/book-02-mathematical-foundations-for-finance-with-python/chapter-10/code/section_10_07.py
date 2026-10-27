@@ -17,7 +17,9 @@ def integrate(f,a,b,n,method):
     if not callable(f):
         raise TypeError("f must be callable")
     a,b=finite(a,"a"),finite(b,"b")
-    if type(n) is not int or n<=0:
+    if type(n) is not int:
+        raise TypeError("n must be an integer, excluding bool")
+    if n<=0:
         raise ValueError("n must be a positive integer")
     if method not in ("midpoint","trapezoid","simpson"):
         raise ValueError("unknown quadrature method")
