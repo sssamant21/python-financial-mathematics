@@ -425,4 +425,4 @@ Any structural change requires:
 
 **Chapter 17 publication status:** 17.1–17.15 published as drafts (15/15); Chapter 17 manuscript complete. Next locked manuscript section: 18.1 — Simulation Fundamentals. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 18 publication status:** 18.1–18.7 published as drafts (7/15). Next locked manuscript section: 18.8 — Monte Carlo Estimation. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 18 publication status:** 18.1–18.8 published as drafts (8/15). Next locked manuscript section: 18.9 — Convergence. Comprehensive QA deferred until all Book 1 chapters are written.
