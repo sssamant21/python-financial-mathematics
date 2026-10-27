@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–20.5 published as Draft. Comprehensive runtime validation and independent review remain pending.
+**Manuscript status:** Sections 1.1–20.6 published as Draft. Comprehensive runtime validation and independent review remain pending.
 
 ## Purpose and Prerequisites
 
@@ -303,7 +303,7 @@ Published sections link to their manuscript files; planned sections remain plain
 20.3 — [Financial and Mathematical Invariants](chapter-20/20.03-financial-and-mathematical-invariants.md)  
 20.4 — [Boundary and Invalid Inputs](chapter-20/20.04-boundary-and-invalid-inputs.md)  
 20.5 — [Floating-Point Tolerances](chapter-20/20.05-floating-point-tolerances.md)  
-20.6 — Property and Metamorphic Checks  
+20.6 — [Property and Metamorphic Checks](chapter-20/20.06-property-and-metamorphic-checks.md)  
 20.7 — Reproducibility and Evidence  
 20.8 — Review Findings and Release Gates  
 20.9 — Chapter Project — Mathematical Model Validation Dossier  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 20.6 — Property and Metamorphic Checks.
+**Next manuscript section:** 20.7 — Reproducibility and Evidence.
