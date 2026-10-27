@@ -431,4 +431,4 @@ Any structural change requires:
 
 **Chapter 20 publication status:** 20.1–20.16 published as drafts (16/16); Chapter 20 manuscript complete. Next locked manuscript section: 21.1 — Capstone Architecture. Comprehensive QA deferred until all Book 1 chapters are written.
 
-**Chapter 21 publication status:** 21.1–21.11 published as drafts (11/18). Next locked manuscript section: 21.12 — Simulation Module. Comprehensive QA deferred until all Book 1 chapters are written.
+**Chapter 21 publication status:** 21.1–21.12 published as drafts (12/18). Next locked manuscript section: 21.13 — Data Validation Layer. Comprehensive QA deferred until all Book 1 chapters are written.

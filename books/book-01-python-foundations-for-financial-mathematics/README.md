@@ -547,5 +547,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.9 — Return and Performance Module](chapter-21/21.09-return-and-performance-module.md) — Published draft; independent QA deferred.
 - [21.10 — Portfolio Module](chapter-21/21.10-portfolio-module.md) — Published draft; independent QA deferred.
 - [21.11 — Statistical Module](chapter-21/21.11-statistical-module.md) — Published draft; independent QA deferred.
+- [21.12 — Simulation Module](chapter-21/21.12-simulation-module.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 11/18 sections (61.11%). **Next:** 21.12 — Simulation Module. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 12/18 sections (66.67%). **Next:** 21.13 — Data Validation Layer. [Chapter 21 progress index](chapter-21/README.md).
