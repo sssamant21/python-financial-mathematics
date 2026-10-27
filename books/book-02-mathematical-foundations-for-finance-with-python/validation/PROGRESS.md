@@ -13,7 +13,7 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Python compilation | Initial pass complete | 427/427 files compiled in the follow-up local snapshot on Python 3.12.14/Linux. |
 | Automated script execution | Initial pass complete; final-revision run pending | 216/216 check/test scripts exited zero on the original snapshot plus seven fixes. Counts are script runs, not coverage or independent tests; some checks invoke others. |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
-| Test coverage and dependencies | In progress | Filename mapping covers 215 sections. Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) and [Chapter 19](chapter-19-continuous-time-review.md) reviews identified fixes; broader substantive coverage and dependencies remain pending. [Inventory](section-check-inventory.md). |
+| Test coverage and dependencies | In progress | Filename mapping covers 215 sections. Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; broader substantive coverage and dependencies remain pending. [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
 | Links and index consistency | In progress | 2,004 inline relative link occurrences checked: zero missing paths at scan revision; stale index entries corrected. Anchors, external and reference-style links remain pending. [Audit report](link-index-audit.md). |
 | Editorial, source and copyright review | Pending | Review manuscript quality, attribution and source policy. |
@@ -70,6 +70,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-10 | Chapter 21 numerical and report gaps | Fixes applied; independent review pending | Review small-rate transition, finite-difference overflow and scenario inputs; rerun final revision. [Evidence](chapter-21-capstone-review.md) |
 | V-11 | Chapter 20 tiny-rate annuity underflow | Fix applied; independent review pending | Review extreme-rate numerical behavior and Section 20.6 input contract. [Evidence](chapter-20-boundary-review.md) |
 | V-12 | Chapter 19 continuous-time boundaries | Fixes applied; independent review pending | Section 19.8 near-zero discrete contributions fixed and checked; review event tolerances, numerical extremes and final-revision evidence. [Review](chapter-19-continuous-time-review.md) |
+| V-13 | Chapter 18 solver boundaries | Fixes applied; independent review pending | Review solver stopping, numerical range, integration and final-revision evidence. [Review](chapter-18-solver-boundary-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
