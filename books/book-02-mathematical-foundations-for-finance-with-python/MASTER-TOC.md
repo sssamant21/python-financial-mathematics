@@ -289,7 +289,7 @@ Published sections link to their manuscript files; planned sections remain plain
 19.2 — [Separable Equations](chapter-19/19.02-separable-equations.md)  
 19.3 — [Linear First-Order Equations](chapter-19/19.03-linear-first-order-equations.md)  
 19.4 — [Equilibria and Local Stability](chapter-19/19.04-equilibria-and-local-stability.md)  
-19.5 — Euler Time Stepping  
+19.5 — [Euler Time Stepping](chapter-19/19.05-euler-time-stepping.md)  
 19.6 — Runge-Kutta and Adaptive Solvers  
 19.7 — Depletion, Events, and Boundary Rules  
 19.8 — Validation and Discrete-Time Comparison  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 19.5 — Euler Time Stepping.
+**Next manuscript section:** 19.6 — Runge-Kutta and Adaptive Solvers.
