@@ -19,6 +19,8 @@ class SensitivityChecks(unittest.TestCase):
         with self.assertRaises(ValueError): central_difference(100, 0, 2, 0)
     def test_tiny_step(self):
         with self.assertRaises(ValueError): central_difference(100, 1, 2, 1e-30)
+    def test_denominator_overflow(self):
+        with self.assertRaises(OverflowError): central_difference(100, 0, 1e-308, 1e308)
     def test_bad_time(self):
         with self.assertRaises(ValueError): pv(100, 0, -1)
     def test_nonfinite(self):
