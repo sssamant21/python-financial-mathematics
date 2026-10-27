@@ -9,9 +9,9 @@ Build the algebra, calculus, linear algebra, optimization, and numerical reasoni
 The complete curriculum is maintained in [Master Table of Contents v1.0](MASTER-TOC.md), following Book 01's chapter/numbered-section structure, chapter projects, exercises, companion solutions, and editorial workflow.
 
 **Curriculum:** 21 chapters · 215 planned numbered sections.  
-**Manuscript sections published:** 181/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.10, and 15.1–15.10, and 16.1–16.10, and 17.1–17.10, and 18.1–18.6 — Draft; recent runtime validation pending).  
+**Manuscript sections published:** 182/215 (Sections 1.1–1.15, 2.1–2.10, 3.1–3.10, 4.1–4.10, 5.1–5.10, 6.1–6.10, 7.1–7.10, 8.1–8.10, 9.1–9.10, 10.1–10.10, and 11.1–11.10, and 12.1–12.10, and 13.1–13.10, and 14.1–14.10, and 15.1–15.10, and 16.1–16.10, and 17.1–17.10, and 18.1–18.7 — Draft; recent runtime validation pending).  
 **Canonical chapters:** 0/21.  
-**Current status:** Chapters 01–17 manuscripts complete as Draft; runtime validation and independent editorial review pending. Chapter 18 is in progress. Latest: [18.6 — Interpolation and Extrapolation](chapter-18/18.06-interpolation-and-extrapolation.md).
+**Current status:** Chapters 01–17 manuscripts complete as Draft; runtime validation and independent editorial review pending. Chapter 18 is in progress. Latest: [18.7 — Numerical Differentiation and Integration](chapter-18/18.07-numerical-differentiation-and-integration.md).
 
 ## Writing Workflow
 
@@ -19,7 +19,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 
 **Chapter 01 manuscript:** 15/15 sections, project, and companion solutions published as Draft; all 15 section reference-check scripts pass on the recorded Linux runtime. Canonical review remains pending.
 
-**Next:** Chapter 18, Section 18.7 — Numerical Differentiation and Integration. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
+**Next:** Chapter 18, Section 18.8 — Stopping Rules and Diagnostics. Runtime validation for Sections 2.8–2.10, 3.1–3.10, and 4.1–4.10 and Chapters 02–04 editorial review remain pending.
 
 ## Chapter Plan
 
@@ -43,7 +43,7 @@ Complete, validate, and push one numbered section before proceeding to the next.
 | 16 | [Unconstrained Optimization and Convexity](chapter-16/README.md) | 10/10 sections published as Draft — manuscript complete |
 | 17 | [Constrained Optimization](chapter-17/README.md) | 10/10 sections published as Draft — manuscript complete |
 | 17 | Constrained Optimization | Planned |
-| 18 | [Numerical Methods and Computational Reliability](chapter-18/README.md) | 6/10 sections published as Draft |
+| 18 | [Numerical Methods and Computational Reliability](chapter-18/README.md) | 7/10 sections published as Draft |
 | 19 | Differential Equations and Continuous-Time Models | Planned |
 | 20 | Testing and Validating Mathematical Models | Planned |
 | 21 | Integrated Capstone: Financial Mathematics Foundations Toolkit | Planned |
