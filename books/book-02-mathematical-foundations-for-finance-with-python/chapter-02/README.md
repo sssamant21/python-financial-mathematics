@@ -21,7 +21,7 @@ Develop algebraic transformations, equation solving, and domain checks for finan
 
 **Published manuscript sections:** 10/10.  
 **Canonical sections:** 0/10; canonical editorial review pending.  
-**Next:** Validate Sections 2.8–2.10, complete chapter review, then begin Chapter 03.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
 
 ## Section 2.1 Companion Material
 
