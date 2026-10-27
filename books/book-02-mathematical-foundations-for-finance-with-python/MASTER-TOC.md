@@ -5,7 +5,7 @@
 **Status:** Established curriculum for section-by-section development.  
 **Version date:** 2026-10-22.  
 **Scope:** 21 chapters; complete numbered section plan.  
-**Manuscript status:** Sections 1.1–21.5 published as Draft. Comprehensive runtime validation and independent review remain pending.
+**Manuscript status:** Sections 1.1–21.6 published as Draft. Comprehensive runtime validation and independent review remain pending.
 
 ## Purpose and Prerequisites
 
@@ -316,7 +316,7 @@ Published sections link to their manuscript files; planned sections remain plain
 21.3 — [Cash-Flow and Rate Module](chapter-21/21.03-cash-flow-and-rate-module.md)  
 21.4 — [Sensitivity and Approximation Module](chapter-21/21.04-sensitivity-and-approximation-module.md)  
 21.5 — [Linear Algebra and Replication Module](chapter-21/21.05-linear-algebra-and-replication-module.md)  
-21.6 — Optimization and Feasibility Module  
+21.6 — [Optimization and Feasibility Module](chapter-21/21.06-optimization-and-feasibility-module.md)  
 21.7 — Continuous-Time Module and Scenario Report  
 21.8 — Testing, Documentation, and Transition to Book 03  
 21.9 — Chapter Project — Financial Mathematics Foundations Toolkit  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 21.6 — Optimization and Feasibility Module.
+**Next manuscript section:** 21.7 — Continuous-Time Module and Scenario Report.
