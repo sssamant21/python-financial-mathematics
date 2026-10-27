@@ -274,7 +274,7 @@ Published sections link to their manuscript files; planned sections remain plain
 
 18.1 — [Error Taxonomy](chapter-18/18.01-error-taxonomy.md)  
 18.2 — [Floating-Point Arithmetic and Cancellation](chapter-18/18.02-floating-point-arithmetic-and-cancellation.md)  
-18.3 — Bracketing and Bisection  
+18.3 — [Bracketing and Bisection](chapter-18/18.03-bracketing-and-bisection.md)  
 18.4 — Newton and Safeguarded Root Finding  
 18.5 — Multiple Roots and Cash-Flow Equations  
 18.6 — Interpolation and Extrapolation  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 18.3 — Bracketing and Bisection.
+**Next manuscript section:** 18.4 — Newton and Safeguarded Root Finding.
