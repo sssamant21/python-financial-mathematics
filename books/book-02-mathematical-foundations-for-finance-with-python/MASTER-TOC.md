@@ -264,7 +264,7 @@ Published sections link to their manuscript files; planned sections remain plain
 17.3 — [Inequality Constraints and KKT Conditions](chapter-17/17.03-inequality-constraints-and-kkt-conditions.md)  
 17.4 — [Active Constraints and Complementarity](chapter-17/17.04-active-constraints-and-complementarity.md)  
 17.5 — [Linear Programming](chapter-17/17.05-linear-programming.md)  
-17.6 — Quadratic Programming  
+17.6 — [Quadratic Programming](chapter-17/17.06-quadratic-programming.md)  
 17.7 — Financial Allocation Assumptions  
 17.8 — Feasibility and Independent Optimality Checks  
 17.9 — Chapter Project — Constrained Allocation Decision Engine  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 17.6 — Quadratic Programming.
+**Next manuscript section:** 17.7 — Financial Allocation Assumptions.
