@@ -520,5 +520,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [20.3 — Unit Testing](chapter-20/20.03-unit-testing.md) — Published draft; independent QA deferred.
 - [20.4 — Boundary and Edge Cases](chapter-20/20.04-boundary-and-edge-cases.md) — Published draft; independent QA deferred.
 - [20.5 — Testing Floating-Point Results](chapter-20/20.05-testing-floating-point-results.md) — Published draft; independent QA deferred.
+- [20.6 — Testing Decimal Calculations](chapter-20/20.06-testing-decimal-calculations.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 5/16 sections (31.25%). **Next:** 20.6 — Testing Decimal Calculations. [Chapter 20 progress index](chapter-20/README.md).
+**Manuscript progress:** 6/16 sections (37.50%). **Next:** 20.7 — Financial Invariants. [Chapter 20 progress index](chapter-20/README.md).
