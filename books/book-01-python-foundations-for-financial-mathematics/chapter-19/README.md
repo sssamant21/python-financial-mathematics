@@ -1,6 +1,6 @@
 # Chapter 19 — Financial Data Engineering Foundations
 
-**Manuscript progress:** 14/15 sections published (93.33%).  
+**Manuscript progress:** 15/15 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -19,8 +19,8 @@
 | 19.12 | [Reproducible Data Pipelines](19.12-reproducible-data-pipelines.md) | Published draft; QA deferred |
 | 19.13 | [Avoiding Look-Ahead and Data Leakage](19.13-avoiding-look-ahead-and-data-leakage.md) | Published draft; QA deferred |
 | 19.14 | [Chapter Project — Financial Data Pipeline](19.14-chapter-project-financial-data-pipeline.md) | Published draft; QA deferred |
-| 19.15 | Exercises and Applied Problems | Planned |
+| 19.15 | [Exercises and Applied Problems](19.15-exercises-and-applied-problems.md) | Published draft; QA deferred |
 
-**Next:** 19.15 — Exercises and Applied Problems.
+**Next:** Chapter 20, Section 20.1 — Why Financial Code Must Be Tested.
 
-**Chapter status:** Manuscript in progress; not certified.
+**Chapter status:** Manuscript complete; comprehensive QA deferred and not certified.
