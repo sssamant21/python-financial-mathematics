@@ -526,5 +526,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [20.9 — Exception Handling](chapter-20/20.09-exception-handling.md) — Published draft; independent QA deferred.
 - [20.10 — Logging](chapter-20/20.10-logging.md) — Published draft; independent QA deferred.
 - [20.11 — Type Hints](chapter-20/20.11-type-hints.md) — Published draft; independent QA deferred.
+- [20.12 — Documentation](chapter-20/20.12-documentation.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 11/16 sections (68.75%). **Next:** 20.12 — Documentation. [Chapter 20 progress index](chapter-20/README.md).
+**Manuscript progress:** 12/16 sections (75.00%). **Next:** 20.13 — Reproducibility. [Chapter 20 progress index](chapter-20/README.md).
