@@ -1,6 +1,6 @@
 # Chapter 19 — Differential Equations and Continuous-Time Models
 
-**Status:** 9/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
+**Status:** 10/10 sections published as Draft. Comprehensive runtime validation and independent mathematical/editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -13,7 +13,12 @@
 | 19.7 | [Depletion, Events, and Boundary Rules](19.07-depletion-events-and-boundary-rules.md) | Draft — runtime validation pending |
 | 19.8 | [Validation and Discrete-Time Comparison](19.08-validation-and-discrete-time-comparison.md) | Draft — runtime validation pending |
 | 19.9 | [Chapter Project — Continuous Account Growth and Depletion Simulator](19.09-chapter-project-continuous-account-growth-and-depletion-simulator.md) | Draft — runtime validation pending |
-| 19.10 | Exercises and Applied Problems | Planned |
+| 19.10 | [Exercises and Applied Problems](19.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 19.10 companion material
+
+- [Cumulative Chapter 19 Python lab](code/section_19_10.py)
+- [Independent reference checks](code/check_section_19_10.py)
 
 ## Section 19.9 companion material
 
@@ -60,4 +65,4 @@
 - [Differential models Python lab](code/section_19_01.py)
 - [Independent reference checks](code/check_section_19_01.py)
 
-**Next:** 19.10 — Exercises and Applied Problems.
+**Next:** Chapter 20, Section 20.1 — Model Validation and Software Verification.
