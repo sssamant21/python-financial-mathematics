@@ -241,7 +241,7 @@ Published sections link to their manuscript files; planned sections remain plain
 15.6 — [Hessians and Mixed Partials](chapter-15/15.06-hessians-and-mixed-partials.md)  
 15.7 — [Multivariable Taylor Approximation](chapter-15/15.07-multivariable-taylor-approximation.md)  
 15.8 — [Level Sets and Sensitivity Interpretation](chapter-15/15.08-level-sets-and-sensitivity-interpretation.md)  
-15.9 — Chapter Project — Multi-Input Valuation Sensitivity Engine  
+15.9 — [Chapter Project — Multi-Input Valuation Sensitivity Engine](chapter-15/15.09-chapter-project-multi-input-valuation-sensitivity-engine.md)  
 15.10 — Exercises and Applied Problems
 
 # Chapter 16 — Unconstrained Optimization and Convexity
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 15.9 — Chapter Project — Multi-Input Valuation Sensitivity Engine.
+**Next manuscript section:** 15.10 — Exercises and Applied Problems.
