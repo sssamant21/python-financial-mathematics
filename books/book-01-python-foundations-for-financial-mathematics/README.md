@@ -522,5 +522,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [20.5 — Testing Floating-Point Results](chapter-20/20.05-testing-floating-point-results.md) — Published draft; independent QA deferred.
 - [20.6 — Testing Decimal Calculations](chapter-20/20.06-testing-decimal-calculations.md) — Published draft; independent QA deferred.
 - [20.7 — Financial Invariants](chapter-20/20.07-financial-invariants.md) — Published draft; independent QA deferred.
+- [20.8 — Input Validation](chapter-20/20.08-input-validation.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 7/16 sections (43.75%). **Next:** 20.8 — Input Validation. [Chapter 20 progress index](chapter-20/README.md).
+**Manuscript progress:** 8/16 sections (50.00%). **Next:** 20.9 — Exception Handling. [Chapter 20 progress index](chapter-20/README.md).
