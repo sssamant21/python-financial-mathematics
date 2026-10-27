@@ -482,5 +482,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [18.5 — Return Simulations](chapter-18/18.05-return-simulations.md) — Published draft; independent QA deferred.
 - [18.6 — Price-Path Simulation](chapter-18/18.06-price-path-simulation.md) — Published draft; independent QA deferred.
 - [18.7 — Scenario Analysis](chapter-18/18.07-scenario-analysis.md) — Published draft; independent QA deferred.
+- [18.8 — Monte Carlo Estimation](chapter-18/18.08-monte-carlo-estimation.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 7/15 sections (46.67%). **Next:** 18.8 — Monte Carlo Estimation. [Chapter 18 progress index](chapter-18/README.md).
+**Manuscript progress:** 8/15 sections (53.33%). **Next:** 18.9 — Convergence. [Chapter 18 progress index](chapter-18/README.md).
