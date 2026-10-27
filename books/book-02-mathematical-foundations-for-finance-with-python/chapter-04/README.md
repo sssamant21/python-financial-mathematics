@@ -75,4 +75,4 @@ Develop exponential and logarithmic models for financial growth, discounting, ra
 
 Runtime validation and editorial review are pending for Sections 4.1–4.10.
 
-**Next:** Chapter 05, Section 5.1 — Sequences and Time Indexing.
+**Next:** See the [Book 02 validation tracker](../validation/PROGRESS.md) for current review and remaining work.
