@@ -15,7 +15,7 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Not started | Audit assertion quality, module/section coverage, fixtures, dependency declarations and unexecuted examples. |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
-| Links and index consistency | Not started | Check local links and reconcile chapter and book progress indexes. |
+| Links and index consistency | In progress | 2,004 inline relative link occurrences checked: zero missing paths at scan revision; stale index entries corrected. Anchors, external and reference-style links remain pending. [Audit report](link-index-audit.md). |
 | Editorial, source and copyright review | Pending | Review manuscript quality, attribution and source policy. |
 | Final-revision and platform validation | Pending | Rerun the agreed suite against the exact final commit; assess supported Python versions and Windows where applicable. |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
@@ -65,13 +65,13 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-04 | Chapter 16 descent stopping | Fix applied; local script passed | Review near-stationary behavior and convergence assumptions |
 | V-05 | Chapter 18 summation demonstration | Fix applied; local script passed | Check manuscript wording and supported Python versions |
 | V-06 | Chapter 20 tolerance comparison | Fix applied; local script passed | Review exact-float comparison semantics and performance |
-| V-07 | Book indexes and links | Open | Inventory and reconcile stale or inconsistent entries |
+| V-07 | Book indexes and links | In progress | Reconcile Section 4.7–4.8 title/scope differences; audit anchors, external and reference-style links. [Audit](link-index-audit.md) |
 | V-08 | Coverage and executable examples | Open | Map scripts to sections, identify gaps and validate examples |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
 
-1. Audit links and indexes and reconcile verified discrepancies.
+1. Resolve the Section 4.7–4.8 title/scope mismatch and complete remaining link checks.
 2. Map section manuscripts and examples to their checks; identify untested material and missing dependencies.
 3. Review the six fixes and mathematical examples independently, tracking findings and owners.
 4. Rerun checks on the agreed final commit and supported environments; retain command, results and runtime details.
