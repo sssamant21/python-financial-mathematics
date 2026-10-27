@@ -262,7 +262,7 @@ Published sections link to their manuscript files; planned sections remain plain
 17.1 — [Feasible Sets and Constraint Types](chapter-17/17.01-feasible-sets-and-constraint-types.md)  
 17.2 — [Equality Constraints and Lagrange Multipliers](chapter-17/17.02-equality-constraints-and-lagrange-multipliers.md)  
 17.3 — [Inequality Constraints and KKT Conditions](chapter-17/17.03-inequality-constraints-and-kkt-conditions.md)  
-17.4 — Active Constraints and Complementarity  
+17.4 — [Active Constraints and Complementarity](chapter-17/17.04-active-constraints-and-complementarity.md)  
 17.5 — Linear Programming  
 17.6 — Quadratic Programming  
 17.7 — Financial Allocation Assumptions  
@@ -332,4 +332,4 @@ Preserve the exact chapter and section numbers/titles during manuscript developm
 
 - **v1.0 — 2026-10-22:** Established the 21-chapter curriculum and complete numbered section sequence. Publication begins with this TOC; manuscript work proceeds one section at a time.
 
-**Next manuscript section:** 17.4 — Active Constraints and Complementarity.
+**Next manuscript section:** 17.5 — Linear Programming.
