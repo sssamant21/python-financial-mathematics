@@ -1,5 +1,6 @@
 """Independent analytic reference checks for Book 02 Section 19.8."""
 import math
+from decimal import Decimal, localcontext
 from section_19_08 import (assessment,finite,nominal_to_continuous,
     continuous_to_nominal,continuous_growth,discrete_growth,
     continuous_contributions,end_period_contributions,euler_account,
@@ -28,6 +29,14 @@ def run():
     near(a["continuous_flow_balance"],exact)
     near(continuous_contributions(1000,0,200,5),2000)
     near(end_period_contributions(1000,0,200,5,60),2000)
+    near(end_period_contributions(0,5e-324,100,.5,2),50)
+    # Independent finite geometric sum in high-precision decimal arithmetic.
+    with localcontext() as ctx:
+        ctx.prec=60
+        for rate in ("0.04", "-0.03", "1e-20"):
+            rd=Decimal(rate); t=Decimal("2"); n=4; h=t/n
+            expected=Decimal("100")*(rd*t).exp()+Decimal("30")*h*sum((rd*h*k).exp() for k in range(n))
+            near(end_period_contributions(100,float(rd),30,2,n),float(expected),rel=1e-12)
     assert a["monthly_end_period_balance"]<exact
     near(a["monthly_end_period_balance"],
          1000*math.exp(0.2)+(200*5/60)*sum(math.exp(0.04*(5-k*5/60)) for k in range(1,61)))
