@@ -506,5 +506,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [19.9 — Date and Timestamp Normalization](chapter-19/19.09-date-and-timestamp-normalization.md) — Published draft; independent QA deferred.
 - [19.10 — Currency and Unit Normalization](chapter-19/19.10-currency-and-unit-normalization.md) — Published draft; independent QA deferred.
 - [19.11 — Data Quality Checks](chapter-19/19.11-data-quality-checks.md) — Published draft; independent QA deferred.
+- [19.12 — Reproducible Data Pipelines](chapter-19/19.12-reproducible-data-pipelines.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 11/15 sections (73.33%). **Next:** 19.12 — Reproducible Data Pipelines. [Chapter 19 progress index](chapter-19/README.md).
+**Manuscript progress:** 12/15 sections (80.00%). **Next:** 19.13 — Avoiding Look-Ahead and Data Leakage. [Chapter 19 progress index](chapter-19/README.md).
