@@ -1,6 +1,6 @@
 # Chapter 18 — Numerical Methods and Computational Reliability
 
-**Status:** 9/10 sections published as Draft. Runtime validation and independent editorial review pending.
+**Status:** 10/10 sections published as Draft. Runtime validation and independent editorial review pending.
 
 | Section | Title | Status |
 |---|---|---|
@@ -13,7 +13,12 @@
 | 18.7 | [Numerical Differentiation and Integration](18.07-numerical-differentiation-and-integration.md) | Draft — runtime validation pending |
 | 18.8 | [Stopping Rules and Diagnostics](18.08-stopping-rules-and-diagnostics.md) | Draft — runtime validation pending |
 | 18.9 | [Chapter Project — Financial Numerical Solver and Diagnostics](18.09-chapter-project-financial-numerical-solver-and-diagnostics.md) | Draft — runtime validation pending |
-| 18.10 | Exercises and Applied Problems | Planned |
+| 18.10 | [Exercises and Applied Problems](18.10-exercises-and-applied-problems.md) | Draft — runtime validation pending |
+
+## Section 18.10 companion material
+
+- [Exercises and applied problems Python lab](code/section_18_10.py)
+- [Independent reference checks](code/check_section_18_10.py)
 
 ## Section 18.9 companion material
 
@@ -60,4 +65,4 @@
 - [Error taxonomy Python lab](code/section_18_01.py)
 - [Independent reference checks](code/check_section_18_01.py)
 
-**Next:** 18.10 — Exercises and Applied Problems.
+**Next:** Chapter 19, Section 19.1 — Differential Models and Initial Conditions.
