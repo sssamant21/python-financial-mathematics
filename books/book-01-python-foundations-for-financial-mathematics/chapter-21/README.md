@@ -1,6 +1,6 @@
 # Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit
 
-**Manuscript progress:** 13/18 sections published (72.22%).  
+**Manuscript progress:** 14/18 sections published (77.78%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 
 | Section | Topic | Status |
@@ -18,12 +18,12 @@
 | 21.11 | [Statistical Module](21.11-statistical-module.md) | Published draft; QA deferred |
 | 21.12 | [Simulation Module](21.12-simulation-module.md) | Published draft; QA deferred |
 | 21.13 | [Data Validation Layer](21.13-data-validation-layer.md) | Published draft; QA deferred |
-| 21.14 | Visualization Layer | Planned |
+| 21.14 | [Visualization Layer](21.14-visualization-layer.md) | Published draft; QA deferred |
 | 21.15 | Testing and Verification | Planned |
 | 21.16 | Documentation and Reproducibility | Planned |
 | 21.17 | Final Integrated Case Study | Planned |
 | 21.18 | Further Study and Transition to Book 2 | Planned |
 
-**Next:** 21.14 — Visualization Layer.
+**Next:** 21.15 — Testing and Verification.
 
 **Chapter status:** Manuscript in progress; not certified.

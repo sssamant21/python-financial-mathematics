@@ -549,5 +549,6 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.11 — Statistical Module](chapter-21/21.11-statistical-module.md) — Published draft; independent QA deferred.
 - [21.12 — Simulation Module](chapter-21/21.12-simulation-module.md) — Published draft; independent QA deferred.
 - [21.13 — Data Validation Layer](chapter-21/21.13-data-validation-layer.md) — Published draft; independent QA deferred.
+- [21.14 — Visualization Layer](chapter-21/21.14-visualization-layer.md) — Published draft; independent QA deferred.
 
-**Manuscript progress:** 13/18 sections (72.22%). **Next:** 21.14 — Visualization Layer. [Chapter 21 progress index](chapter-21/README.md).
+**Manuscript progress:** 14/18 sections (77.78%). **Next:** 21.15 — Testing and Verification. [Chapter 21 progress index](chapter-21/README.md).
