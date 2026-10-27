@@ -43,7 +43,9 @@ def exact_account(initial,rate,flow,years):
         raise ValueError("years must be nonnegative")
     if r==0:
         return finite(a+u*t,"balance")
-    return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
+    exponent=r*t
+    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
+    return finite(a*math.exp(exponent)+u*factor,"balance")
 
 def adaptive_rk4(f,initial,horizon,atol=1e-7,rtol=1e-9,
                  initial_step=None,max_attempts=10000,min_step=1e-12):
