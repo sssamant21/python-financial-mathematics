@@ -30,7 +30,8 @@ def geometric_sum(ratio, n):
     if q > 0:
         # Preserve small q-1 as passed; log(q) remains stable for positive q.
         delta = q - 1.0
-        value = math.expm1(n * math.log1p(delta)) / delta
+        # q itself is the input: q-1 can round to -1 for tiny positive q.
+        value = math.expm1(n * math.log(q)) / delta
     else:
         value = (1 - q**n) / (1 - q)
     if not math.isfinite(value):
