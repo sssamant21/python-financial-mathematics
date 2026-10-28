@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-28  
 **Inventory revision:** `b0a48ed6b4dcbc36a3be906ff7a14e636370ec32`  
-**State:** Reachability scan completed; two source references unresolved; rendered navigation pending.
+**State:** Historical reachability scan completed; identified references subsequently repaired. [Source-resolution evidence](source-reference-resolution.md). Rendered navigation pending.
 
 ## Method and results
 
@@ -26,8 +26,8 @@ Official Federal Reserve search results identify SR 26-2 (April 17, 2026) as rep
 
 The snapshot predates the subsequent title reconciliation and audit-document additions. This audit does not claim to cover newly added links or all Markdown/HTML syntax. No Python algorithm changed; the existing runtime report retains its original pinned source scope.
 
-1. Review Federal Reserve guidance currency and decide whether each citation should identify a historical source or current guidance.
-2. Identify a suitable official NIST source supporting the Section 20.8 reference.
+1. Federal Reserve references were updated to SR 26-2 with scope notes; see the subsequent source-resolution report.
+2. Section 20.8 now identifies the NIST combinatorial-testing project as background, with its scope clarified.
 3. Recheck corrected/new destinations and perform rendered-navigation review.
 4. Repeat the agreed link inventory at the eventual release revision.
 
