@@ -48,7 +48,11 @@ def approximate_roots(*, a, b, c, precision=40):
             return tuple(decimal_value(root) for root in result["exact_roots"])
         center = decimal_value(result["center"])
         spread = decimal_value(result["spread_squared"]).sqrt()
-        return (center - spread, center + spread)
+        # Compute the root whose terms reinforce, then use the exact
+        # product c/a to recover the other without subtractive cancellation.
+        far = center - spread if center < 0 else center + spread
+        other = decimal_value(rational(c) / rational(a)) / far
+        return tuple(sorted((far, other)))
 
 
 def main():
