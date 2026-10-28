@@ -1,0 +1,570 @@
+
+===== 6.01-why-numpy.md =====
+test_domain_and_nonfinite (test_reference.MotivationTests.test_domain_and_nonfinite) ... ok
+test_known_values_and_shape (test_reference.MotivationTests.test_known_values_and_shape) ... ok
+test_no_mutation_or_alias (test_reference.MotivationTests.test_no_mutation_or_alias) ... ok
+test_overflow_fails_and_settings_restored (test_reference.MotivationTests.test_overflow_fails_and_settings_restored) ... ok
+test_scalar_reference (test_reference.MotivationTests.test_scalar_reference) ... ok
+test_shape_prevents_broadcasting (test_reference.MotivationTests.test_shape_prevents_broadcasting) ... ok
+test_types_and_dtypes (test_reference.MotivationTests.test_types_and_dtypes) ... ok
+test_zero_end_price (test_reference.MotivationTests.test_zero_end_price) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.040s
+
+OK
+
+--- demonstration ---
+ASSET-A: 5.00%
+ASSET-B: -5.00%
+ASSET-C: 0.00%
+Shape: (3,)
+Dtype: float64
+
+--- compile ---
+
+===== 6.02-numpy-arrays.md =====
+test_alias_view_and_copy (test_reference.ArrayTests.test_alias_view_and_copy) ... ok
+test_asarray_is_not_copy_guarantee (test_reference.ArrayTests.test_asarray_is_not_copy_guarantee) ... ok
+test_attributes (test_reference.ArrayTests.test_attributes) ... ok
+test_independent_snapshot (test_reference.ArrayTests.test_independent_snapshot) ... ok
+test_label_contract (test_reference.ArrayTests.test_label_contract) ... ok
+test_noncontiguous_and_readonly_source (test_reference.ArrayTests.test_noncontiguous_and_readonly_source) ... ok
+test_rank_and_empty_shapes (test_reference.ArrayTests.test_rank_and_empty_shapes) ... ok
+test_type_and_numeric_domain (test_reference.ArrayTests.test_type_and_numeric_domain) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.037s
+
+OK
+
+--- demonstration ---
+Axes: date, instrument
+Shape: (2, 3)
+Dimensions: 2
+Elements: 6
+Dtype: float64
+Bytes per element: 8
+Element bytes: 48
+Alias sees change: True
+Snapshot preserved: True
+Copy preserved: True
+
+--- compile ---
+
+===== 6.03-array-creation-and-data-types.md =====
+test_cast_is_not_rounding_policy (test_reference.CreationTests.test_cast_is_not_rounding_policy) ... ok
+test_creation_shapes_and_initial_state (test_reference.CreationTests.test_creation_shapes_and_initial_state) ... ok
+test_grid_and_integer_periods (test_reference.CreationTests.test_grid_and_integer_periods) ... ok
+test_independent_calls (test_reference.CreationTests.test_independent_calls) ... ok
+test_precision_loss_cannot_be_recovered (test_reference.CreationTests.test_precision_loss_cannot_be_recovered) ... ok
+test_valid_rate_conversion (test_reference.CreationTests.test_valid_rate_conversion) ... ok
+test_wire_domain (test_reference.CreationTests.test_wire_domain) ... ok
+test_wire_types (test_reference.CreationTests.test_wire_types) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.041s
+
+OK
+
+--- demonstration ---
+Rates: [0.01, 0.025, 0.04]
+Periods: [1, 2, 3, 4]
+Shift grid: ['-0.010', '-0.005', '0.000', '0.005', '0.010']
+Result shape: (5, 3)
+Uncomputed results: 15
+Completed entries: 0
+Neutral factors: [1.0, 1.0, 1.0]
+
+--- compile ---
+
+===== 6.04-indexing-and-slicing.md =====
+test_basic_slice_and_rank (test_reference.IndexingTests.test_basic_slice_and_rank) ... ok
+test_boolean_selection_and_shape (test_reference.IndexingTests.test_boolean_selection_and_shape) ... ok
+test_chained_copy_and_direct_assignment (test_reference.IndexingTests.test_chained_copy_and_direct_assignment) ... ok
+test_empty_and_one_column (test_reference.IndexingTests.test_empty_and_one_column) ... ok
+test_identity_errors (test_reference.IndexingTests.test_identity_errors) ... ok
+test_pairs_versus_rectangle (test_reference.IndexingTests.test_pairs_versus_rectangle) ... ok
+test_requested_order_and_independence (test_reference.IndexingTests.test_requested_order_and_independence) ... ok
+test_source_contract (test_reference.IndexingTests.test_source_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.041s
+
+OK
+
+--- demonstration ---
+Requested IDs: ('C', 'A')
+Selected: [[50.0, 100.0], [51.0, 105.0], [52.0, 103.0]]
+Last date: [103.0, 78.0, 52.0]
+Column shapes: (3,) (3, 1)
+Paired: [100.0, 52.0]
+Rectangle: [[100.0, 50.0], [103.0, 52.0]]
+Latest-price mask: [True, False, False]
+Masked IDs: ('A',)
+Masked table: [[100.0], [105.0], [103.0]]
+
+--- compile ---
+
+===== 6.05-vectorized-financial-calculations.md =====
+test_domain_even_for_flat_position (test_reference.VectorizedTests.test_domain_even_for_flat_position) ... ok
+test_equal_prices_and_zero_prices (test_reference.VectorizedTests.test_equal_prices_and_zero_prices) ... ok
+test_known_long_short_flat (test_reference.VectorizedTests.test_known_long_short_flat) ... ok
+test_numerical_failure_restores_error_policy (test_reference.VectorizedTests.test_numerical_failure_restores_error_policy) ... ok
+test_scalar_reference (test_reference.VectorizedTests.test_scalar_reference) ... ok
+test_shape_rejects_broadcasting (test_reference.VectorizedTests.test_shape_rejects_broadcasting) ... ok
+test_source_preservation_and_output_storage (test_reference.VectorizedTests.test_source_preservation_and_output_storage) ... ok
+test_types (test_reference.VectorizedTests.test_types) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.042s
+
+OK
+
+--- demonstration ---
+LONG-A: opening=1000.00, closing=1050.00, pnl=50.00
+SHORT-B: opening=-400.00, closing=-380.00, pnl=20.00
+FLAT-C: opening=0.00, closing=0.00, pnl=0.00
+Result shape: (3,)
+
+--- compile ---
+
+===== 6.06-broadcasting.md =====
+test_axis_error_can_be_silent (test_reference.BroadcastingTests.test_axis_error_can_be_silent) ... ok
+test_budget (test_reference.BroadcastingTests.test_budget) ... ok
+test_domain_and_total_loss (test_reference.BroadcastingTests.test_domain_and_total_loss) ... ok
+test_known_grid (test_reference.BroadcastingTests.test_known_grid) ... ok
+test_numerical_failure_restores_policy (test_reference.BroadcastingTests.test_numerical_failure_restores_policy) ... ok
+test_shape_and_dtype (test_reference.BroadcastingTests.test_shape_and_dtype) ... ok
+test_storage_and_readonly_broadcast_view (test_reference.BroadcastingTests.test_storage_and_readonly_broadcast_view) ... ok
+test_unequal_dimensions_and_scalar_reference (test_reference.BroadcastingTests.test_unequal_dimensions_and_scalar_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.038s
+
+OK
+
+--- demonstration ---
+Axes: scenario, position
+Expanded shapes: (3, 1) (1, 3)
+Output shape: (3, 3)
+Scenario P&L: [[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0]]
+Output element bytes: 72
+
+--- compile ---
+
+===== 6.07-aggregation-and-statistical-operations.md =====
+test_aggregate_variance_includes_joint_pattern (test_reference.AggregationTests.test_aggregate_variance_includes_joint_pattern) ... ok
+test_axis_and_keepdims (test_reference.AggregationTests.test_axis_and_keepdims) ... ok
+test_ddof_policy (test_reference.AggregationTests.test_ddof_policy) ... ok
+test_known_reductions (test_reference.AggregationTests.test_known_reductions) ... ok
+test_missing_and_invalid_structure (test_reference.AggregationTests.test_missing_and_invalid_structure) ... ok
+test_overflow_and_error_restoration (test_reference.AggregationTests.test_overflow_and_error_restoration) ... ok
+test_scalar_reference (test_reference.AggregationTests.test_scalar_reference) ... ok
+test_source_and_storage (test_reference.AggregationTests.test_source_and_storage) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.051s
+
+OK
+
+--- demonstration ---
+Axes: scenario, position
+Input shape: (4, 2)
+Scenario totals: [-60.0, 0.0, 60.0, 120.0]
+Position means: [50.0, -20.0]
+Min/max total: -60.00, 120.00
+Mean total: 30.00
+Std total (ddof=0): 67.082039
+Totals with keepdims: (4, 1)
+
+--- compile ---
+
+===== 6.08-cash-flow-vectors.md =====
+test_amount_domain (test_reference.CashflowTests.test_amount_domain) ... ok
+test_duplicate_unsorted_and_negative_periods (test_reference.CashflowTests.test_duplicate_unsorted_and_negative_periods) ... ok
+test_known_schedule (test_reference.CashflowTests.test_known_schedule) ... ok
+test_scalar_reference (test_reference.CashflowTests.test_scalar_reference) ... ok
+test_shape_and_dtype (test_reference.CashflowTests.test_shape_and_dtype) ... ok
+test_source_preservation_and_independence (test_reference.CashflowTests.test_source_preservation_and_independence) ... ok
+test_timing_changes_not_nominal_net (test_reference.CashflowTests.test_timing_changes_not_nominal_net) ... ok
+test_zero_single_event_and_boundaries (test_reference.CashflowTests.test_zero_single_event_and_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.039s
+
+OK
+
+--- demonstration ---
+Perspective: investor; unit: abstract period; currency: USD
+Periods: [0, 1, 3, 4]
+Amounts: [-1000.0, 200.0, -50.0, 1000.0]
+Cumulative nominal movement: [-1000.0, -800.0, -850.0, 150.0]
+Nominal net: 150.00
+Inflow periods: [1, 4]
+Outflow periods: [0, 3]
+
+--- compile ---
+
+===== 6.09-return-vectors.md =====
+test_constant_and_single_interval (test_reference.ReturnTests.test_constant_and_single_interval) ... ok
+test_dtype_and_price_domain (test_reference.ReturnTests.test_dtype_and_price_domain) ... ok
+test_known_path_and_alignment (test_reference.ReturnTests.test_known_path_and_alignment) ... ok
+test_numerical_failure_restores_policy (test_reference.ReturnTests.test_numerical_failure_restores_policy) ... ok
+test_period_contract (test_reference.ReturnTests.test_period_contract) ... ok
+test_scalar_and_endpoint_references (test_reference.ReturnTests.test_scalar_and_endpoint_references) ... ok
+test_source_preservation_and_storage (test_reference.ReturnTests.test_source_preservation_and_storage) ... ok
+test_timing_not_annualized (test_reference.ReturnTests.test_timing_not_annualized) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.042s
+
+OK
+
+--- demonstration ---
+Intervals: [(0, 1), (1, 3), (3, 4)]
+Simple returns: ['10.00%', '-10.00%', '10.00%']
+Growth from first price: ['1.100000', '0.990000', '1.089000']
+Linked price-only return: 8.90%
+Sum of simple returns: 10.00%
+
+--- compile ---
+
+===== 6.10-portfolio-weight-vectors.md =====
+test_identity_not_only_length (test_reference.WeightTests.test_identity_not_only_length) ... ok
+test_known_weights_and_contributions (test_reference.WeightTests.test_known_weights_and_contributions) ... ok
+test_overflow_restores_policy (test_reference.WeightTests.test_overflow_restores_policy) ... ok
+test_shape_source_and_storage (test_reference.WeightTests.test_shape_source_and_storage) ... ok
+test_value_bridge_and_scalar_reference (test_reference.WeightTests.test_value_bridge_and_scalar_reference) ... ok
+test_value_domain (test_reference.WeightTests.test_value_domain) ... ok
+test_weight_sum_without_silent_normalization (test_reference.WeightTests.test_weight_sum_without_silent_normalization) ... ok
+test_zero_weight_and_total_loss (test_reference.WeightTests.test_zero_weight_and_total_loss) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.040s
+
+OK
+
+--- demonstration ---
+IDs: ('A', 'B', 'CASH')
+Opening weights: ['60.00%', '30.00%', '10.00%']
+Return contributions: ['6.00%', '-1.50%', '0.00%']
+Portfolio price return: 4.50%
+Weight sum: 1.000000000000
+
+--- compile ---
+
+===== 6.11-matrices-and-financial-models.md =====
+test_axes_and_product_not_elementwise (test_reference.MatrixTests.test_axes_and_product_not_elementwise) ... ok
+test_budget (test_reference.MatrixTests.test_budget) ... ok
+test_consistent_column_permutation (test_reference.MatrixTests.test_consistent_column_permutation) ... ok
+test_domain_and_weight_rows (test_reference.MatrixTests.test_domain_and_weight_rows) ... ok
+test_invalid_labels_and_shapes (test_reference.MatrixTests.test_invalid_labels_and_shapes) ... ok
+test_known_model (test_reference.MatrixTests.test_known_model) ... ok
+test_nested_reference (test_reference.MatrixTests.test_nested_reference) ... ok
+test_source_and_transpose_storage (test_reference.MatrixTests.test_source_and_transpose_storage) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.049s
+
+OK
+
+--- demonstration ---
+Axes: scenario, portfolio
+Output shape: (3, 2)
+Portfolios: ('P1', 'P2')
+UP: 4.50%, 0.50%
+DOWN: -9.00%, -1.00%
+CASH-YIELD: 0.02%, 0.10%
+
+--- compile ---
+
+===== 6.12-linear-algebra-with-numpy.md =====
+test_known_payoff_match (test_reference.LinearAlgebraTests.test_known_payoff_match) ... ok
+test_nonfinite_and_bounds (test_reference.LinearAlgebraTests.test_nonfinite_and_bounds) ... ok
+test_shapes_and_types (test_reference.LinearAlgebraTests.test_shapes_and_types) ... ok
+test_signed_units_are_not_weights (test_reference.LinearAlgebraTests.test_signed_units_are_not_weights) ... ok
+test_singular_and_ill_conditioned (test_reference.LinearAlgebraTests.test_singular_and_ill_conditioned) ... ok
+test_small_residual_can_hide_sensitivity (test_reference.LinearAlgebraTests.test_small_residual_can_hide_sensitivity) ... ok
+test_source_and_output_storage (test_reference.LinearAlgebraTests.test_source_and_output_storage) ... ok
+test_zero_target_and_one_dimension (test_reference.LinearAlgebraTests.test_zero_target_and_one_dimension) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.045s
+
+OK
+
+--- demonstration ---
+Axes: payoff state, instrument
+Instrument units: ['50.000000', '50.000000']
+Reconstructed payoff: [100.0, 150.0]
+Condition number (2-norm): 6.854102
+Normalized residual: 0.000e+00
+
+--- compile ---
+
+===== 6.13-random-number-generation.md =====
+test_extra_draw_changes_later_values (test_reference.RandomTests.test_extra_draw_changes_later_values) ... ok
+test_same_seed_same_call (test_reference.RandomTests.test_same_seed_same_call) ... ok
+test_seed_and_generator_types (test_reference.RandomTests.test_seed_and_generator_types) ... ok
+test_shared_draws_for_two_assumptions (test_reference.RandomTests.test_shared_draws_for_two_assumptions) ... ok
+test_spawned_logical_streams (test_reference.RandomTests.test_spawned_logical_streams) ... ok
+test_state_advances (test_reference.RandomTests.test_state_advances) ... ok
+test_state_checkpoint (test_reference.RandomTests.test_state_checkpoint) ... ok
+test_validation_does_not_consume_stream (test_reference.RandomTests.test_validation_does_not_consume_stream) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.049s
+
+OK
+
+--- demonstration ---
+NumPy: 2.3.5
+Bit generator: PCG64
+Seed: 20261022
+Axes: scenario, factor
+Shape: (4, 2)
+First row: ['-0.223280', '-0.032109']
+Fresh-stream repeat equal: True
+
+--- compile ---
+
+===== 6.14-numerical-precision-and-numpy.md =====
+test_accumulation_order (test_reference.PrecisionTests.test_accumulation_order) ... ok
+test_cast_loss_and_spacing (test_reference.PrecisionTests.test_cast_loss_and_spacing) ... ok
+test_invalid_comparisons (test_reference.PrecisionTests.test_invalid_comparisons) ... ok
+test_ordinary_and_zero_returns (test_reference.PrecisionTests.test_ordinary_and_zero_returns) ... ok
+test_overflow_restores_settings (test_reference.PrecisionTests.test_overflow_restores_settings) ... ok
+test_return_domain_and_storage (test_reference.PrecisionTests.test_return_domain_and_storage) ... ok
+test_tiny_return_decimal_reference (test_reference.PrecisionTests.test_tiny_return_decimal_reference) ... ok
+test_tolerance_scale (test_reference.PrecisionTests.test_tolerance_scale) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.045s
+
+OK
+
+--- demonstration ---
+float64 epsilon near 1: 2.220446e-16
+Naive tiny linked return: 0.000000e+00
+log1p/expm1 tiny linked return: 3.000000e-17
+Default near-zero isclose: True
+Explicit near-zero agreement: False
+
+--- compile ---
+
+===== 6.15-performance-python-loops-vs-vectorization.md =====
+test_all_benchmark_sizes_agree (test_reference.PerformanceCorrectnessTests.test_all_benchmark_sizes_agree) ... ok
+test_array_boundary (test_reference.PerformanceCorrectnessTests.test_array_boundary) ... ok
+test_known_long_short_flat (test_reference.PerformanceCorrectnessTests.test_known_long_short_flat) ... ok
+test_matching_list_boundary (test_reference.PerformanceCorrectnessTests.test_matching_list_boundary) ... ok
+test_single_entry_and_zero_change (test_reference.PerformanceCorrectnessTests.test_single_entry_and_zero_change) ... ok
+test_size_policy (test_reference.PerformanceCorrectnessTests.test_size_policy) ... ok
+test_source_preservation (test_reference.PerformanceCorrectnessTests.test_source_preservation) ... ok
+test_timer_count_policy (test_reference.PerformanceCorrectnessTests.test_timer_count_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.111s
+
+OK
+
+--- demonstration ---
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "system": "Linux",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "scope": "warm local kernels; list boundary includes conversion; no I/O or domain validation",
+  "cases": [
+    {
+      "size": 3,
+      "repeat": 5,
+      "number": 3,
+      "correctness": "passed",
+      "input_array_element_bytes": 72,
+      "output_array_element_bytes": 24,
+      "timings": {
+        "python_lists": {
+          "seconds_per_call": [
+            1.2793333326044376e-06,
+            5.350000075547238e-07,
+            4.6166665394290857e-07,
+            3.9933333558413625e-07,
+            3.9799999740353087e-07
+          ],
+          "minimum": 3.9799999740353087e-07,
+          "median": 4.6166665394290857e-07
+        },
+        "numpy_lists": {
+          "seconds_per_call": [
+            3.953333343057845e-06,
+            2.2496666739849993e-06,
+            2.166666661196359e-06,
+            2.190666672656031e-06,
+            3.816200000983372e-05
+          ],
+          "minimum": 2.166666661196359e-06,
+          "median": 2.2496666739849993e-06
+        },
+        "numpy_resident": {
+          "seconds_per_call": [
+            2.178999996734395e-06,
+            8.823333435733124e-07,
+            8.949999899717417e-07,
+            8.000000093488779e-07,
+            8.080000005368978e-07
+          ],
+          "minimum": 8.000000093488779e-07,
+          "median": 8.823333435733124e-07
+        }
+      },
+      "list_boundary_median_ratio": 0.2052155811710206
+    },
+    {
+      "size": 1000,
+      "repeat": 5,
+      "number": 3,
+      "correctness": "passed",
+      "input_array_element_bytes": 24000,
+      "output_array_element_bytes": 8000,
+      "timings": {
+        "python_lists": {
+          "seconds_per_call": [
+            3.913433333006348e-05,
+            3.731533333469391e-05,
+            3.742933332281003e-05,
+            3.670366665649757e-05,
+            3.675533334520272e-05
+          ],
+          "minimum": 3.670366665649757e-05,
+          "median": 3.731533333469391e-05
+        },
+        "numpy_lists": {
+          "seconds_per_call": [
+            9.32646666645572e-05,
+            8.82359999915631e-05,
+            9.036433332691256e-05,
+            9.929566666263175e-05,
+            9.402499999093077e-05
+          ],
+          "minimum": 8.82359999915631e-05,
+          "median": 9.32646666645572e-05
+        },
+        "numpy_resident": {
+          "seconds_per_call": [
+            2.310333343302773e-06,
+            1.9366666492715012e-06,
+            1.7973333304629098e-06,
+            1.7803333207666583e-06,
+            1.7289999997653165e-06
+          ],
+          "minimum": 1.7289999997653165e-06,
+          "median": 1.7973333304629098e-06
+        }
+      },
+      "list_boundary_median_ratio": 0.40010150327245664
+    },
+    {
+      "size": 100000,
+      "repeat": 5,
+      "number": 3,
+      "correctness": "passed",
+      "input_array_element_bytes": 2400000,
+      "output_array_element_bytes": 800000,
+      "timings": {
+        "python_lists": {
+          "seconds_per_call": [
+            0.005040895666657737,
+            0.005677655999988929,
+            0.0041107873333317,
+            0.004519180333318218,
+            0.004168262000007417
+          ],
+          "minimum": 0.0041107873333317,
+          "median": 0.004519180333318218
+        },
+        "numpy_lists": {
+          "seconds_per_call": [
+            0.013036145333330751,
+            0.011149908333341804,
+            0.010872647999993509,
+            0.012433831999999256,
+            0.012832988333343565
+          ],
+          "minimum": 0.010872647999993509,
+          "median": 0.012433831999999256
+        },
+        "numpy_resident": {
+          "seconds_per_call": [
+            0.00013366100000666847,
+            0.00011516266666452187,
+            0.00016663299999208903,
+            0.0001984550000126243,
+            0.0001784043333259433
+          ],
+          "minimum": 0.00011516266666452187,
+          "median": 0.00016663299999208903
+        }
+      },
+      "list_boundary_median_ratio": 0.36345837174882917
+    }
+  ]
+}
+
+--- compile ---
+
+===== 6.16-chapter-project-vectorized-portfolio-calculator.md =====
+test_column_permutation (test_reference.PortfolioTests.test_column_permutation) ... ok
+test_invalid_numeric_and_domain (test_reference.PortfolioTests.test_invalid_numeric_and_domain) ... ok
+test_known_answers (test_reference.PortfolioTests.test_known_answers) ... ok
+test_labels_and_shapes (test_reference.PortfolioTests.test_labels_and_shapes) ... ok
+test_range_and_cell_limit (test_reference.PortfolioTests.test_range_and_cell_limit) ... ok
+test_scalar_oracle_and_reconciliation (test_reference.PortfolioTests.test_scalar_oracle_and_reconciliation) ... ok
+test_single_asset_total_loss (test_reference.PortfolioTests.test_single_asset_total_loss) ... ok
+test_source_and_output_ownership (test_reference.PortfolioTests.test_source_and_output_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.049s
+
+OK
+
+--- demonstration ---
+Opening value: 1000.00
+up: return=4.50%, ending=1045.00, pnl=45.00
+down: return=-10.50%, ending=895.00, pnl=-105.00
+flat: return=0.00%, ending=1000.00, pnl=0.00
+
+--- compile ---
+
+===== 6.17-solutions-and-reference-implementations.md =====
+test_problem_01 (test_reference.ChapterSixSolutions.test_problem_01) ... ok
+test_problem_02 (test_reference.ChapterSixSolutions.test_problem_02) ... ok
+test_problem_03 (test_reference.ChapterSixSolutions.test_problem_03) ... ok
+test_problem_04 (test_reference.ChapterSixSolutions.test_problem_04) ... ok
+test_problem_05 (test_reference.ChapterSixSolutions.test_problem_05) ... ok
+test_problem_06 (test_reference.ChapterSixSolutions.test_problem_06) ... ok
+test_problem_07 (test_reference.ChapterSixSolutions.test_problem_07) ... ok
+test_problem_08 (test_reference.ChapterSixSolutions.test_problem_08) ... ok
+test_problem_09 (test_reference.ChapterSixSolutions.test_problem_09) ... ok
+test_problem_10 (test_reference.ChapterSixSolutions.test_problem_10) ... ok
+test_problem_11 (test_reference.ChapterSixSolutions.test_problem_11) ... ok
+test_problem_12 (test_reference.ChapterSixSolutions.test_problem_12) ... ok
+test_problem_13 (test_reference.ChapterSixSolutions.test_problem_13) ... ok
+test_problem_14 (test_reference.ChapterSixSolutions.test_problem_14) ... ok
+test_problem_15 (test_reference.ChapterSixSolutions.test_problem_15) ... ok
+test_problem_16 (test_reference.ChapterSixSolutions.test_problem_16) ... ok
+test_problem_17 (test_reference.ChapterSixSolutions.test_problem_17) ... ok
+test_problem_18 (test_reference.ChapterSixSolutions.test_problem_18) ... ok
+test_problem_19 (test_reference.ChapterSixSolutions.test_problem_19) ... ok
+test_problem_20 (test_reference.ChapterSixSolutions.test_problem_20) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.054s
+
+OK
+
+--- demonstration ---
+Not applicable: standalone solution suite.
+
+--- compile ---
