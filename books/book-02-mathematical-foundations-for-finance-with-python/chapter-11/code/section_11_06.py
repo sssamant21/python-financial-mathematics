@@ -57,7 +57,8 @@ def projection(vector,direction):
     signed_length=finite(math.fsum(x*u for x,u in zip(vector.values,unit_direction)),"scalar projection")
     projected=Vector(vector.labels,tuple(finite(signed_length*u,"projection component") for u in unit_direction),vector.unit,vector.axis)
     residual=Vector(vector.labels,tuple(finite(x-p,"residual component") for x,p in zip(vector.values,projected.values)),vector.unit,vector.axis)
-    coefficient=finite(signed_length/(maximum*length),"projection coefficient")
+    # The direction norm can overflow even when the coefficient is representable.
+    coefficient=finite((signed_length/length)/maximum,"projection coefficient")
     return {"coefficient":coefficient,"scalar_projection":signed_length,
             "projection":projected,"residual":residual}
 
