@@ -17,7 +17,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
 | G1 Candidate compilation/runtime | Passed, scoped | V-31 report at pinned revision; reopen for affected source or fixture changes | Automated run recorded |
-| G2 Curriculum and navigation | In progress | Resolve V-07 title/scope differences; check anchor, reference-style and external links; record scope and exceptions | Unassigned |
+| G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | In progress | Map each section's claims, examples, exercises and invalid-input contracts to assertions or documented manual review; identify aggregates and uncovered cases | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
 | G5 Editorial/source review | Pending | Named reviewer; notation, units, assumptions, attribution, source policy and exercise/solution consistency | Unassigned |
@@ -57,7 +57,7 @@ A second pass by the same assistant is a further source review, not automaticall
 ## Immediate executable queue
 
 1. Extend the path audit to Markdown anchors and reference-style links, recording parser limitations and false positives.
-2. Compare Sections 4.7–4.8 and the curriculum/structure policy to prepare a concrete title/scope reconciliation.
+2. Sections 4.7–4.8 title/scope reconciliation is [recorded](chapter-04-title-scope-reconciliation.md); preserve established TOC titles during further review.
 3. Expand the filename inventory into a claims-to-evidence coverage table.
 4. Gather the original six fixes into a review packet and document independent numerical findings.
 5. Define the supported environment matrix before calling G6 complete.
