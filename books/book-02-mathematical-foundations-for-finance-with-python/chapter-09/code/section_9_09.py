@@ -43,13 +43,17 @@ def scenario(flows, rate, shock_bp):
     r = finite(rate, "rate")
     bp = finite(shock_bp, "shock_bp")
     h = bp / 10000.0
+    shifted_rate = finite(r + h, "shifted rate")
     base = baseline(items, r)
     terms = base["terms"]
     exact = math.fsum(v * math.expm1(-t * h)
                       for (_, t), v in zip(items, terms))
     linear = base["first"] * h
     quadratic = linear + 0.5 * base["second"] * h * h
-    low_rate = min(r, r + h)
+    # Revalue directly: baseline + change can cancel a representable small PV.
+    exact_value = finite(math.fsum(c * math.exp(-shifted_rate * t)
+                                  for c, t in items), "exact value")
+    low_rate = min(r, shifted_rate)
     worst = [c * math.exp(-low_rate * t) for c, t in items]
     m2 = math.fsum(t * t * v for (_, t), v in zip(items, worst))
     m3 = math.fsum(t * t * t * v for (_, t), v in zip(items, worst))
@@ -63,7 +67,7 @@ def scenario(flows, rate, shock_bp):
     return {"shock_bp": bp, "shock_decimal": h,
             "exact_change": exact, "linear_change": linear,
             "quadratic_change": quadratic,
-            "exact_value": base["value"] + exact,
+            "exact_value": exact_value,
             "linear_error": e1, "quadratic_error": e2,
             "absolute_linear_error": abs(e1),
             "absolute_quadratic_error": abs(e2),
