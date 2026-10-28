@@ -41,7 +41,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | 06 | 10 | Pending | Pending | Not certified |
 | 07 | 10 | Pending | Pending | Not certified |
 | 08 | 10 | Pending | Pending | Not certified |
-| 09 | 10 | Pending | Pending | Not certified |
+| 09 | 10 | Pending | Pending | [Focused scenario review](chapter-09-scenario-revaluation-review.md); not certified |
 | 10 | 10 | Pending | Pending | [Focused cash-flow review](chapter-10-cashflow-boundary-review.md); not certified |
 | 11 | 10 | Pending | Pending | [Focused projection review](chapter-11-projection-coefficient-review.md); not certified |
 | 12 | 10 | Pending | Pending | [Focused inverse review](chapter-12-inverse-scaling-review.md); not certified |
@@ -79,6 +79,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-19 | Chapter 12 inverse scaling | Fixes applied; independent review pending | Review pivot scaling, residual normalizers and final-revision evidence. [Review](chapter-12-inverse-scaling-review.md) |
 | V-20 | Chapter 11 projection coefficient | Fix applied; independent review pending | Review coefficient range, relative-distance scaling and final-revision evidence. [Review](chapter-11-projection-coefficient-review.md) |
 | V-21 | Chapter 10 integral and sensitivity boundaries | Fixes applied; independent review pending | Review weighted integrals, quadrature spacing and final-revision evidence. [Review](chapter-10-cashflow-boundary-review.md) |
+| V-22 | Chapter 9 scenario revaluation | Fix applied; independent review pending | Review Taylor bounds, elasticity range and final-revision evidence. [Review](chapter-09-scenario-revaluation-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
