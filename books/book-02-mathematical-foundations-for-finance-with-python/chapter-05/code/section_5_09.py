@@ -53,7 +53,7 @@ def run_engine(initial, periods, timing="end", allow_negative=True):
         requested = period.cash_flow
         if timing == "end":
             interest = start * period.rate
-            available = start + interest
+            available = start * q
             if not math.isfinite(available):
                 raise OverflowError("nonfinite available balance")
             feasible = allow_negative or requested >= 0 or available + requested >= 0
@@ -66,14 +66,16 @@ def run_engine(initial, periods, timing="end", allow_negative=True):
             # Reject immediately before growth; no interest is credited
             # for an unprocessed period.
             interest = (start + applied) * period.rate if feasible else 0.0
-            balance = start + applied + interest
+            balance = (start + applied) * q if feasible else start
         if not math.isfinite(balance) or not math.isfinite(interest):
             raise OverflowError("nonfinite period result")
+        rounding_adjustment = math.fsum((balance,-start,-applied,-interest))
         ledger.append({
             "period": index, "opening": start, "rate": period.rate,
             "requested": requested, "applied": applied,
             "interest": interest, "closing": balance,
             "accepted": feasible,
+            "rounding_adjustment": rounding_adjustment,
         })
         if not feasible:
             rejected = index
@@ -81,10 +83,11 @@ def run_engine(initial, periods, timing="end", allow_negative=True):
     return EngineResult(opening, balance, tuple(ledger), rejected)
 
 def reconcile(result):
-    """Return (observed balance change, interest plus applied flows)."""
+    """Return balance change and rounded interest/flow/adjustment components."""
     change = result.closing - result.initial
     components = math.fsum(row["interest"] for row in result.ledger)
     components += math.fsum(row["applied"] for row in result.ledger)
+    components = math.fsum((components,math.fsum(row.get("rounding_adjustment",0.0) for row in result.ledger)))
     return change, components
 
 def closed_form_reference(initial, periods, timing="end"):
