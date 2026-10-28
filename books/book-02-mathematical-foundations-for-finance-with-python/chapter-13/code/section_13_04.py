@@ -52,12 +52,15 @@ def project_line(direction,target,tolerances):
     allowed=tolerances.align(order)
     if any(v<0 for v in allowed):
         raise ValueError("negative factor tolerance")
-    denominator=finite(math.fsum(v*v for v in u),"direction norm squared")
-    if denominator==0:
+    scale=max(abs(v) for v in u)
+    if scale==0:
         raise ValueError("zero direction")
-    numerator=finite(math.fsum(x*y for x,y in zip(u,b)),"dot product")
-    coefficient=finite(numerator/denominator,"projection coefficient")
-    p=tuple(finite(coefficient*v,"projected exposure") for v in u)
+    scaled=tuple(v/scale for v in u)
+    denominator=finite(math.fsum(v*v for v in scaled),"scaled direction norm squared")
+    numerator=finite(math.fsum(x*y for x,y in zip(scaled,b)),"scaled dot product")
+    scaled_coefficient=finite(numerator/denominator,"scaled projection coefficient")
+    coefficient=finite(scaled_coefficient/scale,"projection coefficient")
+    p=tuple(finite(scaled_coefficient*v,"projected exposure") for v in scaled)
     r=tuple(finite(b[i]-p[i],"residual") for i in range(len(order)))
     orthogonality=finite(math.fsum(u[i]*r[i] for i in range(len(order))),"orthogonality")
     distance=finite(math.hypot(*r),"residual distance")
