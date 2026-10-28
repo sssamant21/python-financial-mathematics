@@ -10,7 +10,7 @@ The complete, approved, and locked Book 1 structure is maintained in `MASTER-TOC
 
 ## Validation progress
 
-The [Book 1 validation plan and progress tracker](qa/VALIDATION-TRACKER.md) records scoped evidence, outstanding work and findings. Manuscript completion does not imply comprehensive validation or certification. The [structure and internal-link audit](qa/structure-and-links-2026-10-28/README.md) records the scoped V01–V02 pass.
+The [Book 1 validation plan and progress tracker](qa/VALIDATION-TRACKER.md) records scoped evidence, outstanding work and findings. Manuscript completion does not imply comprehensive validation or certification. The [structure and internal-link audit](qa/structure-and-links-2026-10-28/README.md) records the scoped V01–V02 pass. The [external-reference audit](qa/external-references-2026-10-28/README.md) records the scoped V03 pass and its attribution limits.
 
 ## [Chapter 1 — Introduction to Python for Financial Mathematics](chapter-01/README.md)
 
