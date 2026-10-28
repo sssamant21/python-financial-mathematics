@@ -34,7 +34,12 @@ def power_quotient(h, exponent):
         raise ValueError("h must exceed -1")
     if h == 0:
         return a
-    value = math.expm1(a*math.log1p(h))/h
+    logarithm = math.log1p(h)
+    argument = a*logarithm
+    # Factor the quotient into continuous near-zero ratios so a*h rounding
+    # to zero does not erase a nonzero limiting exponent.
+    exponential_ratio = 1.0 if argument == 0 else math.expm1(argument)/argument
+    value = a*(logarithm/h)*exponential_ratio
     if not math.isfinite(value):
         raise OverflowError("power quotient overflow")
     return value
