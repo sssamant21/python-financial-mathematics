@@ -43,7 +43,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | 08 | 10 | Pending | Pending | Not certified |
 | 09 | 10 | Pending | Pending | Not certified |
 | 10 | 10 | Pending | Pending | Not certified |
-| 11 | 10 | Pending | Pending | Not certified |
+| 11 | 10 | Pending | Pending | [Focused projection review](chapter-11-projection-coefficient-review.md); not certified |
 | 12 | 10 | Pending | Pending | [Focused inverse review](chapter-12-inverse-scaling-review.md); not certified |
 | 13 | 10 | Pending | Pending | [Focused projection review](chapter-13-projection-scaling-review.md); not certified |
 | 14 | 10 | Pending | Pending | Not certified |
@@ -77,6 +77,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-17 | Chapter 14 decomposition boundaries | Fixes applied; independent review pending | Review other norm calculations, matrix conditioning and final-revision evidence. [Review](chapter-14-decomposition-boundary-review.md) |
 | V-18 | Chapter 13 projection scaling | Fix applied; independent review pending | Review large-target and coefficient range, QR screening and final-revision evidence. [Review](chapter-13-projection-scaling-review.md) |
 | V-19 | Chapter 12 inverse scaling | Fixes applied; independent review pending | Review pivot scaling, residual normalizers and final-revision evidence. [Review](chapter-12-inverse-scaling-review.md) |
+| V-20 | Chapter 11 projection coefficient | Fix applied; independent review pending | Review coefficient range, relative-distance scaling and final-revision evidence. [Review](chapter-11-projection-coefficient-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
