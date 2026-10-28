@@ -1,0 +1,312 @@
+
+===== 3.01-why-functions-matter-in-financial-computing.md / selected-snippets =====
+
+===== 3.01-why-functions-matter-in-financial-computing.md / compilation =====
+
+===== 3.02-defining-and-calling-functions.md / selected-snippets =====
+$16,288.95
+Rate: 3.0% | Future Value: $13,439.16
+Rate: 5.0% | Future Value: $16,288.95
+Rate: 7.0% | Future Value: $19,671.51
+
+===== 3.02-defining-and-calling-functions.md / compilation =====
+
+===== 3.03-parameters-and-arguments.md / selected-snippets =====
+
+===== 3.03-parameters-and-arguments.md / compilation =====
+
+===== 3.04-return-values.md / standalone-lab =====
+Displayed amount: 1102.50
+Computed future value: 1102.50
+PASS: return-value checks
+
+===== 3.04-return-values.md / compilation =====
+
+===== 3.05-default-and-keyword-arguments.md / standalone-lab =====
+No contribution: 1050.00
+End contribution: 1150.00
+Beginning contribution: 1155.00
+PASS: default and keyword argument checks
+
+===== 3.05-default-and-keyword-arguments.md / compilation =====
+
+===== 3.06-variable-scope.md / standalone-lab =====
+3% scenario: 1060.90
+7% scenario: 1144.90
+Original principal: 1000.00
+PASS: variable scope and scenario isolation checks
+
+===== 3.06-variable-scope.md / compilation =====
+
+===== 3.07-type-hints-for-financial-functions.md / standalone-lab =====
+Future value: 1102.50
+First target period: 1
+PASS: typed financial function runtime checks
+
+===== 3.07-type-hints-for-financial-functions.md / compilation =====
+
+===== 3.08-docstrings-and-financial-assumptions.md / standalone-lab =====
+PASS: 5 docstring examples
+PASS: financial contract boundary checks
+
+===== 3.08-docstrings-and-financial-assumptions.md / doctest =====
+Trying:
+    future_value(Decimal("1000"), Decimal("0.05"), 2) == Decimal("1102.50")
+Expecting:
+    True
+ok
+Trying:
+    future_value(Decimal("1000"), Decimal("0.05"), 0) == Decimal("1000")
+Expecting:
+    True
+ok
+Trying:
+    future_value(Decimal("1000"), Decimal("0"), 10) == Decimal("1000")
+Expecting:
+    True
+ok
+Trying:
+    format(future_value(Decimal("1000"), Decimal("-0.10"), 1), ".2f")
+Expecting:
+    '900.00'
+ok
+Trying:
+    future_value(Decimal("1000"), Decimal("-1"), 2)
+Expecting:
+    Traceback (most recent call last):
+        ...
+    ValueError: periodic_rate must be finite and greater than -1
+ok
+2 items had no tests:
+    docstrings_lab
+    docstrings_lab.run_contract_checks
+1 items passed all tests:
+   5 tests in docstrings_lab.future_value
+5 tests in 3 items.
+5 passed and 0 failed.
+Test passed.
+
+===== 3.08-docstrings-and-financial-assumptions.md / compilation =====
+
+===== 3.09-designing-present-and-future-value-functions.md / standalone-lab =====
+Future value: 1102.50
+Recovered present value: 1000.00
+PASS: 4 doctests and valuation checks
+
+===== 3.09-designing-present-and-future-value-functions.md / doctest =====
+Trying:
+    future_value(Decimal("1000"), periodic_rate=Decimal("0.05"), periods=2) == Decimal("1102.50")
+Expecting:
+    True
+ok
+Trying:
+    future_value(Decimal("1000"), periodic_rate=Decimal("0"), periods=2) == Decimal("1000")
+Expecting:
+    True
+ok
+Trying:
+    present_value(Decimal("1102.50"), periodic_rate=Decimal("0.05"), periods=2) == Decimal("1000")
+Expecting:
+    True
+ok
+Trying:
+    present_value(Decimal("900"), periodic_rate=Decimal("-0.10"), periods=1) == Decimal("1000")
+Expecting:
+    True
+ok
+4 items had no tests:
+    valuation_lab
+    valuation_lab._growth_factor
+    valuation_lab._validate_amount
+    valuation_lab.run_checks
+2 items passed all tests:
+   2 tests in valuation_lab.future_value
+   2 tests in valuation_lab.present_value
+4 tests in 6 items.
+4 passed and 0 failed.
+Test passed.
+
+===== 3.09-designing-present-and-future-value-functions.md / compilation =====
+
+===== 3.10-reusable-rate-and-discounting-functions.md / standalone-lab =====
+Monthly effective rate: 1.00%
+Effective annual rate: 12.682503%
+Two-period discount factor: 0.90702948
+PASS: 6 doctests and rate/factor checks
+
+===== 3.10-reusable-rate-and-discounting-functions.md / doctest =====
+Trying:
+    accumulation_factor(Decimal("0.05"), periods=2) == Decimal("1.1025")
+Expecting:
+    True
+ok
+Trying:
+    accumulation_factor(Decimal("0.05"), periods=0) == Decimal("1")
+Expecting:
+    True
+ok
+Trying:
+    discount_factor(Decimal("0"), periods=10) == Decimal("1")
+Expecting:
+    True
+ok
+Trying:
+    discount_factor(Decimal("0.25"), periods=1) == Decimal("0.8")
+Expecting:
+    True
+ok
+Trying:
+    effective_annual_rate(Decimal("0.01"), periods_per_year=12) == Decimal("0.126825030131969720661201")
+Expecting:
+    True
+ok
+Trying:
+    periodic_rate_from_nominal(Decimal("0.12"), periods_per_year=12) == Decimal("0.01")
+Expecting:
+    True
+ok
+4 items had no tests:
+    rate_discounting_lab
+    rate_discounting_lab._finite_rate
+    rate_discounting_lab._frequency
+    rate_discounting_lab.run_checks
+4 items passed all tests:
+   2 tests in rate_discounting_lab.accumulation_factor
+   2 tests in rate_discounting_lab.discount_factor
+   1 tests in rate_discounting_lab.effective_annual_rate
+   1 tests in rate_discounting_lab.periodic_rate_from_nominal
+6 tests in 8 items.
+6 passed and 0 failed.
+Test passed.
+
+===== 3.10-reusable-rate-and-discounting-functions.md / compilation =====
+
+===== 3.11-function-composition.md / standalone-lab =====
+Present value: 1000.00
+PASS: 4 doctests and composition checks
+
+===== 3.11-function-composition.md / doctest =====
+Trying:
+    discount_factor(Decimal("0.25"), periods=1) == Decimal("0.8")
+Expecting:
+    True
+ok
+Trying:
+    periodic_rate_from_nominal(Decimal("0.12"), periods_per_year=12) == Decimal("0.01")
+Expecting:
+    True
+ok
+Trying:
+    present_value_from_nominal(Decimal("101"), nominal_annual_rate=Decimal("0.12"), periods_per_year=12, periods=1) == Decimal("100")
+Expecting:
+    True
+ok
+Trying:
+    present_value_from_nominal(Decimal("100"), nominal_annual_rate=Decimal("0"), periods_per_year=12, periods=24) == Decimal("100")
+Expecting:
+    True
+ok
+4 items had no tests:
+    composition_lab
+    composition_lab._validate_amount
+    composition_lab.apply_factor
+    composition_lab.run_checks
+3 items passed all tests:
+   1 tests in composition_lab.discount_factor
+   1 tests in composition_lab.periodic_rate_from_nominal
+   2 tests in composition_lab.present_value_from_nominal
+4 tests in 7 items.
+4 passed and 0 failed.
+Test passed.
+
+===== 3.11-function-composition.md / compilation =====
+
+===== 3.12-pure-functions-and-reproducibility.md / standalone-lab =====
+Present value: 100.00
+PASS: 2 doctests and reproducibility checks
+
+===== 3.12-pure-functions-and-reproducibility.md / doctest =====
+Trying:
+    fixed_present_value(Decimal("125"), periodic_rate=Decimal("0.25"), periods=1) == Decimal("100")
+Expecting:
+    True
+ok
+Trying:
+    fixed_present_value(Decimal("100"), periodic_rate=Decimal("0.05"), periods=0) == Decimal("100")
+Expecting:
+    True
+ok
+2 items had no tests:
+    reproducibility_lab
+    reproducibility_lab.run_checks
+1 items passed all tests:
+   2 tests in reproducibility_lab.fixed_present_value
+2 tests in 3 items.
+2 passed and 0 failed.
+Test passed.
+
+===== 3.12-pure-functions-and-reproducibility.md / compilation =====
+
+===== 3.13-testing-financial-functions.md / unittest =====
+test_caller_context_preserved_on_success (test_present_value.TestPresentValue.test_caller_context_preserved_on_success) ... ok
+test_context_restored_after_arithmetic_failure (test_present_value.TestPresentValue.test_context_restored_after_arithmetic_failure) ... ok
+test_discount_direction (test_present_value.TestPresentValue.test_discount_direction) ... ok
+test_horizon_upper_boundary (test_present_value.TestPresentValue.test_horizon_upper_boundary) ... ok
+test_invalid_amounts (test_present_value.TestPresentValue.test_invalid_amounts) ... ok
+test_invalid_rates_even_at_zero_horizon (test_present_value.TestPresentValue.test_invalid_rates_even_at_zero_horizon) ... ok
+test_known_values (test_present_value.TestPresentValue.test_known_values) ... ok
+test_negative_horizon (test_present_value.TestPresentValue.test_negative_horizon) ... ok
+test_nonterminating_reference (test_present_value.TestPresentValue.test_nonterminating_reference) ... ok
+test_repetition_and_order_independence (test_present_value.TestPresentValue.test_repetition_and_order_independence) ... ok
+test_wrong_representations (test_present_value.TestPresentValue.test_wrong_representations) ... ok
+test_zero_boundaries (test_present_value.TestPresentValue.test_zero_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.006s
+
+OK
+
+===== 3.13-testing-financial-functions.md / compilation =====
+
+===== 3.14-chapter-project-financial-mathematics-function-library.md / unittest =====
+test_caller_context_preservation (test_function_library.TestFunctionLibrary.test_caller_context_preservation) ... ok
+test_composed_nominal_valuation (test_function_library.TestFunctionLibrary.test_composed_nominal_valuation) ... ok
+test_context_after_overflow (test_function_library.TestFunctionLibrary.test_context_after_overflow) ... ok
+test_direction_and_round_trip (test_function_library.TestFunctionLibrary.test_direction_and_round_trip) ... ok
+test_factors (test_function_library.TestFunctionLibrary.test_factors) ... ok
+test_invalid_monetary_domain (test_function_library.TestFunctionLibrary.test_invalid_monetary_domain) ... ok
+test_invalid_rate_and_counts (test_function_library.TestFunctionLibrary.test_invalid_rate_and_counts) ... ok
+test_known_valuations (test_function_library.TestFunctionLibrary.test_known_valuations) ... ok
+test_negative_rate (test_function_library.TestFunctionLibrary.test_negative_rate) ... ok
+test_rate_conversions (test_function_library.TestFunctionLibrary.test_rate_conversions) ... ok
+test_wrong_representations (test_function_library.TestFunctionLibrary.test_wrong_representations) ... ok
+test_zero_boundaries (test_function_library.TestFunctionLibrary.test_zero_boundaries) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+OK
+
+===== 3.14-chapter-project-financial-mathematics-function-library.md / project-demonstration =====
+Monthly effective rate: 1.00%
+Effective annual rate: 12.682503%
+Future value: 1126.83
+Recovered present value: 1000.00
+
+===== 3.14-chapter-project-financial-mathematics-function-library.md / compilation =====
+
+===== solutions/3.15-solutions-and-reference-implementations.md / unittest =====
+test_context_preservation (chapter03_solutions.TestChapter03Solutions.test_context_preservation) ... ok
+test_final_integration (chapter03_solutions.TestChapter03Solutions.test_final_integration) ... ok
+test_independent_valuations (chapter03_solutions.TestChapter03Solutions.test_independent_valuations) ... ok
+test_mutable_default_repair (chapter03_solutions.TestChapter03Solutions.test_mutable_default_repair) ... ok
+test_negative_rate (chapter03_solutions.TestChapter03Solutions.test_negative_rate) ... ok
+test_quarterly_conversion_and_composition (chapter03_solutions.TestChapter03Solutions.test_quarterly_conversion_and_composition) ... ok
+test_validation_matrix (chapter03_solutions.TestChapter03Solutions.test_validation_matrix) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+
+===== solutions/3.15-solutions-and-reference-implementations.md / compilation =====
