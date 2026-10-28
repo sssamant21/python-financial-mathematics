@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-28  
-**Overall status:** In progress — automated runtime pass completed on a defined snapshot; coverage, independent review and final-revision validation remain pending.
+**Overall status:** In progress — full pinned-revision runtime pass complete (444 compiled files; 233 successful script exits); coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,17 +10,19 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Initial pass complete | 427/427 files compiled in the follow-up local snapshot on Python 3.12.14/Linux. |
-| Automated script execution | Initial pass complete; final-revision run pending | 216/216 check/test scripts exited zero on the original snapshot plus seven fixes. Counts are script runs, not coverage or independent tests; some checks invoke others. |
+| Python compilation | Pinned-revision pass complete | 444/444 files compiled at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d` on Python 3.12.14/Linux. [Evidence](pinned-revision-runtime-validation.md). |
+| Automated script execution | Pinned-revision pass complete | 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Evidence](pinned-revision-runtime-validation.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | In progress | Filename mapping covers 215 sections. Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; broader substantive coverage and dependencies remain pending. [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
 | Links and index consistency | In progress | 2,004 inline relative link occurrences checked: zero missing paths at scan revision; stale index entries corrected. Anchors, external and reference-style links remain pending. [Audit report](link-index-audit.md). |
 | Editorial, source and copyright review | Pending | Review manuscript quality, attribution and source policy. |
-| Final-revision and platform validation | Pending | Rerun the agreed suite against the exact final commit; assess supported Python versions and Windows where applicable. |
+| Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
 ## Runtime evidence and scope
+
+- **Latest full run:** [Pinned revision runtime validation](pinned-revision-runtime-validation.md): 444/444 Python files compiled and 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`; all 445 source/fixture blobs matched the pinned Git tree.
 
 - [Initial inventory and failures](initial-runtime-inventory.md): 210/216 scripts passed initially.
 - [Failure fixes and follow-up](runtime-failure-followup.md): 216/216 scripts exited successfully after targeted fixes. Changes published through `deac1e6b9d447322b71cdda751fb04197e497b57`; the local run used the original snapshot plus those changes and did not cover unrelated concurrent branch changes.
@@ -88,6 +90,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-28 | Chapter 3 exact-domain boundaries | Focused review passed; no implementation change required | 20/20 files compiled and 11/11 scripts passed on baseline `695f393a6c14d37973bdd0644fc5a062df6f9af7` plus six new boundary cases. Independent manuscript review and final-revision run pending. [Review](chapter-03-exact-domain-review.md) |
 | V-29 | Chapter 2 quadratic cancellation | Fix applied; scoped runtime follow-up passed | 20/20 files compiled; 11/11 scripts passed on recorded baseline plus fix and new regression. Independent review, Decimal range and final-revision validation pending. [Review](chapter-02-quadratic-boundary-review.md) |
 | V-30 | Chapter 1 foundation boundaries | Focused review passed; no implementation change required | 32/32 files compiled; 17/17 scripts passed on recorded snapshot, with aggregate duplication. Five new unittest methods passed. Independent review and final-revision validation pending. [Review](chapter-01-foundation-boundary-review.md) |
+| V-31 | Full pinned-revision runtime validation | Passed on Python 3.12.14/Linux | 444/444 files compiled; 233/233 scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`. Independent review, supported platforms and final release reruns remain open. [Evidence](pinned-revision-runtime-validation.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
