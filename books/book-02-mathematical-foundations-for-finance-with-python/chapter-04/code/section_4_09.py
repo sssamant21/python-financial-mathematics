@@ -50,6 +50,8 @@ def periodic_result(principal, nominal_rate, frequency, periods):
     p = nonnegative(principal, "principal")
     log_factor = periodic_log_factor(nominal_rate, frequency, periods)
     factor = math.exp(log_factor)
+    if factor == 0:
+        raise OverflowError("growth factor underflow prevents present-value recovery")
     future = p * factor
     if not math.isfinite(future):
         raise OverflowError("future value exceeds finite float range")
@@ -72,6 +74,8 @@ def continuous_result(principal, continuous_rate, years):
     r = finite(continuous_rate, "continuous_rate")
     t = nonnegative(years, "years")
     factor = math.exp(r * t)
+    if factor == 0:
+        raise OverflowError("growth factor underflow prevents present-value recovery")
     future = p * factor
     if not math.isfinite(future):
         raise OverflowError("future value exceeds finite float range")
