@@ -1,0 +1,648 @@
+
+===== 1.01-what-is-financial-mathematics.md / examples =====
+1157.6250000000002
+
+===== 1.01-what-is-financial-mathematics.md / compilation =====
+
+===== 1.02-why-python-for-financial-mathematics.md / examples =====
+1159.2740743000002
+1276.2815625000003
+1402.5517307000005
+
+===== 1.02-why-python-for-financial-mathematics.md / compilation =====
+
+===== 1.03-python-in-finance-and-quantitative-computing.md / examples =====
+
+===== 1.03-python-in-finance-and-quantitative-computing.md / compilation =====
+
+===== 1.04-financial-mathematics-vs-quantitative-finance-vs-financial-engineering.md / examples =====
+
+===== 1.04-financial-mathematics-vs-quantitative-finance-vs-financial-engineering.md / compilation =====
+
+===== 1.05-setting-up-the-python-environment.md / examples =====
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+Python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]
+Python executable: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+NumPy: 2.3.5
+pandas: 2.2.3
+Matplotlib: 3.10.8
+1157.6250000000002
+[100. 120. 150.]
+370.0
+
+===== 1.05-setting-up-the-python-environment.md / compilation =====
+
+===== 1.06-your-first-python-program-for-financial-mathematics.md / examples =====
+1157.6250000000002
+Principal: $1,000.00
+Rate per period: 5.00%
+Periods: 3
+Future value: $1,157.63
+True
+3%: $1,092.73
+5%: $1,157.63
+7%: $1,225.04
+
+===== 1.06-your-first-python-program-for-financial-mathematics.md / compilation =====
+
+===== 1.07-python-variables-data-types-and-financial-data-representation.md / examples =====
+0.30000000000000004
+False
+True
+3.33
+
+===== 1.07-python-variables-data-types-and-financial-data-representation.md / compilation =====
+
+===== 1.08-operators-and-financial-calculations.md / examples =====
+33455.639440000006
+8455.639440000006
+0.33822557760000027
+
+===== 1.08-operators-and-financial-calculations.md / compilation =====
+
+===== 1.09-expressions-precedence-and-mathematical-translation.md / examples =====
+
+===== 1.09-expressions-precedence-and-mathematical-translation.md / compilation =====
+
+===== 1.11-numerical-precision-rounding-and-tolerances.md / examples =====
+59.97
+0.30000000000000004
+0.9999999999999999
+False
+True
+Within reconciliation tolerance
+$123.46
+123.46
+2
+4
+2.67
+59.97
+0.1
+0.1000000000000000055511151231257827021181583404541015625
+0.3
+123.46
+10.13
+1.3
+-1.3
+5997
+0.05
+5.00%
+24.999999999999954
+1.0
+43.75
+Return calculation validated
+
+===== 1.11-numerical-precision-rounding-and-tolerances.md / compilation =====
+
+===== solutions/1.13-solutions-and-reference-implementations.md / examples =====
+$1,234,567.80
+A $10,000.00 4.00% $14,802.44 $4,802.44
+B $10,000.00 5.00% $16,288.95 $6,288.95
+C $10,000.00 6.00% $17,908.48 $7,908.48
+
+===== solutions/1.13-solutions-and-reference-implementations.md / compilation =====
+
+===== validated-input / known-value =====
+Principal amount ($): Annual interest rate (%): Number of whole years: Future value: $11,576.25
+
+===== validated-input / period-zero =====
+Principal amount ($): Annual interest rate (%): Number of whole years: Future value: $10,000.00
+
+===== validated-input / bad-number =====
+Principal amount ($): Please enter valid numeric values.
+
+===== validated-input / nonfinite =====
+Principal amount ($): Annual interest rate (%): Number of whole years: Principal and rate must be finite.
+
+===== validated-input / negative-principal =====
+Principal amount ($): Annual interest rate (%): Number of whole years: Principal must be greater than zero for this model.
+
+===== validated-input / negative-years =====
+Principal amount ($): Annual interest rate (%): Number of whole years: Years cannot be negative for this model.
+
+===== validated-input / compilation =====
+
+===== project / simple-interest =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Principal amount: Annual interest rate (%): Number of years: 
+SIMPLE INTEREST RESULTS
+------------------------------
+Principal:      $10,000.00
+Interest:       $1,500.00
+Ending Balance: $11,500.00
+
+===== project / monthly-compound =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: 
+FUTURE VALUE RESULTS
+------------------------------
+Present Value: $10,000.00
+Future Value:  $16,470.09
+
+===== project / percentage-change =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Original value: New value: Percentage Change: 12.00%
+
+===== project / profit-loss =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Purchase price per unit: Selling price per unit: Quantity: 
+Status: PROFIT
+Profit/Loss: $800.00
+Return: 16.00%
+
+===== project / posted-fee =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Transaction amount: Fee rate (%): 
+TRANSACTION FEE RESULTS
+------------------------------
+Transaction Amount: $1,250.75
+Fee:                $15.63
+Total Paid:         $1,266.38
+
+===== project / tolerance-inclusive =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: System A amount: System B amount: Allowed reconciliation tolerance: 
+RECONCILIATION RESULTS
+------------------------------
+System A:   $1,250,000.00
+System B:   $1,250,000.01
+Difference: $0.01
+Tolerance:  $0.01
+Status: WITHIN TOLERANCE
+
+===== project / zero-denominator =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Original value: New value: Percentage change cannot be calculated when the original value is zero.
+
+===== project / negative-years =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: Number of years cannot be negative for this calculator model.
+
+===== project / zero-frequency =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: Compounding periods must be greater than zero.
+
+===== project / nonfinite =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Principal amount: Invalid input: Financial input must be finite.
+
+===== project / bad-number =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Principal amount: Invalid numeric input. Please enter valid numbers.
+
+===== project / invalid-menu =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Invalid calculator selection.
+
+===== project / negative-tolerance =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: System A amount: System B amount: Allowed reconciliation tolerance: Tolerance cannot be negative.
+
+===== project / outside-tolerance =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: System A amount: System B amount: Allowed reconciliation tolerance: 
+RECONCILIATION RESULTS
+------------------------------
+System A:   $100.00
+System B:   $100.01
+Difference: $0.01
+Tolerance:  $0.01
+Status: RECONCILIATION EXCEPTION
+
+===== project / subcent-gain =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Purchase price per unit: Selling price per unit: Quantity: 
+Status: PROFIT
+Profit/Loss: $0.00
+Return: 4.00%
+
+===== project / subcent-loss =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Purchase price per unit: Selling price per unit: Quantity: 
+Status: LOSS
+Profit/Loss: $-0.00
+Return: -4.00%
+
+===== project / zero-rate =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: 
+FUTURE VALUE RESULTS
+------------------------------
+Present Value: $10,000.00
+Future Value:  $10,000.00
+
+===== project / period-zero =====
+==================================================
+BASIC FINANCIAL CALCULATOR
+==================================================
+1. Simple Interest
+2. Compound Interest / Future Value
+3. Percentage Change
+4. Investment Profit or Loss
+5. Transaction Fee
+6. Financial Reconciliation
+==================================================
+Select calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: 
+FUTURE VALUE RESULTS
+------------------------------
+Present Value: $10,000.00
+Future Value:  $10,000.00
+
+===== project / compilation =====
+
+===== savings / monthly-growth =====
+Initial deposit: Annual rate (%): Years: Compounding periods per year: Initial value: $10,000.00
+Future value: $16,470.09
+Total growth: $6,470.09
+
+===== savings / half-year =====
+Initial deposit: Annual rate (%): Years: Compounding periods per year: Initial value: $10,000.00
+Future value: $10,252.62
+Total growth: $252.62
+
+===== savings / fractional-discrete-period =====
+Initial deposit: Annual rate (%): Years: Compounding periods per year: Invalid financial input.
+
+===== savings / zero-frequency =====
+Initial deposit: Annual rate (%): Years: Compounding periods per year: Invalid financial input.
+
+===== savings / zero-growth-factor =====
+Initial deposit: Annual rate (%): Years: Compounding periods per year: Invalid financial input.
+
+===== savings / nonfinite =====
+Initial deposit: Invalid financial input.
+
+===== savings / compilation =====
+
+===== trade / two-sided-fees =====
+Purchase price: Selling price: Quantity: Fee rate (%): Purchase value: $5,000.00
+Sale value: $5,800.00
+Purchase fee: $50.00
+Sale fee: $58.00
+Net profit/loss: $692.00
+Return: 13.70%
+
+===== trade / zero-quantity =====
+Purchase price: Selling price: Quantity: Fee rate (%): Invalid financial input.
+
+===== trade / zero-initial-value =====
+Purchase price: Selling price: Quantity: Fee rate (%): Purchase value: $0.00
+Sale value: $1.00
+Purchase fee: $0.00
+Sale fee: $0.00
+Net profit/loss: $1.00
+Return: undefined
+
+===== trade / negative-fee =====
+Purchase price: Selling price: Quantity: Fee rate (%): Invalid financial input.
+
+===== trade / compilation =====
+
+===== reconciliation / tolerance-inclusive =====
+System A balance: System B balance: Tolerance: Difference: 0.01
+Tolerance: 0.01
+Status: RECONCILED
+
+===== reconciliation / outside-tolerance =====
+System A balance: System B balance: Tolerance: Difference: 0.011
+Tolerance: 0.01
+Status: RECONCILIATION EXCEPTION
+
+===== reconciliation / negative-tolerance =====
+System A balance: System B balance: Tolerance: Invalid financial input.
+
+===== reconciliation / nonfinite =====
+System A balance: Invalid financial input.
+
+===== reconciliation / compilation =====
+
+===== capstone / simple-interest =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Principal: Annual rate (%): Years: Interest: $1,500.00
+Ending balance: $11,500.00
+
+===== capstone / annual-compound =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Present value: Annual rate (%): Compounding periods: Future value: $16,288.95
+
+===== capstone / percentage-change =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Old value: New value: Percentage change: 12.00%
+
+===== capstone / profit-loss =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Purchase price: Selling price: Quantity: Profit/Loss: $800.00
+Return: 16.00%
+
+===== capstone / posted-fee =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Transaction amount: Fee rate (%): Fee: $15.63
+Total paid: $1,266.38
+
+===== capstone / tolerance-inclusive =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: System A balance: System B balance: Tolerance: Difference: 0.01
+Status: RECONCILED
+
+===== capstone / invalid-menu =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Invalid menu option.
+
+===== capstone / bad-number =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Principal: Invalid financial input.
+
+===== capstone / nonfinite =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Principal: Invalid financial input.
+
+===== capstone / zero-growth-factor =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Present value: Annual rate (%): Compounding periods: Invalid financial input.
+
+===== capstone / negative-periods =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Present value: Annual rate (%): Compounding periods: Invalid financial input.
+
+===== capstone / zero-quantity =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Purchase price: Selling price: Quantity: Invalid financial input.
+
+===== capstone / negative-fee =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Transaction amount: Fee rate (%): Invalid financial input.
+
+===== capstone / negative-tolerance =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: System A balance: System B balance: Tolerance: Invalid financial input.
+
+===== capstone / zero-denominator =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Old value: New value: Invalid financial input.
+
+===== capstone / zero-initial-value =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Purchase price: Selling price: Quantity: Profit/Loss: $1.00
+Return: undefined
+
+===== capstone / subcent-gain =====
+Financial Calculation Console
+1. Simple Interest
+2. Compound Interest
+3. Percentage Change
+4. Investment Profit/Loss
+5. Transaction Fee
+6. Reconciliation
+Choose an option: Purchase price: Selling price: Quantity: Profit/Loss: $0.00
+Return: 4.00%
+
+===== capstone / compilation =====

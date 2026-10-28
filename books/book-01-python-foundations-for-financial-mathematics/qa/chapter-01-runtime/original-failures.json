@@ -1,0 +1,30 @@
+[
+  {
+    "case": "gain",
+    "stdin": "4\n0.10\n0.104\n1\n",
+    "returncode": 0,
+    "expected_output_contains": [
+      "Status: PROFIT",
+      "Return: 4.00%"
+    ],
+    "missing": [
+      "Status: PROFIT",
+      "Return: 4.00%"
+    ],
+    "log": "original-subcent-gain.log"
+  },
+  {
+    "case": "loss",
+    "stdin": "4\n0.10\n0.096\n1\n",
+    "returncode": 0,
+    "expected_output_contains": [
+      "Status: LOSS",
+      "Return: -4.00%"
+    ],
+    "missing": [
+      "Status: LOSS",
+      "Return: -4.00%"
+    ],
+    "log": "original-subcent-loss.log"
+  }
+]

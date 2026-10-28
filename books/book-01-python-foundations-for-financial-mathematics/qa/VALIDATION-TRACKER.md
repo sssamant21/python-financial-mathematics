@@ -15,7 +15,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 - **Manuscript inventory:** 322 of 322 locked section numbers have matching manuscript files at the initial baseline. This is a filename inventory, not a content or QA pass.
 - **Initial syntax screening:** 1,152 fenced Python blocks parsed without syntax errors at that baseline; execution, numerical correctness and illustrative fragments were not established by this check.
-- **Reference runtime evidence:** Scoped runs exist for Chapters **2–21**: 2,996 passing test methods in the recorded runs (31 + 101 + 80 + 148 + 156 + 132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **20 chapters with scoped evidence**, not twenty comprehensively validated chapters. Chapter 5 counts the eight base installed tests only once within its twelve-method extended suite. Chapter 3's 21 doctest examples and assertion-based lab runs are recorded separately and are not added to the unit-test method total. Chapter 2's script executions and controlled analyzer cases add no unittest methods to that total.
+- **Reference runtime evidence:** Scoped runs exist for Chapters **1–21**: 2,996 passing test methods in the recorded runs (31 + 101 + 80 + 148 + 156 + 132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **21 chapters with scoped evidence**, not twenty-one comprehensively validated chapters. Chapter 5 counts the eight base installed tests only once within its twelve-method extended suite. Chapter 3's 21 doctest examples and assertion-based lab runs are recorded separately and are not added to the unit-test method total. Chapter 2's script executions and controlled analyzer cases add no unittest methods to that total. Chapter 1's interactive cases and selected examples also add no unittest methods.
 - **Visualization:** A Chapter 8 synthetic dashboard and one Chapter 21 synthetic chart were rendered and visually inspected; a complete visualization and accessibility review is pending.
 - **Certification:** No Book 1-wide canonical, production, mathematical or model certification is implied.
 
@@ -27,8 +27,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | IN PROGRESS — initial heuristic only |
 | V03 | External references | Check availability, relevance, authoritative source attribution and version sensitivity; record unavailable links. | NOT STARTED |
 | V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | IN PROGRESS — initial syntax screen only |
-| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 2–21 have scoped evidence |
-| V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | IN PROGRESS — Chapters 2–7 have scoped demonstrations or workflow evidence; Chapter 5 installed extension passed; independent answer review pending |
+| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — all 21 chapters have scoped evidence; complete example/platform coverage remains pending |
+| V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | IN PROGRESS — Chapters 1–7 have scoped demonstrations or workflow evidence; Chapter 5 installed extension passed; independent answer review pending |
 | V07 | Mathematical and financial correctness | Independently derive formulas and benchmarks; verify units, signs, timelines, rates, assumptions and edge cases. | IN PROGRESS — Chapter 2 bounded analyzer fixtures checked against closed-form accumulation; broader independent review pending |
 | V08 | Numerical behavior | Assess precision, cancellation, overflow, underflow, convergence, tolerances and supported ranges. | IN PROGRESS — Section 10.7 and other scoped numerical findings addressed; broader review pending |
 | V09 | Integration and data validation | Check module contracts, limits, data alignment, timestamps, availability, revisions, missingness and security boundaries. | IN PROGRESS — scoped Chapter 21 tests and DST fix |
@@ -37,7 +37,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V12 | Packaging and platform | Build and hash artifacts, install in clean environments, run outside checkout, review dependency versions and test supported operating systems. | IN PROGRESS — Chapter 5 offline fixture/env and regular installed-wheel workflows passed; cross-platform review pending |
 | V13 | Security and privacy | Review secrets, sensitive data, file/network behavior, dependencies and evidence handling appropriate to the work. | NOT STARTED |
 | V14 | Editorial, source and copyright | Review clarity, consistency, accessibility, attribution, original expression and verified references. | NOT STARTED |
-| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — eleven corrections, one open audit finding and one resolved environment blocker recorded |
+| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — twelve corrections, one open audit finding and one resolved environment blocker recorded |
 | V16 | Final acceptance | Reconcile all evidence against agreed criteria and obtain required independent review and decision. | NOT STARTED |
 
 ## Chapter-by-chapter progress
@@ -46,7 +46,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 
 | Chapter | Topic | Reference runtime status and evidence | Math / model / data | Editorial / sources | Acceptance |
 |---|---|---|---|---|---|
-| 01 | Introduction to Python for Financial Mathematics | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
+| 01 | Introduction to Python for Financial Mathematics | PASS — 11 selected example groups, 55 interactive cases and 17 compilation checks after a rounding-basis correction (F14); no unittest suite; [evidence](chapter-01-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 02 | Python Control Flow for Financial Models | PASS — 12 selected example groups, 12 controlled analyzer cases and 24 compilation checks; no unittest suite; [evidence](chapter-02-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 03 | Functions and Reusable Financial Models | PASS — 31 unit-test methods, 21 doctest examples, 9 standalone labs, selected snippets, project demonstration and 15 compilation checks; [evidence](chapter-03-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 04 | Python Data Structures for Financial Information | PASS — 101 reference tests, holdings-manager demonstration and 14 compilation checks; [evidence](chapter-04-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
@@ -87,15 +87,16 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F11 | Section 10.7 lost precision near equal discount and growth rates when subtracting nearly equal logarithms. | Uses a stable log-ratio where representable; Decimal benchmark and fallback regressions passed; original failure retained in [Chapter 10 evidence](chapter-10-runtime/README.md). | Extreme inputs, error bounds and financial review pending. |
 | F12 | Sections 9.11–9.17 used escaped Markdown backticks, preventing fenced code and inline code from rendering as intended. | Backticks corrected; 152 Chapter 9 reference tests passed in [Chapter 9 evidence](chapter-09-runtime/README.md). | Broader Markdown, source and mathematical review pending. |
 | F13 | Chapter 5.12 and companion were blocked by unavailable setuptools 84.0.0 in the original builder. | RESOLVED — exact wheel downloaded and verified against published PyPI SHA-256; dedicated builder passed 8 base and 12 extended installed tests plus CLI, origin and pip checks; [follow-up](chapter-05-runtime/backend-resolution/README.md). Original failure retained. | No remaining prerequisite blocker; wider platform, packaging and acceptance review pending. |
+| F14 | Section 1.12 rounded profit/loss before classification and percentage-return calculation, turning a raw 0.004 gain on a 0.10 purchase into break-even and 0% instead of PROFIT and 4%. | CORRECTED — retains raw profit/loss for classification and return, rounds only the monetary display, and documents the basis; original gain/loss failures and 55-case rerun retained in [Chapter 1 evidence](chapter-01-runtime/README.md). | Broader numerical, financial and platform review pending. |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
 ## Execution order and update rule
 
-1. Continue with **Chapter 1** by reconciling its historical runtime evidence and running appropriate current-reference checks rather than treating historical claims as automatically current.
-2. Perform the cross-book checks V01–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
+1. Proceed with **V01–V02: Book 1 structural and internal-link validation**, including locked-TOC title/number matching, companion/index consistency, Markdown parsing and internal anchors. Scoped chapter-runtime evidence now exists for all 21 chapters; this does not complete comprehensive validation.
+2. Perform the remaining cross-book checks V03–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
 3. Record each scoped run or review in a durable evidence directory, link it from this tracker, and update the chapter row and checklist only to the scope actually verified.
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** Chapter 1 runtime evidence reconciliation. Broader Book 1 QA remains in progress.
+**Next action:** Book 1 structural and internal-link validation (V01–V02). Broader Book 1 QA remains in progress.
