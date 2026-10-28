@@ -36,7 +36,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | 01 | 15 | Pending | Pending | Not certified |
 | 02 | 10 | Pending | Pending | Not certified |
 | 03 | 10 | Pending | Pending | Not certified |
-| 04 | 10 | Pending | Pending | [Source review](chapter-04-growth-recovery-review.md); runtime blocked; not certified |
+| 04 | 10 | Pending | Pending | [Focused growth review](chapter-04-growth-recovery-review.md); 11/11 scripts passed on recorded snapshot; not certified |
 | 05 | 10 | Pending | Pending | [Focused recurrence review](chapter-05-recurrence-boundary-review.md); not certified |
 | 06 | 10 | Pending | Pending | [Focused series review](chapter-06-series-boundary-review.md); not certified |
 | 07 | 10 | Pending | Pending | [Focused limit review](chapter-07-limit-boundary-review.md); not certified |
@@ -84,12 +84,12 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-24 | Chapter 7 limit and payment boundaries | Fixes applied; independent review pending | Review quotient range, approach tables and final-revision evidence. [Review](chapter-07-limit-boundary-review.md) |
 | V-25 | Chapter 6 series boundaries | Fixes applied; independent review pending | Review extreme-rate annuities, formula independence and final-revision evidence. [Review](chapter-06-series-boundary-review.md) |
 | V-26 | Chapter 5 recurrence cancellation | Fixes applied; independent review pending | Review rounding reconciliation, withdrawal timing and final-revision evidence. [Review](chapter-05-recurrence-boundary-review.md) |
-| V-27 | Chapter 4 growth recovery | Source fix authored; runtime blocked | Execution environment unavailable; compile and run new regression and Chapter 4 suite before reporting a pass. [Review](chapter-04-growth-recovery-review.md) |
+| V-27 | Chapter 4 growth recovery | Fix applied; scoped runtime follow-up passed | 21/21 files compiled and 11/11 scripts passed at `94f7ad43cb5200826a97d3184691cd7d652849dd` on Python 3.12.14/Linux, including five new regression cases. Independent review and final-revision run pending. [Review](chapter-04-growth-recovery-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
 
-**Current blocker:** The execution environment is unavailable. Chapter 4 changes and its new regression source are unexecuted; earlier passing results remain historical snapshot evidence.
+**Runtime availability restored:** Chapter 4 follow-up compiled 21/21 Python files and passed 11/11 check scripts at `94f7ad43cb5200826a97d3184691cd7d652849dd` on Python 3.12.14/Linux. The earlier blocker is cleared for that scoped run; book-wide final-revision validation remains pending. Continue the focused review with Chapter 3.
 
 1. Resolve the Section 4.7–4.8 title/scope mismatch and complete remaining link checks.
 2. Assess substantive coverage and dependencies; review assertions and validate manuscript examples using the section-to-check inventory.
