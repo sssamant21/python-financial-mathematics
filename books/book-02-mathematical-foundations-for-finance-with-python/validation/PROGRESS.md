@@ -37,7 +37,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | 02 | 10 | Pending | Pending | Not certified |
 | 03 | 10 | Pending | Pending | Not certified |
 | 04 | 10 | Pending | Pending | Not certified |
-| 05 | 10 | Pending | Pending | Not certified |
+| 05 | 10 | Pending | Pending | [Focused recurrence review](chapter-05-recurrence-boundary-review.md); not certified |
 | 06 | 10 | Pending | Pending | [Focused series review](chapter-06-series-boundary-review.md); not certified |
 | 07 | 10 | Pending | Pending | [Focused limit review](chapter-07-limit-boundary-review.md); not certified |
 | 08 | 10 | Pending | Pending | [Focused derivative review](chapter-08-difference-denominator-review.md); not certified |
@@ -83,6 +83,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-23 | Chapter 8 derivative denominators | Fixes applied; independent review pending | Review remaining first-derivative guards, accuracy and final-revision evidence. [Review](chapter-08-difference-denominator-review.md) |
 | V-24 | Chapter 7 limit and payment boundaries | Fixes applied; independent review pending | Review quotient range, approach tables and final-revision evidence. [Review](chapter-07-limit-boundary-review.md) |
 | V-25 | Chapter 6 series boundaries | Fixes applied; independent review pending | Review extreme-rate annuities, formula independence and final-revision evidence. [Review](chapter-06-series-boundary-review.md) |
+| V-26 | Chapter 5 recurrence cancellation | Fixes applied; independent review pending | Review rounding reconciliation, withdrawal timing and final-revision evidence. [Review](chapter-05-recurrence-boundary-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
