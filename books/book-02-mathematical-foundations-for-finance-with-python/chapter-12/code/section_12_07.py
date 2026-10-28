@@ -72,11 +72,8 @@ def inverse_rows(a):
     normalized=uu*zz-vv*ww
     if abs(normalized)<=1e-15:
         raise ValueError("singular or numerically unresolved matrix")
-    det=finite(u*z-v*w,"determinant")
-    if det==0:
-        raise ValueError("singular matrix")
-    return ((finite(z/det,"inverse"),finite(-v/det,"inverse")),
-            (finite(-w/det,"inverse"),finite(u/det,"inverse")))
+    return ((finite((zz/normalized)/scale,"inverse"),finite((-vv/normalized)/scale,"inverse")),
+            (finite((-ww/normalized)/scale,"inverse"),finite((uu/normalized)/scale,"inverse")))
 
 def infinity_norm(rows):
     return finite(max(math.fsum(abs(x) for x in row) for row in rows),"infinity norm")
