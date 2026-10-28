@@ -15,7 +15,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 - **Manuscript inventory:** 322 of 322 locked section numbers have matching manuscript files at the initial baseline. This is a filename inventory, not a content or QA pass.
 - **Initial syntax screening:** 1,152 fenced Python blocks parsed without syntax errors at that baseline; execution, numerical correctness and illustrative fragments were not established by this check.
-- **Reference runtime evidence:** Scoped runs exist for Chapters **8–21**: 2,480 passing test methods in the recorded runs (132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **14 chapters with scoped evidence**, not fourteen comprehensively validated chapters.
+- **Reference runtime evidence:** Scoped runs exist for Chapters **7–21**: 2,636 passing test methods in the recorded runs (156 + 132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **15 chapters with scoped evidence**, not fifteen comprehensively validated chapters.
 - **Visualization:** A Chapter 8 synthetic dashboard and one Chapter 21 synthetic chart were rendered and visually inspected; a complete visualization and accessibility review is pending.
 - **Certification:** No Book 1-wide canonical, production, mathematical or model certification is implied.
 
@@ -27,8 +27,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | IN PROGRESS — initial heuristic only |
 | V03 | External references | Check availability, relevance, authoritative source attribution and version sensitivity; record unavailable links. | NOT STARTED |
 | V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | IN PROGRESS — initial syntax screen only |
-| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 8–21 have scoped evidence |
-| V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | NOT STARTED |
+| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 7–21 have scoped evidence |
+| V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | IN PROGRESS — Chapter 7 demonstrations and reference solutions executed; independent answer review pending |
 | V07 | Mathematical and financial correctness | Independently derive formulas and benchmarks; verify units, signs, timelines, rates, assumptions and edge cases. | NOT STARTED |
 | V08 | Numerical behavior | Assess precision, cancellation, overflow, underflow, convergence, tolerances and supported ranges. | IN PROGRESS — Section 10.7 and other scoped numerical findings addressed; broader review pending |
 | V09 | Integration and data validation | Check module contracts, limits, data alignment, timestamps, availability, revisions, missingness and security boundaries. | IN PROGRESS — scoped Chapter 21 tests and DST fix |
@@ -52,7 +52,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 | 04 | Python Data Structures for Financial Information | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
 | 05 | Modules, Packages, Environments, and Reproducibility | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
 | 06 | NumPy for Financial Mathematics | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
-| 07 | pandas for Financial Data Analysis | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
+| 07 | pandas for Financial Data Analysis | PASS — 156 reference tests, 17 demonstrations and 18 compilation checks; [evidence](chapter-07-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 08 | Visualization for Financial Mathematics | PASS — 132 extracted reference tests and dashboard visual inspection; [evidence](chapter-08-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 09 | Time Value of Money with Python | PASS — 152 extracted reference tests after formatting corrections; [evidence](chapter-09-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 10 | Cash Flows, Annuities, and Perpetuities | PASS — 174 extracted reference tests after corrections; [evidence](chapter-10-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
@@ -91,10 +91,10 @@ Add new findings with an ID, affected revision, severity, owner, reproduction, e
 
 ## Execution order and update rule
 
-1. Continue with **Chapter 7** by reconciling its historical runtime evidence and running appropriate current-reference checks; then reconcile Chapters 6–1 rather than treating historical claims as automatically current.
+1. Continue with **Chapter 6** by reconciling its historical runtime evidence and running appropriate current-reference checks; then reconcile Chapters 5–1 rather than treating historical claims as automatically current.
 2. Perform the cross-book checks V01–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
 3. Record each scoped run or review in a durable evidence directory, link it from this tracker, and update the chapter row and checklist only to the scope actually verified.
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** Chapter 7 runtime evidence reconciliation. Broader Book 1 QA remains in progress.
+**Next action:** Chapter 6 runtime evidence reconciliation. Broader Book 1 QA remains in progress.

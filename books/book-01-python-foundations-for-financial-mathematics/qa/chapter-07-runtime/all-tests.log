@@ -1,0 +1,456 @@
+
+===== 7.01-why-pandas.md =====
+test_duplicate_and_invalid_index (test_reference.AlignmentTests.test_duplicate_and_invalid_index) ... ok
+test_financial_domain (test_reference.AlignmentTests.test_financial_domain) ... ok
+test_known_answer (test_reference.AlignmentTests.test_known_answer) ... ok
+test_missing_and_extra_labels (test_reference.AlignmentTests.test_missing_and_extra_labels) ... ok
+test_nonfinite_and_dtype (test_reference.AlignmentTests.test_nonfinite_and_dtype) ... ok
+test_permutation (test_reference.AlignmentTests.test_permutation) ... ok
+test_source_preservation (test_reference.AlignmentTests.test_source_preservation) ... ok
+test_unguarded_alignment_and_skipna (test_reference.AlignmentTests.test_unguarded_alignment_and_skipna) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.046s
+
+OK
+
+--- demonstration ---
+       weight  return  contribution
+ALPHA   0.600   0.100         0.060
+BETA    0.300  -0.050        -0.015
+CASH    0.100   0.000         0.000
+Portfolio price return: 4.50%
+
+--- compile ---
+
+===== 7.02-series.md =====
+test_constructor_and_metadata (test_reference.SeriesTests.test_constructor_and_metadata) ... ok
+test_integer_labels (test_reference.SeriesTests.test_integer_labels) ... ok
+test_invalid_labels (test_reference.SeriesTests.test_invalid_labels) ... ok
+test_invalid_values (test_reference.SeriesTests.test_invalid_values) ... ok
+test_loc_iloc_and_slices (test_reference.SeriesTests.test_loc_iloc_and_slices) ... ok
+test_mask_and_arithmetic (test_reference.SeriesTests.test_mask_and_arithmetic) ... ok
+test_owned_copy_and_explicit_update (test_reference.SeriesTests.test_owned_copy_and_explicit_update) ... ok
+test_reindex_and_missing (test_reference.SeriesTests.test_reindex_and_missing) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.012s
+
+OK
+
+--- demonstration ---
+asset
+ALPHA   600.00
+BETA    300.00
+CASH    100.00
+ALPHA by label: 600.00
+First by position: 600.00
+At least 300: ALPHA, BETA
+Complete total: 1000.00
+Reindex adds missing: True
+
+--- compile ---
+
+===== 7.03-dataframe.md =====
+test_identity_and_size_rejections (test_reference.HoldingsTests.test_identity_and_size_rejections) ... ok
+test_input_preservation_and_assignment_alignment (test_reference.HoldingsTests.test_input_preservation_and_assignment_alignment) ... ok
+test_known_values_and_schema (test_reference.HoldingsTests.test_known_values_and_schema) ... ok
+test_numeric_rejections_and_zero (test_reference.HoldingsTests.test_numeric_rejections_and_zero) ... ok
+test_overflow_and_scalar_oracle (test_reference.HoldingsTests.test_overflow_and_scalar_oracle) ... ok
+test_row_and_column_order (test_reference.HoldingsTests.test_row_and_column_order) ... ok
+test_schema_rejections (test_reference.HoldingsTests.test_schema_rejections) ... ok
+test_selection_dimensions (test_reference.HoldingsTests.test_selection_dimensions) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.063s
+
+OK
+
+--- demonstration ---
+       quantity  price  market_value
+asset                               
+ALPHA      6.00 100.00        600.00
+BETA       3.00 100.00        300.00
+CASH       1.00 100.00        100.00
+Total market value: 1000.00
+At least 300: ALPHA, BETA
+
+--- compile ---
+
+===== 7.04-indexing-and-selection.md =====
+test_axis_and_dtype_rejections (test_reference.SelectionTests.test_axis_and_dtype_rejections) ... ok
+test_copy_isolation (test_reference.SelectionTests.test_copy_isolation) ... ok
+test_label_position_and_scalar_access (test_reference.SelectionTests.test_label_position_and_scalar_access) ... ok
+test_masks_and_alignment (test_reference.SelectionTests.test_masks_and_alignment) ... ok
+test_one_step_assignment_and_recalculation (test_reference.SelectionTests.test_one_step_assignment_and_recalculation) ... ok
+test_order_and_dimensions (test_reference.SelectionTests.test_order_and_dimensions) ... ok
+test_requests_rejected (test_reference.SelectionTests.test_requests_rejected) ... ok
+test_slices_and_absent_labels (test_reference.SelectionTests.test_slices_and_absent_labels) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.015s
+
+OK
+
+--- demonstration ---
+       price  market_value
+asset                     
+CASH  100.00        100.00
+ALPHA 100.00        600.00
+Filtered assets: ALPHA, BETA
+Synthetic repriced total: 1060.00
+
+--- compile ---
+
+===== 7.05-reading-financial-data.md =====
+test_context_rejections (test_reference.ReadTests.test_context_rejections) ... ok
+test_header_and_record_shape (test_reference.ReadTests.test_header_and_record_shape) ... ok
+test_identity_rejections (test_reference.ReadTests.test_identity_rejections) ... ok
+test_known_values_and_identifiers (test_reference.ReadTests.test_known_values_and_identifiers) ... ok
+test_limits_and_overflow (test_reference.ReadTests.test_limits_and_overflow) ... ok
+test_numeric_rejections (test_reference.ReadTests.test_numeric_rejections) ... ok
+test_snapshot_hash (test_reference.ReadTests.test_snapshot_hash) ... ok
+test_zero_fraction_and_reordered_rows (test_reference.ReadTests.test_zero_fraction_and_reordered_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.084s
+
+OK
+
+--- demonstration ---
+       quantity  price  market_value
+asset                               
+00123      6.00 100.00        600.00
+BETA       3.00 100.00        300.00
+NA         1.00 100.00        100.00
+Total: 1000.00 USD
+Rows: 3; SHA-256: e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11
+
+--- compile ---
+
+===== 7.06-data-types-and-conversion.md =====
+test_boolean_mapping (test_reference.ConversionTests.test_boolean_mapping) ... ok
+test_coercion_audit_and_precision (test_reference.ConversionTests.test_coercion_audit_and_precision) ... ok
+test_input_and_identity_rejections (test_reference.ConversionTests.test_input_and_identity_rejections) ... ok
+test_invalid_count_tokens (test_reference.ConversionTests.test_invalid_count_tokens) ... ok
+test_invalid_price_tokens (test_reference.ConversionTests.test_invalid_price_tokens) ... ok
+test_nullable_count_and_exact_range (test_reference.ConversionTests.test_nullable_count_and_exact_range) ... ok
+test_schema_and_values (test_reference.ConversionTests.test_schema_and_values) ... ok
+test_source_ownership_and_row_index (test_reference.ConversionTests.test_source_ownership_and_row_index) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.035s
+
+OK
+
+--- demonstration ---
+asset  lot_count  price  reviewed
+00123          6 100.25      True
+   NA       <NA>  80.00     False
+ BETA          0   0.00      True
+Dtypes: asset=string, lot_count=Int64, price=float64, reviewed=boolean
+Unknown lot counts: 1
+
+--- compile ---
+
+===== 7.07-missing-financial-data.md =====
+test_absent_vs_explicit_missing (test_reference.MissingnessTests.test_absent_vs_explicit_missing) ... ok
+test_all_missing_and_empty_returns (test_reference.MissingnessTests.test_all_missing_and_empty_returns) ... ok
+test_complete_known_answer (test_reference.MissingnessTests.test_complete_known_answer) ... ok
+test_fill_and_unknown_logic (test_reference.MissingnessTests.test_fill_and_unknown_logic) ... ok
+test_input_preservation (test_reference.MissingnessTests.test_input_preservation) ... ok
+test_invalid_data (test_reference.MissingnessTests.test_invalid_data) ... ok
+test_skip_drop_and_renormalization (test_reference.MissingnessTests.test_skip_drop_and_renormalization) ... ok
+test_zero_is_observed_and_zero_weight_policy (test_reference.MissingnessTests.test_zero_is_observed_and_zero_weight_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.022s
+
+OK
+
+--- demonstration ---
+Missing assets: BETA
+Coverage: 2/3; total=None
+Complete portfolio price return: 4.50%
+
+--- compile ---
+
+===== 7.08-cleaning-financial-datasets.md =====
+test_all_duplicates_rejected (test_reference.CleaningTests.test_all_duplicates_rejected) ... ok
+test_fixture_and_conservation (test_reference.CleaningTests.test_fixture_and_conservation) ... ok
+test_invalid_fields (test_reference.CleaningTests.test_invalid_fields) ... ok
+test_original_tokens_and_multiple_reasons (test_reference.CleaningTests.test_original_tokens_and_multiple_reasons) ... ok
+test_repeatable_and_idempotent_normalization (test_reference.CleaningTests.test_repeatable_and_idempotent_normalization) ... ok
+test_schema_and_cell_type (test_reference.CleaningTests.test_schema_and_cell_type) ... ok
+test_source_preservation_and_local_ordinals (test_reference.CleaningTests.test_source_preservation_and_local_ordinals) ... ok
+test_valid_zero_fraction_and_case (test_reference.CleaningTests.test_valid_zero_fraction_and_case) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.075s
+
+OK
+
+--- demonstration ---
+Input=6; accepted=2; rejected=4
+Accepted assets: ALPHA, CASH
+Changed rows: 2
+Batch valuation ready: False
+
+--- compile ---
+
+===== 7.09-date-and-time-indexes.md =====
+test_bad_price_and_schema (test_reference.TimeTests.test_bad_price_and_schema) ... ok
+test_bad_timestamps (test_reference.TimeTests.test_bad_timestamps) ... ok
+test_duplicate_instants (test_reference.TimeTests.test_duplicate_instants) ... ok
+test_interval_and_elapsed_time (test_reference.TimeTests.test_interval_and_elapsed_time) ... ok
+test_localization_and_dst (test_reference.TimeTests.test_localization_and_dst) ... ok
+test_sorted_utc_prices (test_reference.TimeTests.test_sorted_utc_prices) ... ok
+test_source_and_order_independence (test_reference.TimeTests.test_source_and_order_independence) ... ok
+test_zone_conversion_preserves_instant (test_reference.TimeTests.test_zone_conversion_preserves_instant) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.034s
+
+OK
+
+--- demonstration ---
+Duplicate example rejected: unique nonmissing UTC instants required
+2026-01-30T14:30:00+00:00: 100.00
+2026-01-30T15:00:00+00:00: 101.00
+2026-01-30T15:30:00+00:00: 102.00
+Half-open interval observations: 1
+
+--- compile ---
+
+===== 7.10-sorting-filtering-and-querying.md =====
+test_full_input_validation (test_reference.ScreenTests.test_full_input_validation) ... ok
+test_inclusive_floor_and_filter_before_head (test_reference.ScreenTests.test_inclusive_floor_and_filter_before_head) ... ok
+test_input_copy_and_index (test_reference.ScreenTests.test_input_copy_and_index) ... ok
+test_known_answer_and_counts (test_reference.ScreenTests.test_known_answer_and_counts) ... ok
+test_no_match_preserves_schema (test_reference.ScreenTests.test_no_match_preserves_schema) ... ok
+test_parameter_rejections (test_reference.ScreenTests.test_parameter_rejections) ... ok
+test_permutation_and_tie_break (test_reference.ScreenTests.test_permutation_and_tie_break) ... ok
+test_sort_and_query_mechanics (test_reference.ScreenTests.test_sort_and_query_mechanics) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.041s
+
+OK
+
+--- demonstration ---
+asset sector  market_value
+ALPHA equity        600.00
+ BETA equity        600.00
+Eligible=3; returned=2
+
+--- compile ---
+
+===== 7.11-grouping-and-aggregation.md =====
+test_domain_schema_and_range (test_reference.GroupTests.test_domain_schema_and_range) ... ok
+test_groupby_missing_keys_and_transform (test_reference.GroupTests.test_groupby_missing_keys_and_transform) ... ok
+test_known_answers (test_reference.GroupTests.test_known_answers) ... ok
+test_missing_and_duplicate_rejections (test_reference.GroupTests.test_missing_and_duplicate_rejections) ... ok
+test_permutation_and_source (test_reference.GroupTests.test_permutation_and_source) ... ok
+test_scalar_oracle_and_reconciliation (test_reference.GroupTests.test_scalar_oracle_and_reconciliation) ... ok
+test_weighted_vs_simple_mean (test_reference.GroupTests.test_weighted_vs_simple_mean) ... ok
+test_zero_sector_and_zero_portfolio (test_reference.GroupTests.test_zero_sector_and_zero_portfolio) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.066s
+
+OK
+
+--- demonstration ---
+        asset_count  opening_value  price_pnl  portfolio_weight  portfolio_contribution  sector_return
+sector                                                                                                
+cash              1       100.0000     0.0000            0.1000                  0.0000         0.0000
+equity            2       900.0000    45.0000            0.9000                  0.0450         0.0500
+unused            1         0.0000     0.0000            0.0000                  0.0000            NaN
+Portfolio price return: 4.50%
+
+--- compile ---
+
+===== 7.12-joining-and-merging-financial-data.md =====
+test_complete_known_answer (test_reference.MergeTests.test_complete_known_answer) ... ok
+test_context_and_numeric_rejections (test_reference.MergeTests.test_context_and_numeric_rejections) ... ok
+test_duplicate_and_null_keys (test_reference.MergeTests.test_duplicate_and_null_keys) ... ok
+test_missing_and_extra_quotes (test_reference.MergeTests.test_missing_and_extra_quotes) ... ok
+test_multiplication_risk_and_validate (test_reference.MergeTests.test_multiplication_risk_and_validate) ... ok
+test_null_match_and_join_mechanics (test_reference.MergeTests.test_null_match_and_join_mechanics) ... ok
+test_permutation_and_sources (test_reference.MergeTests.test_permutation_and_sources) ... ok
+test_scalar_oracle_zero_and_overflow (test_reference.MergeTests.test_scalar_oracle_zero_and_overflow) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.118s
+
+OK
+
+--- demonstration ---
+Matched=3; total=1000.00 USD
+Unmatched assets: CASH
+Incomplete valuation: result=None; total=None
+
+--- compile ---
+
+===== 7.13-resampling-time-series.md =====
+test_asfreq_is_not_aggregation (test_reference.BarTests.test_asfreq_is_not_aggregation) ... ok
+test_conservation_and_scalar_oracle (test_reference.BarTests.test_conservation_and_scalar_oracle) ... ok
+test_empty_bin_unknown_values (test_reference.BarTests.test_empty_bin_unknown_values) ... ok
+test_horizon_boundaries_and_leading_empty (test_reference.BarTests.test_horizon_boundaries_and_leading_empty) ... ok
+test_invalid_time_contract (test_reference.BarTests.test_invalid_time_contract) ... ok
+test_invalid_values_and_zero (test_reference.BarTests.test_invalid_values_and_zero) ... ok
+test_known_bars (test_reference.BarTests.test_known_bars) ... ok
+test_order_zone_and_source (test_reference.BarTests.test_order_zone_and_source) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.093s
+
+OK
+
+--- demonstration ---
+                            open   high    low  close  volume  event_count  has_observations
+interval_end                                                                                
+2026-01-30 14:30:00+00:00  100.0  102.0  100.0  102.0    30.0            2              True
+2026-01-30 15:00:00+00:00  101.0  101.0  101.0  101.0     5.0            1              True
+2026-01-30 15:30:00+00:00    NaN    NaN    NaN    NaN     NaN            0             False
+2026-01-30 16:00:00+00:00  103.0  103.0  103.0  103.0     7.0            1              True
+Events accounted for: 4
+
+--- compile ---
+
+===== 7.14-rolling-and-expanding-calculations.md =====
+test_bad_time_axis (test_reference.WindowTests.test_bad_time_axis) ... ok
+test_bad_values (test_reference.WindowTests.test_bad_values) ... ok
+test_future_perturbation_and_current_effect (test_reference.WindowTests.test_future_perturbation_and_current_effect) ... ok
+test_known_means_and_warmup (test_reference.WindowTests.test_known_means_and_warmup) ... ok
+test_missing_min_periods_and_ddof (test_reference.WindowTests.test_missing_min_periods_and_ddof) ... ok
+test_scalar_oracle_and_std (test_reference.WindowTests.test_scalar_oracle_and_std) ... ok
+test_short_constant_and_source (test_reference.WindowTests.test_short_constant_and_source) ... ok
+test_time_window_is_different (test_reference.WindowTests.test_time_window_is_different) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.035s
+
+OK
+
+--- demonstration ---
+                           price  rolling_mean  rolling_std  expanding_mean  prior_mean
+2026-01-30 14:00:00+00:00 100.00           NaN          NaN          100.00         NaN
+2026-01-30 14:10:00+00:00 102.00           NaN          NaN          101.00         NaN
+2026-01-30 14:40:00+00:00 104.00        102.00         2.00          102.00         NaN
+2026-01-30 15:00:00+00:00 106.00        104.00         2.00          103.00      102.00
+2026-01-30 15:10:00+00:00 108.00        106.00         2.00          104.00      104.00
+
+--- compile ---
+
+===== 7.15-price-to-return-transformation.md =====
+test_future_and_constant (test_reference.ReturnTests.test_future_and_constant) ... ok
+test_interval_alignment (test_reference.ReturnTests.test_interval_alignment) ... ok
+test_invalid_numeric_domain (test_reference.ReturnTests.test_invalid_numeric_domain) ... ok
+test_invalid_time_axis (test_reference.ReturnTests.test_invalid_time_axis) ... ok
+test_known_answer_and_first_row (test_reference.ReturnTests.test_known_answer_and_first_row) ... ok
+test_missing_policy_and_no_fill_mechanics (test_reference.ReturnTests.test_missing_policy_and_no_fill_mechanics) ... ok
+test_scalar_and_linked_reconciliation (test_reference.ReturnTests.test_scalar_and_linked_reconciliation) ... ok
+test_source_and_scale (test_reference.ReturnTests.test_source_and_scale) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.076s
+
+OK
+
+--- demonstration ---
+                             price  simple_return  cumulative_price_return
+2026-01-30 16:00:00+00:00 100.0000            NaN                   0.0000
+2026-02-02 16:00:00+00:00 110.0000         0.1000                   0.1000
+2026-02-03 16:00:00+00:00  99.0000        -0.1000                  -0.0100
+Endpoint price return: -1.00%
+Elapsed intervals: 3 days 00:00:00, 1 days 00:00:00
+
+--- compile ---
+
+===== 7.16-multi-asset-datasets.md =====
+test_asset_specific_interval_differs (test_reference.PanelTests.test_asset_specific_interval_differs) ... ok
+test_complete_fixture_and_scalar (test_reference.PanelTests.test_complete_fixture_and_scalar) ... ok
+test_duplicates_and_unexpected_keys (test_reference.PanelTests.test_duplicates_and_unexpected_keys) ... ok
+test_invalid_numeric_and_axis (test_reference.PanelTests.test_invalid_numeric_and_axis) ... ok
+test_known_layout_and_returns (test_reference.PanelTests.test_known_layout_and_returns) ... ok
+test_long_roundtrip (test_reference.PanelTests.test_long_roundtrip) ... ok
+test_missing_entire_asset_and_time (test_reference.PanelTests.test_missing_entire_asset_and_time) ... ok
+test_order_and_ownership (test_reference.PanelTests.test_order_and_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.117s
+
+OK
+
+--- demonstration ---
+asset                      ALPHA   BETA
+time                                   
+2026-01-30 16:00:00+00:00  100.0  200.0
+2026-01-31 16:00:00+00:00  110.0    NaN
+2026-02-01 16:00:00+00:00   99.0  220.0
+asset                       ALPHA  BETA
+time                                   
+2026-01-30 16:00:00+00:00     NaN   NaN
+2026-01-31 16:00:00+00:00  0.1000   NaN
+2026-02-01 16:00:00+00:00 -0.1000   NaN
+Complete aligned intervals: 0
+
+--- compile ---
+
+===== 7.17-chapter-project-financial-time-series-analyzer.md =====
+test_complete_pipeline_and_scalar (test_reference.AnalyzerTests.test_complete_pipeline_and_scalar) ... ok
+test_duplicate_unexpected_and_missing_universe (test_reference.AnalyzerTests.test_duplicate_unexpected_and_missing_universe) ... ok
+test_gap_not_bridged_and_warmup (test_reference.AnalyzerTests.test_gap_not_bridged_and_warmup) ... ok
+test_hash_and_records (test_reference.AnalyzerTests.test_hash_and_records) ... ok
+test_incomplete_known_answer (test_reference.AnalyzerTests.test_incomplete_known_answer) ... ok
+test_invalid_price_and_time (test_reference.AnalyzerTests.test_invalid_price_and_time) ... ok
+test_row_order_and_returned_ownership (test_reference.AnalyzerTests.test_row_order_and_returned_ownership) ... ok
+test_schema_and_context_rejections (test_reference.AnalyzerTests.test_schema_and_context_rejections) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.170s
+
+OK
+
+--- demonstration ---
+       observed_prices  expected_prices  observed_intervals  complete_path  endpoint_return  linked_return
+asset                                                                                                     
+ALPHA                3                3                   2           True          -0.0100        -0.0100
+BETA                 2                3                   0          False           0.1000            NaN
+Complete aligned intervals: 0
+Source records: 5
+
+--- compile ---
+
+===== 7.18-solutions-and-reference-implementations.md =====
+test_problem_01 (test_reference.ChapterSevenSolutions.test_problem_01) ... ok
+test_problem_02 (test_reference.ChapterSevenSolutions.test_problem_02) ... ok
+test_problem_03 (test_reference.ChapterSevenSolutions.test_problem_03) ... ok
+test_problem_04 (test_reference.ChapterSevenSolutions.test_problem_04) ... ok
+test_problem_05 (test_reference.ChapterSevenSolutions.test_problem_05) ... ok
+test_problem_06 (test_reference.ChapterSevenSolutions.test_problem_06) ... ok
+test_problem_07 (test_reference.ChapterSevenSolutions.test_problem_07) ... ok
+test_problem_08 (test_reference.ChapterSevenSolutions.test_problem_08) ... ok
+test_problem_09 (test_reference.ChapterSevenSolutions.test_problem_09) ... ok
+test_problem_10 (test_reference.ChapterSevenSolutions.test_problem_10) ... ok
+test_problem_11 (test_reference.ChapterSevenSolutions.test_problem_11) ... ok
+test_problem_12 (test_reference.ChapterSevenSolutions.test_problem_12) ... ok
+test_problem_13 (test_reference.ChapterSevenSolutions.test_problem_13) ... ok
+test_problem_14 (test_reference.ChapterSevenSolutions.test_problem_14) ... ok
+test_problem_15 (test_reference.ChapterSevenSolutions.test_problem_15) ... ok
+test_problem_16 (test_reference.ChapterSevenSolutions.test_problem_16) ... ok
+test_problem_17 (test_reference.ChapterSevenSolutions.test_problem_17) ... ok
+test_problem_18 (test_reference.ChapterSevenSolutions.test_problem_18) ... ok
+test_problem_19 (test_reference.ChapterSevenSolutions.test_problem_19) ... ok
+test_problem_20 (test_reference.ChapterSevenSolutions.test_problem_20) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.082s
+
+OK
+
+--- demonstration ---
+Not applicable: standalone solution suite.
+
+--- compile ---
