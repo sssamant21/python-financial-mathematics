@@ -15,7 +15,7 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | In progress | Filename mapping covers 215 sections. Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; broader substantive coverage and dependencies remain pending. [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
-| Links and index consistency | In progress | Latest static scan: 270 Markdown files, 2,743 recognized local destinations, zero missing paths; no local fragment destinations or reference definitions detected. Rendered navigation, external URLs and title/scope review remain pending. [Anchor/reference audit](anchor-reference-link-audit.md) · [Earlier index audit](link-index-audit.md). |
+| Links and index consistency | In progress | Latest static scan: 270 Markdown files, 2,743 recognized local destinations, zero missing paths; no local fragment destinations or reference definitions detected. Rendered navigation, external URLs remain pending; Section 4.7–4.8 titles/scope reconciled to the established TOC. [Anchor/reference audit](anchor-reference-link-audit.md) · [Earlier index audit](link-index-audit.md). |
 | Editorial, source and copyright review | Pending | Review manuscript quality, attribution and source policy. |
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
@@ -67,7 +67,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-04 | Chapter 16 descent stopping | Fix applied; local script passed | Review near-stationary behavior and convergence assumptions |
 | V-05 | Chapter 18 summation demonstration | Fix applied; local script passed | Check manuscript wording and supported Python versions |
 | V-06 | Chapter 20 tolerance comparison | Fix applied; local script passed | Review exact-float comparison semantics and performance |
-| V-07 | Book indexes and links | In progress | Reconcile Section 4.7–4.8 title/scope differences; validate rendered navigation and external URLs. Static scan detected no local fragments or reference definitions. [Latest audit](anchor-reference-link-audit.md) |
+| V-07 | Book indexes and links | In progress | Section 4.7–4.8 title/scope mismatch resolved. [Reconciliation](chapter-04-title-scope-reconciliation.md). Validate rendered navigation and external URLs. Static scan detected no local fragments or reference definitions. [Latest audit](anchor-reference-link-audit.md) |
 | V-08 | Coverage and executable examples | In progress | Filename mapping complete; focused Chapter 21 review and fixes recorded. Review remaining assertions, exercise coverage, dependencies and executable examples. [Inventory](section-check-inventory.md) · [Chapter 21 review](chapter-21-capstone-review.md) |
 | V-10 | Chapter 21 numerical and report gaps | Fixes applied; independent review pending | Review small-rate transition, finite-difference overflow and scenario inputs; rerun final revision. [Evidence](chapter-21-capstone-review.md) |
 | V-11 | Chapter 20 tiny-rate annuity underflow | Fix applied; independent review pending | Review extreme-rate numerical behavior and Section 20.6 input contract. [Evidence](chapter-20-boundary-review.md) |
@@ -97,7 +97,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 The [remaining review checklist](remaining-review-checklist.md) reconciles V-01–V-31 and defines eight evidence gates. The full pinned candidate runtime pass supersedes earlier runtime blockers; no independent review or release approval is inferred.
 
-1. Prepare the Section 4.7–4.8 title/scope reconciliation; complete rendered-navigation and external-link review. [Static anchor/reference scan](anchor-reference-link-audit.md) found no local fragment destinations or reference definitions.
+1. Complete rendered-navigation and external-link review. [Section 4.7–4.8 title/scope reconciliation](chapter-04-title-scope-reconciliation.md) is recorded. [Static anchor/reference scan](anchor-reference-link-audit.md) found no local fragment destinations or reference definitions.
 2. Expand filename mapping into substantive claims/example/exercise coverage.
 3. Review numerical fixes and manuscript material independently, recording reviewer and revision.
 4. Declare and test supported environments; rerun the agreed suite against the reviewed release revision.
