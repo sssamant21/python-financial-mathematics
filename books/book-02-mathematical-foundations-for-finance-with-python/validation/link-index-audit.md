@@ -12,14 +12,14 @@
 - Ten master table entries had existing manuscript files but no links. Linked the existing files while retaining the established table titles.
 - Replaced stale “next manuscript” statements in Chapter 02–20 indexes with a link to the validation tracker. Draft and review statuses remain unchanged.
 
-## Open title reconciliation
+## Historical title finding — resolved 2026-10-28
 
-The established master table names Section 4.7 **Stable Evaluation Near Zero** and 4.8 **Growth Assumptions and Model Limits**, while the manuscripts and Chapter 04 index use **Stable Numerical Evaluation** and **Numerical Conditioning and Model Limits**, respectively. Both entries now link to their existing manuscripts, but the substantive title mismatch requires editorial review against the curriculum and the structure-change policy. No title was silently renamed.
+The established master table names Section 4.7 **Stable Evaluation Near Zero** and 4.8 **Growth Assumptions and Model Limits**, while the manuscripts and Chapter 04 index use **Stable Numerical Evaluation** and **Numerical Conditioning and Model Limits**, respectively. Both entries now link to their existing manuscripts, but the substantive title mismatch requires editorial review against the curriculum and the structure-change policy. The finding was subsequently resolved by restoring the established TOC display titles in the manuscripts and index, with explicit scope notes. See the [reconciliation report](chapter-04-title-scope-reconciliation.md). The following comparison describes the original scan.
 
 Other observed title differences for chapter projects are punctuation (colon versus dash); they do not indicate a missing file. A full semantic comparison of titles and manuscript scope remains pending.
 
 ## Next actions
 
-- Review Sections 4.7 and 4.8 against the approved curriculum and resolve title/scope discrepancies through the documented structure-change process if needed.
+- Sections 4.7–4.8 now match the established TOC titles; retain the recorded reconciliation and complete independent content review.
 - Audit reference-style links, anchors, external links and rendering separately.
 - Map sections and examples to checks, review mathematical content, and rerun validation on the final agreed revision.
