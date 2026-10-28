@@ -67,9 +67,9 @@ def bond_yield_residual(yield_rate, payments, price):
         raise ValueError("yield_rate must exceed -1")
     if p <= 0:
         raise ValueError("price must be positive")
-    if not payments:
-        raise ValueError("payments must be nonempty")
     flows = [finite(c, "payment") for c in payments]
+    if not flows:
+        raise ValueError("payments must be nonempty")
     if any(c <= 0 for c in flows):
         raise ValueError("all payments must be positive")
     result = math.fsum(c / ((1+y)**k) for k, c in enumerate(flows, start=1)) - p
