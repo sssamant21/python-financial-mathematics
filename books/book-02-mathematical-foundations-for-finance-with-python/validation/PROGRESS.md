@@ -1,6 +1,6 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-10-27  
+**Updated:** 2026-10-28  
 **Overall status:** In progress — automated runtime pass completed on a defined snapshot; coverage, independent review and final-revision validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
@@ -35,7 +35,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 |---|---:|---|---|---|
 | 01 | 15 | Pending | Pending | Not certified |
 | 02 | 10 | Pending | Pending | Not certified |
-| 03 | 10 | Pending | Pending | Not certified |
+| 03 | 10 | Pending | Pending | [Focused exact-domain review](chapter-03-exact-domain-review.md); 11/11 scripts passed on recorded snapshot; not certified |
 | 04 | 10 | Pending | Pending | [Focused growth review](chapter-04-growth-recovery-review.md); 11/11 scripts passed on recorded snapshot; not certified |
 | 05 | 10 | Pending | Pending | [Focused recurrence review](chapter-05-recurrence-boundary-review.md); not certified |
 | 06 | 10 | Pending | Pending | [Focused series review](chapter-06-series-boundary-review.md); not certified |
@@ -85,11 +85,12 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-25 | Chapter 6 series boundaries | Fixes applied; independent review pending | Review extreme-rate annuities, formula independence and final-revision evidence. [Review](chapter-06-series-boundary-review.md) |
 | V-26 | Chapter 5 recurrence cancellation | Fixes applied; independent review pending | Review rounding reconciliation, withdrawal timing and final-revision evidence. [Review](chapter-05-recurrence-boundary-review.md) |
 | V-27 | Chapter 4 growth recovery | Fix applied; scoped runtime follow-up passed | 21/21 files compiled and 11/11 scripts passed at `94f7ad43cb5200826a97d3184691cd7d652849dd` on Python 3.12.14/Linux, including five new regression cases. Independent review and final-revision run pending. [Review](chapter-04-growth-recovery-review.md) |
+| V-28 | Chapter 3 exact-domain boundaries | Focused review passed; no implementation change required | 20/20 files compiled and 11/11 scripts passed on baseline `695f393a6c14d37973bdd0644fc5a062df6f9af7` plus six new boundary cases. Independent manuscript review and final-revision run pending. [Review](chapter-03-exact-domain-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
 
-**Runtime availability restored:** Chapter 4 follow-up compiled 21/21 Python files and passed 11/11 check scripts at `94f7ad43cb5200826a97d3184691cd7d652849dd` on Python 3.12.14/Linux. The earlier blocker is cleared for that scoped run; book-wide final-revision validation remains pending. Continue the focused review with Chapter 3.
+**Runtime availability restored:** Chapter 4 follow-up compiled 21/21 Python files and passed 11/11 check scripts at `94f7ad43cb5200826a97d3184691cd7d652849dd` on Python 3.12.14/Linux. The earlier blocker is cleared for that scoped run; book-wide final-revision validation remains pending. Chapter 3 subsequently compiled 20/20 files and passed 11/11 scripts on its separately recorded snapshot. Continue the focused review with Chapter 2.
 
 1. Resolve the Section 4.7–4.8 title/scope mismatch and complete remaining link checks.
 2. Assess substantive coverage and dependencies; review assertions and validate manuscript examples using the section-to-check inventory.
