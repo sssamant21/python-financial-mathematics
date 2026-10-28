@@ -48,14 +48,14 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | 11 | 10 | Pending | Pending | [Focused projection review](chapter-11-projection-coefficient-review.md); not certified |
 | 12 | 10 | Pending | Pending | [Focused inverse review](chapter-12-inverse-scaling-review.md); not certified |
 | 13 | 10 | Pending | Pending | [Focused projection review](chapter-13-projection-scaling-review.md); not certified |
-| 14 | 10 | Pending | Pending | Not certified |
-| 15 | 10 | Pending | Pending | Not certified |
-| 16 | 10 | Pending | Pending | Not certified |
-| 17 | 10 | Pending | Pending | Not certified |
-| 18 | 10 | Pending | Pending | Not certified |
-| 19 | 10 | Pending | Pending | Not certified |
-| 20 | 10 | Pending | Pending | Not certified |
-| 21 | 10 | Pending | Pending | Not certified |
+| 14 | 10 | Pending | Pending | [Focused review](chapter-14-decomposition-boundary-review.md); not certified |
+| 15 | 10 | Pending | Pending | [Focused review](chapter-15-derivative-boundary-review.md); not certified |
+| 16 | 10 | Pending | Pending | [Focused review](chapter-16-stopping-review.md); not certified |
+| 17 | 10 | Pending | Pending | [Focused review](chapter-17-feasibility-review.md); not certified |
+| 18 | 10 | Pending | Pending | [Focused review](chapter-18-solver-boundary-review.md); not certified |
+| 19 | 10 | Pending | Pending | [Focused review](chapter-19-continuous-time-review.md); not certified |
+| 20 | 10 | Pending | Pending | [Focused review](chapter-20-boundary-review.md); not certified |
+| 21 | 10 | Pending | Pending | [Focused review](chapter-21-capstone-review.md); not certified |
 
 ## Finding register
 
@@ -91,17 +91,18 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-29 | Chapter 2 quadratic cancellation | Fix applied; scoped runtime follow-up passed | 20/20 files compiled; 11/11 scripts passed on recorded baseline plus fix and new regression. Independent review, Decimal range and final-revision validation pending. [Review](chapter-02-quadratic-boundary-review.md) |
 | V-30 | Chapter 1 foundation boundaries | Focused review passed; no implementation change required | 32/32 files compiled; 17/17 scripts passed on recorded snapshot, with aggregate duplication. Five new unittest methods passed. Independent review and final-revision validation pending. [Review](chapter-01-foundation-boundary-review.md) |
 | V-31 | Full pinned-revision runtime validation | Passed on Python 3.12.14/Linux | 444/444 files compiled; 233/233 scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`. Independent review, supported platforms and final release reruns remain open. [Evidence](pinned-revision-runtime-validation.md) |
-| V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
+| V-09 | Independent review and final release | Open; review requirements documented | Eight gates and reviewer evidence requirements recorded in the [remaining review checklist](remaining-review-checklist.md). Reviewers are unassigned; no sign-off or canonical decision recorded. |
 
 ## Next actions
 
-**Runtime availability restored:** Chapter 4 follow-up compiled 21/21 Python files and passed 11/11 check scripts at `94f7ad43cb5200826a97d3184691cd7d652849dd` on Python 3.12.14/Linux. The earlier blocker is cleared for that scoped run; book-wide final-revision validation remains pending. Chapter 3 subsequently compiled 20/20 files and passed 11/11 scripts on its separately recorded snapshot. Chapter 2 subsequently compiled 20/20 files and passed 11/11 scripts after its quadratic-root fix on a separately recorded snapshot. Chapter 1 subsequently compiled 32/32 files and passed 17/17 scripts, including aggregate reruns, on its separately recorded snapshot. The reverse-order focused chapter pass has reached Chapter 1; independent review and final-revision validation remain pending.
+The [remaining review checklist](remaining-review-checklist.md) reconciles V-01–V-31 and defines eight evidence gates. The full pinned candidate runtime pass supersedes earlier runtime blockers; no independent review or release approval is inferred.
 
-1. Resolve the Section 4.7–4.8 title/scope mismatch and complete remaining link checks.
-2. Assess substantive coverage and dependencies; review assertions and validate manuscript examples using the section-to-check inventory.
-3. Review the six fixes and mathematical examples independently, tracking findings and owners.
-4. Rerun checks on the agreed final commit and supported environments; retain command, results and runtime details.
-5. Complete editorial, source and copyright review before any canonical decision.
+1. Complete anchor/reference-style link checks and prepare the Section 4.7–4.8 title/scope reconciliation.
+2. Expand filename mapping into substantive claims/example/exercise coverage.
+3. Review numerical fixes and manuscript material independently, recording reviewer and revision.
+4. Declare and test supported environments; rerun the agreed suite against the reviewed release revision.
+5. Complete editorial/source review and document the authorized canonical decision.
+
 
 ## Update rules
 
