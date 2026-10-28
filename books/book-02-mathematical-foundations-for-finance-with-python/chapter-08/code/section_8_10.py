@@ -85,6 +85,8 @@ def centered_second(function, x, step):
     x, h = finite(x, "x"), finite(step, "step")
     if h <= 0 or x+h == x or x-h == x:
         raise ValueError("step must be positive and representable")
+    if not math.isfinite(x+h) or not math.isfinite(x-h) or h*h==0 or not math.isfinite(h*h):
+        raise ValueError("perturbations and squared step must be finite and nonzero")
     return (finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
             +finite(function(x-h), "f(x-h)"))/(h*h)
 
