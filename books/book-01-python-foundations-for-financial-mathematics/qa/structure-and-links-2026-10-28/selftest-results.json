@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "expected fixture finding counts",
+      "status": "PASS"
+    },
+    {
+      "check": "intentional failures produce nonzero audit exit",
+      "status": "PASS"
+    },
+    {
+      "check": "duplicate target/anchor passes",
+      "status": "PASS"
+    },
+    {
+      "check": "reference target/anchor passes",
+      "status": "PASS"
+    },
+    {
+      "check": "unicode target/anchor passes",
+      "status": "PASS"
+    },
+    {
+      "check": "parentheses target/anchor passes",
+      "status": "PASS"
+    },
+    {
+      "check": "manual target/anchor passes",
+      "status": "PASS"
+    },
+    {
+      "check": "fenced-code link ignored",
+      "status": "PASS"
+    },
+    {
+      "check": "inline-code link ignored",
+      "status": "PASS"
+    },
+    {
+      "check": "native math-fence link ignored",
+      "status": "PASS"
+    },
+    {
+      "check": "dictionary indexing does not become unresolved-reference finding",
+      "status": "PASS"
+    },
+    {
+      "check": "only unescaped table pipe is flagged",
+      "status": "PASS"
+    }
+  ],
+  "fixture_findings": [
+    {
+      "kind": "unresolved_explicit_reference_review",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/README.md",
+      "line": 3,
+      "text": "[visible][unknown]"
+    },
+    {
+      "kind": "table_column_mismatch",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/README.md",
+      "line": 23,
+      "expected": 2,
+      "actual": 3,
+      "text": "| P(A|B) | intentionally malformed |"
+    },
+    {
+      "kind": "escaped_fence_review",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/escaped.md",
+      "line": 1,
+      "text": "\\`\\`\\`python"
+    },
+    {
+      "kind": "escaped_fence_review",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/escaped.md",
+      "line": 3,
+      "text": "\\`\\`\\`"
+    },
+    {
+      "kind": "unclosed_fence",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/unclosed.md",
+      "line": 1,
+      "marker": "```"
+    },
+    {
+      "kind": "missing_internal_target",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/README.md",
+      "line": 3,
+      "destination": "does-not-exist.md",
+      "target": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/does-not-exist.md"
+    },
+    {
+      "kind": "missing_internal_anchor",
+      "file": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/README.md",
+      "line": 3,
+      "destination": "target.md#missing",
+      "target": "books/book-01-python-foundations-for-financial-mathematics/qa/_audit-fixtures/target.md",
+      "fragment": "missing"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Chapter 10 — Cash Flows, Annuities, and Perpetuities
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-10-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 | Section | Title | Status |
 |---|---|---|
 | 10.1 | [Cash-Flow Mathematics](10.01-cash-flow-mathematics.md) | Manuscript published |
@@ -19,37 +21,37 @@
 | 10.15 | [Exercises and Applied Problems](10.15-exercises-and-applied-problems.md) | Manuscript published |
 
 **Manuscript progress:** 10.1–10.15 complete (15/15 sections).  
-**Chapter status:** Manuscript complete; independent runtime and editorial review pending.  
+**Chapter status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** 11.1 — Loan Mathematics.
 
 ## Publication and validation policy
 
-Follow the locked Master TOC v1.0. Section 10.1 contains an original standalone standard-library Python lab and eight reference tests; independent runtime and editorial validation remain pending.
+Follow the locked Master TOC v1.0. Section 10.1 contains an original standalone standard-library Python lab and eight reference tests; scoped reference runtime passed; independent mathematical and editorial validation remain pending.
 
-Section 10.2 adds cash-flow calendar timelines, ACT/365F and ACT/360 conventions, ten exercises, and ten Python reference tests (independent runtime validation pending).
+Section 10.2 adds cash-flow calendar timelines, ACT/365F and ACT/360 conventions, ten exercises, and ten Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.3 covers level annuity PV/FV factors, timeline reconciliation, ten exercises, and ten Python reference tests (independent runtime verification pending).
+Section 10.3 covers level annuity PV/FV factors, timeline reconciliation, ten exercises, and ten Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.4 includes ordinary annuity PV/FV, inverse payment calculation, twelve exercises and twelve reference tests (independent runtime verification pending).
+Section 10.4 includes ordinary annuity PV/FV, inverse payment calculation, twelve exercises and twelve reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.5 adds annuity-due timing, PV/FV, inverse payment, twelve exercises, and twelve Python reference tests (independent runtime verification pending).
+Section 10.5 adds annuity-due timing, PV/FV, inverse payment, twelve exercises, and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.6 covers deferred-annuity timing, PV and inverse payment, twelve exercises and twelve reference tests (independent runtime verification pending).
+Section 10.6 covers deferred-annuity timing, PV and inverse payment, twelve exercises and twelve reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.7 covers growing-annuity valuation, equal-rate limits, future value, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.7 covers growing-annuity valuation, equal-rate limits, future value, twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.8 covers level perpetuities, convergence, due and deferred cases, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.8 covers level perpetuities, convergence, due and deferred cases, twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.9 covers growing perpetuities, convergence, due/deferred timing, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.9 covers growing perpetuities, convergence, due/deferred timing, twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.10 integrates present/future value of signed payment streams with twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.10 integrates present/future value of signed payment streams with twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.11 covers irregular dated cash flows, Actual/365 Fixed valuation, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.11 covers irregular dated cash flows, Actual/365 Fixed valuation, twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.12 covers NPV, project selection, sensitivity, profitability index, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.12 covers NPV, project selection, sensitivity, profitability index, twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.13 covers IRR, bisection, multiple roots, twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.13 covers IRR, bisection, multiple roots, twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.14 publishes the finite cash-flow valuation engine capstone with twelve exercises and twelve Python reference tests (independent runtime verification pending).
+Section 10.14 publishes the finite cash-flow valuation engine capstone with twelve exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 10.15 concludes Chapter 10 with twenty worked exercises, applied cases, an assessment rubric, and twelve Python reference tests (independent runtime verification pending).
+Section 10.15 concludes Chapter 10 with twenty worked exercises, applied cases, an assessment rubric, and twelve Python reference tests (scoped reference runtime passed; independent review pending).

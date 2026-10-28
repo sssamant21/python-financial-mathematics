@@ -1,5 +1,7 @@
 # Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit
 
+**Current validation:** [Scoped runtime evidence](../qa/initial-2026-10-27/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 **Manuscript progress:** 18/18 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 

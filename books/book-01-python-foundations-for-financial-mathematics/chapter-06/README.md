@@ -1,5 +1,7 @@
 # Chapter 6 — NumPy for Financial Mathematics
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-06-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 ## Manuscript Status
 
 | Section | Title | Status |

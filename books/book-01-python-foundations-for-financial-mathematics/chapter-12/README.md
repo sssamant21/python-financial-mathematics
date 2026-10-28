@@ -1,5 +1,7 @@
 # Chapter 12 — Fixed-Income Mathematics and Bond Analytics
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-12-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 **Book:** Book 1 — Python Foundations for Financial Mathematics  
 **Structure:** Locked Book 1 Master TOC v1.0
 
@@ -24,43 +26,43 @@
 | 12.17 | [Exercises and Applied Problems](12.17-exercises-and-applied-problems.md) | Manuscript published |
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
-**Chapter status:** In progress; independent runtime and editorial review pending.  
+**Chapter status:** In progress; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** 13.1 — Measuring Investment Returns.
 
 ## Validation policy
 
-Section 12.1 includes fixed-income foundations, a present-value bond pricing lab, sixteen worked exercises, and twelve Python reference tests. Independent runtime execution and editorial review remain pending.
+Section 12.1 includes fixed-income foundations, a present-value bond pricing lab, sixteen worked exercises, and twelve Python reference tests. Scoped reference runtime checks passed; independent mathematical and editorial review remain pending.
 
 Publication status is not runtime certification. Preserve the locked section titles and numbers.
 
-Section 12.2 includes contractual coupon and principal cash-flow schedules, discounting, eighteen worked exercises, and twelve Python reference tests (independent runtime verification pending).
+Section 12.2 includes contractual coupon and principal cash-flow schedules, discounting, eighteen worked exercises, and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.3 includes coupon bond valuation, annuity/direct price reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.3 includes coupon bond valuation, annuity/direct price reconciliation, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.4 includes zero-coupon pricing and implied yield, discount factors, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.4 includes zero-coupon pricing and implied yield, discount factors, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.5 includes flat-yield and discount-factor bond pricing, annuity/direct reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.5 includes flat-yield and discount-factor bond pricing, annuity/direct reconciliation, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.6 includes yield-to-maturity root solving, repricing validation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.6 includes yield-to-maturity root solving, repricing validation, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.7 includes bond price/yield derivatives, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.7 includes bond price/yield derivatives, duration and convexity foundations, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.8 includes settlement accrued interest, clean/dirty price reconciliation, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.8 includes settlement accrued interest, clean/dirty price reconciliation, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.9 includes Macaulay duration, present-value cash-flow weights, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.9 includes Macaulay duration, present-value cash-flow weights, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.10 includes modified duration, DV01 and first-order price risk, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.10 includes modified duration, DV01 and first-order price risk, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.11 includes analytical convexity, second-order yield-shock approximations, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.11 includes analytical convexity, second-order yield-shock approximations, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.12 includes interest-rate scenario analysis, portfolio DV01 and stress testing, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.12 includes interest-rate scenario analysis, portfolio DV01 and stress testing, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.13 includes yield-curve shapes, spot-rate interpolation, discount factors, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.13 includes yield-curve shapes, spot-rate interpolation, discount factors, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.14 includes discount factors, spot-rate inversion, multi-cash-flow pricing, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.14 includes discount factors, spot-rate inversion, multi-cash-flow pricing, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.15 includes forward-rate conventions, curve reconstruction, eighteen worked exercises and twelve Python reference tests (independent runtime verification pending).
+Section 12.15 includes forward-rate conventions, curve reconstruction, eighteen worked exercises and twelve Python reference tests (scoped reference runtime passed; independent review pending).
 
-Section 12.16 includes the integrated bond analytics engine, twelve Python reference tests, eighteen worked exercises and portfolio stress-report acceptance criteria (independent runtime verification pending).
+Section 12.16 includes the integrated bond analytics engine, twelve Python reference tests, eighteen worked exercises and portfolio stress-report acceptance criteria (scoped reference runtime passed; independent review pending).
 
 **Chapter 12 manuscript completion:** All 17 sections published as drafts. Independent runtime verification and editorial QA pending; the chapter is not runtime-certified.

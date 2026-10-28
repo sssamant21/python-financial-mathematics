@@ -13,18 +13,19 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
-- **Manuscript inventory:** 322 of 322 locked section numbers have matching manuscript files at the initial baseline. This is a filename inventory, not a content or QA pass.
+- **Structure and indexes:** V01 passed its scoped audit: 322 locked sections, 21 chapter indexes and 8 companions verified, with exact section titles and required index navigation. The locked Master TOC is unchanged; [evidence](structure-and-links-2026-10-28/README.md).
 - **Initial syntax screening:** 1,152 fenced Python blocks parsed without syntax errors at that baseline; execution, numerical correctness and illustrative fragments were not established by this check.
 - **Reference runtime evidence:** Scoped runs exist for Chapters **1–21**: 2,996 passing test methods in the recorded runs (31 + 101 + 80 + 148 + 156 + 132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **21 chapters with scoped evidence**, not twenty-one comprehensively validated chapters. Chapter 5 counts the eight base installed tests only once within its twelve-method extended suite. Chapter 3's 21 doctest examples and assertion-based lab runs are recorded separately and are not added to the unit-test method total. Chapter 2's script executions and controlled analyzer cases add no unittest methods to that total. Chapter 1's interactive cases and selected examples also add no unittest methods.
 - **Visualization:** A Chapter 8 synthetic dashboard and one Chapter 21 synthetic chart were rendered and visually inspected; a complete visualization and accessibility review is pending.
+- **Markdown and internal links:** V02 passed the defined parser-based checks after documentation corrections. See the [audit summary](structure-and-links-2026-10-28/final-summary.json) for the exact document/link counts and deferred scope. MathJax rendering, external-reference validation and broad style/editorial acceptance remain separate.
 - **Certification:** No Book 1-wide canonical, production, mathematical or model certification is implied.
 
 ## Validation checklist
 
 | ID | Validation area | Required work / acceptance evidence | Status |
 |---|---|---|---|
-| V01 | Inventory and locked structure | Confirm 322 section files, exact titles, companion files and index consistency against the locked TOC; investigate duplicate or missing materials. | IN PROGRESS — file-number inventory only |
-| V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | IN PROGRESS — initial heuristic only |
+| V01 | Inventory and locked structure | Confirm 322 section files, exact titles, companion files and index consistency against the locked TOC; investigate duplicate or missing materials. | PASS (scoped) — 322 sections, 21 chapter indexes and 8 companions verified; locked TOC unchanged |
+| V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | PASS (scoped) — parser-based fences/tables, paths and index links; anchor logic self-tested; [evidence](structure-and-links-2026-10-28/README.md) |
 | V03 | External references | Check availability, relevance, authoritative source attribution and version sensitivity; record unavailable links. | NOT STARTED |
 | V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | IN PROGRESS — initial syntax screen only |
 | V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — all 21 chapters have scoped evidence; complete example/platform coverage remains pending |
@@ -37,7 +38,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V12 | Packaging and platform | Build and hash artifacts, install in clean environments, run outside checkout, review dependency versions and test supported operating systems. | IN PROGRESS — Chapter 5 offline fixture/env and regular installed-wheel workflows passed; cross-platform review pending |
 | V13 | Security and privacy | Review secrets, sensitive data, file/network behavior, dependencies and evidence handling appropriate to the work. | NOT STARTED |
 | V14 | Editorial, source and copyright | Review clarity, consistency, accessibility, attribution, original expression and verified references. | NOT STARTED |
-| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — twelve corrections, one open audit finding and one resolved environment blocker recorded |
+| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — runtime and documentation corrections recorded; scoped V01–V02 findings closed; broader reviews pending |
 | V16 | Final acceptance | Reconcile all evidence against agreed criteria and obtain required independent review and decision. | NOT STARTED |
 
 ## Chapter-by-chapter progress
@@ -76,7 +77,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 |---|---|---|---|
 | F01 | Section 21.13 could compare repeated local times in the wrong instant order during a daylight-saving transition. | Corrected to compare UTC instants; two regression checks passed in the scoped [Chapter 21 run](initial-2026-10-27/README.md). | Broader timestamp, data and platform review pending. |
 | F02 | Section 17.12 asserted a price residual tighter than warranted by its default rate-width stopping tolerance. | Test requests a tighter width and separately checks residual; original failure and rerun are retained in [Chapter 17 evidence](chapter-17-runtime/README.md). | Independent solver, tolerance and range review pending. |
-| F03 | Initial link scan returned ten candidates subsequently identified as notation false positives. | Initial heuristic reviewed in [initial QA](initial-2026-10-27/README.md). | Parser-based internal-link and anchor audit plus external-link review pending. |
+| F03 | Initial heuristic notation candidates were previously dismissed as false positives; parser-based review identified six actual formula-generated Markdown links. | Earlier disposition revised; accidental links corrected under F16 and initial evidence retained in the [structure/link audit](structure-and-links-2026-10-28/README.md). | External-reference review remains V03 work; scoped parser audit now passes. |
 | F04 | Section 16.6's short-position test and worked answer omitted net covariance effects and expected 0.0576 instead of 0.0564. | Corrected test and worked calculation; original failure and rerun are retained in [Chapter 16 evidence](chapter-16-runtime/README.md). | Independent covariance and numerical review pending. |
 | F05 | Section 16.9's invalid-input test expected an exception for a valid degenerate case where all weights have identical variance. | Test now checks the documented result; original failure and rerun are retained in [Chapter 16 evidence](chapter-16-runtime/README.md). | Broader review of degeneracy and numerical tolerances pending. |
 | F06 | Section 15.3 compared a tiny floating-point variance of constant observations to zero exactly. | Test now uses an illustrative absolute tolerance; original failure and rerun are retained in [Chapter 15 evidence](chapter-15-runtime/README.md). | Broader numerical range and tolerance review pending. |
@@ -88,15 +89,20 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F12 | Sections 9.11–9.17 used escaped Markdown backticks, preventing fenced code and inline code from rendering as intended. | Backticks corrected; 152 Chapter 9 reference tests passed in [Chapter 9 evidence](chapter-09-runtime/README.md). | Broader Markdown, source and mathematical review pending. |
 | F13 | Chapter 5.12 and companion were blocked by unavailable setuptools 84.0.0 in the original builder. | RESOLVED — exact wheel downloaded and verified against published PyPI SHA-256; dedicated builder passed 8 base and 12 extended installed tests plus CLI, origin and pip checks; [follow-up](chapter-05-runtime/backend-resolution/README.md). Original failure retained. | No remaining prerequisite blocker; wider platform, packaging and acceptance review pending. |
 | F14 | Section 1.12 rounded profit/loss before classification and percentage-return calculation, turning a raw 0.004 gain on a 0.10 purchase into break-even and 0% instead of PROFIT and 4%. | CORRECTED — retains raw profit/loss for classification and return, rounds only the monetary display, and documents the basis; original gain/loss failures and 55-case rerun retained in [Chapter 1 evidence](chapter-01-runtime/README.md). | Broader numerical, financial and platform review pending. |
+| F15 | Section 10.12 used an expanded heading instead of the exact locked title NPV. | Heading restored to the approved title; filename and section number retained; [evidence](structure-and-links-2026-10-28/README.md). | Broader editorial review pending. |
+| F16 | Six formula expressions parsed as unintended internal links. | Corrected bracket escaping/native math fencing; zero remaining path findings in the scoped rerun; [evidence](structure-and-links-2026-10-28/README.md). | External sources and visual math rendering remain separate reviews. |
+| F17 | Unescaped conditional-probability separators split six table rows into extra cells. | Escaped table separators; parsed table-column counts now agree; [evidence](structure-and-links-2026-10-28/README.md). | Broader probability and editorial review pending. |
+| F18 | Legacy math delimiters did not use GitHub's documented math presentation syntax. | Normalized 221 display blocks and 347 inline expressions in 60 files; display bodies and existing fenced code preserved; [evidence](structure-and-links-2026-10-28/README.md). | MathJax/TeX visual and accessibility acceptance pending. |
+| F19 | Indexes omitted 29 section links, two companion links and four chapter links, and retained stale runtime-pending statements. | Navigation repaired; 21 chapter evidence links added; 174 pending-runtime phrases made consistent with scoped runs; [evidence](structure-and-links-2026-10-28/README.md). | Ongoing index maintenance after future edits. |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
 ## Execution order and update rule
 
-1. Proceed with **V01–V02: Book 1 structural and internal-link validation**, including locked-TOC title/number matching, companion/index consistency, Markdown parsing and internal anchors. Scoped chapter-runtime evidence now exists for all 21 chapters; this does not complete comprehensive validation.
-2. Perform the remaining cross-book checks V03–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
+1. Continue with **V03: external-reference availability and attribution audit** using the deferred link inventory. V01–V02 passed their defined structural/link scope; all 21 chapters have scoped runtime evidence. Comprehensive validation is still incomplete.
+2. Perform the remaining cross-book checks V04–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
 3. Record each scoped run or review in a durable evidence directory, link it from this tracker, and update the chapter row and checklist only to the scope actually verified.
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** Book 1 structural and internal-link validation (V01–V02). Broader Book 1 QA remains in progress.
+**Next action:** V03 — external-reference availability and attribution audit. Broader Book 1 QA remains in progress.

@@ -1,12 +1,14 @@
 # Chapter 3 — Functions and Reusable Financial Models
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-03-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 ## Manuscript Status
 
 | Section | Title | Status |
 |---|---|---|
-| 3.1 | Why Functions Matter in Financial Computing | Canonical / Complete |
-| 3.2 | Defining and Calling Functions | Canonical / Complete |
-| 3.3 | Parameters and Arguments | Canonical / Complete |
+| 3.1 | [Why Functions Matter in Financial Computing](3.01-why-functions-matter-in-financial-computing.md) | Canonical / Complete |
+| 3.2 | [Defining and Calling Functions](3.02-defining-and-calling-functions.md) | Canonical / Complete |
+| 3.3 | [Parameters and Arguments](3.03-parameters-and-arguments.md) | Canonical / Complete |
 | 3.4 | [Return Values](3.04-return-values.md) | Canonical / Complete |
 | 3.5 | [Default and Keyword Arguments](3.05-default-and-keyword-arguments.md) | Canonical / Complete |
 | 3.6 | [Variable Scope](3.06-variable-scope.md) | Canonical / Complete |

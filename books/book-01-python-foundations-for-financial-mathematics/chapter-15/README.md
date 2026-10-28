@@ -1,5 +1,7 @@
 # Chapter 15 — Statistics for Financial Data
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-15-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 **Manuscript progress:** 15/15 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Lightweight manuscript checks during publication; runtime and editorial certification deferred.
 

@@ -1,0 +1,70 @@
+# Book 1 — Structure, Markdown and Internal-Link Audit
+
+**Date:** 2026-10-28. **Reviewer / correction owner:** Codex. **Base revision:** `bed04cb7f8896b6ef09074d560f1fbfe6eef68d0`. The corrected working-tree bytes are identified by [input-manifest.json](input-manifest.json); the corrections and this evidence are published together. **V01 and V02: PASS within the scope below.** Comprehensive Book 1 acceptance remains pending.
+
+## Scope and result
+
+The audit covers every Book 1 Markdown file, including prior QA reports, and the Book 1 links in the repository landing README. It verifies the locked section/chapter inventory, exact primary titles, chapter-index tables, companion identities, required navigation, explicit internal destinations, code-fence closure and parsed table-cell counts.
+
+| Check | Result |
+|---|---|
+| Locked structure | 322 section files; 21 chapter indexes; 8 companion solution files verified |
+| Primary titles and index labels | Match the locked Master TOC after restoring the 10.12 title NPV |
+| Required navigation | 322 chapter-to-section links, 8 chapter-to-companion links and 21 book-to-chapter links verified |
+| Markdown documents parsed | 382 |
+| Explicit internal links checked | 1165; all pass |
+| Links with heading fragments in this snapshot | 0; anchor handling is covered by controlled fixtures |
+| Remaining findings | 0 under the defined checks |
+| Auditor edge-case checks | 12 passed |
+
+See [final-summary.json](final-summary.json), [final-findings.json](final-findings.json), [internal-links.json](internal-links.json) and [selftest-results.json](selftest-results.json). The 12 self-checks exercise duplicate-heading suffixes, reference links, Unicode and percent-encoded paths, parenthesized filenames, explicit HTML anchors, ignored links inside code/math fences, dictionary-indexing prose, malformed tables and unclosed fences. These are auditor checks, not additions to the book's 2,996 passing unittest methods.
+
+## Initial findings and corrections
+
+The original snapshot produced 48 findings in the completed structural/navigation checker. [initial-summary.json](initial-summary.json) and [initial-findings.json](initial-findings.json) preserve the original results.
+
+- **F15:** restored Section 10.12's exact locked heading, NPV. No section or file was renumbered or renamed.
+- **F16 / revised F03:** six formula expressions parsed as accidental links. Five product-notation expressions now escape their literal brackets; the sixth is protected by native math fencing. Earlier dismissal of notation candidates as false positives did not establish correct Markdown rendering and is superseded by this parser-based result.
+- **F17:** escaped conditional-probability separators in six table rows so their content stays in the intended cells.
+- **F18:** normalized 221 display equations and 347 inline expressions across 60 files to GitHub's documented math syntax. Display equations use math fences; inline expressions use the dollar/backtick form. Formula bodies were retained. [GitHub's math-formatting documentation](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions) was checked on the audit date. This is syntax normalization, not a visual MathJax or TeX-validity certification.
+- **F19:** added 29 missing section links, two companion links and four book-to-chapter links. Added 21 links to chapter runtime evidence and revised 174 stale pending-runtime phrases while retaining independent mathematical, editorial and platform review as pending.
+
+[Math normalization](math-normalization.json), [index updates](index-updates.json) and [navigation updates](navigation-updates.json) record the changes. The companion table in Chapter 1 is deliberately separate from the section table; its repeated exercise number is not a duplicate canonical section.
+
+## Preservation checks
+
+[formatting-proof.json](formatting-proof.json) records the original/corrected document hashes and confirms:
+
+- the locked Master TOC is byte-for-byte unchanged;
+- all 1,160 pre-existing fenced Python payloads are unchanged;
+- all 1,927 pre-existing non-math fenced payloads are unchanged;
+- the bodies of all 221 converted display equations are byte-for-byte preserved.
+
+Because executable fenced code did not change, this documentation audit does not claim a new run of all reference tests. Their earlier scoped runtime evidence remains linked from the tracker. This audit does not alter manuscript publication stages or grant canonical acceptance.
+
+## Parser and reproduction
+
+Python 3.12.14; markdown-it-py 4.0.0 and mdurl 0.1.2; Node 24.22.1; upstream github-slugger 2.0.0. The parser uses CommonMark with table and strikethrough rules. Links are obtained from parser tokens rather than a general link regex. Repository paths are case-sensitive; reference links and explicit HTML links/anchors are included. GitHub heading slugs and duplicate suffixes are generated by the pinned upstream slugger. No pre-existing explicit fragment links were found, so actual snapshot anchor-link checks are vacuous; the controlled fixtures establish the checker's handling of those cases.
+
+From the repository root:
+
+```sh
+python -m venv /tmp/book1-audit-env
+/tmp/book1-audit-env/bin/python -m pip install -r books/book-01-python-foundations-for-financial-mathematics/qa/structure-and-links-2026-10-28/requirements.txt
+npm install --prefix /tmp/book1-markdown-node --no-audit --no-fund github-slugger@2.0.0
+/tmp/book1-audit-env/bin/python books/book-01-python-foundations-for-financial-mathematics/qa/structure-and-links-2026-10-28/audit_structure.py . /tmp/book1-audit-results /tmp/book1-markdown-node/node_modules/github-slugger/index.js
+```
+
+Use the same environment to run the auditor's fixtures against a disposable checkout:
+
+```sh
+/tmp/book1-audit-env/bin/python books/book-01-python-foundations-for-financial-mathematics/qa/structure-and-links-2026-10-28/audit_selftest.py . books/book-01-python-foundations-for-financial-mathematics/qa/structure-and-links-2026-10-28/audit_structure.py /tmp/book1-audit-selftest /tmp/book1-markdown-node/node_modules/github-slugger/index.js
+```
+
+The fixture runner creates and removes only its known temporary fixture directory under Book 1's QA directory. Its intentionally malformed documents are removed before the final snapshot audit. The main audit exits nonzero for findings. New future files/links may change counts; results are tied to the input hashes, scope and parser versions.
+
+## Explicit limits and next action
+
+External URLs, historical commit/ref links and landing-page links outside Book 1 are deferred in [external-links-deferred.json](external-links-deferred.json); availability and relevance are not inferred from this audit. Plain filename mentions and URLs inside code are not treated as Markdown links. This is not a comprehensive style linter, full GitHub-renderer equivalence check, visual math/accessibility review, financial correctness review, copyright review or platform certification.
+
+**Next:** V03 — external-reference availability and attribution audit. Track broader work in [VALIDATION-TRACKER.md](../VALIDATION-TRACKER.md).

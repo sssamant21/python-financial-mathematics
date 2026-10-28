@@ -1,5 +1,7 @@
 # Chapter 5 — Modules, Packages, Environments, and Reproducibility
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-05-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 ## Manuscript Status
 
 | Section | Title | Status |

@@ -1,5 +1,7 @@
 # Chapter 9 — Time Value of Money with Python
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-09-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 | Section | Title | Status |
 |---|---|---|
 | 9.1 | [The Time Value of Money](9.01-the-time-value-of-money.md) | Canonical / Complete |
@@ -21,7 +23,7 @@
 | 9.17 | [Exercises and Applied Problems](9.17-exercises-and-applied-problems.md) | Canonical / Complete |
 
 **Canonical manuscript progress:** 9.1–9.17 complete (17/17 sections).  
-**Chapter status:** Manuscript complete; independent runtime and editorial review pending.  
+**Chapter status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** 10.1 — Cash-Flow Mathematics.
 
 ## Publication Policy
@@ -50,12 +52,12 @@ Section 9.11 adds a standalone compounding-frequency lab with fixed-nominal vers
 
 Section 9.12 adds a standalone continuous-compounding lab with exponential accumulation, discounting, rate-convention conversion, numerical boundary checks, and eight reference tests (execution verification pending).
 
-Section 9.13 adds a standalone rate-solving lab with periodic, effective annual, nominal annual, and continuous inversions, boundary validation, and eight reference tests (runtime verification pending).
+Section 9.13 adds a standalone rate-solving lab with periodic, effective annual, nominal annual, and continuous inversions, boundary validation, and eight reference tests (scoped reference runtime passed; independent review pending).
 
-Section 9.14 adds a standalone logarithmic time-solving lab with periodic, effective, nominal, and continuous conventions, feasibility checks, and eight reference tests (runtime verification pending).
+Section 9.14 adds a standalone logarithmic time-solving lab with periodic, effective, nominal, and continuous conventions, feasibility checks, and eight reference tests (scoped reference runtime passed; independent review pending).
 
-Section 9.15 adds a reusable standard-library TVM module with discrete and continuous valuation, rate conversions, inverse solvers, signed cash-flow NPV, and eight reference tests (runtime verification pending).
+Section 9.15 adds a reusable standard-library TVM module with discrete and continuous valuation, rate conversions, inverse solvers, signed cash-flow NPV, and eight reference tests (scoped reference runtime passed; independent review pending).
 
-Section 9.16 publishes the Time Value of Money Engine capstone with CSV ingestion, JSON audit reporting, financial inverse solvers, and twelve acceptance tests (independent runtime verification pending).
+Section 9.16 publishes the Time Value of Money Engine capstone with CSV ingestion, JSON audit reporting, financial inverse solvers, and twelve acceptance tests (scoped reference runtime passed; independent review pending).
 
-Section 9.17 publishes twenty chapter-wide exercises, worked answers, and twenty Python reference checks (independent runtime verification pending). Chapter 9 manuscript coverage is complete (17/17).
+Section 9.17 publishes twenty chapter-wide exercises, worked answers, and twenty Python reference checks (scoped reference runtime passed; independent review pending). Chapter 9 manuscript coverage is complete (17/17).

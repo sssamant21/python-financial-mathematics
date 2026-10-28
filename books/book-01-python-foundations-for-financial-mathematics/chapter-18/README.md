@@ -1,5 +1,7 @@
 # Chapter 18 — Monte Carlo Simulation for Finance
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-18-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 **Manuscript progress:** 15/15 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical and editorial certification deferred.
 

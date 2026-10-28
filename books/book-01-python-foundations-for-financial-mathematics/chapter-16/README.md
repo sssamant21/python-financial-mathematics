@@ -1,5 +1,7 @@
 # Chapter 16 — Portfolio Mathematics
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-16-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 **Manuscript progress:** 16/16 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime and editorial certification deferred.
 

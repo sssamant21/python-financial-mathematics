@@ -1,5 +1,7 @@
 # Chapter 7 — pandas for Financial Data Analysis
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-07-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 ## Manuscript Status
 
 | Section | Title | Status |

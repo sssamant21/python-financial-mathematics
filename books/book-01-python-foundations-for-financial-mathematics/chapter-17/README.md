@@ -1,5 +1,7 @@
 # Chapter 17 — Numerical Methods with SciPy
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-17-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 **Manuscript progress:** 15/15 sections published (100%).  
 **Publication approach:** Complete all Book 1 chapters before comprehensive validation. Runtime, mathematical, and editorial certification deferred.
 

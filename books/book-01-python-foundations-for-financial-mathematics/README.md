@@ -10,23 +10,23 @@ The complete, approved, and locked Book 1 structure is maintained in `MASTER-TOC
 
 ## Validation progress
 
-The [Book 1 validation plan and progress tracker](qa/VALIDATION-TRACKER.md) records scoped evidence, outstanding work and findings. Manuscript completion does not imply comprehensive validation or certification.
+The [Book 1 validation plan and progress tracker](qa/VALIDATION-TRACKER.md) records scoped evidence, outstanding work and findings. Manuscript completion does not imply comprehensive validation or certification. The [structure and internal-link audit](qa/structure-and-links-2026-10-28/README.md) records the scoped V01–V02 pass.
 
-## Chapter 1 — Introduction to Python for Financial Mathematics
+## [Chapter 1 — Introduction to Python for Financial Mathematics](chapter-01/README.md)
 
 **Canonical manuscript progress:** 1.1–1.13 complete.  
 **Chapter 1 solutions:** Canonical / Complete.  
 **Chapter 1 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 1 status:** Canonical / Complete.
 
-## Chapter 2 — Python Control Flow for Financial Models
+## [Chapter 2 — Python Control Flow for Financial Models](chapter-02/README.md)
 
 **Canonical manuscript progress:** 2.1–2.13 complete.  
 **Chapter 2 solutions:** Canonical / Complete.  
 **Chapter 2 publication set:** Manuscript + Solutions — Canonical / Complete.  
 **Chapter 2 status:** Canonical / Complete.
 
-## Chapter 3 — Functions and Reusable Financial Models
+## [Chapter 3 — Functions and Reusable Financial Models](chapter-03/README.md)
 
 Current canonical progress:
 
@@ -280,79 +280,79 @@ See the [Chapter 8 progress index](chapter-08/README.md) for all planned section
 - [9.17 — Exercises and Applied Problems](chapter-09/9.17-exercises-and-applied-problems.md) — Revised Final / Canonical Edition
 
 **Canonical manuscript progress:** 9.1–9.17 complete (17/17 sections).  
-**Chapter 9 status:** Manuscript complete; independent runtime and editorial review pending.  
+**Chapter 9 status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** 10.1 — Cash-Flow Mathematics.
 
 See the [Chapter 9 progress index](chapter-09/README.md) for all planned sections.
 
 
-## Chapter 10 — Cash Flows, Annuities, and Perpetuities
+## [Chapter 10 — Cash Flows, Annuities, and Perpetuities](chapter-10/README.md)
 
-- [10.1 — Cash-Flow Mathematics](chapter-10/10.01-cash-flow-mathematics.md) — Manuscript published; runtime and editorial validation pending
-- [10.2 — Cash-Flow Timelines](chapter-10/10.02-cash-flow-timelines.md) — Manuscript published; runtime and editorial validation pending
-- [10.3 — Level Annuities](chapter-10/10.03-level-annuities.md) — Manuscript published; runtime and editorial validation pending
-- [10.4 — Ordinary Annuities](chapter-10/10.04-ordinary-annuities.md) — Manuscript published; runtime and editorial validation pending
-- [10.5 — Annuities Due](chapter-10/10.05-annuities-due.md) — Manuscript published; runtime and editorial validation pending
-- [10.6 — Deferred Annuities](chapter-10/10.06-deferred-annuities.md) — Manuscript published; runtime and editorial validation pending
-- [10.7 — Growing Annuities](chapter-10/10.07-growing-annuities.md) — Manuscript published; runtime and editorial validation pending
-- [10.8 — Perpetuities](chapter-10/10.08-perpetuities.md) — Manuscript published; runtime and editorial validation pending
-- [10.9 — Growing Perpetuities](chapter-10/10.09-growing-perpetuities.md) — Manuscript published; runtime and editorial validation pending
-- [10.10 — Present and Future Values of Payment Streams](chapter-10/10.10-present-and-future-values-of-payment-streams.md) — Manuscript published; runtime and editorial validation pending
-- [10.11 — Irregular Cash Flows](chapter-10/10.11-irregular-cash-flows.md) — Manuscript published; runtime and editorial validation pending
-- [10.12 — NPV](chapter-10/10.12-net-present-value.md) — Manuscript published; runtime and editorial validation pending
-- [10.13 — IRR and Numerical Root Finding](chapter-10/10.13-irr-and-numerical-root-finding.md) — Manuscript published; runtime and editorial validation pending
-- [10.14 — Chapter Project — Cash-Flow Valuation Engine](chapter-10/10.14-chapter-project-cash-flow-valuation-engine.md) — Manuscript published; runtime and editorial validation pending
-- [10.15 — Exercises and Applied Problems](chapter-10/10.15-exercises-and-applied-problems.md) — Manuscript published; runtime and editorial validation pending
+- [10.1 — Cash-Flow Mathematics](chapter-10/10.01-cash-flow-mathematics.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.2 — Cash-Flow Timelines](chapter-10/10.02-cash-flow-timelines.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.3 — Level Annuities](chapter-10/10.03-level-annuities.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.4 — Ordinary Annuities](chapter-10/10.04-ordinary-annuities.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.5 — Annuities Due](chapter-10/10.05-annuities-due.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.6 — Deferred Annuities](chapter-10/10.06-deferred-annuities.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.7 — Growing Annuities](chapter-10/10.07-growing-annuities.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.8 — Perpetuities](chapter-10/10.08-perpetuities.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.9 — Growing Perpetuities](chapter-10/10.09-growing-perpetuities.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.10 — Present and Future Values of Payment Streams](chapter-10/10.10-present-and-future-values-of-payment-streams.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.11 — Irregular Cash Flows](chapter-10/10.11-irregular-cash-flows.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.12 — NPV](chapter-10/10.12-net-present-value.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.13 — IRR and Numerical Root Finding](chapter-10/10.13-irr-and-numerical-root-finding.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.14 — Chapter Project — Cash-Flow Valuation Engine](chapter-10/10.14-chapter-project-cash-flow-valuation-engine.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [10.15 — Exercises and Applied Problems](chapter-10/10.15-exercises-and-applied-problems.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
 
 **Manuscript progress:** 10.1–10.15 complete (15/15 sections).  
-**Chapter 10 status:** Manuscript complete; independent runtime and editorial review pending.  
+**Chapter 10 status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** 11.1 — Loan Mathematics.
 
 ## Chapter 11 — Loans, Mortgages, and Amortization
 
-- [11.1 — Loan Mathematics](chapter-11/11.01-loan-mathematics.md) — Manuscript published; runtime and editorial validation pending
-- [11.2 — Principal, Rate, Term, and Payment](chapter-11/11.02-principal-rate-term-and-payment.md) — Manuscript published; runtime and editorial validation pending
-- [11.3 — Level-Payment Loans](chapter-11/11.03-level-payment-loans.md) — Manuscript published; runtime and editorial validation pending
-- [11.4 — Solving for Payment](chapter-11/11.04-solving-for-payment.md) — Manuscript published; runtime and editorial validation pending
-- [11.5 — Interest and Principal Components](chapter-11/11.05-interest-and-principal-components.md) — Manuscript published; runtime and editorial validation pending
-- [11.6 — Outstanding Loan Balance](chapter-11/11.06-outstanding-loan-balance.md) — Manuscript published; runtime and editorial validation pending
-- [11.7 — Amortization Schedules](chapter-11/11.07-amortization-schedules.md) — Manuscript published; runtime and editorial validation pending
-- [11.8 — Mortgages](chapter-11/11.08-mortgages.md) — Manuscript published; runtime and editorial validation pending
-- [11.9 — Extra Payments and Prepayment](chapter-11/11.09-extra-payments-and-prepayment.md) — Manuscript published; runtime and editorial validation pending
-- [11.10 — Refinancing Analysis](chapter-11/11.10-refinancing-analysis.md) — Manuscript published; runtime and editorial validation pending
-- [11.11 — Effective Borrowing Cost](chapter-11/11.11-effective-borrowing-cost.md) — Manuscript published; runtime and editorial validation pending
-- [11.12 — Numerical and Rounding Considerations](chapter-11/11.12-numerical-and-rounding-considerations.md) — Manuscript published; runtime and editorial validation pending
-- [11.13 — Chapter Project — Loan and Mortgage Analyzer](chapter-11/11.13-chapter-project-loan-and-mortgage-analyzer.md) — Manuscript published; runtime and editorial validation pending
-- [11.14 — Exercises and Applied Problems](chapter-11/11.14-exercises-and-applied-problems.md) — Manuscript published; runtime and editorial validation pending
+- [11.1 — Loan Mathematics](chapter-11/11.01-loan-mathematics.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.2 — Principal, Rate, Term, and Payment](chapter-11/11.02-principal-rate-term-and-payment.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.3 — Level-Payment Loans](chapter-11/11.03-level-payment-loans.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.4 — Solving for Payment](chapter-11/11.04-solving-for-payment.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.5 — Interest and Principal Components](chapter-11/11.05-interest-and-principal-components.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.6 — Outstanding Loan Balance](chapter-11/11.06-outstanding-loan-balance.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.7 — Amortization Schedules](chapter-11/11.07-amortization-schedules.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.8 — Mortgages](chapter-11/11.08-mortgages.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.9 — Extra Payments and Prepayment](chapter-11/11.09-extra-payments-and-prepayment.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.10 — Refinancing Analysis](chapter-11/11.10-refinancing-analysis.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.11 — Effective Borrowing Cost](chapter-11/11.11-effective-borrowing-cost.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.12 — Numerical and Rounding Considerations](chapter-11/11.12-numerical-and-rounding-considerations.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.13 — Chapter Project — Loan and Mortgage Analyzer](chapter-11/11.13-chapter-project-loan-and-mortgage-analyzer.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [11.14 — Exercises and Applied Problems](chapter-11/11.14-exercises-and-applied-problems.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
 
 **Manuscript progress:** 11.1–11.14 complete (14/14 sections).  
-**Chapter 11 status:** Manuscript complete; independent runtime and editorial review pending.  
+**Chapter 11 status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** 12.1 — Introduction to Fixed Income.
 
 See the [Chapter 11 progress index](chapter-11/README.md).
 
 ## Chapter 12 — Fixed-Income Mathematics and Bond Analytics
 
-- [12.1 — Introduction to Fixed Income](chapter-12/12.01-introduction-to-fixed-income.md) — Manuscript published; runtime and editorial validation pending
-- [12.2 — Bond Cash Flows](chapter-12/12.02-bond-cash-flows.md) — Manuscript published; runtime and editorial validation pending
-- [12.3 — Coupon Bonds](chapter-12/12.03-coupon-bonds.md) — Manuscript published; runtime and editorial validation pending
-- [12.4 — Zero-Coupon Bonds](chapter-12/12.04-zero-coupon-bonds.md) — Manuscript published; runtime and editorial validation pending
-- [12.5 — Bond Pricing](chapter-12/12.05-bond-pricing.md) — Manuscript published; runtime and editorial validation pending
-- [12.6 — Yield to Maturity](chapter-12/12.06-yield-to-maturity.md) — Manuscript published; runtime and editorial validation pending
-- [12.7 — Yield and Price Relationships](chapter-12/12.07-yield-and-price-relationships.md) — Manuscript published; runtime and editorial validation pending
-- [12.8 — Accrued Interest and Clean vs. Dirty Price](chapter-12/12.08-accrued-interest-and-clean-vs-dirty-price.md) — Manuscript published; runtime and editorial validation pending
-- [12.9 — Duration](chapter-12/12.09-duration.md) — Manuscript published; runtime and editorial validation pending
-- [12.10 — Modified Duration](chapter-12/12.10-modified-duration.md) — Manuscript published; runtime and editorial validation pending
-- [12.11 — Convexity](chapter-12/12.11-convexity.md) — Manuscript published; runtime and editorial validation pending
-- [12.12 — Interest-Rate Sensitivity](chapter-12/12.12-interest-rate-sensitivity.md) — Manuscript published; runtime and editorial validation pending
-- [12.13 — Yield Curves](chapter-12/12.13-yield-curves.md) — Manuscript published; runtime and editorial validation pending
-- [12.14 — Discount Factors and Spot Rates](chapter-12/12.14-discount-factors-and-spot-rates.md) — Manuscript published; runtime and editorial validation pending
-- [12.15 — Forward Rates](chapter-12/12.15-forward-rates.md) — Manuscript published; runtime and editorial validation pending
-- [12.16 — Chapter Project — Bond Analytics Engine](chapter-12/12.16-chapter-project-bond-analytics-engine.md) — Manuscript published; runtime and editorial validation pending
-- [12.17 — Exercises and Applied Problems](chapter-12/12.17-exercises-and-applied-problems.md) — Manuscript published; runtime and editorial validation pending
+- [12.1 — Introduction to Fixed Income](chapter-12/12.01-introduction-to-fixed-income.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.2 — Bond Cash Flows](chapter-12/12.02-bond-cash-flows.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.3 — Coupon Bonds](chapter-12/12.03-coupon-bonds.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.4 — Zero-Coupon Bonds](chapter-12/12.04-zero-coupon-bonds.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.5 — Bond Pricing](chapter-12/12.05-bond-pricing.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.6 — Yield to Maturity](chapter-12/12.06-yield-to-maturity.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.7 — Yield and Price Relationships](chapter-12/12.07-yield-and-price-relationships.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.8 — Accrued Interest and Clean vs. Dirty Price](chapter-12/12.08-accrued-interest-and-clean-vs-dirty-price.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.9 — Duration](chapter-12/12.09-duration.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.10 — Modified Duration](chapter-12/12.10-modified-duration.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.11 — Convexity](chapter-12/12.11-convexity.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.12 — Interest-Rate Sensitivity](chapter-12/12.12-interest-rate-sensitivity.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.13 — Yield Curves](chapter-12/12.13-yield-curves.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.14 — Discount Factors and Spot Rates](chapter-12/12.14-discount-factors-and-spot-rates.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.15 — Forward Rates](chapter-12/12.15-forward-rates.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.16 — Chapter Project — Bond Analytics Engine](chapter-12/12.16-chapter-project-bond-analytics-engine.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
+- [12.17 — Exercises and Applied Problems](chapter-12/12.17-exercises-and-applied-problems.md) — Manuscript published; scoped reference runtime passed; broader mathematical and editorial validation pending
 
 **Manuscript progress:** 12.1–12.17 complete (17/17 sections).  
-**Chapter 12 status:** All manuscripts published; independent runtime and editorial review pending.  
+**Chapter 12 status:** All manuscripts published; scoped reference runtime passed; independent mathematical and editorial review pending.  
 **Next:** Independent QA and editorial review for this chapter.
 
 See the [Chapter 12 progress index](chapter-12/README.md).
@@ -367,50 +367,50 @@ Verified references must remain with the canonical artifact. Python language and
 
 ## Chapter 13 — Returns and Investment Performance
 
-- [13.1 — Measuring Investment Returns](chapter-13/13.01-measuring-investment-returns.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.2 — Simple Returns](chapter-13/13.02-simple-returns.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.3 — Gross Returns](chapter-13/13.03-gross-returns.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.4 — Logarithmic Returns](chapter-13/13.04-logarithmic-returns.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.5 — Multi-Period Returns](chapter-13/13.05-multi-period-returns.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.6 — Annualization](chapter-13/13.06-annualization.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.7 — Dividends and Total Return](chapter-13/13.07-dividends-and-total-return.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.8 — Arithmetic vs. Geometric Mean Return](chapter-13/13.08-arithmetic-vs-geometric-mean-return.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.9 — Time-Weighted Return](chapter-13/13.09-time-weighted-return.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.10 — Money-Weighted Return](chapter-13/13.10-money-weighted-return.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.11 — Volatility](chapter-13/13.11-volatility.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.12 — Drawdowns](chapter-13/13.12-drawdowns.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.13 — Risk-Adjusted Performance Concepts](chapter-13/13.13-risk-adjusted-performance-concepts.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.14 — Chapter Project — Investment Performance Analyzer](chapter-13/13.14-chapter-project-investment-performance-analyzer.md) — Manuscript published; independent runtime and editorial validation pending
-- [13.15 — Exercises and Applied Problems](chapter-13/13.15-exercises-and-applied-problems.md) — Manuscript published; independent runtime and editorial validation pending
+- [13.1 — Measuring Investment Returns](chapter-13/13.01-measuring-investment-returns.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.2 — Simple Returns](chapter-13/13.02-simple-returns.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.3 — Gross Returns](chapter-13/13.03-gross-returns.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.4 — Logarithmic Returns](chapter-13/13.04-logarithmic-returns.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.5 — Multi-Period Returns](chapter-13/13.05-multi-period-returns.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.6 — Annualization](chapter-13/13.06-annualization.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.7 — Dividends and Total Return](chapter-13/13.07-dividends-and-total-return.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.8 — Arithmetic vs. Geometric Mean Return](chapter-13/13.08-arithmetic-vs-geometric-mean-return.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.9 — Time-Weighted Return](chapter-13/13.09-time-weighted-return.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.10 — Money-Weighted Return](chapter-13/13.10-money-weighted-return.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.11 — Volatility](chapter-13/13.11-volatility.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.12 — Drawdowns](chapter-13/13.12-drawdowns.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.13 — Risk-Adjusted Performance Concepts](chapter-13/13.13-risk-adjusted-performance-concepts.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.14 — Chapter Project — Investment Performance Analyzer](chapter-13/13.14-chapter-project-investment-performance-analyzer.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
+- [13.15 — Exercises and Applied Problems](chapter-13/13.15-exercises-and-applied-problems.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial validation pending
 
 **Manuscript progress:** 13.1–13.15 complete (15/15 sections).  
-**Chapter 13 status:** Manuscript complete; independent runtime and editorial QA pending.  
+**Chapter 13 status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial QA pending.  
 **Next:** Independent QA and editorial review for this chapter.
 
 See the [Chapter 13 progress index](chapter-13/README.md).
 
 ## Chapter 14 — Probability for Financial Mathematics
 
-- [14.1 — Why Probability Matters in Finance](chapter-14/14.01-why-probability-matters-in-finance.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.2 — Sample Spaces and Events](chapter-14/14.02-sample-spaces-and-events.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.3 — Probability Rules](chapter-14/14.03-probability-rules.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.4 — Conditional Probability](chapter-14/14.04-conditional-probability.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.5 — Independence](chapter-14/14.05-independence.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.6 — Random Variables](chapter-14/14.06-random-variables.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.7 — Discrete Random Variables](chapter-14/14.07-discrete-random-variables.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.8 — Continuous Random Variables](chapter-14/14.08-continuous-random-variables.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.9 — Expected Value](chapter-14/14.09-expected-value.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.10 — Variance and Standard Deviation](chapter-14/14.10-variance-and-standard-deviation.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.11 — Covariance and Correlation](chapter-14/14.11-covariance-and-correlation.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.12 — Common Probability Distributions](chapter-14/14.12-common-probability-distributions.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.13 — Normal Distribution](chapter-14/14.13-normal-distribution.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.14 — Sampling with Python](chapter-14/14.14-sampling-with-python.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.15 — Random Number Generation and Reproducibility](chapter-14/14.15-random-number-generation-and-reproducibility.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.16 — Chapter Project — Financial Probability Simulator](chapter-14/14.16-chapter-project-financial-probability-simulator.md) — Manuscript published; independent runtime and editorial QA pending
-- [14.17 — Exercises and Applied Problems](chapter-14/14.17-exercises-and-applied-problems.md) — Manuscript published; independent runtime and editorial QA pending
+- [14.1 — Why Probability Matters in Finance](chapter-14/14.01-why-probability-matters-in-finance.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.2 — Sample Spaces and Events](chapter-14/14.02-sample-spaces-and-events.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.3 — Probability Rules](chapter-14/14.03-probability-rules.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.4 — Conditional Probability](chapter-14/14.04-conditional-probability.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.5 — Independence](chapter-14/14.05-independence.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.6 — Random Variables](chapter-14/14.06-random-variables.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.7 — Discrete Random Variables](chapter-14/14.07-discrete-random-variables.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.8 — Continuous Random Variables](chapter-14/14.08-continuous-random-variables.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.9 — Expected Value](chapter-14/14.09-expected-value.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.10 — Variance and Standard Deviation](chapter-14/14.10-variance-and-standard-deviation.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.11 — Covariance and Correlation](chapter-14/14.11-covariance-and-correlation.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.12 — Common Probability Distributions](chapter-14/14.12-common-probability-distributions.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.13 — Normal Distribution](chapter-14/14.13-normal-distribution.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.14 — Sampling with Python](chapter-14/14.14-sampling-with-python.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.15 — Random Number Generation and Reproducibility](chapter-14/14.15-random-number-generation-and-reproducibility.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.16 — Chapter Project — Financial Probability Simulator](chapter-14/14.16-chapter-project-financial-probability-simulator.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
+- [14.17 — Exercises and Applied Problems](chapter-14/14.17-exercises-and-applied-problems.md) — Manuscript published; scoped reference runtime passed; independent mathematical and editorial QA pending
 
 **Manuscript progress:** 14.1–14.17 complete (17/17 sections).  
-**Chapter 14 status:** Manuscript complete; independent runtime and editorial QA pending.  
+**Chapter 14 status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial QA pending.  
 **Next:** [Chapter 14 QA validation tracker](chapter-14/QA-VALIDATION-TRACKER.md).
 
 See the [Chapter 14 progress index](chapter-14/README.md).

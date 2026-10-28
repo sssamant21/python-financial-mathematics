@@ -1,5 +1,7 @@
 # Chapter 4 — Python Data Structures for Financial Information
 
+**Current validation:** [Scoped runtime evidence](../qa/chapter-04-runtime/README.md) is recorded for this chapter. Comprehensive mathematical, editorial, source and platform acceptance remains pending.
+
 ## Manuscript Status
 
 | Section | Title | Status |
