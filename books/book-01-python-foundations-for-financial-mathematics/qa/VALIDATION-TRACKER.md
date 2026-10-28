@@ -15,7 +15,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 - **Manuscript inventory:** 322 of 322 locked section numbers have matching manuscript files at the initial baseline. This is a filename inventory, not a content or QA pass.
 - **Initial syntax screening:** 1,152 fenced Python blocks parsed without syntax errors at that baseline; execution, numerical correctness and illustrative fragments were not established by this check.
-- **Reference runtime evidence:** Scoped runs exist for Chapters **5–21**: 2,852 passing test methods in the recorded runs (68 + 148 + 156 + 132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **17 chapters with scoped evidence**, not seventeen comprehensively validated chapters. Chapter 5 is partial: its project and companion installed-package tests are blocked by an unavailable exact build dependency.
+- **Reference runtime evidence:** Scoped runs exist for Chapters **5–21**: 2,864 passing test methods in the recorded runs (80 + 148 + 156 + 132 + 152 + 174 + 168 + 204 + 180 + 204 + 180 + 192 + 160 + 154 + 158 + 204 + 218). Chapter 18.15 and 19.15 have separately executed snippets rather than reference test suites. This is **17 chapters with scoped evidence**, not seventeen comprehensively validated chapters. Chapter 5 counts the eight base installed tests only once within its twelve-method extended suite.
 - **Visualization:** A Chapter 8 synthetic dashboard and one Chapter 21 synthetic chart were rendered and visually inspected; a complete visualization and accessibility review is pending.
 - **Certification:** No Book 1-wide canonical, production, mathematical or model certification is implied.
 
@@ -27,17 +27,17 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | IN PROGRESS — initial heuristic only |
 | V03 | External references | Check availability, relevance, authoritative source attribution and version sensitivity; record unavailable links. | NOT STARTED |
 | V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | IN PROGRESS — initial syntax screen only |
-| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 5–21 have scoped evidence; Chapter 5 partial |
-| V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | IN PROGRESS — Chapters 5–7 have scoped demonstrations or workflow evidence; Chapter 5 installed extension blocked; independent answer review pending |
+| V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — Chapters 5–21 have scoped evidence |
+| V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | IN PROGRESS — Chapters 5–7 have scoped demonstrations or workflow evidence; Chapter 5 installed extension passed; independent answer review pending |
 | V07 | Mathematical and financial correctness | Independently derive formulas and benchmarks; verify units, signs, timelines, rates, assumptions and edge cases. | NOT STARTED |
 | V08 | Numerical behavior | Assess precision, cancellation, overflow, underflow, convergence, tolerances and supported ranges. | IN PROGRESS — Section 10.7 and other scoped numerical findings addressed; broader review pending |
 | V09 | Integration and data validation | Check module contracts, limits, data alignment, timestamps, availability, revisions, missingness and security boundaries. | IN PROGRESS — scoped Chapter 21 tests and DST fix |
 | V10 | Simulation and statistical review | Review model assumptions, generator and seed, distribution behavior, sampling uncertainty and reproducibility. | NOT STARTED — reference runtime evidence exists |
 | V11 | Visualization and accessibility | Render representative outputs and inspect data, labels, units, time zones, scale, readability and accessibility. | IN PROGRESS — Chapter 8 dashboard and one Chapter 21 chart inspected |
-| V12 | Packaging and platform | Build and hash artifacts, install in clean environments, run outside checkout, review dependency versions and test supported operating systems. | IN PROGRESS — Chapter 5 offline fixture/env workflows passed; project build blocked by backend prerequisite |
+| V12 | Packaging and platform | Build and hash artifacts, install in clean environments, run outside checkout, review dependency versions and test supported operating systems. | IN PROGRESS — Chapter 5 offline fixture/env and regular installed-wheel workflows passed; cross-platform review pending |
 | V13 | Security and privacy | Review secrets, sensitive data, file/network behavior, dependencies and evidence handling appropriate to the work. | NOT STARTED |
 | V14 | Editorial, source and copyright | Review clarity, consistency, accessibility, attribution, original expression and verified references. | NOT STARTED |
-| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — eleven corrections, one open audit finding and one environment blocker recorded |
+| V15 | Findings and remediation | Assign severity and owner, preserve failing evidence, fix or explicitly accept limitations, rerun affected checks and record disposition. | IN PROGRESS — eleven corrections, one open audit finding and one resolved environment blocker recorded |
 | V16 | Final acceptance | Reconcile all evidence against agreed criteria and obtain required independent review and decision. | NOT STARTED |
 
 ## Chapter-by-chapter progress
@@ -50,7 +50,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 | 02 | Python Control Flow for Financial Models | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
 | 03 | Functions and Reusable Financial Models | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
 | 04 | Python Data Structures for Financial Information | Not assessed here; historical canonical claims need evidence reconciliation | Pending | Pending | Pending review |
-| 05 | Modules, Packages, Environments, and Reproducibility | PARTIAL — 68 tests, 7 demonstrations, 3 offline workflows and 13 compilation checks passed; project/companion installed tests BLOCKED (F13); [evidence](chapter-05-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
+| 05 | Modules, Packages, Environments, and Reproducibility | PASS — 80 distinct reference methods, 7 demonstrations and 3 offline workflows; regular-wheel project/extension checks passed (F13 resolved); [initial evidence](chapter-05-runtime/README.md) and [follow-up](chapter-05-runtime/backend-resolution/README.md) | Pending | Pending | NOT CERTIFIED |
 | 06 | NumPy for Financial Mathematics | PASS — 148 reference tests, 16 demonstrations and 17 compilation checks; [evidence](chapter-06-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 07 | pandas for Financial Data Analysis | PASS — 156 reference tests, 17 demonstrations and 18 compilation checks; [evidence](chapter-07-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 08 | Visualization for Financial Mathematics | PASS — 132 extracted reference tests and dashboard visual inspection; [evidence](chapter-08-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
@@ -86,16 +86,16 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F10 | Section 10.1 used escaped Markdown backticks, preventing its reference code fences from rendering. | Markdown fences and inline code corrected; the extracted suite passed in [Chapter 10 evidence](chapter-10-runtime/README.md). | Broader Markdown and link review pending. |
 | F11 | Section 10.7 lost precision near equal discount and growth rates when subtracting nearly equal logarithms. | Uses a stable log-ratio where representable; Decimal benchmark and fallback regressions passed; original failure retained in [Chapter 10 evidence](chapter-10-runtime/README.md). | Extreme inputs, error bounds and financial review pending. |
 | F12 | Sections 9.11–9.17 used escaped Markdown backticks, preventing fenced code and inline code from rendering as intended. | Backticks corrected; 152 Chapter 9 reference tests passed in [Chapter 9 evidence](chapter-09-runtime/README.md). | Broader Markdown, source and mathematical review pending. |
-| F13 | Chapter 5.12 project and 5.13 companion require an exact setuptools 84.0.0 builder; current builder has 84.1.0 and no cached exact wheel was found. | BLOCKED — verifier rejects the prerequisite before building or running installed tests; [evidence](chapter-05-runtime/README.md). Environment issue; manuscript unchanged. | QA executor to prepare the declared backend and rerun both installed-package workflows before closing Chapter 5 runtime reconciliation. |
+| F13 | Chapter 5.12 and companion were blocked by unavailable setuptools 84.0.0 in the original builder. | RESOLVED — exact wheel downloaded and verified against published PyPI SHA-256; dedicated builder passed 8 base and 12 extended installed tests plus CLI, origin and pip checks; [follow-up](chapter-05-runtime/backend-resolution/README.md). Original failure retained. | No remaining prerequisite blocker; wider platform, packaging and acceptance review pending. |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
 ## Execution order and update rule
 
-1. Resolve **F13 / Chapter 5** with a prepared builder containing setuptools 84.0.0 and rerun the project and companion installed-package checks; then continue with Chapters 4–1 rather than treating historical claims as automatically current.
+1. Continue with **Chapter 4** by reconciling its historical runtime evidence and running appropriate current-reference checks; then reconcile Chapters 3–1 rather than treating historical claims as automatically current.
 2. Perform the cross-book checks V01–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
 3. Record each scoped run or review in a durable evidence directory, link it from this tracker, and update the chapter row and checklist only to the scope actually verified.
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** Resolve Chapter 5's pinned build dependency (F13), then continue with Chapter 4. Broader Book 1 QA remains in progress.
+**Next action:** Chapter 4 runtime evidence reconciliation. Broader Book 1 QA remains in progress.

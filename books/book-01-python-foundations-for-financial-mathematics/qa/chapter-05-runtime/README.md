@@ -1,8 +1,10 @@
-# Chapter 5 — Partial runtime evidence reconciliation
+# Chapter 5 — Runtime evidence reconciliation
+
+> **Current scoped status: PASS.** F13 was resolved in the [backend-resolution follow-up](backend-resolution/README.md). The original partial run and failure evidence below are retained as history. Chapter 5 now has 80 distinct passing reference test methods, including twelve installed methods.
 
 **Date:** 2026-10-27. **Reviewer / execution owner:** Codex. **Source:** Book 1 baseline `f429fb81b8d8f7d228100333c76019d583200d64`. Chapter 5 manuscript files, including the companion, were unchanged through `37d212d01a3a6da7eb49058629a03a7b3c512b09`; GitHub comparison returned no changed Book 1 Chapter 5 paths. [results.json](results.json) records per-file SHA-256 values.
 
-## Outcome
+## Initial outcome (superseded by follow-up)
 
 PARTIAL: 68 unittest methods passed across eight suites, with no skips; seven standalone demonstrations, three offline environment/dependency workflows, and thirteen extracted-directory compilation checks passed. The project and companion installed-package workflows are BLOCKED by the exact builder prerequisite. They are not counted as passing tests. No manuscript changes were made.
 
