@@ -94,6 +94,10 @@ def centered_second_difference(function, x, step=1e-3):
     x, h = finite(x, "x"), finite(step, "step")
     if h == 0:
         raise ValueError("step must be nonzero")
+    if not math.isfinite(x+h) or not math.isfinite(x-h) or x+h==x or x-h==x:
+        raise ValueError("step must produce finite distinct perturbations")
+    if h*h==0 or not math.isfinite(h*h):
+        raise ValueError("squared step must be finite and nonzero")
     return (finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
             +finite(function(x-h), "f(x-h)"))/(h*h)
 
