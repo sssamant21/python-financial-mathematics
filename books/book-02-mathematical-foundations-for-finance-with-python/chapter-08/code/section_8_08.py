@@ -19,6 +19,8 @@ def validated_step(x, step):
         raise ValueError("step must be positive")
     if x+h == x or x-h == x:
         raise ValueError("step is too small to perturb x in floating point")
+    if not math.isfinite(x+h) or not math.isfinite(x-h):
+        raise ValueError("step must produce finite perturbations")
     return x, h
 
 def forward_difference(function, x, step):
@@ -31,10 +33,14 @@ def backward_difference(function, x, step):
 
 def centered_difference(function, x, step):
     x, h = validated_step(x, step)
+    if not math.isfinite(2*h):
+        raise ValueError("central-difference denominator must be finite")
     return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
 
 def second_difference(function, x, step):
     x, h = validated_step(x, step)
+    if h*h==0 or not math.isfinite(h*h):
+        raise ValueError("squared step must be finite and nonzero")
     return (finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
             +finite(function(x-h), "f(x-h)"))/(h*h)
 
