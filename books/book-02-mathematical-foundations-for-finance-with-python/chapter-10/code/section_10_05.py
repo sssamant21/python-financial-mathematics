@@ -24,7 +24,7 @@ def exponential_integral(scale,exponent,T):
     x=k*t
     if not math.isfinite(x):
         raise ValueError("nonfinite exponent")
-    result=c*t if x==0 else c*t*math.expm1(x)/x
+    result=c*t if x==0 else c*t*(math.expm1(x)/x)
     if not math.isfinite(result):
         raise ValueError("nonfinite exponential integral")
     return result
