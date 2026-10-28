@@ -45,7 +45,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | 10 | 10 | Pending | Pending | Not certified |
 | 11 | 10 | Pending | Pending | Not certified |
 | 12 | 10 | Pending | Pending | Not certified |
-| 13 | 10 | Pending | Pending | Not certified |
+| 13 | 10 | Pending | Pending | [Focused projection review](chapter-13-projection-scaling-review.md); not certified |
 | 14 | 10 | Pending | Pending | Not certified |
 | 15 | 10 | Pending | Pending | Not certified |
 | 16 | 10 | Pending | Pending | Not certified |
@@ -75,6 +75,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-15 | Chapter 16 line-search stagnation | Fix applied; independent review pending | Review additional optimizer stagnation, Armijo arithmetic and final-revision evidence. [Review](chapter-16-stopping-review.md) |
 | V-16 | Chapter 15 finite-difference boundaries | Fixes applied; independent review pending | Review perturbation asymmetry, covariance handling and final-revision evidence. [Review](chapter-15-derivative-boundary-review.md) |
 | V-17 | Chapter 14 decomposition boundaries | Fixes applied; independent review pending | Review other norm calculations, matrix conditioning and final-revision evidence. [Review](chapter-14-decomposition-boundary-review.md) |
+| V-18 | Chapter 13 projection scaling | Fix applied; independent review pending | Review large-target and coefficient range, QR screening and final-revision evidence. [Review](chapter-13-projection-scaling-review.md) |
 | V-09 | Independent review and final release | Open | Record reviewer, scope, findings, final revision and authorized decision |
 
 ## Next actions
