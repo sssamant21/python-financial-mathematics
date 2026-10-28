@@ -53,6 +53,9 @@ def direct_sum(first_payment, growth, rate, periods, kind="pv", timing="end"):
 
 def verify(first_payment, growth, rate, periods, timing="end", rel_tol=1e-10, abs_tol=1e-9):
     r = number(rate, "rate")
+    rel_tol, abs_tol = number(rel_tol, "relative tolerance"), number(abs_tol, "absolute tolerance")
+    if rel_tol < 0 or abs_tol < 0:
+        raise ValueError("tolerances must be nonnegative")
     results = {}
     for kind in ("pv", "fv"):
         analytic = closed_form(first_payment, growth, r, periods, kind, timing)
