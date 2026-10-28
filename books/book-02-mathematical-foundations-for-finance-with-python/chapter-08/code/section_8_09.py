@@ -30,6 +30,10 @@ def compare_derivatives(function, first, x, step, second=None,
         raise ValueError("step must be positive and tolerances nonnegative")
     if x+h == x or x-h == x or x+h/2 == x or x-h/2 == x:
         raise ValueError("step is too small to perturb x")
+    if not math.isfinite(x+h) or not math.isfinite(x-h) or not math.isfinite(2*h):
+        raise ValueError("perturbations and denominator must be finite")
+    if second is not None and (h*h==0 or not math.isfinite(h*h)):
+        raise ValueError("squared step must be finite and nonzero")
     f0, fp, fm = (evaluated(function, z) for z in (x, x+h, x-h))
     fhp, fhm = (evaluated(function, z) for z in (x+h/2, x-h/2))
     analytic_first = evaluated(first, x)
