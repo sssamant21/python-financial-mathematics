@@ -61,7 +61,7 @@ def exponential_integral(a,k,T):
     x=k*t
     if not math.isfinite(x):
         raise ValueError("nonfinite exponent")
-    result=a*t if x==0 else a*t*math.expm1(x)/x
+    result=a*t if x==0 else a*t*(math.expm1(x)/x)
     return finite(result,"integral")
 
 def weighted_integral(rate,T):
@@ -131,6 +131,15 @@ def parallel_shift_derivative(streams,payments,curve,T,n=256,bump=0.0001):
     bump=finite(bump,"bump")
     if bump<=0:
         raise ValueError("bump must be positive")
+    if not isinstance(curve,Curve):
+        raise TypeError("expected Curve")
+    if not math.isfinite(curve.base+bump) or not math.isfinite(curve.base-bump) or curve.base+bump==curve.base or curve.base-bump==curve.base:
+        raise ValueError("bump must produce finite distinct rate shifts")
+    if not math.isfinite(2*bump):
+        raise OverflowError("derivative denominator exceeds float range")
+    # Both revaluations must use the same data, including one-shot iterators.
+    streams=tuple(streams)
+    payments=tuple(payments)
     up=portfolio_pv(streams,payments,curve,T,n,bump)["total"]
     down=portfolio_pv(streams,payments,curve,T,n,-bump)["total"]
     return finite((up-down)/(2*bump),"rate derivative")
