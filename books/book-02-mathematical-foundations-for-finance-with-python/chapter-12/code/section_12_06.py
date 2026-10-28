@@ -82,11 +82,11 @@ def inverse(matrix,relative_tolerance=1e-12):
     normalized_det=aa*dd-bb*cc
     if abs(normalized_det)<=tol:
         raise ValueError("singular or numerically unresolved matrix")
-    det=determinant(matrix)
-    if det==0:
-        raise ValueError("singular matrix")
-    result=((finite(d/det,"inverse entry"),finite(-b/det,"inverse entry")),
-            (finite(-c/det,"inverse entry"),finite(a/det,"inverse entry")))
+    # A = scale * normalized_A; invert the normalized matrix first.
+    # The unscaled determinant may overflow/underflow even when A^-1 exists
+    # and every inverse entry is representable.
+    result=((finite((dd/normalized_det)/scale,"inverse entry"),finite((-bb/normalized_det)/scale,"inverse entry")),
+            (finite((-cc/normalized_det)/scale,"inverse entry"),finite((aa/normalized_det)/scale,"inverse entry")))
     return Matrix2(matrix.column_labels,matrix.row_labels,result,"inverse_standardized_sensitivity")
 
 def solve_exposures(matrix,target):
