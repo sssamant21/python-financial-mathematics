@@ -34,11 +34,12 @@ def balance_ledger(initial, rates, cash_flows, timing="end",
         previous = balances[-1]
         interest_base = previous if timing == "end" else previous + cash_flow
         interest = interest_base * rate
-        closing = previous + interest + cash_flow
+        closing = previous*(1+rate)+cash_flow if timing=="end" else interest_base*(1+rate)
         if not math.isfinite(closing) or not math.isfinite(interest):
             raise OverflowError("nonfinite balance or interest")
         if not allow_negative and closing < 0:
             raise ValueError(f"period {period} would produce negative balance")
+        rounding_adjustment = math.fsum((closing,-previous,-interest,-cash_flow))
         ledger.append({
             "period": period,
             "opening_balance": previous,
@@ -46,6 +47,7 @@ def balance_ledger(initial, rates, cash_flows, timing="end",
             "cash_flow": cash_flow,
             "interest": interest,
             "closing_balance": closing,
+            "rounding_adjustment": rounding_adjustment,
         })
         balances.append(closing)
     return balances, ledger
@@ -65,7 +67,8 @@ def reconcile(initial, balances, ledger):
         raise ValueError("ledger length does not match balances")
     interest = math.fsum(row["interest"] for row in ledger)
     cash_flows = math.fsum(row["cash_flow"] for row in ledger)
-    return (balances[-1] - start, interest + cash_flows)
+    adjustments = math.fsum(row.get("rounding_adjustment",0.0) for row in ledger)
+    return (balances[-1] - start, math.fsum((interest,cash_flows,adjustments)))
 
 if __name__ == "__main__":
     path, rows = constant_rate_path(1000, 0.02, (100, 100, 100))
