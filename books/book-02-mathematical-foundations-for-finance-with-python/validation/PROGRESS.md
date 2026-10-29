@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up
 
+Section 17.9 now has independent KKT residual/objective checks across four regimes and four isolated rejection families; four incomplete acceptance variants were detected. All 20 Chapter 17 files compiled and 10 scripts passed; optimizer unchanged. [KKT evidence](chapter-17-kkt-rejection-followup.md). COV-76 remains partially open; this checker change follows the full-book run.
+
+## Earlier bracket-audit follow-up
+
 Section 18.8's bracket flag now uses cached endpoint signs and interval history; endpoint residuals are reported. Independent reevaluation and callback counts cover seven solver paths. All 21 Chapter 18 files compiled and 11 scripts passed. [Bracket audit evidence](chapter-18-bracket-audit-followup.md). COV-79 remains partially open; this follows the full-book run below.
 
 ## Earlier Section 20.6 contract follow-up
@@ -146,7 +150,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates ten partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates eleven partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
