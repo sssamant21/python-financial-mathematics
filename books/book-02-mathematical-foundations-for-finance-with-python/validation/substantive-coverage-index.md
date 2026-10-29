@@ -159,3 +159,7 @@ The [Section 11.9 policy record](chapter-11-policy-audit-followup.md) retains de
 ## Budget boundary follow-up
 
 The [Section 11.7 record](chapter-11-budget-boundary-followup.md) verifies the missing budget path and selected inclusive/adjacent constraints. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This extends COV-59; the selected category count remains twenty.
+
+## Final vector assessment follow-up
+
+The [Section 11.10 record](chapter-11-final-nonfinite-followup.md) adds direct nonfinite/overflow checks and strict JSON evidence. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This extends partial COV-60 remediation; the selected count remains twenty.
