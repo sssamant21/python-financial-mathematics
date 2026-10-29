@@ -71,3 +71,5 @@ The [Section 11.4 relative-distance follow-up](chapter-11-relative-distance-foll
 Section 11.9's policy-audit change has a 21-file/11-script scoped pass and follows the second full-book refresh.
 
 The [Section 11.7 budget follow-up](chapter-11-budget-boundary-followup.md) extends COV-59 with isolated budget and adjacent constraint-threshold cases; its 21-file/11-script pass follows the second full-book refresh. The selected count remains twenty.
+
+The [Section 11.10 final nonfinite follow-up](chapter-11-final-nonfinite-followup.md) extends COV-60 with direct final-module validation and selected overflow paths. Its 21-file/11-script scoped pass follows the second full-book refresh; twenty selected categories remain partially addressed.
