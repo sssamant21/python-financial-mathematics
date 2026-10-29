@@ -14,7 +14,55 @@ def rejects(exc, function, *args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def check_error_fields_and_gates():
+    f=lambda x:x**3
+    first=lambda x:3*x*x
+    second=lambda x:6*x
+    expected={"forward":(13.5625,1.5625),"backward":(10.5625,-1.4375),
+              "centered":(12.0625,0.0625),"richardson":(12.0,0.0)}
+    for absolute,relative in ((0.0625,0),(math.nextafter(0.0625,0),0),
+                              (1/64,1/256),(0,0)):
+        report=compare_derivatives(f,first,2,0.25,second,absolute,relative)
+        assert report["abs_tol"]==absolute and report["rel_tol"]==relative
+        assert report["comparison_rule"]=="abs(error) <= abs_tol + rel_tol*abs(analytic)"
+        for method,(estimate,error) in expected.items():
+            row=report["first_derivatives"][method]
+            assert row["estimate"]==estimate
+            assert row["signed_error"]==error and row["absolute_error"]==abs(error)
+            assert row["pass"] is (abs(error)<=absolute+12*relative)
+        row=report["second_derivative"]
+        assert row["analytic"]==row["estimate"]==12
+        assert row["signed_error"]==row["absolute_error"]==0 and row["pass"]
+    boundary=compare_derivatives(f,first,2,0.25,abs_tol=0.0625,rel_tol=0)
+    outside=compare_derivatives(f,first,2,0.25,abs_tol=math.nextafter(0.0625,0),rel_tol=0)
+    assert boundary["first_derivatives"]["centered"]["pass"] is True
+    assert outside["first_derivatives"]["centered"]["pass"] is False
+
+    # Zero-reference gates depend on absolute tolerance; no division by zero.
+    zero=compare_derivatives(lambda x:x*x,lambda x:0,0,0.25,lambda x:2,0,1)
+    assert zero["first_derivatives"]["forward"]["signed_error"]==0.25
+    assert zero["first_derivatives"]["backward"]["signed_error"]==-0.25
+    assert not zero["first_derivatives"]["forward"]["pass"]
+    assert not zero["first_derivatives"]["backward"]["pass"]
+    assert zero["first_derivatives"]["centered"]["pass"]
+    assert zero["second_derivative"]["pass"]
+
+    # A wrong analytic oracle must not pass solely because the stencil is stable.
+    wrong=compare_derivatives(f,lambda x:0,2,0.25,lambda x:0,0,0)
+    assert all(not row["pass"] for row in wrong["first_derivatives"].values())
+    assert wrong["second_derivative"]["pass"] is False
+    assert wrong["second_derivative"]["signed_error"]==12
+    assert wrong["second_derivative"]["absolute_error"]==12
+    # Finite callback values may still overflow a stencil or error subtraction.
+    rejects(ValueError,compare_derivatives,lambda z:1e308*z,lambda z:-1e308,
+            0,1,None,0,2)
+    rejects(ValueError,compare_derivatives,lambda z:1e308*z*z,lambda z:0,
+            0,1,lambda z:0,0,0)
+    first_only=compare_derivatives(f,first,2,0.25)
+    assert "second_derivative" not in first_only
+
 def run():
+    check_error_fields_and_gates()
     f = lambda x:x**3
     d1 = lambda x:3*x*x
     d2 = lambda x:6*x
