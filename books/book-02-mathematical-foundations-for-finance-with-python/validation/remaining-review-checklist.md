@@ -1,12 +1,14 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-29  
-**Candidate source revision:** `f4cffe7ec0877454330b96ff07a15cdea1a5abbb`  
+**Candidate source revision:** `3e185649bf53f5a72ad9e1869d17762110444a26`  
 **Disposition:** Runtime evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
 
-The [third full refresh](runtime-refresh-2026-10-29-r3.md), V-34, includes the subsequent Chapter 8, 10 and 11 follow-ups: 444 Python files compiled, 233 scripts exited zero and 445 required source/fixture blobs verified before and after execution. This is the latest candidate execution; independent review and release acceptance remain pending. Earlier records below are historical.
+The [fourth full refresh](runtime-refresh-2026-10-29-r4.md), V-35, includes all eight subsequent Chapter 13/14 checkers: 452 files compiled, 241 scripts exited zero and 453 required blobs verified before/after. This is the latest candidate execution. G2–G8 remain unchanged.
+
+The [third full refresh](runtime-refresh-2026-10-29-r3.md), V-34, includes the subsequent Chapter 8, 10 and 11 follow-ups: 444 Python files compiled, 233 scripts exited zero and 445 required source/fixture blobs verified before and after execution. This was the latest candidate execution at that time; independent review and release acceptance remain pending. Earlier records below are historical.
 
 The [second full refresh](runtime-refresh-2026-10-29-r2.md), V-33, includes all code changes through the factor audit: 444 Python files compiled and 233 scripts exited zero; 445 required sources/fixture blobs verified. It superseded earlier runs at that time. Independent reviewers and release acceptance remain pending.
 
@@ -24,7 +26,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-34 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-35 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
