@@ -17,7 +17,12 @@ def _finite(x, name):
 def errors(actual, reference):
     a, b = _finite(actual, "actual"), _finite(reference, "reference")
     absolute = abs(a - b)
-    return absolute, None if b == 0 else absolute / abs(b)
+    if not math.isfinite(absolute):
+        raise OverflowError("absolute error exceeds float range")
+    relative = None if b == 0 else absolute / abs(b)
+    if relative is not None and not math.isfinite(relative):
+        raise OverflowError("relative error exceeds float range")
+    return absolute, relative
 
 def close_to_reference(actual, reference, *, atol, rtol):
     """Asymmetric sum rule; reference sets relative scale."""
