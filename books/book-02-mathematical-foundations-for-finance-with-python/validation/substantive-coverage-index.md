@@ -95,3 +95,7 @@ Section 16.9 now records and evaluates every iterative candidate's training/hold
 ## Error-range follow-up — 2026-10-29
 
 Section 20.5 no longer returns infinite error magnitudes from finite inputs; it raises explicit range errors, while the exact tolerance decision remains available independently. [Evidence](chapter-20-error-range-followup.md): 19 sources compiled and 10 scripts passed, including 20 tolerance methods. COV-87 is partially addressed; the [register](gap-remediation-register.md) tracks nine selected partial categories. Next selected contract item: Section 20.6 numeric input/output validation.
+
+## Section 20.6 contract follow-up
+
+The [metamorphic PV contract record](chapter-20-metamorphic-contract-followup.md) documents explicit numeric validation and range policy, including empty-portfolio rates. All 19 Chapter 20 files compiled and 10 scripts passed. This extends partial COV-87 remediation; no independent approval or new full-book runtime is implied.
