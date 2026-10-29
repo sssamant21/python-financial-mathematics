@@ -1,0 +1,967 @@
+{
+  "source_revision": "7ee99f60d5089510f860a0b6f695f971beb2eac6",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "checks": 67,
+  "passed": 67,
+  "failed": 0,
+  "cli_cases": 17,
+  "matrix": [
+    {
+      "category": "normal",
+      "operation": "PV",
+      "inputs": [
+        "110.25",
+        "5",
+        "2"
+      ],
+      "expected": "Decimal('100')",
+      "actual": "Decimal('1E+2')",
+      "reason": "100 grows to 110.25 in two 5% periods",
+      "status": "PASS"
+    },
+    {
+      "category": "zero",
+      "operation": "PV",
+      "inputs": [
+        "0",
+        "5",
+        "2"
+      ],
+      "expected": "Decimal('0')",
+      "actual": "Decimal('0E+4')",
+      "reason": "Zero receipt allowed",
+      "status": "PASS"
+    },
+    {
+      "category": "zero",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "5",
+        "0"
+      ],
+      "expected": "Decimal('100')",
+      "actual": "Decimal('100')",
+      "reason": "No discount periods",
+      "status": "PASS"
+    },
+    {
+      "category": "zero",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "0",
+        "10"
+      ],
+      "expected": "Decimal('100')",
+      "actual": "Decimal('100')",
+      "reason": "No discount rate",
+      "status": "PASS"
+    },
+    {
+      "category": "meaningful negative",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "-50",
+        "1"
+      ],
+      "expected": "Decimal('200')",
+      "actual": "Decimal('2.0E+2')",
+      "reason": "Negative effective rate can imply PV > FV",
+      "status": "PASS"
+    },
+    {
+      "category": "large",
+      "operation": "PV",
+      "inputs": [
+        "1000000000000000000",
+        "0",
+        "100"
+      ],
+      "expected": "Decimal('1E+18')",
+      "actual": "Decimal('1000000000000000000')",
+      "reason": "Maximum input amount remains supported",
+      "status": "PASS"
+    },
+    {
+      "category": "fractional",
+      "operation": "PV",
+      "inputs": [
+        "1.25",
+        "25",
+        "1"
+      ],
+      "expected": "Decimal('1')",
+      "actual": "Decimal('1')",
+      "reason": "Fractional amount is allowed",
+      "status": "PASS"
+    },
+    {
+      "category": "normal",
+      "operation": "discount",
+      "inputs": [
+        "100",
+        "80"
+      ],
+      "expected": "Decimal('20')",
+      "actual": "Decimal('20')",
+      "reason": "Discount means a price reduction, not PV discounting",
+      "status": "PASS"
+    },
+    {
+      "category": "zero",
+      "operation": "discount",
+      "inputs": [
+        "0",
+        "0"
+      ],
+      "expected": "Decimal('0')",
+      "actual": "Decimal('0')",
+      "reason": "Zero prices are permitted",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "discount",
+      "inputs": [
+        "100",
+        "100"
+      ],
+      "expected": "Decimal('0')",
+      "actual": "Decimal('0')",
+      "reason": "Equal prices imply zero reduction",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "discount",
+      "inputs": [
+        "100",
+        "100.01"
+      ],
+      "expected": "'0 <= final <= original'",
+      "actual": "ValueError: Price reduction requires 0 <= final <= original",
+      "reason": "Markup excluded by this contract",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "discount",
+      "inputs": [
+        "100",
+        "-0.01"
+      ],
+      "expected": "'0 <= final <= original'",
+      "actual": "ValueError: Price reduction requires 0 <= final <= original",
+      "reason": "Negative final price excluded",
+      "status": "PASS"
+    },
+    {
+      "category": "fractional",
+      "operation": "discount",
+      "inputs": [
+        "10.005",
+        "9"
+      ],
+      "expected": "Decimal('1.005')",
+      "actual": "Decimal('1.005')",
+      "reason": "Keep raw difference before final-only cents",
+      "status": "PASS"
+    },
+    {
+      "category": "normal",
+      "operation": "bps",
+      "inputs": [
+        "25"
+      ],
+      "expected": "(Decimal('0.0025'), Decimal('0.25'))",
+      "actual": "(Decimal('0.0025'), Decimal('0.25'))",
+      "reason": "Rate and percentage-point units distinguished",
+      "status": "PASS"
+    },
+    {
+      "category": "meaningful negative",
+      "operation": "bps",
+      "inputs": [
+        "-25"
+      ],
+      "expected": "(Decimal('-0.0025'), Decimal('-0.25'))",
+      "actual": "(Decimal('-0.0025'), Decimal('-0.25'))",
+      "reason": "Signed rate movement permitted",
+      "status": "PASS"
+    },
+    {
+      "category": "fractional",
+      "operation": "bps",
+      "inputs": [
+        "0.5"
+      ],
+      "expected": "(Decimal('0.00005'), Decimal('0.005'))",
+      "actual": "(Decimal('0.00005'), Decimal('0.005'))",
+      "reason": "Fractional basis points supported",
+      "status": "PASS"
+    },
+    {
+      "category": "zero",
+      "operation": "bps",
+      "inputs": [
+        "0"
+      ],
+      "expected": "(Decimal('0'), Decimal('0'))",
+      "actual": "(Decimal('0'), Decimal('0'))",
+      "reason": "Zero movement permitted",
+      "status": "PASS"
+    },
+    {
+      "category": "invalid text",
+      "operation": "bps",
+      "inputs": [
+        "abc"
+      ],
+      "expected": "'decimal numeric text'",
+      "actual": "ValueError: Enter decimal numeric text",
+      "reason": "Invalid Decimal conversion is handled",
+      "status": "PASS"
+    },
+    {
+      "category": "invalid text",
+      "operation": "bps",
+      "inputs": [
+        ""
+      ],
+      "expected": "'decimal numeric text'",
+      "actual": "ValueError: Enter decimal numeric text",
+      "reason": "Invalid Decimal conversion is handled",
+      "status": "PASS"
+    },
+    {
+      "category": "nonfinite",
+      "operation": "bps",
+      "inputs": [
+        "NaN"
+      ],
+      "expected": "'must be finite'",
+      "actual": "ValueError: Financial input must be finite",
+      "reason": "Reject before comparisons/arithmetic",
+      "status": "PASS"
+    },
+    {
+      "category": "nonfinite",
+      "operation": "bps",
+      "inputs": [
+        "sNaN"
+      ],
+      "expected": "'must be finite'",
+      "actual": "ValueError: Financial input must be finite",
+      "reason": "Reject before comparisons/arithmetic",
+      "status": "PASS"
+    },
+    {
+      "category": "nonfinite",
+      "operation": "bps",
+      "inputs": [
+        "Infinity"
+      ],
+      "expected": "'must be finite'",
+      "actual": "ValueError: Financial input must be finite",
+      "reason": "Reject before comparisons/arithmetic",
+      "status": "PASS"
+    },
+    {
+      "category": "nonfinite",
+      "operation": "bps",
+      "inputs": [
+        "-Infinity"
+      ],
+      "expected": "'must be finite'",
+      "actual": "ValueError: Financial input must be finite",
+      "reason": "Reject before comparisons/arithmetic",
+      "status": "PASS"
+    },
+    {
+      "category": "precision boundary",
+      "operation": "bps",
+      "inputs": [
+        ".0000000000001"
+      ],
+      "expected": "'precision/magnitude'",
+      "actual": "ValueError: Input exceeds teaching precision/magnitude bounds",
+      "reason": "More than 12 decimal places rejected",
+      "status": "PASS"
+    },
+    {
+      "category": "precision boundary",
+      "operation": "bps",
+      "inputs": [
+        "1e19"
+      ],
+      "expected": "'precision/magnitude'",
+      "actual": "ValueError: Input exceeds teaching precision/magnitude bounds",
+      "reason": "Above amount magnitude cap rejected",
+      "status": "PASS"
+    },
+    {
+      "category": "resource boundary",
+      "operation": "bps",
+      "inputs": [
+        "11111111111111111111111111111111111111111111111111111111111111111"
+      ],
+      "expected": "'64 characters'",
+      "actual": "ValueError: Numeric text exceeds 64 characters",
+      "reason": "Bound external text size",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "-100",
+        "1"
+      ],
+      "expected": "'(-100, 1000]'",
+      "actual": "ValueError: Effective rate percent must be in (-100, 1000]",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "-100.01",
+        "1"
+      ],
+      "expected": "'(-100, 1000]'",
+      "actual": "ValueError: Effective rate percent must be in (-100, 1000]",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "1000.01",
+        "1"
+      ],
+      "expected": "'(-100, 1000]'",
+      "actual": "ValueError: Effective rate percent must be in (-100, 1000]",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "-1",
+        "5",
+        "1"
+      ],
+      "expected": "'nonnegative'",
+      "actual": "ValueError: Future receipt must be nonnegative",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "5",
+        "-1"
+      ],
+      "expected": "'0..100'",
+      "actual": "ValueError: Periods outside 0..100",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "5",
+        "101"
+      ],
+      "expected": "'0..100'",
+      "actual": "ValueError: Periods outside 0..100",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "5",
+        "1.5"
+      ],
+      "expected": "'whole integer'",
+      "actual": "ValueError: Periods must be whole integer text",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "5",
+        "99999"
+      ],
+      "expected": "'0..100'",
+      "actual": "ValueError: Periods outside 0..100",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "mathematical/business boundary",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "-99",
+        "100"
+      ],
+      "expected": "'output bound'",
+      "actual": "ValueError: Present value exceeds teaching output bound 1e24",
+      "reason": "Explicit selected PV domain",
+      "status": "PASS"
+    },
+    {
+      "category": "rate upper boundary",
+      "operation": "PV",
+      "inputs": [
+        "1100",
+        "1000",
+        "1"
+      ],
+      "expected": "Decimal('100')",
+      "actual": "Decimal('100')",
+      "reason": "Inclusive maximum supported effective percent",
+      "status": "PASS"
+    },
+    {
+      "category": "normal",
+      "operation": "simple",
+      "inputs": [
+        "1000",
+        "5",
+        "2"
+      ],
+      "expected": "(Decimal('100'), 'Interest: USD 100.00')",
+      "actual": "(Decimal('100.00'), 'Interest: USD 100.00')",
+      "reason": "Separate raw interest from posted display",
+      "status": "PASS"
+    },
+    {
+      "category": "meaningful negative",
+      "operation": "simple",
+      "inputs": [
+        "1000",
+        "-5",
+        "2"
+      ],
+      "expected": "(Decimal('-100'), 'Interest: USD -100.00')",
+      "actual": "(Decimal('-100.00'), 'Interest: USD -100.00')",
+      "reason": "Signed interest allowed; no savings balance guarantee",
+      "status": "PASS"
+    },
+    {
+      "category": "fractional",
+      "operation": "simple",
+      "inputs": [
+        "100",
+        "5",
+        ".5"
+      ],
+      "expected": "(Decimal('2.5'), 'Interest: USD 2.50')",
+      "actual": "(Decimal('2.500'), 'Interest: USD 2.50')",
+      "reason": "Fractional time allowed for simple interest",
+      "status": "PASS"
+    },
+    {
+      "category": "rounding boundary",
+      "operation": "simple",
+      "inputs": [
+        "100",
+        "1.005",
+        "1"
+      ],
+      "expected": "(Decimal('1.005'), 'Interest: USD 1.01')",
+      "actual": "(Decimal('1.00500'), 'Interest: USD 1.01')",
+      "reason": "Raw value retained through final rounding",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "simple",
+      "inputs": [
+        "0",
+        "5",
+        "1"
+      ],
+      "expected": "'Require principal'",
+      "actual": "ValueError: Require principal > 0, years in [0,100], |rate percent| <= 1000",
+      "reason": "Selected simple-interest contract enforced",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "simple",
+      "inputs": [
+        "100",
+        "5",
+        "-1"
+      ],
+      "expected": "'Require principal'",
+      "actual": "ValueError: Require principal > 0, years in [0,100], |rate percent| <= 1000",
+      "reason": "Selected simple-interest contract enforced",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "simple",
+      "inputs": [
+        "100",
+        "1000.01",
+        "1"
+      ],
+      "expected": "'Require principal'",
+      "actual": "ValueError: Require principal > 0, years in [0,100], |rate percent| <= 1000",
+      "reason": "Selected simple-interest contract enforced",
+      "status": "PASS"
+    },
+    {
+      "category": "business boundary",
+      "operation": "simple",
+      "inputs": [
+        "100",
+        "5",
+        "100.01"
+      ],
+      "expected": "'Require principal'",
+      "actual": "ValueError: Require principal > 0, years in [0,100], |rate percent| <= 1000",
+      "reason": "Selected simple-interest contract enforced",
+      "status": "PASS"
+    },
+    {
+      "category": "rounding boundary",
+      "operation": "round",
+      "inputs": [
+        "1.004"
+      ],
+      "expected": "Decimal('1.00')",
+      "actual": "Decimal('1.00')",
+      "reason": "Declared ROUND_HALF_UP; cents only at output",
+      "status": "PASS"
+    },
+    {
+      "category": "rounding boundary",
+      "operation": "round",
+      "inputs": [
+        "1.005"
+      ],
+      "expected": "Decimal('1.01')",
+      "actual": "Decimal('1.01')",
+      "reason": "Declared ROUND_HALF_UP; cents only at output",
+      "status": "PASS"
+    },
+    {
+      "category": "rounding boundary",
+      "operation": "round",
+      "inputs": [
+        "1.006"
+      ],
+      "expected": "Decimal('1.01')",
+      "actual": "Decimal('1.01')",
+      "reason": "Declared ROUND_HALF_UP; cents only at output",
+      "status": "PASS"
+    },
+    {
+      "category": "rounding boundary",
+      "operation": "round",
+      "inputs": [
+        "-1.005"
+      ],
+      "expected": "Decimal('-1.01')",
+      "actual": "Decimal('-1.01')",
+      "reason": "Declared ROUND_HALF_UP; cents only at output",
+      "status": "PASS"
+    },
+    {
+      "category": "independent oracle",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "7",
+        "10"
+      ],
+      "expected": "relative error <= 1e-35 against exact Fraction",
+      "actual": "1184950795399835533/250000000000000000000000000000000000000000000000000000000000",
+      "reason": "Independent rational oracle, not the Decimal implementation",
+      "status": "PASS"
+    },
+    {
+      "category": "context isolation",
+      "operation": "PV",
+      "inputs": [
+        "100",
+        "7",
+        "10",
+        "caller precision 6"
+      ],
+      "expected": "50.83492921347178641554053032334491849132",
+      "actual": "50.83492921347178641554053032334491849132",
+      "reason": "Local 40-digit policy",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "original SI",
+      "inputs": [
+        "1",
+        "1000",
+        "5",
+        "2"
+      ],
+      "expected": "Interest:       $100.00",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Principal amount: Annual interest rate (%): Number of years: \nSIMPLE INTEREST RESULTS\n------------------------------\nPrincipal:      $1,000.00\nInterest:       $100.00\nEnding Balance: $1,100.00\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "original FV",
+      "inputs": [
+        "2",
+        "1000",
+        "5",
+        "2",
+        "1"
+      ],
+      "expected": "Future Value:  $1,102.50",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: \nFUTURE VALUE RESULTS\n------------------------------\nPresent Value: $1,000.00\nFuture Value:  $1,102.50\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "original change",
+      "inputs": [
+        "3",
+        "100",
+        "110"
+      ],
+      "expected": "Percentage Change: 10.00%",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Original value: New value: Percentage Change: 10.00%\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "original trade",
+      "inputs": [
+        "4",
+        "100",
+        "110",
+        "2"
+      ],
+      "expected": "Status: PROFIT",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Purchase price per unit: Selling price per unit: Quantity: \nStatus: PROFIT\nProfit/Loss: $20.00\nReturn: 10.00%\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "original fee",
+      "inputs": [
+        "5",
+        "100",
+        "1"
+      ],
+      "expected": "Fee:                $1.00",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Transaction amount: Fee rate (%): \nTRANSACTION FEE RESULTS\n------------------------------\nTransaction Amount: $100.00\nFee:                $1.00\nTotal Paid:         $101.00\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "original reconciliation",
+      "inputs": [
+        "6",
+        "100",
+        "100.01",
+        ".01"
+      ],
+      "expected": "Status: WITHIN TOLERANCE",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: System A amount: System B amount: Allowed reconciliation tolerance: \nRECONCILIATION RESULTS\n------------------------------\nSystem A:   $100.00\nSystem B:   $100.01\nDifference: $0.01\nTolerance:  $0.01\nStatus: WITHIN TOLERANCE\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "PV",
+      "inputs": [
+        "7",
+        "110.25",
+        "5",
+        "2"
+      ],
+      "expected": "Present Value: USD 100.00",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Present Value: USD 100.00\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "PV negative rate",
+      "inputs": [
+        "7",
+        "100",
+        "-50",
+        "1"
+      ],
+      "expected": "Present Value: USD 200.00",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Present Value: USD 200.00\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "PV invalid periods",
+      "inputs": [
+        "7",
+        "100",
+        "5",
+        "1.5"
+      ],
+      "expected": "Invalid input: Periods must be whole integer text",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Invalid input: Periods must be whole integer text\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "PV invalid factor",
+      "inputs": [
+        "7",
+        "100",
+        "-100",
+        "1"
+      ],
+      "expected": "Invalid input: Effective rate percent",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Invalid input: Effective rate percent must be in (-100, 1000]\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "discount rounding",
+      "inputs": [
+        "8",
+        "10.005",
+        "9"
+      ],
+      "expected": "Discount Amount: USD 1.01",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Original price (USD): Final price (USD): Discount Amount: USD 1.01\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "discount invalid markup",
+      "inputs": [
+        "8",
+        "100",
+        "101"
+      ],
+      "expected": "Invalid input: Price reduction",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Original price (USD): Final price (USD): Invalid input: Price reduction requires 0 <= final <= original\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "bps",
+      "inputs": [
+        "9",
+        "25"
+      ],
+      "expected": "Decimal rate: 0.0025\nPercentage points: 0.25",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Decimal rate: 0.0025\nPercentage points: 0.25\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "bps negative",
+      "inputs": [
+        "9",
+        "-25"
+      ],
+      "expected": "Decimal rate: -0.0025",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Decimal rate: -0.0025\nPercentage points: -0.25\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "bps nonfinite",
+      "inputs": [
+        "9",
+        "NaN"
+      ],
+      "expected": "Invalid input: Financial input must be finite",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Invalid input: Financial input must be finite\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "bps invalid text",
+      "inputs": [
+        "9",
+        "abc"
+      ],
+      "expected": "Invalid input: Enter decimal numeric text",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Invalid input: Enter decimal numeric text\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    },
+    {
+      "category": "CLI integration",
+      "operation": "invalid menu",
+      "inputs": [
+        "10"
+      ],
+      "expected": "Invalid calculator selection.",
+      "actual": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Invalid calculator selection.\n",
+      "reason": "Fresh subprocess; original handled input errors retain exit code zero",
+      "status": "PASS"
+    }
+  ],
+  "transcripts": [
+    {
+      "label": "original SI",
+      "stdin": "1\n1000\n5\n2\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Principal amount: Annual interest rate (%): Number of years: \nSIMPLE INTEREST RESULTS\n------------------------------\nPrincipal:      $1,000.00\nInterest:       $100.00\nEnding Balance: $1,100.00\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "original FV",
+      "stdin": "2\n1000\n5\n2\n1\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Present value: Annual interest rate (%): Number of years: Compounding periods per year: \nFUTURE VALUE RESULTS\n------------------------------\nPresent Value: $1,000.00\nFuture Value:  $1,102.50\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "original change",
+      "stdin": "3\n100\n110\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Original value: New value: Percentage Change: 10.00%\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "original trade",
+      "stdin": "4\n100\n110\n2\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Purchase price per unit: Selling price per unit: Quantity: \nStatus: PROFIT\nProfit/Loss: $20.00\nReturn: 10.00%\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "original fee",
+      "stdin": "5\n100\n1\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Transaction amount: Fee rate (%): \nTRANSACTION FEE RESULTS\n------------------------------\nTransaction Amount: $100.00\nFee:                $1.00\nTotal Paid:         $101.00\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "original reconciliation",
+      "stdin": "6\n100\n100.01\n.01\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: System A amount: System B amount: Allowed reconciliation tolerance: \nRECONCILIATION RESULTS\n------------------------------\nSystem A:   $100.00\nSystem B:   $100.01\nDifference: $0.01\nTolerance:  $0.01\nStatus: WITHIN TOLERANCE\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "PV",
+      "stdin": "7\n110.25\n5\n2\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Present Value: USD 100.00\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "PV negative rate",
+      "stdin": "7\n100\n-50\n1\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Present Value: USD 200.00\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "PV invalid periods",
+      "stdin": "7\n100\n5\n1.5\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Invalid input: Periods must be whole integer text\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "PV invalid factor",
+      "stdin": "7\n100\n-100\n1\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Future receipt (USD): Effective rate per period (%): Whole periods: Invalid input: Effective rate percent must be in (-100, 1000]\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "discount rounding",
+      "stdin": "8\n10.005\n9\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Original price (USD): Final price (USD): Discount Amount: USD 1.01\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "discount invalid markup",
+      "stdin": "8\n100\n101\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Original price (USD): Final price (USD): Invalid input: Price reduction requires 0 <= final <= original\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "bps",
+      "stdin": "9\n25\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Decimal rate: 0.0025\nPercentage points: 0.25\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "bps negative",
+      "stdin": "9\n-25\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Decimal rate: -0.0025\nPercentage points: -0.25\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "bps nonfinite",
+      "stdin": "9\nNaN\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Invalid input: Financial input must be finite\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "bps invalid text",
+      "stdin": "9\nabc\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Basis points (signed): Invalid input: Enter decimal numeric text\n",
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "label": "invalid menu",
+      "stdin": "10\n",
+      "stdout": "==================================================\nBASIC FINANCIAL CALCULATOR\n==================================================\n1. Simple Interest\n2. Compound Interest / Future Value\n3. Percentage Change\n4. Investment Profit or Loss\n5. Transaction Fee\n6. Financial Reconciliation\n==================================================\n7. Present Value\n8. Discount Amount\n9. Basis-Point Conversion\nSelect calculation: Invalid calculator selection.\n",
+      "stderr": "",
+      "exit_code": 0
+    }
+  ]
+}
