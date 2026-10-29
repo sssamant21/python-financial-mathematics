@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Pinned-revision pass complete | 444/444 files compiled at `37aac57a72303a6d4178790f8d172495e2bc0ada` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-29.md). |
-| Automated script execution | Pinned-revision pass complete | 233/233 check/test scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-29.md). |
+| Python compilation | Pinned-revision pass complete | 444/444 files compiled at `7ee99f60d5089510f860a0b6f695f971beb2eac6` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-29-r2.md). |
+| Automated script execution | Pinned-revision pass complete | 233/233 check/test scripts exited zero at `7ee99f60d5089510f860a0b6f695f971beb2eac6`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-29-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped follow-up
+## Latest full runtime refresh — second pass
+
+All 444 Python files compiled and 233 check/test scripts exited zero at `7ee99f60d5089510f860a0b6f695f971beb2eac6`; all 445 required source/fixture blobs matched the pinned tree. [Latest report](runtime-refresh-2026-10-29-r2.md) · [Manifest and raw outputs](runtime-refresh-2026-10-29-r2.json). This includes all subsequent scoped code changes through the Chapter 12 factor audit. Fourteen COV categories remain partially addressed; independent review and release gates remain open.
+
+## Earlier factor-audit follow-up
 
 Section 12.9 now retains aligned factor limits; controlled factor rejection and exact/adjacent limit cases verify reported decisions and residuals. Constructor/unit/shape/guardrail cases pass; 21 Chapter 12 files compiled and 11 scripts passed. [Factor audit evidence](chapter-12-factor-audit-followup.md). COV-62 remains partially open; this follows the full-book run.
 
@@ -86,7 +90,9 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [2026-10-29 refresh](runtime-refresh-2026-10-29.md): 444/444 files compiled and 233/233 scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; 467 blobs verified before/after execution.
+- **Latest full run:** [Second refresh](runtime-refresh-2026-10-29-r2.md): 444 sources compiled and 233 scripts passed at `7ee99f60d5089510f860a0b6f695f971beb2eac6`; 445 required blobs verified.
+
+- **Previous full run:** [2026-10-29 refresh](runtime-refresh-2026-10-29.md): 444/444 files compiled and 233/233 scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; 467 blobs verified before/after execution.
 
 - **Earlier full run:** [Pinned revision runtime validation](pinned-revision-runtime-validation.md): 444/444 Python files compiled and 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`; all 445 source/fixture blobs matched the pinned Git tree.
 
@@ -158,6 +164,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-30 | Chapter 1 foundation boundaries | Focused review passed; no implementation change required | 32/32 files compiled; 17/17 scripts passed on recorded snapshot, with aggregate duplication. Five new unittest methods passed. Independent review and final-revision validation pending. [Review](chapter-01-foundation-boundary-review.md) |
 | V-31 | Full pinned-revision runtime validation | Passed on Python 3.12.14/Linux | 444/444 files compiled; 233/233 scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`. Independent review, supported platforms and final release reruns remain open. [Evidence](pinned-revision-runtime-validation.md) |
 | V-32 | Full runtime refresh after gap remediation | Passed on Python 3.12.14/Linux | 444/444 files compiled, 233/233 script exits zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; independent review and release gates remain open. [Evidence](runtime-refresh-2026-10-29.md) |
+| V-33 | Full runtime refresh including subsequent gap fixes | Passed on Python 3.12.14/Linux | 444 sources compiled; 233 scripts exited zero at `7ee99f60d5089510f860a0b6f695f971beb2eac6`; independent review/platform/release gates remain open. [Evidence](runtime-refresh-2026-10-29-r2.md) |
 | V-09 | Independent review and final release | Open; review requirements documented | Eight gates and reviewer evidence requirements recorded in the [remaining review checklist](remaining-review-checklist.md). Reviewers are unassigned; no sign-off or canonical decision recorded. |
 
 ## Remediation monitoring
@@ -166,7 +173,7 @@ The [gap-remediation register](gap-remediation-register.md) consolidates fourtee
 
 ## Next actions
 
-The [remaining review checklist](remaining-review-checklist.md) reconciles V-01–V-32 and defines eight evidence gates. The full pinned candidate runtime pass supersedes earlier runtime blockers; no independent review or release approval is inferred.
+The [remaining review checklist](remaining-review-checklist.md) reconciles V-01–V-33 and defines eight evidence gates. The full pinned candidate runtime pass supersedes earlier runtime blockers; no independent review or release approval is inferred.
 
 1. Substantive coverage mapping is complete; resolve recorded gaps and retain browser/visual and full-book navigation review as pending. [Rendered markup sample](rendered-navigation-sample-review.md) passed 14 checks on six pages; Federal Reserve/NIST source-reference findings are [resolved](source-reference-resolution.md). [External audit](external-url-audit.md) records the 102-URL scan. [Section 4.7–4.8 title/scope reconciliation](chapter-04-title-scope-reconciliation.md) is recorded. [Static anchor/reference scan](anchor-reference-link-audit.md) found no local fragment destinations or reference definitions.
 2. Address the [prioritized coverage remediation queue](substantive-coverage-index.md). All215 sections are mapped; COV-01–COV-90 remain scoped evidence categories requiring disposition. Begin with numerical contracts/range, independent oracles and project/report promises; retain manual proof/review tasks explicitly.
