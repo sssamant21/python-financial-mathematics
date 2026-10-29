@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped quadrature follow-up
+## Latest scoped derivative follow-up
+
+Section 8.6 now checks exact polynomial second-difference errors/orders and a representable-step cancellation example; two faulty formulas were detected. All 21 Chapter 8 files compiled and 11 scripts passed; algorithm unchanged. [Evidence](chapter-08-difference-order-followup.md). COV-49 remains partially open; this follows the full-book run.
+
+## Earlier scoped quadrature follow-up
 
 Section 10.7 now checks exact signed polynomial errors, convergence ratios and fine estimators, plus selected exponential ratios; three faulty estimator variants were detected. All 21 Chapter 10 sources compiled and 11 scripts passed; algorithm unchanged. [Evidence](chapter-10-quadrature-order-followup.md). COV-55 remains partially open; this checker change follows the full-book run below.
 
@@ -173,7 +177,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates fifteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates sixteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
