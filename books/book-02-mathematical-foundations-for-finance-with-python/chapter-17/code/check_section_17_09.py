@@ -1,5 +1,6 @@
 """Independent analytic reference checks for Book 02 Section 17.9."""
 import math
+from fractions import Fraction
 from section_17_09 import (assessment,finite,validate_caps,objective,
                            gradient,verify_candidate,optimize,financial_report)
 
@@ -13,7 +14,64 @@ def rejects(exc,fn,*args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def check_certificate_fields(weights,lam,multipliers,caps=(0.6,1),expected_pass=None):
+    report=verify_candidate(weights,lam,multipliers,caps)
+    x,y=(Fraction(str(v)) for v in weights)
+    u,v=(Fraction(str(z)) for z in caps)
+    multiplier=tuple(Fraction(str(z)) for z in multipliers)
+    lagrange=Fraction(str(lam))
+    # Differentiate the explicit variance polynomial using rational constants.
+    stationarity=(2*x/25+y/50+lagrange-multiplier[0]+multiplier[2],
+                  x/50+9*y/50+lagrange-multiplier[1]+multiplier[3])
+    inequalities=(-x,-y,x-u,y-v)
+    products=tuple(a*b for a,b in zip(multiplier,inequalities))
+    equality=x+y-1
+    expected={
+        "equality_residual":equality,
+        "primal_violation":max(abs(equality),*(max(0,z) for z in inequalities)),
+        "dual_violation":max(0,*(-z for z in multiplier)),
+        "stationarity_norm":max(abs(z) for z in stationarity),
+        "complementarity_norm":max(abs(z) for z in products),
+        "objective":x*x/25+x*y/50+9*y*y/100,
+    }
+    for key,value in expected.items():
+        near(report[key],float(value))
+    for key,values in (("inequality_residuals",inequalities),
+                       ("stationarity",stationarity),("complementarity",products)):
+        assert len(report[key])==len(values)
+        for actual,value in zip(report[key],values):
+            near(actual,float(value))
+    if expected_pass is not None:
+        assert report["passes"] is expected_pass
+    return report
+
+def check_independent_kkt():
+    for caps in ((0.6,1),(1,1),(1,0.2),(0.6,0.4)):
+        candidate=optimize(*caps)
+        check_certificate_fields(candidate["weights"],candidate["lambda"],
+                                 candidate["multipliers"],caps,True)
+    # Isolate each residual family: the other three norms are zero.
+    equality=check_certificate_fields((0,0),0,(0,0,0,0),(1,1),False)
+    near(equality["primal_violation"],1)
+    for key in ("dual_violation","stationarity_norm","complementarity_norm"):
+        near(equality[key],0)
+    dual=check_certificate_fields((0,1),-0.18,(-0.16,0,0,0),(1,1),False)
+    near(dual["dual_violation"],0.16)
+    for key in ("primal_violation","stationarity_norm","complementarity_norm"):
+        near(dual[key],0)
+    stationarity=check_certificate_fields((0.5,0.5),0,(0,0,0,0),(1,1),False)
+    near(stationarity["stationarity_norm"],0.1)
+    for key in ("primal_violation","dual_violation","complementarity_norm"):
+        near(stationarity[key],0)
+    complementarity=check_certificate_fields((0.5,0.5),0,(0.05,0.1,0,0),(1,1),False)
+    near(complementarity["complementarity_norm"],0.05)
+    for key in ("primal_violation","dual_violation","stationarity_norm"):
+        near(complementarity[key],0)
+    # The second-cap multiplier has a separate closed-form benchmark.
+    near(optimize(1,0.2)["multipliers"][3],0.016)
+
 def run():
+    check_independent_kkt()
     a=assessment()
     s=a["allocation"]
     assert s["certificate"]["passes"]
