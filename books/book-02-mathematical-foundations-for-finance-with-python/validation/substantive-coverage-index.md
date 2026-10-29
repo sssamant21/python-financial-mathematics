@@ -147,3 +147,7 @@ The [Section 8.8 sensitivity record](chapter-08-sensitivity-range-followup.md) a
 ## Projection diagnostic follow-up
 
 The [Section 11.6 projection record](chapter-11-projection-audit-followup.md) adds rational coordinate/scalar/error checks and fixed-report residual norms. All 21 chapter files compiled and 11 scripts passed. COV-60 is partially addressed; nineteen selected partial categories are tracked.
+
+## Relative-distance contract follow-up
+
+The [Section 11.4 record](chapter-11-relative-distance-followup.md) adds direct three-norm/denominator/boundary evidence. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This extends partial COV-60 remediation; the selected count remains nineteen.
