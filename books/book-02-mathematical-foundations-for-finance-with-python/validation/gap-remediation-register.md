@@ -64,3 +64,5 @@ Section 8.8's helper changes have a 21-file/11-script scoped pass and follow the
 Section 8.8's [normalized-sensitivity follow-up](chapter-08-sensitivity-range-followup.md) extends COV-51 with zero-normalizer/nonfinite report guards and independent stencil-ratio checks. Its 21-file/11-script scoped pass follows the second full-book refresh. The selected category count remains eighteen.
 
 Section 11.6's projection-report change has a 21-file/11-script scoped pass and follows the second full-book refresh.
+
+The [Section 11.4 relative-distance follow-up](chapter-11-relative-distance-followup.md) extends COV-60 with independent denominator/norm and boundary checks. Its 21-file/11-script scoped pass follows the second full-book refresh; the selected category count remains nineteen.
