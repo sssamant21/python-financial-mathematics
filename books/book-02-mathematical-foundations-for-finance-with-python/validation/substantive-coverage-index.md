@@ -83,3 +83,7 @@ The [latest candidate run](runtime-refresh-2026-10-29.md) includes these remedia
 ## Remediation monitoring
 
 The [gap-remediation register](gap-remediation-register.md) consolidates seven selected partial dispositions and remaining obligations. No whole-category closure or percentage is inferred from those follow-ups.
+
+## Compression/report follow-up — 2026-10-29
+
+Section 14.9 now computes loss from the actual compression matrices and checks its spectral bound across selected diagonal cases, with input/unit metadata. [Evidence](chapter-14-compression-bound-followup.md): 21 chapter files compiled and 11 scripts passed. This change is subsequent to the recorded full-book refresh; COV-69 retains independent-review and broader-scope obligations.
