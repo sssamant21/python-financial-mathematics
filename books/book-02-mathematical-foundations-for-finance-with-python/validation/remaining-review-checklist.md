@@ -18,7 +18,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 |---|---|---|---|
 | G1 Candidate compilation/runtime | Passed, scoped | V-31 report at pinned revision; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
-| G3 Substantive coverage | In progress | Map each section's claims, examples, exercises and invalid-input contracts to assertions or documented manual review; identify aggregates and uncovered cases | Unassigned |
+| G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
 | G5 Editorial/source review | Pending | Named reviewer; notation, units, assumptions, attribution, source policy and exercise/solution consistency | Unassigned |
 | G6 Supported environments | Pending | Declare supported Python versions/platforms; record actual clean-snapshot runs, including Windows if supported | Unassigned |
@@ -56,9 +56,9 @@ A second pass by the same assistant is a further source review, not automaticall
 
 ## Immediate executable queue
 
-1. Extend the path audit to Markdown anchors and reference-style links, recording parser limitations and false positives.
+1. Static anchor/reference scanning and sampled rendered markup are recorded; complete full-book/browser/visual navigation and reassess external links for the release revision.
 2. Sections 4.7–4.8 title/scope reconciliation is [recorded](chapter-04-title-scope-reconciliation.md); preserve established TOC titles during further review.
-3. Expand the filename inventory into a claims-to-evidence coverage table.
+3. All215 sections now have substantive claims-to-evidence maps. Execute the [remediation queue](substantive-coverage-index.md), confirming numerical issues and reconciling report/lab scope; keep unresolved manual review obligations open.
 4. Gather the original six fixes into a review packet and document independent numerical findings.
 5. Define the supported environment matrix before calling G6 complete.
 
