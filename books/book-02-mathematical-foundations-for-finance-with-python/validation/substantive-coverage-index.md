@@ -87,3 +87,7 @@ The [gap-remediation register](gap-remediation-register.md) consolidates seven s
 ## Compression/report follow-up — 2026-10-29
 
 Section 14.9 now computes loss from the actual compression matrices and checks its spectral bound across selected diagonal cases, with input/unit metadata. [Evidence](chapter-14-compression-bound-followup.md): 21 chapter files compiled and 11 scripts passed. This change is subsequent to the recorded full-book refresh; COV-69 retains independent-review and broader-scope obligations.
+
+## Candidate acceptance follow-up — 2026-10-29
+
+Section 16.9 now records and evaluates every iterative candidate's training/holdout metrics and recomputed normalized loss/gradient. [Evidence](chapter-16-candidate-acceptance-followup.md): 20 files compiled and 10 scripts passed, including selected negative acceptance cases. COV-74 is partially addressed; the [register](gap-remediation-register.md) now tracks eight selected partial categories. Next selected numerical-contract review: Section 20.5 extreme error reporting (COV-87).
