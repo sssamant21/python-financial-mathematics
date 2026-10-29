@@ -44,3 +44,7 @@ For 10.10 integrated Tasks 1–2, the engine constructs components using shared 
 | COV-57 | Project audit contract and full report coverage are partial: metadata, signed/zero-horizon cases, per-scenario tails, maximum discrepancy and deterministic JSON are not all demonstrated. | Reconcile promised report schema with implementation; assert meaningful contract fields and missing required boundary cases. Treat explanatory exercises and proof obligations as manual review items. |
 
 These categories extend COV-01–COV-54, not a count of confirmed implementation defects. Existing exact-input, units/proof, shared-oracle, report-schema and duplicate-implementation categories also apply. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-55 quadrature follow-up
+
+The [quadrature order record](chapter-10-quadrature-order-followup.md) adds exact signed polynomial error identities, fine-estimator and grid-sequence checks, plus selected exponential order/estimator ratios. Three faulty estimator variants were detected. All 21 chapter sources compiled and 11 scripts passed; algorithm unchanged. Broader report/error, financial-oracle and independent-review obligations remain open.
