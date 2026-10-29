@@ -46,3 +46,7 @@ The eigen helper allows small asymmetry relative to max(1,magnitude) and average
 | COV-69 | Some applied requirements are absent: covariance eigenpairs in project, compression exposure bound, complete report assumptions and additional final problems. | Reconcile project/assessment scope and record manual economic/unit proof review; assert selected missing computations where needed. |
 
 These extend COV-01–COV-66 and overlap prior report/exact-input/shared-oracle categories. No Python or manuscript changes and no runtime execution for this map. Independent review and canonical approval remain pending.
+
+## Subsequent COV-69 remediation — 2026-10-29
+
+The [covariance eigenpair follow-up](chapter-14-covariance-eigenpair-followup.md) adds the promised fixed-covariance eigenpairs to Section 14.9's report and acceptance table. Closed-form eigenvalues, sign-independent projectors, directly recomputed residuals, orthogonality and reconstruction are asserted; four deliberately corrupted reports were detected. All 21 chapter files compiled and all 11 scripts passed. COV-69 remains partially open for compression-bound/report-metadata evidence and independent review. Original mapping statements remain historical.
