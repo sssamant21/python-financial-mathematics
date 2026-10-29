@@ -1,6 +1,6 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-10-28  
+**Updated:** 2026-10-29  
 **Overall status:** In progress — full pinned-revision runtime pass complete (444 compiled files; 233 successful script exits); coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Pinned-revision pass complete | 444/444 files compiled at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d` on Python 3.12.14/Linux. [Evidence](pinned-revision-runtime-validation.md). |
-| Automated script execution | Pinned-revision pass complete | 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Evidence](pinned-revision-runtime-validation.md). |
+| Python compilation | Pinned-revision pass complete | 444/444 files compiled at `37aac57a72303a6d4178790f8d172495e2bc0ada` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-29.md). |
+| Automated script execution | Pinned-revision pass complete | 233/233 check/test scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-29.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest remediation — 2026-10-29
+## Latest full runtime refresh — 2026-10-29
+
+All 444 Python files compiled and all 233 check/test scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`. All 467 downloaded Python/JSON blobs matched the pinned tree before and after execution. [Full evidence](runtime-refresh-2026-10-29.md) · [Manifest/outcomes](runtime-refresh-2026-10-29.json). This includes the recent Chapter 12/14/15/19/21 remediations and Section 21.9's 18 integration methods. Coverage gaps, independent review, platform support and approval remain open.
+
+## Earlier covariance remediation — 2026-10-29
 
 Section 14.9 now reports its promised covariance eigenpairs, checked against closed-form roots, spectral projectors and directly recomputed residual/reconstruction/orthogonality results. Four corrupted reports were detected; 21 Chapter 14 files compiled and all 11 scripts passed. [Scoped covariance evidence](chapter-14-covariance-eigenpair-followup.md). COV-69 remains partially open for compression-bound/report-metadata and independent review.
 
@@ -46,7 +50,9 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [Pinned revision runtime validation](pinned-revision-runtime-validation.md): 444/444 Python files compiled and 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`; all 445 source/fixture blobs matched the pinned Git tree.
+- **Latest full run:** [2026-10-29 refresh](runtime-refresh-2026-10-29.md): 444/444 files compiled and 233/233 scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; 467 blobs verified before/after execution.
+
+- **Earlier full run:** [Pinned revision runtime validation](pinned-revision-runtime-validation.md): 444/444 Python files compiled and 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`; all 445 source/fixture blobs matched the pinned Git tree.
 
 - [Initial inventory and failures](initial-runtime-inventory.md): 210/216 scripts passed initially.
 - [Failure fixes and follow-up](runtime-failure-followup.md): 216/216 scripts exited successfully after targeted fixes. Changes published through `deac1e6b9d447322b71cdda751fb04197e497b57`; the local run used the original snapshot plus those changes and did not cover unrelated concurrent branch changes.
@@ -115,6 +121,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-29 | Chapter 2 quadratic cancellation | Fix applied; scoped runtime follow-up passed | 20/20 files compiled; 11/11 scripts passed on recorded baseline plus fix and new regression. Independent review, Decimal range and final-revision validation pending. [Review](chapter-02-quadratic-boundary-review.md) |
 | V-30 | Chapter 1 foundation boundaries | Focused review passed; no implementation change required | 32/32 files compiled; 17/17 scripts passed on recorded snapshot, with aggregate duplication. Five new unittest methods passed. Independent review and final-revision validation pending. [Review](chapter-01-foundation-boundary-review.md) |
 | V-31 | Full pinned-revision runtime validation | Passed on Python 3.12.14/Linux | 444/444 files compiled; 233/233 scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`. Independent review, supported platforms and final release reruns remain open. [Evidence](pinned-revision-runtime-validation.md) |
+| V-32 | Full runtime refresh after gap remediation | Passed on Python 3.12.14/Linux | 444/444 files compiled, 233/233 script exits zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; independent review and release gates remain open. [Evidence](runtime-refresh-2026-10-29.md) |
 | V-09 | Independent review and final release | Open; review requirements documented | Eight gates and reviewer evidence requirements recorded in the [remaining review checklist](remaining-review-checklist.md). Reviewers are unassigned; no sign-off or canonical decision recorded. |
 
 ## Next actions
