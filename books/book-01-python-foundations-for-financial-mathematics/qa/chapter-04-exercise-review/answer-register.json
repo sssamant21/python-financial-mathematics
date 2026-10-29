@@ -1,0 +1,146 @@
+{
+  "baseline": "3e185649bf53f5a72ad9e1869d17762110444a26",
+  "prompt_source_sha256": "441b57866826383d56a97b4dd05473018bdb53667cf9fed3140117786e0d18d5",
+  "records": [
+    {
+      "exercise": 1,
+      "title": "Select a Representation",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "05083a360344f2fbb4d4f5979de75f28e15359c9a16711bc05a7a6967841a989",
+      "answer": "List of identified event records preserves repeated dates; dictionary keyed by unique security ID supports catalog lookup; frozenset of exact labels supports immutable membership; tuple of validated scalar pairs captures an immutable holdings baseline. None establishes completeness, prices or financial valuation."
+    },
+    {
+      "exercise": 2,
+      "title": "Mutation and Rebinding",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "9163992348a67a4f99d8a8affdf216d5134a98beeb04c3878e559d54c797d6cc",
+      "answer": "original and other first alias the same list/dictionary. Mutation through other sets the shared quantity to2; rebinding other=[] leaves original with its changed record. The executed ownership demonstration matches those states."
+    },
+    {
+      "exercise": 3,
+      "title": "Tuple Descendants",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "5adddc97a0aa696c35a58d83a45e77055b76c7257f203647768574fc841057da",
+      "answer": "A tuple can contain a mutable dictionary; changing its descendant is allowed. A tuple of (exact string ID, exact finite Decimal quantity) pairs has no mutable supported descendants. Validation must enforce the shape; annotations alone cannot freeze a list."
+    },
+    {
+      "exercise": 4,
+      "title": "Duplicate-Key Loss",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "164db9e0f4c1baaad854ca804275f1646672e550ed1007049f88e0073cf06115",
+      "answer": "A/1,A/2,B/0 becomes {A:2,B:0} by last-key overwrite, and ID membership {A,B}. The first quantity, multiplicity and order information are lost; no lot quantities are summed or tax-lot identity retained."
+    },
+    {
+      "exercise": 5,
+      "title": "Missing, Zero, and Empty",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "454653420c3be00238a6eaa3eff577bfe8f428a4a4164beebb3f3f968646f39f",
+      "answer": "Zero quantity is a known valid position, missing quantity violates schema, empty holdings is valid but says nothing about completeness. Portfolio/snapshot identity belongs to the surrounding wrapper even when holdings is empty."
+    },
+    {
+      "exercise": 6,
+      "title": "Identity Scope",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "71d67e2575f3591a65e8aa28e7c6cd0b9666cbd61994a29fff109fb451ab742c",
+      "answer": "Aggregate position key: (portfolio_id,security_id). Lots need a separately declared unique key such as (portfolio_id,account_id,lot_id), retaining security_id as a reference. Payment date alone cannot identify two same-day events."
+    },
+    {
+      "exercise": 7,
+      "title": "Immutable Capture",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "0fb31a5e4ba65e233cfd409b7720dcb6fac9ad842a9cffeed56f20c51c7ffcdb",
+      "answer": "Exact source capture validates all rows, IDs, quantities and duplicates before returning ordered immutable pairs. Fixture starts SEC-B/0 then SEC-A/12.5,SEC-C/3. Empty gives(); duplicate and invalid later rows reject. Retained scalar tuples do not change after source dictionaries change."
+    },
+    {
+      "exercise": 8,
+      "title": "Active Records",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "414f14a11a00d1c838efe88dff12b173f38067a4dc61629d498d50754db9d55f",
+      "answer": "active_rows validates through complete capture then selects positive quantities in source order: SEC-A then SEC-C. Empty gives[]. Fresh returned dictionaries are independently mutable. Invalid final rows still reject, even when they would not be selected."
+    },
+    {
+      "exercise": 9,
+      "title": "Lookup View",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "d4bee5a1740cccf6e8c5550ed440d236b0ea0439ccb5e85e2878245d33620ce3",
+      "answer": "quantity_lookup includes all validated IDs, including SEC-B Decimal0. Empty gives{}. Editing it cannot update a retained capture or source. Duplicate IDs reject rather than silently overwrite."
+    },
+    {
+      "exercise": 10,
+      "title": "Deterministic ID Report",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "16836eb621ab400211603b99f9cd5f817dede6492bda6592256571ebe9f527b6",
+      "answer": "id_report returns fresh records sorted SEC-A,SEC-B,SEC-C. Reversing input changes captured source order but not the sorted report. Empty gives[]; invalid/duplicate later records reject before sorting."
+    },
+    {
+      "exercise": 11,
+      "title": "Membership Reconciliation",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "36e2a060449a4f2fe604ced01726b35a58a593e090b0a4c784b1193282825ee6",
+      "answer": "compare_ids validates exact unpadded strings, allows repeats, compares membership and sorts differences. [A,B,B] versus[B,C] gives missing[A],unexpected[C]. It does not verify quantities, record multiplicity or lot identity; existing reference tests include empty and wrong inputs."
+    },
+    {
+      "exercise": 12,
+      "title": "Inclusive Subset",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "37876bcab00f0861b8488f78d6867d1819cc0551b6475927e232eb3b0c6cafdd",
+      "answer": "at_least validates an exact finite nonnegative Decimal threshold and all holdings, then applies>=. Threshold3 selects SEC-A/12.5 and SEC-C/3; zero retains all;13 selects none. Fresh records preserve ownership. Cross-instrument quantity comparison needs caller justification and is not economic exposure ranking."
+    },
+    {
+      "exercise": 13,
+      "title": "Preserve Same-Day Events",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "d8438d94d1442158afb4542496b43ab80aacc92718c9f6ed45a85df22ea04751",
+      "answer": "group_events validates unique event IDs across all dates, exact date excluding datetime, and exact finite signed Decimal amounts. It groups into date-ascending/event-ID-ascending lists without collapsing same-day events. Independent fixtures preserve negative and zero amounts; empty returns{}; duplicate IDs across dates and datetime reject. Output event dictionaries are fresh."
+    },
+    {
+      "exercise": 14,
+      "title": "Calendar and Model Time",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "f77721ad7f4f293ebcc6723da1c7101d6fa4c4b2aff60bc6e9b214eb48c88bb5",
+      "answer": "Ordinal period1 needs a unit/origin; date lacks intraday settlement time;30-day increments do not implement contractual calendar months. Discounting additionally needs valuation/payment basis, currency/sign perspective, day-count/year fractions, rate curve and compounding conventions, and source/calendar versions. No discounting is implemented here."
+    },
+    {
+      "exercise": 15,
+      "title": "Do Not Hide Unknown Data",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "ec68ab608b5abf5192cbcd3c9ac7d54c31496efb3f1215bff1b27bcb75f16afb",
+      "answer": "Replacing missing with0 changes unknown into known; one amount per date overwrites event multiplicity independently. Retain identified records or date-to-event-list views; reject missing required fields or quarantine with explicit reasons, preserving source identity. Any derived net view must retain audit lineage."
+    },
+    {
+      "exercise": 16,
+      "title": "Independent Views",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "76311b88160e3add531efb99b46526abcf292ab6bcf7a54882d5359a229f73fc",
+      "answer": "views returns immutable ordered snapshot, fresh lookup and immutable membership. Source and lookup edits do not change retained snapshot/membership. Rebuild all three from the corrected source and associate them with its new snapshot identity rather than mixing versions."
+    },
+    {
+      "exercise": 17,
+      "title": "Extend the Manager with Lookup",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "8a5741cf8f06dfa872eb80ad696c6be680cf3ae69a2148ebd44fb0b4b42ee811",
+      "answer": "find_holding validates the whole catalog and portfolio, then the requested text. It returns a fresh record including stored zero; catalog-known but unheld or unknown IDs raise ValueError. An independently injected unused invalid catalog row rejects before an otherwise valid lookup can return."
+    },
+    {
+      "exercise": 18,
+      "title": "Scenario Sequence",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "e5dbacad2e0729d13df0346316da656a072e3bad24bfddd3a472727a6349d924",
+      "answer": "Exact project operations add SEC-C/3 atS1, replace SEC-A absolutely with20 atS2, then remove SEC-B atS3. Final source/report ID order SEC-A,SEC-C, quantities20/3. S0 stays SEC-B/0 then SEC-A/12.5. Replace is assignment of absolute position, not trade-delta arithmetic."
+    },
+    {
+      "exercise": 19,
+      "title": "Rejection Matrix",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "647c0c98cd3581ec161b6c0ad3a935056b4e1dbea3f06fdf3dc77d01512789f2",
+      "answer": "Exact companion test_19_rejection_matrix exercises duplicate add, unheld replace, repeated immediate label, bool quantity, invalid unused catalog currency and hidden unknown zero holdings. Each expected exception preserves the tested baseline. The combined suite passes; local immediate-label rejection does not ensure global uniqueness or concurrent transaction safety."
+    },
+    {
+      "exercise": 20,
+      "title": "Design Review",
+      "status": "REVIEWED_SCOPED",
+      "prompt_sha256": "bace008fefc199ff3e6a98ebf636f8736f3151b8fcf98546ba53fbd057e3bb0d",
+      "answer": "Production extension review: define account/tax-lot identity and quantity/price/multiplier/FX units; bind observation/catalog versions; reject or quarantine unresolved references with reasons; preserve owned source snapshots. Persist global revision uniqueness and optimistic concurrency checks, atomic commit semantics and durable history/access/backup recovery. Reproduction needs source/code/model/policy versions and numeric context. Passing synthetic local tests establishes selected representation/ownership contracts, not production accounting, valuation completeness or live concurrency reliability."
+    }
+  ]
+}
