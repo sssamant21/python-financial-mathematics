@@ -78,3 +78,5 @@ Book 1 V05/V06: [Execution mapping and uncovered workflow results](books/book-01
 Book 1 V05/V06 follow-up: [Chapters 1–3 uncovered examples](books/book-01-python-foundations-for-financial-mathematics/qa/early-examples-2026-10-28/README.md) — 98 workflow cases passed; all 430 early gaps classified; 169 later fences remain without exact execution mapping.
 
 Book 1 mapping checkpoint: [All 1,160 Python fences accounted for](books/book-01-python-foundations-for-financial-mathematics/qa/later-examples-2026-10-28/README.md); 192 supplemental workflow cases passed across three batches. Lab-step/answer and broader acceptance reviews remain in progress.
+
+Book 1 V06: [Chapter 1 core answer and project review](books/book-01-python-foundations-for-financial-mathematics/qa/chapter-01-lab-answer-review/README.md) — 48 core answers and 23 checklist items reviewed within scope; 40 controlled cases passed; remaining Chapter 1 work is tracked explicitly.

@@ -1,0 +1,29 @@
+# Book 1 — Lab-Step and Worked-Answer Review Tracker
+
+**Status: IN PROGRESS.** A runtime/code-fence mapping does not complete a prose lab or independently verify every answer. Keep exercise counts, checklist items, execution cases and heading candidates separate. No completion percentage is asserted.
+
+| Chapter | Formal V06 review status | Evidence / next work |
+|---|---|---|
+| 01 | IN PROGRESS — core Exercises 1–48 and 23 project-checklist items reviewed (scoped); 40 controlled executions passed | [Evidence](chapter-01-lab-answer-review/README.md). Next: 40 short section exercises (1.6–1.10), three integrated challenges and remaining environment/reflection/step review. |
+| 02 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 03 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 04 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 05 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 06 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 07 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 08 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 09 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 10 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 11 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 12 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 13 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 14 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 15 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 16 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 17 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 18 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 19 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 20 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+| 21 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
+
+The initial 449 lab/exercise heading candidates are a discovery queue, not a count of complete labs. Preserve per-item source hashes, prerequisites, contracts, expected/actual outputs, derivation method, findings and remaining scope. Independent reviewer/model/copyright and final acceptance decisions remain separate.

@@ -1,5 +1,7 @@
 # Book 1 — Later-example validation and completed source-fence mapping
 
+**Current revision follow-up:** [Chapter 1 lab/answer review](../chapter-01-lab-answer-review/README.md) corrected worked-answer prose and one input-display snippet, revalidated that snippet and updated the [current payload ledger](../chapter-01-lab-answer-review/current-coverage-ledger.json). This report retains its recorded source snapshot.
+
 **Status:** Source-fence selection/disposition mapping complete; **V05/V06 remain IN PROGRESS**. Reviewer/owner: Codex. Recorded 2026-10-28. Source revision: `ad21fb037bae4cc40d334c493704c99232b8e7c8`. No chapter manuscript or Python payload was changed.
 
 ## Final mapping checkpoint
