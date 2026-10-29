@@ -1,5 +1,6 @@
 """Independent reference checks for Section 11.6."""
 import math
+from fractions import Fraction
 from section_11_06 import Vector,finite,projection,assessment
 
 def close(a,b):
@@ -12,7 +13,41 @@ def rejects(exc,fn,*args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def check_independent_projection():
+    labels=("A","B","C")
+    for values,direction in (((3,4,-2),(1,2,0)),((0,0,0),(1,2,3)),
+                             ((2,-1,0),(1,2,0)),((-3,-4,2),(1,2,0))):
+        x=Vector(labels,values,"USD")
+        for scale in (1,2,-2,1e150,1e-150):
+            d=tuple(scale*z for z in direction)
+            # Exact represented-float rational dot/denominator oracle.
+            fx=tuple(Fraction.from_float(float(z)) for z in values)
+            fd=tuple(Fraction.from_float(float(z)) for z in d)
+            coefficient=sum(a*b for a,b in zip(fx,fd))/sum(z*z for z in fd)
+            expected=tuple(float(coefficient*z) for z in fd)
+            vector=Vector(("C","A","B"),(d[2],d[0],d[1]),"dimensionless")
+            result=projection(x,vector)
+            actual=result["projection"]
+            residual=result["residual"]
+            assert actual.labels==residual.labels==labels
+            assert actual.unit==residual.unit=="USD"
+            assert actual.axis==residual.axis=="asset"
+            assert math.isclose(result["coefficient"],float(coefficient),rel_tol=1e-12,abs_tol=0)
+            close(result["scalar_projection"],float(coefficient)*math.hypot(*d))
+            for a,b in zip(actual.values,expected):close(a,b)
+            for a,b,c in zip(values,actual.values,residual.values):close(a,b+c)
+            # Independent orthogonality with the unscaled direction.
+            close(sum(a*b for a,b in zip(residual.values,direction)),0)
+            close(sum(z*z for z in values),
+                  sum(z*z for z in actual.values)+sum(z*z for z in residual.values))
+    report=assessment()
+    close(report["projection_coefficient_USD"],75)
+    close(report["signed_scalar_projection_USD"],150/math.sqrt(2))
+    close(report["residual_norm_USD"],math.sqrt(1650))
+    close(report["relative_residual_norm"],math.sqrt(1650/12900))
+
 def run():
+    check_independent_projection()
     x=Vector(("X","Y"),(3,4),"USD")
     horizontal=Vector(("Y","X"),(0,1),"dimensionless")
     result=projection(x,horizontal)
