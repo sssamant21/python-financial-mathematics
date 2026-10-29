@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped ridge optimality follow-up
+## Latest scoped project-contract follow-up
+
+Section 13.9 now has direct selected invalid-input and report/serialization checks. All 24 Chapter 13 files compiled and 14 scripts passed. [Evidence](chapter-13-project-contract-followup.md). COV-66 partially open; implementation unchanged and follows V-34.
+
+## Earlier scoped ridge optimality follow-up
 
 Section 13.8 now has exact rational objective and nonoptimal-comparison checks plus a selected positive-strength limit sequence. All 23 Chapter 13 files compiled and 13 scripts passed. [Evidence](chapter-13-ridge-optimality-followup.md). COV-65 partially open; implementation unchanged and this follows V-34.
 
@@ -249,3 +253,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Selected fixed-model ridge follow-up — 2026-10-29
 
 [Exact-objective evidence](chapter-13-ridge-optimality-followup.md) partially addresses COV-65: four positive ridge strengths, twelve nonoptimal objective comparisons and a six-point limit sequence. All 23 Chapter 13 files compiled and 13 scripts passed. The helper remains a fixed two-identical-column model with positive strength required. Broader weighted/regularized, scaling and independent-review obligations remain open; this scoped run follows the third full-book refresh.
+
+## Selected project-contract follow-up — 2026-10-29
+
+[Section 13.9 evidence](chapter-13-project-contract-followup.md) partially addresses COV-66 with direct nonfinite/bool, scale/limit, label/shape/unit-metadata rejection and selected report/strict-JSON checks. All 24 Chapter 13 files compiled and 14 scripts passed. Economic unit consistency, complete retained inputs/provenance, broader ranges and independent review remain open. This scoped run follows the third full-book refresh.
