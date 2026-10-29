@@ -25,24 +25,24 @@ def validated_step(x, step):
 
 def forward_difference(function, x, step):
     x, h = validated_step(x, step)
-    return (finite(function(x+h), "f(x+h)")-finite(function(x), "f(x)"))/h
+    return finite((finite(function(x+h), "f(x+h)")-finite(function(x), "f(x)"))/h, "forward estimate")
 
 def backward_difference(function, x, step):
     x, h = validated_step(x, step)
-    return (finite(function(x), "f(x)")-finite(function(x-h), "f(x-h)"))/h
+    return finite((finite(function(x), "f(x)")-finite(function(x-h), "f(x-h)"))/h, "backward estimate")
 
 def centered_difference(function, x, step):
     x, h = validated_step(x, step)
     if not math.isfinite(2*h):
         raise ValueError("central-difference denominator must be finite")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    return finite((finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h), "centered estimate")
 
 def second_difference(function, x, step):
     x, h = validated_step(x, step)
     if h*h==0 or not math.isfinite(h*h):
         raise ValueError("squared step must be finite and nonzero")
-    return (finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
-            +finite(function(x-h), "f(x-h)"))/(h*h)
+    return finite((finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
+            +finite(function(x-h), "f(x-h)"))/(h*h), "second derivative estimate")
 
 def suggested_step(x, derivative_order=1, scale=None):
     x = finite(x, "x")
@@ -60,7 +60,7 @@ def richardson_first(function, x, step):
     x, h = validated_step(x, step)
     coarse = centered_difference(function, x, h)
     fine = centered_difference(function, x, h/2)
-    return (4*fine-coarse)/3
+    return finite(fine+(fine-coarse)/3, "Richardson estimate")
 
 def discounted_price(cash_flow, years, rate):
     c, t, r = finite(cash_flow, "cash_flow"), finite(years, "years"), finite(rate, "rate")
