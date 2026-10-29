@@ -135,6 +135,7 @@ def evaluate(system,target,tolerances,condition_limit=1000.0,pivot_tolerance=1e-
             "achieved":dict(zip(system.factors,achieved)),
             "residual_target_minus_actual":dict(zip(system.factors,residual)),
             "factor_pass":factor_pass,
+            "factor_tolerances":dict(zip(system.factors,allowed.values)),
             "condition_number_inf":condition,"condition_limit":limit,
             "residual_inf":norm_r,"normwise_backward_error_inf":backward,
             "gross_position":finite(math.fsum(abs(v) for v in x),"gross position"),
