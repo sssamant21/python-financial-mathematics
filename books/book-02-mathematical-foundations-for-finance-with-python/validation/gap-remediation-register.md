@@ -112,3 +112,7 @@ The [third full refresh](runtime-refresh-2026-10-29-r3.md) includes all prior Ch
 ## Selected restricted-SVD ordering follow-up — 2026-10-29
 
 [Section 14.6 evidence](chapter-14-svd-order-followup.md) partially addresses COV-67 with twelve reconstruction, direction-orthonormality, sorted-summary and thresholded-solve cases. Factor-order directions must be paired with original magnitudes, not blindly zipped with the sorted summary. All 24 Chapter 14 files compiled and 14 scripts passed. Reference-report/integration and independent-review scope remains open. This scoped run follows V-34; twenty-five selected categories remain partially addressed.
+
+## Full execution reconciliation — fourth refresh
+
+[V-35 evidence](runtime-refresh-2026-10-29-r4.md) covers all eight subsequent Chapter 13/14 checkers at `3e185649bf53f5a72ad9e1869d17762110444a26`: 452 files compiled, 241 scripts passed and 453 source/fixture blobs verified before/after. Earlier scoped-only wording is historical. Twenty-five categories remain partially addressed; independent review and approval remain pending. Next executable investigation: COV-68 Section 14.1 unequal-spectrum small-eigenvalue cancellation, using an exact/high-precision reference before any correction.
