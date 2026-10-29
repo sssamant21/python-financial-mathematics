@@ -61,6 +61,12 @@ class Vector:
         lookup=dict(zip(self.labels,self.values))
         return Vector(target,tuple(lookup[x] for x in target),self.unit)
 
+def column_scaled(rows):
+    """Normalize each nonzero column by its maximum absolute entry."""
+    scales=tuple(max(abs(row[j]) for row in rows) for j in range(len(rows[0])))
+    return tuple(tuple(value/scale if scale else 0.0
+                       for value,scale in zip(row,scales)) for row in rows)
+
 def echelon_rank(rows,absolute_threshold):
     a=[list(row) for row in rows]
     m=len(a)
@@ -91,10 +97,9 @@ def classify(matrix,target,relative_tolerance=1e-12):
         raise ValueError("relative tolerance must be between zero and one")
     b=target.align(matrix.equation_labels)
     augmented=tuple(row+(b.values[i],) for i,row in enumerate(matrix.rows))
-    scale=max(abs(v) for row in augmented for v in row)
-    threshold=tol*scale
-    rank_a=echelon_rank(matrix.rows,threshold)
-    rank_aug=echelon_rank(augmented,threshold)
+    # A's normalized columns are identical in both arrays, independent of b.
+    rank_a=echelon_rank(column_scaled(matrix.rows),tol)
+    rank_aug=echelon_rank(column_scaled(augmented),tol)
     n=len(matrix.unknown_labels)
     if rank_a<rank_aug:
         status="no_solution"
@@ -108,6 +113,7 @@ def classify(matrix,target,relative_tolerance=1e-12):
     return {"rank_A":rank_a,"rank_augmented":rank_aug,"unknown_count":n,
             "free_variables":free,"classification":status,
             "relative_tolerance":tol,
+            "rank_scaling":"nonzero columns normalized by maximum absolute entry",
             "numerical_rank_warning":"Tolerance-dependent estimate; not an SVD rank certification",
             "runtime_certified":False}
 
