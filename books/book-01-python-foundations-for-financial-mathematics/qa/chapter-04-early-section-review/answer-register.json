@@ -1,0 +1,248 @@
+{
+  "baseline": "9c65d890d0549f9b38fe0393a8af04bf27a86a48",
+  "records": [
+    {
+      "id": "4.1-E1",
+      "prompt": "Add a source_record_id field to a proposed schema and explain its identity scope before changing code.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Proposed source_record_id is a nonempty exact identifier scoped by source_system and source_dataset/version; document whether it names a raw observation or a corrected logical event. A correction needs explicit revision/lineage, not silent overwrite. Adding it requires coordinated schema, validator, fixture, copy/report and test changes. The existing strict five-field validator is not silently extended."
+    },
+    {
+      "id": "4.1-E2",
+      "prompt": "Explain why zero amount and missing amount must remain distinct.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Zero is a known signed-currency amount; missing is unavailable/absent and violates the required amount field. Do not default missing to zero. Empty collections require their own completeness statement."
+    },
+    {
+      "id": "4.1-E3",
+      "prompt": "Give two valid records with equal dates and amounts but different identifiers.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The executed pair copies the valid payment fixture, changes only payment_id, and validates both. Equal dates/amounts do not establish event identity or duplication."
+    },
+    {
+      "id": "4.1-E4",
+      "prompt": "Propose a collection-wide duplicate rule, including how corrections would be handled.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Proposed collection rule: unique (source_system,source_record_id,revision) with explicit policy for active logical-event revisions. Reject conflicting duplicates; retain correction linkage and audit history. This is a design, not implemented collection/concurrency validation."
+    },
+    {
+      "id": "4.1-E5",
+      "prompt": "Explain why a date-only payment record cannot establish an intraday ordering.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "A date identifies a calendar day, not intraday ordering, timezone, cut-off or settlement instant. Add explicit timestamp/timezone/source sequence under a reviewed contract if those distinctions matter."
+    },
+    {
+      "id": "4.1-E6",
+      "prompt": "Add a test rejecting an infinite amount.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The exact source validate_payment rejects Decimal Infinity with ValueError. The observed exception is retained; no arithmetic is attempted."
+    },
+    {
+      "id": "4.1-E7",
+      "prompt": "Describe how a nested list field would change the current shallow-copy reasoning.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "A nested list would remain shared by a shallow dictionary copy. Validate/reconstruct owned nested contents or choose a documented deep-copy/frozen representation; preserve immutable-scalar assumptions only for the current schema."
+    },
+    {
+      "id": "4.1-E8",
+      "prompt": "Explain why a signed payment cannot be passed unchanged into a nonnegative-only valuation function.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "A signed payment may be negative from the investor perspective; a nonnegative-only valuation API rejects that domain. Choose an explicitly signed valuation or a documented sign/magnitude adapter without changing cash-flow direction silently."
+    },
+    {
+      "id": "4.1-E9",
+      "prompt": "Identify information needed before combining records with different currency labels.",
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Before combining currencies require compatible sign/time semantics, currency/amount scale, chosen base currency, rate convention, FX source/version/as-of basis, rounding stage and completeness policy. Do not sum unlike currency amounts merely because Decimal addition is possible."
+    },
+    {
+      "id": "4.2-E1",
+      "prompt": "Create a list with a period-0 outflow and four later receipts. Explain its index-to-period mapping.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The executed list[-1000,100,150,200,300] maps index0 to initial outflow and1\u20134 to later receipts under declared equal model-period units. Index alone does not define annual/monthly timing."
+    },
+    {
+      "id": "4.2-E2",
+      "prompt": "Retrieve the first two future receipts with a slice and state which stop boundary is excluded.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Slice[1:3] returns100,150: indices1 and2 are included, stop3 excluded. These are the first two future observations in the stated receipt fixture."
+    },
+    {
+      "id": "4.2-E3",
+      "prompt": "Demonstrate the shape difference between append([x, y]) and extend([x, y]).",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "append([x,y]) adds one nested-list element, while extend([x,y]) adds two elements. The executed shapes are[[1,2]] versus[1,2]; choose the intended schema deliberately."
+    },
+    {
+      "id": "4.2-E4",
+      "prompt": "Explain why remove(Decimal(\"100\")) cannot identify a particular payment among equal amounts.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "remove(Decimal(100)) removes the first equal amount, not an identified payment. Equal amounts can belong to different events/dates; use explicit event identity before removal."
+    },
+    {
+      "id": "4.2-E5",
+      "prompt": "Add a test for pop on an empty list.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "pop on[] raises IndexError. An application must explicitly choose whether empty is normal absence or an invalid operation rather than invent a payment."
+    },
+    {
+      "id": "4.2-E6",
+      "prompt": "Show that aliasing and a shallow copy behave differently when an item is appended.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "An alias points to the same list, so append changes both names. A shallow copy has an independent outer list and does not receive later appends to the original; scalar inputs remain immutable."
+    },
+    {
+      "id": "4.2-E7",
+      "prompt": "Explain why a shallow copy of records still shares nested dictionaries.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "A shallow copy of record lists retains dictionary identities. Editing a copied record changes the original dictionary; fresh validated record reconstruction is needed for independent mutable views."
+    },
+    {
+      "id": "4.2-E8",
+      "prompt": "Write a selection function that returns original index/amount pairs so period information is preserved.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The supplemental indexed_positive validates an entire list of exact finite Decimal amounts before returning enumerate-derived original(index,amount) pairs. The separate[-1000,100,0,200,300] fixture returns(1,100),(3,200),(4,300). Empty gives[]; wrong/nonfinite later inputs reject. No periods are invented or renumbered."
+    },
+    {
+      "id": "4.2-E9",
+      "prompt": "Explain why filtering positive amounts and renumbering them from zero would misrepresent a valuation timeline.",
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Filtering and restarting indices at0 shifts future receipts to earlier/incorrect periods and changes any later discount exponents. Preserve original indices or explicit dated event records and their time-unit metadata."
+    },
+    {
+      "id": "4.3-E1",
+      "prompt": "Construct empty and single-amount tuples and explain the comma requirement.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Empty tuple is(); singleton is(Decimal(1),). The comma creates the singleton tuple; parentheses alone group an expression."
+    },
+    {
+      "id": "4.3-E2",
+      "prompt": "Unpack a (period, amount) pair and state the period's meaning.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Unpacking(3,Decimal(200)) binds period3 and amount200. Declare period0 origin and the period unit separately; this pair is not automatically dated or annual."
+    },
+    {
+      "id": "4.3-E3",
+      "prompt": "Demonstrate a wrong-length unpacking failure in a temporary example.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The temporary three-value unpack into two names raises ValueError. The fixture is isolated and does not change canonical source."
+    },
+    {
+      "id": "4.3-E4",
+      "prompt": "Explain why replacing a tuple variable differs from replacing one of its items.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Rebinding a tuple variable selects another object; assigning one of its items raises TypeError. Neither operation proves arbitrary descendants are immutable."
+    },
+    {
+      "id": "4.3-E5",
+      "prompt": "Add a valid period-1000 case to the lab.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The exact source positive_period_flows accepts(1000,Decimal(1)) and preserves it, confirming the supported upper boundary with a positive receipt."
+    },
+    {
+      "id": "4.3-E6",
+      "prompt": "Explain why duplicate period/amount pairs need an identity policy before removal.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "Equal period/amount pairs can represent distinct legitimate payments. Define an event key, identity scope and duplicate/correction policy before removal; value equality alone is insufficient."
+    },
+    {
+      "id": "4.3-E7",
+      "prompt": "Compare a tuple of Decimal values with a tuple containing a mutable dictionary.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "A tuple of Decimal scalars has immutable supported descendants; a tuple containing a dictionary permits dictionary mutation. The executed example changes the dictionary quantity while scalar tuple remains unchanged."
+    },
+    {
+      "id": "4.3-E8",
+      "prompt": "Propose a named record when a two-field tuple expands to six fields.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "When two fields expand to six, propose a named frozen dataclass or NamedTuple with documented field meanings and runtime validation. Frozen wrappers do not recursively freeze arbitrary mutable descendants; use validated immutable field types."
+    },
+    {
+      "id": "4.3-E9",
+      "prompt": "Explain how period-preserving selection improves on amount-only filtering.",
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-early-section-review/README.md",
+      "answer": "The exact source period-preserving selector retains(2,100),(5,200) from an initial outflow and later receipts. Amount-only selection discards where those payments occur, preventing justified time-value calculations without recovering metadata."
+    }
+  ]
+}

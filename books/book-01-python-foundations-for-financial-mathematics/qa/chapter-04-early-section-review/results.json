@@ -1,0 +1,182 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 27,
+  "predicates": 22,
+  "passed": 22,
+  "failed": 0,
+  "source_provenance": [
+    {
+      "source": "chapter-04/4.01-financial-data-as-structured-information.md",
+      "source_sha256": "17d759bfba3e0dd5faf934f32a46d9550ea0616aa4b5a2cb6cc50d717411397b",
+      "code_sha256": "f7f4af5af67efe653bdfa188ea120abed5e59573a950aed1e7fa35e6c32f541b"
+    },
+    {
+      "source": "chapter-04/4.02-lists.md",
+      "source_sha256": "2b7ba2e1607d7881023f877e180fab04128f071d2165bf859f3723d0da0e70d4",
+      "code_sha256": "04387637ca7a6c8c266e4dd97f671e412194942d55ea17445edb154d76835a7d"
+    },
+    {
+      "source": "chapter-04/4.03-tuples.md",
+      "source_sha256": "a18fcef70abf0b2ee838980cdc984213a588be5fff25dafc74d091772eccf628",
+      "code_sha256": "506e91858dc479023899c67b48356ddda4c9990eaac48ff453a8c1c065ed91f3"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "4.1-E3",
+      "label": "two equal payments distinct IDs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.1-E3",
+      "label": "both valid",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.1-E6",
+      "label": "infinite amount",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E1",
+      "label": "period0 plus four observations",
+      "actual": "5",
+      "expected": "5",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E2",
+      "label": "slice indices1,2",
+      "actual": "[Decimal('100'), Decimal('150')]",
+      "expected": "[Decimal('100'), Decimal('150')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E3",
+      "label": "append versus extend",
+      "actual": "([[Decimal('1'), Decimal('2')]], [Decimal('1'), Decimal('2')])",
+      "expected": "([[Decimal('1'), Decimal('2')]], [Decimal('1'), Decimal('2')])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E4",
+      "label": "remove first equal value",
+      "actual": "[Decimal('100')]",
+      "expected": "[Decimal('100')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E5",
+      "label": "empty pop",
+      "actual": "IndexError",
+      "expected": "IndexError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E6",
+      "label": "alias versus shallow top-level",
+      "actual": "([Decimal('1'), Decimal('2')], [Decimal('1')])",
+      "expected": "([Decimal('1'), Decimal('2')], [Decimal('1')])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E7",
+      "label": "nested record shared",
+      "actual": "[{'amount': Decimal('2')}]",
+      "expected": "[{'amount': Decimal('2')}]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E8",
+      "label": "original period indices",
+      "actual": "[(1, Decimal('100')), (3, Decimal('200')), (4, Decimal('300'))]",
+      "expected": "[(1, Decimal('100')), (3, Decimal('200')), (4, Decimal('300'))]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E8",
+      "label": "empty",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E8",
+      "label": "invalid later entry before selection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E8",
+      "label": "wrong type",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.2-E9",
+      "label": "renumbering changes origin",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E1",
+      "label": "empty and singleton",
+      "actual": "((), (Decimal('1'),))",
+      "expected": "((), (Decimal('1'),))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E2",
+      "label": "explicit period pair",
+      "actual": "(3, Decimal('200'))",
+      "expected": "(3, Decimal('200'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E3",
+      "label": "wrong length unpack",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E4",
+      "label": "tuple item immutable",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E5",
+      "label": "supported upper period",
+      "actual": "[(1000, Decimal('1'))]",
+      "expected": "[(1000, Decimal('1'))]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E7",
+      "label": "tuple descendant mutation",
+      "actual": "((Decimal('1'),), Decimal('2'))",
+      "expected": "((Decimal('1'),), Decimal('2'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.3-E9",
+      "label": "period-preserving source selection",
+      "actual": "[(2, Decimal('100')), (5, Decimal('200'))]",
+      "expected": "[(2, Decimal('100')), (5, Decimal('200'))]",
+      "status": "PASS"
+    }
+  ],
+  "source_revision": "9c65d890d0549f9b38fe0393a8af04bf27a86a48"
+}
