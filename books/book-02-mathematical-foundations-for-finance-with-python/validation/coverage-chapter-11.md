@@ -62,3 +62,7 @@ The [policy audit](chapter-11-policy-audit-followup.md) retains configured limit
 ## Subsequent Section 11.7 budget follow-up
 
 The [budget boundary record](chapter-11-budget-boundary-followup.md) verifies the previously missing isolated budget breach and selected exact/adjacent thresholds. An omitted-budget variant was detected. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. COV-59 retains broader tolerance/policy-scope and independent-review obligations.
+
+## Subsequent final-assessment nonfinite follow-up
+
+The [final nonfinite record](chapter-11-final-nonfinite-followup.md) adds direct final-module constructor/NAV and arithmetic-overflow rejection cases, plus strict JSON serialization. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. The selected missing direct nonfinite assertion gap is addressed; remaining COV-60 exercise/rubric/report/manual-review scope stays open.
