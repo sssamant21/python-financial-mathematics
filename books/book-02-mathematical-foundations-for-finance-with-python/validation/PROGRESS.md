@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up
 
+Section 12.9 now retains aligned factor limits; controlled factor rejection and exact/adjacent limit cases verify reported decisions and residuals. Constructor/unit/shape/guardrail cases pass; 21 Chapter 12 files compiled and 11 scripts passed. [Factor audit evidence](chapter-12-factor-audit-followup.md). COV-62 remains partially open; this follows the full-book run.
+
+## Earlier final-allocation follow-up
+
 Section 17.10 now reports/checks its second-cap multiplier and rejects missing multipliers/nonoptimal candidates. A rounded-cap-sum empty-interval defect is fixed. All 20 Chapter 17 files compiled and 10 scripts passed. [Final allocation evidence](chapter-17-final-allocation-followup.md). COV-78 remains partially open; this follows the full-book run.
 
 ## Earlier financial-range follow-up
@@ -158,7 +162,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates thirteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates fourteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
