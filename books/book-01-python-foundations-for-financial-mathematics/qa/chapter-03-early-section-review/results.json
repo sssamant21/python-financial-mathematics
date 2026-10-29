@@ -1,0 +1,263 @@
+{
+  "source_revision": "7b9ee5df7c2f091b3bf260e185189b5e839de5ec",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 25,
+  "predicates": 33,
+  "passed": 33,
+  "failed": 0,
+  "source_provenance": [
+    {
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "lab_code_sha256": "a57ff2ac6d7e8c59e36cbd73df349f63c8e561776d8a435e8d280a578efa1813",
+      "stdout": "Displayed amount: 1102.50\nComputed future value: 1102.50\nPASS: return-value checks\n"
+    },
+    {
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "lab_code_sha256": "82ef673380e1f81563943a9f1c0831c4c856dda55596c4b38e589ab45e83f16b",
+      "stdout": "No contribution: 1050.00\nEnd contribution: 1150.00\nBeginning contribution: 1155.00\nPASS: default and keyword argument checks\n"
+    },
+    {
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "lab_code_sha256": "6a9b44772411018c81796cdc709421a1c84ae5d4c296a365081809f52981dfaf",
+      "stdout": "3% scenario: 1060.90\n7% scenario: 1144.90\nOriginal principal: 1000.00\nPASS: variable scope and scenario isolation checks\n"
+    }
+  ],
+  "teaching_variant_stdout": "No contribution: 1050.00\nEnd contribution: 1150.00\nBeginning contribution: 1155.00\nPASS: default and keyword argument checks\n",
+  "checks": [
+    {
+      "exercise": "3.4-E1",
+      "label": "print variant returns None",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E1",
+      "label": "printed calculation",
+      "actual": "1102.5000",
+      "expected": "1102.5000",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E2",
+      "label": "signed net cash flow",
+      "actual": "5",
+      "expected": "5",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E2",
+      "label": "signed net cash flow",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E2",
+      "label": "signed net cash flow",
+      "actual": "-5",
+      "expected": "-5",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E3",
+      "label": "text and Decimal types differ",
+      "actual": "('str', 'Decimal')",
+      "expected": "('str', 'Decimal')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E4",
+      "label": "final supplied observation",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E5",
+      "label": "nonfinite before arithmetic",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E5",
+      "label": "nonfinite before arithmetic",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.4-E6",
+      "label": "returned list shares caller state",
+      "actual": "(True, [Decimal('1')])",
+      "expected": "(True, [Decimal('1')])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E1",
+      "label": "omitted/one/zero",
+      "actual": "(Decimal('1050.00'), Decimal('1050.00'), Decimal('1000'))",
+      "expected": "(Decimal('1050'), Decimal('1050'), Decimal('1000'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E2",
+      "label": "keywords in changed order",
+      "actual": "1102.5000",
+      "expected": "1102.50",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E3",
+      "label": "keyword-only required timing",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E4",
+      "label": "all updated lab checks execute",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E4",
+      "label": "required explicit call",
+      "actual": "1050.00",
+      "expected": "1050",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E5",
+      "label": "zero rate timing equivalence",
+      "actual": "(Decimal('1100'), Decimal('1100'))",
+      "expected": "(Decimal('1100'), Decimal('1100'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E6",
+      "label": "unsupported balance/rate",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E6",
+      "label": "unsupported balance/rate",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E6",
+      "label": "unsupported balance/rate",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E7",
+      "label": "explicit empty list retained",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E7",
+      "label": "truthiness replacement breaks ownership",
+      "actual": "(False, 0)",
+      "expected": "(False, 0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.5-E8",
+      "label": "old keyword broken by rename",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E1",
+      "label": "local rebinding versus module",
+      "actual": "(Decimal('11'), Decimal('1000'))",
+      "expected": "(Decimal('11'), Decimal('1000'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E2",
+      "label": "negative scenario order independence",
+      "actual": "{Decimal('0.03'): Decimal('1060.9000'), Decimal('0.07'): Decimal('1144.9000'), Decimal('-0.1'): Decimal('810.00')}",
+      "expected": "{Decimal('-0.1'): Decimal('810.00'), Decimal('0.07'): Decimal('1144.9000'), Decimal('0.03'): Decimal('1060.9000')}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E2",
+      "label": "negative known amount",
+      "actual": "810.00",
+      "expected": "810",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E3",
+      "label": "global read",
+      "actual": "0.05",
+      "expected": "0.05",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E3",
+      "label": "global rebinding explicit",
+      "actual": "0.07",
+      "expected": "0.07",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E4",
+      "label": "empty conditional assignment",
+      "actual": "UnboundLocalError",
+      "expected": "UnboundLocalError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E5",
+      "label": "independent closures",
+      "actual": "(Decimal('1'), Decimal('3'), Decimal('10'), Decimal('3'))",
+      "expected": "(Decimal('1'), Decimal('3'), Decimal('10'), Decimal('3'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E6",
+      "label": "enclosing captured rate survives",
+      "actual": "810.00",
+      "expected": "810",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E7",
+      "label": "explicit rate input",
+      "actual": "1050.00",
+      "expected": "1050",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E8",
+      "label": "local alias mutates caller",
+      "actual": "[Decimal('1')]",
+      "expected": "[Decimal('1')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.6-E9",
+      "label": "explicit inputs do not fix context",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}

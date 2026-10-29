@@ -1,0 +1,230 @@
+{
+  "baseline": "7b9ee5df7c2f091b3bf260e185189b5e839de5ec",
+  "records": [
+    {
+      "id": "3.4-E1",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "Replace `return` in the introductory future-value function with `print`. Predict the caller's result, then verify it.",
+      "prompt_sha256": "9f99496b24b67ac20fdb0a5e25266b8caff7e2bd35f46954a9115648f23a3910",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Replacing the calculation return with print displays1102.5000 for the chosen Decimal inputs and makes the assigned call result None. The review changes only a temporary function AST; canonical source is unchanged."
+    },
+    {
+      "id": "3.4-E2",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "Write `net_cash_flow(inflow, outflow)` and check positive, zero, and negative outcomes.",
+      "prompt_sha256": "cc42d1b81ccec0dc1e1a539ef5804b128b56e3f0eaff9972e68b1d6c499f25b0",
+      "status": "REVIEWED_SCOPED",
+      "answer": "net_cash_flow(inflow,outflow)=inflow-outflow returns signed same-currency flow. Fixtures10\u22125=5,5\u22125=0,5\u221210=\u22125 check all outcomes. Inputs are assumed validated compatible quantities; this teaching helper adds no hidden conversion."
+    },
+    {
+      "id": "3.4-E3",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "Explain why returning `\"1102.50\"` changes the contract compared with returning `Decimal(\"1102.50\")`.",
+      "prompt_sha256": "ea5289ab2f8cf6d29f377d25a8c9e4b1a587666cab69b71e43259ad4fe24b7e0",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A string represents formatted text, not a numeric Decimal amount. Arithmetic consumers and type contracts change, even if displayed characters match. The test records both distinct types."
+    },
+    {
+      "id": "3.4-E4",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "Change the target-period example so that the target is reached only at the final supplied observation.",
+      "prompt_sha256": "62961eb062512f71ec7d8fdb4deefa89685a56b10d2e3ed0190eec792069f2e1",
+      "status": "REVIEWED_SCOPED",
+      "answer": "The source first_target_period applied to [100,110,121] with target121 returns2, the final supplied index. Observations start at period0; None would mean no crossing in this finite list, not never reachable."
+    },
+    {
+      "id": "3.4-E5",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "Add a case containing a non-finite principal and a case containing a non-finite rate. Verify that each is rejected before arithmetic.",
+      "prompt_sha256": "ada57cdd9d7fe8f4de988f961e69b50c03f25941dc5976dadcb3c9dfc54c09b9",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Exact guarded source future_value rejects NaN principal and Infinity rate with ValueError before arithmetic. This augments source assertions; no unrestricted numerical-domain claim is made."
+    },
+    {
+      "id": "3.4-E6",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "Explain why a returned list can still share state with the caller.",
+      "prompt_sha256": "bbc901603ba734200020969c82366580cffb7e4aa64c4ab8453e9b57f4b7cb3d",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A returned list may be the same mutable object held by the caller. Appending through the returned alias changes caller state; returning does not copy an object or promise purity."
+    },
+    {
+      "id": "3.4-E7",
+      "source": "chapter-03/3.04-return-values.md",
+      "source_sha256": "b7657ce585c373c42781812b625dd11ffc263f1bb64794d35a48bd13faae10a7",
+      "prompt": "State the units, valuation time, supported inputs, numerical policy, and failure behavior for a present-value result.",
+      "prompt_sha256": "7979cfcaeb478b3cfe9b1547351b97b22ce940ab29e993abfdbcbedf60dc80b4",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Proposed PV contract: return the period0 equivalent of one period-n amount, same currency, no sign reversal; finite nonnegative Decimal amount, finite effective matching-period rate>-1, integer n0..1000 excluding bool. Validate even at n0. No interim cash flows/fees/tax/inflation/currency conversion. For an ambient-policy version, Decimal context controls arithmetic; no explicit cents quantization. Raise TypeError for unsupported representations, ValueError for domains; Decimal signals can propagate. Production numerical-range and suitability decisions remain separate."
+    },
+    {
+      "id": "3.5-E1",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Call future_value_one_period with omitted periods, explicit 1, and explicit 0. Explain all three outcomes.",
+      "prompt_sha256": "1d8a7a4ce1197af5ab78a12d3a88a96920ffd7a137de1cc02f94dd04ec26de1f",
+      "status": "REVIEWED_SCOPED",
+      "answer": "The exact introductory future_value_one_period definition returns1050 for omitted periods or explicit1 and1000 for explicit0 at principal1000 and rate.05. Omission uses the default; zero does not request that default. The introductory function itself is not the guarded model."
+    },
+    {
+      "id": "3.5-E2",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Rewrite a three-positional-argument future-value call using keywords in a different order.",
+      "prompt_sha256": "bfd550c63609939f7ba419686f48b1fc703eb412cd4a53dcb286263cc9f4a630",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Keyword call future_value(periods=2, periodic_rate=Decimal(\"0.05\"), present_value=Decimal(\"1000\")) returns1102.50. Keyword order does not change binding; names must match the actual signature."
+    },
+    {
+      "id": "3.5-E3",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Explain why a keyword-only parameter may still be required.",
+      "prompt_sha256": "5ca1cb57ee4ba987c2e29d2d74a0c3609fba0038c39a3356c141af3a3cf45460",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A star makes an argument keyword-only, not optional. In the required-timing variant, omitting contribution_timing raises TypeError because its default is removed."
+    },
+    {
+      "id": "3.5-E4",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Modify advance_balance to require contribution_timing explicitly. Update every successful lab call to state its timing.",
+      "prompt_sha256": "504924ae76e8b5e3e51049514761e7a0fbead243152a387cb7da3e1eacd29cb9",
+      "status": "REVIEWED_SCOPED",
+      "answer": "required_timing_variant.py is a generated teaching copy: contribution_timing is required and all calls are updated with explicit timing. Defaults supplied through **options are merged before caller overrides, preserving deliberate invalid-value fixtures. All original lab assertions execute and pass in this variant; canonical code keeps its existing interface."
+    },
+    {
+      "id": "3.5-E5",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Test that end and beginning timing produce the same result when the rate is zero.",
+      "prompt_sha256": "cb978ce66292826b28586672712a1cabe10bdb211ccbadb6b3d70a03f52b1bc1",
+      "status": "REVIEWED_SCOPED",
+      "answer": "At rate0, both (balance+contribution)*(1+rate) and balance*(1+rate)+contribution equal1100 from1000 plus100. Exact source advance_balance verifies both timings."
+    },
+    {
+      "id": "3.5-E6",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Extend the lab to reject a non-finite balance and a rate at or below -1.",
+      "prompt_sha256": "5a5cba59043462aa6c6917da3637179ddf40c09b358b032717247a3fe288cace",
+      "status": "REVIEWED_SCOPED",
+      "answer": "The exact source rejects Infinity balance and rates exactly\u22121/below\u22121 with ValueError. These guards already exist; the requested extension is supplied as additional exercised fixtures, not an unnecessary rewrite."
+    },
+    {
+      "id": "3.5-E7",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Demonstrate why replacing an explicit empty list with a new list changes an ownership contract.",
+      "prompt_sha256": "0e123f7d4a9aba393b4a6b5b9dfea02f0d00d5f1b478434e1e4f39ce5346c0a1",
+      "status": "REVIEWED_SCOPED",
+      "answer": "An explicitly passed empty list expresses caller ownership and must be mutated/returned under the source helper contract. Replacing it through items=items or [] selects a new list because empty is falsy. The counterexample leaves the original list empty and changes identity."
+    },
+    {
+      "id": "3.5-E8",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Explain the compatibility risk of changing a public parameter name used by keyword callers.",
+      "prompt_sha256": "0130170f89fa2a398e2f63509458883ec1de6b4da32923e0269fad8a7f8f0a45",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Renaming a public parameter breaks callers supplying its former keyword, yielding TypeError unless an explicit compatibility policy exists. The teaching probe demonstrates an old principal keyword against a renamed amount parameter."
+    },
+    {
+      "id": "3.5-E9",
+      "source": "chapter-03/3.05-default-and-keyword-arguments.md",
+      "source_sha256": "1e5e0ace6125a7eadec76ae45de4862e9a7a52e9f62470618a83fde21db63cf5",
+      "prompt": "Describe a default you would allow and a financial assumption you would require explicitly. Justify each choice.",
+      "prompt_sha256": "55ecac96fcb6fa651a58096d10e8a80e28fb2e1aad0170ec4b1c32fa74579753",
+      "status": "REVIEWED_SCOPED",
+      "answer": "One defensible educational default is zero contribution when the interface explicitly models an optional top-up; it is not a missing-data repair. Require a rate convention and contribution timing explicitly when ambiguity would change financial meaning. This batch demonstrates a required timing interface; real API choices must document intended users and compatibility."
+    },
+    {
+      "id": "3.6-E1",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Give a local parameter the same name as a module-global principal. Demonstrate that local rebinding leaves the module binding unchanged.",
+      "prompt_sha256": "70f736f4c1ab985d360e1543581ae26b39323b928dd461a6e60216dc8a2e793c",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A parameter named principal shadows the module principal locally. Rebinding it changes the local result while module principal remains1000. This does not generalize to mutation of shared objects."
+    },
+    {
+      "id": "3.6-E2",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Add a negative-return scenario to the lab and verify that reversing evaluation order does not change its result.",
+      "prompt_sha256": "fdaf8ff48ee85354aa5dcdade4d6b186fe61ea61d551561a01053e0215344423",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Add supported\u221210% alongside3%/7%; reversing the evaluation order leaves each rate result unchanged. The\u221210% two-period result is810 from1000, independently hand-checkable as1000*.9*.9."
+    },
+    {
+      "id": "3.6-E3",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Explain why a function can read a global without a global declaration but normally needs that declaration to rebind it.",
+      "prompt_sha256": "ad2cf8148219e3fac2400a60f681bd33738d433190abbbcaa6bb9e8e97da4a8f",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A function may read a module name through normal lookup without global. Assignment creates a local binding unless global declares rebinding of the module name. The probe separately reads and explicitly updates a module rate."
+    },
+    {
+      "id": "3.6-E4",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Demonstrate a conditional assignment that raises UnboundLocalError for an empty input.",
+      "prompt_sha256": "de549042ed030eec2a88dc0f2c8cf627c67d6301ccf066f2bdf2492c301e9c70",
+      "status": "REVIEWED_SCOPED",
+      "answer": "If a conditional assigns answer only when values is nonempty, returning answer for [] raises UnboundLocalError. Initialize a deliberate absence value or reject unsupported empty input according to an explicit contract; do not hide it behind a financial default."
+    },
+    {
+      "id": "3.6-E5",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Build two running-total closures and show that each retains independent state.",
+      "prompt_sha256": "02966421c7569bb6d142951b753a8e0a8cca0bd882f809bddc4eb3e38c82864f",
+      "status": "REVIEWED_SCOPED",
+      "answer": "running_total creates total in each enclosing invocation; its inner add uses nonlocal to update that closure state. Two closures accumulate1\u21923 and10 independently; a later zero addition to the first leaves3."
+    },
+    {
+      "id": "3.6-E6",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Explain why a returned closure can access an enclosing rate after the outer function has returned.",
+      "prompt_sha256": "703f2be57fedf5b31bd2ca3a3398cea3f946906a79a707e2b98b9b52f375e33e",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A returned closure retains access to captured enclosing bindings. The exact source make_projector captures\u221210% and still returns810 after the outer function has returned. Retained state is not necessarily immutable in other closure designs."
+    },
+    {
+      "id": "3.6-E7",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Rewrite a function that reads a global rate to accept an explicit rate parameter.",
+      "prompt_sha256": "a316c5604540a11fb58181f3cddcdbd949953ba1d6c40b6ee0af581298f091fa",
+      "status": "REVIEWED_SCOPED",
+      "answer": "explicit_rate(principal,rate) returns principal*(1+rate), supplying the rate rather than reading a market/global variable. At1000/.05 it returns1050. Its simple probe assumes validated compatible inputs; explicit arguments do not by themselves set numerical context."
+    },
+    {
+      "id": "3.6-E8",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Show that a local reference can mutate a caller-owned list without global or nonlocal.",
+      "prompt_sha256": "7716bbc9ffab0b547bc223359549715b6eb946d09917358451e4e2dbd824360a",
+      "status": "REVIEWED_SCOPED",
+      "answer": "A local list parameter can alias the caller list; append mutates that object without global or nonlocal because it does not rebind the caller name. The observed list becomes[Decimal(1)]."
+    },
+    {
+      "id": "3.6-E9",
+      "source": "chapter-03/3.06-variable-scope.md",
+      "source_sha256": "143694c552ae508199b35e2e5ecb7737dadb4d251101cc37e32aa9172934e6fb",
+      "prompt": "Explain why explicit inputs alone do not establish numerical reproducibility.",
+      "prompt_sha256": "2f41ba72c99c21f701c26a43b24fbd5fc67ba4c805303aa4869bfa7dd6240257",
+      "status": "REVIEWED_SCOPED",
+      "answer": "Explicit inputs leave ambient precision, rounding, traps/flags and external dependencies to be controlled separately. The same1/7 inputs at precision6 versus28 yield different values, with localcontext restoring settings. Reproducibility requires a declared complete policy; repeated output does not prove financial correctness."
+    }
+  ]
+}
