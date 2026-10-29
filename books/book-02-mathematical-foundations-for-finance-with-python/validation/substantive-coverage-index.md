@@ -151,3 +151,7 @@ The [Section 11.6 projection record](chapter-11-projection-audit-followup.md) ad
 ## Relative-distance contract follow-up
 
 The [Section 11.4 record](chapter-11-relative-distance-followup.md) adds direct three-norm/denominator/boundary evidence. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This extends partial COV-60 remediation; the selected count remains nineteen.
+
+## Exposure policy audit follow-up
+
+The [Section 11.9 policy record](chapter-11-policy-audit-followup.md) retains decision inputs and checks isolated effective-threshold cases. All 21 chapter files compiled and 11 scripts passed. COV-59 is partially addressed; twenty selected partial categories are tracked.
