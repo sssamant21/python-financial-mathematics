@@ -1,0 +1,231 @@
+{
+  "baseline": "8ebbdb6859b8d23a1b62fd114c13a1f19de3370c",
+  "prompt_file_sha256": "19acabb3693a190efae59d1c034311d270f2daeeb027002aba52182522b5a312",
+  "companion_file_sha256_before_link": "efa814b9adab2a7acaf6d578e5d8ee8c8975a2cddbdd751b7dea3413470d806a",
+  "records": [
+    {
+      "exercise": "2.13.33",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "7efbde878babee82535902e3caa740238bcbc5a85df2cc31f4bbfcdb11c83347",
+      "companion_answer_sha256": "a30bb26c3ff5a3fd016e3031257f036489dd9e54152b3d07828eadfaa9725c13",
+      "answer": "investment_valid first checks Decimal representation and finiteness, then value>0. Decimal 25000 passes; zero, negatives, NaN, None and text do not. External text conversion belongs to a separate acquisition/parser stage; this helper does not silently coerce it.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.34",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "3f6557c25f00d5f1561d87ebb68b403e02dbddd959a267ae35bf0e8d634a2c47",
+      "companion_answer_sha256": "9a1f85207f536ccb88a4954e0b1f9f707946fd49155deb69b7e56a962c46c2cb",
+      "answer": "contribution_valid accepts finite Decimal zero and positive amounts, rejects negatives/nonfinite. Truthiness would reject a legitimate zero contribution and does not establish numeric type or finiteness.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.35",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "7e24418a60797c12632b0d7c75cec55f410093952ba08e2f5f806aae5c06a484",
+      "companion_answer_sha256": "9c374e61473e7ef831ea217c206969e89c141cd732ec97758ce490e6daef8e06",
+      "answer": "period_valid requires isinstance(years,int), not isinstance(years,bool), and 0<years<=100. Tests include 20, both Boolean values, zero, endpoints 1/100, 101 and Decimal(20). The simplified analyzer requires a positive horizon even though it handles target attainment at period 0.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.36",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "50b7938f10321d0873e5cef0ddc401e55adea8791d347e796ae344e815b5cf03",
+      "companion_answer_sha256": "24ec6ccbb6deb7ef15f5b0e0a5f6a412f495de0d56edbca8f89cd2ed2a5d1cd8",
+      "answer": "Decimal .05 is finite; NaN, Infinity and -Infinity are not. Finiteness precedes supported-domain comparison. This predicate does not itself decide rate plausibility.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.37",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "2759d8cf6be701110be22333e1cc17fd9823f4b177b32c42e76e8ab71a019b5b",
+      "companion_answer_sha256": "35f94e92cf0ee6ab96bead5936897556ffab50860bd64785a33accd94671ee24",
+      "answer": "9%>4% passes the model-specific r>g rule; equality and r<g fail. The mathematical inequality does not establish realistic persistent growth, appropriate discounting, data quality, risk or economic conditions.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.38",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "b8358036e3fa0535092a15a1ede3df180674d90a1f7132729eeb93265ad04552",
+      "companion_answer_sha256": "6e9740a1bb77894698d2c023ab04584489932fe8d654b17d82cb615d779c473c",
+      "answer": "Presence \u2192 conversion/representation \u2192 finiteness \u2192 domain \u2192 relationships \u2192 financial plausibility. rate_error demonstrates the first four for typed inputs. Dependent methods require representation; comparisons require appropriate finite values; cross-field relationships require validated prerequisites. Plausibility requires evidence and judgment beyond a Boolean guard.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.39",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "7a949edd6d8e663c7faf4278f5b66cfdca4b68a75f848d549ef8208f390aedcd",
+      "companion_answer_sha256": "378f638009261daf79fd1fc9e9837e1a07d8c6ad244beaae6b509393e4780c8f",
+      "answer": "The supplemental analyze with P=15000,C=6000,r=.04,T=75000,h=20 uses end-of-year contributions and first reaches the target at year 8, raw 75813.8933168701440000, displayed 75813.89. Shared inputs, period 0, horizon, target placement, stored results and report are explicit; closed-form Fraction checks establish the crossing and stopping balance independently.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.40",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "b778ac8a7d193a19d9b458ba0f8d9cd4c89c80ed2ea6583853e9302c457cf9ed",
+      "companion_answer_sha256": "25c2dffef537ed4471fe43a717b644f1168ebf1098cc6098c00beac7a68156f5",
+      "answer": "For 2/4/6/8%, first years are 9/8/8/7 and displayed balances 76454.16/75813.89/83292.53/79244.18. All four evaluate and reach; no rejections. Scenario balances reset independently; reversed-order comparison gives the same result per rate. Both evaluated+rejected=total and reached+not_reached=evaluated are enforced.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.41",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "9c1da0cdb3557c4e33399887ca7ae217b05f1abe7cb3edf9c67e337e4575916a",
+      "companion_answer_sha256": "d470a81c1177962c18767d1704d18db7c0da96c7ce5e6acaef8b1c9866996b75",
+      "answer": "quality records processed=4,missing=2,rejected=1; processed signs positive=2,negative=1,zero=1. It preserves an explicit reason for the NaN observation. Missing and rejected remain distinct; both classification levels reconcile. Known zero is processed rather than skipped.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.42",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "2fdab201761876d8e1a130396039b9725cc5bbd8d26274647137a86aada262db",
+      "companion_answer_sha256": "33f3607b6bc64a97c2943f62666c694c61c4b43ecf28affab5080db51cfa8ec8",
+      "answer": "pv_grid resets discount totals per rate and stores period rows. End-of-year annual cash flows 10000/12000/15000 at effective annual 4/6/8% give displayed totals 34045.00/32708.21/31454.81. Exact Fraction oracles check each total. Rates require finite Decimal r>-1; invalid scenarios retain reasons. Annual cash-flow periods must match effective annual rate; no nominal-rate conversion is implied.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.43",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "ea266a1223a7f451876ce6276fd839814046b8501dffd2a11d39787db622caaa",
+      "companion_answer_sha256": "91b5f96baef6f5abc49ffd8d6b092ceda9a1f64f70fdd0d7d4560e5aec6c80df",
+      "answer": "End-of-year update applies return then adds contribution; beginning-of-year update adds contribution before return. From 10000 with 2000 annual contributions at 5% for five years, displays are 23814.08 and 24366.64. Each beginning contribution receives one more period of growth, including the last contribution. Both terminal balances are checked against exact formulas.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.44",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "35adffc2929c97eab1d29c43f44459432bab723d12178770d1ab28b8d4388640",
+      "companion_answer_sha256": "b725948ffd9231386a275f7248b9ea808b6fee622eba871ca6b1e595de3e3afb",
+      "answer": "Internal 99999.996 is below 100000.00. HALF_UP cent quantization produces a business balance of 100000.00 and thus a different policy outcome. Formatting produces text 100,000.00 and must not redefine internal target status. The reference compares raw values; the quantized result is a clearly separate demonstration.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.45",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "e5b2d230a170caa48dd9e871770a416f1cc1666943a222b7fc0ecf76189c5230",
+      "companion_answer_sha256": "987210c06e48a69a26e928c806e52052ca9746e415c0358cc9cf90297993cf88",
+      "answer": "analyze finds the minimum non-None first year and retains every scenario index attaining it. A 100 initial balance targeting 105 with 5/6/1% rates has two earliest scenarios at year 1 (5 and 6%). Reversed input order still retains both rates. Earliest target attainment ranks a deterministic assumption outcome, not risk-adjusted suitability or investment superiority.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.46",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "7e90716b8f7fa15d0e6cc25e8e58e27a49d3cdb1443274e37abcbab8649d8e52",
+      "companion_answer_sha256": "2e494f6a1fd66f17eca76b50d9a04eeb871829fa9cce83a10d4a0875533d7f42",
+      "answer": "Use range(1,maximum_years+1) to include the financial horizon; range(1,maximum_years) omits its final year. The check includes the expected last period and preserves the exclusion as a deliberate counterexample.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.47",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "9934775c4def45895cce7aa0525271baea6bd4c4c231ce2d9bb7f8de68b8da84",
+      "companion_answer_sha256": "355dea2dd963fa070650a1ff761c01792175c3e8d90c32cfa62a13b0a5c32166",
+      "answer": "Initialize balance=principal inside each accepted scenario iteration. Reusing terminal state mixes independent hypothetical assumptions. The applied multi-scenario model is tested in reverse order to establish identical per-rate output for these fixtures.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.48",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "a012b645bebd6ff07f0406a7f0488de4d6769f340891f61ab0ae1125bced3dde",
+      "companion_answer_sha256": "3d38c0528d04cc7c41e0c6658f3895083e4db633dbed155c4929458fe43f802c",
+      "answer": "True is an int subclass instance, so isinstance(True,int) alone accepts it. Add not isinstance(years,bool) before checking positive/supported bounds; period_valid rejects it.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.49",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "f6e96d49f6120d25caab6f88b5098b54c7302f51d7b183a4864da41ad1a9ce9f",
+      "companion_answer_sha256": "1bb713d6bf5ed2be3f7ce1ff52a96b4579878fadc67920c9ed270ffd5c300a11",
+      "answer": "rate_error checks Decimal representation, then is_finite, then r>-1. NaN is rejected as nonfinite without performing the domain comparison; correctness does not depend on comparison traps or incidental NaN behavior.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.50",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "e088ec8900e4f2d6781435409770707407c45d6205df988ed3153d850a3005c1",
+      "companion_answer_sha256": "000d4f1bcc2b0e780dfae4ee25d42043dc12ab6b45abf2b12cb0b03ecf8d943f",
+      "answer": "Formatting 99999.996 to two decimals and parsing it back changes below-target status into attained. Keep raw balance>=target for the Chapter 2 policy; quantization before comparison must be separately authorized and documented as a business rule.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.51",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "be8998417b1c11571b7113dc22a4775fb6ea804c9efd1a23ab31f308250b149a",
+      "companion_answer_sha256": "c0c8ae6711735736b95121a2e57bdc9b339db1b7c29af85e9bac1ad6333a69f3",
+      "answer": "Increment missing before continue and reconcile it with processed and rejected. quality([None,Decimal(0)]) records one missing and one processed zero. Silent exclusion loses data-quality and denominator information.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.52",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "13d53b15e32ed0bb8a34700ca5f43f262e0006d1ae2a4b4065037e3d13dd2c6b",
+      "companion_answer_sha256": "991c57f9b4c1989e0b1583f2ab100773ea66f1291d7cf3589dd482336049e779",
+      "answer": "For end-of-year contributions use balance=balance*(1+rate)+contribution. Starting 100 at 10% plus 10 yields 120; adding before return yields 121 and represents beginning-of-period timing. Match implementation order to documented recurrence.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.53",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "a8f99ab8e0add6600c1f2611841e038931dac65732d4d9a9959f16a6261c1e2b",
+      "companion_answer_sha256": "59c3a072dc2ff235156d6b56ae5d58b5283643cb5161ff287ba8b5f0d3e5a7a7",
+      "answer": "balance>=target is a financial attainment rule. Evaluating it before update tests the initial/beginning state; after return and contribution tests the ending state. A balance of 100 targeting 105 at 10% demonstrates False before growth and True afterward. Record which period label applies.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.54",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "ecc76585bb00b1c671590bec3f2be3c0a9d47ca2127434ff86a73beccdf62ea9",
+      "companion_answer_sha256": "86fc57856e9f85e5f2cb60e5ded00a18b2e6214a4990952ddbb91975e9c75018",
+      "answer": "Rejecting invalid input preserves the fact that the assumption is unavailable/unsupported. Replacing it with 5% supplies a new assumption. A permitted default policy must record original value, replacement, reason and policy version; it cannot be described merely as validation.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.55",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "7b1006d80be7f8c5af094e52b4e5484960b16f127a8a363f9411c63104cfdf3e",
+      "companion_answer_sha256": "0c3629c9a3f90a272ddb546cb2c59e390e344be4204040140a95766523ee5eab",
+      "answer": "Replacing 30% with a 25% cap changes the supplied scenario; rejection preserves unsupported-input status. Clamping requires an explicit policy, original/effective values and disclosure. Silent clipping undermines reproduction and audit review.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.56",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "3e91309df021dd3dae9b79656a121632b1d127f66153fcbc6d4b1deb8a5410ae",
+      "companion_answer_sha256": "b44c6a5cbae33a15ac6924fa07dae52566cfc7fe59485a5e1c8e24c9b5226e82",
+      "answer": "The list 3/5/7/9% consists of deterministic assumptions, not assigned probabilities or forecasts. Probabilistic interpretation needs a stated data basis, distribution or probability model, weights summing appropriately, calibration/estimation method, horizon, uncertainty and validation. Expected outcomes require that additional model; no such interpretation is inferred here.",
+      "conceptual_review_only": true
+    },
+    {
+      "exercise": "2.13.57",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "072c724b5ffdca84e16a5b1e5d2d97ad63e080fb2a882f71286884ae0246be02",
+      "companion_answer_sha256": "81655997c955a1dc1fafdfe546692a84f5e55ecbce1eef956fb8dac62e0176b3",
+      "answer": "20%>19% passes r>g but may embed implausibly persistent growth or risk assumptions and a highly sensitive 1% spread. Review growth sustainability, nominal/real consistency, horizon, discount-rate rationale and sensitivity; mathematical admissibility is only one prerequisite.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.58",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "24e503acce1c44b8d6fb23885b191879ef4b4eb54f3ff1ab6c9f9bc173ad68b4",
+      "companion_answer_sha256": "cce9359cef4caa5946d6bcbd7884e097e29d2c1f58154b89a68af3b688e1e841",
+      "answer": "A rejection that names annual return as nonfinite identifies the failed field/rule. Store scenario identity, supplied assumption and reason for debugging, audit trails, governance, reconciliation and reproducibility. A bare rejection count cannot explain why outcomes disappeared.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.59",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "794b64337afeaa4d0bc4b1fa62a1eba85816fce41f5a128bf9f6080bf370be24",
+      "companion_answer_sha256": "2fc1d0ec32d1b6c5f7023493ce295ed910cd51cd9d36c8346a2d8407e0220902",
+      "answer": "review.py executes the exact companion input fence, then calls the new supplemental implementation. 2/4/6/8% first reach in years 16/14/12/10 at displayed balances 153019.28/161701.76/161585.54/151687.12. All four accepted scenarios reach; none fails in the published fixture. NaN is rejected as nonfinite, -110% as r<=-1. Counts: total6,evaluated4,rejected2,reached4,not_reached0. Earliest is year10 at 8%, no tie. Additional fixtures cover period0, horizon failure, final-year equality and ties; report states nominal amounts, effective annual constant returns, end-of-year contributions, no inflation/tax/fees and no recommendation.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": "2.13.60",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "d666abda264c5b228469efd27e05778c40367655a26251a44da938005f30068f",
+      "companion_answer_sha256": "c3654a356bc5d49e9577f0fa800c2d6c1d5ba61d2db14128ec5647a19b05a94e",
+      "answer": "See MODEL-REVIEW-CHECKLIST.md for seven required review categories with failure consequences and concrete evidence expectations. It is a review aid, not a completed independent production approval. The companion listed the categories but did not explicitly explain each failure mode; this supplement adds those explanations.",
+      "conceptual_review_only": true
+    }
+  ]
+}

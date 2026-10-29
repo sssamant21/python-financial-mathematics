@@ -1,0 +1,13 @@
+# Exercise 2.13.60 — model review checklist
+
+This is an uncompleted reviewer checklist with failure consequences, not a production approval. Retain evidence, decision, owner and date when applying each row. Independent financial/model judgment remains required.
+
+| Review category | Verify | What can fail if unclear | Evidence to retain |
+|---|---|---|---|
+| Financial assumptions | Effective versus nominal quote; annual units; constant return; end-of-year contributions; target; nominal/real amounts; horizon | Wrong growth factor, contribution gets an extra period, inflation mixed with nominal values, wrong period or goal | Versioned assumptions and one-period timing examples |
+| Validation | Missing/type conversion, finiteness, domains, cross-field relationships, plausibility | NaN reaches comparisons, bool accepted as horizon, unsupported scenario calculated, mathematically valid assumptions mistaken for economically justified ones | Rejection fixtures and named rule/field/reason; separate plausibility rationale |
+| Control flow | Period0, target-check placement, inclusive horizon, break/continue, terminal and failure outcomes | Already-funded target reported late, final-year crossing missed, unbounded loop, unreported dropped observations | Period0/final-year/non-crossing cases and explicit stopping reasons |
+| State management | Initialization per scenario, update order, independent mutable state | Later scenarios inherit earlier terminal balances; order changes results; mixed beginning/end timing | Reverse-order comparisons, per-scenario initial state and transition trace |
+| Numerical policy | Decimal representation/context, raw comparison, quantization, rounding stage, display | Presentation creates false crossing; context changes results; binary-to-Decimal import error; near-boundary or extreme inputs exceed supported precision | Raw/display fixtures, declared context, independent benchmarks and numerical limits |
+| Reconciliation | Evaluated+rejected=total; reached+not_reached=evaluated; result storage agrees; missing/rejected/processed and signs reconcile | Scenarios or observations vanish, double-counts distort denominators, counters disagree with stored output | Stored per-item IDs/dispositions and both arithmetic identities |
+| Auditability | Assumptions/policy versions, rejection and classification reasons, inputs, results, stop periods | Cannot reproduce why a scenario was rejected, stopped or classified; defaults/clamping hide changed assumptions | Traceable input/policy snapshot and per-scenario report, with original/effective values if policy alters inputs |
