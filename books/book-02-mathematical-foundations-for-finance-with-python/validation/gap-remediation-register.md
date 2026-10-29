@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Twenty COV categories partially addressed; none closed by this register.
+**Disposition:** Twenty-one COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
@@ -16,6 +16,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-60 | Section 11.6 adds fixed residual norms and rational projection/scale/sign/label oracles. | Other report fields, relative-distance/cumulative scope and independent review. | [Projection audit](chapter-11-projection-audit-followup.md) |
 | COV-61 | Section 12.5 rank_A no longer depends on target magnitude; column-equilibration policy disclosed; selected scale/zero/near-dependent cases added. | Larger pivot/scaling cases and independent numerical-rank review. | [Rank](chapter-12-rank-target-scaling-followup.md) |
 | COV-62 | Section 12.9 retains aligned limits; controlled factor rejection and threshold/constructor/guardrail cases checked. | Broader ranges, source/version provenance and independent review. | [Factor audit](chapter-12-factor-audit-followup.md) |
+| COV-64 | Selected Section 13.6 exact normalized-pivot boundaries and reordered-column rational least-squares references checked. | General near-dependence, Q/R identities, basis-span reconstruction and independent review. | [QR rank screen](chapter-13-qr-rank-followup.md) |
 | COV-69 | Section 14.9 computes/reports covariance eigenpairs; closed-form roots, projectors and direct residual/reconstruction checks added. | Independent review and broader numerical/interface scope. Fixed compression bound and input/unit metadata now asserted. | [Eigenpairs](chapter-14-covariance-eigenpair-followup.md) · [Compression bound](chapter-14-compression-bound-followup.md) |
 | COV-70 | Section 15.9 second-order contractions checked by a Decimal path expansion across nine shocks; signed/absolute portfolio errors implemented and asserted. | Final-assessment/shared-dependency coverage and independent derivation/unit review. | [Taylor](chapter-15-taylor-oracle-followup.md) |
 | COV-71 | Section 15.2 finite-difference representability and denominator guards aligned with related helpers; boundary tests added. | Perturbation asymmetry, step accuracy/convergence and selected Hessian numerical benchmarks. | [Scalar difference](chapter-15-scalar-difference-followup.md) |
@@ -73,3 +74,9 @@ Section 11.9's policy-audit change has a 21-file/11-script scoped pass and follo
 The [Section 11.7 budget follow-up](chapter-11-budget-boundary-followup.md) extends COV-59 with isolated budget and adjacent constraint-threshold cases; its 21-file/11-script pass follows the second full-book refresh. The selected count remains twenty.
 
 The [Section 11.10 final nonfinite follow-up](chapter-11-final-nonfinite-followup.md) extends COV-60 with direct final-module validation and selected overflow paths. Its 21-file/11-script scoped pass follows the second full-book refresh; twenty selected categories remain partially addressed.
+
+The [third full refresh](runtime-refresh-2026-10-29-r3.md) includes all prior Chapter 8/10/11 code follow-ups: 444 files compiled, 233 scripts passed and 445 required blobs verified before/after. The new Chapter 13 checker follows that full run.
+
+## Selected Chapter 13 QR rank-screen follow-up — 2026-10-29
+
+[New evidence](chapter-13-qr-rank-followup.md): exact selected normalized-pivot boundaries across four common scales and an independently known least-squares solution under column/target-label permutations. All 22 Chapter 13 files compiled and 12 scripts passed. Solver unchanged; COV-64 partially addressed, with general near-dependence, Q/R identities, basis-span reconstruction and independent review still open. This checker follows the third full-book runtime refresh.
