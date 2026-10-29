@@ -70,7 +70,34 @@ def check_independent_kkt():
     # The second-cap multiplier has a separate closed-form benchmark.
     near(optimize(1,0.2)["multipliers"][3],0.016)
 
+def check_financial_range():
+    for capital,cost_bps in ((1000000,10),(1e308,10),(1e-308,1e308),(5e-324,1e308)):
+        result=financial_report((1,0),(0.5,0.5),capital,cost_bps)
+        # Trade weights differ by exact halves; at the smallest subnormal,
+        # individual trades underflow. The reported cost uses reported gross.
+        gross=result["gross_traded_notional"]
+        expected_cost=float(Fraction.from_float(gross)*Fraction.from_float(float(cost_bps))/10000)
+        assert math.isclose(result["modeled_transaction_cost"],expected_cost,
+                            rel_tol=1e-12,abs_tol=0)
+        near(result["gross_turnover"],1)
+        for key in ("expected_return","gross_turnover","gross_traded_notional","modeled_transaction_cost"):
+            assert math.isfinite(result[key])
+        assert all(math.isfinite(value) for value in result["signed_trades"])
+    huge=financial_report((1,0),(0.5,0.5),1e308,10)
+    assert math.isclose(huge["modeled_transaction_cost"],1e305,rel_tol=1e-12)
+    # A smallest-subnormal gross with a huge cost multiplier remains nonzero.
+    tiny=financial_report((1,0),(0,1),5e-324,1e308)
+    expected=float(Fraction.from_float(1e-323)*Fraction.from_float(1e308)/10000)
+    assert tiny["modeled_transaction_cost"]==expected>0
+    idle=financial_report((0.5,0.5),(0.5,0.5),1e308,1e308)
+    assert idle["gross_turnover"]==idle["gross_traded_notional"]==idle["modeled_transaction_cost"]==0
+    rejects(OverflowError,financial_report,(1,0),(0,1),1e308,10)
+    rejects(OverflowError,financial_report,(1,0),(0.5,0.5),1e308,1e308)
+    rejects(TypeError,financial_report,(1,0),(0,1),True,10)
+    rejects(TypeError,financial_report,(1,0),(0,1),100,True)
+
 def run():
+    check_financial_range()
     check_independent_kkt()
     a=assessment()
     s=a["allocation"]
