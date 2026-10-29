@@ -1,6 +1,7 @@
 """Book 02 Section 14.1: real symmetric 2x2 eigenpairs."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -36,9 +37,18 @@ def eigenpairs_symmetric_2x2(matrix):
         bb=off/scale
         dd=d/scale
         gap=math.hypot(aa-dd,2*bb)
-        hi=finite(scale*(0.5*(aa+dd+gap)),"eigenvalue")
-        lo=finite(scale*(0.5*(aa+dd-gap)),"eigenvalue")
-        values=(hi,lo)
+        # Compute the root with larger magnitude without trace-gap cancellation.
+        trace_scaled=aa+dd
+        far=finite(scale*(0.5*(trace_scaled+math.copysign(gap,trace_scaled))),
+                   "eigenvalue")
+        # Exact arithmetic on represented entries prevents determinant product
+        # overflow/underflow and cancellation before recovering the other root.
+        determinant_exact=Fraction(a)*Fraction(d)-Fraction(off)*Fraction(off)
+        try:
+            other=float(determinant_exact/Fraction(far)) if far else 0.0
+        except OverflowError as exc:
+            raise ValueError("eigenvalue outside float range") from exc
+        values=tuple(sorted((far,finite(other,"eigenvalue")),reverse=True))
         if gap<=1e-14*max(1.0,abs(aa),abs(dd)):
             vectors=((1.0,0.0),(0.0,1.0))
         else:
