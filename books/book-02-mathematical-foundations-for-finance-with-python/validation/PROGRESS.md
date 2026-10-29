@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped helper follow-up
+## Latest scoped normalized-sensitivity follow-up
+
+Section 8.8 now rejects zero normalization prices and nonfinite sensitivity reports; independent stencil ratios pass at three cash-flow scales. All 21 Chapter 8 files compiled and 11 scripts passed. [Evidence](chapter-08-sensitivity-range-followup.md). This extends partial COV-51 remediation and follows the recorded full-book run.
+
+## Earlier scoped helper follow-up
 
 Section 8.8 now rejects nonfinite derivative estimates and avoids Richardson intermediate overflow. Selected perturbation/callback/denominator guards pass; all 21 Chapter 8 files compiled and 11 scripts passed. [Evidence](chapter-08-helper-guards-followup.md). COV-51 remains partially open; this follows the full-book run.
 
