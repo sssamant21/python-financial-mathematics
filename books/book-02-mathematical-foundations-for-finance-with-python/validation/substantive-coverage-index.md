@@ -79,3 +79,7 @@ Section 21.9's finite-difference diagnostic, JSON serialization and selected fai
 ## Full runtime refresh — 2026-10-29
 
 The [latest candidate run](runtime-refresh-2026-10-29.md) includes these remediations: 444 sources compiled and 233 scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`, with 467 downloaded blobs verified before and after execution. This supersedes the earlier full run as latest execution evidence; the mapping and partial COV dispositions do not become independent review or approval.
+
+## Remediation monitoring
+
+The [gap-remediation register](gap-remediation-register.md) consolidates seven selected partial dispositions and remaining obligations. No whole-category closure or percentage is inferred from those follow-ups.
