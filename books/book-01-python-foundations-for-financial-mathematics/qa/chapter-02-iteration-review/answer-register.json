@@ -1,0 +1,159 @@
+{
+  "baseline": "9f792d034343fc946783af2036c2006a44e49235",
+  "prompt_file_sha256": "19acabb3693a190efae59d1c034311d270f2daeeb027002aba52182522b5a312",
+  "companion_file_sha256_before_link": "bda4b599eff12e42aad5ef7d85d8ddf6b3542033ba9dc361948e06ad0fcdcc26",
+  "records": [
+    {
+      "exercise": "2.13.14",
+      "title": "Annual contributions",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "d5d5de7827317e224f3356a0faa120d534aa2ed2ec86ac25fd5605edfa529628",
+      "companion_answer_sha256": "4b76338f68cf32e6fdc02324656a74cb2d3e77a06f149eb05bbe1c289b3805f5",
+      "answer": "annual_schedule(10000, 0, 2500, 5), using Decimal inputs, gives ending balances 12500, 15000, 17500, 20000, 22500. print_schedule labels and prints every year; exact expected stdout is checked. No return is assumed."
+    },
+    {
+      "exercise": "2.13.15",
+      "title": "Compound investment",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "0b5f58ab960f8c33dbbf9b48600a2d7e750525fa330256bda219f50ae7e466c2",
+      "companion_answer_sha256": "3489a00bd96d73a72f1d6d170dffd354d4252c9d3ffb78149fd48c8e83ffe02d",
+      "answer": "annual_schedule(10000, .05, 0, 10) uses a for loop over years 1\u201310 and retains each balance. print_schedule prints each year and its two-decimal display; all ten internal balances are independently compared to 10000*(21/20)^n. The original companion loop is executed with documented balance/rate prerequisites; it did not itself include the requested printing."
+    },
+    {
+      "exercise": "2.13.16",
+      "title": "Contributions and return",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "dfceef1037e5cf7bb56029c650423301840431bce528caea0257f4144556cd22",
+      "companion_answer_sha256": "e34e2c4759838255a3344600d9acf4d65964fb71240842686df7de59c5d09570",
+      "answer": "End-of-year update: balance=balance*(1+rate)+contribution. Beginning-of-year update: balance=(balance+contribution)*(1+rate). Over five years from 10000 at 5% with contributions 2000, ending displays are 23814.08 and 24366.64. Beginning contributions receive one extra period of return. All five end-of-year balances and the beginning terminal value are independently checked. The exact original two-line end-of-year fragment is also executed once."
+    },
+    {
+      "exercise": "2.13.17",
+      "title": "Savings target",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "3e52a4f6bf849c8b6d2dcc6fa95a330c13e72e943e3a7be36d672ebffdd4dabd",
+      "companion_answer_sha256": "08b7c091ecb2820ddebedfcc8df549ba42733e13952d52ca8ead07d398af62bb",
+      "answer": "crossing_while(20000,0,5000,50000,20) first reaches 50000 in year 6. It checks period 0 before any update, increments years after updating, and stops at the first crossing or horizon. A target already funded reports year 0; a six-year horizon includes the crossing, while five years reports not reached. Raw balance is retained."
+    },
+    {
+      "exercise": "2.13.18",
+      "title": "Compound target",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "88645821843528d0aacc26b3d3951c5511fa7f49b82c0dba80ee79fc38e443db",
+      "companion_answer_sha256": "18f1be0eea967f28a73d5c2f503dd4b564603db94dd4cb92c33b3da9da967b2a",
+      "answer": "crossing_while(25000,.05,0,75000,30) first reaches the target in year 23; default-28-digit recurrence yields 76788.09389794523393896448224. The year-22 value remains below target. Exact Fraction closed-form balances establish the first crossing independently, and the published internal/display claims pass. Initial target attainment and failure within 22 years are checked."
+    },
+    {
+      "exercise": "2.13.19",
+      "title": "Bounded while",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "d3ba09c72f9ef3c6660a6204532156a8ae8a818ef1562c17986c6bd6138b6b3a",
+      "companion_answer_sha256": "a935d384512720ca5867380871d5d542c050778256d79d9dc0d6a02296b3b296",
+      "answer": "A loop without a horizon can stagnate at a zero balance, remain unchanged at a zero rate, or move away from a positive target at a negative return. Even positive growth does not imply attainment within the required horizon. Tests use finite horizons for zero principal, zero rate and -10% return; none reaches the selected target. Distinguish a financial horizon from an execution safety cap. No unbounded illustrative loop is executed."
+    },
+    {
+      "exercise": "2.13.20",
+      "title": "Cash-flow total",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "cafd4e5a7a9d30a8a770fc5aa8ee4bdff665b5709e71e405d1493f0285160546",
+      "companion_answer_sha256": "6d9f21ffa8d8eedcbd535d2f3617574694261bfe12aae3f3659e939d5ff520e3",
+      "answer": "The arithmetic sum -10000+3000+3500+4000 is 500. It ignores cash-flow dates, discounting and rate conventions, so it is not a present value or an investment-return calculation."
+    },
+    {
+      "exercise": "2.13.21",
+      "title": "Sign counts",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "af547b5966b21d9c999dbff002f0763075e392852e8f83a26c27a70e9e00181b",
+      "companion_answer_sha256": "870654a9a2d65560f5eeeeec06129795310f2b3a842bbd932a1ba696c0e0a5dd",
+      "answer": "For the preceding cash-flow list, positive=3, negative=1, zero=0, total observations=4. A supplemental [-1,0,1] fixture confirms zero remains an observed classification. Counts reconcile to observation count, not monetary sum."
+    },
+    {
+      "exercise": "2.13.22",
+      "title": "Discounted cash flows",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "599a087303f11360cd37a1a96a1d9c2f5f026368fb0519c1aace8ab3db813af2",
+      "companion_answer_sha256": "4ee68d601d0faef992950a81d7a0040b2c26e37e0c2cfe1e9efe20ce9c2258ab",
+      "answer": "discounted_cashflows enumerates annual cash flows from period 1, uses effective annual 8% and retains each CF/(1+r)^period before summing. All three published Decimal values and their total 15330.48823858151704516587918 agree under the 28-digit context; the total displays 15330.49. Exact rational checks independently verify the three values and total within the stated bound. Matching annual periods and effective annual rate is required; period 0 would represent a different timing assumption."
+    },
+    {
+      "exercise": "2.13.23",
+      "title": "Year range",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "d6e626a5798c6d8d5d984195da772a1c4cc2de9fdc3e38346c139e81e50b9dee",
+      "companion_answer_sha256": "78fd45bafc4594141c7be1253af420307f01982ad755269f78b80efb39d51a26",
+      "answer": "range(1,16) includes years 1\u201315; range(1,15) stops at 14 because the stop is exclusive. Tests verify both the inclusive intended sequence and the missing endpoint in the counterexample."
+    },
+    {
+      "exercise": "2.13.24",
+      "title": "Initial period",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "47744ec3aa7f2b26ba204e02e054635ca34547fbddb63afeb6fa33f54fc9424c",
+      "companion_answer_sha256": "9676be2cf8115298def8a3bde7263a7447ce71a26fc4d6f9a8ed0babae5aa228",
+      "answer": "The executable review prints Period 0: initial state separately, then periods 1\u201310 as future states. The initial balance is measured before future updates; treating it as an extra future transition introduces an off-by-one financial period."
+    },
+    {
+      "exercise": "2.13.25",
+      "title": "Quarter ordinals",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "de6efed11ef5ac37f719957a97c563b70995444ab8d33f139464318e5c6d8d8f",
+      "companion_answer_sha256": "d171b9f5bfd3a13b4b089043195ce8ca27aa1e01625365af8c6a099178aa1f97",
+      "answer": "quarters(5) emits 20 entries, with ordinal periods 1\u201320. The numbers identify model periods rather than actual calendar dates; business calendars/day counts are not inferred."
+    },
+    {
+      "exercise": "2.13.26",
+      "title": "Scenario projections",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "b7be54d0dfaafb5688ab5cbf66e3a32b35b4b9b17b1688edb7fbf5f37cd681b3",
+      "companion_answer_sha256": "ec75a0602f3947994d7209940330ee5f776c7c4eb0b72bc76f4ba8dcdb367f6c",
+      "answer": "scenario_projection loops through 3%, 5%, 7%; each call to annual_schedule initializes balance=10000 independently and records five years. First-year and terminal values match independent Fraction powers. Scenario balances must not carry from one assumed return into the next."
+    },
+    {
+      "exercise": "2.13.27",
+      "title": "Year and quarter",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "6f617bca98883c0f83d635fab99fc6f66291557f4f99632ec162a5a2f285d447",
+      "companion_answer_sha256": "057e3057aaccd7c3d9b6ad458b882b52500560fffcaafc4722756f7b1e9b9569",
+      "answer": "quarters(3) uses nested year 1\u20133 and quarter 1\u20134 loops with period=(year-1)*4+quarter. All 12 labels/periods are checked; the last is (3,4,12). These remain ordinal periods."
+    },
+    {
+      "exercise": "2.13.28",
+      "title": "State-reset defect",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "cf7dfcacd9f72d08a82da3975a7e182dac6baac05386ab9dd5abdd61faf85efa",
+      "companion_answer_sha256": "35b12a177480080b6aa5fa48d1eead55c31fb4e1ebf61640728d925e9f4a0e03",
+      "answer": "Initializing balance outside the outer scenario loop and reusing its mutated value contaminates later scenarios. The corrected scenario_projection resets through each annual_schedule call. Reverse-order tests yield identical values per rate; a deliberate shared-state counterexample produces a different terminal value. This counterexample is educational, not a manuscript runtime failure."
+    },
+    {
+      "exercise": "2.13.29",
+      "title": "First crossing with break",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "f8955fbda34c5c2e5d947797d35c0e45c224c37c5a617f7a14fd426c24a81539",
+      "companion_answer_sha256": "960133a43e9c11ab90d64798e11e8298f0f1fb1154ff0c59391d7153334cee36",
+      "answer": "crossing_break(20000,.06,50000,30) checks period 0, updates one year at a time, and breaks at year 16; internal balance 50807.03369371342399599899208 displays 50807.03. Published claims and exact Fraction first-crossing benchmark pass. Tests also cover target already attained, horizons 15/16, and zero horizon."
+    },
+    {
+      "exercise": "2.13.30",
+      "title": "Missing observations",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "71373e393892f24193632eae9cde3b5bb35783543a1cd53b96e775d098a8d2d4",
+      "companion_answer_sha256": "2dcdae5e54519fce5a7bc90086889428f00a4309edcc4d59f3791a32c2b513f0",
+      "answer": "process_missing uses continue only after incrementing missing. The supplied list yields processed=3, missing=2 and sum=6000; processed+missing=5. An explicit zero is processed, not missing. Other invalid types/nonfinite cash flows require separate validation and are not silently treated as missing."
+    },
+    {
+      "exercise": "2.13.31",
+      "title": "Invalid scenarios",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "5eaf3f82bb208815461e476edbe949bdfd33ed5cc9cf47e68651aab02b348ce5",
+      "companion_answer_sha256": "0c78effc9dfb0d9164bd8ed50bed75e8c98bb1c11b501b7d8e5f30592e5b2f8b",
+      "answer": "reject_scenarios validates representation, then finiteness, then supported r>-1. The supplied .05, NaN, -1.10, .08 list yields accepted .05/.08 and two rejection reasons (nonfinite and domain). continue preserves one disposition per observation; accepted+rejected equals supplied count. External strings/None are rejected by representation before Decimal methods run."
+    },
+    {
+      "exercise": "2.13.32",
+      "title": "Loop else",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "960984d704b172475a4e3291d36e49c2a8972b8e00eb550deaf6d4e2bf7c6be7",
+      "companion_answer_sha256": "49377f4cd98b77ee42af82cfcf2a5f3fbed6b739ae64ba72f78b8dc04b584f37",
+      "answer": "search_loop_else uses a 25-year for search, break on first crossing, and else only after normal exhaustion. Tests verify success at year 16, failure with zero growth, period 0, and success exactly at year 25. Period 0 is handled before the search; else is not a per-iteration branch and does not execute after break."
+    }
+  ]
+}
