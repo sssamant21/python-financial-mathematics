@@ -131,3 +131,7 @@ The [Section 10.7 quadrature record](chapter-10-quadrature-order-followup.md) ad
 ## Derivative accuracy follow-up
 
 The [Section 8.6 record](chapter-08-difference-order-followup.md) adds exact error ladders and selected cancellation evidence. All 21 chapter files compiled and 11 scripts passed; algorithm unchanged. COV-49 is partially addressed; sixteen selected partial categories are tracked.
+
+## Comparator audit follow-up
+
+The [Section 8.9 comparator record](chapter-08-comparator-audit-followup.md) adds explicit error/tolerance evidence and rejects nonfinite false-pass calculations. All 21 chapter files compiled and 11 scripts passed. COV-50 is partially addressed; seventeen selected partial categories are tracked.
