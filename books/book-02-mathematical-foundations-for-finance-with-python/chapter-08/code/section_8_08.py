@@ -66,16 +66,21 @@ def discounted_price(cash_flow, years, rate):
     c, t, r = finite(cash_flow, "cash_flow"), finite(years, "years"), finite(rate, "rate")
     if c <= 0 or t < 0:
         raise ValueError("cash_flow must be positive and years nonnegative")
-    return c*math.exp(-r*t)
+    exponent = finite(-r*t, "discount exponent")
+    return finite(c*math.exp(exponent), "discounted price")
 
 def rate_sensitivity(cash_flow, years, rate, step):
     p = discounted_price(cash_flow, years, rate)
+    if p == 0:
+        raise ValueError("positive representable price required for normalized sensitivities")
     function = lambda r: discounted_price(cash_flow, years, r)
     d1 = centered_difference(function, rate, step)
     d2 = second_difference(function, rate, step)
-    return {"price": p, "duration": -d1/p, "convexity": d2/p,
-            "analytic_duration": float(years),
-            "analytic_convexity": float(years)**2}
+    t = finite(years, "years")
+    return {"price": p, "duration": finite(-d1/p, "duration"),
+            "convexity": finite(d2/p, "convexity"),
+            "analytic_duration": t,
+            "analytic_convexity": finite(t*t, "analytic convexity")}
 
 if __name__ == "__main__":
     x, h = 2, 0.1
