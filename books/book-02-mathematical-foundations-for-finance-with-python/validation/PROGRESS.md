@@ -20,6 +20,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
+## Latest remediation
+
+Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled and all 11 check scripts passed, including nine boundary methods. [Scoped follow-up](chapter-15-scalar-difference-followup.md). This partially addresses COV-71/V-16; independent review and remaining numerical-accuracy work are pending. The historical full-book run below is unchanged.
+
 ## Runtime evidence and scope
 
 - **Latest full run:** [Pinned revision runtime validation](pinned-revision-runtime-validation.md): 444/444 Python files compiled and 233/233 check/test scripts exited zero at `2366ddd9ea146f841ad2822ffa5193bd637e4e9d`; all 445 source/fixture blobs matched the pinned Git tree.
