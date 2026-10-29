@@ -12,6 +12,37 @@ def vector(actual,expected):
 
 def run():
     p=project()
+    covariance=((0.04,0.01),(0.01,0.09))
+    assert p["covariance_matrix"]==covariance
+    values=p["covariance_eigenvalues"]
+    vectors=p["covariance_eigenvectors"]
+    # Characteristic roots: (13 +/- sqrt(29))/200.
+    expected=((13+math.sqrt(29))/200,(13-math.sqrt(29))/200)
+    vector(values,expected)
+    assert values[0]>values[1]>0
+    assert len(vectors)==2 and all(len(v)==2 for v in vectors)
+    for k in range(2):
+        v=vectors[k]
+        close(sum(x*x for x in v),1)
+        residual=tuple(sum(covariance[i][j]*v[j] for j in range(2))-values[k]*v[i]
+                       for i in range(2))
+        close(math.hypot(*residual),0)
+        # Spectral projectors avoid dependence on arbitrary eigenvector sign.
+        other=expected[1-k]
+        for i in range(2):
+            for j in range(2):
+                projector=(covariance[i][j]-(other if i==j else 0))/(expected[k]-other)
+                close(v[i]*v[j],projector)
+    close(sum(vectors[0][i]*vectors[1][i] for i in range(2)),0)
+    for i in range(2):
+        for j in range(2):
+            close(sum(values[k]*vectors[k][i]*vectors[k][j] for k in range(2)),
+                  covariance[i][j])
+    close(sum(values),0.13)
+    close(values[0]*values[1],0.0035)
+    vector(p["covariance_eigenpair_residual_norms"],(0,0))
+    close(p["covariance_spectral_reconstruction_error"],0)
+    close(p["covariance_orthogonality_error"],0)
     close(p["weight_sum"],1)
     close(p["portfolio_variance"],0.0336)
     close(p["portfolio_volatility"],math.sqrt(0.0336))
