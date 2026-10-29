@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped near-SPD Cholesky follow-up
+## Latest scoped SVD ordering follow-up
+
+Section 14.6 now checks twelve restricted factor-order reconstruction and threshold cases. All 24 Chapter 14 files compiled and 14 scripts passed. [Evidence](chapter-14-svd-order-followup.md). COV-67 partially open; implementation unchanged and follows V-34.
+
+## Earlier scoped near-SPD Cholesky follow-up
 
 Section 14.5 now checks nine selected near-SPD factorizations/solves and six non-SPD boundary matrices. All 23 Chapter 14 files compiled and 13 scripts passed. [Evidence](chapter-14-near-spd-followup.md). COV-68 partially open; implementation unchanged and follows V-34.
 
@@ -289,3 +293,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Selected near-SPD Cholesky follow-up — 2026-10-29
 
 [Section 14.5 evidence](chapter-14-near-spd-followup.md) extends COV-68 with exact dyadic determinant/pivot references, factor/reconstruction/forward/backward-solve checks and singular/indefinite boundary rejection. All 23 Chapter 14 files compiled and 13 scripts passed. Nondyadic rounding, arbitrary right-hand-side conditioning, broader ranges and independent review remain open. This scoped run follows V-34; twenty-four categories remain partially addressed.
+
+## Selected restricted-SVD ordering follow-up — 2026-10-29
+
+[Section 14.6 evidence](chapter-14-svd-order-followup.md) partially addresses COV-67 with twelve reconstruction, direction-orthonormality, sorted-summary and thresholded-solve cases. Factor-order directions must be paired with original magnitudes, not blindly zipped with the sorted summary. All 24 Chapter 14 files compiled and 14 scripts passed. Reference-report/integration and independent-review scope remains open. This scoped run follows V-34; twenty-five selected categories remain partially addressed.
