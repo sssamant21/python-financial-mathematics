@@ -1,5 +1,6 @@
 """Independent analytic reference checks for Book 02 Section 17.10."""
 import math
+from section_17_09 import verify_candidate
 from section_17_10 import (assessment,finite,portfolio,two_sided,
                            linear_program_reference,financial_reference)
 
@@ -35,6 +36,29 @@ def run():
     near(t["weights"][0],0.8)
     near(t["weights"][1],0.2)
     near(t["variance"],0.0324)
+    near(t["lambda"],-0.068)
+    near(t["multipliers"][3],0.016)
+    assert t["multipliers"][:3]==(0,0,0)
+    cert=verify_candidate(t["weights"],t["lambda"],t["multipliers"],(0.9,0.2))
+    assert cert["passes"]
+    # Omitting the binding second-cap multiplier must fail stationarity.
+    missing=verify_candidate(t["weights"],t["lambda"],(0,0,0,0),(0.9,0.2))
+    assert not missing["passes"]
+    near(missing["stationarity_norm"],0.016)
+    # A feasible endpoint with a zero multiplier is not the optimum.
+    false_success=verify_candidate((0.9,0.1),-0.074,(0,0,0,0),(0.9,0.2))
+    assert not false_success["passes"]
+    near(false_success["primal_violation"],0)
+    near(false_success["stationarity_norm"],0.038)
+    near(false_success["objective"],0.0351)
+    assert false_success["objective"]>t["variance"]
+    for caps in ((0.6,1),(1,1),(0.6,0.4)):
+        case=two_sided(*caps)
+        assert verify_candidate(case["weights"],case["lambda"],
+                                case["multipliers"],caps)["passes"]
+    # Rounded cap addition can equal one while the actual interval is empty.
+    rejects(ValueError,two_sided,math.nextafter(0.5,0),0.5)
+    assert two_sided(0.5,0.5)["weights"]==(0.5,0.5)
     lp=a["linear_program"]
     assert lp["optimal_point"]==(2,6)
     near(lp["primal_value"],34)
