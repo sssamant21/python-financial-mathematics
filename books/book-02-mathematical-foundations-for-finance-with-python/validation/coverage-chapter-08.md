@@ -99,3 +99,7 @@ Assessment report only asserts a required-key subset, not every output's schema/
 | COV-51 | Implicit branch/domain and first-difference guards vary | Endpoint/near-singularity and representability review across helpers |
 
 These extend COV-01–COV-48. No new implementation defect or independent sign-off is claimed. Next: Chapter9.
+
+## Subsequent COV-49 accuracy follow-up
+
+The [second-difference record](chapter-08-difference-order-followup.md) adds exact polynomial error ladders, a special vanishing-coefficient case and a representable-step cancellation example. Two faulty formula variants were detected. All 21 chapter sources compiled and 11 scripts passed; algorithm unchanged. Other helper/noise/reference/range and independent-review obligations remain open.
