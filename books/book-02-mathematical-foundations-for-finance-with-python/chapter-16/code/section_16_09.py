@@ -101,11 +101,23 @@ def assessment():
     benchmark=analytical_rate()
     runs=[optimize(start,method) for method in
           ("gradient_descent","newton") for start in STARTS]
+    for run in runs:
+        candidate=run["rate"]
+        run["training"]=price_metrics(candidate,TRAIN)
+        run["holdout"]=price_metrics(candidate,HOLDOUT)
+        run["recomputed_loss"]=objective(candidate,TRAIN)
+        run["recomputed_gradient"]=gradient(candidate,TRAIN)
+        run["provisional_acceptance"]=(
+            run["status"]=="gradient_tolerance" and
+            abs(candidate-benchmark)<=1e-8 and
+            abs(run["gradient"])<=1e-8 and
+            abs(run["recomputed_gradient"])<=1e-8 and
+            run["training"]["mae"]<=1e-5 and
+            run["training"]["rmse"]<=1e-5 and
+            all(abs(residual+1)<=1e-5 for residual in run["holdout"]["residuals"]))
     train=price_metrics(benchmark,TRAIN)
     holdout=price_metrics(benchmark,HOLDOUT)
-    accepted=all(run["status"]=="gradient_tolerance" and
-                 abs(run["rate"]-benchmark)<=1e-8 and
-                 abs(run["gradient"])<=1e-8 for run in runs)
+    accepted=all(run["provisional_acceptance"] for run in runs)
     accepted=accepted and train["mae"]<=1e-5 and train["rmse"]<=1e-5
     accepted=accepted and abs(holdout["residuals"][0]+1)<=1e-5
     return {"analytical_rate":benchmark,"curvature":curvature(),
