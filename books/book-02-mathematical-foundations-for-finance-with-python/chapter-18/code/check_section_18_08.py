@@ -12,7 +12,58 @@ def rejects(exc,fn,*args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def verify_audit(function,lower,upper,*controls):
+    calls=[]
+    def observed(x):
+        calls.append(x)
+        return function(x)
+    report=audited_bisection(observed,lower,upper,*controls)
+    assert report["evaluations"]==len(calls)
+    assert report["evaluations"]==2+len(report["trace"])+(report["status"]=="stagnation")
+    lo,hi=report["bracket"]
+    assert lower<=lo<=hi<=upper
+    assert report["width"]==hi-lo
+    expected=(function(lo),function(hi))
+    assert tuple(report["bracket_endpoint_residuals"])==expected
+    assert report["residual"]==function(report["root"])
+    if lo==hi:
+        assert expected==(0,0)
+    else:
+        assert (expected[0]<0<expected[1]) or (expected[1]<0<expected[0])
+    previous=None
+    for row in report["trace"]:
+        a,b=row["lower"],row["upper"]
+        fa,fb=function(a),function(b)
+        assert row["lower_residual"]==fa and row["upper_residual"]==fb
+        assert (fa<0<fb) or (fb<0<fa)
+        assert a<row["midpoint"]<b
+        assert row["width"]==b-a
+        assert row["residual"]==function(row["midpoint"])
+        if previous is not None:
+            pa,pb=previous["lower"],previous["upper"]
+            mid,fmid=previous["midpoint"],previous["residual"]
+            assert pa<=a<b<=pb
+            if (function(pa)<0<fmid) or (fmid<0<function(pa)):
+                assert (a,b)==(pa,mid)
+            else:
+                assert (a,b)==(mid,pb)
+        previous=row
+    assert report["bracket_invariant"] is True
+    return report
+
+def check_audit_paths():
+    verify_audit(zero_coupon_residual,0,0.2)
+    assert verify_audit(lambda x:x-1,1,2)["status"]=="endpoint_root"
+    assert verify_audit(lambda x:x-2,1,2)["status"]=="endpoint_root"
+    assert verify_audit(lambda x:x-0.5,0,1)["status"]=="exact_root"
+    assert verify_audit(lambda x:x*x-2,1,2,1e-6,0,100)["status"]=="converged"
+    assert verify_audit(lambda x:2-x*x,1,2,1e-16,0,1)["status"]=="max_iter"
+    left=1.0
+    right=math.nextafter(left,2)
+    assert verify_audit(lambda x:-1 if x==left else 1,left,right,1e-20,0,5)["status"]=="stagnation"
+
 def run():
+    check_audit_paths()
     a=assessment()
     d=a["result"]
     exact=math.sqrt(10/9)-1
