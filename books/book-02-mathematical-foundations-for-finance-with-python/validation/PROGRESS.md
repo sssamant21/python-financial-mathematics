@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up
 
+Section 17.9 now guards trade/notional range and avoids intermediate transaction-cost overflow, with direct weight-based turnover. Extreme/subnormal/zero/true-overflow cases pass; 20 Chapter 17 files compiled and 10 scripts passed. [Financial-range evidence](chapter-17-financial-range-followup.md). COV-77 remains partially open; this follows the full-book run.
+
+## Earlier KKT follow-up
+
 Section 17.9 now has independent KKT residual/objective checks across four regimes and four isolated rejection families; four incomplete acceptance variants were detected. All 20 Chapter 17 files compiled and 10 scripts passed; optimizer unchanged. [KKT evidence](chapter-17-kkt-rejection-followup.md). COV-76 remains partially open; this checker change follows the full-book run.
 
 ## Earlier bracket-audit follow-up
@@ -150,7 +154,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates eleven partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates twelve partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
