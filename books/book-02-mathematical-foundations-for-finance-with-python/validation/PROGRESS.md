@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up
 
+Section 17.10 now reports/checks its second-cap multiplier and rejects missing multipliers/nonoptimal candidates. A rounded-cap-sum empty-interval defect is fixed. All 20 Chapter 17 files compiled and 10 scripts passed. [Final allocation evidence](chapter-17-final-allocation-followup.md). COV-78 remains partially open; this follows the full-book run.
+
+## Earlier financial-range follow-up
+
 Section 17.9 now guards trade/notional range and avoids intermediate transaction-cost overflow, with direct weight-based turnover. Extreme/subnormal/zero/true-overflow cases pass; 20 Chapter 17 files compiled and 10 scripts passed. [Financial-range evidence](chapter-17-financial-range-followup.md). COV-77 remains partially open; this follows the full-book run.
 
 ## Earlier KKT follow-up
@@ -154,7 +158,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates twelve partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates thirteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
