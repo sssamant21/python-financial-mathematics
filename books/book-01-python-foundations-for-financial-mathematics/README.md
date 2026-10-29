@@ -560,3 +560,5 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 - [21.18 — Further Study and Transition to Book 2](chapter-21/21.18-further-study-and-transition-to-book-2.md) — Published draft; independent QA pending.
 
 **Manuscript progress:** 18/18 sections (100%); Chapter 21 manuscript complete. **Book 1:** all 322 locked sections drafted; comprehensive validation and review pending. [Chapter 21 progress index](chapter-21/README.md).
+
+Book 1 V04: [Python syntax and dependency audit](qa/syntax-dependencies-2026-10-28/README.md) — scoped compilation and clean-environment checks passed; full platform/runtime compatibility remains pending.

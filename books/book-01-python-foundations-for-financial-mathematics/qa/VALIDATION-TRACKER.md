@@ -19,6 +19,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 - **Visualization:** A Chapter 8 synthetic dashboard and one Chapter 21 synthetic chart were rendered and visually inspected; a complete visualization and accessibility review is pending.
 - **Markdown and internal links:** V02 passed the defined parser-based checks after documentation corrections. See the [audit summary](structure-and-links-2026-10-28/final-summary.json) for the exact document/link counts and deferred scope. MathJax rendering, external-reference validation and broad style/editorial acceptance remain separate.
 - **External references:** V03 passed the defined explicit-URL and publisher/topic scope after repairing current citations. [Evidence](external-references-2026-10-28/README.md) distinguishes accessible sources, public summaries, background portals, historical guidance and moving documentation; statement-level proof/copyright and compatibility approval are not inferred.
+- **Syntax and dependencies:** V04 checked all 1,160 manuscript Python fences on three actual interpreters: 1,158 compile, two intentional loop-context fragments. Five scientific/Excel dependency probes and clean Python 3.12 pip check passed. The exact NumPy/SciPy profile requires Python >=3.11 by metadata; cross-version runtime support is not inferred. [Evidence](syntax-dependencies-2026-10-28/README.md).
 - **Certification:** No Book 1-wide canonical, production, mathematical or model certification is implied.
 
 ## Validation checklist
@@ -28,7 +29,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V01 | Inventory and locked structure | Confirm 322 section files, exact titles, companion files and index consistency against the locked TOC; investigate duplicate or missing materials. | PASS (scoped) — 322 sections, 21 chapter indexes and 8 companions verified; locked TOC unchanged |
 | V02 | Markdown and internal links | Check document structure, fences, relative paths and anchors with a suitable parser; reconcile false positives. | PASS (scoped) — parser-based fences/tables, paths and index links; anchor logic self-tested; [evidence](structure-and-links-2026-10-28/README.md) |
 | V03 | External references | Check availability, relevance, authoritative source attribution and version sensitivity; record unavailable links. | PASS (scoped) — URL availability, cited fragments, publisher/topic attribution and version registration; claim-level editorial/legal review remains pending; [evidence](external-references-2026-10-28/README.md) |
-| V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | IN PROGRESS — initial syntax screen only |
+| V04 | Python syntax and dependencies | Parse relevant code, identify complete files versus fragments, verify declared dependencies and supported versions. | PASS (scoped) — 1,158 fences compile on Python 3.10/3.12/3.13; two intentional context fragments; clean 3.12 dependency profile verified; [evidence](syntax-dependencies-2026-10-28/README.md) |
 | V05 | Reference runtime by chapter | Run documented reference suites and snippets in isolated environments; preserve failures, skips, commands and results. | IN PROGRESS — all 21 chapters have scoped evidence; complete example/platform coverage remains pending |
 | V06 | Labs and exercises | Execute feasible labs, independently verify worked answers and outputs, and record prerequisites and unresolved cases. | IN PROGRESS — Chapters 1–7 have scoped demonstrations or workflow evidence; Chapter 5 installed extension passed; independent answer review pending |
 | V07 | Mathematical and financial correctness | Independently derive formulas and benchmarks; verify units, signs, timelines, rates, assumptions and edge cases. | IN PROGRESS — Chapter 2 bounded analyzer fixtures checked against closed-form accumulation; broader independent review pending |
@@ -104,10 +105,10 @@ Add new findings with an ID, affected revision, severity, owner, reproduction, e
 
 ## Execution order and update rule
 
-1. Continue with **V04: Python syntax, dependency and supported-version validation**. Use the V03 version register to distinguish moving documentation from tested dependencies. V01–V03 have scoped evidence; all 21 chapters have scoped runtime evidence. Comprehensive validation is still incomplete.
+1. Continue with **V05/V06: runtime and lab coverage reconciliation**. Map all examples and assembled files to existing evidence, then run uncovered feasible cases. V01–V04 have scoped evidence; all 21 chapters have scoped runtime evidence. Full supported-platform/library runtime coverage remains V05/V12 work; comprehensive validation is still incomplete.
 2. Perform the remaining cross-book checks V05–V14, using risk and dependency order to prioritize mathematical, data, numerical, lab and integration reviews.
 3. Record each scoped run or review in a durable evidence directory, link it from this tracker, and update the chapter row and checklist only to the scope actually verified.
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** V04 — Python syntax, dependency and supported-version validation. Broader Book 1 QA remains in progress.
+**Next action:** V05/V06 — reconcile example, reference-runtime and lab coverage; prioritize uncovered executable workflows. Broader Book 1 QA remains in progress.
