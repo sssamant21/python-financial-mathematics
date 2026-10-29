@@ -50,3 +50,7 @@ Most solver/condition checks use the same two reference matrices. Larger dimensi
 | COV-63 | Broad matrix/cumulative scope exceeds exact assertions: BA benchmark, financial weighted rows, independent bound values, cumulative rank/transpose/imperfect-residual tasks. | Reconcile assessment scope, add selected independent numerical evidence and complete manual proofs/units review. Do not equate a forty-question manuscript with forty executable checks. |
 
 These extend COV-01–COV-60. They record coverage/review categories, not confirmed defect counts. No implementation or runtime changes were made for this map. Independent review and canonical approval remain pending.
+
+## Subsequent remediation — 2026-10-29
+
+The [target-scale rank follow-up](chapter-12-rank-target-scaling-followup.md) confirms and fixes the Section 12.5 target-dependent rank defect identified above. The helper now discloses column equilibration; 21 files compiled and all 11 Chapter 12 check scripts passed. COV-61 remains partially open for broader numerical-rank, pivoting and scaling review. Original map evidence is retained.
