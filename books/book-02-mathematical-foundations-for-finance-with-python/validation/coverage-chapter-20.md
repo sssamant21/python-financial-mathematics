@@ -42,3 +42,7 @@ Compared180 worked examples/exercises in20.1–20.9, fifty foundation questions,
 | COV-87 | Duplicate financial helpers and error reporters retain different type/range/tolerance behavior; bounded properties and targeted annuity regression do not cover all copies. | Cross-section contract/numerical review, selected scale/type/overflow/underflow cases and independently justified tolerances. |
 
 These extend COV-01–COV-84, not confirmed defect counts. No code/manuscript changes and no runtime execution for this map. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-87 remediation — 2026-10-29
+
+The [error-range follow-up](chapter-20-error-range-followup.md) fixes Section 20.5's silent infinite error magnitudes: unrepresentable absolute/relative errors now raise explicit OverflowError. Exact represented-float comparison remains independent. All 19 chapter sources compiled and 10 scripts passed, including 20 Section 20.5 methods. COV-87 remains partially open for other duplicated numeric contracts/ranges and independent review; original map evidence remains historical.
