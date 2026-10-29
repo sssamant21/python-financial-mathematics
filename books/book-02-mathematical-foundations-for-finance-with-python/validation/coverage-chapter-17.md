@@ -42,3 +42,7 @@ The project twelve-step lab includes assumption register, covariance validation 
 | COV-78 | Final LP/QP assessment reuses fixed formulas/literals and omits selected applied results, notably second-cap multiplier and explicit false-success checks. | Exact selected applied assertions and manual convexity/qualification/duality proofs; do not call fixed vertex/portfolio helpers general solvers. |
 
 These extend COV-01–COV-75, not confirmed-defect counts. No changes to code/manuscripts and no new execution for this map. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-76 rejection follow-up
+
+The [independent KKT rejection record](chapter-17-kkt-rejection-followup.md) adds rational residual/objective references across four project regimes and four isolated failure cases, including complementarity-only failure. All four acceptance rules omitting a norm were detected. All 20 chapter sources compiled and 10 scripts passed; optimizer unchanged. COV-76 retains tolerance/transition/degeneracy and independent-review obligations. Original map evidence remains historical.
