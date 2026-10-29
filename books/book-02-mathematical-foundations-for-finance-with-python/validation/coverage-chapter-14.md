@@ -50,3 +50,7 @@ These extend COV-01–COV-66 and overlap prior report/exact-input/shared-oracle 
 ## Subsequent COV-69 remediation — 2026-10-29
 
 The [covariance eigenpair follow-up](chapter-14-covariance-eigenpair-followup.md) adds the promised fixed-covariance eigenpairs to Section 14.9's report and acceptance table. Closed-form eigenvalues, sign-independent projectors, directly recomputed residuals, orthogonality and reconstruction are asserted; four deliberately corrupted reports were detected. All 21 chapter files compiled and all 11 scripts passed. COV-69 remains partially open for compression-bound/report-metadata evidence and independent review. Original mapping statements remain historical.
+
+## Subsequent compression/report follow-up — 2026-10-29
+
+The [compression-bound record](chapter-14-compression-bound-followup.md) adds actual-matrix exposure calculations, the measured error norm and spectral bound, plus fixed-input/unit metadata. Twelve matrix/rank cases check 48 selected actions and attaining coordinate directions. All 21 chapter files compiled and all 11 scripts passed. Selected executable COV-69 obligations are addressed; independent review and broader numerical/interface scope remain open.
