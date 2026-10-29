@@ -59,6 +59,8 @@ def simulate(initial,rate,flow,horizon,jumps=()):
             raise ValueError("jump times must be unique, increasing, within horizon")
         scheduled.append((t,j))
         previous=t
+    inputs={"initial":a,"rate":r,"flow":u,"horizon":T,
+            "jumps":tuple(scheduled)}
     time=0.0
     log=[]
     applied=0
@@ -70,7 +72,7 @@ def simulate(initial,rate,flow,horizon,jumps=()):
         log.append({"type":"jump","time":0.0,"amount":j,"balance":a})
     if a<=0:
         log.append({"type":"depletion","time":0.0})
-        return _result("depleted",0,0,0.0,len(jumps),applied,log)
+        return _result("depleted",0,0,0.0,len(jumps),applied,log,inputs)
     for event_time,jump,is_scheduled in [(t,j,True) for t,j in scheduled]+[(T,0.0,False)]:
         dt=event_time-time
         crossing=depletion_time(a,r,u)
@@ -79,23 +81,27 @@ def simulate(initial,rate,flow,horizon,jumps=()):
             event_at=time+crossing
             log.append({"type":"depletion","time":event_at})
             return _result("depleted",event_at,0.0,event_at,
-                           len(jumps),applied,log)
+                           len(jumps),applied,log,inputs)
         a=transition(a,r,u,dt)
         time=event_time
         if a<=0:
             log.append({"type":"depletion","time":time})
-            return _result("depleted",time,0.0,time,len(jumps),applied,log)
+            return _result("depleted",time,0.0,time,len(jumps),applied,log,inputs)
         if is_scheduled:
             a=finite(a+jump,"post-jump balance")
             applied+=1
             log.append({"type":"jump","time":time,"amount":jump,"balance":a})
             if a<=0:
                 log.append({"type":"depletion","time":time})
-                return _result("depleted",time,0.0,time,len(jumps),applied,log)
-    return _result("completed",T,a,None,len(jumps),applied,log)
+                return _result("depleted",time,0.0,time,len(jumps),applied,log,inputs)
+    return _result("completed",T,a,None,len(jumps),applied,log,inputs)
 
-def _result(status,time,balance,event_time,scheduled,applied,events):
-    return {"status":status,"final_time":time,"final_balance":balance,
+def _result(status,time,balance,event_time,scheduled,applied,events,inputs):
+    return {"inputs":inputs,
+            "model":"constant_rate_continuous_account",
+            "event_policy":{"initial_jump":"before_initial_depletion",
+                            "coincident_future_jump":"depletion_first"},
+            "status":status,"final_time":time,"final_balance":balance,
             "depletion_time":event_time,"scheduled_jumps":scheduled,
             "applied_jumps":applied,"events":events,
             "units":{"time":"years","balance":"currency",
