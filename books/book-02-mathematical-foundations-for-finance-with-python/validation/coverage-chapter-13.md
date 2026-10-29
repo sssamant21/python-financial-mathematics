@@ -40,3 +40,7 @@ Rank-deficient, underdetermined, constrained, generalized-weight and production 
 | COV-66 | Analyzer unit/report/negative-case contract is partly unasserted; nonempty unit strings are not consistency verification. | Reconcile automatic versus upstream unit checks; assert meaningful required input failures and retained report fields. Keep independent business acceptance distinct from least-squares optimality. |
 
 These extend COV-01–COV-63; they are coverage categories, not confirmed implementation-defect counts. The sole manuscript change narrows 13.6's test description from zero to dependent columns. No Python changes or new runtime evidence; independent mathematical/editorial review and canonical approval remain pending.
+
+## Selected Chapter 13 QR rank-screen follow-up — 2026-10-29
+
+[New evidence](chapter-13-qr-rank-followup.md): exact selected normalized-pivot boundaries across four common scales and an independently known least-squares solution under column/target-label permutations. All 22 Chapter 13 files compiled and 12 scripts passed. Solver unchanged; COV-64 partially addressed, with general near-dependence, Q/R identities, basis-span reconstruction and independent review still open. This checker follows the third full-book runtime refresh.
