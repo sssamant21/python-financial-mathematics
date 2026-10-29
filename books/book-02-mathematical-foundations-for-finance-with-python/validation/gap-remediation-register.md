@@ -116,3 +116,7 @@ The [third full refresh](runtime-refresh-2026-10-29-r3.md) includes all prior Ch
 ## Full execution reconciliation — fourth refresh
 
 [V-35 evidence](runtime-refresh-2026-10-29-r4.md) covers all eight subsequent Chapter 13/14 checkers at `3e185649bf53f5a72ad9e1869d17762110444a26`: 452 files compiled, 241 scripts passed and 453 source/fixture blobs verified before/after. Earlier scoped-only wording is historical. Twenty-five categories remain partially addressed; independent review and approval remain pending. Next executable investigation: COV-68 Section 14.1 unequal-spectrum small-eigenvalue cancellation, using an exact/high-precision reference before any correction.
+
+## Unequal-spectrum correction — 2026-10-29
+
+[Section 14.1 evidence](chapter-14-unequal-spectrum-followup.md) records a confirmed representable-small-eigenvalue cancellation defect, its original regression failure and corrected exact/Decimal references. All 25 Chapter 14 files compiled and 15 scripts passed. This source change follows V-35; a new full-book run is not claimed. COV-68 remains partially open and twenty-five categories remain partially addressed. Next executable item: Section 14.2 duplicate spectral path against the unequal-spectrum references; independent review/platform/release gates remain pending.
