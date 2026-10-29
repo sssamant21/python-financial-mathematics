@@ -139,3 +139,7 @@ The [Section 8.9 comparator record](chapter-08-comparator-audit-followup.md) add
 ## Derivative helper-guard follow-up
 
 The [Section 8.8 guard record](chapter-08-helper-guards-followup.md) adds finite-output validation and avoids an unnecessary Richardson overflow. All 21 chapter files compiled and 11 scripts passed. COV-51 is partially addressed; eighteen selected partial categories are tracked.
+
+## Normalized-sensitivity range follow-up
+
+The [Section 8.8 sensitivity record](chapter-08-sensitivity-range-followup.md) adds explicit zero-normalizer and nonfinite report handling, with independent ratio checks. All 21 chapter files compiled and 11 scripts passed. COV-51 remains partially open; the selected register count remains eighteen.
