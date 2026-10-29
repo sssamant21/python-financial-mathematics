@@ -50,3 +50,7 @@ The [independent KKT rejection record](chapter-17-kkt-rejection-followup.md) add
 ## Subsequent COV-77 financial-range follow-up
 
 The [financial-range record](chapter-17-financial-range-followup.md) adds trade/gross range guards, direct dimensionless turnover and exact represented-float cost product/quotient arithmetic. Extreme/subnormal/zero/overflow cases are checked; underflow limitations are documented. All 20 chapter sources compiled and 10 scripts passed. COV-77 retains broader report/input/audit and independent-review obligations.
+
+## Subsequent COV-78 final-assessment follow-up
+
+The [final allocation record](chapter-17-final-allocation-followup.md) adds second-cap multiplier/certificate checks, explicit rejected candidates and a fix for rounded-cap sums admitting an empty interval. All 20 chapter sources compiled and 10 scripts passed. The checker now imports Section 17.9's verifier; broader final LP/QP and independent proof/review obligations remain open.
