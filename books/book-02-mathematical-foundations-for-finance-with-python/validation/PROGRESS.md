@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped basis-span follow-up
+## Latest scoped null-basis follow-up
+
+Section 13.3 now checks 72 selected rank/nullity, exact null-vector and independence cases. All 26 Chapter 13 files compiled and 16 scripts passed. [Evidence](chapter-13-null-basis-followup.md). COV-64 partially open; follows V-34.
+
+## Earlier scoped basis-span follow-up
 
 Section 13.2 now checks exact basis-span reconstruction across six column orders and three scales. All 25 Chapter 13 files compiled and 15 scripts passed. [Evidence](chapter-13-basis-span-followup.md). COV-64 remains partially open; follows V-34.
 
@@ -265,3 +269,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Selected reordered basis-span follow-up — 2026-10-29
 
 [Section 13.2 evidence](chapter-13-basis-span-followup.md) extends partial COV-64 remediation: eighteen permutation/scale cases with exact selected-basis coordinates reconstruct every original column and a separately chosen exposure. All 25 Chapter 13 files compiled and 15 scripts passed. General near-dependence, Q/R identities and independent review remain open. This scoped run follows the third full-book refresh; twenty-three selected categories remain partially addressed.
+
+## Selected null-basis follow-up — 2026-10-29
+
+[Section 13.3 evidence](chapter-13-null-basis-followup.md) extends COV-64 with 72 selected known-rank cases, exact returned-vector Az=0 identities, free-coordinate independence and unchanged exposures under null-space shifts. All 26 Chapter 13 files compiled and 16 scripts passed. General near-dependence, Q/R identities and independent review remain open. This scoped run follows the third full-book refresh; twenty-three categories remain partially addressed.
