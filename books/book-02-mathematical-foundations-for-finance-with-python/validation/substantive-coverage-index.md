@@ -119,3 +119,7 @@ The [Section 17.10 follow-up](chapter-17-final-allocation-followup.md) adds mult
 ## Factor-limit audit follow-up
 
 The [Section 12.9 factor audit](chapter-12-factor-audit-followup.md) adds retained limits and meaningful rejection/boundary evidence. All 21 chapter sources compiled and 11 scripts passed. COV-62 is partially addressed; fourteen selected partial categories are tracked.
+
+## Full execution reconciliation — second refresh
+
+All code follow-ups recorded above through the factor audit are included in the [second full-book refresh](runtime-refresh-2026-10-29-r2.md): 444 sources compiled and 233 scripts exited zero at `7ee99f60d5089510f860a0b6f695f971beb2eac6`, with 445 required sources/fixture blobs verified. Earlier statements about subsequent scoped-only changes remain historical; this shared run now covers them. Fourteen categories remain partially addressed; no independent closure or approval is inferred.
