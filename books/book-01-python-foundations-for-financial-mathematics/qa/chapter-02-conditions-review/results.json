@@ -1,0 +1,873 @@
+{
+  "source_revision": "e0f9cfdd30ce42f576fee3760fc86254be2bbdb7",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 13,
+  "predicates": 60,
+  "passed": 60,
+  "failed": 0,
+  "exact_snippet_executions": 41,
+  "source_snippet_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "checks": [
+    {
+      "exercise": 1,
+      "label": "published target",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 1,
+      "label": "inclusive target boundary 99999.99",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 1,
+      "label": "inclusive target boundary 100000",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 1,
+      "label": "inclusive target boundary 100000.01",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 2,
+      "label": "cash-flow sign -2500",
+      "kind": "exact source execution",
+      "actual": "(False, True, False)",
+      "expected": "(False, True, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 2,
+      "label": "cash-flow sign 0",
+      "kind": "exact source execution",
+      "actual": "(False, False, True)",
+      "expected": "(False, False, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 2,
+      "label": "cash-flow sign 2500",
+      "kind": "exact source execution",
+      "actual": "(True, False, False)",
+      "expected": "(True, False, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "supported rate .08",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "supported rate 0",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "supported rate .25",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "supported rate -.0001",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "supported rate .2501",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 4,
+      "label": "published compound condition",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 4,
+      "label": "failed conjunct {'investment': Decimal('0')}",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 4,
+      "label": "failed conjunct {'expected_return': Decimal('0')}",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 4,
+      "label": "failed conjunct {'years': 4}",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 5,
+      "label": "presence and truthiness None",
+      "kind": "supplemental reasoning probe",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 5,
+      "label": "presence and truthiness 0",
+      "kind": "supplemental reasoning probe",
+      "actual": "(False, True)",
+      "expected": "(False, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 5,
+      "label": "presence and truthiness 1",
+      "kind": "supplemental reasoning probe",
+      "actual": "(False, False)",
+      "expected": "(False, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 6,
+      "label": "r > g .09/.03",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 6,
+      "label": "r > g .03/.03",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 6,
+      "label": "r > g .02/.03",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "chained loan bounds 250000",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "logical loan bounds 250000",
+      "kind": "supplemental logical equivalent",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "chained loan bounds 1000",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "logical loan bounds 1000",
+      "kind": "supplemental logical equivalent",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "chained loan bounds 500000",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "logical loan bounds 500000",
+      "kind": "supplemental logical equivalent",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "chained loan bounds 999.99",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "logical loan bounds 999.99",
+      "kind": "supplemental logical equivalent",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "chained loan bounds 500000.01",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "logical loan bounds 500000.01",
+      "kind": "supplemental logical equivalent",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard None",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard '0.05'",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard 0.05",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard True",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard Decimal('0.05')",
+      "kind": "exact source execution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard Decimal('NaN')",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard Decimal('sNaN')",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "dependency guard Decimal('Infinity')",
+      "kind": "exact source execution",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 9,
+      "label": "classification .06",
+      "kind": "exact source execution",
+      "actual": "positive",
+      "expected": "positive",
+      "status": "PASS"
+    },
+    {
+      "exercise": 9,
+      "label": "classification 0",
+      "kind": "exact source execution",
+      "actual": "zero",
+      "expected": "zero",
+      "status": "PASS"
+    },
+    {
+      "exercise": 9,
+      "label": "classification -.01",
+      "kind": "exact source execution",
+      "actual": "negative",
+      "expected": "negative",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "liquidity boundary .49",
+      "kind": "exact source execution",
+      "actual": "Low liquidity",
+      "expected": "Low liquidity",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "liquidity boundary .5",
+      "kind": "exact source execution",
+      "actual": "Moderate liquidity",
+      "expected": "Moderate liquidity",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "liquidity boundary .75",
+      "kind": "exact source execution",
+      "actual": "Moderate liquidity",
+      "expected": "Moderate liquidity",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "liquidity boundary .999",
+      "kind": "exact source execution",
+      "actual": "Moderate liquidity",
+      "expected": "Moderate liquidity",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "liquidity boundary 1",
+      "kind": "exact source execution",
+      "actual": "High liquidity",
+      "expected": "High liquidity",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "liquidity boundary 1.01",
+      "kind": "exact source execution",
+      "actual": "High liquidity",
+      "expected": "High liquidity",
+      "status": "PASS"
+    },
+    {
+      "exercise": 11,
+      "label": "target classification 99999",
+      "kind": "supplemental implementation",
+      "actual": "Below target",
+      "expected": "Below target",
+      "status": "PASS"
+    },
+    {
+      "exercise": 11,
+      "label": "target classification 100000",
+      "kind": "supplemental implementation",
+      "actual": "Exactly at target",
+      "expected": "Exactly at target",
+      "status": "PASS"
+    },
+    {
+      "exercise": 11,
+      "label": "target classification 102500",
+      "kind": "supplemental implementation",
+      "actual": "Above target",
+      "expected": "Above target",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "screen (50000, '.07', 8)",
+      "kind": "supplemental implementation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "screen (1, '.01', 5)",
+      "kind": "supplemental implementation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "screen (0, '.01', 5)",
+      "kind": "supplemental implementation",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "screen (1, '0', 5)",
+      "kind": "supplemental implementation",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "screen (1, '.01', 4)",
+      "kind": "supplemental implementation",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 13,
+      "label": "contribution rule 99999",
+      "kind": "supplemental implementation",
+      "actual": "Contribution required",
+      "expected": "Contribution required",
+      "status": "PASS"
+    },
+    {
+      "exercise": 13,
+      "label": "contribution rule 100000",
+      "kind": "supplemental implementation",
+      "actual": "Target already funded",
+      "expected": "Target already funded",
+      "status": "PASS"
+    },
+    {
+      "exercise": 13,
+      "label": "contribution rule 100001",
+      "kind": "supplemental implementation",
+      "actual": "Target already funded",
+      "expected": "Target already funded",
+      "status": "PASS"
+    }
+  ],
+  "executions": [
+    {
+      "zero_based_fence": 0,
+      "original_code_sha256": "2804610a0e61be49646606c22b0e06984bbcc25ca8ace54827fbc9f484c54d44",
+      "overrides": {},
+      "prelude": {},
+      "stdout": "False\n"
+    },
+    {
+      "zero_based_fence": 0,
+      "original_code_sha256": "2804610a0e61be49646606c22b0e06984bbcc25ca8ace54827fbc9f484c54d44",
+      "overrides": {
+        "balance": "99999.99"
+      },
+      "prelude": {},
+      "stdout": "False\n"
+    },
+    {
+      "zero_based_fence": 0,
+      "original_code_sha256": "2804610a0e61be49646606c22b0e06984bbcc25ca8ace54827fbc9f484c54d44",
+      "overrides": {
+        "balance": "100000"
+      },
+      "prelude": {},
+      "stdout": "True\n"
+    },
+    {
+      "zero_based_fence": 0,
+      "original_code_sha256": "2804610a0e61be49646606c22b0e06984bbcc25ca8ace54827fbc9f484c54d44",
+      "overrides": {
+        "balance": "100000.01"
+      },
+      "prelude": {},
+      "stdout": "True\n"
+    },
+    {
+      "zero_based_fence": 1,
+      "original_code_sha256": "4a7c780df513267fb438883ffd6c38bcee15a0ea070a46d96cc44f602e03e2b3",
+      "overrides": {
+        "cash_flow": "-2500"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 1,
+      "original_code_sha256": "4a7c780df513267fb438883ffd6c38bcee15a0ea070a46d96cc44f602e03e2b3",
+      "overrides": {
+        "cash_flow": "0"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 1,
+      "original_code_sha256": "4a7c780df513267fb438883ffd6c38bcee15a0ea070a46d96cc44f602e03e2b3",
+      "overrides": {
+        "cash_flow": "2500"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 2,
+      "original_code_sha256": "58215275855ddc0f2d6c66babd56e2d904504f3b4f56c744f10e3b036c4ac336",
+      "overrides": {
+        "discount_rate": "0.08"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 2,
+      "original_code_sha256": "58215275855ddc0f2d6c66babd56e2d904504f3b4f56c744f10e3b036c4ac336",
+      "overrides": {
+        "discount_rate": "0"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 2,
+      "original_code_sha256": "58215275855ddc0f2d6c66babd56e2d904504f3b4f56c744f10e3b036c4ac336",
+      "overrides": {
+        "discount_rate": "0.25"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 2,
+      "original_code_sha256": "58215275855ddc0f2d6c66babd56e2d904504f3b4f56c744f10e3b036c4ac336",
+      "overrides": {
+        "discount_rate": "-0.0001"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 2,
+      "original_code_sha256": "58215275855ddc0f2d6c66babd56e2d904504f3b4f56c744f10e3b036c4ac336",
+      "overrides": {
+        "discount_rate": "0.2501"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 3,
+      "original_code_sha256": "6dfe4d9cc08cabbc9763a8fbce450a44c1b293e50ac95324145c0433716f09bd",
+      "overrides": {},
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 3,
+      "original_code_sha256": "6dfe4d9cc08cabbc9763a8fbce450a44c1b293e50ac95324145c0433716f09bd",
+      "overrides": {
+        "investment": "0"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 3,
+      "original_code_sha256": "6dfe4d9cc08cabbc9763a8fbce450a44c1b293e50ac95324145c0433716f09bd",
+      "overrides": {
+        "expected_return": "0"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 3,
+      "original_code_sha256": "6dfe4d9cc08cabbc9763a8fbce450a44c1b293e50ac95324145c0433716f09bd",
+      "overrides": {
+        "years": "4"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 4,
+      "original_code_sha256": "4d147243badcb887904ecd851f5c1bd114fb7571759d3a057d87c4ad2c243822",
+      "overrides": {
+        "discount_rate": "0.09",
+        "growth_rate": "0.03"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 4,
+      "original_code_sha256": "4d147243badcb887904ecd851f5c1bd114fb7571759d3a057d87c4ad2c243822",
+      "overrides": {
+        "discount_rate": "0.03",
+        "growth_rate": "0.03"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 4,
+      "original_code_sha256": "4d147243badcb887904ecd851f5c1bd114fb7571759d3a057d87c4ad2c243822",
+      "overrides": {
+        "discount_rate": "0.02",
+        "growth_rate": "0.03"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 5,
+      "original_code_sha256": "053b8a80f55b251637f1cb8f67f2f7835ca37196980097b713c1785cfa206b34",
+      "overrides": {
+        "loan_amount": "250000"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 5,
+      "original_code_sha256": "053b8a80f55b251637f1cb8f67f2f7835ca37196980097b713c1785cfa206b34",
+      "overrides": {
+        "loan_amount": "1000"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 5,
+      "original_code_sha256": "053b8a80f55b251637f1cb8f67f2f7835ca37196980097b713c1785cfa206b34",
+      "overrides": {
+        "loan_amount": "500000"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 5,
+      "original_code_sha256": "053b8a80f55b251637f1cb8f67f2f7835ca37196980097b713c1785cfa206b34",
+      "overrides": {
+        "loan_amount": "999.99"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 5,
+      "original_code_sha256": "053b8a80f55b251637f1cb8f67f2f7835ca37196980097b713c1785cfa206b34",
+      "overrides": {
+        "loan_amount": "500000.01"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "None"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "0.05"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "0.05"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "True"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "0.05"
+      },
+      "stdout": "Usable Decimal rate.\n"
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "NaN"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "sNaN"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 6,
+      "original_code_sha256": "0b4d1be4365e7af0e898a27ae4ffa29fcfd83bdbcfd73139a37aaaf2aa838b4a",
+      "overrides": {},
+      "prelude": {
+        "annual_return": "Infinity"
+      },
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 7,
+      "original_code_sha256": "3332152b10168a7747b4ee211434311dc0c2751e9ce912cee19ef14fbf779bb4",
+      "overrides": {
+        "annual_return": "0.06"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 7,
+      "original_code_sha256": "3332152b10168a7747b4ee211434311dc0c2751e9ce912cee19ef14fbf779bb4",
+      "overrides": {
+        "annual_return": "0"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 7,
+      "original_code_sha256": "3332152b10168a7747b4ee211434311dc0c2751e9ce912cee19ef14fbf779bb4",
+      "overrides": {
+        "annual_return": "-0.01"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 8,
+      "original_code_sha256": "747647979a44c55a61254cd3ff1d5ba93c31c3de2bbd8a8648251948ad7c25fd",
+      "overrides": {
+        "cash_ratio": "0.49"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 8,
+      "original_code_sha256": "747647979a44c55a61254cd3ff1d5ba93c31c3de2bbd8a8648251948ad7c25fd",
+      "overrides": {
+        "cash_ratio": "0.5"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 8,
+      "original_code_sha256": "747647979a44c55a61254cd3ff1d5ba93c31c3de2bbd8a8648251948ad7c25fd",
+      "overrides": {
+        "cash_ratio": "0.75"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 8,
+      "original_code_sha256": "747647979a44c55a61254cd3ff1d5ba93c31c3de2bbd8a8648251948ad7c25fd",
+      "overrides": {
+        "cash_ratio": "0.999"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 8,
+      "original_code_sha256": "747647979a44c55a61254cd3ff1d5ba93c31c3de2bbd8a8648251948ad7c25fd",
+      "overrides": {
+        "cash_ratio": "1"
+      },
+      "prelude": {},
+      "stdout": ""
+    },
+    {
+      "zero_based_fence": 8,
+      "original_code_sha256": "747647979a44c55a61254cd3ff1d5ba93c31c3de2bbd8a8648251948ad7c25fd",
+      "overrides": {
+        "cash_ratio": "1.01"
+      },
+      "prelude": {},
+      "stdout": ""
+    }
+  ]
+}

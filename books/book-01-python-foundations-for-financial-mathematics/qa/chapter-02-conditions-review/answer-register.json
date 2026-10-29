@@ -1,0 +1,111 @@
+{
+  "source_revision": "e0f9cfdd30ce42f576fee3760fc86254be2bbdb7",
+  "prompt_file_sha256": "19acabb3693a190efae59d1c034311d270f2daeeb027002aba52182522b5a312",
+  "companion_file_sha256_before_link": "6023692ddc6deb2d37a5b57c4ecee05ceb2db8d1bf4f14965bd6c2881e3ceaeb",
+  "records": [
+    {
+      "exercise": "2.13.1",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "fb9348785533f6d55de20dbea1f9851a46ef2a83857c832f61092ba96cab5373",
+      "companion_answer_sha256": "0c76d3dff0dbc36a541f4430ad5009d76c8a610f6164e7fbbcbadef35152a29a",
+      "answer": "balance >= target gives False at 87,500 versus 100,000. Equality belongs to target reached. Boundary checks include immediately below, equal and above.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.2",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "15c634e38a591434002f81d227d15ede22f8398ca681db2ef06a7bf02dc2b47e",
+      "companion_answer_sha256": "9cadbf42323b128f8d519d17bb5db7dff3f8b97615d2ffd72fdc2daa32fc71bd",
+      "answer": "The published -2500 is negative: positive=False, negative=True, zero=False. Supplemental zero and positive cases preserve mutually exclusive classifications; known zero is not missing.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.3",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "d1b7575740cf58fa8f1ac03b3dfcecab1ed445dc3b576fb209b950f21a6af96c",
+      "companion_answer_sha256": "67570cc8291e54dc0861e4e2b962766bd662b46c226ba6da7c886adef9a3cfbe",
+      "answer": "0 <= discount_rate <= .25 gives True at .08 and both endpoints; rejects values just outside. This interval is exercise-defined, not a universal discount-rate bound.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.4",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "396e63ef46d5331d8fe9268f53db87fb3e898e17db1d7f03ddb1083c7ade7a35",
+      "companion_answer_sha256": "d7f1f4b851a6f693ee1e1a5b4b07f598d789be48e5a54969bf3dc9768bfd8208",
+      "answer": "investment > 0 and expected_return > 0 and years >= 5 gives True for 50000, .07, 8. Each failed conjunct was independently exercised.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.5",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "a7edd9f657910fb701800c0715687e80bfc443e36dc10404f7c44d5238fb2069",
+      "companion_answer_sha256": "9eb758e16ae7c3b43574e0262b330d3df7de3b0d09f16c77e76182e7003020e8",
+      "answer": "Use cash_flow is None. Decimal zero is falsy but is an observed zero, so if not cash_flow cannot distinguish missing from zero. Presence and truthiness were probed independently.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.6",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "0feb736364c1f35081c34287ce3327650bbffc20e73a80bef7cb3c914cfac8f3",
+      "companion_answer_sha256": "2463bdea53f25d3f39f71690a88ac02a9068b4f26f379bf23ff348c923ccda01",
+      "answer": "discount_rate > growth_rate gives True for .09 > .03; equality .03 == .03 and .02 < .03 both fail. The companion only explicitly evaluated the first case; this supplement supplies the requested equality/lower cases. The selected formula requires strict inequality, not merely positive rates.",
+      "completion_gap_supplemented": true
+    },
+    {
+      "exercise": "2.13.7",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "bf47ad12dda1f219f1259fd50c06a9741e500e83c64493ed35ab03a501f10ac1",
+      "companion_answer_sha256": "f7a7fb4d3a2cb5476a77ed11ae3db1f22c6ea5c696a2a38a15de2021bf88921d",
+      "answer": "Logical rule: loan_amount >= Decimal(\"1000\") and loan_amount <= Decimal(\"500000\"). Chained equivalent: Decimal(\"1000\") <= loan_amount <= Decimal(\"500000\"). Both accept 250000 and both endpoints and reject 999.99/500000.01. The companion supplied only the chained form.",
+      "completion_gap_supplemented": true
+    },
+    {
+      "exercise": "2.13.8",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "603204f7b96ebcbcf1a3bffd6b085a1fe57f7411cf0c191313d702a8aa490a2c",
+      "companion_answer_sha256": "7f68f11064b47ac27da7bd7c3bf22f0949a19d8d728c63cf0fb62ff18cfff659",
+      "answer": "Check presence, then isinstance(value, Decimal), then value.is_finite(). None/string/float/bool never receive a Decimal-only method call. Decimal NaN, signaling NaN and Infinity fail the finite check. Checking None alone does not protect arbitrary external types. This guard checks representation/finiteness, not rate domain.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.9",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "ddc384b077982a4808f27bebd747c06a960450647376e8774257184bd0576749",
+      "companion_answer_sha256": "24aba126ba37b6e2bdbc7310bfac69a8015afa6a3e5311ea2c7095db6966bf29",
+      "answer": "The if/elif/else source classifies .06 positive, 0 zero and -.01 negative. These examples assume finite validated Decimals; the snippet is not a complete parser/domain validator.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.10",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "30e53cbd7c7558a1f8a7a01111eb3f03f0fab643a356682612048e714adde94c",
+      "companion_answer_sha256": "e18899cea343435a748cbb0a409a35959f505fae2dfa9ab3635a74062acb8b69",
+      "answer": "Use if ratio < .5, elif ratio < 1, else high. .5 is Moderate and 1 is High; .75 is Moderate. Thresholds are educational. Negative/nonfinite ratios require a separate input contract; these fixtures test the stated finite boundaries.",
+      "completion_gap_supplemented": false
+    },
+    {
+      "exercise": "2.13.11",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "7a038fb4d6e4884bb72663c6baf236d56cb14be748573dd478fb48cdffdf0739",
+      "companion_answer_sha256": "d652175bdb9c1fe467c68fd8b5c3e13cb997179ab0124e891c112a61a7ee0f55",
+      "answer": "The supplemental target_classification implements Below target for balance < target, Exactly at target for equality, otherwise Above target. 102500 versus 100000 is Above target. The companion gives the published result but no implementation; all three finite branches are checked here.",
+      "completion_gap_supplemented": true
+    },
+    {
+      "exercise": "2.13.12",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "ba5ed64620a912d9979da41cf84bdae6d14b9e4134f0d3068c2835544fa8efae",
+      "companion_answer_sha256": "489f6ae3d8f37995045876b9bd7c25c8d6a9f5f0ba80e6fa9cce4a907c1220d3",
+      "answer": "The supplemental screen implements investment > 0 and expected_return > 0 and years >= 5. A boundary horizon of 5 passes; zero principal/return and horizon 4 fail. Programmed rules omit liquidity needs, risk capacity, liabilities, taxes, uncertainty and suitability assessment; passing is not a recommendation. The companion explanation is retained and its requested implementation supplied here.",
+      "completion_gap_supplemented": true
+    },
+    {
+      "exercise": "2.13.13",
+      "status": "PASS_SCOPED_WITH_SUPPLEMENT",
+      "prompt_sha256": "5faaac620ab2cd1b0a2d456b4a0505c1e54d3fa27884cbff0c4537fea2f82aa8",
+      "companion_answer_sha256": "250390cc67e9abd0ac4f0ebb924f73d84b9351cbd55d5b6d95693b2e6d6a024e",
+      "answer": "The supplemental contribution_rule returns Contribution required when balance < target and Target already funded for equality or above. Actual planning also needs liquidity, income, liabilities, taxes, risk, horizon, contribution limits and other goals. This is an educational rule, not an advice engine. The companion narrative is supplemented by code and all three boundary fixtures.",
+      "completion_gap_supplemented": true
+    }
+  ]
+}
