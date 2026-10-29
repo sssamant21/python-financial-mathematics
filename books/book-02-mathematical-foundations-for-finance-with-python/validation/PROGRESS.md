@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest remediation — 2026-10-29
 
+Section 19.6 adaptive RK4 now has exact-polynomial and observed-stage checks for estimator/scaling, rejection preservation, retry acceptance and controller limits. Nine intentional policy errors were detected; no solver change was needed. All 21 Chapter 19 files compiled and 11 scripts passed, with the final checker recompiled/rerun after refining its zero-error case. [Scoped adaptive evidence](chapter-19-adaptive-policy-followup.md). COV-82 remains partially open for broader numerical behavior and independent review.
+
+## Earlier event-report remediation — 2026-10-29
+
 Section 19.9 now retains validated scenario inputs and complete jump schedules, with model/event policies. Ten report-contract cases and selected negative-jump/adjacent-time traces pass; 21 Chapter 19 files compiled and all 11 check scripts passed, plus successful CLI JSON parsing. [Scoped evidence](chapter-19-input-provenance-followup.md). COV-83 remains partially open for broader event numerics and independent review.
 
 ## Earlier Taylor remediation — 2026-10-29
