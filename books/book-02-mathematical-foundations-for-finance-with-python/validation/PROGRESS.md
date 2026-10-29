@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped comparator follow-up
+## Latest scoped helper follow-up
+
+Section 8.8 now rejects nonfinite derivative estimates and avoids Richardson intermediate overflow. Selected perturbation/callback/denominator guards pass; all 21 Chapter 8 files compiled and 11 scripts passed. [Evidence](chapter-08-helper-guards-followup.md). COV-51 remains partially open; this follows the full-book run.
+
+## Earlier scoped comparator follow-up
 
 Section 8.9 now retains tolerance metadata, checks exact error fields/boundaries and rejects nonfinite estimates/errors that could falsely pass. All 21 Chapter 8 files compiled and 11 scripts passed. [Evidence](chapter-08-comparator-audit-followup.md). COV-50 remains partially open; this follows the full-book run.
 
@@ -181,7 +185,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates seventeen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates eighteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
