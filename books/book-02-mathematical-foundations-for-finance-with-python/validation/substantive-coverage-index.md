@@ -111,3 +111,7 @@ The [Section 17.9 KKT record](chapter-17-kkt-rejection-followup.md) adds indepen
 ## Financial-report range follow-up
 
 The [Section 17.9 financial-range record](chapter-17-financial-range-followup.md) documents explicit range errors and avoided intermediate cost overflow, while preserving underflow limitations. All 20 chapter sources compiled and 10 scripts passed. COV-77 is partially addressed; twelve selected partial categories are tracked.
+
+## Final allocation assessment follow-up
+
+The [Section 17.10 follow-up](chapter-17-final-allocation-followup.md) adds multiplier/rejection evidence and fixes an empty interval hidden by rounded cap addition. All 20 chapter sources compiled and 10 scripts passed. COV-78 is partially addressed; thirteen selected partial categories are tracked.
