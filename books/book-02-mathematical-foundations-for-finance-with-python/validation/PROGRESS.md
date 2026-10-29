@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest full-book runtime refresh
+## Latest scoped QR rank-screen follow-up
+
+Section 13.6 now has selected threshold/scale and column-order reference checks. All 22 Chapter 13 files compiled and 12 scripts passed. [Evidence](chapter-13-qr-rank-followup.md). COV-64 partially open; follows V-34.
+
+## Earlier full-book runtime refresh
 
 V-34: 444/444 Python files compiled; 233/233 scripts exited zero; 445/445 required source/fixture blobs matched the pinned tree before and after execution. This third full refresh includes the recent Chapter 8, 10 and 11 follow-ups. [Report and raw evidence](runtime-refresh-2026-10-29-r3.md). Independent review and release gates remain pending.
 
@@ -233,3 +237,7 @@ For each completed item record the date, exact commit or snapshot, environment, 
 ## V-34 — Third pinned full-book runtime refresh
 
 Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3.12.14/Linux: 444 compiled files, 233 successful script exits and 445 verified source/fixture blobs. No failures or timeouts. [Evidence](runtime-refresh-2026-10-29-r3.md). G1 candidate evidence refreshed; G2–G8 unchanged. This is not independent mathematical sign-off or release acceptance.
+
+## Selected Chapter 13 QR rank-screen follow-up — 2026-10-29
+
+[New evidence](chapter-13-qr-rank-followup.md): exact selected normalized-pivot boundaries across four common scales and an independently known least-squares solution under column/target-label permutations. All 22 Chapter 13 files compiled and 12 scripts passed. Solver unchanged; COV-64 partially addressed, with general near-dependence, Q/R identities, basis-span reconstruction and independent review still open. This checker follows the third full-book runtime refresh.
