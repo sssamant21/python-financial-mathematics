@@ -58,6 +58,10 @@ Priorities below are a work order based on potential effect and evidence depende
 | R6 Navigation, editorial and environments | G2/G5/G6/G7 | Complete full-book navigation/editorial review, declare supported Python/platform matrix and validate reviewed candidate. | Actual platform results; no unexecuted Windows or version-support claims. |
 | R7 Authorized decision | G4/G8 | Complete independent mathematical review and obtain authorized canonical decision for exact release scope. | Identified reviewer/authority, resolved findings or explicit accepted exceptions, revision and intended use. |
 
+## Remediation progress
+
+R1: Section 15.2 finite-difference guards fixed; 21 files compiled and 11 Chapter 15 check scripts passed, including nine boundary methods. [Scoped evidence](chapter-15-scalar-difference-followup.md). COV-71 remains partially open. Next numerical-contract item: Section 12.5 target-dependent rank threshold.
+
 ## Disposition rules
 
 1. Preserve each gap's original evidence and link the confirmed disposition. Do not silently rewrite a gap as a pass.
