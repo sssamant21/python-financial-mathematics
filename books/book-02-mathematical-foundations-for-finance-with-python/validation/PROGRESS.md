@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped QR rank-screen follow-up
+## Latest scoped ridge optimality follow-up
+
+Section 13.8 now has exact rational objective and nonoptimal-comparison checks plus a selected positive-strength limit sequence. All 23 Chapter 13 files compiled and 13 scripts passed. [Evidence](chapter-13-ridge-optimality-followup.md). COV-65 partially open; implementation unchanged and this follows V-34.
+
+## Earlier scoped QR rank-screen follow-up
 
 Section 13.6 now has selected threshold/scale and column-order reference checks. All 22 Chapter 13 files compiled and 12 scripts passed. [Evidence](chapter-13-qr-rank-followup.md). COV-64 partially open; follows V-34.
 
@@ -241,3 +245,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Selected Chapter 13 QR rank-screen follow-up — 2026-10-29
 
 [New evidence](chapter-13-qr-rank-followup.md): exact selected normalized-pivot boundaries across four common scales and an independently known least-squares solution under column/target-label permutations. All 22 Chapter 13 files compiled and 12 scripts passed. Solver unchanged; COV-64 partially addressed, with general near-dependence, Q/R identities, basis-span reconstruction and independent review still open. This checker follows the third full-book runtime refresh.
+
+## Selected fixed-model ridge follow-up — 2026-10-29
+
+[Exact-objective evidence](chapter-13-ridge-optimality-followup.md) partially addresses COV-65: four positive ridge strengths, twelve nonoptimal objective comparisons and a six-point limit sequence. All 23 Chapter 13 files compiled and 13 scripts passed. The helper remains a fixed two-identical-column model with positive strength required. Broader weighted/regularized, scaling and independent-review obligations remain open; this scoped run follows the third full-book refresh.
