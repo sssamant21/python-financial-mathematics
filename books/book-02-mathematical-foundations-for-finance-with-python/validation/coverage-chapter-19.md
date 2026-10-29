@@ -42,3 +42,7 @@ Adaptive RK4 tests establish useful analytic accuracy and count relationships, p
 | COV-84 | General ODE/proof and applied variants exceed constant/fixed-model tests; discrete-to-continuous frequency convergence and some cumulative cases absent. | Independent derivation/unit/stability review and selected required numerical cases; preserve real Euler/RK4 ratio and high-precision contribution evidence without general certification. |
 
 These extend COV-01–COV-81, not defect counts. No code/manuscript changes or execution for this map. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-83 remediation — 2026-10-29
+
+The [input provenance follow-up](chapter-19-input-provenance-followup.md) reconciles Section 19.9's missing input fields: reports now retain validated scenario parameters, complete scheduled transfers and explicit model/event policies. Ten report-contract cases check metadata, deterministic JSON and caller-mutation isolation; selected negative-jump and adjacent-time event traces are asserted. All 21 chapter files compiled and all 11 scripts passed. COV-83 remains partially open for broader event numerics, cross-section policy and independent review; this does not rewrite the historical mapping evidence above.
