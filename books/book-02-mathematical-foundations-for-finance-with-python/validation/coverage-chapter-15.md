@@ -46,3 +46,7 @@ These extend COV-01–COV-69, not confirmed defect counts. No code/manuscript ed
 ## Subsequent remediation
 
 The [scalar difference follow-up](chapter-15-scalar-difference-followup.md) fixes the Section 15.2 representability and denominator guards identified above. Twenty-one Chapter 15 files compiled and all eleven check scripts passed, including nine boundary methods. This partially remediates COV-71; the original mapping evidence and remaining accuracy, asymmetry and independent-review obligations are retained.
+
+## Subsequent COV-70 remediation — 2026-10-29
+
+The [Taylor oracle follow-up](chapter-15-taylor-oracle-followup.md) adds a Decimal path-series reference for nine shock cases, directly checking nonzero second-order output and portfolio changes independently of the engine's derivative/contraction helpers. Signed and absolute portfolio error fields are now implemented and asserted; the manuscript clarifies that portfolio absolute error is the absolute signed total. All 21 chapter files compiled and all 11 scripts passed; three deliberately incorrect contraction variants were detected. The selected Section 15.9 gaps are addressed; COV-70 retains final-assessment/shared-dependency and independent-review work. Original mapping evidence remains historical.
