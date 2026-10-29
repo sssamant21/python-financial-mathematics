@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up
 
+Section 18.8's bracket flag now uses cached endpoint signs and interval history; endpoint residuals are reported. Independent reevaluation and callback counts cover seven solver paths. All 21 Chapter 18 files compiled and 11 scripts passed. [Bracket audit evidence](chapter-18-bracket-audit-followup.md). COV-79 remains partially open; this follows the full-book run below.
+
+## Earlier Section 20.6 contract follow-up
+
 Section 20.6 now rejects booleans/invalid numeric inputs, checks exponent/PV range and validates rates for empty portfolios. All 19 Chapter 20 sources compiled and 10 scripts passed, including 19 Section 20.6 methods. [Contract evidence](chapter-20-metamorphic-contract-followup.md). Underflow remains permitted and documented; COV-87 remains partially open. This code change follows the recorded full-book run.
 
 ## Earlier error-range follow-up — 2026-10-29
@@ -142,7 +146,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates nine partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates ten partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
