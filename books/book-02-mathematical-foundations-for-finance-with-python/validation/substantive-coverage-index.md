@@ -99,3 +99,7 @@ Section 20.5 no longer returns infinite error magnitudes from finite inputs; it 
 ## Section 20.6 contract follow-up
 
 The [metamorphic PV contract record](chapter-20-metamorphic-contract-followup.md) documents explicit numeric validation and range policy, including empty-portfolio rates. All 19 Chapter 20 files compiled and 10 scripts passed. This extends partial COV-87 remediation; no independent approval or new full-book runtime is implied.
+
+## Bracket diagnostic follow-up
+
+The [Section 18.8 bracket audit](chapter-18-bracket-audit-followup.md) adds actual sign/history and callback-count evidence across seven paths. All 21 chapter files compiled and 11 scripts passed. COV-79 is partially addressed; the register now tracks ten selected partial categories.
