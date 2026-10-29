@@ -58,3 +58,7 @@ The [relative-distance record](chapter-11-relative-distance-followup.md) adds in
 ## Subsequent COV-59 policy-audit follow-up
 
 The [policy audit](chapter-11-policy-audit-followup.md) retains configured limits/allowances and checks isolated gross/name/NAV-gap thresholds plus selected invalid inputs. All 21 chapter files compiled and 11 scripts passed; decision rules unchanged. Section 11.7 budget, broader policy scope/units and independent review remain open.
+
+## Subsequent Section 11.7 budget follow-up
+
+The [budget boundary record](chapter-11-budget-boundary-followup.md) verifies the previously missing isolated budget breach and selected exact/adjacent thresholds. An omitted-budget variant was detected. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. COV-59 retains broader tolerance/policy-scope and independent-review obligations.
