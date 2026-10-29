@@ -1,6 +1,7 @@
 """Book 02 Section 17.9: auditable two-asset allocation decision engine."""
 import json
 import math
+from fractions import Fraction
 
 SIGMA=((0.04,0.01),(0.01,0.09))
 RETURNS=(0.08,0.05)
@@ -97,12 +98,23 @@ def financial_report(weights,current=(0.5,0.5),
         raise ValueError("invalid capital, cost, or weight")
     if abs(sum(w)-1)>1e-10 or abs(sum(old)-1)>1e-10:
         raise ValueError("weights must sum to one")
-    trades=tuple(capital*(a-b) for a,b in zip(w,old))
-    gross=sum(abs(z) for z in trades)
+    def bounded(value,name):
+        if not math.isfinite(value):
+            raise OverflowError(f"{name} exceeds float range")
+        return value
+    trades=tuple(bounded(capital*(a-b),"signed trade") for a,b in zip(w,old))
+    gross=bounded(math.fsum(abs(z) for z in trades),"gross traded notional")
+    turnover=bounded(math.fsum(abs(a-b) for a,b in zip(w,old)),"gross turnover")
+    # Form the product/quotient exactly for the represented floats, avoiding
+    # avoidable intermediate overflow and premature division underflow.
+    try:
+        cost=float(Fraction.from_float(gross)*Fraction.from_float(cost_bps)/10000)
+    except OverflowError as exc:
+        raise OverflowError("modeled transaction cost exceeds float range") from exc
     return {"expected_return":sum(a*b for a,b in zip(w,RETURNS)),
-            "signed_trades":trades,"gross_turnover":gross/capital,
+            "signed_trades":trades,"gross_turnover":turnover,
             "gross_traded_notional":gross,
-            "modeled_transaction_cost":gross*cost_bps/10000,
+            "modeled_transaction_cost":cost,
             "cost_convention":"bps of gross traded notional",
             "taxes_included":False,"market_impact_included":False}
 
