@@ -75,3 +75,7 @@ G3 therefore remains **mapped; gaps open**, rather than a clean coverage gate. T
 ## Latest integrated-report follow-up — 2026-10-29
 
 Section 21.9's finite-difference diagnostic, JSON serialization and selected failure-propagation gaps are addressed. [Evidence](chapter-21-integrated-diagnostics-followup.md): 19 files compiled, 10 scripts passed, including 18 integration methods. COV-89 remains partially open; a full-book runtime refresh follows these code changes.
+
+## Full runtime refresh — 2026-10-29
+
+The [latest candidate run](runtime-refresh-2026-10-29.md) includes these remediations: 444 sources compiled and 233 scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`, with 467 downloaded blobs verified before and after execution. This supersedes the earlier full run as latest execution evidence; the mapping and partial COV dispositions do not become independent review or approval.
