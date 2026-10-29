@@ -1,0 +1,3147 @@
+{
+  "source_revision": "fc18c1b2178751f9b8c5a179df01057e73f52551",
+  "source_sha256": "dd79ae5e409cfc944a4c97871b763804bc551efaa6f510338165457601955f79",
+  "source_code_sha256": "baa5c59f06f49cabce2d24a5af3d6e8257538b24e3b0d5a5917c342de1012a40",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "cases": 34,
+  "passing_cases": 33,
+  "open_limitation_cases": 1,
+  "predicates": 256,
+  "failed_predicates": 0,
+  "records": [
+    {
+      "name": "published baseline",
+      "overrides": {},
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "4"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "[4, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "4",
+          "expected": "4"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0.03",
+          "status": "PASS",
+          "actual": "12",
+          "expected": "12"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "4264166799154038581766781/40000000000000000000",
+          "expected": "4264166799154038581766781/40000000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "10",
+          "expected": "10"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "8487880978201/81920000",
+          "expected": "8487880978201/81920000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        },
+        {
+          "label": "first crossing 0.07",
+          "status": "PASS",
+          "actual": "9",
+          "expected": "9"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "4234056962192024527/40000000000000",
+          "expected": "4234056962192024527/40000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        },
+        {
+          "label": "first crossing 0.09",
+          "status": "PASS",
+          "actual": "8",
+          "expected": "8"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "41982574010017301/400000000000",
+          "expected": "41982574010017301/400000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 3.0%\nOutcome: Target reached after 10 years\nTarget year: 12\nBalance: $106,604.17\n\nReturn: 5.0%\nOutcome: Target reached within 10 years\nTarget year: 10\nBalance: $103,611.83\n\nReturn: 7.0%\nOutcome: Target reached within 10 years\nTarget year: 9\nBalance: $105,851.42\n\nReturn: 9.0%\nOutcome: Target reached within 10 years\nTarget year: 8\nBalance: $104,956.44\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 4\nEvaluated: 4\nRejected: 0\nTarget reached: 4\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0.03",
+              "target_year": 12,
+              "ending_balance": "106604.1699788509645441695250",
+              "outcome": "Target reached after 10 years"
+            },
+            {
+              "annual_return": "0.05",
+              "target_year": 10,
+              "ending_balance": "103611.8283471801757812500000",
+              "outcome": "Target reached within 10 years"
+            },
+            {
+              "annual_return": "0.07",
+              "target_year": 9,
+              "ending_balance": "105851.42405480061317500000",
+              "outcome": "Target reached within 10 years"
+            },
+            {
+              "annual_return": "0.09",
+              "target_year": 8,
+              "ending_balance": "104956.435025043252500000",
+              "outcome": "Target reached within 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 4,
+          "evaluated_scenarios": 4,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 4,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "period zero",
+      "overrides": {
+        "initial_investment": "Decimal('100000')"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "4"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "[4, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "4",
+          "expected": "4"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0.03",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target already reached",
+          "expected": "Target already reached"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target already reached",
+          "expected": "Target already reached"
+        },
+        {
+          "label": "first crossing 0.07",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target already reached",
+          "expected": "Target already reached"
+        },
+        {
+          "label": "first crossing 0.09",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target already reached",
+          "expected": "Target already reached"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 3.0%\nOutcome: Target already reached\nTarget year: 0\nBalance: $100,000.00\n\nReturn: 5.0%\nOutcome: Target already reached\nTarget year: 0\nBalance: $100,000.00\n\nReturn: 7.0%\nOutcome: Target already reached\nTarget year: 0\nBalance: $100,000.00\n\nReturn: 9.0%\nOutcome: Target already reached\nTarget year: 0\nBalance: $100,000.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 4\nEvaluated: 4\nRejected: 0\nTarget reached: 4\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "100000",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0.03",
+              "target_year": 0,
+              "ending_balance": "100000",
+              "outcome": "Target already reached"
+            },
+            {
+              "annual_return": "0.05",
+              "target_year": 0,
+              "ending_balance": "100000",
+              "outcome": "Target already reached"
+            },
+            {
+              "annual_return": "0.07",
+              "target_year": 0,
+              "ending_balance": "100000",
+              "outcome": "Target already reached"
+            },
+            {
+              "annual_return": "0.09",
+              "target_year": 0,
+              "ending_balance": "100000",
+              "outcome": "Target already reached"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 4,
+          "evaluated_scenarios": 4,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 4,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "zero contribution",
+      "overrides": {
+        "annual_contribution": "Decimal('0')"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "4"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "[4, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "4",
+          "expected": "4"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0.03",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "4515278086673534529393283269/100000000000000000000000",
+          "expected": "18061112346694138117573133075817258818401/400000000000000000000000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "6633244262861050334863576913/100000000000000000000000",
+          "expected": "278218429446951548637196401/4194304000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        },
+        {
+          "label": "first crossing 0.07",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "9674211156215447708091350783/100000000000000000000000",
+          "expected": "38696844624861790832365403138487376998001/400000000000000000000000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        },
+        {
+          "label": "first crossing 0.09",
+          "status": "PASS",
+          "actual": "17",
+          "expected": "17"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "540954176294342823349888837/5000000000000000000000",
+          "expected": "43276334103547425867991106950436269/400000000000000000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 3.0%\nOutcome: Target not reached\nBalance: $45,152.78\n\nReturn: 5.0%\nOutcome: Target not reached\nBalance: $66,332.44\n\nReturn: 7.0%\nOutcome: Target not reached\nBalance: $96,742.11\n\nReturn: 9.0%\nOutcome: Target reached after 10 years\nTarget year: 17\nBalance: $108,190.84\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 4\nEvaluated: 4\nRejected: 0\nTarget reached: 1\nTarget not reached: 3\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "0",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0.03",
+              "target_year": null,
+              "ending_balance": "45152.78086673534529393283269",
+              "outcome": "Target not reached"
+            },
+            {
+              "annual_return": "0.05",
+              "target_year": null,
+              "ending_balance": "66332.44262861050334863576913",
+              "outcome": "Target not reached"
+            },
+            {
+              "annual_return": "0.07",
+              "target_year": null,
+              "ending_balance": "96742.11156215447708091350783",
+              "outcome": "Target not reached"
+            },
+            {
+              "annual_return": "0.09",
+              "target_year": 17,
+              "ending_balance": "108190.8352588685646699777674",
+              "outcome": "Target reached after 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 4,
+          "evaluated_scenarios": 4,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 3
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "zero return",
+      "overrides": {
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "15",
+          "expected": "15"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target reached after 10 years\nTarget year: 15\nBalance: $100,000.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": 15,
+              "ending_balance": "100000.00",
+              "outcome": "Target reached after 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "negative return",
+      "overrides": {
+        "return_scenarios": "[Decimal('-.1')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing -0.1",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "187842334540943071199/4000000000000000",
+          "expected": "187842334540943071199/4000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: -10.0%\nOutcome: Target not reached\nBalance: $46,960.58\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 0\nTarget not reached: 1\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "-0.1"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "-0.1",
+              "target_year": null,
+              "ending_balance": "46960.5836352357677997500000",
+              "outcome": "Target not reached"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 1
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "exact -100 percent",
+      "overrides": {
+        "return_scenarios": "[Decimal('-1')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[0, 1]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[0, 1]",
+          "expected": "[0, 1]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nRejected Scenarios\n------------------------------------------------------------\nReturn: -1\nReason: Return must exceed -100% for this model.\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 0\nRejected: 1\nTarget reached: 0\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "-1"
+          ],
+          "errors": [],
+          "results": [],
+          "rejections": [
+            {
+              "annual_return": "-1",
+              "reason": "Return must exceed -100% for this model."
+            }
+          ],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 0,
+          "rejected_scenarios": 1,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "below -100 percent",
+      "overrides": {
+        "return_scenarios": "[Decimal('-1.01')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[0, 1]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[0, 1]",
+          "expected": "[0, 1]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nRejected Scenarios\n------------------------------------------------------------\nReturn: -1.01\nReason: Return must exceed -100% for this model.\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 0\nRejected: 1\nTarget reached: 0\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "-1.01"
+          ],
+          "errors": [],
+          "results": [],
+          "rejections": [
+            {
+              "annual_return": "-1.01",
+              "reason": "Return must exceed -100% for this model."
+            }
+          ],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 0,
+          "rejected_scenarios": 1,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "just above -100 percent",
+      "overrides": {
+        "return_scenarios": "[Decimal('-.999999')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing -0.999999",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "1000001000001000001000001/200000000000000000000",
+          "expected": "200000200000200000200000200000200000200000200000200000200000200000200000200000200000200000200000200000200000200000200001/40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: -100.0%\nOutcome: Target not reached\nBalance: $5,000.01\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 0\nTarget not reached: 1\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "-0.999999"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "-0.999999",
+              "target_year": null,
+              "ending_balance": "5000.005000005000005000005000",
+              "outcome": "Target not reached"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 1
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "nonfinite scenarios",
+      "overrides": {
+        "return_scenarios": "[Decimal('NaN'),Decimal('sNaN'),Decimal('Infinity'),Decimal('-Infinity')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[0, 4]",
+          "expected": "4"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[0, 4]",
+          "expected": "[0, 4]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "4",
+          "expected": "4"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nRejected Scenarios\n------------------------------------------------------------\nReturn: NaN\nReason: Return must be finite.\n\nReturn: sNaN\nReason: Return must be finite.\n\nReturn: Infinity\nReason: Return must be finite.\n\nReturn: -Infinity\nReason: Return must be finite.\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 4\nEvaluated: 0\nRejected: 4\nTarget reached: 0\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "NaN",
+            "sNaN",
+            "Infinity",
+            "-Infinity"
+          ],
+          "errors": [],
+          "results": [],
+          "rejections": [
+            {
+              "annual_return": "NaN",
+              "reason": "Return must be finite."
+            },
+            {
+              "annual_return": "sNaN",
+              "reason": "Return must be finite."
+            },
+            {
+              "annual_return": "Infinity",
+              "reason": "Return must be finite."
+            },
+            {
+              "annual_return": "-Infinity",
+              "reason": "Return must be finite."
+            }
+          ],
+          "total_scenarios": 4,
+          "evaluated_scenarios": 0,
+          "rejected_scenarios": 4,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "representation rejected",
+      "overrides": {
+        "return_scenarios": "[None, '0.05', 0.05, True, Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 4]",
+          "expected": "5"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 4]",
+          "expected": "[1, 4]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "4",
+          "expected": "4"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "15",
+          "expected": "15"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target reached after 10 years\nTarget year: 15\nBalance: $100,000.00\n\nRejected Scenarios\n------------------------------------------------------------\nReturn: None\nReason: Return must be Decimal.\n\nReturn: 0.05\nReason: Return must be Decimal.\n\nReturn: 0.05\nReason: Return must be Decimal.\n\nReturn: True\nReason: Return must be Decimal.\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 5\nEvaluated: 1\nRejected: 4\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "NoneType",
+          "str",
+          "float",
+          "bool",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            null,
+            "0.05",
+            0.05,
+            true,
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": 15,
+              "ending_balance": "100000.00",
+              "outcome": "Target reached after 10 years"
+            }
+          ],
+          "rejections": [
+            {
+              "annual_return": null,
+              "reason": "Return must be Decimal."
+            },
+            {
+              "annual_return": "0.05",
+              "reason": "Return must be Decimal."
+            },
+            {
+              "annual_return": 0.05,
+              "reason": "Return must be Decimal."
+            },
+            {
+              "annual_return": true,
+              "reason": "Return must be Decimal."
+            }
+          ],
+          "total_scenarios": 5,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 4,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "empty scenarios",
+      "overrides": {
+        "return_scenarios": "[]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[0, 0]",
+          "expected": "0"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[0, 0]",
+          "expected": "[0, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 0\nEvaluated: 0\nRejected: 0\nTarget reached: 0\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [],
+          "errors": [],
+          "results": [],
+          "rejections": [],
+          "total_scenarios": 0,
+          "evaluated_scenarios": 0,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "final year crossing",
+      "overrides": {
+        "initial_investment": "Decimal('100')",
+        "annual_contribution": "Decimal('100')",
+        "target_balance": "Decimal('300')",
+        "maximum_years": "2",
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "2",
+          "expected": "2"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "300",
+          "expected": "300"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target reached within 10 years\nTarget year: 2\nBalance: $300.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "100",
+          "annual_contribution": "100",
+          "target_balance": "300",
+          "maximum_years": 2,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": 2,
+              "ending_balance": "300",
+              "outcome": "Target reached within 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "target missed at final year",
+      "overrides": {
+        "initial_investment": "Decimal('100')",
+        "annual_contribution": "Decimal('100')",
+        "target_balance": "Decimal('300.001')",
+        "maximum_years": "2",
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "300",
+          "expected": "300"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target not reached\nBalance: $300.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 0\nTarget not reached: 1\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "100",
+          "annual_contribution": "100",
+          "target_balance": "300.001",
+          "maximum_years": 2,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": null,
+              "ending_balance": "300",
+              "outcome": "Target not reached"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 1
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "display cannot create crossing",
+      "overrides": {
+        "initial_investment": "Decimal('99999.996')",
+        "annual_contribution": "Decimal('0')",
+        "maximum_years": "1",
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "24999999/250",
+          "expected": "24999999/250"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target not reached",
+          "expected": "Target not reached"
+        },
+        {
+          "label": "display rounds up but raw misses",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target not reached\nBalance: $100,000.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 0\nTarget not reached: 1\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "99999.996",
+          "annual_contribution": "0",
+          "target_balance": "100000.00",
+          "maximum_years": 1,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": null,
+              "ending_balance": "99999.996",
+              "outcome": "Target not reached"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 0,
+          "target_not_reached_scenarios": 1
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "year one crossing",
+      "overrides": {
+        "initial_investment": "Decimal('100')",
+        "annual_contribution": "Decimal('0')",
+        "target_balance": "Decimal('105')",
+        "maximum_years": "1",
+        "return_scenarios": "[Decimal('.05')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "105",
+          "expected": "105"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 5.0%\nOutcome: Target reached within 10 years\nTarget year: 1\nBalance: $105.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "100",
+          "annual_contribution": "0",
+          "target_balance": "105",
+          "maximum_years": 1,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.05"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0.05",
+              "target_year": 1,
+              "ending_balance": "105.00",
+              "outcome": "Target reached within 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "supported horizon 100",
+      "overrides": {
+        "maximum_years": "100",
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "15",
+          "expected": "15"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "100000",
+          "expected": "100000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target reached after 10 years\nTarget year: 15\nBalance: $100,000.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 100,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": 15,
+              "ending_balance": "100000.00",
+              "outcome": "Target reached after 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "classification threshold equal",
+      "overrides": {
+        "initial_investment": "Decimal('100')",
+        "annual_contribution": "Decimal('10')",
+        "target_balance": "Decimal('200')",
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "10",
+          "expected": "10"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "200",
+          "expected": "200"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target reached within 10 years\nTarget year: 10\nBalance: $200.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "100",
+          "annual_contribution": "10",
+          "target_balance": "200",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": 10,
+              "ending_balance": "200",
+              "outcome": "Target reached within 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "classification threshold after",
+      "overrides": {
+        "initial_investment": "Decimal('100')",
+        "annual_contribution": "Decimal('10')",
+        "target_balance": "Decimal('210')",
+        "return_scenarios": "[Decimal('0')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "1"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[1, 0]",
+          "expected": "[1, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "1",
+          "expected": "1"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0",
+          "status": "PASS",
+          "actual": "11",
+          "expected": "11"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "210",
+          "expected": "210"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 0.0%\nOutcome: Target reached after 10 years\nTarget year: 11\nBalance: $210.00\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 1\nEvaluated: 1\nRejected: 0\nTarget reached: 1\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "100",
+          "annual_contribution": "10",
+          "target_balance": "210",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0",
+              "target_year": 11,
+              "ending_balance": "210",
+              "outcome": "Target reached after 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 1,
+          "evaluated_scenarios": 1,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 1,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "reversed scenarios",
+      "overrides": {
+        "return_scenarios": "[Decimal('.09'),Decimal('.07'),Decimal('.05'),Decimal('.03')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "4"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[4, 0]",
+          "expected": "[4, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "4",
+          "expected": "4"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0.09",
+          "status": "PASS",
+          "actual": "8",
+          "expected": "8"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "41982574010017301/400000000000",
+          "expected": "41982574010017301/400000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        },
+        {
+          "label": "first crossing 0.07",
+          "status": "PASS",
+          "actual": "9",
+          "expected": "9"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "4234056962192024527/40000000000000",
+          "expected": "4234056962192024527/40000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "10",
+          "expected": "10"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "8487880978201/81920000",
+          "expected": "8487880978201/81920000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        },
+        {
+          "label": "first crossing 0.03",
+          "status": "PASS",
+          "actual": "12",
+          "expected": "12"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "4264166799154038581766781/40000000000000000000",
+          "expected": "4264166799154038581766781/40000000000000000000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached after 10 years",
+          "expected": "Target reached after 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 9.0%\nOutcome: Target reached within 10 years\nTarget year: 8\nBalance: $104,956.44\n\nReturn: 7.0%\nOutcome: Target reached within 10 years\nTarget year: 9\nBalance: $105,851.42\n\nReturn: 5.0%\nOutcome: Target reached within 10 years\nTarget year: 10\nBalance: $103,611.83\n\nReturn: 3.0%\nOutcome: Target reached after 10 years\nTarget year: 12\nBalance: $106,604.17\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 4\nEvaluated: 4\nRejected: 0\nTarget reached: 4\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.09",
+            "0.07",
+            "0.05",
+            "0.03"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0.09",
+              "target_year": 8,
+              "ending_balance": "104956.435025043252500000",
+              "outcome": "Target reached within 10 years"
+            },
+            {
+              "annual_return": "0.07",
+              "target_year": 9,
+              "ending_balance": "105851.42405480061317500000",
+              "outcome": "Target reached within 10 years"
+            },
+            {
+              "annual_return": "0.05",
+              "target_year": 10,
+              "ending_balance": "103611.8283471801757812500000",
+              "outcome": "Target reached within 10 years"
+            },
+            {
+              "annual_return": "0.03",
+              "target_year": 12,
+              "ending_balance": "106604.1699788509645441695250",
+              "outcome": "Target reached after 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 4,
+          "evaluated_scenarios": 4,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 4,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "duplicate scenarios retained",
+      "overrides": {
+        "return_scenarios": "[Decimal('.05'),Decimal('.05')]"
+      },
+      "expected_error": null,
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "no exception or shared errors",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "scenario identity counts",
+          "status": "PASS",
+          "actual": "[2, 0]",
+          "expected": "2"
+        },
+        {
+          "label": "stored counts",
+          "status": "PASS",
+          "actual": "[2, 0]",
+          "expected": "[2, 0]"
+        },
+        {
+          "label": "outcome counts",
+          "status": "PASS",
+          "actual": "None",
+          "expected": "None"
+        },
+        {
+          "label": "independent accepted count",
+          "status": "PASS",
+          "actual": "2",
+          "expected": "2"
+        },
+        {
+          "label": "independent rejected count",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "10",
+          "expected": "10"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "8487880978201/81920000",
+          "expected": "8487880978201/81920000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        },
+        {
+          "label": "first crossing 0.05",
+          "status": "PASS",
+          "actual": "10",
+          "expected": "10"
+        },
+        {
+          "label": "rational ending balance",
+          "status": "PASS",
+          "actual": "8487880978201/81920000",
+          "expected": "8487880978201/81920000"
+        },
+        {
+          "label": "outcome classification",
+          "status": "PASS",
+          "actual": "Target reached within 10 years",
+          "expected": "Target reached within 10 years"
+        }
+      ],
+      "execution": {
+        "stdout": "\nInvestment Scenario Results\n------------------------------------------------------------\nReturn: 5.0%\nOutcome: Target reached within 10 years\nTarget year: 10\nBalance: $103,611.83\n\nReturn: 5.0%\nOutcome: Target reached within 10 years\nTarget year: 10\nBalance: $103,611.83\n\nScenario Summary\n------------------------------------------------------------\nTotal scenarios: 2\nEvaluated: 2\nRejected: 0\nTarget reached: 2\nTarget not reached: 0\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.05",
+            "0.05"
+          ],
+          "errors": [],
+          "results": [
+            {
+              "annual_return": "0.05",
+              "target_year": 10,
+              "ending_balance": "103611.8283471801757812500000",
+              "outcome": "Target reached within 10 years"
+            },
+            {
+              "annual_return": "0.05",
+              "target_year": 10,
+              "ending_balance": "103611.8283471801757812500000",
+              "outcome": "Target reached within 10 years"
+            }
+          ],
+          "rejections": [],
+          "total_scenarios": 2,
+          "evaluated_scenarios": 2,
+          "rejected_scenarios": 0,
+          "target_reached_scenarios": 2,
+          "target_not_reached_scenarios": 0
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "initial_investment 0",
+      "overrides": {
+        "initial_investment": "Decimal('0')"
+      },
+      "expected_error": "greater than zero",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be greater than zero.\n",
+          "expected": "greater than zero"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be greater than zero.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "0",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Initial investment must be greater than zero."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "initial_investment -1",
+      "overrides": {
+        "initial_investment": "Decimal('-1')"
+      },
+      "expected_error": "greater than zero",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be greater than zero.\n",
+          "expected": "greater than zero"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be greater than zero.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "-1",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Initial investment must be greater than zero."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "initial_investment NaN",
+      "overrides": {
+        "initial_investment": "Decimal('NaN')"
+      },
+      "expected_error": "must be finite",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be finite.\n",
+          "expected": "must be finite"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be finite.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "NaN",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Initial investment must be finite."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "annual_contribution -1",
+      "overrides": {
+        "annual_contribution": "Decimal('-1')"
+      },
+      "expected_error": "cannot be negative",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution cannot be negative.\n",
+          "expected": "cannot be negative"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution cannot be negative.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "-1",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Annual contribution cannot be negative."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "annual_contribution Infinity",
+      "overrides": {
+        "annual_contribution": "Decimal('Infinity')"
+      },
+      "expected_error": "must be finite",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution must be finite.\n",
+          "expected": "must be finite"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution must be finite.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "Infinity",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Annual contribution must be finite."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "target_balance 0",
+      "overrides": {
+        "target_balance": "Decimal('0')"
+      },
+      "expected_error": "greater than zero",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be greater than zero.\n",
+          "expected": "greater than zero"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be greater than zero.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "0",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Target balance must be greater than zero."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "target_balance -1",
+      "overrides": {
+        "target_balance": "Decimal('-1')"
+      },
+      "expected_error": "greater than zero",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be greater than zero.\n",
+          "expected": "greater than zero"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be greater than zero.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "-1",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Target balance must be greater than zero."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "target_balance NaN",
+      "overrides": {
+        "target_balance": "Decimal('NaN')"
+      },
+      "expected_error": "must be finite",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be finite.\n",
+          "expected": "must be finite"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be finite.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "NaN",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Target balance must be finite."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "invalid horizon True",
+      "overrides": {
+        "maximum_years": "True"
+      },
+      "expected_error": "must be an integer",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be an integer.\n",
+          "expected": "must be an integer"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be an integer.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": true,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Maximum years must be an integer."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "invalid horizon 0",
+      "overrides": {
+        "maximum_years": "0"
+      },
+      "expected_error": "greater than zero",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be greater than zero.\n",
+          "expected": "greater than zero"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be greater than zero.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 0,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Maximum years must be greater than zero."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "invalid horizon -1",
+      "overrides": {
+        "maximum_years": "-1"
+      },
+      "expected_error": "greater than zero",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be greater than zero.\n",
+          "expected": "greater than zero"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be greater than zero.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": -1,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Maximum years must be greater than zero."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "invalid horizon 101",
+      "overrides": {
+        "maximum_years": "101"
+      },
+      "expected_error": "exceeds the supported",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years exceeds the supported model horizon.\n",
+          "expected": "exceeds the supported"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years exceeds the supported model horizon.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 101,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Maximum years exceeds the supported model horizon."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "invalid horizon 1.5",
+      "overrides": {
+        "maximum_years": "1.5"
+      },
+      "expected_error": "must be an integer",
+      "limitation": null,
+      "disposition": "PASS_SCOPED",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "validation diagnostic and no results",
+          "status": "PASS",
+          "actual": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be an integer.\n",
+          "expected": "must be an integer"
+        }
+      ],
+      "execution": {
+        "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Maximum years must be an integer.\n",
+        "exception": null,
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000.00",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 1.5,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": [
+            "Maximum years must be an integer."
+          ]
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    },
+    {
+      "name": "shared representation precondition",
+      "overrides": {
+        "initial_investment": "'25000'"
+      },
+      "expected_error": null,
+      "limitation": "AttributeError",
+      "disposition": "OPEN_LIMITATION",
+      "checks": [
+        {
+          "label": "child completed",
+          "status": "PASS",
+          "actual": "0",
+          "expected": "0"
+        },
+        {
+          "label": "known typed-shared-input limitation observed",
+          "status": "PASS",
+          "actual": "{'type': 'AttributeError', 'message': \"'str' object has no attribute 'is_finite'\"}",
+          "expected": "AttributeError"
+        }
+      ],
+      "execution": {
+        "stdout": "",
+        "exception": {
+          "type": "AttributeError",
+          "message": "'str' object has no attribute 'is_finite'"
+        },
+        "scenario_types": [
+          "Decimal",
+          "Decimal",
+          "Decimal",
+          "Decimal"
+        ],
+        "state": {
+          "initial_investment": "25000",
+          "annual_contribution": "5000.00",
+          "target_balance": "100000.00",
+          "maximum_years": 20,
+          "early_target_threshold_years": 10,
+          "return_scenarios": [
+            "0.03",
+            "0.05",
+            "0.07",
+            "0.09"
+          ],
+          "errors": []
+        }
+      },
+      "stderr": "",
+      "exit_code": 0
+    }
+  ]
+}

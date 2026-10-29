@@ -1,0 +1,150 @@
+{
+  "baseline": "fc18c1b2178751f9b8c5a179df01057e73f52551",
+  "interpretation": "24 derived requirements/review units from Section2.12 prose, not a preexisting numbered source list",
+  "requirements": [
+    {
+      "id": "P01",
+      "requirement": "Constant annual effective return, annual periods, nominal balances",
+      "status": "REVIEWED_SPEC",
+      "evidence": "Financial Model and Model Assumptions explicitly define a one-factor deterministic annual recurrence; not forecast probabilities."
+    },
+    {
+      "id": "P02",
+      "requirement": "End-of-year contribution timing",
+      "status": "PASS_SCOPED",
+      "evidence": "Source applies return then contribution; rational annuity benchmark checks terminal values."
+    },
+    {
+      "id": "P03",
+      "requirement": "Decimal raw-state comparison and display separation",
+      "status": "PASS_SCOPED",
+      "evidence": "Raw balance just below target remains not reached while stdout rounds to $100,000.00."
+    },
+    {
+      "id": "P04",
+      "requirement": "Shared positive finite initial amount",
+      "status": "PARTIAL_TYPED_INPUT",
+      "evidence": "Finite Decimal zero/negative/NaN fixtures reject; string principal raises AttributeError, F32."
+    },
+    {
+      "id": "P05",
+      "requirement": "Shared finite nonnegative contribution",
+      "status": "PASS_SCOPED_TYPED",
+      "evidence": "Negative/Infinity fixtures reject; zero contribution accepted; pretyped Decimal contract."
+    },
+    {
+      "id": "P06",
+      "requirement": "Shared positive finite target",
+      "status": "PASS_SCOPED_TYPED",
+      "evidence": "Zero/negative/NaN reject; equal initial target handled at year0; pretyped Decimal contract."
+    },
+    {
+      "id": "P07",
+      "requirement": "Non-Boolean whole horizon in 1..100",
+      "status": "PASS_SCOPED",
+      "evidence": "True,0,-1,101,1.5 reject;1 and100 valid."
+    },
+    {
+      "id": "P08",
+      "requirement": "Scenario representation before Decimal methods",
+      "status": "PASS_SCOPED",
+      "evidence": "None/string/float/bool rejected with reasons; Decimal zero evaluated."
+    },
+    {
+      "id": "P09",
+      "requirement": "Scenario finiteness before domain",
+      "status": "PASS_SCOPED",
+      "evidence": "NaN,sNaN,Infinity,-Infinity rejected before ordering comparisons."
+    },
+    {
+      "id": "P10",
+      "requirement": "Return strictly above -100%",
+      "status": "PASS_SCOPED",
+      "evidence": "Exactly -1 and below rejected; -.999999 accepted."
+    },
+    {
+      "id": "P11",
+      "requirement": "Independent state per scenario",
+      "status": "PASS_SCOPED",
+      "evidence": "Reversed scenario order matches rational expected values; duplicate scenarios retain separate results."
+    },
+    {
+      "id": "P12",
+      "requirement": "Period0 before updates",
+      "status": "PASS_SCOPED",
+      "evidence": "Already-funded target reports year0 and unchanged initial balance."
+    },
+    {
+      "id": "P13",
+      "requirement": "Finite inclusive horizon",
+      "status": "PASS_SCOPED",
+      "evidence": "Final-year equality reaches; tiny final miss does not;100-year fixture bounded."
+    },
+    {
+      "id": "P14",
+      "requirement": "Break at first crossing",
+      "status": "PASS_SCOPED",
+      "evidence": "Earliest year compared to exact Fraction closed form; stopping balance checked."
+    },
+    {
+      "id": "P15",
+      "requirement": "Explicit rejection before continue",
+      "status": "PASS_SCOPED",
+      "evidence": "One recorded reason/disposition per rejected scenario; accepted/rejected counts reconcile."
+    },
+    {
+      "id": "P16",
+      "requirement": "Outcome classification and named threshold",
+      "status": "PASS_SCOPED",
+      "evidence": "Year0, equal10,after10,and not-reached classifications checked."
+    },
+    {
+      "id": "P17",
+      "requirement": "Stored accepted/rejected results",
+      "status": "PASS_SCOPED",
+      "evidence": "Result/rejection lengths reconcile to counters in every valid fixture, including empty scenarios."
+    },
+    {
+      "id": "P18",
+      "requirement": "Four reconciliation identities",
+      "status": "PASS_SCOPED",
+      "evidence": "Scenario totals, outcome totals and both stored lengths checked independently; source assertions retained."
+    },
+    {
+      "id": "P19",
+      "requirement": "Explainable console report",
+      "status": "PASS_SCOPED",
+      "evidence": "Actual stdout retained per case; validation and rejection messages checked; handled validation retains source exit-zero behavior."
+    },
+    {
+      "id": "P20",
+      "requirement": "Earliest scenario and ties semantics",
+      "status": "REVIEWED_DESIGN_SCOPE",
+      "evidence": "Section2.12 advises explicit tie policy but does not compute an earliest ranking. It reports each scenario; tie-aware ranking is supplied in the Exercise45/59 supplement, not attributed to the exact project."
+    },
+    {
+      "id": "P21",
+      "requirement": "Educational exclusions and no recommendation",
+      "status": "REVIEWED_SPEC",
+      "evidence": "Taxes/fees/withdrawals/inflation/stochastic returns excluded; scenario versus forecast and no-best-investment cautions stated."
+    },
+    {
+      "id": "P22",
+      "requirement": "External text conversion and arbitrary shared types",
+      "status": "OPEN_INTEGRATION",
+      "evidence": "Source initializes shared Decimal literals; no complete external-input parser/type guard is provided. F32 remains open."
+    },
+    {
+      "id": "P23",
+      "requirement": "Numerical/context/resource bounds",
+      "status": "OPEN_BROADER_REVIEW",
+      "evidence": "Default Decimal context, extreme rates/magnitudes and resource limits are not fully specified or certified by these fixtures."
+    },
+    {
+      "id": "P24",
+      "requirement": "Platform and independent model acceptance",
+      "status": "OPEN_BROADER_REVIEW",
+      "evidence": "Executed Linux CPython3.12.14 only; no independent financial/model review or Windows/macOS execution claimed."
+    }
+  ]
+}
