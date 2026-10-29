@@ -46,3 +46,7 @@ These extend COV-01–COV-84, not confirmed defect counts. No code/manuscript ch
 ## Subsequent COV-87 remediation — 2026-10-29
 
 The [error-range follow-up](chapter-20-error-range-followup.md) fixes Section 20.5's silent infinite error magnitudes: unrepresentable absolute/relative errors now raise explicit OverflowError. Exact represented-float comparison remains independent. All 19 chapter sources compiled and 10 scripts passed, including 20 Section 20.5 methods. COV-87 remains partially open for other duplicated numeric contracts/ranges and independent review; original map evidence remains historical.
+
+## Subsequent Section 20.6 contract follow-up
+
+The [metamorphic PV contract record](chapter-20-metamorphic-contract-followup.md) adds boolean/type/finiteness and exponent/result-range validation, including invalid rates on empty portfolios. Underflow and summation limitations are documented. All 19 chapter sources compiled and 10 scripts passed; Section 20.6 passed 19 methods. COV-87 retains other duplicated-contract/range and independent-review obligations. Original mapping evidence remains historical.
