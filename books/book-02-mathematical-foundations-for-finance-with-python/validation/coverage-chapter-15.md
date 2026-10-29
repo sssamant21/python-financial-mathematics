@@ -42,3 +42,7 @@ Principal/cash-flow domains vary intentionally or by teaching scope:15.1 PV perm
 | COV-72 | Applied/manual scope gaps include discounted total differential, smaller-shock Taylor comparison, ellipse/tangent examples, covariance symmetry/PD restrictions and held-fixed/unit assumptions. | Reconcile lab promises and interfaces; independent derivative/regularity/unit review plus selected missing numerical cases. |
 
 These extend COV-01–COV-69, not confirmed defect counts. No code/manuscript edits or new runtime execution for this map. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent remediation
+
+The [scalar difference follow-up](chapter-15-scalar-difference-followup.md) fixes the Section 15.2 representability and denominator guards identified above. Twenty-one Chapter 15 files compiled and all eleven check scripts passed, including nine boundary methods. This partially remediates COV-71; the original mapping evidence and remaining accuracy, asymmetry and independent-review obligations are retained.
