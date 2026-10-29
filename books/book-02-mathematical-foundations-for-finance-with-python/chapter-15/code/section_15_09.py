@@ -80,6 +80,8 @@ def scenario(base, shock):
                       "second order change") for i in range(2))
     err1=tuple(real(first[i]-exact[i],"first order error") for i in range(2))
     err2=tuple(real(second[i]-exact[i],"second order error") for i in range(2))
+    portfolio_err1=real(math.fsum(err1),"portfolio first order error")
+    portfolio_err2=real(math.fsum(err2),"portfolio second order error")
     return {
         "base_inputs":(p,r,t),"shock":displacement,"shocked_inputs":new,
         "base_values":base_values,"shocked_values":new_values,
@@ -94,6 +96,10 @@ def scenario(base, shock):
         "portfolio_exact_change":real(math.fsum(exact),"portfolio exact"),
         "portfolio_first_order_change":real(math.fsum(first),"portfolio first"),
         "portfolio_second_order_change":real(math.fsum(second),"portfolio second"),
+        "portfolio_first_order_error":portfolio_err1,
+        "portfolio_second_order_error":portfolio_err2,
+        "absolute_portfolio_first_order_error":abs(portfolio_err1),
+        "absolute_portfolio_second_order_error":abs(portfolio_err2),
     }
 
 def centered_jacobian_column(base, index, step):
