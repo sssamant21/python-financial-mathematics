@@ -127,3 +127,7 @@ All code follow-ups recorded above through the factor audit are included in the 
 ## Quadrature oracle follow-up
 
 The [Section 10.7 quadrature record](chapter-10-quadrature-order-followup.md) adds exact polynomial order/estimator evidence and selected smooth-integrand checks. All 21 chapter sources compiled and 11 scripts passed; algorithm unchanged. COV-55 is partially addressed; fifteen selected partial categories are tracked.
+
+## Derivative accuracy follow-up
+
+The [Section 8.6 record](chapter-08-difference-order-followup.md) adds exact error ladders and selected cancellation evidence. All 21 chapter files compiled and 11 scripts passed; algorithm unchanged. COV-49 is partially addressed; sixteen selected partial categories are tracked.
