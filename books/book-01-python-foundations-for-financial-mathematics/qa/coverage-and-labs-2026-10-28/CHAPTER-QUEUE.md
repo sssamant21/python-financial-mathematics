@@ -1,5 +1,7 @@
 # Per-chapter execution mapping queue
 
+**Current queue:** [Chapters 1–3 follow-up](../early-examples-2026-10-28/README.md) completed the early gap dispositions; 169 later-chapter fences remain without exact mapping. The table below retains the initial snapshot.
+
 These counts describe selected code fences, not line/branch coverage or independent lab/answer validation. Historical selections are compared byte-for-byte with the source in the evidence publication commit. A selected implementation can have unexecuted branches or main guards. An unmapped block is not necessarily runnable or untested; it needs explicit classification and evidence.
 
 | Chapter | Historical selection unchanged | New workflow source fences | Context fragments | No exact execution mapping |

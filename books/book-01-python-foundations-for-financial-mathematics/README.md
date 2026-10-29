@@ -564,3 +564,5 @@ See the [Chapter 14 progress index](chapter-14/README.md).
 Book 1 V04: [Python syntax and dependency audit](qa/syntax-dependencies-2026-10-28/README.md) — scoped compilation and clean-environment checks passed; full platform/runtime compatibility remains pending.
 
 Book 1 V05/V06: [Execution mapping and uncovered workflow results](qa/coverage-and-labs-2026-10-28/README.md) — 13 new workflow checks passed; per-chapter mapping and lab-review queues retained; comprehensive validation remains in progress.
+
+Book 1 V05/V06 follow-up: [Chapters 1–3 uncovered examples](qa/early-examples-2026-10-28/README.md) — 98 workflow cases passed; all 430 early gaps classified; 169 later fences remain without exact execution mapping.

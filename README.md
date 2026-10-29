@@ -74,3 +74,5 @@ Book 1 Chapter 21 — Integrated Capstone: Financial Mathematics Toolkit: [21.1 
 Book 1 V04: [Python syntax and dependency audit](books/book-01-python-foundations-for-financial-mathematics/qa/syntax-dependencies-2026-10-28/README.md) — scoped compilation and clean-environment checks passed; full platform/runtime compatibility remains pending.
 
 Book 1 V05/V06: [Execution mapping and uncovered workflow results](books/book-01-python-foundations-for-financial-mathematics/qa/coverage-and-labs-2026-10-28/README.md) — 13 new workflow checks passed; per-chapter mapping and lab-review queues retained; comprehensive validation remains in progress.
+
+Book 1 V05/V06 follow-up: [Chapters 1–3 uncovered examples](books/book-01-python-foundations-for-financial-mathematics/qa/early-examples-2026-10-28/README.md) — 98 workflow cases passed; all 430 early gaps classified; 169 later fences remain without exact execution mapping.

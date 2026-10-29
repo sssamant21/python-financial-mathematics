@@ -1,0 +1,881 @@
+{
+  "completed_subprocesses": 67,
+  "pass": 60,
+  "fail": 7,
+  "assembly_aborted_at_workflow": 68,
+  "assembly_error": "IndexError: list index out of range (companion selected as exercise file)",
+  "disposition": "Harness-only failures; corrected oracle escaping, fixtures, closed-form range benchmark, companion selection and prerequisite ordering. No manuscript code changed.",
+  "records": [
+    {
+      "workflow": "001-ch01-s05-4",
+      "status": "PASS",
+      "stdout": "/tmp/book1_v04_env/bin/python\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert captured.strip() == sys.executable"
+      },
+      "payload_sha256": "24bf5c8635d82d42b5d62513c5fdd41f8e632eb7f5c38fe8005cf113b362460a"
+    },
+    {
+      "workflow": "002-ch01-s06-1-2-3-4-5",
+      "status": "PASS",
+      "stdout": "<class 'int'>\n<class 'float'>\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "<class 'int'>\n<class 'float'>\n",
+        "CHECKS": "assert principal==1000.0 and notional==10000000.0 and periods==3 and rate==.05"
+      },
+      "payload_sha256": "2d3f6dd4966d8d603604e66aa33adaa51a89373b9197a14ea7c6a274704a0b64"
+    },
+    {
+      "workflow": "003-ch01-s06-6-8-9-10-11-12",
+      "status": "PASS",
+      "stdout": "1157.6250000000002\nFuture value: 1157.6250000000002\nFuture value: 1157.6250000000002\nFuture value: $1,157.63\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.0; rate=.05; periods=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "1157.6250000000002\nFuture value: 1157.6250000000002\nFuture value: 1157.6250000000002\nFuture value: $1,157.63\n",
+        "CHECKS": "assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "2f10aec5fbf6df11e99247ccad0e02c46720d5165e10f7c84aa7533a0540f7fd"
+    },
+    {
+      "workflow": "004-ch01-s06-7",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "rate=.05; periods=3",
+        "EXPECTED_EXCEPTION": "TypeError",
+        "EXPECTED_STDOUT": null,
+        "CHECKS": ""
+      },
+      "payload_sha256": "dac0a45418cd9cd717018e755c923c42ae12a7f20365f7171857f0029b78236d"
+    },
+    {
+      "workflow": "005-ch01-s06-13-15-16",
+      "status": "PASS",
+      "stdout": "Interest rate: 5.00%\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "Interest rate: 5.00%\n",
+        "CHECKS": "assert rate_per_period==.05"
+      },
+      "payload_sha256": "1ac032fa858d51108d9944ae617559b94daaa51d5a8ed177582504a990adf6eb"
+    },
+    {
+      "workflow": "006-ch01-s06-18-19",
+      "status": "PASS",
+      "stdout": "Future value: $1,157.63\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "Future value: $1,157.63\n",
+        "CHECKS": "assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "9200379af9fdb5fb0719b591023be7fab4141e6131a3b3aab30757995ea01e29"
+    },
+    {
+      "workflow": "007-deliberate-percent-unit-error",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert annual_effective_rate==5 and future_value==216000 and future_value != 1157.625"
+      },
+      "payload_sha256": "ba7e94387b5ddd73cc51f9fe7175900054d054af210c463ddb04efab0fef58b3"
+    },
+    {
+      "workflow": "008-ch01-s07-1-3",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(future_value,16288.94626777442,abs_tol=1e-9); assert (interest_rate,volatility,portfolio_weight)==(.0525,.18,.35)"
+      },
+      "payload_sha256": "74e45fb54d96c9b36cf6bba6ed91a559267029c09a29dfb5fde61b870d6d866f"
+    },
+    {
+      "workflow": "009-ch01-s07-6",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "result=.1+.2; expected=.3; import math",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(result,expected,rel_tol=1e-9)"
+      },
+      "payload_sha256": "06f809f4675f1e496c3c7bdb860d979fa602b44462298ffea0252c0dfbb4d090"
+    },
+    {
+      "workflow": "010-ch01-s07-8-9",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert Decimal('0.1') != Decimal(.1)"
+      },
+      "payload_sha256": "41174d353bf1c22192fbc156782d10ad74085e5996949634923c3fe007babbfb"
+    },
+    {
+      "workflow": "011-ch01-s07-19",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal_text='10000';rate_text='.05';periods_text='3'",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert principal==Decimal('10000') and rate==Decimal('.05') and periods==3"
+      },
+      "payload_sha256": "e6069ef57db01b8ff9d175146b756486ae6a74ac859fb6bd5df2e4cd169035d9"
+    },
+    {
+      "workflow": "012-ch01-s08-1-2-3-4-5",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert total_cash_flow==1250 and net_amount==35000 and price_change==8 and interest==500 and weight==.25"
+      },
+      "payload_sha256": "96c8e38e6585550879b66b9c78f958ed889c8d38385fcc970663a818f97df25f"
+    },
+    {
+      "workflow": "013-ch01-s08-6",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": "ZeroDivisionError",
+        "EXPECTED_STDOUT": null,
+        "CHECKS": ""
+      },
+      "payload_sha256": "031111c105bba309f95efce1da179235dc56cf6ee464ea80f92d9e79940102d3"
+    },
+    {
+      "workflow": "014-ch01-s08-7-8-9-10",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert full_years==2 and remaining_months==5; assert 17//5==3 and 17%5==2 and 2**3==8"
+      },
+      "payload_sha256": "3e86040eac47f591cc9b7bfda73770a55cb3303078ba60191ddd14615862a849"
+    },
+    {
+      "workflow": "015-ch01-s08-14-15-16-17-18",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert gain==3500 and gain_rate==.07 and net_cash_flow==750 and balance==10500 and result==160"
+      },
+      "payload_sha256": "10dba27e527d50f7430b53bdae08e31736ac98ad1029088320c98a1350abf2e0"
+    },
+    {
+      "workflow": "016-ch01-s08-19-20",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;rate=.05;periods=3;annual_rate=.05;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(present_value,1000,abs_tol=1e-10); assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "d5e5817c0c07fc05951c7e17f79b7b0f2a541a7c40d889b34146df3926c3d221"
+    },
+    {
+      "workflow": "017-ch01-s08-21-23-24-25-26",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert interest_usd==500 and spread_decimal==.0125 and math.isclose(total_rate,.0525) and increase==15 and new_value==114.99999999999999"
+      },
+      "payload_sha256": "747de6a03e387d3ff773d5272620404d955d32487582e47f437dc2425ef9eaab"
+    },
+    {
+      "workflow": "018-ch01-s09-0-1-2-3-4-5-6-7-8",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;annual_rate=.05;years=3;interest=50.;rate=.05;periods=3;a=2;b=3;x=2;n=3;A=1;B=2;C=3;D=4",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "c4f7d869e8dccb06ff932b2ae2d2b3a0c964f297c59edf700bd2d8463dbee3d0"
+    },
+    {
+      "workflow": "019-ch01-s09-11-12-13-17-18-19-20",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;rate=.05;periods=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(present_value,1000,abs_tol=1e-10)"
+      },
+      "payload_sha256": "85b957395a67217bfa298dc33584ca58f8652f756cb9530023582f92f07ab436"
+    },
+    {
+      "workflow": "020-ch01-s09-21",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "final_price=108.;initial_price=100.",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert relative_change==.08"
+      },
+      "payload_sha256": "b79cf101fa4cb19a1134c39ac12e17d5b4da68be46a81fb54056d9713a78ed57"
+    },
+    {
+      "workflow": "021-deliberate-precedence-error",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "final_price=108.;initial_price=100.",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert relative_change==107.0 and relative_change != .08"
+      },
+      "payload_sha256": "2f33ef019469f7899331e062516bbb329f070b4fbc273241b17e4177281a276e"
+    },
+    {
+      "workflow": "022-ch01-s09-23-24-25-27-28-29-30",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "weight_1=.6;return_1=.08;weight_2=.4;return_2=-.02;value_1=10;value_2=20;value_3=30;old_value=250;new_value=275;principal=1000.;rate=.05;periods=3;fees=10;stock_weight=.5;stock_return=.06;bond_weight=.3;bond_return=.03;cash_weight=.2;cash_return=.005",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(portfolio_return,.04,abs_tol=1e-14);assert average==20 and change_percent==10;assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "d94557d1ec46a92a7a0afb5757b7c9f0c3e80da7bc46ed1e78766b36011def3d"
+    },
+    {
+      "workflow": "023-deliberate-return-precedence-error",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "final_value=115;initial_value=100",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert return_rate==114 and return_rate != .15"
+      },
+      "payload_sha256": "205a58c6d8bbc149464e12565c0d3d1be73eb85fa11270440fd966632e1dd2c5"
+    },
+    {
+      "workflow": "024-ch01-s10-0",
+      "status": "PASS",
+      "stdout": "11576.250000000002\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "11576.250000000002\n",
+        "CHECKS": "assert math.isclose(future_value,11576.25,abs_tol=1e-9)"
+      },
+      "payload_sha256": "e76d724cee2db769e33fd91c9e06c7d5f15cfa8b53c929f6986ef7538f8cb171"
+    },
+    {
+      "workflow": "025-ch01-s10-1",
+      "status": "PASS",
+      "stdout": "Principal: Rate as a decimal, for example 0.05: Number of whole periods: Future value: 1157.6250000000002\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert principal==1000 and rate==.05 and periods==3;assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "d9ee0f926979322d1cb08b2a4b76c9d40fd1c75e5ed0d5f6262b42fd7a5fca3b"
+    },
+    {
+      "workflow": "026-ch01-s10-2",
+      "status": "PASS",
+      "stdout": "Investment name: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert investment_name=='Example Fund'"
+      },
+      "payload_sha256": "391b2a54c45be43f55ddfe821ea1f4f40262f9f179c3fb66031046e19cc25344"
+    },
+    {
+      "workflow": "027-ch01-s10-3",
+      "status": "PASS",
+      "stdout": "Principal: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert principal=='1000'"
+      },
+      "payload_sha256": "a9e145fd0598f4b91e133a8907ad7bd10af81f1c072746bb2e7b4bcc6ba75e0b"
+    },
+    {
+      "workflow": "028-ch01-s10-4",
+      "status": "PASS",
+      "stdout": "Principal: Number of whole periods: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert principal==1000 and periods==3"
+      },
+      "payload_sha256": "18ba62545cf1053dc7c906671386c99fcacfdb63d7f92f2cb21d8d15df7d8c9a"
+    },
+    {
+      "workflow": "029-ch01-s10-5",
+      "status": "PASS",
+      "stdout": "Rate as a decimal, for example 0.05 for 5%: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert rate==.05"
+      },
+      "payload_sha256": "9c13e2ed62c9d77175683bd2378096cf9cb838f20496dfdf05102ba29aa33618"
+    },
+    {
+      "workflow": "030-ch01-s10-6",
+      "status": "PASS",
+      "stdout": "Rate as a percentage, for example 5 for 5%: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert rate==.05"
+      },
+      "payload_sha256": "aff583972988a0cdb02d45d8df6d89deeb4337f5ac497f9628c16fa47210cc4e"
+    },
+    {
+      "workflow": "031-ch01-s10-7",
+      "status": "PASS",
+      "stdout": "Annual rate (%), for example 5.25: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert annual_rate==.0525;assert math.isclose(future_value,1165.913453125,abs_tol=1e-8)"
+      },
+      "payload_sha256": "57029ff840d0f74e035772ff75281c0a9a7d489ee0498666613d227cf8cf4da8"
+    },
+    {
+      "workflow": "032-ch01-s10-8",
+      "status": "PASS",
+      "stdout": "Annual rate (%): CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert annual_rate==.05"
+      },
+      "payload_sha256": "1cc4094a8bface5feb249dfcbd3843ab394edd6ea2a4e108d1eb07fcafdce72e"
+    },
+    {
+      "workflow": "033-ch01-s10-9",
+      "status": "PASS",
+      "stdout": "Number of whole periods: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert periods==3"
+      },
+      "payload_sha256": "d4dcc38788e7a62705860990191f9df94022a3e3f5d9e2b57aaae20b5b2afe63"
+    },
+    {
+      "workflow": "034-ch01-s10-10",
+      "status": "PASS",
+      "stdout": "Principal: Principal must be numeric.\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert 'Principal must be numeric.' in captured"
+      },
+      "payload_sha256": "ffccca062a15c4afd1fa5be09c50c9466ccbe88e023846644092024a62f035b0"
+    },
+    {
+      "workflow": "035-ch01-s10-12",
+      "status": "PASS",
+      "stdout": "Value: Value must be finite.\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert 'Value must be finite.' in captured"
+      },
+      "payload_sha256": "b89ae3a877aeda01a7cc73516b32671cf1f637e050c3153f71b21e61938b223b"
+    },
+    {
+      "workflow": "036-ch01-s10-13",
+      "status": "PASS",
+      "stdout": "Investment name: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert investment_name=='Fund A'"
+      },
+      "payload_sha256": "d478510a553dfba79516f590444ce945e12ff3887efba8d12f2ed66e6cdf19cc"
+    },
+    {
+      "workflow": "037-ch01-s10-14",
+      "status": "PASS",
+      "stdout": "Principal: Annual rate (%): Number of whole years: Future value: 1157.6250000000002\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "f4ca24230877702e4f1a012c5897576f15a86db41ec661406701b564d2d305ca"
+    },
+    {
+      "workflow": "038-ch01-s10-21",
+      "status": "PASS",
+      "stdout": "Annual interest rate (%), for example 5.25: Number of whole years: CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert rate_percent==5.25 and years==3"
+      },
+      "payload_sha256": "ed1e03a3bdac34ea9b57e94d12dfc8ec3aa5214e212da9ed8de1ffeac3341d4b"
+    },
+    {
+      "workflow": "039-ch01-s10-22",
+      "status": "PASS",
+      "stdout": "Annual rate (%): CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert rate==.05 and math.isclose(future_value,1157.625,abs_tol=1e-10)"
+      },
+      "payload_sha256": "8e0a230417bdd11e4c49b657d723c7a67e770db9072f143562031cf0bf66aee9"
+    },
+    {
+      "workflow": "040-ch01-s10-23",
+      "status": "PASS",
+      "stdout": "Future Value Calculator\nPrincipal amount ($): Annual interest rate (%): Number of whole years: \nPrincipal:    $1,000.00\nAnnual rate:  5.00%\nYears:        3\nFuture value: $1,157.63\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=1000.;years=3",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert 'Future value: $1,157.63' in captured"
+      },
+      "payload_sha256": "eb6519caac297c3299453b245dcc75498b0c4a2566ac7e0f4d8a0279af7ea97c"
+    },
+    {
+      "workflow": "041-ch01-s10-11",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/041-ch01-s10-11/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1\n    assert captured=='Principal must be greater than zero for this model.\n                     ^\nSyntaxError: unterminated string literal (detected at line 1)\n",
+      "config": {
+        "SETUP": "principal=-1",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert captured=='Principal must be greater than zero for this model.\n'"
+      },
+      "payload_sha256": "b9cb01fcaddfb43aee38715ca1812ff843d32789ba208773ec4346895fcfca96"
+    },
+    {
+      "workflow": "042-ch01-s10-15-16-17-18-19-20",
+      "status": "PASS",
+      "stdout": "Financial Mathematics\n11576.25\nFuture value: 11576.25\nPrincipal: 10000\nPrincipal: $10,000.00\nFuture value: $11,576.25\nRate: 5.25%\nFuture value: $11,576.25\nAnnual rate: 5.25%\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "future_value=11576.25;result=11576.25;annual_rate=.0525",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert formatted_value=='1,234.57' and value==1234.5678; assert 'Rate: 5.25%' in captured"
+      },
+      "payload_sha256": "ce2f206cc9c5c5755996c20b04cae39f5e442b6fda2d375d10103b1db9274ec8"
+    },
+    {
+      "workflow": "043-ch01-s11-5",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "a=.1+.2;b=.3;import math",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert math.isclose(a,b,rel_tol=1e-9)"
+      },
+      "payload_sha256": "be1c586075df2d98a26ea85ab8532fea91135f07794292478e3bda28440abf3c"
+    },
+    {
+      "workflow": "044-ch01-s11-13-16-19",
+      "status": "PASS",
+      "stdout": "0.30000000000000004\n0.5125\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "0.30000000000000004\n0.5125\n",
+        "CHECKS": "assert float_result != .3 and fee==Decimal('.5125') and USD_CENT==Decimal('.01')"
+      },
+      "payload_sha256": "607fb53490dc2a2a1385cb046f92f249a91ff8f22c9a031bdabace52c99f7c41"
+    },
+    {
+      "workflow": "045-million-float-accumulations",
+      "status": "PASS",
+      "stdout": "10000.000000171856\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert abs(total-10000)<.001 and total !=10000"
+      },
+      "payload_sha256": "ccf954220e7d7feed139e91dee2f36489b9e6c2a8939e96525bd3b73aa849f7c"
+    },
+    {
+      "workflow": "046-million-decimal-accumulations",
+      "status": "PASS",
+      "stdout": "10000.00\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "10000.00\n",
+        "CHECKS": "assert total==Decimal('10000.00')"
+      },
+      "payload_sha256": "befdd840e2b5511b0f7080e18e3257d86edb1395e5cf7dfed933861d5e4d8d6d"
+    },
+    {
+      "workflow": "047-ch01-s11-27",
+      "status": "PASS",
+      "stdout": "15.63\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": "15.63\n",
+        "CHECKS": "assert fee==Decimal('15.63')"
+      },
+      "payload_sha256": "c24807ad64d4fa5d7fdfd9551278c2ed7aa7d3dd066f9ca2af3a2446083874ee"
+    },
+    {
+      "workflow": "048-calculator-components",
+      "status": "PASS",
+      "stdout": "Annual interest rate (%): \nSIMPLE INTEREST RESULTS\n------------------------------\nPrincipal:      $10,000.00\nInterest:       $1,500.00\nEnding Balance: $11,500.00\nValues reconcile\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert interest==Decimal('1500.00') and ending_balance==Decimal('11500.00'); assert profit_loss==Decimal('800') and return_percent==Decimal('16');assert fee==Decimal('15.63') and total_paid==Decimal('1266.38');assert difference==tolerance; assert 'Values reconcile' in captured"
+      },
+      "payload_sha256": "f4294caed8e9853d37ba81644a6b9b9677c4f47daed9297e16f106df5628b9a7"
+    },
+    {
+      "workflow": "049-ch01-s13-0-1-2-3",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "principal=Decimal('10000');rate=Decimal('.05');years=Decimal('3')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert account_balance+deposit-withdrawal==Decimal('10800');assert result==Decimal('11500');assert MONEY_QUANTUM==Decimal('.01')"
+      },
+      "payload_sha256": "88a23841c755e10f092bf60152d4a2fb5bc89cce8f85efd651b179fe7e5423af"
+    },
+    {
+      "workflow": "050-companion-context-examples",
+      "status": "PASS",
+      "stdout": "Principal: Annual rate (%): Years: Interest: $100.00\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "present_value=Decimal('1000');rate=Decimal('.05');periods=2;principal=Decimal('1000');years=2;periods_per_year=12",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert future_value==Decimal('1102.5000');assert ending_balance==Decimal('1100');assert display_interest==Decimal('100.00');assert 'Interest: $100.00' in captured"
+      },
+      "payload_sha256": "97e70a411b5306711203ea2fb2d7cdb2ec7f1443dc7669bc733f21dcb82030b9"
+    },
+    {
+      "workflow": "051-ch02-s01-0-1-2-3-11-12-14-15",
+      "status": "PASS",
+      "stdout": "<class 'bool'>\n<class 'str'>\nFalse\nTrue\nFalse\nTrue\nFalse\nTrue\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert is_reconciled and not is_profitable and has_sufficient_balance and meets_requirement and is_within_limit; assert captured==\"<class 'bool'>\\n<class 'str'>\\nFalse\\nTrue\\nFalse\\nTrue\\nFalse\\nTrue\\n\""
+      },
+      "payload_sha256": "e1ee2dd35a8df1f95bdfb0774687c4bac503a3ceffc77cadc1dafa5c745c8eb4"
+    },
+    {
+      "workflow": "052-ch02-s01-6-7-17",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "profit_loss=Decimal('10');difference=Decimal('.01');tolerance=Decimal('.01');account_balance=Decimal('10000')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert is_profitable and is_reconciled"
+      },
+      "payload_sha256": "efd9048b12efeac5a0c35e6c755cf12eb6cef166173006cf3c3f728953d7ba5e"
+    },
+    {
+      "workflow": "053-ch02-s02-1-5-12-13-14-15",
+      "status": "PASS",
+      "stdout": "100\n100\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "balance=Decimal('1000');system_a=Decimal('100');system_b=Decimal('100.01');minimum_rate=Decimal('0');rate=Decimal('.05');maximum_rate=Decimal('.10');exposure=Decimal('20000');exposure_limit=Decimal('10000');materiality_threshold=Decimal('1000')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert is_exact_value and not meets_minimum_balance and is_reconciled and is_valid_rate and requires_review"
+      },
+      "payload_sha256": "b6a7f4361e79f7fe9f67ba0872ae53c50e52f19113cd96aa8be42af2494445a8"
+    },
+    {
+      "workflow": "054-ch02-s03-2-3-4-9-10-11-13-16-17",
+      "status": "PASS",
+      "stdout": "Minimum balance satisfied.\nMinimum balance satisfied.\nScenario meets the model requirements.\nBalance is nonzero.\nRequirements satisfied.\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "balance=Decimal('12500');minimum_balance=Decimal('10000');return_rate=Decimal('.10');profit_loss=Decimal('100');target_return=Decimal('.05');investment_amount=Decimal('1000');minimum_investment=Decimal('500');rate=Decimal('.05');minimum_rate=Decimal('0')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert status=='Accepted' and reached_target and reached_high_return and classification=='Meets Model Requirements';assert captured.count('Minimum balance satisfied.')==2"
+      },
+      "payload_sha256": "d30858bac2fd40f3b0fc90a6ea012019bcf99b28a9b161e8f17a48a32a21f8b8"
+    },
+    {
+      "workflow": "055-ch02-s03-14",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/055-ch02-s03-14/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1\n    assert captured=='Rate is unavailable.\n                     ^\nSyntaxError: unterminated string literal (detected at line 1)\n",
+      "config": {
+        "SETUP": "rate=None",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert captured=='Rate is unavailable.\n'"
+      },
+      "payload_sha256": "bf4150d0cc50b2deb68eedc7728f1d87db67320d29a314f5e8817d305598992f"
+    },
+    {
+      "workflow": "056-ch02-s04-1-2-3-8-9-10-11-12-13-14-15-16-17-19-27-28-29-30-31-32",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/056-ch02-s04-1-2-3-8-9-10-11-12-13-14-15-16-17-19-27-28-29-30-31-32/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1\n    assert status=='Target Achieved' and classification=='High' and profit_loss==Decimal('1250');assert is_reconciled and requires_review and is_material;assert captured=='Send item for review.\n                                                                                                                                                                           ^\nSyntaxError: unterminated string literal (detected at line 1)\n",
+      "config": {
+        "SETUP": "system_a=Decimal('100');system_b=Decimal('100.01');tolerance=Decimal('.01');balance=Decimal('10000');return_rate=Decimal('.10');target_return=Decimal('.05');exposure=Decimal('20000');exposure_limit=Decimal('10000');difference=Decimal('.01');requires_review=True;amount=Decimal('15000');value=Decimal('1');materiality_threshold=Decimal('10000')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert status=='Target Achieved' and classification=='High' and profit_loss==Decimal('1250');assert is_reconciled and requires_review and is_material;assert captured=='Send item for review.\n'"
+      },
+      "payload_sha256": "e28e7e1fae441479d083dacd685b968caf6532b230b455ef2de0551d22dd9cb7"
+    },
+    {
+      "workflow": "057-ch02-s05-1-2-3-4-5-6-7-10-12-14-15-16",
+      "status": "PASS",
+      "stdout": "100.00\n150.00\n200.00\n100.00\n150.00\n200.00\nCash flow:\n100.00\nCash flow:\n150.00\nCash flow:\n200.00\nProcessing complete.\n15.00000\n37.50000\n60.00000\nBelow target\nTarget achieved\nTarget achieved\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert calculated_fees==[Decimal('15'),Decimal('37.5'),Decimal('60')];assert meeting_target_count==2 and raw_fee==Decimal('37.5');assert transaction_amounts==[Decimal('1000'),Decimal('2500'),Decimal('4000')]"
+      },
+      "payload_sha256": "6264521bdbc3c8bb3078e19b2e7561fdb860afa35a659b3dae1fd9f2bf90f8e1"
+    },
+    {
+      "workflow": "058-while-update-before-or-after",
+      "status": "PASS",
+      "stdout": "8000.00\n8500.00\n9000.00\n9500.00\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert balance==target_balance==Decimal('10000');assert outcome=='Target reached'"
+      },
+      "payload_sha256": "4405d486f1ffe7ef57b70ae40951b2764eae12626ed27229eebd0c625ac8369b"
+    },
+    {
+      "workflow": "059-ch02-s06-11-12",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/059-ch02-s06-11-12/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "config": {
+        "SETUP": "balance=Decimal('8000');target_balance=Decimal('10000');contribution=Decimal('500');periods=0",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert balance==Decimal('10000') and periods==4"
+      },
+      "payload_sha256": "f0f0b6d1e3a3ff664b27feca977df70ae480904621aa3b83762ec76315ceb5b8"
+    },
+    {
+      "workflow": "060-ch02-s07-7-8-9-10-11-12-13-14-15",
+      "status": "PASS",
+      "stdout": "0 -1000.00 -1000.00\n1 250.00 -750.00\n2 300.00 -450.00\n3 600.00 150.00\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert trace==[(Decimal('1000'),Decimal('200'),Decimal('1200')),(Decimal('1200'),Decimal('-50'),Decimal('1150')),(Decimal('1150'),Decimal('300'),Decimal('1450'))];assert difference==0 and total_cash_flow==0"
+      },
+      "payload_sha256": "fc3fff3f621464bd91ac2e5b792013307e530613468ad8ffe69f5ba80cc3a428"
+    },
+    {
+      "workflow": "061-range-timelines",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/061-range-timelines/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1, in <module>\nAssertionError\n",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert balance==0;assert periods==[1,2,3,4,5];assert number_of_periods==12;assert abs(present_value-Decimal('898.391102472735'))<Decimal('1e-12')"
+      },
+      "payload_sha256": "5085487b5c5be33558f5d36035c6ce90ff89379091aab69d780cc577ed17615c"
+    },
+    {
+      "workflow": "062-nested-complete-examples",
+      "status": "PASS",
+      "stdout": "1 1\n1 2\n1 3\n1 4\n2 1\n2 2\n2 3\n2 4\n3 1\n3 2\n3 3\n3 4\nInvestment passes initial screening.\nReject: risk too high\nYear 1, Quarter 1\nYear 1, Quarter 2\nYear 1, Quarter 3\nYear 1, Quarter 4\nYear 2, Quarter 1\nYear 2, Quarter 2\nYear 2, Quarter 3\nYear 2, Quarter 4\nYear 3, Quarter 1\nYear 3, Quarter 2\nYear 3, Quarter 3\nYear 3, Quarter 4\nYear 1, Month 1\nYear 1, Month 2\nYear 1, Month 3\nYear 1, Month 4\nYear 1, Month 5\nYear 1, Month 6\nYear 1, Month 7\nYear 1, Month 8\nYear 1, Month 9\nYear 1, Month 10\nYear 1, Month 11\nYear 1, Month 12\nYear 2, Month 1\nYear 2, Month 2\nYear 2, Month 3\nYear 2, Month 4\nYear 2, Month 5\nYear 2, Month 6\nYear 2, Month 7\nYear 2, Month 8\nYear 2, Month 9\nYear 2, Month 10\nYear 2, Month 11\nYear 2, Month 12\nYear 3, Month 1\nYear 3, Month 2\nYear 3, Month 3\nYear 3, Month 4\nYear 3, Month 5\nYear 3, Month 6\nYear 3, Month 7\nYear 3, Month 8\nYear 3, Month 9\nYear 3, Month 10\nYear 3, Month 11\nYear 3, Month 12\nYear 1, Month 1: $100,000.00\nYear 1, Month 2: $100,000.00\nYear 1, Month 3: $100,000.00\nYear 1, Month 4: $100,000.00\nYear 1, Month 5: $100,000.00\nYear 1, Month 6: $100,000.00\nYear 1, Month 7: $100,000.00\nYear 1, Month 8: $100,000.00\nYear 1, Month 9: $100,000.00\nYear 1, Month 10: $100,000.00\nYear 1, Month 11: $100,000.00\nYear 1, Month 12: $100,000.00\nYear 2, Month 1: $105,000.00\nYear 2, Month 2: $105,000.00\nYear 2, Month 3: $105,000.00\nYear 2, Month 4: $105,000.00\nYear 2, Month 5: $105,000.00\nYear 2, Month 6: $105,000.00\nYear 2, Month 7: $105,000.00\nYear 2, Month 8: $105,000.00\nYear 2, Month 9: $105,000.00\nYear 2, Month 10: $105,000.00\nYear 2, Month 11: $105,000.00\nYear 2, Month 12: $105,000.00\nYear 3, Month 1: $110,250.00\nYear 3, Month 2: $110,250.00\nYear 3, Month 3: $110,250.00\nYear 3, Month 4: $110,250.00\nYear 3, Month 5: $110,250.00\nYear 3, Month 6: $110,250.00\nYear 3, Month 7: $110,250.00\nYear 3, Month 8: $110,250.00\nYear 3, Month 9: $110,250.00\nYear 3, Month 10: $110,250.00\nYear 3, Month 11: $110,250.00\nYear 3, Month 12: $110,250.00\n1 1 1\n1 2 2\n1 3 3\n1 4 4\n1 5 5\n1 6 6\n1 7 7\n1 8 8\n1 9 9\n1 10 10\n1 11 11\n1 12 12\n2 1 13\n2 2 14\n2 3 15\n2 4 16\n2 5 17\n2 6 18\n2 7 19\n2 8 20\n2 9 21\n2 10 22\n2 11 23\n2 12 24\n3 1 25\n3 2 26\n3 3 27\n3 4 28\n3 5 29\n3 6 30\n3 7 31\n3 8 32\n3 9 33\n3 10 34\n3 11 35\n3 12 36\nGrowth: 3.0%, Discount: 6.0%\nGrowth: 3.0%, Discount: 8.0%\nGrowth: 3.0%, Discount: 10.0%\nGrowth: 5.0%, Discount: 6.0%\nGrowth: 5.0%, Discount: 8.0%\nGrowth: 5.0%, Discount: 10.0%\nGrowth: 7.0%, Discount: 6.0%\nGrowth: 7.0%, Discount: 8.0%\nGrowth: 7.0%, Discount: 10.0%\ng=2.0%, r=7.0%, TV=$2,040,000.00\ng=2.0%, r=8.0%, TV=$1,700,000.00\ng=2.0%, r=9.0%, TV=$1,457,142.86\ng=3.0%, r=7.0%, TV=$2,575,000.00\ng=3.0%, r=8.0%, TV=$2,060,000.00\ng=3.0%, r=9.0%, TV=$1,716,666.67\ng=4.0%, r=7.0%, TV=$3,466,666.67\ng=4.0%, r=8.0%, TV=$2,600,000.00\ng=4.0%, r=9.0%, TV=$2,080,000.00\nOutflow: -1000.00\nInflow: 300.00\nOutflow: -200.00\nInflow: 700.00\n1000\n1200\n1400\nStandard inflow\nLarge outflow\nLarge inflow\nStandard outflow\nAnnual total: 330\nAnnual total: 420\nGrand total: 750\nYear 1: $52,000.00\nYear 2: $54,080.00\nYear 3: $56,243.20\nYear 4: $58,492.93\nYear 5: $60,832.65\nYear 1: $53,500.00\nYear 2: $57,245.00\nYear 3: $61,252.15\nYear 4: $65,539.80\nYear 5: $70,127.59\nYear 1: $55,000.00\nYear 2: $60,500.00\nYear 3: $66,550.00\nYear 4: $73,205.00\nYear 5: $80,525.50\n1000\n1200\n1300\n1500\n1600\n1700\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert grand_total==750 and annual_total==420;assert period==36;assert 'Reject: risk too high' in captured and 'Large outflow' in captured and 'Grand total: 750' in captured"
+      },
+      "payload_sha256": "7bf19a1f4aefa4baf926d4e90b137f3b92c7935636046dd0adf1803588a684e0"
+    },
+    {
+      "workflow": "063-break-continue-complete-examples",
+      "status": "PASS",
+      "stdout": "Year 1: $10,600.00\nYear 2: $11,236.00\nYear 3: $11,910.16\nYear 4: $12,624.77\nYear 5: $13,382.26\n1\n2\n3\n4\n5\n6\n7\n8\n9\nTarget reached in Year 10: $107,946.25\nLoan repaid in Month 12\nTarget not reached within model horizon.\n1\n2\n4\n5\nObserved return: 2.00%\nObserved return: -1.00%\nObserved return: 3.00%\nObserved return: 1.00%\nEvaluate: g=2.0%, r=6.0%\nEvaluate: g=2.0%, r=8.0%\nEvaluate: g=2.0%, r=10.0%\nEvaluate: g=4.0%, r=6.0%\nEvaluate: g=4.0%, r=8.0%\nEvaluate: g=4.0%, r=10.0%\nEvaluate: g=8.0%, r=10.0%\n1 1\n1 2\n2 1\n2 2\n3 1\n3 2\n1 1\n1 2\n1 4\n1 5\n2 1\n2 2\n2 4\n2 5\n3 1\n3 2\n3 4\n3 5\nTarget was not reached within the projection.\nMaximum attempts completed without success.\nTarget reached.\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert loan_balance==0 and year==10;assert 'Loan repaid in Month 12' in captured;assert 'Target was not reached within the projection.' in captured;assert 'Maximum attempts completed without success.' in captured"
+      },
+      "payload_sha256": "4b828f8655f549319c987c129d4b22be66605fde752140b479c16563e2fb8571"
+    },
+    {
+      "workflow": "064-ch02-s10-10-11-13",
+      "status": "PASS",
+      "stdout": "CHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "financial_data=[1,None,2];transactions=[None,0,5,-2]",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert skipped_observations==1 and missing_count==1 and zero_count==1 and processed_count==2"
+      },
+      "payload_sha256": "e373b9d39e81064b7499379c46956adf96a2adb9adf337e2fff31c9b75adfe9f"
+    },
+    {
+      "workflow": "065-ch02-s11-0-1-4-11",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/065-ch02-s11-0-1-4-11/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1\n    assert principal==Decimal('-10000') and years==-5;assert captured=='Missing cash flow.\n                                                                       ^\nSyntaxError: unterminated string literal (detected at line 1)\n",
+      "config": {
+        "SETUP": "",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert principal==Decimal('-10000') and years==-5;assert captured=='Missing cash flow.\n'"
+      },
+      "payload_sha256": "79cbd23deeb73d41ca4913e3ed07e363eb7326d09acdbf2ba95b647acf852934"
+    },
+    {
+      "workflow": "066-defensive-validation-context",
+      "status": "PASS",
+      "stdout": "Annual rate is required.\nYears must be an integer.\nDiscount rate must exceed growth rate for this model.\nCHECKS PASSED\n",
+      "stderr": "",
+      "config": {
+        "SETUP": "annual_rate=None;annual_contribution=None;years=True;discount_rate=Decimal('.02');growth_rate=Decimal('.03')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert annual_contribution==0;assert 'Annual rate is required.' in captured and 'Years must be an integer.' in captured"
+      },
+      "payload_sha256": "cd2e96791b94c19607e1779b29d506cdd8b945e0d54b023cb93a4da504d628cc"
+    },
+    {
+      "workflow": "067-ch02-s11-5-6-7",
+      "status": "FAIL",
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_early_first/067-ch02-s11-5-6-7/check.py\", line 22, in <module>\n    with contextlib.redirect_stdout(buffer):exec(CHECKS,ns)\n                                            ^^^^^^^^^^^^^^^\n  File \"<string>\", line 1\n    assert captured=='Annual rate must be finite.\n                     ^\nSyntaxError: unterminated string literal (detected at line 1)\n",
+      "config": {
+        "SETUP": "annual_rate=Decimal('NaN');annual_contribution=Decimal('-1');annual_return=Decimal('-1')",
+        "EXPECTED_EXCEPTION": null,
+        "EXPECTED_STDOUT": null,
+        "CHECKS": "assert captured=='Annual rate must be finite.\nAnnual contribution cannot be negative.\nAnnual return must exceed -100% for this model.\n'"
+      },
+      "payload_sha256": "cc00c650e39b85aa928645978b59117be614e589e5e2df238f505d408270733a"
+    }
+  ]
+}

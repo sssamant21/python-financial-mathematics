@@ -2,6 +2,8 @@
 
 **Status: IN PROGRESS.** The 13 newly selected workflow checks passed on CPython 3.12.14 / Linux x86_64 with glibc 2.39. This is a bounded gap-closing run, not completion of V05/V06. Source revision: `a4aebd6d937a97dd5ed3f6b6cbb947fb5f58e76f`. Recorded 2026-10-28; reviewer/owner: Codex. No manuscript Python payload was changed.
 
+**Follow-up:** The [Chapters 1–3 batch](../early-examples-2026-10-28/README.md) classified all 430 early gaps and reduced the current no-exact-mapping queue to 169 fences. Counts below retain this initial snapshot.
+
 ## Full manuscript selection ledger
 
 The [ledger](coverage-ledger.json) inventories 1,160 Python fences in 356 chapter/companion/index Markdown documents, with source path, zero-based Python-fence index, opening line and SHA-256. QA documentation is excluded. The [chapter queue](CHAPTER-QUEUE.md) shows remaining mapping work.
