@@ -163,3 +163,7 @@ The [Section 11.7 record](chapter-11-budget-boundary-followup.md) verifies the m
 ## Final vector assessment follow-up
 
 The [Section 11.10 record](chapter-11-final-nonfinite-followup.md) adds direct nonfinite/overflow checks and strict JSON evidence. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This extends partial COV-60 remediation; the selected count remains twenty.
+
+## Selected Chapter 13 QR rank-screen follow-up — 2026-10-29
+
+[New evidence](chapter-13-qr-rank-followup.md): exact selected normalized-pivot boundaries across four common scales and an independently known least-squares solution under column/target-label permutations. All 22 Chapter 13 files compiled and 12 scripts passed. Solver unchanged; COV-64 partially addressed, with general near-dependence, Q/R identities, basis-span reconstruction and independent review still open. This checker follows the third full-book runtime refresh.
