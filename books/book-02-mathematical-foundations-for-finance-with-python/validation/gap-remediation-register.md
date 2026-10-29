@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Eleven COV categories partially addressed; none closed by this register.
+**Disposition:** Twelve COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
@@ -14,6 +14,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-71 | Section 15.2 finite-difference representability and denominator guards aligned with related helpers; boundary tests added. | Perturbation asymmetry, step accuracy/convergence and selected Hessian numerical benchmarks. | [Scalar difference](chapter-15-scalar-difference-followup.md) |
 | COV-74 | Section 16.9 now evaluates metrics, normalized loss/gradient and acceptance per candidate; independent residual metrics and selected failed candidates/holdout/budget cases checked. | Broader invalid-data, optimizer/threshold and independent-review scope. | [Candidate acceptance](chapter-16-candidate-acceptance-followup.md) |
 | COV-76 | Section 17.9 KKT fields independently recomputed across four regimes; four isolated rejection families and incomplete acceptance variants checked. | Tolerance units/scales, adjacent active-set transitions, degeneracy and independent review. | [KKT rejection](chapter-17-kkt-rejection-followup.md) |
+| COV-77 | Section 17.9 guards trade/notional range, avoids intermediate cost overflow and computes turnover directly; selected extreme cases pass. | Report/input/audit scope, underflow policy and independent review. | [Financial range](chapter-17-financial-range-followup.md) |
 | COV-79 | Section 18.8 now derives bracket invariants from cached signs/history and retains endpoint residuals; independent trace and callback-count checks cover seven paths. | Other solver trace/count diagnostics, numerical range and independent review. | [Bracket audit](chapter-18-bracket-audit-followup.md) |
 | COV-82 | Section 19.6 stage/controller/rejection policy checked with Fraction stability references and callback traces; nine faulty variants detected. | Broader adaptive ODE behavior, numerical range, failure modes and independent review. | [Adaptive policy](chapter-19-adaptive-policy-followup.md) |
 | COV-83 | Section 19.9 retains validated inputs/schedule and model/policy metadata; selected negative-jump/adjacent-time/log and JSON cases added. | Broader event numerics, cross-section policies and independent review. | [Provenance](chapter-19-input-provenance-followup.md) |
@@ -34,3 +35,5 @@ When closing an item, record the exact sub-obligation, reviewer/evidence and rev
 Section 18.8's subsequent bracket-audit change has a 21-file/11-script scoped pass; it is not included in the earlier full-book run.
 
 Section 17.9's subsequent checker-only KKT follow-up has a 20-file/10-script scoped pass and is not included in the earlier full-book run.
+
+Section 17.9's subsequent financial-range change has a 20-file/10-script scoped pass and is not included in the earlier full-book run.
