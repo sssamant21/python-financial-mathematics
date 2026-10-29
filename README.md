@@ -76,3 +76,5 @@ Book 1 V04: [Python syntax and dependency audit](books/book-01-python-foundation
 Book 1 V05/V06: [Execution mapping and uncovered workflow results](books/book-01-python-foundations-for-financial-mathematics/qa/coverage-and-labs-2026-10-28/README.md) — 13 new workflow checks passed; per-chapter mapping and lab-review queues retained; comprehensive validation remains in progress.
 
 Book 1 V05/V06 follow-up: [Chapters 1–3 uncovered examples](books/book-01-python-foundations-for-financial-mathematics/qa/early-examples-2026-10-28/README.md) — 98 workflow cases passed; all 430 early gaps classified; 169 later fences remain without exact execution mapping.
+
+Book 1 mapping checkpoint: [All 1,160 Python fences accounted for](books/book-01-python-foundations-for-financial-mathematics/qa/later-examples-2026-10-28/README.md); 192 supplemental workflow cases passed across three batches. Lab-step/answer and broader acceptance reviews remain in progress.

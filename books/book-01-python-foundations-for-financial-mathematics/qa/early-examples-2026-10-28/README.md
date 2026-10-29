@@ -1,5 +1,7 @@
 # Book 1 — Chapters 1–3 uncovered-example validation
 
+**Latest checkpoint:** [All manuscript Python fences now have a selection or disposition](../later-examples-2026-10-28/README.md); zero remain unmapped. The counts below retain this report’s historical snapshot.
+
 **Status: bounded mapping batch complete; V05/V06 remain IN PROGRESS.** Reviewer/owner: Codex. Recorded 2026-10-28. Source revision: `ea555618814bccae45297a59418ca39b5c1294b9`. All chapter manuscript bytes are unchanged by this work.
 
 ## Disposition of the 430 initial gaps
