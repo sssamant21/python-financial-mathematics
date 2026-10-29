@@ -42,3 +42,7 @@ The [solver boundary suite](../chapter-18/code/check_solver_boundaries.py) tests
 | COV-81 | Project nonfinite-derivative behavior and broad final applied scope need reconciliation. | Preserve corrected rejection wording, verify corresponding project failure path, map omitted method/log-discount/three-step studies to actual evidence or revise scope. |
 
 These extend COV-01–COV-78, not defect counts. One manuscript clarification; no Python changes or new runtime execution. Independent review and canonical approval remain pending.
+
+## Subsequent COV-79 diagnostic follow-up
+
+The [bracket audit](chapter-18-bracket-audit-followup.md) replaces Section 18.8's status-derived invariant flag with cached sign/history checks and retains endpoint residuals. Independent reevaluation and observed callback counts cover seven selected solver paths. All 21 chapter files compiled and 11 scripts passed. COV-79 retains other solver diagnostics and independent-review obligations; original mapping evidence remains historical.
