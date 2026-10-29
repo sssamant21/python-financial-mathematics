@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest remediation
+## Latest remediation — 2026-10-29
+
+Section 12.5 target-dependent coefficient-rank defect fixed; column-equilibration policy disclosed in code and manuscript. All 21 Chapter 12 files compiled and 11 check scripts passed, including 21 new rank-policy outcomes. [Scoped evidence](chapter-12-rank-target-scaling-followup.md). COV-61 remains partially open; independent review pending.
+
+## Earlier remediation
 
 Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled and all 11 check scripts passed, including nine boundary methods. [Scoped follow-up](chapter-15-scalar-difference-followup.md). This partially addresses COV-71/V-16; independent review and remaining numerical-accuracy work are pending. The historical full-book run below is unchanged.
 
