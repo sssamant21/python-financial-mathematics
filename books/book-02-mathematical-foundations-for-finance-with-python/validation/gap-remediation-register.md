@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Eighteen COV categories partially addressed; none closed by this register.
+**Disposition:** Nineteen COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
@@ -12,6 +12,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-50 | Section 8.9 directly checks errors/gates, retains tolerances and rejects nonfinite computed estimates/errors. | Broader comparator/reference/range and independent review. | [Comparator audit](chapter-08-comparator-audit-followup.md) |
 | COV-51 | Section 8.8 validates returned estimates and avoids Richardson intermediate overflow; selected perturbation/callback/denominator guards checked. | Earlier copies, implicit domains/ranges and independent review. | [Helper guards](chapter-08-helper-guards-followup.md) |
 | COV-55 | Section 10.7 checks exact polynomial errors/orders/estimators and selected smooth exponential ratios; three faulty variants detected. | Broader report/error and financial-oracle scope; independent review. | [Quadrature order](chapter-10-quadrature-order-followup.md) |
+| COV-60 | Section 11.6 adds fixed residual norms and rational projection/scale/sign/label oracles. | Other report fields, relative-distance/cumulative scope and independent review. | [Projection audit](chapter-11-projection-audit-followup.md) |
 | COV-61 | Section 12.5 rank_A no longer depends on target magnitude; column-equilibration policy disclosed; selected scale/zero/near-dependent cases added. | Larger pivot/scaling cases and independent numerical-rank review. | [Rank](chapter-12-rank-target-scaling-followup.md) |
 | COV-62 | Section 12.9 retains aligned limits; controlled factor rejection and threshold/constructor/guardrail cases checked. | Broader ranges, source/version provenance and independent review. | [Factor audit](chapter-12-factor-audit-followup.md) |
 | COV-69 | Section 14.9 computes/reports covariance eigenpairs; closed-form roots, projectors and direct residual/reconstruction checks added. | Independent review and broader numerical/interface scope. Fixed compression bound and input/unit metadata now asserted. | [Eigenpairs](chapter-14-covariance-eigenpair-followup.md) · [Compression bound](chapter-14-compression-bound-followup.md) |
@@ -61,3 +62,5 @@ Section 8.9's comparator change has a 21-file/11-script scoped pass and follows 
 Section 8.8's helper changes have a 21-file/11-script scoped pass and follow the second full-book refresh.
 
 Section 8.8's [normalized-sensitivity follow-up](chapter-08-sensitivity-range-followup.md) extends COV-51 with zero-normalizer/nonfinite report guards and independent stencil-ratio checks. Its 21-file/11-script scoped pass follows the second full-book refresh. The selected category count remains eighteen.
+
+Section 11.6's projection-report change has a 21-file/11-script scoped pass and follows the second full-book refresh.
