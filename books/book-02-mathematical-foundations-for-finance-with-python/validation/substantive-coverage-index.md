@@ -143,3 +143,7 @@ The [Section 8.8 guard record](chapter-08-helper-guards-followup.md) adds finite
 ## Normalized-sensitivity range follow-up
 
 The [Section 8.8 sensitivity record](chapter-08-sensitivity-range-followup.md) adds explicit zero-normalizer and nonfinite report handling, with independent ratio checks. All 21 chapter files compiled and 11 scripts passed. COV-51 remains partially open; the selected register count remains eighteen.
+
+## Projection diagnostic follow-up
+
+The [Section 11.6 projection record](chapter-11-projection-audit-followup.md) adds rational coordinate/scalar/error checks and fixed-report residual norms. All 21 chapter files compiled and 11 scripts passed. COV-60 is partially addressed; nineteen selected partial categories are tracked.
