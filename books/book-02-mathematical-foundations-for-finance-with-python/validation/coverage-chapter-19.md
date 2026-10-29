@@ -46,3 +46,7 @@ These extend COV-01–COV-81, not defect counts. No code/manuscript changes or e
 ## Subsequent COV-83 remediation — 2026-10-29
 
 The [input provenance follow-up](chapter-19-input-provenance-followup.md) reconciles Section 19.9's missing input fields: reports now retain validated scenario parameters, complete scheduled transfers and explicit model/event policies. Ten report-contract cases check metadata, deterministic JSON and caller-mutation isolation; selected negative-jump and adjacent-time event traces are asserted. All 21 chapter files compiled and all 11 scripts passed. COV-83 remains partially open for broader event numerics, cross-section policy and independent review; this does not rewrite the historical mapping evidence above.
+
+## Subsequent COV-82 remediation — 2026-10-29
+
+The [adaptive policy follow-up](chapter-19-adaptive-policy-followup.md) adds Fraction stability-polynomial references and callback-stage observations for selected RK4 estimator, tolerance scaling, rejected-state preservation, retry/controller clipping and zero-error/horizon behavior. Nine deliberately incorrect solver variants were detected. All 21 chapter files compiled and all 11 scripts passed; the solver itself is unchanged. COV-82 retains broader adaptive numerical-range, integration and independent-review work. Original mapping statements remain historical.
