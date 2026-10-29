@@ -1,0 +1,270 @@
+{
+  "source_revision": "00b7cd53ca165d1e7d684ce54d1ea09ea3f13701",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 27,
+  "predicates": 34,
+  "passed": 34,
+  "failed": 0,
+  "source_provenance": [
+    {
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "code_sha256": "1c12b313199700b76573675d3c66c1452aa5f339706f1fd381ff6c37b631fa81",
+      "import_stdout": "Future value: 1102.50\nFirst target period: 1\nPASS: typed financial function runtime checks\n"
+    },
+    {
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "code_sha256": "93733100863a46617a80446de4b472643fdd20a4097395902ef12ceca61c9507",
+      "import_stdout": ""
+    },
+    {
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "code_sha256": "a9a3dffc9a569220edfd0231279a86cf8022381108eef3ea758caba3da25206b",
+      "import_stdout": ""
+    }
+  ],
+  "added_doctest_transcript": "Trying:\n    future_value(Decimal(\"1000\"), Decimal(\"0.05\"), 2) == Decimal(\"1102.50\")\nExpecting:\n    True\nok\nTrying:\n    future_value(Decimal(\"1000\"), Decimal(\"0.05\"), 0) == Decimal(\"1000\")\nExpecting:\n    True\nok\nTrying:\n    future_value(Decimal(\"1000\"), Decimal(\"0\"), 10) == Decimal(\"1000\")\nExpecting:\n    True\nok\nTrying:\n    format(future_value(Decimal(\"1000\"), Decimal(\"-0.10\"), 1), \".2f\")\nExpecting:\n    '900.00'\nok\nTrying:\n    future_value(Decimal(\"1000\"), Decimal(\"-1\"), 2)\nExpecting:\n    Traceback (most recent call last):\n        ...\n    ValueError: periodic_rate must be finite and greater than -1\nok\nTrying:\n    future_value(Decimal(\"0\"), Decimal(\"0.05\"), 2) == Decimal(\"0\")\nExpecting:\n    True\nok\n2 items had no tests:\n    zero_principal_variant\n    zero_principal_variant.run_contract_checks\n1 items passed all tests:\n   6 tests in zero_principal_variant.future_value\n6 tests in 3 items.\n6 passed and 0 failed.\nTest passed.\n",
+  "checks": [
+    {
+      "exercise": "3.7-E1",
+      "label": "typed signed difference",
+      "actual": "5",
+      "expected": "5",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E1",
+      "label": "typed signed difference",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E1",
+      "label": "typed signed difference",
+      "actual": "-5",
+      "expected": "-5",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E2",
+      "label": "annotated NaN still rejected",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E3",
+      "label": "bool explicitly rejected",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E4",
+      "label": "period zero handled as present",
+      "actual": "(0, True)",
+      "expected": "(0, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E4",
+      "label": "absent returns None",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E5",
+      "label": "ordinary aliases same runtime type",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E6",
+      "label": "wrong principal representation",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E6",
+      "label": "negative count",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E7",
+      "label": "Literal beginning timing",
+      "actual": "1155.00",
+      "expected": "1155",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E7",
+      "label": "required keyword timing",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.7-E9",
+      "label": "cast does not parse",
+      "actual": "(True, 'str')",
+      "expected": "(True, 'str')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E1",
+      "label": "gain assumption documented",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E2",
+      "label": "two timing recurrences",
+      "actual": "(Decimal('1150.00'), Decimal('1155.00'))",
+      "expected": "(Decimal('1150'), Decimal('1155'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E3",
+      "label": "added doctest failures",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E3",
+      "label": "six total doctests",
+      "actual": "6",
+      "expected": "6",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E4",
+      "label": "infinite principal matches Raises",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E8",
+      "label": "revised docstring examples still valid",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E8",
+      "label": "one horizon constant changed",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E8",
+      "label": "new upper boundary",
+      "actual": "100",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.8-E8",
+      "label": "above revised limit",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E1",
+      "label": "exact rational FV",
+      "actual": "281216/125",
+      "expected": "281216/125",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E2",
+      "label": "independently known amount PV",
+      "actual": "2E+3",
+      "expected": "2000",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E3",
+      "label": "more negative rate higher PV",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E4",
+      "label": "fractional period",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E4",
+      "label": "string amount",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E6",
+      "label": "annual12 percent is not monthly12 percent",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E7",
+      "label": "wrong pair passes roundtrip",
+      "actual": "100",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E7",
+      "label": "independent5percent oracle catches wrong pair",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E8",
+      "label": "restricted context signals",
+      "actual": "Inexact",
+      "expected": "Inexact",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E8",
+      "label": "caller settings flags traps restored",
+      "actual": "(28, 'ROUND_HALF_EVEN', {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "expected": "(28, 'ROUND_HALF_EVEN', {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E9",
+      "label": "format leaves raw unchanged",
+      "actual": "1.005",
+      "expected": "1.005",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.9-E9",
+      "label": "early quantization changes later value",
+      "actual": "(Decimal('2.010'), Decimal('2.02'))",
+      "expected": "(Decimal('2.010'), Decimal('2.02'))",
+      "status": "PASS"
+    }
+  ]
+}

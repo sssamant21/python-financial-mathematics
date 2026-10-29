@@ -1,0 +1,248 @@
+{
+  "baseline": "00b7cd53ca165d1e7d684ce54d1ea09ea3f13701",
+  "records": [
+    {
+      "id": "3.7-E1",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Annotate a signed cash-flow difference function and test positive, zero, and negative results.",
+      "prompt_sha256": "2aba0a54ff4e5eb3d9500da554460b550da713c6113ff4f1739f3a04c76a42b9",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "Annotated signed_difference(ending: Decimal, starting: Decimal)->Decimal returns ending\u2212starting. Supplemental guards reject wrong/nonfinite inputs; positive5,zero0,negative\u22125 fixtures pass. This is a same-currency signed difference, not a cash-flow-adjusted return."
+    },
+    {
+      "id": "3.7-E2",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Explain why a Decimal NaN can satisfy the parameter annotation and still require rejection.",
+      "prompt_sha256": "631864a32d80474991921c1dcc0dc7320361864a5b8b009d7b0f28a95ca286e1",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "Decimal NaN has the right representation but is not finite. The exact source future_value raises ValueError; annotations alone do not apply this guard."
+    },
+    {
+      "id": "3.7-E3",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Show why bool needs an explicit runtime exclusion for this book's period-count policy.",
+      "prompt_sha256": "ed17bd1f96db962fe8224f775d766d40aaf2cad6732d82ed0e94d03c1a8eb93e",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "bool is an int subclass, so reject it explicitly in this book's count policy. Exact source future_value with True raises TypeError rather than treating it as one period."
+    },
+    {
+      "id": "3.7-E4",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Annotate a function that returns the first qualifying period or None; safely handle period 0.",
+      "prompt_sha256": "fb14ae2cc9a73e0a2748c8d1a710051e046c18f2a22bab0c069a70d084c445b7",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "first_qualifying is annotated int|None and delegates to the exact fully validated source search. Period0 is a present result; use result is not None rather than if result. Fixtures check0 and absence."
+    },
+    {
+      "id": "3.7-E5",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Explain why Amount and PeriodicRate aliases do not stop argument reversal.",
+      "prompt_sha256": "01ce901cd39f48c1ef0641f5f71e54927d4f256d00d6613050a85b3586f907f9",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "Amount=Decimal and PeriodicRate=Decimal are ordinary aliases, not distinct nominal types. Reversing them is not prevented by those aliases; use explicit names/contracts and validation or a deliberately distinct domain type."
+    },
+    {
+      "id": "3.7-E6",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Add runtime tests for wrong principal representation and a negative period count.",
+      "prompt_sha256": "14ad07e03f7234484ec2cdc9d40b52d6c05383df41e922c51fe906ca77d1e14b",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "Wrong principal text raises TypeError and negative period count raises ValueError in the exact source function. No silent string parsing or negative-horizon reinterpretation is supplied."
+    },
+    {
+      "id": "3.7-E7",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Add a keyword-only Literal timing parameter to a typed balance transition.",
+      "prompt_sha256": "c4f833e302c07118a4ebe07b13083bbc4501611ae7f68da3c741aec90f641246",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "typed_balance has a required keyword-only timing: Literal[\"end\",\"beginning\"]. Runtime membership checking is still needed; Literal itself does not enforce values. The beginning fixture returns1155, and omitted timing raises TypeError."
+    },
+    {
+      "id": "3.7-E8",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "State three financial facts that an ordinary Decimal annotation cannot express.",
+      "prompt_sha256": "21822c41c0a7e7067b0e25d4114d37d35f054fd7962ce77ce7e41fd428cd56ae",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "An ordinary Decimal annotation cannot encode currency, valuation time or effective/nominal rate-period meaning; it also does not enforce finiteness, domain, rounding policy or economic plausibility. These require contracts and checks."
+    },
+    {
+      "id": "3.7-E9",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Explain why casting a string to the static type Decimal would not parse its contents.",
+      "prompt_sha256": "7b2caee665c6a7886971ad988180553db94b55bc7bd329c7642bc29baf51462d",
+      "source": "chapter-03/3.07-type-hints-for-financial-functions.md",
+      "source_sha256": "8a4b5218fabe40c55fd064f07c9f2de858146ceafd1648e10ceaac67da4ed213",
+      "answer": "cast(Decimal,\"100\") informs a static checker but returns the original str object at runtime. Decimal(\"100\") is a separate explicit parse/construction. The identity/type probe verifies no conversion."
+    },
+    {
+      "id": "3.8-E1",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Write a docstring for signed_difference that states the no-intermediate-cash-flow assumption when it is used as investment gain.",
+      "prompt_sha256": "21ee34fd09f715f99066ff0551324030118a21e8ff682975b6e54deaa9d1fab1",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "The supplemental signed_difference docstring states signed same-currency output, validated finite Decimal inputs, active-context arithmetic, no explicit cents and, when called investment gain, no intermediate cash flows, fees, taxes or currency conversion. The monetary difference alone is not a rate of return."
+    },
+    {
+      "id": "3.8-E2",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Document both contribution timings for the balance function in Section 3.5.",
+      "prompt_sha256": "eca4504104628ca2c8ec49f60e5026ca393cd9045b22a8ee03a55c77d3bbcea1",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "typed_balance documents end: B*(1+r)+C and beginning: (B+C)*(1+r), matching period units, supported finite nonnegative balance/contribution, r>-1, shared currency and failures. The two timing fixtures give1150 and1155 from1000,5%,100."
+    },
+    {
+      "id": "3.8-E3",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Add a doctest showing that a zero principal remains zero under the supported model.",
+      "prompt_sha256": "3b0a80a5c6c9c3db012ffe3901a48bc6777eb23740e7bca76b7af2842644c2b7",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "An in-memory copy of the exact documented function adds a zero-principal equality doctest. All six examples pass, including the new one. Canonical docstring/code remains unchanged; the verbose transcript is retained."
+    },
+    {
+      "id": "3.8-E4",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Add a runtime test for an infinite principal and compare the observed failure with the Raises section.",
+      "prompt_sha256": "e86b0c0b361f7c54becbd8ad7fd166a038cd131fbbe56e0fb9a16580e0445b4d",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "Infinite principal raises ValueError from the exact source, agreeing with its Raises section for nonfinite Decimal inputs. The observed class is recorded separately from prose review."
+    },
+    {
+      "id": "3.8-E5",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Explain why a 5% rate without a period convention is insufficient documentation.",
+      "prompt_sha256": "1964ebd040dedf4aa817251588a173c2e6e1816901291ad7b27792dff48e7464",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "A5% number lacks its compounding/quotation period: effective annual, monthly or nominal annual quotations produce different factors. State effective versus nominal and match the period units; a percentage alone does not define the financial input."
+    },
+    {
+      "id": "3.8-E6",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Describe how an explicit cent-quantization policy would change the documented contract.",
+      "prompt_sha256": "a083dc9de0dbbbc2df32bde662f7a94827ff6d5c8d1ac9e86ef3675613a3afed",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "A cents policy must specify quantum, rounding mode, currency/scale, stage and whether target comparisons or later arithmetic use posted versus raw values. It changes the returned-value and numerical contract and requires new boundary tests, not merely a display format."
+    },
+    {
+      "id": "3.8-E7",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Explain why a passing doctest does not verify all prose claims.",
+      "prompt_sha256": "3a55f4542dd424d61785c3ca3175bdaa4fa155671d3c9f4889e874d79cd68eaa",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "Doctests check included examples; unsupported prose can remain invisible if no example exercises it. The prior lab-review drift demonstration retains this case. Contract review must trace each claim through signature, validation and arithmetic rather than infer all promises from green examples."
+    },
+    {
+      "id": "3.8-E8",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Change the maximum horizon deliberately and list the implementation, documentation, and tests that need reconciliation.",
+      "prompt_sha256": "dc0abf5bf493b3739bb858dcd07a8a49d3a8a65730f18bcad07e59f6b70a7c1e",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "The temporary definition changes horizon cap1000 to10, reconciles range/message/docstring text, checks acceptance at10 and rejection at11, and reruns unchanged valid docstring examples. A full policy revision would also update every related constant, contract table, upper-bound fixtures, integrations, source hashes and compatibility notes; the canonical lab stays at1000."
+    },
+    {
+      "id": "3.8-E9",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Compare an annotation's role with a docstring's role for a Decimal rate.",
+      "prompt_sha256": "25bb624d05bf65756ff9a0c5763ab7dbba82e32dba304c3604f871e457451e97",
+      "source": "chapter-03/3.08-docstrings-and-financial-assumptions.md",
+      "source_sha256": "9b2646f536beb63716de7908f618bbde049abb3a05f342ba59dfd3931b1003e1",
+      "answer": "An annotation communicates representation expectations to readers/static tools; a docstring communicates effective periodic meaning, units, valuation times, domains, numerical policy and exceptions. Neither by itself executes runtime validation or certifies financial applicability."
+    },
+    {
+      "id": "3.9-E1",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Compute FV of 2000 at 4% for three periods by hand and verify the function.",
+      "prompt_sha256": "55d0d6db83662ab243f181b2127824a82d0a9825c12bf8cf953b1ef9f23b62ae",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "At period0 P=2000, effective4% per period, n=3: 2000*(26/25)^3=2249.728 exactly. The exact ambient-context source future_value agrees with the Fraction oracle. Annual meaning requires those periods to be annual."
+    },
+    {
+      "id": "3.9-E2",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Discount that independently calculated amount back to period 0.",
+      "prompt_sha256": "d96b725fe472b44fc75c431e56925ee86854b9ee1f37ad718f46f9a8de481458",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "Discount the independently known2249.728 by(1.04)^3; exact source present_value returns2000 at period0. This check does not rely only on output from a potentially wrong FV helper."
+    },
+    {
+      "id": "3.9-E3",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Check that PV of a fixed positive future amount rises as a supported negative rate becomes more negative.",
+      "prompt_sha256": "eca2c91912a13fd4960aec5681c6428769e4562a11e79f44ecc3e734b4b02425",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "For positive future amount100 and n1, rate\u221220% gives PV125, above the PV at\u221210% (100/.9). Both are supported by r>-1. More negative rates need not be economically suitable merely because the mathematical domain allows them."
+    },
+    {
+      "id": "3.9-E4",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Verify rejection of a fractional period and a string amount in a separate runtime test.",
+      "prompt_sha256": "c6dc2ec88ff742cd7e1733393cf0a1a36cb537b73e33e0108b6810c02dc3186f",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "Exact source present_value rejects fractional period1.5 with TypeError and string amount\"100\" with TypeError. These are separate fixture calls; text parsing is outside this typed API."
+    },
+    {
+      "id": "3.9-E5",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Document a proposed signed-amount extension without changing the canonical lab's current contract.",
+      "prompt_sha256": "af5124bff2b64d3b153ab6cc18bd223efa7cbb9c2d54678f2593af984a256fe3",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "Proposed signed extension: finite signed Decimal cash flows, declared inflow/outflow direction at the chosen valuation timeline, r>-1 with matching units, same currency and stated ambient/fixed policy; preserve sign through linear discount/accumulation. Add negative/zero/reversal tests and document type/domain failures before implementation. Canonical functions remain finite nonnegative amounts."
+    },
+    {
+      "id": "3.9-E6",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Show why one annual effective rate cannot be used directly as a monthly effective rate.",
+      "prompt_sha256": "313a15086ff946d2ef01f95dc01db608abd3f44413296757d87cb450f6b074f8",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "An effective annual rate cannot be copied directly as a monthly effective rate. Equivalent monthly r satisfies(1+r)^12=1+annual_effective; simply using12% monthly compounds12 times and differs from12% effective for one annual period. Fractional-power conversion needs a separately documented numerical policy."
+    },
+    {
+      "id": "3.9-E7",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Construct a pair of mutually inverse but financially incorrect functions to explain the limits of round-trip testing.",
+      "prompt_sha256": "61cd2056b3cb8e3acb03f7911a0ad502f9c78c69688db1908db7e5a30cfeabdb",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "The deliberate wrong pair uses a10% two-period factor while the intended known case is5%. Its inverse recovers100 exactly, so a round trip passes; forward value121 fails the independent110.25 oracle. Shared inverse errors can therefore conceal a wrong financial convention."
+    },
+    {
+      "id": "3.9-E8",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Use a deliberately restrictive Decimal context to investigate arithmetic signals. Restore the context afterward.",
+      "prompt_sha256": "0161c497b6b61ff2a0408a2d48c2373aebb6c6dc214feca102a7755bbacf3c51",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "With local precision2 and Inexact trapped, the exact source valuation raises Inexact for the selected.05 calculation. After localcontext exits, the caller's precision, rounding, flags and traps match the before snapshot. This fixture illustrates context dependence, not all Decimal signal/range behavior."
+    },
+    {
+      "id": "3.9-E9",
+      "status": "REVIEWED_SCOPED",
+      "prompt": "Explain why formatting a returned value to two decimals is different from quantizing a value before a later calculation.",
+      "prompt_sha256": "72ee994bc2685e275996c5a04282f2b81b33690322fb80c49f5267ea74e43cf3",
+      "source": "chapter-03/3.09-designing-present-and-future-value-functions.md",
+      "source_sha256": "e440553b13b3de2d2284bbacea6d619537bf600609214c7972311e1d1e1fd607",
+      "answer": "Formatting raw1.005 to two decimals produces text and leaves raw unchanged. Explicit HALF_UP cents produces1.01; doubling raw yields2.010 whereas doubling posted1.01 yields2.02. Quantization stage can therefore change later economics; no universal cents policy is inferred."
+    }
+  ]
+}

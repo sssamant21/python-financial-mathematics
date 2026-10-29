@@ -20,3 +20,6 @@ All33 predicates passed on the first run. Numeric fixtures use hand-checkable ex
 Reproduce from repository root: `python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-03-early-section-review/review.py`. CPython3.12.14 on Linux x86_64; standard library only. No manuscript/code fence changed and no numerical source defect was identified. This batch supplies exercise answers where the companion explicitly limits itself to chapter-wide questions; it does not redefine optional extension tasks as prior authoring defects.
 
 Next: the27 section exercises in3.7–3.9, then36 in3.10–3.13, followed by full Section3.14 project and definition/call/contract checklist review. Independent model/editorial/source acceptance, broader numerical/input/platform coverage and Book1 F28/F32 gaps remain open.
+
+
+Follow-up: [Sections3.7–3.9](../chapter-03-middle-section-review/README.md) add27 reviewed prompts. The live exercise queue now records52 reviewed and36 pending; the25/63 counts above describe the original batch.
