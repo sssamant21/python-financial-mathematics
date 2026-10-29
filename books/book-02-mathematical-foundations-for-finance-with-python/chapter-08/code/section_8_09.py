@@ -45,16 +45,19 @@ def compare_derivatives(function, first, x, step, second=None,
     methods = {}
     for name, approx in (("forward",forward),("backward",backward),
                          ("centered",centered),("richardson",richardson)):
-        error = approx-analytic_first
+        approx = finite(approx, "derivative estimate")
+        error = finite(approx-analytic_first, "signed derivative error")
         methods[name] = {"estimate":approx,"signed_error":error,
                          "absolute_error":abs(error),
                          "pass":abs(error) <= a+r*abs(analytic_first)}
     result = {"x":x,"step":h,"analytic_first":analytic_first,
+              "abs_tol":a,"rel_tol":r,
+              "comparison_rule":"abs(error) <= abs_tol + rel_tol*abs(analytic)",
               "first_derivatives":methods}
     if second is not None:
         analytic_second = evaluated(second, x)
-        estimate = (fp-2*f0+fm)/(h*h)
-        error = estimate-analytic_second
+        estimate = finite((fp-2*f0+fm)/(h*h), "second derivative estimate")
+        error = finite(estimate-analytic_second, "signed second derivative error")
         result["second_derivative"] = {
             "analytic":analytic_second,"estimate":estimate,
             "signed_error":error,"absolute_error":abs(error),
