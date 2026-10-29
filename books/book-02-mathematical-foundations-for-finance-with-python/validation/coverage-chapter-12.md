@@ -54,3 +54,7 @@ These extend COV-01–COV-60. They record coverage/review categories, not confir
 ## Subsequent remediation — 2026-10-29
 
 The [target-scale rank follow-up](chapter-12-rank-target-scaling-followup.md) confirms and fixes the Section 12.5 target-dependent rank defect identified above. The helper now discloses column equilibration; 21 files compiled and all 11 Chapter 12 check scripts passed. COV-61 remains partially open for broader numerical-rank, pivoting and scaling review. Original map evidence is retained.
+
+## Subsequent COV-62 factor-audit follow-up
+
+The [factor audit record](chapter-12-factor-audit-followup.md) adds aligned factor-limit fields, controlled imperfect-candidate rejection and exact/adjacent threshold cases, plus direct constructor/unit/shape/guardrail checks. All 21 chapter sources compiled and 11 scripts passed. COV-62 retains broader guardrail/range, provenance and independent-review obligations.
