@@ -115,3 +115,7 @@ The [Section 17.9 financial-range record](chapter-17-financial-range-followup.md
 ## Final allocation assessment follow-up
 
 The [Section 17.10 follow-up](chapter-17-final-allocation-followup.md) adds multiplier/rejection evidence and fixes an empty interval hidden by rounded cap addition. All 20 chapter sources compiled and 10 scripts passed. COV-78 is partially addressed; thirteen selected partial categories are tracked.
+
+## Factor-limit audit follow-up
+
+The [Section 12.9 factor audit](chapter-12-factor-audit-followup.md) adds retained limits and meaningful rejection/boundary evidence. All 21 chapter sources compiled and 11 scripts passed. COV-62 is partially addressed; fourteen selected partial categories are tracked.
