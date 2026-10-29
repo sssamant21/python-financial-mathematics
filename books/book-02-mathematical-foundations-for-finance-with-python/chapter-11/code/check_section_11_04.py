@@ -12,7 +12,37 @@ def rejects(exc,fn,*args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def check_relative_distance_contract():
+    expected={"l1":0.7,"l2":5/math.sqrt(52),"linf":2/3}
+    reversed_expected={"l1":7/3,"l2":5/math.sqrt(5),"linf":2}
+    for scale in (1,2,-2,1e100,1e-100):
+        actual=Vector(("A","B"),(scale,2*scale),"USD")
+        benchmark=Vector(("B","A"),(6*scale,4*scale),"USD")
+        zero=Vector(actual.labels,(0,0),"USD")
+        for kind in ("l1","l2","linf"):
+            close(relative_distance(actual,benchmark,kind),expected[kind])
+            close(relative_distance(benchmark,actual,kind),reversed_expected[kind])
+            assert relative_distance(actual,actual,kind)==0
+            assert relative_distance(zero,benchmark,kind)==1
+            rejects(ValueError,relative_distance,actual,zero,kind)
+            rejects(ValueError,relative_distance,zero,zero,kind)
+    # Smallest nonzero reference is not treated as a zero denominator.
+    tiny=Vector(("A",),(5e-324,),"USD")
+    zero=Vector(("A",),(0,),"USD")
+    assert relative_distance(zero,tiny)==1
+    rejects(ValueError,relative_distance,Vector(("A",),(1e308,),"USD"),
+            Vector(("A",),(1e-308,),"USD"))
+    actual=Vector(("A","B"),(1,2),"USD")
+    rejects(ValueError,relative_distance,actual,Vector(actual.labels,(4,6),"EUR"))
+    rejects(ValueError,relative_distance,actual,Vector(actual.labels,(4,6),"USD","factor"))
+    rejects(ValueError,relative_distance,actual,Vector(("A","C"),(4,6),"USD"))
+    rejects(ValueError,relative_distance,actual,actual,"unknown")
+    report=assessment()
+    assert report["deviation_USD"]=={"ALPHA":10000,"BETA":-10000,"GAMMA":-10000}
+    close(report["relative_l2_distance"],math.sqrt(3/107))
+
 def run():
+    check_relative_distance_contract()
     v=Vector(("A","B","C"),(3,-4,12),"USD")
     close(norm(v,"l1"),19)
     close(norm(v,"l2"),13)
