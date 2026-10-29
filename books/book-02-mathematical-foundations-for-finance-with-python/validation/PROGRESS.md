@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped relative-distance follow-up
+## Latest scoped policy-audit follow-up
+
+Section 11.9 now retains configured policy limits/allowances and tests isolated threshold breaches. All 21 Chapter 11 files compiled and 11 scripts passed; decision rules unchanged. [Evidence](chapter-11-policy-audit-followup.md). COV-59 remains partially open; this follows the full-book run.
+
+## Earlier scoped relative-distance follow-up
 
 Section 11.4 now has independent three-norm/asymmetric-denominator and zero/subnormal/range checks; a wrong-denominator variant was detected. All 21 Chapter 11 files compiled and 11 scripts passed; implementation unchanged. [Evidence](chapter-11-relative-distance-followup.md). COV-60 remains partially open; this follows the full-book run.
 
@@ -197,7 +201,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates nineteen partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates twenty partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
