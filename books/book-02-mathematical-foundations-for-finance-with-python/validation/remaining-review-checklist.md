@@ -1,10 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-29  
-**Candidate source revision:** `37aac57a72303a6d4178790f8d172495e2bc0ada`  
+**Candidate source revision:** `7ee99f60d5089510f860a0b6f695f971beb2eac6`  
 **Disposition:** Runtime evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
+
+The [second full refresh](runtime-refresh-2026-10-29-r2.md), V-33, includes all code changes through the factor audit: 444 Python files compiled and 233 scripts exited zero; 445 required sources/fixture blobs verified. It supersedes earlier runs as latest candidate execution. Independent reviewers and release acceptance remain pending.
+
 
 The [latest full refresh](runtime-refresh-2026-10-29.md), V-32, includes subsequent Chapter 12/14/15/19/21 changes: 444 sources compiled, 233 script exits zero and 467 downloaded blobs verified before/after execution. This supersedes the earlier run below as the latest candidate execution; all independent-review and release gates remain open.
 
@@ -19,7 +22,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-32 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-33 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
