@@ -2,12 +2,13 @@
 
 **Updated:** 2026-10-29
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Fifteen COV categories partially addressed; none closed by this register.
+**Disposition:** Sixteen COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
 | Category | Concrete result | Remaining scope | Evidence |
 |---|---|---|---|
+| COV-49 | Section 8.6 checks exact polynomial second-difference errors/orders and selected cancellation; two faulty variants detected. | Other helpers, noise/wrong-reference/range cases and independent review. | [Difference order](chapter-08-difference-order-followup.md) |
 | COV-55 | Section 10.7 checks exact polynomial errors/orders/estimators and selected smooth exponential ratios; three faulty variants detected. | Broader report/error and financial-oracle scope; independent review. | [Quadrature order](chapter-10-quadrature-order-followup.md) |
 | COV-61 | Section 12.5 rank_A no longer depends on target magnitude; column-equilibration policy disclosed; selected scale/zero/near-dependent cases added. | Larger pivot/scaling cases and independent numerical-rank review. | [Rank](chapter-12-rank-target-scaling-followup.md) |
 | COV-62 | Section 12.9 retains aligned limits; controlled factor rejection and threshold/constructor/guardrail cases checked. | Broader ranges, source/version provenance and independent review. | [Factor audit](chapter-12-factor-audit-followup.md) |
@@ -50,3 +51,5 @@ Section 12.9's subsequent factor-audit change has a 21-file/11-script scoped pas
 All code follow-ups recorded above through the factor audit are included in the [second full-book refresh](runtime-refresh-2026-10-29-r2.md): 444 sources compiled and 233 scripts exited zero at `7ee99f60d5089510f860a0b6f695f971beb2eac6`, with 445 required sources/fixture blobs verified. Earlier statements about subsequent scoped-only changes remain historical; this shared run now covers them. Fourteen categories remain partially addressed; no independent closure or approval is inferred.
 
 Section 10.7's subsequent checker follow-up has a 21-file/11-script scoped pass and is not included in the second full-book refresh.
+
+Section 8.6's subsequent checker follow-up has a 21-file/11-script scoped pass and follows the second full-book refresh.
