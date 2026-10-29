@@ -13,7 +13,36 @@ def rejects(exc,fn,*args):
         return
     raise AssertionError("expected "+exc.__name__)
 
+def check_final_nonfinite_paths():
+    labels=("A","B")
+    for unit in ("USD/share","shares","simple_return"):
+        for index in range(2):
+            for invalid in (math.nan,math.inf,-math.inf):
+                values=[1,2]
+                values[index]=invalid
+                rejects(ValueError,Vector,labels,tuple(values),unit)
+    prices=Vector(labels,(100,50),"USD/share")
+    holdings=Vector(labels,(1,2),"shares")
+    returns=Vector(labels,(0.01,0.02),"simple_return")
+    for invalid in (math.nan,math.inf,-math.inf,-1):
+        rejects(ValueError,portfolio,prices,holdings,invalid,returns)
+    rejects(TypeError,portfolio,prices,holdings,True,returns)
+    # Valid finite records whose subsequent arithmetic is unrepresentable.
+    rejects(ValueError,portfolio,Vector(("A",),(1e308,),"USD/share"),
+            Vector(("A",),(2,),"shares"),1e308,
+            Vector(("A",),(0,),"simple_return"))
+    rejects(ValueError,portfolio,Vector(("A",),(1e308,),"USD/share"),
+            Vector(("A",),(1,),"shares"),1e308,
+            Vector(("A",),(2,),"simple_return"))
+    rejects(ValueError,portfolio,prices,holdings,5e-324,returns)
+    rejects(ValueError,portfolio,Vector(labels,(100,50),"EUR/share"),
+            holdings,1000,returns)
+    # The successful assessment must serialize with nonfinite JSON disabled.
+    encoded=json.dumps(assessment(),sort_keys=True,allow_nan=False)
+    assert json.loads(encoded)["portfolio"]["scenario_pnl_USD"]==1900
+
 def run():
+    check_final_nonfinite_paths()
     report=assessment()
     assert tuple(report["vector_sum"])==(-2.0,4.0,4.0)
     close(report["l1_norm"],6)
