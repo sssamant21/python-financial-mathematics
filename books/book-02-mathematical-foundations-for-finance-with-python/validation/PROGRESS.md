@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up — 2026-10-29
 
+Section 16.9 now recomputes training/holdout metrics and normalized loss/gradient per iterative candidate before acceptance. Independent rational references and selected rejection cases pass; 20 Chapter 16 files compiled and all 10 scripts passed. [Acceptance evidence](chapter-16-candidate-acceptance-followup.md). COV-74 remains partially open; this change follows the latest full run below.
+
+## Earlier compression follow-up — 2026-10-29
+
 Section 14.9 now calculates exposure loss from actual returned compression matrices and reports the spectral bound plus fixed-input/unit metadata. Twelve matrix/rank cases check 48 selected actions and attaining coordinate directions; 21 files compiled and all 11 chapter scripts passed. [Compression evidence](chapter-14-compression-bound-followup.md). This code change follows the full run below; COV-69 remains partially open for independent review and broader scope.
 
 ## Latest full runtime refresh — 2026-10-29
@@ -130,7 +134,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates seven partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates eight partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
