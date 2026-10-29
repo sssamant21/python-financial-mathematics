@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest remediation — 2026-10-29
 
+Section 14.9 now reports its promised covariance eigenpairs, checked against closed-form roots, spectral projectors and directly recomputed residual/reconstruction/orthogonality results. Four corrupted reports were detected; 21 Chapter 14 files compiled and all 11 scripts passed. [Scoped covariance evidence](chapter-14-covariance-eigenpair-followup.md). COV-69 remains partially open for compression-bound/report-metadata and independent review.
+
+## Earlier adaptive remediation — 2026-10-29
+
 Section 19.6 adaptive RK4 now has exact-polynomial and observed-stage checks for estimator/scaling, rejection preservation, retry acceptance and controller limits. Nine intentional policy errors were detected; no solver change was needed. All 21 Chapter 19 files compiled and 11 scripts passed, with the final checker recompiled/rerun after refining its zero-error case. [Scoped adaptive evidence](chapter-19-adaptive-policy-followup.md). COV-82 remains partially open for broader numerical behavior and independent review.
 
 ## Earlier event-report remediation — 2026-10-29
