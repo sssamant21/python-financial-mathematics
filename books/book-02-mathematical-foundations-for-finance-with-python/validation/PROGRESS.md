@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped follow-up — 2026-10-29
+## Latest scoped follow-up
+
+Section 20.6 now rejects booleans/invalid numeric inputs, checks exponent/PV range and validates rates for empty portfolios. All 19 Chapter 20 sources compiled and 10 scripts passed, including 19 Section 20.6 methods. [Contract evidence](chapter-20-metamorphic-contract-followup.md). Underflow remains permitted and documented; COV-87 remains partially open. This code change follows the recorded full-book run.
+
+## Earlier error-range follow-up — 2026-10-29
 
 Section 20.5 now raises explicit OverflowError for unrepresentable absolute/relative error magnitudes, preserving exact tolerance comparison. All 19 Chapter 20 files compiled and 10 scripts passed, including 20 tolerance methods. [Error-range evidence](chapter-20-error-range-followup.md). COV-87 remains partially open; this follows the full run below.
 
