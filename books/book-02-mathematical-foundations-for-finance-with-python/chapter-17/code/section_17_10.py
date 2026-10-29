@@ -36,13 +36,24 @@ def portfolio(cap):
 
 def two_sided(cap1,cap2):
     a,b=finite(cap1,"cap1"),finite(cap2,"cap2")
-    if not 0<=a<=1 or not 0<=b<=1 or a+b<1:
+    if not 0<=a<=1 or not 0<=b<=1:
         raise ValueError("infeasible caps")
     lo=max(0,1-b)
     hi=min(1,a)
+    if lo>hi:
+        raise ValueError("empty feasible interval")
     x=min(hi,max(lo,TRANSITION))
     y=1-x
+    grad=(0.08*x+0.02*y,0.02*x+0.18*y)
+    lam=-grad[1]
+    mu1=mu2=mu3=mu4=0.0
+    if x<TRANSITION:
+        mu3=grad[1]-grad[0]
+    elif x>TRANSITION:
+        lam=-grad[0]
+        mu4=grad[0]-grad[1]
     return {"interval":(lo,hi),"weights":(x,y),
+            "lambda":lam,"multipliers":(mu1,mu2,mu3,mu4),
             "variance":0.04*x*x+0.02*x*y+0.09*y*y}
 
 def linear_program_reference():
