@@ -46,3 +46,7 @@ These extend COV-01–COV-75, not confirmed-defect counts. No changes to code/ma
 ## Subsequent COV-76 rejection follow-up
 
 The [independent KKT rejection record](chapter-17-kkt-rejection-followup.md) adds rational residual/objective references across four project regimes and four isolated failure cases, including complementarity-only failure. All four acceptance rules omitting a norm were detected. All 20 chapter sources compiled and 10 scripts passed; optimizer unchanged. COV-76 retains tolerance/transition/degeneracy and independent-review obligations. Original map evidence remains historical.
+
+## Subsequent COV-77 financial-range follow-up
+
+The [financial-range record](chapter-17-financial-range-followup.md) adds trade/gross range guards, direct dimensionless turnover and exact represented-float cost product/quotient arithmetic. Extreme/subnormal/zero/overflow cases are checked; underflow limitations are documented. All 20 chapter sources compiled and 10 scripts passed. COV-77 retains broader report/input/audit and independent-review obligations.
