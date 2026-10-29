@@ -135,3 +135,7 @@ The [Section 8.6 record](chapter-08-difference-order-followup.md) adds exact err
 ## Comparator audit follow-up
 
 The [Section 8.9 comparator record](chapter-08-comparator-audit-followup.md) adds explicit error/tolerance evidence and rejects nonfinite false-pass calculations. All 21 chapter files compiled and 11 scripts passed. COV-50 is partially addressed; seventeen selected partial categories are tracked.
+
+## Derivative helper-guard follow-up
+
+The [Section 8.8 guard record](chapter-08-helper-guards-followup.md) adds finite-output validation and avoids an unnecessary Richardson overflow. All 21 chapter files compiled and 11 scripts passed. COV-51 is partially addressed; eighteen selected partial categories are tracked.
