@@ -91,3 +91,7 @@ Section 14.9 now computes loss from the actual compression matrices and checks i
 ## Candidate acceptance follow-up — 2026-10-29
 
 Section 16.9 now records and evaluates every iterative candidate's training/holdout metrics and recomputed normalized loss/gradient. [Evidence](chapter-16-candidate-acceptance-followup.md): 20 files compiled and 10 scripts passed, including selected negative acceptance cases. COV-74 is partially addressed; the [register](gap-remediation-register.md) now tracks eight selected partial categories. Next selected numerical-contract review: Section 20.5 extreme error reporting (COV-87).
+
+## Error-range follow-up — 2026-10-29
+
+Section 20.5 no longer returns infinite error magnitudes from finite inputs; it raises explicit range errors, while the exact tolerance decision remains available independently. [Evidence](chapter-20-error-range-followup.md): 19 sources compiled and 10 scripts passed, including 20 tolerance methods. COV-87 is partially addressed; the [register](gap-remediation-register.md) tracks nine selected partial categories. Next selected contract item: Section 20.6 numeric input/output validation.
