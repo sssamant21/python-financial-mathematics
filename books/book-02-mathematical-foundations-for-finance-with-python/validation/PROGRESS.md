@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest remediation — 2026-10-29
 
+Section 15.9 now checks full second-order contractions against a Decimal path-series reference for nine shocks and reports signed/absolute portfolio errors. All 21 Chapter 15 files compiled and 11 scripts passed; three incorrect contraction variants were detected. [Scoped Taylor evidence](chapter-15-taylor-oracle-followup.md). COV-70 remains partially open for final-assessment/shared-dependency and independent review.
+
+## Earlier rank remediation — 2026-10-29
+
 Section 12.5 target-dependent coefficient-rank defect fixed; column-equilibration policy disclosed in code and manuscript. All 21 Chapter 12 files compiled and 11 check scripts passed, including 21 new rank-policy outcomes. [Scoped evidence](chapter-12-rank-target-scaling-followup.md). COV-61 remains partially open; independent review pending.
 
 ## Earlier remediation
