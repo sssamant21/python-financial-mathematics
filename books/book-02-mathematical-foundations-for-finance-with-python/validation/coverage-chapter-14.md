@@ -54,3 +54,7 @@ The [covariance eigenpair follow-up](chapter-14-covariance-eigenpair-followup.md
 ## Subsequent compression/report follow-up — 2026-10-29
 
 The [compression-bound record](chapter-14-compression-bound-followup.md) adds actual-matrix exposure calculations, the measured error norm and spectral bound, plus fixed-input/unit metadata. Twelve matrix/rank cases check 48 selected actions and attaining coordinate directions. All 21 chapter files compiled and all 11 scripts passed. Selected executable COV-69 obligations are addressed; independent review and broader numerical/interface scope remain open.
+
+## Selected near-repeated spectral follow-up — 2026-10-29
+
+[Section 14.1 evidence](chapter-14-near-repeated-followup.md) partially addresses COV-68 with twelve closed-form value/projector and normalized residual/reconstruction checks. The coordinate-direction fallback below the gap cutoff is explicitly approximate for nonzero off-diagonals. All 22 Chapter 14 files compiled and 12 scripts passed. Broader spectrum/range, symmetry, Cholesky and independent-review obligations remain open. This scoped run follows V-34; twenty-four selected categories are partially addressed.
