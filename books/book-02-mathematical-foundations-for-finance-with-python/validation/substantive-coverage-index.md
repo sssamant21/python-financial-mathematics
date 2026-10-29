@@ -103,3 +103,7 @@ The [metamorphic PV contract record](chapter-20-metamorphic-contract-followup.md
 ## Bracket diagnostic follow-up
 
 The [Section 18.8 bracket audit](chapter-18-bracket-audit-followup.md) adds actual sign/history and callback-count evidence across seven paths. All 21 chapter files compiled and 11 scripts passed. COV-79 is partially addressed; the register now tracks ten selected partial categories.
+
+## KKT rejection follow-up
+
+The [Section 17.9 KKT record](chapter-17-kkt-rejection-followup.md) adds independent field checks and isolated primal/dual/stationarity/complementarity failures. All 20 chapter sources compiled and 10 scripts passed; optimizer unchanged. COV-76 is partially addressed; eleven selected partial categories are tracked. Next selected report-contract review: Section 17.9 finite financial-report arithmetic (COV-77).
