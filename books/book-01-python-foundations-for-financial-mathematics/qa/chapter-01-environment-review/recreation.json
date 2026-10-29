@@ -1,0 +1,43 @@
+{
+  "status": "PASS_SCOPED",
+  "create_command": "python -m venv /tmp/book1_setup_recreated",
+  "install_command": "/tmp/book1_setup_recreated/bin/python -m pip install -r requirements-resolved.txt",
+  "install_exit_code": 0,
+  "freeze_matches_original": true,
+  "requirements_sha256": "25ffac5a20a1ec02b44488858eebfdaa870972493494057957516d7d39944aeb",
+  "runs": [
+    {
+      "command": [
+        "/tmp/book1_setup_recreated/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/book1_setup_recreated/bin/python",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "exit_code": 0,
+      "stdout": "anyio==4.15.1\nargon2-cffi==25.1.0\nargon2-cffi-bindings==26.1.0\narrow==1.4.0\nasttokens==3.0.2\nasync-lru==2.4.0\nattrs==26.1.0\nbabel==2.18.0\nbeautifulsoup4==4.15.0\nbleach==6.4.0\ncertifi==2026.10.23\ncffi==2.1.1\ncharset-normalizer==3.5.2\ncomm==0.2.3\ncontourpy==1.4.0\ncycler==0.12.1\ndebugpy==1.8.22\ndefusedxml==0.7.1\nexecuting==2.3.0\nfastjsonschema==2.22.2\nfonttools==4.68.0\nfqdn==1.6.0\nh11==0.16.0\nhttpcore==1.0.9\nhttpx==0.28.1\nidna==3.20\nipykernel==7.4.0\nipython==9.17.1\nipython_pygments_lexers==1.1.1\nisoduration==20.11.0\njedi==0.20.1\nJinja2==3.1.6\njson5==0.17.3\njsonpointer==3.6\njsonschema==4.26.0\njsonschema-specifications==2025.9.1\njupyter-events==0.12.1\njupyter-lsp==2.3.1\njupyter_builder==1.2.4\njupyter_client==8.10.0\njupyter_core==5.9.1\njupyter_server==2.21.1\njupyter_server_terminals==0.5.4\njupyterlab==4.6.4\njupyterlab_pygments==0.3.0\njupyterlab_server==2.28.1\nkiwisolver==1.5.1\nlark==1.3.1\nMarkupSafe==3.0.4\nmatplotlib==3.11.2\nmatplotlib-inline==0.2.2\nmistune==3.4.0\nnbclient==0.11.0\nnbconvert==7.17.2\nnbformat==5.11.1\nnest-asyncio2==1.7.4\nnotebook_shim==0.2.4\nnumpy==2.5.4\npackaging==26.3\npandas==3.1.0\npandocfilters==1.5.1\nparso==0.8.7\npexpect==4.9.0\npillow==13.0.0\nplatformdirs==4.14.0\nprometheus_client==0.26.0\nprompt_toolkit==3.0.53\npsutil==7.2.2\nptyprocess==0.7.0\npure_eval==0.2.4\npycparser==3.12\nPygments==2.21.0\npyparsing==3.3.3\npython-dateutil==3.0.0\npython-json-logger==4.2.0\nPyYAML==6.0.3\npyzmq==27.2.0\nreferencing==0.37.0\nrequests==2.34.2\nrfc3339-validator==0.1.4\nrfc3986-validator==0.1.1\nrfc3987-syntax==1.1.0\nrpds-py==2026.9.1\nSend2Trash==2.1.0\nsix==1.17.0\nsoupsieve==3.0.4\nstack-data==0.6.3\nterminado==0.18.1\ntinycss2==1.5.1\ntornado==6.6\ntraitlets==5.16.1\ntyping_extensions==4.16.0\ntzdata==2026.6\nuri-template==1.3.0\nurllib3==2.8.0\nwcwidth==0.9.4\nwebcolors==25.10.0\nwebencodings==0.6.1\nwebsocket-client==1.9.2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/book1_setup_recreated/bin/python",
+        "-c",
+        "import sys,numpy,pandas,matplotlib,jupyterlab; print(sys.executable); print(1000*(1+.05)**3); print(numpy.array([100.,120.,150.]).sum())"
+      ],
+      "exit_code": 0,
+      "stdout": "/tmp/book1_setup_recreated/bin/python\n1157.6250000000002\n370.0\n",
+      "stderr": ""
+    }
+  ],
+  "limits": "Same Linux CPython runtime only; no notebook execution result"
+}

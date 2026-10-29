@@ -1,0 +1,170 @@
+{
+  "date": "2026-10-29",
+  "source_revision": "6d4d9828224dbd056da729644acb050ff690ce30",
+  "source_sha256": "3ad486fbd2181ac644d7aa845489fc1cd6790209da440ead046e77a3542fc7d2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "matplotlib": "3.11.2",
+    "jupyterlab": "4.6.4",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0"
+  },
+  "total": 16,
+  "passed": 14,
+  "failed": 0,
+  "blocked": 1,
+  "not_executed": 1,
+  "checks": [
+    {
+      "name": "isolated interpreter",
+      "actual": {
+        "prefix": "/tmp/book1_setup_runtime",
+        "base_prefix": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python"
+      },
+      "expected": "prefix differs from base_prefix",
+      "status": "PASS"
+    },
+    {
+      "name": "version",
+      "actual": {
+        "stdout": "Python 3.12.14\n",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "expected": "exit zero",
+      "status": "PASS"
+    },
+    {
+      "name": "pip identity",
+      "actual": {
+        "stdout": "pip 25.0.1 from /tmp/book1_setup_runtime/lib/python3.12/site-packages/pip (python 3.12)\n",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "expected": "exit zero",
+      "status": "PASS"
+    },
+    {
+      "name": "pip dependency consistency",
+      "actual": {
+        "stdout": "No broken requirements found.\n",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "expected": "exit zero",
+      "status": "PASS"
+    },
+    {
+      "name": "installed list",
+      "actual": {
+        "stdout": "[{\"name\": \"anyio\", \"version\": \"4.15.1\"}, {\"name\": \"argon2-cffi\", \"version\": \"25.1.0\"}, {\"name\": \"argon2-cffi-bindings\", \"version\": \"26.1.0\"}, {\"name\": \"arrow\", \"version\": \"1.4.0\"}, {\"name\": \"asttokens\", \"version\": \"3.0.2\"}, {\"name\": \"async-lru\", \"version\": \"2.4.0\"}, {\"name\": \"attrs\", \"version\": \"26.1.0\"}, {\"name\": \"babel\", \"version\": \"2.18.0\"}, {\"name\": \"beautifulsoup4\", \"version\": \"4.15.0\"}, {\"name\": \"bleach\", \"version\": \"6.4.0\"}, {\"name\": \"certifi\", \"version\": \"2026.10.23\"}, {\"name\": \"cffi\", \"version\": \"2.1.1\"}, {\"name\": \"charset-normalizer\", \"version\": \"3.5.2\"}, {\"name\": \"comm\", \"version\": \"0.2.3\"}, {\"name\": \"contourpy\", \"version\": \"1.4.0\"}, {\"name\": \"cycler\", \"version\": \"0.12.1\"}, {\"name\": \"debugpy\", \"version\": \"1.8.22\"}, {\"name\": \"defusedxml\", \"version\": \"0.7.1\"}, {\"name\": \"executing\", \"version\": \"2.3.0\"}, {\"name\": \"fastjsonschema\", \"version\": \"2.22.2\"}, {\"name\": \"fonttools\", \"version\": \"4.68.0\"}, {\"name\": \"fqdn\", \"version\": \"1.6.0\"}, {\"name\": \"h11\", \"version\": \"0.16.0\"}, {\"name\": \"httpcore\", \"version\": \"1.0.9\"}, {\"name\": \"httpx\", \"version\": \"0.28.1\"}, {\"name\": \"idna\", \"version\": \"3.20\"}, {\"name\": \"ipykernel\", \"version\": \"7.4.0\"}, {\"name\": \"ipython\", \"version\": \"9.17.1\"}, {\"name\": \"ipython_pygments_lexers\", \"version\": \"1.1.1\"}, {\"name\": \"isoduration\", \"version\": \"20.11.0\"}, {\"name\": \"jedi\", \"version\": \"0.20.1\"}, {\"name\": \"Jinja2\", \"version\": \"3.1.6\"}, {\"name\": \"json5\", \"version\": \"0.17.3\"}, {\"name\": \"jsonpointer\", \"version\": \"3.6\"}, {\"name\": \"jsonschema\", \"version\": \"4.26.0\"}, {\"name\": \"jsonschema-specifications\", \"version\": \"2025.9.1\"}, {\"name\": \"jupyter_builder\", \"version\": \"1.2.4\"}, {\"name\": \"jupyter_client\", \"version\": \"8.10.0\"}, {\"name\": \"jupyter_core\", \"version\": \"5.9.1\"}, {\"name\": \"jupyter-events\", \"version\": \"0.12.1\"}, {\"name\": \"jupyter-lsp\", \"version\": \"2.3.1\"}, {\"name\": \"jupyter_server\", \"version\": \"2.21.1\"}, {\"name\": \"jupyter_server_terminals\", \"version\": \"0.5.4\"}, {\"name\": \"jupyterlab\", \"version\": \"4.6.4\"}, {\"name\": \"jupyterlab_pygments\", \"version\": \"0.3.0\"}, {\"name\": \"jupyterlab_server\", \"version\": \"2.28.1\"}, {\"name\": \"kiwisolver\", \"version\": \"1.5.1\"}, {\"name\": \"lark\", \"version\": \"1.3.1\"}, {\"name\": \"MarkupSafe\", \"version\": \"3.0.4\"}, {\"name\": \"matplotlib\", \"version\": \"3.11.2\"}, {\"name\": \"matplotlib-inline\", \"version\": \"0.2.2\"}, {\"name\": \"mistune\", \"version\": \"3.4.0\"}, {\"name\": \"nbclient\", \"version\": \"0.11.0\"}, {\"name\": \"nbconvert\", \"version\": \"7.17.2\"}, {\"name\": \"nbformat\", \"version\": \"5.11.1\"}, {\"name\": \"nest-asyncio2\", \"version\": \"1.7.4\"}, {\"name\": \"notebook_shim\", \"version\": \"0.2.4\"}, {\"name\": \"numpy\", \"version\": \"2.5.4\"}, {\"name\": \"packaging\", \"version\": \"26.3\"}, {\"name\": \"pandas\", \"version\": \"3.1.0\"}, {\"name\": \"pandocfilters\", \"version\": \"1.5.1\"}, {\"name\": \"parso\", \"version\": \"0.8.7\"}, {\"name\": \"pexpect\", \"version\": \"4.9.0\"}, {\"name\": \"pillow\", \"version\": \"13.0.0\"}, {\"name\": \"pip\", \"version\": \"25.0.1\"}, {\"name\": \"platformdirs\", \"version\": \"4.14.0\"}, {\"name\": \"prometheus_client\", \"version\": \"0.26.0\"}, {\"name\": \"prompt_toolkit\", \"version\": \"3.0.53\"}, {\"name\": \"psutil\", \"version\": \"7.2.2\"}, {\"name\": \"ptyprocess\", \"version\": \"0.7.0\"}, {\"name\": \"pure_eval\", \"version\": \"0.2.4\"}, {\"name\": \"pycparser\", \"version\": \"3.12\"}, {\"name\": \"Pygments\", \"version\": \"2.21.0\"}, {\"name\": \"pyparsing\", \"version\": \"3.3.3\"}, {\"name\": \"python-dateutil\", \"version\": \"3.0.0\"}, {\"name\": \"python-json-logger\", \"version\": \"4.2.0\"}, {\"name\": \"PyYAML\", \"version\": \"6.0.3\"}, {\"name\": \"pyzmq\", \"version\": \"27.2.0\"}, {\"name\": \"referencing\", \"version\": \"0.37.0\"}, {\"name\": \"requests\", \"version\": \"2.34.2\"}, {\"name\": \"rfc3339-validator\", \"version\": \"0.1.4\"}, {\"name\": \"rfc3986-validator\", \"version\": \"0.1.1\"}, {\"name\": \"rfc3987-syntax\", \"version\": \"1.1.0\"}, {\"name\": \"rpds-py\", \"version\": \"2026.9.1\"}, {\"name\": \"Send2Trash\", \"version\": \"2.1.0\"}, {\"name\": \"six\", \"version\": \"1.17.0\"}, {\"name\": \"soupsieve\", \"version\": \"3.0.4\"}, {\"name\": \"stack-data\", \"version\": \"0.6.3\"}, {\"name\": \"terminado\", \"version\": \"0.18.1\"}, {\"name\": \"tinycss2\", \"version\": \"1.5.1\"}, {\"name\": \"tornado\", \"version\": \"6.6\"}, {\"name\": \"traitlets\", \"version\": \"5.16.1\"}, {\"name\": \"typing_extensions\", \"version\": \"4.16.0\"}, {\"name\": \"tzdata\", \"version\": \"2026.6\"}, {\"name\": \"uri-template\", \"version\": \"1.3.0\"}, {\"name\": \"urllib3\", \"version\": \"2.8.0\"}, {\"name\": \"wcwidth\", \"version\": \"0.9.4\"}, {\"name\": \"webcolors\", \"version\": \"25.10.0\"}, {\"name\": \"webencodings\", \"version\": \"0.6.1\"}, {\"name\": \"websocket-client\", \"version\": \"1.9.2\"}]\n",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "expected": "exit zero",
+      "status": "PASS"
+    },
+    {
+      "name": "freeze",
+      "actual": {
+        "stdout": "anyio==4.15.1\nargon2-cffi==25.1.0\nargon2-cffi-bindings==26.1.0\narrow==1.4.0\nasttokens==3.0.2\nasync-lru==2.4.0\nattrs==26.1.0\nbabel==2.18.0\nbeautifulsoup4==4.15.0\nbleach==6.4.0\ncertifi==2026.10.23\ncffi==2.1.1\ncharset-normalizer==3.5.2\ncomm==0.2.3\ncontourpy==1.4.0\ncycler==0.12.1\ndebugpy==1.8.22\ndefusedxml==0.7.1\nexecuting==2.3.0\nfastjsonschema==2.22.2\nfonttools==4.68.0\nfqdn==1.6.0\nh11==0.16.0\nhttpcore==1.0.9\nhttpx==0.28.1\nidna==3.20\nipykernel==7.4.0\nipython==9.17.1\nipython_pygments_lexers==1.1.1\nisoduration==20.11.0\njedi==0.20.1\nJinja2==3.1.6\njson5==0.17.3\njsonpointer==3.6\njsonschema==4.26.0\njsonschema-specifications==2025.9.1\njupyter-events==0.12.1\njupyter-lsp==2.3.1\njupyter_builder==1.2.4\njupyter_client==8.10.0\njupyter_core==5.9.1\njupyter_server==2.21.1\njupyter_server_terminals==0.5.4\njupyterlab==4.6.4\njupyterlab_pygments==0.3.0\njupyterlab_server==2.28.1\nkiwisolver==1.5.1\nlark==1.3.1\nMarkupSafe==3.0.4\nmatplotlib==3.11.2\nmatplotlib-inline==0.2.2\nmistune==3.4.0\nnbclient==0.11.0\nnbconvert==7.17.2\nnbformat==5.11.1\nnest-asyncio2==1.7.4\nnotebook_shim==0.2.4\nnumpy==2.5.4\npackaging==26.3\npandas==3.1.0\npandocfilters==1.5.1\nparso==0.8.7\npexpect==4.9.0\npillow==13.0.0\nplatformdirs==4.14.0\nprometheus_client==0.26.0\nprompt_toolkit==3.0.53\npsutil==7.2.2\nptyprocess==0.7.0\npure_eval==0.2.4\npycparser==3.12\nPygments==2.21.0\npyparsing==3.3.3\npython-dateutil==3.0.0\npython-json-logger==4.2.0\nPyYAML==6.0.3\npyzmq==27.2.0\nreferencing==0.37.0\nrequests==2.34.2\nrfc3339-validator==0.1.4\nrfc3986-validator==0.1.1\nrfc3987-syntax==1.1.0\nrpds-py==2026.9.1\nSend2Trash==2.1.0\nsix==1.17.0\nsoupsieve==3.0.4\nstack-data==0.6.3\nterminado==0.18.1\ntinycss2==1.5.1\ntornado==6.6\ntraitlets==5.16.1\ntyping_extensions==4.16.0\ntzdata==2026.6\nuri-template==1.3.0\nurllib3==2.8.0\nwcwidth==0.9.4\nwebcolors==25.10.0\nwebencodings==0.6.1\nwebsocket-client==1.9.2\n",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "expected": "exit zero",
+      "status": "PASS"
+    },
+    {
+      "name": "bash activation",
+      "actual": "/tmp/book1_setup_runtime",
+      "expected": "/tmp/book1_setup_runtime",
+      "status": "PASS"
+    },
+    {
+      "name": "source Python fence 1",
+      "actual": {
+        "stdout": "/tmp/book1_setup_runtime/bin/python\n",
+        "stderr": "",
+        "exit_code": 0,
+        "sha256": "24bf5c8635d82d42b5d62513c5fdd41f8e632eb7f5c38fe8005cf113b362460a"
+      },
+      "expected": "/tmp/book1_setup_runtime/bin/python",
+      "status": "PASS"
+    },
+    {
+      "name": "source Python fence 2",
+      "actual": {
+        "stdout": "Python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]\nPython executable: /tmp/book1_setup_runtime/bin/python\nNumPy: 2.5.4\npandas: 3.1.0\nMatplotlib: 3.11.2\n",
+        "stderr": "",
+        "exit_code": 0,
+        "sha256": "cde245037feb22f4df3af68f5a616d7ffda57bf2170c6af5674098a856032bf5"
+      },
+      "expected": "NumPy: 2.5.4",
+      "status": "PASS"
+    },
+    {
+      "name": "source Python fence 3",
+      "actual": {
+        "stdout": "1157.6250000000002\n",
+        "stderr": "",
+        "exit_code": 0,
+        "sha256": "a7505969cca96cbd7e80868ff4d7a2e7ddc6a7507cb98c305b02ee9f545caeb0"
+      },
+      "expected": "1157.625",
+      "status": "PASS"
+    },
+    {
+      "name": "source Python fence 4",
+      "actual": {
+        "stdout": "[100. 120. 150.]\n370.0\n",
+        "stderr": "",
+        "exit_code": 0,
+        "sha256": "ca3e51ada330e5c292c5e02e78d7e2cba0c43ea1b276b2a8f0d059f2f4f06451"
+      },
+      "expected": "370.0",
+      "status": "PASS"
+    },
+    {
+      "name": "source Python fence 5",
+      "actual": {
+        "stdout": "/tmp/book1_setup_runtime/bin/python\n",
+        "stderr": "",
+        "exit_code": 0,
+        "sha256": "24bf5c8635d82d42b5d62513c5fdd41f8e632eb7f5c38fe8005cf113b362460a"
+      },
+      "expected": "/tmp/book1_setup_runtime/bin/python",
+      "status": "PASS"
+    },
+    {
+      "name": "JupyterLab CLI version",
+      "actual": {
+        "stdout": "4.6.4\n",
+        "stderr": "",
+        "exit_code": 0
+      },
+      "expected": "exit zero",
+      "status": "PASS"
+    },
+    {
+      "name": "Notebook kernel execution",
+      "actual": "Initial attempt: Operation not permitted (src/ip_resolver.cpp:542); Kernel died before replying to kernel_info",
+      "expected": "Kernel starts and executes exact cells",
+      "status": "BLOCKED_RUNTIME"
+    },
+    {
+      "name": "JupyterLab HTTP/browser validation",
+      "actual": "Not executed after observed network/socket restriction; no server or browser success claimed",
+      "expected": "Authenticated local HTTP and interactive UI validation",
+      "status": "NOT_EXECUTED"
+    },
+    {
+      "name": "venv ignored by git",
+      "actual": ".venv/probe",
+      "expected": ".venv/probe",
+      "status": "PASS"
+    }
+  ]
+}
