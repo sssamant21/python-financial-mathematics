@@ -107,3 +107,7 @@ The [second-difference record](chapter-08-difference-order-followup.md) adds exa
 ## Subsequent COV-50 comparator follow-up
 
 The [comparator audit](chapter-08-comparator-audit-followup.md) adds exact error-field/tolerance-boundary and wrong-reference cases, retains tolerance metadata and rejects nonfinite computed estimates/errors to prevent false passes. All 21 chapter sources compiled and 11 scripts passed. Broader comparator/reference and independent-review obligations remain open.
+
+## Subsequent COV-51 helper-guard follow-up
+
+The [helper guard record](chapter-08-helper-guards-followup.md) rejects nonfinite returned estimates and avoids a Richardson intermediate overflow. Selected invalid controls are checked before callbacks, with denominator and half-step cases. All 21 chapter sources compiled and 11 scripts passed. Earlier copies, implicit domains/ranges and independent review remain open.
