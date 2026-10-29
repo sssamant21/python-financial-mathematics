@@ -49,7 +49,30 @@ def check_helper_guards():
     # h works at full scale but h/2 is too small at the selected base point.
     rejects(ValueError,richardson_first,lambda z:z,1,2.0**-52)
 
+def check_normalized_sensitivity_range():
+    assert discounted_price(1000,1,1000)==0
+    rejects(ValueError,rate_sensitivity,1000,1,1000,0.01)
+    rejects(ValueError,discounted_price,1e308,1,-1)
+    rejects(ValueError,discounted_price,1,2,1e308)
+    rejects(OverflowError,discounted_price,1,1,-1000)
+    # Independent closed forms for the finite-difference ratios themselves.
+    for cash in (1,1000,1e200):
+        years,h=5,1e-3
+        result=rate_sensitivity(cash,years,0.04,h)
+        expected_duration=math.sinh(years*h)/h
+        expected_convexity=4*(math.sinh(years*h/2)/h)**2
+        close(result["duration"],expected_duration,rel_tol=1e-8)
+        close(result["convexity"],expected_convexity,rel_tol=1e-8)
+        assert result["analytic_duration"]==5
+        assert result["analytic_convexity"]==25
+        assert all(math.isfinite(value) for value in result.values())
+    zero_time=rate_sensitivity(1000,0,0.04,0.001)
+    assert zero_time["price"]==1000
+    assert zero_time["duration"]==zero_time["convexity"]==0
+    assert zero_time["analytic_duration"]==zero_time["analytic_convexity"]==0
+
 def run():
+    check_normalized_sensitivity_range()
     check_helper_guards()
     f = lambda x:x**3
     close(forward_difference(f, 2, 0.1), 12.61)
