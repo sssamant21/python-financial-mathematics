@@ -1,6 +1,7 @@
 """Book 02 Section 14.9: quadratic exposure and decomposition capstone."""
 import json
 import math
+from section_14_02 import decompose
 from section_14_05 import cholesky_2x2,solve_2x2
 from section_14_06 import diagonal_exposure_svd
 from section_14_07 import low_rank_diagonal_exposure
@@ -13,6 +14,7 @@ def project():
     cw=tuple(cw)
     variance=math.fsum(weights[i]*cw[i] for i in range(2))
     determinant=0.04*0.09-0.01**2
+    spectral=decompose(covariance)
     chol=cholesky_2x2(covariance)
     recovered=solve_2x2(covariance,cw)
     exposure=diagonal_exposure_svd(4,2,(8,4,5))
@@ -22,6 +24,12 @@ def project():
     compressed=(4*positions[0],0.0,0.0)
     lost=tuple(full[i]-compressed[i] for i in range(3))
     return {
+        "covariance_matrix":covariance,
+        "covariance_eigenvalues":spectral["eigenvalues"],
+        "covariance_eigenvectors":spectral["eigenvectors"],
+        "covariance_eigenpair_residual_norms":spectral["eigenpair_residual_norms"],
+        "covariance_spectral_reconstruction_error":spectral["reconstruction_error_frobenius"],
+        "covariance_orthogonality_error":spectral["orthogonality_error_frobenius"],
         "weight_sum":math.fsum(weights),
         "portfolio_variance":variance,
         "portfolio_volatility":math.sqrt(variance),
