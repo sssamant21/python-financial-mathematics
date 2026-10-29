@@ -111,3 +111,7 @@ The [comparator audit](chapter-08-comparator-audit-followup.md) adds exact error
 ## Subsequent COV-51 helper-guard follow-up
 
 The [helper guard record](chapter-08-helper-guards-followup.md) rejects nonfinite returned estimates and avoids a Richardson intermediate overflow. Selected invalid controls are checked before callbacks, with denominator and half-step cases. All 21 chapter sources compiled and 11 scripts passed. Earlier copies, implicit domains/ranges and independent review remain open.
+
+## Subsequent normalized-sensitivity follow-up
+
+The [sensitivity range record](chapter-08-sensitivity-range-followup.md) rejects zero price normalization and nonfinite prices/ratios, and checks independent hyperbolic-function stencil ratios at three cash-flow scales. All 21 chapter files compiled and 11 scripts passed. This extends partial COV-51 remediation; cancellation/subnormal and broader domain/review work remain open.
