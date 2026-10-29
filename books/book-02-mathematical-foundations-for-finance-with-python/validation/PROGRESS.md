@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-29  
-**Overall status:** In progress — full pinned-revision runtime pass complete (444 compiled files; 233 successful script exits); coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — full pinned-revision runtime pass complete (452 compiled files; 241 successful script exits); coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Pinned-revision pass complete | 444/444 files compiled at `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-29-r3.md). |
-| Automated script execution | Pinned-revision pass complete | 233/233 check/test scripts exited zero at `f4cffe7ec0877454330b96ff07a15cdea1a5abbb`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-29-r3.md). |
+| Python compilation | Pinned-revision pass complete | 452/452 files compiled at `3e185649bf53f5a72ad9e1869d17762110444a26` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-29-r4.md). |
+| Automated script execution | Pinned-revision pass complete | 241/241 check/test scripts exited zero at `3e185649bf53f5a72ad9e1869d17762110444a26`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-29-r4.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped SVD ordering follow-up
+## Latest full-book runtime refresh — V-35
+
+452/452 Python files compiled, 241/241 check/test scripts exited zero and 453/453 source/fixture blobs matched the pinned tree before and after execution. Includes all eight Chapter 13/14 checker additions. [Report](runtime-refresh-2026-10-29-r4.md) · [Raw evidence](runtime-refresh-2026-10-29-r4.json). G1 refreshed; independent review and release gates remain pending.
+
+## Earlier scoped SVD ordering follow-up
 
 Section 14.6 now checks twelve restricted factor-order reconstruction and threshold cases. All 24 Chapter 14 files compiled and 14 scripts passed. [Evidence](chapter-14-svd-order-followup.md). COV-67 partially open; implementation unchanged and follows V-34.
 
@@ -96,9 +100,9 @@ Section 8.6 now checks exact polynomial second-difference errors/orders and a re
 
 Section 10.7 now checks exact signed polynomial errors, convergence ratios and fine estimators, plus selected exponential ratios; three faulty estimator variants were detected. All 21 Chapter 10 sources compiled and 11 scripts passed; algorithm unchanged. [Evidence](chapter-10-quadrature-order-followup.md). COV-55 remains partially open; this checker change follows the full-book run below.
 
-## Latest full runtime refresh — second pass
+## Historical full runtime refresh — second pass
 
-All 444 Python files compiled and 233 check/test scripts exited zero at `f4cffe7ec0877454330b96ff07a15cdea1a5abbb`; all 445 required source/fixture blobs matched the pinned tree. [Latest report](runtime-refresh-2026-10-29-r2.md) · [Manifest and raw outputs](runtime-refresh-2026-10-29-r2.json). This includes all subsequent scoped code changes through the Chapter 12 factor audit. Fourteen COV categories remain partially addressed; independent review and release gates remain open.
+All 444 Python files compiled and 233 check/test scripts exited zero at `7ee99f60d5089510f860a0b6f695f971beb2eac6`; all 445 required source/fixture blobs matched the pinned tree. [Historical report](runtime-refresh-2026-10-29-r2.md) · [Manifest and raw outputs](runtime-refresh-2026-10-29-r2.json). This includes all subsequent scoped code changes through the Chapter 12 factor audit. Fourteen COV categories remain partially addressed; independent review and release gates remain open.
 
 ## Earlier factor-audit follow-up
 
@@ -136,7 +140,7 @@ Section 16.9 now recomputes training/holdout metrics and normalized loss/gradien
 
 Section 14.9 now calculates exposure loss from actual returned compression matrices and reports the spectral bound plus fixed-input/unit metadata. Twelve matrix/rank cases check 48 selected actions and attaining coordinate directions; 21 files compiled and all 11 chapter scripts passed. [Compression evidence](chapter-14-compression-bound-followup.md). This code change follows the full run below; COV-69 remains partially open for independent review and broader scope.
 
-## Latest full runtime refresh — 2026-10-29
+## Historical first full runtime refresh — 2026-10-29
 
 All 444 Python files compiled and all 233 check/test scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`. All 467 downloaded Python/JSON blobs matched the pinned tree before and after execution. [Full evidence](runtime-refresh-2026-10-29.md) · [Manifest/outcomes](runtime-refresh-2026-10-29.json). This includes the recent Chapter 12/14/15/19/21 remediations and Section 21.9's 18 integration methods. Coverage gaps, independent review, platform support and approval remain open.
 
@@ -166,7 +170,9 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [Second refresh](runtime-refresh-2026-10-29-r2.md): 444 sources compiled and 233 scripts passed at `f4cffe7ec0877454330b96ff07a15cdea1a5abbb`; 445 required blobs verified.
+- **Latest full run:** [Fourth refresh](runtime-refresh-2026-10-29-r4.md): 452 sources compiled and 241 scripts passed at `3e185649bf53f5a72ad9e1869d17762110444a26`; 453 required blobs verified before/after.
+
+- **Historical second refresh:** [V-33](runtime-refresh-2026-10-29-r2.md): 444 sources compiled and 233 scripts passed at `7ee99f60d5089510f860a0b6f695f971beb2eac6`; 445 required blobs verified.
 
 - **Previous full run:** [2026-10-29 refresh](runtime-refresh-2026-10-29.md): 444/444 files compiled and 233/233 scripts exited zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; 467 blobs verified before/after execution.
 
@@ -297,3 +303,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Selected restricted-SVD ordering follow-up — 2026-10-29
 
 [Section 14.6 evidence](chapter-14-svd-order-followup.md) partially addresses COV-67 with twelve reconstruction, direction-orthonormality, sorted-summary and thresholded-solve cases. Factor-order directions must be paired with original magnitudes, not blindly zipped with the sorted summary. All 24 Chapter 14 files compiled and 14 scripts passed. Reference-report/integration and independent-review scope remains open. This scoped run follows V-34; twenty-five selected categories remain partially addressed.
+
+## V-35 — Fourth pinned full-book runtime refresh
+
+[Evidence](runtime-refresh-2026-10-29-r4.md): 452 compiled files, 241 zero-exit scripts, 453 verified source/fixture blobs at `3e185649bf53f5a72ad9e1869d17762110444a26`. No failed/timed-out scripts. Historical V-33 revision labels corrected without changing its evidence. Next executable investigation: COV-68 unequal-spectrum small-eigenvalue cancellation in Section 14.1. Twenty-five categories remain partially addressed; no independent closure/approval.
