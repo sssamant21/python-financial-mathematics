@@ -54,3 +54,7 @@ The [projection audit](chapter-11-projection-audit-followup.md) adds fixed-repor
 ## Subsequent relative-distance follow-up
 
 The [relative-distance record](chapter-11-relative-distance-followup.md) adds independent three-norm and asymmetric-denominator benchmarks, selected scales, zero/subnormal/range and metadata rejection cases. A wrong-denominator variant was detected. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. COV-60 retains broader report/cumulative/range and independent-review obligations.
+
+## Subsequent COV-59 policy-audit follow-up
+
+The [policy audit](chapter-11-policy-audit-followup.md) retains configured limits/allowances and checks isolated gross/name/NAV-gap thresholds plus selected invalid inputs. All 21 chapter files compiled and 11 scripts passed; decision rules unchanged. Section 11.7 budget, broader policy scope/units and independent review remain open.
