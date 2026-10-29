@@ -60,7 +60,7 @@ Priorities below are a work order based on potential effect and evidence depende
 
 ## Remediation progress
 
-R1: Section 15.2 finite-difference guards fixed; 21 files compiled and 11 Chapter 15 check scripts passed, including nine boundary methods. [Scoped evidence](chapter-15-scalar-difference-followup.md). COV-71 remains partially open. Next numerical-contract item: Section 12.5 target-dependent rank threshold.
+R1: Section 15.2 finite-difference guards fixed; 21 files compiled and 11 Chapter 15 check scripts passed, including nine boundary methods. [Scoped evidence](chapter-15-scalar-difference-followup.md). COV-71 remains partially open. Section 12.5 target-dependent rank threshold also fixed and its column-equilibration contract documented; 21 files compiled and all 11 Chapter 12 scripts passed. [Rank follow-up](chapter-12-rank-target-scaling-followup.md). COV-61 remains partially open. Next selected oracle item: COV-70 nonzero full-Hessian contraction.
 
 ## Disposition rules
 
