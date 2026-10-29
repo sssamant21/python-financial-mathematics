@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped budget-boundary follow-up
+## Latest scoped final-assessment follow-up
+
+Section 11.10 now directly tests nonfinite financial records/NAVs, selected arithmetic-overflow rejection and strict JSON output. All 21 Chapter 11 files compiled and 11 scripts passed; implementation unchanged. [Evidence](chapter-11-final-nonfinite-followup.md). COV-60 remains partially open; this follows the full-book run.
+
+## Earlier scoped budget-boundary follow-up
 
 Section 11.7 now checks an isolated budget breach and selected exact/adjacent constraint boundaries; an omitted-budget variant was detected. All 21 Chapter 11 files compiled and 11 scripts passed; implementation unchanged. [Evidence](chapter-11-budget-boundary-followup.md). COV-59 remains partially open; this follows the full-book run.
 
