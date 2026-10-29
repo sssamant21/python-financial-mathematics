@@ -1,17 +1,36 @@
 """Metamorphic checks with bounded, synthetic cash flows; educational draft."""
 import math
 import random
+from numbers import Real
+
+def finite(value, name):
+    if isinstance(value, bool) or not isinstance(value, Real):
+        raise TypeError(f"{name} must be real, excluding bool")
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside float range") from exc
+    if not math.isfinite(result):
+        raise ValueError(f"{name} must be finite")
+    return result
 
 def pv(amount, rate, years):
     """Continuous discounting for finite inputs and nonnegative time."""
-    if not all(math.isfinite(x) for x in (amount, rate, years)):
-        raise ValueError("inputs must be finite")
+    amount, rate, years = (finite(x, name) for x, name in
+                           ((amount, "amount"), (rate, "rate"), (years, "years")))
     if years < 0:
         raise ValueError("years must be nonnegative")
-    return amount * math.exp(-rate * years)
+    exponent = -rate * years
+    if not math.isfinite(exponent):
+        raise OverflowError("discount exponent exceeds float range")
+    result = amount * math.exp(exponent)
+    if not math.isfinite(result):
+        raise OverflowError("present value exceeds float range")
+    return result
 
 def portfolio(flows, rate):
     """flows is a sequence of (amount, years) pairs."""
+    rate = finite(rate, "rate")
     return math.fsum(pv(amount, rate, years) for amount, years in flows)
 
 def close(a, b):
