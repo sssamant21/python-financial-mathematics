@@ -1,0 +1,293 @@
+{
+  "baseline": "a1e3c960fa67d457585920d1bda626ff91de0344",
+  "records": [
+    {
+      "id": "3.10-E1",
+      "prompt": "Convert a nominal annual rate of 8% compounded quarterly to its effective quarterly rate.",
+      "answer": "Nominal annual8% convertible quarterly gives effective quarterly .08/4=.02; exact source conversion agrees.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E2",
+      "prompt": "Derive the effective annual rate from that quarterly rate and verify it independently.",
+      "answer": "Effective annual=(1+.02)^4\u22121=.08243216. The expected Fraction(51,50)^4\u22121 is independent of the source implementation.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E3",
+      "prompt": "Calculate the one-period discount factor at a 25% rate without Python.",
+      "answer": "One-period discount factor at25% is1/1.25=.8; exact source agrees.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E4",
+      "prompt": "Show that a supported negative periodic rate produces a discount factor greater than one.",
+      "answer": "A supported\u221210% periodic rate has factor1/.9>1. Forward decline makes a future positive amount worth more at the earlier time under that scenario.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E5",
+      "prompt": "Add tests for bool horizons, fractional frequencies, and infinite rates.",
+      "answer": "Boolean horizon and fractional frequency raise TypeError; infinite rate raises ValueError. Exact source functions were exercised separately.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E6",
+      "prompt": "Explain why dividing an effective annual rate by 12 is not the nominal conversion implemented here.",
+      "answer": "j/12 converts a nominal annual quotation convertible monthly. An effective annual rate instead requires(1+r_month)^12=1+r_annual; dividing it by12 generally does not satisfy that relationship.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E7",
+      "prompt": "Compare direct division with multiplication by a precomputed discount factor at low precision.",
+      "answer": "At precision3, direct2/3=.667 while2*(1/3)=.666 because the reciprocal is rounded before multiplication. The initial100/7 fixture happened to agree; its failed distinguishing predicate is retained as a harness error, not a source defect.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E8",
+      "prompt": "Document an equivalent-effective-periodic conversion before implementing its fractional power.",
+      "answer": "Proposed equivalent-effective conversion: r_period=(1+r_annual)^(1/m)\u22121, finite effective annual r>-1, positive integer m with explicit cap, matching equal periods, dimensionless output. Specify Decimal fractional-power algorithm/context, precision/error bounds, signals and near\u22121 behavior before implementation; do not silently reuse nominal j/m.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.10-E9",
+      "prompt": "Use a restrictive local Decimal context to investigate guard behavior, restoring the context afterward.",
+      "answer": "Precision2 with Inexact trapped raises Inexact in the chosen accumulation fixture. localcontext restores caller settings/flags/traps. This is selected signal behavior, not exhaustive extreme-domain certification.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "source_sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640"
+    },
+    {
+      "id": "3.11-E1",
+      "prompt": "Rewrite the lab wrapper using one nested expression, then compare its readability and validation order.",
+      "answer": "Nested apply_factor(amount, factor=discount_factor(periodic_rate_from_nominal(j,...),periods=...)) matches the staged wrapper within1e\u221224 for this fixture. Staging is easier to inspect. Python evaluates argument expressions before the outer call, so the nested expression can validate rate conversion before outer amount validation; the canonical wrapper validates amount first.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E2",
+      "prompt": "Add an independent quarterly-compounding valuation with a nominal 8% annual quotation.",
+      "answer": "104.04 due after two quarters at nominal8% quarterly: periodic .02 and PV=104.04/1.02^2=100. Exact source wrapper agrees with the hand-checkable benchmark.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E3",
+      "prompt": "Demonstrate the error caused by using the annual nominal rate directly as a monthly rate.",
+      "answer": "Treating nominal annual12% as monthly12% compounds1.12 twelve times instead of the convertible-monthly1.01 factor. The factors differ; units/convention are part of the contract.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E4",
+      "prompt": "Add rejection tests for an infinite amount, a fractional frequency, and a negative horizon.",
+      "answer": "Exact wrapper rejects infinite amount(ValueError), fractional frequency(TypeError), and negative horizon(ValueError). These are distinct fixture calls.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E5",
+      "prompt": "Verify that a supported negative nominal rate produces a higher PV than zero rate for a fixed positive future amount.",
+      "answer": "For a fixed positive future amount, supported negative nominal\u221212% convertible monthly implies\u22121% monthly and a larger PV than zero rate for a positive horizon. The selected source call confirms that inequality.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E6",
+      "prompt": "Show a calculation where early cent rounding changes a later result.",
+      "answer": "Early cents rounding changes later calculations:1.005 doubled raw is2.010, whereas cent-quantizing first under the active half-even context yields1.00 then2.00. The declared quantization rule and stage must accompany any posted result.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E7",
+      "prompt": "Explain why nested/staged agreement cannot prove the shared helpers correct.",
+      "answer": "Nested/staged agreement shares helpers and may reproduce their defect. Use independently derived expected values and financial convention checks; composition agreement alone is not validation of components.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E8",
+      "prompt": "Document how a future wrapper would record rate convention metadata.",
+      "answer": "A future wrapper should record original nominal/effective quote, conversion frequency, effective periodic result, units, horizon, timeline, data/code revision and numerical policy/staging. Preserve original/effective inputs if policy changes them. This is a proposed metadata contract, not implemented persistence.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.11-E9",
+      "prompt": "Explain why composing a printing function into an amount calculation fails.",
+      "answer": "A print-only helper returns None; adding it to a Decimal amount raises TypeError. Separate numeric returns from presentation. The probe captures printed output and verifies the failure.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.11-function-composition.md",
+      "source_sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31"
+    },
+    {
+      "id": "3.12-E1",
+      "prompt": "Add a global market rate to an ambient calculation and demonstrate how identical explicit arguments can give different results.",
+      "answer": "An ambient calculation reading a mutable market-rate global changes output for identical explicit principal arguments when the global changes. The fixture switches5% to10%; explicit argument identity is insufficient.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E2",
+      "prompt": "Compare a function that prints a deterministic result with one that only returns it.",
+      "answer": "Printing deterministic text is an observable effect and ordinarily returns None. A calculation-only function returns its numeric result; deterministic output alone does not imply purity.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E3",
+      "prompt": "Add a test preserving a different caller rounding mode and pre-existing flags.",
+      "answer": "The exact fixed-policy function returns its known reference result with caller precision6,ROUND_DOWN and a preexisting Inexact flag; all caller settings/flags/traps remain unchanged.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E4",
+      "prompt": "Verify that the caller context is unchanged after a validation failure.",
+      "answer": "A NaN-rate validation failure raises ValueError while preserving the same full caller context snapshot. Failure-path context isolation is checked explicitly.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E5",
+      "prompt": "Change the fixed policy's precision deliberately and describe the revision evidence needed.",
+      "answer": "An in-memory policy copy changes precision40 to6; the selected1234.56/.037/17 valuation changes. A real policy revision needs before/after results, error-bound justification, updated contracts/tests/source hashes and compatibility review. Canonical policy remains40.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E6",
+      "prompt": "Explain why copying only precision from a caller-owned context is incomplete.",
+      "answer": "Precision is only one context field: rounding, Emin/Emax, clamp, capitals, traps and existing flags also matter. Copying only precision does not define or isolate a complete arithmetic policy.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E7",
+      "prompt": "Identify the evidence required to rerun a valuation from an external dataset.",
+      "answer": "Reproduction from external data needs authorized dataset identity/hash/version and retrieval/as-of time, schema/unit/currency/timezone conventions, cleaning/missing-data policy, exact inputs, code/dependency/runtime revision, complete arithmetic context and rounding/reporting policy, expected values/tolerances and actual output. No external dataset is consumed by this batch.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E8",
+      "prompt": "Demonstrate why local parameter names do not prevent mutation of a supplied list.",
+      "answer": "A local list parameter aliases the caller object and can append without rebinding any outer name. The executed probe mutates the caller-visible list; local names do not promise ownership isolation.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.12-E9",
+      "prompt": "Explain why fixed seed, fixed precision, and repeatable output are each insufficient on their own to establish financial correctness.",
+      "answer": "A fixed random seed controls one source of randomness; fixed precision controls one numerical setting; repeatable output establishes neither appropriate financial assumptions nor correct units/data/formula. Reproducibility and model validity need distinct evidence.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "source_sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f"
+    },
+    {
+      "id": "3.13-E1",
+      "prompt": "Add a known case for 144 discounted two periods at 20%.",
+      "answer": "Known independent PV:144/(1.2*1.2)=100. The exact fixed-policy function agrees, rather than computing an expectation through the same helper.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E2",
+      "prompt": "Verify caller-context preservation after a validation failure.",
+      "answer": "The validation-failure preservation check in3.12-E4 also supplies this exercise: invalid NaN at zero horizon raises ValueError and leaves caller settings/flags/traps intact.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E3",
+      "prompt": "Add a supported rate just above -1 at a small horizon and reason about the expected scale.",
+      "answer": "At r=\u2212.99,n=2,amount1, growth=.01^2=.0001 and PV=10000. This small-horizon fixture is supported; behavior arbitrarily close to\u22121 still requires numerical-range/error analysis.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E4",
+      "prompt": "Create a deliberately wrong horizon implementation and identify which tests detect it.",
+      "answer": "A temporary source copy changes growth exponent n to n+1. The isolated published test_known_values returns exit1 and reports failure. Complete transcript retained; canonical source is unchanged. This is one mutation, not a complete mutation campaign.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E5",
+      "prompt": "Explain why zero-rate tests alone cannot distinguish discounting from accumulation.",
+      "answer": "At rate0, multiplication and division by(1+0)^n both preserve the amount. Zero-rate cases cannot distinguish accumulation from discounting; include nonzero independent known values.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E6",
+      "prompt": "Add a test that checks the return type without relying only on Decimal/int equality.",
+      "answer": "Check type(result) is Decimal or isinstance according to the intended subclass contract; Decimal(100)==100 alone is insufficient. The actual fixed-policy return type is recorded as Decimal.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E7",
+      "prompt": "Run each test individually and explain what independence establishes.",
+      "answer": "All12 published methods run individually in fresh subprocesses and pass. This supports independence for those methods in this environment; it does not prove every future test order or concurrency behavior.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E8",
+      "prompt": "Propose relative and absolute tolerance rules for amounts spanning several orders of magnitude.",
+      "answer": "Proposed rule: |actual\u2212expected|<=max(abs_tol,rel_tol*|expected|), with abs_tol tied to meaningful amount scale near zero and rel_tol justified by error analysis over supported magnitudes. Test small/zero/large references and rounding boundaries; do not choose tolerances merely to pass. No universal finance tolerance or completed error-bound certification is asserted.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    },
+    {
+      "id": "3.13-E9",
+      "prompt": "Identify one financial assumption that the suite cannot validate from numerical inputs alone.",
+      "answer": "A numerical suite cannot establish that a supplied discount rate is economically appropriate for the cash flow or that external data is accurate. Those require independent financial/data review beyond finite arithmetic fixtures.",
+      "status": "REVIEWED_SCOPED",
+      "source": "chapter-03/3.13-testing-financial-functions.md",
+      "source_sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445"
+    }
+  ]
+}

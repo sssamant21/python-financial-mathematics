@@ -23,3 +23,6 @@ Next: the27 section exercises in3.7–3.9, then36 in3.10–3.13, followed by ful
 
 
 Follow-up: [Sections3.7–3.9](../chapter-03-middle-section-review/README.md) add27 reviewed prompts. The live exercise queue now records52 reviewed and36 pending; the25/63 counts above describe the original batch.
+
+
+Latest follow-up: [Sections3.10–3.13](../chapter-03-later-section-review/README.md) complete the scoped answer records for all88 earlier section exercises. The live queue records zero pending section exercises; project/checklist acceptance remains open.

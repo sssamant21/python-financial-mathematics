@@ -19,3 +19,6 @@ All34 final checks passed. An initial33-check harness also passed, then the temp
 Reproduce from repository root: `python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-03-middle-section-review/review.py`. CPython3.12.14, Linux x86_64, standard library only. The selected local context probe restores caller precision/rounding/flags/traps; no exhaustive signal, magnitude, numerical-error or platform coverage is asserted.
 
 Next:36 exercises in Sections3.10–3.13, then full project/definition/call/contract checklist review. Independent mathematical/model/editorial/source acceptance and Book1 F28/F32 gaps remain open.
+
+
+Latest follow-up: [Sections3.10–3.13](../chapter-03-later-section-review/README.md) complete the scoped answer records for all88 earlier section exercises. The live queue records zero pending section exercises; project/checklist acceptance remains open.

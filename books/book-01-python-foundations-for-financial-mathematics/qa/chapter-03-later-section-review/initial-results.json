@@ -1,0 +1,406 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 36,
+  "predicates": 42,
+  "passed": 41,
+  "failed": 1,
+  "sources": [
+    {
+      "path": "chapter-03/3.10-reusable-rate-and-discounting-functions.md",
+      "sha256": "6b4a892f151958950584b3948189823ac09cb7a47b6c4f02e4b0b02e5a208640",
+      "code_sha256": "1d0f00fec3da8cd150f5a45ee6f2041417f8be70d6ef1fc1384ae94979c8ca25"
+    },
+    {
+      "path": "chapter-03/3.11-function-composition.md",
+      "sha256": "ad12f7db27de57c5591c4f574be60409fd7adccb3c43bfb756c7b656ec237b31",
+      "code_sha256": "ebf29c34b890b47aac40b55cd01ba23d79d57eea9692d1033cb7b0beaf34cc7e"
+    },
+    {
+      "path": "chapter-03/3.12-pure-functions-and-reproducibility.md",
+      "sha256": "1c96d5ae39d4ca868fd47d9751787fdfa0cf35dec8fdf2bcc6fc115d663a189f",
+      "code_sha256": "b64810d2ca29372db5612cb6cb5af1671c5cdfc6b4070c5f01bb20311ef1f0fd"
+    },
+    {
+      "path": "chapter-03/3.13-testing-financial-functions.md",
+      "sha256": "e02cc1a2051612833c016057a273ea52d295064822f6d118eff6019f1eb2c445",
+      "code_sha256": "4899908d367ac6f9196aa67ab050ea1f45ae98ec13c708b301e8d2bb7fd43184"
+    }
+  ],
+  "individual_and_mutant_runs": [
+    {
+      "method": "test_known_values",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_known_values (test_financial_functions.TestPresentValue.test_known_values) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_zero_boundaries",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_zero_boundaries (test_financial_functions.TestPresentValue.test_zero_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_horizon_upper_boundary",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_horizon_upper_boundary (test_financial_functions.TestPresentValue.test_horizon_upper_boundary) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_wrong_representations",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_wrong_representations (test_financial_functions.TestPresentValue.test_wrong_representations) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_invalid_amounts",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_invalid_amounts (test_financial_functions.TestPresentValue.test_invalid_amounts) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_invalid_rates_even_at_zero_horizon",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_invalid_rates_even_at_zero_horizon (test_financial_functions.TestPresentValue.test_invalid_rates_even_at_zero_horizon) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_negative_horizon",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_negative_horizon (test_financial_functions.TestPresentValue.test_negative_horizon) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_discount_direction",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_discount_direction (test_financial_functions.TestPresentValue.test_discount_direction) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_nonterminating_reference",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_nonterminating_reference (test_financial_functions.TestPresentValue.test_nonterminating_reference) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_repetition_and_order_independence",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_repetition_and_order_independence (test_financial_functions.TestPresentValue.test_repetition_and_order_independence) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_caller_context_preserved_on_success",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_caller_context_preserved_on_success (test_financial_functions.TestPresentValue.test_caller_context_preserved_on_success) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "test_context_restored_after_arithmetic_failure",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_context_restored_after_arithmetic_failure (test_financial_functions.TestPresentValue.test_context_restored_after_arithmetic_failure) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    },
+    {
+      "method": "wrong-horizon mutation",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "test_known_values (test_financial_functions.TestPresentValue.test_known_values) ... \n  test_known_values (test_financial_functions.TestPresentValue.test_known_values) (amount='125', rate='0.25', periods=1) ... FAIL\n  test_known_values (test_financial_functions.TestPresentValue.test_known_values) (amount='121', rate='0.10', periods=2) ... FAIL\n  test_known_values (test_financial_functions.TestPresentValue.test_known_values) (amount='900', rate='-0.10', periods=1) ... FAIL\n\n======================================================================\nFAIL: test_known_values (test_financial_functions.TestPresentValue.test_known_values) (amount='125', rate='0.25', periods=1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpiknkghvi/test_financial_functions.py\", line 32, in test_known_values\n    self.assertEqual(actual, Decimal(expected))\nAssertionError: Decimal('8E+1') != Decimal('100')\n\n======================================================================\nFAIL: test_known_values (test_financial_functions.TestPresentValue.test_known_values) (amount='121', rate='0.10', periods=2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpiknkghvi/test_financial_functions.py\", line 32, in test_known_values\n    self.assertEqual(actual, Decimal(expected))\nAssertionError: Decimal('90.90909090909090909090909090909090909091') != Decimal('100')\n\n======================================================================\nFAIL: test_known_values (test_financial_functions.TestPresentValue.test_known_values) (amount='900', rate='-0.10', periods=1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpiknkghvi/test_financial_functions.py\", line 32, in test_known_values\n    self.assertEqual(actual, Decimal(expected))\nAssertionError: Decimal('1111.111111111111111111111111111111111111') != Decimal('1000')\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=3)\n"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "3.10-E1",
+      "label": "quarterly nominal",
+      "actual": "0.02",
+      "expected": "0.02",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E2",
+      "label": "annual rational",
+      "actual": "515201/6250000",
+      "expected": "515201/6250000",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E3",
+      "label": "discount factor",
+      "actual": "0.8",
+      "expected": "0.8",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E4",
+      "label": "negative factor",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E5",
+      "label": "exception",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E5",
+      "label": "exception",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E5",
+      "label": "exception",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E7",
+      "label": "low precision staging differs",
+      "actual": "True",
+      "expected": "False",
+      "status": "FAIL"
+    },
+    {
+      "exercise": "3.10-E9",
+      "label": "exception",
+      "actual": "Inexact",
+      "expected": "Inexact",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.10-E9",
+      "label": "precision and traps restored",
+      "actual": "(28, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False})",
+      "expected": "(28, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E1",
+      "label": "nested/staged bound",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E2",
+      "label": "quarterly known value",
+      "actual": "100.0000000000000000000000000",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E3",
+      "label": "nominal annual misused monthly",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E4",
+      "label": "exception",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E4",
+      "label": "exception",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E4",
+      "label": "exception",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E5",
+      "label": "negative nominal raises PV",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E6",
+      "label": "early cents affect doubling",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.11-E9",
+      "label": "exception",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E1",
+      "label": "hidden global changes result",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E2",
+      "label": "printing return",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E3",
+      "label": "fixed result",
+      "actual": "1E+2",
+      "expected": "1E+2",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E3",
+      "label": "settings preserved",
+      "actual": "(6, 'ROUND_DOWN', -999999, 999999, 1, 0, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "expected": "(6, 'ROUND_DOWN', -999999, 999999, 1, 0, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E4",
+      "label": "exception",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E4",
+      "label": "failure preserves context",
+      "actual": "(6, 'ROUND_DOWN', -999999, 999999, 1, 0, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "expected": "(6, 'ROUND_DOWN', -999999, 999999, 1, 0, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: True, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.12-E8",
+      "label": "alias mutation",
+      "actual": "[1]",
+      "expected": "[1]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E1",
+      "label": "known144 PV",
+      "actual": "1E+2",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E3",
+      "label": "near-minus-one scale",
+      "actual": "1E+4",
+      "expected": "10000",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E6",
+      "label": "actual Decimal return type",
+      "actual": "Decimal",
+      "expected": "Decimal",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_known_values",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_zero_boundaries",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_horizon_upper_boundary",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_wrong_representations",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_invalid_amounts",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_invalid_rates_even_at_zero_horizon",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_negative_horizon",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_discount_direction",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_nonterminating_reference",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_repetition_and_order_independence",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_caller_context_preserved_on_success",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E7",
+      "label": "individual test_context_restored_after_arithmetic_failure",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "3.13-E4",
+      "label": "wrong horizon detected",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    }
+  ]
+}
