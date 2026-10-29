@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped projection follow-up
+## Latest scoped relative-distance follow-up
+
+Section 11.4 now has independent three-norm/asymmetric-denominator and zero/subnormal/range checks; a wrong-denominator variant was detected. All 21 Chapter 11 files compiled and 11 scripts passed; implementation unchanged. [Evidence](chapter-11-relative-distance-followup.md). COV-60 remains partially open; this follows the full-book run.
+
+## Earlier scoped projection follow-up
 
 Section 11.6 now reports residual norms and checks scalar/projection/reconstruction diagnostics against rational references across twenty selected cases. All 21 Chapter 11 files compiled and 11 scripts passed. [Evidence](chapter-11-projection-audit-followup.md). COV-60 remains partially open; this follows the full-book run.
 
