@@ -4,7 +4,7 @@
 
 | Chapter | Formal V06 review status | Evidence / next work |
 |---|---|---|
-| 01 | IN PROGRESS — core Exercises 1–48 and 23 project-checklist items reviewed (scoped); 40 controlled executions passed | [Evidence](chapter-01-lab-answer-review/README.md). Next: 40 short section exercises (1.6–1.10), three integrated challenges and remaining environment/reflection/step review. |
+| 01 | IN PROGRESS — core Exercises 1–48 and 23 project-checklist items reviewed (scoped); 40 controlled executions passed | [Evidence](chapter-01-lab-answer-review/README.md). [40 short section exercises reviewed](chapter-01-short-exercises/README.md): 76 checks passed, including seven CLI cases and five provenance checks. Next: three integrated challenges and remaining environment/platform/step review. |
 | 02 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
 | 03 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
 | 04 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
