@@ -50,3 +50,7 @@ These extend COV-01–COV-57 and overlap existing exact-input, report-schema and
 ## Subsequent COV-60 projection follow-up
 
 The [projection audit](chapter-11-projection-audit-followup.md) adds fixed-report residual norms and rational projection references across twenty selected scale/sign/label cases. Scalar projection, reconstruction, orthogonality and energy are independently checked. All 21 chapter files compiled and 11 scripts passed. Broader report/relative-distance/cumulative and independent-review obligations remain open.
+
+## Subsequent relative-distance follow-up
+
+The [relative-distance record](chapter-11-relative-distance-followup.md) adds independent three-norm and asymmetric-denominator benchmarks, selected scales, zero/subnormal/range and metadata rejection cases. A wrong-denominator variant was detected. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. COV-60 retains broader report/cumulative/range and independent-review obligations.
