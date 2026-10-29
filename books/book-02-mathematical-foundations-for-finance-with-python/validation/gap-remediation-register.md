@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Twenty-two COV categories partially addressed; none closed by this register.
+**Disposition:** Twenty-three COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
@@ -18,6 +18,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-62 | Section 12.9 retains aligned limits; controlled factor rejection and threshold/constructor/guardrail cases checked. | Broader ranges, source/version provenance and independent review. | [Factor audit](chapter-12-factor-audit-followup.md) |
 | COV-64 | Selected Section 13.6 exact normalized-pivot boundaries and reordered-column rational least-squares references checked. | General near-dependence, Q/R identities, basis-span reconstruction and independent review. | [QR rank screen](chapter-13-qr-rank-followup.md) |
 | COV-65 | Fixed Section 13.8 ridge positions, residuals, objectives, nonoptimal comparisons and selected positive-strength limit checked against exact rational references. | General weighted/regularized derivations, target/coefficient scaling, broader optimality and independent review. | [Ridge optimality](chapter-13-ridge-optimality-followup.md) |
+| COV-66 | Section 13.9 direct invalid-input, report-field, standardized residual and repeated strict-JSON checks added. | Complete configuration/provenance, economic unit consistency, broader ranges and independent review. | [Project contract](chapter-13-project-contract-followup.md) |
 | COV-69 | Section 14.9 computes/reports covariance eigenpairs; closed-form roots, projectors and direct residual/reconstruction checks added. | Independent review and broader numerical/interface scope. Fixed compression bound and input/unit metadata now asserted. | [Eigenpairs](chapter-14-covariance-eigenpair-followup.md) · [Compression bound](chapter-14-compression-bound-followup.md) |
 | COV-70 | Section 15.9 second-order contractions checked by a Decimal path expansion across nine shocks; signed/absolute portfolio errors implemented and asserted. | Final-assessment/shared-dependency coverage and independent derivation/unit review. | [Taylor](chapter-15-taylor-oracle-followup.md) |
 | COV-71 | Section 15.2 finite-difference representability and denominator guards aligned with related helpers; boundary tests added. | Perturbation asymmetry, step accuracy/convergence and selected Hessian numerical benchmarks. | [Scalar difference](chapter-15-scalar-difference-followup.md) |
@@ -85,3 +86,7 @@ The [third full refresh](runtime-refresh-2026-10-29-r3.md) includes all prior Ch
 ## Selected fixed-model ridge follow-up — 2026-10-29
 
 [Exact-objective evidence](chapter-13-ridge-optimality-followup.md) partially addresses COV-65: four positive ridge strengths, twelve nonoptimal objective comparisons and a six-point limit sequence. All 23 Chapter 13 files compiled and 13 scripts passed. The helper remains a fixed two-identical-column model with positive strength required. Broader weighted/regularized, scaling and independent-review obligations remain open; this scoped run follows the third full-book refresh.
+
+## Selected project-contract follow-up — 2026-10-29
+
+[Section 13.9 evidence](chapter-13-project-contract-followup.md) partially addresses COV-66 with direct nonfinite/bool, scale/limit, label/shape/unit-metadata rejection and selected report/strict-JSON checks. All 24 Chapter 13 files compiled and 14 scripts passed. Economic unit consistency, complete retained inputs/provenance, broader ranges and independent review remain open. This scoped run follows the third full-book refresh.
