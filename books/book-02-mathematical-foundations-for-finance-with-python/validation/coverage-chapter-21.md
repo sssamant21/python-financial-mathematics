@@ -44,3 +44,7 @@ Final twelve-step lab requests analytic versus numerical sensitivity, boundaries
 | COV-90 | General interpretation, exact cumulative numeric cases and range/boundary variants exceed selected toolkit tests. | Independent proofs/units/scope review and selected required conversion/sensitivity/replication/account cases; preserve limited-solver and unconstrained-account distinctions. |
 
 These extend COV-01–COV-87; ninety coverage categories are not ninety proven defects. No code/manuscript changes or runtime execution for this map. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-89 remediation — 2026-10-29
+
+The [integrated diagnostics follow-up](chapter-21-integrated-diagnostics-followup.md) adds centered first-derivative diagnostics with step/error/units, deterministic JSON output, selected report-schema checks and injected failure propagation. All 19 chapter files compiled and 10 scripts passed; Section 21.9 passed 18 unittest methods. COV-89 remains partially open for broader interfaces/error paths and independent review. Original map evidence remains historical.
