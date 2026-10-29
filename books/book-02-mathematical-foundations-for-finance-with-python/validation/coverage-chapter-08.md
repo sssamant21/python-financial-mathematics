@@ -103,3 +103,7 @@ These extend COV-01–COV-48. No new implementation defect or independent sign-o
 ## Subsequent COV-49 accuracy follow-up
 
 The [second-difference record](chapter-08-difference-order-followup.md) adds exact polynomial error ladders, a special vanishing-coefficient case and a representable-step cancellation example. Two faulty formula variants were detected. All 21 chapter sources compiled and 11 scripts passed; algorithm unchanged. Other helper/noise/reference/range and independent-review obligations remain open.
+
+## Subsequent COV-50 comparator follow-up
+
+The [comparator audit](chapter-08-comparator-audit-followup.md) adds exact error-field/tolerance-boundary and wrong-reference cases, retains tolerance metadata and rejects nonfinite computed estimates/errors to prevent false passes. All 21 chapter sources compiled and 11 scripts passed. Broader comparator/reference and independent-review obligations remain open.
