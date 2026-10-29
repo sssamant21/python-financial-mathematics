@@ -54,7 +54,12 @@ def centered_rate_difference(fn,amount,annual_rate,years,step=1e-5):
     if h<=0:
         raise ValueError("step must be positive")
     r=finite(annual_rate,"annual rate")
-    return finite((fn(amount,r+h,years)-fn(amount,r-h,years))/(2*h),
+    up,down=r+h,r-h
+    if not math.isfinite(up) or not math.isfinite(down) or up==r or down==r:
+        raise ValueError("step must produce finite distinct rate perturbations")
+    if not math.isfinite(2*h):
+        raise OverflowError("finite-difference denominator exceeds float range")
+    return finite((fn(amount,up,years)-fn(amount,down,years))/(2*h),
                   "centered rate difference")
 
 def assessment():
