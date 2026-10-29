@@ -124,9 +124,13 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 | V-32 | Full runtime refresh after gap remediation | Passed on Python 3.12.14/Linux | 444/444 files compiled, 233/233 script exits zero at `37aac57a72303a6d4178790f8d172495e2bc0ada`; independent review and release gates remain open. [Evidence](runtime-refresh-2026-10-29.md) |
 | V-09 | Independent review and final release | Open; review requirements documented | Eight gates and reviewer evidence requirements recorded in the [remaining review checklist](remaining-review-checklist.md). Reviewers are unassigned; no sign-off or canonical decision recorded. |
 
+## Remediation monitoring
+
+The [gap-remediation register](gap-remediation-register.md) consolidates seven partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+
 ## Next actions
 
-The [remaining review checklist](remaining-review-checklist.md) reconciles V-01–V-31 and defines eight evidence gates. The full pinned candidate runtime pass supersedes earlier runtime blockers; no independent review or release approval is inferred.
+The [remaining review checklist](remaining-review-checklist.md) reconciles V-01–V-32 and defines eight evidence gates. The full pinned candidate runtime pass supersedes earlier runtime blockers; no independent review or release approval is inferred.
 
 1. Substantive coverage mapping is complete; resolve recorded gaps and retain browser/visual and full-book navigation review as pending. [Rendered markup sample](rendered-navigation-sample-review.md) passed 14 checks on six pages; Federal Reserve/NIST source-reference findings are [resolved](source-reference-resolution.md). [External audit](external-url-audit.md) records the 102-URL scan. [Section 4.7–4.8 title/scope reconciliation](chapter-04-title-scope-reconciliation.md) is recorded. [Static anchor/reference scan](anchor-reference-link-audit.md) found no local fragment destinations or reference definitions.
 2. Address the [prioritized coverage remediation queue](substantive-coverage-index.md). All215 sections are mapped; COV-01–COV-90 remain scoped evidence categories requiring disposition. Begin with numerical contracts/range, independent oracles and project/report promises; retain manual proof/review tasks explicitly.
