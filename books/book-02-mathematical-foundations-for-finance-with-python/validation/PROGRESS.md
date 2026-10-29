@@ -22,6 +22,10 @@ This tracker records evidence and open work. A passed script is not a validated 
 
 ## Latest scoped follow-up — 2026-10-29
 
+Section 20.5 now raises explicit OverflowError for unrepresentable absolute/relative error magnitudes, preserving exact tolerance comparison. All 19 Chapter 20 files compiled and 10 scripts passed, including 20 tolerance methods. [Error-range evidence](chapter-20-error-range-followup.md). COV-87 remains partially open; this follows the full run below.
+
+## Earlier candidate-acceptance follow-up — 2026-10-29
+
 Section 16.9 now recomputes training/holdout metrics and normalized loss/gradient per iterative candidate before acceptance. Independent rational references and selected rejection cases pass; 20 Chapter 16 files compiled and all 10 scripts passed. [Acceptance evidence](chapter-16-candidate-acceptance-followup.md). COV-74 remains partially open; this change follows the latest full run below.
 
 ## Earlier compression follow-up — 2026-10-29
@@ -134,7 +138,7 @@ Status reflects book-wide runtime script execution only, not an individual chapt
 
 ## Remediation monitoring
 
-The [gap-remediation register](gap-remediation-register.md) consolidates eight partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
+The [gap-remediation register](gap-remediation-register.md) consolidates nine partially addressed COV categories with concrete changes, evidence and remaining scope. No category is closed by that register; runtime, substantive coverage and independent approval retain separate states.
 
 ## Next actions
 
