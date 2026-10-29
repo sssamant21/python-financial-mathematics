@@ -46,3 +46,7 @@ The final rubric's 85/100 threshold has not been graded. The mandatory nonfinite
 | COV-60 | Several mathematical/report acceptance fields remain unasserted: positive relative distance, scalar projection, squared residual, final-assessment nonfinite paths and omitted exercise computations. | Independent expected values for meaningful outputs, final-rubric acceptance evidence, and manual review of derivations/risk interpretations. Retain the existing capstone deterministic sorted-JSON evidence without overstating CLI determinism. |
 
 These extend COV-01–COV-57 and overlap existing exact-input, report-schema and duplicate-implementation categories. They are evidence categories, not sixty confirmed defects. No implementation changes or new execution were made for this chapter map; independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-60 projection follow-up
+
+The [projection audit](chapter-11-projection-audit-followup.md) adds fixed-report residual norms and rational projection references across twenty selected scale/sign/label cases. Scalar projection, reconstruction, orthogonality and energy are independently checked. All 21 chapter files compiled and 11 scripts passed. Broader report/relative-distance/cumulative and independent-review obligations remain open.
