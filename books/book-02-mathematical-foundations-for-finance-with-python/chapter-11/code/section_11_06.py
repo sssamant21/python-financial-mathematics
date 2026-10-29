@@ -75,6 +75,8 @@ def assessment():
             "signed_scalar_projection_USD":result["scalar_projection"],
             "projected_exposures_USD":dict(zip(p.labels,p.values)),
             "residual_exposures_USD":dict(zip(e.labels,e.values)),
+            "residual_norm_USD":math.hypot(*e.values),
+            "relative_residual_norm":math.hypot(*e.values)/math.hypot(*exposure.values),
             "residual_dot_direction":orthogonality,
             "pythagorean_squared_error":energy_error,
             "runtime_certified":False,"independent_review_completed":False}
