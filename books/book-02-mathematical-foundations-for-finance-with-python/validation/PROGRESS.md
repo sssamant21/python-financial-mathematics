@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest full-book runtime refresh — V-35
+## Latest scoped unequal-spectrum correction
+
+Section 14.1 no longer loses selected representable small eigenvalues to trace-gap cancellation. The original source fails the retained regression; corrected 24 exact diagonal and six Decimal cases pass. All 25 Chapter 14 files compiled and 15 scripts passed. [Evidence](chapter-14-unequal-spectrum-followup.md). This follows V-35; COV-68 remains partially open.
+
+## Earlier full-book runtime refresh — V-35
 
 452/452 Python files compiled, 241/241 check/test scripts exited zero and 453/453 source/fixture blobs matched the pinned tree before and after execution. Includes all eight Chapter 13/14 checker additions. [Report](runtime-refresh-2026-10-29-r4.md) · [Raw evidence](runtime-refresh-2026-10-29-r4.json). G1 refreshed; independent review and release gates remain pending.
 
@@ -307,3 +311,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## V-35 — Fourth pinned full-book runtime refresh
 
 [Evidence](runtime-refresh-2026-10-29-r4.md): 452 compiled files, 241 zero-exit scripts, 453 verified source/fixture blobs at `3e185649bf53f5a72ad9e1869d17762110444a26`. No failed/timed-out scripts. Historical V-33 revision labels corrected without changing its evidence. Next executable investigation: COV-68 unequal-spectrum small-eigenvalue cancellation in Section 14.1. Twenty-five categories remain partially addressed; no independent closure/approval.
+
+## Unequal-spectrum correction — 2026-10-29
+
+[Section 14.1 evidence](chapter-14-unequal-spectrum-followup.md) records a confirmed representable-small-eigenvalue cancellation defect, its original regression failure and corrected exact/Decimal references. All 25 Chapter 14 files compiled and 15 scripts passed. This source change follows V-35; a new full-book run is not claimed. COV-68 remains partially open and twenty-five categories remain partially addressed. Next executable item: Section 14.2 duplicate spectral path against the unequal-spectrum references; independent review/platform/release gates remain pending.
