@@ -1,0 +1,187 @@
+{
+  "baseline": "098e8583d49ea0525b6cbc7f000fd7f9bbe9dadd",
+  "prompt_sha256": "38dc41cfdf5414a5cbb12f54ba61d8811209c35890b2f65752e1a3db16d736b1",
+  "companion_sha256": "2966b3454b9838aacf27655a8481f8ff7fdc0391865a4f7d2105f281cb572b6b",
+  "records": [
+    {
+      "exercise": 1,
+      "title": "Parameters and Arguments",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "b8087a32fff607a8bd49a7f3842c0f90cf9f8ddac374e0e9159a5b60ea974a62",
+      "companion_numbered_answer_sha256": "a98e8fd764869cc550805bae8c43f7e4a61d20e137bf0fa07644c2995af22928",
+      "review": "Parameter names are principal, periodic_rate, periods; arguments are Decimal 1000, Decimal .05 and int 2. FV=1102.50 is at end of period2 in the input currency. Annual meaning requires annual effective rate and annual periods; currency is metadata, not encoded by Decimal.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 2,
+      "title": "Printing Versus Returning",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "ac8db6513810bccb4f7f070835d66f9e7586ab5328c90f24c92bd0171a9621d0",
+      "companion_numbered_answer_sha256": "cedfef5af1cfb2c8c89a132038ec0faf0d2c5e884ebba7249ba3064fdb1a2e5f",
+      "review": "Print-only returns None; a numeric calculation should return its result and reporting should print at the boundary. Both returned value and stdout were checked.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 3,
+      "title": "Keyword-Only Interface",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "6cc05608f2a7601b61de69d9bee4dd92eadd3e61709182914fd9d4433202a3e6",
+      "companion_numbered_answer_sha256": "8241358f081a25c1e04dee0e2458f6a182ca35b872d6a979a0346609eed461eb",
+      "review": "future_value(Decimal(\"1000\"), periodic_rate=Decimal(\"0.05\"), periods=2) is valid. Signature star makes the latter arguments keyword-only; positional invocation raises TypeError before calculation.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 4,
+      "title": "Missing Result",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "887c8ed953fd0909e7592410dc237db4fcaf7a6809a6dc39d957fe60eca7de29",
+      "companion_numbered_answer_sha256": "0e9aaf95e1bb12035d6c4a7e06d1f510583e08931c625f184ce3e56e2ad6352d",
+      "review": "An incomplete positive-gain branch returns None at equality and loss. ending_amount-starting_amount gives zero and signed negative gain for the no-intermediate-cash-flow convention; fixtures verify both.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 5,
+      "title": "Default and Explicit None",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "557d2425c2b3d9053f38c8182997b56b045c5c047be652766d3e98f249bfc716",
+      "companion_numbered_answer_sha256": "3656fe96e02305c59c8bd2607a956ff15fed47302f5b19da46a6f035bada8da0",
+      "review": "Omission uses default1; explicit0 stays0; explicitNone staysNone. The default substitutes only when omitted and does not enforce count types/domains.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 6,
+      "title": "Mutable Default",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "049246da9cbae21eab215d797e161dd7c0e5eea1774305df642b0b53d1f9051e",
+      "companion_numbered_answer_sha256": "72268b4a8c5e09511e136844d1c71629d1b1d2dc1156087bac69f8c11dc3fc38",
+      "review": "A mutable default is allocated at definition and reused. Exact companion append_flow creates a fresh list for omitted/None, but an explicitly supplied list is still mutated and returned in the same identity. Both ownership behaviors were checked; signed flows are permitted by this helper, unlike project amount domains.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 7,
+      "title": "Scope Failure",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "708e96ddc4b71fc42f8fab538ccb6c2bb88435072ed6081ba09700c32f620660",
+      "companion_numbered_answer_sha256": "dbc70cf2bdaadc1882d4f65379b8c410c7afaba23ae10d5494c880e3754f1fca",
+      "review": "Assignment marks rate local; reading rate before binding raises UnboundLocalError despite a global rate. adjusted_rate(rate,spread) returns an explicit-input sum, assuming compatible rate conventions; the demonstration is not a complete financial guard.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 8,
+      "title": "Type-Hint Limits",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "0b274a1b21184e353635105601441e540655545f102fa9dc05dfd28ac6c3423c",
+      "companion_numbered_answer_sha256": "dbfddf5effc879f6704355aabf26ee836e598224d048515d68968261cc9f5def",
+      "review": "Annotations do not enforce runtime representations, finiteness, domains or unit compatibility. int does not exclude Boolean, negative or excessive periods; Decimal does not encode currency or quote convention. A deliberately unguarded annotated function accepts strings, NaN and bool to demonstrate the limitation; project guards are tested separately.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 9,
+      "title": "Financial Docstring",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "e9c53450ca2d0eed1e251363433731220b92a792a99dd376d31d42cf92825a1f",
+      "companion_numbered_answer_sha256": "f9c21277dabb32c24d4dd16233cce69fe887d226092ba013178d7d96dceeac60",
+      "review": "Contract: discount one finite nonnegative Decimal period-n amount to period0, same currency/no sign reversal, finite effective matching-period rate>-1, whole n0..1000 excluding bool; validate even at zero horizon. No interim cash flows/taxes/fees/inflation or currency conversion. Fixed precision40, HALF_EVEN, Emin/Emax +/-999999, capitals1,clamp0, clear initial flags, traps InvalidOperation/DivisionByZero/Overflow, no explicit cents. TypeError for representation, ValueError for domains; Decimal exceptions and ArithmeticError guards may propagate. Rounding/cancellation/underflow and accuracy limits remain. Companion answer9 and module docstring together supply this contract; runtime docstring presence alone does not prove it.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 10,
+      "title": "Local State and Mutation",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "421555b5f3319e3f954f83f12be9a1e8bd6d9a41591d2feab04156e062b38d52",
+      "companion_numbered_answer_sha256": "41dcc522ee486da5ca1b7a24af5a8d971346163fcd25fb62d2e6cbaf429a1beb",
+      "review": "Rebinding a local Decimal name leaves caller binding unchanged; append mutates a shared list object. Both behaviors are executed. Local scope does not imply independent ownership.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 11,
+      "title": "Accumulation",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "245168d6982a2495862ca480ac8eb2f844d47a04831d6ed39305522e82f3d164",
+      "companion_numbered_answer_sha256": "5a0687880fa6f80f1e8a79a789740afa0b58602b0ffc46345c7e9f812ad1cc7f",
+      "review": "Period0 principal2000, 4% effective per annual period, end of year3: 2000*(26/25)^3=2249.728 exactly, display2249.73. Exact Fraction oracle independently checks library output; no cents quantization is implied.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 12,
+      "title": "Discounting",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "25a1bb2f101f63facf1b23415bb3e791bc5a476cd01945e04e7ac37ff55faa83",
+      "companion_numbered_answer_sha256": "bab268ff4e4674d2b0ac6e1f15e61c6773dc2519cb72d44795903114d2a65eac",
+      "review": "144 due at period2 discounted to0 at effective20% per period: 144/(6/5)^2=100. Multiplying yields207.36, valuing a period0 amount forward instead. Both outputs were checked as different timeline questions.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 13,
+      "title": "Nominal Conversion",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "9f59ddec5477067ca13534aa208839cd97fde2e6f068a93b73df790e1cd33a08",
+      "companion_numbered_answer_sha256": "d2514264530b0698ee06403cac0f0ade45b05bc266f4a394da4b57fd60d24917",
+      "review": "Nominal8% convertible quarterly: j/m=.08/4=.02 effective quarterly; (1.02)^4-1=.08243216 effective annually. Fraction oracles verify both relationships; this is not effective-annual-to-periodic conversion or regulatory APR.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 14,
+      "title": "Composition",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "bbf0dcbd1acabdc117c7b02248a70551fc1a6e52b5c6cdf03f200216bddc213e",
+      "companion_numbered_answer_sha256": "c5c0e1b0adc3c785fceb67367ded18427016968bd6a9d601d0c061cf742efbb0",
+      "review": "104.04 due after two quarters at nominal8% convertible quarterly: staged j/m=.02, discount factor1/1.02^2, amount*factor; wrapper converts then divides. Both agree with100 and with each other within absolute1e-30, justified only for this fixture and the fixed40-digit policy.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 15,
+      "title": "Supported Negative Rate",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "861760faa8d4099040e80b1390df7ff9c4f0018ade27c4d1a726c747bc9cef93",
+      "companion_numbered_answer_sha256": "b4e20ef4a0de60169fab5c310b3c71de5696924bbda2748c9fab84fb786ce685",
+      "review": "1000 at -10% for one period yields900; discounting900 by.9 recovers1000. The positive discount factor1/.9 exceeds1. A supported negative effective rate can reduce forward amounts; project r>-1 remains required.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 16,
+      "title": "Validation Matrix",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "47664d885d2066c17962758276797f86bf2e1bcba06a1352331dffc8b27215b6",
+      "companion_numbered_answer_sha256": "30a3e0563b05b833d06c5f260ed8c2c7674eeff089bd3e34de56e02a23628e7f",
+      "review": "Expected exceptions: string amount TypeError; NaN rate at zero horizon ValueError; bool horizon TypeError; horizon1001 ValueError. All four execute against exact project code; zero horizon does not bypass validation.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 17,
+      "title": "Context Preservation",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "fd284c67d9f751749b6e2aaa1c4729fc8a426cc98e8b2fa301f4a4229e3e0b71",
+      "companion_numbered_answer_sha256": "c4beea293e6600b27b1ea652ac1988de923d60913d76494491ca638d5671106d",
+      "review": "Caller precision6,ROUND_DOWN, enabled Inexact trap and set Inexact flag are snapshotted before the call. The fixed-policy result equals a reference call, and all caller settings/flags/traps remain unchanged afterward. This fixture does not exhaust every Decimal signal or numerical range.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 18,
+      "title": "Detect a Defect",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "11327a59ff6d642949b61c4c31b72591e20601ddfb2ce28053435daaed26b517",
+      "companion_numbered_answer_sha256": "a0035b7656edbb2104f32f2d124f78b3e7befe61b70d6910aa168db3d4b936c2",
+      "review": "Known value PV(125,.25,1)=100. The temporary AST copy replaces only present_value division with multiplication; result156.25 fails the independent expected equality. Canonical temporary source and repository source remain unchanged and the correct module still returns100. Mutation evidence records both code hashes and outputs; matching round trips alone could miss mutually inverse defects.",
+      "conceptual_review_only": false
+    },
+    {
+      "exercise": 19,
+      "title": "Reproduction Record",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "63791989253297fce116fd12aa3449b6075577cff75cf0c309e52f478e17aac6",
+      "companion_numbered_answer_sha256": "0ce61f53ef0dd54c793922fd9de06ef26c2961b3b3c7fc294483ab0a0b07e0dc",
+      "review": "Reproduce exact input strings, amount/currency scale, nominal/effective quote, matching period units/count, timeline, data identity/version, code revision, full arithmetic context, runtime/dependency versions, quantization/display policy, expected value/tolerance and actual result. See reproduction.json for this batch. Matching output establishes neither correct financial assumptions nor source-data suitability.",
+      "conceptual_review_only": true
+    },
+    {
+      "exercise": 20,
+      "title": "Final Integration Case",
+      "status": "PASS_SCOPED",
+      "prompt_sha256": "01b76961d44378ecb963cf9b486932cdfdd0caf2d40d1a0340d4026394eec7f4",
+      "companion_numbered_answer_sha256": "6fcb106f460517e3c99af7c0f1aa08c2a71363ee6b9d0ff7e783a8fe5b769d90",
+      "review": "Nominal12% monthly means monthly .01; annual effective (1.01)^12-1=.126825030131969720661201; period12 FV1000*(1.01)^12=1126.825030131969720661201, display1126.83; recovered PV1000 within absolute1e-30. No intermediate flows/fees/tax/currency conversion. Exact Fraction oracles, zero horizon and frequency0 rejection are checked; exact source demonstration output is retained.",
+      "conceptual_review_only": false
+    }
+  ]
+}

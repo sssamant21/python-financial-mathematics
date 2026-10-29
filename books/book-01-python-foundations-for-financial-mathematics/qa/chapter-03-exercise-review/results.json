@@ -1,0 +1,382 @@
+{
+  "source_revision": "098e8583d49ea0525b6cbc7f000fd7f9bbe9dadd",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercises_reviewed": 20,
+  "predicates": 49,
+  "passed": 49,
+  "failed": 0,
+  "existing_methods_rerun": 19,
+  "new_unique_reference_methods": 0,
+  "source_hashes": {
+    "chapter-03/3.14-chapter-project-financial-mathematics-function-library.md": "caa58228f06c3bc85da4d74f3c232567ed56cfd7e05b3f4eeb133c24e07eb834",
+    "chapter-03/solutions/3.15-solutions-and-reference-implementations.md": "2966b3454b9838aacf27655a8481f8ff7fdc0391865a4f7d2105f281cb572b6b"
+  },
+  "checks": [
+    {
+      "exercise": 1,
+      "label": "FV value/currency timeline numeric result",
+      "actual": "1102.5000",
+      "expected": "1102.50",
+      "status": "PASS"
+    },
+    {
+      "exercise": 2,
+      "label": "print-only return",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "exercise": 2,
+      "label": "printed text",
+      "actual": "1102.50\n",
+      "expected": "1102.50\n",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "keyword-only valid call",
+      "actual": "1102.5000",
+      "expected": "1102.5",
+      "status": "PASS"
+    },
+    {
+      "exercise": 3,
+      "label": "positional rate and horizon",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 4,
+      "label": "incomplete zero/loss",
+      "actual": "(None, None)",
+      "expected": "(None, None)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 4,
+      "label": "signed gain fixes zero and loss",
+      "actual": "(Decimal('0'), Decimal('-10'))",
+      "expected": "(Decimal('0'), Decimal('-10'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": 5,
+      "label": "default omission/zero/None",
+      "actual": "(1, 0, None)",
+      "expected": "(1, 0, None)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 6,
+      "label": "shared mutable default",
+      "actual": "(True, 2)",
+      "expected": "(True, 2)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 6,
+      "label": "correct omitted list independence",
+      "actual": "([Decimal('1')], [Decimal('2')], False)",
+      "expected": "([Decimal('1')], [Decimal('2')], False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 6,
+      "label": "explicit caller list mutation",
+      "actual": "(True, [Decimal('-1')])",
+      "expected": "(True, [Decimal('-1')])",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "read local before binding",
+      "actual": "UnboundLocalError",
+      "expected": "UnboundLocalError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 7,
+      "label": "explicit inputs",
+      "actual": "0.06",
+      "expected": "0.06",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "annotations alone permit NaN and bool",
+      "actual": "(False, True)",
+      "expected": "(False, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 8,
+      "label": "annotations alone do not reject string",
+      "actual": "('0.05', -1)",
+      "expected": "('0.05', -1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": 9,
+      "label": "project public docstring exists",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "rebinding preserves caller",
+      "actual": "(Decimal('0'), Decimal('100'))",
+      "expected": "(Decimal('0'), Decimal('100'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": 10,
+      "label": "list mutation visible",
+      "actual": "[Decimal('1')]",
+      "expected": "[Decimal('1')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": 11,
+      "label": "exact accumulation",
+      "actual": "2249.728000",
+      "expected": "281216/125",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "exact discount",
+      "actual": "1E+2",
+      "expected": "100",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 12,
+      "label": "multiplication is different quantity",
+      "actual": "207.36",
+      "expected": "207.36",
+      "status": "PASS"
+    },
+    {
+      "exercise": 13,
+      "label": "nominal quarterly conversion",
+      "actual": "0.02",
+      "expected": "1/50",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 13,
+      "label": "effective annual",
+      "actual": "0.08243216",
+      "expected": "515201/6250000",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 14,
+      "label": "staged PV",
+      "actual": "100.0000000000000000000000000000000000000",
+      "expected": "100",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 14,
+      "label": "wrapper PV",
+      "actual": "1E+2",
+      "expected": "100",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 14,
+      "label": "staged-wrapper agreement",
+      "actual": "100.0000000000000000000000000000000000000",
+      "expected": "100",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 15,
+      "label": "negative rate FV/PV",
+      "actual": "(Decimal('900.0'), Decimal('1000'))",
+      "expected": "(Decimal('900'), Decimal('1000'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": 15,
+      "label": "discount factor >1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": 16,
+      "label": "string amount",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 16,
+      "label": "NaN zero horizon",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 16,
+      "label": "bool horizon",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 16,
+      "label": "horizon1001",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 17,
+      "label": "fixed-policy result independent of caller",
+      "actual": "665.6920079633362057327113332352418427176",
+      "expected": "665.6920079633362057327113332352418427176",
+      "status": "PASS"
+    },
+    {
+      "exercise": 17,
+      "label": "full caller context preserved",
+      "actual": "{'prec': 6, 'rounding': 'ROUND_DOWN', 'Emin': -999999, 'Emax': 999999, 'capitals': 1, 'clamp': 0, 'flags': {\"<class 'decimal.InvalidOperation'>\": False, \"<class 'decimal.FloatOperation'>\": False, \"<class 'decimal.DivisionByZero'>\": False, \"<class 'decimal.Overflow'>\": False, \"<class 'decimal.Underflow'>\": False, \"<class 'decimal.Subnormal'>\": False, \"<class 'decimal.Inexact'>\": True, \"<class 'decimal.Rounded'>\": False, \"<class 'decimal.Clamped'>\": False}, 'traps': {\"<class 'decimal.InvalidOperation'>\": True, \"<class 'decimal.FloatOperation'>\": False, \"<class 'decimal.DivisionByZero'>\": True, \"<class 'decimal.Overflow'>\": True, \"<class 'decimal.Underflow'>\": False, \"<class 'decimal.Subnormal'>\": False, \"<class 'decimal.Inexact'>\": True, \"<class 'decimal.Rounded'>\": False, \"<class 'decimal.Clamped'>\": False}}",
+      "expected": "{'prec': 6, 'rounding': 'ROUND_DOWN', 'Emin': -999999, 'Emax': 999999, 'capitals': 1, 'clamp': 0, 'flags': {\"<class 'decimal.InvalidOperation'>\": False, \"<class 'decimal.FloatOperation'>\": False, \"<class 'decimal.DivisionByZero'>\": False, \"<class 'decimal.Overflow'>\": False, \"<class 'decimal.Underflow'>\": False, \"<class 'decimal.Subnormal'>\": False, \"<class 'decimal.Inexact'>\": True, \"<class 'decimal.Rounded'>\": False, \"<class 'decimal.Clamped'>\": False}, 'traps': {\"<class 'decimal.InvalidOperation'>\": True, \"<class 'decimal.FloatOperation'>\": False, \"<class 'decimal.DivisionByZero'>\": True, \"<class 'decimal.Overflow'>\": True, \"<class 'decimal.Underflow'>\": False, \"<class 'decimal.Subnormal'>\": False, \"<class 'decimal.Inexact'>\": True, \"<class 'decimal.Rounded'>\": False, \"<class 'decimal.Clamped'>\": False}}",
+      "status": "PASS"
+    },
+    {
+      "exercise": 18,
+      "label": "independent known value",
+      "actual": "1E+2",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "exercise": 18,
+      "label": "mutant produces wrong known value",
+      "actual": "156.25",
+      "expected": "156.25",
+      "status": "PASS"
+    },
+    {
+      "exercise": 18,
+      "label": "independent oracle detects mutation",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": 18,
+      "label": "canonical source preserved",
+      "actual": "\"\"\"Single-amount financial helpers with a fixed Decimal policy.\n\nAmounts are finite nonnegative Decimal values in one currency.\nEffective periodic rates are finite Decimal values greater than -1.\nHorizons are integer 0..1000; frequencies integer 1..366; bool is excluded.\nNo rate/currency conversion occurs except in explicitly named helpers.\nNo intermediate cash flows, taxes, fees, or inflation are modeled.\n\nEvery public calculation uses a fresh precision-40, half-even context\nwith exponent limits +/-999999, clamp 0, capitals 1, clear flags, and\ntraps for InvalidOperation, DivisionByZero, and Overflow. No explicit\ncurrency quantization is applied. Inputs and caller context are preserved.\n\nTypeError denotes unsupported representations; ValueError denotes\nunsupported input values. Decimal exceptions may propagate; explicit\nArithmeticError guards reject unusable computed factors/rates/results.\nFinite rounding, cancellation, and underflow remain possible.\n\"\"\"\n\nfrom decimal import (\n    Context, Decimal, DivisionByZero, InvalidOperation, Overflow,\n    ROUND_HALF_EVEN, localcontext,\n)\n\n\ndef _policy() -> Context:\n    \"\"\"Create the module's complete arithmetic policy without shared state.\"\"\"\n    return Context(\n        prec=40, rounding=ROUND_HALF_EVEN,\n        Emin=-999999, Emax=999999, capitals=1, clamp=0,\n        flags=[], traps=[InvalidOperation, DivisionByZero, Overflow],\n    )\n\n\ndef _finite_decimal(value: Decimal, name: str) -> None:\n    \"\"\"Reject an unsupported representation or a non-finite value.\"\"\"\n    if not isinstance(value, Decimal):\n        raise TypeError(f\"{name} must be Decimal\")\n    if not value.is_finite():\n        raise ValueError(f\"{name} must be finite\")\n\n\ndef _amount(value: Decimal) -> None:\n    \"\"\"Require a finite nonnegative Decimal amount.\"\"\"\n    _finite_decimal(value, \"amount\")\n    if value < 0:\n        raise ValueError(\"amount must be nonnegative\")\n\n\ndef _count(value: int, name: str, lower: int, upper: int) -> None:\n    \"\"\"Require an integer in the specified inclusive range, excluding bool.\"\"\"\n    if not isinstance(value, int) or isinstance(value, bool):\n        raise TypeError(f\"{name} must be an integer excluding bool\")\n    if not lower <= value <= upper:\n        raise ValueError(f\"{name} must be between {lower} and {upper}\")\n\n\ndef _positive(value: Decimal, name: str) -> Decimal:\n    \"\"\"Reject a computed factor that is non-finite or nonpositive.\"\"\"\n    if not value.is_finite() or value <= 0:\n        raise ArithmeticError(f\"{name} must be finite and positive\")\n    return value\n\n\ndef _growth(periodic_rate: Decimal, periods: int) -> Decimal:\n    \"\"\"Validate and calculate growth within an already active policy.\"\"\"\n    _finite_decimal(periodic_rate, \"periodic_rate\")\n    if periodic_rate <= Decimal(\"-1\"):\n        raise ValueError(\"periodic_rate must be greater than -1\")\n    _count(periods, \"periods\", 0, 1000)\n    return _positive(\n        (Decimal(\"1\") + periodic_rate) ** periods,\n        \"growth factor\",\n    )\n\n\ndef accumulation_factor(periodic_rate: Decimal, *, periods: int) -> Decimal:\n    \"\"\"Return (1+r)**n from period 0 to n under the module policy.\n\n    r is an effective rate per matching period. Validate even at n=0.\n    Return a dimensionless positive factor; inherit module failure rules.\n    \"\"\"\n    with localcontext(_policy()):\n        return _growth(periodic_rate, periods)\n\n\ndef discount_factor(periodic_rate: Decimal, *, periods: int) -> Decimal:\n    \"\"\"Return 1/(1+r)**n from period n to 0 under the module policy.\n\n    Rate and horizon domains match accumulation_factor. Return a positive\n    dimensionless factor; inherit module failure rules.\n    \"\"\"\n    with localcontext(_policy()):\n        return _positive(\n            Decimal(\"1\") / _growth(periodic_rate, periods),\n            \"discount factor\",\n        )\n\n\ndef future_value(\n    principal: Decimal, *, periodic_rate: Decimal, periods: int,\n) -> Decimal:\n    \"\"\"Return a period-0 principal's amount at period n.\n\n    Require the module's amount, effective-rate, and horizon domains.\n    Return the same currency without sign reversal or quantization.\n    Validate all inputs, including for zero amount or horizon.\n    Inherit module assumptions, numerical policy, and failure rules.\n    \"\"\"\n    _amount(principal)\n    with localcontext(_policy()):\n        result = principal * _growth(periodic_rate, periods)\n        if not result.is_finite():\n            raise ArithmeticError(\"future value must be finite\")\n        return result\n\n\ndef present_value(\n    future_amount: Decimal, *, periodic_rate: Decimal, periods: int,\n) -> Decimal:\n    \"\"\"Return a period-n amount's discounted equivalent at period 0.\n\n    Require the module's amount, effective-rate, and horizon domains.\n    Divide directly by the growth factor. Return the original currency\n    without sign reversal or quantization. Validate even at zero horizon.\n    Inherit module assumptions, numerical policy, and failure rules.\n    \"\"\"\n    _amount(future_amount)\n    with localcontext(_policy()):\n        result = future_amount / _growth(periodic_rate, periods)\n        if not result.is_finite():\n            raise ArithmeticError(\"present value must be finite\")\n        return result\n\n\ndef periodic_rate_from_nominal(\n    nominal_annual_rate: Decimal, *, periods_per_year: int,\n) -> Decimal:\n    \"\"\"Return j/m for a nominal annual rate convertible m times yearly.\n\n    Require finite Decimal j and integer frequency 1..366 excluding bool.\n    The implied effective periodic rate must exceed -1. This does not\n    convert effective annual rates, include fees, or interpret APR rules.\n    Apply the module policy and reject unusable computed periodic rates.\n    \"\"\"\n    _finite_decimal(nominal_annual_rate, \"nominal_annual_rate\")\n    _count(periods_per_year, \"periods_per_year\", 1, 366)\n    with localcontext(_policy()):\n        if nominal_annual_rate <= -Decimal(periods_per_year):\n            raise ValueError(\"implied periodic rate must be greater than -1\")\n        rate = nominal_annual_rate / Decimal(periods_per_year)\n        if not rate.is_finite() or rate <= Decimal(\"-1\"):\n            raise ArithmeticError(\"computed periodic rate is unusable\")\n        return rate\n\n\ndef effective_annual_rate(\n    periodic_rate: Decimal, *, periods_per_year: int,\n) -> Decimal:\n    \"\"\"Return (1+r)**m - 1 for equal periodic compounding.\n\n    Require the module's effective-rate domain and frequency 1..366.\n    Return a fractional Decimal annual rate, not percentage display text.\n    Apply the module policy; reject non-finite output or output <= -1.\n    \"\"\"\n    _count(periods_per_year, \"periods_per_year\", 1, 366)\n    with localcontext(_policy()):\n        rate = _growth(periodic_rate, periods_per_year) - Decimal(\"1\")\n        if not rate.is_finite() or rate <= Decimal(\"-1\"):\n            raise ArithmeticError(\"effective annual rate is unusable\")\n        return rate\n\n\ndef present_value_from_nominal(\n    future_amount: Decimal, *,\n    nominal_annual_rate: Decimal,\n    periods_per_year: int,\n    periods: int,\n) -> Decimal:\n    \"\"\"Convert a nominal annual quotation and discount one future amount.\n\n    periods counts the quotation's matching compounding periods, not\n    necessarily years. Validate the amount before rate conversion.\n    Convert j/m under the fixed policy, then pass that returned rate\n    into present_value under the same policy. Preserve the input currency.\n    Inherit the component domains, exclusions, and failure behavior.\n    \"\"\"\n    _amount(future_amount)\n    rate = periodic_rate_from_nominal(\n        nominal_annual_rate, periods_per_year=periods_per_year\n    )\n    return present_value(\n        future_amount, periodic_rate=rate, periods=periods\n    )\n",
+      "expected": "\"\"\"Single-amount financial helpers with a fixed Decimal policy.\n\nAmounts are finite nonnegative Decimal values in one currency.\nEffective periodic rates are finite Decimal values greater than -1.\nHorizons are integer 0..1000; frequencies integer 1..366; bool is excluded.\nNo rate/currency conversion occurs except in explicitly named helpers.\nNo intermediate cash flows, taxes, fees, or inflation are modeled.\n\nEvery public calculation uses a fresh precision-40, half-even context\nwith exponent limits +/-999999, clamp 0, capitals 1, clear flags, and\ntraps for InvalidOperation, DivisionByZero, and Overflow. No explicit\ncurrency quantization is applied. Inputs and caller context are preserved.\n\nTypeError denotes unsupported representations; ValueError denotes\nunsupported input values. Decimal exceptions may propagate; explicit\nArithmeticError guards reject unusable computed factors/rates/results.\nFinite rounding, cancellation, and underflow remain possible.\n\"\"\"\n\nfrom decimal import (\n    Context, Decimal, DivisionByZero, InvalidOperation, Overflow,\n    ROUND_HALF_EVEN, localcontext,\n)\n\n\ndef _policy() -> Context:\n    \"\"\"Create the module's complete arithmetic policy without shared state.\"\"\"\n    return Context(\n        prec=40, rounding=ROUND_HALF_EVEN,\n        Emin=-999999, Emax=999999, capitals=1, clamp=0,\n        flags=[], traps=[InvalidOperation, DivisionByZero, Overflow],\n    )\n\n\ndef _finite_decimal(value: Decimal, name: str) -> None:\n    \"\"\"Reject an unsupported representation or a non-finite value.\"\"\"\n    if not isinstance(value, Decimal):\n        raise TypeError(f\"{name} must be Decimal\")\n    if not value.is_finite():\n        raise ValueError(f\"{name} must be finite\")\n\n\ndef _amount(value: Decimal) -> None:\n    \"\"\"Require a finite nonnegative Decimal amount.\"\"\"\n    _finite_decimal(value, \"amount\")\n    if value < 0:\n        raise ValueError(\"amount must be nonnegative\")\n\n\ndef _count(value: int, name: str, lower: int, upper: int) -> None:\n    \"\"\"Require an integer in the specified inclusive range, excluding bool.\"\"\"\n    if not isinstance(value, int) or isinstance(value, bool):\n        raise TypeError(f\"{name} must be an integer excluding bool\")\n    if not lower <= value <= upper:\n        raise ValueError(f\"{name} must be between {lower} and {upper}\")\n\n\ndef _positive(value: Decimal, name: str) -> Decimal:\n    \"\"\"Reject a computed factor that is non-finite or nonpositive.\"\"\"\n    if not value.is_finite() or value <= 0:\n        raise ArithmeticError(f\"{name} must be finite and positive\")\n    return value\n\n\ndef _growth(periodic_rate: Decimal, periods: int) -> Decimal:\n    \"\"\"Validate and calculate growth within an already active policy.\"\"\"\n    _finite_decimal(periodic_rate, \"periodic_rate\")\n    if periodic_rate <= Decimal(\"-1\"):\n        raise ValueError(\"periodic_rate must be greater than -1\")\n    _count(periods, \"periods\", 0, 1000)\n    return _positive(\n        (Decimal(\"1\") + periodic_rate) ** periods,\n        \"growth factor\",\n    )\n\n\ndef accumulation_factor(periodic_rate: Decimal, *, periods: int) -> Decimal:\n    \"\"\"Return (1+r)**n from period 0 to n under the module policy.\n\n    r is an effective rate per matching period. Validate even at n=0.\n    Return a dimensionless positive factor; inherit module failure rules.\n    \"\"\"\n    with localcontext(_policy()):\n        return _growth(periodic_rate, periods)\n\n\ndef discount_factor(periodic_rate: Decimal, *, periods: int) -> Decimal:\n    \"\"\"Return 1/(1+r)**n from period n to 0 under the module policy.\n\n    Rate and horizon domains match accumulation_factor. Return a positive\n    dimensionless factor; inherit module failure rules.\n    \"\"\"\n    with localcontext(_policy()):\n        return _positive(\n            Decimal(\"1\") / _growth(periodic_rate, periods),\n            \"discount factor\",\n        )\n\n\ndef future_value(\n    principal: Decimal, *, periodic_rate: Decimal, periods: int,\n) -> Decimal:\n    \"\"\"Return a period-0 principal's amount at period n.\n\n    Require the module's amount, effective-rate, and horizon domains.\n    Return the same currency without sign reversal or quantization.\n    Validate all inputs, including for zero amount or horizon.\n    Inherit module assumptions, numerical policy, and failure rules.\n    \"\"\"\n    _amount(principal)\n    with localcontext(_policy()):\n        result = principal * _growth(periodic_rate, periods)\n        if not result.is_finite():\n            raise ArithmeticError(\"future value must be finite\")\n        return result\n\n\ndef present_value(\n    future_amount: Decimal, *, periodic_rate: Decimal, periods: int,\n) -> Decimal:\n    \"\"\"Return a period-n amount's discounted equivalent at period 0.\n\n    Require the module's amount, effective-rate, and horizon domains.\n    Divide directly by the growth factor. Return the original currency\n    without sign reversal or quantization. Validate even at zero horizon.\n    Inherit module assumptions, numerical policy, and failure rules.\n    \"\"\"\n    _amount(future_amount)\n    with localcontext(_policy()):\n        result = future_amount / _growth(periodic_rate, periods)\n        if not result.is_finite():\n            raise ArithmeticError(\"present value must be finite\")\n        return result\n\n\ndef periodic_rate_from_nominal(\n    nominal_annual_rate: Decimal, *, periods_per_year: int,\n) -> Decimal:\n    \"\"\"Return j/m for a nominal annual rate convertible m times yearly.\n\n    Require finite Decimal j and integer frequency 1..366 excluding bool.\n    The implied effective periodic rate must exceed -1. This does not\n    convert effective annual rates, include fees, or interpret APR rules.\n    Apply the module policy and reject unusable computed periodic rates.\n    \"\"\"\n    _finite_decimal(nominal_annual_rate, \"nominal_annual_rate\")\n    _count(periods_per_year, \"periods_per_year\", 1, 366)\n    with localcontext(_policy()):\n        if nominal_annual_rate <= -Decimal(periods_per_year):\n            raise ValueError(\"implied periodic rate must be greater than -1\")\n        rate = nominal_annual_rate / Decimal(periods_per_year)\n        if not rate.is_finite() or rate <= Decimal(\"-1\"):\n            raise ArithmeticError(\"computed periodic rate is unusable\")\n        return rate\n\n\ndef effective_annual_rate(\n    periodic_rate: Decimal, *, periods_per_year: int,\n) -> Decimal:\n    \"\"\"Return (1+r)**m - 1 for equal periodic compounding.\n\n    Require the module's effective-rate domain and frequency 1..366.\n    Return a fractional Decimal annual rate, not percentage display text.\n    Apply the module policy; reject non-finite output or output <= -1.\n    \"\"\"\n    _count(periods_per_year, \"periods_per_year\", 1, 366)\n    with localcontext(_policy()):\n        rate = _growth(periodic_rate, periods_per_year) - Decimal(\"1\")\n        if not rate.is_finite() or rate <= Decimal(\"-1\"):\n            raise ArithmeticError(\"effective annual rate is unusable\")\n        return rate\n\n\ndef present_value_from_nominal(\n    future_amount: Decimal, *,\n    nominal_annual_rate: Decimal,\n    periods_per_year: int,\n    periods: int,\n) -> Decimal:\n    \"\"\"Convert a nominal annual quotation and discount one future amount.\n\n    periods counts the quotation's matching compounding periods, not\n    necessarily years. Validate the amount before rate conversion.\n    Convert j/m under the fixed policy, then pass that returned rate\n    into present_value under the same policy. Preserve the input currency.\n    Inherit the component domains, exclusions, and failure behavior.\n    \"\"\"\n    _amount(future_amount)\n    rate = periodic_rate_from_nominal(\n        nominal_annual_rate, periods_per_year=periods_per_year\n    )\n    return present_value(\n        future_amount, periodic_rate=rate, periods=periods\n    )\n",
+      "status": "PASS"
+    },
+    {
+      "exercise": 18,
+      "label": "canonical still returns correct PV",
+      "actual": "1E+2",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "monthly rate",
+      "actual": "0.01",
+      "expected": "1/100",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "annual rate",
+      "actual": "0.126825030131969720661201",
+      "expected": "126825030131969720661201/1000000000000000000000000",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "FV",
+      "actual": "1126.825030131969720661201000",
+      "expected": "1126825030131969720661201/1000000000000000000000",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "recovered PV",
+      "actual": "1000",
+      "expected": "1000",
+      "absolute_error": "0",
+      "tolerance": "1/1000000000000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "zero horizon",
+      "actual": "1000",
+      "expected": "1000",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "invalid frequency even zero horizon",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "project demo exit",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": 20,
+      "label": "project report FV",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "regression",
+      "label": "existing combined suite",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "regression",
+      "label": "19 existing methods",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    }
+  ]
+}

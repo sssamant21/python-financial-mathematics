@@ -1,0 +1,64 @@
+{
+  "source_revision": "098e8583d49ea0525b6cbc7f000fd7f9bbe9dadd",
+  "source_hashes": {
+    "chapter-03/3.14-chapter-project-financial-mathematics-function-library.md": "caa58228f06c3bc85da4d74f3c232567ed56cfd7e05b3f4eeb133c24e07eb834",
+    "chapter-03/solutions/3.15-solutions-and-reference-implementations.md": "2966b3454b9838aacf27655a8481f8ff7fdc0391865a4f7d2105f281cb572b6b"
+  },
+  "amount_contract": "Finite nonnegative Decimal, same currency, educational unspecified currency unit",
+  "period_contract": "Effective rate per matching period; n0..1000 excluding bool; frequency1..366 excluding bool",
+  "arithmetic": {
+    "prec": 40,
+    "rounding": "ROUND_HALF_EVEN",
+    "Emin": -999999,
+    "Emax": 999999,
+    "capitals": 1,
+    "clamp": 0,
+    "initial_flags": [],
+    "traps": [
+      "InvalidOperation",
+      "DivisionByZero",
+      "Overflow"
+    ]
+  },
+  "fixtures": [
+    {
+      "exercise": 11,
+      "principal": "2000",
+      "effective_annual": "0.04",
+      "annual_periods": 3,
+      "expected": "2249.728"
+    },
+    {
+      "exercise": 12,
+      "future_amount": "144",
+      "effective_periodic": "0.2",
+      "periods": 2,
+      "expected": "100"
+    },
+    {
+      "exercise": 14,
+      "future_amount": "104.04",
+      "nominal_annual": "0.08",
+      "frequency": 4,
+      "quarter_periods": 2,
+      "expected": "100",
+      "absolute_tolerance": "1e-30"
+    },
+    {
+      "exercise": 20,
+      "principal": "1000",
+      "nominal_annual": "0.12",
+      "frequency": 12,
+      "monthly_periods": 12,
+      "expected_future": "1126.825030131969720661201",
+      "expected_present": "1000",
+      "absolute_tolerance": "1e-30"
+    }
+  ],
+  "data": "Synthetic instructional fixtures; no external dataset",
+  "runtime": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "dependencies": "Python standard library; actual extracted files and code hashes retained in review/results",
+  "quantization": "None explicitly; only final report formatted two decimals",
+  "assumptions": "No intermediate cash flows/fees/tax/inflation/currency conversion; fixed rates per scenario",
+  "limitations": "Fixture tolerance is not universal; matching results do not establish financial suitability or independent acceptance"
+}
