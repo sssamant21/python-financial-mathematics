@@ -20,10 +20,17 @@ def project():
     exposure=diagonal_exposure_svd(4,2,(8,4,5))
     compression=low_rank_diagonal_exposure(4,2,1)
     positions=exposure["positions"]
-    full=(4*positions[0],2*positions[1],0.0)
-    compressed=(4*positions[0],0.0,0.0)
+    original=compression["original"]
+    approximation=compression["approximation"]
+    full=tuple(math.fsum(row[j]*positions[j] for j in range(2)) for row in original)
+    compressed=tuple(math.fsum(row[j]*positions[j] for j in range(2)) for row in approximation)
     lost=tuple(full[i]-compressed[i] for i in range(3))
     return {
+        "portfolio_weights":weights,
+        "exposure_target":(8,4,5),
+        "input_units":{"covariance":"annualized_return_squared",
+                       "weights":"dimensionless",
+                       "exposure":"illustrative_factor_exposure"},
         "covariance_matrix":covariance,
         "covariance_eigenvalues":spectral["eigenvalues"],
         "covariance_eigenvectors":spectral["eigenvectors"],
@@ -49,7 +56,11 @@ def project():
         "rank_one_spectral_error":compression["spectral_error"],
         "rank_one_retained_squared_energy_fraction":
             compression["retained_squared_energy_fraction"],
+        "exposure_matrix":original,
+        "rank_one_exposure_matrix":approximation,
         "exposure_lost_by_compression_at_solution":lost,
+        "compression_exposure_error_norm":math.hypot(*lost),
+        "compression_exposure_error_bound":compression["spectral_error"]*math.hypot(*positions),
         "runtime_certified":False,
         "independent_review_completed":False,
     }
