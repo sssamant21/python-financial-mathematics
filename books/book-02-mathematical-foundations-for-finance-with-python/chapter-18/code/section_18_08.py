@@ -32,12 +32,20 @@ def audited_bisection(function,lower,upper,atol=1e-10,rtol=1e-10,max_iter=100):
     fa,fb=evaluate(a),evaluate(b)
     def report(root,residual,status,iterations,trace,bracket):
         lo,hi=bracket
+        endpoints=(residual,residual) if lo==hi else (fa,fb)
+        valid=(lo==hi and residual==0) or (lo<hi and opposite(*endpoints))
+        valid=valid and all(row["lower"]<row["upper"] and
+                            opposite(row["lower_residual"],row["upper_residual"])
+                            for row in trace)
+        valid=valid and all(previous["lower"]<=current["lower"] and
+                            current["upper"]<=previous["upper"]
+                            for previous,current in zip(trace,trace[1:]))
         return {"root":root,"bracket":bracket,"width":hi-lo,
                 "residual":residual,"status":status,"iterations":iterations,
                 "evaluations":evaluations,"atol":atol,"rtol":rtol,
                 "max_iter":max_iter,"trace":trace,
-                "bracket_invariant":status in
-                ("converged","exact_root","endpoint_root","stagnation","max_iter")}
+                "bracket_endpoint_residuals":endpoints,
+                "bracket_invariant":bool(valid)}
     if fa==0:
         return report(a,0.0,"endpoint_root",0,[],(a,a))
     if fb==0:
@@ -54,7 +62,8 @@ def audited_bisection(function,lower,upper,atol=1e-10,rtol=1e-10,max_iter=100):
             return report(mid,evaluate(mid),"stagnation",iteration,trace,(a,b))
         fm=evaluate(mid)
         trace.append({"iteration":iteration,"lower":a,"upper":b,
-                      "midpoint":mid,"width":width,"residual":fm})
+                      "midpoint":mid,"width":width,"residual":fm,
+                      "lower_residual":fa,"upper_residual":fb})
         if fm==0:
             return report(mid,0.0,"exact_root",iteration+1,trace,(mid,mid))
         if width<=atol+rtol*max(abs(a),abs(b)):
