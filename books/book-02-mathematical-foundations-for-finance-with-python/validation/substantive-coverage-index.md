@@ -107,3 +107,7 @@ The [Section 18.8 bracket audit](chapter-18-bracket-audit-followup.md) adds actu
 ## KKT rejection follow-up
 
 The [Section 17.9 KKT record](chapter-17-kkt-rejection-followup.md) adds independent field checks and isolated primal/dual/stationarity/complementarity failures. All 20 chapter sources compiled and 10 scripts passed; optimizer unchanged. COV-76 is partially addressed; eleven selected partial categories are tracked. Next selected report-contract review: Section 17.9 finite financial-report arithmetic (COV-77).
+
+## Financial-report range follow-up
+
+The [Section 17.9 financial-range record](chapter-17-financial-range-followup.md) documents explicit range errors and avoided intermediate cost overflow, while preserving underflow limitations. All 20 chapter sources compiled and 10 scripts passed. COV-77 is partially addressed; twelve selected partial categories are tracked.
