@@ -1,6 +1,7 @@
 """Independent mathematical reference checks for Book 02 Section 14.9."""
 import math
 from section_14_09 import project
+from section_14_07 import low_rank_diagonal_exposure
 
 def close(actual,expected):
     assert math.isclose(actual,expected,rel_tol=1e-10,abs_tol=1e-10),(actual,expected)
@@ -65,6 +66,37 @@ def run():
     close(p["rank_one_spectral_error"],2)
     close(p["rank_one_retained_squared_energy_fraction"],0.8)
     vector(p["exposure_lost_by_compression_at_solution"],(0,4,0))
+    assert p["exposure_matrix"]==((4,0),(0,2),(0,0))
+    assert p["rank_one_exposure_matrix"]==((4,0),(0,0),(0,0))
+    assert p["portfolio_weights"]==(0.6,0.4)
+    assert p["exposure_target"]==(8,4,5)
+    assert p["input_units"]=={"covariance":"annualized_return_squared",
+                              "weights":"dimensionless",
+                              "exposure":"illustrative_factor_exposure"}
+    close(p["compression_exposure_error_norm"],4)
+    close(p["compression_exposure_error_bound"],4*math.sqrt(2))
+    assert p["compression_exposure_error_norm"]<=p["compression_exposure_error_bound"]
+    for first,second in ((4,2),(2,4),(2,2),(0,0)):
+        for rank in (0,1,2):
+            compressed=low_rank_diagonal_exposure(first,second,rank)
+            # Derive retained coordinates directly, including tie policy.
+            keep=(set() if rank==0 else {0,1} if rank==2
+                  else {0} if first>=second else {1})
+            dropped=(0 if 0 in keep else first,0 if 1 in keep else second)
+            expected_norm=max(dropped)
+            close(compressed["spectral_error"],expected_norm)
+            for x in ((0,0),(1,0),(0,1),(2,-3)):
+                # Multiply the ACTUAL returned residual matrices by x.
+                loss=tuple(sum((a-b)*v for a,b,v in zip(row,approx,x))
+                           for row,approx in zip(compressed["original"],compressed["approximation"]))
+                vector(loss,(dropped[0]*x[0],dropped[1]*x[1],0))
+                norm=math.hypot(*loss)
+                bound=compressed["spectral_error"]*math.hypot(*x)
+                assert norm<=bound+1e-12
+            # A coordinate direction attaining the spectral norm.
+            axis=(1,0) if dropped[0]>=dropped[1] else (0,1)
+            norm=math.hypot(dropped[0]*axis[0],dropped[1]*axis[1])
+            close(norm,compressed["spectral_error"])
     assert p["runtime_certified"] is False
     assert p["independent_review_completed"] is False
     print("PASS: Section 14.9 independent mathematical reference checks")
