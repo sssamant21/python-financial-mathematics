@@ -44,3 +44,7 @@ Twelve-step labs include proofs, derivations, input units and evidence retention
 | COV-75 | General convexity/quasi-Newton/scaling claims and exact cumulative exercise objectives exceed narrow scalar/fixed-data checks; derivative step extremes remain untested. | Independent proof/unit review, exact objective scope mapping and selected numerical boundary cases. Do not claim BFGS or global-optimum certification from scalar secant/multistart examples. |
 
 These extend COV-01–COV-72; gap categories are not defect counts. No code/manuscript changes or runtime execution were performed for this map. Independent mathematical/editorial review and canonical approval remain pending.
+
+## Subsequent COV-74 remediation — 2026-10-29
+
+The [per-candidate acceptance follow-up](chapter-16-candidate-acceptance-followup.md) recomputes price metrics, normalized loss and gradient for every iterative candidate and records individual acceptance. Fraction-based residual/metric references and failed status/rate/gradient/holdout/budget cases are checked. All 20 chapter files compiled and all 10 scripts passed. COV-74 retains broader invalid-data, optimizer/threshold and independent-review work; original mapping evidence remains historical.
