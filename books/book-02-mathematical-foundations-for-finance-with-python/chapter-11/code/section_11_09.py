@@ -72,12 +72,13 @@ def calculate(prices,holdings,nav,scenarios,policy=Policy()):
     gap=finite(nav-signed,"NAV reconciliation difference")
     breaches=[]
     tolerance=1e-10
+    gap_tolerance=1e-8
     if gross>policy.gross_cap+tolerance:
         breaches.append("gross_cap")
     for label,w in zip(prices.labels,weights):
         if abs(w)>policy.absolute_name_cap+tolerance:
             breaches.append("absolute_name_cap:"+label)
-    if abs(gap)>policy.max_unexplained_nav_gap_usd+1e-8:
+    if abs(gap)>policy.max_unexplained_nav_gap_usd+gap_tolerance:
         breaches.append("unexplained_nav_gap")
     if type(scenarios) is not dict or not scenarios:
         raise ValueError("nonempty scenario mapping required")
@@ -97,7 +98,11 @@ def calculate(prices,holdings,nav,scenarios,policy=Policy()):
             "unexplained_nav_difference_USD":gap,
             "exposures":{"net":net,"gross":gross,"long":long,"short":short},
             "scenarios":scenario_results,
-            "policy":{"feasible":not breaches,"breaches":breaches},
+            "policy":{"feasible":not breaches,"breaches":breaches,
+                      "limits":{"gross_cap":policy.gross_cap,
+                                "absolute_name_cap":policy.absolute_name_cap,
+                                "max_unexplained_nav_gap_usd":policy.max_unexplained_nav_gap_usd},
+                      "comparison_tolerances":{"exposure":tolerance,"nav_gap_USD":gap_tolerance}},
             "assumptions":"USD; static holdings; simple returns; independently supplied NAV; unexplained NAV gap is not assumed to be cash",
             "runtime_certified":False,"independent_review_completed":False}
 
