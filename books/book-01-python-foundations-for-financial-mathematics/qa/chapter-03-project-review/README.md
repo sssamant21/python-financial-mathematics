@@ -17,3 +17,6 @@ Fixed precision40 with HALF_EVEN and the stated traps/flags is deliberately diff
 Reproduce: create an isolated mypy environment, set CH3_MYPY_PYTHON to its interpreter, then run `python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-03-project-review/review.py` from repository root. Actual runtime:CPython3.12.14 Linux x86_64. Windows/macOS and independent financial/model/source/editorial acceptance remain open. No manuscript/code fence changed.
 
 Next:review the6 explicit project extension tasks, keeping proposed signed flows/quantization/effective conversion distinct from the canonical library contract. Book1 F28 notebook/platform and F32 arbitrary shared-input integration gaps remain open.
+
+
+Follow-up:all six extension tasks now have [scoped implementation/design records](../chapter-03-extensions/README.md). Their future implementation/packaging and independent acceptance limits remain explicit.

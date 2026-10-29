@@ -1,0 +1,186 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "source_sha256": "caa58228f06c3bc85da4d74f3c232567ed56cfd7e05b3f4eeb133c24e07eb834",
+  "canonical_code_sha256": "3f1e492ed0ae33f0537080dc45c119c2fb39ffd0ea8c9c9ad37458ded605f36b",
+  "tasks": 6,
+  "runtime_predicates": 24,
+  "passed": 24,
+  "failed": 0,
+  "underflow_probe": {
+    "base": "1E-2000",
+    "growth": "0E-1000038",
+    "underflow": true,
+    "inexact": true
+  },
+  "checks": [
+    {
+      "task": 1,
+      "label": "signed receipt/payment",
+      "actual": "1E+2",
+      "expected": "100",
+      "status": "PASS"
+    },
+    {
+      "task": 1,
+      "label": "signed receipt/payment",
+      "actual": "-1E+2",
+      "expected": "-100",
+      "status": "PASS"
+    },
+    {
+      "task": 1,
+      "label": "signed receipt/payment",
+      "actual": "0E+2",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "task": 1,
+      "label": "expected rejection",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "task": 1,
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "task": 1,
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "task": 2,
+      "label": "positive representable base",
+      "actual": "1E-2000",
+      "expected": "1E-2000",
+      "status": "PASS"
+    },
+    {
+      "task": 2,
+      "label": "positive exact factor underflows to zero",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "task": 2,
+      "label": "underflow signal",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "task": 2,
+      "label": "expected rejection",
+      "actual": "ArithmeticError",
+      "expected": "ArithmeticError",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "final cents HALF_UP",
+      "actual": "1.00",
+      "expected": "1.00",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "final cents HALF_UP",
+      "actual": "1.01",
+      "expected": "1.01",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "final cents HALF_UP",
+      "actual": "-1.01",
+      "expected": "-1.01",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "final cents HALF_UP",
+      "actual": "0.00",
+      "expected": "0.00",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "posting stage changes later arithmetic",
+      "actual": "(Decimal('2.010'), Decimal('2.02'))",
+      "expected": "(Decimal('2.010'), Decimal('2.02'))",
+      "status": "PASS"
+    },
+    {
+      "task": 3,
+      "label": "raw preserved",
+      "actual": "1.005",
+      "expected": "1.005",
+      "status": "PASS"
+    },
+    {
+      "task": 4,
+      "label": "independent quarterly equivalent known pair",
+      "actual": "515201/6250000",
+      "expected": "515201/6250000",
+      "status": "PASS"
+    },
+    {
+      "task": 5,
+      "label": "scenario rows",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "task": 5,
+      "label": "monthly conversion",
+      "actual": "0.01",
+      "expected": "0.01",
+      "status": "PASS"
+    },
+    {
+      "task": 5,
+      "label": "FV exact rational",
+      "actual": "1126825030131969720661201/1000000000000000000000",
+      "expected": "1126825030131969720661201/1000000000000000000000",
+      "status": "PASS"
+    },
+    {
+      "task": 5,
+      "label": "zero rate amount",
+      "actual": "1000",
+      "expected": "1000",
+      "status": "PASS"
+    },
+    {
+      "task": 5,
+      "label": "metadata counts",
+      "actual": "(12, 12, 'USD')",
+      "expected": "(12, 12, 'USD')",
+      "status": "PASS"
+    }
+  ]
+}
