@@ -1,0 +1,143 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "source_sha256": "caa58228f06c3bc85da4d74f3c232567ed56cfd7e05b3f4eeb133c24e07eb834",
+  "extracted_files": [
+    {
+      "name": "financial_functions.py",
+      "sha256": "3f1e492ed0ae33f0537080dc45c119c2fb39ffd0ea8c9c9ad37458ded605f36b"
+    },
+    {
+      "name": "test_function_library.py",
+      "sha256": "b86f3a9ce4b25f713db199596c3272956a5450c81543ea8aaf07457f7e4af4a7"
+    },
+    {
+      "name": "demo_function_library.py",
+      "sha256": "c71b07eb9f52e77c0ae4e761b5285b824d5a1f01e5f77fbc08186fa60cf9e1ad"
+    }
+  ],
+  "records": [
+    {
+      "label": "full published suite",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_function_library"
+      ],
+      "expected_exit": 0,
+      "expected_fragment": "Ran 12 tests",
+      "expected_stdout": null,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_caller_context_preservation (test_function_library.TestFunctionLibrary.test_caller_context_preservation) ... ok\ntest_composed_nominal_valuation (test_function_library.TestFunctionLibrary.test_composed_nominal_valuation) ... ok\ntest_context_after_overflow (test_function_library.TestFunctionLibrary.test_context_after_overflow) ... ok\ntest_direction_and_round_trip (test_function_library.TestFunctionLibrary.test_direction_and_round_trip) ... ok\ntest_factors (test_function_library.TestFunctionLibrary.test_factors) ... ok\ntest_invalid_monetary_domain (test_function_library.TestFunctionLibrary.test_invalid_monetary_domain) ... ok\ntest_invalid_rate_and_counts (test_function_library.TestFunctionLibrary.test_invalid_rate_and_counts) ... ok\ntest_known_valuations (test_function_library.TestFunctionLibrary.test_known_valuations) ... ok\ntest_negative_rate (test_function_library.TestFunctionLibrary.test_negative_rate) ... ok\ntest_rate_conversions (test_function_library.TestFunctionLibrary.test_rate_conversions) ... ok\ntest_wrong_representations (test_function_library.TestFunctionLibrary.test_wrong_representations) ... ok\ntest_zero_boundaries (test_function_library.TestFunctionLibrary.test_zero_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "label": "exact demo",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "demo_function_library.py"
+      ],
+      "expected_exit": 0,
+      "expected_fragment": null,
+      "expected_stdout": "Monthly effective rate: 1.00%\nEffective annual rate: 12.682503%\nFuture value: 1126.83\nRecovered present value: 1000.00\n",
+      "exit_code": 0,
+      "stdout": "Monthly effective rate: 1.00%\nEffective annual rate: 12.682503%\nFuture value: 1126.83\nRecovered present value: 1000.00\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "label": "silent import",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-c",
+        "import financial_functions"
+      ],
+      "expected_exit": 0,
+      "expected_fragment": null,
+      "expected_stdout": "",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "label": "checker version",
+      "command": [
+        "/tmp/ch3_project_static/bin/python",
+        "-m",
+        "mypy",
+        "--version"
+      ],
+      "expected_exit": 0,
+      "expected_fragment": null,
+      "expected_stdout": null,
+      "exit_code": 0,
+      "stdout": "mypy 2.4.0 (compiled: yes)\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "label": "all three strict",
+      "command": [
+        "/tmp/ch3_project_static/bin/python",
+        "-m",
+        "mypy",
+        "--strict",
+        "financial_functions.py",
+        "test_function_library.py",
+        "demo_function_library.py"
+      ],
+      "expected_exit": 0,
+      "expected_fragment": "Success: no issues found",
+      "expected_stdout": null,
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 3 source files\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "label": "temporary formula defect",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_function_library"
+      ],
+      "expected_exit": 1,
+      "expected_fragment": "FAIL",
+      "expected_stdout": null,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "test_caller_context_preservation (test_function_library.TestFunctionLibrary.test_caller_context_preservation) ... ok\ntest_composed_nominal_valuation (test_function_library.TestFunctionLibrary.test_composed_nominal_valuation) ... FAIL\ntest_context_after_overflow (test_function_library.TestFunctionLibrary.test_context_after_overflow) ... ok\ntest_direction_and_round_trip (test_function_library.TestFunctionLibrary.test_direction_and_round_trip) ... FAIL\ntest_factors (test_function_library.TestFunctionLibrary.test_factors) ... ok\ntest_invalid_monetary_domain (test_function_library.TestFunctionLibrary.test_invalid_monetary_domain) ... ok\ntest_invalid_rate_and_counts (test_function_library.TestFunctionLibrary.test_invalid_rate_and_counts) ... ok\ntest_known_valuations (test_function_library.TestFunctionLibrary.test_known_valuations) ... FAIL\ntest_negative_rate (test_function_library.TestFunctionLibrary.test_negative_rate) ... FAIL\ntest_rate_conversions (test_function_library.TestFunctionLibrary.test_rate_conversions) ... ok\ntest_wrong_representations (test_function_library.TestFunctionLibrary.test_wrong_representations) ... ok\ntest_zero_boundaries (test_function_library.TestFunctionLibrary.test_zero_boundaries) ... ok\n\n======================================================================\nFAIL: test_composed_nominal_valuation (test_function_library.TestFunctionLibrary.test_composed_nominal_valuation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ch3-project-xzi0z2ap/test_function_library.py\", line 49, in test_composed_nominal_valuation\n    self.assertEqual(result, Decimal(\"100\"))\nAssertionError: Decimal('102.01') != Decimal('100')\n\n======================================================================\nFAIL: test_direction_and_round_trip (test_function_library.TestFunctionLibrary.test_direction_and_round_trip)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ch3-project-xzi0z2ap/test_function_library.py\", line 140, in test_direction_and_round_trip\n    self.assertLess(high, low)\nAssertionError: Decimal('1144.9000') not less than Decimal('1060.9000')\n\n======================================================================\nFAIL: test_known_valuations (test_function_library.TestFunctionLibrary.test_known_valuations)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ch3-project-xzi0z2ap/test_function_library.py\", line 18, in test_known_valuations\n    self.assertEqual(\nAssertionError: Decimal('146.4100') != Decimal('100')\n\n======================================================================\nFAIL: test_negative_rate (test_function_library.TestFunctionLibrary.test_negative_rate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ch3-project-xzi0z2ap/test_function_library.py\", line 76, in test_negative_rate\n    self.assertEqual(\nAssertionError: Decimal('810.00') != Decimal('1000')\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nFAILED (failures=4)\n",
+      "status": "PASS"
+    },
+    {
+      "label": "restored suite",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_function_library"
+      ],
+      "expected_exit": 0,
+      "expected_fragment": "OK",
+      "expected_stdout": null,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_caller_context_preservation (test_function_library.TestFunctionLibrary.test_caller_context_preservation) ... ok\ntest_composed_nominal_valuation (test_function_library.TestFunctionLibrary.test_composed_nominal_valuation) ... ok\ntest_context_after_overflow (test_function_library.TestFunctionLibrary.test_context_after_overflow) ... ok\ntest_direction_and_round_trip (test_function_library.TestFunctionLibrary.test_direction_and_round_trip) ... ok\ntest_factors (test_function_library.TestFunctionLibrary.test_factors) ... ok\ntest_invalid_monetary_domain (test_function_library.TestFunctionLibrary.test_invalid_monetary_domain) ... ok\ntest_invalid_rate_and_counts (test_function_library.TestFunctionLibrary.test_invalid_rate_and_counts) ... ok\ntest_known_valuations (test_function_library.TestFunctionLibrary.test_known_valuations) ... ok\ntest_negative_rate (test_function_library.TestFunctionLibrary.test_negative_rate) ... ok\ntest_rate_conversions (test_function_library.TestFunctionLibrary.test_rate_conversions) ... ok\ntest_wrong_representations (test_function_library.TestFunctionLibrary.test_wrong_representations) ... ok\ntest_zero_boundaries (test_function_library.TestFunctionLibrary.test_zero_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "status": "PASS"
+    }
+  ],
+  "passed": 7,
+  "failed": 0
+}
