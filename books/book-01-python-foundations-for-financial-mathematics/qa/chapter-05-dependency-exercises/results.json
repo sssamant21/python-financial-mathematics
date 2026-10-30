@@ -1,0 +1,464 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.06-pip-and-dependency-management.md",
+  "source_sha256": "f57fc9142451326d48d445e54909d5ca204dc876082bb55ee7d83d57478675ca",
+  "code_sha256": "a0cb6d803ec5800ded94024839bee33e4b886648fa7013a384250b36e846173c",
+  "unit_source_sha256": "9a6cf0a9e8dcfb982b3ff711edea38d1c09f25c23ec2316f86726ac42d316057",
+  "report_source_sha256": "ba7a679a262cff9042b903b8c3d55c57495ae103aadfe21423881a330e1feb81",
+  "artifacts": [
+    {
+      "set": "approved",
+      "filename": "book1_unit_demo-1.0.0-py3-none-any.whl",
+      "sha256": "9b86ea6faa48eeaf73d8650a024e30230db88a5f882c3bd5432f76aaaa5cd38f",
+      "metadata": "Metadata-Version: 2.1\nName: book1-unit-demo\nVersion: 1.0.0\nRequires-Python: >=3.10\n\nOriginal offline teaching fixture.\n"
+    },
+    {
+      "set": "approved",
+      "filename": "book1_report_demo-1.0.0-py3-none-any.whl",
+      "sha256": "90e03de0bfd15e204b64cc5b2dab799cef4ad88f1471d3db8a158ae71d884dde",
+      "metadata": "Metadata-Version: 2.1\nName: book1-report-demo\nVersion: 1.0.0\nRequires-Python: >=3.10\nRequires-Dist: book1-unit-demo==1.0.0\n\nOriginal offline teaching fixture.\n"
+    },
+    {
+      "set": "unavailable",
+      "filename": "book1_unit_demo-1.0.0-py3-none-any.whl",
+      "sha256": "9b86ea6faa48eeaf73d8650a024e30230db88a5f882c3bd5432f76aaaa5cd38f",
+      "metadata": "Metadata-Version: 2.1\nName: book1-unit-demo\nVersion: 1.0.0\nRequires-Python: >=3.10\n\nOriginal offline teaching fixture.\n"
+    },
+    {
+      "set": "unavailable",
+      "filename": "book1_report_demo-1.0.0-py3-none-any.whl",
+      "sha256": "7c5386310278dc80b2c934c65a6651ee950f2243e297822c5ef4111d90b18b17",
+      "metadata": "Metadata-Version: 2.1\nName: book1-report-demo\nVersion: 1.0.0\nRequires-Python: >=3.10\nRequires-Dist: book1-unit-demo==2.0.0\n\nOriginal offline teaching fixture.\n"
+    }
+  ],
+  "command_records": 19,
+  "command_passed": 19,
+  "command_failed": 0,
+  "predicates": 12,
+  "passed": 12,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "fresh runtime create",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/dependency-exercises-izxffvtf/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 actual invoked interpreter",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-I",
+        "-c",
+        "import json,sys;print(json.dumps(dict(executable=sys.executable,prefix=sys.prefix,base_prefix=sys.base_prefix)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/tmp/dependency-exercises-izxffvtf/runtime/bin/python\", \"prefix\": \"/tmp/dependency-exercises-izxffvtf/runtime\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\"}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime pip identity",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "pip 25.0.1 from /tmp/dependency-exercises-izxffvtf/runtime/lib/python3.12/site-packages/pip (python 3.12)\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E2 constraints alone are not installation request",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--find-links",
+        "/tmp/dependency-exercises-izxffvtf/approved",
+        "-c",
+        "/tmp/dependency-exercises-izxffvtf/constraints.txt"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "ERROR: You must give at least one requirement to install (maybe you meant \"pip install /tmp/dependency-exercises-izxffvtf/approved\"?)\n",
+      "expected_returncode": 1,
+      "expected_diagnostic": "at least one requirement",
+      "status": "PASS"
+    },
+    {
+      "label": "E2 no fixture installed by constraints",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-I",
+        "-c",
+        "from importlib.util import find_spec;assert find_spec('book1_report_demo') is None;assert find_spec('book1_unit_demo') is None"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 unavailable transitive version",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-cache-dir",
+        "--find-links",
+        "/tmp/dependency-exercises-izxffvtf/unavailable",
+        "-r",
+        "/tmp/dependency-exercises-izxffvtf/requirements.txt"
+      ],
+      "returncode": 1,
+      "stdout": "Looking in links: /tmp/dependency-exercises-izxffvtf/unavailable\nProcessing /tmp/dependency-exercises-izxffvtf/unavailable/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/dependency-exercises-izxffvtf/requirements.txt (line 1))\nINFO: pip is looking at multiple versions of book1-report-demo to determine which version is compatible with other requirements. This could take a while.\n",
+      "stderr": "ERROR: Could not find a version that satisfies the requirement book1-unit-demo==2.0.0 (from book1-report-demo) (from versions: 1.0.0)\nERROR: No matching distribution found for book1-unit-demo==2.0.0\n",
+      "expected_returncode": 1,
+      "expected_diagnostic": "book1-unit-demo==2.0.0",
+      "status": "PASS"
+    },
+    {
+      "label": "E1 failed resolution has no fixture imports",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-I",
+        "-c",
+        "from importlib.util import find_spec;assert find_spec('book1_report_demo') is None;assert find_spec('book1_unit_demo') is None"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1/E2 corrected approved install with constraint",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-cache-dir",
+        "--find-links",
+        "/tmp/dependency-exercises-izxffvtf/approved",
+        "-r",
+        "/tmp/dependency-exercises-izxffvtf/requirements.txt",
+        "-c",
+        "/tmp/dependency-exercises-izxffvtf/constraints.txt"
+      ],
+      "returncode": 0,
+      "stdout": "Looking in links: /tmp/dependency-exercises-izxffvtf/approved\nProcessing /tmp/dependency-exercises-izxffvtf/approved/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/dependency-exercises-izxffvtf/requirements.txt (line 1))\nProcessing /tmp/dependency-exercises-izxffvtf/approved/book1_unit_demo-1.0.0-py3-none-any.whl (from book1-report-demo==1.0.0->-r /tmp/dependency-exercises-izxffvtf/requirements.txt (line 1))\nInstalling collected packages: book1-unit-demo, book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0 book1-unit-demo-1.0.0\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "repaired declared dependencies",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "exact original installed behavior checks",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport sys\nimport book1_report_demo\n\nassert version(\"book1-report-demo\") == \"1.0.0\"\nassert version(\"book1-unit-demo\") == \"1.0.0\"\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert book1_report_demo.labeled_quantity(value) == (\"instrument_units\", value)\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(\"installed behavior passed\")\n"
+      ],
+      "returncode": 0,
+      "stdout": "installed behavior passed\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E5 independent installed zero/fraction expectations",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport json,sys,book1_report_demo,book1_unit_demo\nfrom importlib.metadata import version\nrows=[]\nfor text in ['0','12.50']:\n label,value=book1_report_demo.labeled_quantity(Decimal(text))\n rows.append(dict(label=label,text=str(value),exact_decimal=type(value) is Decimal,tuple=list(value.as_tuple()[:2])+[value.as_tuple().exponent]))\nprint(json.dumps(dict(rows=rows,versions={name:version(name) for name in ['book1-report-demo','book1-unit-demo']},origins_owned=all(Path(m.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()) for m in [book1_report_demo,book1_unit_demo]))))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"rows\": [{\"label\": \"instrument_units\", \"text\": \"0\", \"exact_decimal\": true, \"tuple\": [0, [0], 0]}, {\"label\": \"instrument_units\", \"text\": \"12.50\", \"exact_decimal\": true, \"tuple\": [0, [1, 2, 5, 0], -2]}], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}, \"origins_owned\": true}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "installed freeze inventory",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "freeze"
+      ],
+      "returncode": 0,
+      "stdout": "book1-report-demo==1.0.0\nbook1-unit-demo==1.0.0\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 separate runtime create",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 incomplete --no-deps install",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--find-links",
+        "/tmp/dependency-exercises-izxffvtf/approved",
+        "--no-deps",
+        "book1-report-demo==1.0.0"
+      ],
+      "returncode": 0,
+      "stdout": "Looking in links: /tmp/dependency-exercises-izxffvtf/approved\nProcessing /tmp/dependency-exercises-izxffvtf/approved/book1_report_demo-1.0.0-py3-none-any.whl\nInstalling collected packages: book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 expected dependency metadata failure",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "check"
+      ],
+      "returncode": 1,
+      "stdout": "book1-report-demo 1.0.0 requires book1-unit-demo, which is not installed.\n",
+      "stderr": "",
+      "expected_returncode": 1,
+      "expected_diagnostic": "book1-unit-demo",
+      "status": "PASS"
+    },
+    {
+      "label": "E4 expected missing imported dependency",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime/bin/python",
+        "-I",
+        "-c",
+        "import book1_report_demo"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/tmp/dependency-exercises-izxffvtf/no-deps-runtime/lib/python3.12/site-packages/book1_report_demo/__init__.py\", line 2, in <module>\n    from book1_unit_demo import checked_quantity\nModuleNotFoundError: No module named 'book1_unit_demo'\n",
+      "expected_returncode": 1,
+      "expected_diagnostic": "No module named 'book1_unit_demo'",
+      "status": "PASS"
+    },
+    {
+      "label": "E4 approved normal dependency repair",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--find-links",
+        "/tmp/dependency-exercises-izxffvtf/approved",
+        "-r",
+        "/tmp/dependency-exercises-izxffvtf/requirements.txt"
+      ],
+      "returncode": 0,
+      "stdout": "Looking in links: /tmp/dependency-exercises-izxffvtf/approved\nRequirement already satisfied: book1-report-demo==1.0.0 in /tmp/dependency-exercises-izxffvtf/no-deps-runtime/lib/python3.12/site-packages (from -r /tmp/dependency-exercises-izxffvtf/requirements.txt (line 1)) (1.0.0)\nProcessing /tmp/dependency-exercises-izxffvtf/approved/book1_unit_demo-1.0.0-py3-none-any.whl (from book1-report-demo==1.0.0->-r /tmp/dependency-exercises-izxffvtf/requirements.txt (line 1))\nInstalling collected packages: book1-unit-demo\nSuccessfully installed book1-unit-demo-1.0.0\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 repaired metadata",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 repaired exact original behavior",
+      "argv": [
+        "/tmp/dependency-exercises-izxffvtf/no-deps-runtime/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport sys\nimport book1_report_demo\n\nassert version(\"book1-report-demo\") == \"1.0.0\"\nassert version(\"book1-unit-demo\") == \"1.0.0\"\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert book1_report_demo.labeled_quantity(value) == (\"instrument_units\", value)\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(\"installed behavior passed\")\n"
+      ],
+      "returncode": 0,
+      "stdout": "installed behavior passed\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.6-E3",
+      "label": "sys.executable equals invoked path",
+      "actual": "'/tmp/dependency-exercises-izxffvtf/runtime/bin/python'",
+      "expected": "'/tmp/dependency-exercises-izxffvtf/runtime/bin/python'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.6-E3",
+      "label": "prefix is selected runtime",
+      "actual": "PosixPath('/tmp/dependency-exercises-izxffvtf/runtime')",
+      "expected": "PosixPath('/tmp/dependency-exercises-izxffvtf/runtime')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.6-E3",
+      "label": "prefix differs base",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.6-E5",
+      "label": "zero/fraction label and text",
+      "actual": "[('instrument_units', '0', True), ('instrument_units', '12.50', True)]",
+      "expected": "[('instrument_units', '0', True), ('instrument_units', '12.50', True)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.6-E5",
+      "label": "Decimal scale retained",
+      "actual": "[0, -2]",
+      "expected": "[0, -2]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.6-E5",
+      "label": "installed versions",
+      "actual": "{'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}",
+      "expected": "{'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.6-E5",
+      "label": "installed origin under selected runtime",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "local artifact unchanged approved/book1_report_demo-1.0.0-py3-none-any.whl",
+      "actual": "'90e03de0bfd15e204b64cc5b2dab799cef4ad88f1471d3db8a158ae71d884dde'",
+      "expected": "'90e03de0bfd15e204b64cc5b2dab799cef4ad88f1471d3db8a158ae71d884dde'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "local artifact unchanged approved/book1_unit_demo-1.0.0-py3-none-any.whl",
+      "actual": "'9b86ea6faa48eeaf73d8650a024e30230db88a5f882c3bd5432f76aaaa5cd38f'",
+      "expected": "'9b86ea6faa48eeaf73d8650a024e30230db88a5f882c3bd5432f76aaaa5cd38f'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "local artifact unchanged unavailable/book1_report_demo-1.0.0-py3-none-any.whl",
+      "actual": "'7c5386310278dc80b2c934c65a6651ee950f2243e297822c5ef4111d90b18b17'",
+      "expected": "'7c5386310278dc80b2c934c65a6651ee950f2243e297822c5ef4111d90b18b17'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "local artifact unchanged unavailable/book1_unit_demo-1.0.0-py3-none-any.whl",
+      "actual": "'9b86ea6faa48eeaf73d8650a024e30230db88a5f882c3bd5432f76aaaa5cd38f'",
+      "expected": "'9b86ea6faa48eeaf73d8650a024e30230db88a5f882c3bd5432f76aaaa5cd38f'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "owned temporary resources cleaned",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}
