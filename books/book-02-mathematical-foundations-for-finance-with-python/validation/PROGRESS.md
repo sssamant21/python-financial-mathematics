@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped optimizer-status follow-up
+## Latest scoped multistart reference follow-up
+
+Four selected starts now have independent stationary-cubic root/objective references and real failed/mixed pool checks. A stationary local maximum demonstrates status limits. All 22 Chapter 16 files compiled and 12 scripts passed; implementation unchanged. [Evidence](chapter-16-multistart-reference-followup.md). COV-73/75 partially open; follows V-38.
+
+## Earlier scoped optimizer-status follow-up
 
 Selected Section 16.5/16.7 Armijo/status obligations now have exact rational sufficient-decrease references and real failure-path checks. All 21 Chapter 16 files compiled and 11 scripts passed; implementation unchanged. [Evidence](chapter-16-optimizer-status-followup.md). COV-73 partially open; follows V-38.
 
@@ -417,3 +421,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Optimizer status and Armijo follow-up — 2026-10-30
 
 [Chapter 16 evidence](chapter-16-optimizer-status-followup.md) adds nine adjacent sufficient-decrease cases, objective/backtracking counts and selected stationary/stagnation/budget/no-descent states. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This checker follows V-38; twenty-seven categories are partially addressed and COV-73 remains open. Next executable item: Section 16.7 multistart/best-observed independent stationary-cubic roots and local classification; no global-optimum certification. Independent-review, platform and release gates remain pending.
+
+## Independent multistart reference follow-up — 2026-10-30
+
+[Section 16.7 evidence](chapter-16-multistart-reference-followup.md) checks four default starts against independent 80-digit stationary roots/objectives and curvature classification, plus real failed/mixed pools. Gradient-tolerance at the middle local maximum explicitly preserves the distinction from a minimum/global certificate. All 22 chapter files compiled and 12 scripts passed; implementation unchanged. This follows V-38; twenty-eight categories are partially addressed. Next executable item: Section 16.7 scaling transforms, Hessian condition and stable-step bounds with units explicit. Independent-review, platform and release gates remain pending.
