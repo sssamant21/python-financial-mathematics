@@ -1,0 +1,242 @@
+[
+  {
+    "id": "7.13",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "baseline": "9439a8da8e0eb26c8131acf892ec730aae494ea2",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor,not independent acceptance",
+    "contract": {
+      "question": "Summarize supplied single-instrument events in an independently specified UTC half-hour reporting horizon.",
+      "inputs": "Exact price/volume frame,1\u201310000 events,unique aware complete DatetimeIndex. Ordinary finite nonnegative numeric values. Aware Timestamp boundaries aligned to UTC half hours; positive horizon<=1day,all events inside[start,end). Consistent price and event-volume units assumed.",
+      "outputs": "UTC interval_end grid with at most48 right-labeled,left-closed,epoch-anchored bins. OHLC from chronologically sorted events,volume sum(min_count=1),event_count and has_observations. Leading/trailing empty bins preserved; financial measuresNaN,counts0.",
+      "oracle": "First[14:00,14:30) contains prices100,102,volume10+20=30,OHLC100/102/100/102. Boundary14:30 belongsnextbin close101. Counts[2,1,0,1],volumes30/5/NaN/7,sum42. Explicit end16:00 excluded. Single14:30event yields[0,1,0,0] with both edge gaps. Observedzero is distinct from emptyNaN.",
+      "limits": "Bins summarize supplied events,not certified complete feed or trading sessions. Bar label is neither close-observation time nor availability proof. Unique timestamps are a teaching grain,not general trade-feed grain. Cumulative volume cannot be summed as event volume; asfreq is grid selection,not OHLC. No venue calendar/multi-event ordering integration or exact accounting."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5/options verified;fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling resampling.py/test_resampling.py reconstructed in documented parent/lab layout;hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory:empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full console values,labels,NaNs and line order match explicit published-table expectations after whitespace-only normalization"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32total existingmethods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All12 explanatory fences execute unchanged with explicit source prerequisites;independent scalar/rational expectations and supplemental source-call probes retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Bins summarize supplied events,not certified complete feed or trading sessions. Bar label is neither close-observation time nor availability proof. Unique timestamps are a teaching grain,not general trade-feed grain. Cumulative volume cannot be summed as event volume; asfreq is grid selection,not OHLC. No venue calendar/multi-event ordering integration or exact accounting."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.14",
+    "source": "chapter-07/7.14-rolling-and-expanding-calculations.md",
+    "source_sha256": "be636ab7060ca069ed2a390fbb06398ec5a3461dcac47d30188a4cef12df6fa4",
+    "baseline": "9439a8da8e0eb26c8131acf892ec730aae494ea2",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor,not independent acceptance",
+    "contract": {
+      "question": "Build trailing three-observation and expanding descriptive price summaries while preserving warm-up and alignment.",
+      "inputs": "Series1\u201310000 complete finite nonnegative ordinary numeric prices,unique increasing aware DatetimeIndex. Unsorted input rejects instead of silently sorting. Single instrument/common price convention; irregular spacing intentional.",
+      "outputs": "Owned float64 price,rolling_mean,rolling_std(ddof1),expanding_mean,prior_mean on UTC index. Three-observation window current-inclusive,right-aligned,min_periods3; prior_mean shifts computed mean one row. Mature values finite; leadingNaNs intentional.",
+      "oracle": "Three-row means102/104/106,standard deviations2 from squared deviations8/(3-1)=4. Expanding scalar means100/101/102/103/104. First2 rolling rows and first3 prior rowsNaN. At14:40,30min right-closed window excludes14:10 and returns104 rather than102. Final-price perturbation preserves all earlier outputs and lastprior104.",
+      "limits": "Price standard deviation has price units,not return volatility or annualized risk. Equal observation weights are not time weights. Shift1row is not30elapsed minutes or tradingday. Future-perturbation checks do not establish publication/decision availability. Overlapping samples,source completeness,extreme variance accuracy and platform acceptance remain outside scope."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5/options verified;fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling windows.py/test_windows.py reconstructed in documented parent/lab layout;hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory:empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full console values,labels,NaNs and line order match explicit published-table expectations after whitespace-only normalization"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32total existingmethods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All12 explanatory fences execute unchanged with explicit source prerequisites;independent scalar/rational expectations and supplemental source-call probes retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Price standard deviation has price units,not return volatility or annualized risk. Equal observation weights are not time weights. Shift1row is not30elapsed minutes or tradingday. Future-perturbation checks do not establish publication/decision availability. Overlapping samples,source completeness,extreme variance accuracy and platform acceptance remain outside scope."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.15",
+    "source": "chapter-07/7.15-price-to-return-transformation.md",
+    "source_sha256": "e04602878a849a0612c475f95acb2fa4f31b0fef4462d232779a45efecdd24d8",
+    "baseline": "9439a8da8e0eb26c8131acf892ec730aae494ea2",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor,not independent acceptance",
+    "contract": {
+      "question": "Transform complete positive prices into adjacent-observation returns with explicit interval identities and endpoint reconciliation.",
+      "inputs": "Series2\u201310000 positive finite ordinary numeric prices,unique increasing aware index. Same instrument,currency,unit and adjustment basis,no flows/distributions/fees/FX. UTC-normalized copied numeric source; no implicit fill or inferred calendar.",
+      "outputs": "Price,interval_start,elapsed,simple_return,gross_return,log_return,cumulative_price_return. First intervalNaN/NaT with baseline cumulative0. Finite supported mature outputs,positive gross and simple>-1; zero prices excluded from combined log-capable API.",
+      "oracle": "110/100-1=1/10;99/110-1=-1/10;grossproduct(11/10)*(9/10)-1=-1/100 equals99/100-1. Adjacent sum0 differsfromlinked-.01. Elapsed3days then1day. Logsum agreeswithmath.log(99/100) within1e-12. First cumulative0 is baseline,not an observed firstintervalreturn.",
+      "limits": "Rowpair is not daily/session interval. No-fill does not prove expected schedule completeness. Positive-price returns do not establish total-return adjustment/corporate-action/cashflow correctness. Normal rounding and small-change/log cancellation remain; strict range guards are not arbitrary precision. Terminalzero could support a separate simple-only contract,not this combined API."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5/options verified;fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling returns.py/test_returns.py reconstructed in documented parent/lab layout;hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory:empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full console values,labels,NaNs and line order match explicit published-table expectations after whitespace-only normalization"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32total existingmethods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All12 explanatory fences execute unchanged with explicit source prerequisites;independent scalar/rational expectations and supplemental source-call probes retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Rowpair is not daily/session interval. No-fill does not prove expected schedule completeness. Positive-price returns do not establish total-return adjustment/corporate-action/cashflow correctness. Normal rounding and small-change/log cancellation remain; strict range guards are not arbitrary precision. Terminalzero could support a separate simple-only contract,not this combined API."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.16",
+    "source": "chapter-07/7.16-multi-asset-datasets.md",
+    "source_sha256": "83e517d913a9e54e553439bdc018fdb81a45b723de87834ab3476b5858d70d5f",
+    "baseline": "9439a8da8e0eb26c8131acf892ec730aae494ea2",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor,not independent acceptance",
+    "contract": {
+      "question": "Reshape unique asset-time observations onto independent expected axes and compare only adjacent common-grid endpoints.",
+      "inputs": "Tuple1\u2013100 unique trimmed assets<=64chars;aware complete increasing unique DatetimeIndex2\u20131000times,grid<=100000cells. Long frame1\u2013100000 records exact time/asset/price,aware datetime timecolumn,ordinary positive finite prices,keys subsetofexpectedaxes andunique after UTC normalization.",
+      "outputs": "Wide prices with expected ordered assets/times,unfilled wide adjacent-grid returns and complete_interval flag only when all expected endpoints exist. Structural absence retained; suppliedNaN rejects. No portfolio weights or partial averaging/renormalization.",
+      "oracle": "ALPHA100/110/99 =>+.1/-.1. BETA200/missing/220 =>both adjacent returnsNaN and completeflags[False,False,False]. SuppliedmiddleBETA210 =>[False,True,True],BETAreturns1/20 and1/21. Entire absentasset/time remainsvisible. BETAendpoint+.1 spans2days and is not missing1dayreturn.",
+      "limits": "Expected axes need independent provenance; UTC labels do not prove fresh synchronized quotes or availability. Common currency/per-unit and adjustment assumptions are not established by schemas. Synthetic weekend grid is not venue calendar. No covariance sample policy,portfolio performance,as-of matching or matrix-model acceptance. Gridcap is not peak-memory guarantee; float64 range/rounding limits remain."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5/options verified;fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling panel.py/test_panel.py reconstructed in documented parent/lab layout;hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory:empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full console values,labels,NaNs and line order match explicit published-table expectations after whitespace-only normalization"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32total existingmethods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All12 explanatory fences execute unchanged with explicit source prerequisites;independent scalar/rational expectations and supplemental source-call probes retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Expected axes need independent provenance; UTC labels do not prove fresh synchronized quotes or availability. Common currency/per-unit and adjustment assumptions are not established by schemas. Synthetic weekend grid is not venue calendar. No covariance sample policy,portfolio performance,as-of matching or matrix-model acceptance. Gridcap is not peak-memory guarantee; float64 range/rounding limits remain."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  }
+]
