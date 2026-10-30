@@ -1,6 +1,7 @@
 """Book 02 Section 15.8: level sets and sensitivity interpretation."""
 import json
 import math
+from fractions import Fraction
 
 def number(value,name):
     if type(value) not in (int,float):
@@ -35,12 +36,22 @@ def exact_unchanged_value_time(rate,years,rate_shock):
     r=number(rate,"rate")
     t=number(years,"years")
     dr=number(rate_shock,"rate shock")
-    if t<0 or r==0 or r+dr==0:
+    if t<0 or r==0:
         raise ValueError("invalid maturity or zero rate")
-    new_time=number(r*t/(r+dr),"adjusted maturity")
-    if new_time<0:
+    new_rate=number(r+dr,"shocked rate")
+    if new_rate==0:
+        raise ValueError("invalid maturity or zero rate")
+    # Preserve the represented numerator product before the final rounding.
+    exact_time=Fraction(r)*Fraction(t)/Fraction(new_rate)
+    if exact_time<0:
         raise ValueError("adjusted maturity outside nonnegative domain")
-    return new_time
+    try:
+        new_time=float(exact_time)
+    except OverflowError as exc:
+        raise ValueError("adjusted maturity outside floating-point range") from exc
+    if exact_time>0 and new_time==0:
+        raise ValueError("positive adjusted maturity underflows to zero")
+    return number(new_time,"adjusted maturity")
 
 def portfolio_variance(weight1,weight2):
     w1=number(weight1,"weight1")
