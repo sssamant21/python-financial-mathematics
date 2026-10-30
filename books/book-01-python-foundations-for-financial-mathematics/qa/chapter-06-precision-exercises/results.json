@@ -1,0 +1,249 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.14-numerical-precision-and-numpy.md",
+  "source_sha256": "e4cf4db0c6df1d925009ff5dadff99ae1dd9482302dc7040f596fc66454c1516",
+  "listing_sha256": [
+    "54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc",
+    "6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 24,
+  "failed": 0,
+  "tiny_oracles": [
+    {
+      "count": 1,
+      "decimal_text_reference": "1E-17",
+      "exact_fraction": "1/100000000000000000",
+      "actual": 1e-17,
+      "naive": 0.0,
+      "relative_error_vs_float_reference": 0.0
+    },
+    {
+      "count": 10,
+      "decimal_text_reference": "1.00000000000000004500000000000000120000000000000002100000000000000025200000000000000E-16",
+      "exact_fraction": "10000000000000000450000000000000012000000000000000210000000000000002520000000000000021000000000000000120000000000000000450000000000000001000000000000000001/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "actual": 1.0000000000000001e-16,
+      "naive": 0.0,
+      "relative_error_vs_float_reference": 0.0
+    }
+  ],
+  "observations": {
+    "cancellation": {
+      "fixture": "[1e16] + [1.0]*100 + [-1e16]",
+      "count": 102,
+      "ordered_cumulative_final": 0.0,
+      "separate_numpy_reduction": 84.0,
+      "math_fsum": 100.0,
+      "exact_fraction": "100",
+      "absolute_errors": {
+        "cumulative": 100.0,
+        "reduction": 16.0,
+        "fsum": 0.0
+      }
+    }
+  },
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_accumulation_order (test_precision_lab.PrecisionTests.test_accumulation_order) ... ok\ntest_cast_loss_and_spacing (test_precision_lab.PrecisionTests.test_cast_loss_and_spacing) ... ok\ntest_invalid_comparisons (test_precision_lab.PrecisionTests.test_invalid_comparisons) ... ok\ntest_ordinary_and_zero_returns (test_precision_lab.PrecisionTests.test_ordinary_and_zero_returns) ... ok\ntest_overflow_restores_settings (test_precision_lab.PrecisionTests.test_overflow_restores_settings) ... ok\ntest_return_domain_and_storage (test_precision_lab.PrecisionTests.test_return_domain_and_storage) ... ok\ntest_tiny_return_decimal_reference (test_precision_lab.PrecisionTests.test_tiny_return_decimal_reference) ... ok\ntest_tolerance_scale (test_precision_lab.PrecisionTests.test_tolerance_scale) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.040s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "precision_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "float64 epsilon near 1: 2.220446e-16\nNaive tiny linked return: 0.000000e+00\nlog1p/expm1 tiny linked return: 3.000000e-17\nDefault near-zero isclose: True\nExplicit near-zero agreement: False\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.14-E1",
+      "label": "Decimal vs rational reference 1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "source tiny nonzero linked return 1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "naive loses tiny increments 1",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "source inputs preserved 1",
+      "actual": "b'\\x97\\xd4FF\\xf5\\x0eg<'",
+      "expected": "b'\\x97\\xd4FF\\xf5\\x0eg<'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "Decimal vs rational reference 10",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "source tiny nonzero linked return 10",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "naive loses tiny increments 10",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E1",
+      "label": "source inputs preserved 10",
+      "actual": "b'\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<'",
+      "expected": "b'\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<\\x97\\xd4FF\\xf5\\x0eg<'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E2",
+      "label": "NumPy broadcasting would permit mismatch",
+      "actual": "(2,)",
+      "expected": "(2,)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E2",
+      "label": "source forbids comparison broadcasting",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6precisionx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-precision-exercises/review.py\", line 17, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6precisionx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-precision-exercises/review.py\", line 32, in <lambda>\n    reject('6.14-E2','source forbids comparison broadcasting',lambda:m.agrees(np.array([1.,1.]),np.array([1.]),rtol=0.,atol=0.),'ValueError')\n                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6precisionx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.14-numerical-precision-and-numpy.md\", line 38, in agrees\nValueError: comparison shapes must match\n"
+    },
+    {
+      "exercise": "6.14-E3",
+      "label": "spacing near one equals exact binary epsilon",
+      "actual": "Fraction(1, 4503599627370496)",
+      "expected": "Fraction(1, 4503599627370496)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E3",
+      "label": "spacing near 10^16 is two",
+      "actual": "2.0",
+      "expected": "2.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E3",
+      "label": "integer increment lost locally",
+      "actual": "1e+16",
+      "expected": "1e+16",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E4",
+      "label": "illustrative rate comparison rejects chosen absolute error",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E4",
+      "label": "illustrative USD comparison accepts 0.5 micro-dollar error",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E5",
+      "label": "same two-decimal display",
+      "actual": "('100.00', '100.00')",
+      "expected": "('100.00', '100.00')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E5",
+      "label": "underlying values fail explicit criterion",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E6",
+      "label": "independent rational cancellation sum",
+      "actual": "Fraction(100, 1)",
+      "expected": "Fraction(100, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E6",
+      "label": "fsum matches exact supplied-float sum",
+      "actual": "Fraction(100, 1)",
+      "expected": "Fraction(100, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E6",
+      "label": "ordered cumulative loses unit increments",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E7",
+      "label": "exact arithmetic cannot repair mislabeled input",
+      "actual": "(Fraction(9, 200), Fraction(0, 1))",
+      "expected": "(Fraction(9, 200), Fraction(0, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.14-E8",
+      "label": "transformed source does not accept arbitrary positive simple return",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6precisionx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-precision-exercises/review.py\", line 17, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6precisionx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-precision-exercises/review.py\", line 49, in <lambda>\n    reject('6.14-E8','transformed source does not accept arbitrary positive simple return',lambda:m.linked_return(np.array([1.])),'ValueError')\n                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6precisionx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.14-numerical-precision-and-numpy.md\", line 16, in linked_return\n    ## 6.14.2 Learning Objectives\n            ^^^^^^^^^^^^^^^^^^^^^^\nValueError: returns must be finite and in [-0.5, 0.5]\n"
+    },
+    {
+      "exercise": "6.14-E8",
+      "label": "simple scalar can round to total loss despite positive exact gross",
+      "actual": "(-1.0, True)",
+      "expected": "(-1.0, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'precision_lab.py': '54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc', 'test_precision_lab.py': '6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b'}",
+      "expected": "{'precision_lab.py': '54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc', 'test_precision_lab.py': '6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b'}",
+      "status": "PASS"
+    }
+  ]
+}
