@@ -92,6 +92,31 @@ def curvature(rows):
     exact=sum((1000*Fraction(t))**2 for t,_ in observations(rows))
     return _rounded_calibration(exact,"curvature")
 
+def rank_deficient_example():
+    """Fixed m(a,b)=a+b lab; rank from exact small-matrix minors, not SVD."""
+    data=(2.0,3.0,4.0)
+    jacobian=tuple((1.0,1.0) for _ in data)
+    minors=tuple(jacobian[i][0]*jacobian[j][1]-jacobian[i][1]*jacobian[j][0]
+                 for i in range(len(data)) for j in range(i+1,len(data)))
+    rank=2 if any(minors) else int(any(v for row in jacobian for v in row))
+    normal=tuple(tuple(sum(row[i]*row[j] for row in jacobian)
+                       for j in range(2)) for i in range(2))
+    def evaluate(a,b,offset=0.0):
+        prediction=a+b
+        errors=tuple(prediction-y for y in data)
+        grad=tuple(sum(row[j]*e for row,e in zip(jacobian,errors)) for j in range(2))
+        return {"offset":offset,"parameters":(a,b),
+                "predictions":tuple(prediction for _ in data),"residuals":errors,
+                "loss":float(sum(Fraction(e)**2 for e in errors)/2),"gradient":grad}
+    offsets=(-4.0,-0.5,0.0,0.5,4.0)
+    return {"observations":data,"jacobian":jacobian,"jacobian_minors":minors,
+            "jacobian_rank":rank,"normal_matrix":normal,
+            "normal_determinant":normal[0][0]*normal[1][1]-normal[0][1]*normal[1][0],
+            "null_direction":(1.0,-1.0),"fitted_sum":sum(data)/len(data),
+            "optimal_family":[evaluate(1.0+d,2.0-d,d) for d in offsets],
+            "nonoptimal_family":[evaluate(d,-d,d) for d in offsets],
+            "off_null_probe":evaluate(2.0,2.0),"individual_parameters_identified":False}
+
 def assessment():
     rate=fit_rate(TRAINING)
     train_errors=residuals(rate,TRAINING)
@@ -104,6 +129,7 @@ def assessment():
             "gradient":gradient(rate,TRAINING),
             "curvature":curvature(TRAINING),
             "weighted_loss":weighted_loss(rate,TRAINING,(1,2,1)),
+            "rank_deficient_example":rank_deficient_example(),
             "runtime_certified":False,
             "independent_review_completed":False}
 
