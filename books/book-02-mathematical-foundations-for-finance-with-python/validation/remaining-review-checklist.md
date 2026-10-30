@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`  
-**Latest scoped source revision:** `bf81791b09530e2711c89ca4960d62bd571bb9b9`  
-**Disposition:** Earlier V-45 full runtime plus subsequent Section17.4 active-boundary scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `df656dbbe59bda073bf662392c9f0348fc18cc83`  
+**Latest scoped source revision:** `df656dbbe59bda073bf662392c9f0348fc18cc83`  
+**Disposition:** V-46 full candidate runtime includes both Section17.4 follow-ups; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-46 fifteenth refresh](runtime-refresh-2026-10-30-r10.md) includes the Section17.4 boundary correction and degenerate-multiplier checker: 480 files compiled, 269 scripts passed, 481 required hashes verified before/after. Current candidate execution; G2–G8 unchanged.
 
 [V-45 fourteenth refresh](runtime-refresh-2026-10-30-r9.md) includes normalized-loss corrections and the rank-deficient lab with two checkers: 478 files compiled, 267 scripts passed, 479 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
@@ -47,7 +49,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-45 at earlier full-runtime pin; subsequent Section17.4 correction has21-file/11-script scoped rerun; refresh after related executable changes accumulate | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-46 at `df656dbbe59bda073bf662392c9f0348fc18cc83`: 480 compiled /269 scripts /481 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -198,3 +200,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Adjacent active-set boundary correction — 2026-10-30
 
 [Section17.4 evidence](chapter-17-active-boundary-followup.md) preserves adjacent probes and the original failed check, corrects near-transition dual cancellation with exact decimal-model formulas, and separates rounded display, exact model geometry and numerical activity. Nine cap sets yield63 weight/dual/value/geometry checks and27 activity reports across three tolerances. All21 Chapter17 files compiled and11 scripts passed, including existing tiny-empty-interval regressions, at `bf81791b09530e2711c89ca4960d62bd571bb9b9`; corrected scoped hashes match the published tree. Current inventory is479 Python files/268 check-test scripts, not a new full run. This helper/checker change follows V-45. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-76 Section17.4 cap-zero nonunique lower-bound/cap multiplier families, exact stationarity/complementarity and isolated sign failures. Broader tolerance units/scales, conditioning, independent-review, supported-platform and release obligations remain open.
+
+## Degenerate multiplier family and V-46 — 2026-10-30
+
+[Section17.4 evidence](chapter-17-degenerate-multiplier-followup.md) derives the cap-zero family (a,0,a+4/25), checks six parameter sets, three isolated dual-sign/stationarity/complementarity failures and three omitted-family rules. The first run passed against the unchanged helper; no numerical defect was demonstrated. Tiny-negative and zero-tolerance cases distinguish numerical acceptance from exact feasibility. All22 Chapter17 files compiled and12 scripts passed. [V-46 full execution](runtime-refresh-2026-10-30-r10.md) compiled480 files, passed269 scripts and verified481 required hashes before/after at `df656dbbe59bda073bf662392c9f0348fc18cc83`, covering the preceding active-boundary correction/checker too. The manuscript now explains multiplier choice and its escaped lab-command markup is repaired. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-77 Section17.9 retained report inputs/model/tolerance metadata and deterministic strict-JSON contract; distinguish synthetic model provenance from real-market validation. Broader tolerance units/scales, independent-review, supported-platform and release obligations stay open.
