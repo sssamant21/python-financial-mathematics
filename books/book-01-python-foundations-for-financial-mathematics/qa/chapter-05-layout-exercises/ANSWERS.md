@@ -1,0 +1,51 @@
+# Section5.9 — eight local layout exercises
+
+Source/fixture execution, temporary-copy CLI/test supplements and design-only packaging/retention/refactor proposals are distinguished per record.
+
+## 5.9-E1 — SOURCE+FIXTURE
+
+**Prompt:** Add a second synthetic fixture with no active holdings and test its exact stdout.
+
+Second synthetic no-active fixture has ZERO-A0 and ZERO-B0.0000. Original CLI stdout must be exactly Active IDs: followed by one space and newline (no IDs); return0 and empty stderr. Zero is valid stored quantity, not an invalid/missing value. Fixture bytes preserved.
+
+## 5.9-E2 — SOURCE
+
+**Prompt:** Add tests rejecting padded/numeric security IDs and non-list top-level JSON.
+
+Original active_ids rejects padded IDs(ValueError), numeric IDs(TypeError), and non-list top levels(TypeError). Tests include direct source calls and actual original CLI negative files; no successful stdout or input coercion.
+
+## 5.9-E3 — SUPPLEMENT
+
+**Prompt:** Add a documented output-file option with an explicit overwrite policy and verify input files remain unchanged.
+
+Temporary-copy CLI adds --output. Omitted option preserves original stdout. Supplied path uses exclusive UTF8 creation with LF newline, never overwrites existing path; parent directory must exist. Validation completes before opening output; file success has empty stdout. Exact known file bytes checked; existing-output and input-as-output attempts fail FileExistsError with prior bytes intact; malformed input creates no output. Not crash-atomic on write error, no append/overwrite mode.
+
+## 5.9-E4 — DESIGN
+
+**Prompt:** Compare the current flat layout with a proposed src layout; identify the installation step and tests that must change.
+
+Flat project root makes package importable to local tests even if a distribution omits code. Proposed src/financial_layout requires explicit metadata/package discovery and regular wheel build/install into selected runtime, then copied external tests with origin check and source-path overrides removed. Tests using PROJECT_ROOT/fixtures must carry explicit retained fixture paths or separate copied fixtures, not assume installed package contains source tests/data. No src/wheel build for this package is claimed.
+
+## 5.9-E5 — SUPPLEMENT
+
+**Prompt:** Add a nested test directory and define discovery behavior for the supported Python version rather than relying on accidental imports.
+
+Add regular tests/__init__.py and tests/nested/__init__.py plus test_extra.py. On actual CPython3.12.14 run unittest discover -s tests -t . -v from project root:10 methods discovered, including fully qualified tests.nested.test_extra.NestedLayoutTests. Eight original methods preserved, two supplemental regression methods cover zero selection and ID/top-level rejection. No namespace-discovery/version-matrix claim.
+
+## 5.9-E6 — SOURCE_DIAGNOSTIC+DESIGN
+
+**Prompt:** Explain why an absolute input path does not make an uninstalled import package available everywhere.
+
+Absolute input chooses data location only. Package name resolution occurs before file reading and needs package discoverable/installed for selected interpreter. From separate outside directory with-I, local uninstalled financial_layout cannot be found despite existing absolute input path. Correct local project-root use and a separately validated installation are distinct workflows; no sys.path patch.
+
+## 5.9-E7 — DESIGN
+
+**Prompt:** Define which future generated reports should be retained for reproducibility and which should be excluded from Git.
+
+Retain intentional validation/research outputs with reviewed source/input/config hashes, exact commands/runtime, selection/financial policy, comparison criteria and failure evidence under a deliberate retention policy. Exclude disposable caches/venvs/build artifacts and repeated throwaway scratch outputs; exclude large/private/live data according to project policy rather than hiding needed evidence. This CLI text alone is not a full provenance record; Git ignore does not enforce ownership or delete tracked content.
+
+## 5.9-E8 — DESIGN+BASELINE
+
+**Prompt:** Review a refactor that moves quantities.py into a subpackage. Specify the public compatibility checks.
+
+For proposed quantities.py→domain/quantities.py move, preserve public financial_layout.quantities.active_ids via explicit compatibility re-export or documented migration, and preserve CLI entry point. Regress exact positive/reversed/zero/empty ordering, wire types/grammar, full validation, duplicate/schema/error behavior, input ownership, import quietness/origin and actual discovery. Test installed discovery includes new subpackage if distributing. Current original8 methods pass before and after output extension; the proposed domain refactor itself is not implemented or claimed tested.

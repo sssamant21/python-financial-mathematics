@@ -1,0 +1,330 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.09-project-directory-structure.md",
+  "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+  "original_files": [
+    {
+      "path": "financial_layout/__init__.py",
+      "sha256": "7d991461c1f74b280c01b26b5e5d536b984eab082dab3cead5745bda3ba168cb"
+    },
+    {
+      "path": "financial_layout/quantities.py",
+      "sha256": "a99d5b1258f03887e16f54a7df977dd96959e41fb691479ce73e13159f8312eb"
+    },
+    {
+      "path": "financial_layout/__main__.py",
+      "sha256": "7efc503323124cf1106cf5912433de0fe444ee0dc6c1a3b213a39091178ad306"
+    },
+    {
+      "path": "tests/test_layout.py",
+      "sha256": "8812e3c3f0e2cfd51812b2bae19660999ba0627d5abf3cdaae7e4cf111d5cedd"
+    },
+    {
+      "path": "fixtures/holdings.json",
+      "sha256": "bca9e6f400cce05cda76af3f04020b1a9edef59c8ea2fea26bcc8679714b0bbe"
+    }
+  ],
+  "supplemental_files": {
+    "financial_layout/__main__.py": "\"\"\"Read one explicit UTF-8 input path and display validated active IDs.\"\"\"\n\nimport argparse\nimport json\nfrom pathlib import Path\n\nfrom .quantities import active_ids\n\n\ndef _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:\n    result: dict[str, object] = {}\n    for key, value in pairs:\n        if key in result:\n            raise ValueError(f\"duplicate JSON member: {key}\")\n        result[key] = value\n    return result\n\n\ndef main(argv: list[str] | None = None) -> int:\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--input\", type=Path, required=True)\n    parser.add_argument(\"--output\", type=Path, help=\"Exclusive UTF-8 output file; never overwrite\")\n    args = parser.parse_args(argv)\n    payload: object = json.loads(\n        args.input.read_text(encoding=\"utf-8\"), object_pairs_hook=_unique_object,\n    )\n    ids = active_ids(payload)\n    message = \"Active IDs: \" + \", \".join(ids)\n    if args.output is None:\n        print(message)\n    else:\n        with args.output.open(\"x\", encoding=\"utf-8\", newline=\"\\n\") as stream:\n            stream.write(message + \"\\n\")\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+    "tests/__init__.py": "",
+    "tests/nested/__init__.py": "",
+    "tests/nested/test_extra.py": "import unittest\nfrom financial_layout.quantities import active_ids\n\nclass NestedLayoutTests(unittest.TestCase):\n    def test_no_active_holdings(self):\n        self.assertEqual(active_ids([dict(security_id='ZERO',quantity='0')]),())\n\n    def test_id_and_top_level_rejections(self):\n        for sid,exception in [(' A',ValueError),(1,TypeError)]:\n            with self.subTest(sid=sid),self.assertRaises(exception):\n                active_ids([dict(security_id=sid,quantity='0')])\n        with self.assertRaises(TypeError):\n            active_ids({})\n",
+    "fixtures/no-active.json": "[{\"security_id\":\"ZERO-A\",\"quantity\":\"0\"},{\"security_id\":\"ZERO-B\",\"quantity\":\"0.0000\"}]"
+  },
+  "command_records": 11,
+  "command_passed": 11,
+  "command_failed": 0,
+  "source_method_invocations": 16,
+  "supplemental_nested_method_invocations": 2,
+  "predicates": 13,
+  "passed": 13,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "exact original eight-method suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_domain_and_identity (test_layout.LayoutTests.test_domain_and_identity) ... ok\ntest_expected_fixture_and_selection (test_layout.LayoutTests.test_expected_fixture_and_selection) ... ok\ntest_import_origin_and_quiet_initialization (test_layout.LayoutTests.test_import_origin_and_quiet_initialization) ... ok\ntest_input_outside_project (test_layout.LayoutTests.test_input_outside_project) ... ok\ntest_invalid_later_record (test_layout.LayoutTests.test_invalid_later_record) ... ok\ntest_missing_and_invalid_file_fail_without_report (test_layout.LayoutTests.test_missing_and_invalid_file_fail_without_report) ... ok\ntest_relative_and_absolute_fixture_paths (test_layout.LayoutTests.test_relative_and_absolute_fixture_paths) ... ok\ntest_source_and_order (test_layout.LayoutTests.test_source_and_order) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.233s\n\nOK\n",
+      "actual_method_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 exact empty-active stdout",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/fixtures/no-active.json"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 0,
+      "stdout": "Active IDs: \n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E2 CLI padded",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/padded.json"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 32, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 26, in main\n    ids = active_ids(payload)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/quantities.py\", line 25, in active_ids\n    raise ValueError(\"security_id must be nonempty and unpadded\")\nValueError: security_id must be nonempty and unpadded\n",
+      "actual_method_count": null,
+      "expected_error": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "label": "E2 CLI numeric",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/numeric.json"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 32, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 26, in main\n    ids = active_ids(payload)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/quantities.py\", line 23, in active_ids\n    raise TypeError(\"security_id must be an exact str\")\nTypeError: security_id must be an exact str\n",
+      "actual_method_count": null,
+      "expected_error": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "label": "E2 CLI not-list",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/not-list.json"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 32, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 26, in main\n    ids = active_ids(payload)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/quantities.py\", line 13, in active_ids\n    raise TypeError(\"holdings must be a list\")\nTypeError: holdings must be a list\n",
+      "actual_method_count": null,
+      "expected_error": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "label": "E3 new exclusive output option",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "fixtures/holdings.json",
+        "--output",
+        "/tmp/layout-exercises-655ucc9u/report.txt"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 existing-output failure",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "fixtures/holdings.json",
+        "--output",
+        "/tmp/layout-exercises-655ucc9u/report.txt"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 38, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 32, in main\n    with args.output.open(\"x\", encoding=\"utf-8\", newline=\"\\n\") as stream:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/tmp/layout-exercises-655ucc9u/report.txt'\n",
+      "actual_method_count": null,
+      "expected_error": "FileExistsError",
+      "status": "PASS"
+    },
+    {
+      "label": "E3 input cannot be overwritten",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/fixtures/holdings.json",
+        "--output",
+        "/tmp/layout-exercises-655ucc9u/fixtures/holdings.json"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 38, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 32, in main\n    with args.output.open(\"x\", encoding=\"utf-8\", newline=\"\\n\") as stream:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/tmp/layout-exercises-655ucc9u/fixtures/holdings.json'\n",
+      "actual_method_count": null,
+      "expected_error": "FileExistsError",
+      "status": "PASS"
+    },
+    {
+      "label": "E3 invalid input before output creation",
+      "args": [
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/invalid.json",
+        "--output",
+        "/tmp/layout-exercises-655ucc9u/invalid-report.txt"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 38, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/layout-exercises-655ucc9u/financial_layout/__main__.py\", line 24, in main\n    payload: object = json.loads(\n                      ^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 359, in loads\n    return cls(**kw).decode(s)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 341, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 1 column 3 (char 2)\n",
+      "actual_method_count": null,
+      "expected_error": "JSONDecodeError",
+      "status": "PASS"
+    },
+    {
+      "label": "E5 explicit regular nested-test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-t",
+        ".",
+        "-v"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_id_and_top_level_rejections (tests.nested.test_extra.NestedLayoutTests.test_id_and_top_level_rejections) ... ok\ntest_no_active_holdings (tests.nested.test_extra.NestedLayoutTests.test_no_active_holdings) ... ok\ntest_domain_and_identity (tests.test_layout.LayoutTests.test_domain_and_identity) ... ok\ntest_expected_fixture_and_selection (tests.test_layout.LayoutTests.test_expected_fixture_and_selection) ... ok\ntest_import_origin_and_quiet_initialization (tests.test_layout.LayoutTests.test_import_origin_and_quiet_initialization) ... ok\ntest_input_outside_project (tests.test_layout.LayoutTests.test_input_outside_project) ... ok\ntest_invalid_later_record (tests.test_layout.LayoutTests.test_invalid_later_record) ... ok\ntest_missing_and_invalid_file_fail_without_report (tests.test_layout.LayoutTests.test_missing_and_invalid_file_fail_without_report) ... ok\ntest_relative_and_absolute_fixture_paths (tests.test_layout.LayoutTests.test_relative_and_absolute_fixture_paths) ... ok\ntest_source_and_order (tests.test_layout.LayoutTests.test_source_and_order) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.241s\n\nOK\n",
+      "actual_method_count": 10,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E6 absolute input does not install package",
+      "args": [
+        "-I",
+        "-m",
+        "financial_layout",
+        "--input",
+        "/tmp/layout-exercises-655ucc9u/fixtures/holdings.json"
+      ],
+      "cwd": "/tmp/layout-exercises-655ucc9u/outside",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python: No module named financial_layout\n",
+      "actual_method_count": null,
+      "expected_error": "No module named financial_layout",
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.9-E2",
+      "label": "source rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E2",
+      "label": "source rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E2",
+      "label": "source rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E2",
+      "label": "source rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E2",
+      "label": "source rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E2",
+      "label": "source rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E3",
+      "label": "known output file bytes",
+      "actual": "b'Active IDs: SEC-A, SEC-C\\n'",
+      "expected": "b'Active IDs: SEC-A, SEC-C\\n'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E3",
+      "label": "existing output unchanged",
+      "actual": "b'Active IDs: SEC-A, SEC-C\\n'",
+      "expected": "b'Active IDs: SEC-A, SEC-C\\n'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E3",
+      "label": "input bytes unchanged",
+      "actual": "'bca9e6f400cce05cda76af3f04020b1a9edef59c8ea2fea26bcc8679714b0bbe'",
+      "expected": "'bca9e6f400cce05cda76af3f04020b1a9edef59c8ea2fea26bcc8679714b0bbe'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E3",
+      "label": "invalid-input output absent",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E5",
+      "label": "fully qualified nested cases found",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.9-E3",
+      "label": "second input fixture unchanged",
+      "actual": "b'[{\"security_id\":\"ZERO-A\",\"quantity\":\"0\"},{\"security_id\":\"ZERO-B\",\"quantity\":\"0.0000\"}]'",
+      "expected": "b'[{\"security_id\":\"ZERO-A\",\"quantity\":\"0\"},{\"security_id\":\"ZERO-B\",\"quantity\":\"0.0000\"}]'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "original core/test/fixture unchanged",
+      "actual": "{'financial_layout/__init__.py': '7d991461c1f74b280c01b26b5e5d536b984eab082dab3cead5745bda3ba168cb', 'financial_layout/quantities.py': 'a99d5b1258f03887e16f54a7df977dd96959e41fb691479ce73e13159f8312eb', 'tests/test_layout.py': '8812e3c3f0e2cfd51812b2bae19660999ba0627d5abf3cdaae7e4cf111d5cedd', 'fixtures/holdings.json': 'bca9e6f400cce05cda76af3f04020b1a9edef59c8ea2fea26bcc8679714b0bbe'}",
+      "expected": "{'financial_layout/__init__.py': '7d991461c1f74b280c01b26b5e5d536b984eab082dab3cead5745bda3ba168cb', 'financial_layout/quantities.py': 'a99d5b1258f03887e16f54a7df977dd96959e41fb691479ce73e13159f8312eb', 'tests/test_layout.py': '8812e3c3f0e2cfd51812b2bae19660999ba0627d5abf3cdaae7e4cf111d5cedd', 'fixtures/holdings.json': 'bca9e6f400cce05cda76af3f04020b1a9edef59c8ea2fea26bcc8679714b0bbe'}",
+      "status": "PASS"
+    }
+  ]
+}
