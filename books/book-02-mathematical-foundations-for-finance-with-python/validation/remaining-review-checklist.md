@@ -1,10 +1,12 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Candidate source revision:** `378775bc25034f5551f1d1efa51d836da77d6737`  
+**Candidate source revision:** `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`  
 **Disposition:** Runtime evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-39 eighth refresh](runtime-refresh-2026-10-30-r3.md) includes three subsequent Chapter 16 checkers: 467 sources compiled, 256 scripts passed and 468 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records are historical.
 
 [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md) covers the maturity/covariance changes: 464 files compiled, 253 scripts passed and 465 hashes verified before/after. Latest candidate execution; G2–G8 unchanged.
 
@@ -32,7 +34,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-38 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-39 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -135,3 +137,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Independent multistart reference follow-up — 2026-10-30
 
 [Section 16.7 evidence](chapter-16-multistart-reference-followup.md) checks four default starts against independent 80-digit stationary roots/objectives and curvature classification, plus real failed/mixed pools. Gradient-tolerance at the middle local maximum explicitly preserves the distinction from a minimum/global certificate. All 22 chapter files compiled and 12 scripts passed; implementation unchanged. This follows V-38; twenty-eight categories are partially addressed. Next executable item: Section 16.7 scaling transforms, Hessian condition and stable-step bounds with units explicit. Independent-review, platform and release gates remain pending.
+
+## Scaling references and V-39 — 2026-10-30
+
+[Section 16.7 evidence](chapter-16-scaling-reference-followup.md) independently checks Hessian transforms/condition numbers, four coordinate round trips, twelve curvature stencils and six real scalar stable/boundary/unstable mode runs. All 23 Chapter 16 files compiled and 13 scripts passed; implementation unchanged. [V-39 full evidence](runtime-refresh-2026-10-30-r3.md) then compiled 467 sources and passed 256 scripts with 468 hashes verified before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`, covering all three Chapter 16 follow-ups. Twenty-eight categories remain partially addressed. Next executable item: COV-75 Sections 16.2–16.4 derivative representability and denominator extremes. Independent-review, environment and release gates remain pending.
