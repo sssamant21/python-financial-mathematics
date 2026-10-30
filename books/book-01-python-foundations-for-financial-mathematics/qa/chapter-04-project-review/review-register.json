@@ -1,0 +1,452 @@
+[
+  {
+    "id": "CONTRACT-01",
+    "prompt": "long-only quantities",
+    "answer": "Exact finite nonnegative Decimal units; fractional and zero accepted, no monetary arithmetic. Existing quantity tests plus explicit zero/fraction sequence.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-02",
+    "prompt": "schemas and identity",
+    "answer": "Exact field sets, exact nonempty unpadded string scalars; catalog/holding uniqueness and known reference. Existing schema/duplicate/unknown tests; extension-1 missing quantity and padded/numeric probes.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-03",
+    "prompt": "full-input validation",
+    "answer": "validated_inputs completes before any command or filter; unused invalid catalog and invalid later holding reject. Existing negative tests; supplemental lookup also rejects invalid later row.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-04",
+    "prompt": "add",
+    "answer": "Known catalog ID absent from holdings; append one record. Sequence S1 independently checks B,A,C order and absolute quantity3.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-05",
+    "prompt": "replace",
+    "answer": "Existing holding, absolute quantity (not delta), unchanged index; S2 B0,A20,C3. Equal replacement12.50 equals12.5 while new revision required.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-06",
+    "prompt": "remove",
+    "answer": "Existing holding, quantity None; removes even stored zero; S3 A20,C3. Existing tests reject non-None quantity and absent targets.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-07",
+    "prompt": "report",
+    "answer": "Fresh enriched rows, ID lexicographic order; active means strictly positive; A then B all, A active. Catalog order does not provide sort policy.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-08",
+    "prompt": "ownership",
+    "answer": "Validation creates canonical pairs, commands reconstruct every holding dictionary, reports reconstruct enriched rows. Existing ownership test and independent before/after sequence checks preserve catalog and S0.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-09",
+    "prompt": "revision",
+    "answer": "Portfolio ID unchanged; immediate parent label must differ. Historical S0 reuse from S1 and two competing S1 successors are allowed and executed as limitations, not defects.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-10",
+    "prompt": "empty",
+    "answer": "Wrapper retains identity with empty holdings; existing empty/remove-last test and supplemental empty membership check.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-11",
+    "prompt": "errors",
+    "answer": "TypeError for unsupported scalar/container types; ValueError for schema/domain/reference/identity. Invalid commands never return a partial successor; duplicate-add failure preserves S1.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "CONTRACT-12",
+    "prompt": "scope",
+    "answer": "No database/network/cache/trades/valuation/FX/global audit history. Structure choices establish supplied-data consistency only; code inspection, not external operations or certification.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "STEP-01",
+    "prompt": "Prerequisites and save",
+    "answer": "Use standard-library Python3.10+ syntax; executed only CPython3.12.14 Linux. Extract entire first Python block to portfolio_holdings_manager.py. No pip dependency needed.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "STEP-02",
+    "prompt": "Run tests",
+    "answer": "Exact first block executed directly in isolated temp directory; return0, Ran10tests and OK retained. Subtests are not additional unique methods.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "STEP-03",
+    "prompt": "Save and run demo",
+    "answer": "Exact second block beside module; original imports work; return0 and exact PASS message. Assertions check active A12.5,C3 plus preserved baseline.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "STEP-04",
+    "prompt": "Duplicate add boundary",
+    "answer": "Run an explicit duplicate SEC-A add against S1, expect ValueError, inspect unchanged S1; no catch-all/empty fallback.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "STEP-05",
+    "prompt": "Import behavior",
+    "answer": "Import project module in clean child interpreter; return0 and no stdout/stderr. No runner executes during import.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "STEP-06",
+    "prompt": "Inspect sequence and boundary",
+    "answer": "Explicit S0/S1/S2/S3 literals check order, units and immediate revision; inspect fresh containers and documented no-global-history behavior.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-01",
+    "prompt": "Exact schema and valid scalar values",
+    "answer": "existing schema/quantity tests; extension-1; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-02",
+    "prompt": "Catalog and holding uniqueness",
+    "answer": "existing duplicate tests; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-03",
+    "prompt": "Known references including zero holdings",
+    "answer": "existing unknown-zero test; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-04",
+    "prompt": "Distinct command semantics",
+    "answer": "independent sequence literals and failed duplicate add; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-05",
+    "prompt": "New immediate revision label",
+    "answer": "equal-value and reused-parent probes; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-06",
+    "prompt": "Deterministic ID report order",
+    "answer": "existing independently stated exact report; all-order probe; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-07",
+    "prompt": "Active filtering preserves stored zero",
+    "answer": "source all/active tests; S0 literal still B0; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-08",
+    "prompt": "Empty portfolio remains identifiable",
+    "answer": "existing empty/remove-last; empty membership; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-09",
+    "prompt": "Baseline and catalog remain unchanged",
+    "answer": "source ownership tests and saved baseline comparison; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-10",
+    "prompt": "End-to-end use",
+    "answer": "exact demo command/assertions; instructional acceptance evidence only.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-01",
+    "prompt": "Reject padded command IDs, numeric revision IDs, missing quantity",
+    "answer": "Three command invalid-scalar probes and missing-quantity report test reject with declared errors. Source code unchanged.",
+    "kind": "SOURCE",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-02",
+    "prompt": "Fresh holding lookup",
+    "answer": "New lookup validates whole dataset before target search, returns new ID/quantity dictionary, rejects absent target. Zero and alias isolation plus invalid later row executed.",
+    "kind": "SUPPLEMENT",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-03",
+    "prompt": "All-ID membership",
+    "answer": "New parent-identified membership report returns frozenset of all validated holding IDs including zero; empty retains P/E identity.",
+    "kind": "SUPPLEMENT",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-04",
+    "prompt": "Multi-portfolio wrapper",
+    "answer": "New multi returns owned reports keyed (portfolio_id,snapshot_id); rejects duplicate wrapper keys. Same SEC-A in PORT-01 and P2 remains two records. Tests edit one report without affecting another.",
+    "kind": "SUPPLEMENT",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-05",
+    "prompt": "Tax-lot identity",
+    "answer": "Proposed key=(portfolio_id,snapshot_id,lot_id), separate security reference, acquisition date, quantity, cost amount/currency and accounting selection policy. Same security can occur in several distinct lots; duplicate lot identity rejected before indexing. No lot engine or tax accounting implemented.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-06",
+    "prompt": "Catalog version and observation basis",
+    "answer": "New metadata_report retains caller-supplied exact nonempty unpadded labels and owned report. Labels do not prove catalog hashes or simultaneous observations; underlying quantities unchanged.",
+    "kind": "SUPPLEMENT",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-07",
+    "prompt": "Specify atomic command batch",
+    "answer": "Policy: one parent and one distinct successor label for whole batch; commands have no intermediate public revision labels. Validate catalog/parent and every command schema first, then simulate sequential preconditions privately (add can make later replace valid), reject whole batch on any failure. Return one successor after all pass; do not require each operation to be valid independently on original parent. Empty batch policy must be declared (propose reject). No batch executor is claimed.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-08",
+    "prompt": "Persistence and concurrent revisions",
+    "answer": "Persist immutable snapshots with globally unique revision IDs and parent pointer; compare expected parent under database transaction/conditional write, atomically store successor plus audit metadata. Conflicts reject/retry on fresh input; idempotency key prevents duplicate commands. Function copying provides none of this. No persistence/concurrency test performed.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "EXT-09",
+    "prompt": "Supplied prices after explicit policy",
+    "answer": "New supplied_prices accepts exact records: security_id,price,currency,quote_unit,observed_at,source_id. Positive exact finite Decimal, per_instrument_unit only; explicit datetime with timezone.utc only; matching catalog quote currency; unique(security_id,observed_at). Reconstruct rows, preserve input order; no FX, total, quantization or price arithmetic, so no arithmetic-context result asserted. Empty allowed but does not imply priced coverage. Future valuation must choose as-of/staleness/completeness, FX and rounding rules; unsupported per100 quotes are rejected. Tests cover owned rows, empty, duplicates, invalid currency/unit/time/amount/reference.",
+    "kind": "SUPPLEMENT",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.13-chapter-project-portfolio-holdings-manager.md",
+    "source_sha256": "6d19bd24c0886927f6b4398e10b38635159f77cab06fdf7a53f2f67467804ac5",
+    "evidence": "results.json"
+  },
+  {
+    "id": "DESIGN-4.12-1",
+    "prompt": "Authoritative input",
+    "answer": "Caller-retained portfolio snapshot plus supplied catalog; derived views are disposable.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-2",
+    "prompt": "Record identity and scope",
+    "answer": "One security_id per supplied catalog and per portfolio snapshot; portfolio_id and snapshot_id identify parent.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-3",
+    "prompt": "Valid repetitions",
+    "answer": "Different portfolios may share a security; within this aggregate snapshot duplicate security IDs are errors. Lots need separate schema.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-4",
+    "prompt": "Ordering",
+    "answer": "Holdings preserve source/command order; report sorts case-sensitive security IDs; membership has no presentation order.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-5",
+    "prompt": "Discarded fields/distinctions",
+    "answer": "Snapshot pair omits metadata; lookup loses duplicate multiplicity unless validated first; membership discards quantity and order. Do not confuse zero with absent.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-6",
+    "prompt": "Mutable ownership",
+    "answer": "Input dictionaries/lists and wrapper/lookup/report dictionaries remain mutable; immutable scalar snapshots share only supported immutable values. Return fresh mutable records.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-7",
+    "prompt": "Rebuild policy",
+    "answer": "Treat corrected authoritative input as a new version; build all views before publishing one versioned wrapper. No automatic cache refresh/concurrent swap is implemented.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  },
+  {
+    "id": "DESIGN-4.12-8",
+    "prompt": "Empty/zero/missing/invalid",
+    "answer": "Empty holdings valid with parent identity; zero valid stored/member but inactive; missing quantity/reference is error, unsupported types/nonfinite/negative rejected. No default-zero repair.",
+    "kind": "DESIGN",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "evidence": "../chapter-04-workflow-review/README.md; ../chapter-04-final-section-review/README.md; results.json"
+  }
+]
