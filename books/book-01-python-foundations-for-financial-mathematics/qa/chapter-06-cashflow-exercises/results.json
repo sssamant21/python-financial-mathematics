@@ -1,0 +1,218 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.08-cash-flow-vectors.md",
+  "source_sha256": "88a5eb88499591035da3936508f0f0bc53eb180b410895e9cea7ca11cc0b4702",
+  "listing_sha256": [
+    "8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11",
+    "e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 24,
+  "failed": 0,
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_domain (test_cashflow_vectors.CashflowTests.test_amount_domain) ... ok\ntest_duplicate_unsorted_and_negative_periods (test_cashflow_vectors.CashflowTests.test_duplicate_unsorted_and_negative_periods) ... ok\ntest_known_schedule (test_cashflow_vectors.CashflowTests.test_known_schedule) ... ok\ntest_scalar_reference (test_cashflow_vectors.CashflowTests.test_scalar_reference) ... ok\ntest_shape_and_dtype (test_cashflow_vectors.CashflowTests.test_shape_and_dtype) ... ok\ntest_source_preservation_and_independence (test_cashflow_vectors.CashflowTests.test_source_preservation_and_independence) ... ok\ntest_timing_changes_not_nominal_net (test_cashflow_vectors.CashflowTests.test_timing_changes_not_nominal_net) ... ok\ntest_zero_single_event_and_boundaries (test_cashflow_vectors.CashflowTests.test_zero_single_event_and_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.044s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "cashflow_vectors.py"
+      ],
+      "returncode": 0,
+      "stdout": "Perspective: investor; unit: abstract period; currency: USD\nPeriods: [0, 1, 3, 4]\nAmounts: [-1000.0, 200.0, -50.0, 1000.0]\nCumulative nominal movement: [-1000.0, -800.0, -850.0, 150.0]\nNominal net: 150.00\nInflow periods: [1, 4]\nOutflow periods: [0, 3]\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.8-E1",
+      "label": "ordered inserted period and amounts",
+      "actual": "([0, 1, 2, 3, 4], [-1000.0, 200.0, -25.0, -50.0, 1000.0])",
+      "expected": "([0, 1, 2, 3, 4], [-1000, 200, -25, -50, 1000])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E1",
+      "label": "independent cumulative oracle",
+      "actual": "([-1000.0, -800.0, -825.0, -875.0, 125.0], 125.0)",
+      "expected": "([-1000.0, -800.0, -825.0, -875.0, 125.0], 125.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E2",
+      "label": "reversed perspective amounts",
+      "actual": "[1000.0, -200.0, 50.0, -1000.0]",
+      "expected": "[1000, -200, 50, -1000]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E2",
+      "label": "reversed perspective cumulative/net",
+      "actual": "([1000.0, 800.0, 850.0, -150.0], -150.0)",
+      "expected": "([1000, 800, 850, -150], -150.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E2",
+      "label": "timing does not change under perspective reversal",
+      "actual": "[0, 1, 3, 4]",
+      "expected": "[0, 1, 3, 4]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E3",
+      "label": "known zero gap dense amounts/cumulative",
+      "actual": "([-1000.0, 200.0, 0.0, -50.0, 1000.0], [-1000.0, -800.0, -800.0, -850.0, 150.0])",
+      "expected": "([-1000, 200, 0, -50, 1000], [-1000, -800, -800, -850, 150])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E3",
+      "label": "sparse vs dense nominal equality",
+      "actual": "150.0",
+      "expected": "150.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E4",
+      "label": "inclusive upper-period and negative-amount bounds",
+      "actual": "([1000000], [-1000000000000.0], -1000000000000.0)",
+      "expected": "([1000000], [-1000000000000], -1000000000000)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E4",
+      "label": "period immediately beyond bound",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 34, in <lambda>\n    reject('6.8-E4','period immediately beyond bound',lambda:m.cashflow_schedule(np.array([1000001],dtype=np.int64),np.array([0.])),'ValueError')\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.08-cash-flow-vectors.md\", line 22, in cashflow_schedule\n    5. Interpret cumulative nominal movement without overstating its financial meaning.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: period outside lab bounds\n"
+    },
+    {
+      "exercise": "6.8-E4",
+      "label": "amount below negative magnitude bound",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 35, in <lambda>\n    reject('6.8-E4','amount below negative magnitude bound',lambda:m.cashflow_schedule(np.array([0],dtype=np.int64),np.array([-1e12-1.])),'ValueError')\n                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.08-cash-flow-vectors.md\", line 26, in cashflow_schedule\nValueError: amounts must be finite and within lab bounds\n"
+    },
+    {
+      "exercise": "6.8-E5",
+      "label": "retained gross/net record",
+      "actual": "(('receipt', 'payment'), Fraction(200, 1), Fraction(50, 1), Fraction(150, 1))",
+      "expected": "(('receipt', 'payment'), Fraction(200, 1), Fraction(50, 1), Fraction(150, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E5",
+      "label": "original source still rejects duplicate periods",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 39, in <lambda>\n    reject('6.8-E5','original source still rejects duplicate periods',lambda:m.cashflow_schedule(np.array([2,2],dtype=np.int64),np.array([200.,-50.])),'ValueError')\n                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.08-cash-flow-vectors.md\", line 24, in cashflow_schedule\nValueError: periods must be strictly increasing; combine duplicates upstream\n"
+    },
+    {
+      "exercise": "6.8-E5",
+      "label": "explicit upstream net passed as one event",
+      "actual": "([2], 150.0)",
+      "expected": "([2], 150.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E5",
+      "label": "offsetting gross events need evidence even at net zero",
+      "actual": "(Fraction(0, 1), Fraction(100, 1))",
+      "expected": "(Fraction(0, 1), Fraction(100, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E6",
+      "label": "original rejects unsorted schedule",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-cashflow-exercises/review.py\", line 44, in <lambda>\n    reject('6.8-E6','original rejects unsorted schedule',lambda:m.cashflow_schedule(unsorted_p,unsorted_a),'ValueError')\n                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6cashx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.08-cash-flow-vectors.md\", line 24, in cashflow_schedule\nValueError: periods must be strictly increasing; combine duplicates upstream\n"
+    },
+    {
+      "exercise": "6.8-E6",
+      "label": "paired sort restores source meaning",
+      "actual": "[(0, -1000.0), (1, 200.0), (3, -50.0), (4, 1000.0)]",
+      "expected": "[(0, -1000), (1, 200), (3, -50), (4, 1000)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E6",
+      "label": "period-only sort is accepted but semantically wrong",
+      "actual": "[(0, -50.0), (1, -1000.0), (3, 1000.0), (4, 200.0)]",
+      "expected": "[(0, -50), (1, -1000), (3, 1000), (4, 200)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E6",
+      "label": "wrong cumulative despite equal nominal net",
+      "actual": "([-50.0, -1050.0, -50.0, 150.0], 150.0)",
+      "expected": "([-50, -1050, -50, 150], 150.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E7",
+      "label": "timing retained while nominal operation ignores elapsed offsets",
+      "actual": "([0, 10, 30, 40], [-1000.0, -800.0, -850.0, 150.0], 150.0)",
+      "expected": "([0, 10, 30, 40], [-1000, -800, -850, 150], 150.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E8",
+      "label": "separate illustrative annual-effective PV at explicit rate",
+      "actual": "Fraction(0, 1)",
+      "expected": "Fraction(0, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.8-E8",
+      "label": "source still returns nominal addition only",
+      "actual": "10.0",
+      "expected": "10.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "caller arrays unchanged",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00@\\x8f\\xc0\\x00\\x00\\x00\\x00\\x00\\x00i@\\x00\\x00\\x00\\x00\\x00\\x00I\\xc0\\x00\\x00\\x00\\x00\\x00@\\x8f@')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00@\\x8f\\xc0\\x00\\x00\\x00\\x00\\x00\\x00i@\\x00\\x00\\x00\\x00\\x00\\x00I\\xc0\\x00\\x00\\x00\\x00\\x00@\\x8f@')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "all outputs independent of source",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'cashflow_vectors.py': '8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11', 'test_cashflow_vectors.py': 'e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2'}",
+      "expected": "{'cashflow_vectors.py': '8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11', 'test_cashflow_vectors.py': 'e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2'}",
+      "status": "PASS"
+    }
+  ]
+}
