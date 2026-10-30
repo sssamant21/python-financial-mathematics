@@ -1,6 +1,8 @@
 """Book 02 Section 16.10: chapter-wide applied optimization lab."""
 import json
 import math
+from fractions import Fraction
+from section_16_08 import _rounded_calibration
 from section_16_08 import metrics as checked_metrics
 
 TRAIN=((1.0,1050.0),(2.0,1100.0),(3.0,1150.0))
@@ -45,14 +47,16 @@ def loss(rate,rows=TRAIN):
 
 def gradient(rate,rows=TRAIN):
     data=validate(rows)
-    return finite(sum(t*v/1000 for (t,_),v in zip(data,residuals(rate,data))),"gradient")
+    return _rounded_calibration(sum(Fraction(t)*Fraction(v)/1000 for (t,_),v in zip(data,residuals(rate,data))),"gradient")
 
 def hessian(rows=TRAIN):
-    return finite(sum(t*t for t,_ in validate(rows)),"hessian")
+    return _rounded_calibration(sum(Fraction(t)**2 for t,_ in validate(rows)),"hessian")
 
 def analytical_rate(rows=TRAIN):
     data=validate(rows)
-    return finite(sum(t*(p-1000)/1000 for t,p in data)/hessian(data),"rate")
+    denominator=sum(Fraction(t)**2 for t,_ in data)
+    numerator=sum(Fraction(t)*(Fraction(y)-1000)/1000 for t,y in data)
+    return _rounded_calibration(numerator/denominator,"analytical rate")
 
 def solve(start,method="newton",step=0.05,tol=1e-9,max_iterations=100):
     x=finite(start,"start")
