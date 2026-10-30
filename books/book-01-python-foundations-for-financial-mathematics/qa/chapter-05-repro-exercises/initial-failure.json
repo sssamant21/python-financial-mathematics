@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/initial-review.py"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/initial-review.py\", line 163, in <module>\n    raise SystemExit(run())\n                     ^^^^^\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/initial-review.py\", line 107, in run\n    accepted=validate(report,returncode=process.returncode,data_raw=raw,expected_result=benchmark)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/initial-review.py\", line 101, in validate\n    return experiments.validate_artifact(raw,**values)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/experiments.py\", line 33, in validate_artifact\n    raise ValueError('unsuccessful process')\nValueError: unsuccessful process\n",
+  "diagnosis": "QA runner selected whitespace.json as both input and output. The unchanged source correctly rejected overwriting its input; the supplemental acceptance validator then rejected the nonzero status."
+}

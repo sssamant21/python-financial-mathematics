@@ -1,0 +1,527 @@
+{
+  "checks": [
+    {
+      "actual": "'30.02'",
+      "exercise": "5.11-E1",
+      "expected": "'30.02'",
+      "label": "integer tie benchmark",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'currency': 'USD', 'count': 3, 'total': '30.02', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "exercise": "5.11-E1",
+      "expected": "{'currency': 'USD', 'count': 3, 'total': '30.02', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "source third inflow",
+      "status": "PASS"
+    },
+    {
+      "actual": "'1000000000.00'",
+      "exercise": "5.11-E2",
+      "expected": "'1000000000.00'",
+      "label": "integer boundary benchmark",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'currency': 'USD', 'count': 1000, 'total': '1000000000.00', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "exercise": "5.11-E2",
+      "expected": "{'currency': 'USD', 'count': 1000, 'total': '1000000000.00', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "source 1000 maximum rows",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E2",
+      "expected": "'ValueError'",
+      "label": "1001 rows",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E2",
+      "expected": "'ValueError'",
+      "label": "maximum plus smallest supported unit",
+      "status": "PASS"
+    },
+    {
+      "actual": "'30.01'",
+      "exercise": "5.11-E3",
+      "expected": "'30.01'",
+      "label": "integer sum-then-round fixture",
+      "status": "PASS"
+    },
+    {
+      "actual": "'30.00'",
+      "exercise": "5.11-E3",
+      "expected": "'30.00'",
+      "label": "integer each-then-sum fixture",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'currency': 'USD', 'count': 2, 'total': '30.00', 'method': 'round_each_then_sum', 'rounding': 'ROUND_HALF_EVEN'}",
+      "exercise": "5.11-E3",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.00', 'method': 'round_each_then_sum', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "supplemental alternate policy",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "exercise": "5.11-E3",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "original policy unchanged",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'currency': 'USD', 'count': 2, 'total': '30.00', 'method': 'round_each_then_sum', 'rounding': 'ROUND_HALF_EVEN'}",
+      "exercise": "5.11-E3",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.00', 'method': 'round_each_then_sum', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "separate policy hostile caller context",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E3",
+      "expected": "'ValueError'",
+      "label": "alternate keeps original rejection contract",
+      "status": "PASS"
+    },
+    {
+      "actual": "[{'id': 'CF-1', 'currency': 'USD', 'amount': '10.005'}, {'id': 'CF-2', 'currency': 'USD', 'amount': '20.005'}]",
+      "exercise": "5.11-E4",
+      "expected": "[{'id': 'CF-1', 'currency': 'USD', 'amount': '10.005'}, {'id': 'CF-2', 'currency': 'USD', 'amount': '20.005'}]",
+      "label": "same decoded data",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "exercise": "5.11-E4",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "same result",
+      "status": "PASS"
+    },
+    {
+      "actual": "True",
+      "exercise": "5.11-E4",
+      "expected": "True",
+      "label": "different input digest",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "exercise": "5.11-E6",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "run-a completed/bound artifact result",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "exercise": "5.11-E6",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "run-b completed/bound artifact result",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "exercise": "5.11-E6",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "whitespace completed/bound artifact result",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'count': 3, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.02'}",
+      "exercise": "5.11-E6",
+      "expected": "{'currency': 'USD', 'count': 3, 'total': '30.02', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "third completed/bound artifact result",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'count': 1000, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '1000000000.00'}",
+      "exercise": "5.11-E6",
+      "expected": "{'currency': 'USD', 'count': 1000, 'total': '1000000000.00', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "label": "maximum completed/bound artifact result",
+      "status": "PASS"
+    },
+    {
+      "actual": "b'{\\n  \"evidence\": {\\n    \"config_sha256\": \"ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80\",\\n    \"implementation\": \"CPython\",\\n    \"input_sha256\": \"a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a\",\\n    \"python\": \"3.12.14\",\\n    \"source_sha256\": \"849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab\",\\n    \"system\": \"Linux\",\\n    \"third_party_runtime_dependencies\": []\\n  },\\n  \"result\": {\\n    \"count\": 2,\\n    \"currency\": \"USD\",\\n    \"method\": \"sum_then_round\",\\n    \"rounding\": \"ROUND_HALF_EVEN\",\\n    \"total\": \"30.01\"\\n  },\\n  \"schema_version\": 1\\n}\\n'",
+      "exercise": "5.11-E7",
+      "expected": "b'{\\n  \"evidence\": {\\n    \"config_sha256\": \"ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80\",\\n    \"implementation\": \"CPython\",\\n    \"input_sha256\": \"a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a\",\\n    \"python\": \"3.12.14\",\\n    \"source_sha256\": \"849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab\",\\n    \"system\": \"Linux\",\\n    \"third_party_runtime_dependencies\": []\\n  },\\n  \"result\": {\\n    \"count\": 2,\\n    \"currency\": \"USD\",\\n    \"method\": \"sum_then_round\",\\n    \"rounding\": \"ROUND_HALF_EVEN\",\\n    \"total\": \"30.01\"\\n  },\\n  \"schema_version\": 1\\n}\\n'",
+      "label": "same local runtime artifacts byte-identical",
+      "status": "PASS"
+    },
+    {
+      "actual": "True",
+      "exercise": "5.11-E4",
+      "expected": "True",
+      "label": "whitespace full artifact changes",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "exercise": "5.11-E4",
+      "expected": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "label": "whitespace artifact result same",
+      "status": "PASS"
+    },
+    {
+      "actual": "True",
+      "exercise": "5.11-E4",
+      "expected": "True",
+      "label": "whitespace stored digest differs",
+      "status": "PASS"
+    },
+    {
+      "actual": "b'{\\n  \"evidence\": {\\n    \"config_sha256\": \"ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80\",\\n    \"implementation\": \"CPython\",\\n    \"input_sha256\": \"a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a\",\\n    \"python\": \"3.12.14\",\\n    \"source_sha256\": \"849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab\",\\n    \"system\": \"Linux\",\\n    \"third_party_runtime_dependencies\": []\\n  },\\n  \"result\": {\\n    \"count\": 2,\\n    \"currency\": \"USD\",\\n    \"method\": \"sum_then_round\",\\n    \"rounding\": \"ROUND_HALF_EVEN\",\\n    \"total\": \"30.01\"\\n  },\\n  \"schema_version\": 1\\n}\\n'",
+      "exercise": "5.11-E6",
+      "expected": "b'{\\n  \"evidence\": {\\n    \"config_sha256\": \"ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80\",\\n    \"implementation\": \"CPython\",\\n    \"input_sha256\": \"a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a\",\\n    \"python\": \"3.12.14\",\\n    \"source_sha256\": \"849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab\",\\n    \"system\": \"Linux\",\\n    \"third_party_runtime_dependencies\": []\\n  },\\n  \"result\": {\\n    \"count\": 2,\\n    \"currency\": \"USD\",\\n    \"method\": \"sum_then_round\",\\n    \"rounding\": \"ROUND_HALF_EVEN\",\\n    \"total\": \"30.01\"\\n  },\\n  \"schema_version\": 1\\n}\\n'",
+      "label": "existing successful artifact unchanged",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "boolean schema version",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "unknown artifact field",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "missing result",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "boolean count",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "zero count",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "too many count",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "float total",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "exponent total",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "leading zero total",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "out of bound total",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "wrong numeric answer",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "wrong rounding stage",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "wrong currency",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "missing runtime",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "blank runtime",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "runtime mismatch",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "dependency drift",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "uppercase digest",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "unbound input digest",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "unbound config digest",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "unbound source digest",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "duplicate schema version",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "nonfinite extra",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "wrong top-level",
+      "status": "PASS"
+    },
+    {
+      "actual": "'JSONDecodeError'",
+      "exercise": "5.11-E6",
+      "expected": "'JSONDecodeError'",
+      "label": "empty artifact",
+      "status": "PASS"
+    },
+    {
+      "actual": "'JSONDecodeError'",
+      "exercise": "5.11-E6",
+      "expected": "'JSONDecodeError'",
+      "label": "truncated artifact",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "valid bytes with failed status",
+      "status": "PASS"
+    },
+    {
+      "actual": "'ValueError'",
+      "exercise": "5.11-E6",
+      "expected": "'ValueError'",
+      "label": "byte-mutated input with old report",
+      "status": "PASS"
+    },
+    {
+      "actual": "{'research.py': '849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab', 'test_research.py': 'a78e07d6aa9f84b802642830e5197983381113f4598a16ae0e028812273414f7', 'inflows.json': 'a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a', 'settings.json': 'ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80'}",
+      "exercise": "all",
+      "expected": "{'research.py': '849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab', 'test_research.py': 'a78e07d6aa9f84b802642830e5197983381113f4598a16ae0e028812273414f7', 'inflows.json': 'a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a', 'settings.json': 'ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80'}",
+      "label": "original four files unchanged",
+      "status": "PASS"
+    }
+  ],
+  "command_failed": 0,
+  "command_passed": 7,
+  "command_records": 7,
+  "exercise_records": 8,
+  "failed": 0,
+  "integer_oracle": "base 10000 units, divmod 100, >50 or ==50 with odd quotient increments",
+  "operations": [
+    {
+      "actual_methods": 9,
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "expected_error": null,
+      "expected_methods": 9,
+      "label": "exact original nine-method suite",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "test_byte_identity_versus_result (test_research.ResearchTests.test_byte_identity_versus_result) ... ok\ntest_changed_data_and_source (test_research.ResearchTests.test_changed_data_and_source) ... ok\ntest_cli_rerun_and_no_overwrite (test_research.ResearchTests.test_cli_rerun_and_no_overwrite) ... ok\ntest_config_and_duplicate_members (test_research.ResearchTests.test_config_and_duplicate_members) ... ok\ntest_context_isolation (test_research.ResearchTests.test_context_isolation) ... ok\ntest_invalid_input_creates_no_report (test_research.ResearchTests.test_invalid_input_creates_no_report) ... ok\ntest_invalid_records (test_research.ResearchTests.test_invalid_records) ... ok\ntest_known_answer_and_policy (test_research.ResearchTests.test_known_answer_and_policy) ... ok\ntest_repeat_bundle (test_research.ResearchTests.test_repeat_bundle) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.145s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "actual_methods": null,
+      "args": [
+        "research.py",
+        "--input",
+        "inflows.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-4k3hvbws/run-a-report.json"
+      ],
+      "expected_error": null,
+      "expected_methods": null,
+      "label": "source CLI run-a",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "actual_methods": null,
+      "args": [
+        "research.py",
+        "--input",
+        "inflows.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-4k3hvbws/run-b-report.json"
+      ],
+      "expected_error": null,
+      "expected_methods": null,
+      "label": "source CLI run-b",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "actual_methods": null,
+      "args": [
+        "research.py",
+        "--input",
+        "whitespace.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-4k3hvbws/whitespace-report.json"
+      ],
+      "expected_error": null,
+      "expected_methods": null,
+      "label": "source CLI whitespace",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "actual_methods": null,
+      "args": [
+        "research.py",
+        "--input",
+        "third.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-4k3hvbws/third-report.json"
+      ],
+      "expected_error": null,
+      "expected_methods": null,
+      "label": "source CLI third",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "actual_methods": null,
+      "args": [
+        "research.py",
+        "--input",
+        "maximum.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-4k3hvbws/maximum-report.json"
+      ],
+      "expected_error": null,
+      "expected_methods": null,
+      "label": "source CLI maximum",
+      "returncode": 0,
+      "status": "PASS",
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "actual_methods": null,
+      "args": [
+        "research.py",
+        "--input",
+        "inflows.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "run-a-report.json"
+      ],
+      "expected_error": "FileExistsError",
+      "expected_methods": null,
+      "label": "E6 exclusive existing-output failure",
+      "returncode": 1,
+      "status": "PASS",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/research-exercises-4k3hvbws/research.py\", line 92, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/research-exercises-4k3hvbws/research.py\", line 86, in main\n    with args.output.open('x', encoding='utf-8', newline='\\n') as stream:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'run-a-report.json'\n",
+      "stdout": ""
+    }
+  ],
+  "passed": 54,
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "predicates": 54,
+  "python": "3.12.14",
+  "source": "chapter-05/5.11-reproducible-financial-research.md",
+  "source_method_invocations": 9,
+  "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba"
+}

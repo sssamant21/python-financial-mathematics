@@ -1,0 +1,67 @@
+{
+  "expected_failure_observed": true,
+  "records": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_byte_identity_versus_result (test_research.ResearchTests.test_byte_identity_versus_result) ... ok\ntest_changed_data_and_source (test_research.ResearchTests.test_changed_data_and_source) ... ok\ntest_cli_rerun_and_no_overwrite (test_research.ResearchTests.test_cli_rerun_and_no_overwrite) ... ok\ntest_config_and_duplicate_members (test_research.ResearchTests.test_config_and_duplicate_members) ... ok\ntest_context_isolation (test_research.ResearchTests.test_context_isolation) ... ok\ntest_invalid_input_creates_no_report (test_research.ResearchTests.test_invalid_input_creates_no_report) ... ok\ntest_invalid_records (test_research.ResearchTests.test_invalid_records) ... ok\ntest_known_answer_and_policy (test_research.ResearchTests.test_known_answer_and_policy) ... ok\ntest_repeat_bundle (test_research.ResearchTests.test_repeat_bundle) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.154s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research.py",
+        "--input",
+        "inflows.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-ft0km52k/run-a.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research.py",
+        "--input",
+        "inflows.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-ft0km52k/run-b.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "research.py",
+        "--input",
+        "whitespace.json",
+        "--config",
+        "settings.json",
+        "--output",
+        "/tmp/research-exercises-ft0km52k/whitespace.json"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/research-exercises-ft0km52k/research.py\", line 92, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/research-exercises-ft0km52k/research.py\", line 86, in main\n    with args.output.open('x', encoding='utf-8', newline='\\n') as stream:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: '/tmp/research-exercises-ft0km52k/whitespace.json'\n"
+    }
+  ],
+  "runner_traceback": "Traceback (most recent call last):\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/reproduce_failure.py\", line 20, in <module>\n    module.run()\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/initial-review.py\", line 107, in run\n    accepted=validate(report,returncode=process.returncode,data_raw=raw,expected_result=benchmark)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/initial-review.py\", line 101, in validate\n    return experiments.validate_artifact(raw,**values)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch5reproex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-repro-exercises/experiments.py\", line 33, in validate_artifact\n    raise ValueError('unsuccessful process')\nValueError: unsuccessful process\n"
+}
