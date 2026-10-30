@@ -1,0 +1,146 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "compiled": 26,
+  "runs": [
+    {
+      "script": "check_jacobian_accuracy.py",
+      "exit_code": 0,
+      "stdout": "PASS: 18 float-column/reference pairs, four error ladders, three cancellation and one asymmetry case\n",
+      "stderr": "",
+      "seconds": 0.02720873200001961
+    },
+    {
+      "script": "check_section_15_03.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.3 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.026800128000019185
+    },
+    {
+      "script": "check_maturity_range.py",
+      "exit_code": 0,
+      "stdout": "PASS: eight Decimal adjusted-maturity references and five range/domain rejections\n",
+      "stderr": "",
+      "seconds": 0.0349357960000134
+    },
+    {
+      "script": "check_covariance_consistency.py",
+      "exit_code": 0,
+      "stdout": "PASS: three symmetric-normalization cases, nine exact-quadratic references and shared PD/range rejection\n",
+      "stderr": "",
+      "seconds": 0.02556019799999376
+    },
+    {
+      "script": "check_level_set_boundaries.py",
+      "exit_code": 0,
+      "stdout": "PASS: selected zero/adjacent iso-variance and signed-rate maturity-domain cases\n",
+      "stderr": "",
+      "seconds": 0.030198911999974598
+    },
+    {
+      "script": "check_section_15_09.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.9 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.029661410000016986
+    },
+    {
+      "script": "check_section_15_05.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.5 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.04262798299998849
+    },
+    {
+      "script": "check_section_15_10.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.10 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02320474999999078
+    },
+    {
+      "script": "check_section_15_02.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.2 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.020049536999977136
+    },
+    {
+      "script": "check_section_15_04.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.4 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.03781389899998544
+    },
+    {
+      "script": "check_section_15_08.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.8 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02132245999999327
+    },
+    {
+      "script": "check_hessian_accuracy.py",
+      "exit_code": 0,
+      "stdout": "PASS: 18 analytic Hessian entries against 90-digit valuation stencils and selected order ladders\n",
+      "stderr": "",
+      "seconds": 0.03352668699997707
+    },
+    {
+      "script": "check_section_15_06.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.6 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02434681400001182
+    },
+    {
+      "script": "check_finite_difference_boundaries.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.001s\n\nOK\n",
+      "seconds": 0.059061472999985654
+    },
+    {
+      "script": "check_section_15_01.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.1 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02202195600000323
+    },
+    {
+      "script": "check_section_15_07.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.7 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.03568746100000908
+    }
+  ],
+  "inspected_revision": "ddb839244c0831b8595dcebe709b4d88316290c4",
+  "corrected_sources": [
+    {
+      "path": "chapter-15/code/section_15_04.py",
+      "commit_sha": "4896c6d9a3e42d3d2046fc451cae4df953c55bf7",
+      "content_sha": "5889b5c617e4c534372fc8afeb9fced6d9441938"
+    },
+    {
+      "path": "chapter-15/code/section_15_06.py",
+      "commit_sha": "f5dbc1f92153201ca7fd017db490a6cad4be02af",
+      "content_sha": "f9fd672c460b632aa6828c2432a007bbf05fddec"
+    }
+  ],
+  "initial_probe": {
+    "chunk_id": "087289",
+    "wall_time_seconds": 0.000026039,
+    "exit_code": 0,
+    "original_token_count": 40,
+    "output": "{\"matrix\": [[1e-12, 0], [1e-14, 1e-12]], \"gradient\": [2e-12, 2.02e-12], \"hessian\": [[2e-12, 0.0], [2e-14, 2e-12]], \"expected_gradient\": [2.01e-12, 2.01e-12]}\n"
+  },
+  "initial_failure": {
+    "chunk_id": "ae69d3",
+    "wall_time_seconds": 0.000039089,
+    "exit_code": 1,
+    "original_token_count": 94,
+    "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/45f84313db40/covariance_contract_followup/check_covariance_consistency.py\", line 37, in <module>\n    run()\n  File \"/workspace/scratch/45f84313db40/covariance_contract_followup/check_covariance_consistency.py\", line 15, in run\n    assert covariance(matrix)==sym\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  }
+}
