@@ -1,12 +1,14 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Candidate source revision:** `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`  
+**Candidate source revision:** `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`  
 **Disposition:** Runtime evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-39 eighth refresh](runtime-refresh-2026-10-30-r3.md) includes three subsequent Chapter 16 checkers: 467 sources compiled, 256 scripts passed and 468 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records are historical.
+[V-40 ninth refresh](runtime-refresh-2026-10-30-r4.md) includes the Sections 16.2–16.4 derivative corrections and new checker: 468 files compiled, 257 scripts passed and 469 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+
+[V-39 eighth refresh](runtime-refresh-2026-10-30-r3.md) includes three subsequent Chapter 16 checkers: 467 sources compiled, 256 scripts passed and 468 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records are historical.
 
 [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md) covers the maturity/covariance changes: 464 files compiled, 253 scripts passed and 465 hashes verified before/after. Latest candidate execution; G2–G8 unchanged.
 
@@ -34,7 +36,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-39 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-40 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -141,3 +143,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Scaling references and V-39 — 2026-10-30
 
 [Section 16.7 evidence](chapter-16-scaling-reference-followup.md) independently checks Hessian transforms/condition numbers, four coordinate round trips, twelve curvature stencils and six real scalar stable/boundary/unstable mode runs. All 23 Chapter 16 files compiled and 13 scripts passed; implementation unchanged. [V-39 full evidence](runtime-refresh-2026-10-30-r3.md) then compiled 467 sources and passed 256 scripts with 468 hashes verified before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`, covering all three Chapter 16 follow-ups. Twenty-eight categories remain partially addressed. Next executable item: COV-75 Sections 16.2–16.4 derivative representability and denominator extremes. Independent-review, environment and release gates remain pending.
+
+## Derivative boundary correction and V-40 — 2026-10-30
+
+[Sections 16.2–16.4 evidence](chapter-16-derivative-boundary-followup.md) retains collapsed-stencil/denominator failures, adds pre-callback geometry/range validation and finite callback checks, and passes 35 guard cases, nine exact polynomial pairs, one unequal-offset case and three nonfinite-result cases. All 24 Chapter 16 files compiled and 14 scripts passed. [V-40 full execution](runtime-refresh-2026-10-30-r4.md) then compiled 468 sources and passed 257 scripts with 469 required hashes verified before/after at `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`. This covers the three source corrections and new checker after V-39. Twenty-eight categories remain partially addressed; none is closed by the register. Next executable item: COV-75 Section 16.6 scalar secant-curvature product/threshold and callback boundaries, with exact represented-number expectations. Independent-review, supported-platform and release gates remain pending.
