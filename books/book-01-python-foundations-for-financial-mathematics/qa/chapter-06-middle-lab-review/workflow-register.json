@@ -1,0 +1,234 @@
+[
+  {
+    "section": "6.5",
+    "path": "chapter-06/6.05-vectorized-financial-calculations.md",
+    "source_sha256": "2d31c7d0d55ee1b4799aa63aeec1aef1c4c70314a20787a654f0ead29191bc35",
+    "selected_files": {
+      "vectorized_marks.py": "a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8",
+      "test_vectorized_marks.py": "e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518"
+    },
+    "published_stdout": "LONG-A: opening=1000.00, closing=1050.00, pnl=50.00\nSHORT-B: opening=-400.00, closing=-380.00, pnl=20.00\nFLAT-C: opening=0.00, closing=0.00, pnl=0.00\nResult shape: (3,)\n",
+    "id": "6.5-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy runtime,owned writable directory,two sibling listings; no earlier lab imports",
+    "units": [
+      {
+        "id": "6.5-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit interpreter,NumPy2.3.5 and import origin. Reused preinstalled CPython3.12.14/Linux. Fresh pip/venv provisioning and Windows/macOS shell routes not executed."
+      },
+      {
+        "id": "6.5-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact manuscript source/test fences reconstructed under documented sibling filenames in an owned temporary directory; hashes recorded and bytes unchanged."
+      },
+      {
+        "id": "6.5-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact listings compile under selected interpreter; no static-checker inference."
+      },
+      {
+        "id": "6.5-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import produces empty stdout/stderr. Quiet streams alone do not prove absence of application I/O or sandboxing."
+      },
+      {
+        "id": "6.5-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout matches documented expected output/newlines and empty stderr. Independent API arithmetic checks provide another oracle beyond printed text."
+      },
+      {
+        "id": "6.5-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact eight-method discovery completed with no errors/failures/skips; original command/stdout/stderr retained; historical unique totals not incremented."
+      },
+      {
+        "id": "6.5-API",
+        "status": "PASS_SCOPED",
+        "review": "Exact integer marks1000/-400/0,1050/-380/0 and P&L50/20/0; Fraction fractional fixture checks; unchanged inputs/new outputs; overflow/underflow failure and restored policy; flat position invalid-price rejection."
+      },
+      {
+        "id": "6.5-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Signed fixed quantities times same-currency per-unit nonnegative prices. q*(end-start) is chosen operation order; algebraic rearrangement can round differently. Signed short marks exclude cash proceeds/margin/financing,not account equity. No flows/fees/FX/trades/corporate actions,return denominator or aggregation. Finite results do not imply cent-level accuracy or a speedup; strict underflow differs from6.1 ratio policy."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static checking,performance/concurrency and independent acceptance remain open"
+  },
+  {
+    "section": "6.6",
+    "path": "chapter-06/6.06-broadcasting.md",
+    "source_sha256": "e86beaa88314f11b5c71e569c27ee79db7893a6463134eea63f8ece847b8e50f",
+    "selected_files": {
+      "broadcasting_lab.py": "778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37",
+      "test_broadcasting_lab.py": "b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51"
+    },
+    "published_stdout": "Axes: scenario, position\nExpanded shapes: (3, 1) (1, 3)\nOutput shape: (3, 3)\nScenario P&L: [[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0]]\nOutput element bytes: 72\n",
+    "id": "6.6-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy runtime,owned writable directory,two sibling listings; no earlier lab imports",
+    "units": [
+      {
+        "id": "6.6-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit interpreter,NumPy2.3.5 and import origin. Reused preinstalled CPython3.12.14/Linux. Fresh pip/venv provisioning and Windows/macOS shell routes not executed."
+      },
+      {
+        "id": "6.6-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact manuscript source/test fences reconstructed under documented sibling filenames in an owned temporary directory; hashes recorded and bytes unchanged."
+      },
+      {
+        "id": "6.6-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact listings compile under selected interpreter; no static-checker inference."
+      },
+      {
+        "id": "6.6-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import produces empty stdout/stderr. Quiet streams alone do not prove absence of application I/O or sandboxing."
+      },
+      {
+        "id": "6.6-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout matches documented expected output/newlines and empty stderr. Independent API arithmetic checks provide another oracle beyond printed text."
+      },
+      {
+        "id": "6.6-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact eight-method discovery completed with no errors/failures/skips; original command/stdout/stderr retained; historical unique totals not incremented."
+      },
+      {
+        "id": "6.6-API",
+        "status": "PASS_SCOPED",
+        "review": "Rational common-shock cross product and nonsquare4x2 case; deliberate3-element pairing contrasted with3x3grid; shape/payload3*3*8; budget9passes,8/Truefail; zero-shock mark-overflow rejection/error-policy restoration."
+      },
+      {
+        "id": "6.6-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Scenario rows cross position columns; common proportional price shocks>=-1 are not yield percentage-point shifts,probabilities or calibrated stresses. (q*price)*shock order is intentional; zero shock cannot mask overflowing marks. Signed zero is financially treated as zero. S*N cells is an output element budget,not process-memory reservation; broadcast views may share/read-only while arithmetic output is allocated. Labels/units/identity remain caller responsibilities."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static checking,performance/concurrency and independent acceptance remain open"
+  },
+  {
+    "section": "6.7",
+    "path": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "selected_files": {
+      "aggregation_lab.py": "bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721",
+      "test_aggregation_lab.py": "03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65"
+    },
+    "published_stdout": "Axes: scenario, position\nInput shape: (4, 2)\nScenario totals: [-60.0, 0.0, 60.0, 120.0]\nPosition means: [50.0, -20.0]\nMin/max total: -60.00, 120.00\nMean total: 30.00\nStd total (ddof=0): 67.082039\nTotals with keepdims: (4, 1)\n",
+    "id": "6.7-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy runtime,owned writable directory,two sibling listings; no earlier lab imports",
+    "units": [
+      {
+        "id": "6.7-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit interpreter,NumPy2.3.5 and import origin. Reused preinstalled CPython3.12.14/Linux. Fresh pip/venv provisioning and Windows/macOS shell routes not executed."
+      },
+      {
+        "id": "6.7-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact manuscript source/test fences reconstructed under documented sibling filenames in an owned temporary directory; hashes recorded and bytes unchanged."
+      },
+      {
+        "id": "6.7-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact listings compile under selected interpreter; no static-checker inference."
+      },
+      {
+        "id": "6.7-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import produces empty stdout/stderr. Quiet streams alone do not prove absence of application I/O or sandboxing."
+      },
+      {
+        "id": "6.7-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout matches documented expected output/newlines and empty stderr. Independent API arithmetic checks provide another oracle beyond printed text."
+      },
+      {
+        "id": "6.7-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact eight-method discovery completed with no errors/failures/skips; original command/stdout/stderr retained; historical unique totals not incremented."
+      },
+      {
+        "id": "6.7-API",
+        "status": "PASS_SCOPED",
+        "review": "Exact row totals-60/0/60/120,position means50/-20,mean30,extrema/counts; Fraction deviation squares18000 and denominators4/3; precision60 Decimal square roots4500/6000; single-row/ddof1 failure,joint-zero dispersion,storage/missing/squared-overflow policies."
+      },
+      {
+        "id": "6.7-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Reduce positions within each alternative scenario first. Descriptive unweighted means/std/extrema do not establish expected profit,market bounds or risk calibration. ddof0/1 changes denominator,not sample independence or unbiased std estimation. P&L/std have currency units; variance squared currency. Missing observations rejected,not omitted/zero-filled. Joint patterns mean position dispersions cannot simply be added. No annualization,VaR or confidence interval."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static checking,performance/concurrency and independent acceptance remain open"
+  },
+  {
+    "section": "6.8",
+    "path": "chapter-06/6.08-cash-flow-vectors.md",
+    "source_sha256": "88a5eb88499591035da3936508f0f0bc53eb180b410895e9cea7ca11cc0b4702",
+    "selected_files": {
+      "cashflow_vectors.py": "8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11",
+      "test_cashflow_vectors.py": "e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2"
+    },
+    "published_stdout": "Perspective: investor; unit: abstract period; currency: USD\nPeriods: [0, 1, 3, 4]\nAmounts: [-1000.0, 200.0, -50.0, 1000.0]\nCumulative nominal movement: [-1000.0, -800.0, -850.0, 150.0]\nNominal net: 150.00\nInflow periods: [1, 4]\nOutflow periods: [0, 3]\n",
+    "id": "6.8-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy runtime,owned writable directory,two sibling listings; no earlier lab imports",
+    "units": [
+      {
+        "id": "6.8-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit interpreter,NumPy2.3.5 and import origin. Reused preinstalled CPython3.12.14/Linux. Fresh pip/venv provisioning and Windows/macOS shell routes not executed."
+      },
+      {
+        "id": "6.8-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact manuscript source/test fences reconstructed under documented sibling filenames in an owned temporary directory; hashes recorded and bytes unchanged."
+      },
+      {
+        "id": "6.8-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact listings compile under selected interpreter; no static-checker inference."
+      },
+      {
+        "id": "6.8-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import produces empty stdout/stderr. Quiet streams alone do not prove absence of application I/O or sandboxing."
+      },
+      {
+        "id": "6.8-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout matches documented expected output/newlines and empty stderr. Independent API arithmetic checks provide another oracle beyond printed text."
+      },
+      {
+        "id": "6.8-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact eight-method discovery completed with no errors/failures/skips; original command/stdout/stderr retained; historical unique totals not incremented."
+      },
+      {
+        "id": "6.8-API",
+        "status": "PASS_SCOPED",
+        "review": "Rational ordered cumulative-1000/-800/-850/150 and nominal net150; aligned sign/time masks; offset change net-invariance; independent copies/unchanged inputs; duplicate/unsorted rejection;10000*1e12=1e16boundary; maximum offset1000000 and negative-1e12inclusive."
+      },
+      {
+        "id": "6.8-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Sparse investor-perspective signed cash events with strict increasing abstract int64 period offsets. Completeness/currency/time unit and economic event meanings are caller assertions. Duplicate rejection is representation policy,not a claim two real events cannot coincide. Nominal cumulative addition uses ordered cumsum and starts at zero; not an account balance,PV or time-weighted result. Changing offsets alone preserves net. Float64 bounds/finiteness do not establish cent-level accuracy; returned mutable record is not reactive/transactional."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static checking,performance/concurrency and independent acceptance remain open"
+  }
+]

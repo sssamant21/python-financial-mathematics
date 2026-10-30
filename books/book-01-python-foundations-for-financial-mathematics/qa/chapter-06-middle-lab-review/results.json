@@ -1,0 +1,889 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "runtime": {
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "numpy": "2.3.5",
+    "numpy_origin": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/__init__.py"
+  },
+  "workflow_records": 4,
+  "derived_review_units": 32,
+  "source_method_invocations": 32,
+  "command_records": 13,
+  "command_passed": 13,
+  "command_failed": 0,
+  "predicates": 51,
+  "passed": 51,
+  "failed": 0,
+  "independent_benchmarks": {
+    "signed_integer_outputs": {
+      "opening": [
+        1000,
+        -400,
+        0
+      ],
+      "closing": [
+        1050,
+        -380,
+        0
+      ],
+      "pnl": [
+        50,
+        20,
+        0
+      ]
+    },
+    "scenario_grid": [
+      [
+        "-100",
+        "40",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "100",
+        "-40",
+        "0"
+      ]
+    ],
+    "scenario_totals": [
+      "-60",
+      "0",
+      "60",
+      "120"
+    ],
+    "variance_sum_squares": "18000",
+    "std0_decimal": "67.0820393249936908922752100619382870632185507883457717281269",
+    "std1_decimal": "77.4596669241483377035853079956479922166584341058318165317515",
+    "cumulative": [
+      -1000.0,
+      -800.0,
+      -850.0,
+      150.0
+    ],
+    "nominal_net": "150"
+  },
+  "sources": [
+    {
+      "section": "6.5",
+      "path": "chapter-06/6.05-vectorized-financial-calculations.md",
+      "source_sha256": "2d31c7d0d55ee1b4799aa63aeec1aef1c4c70314a20787a654f0ead29191bc35",
+      "selected_files": {
+        "vectorized_marks.py": "a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8",
+        "test_vectorized_marks.py": "e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518"
+      },
+      "published_stdout": "LONG-A: opening=1000.00, closing=1050.00, pnl=50.00\nSHORT-B: opening=-400.00, closing=-380.00, pnl=20.00\nFLAT-C: opening=0.00, closing=0.00, pnl=0.00\nResult shape: (3,)\n"
+    },
+    {
+      "section": "6.6",
+      "path": "chapter-06/6.06-broadcasting.md",
+      "source_sha256": "e86beaa88314f11b5c71e569c27ee79db7893a6463134eea63f8ece847b8e50f",
+      "selected_files": {
+        "broadcasting_lab.py": "778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37",
+        "test_broadcasting_lab.py": "b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51"
+      },
+      "published_stdout": "Axes: scenario, position\nExpanded shapes: (3, 1) (1, 3)\nOutput shape: (3, 3)\nScenario P&L: [[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0]]\nOutput element bytes: 72\n"
+    },
+    {
+      "section": "6.7",
+      "path": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+      "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+      "selected_files": {
+        "aggregation_lab.py": "bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721",
+        "test_aggregation_lab.py": "03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65"
+      },
+      "published_stdout": "Axes: scenario, position\nInput shape: (4, 2)\nScenario totals: [-60.0, 0.0, 60.0, 120.0]\nPosition means: [50.0, -20.0]\nMin/max total: -60.00, 120.00\nMean total: 30.00\nStd total (ddof=0): 67.082039\nTotals with keepdims: (4, 1)\n"
+    },
+    {
+      "section": "6.8",
+      "path": "chapter-06/6.08-cash-flow-vectors.md",
+      "source_sha256": "88a5eb88499591035da3936508f0f0bc53eb180b410895e9cea7ca11cc0b4702",
+      "selected_files": {
+        "cashflow_vectors.py": "8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11",
+        "test_cashflow_vectors.py": "e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2"
+      },
+      "published_stdout": "Perspective: investor; unit: abstract period; currency: USD\nPeriods: [0, 1, 3, 4]\nAmounts: [-1000.0, 200.0, -50.0, 1000.0]\nCumulative nominal movement: [-1000.0, -800.0, -850.0, 150.0]\nNominal net: 150.00\nInflow periods: [1, 4]\nOutflow periods: [0, 3]\n"
+    }
+  ],
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "actual runtime identity",
+      "args": [
+        "-c",
+        "import json,sys,numpy;print(json.dumps(dict(executable=sys.executable,numpy=numpy.__version__,numpy_origin=numpy.__file__)))"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t",
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\", \"numpy\": \"2.3.5\", \"numpy_origin\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/__init__.py\"}\n",
+      "stderr": "",
+      "expected_stdout": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "exact application stdout",
+      "args": [
+        "vectorized_marks.py"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/vectorized_marks",
+      "returncode": 0,
+      "stdout": "LONG-A: opening=1000.00, closing=1050.00, pnl=50.00\nSHORT-B: opening=-400.00, closing=-380.00, pnl=20.00\nFLAT-C: opening=0.00, closing=0.00, pnl=0.00\nResult shape: (3,)\n",
+      "stderr": "",
+      "expected_stdout": "LONG-A: opening=1000.00, closing=1050.00, pnl=50.00\nSHORT-B: opening=-400.00, closing=-380.00, pnl=20.00\nFLAT-C: opening=0.00, closing=0.00, pnl=0.00\nResult shape: (3,)\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/vectorized_marks",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_domain_even_for_flat_position (test_vectorized_marks.VectorizedTests.test_domain_even_for_flat_position) ... ok\ntest_equal_prices_and_zero_prices (test_vectorized_marks.VectorizedTests.test_equal_prices_and_zero_prices) ... ok\ntest_known_long_short_flat (test_vectorized_marks.VectorizedTests.test_known_long_short_flat) ... ok\ntest_numerical_failure_restores_error_policy (test_vectorized_marks.VectorizedTests.test_numerical_failure_restores_error_policy) ... ok\ntest_scalar_reference (test_vectorized_marks.VectorizedTests.test_scalar_reference) ... ok\ntest_shape_rejects_broadcasting (test_vectorized_marks.VectorizedTests.test_shape_rejects_broadcasting) ... ok\ntest_source_preservation_and_output_storage (test_vectorized_marks.VectorizedTests.test_source_preservation_and_output_storage) ... ok\ntest_types (test_vectorized_marks.VectorizedTests.test_types) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.040s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import vectorized_marks"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/vectorized_marks",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "exact application stdout",
+      "args": [
+        "broadcasting_lab.py"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/broadcasting_lab",
+      "returncode": 0,
+      "stdout": "Axes: scenario, position\nExpanded shapes: (3, 1) (1, 3)\nOutput shape: (3, 3)\nScenario P&L: [[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0]]\nOutput element bytes: 72\n",
+      "stderr": "",
+      "expected_stdout": "Axes: scenario, position\nExpanded shapes: (3, 1) (1, 3)\nOutput shape: (3, 3)\nScenario P&L: [[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0]]\nOutput element bytes: 72\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/broadcasting_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_axis_error_can_be_silent (test_broadcasting_lab.BroadcastingTests.test_axis_error_can_be_silent) ... ok\ntest_budget (test_broadcasting_lab.BroadcastingTests.test_budget) ... ok\ntest_domain_and_total_loss (test_broadcasting_lab.BroadcastingTests.test_domain_and_total_loss) ... ok\ntest_known_grid (test_broadcasting_lab.BroadcastingTests.test_known_grid) ... ok\ntest_numerical_failure_restores_policy (test_broadcasting_lab.BroadcastingTests.test_numerical_failure_restores_policy) ... ok\ntest_shape_and_dtype (test_broadcasting_lab.BroadcastingTests.test_shape_and_dtype) ... ok\ntest_storage_and_readonly_broadcast_view (test_broadcasting_lab.BroadcastingTests.test_storage_and_readonly_broadcast_view) ... ok\ntest_unequal_dimensions_and_scalar_reference (test_broadcasting_lab.BroadcastingTests.test_unequal_dimensions_and_scalar_reference) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.041s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import broadcasting_lab"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/broadcasting_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "exact application stdout",
+      "args": [
+        "aggregation_lab.py"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/aggregation_lab",
+      "returncode": 0,
+      "stdout": "Axes: scenario, position\nInput shape: (4, 2)\nScenario totals: [-60.0, 0.0, 60.0, 120.0]\nPosition means: [50.0, -20.0]\nMin/max total: -60.00, 120.00\nMean total: 30.00\nStd total (ddof=0): 67.082039\nTotals with keepdims: (4, 1)\n",
+      "stderr": "",
+      "expected_stdout": "Axes: scenario, position\nInput shape: (4, 2)\nScenario totals: [-60.0, 0.0, 60.0, 120.0]\nPosition means: [50.0, -20.0]\nMin/max total: -60.00, 120.00\nMean total: 30.00\nStd total (ddof=0): 67.082039\nTotals with keepdims: (4, 1)\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/aggregation_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_aggregate_variance_includes_joint_pattern (test_aggregation_lab.AggregationTests.test_aggregate_variance_includes_joint_pattern) ... ok\ntest_axis_and_keepdims (test_aggregation_lab.AggregationTests.test_axis_and_keepdims) ... ok\ntest_ddof_policy (test_aggregation_lab.AggregationTests.test_ddof_policy) ... ok\ntest_known_reductions (test_aggregation_lab.AggregationTests.test_known_reductions) ... ok\ntest_missing_and_invalid_structure (test_aggregation_lab.AggregationTests.test_missing_and_invalid_structure) ... ok\ntest_overflow_and_error_restoration (test_aggregation_lab.AggregationTests.test_overflow_and_error_restoration) ... ok\ntest_scalar_reference (test_aggregation_lab.AggregationTests.test_scalar_reference) ... ok\ntest_source_and_storage (test_aggregation_lab.AggregationTests.test_source_and_storage) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.039s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import aggregation_lab"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/aggregation_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "exact application stdout",
+      "args": [
+        "cashflow_vectors.py"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/cashflow_vectors",
+      "returncode": 0,
+      "stdout": "Perspective: investor; unit: abstract period; currency: USD\nPeriods: [0, 1, 3, 4]\nAmounts: [-1000.0, 200.0, -50.0, 1000.0]\nCumulative nominal movement: [-1000.0, -800.0, -850.0, 150.0]\nNominal net: 150.00\nInflow periods: [1, 4]\nOutflow periods: [0, 3]\n",
+      "stderr": "",
+      "expected_stdout": "Perspective: investor; unit: abstract period; currency: USD\nPeriods: [0, 1, 3, 4]\nAmounts: [-1000.0, 200.0, -50.0, 1000.0]\nCumulative nominal movement: [-1000.0, -800.0, -850.0, 150.0]\nNominal net: 150.00\nInflow periods: [1, 4]\nOutflow periods: [0, 3]\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/cashflow_vectors",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_domain (test_cashflow_vectors.CashflowTests.test_amount_domain) ... ok\ntest_duplicate_unsorted_and_negative_periods (test_cashflow_vectors.CashflowTests.test_duplicate_unsorted_and_negative_periods) ... ok\ntest_known_schedule (test_cashflow_vectors.CashflowTests.test_known_schedule) ... ok\ntest_scalar_reference (test_cashflow_vectors.CashflowTests.test_scalar_reference) ... ok\ntest_shape_and_dtype (test_cashflow_vectors.CashflowTests.test_shape_and_dtype) ... ok\ntest_source_preservation_and_independence (test_cashflow_vectors.CashflowTests.test_source_preservation_and_independence) ... ok\ntest_timing_changes_not_nominal_net (test_cashflow_vectors.CashflowTests.test_timing_changes_not_nominal_net) ... ok\ntest_zero_single_event_and_boundaries (test_cashflow_vectors.CashflowTests.test_zero_single_event_and_boundaries) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.036s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import cashflow_vectors"
+      ],
+      "cwd": "/tmp/chapter6-middle-labs-6m4uqt8t/cashflow_vectors",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "documented NumPy version",
+      "actual": "'2.3.5'",
+      "expected": "'2.3.5'",
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "supplied files unchanged",
+      "actual": "{'vectorized_marks.py': 'a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8', 'test_vectorized_marks.py': 'e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518'}",
+      "expected": "{'vectorized_marks.py': 'a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8', 'test_vectorized_marks.py': 'e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "supplied files unchanged",
+      "actual": "{'broadcasting_lab.py': '778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37', 'test_broadcasting_lab.py': 'b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51'}",
+      "expected": "{'broadcasting_lab.py': '778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37', 'test_broadcasting_lab.py': 'b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "supplied files unchanged",
+      "actual": "{'aggregation_lab.py': 'bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721', 'test_aggregation_lab.py': '03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65'}",
+      "expected": "{'aggregation_lab.py': 'bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721', 'test_aggregation_lab.py': '03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "supplied files unchanged",
+      "actual": "{'cashflow_vectors.py': '8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11', 'test_cashflow_vectors.py': 'e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2'}",
+      "expected": "{'cashflow_vectors.py': '8130ae404de0db6e1c5dfb6ad765a67c47324fd51ed17782e8a09dfd9ad6ee11', 'test_cashflow_vectors.py': 'e273673d52442f313f60be9c0b98fd33e6510ac7dd2fbdcd36407c169d28b2a2'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "signed integer oracle opening",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1000.0,
+        -400.0,
+        0.0
+      ],
+      "expected_values": [
+        1000.0,
+        -400.0,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.5",
+      "label": "signed integer oracle closing",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1050.0,
+        -380.0,
+        0.0
+      ],
+      "expected_values": [
+        1050.0,
+        -380.0,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.5",
+      "label": "signed integer oracle pnl",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        50.0,
+        20.0,
+        0.0
+      ],
+      "expected_values": [
+        50.0,
+        20.0,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.5",
+      "label": "inputs preserved and outputs independent",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "rational fractional oracle opening",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1.55,
+        -10.575000000000001,
+        27.599999999999998
+      ],
+      "expected_values": [
+        1.55,
+        -10.575,
+        27.6
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.5",
+      "label": "rational fractional oracle closing",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1.65,
+        -9.9,
+        27.299999999999997
+      ],
+      "expected_values": [
+        1.65,
+        -9.9,
+        27.3
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.5",
+      "label": "rational fractional oracle pnl",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.09999999999999987,
+        0.6749999999999996,
+        -0.29999999999999893
+      ],
+      "expected_values": [
+        0.1,
+        0.675,
+        -0.3
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.5",
+      "label": "overflow must reject",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 57, in <lambda>\n    for label,values in [('overflow',(1e308,2.,2.)),('underflow',(1e-300,1e-300,1e-300))]:reject('6.5',label+' must reject',lambda values=values:m.position_changes(*[np.array([v]) for v in values]),'FloatingPointError')\n                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/vectorized_marks/vectorized_marks.py\", line 26, in position_changes\n    opening = quantity * start\n              ~~~~~~~~~^~~~~~~\nFloatingPointError: overflow encountered in multiply\n"
+    },
+    {
+      "section": "6.5",
+      "label": "underflow must reject",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 57, in <lambda>\n    for label,values in [('overflow',(1e308,2.,2.)),('underflow',(1e-300,1e-300,1e-300))]:reject('6.5',label+' must reject',lambda values=values:m.position_changes(*[np.array([v]) for v in values]),'FloatingPointError')\n                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/vectorized_marks/vectorized_marks.py\", line 26, in position_changes\n    opening = quantity * start\n              ~~~~~~~~~^~~~~~~\nFloatingPointError: underflow encountered in multiply\n"
+    },
+    {
+      "section": "6.5",
+      "label": "error policy restored after signals",
+      "actual": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "expected": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.5",
+      "label": "flat quantity still rejects invalid price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 59, in <lambda>\n    reject('6.5','flat quantity still rejects invalid price',lambda:m.position_changes(np.array([0.]),np.array([-1.]),np.array([1.])),'ValueError')\n                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/vectorized_marks/vectorized_marks.py\", line 24, in position_changes\n    raise ValueError('prices must be nonnegative')\nValueError: prices must be nonnegative\n"
+    },
+    {
+      "section": "6.6",
+      "label": "common shocks rational cross product",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          -100.0,
+          40.0,
+          -0.0
+        ],
+        [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        [
+          100.0,
+          -40.0,
+          0.0
+        ]
+      ],
+      "expected_values": [
+        [
+          -100.0,
+          40.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          100.0,
+          -40.0,
+          0.0
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.6",
+      "label": "output axes/payload",
+      "actual": "((3, 3), 72)",
+      "expected": "((3, 3), 72)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "nonsquare scalar cross product",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          -3.0,
+          2.4000000000000004
+        ],
+        [
+          0.0,
+          -0.0
+        ],
+        [
+          1.5,
+          -1.2000000000000002
+        ],
+        [
+          3.75,
+          -3.0
+        ]
+      ],
+      "expected_values": [
+        [
+          -3.0,
+          2.4
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1.5,
+          -1.2
+        ],
+        [
+          3.75,
+          -3.0
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.6",
+      "label": "no accidental pairing",
+      "actual": "((4, 2), (3,))",
+      "expected": "((4, 2), (3,))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "exact cell boundary accepted",
+      "actual": "9",
+      "expected": "9",
+      "status": "PASS"
+    },
+    {
+      "section": "6.6",
+      "label": "cell budget rejects 8",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 69, in <lambda>\n    for budget in (8,True):reject('6.6','cell budget rejects '+repr(budget),lambda budget=budget:m.scenario_pnl(q,p0,np.array([-.1,0.,.1]),max_cells=budget),'ValueError')\n                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/broadcasting_lab/broadcasting_lab.py\", line 27, in scenario_pnl\n    raise ValueError('scenario output exceeds cell budget')\nValueError: scenario output exceeds cell budget\n"
+    },
+    {
+      "section": "6.6",
+      "label": "cell budget rejects True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 69, in <lambda>\n    for budget in (8,True):reject('6.6','cell budget rejects '+repr(budget),lambda budget=budget:m.scenario_pnl(q,p0,np.array([-.1,0.,.1]),max_cells=budget),'ValueError')\n                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/broadcasting_lab/broadcasting_lab.py\", line 25, in scenario_pnl\n    raise ValueError('max_cells must be a positive exact int')\nValueError: max_cells must be a positive exact int\n"
+    },
+    {
+      "section": "6.6",
+      "label": "zero shock still rejects overflowing marks",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 70, in <lambda>\n    reject('6.6','zero shock still rejects overflowing marks',lambda:m.scenario_pnl(np.array([1e308]),np.array([2.]),np.array([0.])),'FloatingPointError')\n                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/broadcasting_lab/broadcasting_lab.py\", line 29, in scenario_pnl\n    marks = quantity * price\n            ~~~~~~~~~^~~~~~~\nFloatingPointError: overflow encountered in multiply\n"
+    },
+    {
+      "section": "6.6",
+      "label": "error policy restored",
+      "actual": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "expected": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "exact row sums",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        -60.0,
+        0.0,
+        60.0,
+        120.0
+      ],
+      "expected_values": [
+        -60.0,
+        0.0,
+        60.0,
+        120.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.7",
+      "label": "exact position means",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        50.0,
+        -20.0
+      ],
+      "expected_values": [
+        50.0,
+        -20.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.7",
+      "label": "scalar extrema/mean/counts",
+      "actual": "(-60.0, 120.0, 30.0, 4, 2)",
+      "expected": "(-60.0, 120.0, 30.0, 4, 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "independent variance numerators/denominators",
+      "actual": "(Fraction(18000, 1), Fraction(4500, 1), Fraction(6000, 1))",
+      "expected": "(Fraction(18000, 1), Fraction(4500, 1), Fraction(6000, 1))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "ddof0 Decimal square root",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 67.08203932499369,
+      "expected_values": 67.08203932499369,
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.7",
+      "label": "ddof1 Decimal square root",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 77.45966692414834,
+      "expected_values": 77.45966692414834,
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.7",
+      "label": "single scenario descriptive dispersion",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "single row ddof1 denominator rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 81, in <lambda>\n    reject('6.7','single row ddof1 denominator rejected',lambda:m.summarize(np.array([[1.,2.]]),ddof=1),'ValueError')\n                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/aggregation_lab/aggregation_lab.py\", line 20, in summarize\n    raise ValueError('ddof must be 0 or 1 and smaller than scenario count')\nValueError: ddof must be 0 or 1 and smaller than scenario count\n"
+    },
+    {
+      "section": "6.7",
+      "label": "joint cancellation example",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "independent arrays and preserved source",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.7",
+      "label": "missing entry never silently excluded",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 84, in <lambda>\n    reject('6.7','missing entry never silently excluded',lambda:m.summarize(np.array([[1.,np.nan]])),'ValueError')\n                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/aggregation_lab/aggregation_lab.py\", line 18, in summarize\n    raise ValueError('all supplied P&Ls must be finite')\nValueError: all supplied P&Ls must be finite\n"
+    },
+    {
+      "section": "6.7",
+      "label": "squared deviation overflow",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 85, in <lambda>\n    reject('6.7','squared deviation overflow',lambda:m.summarize(np.array([[1e200],[-1e200]])),'FloatingPointError');ck('6.7','error policy restored',np.geterr(),policy)\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/aggregation_lab/aggregation_lab.py\", line 27, in summarize\n    std = float(np.std(totals,ddof=ddof,dtype=np.float64))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/fromnumeric.py\", line 4064, in std\n    return _methods._std(a, axis=axis, dtype=dtype, out=out, ddof=ddof,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/_methods.py\", line 222, in _std\n    ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/_core/_methods.py\", line 193, in _var\n    x = um.multiply(x, x, out=x)\n        ^^^^^^^^^^^^^^^^^^^^^^^^\nFloatingPointError: overflow encountered in multiply\n"
+    },
+    {
+      "section": "6.7",
+      "label": "error policy restored",
+      "actual": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "expected": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "rational cumulative addition",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        -1000.0,
+        -800.0,
+        -850.0,
+        150.0
+      ],
+      "expected_values": [
+        -1000.0,
+        -800.0,
+        -850.0,
+        150.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.8",
+      "label": "nominal net is final accumulation",
+      "actual": "150.0",
+      "expected": "150.0",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "changed offsets preserve nominal net but not timing",
+      "actual": "(True, False)",
+      "expected": "(True, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "inflow/outflow times aligned",
+      "actual": "([1, 4], [0, 3])",
+      "expected": "([1, 4], [0, 3])",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "storage independence and original preservation",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "duplicate or unsorted offsets [0, 1, 1, 4]",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 94, in <lambda>\n    for values in ([0,1,1,4],[0,3,1,4]):reject('6.8','duplicate or unsorted offsets '+str(values),lambda values=values:m.cashflow_schedule(np.array(values,dtype=np.int64),amounts),'ValueError')\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/cashflow_vectors/cashflow_vectors.py\", line 24, in cashflow_schedule\n    raise ValueError('periods must be strictly increasing; combine duplicates upstream')\nValueError: periods must be strictly increasing; combine duplicates upstream\n"
+    },
+    {
+      "section": "6.8",
+      "label": "duplicate or unsorted offsets [0, 3, 1, 4]",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6middlelabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-middle-lab-review/review.py\", line 94, in <lambda>\n    for values in ([0,1,1,4],[0,3,1,4]):reject('6.8','duplicate or unsorted offsets '+str(values),lambda values=values:m.cashflow_schedule(np.array(values,dtype=np.int64),amounts),'ValueError')\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-middle-labs-6m4uqt8t/cashflow_vectors/cashflow_vectors.py\", line 24, in cashflow_schedule\n    raise ValueError('periods must be strictly increasing; combine duplicates upstream')\nValueError: periods must be strictly increasing; combine duplicates upstream\n"
+    },
+    {
+      "section": "6.8",
+      "label": "bound amounts repeated 10000 times",
+      "actual": "1e+16",
+      "expected": "1e+16",
+      "status": "PASS"
+    },
+    {
+      "section": "6.8",
+      "label": "negative amount and maximum offset inclusive",
+      "actual": "-1000000000000.0",
+      "expected": "-1000000000000.0",
+      "status": "PASS"
+    }
+  ]
+}
