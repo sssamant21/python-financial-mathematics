@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-30  
-**Overall status:** In progress — full pinned-revision runtime pass complete (464 compiled files; 253 successful script exits); coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — full pinned-revision runtime pass complete (467 compiled files; 256 successful script exits); coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Pinned-revision pass complete | 464/464 files compiled at `378775bc25034f5551f1d1efa51d836da77d6737` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r2.md). |
-| Automated script execution | Pinned-revision pass complete | 253/253 check/test scripts exited zero at `378775bc25034f5551f1d1efa51d836da77d6737`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r2.md). |
+| Python compilation | Pinned-revision pass complete | 467/467 files compiled at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r3.md). |
+| Automated script execution | Pinned-revision pass complete | 256/256 check/test scripts exited zero at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r3.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped multistart reference follow-up
+## Latest full-book runtime refresh — V-39
+
+467/467 sources compiled; 256/256 scripts exited zero; 468/468 required hashes matched before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`. Includes three Chapter 16 optimizer reference checkers. [Report](runtime-refresh-2026-10-30-r3.md) · [Raw evidence](runtime-refresh-2026-10-30-r3.json). Twenty-eight categories remain partially addressed; independent review/release gates stay open.
+
+## Earlier scoped multistart reference follow-up
 
 Four selected starts now have independent stationary-cubic root/objective references and real failed/mixed pool checks. A stationary local maximum demonstrates status limits. All 22 Chapter 16 files compiled and 12 scripts passed; implementation unchanged. [Evidence](chapter-16-multistart-reference-followup.md). COV-73/75 partially open; follows V-38.
 
@@ -226,7 +230,9 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
+- **Latest full run:** [V-39 eighth refresh](runtime-refresh-2026-10-30-r3.md): 467 sources compiled, 256 scripts passed and 468 required hashes verified before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`.
+
+- **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
 - **Historical sixth refresh:** [V-37 sixth refresh](runtime-refresh-2026-10-30.md): 461 sources compiled and 250 scripts passed at `28af429b7695520536cf4a3384af1318614e31aa`; 462 hashes verified before/after.
 
@@ -425,3 +431,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Independent multistart reference follow-up — 2026-10-30
 
 [Section 16.7 evidence](chapter-16-multistart-reference-followup.md) checks four default starts against independent 80-digit stationary roots/objectives and curvature classification, plus real failed/mixed pools. Gradient-tolerance at the middle local maximum explicitly preserves the distinction from a minimum/global certificate. All 22 chapter files compiled and 12 scripts passed; implementation unchanged. This follows V-38; twenty-eight categories are partially addressed. Next executable item: Section 16.7 scaling transforms, Hessian condition and stable-step bounds with units explicit. Independent-review, platform and release gates remain pending.
+
+## Scaling references and V-39 — 2026-10-30
+
+[Section 16.7 evidence](chapter-16-scaling-reference-followup.md) independently checks Hessian transforms/condition numbers, four coordinate round trips, twelve curvature stencils and six real scalar stable/boundary/unstable mode runs. All 23 Chapter 16 files compiled and 13 scripts passed; implementation unchanged. [V-39 full evidence](runtime-refresh-2026-10-30-r3.md) then compiled 467 sources and passed 256 scripts with 468 hashes verified before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`, covering all three Chapter 16 follow-ups. Twenty-eight categories remain partially addressed. Next executable item: COV-75 Sections 16.2–16.4 derivative representability and denominator extremes. Independent-review, environment and release gates remain pending.
