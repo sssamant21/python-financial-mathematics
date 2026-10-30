@@ -95,3 +95,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Computed diagnostic integration follow-up — 2026-10-29
 
 [Section 14.8 evidence](chapter-14-diagnostic-integration-followup.md) replaces literal-factor diagnostics with actual helper calls and independently recomputed errors. Four calls are observed and five wrong outputs detected; all 29 chapter files compiled and 19 scripts passed. This source/checker change follows V-36; G1's full-book evidence is historical for the changed source. Twenty-five categories remain partially addressed. Next executable item: Section 14.10 reference-report integration under COV-67. Independent review, environment and release gates remain pending.
+
+## Final-assessment integration follow-up — 2026-10-30
+
+[Section 14.10 evidence](chapter-14-final-integration-followup.md) propagates computed helper results and recomputes factor/matrix diagnostics. Four helper calls and five corrupted outputs are checked; all 30 chapter files compiled and 20 scripts passed. This source/checker change follows V-36; twenty-five categories remain partially addressed. The selected 14.8/14.10 wiring obligation is addressed, while COV-67 and independent review remain open. Next executable item: Chapter 15 COV-71 Hessian finite-difference accuracy/convergence and representability, beginning with its coverage map. Environment and release gates remain pending.
