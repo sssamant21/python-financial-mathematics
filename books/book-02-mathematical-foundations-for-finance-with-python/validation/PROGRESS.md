@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-30  
-**Overall status:** In progress — full pinned-revision runtime pass complete (461 compiled files; 250 successful script exits); coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — full pinned-revision runtime pass complete (464 compiled files; 253 successful script exits); coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Pinned-revision pass complete | 461/461 files compiled at `28af429b7695520536cf4a3384af1318614e31aa` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30.md). |
-| Automated script execution | Pinned-revision pass complete | 250/250 check/test scripts exited zero at `28af429b7695520536cf4a3384af1318614e31aa`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30.md). |
+| Python compilation | Pinned-revision pass complete | 464/464 files compiled at `378775bc25034f5551f1d1efa51d836da77d6737` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r2.md). |
+| Automated script execution | Pinned-revision pass complete | 253/253 check/test scripts exited zero at `378775bc25034f5551f1d1efa51d836da77d6737`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped covariance consistency correction
+## Latest full-book runtime refresh — V-38
+
+464/464 sources compiled; 253/253 scripts exited zero; 465/465 required hashes matched before/after at `378775bc25034f5551f1d1efa51d836da77d6737`. Includes all recent maturity/covariance changes and three checkers. [Report](runtime-refresh-2026-10-30-r2.md) · [Raw evidence](runtime-refresh-2026-10-30-r2.json). G1 refreshed; independent review/release gates remain pending.
+
+## Earlier scoped covariance consistency correction
 
 Sections 15.4/15.6 now share symmetric covariance normalization and finite determinant screening, correcting inconsistent accepted-input gradients/Hessians. All 26 Chapter 15 files compiled and 16 scripts passed. [Evidence](chapter-15-covariance-consistency-followup.md). This follows V-37; COV-72 remains partially open.
 
@@ -214,7 +218,9 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-37 sixth refresh](runtime-refresh-2026-10-30.md): 461 sources compiled and 250 scripts passed at `28af429b7695520536cf4a3384af1318614e31aa`; 462 hashes verified before/after.
+- **Latest full run:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
+
+- **Historical sixth refresh:** [V-37 sixth refresh](runtime-refresh-2026-10-30.md): 461 sources compiled and 250 scripts passed at `28af429b7695520536cf4a3384af1318614e31aa`; 462 hashes verified before/after.
 
 - **Historical fifth refresh:** [V-36 fifth refresh](runtime-refresh-2026-10-29-r5.md): 456 files compiled; 245 scripts passed at `82ec4d155b0b370008fab16f42a9781b7c4cd322`; 457 required blobs verified before/after.
 
@@ -399,3 +405,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Covariance derivative consistency correction — 2026-10-30
 
 [Sections 15.4/15.6 evidence](chapter-15-covariance-consistency-followup.md) retains a confirmed accepted-asymmetry derivative inconsistency and original regression failure. Shared symmetric normalization/finite PD screening now passes three covariance cases, nine exact-quadratic references and selected rejection cases; all 26 chapter files compiled and 16 scripts passed. This source/checker change follows V-37. Twenty-six categories remain partially addressed. Next executable item: covariance determinant underflow/cancellation benchmarks, then full-book reconciliation of the maturity/covariance changes. Independent-review, platform and release gates remain pending.
+
+## Covariance screen benchmarks and V-38 — 2026-10-30
+
+[Exact-reference screen evidence](chapter-15-covariance-screen-followup.md) records three exact-PD exclusions from the limited float determinant contract, three accepted near-PD cases and two non-PD cases. Implementation unchanged; all 27 Chapter 15 files compiled and 17 scripts passed. [V-38 full evidence](runtime-refresh-2026-10-30-r2.md) subsequently compiled 464 sources and passed 253 scripts with 465 hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`, including all maturity/covariance corrections. Twenty-six categories remain partially addressed. Next executable item: Chapter 16 COV-73/75 optimizer status/scaling obligations from its coverage map; independent-review, platform and release gates remain open.
