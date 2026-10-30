@@ -1,6 +1,7 @@
 """Book 02 Section 17.10: Chapter 17 exercise and applied-problem lab."""
 import json
 import math
+import section_17_05 as lp_lab
 
 SIGMA=((0.04,0.01),(0.01,0.09))
 TRANSITION=8/11
@@ -57,14 +58,23 @@ def two_sided(cap1,cap2):
             "variance":0.04*x*x+0.02*x*y+0.09*y*y}
 
 def linear_program_reference():
-    vertices=((0,0),(5,0),(2,6),(0,8))
-    scores=tuple(5*x+4*y for x,y in vertices)
-    dual=(3,1)
+    solution=lp_lab.solve_vertices()
+    # Retain the manuscript's origin/positive-axis/angular display order,
+    # while obtaining every point from the actual fixed-model computation.
+    vertices=tuple(sorted(solution["vertices"],
+                          key=lambda p:(math.atan2(p[1],p[0]),p[0]*p[0]+p[1]*p[1])))
+    scores=tuple(lp_lab.benefit(*p) for p in vertices)
+    # Both default optimal coordinates are positive: A^T u=c gives this
+    # pair. This is the fixed example's analytic dual, not a general solver.
+    dual=(2*lp_lab.C[1]-lp_lab.C[0],lp_lab.C[0]-lp_lab.C[1])
+    certificate=lp_lab.certificate(*solution["allocation"],*dual)
     return {"vertices":vertices,"scores":scores,
-            "optimal_point":vertices[scores.index(max(scores))],
-            "primal_value":max(scores),
+            "optimal_point":solution["allocation"],
+            "primal_value":solution["benefit"],
             "dual_multipliers":dual,
-            "dual_value":8*dual[0]+10*dual[1]}
+            "dual_value":certificate["dual"]["dual_objective"],
+            "certificate":certificate,
+            "scope":"fixed Section17.5 two-variable LP; not a general solver"}
 
 def financial_reference():
     x,y=0.6,0.4
