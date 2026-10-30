@@ -1,0 +1,182 @@
+[
+  {
+    "id": "PIPELINE-1",
+    "source_unit": "7.17.4 Snapshot read",
+    "expected": "Same bounded bytes hashed and parsed",
+    "status": "PASS_SCOPED",
+    "actual": "Fixture digest/count checks,CRLF/reordered analytical equivalence,UTF8 and1000001byte rejections;not OS transaction/authentication",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "PIPELINE-2",
+    "source_unit": "7.17.4 Structural preflight",
+    "expected": "Exact ordered header and field widths",
+    "status": "PASS_SCOPED",
+    "actual": "Source guards and invalid-schema/width probes;original suite also rejects blank record",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "PIPELINE-3",
+    "source_unit": "7.17.4 Conversion",
+    "expected": "UTC text,unsigned decimal grammar,USD and positive prices",
+    "status": "PASS_SCOPED",
+    "actual": "Native/ValueError distinctions retained;invalid calendar/naive/zero/blank/exponent/EUR probes;literalNA preserved",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "PIPELINE-4",
+    "source_unit": "7.17.4 Panel construction",
+    "expected": "Independent ordered assets/grid,uniquekeys,gapsvisible",
+    "status": "PASS_SCOPED",
+    "actual": "Expected axes retained;duplicate/unexpected rejection;whollyabsentCASH visible;local helper byte-equivalent beforefixture",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "PIPELINE-5",
+    "source_unit": "7.17.4 Returns",
+    "expected": "Adjacentgrid,no fill",
+    "status": "PASS_SCOPED",
+    "actual": "ALPHA rational+.1/-.1;BETA bothunknown untilmiddle210supplied;completeflags0then2",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "PIPELINE-6",
+    "source_unit": "7.17.4 Description",
+    "expected": "Two observed intervalreturns needed for rollingmean",
+    "status": "PASS_SCOPED",
+    "actual": "ALPHA two leadingNaNs,finalapproximately0;BETA allmissing;completedBETA arithmeticmean(1/20+1/21)/2",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "PIPELINE-7",
+    "source_unit": "7.17.4 Summary",
+    "expected": "Completepath linked separately from endpoint",
+    "status": "PASS_SCOPED",
+    "actual": "ALPHA linked/endpoint-.01;BETA endpoint+.1,linkedNaN untilpathcomplete;no annualization/portfolio",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "ACCEPT-1",
+    "source_unit": "7.17.15 acceptance sentence",
+    "expected": "Reproduce both fixture summaries",
+    "status": "PASS_SCOPED",
+    "actual": "Full original incomplete demo and retained incomplete/complete source reports;no persistent writer inferred",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "ACCEPT-2",
+    "source_unit": "7.17.15 acceptance sentence",
+    "expected": "Explain BETA endpoint versus unavailable path",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Known200to220 endpoint over2days doesnot provide two missingadjacent gridreturns;explanation aligns with sourceflags",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "ACCEPT-3",
+    "source_unit": "7.17.15 acceptance sentence",
+    "expected": "Supply missingmiddle210 for2completeintervals",
+    "status": "PASS_SCOPED",
+    "actual": "Independent1/20 and1/21,BETA linked1/10,completeintervals2;modified fixture retained",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "ACCEPT-4",
+    "source_unit": "7.17.15 acceptance sentence",
+    "expected": "Inspect byte/version evidence",
+    "status": "PASS_SCOPED",
+    "actual": "SHA256,bytecount,5records,USD,Python/pandas/NumPy checked;expectedaxes and both exactpayloads retained separately",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "ACCEPT-5",
+    "source_unit": "7.17.15 acceptance sentence",
+    "expected": "Run all8 tests",
+    "status": "PASS_SCOPED",
+    "actual": "Documented original discovery records8methods,OK,exit0,no skips;not independent external sign-off",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "TROUBLE-1",
+    "source_unit": "7.17.15 troubleshooting",
+    "expected": "CSV rejected",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Check exactschema,width,UTC/numericgrammar;retained probes distinguish rejected input from partialcoverage",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "TROUBLE-2",
+    "source_unit": "7.17.15 troubleshooting",
+    "expected": "Unexpected asset/time",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Compare source with callerexpectedaxes;no silently dropped extras",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "TROUBLE-3",
+    "source_unit": "7.17.15 troubleshooting",
+    "expected": "Duplicate key",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Investigate revision/venuegrain and precedence,neverchoosefirst unverified",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "TROUBLE-4",
+    "source_unit": "7.17.15 troubleshooting",
+    "expected": "Linked missing but endpoint known",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Intermediateexpected observations absent;do not fill to create path",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "TROUBLE-5",
+    "source_unit": "7.17.15 troubleshooting",
+    "expected": "Rolling missing",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Require2adjacent observed intervalreturns,warmup and gaps explicit",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  },
+  {
+    "id": "TROUBLE-6",
+    "source_unit": "7.17.15 troubleshooting",
+    "expected": "Equivalent tables but different hash",
+    "status": "REVIEWED_CONCEPTUAL",
+    "actual": "Byte-level lineending/order differences tested;semantic equality is separate from byteidentity",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "baseline": "f64d29daa401efc1ae2e83732efc9ccd52d4da64",
+    "scope": "scoped project review,not local exercise or independent acceptance"
+  }
+]

@@ -1,0 +1,216 @@
+{
+  "scope": "QA serialization of unchanged analyzer outputs,not a source report writer;NaN represented as null",
+  "expected_assets": [
+    "ALPHA",
+    "BETA"
+  ],
+  "expected_utc_grid": [
+    "2026-01-30T16:00:00+00:00",
+    "2026-01-31T16:00:00+00:00",
+    "2026-02-01T16:00:00+00:00"
+  ],
+  "incomplete": {
+    "evidence": {
+      "sha256": "a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6",
+      "bytes": 198,
+      "records": 5,
+      "currency": "USD",
+      "python": "3.12.14",
+      "pandas": "2.2.3",
+      "numpy": "2.3.5"
+    },
+    "prices": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "ALPHA": 100.0,
+        "BETA": 200.0
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "ALPHA": 110.0,
+        "BETA": null
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "ALPHA": 99.0,
+        "BETA": 220.0
+      }
+    ],
+    "returns": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "ALPHA": null,
+        "BETA": null
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "ALPHA": 0.10000000000000009,
+        "BETA": null
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "ALPHA": -0.09999999999999998,
+        "BETA": null
+      }
+    ],
+    "rolling_mean_2": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "ALPHA": null,
+        "BETA": null
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "ALPHA": null,
+        "BETA": null
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "ALPHA": 5.551115123125783e-17,
+        "BETA": null
+      }
+    ],
+    "coverage": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "observed_prices": 2,
+        "expected_prices": 2,
+        "complete_interval": false
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "observed_prices": 1,
+        "expected_prices": 2,
+        "complete_interval": false
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "observed_prices": 2,
+        "expected_prices": 2,
+        "complete_interval": false
+      }
+    ],
+    "summary": [
+      {
+        "asset": "ALPHA",
+        "observed_prices": 3,
+        "expected_prices": 3,
+        "observed_intervals": 2,
+        "complete_path": true,
+        "endpoint_return": -0.010000000000000009,
+        "linked_return": -0.009999999999999898
+      },
+      {
+        "asset": "BETA",
+        "observed_prices": 2,
+        "expected_prices": 3,
+        "observed_intervals": 0,
+        "complete_path": false,
+        "endpoint_return": 0.10000000000000009,
+        "linked_return": null
+      }
+    ]
+  },
+  "complete": {
+    "evidence": {
+      "sha256": "60a435789f8bb20272b2bd187415ed0295bcff9804cfb7f89696bdaf59f22a6c",
+      "bytes": 232,
+      "records": 6,
+      "currency": "USD",
+      "python": "3.12.14",
+      "pandas": "2.2.3",
+      "numpy": "2.3.5"
+    },
+    "prices": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "ALPHA": 100.0,
+        "BETA": 200.0
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "ALPHA": 110.0,
+        "BETA": 210.0
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "ALPHA": 99.0,
+        "BETA": 220.0
+      }
+    ],
+    "returns": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "ALPHA": null,
+        "BETA": null
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "ALPHA": 0.10000000000000009,
+        "BETA": 0.050000000000000044
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "ALPHA": -0.09999999999999998,
+        "BETA": 0.04761904761904767
+      }
+    ],
+    "rolling_mean_2": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "ALPHA": null,
+        "BETA": null
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "ALPHA": null,
+        "BETA": null
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "ALPHA": 5.551115123125783e-17,
+        "BETA": 0.04880952380952386
+      }
+    ],
+    "coverage": [
+      {
+        "time": "2026-01-30T16:00:00+00:00",
+        "observed_prices": 2,
+        "expected_prices": 2,
+        "complete_interval": false
+      },
+      {
+        "time": "2026-01-31T16:00:00+00:00",
+        "observed_prices": 2,
+        "expected_prices": 2,
+        "complete_interval": true
+      },
+      {
+        "time": "2026-02-01T16:00:00+00:00",
+        "observed_prices": 2,
+        "expected_prices": 2,
+        "complete_interval": true
+      }
+    ],
+    "summary": [
+      {
+        "asset": "ALPHA",
+        "observed_prices": 3,
+        "expected_prices": 3,
+        "observed_intervals": 2,
+        "complete_path": true,
+        "endpoint_return": -0.010000000000000009,
+        "linked_return": -0.009999999999999898
+      },
+      {
+        "asset": "BETA",
+        "observed_prices": 3,
+        "expected_prices": 3,
+        "observed_intervals": 2,
+        "complete_path": true,
+        "endpoint_return": 0.10000000000000009,
+        "linked_return": 0.10000000000000009
+      }
+    ]
+  }
+}

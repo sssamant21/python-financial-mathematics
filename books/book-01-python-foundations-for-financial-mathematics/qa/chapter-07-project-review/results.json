@@ -1,0 +1,389 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+  "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+  "listing_sha256": {
+    "panel.py": "e3dfe163b6f714ff75db249dab4ec45855965cd2758769a1500607153eafcba3",
+    "analyzer.py": "612ff17c5246232adb86534a611b5af52621cf74f69b8d7de5b6dd41af318910",
+    "test_analyzer.py": "75b721479a8321086f5c3793963388c9f4fb4f0b752063f87b733f847951e5db",
+    "prices.csv": "a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6"
+  },
+  "python_fences": [
+    {
+      "index": 0,
+      "sha256": "e3dfe163b6f714ff75db249dab4ec45855965cd2758769a1500607153eafcba3"
+    },
+    {
+      "index": 1,
+      "sha256": "612ff17c5246232adb86534a611b5af52621cf74f69b8d7de5b6dd41af318910"
+    },
+    {
+      "index": 2,
+      "sha256": "75b721479a8321086f5c3793963388c9f4fb4f0b752063f87b733f847951e5db"
+    }
+  ],
+  "fixture_sha256": "a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6",
+  "workflows": 1,
+  "derived_step_units": 8,
+  "command_records": 6,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 38,
+  "failed": 0,
+  "commands": [
+    {
+      "label": "prepared environment",
+      "args": [
+        "-c",
+        "import platform,pandas as pd,numpy as np;print(platform.python_version(),pd.__version__,np.__version__)"
+      ],
+      "cwd_role": "parent",
+      "returncode": 0,
+      "stdout": "3.12.14 2.2.3 2.3.5\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_717/analyzer.py"
+      ],
+      "cwd_role": "parent",
+      "returncode": 0,
+      "stdout": "       observed_prices  expected_prices  observed_intervals  complete_path  endpoint_return  linked_return\nasset                                                                                                     \nALPHA                3                3                   2           True          -0.0100        -0.0100\nBETA                 2                3                   0          False           0.1000            NaN\nComplete aligned intervals: 0\nSource records: 5\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_717",
+        "-v"
+      ],
+      "cwd_role": "parent",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_complete_pipeline_and_scalar (test_analyzer.AnalyzerTests.test_complete_pipeline_and_scalar) ... ok\ntest_duplicate_unexpected_and_missing_universe (test_analyzer.AnalyzerTests.test_duplicate_unexpected_and_missing_universe) ... ok\ntest_gap_not_bridged_and_warmup (test_analyzer.AnalyzerTests.test_gap_not_bridged_and_warmup) ... ok\ntest_hash_and_records (test_analyzer.AnalyzerTests.test_hash_and_records) ... ok\ntest_incomplete_known_answer (test_analyzer.AnalyzerTests.test_incomplete_known_answer) ... ok\ntest_invalid_price_and_time (test_analyzer.AnalyzerTests.test_invalid_price_and_time) ... ok\ntest_row_order_and_returned_ownership (test_analyzer.AnalyzerTests.test_row_order_and_returned_ownership) ... ok\ntest_schema_and_context_rejections (test_analyzer.AnalyzerTests.test_schema_and_context_rejections) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.114s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_717"
+      ],
+      "cwd_role": "parent",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "quiet production-module imports",
+      "args": [
+        "-c",
+        "import panel,analyzer"
+      ],
+      "cwd_role": "sibling lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "demonstration from unrelated directory",
+      "args": [
+        "/tmp/chapter07-project-2b76rqtk/pandas_lab_717/analyzer.py"
+      ],
+      "cwd_role": "unrelated directory",
+      "returncode": 0,
+      "stdout": "       observed_prices  expected_prices  observed_intervals  complete_path  endpoint_return  linked_return\nasset                                                                                                     \nALPHA                3                3                   2           True          -0.0100        -0.0100\nBETA                 2                3                   0          False           0.1000            NaN\nComplete aligned intervals: 0\nSource records: 5\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "label": "four reconstructed files byte-identical",
+      "actual": "{'panel.py': 'e3dfe163b6f714ff75db249dab4ec45855965cd2758769a1500607153eafcba3', 'analyzer.py': '612ff17c5246232adb86534a611b5af52621cf74f69b8d7de5b6dd41af318910', 'test_analyzer.py': '75b721479a8321086f5c3793963388c9f4fb4f0b752063f87b733f847951e5db', 'prices.csv': 'a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6'}",
+      "expected": "{'panel.py': 'e3dfe163b6f714ff75db249dab4ec45855965cd2758769a1500607153eafcba3', 'analyzer.py': '612ff17c5246232adb86534a611b5af52621cf74f69b8d7de5b6dd41af318910', 'test_analyzer.py': '75b721479a8321086f5c3793963388c9f4fb4f0b752063f87b733f847951e5db', 'prices.csv': 'a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6'}",
+      "status": "PASS"
+    },
+    {
+      "label": "exact parsed payload identity",
+      "actual": "('a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6', 198, 5)",
+      "expected": "('a15a4f846602f7509284c61b2c6b15b1439d2cdf7879a4968275aaa8837d6aa6', 198, 5)",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime/currency evidence",
+      "actual": "('3.12.14', '2.2.3', '2.3.5', 'USD')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5', 'USD')",
+      "status": "PASS"
+    },
+    {
+      "label": "independently specified grid retained",
+      "actual": "(['ALPHA', 'BETA'], ['2026-01-30T16:00:00+00:00', '2026-01-31T16:00:00+00:00', '2026-02-01T16:00:00+00:00'])",
+      "expected": "(['ALPHA', 'BETA'], ['2026-01-30T16:00:00+00:00', '2026-01-31T16:00:00+00:00', '2026-02-01T16:00:00+00:00'])",
+      "status": "PASS"
+    },
+    {
+      "label": "per-asset expected versus observed prices",
+      "actual": "([3, 2], [3, 3])",
+      "expected": "([3, 2], [3, 3])",
+      "status": "PASS"
+    },
+    {
+      "label": "per-asset interval counts/complete path",
+      "actual": "([2, 0], [True, False])",
+      "expected": "([2, 0], [True, False])",
+      "status": "PASS"
+    },
+    {
+      "label": "rational ALPHA adjacent returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "ALPHA linked return independent rational product",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "ALPHA endpoint independent ratio",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "BETA endpoint-only rational ratio",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "BETA grid path not fabricated",
+      "actual": "(True, np.True_)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "label": "coverage per time and complete interval",
+      "actual": "([2, 1, 2], [2, 2, 2], [False, False, False])",
+      "expected": "([2, 1, 2], [2, 2, 2], [False, False, False])",
+      "status": "PASS"
+    },
+    {
+      "label": "rolling warmup and missing BETA",
+      "actual": "(np.True_, np.True_)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "label": "ALPHA arithmetic mean differs from linked return",
+      "actual": "(np.True_, np.True_)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "label": "completed fixture aligned coverage",
+      "actual": "[False, True, True]",
+      "expected": "[False, True, True]",
+      "status": "PASS"
+    },
+    {
+      "label": "completed BETA scalar rational intervals",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "completed BETA linked full horizon",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "completed BETA rolling mean is not full horizon return",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "CRLF changes bytes not normalized report",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "label": "record-order byte evidence differs while report agrees",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "label": "absent expected asset stays visible",
+      "actual": "(np.True_, np.int64(0), True)",
+      "expected": "(True, 0, True)",
+      "status": "PASS"
+    },
+    {
+      "label": "literal NA identifier preserved",
+      "actual": "np.int64(3)",
+      "expected": "3",
+      "status": "PASS"
+    },
+    {
+      "label": "reject duplicate composite key",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 39, in analyze\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence0\", line 32, in panel\nValueError: duplicate asset-time key\n"
+    },
+    {
+      "label": "reject wrong currency",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 30, in analyze\nValueError: USD only; no FX conversion\n"
+    },
+    {
+      "label": "reject wrong ordered header",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 24, in analyze\nValueError: exact header and bounded nonempty records required\n"
+    },
+    {
+      "label": "reject wrong field width",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 25, in analyze\nValueError: record field count violation\n"
+    },
+    {
+      "label": "reject zero supplied price",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 39, in analyze\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence0\", line 37, in panel\nValueError: supplied prices must be finite and positive\n"
+    },
+    {
+      "label": "reject missing numeric token",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 37, in analyze\nValueError: bounded unsigned decimal price text required\n"
+    },
+    {
+      "label": "reject exponent price token",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 37, in analyze\nValueError: bounded unsigned decimal price text required\n"
+    },
+    {
+      "label": "reject naive time token",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 33, in analyze\nValueError: exact UTC timestamp text required\n"
+    },
+    {
+      "label": "reject invalid calendar token",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 34, in analyze\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/tools/datetimes.py\", line 1067, in to_datetime\n    values = convert_listlike(arg._values, format)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/tools/datetimes.py\", line 433, in _convert_listlike_datetimes\n    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/tools/datetimes.py\", line 467, in _array_strptime_with_fallback\n    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"strptime.pyx\", line 501, in pandas._libs.tslibs.strptime.array_strptime\n  File \"strptime.pyx\", line 451, in pandas._libs.tslibs.strptime.array_strptime\n  File \"strptime.pyx\", line 767, in pandas._libs.tslibs.strptime._parse_with_format\nValueError: day is out of range for month, at position 0. You might want to try:\n    - passing `format` if your strings have a consistent format;\n    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;\n    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.\n"
+    },
+    {
+      "label": "reject unexpected asset",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 87, in <lambda>\n    reject('reject '+label,lambda data=data:analyze(data))\n                                            ^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 39, in analyze\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence0\", line 31, in panel\nValueError: record outside expected asset/time grid\n"
+    },
+    {
+      "label": "strict UTF8 rejects bad bytes",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "UnicodeDecodeError",
+      "expected_exception": "UnicodeDecodeError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 88, in <lambda>\n    reject('strict UTF8 rejects bad bytes',lambda:analyze(b'\\xff'+payload),UnicodeDecodeError)\n                                                  ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 20, in analyze\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n"
+    },
+    {
+      "label": "bounded snapshot rejects1000001bytes",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception": "ValueError",
+      "expected_rejection_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 29, in reject\n    try:fn();actual='no exception';trace=''\n        ^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 89, in <lambda>\n    reject('bounded snapshot rejects1000001bytes',lambda:analyze(b'x'*1_000_001))\n                                                         ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-project-review/review.py\", line 59, in analyze\n    probe=parent/'probe.csv';probe.write_bytes(data);return am.analyze(probe,universe,grid)\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7project/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.17-chapter-project-financial-time-series-analyzer.md:fence1\", line 19, in analyze\nValueError: CSV byte limit exceeded\n"
+    },
+    {
+      "label": "input CSV unchanged by commands and source calls",
+      "actual": "b'time,asset,currency,price\\n2026-01-30T16:00:00Z,ALPHA,USD,100\\n2026-01-31T16:00:00Z,ALPHA,USD,110\\n2026-02-01T16:00:00Z,ALPHA,USD,99\\n2026-01-30T16:00:00Z,BETA,USD,200\\n2026-02-01T16:00:00Z,BETA,USD,220\\n'",
+      "expected": "b'time,asset,currency,price\\n2026-01-30T16:00:00Z,ALPHA,USD,100\\n2026-01-31T16:00:00Z,ALPHA,USD,110\\n2026-02-01T16:00:00Z,ALPHA,USD,99\\n2026-01-30T16:00:00Z,BETA,USD,200\\n2026-02-01T16:00:00Z,BETA,USD,220\\n'",
+      "status": "PASS"
+    },
+    {
+      "label": "returned output mutation does not change retained input",
+      "actual": "b'time,asset,currency,price\\n2026-01-30T16:00:00Z,ALPHA,USD,100\\n2026-01-31T16:00:00Z,ALPHA,USD,110\\n2026-02-01T16:00:00Z,ALPHA,USD,99\\n2026-01-30T16:00:00Z,BETA,USD,200\\n2026-02-01T16:00:00Z,BETA,USD,220\\n'",
+      "expected": "b'time,asset,currency,price\\n2026-01-30T16:00:00Z,ALPHA,USD,100\\n2026-01-31T16:00:00Z,ALPHA,USD,110\\n2026-02-01T16:00:00Z,ALPHA,USD,99\\n2026-01-30T16:00:00Z,BETA,USD,200\\n2026-02-01T16:00:00Z,BETA,USD,220\\n'",
+      "status": "PASS"
+    },
+    {
+      "label": "independent rerun restores original observation",
+      "actual": "np.float64(100.0)",
+      "expected": "100.0",
+      "status": "PASS"
+    },
+    {
+      "label": "local helper matches Section7.16 pre-fixture source",
+      "actual": "'\"\"\"Long-to-wide price panel on an independently specified observation grid.\"\"\"\\nimport numpy as np\\nimport pandas as pd\\n\\n\\ndef panel(raw,assets,times):\\n    \"\"\"Return wide prices, adjacent-grid returns, and complete interval flags.\\n\\n    Single common currency and adjustment convention, no fills or portfolio\\n    weights. Missing asset-time observations remain unknown.\\n    \"\"\"\\n    if not isinstance(assets,tuple) or not 1<=len(assets)<=100:\\n        raise ValueError(\\'tuple of 1..100 expected assets required\\')\\n    if any(not isinstance(x,str) or not 0<len(x)<=64 or x!=x.strip() for x in assets) or len(set(assets))!=len(assets):\\n        raise ValueError(\\'unique trimmed asset strings required\\')\\n    if not isinstance(times,pd.DatetimeIndex) or not 2<=len(times)<=1000:\\n        raise ValueError(\\'DatetimeIndex with 2..1000 expected times required\\')\\n    if times.tz is None or times.hasnans or not times.is_unique or not times.is_monotonic_increasing:\\n        raise ValueError(\\'aware ordered unique expected times required\\')\\n    grid=times.tz_convert(\\'UTC\\').rename(\\'time\\')\\n    if not isinstance(raw,pd.DataFrame) or not 1<=len(raw)<=100_000:\\n        raise ValueError(\\'DataFrame with 1..100000 records required\\')\\n    if not raw.columns.is_unique or raw.columns.tolist()!=[\\'time\\',\\'asset\\',\\'price\\']:\\n        raise ValueError(\\'exact ordered long schema required\\')\\n    if not isinstance(raw[\\'time\\'].dtype,pd.DatetimeTZDtype) or raw[\\'time\\'].isna().any():\\n        raise ValueError(\\'complete aware time column required\\')\\n    if not raw[\\'asset\\'].map(lambda x:isinstance(x,str) and 0<len(x)<=64 and x==x.strip()).all():\\n        raise ValueError(\\'trimmed asset strings required\\')\\n    t=raw.reset_index(drop=True).copy(deep=True); t[\\'time\\']=t[\\'time\\'].dt.tz_convert(\\'UTC\\')\\n    if not t[\\'asset\\'].isin(assets).all() or not t[\\'time\\'].isin(grid).all():\\n        raise ValueError(\\'record outside expected asset/time grid\\')\\n    if t.duplicated([\\'time\\',\\'asset\\']).any(): raise ValueError(\\'duplicate asset-time key\\')\\n    if not isinstance(t[\\'price\\'].dtype,np.dtype) or t[\\'price\\'].dtype.kind not in \\'iuf\\':\\n        raise ValueError(\\'ordinary real numeric prices required\\')\\n    t[\\'price\\']=t[\\'price\\'].astype(\\'float64\\')\\n    if not np.isfinite(t[\\'price\\'].to_numpy()).all() or (t[\\'price\\']<=0).any():\\n        raise ValueError(\\'supplied prices must be finite and positive\\')\\n    wide=t.pivot(index=\\'time\\',columns=\\'asset\\',values=\\'price\\').reindex(index=grid,columns=list(assets))\\n    returns=wide.pct_change(periods=1,fill_method=None)\\n    known=wide.notna() & wide.shift(1).notna()\\n    observed=returns.to_numpy()[known.to_numpy()]\\n    if not np.isfinite(observed).all() or np.any(observed<=-1):\\n        raise ValueError(\\'unsupported return numerical range\\')\\n    complete=known.all(axis=1).rename(\\'complete_interval\\')\\n    return wide,returns,complete'",
+      "expected": "'\"\"\"Long-to-wide price panel on an independently specified observation grid.\"\"\"\\nimport numpy as np\\nimport pandas as pd\\n\\n\\ndef panel(raw,assets,times):\\n    \"\"\"Return wide prices, adjacent-grid returns, and complete interval flags.\\n\\n    Single common currency and adjustment convention, no fills or portfolio\\n    weights. Missing asset-time observations remain unknown.\\n    \"\"\"\\n    if not isinstance(assets,tuple) or not 1<=len(assets)<=100:\\n        raise ValueError(\\'tuple of 1..100 expected assets required\\')\\n    if any(not isinstance(x,str) or not 0<len(x)<=64 or x!=x.strip() for x in assets) or len(set(assets))!=len(assets):\\n        raise ValueError(\\'unique trimmed asset strings required\\')\\n    if not isinstance(times,pd.DatetimeIndex) or not 2<=len(times)<=1000:\\n        raise ValueError(\\'DatetimeIndex with 2..1000 expected times required\\')\\n    if times.tz is None or times.hasnans or not times.is_unique or not times.is_monotonic_increasing:\\n        raise ValueError(\\'aware ordered unique expected times required\\')\\n    grid=times.tz_convert(\\'UTC\\').rename(\\'time\\')\\n    if not isinstance(raw,pd.DataFrame) or not 1<=len(raw)<=100_000:\\n        raise ValueError(\\'DataFrame with 1..100000 records required\\')\\n    if not raw.columns.is_unique or raw.columns.tolist()!=[\\'time\\',\\'asset\\',\\'price\\']:\\n        raise ValueError(\\'exact ordered long schema required\\')\\n    if not isinstance(raw[\\'time\\'].dtype,pd.DatetimeTZDtype) or raw[\\'time\\'].isna().any():\\n        raise ValueError(\\'complete aware time column required\\')\\n    if not raw[\\'asset\\'].map(lambda x:isinstance(x,str) and 0<len(x)<=64 and x==x.strip()).all():\\n        raise ValueError(\\'trimmed asset strings required\\')\\n    t=raw.reset_index(drop=True).copy(deep=True); t[\\'time\\']=t[\\'time\\'].dt.tz_convert(\\'UTC\\')\\n    if not t[\\'asset\\'].isin(assets).all() or not t[\\'time\\'].isin(grid).all():\\n        raise ValueError(\\'record outside expected asset/time grid\\')\\n    if t.duplicated([\\'time\\',\\'asset\\']).any(): raise ValueError(\\'duplicate asset-time key\\')\\n    if not isinstance(t[\\'price\\'].dtype,np.dtype) or t[\\'price\\'].dtype.kind not in \\'iuf\\':\\n        raise ValueError(\\'ordinary real numeric prices required\\')\\n    t[\\'price\\']=t[\\'price\\'].astype(\\'float64\\')\\n    if not np.isfinite(t[\\'price\\'].to_numpy()).all() or (t[\\'price\\']<=0).any():\\n        raise ValueError(\\'supplied prices must be finite and positive\\')\\n    wide=t.pivot(index=\\'time\\',columns=\\'asset\\',values=\\'price\\').reindex(index=grid,columns=list(assets))\\n    returns=wide.pct_change(periods=1,fill_method=None)\\n    known=wide.notna() & wide.shift(1).notna()\\n    observed=returns.to_numpy()[known.to_numpy()]\\n    if not np.isfinite(observed).all() or np.any(observed<=-1):\\n        raise ValueError(\\'unsupported return numerical range\\')\\n    complete=known.all(axis=1).rename(\\'complete_interval\\')\\n    return wide,returns,complete'",
+      "status": "PASS"
+    }
+  ],
+  "report_snapshots_sha256": "eb407261e22ba8bd8fedec5f8be76c740c5f536abe4bb12d7b415b79dedd4eb2",
+  "scope": "Prepared Linux runtime;project step/checklist review only;8 local extension prompts remain pending;no independent acceptance"
+}
