@@ -1,0 +1,255 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.06-broadcasting.md",
+  "source_sha256": "e86beaa88314f11b5c71e569c27ee79db7893a6463134eea63f8ece847b8e50f",
+  "listing_sha256": [
+    "778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37",
+    "b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 29,
+  "failed": 0,
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_axis_error_can_be_silent (test_broadcasting_lab.BroadcastingTests.test_axis_error_can_be_silent) ... ok\ntest_budget (test_broadcasting_lab.BroadcastingTests.test_budget) ... ok\ntest_domain_and_total_loss (test_broadcasting_lab.BroadcastingTests.test_domain_and_total_loss) ... ok\ntest_known_grid (test_broadcasting_lab.BroadcastingTests.test_known_grid) ... ok\ntest_numerical_failure_restores_policy (test_broadcasting_lab.BroadcastingTests.test_numerical_failure_restores_policy) ... ok\ntest_shape_and_dtype (test_broadcasting_lab.BroadcastingTests.test_shape_and_dtype) ... ok\ntest_storage_and_readonly_broadcast_view (test_broadcasting_lab.BroadcastingTests.test_storage_and_readonly_broadcast_view) ... ok\ntest_unequal_dimensions_and_scalar_reference (test_broadcasting_lab.BroadcastingTests.test_unequal_dimensions_and_scalar_reference) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.027s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "broadcasting_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "Axes: scenario, position\nExpanded shapes: (3, 1) (1, 3)\nOutput shape: (3, 3)\nScenario P&L: [[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0]]\nOutput element bytes: 72\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.6-E1",
+      "label": "independent rational four-row grid",
+      "actual": "[[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0], [250.0, -100.0, 0.0]]",
+      "expected": "[[-100.0, 40.0, 0.0], [0.0, 0.0, 0.0], [100.0, -40.0, 0.0], [250.0, -100.0, 0.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E1",
+      "label": "new fourth shock row",
+      "actual": "[250.0, -100.0, 0.0]",
+      "expected": "[250, -100, 0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E1",
+      "label": "nonsquare axes and payload",
+      "actual": "((4, 3), 'float64', 96)",
+      "expected": "((4, 3), 'float64', 96)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E2",
+      "label": "shape-only broadcast prediction",
+      "actual": "(7, 4)",
+      "expected": "(7, 4)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E3",
+      "label": "one scenario retains both axes",
+      "actual": "((1, 3), [[250.0, -100.0, 0.0]])",
+      "expected": "((1, 3), [[250, -100, 0]])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E3",
+      "label": "one scenario 0.0",
+      "actual": "((1, 3), [[0.0, -0.0, 0.0]])",
+      "expected": "((1, 3), [[0.0, 0.0, 0.0]])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E3",
+      "label": "one scenario -1.0",
+      "actual": "((1, 3), [[-1000.0, 400.0, -0.0]])",
+      "expected": "((1, 3), [[-1000.0, 400.0, 0.0]])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E4",
+      "label": "matrix not silently accepted by common-shock source",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 30, in <lambda>\n    reject('6.6-E4','matrix not silently accepted by common-shock source',lambda:m.scenario_pnl(q,p,instrument_shocks),'ValueError')\n                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.06-broadcasting.md\", line 17, in scenario_pnl\nValueError: shocks must be a nonempty vector\n"
+    },
+    {
+      "exercise": "6.6-E4",
+      "label": "design-only matrix rational example",
+      "actual": "[[Fraction(-100, 1), Fraction(0, 1), Fraction(0, 1)], [Fraction(200, 1), Fraction(200, 1), Fraction(0, 1)]]",
+      "expected": "[[Fraction(-100, 1), Fraction(0, 1), Fraction(0, 1)], [Fraction(200, 1), Fraction(200, 1), Fraction(0, 1)]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E5",
+      "label": "Python integer output-cell count",
+      "actual": "20000000",
+      "expected": "20000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E5",
+      "label": "element bytes and MiB",
+      "actual": "(160000000, Fraction(78125, 512))",
+      "expected": "(160000000, Fraction(78125, 512))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E5",
+      "label": "default budget rejects 20 million output cells",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 37, in <lambda>\n    reject('6.6-E5','default budget rejects 20 million output cells',lambda:m.scenario_pnl(np.ones(2000),np.ones(2000),np.zeros(10000)),'ValueError')\n                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.06-broadcasting.md\", line 27, in scenario_pnl\n    Compare dimensions from the right. Aligned dimensions must match or one must be 1; missing leading dimensions act as 1. Compatibility permits an operation, but does not establish its business meaning.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: scenario output exceeds cell budget\n"
+    },
+    {
+      "exercise": "6.6-E6",
+      "label": "invalid price for flat position -1.0",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 40, in <lambda>\n    reject('6.6-E6','invalid price for flat position '+str(price),lambda:m.scenario_pnl(zero,price_vector,np.array([0.])),'ValueError')\n                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.06-broadcasting.md\", line 23, in scenario_pnl\n    6. Preserve the financial scope of a common-shock experiment.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: price must be nonnegative and shocks at least -1\n"
+    },
+    {
+      "exercise": "6.6-E6",
+      "label": "invalid input unchanged -1.0",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\xbf'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\xbf'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E6",
+      "label": "invalid price for flat position nan",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 40, in <lambda>\n    reject('6.6-E6','invalid price for flat position '+str(price),lambda:m.scenario_pnl(zero,price_vector,np.array([0.])),'ValueError')\n                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.06-broadcasting.md\", line 19, in scenario_pnl\n    2. Use explicit singleton axes for scenario and position roles.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: price must be finite\n"
+    },
+    {
+      "exercise": "6.6-E6",
+      "label": "invalid input unchanged nan",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E6",
+      "label": "invalid price for flat position inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 40, in <lambda>\n    reject('6.6-E6','invalid price for flat position '+str(price),lambda:m.scenario_pnl(zero,price_vector,np.array([0.])),'ValueError')\n                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.06-broadcasting.md\", line 19, in scenario_pnl\n    2. Use explicit singleton axes for scenario and position roles.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: price must be finite\n"
+    },
+    {
+      "exercise": "6.6-E6",
+      "label": "invalid input unchanged inf",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E7",
+      "label": "broadcast view readonly/alias/zero scenario stride",
+      "actual": "(False, True, 0)",
+      "expected": "(False, True, 0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E7",
+      "label": "ordinary broadcast write rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6broadcastx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-broadcasting-exercises/review.py\", line 44, in <lambda>\n    reject('6.6-E7','ordinary broadcast write rejected',lambda:view.__setitem__((0,0),999.),'ValueError')\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: assignment destination is read-only\n"
+    },
+    {
+      "exercise": "6.6-E7",
+      "label": "deliberate independent copy edit",
+      "actual": "([10.0, 20.0, 30.0], [10.0, 20.0, 30.0])",
+      "expected": "([10, 20, 30], [10, 20, 30])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E7",
+      "label": "forced write aliases both scenarios and backing array",
+      "actual": "([999.0, 999.0], np.float64(999.0))",
+      "expected": "([999, 999], 999)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E8",
+      "label": "all chunk values against rational grid",
+      "actual": "[[-100.0, 40.0, -0.0], [0.0, -0.0, 0.0], [100.0, -40.0, 0.0], [250.0, -100.0, 0.0], [-1000.0, 400.0, -0.0]]",
+      "expected": "[[-100.0, 40.0, 0.0], [0.0, 0.0, 0.0], [100.0, -40.0, 0.0], [250.0, -100.0, 0.0], [-1000.0, 400.0, 0.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E8",
+      "label": "labels preserved without duplication",
+      "actual": "('down', 'flat', 'up', 'stress', 'loss')",
+      "expected": "('down', 'flat', 'up', 'stress', 'loss')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E8",
+      "label": "uneven final chunk retains two axes",
+      "actual": "[(2, 3), (2, 3), (1, 3)]",
+      "expected": "[(2, 3), (2, 3), (1, 3)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.6-E8",
+      "label": "no implicit reduction",
+      "actual": "(5, 3)",
+      "expected": "(5, 3)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original inputs unchanged",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00$@\\x00\\x00\\x00\\x00\\x00\\x00\\x14\\xc0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x00\\x00\\x00\\x00\\x00\\x00\\xd0?')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00$@\\x00\\x00\\x00\\x00\\x00\\x00\\x14\\xc0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x00\\x00\\x00\\x00\\x00\\x00\\xd0?')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "source result independent",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'broadcasting_lab.py': '778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37', 'test_broadcasting_lab.py': 'b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51'}",
+      "expected": "{'broadcasting_lab.py': '778e329de4d4a4bfec526e2e5e74e0de88330722c3679a8c33686c4333f89a37', 'test_broadcasting_lab.py': 'b2d03a5d0cc2596e936da9ea0ef3488205124645f00ae1bcaa8ed3bf0f945a51'}",
+      "status": "PASS"
+    }
+  ]
+}
