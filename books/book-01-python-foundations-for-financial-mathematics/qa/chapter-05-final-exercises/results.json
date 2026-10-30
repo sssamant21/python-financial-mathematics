@@ -1,0 +1,335 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+  "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+  "wheel_sha256": "2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1",
+  "exercise_records": 6,
+  "command_records": 12,
+  "command_passed": 12,
+  "command_failed": 0,
+  "original_method_invocations": 16,
+  "predicates": 20,
+  "passed": 20,
+  "failed": 0,
+  "mutations": {
+    "intentional_read_facade": "\"\"\"Public API for the educational inflow package.\"\"\"\nfrom .core import analyze\n\n__all__ = ['analyze']\n\nfrom pathlib import Path\nPath(\"application-marker.txt\").read_bytes()\n",
+    "extended_facade": "\"\"\"Public API for the educational inflow package.\"\"\"\nfrom .core import analyze\n\nfrom .reports import inflow_count\n\n__all__ = ['analyze', 'inflow_count']\n",
+    "typed_core": "\"\"\"Bounded same-currency inflow aggregation; no I/O or global context mutation.\"\"\"\nfrom decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext\nimport json\nimport re\n\ndef unique_object(pairs):\n    result = {}\n    for key, value in pairs:\n        if key in result:\n            raise ValueError('duplicate JSON member')\n        result[key] = value\n    return result\n\n\ndef decode(raw: bytes):\n    return json.loads(raw.decode('utf-8'), object_pairs_hook=unique_object)\n\n\nfrom .result_types import AnalyzeResult\n\ndef analyze(data_raw: bytes, config_raw: bytes) -> AnalyzeResult:\n    config = decode(config_raw)\n    if config != {'currency': 'USD', 'rounding': 'ROUND_HALF_EVEN', 'scale': '0.01'}:\n        raise ValueError('unsupported configuration')\n    rows = decode(data_raw)\n    if type(rows) is not list or not 1 <= len(rows) <= 1000:\n        raise ValueError('expected 1 to 1000 inflows')\n    seen = set()\n    amounts = []\n    for row in rows:\n        if type(row) is not dict or set(row) != {'id', 'currency', 'amount'}:\n            raise ValueError('incorrect inflow schema')\n        sid = row['id']\n        if type(sid) is not str or not sid or sid.strip() != sid or sid in seen:\n            raise ValueError('invalid or duplicate id')\n        if row['currency'] != 'USD':\n            raise ValueError('mixed or unsupported currency')\n        text = row['amount']\n        if type(text) is not str or re.fullmatch(r'(0|[1-9][0-9]{0,6})(\\.[0-9]{1,4})?', text) is None:\n            raise ValueError('invalid amount text')\n        value = Decimal(text)\n        if value > Decimal('1000000'):\n            raise ValueError('inflow exceeds lab bound')\n        seen.add(sid)\n        amounts.append(value)\n    # A fresh context prevents caller precision, rounding, or flags from leaking in.\n    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):\n        total = sum(amounts, Decimal('0'))\n        rounded = total.quantize(Decimal('0.01'))\n    return {'currency': 'USD', 'count': len(rows), 'total': format(rounded, '.2f'),\n            'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}\n\n\n"
+  },
+  "operations": [
+    {
+      "label": "fresh runtime creation",
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "venv",
+        "/tmp/final-package-exercises-mrksc1u_/runtime"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original retained wheel offline install",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/book1_ch5finalex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-project-review/artifacts/book1_financial_inflows-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1_ch5finalex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-project-review/artifacts/book1_financial_inflows-0.1.0-py3-none-any.whl\nInstalling collected packages: book1-financial-inflows\nSuccessfully installed book1-financial-inflows-0.1.0\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original pip check",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original installed origin",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "-c",
+        "import json,sysconfig,financial_inflows;from pathlib import Path;p=Path(financial_inflows.__file__).resolve();purelib=Path(sysconfig.get_path('purelib')).resolve();assert purelib in p.parents;print(json.dumps(dict(origin=str(p),purelib=str(purelib))))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"origin\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__init__.py\", \"purelib\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages\"}\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original eight-method installed suite",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/tmp/final-package-exercises-mrksc1u_/outside",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_contract (test_inflows.InflowTests.test_amount_contract) ... ok\ntest_bounds (test_inflows.InflowTests.test_bounds) ... ok\ntest_context_isolation (test_inflows.InflowTests.test_context_isolation) ... ok\ntest_identity_and_currency (test_inflows.InflowTests.test_identity_and_currency) ... ok\ntest_input_bytes_unchanged (test_inflows.InflowTests.test_input_bytes_unchanged) ... ok\ntest_known_answer (test_inflows.InflowTests.test_known_answer) ... ok\ntest_metadata (test_inflows.InflowTests.test_metadata) ... ok\ntest_schema_and_configuration (test_inflows.InflowTests.test_schema_and_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK\n",
+      "expected_error": null,
+      "actual_method_count": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 original fresh quiet and application-file-denied import",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"stdout\": \"\", \"stderr\": \"\", \"origin\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__init__.py\", \"allowed_loader_events\": [{\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/__init__.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/core.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/cli.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/__pycache__/argparse.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/__pycache__/gettext.cpython-312.pyc\", \"loader\": true}]}\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 intentional read mutant must be detected",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py\", line 44, in <module>\n    package=importlib.import_module('financial_inflows')\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1331, in _find_and_load_unlocked\n  File \"<frozen importlib._bootstrap>\", line 935, in _load_unlocked\n  File \"<frozen importlib._bootstrap_external>\", line 995, in exec_module\n  File \"<frozen importlib._bootstrap_external>\", line 1146, in get_code\n  File \"<frozen importlib._bootstrap_external>\", line 1214, in _cache_bytecode\n  File \"<frozen importlib._bootstrap_external>\", line 1239, in set_data\n  File \"<frozen importlib._bootstrap_external>\", line 201, in _write_atomic\n  File \"/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py\", line 33, in audit\n    if not loader:deny()\n                  ^^^^^^\n  File \"/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py\", line 22, in deny\n    raise RuntimeError('APPLICATION_FILE_ACCESS')\nRuntimeError: APPLICATION_FILE_ACCESS\n",
+      "expected_error": "APPLICATION_FILE_ACCESS",
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 restored original import",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"stdout\": \"\", \"stderr\": \"\", \"origin\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__init__.py\", \"allowed_loader_events\": [{\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/__init__.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/core.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/cli.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/__pycache__/argparse.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/__pycache__/gettext.cpython-312.pyc\", \"loader\": true}]}\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "supplemental copy original eight-method suite",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/tmp/final-package-exercises-mrksc1u_/outside",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_contract (test_inflows.InflowTests.test_amount_contract) ... ok\ntest_bounds (test_inflows.InflowTests.test_bounds) ... ok\ntest_context_isolation (test_inflows.InflowTests.test_context_isolation) ... ok\ntest_identity_and_currency (test_inflows.InflowTests.test_identity_and_currency) ... ok\ntest_input_bytes_unchanged (test_inflows.InflowTests.test_input_bytes_unchanged) ... ok\ntest_known_answer (test_inflows.InflowTests.test_known_answer) ... ok\ntest_metadata (test_inflows.InflowTests.test_metadata) ... ok\ntest_schema_and_configuration (test_inflows.InflowTests.test_schema_and_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK\n",
+      "expected_error": null,
+      "actual_method_count": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "supplemental copy fresh guarded import",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "/tmp/final-package-exercises-mrksc1u_/outside/import_probe.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"stdout\": \"\", \"stderr\": \"\", \"origin\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__init__.py\", \"allowed_loader_events\": [{\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/__init__.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/core.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/result_types.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/reports.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/tmp/final-package-exercises-mrksc1u_/runtime/lib/python3.12/site-packages/financial_inflows/__pycache__/cli.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/__pycache__/argparse.cpython-312.pyc\", \"loader\": true}, {\"path\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/__pycache__/gettext.cpython-312.pyc\", \"loader\": true}]}\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1/E6 supplemental API/type/runtime contracts",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "/tmp/final-package-exercises-mrksc1u_/outside/extension_probe.py"
+      ],
+      "returncode": 0,
+      "stdout": "[{\"label\": \"original public API preserved\", \"actual\": \"{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}\", \"expected\": \"{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}\", \"status\": \"PASS\"}, {\"label\": \"new public count\", \"actual\": \"2\", \"expected\": \"2\", \"status\": \"PASS\"}, {\"label\": \"explicit public exports\", \"actual\": \"['analyze', 'inflow_count']\", \"expected\": \"['analyze', 'inflow_count']\", \"status\": \"PASS\"}, {\"label\": \"TypedDict exact required fields\", \"actual\": \"frozenset({'method', 'total', 'rounding', 'count', 'currency'})\", \"expected\": \"frozenset({'method', 'total', 'rounding', 'count', 'currency'})\", \"status\": \"PASS\"}, {\"label\": \"runtime annotation identifies typed result\", \"actual\": \"<class 'financial_inflows.result_types.AnalyzeResult'>\", \"expected\": \"<class 'financial_inflows.result_types.AnalyzeResult'>\", \"status\": \"PASS\"}, {\"label\": \"input bytes preserved\", \"actual\": \"(b'[{\\\"id\\\":\\\"A\\\",\\\"currency\\\":\\\"USD\\\",\\\"amount\\\":\\\"10.005\\\"},{\\\"id\\\":\\\"B\\\",\\\"currency\\\":\\\"USD\\\",\\\"amount\\\":\\\"20.005\\\"}]', b'{\\\"currency\\\":\\\"USD\\\",\\\"rounding\\\":\\\"ROUND_HALF_EVEN\\\",\\\"scale\\\":\\\"0.01\\\"}')\", \"expected\": \"(b'[{\\\"id\\\":\\\"A\\\",\\\"currency\\\":\\\"USD\\\",\\\"amount\\\":\\\"10.005\\\"},{\\\"id\\\":\\\"B\\\",\\\"currency\\\":\\\"USD\\\",\\\"amount\\\":\\\"20.005\\\"}]', b'{\\\"currency\\\":\\\"USD\\\",\\\"rounding\\\":\\\"ROUND_HALF_EVEN\\\",\\\"scale\\\":\\\"0.01\\\"}')\", \"status\": \"PASS\"}, {\"label\": \"count retains context isolation\", \"actual\": \"2\", \"expected\": \"2\", \"status\": \"PASS\"}, {\"label\": \"caller context unchanged\", \"actual\": \"(2, 'ROUND_DOWN', True)\", \"expected\": \"(2, 'ROUND_DOWN', True)\", \"status\": \"PASS\"}, {\"label\": \"new function validates all records\", \"actual\": \"'ValueError'\", \"expected\": \"'ValueError'\", \"status\": \"PASS\"}, {\"label\": \"typed analyze keeps amount validation\", \"actual\": \"'ValueError'\", \"expected\": \"'ValueError'\", \"status\": \"PASS\"}, {\"label\": \"new function retains configuration validation\", \"actual\": \"'ValueError'\", \"expected\": \"'ValueError'\", \"status\": \"PASS\"}, {\"label\": \"new function rejects empty input\", \"actual\": \"'ValueError'\", \"expected\": \"'ValueError'\", \"status\": \"PASS\"}, {\"label\": \"TypedDict constructor is ordinary unvalidated dict\", \"actual\": \"{'currency': 'EUR'}\", \"expected\": \"{'currency': 'EUR'}\", \"status\": \"PASS\"}]\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "supplemental copy module CLI schema",
+      "args": [
+        "/tmp/final-package-exercises-mrksc1u_/runtime/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows",
+        "--input",
+        "/tmp/final-package-exercises-mrksc1u_/outside/inflows.json",
+        "--config",
+        "/tmp/final-package-exercises-mrksc1u_/outside/settings.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\n",
+      "stderr": "",
+      "expected_error": null,
+      "actual_method_count": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "label": "retained original wheel matches current four exact source listings",
+      "actual": "{'__init__.py': b'\"\"\"Public API for the educational inflow package.\"\"\"\\nfrom .core import analyze\\n\\n__all__ = [\\'analyze\\']\\n', 'core.py': b'\"\"\"Bounded same-currency inflow aggregation; no I/O or global context mutation.\"\"\"\\nfrom decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext\\nimport json\\nimport re\\n\\ndef unique_object(pairs):\\n    result = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(\\'duplicate JSON member\\')\\n        result[key] = value\\n    return result\\n\\n\\ndef decode(raw: bytes):\\n    return json.loads(raw.decode(\\'utf-8\\'), object_pairs_hook=unique_object)\\n\\n\\ndef analyze(data_raw: bytes, config_raw: bytes) -> dict:\\n    config = decode(config_raw)\\n    if config != {\\'currency\\': \\'USD\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\', \\'scale\\': \\'0.01\\'}:\\n        raise ValueError(\\'unsupported configuration\\')\\n    rows = decode(data_raw)\\n    if type(rows) is not list or not 1 <= len(rows) <= 1000:\\n        raise ValueError(\\'expected 1 to 1000 inflows\\')\\n    seen = set()\\n    amounts = []\\n    for row in rows:\\n        if type(row) is not dict or set(row) != {\\'id\\', \\'currency\\', \\'amount\\'}:\\n            raise ValueError(\\'incorrect inflow schema\\')\\n        sid = row[\\'id\\']\\n        if type(sid) is not str or not sid or sid.strip() != sid or sid in seen:\\n            raise ValueError(\\'invalid or duplicate id\\')\\n        if row[\\'currency\\'] != \\'USD\\':\\n            raise ValueError(\\'mixed or unsupported currency\\')\\n        text = row[\\'amount\\']\\n        if type(text) is not str or re.fullmatch(r\\'(0|[1-9][0-9]{0,6})(\\\\.[0-9]{1,4})?\\', text) is None:\\n            raise ValueError(\\'invalid amount text\\')\\n        value = Decimal(text)\\n        if value > Decimal(\\'1000000\\'):\\n            raise ValueError(\\'inflow exceeds lab bound\\')\\n        seen.add(sid)\\n        amounts.append(value)\\n    # A fresh context prevents caller precision, rounding, or flags from leaking in.\\n    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):\\n        total = sum(amounts, Decimal(\\'0\\'))\\n        rounded = total.quantize(Decimal(\\'0.01\\'))\\n    return {\\'currency\\': \\'USD\\', \\'count\\': len(rows), \\'total\\': format(rounded, \\'.2f\\'),\\n            \\'method\\': \\'sum_then_round\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\'}\\n\\n\\n', 'cli.py': b'\"\"\"Read explicit files and emit a validated summary.\"\"\"\\nimport argparse\\nimport json\\nfrom pathlib import Path\\nfrom .core import analyze\\n\\n\\ndef main(argv=None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)\\n    parser.add_argument(\\'--input\\', type=Path, required=True)\\n    parser.add_argument(\\'--config\\', type=Path, required=True)\\n    args = parser.parse_args(argv)\\n    result = analyze(args.input.read_bytes(), args.config.read_bytes())\\n    print(json.dumps(result, sort_keys=True, allow_nan=False))\\n    return 0\\n', '__main__.py': b\"from .cli import main\\n\\nif __name__ == '__main__':\\n    raise SystemExit(main())\\n\"}",
+      "expected": "{'__init__.py': b'\"\"\"Public API for the educational inflow package.\"\"\"\\nfrom .core import analyze\\n\\n__all__ = [\\'analyze\\']\\n', 'core.py': b'\"\"\"Bounded same-currency inflow aggregation; no I/O or global context mutation.\"\"\"\\nfrom decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext\\nimport json\\nimport re\\n\\ndef unique_object(pairs):\\n    result = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(\\'duplicate JSON member\\')\\n        result[key] = value\\n    return result\\n\\n\\ndef decode(raw: bytes):\\n    return json.loads(raw.decode(\\'utf-8\\'), object_pairs_hook=unique_object)\\n\\n\\ndef analyze(data_raw: bytes, config_raw: bytes) -> dict:\\n    config = decode(config_raw)\\n    if config != {\\'currency\\': \\'USD\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\', \\'scale\\': \\'0.01\\'}:\\n        raise ValueError(\\'unsupported configuration\\')\\n    rows = decode(data_raw)\\n    if type(rows) is not list or not 1 <= len(rows) <= 1000:\\n        raise ValueError(\\'expected 1 to 1000 inflows\\')\\n    seen = set()\\n    amounts = []\\n    for row in rows:\\n        if type(row) is not dict or set(row) != {\\'id\\', \\'currency\\', \\'amount\\'}:\\n            raise ValueError(\\'incorrect inflow schema\\')\\n        sid = row[\\'id\\']\\n        if type(sid) is not str or not sid or sid.strip() != sid or sid in seen:\\n            raise ValueError(\\'invalid or duplicate id\\')\\n        if row[\\'currency\\'] != \\'USD\\':\\n            raise ValueError(\\'mixed or unsupported currency\\')\\n        text = row[\\'amount\\']\\n        if type(text) is not str or re.fullmatch(r\\'(0|[1-9][0-9]{0,6})(\\\\.[0-9]{1,4})?\\', text) is None:\\n            raise ValueError(\\'invalid amount text\\')\\n        value = Decimal(text)\\n        if value > Decimal(\\'1000000\\'):\\n            raise ValueError(\\'inflow exceeds lab bound\\')\\n        seen.add(sid)\\n        amounts.append(value)\\n    # A fresh context prevents caller precision, rounding, or flags from leaking in.\\n    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):\\n        total = sum(amounts, Decimal(\\'0\\'))\\n        rounded = total.quantize(Decimal(\\'0.01\\'))\\n    return {\\'currency\\': \\'USD\\', \\'count\\': len(rows), \\'total\\': format(rounded, \\'.2f\\'),\\n            \\'method\\': \\'sum_then_round\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\'}\\n\\n\\n', 'cli.py': b'\"\"\"Read explicit files and emit a validated summary.\"\"\"\\nimport argparse\\nimport json\\nfrom pathlib import Path\\nfrom .core import analyze\\n\\n\\ndef main(argv=None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)\\n    parser.add_argument(\\'--input\\', type=Path, required=True)\\n    parser.add_argument(\\'--config\\', type=Path, required=True)\\n    args = parser.parse_args(argv)\\n    result = analyze(args.input.read_bytes(), args.config.read_bytes())\\n    print(json.dumps(result, sort_keys=True, allow_nan=False))\\n    return 0\\n', '__main__.py': b\"from .cli import main\\n\\nif __name__ == '__main__':\\n    raise SystemExit(main())\\n\"}",
+      "status": "PASS"
+    },
+    {
+      "label": "retained wheel digest matches previously recorded artifact",
+      "actual": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "expected": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "status": "PASS"
+    },
+    {
+      "label": "installed package lives in owned runtime",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "original quiet stdout/stderr",
+      "actual": "('', '')",
+      "expected": "('', '')",
+      "status": "PASS"
+    },
+    {
+      "label": "E4 original facade restored",
+      "actual": "b'\"\"\"Public API for the educational inflow package.\"\"\"\\nfrom .core import analyze\\n\\n__all__ = [\\'analyze\\']\\n'",
+      "expected": "b'\"\"\"Public API for the educational inflow package.\"\"\"\\nfrom .core import analyze\\n\\n__all__ = [\\'analyze\\']\\n'",
+      "status": "PASS"
+    },
+    {
+      "label": "original public API preserved",
+      "actual": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "status": "PASS"
+    },
+    {
+      "label": "new public count",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "label": "explicit public exports",
+      "actual": "['analyze', 'inflow_count']",
+      "expected": "['analyze', 'inflow_count']",
+      "status": "PASS"
+    },
+    {
+      "label": "TypedDict exact required fields",
+      "actual": "frozenset({'method', 'total', 'rounding', 'count', 'currency'})",
+      "expected": "frozenset({'method', 'total', 'rounding', 'count', 'currency'})",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime annotation identifies typed result",
+      "actual": "<class 'financial_inflows.result_types.AnalyzeResult'>",
+      "expected": "<class 'financial_inflows.result_types.AnalyzeResult'>",
+      "status": "PASS"
+    },
+    {
+      "label": "input bytes preserved",
+      "actual": "(b'[{\"id\":\"A\",\"currency\":\"USD\",\"amount\":\"10.005\"},{\"id\":\"B\",\"currency\":\"USD\",\"amount\":\"20.005\"}]', b'{\"currency\":\"USD\",\"rounding\":\"ROUND_HALF_EVEN\",\"scale\":\"0.01\"}')",
+      "expected": "(b'[{\"id\":\"A\",\"currency\":\"USD\",\"amount\":\"10.005\"},{\"id\":\"B\",\"currency\":\"USD\",\"amount\":\"20.005\"}]', b'{\"currency\":\"USD\",\"rounding\":\"ROUND_HALF_EVEN\",\"scale\":\"0.01\"}')",
+      "status": "PASS"
+    },
+    {
+      "label": "count retains context isolation",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "label": "caller context unchanged",
+      "actual": "(2, 'ROUND_DOWN', True)",
+      "expected": "(2, 'ROUND_DOWN', True)",
+      "status": "PASS"
+    },
+    {
+      "label": "new function validates all records",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "label": "typed analyze keeps amount validation",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "label": "new function retains configuration validation",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "label": "new function rejects empty input",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "label": "TypedDict constructor is ordinary unvalidated dict",
+      "actual": "{'currency': 'EUR'}",
+      "expected": "{'currency': 'EUR'}",
+      "status": "PASS"
+    },
+    {
+      "label": "retained original wheel bytes unchanged",
+      "actual": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "expected": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "status": "PASS"
+    },
+    {
+      "label": "owned runtime and source-copy removed",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}

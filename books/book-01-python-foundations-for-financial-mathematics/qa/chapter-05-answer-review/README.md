@@ -1,6 +1,6 @@
 # Chapter 5 — chapter-wide worked-answer review
 
-Based on main `29db9a61` (full revision in source repository history). All20 Section5.13 prompts have scoped answer/alignment records. [Answers](ANSWERS.md) · [Register](answer-register.json) · [Runner](review.py) · [Results](results.json) · [96 pending section exercises](section-exercise-queue.json) · [12 pending formal workflow records](workflow-queue.json)
+Based on main `29db9a61` (full revision in source repository history). All20 Section5.13 prompts have scoped answer/alignment records. [Answers](ANSWERS.md) · [Register](answer-register.json) · [Runner](review.py) · [Results](results.json) · [96 local exercise records with current status](section-exercise-queue.json) · [12 core workflow records with current status](workflow-queue.json)
 
 CPython3.12.14 Linux: **29 source/oracle predicates passed**. Exact regular-wheel verifier rerun: base8 methods and extended12 methods passed with no skips. These are20 invocations of12 existing installed methods, not20 distinct methods; no historical unique-method/workflow totals change. The final integrated driver logs and source hashes are retained. A successful preliminary run using the existing packaging driver is retained under [preflight](preflight/results.json), separately from final evidence; it repeats the same8/12 methods and adds no unique coverage. No runtime-test failures or manuscript corrections occurred. An initial queue-generation filename parse error was corrected before publication; [error and rerun note](generation-note.md) retained.
 
@@ -20,4 +20,8 @@ Numerical expectation: independent Fraction/integer-cent ties-to-even logic give
 
 Completion checklist: all20 answers recorded; all four companion extension methods discovered; known total independently checked; origin and actual count inspected; no failures hidden; Linux only recorded. The educational100-point rubric has not been assigned by an independent grader. Conceptual identity, authorization, release and research claims are design reviews, not remote/security/financial certification.
 
-Remaining: formal step/prerequisite/checklist review for Sections5.1–5.12,96 local extension prompts, retained-wheel handoff/source-distribution/platform work and independent acceptance. Existing F28 notebook/platform and F32 shared-input gaps remain open. Next batch: Sections5.1–5.5 formal module/package lab-step review, then continue remaining labs/exercises. Do not repeat the20 answers unless source hashes change.
+Historical next work at this batch baseline: formal step/prerequisite/checklist review for Sections5.1–5.12,96 local extension prompts, retained-wheel handoff/source-distribution/platform work and independent acceptance. Existing F28 notebook/platform and F32 shared-input gaps remain open. Next batch: Sections5.1–5.5 formal module/package lab-step review, then continue remaining labs/exercises. Do not repeat the20 answers unless source hashes change.
+
+## Current scoped checkpoint
+
+The workflow queue now records all12 core workflows and the local queue all96 prompts REVIEWED_SCOPED. Follow the [formal tracker](../LAB-ANSWER-TRACKER.md) and [final exercise evidence](../chapter-05-final-exercises/README.md) for current scope/limits; original20 chapter-wide records remain unchanged. Next:Chapter6 formal review. Retained source-distribution/platform/independent acceptance gaps remain open.
