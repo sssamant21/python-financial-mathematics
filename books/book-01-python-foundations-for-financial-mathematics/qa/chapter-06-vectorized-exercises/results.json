@@ -1,0 +1,288 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.05-vectorized-financial-calculations.md",
+  "source_sha256": "2d31c7d0d55ee1b4799aa63aeec1aef1c4c70314a20787a654f0ead29191bc35",
+  "listing_sha256": [
+    "a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8",
+    "e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 29,
+  "failed": 0,
+  "numerical_observations": [
+    {
+      "inputs": [
+        3.0,
+        1e+16,
+        1.0000000000000002e+16
+      ],
+      "input_hex": [
+        "0x1.8000000000000p+1",
+        "0x1.1c37937e08000p+53",
+        "0x1.1c37937e08001p+53"
+      ],
+      "exact_binary_input_result": "6",
+      "direct": 6.0,
+      "alternative": 8.0,
+      "direct_error": "0",
+      "alternative_error": "2"
+    },
+    {
+      "inputs": [
+        0.1,
+        1e+16,
+        1.0000000000000002e+16
+      ],
+      "input_hex": [
+        "0x1.999999999999ap-4",
+        "0x1.1c37937e08000p+53",
+        "0x1.1c37937e08001p+53"
+      ],
+      "exact_binary_input_result": "3602879701896397/18014398509481984",
+      "direct": 0.2,
+      "alternative": 0.25,
+      "direct_error": "0",
+      "alternative_error": "900719925474099/18014398509481984"
+    }
+  ],
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_domain_even_for_flat_position (test_vectorized_marks.VectorizedTests.test_domain_even_for_flat_position) ... ok\ntest_equal_prices_and_zero_prices (test_vectorized_marks.VectorizedTests.test_equal_prices_and_zero_prices) ... ok\ntest_known_long_short_flat (test_vectorized_marks.VectorizedTests.test_known_long_short_flat) ... ok\ntest_numerical_failure_restores_error_policy (test_vectorized_marks.VectorizedTests.test_numerical_failure_restores_error_policy) ... ok\ntest_scalar_reference (test_vectorized_marks.VectorizedTests.test_scalar_reference) ... ok\ntest_shape_rejects_broadcasting (test_vectorized_marks.VectorizedTests.test_shape_rejects_broadcasting) ... ok\ntest_source_preservation_and_output_storage (test_vectorized_marks.VectorizedTests.test_source_preservation_and_output_storage) ... ok\ntest_types (test_vectorized_marks.VectorizedTests.test_types) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.048s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "vectorized_marks.py"
+      ],
+      "returncode": 0,
+      "stdout": "LONG-A: opening=1000.00, closing=1050.00, pnl=50.00\nSHORT-B: opening=-400.00, closing=-380.00, pnl=20.00\nFLAT-C: opening=0.00, closing=0.00, pnl=0.00\nResult shape: (3,)\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.5-E1",
+      "label": "four aligned positions opening",
+      "actual": "[1000.0, -400.0, 0.0, 80.0]",
+      "expected": "[1000, -400, 0, 80]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E1",
+      "label": "four aligned positions closing",
+      "actual": "[1050.0, -380.0, 0.0, 70.0]",
+      "expected": "[1050, -380, 0, 70]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E1",
+      "label": "four aligned positions pnl",
+      "actual": "[50.0, 20.0, 0.0, -10.0]",
+      "expected": "[50, 20, 0, -10]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E1",
+      "label": "position labels and output shape",
+      "actual": "(('LONG-A', 'SHORT-B', 'FLAT-C', 'LONG-D'), (4,))",
+      "expected": "(('LONG-A', 'SHORT-B', 'FLAT-C', 'LONG-D'), (4,))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E2",
+      "label": "rising-price short opening",
+      "actual": "[-60.0]",
+      "expected": "[-60]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E2",
+      "label": "rising-price short closing",
+      "actual": "[-75.0]",
+      "expected": "[-75]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E2",
+      "label": "rising-price short pnl",
+      "actual": "[-15.0]",
+      "expected": "[-15]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E3",
+      "label": "nonfinite end at zero quantity nan",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-vectorized-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-vectorized-exercises/review.py\", line 27, in <lambda>\n    reject('6.5-E3','nonfinite end at zero quantity '+str(value),lambda:m.position_changes(z,start,end),'ValueError')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.05-vectorized-financial-calculations.md\", line 20, in position_changes\n    3. Explain signed quantities and the scope of price-only P&L.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: end must be finite\n"
+    },
+    {
+      "exercise": "6.5-E3",
+      "label": "rejected inputs unchanged nan",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E3",
+      "label": "nonfinite end at zero quantity inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-vectorized-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-vectorized-exercises/review.py\", line 27, in <lambda>\n    reject('6.5-E3','nonfinite end at zero quantity '+str(value),lambda:m.position_changes(z,start,end),'ValueError')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.05-vectorized-financial-calculations.md\", line 20, in position_changes\n    3. Explain signed quantities and the scope of price-only P&L.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: end must be finite\n"
+    },
+    {
+      "exercise": "6.5-E3",
+      "label": "rejected inputs unchanged inf",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E3",
+      "label": "nonfinite end at zero quantity -inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-vectorized-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-vectorized-exercises/review.py\", line 27, in <lambda>\n    reject('6.5-E3','nonfinite end at zero quantity '+str(value),lambda:m.position_changes(z,start,end),'ValueError')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6vectorx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.05-vectorized-financial-calculations.md\", line 20, in position_changes\n    3. Explain signed quantities and the scope of price-only P&L.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: end must be finite\n"
+    },
+    {
+      "exercise": "6.5-E3",
+      "label": "rejected inputs unchanged -inf",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\xff')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00I@', b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\xff')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E4",
+      "label": "observed formulas 3.0",
+      "actual": "(6.0, 8.0)",
+      "expected": "(6.0, 8.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E4",
+      "label": "direct equals exact rational result for these binary inputs 3.0",
+      "actual": "Fraction(6, 1)",
+      "expected": "Fraction(6, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E4",
+      "label": "original source uses direct formula 3.0",
+      "actual": "[6.0]",
+      "expected": "[6.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E4",
+      "label": "observed formulas 0.1",
+      "actual": "(0.2, 0.25)",
+      "expected": "(0.2, 0.25)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E4",
+      "label": "direct equals exact rational result for these binary inputs 0.1",
+      "actual": "Fraction(3602879701896397, 18014398509481984)",
+      "expected": "Fraction(3602879701896397, 18014398509481984)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E4",
+      "label": "original source uses direct formula 0.1",
+      "actual": "[0.2]",
+      "expected": "[0.2]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E5",
+      "label": "signed distribution receipts/payments",
+      "actual": "['1', '-3/2', '0']",
+      "expected": "['1', '-3/2', '0']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E5",
+      "label": "fixed-quantity total change with distribution",
+      "actual": "['-9', '-33/2']",
+      "expected": "['-9', '-33/2']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E6",
+      "label": "chosen illustrative FX conversion, not raw mixed-currency sum",
+      "actual": "Fraction(32, 1)",
+      "expected": "Fraction(32, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E7",
+      "label": "rational scenario-by-position oracle",
+      "actual": "[[Fraction(-10, 1), Fraction(-15, 1)], [Fraction(10, 1), Fraction(15, 1)]]",
+      "expected": "[[Fraction(-10, 1), Fraction(-15, 1)], [Fraction(10, 1), Fraction(15, 1)]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E7",
+      "label": "existing source scenario row 0",
+      "actual": "[-10.0, -15.0]",
+      "expected": "[-10.0, -15.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E7",
+      "label": "existing source scenario row 1",
+      "actual": "[10.0, 15.0]",
+      "expected": "[10.0, 15.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.5-E8",
+      "label": "pre-timing fixed-fixture known answers",
+      "actual": "{'opening': [1000.0, -400.0, 0.0, 80.0], 'closing': [1050.0, -380.0, 0.0, 70.0], 'pnl': [50.0, 20.0, 0.0, -10.0]}",
+      "expected": "{'opening': [1000, -400, 0, 80], 'closing': [1050, -380, 0, 70], 'pnl': [50, 20, 0, -10]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "source input bytes unchanged",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00$@\\x00\\x00\\x00\\x00\\x00\\x00\\x14\\xc0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00@', b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00\\x00D@', b'\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00S@\\x00\\x00\\x00\\x00\\x00\\x00J@\\x00\\x00\\x00\\x00\\x00\\x80A@')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00$@\\x00\\x00\\x00\\x00\\x00\\x00\\x14\\xc0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00@', b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00\\x00D@', b'\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00S@\\x00\\x00\\x00\\x00\\x00\\x00J@\\x00\\x00\\x00\\x00\\x00\\x80A@')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "outputs independent of caller inputs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'vectorized_marks.py': 'a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8', 'test_vectorized_marks.py': 'e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518'}",
+      "expected": "{'vectorized_marks.py': 'a78d609040b7dd729588f11177b4919fcfa5bd0dfdbe8f60542a96e9046380f8', 'test_vectorized_marks.py': 'e718e2ed1838f4fa143699f17ca4c113dbabda268a4e3038fbd039c9f2c95518'}",
+      "status": "PASS"
+    }
+  ]
+}
