@@ -1,0 +1,259 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 27,
+  "predicates": 33,
+  "passed": 33,
+  "failed": 0,
+  "sources": [
+    {
+      "source": "chapter-04/4.07-list-and-dictionary-comprehensions.md",
+      "source_sha256": "17574db64518c029a046683a9b866cb3494af6a1f1734e5df88304e163e18a91",
+      "code_sha256": "a986e1a2eaba36d4ff683c11d600df3306f01a86b8419e337a06d949ce6d97e4"
+    },
+    {
+      "source": "chapter-04/4.08-sorting-and-filtering-financial-records.md",
+      "source_sha256": "e976386a4a5f1afddb7f77619786916a7dbbbc9d974e098eadadfce5bf9d514c",
+      "code_sha256": "28d257dcdbf050730892918a41e1569b9aad7a1a32ff73e7368b79f21bce1580"
+    },
+    {
+      "source": "chapter-04/4.09-representing-cash-flow-schedules.md",
+      "source_sha256": "1b6999579f7d64753a866ac82e7ee78f60b0710171f1d58cb38b728a0d5f0d07",
+      "code_sha256": "c7c15c1f3a4108fb0a012cc6b08e7dc06be209c6a92394b080b5f3473374b3d4"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "4.7-E1",
+      "label": "loop preserves positive order",
+      "actual": "[Decimal('12.5'), Decimal('3')]",
+      "expected": "[Decimal('12.5'), Decimal('3')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E2",
+      "label": "active IDs",
+      "actual": "['BOND-A', 'ETF-B']",
+      "expected": "['BOND-A', 'ETF-B']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E3",
+      "label": "inclusive view IDs",
+      "actual": "['BOND-A', 'CASH-RESERVE', 'ETF-B']",
+      "expected": "['BOND-A', 'CASH-RESERVE', 'ETF-B']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E3",
+      "label": "empty inclusive outputs",
+      "actual": "([], {})",
+      "expected": "([], {})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E4",
+      "label": "duplicate overwrites quantity",
+      "actual": "{'A': Decimal('2')}",
+      "expected": "{'A': Decimal('2')}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E5",
+      "label": "case policy retained",
+      "actual": "['A', 'a']",
+      "expected": "['A', 'a']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E6",
+      "label": "alias demonstrated",
+      "actual": "['x', 'shared']",
+      "expected": "['x', 'shared']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E6",
+      "label": "explicit tag copy",
+      "actual": "['x', 'shared']",
+      "expected": "['x', 'shared']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E6",
+      "label": "expected rejection",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E7",
+      "label": "same instrument distinct portfolios",
+      "actual": "[('P1', 'A'), ('P2', 'A')]",
+      "expected": "[('P1', 'A'), ('P2', 'A')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E7",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.7-E8",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E1",
+      "label": "ascending amount/ID",
+      "actual": "['ZERO', 'ALPHA', 'ZETA', 'BETA']",
+      "expected": "['ZERO', 'ALPHA', 'ZETA', 'BETA']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E2",
+      "label": "reverse tuple reverses tie IDs",
+      "actual": "[(Decimal('100'), 'ZETA'), (Decimal('100'), 'ALPHA')]",
+      "expected": "[(Decimal('100'), 'ZETA'), (Decimal('100'), 'ALPHA')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E3",
+      "label": "inclusive threshold without rounding",
+      "actual": "['AT']",
+      "expected": "['AT']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E4",
+      "label": "tie invariant",
+      "actual": "['BETA', 'ALPHA', 'ZETA']",
+      "expected": "['BETA', 'ALPHA', 'ZETA']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E4",
+      "label": "tie invariant",
+      "actual": "['BETA', 'ALPHA', 'ZETA']",
+      "expected": "['BETA', 'ALPHA', 'ZETA']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E4",
+      "label": "tie invariant",
+      "actual": "['BETA', 'ALPHA', 'ZETA']",
+      "expected": "['BETA', 'ALPHA', 'ZETA']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E5",
+      "label": "composite identity",
+      "actual": "[('A1', 'X'), ('A2', 'X')]",
+      "expected": "[('A1', 'X'), ('A2', 'X')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E5",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E7",
+      "label": "metadata retained",
+      "actual": "('S1', 2)",
+      "expected": "('S1', 2)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E7",
+      "label": "source unchanged",
+      "actual": "[{'position_id': 'ZETA', 'currency': 'USD', 'market_value': Decimal('100')}, {'position_id': 'EU-1', 'currency': 'EUR', 'market_value': Decimal('900')}, {'position_id': 'BETA', 'currency': 'USD', 'market_value': Decimal('250')}, {'position_id': 'ALPHA', 'currency': 'USD', 'market_value': Decimal('100')}, {'position_id': 'ZERO', 'currency': 'USD', 'market_value': Decimal('0')}]",
+      "expected": "[{'position_id': 'ZETA', 'currency': 'USD', 'market_value': Decimal('100')}, {'position_id': 'EU-1', 'currency': 'EUR', 'market_value': Decimal('900')}, {'position_id': 'BETA', 'currency': 'USD', 'market_value': Decimal('250')}, {'position_id': 'ALPHA', 'currency': 'USD', 'market_value': Decimal('100')}, {'position_id': 'ZERO', 'currency': 'USD', 'market_value': Decimal('0')}]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.8-E9",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E1",
+      "label": "first date identities",
+      "actual": "['E-0', 'E-00']",
+      "expected": "['E-0', 'E-00']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E3",
+      "label": "relabel preserves amounts",
+      "actual": "[Decimal('-1000'), Decimal('1'), Decimal('0'), Decimal('40'), Decimal('1000')]",
+      "expected": "[Decimal('-1000'), Decimal('1'), Decimal('0'), Decimal('40'), Decimal('1000')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E4",
+      "label": "expected rejection",
+      "actual": "TypeError",
+      "expected": "TypeError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E4",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E5",
+      "label": "leap day",
+      "actual": "2028-02-29",
+      "expected": "2028-02-29",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E5",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E5",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E5",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E5",
+      "label": "expected rejection",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.9-E9",
+      "label": "reversal canonicalization",
+      "actual": "({'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E-0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E-00', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('1')}, {'event_id': 'E-1', 'payment_date': datetime.date(2027, 7, 15), 'amount': Decimal('0')}, {'event_id': 'E-2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('40')}, {'event_id': 'E-3', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}]}, {datetime.date(2027, 1, 15): [{'event_id': 'E-0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E-00', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('1')}], datetime.date(2027, 7, 15): [{'event_id': 'E-1', 'payment_date': datetime.date(2027, 7, 15), 'amount': Decimal('0')}], datetime.date(2028, 1, 15): [{'event_id': 'E-2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('40')}, {'event_id': 'E-3', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}]})",
+      "expected": "({'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E-0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E-00', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('1')}, {'event_id': 'E-1', 'payment_date': datetime.date(2027, 7, 15), 'amount': Decimal('0')}, {'event_id': 'E-2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('40')}, {'event_id': 'E-3', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}]}, {datetime.date(2027, 1, 15): [{'event_id': 'E-0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E-00', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('1')}], datetime.date(2027, 7, 15): [{'event_id': 'E-1', 'payment_date': datetime.date(2027, 7, 15), 'amount': Decimal('0')}], datetime.date(2028, 1, 15): [{'event_id': 'E-2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('40')}, {'event_id': 'E-3', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}]})",
+      "status": "PASS"
+    }
+  ],
+  "source_revision": "55c3ced2571312b08af546b46ee05dc531fc1175"
+}
