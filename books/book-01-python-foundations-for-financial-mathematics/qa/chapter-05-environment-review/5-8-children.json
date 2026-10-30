@@ -1,0 +1,183 @@
+[
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_a/bin/python",
+      "-m",
+      "ensurepip",
+      "--upgrade",
+      "--default-pip"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/tmp2xqh6a_q\nProcessing /tmp/tmp2xqh6a_q/pip-25.0.1-py3-none-any.whl\nInstalling collected packages: pip\nSuccessfully installed pip-25.0.1\n",
+    "stderr": null
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-m",
+      "ensurepip",
+      "--upgrade",
+      "--default-pip"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/tmpq8gnu5s4\nProcessing /tmp/tmpq8gnu5s4/pip-25.0.1-py3-none-any.whl\nInstalling collected packages: pip\nSuccessfully installed pip-25.0.1\n",
+    "stderr": null
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_a/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "pip 25.0.1 from /tmp/book1-repro58-5migyzo4/environment_a/lib/python3.12/site-packages/pip (python 3.12)\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "pip 25.0.1 from /tmp/book1-repro58-5migyzo4/environment_b/lib/python3.12/site-packages/pip (python 3.12)\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_a/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "install",
+      "--no-index",
+      "--no-cache-dir",
+      "--only-binary=:all:",
+      "--require-hashes",
+      "--find-links",
+      "/tmp/book1-repro58-5migyzo4/approved_wheels",
+      "-r",
+      "/tmp/book1-repro58-5migyzo4/requirements-pinned.txt"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/book1-repro58-5migyzo4/approved_wheels\nProcessing /tmp/book1-repro58-5migyzo4/approved_wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-repro58-5migyzo4/requirements-pinned.txt (line 1))\nProcessing /tmp/book1-repro58-5migyzo4/approved_wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-repro58-5migyzo4/requirements-pinned.txt (line 2))\nInstalling collected packages: book1-unit-demo, book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0 book1-unit-demo-1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_a/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_a/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport json, sys\nimport book1_report_demo\nimport book1_unit_demo\n\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nassert Path(book1_unit_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\ninput_text = \"12.50\"\nlabel, quantity = book1_report_demo.labeled_quantity(Decimal(input_text))\nassert label == \"instrument_units\"\nassert str(quantity) == \"12.50\"\nassert book1_report_demo.labeled_quantity(Decimal(\"0\")) == (\"instrument_units\", Decimal(\"0\"))\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(json.dumps({\n    \"versions\": {\"book1-report-demo\": version(\"book1-report-demo\"),\n                 \"book1-unit-demo\": version(\"book1-unit-demo\")},\n    \"input\": input_text, \"output\": [label, str(quantity)],\n}, sort_keys=True))\n"
+    ],
+    "returncode": 0,
+    "stdout": "{\"input\": \"12.50\", \"output\": [\"instrument_units\", \"12.50\"], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "install",
+      "--no-index",
+      "--no-cache-dir",
+      "--only-binary=:all:",
+      "--require-hashes",
+      "--find-links",
+      "/tmp/book1-repro58-5migyzo4/changed_wheels",
+      "-r",
+      "/tmp/book1-repro58-5migyzo4/requirements-pinned.txt"
+    ],
+    "returncode": 1,
+    "stdout": "Looking in links: /tmp/book1-repro58-5migyzo4/changed_wheels\nProcessing /tmp/book1-repro58-5migyzo4/changed_wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-repro58-5migyzo4/requirements-pinned.txt (line 1))\n",
+    "stderr": "ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.\n    book1-report-demo==1.0.0 from file:///tmp/book1-repro58-5migyzo4/changed_wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-repro58-5migyzo4/requirements-pinned.txt (line 1)):\n        Expected sha256 5ba902516d0cc4ccca88888fd1b6f22fa5414a255148674ed975ef92cb26bb45\n             Got        aa6c53520a34c464e87d68fb963df960567b03c57238b4580897978bb068b9a4\n\n"
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-I",
+      "-c",
+      "from importlib.util import find_spec; assert find_spec('book1_report_demo') is None"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "install",
+      "--no-index",
+      "--no-cache-dir",
+      "--only-binary=:all:",
+      "--require-hashes",
+      "--find-links",
+      "/tmp/book1-repro58-5migyzo4/approved_wheels",
+      "-r",
+      "/tmp/book1-repro58-5migyzo4/requirements-pinned.txt"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/book1-repro58-5migyzo4/approved_wheels\nProcessing /tmp/book1-repro58-5migyzo4/approved_wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-repro58-5migyzo4/requirements-pinned.txt (line 1))\nProcessing /tmp/book1-repro58-5migyzo4/approved_wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-repro58-5migyzo4/requirements-pinned.txt (line 2))\nInstalling collected packages: book1-unit-demo, book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0 book1-unit-demo-1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-repro58-5migyzo4/environment_b/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport json, sys\nimport book1_report_demo\nimport book1_unit_demo\n\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nassert Path(book1_unit_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\ninput_text = \"12.50\"\nlabel, quantity = book1_report_demo.labeled_quantity(Decimal(input_text))\nassert label == \"instrument_units\"\nassert str(quantity) == \"12.50\"\nassert book1_report_demo.labeled_quantity(Decimal(\"0\")) == (\"instrument_units\", Decimal(\"0\"))\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(json.dumps({\n    \"versions\": {\"book1-report-demo\": version(\"book1-report-demo\"),\n                 \"book1-unit-demo\": version(\"book1-unit-demo\")},\n    \"input\": input_text, \"output\": [label, str(quantity)],\n}, sort_keys=True))\n"
+    ],
+    "returncode": 0,
+    "stdout": "{\"input\": \"12.50\", \"output\": [\"instrument_units\", \"12.50\"], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "uname",
+      "-p"
+    ],
+    "returncode": 0,
+    "stdout": "x86_64\n",
+    "stderr": null
+  }
+]

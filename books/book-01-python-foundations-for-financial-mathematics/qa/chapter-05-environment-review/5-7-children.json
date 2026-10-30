@@ -1,0 +1,134 @@
+[
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+    ],
+    "returncode": 0,
+    "stdout": "{\"executable\": \"/tmp/book1-venv57-0l63bcai/environment_a/bin/python\", \"prefix\": \"/tmp/book1-venv57-0l63bcai/environment_a\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/tmp/book1-venv57-0l63bcai/environment_a/lib/python3.12/site-packages\", \"isolated\": 1}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_b/bin/python",
+      "-I",
+      "-c",
+      "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+    ],
+    "returncode": 0,
+    "stdout": "{\"executable\": \"/tmp/book1-venv57-0l63bcai/environment_b/bin/python\", \"prefix\": \"/tmp/book1-venv57-0l63bcai/environment_b\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/tmp/book1-venv57-0l63bcai/environment_b/lib/python3.12/site-packages\", \"isolated\": 1}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "from importlib.util import find_spec; assert find_spec('book1_environment_marker_57') is None"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_b/bin/python",
+      "-I",
+      "-c",
+      "from importlib.util import find_spec; assert find_spec('book1_environment_marker_57') is None"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+    ],
+    "returncode": 0,
+    "stdout": "A\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_b/bin/python",
+      "-I",
+      "-c",
+      "from importlib.util import find_spec; assert find_spec('book1_environment_marker_57') is None"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_b/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+    ],
+    "returncode": 0,
+    "stdout": "B\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+    ],
+    "returncode": 0,
+    "stdout": "A\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+    ],
+    "returncode": 0,
+    "stdout": "{\"executable\": \"/tmp/book1-venv57-0l63bcai/environment_a/bin/python\", \"prefix\": \"/tmp/book1-venv57-0l63bcai/environment_a\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/tmp/book1-venv57-0l63bcai/environment_a/lib/python3.12/site-packages\", \"isolated\": 1}\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "from importlib.util import find_spec; assert find_spec('book1_environment_marker_57') is None"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_b/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+    ],
+    "returncode": 0,
+    "stdout": "B\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-venv57-0l63bcai/environment_a/bin/python",
+      "-I",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+    ],
+    "returncode": 0,
+    "stdout": "A\n",
+    "stderr": ""
+  }
+]

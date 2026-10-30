@@ -1,0 +1,286 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "source_workflows": 3,
+  "predicates": 27,
+  "passed": 27,
+  "failed": 0,
+  "records": [
+    {
+      "section": "5.6",
+      "source": "chapter-05/5.06-pip-and-dependency-management.md",
+      "source_sha256": "f57fc9142451326d48d445e54909d5ca204dc876082bb55ee7d83d57478675ca",
+      "file": "pip_dependency_lab.py",
+      "code_sha256": "a0cb6d803ec5800ded94024839bee33e4b886648fa7013a384250b36e846173c",
+      "returncode": 0,
+      "stdout": "ENVIRONMENT: pip 25.0.1 from /tmp/book1-pip56-g0ljlzan/environment/lib/python3.12/site-packages/pip (python 3.12)\nINSTALL: dependency resolution, metadata, origin, and behavior passed\nINVENTORY: list, show, and freeze passed\nBROKEN STATE: expected pip check failure detected\nREPAIR: requirements reinstall and installed behavior passed\nCLEANUP: both fixture distributions removed\nPASS: temporary environment cleaned up\n",
+      "stderr": "",
+      "trace": "5-6-children.json",
+      "child_records": 16
+    },
+    {
+      "section": "5.7",
+      "source": "chapter-05/5.07-virtual-environments.md",
+      "source_sha256": "671ec79140b4bb9b83a8d4cea2704be7c44354c96c928296698448be73d82fc4",
+      "file": "virtual_environment_lab.py",
+      "code_sha256": "3d20976559a29ddb37ca42f8bf72622c4cc25ef8b82074129b1a9174237306e6",
+      "returncode": 0,
+      "stdout": "IDENTITY: two distinct venv prefixes and local purelib directories passed\nISOLATION: A marker is usable in A and absent from B\nINDEPENDENCE: same module name resolves to each environment's own artifact\nRECREATE: fresh A has no marker; source recipe and B are preserved\nREBUILD: restored artifact passes valid/invalid financial input checks\nPASS: both temporary environments cleaned up\n",
+      "stderr": "",
+      "trace": "5-7-children.json",
+      "child_records": 12
+    },
+    {
+      "section": "5.8",
+      "source": "chapter-05/5.08-dependency-pinning-and-reproducibility.md",
+      "source_sha256": "d2aaa66c8eaaf162281c34d3722336cbdced14d1691d735c679cafcf7fb38fa5",
+      "file": "reproducibility_lab.py",
+      "code_sha256": "34c70a9e68a4c756121a59d2edc1afc97dd41be82571600649dd86fc91b183d2",
+      "returncode": 0,
+      "stdout": "SETUP: creating two fresh environments\nFIRST INSTALL: pins, hashes, metadata, origin, and behavior passed\nNEGATIVE CHECK: changed artifact rejected against approved hash\nSECOND INSTALL: identical approved artifacts reproduce selected behavior\n{\n  \"implementation\": \"CPython\",\n  \"input_sha256\": \"6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1\",\n  \"pip\": {\n    \"a\": \"pip 25.0.1 from /tmp/book1-repro58-5migyzo4/environment_a/lib/python3.12/site-packages/pip (python 3.12)\",\n    \"b\": \"pip 25.0.1 from /tmp/book1-repro58-5migyzo4/environment_b/lib/python3.12/site-packages/pip (python 3.12)\"\n  },\n  \"platform\": \"Linux-6.18.55-x86_64-with-glibc2.39\",\n  \"python\": \"3.12.14\",\n  \"report_source_sha256\": \"ba7a679a262cff9042b903b8c3d55c57495ae103aadfe21423881a330e1feb81\",\n  \"requirements_sha256\": \"1e891c288d52e36d70ff276572b0b9784678f48cbf7d2e4badb95db9bb04f039\",\n  \"result\": {\n    \"input\": \"12.50\",\n    \"output\": [\n      \"instrument_units\",\n      \"12.50\"\n    ],\n    \"versions\": {\n      \"book1-report-demo\": \"1.0.0\",\n      \"book1-unit-demo\": \"1.0.0\"\n    }\n  },\n  \"unit_source_sha256\": \"9a6cf0a9e8dcfb982b3ff711edea38d1c09f25c23ec2316f86726ac42d316057\",\n  \"wheel_sha256\": {\n    \"book1_report_demo-1.0.0-py3-none-any.whl\": \"5ba902516d0cc4ccca88888fd1b6f22fa5414a255148674ed975ef92cb26bb45\",\n    \"book1_unit_demo-1.0.0-py3-none-any.whl\": \"8d0b765ac37ec55df100e73e57153021d2fea7b811d140bd5b37af14d7b4018f\"\n  }\n}\nPASS: two local installs verified and temporary resources cleaned up\n",
+      "stderr": "",
+      "trace": "5-8-children.json",
+      "child_records": 13,
+      "source_evidence": {
+        "implementation": "CPython",
+        "input_sha256": "6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1",
+        "pip": {
+          "a": "pip 25.0.1 from /tmp/book1-repro58-5migyzo4/environment_a/lib/python3.12/site-packages/pip (python 3.12)",
+          "b": "pip 25.0.1 from /tmp/book1-repro58-5migyzo4/environment_b/lib/python3.12/site-packages/pip (python 3.12)"
+        },
+        "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+        "python": "3.12.14",
+        "report_source_sha256": "ba7a679a262cff9042b903b8c3d55c57495ae103aadfe21423881a330e1feb81",
+        "requirements_sha256": "1e891c288d52e36d70ff276572b0b9784678f48cbf7d2e4badb95db9bb04f039",
+        "result": {
+          "input": "12.50",
+          "output": [
+            "instrument_units",
+            "12.50"
+          ],
+          "versions": {
+            "book1-report-demo": "1.0.0",
+            "book1-unit-demo": "1.0.0"
+          }
+        },
+        "unit_source_sha256": "9a6cf0a9e8dcfb982b3ff711edea38d1c09f25c23ec2316f86726ac42d316057",
+        "wheel_sha256": {
+          "book1_report_demo-1.0.0-py3-none-any.whl": "5ba902516d0cc4ccca88888fd1b6f22fa5414a255148674ed975ef92cb26bb45",
+          "book1_unit_demo-1.0.0-py3-none-any.whl": "8d0b765ac37ec55df100e73e57153021d2fea7b811d140bd5b37af14d7b4018f"
+        }
+      }
+    },
+    {
+      "section": "imports",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "manual": {
+    "create_returncode": 0,
+    "create_stdout": "",
+    "create_stderr": "",
+    "inspect": {
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/tmp/book1-environment-review-94alh1ui/manual-venv/bin/python\", \"prefix\": \"/tmp/book1-environment-review-94alh1ui/manual-venv\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/tmp/book1-environment-review-94alh1ui/manual-venv/lib/python3.12/site-packages\", \"isolated\": 1}\n",
+      "stderr": ""
+    },
+    "pip": {
+      "returncode": 0,
+      "stdout": "pip 25.0.1 from /tmp/book1-environment-review-94alh1ui/manual-venv/lib/python3.12/site-packages/pip (python 3.12)\n",
+      "stderr": ""
+    }
+  },
+  "checks": [
+    {
+      "id": "5.6",
+      "label": "source exit",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "id": "5.6",
+      "label": "source stderr",
+      "actual": "''",
+      "expected": "''",
+      "status": "PASS"
+    },
+    {
+      "id": "5.6",
+      "label": "all expected stages ordered",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.6",
+      "label": "nonzero children count",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "id": "5.6",
+      "label": "missing dependency identified",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.6",
+      "label": "expected pip check exit",
+      "actual": "[1]",
+      "expected": "[1]",
+      "status": "PASS"
+    },
+    {
+      "id": "5.6",
+      "label": "repair followed failure",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7",
+      "label": "source exit",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7",
+      "label": "source stderr",
+      "actual": "''",
+      "expected": "''",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7",
+      "label": "all expected stages ordered",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7",
+      "label": "nonzero children count",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "source exit",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "source stderr",
+      "actual": "''",
+      "expected": "''",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "all expected stages ordered",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "nonzero children count",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "hash failure identified",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "expected rejection exit",
+      "actual": "[1]",
+      "expected": "[1]",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "approved retry follows rejection",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "independent unit fixture expectation",
+      "actual": "{'input': '12.50', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "expected": "{'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}, 'input': '12.50', 'output': ['instrument_units', '12.50']}",
+      "status": "PASS"
+    },
+    {
+      "id": "5.8",
+      "label": "input text hash",
+      "actual": "'6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1'",
+      "expected": "'6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1'",
+      "status": "PASS"
+    },
+    {
+      "id": "imports",
+      "label": "quiet helper/source imports",
+      "actual": "(0, '', '')",
+      "expected": "(0, '', '')",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7-manual",
+      "label": "create venv",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7-manual",
+      "label": "reported executable",
+      "actual": "'/tmp/book1-environment-review-94alh1ui/manual-venv/bin/python'",
+      "expected": "'/tmp/book1-environment-review-94alh1ui/manual-venv/bin/python'",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7-manual",
+      "label": "prefix",
+      "actual": "PosixPath('/tmp/book1-environment-review-94alh1ui/manual-venv')",
+      "expected": "PosixPath('/tmp/book1-environment-review-94alh1ui/manual-venv')",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7-manual",
+      "label": "base differs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7-manual",
+      "label": "purelib owned",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "id": "5.7-manual",
+      "label": "explicit interpreter pip",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+[
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "ensurepip",
+      "--upgrade",
+      "--default-pip"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/tmp852o1aav\nProcessing /tmp/tmp852o1aav/pip-25.0.1-py3-none-any.whl\nInstalling collected packages: pip\nSuccessfully installed pip-25.0.1\n",
+    "stderr": null
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "pip 25.0.1 from /tmp/book1-pip56-g0ljlzan/environment/lib/python3.12/site-packages/pip (python 3.12)\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "install",
+      "--no-index",
+      "--find-links",
+      "/tmp/book1-pip56-g0ljlzan/wheels",
+      "-r",
+      "/tmp/book1-pip56-g0ljlzan/requirements.txt"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/book1-pip56-g0ljlzan/wheels\nProcessing /tmp/book1-pip56-g0ljlzan/wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/book1-pip56-g0ljlzan/requirements.txt (line 1))\nProcessing /tmp/book1-pip56-g0ljlzan/wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from book1-report-demo==1.0.0->-r /tmp/book1-pip56-g0ljlzan/requirements.txt (line 1))\nInstalling collected packages: book1-unit-demo, book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0 book1-unit-demo-1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport sys\nimport book1_report_demo\n\nassert version(\"book1-report-demo\") == \"1.0.0\"\nassert version(\"book1-unit-demo\") == \"1.0.0\"\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert book1_report_demo.labeled_quantity(value) == (\"instrument_units\", value)\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(\"installed behavior passed\")\n"
+    ],
+    "returncode": 0,
+    "stdout": "installed behavior passed\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "list",
+      "--format=json"
+    ],
+    "returncode": 0,
+    "stdout": "[{\"name\": \"book1-report-demo\", \"version\": \"1.0.0\"}, {\"name\": \"book1-unit-demo\", \"version\": \"1.0.0\"}, {\"name\": \"pip\", \"version\": \"25.0.1\"}]\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "show",
+      "book1-report-demo"
+    ],
+    "returncode": 0,
+    "stdout": "Name: book1-report-demo\nVersion: 1.0.0\nSummary: \nHome-page: \nAuthor: \nAuthor-email: \nLicense: \nLocation: /tmp/book1-pip56-g0ljlzan/environment/lib/python3.12/site-packages\nRequires: book1-unit-demo\nRequired-by: \n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "freeze"
+    ],
+    "returncode": 0,
+    "stdout": "book1-report-demo==1.0.0\nbook1-unit-demo==1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "uninstall",
+      "-y",
+      "book1-unit-demo"
+    ],
+    "returncode": 0,
+    "stdout": "Found existing installation: book1-unit-demo 1.0.0\nUninstalling book1-unit-demo-1.0.0:\n  Successfully uninstalled book1-unit-demo-1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "check"
+    ],
+    "returncode": 1,
+    "stdout": "book1-report-demo 1.0.0 requires book1-unit-demo, which is not installed.\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "install",
+      "--no-index",
+      "--find-links",
+      "/tmp/book1-pip56-g0ljlzan/wheels",
+      "-r",
+      "/tmp/book1-pip56-g0ljlzan/requirements.txt"
+    ],
+    "returncode": 0,
+    "stdout": "Looking in links: /tmp/book1-pip56-g0ljlzan/wheels\nRequirement already satisfied: book1-report-demo==1.0.0 in /tmp/book1-pip56-g0ljlzan/environment/lib/python3.12/site-packages (from -r /tmp/book1-pip56-g0ljlzan/requirements.txt (line 1)) (1.0.0)\nProcessing /tmp/book1-pip56-g0ljlzan/wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from book1-report-demo==1.0.0->-r /tmp/book1-pip56-g0ljlzan/requirements.txt (line 1))\nInstalling collected packages: book1-unit-demo\nSuccessfully installed book1-unit-demo-1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-c",
+      "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport sys\nimport book1_report_demo\n\nassert version(\"book1-report-demo\") == \"1.0.0\"\nassert version(\"book1-unit-demo\") == \"1.0.0\"\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert book1_report_demo.labeled_quantity(value) == (\"instrument_units\", value)\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(\"installed behavior passed\")\n"
+    ],
+    "returncode": 0,
+    "stdout": "installed behavior passed\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "uninstall",
+      "-y",
+      "book1-report-demo",
+      "book1-unit-demo"
+    ],
+    "returncode": 0,
+    "stdout": "Found existing installation: book1-report-demo 1.0.0\nUninstalling book1-report-demo-1.0.0:\n  Successfully uninstalled book1-report-demo-1.0.0\nFound existing installation: book1-unit-demo 1.0.0\nUninstalling book1-unit-demo-1.0.0:\n  Successfully uninstalled book1-unit-demo-1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-m",
+      "pip",
+      "--isolated",
+      "--disable-pip-version-check",
+      "check"
+    ],
+    "returncode": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/book1-pip56-g0ljlzan/environment/bin/python",
+      "-c",
+      "from importlib.util import find_spec; assert find_spec('book1_report_demo') is None; assert find_spec('book1_unit_demo') is None"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

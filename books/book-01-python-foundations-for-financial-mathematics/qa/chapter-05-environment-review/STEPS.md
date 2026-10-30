@@ -1,0 +1,147 @@
+# Sections5.6–5.8 — formal lab-step review
+
+Twenty-four derived review units describe three workflows. They are not24 original steps, tests or new unique workflows. Optional local exercise prompts remain in the separate queue.
+
+## 5.6-STEP1 — Prerequisites/helper layout
+
+Save complete pip_dependency_lab.py; Python3.10+ syntax with venv/ensurepip. No external downloads/backend. Generate original fixture wheels only inside owned temporary directory. Executed3.12.14 Linux; no system Python modification.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP2 — Environment and interpreter
+
+Explicit temporary environment python runs -m pip; child env strips inherited PIP_/PYTHONPATH/PYTHONHOME and points PIP_CONFIG_FILE at null. Pip --version trace identifies runtime tool/path. Activation unnecessary.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP3 — Dependency install
+
+Requirement report1.0.0 declares transitive unit1.0.0; local --no-index --find-links resolves both without --no-deps. pip check is metadata compatibility, separate from behavioral API checks.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP4 — Behavior and origin
+
+Installed module path under child sys.prefix; labeled_quantity preserves Decimal0 and12.5, rejects bool/nonDecimal and nonfinite/negative. Output label instrument_units; no arithmetic/valuation. Source exists only inside wheels, empty work directory prevents sibling-source substitute.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP5 — Inventory
+
+list JSON, show dependency and freeze exact entries validated. Inventory is installed state, not complete source/data/model/platform record.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP6 — Broken state
+
+Deliberately uninstall unit while report remains. Raw child exit1 pip check identifies missing book1-unit-demo; recorded expected failure, not a passed install.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP7 — Repair and cleanup
+
+Same requirements reinstall unit; pip check and behavior pass. Remove report+unit, check dependency state and find_spec absent; temporary context removes resources. Raw failed check and later successful checks retained together.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.6-STEP8 — Limits/troubleshooting
+
+Interpreter/name/origin diagnostics align to trace. Fixture-wheel generator is not a maintained release backend; pip check is not security, provenance or financial acceptance. No external index, static checker, OS matrix or deliberate version-update review executed.
+
+Evidence: results.json;5-6-children.json.
+
+## 5.7-STEP1 — Prerequisites and fixture meaning
+
+Save complete virtual_environment_lab.py. Requires venv but automated lab deliberately with_pip=False, no ensurepip/install. Copies synthetic marker into reported purelib; this is not distribution installation or package metadata.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP2 — Identity
+
+Check exact child prefix matches temporary env, differs base_prefix, purelib beneath it, isolated1, config system-site=false and A/B prefixes differ. Raw INFO_CODE outputs retain all five fields; symlink executable resolution alone would be misleading.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP3 — Isolation
+
+Initially marker absent in both. Copy A artifact; A behavior returns labelA and valid0/12.5, rejects unsupported/nonfinite/negative; B find_spec still absent.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP4 — Independence
+
+Copy B marker with labelB; B and A independently retain own labels under same module name and own prefix origins. This establishes selected local import separation, not security isolation.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP5 — Recreate
+
+Delete only owned temporary A after children exit and target guard. Recipe outside A survives; rebuilt A initially lacks marker; B remains operational. No existing project path is deleted.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP6 — Rebuild
+
+Retained recipe reconstructs A marker; original behavior checks pass again. Source recipe/creation instructions are reproducibility inputs; a moved/copied venv is not demonstrated.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP7 — Manual Linux setup
+
+Separate disposable python -m venv with pip executed. Explicit child reports executable,prefix,base_prefix,purelib,isolated and explicit-interpreter pip --version. This is additional supported setup evidence, separate from marker fixture; no shell activation or editor/notebook selection executed.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.7-STEP8 — Limits/troubleshooting
+
+Runtime executable/prefix/origin are diagnostics, VIRTUAL_ENV/prompt not proof. Files/network/IAM are not isolated. Windows/macOS/manual shell activation/editor/kernel procedures remain unexecuted, including F28.
+
+Evidence: results.json;5-7-children.json.
+
+## 5.8-STEP1 — Prerequisites/helper contract
+
+Save original Section5.6 helper beside reproducibility_lab.py. Helper import guarded, no demo on import. Needs venv/ensurepip. Exact helper and script hashes retained. Observer now matches direct-script sibling import semantics.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP2 — Approved fixture closure
+
+Generate unit/report wheel pair; requirement pins both1.0.0 and SHA256 of selected original bytes. Keep dependencies enabled, require-hashes/only-binary/no-index/no-cache-dir/local-find-links. Hashes approve this synthetic set, not external authorship.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP3 — First install
+
+Two new environments from same base runtime. First hash-checked install, pip check, versions/origin and behavior equal explicit expected input12.50/output[instrument_units,12.50], not merely second-run agreement.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP4 — Changed artifact and rejection
+
+Copy approved wheels, alter only ZIP comment, require changed digest while source/version remain. Raw pip child exit1 contains hash-mismatch diagnostic and approved/actual hash text; report absent afterward. Do not regenerate expected digest to accept tampering.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP5 — Approved retry
+
+Install original approved files into second environment; pip check and independent output pass. Both selected records equal and approved wheel digests unchanged. Corrected retry is retained alongside failed changed-artifact install.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP6 — Evidence record
+
+Original stdout records platform, interpreter, pip, requirement/wheel/source/input digests and selected result. Our source hashes additionally bind scripts. Paths/tool locations may differ; only selected invariants asserted, not byte-identical environment JSON.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP7 — Quiet helper import
+
+Fresh normal import of all three scripts produces no output or setup. Observer captures child results without altering arguments/outputs/return values; subprocess streams retained, environment values not dumped.
+
+Evidence: results.json;5-8-children.json.
+
+## 5.8-STEP8 — Limits/update policy
+
+Same approved files on one machine/runtime: repeatable installation only. Archive timestamps can change independently regenerated wheels. Real financial reproduction also needs units, source observations, model/numeric/rounding policies and reference data. Dependency-update regression/platform compiled wheel selection remain separate optional exercises.
+
+Evidence: results.json;5-8-children.json.
