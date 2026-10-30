@@ -2,7 +2,7 @@
 
 **Updated:** 2026-10-29
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Twenty-five COV categories partially addressed; none closed by this register.
+**Disposition:** Twenty-six COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
@@ -24,6 +24,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-69 | Section 14.9 computes/reports covariance eigenpairs; closed-form roots, projectors and direct residual/reconstruction checks added. | Independent review and broader numerical/interface scope. Fixed compression bound and input/unit metadata now asserted. | [Eigenpairs](chapter-14-covariance-eigenpair-followup.md) · [Compression bound](chapter-14-compression-bound-followup.md) |
 | COV-70 | Section 15.9 second-order contractions checked by a Decimal path expansion across nine shocks; signed/absolute portfolio errors implemented and asserted. | Final-assessment/shared-dependency coverage and independent derivation/unit review. | [Taylor](chapter-15-taylor-oracle-followup.md) |
 | COV-71 | Section 15.2 finite-difference representability and denominator guards aligned with related helpers; boundary tests added. | Perturbation asymmetry, step accuracy/convergence and selected Hessian numerical benchmarks. | [Scalar difference](chapter-15-scalar-difference-followup.md) |
+| COV-72 | Section 15.8 directly checks zero/adjacent iso-variance denominator and selected signed-rate/maturity-domain cases. | Applied/manual examples, covariance contracts, units, range and independent review. | [Level-set boundaries](chapter-15-level-set-boundary-followup.md) |
 | COV-74 | Section 16.9 now evaluates metrics, normalized loss/gradient and acceptance per candidate; independent residual metrics and selected failed candidates/holdout/budget cases checked. | Broader invalid-data, optimizer/threshold and independent-review scope. | [Candidate acceptance](chapter-16-candidate-acceptance-followup.md) |
 | COV-76 | Section 17.9 KKT fields independently recomputed across four regimes; four isolated rejection families and incomplete acceptance variants checked. | Tolerance units/scales, adjacent active-set transitions, degeneracy and independent review. | [KKT rejection](chapter-17-kkt-rejection-followup.md) |
 | COV-77 | Section 17.9 guards trade/notional range, avoids intermediate cost overflow and computes turnover directly; selected extreme cases pass. | Report/input/audit scope, underflow policy and independent review. | [Financial range](chapter-17-financial-range-followup.md) |
@@ -148,3 +149,7 @@ The [third full refresh](runtime-refresh-2026-10-29-r3.md) includes all prior Ch
 ## Production-float Jacobian accuracy follow-up — 2026-10-30
 
 [Section 15.9 evidence](chapter-15-jacobian-accuracy-followup.md) checks eighteen float-column/reference pairs, four selected second-order ladders, three tiny-step cancellation cases and one unequal represented-offset case. The manuscript clarifies approximation limits; implementation unchanged. All 23 chapter files compiled and 13 scripts passed. This follows V-36; twenty-five categories remain partially addressed. Next executable item: COV-72 Section 15.8 zero iso-variance denominator and rate-sign-crossing/domain rejection, followed by full-book reconciliation. Independent-review, environment and release gates remain pending.
+
+## Level-set boundary follow-up and V-37 — 2026-10-30
+
+[Section 15.8 evidence](chapter-15-level-set-boundary-followup.md) adds selected zero/adjacent iso-variance and signed-rate/maturity-domain cases; implementation unchanged. All 24 Chapter 15 files compiled and 14 scripts passed. [V-37 full evidence](runtime-refresh-2026-10-30.md) subsequently compiled 461 sources and passed 250 scripts with 462 hashes verified before/after at `28af429b7695520536cf4a3384af1318614e31aa`. This covers all recent scoped integrations and accuracy checkers. Twenty-six categories are partially addressed; independent review and approval remain pending. Next executable item: Section 15.8 finite rate-shock addition and extreme intermediate range with independent level-preservation references.
