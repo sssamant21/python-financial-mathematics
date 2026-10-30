@@ -1,0 +1,274 @@
+[
+  {
+    "id": "7.5",
+    "source": "chapter-07/7.05-reading-financial-data.md",
+    "source_sha256": "b259e7d5ada815f0a499cfddf618d615c2d34787151e363e50f3b254dd959357",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "1273dc47b6df75c107047da28b81f2630a8a4546",
+    "contract": {
+      "question": "Parse one bounded exact local CSV byte snapshot and validate its identity, numeric grammar, currency and calendar-label context before holdings valuation.",
+      "inputs": "UTF-8 local file <=1000000 bytes, exact ordered asset/quantity/price/currency/valuation_date header, 1\u201310000 correctly sized rows; unique trimmed literal IDs, unsigned ordinary decimal quantities/prices and explicit expected uppercase three-letter currency/calendar date.",
+      "outputs": "Indexed float64 holdings values, finite scalar total and evidence for the same parsed bytes: SHA256, byte count, row count and expected context.",
+      "oracle": "Literal IDs00123,BETA,NA;6\u00d7100+3\u00d7100+1\u00d7100=1000. LF fixture SHA256 e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11; CRLF changes bytes/hash while the controlled parsed table stays equal.",
+      "limits": "Hash is byte identity, not authenticity/freshness. File path and expected context are caller-owned; one bounded read is not an OS transactional snapshot against concurrent writers. No FX, intraday/session/calendar availability or arbitrary file/service integration is established."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Dedicated Python3.12/pandas2.2.3/NumPy2.3.5 environment",
+        "actual": "Prepared runtime/version/options probe passes; fresh creation/install/shell activation and Windows/macOS/notebook paths unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Exact sibling read_holdings.py/test_read_holdings.py in pandas_lab_75 plus holdings.csv",
+        "actual": "Reconstructed byte-identical listings; Section7.5 CSV copied exactly from its source fence with digest retained"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Original parent-folder compileall command",
+        "actual": "Silent exit0 in owned temporary folder; no repo cache artifacts"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Quiet sibling-directory module import",
+        "actual": "Empty stdout/stderr,exit0; no demonstration or external service action"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "All demonstration values,labels and row order",
+        "actual": "Complete stdout matches after whitespace-only normalization; Section7.5 documented hash placeholder replaced with digest of exact fixture bytes"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Source boundary behavior and known outputs match the contract",
+        "actual": "Exact source calls and3 total explanatory fences exercised with explicit prerequisites; expected rejection traces, rational benchmarks and cleaning audit retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Keep data/release/numerical claims within scope",
+        "actual": "Hash is byte identity, not authenticity/freshness. File path and expected context are caller-owned; one bounded read is not an OS transactional snapshot against concurrent writers. No FX, intraday/session/calendar availability or arbitrary file/service integration is established."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.6",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "1273dc47b6df75c107047da28b81f2630a8a4546",
+    "contract": {
+      "question": "Validate text tokens before choosing numeric/nullable/Boolean representations; preserve unknown counts and source row identity.",
+      "inputs": "Exact ordered asset/lot_count/price/reviewed text columns, 1\u201310000 rows, unique source index, cells strings <=64 chars, unique trimmed IDs. Counts unsigned whole text or empty unknown, checked exactly against Int64 max; prices ordinary unsigned decimal; reviewed exactly true/false.",
+      "outputs": "Source-index-preserving DataFrame with string, Int64, float64 and nullable boolean columns; missing count stays missing and observed zero stays zero.",
+      "oracle": "Price100.25=401/4; six/unknown/zero counts and true/false/true flags retained.2^63\u22121 preserved exactly;2^63 rejected before float conversion. Conversion-audit example has one introduced failure and two missing outputs.",
+      "limits": "No CSV ingestion, valuation, FX or schema recovery after prior lossy conversion. Price float64 remains approximate; Boolean token mapping is narrow and rejects undocumented spellings. Constructor accepts raw text only and does not silently stringify Python numeric objects."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Dedicated Python3.12/pandas2.2.3/NumPy2.3.5 environment",
+        "actual": "Prepared runtime/version/options probe passes; fresh creation/install/shell activation and Windows/macOS/notebook paths unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Exact sibling conversion.py/test_conversion.py in pandas_lab_76",
+        "actual": "Reconstructed byte-identical listings; Section7.5 CSV copied exactly from its source fence with digest retained"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Original parent-folder compileall command",
+        "actual": "Silent exit0 in owned temporary folder; no repo cache artifacts"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Quiet sibling-directory module import",
+        "actual": "Empty stdout/stderr,exit0; no demonstration or external service action"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "All demonstration values,labels and row order",
+        "actual": "Complete stdout matches after whitespace-only normalization; Section7.5 documented hash placeholder replaced with digest of exact fixture bytes"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Source boundary behavior and known outputs match the contract",
+        "actual": "Exact source calls and3 total explanatory fences exercised with explicit prerequisites; expected rejection traces, rational benchmarks and cleaning audit retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Keep data/release/numerical claims within scope",
+        "actual": "No CSV ingestion, valuation, FX or schema recovery after prior lossy conversion. Price float64 remains approximate; Boolean token mapping is narrow and rejects undocumented spellings. Constructor accepts raw text only and does not silently stringify Python numeric objects."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.7",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "1273dc47b6df75c107047da28b81f2630a8a4546",
+    "contract": {
+      "question": "Assess complete expected asset coverage before publishing a one-interval portfolio return, distinguishing absent rows, explicit missing values and observed zero.",
+      "inputs": "Nonempty finite nonnegative ordinary numeric weight Series sum near one at atol1e\u221212/rtol0; zero-or-more ordinary numeric return rows with unique flat trimmed IDs subset of expected weights, NaN allowed but observed entries finite and>=\u22121.",
+      "outputs": "Aligned report in expected weight order, summary expected/observed/missing/absent/complete counts, and either a finite complete scalar total or None. Never fill, drop expected names or renormalize observed weights.",
+      "oracle": "Complete fixture9/200=0.045. A/C-only fixture has expected3,observed2,missing1,absent1 and totalNone. Explicit missing B has absent0. Empty return source has missing3/absent3. Observed zero permits total0; missing zero-weight asset still blocks the total.",
+      "limits": "Completeness is relative to caller-supplied expected identities, not vendor/feed authenticity. Partial sums/renormalized observed totals describe another question. Price-only assumptions, common interval/currency and numerical-range/inference limitations remain; no market data repair or financial release approval."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Dedicated Python3.12/pandas2.2.3/NumPy2.3.5 environment",
+        "actual": "Prepared runtime/version/options probe passes; fresh creation/install/shell activation and Windows/macOS/notebook paths unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Exact sibling missingness.py/test_missingness.py in pandas_lab_77",
+        "actual": "Reconstructed byte-identical listings; Section7.5 CSV copied exactly from its source fence with digest retained"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Original parent-folder compileall command",
+        "actual": "Silent exit0 in owned temporary folder; no repo cache artifacts"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Quiet sibling-directory module import",
+        "actual": "Empty stdout/stderr,exit0; no demonstration or external service action"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "All demonstration values,labels and row order",
+        "actual": "Complete stdout matches after whitespace-only normalization; Section7.5 documented hash placeholder replaced with digest of exact fixture bytes"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Source boundary behavior and known outputs match the contract",
+        "actual": "Exact source calls and3 total explanatory fences exercised with explicit prerequisites; expected rejection traces, rational benchmarks and cleaning audit retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Keep data/release/numerical claims within scope",
+        "actual": "Completeness is relative to caller-supplied expected identities, not vendor/feed authenticity. Partial sums/renormalized observed totals describe another question. Price-only assumptions, common interval/currency and numerical-range/inference limitations remain; no market data repair or financial release approval."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.8",
+    "source": "chapter-07/7.08-cleaning-financial-datasets.md",
+    "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "1273dc47b6df75c107047da28b81f2630a8a4546",
+    "contract": {
+      "question": "Normalize only explicitly permitted formatting, validate all records, quarantine all normalized duplicate keys and retain a full source-row audit.",
+      "inputs": "Exact ordered asset/quantity/price/currency text schema,1\u201310000 rows,cells strings<=64 chars; same valuation instant/common USD long-only contract. Strip fields, uppercase currency only; asset case significant. Duplicate original row index allowed because source_row is a new local ordinal.",
+      "outputs": "Accepted numeric holdings table, rejected raw records with normalized asset/reasons, and one changed/status/reason audit row per local source ordinal. No batch aggregate is returned; any rejection means the fixture batch is not valuation-ready.",
+      "oracle": "Six rows conserve as2 accepted(ALPHA,CASH) and4 rejected; values600/100. Both BETA rows quarantined, including the raw spaced token. Two rows changed under normalization. Bad numeric and EUR rows retain explicit reasons.",
+      "limits": "Normalization is specific to this source policy, unlike strict whitespace rejection in7.5/7.6; currency spelling normalization is not FX. Accepted subtotal700 is not a complete batch valuation. Local ordinals are not global identity, read-only enforcement is absent, and provenance/concurrency/extreme monetary accuracy remain broader integration limits."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Dedicated Python3.12/pandas2.2.3/NumPy2.3.5 environment",
+        "actual": "Prepared runtime/version/options probe passes; fresh creation/install/shell activation and Windows/macOS/notebook paths unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Exact sibling cleaning.py/test_cleaning.py in pandas_lab_78",
+        "actual": "Reconstructed byte-identical listings; Section7.5 CSV copied exactly from its source fence with digest retained"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Original parent-folder compileall command",
+        "actual": "Silent exit0 in owned temporary folder; no repo cache artifacts"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Quiet sibling-directory module import",
+        "actual": "Empty stdout/stderr,exit0; no demonstration or external service action"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "All demonstration values,labels and row order",
+        "actual": "Complete stdout matches after whitespace-only normalization; Section7.5 documented hash placeholder replaced with digest of exact fixture bytes"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Source boundary behavior and known outputs match the contract",
+        "actual": "Exact source calls and3 total explanatory fences exercised with explicit prerequisites; expected rejection traces, rational benchmarks and cleaning audit retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Keep data/release/numerical claims within scope",
+        "actual": "Normalization is specific to this source policy, unlike strict whitespace rejection in7.5/7.6; currency spelling normalization is not FX. Accepted subtotal700 is not a complete batch valuation. Local ordinals are not global identity, read-only enforcement is absent, and provenance/concurrency/extreme monetary accuracy remain broader integration limits."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  }
+]

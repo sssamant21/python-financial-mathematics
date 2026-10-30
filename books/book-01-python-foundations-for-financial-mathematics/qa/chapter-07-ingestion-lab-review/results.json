@@ -1,0 +1,622 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "workflows": 4,
+  "derived_step_units": 32,
+  "command_records": 17,
+  "command_failed": 0,
+  "existing_method_invocations": 32,
+  "predicates": 36,
+  "failed": 0,
+  "scope": "preinstalled Linux runtime; setup PARTIAL; no fresh install or Windows/macOS/notebook acceptance",
+  "sources": [
+    {
+      "section": "7.5",
+      "source": "chapter-07/7.05-reading-financial-data.md",
+      "source_sha256": "b259e7d5ada815f0a499cfddf618d615c2d34787151e363e50f3b254dd959357",
+      "program_fence": 0,
+      "test_fence": 1,
+      "program_file": "read_holdings.py",
+      "test_file": "test_read_holdings.py",
+      "listing_sha256": {
+        "read_holdings.py": "cc53aeee6f3f4c36b1af762f2ba9a2be5042ad6580b355e1feff40a3d7a5e349",
+        "test_read_holdings.py": "a2e74a838c909031b003d3a5103d855fa48b37eaadcb4aed1b263a0457886aca"
+      },
+      "prose_fences": [],
+      "prose_sha256": [],
+      "prose_stdout": "",
+      "fixture_sha256": "e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11",
+      "prose_prelude": "none"
+    },
+    {
+      "section": "7.6",
+      "source": "chapter-07/7.06-data-types-and-conversion.md",
+      "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+      "program_fence": 1,
+      "test_fence": 2,
+      "program_file": "conversion.py",
+      "test_file": "test_conversion.py",
+      "listing_sha256": {
+        "conversion.py": "7ca9b528ff3a2b2d3f499fafb48489894dbb99dc7deadf224bb8ba0fb7723980",
+        "test_conversion.py": "7030cde39d2eb404aa1846e3bf0268c41b17a8b777de6d196cf9e48baa14905d"
+      },
+      "prose_fences": [
+        0
+      ],
+      "prose_sha256": [
+        "adcc93709f61fee45cdd30100408be8d5ab6ae7567efd1d78f92e50295765a92"
+      ],
+      "prose_stdout": "",
+      "fixture_sha256": null,
+      "prose_prelude": "pandas/NumPy imports supplied for illustrative fragment"
+    },
+    {
+      "section": "7.7",
+      "source": "chapter-07/7.07-missing-financial-data.md",
+      "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+      "program_fence": 1,
+      "test_fence": 2,
+      "program_file": "missingness.py",
+      "test_file": "test_missingness.py",
+      "listing_sha256": {
+        "missingness.py": "ede0ce4d1fbacd11932bbcb043d6755fb1dbde9c39f31c3e7206ad6871aecd7d",
+        "test_missingness.py": "49dfdcb67174673b8684d694c8ef38ae00ed97ff44c4f23f4789d5950bf47dd1"
+      },
+      "prose_fences": [
+        0
+      ],
+      "prose_sha256": [
+        "a6dbd219f70a0910c6d96e76bc44005bbe9616f1178c5b5db6e38ff7e2af8905"
+      ],
+      "prose_stdout": "",
+      "fixture_sha256": null,
+      "prose_prelude": "pandas/NumPy imports supplied for illustrative fragment"
+    },
+    {
+      "section": "7.8",
+      "source": "chapter-07/7.08-cleaning-financial-datasets.md",
+      "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
+      "program_fence": 1,
+      "test_fence": 2,
+      "program_file": "cleaning.py",
+      "test_file": "test_cleaning.py",
+      "listing_sha256": {
+        "cleaning.py": "bcb949725180fb3f6ca97849a25b19856abd53a17f69a07d6a369ef3b5f5ef63",
+        "test_cleaning.py": "f6821838318c9ed5c056fdb4c20c93b622c8c84340711c625e6145611c26062d"
+      },
+      "prose_fences": [
+        0
+      ],
+      "prose_sha256": [
+        "cb54f13bc3b508cf58d3bf808b74c727ffeec0aaa81e4128f2ac6c562d64f1ad"
+      ],
+      "prose_stdout": "",
+      "fixture_sha256": null,
+      "prose_prelude": "normalized captured from original clean(fixture()) return-event locals"
+    }
+  ],
+  "cleaning_audit_sha256": "c697f46c1cf7d9417af99fd802d5ac217e4db82e80a64c5c3c84f032ba88b946",
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "preinstalled environment probe",
+      "args": [
+        "-c",
+        "import json,platform,pandas as pd,numpy as np; print(json.dumps(dict(python=platform.python_version(),pandas=pd.__version__,numpy=np.__version__,copy_on_write=pd.options.mode.copy_on_write,chained_assignment=pd.options.mode.chained_assignment)))"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.12.14\", \"pandas\": \"2.2.3\", \"numpy\": \"2.3.5\", \"copy_on_write\": false, \"chained_assignment\": \"warn\"}\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_75/read_holdings.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "       quantity  price  market_value\nasset                               \n00123      6.00 100.00        600.00\nBETA       3.00 100.00        300.00\nNA         1.00 100.00        100.00\nTotal: 1000.00 USD\nRows: 3; SHA-256: e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_75",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_context_rejections (test_read_holdings.ReadTests.test_context_rejections) ... ok\ntest_header_and_record_shape (test_read_holdings.ReadTests.test_header_and_record_shape) ... ok\ntest_identity_rejections (test_read_holdings.ReadTests.test_identity_rejections) ... ok\ntest_known_values_and_identifiers (test_read_holdings.ReadTests.test_known_values_and_identifiers) ... ok\ntest_limits_and_overflow (test_read_holdings.ReadTests.test_limits_and_overflow) ... ok\ntest_numeric_rejections (test_read_holdings.ReadTests.test_numeric_rejections) ... ok\ntest_snapshot_hash (test_read_holdings.ReadTests.test_snapshot_hash) ... ok\ntest_zero_fraction_and_reordered_rows (test_read_holdings.ReadTests.test_zero_fraction_and_reordered_rows) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.054s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_75"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import read_holdings"
+      ],
+      "cwd_role": "lab directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_76/conversion.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "asset  lot_count  price  reviewed\n00123          6 100.25      True\n   NA       <NA>  80.00     False\n BETA          0   0.00      True\nDtypes: asset=string, lot_count=Int64, price=float64, reviewed=boolean\nUnknown lot counts: 1\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_76",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_mapping (test_conversion.ConversionTests.test_boolean_mapping) ... ok\ntest_coercion_audit_and_precision (test_conversion.ConversionTests.test_coercion_audit_and_precision) ... ok\ntest_input_and_identity_rejections (test_conversion.ConversionTests.test_input_and_identity_rejections) ... ok\ntest_invalid_count_tokens (test_conversion.ConversionTests.test_invalid_count_tokens) ... ok\ntest_invalid_price_tokens (test_conversion.ConversionTests.test_invalid_price_tokens) ... ok\ntest_nullable_count_and_exact_range (test_conversion.ConversionTests.test_nullable_count_and_exact_range) ... ok\ntest_schema_and_values (test_conversion.ConversionTests.test_schema_and_values) ... ok\ntest_source_ownership_and_row_index (test_conversion.ConversionTests.test_source_ownership_and_row_index) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.027s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_76"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import conversion"
+      ],
+      "cwd_role": "lab directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_77/missingness.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Missing assets: BETA\nCoverage: 2/3; total=None\nComplete portfolio price return: 4.50%\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_77",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_absent_vs_explicit_missing (test_missingness.MissingnessTests.test_absent_vs_explicit_missing) ... ok\ntest_all_missing_and_empty_returns (test_missingness.MissingnessTests.test_all_missing_and_empty_returns) ... ok\ntest_complete_known_answer (test_missingness.MissingnessTests.test_complete_known_answer) ... ok\ntest_fill_and_unknown_logic (test_missingness.MissingnessTests.test_fill_and_unknown_logic) ... ok\ntest_input_preservation (test_missingness.MissingnessTests.test_input_preservation) ... ok\ntest_invalid_data (test_missingness.MissingnessTests.test_invalid_data) ... ok\ntest_skip_drop_and_renormalization (test_missingness.MissingnessTests.test_skip_drop_and_renormalization) ... ok\ntest_zero_is_observed_and_zero_weight_policy (test_missingness.MissingnessTests.test_zero_is_observed_and_zero_weight_policy) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.014s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_77"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import missingness"
+      ],
+      "cwd_role": "lab directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_78/cleaning.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Input=6; accepted=2; rejected=4\nAccepted assets: ALPHA, CASH\nChanged rows: 2\nBatch valuation ready: False\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_78",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_all_duplicates_rejected (test_cleaning.CleaningTests.test_all_duplicates_rejected) ... ok\ntest_fixture_and_conservation (test_cleaning.CleaningTests.test_fixture_and_conservation) ... ok\ntest_invalid_fields (test_cleaning.CleaningTests.test_invalid_fields) ... ok\ntest_original_tokens_and_multiple_reasons (test_cleaning.CleaningTests.test_original_tokens_and_multiple_reasons) ... ok\ntest_repeatable_and_idempotent_normalization (test_cleaning.CleaningTests.test_repeatable_and_idempotent_normalization) ... ok\ntest_schema_and_cell_type (test_cleaning.CleaningTests.test_schema_and_cell_type) ... ok\ntest_source_preservation_and_local_ordinals (test_cleaning.CleaningTests.test_source_preservation_and_local_ordinals) ... ok\ntest_valid_zero_fraction_and_case (test_cleaning.CleaningTests.test_valid_zero_fraction_and_case) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.049s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_78"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import cleaning"
+      ],
+      "cwd_role": "lab directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "5",
+      "label": "two reconstructed listings unchanged",
+      "actual": "{'read_holdings.py': 'cc53aeee6f3f4c36b1af762f2ba9a2be5042ad6580b355e1feff40a3d7a5e349', 'test_read_holdings.py': 'a2e74a838c909031b003d3a5103d855fa48b37eaadcb4aed1b263a0457886aca'}",
+      "expected": "{'read_holdings.py': 'cc53aeee6f3f4c36b1af762f2ba9a2be5042ad6580b355e1feff40a3d7a5e349', 'test_read_holdings.py': 'a2e74a838c909031b003d3a5103d855fa48b37eaadcb4aed1b263a0457886aca'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "two reconstructed listings unchanged",
+      "actual": "{'conversion.py': '7ca9b528ff3a2b2d3f499fafb48489894dbb99dc7deadf224bb8ba0fb7723980', 'test_conversion.py': '7030cde39d2eb404aa1846e3bf0268c41b17a8b777de6d196cf9e48baa14905d'}",
+      "expected": "{'conversion.py': '7ca9b528ff3a2b2d3f499fafb48489894dbb99dc7deadf224bb8ba0fb7723980', 'test_conversion.py': '7030cde39d2eb404aa1846e3bf0268c41b17a8b777de6d196cf9e48baa14905d'}",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "two reconstructed listings unchanged",
+      "actual": "{'missingness.py': 'ede0ce4d1fbacd11932bbcb043d6755fb1dbde9c39f31c3e7206ad6871aecd7d', 'test_missingness.py': '49dfdcb67174673b8684d694c8ef38ae00ed97ff44c4f23f4789d5950bf47dd1'}",
+      "expected": "{'missingness.py': 'ede0ce4d1fbacd11932bbcb043d6755fb1dbde9c39f31c3e7206ad6871aecd7d', 'test_missingness.py': '49dfdcb67174673b8684d694c8ef38ae00ed97ff44c4f23f4789d5950bf47dd1'}",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "two reconstructed listings unchanged",
+      "actual": "{'cleaning.py': 'bcb949725180fb3f6ca97849a25b19856abd53a17f69a07d6a369ef3b5f5ef63', 'test_cleaning.py': 'f6821838318c9ed5c056fdb4c20c93b622c8c84340711c625e6145611c26062d'}",
+      "expected": "{'cleaning.py': 'bcb949725180fb3f6ca97849a25b19856abd53a17f69a07d6a369ef3b5f5ef63', 'test_cleaning.py': 'f6821838318c9ed5c056fdb4c20c93b622c8c84340711c625e6145611c26062d'}",
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "literal identifiers and independent valuation",
+      "actual": "(['00123', 'BETA', 'NA'], [600.0, 300.0, 100.0], 1000.0)",
+      "expected": "(['00123', 'BETA', 'NA'], [600.0, 300.0, 100.0], 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "same parsed snapshot bytes hashed",
+      "actual": "('e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11', 122, 3)",
+      "expected": "('e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11', 122, 3)",
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "published LF-fixture hash",
+      "actual": "'e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11'",
+      "expected": "'e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11'",
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "CRLF preserves financial table but changes bytes",
+      "actual": "(True, 1000.0, True)",
+      "expected": "(True, 1000.0, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "5",
+      "label": "duplicate raw identifier rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 17, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 75, in <lambda>\n    path.write_bytes(payload.replace(b'BETA',b'00123'));reject('5','duplicate raw identifier rejected',lambda:m.load_holdings(path,currency='USD',valuation_date='2026-01-30'))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 57, in load_holdings\n    ## 7.5.5 Preserve Text Before Converting Numbers\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unique trimmed nonempty asset identifiers required\n"
+    },
+    {
+      "section": "5",
+      "label": "different currency rejected without conversion",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 17, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 76, in <lambda>\n    path.write_bytes(payload.replace(b'USD',b'EUR',1));reject('5','different currency rejected without conversion',lambda:m.load_holdings(path,currency='USD',valuation_date='2026-01-30'))\n                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 59, in load_holdings\n    A generic `pd.read_csv(path)` can infer numeric types and recognize default missing-value tokens. That is convenient for exploration, but potentially wrong for identifiers. A numeric-looking asset identifier such as 00123 must remain text. The identifier NA is literal text in this fixture and must not become missing.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: currency differs from expected snapshot\n"
+    },
+    {
+      "section": "5",
+      "label": "invalid expected calendar date rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 17, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 77, in <lambda>\n    path.write_bytes(payload);reject('5','invalid expected calendar date rejected',lambda:m.load_holdings(path,currency='USD',valuation_date='2026-02-30'))\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 28, in load_holdings\nValueError: day is out of range for month\n"
+    },
+    {
+      "section": "5",
+      "label": "read does not mutate local payload",
+      "actual": "b'asset,quantity,price,currency,valuation_date\\n00123,6,100,USD,2026-01-30\\nBETA,3,100,USD,2026-01-30\\nNA,1,100,USD,2026-01-30\\n'",
+      "expected": "b'asset,quantity,price,currency,valuation_date\\n00123,6,100,USD,2026-01-30\\nBETA,3,100,USD,2026-01-30\\nNA,1,100,USD,2026-01-30\\n'",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "explicit output schema/dtypes",
+      "actual": "['string', 'Int64', 'float64', 'boolean']",
+      "expected": "['string', 'Int64', 'float64', 'boolean']",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "literal identities Boolean map and observed zero",
+      "actual": "(['00123', 'NA', 'BETA'], [True, False, True], np.int64(0), True)",
+      "expected": "(['00123', 'NA', 'BETA'], [True, False, True], 0, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "text decimal price reference",
+      "actual": "np.float64(100.25)",
+      "expected": "100.25",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "Int64 maximum kept exactly",
+      "actual": "9223372036854775807",
+      "expected": "9223372036854775807",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "above Int64 bound rejected before float route",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 17, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 84, in <lambda>\n    maxint.loc[0,'lot_count']=str(2**63);reject('6','above Int64 bound rejected before float route',lambda:m.convert_records(maxint))\n                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.06-data-types-and-conversion.md\", line 33, in convert_records\n    | price | 100.25, 80, 0 | float64 | Approximate nonnegative analysis price |\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: lot_count exceeds Int64 range\n"
+    },
+    {
+      "section": "6",
+      "label": "undocumented Boolean spelling rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 17, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 85, in <lambda>\n    bad=raw.copy();bad.loc[0,'reviewed']='False';reject('6','undocumented Boolean spelling rejected',lambda:m.convert_records(bad))\n                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.06-data-types-and-conversion.md\", line 43, in convert_records\n    |---|---|---|\n            ^^^^^^\nValueError: reviewed must be exactly true or false\n"
+    },
+    {
+      "section": "6",
+      "label": "typed output edits preserve raw text",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6",
+      "label": "prose introduced-failure vs all-missing counts",
+      "actual": "(1, 2)",
+      "expected": "(1, 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "coverage first missing/absent policy",
+      "actual": "(None, {'expected': 3, 'observed': 2, 'missing': 1, 'absent': 1, 'complete': False})",
+      "expected": "(None, {'expected': 3, 'observed': 2, 'missing': 1, 'absent': 1, 'complete': False})",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "explicit missing differs from absent record",
+      "actual": "(1, 0)",
+      "expected": "(1, 0)",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "empty source returns retains full expected population",
+      "actual": "(None, {'expected': 3, 'observed': 0, 'missing': 3, 'absent': 3, 'complete': False})",
+      "expected": "(None, {'expected': 3, 'observed': 0, 'missing': 3, 'absent': 3, 'complete': False})",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "complete rational contribution total",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "zero is observed not missing",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "missing zero-weight asset still blocks total",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "section": "7",
+      "label": "unexpected return identity rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 17, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-ingestion-lab-review/review.py\", line 95, in <lambda>\n    reject('7','unexpected return identity rejected',lambda:m.assess(w,pd.Series([.1],index=['OTHER'])))\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7ingestionlabs/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.07-missing-financial-data.md\", line 30, in assess\n    |---|---|---|\n            ^^^^^^\nValueError: unexpected return identifiers\n"
+    },
+    {
+      "section": "7",
+      "label": "coverage report edit preserves inputs",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "record conservation and outcomes",
+      "actual": "(6, 2, 4, 6)",
+      "expected": "(6, 2, 4, 6)",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "independent accepted asset values",
+      "actual": "(['ALPHA', 'CASH'], [600.0, 100.0])",
+      "expected": "(['ALPHA', 'CASH'], [600.0, 100.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "all duplicate records quarantined",
+      "actual": "[1, 2]",
+      "expected": "[1, 2]",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "one audit ordinal per source record",
+      "actual": "[0, 1, 2, 3, 4, 5]",
+      "expected": "[0, 1, 2, 3, 4, 5]",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "approved normalization change count",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "raw duplicate token retained",
+      "actual": "' BETA '",
+      "expected": "' BETA '",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "exact prose duplicate mask from captured normalized table",
+      "actual": "[False, True, True, False, False, False]",
+      "expected": "[False, True, True, False, False, False]",
+      "status": "PASS"
+    },
+    {
+      "section": "8",
+      "label": "accepted edit preserves original text source",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    }
+  ]
+}

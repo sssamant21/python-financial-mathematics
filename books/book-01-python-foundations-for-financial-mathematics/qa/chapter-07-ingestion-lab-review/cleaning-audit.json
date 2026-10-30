@@ -1,0 +1,135 @@
+{
+  "scope": "exact original clean(fixture()) output; not complete batch valuation",
+  "raw": [
+    {
+      "asset": " ALPHA ",
+      "quantity": "6",
+      "price": "100",
+      "currency": " usd "
+    },
+    {
+      "asset": "BETA",
+      "quantity": "3",
+      "price": "100",
+      "currency": "USD"
+    },
+    {
+      "asset": " BETA ",
+      "quantity": "3",
+      "price": "101",
+      "currency": "USD"
+    },
+    {
+      "asset": "CASH",
+      "quantity": "1",
+      "price": "100",
+      "currency": "USD"
+    },
+    {
+      "asset": "BAD",
+      "quantity": "1",
+      "price": "oops",
+      "currency": "USD"
+    },
+    {
+      "asset": "EURO",
+      "quantity": "1",
+      "price": "100",
+      "currency": "EUR"
+    }
+  ],
+  "accepted": [
+    {
+      "source_row": 0,
+      "asset": "ALPHA",
+      "quantity": 6.0,
+      "price": 100.0,
+      "currency": "USD",
+      "market_value": 600.0
+    },
+    {
+      "source_row": 3,
+      "asset": "CASH",
+      "quantity": 1.0,
+      "price": 100.0,
+      "currency": "USD",
+      "market_value": 100.0
+    }
+  ],
+  "rejected": [
+    {
+      "source_row": 1,
+      "asset": "BETA",
+      "quantity": "3",
+      "price": "100",
+      "currency": "USD",
+      "normalized_asset": "BETA",
+      "reason": "duplicate_asset"
+    },
+    {
+      "source_row": 2,
+      "asset": " BETA ",
+      "quantity": "3",
+      "price": "101",
+      "currency": "USD",
+      "normalized_asset": "BETA",
+      "reason": "duplicate_asset"
+    },
+    {
+      "source_row": 4,
+      "asset": "BAD",
+      "quantity": "1",
+      "price": "oops",
+      "currency": "USD",
+      "normalized_asset": "BAD",
+      "reason": "invalid_price"
+    },
+    {
+      "source_row": 5,
+      "asset": "EURO",
+      "quantity": "1",
+      "price": "100",
+      "currency": "EUR",
+      "normalized_asset": "EURO",
+      "reason": "unsupported_currency"
+    }
+  ],
+  "audit": [
+    {
+      "source_row": 0,
+      "changed": true,
+      "status": "accepted",
+      "reason": ""
+    },
+    {
+      "source_row": 1,
+      "changed": false,
+      "status": "rejected",
+      "reason": "duplicate_asset"
+    },
+    {
+      "source_row": 2,
+      "changed": true,
+      "status": "rejected",
+      "reason": "duplicate_asset"
+    },
+    {
+      "source_row": 3,
+      "changed": false,
+      "status": "accepted",
+      "reason": ""
+    },
+    {
+      "source_row": 4,
+      "changed": false,
+      "status": "rejected",
+      "reason": "invalid_price"
+    },
+    {
+      "source_row": 5,
+      "changed": false,
+      "status": "rejected",
+      "reason": "unsupported_currency"
+    }
+  ]
+}
