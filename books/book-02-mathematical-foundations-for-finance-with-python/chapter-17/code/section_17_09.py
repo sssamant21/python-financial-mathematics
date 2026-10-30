@@ -51,7 +51,14 @@ def verify_candidate(weights,lam,multipliers,caps=(0.6,1.0),tol=1e-9):
     dual=max(0,*(-z for z in m))
     stationarity=max(abs(z) for z in stat)
     complementary=max(abs(z) for z in comp)
-    return {"equality_residual":eq,"inequality_residuals":g,
+    return {"inputs":{"weights":(x,y),"lambda":lam,"multipliers":m,"caps":(u,v)},
+            "tolerance":tol,
+            "tolerance_policy":"single absolute threshold across all four residual norms",
+            "residual_units":{"primal_violation":"portfolio weight",
+                              "dual_violation":"variance per unit weight",
+                              "stationarity_norm":"variance per unit weight",
+                              "complementarity_norm":"variance"},
+            "equality_residual":eq,"inequality_residuals":g,
             "stationarity":stat,"complementarity":comp,
             "primal_violation":primal,"dual_violation":dual,
             "stationarity_norm":stationarity,
@@ -111,7 +118,12 @@ def financial_report(weights,current=(0.5,0.5),
         cost=float(Fraction.from_float(gross)*Fraction.from_float(cost_bps)/10000)
     except OverflowError as exc:
         raise OverflowError("modeled transaction cost exceeds float range") from exc
-    return {"expected_return":sum(a*b for a,b in zip(w,RETURNS)),
+    return {"inputs":{"target_weights":w,"current_weights":old,
+                      "capital":capital,"cost_bps":cost_bps},
+            "weight_sum_tolerance":1e-10,"expected_returns":RETURNS,
+            "return_period":"annual",
+            "monetary_unit":"same unspecified currency as capital",
+            "expected_return":sum(a*b for a,b in zip(w,RETURNS)),
             "signed_trades":trades,"gross_turnover":turnover,
             "gross_traded_notional":gross,
             "modeled_transaction_cost":cost,
@@ -120,7 +132,12 @@ def financial_report(weights,current=(0.5,0.5),
 
 def assessment():
     allocation=optimize()
-    return {"allocation":allocation,
+    return {"report_schema_version":1,
+            "model":{"asset_order":("asset_1","asset_2"),"covariance":SIGMA,
+                     "expected_returns":RETURNS,"period":"annual",
+                     "data_provenance":"synthetic fixed manuscript coefficients; no market data ingested",
+                     "objective":"minimum variance; return and transaction cost excluded"},
+            "allocation":allocation,
             "financial_report":financial_report(allocation["weights"]),
             "runtime_certified":False,
             "independent_review_completed":False}
