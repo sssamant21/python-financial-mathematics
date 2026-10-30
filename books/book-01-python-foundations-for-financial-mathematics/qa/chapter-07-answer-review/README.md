@@ -1,0 +1,17 @@
+# Chapter 7 — Chapter-wide worked-answer and companion review
+
+Based on main `e36ef0bb92883d5a82fe583268bcf040560bd283`. [Twenty answers](ANSWERS.md) · [Prompt/answer register](answer-register.json) · [Runner](review.py) · [Observer](observe.py) · [Captured source locals](observed-locals.json) · [Results](results.json)
+
+CPython 3.12.14, pandas 2.2.3, NumPy 2.3.5, Linux: final retained run **3 command checks and 35 predicates passed**. Original standalone discovery executes 20 methods; the tracing observer reruns the same 20, for 40 invocations of 20 existing methods. Compilation passes and FutureWarning is treated as an error. An earlier passing development run preceded making the supplemental report's linked-product route explicit; overlapping reruns add no historical unique methods. No unexpected failure or manuscript change.
+
+```bash
+python3 -B books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-answer-review/review.py
+```
+
+The original single companion listing is reconstructed unchanged under pandas_lab_718/chapter07_solutions.py; explicit discovery pattern and compileall run from the parent folder. The observer traces method-return locals without rewriting source or test predicates. Listing bytes and prompt/companion hashes are retained. It captures assigned locals; unnamed expression results remain evidenced by the original assertions. Objects such as the resampler are tagged rather than falsely serialized as computed bars.
+
+Independent Fraction arithmetic derives alignment errors, value/sector denominators, window means and linked/endpoint outcomes; manual UTC offset and interval-boundary reasoning supports timing labels. Supplementary bar materialization is separately labelled. [Actual five-record panel](panel.csv) and [concrete controlled report](panel-report.json) supplement Problem 20's compact source illustration, retaining separate endpoint and complete-path-linked fields. This is not the Section 7.17 parser/analyzer or its eight-test project suite, which remains a later formal workflow batch. No independent reviewer or release approval is claimed.
+
+All 20 prompt-to-answer contracts have scoped records. [Local queue](section-exercise-queue.json) discovers **136 pending prompts** across 17 sections, including eight project extensions; [workflow queue](workflow-queue.json) has **17 pending section-workflow records**. Discovery is not execution or formal completion, and neither count is added to reference-method totals. Project checklist/acceptance review remains separate and pending.
+
+Preinstalled environment reuse is scoped. Fresh installation, Windows/macOS, notebooks, DST/calendar completeness, arbitrary-input ingestion, availability/vendor authenticity, full project/repeated lab review, independent mathematical/editorial/model acceptance and final certification remain unexecuted. F28/F32 and prior finding/failure history remain open/intact. Chapter 6's listed formal scope remains recorded with its platform, numerical and conceptual-only implementation limits. Next: **Sections 7.1–7.4 formal lab-step review**, then remaining Chapter 7 workflows, local prompts and project checklist/extensions.

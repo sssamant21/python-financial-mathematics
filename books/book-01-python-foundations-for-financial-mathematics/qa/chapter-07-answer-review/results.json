@@ -1,0 +1,316 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "prompt_source_sha256": "b5b8925617c00aa086c3bafe65438495a31357ac9c747c3720f4eb8ee33fad37",
+  "companion_source_sha256": "c1c3d1684dbca19c761065108d9bca2cb30d00226e61ba2bbd01b08801af5bdc",
+  "executed_listing_sha256": "b6905b467b8117a333fa839e4676276ef1d7c9e5f385bfb46d8e5b491989da83",
+  "answer_records": 20,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 40,
+  "existing_unique_methods": 20,
+  "predicates": 35,
+  "failed": 0,
+  "supplemental_evidence_sha256": {
+    "observe.py": "ea176ca08d86003bb3f39ff73a09ba8018bd13bc3c1c08d85c74880daa4dec62",
+    "observed-locals.json": "285c8cc887ed2fa4de3266310c9b3c063a082150643e8c132c82adab6410be0a",
+    "panel.csv": "6c189075744c4d159756e68fa557e165f2a40433a2ba44df18d76376de815f3b",
+    "panel-report.json": "87a1250132d6ac6f47b922d189a379e37e9ee0335a36260371b2c7bd0e6d0fe2"
+  },
+  "commands": [
+    {
+      "label": "unchanged source discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_718",
+        "-p",
+        "chapter07_solutions.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_problem_01 (chapter07_solutions.ChapterSevenSolutions.test_problem_01) ... ok\ntest_problem_02 (chapter07_solutions.ChapterSevenSolutions.test_problem_02) ... ok\ntest_problem_03 (chapter07_solutions.ChapterSevenSolutions.test_problem_03) ... ok\ntest_problem_04 (chapter07_solutions.ChapterSevenSolutions.test_problem_04) ... ok\ntest_problem_05 (chapter07_solutions.ChapterSevenSolutions.test_problem_05) ... ok\ntest_problem_06 (chapter07_solutions.ChapterSevenSolutions.test_problem_06) ... ok\ntest_problem_07 (chapter07_solutions.ChapterSevenSolutions.test_problem_07) ... ok\ntest_problem_08 (chapter07_solutions.ChapterSevenSolutions.test_problem_08) ... ok\ntest_problem_09 (chapter07_solutions.ChapterSevenSolutions.test_problem_09) ... ok\ntest_problem_10 (chapter07_solutions.ChapterSevenSolutions.test_problem_10) ... ok\ntest_problem_11 (chapter07_solutions.ChapterSevenSolutions.test_problem_11) ... ok\ntest_problem_12 (chapter07_solutions.ChapterSevenSolutions.test_problem_12) ... ok\ntest_problem_13 (chapter07_solutions.ChapterSevenSolutions.test_problem_13) ... ok\ntest_problem_14 (chapter07_solutions.ChapterSevenSolutions.test_problem_14) ... ok\ntest_problem_15 (chapter07_solutions.ChapterSevenSolutions.test_problem_15) ... ok\ntest_problem_16 (chapter07_solutions.ChapterSevenSolutions.test_problem_16) ... ok\ntest_problem_17 (chapter07_solutions.ChapterSevenSolutions.test_problem_17) ... ok\ntest_problem_18 (chapter07_solutions.ChapterSevenSolutions.test_problem_18) ... ok\ntest_problem_19 (chapter07_solutions.ChapterSevenSolutions.test_problem_19) ... ok\ntest_problem_20 (chapter07_solutions.ChapterSevenSolutions.test_problem_20) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.085s\n\nOK\n",
+      "actual_methods": 20,
+      "status": "PASS"
+    },
+    {
+      "label": "unchanged source compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_718"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "observer rerun, unchanged source",
+      "args": [
+        "/tmp/book1_ch7answers/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-answer-review/observe.py",
+        "/tmp/chapter07-answers-x8vb0atm/pandas_lab_718/chapter07_solutions.py",
+        "/tmp/book1_ch7answers/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-answer-review/observed-locals.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_problem_01 (__main__.ChapterSevenSolutions.test_problem_01) ... ok\ntest_problem_02 (__main__.ChapterSevenSolutions.test_problem_02) ... ok\ntest_problem_03 (__main__.ChapterSevenSolutions.test_problem_03) ... ok\ntest_problem_04 (__main__.ChapterSevenSolutions.test_problem_04) ... ok\ntest_problem_05 (__main__.ChapterSevenSolutions.test_problem_05) ... ok\ntest_problem_06 (__main__.ChapterSevenSolutions.test_problem_06) ... ok\ntest_problem_07 (__main__.ChapterSevenSolutions.test_problem_07) ... ok\ntest_problem_08 (__main__.ChapterSevenSolutions.test_problem_08) ... ok\ntest_problem_09 (__main__.ChapterSevenSolutions.test_problem_09) ... ok\ntest_problem_10 (__main__.ChapterSevenSolutions.test_problem_10) ... ok\ntest_problem_11 (__main__.ChapterSevenSolutions.test_problem_11) ... ok\ntest_problem_12 (__main__.ChapterSevenSolutions.test_problem_12) ... ok\ntest_problem_13 (__main__.ChapterSevenSolutions.test_problem_13) ... ok\ntest_problem_14 (__main__.ChapterSevenSolutions.test_problem_14) ... ok\ntest_problem_15 (__main__.ChapterSevenSolutions.test_problem_15) ... ok\ntest_problem_16 (__main__.ChapterSevenSolutions.test_problem_16) ... ok\ntest_problem_17 (__main__.ChapterSevenSolutions.test_problem_17) ... ok\ntest_problem_18 (__main__.ChapterSevenSolutions.test_problem_18) ... ok\ntest_problem_19 (__main__.ChapterSevenSolutions.test_problem_19) ... ok\ntest_problem_20 (__main__.ChapterSevenSolutions.test_problem_20) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.117s\n\nOK\n",
+      "actual_methods": 20,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "problem": "ALL",
+      "label": "original listing bytes unchanged",
+      "actual": "'b6905b467b8117a333fa839e4676276ef1d7c9e5f385bfb46d8e5b491989da83'",
+      "expected": "'b6905b467b8117a333fa839e4676276ef1d7c9e5f385bfb46d8e5b491989da83'",
+      "status": "PASS"
+    },
+    {
+      "problem": "ALL",
+      "label": "all twenty original methods observed",
+      "actual": "['test_problem_01', 'test_problem_02', 'test_problem_03', 'test_problem_04', 'test_problem_05', 'test_problem_06', 'test_problem_07', 'test_problem_08', 'test_problem_09', 'test_problem_10', 'test_problem_11', 'test_problem_12', 'test_problem_13', 'test_problem_14', 'test_problem_15', 'test_problem_16', 'test_problem_17', 'test_problem_18', 'test_problem_19', 'test_problem_20']",
+      "expected": "['test_problem_01', 'test_problem_02', 'test_problem_03', 'test_problem_04', 'test_problem_05', 'test_problem_06', 'test_problem_07', 'test_problem_08', 'test_problem_09', 'test_problem_10', 'test_problem_11', 'test_problem_12', 'test_problem_13', 'test_problem_14', 'test_problem_15', 'test_problem_16', 'test_problem_17', 'test_problem_18', 'test_problem_19', 'test_problem_20']",
+      "status": "PASS"
+    },
+    {
+      "problem": "01",
+      "label": "independent aligned vs positional arithmetic",
+      "actual": "(Fraction(9, 200), Fraction(1, 40))",
+      "expected": "(Fraction(9, 200), Fraction(1, 40))",
+      "status": "PASS"
+    },
+    {
+      "problem": "01",
+      "label": "source fixture arrival order retained",
+      "actual": "['C', 'A', 'B']",
+      "expected": "['C', 'A', 'B']",
+      "status": "PASS"
+    },
+    {
+      "problem": "02",
+      "label": "source series metadata",
+      "actual": "('opening_value', 'asset', 'float64')",
+      "expected": "('opening_value', 'asset', 'float64')",
+      "status": "PASS"
+    },
+    {
+      "problem": "02",
+      "label": "integer identity order distinct from positions",
+      "actual": "([1, 0], [10.0, 20.0])",
+      "expected": "([1, 0], [10.0, 20.0])",
+      "status": "PASS"
+    },
+    {
+      "problem": "03",
+      "label": "independent quantity times price values",
+      "actual": "[[6.0, 100.0, 600.0], [3.0, 100.0, 300.0]]",
+      "expected": "[[6.0, 100.0, 600.0], [3.0, 100.0, 300.0]]",
+      "status": "PASS"
+    },
+    {
+      "problem": "04",
+      "label": "owned reordered subset vs unchanged source",
+      "actual": "(['C', 'A'], [[100.0], [0.0]], [[600.0], [300.0], [100.0]])",
+      "expected": "(['C', 'A'], [[100.0], [0.0]], [[600.0], [300.0], [100.0]])",
+      "status": "PASS"
+    },
+    {
+      "problem": "05",
+      "label": "literal identifiers and separately parsed source fields",
+      "actual": "[['00123', '100'], ['NA', '80']]",
+      "expected": "[['00123', '100'], ['NA', '80']]",
+      "status": "PASS"
+    },
+    {
+      "problem": "06",
+      "label": "nullable observed zero vs unknown",
+      "actual": "('Int64', [6, None, 0])",
+      "expected": "('Int64', [6, None, 0])",
+      "status": "PASS"
+    },
+    {
+      "problem": "07",
+      "label": "coerced values and distinct missing counts",
+      "actual": "[100.0, None, None]",
+      "expected": "[100.0, None, None]",
+      "status": "PASS"
+    },
+    {
+      "problem": "07",
+      "label": "introduced vs total missing",
+      "actual": "(1, 2)",
+      "expected": "(1, 2)",
+      "status": "PASS"
+    },
+    {
+      "problem": "08",
+      "label": "incomplete contribution population retained",
+      "actual": "[0.06, None, 0.0]",
+      "expected": "[0.06, None, 0.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": "09",
+      "label": "all normalized duplicates flagged",
+      "actual": "(['BETA', 'BETA', 'CASH'], [True, True, False])",
+      "expected": "(['BETA', 'BETA', 'CASH'], [True, True, False])",
+      "status": "PASS"
+    },
+    {
+      "problem": "09",
+      "label": "raw spaced token still retained",
+      "actual": "' BETA '",
+      "expected": "' BETA '",
+      "status": "PASS"
+    },
+    {
+      "problem": "10",
+      "label": "offset arithmetic gives same UTC instant",
+      "actual": "['2026-01-30T15:00:00+00:00', '2026-01-30T15:00:00+00:00']",
+      "expected": "['2026-01-30T15:00:00+00:00', '2026-01-30T15:00:00+00:00']",
+      "status": "PASS"
+    },
+    {
+      "problem": "11",
+      "label": "winter localization and two half-hour instants",
+      "actual": "(['2026-01-30T09:30:00-05:00'], ['2026-01-30T14:30:00+00:00', '2026-01-30T15:00:00+00:00'])",
+      "expected": "(['2026-01-30T09:30:00-05:00'], ['2026-01-30T14:30:00+00:00', '2026-01-30T15:00:00+00:00'])",
+      "status": "PASS"
+    },
+    {
+      "problem": "12",
+      "label": "mask and authored query preserve identical rows",
+      "actual": "{'kind': 'DataFrame', 'index': [0, 1, 2], 'columns': ['asset', 'sector', 'value'], 'values': [['B', 'equity', 600.0], ['A', 'equity', 600.0], ['C', 'equity', 300.0]], 'dtypes': ['object', 'object', 'float64']}",
+      "expected": "{'kind': 'DataFrame', 'index': [0, 1, 2], 'columns': ['asset', 'sector', 'value'], 'values': [['B', 'equity', 600.0], ['A', 'equity', 600.0], ['C', 'equity', 300.0]], 'dtypes': ['object', 'object', 'float64']}",
+      "status": "PASS"
+    },
+    {
+      "problem": "12",
+      "label": "independent tie ordering",
+      "actual": "['A', 'B']",
+      "expected": "['A', 'B']",
+      "status": "PASS"
+    },
+    {
+      "problem": "13",
+      "label": "rational sector denominators",
+      "actual": "(Fraction(1, 20), Fraction(1, 40), Fraction(9, 200))",
+      "expected": "(Fraction(1, 20), Fraction(1, 40), Fraction(9, 200))",
+      "status": "PASS"
+    },
+    {
+      "problem": "14",
+      "label": "two by two quote multiplication count",
+      "actual": "4",
+      "expected": "4",
+      "status": "PASS"
+    },
+    {
+      "problem": "15",
+      "label": "all outer match categories",
+      "actual": "{'A': 'both', 'B': 'left_only', 'C': 'right_only'}",
+      "expected": "{'A': 'both', 'B': 'left_only', 'C': 'right_only'}",
+      "status": "PASS"
+    },
+    {
+      "problem": "16",
+      "label": "source event instants retained",
+      "actual": "['2026-01-30T14:00:00+00:00', '2026-01-30T14:29:00+00:00', '2026-01-30T15:00:00+00:00']",
+      "expected": "['2026-01-30T14:00:00+00:00', '2026-01-30T14:29:00+00:00', '2026-01-30T15:00:00+00:00']",
+      "status": "PASS"
+    },
+    {
+      "problem": "16",
+      "label": "supplemental bin labels",
+      "actual": "['2026-01-30T14:30:00+00:00', '2026-01-30T15:00:00+00:00', '2026-01-30T15:30:00+00:00']",
+      "expected": "['2026-01-30T14:30:00+00:00', '2026-01-30T15:00:00+00:00', '2026-01-30T15:30:00+00:00']",
+      "status": "PASS"
+    },
+    {
+      "problem": "16",
+      "label": "independent observed first bar",
+      "actual": "[100.0, 102.0, 100.0, 102.0]",
+      "expected": "[100.0, 102.0, 100.0, 102.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": "16",
+      "label": "empty middle bin stays missing",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "problem": "17",
+      "label": "observed rolling warm-up",
+      "actual": "[None, None, 102.0, 104.0]",
+      "expected": "[None, None, 102.0, 104.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": "17",
+      "label": "independent expanding arithmetic",
+      "actual": "[Fraction(100, 1), Fraction(101, 1), Fraction(102, 1), Fraction(103, 1)]",
+      "expected": "[Fraction(100, 1), Fraction(101, 1), Fraction(102, 1), Fraction(103, 1)]",
+      "status": "PASS"
+    },
+    {
+      "problem": "18",
+      "label": "undefined first return remains missing",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "problem": "18",
+      "label": "source linked return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "problem": "19",
+      "label": "source complete expected grid",
+      "actual": "[[100.0, 200.0], [110.0, None], [99.0, 220.0]]",
+      "expected": "[[100.0, 200.0], [110.0, None], [99.0, 220.0]]",
+      "status": "PASS"
+    },
+    {
+      "problem": "19",
+      "label": "B no-fill grid returns stay missing",
+      "actual": "[None, None, None]",
+      "expected": "[None, None, None]",
+      "status": "PASS"
+    },
+    {
+      "problem": "20",
+      "label": "source compact release flags and withheld B",
+      "actual": "([True, False], None)",
+      "expected": "([True, False], None)",
+      "status": "PASS"
+    },
+    {
+      "problem": "20",
+      "label": "supplemental actual-panel record count",
+      "actual": "5",
+      "expected": "5",
+      "status": "PASS"
+    },
+    {
+      "problem": "20",
+      "label": "separate endpoint/linked decisions",
+      "actual": "{'A': {'observed_prices': 3, 'expected_prices': 3, 'complete_path': True, 'endpoint_return': -0.01, 'linked_return': -0.01, 'release_linked': True}, 'B': {'observed_prices': 2, 'expected_prices': 3, 'complete_path': False, 'endpoint_return': 0.1, 'linked_return': None, 'release_linked': False}}",
+      "expected": "{'A': {'observed_prices': 3, 'expected_prices': 3, 'complete_path': True, 'endpoint_return': -0.01, 'linked_return': -0.01, 'release_linked': True}, 'B': {'observed_prices': 2, 'expected_prices': 3, 'complete_path': False, 'endpoint_return': 0.1, 'linked_return': None, 'release_linked': False}}",
+      "status": "PASS"
+    }
+  ]
+}
