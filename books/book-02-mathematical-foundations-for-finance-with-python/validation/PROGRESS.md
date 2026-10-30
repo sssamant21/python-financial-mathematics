@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-30  
-**Overall status:** In progress — earlier full pinned-revision runtime pass complete (480 compiled files; 269 successful script exits); subsequent Section17.9 reporting change has scoped23-file/13-script evidence; coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — latest full pinned-revision runtime pass complete (482 compiled files; 271 successful script exits), including Section17.9 report and Section17.10 LP integration; coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Earlier full pass; subsequent scoped change | 480/480 files compiled at `df656dbbe59bda073bf662392c9f0348fc18cc83` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r10.md). |
-| Automated script execution | Earlier full pass; subsequent scoped change | 269/269 check/test scripts exited zero at `df656dbbe59bda073bf662392c9f0348fc18cc83`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r10.md). |
+| Python compilation | Full pinned pass | 482/482 files compiled at `60cd09c1072aec6d6f437b62961d0b4e50cad50c` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r11.md). |
+| Automated script execution | Full pinned pass | 271/271 scripts exited zero at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r11.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-46 fifteenth refresh](runtime-refresh-2026-10-30-r10.md): 480 sources compiled, 269 scripts passed and 481 required hashes verified before/after at `df656dbbe59bda073bf662392c9f0348fc18cc83`.
+- **Latest full run:** [V-47 sixteenth refresh](runtime-refresh-2026-10-30-r11.md): 482 sources compiled, 271 scripts passed and 483 required hashes verified before/after at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -487,3 +487,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Allocation report audit contract — 2026-10-30
 
 [Section17.9 evidence](chapter-17-report-contract-followup.md) preserves the initial missing-input-metadata failure and adds candidate/financial inputs, declared tolerances and residual units, fixed synthetic model metadata and schema version1. Four financial sets yield24 independently derived metric checks; six certificate/tolerance cases, strict JSON round-trip and two fresh-process outputs pass. Numerical allocation, financial arithmetic and acceptance rules are unchanged. All23 chapter sources compiled and13 scripts passed at `e5bf5f753a12e8b83f98933682c97f0a55ea9805`; all23 source hashes match the pinned tree and remain unchanged after execution. Current inventory is481 Python files/270 check-test scripts, not a full runtime run. V-46's480/269 full execution is historical for the changed Section17.9 source. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-78 Section17.10 actual Section17.5 LP-helper integration, independent vertex/objective/certificate references and false-certificate checks; do not call the fixed LP a general solver. Broader report/data governance, mixed-unit tolerance scaling, independent-review, supported-platform and release obligations remain open.
+
+## Final LP integration and V-47 — 2026-10-30
+
+[Section17.10 evidence](chapter-17-final-lp-integration-followup.md) preserves the missing-certificate baseline failure, replaces literal LP assessment inputs with actual Section17.5 computation/certificate calls and independently checks six boundary intersections, four feasible vertices and six certificates (five rejected). Two actual helper calls and five injected wrong outputs are checked. All24 chapter sources compiled and14 scripts passed. [V-47 full runtime](runtime-refresh-2026-10-30-r11.md) compiled482 files, passed271 scripts and verified483 required hashes before/after at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`, including preceding Section17.9 report changes/checker. Twenty-eight selected categories remain partially addressed; none closed by the register. Next executable item: COV-79 Section18.9 project safeguarded-Newton trace endpoint signs, middle-half proposal safeguards, returned-root residuals and exact objective/derivative call accounting; Section18.8 bracket audit is already recorded. Broader mathematical proof, report/data governance, tolerance scaling, independent-review, supported-platform and release obligations remain open.
