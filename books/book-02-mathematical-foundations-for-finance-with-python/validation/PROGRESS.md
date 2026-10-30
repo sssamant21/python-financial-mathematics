@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped spectral-report correction
+## Latest scoped symmetry-policy follow-up
+
+Nine adjacent symmetry cases and three subnormal midpoint cases now document eigen/decomposition tolerance versus exact Cholesky symmetry. Implementation unchanged; all 27 Chapter 14 files compiled and 17 scripts passed. [Evidence](chapter-14-symmetry-policy-followup.md). COV-68 partially open; follows V-35.
+
+## Earlier scoped spectral-report correction
 
 Section 14.2 now preserves one-shot matrix inputs and avoids underflow in tiny reconstruction norms. Shared Section 14.1 small-root integration is checked. All 26 Chapter 14 files compiled and 16 scripts passed. [Evidence](chapter-14-spectral-report-followup.md). COV-68 remains partially open; this follows V-35.
 
@@ -323,3 +327,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Spectral-report integration and correction — 2026-10-29
 
 [Section 14.2 evidence](chapter-14-spectral-report-followup.md) confirms the shared Section 14.1 solver path and corrects one-shot input reuse and squared-norm underflow. The original checker failure and tiny-error probe are retained; all 26 chapter files compiled and 16 scripts passed after correction. This scoped change follows V-35. Twenty-five categories remain partially addressed. Next executable item: Section 14.1 off-diagonal averaging/symmetry boundary; broader numerical, platform and independent-review gates remain open.
+
+## Symmetry-policy boundary follow-up — 2026-10-29
+
+[Chapter 14 evidence](chapter-14-symmetry-policy-followup.md) adds nine adjacent represented-threshold cases, exact-versus-tolerant symmetry contrast and three subnormal midpoint cases. No implementation change was justified; the manuscript now states the policies and absolute floor. All 27 chapter files compiled and 17 scripts passed. This checker addition follows V-35; twenty-five categories remain partially addressed. Next executable item: Section 14.5 tiny nondyadic reconstruction norms, then full-book runtime refresh after related fixes. Independent review, environment and release gates remain pending.
