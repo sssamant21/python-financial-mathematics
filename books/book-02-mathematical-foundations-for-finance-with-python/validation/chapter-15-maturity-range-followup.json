@@ -1,0 +1,131 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "compiled": 25,
+  "runs": [
+    {
+      "script": "check_section_15_08.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.8 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02683188999998265
+    },
+    {
+      "script": "check_section_15_02.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.2 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.06296824000003198
+    },
+    {
+      "script": "check_level_set_boundaries.py",
+      "exit_code": 0,
+      "stdout": "PASS: selected zero/adjacent iso-variance and signed-rate maturity-domain cases\n",
+      "stderr": "",
+      "seconds": 0.030931959000042752
+    },
+    {
+      "script": "check_section_15_10.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.10 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.03327275699996335
+    },
+    {
+      "script": "check_jacobian_accuracy.py",
+      "exit_code": 0,
+      "stdout": "PASS: 18 float-column/reference pairs, four error ladders, three cancellation and one asymmetry case\n",
+      "stderr": "",
+      "seconds": 0.031471307999993314
+    },
+    {
+      "script": "check_maturity_range.py",
+      "exit_code": 0,
+      "stdout": "PASS: eight Decimal adjusted-maturity references and five range/domain rejections\n",
+      "stderr": "",
+      "seconds": 0.03221765600000026
+    },
+    {
+      "script": "check_finite_difference_boundaries.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.000s\n\nOK\n",
+      "seconds": 0.08266928199998347
+    },
+    {
+      "script": "check_section_15_05.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.5 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.0311317240000335
+    },
+    {
+      "script": "check_hessian_accuracy.py",
+      "exit_code": 0,
+      "stdout": "PASS: 18 analytic Hessian entries against 90-digit valuation stencils and selected order ladders\n",
+      "stderr": "",
+      "seconds": 0.07517501799998172
+    },
+    {
+      "script": "check_section_15_01.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.1 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.021760044999950878
+    },
+    {
+      "script": "check_section_15_06.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.6 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.021196927000005417
+    },
+    {
+      "script": "check_section_15_07.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.7 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.022803523999982644
+    },
+    {
+      "script": "check_section_15_09.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.9 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.024626253999997516
+    },
+    {
+      "script": "check_section_15_03.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.3 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.020403160999990178
+    },
+    {
+      "script": "check_section_15_04.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 15.4 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02547172300000966
+    }
+  ],
+  "inspected_revision": "5681bdab2aa8de1caa4504f58b2d7a7c9624c0dd",
+  "corrected_source": {
+    "commit_sha": "d8bb3b044d2b868e6f3f6ee01fc53d7707ae4b06",
+    "content_sha": "82f10620478a3ba33d5abb4957096d84643beb67"
+  },
+  "initial_failure": {
+    "chunk_id": "786d1a",
+    "wall_time_seconds": 0.000029996,
+    "exit_code": 1,
+    "original_token_count": 190,
+    "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/45f84313db40/maturity_range_followup/check_maturity_range.py\", line 42, in <module>\n    run()\n  File \"/workspace/scratch/45f84313db40/maturity_range_followup/check_maturity_range.py\", line 17, in run\n    actual=adjusted(rate,years,shock)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/45f84313db40/maturity_range_followup/section_15_08.py\", line 40, in exact_unchanged_value_time\n    new_time=number(r*t/(r+dr),\"adjusted maturity\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/45f84313db40/maturity_range_followup/section_15_08.py\", line 13, in number\n    raise ValueError(f\"{name} must be finite\")\nValueError: adjusted maturity must be finite\n"
+  },
+  "initial_probes": {
+    "chunk_id": "78ad04",
+    "wall_time_seconds": 0.000034883,
+    "exit_code": 0,
+    "original_token_count": 49,
+    "output": "{\"inputs\": [1e+308, 2, 0], \"exception\": \"ValueError\", \"message\": \"adjusted maturity must be finite\"}\n{\"inputs\": [1e-300, 1e-100, 0], \"result\": 0.0}\n{\"inputs\": [1e+308, 1, 1e+308], \"result\": 0.0}\n"
+  }
+}
