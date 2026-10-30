@@ -1,6 +1,7 @@
 """Book 02 Section 15.6: Hessians and mixed partials."""
 import json
 import math
+from section_15_04 import covariance as checked_covariance
 
 def number(value,name):
     if type(value) not in (int,float):
@@ -71,17 +72,7 @@ def exact_change(principal,rate,years,d_rate,d_years):
                   "exact change")
 
 def portfolio_hessian(covariance):
-    if not isinstance(covariance,(tuple,list)) or len(covariance)!=2:
-        raise ValueError("covariance must be 2x2")
-    rows=[]
-    for row in covariance:
-        if not isinstance(row,(tuple,list)) or len(row)!=2:
-            raise ValueError("covariance must be 2x2")
-        rows.append(tuple(number(v,"covariance entry") for v in row))
-    if not math.isclose(rows[0][1],rows[1][0],rel_tol=1e-12,abs_tol=1e-14):
-        raise ValueError("covariance must be symmetric")
-    if rows[0][0]<=0 or rows[0][0]*rows[1][1]-rows[0][1]**2<=0:
-        raise ValueError("covariance must be positive definite")
+    rows=checked_covariance(covariance)
     return tuple(tuple(number(2*v,"Hessian entry") for v in row) for row in rows)
 
 def assessment():
