@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.1-E1",
+    "prompt": "Reorder the return Series three different ways. Confirm the validated portfolio return stays at 4.50%.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SOURCE + RATIONAL ORACLE",
+    "answer": "Reindex returns to ALPHA/BETA/CASH, BETA/CASH/ALPHA and BETA/ALPHA/CASH. Each original API call produces the same weight-ordered report and total9/200=0.045. Labels retain economic pairing; only the return row order changes."
+  },
+  {
+    "id": "7.1-E2",
+    "prompt": "Calculate the unaligned positional result of 2.50% by hand and identify each wrong asset pairing.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SOURCE MECHANICS + HAND DERIVATION",
+    "answer": "The wrong positional pairs are ALPHA weight0.6 with CASH return0, BETA weight0.3 with ALPHA return0.1, and CASH weight0.1 with BETA return\u22120.05. Terms0,0.03,\u22120.005 sum1/40=0.025. Correct identity alignment gives0.045, a2percentage-point difference. Matching array shapes cannot detect these mislabeled pairings."
+  },
+  {
+    "id": "7.1-E3",
+    "prompt": "Remove BETA from the returns. Explain why rejection is preferable to reporting ALPHA's contribution alone.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SOURCE + MISSINGNESS INTERPRETATION",
+    "answer": "Removing BETA raises ValueError before aggregation. An unguarded aligned product exposes BETA asNaN but defaultsum skips it and reports0.06; the missing negative\u22120.015 contribution makes that partial total exceed the correct0.045. CASH contributes0. Reporting only ALPHA is not a complete portfolio return, and neither zero filling nor renormalization is authorized."
+  },
+  {
+    "id": "7.1-E4",
+    "prompt": "Add an unexpected instrument. Explain why silently discarding it could conceal a data-source mismatch.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SOURCE + UNIVERSE POLICY",
+    "answer": "Append OTHER return0.02. Exact-set validation rejects it. Explicitly discarding OTHER recreates0.045 mechanically, but hides a possible wrong file,unexpected security,stale universe or mismatched weight population. Investigate the source and independently expected universe; a broad-reference filtering workflow would need an explicit different contract."
+  },
+  {
+    "id": "7.1-E5",
+    "prompt": "Replace BETA's return with NaN. Compare the unguarded default sum with the validated function.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SOURCE + UNGUARDED CONTRAST",
+    "answer": "Set BETA returnNaN without removing its label. Default sum of unguarded w*r reports0.06; sum(skipna=False) isNaN and the public function rejects the supplied nonfinite return. Unknown return is not observed0 and must not be converted into a complete performance result."
+  },
+  {
+    "id": "7.1-E6",
+    "prompt": "Supply duplicate labels and explain why a label-bearing object is not automatically a valid keyed dataset.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SOURCE + KEY CONTRACT",
+    "answer": "Duplicate labels on either input raise ValueError. pandas permits Series with repeated labels, so existence of an Index is not uniqueness validation. For this one-contribution-per-asset model enforce flat,unique,trimmed nonempty string identities and identical asset sets. A valid lot/transaction grain would need distinct keys and another explicit aggregation policy."
+  },
+  {
+    "id": "7.1-E7",
+    "prompt": "Describe the metadata needed to ensure all supplied returns cover the same interval and currency convention.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "CONCEPTUAL METADATA DESIGN \u2014 NOT EXECUTED INTEGRATION",
+    "answer": "Retain stable security identifiers and identifier namespace/source version; common interval start/end instants,time zones,endpoint closure and observation/session calendar; price-only versus total-return methodology,corporate-action/adjustment/distribution basis; price currency and reporting currency,units/multipliers and FX basis; opening-weight valuation time/exposure universe and flow/rebalancing assumptions; event/publication/ingestion times,quote age/revision and source/batch evidence. Validate equality or an explicitly authorized transformation across inputs before calculation. Labels and finite numeric cells alone cannot enforce these fields; this API accepts no metadata object and does not authenticate their truth."
+  },
+  {
+    "id": "7.1-E8",
+    "prompt": "Extend the report renderer to show contribution percentage points. Preserve numeric return fractions in storage.",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-alignment-exercises/README.md",
+    "baseline": "754fe8a44a3a9dead73571003855d7a2cb15ec10",
+    "kind": "SUPPLEMENTAL RENDERER + UNCHANGED SOURCE",
+    "answer": "renderer.py consumes an already validated original report,total and formats only output strings. Weight/asset/portfolio returns use percentage formatting; contribution*100 displays6.00pp,\u22121.50pp,0.00pp,with sum4.50pp. Stored contribution fractions remain0.06,\u22120.015,0 and portfolio return0.045. rendered.txt and numeric-report.json retain both views; equality/dtype/copy checks establish that rendering does not mutate numeric storage. This is a small teaching renderer,not an arbitrary-input/reporting API."
+  }
+]

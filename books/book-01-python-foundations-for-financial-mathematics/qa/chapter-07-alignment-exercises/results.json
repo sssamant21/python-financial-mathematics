@@ -1,0 +1,249 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.01-why-pandas.md",
+  "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+  "program_sha256": "908fcd297e102d3cfde905467f973aaf0662642cb6efce3741a8f49578109eff",
+  "test_sha256": "9fbbb0b92a443ae9d315d6a4fcaceec9b75b4f6bb104278badda7dade96c89b4",
+  "renderer_sha256": "929fbccab7a05519c014b37a5f07f32c823b347914a49d0c809f3276e45a2ef6",
+  "answers": 8,
+  "command_records": 4,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 23,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_71/alignment.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "       weight  return  contribution\nALPHA   0.600   0.100         0.060\nBETA    0.300  -0.050        -0.015\nCASH    0.100   0.000         0.000\nPortfolio price return: 4.50%\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_71",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_duplicate_and_invalid_index (test_alignment.AlignmentTests.test_duplicate_and_invalid_index) ... ok\ntest_financial_domain (test_alignment.AlignmentTests.test_financial_domain) ... ok\ntest_known_answer (test_alignment.AlignmentTests.test_known_answer) ... ok\ntest_missing_and_extra_labels (test_alignment.AlignmentTests.test_missing_and_extra_labels) ... ok\ntest_nonfinite_and_dtype (test_alignment.AlignmentTests.test_nonfinite_and_dtype) ... ok\ntest_permutation (test_alignment.AlignmentTests.test_permutation) ... ok\ntest_source_preservation (test_alignment.AlignmentTests.test_source_preservation) ... ok\ntest_unguarded_alignment_and_skipna (test_alignment.AlignmentTests.test_unguarded_alignment_and_skipna) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.040s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_71"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "supplemental renderer caller",
+      "args": [
+        "pandas_lab_71/render_demo.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "ALPHA: weight 60.00%; return 10.00%; contribution 6.00 pp\nBETA: weight 30.00%; return -5.00%; contribution -1.50 pp\nCASH: weight 10.00%; return 0.00%; contribution 0.00 pp\nPortfolio price return: 4.50%; contributions 4.50 pp\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "two source listings unchanged",
+      "actual": "{'alignment.py': '908fcd297e102d3cfde905467f973aaf0662642cb6efce3741a8f49578109eff', 'test_alignment.py': '9fbbb0b92a443ae9d315d6a4fcaceec9b75b4f6bb104278badda7dade96c89b4'}",
+      "expected": "{'alignment.py': '908fcd297e102d3cfde905467f973aaf0662642cb6efce3741a8f49578109eff', 'test_alignment.py': '9fbbb0b92a443ae9d315d6a4fcaceec9b75b4f6bb104278badda7dade96c89b4'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "permutation ALPHA,BETA,CASH",
+      "actual": "(True, ['ALPHA', 'BETA', 'CASH'], True)",
+      "expected": "(True, ['ALPHA', 'BETA', 'CASH'], True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "permutation BETA,CASH,ALPHA",
+      "actual": "(True, ['ALPHA', 'BETA', 'CASH'], True)",
+      "expected": "(True, ['ALPHA', 'BETA', 'CASH'], True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "permutation BETA,ALPHA,CASH",
+      "actual": "(True, ['ALPHA', 'BETA', 'CASH'], True)",
+      "expected": "(True, ['ALPHA', 'BETA', 'CASH'], True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "manual wrong pair contributions",
+      "actual": "[0.0, 0.03, -0.005]",
+      "expected": "[0.0, 0.03, -0.005]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "exact wrong positional total",
+      "actual": "0.025",
+      "expected": "0.025",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "NumPy shape-valid positional error observed",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "aligned versus unaligned gap",
+      "actual": "0.02",
+      "expected": "0.02",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "missing BETA rejected before partial aggregation",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 49, in <lambda>\n    missing=r.drop('BETA');reject('E3','missing BETA rejected before partial aggregation',lambda:m.contributions(w,missing))\n                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 31, in contributions\nValueError: asset sets must match exactly\n"
+    },
+    {
+      "section": "E3",
+      "label": "missing negative contribution conceals oversized partial result",
+      "actual": "(True, np.True_)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "unexpected source asset rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 52, in <lambda>\n    extra=pd.concat([r,pd.Series([.02],index=['OTHER'])]);reject('E4','unexpected source asset rejected',lambda:m.contributions(w,extra))\n                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 31, in contributions\nValueError: asset sets must match exactly\n"
+    },
+    {
+      "section": "E4",
+      "label": "discarding unexpected source would conceal mismatch",
+      "actual": "0.045",
+      "expected": "0.045",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "default sum skips unknown contribution",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "strict sum exposes unknown contribution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "validated function rejects supplied NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 57, in <lambda>\n    reject('E5','validated function rejects supplied NaN',lambda:m.contributions(w,nanr))\n                                                                 ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 29, in contributions\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 18, in checked_series\n    ## 7.1.2 Learning Objectives\n            ^^^^^^^^^^^^^^^^^^^^^\nValueError: return: finite values required\n"
+    },
+    {
+      "section": "E6",
+      "label": "duplicate return labels rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 58, in <lambda>\n    duplicate=r.copy();duplicate.index=['CASH','ALPHA','ALPHA'];reject('E6','duplicate return labels rejected',lambda:m.contributions(w,duplicate))\n                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 29, in contributions\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 10, in checked_series\n    ## 7.1.1 Purpose\n            ^^^^^^^^^\nValueError: return: unique flat index required\n"
+    },
+    {
+      "section": "E6",
+      "label": "duplicate weight labels rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-alignment-exercises/review.py\", line 59, in <lambda>\n    dupw=w.copy();dupw.index=['ALPHA','ALPHA','CASH'];reject('E6','duplicate weight labels rejected',lambda:m.contributions(dupw,r))\n                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 28, in contributions\n    ## 7.1.3 From Numerical Arrays to Labeled Observations\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7local/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.01-why-pandas.md\", line 10, in checked_series\n    ## 7.1.1 Purpose\n            ^^^^^^^^^\nValueError: weight: unique flat index required\n"
+    },
+    {
+      "section": "E6",
+      "label": "pandas object may carry duplicate labels",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "renderer matches independently derived percentage points",
+      "actual": "'ALPHA: weight 60.00%; return 10.00%; contribution 6.00 pp\\nBETA: weight 30.00%; return -5.00%; contribution -1.50 pp\\nCASH: weight 10.00%; return 0.00%; contribution 0.00 pp\\nPortfolio price return: 4.50%; contributions 4.50 pp\\n'",
+      "expected": "'ALPHA: weight 60.00%; return 10.00%; contribution 6.00 pp\\nBETA: weight 30.00%; return -5.00%; contribution -1.50 pp\\nCASH: weight 10.00%; return 0.00%; contribution 0.00 pp\\nPortfolio price return: 4.50%; contributions 4.50 pp\\n'",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "renderer preserves numeric report",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "stored fractions not overwritten as percentage points",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "source report remains numeric",
+      "actual": "['float64', 'float64', 'float64']",
+      "expected": "['float64', 'float64', 'float64']",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "all source calls preserve inputs",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    }
+  ],
+  "scope": "E1-6 exact source calls and mechanical contrasts;E7 metadata design only;E8 supplemental renderer,no manuscript change"
+}

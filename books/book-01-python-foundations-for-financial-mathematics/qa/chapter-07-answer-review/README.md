@@ -24,4 +24,6 @@ Earlier checkpoint: [Sections 7.9–7.12 formal lab review](../chapter-07-time-g
 
 Earlier checkpoint: [Sections 7.13–7.16 formal lab review](../chapter-07-bars-returns-panel-review/README.md): four scoped workflows,32 derived units,17 command checks,45 predicates and32 existing methods passed. Setup partial; 1 workflow and 136 local prompts pending. Next: Section 7.17 project workflow/checklists.
 
-Current checkpoint: [Section 7.17 project/checklists](../chapter-07-project-review/README.md): 6 commands,38 predicates,8 existing methods and18 separate project records. All 17 core workflows scoped; 136 local prompts pending. Next: Section 7.1 local exercises.
+Earlier checkpoint: [Section 7.17 project/checklists](../chapter-07-project-review/README.md): 6 commands,38 predicates,8 existing methods and18 separate project records. All 17 core workflows scoped; 136 local prompts pending. Next: Section 7.1 local exercises.
+
+Current checkpoint: [Section 7.1 local exercises](../chapter-07-alignment-exercises/README.md):8 answers,4 commands,23 predicates and8 existing methods passed. 8/136 local prompts reviewed; 128 remain. Next: Section 7.2 local exercises.
