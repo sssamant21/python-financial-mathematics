@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest full-book runtime refresh — V-37
+## Latest scoped adjusted-maturity correction
+
+Section 15.8 now avoids intermediate numerator range loss and rejects nonfinite shocked rates/unrepresentable final maturities. Eight Decimal references and five rejection cases pass; all 25 Chapter 15 files compiled and 15 scripts passed. [Evidence](chapter-15-maturity-range-followup.md). This follows V-37; COV-72 remains partially open.
+
+## Earlier full-book runtime refresh — V-37
 
 461/461 sources compiled; 250/250 scripts exited zero; 462/462 source/fixture hashes matched before/after at `28af429b7695520536cf4a3384af1318614e31aa`. Includes both recent Chapter 14 integrations and all three Chapter 15 accuracy/boundary checkers. [Report](runtime-refresh-2026-10-30.md) · [Raw outputs](runtime-refresh-2026-10-30.json). G1 refreshed; twenty-six categories partially addressed; independent review and release gates remain open.
 
@@ -383,3 +387,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Level-set boundary follow-up and V-37 — 2026-10-30
 
 [Section 15.8 evidence](chapter-15-level-set-boundary-followup.md) adds selected zero/adjacent iso-variance and signed-rate/maturity-domain cases; implementation unchanged. All 24 Chapter 15 files compiled and 14 scripts passed. [V-37 full evidence](runtime-refresh-2026-10-30.md) subsequently compiled 461 sources and passed 250 scripts with 462 hashes verified before/after at `28af429b7695520536cf4a3384af1318614e31aa`. This covers all recent scoped integrations and accuracy checkers. Twenty-six categories are partially addressed; independent review and approval remain pending. Next executable item: Section 15.8 finite rate-shock addition and extreme intermediate range with independent level-preservation references.
+
+## Adjusted-maturity range correction — 2026-10-30
+
+[Section 15.8 evidence](chapter-15-maturity-range-followup.md) retains three original range-failure probes and the regression failure; the correction preserves the represented quotient through exact rational intermediates and states final range/underflow rejection. Eight Decimal references and five rejection cases pass; all 25 chapter files compiled and 15 scripts passed. This source/checker change follows V-37; twenty-six categories remain partially addressed. Next executable item: COV-72 Sections 15.4/15.6 covariance symmetry/PD and gradient/Hessian consistency. Independent-review, platform and release gates remain pending.
