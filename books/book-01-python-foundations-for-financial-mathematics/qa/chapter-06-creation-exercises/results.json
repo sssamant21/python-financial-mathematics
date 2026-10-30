@@ -1,0 +1,305 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.03-array-creation-and-data-types.md",
+  "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+  "original_listing_sha256": [
+    "15481a2e619abaa9d9285107317d4a968cc6698ccf3210321028b61f7959babc",
+    "de68313faccdb260d4dc5be8ea18ee17ad5f6ff522b88f62faf85e410f83b178"
+  ],
+  "supplemental_files": {
+    "seven_points.py": "0d6a728c551d99b3fceef00dc9c74b54f7863108ccb966165fa2911ad9d54dfc",
+    "completion.py": "b1053a9e16eb132ba78972384866a710578c3fea7db4eec14aff22af93bff734"
+  },
+  "exercise_records": 8,
+  "command_records": 3,
+  "command_passed": 3,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 29,
+  "passed": 29,
+  "failed": 0,
+  "independent_oracles": {
+    "spacing": "1/200",
+    "grid": [
+      "-3/200",
+      "-1/100",
+      "-1/200",
+      "0",
+      "1/200",
+      "1/100",
+      "3/200"
+    ],
+    "half_even_inputs": [
+      "1.9",
+      "-1.9",
+      "1.5",
+      "2.5",
+      "-1.5",
+      "-2.5"
+    ],
+    "half_even_results": [
+      2,
+      -2,
+      2,
+      2,
+      -2,
+      -2
+    ],
+    "integer_identifier": "9007199254740993",
+    "percent_fraction": "1/40"
+  },
+  "commands": [
+    {
+      "label": "exact original eight-method suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cast_is_not_rounding_policy (test_creation_types.CreationTests.test_cast_is_not_rounding_policy) ... ok\ntest_creation_shapes_and_initial_state (test_creation_types.CreationTests.test_creation_shapes_and_initial_state) ... ok\ntest_grid_and_integer_periods (test_creation_types.CreationTests.test_grid_and_integer_periods) ... ok\ntest_independent_calls (test_creation_types.CreationTests.test_independent_calls) ... ok\ntest_precision_loss_cannot_be_recovered (test_creation_types.CreationTests.test_precision_loss_cannot_be_recovered) ... ok\ntest_valid_rate_conversion (test_creation_types.CreationTests.test_valid_rate_conversion) ... ok\ntest_wire_domain (test_creation_types.CreationTests.test_wire_domain) ... ok\ntest_wire_types (test_creation_types.CreationTests.test_wire_types) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.040s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "exact original demonstration",
+      "args": [
+        "creation_types.py"
+      ],
+      "returncode": 0,
+      "stdout": "Rates: [0.01, 0.025, 0.04]\nPeriods: [1, 2, 3, 4]\nShift grid: ['-0.010', '-0.005', '0.000', '0.005', '0.010']\nResult shape: (5, 3)\nUncomputed results: 15\nCompleted entries: 0\nNeutral factors: [1.0, 1.0, 1.0]\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "supplemental seven-point construction",
+      "args": [
+        "seven_points.py"
+      ],
+      "returncode": 0,
+      "stdout": "Shift grid: ['-0.015', '-0.010', '-0.005', '0.000', '0.005', '0.010', '0.015']\nCount: 7\nObservation positions: [0, 1, 2, 3, 4, 5, 6]\nIndex dtype: int64\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.3-E1",
+      "label": "rational grid spacing",
+      "actual": "Fraction(1, 200)",
+      "expected": "Fraction(1, 200)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E1",
+      "label": "count/endpoints/dtype",
+      "actual": "(7, -0.015, 0.015, 'float64')",
+      "expected": "(7, -0.015, 0.015, 'float64')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E1",
+      "label": "all grid points against rational oracle",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E2",
+      "label": "explicit zero-based typed positions",
+      "actual": "([0, 1, 2, 3, 4, 5, 6], 'int64', (7,))",
+      "expected": "([0, 1, 2, 3, 4, 5, 6], 'int64', (7,))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E3",
+      "label": "source accepts length 1",
+      "actual": "((1,), 'float64', True)",
+      "expected": "((1,), 'float64', True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E3",
+      "label": "wire tuple unchanged 1",
+      "actual": "('0.025',)",
+      "expected": "('0.025',)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E3",
+      "label": "source accepts length 1000",
+      "actual": "((1000,), 'float64', True)",
+      "expected": "((1000,), 'float64', True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E3",
+      "label": "wire tuple unchanged 1000",
+      "actual": "('0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025')",
+      "expected": "('0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025', '0.025')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E3",
+      "label": "outside length 0",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 36, in <lambda>\n    for length in (0,1001):reject('6.3-E3','outside length '+str(length),lambda length=length:m.rate_vector(('0',)*length),'ValueError')\n                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.03-array-creation-and-data-types.md\", line 17, in rate_vector\nValueError: expected 1 to 1000 rates\n"
+    },
+    {
+      "exercise": "6.3-E3",
+      "label": "outside length 1001",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 36, in <lambda>\n    for length in (0,1001):reject('6.3-E3','outside length '+str(length),lambda length=length:m.rate_vector(('0',)*length),'ValueError')\n                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.03-array-creation-and-data-types.md\", line 17, in rate_vector\nValueError: expected 1 to 1000 rates\n"
+    },
+    {
+      "exercise": "6.3-E4",
+      "label": "uncomputed results and neutral factors are different roles",
+      "actual": "(15, 0, [1.0, 1.0, 1.0])",
+      "expected": "(15, 0, [1.0, 1.0, 1.0])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "original uncomputed workspace rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 40, in <lambda>\n    reject('6.3-E5','original uncomputed workspace rejected',lambda:validate_completed(arrays['results'],arrays['completed']),'ValueError')\n                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/completion.py\", line 17, in validate_completed\n    raise ValueError('unfinished result entries')\nValueError: unfinished result entries\n"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "rejection does not fill or mark complete",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f', b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f', b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "valid completed zero is accepted",
+      "actual": "((5, 3), True, True)",
+      "expected": "((5, 3), True, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "completed output independent/writable/C order",
+      "actual": "(False, True, True)",
+      "expected": "(False, True, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "one unfinished finite entry rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 46, in <lambda>\n    reject('6.3-E5','one unfinished finite entry rejected',lambda:validate_completed(zeros,incomplete),'ValueError')\n                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/completion.py\", line 17, in validate_completed\n    raise ValueError('unfinished result entries')\nValueError: unfinished result entries\n"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "complete flags cannot hide NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 47, in <lambda>\n    reject('6.3-E5','complete flags cannot hide NaN',lambda:validate_completed(arrays['results'],done),'ValueError')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/completion.py\", line 19, in validate_completed\n    raise ValueError('completed results must be finite')\nValueError: completed results must be finite\n"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "numeric flags not silently coerced",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 48, in <lambda>\n    reject('6.3-E5','numeric flags not silently coerced',lambda:validate_completed(zeros,np.ones((5,3),dtype=np.int64)),'TypeError')\n                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/completion.py\", line 13, in validate_completed\n    raise TypeError('status must be an exact bool ndarray')\nTypeError: status must be an exact bool ndarray\n"
+    },
+    {
+      "exercise": "6.3-E5",
+      "label": "status shape mismatch",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 49, in <lambda>\n    reject('6.3-E5','status shape mismatch',lambda:validate_completed(zeros,np.ones((5,1),dtype=np.bool_)),'ValueError')\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/completion.py\", line 15, in validate_completed\n    raise ValueError('nonempty matching two-dimensional arrays required')\nValueError: nonempty matching two-dimensional arrays required\n"
+    },
+    {
+      "exercise": "6.3-E6",
+      "label": "chosen half-even whole-unit policy",
+      "actual": "[2, -2, 2, 2, -2, -2]",
+      "expected": "[2, -2, 2, 2, -2, -2]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E6",
+      "label": "astype is truncation, not that policy",
+      "actual": "[1, -1, 1, 2, -1, -2]",
+      "expected": "[1, -1, 1, 2, -1, -2]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E6",
+      "label": "safe casting rejects fractional narrowing",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 53, in <lambda>\n    reject('6.3-E6','safe casting rejects fractional narrowing',lambda:np.array([1.9,-1.9]).astype(np.int64,casting='safe'),'TypeError')\n                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Cannot cast array data from dtype('float64') to dtype('int64') according to the rule 'safe'\n"
+    },
+    {
+      "exercise": "6.3-E7",
+      "label": "int64 keeps supported integer identifier",
+      "actual": "9007199254740993",
+      "expected": "9007199254740993",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E7",
+      "label": "float64 route loses identifier identity",
+      "actual": "9007199254740992",
+      "expected": "9007199254740992",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E7",
+      "label": "text/Python integer round trip exact",
+      "actual": "9007199254740993",
+      "expected": "9007199254740993",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E8",
+      "label": "source still rejects percent wire text",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 24, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-creation-exercises/review.py\", line 58, in <lambda>\n    reject('6.3-E8','source still rejects percent wire text',lambda:m.rate_vector(('2.5%',)),'ValueError')\n                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6creationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.03-array-creation-and-data-types.md\", line 23, in rate_vector\n    6. Preserve a distinction between uncomputed results and genuine zeros.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: invalid rate text\n"
+    },
+    {
+      "exercise": "6.3-E8",
+      "label": "independent percentage-unit conversion",
+      "actual": "Fraction(1, 40)",
+      "expected": "Fraction(1, 40)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.3-E8",
+      "label": "source accepts separately supplied fraction text",
+      "actual": "[0.025]",
+      "expected": "[0.025]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original listings unchanged",
+      "actual": "{'creation_types.py': '15481a2e619abaa9d9285107317d4a968cc6698ccf3210321028b61f7959babc', 'test_creation_types.py': 'de68313faccdb260d4dc5be8ea18ee17ad5f6ff522b88f62faf85e410f83b178'}",
+      "expected": "{'creation_types.py': '15481a2e619abaa9d9285107317d4a968cc6698ccf3210321028b61f7959babc', 'test_creation_types.py': 'de68313faccdb260d4dc5be8ea18ee17ad5f6ff522b88f62faf85e410f83b178'}",
+      "status": "PASS"
+    }
+  ]
+}

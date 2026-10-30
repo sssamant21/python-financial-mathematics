@@ -26,4 +26,6 @@ Earlier checkpoint: [Sections6.13–6.16/project review](../chapter-06-final-wor
 
 Earlier checkpoint: [Section 6.1 local exercises](../chapter-06-motivation-exercises/README.md) now records eight answers, three command checks, 23 predicates and eight existing methods rerun. Local queue: 8/128 reviewed, 120 pending. All 16 core workflows remain separate. Next: Section 6.2 local exercises.
 
-Current checkpoint: [Section 6.2 local exercises](../chapter-06-snapshot-exercises/README.md) records eight answers, three commands, 20 predicates and eight existing methods rerun. Local queue: 16/128 reviewed, 112 pending. Next: Section 6.3.
+Earlier checkpoint: [Section 6.2 local exercises](../chapter-06-snapshot-exercises/README.md) records eight answers, three commands, 20 predicates and eight existing methods rerun. Local queue: 16/128 reviewed, 112 pending. Next: Section 6.3.
+
+Current checkpoint: [Section 6.3 local exercises](../chapter-06-creation-exercises/README.md) records eight answers, three commands, 29 predicates and eight existing methods rerun. Local queue: 24/128 reviewed, 104 pending. Next: Section 6.4.

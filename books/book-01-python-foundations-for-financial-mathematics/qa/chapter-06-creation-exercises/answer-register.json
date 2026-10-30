@@ -1,0 +1,82 @@
+[
+  {
+    "id": "6.3-E1",
+    "prompt": "Create a seven-point shift grid including -0.015 and 0.015; derive the spacing and test its count.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "SUPPLEMENTAL CONSTRUCTION + RATIONAL ORACLE",
+    "answer": "Seven points including both endpoints require six equal gaps: (0.015\u2212(\u22120.015))/6=0.005=1/200. Construct float64 linspace with num=7 and endpoint=True; independently derive \u22120.015,\u22120.010,\u22120.005,0,0.005,0.010,0.015 using Fraction. Count, endpoints, dtype and all underlying values pass explicit checks (absolute tolerance 1e-15 for binary approximations). seven_points.py is a separate construction example; it does not silently replace the original five-row scenario workspace or claim a valuation."
+  },
+  {
+    "id": "6.3-E2",
+    "prompt": "Add a typed integer observation-index array starting at zero and document its purpose.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "SUPPLEMENTAL CONSTRUCTION",
+    "answer": "Use np.arange(7,dtype=np.int64), yielding [0,1,2,3,4,5,6]. It identifies the ordinal positions of the seven synthetic grid observations in this separate example. It is not a date, year fraction, forecast horizon or replacement of the source periods array [1,2,3,4]. The zero origin, length, dtype and intended correspondence must remain explicit when pairing it with data."
+  },
+  {
+    "id": "6.3-E3",
+    "prompt": "Add tests at the rate-vector length bounds of 1 and 1,000.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "SOURCE",
+    "answer": "The unchanged rate_vector accepts one and 1,000 exact text entries, tested with canonical 0.025=1/40. Both produce the expected one-dimensional float64 shape, all values and unchanged source tuple. Zero and 1,001 entries fail with ValueError. These checks establish the declared length boundaries for the supported text, not all possible wire inputs."
+  },
+  {
+    "id": "6.3-E4",
+    "prompt": "Explain why a true missing price must not be filled with a neutral factor of one.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "SOURCE ROLES + CONCEPTUAL INTERPRETATION",
+    "answer": "Original results contain 15 NaNs with all completion flags false; factors contain three ones for a separate neutral multiplicative role. A factor of one asserts unchanged multiplicative value, while a price of one asserts a particular quote in its units. Neither means unknown. Substituting one for a truly missing price would invent data and can change returns or valuations. Reject or retain incomplete status under an explicit missing-data policy; no price imputation was implemented."
+  },
+  {
+    "id": "6.3-E5",
+    "prompt": "Design a completed-result validator that rejects any unfinished entry without replacing NaN silently.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "SUPPLEMENTAL IMPLEMENTATION",
+    "answer": "completion.validate_completed implements a separate teaching boundary: exact nonempty two-dimensional float64 results, exact bool status with identical shape, every flag true, every result finite. It rejects incomplete entries without changing flags or replacing NaN and returns an independent writable C-order copy only on success. Executed checks reject original uncomputed workspace, one unfinished finite cell, NaN hidden behind true flags, numeric flags and shape mismatch; completed zero results are valid. This helper does not verify financial equations, label provenance, synchronization or an application memory budget, and it is not added to the manuscript API."
+  },
+  {
+    "id": "6.3-E6",
+    "prompt": "Compare deliberate integer-unit rounding with astype truncation using positive and negative fractional values.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "SUPPLEMENTAL EXACT POLICY + REPRESENTATION COMPARISON",
+    "answer": "Choose nearest whole units with ties to even as an explicitly separate illustrative rounding policy. Exact Fraction inputs 1.9,\u22121.9,1.5,2.5,\u22121.5,\u22122.5 give [2,\u22122,2,2,\u22122,\u22122]. Casting the corresponding float array to int64 gives [1,\u22121,1,2,\u22121,\u22122], truncating toward zero. The safe casting rule rejects fractional float-to-int narrowing. A deliberately chosen whole-unit rule is not a universal currency or accounting rule; specify unit scale, stage, signs, bounds and required policy before application."
+  },
+  {
+    "id": "6.3-E7",
+    "prompt": "Propose a dtype policy for an identifier larger than exactly representable float64 integers.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "DESIGN + EXECUTED IDENTITY-LOSS PROBE",
+    "answer": "Treat an identifier as opaque text unless the source contract explicitly defines a bounded integer identifier. Preserve spelling and leading zeros where meaningful; do not route IDs through floating arrays for convenience. For a defined numeric ID within range, int64 can preserve 2^53+1=9007199254740993, while the executed int64\u2192float64\u2192int64 route becomes 9007199254740992. Python integer/text round-trip retains this numeric value. Values outside int64 bounds require another explicit representation such as text or Python integers. Numeric kernels and positional label metadata should remain separate; no general identifier-ingestion adapter was implemented."
+  },
+  {
+    "id": "6.3-E8",
+    "prompt": "Describe the checks required before accepting percent text such as 2.5% in the wire format.",
+    "source": "chapter-06/6.03-array-creation-and-data-types.md",
+    "source_sha256": "a86ae914522852ed9b0adfc9d9dedaf05c271f1aff8b2ff39dd7d304a775a382",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-creation-exercises/README.md",
+    "kind": "DESIGN NOT IMPLEMENTED + UNIT DERIVATION",
+    "answer": "Before adding percent wire text, define exact string type, one trailing % token, allowed sign/spelling/whitespace policy, precision, range, units and ambiguity rules. One possible separate contract permits canonical optional-minus decimal percent numbers in [\u2212100,100], at most four fractional percent digits, no exponent/aliases/whitespace, converting exactly by division by 100 before the existing bounded fraction boundary. This preserves at most six fractional rate digits; define canonical output and zero-sign policy explicitly. Test 2.5%,0%,\u00b1100% and rejected double signs/tokens/nonfinite/out-of-range/ambiguous mixed formats, plus provenance and no accidental percentage-point interpretation. Independent Fraction arithmetic gives 2.5/100=1/40; the original API accepts separately supplied 0.025 but still rejects 2.5%. No percent parser or new support claim is made."
+  }
+]
