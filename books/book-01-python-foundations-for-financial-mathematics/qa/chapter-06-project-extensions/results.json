@@ -1,0 +1,377 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.16-chapter-project-vectorized-portfolio-calculator.md",
+  "source_sha256": "f97f8016f38435fbf3dfe74bfd4e531745e3d496486b87f19b0be85174e99f26",
+  "listing_sha256": [
+    "e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac",
+    "fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca"
+  ],
+  "exercise_records": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 43,
+  "failed": 0,
+  "supplemental_artifact_sha256": {
+    "extensions.py": "2b756adde84ce32cc22fe35ee2e371e8569b3eadf5ddd39024eb03b374c55f9c",
+    "timings.json": "2eea818e6937fe60495d7a575dcb19fb7e64ee3286c95e1ef720ee6cd1ad80c5",
+    "tiny-change.json": "aa5411eac3a8c5bfb54fbb396b99c17cd556816e070c3d104c91724681b31fe8"
+  },
+  "commands": [
+    {
+      "label": "original project suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "numpy_lab_616",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_column_permutation (test_portfolio.PortfolioTests.test_column_permutation) ... ok\ntest_invalid_numeric_and_domain (test_portfolio.PortfolioTests.test_invalid_numeric_and_domain) ... ok\ntest_known_answers (test_portfolio.PortfolioTests.test_known_answers) ... ok\ntest_labels_and_shapes (test_portfolio.PortfolioTests.test_labels_and_shapes) ... ok\ntest_range_and_cell_limit (test_portfolio.PortfolioTests.test_range_and_cell_limit) ... ok\ntest_scalar_oracle_and_reconciliation (test_portfolio.PortfolioTests.test_scalar_oracle_and_reconciliation) ... ok\ntest_single_asset_total_loss (test_portfolio.PortfolioTests.test_single_asset_total_loss) ... ok\ntest_source_and_output_ownership (test_portfolio.PortfolioTests.test_source_and_output_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.043s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original project demo",
+      "args": [
+        "numpy_lab_616/portfolio.py"
+      ],
+      "returncode": 0,
+      "stdout": "Opening value: 1000.00\nup: return=4.50%, ending=1045.00, pnl=45.00\ndown: return=-10.50%, ending=895.00, pnl=-105.00\nflat: return=0.00%, ending=1000.00, pnl=0.00\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original compileall command",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "numpy_lab_616"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.16-E1",
+      "label": "percentage-point rendering",
+      "actual": "'up (percentage points)\\nALPHA: +6.0000 pp\\nBETA: -1.5000 pp\\nCASH: +0.0000 pp\\n'",
+      "expected": "'up (percentage points)\\nALPHA: +6.0000 pp\\nBETA: -1.5000 pp\\nCASH: +0.0000 pp\\n'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E1",
+      "label": "stored precision unchanged",
+      "actual": "b'\\xc0\\x1e\\x85\\xebQ\\xb8\\xae?\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xb6\\x1e\\x85\\xebQ\\xb8\\xbe\\xbf\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+      "expected": "b'\\xc0\\x1e\\x85\\xebQ\\xb8\\xae?\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xb6\\x1e\\x85\\xebQ\\xb8\\xbe\\xbf\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E2",
+      "label": "named scenario preserves row identity",
+      "actual": "('down', 1, ('ALPHA', 'BETA', 'CASH'))",
+      "expected": "('down', 1, ('ALPHA', 'BETA', 'CASH'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E2",
+      "label": "named outcome",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E2",
+      "label": "lookup contribution snapshot independent/readonly",
+      "actual": "(False, False)",
+      "expected": "(False, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E2",
+      "label": "unknown scenario rejected",
+      "actual": "'KeyError'",
+      "expected": "'KeyError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 30, in <lambda>\n    reject('6.16-E2','unknown scenario rejected',lambda:lookup(base,'missing'),'KeyError')\n                                                        ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 17, in lookup\n    raise KeyError(name)\nKeyError: 'missing'\n"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "mapping explicitly aligned",
+      "actual": "([110.0, 95.0, 100.0], 'float64')",
+      "expected": "([110.0, 95.0, 100.0], 'float64')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "key failure before arrays missing",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 37, in <lambda>\n    for label,pairs in [('missing',[('ALPHA',110),('BETA',95)]),('extra',[('ALPHA',110),('BETA',95),('CASH',100),('OTHER',1)]),('duplicate',[('ALPHA',110),('BETA',95),('CASH',100),('ALPHA',111)])]:reject('6.16-E3','key failure before arrays '+label,lambda pairs=pairs:align_prices(assets,pairs),'ValueError')\n                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 50, in align_prices\n    raise ValueError('missing or extra identifier')\nValueError: missing or extra identifier\n"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "key failure before arrays extra",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 37, in <lambda>\n    for label,pairs in [('missing',[('ALPHA',110),('BETA',95)]),('extra',[('ALPHA',110),('BETA',95),('CASH',100),('OTHER',1)]),('duplicate',[('ALPHA',110),('BETA',95),('CASH',100),('ALPHA',111)])]:reject('6.16-E3','key failure before arrays '+label,lambda pairs=pairs:align_prices(assets,pairs),'ValueError')\n                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 50, in align_prices\n    raise ValueError('missing or extra identifier')\nValueError: missing or extra identifier\n"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "key failure before arrays duplicate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 37, in <lambda>\n    for label,pairs in [('missing',[('ALPHA',110),('BETA',95)]),('extra',[('ALPHA',110),('BETA',95),('CASH',100),('OTHER',1)]),('duplicate',[('ALPHA',110),('BETA',95),('CASH',100),('ALPHA',111)])]:reject('6.16-E3','key failure before arrays '+label,lambda pairs=pairs:align_prices(assets,pairs),'ValueError')\n                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 47, in align_prices\n    raise ValueError('duplicate identifier')\nValueError: duplicate identifier\n"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "no array construction for invalid identifiers",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "Boolean mixture rejected before inference",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 40, in <lambda>\n    reject('6.16-E3','Boolean mixture rejected before inference',lambda:align_prices(assets,[('ALPHA',True),('BETA',95),('CASH',100)]),'ValueError')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 56, in align_prices\n    raise ValueError('real numeric price without Boolean/text coercion required')\nValueError: real numeric price without Boolean/text coercion required\n"
+    },
+    {
+      "exercise": "6.16-E3",
+      "label": "aligned source ingestion result",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E4",
+      "label": "supplied cash quote includes all interest once",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E4",
+      "label": "interest-bearing portfolio returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "batch axis contract",
+      "actual": "((3, 2), (2, 3), ('up', 'down', 'flat'), ('P1', 'P2'))",
+      "expected": "((3, 2), (2, 3), ('up', 'down', 'flat'), ('P1', 'P2'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "independent batch ending values",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "independent batch returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "individual source reconciliation 0",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "individual source reconciliation 1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "cell budget rejects oversized labelled inputs",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 51, in <lambda>\n    reject('6.16-E5','cell budget rejects oversized labelled inputs',lambda:batch_portfolios(assets,quantities,p0,assets,scenarios,p1,portfolio_ids,max_cells=8),'ValueError')\n                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 83, in batch_portfolios\n    if any(rows*cols>max_cells for rows,cols in ((p,n),(s,n),(s,p))):raise ValueError('input/output cell budget exceeded')\n                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: input/output cell budget exceeded\n"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "duplicate portfolio names rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 52, in <lambda>\n    reject('6.16-E5','duplicate portfolio names rejected',lambda:batch_portfolios(assets,quantities,p0,assets,scenarios,p1,('P1','P1')),'ValueError')\n                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 77, in batch_portfolios\n    for labels in (assets,scenario_assets,scenarios,portfolios):axis(labels)\n                                                                ^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 11, in axis\n    raise ValueError('unique nonempty trimmed tuple labels required')\nValueError: unique nonempty trimmed tuple labels required\n"
+    },
+    {
+      "exercise": "6.16-E5",
+      "label": "zero-value portfolio rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 53, in <lambda>\n    reject('6.16-E5','zero-value portfolio rejected',lambda:batch_portfolios(assets,np.array([[0.,0.,0.],[2.,3.,5.]]),p0,assets,scenarios,p1,portfolio_ids),'ValueError')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 88, in batch_portfolios\n    if (opening_values<=0).any():raise ValueError('every portfolio requires positive opening value')\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: every portfolio requires positive opening value\n"
+    },
+    {
+      "exercise": "6.16-E6",
+      "label": "per-unit distributions give direct cash amounts",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E6",
+      "label": "direct value route updated with cash",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E6",
+      "label": "return route updated consistently",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E6",
+      "label": "direct and return routes reconcile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E6",
+      "label": "distribution input preserved",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xe0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xe0?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E6",
+      "label": "distribution shape mismatch",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 18, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/review.py\", line 57, in <lambda>\n    reject('6.16-E6','distribution shape mismatch',lambda:distribution_report(m,args,np.zeros((1,3))),'ValueError')\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6projectx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-project-extensions/extensions.py\", line 106, in distribution_report\n    if cash_per_unit.shape!=base.asset_returns.shape or (cash_per_unit<0).any():raise ValueError('scenario-by-asset gross distribution shape/domain')\n                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: scenario-by-asset gross distribution shape/domain\n"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "same Report representation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident/source numerical gate weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident/source numerical gate asset_returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident/source numerical gate contributions",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident/source numerical gate portfolio_returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident/source numerical gate ending_values",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident/source numerical gate pnl",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "resident outputs readonly and separate across calls",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "validated resident snapshot isolated from later caller edit",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E7",
+      "label": "raw repeated samples finite",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E8",
+      "label": "independent exact represented-input change",
+      "actual": "Fraction(6, 1)",
+      "expected": "Fraction(6, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.16-E8",
+      "label": "observed alternative delta expression",
+      "actual": "6.0",
+      "expected": "6.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "base report remains unchanged",
+      "actual": "{'weights': b'333333\\xe3?333333\\xd3?\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?', 'asset_returns': b'\\xa0\\x99\\x99\\x99\\x99\\x99\\xb9?\\xa0\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x98\\x99\\x99\\x99\\x99\\x99\\xc9\\xbf\\xa0\\x99\\x99\\x99\\x99\\x99\\xa9?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'contributions': b'\\xc0\\x1e\\x85\\xebQ\\xb8\\xae?\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xb6\\x1e\\x85\\xebQ\\xb8\\xbe\\xbf\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'portfolio_returns': b'\\x10\\xd7\\xa3p=\\n\\xa7?\\xdez\\x14\\xaeG\\xe1\\xba\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'ending_values': b'\\x00\\x00\\x00\\x00\\x00T\\x90@\\x00\\x00\\x00\\x00\\x00\\xf8\\x8b@\\x00\\x00\\x00\\x00\\x00@\\x8f@', 'pnl': b'\\x00\\x00\\x00\\x00\\x00\\x80F@\\x00\\x00\\x00\\x00\\x00@Z\\xc0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'}",
+      "expected": "{'weights': b'333333\\xe3?333333\\xd3?\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?', 'asset_returns': b'\\xa0\\x99\\x99\\x99\\x99\\x99\\xb9?\\xa0\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x98\\x99\\x99\\x99\\x99\\x99\\xc9\\xbf\\xa0\\x99\\x99\\x99\\x99\\x99\\xa9?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'contributions': b'\\xc0\\x1e\\x85\\xebQ\\xb8\\xae?\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xb6\\x1e\\x85\\xebQ\\xb8\\xbe\\xbf\\xc0\\x1e\\x85\\xebQ\\xb8\\x8e?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'portfolio_returns': b'\\x10\\xd7\\xa3p=\\n\\xa7?\\xdez\\x14\\xaeG\\xe1\\xba\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'ending_values': b'\\x00\\x00\\x00\\x00\\x00T\\x90@\\x00\\x00\\x00\\x00\\x00\\xf8\\x8b@\\x00\\x00\\x00\\x00\\x00@\\x8f@', 'pnl': b'\\x00\\x00\\x00\\x00\\x00\\x80F@\\x00\\x00\\x00\\x00\\x00@Z\\xc0\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "source listings unchanged",
+      "actual": "{'portfolio.py': 'e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac', 'test_portfolio.py': 'fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca'}",
+      "expected": "{'portfolio.py': 'e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac', 'test_portfolio.py': 'fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca'}",
+      "status": "PASS"
+    }
+  ]
+}
