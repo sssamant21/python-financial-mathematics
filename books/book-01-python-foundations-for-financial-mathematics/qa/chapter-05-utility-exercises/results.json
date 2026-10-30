@@ -1,0 +1,279 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "predicates": 28,
+  "passed": 28,
+  "failed": 0,
+  "command_records": 4,
+  "command_passed": 4,
+  "command_failed": 0,
+  "existing_methods": 9,
+  "sources": [
+    {
+      "source": "chapter-05/5.04-creating-financial-utility-modules.md",
+      "source_sha256": "f9ee6f76fcbdacbfc47f43f39b1beda93282430e16db8721d829469103a54d9f",
+      "code_sha256": [
+        "1a64e30bf571c985708e1cc2b332d3b48f033a62dd56691dd38c965def026fd5",
+        "cb2703f777570658d20ab468ca05402cef6f49b3e30a14f496538c922f3fed86",
+        "514bfea4f624c92d7e402846689cdc3573399051b2c8f5c265bc3b1fc339ee72"
+      ]
+    },
+    {
+      "source": "chapter-05/5.03-the-python-standard-library.md",
+      "source_sha256": "8edd46dde6ca4a4c4e86efb4bb57c2a38ad97018bc224dc0bce31e0dd9ca639b",
+      "code_sha256": [
+        "eefd3e91f3e3ff6e402da2b12489fc2ca812bc88bb32ea49d36f5e0970227a2e",
+        "0d8c0fe5bcf6fe6ae32695d517e2dfe15f535afc46e63ade07b54ef50d07cc53",
+        "58c6732a3a2836da4f61f14887a3e2346197a9c764d9cae9b05cb1d6fb740809",
+        "556e5b70ec11372cf7b50f6a616f3c8eb975c7c314a9cf2d885f7b36d23b6597"
+      ]
+    }
+  ],
+  "supplement_second_runner": "from datetime import date\nfrom decimal import Decimal\nimport schedule_utils\n\ndef sample_eur():\n    return dict(schedule_id='SCH-EUR',currency='EUR',perspective='investor',events=[\n        dict(event_id='E-PAY',payment_date=date(2027,1,15),amount=Decimal('-100')),\n        dict(event_id='E-ZERO',payment_date=date(2028,2,29),amount=Decimal('0')),\n        dict(event_id='E-RECEIVE',payment_date=date(2028,2,29),amount=Decimal('109.5'))])\n\ndef main():\n    result=schedule_utils.events_on_or_after(sample_eur(),date(2028,2,29))\n    print(result['currency']+' selected IDs: '+', '.join(r['event_id'] for r in result['events']))\n    return 0\n\nif __name__=='__main__':\n    raise SystemExit(main())\n",
+  "checks": [
+    {
+      "exercise": "5.4-E1",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E1",
+      "label": "failed input preserved",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 1, 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 1, 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E1",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E1",
+      "label": "failed input preserved",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000'), 'extra': 1}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000'), 'extra': 1}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "exclusive cutoff 2026-01-01",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "exclusive cutoff 2027-01-15",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "exclusive cutoff 2028-01-15",
+      "actual": "['E0']",
+      "expected": "['E0']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "exclusive cutoff 2028-01-16",
+      "actual": "['E0', 'E1', 'E2']",
+      "expected": "['E0', 'E1', 'E2']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "empty identity",
+      "actual": "{'schedule_id': 'EMPTY', 'currency': 'EUR', 'perspective': 'investor', 'events': []}",
+      "expected": "{'schedule_id': 'EMPTY', 'currency': 'EUR', 'perspective': 'investor', 'events': []}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E2",
+      "label": "output ownership",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E4",
+      "label": "order invariant",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E4",
+      "label": "canonical IDs",
+      "actual": "['E0', 'E1', 'E2']",
+      "expected": "['E0', 'E1', 'E2']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E4",
+      "label": "original order intact",
+      "actual": "['E2', 'E0', 'E1']",
+      "expected": "['E2', 'E0', 'E1']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E5",
+      "label": "all events including zero",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'event_count': 3}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'event_count': 3}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E5",
+      "label": "empty count",
+      "actual": "{'schedule_id': 'EMPTY', 'currency': 'EUR', 'perspective': 'investor', 'event_count': 0}",
+      "expected": "{'schedule_id': 'EMPTY', 'currency': 'EUR', 'perspective': 'investor', 'event_count': 0}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E5",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "matching wrapper fields",
+      "actual": "{'events', 'perspective', 'schedule_id', 'currency'}",
+      "expected": "{'events', 'perspective', 'schedule_id', 'currency'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "matching event fields",
+      "actual": "[{'amount', 'event_id', 'payment_date'}, {'amount', 'event_id', 'payment_date'}, {'amount', 'event_id', 'payment_date'}]",
+      "expected": "[{'amount', 'event_id', 'payment_date'}, {'amount', 'event_id', 'payment_date'}, {'amount', 'event_id', 'payment_date'}]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "explicit canonical values",
+      "actual": "[('E0', datetime.date(2027, 1, 15), Decimal('-1000')), ('E1', datetime.date(2028, 2, 29), Decimal('0')), ('E2', datetime.date(2028, 2, 29), Decimal('1040.00'))]",
+      "expected": "[('E0', datetime.date(2027, 1, 15), Decimal('-1000')), ('E1', datetime.date(2028, 2, 29), Decimal('0')), ('E2', datetime.date(2028, 2, 29), Decimal('1040.00'))]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "parent identity",
+      "actual": "('SCH-01', 'USD', 'investor')",
+      "expected": "('SCH-01', 'USD', 'investor')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "exact scalar types",
+      "actual": "[(True, True), (True, True), (True, True)]",
+      "expected": "[(True, True), (True, True), (True, True)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "adapter ownership",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.4-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "source input unchanged",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E2', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('1000')}, {'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 1, 15), 'amount': Decimal('0')}]}",
+      "status": "PASS"
+    }
+  ],
+  "commands": [
+    {
+      "label": "exact source suite",
+      "args": [
+        "test_schedule_utils.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_domains (__main__.UtilityTests.test_amount_domains) ... ok\ntest_duplicate_identity_across_dates (__main__.UtilityTests.test_duplicate_identity_across_dates) ... ok\ntest_exact_date_boundaries (__main__.UtilityTests.test_exact_date_boundaries) ... ok\ntest_exact_normalized_schedule (__main__.UtilityTests.test_exact_normalized_schedule) ... ok\ntest_excluded_invalid_event_still_rejected (__main__.UtilityTests.test_excluded_invalid_event_still_rejected) ... ok\ntest_inclusive_selection_and_empty (__main__.UtilityTests.test_inclusive_selection_and_empty) ... ok\ntest_quiet_import_and_application (__main__.UtilityTests.test_quiet_import_and_application) ... ok\ntest_schema_and_metadata (__main__.UtilityTests.test_schema_and_metadata) ... ok\ntest_source_and_result_independence (__main__.UtilityTests.test_source_and_result_independence) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.073s\n\nOK\n",
+      "actual_method_count": 9,
+      "status": "PASS"
+    },
+    {
+      "label": "original caller",
+      "args": [
+        "run_schedule.py"
+      ],
+      "returncode": 0,
+      "stdout": "Selected event IDs: E1, E2\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 second EUR caller",
+      "args": [
+        "eur_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": "EUR selected IDs: E-RECEIVE, E-ZERO\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "status": "PASS"
+    },
+    {
+      "label": "quiet source and EUR imports",
+      "args": [
+        "-c",
+        "import schedule_utils,run_schedule,eur_runner"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_method_count": null,
+      "status": "PASS"
+    }
+  ]
+}
