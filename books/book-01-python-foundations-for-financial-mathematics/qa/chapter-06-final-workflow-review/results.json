@@ -1,0 +1,1027 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "runtime": {
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "numpy": "2.3.5",
+    "numpy_origin": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/__init__.py"
+  },
+  "workflow_records": 4,
+  "derived_review_units": 32,
+  "project_review_units": 20,
+  "source_method_invocations": 32,
+  "command_records": 14,
+  "command_passed": 14,
+  "command_failed": 0,
+  "predicates": 66,
+  "passed": 66,
+  "failed": 0,
+  "independent_benchmarks": {
+    "tiny_return_decimal": "3.0000000000000000300000000000000001E-17",
+    "opening_value": "1000",
+    "weights": [
+      "3/5",
+      "3/10",
+      "1/10"
+    ],
+    "ending_values": [
+      "1045",
+      "895",
+      "1000"
+    ],
+    "pnl": [
+      "45",
+      "-105",
+      "0"
+    ],
+    "portfolio_returns": [
+      "9/200",
+      "-21/200",
+      "0"
+    ],
+    "contributions": [
+      [
+        "3/50",
+        "-3/200",
+        "0"
+      ],
+      [
+        "-3/25",
+        "3/200",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "sources": [
+    {
+      "section": "6.13",
+      "path": "chapter-06/6.13-random-number-generation.md",
+      "source_sha256": "a34e557b21535bdd026cefd44d05411ffe1dc9b54cb00d38dc388da6fd021dad",
+      "selected_files": {
+        "random_lab.py": "cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c",
+        "test_random_lab.py": "83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7"
+      },
+      "published_stdout": "NumPy: 2.3.5\nBit generator: PCG64\nSeed: 20261022\nAxes: scenario, factor\nShape: (4, 2)\nFirst row: ['-0.223280', '-0.032109']\nFresh-stream repeat equal: True\n"
+    },
+    {
+      "section": "6.14",
+      "path": "chapter-06/6.14-numerical-precision-and-numpy.md",
+      "source_sha256": "e4cf4db0c6df1d925009ff5dadff99ae1dd9482302dc7040f596fc66454c1516",
+      "selected_files": {
+        "precision_lab.py": "54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc",
+        "test_precision_lab.py": "6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b"
+      },
+      "published_stdout": "float64 epsilon near 1: 2.220446e-16\nNaive tiny linked return: 0.000000e+00\nlog1p/expm1 tiny linked return: 3.000000e-17\nDefault near-zero isclose: True\nExplicit near-zero agreement: False\n"
+    },
+    {
+      "section": "6.15",
+      "path": "chapter-06/6.15-performance-python-loops-vs-vectorization.md",
+      "source_sha256": "bd883338934599a853140c3f91f8540e2ce6a3aa83ee0ca972e969eb4eb94ca3",
+      "selected_files": {
+        "performance_lab.py": "2a84bd494db35029b2674fa52ca1d0864bf303160051a6d8109993c6df1a092c",
+        "test_performance_lab.py": "70b1fa270ac5256e708aec8d14e5ad43120bb4047565a0cc042289030b030471"
+      },
+      "published_stdout": "DYNAMIC_TIMING_JSON_NOT_LITERAL_FIXTURE"
+    },
+    {
+      "section": "6.16",
+      "path": "chapter-06/6.16-chapter-project-vectorized-portfolio-calculator.md",
+      "source_sha256": "f97f8016f38435fbf3dfe74bfd4e531745e3d496486b87f19b0be85174e99f26",
+      "selected_files": {
+        "portfolio.py": "e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac",
+        "test_portfolio.py": "fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca"
+      },
+      "published_stdout": "Opening value: 1000.00\nup: return=4.50%, ending=1045.00, pnl=45.00\ndown: return=-10.50%, ending=895.00, pnl=-105.00\nflat: return=0.00%, ending=1000.00, pnl=0.00\n"
+    }
+  ],
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "actual runtime identity",
+      "args": [
+        "-c",
+        "import json,sys,numpy;print(json.dumps(dict(executable=sys.executable,numpy=numpy.__version__,numpy_origin=numpy.__file__)))"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o",
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\", \"numpy\": \"2.3.5\", \"numpy_origin\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/__init__.py\"}\n",
+      "stderr": "",
+      "expected_stdout": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "exact application stdout",
+      "args": [
+        "random_lab.py"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/random_lab",
+      "returncode": 0,
+      "stdout": "NumPy: 2.3.5\nBit generator: PCG64\nSeed: 20261022\nAxes: scenario, factor\nShape: (4, 2)\nFirst row: ['-0.223280', '-0.032109']\nFresh-stream repeat equal: True\n",
+      "stderr": "",
+      "expected_stdout": "NumPy: 2.3.5\nBit generator: PCG64\nSeed: 20261022\nAxes: scenario, factor\nShape: (4, 2)\nFirst row: ['-0.223280', '-0.032109']\nFresh-stream repeat equal: True\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/random_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_extra_draw_changes_later_values (test_random_lab.RandomTests.test_extra_draw_changes_later_values) ... ok\ntest_same_seed_same_call (test_random_lab.RandomTests.test_same_seed_same_call) ... ok\ntest_seed_and_generator_types (test_random_lab.RandomTests.test_seed_and_generator_types) ... ok\ntest_shared_draws_for_two_assumptions (test_random_lab.RandomTests.test_shared_draws_for_two_assumptions) ... ok\ntest_spawned_logical_streams (test_random_lab.RandomTests.test_spawned_logical_streams) ... ok\ntest_state_advances (test_random_lab.RandomTests.test_state_advances) ... ok\ntest_state_checkpoint (test_random_lab.RandomTests.test_state_checkpoint) ... ok\ntest_validation_does_not_consume_stream (test_random_lab.RandomTests.test_validation_does_not_consume_stream) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.041s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import random_lab"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/random_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "exact application stdout",
+      "args": [
+        "precision_lab.py"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/precision_lab",
+      "returncode": 0,
+      "stdout": "float64 epsilon near 1: 2.220446e-16\nNaive tiny linked return: 0.000000e+00\nlog1p/expm1 tiny linked return: 3.000000e-17\nDefault near-zero isclose: True\nExplicit near-zero agreement: False\n",
+      "stderr": "",
+      "expected_stdout": "float64 epsilon near 1: 2.220446e-16\nNaive tiny linked return: 0.000000e+00\nlog1p/expm1 tiny linked return: 3.000000e-17\nDefault near-zero isclose: True\nExplicit near-zero agreement: False\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/precision_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_accumulation_order (test_precision_lab.PrecisionTests.test_accumulation_order) ... ok\ntest_cast_loss_and_spacing (test_precision_lab.PrecisionTests.test_cast_loss_and_spacing) ... ok\ntest_invalid_comparisons (test_precision_lab.PrecisionTests.test_invalid_comparisons) ... ok\ntest_ordinary_and_zero_returns (test_precision_lab.PrecisionTests.test_ordinary_and_zero_returns) ... ok\ntest_overflow_restores_settings (test_precision_lab.PrecisionTests.test_overflow_restores_settings) ... ok\ntest_return_domain_and_storage (test_precision_lab.PrecisionTests.test_return_domain_and_storage) ... ok\ntest_tiny_return_decimal_reference (test_precision_lab.PrecisionTests.test_tiny_return_decimal_reference) ... ok\ntest_tolerance_scale (test_precision_lab.PrecisionTests.test_tolerance_scale) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.038s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import precision_lab"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/precision_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "exact eight-method discovery before benchmark",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/performance_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_all_benchmark_sizes_agree (test_performance_lab.PerformanceCorrectnessTests.test_all_benchmark_sizes_agree) ... ok\ntest_array_boundary (test_performance_lab.PerformanceCorrectnessTests.test_array_boundary) ... ok\ntest_known_long_short_flat (test_performance_lab.PerformanceCorrectnessTests.test_known_long_short_flat) ... ok\ntest_matching_list_boundary (test_performance_lab.PerformanceCorrectnessTests.test_matching_list_boundary) ... ok\ntest_single_entry_and_zero_change (test_performance_lab.PerformanceCorrectnessTests.test_single_entry_and_zero_change) ... ok\ntest_size_policy (test_performance_lab.PerformanceCorrectnessTests.test_size_policy) ... ok\ntest_source_preservation (test_performance_lab.PerformanceCorrectnessTests.test_source_preservation) ... ok\ntest_timer_count_policy (test_performance_lab.PerformanceCorrectnessTests.test_timer_count_policy) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.130s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "exact bounded benchmark main",
+      "args": [
+        "performance_lab.py"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/performance_lab",
+      "returncode": 0,
+      "stdout": "{\n  \"python\": \"3.12.14\",\n  \"numpy\": \"2.3.5\",\n  \"system\": \"Linux\",\n  \"machine\": \"x86_64\",\n  \"processor\": \"x86_64\",\n  \"scope\": \"warm local kernels; list boundary includes conversion; no I/O or domain validation\",\n  \"cases\": [\n    {\n      \"size\": 3,\n      \"repeat\": 5,\n      \"number\": 3,\n      \"correctness\": \"passed\",\n      \"input_array_element_bytes\": 72,\n      \"output_array_element_bytes\": 24,\n      \"timings\": {\n        \"python_lists\": {\n          \"seconds_per_call\": [\n            1.1986666853166146e-06,\n            5.339999991823182e-07,\n            4.873333333913857e-07,\n            4.973333034286043e-07,\n            4.70666653503334e-07\n          ],\n          \"minimum\": 4.70666653503334e-07,\n          \"median\": 4.973333034286043e-07\n        },\n        \"numpy_lists\": {\n          \"seconds_per_call\": [\n            3.651999994265983e-06,\n            2.8606666546693305e-06,\n            2.8109999827089873e-06,\n            2.83433333455226e-06,\n            2.814333318686598e-06\n          ],\n          \"minimum\": 2.8109999827089873e-06,\n          \"median\": 2.83433333455226e-06\n        },\n        \"numpy_resident\": {\n          \"seconds_per_call\": [\n            1.268666665055207e-06,\n            1.0816666720832775e-06,\n            1.0849999701652753e-06,\n            1.0683333281728362e-06,\n            1.0146666606184833e-06\n          ],\n          \"minimum\": 1.0146666606184833e-06,\n          \"median\": 1.0816666720832775e-06\n        }\n      },\n      \"list_boundary_median_ratio\": 0.17546747143880592\n    },\n    {\n      \"size\": 1000,\n      \"repeat\": 5,\n      \"number\": 3,\n      \"correctness\": \"passed\",\n      \"input_array_element_bytes\": 24000,\n      \"output_array_element_bytes\": 8000,\n      \"timings\": {\n        \"python_lists\": {\n          \"seconds_per_call\": [\n            6.0324000022167944e-05,\n            5.272900000363734e-05,\n            5.230500001592494e-05,\n            6.033066669412316e-05,\n            5.213466666494545e-05\n          ],\n          \"minimum\": 5.213466666494545e-05,\n          \"median\": 5.272900000363734e-05\n        },\n        \"numpy_lists\": {\n          \"seconds_per_call\": [\n            0.0001314903333498781,\n            0.0001187246666631836,\n            0.00011200100000981668,\n            0.00011144399998859929,\n            0.00011842066669487394\n          ],\n          \"minimum\": 0.00011144399998859929,\n          \"median\": 0.00011842066669487394\n        },\n        \"numpy_resident\": {\n          \"seconds_per_call\": [\n            2.2233333159723165e-06,\n            1.969666679239405e-06,\n            1.92299997555286e-06,\n            1.8696666378067068e-06,\n            1.8630000037470988e-06\n          ],\n          \"minimum\": 1.8630000037470988e-06,\n          \"median\": 1.92299997555286e-06\n        }\n      },\n      \"list_boundary_median_ratio\": 0.44526856228145023\n    },\n    {\n      \"size\": 100000,\n      \"repeat\": 5,\n      \"number\": 3,\n      \"correctness\": \"passed\",\n      \"input_array_element_bytes\": 2400000,\n      \"output_array_element_bytes\": 800000,\n      \"timings\": {\n        \"python_lists\": {\n          \"seconds_per_call\": [\n            0.004811600000001211,\n            0.0063830826666541425,\n            0.004754551333311004,\n            0.004661078333356272,\n            0.004421768999994431\n          ],\n          \"minimum\": 0.004421768999994431,\n          \"median\": 0.004754551333311004\n        },\n        \"numpy_lists\": {\n          \"seconds_per_call\": [\n            0.010907667999996798,\n            0.011155680000001666,\n            0.011576755000002473,\n            0.011161298333339195,\n            0.01112960433332925\n          ],\n          \"minimum\": 0.010907667999996798,\n          \"median\": 0.011155680000001666\n        },\n        \"numpy_resident\": {\n          \"seconds_per_call\": [\n            6.163233331335505e-05,\n            4.865966665571856e-05,\n            4.9437666689300386e-05,\n            0.00015770633331158024,\n            5.1353666663089825e-05\n          ],\n          \"minimum\": 4.865966665571856e-05,\n          \"median\": 5.1353666663089825e-05\n        }\n      },\n      \"list_boundary_median_ratio\": 0.4262000463719194\n    }\n  ]\n}\n",
+      "stderr": "",
+      "expected_stdout": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import performance_lab"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/performance_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "exact project demonstration from parent",
+      "args": [
+        "numpy_lab_616/portfolio.py"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o",
+      "returncode": 0,
+      "stdout": "Opening value: 1000.00\nup: return=4.50%, ending=1045.00, pnl=45.00\ndown: return=-10.50%, ending=895.00, pnl=-105.00\nflat: return=0.00%, ending=1000.00, pnl=0.00\n",
+      "stderr": "",
+      "expected_stdout": "Opening value: 1000.00\nup: return=4.50%, ending=1045.00, pnl=45.00\ndown: return=-10.50%, ending=895.00, pnl=-105.00\nflat: return=0.00%, ending=1000.00, pnl=0.00\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "exact project discovery from parent",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "numpy_lab_616",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_column_permutation (test_portfolio.PortfolioTests.test_column_permutation) ... ok\ntest_invalid_numeric_and_domain (test_portfolio.PortfolioTests.test_invalid_numeric_and_domain) ... ok\ntest_known_answers (test_portfolio.PortfolioTests.test_known_answers) ... ok\ntest_labels_and_shapes (test_portfolio.PortfolioTests.test_labels_and_shapes) ... ok\ntest_range_and_cell_limit (test_portfolio.PortfolioTests.test_range_and_cell_limit) ... ok\ntest_scalar_oracle_and_reconciliation (test_portfolio.PortfolioTests.test_scalar_oracle_and_reconciliation) ... ok\ntest_single_asset_total_loss (test_portfolio.PortfolioTests.test_single_asset_total_loss) ... ok\ntest_source_and_output_ownership (test_portfolio.PortfolioTests.test_source_and_output_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.043s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import portfolio"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o/numpy_lab_616",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "documented compileall on reconstructed labs",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "/tmp/chapter6-final-workflows-vq5mv38o"
+      ],
+      "cwd": "/tmp/chapter6-final-workflows-vq5mv38o",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "documented NumPy version",
+      "actual": "'2.3.5'",
+      "expected": "'2.3.5'",
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "supplied files unchanged",
+      "actual": "{'random_lab.py': 'cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c', 'test_random_lab.py': '83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7'}",
+      "expected": "{'random_lab.py': 'cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c', 'test_random_lab.py': '83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "supplied files unchanged",
+      "actual": "{'precision_lab.py': '54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc', 'test_precision_lab.py': '6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b'}",
+      "expected": "{'precision_lab.py': '54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc', 'test_precision_lab.py': '6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "supplied files unchanged",
+      "actual": "{'performance_lab.py': '2a84bd494db35029b2674fa52ca1d0864bf303160051a6d8109993c6df1a092c', 'test_performance_lab.py': '70b1fa270ac5256e708aec8d14e5ad43120bb4047565a0cc042289030b030471'}",
+      "expected": "{'performance_lab.py': '2a84bd494db35029b2674fa52ca1d0864bf303160051a6d8109993c6df1a092c', 'test_performance_lab.py': '70b1fa270ac5256e708aec8d14e5ad43120bb4047565a0cc042289030b030471'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "supplied files unchanged",
+      "actual": "{'portfolio.py': 'e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac', 'test_portfolio.py': 'fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca'}",
+      "expected": "{'portfolio.py': 'e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac', 'test_portfolio.py': 'fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "shape/dtype/finite and stream advancement",
+      "actual": "((4, 3), 'float64', True, True)",
+      "expected": "((4, 3), 'float64', True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "same declared NumPy draw protocol, not independent RNG-quality validation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          0.30471707975443135,
+          -1.0399841062404955,
+          0.7504511958064572
+        ],
+        [
+          0.9405647163912139,
+          -1.9510351886538364,
+          -1.302179506862318
+        ],
+        [
+          0.12784040316728537,
+          -0.3162425923435822,
+          -0.016801157504288795
+        ],
+        [
+          -0.85304392757358,
+          0.8793979748628286,
+          0.7777919354289483
+        ]
+      ],
+      "expected_values": [
+        [
+          0.30471707975443135,
+          -1.0399841062404955,
+          0.7504511958064572
+        ],
+        [
+          0.9405647163912139,
+          -1.9510351886538364,
+          -1.302179506862318
+        ],
+        [
+          0.12784040316728537,
+          -0.3162425923435822,
+          -0.016801157504288795
+        ],
+        [
+          -0.85304392757358,
+          0.8793979748628286,
+          0.7777919354289483
+        ]
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.13",
+      "label": "checkpoint continuation replay",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          0.06603069756121605,
+          1.1272412069680329
+        ],
+        [
+          0.4675093422520456,
+          -0.8592924628832382
+        ],
+        [
+          0.36875078408249884,
+          -0.9588826008289989
+        ]
+      ],
+      "expected_values": [
+        [
+          0.06603069756121605,
+          1.1272412069680329
+        ],
+        [
+          0.4675093422520456,
+          -0.8592924628832382
+        ],
+        [
+          0.36875078408249884,
+          -0.9588826008289989
+        ]
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.13",
+      "label": "invalid request before stream use (0, 2)",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 66, in <lambda>\n    for shape in [(0,2),(True,2),(1001,1000)]:reject('6.13','invalid request before stream use '+repr(shape),lambda shape=shape:m.innovations(rng,*shape),'ValueError')\n                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/random_lab/random_lab.py\", line 21, in innovations\n    raise ValueError('dimensions must be positive exact ints')\nValueError: dimensions must be positive exact ints\n"
+    },
+    {
+      "section": "6.13",
+      "label": "invalid request before stream use (True, 2)",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 66, in <lambda>\n    for shape in [(0,2),(True,2),(1001,1000)]:reject('6.13','invalid request before stream use '+repr(shape),lambda shape=shape:m.innovations(rng,*shape),'ValueError')\n                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/random_lab/random_lab.py\", line 21, in innovations\n    raise ValueError('dimensions must be positive exact ints')\nValueError: dimensions must be positive exact ints\n"
+    },
+    {
+      "section": "6.13",
+      "label": "invalid request before stream use (1001, 1000)",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 66, in <lambda>\n    for shape in [(0,2),(True,2),(1001,1000)]:reject('6.13','invalid request before stream use '+repr(shape),lambda shape=shape:m.innovations(rng,*shape),'ValueError')\n                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/random_lab/random_lab.py\", line 23, in innovations\n    raise ValueError('innovation matrix exceeds cell budget')\nValueError: innovation matrix exceeds cell budget\n"
+    },
+    {
+      "section": "6.13",
+      "label": "validation leaves state unchanged",
+      "actual": "{'bit_generator': 'PCG64', 'state': {'state': 242859215185224786960306186758599061714, 'inc': 332724090758049132448979897138935081983}, 'has_uint32': 0, 'uinteger': 0}",
+      "expected": "{'bit_generator': 'PCG64', 'state': {'state': 242859215185224786960306186758599061714, 'inc': 332724090758049132448979897138935081983}, 'has_uint32': 0, 'uinteger': 0}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "logical child mapping recorded",
+      "actual": "[(0,), (1,)]",
+      "expected": "[(0,), (1,)]",
+      "status": "PASS"
+    },
+    {
+      "section": "6.13",
+      "label": "serial child replay and fixture difference",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "tiny result nonzero, naive loses increments",
+      "actual": "(True, 0.0)",
+      "expected": "(True, 0.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "Decimal precision80 tiny linking",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 3e-17,
+      "expected_values": 3e-17,
+      "rtol": 0,
+      "atol": 1e-31
+    },
+    {
+      "section": "6.14",
+      "label": "rational ordinary linking",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 0.08900000000000001,
+      "expected_values": 0.089,
+      "rtol": 0,
+      "atol": 1e-15
+    },
+    {
+      "section": "6.14",
+      "label": "reference-oriented criterion independently derived",
+      "actual": "(True, False)",
+      "expected": "(True, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "reference asymmetry observed",
+      "actual": "(True, False)",
+      "expected": "(True, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "comparison cannot broadcast shape mismatch",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 79, in <lambda>\n    reject('6.14','comparison cannot broadcast shape mismatch',lambda:m.agrees(np.ones(2),np.ones(1),rtol=0.,atol=0.),'ValueError')\n                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/precision_lab/precision_lab.py\", line 38, in agrees\n    raise ValueError('comparison shapes must match')\nValueError: comparison shapes must match\n"
+    },
+    {
+      "section": "6.14",
+      "label": "boolean tolerance not coerced",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 80, in <lambda>\n    reject('6.14','boolean tolerance not coerced',lambda:m.agrees(np.ones(1),np.ones(1),rtol=True,atol=0.),'ValueError')\n                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/precision_lab/precision_lab.py\", line 40, in agrees\n    raise ValueError('tolerances must be finite exact floats in [0,1]')\nValueError: tolerances must be finite exact floats in [0,1]\n"
+    },
+    {
+      "section": "6.14",
+      "label": "stable formulation still has overflow limit",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 81, in <lambda>\n    policy=np.geterr().copy();reject('6.14','stable formulation still has overflow limit',lambda:m.linked_return(np.full(10000,.5)),'FloatingPointError');ck('6.14','error policy restored',np.geterr(),policy)\n                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/precision_lab/precision_lab.py\", line 18, in linked_return\n    result = float(np.expm1(np.sum(np.log1p(returns),dtype=np.float64)))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFloatingPointError: overflow encountered in expm1\n"
+    },
+    {
+      "section": "6.14",
+      "label": "error policy restored",
+      "actual": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "expected": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.14",
+      "label": "association loses unit but exact rational sum keeps it",
+      "actual": "(0.0, 1.0, Fraction(1, 1))",
+      "expected": "(0.0, 1.0, Fraction(1, 1))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "benchmark cases/protocol",
+      "actual": "[(3, 5, 3, 'passed'), (1000, 5, 3, 'passed'), (100000, 5, 3, 'passed')]",
+      "expected": "[(3, 5, 3, 'passed'), (1000, 5, 3, 'passed'), (100000, 5, 3, 'passed')]",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "3 payload arithmetic",
+      "actual": "(72, 24)",
+      "expected": "(72, 24)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "3 python_lists sample/min/median contract",
+      "actual": "(5, True, 4.70666653503334e-07, 4.973333034286043e-07)",
+      "expected": "(5, True, 4.70666653503334e-07, 4.973333034286043e-07)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "3 numpy_lists sample/min/median contract",
+      "actual": "(5, True, 2.8109999827089873e-06, 2.83433333455226e-06)",
+      "expected": "(5, True, 2.8109999827089873e-06, 2.83433333455226e-06)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "3 numpy_resident sample/min/median contract",
+      "actual": "(5, True, 1.0146666606184833e-06, 1.0816666720832775e-06)",
+      "expected": "(5, True, 1.0146666606184833e-06, 1.0816666720832775e-06)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "3 ratio recomputed",
+      "actual": "0.17546747143880592",
+      "expected": "0.17546747143880592",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "1000 payload arithmetic",
+      "actual": "(24000, 8000)",
+      "expected": "(24000, 8000)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "1000 python_lists sample/min/median contract",
+      "actual": "(5, True, 5.213466666494545e-05, 5.272900000363734e-05)",
+      "expected": "(5, True, 5.213466666494545e-05, 5.272900000363734e-05)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "1000 numpy_lists sample/min/median contract",
+      "actual": "(5, True, 0.00011144399998859929, 0.00011842066669487394)",
+      "expected": "(5, True, 0.00011144399998859929, 0.00011842066669487394)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "1000 numpy_resident sample/min/median contract",
+      "actual": "(5, True, 1.8630000037470988e-06, 1.92299997555286e-06)",
+      "expected": "(5, True, 1.8630000037470988e-06, 1.92299997555286e-06)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "1000 ratio recomputed",
+      "actual": "0.44526856228145023",
+      "expected": "0.44526856228145023",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "100000 payload arithmetic",
+      "actual": "(2400000, 800000)",
+      "expected": "(2400000, 800000)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "100000 python_lists sample/min/median contract",
+      "actual": "(5, True, 0.004421768999994431, 0.004754551333311004)",
+      "expected": "(5, True, 0.004421768999994431, 0.004754551333311004)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "100000 numpy_lists sample/min/median contract",
+      "actual": "(5, True, 0.010907667999996798, 0.011155680000001666)",
+      "expected": "(5, True, 0.010907667999996798, 0.011155680000001666)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "100000 numpy_resident sample/min/median contract",
+      "actual": "(5, True, 4.865966665571856e-05, 5.1353666663089825e-05)",
+      "expected": "(5, True, 4.865966665571856e-05, 5.1353666663089825e-05)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "100000 ratio recomputed",
+      "actual": "0.4262000463719194",
+      "expected": "0.4262000463719194",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "list boundary kernels vs integer known answer",
+      "actual": "([50.0, 20.0, 0.0], [50.0, 20.0, 0.0])",
+      "expected": "([50.0, 20.0, 0.0], [50.0, 20.0, 0.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "resident boundary kernel vs integer known answer",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        50.0,
+        20.0,
+        0.0
+      ],
+      "expected_values": [
+        50.0,
+        20.0,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "section": "6.15",
+      "label": "injected correctness failure propagates",
+      "actual": "'AssertionError'",
+      "expected": "'AssertionError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 98, in <lambda>\n    try:reject('6.15','injected correctness failure propagates',lambda:m.benchmark(3),'AssertionError')\n                                                                       ^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/performance_lab/performance_lab.py\", line 49, in benchmark\n    verify(arrays,lists)  # Correctness gate precedes every timer.\n    ^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 95, in failing_gate\n    def failing_gate(*args):original_verify(*args);raise AssertionError('intentional QA correctness-gate failure')\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: intentional QA correctness-gate failure\n"
+    },
+    {
+      "section": "6.15",
+      "label": "no timer reached after injected failure",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "historical table is consistent with its own raw samples 3",
+      "actual": "['0.455', '2.284', '1.508', '0.199']",
+      "expected": "['0.455', '2.284', '1.508', '0.199']",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "historical table is consistent with its own raw samples 1000",
+      "actual": "['202.445', '106.276', '1.863', '1.905']",
+      "expected": "['202.445', '106.276', '1.863', '1.905']",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "historical table is consistent with its own raw samples 100000",
+      "actual": "['7636.734', '16480.075', '219.224', '0.463']",
+      "expected": "['7636.734', '16480.075', '219.224', '0.463']",
+      "status": "PASS"
+    },
+    {
+      "section": "6.15",
+      "label": "historical sizes checked",
+      "actual": "3",
+      "expected": "3",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "independent opening value",
+      "actual": "1000.0",
+      "expected": "1000.0",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "rational weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "expected_values": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.16",
+      "label": "rational ending_values",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1045.0,
+        895.0,
+        1000.0
+      ],
+      "expected_values": [
+        1045.0,
+        895.0,
+        1000.0
+      ],
+      "rtol": 0,
+      "atol": 1e-10
+    },
+    {
+      "section": "6.16",
+      "label": "rational pnl",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        45.0,
+        -105.0,
+        0.0
+      ],
+      "expected_values": [
+        45.0,
+        -105.0,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 1e-10
+    },
+    {
+      "section": "6.16",
+      "label": "rational portfolio_returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.04500000000000004,
+        -0.10499999999999995,
+        0.0
+      ],
+      "expected_values": [
+        0.045,
+        -0.105,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.16",
+      "label": "rational asset return matrix",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          0.10000000000000009,
+          -0.050000000000000044,
+          0.0
+        ],
+        [
+          -0.19999999999999996,
+          0.050000000000000044,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "expected_values": [
+        [
+          0.1,
+          -0.05,
+          0.0
+        ],
+        [
+          -0.2,
+          0.05,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.16",
+      "label": "rational contribution matrix",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          0.06000000000000005,
+          -0.015000000000000013,
+          0.0
+        ],
+        [
+          -0.11999999999999997,
+          0.015000000000000013,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "expected_values": [
+        [
+          0.06,
+          -0.015,
+          0.0
+        ],
+        [
+          -0.12,
+          0.015,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.16",
+      "label": "currency versus return reconciliation",
+      "actual": "[Fraction(45, 1), Fraction(-105, 1), Fraction(0, 1)]",
+      "expected": "[Fraction(45, 1), Fraction(-105, 1), Fraction(0, 1)]",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "inputs unchanged/result readonly/independent",
+      "actual": "(True, True, True)",
+      "expected": "(True, True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "ordinary result array assignment fails",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 117, in <lambda>\n    reject('6.16','ordinary result array assignment fails',lambda:report.weights.__setitem__(0,0.),'ValueError');reject('6.16','ordinary frozen field assignment fails',lambda:setattr(report,'opening_value',0.),'FrozenInstanceError')\n                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: assignment destination is read-only\n"
+    },
+    {
+      "section": "6.16",
+      "label": "ordinary frozen field assignment fails",
+      "actual": "'FrozenInstanceError'",
+      "expected": "'FrozenInstanceError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 117, in <lambda>\n    reject('6.16','ordinary result array assignment fails',lambda:report.weights.__setitem__(0,0.),'ValueError');reject('6.16','ordinary frozen field assignment fails',lambda:setattr(report,'opening_value',0.),'FrozenInstanceError')\n                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<string>\", line 4, in __setattr__\ndataclasses.FrozenInstanceError: cannot assign to field 'opening_value'\n"
+    },
+    {
+      "section": "6.16",
+      "label": "mislabeled closing matrix rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 22, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6finalwork/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-final-workflow-review/review.py\", line 118, in <lambda>\n    reject('6.16','mislabeled closing matrix rejected',lambda:m.calculate(assets,quantities,opening,('BETA','ALPHA','CASH'),scenarios,closes),'ValueError')\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-final-workflows-vq5mv38o/numpy_lab_616/portfolio.py\", line 62, in calculate\n    raise ValueError(\"asset identities and order must match\")\nValueError: asset identities and order must match\n"
+    },
+    {
+      "section": "6.16",
+      "label": "single asset total loss",
+      "actual": "([-1.0], [0.0], [-100.0])",
+      "expected": "([-1.0], [0.0], [-100.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "6.16",
+      "label": "documented mixed-Boolean inference limit retained",
+      "actual": "500.0",
+      "expected": "500.0",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+[
+  {
+    "id": "6.16-AXIS-assets",
+    "kind": "INPUT_AXIS",
+    "contract": "(N,) identities",
+    "review": "Ordered immutable label tuple;exactmatch withscenario_assets;sourcevalidation/rejection probes and knownlabel fixture.",
+    "status": "REVIEWED_SCOPED"
+  },
+  {
+    "id": "6.16-AXIS-quantities",
+    "kind": "INPUT_AXIS",
+    "contract": "(N,) holding units",
+    "review": "Fixed nonnegative real numeric holdings;fractional permitted;copy/domain/source8method checks.",
+    "status": "REVIEWED_SCOPED"
+  },
+  {
+    "id": "6.16-AXIS-opening_prices",
+    "kind": "INPUT_AXIS",
+    "contract": "(N,) unitprices",
+    "review": "Strictlypositive,commoncurrency/perunit;sourceknownfixture andzeroprice failure.",
+    "status": "REVIEWED_SCOPED"
+  },
+  {
+    "id": "6.16-AXIS-scenario_assets",
+    "kind": "INPUT_AXIS",
+    "contract": "(N,) identities",
+    "review": "Closing-column identities must matchassetsinorder;actualmismatch failure retained.",
+    "status": "REVIEWED_SCOPED"
+  },
+  {
+    "id": "6.16-AXIS-scenarios",
+    "kind": "INPUT_AXIS",
+    "contract": "(S,) labels",
+    "review": "Alternative outcome labels,notdates/probabilities;unique/nonempty/matchrowcountsourcechecks.",
+    "status": "REVIEWED_SCOPED"
+  },
+  {
+    "id": "6.16-AXIS-closing_prices",
+    "kind": "INPUT_AXIS",
+    "contract": "(S,N) unitprices",
+    "review": "Rowsalternative endstates,columnsalignedassets;nonnegativeincludingzero;sourcefixture/loss/domainchecks.",
+    "status": "REVIEWED_SCOPED"
+  },
+  {
+    "id": "6.16-EQUATION-opening_asset_values",
+    "kind": "EQUATION",
+    "contract": "v_i=q_i*p0_i",
+    "review": "IndependentFraction600/300/100.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-opening_total",
+    "kind": "EQUATION",
+    "contract": "V0=sum(v_i)",
+    "review": "Independent1000;actualReport.opening_value1000.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-weights",
+    "kind": "EQUATION",
+    "contract": "w_i=v_i/V0",
+    "review": "Independent3/5,3/10,1/10;sourceoutputcomparison.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-asset_returns",
+    "kind": "EQUATION",
+    "contract": "R_si=p1_si/p0_i-1",
+    "review": "IndependentFractionmatrixcomparedtosourceasset_returns.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-contributions",
+    "kind": "EQUATION",
+    "contract": "C_si=w_i*R_si",
+    "review": "IndependentFractionmatrix,up3/50,-3/200,0;dimensionlessportfolio points.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-portfolio_returns",
+    "kind": "EQUATION",
+    "contract": "r_s=sum(C_si)",
+    "review": "Independent9/200,-21/200,0;contributionsreconcile.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-ending_values",
+    "kind": "EQUATION",
+    "contract": "Vs=sum(q_i*p1_si)",
+    "review": "Independent1045/895/1000;directholdings route.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-EQUATION-pnl_reconciliation",
+    "kind": "EQUATION",
+    "contract": "P&L=Vs-V0=V0*r_s",
+    "review": "Independent45/-105/0currency units;exactrationalbridgeplusfixturetolerances.",
+    "status": "PASS_SCOPED_FIXTURE"
+  },
+  {
+    "id": "6.16-CHECKLIST-demo",
+    "kind": "ACCEPTANCE_CHECKLIST",
+    "review": "Actualparent-launched demo reproducesall3outcomes.",
+    "status": "PASS_SCOPED"
+  },
+  {
+    "id": "6.16-CHECKLIST-tests",
+    "kind": "ACCEPTANCE_CHECKLIST",
+    "review": "Actualdocumenteddiscovery8methods passes.",
+    "status": "PASS_SCOPED"
+  },
+  {
+    "id": "6.16-CHECKLIST-axes",
+    "kind": "ACCEPTANCE_CHECKLIST",
+    "review": "Sixexplicitaxiscontracts reviewedagainstimplementation/sourcefixture,notlive data provenance.",
+    "status": "REVIEWED_CONCEPTUAL"
+  },
+  {
+    "id": "6.16-CHECKLIST-identity",
+    "kind": "ACCEPTANCE_CHECKLIST",
+    "review": "Actualmisorderedscenarioasset tuple rejectedwithValueError.",
+    "status": "PASS_SCOPED"
+  },
+  {
+    "id": "6.16-CHECKLIST-reconciliation",
+    "kind": "ACCEPTANCE_CHECKLIST",
+    "review": "CurrencyP&Landdimensionlessreturn comparedusingindependentFractionknownanswersanddefined openingdenominator.",
+    "status": "PASS_SCOPED"
+  },
+  {
+    "id": "6.16-CHECKLIST-scenario_interpretation",
+    "kind": "ACCEPTANCE_CHECKLIST",
+    "review": "Alternativeterminalstates shareopeningholdings;notaconsecutivetimepathandnoprobabilities,so no compoundingor expected-return inference.",
+    "status": "REVIEWED_CONCEPTUAL"
+  }
+]

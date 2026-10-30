@@ -1,0 +1,234 @@
+[
+  {
+    "section": "6.13",
+    "path": "chapter-06/6.13-random-number-generation.md",
+    "source_sha256": "a34e557b21535bdd026cefd44d05411ffe1dc9b54cb00d38dc388da6fd021dad",
+    "selected_files": {
+      "random_lab.py": "cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c",
+      "test_random_lab.py": "83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7"
+    },
+    "published_stdout": "NumPy: 2.3.5\nBit generator: PCG64\nSeed: 20261022\nAxes: scenario, factor\nShape: (4, 2)\nFirst row: ['-0.223280', '-0.032109']\nFresh-stream repeat equal: True\n",
+    "id": "6.13-WORKFLOW",
+    "status": "REVIEWED_SCOPED",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "prerequisites": "PreparedPython/NumPy environment,owned writable lab,two exact listings,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.13-SETUP",
+        "status": "PARTIAL",
+        "review": "Explicit CPython3.12.14/NumPy2.3.5/Linux identity/origin recorded. Reused preinstalled runtime;fresh venv/index installation,Windows/macOS shell commands not executed."
+      },
+      {
+        "id": "6.13-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact source/test fences reconstructed as documented siblings;project numpy_lab_616parent layout used. Hashes retained and supplied files unchanged."
+      },
+      {
+        "id": "6.13-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both listings compile;actual compileall command ran over owned lab directories. No static checker inference."
+      },
+      {
+        "id": "6.13-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh child module import quiet on stdout/stderr;not an application-I/O or sandbox claim."
+      },
+      {
+        "id": "6.13-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged demo matches documented known-runtime stdout,except6.15dynamic JSON checked by schema/protocol/sample arithmetic rather than literal timing fixture. Project demo/discovery run from documented parent;performance correctness tests precede main."
+      },
+      {
+        "id": "6.13-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing methods per workflow passed,no skips/failures/errors. Raw commands/stdout/stderr retained,not counted as new unique methods."
+      },
+      {
+        "id": "6.13-API",
+        "status": "PASS_SCOPED",
+        "review": "Shape/dtype/finite/state advancement;direct sameNumPy protocol comparison explicitly not independent RNG validation;deepcopy checkpoint replay;invalid dimensions/budget preservestate;serial child spawn keys(0,),(1,)replay with fixed-fixture differences."
+      },
+      {
+        "id": "6.13-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Explicit caller-owned Generator protocol:make_rng createsPCG64,but innovations accepts exact Generator backed by another declared algorithm. Successful draws advance state;validation errors before draw do not. Seed/state/method/dtype/shape/order/task mapping/version are separate replay evidence. Serial child replay/different fixed batches do not prove independence,distribution quality or live parallel safety. Innovations have no calibrated returns,correlations,horizon or finance units. Checkpoint is local in-memory protocol,not durable cross-version persistence/security."
+      }
+    ],
+    "remaining": "Fresh platforms/provisioning,statistical/model/independent acceptance and local extensions remain separate"
+  },
+  {
+    "section": "6.14",
+    "path": "chapter-06/6.14-numerical-precision-and-numpy.md",
+    "source_sha256": "e4cf4db0c6df1d925009ff5dadff99ae1dd9482302dc7040f596fc66454c1516",
+    "selected_files": {
+      "precision_lab.py": "54d783a3afbdb750765baced34bb09b89d38a0b43a06a75aa470be6bf85b7ddc",
+      "test_precision_lab.py": "6083425bb6d033063fa28c70064b4c9ddeef7f4b6e804f724552181c9f16372b"
+    },
+    "published_stdout": "float64 epsilon near 1: 2.220446e-16\nNaive tiny linked return: 0.000000e+00\nlog1p/expm1 tiny linked return: 3.000000e-17\nDefault near-zero isclose: True\nExplicit near-zero agreement: False\n",
+    "id": "6.14-WORKFLOW",
+    "status": "REVIEWED_SCOPED",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "prerequisites": "PreparedPython/NumPy environment,owned writable lab,two exact listings,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.14-SETUP",
+        "status": "PARTIAL",
+        "review": "Explicit CPython3.12.14/NumPy2.3.5/Linux identity/origin recorded. Reused preinstalled runtime;fresh venv/index installation,Windows/macOS shell commands not executed."
+      },
+      {
+        "id": "6.14-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact source/test fences reconstructed as documented siblings;project numpy_lab_616parent layout used. Hashes retained and supplied files unchanged."
+      },
+      {
+        "id": "6.14-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both listings compile;actual compileall command ran over owned lab directories. No static checker inference."
+      },
+      {
+        "id": "6.14-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh child module import quiet on stdout/stderr;not an application-I/O or sandbox claim."
+      },
+      {
+        "id": "6.14-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged demo matches documented known-runtime stdout,except6.15dynamic JSON checked by schema/protocol/sample arithmetic rather than literal timing fixture. Project demo/discovery run from documented parent;performance correctness tests precede main."
+      },
+      {
+        "id": "6.14-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing methods per workflow passed,no skips/failures/errors. Raw commands/stdout/stderr retained,not counted as new unique methods."
+      },
+      {
+        "id": "6.14-API",
+        "status": "PASS_SCOPED",
+        "review": "Precision80Decimal tiny product versus zero naive result;ordinary rational linked8.9%;independent reference-asymmetry inequality;shape/tolerance failures;overflow/error policy restoration;association versus rational exactsum."
+      },
+      {
+        "id": "6.14-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Bounded consecutive simple-return transformation uses log1p/expm1,but still rounds/overflows. Tiny Decimal text reference retains intended decimal inputs;float-to-Decimal would answer a different question. Comparison requires exact matching shapes/finite vectors and reference-oriented explicit tolerance;numeric agreement,display,accounting rounding and financial materiality are distinct. No universal accuracy ranking or exact money claim."
+      }
+    ],
+    "remaining": "Fresh platforms/provisioning,statistical/model/independent acceptance and local extensions remain separate"
+  },
+  {
+    "section": "6.15",
+    "path": "chapter-06/6.15-performance-python-loops-vs-vectorization.md",
+    "source_sha256": "bd883338934599a853140c3f91f8540e2ce6a3aa83ee0ca972e969eb4eb94ca3",
+    "selected_files": {
+      "performance_lab.py": "2a84bd494db35029b2674fa52ca1d0864bf303160051a6d8109993c6df1a092c",
+      "test_performance_lab.py": "70b1fa270ac5256e708aec8d14e5ad43120bb4047565a0cc042289030b030471"
+    },
+    "published_stdout": "DYNAMIC_TIMING_JSON_NOT_LITERAL_FIXTURE",
+    "id": "6.15-WORKFLOW",
+    "status": "REVIEWED_SCOPED",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "prerequisites": "PreparedPython/NumPy environment,owned writable lab,two exact listings,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.15-SETUP",
+        "status": "PARTIAL",
+        "review": "Explicit CPython3.12.14/NumPy2.3.5/Linux identity/origin recorded. Reused preinstalled runtime;fresh venv/index installation,Windows/macOS shell commands not executed."
+      },
+      {
+        "id": "6.15-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact source/test fences reconstructed as documented siblings;project numpy_lab_616parent layout used. Hashes retained and supplied files unchanged."
+      },
+      {
+        "id": "6.15-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both listings compile;actual compileall command ran over owned lab directories. No static checker inference."
+      },
+      {
+        "id": "6.15-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh child module import quiet on stdout/stderr;not an application-I/O or sandbox claim."
+      },
+      {
+        "id": "6.15-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged demo matches documented known-runtime stdout,except6.15dynamic JSON checked by schema/protocol/sample arithmetic rather than literal timing fixture. Project demo/discovery run from documented parent;performance correctness tests precede main."
+      },
+      {
+        "id": "6.15-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing methods per workflow passed,no skips/failures/errors. Raw commands/stdout/stderr retained,not counted as new unique methods."
+      },
+      {
+        "id": "6.15-API",
+        "status": "PASS_SCOPED",
+        "review": "Actual unmodified bounded benchmark cases3/1000/100000,repeat5,number3;all15sample records per method group,mins/medians/ratios/payload recomputed;integer known P&L50/20/0;separate supplemental correctness-gate fault injection aborts before timer;historical table checked against its own historical raw samples,not currenttimings."
+      },
+      {
+        "id": "6.15-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Prevalidated equal-length teaching kernels,not replacements for6.5validated API. Python/NumPy list routes include list-to-list boundary;resident-array route excludes conversion and returns ndarray. Gates precede timers;prepare/import/report/domain validation excluded from timers. Five samples of3calls are batch averages,fixed method order/warmup/shared host/GC policy limit inference. Output payload is not peak RSS. New timings are observations,not acceptance ratios or universal speed rankings;no np.vectorize/application-level benchmark."
+      }
+    ],
+    "remaining": "Fresh platforms/provisioning,statistical/model/independent acceptance and local extensions remain separate"
+  },
+  {
+    "section": "6.16",
+    "path": "chapter-06/6.16-chapter-project-vectorized-portfolio-calculator.md",
+    "source_sha256": "f97f8016f38435fbf3dfe74bfd4e531745e3d496486b87f19b0be85174e99f26",
+    "selected_files": {
+      "portfolio.py": "e5cb4dc61a20f070461a2fa85d3c227bba76ff841e4c268ae78b4fbafdeab0ac",
+      "test_portfolio.py": "fbfd416e1449f5fd1a3f5149b4bcab42ea4b592bb7e67474c8d45bfe93524eca"
+    },
+    "published_stdout": "Opening value: 1000.00\nup: return=4.50%, ending=1045.00, pnl=45.00\ndown: return=-10.50%, ending=895.00, pnl=-105.00\nflat: return=0.00%, ending=1000.00, pnl=0.00\n",
+    "id": "6.16-WORKFLOW",
+    "status": "REVIEWED_SCOPED",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "prerequisites": "PreparedPython/NumPy environment,owned writable lab,two exact listings,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.16-SETUP",
+        "status": "PARTIAL",
+        "review": "Explicit CPython3.12.14/NumPy2.3.5/Linux identity/origin recorded. Reused preinstalled runtime;fresh venv/index installation,Windows/macOS shell commands not executed."
+      },
+      {
+        "id": "6.16-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Two exact source/test fences reconstructed as documented siblings;project numpy_lab_616parent layout used. Hashes retained and supplied files unchanged."
+      },
+      {
+        "id": "6.16-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both listings compile;actual compileall command ran over owned lab directories. No static checker inference."
+      },
+      {
+        "id": "6.16-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh child module import quiet on stdout/stderr;not an application-I/O or sandbox claim."
+      },
+      {
+        "id": "6.16-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged demo matches documented known-runtime stdout,except6.15dynamic JSON checked by schema/protocol/sample arithmetic rather than literal timing fixture. Project demo/discovery run from documented parent;performance correctness tests precede main."
+      },
+      {
+        "id": "6.16-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing methods per workflow passed,no skips/failures/errors. Raw commands/stdout/stderr retained,not counted as new unique methods."
+      },
+      {
+        "id": "6.16-API",
+        "status": "PASS_SCOPED",
+        "review": "Fraction opening1000;weights3/5,3/10,1/10;ending1045/895/1000;P&L45/-105/0;returns9/200,-21/200,0;asset/contribution matrices andvalue bridge;input preservation/readonly/independence,ordinary assignment/frozen-field failure,mislabeled matrix rejection,singleasset loss and documented mixedBoolean-precondition probe."
+      },
+      {
+        "id": "6.16-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Long-only fixed one-interval holdings,consistent per-unit currency,positive opening prices/nonnegative closing prices,positive total. Scenario rows are alternatives,not a path/probabilities. CASH name has no hidden behavior. Exact ordered identities required;inference accepts real numeric sequences and copiesfloat64,but mixedBoolean/numeric inputs may lose wire identity and must be excluded upstream. Readonly arrays/frozen dataclass protect routine edits,not deep/security immutability. No trades/flows/distributions/fees/FX/leverage/accounting or real-portfolio acceptance."
+      }
+    ],
+    "remaining": "Fresh platforms/provisioning,statistical/model/independent acceptance and local extensions remain separate"
+  }
+]
