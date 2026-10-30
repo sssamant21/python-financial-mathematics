@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped final-assessment integration
+## Latest scoped Hessian accuracy follow-up
+
+Selected analytic Hessians now have independent 90-digit valuation-stencil references and step ladders. All 22 Chapter 15 files compiled and 12 scripts passed; implementation unchanged. [Evidence](chapter-15-hessian-accuracy-followup.md). COV-71 remains partially open; this follows V-36.
+
+## Earlier scoped final-assessment integration
 
 Section 14.10 now uses actual eigen/Cholesky/SVD/compression outputs. Four helper calls and five injected wrong outputs are checked; all 30 Chapter 14 files compiled and 20 scripts passed. [Evidence](chapter-14-final-integration-followup.md). This follows V-36; COV-67 remains partially open.
 
@@ -357,3 +361,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Final-assessment integration follow-up — 2026-10-30
 
 [Section 14.10 evidence](chapter-14-final-integration-followup.md) propagates computed helper results and recomputes factor/matrix diagnostics. Four helper calls and five corrupted outputs are checked; all 30 chapter files compiled and 20 scripts passed. This source/checker change follows V-36; twenty-five categories remain partially addressed. The selected 14.8/14.10 wiring obligation is addressed, while COV-67 and independent review remain open. Next executable item: Chapter 15 COV-71 Hessian finite-difference accuracy/convergence and representability, beginning with its coverage map. Environment and release gates remain pending.
+
+## Selected Hessian accuracy follow-up — 2026-10-30
+
+[Chapter 15 evidence](chapter-15-hessian-accuracy-followup.md) checks 18 analytic Hessian entries against independent 90-digit direct-valuation stencils at one interior input, with selected second-order ladders and rate-time block integration. These stencils are supplemental references, not a production numerical Hessian API. All 22 chapter files compiled and 12 scripts passed; implementation unchanged. COV-71 remains partially open and twenty-five categories remain partially addressed. This checker follows V-36; next executable item is Section 15.9 centered Jacobian-column convergence and selected cancellation/asymmetry. Independent-review, platform and release gates remain pending.
