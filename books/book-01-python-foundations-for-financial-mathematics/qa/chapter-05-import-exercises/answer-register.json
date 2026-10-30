@@ -1,0 +1,82 @@
+[
+  {
+    "id": "5.2-E1",
+    "prompt": "Add an explicit unaliased from-import in a fourth caller and verify its output matches the existing three bindings.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "SUPPLEMENT+SOURCE",
+    "answer": "New fourth_caller uses from quantity_rules import checked_quantity without alias and delegates to it. For exact Decimal0 and12.5 it matches all three original bindings. Shared implementation means four equal values are not four independent financial policies."
+  },
+  {
+    "id": "5.2-E2",
+    "prompt": "Define a caller variable with the same name as an imported function. Explain why the module-qualified function remains accessible if the module name is preserved.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "SOURCE_EXPERIMENT",
+    "answer": "Caller-local checked_quantity can be rebound to text without modifying quantity_rules.checked_quantity. Preserve module binding quantity_rules and its qualified function remains callable; test returns2.5. Shadowing is a readability hazard, not code copying."
+  },
+  {
+    "id": "5.2-E3",
+    "prompt": "Add a fresh-process test showing that assigning a new local POLICY_LABEL name does not update quantity_rules.POLICY_LABEL.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "SOURCE_EXPERIMENT",
+    "answer": "Fresh child imports POLICY_LABEL then assigns local-only to that local name. Module attribute remains nonnegative-units-v1. No mutation survives child exit; from-import binds a reference at import time, not a live attribute link."
+  },
+  {
+    "id": "5.2-E4",
+    "prompt": "Explain why changing a mutable imported list can affect another module, while assigning a new list to the local name does not.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "SOURCE_EXPERIMENT",
+    "answer": "A module list referenced by imported rows is shared: rows.append(A) updates module.rows. Assigning rows=[local] rebinds only caller name and leaves module.rows=[A]. List mutation and name rebinding are distinct; only synthetic ephemeral state used."
+  },
+  {
+    "id": "5.2-E5",
+    "prompt": "Create two modules exposing a same-named validator. Use descriptive aliases to make the call sites unambiguous.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "SUPPLEMENT",
+    "answer": "New position_policy and order_policy both expose validate and delegate to the unchanged nonnegative-units rule. Import as validate_position_units and validate_order_units; module names distinguish call sites and wrappers, zero/fraction outputs tested. No separate order-specific financial contract is invented."
+  },
+  {
+    "id": "5.2-E6",
+    "prompt": "Explain why catching ImportError and returning an empty report conceals a broken application.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "EXPECTED_FAILURE+DESIGN",
+    "answer": "An existing synthetic application imports a missing transitive dependency. Unhandled import traceback identifies the missing name, whereas broad except ImportError produces misleading successful[] stdout. ModuleNotFoundError is an ImportError subclass, so broad catch also hides transitive failures. Preserve traceback and correct actual dependency/interpreter; do not fabricate a dependency or silently substitute empty financial input. No real missing dependency is repaired/approved here."
+  },
+  {
+    "id": "5.2-E7",
+    "prompt": "Inspect the loaded module path in your lab and compare it with the file you edited.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "SOURCE_EXPERIMENT",
+    "answer": "In the owned temporary quantity_rules file append a harmless saved comment, then fresh-import and compare resolved __file__ and SHA256 against exactly that saved file. Restore original bytes afterward. __file__ is useful for this source module but not guaranteed for every Python module."
+  },
+  {
+    "id": "5.2-E8",
+    "prompt": "Explain the difference between importing a function and copying its source into another file.",
+    "source": "chapter-05/5.02-importing-modules.md",
+    "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-import-exercises/README.md",
+    "kind": "DESIGN",
+    "answer": "Import binds an existing module/function object and keeps the implementation owned by quantity_rules. Copying source creates another maintained definition whose corrections/version can diverge. Imports still execute module initialization and use normal caching; they do not install dependencies, sandbox code or guarantee unchanged future behavior."
+  }
+]

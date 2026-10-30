@@ -1,0 +1,251 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.02-importing-modules.md",
+  "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+  "selected_files": [
+    {
+      "path": "quantity_rules.py",
+      "sha256": "bb0d227fe16efd4e185dc683755dfbdd54c6fe58d7063762da6eccfde7a0df60"
+    },
+    {
+      "path": "import_styles.py",
+      "sha256": "cca169434f347ef34156997c7671f2be4081ed2e7debd7884a0f878282627c1f"
+    },
+    {
+      "path": "test_import_styles.py",
+      "sha256": "ba8a55c1057175d6fb586bce90e479ff983ec2adec3ec4b3a2a5b687d2a35557"
+    }
+  ],
+  "supplements": {
+    "fourth_caller.py": "from decimal import Decimal\nfrom quantity_rules import checked_quantity\n\ndef validate_fourth(value):\n    return checked_quantity(value)\n\nif __name__=='__main__':\n    print('Fourth units: '+str(validate_fourth(Decimal('12.5'))))\n",
+    "position_policy.py": "from quantity_rules import checked_quantity\ndef validate(value):\n    return checked_quantity(value)\n",
+    "order_policy.py": "from quantity_rules import checked_quantity\ndef validate(value):\n    return checked_quantity(value)\n",
+    "broken_application.py": "import missing_transitive_dependency_for_exercise_52\n"
+  },
+  "command_records": 8,
+  "command_passed": 8,
+  "command_failed": 0,
+  "existing_passed_method_invocations": 9,
+  "predicates": 16,
+  "passed": 16,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "unchanged original suite",
+      "args": [
+        "test_import_styles.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_aliases_share_module_and_function (__main__.ImportTests.test_aliases_share_module_and_function) ... ok\ntest_from_import_binds_only_requested_name (__main__.ImportTests.test_from_import_binds_only_requested_name) ... ok\ntest_import_error_and_attribute_error (__main__.ImportTests.test_import_error_and_attribute_error) ... ok\ntest_invalid_quantities_for_every_binding (__main__.ImportTests.test_invalid_quantities_for_every_binding) ... ok\ntest_mutable_import_is_not_a_copy (__main__.ImportTests.test_mutable_import_is_not_a_copy) ... ok\ntest_quiet_import_and_origin (__main__.ImportTests.test_quiet_import_and_origin) ... ok\ntest_rebinding_does_not_update_imported_name (__main__.ImportTests.test_rebinding_does_not_update_imported_name) ... ok\ntest_runner (__main__.ImportTests.test_runner) ... ok\ntest_valid_quantities (__main__.ImportTests.test_valid_quantities) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.141s\n\nOK\n",
+      "actual_method_count": 9,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original demo",
+      "args": [
+        "import_styles.py"
+      ],
+      "returncode": 0,
+      "stdout": "Validated units: 12.5, 12.5, 12.5\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 fourth unaliased caller",
+      "args": [
+        "fourth_caller.py"
+      ],
+      "returncode": 0,
+      "stdout": "Fourth units: 12.5\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1-E4 fresh namespace probes",
+      "args": [
+        "-c",
+        "\nfrom decimal import Decimal as D\nimport json,quantity_rules,import_styles\nfrom fourth_caller import validate_fourth\nfrom quantity_rules import checked_quantity\nfrom quantity_rules import POLICY_LABEL\nchecks={}\nchecks['zero_equivalence']=tuple(str(x) for x in import_styles.validate_three_ways(D(0)))+(str(validate_fourth(D(0))),)\nchecks['fraction_equivalence']=tuple(str(x) for x in import_styles.validate_three_ways(D('12.5')))+(str(validate_fourth(D('12.5'))),)\nchecked_quantity='caller variable'\nchecks['caller_shadow']=checked_quantity\nchecks['qualified_still_callable']=str(quantity_rules.checked_quantity(D('2.5')))\nPOLICY_LABEL='local-only'\nchecks['local_label']=POLICY_LABEL\nchecks['module_label']=quantity_rules.POLICY_LABEL\nquantity_rules.rows=[]\nfrom quantity_rules import rows\nrows.append('A');checks['shared_after_mutation']=list(quantity_rules.rows)\nrows=['local'];checks['module_after_local_rebind']=list(quantity_rules.rows)\nchecks['local_after_rebind']=rows\nprint(json.dumps(checks))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"zero_equivalence\": [\"0\", \"0\", \"0\", \"0\"], \"fraction_equivalence\": [\"12.5\", \"12.5\", \"12.5\", \"12.5\"], \"caller_shadow\": \"caller variable\", \"qualified_still_callable\": \"2.5\", \"local_label\": \"local-only\", \"module_label\": \"nonnegative-units-v1\", \"shared_after_mutation\": [\"A\"], \"module_after_local_rebind\": [\"A\"], \"local_after_rebind\": [\"local\"]}\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E5 named aliases",
+      "args": [
+        "-c",
+        "\nfrom decimal import Decimal as D\nimport json\nfrom position_policy import validate as validate_position_units\nfrom order_policy import validate as validate_order_units\nprint(json.dumps(dict(position=str(validate_position_units(D(0))),order=str(validate_order_units(D('12.5'))),modules=[validate_position_units.__module__,validate_order_units.__module__],distinct_wrappers=validate_position_units is not validate_order_units)))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"position\": \"0\", \"order\": \"12.5\", \"modules\": [\"position_policy\", \"order_policy\"], \"distinct_wrappers\": true}\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E6 retained missing-transitive traceback",
+      "args": [
+        "-c",
+        "import broken_application"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/tmp/import-exercises-bsyqvoww/broken_application.py\", line 1, in <module>\n    import missing_transitive_dependency_for_exercise_52\nModuleNotFoundError: No module named 'missing_transitive_dependency_for_exercise_52'\n",
+      "actual_method_count": null,
+      "expected_error": "ModuleNotFoundError: No module named",
+      "status": "PASS"
+    },
+    {
+      "label": "E6 misleading fallback demonstration",
+      "args": [
+        "-c",
+        "import json\ntry:\n import broken_application\nexcept ImportError:\n report=[]\nassert report==[]\nprint(json.dumps(report))"
+      ],
+      "returncode": 0,
+      "stdout": "[]\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E7 compare loaded path and saved bytes",
+      "args": [
+        "-c",
+        "import quantity_rules,json,hashlib;from pathlib import Path;p=Path(quantity_rules.__file__).resolve();print(json.dumps(dict(path=str(p),sha256=hashlib.sha256(p.read_bytes()).hexdigest())))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"path\": \"/tmp/import-exercises-bsyqvoww/quantity_rules.py\", \"sha256\": \"43d5a761545bd07c08cb6cd931ebf8e48b469af03ea0d8ed2069f792b954cf07\"}\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "zero_equivalence",
+      "actual": "['0', '0', '0', '0']",
+      "expected": "['0', '0', '0', '0']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "fraction_equivalence",
+      "actual": "['12.5', '12.5', '12.5', '12.5']",
+      "expected": "['12.5', '12.5', '12.5', '12.5']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "caller_shadow",
+      "actual": "'caller variable'",
+      "expected": "'caller variable'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "qualified_still_callable",
+      "actual": "'2.5'",
+      "expected": "'2.5'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "local_label",
+      "actual": "'local-only'",
+      "expected": "'local-only'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "module_label",
+      "actual": "'nonnegative-units-v1'",
+      "expected": "'nonnegative-units-v1'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "shared_after_mutation",
+      "actual": "['A']",
+      "expected": "['A']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "module_after_local_rebind",
+      "actual": "['A']",
+      "expected": "['A']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E1-E4",
+      "label": "local_after_rebind",
+      "actual": "['local']",
+      "expected": "['local']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E5",
+      "label": "position",
+      "actual": "'0'",
+      "expected": "'0'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E5",
+      "label": "order",
+      "actual": "'12.5'",
+      "expected": "'12.5'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E5",
+      "label": "modules",
+      "actual": "['position_policy', 'order_policy']",
+      "expected": "['position_policy', 'order_policy']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E5",
+      "label": "distinct_wrappers",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E7",
+      "label": "actual loaded file",
+      "actual": "'/tmp/import-exercises-bsyqvoww/quantity_rules.py'",
+      "expected": "'/tmp/import-exercises-bsyqvoww/quantity_rules.py'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.2-E7",
+      "label": "saved file bytes",
+      "actual": "'43d5a761545bd07c08cb6cd931ebf8e48b469af03ea0d8ed2069f792b954cf07'",
+      "expected": "'43d5a761545bd07c08cb6cd931ebf8e48b469af03ea0d8ed2069f792b954cf07'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "source restored unchanged",
+      "actual": "{'quantity_rules.py': 'bb0d227fe16efd4e185dc683755dfbdd54c6fe58d7063762da6eccfde7a0df60', 'import_styles.py': 'cca169434f347ef34156997c7671f2be4081ed2e7debd7884a0f878282627c1f', 'test_import_styles.py': 'ba8a55c1057175d6fb586bce90e479ff983ec2adec3ec4b3a2a5b687d2a35557'}",
+      "expected": "{'quantity_rules.py': 'bb0d227fe16efd4e185dc683755dfbdd54c6fe58d7063762da6eccfde7a0df60', 'import_styles.py': 'cca169434f347ef34156997c7671f2be4081ed2e7debd7884a0f878282627c1f', 'test_import_styles.py': 'ba8a55c1057175d6fb586bce90e479ff983ec2adec3ec4b3a2a5b687d2a35557'}",
+      "status": "PASS"
+    }
+  ]
+}
