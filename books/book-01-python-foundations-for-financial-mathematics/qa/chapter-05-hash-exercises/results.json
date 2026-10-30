@@ -1,0 +1,463 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "sources": [
+    {
+      "path": "chapter-05/5.06-pip-and-dependency-management.md",
+      "sha256": "f57fc9142451326d48d445e54909d5ca204dc876082bb55ee7d83d57478675ca",
+      "selected_code_sha256": "a0cb6d803ec5800ded94024839bee33e4b886648fa7013a384250b36e846173c"
+    },
+    {
+      "path": "chapter-05/5.08-dependency-pinning-and-reproducibility.md",
+      "sha256": "d2aaa66c8eaaf162281c34d3722336cbdced14d1691d735c679cafcf7fb38fa5",
+      "selected_code_sha256": "34c70a9e68a4c756121a59d2edc1afc97dd41be82571600649dd86fc91b183d2"
+    }
+  ],
+  "command_records": 18,
+  "command_passed": 18,
+  "command_failed": 0,
+  "predicates": 16,
+  "passed": 16,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "fresh runtime a",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/hash-exercises-hztkc1uo/runtime-a"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "E1 missing transitive hash",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-cache-dir",
+        "--only-binary=:all:",
+        "--require-hashes",
+        "--find-links",
+        "/tmp/hash-exercises-hztkc1uo/wheels",
+        "-r",
+        "/tmp/hash-exercises-hztkc1uo/missing-transitive.txt"
+      ],
+      "returncode": 1,
+      "stdout": "Looking in links: /tmp/hash-exercises-hztkc1uo/wheels\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/missing-transitive.txt (line 1))\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from book1-report-demo==1.0.0->-r /tmp/hash-exercises-hztkc1uo/missing-transitive.txt (line 1))\n",
+      "stderr": "ERROR: Hashes are required in --require-hashes mode, but they are missing from some requirements. Here is a list of those requirements along with the hashes their downloaded archives actually had. Add lines like these to your requirements files to prevent tampering. (If you did not enable --require-hashes manually, note that it turns on automatically when any package has a hash.)\n    book1-unit-demo==1.0.0 --hash=sha256:6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b\n",
+      "expected_returncode": 1,
+      "diagnostics": [
+        "hash",
+        "book1-unit-demo"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "failed attempt has no fixture imports a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-I",
+        "-c",
+        "from importlib.util import find_spec;assert find_spec('book1_report_demo') is None;assert find_spec('book1_unit_demo') is None"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "complete approved specification retry a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-cache-dir",
+        "--only-binary=:all:",
+        "--require-hashes",
+        "--find-links",
+        "/tmp/hash-exercises-hztkc1uo/wheels",
+        "-r",
+        "/tmp/hash-exercises-hztkc1uo/complete.txt"
+      ],
+      "returncode": 0,
+      "stdout": "Looking in links: /tmp/hash-exercises-hztkc1uo/wheels\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/complete.txt (line 1))\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/complete.txt (line 2))\nInstalling collected packages: book1-unit-demo, book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0 book1-unit-demo-1.0.0\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "pip check a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "unchanged original behavior a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport json, sys\nimport book1_report_demo\nimport book1_unit_demo\n\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nassert Path(book1_unit_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\ninput_text = \"12.50\"\nlabel, quantity = book1_report_demo.labeled_quantity(Decimal(input_text))\nassert label == \"instrument_units\"\nassert str(quantity) == \"12.50\"\nassert book1_report_demo.labeled_quantity(Decimal(\"0\")) == (\"instrument_units\", Decimal(\"0\"))\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(json.dumps({\n    \"versions\": {\"book1-report-demo\": version(\"book1-report-demo\"),\n                 \"book1-unit-demo\": version(\"book1-unit-demo\")},\n    \"input\": input_text, \"output\": [label, str(quantity)],\n}, sort_keys=True))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"input\": \"12.50\", \"output\": [\"instrument_units\", \"12.50\"], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "E3 file-bound application a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-I",
+        "/tmp/book1_ch5hashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-hash-exercises/evidence-bundle/application_probe.py",
+        "/tmp/book1_ch5hashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-hash-exercises/evidence-bundle/input.txt"
+      ],
+      "returncode": 0,
+      "stdout": "{\"application_source_sha256\": \"5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574\", \"input\": \"12.50\", \"input_sha256\": \"6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1\", \"output\": [\"instrument_units\", \"12.50\"], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "runtime pip evidence a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "pip 25.0.1 from /tmp/hash-exercises-hztkc1uo/runtime-a/lib/python3.12/site-packages/pip (python 3.12)\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "runtime identity a",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python",
+        "-I",
+        "-c",
+        "import sys,json;print(json.dumps(dict(executable=sys.executable,prefix=sys.prefix,base_prefix=sys.base_prefix)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/tmp/hash-exercises-hztkc1uo/runtime-a/bin/python\", \"prefix\": \"/tmp/hash-exercises-hztkc1uo/runtime-a\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\"}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "fresh runtime b",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/hash-exercises-hztkc1uo/runtime-b"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "E2 incorrect approved report hash",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-cache-dir",
+        "--only-binary=:all:",
+        "--require-hashes",
+        "--find-links",
+        "/tmp/hash-exercises-hztkc1uo/wheels",
+        "-r",
+        "/tmp/hash-exercises-hztkc1uo/wrong-report-hash.txt"
+      ],
+      "returncode": 1,
+      "stdout": "Looking in links: /tmp/hash-exercises-hztkc1uo/wheels\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/wrong-report-hash.txt (line 1))\n",
+      "stderr": "ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.\n    book1-report-demo==1.0.0 from file:///tmp/hash-exercises-hztkc1uo/wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/wrong-report-hash.txt (line 1)):\n        Expected sha256 0000000000000000000000000000000000000000000000000000000000000000\n             Got        e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14\n\n",
+      "expected_returncode": 1,
+      "diagnostics": [
+        "hash",
+        "book1-report-demo"
+      ],
+      "status": "PASS"
+    },
+    {
+      "label": "failed attempt has no fixture imports b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-I",
+        "-c",
+        "from importlib.util import find_spec;assert find_spec('book1_report_demo') is None;assert find_spec('book1_unit_demo') is None"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "complete approved specification retry b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "install",
+        "--no-index",
+        "--no-cache-dir",
+        "--only-binary=:all:",
+        "--require-hashes",
+        "--find-links",
+        "/tmp/hash-exercises-hztkc1uo/wheels",
+        "-r",
+        "/tmp/hash-exercises-hztkc1uo/complete.txt"
+      ],
+      "returncode": 0,
+      "stdout": "Looking in links: /tmp/hash-exercises-hztkc1uo/wheels\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_report_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/complete.txt (line 1))\nProcessing /tmp/hash-exercises-hztkc1uo/wheels/book1_unit_demo-1.0.0-py3-none-any.whl (from -r /tmp/hash-exercises-hztkc1uo/complete.txt (line 2))\nInstalling collected packages: book1-unit-demo, book1-report-demo\nSuccessfully installed book1-report-demo-1.0.0 book1-unit-demo-1.0.0\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "pip check b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "unchanged original behavior b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom importlib.metadata import version\nfrom pathlib import Path\nimport json, sys\nimport book1_report_demo\nimport book1_unit_demo\n\nassert Path(book1_report_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nassert Path(book1_unit_demo.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\ninput_text = \"12.50\"\nlabel, quantity = book1_report_demo.labeled_quantity(Decimal(input_text))\nassert label == \"instrument_units\"\nassert str(quantity) == \"12.50\"\nassert book1_report_demo.labeled_quantity(Decimal(\"0\")) == (\"instrument_units\", Decimal(\"0\"))\nfor bad in (None, True, 1, 1.5, \"1\"):\n    try:\n        book1_report_demo.labeled_quantity(bad)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        book1_report_demo.labeled_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid domain accepted\")\nprint(json.dumps({\n    \"versions\": {\"book1-report-demo\": version(\"book1-report-demo\"),\n                 \"book1-unit-demo\": version(\"book1-unit-demo\")},\n    \"input\": input_text, \"output\": [label, str(quantity)],\n}, sort_keys=True))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"input\": \"12.50\", \"output\": [\"instrument_units\", \"12.50\"], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "E3 file-bound application b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-I",
+        "/tmp/book1_ch5hashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-hash-exercises/evidence-bundle/application_probe.py",
+        "/tmp/book1_ch5hashx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-hash-exercises/evidence-bundle/input.txt"
+      ],
+      "returncode": 0,
+      "stdout": "{\"application_source_sha256\": \"5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574\", \"input\": \"12.50\", \"input_sha256\": \"6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1\", \"output\": [\"instrument_units\", \"12.50\"], \"versions\": {\"book1-report-demo\": \"1.0.0\", \"book1-unit-demo\": \"1.0.0\"}}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "runtime pip evidence b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "--disable-pip-version-check",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "pip 25.0.1 from /tmp/hash-exercises-hztkc1uo/runtime-b/lib/python3.12/site-packages/pip (python 3.12)\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    },
+    {
+      "label": "runtime identity b",
+      "argv": [
+        "/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python",
+        "-I",
+        "-c",
+        "import sys,json;print(json.dumps(dict(executable=sys.executable,prefix=sys.prefix,base_prefix=sys.base_prefix)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/tmp/hash-exercises-hztkc1uo/runtime-b/bin/python\", \"prefix\": \"/tmp/hash-exercises-hztkc1uo/runtime-b\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\"}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "diagnostics": [],
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.8-E5",
+      "label": "independent known result a",
+      "actual": "{'input': '12.50', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "expected": "{'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}, 'input': '12.50', 'output': ['instrument_units', '12.50']}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E3",
+      "label": "consumed input/source digests and known result a",
+      "actual": "{'application_source_sha256': '5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574', 'input': '12.50', 'input_sha256': '6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "expected": "{'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}, 'input': '12.50', 'output': ['instrument_units', '12.50'], 'input_sha256': '6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1', 'application_source_sha256': '5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E5",
+      "label": "owned runtime prefix a",
+      "actual": "PosixPath('/tmp/hash-exercises-hztkc1uo/runtime-a')",
+      "expected": "PosixPath('/tmp/hash-exercises-hztkc1uo/runtime-a')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E5",
+      "label": "independent known result b",
+      "actual": "{'input': '12.50', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "expected": "{'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}, 'input': '12.50', 'output': ['instrument_units', '12.50']}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E3",
+      "label": "consumed input/source digests and known result b",
+      "actual": "{'application_source_sha256': '5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574', 'input': '12.50', 'input_sha256': '6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "expected": "{'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}, 'input': '12.50', 'output': ['instrument_units', '12.50'], 'input_sha256': '6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1', 'application_source_sha256': '5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E5",
+      "label": "owned runtime prefix b",
+      "actual": "PosixPath('/tmp/hash-exercises-hztkc1uo/runtime-b')",
+      "expected": "PosixPath('/tmp/hash-exercises-hztkc1uo/runtime-b')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E5",
+      "label": "selected invariant outputs agree",
+      "actual": "{'application_source_sha256': '5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574', 'input': '12.50', 'input_sha256': '6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "expected": "{'application_source_sha256': '5196070543f6ea855c19328fa6acb12f3c31fed553762ac26250e258715e5574', 'input': '12.50', 'input_sha256': '6d6cc696c282286ecbb59a9456f8e0011c75dacba2739ee494778150e188dae1', 'output': ['instrument_units', '12.50'], 'versions': {'book1-report-demo': '1.0.0', 'book1-unit-demo': '1.0.0'}}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E5",
+      "label": "runtime prefixes deliberately differ",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E5",
+      "label": "pip location strings legitimately differ",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "approved wheel unchanged book1_unit_demo-1.0.0-py3-none-any.whl",
+      "actual": "'6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b'",
+      "expected": "'6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "retained approved bytes book1_unit_demo-1.0.0-py3-none-any.whl",
+      "actual": "'6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b'",
+      "expected": "'6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "approved wheel unchanged book1_report_demo-1.0.0-py3-none-any.whl",
+      "actual": "'e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14'",
+      "expected": "'e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "retained approved bytes book1_report_demo-1.0.0-py3-none-any.whl",
+      "actual": "'e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14'",
+      "expected": "'e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.8-E2",
+      "label": "wrong hash not approved",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "complete specification unchanged",
+      "actual": "'book1-report-demo==1.0.0 --hash=sha256:e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14\\nbook1-unit-demo==1.0.0 --hash=sha256:6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b\\n'",
+      "expected": "'book1-report-demo==1.0.0 --hash=sha256:e137d2956aebf271a08b7409b3abd2a85d15d57d51e4247afb49fee8dee21d14\\nbook1-unit-demo==1.0.0 --hash=sha256:6765b21e01a13c94424b7a7da63e094415649670aa9f07180e766490b268519b\\n'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "owned temporary resources cleaned",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}
