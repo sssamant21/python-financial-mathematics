@@ -1,8 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Candidate source revision:** `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`  
-**Disposition:** Runtime evidence available; independent review and release approval pending.
+**Full-runtime candidate source revision:** `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`  
+**Latest scoped source revision:** `af766375b896e5742389d343580dbd8d426afd33`  
+**Disposition:** Earlier full runtime plus subsequent Section 16.6 scoped evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -36,7 +37,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-40 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-40 at earlier full-runtime pin; subsequent Section 16.6 correction has 25-file/15-script scoped rerun, full refresh pending for later accumulated changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -147,3 +148,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Derivative boundary correction and V-40 — 2026-10-30
 
 [Sections 16.2–16.4 evidence](chapter-16-derivative-boundary-followup.md) retains collapsed-stencil/denominator failures, adds pre-callback geometry/range validation and finite callback checks, and passes 35 guard cases, nine exact polynomial pairs, one unequal-offset case and three nonfinite-result cases. All 24 Chapter 16 files compiled and 14 scripts passed. [V-40 full execution](runtime-refresh-2026-10-30-r4.md) then compiled 468 sources and passed 257 scripts with 469 required hashes verified before/after at `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`. This covers the three source corrections and new checker after V-39. Twenty-eight categories remain partially addressed; none is closed by the register. Next executable item: COV-75 Section 16.6 scalar secant-curvature product/threshold and callback boundaries, with exact represented-number expectations. Independent-review, supported-platform and release gates remain pending.
+
+## Scalar secant boundary correction — 2026-10-30
+
+[Section 16.6 evidence](chapter-16-secant-boundary-followup.md) preserves four original probes and a failing regression, corrects exact represented-product threshold comparison and callback/quotient validation, and passes twelve exact quadratic pairs, six adjacent-threshold gates, one rounded-product boundary, two absolute-threshold rejections and nineteen callback/range cases. All 25 Chapter 16 files compiled and 15 scripts passed at `af766375b896e5742389d343580dbd8d426afd33`; the complete scoped manifest matches the published tree. Fresh full-book inventory is 469 Python files and 258 check/test scripts, not new full-book execution counts. This source/checker change follows V-40; the last full run remains 468/257/469 at its earlier pin. Twenty-eight categories remain partially addressed, none closed by the register. Next executable item: COV-75 Section 16.6 Newton/quasi-Newton update scaling and represented-range boundaries with exact rational quadratic updates. Independent-review, supported-platform and release gates remain pending.
