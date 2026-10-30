@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest full-book runtime refresh — V-38
+## Latest scoped optimizer-status follow-up
+
+Selected Section 16.5/16.7 Armijo/status obligations now have exact rational sufficient-decrease references and real failure-path checks. All 21 Chapter 16 files compiled and 11 scripts passed; implementation unchanged. [Evidence](chapter-16-optimizer-status-followup.md). COV-73 partially open; follows V-38.
+
+## Earlier full-book runtime refresh — V-38
 
 464/464 sources compiled; 253/253 scripts exited zero; 465/465 required hashes matched before/after at `378775bc25034f5551f1d1efa51d836da77d6737`. Includes all recent maturity/covariance changes and three checkers. [Report](runtime-refresh-2026-10-30-r2.md) · [Raw evidence](runtime-refresh-2026-10-30-r2.json). G1 refreshed; independent review/release gates remain pending.
 
@@ -409,3 +413,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Covariance screen benchmarks and V-38 — 2026-10-30
 
 [Exact-reference screen evidence](chapter-15-covariance-screen-followup.md) records three exact-PD exclusions from the limited float determinant contract, three accepted near-PD cases and two non-PD cases. Implementation unchanged; all 27 Chapter 15 files compiled and 17 scripts passed. [V-38 full evidence](runtime-refresh-2026-10-30-r2.md) subsequently compiled 464 sources and passed 253 scripts with 465 hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`, including all maturity/covariance corrections. Twenty-six categories remain partially addressed. Next executable item: Chapter 16 COV-73/75 optimizer status/scaling obligations from its coverage map; independent-review, platform and release gates remain open.
+
+## Optimizer status and Armijo follow-up — 2026-10-30
+
+[Chapter 16 evidence](chapter-16-optimizer-status-followup.md) adds nine adjacent sufficient-decrease cases, objective/backtracking counts and selected stationary/stagnation/budget/no-descent states. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This checker follows V-38; twenty-seven categories are partially addressed and COV-73 remains open. Next executable item: Section 16.7 multistart/best-observed independent stationary-cubic roots and local classification; no global-optimum certification. Independent-review, platform and release gates remain pending.
