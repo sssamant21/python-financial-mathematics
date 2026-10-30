@@ -1,0 +1,975 @@
+{
+  "source_revision": "dac1146409e3a8f4cefcb1bd63de93d9d0dabcf9",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "assertions_enabled": true
+  },
+  "timeout_seconds": 15,
+  "original_sources": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_derivative_boundaries.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bff1219ed07ab139e680a646dcb894190ad7d4a9",
+      "size": 3030,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/bff1219ed07ab139e680a646dcb894190ad7d4a9"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_multistart_references.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f1a98c9760d316ecca20a100aac536538837c42",
+      "size": 2418,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/1f1a98c9760d316ecca20a100aac536538837c42"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_newton_range.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56d15b415ca6530bcc68931bb63c41daa809d766",
+      "size": 4045,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/56d15b415ca6530bcc68931bb63c41daa809d766"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_optimizer_status_contract.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c907a3bfb2a61c88b45f48105e0d9847bc6a6266",
+      "size": 3131,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c907a3bfb2a61c88b45f48105e0d9847bc6a6266"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_scaling_references.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfacc11137400a448c150100dd2072df54e8d22b",
+      "size": 2583,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/cfacc11137400a448c150100dd2072df54e8d22b"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_secant_boundaries.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0ef9bc252359aa827f7e8576ae915a33f418ab8",
+      "size": 3403,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/d0ef9bc252359aa827f7e8576ae915a33f418ab8"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_01.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55419fb38c5e9bd229c95b09944843cd41474c05",
+      "size": 1454,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/55419fb38c5e9bd229c95b09944843cd41474c05"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_02.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c482f2356b5944717e434f0621eb9033c9ac7eca",
+      "size": 1836,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c482f2356b5944717e434f0621eb9033c9ac7eca"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_03.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e70c1d031a01c10229e44c1f55228f0f09e2491",
+      "size": 2090,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/6e70c1d031a01c10229e44c1f55228f0f09e2491"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_04.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c26516371e853553042e26a38c6334844c1ac4e9",
+      "size": 1880,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c26516371e853553042e26a38c6334844c1ac4e9"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_05.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45ffb1f7b09f9d2589060766fcc9443c835b58fa",
+      "size": 2430,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/45ffb1f7b09f9d2589060766fcc9443c835b58fa"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_06.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1c19651d7a52fc055ca35f30b54e03fc7887484",
+      "size": 1627,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/f1c19651d7a52fc055ca35f30b54e03fc7887484"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_07.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2eab75cf8dd11e2fe67aaf799b2ec97cb2355a68",
+      "size": 1797,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/2eab75cf8dd11e2fe67aaf799b2ec97cb2355a68"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_08.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a6b957091bd75f0e54efeaed0bf621c5224dfdb",
+      "size": 1196,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/6a6b957091bd75f0e54efeaed0bf621c5224dfdb"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_09.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "434ec323f799ab51c511918e7237feb43aec206d",
+      "size": 4476,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/434ec323f799ab51c511918e7237feb43aec206d"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_10.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf79fc134dd10b79d4178be741d4d5729f11d665",
+      "size": 1826,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/cf79fc134dd10b79d4178be741d4d5729f11d665"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_01.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f90a037983c0a21c40479a48d526b79051a1303f",
+      "size": 2605,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/f90a037983c0a21c40479a48d526b79051a1303f"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_02.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eccf4bdaeea479bc02ce99ae5b32780c41154a86",
+      "size": 3405,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/eccf4bdaeea479bc02ce99ae5b32780c41154a86"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_03.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9d1941b2776b8c95f71c9e8501af934743f0518",
+      "size": 3812,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c9d1941b2776b8c95f71c9e8501af934743f0518"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_04.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6e641ee2766c670ef3f7a46da1dac1b722e8077",
+      "size": 3381,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/b6e641ee2766c670ef3f7a46da1dac1b722e8077"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_05.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66ce9798b2953c98991d65c6a673f3cc8ba23e96",
+      "size": 4086,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/66ce9798b2953c98991d65c6a673f3cc8ba23e96"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_06.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "611a845585edcb513c0d9d8f189bce3675914c81",
+      "size": 3874,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/611a845585edcb513c0d9d8f189bce3675914c81"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_07.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e22f8bdf8ffd14414fda13aeea14b5712aeb172",
+      "size": 3340,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/2e22f8bdf8ffd14414fda13aeea14b5712aeb172"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_08.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b141239f4867534b05d9d218027e44d48e920de2",
+      "size": 3485,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/b141239f4867534b05d9d218027e44d48e920de2"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_09.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8252a7eabe8c6010aa280c175a745ee109019029",
+      "size": 5016,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/8252a7eabe8c6010aa280c175a745ee109019029"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_10.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26043875702eb52721e1cbb874b68ec3255e31bf",
+      "size": 3843,
+      "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/26043875702eb52721e1cbb874b68ec3255e31bf"
+    }
+  ],
+  "section_16_08_initial_and_rerun": {
+    "source_revision": "dac1146409e3a8f4cefcb1bd63de93d9d0dabcf9",
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+      "assertions_enabled": true
+    },
+    "timeout_seconds": 15,
+    "cwd": "each script parent",
+    "original_sources": [
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_derivative_boundaries.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "bff1219ed07ab139e680a646dcb894190ad7d4a9",
+        "size": 3030,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/bff1219ed07ab139e680a646dcb894190ad7d4a9"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_multistart_references.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "1f1a98c9760d316ecca20a100aac536538837c42",
+        "size": 2418,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/1f1a98c9760d316ecca20a100aac536538837c42"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_newton_range.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "56d15b415ca6530bcc68931bb63c41daa809d766",
+        "size": 4045,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/56d15b415ca6530bcc68931bb63c41daa809d766"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_optimizer_status_contract.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c907a3bfb2a61c88b45f48105e0d9847bc6a6266",
+        "size": 3131,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c907a3bfb2a61c88b45f48105e0d9847bc6a6266"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_scaling_references.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cfacc11137400a448c150100dd2072df54e8d22b",
+        "size": 2583,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/cfacc11137400a448c150100dd2072df54e8d22b"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_secant_boundaries.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "d0ef9bc252359aa827f7e8576ae915a33f418ab8",
+        "size": 3403,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/d0ef9bc252359aa827f7e8576ae915a33f418ab8"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_01.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "55419fb38c5e9bd229c95b09944843cd41474c05",
+        "size": 1454,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/55419fb38c5e9bd229c95b09944843cd41474c05"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_02.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c482f2356b5944717e434f0621eb9033c9ac7eca",
+        "size": 1836,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c482f2356b5944717e434f0621eb9033c9ac7eca"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_03.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6e70c1d031a01c10229e44c1f55228f0f09e2491",
+        "size": 2090,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/6e70c1d031a01c10229e44c1f55228f0f09e2491"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_04.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c26516371e853553042e26a38c6334844c1ac4e9",
+        "size": 1880,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c26516371e853553042e26a38c6334844c1ac4e9"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_05.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "45ffb1f7b09f9d2589060766fcc9443c835b58fa",
+        "size": 2430,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/45ffb1f7b09f9d2589060766fcc9443c835b58fa"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_06.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f1c19651d7a52fc055ca35f30b54e03fc7887484",
+        "size": 1627,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/f1c19651d7a52fc055ca35f30b54e03fc7887484"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_07.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2eab75cf8dd11e2fe67aaf799b2ec97cb2355a68",
+        "size": 1797,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/2eab75cf8dd11e2fe67aaf799b2ec97cb2355a68"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_08.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "6a6b957091bd75f0e54efeaed0bf621c5224dfdb",
+        "size": 1196,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/6a6b957091bd75f0e54efeaed0bf621c5224dfdb"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_09.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "434ec323f799ab51c511918e7237feb43aec206d",
+        "size": 4476,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/434ec323f799ab51c511918e7237feb43aec206d"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/check_section_16_10.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "cf79fc134dd10b79d4178be741d4d5729f11d665",
+        "size": 1826,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/cf79fc134dd10b79d4178be741d4d5729f11d665"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_01.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "f90a037983c0a21c40479a48d526b79051a1303f",
+        "size": 2605,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/f90a037983c0a21c40479a48d526b79051a1303f"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_02.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "eccf4bdaeea479bc02ce99ae5b32780c41154a86",
+        "size": 3405,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/eccf4bdaeea479bc02ce99ae5b32780c41154a86"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_03.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "c9d1941b2776b8c95f71c9e8501af934743f0518",
+        "size": 3812,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/c9d1941b2776b8c95f71c9e8501af934743f0518"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_04.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b6e641ee2766c670ef3f7a46da1dac1b722e8077",
+        "size": 3381,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/b6e641ee2766c670ef3f7a46da1dac1b722e8077"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_05.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "66ce9798b2953c98991d65c6a673f3cc8ba23e96",
+        "size": 4086,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/66ce9798b2953c98991d65c6a673f3cc8ba23e96"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_06.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "611a845585edcb513c0d9d8f189bce3675914c81",
+        "size": 3874,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/611a845585edcb513c0d9d8f189bce3675914c81"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_07.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "2e22f8bdf8ffd14414fda13aeea14b5712aeb172",
+        "size": 3340,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/2e22f8bdf8ffd14414fda13aeea14b5712aeb172"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_08.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "b141239f4867534b05d9d218027e44d48e920de2",
+        "size": 3485,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/b141239f4867534b05d9d218027e44d48e920de2"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_09.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "8252a7eabe8c6010aa280c175a745ee109019029",
+        "size": 5016,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/8252a7eabe8c6010aa280c175a745ee109019029"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-16/code/section_16_10.py",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "26043875702eb52721e1cbb874b68ec3255e31bf",
+        "size": 3843,
+        "url": "https://api.github.com/repos/sssamant21/python-financial-mathematics/git/blobs/26043875702eb52721e1cbb874b68ec3255e31bf"
+      }
+    ],
+    "initial": {
+      "probes": [
+        {
+          "errors": [
+            1e+308,
+            1e+308
+          ],
+          "exception": "ValueError",
+          "message": "mae must be finite"
+        },
+        {
+          "errors": [
+            1e+308,
+            1,
+            -1e+308
+          ],
+          "exception": "ValueError",
+          "message": "mae must be finite"
+        },
+        {
+          "errors": [
+            1e-200,
+            -2e-200
+          ],
+          "value": {
+            "mae": 1.5e-200,
+            "rmse": 0,
+            "bias": -5e-201,
+            "max_abs": 2e-200
+          }
+        },
+        {
+          "errors": [
+            5e-324,
+            -5e-324
+          ],
+          "value": {
+            "mae": 5e-324,
+            "rmse": 0,
+            "bias": 0,
+            "max_abs": 5e-324
+          }
+        }
+      ],
+      "regression": {
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/check_residual_metric_boundaries.py\", line 75, in <module>\n    print(check())\n          ^^^^^^^\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/check_residual_metric_boundaries.py\", line 34, in check\n    expected, actual = reference(values),metrics(values)\n                                         ^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/section_16_08.py\", line 47, in metrics\n    return {\"mae\":finite(sum(abs(v) for v in e)/n,\"mae\"),\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/section_16_08.py\", line 16, in finite\n    raise ValueError(f\"{name} must be finite\")\nValueError: mae must be finite\n"
+      }
+    },
+    "rerun_manifest": [
+      {
+        "path": "check_derivative_boundaries.py",
+        "sha": "bff1219ed07ab139e680a646dcb894190ad7d4a9"
+      },
+      {
+        "path": "check_multistart_references.py",
+        "sha": "1f1a98c9760d316ecca20a100aac536538837c42"
+      },
+      {
+        "path": "check_newton_range.py",
+        "sha": "56d15b415ca6530bcc68931bb63c41daa809d766"
+      },
+      {
+        "path": "check_optimizer_status_contract.py",
+        "sha": "c907a3bfb2a61c88b45f48105e0d9847bc6a6266"
+      },
+      {
+        "path": "check_residual_metric_boundaries.py",
+        "sha": "444e8803bde73d2b6d2c1cd7d3c1e51143fbc13c"
+      },
+      {
+        "path": "check_scaling_references.py",
+        "sha": "cfacc11137400a448c150100dd2072df54e8d22b"
+      },
+      {
+        "path": "check_secant_boundaries.py",
+        "sha": "d0ef9bc252359aa827f7e8576ae915a33f418ab8"
+      },
+      {
+        "path": "check_section_16_01.py",
+        "sha": "55419fb38c5e9bd229c95b09944843cd41474c05"
+      },
+      {
+        "path": "check_section_16_02.py",
+        "sha": "c482f2356b5944717e434f0621eb9033c9ac7eca"
+      },
+      {
+        "path": "check_section_16_03.py",
+        "sha": "6e70c1d031a01c10229e44c1f55228f0f09e2491"
+      },
+      {
+        "path": "check_section_16_04.py",
+        "sha": "c26516371e853553042e26a38c6334844c1ac4e9"
+      },
+      {
+        "path": "check_section_16_05.py",
+        "sha": "45ffb1f7b09f9d2589060766fcc9443c835b58fa"
+      },
+      {
+        "path": "check_section_16_06.py",
+        "sha": "f1c19651d7a52fc055ca35f30b54e03fc7887484"
+      },
+      {
+        "path": "check_section_16_07.py",
+        "sha": "2eab75cf8dd11e2fe67aaf799b2ec97cb2355a68"
+      },
+      {
+        "path": "check_section_16_08.py",
+        "sha": "6a6b957091bd75f0e54efeaed0bf621c5224dfdb"
+      },
+      {
+        "path": "check_section_16_09.py",
+        "sha": "434ec323f799ab51c511918e7237feb43aec206d"
+      },
+      {
+        "path": "check_section_16_10.py",
+        "sha": "cf79fc134dd10b79d4178be741d4d5729f11d665"
+      },
+      {
+        "path": "section_16_01.py",
+        "sha": "f90a037983c0a21c40479a48d526b79051a1303f"
+      },
+      {
+        "path": "section_16_02.py",
+        "sha": "eccf4bdaeea479bc02ce99ae5b32780c41154a86"
+      },
+      {
+        "path": "section_16_03.py",
+        "sha": "c9d1941b2776b8c95f71c9e8501af934743f0518"
+      },
+      {
+        "path": "section_16_04.py",
+        "sha": "b6e641ee2766c670ef3f7a46da1dac1b722e8077"
+      },
+      {
+        "path": "section_16_05.py",
+        "sha": "66ce9798b2953c98991d65c6a673f3cc8ba23e96"
+      },
+      {
+        "path": "section_16_06.py",
+        "sha": "611a845585edcb513c0d9d8f189bce3675914c81"
+      },
+      {
+        "path": "section_16_07.py",
+        "sha": "2e22f8bdf8ffd14414fda13aeea14b5712aeb172"
+      },
+      {
+        "path": "section_16_08.py",
+        "sha": "5a67719acbc9d1b501cb59f19f9685a9162253ab"
+      },
+      {
+        "path": "section_16_09.py",
+        "sha": "8252a7eabe8c6010aa280c175a745ee109019029"
+      },
+      {
+        "path": "section_16_10.py",
+        "sha": "26043875702eb52721e1cbb874b68ec3255e31bf"
+      }
+    ],
+    "compiled": 27,
+    "runs": [
+      {
+        "path": "check_derivative_boundaries.py",
+        "exit_code": 0,
+        "stdout": "{'guard_cases': 35, 'exact_polynomial_pairs': 9, 'unequal_offset_cases': 1, 'nonfinite_result_cases': 3}\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_multistart_references.py",
+        "exit_code": 0,
+        "stdout": "PASS: three independent stationary roots, four converged starts, failed/mixed pools and stationary-maximum distinction\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_newton_range.py",
+        "exit_code": 0,
+        "stdout": "{'finite_range_update_pairs': 6, 'scaled_update_pairs': 28, 'one_iteration_scaled_solves': 7, 'single_rounding_pairs': 2, 'absolute_stopping_scale_examples': 2, 'invalid_cases': 23, 'final_rounding_limits': 2}\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_optimizer_status_contract.py",
+        "exit_code": 0,
+        "stdout": "PASS: nine exact Armijo boundaries, backtracking counts and selected stationary/stagnation/budget/no-descent states\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_residual_metric_boundaries.py",
+        "exit_code": 0,
+        "stdout": "{'metric_reference_pairs': 32, 'cancellation_permutations': 6, 'invalid_cases': 39, 'weighted_residual_references': 2}\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_scaling_references.py",
+        "exit_code": 0,
+        "stdout": "PASS: scaling Hessians/conditions, four transforms, twelve curvature stencils and six scalar mode runs\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_secant_boundaries.py",
+        "exit_code": 0,
+        "stdout": "{'exact_quadratic_pairs': 12, 'adjacent_threshold_gates': 6, 'rounded_product_boundary': 1, 'absolute_threshold_rejections': 2, 'invalid_callback_or_range_cases': 19}\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_01.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.1 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_02.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.2 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_03.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.3 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_04.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.4 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_05.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.5 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_06.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.6 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_07.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.7 independent reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_08.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.8 analytic reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_09.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.9 independent analytic reference checks\n",
+        "stderr": ""
+      },
+      {
+        "path": "check_section_16_10.py",
+        "exit_code": 0,
+        "stdout": "PASS: Section 16.10 independent analytic reference checks\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "integration_initial": {
+    "source_revision": "1dcae51ee5b21525ece7bb0185b6dbe4a7c9d6bf",
+    "probes": [
+      {
+        "section": "09",
+        "case": "large",
+        "repr": "{'residuals': (-1e+308, -1e+308), 'mae': inf, 'rmse': inf, 'bias': -inf, 'max_abs': 1e+308}"
+      },
+      {
+        "section": "09",
+        "case": "tiny",
+        "repr": "{'residuals': (1e-200, -2e-200), 'mae': 1.5e-200, 'rmse': 0.0, 'bias': -5e-201, 'max_abs': 2e-200}"
+      },
+      {
+        "section": "10",
+        "case": "large",
+        "repr": "{'mae': inf, 'rmse': inf, 'bias': -inf, 'max_abs': 1e+308}"
+      },
+      {
+        "section": "10",
+        "case": "tiny",
+        "repr": "{'mae': 1.5e-200, 'rmse': 0.0, 'bias': -5e-201, 'max_abs': 2e-200}"
+      }
+    ],
+    "regression": {
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/check_metric_integration.py\", line 47, in <module>\n    print(check())\n          ^^^^^^^\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/check_metric_integration.py\", line 26, in check\n    checked(actual,expected)\n  File \"/workspace/scratch/45f84313db40/residual_metric_followup/check_metric_integration.py\", line 11, in checked\n    assert actual[key] == expected[key],(key,actual,expected)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('mae', {'residuals': (-1e+308, -1e+308), 'mae': inf, 'rmse': inf, 'bias': -inf, 'max_abs': 1e+308}, {'mae': 1e+308, 'bias': -1e+308, 'rmse': 1e+308, 'max_abs': 1e+308})\n"
+    }
+  },
+  "rerun_manifest": [
+    {
+      "path": "check_derivative_boundaries.py",
+      "sha": "bff1219ed07ab139e680a646dcb894190ad7d4a9"
+    },
+    {
+      "path": "check_metric_integration.py",
+      "sha": "9117f0c7cfd5a8d0f6ea420f8c5cdb9b3b35e08e"
+    },
+    {
+      "path": "check_multistart_references.py",
+      "sha": "1f1a98c9760d316ecca20a100aac536538837c42"
+    },
+    {
+      "path": "check_newton_range.py",
+      "sha": "56d15b415ca6530bcc68931bb63c41daa809d766"
+    },
+    {
+      "path": "check_optimizer_status_contract.py",
+      "sha": "c907a3bfb2a61c88b45f48105e0d9847bc6a6266"
+    },
+    {
+      "path": "check_residual_metric_boundaries.py",
+      "sha": "444e8803bde73d2b6d2c1cd7d3c1e51143fbc13c"
+    },
+    {
+      "path": "check_scaling_references.py",
+      "sha": "cfacc11137400a448c150100dd2072df54e8d22b"
+    },
+    {
+      "path": "check_secant_boundaries.py",
+      "sha": "d0ef9bc252359aa827f7e8576ae915a33f418ab8"
+    },
+    {
+      "path": "check_section_16_01.py",
+      "sha": "55419fb38c5e9bd229c95b09944843cd41474c05"
+    },
+    {
+      "path": "check_section_16_02.py",
+      "sha": "c482f2356b5944717e434f0621eb9033c9ac7eca"
+    },
+    {
+      "path": "check_section_16_03.py",
+      "sha": "6e70c1d031a01c10229e44c1f55228f0f09e2491"
+    },
+    {
+      "path": "check_section_16_04.py",
+      "sha": "c26516371e853553042e26a38c6334844c1ac4e9"
+    },
+    {
+      "path": "check_section_16_05.py",
+      "sha": "45ffb1f7b09f9d2589060766fcc9443c835b58fa"
+    },
+    {
+      "path": "check_section_16_06.py",
+      "sha": "f1c19651d7a52fc055ca35f30b54e03fc7887484"
+    },
+    {
+      "path": "check_section_16_07.py",
+      "sha": "2eab75cf8dd11e2fe67aaf799b2ec97cb2355a68"
+    },
+    {
+      "path": "check_section_16_08.py",
+      "sha": "6a6b957091bd75f0e54efeaed0bf621c5224dfdb"
+    },
+    {
+      "path": "check_section_16_09.py",
+      "sha": "434ec323f799ab51c511918e7237feb43aec206d"
+    },
+    {
+      "path": "check_section_16_10.py",
+      "sha": "cf79fc134dd10b79d4178be741d4d5729f11d665"
+    },
+    {
+      "path": "section_16_01.py",
+      "sha": "f90a037983c0a21c40479a48d526b79051a1303f"
+    },
+    {
+      "path": "section_16_02.py",
+      "sha": "eccf4bdaeea479bc02ce99ae5b32780c41154a86"
+    },
+    {
+      "path": "section_16_03.py",
+      "sha": "c9d1941b2776b8c95f71c9e8501af934743f0518"
+    },
+    {
+      "path": "section_16_04.py",
+      "sha": "b6e641ee2766c670ef3f7a46da1dac1b722e8077"
+    },
+    {
+      "path": "section_16_05.py",
+      "sha": "66ce9798b2953c98991d65c6a673f3cc8ba23e96"
+    },
+    {
+      "path": "section_16_06.py",
+      "sha": "611a845585edcb513c0d9d8f189bce3675914c81"
+    },
+    {
+      "path": "section_16_07.py",
+      "sha": "2e22f8bdf8ffd14414fda13aeea14b5712aeb172"
+    },
+    {
+      "path": "section_16_08.py",
+      "sha": "5a67719acbc9d1b501cb59f19f9685a9162253ab"
+    },
+    {
+      "path": "section_16_09.py",
+      "sha": "49070112f0cbc210b9e28bd2019195f894849313"
+    },
+    {
+      "path": "section_16_10.py",
+      "sha": "68bb844faef270e1c5748f7e6386a5c5d00fe797"
+    }
+  ],
+  "compiled": 28,
+  "runs": [
+    {
+      "path": "check_derivative_boundaries.py",
+      "exit_code": 0,
+      "stdout": "{'guard_cases': 35, 'exact_polynomial_pairs': 9, 'unequal_offset_cases': 1, 'nonfinite_result_cases': 3}\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_metric_integration.py",
+      "exit_code": 0,
+      "stdout": "{'entry_point_reference_sets': 6, 'shared_helper_calls': 2, 'strict_json_reference_sets': 8}\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_multistart_references.py",
+      "exit_code": 0,
+      "stdout": "PASS: three independent stationary roots, four converged starts, failed/mixed pools and stationary-maximum distinction\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_newton_range.py",
+      "exit_code": 0,
+      "stdout": "{'finite_range_update_pairs': 6, 'scaled_update_pairs': 28, 'one_iteration_scaled_solves': 7, 'single_rounding_pairs': 2, 'absolute_stopping_scale_examples': 2, 'invalid_cases': 23, 'final_rounding_limits': 2}\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_optimizer_status_contract.py",
+      "exit_code": 0,
+      "stdout": "PASS: nine exact Armijo boundaries, backtracking counts and selected stationary/stagnation/budget/no-descent states\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_residual_metric_boundaries.py",
+      "exit_code": 0,
+      "stdout": "{'metric_reference_pairs': 32, 'cancellation_permutations': 6, 'invalid_cases': 39, 'weighted_residual_references': 2}\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_scaling_references.py",
+      "exit_code": 0,
+      "stdout": "PASS: scaling Hessians/conditions, four transforms, twelve curvature stencils and six scalar mode runs\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_secant_boundaries.py",
+      "exit_code": 0,
+      "stdout": "{'exact_quadratic_pairs': 12, 'adjacent_threshold_gates': 6, 'rounded_product_boundary': 1, 'absolute_threshold_rejections': 2, 'invalid_callback_or_range_cases': 19}\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_01.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.1 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_02.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.2 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_03.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.3 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_04.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.4 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_05.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.5 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_06.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.6 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_07.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.7 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_08.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.8 analytic reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_09.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.9 independent analytic reference checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "check_section_16_10.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 16.10 independent analytic reference checks\n",
+      "stderr": ""
+    }
+  ],
+  "corrected_source_revision": "c42fb1965a8febe91dc9ed310b2db9b0d0cb9ca2",
+  "section_16_08_correction": {
+    "commit_sha": "cabf4837657802d64fc823a8990cd2eec1681750",
+    "content_sha": "5a67719acbc9d1b501cb59f19f9685a9162253ab"
+  },
+  "integration_corrections": {
+    "section_16_09": {
+      "commit_sha": "11c1bbe914913eb24489d77d3f2050bde9c1c009",
+      "content_sha": "49070112f0cbc210b9e28bd2019195f894849313"
+    },
+    "section_16_10": {
+      "commit_sha": "87f38a5f825c089f3946700a526c2b30b651c315",
+      "content_sha": "68bb844faef270e1c5748f7e6386a5c5d00fe797"
+    }
+  },
+  "full_runtime_report": "runtime-refresh-2026-10-30-r6.md"
+}
