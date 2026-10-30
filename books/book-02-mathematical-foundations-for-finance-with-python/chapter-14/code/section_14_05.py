@@ -36,8 +36,8 @@ def cholesky_2x2(matrix):
     reconstruction=((finite(l11*l11,"reconstruction"),finite(l11*l21,"reconstruction")),
                     (finite(l11*l21,"reconstruction"),
                      finite(math.fsum((l21*l21,l22*l22)),"reconstruction")))
-    error=finite(math.sqrt(math.fsum(
-        (rows[i][j]-reconstruction[i][j])**2
+    error=finite(math.hypot(*(
+        rows[i][j]-reconstruction[i][j]
         for i in range(2) for j in range(2))),"reconstruction error")
     determinant=finite((l11*l22)**2,"determinant")
     return {"factor":factor,"reconstructed_matrix":reconstruction,
