@@ -1,0 +1,308 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 27,
+  "predicates": 40,
+  "passed": 40,
+  "failed": 0,
+  "sources": [
+    {
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "code_sha256": "7cfa28feabcad5279f6530d76aa03bd38862dec87cfb581285f2c9a020c9c314"
+    },
+    {
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "code_sha256": "721a31a183f99f2b65f30690c338f1098ab0829cc5723549e29f8a42b97ce851"
+    },
+    {
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "code_sha256": "cc7cee56c6d400589ee69a6b2560165f384b7d87164a86902bef5c1dba6373bd"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "4.4-E1",
+      "label": "key versus value membership",
+      "actual": "(True, False, True)",
+      "expected": "(True, False, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E2",
+      "label": "required lookup",
+      "actual": "KeyError",
+      "expected": "KeyError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E2",
+      "label": "get is absence not zero",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E4",
+      "label": "identical ID rejected",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E4",
+      "label": "failed index leaves source",
+      "actual": "{'payment_id': 'P001', 'amount': Decimal('100'), 'currency': 'USD'}",
+      "expected": "{'payment_id': 'P001', 'amount': Decimal('100'), 'currency': 'USD'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E5",
+      "label": "case distinct IDs retained",
+      "actual": "['P001', 'p001']",
+      "expected": "['P001', 'p001']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E5",
+      "label": "same amounts preserved",
+      "actual": "[Decimal('100'), Decimal('100')]",
+      "expected": "[Decimal('100'), Decimal('100')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E7",
+      "label": "mutable descendants shared",
+      "actual": "['first', 'second']",
+      "expected": "['first', 'second']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.4-E8",
+      "label": "reinsert moves key to end",
+      "actual": "['A', 'C', 'B']",
+      "expected": "['A', 'C', 'B']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E1",
+      "label": "empty dictionary versus set",
+      "actual": "('dict', 'set')",
+      "expected": "('dict', 'set')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E2",
+      "label": "four independent expected sets",
+      "actual": "{'missing': {'A'}, 'unexpected': {'D'}, 'matched': {'C', 'B'}, 'duplicate_received': set()}",
+      "expected": "{'missing': {'A'}, 'unexpected': {'D'}, 'matched': {'C', 'B'}, 'duplicate_received': set()}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E3",
+      "label": "unexpected duplicate evidence",
+      "actual": "{'missing': {'A'}, 'unexpected': {'B'}, 'matched': set(), 'duplicate_received': {'B'}}",
+      "expected": "{'missing': {'A'}, 'unexpected': {'B'}, 'matched': set(), 'duplicate_received': {'B'}}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E4",
+      "label": "remove missing",
+      "actual": "KeyError",
+      "expected": "KeyError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E4",
+      "label": "discard missing",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E4",
+      "label": "set preserved",
+      "actual": "{'A'}",
+      "expected": "{'A'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E5",
+      "label": "set loses repeated amount",
+      "actual": "(2, 1)",
+      "expected": "(2, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "expected partition",
+      "actual": "set()",
+      "expected": "set()",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "received partition",
+      "actual": "set()",
+      "expected": "set()",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "disjoint partitions",
+      "actual": "(set(), set())",
+      "expected": "(set(), set())",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "inputs preserved",
+      "actual": "([], [])",
+      "expected": "([], [])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "expected partition",
+      "actual": "{'C', 'B', 'A'}",
+      "expected": "{'C', 'B', 'A'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "received partition",
+      "actual": "{'C', 'D', 'B'}",
+      "expected": "{'C', 'B', 'D'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "disjoint partitions",
+      "actual": "(set(), set())",
+      "expected": "(set(), set())",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "inputs preserved",
+      "actual": "(['A', 'B', 'C'], ['B', 'C', 'D'])",
+      "expected": "(['A', 'B', 'C'], ['B', 'C', 'D'])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "expected partition",
+      "actual": "{'A'}",
+      "expected": "{'A'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "received partition",
+      "actual": "{'B'}",
+      "expected": "{'B'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "disjoint partitions",
+      "actual": "(set(), set())",
+      "expected": "(set(), set())",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "inputs preserved",
+      "actual": "(['A'], ['B', 'B'])",
+      "expected": "(['A'], ['B', 'B'])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "expected partition",
+      "actual": "{'B', 'A'}",
+      "expected": "{'B', 'A'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "received partition",
+      "actual": "{'B', 'A'}",
+      "expected": "{'B', 'A'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "disjoint partitions",
+      "actual": "(set(), set())",
+      "expected": "(set(), set())",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E7",
+      "label": "inputs preserved",
+      "actual": "(['A', 'B'], ['A', 'B', 'B'])",
+      "expected": "(['A', 'B'], ['A', 'B', 'B'])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.5-E8",
+      "label": "alphabetic is not arrival order",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E3",
+      "label": "missing inner ID",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E3",
+      "label": "valid baseline preserved",
+      "actual": "{'portfolio_id': 'PORT-01', 'currency': 'USD', 'positions': [{'instrument_id': 'FUND-A', 'quantity': Decimal('0')}, {'instrument_id': 'FUND-B', 'quantity': Decimal('25.5')}]}",
+      "expected": "{'portfolio_id': 'PORT-01', 'currency': 'USD', 'positions': [{'instrument_id': 'FUND-A', 'quantity': Decimal('0')}, {'instrument_id': 'FUND-B', 'quantity': Decimal('25.5')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E4",
+      "label": "outer copy shares positions",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E5",
+      "label": "three aliases not independent",
+      "actual": "[Decimal('2'), Decimal('2'), Decimal('2')]",
+      "expected": "[Decimal('2'), Decimal('2'), Decimal('2')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E2",
+      "label": "explicit empty positions valid",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E2",
+      "label": "missing positions invalid",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.6-E7",
+      "label": "proposed wrapper retains empty identity",
+      "actual": "{'portfolio_id': 'PORT-01', 'currency': 'USD', 'rows': []}",
+      "expected": "{'portfolio_id': 'PORT-01', 'currency': 'USD', 'rows': []}",
+      "status": "PASS"
+    }
+  ],
+  "source_revision": "ac223164d72403638340a7ef60cd099ab30e5f8e"
+}

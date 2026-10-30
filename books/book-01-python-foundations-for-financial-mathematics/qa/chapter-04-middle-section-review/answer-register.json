@@ -1,0 +1,248 @@
+{
+  "baseline": "ac223164d72403638340a7ef60cd099ab30e5f8e",
+  "records": [
+    {
+      "id": "4.4-E1",
+      "prompt": "Demonstrate key membership separately from value membership.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "key in mapping checks keys; value in mapping.values() checks values. The fixture distinguishes a payment_id key from its VALUE contents; key membership does not inspect record fields recursively."
+    },
+    {
+      "id": "4.4-E2",
+      "prompt": "Compare required lookup with get for a missing mandatory amount.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "A missing mandatory amount raises KeyError through direct lookup. get returns None by default; supplying0 would silently replace unknown with a known amount. Validate required schema before calculation rather than treating get as validation."
+    },
+    {
+      "id": "4.4-E3",
+      "prompt": "Explain why changing currency metadata is not currency conversion.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Changing a currency label changes metadata only. Conversion requires an authorized FX convention/rate/source/as-of time and an actual numerical calculation with declared rounding. Do not relabel the unchanged amount as a converted value."
+    },
+    {
+      "id": "4.4-E4",
+      "prompt": "Show why two identical IDs must be checked before dictionary assignment.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Check duplicate payment IDs before dictionary assignment; otherwise the later row silently overwrites the earlier one. Exact source index_payments rejects identical duplicate records with ValueError and preserves input."
+    },
+    {
+      "id": "4.4-E5",
+      "prompt": "Add a test accepting case-distinct identifiers and document the policy.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Exact case-sensitive source policy accepts P001 and p001 as distinct identifiers. Both amounts remain100; no normalization is applied. Case-distinct does not prove distinct real-world payments without a documented source identity policy."
+    },
+    {
+      "id": "4.4-E6",
+      "prompt": "Propose a compound key for payments from multiple source systems.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Proposed key:(source_system,payment_id), or include account/dataset scope where required by upstream uniqueness. Define correction revision separately. This is not silently added to the strict compact source schema."
+    },
+    {
+      "id": "4.4-E7",
+      "prompt": "Explain how adding mutable notes would change copy isolation.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "A mutable notes list invalidates the current immutable-scalar copy rationale. A shallow dictionary copy aliases that list; reconstruct validated descendants or define deliberate sharing. The probe demonstrates shared mutation."
+    },
+    {
+      "id": "4.4-E8",
+      "prompt": "Demonstrate deletion and reinsertion order.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Deleting B from A,B,C then reinserting B produces key order A,C,B. Dictionary order reflects current insertion history, not a payment timeline or sorting criterion."
+    },
+    {
+      "id": "4.4-E9",
+      "prompt": "Describe an explicit correction policy without changing the lab's duplicate-rejection contract.",
+      "source": "chapter-04/4.04-dictionaries.md",
+      "source_sha256": "fea6ce8ceebcdcc607455efa4547bca0f2b6a6f639a50b41ac45de89ca3b3528",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Proposed corrections are append-only revisioned events with original identity, supersedes/reference, reason and effective/source timestamps. Validate uniqueness and active-version selection explicitly. Keep the current duplicate-rejection contract unchanged; global revision and transaction enforcement need separate implementation."
+    },
+    {
+      "id": "4.5-E1",
+      "prompt": "Explain why {} and set() create different containers.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "{} creates a dictionary; set() creates an empty set. A set literal needs members such as {A}; empty braces do not mean empty membership."
+    },
+    {
+      "id": "4.5-E2",
+      "prompt": "Reconcile expected A, B, C against received B, C, D and state both directional differences.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Expected{A,B,C},received{B,C,D}: missing=expected\u2212received={A};unexpected=received\u2212expected={D};matched={B,C};duplicate_received is empty. Direction matters."
+    },
+    {
+      "id": "4.5-E3",
+      "prompt": "Add a test for a repeated unexpected ID.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Expected[A],received[B,B] reports missing{A},unexpected{B},matched{},duplicate_received{B}. Duplicates are evidence of repeated received IDs, not excess-occurrence counts or monetary reconciliation."
+    },
+    {
+      "id": "4.5-E4",
+      "prompt": "Demonstrate remove and discard on an absent identifier.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "remove(X) raises KeyError when absent; discard(X) returns None without changing the set. Neither chooses a financial missing-event policy automatically."
+    },
+    {
+      "id": "4.5-E5",
+      "prompt": "Explain why converting transactions directly to a set can lose valid repeated payments.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Converting equal transactions/amounts to a set collapses repeated equal values that may be legitimate separate payments. Preserve identified records and multiplicity first; value equality alone is not event identity."
+    },
+    {
+      "id": "4.5-E6",
+      "prompt": "Propose a compound identifier when different source systems can reuse payment IDs.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Use(source_system,payment_id) as a proposed minimum compound identity when systems reuse IDs; add account/source-version scope if upstream rules require it. Normalize only under an explicit reviewed policy."
+    },
+    {
+      "id": "4.5-E7",
+      "prompt": "Add tests for the partition invariants described above.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Checks exercise expected=missing\u222amatched and received_membership=unexpected\u222amatched, with both partition pairs disjoint, across empty/mixed/duplicate/all-matched fixtures. Inputs remain unchanged. duplicate_received is separate from these membership partitions."
+    },
+    {
+      "id": "4.5-E8",
+      "prompt": "Explain why sorted output is not a recovered event timeline.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Alphabetic sorted output supplies deterministic presentation, not recovered arrival/payment order. Preserve source sequence or timestamps/event ordinals if a timeline matters."
+    },
+    {
+      "id": "4.5-E9",
+      "prompt": "Describe what additional data is required to reconcile amounts and currencies after IDs match.",
+      "source": "chapter-04/4.05-sets.md",
+      "source_sha256": "abd22d9a157173fce91be8497f0af9ed4877c2e6d526819ab78a6ccfda1eb6c5",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "After IDs match, verify amounts/signs, currencies/scales, observation/source versions, effective dates, settlement/status, duplicate/correction treatment, fees and any FX/rounding/tolerance policy. ID equality alone cannot certify payment reconciliation."
+    },
+    {
+      "id": "4.6-E1",
+      "prompt": "Draw a field table for a portfolio containing accounts and positions before writing access expressions.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Proposed field table: portfolio(portfolio_id,report_currency,accounts:list); account(account_id,positions:list); position(position_id,instrument_id,quantity,quantity_unit). Specify types, required fields, uniqueness scopes, ordering and ownership at each level before access. This expanded account hierarchy is a design, not the current simpler portfolio schema."
+    },
+    {
+      "id": "4.6-E2",
+      "prompt": "Explain the difference between missing positions and an explicitly empty positions list.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Missing positions violates required schema; explicitly empty positions is valid and source flatten returns[]. Do not infer completeness or unknown data from emptiness. The executed fixtures distinguish both behaviors."
+    },
+    {
+      "id": "4.6-E3",
+      "prompt": "Add a test for a missing inner instrument_id.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "The source rejects a later position lacking instrument_id with ValueError. A valid earlier position cannot justify partial output. The untouched valid baseline is checked separately."
+    },
+    {
+      "id": "4.6-E4",
+      "prompt": "Demonstrate why a shallow portfolio copy still shares the positions list.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "dict(portfolio) copies the outer mapping but retains the same positions list and dictionaries; append through the copy is visible in the original. Copy depth must follow the declared ownership contract."
+    },
+    {
+      "id": "4.6-E5",
+      "prompt": "Explain why [position] * 3 does not create independent positions.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "[position]*3 repeats the same dictionary reference. Mutating one entry changes all three visible aliases; construct/reconstruct independent dictionaries if separate positions are intended."
+    },
+    {
+      "id": "4.6-E6",
+      "prompt": "Propose a lot-level identity policy allowing multiple lots of one instrument.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Proposed lot key:(portfolio_id,account_id,lot_id), retaining instrument_id as a reference and stating lot-ID uniqueness/version policy. Permit repeated instruments only under that new lot model; the current aggregate-position duplicate rule stays unchanged."
+    },
+    {
+      "id": "4.6-E7",
+      "prompt": "Describe how to preserve empty portfolio identity when flattening.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Current flatten_portfolio([] positions) returns no rows and therefore loses parent identity in the flat list. A supplemental wrapper retains portfolio_id,currency,rows=[]; retain original wrapper/metadata rather than inventing a sentinel holding."
+    },
+    {
+      "id": "4.6-E8",
+      "prompt": "Add mutable tags to a proposed schema and document its ownership policy before implementation.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Before adding tags, specify list-of-validated-text shape, ordering/duplicates, mutation owner, copy/reconstruction policy and failure rules. Do not accept arbitrary mutable descendants or weaken the current exact-field schema silently. An immutable tuple may suit captured tags if its scalar policy is validated."
+    },
+    {
+      "id": "4.6-E9",
+      "prompt": "Identify the additional metadata needed before calculating market value from quantities.",
+      "source": "chapter-04/4.06-nested-financial-structures.md",
+      "source_sha256": "ed5295f0eee98be411b2cb0f4bdeea64c985b73547147910539fe376a3bb3ddb",
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-04-middle-section-review/README.md",
+      "answer": "Market value needs instrument quantity units, price unit and quote currency, contract multiplier where relevant, price source/as-of time, catalog/security version, valuation date, FX basis if combining currencies, and declared arithmetic/rounding rules. Quantities alone are not comparable economic exposure."
+    }
+  ]
+}
