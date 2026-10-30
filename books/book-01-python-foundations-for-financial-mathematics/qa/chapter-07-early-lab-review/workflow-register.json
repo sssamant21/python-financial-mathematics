@@ -1,0 +1,302 @@
+[
+  {
+    "id": "7.1",
+    "source": "chapter-07/7.01-why-pandas.md",
+    "source_sha256": "5ad4c8827693f1f9c5e7b5501eb3c29d91a70583aed69ec4298e4018589ec87c",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "d913780ef0e5a6731dbfb19ebab24f8bdc1ad07b",
+    "contract": {
+      "question": "Align long-only opening weights and common-interval simple price returns by a unique complete asset set before contribution arithmetic.",
+      "inputs": "Two pandas Series, each 1\u201310000 values, flat unique trimmed nonempty text index; ordinary NumPy-backed i/u/f dtype, finite; nonnegative weights sum near one at atol1e\u221212/rtol0; returns>=\u22121. Order may differ.",
+      "outputs": "Independent aligned weight/return/contribution DataFrame in weight order and finite scalar total, no silent normalization.",
+      "oracle": "3/5\u00d71/10 + 3/10\u00d7(\u22121/20) = 9/200 =0.045; positional mismatch gives1/40=0.025.",
+      "limits": "Caller owns interval/currency/label provenance; original numeric inference cannot recover earlier Boolean mixing. Float conversion/range/underflow/materiality remain bounded limitations. This is price-only, not financed/flow/FX accounting."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Python3.12/pandas2.2.3/NumPy2.3.5 in dedicated environment",
+        "actual": "Prepared runtime version/options probe passed; fresh venv/install, shell activation, Windows/macOS and notebooks unexecuted",
+        "evidence": "results.json: environment command"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Independent sibling alignment.py/test_alignment.py in pandas_lab_71",
+        "actual": "Two exact complete listings reconstructed with retained hashes; no earlier lab dependency",
+        "evidence": "results.json: listing manifest and byte predicate"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Documented compileall from parent folder",
+        "actual": "Original compileall completed silently with exit0 inside owned temporary lab",
+        "evidence": "results.json: original compileall command"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Import calculation module without demonstration side effects",
+        "actual": "Quiet sibling-directory import has empty stdout/stderr and exit0",
+        "evidence": "results.json: quiet import command"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "Documented demonstration values, labels and line order",
+        "actual": "Complete output matches after whitespace-only normalization; numeric formatting, token order and line count preserved",
+        "evidence": "results.json: original demonstration command"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight discovered reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods",
+        "evidence": "results.json: original unittest discovery"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Known values, identities, domains and numeric-copy effects agree with source promises",
+        "actual": "Exact-source calls and dependency-ordered prose fences checked by separately labelled predicates; expected ValueErrors retain traces",
+        "evidence": "results.json: checks and prose manifests"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Financial units, prerequisite and scope contracts remain explicit",
+        "actual": "Caller owns interval/currency/label provenance; original numeric inference cannot recover earlier Boolean mixing. Float conversion/range/underflow/materiality remain bounded limitations. This is price-only, not financed/flow/FX accounting.",
+        "evidence": "REVIEW.md: section contract"
+      }
+    ],
+    "derived_units": 8
+  },
+  {
+    "id": "7.2",
+    "source": "chapter-07/7.02-series.md",
+    "source_sha256": "ab568e97e118c619ff8eae5239003e5db65df16ef2aeebf7877d3c8c6684038f",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "d913780ef0e5a6731dbfb19ebab24f8bdc1ad07b",
+    "contract": {
+      "question": "Construct an owned opening-value Series with explicit asset identity and metadata.",
+      "inputs": "Tuple of 1\u201310000 unique trimmed nonempty strings, matching one-dimensional inferred real numeric vector, finite and nonnegative; raw strings/Boolean/complex/object arrays rejected. Mixed Boolean/numeric source records require upstream checks.",
+      "outputs": "Owned float64 Series with index name asset and Series name opening_value. Zero or all-zero values accepted; positive-weight denominator is a later contract.",
+      "oracle": "ALPHA600+BETA300+CASH100=1000; label BETA and position1 both300 only in this fixture. Missing reindex slot has size2/count1 and strict sum missing.",
+      "limits": "Names do not validate valuation time/currency. Numeric deep-copy/export behavior is scoped, not recursive object immutability; large integer conversion and future aggregates may lose precision/overflow."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Python3.12/pandas2.2.3/NumPy2.3.5 in dedicated environment",
+        "actual": "Prepared runtime version/options probe passed; fresh venv/install, shell activation, Windows/macOS and notebooks unexecuted",
+        "evidence": "results.json: environment command"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Independent sibling series_lab.py/test_series_lab.py in pandas_lab_72",
+        "actual": "Two exact complete listings reconstructed with retained hashes; no earlier lab dependency",
+        "evidence": "results.json: listing manifest and byte predicate"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Documented compileall from parent folder",
+        "actual": "Original compileall completed silently with exit0 inside owned temporary lab",
+        "evidence": "results.json: original compileall command"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Import calculation module without demonstration side effects",
+        "actual": "Quiet sibling-directory import has empty stdout/stderr and exit0",
+        "evidence": "results.json: quiet import command"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "Documented demonstration values, labels and line order",
+        "actual": "Complete output matches after whitespace-only normalization; numeric formatting, token order and line count preserved",
+        "evidence": "results.json: original demonstration command"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight discovered reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods",
+        "evidence": "results.json: original unittest discovery"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Known values, identities, domains and numeric-copy effects agree with source promises",
+        "actual": "Exact-source calls and dependency-ordered prose fences checked by separately labelled predicates; expected ValueErrors retain traces",
+        "evidence": "results.json: checks and prose manifests"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Financial units, prerequisite and scope contracts remain explicit",
+        "actual": "Names do not validate valuation time/currency. Numeric deep-copy/export behavior is scoped, not recursive object immutability; large integer conversion and future aggregates may lose precision/overflow.",
+        "evidence": "REVIEW.md: section contract"
+      }
+    ],
+    "derived_units": 8
+  },
+  {
+    "id": "7.3",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "d913780ef0e5a6731dbfb19ebab24f8bdc1ad07b",
+    "contract": {
+      "question": "Validate a same-currency long-only holdings table and derive currency market values.",
+      "inputs": "DataFrame with 1\u201310000 rows, exact unique quantity/price columns, flat unique trimmed text asset index, ordinary NumPy-backed numeric columns, finite and nonnegative. Extra derived/currency columns rejected by narrow source schema.",
+      "outputs": "Independent float64 quantity/price/market_value table and finite scalar sum; original row identities preserved, canonical columns ordered.",
+      "oracle": "6\u00d7100+3\u00d7100+1\u00d7100=1000; alternate prices101.5,80.25,1 give850.75 by rational arithmetic.",
+      "limits": "Common currency/time/per-unit conventions are caller preconditions. Return table is mutable and market_value does not react to later edits. Zero values accepted. Float precision/tiny underflow/arbitrary magnitudes and live joins remain outside acceptance."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Python3.12/pandas2.2.3/NumPy2.3.5 in dedicated environment",
+        "actual": "Prepared runtime version/options probe passed; fresh venv/install, shell activation, Windows/macOS and notebooks unexecuted",
+        "evidence": "results.json: environment command"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Independent sibling holdings.py/test_holdings.py in pandas_lab_73",
+        "actual": "Two exact complete listings reconstructed with retained hashes; no earlier lab dependency",
+        "evidence": "results.json: listing manifest and byte predicate"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Documented compileall from parent folder",
+        "actual": "Original compileall completed silently with exit0 inside owned temporary lab",
+        "evidence": "results.json: original compileall command"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Import calculation module without demonstration side effects",
+        "actual": "Quiet sibling-directory import has empty stdout/stderr and exit0",
+        "evidence": "results.json: quiet import command"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "Documented demonstration values, labels and line order",
+        "actual": "Complete output matches after whitespace-only normalization; numeric formatting, token order and line count preserved",
+        "evidence": "results.json: original demonstration command"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight discovered reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods",
+        "evidence": "results.json: original unittest discovery"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Known values, identities, domains and numeric-copy effects agree with source promises",
+        "actual": "Exact-source calls and dependency-ordered prose fences checked by separately labelled predicates; expected ValueErrors retain traces",
+        "evidence": "results.json: checks and prose manifests"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Financial units, prerequisite and scope contracts remain explicit",
+        "actual": "Common currency/time/per-unit conventions are caller preconditions. Return table is mutable and market_value does not react to later edits. Zero values accepted. Float precision/tiny underflow/arbitrary magnitudes and live joins remain outside acceptance.",
+        "evidence": "REVIEW.md: section contract"
+      }
+    ],
+    "derived_units": 8
+  },
+  {
+    "id": "7.4",
+    "source": "chapter-07/7.04-indexing-and-selection.md",
+    "source_sha256": "58da8aeebca66b0edb8f6a3b71a83223436d6547ddca4b1428852719d7ea6b00",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "baseline": "d913780ef0e5a6731dbfb19ebab24f8bdc1ad07b",
+    "contract": {
+      "question": "Select required existing numeric rows/columns by explicit ordered labels, preserving table axes and independent numeric storage.",
+      "inputs": "DataFrame 1\u201310000 rows and1\u201320 columns with unique flat trimmed text axes; nonempty unique existing tuple row/column requests; selected columns ordinary NumPy-backed i/u/f. Source financial validation is required upstream.",
+      "outputs": "Deep-copied numeric DataFrame in requested axis order; singleton remains(1,1). Dtypes preserved; unknown helper keys fail ValueError.",
+      "oracle": "CASH then ALPHA with price/market_value gives [[100,100],[100,600]]; separate price110 repricing recomputes ALPHA660 and total1060.",
+      "limits": "Selector intentionally accepts NaN, infinity, negative values and stale derived fields. It validates selection identity, not valuation or completeness. External mask unknowns, discarded labels, Copy-on-Write/storage contexts and concurrency need explicit contracts."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "expected": "Python3.12/pandas2.2.3/NumPy2.3.5 in dedicated environment",
+        "actual": "Prepared runtime version/options probe passed; fresh venv/install, shell activation, Windows/macOS and notebooks unexecuted",
+        "evidence": "results.json: environment command"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "expected": "Independent sibling selection.py/test_selection.py in pandas_lab_74",
+        "actual": "Two exact complete listings reconstructed with retained hashes; no earlier lab dependency",
+        "evidence": "results.json: listing manifest and byte predicate"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "expected": "Documented compileall from parent folder",
+        "actual": "Original compileall completed silently with exit0 inside owned temporary lab",
+        "evidence": "results.json: original compileall command"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "expected": "Import calculation module without demonstration side effects",
+        "actual": "Quiet sibling-directory import has empty stdout/stderr and exit0",
+        "evidence": "results.json: quiet import command"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "expected": "Documented demonstration values, labels and line order",
+        "actual": "Complete output matches after whitespace-only normalization; numeric formatting, token order and line count preserved",
+        "evidence": "results.json: original demonstration command"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "expected": "Eight discovered reference methods",
+        "actual": "Eight original methods pass with FutureWarning as error; no new unittest methods",
+        "evidence": "results.json: original unittest discovery"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "expected": "Known values, identities, domains and numeric-copy effects agree with source promises",
+        "actual": "Exact-source calls and dependency-ordered prose fences checked by separately labelled predicates; expected ValueErrors retain traces",
+        "evidence": "results.json: checks and prose manifests"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "expected": "Financial units, prerequisite and scope contracts remain explicit",
+        "actual": "Selector intentionally accepts NaN, infinity, negative values and stale derived fields. It validates selection identity, not valuation or completeness. External mask unknowns, discarded labels, Copy-on-Write/storage contexts and concurrency need explicit contracts.",
+        "evidence": "REVIEW.md: section contract"
+      }
+    ],
+    "derived_units": 8
+  }
+]
