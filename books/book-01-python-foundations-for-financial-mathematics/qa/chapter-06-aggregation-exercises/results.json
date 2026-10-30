@@ -1,0 +1,249 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+  "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+  "listing_sha256": [
+    "bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721",
+    "03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 27,
+  "failed": 0,
+  "independent_oracles": {
+    "fifth_scenario_totals": [
+      "-60",
+      "0",
+      "60",
+      "120",
+      "40"
+    ],
+    "mean": "32",
+    "variance": "3616",
+    "std_decimal_60": "60.1331855134916330835157222523974224208242331496386948030932",
+    "single_position_std_decimal_60": "2.94392028877594895158801424231975132139154649364380594207007"
+  },
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_aggregate_variance_includes_joint_pattern (test_aggregation_lab.AggregationTests.test_aggregate_variance_includes_joint_pattern) ... ok\ntest_axis_and_keepdims (test_aggregation_lab.AggregationTests.test_axis_and_keepdims) ... ok\ntest_ddof_policy (test_aggregation_lab.AggregationTests.test_ddof_policy) ... ok\ntest_known_reductions (test_aggregation_lab.AggregationTests.test_known_reductions) ... ok\ntest_missing_and_invalid_structure (test_aggregation_lab.AggregationTests.test_missing_and_invalid_structure) ... ok\ntest_overflow_and_error_restoration (test_aggregation_lab.AggregationTests.test_overflow_and_error_restoration) ... ok\ntest_scalar_reference (test_aggregation_lab.AggregationTests.test_scalar_reference) ... ok\ntest_source_and_storage (test_aggregation_lab.AggregationTests.test_source_and_storage) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.038s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "aggregation_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "Axes: scenario, position\nInput shape: (4, 2)\nScenario totals: [-60.0, 0.0, 60.0, 120.0]\nPosition means: [50.0, -20.0]\nMin/max total: -60.00, 120.00\nMean total: 30.00\nStd total (ddof=0): 67.082039\nTotals with keepdims: (4, 1)\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.7-E1",
+      "label": "five totals independently added",
+      "actual": "[-60.0, 0.0, 60.0, 120.0, 40.0]",
+      "expected": "[-60.0, 0.0, 60.0, 120.0, 40.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E1",
+      "label": "mean/min/max",
+      "actual": "(32.0, -60.0, 120.0)",
+      "expected": "(32.0, -60.0, 120.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E1",
+      "label": "counts and position means",
+      "actual": "(5, 2, [50.0, -18.0])",
+      "expected": "(5, 2, [50.0, -18.0])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E1",
+      "label": "independent variance",
+      "actual": "Fraction(3616, 1)",
+      "expected": "Fraction(3616, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E1",
+      "label": "std against 60-digit decimal sqrt",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E2",
+      "label": "all-negative finite table accepted",
+      "actual": "([-7.0, -4.0], -7.0, -4.0, -5.5, 1.5)",
+      "expected": "([-7.0, -4.0], -7.0, -4.0, -5.5, 1.5)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E3",
+      "label": "scenario axis removed leaves position labels",
+      "actual": "[('A', 200.0), ('B', -80.0)]",
+      "expected": "[('A', 200.0), ('B', -80.0)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E3",
+      "label": "position axis removed leaves scenario labels",
+      "actual": "[('down', -60.0), ('flat', 0.0), ('up', 60.0), ('stress', 120.0)]",
+      "expected": "[('down', -60.0), ('flat', 0.0), ('up', 60.0), ('stress', 120.0)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E3",
+      "label": "nonsquare shapes with keepdims",
+      "actual": "((4, 2), (2,), (4,), (4, 1))",
+      "expected": "((4, 2), (2,), (4,), (4, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E3",
+      "label": "source position means preserve position labels",
+      "actual": "[('A', 50.0), ('B', -20.0)]",
+      "expected": "[('A', 50.0), ('B', -20.0)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E4",
+      "label": "single position multiple scenarios",
+      "actual": "([-2.0, 0.0, 5.0], (3,), (1,), 3, 1)",
+      "expected": "([-2.0, 0.0, 5.0], (3,), (1,), 3, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E4",
+      "label": "single position statistics",
+      "actual": "(1.0, -2.0, 5.0, [1.0])",
+      "expected": "(1.0, -2.0, 5.0, [1.0])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E4",
+      "label": "single position dispersion",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E5",
+      "label": "flattened numerical total only",
+      "actual": "120.0",
+      "expected": "120.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E5",
+      "label": "one scenario total differs from flattened sum",
+      "actual": "np.float64(-60.0)",
+      "expected": "-60.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E6",
+      "label": "explicit valid counts incl all-missing position",
+      "actual": "[2, 2, 0]",
+      "expected": "[2, 2, 0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E6",
+      "label": "descriptive means incl explicit all-missing result",
+      "actual": "[Fraction(2, 1), Fraction(6, 1), None]",
+      "expected": "[Fraction(2, 1), Fraction(6, 1), None]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E6",
+      "label": "differing source counts remain visible",
+      "actual": "[1, 2, 1]",
+      "expected": "[1, 2, 1]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E6",
+      "label": "original strict source still rejects missing table",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6aggregationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-aggregation-exercises/review.py\", line 16, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6aggregationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-aggregation-exercises/review.py\", line 55, in <lambda>\n    reject('6.7-E6','original strict source still rejects missing table',lambda:m.summarize(np.array([[1.,np.nan,np.nan],[3.,5.,np.nan],[np.nan,7.,np.nan]])),'ValueError')\n                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6aggregationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.07-aggregation-and-statistical-operations.md\", line 18, in summarize\n    1. Choose a reduction axis from its meaning.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: all supplied P&Ls must be finite\n"
+    },
+    {
+      "exercise": "6.7-E7",
+      "label": "chosen rational probabilities sum exactly to one",
+      "actual": "Fraction(1, 1)",
+      "expected": "Fraction(1, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E7",
+      "label": "illustrative weighted descriptive mean",
+      "actual": "Fraction(60, 1)",
+      "expected": "Fraction(60, 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E7",
+      "label": "unchanged source remains unweighted",
+      "actual": "30.0",
+      "expected": "30.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E8",
+      "label": "hand-selected aggregate cancellations",
+      "actual": "([0.0, 0.0], 0.0)",
+      "expected": "([0.0, 0.0], 0.0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.7-E8",
+      "label": "unrepresented joint-loss scenario is possible in illustrative extension",
+      "actual": "-20.0",
+      "expected": "-20.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original source fixture unchanged",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y\\xc0\\x00\\x00\\x00\\x00\\x00\\x00D@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00D\\xc0\\x00\\x00\\x00\\x00\\x00\\x00i@\\x00\\x00\\x00\\x00\\x00\\x00T\\xc0'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y\\xc0\\x00\\x00\\x00\\x00\\x00\\x00D@\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00D\\xc0\\x00\\x00\\x00\\x00\\x00\\x00i@\\x00\\x00\\x00\\x00\\x00\\x00T\\xc0'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "source outputs independent",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'aggregation_lab.py': 'bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721', 'test_aggregation_lab.py': '03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65'}",
+      "expected": "{'aggregation_lab.py': 'bcc8ab4e7a10777725b9df13066d3ba191ba32e456df3d621311c68fbeecc721', 'test_aggregation_lab.py': '03f4f6011f7cdf2e185f7e08a772a47fa00cf1901391a8cfb209197f5e601a65'}",
+      "status": "PASS"
+    }
+  ]
+}

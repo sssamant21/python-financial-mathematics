@@ -1,0 +1,82 @@
+[
+  {
+    "id": "6.7-E1",
+    "prompt": "Add a fifth scenario with P&Ls [50, -10]; derive the new totals, mean, minimum, and maximum.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "EXACT SOURCE + INDEPENDENT RATIONAL/DECIMAL ORACLE",
+    "answer": "Append [50,\u221210] as the fifth scenario. Totals become [\u221260,0,60,120,40], sum 160, arithmetic mean 32, minimum \u221260 and maximum 120. Position means are [50,\u221218], and counts are five scenarios/two positions. An additional numerical cross-check derives deviations [\u221292,\u221232,28,88,8], squared sum 18,080, population variance 3,616 and standard deviation sqrt(3616)\u224860.13318551349 using Fraction and a 60-digit Decimal square root. The initial QA hard-coded variance 4,376 was wrong; retained failure and corrected rerun are documented under F36. Source was correct and unchanged."
+  },
+  {
+    "id": "6.7-E2",
+    "prompt": "Add a test proving negative finite P&Ls are valid.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "EXACT SOURCE NEGATIVE-DOMAIN PROBE",
+    "answer": "Use the all-negative finite table [[\u22125,\u22122],[\u22121,\u22123]]. Source accepts it: totals [\u22127,\u22124], minimum \u22127, maximum \u22124, mean \u22125.5, ddof=0 standard deviation 1.5. These entries are signed P&Ls, not prices. Reusing a nonnegative-price guard would violate this domain."
+  },
+  {
+    "id": "6.7-E3",
+    "prompt": "Compare axis=0 and axis=1 on a nonsquare fixture and attach labels to each output.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "SUPPLEMENTAL AXIS/LABEL PROBES",
+    "answer": "For the original (4,2) table, sum(axis=0) removes scenarios and returns [200,\u221280], labelled positions A,B. sum(axis=1) removes positions and returns [\u221260,0,60,120], labelled down,flat,up,stress. Their shapes are (2,) and (4,); keepdims on axis 1 returns (4,1). The source position means [50,\u221220] retain position labels. Caller-supplied labels must match original ordering. Scenario sums per position are numerical examples only, not realized account P&L."
+  },
+  {
+    "id": "6.7-E4",
+    "prompt": "Add a test for a single position across several scenarios.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "EXACT SOURCE SINGLE-POSITION PROBE + DECIMAL ORACLE",
+    "answer": "Use shape (3,1) table [[\u22122],[0],[5]]: three scenarios, one position. Totals retain shape (3,), position_means retain shape (1,), mean is 1, minimum \u22122 and maximum 5. Deviations [\u22123,\u22121,4] give population variance 26/3 and standard deviation sqrt(26/3), independently checked with a 60-digit Decimal oracle and absolute error below 1e\u221212. This fixture-specific tolerance is not a general financial materiality policy."
+  },
+  {
+    "id": "6.7-E5",
+    "prompt": "Explain why a flattened sum across alternative scenarios is not realized account profit.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "CONCEPTUAL REVIEW + NUMERICAL CONTRAST",
+    "answer": "The flattened total is 120 for the original table, but its rows are alternative states, not consecutive cash flows. One realized listed state could have combined P&L \u221260,0,60 or120; it does not realize all of them simultaneously. Summing alternatives double counts mutually alternative situations. A path/account profit requires actual holdings/activity, cash-flow timing, currency conventions and a realized sequence; probability-weighted averages answer another question. The numerical scalar 120 alone cannot establish realized profit."
+  },
+  {
+    "id": "6.7-E6",
+    "prompt": "Propose a missing-data policy that records valid counts and handles all-missing slices explicitly.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "MISSING-DATA DESIGN + SUPPLEMENTAL CONTROLLED RECORD",
+    "answer": "Keep summarize strict: nonfinite entries still fail. For a distinct incomplete-data report, propose per-position descriptive means over explicitly observed finite entries, retain valid and total counts plus missing flags, and return status ALL_MISSING with mean None when count=0. Infinity is an invalid value, not missingness. Publish differing effective samples, and never reinterpret these position means as a complete per-scenario portfolio total; a scenario total requires every additive component or must be marked INCOMPLETE/None. No zero imputation or hidden scenario deletion. In controlled [[1,missing,missing],[3,5,missing],[missing,7,missing]], a supplemental rational loop records column counts [2,2,0], means [2,6,None], and row valid counts [1,2,1]. Source rejection of its NaN representation is separately verified. This is an illustrative record and policy proposal, not a production missing-data API; schema/provenance, denominators for any dispersion and all-missing/report behavior require explicit integration tests."
+  },
+  {
+    "id": "6.7-E7",
+    "prompt": "Specify a weighted-scenario mean contract without silently normalizing invalid weights.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "WEIGHTED-SCENARIO DESIGN + SUPPLEMENTAL RATIONAL EXAMPLE",
+    "answer": "A separate weighted-mean API should require a complete finite same-currency scenario-by-position table plus exact one-dimensional float64 probabilities aligned to scenario IDs. Require length S, finite nonnegative entries, at least one positive entry, and a sum within an explicitly chosen absolute tolerance 1e\u221212 of 1, checked with a stable sum; reject negative, NaN/infinite, all-zero, wrong-shape or materially nonunit totals. Do not silently normalize, clip or fill; any normalization must be an explicit upstream operation with retained original weights. Zero-weight scenarios still meet the complete-source validation policy. Define the result explicitly as sum_s(w_s\u00d7total_s) using supplied accepted weights; near-unit tolerance does not assert exact normalization. Specify local overflow/finite behavior and tolerance applicability before implementation. Rational illustrative probabilities [1/10,2/10,3/10,4/10] sum exactly to 1 and give mean 60. The unchanged source remains unweighted with mean 30; a weighted API and invalid-weight tests are designs only, not executed source capabilities. Probabilities also require external model justification; shape and sum checks do not provide calibration."
+  },
+  {
+    "id": "6.7-E8",
+    "prompt": "Explain why zero dispersion in a hand-selected scenario set does not establish zero financial risk.",
+    "source": "chapter-06/6.07-aggregation-and-statistical-operations.md",
+    "source_sha256": "2a95b6c46bf4ccfe053a0ae5570fda3543902f1704ca40d27cd8063d494fa404",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-aggregation-exercises/README.md",
+    "kind": "CONCEPTUAL RISK LIMIT + EXACT SOURCE COUNTEREXAMPLE",
+    "answer": "Hand-selected rows [\u221210,10] and [10,\u221210] both total zero, so source dispersion is zero for the supplied set. That says nothing about omitted scenarios, changed positions, tail events, liquidity, default, timing or model misspecification. Adding the illustrative omitted joint-loss row [\u221210,\u221210] produces minimum \u221220. This executed extension demonstrates dependence on the supplied scenario set without assigning probability or establishing a future risk bound. Zero dispersion can also coexist with a constant loss; variance describes spread, not profitability or safety."
+  }
+]
