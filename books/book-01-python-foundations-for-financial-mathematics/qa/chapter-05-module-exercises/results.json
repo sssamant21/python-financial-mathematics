@@ -1,0 +1,155 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.01-python-modules.md",
+  "source_sha256": "7509fca52443a8755e62a86f91d48187fa3ec09d105a85d8333ed1a18ac5f33f",
+  "selected_files": [
+    {
+      "path": "holdings_core.py",
+      "sha256": "f5dfc2c59e5c52778b5a852f31be4a7d8b8c7313694a3f2edab2623fa0461f13"
+    },
+    {
+      "path": "run_holdings.py",
+      "sha256": "280b7f32c85597ae20ffa4387ef8aebcc492d8edf42e22993310ce6054c359ed"
+    },
+    {
+      "path": "test_holdings_modules.py",
+      "sha256": "355c5f0ff3883eacadf3a204b0cd1de809727f2b265b9acadbf83537573532ad"
+    }
+  ],
+  "supplement_second_runner": "from decimal import Decimal\nimport holdings_core\n\ndef sample_holdings():\n    return [dict(security_id='Q',quantity=Decimal(0)),dict(security_id='Z',quantity=Decimal('2.5')),dict(security_id='Y',quantity=Decimal(4))]\n\ndef main():\n    rows=sample_holdings()\n    print('Second IDs: '+', '.join(holdings_core.active_ids(rows)))\n    return 0\n\nif __name__=='__main__':\n    raise SystemExit(main())\n",
+  "command_records": 9,
+  "command_passed": 9,
+  "command_failed": 0,
+  "passed_original_method_invocations": 16,
+  "expected_negative_method_invocations": 1,
+  "predicates": 1,
+  "passed": 1,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "baseline exact original suite",
+      "args": [
+        "test_holdings_modules.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_core_direct_execution_is_quiet (__main__.ModuleTests.test_core_direct_execution_is_quiet) ... ok\ntest_duplicate_and_invalid_later_row (__main__.ModuleTests.test_duplicate_and_invalid_later_row) ... ok\ntest_fresh_import_is_quiet (__main__.ModuleTests.test_fresh_import_is_quiet) ... ok\ntest_namespace_cache_and_origin (__main__.ModuleTests.test_namespace_cache_and_origin) ... ok\ntest_script_and_module_launch (__main__.ModuleTests.test_script_and_module_launch) ... ok\ntest_source_independence (__main__.ModuleTests.test_source_independence) ... ok\ntest_validation (__main__.ModuleTests.test_validation) ... ok\ntest_values_and_empty (__main__.ModuleTests.test_values_and_empty) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.089s\n\nOK\n",
+      "actual_method_count": 8,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 original runner",
+      "args": [
+        "run_holdings.py"
+      ],
+      "returncode": 0,
+      "stdout": "Active IDs: SEC-A, SEC-C\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 second caller",
+      "args": [
+        "second_runner.py"
+      ],
+      "returncode": 0,
+      "stdout": "Second IDs: Z, Y\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 observe caller inputs preserved",
+      "args": [
+        "-c",
+        "\nimport copy,holdings_core,run_holdings,second_runner\noriginal=holdings_core.active_ids;records=[]\ndef checked(rows):\n before=copy.deepcopy(rows);result=original(rows);assert rows==before;records.append(before);return result\nholdings_core.active_ids=checked\ntry:run_holdings.main();second_runner.main()\nfinally:holdings_core.active_ids=original\nassert [r['security_id'] for r in records[0]]==['SEC-B','SEC-A','SEC-C']\nassert [r['security_id'] for r in records[1]]==['Q','Z','Y']\nassert [str(r['quantity']) for r in records[0]]==['0','12.5','3']\nassert [str(r['quantity']) for r in records[1]]==['0','2.5','4']\n"
+      ],
+      "returncode": 0,
+      "stdout": "Active IDs: SEC-A, SEC-C\nSecond IDs: Z, Y\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E2/E5 rejection and reverse order",
+      "args": [
+        "-c",
+        "\nfrom decimal import Decimal as D\nimport copy,holdings_core\nfrom test_holdings_modules import sample_holdings\nfor row,kind in [(dict(security_id=1,quantity=D(0)),TypeError),(dict(security_id='A',quantity=D(0),extra=1),ValueError)]:\n before=copy.deepcopy(row)\n try:holdings_core.capture_holdings([row])\n except kind:pass\n else:raise AssertionError('schema/type should reject')\n assert row==before\nsource=sample_holdings();before=copy.deepcopy(source)\nassert holdings_core.active_ids(list(reversed(source)))==('SEC-C','SEC-A')\nassert source==before\n"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 expected existing quiet-import test failure",
+      "args": [
+        "-m",
+        "unittest",
+        "test_holdings_modules.ModuleTests.test_fresh_import_is_quiet",
+        "-v"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "test_fresh_import_is_quiet (test_holdings_modules.ModuleTests.test_fresh_import_is_quiet) ... FAIL\n\n======================================================================\nFAIL: test_fresh_import_is_quiet (test_holdings_modules.ModuleTests.test_fresh_import_is_quiet)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/module-exercises-jn978i__/test_holdings_modules.py\", line 81, in test_fresh_import_is_quiet\n    self.assertEqual(result.stdout, \"\")\nAssertionError: 'Active IDs: SEC-A, SEC-C\\n' != ''\n- Active IDs: SEC-A, SEC-C\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.016s\n\nFAILED (failures=1)\n",
+      "actual_method_count": 1,
+      "expected_negative": true,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 restored exact suite",
+      "args": [
+        "test_holdings_modules.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_core_direct_execution_is_quiet (__main__.ModuleTests.test_core_direct_execution_is_quiet) ... ok\ntest_duplicate_and_invalid_later_row (__main__.ModuleTests.test_duplicate_and_invalid_later_row) ... ok\ntest_fresh_import_is_quiet (__main__.ModuleTests.test_fresh_import_is_quiet) ... ok\ntest_namespace_cache_and_origin (__main__.ModuleTests.test_namespace_cache_and_origin) ... ok\ntest_script_and_module_launch (__main__.ModuleTests.test_script_and_module_launch) ... ok\ntest_source_independence (__main__.ModuleTests.test_source_independence) ... ok\ntest_validation (__main__.ModuleTests.test_validation) ... ok\ntest_values_and_empty (__main__.ModuleTests.test_values_and_empty) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.082s\n\nOK\n",
+      "actual_method_count": 8,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E6 cached import versus fresh interpreter",
+      "args": [
+        "-c",
+        "\nimport holdings_core,subprocess,sys\nfrom pathlib import Path\npath=Path(holdings_core.__file__);before=path.read_bytes();original=holdings_core\ntry:\n path.write_bytes(before+b'\\nEDIT_VISIBLE=True\\n')\n import holdings_core as again\n assert again is original and not hasattr(again,'EDIT_VISIBLE')\n r=subprocess.run([sys.executable,'-B','-c','import holdings_core;assert holdings_core.EDIT_VISIBLE is True'],capture_output=True,text=True)\n assert (r.returncode,r.stdout,r.stderr)==(0,'','')\nfinally:path.write_bytes(before)\n"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_negative": false,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 import definitions still execute",
+      "args": [
+        "-c",
+        "import run_holdings,holdings_core;assert callable(run_holdings.main);assert callable(holdings_core.active_ids);assert holdings_core.Decimal.__name__=='Decimal'"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_negative": false,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "label": "original source bytes restored",
+      "actual": "{'holdings_core.py': 'f5dfc2c59e5c52778b5a852f31be4a7d8b8c7313694a3f2edab2623fa0461f13', 'run_holdings.py': '280b7f32c85597ae20ffa4387ef8aebcc492d8edf42e22993310ce6054c359ed', 'test_holdings_modules.py': '355c5f0ff3883eacadf3a204b0cd1de809727f2b265b9acadbf83537573532ad'}",
+      "expected": "{'holdings_core.py': 'f5dfc2c59e5c52778b5a852f31be4a7d8b8c7313694a3f2edab2623fa0461f13', 'run_holdings.py': '280b7f32c85597ae20ffa4387ef8aebcc492d8edf42e22993310ce6054c359ed', 'test_holdings_modules.py': '355c5f0ff3883eacadf3a204b0cd1de809727f2b265b9acadbf83537573532ad'}",
+      "status": "PASS"
+    }
+  ]
+}

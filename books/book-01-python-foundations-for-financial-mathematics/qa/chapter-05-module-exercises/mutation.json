@@ -1,0 +1,6 @@
+{
+  "original_sha256": "280b7f32c85597ae20ffa4387ef8aebcc492d8edf42e22993310ce6054c359ed",
+  "mutant_sha256": "dc5afb55473a7b08666bf337dc69031f4120e3e9bc023620a1c58c7693151f6a",
+  "mutant_source": "\"\"\"Demonstrate holdings_core when launched as a program.\"\"\"\n\nfrom decimal import Decimal\nimport holdings_core\n\n\ndef main() -> int:\n    holdings = [\n        {\"security_id\": \"SEC-B\", \"quantity\": Decimal(\"0\")},\n        {\"security_id\": \"SEC-A\", \"quantity\": Decimal(\"12.5\")},\n        {\"security_id\": \"SEC-C\", \"quantity\": Decimal(\"3\")},\n    ]\n    ids = holdings_core.active_ids(holdings)\n    return 0\n\n\nprint(\"Active IDs: SEC-A, SEC-C\")\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+  "reason": "Deliberate E3 top-level print moves visible application work outside main."
+}
