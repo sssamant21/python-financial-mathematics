@@ -1,6 +1,7 @@
 """Book 02 Section 16.8: residual-based calibration validation."""
 import json
 import math
+from fractions import Fraction
 
 TRAINING=((1.0,1050.0),(2.0,1100.0),(3.0,1150.0))
 HOLDOUT=((4.0,1201.0),)
@@ -44,10 +45,16 @@ def metrics(errors):
         raise ValueError("errors must be a nonempty sequence")
     e=tuple(finite(v,"residual") for v in errors)
     n=len(e)
-    return {"mae":finite(sum(abs(v) for v in e)/n,"mae"),
-            "rmse":finite(math.sqrt(sum(v*v for v in e)/n),"rmse"),
-            "bias":finite(sum(e)/n,"bias"),
-            "max_abs":max(abs(v) for v in e)}
+    exact=tuple(Fraction(v) for v in e)
+    scale=max(abs(v) for v in e)
+    # Normalize before squaring; the norm itself may exceed float range even
+    # though the root-mean-square is finite. Means use exact represented sums
+    # to preserve cancellation and avoid overflowing an intermediate total.
+    rms=0.0 if scale==0 else scale*math.sqrt(math.fsum((v/scale)**2 for v in e)/n)
+    return {"mae":finite(float(sum(map(abs,exact))/n),"mae"),
+            "rmse":finite(rms,"rmse"),
+            "bias":finite(float(sum(exact)/n),"bias"),
+            "max_abs":scale}
 
 def weighted_loss(rate,rows,weights):
     data=observations(rows)
