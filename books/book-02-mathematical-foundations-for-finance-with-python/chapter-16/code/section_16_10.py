@@ -90,8 +90,37 @@ def assessment():
     reference=analytical_rate()
     runs=[solve(start,method) for method in ("newton","gradient_descent")
           for start in (-0.1,0.0,0.1)]
+    limits={"rate_abs":1e-8,"gradient_abs":1e-8,"loss_consistency_abs":1e-12,
+            "training_mae":1e-5,"training_rmse":1e-5,"holdout_max_abs":1.01}
+    for run in runs:
+        candidate=finite(run["rate"],"candidate rate")
+        train_errors=residuals(candidate,TRAIN)
+        holdout_errors=residuals(candidate,HOLDOUT)
+        run["training_residuals"]=train_errors
+        run["holdout_residuals"]=holdout_errors
+        run["training_metrics"]=metrics(train_errors)
+        run["holdout_metrics"]=metrics(holdout_errors)
+        run["recomputed_loss"]=loss(candidate,TRAIN)
+        run["recomputed_gradient"]=gradient(candidate,TRAIN)
+        reported_gradient=finite(run["gradient"],"reported gradient")
+        reported_loss=finite(run["loss"],"reported loss")
+        run["acceptance_checks"]={
+            "status":run["status"]=="gradient_tolerance",
+            "rate_error":abs(candidate-reference)<=limits["rate_abs"],
+            "solver_gradient":abs(reported_gradient)<=limits["gradient_abs"],
+            "recomputed_gradient":abs(run["recomputed_gradient"])<=limits["gradient_abs"],
+            "reported_loss_consistency":abs(reported_loss-run["recomputed_loss"])<=limits["loss_consistency_abs"],
+            "training_mae":run["training_metrics"]["mae"]<=limits["training_mae"],
+            "training_rmse":run["training_metrics"]["rmse"]<=limits["training_rmse"],
+            "holdout_max_abs":run["holdout_metrics"]["max_abs"]<=limits["holdout_max_abs"],
+        }
+        run["provisional_acceptance"]=all(run["acceptance_checks"].values())
     return {"analytical_rate":reference,"gradient_at_reference":gradient(reference),
             "hessian":hessian(),"runs":runs,
+            "acceptance_limits":limits,
+            "acceptance_scope":"synthetic_numerical_only",
+            "provisional_acceptance":all(run["provisional_acceptance"] for run in runs),
+            "benchmark_metric_rate":reference,
             "training_metrics":metrics(residuals(reference,TRAIN)),
             "holdout_metrics":metrics(residuals(reference,HOLDOUT)),
             "portfolio_variance":portfolio_variance(0.6,0.4),
