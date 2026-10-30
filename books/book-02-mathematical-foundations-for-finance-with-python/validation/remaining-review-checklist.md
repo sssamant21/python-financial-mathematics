@@ -2,8 +2,8 @@
 
 **Date:** 2026-10-30  
 **Full-runtime candidate source revision:** `60cd09c1072aec6d6f437b62961d0b4e50cad50c`  
-**Latest scoped source revision:** `60cd09c1072aec6d6f437b62961d0b4e50cad50c`  
-**Disposition:** V-47 full candidate runtime includes Section17.9 report and Section17.10 LP integration; independent review and release approval pending.
+**Latest scoped source revision:** `f431e9daabc74a3cb25b254a2c219573f1267144`  
+**Disposition:** Earlier V-47 full candidate runtime plus subsequent Section18.9 trace-checker scoped evidence; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -51,7 +51,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-47 at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`:482 compiled/271 scripts/483 required hashes before and after | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-47 earlier full pin:482 compiled/271 scripts/483 required hashes; subsequent Section18.9 checker has22-file/12-script scoped pass at `f431e9daabc74a3cb25b254a2c219573f1267144` | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -214,3 +214,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Final LP integration and V-47 — 2026-10-30
 
 [Section17.10 evidence](chapter-17-final-lp-integration-followup.md) preserves the missing-certificate baseline failure, replaces literal LP assessment inputs with actual Section17.5 computation/certificate calls and independently checks six boundary intersections, four feasible vertices and six certificates (five rejected). Two actual helper calls and five injected wrong outputs are checked. All24 chapter sources compiled and14 scripts passed. [V-47 full runtime](runtime-refresh-2026-10-30-r11.md) compiled482 files, passed271 scripts and verified483 required hashes before/after at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`, including preceding Section17.9 report changes/checker. Twenty-eight selected categories remain partially addressed; none closed by the register. Next executable item: COV-79 Section18.9 project safeguarded-Newton trace endpoint signs, middle-half proposal safeguards, returned-root residuals and exact objective/derivative call accounting; Section18.8 bracket audit is already recorded. Broader mathematical proof, report/data governance, tolerance scaling, independent-review, supported-platform and release obligations remain open.
+
+## Project safeguarded-Newton trace audit — 2026-10-30
+
+[Section18.9 evidence](chapter-18-project-trace-followup.md) logs ten selected pure-polynomial solver paths and independently audits87 trace rows,200 objective calls and87 derivative calls, strict middle-half safeguards, endpoint signs/updates, returned residuals and terminal conditions. Two quadratic paths have100-digit Decimal containment/half-width references; five altered reports are detected. The first new checker run passed against the unchanged helper. All22 Chapter18 files compiled and12 scripts passed at `f431e9daabc74a3cb25b254a2c219573f1267144`; all22 source hashes match the pinned tree and remain unchanged after execution. Current inventory is483 Python files/272 check-test scripts, not a new full runtime pass; V-47 remains the earlier482/271 full execution. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.5 exact-grid repeated roots, scan/refinement deduplication threshold and nearby distinct-root separation, with polynomial references and explicit nonexhaustive flags. Continuity/uniqueness proofs, project evaluation-error paths, broader financial range/applied scope, independent-review, supported-platform and release obligations remain open.
