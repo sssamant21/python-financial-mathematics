@@ -1,0 +1,463 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "lab_records": 3,
+  "command_records": 19,
+  "command_passed": 19,
+  "command_failed": 0,
+  "artifact_predicates": 9,
+  "artifact_passed": 9,
+  "artifact_failed": 0,
+  "existing_methods": 25,
+  "records": [
+    {
+      "section": "5.9",
+      "source": "chapter-05/5.09-project-directory-structure.md",
+      "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+      "files": [
+        {
+          "path": "financial_layout/__init__.py",
+          "sha256": "7d991461c1f74b280c01b26b5e5d536b984eab082dab3cead5745bda3ba168cb"
+        },
+        {
+          "path": "financial_layout/quantities.py",
+          "sha256": "a99d5b1258f03887e16f54a7df977dd96959e41fb691479ce73e13159f8312eb"
+        },
+        {
+          "path": "financial_layout/__main__.py",
+          "sha256": "7efc503323124cf1106cf5912433de0fe444ee0dc6c1a3b213a39091178ad306"
+        },
+        {
+          "path": "tests/test_layout.py",
+          "sha256": "8812e3c3f0e2cfd51812b2bae19660999ba0627d5abf3cdaae7e4cf111d5cedd"
+        },
+        {
+          "path": "fixtures/holdings.json",
+          "sha256": "bca9e6f400cce05cda76af3f04020b1a9edef59c8ea2fea26bcc8679714b0bbe"
+        },
+        {
+          "path": "README.md",
+          "sha256": "dc0d86d3239dcf94d65fd072eb5c1df105f629165e1939f45fcf8adc433e60bc"
+        },
+        {
+          "path": ".gitignore",
+          "sha256": "d2b4439560d4508632db86e8636eb6f52e03d328af02da5d13ee5e572718a67a"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented suite",
+          "args": [
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "tests",
+            "-v"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_domain_and_identity (test_layout.LayoutTests.test_domain_and_identity) ... ok\ntest_expected_fixture_and_selection (test_layout.LayoutTests.test_expected_fixture_and_selection) ... ok\ntest_import_origin_and_quiet_initialization (test_layout.LayoutTests.test_import_origin_and_quiet_initialization) ... ok\ntest_input_outside_project (test_layout.LayoutTests.test_input_outside_project) ... ok\ntest_invalid_later_record (test_layout.LayoutTests.test_invalid_later_record) ... ok\ntest_missing_and_invalid_file_fail_without_report (test_layout.LayoutTests.test_missing_and_invalid_file_fail_without_report) ... ok\ntest_relative_and_absolute_fixture_paths (test_layout.LayoutTests.test_relative_and_absolute_fixture_paths) ... ok\ntest_source_and_order (test_layout.LayoutTests.test_source_and_order) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.179s\n\nOK\n",
+          "expected_error": null,
+          "expected_count": 8,
+          "actual_count": 8,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import financial_layout,financial_layout.quantities,financial_layout.__main__"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "local package explicit input",
+          "args": [
+            "-m",
+            "financial_layout",
+            "--input",
+            "fixtures/holdings.json"
+          ],
+          "returncode": 0,
+          "stdout": "Active IDs: SEC-A, SEC-C\n",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "local package explicit input",
+          "args": [
+            "-m",
+            "financial_layout",
+            "--input",
+            "/tmp/book1-research-9-w5g9viua/fixtures/holdings.json"
+          ],
+          "returncode": 0,
+          "stdout": "Active IDs: SEC-A, SEC-C\n",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "external absolute input, local package",
+          "args": [
+            "-m",
+            "financial_layout",
+            "--input",
+            "/tmp/external-holdings-7t2mnmbg/holdings.json"
+          ],
+          "returncode": 0,
+          "stdout": "Active IDs: SEC-A, SEC-C\n",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "section": "5.10",
+      "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+      "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+      "files": [
+        {
+          "path": "configuration.py",
+          "sha256": "e39025a7e89a04e8e763182b7a3582bb33c48ac0cd94a0dda745e1eb996d5a13"
+        },
+        {
+          "path": "config_demo.py",
+          "sha256": "9531d0ba5c56a7f994605fb98a7c6bc27f7884f14832ecf62aa45cbf20c3774a"
+        },
+        {
+          "path": "test_configuration.py",
+          "sha256": "5ce1a8c0b21c9aa87a57b44044433413284fbe51ac0692b183f5af8936fd4fd5"
+        },
+        {
+          "path": "development.json",
+          "sha256": "a8afd247ac1f5a285bb515609afc97a3e7722658aa3d891126ff67c8ecc3e665"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented suite",
+          "args": [
+            "-m",
+            "unittest",
+            "discover",
+            "-v"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_cli_and_failure_have_expected_output (test_configuration.ConfigurationTests.test_cli_and_failure_have_expected_output) ... ok\ntest_defaults (test_configuration.ConfigurationTests.test_defaults) ... ok\ntest_environment_override (test_configuration.ConfigurationTests.test_environment_override) ... ok\ntest_invalid_values_including_shadowed (test_configuration.ConfigurationTests.test_invalid_values_including_shadowed) ... ok\ntest_isolation_and_immutable_result (test_configuration.ConfigurationTests.test_isolation_and_immutable_result) ... ok\ntest_missing_or_malformed_file (test_configuration.ConfigurationTests.test_missing_or_malformed_file) ... ok\ntest_precedence_and_provenance (test_configuration.ConfigurationTests.test_precedence_and_provenance) ... ok\ntest_schema_and_duplicate_rejection (test_configuration.ConfigurationTests.test_schema_and_duplicate_rejection) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.094s\n\nOK\n",
+          "expected_error": null,
+          "expected_count": 8,
+          "actual_count": 8,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import configuration,config_demo"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "baseline precedence",
+          "args": [
+            "config_demo.py",
+            "--config",
+            "development.json",
+            "--currency",
+            "EUR"
+          ],
+          "returncode": 0,
+          "stdout": "{\"currency\": \"EUR\", \"decimal_places\": 2, \"environment\": \"development\", \"sources\": {\"currency\": \"cli\", \"decimal_places\": \"file\", \"environment\": \"file\"}}\n",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "process override",
+          "args": [
+            "config_demo.py",
+            "--config",
+            "development.json"
+          ],
+          "returncode": 0,
+          "stdout": "{\"currency\": \"USD\", \"decimal_places\": 2, \"environment\": \"test\", \"sources\": {\"currency\": \"file\", \"decimal_places\": \"file\", \"environment\": \"environment\"}}\n",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "unsupported decimal setting",
+          "args": [
+            "config_demo.py",
+            "--config",
+            "development.json",
+            "--decimal-places",
+            "3"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1-research-10-a0r067hl/config_demo.py\", line 25, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/book1-research-10-a0r067hl/config_demo.py\", line 17, in main\n    settings = resolve(args.config, dict(os.environ), overrides)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-research-10-a0r067hl/configuration.py\", line 53, in resolve\n    raise ValueError(f'invalid {key} in {source}')\nValueError: invalid decimal_places in cli\n",
+          "expected_error": "invalid decimal_places in cli",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "missing required config",
+          "args": [
+            "config_demo.py"
+          ],
+          "returncode": 2,
+          "stdout": "",
+          "stderr": "usage: config_demo.py [-h] --config CONFIG [--environment ENVIRONMENT]\n                      [--currency CURRENCY] [--decimal-places DECIMAL_PLACES]\nconfig_demo.py: error: the following arguments are required: --config\n",
+          "expected_error": "--config",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "section": "5.11",
+      "source": "chapter-05/5.11-reproducible-financial-research.md",
+      "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+      "files": [
+        {
+          "path": "research.py",
+          "sha256": "849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab"
+        },
+        {
+          "path": "test_research.py",
+          "sha256": "a78e07d6aa9f84b802642830e5197983381113f4598a16ae0e028812273414f7"
+        },
+        {
+          "path": "inflows.json",
+          "sha256": "a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a"
+        },
+        {
+          "path": "settings.json",
+          "sha256": "ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented suite",
+          "args": [
+            "-m",
+            "unittest",
+            "discover",
+            "-v"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_byte_identity_versus_result (test_research.ResearchTests.test_byte_identity_versus_result) ... ok\ntest_changed_data_and_source (test_research.ResearchTests.test_changed_data_and_source) ... ok\ntest_cli_rerun_and_no_overwrite (test_research.ResearchTests.test_cli_rerun_and_no_overwrite) ... ok\ntest_config_and_duplicate_members (test_research.ResearchTests.test_config_and_duplicate_members) ... ok\ntest_context_isolation (test_research.ResearchTests.test_context_isolation) ... ok\ntest_invalid_input_creates_no_report (test_research.ResearchTests.test_invalid_input_creates_no_report) ... ok\ntest_invalid_records (test_research.ResearchTests.test_invalid_records) ... ok\ntest_known_answer_and_policy (test_research.ResearchTests.test_known_answer_and_policy) ... ok\ntest_repeat_bundle (test_research.ResearchTests.test_repeat_bundle) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.146s\n\nOK\n",
+          "expected_error": null,
+          "expected_count": 9,
+          "actual_count": 9,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import research"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "documented experiment",
+          "args": [
+            "research.py",
+            "--input",
+            "inflows.json",
+            "--config",
+            "settings.json",
+            "--output",
+            "run-a.json"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "documented experiment",
+          "args": [
+            "research.py",
+            "--input",
+            "inflows.json",
+            "--config",
+            "settings.json",
+            "--output",
+            "run-b.json"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "documented byte comparison",
+          "args": [
+            "-c",
+            "from pathlib import Path;assert Path('run-a.json').read_bytes()==Path('run-b.json').read_bytes();print('Identical run artifacts')"
+          ],
+          "returncode": 0,
+          "stdout": "Identical run artifacts\n",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "existing artifact rejection",
+          "args": [
+            "research.py",
+            "--input",
+            "inflows.json",
+            "--config",
+            "settings.json",
+            "--output",
+            "run-a.json"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1-research-11-7k9zu7wf/research.py\", line 92, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/book1-research-11-7k9zu7wf/research.py\", line 86, in main\n    with args.output.open('x', encoding='utf-8', newline='\\n') as stream:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileExistsError: [Errno 17] File exists: 'run-a.json'\n",
+          "expected_error": "FileExistsError",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "invalid input no report",
+          "args": [
+            "research.py",
+            "--input",
+            "bad.json",
+            "--config",
+            "settings.json",
+            "--output",
+            "invalid-output.json"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1-research-11-7k9zu7wf/research.py\", line 92, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/book1-research-11-7k9zu7wf/research.py\", line 83, in main\n    report = bundle(data_raw, config_raw, source_raw)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-research-11-7k9zu7wf/research.py\", line 62, in bundle\n    result = analyze(data_raw, config_raw)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-research-11-7k9zu7wf/research.py\", line 34, in analyze\n    raise ValueError('expected 1 to 1000 inflows')\nValueError: expected 1 to 1000 inflows\n",
+          "expected_error": "expected 1 to 1000 inflows",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "supplemental rational/context assertions",
+          "args": [
+            "-c",
+            "\nfrom fractions import Fraction\nimport json\nfrom research import analyze\nfrom decimal import localcontext,Inexact,ROUND_DOWN\nfrom pathlib import Path\ndef cents(value):\n s=value*100;q,r=divmod(s.numerator,s.denominator);return q+int(2*r>s.denominator or (2*r==s.denominator and q%2==1))\nconfig=Path('settings.json').read_bytes()\nfor amounts in [['10.005','20.005'],['0.005'],['0.015'],['1000000']*1000]:\n rows=[dict(id=str(i),currency='USD',amount=a) for i,a in enumerate(amounts)];expected=cents(sum(map(Fraction,amounts)));assert analyze(json.dumps(rows).encode(),config)['total']==f'{expected//100}.{expected%100:02d}'\nwith localcontext() as ctx:\n ctx.prec=2;ctx.rounding=ROUND_DOWN;ctx.traps[Inexact]=True\n assert analyze(Path('inflows.json').read_bytes(),config)['total']=='30.01'\n assert ctx.prec==2 and ctx.rounding==ROUND_DOWN and ctx.traps[Inexact]\n"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_error": null,
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "label": "5.9 supplied files unchanged",
+      "actual": "{'financial_layout/__init__.py': b'\"\"\"Local teaching package for explicit source, input, and test responsibilities.\"\"\"\\n', 'financial_layout/quantities.py': b'\"\"\"Select active IDs from validated wire records without file I/O.\"\"\"\\n\\nfrom decimal import Decimal, InvalidOperation\\n\\n\\ndef active_ids(value: object) -> tuple[str, ...]:\\n    \"\"\"Validate every row; return positive-quantity IDs in source order.\\n\\n    Wire quantities are strings representing finite nonnegative Decimal units.\\n    Raises TypeError for wrong types, ValueError for other contract failures.\\n    \"\"\"\\n    if not isinstance(value, list):\\n        raise TypeError(\"holdings must be a list\")\\n    checked: list[tuple[str, Decimal]] = []\\n    seen: set[str] = set()\\n    for index, row in enumerate(value):\\n        if not isinstance(row, dict):\\n            raise TypeError(f\"holding {index} must be a dictionary\")\\n        if set(row) != {\"security_id\", \"quantity\"}:\\n            raise ValueError(f\"holding {index} has incorrect fields\")\\n        sid = row[\"security_id\"]\\n        if type(sid) is not str:\\n            raise TypeError(\"security_id must be an exact str\")\\n        if not sid or sid.strip() != sid:\\n            raise ValueError(\"security_id must be nonempty and unpadded\")\\n        quantity_text = row[\"quantity\"]\\n        if type(quantity_text) is not str:\\n            raise TypeError(\"quantity must be decimal text\")\\n        if not quantity_text or quantity_text.strip() != quantity_text:\\n            raise ValueError(\"quantity text must be nonempty and unpadded\")\\n        try:\\n            quantity = Decimal(quantity_text)\\n        except InvalidOperation as exc:\\n            raise ValueError(\"quantity text is invalid\") from exc\\n        if not quantity.is_finite() or quantity < 0:\\n            raise ValueError(\"quantity must be finite and nonnegative\")\\n        if sid in seen:\\n            raise ValueError(f\"duplicate security_id: {sid}\")\\n        seen.add(sid)\\n        checked.append((sid, quantity))\\n    return tuple(sid for sid, quantity in checked if quantity > 0)\\n', 'financial_layout/__main__.py': b'\"\"\"Read one explicit UTF-8 input path and display validated active IDs.\"\"\"\\n\\nimport argparse\\nimport json\\nfrom pathlib import Path\\n\\nfrom .quantities import active_ids\\n\\n\\ndef _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:\\n    result: dict[str, object] = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(f\"duplicate JSON member: {key}\")\\n        result[key] = value\\n    return result\\n\\n\\ndef main(argv: list[str] | None = None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__)\\n    parser.add_argument(\"--input\", type=Path, required=True)\\n    args = parser.parse_args(argv)\\n    payload: object = json.loads(\\n        args.input.read_text(encoding=\"utf-8\"), object_pairs_hook=_unique_object,\\n    )\\n    ids = active_ids(payload)\\n    print(\"Active IDs: \" + \", \".join(ids))\\n    return 0\\n\\n\\nif __name__ == \"__main__\":\\n    raise SystemExit(main())\\n', 'tests/test_layout.py': b'\"\"\"Verify local layout, explicit data paths, and public financial contracts.\"\"\"\\n\\nimport json\\nfrom pathlib import Path\\nimport subprocess\\nimport sys\\nfrom tempfile import TemporaryDirectory\\nimport unittest\\n\\nfrom financial_layout.quantities import active_ids\\n\\nPROJECT_ROOT = Path(__file__).resolve().parents[1]\\nFIXTURE = PROJECT_ROOT / \"fixtures\" / \"holdings.json\"\\n\\n\\ndef fixture() -> list[dict[str, object]]:\\n    return [\\n        {\"security_id\": \"SEC-B\", \"quantity\": \"0\"},\\n        {\"security_id\": \"SEC-A\", \"quantity\": \"12.5\"},\\n        {\"security_id\": \"SEC-C\", \"quantity\": \"3\"},\\n    ]\\n\\n\\ndef application(*arguments: str) -> subprocess.CompletedProcess[str]:\\n    return subprocess.run(\\n        [sys.executable, \"-m\", \"financial_layout\", *arguments],\\n        cwd=PROJECT_ROOT, capture_output=True, text=True, check=False, timeout=10,\\n    )\\n\\n\\nclass LayoutTests(unittest.TestCase):\\n    def test_expected_fixture_and_selection(self) -> None:\\n        self.assertEqual(json.loads(FIXTURE.read_text(encoding=\"utf-8\")), fixture())\\n        self.assertEqual(active_ids(fixture()), (\"SEC-A\", \"SEC-C\"))\\n        self.assertEqual(active_ids([]), ())\\n\\n    def test_source_and_order(self) -> None:\\n        source = fixture()\\n        self.assertEqual(active_ids(source), (\"SEC-A\", \"SEC-C\"))\\n        self.assertEqual(source, fixture())\\n        self.assertEqual(active_ids(list(reversed(source))), (\"SEC-C\", \"SEC-A\"))\\n\\n    def test_domain_and_identity(self) -> None:\\n        for quantity in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\", \"bad\", \"\", \" 1\"):\\n            with self.subTest(quantity=quantity):\\n                with self.assertRaises(ValueError):\\n                    active_ids([{\"security_id\": \"A\", \"quantity\": quantity}])\\n        for quantity in (None, True, 1, 1.5):\\n            with self.assertRaises(TypeError):\\n                active_ids([{\"security_id\": \"A\", \"quantity\": quantity}])\\n        with self.assertRaises(ValueError):\\n            active_ids([{\"security_id\": \"A\", \"quantity\": \"0\"},\\n                        {\"security_id\": \"A\", \"quantity\": \"1\"}])\\n        with self.assertRaises(ValueError):\\n            active_ids([{}])\\n\\n    def test_invalid_later_record(self) -> None:\\n        source = fixture() + [{\"security_id\": \"BAD\", \"quantity\": None}]\\n        before = [dict(row) for row in source]\\n        with self.assertRaises(TypeError):\\n            active_ids(source)\\n        self.assertEqual(source, before)\\n\\n    def test_relative_and_absolute_fixture_paths(self) -> None:\\n        for path in (\"fixtures/holdings.json\", str(FIXTURE)):\\n            with self.subTest(path=path):\\n                result = application(\"--input\", path)\\n                self.assertEqual(result.returncode, 0, result.stderr)\\n                self.assertEqual(result.stdout, \"Active IDs: SEC-A, SEC-C\\\\n\")\\n                self.assertEqual(result.stderr, \"\")\\n\\n    def test_input_outside_project(self) -> None:\\n        with TemporaryDirectory() as directory:\\n            path = Path(directory) / \"external.json\"\\n            path.write_text(\\'[{\"security_id\":\"OTHER\",\"quantity\":\"2\"}]\\', encoding=\"utf-8\")\\n            result = application(\"--input\", str(path))\\n            self.assertEqual(result.returncode, 0, result.stderr)\\n            self.assertEqual(result.stdout, \"Active IDs: OTHER\\\\n\")\\n\\n    def test_missing_and_invalid_file_fail_without_report(self) -> None:\\n        with TemporaryDirectory() as directory:\\n            path = Path(directory) / \"missing.json\"\\n            missing = application(\"--input\", str(path))\\n            self.assertNotEqual(missing.returncode, 0)\\n            self.assertEqual(missing.stdout, \"\")\\n            self.assertIn(\"FileNotFoundError\", missing.stderr)\\n            path.write_text(\\'[{\"security_id\":\"A\",\"quantity\":\"1\",\"quantity\":\"2\"}]\\', encoding=\"utf-8\")\\n            invalid = application(\"--input\", str(path))\\n            self.assertNotEqual(invalid.returncode, 0)\\n            self.assertEqual(invalid.stdout, \"\")\\n            self.assertIn(\"duplicate JSON member\", invalid.stderr)\\n\\n    def test_import_origin_and_quiet_initialization(self) -> None:\\n        code = (\\n            \"import financial_layout, financial_layout.__main__\\\\n\"\\n            \"from pathlib import Path\\\\n\"\\n            \"assert Path(financial_layout.__file__).resolve() == Path(\\'financial_layout/__init__.py\\').resolve()\\\\n\"\\n        )\\n        result = subprocess.run(\\n            [sys.executable, \"-c\", code], cwd=PROJECT_ROOT,\\n            capture_output=True, text=True, check=False, timeout=10,\\n        )\\n        self.assertEqual(result.returncode, 0, result.stderr)\\n        self.assertEqual(result.stdout, \"\")\\n        self.assertEqual(result.stderr, \"\")\\n\\n\\nif __name__ == \"__main__\":\\n    unittest.main(verbosity=2)\\n', 'fixtures/holdings.json': b'[\\n  {\"security_id\": \"SEC-B\", \"quantity\": \"0\"},\\n  {\"security_id\": \"SEC-A\", \"quantity\": \"12.5\"},\\n  {\"security_id\": \"SEC-C\", \"quantity\": \"3\"}\\n]\\n', 'README.md': b'# Financial Layout Lab\\n\\nRequires Python 3.10 or later. No third-party runtime dependency.\\nRun all commands from this directory, the project root.\\n\\nWindows PowerShell:\\n\\n    py -3 -m financial_layout --input fixtures/holdings.json\\n    py -3 -m unittest discover -s tests -v\\n\\nLinux or macOS:\\n\\n    python3 -m financial_layout --input fixtures/holdings.json\\n    python3 -m unittest discover -s tests -v\\n\\nExpected application result: Active IDs: SEC-A, SEC-C\\nInput is synthetic aggregate instrument units, with no valuation.\\nThis is local flat-layout testing, not installed-distribution verification.\\n', '.gitignore': b'.venv/\\n__pycache__/\\n*.py[cod]\\nbuild/\\ndist/\\n*.egg-info/\\n'}",
+      "expected": "{'financial_layout/__init__.py': b'\"\"\"Local teaching package for explicit source, input, and test responsibilities.\"\"\"\\n', 'financial_layout/quantities.py': b'\"\"\"Select active IDs from validated wire records without file I/O.\"\"\"\\n\\nfrom decimal import Decimal, InvalidOperation\\n\\n\\ndef active_ids(value: object) -> tuple[str, ...]:\\n    \"\"\"Validate every row; return positive-quantity IDs in source order.\\n\\n    Wire quantities are strings representing finite nonnegative Decimal units.\\n    Raises TypeError for wrong types, ValueError for other contract failures.\\n    \"\"\"\\n    if not isinstance(value, list):\\n        raise TypeError(\"holdings must be a list\")\\n    checked: list[tuple[str, Decimal]] = []\\n    seen: set[str] = set()\\n    for index, row in enumerate(value):\\n        if not isinstance(row, dict):\\n            raise TypeError(f\"holding {index} must be a dictionary\")\\n        if set(row) != {\"security_id\", \"quantity\"}:\\n            raise ValueError(f\"holding {index} has incorrect fields\")\\n        sid = row[\"security_id\"]\\n        if type(sid) is not str:\\n            raise TypeError(\"security_id must be an exact str\")\\n        if not sid or sid.strip() != sid:\\n            raise ValueError(\"security_id must be nonempty and unpadded\")\\n        quantity_text = row[\"quantity\"]\\n        if type(quantity_text) is not str:\\n            raise TypeError(\"quantity must be decimal text\")\\n        if not quantity_text or quantity_text.strip() != quantity_text:\\n            raise ValueError(\"quantity text must be nonempty and unpadded\")\\n        try:\\n            quantity = Decimal(quantity_text)\\n        except InvalidOperation as exc:\\n            raise ValueError(\"quantity text is invalid\") from exc\\n        if not quantity.is_finite() or quantity < 0:\\n            raise ValueError(\"quantity must be finite and nonnegative\")\\n        if sid in seen:\\n            raise ValueError(f\"duplicate security_id: {sid}\")\\n        seen.add(sid)\\n        checked.append((sid, quantity))\\n    return tuple(sid for sid, quantity in checked if quantity > 0)\\n', 'financial_layout/__main__.py': b'\"\"\"Read one explicit UTF-8 input path and display validated active IDs.\"\"\"\\n\\nimport argparse\\nimport json\\nfrom pathlib import Path\\n\\nfrom .quantities import active_ids\\n\\n\\ndef _unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:\\n    result: dict[str, object] = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(f\"duplicate JSON member: {key}\")\\n        result[key] = value\\n    return result\\n\\n\\ndef main(argv: list[str] | None = None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__)\\n    parser.add_argument(\"--input\", type=Path, required=True)\\n    args = parser.parse_args(argv)\\n    payload: object = json.loads(\\n        args.input.read_text(encoding=\"utf-8\"), object_pairs_hook=_unique_object,\\n    )\\n    ids = active_ids(payload)\\n    print(\"Active IDs: \" + \", \".join(ids))\\n    return 0\\n\\n\\nif __name__ == \"__main__\":\\n    raise SystemExit(main())\\n', 'tests/test_layout.py': b'\"\"\"Verify local layout, explicit data paths, and public financial contracts.\"\"\"\\n\\nimport json\\nfrom pathlib import Path\\nimport subprocess\\nimport sys\\nfrom tempfile import TemporaryDirectory\\nimport unittest\\n\\nfrom financial_layout.quantities import active_ids\\n\\nPROJECT_ROOT = Path(__file__).resolve().parents[1]\\nFIXTURE = PROJECT_ROOT / \"fixtures\" / \"holdings.json\"\\n\\n\\ndef fixture() -> list[dict[str, object]]:\\n    return [\\n        {\"security_id\": \"SEC-B\", \"quantity\": \"0\"},\\n        {\"security_id\": \"SEC-A\", \"quantity\": \"12.5\"},\\n        {\"security_id\": \"SEC-C\", \"quantity\": \"3\"},\\n    ]\\n\\n\\ndef application(*arguments: str) -> subprocess.CompletedProcess[str]:\\n    return subprocess.run(\\n        [sys.executable, \"-m\", \"financial_layout\", *arguments],\\n        cwd=PROJECT_ROOT, capture_output=True, text=True, check=False, timeout=10,\\n    )\\n\\n\\nclass LayoutTests(unittest.TestCase):\\n    def test_expected_fixture_and_selection(self) -> None:\\n        self.assertEqual(json.loads(FIXTURE.read_text(encoding=\"utf-8\")), fixture())\\n        self.assertEqual(active_ids(fixture()), (\"SEC-A\", \"SEC-C\"))\\n        self.assertEqual(active_ids([]), ())\\n\\n    def test_source_and_order(self) -> None:\\n        source = fixture()\\n        self.assertEqual(active_ids(source), (\"SEC-A\", \"SEC-C\"))\\n        self.assertEqual(source, fixture())\\n        self.assertEqual(active_ids(list(reversed(source))), (\"SEC-C\", \"SEC-A\"))\\n\\n    def test_domain_and_identity(self) -> None:\\n        for quantity in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\", \"bad\", \"\", \" 1\"):\\n            with self.subTest(quantity=quantity):\\n                with self.assertRaises(ValueError):\\n                    active_ids([{\"security_id\": \"A\", \"quantity\": quantity}])\\n        for quantity in (None, True, 1, 1.5):\\n            with self.assertRaises(TypeError):\\n                active_ids([{\"security_id\": \"A\", \"quantity\": quantity}])\\n        with self.assertRaises(ValueError):\\n            active_ids([{\"security_id\": \"A\", \"quantity\": \"0\"},\\n                        {\"security_id\": \"A\", \"quantity\": \"1\"}])\\n        with self.assertRaises(ValueError):\\n            active_ids([{}])\\n\\n    def test_invalid_later_record(self) -> None:\\n        source = fixture() + [{\"security_id\": \"BAD\", \"quantity\": None}]\\n        before = [dict(row) for row in source]\\n        with self.assertRaises(TypeError):\\n            active_ids(source)\\n        self.assertEqual(source, before)\\n\\n    def test_relative_and_absolute_fixture_paths(self) -> None:\\n        for path in (\"fixtures/holdings.json\", str(FIXTURE)):\\n            with self.subTest(path=path):\\n                result = application(\"--input\", path)\\n                self.assertEqual(result.returncode, 0, result.stderr)\\n                self.assertEqual(result.stdout, \"Active IDs: SEC-A, SEC-C\\\\n\")\\n                self.assertEqual(result.stderr, \"\")\\n\\n    def test_input_outside_project(self) -> None:\\n        with TemporaryDirectory() as directory:\\n            path = Path(directory) / \"external.json\"\\n            path.write_text(\\'[{\"security_id\":\"OTHER\",\"quantity\":\"2\"}]\\', encoding=\"utf-8\")\\n            result = application(\"--input\", str(path))\\n            self.assertEqual(result.returncode, 0, result.stderr)\\n            self.assertEqual(result.stdout, \"Active IDs: OTHER\\\\n\")\\n\\n    def test_missing_and_invalid_file_fail_without_report(self) -> None:\\n        with TemporaryDirectory() as directory:\\n            path = Path(directory) / \"missing.json\"\\n            missing = application(\"--input\", str(path))\\n            self.assertNotEqual(missing.returncode, 0)\\n            self.assertEqual(missing.stdout, \"\")\\n            self.assertIn(\"FileNotFoundError\", missing.stderr)\\n            path.write_text(\\'[{\"security_id\":\"A\",\"quantity\":\"1\",\"quantity\":\"2\"}]\\', encoding=\"utf-8\")\\n            invalid = application(\"--input\", str(path))\\n            self.assertNotEqual(invalid.returncode, 0)\\n            self.assertEqual(invalid.stdout, \"\")\\n            self.assertIn(\"duplicate JSON member\", invalid.stderr)\\n\\n    def test_import_origin_and_quiet_initialization(self) -> None:\\n        code = (\\n            \"import financial_layout, financial_layout.__main__\\\\n\"\\n            \"from pathlib import Path\\\\n\"\\n            \"assert Path(financial_layout.__file__).resolve() == Path(\\'financial_layout/__init__.py\\').resolve()\\\\n\"\\n        )\\n        result = subprocess.run(\\n            [sys.executable, \"-c\", code], cwd=PROJECT_ROOT,\\n            capture_output=True, text=True, check=False, timeout=10,\\n        )\\n        self.assertEqual(result.returncode, 0, result.stderr)\\n        self.assertEqual(result.stdout, \"\")\\n        self.assertEqual(result.stderr, \"\")\\n\\n\\nif __name__ == \"__main__\":\\n    unittest.main(verbosity=2)\\n', 'fixtures/holdings.json': b'[\\n  {\"security_id\": \"SEC-B\", \"quantity\": \"0\"},\\n  {\"security_id\": \"SEC-A\", \"quantity\": \"12.5\"},\\n  {\"security_id\": \"SEC-C\", \"quantity\": \"3\"}\\n]\\n', 'README.md': b'# Financial Layout Lab\\n\\nRequires Python 3.10 or later. No third-party runtime dependency.\\nRun all commands from this directory, the project root.\\n\\nWindows PowerShell:\\n\\n    py -3 -m financial_layout --input fixtures/holdings.json\\n    py -3 -m unittest discover -s tests -v\\n\\nLinux or macOS:\\n\\n    python3 -m financial_layout --input fixtures/holdings.json\\n    python3 -m unittest discover -s tests -v\\n\\nExpected application result: Active IDs: SEC-A, SEC-C\\nInput is synthetic aggregate instrument units, with no valuation.\\nThis is local flat-layout testing, not installed-distribution verification.\\n', '.gitignore': b'.venv/\\n__pycache__/\\n*.py[cod]\\nbuild/\\ndist/\\n*.egg-info/\\n'}",
+      "status": "PASS"
+    },
+    {
+      "label": "5.10 supplied files unchanged",
+      "actual": "{'configuration.py': b'\"\"\"Resolve explicit, non-secret configuration without import-time I/O.\"\"\"\\nfrom collections.abc import Mapping\\nfrom dataclasses import dataclass\\nimport json\\nfrom pathlib import Path\\n\\nKEYS = {\\'environment\\', \\'currency\\', \\'decimal_places\\'}\\nENV_KEYS = {\\'environment\\': \\'FINLAB_ENVIRONMENT\\', \\'currency\\': \\'FINLAB_CURRENCY\\',\\n            \\'decimal_places\\': \\'FINLAB_DECIMAL_PLACES\\'}\\nDEFAULTS = {\\'environment\\': \\'development\\', \\'currency\\': \\'USD\\', \\'decimal_places\\': \\'2\\'}\\n\\n@dataclass(frozen=True)\\nclass Settings:\\n    environment: str\\n    currency: str\\n    decimal_places: int\\n    sources: tuple[tuple[str, str], ...]\\n\\n\\ndef unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:\\n    result: dict[str, object] = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(\\'duplicate configuration key\\')\\n        result[key] = value\\n    return result\\n\\n\\ndef resolve(path: Path, environ: Mapping[str, str],\\n            overrides: Mapping[str, str]) -> Settings:\\n    \"\"\"Precedence: defaults < required JSON file < environment < CLI.\\n\\n    Validate every supplied recognized value, including shadowed values.\\n    No mutation, credentials, remote access, or financial calculation.\\n    \"\"\"\\n    payload = json.loads(path.read_text(encoding=\\'utf-8\\'), object_pairs_hook=unique_object)\\n    if type(payload) is not dict or set(payload) - KEYS:\\n        raise ValueError(\\'configuration must be an object with known keys\\')\\n    if set(overrides) - KEYS:\\n        raise ValueError(\\'unknown command-line configuration key\\')\\n    selected = dict(DEFAULTS)\\n    sources = {key: \\'default\\' for key in KEYS}\\n    layers = [(\\'file\\', payload),\\n              (\\'environment\\', {key: environ[name] for key, name in ENV_KEYS.items() if name in environ}),\\n              (\\'cli\\', dict(overrides))]\\n    for source, layer in layers:\\n        for key, value in layer.items():\\n            if type(value) is not str:\\n                raise ValueError(f\\'{key} must be text\\')\\n            allowed = {\\'environment\\': {\\'development\\', \\'test\\', \\'production\\'},\\n                       \\'currency\\': {\\'USD\\', \\'EUR\\'}, \\'decimal_places\\': {\\'0\\', \\'2\\', \\'4\\'}}\\n            if value not in allowed[key]:\\n                raise ValueError(f\\'invalid {key} in {source}\\')\\n            selected[key] = value\\n            sources[key] = source\\n    return Settings(selected[\\'environment\\'], selected[\\'currency\\'],\\n                    int(selected[\\'decimal_places\\']), tuple(sorted(sources.items())))\\n', 'config_demo.py': b'\"\"\"Display resolved non-secret settings; perform no financial transaction.\"\"\"\\nimport argparse\\nimport json\\nimport os\\nfrom pathlib import Path\\nfrom configuration import resolve\\n\\n\\ndef main(argv: list[str] | None = None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)\\n    parser.add_argument(\\'--config\\', type=Path, required=True)\\n    for key in (\\'environment\\', \\'currency\\', \\'decimal_places\\'):\\n        parser.add_argument(\\'--\\' + key.replace(\\'_\\', \\'-\\'))\\n    args = parser.parse_args(argv)\\n    overrides = {key: getattr(args, key) for key in\\n                 (\\'environment\\', \\'currency\\', \\'decimal_places\\') if getattr(args, key) is not None}\\n    settings = resolve(args.config, dict(os.environ), overrides)\\n    print(json.dumps({\\'environment\\': settings.environment, \\'currency\\': settings.currency,\\n                      \\'decimal_places\\': settings.decimal_places,\\n                      \\'sources\\': dict(settings.sources)}, sort_keys=True))\\n    return 0\\n\\n\\nif __name__ == \\'__main__\\':\\n    raise SystemExit(main())\\n', 'test_configuration.py': b'from dataclasses import FrozenInstanceError\\nimport json\\nfrom pathlib import Path\\nimport subprocess\\nimport sys\\nfrom tempfile import TemporaryDirectory\\nimport unittest\\nfrom configuration import resolve\\n\\nROOT = Path(__file__).resolve().parent\\n\\nclass ConfigurationTests(unittest.TestCase):\\n    def resolve_text(self, text=\\'{}\\', env=None, cli=None):\\n        with TemporaryDirectory() as directory:\\n            path = Path(directory) / \\'settings.json\\'\\n            path.write_text(text, encoding=\\'utf-8\\')\\n            return resolve(path, {} if env is None else env, {} if cli is None else cli)\\n\\n    def test_defaults(self):\\n        settings = self.resolve_text()\\n        self.assertEqual((settings.environment, settings.currency, settings.decimal_places),\\n                         (\\'development\\', \\'USD\\', 2))\\n        self.assertEqual(set(dict(settings.sources).values()), {\\'default\\'})\\n\\n    def test_precedence_and_provenance(self):\\n        settings = self.resolve_text(\\'{\"currency\":\"EUR\",\"decimal_places\":\"4\"}\\',\\n                                     {\\'FINLAB_CURRENCY\\': \\'USD\\'}, {\\'currency\\': \\'EUR\\'})\\n        self.assertEqual(settings.currency, \\'EUR\\')\\n        self.assertEqual(settings.decimal_places, 4)\\n        self.assertEqual(dict(settings.sources),\\n                         {\\'environment\\': \\'default\\', \\'currency\\': \\'cli\\', \\'decimal_places\\': \\'file\\'})\\n\\n    def test_environment_override(self):\\n        settings = self.resolve_text(\\'{}\\', {\\'FINLAB_ENVIRONMENT\\':\\'test\\', \\'FINLAB_DECIMAL_PLACES\\':\\'0\\'})\\n        self.assertEqual(settings.environment, \\'test\\')\\n        self.assertEqual(settings.decimal_places, 0)\\n        self.assertEqual(dict(settings.sources)[\\'environment\\'], \\'environment\\')\\n\\n    def test_invalid_values_including_shadowed(self):\\n        for value in (\\'\\', \\' USD\\', \\'usd\\', \\'GBP\\', None, True, 2):\\n            with self.subTest(value=value), self.assertRaises(ValueError):\\n                self.resolve_text(json.dumps({\\'currency\\':value}), {}, {\\'currency\\':\\'USD\\'})\\n        for value in (\\'-1\\', \\'02\\', \\'2.0\\', \\'3\\', \\'\\'):\\n            with self.assertRaises(ValueError):\\n                self.resolve_text(\\'{}\\', {\\'FINLAB_DECIMAL_PLACES\\':value})\\n        with self.assertRaises(ValueError):\\n            self.resolve_text(\\'{}\\', {\\'FINLAB_ENVIRONMENT\\':\\'prod\\'})\\n\\n    def test_schema_and_duplicate_rejection(self):\\n        for text in (\\'[]\\', \\'null\\', \\'{\"curreny\":\"USD\"}\\', \\'{\"currency\":\"USD\",\"currency\":\"EUR\"}\\'):\\n            with self.assertRaises(ValueError):\\n                self.resolve_text(text)\\n        with self.assertRaises(ValueError):\\n            self.resolve_text(\\'{}\\', {}, {\\'unknown\\':\\'x\\'})\\n\\n    def test_missing_or_malformed_file(self):\\n        with TemporaryDirectory() as directory:\\n            with self.assertRaises(FileNotFoundError):\\n                resolve(Path(directory)/\\'absent.json\\', {}, {})\\n        with self.assertRaises(json.JSONDecodeError):\\n            self.resolve_text(\\'{\\')\\n\\n    def test_isolation_and_immutable_result(self):\\n        env = {\\'FINLAB_CURRENCY\\':\\'EUR\\', \\'UNRELATED\\':\\'ignored\\'}\\n        cli = {\\'environment\\':\\'test\\'}\\n        before = (dict(env), dict(cli))\\n        settings = self.resolve_text(\\'{}\\', env, cli)\\n        self.assertEqual((env, cli), before)\\n        with self.assertRaises(FrozenInstanceError):\\n            settings.currency = \\'USD\\'\\n        self.assertEqual(self.resolve_text().currency, \\'USD\\')\\n\\n    def test_cli_and_failure_have_expected_output(self):\\n        env = __import__(\\'os\\').environ.copy()\\n        for name in (\\'FINLAB_ENVIRONMENT\\',\\'FINLAB_CURRENCY\\',\\'FINLAB_DECIMAL_PLACES\\'):\\n            env.pop(name, None)\\n        result = subprocess.run([sys.executable, \\'config_demo.py\\', \\'--config\\', \\'development.json\\',\\n                                 \\'--currency\\', \\'EUR\\'], cwd=ROOT, env=env,\\n                                capture_output=True, text=True, timeout=10)\\n        self.assertEqual(result.returncode, 0, result.stderr)\\n        self.assertEqual(json.loads(result.stdout)[\\'sources\\'][\\'currency\\'], \\'cli\\')\\n        env[\\'FINLAB_CURRENCY\\'] = \\'\\'\\n        failed = subprocess.run([sys.executable, \\'config_demo.py\\', \\'--config\\', \\'development.json\\'],\\n                                cwd=ROOT, env=env, capture_output=True, text=True, timeout=10)\\n        self.assertNotEqual(failed.returncode, 0)\\n        self.assertEqual(failed.stdout, \\'\\')\\n        self.assertIn(\\'invalid currency in environment\\', failed.stderr)\\n\\nif __name__ == \\'__main__\\':\\n    unittest.main(verbosity=2)\\n', 'development.json': b'{\"environment\": \"development\", \"currency\": \"USD\", \"decimal_places\": \"2\"}\\n'}",
+      "expected": "{'configuration.py': b'\"\"\"Resolve explicit, non-secret configuration without import-time I/O.\"\"\"\\nfrom collections.abc import Mapping\\nfrom dataclasses import dataclass\\nimport json\\nfrom pathlib import Path\\n\\nKEYS = {\\'environment\\', \\'currency\\', \\'decimal_places\\'}\\nENV_KEYS = {\\'environment\\': \\'FINLAB_ENVIRONMENT\\', \\'currency\\': \\'FINLAB_CURRENCY\\',\\n            \\'decimal_places\\': \\'FINLAB_DECIMAL_PLACES\\'}\\nDEFAULTS = {\\'environment\\': \\'development\\', \\'currency\\': \\'USD\\', \\'decimal_places\\': \\'2\\'}\\n\\n@dataclass(frozen=True)\\nclass Settings:\\n    environment: str\\n    currency: str\\n    decimal_places: int\\n    sources: tuple[tuple[str, str], ...]\\n\\n\\ndef unique_object(pairs: list[tuple[str, object]]) -> dict[str, object]:\\n    result: dict[str, object] = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(\\'duplicate configuration key\\')\\n        result[key] = value\\n    return result\\n\\n\\ndef resolve(path: Path, environ: Mapping[str, str],\\n            overrides: Mapping[str, str]) -> Settings:\\n    \"\"\"Precedence: defaults < required JSON file < environment < CLI.\\n\\n    Validate every supplied recognized value, including shadowed values.\\n    No mutation, credentials, remote access, or financial calculation.\\n    \"\"\"\\n    payload = json.loads(path.read_text(encoding=\\'utf-8\\'), object_pairs_hook=unique_object)\\n    if type(payload) is not dict or set(payload) - KEYS:\\n        raise ValueError(\\'configuration must be an object with known keys\\')\\n    if set(overrides) - KEYS:\\n        raise ValueError(\\'unknown command-line configuration key\\')\\n    selected = dict(DEFAULTS)\\n    sources = {key: \\'default\\' for key in KEYS}\\n    layers = [(\\'file\\', payload),\\n              (\\'environment\\', {key: environ[name] for key, name in ENV_KEYS.items() if name in environ}),\\n              (\\'cli\\', dict(overrides))]\\n    for source, layer in layers:\\n        for key, value in layer.items():\\n            if type(value) is not str:\\n                raise ValueError(f\\'{key} must be text\\')\\n            allowed = {\\'environment\\': {\\'development\\', \\'test\\', \\'production\\'},\\n                       \\'currency\\': {\\'USD\\', \\'EUR\\'}, \\'decimal_places\\': {\\'0\\', \\'2\\', \\'4\\'}}\\n            if value not in allowed[key]:\\n                raise ValueError(f\\'invalid {key} in {source}\\')\\n            selected[key] = value\\n            sources[key] = source\\n    return Settings(selected[\\'environment\\'], selected[\\'currency\\'],\\n                    int(selected[\\'decimal_places\\']), tuple(sorted(sources.items())))\\n', 'config_demo.py': b'\"\"\"Display resolved non-secret settings; perform no financial transaction.\"\"\"\\nimport argparse\\nimport json\\nimport os\\nfrom pathlib import Path\\nfrom configuration import resolve\\n\\n\\ndef main(argv: list[str] | None = None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)\\n    parser.add_argument(\\'--config\\', type=Path, required=True)\\n    for key in (\\'environment\\', \\'currency\\', \\'decimal_places\\'):\\n        parser.add_argument(\\'--\\' + key.replace(\\'_\\', \\'-\\'))\\n    args = parser.parse_args(argv)\\n    overrides = {key: getattr(args, key) for key in\\n                 (\\'environment\\', \\'currency\\', \\'decimal_places\\') if getattr(args, key) is not None}\\n    settings = resolve(args.config, dict(os.environ), overrides)\\n    print(json.dumps({\\'environment\\': settings.environment, \\'currency\\': settings.currency,\\n                      \\'decimal_places\\': settings.decimal_places,\\n                      \\'sources\\': dict(settings.sources)}, sort_keys=True))\\n    return 0\\n\\n\\nif __name__ == \\'__main__\\':\\n    raise SystemExit(main())\\n', 'test_configuration.py': b'from dataclasses import FrozenInstanceError\\nimport json\\nfrom pathlib import Path\\nimport subprocess\\nimport sys\\nfrom tempfile import TemporaryDirectory\\nimport unittest\\nfrom configuration import resolve\\n\\nROOT = Path(__file__).resolve().parent\\n\\nclass ConfigurationTests(unittest.TestCase):\\n    def resolve_text(self, text=\\'{}\\', env=None, cli=None):\\n        with TemporaryDirectory() as directory:\\n            path = Path(directory) / \\'settings.json\\'\\n            path.write_text(text, encoding=\\'utf-8\\')\\n            return resolve(path, {} if env is None else env, {} if cli is None else cli)\\n\\n    def test_defaults(self):\\n        settings = self.resolve_text()\\n        self.assertEqual((settings.environment, settings.currency, settings.decimal_places),\\n                         (\\'development\\', \\'USD\\', 2))\\n        self.assertEqual(set(dict(settings.sources).values()), {\\'default\\'})\\n\\n    def test_precedence_and_provenance(self):\\n        settings = self.resolve_text(\\'{\"currency\":\"EUR\",\"decimal_places\":\"4\"}\\',\\n                                     {\\'FINLAB_CURRENCY\\': \\'USD\\'}, {\\'currency\\': \\'EUR\\'})\\n        self.assertEqual(settings.currency, \\'EUR\\')\\n        self.assertEqual(settings.decimal_places, 4)\\n        self.assertEqual(dict(settings.sources),\\n                         {\\'environment\\': \\'default\\', \\'currency\\': \\'cli\\', \\'decimal_places\\': \\'file\\'})\\n\\n    def test_environment_override(self):\\n        settings = self.resolve_text(\\'{}\\', {\\'FINLAB_ENVIRONMENT\\':\\'test\\', \\'FINLAB_DECIMAL_PLACES\\':\\'0\\'})\\n        self.assertEqual(settings.environment, \\'test\\')\\n        self.assertEqual(settings.decimal_places, 0)\\n        self.assertEqual(dict(settings.sources)[\\'environment\\'], \\'environment\\')\\n\\n    def test_invalid_values_including_shadowed(self):\\n        for value in (\\'\\', \\' USD\\', \\'usd\\', \\'GBP\\', None, True, 2):\\n            with self.subTest(value=value), self.assertRaises(ValueError):\\n                self.resolve_text(json.dumps({\\'currency\\':value}), {}, {\\'currency\\':\\'USD\\'})\\n        for value in (\\'-1\\', \\'02\\', \\'2.0\\', \\'3\\', \\'\\'):\\n            with self.assertRaises(ValueError):\\n                self.resolve_text(\\'{}\\', {\\'FINLAB_DECIMAL_PLACES\\':value})\\n        with self.assertRaises(ValueError):\\n            self.resolve_text(\\'{}\\', {\\'FINLAB_ENVIRONMENT\\':\\'prod\\'})\\n\\n    def test_schema_and_duplicate_rejection(self):\\n        for text in (\\'[]\\', \\'null\\', \\'{\"curreny\":\"USD\"}\\', \\'{\"currency\":\"USD\",\"currency\":\"EUR\"}\\'):\\n            with self.assertRaises(ValueError):\\n                self.resolve_text(text)\\n        with self.assertRaises(ValueError):\\n            self.resolve_text(\\'{}\\', {}, {\\'unknown\\':\\'x\\'})\\n\\n    def test_missing_or_malformed_file(self):\\n        with TemporaryDirectory() as directory:\\n            with self.assertRaises(FileNotFoundError):\\n                resolve(Path(directory)/\\'absent.json\\', {}, {})\\n        with self.assertRaises(json.JSONDecodeError):\\n            self.resolve_text(\\'{\\')\\n\\n    def test_isolation_and_immutable_result(self):\\n        env = {\\'FINLAB_CURRENCY\\':\\'EUR\\', \\'UNRELATED\\':\\'ignored\\'}\\n        cli = {\\'environment\\':\\'test\\'}\\n        before = (dict(env), dict(cli))\\n        settings = self.resolve_text(\\'{}\\', env, cli)\\n        self.assertEqual((env, cli), before)\\n        with self.assertRaises(FrozenInstanceError):\\n            settings.currency = \\'USD\\'\\n        self.assertEqual(self.resolve_text().currency, \\'USD\\')\\n\\n    def test_cli_and_failure_have_expected_output(self):\\n        env = __import__(\\'os\\').environ.copy()\\n        for name in (\\'FINLAB_ENVIRONMENT\\',\\'FINLAB_CURRENCY\\',\\'FINLAB_DECIMAL_PLACES\\'):\\n            env.pop(name, None)\\n        result = subprocess.run([sys.executable, \\'config_demo.py\\', \\'--config\\', \\'development.json\\',\\n                                 \\'--currency\\', \\'EUR\\'], cwd=ROOT, env=env,\\n                                capture_output=True, text=True, timeout=10)\\n        self.assertEqual(result.returncode, 0, result.stderr)\\n        self.assertEqual(json.loads(result.stdout)[\\'sources\\'][\\'currency\\'], \\'cli\\')\\n        env[\\'FINLAB_CURRENCY\\'] = \\'\\'\\n        failed = subprocess.run([sys.executable, \\'config_demo.py\\', \\'--config\\', \\'development.json\\'],\\n                                cwd=ROOT, env=env, capture_output=True, text=True, timeout=10)\\n        self.assertNotEqual(failed.returncode, 0)\\n        self.assertEqual(failed.stdout, \\'\\')\\n        self.assertIn(\\'invalid currency in environment\\', failed.stderr)\\n\\nif __name__ == \\'__main__\\':\\n    unittest.main(verbosity=2)\\n', 'development.json': b'{\"environment\": \"development\", \"currency\": \"USD\", \"decimal_places\": \"2\"}\\n'}",
+      "status": "PASS"
+    },
+    {
+      "label": "known result",
+      "actual": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "expected": "{'count': 2, 'currency': 'USD', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN', 'total': '30.01'}",
+      "status": "PASS"
+    },
+    {
+      "label": "artifact input_sha256",
+      "actual": "'a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a'",
+      "expected": "'a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a'",
+      "status": "PASS"
+    },
+    {
+      "label": "artifact config_sha256",
+      "actual": "'ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80'",
+      "expected": "'ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80'",
+      "status": "PASS"
+    },
+    {
+      "label": "artifact source_sha256",
+      "actual": "'849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab'",
+      "expected": "'849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab'",
+      "status": "PASS"
+    },
+    {
+      "label": "existing artifact unchanged",
+      "actual": "b'{\\n  \"evidence\": {\\n    \"config_sha256\": \"ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80\",\\n    \"implementation\": \"CPython\",\\n    \"input_sha256\": \"a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a\",\\n    \"python\": \"3.12.14\",\\n    \"source_sha256\": \"849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab\",\\n    \"system\": \"Linux\",\\n    \"third_party_runtime_dependencies\": []\\n  },\\n  \"result\": {\\n    \"count\": 2,\\n    \"currency\": \"USD\",\\n    \"method\": \"sum_then_round\",\\n    \"rounding\": \"ROUND_HALF_EVEN\",\\n    \"total\": \"30.01\"\\n  },\\n  \"schema_version\": 1\\n}\\n'",
+      "expected": "b'{\\n  \"evidence\": {\\n    \"config_sha256\": \"ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80\",\\n    \"implementation\": \"CPython\",\\n    \"input_sha256\": \"a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a\",\\n    \"python\": \"3.12.14\",\\n    \"source_sha256\": \"849750c331de9efb261054f7c2ff14ce773db282190445ca931579fbc12d9fab\",\\n    \"system\": \"Linux\",\\n    \"third_party_runtime_dependencies\": []\\n  },\\n  \"result\": {\\n    \"count\": 2,\\n    \"currency\": \"USD\",\\n    \"method\": \"sum_then_round\",\\n    \"rounding\": \"ROUND_HALF_EVEN\",\\n    \"total\": \"30.01\"\\n  },\\n  \"schema_version\": 1\\n}\\n'",
+      "status": "PASS"
+    },
+    {
+      "label": "invalid report absent",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "label": "5.11 supplied files unchanged",
+      "actual": "{'research.py': b'\"\"\"Reproduce a synthetic same-currency cash-inflow aggregation.\"\"\"\\nimport argparse\\nfrom decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext\\nimport hashlib\\nimport json\\nfrom pathlib import Path\\nimport platform\\nimport re\\n\\n\\ndef digest(raw: bytes) -> str:\\n    return hashlib.sha256(raw).hexdigest()\\n\\n\\ndef unique_object(pairs):\\n    result = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(\\'duplicate JSON member\\')\\n        result[key] = value\\n    return result\\n\\n\\ndef decode(raw: bytes):\\n    return json.loads(raw.decode(\\'utf-8\\'), object_pairs_hook=unique_object)\\n\\n\\ndef analyze(data_raw: bytes, config_raw: bytes) -> dict:\\n    config = decode(config_raw)\\n    if config != {\\'currency\\': \\'USD\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\', \\'scale\\': \\'0.01\\'}:\\n        raise ValueError(\\'unsupported configuration\\')\\n    rows = decode(data_raw)\\n    if type(rows) is not list or not 1 <= len(rows) <= 1000:\\n        raise ValueError(\\'expected 1 to 1000 inflows\\')\\n    seen = set()\\n    amounts = []\\n    for row in rows:\\n        if type(row) is not dict or set(row) != {\\'id\\', \\'currency\\', \\'amount\\'}:\\n            raise ValueError(\\'incorrect inflow schema\\')\\n        sid = row[\\'id\\']\\n        if type(sid) is not str or not sid or sid.strip() != sid or sid in seen:\\n            raise ValueError(\\'invalid or duplicate id\\')\\n        if row[\\'currency\\'] != \\'USD\\':\\n            raise ValueError(\\'mixed or unsupported currency\\')\\n        text = row[\\'amount\\']\\n        if type(text) is not str or re.fullmatch(r\\'(0|[1-9][0-9]{0,6})(\\\\.[0-9]{1,4})?\\', text) is None:\\n            raise ValueError(\\'invalid amount text\\')\\n        value = Decimal(text)\\n        if value > Decimal(\\'1000000\\'):\\n            raise ValueError(\\'inflow exceeds lab bound\\')\\n        seen.add(sid)\\n        amounts.append(value)\\n    # A fresh context prevents caller precision, rounding, or flags from leaking in.\\n    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):\\n        total = sum(amounts, Decimal(\\'0\\'))\\n        rounded = total.quantize(Decimal(\\'0.01\\'))\\n    return {\\'currency\\': \\'USD\\', \\'count\\': len(rows), \\'total\\': format(rounded, \\'.2f\\'),\\n            \\'method\\': \\'sum_then_round\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\'}\\n\\n\\ndef bundle(data_raw: bytes, config_raw: bytes, source_raw: bytes) -> dict:\\n    result = analyze(data_raw, config_raw)\\n    return {\\'schema_version\\': 1, \\'result\\': result,\\n            \\'evidence\\': {\\'input_sha256\\': digest(data_raw),\\n                         \\'config_sha256\\': digest(config_raw),\\n                         \\'source_sha256\\': digest(source_raw),\\n                         \\'python\\': platform.python_version(),\\n                         \\'implementation\\': platform.python_implementation(),\\n                         \\'system\\': platform.system(),\\n                         \\'third_party_runtime_dependencies\\': []}}\\n\\n\\ndef main(argv=None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)\\n    parser.add_argument(\\'--input\\', type=Path, required=True)\\n    parser.add_argument(\\'--config\\', type=Path, required=True)\\n    parser.add_argument(\\'--output\\', type=Path, required=True)\\n    args = parser.parse_args(argv)\\n    # Read each input once: hash and analyze the same bytes.\\n    data_raw = args.input.read_bytes()\\n    config_raw = args.config.read_bytes()\\n    source_raw = Path(__file__).read_bytes()\\n    report = bundle(data_raw, config_raw, source_raw)\\n    encoded = json.dumps(report, sort_keys=True, indent=2, allow_nan=False) + \\'\\\\n\\'\\n    # Exclusive create: never overwrite inputs or an earlier research result.\\n    with args.output.open(\\'x\\', encoding=\\'utf-8\\', newline=\\'\\\\n\\') as stream:\\n        stream.write(encoded)\\n    return 0\\n\\n\\nif __name__ == \\'__main__\\':\\n    raise SystemExit(main())\\n', 'test_research.py': b'from decimal import Inexact, ROUND_DOWN, localcontext\\nimport json\\nfrom pathlib import Path\\nimport subprocess\\nimport sys\\nfrom tempfile import TemporaryDirectory\\nimport unittest\\nfrom research import analyze, bundle, digest\\n\\nROOT = Path(__file__).resolve().parent\\nDATA = (ROOT / \\'inflows.json\\').read_bytes()\\nCONFIG = (ROOT / \\'settings.json\\').read_bytes()\\nSOURCE = (ROOT / \\'research.py\\').read_bytes()\\n\\nclass ResearchTests(unittest.TestCase):\\n    def test_known_answer_and_policy(self):\\n        result = analyze(DATA, CONFIG)\\n        self.assertEqual(result[\\'total\\'], \\'30.01\\')\\n        self.assertEqual(result[\\'count\\'], 2)\\n        self.assertEqual(result[\\'method\\'], \\'sum_then_round\\')\\n        # Rounding each 10.005 and 20.005 first would instead yield 30.00.\\n\\n    def test_context_isolation(self):\\n        expected = analyze(DATA, CONFIG)\\n        with localcontext() as context:\\n            context.prec = 2\\n            context.rounding = ROUND_DOWN\\n            context.traps[Inexact] = True\\n            self.assertEqual(analyze(DATA, CONFIG), expected)\\n            self.assertEqual(context.prec, 2)\\n            self.assertTrue(context.traps[Inexact])\\n\\n    def test_repeat_bundle(self):\\n        self.assertEqual(bundle(DATA, CONFIG, SOURCE), bundle(DATA, CONFIG, SOURCE))\\n\\n    def test_byte_identity_versus_result(self):\\n        changed = DATA + b\\'\\\\n\\'\\n        self.assertNotEqual(digest(DATA), digest(changed))\\n        self.assertEqual(analyze(DATA, CONFIG), analyze(changed, CONFIG))\\n\\n    def test_changed_data_and_source(self):\\n        changed = DATA.replace(b\\'10.005\\', b\\'11.005\\')\\n        self.assertEqual(analyze(changed, CONFIG)[\\'total\\'], \\'31.01\\')\\n        self.assertNotEqual(bundle(DATA, CONFIG, SOURCE)[\\'evidence\\'][\\'source_sha256\\'],\\n                            bundle(DATA, CONFIG, SOURCE+b\\'\\\\n\\')[\\'evidence\\'][\\'source_sha256\\'])\\n\\n    def test_invalid_records(self):\\n        baseline = json.loads(DATA)\\n        for amount in (\\'NaN\\', \\'-1\\', \\'1e2\\', \\' 1\\', \\'1000001\\', \\'1.00001\\', 1, None):\\n            rows = [dict(baseline[0], amount=amount)]\\n            with self.subTest(amount=amount), self.assertRaises(ValueError):\\n                analyze(json.dumps(rows).encode(), CONFIG)\\n        for rows in ([], baseline*2, [dict(baseline[0], currency=\\'EUR\\')], [{}]):\\n            with self.assertRaises(ValueError):\\n                analyze(json.dumps(rows).encode(), CONFIG)\\n\\n    def test_config_and_duplicate_members(self):\\n        with self.assertRaises(ValueError):\\n            analyze(DATA, CONFIG.replace(b\\'ROUND_HALF_EVEN\\', b\\'ROUND_DOWN\\'))\\n        with self.assertRaises(ValueError):\\n            analyze(b\\'[{\"id\":\"A\",\"id\":\"B\"}]\\', CONFIG)\\n\\n    def test_cli_rerun_and_no_overwrite(self):\\n        with TemporaryDirectory() as directory:\\n            paths = [Path(directory)/name for name in (\\'a.json\\', \\'b.json\\')]\\n            for path in paths:\\n                result = subprocess.run([sys.executable, str(ROOT/\\'research.py\\'),\\n                    \\'--input\\', str(ROOT/\\'inflows.json\\'), \\'--config\\', str(ROOT/\\'settings.json\\'),\\n                    \\'--output\\', str(path)], capture_output=True, text=True, timeout=10)\\n                self.assertEqual(result.returncode, 0, result.stderr)\\n            self.assertEqual(paths[0].read_bytes(), paths[1].read_bytes())\\n            before = paths[0].read_bytes()\\n            failed = subprocess.run([sys.executable, str(ROOT/\\'research.py\\'),\\n                \\'--input\\', str(ROOT/\\'inflows.json\\'), \\'--config\\', str(ROOT/\\'settings.json\\'),\\n                \\'--output\\', str(paths[0])], capture_output=True, text=True, timeout=10)\\n            self.assertNotEqual(failed.returncode, 0)\\n            self.assertEqual(paths[0].read_bytes(), before)\\n\\n    def test_invalid_input_creates_no_report(self):\\n        with TemporaryDirectory() as directory:\\n            bad, output = Path(directory)/\\'bad.json\\', Path(directory)/\\'out.json\\'\\n            bad.write_text(\\'[]\\', encoding=\\'utf-8\\')\\n            result = subprocess.run([sys.executable, str(ROOT/\\'research.py\\'),\\n                \\'--input\\', str(bad), \\'--config\\', str(ROOT/\\'settings.json\\'), \\'--output\\', str(output)],\\n                capture_output=True, text=True, timeout=10)\\n            self.assertNotEqual(result.returncode, 0)\\n            self.assertFalse(output.exists())\\n\\nif __name__ == \\'__main__\\':\\n    unittest.main(verbosity=2)\\n', 'inflows.json': b'[\\n  {\"id\": \"CF-1\", \"currency\": \"USD\", \"amount\": \"10.005\"},\\n  {\"id\": \"CF-2\", \"currency\": \"USD\", \"amount\": \"20.005\"}\\n]\\n', 'settings.json': b'{\"currency\": \"USD\", \"rounding\": \"ROUND_HALF_EVEN\", \"scale\": \"0.01\"}\\n'}",
+      "expected": "{'research.py': b'\"\"\"Reproduce a synthetic same-currency cash-inflow aggregation.\"\"\"\\nimport argparse\\nfrom decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext\\nimport hashlib\\nimport json\\nfrom pathlib import Path\\nimport platform\\nimport re\\n\\n\\ndef digest(raw: bytes) -> str:\\n    return hashlib.sha256(raw).hexdigest()\\n\\n\\ndef unique_object(pairs):\\n    result = {}\\n    for key, value in pairs:\\n        if key in result:\\n            raise ValueError(\\'duplicate JSON member\\')\\n        result[key] = value\\n    return result\\n\\n\\ndef decode(raw: bytes):\\n    return json.loads(raw.decode(\\'utf-8\\'), object_pairs_hook=unique_object)\\n\\n\\ndef analyze(data_raw: bytes, config_raw: bytes) -> dict:\\n    config = decode(config_raw)\\n    if config != {\\'currency\\': \\'USD\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\', \\'scale\\': \\'0.01\\'}:\\n        raise ValueError(\\'unsupported configuration\\')\\n    rows = decode(data_raw)\\n    if type(rows) is not list or not 1 <= len(rows) <= 1000:\\n        raise ValueError(\\'expected 1 to 1000 inflows\\')\\n    seen = set()\\n    amounts = []\\n    for row in rows:\\n        if type(row) is not dict or set(row) != {\\'id\\', \\'currency\\', \\'amount\\'}:\\n            raise ValueError(\\'incorrect inflow schema\\')\\n        sid = row[\\'id\\']\\n        if type(sid) is not str or not sid or sid.strip() != sid or sid in seen:\\n            raise ValueError(\\'invalid or duplicate id\\')\\n        if row[\\'currency\\'] != \\'USD\\':\\n            raise ValueError(\\'mixed or unsupported currency\\')\\n        text = row[\\'amount\\']\\n        if type(text) is not str or re.fullmatch(r\\'(0|[1-9][0-9]{0,6})(\\\\.[0-9]{1,4})?\\', text) is None:\\n            raise ValueError(\\'invalid amount text\\')\\n        value = Decimal(text)\\n        if value > Decimal(\\'1000000\\'):\\n            raise ValueError(\\'inflow exceeds lab bound\\')\\n        seen.add(sid)\\n        amounts.append(value)\\n    # A fresh context prevents caller precision, rounding, or flags from leaking in.\\n    with localcontext(Context(prec=28, rounding=ROUND_HALF_EVEN)):\\n        total = sum(amounts, Decimal(\\'0\\'))\\n        rounded = total.quantize(Decimal(\\'0.01\\'))\\n    return {\\'currency\\': \\'USD\\', \\'count\\': len(rows), \\'total\\': format(rounded, \\'.2f\\'),\\n            \\'method\\': \\'sum_then_round\\', \\'rounding\\': \\'ROUND_HALF_EVEN\\'}\\n\\n\\ndef bundle(data_raw: bytes, config_raw: bytes, source_raw: bytes) -> dict:\\n    result = analyze(data_raw, config_raw)\\n    return {\\'schema_version\\': 1, \\'result\\': result,\\n            \\'evidence\\': {\\'input_sha256\\': digest(data_raw),\\n                         \\'config_sha256\\': digest(config_raw),\\n                         \\'source_sha256\\': digest(source_raw),\\n                         \\'python\\': platform.python_version(),\\n                         \\'implementation\\': platform.python_implementation(),\\n                         \\'system\\': platform.system(),\\n                         \\'third_party_runtime_dependencies\\': []}}\\n\\n\\ndef main(argv=None) -> int:\\n    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)\\n    parser.add_argument(\\'--input\\', type=Path, required=True)\\n    parser.add_argument(\\'--config\\', type=Path, required=True)\\n    parser.add_argument(\\'--output\\', type=Path, required=True)\\n    args = parser.parse_args(argv)\\n    # Read each input once: hash and analyze the same bytes.\\n    data_raw = args.input.read_bytes()\\n    config_raw = args.config.read_bytes()\\n    source_raw = Path(__file__).read_bytes()\\n    report = bundle(data_raw, config_raw, source_raw)\\n    encoded = json.dumps(report, sort_keys=True, indent=2, allow_nan=False) + \\'\\\\n\\'\\n    # Exclusive create: never overwrite inputs or an earlier research result.\\n    with args.output.open(\\'x\\', encoding=\\'utf-8\\', newline=\\'\\\\n\\') as stream:\\n        stream.write(encoded)\\n    return 0\\n\\n\\nif __name__ == \\'__main__\\':\\n    raise SystemExit(main())\\n', 'test_research.py': b'from decimal import Inexact, ROUND_DOWN, localcontext\\nimport json\\nfrom pathlib import Path\\nimport subprocess\\nimport sys\\nfrom tempfile import TemporaryDirectory\\nimport unittest\\nfrom research import analyze, bundle, digest\\n\\nROOT = Path(__file__).resolve().parent\\nDATA = (ROOT / \\'inflows.json\\').read_bytes()\\nCONFIG = (ROOT / \\'settings.json\\').read_bytes()\\nSOURCE = (ROOT / \\'research.py\\').read_bytes()\\n\\nclass ResearchTests(unittest.TestCase):\\n    def test_known_answer_and_policy(self):\\n        result = analyze(DATA, CONFIG)\\n        self.assertEqual(result[\\'total\\'], \\'30.01\\')\\n        self.assertEqual(result[\\'count\\'], 2)\\n        self.assertEqual(result[\\'method\\'], \\'sum_then_round\\')\\n        # Rounding each 10.005 and 20.005 first would instead yield 30.00.\\n\\n    def test_context_isolation(self):\\n        expected = analyze(DATA, CONFIG)\\n        with localcontext() as context:\\n            context.prec = 2\\n            context.rounding = ROUND_DOWN\\n            context.traps[Inexact] = True\\n            self.assertEqual(analyze(DATA, CONFIG), expected)\\n            self.assertEqual(context.prec, 2)\\n            self.assertTrue(context.traps[Inexact])\\n\\n    def test_repeat_bundle(self):\\n        self.assertEqual(bundle(DATA, CONFIG, SOURCE), bundle(DATA, CONFIG, SOURCE))\\n\\n    def test_byte_identity_versus_result(self):\\n        changed = DATA + b\\'\\\\n\\'\\n        self.assertNotEqual(digest(DATA), digest(changed))\\n        self.assertEqual(analyze(DATA, CONFIG), analyze(changed, CONFIG))\\n\\n    def test_changed_data_and_source(self):\\n        changed = DATA.replace(b\\'10.005\\', b\\'11.005\\')\\n        self.assertEqual(analyze(changed, CONFIG)[\\'total\\'], \\'31.01\\')\\n        self.assertNotEqual(bundle(DATA, CONFIG, SOURCE)[\\'evidence\\'][\\'source_sha256\\'],\\n                            bundle(DATA, CONFIG, SOURCE+b\\'\\\\n\\')[\\'evidence\\'][\\'source_sha256\\'])\\n\\n    def test_invalid_records(self):\\n        baseline = json.loads(DATA)\\n        for amount in (\\'NaN\\', \\'-1\\', \\'1e2\\', \\' 1\\', \\'1000001\\', \\'1.00001\\', 1, None):\\n            rows = [dict(baseline[0], amount=amount)]\\n            with self.subTest(amount=amount), self.assertRaises(ValueError):\\n                analyze(json.dumps(rows).encode(), CONFIG)\\n        for rows in ([], baseline*2, [dict(baseline[0], currency=\\'EUR\\')], [{}]):\\n            with self.assertRaises(ValueError):\\n                analyze(json.dumps(rows).encode(), CONFIG)\\n\\n    def test_config_and_duplicate_members(self):\\n        with self.assertRaises(ValueError):\\n            analyze(DATA, CONFIG.replace(b\\'ROUND_HALF_EVEN\\', b\\'ROUND_DOWN\\'))\\n        with self.assertRaises(ValueError):\\n            analyze(b\\'[{\"id\":\"A\",\"id\":\"B\"}]\\', CONFIG)\\n\\n    def test_cli_rerun_and_no_overwrite(self):\\n        with TemporaryDirectory() as directory:\\n            paths = [Path(directory)/name for name in (\\'a.json\\', \\'b.json\\')]\\n            for path in paths:\\n                result = subprocess.run([sys.executable, str(ROOT/\\'research.py\\'),\\n                    \\'--input\\', str(ROOT/\\'inflows.json\\'), \\'--config\\', str(ROOT/\\'settings.json\\'),\\n                    \\'--output\\', str(path)], capture_output=True, text=True, timeout=10)\\n                self.assertEqual(result.returncode, 0, result.stderr)\\n            self.assertEqual(paths[0].read_bytes(), paths[1].read_bytes())\\n            before = paths[0].read_bytes()\\n            failed = subprocess.run([sys.executable, str(ROOT/\\'research.py\\'),\\n                \\'--input\\', str(ROOT/\\'inflows.json\\'), \\'--config\\', str(ROOT/\\'settings.json\\'),\\n                \\'--output\\', str(paths[0])], capture_output=True, text=True, timeout=10)\\n            self.assertNotEqual(failed.returncode, 0)\\n            self.assertEqual(paths[0].read_bytes(), before)\\n\\n    def test_invalid_input_creates_no_report(self):\\n        with TemporaryDirectory() as directory:\\n            bad, output = Path(directory)/\\'bad.json\\', Path(directory)/\\'out.json\\'\\n            bad.write_text(\\'[]\\', encoding=\\'utf-8\\')\\n            result = subprocess.run([sys.executable, str(ROOT/\\'research.py\\'),\\n                \\'--input\\', str(bad), \\'--config\\', str(ROOT/\\'settings.json\\'), \\'--output\\', str(output)],\\n                capture_output=True, text=True, timeout=10)\\n            self.assertNotEqual(result.returncode, 0)\\n            self.assertFalse(output.exists())\\n\\nif __name__ == \\'__main__\\':\\n    unittest.main(verbosity=2)\\n', 'inflows.json': b'[\\n  {\"id\": \"CF-1\", \"currency\": \"USD\", \"amount\": \"10.005\"},\\n  {\"id\": \"CF-2\", \"currency\": \"USD\", \"amount\": \"20.005\"}\\n]\\n', 'settings.json': b'{\"currency\": \"USD\", \"rounding\": \"ROUND_HALF_EVEN\", \"scale\": \"0.01\"}\\n'}",
+      "status": "PASS"
+    }
+  ]
+}

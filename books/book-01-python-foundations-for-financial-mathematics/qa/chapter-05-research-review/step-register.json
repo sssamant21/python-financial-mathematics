@@ -1,0 +1,242 @@
+[
+  {
+    "id": "5.9-STEP1",
+    "label": "Prerequisites and exact layout",
+    "answer": "Flat local import project, Python3.10+ syntax, no third-party runtime dependencies. Package, fixtures and tests siblings at root; tests/test_layout.py discovered by explicit -s tests without requiring tests package. Avoid financial_layout.py/json.py name collisions.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP2",
+    "label": "Create files",
+    "answer": "Reconstruct all four Python listings plus exact JSON fixture, README and .gitignore. Per-file hashes retained. Source/fixtures outside environment; ignore rules neither untrack files nor enforce access controls.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP3",
+    "label": "Run local application",
+    "answer": "Module launched from root, explicit caller-relative input fixture. B0,A12.5,C3 yields A,C in source order; zero omitted from active IDs, not interpreted as missing. Quantities parsed from text, no float or valuation.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP4",
+    "label": "Absolute/external paths",
+    "answer": "Absolute project fixture and copied absolute external input both return same exact stdout. Package discovery stays in flat project root; this is not installed arbitrary-directory use.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP5",
+    "label": "Run discovery",
+    "answer": "Exact documented discover -s tests -v finds8 methods, OK, zero exit/no skips. Suite includes schema/types/duplicate IDs, full validation and path failures. An empty suite would fail this harness.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP6",
+    "label": "Import and ownership",
+    "answer": "Fresh normal package/module/entry imports quiet; source and all supplied files remain byte-identical after runs. Parent layout and import context intentionally preserved, no sys.path repairs.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP7",
+    "label": "Interpret errors and growth",
+    "answer": "Missing input propagates rather than selecting fixture; package discoverability distinct from input location. src migration/installed-artifact checks, output policy and nested-test discovery are separately queued extensions.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.9-STEP8",
+    "label": "Scope",
+    "answer": "Ordinary wire quantity text may include Decimal exponent syntax; finite nonnegative validation follows parsing. No market-value ordering, wheel installation, external resources, static checker, Windows/macOS or independent acceptance in this batch.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.09-project-directory-structure.md",
+    "source_sha256": "5104c9f83cb75e5533468570e4b16639e2bd7a86c508756adc80102191b396c4",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP1",
+    "label": "Prerequisites and files",
+    "answer": "Four sibling source/test/config files in a fresh directory. No earlier lab file dependency; explicit required UTF8 JSON config. Child FINLAB settings cleared without changing parent process environment.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP2",
+    "label": "Precedence contract",
+    "answer": "defaults<required file<recognized process<CLI; validate all supplied recognized values even shadowed. Presence differs from empty; same selected value may have different provenance. Unknown JSON/override keys rejected, unrelated process variables ignored.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP3",
+    "label": "Baseline application",
+    "answer": "File completeUSD/development/2 plus CLI EUR yields EUR(cli),development(file),decimal_places2(file). Expected JSON independently stated; equal-to-default values remain file-sourced.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP4",
+    "label": "Process override",
+    "answer": "Controlled child FINLAB_ENVIRONMENT=test overrides file environment; selected source environment while other settings file. No environment variables or real credentials are changed in parent.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP5",
+    "label": "Run discovery",
+    "answer": "Exact default discover -v finds8 methods/OK/no skips. Original suite exercises defaults, validation of shadowed invalid settings, duplicate/unknown file keys and CLI behavior.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP6",
+    "label": "Failure boundary",
+    "answer": "Explicit --decimal-places3 fails with invalid decimal_places in cli and empty stdout; missing --config fails argument parsing with empty stdout. Raw nonzero error output retained. No conversion to zero/success fallback.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP7",
+    "label": "Ownership and import",
+    "answer": "Fresh import defines configuration/API and CLI without app output. Supplied files unchanged. Frozen settings object and source provenance are returned, not authorization grants.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.10-STEP8",
+    "label": "Scope and secrets",
+    "answer": "CurrencyEUR is a label, not FX conversion; decimal_places is not implemented accounting rounding. Development label and Python venv do not restrict production access. IAM/network/resource controls require separate review; no remote access, shell changes, static checker or OS matrix executed.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP1",
+    "label": "Prerequisites and claim",
+    "answer": "Four sibling files: research.py,input,settings,test. No third-party runtime dependencies, remote data, clock/randomness or environment override. Define local repeat execution separately from independent reproduction/scientific robustness.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP2",
+    "label": "Numeric contract and independent expectation",
+    "answer": "Input10.005+20.005 gives30.010; half-even once at cents gives30.01, rounding each first would30.00. Independent Fraction integer-cent tie logic probes baseline,0.005,0.015 and1000 rows at1000000. Source precision28 ample for bounded\u226414 digit-position sum; hostile precision2/ROUND_DOWN/Inexact trap does not govern result.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP3",
+    "label": "Run two experiments",
+    "answer": "Exact CLI invocations use distinct nonexisting run-a/run-b paths. No success stdout; return0 and identical UTF8 JSON bytes. Exact comparison command prints Identical run artifacts; this is same controlled runtime only.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP4",
+    "label": "Inspect evidence and hashes",
+    "answer": "Result schema values explicitly checked; input/config/source SHA256 recomputed from consumed exact extracted files. Source digest is research.py only, not repository/interpreter/test authenticity. Retained result artifacts include Python/implementation/system and no third-party runtime dependencies.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP5",
+    "label": "Run discovery",
+    "answer": "Exact discover -v finds9 original methods, OK/no skips. Includes known answer/context, byte/meaning distinction, changed data/source, invalid inputs/config and repeat/no-overwrite CLI. These reruns do not add unique methods.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP6",
+    "label": "Failure boundary",
+    "answer": "Existing output explicit rerun fails FileExistsError and original bytes remain; invalid[] input fails before creating output. Raw failures retained. Exclusive create is not crash-atomic; incomplete write simulation/atomic publication not performed.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP7",
+    "label": "Preserve bundle and ownership",
+    "answer": "Retain unchanged four source/input/test files plus actual run-a/b outputs in research-bundle with this transcript and note. Compare supplied-file bytes after operations; no input overwritten. Retention is evidence for this local synthetic question only.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  },
+  {
+    "id": "5.11-STEP8",
+    "label": "Limits and research review",
+    "answer": "Market data availability/revisions, identifiers/calendars/FX, selection bias, investment conclusions, code attestation, notebook fresh kernel, dependency artifacts, other platforms/interpreters and independent acceptance remain outside run. A digest and repeated deterministic output do not certify model correctness.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.11-reproducible-financial-research.md",
+    "source_sha256": "f82f4c9db3f0ae70af104d71a8952c133085ae64e3da23c2133003b70dd806ba",
+    "evidence": "results.json"
+  }
+]
