@@ -43,7 +43,7 @@ def residuals(rate,rows):
 
 def loss(rate,rows=TRAIN):
     data=validate(rows)
-    return finite(0.5*sum((v/1000)**2 for v in residuals(rate,data)),"loss")
+    return _rounded_calibration(sum(Fraction(v)**2 for v in residuals(rate,data))/2_000_000,"loss")
 
 def gradient(rate,rows=TRAIN):
     data=validate(rows)
