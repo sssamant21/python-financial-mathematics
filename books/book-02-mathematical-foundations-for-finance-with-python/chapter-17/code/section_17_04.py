@@ -1,6 +1,7 @@
 """Book 02 Section 17.4: active-set regimes and complementarity."""
 import json
 import math
+from fractions import Fraction
 
 TRANSITION=8/11
 
@@ -23,12 +24,15 @@ def optimal_portfolio(cap):
     u=finite(cap,"cap")
     if not 0<=u<=1:
         raise ValueError("cap must lie in [0,1]")
-    x=min(u,TRANSITION)
-    y=1-x
-    g1=2*(0.04*x+0.01*y)
-    g2=2*(0.01*x+0.09*y)
-    lam=-g2
-    mu=max(0.0,g2-g1) if x>=u else 0.0
+    exact_cap=Fraction(u)
+    exact_x=min(exact_cap,Fraction(8,11))
+    x,y=float(exact_x),float(1-exact_x)
+    # Decimal-model rational dual formulas avoid subtracting near-equal
+    # rounded gradient components at the cap transition.
+    lam=float((8*exact_x-9)/50)
+    mu=float(max(Fraction(0),(8-11*exact_x)/50))
+    exact_regime=("degenerate_endpoint" if exact_cap==0 else
+                  "binding" if exact_cap<Fraction(8,11) else "inactive")
     if u==0:
         regime="degenerate_endpoint"
     elif u<TRANSITION:
@@ -38,7 +42,11 @@ def optimal_portfolio(cap):
     else:
         regime="inactive"
     return {"cap":u,"weights":(x,y),"variance":variance(x,y),
-            "lambda":lam,"multipliers":(0.0,0.0,mu),"regime":regime}
+            "lambda":lam,"multipliers":(0.0,0.0,mu),"regime":regime,
+            "exact_model_regime":exact_regime,
+            "model_cap_active":exact_cap==exact_x,
+            "model_cap_slack":float(exact_cap-exact_x),
+            "regime_basis":"rounded_transition_display"}
 
 def kkt_report(solution,tolerance=1e-9):
     tol=finite(tolerance,"tolerance")
