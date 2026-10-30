@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest full-book runtime refresh — V-36
+## Latest scoped diagnostic integration follow-up
+
+Section 14.8 now computes diagnostics from actual helper outputs; four helper calls and five injected wrong outputs are checked. All 29 Chapter 14 files compiled and 19 scripts passed. [Evidence](chapter-14-diagnostic-integration-followup.md). This follows V-36; COV-67 remains partially open.
+
+## Earlier full-book runtime refresh — V-36
 
 456/456 Python files compiled; 245/245 scripts exited zero; 457/457 source/fixture blobs matched before/after. Includes the Section 14.1/14.2/14.5 corrections and four new checkers after V-35. [Report](runtime-refresh-2026-10-29-r5.md) · [Raw results](runtime-refresh-2026-10-29-r5.json). All 28 Chapter 14 files compiled and 18 scripts also passed in the scoped run; [latest correction](chapter-14-cholesky-norm-followup.md).
 
@@ -341,3 +345,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Tiny Cholesky diagnostic correction and V-36 — 2026-10-29
 
 [Correction evidence](chapter-14-cholesky-norm-followup.md) retains an original zero-error underflow failure and five Decimal norm/solve-report cases; all 28 Chapter 14 files compiled and 18 scripts passed. [V-36 full execution](runtime-refresh-2026-10-29-r5.md) subsequently compiled 456 sources and passed 245 scripts with 457 verified blobs at `82ec4d155b0b370008fab16f42a9781b7c4cd322`, covering all four recent checker additions and spectral/Cholesky corrections. Twenty-five categories remain partially addressed; independent review and release gates stay open. Next executable item: COV-67 Section 14.8/14.10 literal-report versus computed-factor integration and meaningful fault detection.
+
+## Computed diagnostic integration follow-up — 2026-10-29
+
+[Section 14.8 evidence](chapter-14-diagnostic-integration-followup.md) replaces literal-factor diagnostics with actual helper calls and independently recomputed errors, retaining known numeric checks. Four helper calls are observed and five wrong outputs detected. All 29 chapter files compiled and 19 scripts passed. This source/checker change follows V-36; twenty-five categories remain partially addressed. Next executable item: Section 14.10 reference-report integration under COV-67. Broader numerical, independent-review, environment and release gates remain pending.
