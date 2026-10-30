@@ -2,8 +2,8 @@
 
 **Date:** 2026-10-30  
 **Full-runtime candidate source revision:** `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`  
-**Latest scoped source revision:** `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`  
-**Disposition:** V-45 full runtime includes normalized-loss corrections and the rank-deficient lab; independent review and release approval pending.
+**Latest scoped source revision:** `bf81791b09530e2711c89ca4960d62bd571bb9b9`  
+**Disposition:** Earlier V-45 full runtime plus subsequent Section17.4 active-boundary scoped evidence; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -47,7 +47,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-45 at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-45 at earlier full-runtime pin; subsequent Section17.4 correction has21-file/11-script scoped rerun; refresh after related executable changes accumulate | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -194,3 +194,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Rank-deficient lab follow-up and V-45 — 2026-10-30
 
 [Section16.8 evidence](chapter-16-identifiability-followup.md) preserves the absent-lab baseline failure and adds the fixed `m(a,b)=a+b` example with computed minors/rank/normal matrix. Eleven exact parameter cases, three rank minors, five null-vector products, strict JSON and two wrong-output variants pass. This supplies the selected missing lab-step example, not a general numerical-rank method or independent sign-off. All 34 chapter files compiled and 24 scripts passed. [V-45 full execution](runtime-refresh-2026-10-30-r9.md) compiled 478 files, passed 267 scripts and verified 479 required hashes before/after at `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`, also covering preceding normalized-loss changes/checker. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-76 Section17.4 adjacent-float active-set transition/endpoints around the exact rational uncapped optimum, with independent weights/multiplier/value references. Preserve tiny-empty rejection and leave broader tolerance/degeneracy, manual proof, independent-review, supported-platform and release obligations open.
+
+## Adjacent active-set boundary correction — 2026-10-30
+
+[Section17.4 evidence](chapter-17-active-boundary-followup.md) preserves adjacent probes and the original failed check, corrects near-transition dual cancellation with exact decimal-model formulas, and separates rounded display, exact model geometry and numerical activity. Nine cap sets yield63 weight/dual/value/geometry checks and27 activity reports across three tolerances. All21 Chapter17 files compiled and11 scripts passed, including existing tiny-empty-interval regressions, at `bf81791b09530e2711c89ca4960d62bd571bb9b9`; corrected scoped hashes match the published tree. Current inventory is479 Python files/268 check-test scripts, not a new full run. This helper/checker change follows V-45. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-76 Section17.4 cap-zero nonunique lower-bound/cap multiplier families, exact stationarity/complementarity and isolated sign failures. Broader tolerance units/scales, conditioning, independent-review, supported-platform and release obligations remain open.
