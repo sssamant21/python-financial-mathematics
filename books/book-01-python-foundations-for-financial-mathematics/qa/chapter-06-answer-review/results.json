@@ -1,0 +1,570 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "sources": {
+    "chapter-06/6.17-exercises-and-applied-problems.md": "2c7a387ce982eca946e15f0c9155dff1e31eb71667edd687a4f14c28ad03041c",
+    "chapter-06/6.17-solutions-and-reference-implementations.md": "d3afce07abbd3d0e6ad8f001ce056782033600d20e0cab9b4771d0878bf2806c"
+  },
+  "code_sha256": "5a13d891dc0e090a014a625772c8fc34855799e3c312da762feb0c23be6cbaa0",
+  "exercise_records": 20,
+  "command_records": 2,
+  "command_passed": 2,
+  "command_failed": 0,
+  "direct_source_methods": 20,
+  "observer_source_methods": 20,
+  "predicates": 45,
+  "passed": 45,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "exact corrected source explicit discovery",
+      "args": [
+        "-W",
+        "error::FutureWarning",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "numpy_lab_617",
+        "-p",
+        "chapter06_solutions.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_problem_01 (chapter06_solutions.ChapterSixSolutions.test_problem_01) ... ok\ntest_problem_02 (chapter06_solutions.ChapterSixSolutions.test_problem_02) ... ok\ntest_problem_03 (chapter06_solutions.ChapterSixSolutions.test_problem_03) ... ok\ntest_problem_04 (chapter06_solutions.ChapterSixSolutions.test_problem_04) ... ok\ntest_problem_05 (chapter06_solutions.ChapterSixSolutions.test_problem_05) ... ok\ntest_problem_06 (chapter06_solutions.ChapterSixSolutions.test_problem_06) ... ok\ntest_problem_07 (chapter06_solutions.ChapterSixSolutions.test_problem_07) ... ok\ntest_problem_08 (chapter06_solutions.ChapterSixSolutions.test_problem_08) ... ok\ntest_problem_09 (chapter06_solutions.ChapterSixSolutions.test_problem_09) ... ok\ntest_problem_10 (chapter06_solutions.ChapterSixSolutions.test_problem_10) ... ok\ntest_problem_11 (chapter06_solutions.ChapterSixSolutions.test_problem_11) ... ok\ntest_problem_12 (chapter06_solutions.ChapterSixSolutions.test_problem_12) ... ok\ntest_problem_13 (chapter06_solutions.ChapterSixSolutions.test_problem_13) ... ok\ntest_problem_14 (chapter06_solutions.ChapterSixSolutions.test_problem_14) ... ok\ntest_problem_15 (chapter06_solutions.ChapterSixSolutions.test_problem_15) ... ok\ntest_problem_16 (chapter06_solutions.ChapterSixSolutions.test_problem_16) ... ok\ntest_problem_17 (chapter06_solutions.ChapterSixSolutions.test_problem_17) ... ok\ntest_problem_18 (chapter06_solutions.ChapterSixSolutions.test_problem_18) ... ok\ntest_problem_19 (chapter06_solutions.ChapterSixSolutions.test_problem_19) ... ok\ntest_problem_20 (chapter06_solutions.ChapterSixSolutions.test_problem_20) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.046s\n\nOK\n",
+      "actual_methods": 20,
+      "status": "PASS"
+    },
+    {
+      "label": "same source twenty-method observer rerun",
+      "args": [
+        "/tmp/book1_ch6answers/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-answer-review/observe_reference.py",
+        "/tmp/chapter6-answers-lfphd08k/numpy_lab_617/chapter06_solutions.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"errors\": [], \"failures\": [], \"locals\": {\"test_problem_01\": {\"a\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [100.0, 102.0, 99.0]}}, \"test_problem_02\": {\"a\": {\"dtype\": \"int64\", \"nbytes\": 16, \"shape\": [2], \"values\": [1, 2]}, \"b\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [1.75, 2.0]}}, \"test_problem_03\": {\"a\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [100.0, 0.0, 102.0]}, \"b\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [0.0, 102.0]}, \"c\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [9.0, 102.0]}}, \"test_problem_04\": {\"p0\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [100.0, 80.0, 50.0]}, \"p1\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [105.0, 76.0, 52.0]}, \"q\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [10.0, -5.0, 0.0]}}, \"test_problem_05\": {\"p\": {\"dtype\": \"float64\", \"nbytes\": 32, \"shape\": [2, 2], \"values\": [[110.0, 95.0], [80.0, 105.0]]}, \"r\": {\"dtype\": \"float64\", \"nbytes\": 32, \"shape\": [2, 2], \"values\": [[0.10000000000000009, -0.050000000000000044], [-0.19999999999999996, 0.050000000000000044]]}}, \"test_problem_06\": {\"r\": {\"dtype\": \"float64\", \"nbytes\": 32, \"shape\": [2, 2], \"values\": [[0.1, -0.05], [-0.2, 0.05]]}}, \"test_problem_07\": {\"c\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [100.0, 100.0, 1100.0]}, \"expected\": 1136.162401468524, \"pv\": 1136.162401468524, \"t\": {\"dtype\": \"int64\", \"nbytes\": 24, \"shape\": [3], \"values\": [1, 2, 3]}}, \"test_problem_08\": {\"p\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [100.0, 110.0, 99.0]}, \"r\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [0.10000000000000009, -0.09999999999999998]}}, \"test_problem_09\": {\"v\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [600.0, 300.0, 100.0]}, \"w\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [0.6, 0.3, 0.1]}}, \"test_problem_10\": {\"r\": {\"dtype\": \"float64\", \"nbytes\": 48, \"shape\": [2, 3], \"values\": [[0.1, -0.05, 0.0], [-0.2, 0.05, 0.0]]}, \"w\": {\"dtype\": \"float64\", \"nbytes\": 48, \"shape\": [2, 3], \"values\": [[0.6, 0.3, 0.1], [0.0, 1.0, 0.0]]}}, \"test_problem_11\": {\"a\": {\"dtype\": \"float64\", \"nbytes\": 32, \"shape\": [2, 2], \"values\": [[2.0, 1.0], [1.0, 3.0]]}, \"b\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [5.0, 5.0]}, \"x\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [2.0, 1.0]}}, \"test_problem_12\": {}, \"test_problem_13\": {\"a\": \"Generator\", \"b\": \"Generator\", \"x\": {\"dtype\": \"float64\", \"nbytes\": 40, \"shape\": [5], \"values\": [0.30471707975443135, -1.0399841062404955, 0.7504511958064572, 0.9405647163912139, -1.9510351886538364]}, \"y\": {\"dtype\": \"float64\", \"nbytes\": 40, \"shape\": [5], \"values\": [0.30471707975443135, -1.0399841062404955, 0.7504511958064572, 0.9405647163912139, -1.9510351886538364]}}, \"test_problem_14\": {\"r\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [1e-17, 1e-17, 1e-17]}}, \"test_problem_15\": {\"a\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2, 1], \"values\": [[1.0], [1.0]]}, \"b\": {\"dtype\": \"float64\", \"nbytes\": 16, \"shape\": [2], \"values\": [1.0, 1.0]}}, \"test_problem_16\": {\"a\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [1.0, \"nan\", \"inf\"]}}, \"test_problem_17\": {\"a\": {\"dtype\": \"float64\", \"nbytes\": 160000, \"shape\": [1000, 20], \"values\": \"OMITTED_LARGE_PAYLOAD\"}}, \"test_problem_18\": {\"a\": [100.0, 80.0, 50.0], \"b\": [105.0, 76.0, 52.0], \"function\": \"function\", \"numpy_result\": [50.0, 20.0, 0.0], \"python_result\": [50.0, 20.0, 0.0], \"q\": [10.0, -5.0, 0.0]}, \"test_problem_19\": {\"ends\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [1045.0, 895.0, 1000.0]}, \"p0\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [100.0, 100.0, 100.0]}, \"p1\": {\"dtype\": \"float64\", \"nbytes\": 72, \"shape\": [3, 3], \"values\": [[110.0, 95.0, 100.0], [80.0, 105.0, 100.0], [100.0, 100.0, 100.0]]}, \"q\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [6.0, 3.0, 1.0]}, \"r\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [0.04500000000000004, -0.10499999999999995, 0.0]}, \"total\": 1000.0, \"v\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [600.0, 300.0, 100.0]}}, \"test_problem_20\": {\"order\": [2, 0, 1], \"r\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [0.1, -0.05, 0.0]}, \"w\": {\"dtype\": \"float64\", \"nbytes\": 24, \"shape\": [3], \"values\": [0.6, 0.3, 0.1]}}}, \"successful\": true, \"tests_run\": 20}\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "problem": "ALL",
+      "label": "exact listing compiles",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "problem": "ALL",
+      "label": "observer successful/method count",
+      "actual": "(True, 20)",
+      "expected": "(True, 20)",
+      "status": "PASS"
+    },
+    {
+      "problem": 1,
+      "label": "shape/dtype/dimension",
+      "actual": "([3], 'float64', 1)",
+      "expected": "([3], 'float64', 1)",
+      "status": "PASS"
+    },
+    {
+      "problem": 1,
+      "label": "exact array values",
+      "actual": "[100.0, 102.0, 99.0]",
+      "expected": "[100.0, 102.0, 99.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": 2,
+      "label": "integer truncation observed",
+      "actual": "[1, 2]",
+      "expected": "[1, 2]",
+      "status": "PASS"
+    },
+    {
+      "problem": 2,
+      "label": "floating alternative observed",
+      "actual": "[1.75, 2.0]",
+      "expected": "[1.75, 2.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": 3,
+      "label": "source slice modifies source",
+      "actual": "[100.0, 0.0, 102.0]",
+      "expected": "[100.0, 0.0, 102.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": 3,
+      "label": "copied slice later edit stays separate",
+      "actual": "[9.0, 102.0]",
+      "expected": "[9.0, 102.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": 3,
+      "label": "fresh repeat copy preserves source",
+      "actual": "[100.0, 101.0, 102.0]",
+      "expected": "[100.0, 101.0, 102.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": 3,
+      "label": "fresh copied result",
+      "actual": "[0.0, 102.0]",
+      "expected": "[0.0, 102.0]",
+      "status": "PASS"
+    },
+    {
+      "problem": 4,
+      "label": "independent exact signed P&L",
+      "actual": "[Fraction(50, 1), Fraction(20, 1), Fraction(0, 1)]",
+      "expected": "[Fraction(50, 1), Fraction(20, 1), Fraction(0, 1)]",
+      "status": "PASS"
+    },
+    {
+      "problem": 4,
+      "label": "observed fixture scalar P&L",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        50.0,
+        20.0,
+        0.0
+      ],
+      "expected_values": [
+        50.0,
+        20.0,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "problem": 5,
+      "label": "source return matrix vs rational ratios",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        [
+          0.10000000000000009,
+          -0.050000000000000044
+        ],
+        [
+          -0.19999999999999996,
+          0.050000000000000044
+        ]
+      ],
+      "expected_values": [
+        [
+          0.1,
+          -0.05
+        ],
+        [
+          -0.2,
+          0.05
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 6,
+      "label": "exact row/column means",
+      "actual": "([Fraction(1, 40), Fraction(-3, 40)], [Fraction(-1, 20), Fraction(0, 1)])",
+      "expected": "([Fraction(1, 40), Fraction(-3, 40)], [Fraction(-1, 20), Fraction(0, 1)])",
+      "status": "PASS"
+    },
+    {
+      "problem": 6,
+      "label": "observed means axis1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        0.025,
+        -0.07500000000000001
+      ],
+      "expected_values": [
+        0.025,
+        -0.075
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 6,
+      "label": "observed means axis0",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        -0.05,
+        0.0
+      ],
+      "expected_values": [
+        -0.05,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 7,
+      "label": "observed PV vs exact rational discount",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": 1136.162401468524,
+      "expected_values": 1136.162401468524,
+      "rtol": 0,
+      "atol": 1e-10
+    },
+    {
+      "problem": 7,
+      "label": "companion printed PV",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": 1136.162401468524,
+      "expected_values": 1136.162401469,
+      "rtol": 0,
+      "atol": 1e-09
+    },
+    {
+      "problem": 8,
+      "label": "rational interval and linked result",
+      "actual": "([Fraction(1, 10), Fraction(-1, 10)], Fraction(-1, 100))",
+      "expected": "([Fraction(1, 10), Fraction(-1, 10)], Fraction(-1, 100))",
+      "status": "PASS"
+    },
+    {
+      "problem": 8,
+      "label": "observed interval returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        0.10000000000000009,
+        -0.09999999999999998
+      ],
+      "expected_values": [
+        0.1,
+        -0.1
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 9,
+      "label": "rational opening weighted return",
+      "actual": "Fraction(9, 200)",
+      "expected": "Fraction(9, 200)",
+      "status": "PASS"
+    },
+    {
+      "problem": 9,
+      "label": "source opening weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "expected_values": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 10,
+      "label": "observed matrix product vs scalar rational",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        [
+          0.045,
+          -0.05
+        ],
+        [
+          -0.105,
+          0.05
+        ]
+      ],
+      "expected_values": [
+        [
+          0.045,
+          -0.05
+        ],
+        [
+          -0.105,
+          0.05
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 11,
+      "label": "exact two-equation elimination solution",
+      "actual": "[Fraction(2, 1), Fraction(1, 1)]",
+      "expected": "[Fraction(2, 1), Fraction(1, 1)]",
+      "status": "PASS"
+    },
+    {
+      "problem": 11,
+      "label": "observed linear solver result",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        2.0,
+        1.0
+      ],
+      "expected_values": [
+        2.0,
+        1.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 12,
+      "label": "singular determinant and consistent RHS",
+      "actual": "(Fraction(0, 1), Fraction(0, 1))",
+      "expected": "(Fraction(0, 1), Fraction(0, 1))",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "fresh same-protocol draws equal",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        0.30471707975443135,
+        -1.0399841062404955,
+        0.7504511958064572,
+        0.9405647163912139,
+        -1.9510351886538364
+      ],
+      "expected_values": [
+        0.30471707975443135,
+        -1.0399841062404955,
+        0.7504511958064572,
+        0.9405647163912139,
+        -1.9510351886538364
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "problem": 13,
+      "label": "random arrays shape",
+      "actual": "[5]",
+      "expected": "[5]",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "float64 additions lose tiny terms",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "stable vs high precision Decimal product",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": 3e-17,
+      "expected_values": 3e-17,
+      "rtol": 0,
+      "atol": 1e-31
+    },
+    {
+      "problem": 15,
+      "label": "broadcast accepts mismatched shapes",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "problem": 16,
+      "label": "nonfinite fixture classification",
+      "actual": "[True, False, False]",
+      "expected": "[True, False, False]",
+      "status": "PASS"
+    },
+    {
+      "problem": 17,
+      "label": "scalar payload formula",
+      "actual": "160000",
+      "expected": "160000",
+      "status": "PASS"
+    },
+    {
+      "problem": 17,
+      "label": "source array payload",
+      "actual": "160000",
+      "expected": "160000",
+      "status": "PASS"
+    },
+    {
+      "problem": 18,
+      "label": "corrected top-level function definitions",
+      "actual": "{'numpy_pnl', 'python_pnl'}",
+      "expected": "{'numpy_pnl', 'python_pnl'}",
+      "status": "PASS"
+    },
+    {
+      "problem": 18,
+      "label": "python_pnl exact oracle/list return",
+      "actual": "([50.0, 20.0, 0.0], 'list')",
+      "expected": "([50.0, 20.0, 0.0], 'list')",
+      "status": "PASS"
+    },
+    {
+      "problem": 18,
+      "label": "python_pnl unequal lengths",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "problem": 18,
+      "label": "numpy_pnl exact oracle/list return",
+      "actual": "([50.0, 20.0, 0.0], 'list')",
+      "expected": "([50.0, 20.0, 0.0], 'list')",
+      "status": "PASS"
+    },
+    {
+      "problem": 18,
+      "label": "numpy_pnl unequal lengths",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "problem": 19,
+      "label": "rational direct valuation/P&L",
+      "actual": "([Fraction(1045, 1), Fraction(895, 1), Fraction(1000, 1)], [Fraction(45, 1), Fraction(-105, 1), Fraction(0, 1)])",
+      "expected": "([Fraction(1045, 1), Fraction(895, 1), Fraction(1000, 1)], [Fraction(45, 1), Fraction(-105, 1), Fraction(0, 1)])",
+      "status": "PASS"
+    },
+    {
+      "problem": 19,
+      "label": "observed ending values",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        1045.0,
+        895.0,
+        1000.0
+      ],
+      "expected_values": [
+        1045.0,
+        895.0,
+        1000.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "problem": 19,
+      "label": "observed weighted/direct reconciliation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": [
+        0.04500000000000004,
+        -0.10499999999999995,
+        0.0
+      ],
+      "expected_values": [
+        0.045,
+        -0.105,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "problem": 20,
+      "label": "joint permutation retains return",
+      "actual": "Fraction(9, 200)",
+      "expected": "Fraction(9, 200)",
+      "status": "PASS"
+    },
+    {
+      "problem": 20,
+      "label": "weights-only reversal changes return",
+      "actual": "Fraction(-1, 200)",
+      "expected": "Fraction(-1, 200)",
+      "status": "PASS"
+    },
+    {
+      "problem": 20,
+      "label": "observed mismatched weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "observed_values": -0.0049999999999999975,
+      "expected_values": -0.005,
+      "rtol": 0,
+      "atol": 1e-12
+    }
+  ],
+  "independent_benchmarks": {
+    "pv_exact": "10522000/9261",
+    "pv_decimal": 1136.162401468524,
+    "interval_returns": [
+      "1/10",
+      "-1/10"
+    ],
+    "opening_weights": [
+      "3/5",
+      "3/10",
+      "1/10"
+    ],
+    "portfolio_return": "9/200",
+    "matrix": [
+      [
+        "9/200",
+        "-1/20"
+      ],
+      [
+        "-21/200",
+        "1/20"
+      ]
+    ],
+    "tiny_product_decimal": "3.0000000000000000300000000000000001E-17",
+    "ending_values": [
+      "1045",
+      "895",
+      "1000"
+    ],
+    "pnl": [
+      "45",
+      "-105",
+      "0"
+    ],
+    "wrong_weight_return": "-1/200"
+  }
+}

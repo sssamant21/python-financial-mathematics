@@ -1,0 +1,264 @@
+# 6.17 — Solutions and Reference Implementations
+
+**Workflow Stage:** Revised Final / Canonical Edition  
+**Status:** CANONICAL — COMPLETE  
+**Book:** Book 1 — Python Foundations for Financial Mathematics  
+**Chapter:** Chapter 6 — NumPy for Financial Mathematics
+
+This companion answers the [twenty chapter-wide problems](6.17-exercises-and-applied-problems.md). It is supplementary material under Section 6.17, not an additional numbered canonical section. Read each explanation as well as its executable check; code assertions do not capture every semantic requirement.
+
+## Answers
+
+### Solution 01 — Array contract
+
+Shape (3,), ndim 1, dtype float64. A separate contract must identify these as prices, currency, instrument, and observation times.
+
+### Solution 02 — Integer truncation
+
+The integer destination stores 1, losing the fractional part. A float64 destination stores 1.75. Casting after truncation cannot recover the original fraction.
+
+### Solution 03 — Slice ownership
+
+A basic slice shares storage and changes the original middle element to zero. A copied slice has separate storage.
+
+### Solution 04 — Fixed-quantity P&L
+
+Results are [50,20,0] currency units. Negative quantity represents a short; this arithmetic excludes borrow fees, distributions, trades, and FX. Section 6.16 deliberately has a narrower long-only contract.
+
+### Solution 05 — Broadcasting direction
+
+(2,2) / (2,) broadcasts the opening vector across rows. Returns are [[.10,-.05],[-.20,.05]]. Equal row and column counts can hide a wrong axis; document column identities.
+
+### Solution 06 — Aggregation axes
+
+Row means [.025,-.075]; column means [-.05,0]. Row means imply equal asset weights if interpreted as portfolio returns. Column means equally weight scenarios without supplied probabilities.
+
+### Solution 07 — Cash-flow vector
+
+PV = sum(C_t/(1.05**t)), approximately 1136.162401469. Times are years from valuation and all flows share currency. These are deterministic promised flows under a supplied flat rate.
+
+### Solution 08 — Successive returns
+
+Interval returns [.10,-.10]. Linked return (1.1*.9)-1 = -.01. Adding the interval returns gives zero and is incorrect for this time path.
+
+### Solution 09 — Opening weights
+
+Weights [.6,.3,.1], portfolio return .045. These are opening-value weights for the same interval; using closing weights changes the calculation.
+
+### Solution 10 — Multiple portfolios
+
+Output shape (2 scenarios,2 portfolios), values [[.045,-.05],[-.105,.05]]. Rows of W are alternative opening-weight portfolios; all asset columns must align.
+
+### Solution 11 — Linear system
+
+x=2, y=1. Check A @ solution against b. A small residual alone does not guarantee sensitivity is low for every system.
+
+### Solution 12 — Singular model
+
+The second equation repeats the first after scaling. np.linalg.solve raises LinAlgError for this fixture. A least-squares policy would be a different explicitly specified problem.
+
+### Solution 13 — Random protocol
+
+Fresh generators with the same explicit generator, seed, calls, and environment reproduce this draw. A subsequent call advances state. These synthetic innovations are not calibrated financial forecasts; record versions and call order.
+
+### Solution 14 — Tiny linked changes
+
+The product route rounds each 1+1e-17 to 1 in this float64 fixture and yields zero. The log1p/expm1 route retains approximately 3e-17. This example does not establish a universal accuracy ordering.
+
+### Solution 15 — Tolerance and shape
+
+Arrays of ones with those shapes compare true after broadcasting, despite different intended axes. Check shape equality, finite values, and chosen rtol/atol before comparing results.
+
+### Solution 16 — Finite input gate
+
+isfinite yields [True,False,False]. Reject or route missing/invalid observations under a stated policy; zero return or zero price has a financial meaning and is not a neutral repair.
+
+### Solution 17 — Payload budget
+
+160000 bytes = 1000*20*8. Peak process memory also includes other arrays, temporaries, Python objects, library state, and conversion costs. A payload bound is not a process-memory cap.
+
+### Solution 18 — Benchmark boundary
+
+Both functions return lists and include their own arithmetic/allocation; NumPy includes list conversion and tolist. Warm each case, repeat timing, retain raw samples and environment, exclude setup equally. A resident-array kernel is a separate boundary; no universal speedup follows.
+
+### Solution 19 — Project reconciliation
+
+Opening value 1000; ending values [1045,895,1000]; P&L [45,-105,0]; returns [.045,-.105,0]. Independent scenarios must not be compounded. This standalone check complements, rather than imports or reruns, the full Section 6.16 validation suite.
+
+### Solution 20 — Identity and permutation
+
+The aligned return is .045. Reversing weights alone gives -.005. Preserve labels with every axis and require exact identity/order or use a separately validated alignment adapter. Numeric arrays cannot detect a plausible but mislabeled column.
+
+## Complete Runnable Reference Suite
+
+Save the following listing as `numpy_lab_617/chapter06_solutions.py`. It has no imports from earlier labs and requires only NumPy plus Python's standard library. The code checks the fixed fixtures; it is not a reusable validated financial API for arbitrary inputs.
+
+```python
+"""Standalone acceptance checks for all twenty Chapter 6 problems."""
+import unittest
+import numpy as np
+
+
+class ChapterSixSolutions(unittest.TestCase):
+    def test_problem_01(self):
+        a=np.array([100,102,99],dtype=np.float64)
+        self.assertEqual(a.shape,(3,))
+        self.assertEqual(a.ndim,1)
+        self.assertEqual(a.dtype,np.float64)
+
+    def test_problem_02(self):
+        a=np.array([1,2]); a[0]=1.75
+        self.assertEqual(a[0],1)
+        b=np.array([1,2],dtype=np.float64); b[0]=1.75
+        self.assertEqual(b[0],1.75)
+
+    def test_problem_03(self):
+        a=np.array([100.,101.,102.]); b=a[1:]; b[0]=0
+        self.assertEqual(a[1],0)
+        c=a[1:].copy(); c[0]=9
+        self.assertEqual(a[1],0)
+        self.assertFalse(np.shares_memory(a,c))
+
+    def test_problem_04(self):
+        q=np.array([10,-5,0.]); p0=np.array([100,80,50.]); p1=np.array([105,76,52.])
+        np.testing.assert_array_equal(q*(p1-p0),[50,20,0])
+
+    def test_problem_05(self):
+        p=np.array([[110,95],[80,105.]])
+        r=p/np.array([100,100.])-1
+        np.testing.assert_allclose(r,[[.1,-.05],[-.2,.05]],rtol=0,atol=1e-12)
+
+    def test_problem_06(self):
+        r=np.array([[.1,-.05],[-.2,.05]])
+        np.testing.assert_allclose(r.mean(axis=1),[.025,-.075],rtol=0,atol=1e-12)
+        np.testing.assert_allclose(r.mean(axis=0),[-.05,0],rtol=0,atol=1e-12)
+
+    def test_problem_07(self):
+        c=np.array([100,100,1100.]); t=np.array([1,2,3])
+        pv=np.sum(c/1.05**t)
+        expected=100/1.05+100/1.05**2+1100/1.05**3
+        self.assertAlmostEqual(pv,expected,places=10)
+
+    def test_problem_08(self):
+        p=np.array([100.,110.,99.]); r=p[1:]/p[:-1]-1
+        np.testing.assert_allclose(r,[.1,-.1],rtol=0,atol=1e-12)
+        self.assertAlmostEqual(np.prod(1+r)-1,-.01)
+
+    def test_problem_09(self):
+        v=np.array([600.,300.,100.]); w=v/v.sum()
+        np.testing.assert_allclose(w,[.6,.3,.1],rtol=0,atol=1e-12)
+        self.assertAlmostEqual(w@np.array([.1,-.05,0]),.045)
+
+    def test_problem_10(self):
+        r=np.array([[.1,-.05,0],[-.2,.05,0]])
+        w=np.array([[.6,.3,.1],[0,1,0]])
+        np.testing.assert_allclose(r@w.T,[[.045,-.05],[-.105,.05]],rtol=0,atol=1e-12)
+
+    def test_problem_11(self):
+        a=np.array([[2.,1.],[1.,3.]]); b=np.array([5.,5.])
+        x=np.linalg.solve(a,b)
+        np.testing.assert_allclose(x,[2,1],rtol=0,atol=1e-12)
+        np.testing.assert_allclose(a@x,b,rtol=0,atol=1e-12)
+
+    def test_problem_12(self):
+        with self.assertRaises(np.linalg.LinAlgError):
+            np.linalg.solve([[1.,2.],[2.,4.]],[3.,6.])
+
+    def test_problem_13(self):
+        a=np.random.Generator(np.random.PCG64(42)); b=np.random.Generator(np.random.PCG64(42))
+        x=a.standard_normal(5); y=b.standard_normal(5)
+        np.testing.assert_array_equal(x,y)
+        self.assertFalse(np.array_equal(x,a.standard_normal(5)))
+
+    def test_problem_14(self):
+        r=np.full(3,1e-17)
+        self.assertEqual(np.prod(1+r)-1,0)
+        self.assertAlmostEqual(float(np.expm1(np.log1p(r).sum()))/3e-17,1,places=14)
+
+    def test_problem_15(self):
+        a=np.ones((2,1)); b=np.ones(2)
+        self.assertTrue(np.allclose(a,b))
+        self.assertNotEqual(a.shape,b.shape)
+
+    def test_problem_16(self):
+        a=np.array([1.,np.nan,np.inf])
+        np.testing.assert_array_equal(np.isfinite(a),[True,False,False])
+        self.assertFalse(np.isfinite(a).all())
+
+    def test_problem_17(self):
+        a=np.zeros((1000,20),dtype=np.float64)
+        self.assertEqual(a.nbytes,160000)
+
+    def test_problem_18(self):
+        q=[10.,-5.,0.]; a=[100.,80.,50.]; b=[105.,76.,52.]
+        python_result=[x*(z-y) for x,y,z in zip(q,a,b)]
+        numpy_result=(np.asarray(q)*(np.asarray(b)-np.asarray(a))).tolist()
+        np.testing.assert_allclose(python_result,numpy_result,rtol=0,atol=1e-12)
+
+    def test_problem_19(self):
+        q=np.array([6.,3.,1.]); p0=np.full(3,100.); p1=np.array([[110,95,100],[80,105,100],[100,100,100.]])
+        v=q*p0; total=v.sum(); ends=p1@q; r=(p1/p0-1)@(v/total)
+        np.testing.assert_allclose(ends,[1045,895,1000],rtol=0,atol=1e-10)
+        np.testing.assert_allclose(ends-total,total*r,rtol=1e-12,atol=1e-10)
+
+    def test_problem_20(self):
+        r=np.array([.1,-.05,0]); w=np.array([.6,.3,.1]); order=[2,0,1]
+        self.assertAlmostEqual(r[order]@w[order],r@w)
+        self.assertAlmostEqual(r@w[::-1],-.005)
+        self.assertFalse(np.isclose(r@w[::-1],r@w))
+
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+## Setup and Execution
+
+Continue in the chapter environment. If a fresh environment is needed, on PowerShell run:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install numpy==2.3.5
+New-Item -ItemType Directory -Force numpy_lab_617
+```
+
+On Linux/macOS use:
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install numpy==2.3.5
+mkdir -p numpy_lab_617
+```
+
+After saving the listing, run from the parent directory:
+
+```bash
+python -m unittest discover -s numpy_lab_617 -p chapter06_solutions.py -v
+python -m compileall -q numpy_lab_617
+```
+
+The same test commands work in activated PowerShell. The filename does not start with `test`, so retain the explicit discovery pattern. Expected result: `Ran 20 tests` followed by `OK` and compilation without an error.
+
+Recorded local evidence: Python 3.12.14, NumPy 2.3.5, Linux; all twenty test methods and compilation passed. This is execution evidence for these reference fixtures, not exhaustive validation of arbitrary financial data. Windows instructions were not executed locally.
+
+## Interpreting Numerical Checks
+
+Small return fixtures use absolute tolerance 1e-12 where stated; holdings values use fixture-specific currency tolerances. Residual checks and scenario reconciliation compare distinct calculation routes. Random checks compare fresh generators in the same environment rather than embedding a cross-version random-output promise. Problem 18 verifies equality only: it deliberately makes no speed assertion and runs no benchmark.
+
+Problem 15 demonstrates why broadcasting-aware numerical comparison must not substitute for a shape contract. Problem 20 demonstrates why correct dimensions must not substitute for an identity contract. A reliable financial result needs both.
+
+## Verified Primary References
+
+- [NumPy 2.3: basic indexing](https://numpy.org/doc/2.3/user/basics.indexing.html), for slice/view behavior.
+- [NumPy 2.3: numpy.allclose](https://numpy.org/doc/2.3/reference/generated/numpy.allclose.html), for tolerances and broadcasting behavior.
+- [NumPy 2.3: numpy.linalg.solve](https://numpy.org/doc/2.3/reference/generated/numpy.linalg.solve.html), for linear-system solving and singular-system errors.
+
+Official references support the API behavior. Financial assumptions and exercise interpretations are stated in the problems and answers. The chapter's earlier sections retain additional topic-specific references.
+
+## Editorial Record
+
+Draft: wrote twenty matching answers and checks. Technical + Source Review: ran the standalone suite, reviewed independent scalar calculations, shape/identity examples, and primary documentation. Production + Copyright Review: checked complete listings, cross-links, commands, and original wording. Revised Final / Canonical Edition: twenty reference checks and compilation passed. This describes author review, not independent review.
+
+**Next:** 7.1 — Why pandas?
