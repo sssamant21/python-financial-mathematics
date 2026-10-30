@@ -1,0 +1,283 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.05-python-packages.md",
+  "source_sha256": "07591dc7afa3f49ac5a4572dac0e4fcb18009c4c31998a015e3f50aef663d9d6",
+  "original_files": [
+    {
+      "path": "finance_lab/holdings.py",
+      "sha256": "4503c3e4096f64d75d78ee80e94311de74175c069a7ee556a1e8ac0f9e223899"
+    },
+    {
+      "path": "finance_lab/views.py",
+      "sha256": "7283ef65201f9b1d5b92736a6054de2f98a794ff87c544fae1cc7e40e731ff42"
+    },
+    {
+      "path": "finance_lab/__init__.py",
+      "sha256": "90d18f0d971de3fc2e52fa942d0430aad9caeef74abf7ed11c3c7893c1e66cc6"
+    },
+    {
+      "path": "finance_lab/__main__.py",
+      "sha256": "103afd59dfafd87c06e333c10e92e5f5544bc22c31f07e47cefa112a0f92eed4"
+    },
+    {
+      "path": "test_finance_lab.py",
+      "sha256": "a368223f50b697620459f2286f1653737bb40d3110d0082276be693de0110cd8"
+    }
+  ],
+  "extended_files": {
+    "finance_lab/holdings.py": "\"\"\"Validate and capture aggregate instrument quantities.\"\"\"\n\nfrom decimal import Decimal\n\nHolding = tuple[str, Decimal]\nSnapshot = tuple[Holding, ...]\n\n\ndef capture_holdings(value: object) -> Snapshot:\n    \"\"\"Return ordered immutable scalar pairs under a nonnegative-units policy.\n\n    Validate every row, reject duplicate IDs, preserve valid zero holdings.\n    No source mutation, arithmetic, price lookup, or valuation is performed.\n    \"\"\"\n    if not isinstance(value, list):\n        raise TypeError(\"holdings must be a list\")\n    rows: list[Holding] = []\n    seen: set[str] = set()\n    for index, row in enumerate(value):\n        if not isinstance(row, dict):\n            raise TypeError(f\"holding {index} must be a dictionary\")\n        if set(row) != {\"security_id\", \"quantity\"}:\n            raise ValueError(f\"holding {index} has incorrect fields\")\n        sid = row[\"security_id\"]\n        quantity = row[\"quantity\"]\n        if type(sid) is not str:\n            raise TypeError(\"security_id must be an exact str\")\n        if not sid or sid.strip() != sid:\n            raise ValueError(\"security_id must be nonempty and unpadded\")\n        if type(quantity) is not Decimal:\n            raise TypeError(\"quantity must be an exact Decimal\")\n        if not quantity.is_finite() or quantity < 0:\n            raise ValueError(\"quantity must be finite and nonnegative\")\n        if sid in seen:\n            raise ValueError(f\"duplicate security_id: {sid}\")\n        seen.add(sid)\n        rows.append((sid, quantity))\n    return tuple(rows)\n",
+    "finance_lab/views.py": "\"\"\"Derive holdings views using the sibling validation module.\"\"\"\n\nfrom .holdings import capture_holdings\n\n\ndef active_ids(value: object) -> tuple[str, ...]:\n    \"\"\"Return strictly positive holding IDs after full validation.\"\"\"\n    snapshot = capture_holdings(value)\n    return tuple(sid for sid, quantity in snapshot if quantity > 0)\n\n\ndef count_holdings(value: object) -> int:\n    \"\"\"Count validated aggregate holdings including zero, not monetary units.\"\"\"\n    return len(capture_holdings(value))\n",
+    "finance_lab/__init__.py": "\"\"\"Public API for the local finance_lab teaching package.\"\"\"\n\nfrom .holdings import capture_holdings as capture_holdings\nfrom .views import active_ids as active_ids\n\n__all__ = [\"capture_holdings\", \"active_ids\"]\n\nfrom .views import count_holdings as count_holdings\n",
+    "finance_lab/__main__.py": "\"\"\"Entry point for python -m finance_lab.\"\"\"\n\nfrom decimal import Decimal\nfrom .display import format_active_ids\n\n\ndef main() -> int:\n    source = [\n        {\"security_id\": \"SEC-B\", \"quantity\": Decimal(\"0\")},\n        {\"security_id\": \"SEC-A\", \"quantity\": Decimal(\"12.5\")},\n        {\"security_id\": \"SEC-C\", \"quantity\": Decimal(\"3\")},\n    ]\n    print(format_active_ids(source))\n    return 0\n\n\nif __name__ == \"__main__\":\n    raise SystemExit(main())\n",
+    "test_finance_lab.py": "\"\"\"Test public financial contracts and regular-package launch behavior.\"\"\"\n\nfrom decimal import Decimal\nfrom pathlib import Path\nimport subprocess\nimport sys\nimport unittest\n\nfrom finance_lab import active_ids, capture_holdings\n\nLAB_DIR = Path(__file__).resolve().parent\n\n\ndef fixture() -> list[dict[str, object]]:\n    return [\n        {\"security_id\": \"SEC-B\", \"quantity\": Decimal(\"0\")},\n        {\"security_id\": \"SEC-A\", \"quantity\": Decimal(\"12.5\")},\n        {\"security_id\": \"SEC-C\", \"quantity\": Decimal(\"3\")},\n    ]\n\n\ndef launch(*arguments: str) -> subprocess.CompletedProcess[str]:\n    return subprocess.run(\n        [sys.executable, *arguments], cwd=LAB_DIR, text=True,\n        capture_output=True, check=False, timeout=10,\n    )\n\n\nclass PackageTests(unittest.TestCase):\n    def test_public_values_and_empty(self) -> None:\n        self.assertEqual(capture_holdings(fixture()), (\n            (\"SEC-B\", Decimal(\"0\")), (\"SEC-A\", Decimal(\"12.5\")), (\"SEC-C\", Decimal(\"3\"))\n        ))\n        self.assertEqual(active_ids(fixture()), (\"SEC-A\", \"SEC-C\"))\n        self.assertEqual(capture_holdings([]), ())\n        self.assertEqual(active_ids([]), ())\n\n    def test_source_ownership(self) -> None:\n        source = fixture()\n        snapshot = capture_holdings(source)\n        self.assertEqual(source, fixture())\n        source[0][\"quantity\"] = Decimal(\"99\")\n        source.append({\"security_id\": \"NEW\", \"quantity\": Decimal(\"1\")})\n        self.assertEqual(snapshot[0], (\"SEC-B\", Decimal(\"0\")))\n        self.assertEqual(len(snapshot), 3)\n\n    def test_schema_and_amounts(self) -> None:\n        with self.assertRaises(TypeError):\n            capture_holdings(())\n        with self.assertRaises(ValueError):\n            capture_holdings([{}])\n        with self.assertRaises(TypeError):\n            capture_holdings([None])\n        for quantity in (None, True, 1, 1.5, \"1\"):\n            with self.subTest(quantity=quantity):\n                with self.assertRaises(TypeError):\n                    active_ids([{\"security_id\": \"A\", \"quantity\": quantity}])\n        for value in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n            with self.assertRaises(ValueError):\n                capture_holdings([{\"security_id\": \"A\", \"quantity\": Decimal(value)}])\n        for sid in (\"\", \" A\", \"A \"):\n            with self.assertRaises(ValueError):\n                capture_holdings([{\"security_id\": sid, \"quantity\": Decimal(\"0\")}])\n\n    def test_duplicate_and_excluded_invalid(self) -> None:\n        with self.assertRaises(ValueError):\n            active_ids([\n                {\"security_id\": \"A\", \"quantity\": Decimal(\"0\")},\n                {\"security_id\": \"A\", \"quantity\": Decimal(\"1\")},\n            ])\n        source = fixture() + [{\"security_id\": \"BAD\", \"quantity\": \"invalid\"}]\n        before = [dict(row) for row in source]\n        with self.assertRaises(TypeError):\n            active_ids(source)\n        self.assertEqual(source, before)\n\n    def test_facade_and_relative_import_identity(self) -> None:\n        result = launch(\"-c\", (\n            \"import finance_lab\\n\"\n            \"from finance_lab import holdings, views\\n\"\n            \"assert finance_lab.capture_holdings is holdings.capture_holdings\\n\"\n            \"assert finance_lab.active_ids is views.active_ids\\n\"\n            \"assert views.capture_holdings is holdings.capture_holdings\\n\"\n            \"assert finance_lab.__all__ == ['capture_holdings', 'active_ids']\\n\"\n        ))\n        self.assertEqual(result.returncode, 0, result.stderr)\n        self.assertEqual(result.stdout, \"\")\n        self.assertEqual(result.stderr, \"\")\n\n    def test_quiet_import_and_origin(self) -> None:\n        result = launch(\"-c\", (\n            \"import finance_lab, finance_lab.__main__\\n\"\n            \"from pathlib import Path\\n\"\n            \"assert Path(finance_lab.__file__).resolve() == Path('finance_lab/__init__.py').resolve()\\n\"\n            \"assert finance_lab.__package__ == 'finance_lab'\\n\"\n        ))\n        self.assertEqual(result.returncode, 0, result.stderr)\n        self.assertEqual(result.stdout, \"\")\n        self.assertEqual(result.stderr, \"\")\n\n    def test_package_launch(self) -> None:\n        result = launch(\"-m\", \"finance_lab\")\n        self.assertEqual(result.returncode, 0, result.stderr)\n        self.assertEqual(result.stdout, \"Package active IDs: SEC-A, SEC-C\\n\")\n        self.assertEqual(result.stderr, \"\")\n\n    def test_direct_file_has_no_package_context(self) -> None:\n        result = launch(\"finance_lab/__main__.py\")\n        self.assertNotEqual(result.returncode, 0)\n        self.assertEqual(result.stdout, \"\")\n        self.assertIn(\"ImportError\", result.stderr)\n        self.assertIn(\"relative import\", result.stderr)\n\n\nif __name__ == \"__main__\":\n    unittest.main(verbosity=2)\n",
+    "finance_lab/display.py": "from .views import active_ids\n\ndef format_active_ids(value):\n    \"\"\"Presentation only; no printing, I/O or valuation.\"\"\"\n    return 'Package active IDs: '+', '.join(active_ids(value))\n",
+    "finance_lab/reports/__init__.py": "from .summary import count_report\n",
+    "finance_lab/reports/summary.py": "from ..views import count_holdings\n\ndef count_report(value):\n    \"\"\"Nested teaching report: cardinality only, no money total.\"\"\"\n    return dict(holding_count=count_holdings(value))\n"
+  },
+  "absolute_variant_sha256": "3da40cf8870fc0b13d5e9e0fecfeec3f3b691f6697bf6e08ea3748962c9d6544",
+  "command_records": 8,
+  "command_passed": 8,
+  "command_failed": 0,
+  "existing_method_invocations": 24,
+  "predicates": 19,
+  "passed": 19,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "exact original baseline suite",
+      "args": [
+        "test_finance_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_direct_file_has_no_package_context (__main__.PackageTests.test_direct_file_has_no_package_context) ... ok\ntest_duplicate_and_excluded_invalid (__main__.PackageTests.test_duplicate_and_excluded_invalid) ... ok\ntest_facade_and_relative_import_identity (__main__.PackageTests.test_facade_and_relative_import_identity) ... ok\ntest_package_launch (__main__.PackageTests.test_package_launch) ... ok\ntest_public_values_and_empty (__main__.PackageTests.test_public_values_and_empty) ... ok\ntest_quiet_import_and_origin (__main__.PackageTests.test_quiet_import_and_origin) ... ok\ntest_schema_and_amounts (__main__.PackageTests.test_schema_and_amounts) ... ok\ntest_source_ownership (__main__.PackageTests.test_source_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.069s\n\nOK\n",
+      "actual_method_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "unchanged original tests against extended relative package",
+      "args": [
+        "test_finance_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_direct_file_has_no_package_context (__main__.PackageTests.test_direct_file_has_no_package_context) ... ok\ntest_duplicate_and_excluded_invalid (__main__.PackageTests.test_duplicate_and_excluded_invalid) ... ok\ntest_facade_and_relative_import_identity (__main__.PackageTests.test_facade_and_relative_import_identity) ... ok\ntest_package_launch (__main__.PackageTests.test_package_launch) ... ok\ntest_public_values_and_empty (__main__.PackageTests.test_public_values_and_empty) ... ok\ntest_quiet_import_and_origin (__main__.PackageTests.test_quiet_import_and_origin) ... ok\ntest_schema_and_amounts (__main__.PackageTests.test_schema_and_amounts) ... ok\ntest_source_ownership (__main__.PackageTests.test_source_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.070s\n\nOK\n",
+      "actual_method_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1-E3/E5/E7 package API probes",
+      "args": [
+        "-c",
+        "\nfrom decimal import Decimal as D\nimport copy,json,sys\nimport finance_lab\nfrom finance_lab import count_holdings\nfrom finance_lab.views import count_holdings as implementation\nchecks={'view_identity':count_holdings is implementation,'display_not_initialized':'finance_lab.display' not in sys.modules}\nfrom finance_lab.display import format_active_ids\nchecks['helper_not_facade']=not hasattr(finance_lab,'format_active_ids')\nsource=[dict(security_id='B',quantity=D(0)),dict(security_id='A',quantity=D('12.5'))];before=copy.deepcopy(source)\nchecks['all_count']=count_holdings(source);checks['empty_count']=count_holdings([]);checks['display']=format_active_ids(source);checks['source_unchanged']=source==before\nfor row,kind,label in [(dict(security_id=1,quantity=D(0)),TypeError,'numeric_id'),(dict(security_id='A',quantity=D(0),extra=1),ValueError,'extra_field')]:\n try:finance_lab.capture_holdings([row])\n except kind:checks[label]=True\n else:checks[label]=False\nimport finance_lab.holdings as holdings\nchecks['explicit_implementation_import']=holdings.capture_holdings is finance_lab.capture_holdings\nnamespace={};exec('from finance_lab import *',namespace);checks['wildcard_names']=sorted(k for k in namespace if not k.startswith('_'))\nchecks['new_explicit_view_not_wildcard']='count_holdings' not in namespace\nimport finance_lab.reports,finance_lab.reports.summary\nchecks['subpackage_name']=finance_lab.reports.__name__;checks['nested_module']=finance_lab.reports.summary.__name__;checks['nested_report']=finance_lab.reports.count_report(source);checks['nested_empty']=finance_lab.reports.summary.count_report([])\ntry:count_holdings(source+[dict(security_id='BAD',quantity=D('NaN'))])\nexcept ValueError:checks['full_validation']=True\nelse:checks['full_validation']=False\nprint(json.dumps(checks))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"view_identity\": true, \"display_not_initialized\": true, \"helper_not_facade\": true, \"all_count\": 2, \"empty_count\": 0, \"display\": \"Package active IDs: A\", \"source_unchanged\": true, \"numeric_id\": true, \"extra_field\": true, \"explicit_implementation_import\": true, \"wildcard_names\": [\"active_ids\", \"capture_holdings\"], \"new_explicit_view_not_wildcard\": true, \"subpackage_name\": \"finance_lab.reports\", \"nested_module\": \"finance_lab.reports.summary\", \"nested_report\": {\"holding_count\": 2}, \"nested_empty\": {\"holding_count\": 0}, \"full_validation\": true}\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "extended -m package caller",
+      "args": [
+        "-m",
+        "finance_lab"
+      ],
+      "returncode": 0,
+      "stdout": "Package active IDs: SEC-A, SEC-C\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "relative views plain-file failure",
+      "args": [
+        "finance_lab/views.py"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/package-exercises-rqxf4wrd/finance_lab/views.py\", line 3, in <module>\n    from .holdings import capture_holdings\nImportError: attempted relative import with no known parent package\n",
+      "actual_method_count": null,
+      "expected_error": "attempted relative import with no known parent package",
+      "status": "PASS"
+    },
+    {
+      "label": "absolute internal import variant suite",
+      "args": [
+        "test_finance_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_direct_file_has_no_package_context (__main__.PackageTests.test_direct_file_has_no_package_context) ... ok\ntest_duplicate_and_excluded_invalid (__main__.PackageTests.test_duplicate_and_excluded_invalid) ... ok\ntest_facade_and_relative_import_identity (__main__.PackageTests.test_facade_and_relative_import_identity) ... ok\ntest_package_launch (__main__.PackageTests.test_package_launch) ... ok\ntest_public_values_and_empty (__main__.PackageTests.test_public_values_and_empty) ... ok\ntest_quiet_import_and_origin (__main__.PackageTests.test_quiet_import_and_origin) ... ok\ntest_schema_and_amounts (__main__.PackageTests.test_schema_and_amounts) ... ok\ntest_source_ownership (__main__.PackageTests.test_source_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.088s\n\nOK\n",
+      "actual_method_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "absolute variant -m package",
+      "args": [
+        "-m",
+        "finance_lab"
+      ],
+      "returncode": 0,
+      "stdout": "Package active IDs: SEC-A, SEC-C\n",
+      "stderr": "",
+      "actual_method_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "absolute variant plain file missing discoverable parent",
+      "args": [
+        "finance_lab/views.py"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/package-exercises-rqxf4wrd/finance_lab/views.py\", line 3, in <module>\n    from finance_lab.holdings import capture_holdings\nModuleNotFoundError: No module named 'finance_lab'\n",
+      "actual_method_count": null,
+      "expected_error": "No module named 'finance_lab'",
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "view_identity",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "display_not_initialized",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "helper_not_facade",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "all_count",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "empty_count",
+      "actual": "0",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "display",
+      "actual": "'Package active IDs: A'",
+      "expected": "'Package active IDs: A'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "source_unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "numeric_id",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "extra_field",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "explicit_implementation_import",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "wildcard_names",
+      "actual": "['active_ids', 'capture_holdings']",
+      "expected": "['active_ids', 'capture_holdings']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "new_explicit_view_not_wildcard",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "subpackage_name",
+      "actual": "'finance_lab.reports'",
+      "expected": "'finance_lab.reports'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "nested_module",
+      "actual": "'finance_lab.reports.summary'",
+      "expected": "'finance_lab.reports.summary'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "nested_report",
+      "actual": "{'holding_count': 2}",
+      "expected": "{'holding_count': 2}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "nested_empty",
+      "actual": "{'holding_count': 0}",
+      "expected": "{'holding_count': 0}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E1-E7",
+      "label": "full_validation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.5-E4",
+      "label": "restored extended relative view",
+      "actual": "'4f9eb5bf39bfb60475c317a0a37f21e14e3b9771841d43c5f01212c859ce8a3e'",
+      "expected": "'4f9eb5bf39bfb60475c317a0a37f21e14e3b9771841d43c5f01212c859ce8a3e'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "original core validation unchanged",
+      "actual": "'4503c3e4096f64d75d78ee80e94311de74175c069a7ee556a1e8ac0f9e223899'",
+      "expected": "'4503c3e4096f64d75d78ee80e94311de74175c069a7ee556a1e8ac0f9e223899'",
+      "status": "PASS"
+    }
+  ]
+}
