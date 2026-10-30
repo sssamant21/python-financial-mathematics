@@ -1,0 +1,564 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+  "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+  "selected_files": [
+    {
+      "path": "src/financial_inflows/__init__.py",
+      "sha256": "bf16313c7fa4e0667f9391a12286894e1e0b2466f1f5c282268d34929f1e4066"
+    },
+    {
+      "path": "src/financial_inflows/core.py",
+      "sha256": "6bd48e465f9cad8a784113d1acf25c6a7ed05f14608395cef7d3b674bfa72c0f"
+    },
+    {
+      "path": "src/financial_inflows/cli.py",
+      "sha256": "b61a030e5576e8cf1e34dcfcb15ff27e6a0a0b3bc05b5f8cb9f36740667bfe06"
+    },
+    {
+      "path": "src/financial_inflows/__main__.py",
+      "sha256": "bd045ddd5242d002f692dac452be9afba38deef5cde541a5fc074bfef5987b91"
+    },
+    {
+      "path": "tests/test_inflows.py",
+      "sha256": "6b0f727920e12fbeedf1ab60a6bc185496dc2eb54c129aa7cb3e3d760328ca11"
+    },
+    {
+      "path": "verify_package.py",
+      "sha256": "2b5e0e6980e25a6a93f7faab4c9d7a4e5a1472dd7274d125aadfe6dad26fe41e"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "77bf6f82e855fa5137a16aae3359387631fe422da9f50c3878fcedacd222144c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f8ea7e33ba663a89067ac0f179b6202157ae6c700f02862f7532984c2010de6f"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "11ea2641b70b11542f2b10c65976d68d01a8bc185fce849c984460b20cc0a0eb"
+    },
+    {
+      "path": "fixtures/inflows.json",
+      "sha256": "a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a"
+    },
+    {
+      "path": "fixtures/settings.json",
+      "sha256": "ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80"
+    }
+  ],
+  "builder": {
+    "python": "3.12.14",
+    "pip": "25.0.1",
+    "setuptools": "84.0.0"
+  },
+  "artifact": {
+    "filename": "book1_financial_inflows-0.1.0-py3-none-any.whl",
+    "bytes": 3836,
+    "sha256": "2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1"
+  },
+  "command_records": 23,
+  "command_passed": 23,
+  "command_failed": 0,
+  "predicates": 14,
+  "passed": 14,
+  "failed": 0,
+  "existing_method_invocations": 24,
+  "operations": [
+    {
+      "label": "builder identity",
+      "argv": [
+        "/tmp/book1_ch5formal_backend/builder/bin/python",
+        "-I",
+        "-c",
+        "import json,platform;from importlib.metadata import version;print(json.dumps(dict(python=platform.python_version(),pip=version('pip'),setuptools=version('setuptools'))))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"python\": \"3.12.14\", \"pip\": \"25.0.1\", \"setuptools\": \"84.0.0\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "exact project verifier",
+      "argv": [
+        "/tmp/book1_ch5formal_backend/builder/bin/python",
+        "/tmp/book1-project-review-qsu8d6kg/project/verify_package.py"
+      ],
+      "returncode": 0,
+      "stdout": "test_amount_contract (test_inflows.InflowTests.test_amount_contract) ... ok\ntest_bounds (test_inflows.InflowTests.test_bounds) ... ok\ntest_context_isolation (test_inflows.InflowTests.test_context_isolation) ... ok\ntest_identity_and_currency (test_inflows.InflowTests.test_identity_and_currency) ... ok\ntest_input_bytes_unchanged (test_inflows.InflowTests.test_input_bytes_unchanged) ... ok\ntest_known_answer (test_inflows.InflowTests.test_known_answer) ... ok\ntest_metadata (test_inflows.InflowTests.test_metadata) ... ok\ntest_schema_and_configuration (test_inflows.InflowTests.test_schema_and_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.009s\n\nOK\nInstalled origin: /tmp/book1-package-lu66kn4o/runtime/lib/python3.12/site-packages/financial_inflows/__init__.py\nWheel SHA-256: 068b8f9be54a8a94c6384237c0803608bad473407bf2b94197cb871f6abe3879\nPASS: 8 installed tests; module and console CLI; argument failure; pip check\nTemporary wheel and runtime removed\n",
+      "stderr": "",
+      "expected_count": 8,
+      "actual_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "retained build",
+      "argv": [
+        "/tmp/book1_ch5formal_backend/builder/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "wheel",
+        ".",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--wheel-dir",
+        "dist"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-project-review-qsu8d6kg/project\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: book1-financial-inflows\n  Building wheel for book1-financial-inflows (pyproject.toml): started\n  Building wheel for book1-financial-inflows (pyproject.toml): finished with status 'done'\n  Created wheel for book1-financial-inflows: filename=book1_financial_inflows-0.1.0-py3-none-any.whl size=3836 sha256=2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1\n  Stored in directory: /tmp/pip-ephem-wheel-cache-9t3baj6_/wheels/26/35/68/b9bc879e0a72d8ac1c72462d4cf4c706e1c92d6e1098196a51\nSuccessfully built book1-financial-inflows\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a create",
+      "argv": [
+        "/tmp/book1_ch5formal_backend/builder/bin/python",
+        "-m",
+        "venv",
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a exact retained wheel install",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/book1_ch5projectformal/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-project-review/artifacts/book1_financial_inflows-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1_ch5projectformal/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-project-review/artifacts/book1_financial_inflows-0.1.0-py3-none-any.whl\nInstalling collected packages: book1-financial-inflows\nSuccessfully installed book1-financial-inflows-0.1.0\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a pip check",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a installed origin",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-I",
+        "-c",
+        "import json,sysconfig,sys;from pathlib import Path;import financial_inflows;origin=Path(financial_inflows.__file__).resolve();purelib=Path(sysconfig.get_path('purelib')).resolve();assert purelib in origin.parents;print(json.dumps(dict(origin=str(origin),purelib=str(purelib),prefix=sys.prefix)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"origin\": \"/tmp/book1-project-review-qsu8d6kg/runtime-a/lib/python3.12/site-packages/financial_inflows/__init__.py\", \"purelib\": \"/tmp/book1-project-review-qsu8d6kg/runtime-a/lib/python3.12/site-packages\", \"prefix\": \"/tmp/book1-project-review-qsu8d6kg/runtime-a\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a source tests installed externally",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a-outside",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_contract (test_inflows.InflowTests.test_amount_contract) ... ok\ntest_bounds (test_inflows.InflowTests.test_bounds) ... ok\ntest_context_isolation (test_inflows.InflowTests.test_context_isolation) ... ok\ntest_identity_and_currency (test_inflows.InflowTests.test_identity_and_currency) ... ok\ntest_input_bytes_unchanged (test_inflows.InflowTests.test_input_bytes_unchanged) ... ok\ntest_known_answer (test_inflows.InflowTests.test_known_answer) ... ok\ntest_metadata (test_inflows.InflowTests.test_metadata) ... ok\ntest_schema_and_configuration (test_inflows.InflowTests.test_schema_and_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.006s\n\nOK\n",
+      "expected_count": 8,
+      "actual_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a module CLI",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows",
+        "--input",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/inflows.json",
+        "--config",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/settings.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a console CLI",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/financial-inflows",
+        "--input",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/inflows.json",
+        "--config",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/settings.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a missing arguments",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: __main__.py [-h] --input INPUT --config CONFIG\n__main__.py: error: the following arguments are required: --input, --config\n",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": "--input",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a malformed input",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows",
+        "--input",
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a-outside/malformed.json",
+        "--config",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/settings.json"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-a/lib/python3.12/site-packages/financial_inflows/__main__.py\", line 4, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-a/lib/python3.12/site-packages/financial_inflows/cli.py\", line 13, in main\n    result = analyze(args.input.read_bytes(), args.config.read_bytes())\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-a/lib/python3.12/site-packages/financial_inflows/core.py\", line 23, in analyze\n    rows = decode(data_raw)\n           ^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-a/lib/python3.12/site-packages/financial_inflows/core.py\", line 16, in decode\n    return json.loads(raw.decode('utf-8'), object_pairs_hook=unique_object)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 359, in loads\n    return cls(**kw).decode(s)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 338, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 356, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)\n",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": "JSONDecodeError",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a quiet import",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-a/bin/python",
+        "-I",
+        "-c",
+        "import financial_inflows,financial_inflows.cli"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b create",
+      "argv": [
+        "/tmp/book1_ch5formal_backend/builder/bin/python",
+        "-m",
+        "venv",
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b exact retained wheel install",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/book1_ch5projectformal/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-project-review/artifacts/book1_financial_inflows-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1_ch5projectformal/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-05-project-review/artifacts/book1_financial_inflows-0.1.0-py3-none-any.whl\nInstalling collected packages: book1-financial-inflows\nSuccessfully installed book1-financial-inflows-0.1.0\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b pip check",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "returncode": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b installed origin",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-I",
+        "-c",
+        "import json,sysconfig,sys;from pathlib import Path;import financial_inflows;origin=Path(financial_inflows.__file__).resolve();purelib=Path(sysconfig.get_path('purelib')).resolve();assert purelib in origin.parents;print(json.dumps(dict(origin=str(origin),purelib=str(purelib),prefix=sys.prefix)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"origin\": \"/tmp/book1-project-review-qsu8d6kg/runtime-b/lib/python3.12/site-packages/financial_inflows/__init__.py\", \"purelib\": \"/tmp/book1-project-review-qsu8d6kg/runtime-b/lib/python3.12/site-packages\", \"prefix\": \"/tmp/book1-project-review-qsu8d6kg/runtime-b\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b source tests installed externally",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b-outside",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_contract (test_inflows.InflowTests.test_amount_contract) ... ok\ntest_bounds (test_inflows.InflowTests.test_bounds) ... ok\ntest_context_isolation (test_inflows.InflowTests.test_context_isolation) ... ok\ntest_identity_and_currency (test_inflows.InflowTests.test_identity_and_currency) ... ok\ntest_input_bytes_unchanged (test_inflows.InflowTests.test_input_bytes_unchanged) ... ok\ntest_known_answer (test_inflows.InflowTests.test_known_answer) ... ok\ntest_metadata (test_inflows.InflowTests.test_metadata) ... ok\ntest_schema_and_configuration (test_inflows.InflowTests.test_schema_and_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.006s\n\nOK\n",
+      "expected_count": 8,
+      "actual_count": 8,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b module CLI",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows",
+        "--input",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/inflows.json",
+        "--config",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/settings.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b console CLI",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/financial-inflows",
+        "--input",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/inflows.json",
+        "--config",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/settings.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\n",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b missing arguments",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: __main__.py [-h] --input INPUT --config CONFIG\n__main__.py: error: the following arguments are required: --input, --config\n",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": "--input",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b malformed input",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-I",
+        "-m",
+        "financial_inflows",
+        "--input",
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b-outside/malformed.json",
+        "--config",
+        "/tmp/book1-project-review-qsu8d6kg/project/fixtures/settings.json"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-b/lib/python3.12/site-packages/financial_inflows/__main__.py\", line 4, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-b/lib/python3.12/site-packages/financial_inflows/cli.py\", line 13, in main\n    result = analyze(args.input.read_bytes(), args.config.read_bytes())\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-b/lib/python3.12/site-packages/financial_inflows/core.py\", line 23, in analyze\n    rows = decode(data_raw)\n           ^^^^^^^^^^^^^^^^\n  File \"/tmp/book1-project-review-qsu8d6kg/runtime-b/lib/python3.12/site-packages/financial_inflows/core.py\", line 16, in decode\n    return json.loads(raw.decode('utf-8'), object_pairs_hook=unique_object)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 359, in loads\n    return cls(**kw).decode(s)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 338, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 356, in raw_decode\n    raise JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)\n",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": "JSONDecodeError",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b quiet import",
+      "argv": [
+        "/tmp/book1-project-review-qsu8d6kg/runtime-b/bin/python",
+        "-I",
+        "-c",
+        "import financial_inflows,financial_inflows.cli"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_count": null,
+      "actual_count": null,
+      "expected_error": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "label": "exact backend",
+      "actual": "'84.0.0'",
+      "expected": "'84.0.0'",
+      "status": "PASS"
+    },
+    {
+      "label": "verifier cleanup status",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "one retained wheel",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "label": "core included",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "fixtures/tests source-side only",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "label": "independent fixture cents",
+      "actual": "3001",
+      "expected": "3001",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a external origin",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a CLI byte parity",
+      "actual": "'{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\\n'",
+      "expected": "'{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\\n'",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-a retained bytes unchanged",
+      "actual": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "expected": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b external origin",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b CLI byte parity",
+      "actual": "'{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\\n'",
+      "expected": "'{\"count\": 2, \"currency\": \"USD\", \"method\": \"sum_then_round\", \"rounding\": \"ROUND_HALF_EVEN\", \"total\": \"30.01\"}\\n'",
+      "status": "PASS"
+    },
+    {
+      "label": "runtime-b retained bytes unchanged",
+      "actual": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "expected": "'2ad393c4bd77a1d73c5165c1859ea527d615c3b6cb575a98984e611a362a91f1'",
+      "status": "PASS"
+    },
+    {
+      "label": "all supplied project files unchanged",
+      "actual": "{'src/financial_inflows/__init__.py': 'bf16313c7fa4e0667f9391a12286894e1e0b2466f1f5c282268d34929f1e4066', 'src/financial_inflows/core.py': '6bd48e465f9cad8a784113d1acf25c6a7ed05f14608395cef7d3b674bfa72c0f', 'src/financial_inflows/cli.py': 'b61a030e5576e8cf1e34dcfcb15ff27e6a0a0b3bc05b5f8cb9f36740667bfe06', 'src/financial_inflows/__main__.py': 'bd045ddd5242d002f692dac452be9afba38deef5cde541a5fc074bfef5987b91', 'tests/test_inflows.py': '6b0f727920e12fbeedf1ab60a6bc185496dc2eb54c129aa7cb3e3d760328ca11', 'verify_package.py': '2b5e0e6980e25a6a93f7faab4c9d7a4e5a1472dd7274d125aadfe6dad26fe41e', 'pyproject.toml': '77bf6f82e855fa5137a16aae3359387631fe422da9f50c3878fcedacd222144c', 'README.md': 'f8ea7e33ba663a89067ac0f179b6202157ae6c700f02862f7532984c2010de6f', '.gitignore': '11ea2641b70b11542f2b10c65976d68d01a8bc185fce849c984460b20cc0a0eb', 'fixtures/inflows.json': 'a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a', 'fixtures/settings.json': 'ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80'}",
+      "expected": "{'src/financial_inflows/__init__.py': 'bf16313c7fa4e0667f9391a12286894e1e0b2466f1f5c282268d34929f1e4066', 'src/financial_inflows/core.py': '6bd48e465f9cad8a784113d1acf25c6a7ed05f14608395cef7d3b674bfa72c0f', 'src/financial_inflows/cli.py': 'b61a030e5576e8cf1e34dcfcb15ff27e6a0a0b3bc05b5f8cb9f36740667bfe06', 'src/financial_inflows/__main__.py': 'bd045ddd5242d002f692dac452be9afba38deef5cde541a5fc074bfef5987b91', 'tests/test_inflows.py': '6b0f727920e12fbeedf1ab60a6bc185496dc2eb54c129aa7cb3e3d760328ca11', 'verify_package.py': '2b5e0e6980e25a6a93f7faab4c9d7a4e5a1472dd7274d125aadfe6dad26fe41e', 'pyproject.toml': '77bf6f82e855fa5137a16aae3359387631fe422da9f50c3878fcedacd222144c', 'README.md': 'f8ea7e33ba663a89067ac0f179b6202157ae6c700f02862f7532984c2010de6f', '.gitignore': '11ea2641b70b11542f2b10c65976d68d01a8bc185fce849c984460b20cc0a0eb', 'fixtures/inflows.json': 'a678c92f8e62fa56b989fc4eacb1ded93f9f8c154d02f06c141f82513b8cdb9a', 'fixtures/settings.json': 'ac2df8716d3f4e5232438ad41c17db0e9facca53eac07eada3106929911dfc80'}",
+      "status": "PASS"
+    },
+    {
+      "label": "owned temporary resources removed",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}

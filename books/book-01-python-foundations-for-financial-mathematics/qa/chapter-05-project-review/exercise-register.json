@@ -1,0 +1,20 @@
+[
+  {
+    "id": "5.12-E2",
+    "prompt": "Add a CLI test for malformed input and confirm stdout contains no success report.",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-project-review/README.md",
+    "answer": "Malformed input[ returns nonzero, JSONDecodeError and empty stdout in each fresh installed runtime; no success report."
+  },
+  {
+    "id": "5.12-E3",
+    "prompt": "Retain a wheel, record its digest, and repeat installation into another fresh environment.",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-project-review/README.md",
+    "answer": "Retained exact wheel bytes and SHA256; same wheel installed/validated in two fresh runtimes with explicit origin, source tests and CLI checks. Local Linux same-base recreation only; no independent external recipient acceptance."
+  }
+]

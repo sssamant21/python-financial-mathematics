@@ -1,0 +1,292 @@
+[
+  {
+    "id": "ACCEPT-01",
+    "prompt": "Reusable API",
+    "answer": "financial_inflows.analyze re-exported from core; source eight-method suite runs against installed code in external runtime. Input/config bytes validated; no new API change.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-02",
+    "prompt": "Explicit input",
+    "answer": "Both entry points require --input/--config. Missing arguments produce nonzero status and no stdout, independently probed in both fresh retained-wheel runtimes.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-03",
+    "prompt": "Defined calculation",
+    "answer": "10.005+20.005=30010/1000USD, exact rational cents ties-to-even gives3001=30.01. Source sums then quantizes once; per-record rounding would3000 cents. Existing bound/context tests rerun.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-04",
+    "prompt": "Installable project",
+    "answer": "Unchanged pyproject declares setuptools84.0.0; exact original verifier builds a regular wheel. Separate declared dist build retains a wheel; no editable installation.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-05",
+    "prompt": "Source separation",
+    "answer": "Exact src layout and explicit package discovery; no sys.path changes. Runtime tests copied outside project; fixtures passed via explicit absolute paths and not bundled.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-06",
+    "prompt": "Installed validation",
+    "answer": "Exact original verifier eight methods passes; same retained wheel installed into two further fresh venvs, each runs unchanged copied eight-method source suite. These24 invocations represent8 existing unique methods.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-07",
+    "prompt": "Import evidence",
+    "answer": "All original/retained runtime checks require package under child purelib. Raw origin/prefix JSON retained for both follow-up runtimes; not merely an import from source checkout.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-08",
+    "prompt": "CLI parity",
+    "answer": "Installed python -I -m financial_inflows and generated console command output identical bytes and independent expected complete schema. Both fresh retained-wheel runtime checks pass.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-09",
+    "prompt": "Failure behavior",
+    "answer": "Missing args and malformed[ JSON return nonzero with empty stdout and specific diagnostics. Expected errors retained separately from unexpected-failure count0.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-10",
+    "prompt": "Repeatable tooling",
+    "answer": "Builder3.12.14/pip25.0.1/setuptools84.0.0 recorded, backend wheel matched fetched PyPI metadata. Project builds/installs local --no-index/--no-deps/--no-build-isolation. This is not byte-reproducible independent builds.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "ACCEPT-11",
+    "prompt": "Cleanup",
+    "answer": "Original verifier cleanup message inspected; its context manager removes temporary wheel/runtime. Additional owned work/runtime directories absent after context. Deliberately retained wheel remains in QA artifacts for reuse, with recorded hash.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-01",
+    "prompt": "Known answer",
+    "answer": "Complete output schema/30.01 checked in source tests and external CLI; independent rational computation supplies expectation.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-02",
+    "prompt": "Distribution metadata",
+    "answer": "Source test reads book1-financial-inflows0.1.0 from installed metadata; imported financial_inflows and console financial-inflows are distinct namespaces.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-03",
+    "prompt": "Context isolation",
+    "answer": "Existing hostile precision2/ROUND_DOWN/Inexact trap test passes; local fresh precision28 sufficient for\u22641000*1000000 and four-place addition. No arbitrary division/powers/numerical-domain claim.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-04",
+    "prompt": "Amount contract",
+    "answer": "Original negative tests reject unsupported amount texts and JSON types; grammar/domain limits are separate from wheel compatibility.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-05",
+    "prompt": "Identity and currency",
+    "answer": "Original tests reject duplicate/padded IDs, unknown fields and nonUSD; cannot infer completeness/authenticity of external input.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-06",
+    "prompt": "Schema/configuration",
+    "answer": "Exact policy object and duplicate JSON-member hook exercised by source suite. No implicit env override or silent coercion.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-07",
+    "prompt": "Bounds",
+    "answer": "Source tests accept1000 max rows\u21921000000000.00 and reject1001; bounded sum is not unbounded precision certification.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-08",
+    "prompt": "Input stability",
+    "answer": "Original bytes immutable and source-suite assertion retains inputs; all extracted project files compared by SHA before/after builds and acceptance.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-09",
+    "prompt": "External installed import",
+    "answer": "Fresh venv regular install, external copied tests and -I origin address flat-checkout masking. No arbitrary PYTHONPATH repair or editable substitute.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "TEST-MAP-10",
+    "prompt": "CLI parity/failure",
+    "answer": "Module/console parity, missing required args, malformed-input no-success boundary checked; no exception suppression or successful zero-total fallback.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-01",
+    "prompt": "Prerequisites",
+    "answer": "Python3.10+ source syntax with venv/ensurepip; actual3.12.14 Linux. Fresh temporary project; preserve exact names. Source files outside disposable builder/runtime. No previous lab imports required.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-02",
+    "prompt": "Assemble exact listings",
+    "answer": "All11 paths reconstructed: metadata/README/gitignore, four package modules, test, two fixtures, verifier. Per-file SHA values recorded; synthetic source-side tests/fixtures not installed package resources.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-03",
+    "prompt": "Prepare builder",
+    "answer": "Prior scratch builder absent, so recreated dedicated builder through existing provenance-checking prepare script; downloaded exact84.0.0 and verified published SHA. Shared interpreter not modified. Existing F13 remains resolved, no backend guard loosened.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-04",
+    "prompt": "Run original verifier",
+    "answer": "Unchanged verifier invoked by explicit builder path from outside project; ROOT derives from file. Require actual8 tests/OK and return0, then read origin/hash/CLI/failure/cleanup evidence.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-05",
+    "prompt": "Retain artifact",
+    "answer": "Run declared local pip wheel build into empty dist. Check exactly one wheel and archive contains financial_inflows/core.py but no tests/fixtures; persist exact bytes/digest. No public upload.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-06",
+    "prompt": "Recipient-style validation",
+    "answer": "Install exact same retained artifact into two fresh local environments. Pip check, origin, source eight-method suite, both entry points, bad args/malformed input and quiet imports pass. No independent human recipient or different platform implied.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-07",
+    "prompt": "Review troubleshooting",
+    "answer": "Backend/version errors corrected by declared builder, missing pip/venv by supported setup; stale-source/entry-point issues addressed by regular install and explicit origin. No simulated missing backend/console fault in this batch.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  },
+  {
+    "id": "WORKFLOW-08",
+    "prompt": "Limit acceptance",
+    "answer": "No source-distribution rebuild, signing, dependency-update assessment, supported OS/version matrix, static checker, untrusted backend sandbox, production or registry release. Quiet output check does not prove absence of all application file reads; extension4 remains pending.",
+    "kind": "SOURCE+REVIEW",
+    "status": "REVIEWED_SCOPED",
+    "source": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+    "source_sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+    "evidence": "results.json"
+  }
+]
