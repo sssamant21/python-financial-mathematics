@@ -1,12 +1,14 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-29  
-**Candidate source revision:** `3e185649bf53f5a72ad9e1869d17762110444a26`  
+**Candidate source revision:** `82ec4d155b0b370008fab16f42a9781b7c4cd322`  
 **Disposition:** Runtime evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
 
-The [fourth full refresh](runtime-refresh-2026-10-29-r4.md), V-35, includes all eight subsequent Chapter 13/14 checkers: 452 files compiled, 241 scripts exited zero and 453 required blobs verified before/after. This is the latest candidate execution. G2–G8 remain unchanged.
+The [fifth full refresh](runtime-refresh-2026-10-29-r5.md), V-36, covers the four subsequent Chapter 14 checker additions and Section 14.1/14.2/14.5 corrections: 456 files compiled, 245 scripts passed and 457 source/fixture hashes verified before/after. This is the latest candidate execution; G2–G8 unchanged.
+
+The [fourth full refresh](runtime-refresh-2026-10-29-r4.md), V-35, includes all eight subsequent Chapter 13/14 checkers: 452 files compiled, 241 scripts exited zero and 453 required blobs verified before/after. This was the latest candidate execution at that time. G2–G8 remained unchanged.
 
 The [third full refresh](runtime-refresh-2026-10-29-r3.md), V-34, includes the subsequent Chapter 8, 10 and 11 follow-ups: 444 Python files compiled, 233 scripts exited zero and 445 required source/fixture blobs verified before and after execution. This was the latest candidate execution at that time; independent review and release acceptance remain pending. Earlier records below are historical.
 
@@ -26,7 +28,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Historical full pass; subsequent scoped pass | V-35 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-36 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -85,3 +87,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Symmetry-policy boundary follow-up — 2026-10-29
 
 [Chapter 14 evidence](chapter-14-symmetry-policy-followup.md) adds nine adjacent represented-threshold cases, exact-versus-tolerant symmetry contrast and three subnormal midpoint cases. No implementation change was justified; the manuscript now states the policies and absolute floor. All 27 chapter files compiled and 17 scripts passed. This checker addition follows V-35; twenty-five categories remain partially addressed. Next executable item: Section 14.5 tiny nondyadic reconstruction norms, then full-book runtime refresh after related fixes. Independent review, environment and release gates remain pending.
+
+## Tiny Cholesky diagnostic correction and V-36 — 2026-10-29
+
+[Correction evidence](chapter-14-cholesky-norm-followup.md) retains an original zero-error underflow failure and five Decimal norm/solve-report cases; all 28 Chapter 14 files compiled and 18 scripts passed. [V-36 full execution](runtime-refresh-2026-10-29-r5.md) subsequently compiled 456 sources and passed 245 scripts with 457 verified blobs at `82ec4d155b0b370008fab16f42a9781b7c4cd322`, covering all four recent checker additions and spectral/Cholesky corrections. Twenty-five categories remain partially addressed; independent review and release gates stay open. Next executable item: COV-67 Section 14.8/14.10 literal-report versus computed-factor integration and meaningful fault detection.
