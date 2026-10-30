@@ -1,0 +1,150 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "compiled": 28,
+  "runs": [
+    {
+      "script": "check_near_spd_cholesky.py",
+      "exit_code": 0,
+      "stdout": "PASS: nine near-SPD factorizations/solves and six non-SPD boundary matrices\n",
+      "stderr": "",
+      "seconds": 0.025870012999988035
+    },
+    {
+      "script": "check_spectral_report_range.py",
+      "exit_code": 0,
+      "stdout": "PASS: six tiny-root integrations, iterator guards and three Decimal diagnostic cases\n",
+      "stderr": "",
+      "seconds": 0.026812751999997886
+    },
+    {
+      "script": "check_decomposition_boundaries.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n",
+      "seconds": 0.04654674799999725
+    },
+    {
+      "script": "check_section_14_07.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.7 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.026944948000007685
+    },
+    {
+      "script": "check_section_14_03.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.3 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.021670436999997378
+    },
+    {
+      "script": "check_symmetry_policy.py",
+      "exit_code": 0,
+      "stdout": "PASS: nine adjacent symmetry cases, exact-symmetry contrast and three subnormal averages\n",
+      "stderr": "",
+      "seconds": 0.024810942000002
+    },
+    {
+      "script": "check_section_14_06.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.6 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.020382800999996675
+    },
+    {
+      "script": "check_near_repeated_eigenpairs.py",
+      "exit_code": 0,
+      "stdout": "PASS: twelve selected repeated/near-repeated eigenpair cases\n",
+      "stderr": "",
+      "seconds": 0.026211879999991083
+    },
+    {
+      "script": "check_cholesky_tiny_norm.py",
+      "exit_code": 0,
+      "stdout": "PASS: five Decimal Cholesky norm cases and solve-report propagation\n",
+      "stderr": "",
+      "seconds": 0.019924178000010784
+    },
+    {
+      "script": "check_unequal_spectra.py",
+      "exit_code": 0,
+      "stdout": "PASS: 24 exact diagonal and six Decimal unequal-spectrum cases\n",
+      "stderr": "",
+      "seconds": 0.02523780200000658
+    },
+    {
+      "script": "check_section_14_05.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.5 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.03872035199999857
+    },
+    {
+      "script": "check_section_14_01.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.1 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02390612000000658
+    },
+    {
+      "script": "check_section_14_04.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.4 independent mathematical checks\n",
+      "stderr": "",
+      "seconds": 0.042719270000006304
+    },
+    {
+      "script": "check_section_14_09.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.9 independent mathematical reference checks\n",
+      "stderr": "",
+      "seconds": 0.025472441999994544
+    },
+    {
+      "script": "check_svd_factor_order.py",
+      "exit_code": 0,
+      "stdout": "PASS: twelve restricted SVD factor-order and truncation cases\n",
+      "stderr": "",
+      "seconds": 0.032610167999990836
+    },
+    {
+      "script": "check_section_14_08.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.8 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.020542832999993266
+    },
+    {
+      "script": "check_section_14_10.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.10 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.018352323000002002
+    },
+    {
+      "script": "check_section_14_02.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.2 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02043611199999873
+    }
+  ],
+  "inspected_revision": "497c651bd1c373a85288d17725b6d94bc9304ddd",
+  "corrected_source": {
+    "commit_sha": "77d24716bb6eecee028ed507b6ea817110a407ee",
+    "content_sha": "b37f9ec77464109992f72a46cf840ee1549e1260"
+  },
+  "initial_failure": {
+    "chunk_id": "16697a",
+    "wall_time_seconds": 0.000051809,
+    "exit_code": 1,
+    "original_token_count": 121,
+    "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/45f84313db40/cholesky_norm_followup/check_cholesky_tiny_norm.py\", line 29, in <module>\n    run()\n  File \"/workspace/scratch/45f84313db40/cholesky_norm_followup/check_cholesky_tiny_norm.py\", line 16, in run\n    assert math.isclose(result[\"reconstruction_error_frobenius\"],expected,rel_tol=3e-15,abs_tol=0)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  "initial_probe": {
+    "scale": 1e-180,
+    "reported": 0,
+    "direct_hypot": 4.280877634782037e-196
+  }
+}
