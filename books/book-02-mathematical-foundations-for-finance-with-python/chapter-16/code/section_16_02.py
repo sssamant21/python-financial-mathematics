@@ -63,7 +63,14 @@ def centered_difference(fn,x,step=1e-5):
     h=finite(step,"step")
     if h<=0:
         raise ValueError("step must be positive")
-    return finite((fn(x+h)-fn(x-h))/(2*h),"finite difference")
+    xp,xm=finite(x+h,"x+step"),finite(x-h,"x-step")
+    if not xm<x<xp:
+        raise ValueError("step must change both represented inputs")
+    denominator=finite(2*h,"finite-difference denominator")
+    if denominator==0:
+        raise ValueError("finite-difference denominator must be nonzero")
+    fp,fm=finite(fn(xp),"callback at x+step"),finite(fn(xm),"callback at x-step")
+    return finite((fp-fm)/denominator,"finite-difference estimate")
 
 def assessment():
     optimum=financial_optimum()
