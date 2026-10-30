@@ -28,4 +28,6 @@ Earlier checkpoint: [Section 6.1 local exercises](../chapter-06-motivation-exerc
 
 Earlier checkpoint: [Section 6.2 local exercises](../chapter-06-snapshot-exercises/README.md) records eight answers, three commands, 20 predicates and eight existing methods rerun. Local queue: 16/128 reviewed, 112 pending. Next: Section 6.3.
 
-Current checkpoint: [Section 6.3 local exercises](../chapter-06-creation-exercises/README.md) records eight answers, three commands, 29 predicates and eight existing methods rerun. Local queue: 24/128 reviewed, 104 pending. Next: Section 6.4.
+Earlier checkpoint: [Section 6.3 local exercises](../chapter-06-creation-exercises/README.md) records eight answers, three commands, 29 predicates and eight existing methods rerun. Local queue: 24/128 reviewed, 104 pending. Next: Section 6.4.
+
+Current checkpoint: [Section 6.4 local exercises](../chapter-06-indexing-exercises/README.md) records eight answers, two command checks, 29 predicates and eight existing methods rerun. Local queue: 32/128 reviewed, 96 pending. Next: Section 6.5.

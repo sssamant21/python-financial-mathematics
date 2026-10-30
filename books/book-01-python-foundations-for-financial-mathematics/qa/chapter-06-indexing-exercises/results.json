@@ -1,0 +1,254 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.04-indexing-and-slicing.md",
+  "source_sha256": "2c87464917acaa95a2ad131c25de3642625a544b7ba7cbd2d4670e6a0b3f5a9b",
+  "listing_sha256": [
+    "228edba71383e86ea95d893674b6b072467a25ecb4c03445f12d2e3fbf962316",
+    "9e5abcfb7c732a9d363e5ddf7e4c47f262b3ddb1edaa74d680bfa987dcc469ed"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 29,
+  "failed": 0,
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_basic_slice_and_rank (test_indexing_lab.IndexingTests.test_basic_slice_and_rank) ... ok\ntest_boolean_selection_and_shape (test_indexing_lab.IndexingTests.test_boolean_selection_and_shape) ... ok\ntest_chained_copy_and_direct_assignment (test_indexing_lab.IndexingTests.test_chained_copy_and_direct_assignment) ... ok\ntest_empty_and_one_column (test_indexing_lab.IndexingTests.test_empty_and_one_column) ... ok\ntest_identity_errors (test_indexing_lab.IndexingTests.test_identity_errors) ... ok\ntest_pairs_versus_rectangle (test_indexing_lab.IndexingTests.test_pairs_versus_rectangle) ... ok\ntest_requested_order_and_independence (test_indexing_lab.IndexingTests.test_requested_order_and_independence) ... ok\ntest_source_contract (test_indexing_lab.IndexingTests.test_source_contract) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.040s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "indexing_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "Requested IDs: ('C', 'A')\nSelected: [[50.0, 100.0], [51.0, 105.0], [52.0, 103.0]]\nLast date: [103.0, 78.0, 52.0]\nColumn shapes: (3,) (3, 1)\nPaired: [100.0, 52.0]\nRectangle: [[100.0, 50.0], [103.0, 52.0]]\nLatest-price mask: [True, False, False]\nMasked IDs: ('A',)\nMasked table: [[100.0], [105.0], [103.0]]\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.4-E1",
+      "label": "last two B/C values",
+      "actual": "[[76.0, 51.0], [78.0, 52.0]]",
+      "expected": "[[76, 51], [78, 52]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E1",
+      "label": "shape and both axis labels",
+      "actual": "((2, 2), ('B', 'C'), ('obs1', 'obs2'))",
+      "expected": "((2, 2), ('B', 'C'), ('obs1', 'obs2'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E1",
+      "label": "selection independent of source",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E2",
+      "label": "zero step is invalid",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 14, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 25, in <lambda>\n    reject('6.4-E2','zero step is invalid',lambda:source[::0],'ValueError')\n                                                  ~~~~~~^^^^^\nValueError: slice step cannot be zero\n"
+    },
+    {
+      "exercise": "6.4-E2",
+      "label": "out-of-range slice is empty",
+      "actual": "(0, 3)",
+      "expected": "(0, 3)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E2",
+      "label": "out-of-range integer is distinct",
+      "actual": "'IndexError'",
+      "expected": "'IndexError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 14, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 27, in <lambda>\n    reject('6.4-E2','out-of-range integer is distinct',lambda:source[99],'IndexError')\n                                                              ~~~~~~^^^^\nIndexError: index 99 is out of bounds for axis 0 with size 3\n"
+    },
+    {
+      "exercise": "6.4-E3",
+      "label": "explicit instrument mask",
+      "actual": "[False, True, True]",
+      "expected": "[False, True, True]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E3",
+      "label": "mask values and labels",
+      "actual": "([[80.0, 50.0], [76.0, 51.0], [78.0, 52.0]], ('B', 'C'))",
+      "expected": "([[80, 50], [76, 51], [78, 52]], ('B', 'C'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E3",
+      "label": "all observation labels retained",
+      "actual": "((3, 2), ('obs0', 'obs1', 'obs2'))",
+      "expected": "((3, 2), ('obs0', 'obs1', 'obs2'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E4",
+      "label": "reverse row/label pairs",
+      "actual": "[('obs2', [103.0, 78.0, 52.0]), ('obs1', [105.0, 76.0, 51.0]), ('obs0', [100.0, 80.0, 50.0])]",
+      "expected": "[('obs2', [103, 78, 52]), ('obs1', [105, 76, 51]), ('obs0', [100, 80, 50])]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E4",
+      "label": "basic reverse shares storage",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E4",
+      "label": "scenario copy independent",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E5",
+      "label": "full mask selects cells in row order",
+      "actual": "[100.0, 105.0, 103.0]",
+      "expected": "[100, 105, 103]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E5",
+      "label": "rank loses table axes",
+      "actual": "((3, 3), (3,), 1)",
+      "expected": "((3, 3), (3,), 1)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E5",
+      "label": "separately retained identity coordinates",
+      "actual": "[('obs0', 'A'), ('obs1', 'A'), ('obs2', 'A')]",
+      "expected": "[('obs0', 'A'), ('obs1', 'A'), ('obs2', 'A')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E6",
+      "label": "invalid unselected B nan",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 14, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 43, in <lambda>\n    reject('6.4-E6','invalid unselected B '+str(value),lambda: m.select_instruments(bad,ids,('A',)),'ValueError')\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.04-indexing-and-slicing.md\", line 18, in select_instruments\n    1. Predict the values and shape of a selection.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: source prices must be finite and nonnegative\n"
+    },
+    {
+      "exercise": "6.4-E6",
+      "label": "rejection leaves source unchanged nan",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x80I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f\\x00\\x00\\x00\\x00\\x00\\x80I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E6",
+      "label": "invalid unselected B inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 14, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 43, in <lambda>\n    reject('6.4-E6','invalid unselected B '+str(value),lambda: m.select_instruments(bad,ids,('A',)),'ValueError')\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.04-indexing-and-slicing.md\", line 18, in select_instruments\n    1. Predict the values and shape of a selection.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: source prices must be finite and nonnegative\n"
+    },
+    {
+      "exercise": "6.4-E6",
+      "label": "rejection leaves source unchanged inf",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f\\x00\\x00\\x00\\x00\\x00\\x80I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f\\x00\\x00\\x00\\x00\\x00\\x80I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E6",
+      "label": "invalid unselected B -1.0",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 14, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-indexing-exercises/review.py\", line 43, in <lambda>\n    reject('6.4-E6','invalid unselected B '+str(value),lambda: m.select_instruments(bad,ids,('A',)),'ValueError')\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6indexx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.04-indexing-and-slicing.md\", line 18, in select_instruments\n    1. Predict the values and shape of a selection.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: source prices must be finite and nonnegative\n"
+    },
+    {
+      "exercise": "6.4-E6",
+      "label": "rejection leaves source unchanged -1.0",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\xbf\\x00\\x00\\x00\\x00\\x00\\x80I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\xbf\\x00\\x00\\x00\\x00\\x00\\x80I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E7",
+      "label": "advanced copy edit has no source effect",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 51.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100.0, 80.0, 50.0], [105.0, 76.0, 51.0], [103.0, 78.0, 52.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E7",
+      "label": "advanced copy does not share storage",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E7",
+      "label": "direct indexed assignment updates owned source",
+      "actual": "[999.0, 80.0, 888.0]",
+      "expected": "[999, 80, 888]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E7",
+      "label": "original fixture remains unchanged",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 51.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100, 80, 50], [105, 76, 51], [103, 78, 52]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E8",
+      "label": "original selector permits explicit empty result",
+      "actual": "((3, 0), ())",
+      "expected": "((3, 0), ())",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.4-E8",
+      "label": "explicit supplemental no-match report",
+      "actual": "{'status': 'NO_MATCH', 'instrument_ids': (), 'observation_ids': ('obs0', 'obs1', 'obs2'), 'shape': (3, 0), 'valuation': None}",
+      "expected": "{'status': 'NO_MATCH', 'instrument_ids': (), 'observation_ids': ('obs0', 'obs1', 'obs2'), 'shape': (3, 0), 'valuation': None}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "source fixture still unchanged",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 51.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100, 80, 50], [105, 76, 51], [103, 78, 52]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'indexing_lab.py': '228edba71383e86ea95d893674b6b072467a25ecb4c03445f12d2e3fbf962316', 'test_indexing_lab.py': '9e5abcfb7c732a9d363e5ddf7e4c47f262b3ddb1edaa74d680bfa987dcc469ed'}",
+      "expected": "{'indexing_lab.py': '228edba71383e86ea95d893674b6b072467a25ecb4c03445f12d2e3fbf962316', 'test_indexing_lab.py': '9e5abcfb7c732a9d363e5ddf7e4c47f262b3ddb1edaa74d680bfa987dcc469ed'}",
+      "status": "PASS"
+    }
+  ]
+}
