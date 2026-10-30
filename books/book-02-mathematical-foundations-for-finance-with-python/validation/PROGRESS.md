@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-30  
-**Overall status:** In progress — latest full pinned-revision runtime pass complete (478 compiled files; 267 successful script exits); subsequent Section17.4 correction has scoped21-file/11-script evidence; coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — latest full pinned-revision runtime pass complete (480 compiled files; 269 successful script exits), including both Section17.4 follow-ups; coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Earlier full pass; subsequent scoped change | 478/478 files compiled at `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3` on Python 3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r9.md). |
-| Automated script execution | Earlier full pass; subsequent scoped change | 267/267 check/test scripts exited zero at `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r9.md). |
+| Python compilation | Full pinned pass | 480/480 files compiled at `df656dbbe59bda073bf662392c9f0348fc18cc83` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r10.md). |
+| Automated script execution | Full pinned pass | 269/269 check/test scripts exited zero at `df656dbbe59bda073bf662392c9f0348fc18cc83`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r10.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -20,7 +20,7 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest full-book runtime refresh — V-39
+## Earlier full-book runtime refresh — V-39
 
 467/467 sources compiled; 256/256 scripts exited zero; 468/468 required hashes matched before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`. Includes three Chapter 16 optimizer reference checkers. [Report](runtime-refresh-2026-10-30-r3.md) · [Raw evidence](runtime-refresh-2026-10-30-r3.json). Twenty-eight categories remain partially addressed; independent review/release gates stay open.
 
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-39 eighth refresh](runtime-refresh-2026-10-30-r3.md): 467 sources compiled, 256 scripts passed and 468 required hashes verified before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`.
+- **Latest full run:** [V-46 fifteenth refresh](runtime-refresh-2026-10-30-r10.md): 480 sources compiled, 269 scripts passed and 481 required hashes verified before/after at `df656dbbe59bda073bf662392c9f0348fc18cc83`.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -479,3 +479,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Adjacent active-set boundary correction — 2026-10-30
 
 [Section17.4 evidence](chapter-17-active-boundary-followup.md) preserves adjacent probes and the original failed check, corrects near-transition dual cancellation with exact decimal-model formulas, and separates rounded display, exact model geometry and numerical activity. Nine cap sets yield63 weight/dual/value/geometry checks and27 activity reports across three tolerances. All21 Chapter17 files compiled and11 scripts passed, including existing tiny-empty-interval regressions, at `bf81791b09530e2711c89ca4960d62bd571bb9b9`; corrected scoped hashes match the published tree. Current inventory is479 Python files/268 check-test scripts, not a new full run. This helper/checker change follows V-45. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-76 Section17.4 cap-zero nonunique lower-bound/cap multiplier families, exact stationarity/complementarity and isolated sign failures. Broader tolerance units/scales, conditioning, independent-review, supported-platform and release obligations remain open.
+
+## Degenerate multiplier family and V-46 — 2026-10-30
+
+[Section17.4 evidence](chapter-17-degenerate-multiplier-followup.md) derives the cap-zero family (a,0,a+4/25), checks six parameter sets, three isolated dual-sign/stationarity/complementarity failures and three omitted-family rules. The first run passed against the unchanged helper; no numerical defect was demonstrated. Tiny-negative and zero-tolerance cases distinguish numerical acceptance from exact feasibility. All22 Chapter17 files compiled and12 scripts passed. [V-46 full execution](runtime-refresh-2026-10-30-r10.md) compiled480 files, passed269 scripts and verified481 required hashes before/after at `df656dbbe59bda073bf662392c9f0348fc18cc83`, covering the preceding active-boundary correction/checker too. The manuscript now explains multiplier choice and its escaped lab-command markup is repaired. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-77 Section17.9 retained report inputs/model/tolerance metadata and deterministic strict-JSON contract; distinguish synthetic model provenance from real-market validation. Broader tolerance units/scales, independent-review, supported-platform and release obligations stay open.
