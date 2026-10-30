@@ -25,6 +25,15 @@ def hessian(rate):
     finite(rate,"rate")
     return 2.0
 
+def _curvature_update(x,g,curvature,damping):
+    """Round the combined update once, avoiding intermediate range loss."""
+    exact=Fraction(x)-Fraction(damping)*Fraction(g)/Fraction(curvature)
+    try:
+        result=float(exact)
+    except OverflowError as exc:
+        raise ValueError("curvature update outside floating-point range") from exc
+    return finite(result,"curvature update")
+
 def newton_step(x,grad,hess,damping=1.0):
     x=finite(x,"x")
     g=finite(grad(x),"gradient")
@@ -34,7 +43,7 @@ def newton_step(x,grad,hess,damping=1.0):
         raise ValueError("damping must lie in (0,1]")
     if h<=0:
         raise ValueError("positive curvature required for descent Newton step")
-    return finite(x-alpha*g/h,"newton update")
+    return _curvature_update(x,g,h,alpha)
 
 def newton_solve(x0,grad,hess,tolerance=1e-12,max_iterations=30):
     x=finite(x0,"initial point")
@@ -80,7 +89,7 @@ def quasi_newton_step(x,grad,curvature):
     b=finite(curvature,"curvature")
     if b<=0:
         raise ValueError("positive curvature required")
-    return finite(x-g/b,"quasi-Newton update")
+    return _curvature_update(x,g,b,1.0)
 
 def assessment():
     solved=newton_solve(0.0,gradient,hessian)
