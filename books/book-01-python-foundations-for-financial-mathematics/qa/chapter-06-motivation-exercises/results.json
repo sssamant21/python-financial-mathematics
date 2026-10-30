@@ -1,0 +1,277 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.01-why-numpy.md",
+  "source_sha256": "92b65e93b751a7ef555b75ee4a037feab0fd32148be202007bde7e596c78fd1a",
+  "original_listing_sha256": [
+    "6c393b71cd2f97417b56851ae1a06b011feb813720ed47f0e4a948ba737a6b7f",
+    "d603db9a065708467b7cb29765624cbf75b79ee5ea0d80518de59d0f74a7d347"
+  ],
+  "supplemental_caller_sha256": "a720b310e0544528d51fc0c82a51c552d6da5d90f055da8bd1895684239d6c85",
+  "exercise_records": 8,
+  "command_records": 3,
+  "command_passed": 3,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 23,
+  "passed": 23,
+  "failed": 0,
+  "independent_fractions": {
+    "aligned_ratios": [
+      "1/20",
+      "-1/20",
+      "0",
+      "1/10"
+    ],
+    "swapped_ratios": [
+      "-6/25",
+      "5/16",
+      "0"
+    ],
+    "small_return": "3/10000000000000"
+  },
+  "commands": [
+    {
+      "label": "exact original eight-method suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_domain_and_nonfinite (test_numpy_motivation.MotivationTests.test_domain_and_nonfinite) ... ok\ntest_known_values_and_shape (test_numpy_motivation.MotivationTests.test_known_values_and_shape) ... ok\ntest_no_mutation_or_alias (test_numpy_motivation.MotivationTests.test_no_mutation_or_alias) ... ok\ntest_overflow_fails_and_settings_restored (test_numpy_motivation.MotivationTests.test_overflow_fails_and_settings_restored) ... ok\ntest_scalar_reference (test_numpy_motivation.MotivationTests.test_scalar_reference) ... ok\ntest_shape_prevents_broadcasting (test_numpy_motivation.MotivationTests.test_shape_prevents_broadcasting) ... ok\ntest_types_and_dtypes (test_numpy_motivation.MotivationTests.test_types_and_dtypes) ... ok\ntest_zero_end_price (test_numpy_motivation.MotivationTests.test_zero_end_price) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.029s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "exact original demonstration",
+      "args": [
+        "numpy_motivation.py"
+      ],
+      "returncode": 0,
+      "stdout": "ASSET-A: 5.00%\nASSET-B: -5.00%\nASSET-C: 0.00%\nShape: (3,)\nDtype: float64\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "supplemental four-asset caller",
+      "args": [
+        "four_assets.py"
+      ],
+      "returncode": 0,
+      "stdout": "ASSET-A: 5.00%\nASSET-B: -5.00%\nASSET-C: 0.00%\nASSET-D: 10.00%\nShape: (4,)\nDtype: float64\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.1-E1",
+      "label": "fourth independent fraction",
+      "actual": "Fraction(1, 10)",
+      "expected": "Fraction(1, 10)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E1",
+      "label": "four aligned ratios vs rational oracle",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.050000000000000044,
+        -0.050000000000000044,
+        0.0,
+        0.10000000000000009
+      ],
+      "expected_values": [
+        0.05,
+        -0.05,
+        0.0,
+        0.1
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "exercise": "6.1-E1",
+      "label": "new output shape/dtype",
+      "actual": "((4,), 'float64')",
+      "expected": "((4,), 'float64')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E1",
+      "label": "inputs preserved, independent result",
+      "actual": "(True, False, False)",
+      "expected": "(True, False, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E2",
+      "label": "list repetition",
+      "actual": "[2, 4, 2, 4]",
+      "expected": "[2, 4, 2, 4]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E2",
+      "label": "array element multiplication",
+      "actual": "[4, 8]",
+      "expected": "[4, 8]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E2",
+      "label": "original values unchanged",
+      "actual": "([2, 4], [2, 4])",
+      "expected": "([2, 4], [2, 4])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E3",
+      "label": "accepted but mislabeled pairs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        -0.24,
+        0.3125,
+        0.0
+      ],
+      "expected_values": [
+        -0.24,
+        0.3125,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "exercise": "6.1-E3",
+      "label": "shape/domain validation cannot know identity",
+      "actual": "((3,), True, False)",
+      "expected": "((3,), True, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E3",
+      "label": "aligned originals preserved",
+      "actual": "[105.0, 76.0, 50.0]",
+      "expected": "[105.0, 76.0, 50.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E4",
+      "label": "zero-dimensional start and end",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 37, in <lambda>\n    reject('6.1-E4','zero-dimensional start and end',lambda:m.price_returns(np.array(100.),np.array(105.)),'ValueError')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.01-why-numpy.md\", line 18, in price_returns\n    1. Explain why numerical workloads use arrays.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: start must be a nonempty one-dimensional array\n"
+    },
+    {
+      "exercise": "6.1-E4",
+      "label": "zero-dimensional end only",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 38, in <lambda>\n    reject('6.1-E4','zero-dimensional end only',lambda:m.price_returns(np.array([100.]),np.array(105.)),'ValueError')\n                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.01-why-numpy.md\", line 18, in price_returns\n    1. Explain why numerical workloads use arrays.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: end must be a nonempty one-dimensional array\n"
+    },
+    {
+      "exercise": "6.1-E5",
+      "label": "missing end is not a price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 39, in <lambda>\n    reject('6.1-E5','missing end is not a price',lambda:m.price_returns(np.array([100.]),np.array([np.nan])),'ValueError')\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.01-why-numpy.md\", line 20, in price_returns\n    3. Identify shape, dtype, and positional alignment as separate contracts.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: end must contain finite prices\n"
+    },
+    {
+      "exercise": "6.1-E5",
+      "label": "substituted zero means total price loss",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        -1.0
+      ],
+      "expected_values": [
+        -1.0
+      ],
+      "rtol": 0,
+      "atol": 0
+    },
+    {
+      "exercise": "6.1-E6",
+      "label": "proposed near-zero scale vs rational input",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 2.999822612537173e-13,
+      "expected_values": 3e-13,
+      "rtol": 0,
+      "atol": 1e-15
+    },
+    {
+      "exercise": "6.1-E6",
+      "label": "old absolute threshold hides discrepancy",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E6",
+      "label": "proposed policy rejects false zero",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E6",
+      "label": "independent tolerance inequality",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E7",
+      "label": "source API still rejects float32",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-motivation-exercises/review.py\", line 46, in <lambda>\n    reject('6.1-E7','source API still rejects float32',lambda:m.price_returns(np.array([1.],dtype=np.float32),np.array([1.1],dtype=np.float32)),'TypeError')\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6motivationx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.01-why-numpy.md\", line 16, in price_returns\n    ## 6.1.2 Learning Objectives\n                ^^^^^^^^^^^^^^^^^\nTypeError: start must have float64 dtype\n"
+    },
+    {
+      "exercise": "6.1-E7",
+      "label": "float32 narrowing loses small price increment",
+      "actual": "[1.0]",
+      "expected": "[1.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E7",
+      "label": "widening cannot recover lost input",
+      "actual": "[0.0]",
+      "expected": "[0.0]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.1-E7",
+      "label": "precision spacing differs by representation",
+      "actual": "(1.1920928955078125e-07, 2.220446049250313e-16)",
+      "expected": "(1.1920928955078125e-07, 2.220446049250313e-16)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original listings unchanged",
+      "actual": "{'numpy_motivation.py': '6c393b71cd2f97417b56851ae1a06b011feb813720ed47f0e4a948ba737a6b7f', 'test_numpy_motivation.py': 'd603db9a065708467b7cb29765624cbf75b79ee5ea0d80518de59d0f74a7d347'}",
+      "expected": "{'numpy_motivation.py': '6c393b71cd2f97417b56851ae1a06b011feb813720ed47f0e4a948ba737a6b7f', 'test_numpy_motivation.py': 'd603db9a065708467b7cb29765624cbf75b79ee5ea0d80518de59d0f74a7d347'}",
+      "status": "PASS"
+    }
+  ]
+}

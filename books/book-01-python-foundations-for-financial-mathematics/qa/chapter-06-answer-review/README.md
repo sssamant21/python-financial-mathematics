@@ -22,4 +22,6 @@ Earlier checkpoint: [Sections6.5–6.8 workflow review](../chapter-06-middle-lab
 
 Earlier checkpoint: [Sections6.9–6.12workflow review](../chapter-06-later-lab-review/README.md) adds4scoped workflows,13commands,50predicates and32existing methods.12of16workflows recorded;4workflows/128local prompts remain. Next:Sections6.13–6.16 and project/checklist review.
 
-Current checkpoint: [Sections6.13–6.16/project review](../chapter-06-final-workflow-review/README.md) records14commands,66predicates,32existingmethods and20separateprojectrecords. All16coreworkflows scoped;128localprompts pending. Next:Section6.1localexercises.
+Earlier checkpoint: [Sections6.13–6.16/project review](../chapter-06-final-workflow-review/README.md) records14commands,66predicates,32existingmethods and20separateprojectrecords. All16coreworkflows scoped;128localprompts pending. Next:Section6.1localexercises.
+
+Current checkpoint: [Section 6.1 local exercises](../chapter-06-motivation-exercises/README.md) now records eight answers, three command checks, 23 predicates and eight existing methods rerun. Local queue: 8/128 reviewed, 120 pending. All 16 core workflows remain separate. Next: Section 6.2 local exercises.
