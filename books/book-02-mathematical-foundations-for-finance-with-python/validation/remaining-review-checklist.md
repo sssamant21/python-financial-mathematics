@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `df656dbbe59bda073bf662392c9f0348fc18cc83`  
-**Latest scoped source revision:** `e5bf5f753a12e8b83f98933682c97f0a55ea9805`  
-**Disposition:** Earlier V-46 full candidate runtime plus subsequent Section17.9 report-contract scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `60cd09c1072aec6d6f437b62961d0b4e50cad50c`  
+**Latest scoped source revision:** `60cd09c1072aec6d6f437b62961d0b4e50cad50c`  
+**Disposition:** V-47 full candidate runtime includes Section17.9 report and Section17.10 LP integration; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-47 sixteenth refresh](runtime-refresh-2026-10-30-r11.md): 482 sources compiled, 271 scripts passed, 483 required hashes verified before/after. Includes Section17.9 report and Section17.10 LP integration with both checkers. Current candidate execution; G2–G8 unchanged.
 
 [V-46 fifteenth refresh](runtime-refresh-2026-10-30-r10.md) includes the Section17.4 boundary correction and degenerate-multiplier checker: 480 files compiled, 269 scripts passed, 481 required hashes verified before/after. Current candidate execution; G2–G8 unchanged.
 
@@ -49,7 +51,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-46 at earlier full pin:480 compiled/269 scripts/481 hashes; subsequent Section17.9 report change has23-file/13-script scoped pass at `e5bf5f753a12e8b83f98933682c97f0a55ea9805` | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-47 at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`:482 compiled/271 scripts/483 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -208,3 +210,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Allocation report audit contract — 2026-10-30
 
 [Section17.9 evidence](chapter-17-report-contract-followup.md) preserves the initial missing-input-metadata failure and adds candidate/financial inputs, declared tolerances and residual units, fixed synthetic model metadata and schema version1. Four financial sets yield24 independently derived metric checks; six certificate/tolerance cases, strict JSON round-trip and two fresh-process outputs pass. Numerical allocation, financial arithmetic and acceptance rules are unchanged. All23 chapter sources compiled and13 scripts passed at `e5bf5f753a12e8b83f98933682c97f0a55ea9805`; all23 source hashes match the pinned tree and remain unchanged after execution. Current inventory is481 Python files/270 check-test scripts, not a full runtime run. V-46's480/269 full execution is historical for the changed Section17.9 source. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-78 Section17.10 actual Section17.5 LP-helper integration, independent vertex/objective/certificate references and false-certificate checks; do not call the fixed LP a general solver. Broader report/data governance, mixed-unit tolerance scaling, independent-review, supported-platform and release obligations remain open.
+
+## Final LP integration and V-47 — 2026-10-30
+
+[Section17.10 evidence](chapter-17-final-lp-integration-followup.md) preserves the missing-certificate baseline failure, replaces literal LP assessment inputs with actual Section17.5 computation/certificate calls and independently checks six boundary intersections, four feasible vertices and six certificates (five rejected). Two actual helper calls and five injected wrong outputs are checked. All24 chapter sources compiled and14 scripts passed. [V-47 full runtime](runtime-refresh-2026-10-30-r11.md) compiled482 files, passed271 scripts and verified483 required hashes before/after at `60cd09c1072aec6d6f437b62961d0b4e50cad50c`, including preceding Section17.9 report changes/checker. Twenty-eight selected categories remain partially addressed; none closed by the register. Next executable item: COV-79 Section18.9 project safeguarded-Newton trace endpoint signs, middle-half proposal safeguards, returned-root residuals and exact objective/derivative call accounting; Section18.8 bracket audit is already recorded. Broader mathematical proof, report/data governance, tolerance scaling, independent-review, supported-platform and release obligations remain open.
