@@ -18,4 +18,6 @@ All20 chapter-wide answers have scoped records. At this answer-batch baseline,16
 
 Earlier checkpoint: [Sections6.1–6.4 workflow review](../chapter-06-early-lab-review/README.md) records4 scoped workflows,13 command checks and36 predicates.12 workflows and128 local prompts remain pending. Next:Sections6.5–6.8; initial answer records/results are unchanged.
 
-Current checkpoint: [Sections6.5–6.8 workflow review](../chapter-06-middle-lab-review/README.md) adds4 scoped workflows,13 command checks,51 predicates and32 existing methods rerun.8 of16 workflows recorded;8 workflows/128 local prompts remain. Next:Sections6.9–6.12.
+Earlier checkpoint: [Sections6.5–6.8 workflow review](../chapter-06-middle-lab-review/README.md) adds4 scoped workflows,13 command checks,51 predicates and32 existing methods rerun.8 of16 workflows recorded;8 workflows/128 local prompts remain. Next:Sections6.9–6.12.
+
+Current checkpoint: [Sections6.9–6.12workflow review](../chapter-06-later-lab-review/README.md) adds4scoped workflows,13commands,50predicates and32existing methods.12of16workflows recorded;4workflows/128local prompts remain. Next:Sections6.13–6.16 and project/checklist review.

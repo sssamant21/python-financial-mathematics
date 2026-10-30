@@ -1,0 +1,234 @@
+[
+  {
+    "section": "6.9",
+    "path": "chapter-06/6.09-return-vectors.md",
+    "source_sha256": "6249495ba1cc97cd06e27bb6fb13ee94432b9e814b8f359e464b0525878ac27b",
+    "selected_files": {
+      "return_vectors.py": "150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331",
+      "test_return_vectors.py": "e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7"
+    },
+    "published_stdout": "Intervals: [(0, 1), (1, 3), (3, 4)]\nSimple returns: ['10.00%', '-10.00%', '10.00%']\nGrowth from first price: ['1.100000', '0.990000', '1.089000']\nLinked price-only return: 8.90%\nSum of simple returns: 10.00%\n",
+    "id": "6.9-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy environment,writable owned lab,two sibling files,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.9-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit CPython3.12.14 interpreter,NumPy2.3.5 origin/version in preinstalled Linux runtime. Fresh pip/venv setup,Windows/macOS not executed."
+      },
+      {
+        "id": "6.9-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Reconstructed2exact source/test listings as documented siblings in owned temporary lab;hashes recorded,no path edits,bytes unchanged."
+      },
+      {
+        "id": "6.9-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact payloads compile;no static checker inference."
+      },
+      {
+        "id": "6.9-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import has empty stdout/stderr;quiet streams are not file-access or sandbox evidence."
+      },
+      {
+        "id": "6.9-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout/newlines match documented example and stderr empty. Known-runtime diagnostic string equality is not imposed on every valid solver input/platform."
+      },
+      {
+        "id": "6.9-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing test methods pass without failure/error/skip;raw command/stdout/stderr retained;not new unique tests."
+      },
+      {
+        "id": "6.9-API",
+        "status": "PASS_SCOPED",
+        "review": "Fraction ratios11/10,9/10,11/10; growth11/10,99/100,1089/1000;final89/1000versus additive1/10. N-1labels,changed timing unchanged ratios,independent storage,tiny positive gross despite simple-1,terminal-zero/extreme-ratio failures and restored policy."
+      },
+      {
+        "id": "6.9-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "One positive-price asset path with N observations,N-1 observed intervals and copied start/end offsets. Gross ratios retained separately from simple returns; tiny positive ratios may still have simple return rounded-1. Strict positive prices exclude terminal zero by this API,unlike6.1 endpoint contract. Irregular timing is preserved,not annualized or filled. No distributions/fees/FX/total-return/expected-return claim; corporate-action consistency/completeness remain caller assertions."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static/performance/concurrency and independent acceptance open"
+  },
+  {
+    "section": "6.10",
+    "path": "chapter-06/6.10-portfolio-weight-vectors.md",
+    "source_sha256": "21d94d03779c0269191a7c2c589bf8d162ba3670d806107fe62140c819cb3920",
+    "selected_files": {
+      "weight_vectors.py": "f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b",
+      "test_weight_vectors.py": "6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3"
+    },
+    "published_stdout": "IDs: ('A', 'B', 'CASH')\nOpening weights: ['60.00%', '30.00%', '10.00%']\nReturn contributions: ['6.00%', '-1.50%', '0.00%']\nPortfolio price return: 4.50%\nWeight sum: 1.000000000000\n",
+    "id": "6.10-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy environment,writable owned lab,two sibling files,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.10-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit CPython3.12.14 interpreter,NumPy2.3.5 origin/version in preinstalled Linux runtime. Fresh pip/venv setup,Windows/macOS not executed."
+      },
+      {
+        "id": "6.10-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Reconstructed2exact source/test listings as documented siblings in owned temporary lab;hashes recorded,no path edits,bytes unchanged."
+      },
+      {
+        "id": "6.10-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact payloads compile;no static checker inference."
+      },
+      {
+        "id": "6.10-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import has empty stdout/stderr;quiet streams are not file-access or sandbox evidence."
+      },
+      {
+        "id": "6.10-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout/newlines match documented example and stderr empty. Known-runtime diagnostic string equality is not imposed on every valid solver input/platform."
+      },
+      {
+        "id": "6.10-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing test methods pass without failure/error/skip;raw command/stdout/stderr retained;not new unique tests."
+      },
+      {
+        "id": "6.10-API",
+        "status": "PASS_SCOPED",
+        "review": "Fraction opening weights3/5,3/10,1/10;contributions3/50,-3/200,0;return9/200;ending1045/1000value bridge. Near-one accepted without correcting supplied bytes;wrong ID order,zero denominator and invalid zero-weight component reject;output storage independent."
+      },
+      {
+        "id": "6.10-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "Normalize nonnegative comparable opening values under positive denominator; cash belongs if included in portfolio. Validate supplied fractional long-only weights,never silently renormalize near-one input. Begin-interval weights differ from closing weights; repeated weights across time may imply rebalancing. Exact ID/order checks do not authenticate labels or common interval/currency. Contributions are fractional portfolio points,not currency P&L absent denominator. No leverage/financing/trades/flows/distributions/FX model."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static/performance/concurrency and independent acceptance open"
+  },
+  {
+    "section": "6.11",
+    "path": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "selected_files": {
+      "matrix_models.py": "5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79",
+      "test_matrix_models.py": "eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51"
+    },
+    "published_stdout": "Axes: scenario, portfolio\nOutput shape: (3, 2)\nPortfolios: ('P1', 'P2')\nUP: 4.50%, 0.50%\nDOWN: -9.00%, -1.00%\nCASH-YIELD: 0.02%, 0.10%\n",
+    "id": "6.11-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy environment,writable owned lab,two sibling files,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.11-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit CPython3.12.14 interpreter,NumPy2.3.5 origin/version in preinstalled Linux runtime. Fresh pip/venv setup,Windows/macOS not executed."
+      },
+      {
+        "id": "6.11-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Reconstructed2exact source/test listings as documented siblings in owned temporary lab;hashes recorded,no path edits,bytes unchanged."
+      },
+      {
+        "id": "6.11-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact payloads compile;no static checker inference."
+      },
+      {
+        "id": "6.11-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import has empty stdout/stderr;quiet streams are not file-access or sandbox evidence."
+      },
+      {
+        "id": "6.11-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout/newlines match documented example and stderr empty. Known-runtime diagnostic string equality is not imposed on every valid solver input/platform."
+      },
+      {
+        "id": "6.11-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing test methods pass without failure/error/skip;raw command/stdout/stderr retained;not new unique tests."
+      },
+      {
+        "id": "6.11-API",
+        "status": "PASS_SCOPED",
+        "review": "Exact scalar cells[[9/200,1/200],[-9/100,-1/100],[1/5000,1/1000]];3x2outputlabels;consistent column permutation invariance and one-sided rejection;input9vs8budget and separate output-only12vs6budget reject;transpose sharing/result independence."
+      },
+      {
+        "id": "6.11-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "R axes scenarios/instruments,W axes portfolios/instruments; R@W.T contracts instrument axis and retains scenarios/portfolios. Alternatives are not time path/probabilities; fixed opening W intentionally reused. Transpose can share storage. IDs must align and complete finite inputs validated before budget check. max_cells applies per input/output matrix,not total process workspace or prevention of reading existing large inputs. Cash yield is supplied convention,not implicit accrual engine. No optimizer,contribution cube or calibrated risk model."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static/performance/concurrency and independent acceptance open"
+  },
+  {
+    "section": "6.12",
+    "path": "chapter-06/6.12-linear-algebra-with-numpy.md",
+    "source_sha256": "1ebc4100457270ad7fc37e26beb802dcb80cc418e744d10a301ec3bbc25e7de0",
+    "selected_files": {
+      "linear_algebra_lab.py": "52a2501af93d8d5492fa661849fb099dce7831764a1f3266b68e0f60399fb373",
+      "test_linear_algebra_lab.py": "00ae195103597a65a1a0e8a9df53ba78920321335d285e2cf3cce708a2185a32"
+    },
+    "published_stdout": "Axes: payoff state, instrument\nInstrument units: ['50.000000', '50.000000']\nReconstructed payoff: [100.0, 150.0]\nCondition number (2-norm): 6.854102\nNormalized residual: 0.000e+00\n",
+    "id": "6.12-WORKFLOW",
+    "reviewer": "Codex",
+    "date": "2026-10-30",
+    "status": "REVIEWED_SCOPED",
+    "prerequisites": "Prepared Python/NumPy environment,writable owned lab,two sibling files,no earlier lab imports",
+    "units": [
+      {
+        "id": "6.12-SETUP",
+        "status": "PARTIAL",
+        "review": "Recorded explicit CPython3.12.14 interpreter,NumPy2.3.5 origin/version in preinstalled Linux runtime. Fresh pip/venv setup,Windows/macOS not executed."
+      },
+      {
+        "id": "6.12-FILES",
+        "status": "PASS_SCOPED",
+        "review": "Reconstructed2exact source/test listings as documented siblings in owned temporary lab;hashes recorded,no path edits,bytes unchanged."
+      },
+      {
+        "id": "6.12-COMPILE",
+        "status": "PASS_SCOPED",
+        "review": "Both exact payloads compile;no static checker inference."
+      },
+      {
+        "id": "6.12-IMPORT",
+        "status": "PASS_SCOPED",
+        "review": "Fresh ordinary module import has empty stdout/stderr;quiet streams are not file-access or sandbox evidence."
+      },
+      {
+        "id": "6.12-APPLICATION",
+        "status": "PASS_SCOPED",
+        "review": "Unchanged source main full stdout/newlines match documented example and stderr empty. Known-runtime diagnostic string equality is not imposed on every valid solver input/platform."
+      },
+      {
+        "id": "6.12-REFERENCE",
+        "status": "PASS_SCOPED",
+        "review": "Exact8existing test methods pass without failure/error/skip;raw command/stdout/stderr retained;not new unique tests."
+      },
+      {
+        "id": "6.12-API",
+        "status": "PASS_SCOPED",
+        "review": "Manual elimination50/50,signed150/-50;reconstructed100/150;analytic cond2=(7+3sqrt5)/2 via precision60 Decimal;normalized gate,zero-target convention,singular/ill-conditioned rejection and independent storage. Raw-solver sensitivity compared to exact binary-input Fraction elimination,then guarded API rejection verified separately."
+      },
+      {
+        "id": "6.12-SEMANTICS",
+        "status": "REVIEWED_CONCEPTUAL",
+        "review": "A rows payoff states,columns instrument unknowns;b aligned state targets,x signed units. Square exact-match solving is distinct from least-squares/optimization/trade execution. Residual<=1e-12 and cond2<=1e8 are numerical teaching gates,not universal economic tolerances. Small residual does not establish low sensitivity; scale/units/uncertain coefficients matter. Gate precedes solve; backend exceptions remain failures,no fallback. Economic existence/tradability/shorting/cost/funding constraints and off-table states remain unmodeled."
+      }
+    ],
+    "limits": "Fresh installation,other platforms,static/performance/concurrency and independent acceptance open"
+  }
+]

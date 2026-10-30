@@ -1,0 +1,851 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "runtime": {
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "numpy": "2.3.5",
+    "numpy_origin": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/__init__.py"
+  },
+  "workflow_records": 4,
+  "derived_review_units": 32,
+  "source_method_invocations": 32,
+  "command_records": 13,
+  "command_passed": 13,
+  "command_failed": 0,
+  "predicates": 50,
+  "passed": 50,
+  "failed": 0,
+  "independent_benchmarks": {
+    "gross": [
+      "11/10",
+      "9/10",
+      "11/10"
+    ],
+    "simple": [
+      "1/10",
+      "-1/10",
+      "1/10"
+    ],
+    "growth": [
+      "11/10",
+      "99/100",
+      "1089/1000"
+    ],
+    "weights": [
+      "3/5",
+      "3/10",
+      "1/10"
+    ],
+    "contributions": [
+      "3/50",
+      "-3/200",
+      "0"
+    ],
+    "portfolio_return": "9/200",
+    "matrix_cells": [
+      [
+        "9/200",
+        "1/200"
+      ],
+      [
+        "-9/100",
+        "-1/100"
+      ],
+      [
+        "1/5000",
+        "1/1000"
+      ]
+    ],
+    "condition_2_decimal": "6.85410196624968454461376050309691435316092753941728858640635",
+    "sensitivity_exact_binary_delta": "11258999/112590"
+  },
+  "sources": [
+    {
+      "section": "6.9",
+      "path": "chapter-06/6.09-return-vectors.md",
+      "source_sha256": "6249495ba1cc97cd06e27bb6fb13ee94432b9e814b8f359e464b0525878ac27b",
+      "selected_files": {
+        "return_vectors.py": "150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331",
+        "test_return_vectors.py": "e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7"
+      },
+      "published_stdout": "Intervals: [(0, 1), (1, 3), (3, 4)]\nSimple returns: ['10.00%', '-10.00%', '10.00%']\nGrowth from first price: ['1.100000', '0.990000', '1.089000']\nLinked price-only return: 8.90%\nSum of simple returns: 10.00%\n"
+    },
+    {
+      "section": "6.10",
+      "path": "chapter-06/6.10-portfolio-weight-vectors.md",
+      "source_sha256": "21d94d03779c0269191a7c2c589bf8d162ba3670d806107fe62140c819cb3920",
+      "selected_files": {
+        "weight_vectors.py": "f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b",
+        "test_weight_vectors.py": "6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3"
+      },
+      "published_stdout": "IDs: ('A', 'B', 'CASH')\nOpening weights: ['60.00%', '30.00%', '10.00%']\nReturn contributions: ['6.00%', '-1.50%', '0.00%']\nPortfolio price return: 4.50%\nWeight sum: 1.000000000000\n"
+    },
+    {
+      "section": "6.11",
+      "path": "chapter-06/6.11-matrices-and-financial-models.md",
+      "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+      "selected_files": {
+        "matrix_models.py": "5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79",
+        "test_matrix_models.py": "eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51"
+      },
+      "published_stdout": "Axes: scenario, portfolio\nOutput shape: (3, 2)\nPortfolios: ('P1', 'P2')\nUP: 4.50%, 0.50%\nDOWN: -9.00%, -1.00%\nCASH-YIELD: 0.02%, 0.10%\n"
+    },
+    {
+      "section": "6.12",
+      "path": "chapter-06/6.12-linear-algebra-with-numpy.md",
+      "source_sha256": "1ebc4100457270ad7fc37e26beb802dcb80cc418e744d10a301ec3bbc25e7de0",
+      "selected_files": {
+        "linear_algebra_lab.py": "52a2501af93d8d5492fa661849fb099dce7831764a1f3266b68e0f60399fb373",
+        "test_linear_algebra_lab.py": "00ae195103597a65a1a0e8a9df53ba78920321335d285e2cf3cce708a2185a32"
+      },
+      "published_stdout": "Axes: payoff state, instrument\nInstrument units: ['50.000000', '50.000000']\nReconstructed payoff: [100.0, 150.0]\nCondition number (2-norm): 6.854102\nNormalized residual: 0.000e+00\n"
+    }
+  ],
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "actual runtime identity",
+      "args": [
+        "-c",
+        "import json,sys,numpy;print(json.dumps(dict(executable=sys.executable,numpy=numpy.__version__,numpy_origin=numpy.__file__)))"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb",
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\", \"numpy\": \"2.3.5\", \"numpy_origin\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy/__init__.py\"}\n",
+      "stderr": "",
+      "expected_stdout": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "exact application stdout",
+      "args": [
+        "return_vectors.py"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/return_vectors",
+      "returncode": 0,
+      "stdout": "Intervals: [(0, 1), (1, 3), (3, 4)]\nSimple returns: ['10.00%', '-10.00%', '10.00%']\nGrowth from first price: ['1.100000', '0.990000', '1.089000']\nLinked price-only return: 8.90%\nSum of simple returns: 10.00%\n",
+      "stderr": "",
+      "expected_stdout": "Intervals: [(0, 1), (1, 3), (3, 4)]\nSimple returns: ['10.00%', '-10.00%', '10.00%']\nGrowth from first price: ['1.100000', '0.990000', '1.089000']\nLinked price-only return: 8.90%\nSum of simple returns: 10.00%\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/return_vectors",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_constant_and_single_interval (test_return_vectors.ReturnTests.test_constant_and_single_interval) ... ok\ntest_dtype_and_price_domain (test_return_vectors.ReturnTests.test_dtype_and_price_domain) ... ok\ntest_known_path_and_alignment (test_return_vectors.ReturnTests.test_known_path_and_alignment) ... ok\ntest_numerical_failure_restores_policy (test_return_vectors.ReturnTests.test_numerical_failure_restores_policy) ... ok\ntest_period_contract (test_return_vectors.ReturnTests.test_period_contract) ... ok\ntest_scalar_and_endpoint_references (test_return_vectors.ReturnTests.test_scalar_and_endpoint_references) ... ok\ntest_source_preservation_and_storage (test_return_vectors.ReturnTests.test_source_preservation_and_storage) ... ok\ntest_timing_not_annualized (test_return_vectors.ReturnTests.test_timing_not_annualized) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.029s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import return_vectors"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/return_vectors",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "exact application stdout",
+      "args": [
+        "weight_vectors.py"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/weight_vectors",
+      "returncode": 0,
+      "stdout": "IDs: ('A', 'B', 'CASH')\nOpening weights: ['60.00%', '30.00%', '10.00%']\nReturn contributions: ['6.00%', '-1.50%', '0.00%']\nPortfolio price return: 4.50%\nWeight sum: 1.000000000000\n",
+      "stderr": "",
+      "expected_stdout": "IDs: ('A', 'B', 'CASH')\nOpening weights: ['60.00%', '30.00%', '10.00%']\nReturn contributions: ['6.00%', '-1.50%', '0.00%']\nPortfolio price return: 4.50%\nWeight sum: 1.000000000000\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/weight_vectors",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_identity_not_only_length (test_weight_vectors.WeightTests.test_identity_not_only_length) ... ok\ntest_known_weights_and_contributions (test_weight_vectors.WeightTests.test_known_weights_and_contributions) ... ok\ntest_overflow_restores_policy (test_weight_vectors.WeightTests.test_overflow_restores_policy) ... ok\ntest_shape_source_and_storage (test_weight_vectors.WeightTests.test_shape_source_and_storage) ... ok\ntest_value_bridge_and_scalar_reference (test_weight_vectors.WeightTests.test_value_bridge_and_scalar_reference) ... ok\ntest_value_domain (test_weight_vectors.WeightTests.test_value_domain) ... ok\ntest_weight_sum_without_silent_normalization (test_weight_vectors.WeightTests.test_weight_sum_without_silent_normalization) ... ok\ntest_zero_weight_and_total_loss (test_weight_vectors.WeightTests.test_zero_weight_and_total_loss) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.025s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import weight_vectors"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/weight_vectors",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "exact application stdout",
+      "args": [
+        "matrix_models.py"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/matrix_models",
+      "returncode": 0,
+      "stdout": "Axes: scenario, portfolio\nOutput shape: (3, 2)\nPortfolios: ('P1', 'P2')\nUP: 4.50%, 0.50%\nDOWN: -9.00%, -1.00%\nCASH-YIELD: 0.02%, 0.10%\n",
+      "stderr": "",
+      "expected_stdout": "Axes: scenario, portfolio\nOutput shape: (3, 2)\nPortfolios: ('P1', 'P2')\nUP: 4.50%, 0.50%\nDOWN: -9.00%, -1.00%\nCASH-YIELD: 0.02%, 0.10%\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/matrix_models",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_axes_and_product_not_elementwise (test_matrix_models.MatrixTests.test_axes_and_product_not_elementwise) ... ok\ntest_budget (test_matrix_models.MatrixTests.test_budget) ... ok\ntest_consistent_column_permutation (test_matrix_models.MatrixTests.test_consistent_column_permutation) ... ok\ntest_domain_and_weight_rows (test_matrix_models.MatrixTests.test_domain_and_weight_rows) ... ok\ntest_invalid_labels_and_shapes (test_matrix_models.MatrixTests.test_invalid_labels_and_shapes) ... ok\ntest_known_model (test_matrix_models.MatrixTests.test_known_model) ... ok\ntest_nested_reference (test_matrix_models.MatrixTests.test_nested_reference) ... ok\ntest_source_and_transpose_storage (test_matrix_models.MatrixTests.test_source_and_transpose_storage) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.037s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import matrix_models"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/matrix_models",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "exact application stdout",
+      "args": [
+        "linear_algebra_lab.py"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/linear_algebra_lab",
+      "returncode": 0,
+      "stdout": "Axes: payoff state, instrument\nInstrument units: ['50.000000', '50.000000']\nReconstructed payoff: [100.0, 150.0]\nCondition number (2-norm): 6.854102\nNormalized residual: 0.000e+00\n",
+      "stderr": "",
+      "expected_stdout": "Axes: payoff state, instrument\nInstrument units: ['50.000000', '50.000000']\nReconstructed payoff: [100.0, 150.0]\nCondition number (2-norm): 6.854102\nNormalized residual: 0.000e+00\n",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "exact eight-method discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/linear_algebra_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_known_payoff_match (test_linear_algebra_lab.LinearAlgebraTests.test_known_payoff_match) ... ok\ntest_nonfinite_and_bounds (test_linear_algebra_lab.LinearAlgebraTests.test_nonfinite_and_bounds) ... ok\ntest_shapes_and_types (test_linear_algebra_lab.LinearAlgebraTests.test_shapes_and_types) ... ok\ntest_signed_units_are_not_weights (test_linear_algebra_lab.LinearAlgebraTests.test_signed_units_are_not_weights) ... ok\ntest_singular_and_ill_conditioned (test_linear_algebra_lab.LinearAlgebraTests.test_singular_and_ill_conditioned) ... ok\ntest_small_residual_can_hide_sensitivity (test_linear_algebra_lab.LinearAlgebraTests.test_small_residual_can_hide_sensitivity) ... ok\ntest_source_and_output_storage (test_linear_algebra_lab.LinearAlgebraTests.test_source_and_output_storage) ... ok\ntest_zero_target_and_one_dimension (test_linear_algebra_lab.LinearAlgebraTests.test_zero_target_and_one_dimension) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.039s\n\nOK\n",
+      "expected_stdout": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "fresh module import quiet",
+      "args": [
+        "-c",
+        "import linear_algebra_lab"
+      ],
+      "cwd": "/tmp/chapter6-later-labs-ufygc2bb/linear_algebra_lab",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_stdout": "",
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "documented NumPy version",
+      "actual": "'2.3.5'",
+      "expected": "'2.3.5'",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "supplied files unchanged",
+      "actual": "{'return_vectors.py': '150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331', 'test_return_vectors.py': 'e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7'}",
+      "expected": "{'return_vectors.py': '150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331', 'test_return_vectors.py': 'e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "supplied files unchanged",
+      "actual": "{'weight_vectors.py': 'f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b', 'test_weight_vectors.py': '6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3'}",
+      "expected": "{'weight_vectors.py': 'f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b', 'test_weight_vectors.py': '6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "supplied files unchanged",
+      "actual": "{'matrix_models.py': '5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79', 'test_matrix_models.py': 'eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51'}",
+      "expected": "{'matrix_models.py': '5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79', 'test_matrix_models.py': 'eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "both exact sibling listings compile",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "supplied files unchanged",
+      "actual": "{'linear_algebra_lab.py': '52a2501af93d8d5492fa661849fb099dce7831764a1f3266b68e0f60399fb373', 'test_linear_algebra_lab.py': '00ae195103597a65a1a0e8a9df53ba78920321335d285e2cf3cce708a2185a32'}",
+      "expected": "{'linear_algebra_lab.py': '52a2501af93d8d5492fa661849fb099dce7831764a1f3266b68e0f60399fb373', 'test_linear_algebra_lab.py': '00ae195103597a65a1a0e8a9df53ba78920321335d285e2cf3cce708a2185a32'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "rational gross ratios",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1.1,
+        0.9,
+        1.1
+      ],
+      "expected_values": [
+        1.1,
+        0.9,
+        1.1
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.9",
+      "label": "rational simple intervals",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.10000000000000009,
+        -0.09999999999999998,
+        0.10000000000000009
+      ],
+      "expected_values": [
+        0.1,
+        -0.1,
+        0.1
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.9",
+      "label": "rational linked growth",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        1.1,
+        0.9900000000000001,
+        1.0890000000000002
+      ],
+      "expected_values": [
+        1.1,
+        0.99,
+        1.089
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.9",
+      "label": "N observations produce N-1 endpoint pairs",
+      "actual": "([0, 1, 3], [1, 3, 4], (3,))",
+      "expected": "([0, 1, 3], [1, 3, 4], (3,))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "exact final linked versus additive answers",
+      "actual": "(Fraction(89, 1000), Fraction(1, 10))",
+      "expected": "(Fraction(89, 1000), Fraction(1, 10))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "timing changes labels without implicit annualization",
+      "actual": "(True, [10, 30, 40])",
+      "expected": "(True, [10, 30, 40])",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "source storage preserved",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "positive gross retained despite simple rounded to -1",
+      "actual": "(np.True_, np.float64(-1.0))",
+      "expected": "(True, -1.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.9",
+      "label": "terminal zero excluded by positive-path contract",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 57, in <lambda>\n    reject('6.9','terminal zero excluded by positive-path contract',lambda:m.return_path(np.array([0,1],dtype=np.int64),np.array([1.,0.])),'ValueError')\n                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/return_vectors/return_vectors.py\", line 24, in return_path\n    raise ValueError('prices must be finite and strictly positive')\nValueError: prices must be finite and strictly positive\n"
+    },
+    {
+      "section": "6.9",
+      "label": "extreme ratio signals [1e-300, 1e+300]",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 59, in <lambda>\n    for values in ([1e-300,1e300],[1e300,1e-300]):reject('6.9','extreme ratio signals '+repr(values),lambda values=values:m.return_path(np.array([0,1],dtype=np.int64),np.array(values)),'FloatingPointError')\n                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/return_vectors/return_vectors.py\", line 26, in return_path\n    gross = prices[1:] / prices[:-1]\n            ~~~~~~~~~~~^~~~~~~~~~~~~\nFloatingPointError: overflow encountered in divide\n"
+    },
+    {
+      "section": "6.9",
+      "label": "extreme ratio signals [1e+300, 1e-300]",
+      "actual": "'FloatingPointError'",
+      "expected": "'FloatingPointError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 59, in <lambda>\n    for values in ([1e-300,1e300],[1e300,1e-300]):reject('6.9','extreme ratio signals '+repr(values),lambda values=values:m.return_path(np.array([0,1],dtype=np.int64),np.array(values)),'FloatingPointError')\n                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/return_vectors/return_vectors.py\", line 26, in return_path\n    gross = prices[1:] / prices[:-1]\n            ~~~~~~~~~~~^~~~~~~~~~~~~\nFloatingPointError: underflow encountered in divide\n"
+    },
+    {
+      "section": "6.9",
+      "label": "error policy restored",
+      "actual": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "expected": "{'divide': 'warn', 'over': 'warn', 'under': 'ignore', 'invalid': 'warn'}",
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "rational opening weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "expected_values": [
+        0.6,
+        0.3,
+        0.1
+      ],
+      "rtol": 0,
+      "atol": 1e-15
+    },
+    {
+      "section": "6.10",
+      "label": "rational contributions",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        0.06,
+        -0.015,
+        0.0
+      ],
+      "expected_values": [
+        0.06,
+        -0.015,
+        0.0
+      ],
+      "rtol": 0,
+      "atol": 1e-15
+    },
+    {
+      "section": "6.10",
+      "label": "rational portfolio return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 0.045,
+      "expected_values": 0.045,
+      "rtol": 0,
+      "atol": 1e-15
+    },
+    {
+      "section": "6.10",
+      "label": "independent opening/ending bridge",
+      "actual": "(Fraction(1045, 1), Fraction(9, 200))",
+      "expected": "(Fraction(1045, 1), Fraction(9, 200))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "near-one acceptance preserves supplied values",
+      "actual": "(True, True, True)",
+      "expected": "(True, True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.10",
+      "label": "same length wrong identity order",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 67, in <lambda>\n    reject('6.10','same length wrong identity order',lambda:m.contributions(weights,ids,returns,('B','A','CASH')),'ValueError')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/weight_vectors/weight_vectors.py\", line 51, in contributions\n    raise ValueError('return identity/order must exactly match weights')\nValueError: return identity/order must exactly match weights\n"
+    },
+    {
+      "section": "6.10",
+      "label": "zero total has no meaningful denominator",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 68, in <lambda>\n    reject('6.10','zero total has no meaningful denominator',lambda:m.weights_from_values(np.zeros(3),ids),'ValueError')\n                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/weight_vectors/weight_vectors.py\", line 32, in weights_from_values\n    raise ValueError('positive total value required')\nValueError: positive total value required\n"
+    },
+    {
+      "section": "6.10",
+      "label": "invalid return at zero weight is not hidden",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 69, in <lambda>\n    reject('6.10','invalid return at zero weight is not hidden',lambda:m.contributions(np.array([1.,0.,0.]),ids,np.array([0.,np.nan,0.]),ids),'ValueError')\n                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/weight_vectors/weight_vectors.py\", line 47, in contributions\n    vector(returns)\n  File \"/tmp/chapter6-later-labs-ufygc2bb/weight_vectors/weight_vectors.py\", line 20, in vector\n    raise ValueError('vector must be finite')\nValueError: vector must be finite\n"
+    },
+    {
+      "section": "6.10",
+      "label": "weight and contribution storage independent",
+      "actual": "(False, False)",
+      "expected": "(False, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "rational scalar sum-of-products",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          0.045,
+          0.005000000000000004
+        ],
+        [
+          -0.09,
+          -0.010000000000000007
+        ],
+        [
+          0.0002,
+          0.001
+        ]
+      ],
+      "expected_values": [
+        [
+          0.045,
+          0.005
+        ],
+        [
+          -0.09,
+          -0.01
+        ],
+        [
+          0.0002,
+          0.001
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.11",
+      "label": "retained scenario/portfolio axes",
+      "actual": "((3, 2), ('UP', 'DOWN', 'CASH-YIELD'), ('P1', 'P2'))",
+      "expected": "((3, 2), ('UP', 'DOWN', 'CASH-YIELD'), ('P1', 'P2'))",
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "consistent identity permutation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        [
+          0.045,
+          0.005000000000000004
+        ],
+        [
+          -0.09,
+          -0.010000000000000007
+        ],
+        [
+          0.0002,
+          0.001
+        ]
+      ],
+      "expected_values": [
+        [
+          0.045,
+          0.005
+        ],
+        [
+          -0.09,
+          -0.01
+        ],
+        [
+          0.0002,
+          0.001
+        ]
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.11",
+      "label": "one-sided identity permutation",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 78, in <lambda>\n    reject('6.11','one-sided identity permutation',lambda:m.allocation_scenarios(r,rids,scenarios,w[:,order],permuted_ids,portfolios),'ValueError')\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/matrix_models/matrix_models.py\", line 41, in allocation_scenarios\n    raise ValueError('instrument identity and order must match')\nValueError: instrument identity and order must match\n"
+    },
+    {
+      "section": "6.11",
+      "label": "budget covers each input as well as output",
+      "actual": "6",
+      "expected": "6",
+      "status": "PASS"
+    },
+    {
+      "section": "6.11",
+      "label": "input9cells exceeds8budget",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 80, in <lambda>\n    reject('6.11','input9cells exceeds8budget',lambda:m.allocation_scenarios(*m.inputs(),max_cells=8),'ValueError')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/matrix_models/matrix_models.py\", line 48, in allocation_scenarios\n    raise ValueError('input or output matrix exceeds cell budget')\nValueError: input or output matrix exceeds cell budget\n"
+    },
+    {
+      "section": "6.11",
+      "label": "output-only budget failure",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 81, in <lambda>\n    reject('6.11','output-only budget failure',lambda:m.allocation_scenarios(np.zeros((3,1)),('A',),('S1','S2','S3'),np.ones((4,1)),('A',),('P1','P2','P3','P4'),max_cells=6),'ValueError')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/matrix_models/matrix_models.py\", line 48, in allocation_scenarios\n    raise ValueError('input or output matrix exceeds cell budget')\nValueError: input or output matrix exceeds cell budget\n"
+    },
+    {
+      "section": "6.11",
+      "label": "transpose may share but result is independent",
+      "actual": "(True, False, False)",
+      "expected": "(True, False, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "manual elimination solution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        50.0,
+        50.0
+      ],
+      "expected_values": [
+        50.0,
+        50.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.12",
+      "label": "analytically derived condition_2",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": 6.854101966249685,
+      "expected_values": 6.854101966249685,
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.12",
+      "label": "independent reconstructed payoffs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        100.0,
+        150.0
+      ],
+      "expected_values": [
+        100.0,
+        150.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.12",
+      "label": "normalized infinity residual meets gate",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "signed units are not normalized weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        150.0,
+        -50.0
+      ],
+      "expected_values": [
+        150.0,
+        -50.0
+      ],
+      "rtol": 0,
+      "atol": 1e-12
+    },
+    {
+      "section": "6.12",
+      "label": "zero-target residual denominator convention",
+      "actual": "([0.0, 0.0], 0.0)",
+      "expected": "([0.0, 0.0], 0.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "singular/ill-conditioned gate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 94, in <lambda>\n    for bad in (np.array([[1.,1.],[2.,2.]]),np.diag([1.,1e-10])):reject('6.12','singular/ill-conditioned gate',lambda bad=bad:m.solve_payoffs(bad,np.ones(2)),'ValueError')\n                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/linear_algebra_lab/linear_algebra_lab.py\", line 26, in solve_payoffs\n    raise ValueError('singular or ill-conditioned system under lab policy')\nValueError: singular or ill-conditioned system under lab policy\n"
+    },
+    {
+      "section": "6.12",
+      "label": "singular/ill-conditioned gate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 94, in <lambda>\n    for bad in (np.array([[1.,1.],[2.,2.]]),np.diag([1.,1e-10])):reject('6.12','singular/ill-conditioned gate',lambda bad=bad:m.solve_payoffs(bad,np.ones(2)),'ValueError')\n                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/linear_algebra_lab/linear_algebra_lab.py\", line 26, in solve_payoffs\n    raise ValueError('singular or ill-conditioned system under lab policy')\nValueError: singular or ill-conditioned system under lab policy\n"
+    },
+    {
+      "section": "6.12",
+      "label": "input and solved output storage",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "raw sensitivity versus exact binary-input elimination",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_values": [
+        -99.99999111821654,
+        99.99999111821654
+      ],
+      "expected_values": [
+        -99.99999111821654,
+        99.99999111821654
+      ],
+      "rtol": 0,
+      "atol": 1e-09
+    },
+    {
+      "section": "6.12",
+      "label": "raw small residual with large unit shift",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "6.12",
+      "label": "guarded API still rejects raw diagnostic case",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 21, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6laterlabs/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-later-lab-review/review.py\", line 103, in <lambda>\n    reject('6.12','guarded API still rejects raw diagnostic case',lambda:m.solve_payoffs(sensitive,b),'ValueError')\n                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/chapter6-later-labs-ufygc2bb/linear_algebra_lab/linear_algebra_lab.py\", line 26, in solve_payoffs\n    raise ValueError('singular or ill-conditioned system under lab policy')\nValueError: singular or ill-conditioned system under lab policy\n"
+    }
+  ]
+}
