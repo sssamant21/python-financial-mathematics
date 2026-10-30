@@ -1,0 +1,387 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.07-virtual-environments.md",
+  "source_sha256": "671ec79140b4bb9b83a8d4cea2704be7c44354c96c928296698448be73d82fc4",
+  "code_sha256": "3d20976559a29ddb37ca42f8bf72622c4cc25ef8b82074129b1a9174237306e6",
+  "runtime_info": {
+    "a": {
+      "executable": "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+      "prefix": "/tmp/venv-exercises-v2rqtu0z/environment-a",
+      "base_prefix": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python",
+      "purelib": "/tmp/venv-exercises-v2rqtu0z/environment-a/lib/python3.12/site-packages",
+      "isolated": 1
+    },
+    "b": {
+      "executable": "/tmp/venv-exercises-v2rqtu0z/environment-b/bin/python",
+      "prefix": "/tmp/venv-exercises-v2rqtu0z/environment-b",
+      "base_prefix": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python",
+      "purelib": "/tmp/venv-exercises-v2rqtu0z/environment-b/lib/python3.12/site-packages",
+      "isolated": 1
+    }
+  },
+  "command_records": 13,
+  "command_passed": 13,
+  "command_failed": 0,
+  "predicates": 23,
+  "passed": 23,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "E1 five runtime fields a",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-I",
+        "-c",
+        "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python\", \"prefix\": \"/tmp/venv-exercises-v2rqtu0z/environment-a\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/tmp/venv-exercises-v2rqtu0z/environment-a/lib/python3.12/site-packages\", \"isolated\": 1}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 five runtime fields b",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-b/bin/python",
+        "-I",
+        "-c",
+        "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/tmp/venv-exercises-v2rqtu0z/environment-b/bin/python\", \"prefix\": \"/tmp/venv-exercises-v2rqtu0z/environment-b\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/tmp/venv-exercises-v2rqtu0z/environment-b/lib/python3.12/site-packages\", \"isolated\": 1}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original A behavior",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+      ],
+      "returncode": 0,
+      "stdout": "A\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "original B behavior",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-b/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+      ],
+      "returncode": 0,
+      "stdout": "B\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 original origin assertion without -I rejects shadow",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 7, in <module>\nAssertionError\n",
+      "expected_returncode": 1,
+      "expected_diagnostic": "AssertionError",
+      "status": "PASS"
+    },
+    {
+      "label": "E3 ordinary cwd import origin",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-c",
+        "import book1_environment_marker_57 as marker,json;print(json.dumps(dict(label=marker.ENVIRONMENT_LABEL,origin=marker.__file__)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"label\": \"SHADOW\", \"origin\": \"/tmp/venv-exercises-v2rqtu0z/work/book1_environment_marker_57.py\"}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 isolated environment origin",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-I",
+        "-c",
+        "import book1_environment_marker_57 as marker,json;print(json.dumps(dict(label=marker.ENVIRONMENT_LABEL,origin=marker.__file__)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"label\": \"A\", \"origin\": \"/tmp/venv-exercises-v2rqtu0z/environment-a/lib/python3.12/site-packages/book1_environment_marker_57.py\"}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 isolated original behavior restored",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-I",
+        "-c",
+        "\nfrom decimal import Decimal\nfrom pathlib import Path\nimport sys\nimport book1_environment_marker_57 as marker\n\nassert Path(marker.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\nfor value in (Decimal(\"0\"), Decimal(\"12.5\")):\n    assert marker.checked_quantity(value) == value\nfor value in (None, True, 1, 1.5, \"1\"):\n    try:\n        marker.checked_quantity(value)\n    except TypeError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity type accepted\")\nfor token in (\"NaN\", \"sNaN\", \"Infinity\", \"-Infinity\", \"-1\"):\n    try:\n        marker.checked_quantity(Decimal(token))\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(\"invalid quantity domain accepted\")\nprint(marker.ENVIRONMENT_LABEL)\n"
+      ],
+      "returncode": 0,
+      "stdout": "A\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 supported fresh venv with pip",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/venv-exercises-v2rqtu0z/with-pip"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 explicit interpreter pip version",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/with-pip/bin/python",
+        "-m",
+        "pip",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "pip 25.0.1 from /tmp/venv-exercises-v2rqtu0z/with-pip/lib/python3.12/site-packages/pip (python 3.12)\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E5 explicit base-runtime identity",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python\", \"prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages\", \"isolated\": 0}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E5 VIRTUAL_ENV alone changes no interpreter",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "\nimport json, sys, sysconfig\nprint(json.dumps({\n    \"executable\": sys.executable,\n    \"prefix\": sys.prefix,\n    \"base_prefix\": sys.base_prefix,\n    \"purelib\": sysconfig.get_path(\"purelib\"),\n    \"isolated\": sys.flags.isolated,\n}))\n"
+      ],
+      "returncode": 0,
+      "stdout": "{\"executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python\", \"prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"base_prefix\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python\", \"purelib\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages\", \"isolated\": 0}\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E8 benign outside-venv filesystem access",
+      "argv": [
+        "/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python",
+        "-I",
+        "-c",
+        "from pathlib import Path;import sys;assert Path(sys.argv[1]).read_text()=='owned synthetic file outside environment';print('read owned file outside venv')",
+        "/tmp/venv-exercises-v2rqtu0z/owned-note.txt"
+      ],
+      "returncode": 0,
+      "stdout": "read owned file outside venv\n",
+      "stderr": "",
+      "expected_returncode": 0,
+      "expected_diagnostic": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.7-E1",
+      "label": "five named fields a",
+      "actual": "{'prefix', 'base_prefix', 'purelib', 'isolated', 'executable'}",
+      "expected": "{'prefix', 'base_prefix', 'purelib', 'isolated', 'executable'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "explicit executable a",
+      "actual": "'/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python'",
+      "expected": "'/tmp/venv-exercises-v2rqtu0z/environment-a/bin/python'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "owned prefix a",
+      "actual": "PosixPath('/tmp/venv-exercises-v2rqtu0z/environment-a')",
+      "expected": "PosixPath('/tmp/venv-exercises-v2rqtu0z/environment-a')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "base differs a",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "purelib beneath runtime a",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "isolated flag a",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "system-site false a",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "five named fields b",
+      "actual": "{'prefix', 'base_prefix', 'purelib', 'isolated', 'executable'}",
+      "expected": "{'prefix', 'base_prefix', 'purelib', 'isolated', 'executable'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "explicit executable b",
+      "actual": "'/tmp/venv-exercises-v2rqtu0z/environment-b/bin/python'",
+      "expected": "'/tmp/venv-exercises-v2rqtu0z/environment-b/bin/python'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "owned prefix b",
+      "actual": "PosixPath('/tmp/venv-exercises-v2rqtu0z/environment-b')",
+      "expected": "PosixPath('/tmp/venv-exercises-v2rqtu0z/environment-b')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "base differs b",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "purelib beneath runtime b",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "isolated flag b",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E1",
+      "label": "system-site false b",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E2",
+      "label": "purelib directories differ",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E3",
+      "label": "shadow label",
+      "actual": "'SHADOW'",
+      "expected": "'SHADOW'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E3",
+      "label": "shadow origin",
+      "actual": "PosixPath('/tmp/venv-exercises-v2rqtu0z/work/book1_environment_marker_57.py')",
+      "expected": "PosixPath('/tmp/venv-exercises-v2rqtu0z/work/book1_environment_marker_57.py')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E3",
+      "label": "isolated label",
+      "actual": "'A'",
+      "expected": "'A'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E3",
+      "label": "isolated origin",
+      "actual": "PosixPath('/tmp/venv-exercises-v2rqtu0z/environment-a/lib/python3.12/site-packages/book1_environment_marker_57.py')",
+      "expected": "PosixPath('/tmp/venv-exercises-v2rqtu0z/environment-a/lib/python3.12/site-packages/book1_environment_marker_57.py')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E4",
+      "label": "pip path is owned environment",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.7-E5",
+      "label": "all runtime fields unchanged",
+      "actual": "{'executable': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', 'prefix': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python', 'base_prefix': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python', 'purelib': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages', 'isolated': 0}",
+      "expected": "{'executable': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python', 'prefix': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python', 'base_prefix': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python', 'purelib': '/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages', 'isolated': 0}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "source recipe unchanged",
+      "actual": "'f0b443cb1a3c49e385ac7c3b3e576ef513918914d54fb95c541c06fad0fdea84'",
+      "expected": "'f0b443cb1a3c49e385ac7c3b3e576ef513918914d54fb95c541c06fad0fdea84'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "owned temporary resources cleaned",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    }
+  ]
+}
