@@ -4,18 +4,23 @@ import math
 from section_14_01 import eigenpairs_symmetric_2x2,finite
 
 def decompose(matrix):
-    pairs=eigenpairs_symmetric_2x2(matrix)
+    # Materialize one-shot iterables once for both validation and diagnostics.
+    try:
+        rows=tuple(tuple(row) for row in matrix)
+    except TypeError as exc:
+        raise ValueError("matrix must be a 2x2 sequence") from exc
+    pairs=eigenpairs_symmetric_2x2(rows)
     values=pairs["eigenvalues"]
     vectors=pairs["eigenvectors"]
-    rows=tuple(tuple(finite(value,"matrix entry") for value in row) for row in matrix)
+    rows=tuple(tuple(finite(value,"matrix entry") for value in row) for row in rows)
     reconstruction=tuple(tuple(math.fsum(
         values[k]*vectors[k][i]*vectors[k][j] for k in range(2))
         for j in range(2)) for i in range(2))
-    error=math.sqrt(math.fsum((rows[i][j]-reconstruction[i][j])**2
-                              for i in range(2) for j in range(2)))
-    orthogonality=math.sqrt(math.fsum(
-        (math.fsum(vectors[k][i]*vectors[l][i] for i in range(2))-
-         (1.0 if k==l else 0.0))**2
+    error=math.hypot(*(rows[i][j]-reconstruction[i][j]
+                       for i in range(2) for j in range(2)))
+    orthogonality=math.hypot(*(
+        math.fsum(vectors[k][i]*vectors[l][i] for i in range(2))-
+        (1.0 if k==l else 0.0)
         for k in range(2) for l in range(2)))
     return {"eigenvalues":values,"eigenvectors":vectors,
             "reconstructed_matrix":reconstruction,
