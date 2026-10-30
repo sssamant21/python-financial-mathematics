@@ -1,0 +1,277 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "problem_records": 20,
+  "predicates": 29,
+  "passed": 29,
+  "failed": 0,
+  "installed": {
+    "status": "PASS",
+    "driver_returncode": 0,
+    "evidence": {
+      "builder_versions": {
+        "python": "3.12.14",
+        "pip": "25.0.1",
+        "setuptools": "84.0.0"
+      },
+      "source_sha256": {
+        "5.12-chapter-project-reusable-financial-python-package.md": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b",
+        "solutions/5.13-solutions-and-reference-implementations.md": "0390c7786664efef2367c0a165b9b80b03e0959fd394a47141d529d318aceee1"
+      },
+      "results": [
+        {
+          "project": "base",
+          "expected_test_count": 8,
+          "actual_test_count": 8,
+          "returncode": 0,
+          "compile_returncode": 0,
+          "unittest_ok": true,
+          "wheel_sha256": "06894e7c15b29e6e418e158f8c05ec7d4d1c3d0e5d04163cc1309b38096da0d9",
+          "status": "PASS",
+          "log": "base.log"
+        },
+        {
+          "project": "extended",
+          "expected_test_count": 12,
+          "actual_test_count": 12,
+          "returncode": 0,
+          "compile_returncode": 0,
+          "unittest_ok": true,
+          "wheel_sha256": "97973866139a023b113a4f5037fc2e87a1cef17582e367cd2d5ba95632562192",
+          "status": "PASS",
+          "log": "extended.log"
+        }
+      ],
+      "unique_installed_test_methods": 12,
+      "installed_test_invocations": 20
+    },
+    "driver_sha256": "c1995788c6067818328a7d8c249b96d57c7e9231044d50335ffbdaaac2d4ab3f"
+  },
+  "sources": [
+    {
+      "path": "chapter-05/5.12-chapter-project-reusable-financial-python-package.md",
+      "sha256": "67fcda342e0044abcb74d9d787a07cc68defa4114b43f04fb72de061dbbef12b"
+    },
+    {
+      "path": "chapter-05/5.10-configuration-and-environment-separation.md",
+      "sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba"
+    },
+    {
+      "path": "chapter-05/solutions/5.13-solutions-and-reference-implementations.md",
+      "sha256": "0390c7786664efef2367c0a165b9b80b03e0959fd394a47141d529d318aceee1"
+    },
+    {
+      "path": "chapter-05/5.13-exercises-and-applied-problems.md",
+      "sha256": "c09916997e86da88647d17ff939a7327ee3def861fdaf3ed1aa607e4dd8e9874"
+    }
+  ],
+  "code_sha256": {
+    "core": "6bd48e465f9cad8a784113d1acf25c6a7ed05f14608395cef7d3b674bfa72c0f",
+    "configuration": "e39025a7e89a04e8e763182b7a3582bb33c48ac0cd94a0dda745e1eb996d5a13"
+  },
+  "checks": [
+    {
+      "problem": 13,
+      "label": "rational exact sum",
+      "actual": "Fraction(3001, 100)",
+      "expected": "Fraction(3001, 100)",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "sum then round cents",
+      "actual": "3001",
+      "expected": "3001",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "round each then sum cents",
+      "actual": "3000",
+      "expected": "3000",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 1 rows",
+      "actual": "'0.00'",
+      "expected": "'0.00'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 1 rows",
+      "actual": "'0.00'",
+      "expected": "'0.00'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 1 rows",
+      "actual": "'0.02'",
+      "expected": "'0.02'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 1 rows",
+      "actual": "'0.02'",
+      "expected": "'0.02'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 2 rows",
+      "actual": "'0.00'",
+      "expected": "'0.00'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 2 rows",
+      "actual": "'30.01'",
+      "expected": "'30.01'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 2 rows",
+      "actual": "'1000000.00'",
+      "expected": "'1000000.00'",
+      "status": "PASS"
+    },
+    {
+      "problem": 13,
+      "label": "independent rational benchmark 1000 rows",
+      "actual": "'1000000000.00'",
+      "expected": "'1000000000.00'",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "hostile caller result",
+      "actual": "'30.01'",
+      "expected": "'30.01'",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "caller context unchanged",
+      "actual": "(2, 'ROUND_DOWN', {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "expected": "(2, 'ROUND_DOWN', {<class 'decimal.InvalidOperation'>: True, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: True, <class 'decimal.Overflow'>: True, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: True, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False}, {<class 'decimal.InvalidOperation'>: False, <class 'decimal.FloatOperation'>: False, <class 'decimal.DivisionByZero'>: False, <class 'decimal.Overflow'>: False, <class 'decimal.Underflow'>: False, <class 'decimal.Subnormal'>: False, <class 'decimal.Inexact'>: False, <class 'decimal.Rounded'>: False, <class 'decimal.Clamped'>: False})",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "maximum total exact cents",
+      "actual": "'1000000000.00'",
+      "expected": "'1000000000.00'",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "problem": 14,
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "problem": 15,
+      "label": "digest differs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "problem": 15,
+      "label": "meaning same",
+      "actual": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "expected": "{'currency': 'USD', 'count': 2, 'total': '30.01', 'method': 'sum_then_round', 'rounding': 'ROUND_HALF_EVEN'}",
+      "status": "PASS"
+    },
+    {
+      "problem": 15,
+      "label": "input preserved",
+      "actual": "b'[{\"id\": \"0\", \"currency\": \"USD\", \"amount\": \"10.005\"}, {\"id\": \"1\", \"currency\": \"USD\", \"amount\": \"20.005\"}]'",
+      "expected": "b'[{\"id\": \"0\", \"currency\": \"USD\", \"amount\": \"10.005\"}, {\"id\": \"1\", \"currency\": \"USD\", \"amount\": \"20.005\"}]'",
+      "status": "PASS"
+    },
+    {
+      "problem": 10,
+      "label": "precedence",
+      "actual": "('EUR', 'cli')",
+      "expected": "('EUR', 'cli')",
+      "status": "PASS"
+    },
+    {
+      "problem": 10,
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "problem": 10,
+      "label": "absent environment",
+      "actual": "'EUR'",
+      "expected": "'EUR'",
+      "status": "PASS"
+    },
+    {
+      "problem": 11,
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "problem": 2,
+      "label": "distribution name",
+      "actual": "'book1-financial-inflows'",
+      "expected": "'book1-financial-inflows'",
+      "status": "PASS"
+    },
+    {
+      "problem": 2,
+      "label": "console target",
+      "actual": "{'financial-inflows': 'financial_inflows.cli:main'}",
+      "expected": "{'financial-inflows': 'financial_inflows.cli:main'}",
+      "status": "PASS"
+    },
+    {
+      "problem": 6,
+      "label": "runtime dependencies",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "problem": 6,
+      "label": "backend pin",
+      "actual": "['setuptools==84.0.0']",
+      "expected": "['setuptools==84.0.0']",
+      "status": "PASS"
+    },
+    {
+      "problem": 17,
+      "label": "public output keys",
+      "actual": "{'count', 'method', 'rounding', 'currency', 'total'}",
+      "expected": "{'count', 'method', 'rounding', 'currency', 'total'}",
+      "status": "PASS"
+    },
+    {
+      "problem": 17,
+      "label": "rounding policy",
+      "actual": "'sum_then_round'",
+      "expected": "'sum_then_round'",
+      "status": "PASS"
+    }
+  ]
+}
