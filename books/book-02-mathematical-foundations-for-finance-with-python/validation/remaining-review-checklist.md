@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`  
-**Latest scoped source revision:** `af766375b896e5742389d343580dbd8d426afd33`  
-**Disposition:** Earlier full runtime plus subsequent Section 16.6 scoped evidence available; independent review and release approval pending.
+**Full-runtime candidate source revision:** `a10a3efdbc8c69abb68089855216f70f070996da`  
+**Latest scoped source revision:** `a10a3efdbc8c69abb68089855216f70f070996da`  
+**Disposition:** V-41 full runtime includes both subsequent Section 16.6 corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-41 tenth refresh](runtime-refresh-2026-10-30-r5.md) includes both subsequent Section 16.6 corrections and two checkers: 470 files compiled, 259 scripts passed, 471 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
 [V-40 ninth refresh](runtime-refresh-2026-10-30-r4.md) includes the Sections 16.2–16.4 derivative corrections and new checker: 468 files compiled, 257 scripts passed and 469 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
@@ -37,7 +39,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-40 at earlier full-runtime pin; subsequent Section 16.6 correction has 25-file/15-script scoped rerun, full refresh pending for later accumulated changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-41 at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -152,3 +154,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Scalar secant boundary correction — 2026-10-30
 
 [Section 16.6 evidence](chapter-16-secant-boundary-followup.md) preserves four original probes and a failing regression, corrects exact represented-product threshold comparison and callback/quotient validation, and passes twelve exact quadratic pairs, six adjacent-threshold gates, one rounded-product boundary, two absolute-threshold rejections and nineteen callback/range cases. All 25 Chapter 16 files compiled and 15 scripts passed at `af766375b896e5742389d343580dbd8d426afd33`; the complete scoped manifest matches the published tree. Fresh full-book inventory is 469 Python files and 258 check/test scripts, not new full-book execution counts. This source/checker change follows V-40; the last full run remains 468/257/469 at its earlier pin. Twenty-eight categories remain partially addressed, none closed by the register. Next executable item: COV-75 Section 16.6 Newton/quasi-Newton update scaling and represented-range boundaries with exact rational quadratic updates. Independent-review, supported-platform and release gates remain pending.
+
+## Newton range correction and V-41 — 2026-10-30
+
+[Section 16.6 evidence](chapter-16-newton-range-followup.md) retains underflow/overflow failures and the original regression, combines Newton/quasi-Newton updates before final rounding, and checks six range cases, twenty-eight scaled updates, seven one-step solves, rounding/stopping limits and twenty-three invalid cases. All 26 Chapter 16 files compiled and 16 scripts passed. [V-41 full execution](runtime-refresh-2026-10-30-r5.md) subsequently compiled 470 sources, passed 259 scripts and verified 471 required hashes before/after at `a10a3efdbc8c69abb68089855216f70f070996da`, covering both recent Section 16.6 changes and new checkers after V-40. Twenty-eight categories remain partially addressed; none is closed by the register. Next executable item: COV-74 Section 16.8 observation/weight/metric validation and extreme residual-metric range, beginning with independent exact/Decimal references. Independent-review, supported-platform and release gates remain pending.
