@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped unequal-spectrum correction
+## Latest scoped spectral-report correction
+
+Section 14.2 now preserves one-shot matrix inputs and avoids underflow in tiny reconstruction norms. Shared Section 14.1 small-root integration is checked. All 26 Chapter 14 files compiled and 16 scripts passed. [Evidence](chapter-14-spectral-report-followup.md). COV-68 remains partially open; this follows V-35.
+
+## Earlier scoped unequal-spectrum correction
 
 Section 14.1 no longer loses selected representable small eigenvalues to trace-gap cancellation. The original source fails the retained regression; corrected 24 exact diagonal and six Decimal cases pass. All 25 Chapter 14 files compiled and 15 scripts passed. [Evidence](chapter-14-unequal-spectrum-followup.md). This follows V-35; COV-68 remains partially open.
 
@@ -315,3 +319,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Unequal-spectrum correction — 2026-10-29
 
 [Section 14.1 evidence](chapter-14-unequal-spectrum-followup.md) records a confirmed representable-small-eigenvalue cancellation defect, its original regression failure and corrected exact/Decimal references. All 25 Chapter 14 files compiled and 15 scripts passed. This source change follows V-35; a new full-book run is not claimed. COV-68 remains partially open and twenty-five categories remain partially addressed. Next executable item: Section 14.2 duplicate spectral path against the unequal-spectrum references; independent review/platform/release gates remain pending.
+
+## Spectral-report integration and correction — 2026-10-29
+
+[Section 14.2 evidence](chapter-14-spectral-report-followup.md) confirms the shared Section 14.1 solver path and corrects one-shot input reuse and squared-norm underflow. The original checker failure and tiny-error probe are retained; all 26 chapter files compiled and 16 scripts passed after correction. This scoped change follows V-35. Twenty-five categories remain partially addressed. Next executable item: Section 14.1 off-diagonal averaging/symmetry boundary; broader numerical, platform and independent-review gates remain open.
