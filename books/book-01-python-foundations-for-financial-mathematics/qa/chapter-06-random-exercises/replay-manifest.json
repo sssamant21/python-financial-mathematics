@@ -1,0 +1,217 @@
+{
+  "schema": "book1-qa-local-replay-v1",
+  "scope": "local serial reproducibility; not cross-version guarantee",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "byteorder": "little",
+    "numpy_build": {
+      "Compilers": {
+        "c": {
+          "name": "gcc",
+          "linker": "ld.bfd",
+          "version": "14.2.1",
+          "commands": "cc"
+        },
+        "cython": {
+          "name": "cython",
+          "linker": "cython",
+          "version": "3.2.1",
+          "commands": "cython"
+        },
+        "c++": {
+          "name": "gcc",
+          "linker": "ld.bfd",
+          "version": "14.2.1",
+          "commands": "c++"
+        }
+      },
+      "Machine Information": {
+        "host": {
+          "cpu": "x86_64",
+          "family": "x86_64",
+          "endian": "little",
+          "system": "linux"
+        },
+        "build": {
+          "cpu": "x86_64",
+          "family": "x86_64",
+          "endian": "little",
+          "system": "linux"
+        }
+      },
+      "Build Dependencies": {
+        "blas": {
+          "name": "scipy-openblas",
+          "found": true,
+          "version": "0.3.30",
+          "detection method": "pkgconfig",
+          "include directory": "/opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include",
+          "lib directory": "/opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib",
+          "openblas configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+          "pc file directory": "/project/.openblas"
+        },
+        "lapack": {
+          "name": "scipy-openblas",
+          "found": true,
+          "version": "0.3.30",
+          "detection method": "pkgconfig",
+          "include directory": "/opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include",
+          "lib directory": "/opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib",
+          "openblas configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+          "pc file directory": "/project/.openblas"
+        }
+      },
+      "Python Information": {
+        "path": "/tmp/build-env-aw1mwcap/bin/python",
+        "version": "3.12"
+      },
+      "SIMD Extensions": {
+        "baseline": [
+          "SSE",
+          "SSE2",
+          "SSE3"
+        ],
+        "found": [
+          "SSSE3",
+          "SSE41",
+          "POPCNT",
+          "SSE42",
+          "AVX",
+          "F16C",
+          "FMA3",
+          "AVX2",
+          "AVX512F",
+          "AVX512CD",
+          "AVX512_SKX",
+          "AVX512_CLX",
+          "AVX512_CNL",
+          "AVX512_ICL"
+        ],
+        "not found": [
+          "AVX512_KNL",
+          "AVX512_KNM",
+          "AVX512_SPR"
+        ]
+      }
+    }
+  },
+  "source": {
+    "path": "chapter-06/6.13-random-number-generation.md",
+    "sha256": "a34e557b21535bdd026cefd44d05411ffe1dc9b54cb00d38dc388da6fd021dad",
+    "listing_sha256": "cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c"
+  },
+  "algorithm": "PCG64",
+  "generator": "numpy.random.Generator",
+  "seed": 20261030,
+  "checkpoint_before_draw": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 306058907351010098566352345333413462192,
+      "inc": 70772572610493077242424839844701533183
+    },
+    "has_uint32": 0,
+    "uinteger": 0
+  },
+  "request": {
+    "method": "standard_normal",
+    "dtype": "float64",
+    "shape": [
+      4,
+      2
+    ],
+    "call_index": 0
+  },
+  "progress": {
+    "task": "saved-comparison",
+    "completed_draw_calls": 1,
+    "completed_scenario_rows": [
+      0,
+      4
+    ],
+    "interval": "half-open"
+  },
+  "artifact": {
+    "path": "innovations.json",
+    "json_sha256": "6ce3fe748d9995166d5e2dba89bd52237a52e4ae8f27df5566fc7417853c6fcd",
+    "element_bytes_sha256": "8ae0a9799894c407c963df80db66b0ac76c611f5d9ce7e0c0ff82f0a9501438e"
+  },
+  "child_tasks": [
+    {
+      "logical_name": "batch-alpha",
+      "child_index": 0,
+      "spawn_key": [
+        0
+      ],
+      "root_entropy": 20261030,
+      "state_before_draw": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 18049093879264313444141452131813840604,
+          "inc": 250981192342844268456800821264375476039
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "shape": [
+        3,
+        2
+      ],
+      "method": "standard_normal",
+      "dtype": "float64",
+      "draw_calls": 1,
+      "output_sha256": "ba9cbbff14e087a7205d425d6fcac4a08a6811c7c887daceeffcc63d7a47ad50"
+    },
+    {
+      "logical_name": "batch-beta",
+      "child_index": 1,
+      "spawn_key": [
+        1
+      ],
+      "root_entropy": 20261030,
+      "state_before_draw": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 110399357536840194674886700267910182470,
+          "inc": 247927549562209881586648024669494857867
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "shape": [
+        3,
+        2
+      ],
+      "method": "standard_normal",
+      "dtype": "float64",
+      "draw_calls": 1,
+      "output_sha256": "80c8ca40bc02b63194020ea5503580ad3fe5e6e7a6b61b7ad3c9ad9b48819507"
+    },
+    {
+      "logical_name": "batch-gamma",
+      "child_index": 2,
+      "spawn_key": [
+        2
+      ],
+      "root_entropy": 20261030,
+      "state_before_draw": {
+        "bit_generator": "PCG64",
+        "state": {
+          "state": 283526238339854905236311334555720435018,
+          "inc": 98470129760205817788925436315623846401
+        },
+        "has_uint32": 0,
+        "uinteger": 0
+      },
+      "shape": [
+        3,
+        2
+      ],
+      "method": "standard_normal",
+      "dtype": "float64",
+      "draw_calls": 1,
+      "output_sha256": "16e28166a63b96dadeff6ae534f45fa38d8e88ea55d76748fef11598e58cf98c"
+    }
+  ]
+}

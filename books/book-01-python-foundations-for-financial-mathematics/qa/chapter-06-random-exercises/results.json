@@ -1,0 +1,218 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.13-random-number-generation.md",
+  "source_sha256": "a34e557b21535bdd026cefd44d05411ffe1dc9b54cb00d38dc388da6fd021dad",
+  "listing_sha256": [
+    "cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c",
+    "83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 23,
+  "failed": 0,
+  "supplemental_artifacts": {
+    "innovations.json": "6ce3fe748d9995166d5e2dba89bd52237a52e4ae8f27df5566fc7417853c6fcd",
+    "replay-manifest.json": "ec9f484d57743fab84630935f599861e776d2cd4f2ad729ecac67ca81686e08c"
+  },
+  "conceptual_only_exercises": [
+    "6.13-E7",
+    "6.13-E8"
+  ],
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_extra_draw_changes_later_values (test_random_lab.RandomTests.test_extra_draw_changes_later_values) ... ok\ntest_same_seed_same_call (test_random_lab.RandomTests.test_same_seed_same_call) ... ok\ntest_seed_and_generator_types (test_random_lab.RandomTests.test_seed_and_generator_types) ... ok\ntest_shared_draws_for_two_assumptions (test_random_lab.RandomTests.test_shared_draws_for_two_assumptions) ... ok\ntest_spawned_logical_streams (test_random_lab.RandomTests.test_spawned_logical_streams) ... ok\ntest_state_advances (test_random_lab.RandomTests.test_state_advances) ... ok\ntest_state_checkpoint (test_random_lab.RandomTests.test_state_checkpoint) ... ok\ntest_validation_does_not_consume_stream (test_random_lab.RandomTests.test_validation_does_not_consume_stream) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.034s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "random_lab.py"
+      ],
+      "returncode": 0,
+      "stdout": "NumPy: 2.3.5\nBit generator: PCG64\nSeed: 20261022\nAxes: scenario, factor\nShape: (4, 2)\nFirst row: ['-0.223280', '-0.032109']\nFresh-stream repeat equal: True\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.13-E1",
+      "label": "invalid Generator NoneType",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-random-exercises/review.py\", line 17, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-random-exercises/review.py\", line 24, in <lambda>\n    for invalid in (None,42,object()):reject('6.13-E1','invalid Generator '+type(invalid).__name__,lambda:m.innovations(invalid,2,2),'TypeError')\n                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.13-random-number-generation.md\", line 19, in innovations\n    2. Distinguish a seed from the current generator state.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: rng must be an exact numpy Generator\n"
+    },
+    {
+      "exercise": "6.13-E1",
+      "label": "invalid Generator int",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-random-exercises/review.py\", line 17, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-random-exercises/review.py\", line 24, in <lambda>\n    for invalid in (None,42,object()):reject('6.13-E1','invalid Generator '+type(invalid).__name__,lambda:m.innovations(invalid,2,2),'TypeError')\n                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.13-random-number-generation.md\", line 19, in innovations\n    2. Distinguish a seed from the current generator state.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: rng must be an exact numpy Generator\n"
+    },
+    {
+      "exercise": "6.13-E1",
+      "label": "invalid Generator object",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-random-exercises/review.py\", line 17, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-random-exercises/review.py\", line 24, in <lambda>\n    for invalid in (None,42,object()):reject('6.13-E1','invalid Generator '+type(invalid).__name__,lambda:m.innovations(invalid,2,2),'TypeError')\n                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6randomx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.13-random-number-generation.md\", line 19, in innovations\n    2. Distinguish a seed from the current generator state.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: rng must be an exact numpy Generator\n"
+    },
+    {
+      "exercise": "6.13-E1",
+      "label": "no replacement via default_rng or module make_rng",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E2",
+      "label": "restored continuation 0",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E2",
+      "label": "restored continuation 1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E2",
+      "label": "deep checkpoint unchanged",
+      "actual": "{'bit_generator': 'PCG64', 'state': {'state': 306058907351010098566352345333413462192, 'inc': 70772572610493077242424839844701533183}, 'has_uint32': 0, 'uinteger': 0}",
+      "expected": "{'bit_generator': 'PCG64', 'state': {'state': 306058907351010098566352345333413462192, 'inc': 70772572610493077242424839844701533183}, 'has_uint32': 0, 'uinteger': 0}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E2",
+      "label": "successful original draw advanced state",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E3",
+      "label": "stable logical mapping despite execution order batch-gamma",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E3",
+      "label": "stable logical mapping despite execution order batch-beta",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E3",
+      "label": "stable logical mapping despite execution order batch-alpha",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E3",
+      "label": "name/index/spawn mapping",
+      "actual": "[('batch-alpha', 0, [0]), ('batch-beta', 1, [1]), ('batch-gamma', 2, [2])]",
+      "expected": "[('batch-alpha', 0, [0]), ('batch-beta', 1, [1]), ('batch-gamma', 2, [2])]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E4",
+      "label": "same seed same request copied across logical workers repeats",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E4",
+      "label": "three controlled child batches differ",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E5",
+      "label": "JSON matrix roundtrip exact",
+      "actual": "((4, 2), '8ae0a9799894c407c963df80db66b0ac76c611f5d9ce7e0c0ff82f0a9501438e')",
+      "expected": "((4, 2), '8ae0a9799894c407c963df80db66b0ac76c611f5d9ce7e0c0ff82f0a9501438e')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E5",
+      "label": "shared scale comparison",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E5",
+      "label": "snapshot unchanged by transformations",
+      "actual": "b\"f\\x80R\\x89`\\x07\\xe0?\\xbcF\\xba\\xb1\\x9e\\t\\xff?g\\xc1'\\xd3\\xfb\\xa7\\xed\\xbf\\x13\\xc2\\xa9q\\xf8\\x8e\\xe1?\\xc4\\xcd\\xf3\\xccM`\\xf1?rw\\xf2\\xb8\\xbb\\x7f\\x9e\\xbf.\\x9a\\xba\\xbeNR\\xdc?\\xecIB\\x82\\x13S\\xd7?\"",
+      "expected": "b\"f\\x80R\\x89`\\x07\\xe0?\\xbcF\\xba\\xb1\\x9e\\t\\xff?g\\xc1'\\xd3\\xfb\\xa7\\xed\\xbf\\x13\\xc2\\xa9q\\xf8\\x8e\\xe1?\\xc4\\xcd\\xf3\\xccM`\\xf1?rw\\xf2\\xb8\\xbb\\x7f\\x9e\\xbf.\\x9a\\xba\\xbeNR\\xdc?\\xecIB\\x82\\x13S\\xd7?\"",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E5",
+      "label": "scaled outputs independent",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E6",
+      "label": "manifest state replay matches saved bytes",
+      "actual": "'8ae0a9799894c407c963df80db66b0ac76c611f5d9ce7e0c0ff82f0a9501438e'",
+      "expected": "'8ae0a9799894c407c963df80db66b0ac76c611f5d9ce7e0c0ff82f0a9501438e'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E6",
+      "label": "saved JSON artifact hash verified",
+      "actual": "'6ce3fe748d9995166d5e2dba89bd52237a52e4ae8f27df5566fc7417853c6fcd'",
+      "expected": "'6ce3fe748d9995166d5e2dba89bd52237a52e4ae8f27df5566fc7417853c6fcd'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E6",
+      "label": "request/algorithm/task metadata",
+      "actual": "('PCG64', 'standard_normal', 'float64', [4, 2], 'saved-comparison')",
+      "expected": "('PCG64', 'standard_normal', 'float64', [4, 2], 'saved-comparison')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.13-E6",
+      "label": "child checkpoint manifests replay locally",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'random_lab.py': 'cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c', 'test_random_lab.py': '83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7'}",
+      "expected": "{'random_lab.py': 'cdbf91f6bdd7ac47a12fd35bbbfda939b49050d8849d20da04519bc261cded4c', 'test_random_lab.py': '83d6451f7571667e0ae9ad4945aa7255f4ecea8b099bdce5b7d74cd9f2ddf6c7'}",
+      "status": "PASS"
+    }
+  ]
+}
