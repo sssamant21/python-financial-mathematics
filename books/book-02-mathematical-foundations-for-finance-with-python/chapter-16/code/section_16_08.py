@@ -56,6 +56,16 @@ def metrics(errors):
             "bias":finite(float(sum(exact)/n),"bias"),
             "max_abs":scale}
 
+def _rounded_calibration(value,name):
+    """Round a complete exact expression, rejecting nonzero-to-zero loss."""
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside floating-point range") from exc
+    if value!=0 and result==0:
+        raise ValueError(f"{name} underflows floating-point range")
+    return finite(result,name)
+
 def weighted_loss(rate,rows,weights):
     data=observations(rows)
     if not isinstance(weights,(list,tuple)) or len(weights)!=len(data):
@@ -64,22 +74,23 @@ def weighted_loss(rate,rows,weights):
     if any(v<0 for v in w) or not any(v>0 for v in w):
         raise ValueError("weights must be nonnegative with positive total")
     e=residuals(rate,data)
-    return finite(0.5*sum(a*b*b for a,b in zip(w,e)),"weighted loss")
+    exact=sum(Fraction(a)*Fraction(b)**2 for a,b in zip(w,e))/2
+    return _rounded_calibration(exact,"weighted loss")
 
 def fit_rate(rows):
     data=observations(rows)
-    denominator=sum((1000*t)**2 for t,_ in data)
-    numerator=sum(1000*t*(y-1000) for t,y in data)
-    if denominator<=0 or not math.isfinite(denominator):
-        raise ValueError("invalid calibration sensitivity")
-    return finite(numerator/denominator,"fitted rate")
+    denominator=sum((1000*Fraction(t))**2 for t,_ in data)
+    numerator=sum(1000*Fraction(t)*(Fraction(y)-1000) for t,y in data)
+    return _rounded_calibration(numerator/denominator,"fitted rate")
 
 def gradient(rate,rows):
-    return finite(sum(1000*t*e for (t,_),e in
-                      zip(observations(rows),residuals(rate,rows))),"gradient")
+    exact=sum(1000*Fraction(t)*Fraction(e) for (t,_),e in
+              zip(observations(rows),residuals(rate,rows)))
+    return _rounded_calibration(exact,"gradient")
 
 def curvature(rows):
-    return finite(sum((1000*t)**2 for t,_ in observations(rows)),"curvature")
+    exact=sum((1000*Fraction(t))**2 for t,_ in observations(rows))
+    return _rounded_calibration(exact,"curvature")
 
 def assessment():
     rate=fit_rate(TRAINING)
