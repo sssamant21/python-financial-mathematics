@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `692e8ffd8425c2fab1a0695f8c647b4fc5a128d7`  
-**Latest scoped source revision:** `4c122d5aea349f6e4802ce9201814008d2252b70`  
-**Disposition:** Earlier V-44 full runtime plus subsequent normalized-loss scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`  
+**Latest scoped source revision:** `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`  
+**Disposition:** V-45 full runtime includes normalized-loss corrections and the rank-deficient lab; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-44 thirteenth refresh](runtime-refresh-2026-10-30-r8.md) includes Section16.10 candidate assessment and distinct exercise objectives with two checkers: 476 files compiled, 265 scripts passed, 477 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+[V-45 fourteenth refresh](runtime-refresh-2026-10-30-r9.md) includes normalized-loss corrections and the rank-deficient lab with two checkers: 478 files compiled, 267 scripts passed, 479 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+
+[V-44 thirteenth refresh](runtime-refresh-2026-10-30-r8.md) includes Section16.10 candidate assessment and distinct exercise objectives with two checkers: 476 files compiled, 265 scripts passed, 477 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
 [V-43 twelfth refresh](runtime-refresh-2026-10-30-r7.md) includes raw-price and normalized calibration changes and two checkers: 474 files compiled, 263 scripts passed, 475 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
@@ -45,7 +47,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-44 at earlier full-runtime pin; subsequent normalized-loss changes have 33-file/23-script scoped rerun; refresh after related changes accumulate | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-45 at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -188,3 +190,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Normalized loss range correction — 2026-10-30
 
 [Sections16.9/16.10 evidence](chapter-16-normalized-loss-followup.md) preserves eight baseline probes and the original regression, corrects complete normalized half-square sums and rejects nonzero-to-zero normalization/loss results. Fourteen independent Decimal loss pairs, fourteen range/input rejections, the representable collective-subnormal case and a direct normalization-underflow rejection pass. All 33 chapter files compiled and 23 scripts passed at `4c122d5aea349f6e4802ce9201814008d2252b70`; corrected scoped hashes match the published tree. Current inventory is 477 Python files/266 check-test scripts, not a new full run. This two-source/one-checker batch follows V-44; its earlier full-runtime counts remain historical for changed sources. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-75 Section16.8 lab step10 rank-deficient two-parameter `m(a,b)=a+b` example, absent in the original coverage map's executable scope; add rank/null-direction/unchanged-prediction references. Broader price/residual/update range, acceptance/configuration, conditioning, independent-review, supported-platform and release obligations remain open.
+
+## Rank-deficient lab follow-up and V-45 — 2026-10-30
+
+[Section16.8 evidence](chapter-16-identifiability-followup.md) preserves the absent-lab baseline failure and adds the fixed `m(a,b)=a+b` example with computed minors/rank/normal matrix. Eleven exact parameter cases, three rank minors, five null-vector products, strict JSON and two wrong-output variants pass. This supplies the selected missing lab-step example, not a general numerical-rank method or independent sign-off. All 34 chapter files compiled and 24 scripts passed. [V-45 full execution](runtime-refresh-2026-10-30-r9.md) compiled 478 files, passed 267 scripts and verified 479 required hashes before/after at `0e2f5e4eebc9b3e0328a3bba2c6e0d7f88954db3`, also covering preceding normalized-loss changes/checker. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-76 Section17.4 adjacent-float active-set transition/endpoints around the exact rational uncapped optimum, with independent weights/multiplier/value references. Preserve tiny-empty rejection and leave broader tolerance/degeneracy, manual proof, independent-review, supported-platform and release obligations open.
