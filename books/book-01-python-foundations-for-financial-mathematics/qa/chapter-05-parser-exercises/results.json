@@ -1,0 +1,404 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "exercise_records": 8,
+  "source": "chapter-05/5.03-the-python-standard-library.md",
+  "source_sha256": "8edd46dde6ca4a4c4e86efb4bb57c2a38ad97018bc224dc0bce31e0dd9ca639b",
+  "code_sha256": [
+    "eefd3e91f3e3ff6e402da2b12489fc2ca812bc88bb32ea49d36f5e0970227a2e",
+    "0d8c0fe5bcf6fe6ae32695d517e2dfe15f535afc46e63ade07b54ef50d07cc53",
+    "58c6732a3a2836da4f61f14887a3e2346197a9c764d9cae9b05cb1d6fb740809",
+    "556e5b70ec11372cf7b50f6a616f3c8eb975c7c314a9cf2d885f7b36d23b6597"
+  ],
+  "command_records": 2,
+  "command_passed": 2,
+  "command_failed": 0,
+  "existing_methods": 9,
+  "predicates": 52,
+  "passed": 52,
+  "failed": 0,
+  "commands": [
+    {
+      "label": "exact original suite",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_amount_text_and_domain (__main__.StandardLibraryTests.test_amount_text_and_domain) ... ok\ntest_date_spelling_and_calendar (__main__.StandardLibraryTests.test_date_spelling_and_calendar) ... ok\ntest_duplicate_event_ids_and_invalid_later_event (__main__.StandardLibraryTests.test_duplicate_event_ids_and_invalid_later_event) ... ok\ntest_duplicate_json_members_and_constants (__main__.StandardLibraryTests.test_duplicate_json_members_and_constants) ... ok\ntest_empty_and_independent_calls (__main__.StandardLibraryTests.test_empty_and_independent_calls) ... ok\ntest_exact_canonical_values (__main__.StandardLibraryTests.test_exact_canonical_values) ... ok\ntest_file_decoding_error (__main__.StandardLibraryTests.test_file_decoding_error) ... ok\ntest_schema_and_json_errors (__main__.StandardLibraryTests.test_schema_and_json_errors) ... ok\ntest_utf8_file_and_missing_file (__main__.StandardLibraryTests.test_utf8_file_and_missing_file) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.003s\n\nOK\n",
+      "method_count": 9,
+      "status": "PASS"
+    },
+    {
+      "label": "three exact introductory blocks in order",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "method_count": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.3-E1",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "strict lexical acceptance 0",
+      "actual": "DecimalTuple(sign=0, digits=(0,), exponent=0)",
+      "expected": "DecimalTuple(sign=0, digits=(0,), exponent=0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "strict lexical acceptance -0.00",
+      "actual": "DecimalTuple(sign=1, digits=(0,), exponent=-2)",
+      "expected": "DecimalTuple(sign=1, digits=(0,), exponent=-2)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "strict lexical acceptance +12.50",
+      "actual": "DecimalTuple(sign=0, digits=(1, 2, 5, 0), exponent=-2)",
+      "expected": "DecimalTuple(sign=0, digits=(1, 2, 5, 0), exponent=-2)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "strict lexical acceptance -1000",
+      "actual": "DecimalTuple(sign=1, digits=(1, 0, 0, 0), exponent=0)",
+      "expected": "DecimalTuple(sign=1, digits=(1, 0, 0, 0), exponent=0)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "strict lexical acceptance 0.125",
+      "actual": "DecimalTuple(sign=0, digits=(1, 2, 5), exponent=-3)",
+      "expected": "DecimalTuple(sign=0, digits=(1, 2, 5), exponent=-3)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "signed finite numeric domain",
+      "actual": "Decimal('-2.5')",
+      "expected": "Decimal('-2.5')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E2",
+      "label": "original broad grammar unchanged",
+      "actual": "Decimal('1E+3')",
+      "expected": "Decimal('1000')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "exact character boundary",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "oversized invalid JSON never decoded",
+      "actual": "[]",
+      "expected": "[]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "character count distinct from UTF8 bytes",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E3",
+      "label": "unicode at character boundary",
+      "actual": "'SCH-\u00e9'",
+      "expected": "'SCH-\u00e9'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E4",
+      "label": "rejection",
+      "actual": "'JSONDecodeError'",
+      "expected": "'JSONDecodeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E4",
+      "label": "valid UTF8 read preserved",
+      "actual": "b'{\"schedule_id\":\"SCH-\\xc3\\xa9\",'",
+      "expected": "b'{\"schedule_id\":\"SCH-\\xc3\\xa9\",'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E5",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E5",
+      "label": "input text unchanged",
+      "actual": "'{\"schedule_id\": \"SCH-01\", \"currency\": \"USD\", \"events\": [{\"event_id\": \"E0\", \"payment_date\": \"2027-01-15\", \"amount\": \"-1000\"}, {\"event_id\": \"E1\", \"payment_date\": \"2028-02-29\", \"amount\": \"0\"}, {\"event_id\": \"E2\", \"payment_date\": \"2027-02-29\", \"amount\": \"1040.00\"}]}'",
+      "expected": "'{\"schedule_id\": \"SCH-01\", \"currency\": \"USD\", \"events\": [{\"event_id\": \"E0\", \"payment_date\": \"2027-01-15\", \"amount\": \"-1000\"}, {\"event_id\": \"E1\", \"payment_date\": \"2028-02-29\", \"amount\": \"0\"}, {\"event_id\": \"E2\", \"payment_date\": \"2027-02-29\", \"amount\": \"1040.00\"}]}'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E5",
+      "label": "earlier source event intact",
+      "actual": "{'event_id': 'E0', 'payment_date': '2027-01-15', 'amount': '-1000'}",
+      "expected": "{'event_id': 'E0', 'payment_date': '2027-01-15', 'amount': '-1000'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "typed round trip",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "amount scale retained",
+      "actual": "'1040.00'",
+      "expected": "'1040.00'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "canonical source unchanged",
+      "actual": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "expected": "{'schedule_id': 'SCH-01', 'currency': 'USD', 'perspective': 'investor', 'events': [{'event_id': 'E0', 'payment_date': datetime.date(2027, 1, 15), 'amount': Decimal('-1000')}, {'event_id': 'E1', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('0')}, {'event_id': 'E2', 'payment_date': datetime.date(2028, 2, 29), 'amount': Decimal('1040.00')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "exact Decimal tuples without floats",
+      "actual": "[DecimalTuple(sign=1, digits=(0,), exponent=-2), DecimalTuple(sign=0, digits=(1,), exponent=3), DecimalTuple(sign=0, digits=(1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0), exponent=-20)]",
+      "expected": "[DecimalTuple(sign=1, digits=(0,), exponent=-2), DecimalTuple(sign=0, digits=(1,), exponent=3), DecimalTuple(sign=0, digits=(1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0), exponent=-20)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "empty identity round trip",
+      "actual": "{'schedule_id': 'EMPTY', 'currency': 'EUR', 'perspective': 'investor', 'events': []}",
+      "expected": "{'schedule_id': 'EMPTY', 'currency': 'EUR', 'perspective': 'investor', 'events': []}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.3-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    }
+  ]
+}
