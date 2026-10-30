@@ -1,0 +1,275 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.10-portfolio-weight-vectors.md",
+  "source_sha256": "21d94d03779c0269191a7c2c589bf8d162ba3670d806107fe62140c819cb3920",
+  "listing_sha256": [
+    "f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b",
+    "6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 32,
+  "failed": 0,
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_identity_not_only_length (test_weight_vectors.WeightTests.test_identity_not_only_length) ... ok\ntest_known_weights_and_contributions (test_weight_vectors.WeightTests.test_known_weights_and_contributions) ... ok\ntest_overflow_restores_policy (test_weight_vectors.WeightTests.test_overflow_restores_policy) ... ok\ntest_shape_source_and_storage (test_weight_vectors.WeightTests.test_shape_source_and_storage) ... ok\ntest_value_bridge_and_scalar_reference (test_weight_vectors.WeightTests.test_value_bridge_and_scalar_reference) ... ok\ntest_value_domain (test_weight_vectors.WeightTests.test_value_domain) ... ok\ntest_weight_sum_without_silent_normalization (test_weight_vectors.WeightTests.test_weight_sum_without_silent_normalization) ... ok\ntest_zero_weight_and_total_loss (test_weight_vectors.WeightTests.test_zero_weight_and_total_loss) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.034s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "weight_vectors.py"
+      ],
+      "returncode": 0,
+      "stdout": "IDs: ('A', 'B', 'CASH')\nOpening weights: ['60.00%', '30.00%', '10.00%']\nReturn contributions: ['6.00%', '-1.50%', '0.00%']\nPortfolio price return: 4.50%\nWeight sum: 1.000000000000\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.10-E1",
+      "label": "new weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E1",
+      "label": "new contributions",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E1",
+      "label": "new portfolio result",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E2",
+      "label": "cash supplied return contribution",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E2",
+      "label": "cash supplied return portfolio result",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E3",
+      "label": "permuted IDs",
+      "actual": "('CASH', 'A', 'B')",
+      "expected": "('CASH', 'A', 'B')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E3",
+      "label": "permuted contributions",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E3",
+      "label": "scalar invariant under aligned permutation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E3",
+      "label": "IDs-only permutation correctly rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 26, in <lambda>\n    reject('6.10-E3','IDs-only permutation correctly rejected',lambda:m.contributions(original_weights,ids,returns,new_ids),'ValueError')\n                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 51, in contributions\n    c_i=w_i r_i,\\qquad r_p=\\sum_i c_i.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: return identity/order must exactly match weights\n"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "unique extra zero-value position weight",
+      "actual": "0.0",
+      "expected": "0.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "invalid return on zero-value position nan",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 31, in <lambda>\n    reject('6.10-E4','invalid return on zero-value position '+str(bad),lambda:m.contributions(extended_weights,extended_ids,supplied,extended_ids),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 47, in contributions\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 20, in vector\n    3. Align weights and returns by instrument identity, not merely length.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: vector must be finite\n"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "rejected returns preserved nan",
+      "actual": "b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f'",
+      "expected": "b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf8\\x7f'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "invalid return on zero-value position inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 31, in <lambda>\n    reject('6.10-E4','invalid return on zero-value position '+str(bad),lambda:m.contributions(extended_weights,extended_ids,supplied,extended_ids),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 47, in contributions\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 20, in vector\n    3. Align weights and returns by instrument identity, not merely length.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: vector must be finite\n"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "rejected returns preserved inf",
+      "actual": "b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f'",
+      "expected": "b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xf0\\x7f'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "invalid return on zero-value position -1.01",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 31, in <lambda>\n    reject('6.10-E4','invalid return on zero-value position '+str(bad),lambda:m.contributions(extended_weights,extended_ids,supplied,extended_ids),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 53, in contributions\nValueError: unsupported weights or returns\n"
+    },
+    {
+      "exercise": "6.10-E4",
+      "label": "rejected returns preserved -1.01",
+      "actual": "b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00)\\\\\\x8f\\xc2\\xf5(\\xf0\\xbf'",
+      "expected": "b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00)\\\\\\x8f\\xc2\\xf5(\\xf0\\xbf'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E5",
+      "label": "exact closing weights",
+      "actual": "[Fraction(12, 19), Fraction(3, 11), Fraction(20, 209)]",
+      "expected": "[Fraction(12, 19), Fraction(3, 11), Fraction(20, 209)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E5",
+      "label": "closing-weight hypothetical differs from opening answer",
+      "actual": "(Fraction(207, 4180), Fraction(9, 200))",
+      "expected": "(Fraction(207, 4180), Fraction(9, 200))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E5",
+      "label": "source computes supplied closing-weight hypothetical",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E6",
+      "label": "invested-subset weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E6",
+      "label": "invested-subset result",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E6",
+      "label": "full denominator result still distinct",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E7",
+      "label": "long-only source rejects signed values",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-weight-exercises/review.py\", line 41, in <lambda>\n    reject('6.10-E7','long-only source rejects signed values',lambda:m.weights_from_values(np.array([120.,-20.]),('LONG','SHORT')),'ValueError')\n                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6weightx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.10-portfolio-weight-vectors.md\", line 28, in weights_from_values\nValueError: this model requires nonnegative values\n"
+    },
+    {
+      "exercise": "6.10-E7",
+      "label": "separate signed-exposure denominator example",
+      "actual": "(Fraction(100, 1), Fraction(140, 1), Fraction(6, 5), Fraction(-1, 5))",
+      "expected": "(Fraction(100, 1), Fraction(140, 1), Fraction(6, 5), Fraction(-1, 5))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E8",
+      "label": "first interval equal weights return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E8",
+      "label": "drifted opening weights",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E8",
+      "label": "second fixed-holding interval return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E8",
+      "label": "second rebalanced interval return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.10-E8",
+      "label": "independent holdings vs rebalanced ending values",
+      "actual": "(Fraction(101, 1), Fraction(100, 1))",
+      "expected": "(Fraction(101, 1), Fraction(100, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "caller input bytes unchanged",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\xc0\\x82@\\x00\\x00\\x00\\x00\\x00\\xc0r@\\x00\\x00\\x00\\x00\\x00\\x00Y@', b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\xc0\\x82@\\x00\\x00\\x00\\x00\\x00\\xc0r@\\x00\\x00\\x00\\x00\\x00\\x00Y@', b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "computed weights and contributions independent",
+      "actual": "(False, False)",
+      "expected": "(False, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'weight_vectors.py': 'f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b', 'test_weight_vectors.py': '6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3'}",
+      "expected": "{'weight_vectors.py': 'f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b', 'test_weight_vectors.py': '6f8e3d6ce6e54cc7fc636ccf287b885059cbfd03339c1bfebb8bac2ab50512d3'}",
+      "status": "PASS"
+    }
+  ]
+}
