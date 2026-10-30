@@ -42,4 +42,6 @@ Earlier checkpoint: [Section 6.8 local exercises](../chapter-06-cashflow-exercis
 
 Earlier checkpoint: [Section 6.9 local exercises](../chapter-06-return-exercises/README.md) records eight answers, two command checks, 25 predicates and eight existing methods rerun. Local queue: 72/128 reviewed, 56 pending. Next: Section 6.10.
 
-Current checkpoint: [Section 6.10 local exercises](../chapter-06-weight-exercises/README.md) records eight answers, two command checks, 32 predicates and eight existing methods rerun. Local queue: 80/128 reviewed, 48 pending. Next: Section 6.11.
+Earlier checkpoint: [Section 6.10 local exercises](../chapter-06-weight-exercises/README.md) records eight answers, two command checks, 32 predicates and eight existing methods rerun. Local queue: 80/128 reviewed, 48 pending. Next: Section 6.11.
+
+Current checkpoint: [Section 6.11 local exercises](../chapter-06-matrix-exercises/README.md) records eight answers, two command checks, 23 predicates and eight existing methods rerun. Local queue: 88/128 reviewed, 40 pending. Next: Section 6.12.

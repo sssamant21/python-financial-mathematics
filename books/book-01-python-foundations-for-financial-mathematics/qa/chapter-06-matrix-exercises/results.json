@@ -1,0 +1,215 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.11-matrices-and-financial-models.md",
+  "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+  "listing_sha256": [
+    "5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79",
+    "eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 23,
+  "failed": 0,
+  "comparison_source": {
+    "path": "chapter-06/6.10-portfolio-weight-vectors.md",
+    "source_sha256": "21d94d03779c0269191a7c2c589bf8d162ba3670d806107fe62140c819cb3920",
+    "executed_listing_sha256": "f286aed7a3d6ad471dee33540409fba6c53a46a678a7709d9ee7454612722d4b",
+    "scope": "unchanged first listing, function calls only; no companion suite rerun"
+  },
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_axes_and_product_not_elementwise (test_matrix_models.MatrixTests.test_axes_and_product_not_elementwise) ... ok\ntest_budget (test_matrix_models.MatrixTests.test_budget) ... ok\ntest_consistent_column_permutation (test_matrix_models.MatrixTests.test_consistent_column_permutation) ... ok\ntest_domain_and_weight_rows (test_matrix_models.MatrixTests.test_domain_and_weight_rows) ... ok\ntest_invalid_labels_and_shapes (test_matrix_models.MatrixTests.test_invalid_labels_and_shapes) ... ok\ntest_known_model (test_matrix_models.MatrixTests.test_known_model) ... ok\ntest_nested_reference (test_matrix_models.MatrixTests.test_nested_reference) ... ok\ntest_source_and_transpose_storage (test_matrix_models.MatrixTests.test_source_and_transpose_storage) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.041s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "matrix_models.py"
+      ],
+      "returncode": 0,
+      "stdout": "Axes: scenario, portfolio\nOutput shape: (3, 2)\nPortfolios: ('P1', 'P2')\nUP: 4.50%, 0.50%\nDOWN: -9.00%, -1.00%\nCASH-YIELD: 0.02%, 0.10%\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.11-E1",
+      "label": "all original scenarios with third cash portfolio",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E1",
+      "label": "third portfolio results",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E1",
+      "label": "output axes with third portfolio",
+      "actual": "((3, 3), ('UP', 'DOWN', 'CASH-YIELD'), ('P1', 'P2', 'P3-CASH'))",
+      "expected": "((3, 3), ('UP', 'DOWN', 'CASH-YIELD'), ('P1', 'P2', 'P3-CASH'))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E2",
+      "label": "rational fourth scenario hand cells",
+      "actual": "[Fraction(9, 200), Fraction(1, 40), Fraction(0, 1)]",
+      "expected": "[Fraction(9, 200), Fraction(1, 40), Fraction(0, 1)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E2",
+      "label": "fourth scenario every portfolio",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E2",
+      "label": "fourth scenario output axes",
+      "actual": "((4, 3), 'BROAD-UP')",
+      "expected": "((4, 3), 'BROAD-UP')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E3",
+      "label": "scenario labels travel with rows",
+      "actual": "('CASH-YIELD', 'UP', 'DOWN')",
+      "expected": "('CASH-YIELD', 'UP', 'DOWN')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E3",
+      "label": "output rows follow input permutation",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E3",
+      "label": "portfolio columns unchanged",
+      "actual": "('P1', 'P2')",
+      "expected": "('P1', 'P2')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E3",
+      "label": "caller can attach stale scenario labels without domain failure",
+      "actual": "[[0.045, 0.005000000000000004], [-0.09, -0.010000000000000007], [0.0002, 0.001]]",
+      "expected": "[[0.045, 0.005000000000000004], [-0.09, -0.010000000000000007], [0.0002, 0.001]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E4",
+      "label": "duplicate portfolio label despite valid weights",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-matrix-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-matrix-exercises/review.py\", line 40, in <lambda>\n    reject('6.11-E4','duplicate portfolio label despite valid weights',lambda:m.allocation_scenarios(r,ids,scenarios,w,ids,('P1','P1')),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.11-matrices-and-financial-models.md\", line 39, in allocation_scenarios\n    | P1 | 0.60 | 0.30 | 0.10 |\n        ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.11-matrices-and-financial-models.md\", line 11, in label_axis\nValueError: axis labels must be unique\n"
+    },
+    {
+      "exercise": "6.11-E5",
+      "label": "independent element count/bytes/MiB",
+      "actual": "(200000, 1600000, Fraction(3125, 2048))",
+      "expected": "(200000, 1600000, Fraction(3125, 2048))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E5",
+      "label": "actual bounded output shape/dtype/payload",
+      "actual": "((1000, 200), 'float64', 1600000, True)",
+      "expected": "((1000, 200), 'float64', 1600000, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E5",
+      "label": "output-only budget boundary with small inputs",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-matrix-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-matrix-exercises/review.py\", line 46, in <lambda>\n    reject('6.11-E5','output-only budget boundary with small inputs',lambda:m.allocation_scenarios(large_r,ids,large_s,large_w,ids,large_p,max_cells=199999),'ValueError')\n                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6matrixx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.11-matrices-and-financial-models.md\", line 48, in allocation_scenarios\n    For scenario s and portfolio p, define:\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: input or output matrix exceeds cell budget\n"
+    },
+    {
+      "exercise": "6.11-E6",
+      "label": "Section 6.10 original function portfolio 0",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E6",
+      "label": "independent rational portfolio 0",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E6",
+      "label": "Section 6.10 original function portfolio 1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E6",
+      "label": "independent rational portfolio 1",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E7",
+      "label": "alternative-scenario outputs preserve axes",
+      "actual": "(3, 2)",
+      "expected": "(3, 2)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.11-E8",
+      "label": "no scenario probabilities supplied",
+      "actual": "{'returns', 'portfolios', 'scenarios', 'weight_sums'}",
+      "expected": "{'returns', 'portfolios', 'scenarios', 'weight_sums'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original inputs unchanged",
+      "actual": "(b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x9a\\x99\\x99\\x99\\x99\\x99\\xc9\\xbf\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xfc\\xa9\\xf1\\xd2Mb`?', b'333333\\xe3?333333\\xd3?\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xc9?333333\\xd3?\\x00\\x00\\x00\\x00\\x00\\x00\\xe0?')",
+      "expected": "(b'\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xa9\\xbf\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x9a\\x99\\x99\\x99\\x99\\x99\\xc9\\xbf\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\xfc\\xa9\\xf1\\xd2Mb`?', b'333333\\xe3?333333\\xd3?\\x9a\\x99\\x99\\x99\\x99\\x99\\xb9?\\x9a\\x99\\x99\\x99\\x99\\x99\\xc9?333333\\xd3?\\x00\\x00\\x00\\x00\\x00\\x00\\xe0?')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "outputs independent of inputs",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'matrix_models.py': '5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79', 'test_matrix_models.py': 'eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51'}",
+      "expected": "{'matrix_models.py': '5e722df9186edacf654936497dae45a9129003cbf7cef5f6f286fa2353dc4a79', 'test_matrix_models.py': 'eef934cbaeac02285d505b03cd7b431115faff47ddaad7c5586c3e7864539e51'}",
+      "status": "PASS"
+    }
+  ]
+}

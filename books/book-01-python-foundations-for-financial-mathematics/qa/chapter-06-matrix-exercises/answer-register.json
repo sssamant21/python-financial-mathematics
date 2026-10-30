@@ -1,0 +1,82 @@
+[
+  {
+    "id": "6.11-E1",
+    "prompt": "Add a third portfolio with weights [0,0,1] and derive its three scenario results.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "EXACT SOURCE + INDEPENDENT RATIONAL CELL ORACLES",
+    "answer": "Append portfolio P3-CASH with weights [0,0,1]. Its UP, DOWN and CASH-YIELD results are [0,0,0.002], since only the cash column contributes. The resulting scenario-by-portfolio table has shape (3,3), with original two portfolio columns unchanged and the third labelled P3-CASH. The runner derives every cell using Fraction return/weight inputs independently of matrix multiplication, and verifies labels and values. Comparisons use rtol=1e\u221212, atol=1e\u221214 with NaNs disallowed for these small fixtures."
+  },
+  {
+    "id": "6.11-E2",
+    "prompt": "Add a fourth scenario [0.05,0.05,0] and compute every portfolio result by hand.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "EXACT SOURCE + INDEPENDENT RATIONAL CELL ORACLES",
+    "answer": "Append scenario BROAD-UP with returns [0.05,0.05,0]. For original P1, result is (3/5)(1/20)+(3/10)(1/20)=9/200=4.5%; for P2 it is (1/5)(1/20)+(3/10)(1/20)=1/40=2.5%. For the added all-cash P3 it is zero. This composed extension has four scenarios and three portfolios, shape (4,3). The runner checks all three hand-derived cells and the new scenario label without changing the original fixture."
+  },
+  {
+    "id": "6.11-E3",
+    "prompt": "Reorder scenario rows and labels consistently; verify the corresponding output row permutation.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "EXACT SOURCE ROW/LABEL PERMUTATION + LIMIT PROBE",
+    "answer": "Use row order [2,0,1] and apply it to both return rows and scenario labels. Output rows become CASH-YIELD,UP,DOWN in that order while portfolio columns stay P1,P2. Numerical results match the corresponding original output permutation within the stated tolerance. A separate stale-label probe deliberately reorders labels alone: source still accepts unique correct-length labels and leaves numbers unchanged. This demonstrates the caller alignment responsibility, not a source validation defect; a numeric matrix cannot infer which scenario name belongs to a row."
+  },
+  {
+    "id": "6.11-E4",
+    "prompt": "Add a test that a duplicate portfolio label fails even when weight rows are numerically valid.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "EXACT SOURCE EXPECTED REJECTION",
+    "answer": "Pass original numerically valid weight rows with duplicate portfolio labels (P1,P1). The unchanged source raises ValueError through label_axis before multiplication. Distinct valid allocations do not make duplicate identities acceptable; both label count and uniqueness are required. Expected traceback is retained separately from unexpected failures."
+  },
+  {
+    "id": "6.11-E5",
+    "prompt": "Derive the shape and element payload of a 1000-scenario, 200-portfolio result table.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "INDEPENDENT INTEGER PAYLOAD + BOUNDED EXACT SOURCE ALLOCATION",
+    "answer": "A result with 1000 scenarios and 200 portfolios has shape (1000,200), 200,000 float64 cells and 1,600,000 element bytes =1.6 decimal MB =1.52587890625 MiB. This is output payload only, not peak RSS or an OS reservation. A feasible controlled source run with three instruments, 1000 all-zero return rows and 200 all-cash portfolios actually allocates this output and confirms shape/dtype/nbytes/zero values at max_cells=200000. Return input has 3000 cells and weights 600, so max_cells=199999 fails specifically on the output size while both inputs are below it. Existing source checks each individual matrix, not their combined process footprint; internal workspace and validation temporaries are not measured."
+  },
+  {
+    "id": "6.11-E6",
+    "prompt": "Compare one portfolio's result column with the elementwise weighted sum from Section 6.10.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "CROSS-SECTION EXACT SOURCE FUNCTION CALLS + RATIONAL ORACLE",
+    "answer": "Load the unchanged first Python listing of Section 6.10, with its file/listing hashes retained. For each original portfolio weight row and every scenario, call its contributions function on the aligned return row. Both columns match the Section 6.11 matrix result and independently derived rational cells: P1 [0.045,\u22120.09,0.0002], P2 [0.005,\u22120.01,0.001]. This is exact-source function-call agreement under shared one-interval assumptions; it is not a rerun of the Section 6.10 unittest suite, not independent model acceptance, and not proof for arbitrary data."
+  },
+  {
+    "id": "6.11-E7",
+    "prompt": "Specify the additional conventions needed to interpret rows as successive periods instead of alternatives.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "CONCEPTUAL SUCCESSIVE-PERIOD CONTRACT REVIEW",
+    "answer": "Before interpreting rows as time, define chronological interval start/end labels, shared observation frequency or irregular duration treatment, beginning holdings/NAV, cash and liabilities, external cash-flow timing, total-versus-price-return conventions, corporate actions, FX, fees, financing and taxes. Decide whether each portfolio is fixed holdings with drifting weights or rebalanced to targets; state decision/execution timing, transaction costs and information availability. A constant W across historical rows generally describes repeated target-weight reuse, not fixed holdings. A drifted W_t may require per-period weighted sums rather than one fixed matrix product. Link compatible interval portfolio gross returns under an explicitly defined performance methodology; do not sum alternative scenario rows or assume a numerical table is a realized account path. This batch records the design and the unchanged output-axis contract only; no holdings/rebalancing/time-path engine is implemented or executed."
+  },
+  {
+    "id": "6.11-E8",
+    "prompt": "Describe why a matrix of numerical results is not automatically a calibrated risk model.",
+    "source": "chapter-06/6.11-matrices-and-financial-models.md",
+    "source_sha256": "cac944e2d15760d013d9b0fbba939332bbb4d92097d4a6dc3351fc750ff1516b",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-matrix-exercises/README.md",
+    "kind": "CONCEPTUAL MODEL-CALIBRATION LIMIT REVIEW",
+    "answer": "Matrix multiplication applies supplied allocations to supplied returns; it provides no evidence that the scenarios are exhaustive, calibrated, probable, representative, independent, stationary or appropriate for a decision. Retain horizon, units, valuation/data lineage, model assumptions, calibration method/data window, dependence/tail behavior, scenario selection and probability/weight rationale if used, missing-data policy, uncertainty/sensitivity checks and validation/monitoring criteria. Distinguish realized observations from hypothetical stresses and explicitly model omitted costs/flows/FX/financing as required. This source returns scenario/portfolio labels, numerical returns and observed weight sums, with no probabilities. Shape, finite-value and algebra checks support implementation claims only; distributional calibration, risk measures, backtesting and independent acceptance remain unexecuted. A numerical output alone is not a calibrated risk model."
+  }
+]
