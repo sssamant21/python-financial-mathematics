@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `c42fb1965a8febe91dc9ed310b2db9b0d0cb9ca2`  
-**Latest scoped source revision:** `7968be83604ba6d801b05e6d61ba9fec8726e7b6`  
-**Disposition:** Earlier V-42 full runtime plus subsequent Section 16.8 calibration-range scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `b5b04e9fbee6367d5d81136d47d9475c96a2dea5`  
+**Latest scoped source revision:** `b5b04e9fbee6367d5d81136d47d9475c96a2dea5`  
+**Disposition:** V-43 full runtime includes raw-price and normalized calibration range corrections; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-42 eleventh refresh](runtime-refresh-2026-10-30-r6.md) includes Sections 16.8–16.10 metric changes and two checkers: 472 files compiled, 261 scripts passed, 473 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+[V-43 twelfth refresh](runtime-refresh-2026-10-30-r7.md) includes raw-price and normalized calibration changes and two checkers: 474 files compiled, 263 scripts passed, 475 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+
+[V-42 eleventh refresh](runtime-refresh-2026-10-30-r6.md) includes Sections 16.8–16.10 metric changes and two checkers: 472 files compiled, 261 scripts passed, 473 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
 [V-41 tenth refresh](runtime-refresh-2026-10-30-r5.md) includes both subsequent Section 16.6 corrections and two checkers: 470 files compiled, 259 scripts passed, 471 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
@@ -41,7 +43,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-42 at earlier full-runtime pin; subsequent Section 16.8 change has 29-file/19-script scoped rerun; refresh after related executable changes accumulate | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-43 at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -168,3 +170,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Calibration arithmetic range correction — 2026-10-30
 
 [Section 16.8 evidence](chapter-16-calibration-range-followup.md) preserves seven original probes and an exit-1 regression, corrects complete fit/curvature/gradient/weighted-loss expression range handling and rejects nonzero-to-zero results. Nine independent Decimal fits, eight gradient references, five curvature references, four weighted-loss references and eight final-range rejections pass. All 29 chapter files compiled and 19 scripts passed at `7968be83604ba6d801b05e6d61ba9fec8726e7b6`; all corrected scoped hashes match the published tree. Current inventory is 473 Python files and 262 check/test scripts, not new full-runtime counts. This source/checker change follows V-42; its full pass remains historical for changed code. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-74 Sections 16.9/16.10 normalized analytic-rate, curvature and gradient copies; preserve their distinct normalized objective scale and avoid scaling an already-rounded raw result. Independent-review, supported-platform and release gates remain pending.
+
+## Normalized calibration correction and V-43 — 2026-10-30
+
+[Sections 16.9/16.10 evidence](chapter-16-normalized-calibration-followup.md) preserves eight probes and the original regression, corrects analytical-rate/curvature/gradient expression range while retaining normalized scale and residual-rounding policies. Sixteen Decimal fit pairs, ten curvature references, six gradients, eighteen rejections and three scale/policy checks pass. All 30 chapter files compiled and 20 scripts passed. [V-43 full execution](runtime-refresh-2026-10-30-r7.md) then compiled 474 files, passed 263 scripts and verified 475 required hashes before/after at `b5b04e9fbee6367d5d81136d47d9475c96a2dea5`, covering this and the preceding Section 16.8 correction/checker. Manuscript candidate-runtime wording is reconciled; independent/platform/release claims are not granted. Twenty-eight categories remain partially addressed, none closed by the register. Next executable item: COV-74 Section 16.10 per-candidate training/holdout metrics and acceptance at each returned optimizer rate; current final assessment retains benchmark metrics. Objective/loss range and broader conditioning/review obligations remain open.
