@@ -1,6 +1,6 @@
 # Book 02 — Coverage-gap remediation register
 
-**Updated:** 2026-10-29
+**Updated:** 2026-10-30
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
 **Disposition:** Twenty-eight COV categories partially addressed; none closed by this register.
 
@@ -27,7 +27,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-72 | Section 15.8 directly checks zero/adjacent iso-variance denominator and selected signed-rate/maturity-domain cases. | Applied/manual examples, covariance contracts, units, range and independent review. | [Level-set boundaries](chapter-15-level-set-boundary-followup.md) |
 | COV-73 | Nine adjacent exact Armijo boundary cases, backtracking counts and selected stationary/stagnation/budget/no-descent paths checked. | Other optimizer copies, status/report boundaries and independent review. | [Optimizer statuses](chapter-16-optimizer-status-followup.md) |
 | COV-74 | Section 16.9 now evaluates metrics, normalized loss/gradient and acceptance per candidate; independent residual metrics and selected failed candidates/holdout/budget cases checked. | Broader invalid-data, optimizer/threshold and independent-review scope. | [Candidate acceptance](chapter-16-candidate-acceptance-followup.md) |
-| COV-75 | Section 16.7 multistart outputs checked against independent stationary-cubic roots and local curvature classification. | Scaling/convexity/quasi-Newton scope, derivative extremes, proofs and independent review. | [Multistart references](chapter-16-multistart-reference-followup.md) |
+| COV-75 | Section 16.7 multistart outputs checked against independent stationary-cubic roots and local curvature classification. | Scaling/convexity/quasi-Newton scope, derivative extremes, proofs and independent review.; derivative geometry/denominator correction and exact polynomial checks | [Multistart references](chapter-16-multistart-reference-followup.md) |
 | COV-76 | Section 17.9 KKT fields independently recomputed across four regimes; four isolated rejection families and incomplete acceptance variants checked. | Tolerance units/scales, adjacent active-set transitions, degeneracy and independent review. | [KKT rejection](chapter-17-kkt-rejection-followup.md) |
 | COV-77 | Section 17.9 guards trade/notional range, avoids intermediate cost overflow and computes turnover directly; selected extreme cases pass. | Report/input/audit scope, underflow policy and independent review. | [Financial range](chapter-17-financial-range-followup.md) |
 | COV-78 | Section 17.10 now reports/checks second-cap multipliers and rejected candidates; rounded-sum empty intervals are rejected. | Broader final LP/QP coverage, shared dependencies and independent proofs/review. | [Final allocation](chapter-17-final-allocation-followup.md) |
@@ -179,3 +179,7 @@ The [third full refresh](runtime-refresh-2026-10-29-r3.md) includes all prior Ch
 ## Scaling references and V-39 — 2026-10-30
 
 [Section 16.7 evidence](chapter-16-scaling-reference-followup.md) independently checks Hessian transforms/condition numbers, four coordinate round trips, twelve curvature stencils and six real scalar stable/boundary/unstable mode runs. All 23 Chapter 16 files compiled and 13 scripts passed; implementation unchanged. [V-39 full evidence](runtime-refresh-2026-10-30-r3.md) then compiled 467 sources and passed 256 scripts with 468 hashes verified before/after at `18be350b40cc2a0a963e0c5fd91b793cf0c3c634`, covering all three Chapter 16 follow-ups. Twenty-eight categories remain partially addressed. Next executable item: COV-75 Sections 16.2–16.4 derivative representability and denominator extremes. Independent-review, environment and release gates remain pending.
+
+## Derivative boundary correction and V-40 — 2026-10-30
+
+[Sections 16.2–16.4 evidence](chapter-16-derivative-boundary-followup.md) retains collapsed-stencil/denominator failures, adds pre-callback geometry/range validation and finite callback checks, and passes 35 guard cases, nine exact polynomial pairs, one unequal-offset case and three nonfinite-result cases. All 24 Chapter 16 files compiled and 14 scripts passed. [V-40 full execution](runtime-refresh-2026-10-30-r4.md) then compiled 468 sources and passed 257 scripts with 469 required hashes verified before/after at `fe24a814a26fb542c7b5d6e0f34a0df8ff6eb6a7`. This covers the three source corrections and new checker after V-39. Twenty-eight categories remain partially addressed; none is closed by the register. Next executable item: COV-75 Section 16.6 scalar secant-curvature product/threshold and callback boundaries, with exact represented-number expectations. Independent-review, supported-platform and release gates remain pending.
