@@ -50,4 +50,6 @@ Earlier checkpoint: [Section 6.12 local exercises](../chapter-06-linear-exercise
 
 Earlier checkpoint: [Section 6.13 local exercises](../chapter-06-random-exercises/README.md) records eight answers, two command checks, 23 predicates and eight existing methods rerun. Saved innovations/replay manifest retained; E7/E8 conceptual only. Local queue: 104/128 reviewed, 24 pending. Next: Section 6.14.
 
-Current checkpoint: [Section 6.14 local exercises](../chapter-06-precision-exercises/README.md) records eight answers, two command checks, 24 predicates and eight existing methods rerun. Local queue: 112/128 reviewed, 16 pending. Next: Section 6.15.
+Earlier checkpoint: [Section 6.14 local exercises](../chapter-06-precision-exercises/README.md) records eight answers, two command checks, 24 predicates and eight existing methods rerun. Local queue: 112/128 reviewed, 16 pending. Next: Section 6.15.
+
+Current checkpoint: [Section 6.15 local exercises](../chapter-06-performance-exercises/README.md) records eight answers, two command checks, 24 predicates and eight existing methods rerun. Original/supplemental timing and full local profile evidence retained; peak-memory design unexecuted. Local queue: 120/128 reviewed, 8 pending. Next: Section 6.16 project extensions.
