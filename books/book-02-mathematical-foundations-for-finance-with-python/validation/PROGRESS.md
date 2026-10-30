@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped Hessian accuracy follow-up
+## Latest scoped float-Jacobian accuracy follow-up
+
+Section 15.9's actual centered columns now have independent Decimal quotient references, selected convergence ladders and cancellation/asymmetry cases. All 23 Chapter 15 files compiled and 13 scripts passed; implementation unchanged. [Evidence](chapter-15-jacobian-accuracy-followup.md). COV-71 partially open; follows V-36.
+
+## Earlier scoped Hessian accuracy follow-up
 
 Selected analytic Hessians now have independent 90-digit valuation-stencil references and step ladders. All 22 Chapter 15 files compiled and 12 scripts passed; implementation unchanged. [Evidence](chapter-15-hessian-accuracy-followup.md). COV-71 remains partially open; this follows V-36.
 
@@ -365,3 +369,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Selected Hessian accuracy follow-up — 2026-10-30
 
 [Chapter 15 evidence](chapter-15-hessian-accuracy-followup.md) checks 18 analytic Hessian entries against independent 90-digit direct-valuation stencils at one interior input, with selected second-order ladders and rate-time block integration. These stencils are supplemental references, not a production numerical Hessian API. All 22 chapter files compiled and 12 scripts passed; implementation unchanged. COV-71 remains partially open and twenty-five categories remain partially addressed. This checker follows V-36; next executable item is Section 15.9 centered Jacobian-column convergence and selected cancellation/asymmetry. Independent-review, platform and release gates remain pending.
+
+## Production-float Jacobian accuracy follow-up — 2026-10-30
+
+[Section 15.9 evidence](chapter-15-jacobian-accuracy-followup.md) checks eighteen float-column/reference pairs, four selected second-order ladders, three tiny-step cancellation cases and one unequal represented-offset case. The manuscript clarifies approximation limits; implementation unchanged. All 23 chapter files compiled and 13 scripts passed. This follows V-36; twenty-five categories remain partially addressed. Next executable item: COV-72 Section 15.8 zero iso-variance denominator and rate-sign-crossing/domain rejection, followed by full-book reconciliation. Independent-review, environment and release gates remain pending.
