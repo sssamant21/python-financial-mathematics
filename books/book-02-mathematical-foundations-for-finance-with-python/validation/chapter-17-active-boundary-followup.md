@@ -9,7 +9,7 @@
 
 [Machine evidence](chapter-17-active-boundary-followup.json) retains three adjacent-transition probes, the original checker failure, original source hashes and all eleven final script outputs. The first baseline assertion failed on an absent exact-geometry field; the numerical probes separately establish the multiplier discrepancy.
 
-At the represented cap immediately below `float(8/11)`, the original subtraction of nearly equal rounded gradient components gave cap multiplier `2.7755575615628914e-17`. The independent rational decimal-model formula gives `1.9984014443252817e-17`, about39% smaller relative to the true tiny value. The absolute error is small enough to pass the ordinary KKT tolerance, which does not make it a reliable shadow-price computation near this transition.
+At the represented cap immediately below `float(8/11)`, the original subtraction of nearly equal rounded gradient components gave cap multiplier `2.7755575615628914e-17`. The independent rational decimal-model formula gives `1.9984014443252817e-17`, with the original value about39% larger than this reference. The absolute error is small enough to pass the ordinary KKT tolerance, which does not make it a reliable shadow-price computation near this transition.
 
 The rounded transition itself lies **above** exact8/11 by `1/49539595901075456`. Its legacy display label was weakly active, and its returned rounded weights gave a zero cap residual. This label/residual combination must not be confused with exact rational-model cap geometry.
 
