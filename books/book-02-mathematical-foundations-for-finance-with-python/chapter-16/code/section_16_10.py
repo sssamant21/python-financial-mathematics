@@ -86,6 +86,37 @@ def portfolio_variance(w1,w2):
     x,y=finite(w1,"w1"),finite(w2,"w2")
     return finite(0.04*x*x+0.02*x*y+0.09*y*y,"portfolio variance")
 
+def exercise_objectives():
+    """Compute the exact exercise scopes, separate from the aggregate model."""
+    from section_16_05 import gradient_descent,quadratic_loss,quadratic_gradient
+    from section_16_06 import newton_solve
+    single=((2.0,1100.0),)
+    stationary=analytical_rate(single)
+    shifted_loss=lambda x:quadratic_loss(x,a=1.0,b=3.0)
+    shifted_gradient=lambda x:quadratic_gradient(x,a=1.0,b=3.0)
+    return {
+        "single_observation":{
+            "rows":single,"stationary_rate":stationary,
+            "curvature":hessian(single),
+            "stationary_loss":loss(stationary,single),
+            "stationary_gradient":gradient(stationary,single),
+            "evaluations":[{"rate":r,"loss":loss(r,single),
+                            "gradient":gradient(r,single)}
+                           for r in (-0.125,0.0,0.125,0.25)],
+        },
+        "shifted_quadratic":{
+            "curvature":1.0,"center":3.0,
+            "gradient_descent":[{
+                "step":step,"result":gradient_descent(
+                    0.0,shifted_loss,shifted_gradient,step=step,
+                    tolerance=0.0,max_iterations=2)}
+                for step in (0.5,1.0,2.0,3.0)],
+            "newton":newton_solve(0.0,shifted_gradient,lambda x:1.0,
+                                  tolerance=0.0,max_iterations=1),
+        },
+        "three_observation_curvature":hessian(),
+    }
+
 def assessment():
     reference=analytical_rate()
     runs=[solve(start,method) for method in ("newton","gradient_descent")
@@ -117,6 +148,7 @@ def assessment():
         run["provisional_acceptance"]=all(run["acceptance_checks"].values())
     return {"analytical_rate":reference,"gradient_at_reference":gradient(reference),
             "hessian":hessian(),"runs":runs,
+            "exercise_objectives":exercise_objectives(),
             "acceptance_limits":limits,
             "acceptance_scope":"synthetic_numerical_only",
             "provisional_acceptance":all(run["provisional_acceptance"] for run in runs),
