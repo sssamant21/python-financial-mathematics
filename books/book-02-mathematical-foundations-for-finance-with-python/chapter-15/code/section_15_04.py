@@ -1,6 +1,7 @@
 """Book 02 Section 15.4: gradients and directional derivatives."""
 import json
 import math
+from fractions import Fraction
 
 def number(value,name):
     if type(value) not in (int,float):
@@ -25,9 +26,11 @@ def covariance(matrix):
     b=pair(matrix[1],"covariance row")
     if not math.isclose(a[1],b[0],rel_tol=1e-12,abs_tol=1e-14):
         raise ValueError("covariance must be symmetric")
-    if a[0]<=0 or a[0]*b[1]-a[1]*b[0]<=0:
+    off=float((Fraction(a[1])+Fraction(b[0]))/2)
+    determinant=number(a[0]*b[1]-off*off,"covariance determinant")
+    if a[0]<=0 or determinant<=0:
         raise ValueError("covariance must be positive definite")
-    return (a,b)
+    return ((a[0],off),(off,b[1]))
 
 def portfolio_variance(matrix,weights):
     c=covariance(matrix)
