@@ -44,4 +44,6 @@ Earlier checkpoint: [Section 6.9 local exercises](../chapter-06-return-exercises
 
 Earlier checkpoint: [Section 6.10 local exercises](../chapter-06-weight-exercises/README.md) records eight answers, two command checks, 32 predicates and eight existing methods rerun. Local queue: 80/128 reviewed, 48 pending. Next: Section 6.11.
 
-Current checkpoint: [Section 6.11 local exercises](../chapter-06-matrix-exercises/README.md) records eight answers, two command checks, 23 predicates and eight existing methods rerun. Local queue: 88/128 reviewed, 40 pending. Next: Section 6.12.
+Earlier checkpoint: [Section 6.11 local exercises](../chapter-06-matrix-exercises/README.md) records eight answers, two command checks, 23 predicates and eight existing methods rerun. Local queue: 88/128 reviewed, 40 pending. Next: Section 6.12.
+
+Current checkpoint: [Section 6.12 local exercises](../chapter-06-linear-exercises/README.md) records eight answers, two final command checks, 29 final predicates and eight existing methods in the retained run. Local queue: 96/128 reviewed, 32 pending. Next: Section 6.13.
