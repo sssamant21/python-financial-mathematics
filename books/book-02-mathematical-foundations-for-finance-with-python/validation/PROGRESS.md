@@ -1,6 +1,6 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-10-29  
+**Updated:** 2026-10-30  
 **Overall status:** In progress — full pinned-revision runtime pass complete (456 compiled files; 245 successful script exits); coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
@@ -20,7 +20,11 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Final-revision and platform validation | Candidate Linux pass complete; release/platform checks pending | Full candidate snapshot passed on Python 3.12.14/Linux; rerun after relevant review changes and assess supported Python versions and Windows. [Evidence](pinned-revision-runtime-validation.md). |
 | Canonical approval | Not granted | Requires documented review, resolved findings and the authorized decision. |
 
-## Latest scoped diagnostic integration follow-up
+## Latest scoped final-assessment integration
+
+Section 14.10 now uses actual eigen/Cholesky/SVD/compression outputs. Four helper calls and five injected wrong outputs are checked; all 30 Chapter 14 files compiled and 20 scripts passed. [Evidence](chapter-14-final-integration-followup.md). This follows V-36; COV-67 remains partially open.
+
+## Earlier scoped diagnostic integration follow-up
 
 Section 14.8 now computes diagnostics from actual helper outputs; four helper calls and five injected wrong outputs are checked. All 29 Chapter 14 files compiled and 19 scripts passed. [Evidence](chapter-14-diagnostic-integration-followup.md). This follows V-36; COV-67 remains partially open.
 
@@ -349,3 +353,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Computed diagnostic integration follow-up — 2026-10-29
 
 [Section 14.8 evidence](chapter-14-diagnostic-integration-followup.md) replaces literal-factor diagnostics with actual helper calls and independently recomputed errors, retaining known numeric checks. Four helper calls are observed and five wrong outputs detected. All 29 chapter files compiled and 19 scripts passed. This source/checker change follows V-36; twenty-five categories remain partially addressed. Next executable item: Section 14.10 reference-report integration under COV-67. Broader numerical, independent-review, environment and release gates remain pending.
+
+## Final-assessment integration follow-up — 2026-10-30
+
+[Section 14.10 evidence](chapter-14-final-integration-followup.md) propagates computed helper results and recomputes factor/matrix diagnostics. Four helper calls and five corrupted outputs are checked; all 30 chapter files compiled and 20 scripts passed. This source/checker change follows V-36; twenty-five categories remain partially addressed. The selected 14.8/14.10 wiring obligation is addressed, while COV-67 and independent review remain open. Next executable item: Chapter 15 COV-71 Hessian finite-difference accuracy/convergence and representability, beginning with its coverage map. Environment and release gates remain pending.
