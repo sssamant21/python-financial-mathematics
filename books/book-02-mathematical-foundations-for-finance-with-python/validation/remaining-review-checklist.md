@@ -1,12 +1,14 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Candidate source revision:** `28af429b7695520536cf4a3384af1318614e31aa`  
+**Candidate source revision:** `378775bc25034f5551f1d1efa51d836da77d6737`  
 **Disposition:** Runtime evidence available; independent review and release approval pending.
 
 ## Reconciled evidence
 
-The [sixth full refresh](runtime-refresh-2026-10-30.md), V-37, covers both recent Chapter 14 integrations and the Chapter 15 Hessian/Jacobian/level-set additions: 461 compiled files, 250 successful scripts and 462 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged.
+[V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md) covers the maturity/covariance changes: 464 files compiled, 253 scripts passed and 465 hashes verified before/after. Latest candidate execution; G2–G8 unchanged.
+
+The [sixth full refresh](runtime-refresh-2026-10-30.md), V-37, covers both recent Chapter 14 integrations and the Chapter 15 Hessian/Jacobian/level-set additions: 461 compiled files, 250 successful scripts and 462 required hashes verified before/after. Historical candidate execution at that time; G2–G8 unchanged.
 
 The [fifth full refresh](runtime-refresh-2026-10-29-r5.md), V-36, covers the four subsequent Chapter 14 checker additions and Section 14.1/14.2/14.5 corrections: 456 files compiled, 245 scripts passed and 457 source/fixture hashes verified before/after. This was the latest candidate execution at that time; G2–G8 unchanged.
 
@@ -30,7 +32,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-37 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-38 refresh at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -121,3 +123,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Covariance derivative consistency correction — 2026-10-30
 
 [Sections 15.4/15.6 evidence](chapter-15-covariance-consistency-followup.md) retains a confirmed accepted-asymmetry derivative inconsistency and original regression failure. Shared symmetric normalization/finite PD screening now passes three covariance cases, nine exact-quadratic references and selected rejection cases; all 26 chapter files compiled and 16 scripts passed. This source/checker change follows V-37. Twenty-six categories remain partially addressed. Next executable item: covariance determinant underflow/cancellation benchmarks, then full-book reconciliation of the maturity/covariance changes. Independent-review, platform and release gates remain pending.
+
+## Covariance screen benchmarks and V-38 — 2026-10-30
+
+[Exact-reference screen evidence](chapter-15-covariance-screen-followup.md) records three exact-PD exclusions from the limited float determinant contract, three accepted near-PD cases and two non-PD cases. Implementation unchanged; all 27 Chapter 15 files compiled and 17 scripts passed. [V-38 full evidence](runtime-refresh-2026-10-30-r2.md) subsequently compiled 464 sources and passed 253 scripts with 465 hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`, including all maturity/covariance corrections. Twenty-six categories remain partially addressed. Next executable item: Chapter 16 COV-73/75 optimizer status/scaling obligations from its coverage map; independent-review, platform and release gates remain open.
