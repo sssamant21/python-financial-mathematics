@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `b5b04e9fbee6367d5d81136d47d9475c96a2dea5`  
-**Latest scoped source revision:** `2d61bd212ca245578b0f6d192dbe824a71132d6c`  
-**Disposition:** Earlier V-43 full runtime plus subsequent Section 16.10 candidate-assessment scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `692e8ffd8425c2fab1a0695f8c647b4fc5a128d7`  
+**Latest scoped source revision:** `692e8ffd8425c2fab1a0695f8c647b4fc5a128d7`  
+**Disposition:** V-44 full runtime includes candidate assessment and cumulative written-objective additions; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-43 twelfth refresh](runtime-refresh-2026-10-30-r7.md) includes raw-price and normalized calibration changes and two checkers: 474 files compiled, 263 scripts passed, 475 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+[V-44 thirteenth refresh](runtime-refresh-2026-10-30-r8.md) includes Section16.10 candidate assessment and distinct exercise objectives with two checkers: 476 files compiled, 265 scripts passed, 477 required hashes verified before/after. Latest candidate execution; G2–G8 unchanged. Earlier records below are historical.
+
+[V-43 twelfth refresh](runtime-refresh-2026-10-30-r7.md) includes raw-price and normalized calibration changes and two checkers: 474 files compiled, 263 scripts passed, 475 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
 [V-42 eleventh refresh](runtime-refresh-2026-10-30-r6.md) includes Sections 16.8–16.10 metric changes and two checkers: 472 files compiled, 261 scripts passed, 473 required hashes verified before/after. Historical candidate execution; G2–G8 unchanged. Earlier records below are historical.
 
@@ -43,7 +45,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-43 at earlier full-runtime pin; subsequent Section 16.10 change has 31-file/21-script scoped rerun; refresh after related executable changes accumulate | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-44 at current pinned candidate; reopen for affected source or fixture changes | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -178,3 +180,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Final per-candidate assessment follow-up — 2026-10-30
 
 [Section 16.10 evidence](chapter-16-final-candidate-followup.md) retains the benchmark-only baseline and original failed check, adds actual-rate training/holdout residuals/metrics, recomputed loss/gradient, retained limits and named provisional acceptance gates. Six candidate reference sets (48 metric fields), six deliberately failed status/rate/gradient/loss/holdout/budget scenarios, a nonfinite rejection and stale-rate exact values pass. An intermediate reference-checker error and its correction are retained separately. All 31 chapter files compiled and 21 scripts passed at `2d61bd212ca245578b0f6d192dbe824a71132d6c`; scoped hashes match the published tree. Current inventory is 475 Python files/264 check-test scripts, not a new full run. This source/checker change follows V-43. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-75 Section 16.10 exact Exercise1–5 (curvature4) and Exercise11–13 (curvature1) objective/history references, kept distinct from three-observation curvature14. Broader threshold/configuration, range, manual proof, independent-review, supported-platform and release obligations remain open.
+
+## Exact cumulative-objective follow-up and V-44 — 2026-10-30
+
+[Section16.10 evidence](chapter-16-cumulative-objective-followup.md) preserves the missing-scope baseline failure, adds distinct computed curvature4/1 exercise evidence alongside aggregate curvature14, and checks eight expanded-polynomial fields, thirty-three exact gradient-descent history fields, one-step Newton and two wrong-scope variants. This addresses a selected coverage gap, not a demonstrated original arithmetic defect. All 32 chapter files compiled and 22 scripts passed. [V-44 full execution](runtime-refresh-2026-10-30-r8.md) compiled 476 files, passed 265 scripts and verified 477 required hashes before/after at `692e8ffd8425c2fab1a0695f8c647b4fc5a128d7`, also covering the preceding candidate-assessment change/checker. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-74 Sections16.9/16.10 normalized objective/loss intermediate range and false-zero cases, using exact represented-residual expectations. Remaining exercise proofs, thresholds/configuration, conditioning, independent-review, supported-platform and release obligations stay open.
