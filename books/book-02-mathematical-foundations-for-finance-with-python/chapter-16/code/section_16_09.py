@@ -1,6 +1,7 @@
 """Book 02 Section 16.9: deterministic calibration optimizer project."""
 import json
 import math
+from section_16_08 import metrics as checked_metrics
 
 TRAIN=((1.0,1050.0),(2.0,1100.0),(3.0,1150.0))
 HOLDOUT=((4.0,1201.0),)
@@ -93,9 +94,7 @@ def optimize(start,method="gradient_descent",step=0.05,
 def price_metrics(rate,rows):
     e=tuple(finite(price(rate,t)-y,"price residual")
             for t,y in validate_rows(rows))
-    return {"residuals":e,"mae":sum(abs(v) for v in e)/len(e),
-            "rmse":math.sqrt(sum(v*v for v in e)/len(e)),
-            "bias":sum(e)/len(e),"max_abs":max(abs(v) for v in e)}
+    return {"residuals":e,**checked_metrics(e)}
 
 def assessment():
     benchmark=analytical_rate()
