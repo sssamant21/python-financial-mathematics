@@ -1,0 +1,245 @@
+[
+  {
+    "id": "4.10-E1",
+    "prompt": "Reverse the catalog rows and verify that the enriched report is unchanged.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "Catalog order is lookup order only; reverse it and expect exactly the same B-before-A report, including zero EUR holding."
+  },
+  {
+    "id": "4.10-E2",
+    "prompt": "Add an unused valid security and verify that the holdings list remains unchanged.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "Append valid SEC-C metadata; no new holding is created. Invalid unused metadata must still be rejected."
+  },
+  {
+    "id": "4.10-E3",
+    "prompt": "Add a test rejecting an extra holding field and another rejecting a numeric holding security ID.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "An extra holding field raises ValueError; a numeric security ID raises TypeError. Input records must remain unchanged."
+  },
+  {
+    "id": "4.10-E4",
+    "prompt": "Extend the model to two portfolios sharing one security. State the identity key for a combined report.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Join two validated portfolios separately; combine by (portfolio_id, snapshot_id, security_id). Reject duplicate portfolio/snapshot wrappers. Shared SEC-A remains two positions, not an aggregate."
+  },
+  {
+    "id": "4.10-E5",
+    "prompt": "Design a lot-level holding schema. Explain why duplicate security references may then be legitimate.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Use parent portfolio_id and snapshot_id, and lot rows with lot_id, security_id, quantity, acquisition_date and cost_currency/cost_basis under a specified accounting policy. Key=(portfolio_id,snapshot_id,lot_id); repeated security references are legitimate different lots. Lot validation/aggregation is not implemented here."
+  },
+  {
+    "id": "4.10-E6",
+    "prompt": "Add a nested tags field to catalog metadata and define how report ownership should work.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "The extended catalog adds tags:list[exact str], retaining order and duplicates. Validate and copy tags for each output row; mutable tag lists never alias catalog or other reports. Original strict catalog rejects this extra field."
+  },
+  {
+    "id": "4.10-E7",
+    "prompt": "Propose fields for price provenance without calculating market value yet.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Propose price_value, price_currency, quote_unit, observed_at with timezone, source_id, source_record_id, retrieved_at, catalog_version and adjustment_basis. Define missing/stale/revised rules before valuation; no price multiplication is performed."
+  },
+  {
+    "id": "4.10-E8",
+    "prompt": "Explain why changing quote_currency from EUR to USD is not a currency conversion.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "Relabel EUR as USD changes metadata only; 0 and 12.5 units stay unchanged. Currency conversion needs an amount, dated exchange-rate direction and source, and rounding policy; holdings units are not currency amounts."
+  },
+  {
+    "id": "4.10-E9",
+    "prompt": "Write a rejected-reference report design that preserves invalid holding details rather than substituting zero values.",
+    "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+    "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Rejected-reference report should retain portfolio/snapshot identity, source index, complete original holding, unresolved ID, reason code and catalog version; use a fresh owned copy under a specified serializable schema. Separate accepted/rejected collections and require explicit downstream partial-result acceptance. Never substitute zero for an unresolved quantity/reference. This quarantine API is a design, not executed code."
+  },
+  {
+    "id": "4.11-E1",
+    "prompt": "Demonstrate rebinding a local parameter without changing the caller's list, then contrast it with appending to that list.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Local rebinding to a new list leaves the caller list unchanged; append mutates the shared list. Probe both operations on the same caller."
+  },
+  {
+    "id": "4.11-E2",
+    "prompt": "Add a tags list to a tuple record and demonstrate why the outer tuple alone is insufficient.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "A tuple containing tags:list permits tags.append; the outer tuple prevents replacing slots but not mutation of descendants."
+  },
+  {
+    "id": "4.11-E3",
+    "prompt": "Extend capture to a tags tuple of exact strings. Define validation for duplicate tags and order.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Capture exact row fields security_id,quantity,tags. Tags must be an exact tuple of nonempty unpadded exact strings; reject duplicate tags rather than silently discard them, preserve declared order. Return immutable triple rows and reject duplicate security IDs."
+  },
+  {
+    "id": "4.11-E4",
+    "prompt": "Write a test rejecting a Decimal subclass under the exact-type policy.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "A Decimal subclass is rejected by exact-type quantity validation even when numerically valid; test capture and replacement."
+  },
+  {
+    "id": "4.11-E5",
+    "prompt": "Add a test replacing a quantity with the same numeric value. Verify equality and baseline preservation without requiring scalar identity changes.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "Replacing SEC-A 12.5 with Decimal(\"12.50\") yields an equal snapshot and new result tuple while preserving baseline. Scalar identity changes are not required."
+  },
+  {
+    "id": "4.11-E6",
+    "prompt": "Implement a separate insert operation with an explicit duplicate-ID policy.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Separate insert validates the whole snapshot, exact ID and quantity, rejects existing ID, and appends a new row in declared order. Empty input is supported; replace continues to reject absent targets."
+  },
+  {
+    "id": "4.11-E7",
+    "prompt": "Design a wrapper that retains portfolio and snapshot identifiers together with captured holdings.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Use an owned wrapper with portfolio_id,snapshot_id,holdings; validate exact nonempty unpadded IDs and capture the immutable holdings component separately. Empty holdings retains parent identity; wrapper metadata is mutable and is not described as frozen."
+  },
+  {
+    "id": "4.11-E8",
+    "prompt": "Explain why deepcopy is not a validation strategy for unsupported financial fields.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "deepcopy duplicates supported object graphs but does not enforce financial units, required fields, duplicate identity, valid quantities or immutable descendants. Validate schema first; do not treat copied unsupported objects as accepted data."
+  },
+  {
+    "id": "4.11-E9",
+    "prompt": "Describe the additional evidence needed to reproduce a valuation from an immutable holdings snapshot.",
+    "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+    "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Reproduction needs security master/version, dated prices and quote units, FX data/conventions, valuation date/timezone, model/code/dependency versions, parameters, numeric context/rounding, input provenance and complete dataset, plus recorded outputs/tolerances. Immutability alone supplies none of these external facts."
+  },
+  {
+    "id": "4.12-E1",
+    "prompt": "Choose representations for an ordered payment schedule, a security catalog, and an allowlist. State what each retains and omits.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Use ordered event rows for a payment schedule (identity/date/amount preserved, no implied aggregation), dictionary keyed by unique security ID for catalog (lookup and insertion order, no duplicate identities), frozenset of allowed IDs for allowlist (membership, no multiplicity/report order). Validate before conversion."
+  },
+  {
+    "id": "4.12-E2",
+    "prompt": "Explain why a set of complete transactions can discard legitimate repeated events when identity is absent.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Two identical transaction tuples collapse to one in a set. Separate event IDs distinguish legitimate repeated events; do not deduplicate solely by equal date and amount."
+  },
+  {
+    "id": "4.12-E3",
+    "prompt": "Add a test proving that reversing source order reverses snapshot and lookup iteration order while preserving membership equality.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "Reversing source reverses snapshot and dictionary iteration order; frozenset membership remains equal, including zero SEC-B."
+  },
+  {
+    "id": "4.12-E4",
+    "prompt": "Add portfolio and snapshot metadata around the three views without placing those mutable dictionaries inside the immutable holdings component.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "Use mutable owned parent metadata and views tuple(snapshot,lookup,members); immutable holdings snapshot contains only exact scalar pairs. Changing parent/lookup never changes snapshot or source. This wrapper does not freeze all components."
+  },
+  {
+    "id": "4.12-E5",
+    "prompt": "Change the input model to lots and define a composite lookup key before adapting the implementation.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "For lots choose composite (portfolio_id,snapshot_id,lot_id) lookup identity, retain security_id as reference and quantity per lot. Validate duplicate lot keys before indexing; same security can appear in several lots. No lot implementation is claimed."
+  },
+  {
+    "id": "4.12-E6",
+    "prompt": "Implement an explicit display function that returns sorted IDs without mutating the views.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SUPPLEMENT",
+    "answer": "display_ids returns a new sorted list of lookup keys. It neither sorts a source in place nor changes snapshot/lookup iteration order; lexicographic exact-ID order is the declared display policy."
+  },
+  {
+    "id": "4.12-E7",
+    "prompt": "Add an exact-type rejection test for a string subclass.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "SOURCE",
+    "answer": "A subclass of str fails the exact string ID policy even if it compares equal to a valid ID."
+  },
+  {
+    "id": "4.12-E8",
+    "prompt": "Describe when maintaining only the ordered snapshot would be simpler than maintaining all three views.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Only snapshot is simpler for small, read-mostly ordered traversals without repeated random lookup or membership workloads. Build other views only for measured needs; no speed or memory benchmark is claimed."
+  },
+  {
+    "id": "4.12-E9",
+    "prompt": "Design a rebuild policy for an application receiving a corrected source snapshot. State how it avoids mixing old and new views.",
+    "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+    "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+    "status": "REVIEWED_SCOPED",
+    "review_kind": "DESIGN",
+    "answer": "Validate an entire corrected source under a new version, build all views privately, then replace one versioned wrapper as a unit. Readers pin that wrapper/version; do not refresh lookup independently. Concurrency, persistence and atomic publication require an application-level mechanism not implemented by the lab."
+  }
+]

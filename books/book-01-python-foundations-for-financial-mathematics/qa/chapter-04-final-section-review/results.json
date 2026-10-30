@@ -1,0 +1,383 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "exercise_records": 27,
+  "predicates": 48,
+  "passed": 48,
+  "failed": 0,
+  "sources": [
+    {
+      "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+      "source_sha256": "eaa5ac1e40342654ca3d615c0e2f82ae542d75e5b1d12dbd01f0f17500051ef7",
+      "code_sha256": "7afa5afee6043d39cb0187ac4a21d9ca354819a363f95f6800867da9bbfff23b"
+    },
+    {
+      "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+      "source_sha256": "b4a24ab1e47501840011519c6432988314a1e5b406e53e7abb4cbc38e01168b7",
+      "code_sha256": "7297cc6f6a3d2befea541696fe870333dea6f42003049a393f7cf335dfc3b589"
+    },
+    {
+      "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+      "source_sha256": "bc76c295763f6f7e8a0b4fe5a63a41fb61fa4ea20adf5366b8d4e3b78e0668ee",
+      "code_sha256": "683613a603f15e5c40337eb6397ba69f3036f3ea7987e0f36aa91fe8173c0c49"
+    }
+  ],
+  "existing_suites": [
+    {
+      "source": "chapter-04/4.10-representing-securities-and-portfolios.md",
+      "methods": 7,
+      "successful": true,
+      "output": "test_duplicates_and_unknown_zero_reference (original_10.PortfolioTests.test_duplicates_and_unknown_zero_reference) ... ok\ntest_empty_and_unused_catalog (original_10.PortfolioTests.test_empty_and_unused_catalog) ... ok\ntest_exact_join_order_and_zero (original_10.PortfolioTests.test_exact_join_order_and_zero) ... ok\ntest_invalid_later_holding_preserves_source (original_10.PortfolioTests.test_invalid_later_holding_preserves_source) ... ok\ntest_ownership_and_repeatability (original_10.PortfolioTests.test_ownership_and_repeatability) ... ok\ntest_quantity_types_and_domains (original_10.PortfolioTests.test_quantity_types_and_domains) ... ok\ntest_schema_and_text (original_10.PortfolioTests.test_schema_and_text) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "chapter-04/4.11-mutable-vs-immutable-data.md",
+      "methods": 7,
+      "successful": true,
+      "output": "test_capture_order_values_and_empty (original_11.ImmutabilityTests.test_capture_order_values_and_empty) ... ok\ntest_capture_schema_and_duplicates (original_11.ImmutabilityTests.test_capture_schema_and_duplicates) ... ok\ntest_invalid_later_row_and_subclass (original_11.ImmutabilityTests.test_invalid_later_row_and_subclass) ... ok\ntest_quantity_and_id_validation (original_11.ImmutabilityTests.test_quantity_and_id_validation) ... ok\ntest_replacement_preserves_baseline (original_11.ImmutabilityTests.test_replacement_preserves_baseline) ... ok\ntest_snapshot_structure_and_unknown_target (original_11.ImmutabilityTests.test_snapshot_structure_and_unknown_target) ... ok\ntest_source_isolation_and_supported_types (original_11.ImmutabilityTests.test_source_isolation_and_supported_types) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "source": "chapter-04/4.12-choosing-appropriate-data-structures.md",
+      "methods": 7,
+      "successful": true,
+      "output": "test_duplicate_rejection_including_zero (original_12.StructureChoiceTests.test_duplicate_rejection_including_zero) ... ok\ntest_empty (original_12.StructureChoiceTests.test_empty) ... ok\ntest_exact_views_and_order (original_12.StructureChoiceTests.test_exact_views_and_order) ... ok\ntest_invalid_later_record_preserves_source (original_12.StructureChoiceTests.test_invalid_later_record_preserves_source) ... ok\ntest_rebuild_from_new_source (original_12.StructureChoiceTests.test_rebuild_from_new_source) ... ok\ntest_schema_identity_and_quantity (original_12.StructureChoiceTests.test_schema_identity_and_quantity) ... ok\ntest_source_and_lookup_independence (original_12.StructureChoiceTests.test_source_and_lookup_independence) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "4.10-E1",
+      "label": "reversed catalog",
+      "actual": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-B', 'name': 'Example Fund', 'quote_currency': 'EUR', 'quantity': Decimal('0')}, {'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-A', 'name': 'Example Equity', 'quote_currency': 'USD', 'quantity': Decimal('12.5')}]}",
+      "expected": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-B', 'name': 'Example Fund', 'quote_currency': 'EUR', 'quantity': Decimal('0')}, {'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-A', 'name': 'Example Equity', 'quote_currency': 'USD', 'quantity': Decimal('12.5')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E2",
+      "label": "unused valid metadata",
+      "actual": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-B', 'name': 'Example Fund', 'quote_currency': 'EUR', 'quantity': Decimal('0')}, {'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-A', 'name': 'Example Equity', 'quote_currency': 'USD', 'quantity': Decimal('12.5')}]}",
+      "expected": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-B', 'name': 'Example Fund', 'quote_currency': 'EUR', 'quantity': Decimal('0')}, {'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'security_id': 'SEC-A', 'name': 'Example Equity', 'quote_currency': 'USD', 'quantity': Decimal('12.5')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E2",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E3",
+      "label": "failure preserves input",
+      "actual": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'security_id': 'SEC-B', 'quantity': Decimal('0'), 'extra': 0}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]}",
+      "expected": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'security_id': 'SEC-B', 'quantity': Decimal('0'), 'extra': 0}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E3",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E3",
+      "label": "failure preserves input",
+      "actual": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'security_id': 1, 'quantity': Decimal('0')}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]}",
+      "expected": "{'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'security_id': 1, 'quantity': Decimal('0')}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E4",
+      "label": "shared security keys",
+      "actual": "[('PORT-01', 'SNAP-01', 'SEC-A'), ('PORT-02', 'SNAP-01', 'SEC-A')]",
+      "expected": "[('PORT-01', 'SNAP-01', 'SEC-A'), ('PORT-02', 'SNAP-01', 'SEC-A')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E4",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E6",
+      "label": "source tags owned",
+      "actual": "['x', 'x']",
+      "expected": "['x', 'x']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E6",
+      "label": "other report fresh",
+      "actual": "['x', 'x']",
+      "expected": "['x', 'x']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E6",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E8",
+      "label": "quantities unchanged",
+      "actual": "[Decimal('0'), Decimal('12.5')]",
+      "expected": "[Decimal('0'), Decimal('12.5')]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.10-E1",
+      "label": "source preservation",
+      "actual": "([{'security_id': 'SEC-A', 'name': 'Example Equity', 'quote_currency': 'USD'}, {'security_id': 'SEC-B', 'name': 'Example Fund', 'quote_currency': 'EUR'}], {'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'security_id': 'SEC-B', 'quantity': Decimal('0')}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]})",
+      "expected": "([{'security_id': 'SEC-A', 'name': 'Example Equity', 'quote_currency': 'USD'}, {'security_id': 'SEC-B', 'name': 'Example Fund', 'quote_currency': 'EUR'}], {'portfolio_id': 'PORT-01', 'snapshot_id': 'SNAP-01', 'holdings': [{'security_id': 'SEC-B', 'quantity': Decimal('0')}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E1",
+      "label": "rebind result",
+      "actual": "[2]",
+      "expected": "[2]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E1",
+      "label": "caller unchanged",
+      "actual": "[1]",
+      "expected": "[1]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E1",
+      "label": "append shared",
+      "actual": "[1, 3]",
+      "expected": "[1, 3]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E2",
+      "label": "mutable descendant",
+      "actual": "('A', ['mutable'])",
+      "expected": "('A', ['mutable'])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E3",
+      "label": "tag order",
+      "actual": "(('A', Decimal('0'), ('z', 'a')),)",
+      "expected": "(('A', Decimal('0'), ('z', 'a')),)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E3",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E3",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E3",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E4",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E5",
+      "label": "equal value",
+      "actual": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.50')))",
+      "expected": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E5",
+      "label": "new tuple",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E5",
+      "label": "baseline literal",
+      "actual": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')))",
+      "expected": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E4",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E6",
+      "label": "append insert",
+      "actual": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')), ('SEC-C', Decimal('3')))",
+      "expected": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')), ('SEC-C', Decimal('3')))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E6",
+      "label": "empty insert",
+      "actual": "(('A', Decimal('0')),)",
+      "expected": "(('A', Decimal('0')),)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E6",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E7",
+      "label": "empty identity",
+      "actual": "{'portfolio_id': 'P', 'snapshot_id': 'S', 'holdings': ()}",
+      "expected": "{'portfolio_id': 'P', 'snapshot_id': 'S', 'holdings': ()}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.11-E7",
+      "label": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E2",
+      "label": "unidentified equal events collapse",
+      "actual": "1",
+      "expected": "1",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E2",
+      "label": "distinct identities retained",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E3",
+      "label": "snapshot reverse",
+      "actual": "(('SEC-A', Decimal('12.5')), ('SEC-B', Decimal('0')))",
+      "expected": "(('SEC-A', Decimal('12.5')), ('SEC-B', Decimal('0')))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E3",
+      "label": "lookup reverse",
+      "actual": "['SEC-A', 'SEC-B']",
+      "expected": "['SEC-A', 'SEC-B']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E3",
+      "label": "membership invariant",
+      "actual": "frozenset({'SEC-A', 'SEC-B'})",
+      "expected": "frozenset({'SEC-A', 'SEC-B'})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E3",
+      "label": "zero member included",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E4",
+      "label": "immutable snapshot preserved",
+      "actual": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')))",
+      "expected": "(('SEC-B', Decimal('0')), ('SEC-A', Decimal('12.5')))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E4",
+      "label": "source preserved",
+      "actual": "[{'security_id': 'SEC-B', 'quantity': Decimal('0')}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]",
+      "expected": "[{'security_id': 'SEC-B', 'quantity': Decimal('0')}, {'security_id': 'SEC-A', 'quantity': Decimal('12.5')}]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E6",
+      "label": "display sorted",
+      "actual": "['SEC-A', 'SEC-B']",
+      "expected": "['SEC-A', 'SEC-B']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E6",
+      "label": "lookup order unchanged",
+      "actual": "['SEC-B', 'SEC-A']",
+      "expected": "['SEC-B', 'SEC-A']",
+      "status": "PASS"
+    },
+    {
+      "exercise": "4.12-E7",
+      "label": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "status": "PASS"
+    }
+  ]
+}
