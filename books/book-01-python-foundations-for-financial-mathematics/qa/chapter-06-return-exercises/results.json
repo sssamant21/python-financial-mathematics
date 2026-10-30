@@ -1,0 +1,232 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.09-return-vectors.md",
+  "source_sha256": "6249495ba1cc97cd06e27bb6fb13ee94432b9e814b8f359e464b0525878ac27b",
+  "listing_sha256": [
+    "150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331",
+    "e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7"
+  ],
+  "exercise_records": 8,
+  "command_records": 2,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 25,
+  "failed": 0,
+  "independent_oracles": {
+    "last_interval_simple": "-89/1089",
+    "long_price_formula": "100+(17*i)%31 for i in range(257)",
+    "long_endpoint_fraction": "28/25",
+    "long_max_absolute_error": 2.220446049250313e-16,
+    "long_comparison_rtol": 1e-12,
+    "long_comparison_atol": 1e-14
+  },
+  "commands": [
+    {
+      "label": "original source suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_constant_and_single_interval (test_return_vectors.ReturnTests.test_constant_and_single_interval) ... ok\ntest_dtype_and_price_domain (test_return_vectors.ReturnTests.test_dtype_and_price_domain) ... ok\ntest_known_path_and_alignment (test_return_vectors.ReturnTests.test_known_path_and_alignment) ... ok\ntest_numerical_failure_restores_policy (test_return_vectors.ReturnTests.test_numerical_failure_restores_policy) ... ok\ntest_period_contract (test_return_vectors.ReturnTests.test_period_contract) ... ok\ntest_scalar_and_endpoint_references (test_return_vectors.ReturnTests.test_scalar_and_endpoint_references) ... ok\ntest_source_preservation_and_storage (test_return_vectors.ReturnTests.test_source_preservation_and_storage) ... ok\ntest_timing_not_annualized (test_return_vectors.ReturnTests.test_timing_not_annualized) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.041s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "original source demo",
+      "args": [
+        "return_vectors.py"
+      ],
+      "returncode": 0,
+      "stdout": "Intervals: [(0, 1), (1, 3), (3, 4)]\nSimple returns: ['10.00%', '-10.00%', '10.00%']\nGrowth from first price: ['1.100000', '0.990000', '1.089000']\nLinked price-only return: 8.90%\nSum of simple returns: 10.00%\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.9-E1",
+      "label": "added final interval",
+      "actual": "([0, 1, 3, 4], [1, 3, 4, 5])",
+      "expected": "([0, 1, 3, 4], [1, 3, 4, 5])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E1",
+      "label": "final linked return zero within explicit tolerance",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E1",
+      "label": "last interval against decimal-rational ratio",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E2",
+      "label": "20 percent up/down gross",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E2",
+      "label": "linked loss vs summed zero",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E3",
+      "label": "every output has N minus one elements",
+      "actual": "{'start_periods': (3,), 'end_periods': (3,), 'gross': (3,), 'simple': (3,), 'growth': (3,)}",
+      "expected": "{'start_periods': (3,), 'end_periods': (3,), 'gross': (3,), 'simple': (3,), 'growth': (3,)}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E3",
+      "label": "actual intervals only",
+      "actual": "[(0, 1), (1, 3), (3, 4)]",
+      "expected": "[(0, 1), (1, 3), (3, 4)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E3",
+      "label": "first output is first actual return not artificial zero",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E3",
+      "label": "two observations give exactly one labelled interval",
+      "actual": "((1,), [4], [9])",
+      "expected": "((1,), [4], [9])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E4",
+      "label": "original positive-path API rejects terminal zero",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-return-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-return-exercises/review.py\", line 33, in <lambda>\n    reject('6.9-E4','original positive-path API rejects terminal zero',lambda:m.return_path(np.array([0,1],dtype=np.int64),np.array([100.,0.])),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.09-return-vectors.md\", line 24, in return_path\nValueError: prices must be finite and strictly positive\n"
+    },
+    {
+      "exercise": "6.9-E4",
+      "label": "source rejects attempted resurrection after zero",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-return-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-return-exercises/review.py\", line 34, in <lambda>\n    reject('6.9-E4','source rejects attempted resurrection after zero',lambda:m.return_path(np.array([0,1,2],dtype=np.int64),np.array([100.,0.,10.])),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.09-return-vectors.md\", line 24, in return_path\nValueError: prices must be finite and strictly positive\n"
+    },
+    {
+      "exercise": "6.9-E4",
+      "label": "separate rational terminal-event design",
+      "actual": "(Fraction(0, 1), Fraction(-1, 1))",
+      "expected": "(Fraction(0, 1), Fraction(-1, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E5",
+      "label": "strict source rejects middle NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-return-exercises/review.py\", line 15, in reject\n    try: fn(); actual='no exception'; detail=''\n         ^^^^\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-return-exercises/review.py\", line 37, in <lambda>\n    reject('6.9-E5','strict source rejects middle NaN',lambda:m.return_path(periods,missing),'ValueError')\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6returnx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.09-return-vectors.md\", line 24, in return_path\nValueError: prices must be finite and strictly positive\n"
+    },
+    {
+      "exercise": "6.9-E5",
+      "label": "explicit paired filtering records longer interval",
+      "actual": "[(0, 3), (3, 4)]",
+      "expected": "[(0, 3), (3, 4)]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E5",
+      "label": "bridge ratio derives endpoints only",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E6",
+      "label": "separate cash-distribution convention",
+      "actual": "(Fraction(1, 20), Fraction(-1, 20))",
+      "expected": "(Fraction(1, 20), Fraction(-1, 20))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E6",
+      "label": "source price-only path excludes cash",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E7",
+      "label": "deterministic longer output counts",
+      "actual": "((256,), 256)",
+      "expected": "((256,), 256)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E7",
+      "label": "linked path vs independently telescoped rational endpoints",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E7",
+      "label": "linked path vs float endpoint division",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E7",
+      "label": "all interval endpoints preserved",
+      "actual": "([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256])",
+      "expected": "([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.9-E8",
+      "label": "timing changed but return arithmetic not annualized",
+      "actual": "([0.10000000000000009, -0.09999999999999998, 0.10000000000000009], [10, 30, 40])",
+      "expected": "([0.10000000000000009, -0.09999999999999998, 0.10000000000000009], [10, 30, 40])",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original inputs unchanged",
+      "actual": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x80[@\\x00\\x00\\x00\\x00\\x00\\xc0X@\\x9a\\x99\\x99\\x99\\x999[@')",
+      "expected": "(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x04\\x00\\x00\\x00\\x00\\x00\\x00\\x00', b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x80[@\\x00\\x00\\x00\\x00\\x00\\xc0X@\\x9a\\x99\\x99\\x99\\x999[@')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "outputs do not share caller storage",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "extracted source/test bytes unchanged",
+      "actual": "{'return_vectors.py': '150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331', 'test_return_vectors.py': 'e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7'}",
+      "expected": "{'return_vectors.py': '150c9324c04b2182193bd5faf701bb76f1f8cadc08e5f964d593e5c477b28331', 'test_return_vectors.py': 'e089568d9af31539b489e9a4727a135009767d295ad1496f91fe7f88c92fede7'}",
+      "status": "PASS"
+    }
+  ]
+}

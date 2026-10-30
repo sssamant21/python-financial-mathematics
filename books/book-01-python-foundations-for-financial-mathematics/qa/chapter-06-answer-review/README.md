@@ -38,4 +38,6 @@ Earlier checkpoint: [Section 6.6 local exercises](../chapter-06-broadcasting-exe
 
 Earlier checkpoint: [Section 6.7 local exercises](../chapter-06-aggregation-exercises/README.md) records eight answers, two final command checks and 27 final predicates. Eight existing methods passed in each of two runs; initial QA variance-constant failure/corrected rerun retained under F36. Local queue: 56/128 reviewed, 72 pending. Next: Section 6.8.
 
-Current checkpoint: [Section 6.8 local exercises](../chapter-06-cashflow-exercises/README.md) records eight answers, two command checks, 24 predicates and eight existing methods rerun. Local queue: 64/128 reviewed, 64 pending. Next: Section 6.9.
+Earlier checkpoint: [Section 6.8 local exercises](../chapter-06-cashflow-exercises/README.md) records eight answers, two command checks, 24 predicates and eight existing methods rerun. Local queue: 64/128 reviewed, 64 pending. Next: Section 6.9.
+
+Current checkpoint: [Section 6.9 local exercises](../chapter-06-return-exercises/README.md) records eight answers, two command checks, 25 predicates and eight existing methods rerun. Local queue: 72/128 reviewed, 56 pending. Next: Section 6.10.
