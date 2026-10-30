@@ -1,6 +1,8 @@
 """Book 02 Section 16.9: deterministic calibration optimizer project."""
 import json
 import math
+from fractions import Fraction
+from section_16_08 import _rounded_calibration
 from section_16_08 import metrics as checked_metrics
 
 TRAIN=((1.0,1050.0),(2.0,1100.0),(3.0,1150.0))
@@ -48,18 +50,16 @@ def objective(rate,rows=TRAIN):
 def gradient(rate,rows=TRAIN):
     data=validate_rows(rows)
     e=normalized_residuals(rate,data)
-    return finite(sum(t*v for (t,_),v in zip(data,e)),"gradient")
+    return _rounded_calibration(sum(Fraction(t)*Fraction(v) for (t,_),v in zip(data,e)),"gradient")
 
 def curvature(rows=TRAIN):
-    return finite(sum(t*t for t,_ in validate_rows(rows)),"curvature")
+    return _rounded_calibration(sum(Fraction(t)**2 for t,_ in validate_rows(rows)),"curvature")
 
 def analytical_rate(rows=TRAIN):
     data=validate_rows(rows)
-    den=curvature(data)
-    if den<=0:
-        raise ValueError("positive curvature required")
-    num=sum(t*(y-1000)/1000 for t,y in data)
-    return finite(num/den,"analytical rate")
+    denominator=sum(Fraction(t)**2 for t,_ in data)
+    numerator=sum(Fraction(t)*(Fraction(y)-1000)/1000 for t,y in data)
+    return _rounded_calibration(numerator/denominator,"analytical rate")
 
 def optimize(start,method="gradient_descent",step=0.05,
              tolerance=1e-9,max_iterations=100):
