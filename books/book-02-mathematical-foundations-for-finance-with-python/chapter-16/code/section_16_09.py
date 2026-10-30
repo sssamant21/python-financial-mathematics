@@ -40,12 +40,12 @@ def price(rate,time):
     return finite(1000*(1+t*r),"price")
 
 def normalized_residuals(rate,rows=TRAIN):
-    return tuple(finite((price(rate,t)-y)/1000,"normalized residual")
+    return tuple(_rounded_calibration(Fraction(finite(price(rate,t)-y,"price residual"))/1000,"normalized residual")
                  for t,y in validate_rows(rows))
 
 def objective(rate,rows=TRAIN):
     e=normalized_residuals(rate,rows)
-    return finite(0.5*sum(v*v for v in e),"objective")
+    return _rounded_calibration(sum(Fraction(v)**2 for v in e)/2,"objective")
 
 def gradient(rate,rows=TRAIN):
     data=validate_rows(rows)
