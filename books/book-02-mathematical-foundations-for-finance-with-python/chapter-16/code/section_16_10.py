@@ -1,6 +1,7 @@
 """Book 02 Section 16.10: chapter-wide applied optimization lab."""
 import json
 import math
+from section_16_08 import metrics as checked_metrics
 
 TRAIN=((1.0,1050.0),(2.0,1100.0),(3.0,1150.0))
 HOLDOUT=((4.0,1201.0),)
@@ -75,12 +76,7 @@ def solve(start,method="newton",step=0.05,tol=1e-9,max_iterations=100):
             "gradient":gradient(x),"iterations":k,"status":status}
 
 def metrics(errors):
-    if not isinstance(errors,(tuple,list)) or not errors:
-        raise ValueError("nonempty residuals required")
-    e=tuple(finite(v,"residual") for v in errors)
-    return {"mae":sum(abs(v) for v in e)/len(e),
-            "rmse":math.sqrt(sum(v*v for v in e)/len(e)),
-            "bias":sum(e)/len(e),"max_abs":max(abs(v) for v in e)}
+    return checked_metrics(errors)
 
 def portfolio_variance(w1,w2):
     x,y=finite(w1,"w1"),finite(w2,"w2")
