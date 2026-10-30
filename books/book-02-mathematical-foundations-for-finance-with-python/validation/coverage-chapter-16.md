@@ -48,3 +48,7 @@ These extend COV-01–COV-72; gap categories are not defect counts. No code/manu
 ## Subsequent COV-74 remediation — 2026-10-29
 
 The [per-candidate acceptance follow-up](chapter-16-candidate-acceptance-followup.md) recomputes price metrics, normalized loss and gradient for every iterative candidate and records individual acceptance. Fraction-based residual/metric references and failed status/rate/gradient/holdout/budget cases are checked. All 20 chapter files compiled and all 10 scripts passed. COV-74 retains broader invalid-data, optimizer/threshold and independent-review work; original mapping evidence remains historical.
+
+## Optimizer status and Armijo follow-up — 2026-10-30
+
+[Chapter 16 evidence](chapter-16-optimizer-status-followup.md) adds nine adjacent sufficient-decrease cases, objective/backtracking counts and selected stationary/stagnation/budget/no-descent states. All 21 chapter files compiled and 11 scripts passed; implementation unchanged. This checker follows V-38; twenty-seven categories are partially addressed and COV-73 remains open. Next executable item: Section 16.7 multistart/best-observed independent stationary-cubic roots and local classification; no global-optimum certification. Independent-review, platform and release gates remain pending.
