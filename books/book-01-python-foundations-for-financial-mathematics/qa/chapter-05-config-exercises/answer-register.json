@@ -1,0 +1,82 @@
+[
+  {
+    "id": "5.10-E1",
+    "prompt": "Add a test proving --config is required and no successful JSON report appears on failure.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "SOURCE",
+    "answer": "Run the unchanged CLI without --config in a controlled process environment: nonzero status, argparse required-option diagnostic and exactly empty stdout. This is an executable regression check; no successful JSON or default-file search is accepted."
+  },
+  {
+    "id": "5.10-E2",
+    "prompt": "Add a test for an absolute configuration path outside the project directory.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "SOURCE",
+    "answer": "Put settings.json in a sibling outside directory; launch the absolute original config_demo.py from that outside cwd with the absolute configuration path. Expect test/EUR/4 and file provenance for all three keys. Check file bytes remain identical. Data path resolution and import resolution remain separate: absolute script invocation makes its sibling configuration.py available without installing a package."
+  },
+  {
+    "id": "5.10-E3",
+    "prompt": "Add an allowlisted non-secret report-language setting across all layers and tests.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "SUPPLEMENT",
+    "answer": "The separate extended_configuration.py adds report_language with exact en/fr strings, default en, FINLAB_REPORT_LANGUAGE and --report-language. Required JSON, duplicate/unknown-key rejection, all-layer validation, frozen record and source provenance remain explicit. Four subprocess cases cover default/file/environment/CLI precedence, including a French file shadowed by English environment then French CLI. Twenty-one invalid language cases span all layers (including hidden candidates), with CLI failure, required-file and ownership/immutability regressions. Language is a selection label, not an implemented translation engine. The original three-setting API is unchanged."
+  },
+  {
+    "id": "5.10-E4",
+    "prompt": "Implement rejection of unknown FINLAB_ variables while continuing to ignore unrelated process variables. Document the compatibility tradeoff.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "SUPPLEMENT+SOURCE_COMPARISON",
+    "answer": "Reserve the complete FINLAB_ namespace in the exercise extension: fail on any prefixed name outside the recognized four-name set, still ignore unrelated OS variables. Original source explicitly ignores misspellings and is tested doing so; the new policy rejects FINLAB_CURRNCY, FINLAB_UNUSED and FINLAB_. A real subprocess typo fails with no report. Compatibility tradeoff: additional FINLAB_ names used by another component or future version now reject an otherwise valid launch. Deploy with a documented namespace/version and migrate launch environments deliberately; do not silently make this change to the original API."
+  },
+  {
+    "id": "5.10-E5",
+    "prompt": "Compare strict validation of all layers with validation of only the winner. Give a concrete failure example for each policy.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "SOURCE+SUPPLEMENTAL_POLICY_DEMONSTRATION",
+    "answer": "Concrete strict-policy failure: file currency GBP with CLI EUR is rejected, even when an operator intended the CLI override as an emergency repair; correct the file or choose/document a different policy. Concrete winner-only risk: the small supplemental winner_currency policy returns EUR while concealing stale GBP, then fails when the override is removed. Both outcomes are executed. Winner-only is not implemented as a replacement multi-setting JSON resolver; strict policy is not itself a manuscript defect."
+  },
+  {
+    "id": "5.10-E6",
+    "prompt": "Specify a redacted provenance record for a remote data reader without including credentials.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "DESIGN",
+    "answer": "Remote-reader provenance schema: schema_version; code revision/source digest; dependency artifact manifest; selected non-secret environment and source labels; opaque approved endpoint ID (never raw credential-bearing URL); pseudonymous account/role ID; dataset/version/as-of/retrieval timestamps in UTC; request/query digest after reviewed canonical redaction; input content digest and row count; numerical/FX/rounding policies; output digest; status and run ID. Keep allowlisted values only, exclude tokens/passwords/session IDs/raw headers/connection strings/PII-bearing query text and secret hashes. Redact before serialization and restrict retention/access; provenance is not authorization. A remote identity/data run and credential delivery are not executed."
+  },
+  {
+    "id": "5.10-E7",
+    "prompt": "Design a test that confirms selecting another currency label does not perform foreign-exchange conversion.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "SOURCE+DESIGN_LIMIT",
+    "answer": "Execute the unchanged CLI with identical development.json under USD and EUR override. Check exact currency labels, identical remaining settings/provenance, and original Settings fields contain no amount/rate field. The supplied application only resolves settings and has no amount-conversion API; these checks establish that limited contract, not absence of arbitrary side effects in a future system. A downstream financial application must separately test amounts retained in their original units and reject unsupported conversion requests or require explicit rate/source/date policy."
+  },
+  {
+    "id": "5.10-E8",
+    "prompt": "Describe the controls required to prevent a development process from accessing production data.",
+    "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+    "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-05-config-exercises/README.md",
+    "kind": "DESIGN",
+    "answer": "Enforce separate development identities with least privilege and explicit denial of production accounts/datasets; isolated credentials and secret stores unavailable to development; endpoint/network egress restrictions plus server-side authorization; separate storage and scoped resource policies; synthetic/sanitized fixtures; audited access attempts and denied-access integration checks under the actual development identity. Review endpoint/account/dataset together. Environment labels, venvs, Git ignore and client-side flags alone do not enforce access. No production connection, secret, firewall or identity change was performed."
+  }
+]

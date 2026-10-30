@@ -1,0 +1,569 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-05/5.10-configuration-and-environment-separation.md",
+  "source_sha256": "63085fd574ce8a28efc9f18048b17abde496d9de4403c8396f6ca6792c345cba",
+  "original_files": {
+    "configuration.py": "e39025a7e89a04e8e763182b7a3582bb33c48ac0cd94a0dda745e1eb996d5a13",
+    "config_demo.py": "9531d0ba5c56a7f994605fb98a7c6bc27f7884f14832ecf62aa45cbf20c3774a",
+    "test_configuration.py": "5ce1a8c0b21c9aa87a57b44044433413284fbe51ac0692b183f5af8936fd4fd5",
+    "development.json": "a8afd247ac1f5a285bb515609afc97a3e7722658aa3d891126ff67c8ecc3e665"
+  },
+  "supplemental_files": {
+    "extended_configuration.py": "eab673a34d633bc2e4231eb4111fd79ff7a1de88413a426a772244a9047341a5"
+  },
+  "exercise_records": 8,
+  "command_records": 11,
+  "command_passed": 11,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 40,
+  "passed": 40,
+  "failed": 0,
+  "operations": [
+    {
+      "label": "exact original eight-method suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_cli_and_failure_have_expected_output (test_configuration.ConfigurationTests.test_cli_and_failure_have_expected_output) ... ok\ntest_defaults (test_configuration.ConfigurationTests.test_defaults) ... ok\ntest_environment_override (test_configuration.ConfigurationTests.test_environment_override) ... ok\ntest_invalid_values_including_shadowed (test_configuration.ConfigurationTests.test_invalid_values_including_shadowed) ... ok\ntest_isolation_and_immutable_result (test_configuration.ConfigurationTests.test_isolation_and_immutable_result) ... ok\ntest_missing_or_malformed_file (test_configuration.ConfigurationTests.test_missing_or_malformed_file) ... ok\ntest_precedence_and_provenance (test_configuration.ConfigurationTests.test_precedence_and_provenance) ... ok\ntest_schema_and_duplicate_rejection (test_configuration.ConfigurationTests.test_schema_and_duplicate_rejection) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.135s\n\nOK\n",
+      "expected_error": null,
+      "expected_json": null,
+      "expected_methods": 8,
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "E1 required --config, no report",
+      "args": [
+        "config_demo.py"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: config_demo.py [-h] --config CONFIG [--environment ENVIRONMENT]\n                      [--currency CURRENCY] [--decimal-places DECIMAL_PLACES]\nconfig_demo.py: error: the following arguments are required: --config\n",
+      "expected_error": "the following arguments are required: --config",
+      "expected_json": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E2 absolute configuration outside project, outside cwd",
+      "args": [
+        "/tmp/configuration-exercises-8_lw431u/project/config_demo.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/outside/settings.json"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/outside",
+      "controlled_variables": {},
+      "returncode": 0,
+      "stdout": "{\"currency\": \"EUR\", \"decimal_places\": 4, \"environment\": \"test\", \"sources\": {\"currency\": \"file\", \"decimal_places\": \"file\", \"environment\": \"file\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": {
+        "environment": "test",
+        "currency": "EUR",
+        "decimal_places": 4,
+        "sources": {
+          "environment": "file",
+          "currency": "file",
+          "decimal_places": "file"
+        }
+      },
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 language default",
+      "args": [
+        "extended_configuration.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/project/settings.json"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 0,
+      "stdout": "{\"currency\": \"USD\", \"decimal_places\": 2, \"environment\": \"development\", \"report_language\": \"en\", \"sources\": {\"currency\": \"default\", \"decimal_places\": \"default\", \"environment\": \"default\", \"report_language\": \"default\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": {
+        "environment": "development",
+        "currency": "USD",
+        "decimal_places": 2,
+        "report_language": "en",
+        "sources": {
+          "environment": "default",
+          "currency": "default",
+          "decimal_places": "default",
+          "report_language": "default"
+        }
+      },
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 language file",
+      "args": [
+        "extended_configuration.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/project/settings.json"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 0,
+      "stdout": "{\"currency\": \"USD\", \"decimal_places\": 2, \"environment\": \"development\", \"report_language\": \"fr\", \"sources\": {\"currency\": \"default\", \"decimal_places\": \"default\", \"environment\": \"default\", \"report_language\": \"file\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": {
+        "environment": "development",
+        "currency": "USD",
+        "decimal_places": 2,
+        "report_language": "fr",
+        "sources": {
+          "environment": "default",
+          "currency": "default",
+          "decimal_places": "default",
+          "report_language": "file"
+        }
+      },
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 language environment",
+      "args": [
+        "extended_configuration.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/project/settings.json"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {
+        "FINLAB_REPORT_LANGUAGE": "en"
+      },
+      "returncode": 0,
+      "stdout": "{\"currency\": \"USD\", \"decimal_places\": 2, \"environment\": \"development\", \"report_language\": \"en\", \"sources\": {\"currency\": \"default\", \"decimal_places\": \"default\", \"environment\": \"default\", \"report_language\": \"environment\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": {
+        "environment": "development",
+        "currency": "USD",
+        "decimal_places": 2,
+        "report_language": "en",
+        "sources": {
+          "environment": "default",
+          "currency": "default",
+          "decimal_places": "default",
+          "report_language": "environment"
+        }
+      },
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 language cli",
+      "args": [
+        "extended_configuration.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/project/settings.json",
+        "--report-language",
+        "fr"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {
+        "FINLAB_REPORT_LANGUAGE": "en"
+      },
+      "returncode": 0,
+      "stdout": "{\"currency\": \"USD\", \"decimal_places\": 2, \"environment\": \"development\", \"report_language\": \"fr\", \"sources\": {\"currency\": \"default\", \"decimal_places\": \"default\", \"environment\": \"default\", \"report_language\": \"cli\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": {
+        "environment": "development",
+        "currency": "USD",
+        "decimal_places": 2,
+        "report_language": "fr",
+        "sources": {
+          "environment": "default",
+          "currency": "default",
+          "decimal_places": "default",
+          "report_language": "cli"
+        }
+      },
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E3 CLI invalid language no report",
+      "args": [
+        "extended_configuration.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/project/settings.json",
+        "--report-language",
+        "es"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/configuration-exercises-8_lw431u/project/extended_configuration.py\", line 67, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/configuration-exercises-8_lw431u/project/extended_configuration.py\", line 60, in main\n    settings = resolve(args.config, dict(os.environ), overrides)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/configuration-exercises-8_lw431u/project/extended_configuration.py\", line 44, in resolve\n    raise ValueError(f'invalid {key} in {source}')\nValueError: invalid report_language in cli\n",
+      "expected_error": "invalid report_language in cli",
+      "expected_json": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E4 misspelled FINLAB CLI process variable no report",
+      "args": [
+        "extended_configuration.py",
+        "--config",
+        "/tmp/configuration-exercises-8_lw431u/project/settings.json"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {
+        "FINLAB_CURRNCY": "EUR"
+      },
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/configuration-exercises-8_lw431u/project/extended_configuration.py\", line 67, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/configuration-exercises-8_lw431u/project/extended_configuration.py\", line 60, in main\n    settings = resolve(args.config, dict(os.environ), overrides)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/configuration-exercises-8_lw431u/project/extended_configuration.py\", line 35, in resolve\n    raise ValueError('unknown FINLAB_ variable')\nValueError: unknown FINLAB_ variable\n",
+      "expected_error": "unknown FINLAB_ variable",
+      "expected_json": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E7 exact original USD label report",
+      "args": [
+        "config_demo.py",
+        "--config",
+        "development.json"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 0,
+      "stdout": "{\"currency\": \"USD\", \"decimal_places\": 2, \"environment\": \"development\", \"sources\": {\"currency\": \"file\", \"decimal_places\": \"file\", \"environment\": \"file\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "E7 exact original EUR label report",
+      "args": [
+        "config_demo.py",
+        "--config",
+        "development.json",
+        "--currency",
+        "EUR"
+      ],
+      "cwd": "/tmp/configuration-exercises-8_lw431u/project",
+      "controlled_variables": {},
+      "returncode": 0,
+      "stdout": "{\"currency\": \"EUR\", \"decimal_places\": 2, \"environment\": \"development\", \"sources\": {\"currency\": \"cli\", \"decimal_places\": \"file\", \"environment\": \"file\"}}\n",
+      "stderr": "",
+      "expected_error": null,
+      "expected_json": null,
+      "expected_methods": null,
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language '', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language 'EN', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language ' fr', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language 'es', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language None, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language True, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "file invalid language 2, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language '', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language 'EN', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language ' fr', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language 'es', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language None, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language True, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "environment invalid language 2, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language '', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language 'EN', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language ' fr', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language 'es', even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language None, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language True, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "cli invalid language 2, even shadowed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E4",
+      "label": "original ignores typo",
+      "actual": "'USD'",
+      "expected": "'USD'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E4",
+      "label": "reserved namespace rejects FINLAB_CURRNCY",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E4",
+      "label": "reserved namespace rejects FINLAB_UNUSED",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E4",
+      "label": "reserved namespace rejects FINLAB_",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E4",
+      "label": "unrelated environment still ignored",
+      "actual": "'USD'",
+      "expected": "'USD'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "unknown file key",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "unknown override key",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "duplicate language member",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "required file despite complete overrides",
+      "actual": "'FileNotFoundError'",
+      "expected": "'FileNotFoundError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "extension input mappings preserved",
+      "actual": "({'FINLAB_REPORT_LANGUAGE': 'fr'}, {'currency': 'EUR'})",
+      "expected": "({'FINLAB_REPORT_LANGUAGE': 'fr'}, {'currency': 'EUR'})",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E3",
+      "label": "frozen settings",
+      "actual": "'FrozenInstanceError'",
+      "expected": "'FrozenInstanceError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E5",
+      "label": "strict rejects invalid lower file despite valid winner",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E5",
+      "label": "winner-only hides stale file",
+      "actual": "'EUR'",
+      "expected": "'EUR'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E5",
+      "label": "hidden defect surfaces when override removed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E7",
+      "label": "currency labels only",
+      "actual": "('USD', 'EUR')",
+      "expected": "('USD', 'EUR')",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E7",
+      "label": "all other settings unchanged",
+      "actual": "{'decimal_places': 2, 'environment': 'development', 'sources': {'decimal_places': 'file', 'environment': 'file'}}",
+      "expected": "{'decimal_places': 2, 'environment': 'development', 'sources': {'decimal_places': 'file', 'environment': 'file'}}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E7",
+      "label": "no amount or rate in original record",
+      "actual": "{'sources', 'currency', 'decimal_places', 'environment'}",
+      "expected": "{'currency', 'sources', 'environment', 'decimal_places'}",
+      "status": "PASS"
+    },
+    {
+      "exercise": "5.10-E2",
+      "label": "external configuration unchanged",
+      "actual": "b'{\"environment\":\"test\",\"currency\":\"EUR\",\"decimal_places\":\"4\"}'",
+      "expected": "b'{\"environment\":\"test\",\"currency\":\"EUR\",\"decimal_places\":\"4\"}'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "all",
+      "label": "original four files unchanged",
+      "actual": "{'configuration.py': 'e39025a7e89a04e8e763182b7a3582bb33c48ac0cd94a0dda745e1eb996d5a13', 'config_demo.py': '9531d0ba5c56a7f994605fb98a7c6bc27f7884f14832ecf62aa45cbf20c3774a', 'test_configuration.py': '5ce1a8c0b21c9aa87a57b44044433413284fbe51ac0692b183f5af8936fd4fd5', 'development.json': 'a8afd247ac1f5a285bb515609afc97a3e7722658aa3d891126ff67c8ecc3e665'}",
+      "expected": "{'configuration.py': 'e39025a7e89a04e8e763182b7a3582bb33c48ac0cd94a0dda745e1eb996d5a13', 'config_demo.py': '9531d0ba5c56a7f994605fb98a7c6bc27f7884f14832ecf62aa45cbf20c3774a', 'test_configuration.py': '5ce1a8c0b21c9aa87a57b44044433413284fbe51ac0692b183f5af8936fd4fd5', 'development.json': 'a8afd247ac1f5a285bb515609afc97a3e7722658aa3d891126ff67c8ecc3e665'}",
+      "status": "PASS"
+    }
+  ]
+}
