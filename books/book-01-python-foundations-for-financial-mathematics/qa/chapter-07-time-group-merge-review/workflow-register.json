@@ -1,0 +1,242 @@
+[
+  {
+    "id": "7.9",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "baseline": "c35c14bdb9b5c0e9dc6777ff783879410ae8c0ee",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "contract": {
+      "question": "Build a unique sorted UTC price Series without separating price/time identity; distinguish inclusive and half-open windows.",
+      "inputs": "Exact ordered timestamp/price columns, 1\u201310000 single-instrument rows. Second-resolution YYYY-MM-DDTHH:MM:SS with Z or numeric offset; Python calendar/clock checks and offset bounds before explicit pandas UTC parsing. Prices ordinary NumPy-backed i/u/f, finite nonnegative; no numeric strings/Boolean/extension types.",
+      "outputs": "Owned float64 price Series, event_time index unique/sorted/UTC. Reject duplicate normalized instants; do not choose a duplicate winner. Source remains unchanged.",
+      "oracle": "09:30-05:00 = 14:30Z. 10:00-05:00 and 16:00+01:00 both equal15:00Z and must reject. Corrected16:30+01:00 yields15:30Z; ordered values100,101,102. 15:00..15:30 inclusive has2 observations, half-open has1; elapsed first interval1800seconds.",
+      "limits": "Numeric offset does not establish regional zone identity/rules. Original named-zone tests execute winter conversion, ambiguous/nonexistent 2026 wall times and roundtrip only on this host. Sorted/unique data is not complete trading-calendar coverage or decision-time availability. Date_range labels are not observations; timestamp extremes, leap seconds, venue schedules and platform timezone providers remain outside acceptance."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5 and options verified; fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling time_index.py/test_time_index.py reconstructed in documented parent/lab layout; hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory: empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full stdout values/labels/line order match after whitespace normalization;7.11 expected full table independently transcribed from published table/formulas"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32 total existing methods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All11 explanatory fences executed unchanged with explicit prerequisites; independent arithmetic and supplemental source-call predicates retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Numeric offset does not establish regional zone identity/rules. Original named-zone tests execute winter conversion, ambiguous/nonexistent 2026 wall times and roundtrip only on this host. Sorted/unique data is not complete trading-calendar coverage or decision-time availability. Date_range labels are not observations; timestamp extremes, leap seconds, venue schedules and platform timezone providers remain outside acceptance."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.10",
+    "source": "chapter-07/7.10-sorting-filtering-and-querying.md",
+    "source_sha256": "00b6cc514d66a1f6bf0730c1579542f244e4ad2435a7f998bbd843e34afdc0b5",
+    "baseline": "c35c14bdb9b5c0e9dc6777ff783879410ae8c0ee",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "contract": {
+      "question": "Validate all source rows, filter eligibility, rank deterministically, then limit the reporting subset.",
+      "inputs": "Exact ordered asset/sector/market_value columns,1\u201310000 rows,unique asset IDs,trimmed text<=64 chars; ordinary finite nonnegative numeric values. Validated finite nonnegative real floor, exact sector, Integral limit1\u201310000; bool floor/limit rejected. Input index may repeat and is lineage only.",
+      "outputs": "Independent report preserving source index and schema, sorted value descending/asset ascending. Evidence includes criteria and input/eligible/returned counts. Fixed authored query matches mask; empty no-match result retained without invented values.",
+      "oracle": "5 inputs,3 equities at inclusive floor300; rank ALPHA600,BETA600,GAMMA300,return2. Limit1 choosesALPHA regardless source order. Bond filter before head yieldsDELTA800; head-before-filter yieldsnone. Unselected invalid value still fails.",
+      "limits": "Eligibility/truncation changes population; report totals are not full portfolio value or performance. Supplied market values, common snapshot/currency, classification and availability remain caller contracts. Query is authored fixed expression with validated local values, never an untrusted expression sandbox. No performance benchmark or trading recommendation."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5 and options verified; fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling screen.py/test_screen.py reconstructed in documented parent/lab layout; hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory: empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full stdout values/labels/line order match after whitespace normalization;7.11 expected full table independently transcribed from published table/formulas"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32 total existing methods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All11 explanatory fences executed unchanged with explicit prerequisites; independent arithmetic and supplemental source-call predicates retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Eligibility/truncation changes population; report totals are not full portfolio value or performance. Supplied market values, common snapshot/currency, classification and availability remain caller contracts. Query is authored fixed expression with validated local values, never an untrusted expression sandbox. No performance benchmark or trading recommendation."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.11",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "baseline": "c35c14bdb9b5c0e9dc6777ff783879410ae8c0ee",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "contract": {
+      "question": "Aggregate complete asset observations by sector; distinguish value-weighted sector return, portfolio contribution and simple mean.",
+      "inputs": "Exact ordered asset/sector/opening_value/asset_return,1\u201310000 rows,unique asset IDs,trimmed complete keys,ordinary finite numeric values>=0 and returns>=-1. One common interval/currency/snapshot, no flows/fees/FX/distributions/rebalancing; positive total opening value.",
+      "outputs": "Sector-keyed counts,opening values,P&L,portfolio weights/contributions,sector return plus portfolio return. Observed zero-value sector retained,own returnNaN,contribution0. Missing input even on zero exposure rejected; no complete portfolio denominator for all-zero input.",
+      "oracle": "600*(1/10)+300*(-1/20)=45; equity opening900,sector return1/20=.05,portfolio contribution9/200=.045,weight.9. Simple mean1/40=.025. Group counts4,opening1000,contributions.045. Transform[900,900,100,0] sums1900,not1000.",
+      "limits": "Group output cannot establish expected asset-universe completeness or correct classification/context. NaN on zero denominator is intentional, unlike missing source input. Float64 rounding/underflow remain; finite-output/overflow guards are not exact settlement accounting. Only fixture order invariance/tolerances checked, not universal bitwise reduction invariance."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5 and options verified; fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling grouping.py/test_grouping.py reconstructed in documented parent/lab layout; hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory: empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full stdout values/labels/line order match after whitespace normalization;7.11 expected full table independently transcribed from published table/formulas"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32 total existing methods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All11 explanatory fences executed unchanged with explicit prerequisites; independent arithmetic and supplemental source-call predicates retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Group output cannot establish expected asset-universe completeness or correct classification/context. NaN on zero denominator is intentional, unlike missing source input. Float64 rounding/underflow remain; finite-output/overflow guards are not exact settlement accounting. Only fixture order invariance/tolerances checked, not universal bitwise reduction invariance."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  },
+  {
+    "id": "7.12",
+    "source": "chapter-07/7.12-joining-and-merging-financial-data.md",
+    "source_sha256": "7808cc5a746f6ac82b95676e42a3148495f3d887e4af513ee3b106b26ae48ea5",
+    "baseline": "c35c14bdb9b5c0e9dc6777ff783879410ae8c0ee",
+    "status": "REVIEWED_SCOPED",
+    "setup_status": "PARTIAL",
+    "reviewer": "Codex executor, not independent acceptance",
+    "contract": {
+      "question": "Match holdings and quotes by complete snapshot key with cardinality and exact-population coverage before valuing.",
+      "inputs": "Each source1\u201310000 rows, exact ordered asset/currency/valuation_date plus quantity or price, complete trimmed string keys<=64 chars,unique composite keys, fixed USD/2026-01-30. Ordinary finite nonnegative numeric measures. Compatible per-unit and intraday context assumed upstream.",
+      "outputs": "Sorted outer audit with both/left_only/right_only indicator. Complete one-to-one key population yields independent float64 valuation and finite total; any unmatched holding OR extra quote returns result=None,total=None. Source indices are not financial identity.",
+      "oracle": "6*100+3*100+1*100=1000. Alternative6*(203/2)+3*(321/4)=849.75. MissingCASH retainsleft_only and blocks total;extraOTHER retainsright_only and also blocks. Zeroquantities permit total0. Original methods demonstrate2-by-2 merge4rows,many_to_one rejection/validalternategrain,null-null pandasmatch and indexjoin.",
+      "limits": "Exact same populations is a narrow policy; broad-reference left join needs another explicit policy. Calendar date match is not intraday synchronization, observed/authentic price or independently complete holdings universe. No as-of/fuzzy/FX matching; provenance fields would need explicit columns, not accidental join keys. Cardinality bounds rows,not peak memory; float64 is approximate."
+    },
+    "steps": [
+      {
+        "id": "SETUP",
+        "status": "PARTIAL",
+        "actual": "Prepared Python3.12.14/pandas2.2.3/NumPy2.3.5 and options verified; fresh install,activation and other platforms unexecuted"
+      },
+      {
+        "id": "FILES",
+        "status": "PASS_SCOPED",
+        "actual": "Exact sibling merging.py/test_merging.py reconstructed in documented parent/lab layout; hashes match"
+      },
+      {
+        "id": "COMPILE",
+        "status": "PASS_SCOPED",
+        "actual": "Original parent-folder compileall silent exit0 in owned temporary folder"
+      },
+      {
+        "id": "IMPORT",
+        "status": "PASS_SCOPED",
+        "actual": "Quiet import from sibling lab directory: empty stdout/stderr,exit0"
+      },
+      {
+        "id": "DEMO",
+        "status": "PASS_SCOPED",
+        "actual": "Full stdout values/labels/line order match after whitespace normalization;7.11 expected full table independently transcribed from published table/formulas"
+      },
+      {
+        "id": "REFERENCE_TESTS",
+        "status": "PASS_SCOPED",
+        "actual": "Eight original methods pass per section with FutureWarning as error;32 total existing methods,not new unique methods"
+      },
+      {
+        "id": "API_AND_EXAMPLES",
+        "status": "PASS_SCOPED",
+        "actual": "All11 explanatory fences executed unchanged with explicit prerequisites; independent arithmetic and supplemental source-call predicates retained"
+      },
+      {
+        "id": "INTERPRETATION",
+        "status": "REVIEWED_CONCEPTUAL",
+        "actual": "Exact same populations is a narrow policy; broad-reference left join needs another explicit policy. Calendar date match is not intraday synchronization, observed/authentic price or independently complete holdings universe. No as-of/fuzzy/FX matching; provenance fields would need explicit columns, not accidental join keys. Cardinality bounds rows,not peak memory; float64 is approximate."
+      }
+    ],
+    "derived_units": 8,
+    "evidence": "results.json/REVIEW.md"
+  }
+]
