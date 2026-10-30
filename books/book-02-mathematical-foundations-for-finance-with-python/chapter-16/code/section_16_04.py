@@ -62,7 +62,15 @@ def centered_second_difference(fn,x,step=1e-4):
     x,h=finite(x,"x"),finite(step,"step")
     if h<=0:
         raise ValueError("step must be positive")
-    return finite((fn(x+h)-2*fn(x)+fn(x-h))/(h*h),"second difference")
+    xp,xm=finite(x+h,"x+step"),finite(x-h,"x-step")
+    if not xm<x<xp:
+        raise ValueError("step must change both represented inputs")
+    denominator=finite(h*h,"finite-difference denominator")
+    if denominator==0:
+        raise ValueError("finite-difference denominator must be nonzero")
+    fp,fm=finite(fn(xp),"callback at x+step"),finite(fn(xm),"callback at x-step")
+    f0=finite(fn(x),"callback at x")
+    return finite((fp-2*f0+fm)/denominator,"finite-difference estimate")
 
 def assessment():
     return {
