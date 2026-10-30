@@ -1,0 +1,82 @@
+[
+  {
+    "id": "6.2-E1",
+    "prompt": "Add a third observation date, update labels, and predict every reported array attribute before running.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "SOURCE + SUPPLEMENTAL CALLER",
+    "answer": "Add 2026-01-07 with prices [103,78,52] after the two original rows, retaining ASSET-A/B/C column order. Before execution: shape (3,3), ndim 2, size 9, dtype float64, itemsize 8 and nbytes 3*3*8=72. The source output agrees with all predictions and preserves the three supplied rows exactly. third_date.py is a separate guarded caller whose full stdout is checked. The original two-date demonstration/listings remain unchanged."
+  },
+  {
+    "id": "6.2-E2",
+    "prompt": "Compare the shapes (3,), (1, 3), and (3, 1). Explain which the snapshot API accepts and why.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "SOURCE",
+    "answer": "A (3,) vector has rank one and fails regardless of whether its values are valid prices. A (1,3) row and (3,1) column each have rank two and are accepted with matching one-date/three-ID and three-date/one-ID label tuples respectively. Both fail if the original two-date/three-ID labels are reused. Adding an axis changes structure and meaning; it is not an automatic repair for label mismatches."
+  },
+  {
+    "id": "6.2-E3",
+    "prompt": "Add a test that duplicate observation labels fail even when price values are otherwise valid.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "SOURCE",
+    "answer": "Use the valid 3x3 price table with dates (same,same,last). The original price_snapshot raises ValueError for duplicate observation labels, despite finite nonnegative prices and correct axis lengths. The expected exception and traceback are retained. Label uniqueness is part of this API contract, not a proof that real data provenance is correct."
+  },
+  {
+    "id": "6.2-E4",
+    "prompt": "Modify the returned snapshot and verify the source is unchanged.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "SOURCE",
+    "answer": "Modify the returned writable snapshot at [0,0]; the source bytes remain identical. Then change the source at [1,0]; the already returned snapshot retains 105 there. The result shares no numeric storage with the source. A transposed read-only source also yields an independent writable C-order copy while its original write permission remains false. Independence and immutability are different properties."
+  },
+  {
+    "id": "6.2-E5",
+    "prompt": "Explain why a copy of correct numbers with wrong instrument labels remains financially wrong.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "SOURCE + CONCEPTUAL INTERPRETATION",
+    "answer": "Keep the numeric rows unchanged but swap ASSET-A and ASSET-B labels. Unique valid text and matching lengths let the original API accept and copy the data. The copied values are correct stored numbers but belong to wrong identities, so downstream calculations remain financially wrong. A copy cannot authenticate the labels; ingestion must preserve reviewed record identity/order, units and observation provenance."
+  },
+  {
+    "id": "6.2-E6",
+    "prompt": "Design a separate date-parsing/chronology boundary without silently sorting only the labels.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "DESIGN + SOURCE-LIMIT PROBES",
+    "answer": "Design a separate boundary that requires canonical YYYY-MM-DD text, checks lexical form and real calendar validity, rejects duplicate parsed dates and requires strictly increasing observations under a stated date/calendar policy. Keep each row paired with its label. Prefer rejecting unexpected order; if sorting is an explicit permitted transformation, apply the same stable permutation to complete row records and preserve original order/provenance. Datetimes need their own timezone/instant and ambiguity contract. Source probes confirm that the current API accepts non-calendar text and does not sort reversed labels; no chronology validator or sorting adapter was implemented or claimed tested."
+  },
+  {
+    "id": "6.2-E7",
+    "prompt": "Estimate the element payload of a 1,000-by-500 float64 table and distinguish it from total memory.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "SOURCE + INTEGER ESTIMATE",
+    "answer": "A 1000-by-500 float64 table contains 500000 entries * 8 bytes = 4000000 bytes, or 4.0 MB decimal / about 3.8147 MiB. Allocate that synthetic source table and call the unchanged API with matching generated label tuples: both source and copy report exactly 4000000 element bytes and do not share storage. While both are live their combined element payload is 8000000 bytes, before labels, objects, validation masks, temporaries, allocator state and other process memory. No peak-memory measurement or operating-system reservation is claimed."
+  },
+  {
+    "id": "6.2-E8",
+    "prompt": "State how a concurrent writer would invalidate a stronger transactional-snapshot claim.",
+    "source": "chapter-06/6.02-numpy-arrays.md",
+    "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-06-snapshot-exercises/README.md",
+    "kind": "CONCEPTUAL DESIGN ONLY",
+    "answer": "Validation and copying are separate reads of caller-owned mutable storage. A concurrent writer could change values after validation or during copying, so a returned array might reflect different logical versions or values not covered by the earlier check. Independence after return does not make the capture linearizable or transactional. A stronger design needs a shared ownership/locking protocol covering validation plus copy and respected by every writer, or an immutable/versioned source snapshot with a reviewed consistency protocol. Copying or setting only one view read-only does not by itself exclude all writers. No live concurrent-writer experiment or synchronization implementation was executed."
+  }
+]

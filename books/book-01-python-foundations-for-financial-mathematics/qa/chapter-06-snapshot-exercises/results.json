@@ -1,0 +1,208 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "chapter-06/6.02-numpy-arrays.md",
+  "source_sha256": "646f9f45f60e8e051faf4db29db49b6b2b72bcc63f35e97f90db69c257b03f2f",
+  "original_listing_sha256": [
+    "62fb5c6f7e7190a5697a3319648dd3aa091fea998cdafd7923c78925c830bef8",
+    "a7d89b7dc4bade7449920292d3ef7c451b913021c8a78e9b5884ab228d2ef112"
+  ],
+  "supplemental_caller_sha256": "4e7ce3c170b0d0243dbe89923e2e2721d0da55ffede78acfffd4c0607ed741c3",
+  "exercise_records": 8,
+  "command_records": 3,
+  "command_passed": 3,
+  "command_failed": 0,
+  "source_method_invocations": 8,
+  "predicates": 20,
+  "passed": 20,
+  "failed": 0,
+  "design_only_exercises": [
+    "6.2-E6 date boundary (source limitations probed)",
+    "6.2-E8 concurrency guarantee"
+  ],
+  "commands": [
+    {
+      "label": "exact original eight-method suite",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_alias_view_and_copy (test_array_contracts.ArrayTests.test_alias_view_and_copy) ... ok\ntest_asarray_is_not_copy_guarantee (test_array_contracts.ArrayTests.test_asarray_is_not_copy_guarantee) ... ok\ntest_attributes (test_array_contracts.ArrayTests.test_attributes) ... ok\ntest_independent_snapshot (test_array_contracts.ArrayTests.test_independent_snapshot) ... ok\ntest_label_contract (test_array_contracts.ArrayTests.test_label_contract) ... ok\ntest_noncontiguous_and_readonly_source (test_array_contracts.ArrayTests.test_noncontiguous_and_readonly_source) ... ok\ntest_rank_and_empty_shapes (test_array_contracts.ArrayTests.test_rank_and_empty_shapes) ... ok\ntest_type_and_numeric_domain (test_array_contracts.ArrayTests.test_type_and_numeric_domain) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.039s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "label": "exact original demonstration",
+      "args": [
+        "array_contracts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Axes: date, instrument\nShape: (2, 3)\nDimensions: 2\nElements: 6\nDtype: float64\nBytes per element: 8\nElement bytes: 48\nAlias sees change: True\nSnapshot preserved: True\nCopy preserved: True\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "label": "supplemental third-date caller",
+      "args": [
+        "third_date.py"
+      ],
+      "returncode": 0,
+      "stdout": "Axes: date, instrument\nShape: (3, 3)\nDimensions: 2\nElements: 9\nDtype: float64\nBytes per element: 8\nElement bytes: 72\nStored rows: [[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "exercise": "6.2-E1",
+      "label": "all predicted metadata",
+      "actual": "((3, 3), 2, 9, 'float64', 8, 72)",
+      "expected": "((3, 3), 2, 9, 'float64', 8, 72)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E1",
+      "label": "stored rows preserve supplied values",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E1",
+      "label": "source untouched",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00S@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00S@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E2",
+      "label": "one-dimensional vector rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 16, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 24, in <lambda>\n    reject('6.2-E2','one-dimensional vector rejected',lambda:m.price_snapshot(np.array([1.,2.,3.]),('d0',),ids),'ValueError')\n                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.02-numpy-arrays.md\", line 16, in price_snapshot\n    ## 6.2.2 Learning Objectives\n            ^^^^^^^^^^^^^^^^^^^^^\nValueError: prices must be a nonempty two-dimensional table\n"
+    },
+    {
+      "exercise": "6.2-E2",
+      "label": "rank-two row/column accepted with matching labels",
+      "actual": "((1, 3), (3, 1))",
+      "expected": "((1, 3), (3, 1))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E2",
+      "label": "original two-date/three-ID labels cannot fit (1, 3)",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 16, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 29, in <lambda>\n    reject('6.2-E2','original two-date/three-ID labels cannot fit '+str(value.shape),lambda value=value:m.price_snapshot(value,('d0','d1'),ids),'ValueError')\n                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.02-numpy-arrays.md\", line 22, in price_snapshot\n    5. Validate label lengths, uniqueness, and numerical domain.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: dates length does not match its axis\n"
+    },
+    {
+      "exercise": "6.2-E2",
+      "label": "original two-date/three-ID labels cannot fit (3, 1)",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 16, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 29, in <lambda>\n    reject('6.2-E2','original two-date/three-ID labels cannot fit '+str(value.shape),lambda value=value:m.price_snapshot(value,('d0','d1'),ids),'ValueError')\n                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.02-numpy-arrays.md\", line 22, in price_snapshot\n    5. Validate label lengths, uniqueness, and numerical domain.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: dates length does not match its axis\n"
+    },
+    {
+      "exercise": "6.2-E3",
+      "label": "duplicate observation identity with valid prices",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 16, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-06-snapshot-exercises/review.py\", line 30, in <lambda>\n    reject('6.2-E3','duplicate observation identity with valid prices',lambda:m.price_snapshot(source,('same','same','last'),ids),'ValueError')\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch6snapshotx/books/book-01-python-foundations-for-financial-mathematics/chapter-06/6.02-numpy-arrays.md\", line 26, in price_snapshot\nValueError: dates labels must be unique\n"
+    },
+    {
+      "exercise": "6.2-E4",
+      "label": "edit snapshot leaves source bytes unchanged",
+      "actual": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00S@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "expected": "b'\\x00\\x00\\x00\\x00\\x00\\x00Y@\\x00\\x00\\x00\\x00\\x00\\x00T@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00@Z@\\x00\\x00\\x00\\x00\\x00\\x00S@\\x00\\x00\\x00\\x00\\x00\\x00I@\\x00\\x00\\x00\\x00\\x00\\xc0Y@\\x00\\x00\\x00\\x00\\x00\\x80S@\\x00\\x00\\x00\\x00\\x00\\x00J@'",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E4",
+      "label": "returned copy writable and independent",
+      "actual": "(True, False)",
+      "expected": "(True, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E4",
+      "label": "later source edit cannot change existing snapshot",
+      "actual": "np.float64(105.0)",
+      "expected": "105.0",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E4",
+      "label": "noncontiguous readonly source policy",
+      "actual": "(True, True, False, False)",
+      "expected": "(True, True, False, False)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E5",
+      "label": "valid but mislabeled numbers are copied unchanged",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E5",
+      "label": "shape/label uniqueness cannot certify semantics",
+      "actual": "((3, 3), 3)",
+      "expected": "((3, 3), 3)",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E6",
+      "label": "non-calendar text labels accepted by original",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E6",
+      "label": "source does not sort dates or rows",
+      "actual": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "expected": "[[100.0, 80.0, 50.0], [105.0, 76.0, 50.0], [103.0, 78.0, 52.0]]",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E7",
+      "label": "independent byte estimate",
+      "actual": "4000000",
+      "expected": "4000000",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E7",
+      "label": "actual source table payload agrees",
+      "actual": "(4000000, 4000000, (1000, 500))",
+      "expected": "(4000000, 4000000, (1000, 500))",
+      "status": "PASS"
+    },
+    {
+      "exercise": "6.2-E7",
+      "label": "two independent table payloads",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "exercise": "ALL",
+      "label": "original listings unchanged",
+      "actual": "{'array_contracts.py': '62fb5c6f7e7190a5697a3319648dd3aa091fea998cdafd7923c78925c830bef8', 'test_array_contracts.py': 'a7d89b7dc4bade7449920292d3ef7c451b913021c8a78e9b5884ab228d2ef112'}",
+      "expected": "{'array_contracts.py': '62fb5c6f7e7190a5697a3319648dd3aa091fea998cdafd7923c78925c830bef8', 'test_array_contracts.py': 'a7d89b7dc4bade7449920292d3ef7c451b913021c8a78e9b5884ab228d2ef112'}",
+      "status": "PASS"
+    }
+  ]
+}
