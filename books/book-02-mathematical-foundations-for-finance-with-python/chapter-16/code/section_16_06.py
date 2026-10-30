@@ -1,6 +1,7 @@
 """Book 02 Section 16.6: Newton and scalar quasi-Newton methods."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -61,10 +62,17 @@ def scalar_secant_curvature(x_old,x_new,grad,threshold=1e-14):
     if threshold<0:
         raise ValueError("threshold must be nonnegative")
     s=finite(x_new-x_old,"displacement")
-    y=finite(grad(x_new)-grad(x_old),"gradient difference")
-    if s*y<=threshold or s==0:
+    g_new=finite(grad(x_new),"gradient at new point")
+    g_old=finite(grad(x_old),"gradient at old point")
+    y=finite(g_new-g_old,"gradient difference")
+    # Compare the exact product of represented differences: avoid underflow,
+    # overflow, or rounding across the user's strict absolute threshold.
+    if s==0 or Fraction(s)*Fraction(y)<=Fraction(threshold):
         raise ValueError("nonpositive or insufficient curvature")
-    return finite(y/s,"secant curvature")
+    curvature=finite(y/s,"secant curvature")
+    if curvature<=0:
+        raise ValueError("positive secant curvature is outside floating-point range")
+    return curvature
 
 def quasi_newton_step(x,grad,curvature):
     x=finite(x,"x")
