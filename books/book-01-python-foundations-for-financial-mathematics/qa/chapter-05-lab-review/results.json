@@ -1,0 +1,421 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "lab_records": 5,
+  "command_records": 23,
+  "passed": 23,
+  "failed": 0,
+  "existing_method_invocations": 43,
+  "records": [
+    {
+      "section": "5.1",
+      "source": "chapter-05/5.01-python-modules.md",
+      "source_sha256": "7509fca52443a8755e62a86f91d48187fa3ec09d105a85d8333ed1a18ac5f33f",
+      "files": [
+        {
+          "path": "holdings_core.py",
+          "python_fence_index": 1,
+          "sha256": "f5dfc2c59e5c52778b5a852f31be4a7d8b8c7313694a3f2edab2623fa0461f13"
+        },
+        {
+          "path": "run_holdings.py",
+          "python_fence_index": 2,
+          "sha256": "280b7f32c85597ae20ffa4387ef8aebcc492d8edf42e22993310ce6054c359ed"
+        },
+        {
+          "path": "test_holdings_modules.py",
+          "python_fence_index": 3,
+          "sha256": "355c5f0ff3883eacadf3a204b0cd1de809727f2b265b9acadbf83537573532ad"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented direct suite",
+          "args": [
+            "test_holdings_modules.py"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_core_direct_execution_is_quiet (__main__.ModuleTests.test_core_direct_execution_is_quiet) ... ok\ntest_duplicate_and_invalid_later_row (__main__.ModuleTests.test_duplicate_and_invalid_later_row) ... ok\ntest_fresh_import_is_quiet (__main__.ModuleTests.test_fresh_import_is_quiet) ... ok\ntest_namespace_cache_and_origin (__main__.ModuleTests.test_namespace_cache_and_origin) ... ok\ntest_script_and_module_launch (__main__.ModuleTests.test_script_and_module_launch) ... ok\ntest_source_independence (__main__.ModuleTests.test_source_independence) ... ok\ntest_validation (__main__.ModuleTests.test_validation) ... ok\ntest_values_and_empty (__main__.ModuleTests.test_values_and_empty) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.097s\n\nOK\n",
+          "expected_count": 8,
+          "actual_count": 8,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "run_holdings.py"
+          ],
+          "returncode": 0,
+          "stdout": "Active IDs: SEC-A, SEC-C\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "-m",
+            "run_holdings"
+          ],
+          "returncode": 0,
+          "stdout": "Active IDs: SEC-A, SEC-C\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import holdings_core, run_holdings"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "supplemental contract assertions",
+          "args": [
+            "-c",
+            "from holdings_core import capture_holdings,active_ids\n\nfrom decimal import Decimal as D\nrows=[dict(security_id='B',quantity=D(0)),dict(security_id='A',quantity=D('12.5'))]\nassert capture_holdings(rows)==(('B',D(0)),('A',D('12.5')))\nassert active_ids(rows)==('A',)\nassert capture_holdings([])==() and active_ids([])==()\nsnapshot=capture_holdings(rows);rows[1]['quantity']=D(99)\nassert snapshot==( ('B',D(0)),('A',D('12.5')) )\ntry: active_ids(rows+[dict(security_id='X',quantity=D('NaN'))])\nexcept ValueError: pass\nelse: raise AssertionError('invalid later record must reject')\n"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "section": "5.2",
+      "source": "chapter-05/5.02-importing-modules.md",
+      "source_sha256": "3ab84c8659c457049c5ad35cb8297026fe199733c05ad208ea1ffb2740d710db",
+      "files": [
+        {
+          "path": "quantity_rules.py",
+          "python_fence_index": 0,
+          "sha256": "bb0d227fe16efd4e185dc683755dfbdd54c6fe58d7063762da6eccfde7a0df60"
+        },
+        {
+          "path": "import_styles.py",
+          "python_fence_index": 1,
+          "sha256": "cca169434f347ef34156997c7671f2be4081ed2e7debd7884a0f878282627c1f"
+        },
+        {
+          "path": "test_import_styles.py",
+          "python_fence_index": 2,
+          "sha256": "ba8a55c1057175d6fb586bce90e479ff983ec2adec3ec4b3a2a5b687d2a35557"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented direct suite",
+          "args": [
+            "test_import_styles.py"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_aliases_share_module_and_function (__main__.ImportTests.test_aliases_share_module_and_function) ... ok\ntest_from_import_binds_only_requested_name (__main__.ImportTests.test_from_import_binds_only_requested_name) ... ok\ntest_import_error_and_attribute_error (__main__.ImportTests.test_import_error_and_attribute_error) ... ok\ntest_invalid_quantities_for_every_binding (__main__.ImportTests.test_invalid_quantities_for_every_binding) ... ok\ntest_mutable_import_is_not_a_copy (__main__.ImportTests.test_mutable_import_is_not_a_copy) ... ok\ntest_quiet_import_and_origin (__main__.ImportTests.test_quiet_import_and_origin) ... ok\ntest_rebinding_does_not_update_imported_name (__main__.ImportTests.test_rebinding_does_not_update_imported_name) ... ok\ntest_runner (__main__.ImportTests.test_runner) ... ok\ntest_valid_quantities (__main__.ImportTests.test_valid_quantities) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.155s\n\nOK\n",
+          "expected_count": 9,
+          "actual_count": 9,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "import_styles.py"
+          ],
+          "returncode": 0,
+          "stdout": "Validated units: 12.5, 12.5, 12.5\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "-m",
+            "import_styles"
+          ],
+          "returncode": 0,
+          "stdout": "Validated units: 12.5, 12.5, 12.5\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import quantity_rules, import_styles"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "supplemental contract assertions",
+          "args": [
+            "-c",
+            "\nfrom decimal import Decimal as D\nimport import_styles,quantity_rules\nassert import_styles.validate_three_ways(D(0))==(D(0),D(0),D(0))\nassert import_styles.validate_three_ways(D('12.5'))==(D('12.5'),)*3\nassert import_styles.qr is quantity_rules\nassert import_styles.validate_units is quantity_rules.checked_quantity\ntry: import_styles.validate_three_ways(True)\nexcept TypeError: pass\nelse: raise AssertionError('bool is not exact Decimal')\n"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "section": "5.3",
+      "source": "chapter-05/5.03-the-python-standard-library.md",
+      "source_sha256": "8edd46dde6ca4a4c4e86efb4bb57c2a38ad97018bc224dc0bce31e0dd9ca639b",
+      "files": [
+        {
+          "path": "standard_library_lab.py",
+          "python_fence_index": 3,
+          "sha256": "556e5b70ec11372cf7b50f6a616f3c8eb975c7c314a9cf2d885f7b36d23b6597"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented direct suite",
+          "args": [
+            "standard_library_lab.py"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_amount_text_and_domain (__main__.StandardLibraryTests.test_amount_text_and_domain) ... ok\ntest_date_spelling_and_calendar (__main__.StandardLibraryTests.test_date_spelling_and_calendar) ... ok\ntest_duplicate_event_ids_and_invalid_later_event (__main__.StandardLibraryTests.test_duplicate_event_ids_and_invalid_later_event) ... ok\ntest_duplicate_json_members_and_constants (__main__.StandardLibraryTests.test_duplicate_json_members_and_constants) ... ok\ntest_empty_and_independent_calls (__main__.StandardLibraryTests.test_empty_and_independent_calls) ... ok\ntest_exact_canonical_values (__main__.StandardLibraryTests.test_exact_canonical_values) ... ok\ntest_file_decoding_error (__main__.StandardLibraryTests.test_file_decoding_error) ... ok\ntest_schema_and_json_errors (__main__.StandardLibraryTests.test_schema_and_json_errors) ... ok\ntest_utf8_file_and_missing_file (__main__.StandardLibraryTests.test_utf8_file_and_missing_file) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.002s\n\nOK\n",
+          "expected_count": 9,
+          "actual_count": 9,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import standard_library_lab"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "supplemental contract assertions",
+          "args": [
+            "-c",
+            "\nimport json\nfrom datetime import date\nfrom decimal import Decimal as D\nfrom standard_library_lab import parse_schedule,wire_schedule\nwire=wire_schedule();raw=json.dumps(wire);canonical=parse_schedule(raw)\nassert [(r['event_id'],r['payment_date'],r['amount']) for r in canonical['events']]==[('E0',date(2027,1,15),D(-1000)),('E1',date(2028,2,29),D(0)),('E2',date(2028,2,29),D('1040.00'))]\nassert raw==json.dumps(wire)\nassert str(canonical['events'][2]['amount'])=='1040.00'\ncanonical['events'].clear();assert len(parse_schedule(raw)['events'])==3\n# Broad Decimal lexical contract is deliberate, not a fixed-cents parser.\nwire['events'][2]['amount']='1e3';assert parse_schedule(json.dumps(wire))['events'][2]['amount']==D(1000)\n"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "section": "5.4",
+      "source": "chapter-05/5.04-creating-financial-utility-modules.md",
+      "source_sha256": "f9ee6f76fcbdacbfc47f43f39b1beda93282430e16db8721d829469103a54d9f",
+      "files": [
+        {
+          "path": "schedule_utils.py",
+          "python_fence_index": 0,
+          "sha256": "1a64e30bf571c985708e1cc2b332d3b48f033a62dd56691dd38c965def026fd5"
+        },
+        {
+          "path": "run_schedule.py",
+          "python_fence_index": 1,
+          "sha256": "cb2703f777570658d20ab468ca05402cef6f49b3e30a14f496538c922f3fed86"
+        },
+        {
+          "path": "test_schedule_utils.py",
+          "python_fence_index": 2,
+          "sha256": "514bfea4f624c92d7e402846689cdc3573399051b2c8f5c265bc3b1fc339ee72"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented direct suite",
+          "args": [
+            "test_schedule_utils.py"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_amount_domains (__main__.UtilityTests.test_amount_domains) ... ok\ntest_duplicate_identity_across_dates (__main__.UtilityTests.test_duplicate_identity_across_dates) ... ok\ntest_exact_date_boundaries (__main__.UtilityTests.test_exact_date_boundaries) ... ok\ntest_exact_normalized_schedule (__main__.UtilityTests.test_exact_normalized_schedule) ... ok\ntest_excluded_invalid_event_still_rejected (__main__.UtilityTests.test_excluded_invalid_event_still_rejected) ... ok\ntest_inclusive_selection_and_empty (__main__.UtilityTests.test_inclusive_selection_and_empty) ... ok\ntest_quiet_import_and_application (__main__.UtilityTests.test_quiet_import_and_application) ... ok\ntest_schema_and_metadata (__main__.UtilityTests.test_schema_and_metadata) ... ok\ntest_source_and_result_independence (__main__.UtilityTests.test_source_and_result_independence) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.056s\n\nOK\n",
+          "expected_count": 9,
+          "actual_count": 9,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "run_schedule.py"
+          ],
+          "returncode": 0,
+          "stdout": "Selected event IDs: E1, E2\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "-m",
+            "run_schedule"
+          ],
+          "returncode": 0,
+          "stdout": "Selected event IDs: E1, E2\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import schedule_utils, run_schedule"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "supplemental contract assertions",
+          "args": [
+            "-c",
+            "\nfrom datetime import date\nfrom decimal import Decimal as D\nfrom run_schedule import sample_schedule\nfrom schedule_utils import normalize_schedule,events_on_or_after\nsource=sample_schedule();original=sample_schedule()\nassert [(r['event_id'],r['amount']) for r in normalize_schedule(source)['events']]==[('E0',D(-1000)),('E1',D(0)),('E2',D(1000))]\nassert [r['event_id'] for r in events_on_or_after(source,date(2028,1,15))['events']]==['E1','E2']\nassert events_on_or_after(source,date(2028,1,16))==dict(schedule_id='SCH-01',currency='USD',perspective='investor',events=[])\nassert source==original\n"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "section": "5.5",
+      "source": "chapter-05/5.05-python-packages.md",
+      "source_sha256": "07591dc7afa3f49ac5a4572dac0e4fcb18009c4c31998a015e3f50aef663d9d6",
+      "files": [
+        {
+          "path": "finance_lab/holdings.py",
+          "python_fence_index": 0,
+          "sha256": "4503c3e4096f64d75d78ee80e94311de74175c069a7ee556a1e8ac0f9e223899"
+        },
+        {
+          "path": "finance_lab/views.py",
+          "python_fence_index": 1,
+          "sha256": "7283ef65201f9b1d5b92736a6054de2f98a794ff87c544fae1cc7e40e731ff42"
+        },
+        {
+          "path": "finance_lab/__init__.py",
+          "python_fence_index": 2,
+          "sha256": "90d18f0d971de3fc2e52fa942d0430aad9caeef74abf7ed11c3c7893c1e66cc6"
+        },
+        {
+          "path": "finance_lab/__main__.py",
+          "python_fence_index": 3,
+          "sha256": "103afd59dfafd87c06e333c10e92e5f5544bc22c31f07e47cefa112a0f92eed4"
+        },
+        {
+          "path": "test_finance_lab.py",
+          "python_fence_index": 4,
+          "sha256": "a368223f50b697620459f2286f1653737bb40d3110d0082276be693de0110cd8"
+        }
+      ],
+      "operations": [
+        {
+          "label": "documented direct suite",
+          "args": [
+            "test_finance_lab.py"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "test_direct_file_has_no_package_context (__main__.PackageTests.test_direct_file_has_no_package_context) ... ok\ntest_duplicate_and_excluded_invalid (__main__.PackageTests.test_duplicate_and_excluded_invalid) ... ok\ntest_facade_and_relative_import_identity (__main__.PackageTests.test_facade_and_relative_import_identity) ... ok\ntest_package_launch (__main__.PackageTests.test_package_launch) ... ok\ntest_public_values_and_empty (__main__.PackageTests.test_public_values_and_empty) ... ok\ntest_quiet_import_and_origin (__main__.PackageTests.test_quiet_import_and_origin) ... ok\ntest_schema_and_amounts (__main__.PackageTests.test_schema_and_amounts) ... ok\ntest_source_ownership (__main__.PackageTests.test_source_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.085s\n\nOK\n",
+          "expected_count": 8,
+          "actual_count": 8,
+          "status": "PASS"
+        },
+        {
+          "label": "documented demo / module parity",
+          "args": [
+            "-m",
+            "finance_lab"
+          ],
+          "returncode": 0,
+          "stdout": "Package active IDs: SEC-A, SEC-C\n",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "fresh quiet import",
+          "args": [
+            "-c",
+            "import finance_lab, finance_lab.holdings, finance_lab.views, finance_lab.__main__"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "supplemental contract assertions",
+          "args": [
+            "-c",
+            "from finance_lab import capture_holdings,active_ids\n\nfrom decimal import Decimal as D\nrows=[dict(security_id='B',quantity=D(0)),dict(security_id='A',quantity=D('12.5'))]\nassert capture_holdings(rows)==(('B',D(0)),('A',D('12.5')))\nassert active_ids(rows)==('A',)\nassert capture_holdings([])==() and active_ids([])==()\nsnapshot=capture_holdings(rows);rows[1]['quantity']=D(99)\nassert snapshot==( ('B',D(0)),('A',D('12.5')) )\ntry: active_ids(rows+[dict(security_id='X',quantity=D('NaN'))])\nexcept ValueError: pass\nelse: raise AssertionError('invalid later record must reject')\n"
+          ],
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        },
+        {
+          "label": "expected wrong plain-file package launch",
+          "args": [
+            "finance_lab/__main__.py"
+          ],
+          "returncode": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/tmp/chapter5-5-hplasdip/finance_lab/__main__.py\", line 4, in <module>\n    from .views import active_ids\nImportError: attempted relative import with no known parent package\n",
+          "expected_count": null,
+          "actual_count": null,
+          "status": "PASS"
+        }
+      ]
+    }
+  ]
+}
