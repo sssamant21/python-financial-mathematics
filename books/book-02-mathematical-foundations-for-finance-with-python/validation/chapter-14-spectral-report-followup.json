@@ -1,0 +1,146 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "compiled": 26,
+  "runs": [
+    {
+      "path": "check_section_14_07.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.7 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.03670510200001331
+    },
+    {
+      "path": "check_svd_factor_order.py",
+      "exit_code": 0,
+      "stdout": "PASS: twelve restricted SVD factor-order and truncation cases\n",
+      "stderr": "",
+      "seconds": 0.02977511799997501
+    },
+    {
+      "path": "check_section_14_03.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.3 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.035686739999988504
+    },
+    {
+      "path": "check_near_repeated_eigenpairs.py",
+      "exit_code": 0,
+      "stdout": "PASS: twelve selected repeated/near-repeated eigenpair cases\n",
+      "stderr": "",
+      "seconds": 0.049904430999987426
+    },
+    {
+      "path": "check_section_14_05.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.5 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.031625031000004356
+    },
+    {
+      "path": "check_section_14_01.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.1 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.04607213599999227
+    },
+    {
+      "path": "check_decomposition_boundaries.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n",
+      "seconds": 0.09949314800002185
+    },
+    {
+      "path": "check_spectral_report_range.py",
+      "exit_code": 0,
+      "stdout": "PASS: six tiny-root integrations, iterator guards and three Decimal diagnostic cases\n",
+      "stderr": "",
+      "seconds": 0.06109155600000804
+    },
+    {
+      "path": "check_section_14_09.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.9 independent mathematical reference checks\n",
+      "stderr": "",
+      "seconds": 0.043393404999989116
+    },
+    {
+      "path": "check_section_14_02.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.2 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.05798522800000683
+    },
+    {
+      "path": "check_section_14_10.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.10 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.02978890299999648
+    },
+    {
+      "path": "check_section_14_08.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.8 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.03849519600001372
+    },
+    {
+      "path": "check_section_14_04.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.4 independent mathematical checks\n",
+      "stderr": "",
+      "seconds": 0.05393021400001885
+    },
+    {
+      "path": "check_section_14_06.py",
+      "exit_code": 0,
+      "stdout": "PASS: Section 14.6 independent reference checks\n",
+      "stderr": "",
+      "seconds": 0.030693294000002425
+    },
+    {
+      "path": "check_near_spd_cholesky.py",
+      "exit_code": 0,
+      "stdout": "PASS: nine near-SPD factorizations/solves and six non-SPD boundary matrices\n",
+      "stderr": "",
+      "seconds": 0.03079537199997162
+    },
+    {
+      "path": "check_unequal_spectra.py",
+      "exit_code": 0,
+      "stdout": "PASS: 24 exact diagonal and six Decimal unequal-spectrum cases\n",
+      "stderr": "",
+      "seconds": 0.03108131199999775
+    }
+  ],
+  "inspected_revision": "ac223164d72403638340a7ef60cd099ab30e5f8e",
+  "original_source_blob": "2919793363c5e3938bbbf1061e187f2c0fcf547a",
+  "corrected_source": {
+    "commit_sha": "bef5acefa1aaaddec27ae4082532129b04792cd0",
+    "content_sha": "d3966571868a9bfdc55578f5c5d58bbbc389bbcc"
+  },
+  "initial_checker_failure": {
+    "chunk_id": "ed9837",
+    "wall_time_seconds": 0.000025228,
+    "exit_code": 1,
+    "original_token_count": 216,
+    "output": "Traceback (most recent call last):\n  File \"/workspace/scratch/45f84313db40/spectral_report_baseline/check_spectral_report_range.py\", line 40, in <module>\n    run()\n  File \"/workspace/scratch/45f84313db40/spectral_report_baseline/check_spectral_report_range.py\", line 15, in run\n    assert decompose(iter(((2,1),(1,2)))) == reference\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/45f84313db40/spectral_report_baseline/section_14_02.py\", line 14, in decompose\n    error=math.sqrt(math.fsum((rows[i][j]-reconstruction[i][j])**2\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/45f84313db40/spectral_report_baseline/section_14_02.py\", line 14, in <genexpr>\n    error=math.sqrt(math.fsum((rows[i][j]-reconstruction[i][j])**2\n                               ~~~~^^^\nIndexError: tuple index out of range\n"
+  },
+  "initial_tiny_probe": {
+    "matrix": [
+      [
+        1e-200,
+        1e-215
+      ],
+      [
+        1e-215,
+        1e-200
+      ]
+    ],
+    "reported": 0,
+    "direct_hypot": 2.166275824600653e-215
+  }
+}
