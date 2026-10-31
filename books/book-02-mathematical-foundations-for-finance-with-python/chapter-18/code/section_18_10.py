@@ -67,13 +67,7 @@ def central_derivative(f,x,h):
     return _shared_central_difference(f,x,h)
 
 def simpson(f,a,b,n):
-    a,b=finite(a,"lower"),finite(b,"upper")
-    if b<=a or type(n) is not int or n<2 or n%2:
-        raise ValueError("Simpson requires positive even panels")
-    h=(b-a)/n
-    terms=[finite(f(a),"f(a)"),finite(f(b),"f(b)")]
-    terms.extend((4 if i%2 else 2)*finite(f(a+i*h),"integrand") for i in range(1,n))
-    return finite(h*math.fsum(terms)/3,"integral")
+    return numerical_lab.simpson(f,a,b,n)
 
 def solver_comparison():
     calls=0
