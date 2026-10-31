@@ -1,0 +1,14 @@
+{
+  "status": "EXPECTED_REPRODUCED_QA_FAILURE",
+  "original_attempt": "review.py aborted before source assembly or any command checks; same bytes retained as review-initial.py",
+  "initial_runner_sha256": "7badb51eeec43f79168c6e33b971f8feae34c4bda0d6fa8978844ca7c745f437",
+  "args": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review-initial.py"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review-initial.py\", line 72, in <module>\n    if __name__=='__main__':raise SystemExit(run())\n                                             ^^^^^\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review-initial.py\", line 27, in run\n    source=BOOK/'chapter-07/7.07-missing-financial-data.md';text=source.read_text();blocks=re.findall(r'^```python\\n(.*?)^```',text,re.M|re.S);assert len(blocks)==3;program,test=blocks[1:3]\n                                                                                           ^^\nUnboundLocalError: cannot access local variable 're' where it is not associated with a value\n",
+  "source_commands_executed": 0
+}

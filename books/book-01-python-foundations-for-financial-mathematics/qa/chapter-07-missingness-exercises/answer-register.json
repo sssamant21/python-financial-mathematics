@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.7-E1",
+    "prompt": "Replace BETA's absent record with an explicit NaN. Compare missing and absent counts.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "EXACT SOURCE",
+    "answer": "Absent BETA and explicitly supplied BETA NaN both produce missing=1,observed=2 and totalNone. Absent count changes from1 to0 when the row exists with NaN. BETA absent_record isTrue versusFalse,but missing_return isTrue in both. These flags distinguish structure,not the operational cause of a missing quote."
+  },
+  {
+    "id": "7.7-E2",
+    "prompt": "Supply an observed zero for every asset and explain why the total is now valid.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "EXACT SOURCE",
+    "answer": "Supplying observed return0 for all three assets yields total0 with expected3,observed3,missing0,absent0,completeTrue and three observed contribution zeros. An unchanged-price observation is known data; it is different from silently imputing0 for an unknown return. Common interval/currency and other financial preconditions still apply."
+  },
+  {
+    "id": "7.7-E3",
+    "prompt": "Remove all returns while retaining the expected weights. Verify the total remains None.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "EXACT SOURCE",
+    "answer": "Use pd.Series(dtype=\"float64\") as the empty return input. The output retains all three expected asset rows,observed0,missing3,absent3,completeFalse,totalNone. The expected population remains in weights; an empty source is not an empty portfolio or a zero observed return."
+  },
+  {
+    "id": "7.7-E4",
+    "prompt": "Reproduce the partial 6.00%, renormalized 8.5714%, and complete 4.50% results; state what each means.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "SOURCE + INDEPENDENT RATIONAL EXPECTATIONS",
+    "answer": "Observed ALPHA/CASH contributions sum3/50=0.06,display6.00%,but BETA is unknown. Renormalizing observed opening weights changes exposures and gives(3/50)/(7/10)=3/35\u22488.5714%. With BETA observed\u22121/20,the complete original population gives3/50\u22123/200=9/200=0.045,display4.50%. The strict API publishes only the latter when complete; it withholds the incomplete total. None of these alternatives is interchangeable or a general missing-data repair."
+  },
+  {
+    "id": "7.7-E5",
+    "prompt": "Add an unexpected return identifier and explain why rejection is preferable to silent dropping.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "EXACT SOURCE REJECTION",
+    "answer": "Appending OTHER return0.02 raises ValueError. Silently dropping it could hide an unexpected instrument,wrong return file or stale expected population. Investigate source identities/coverage rather than suppress the mismatch. A broad-reference-universe filtering workflow needs another explicit contract."
+  },
+  {
+    "id": "7.7-E6",
+    "prompt": "Compare forward and backward fill on [100, NaN, 110]; describe what information each replacement uses.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "SUPPLEMENTAL FILL MECHANICS + AVAILABILITY REVIEW",
+    "answer": "For [100,NaN,110],ffill returns[100,100,110] using the earlier observation,bfill returns[100,110,110] using the later one; original remains missing. Neither replacement is newly observed. Forward fill requires a permitted stale-price/age rule; backward fill may use information unavailable at an earlier decision time. These row-based mechanics establish no temporal eligibility or feed completeness."
+  },
+  {
+    "id": "7.7-E7",
+    "prompt": "Design a quote-age policy that uses timestamps rather than a number of rows. List the metadata required.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "QUOTE-AGE POLICY DESIGN \u2014 NOT IMPLEMENTED",
+    "answer": "Propose a source-specific maximum age of30 elapsed minutes,inclusive at the boundary,for eligible last-known quotes. Require aware event/observation time,publication/ingestion or defensible availability time,valuation time and decision cutoff; instrument/venue,currency,units,adjustment basis,source/revision and session/calendar context. Normalize instants,require event_time<=valuation_time and availability_time<=decision_cutoff,and enforce0<=valuation_time\u2212event_time<=30minutes. Select only from records actually eligible at the decision cutoff,with a documented tie/revision policy; preserve selected source timestamp,age and carry flag. Reject or withhold beyond-limit/missing/incompatible inputs; never use bfill to satisfy this rule. Thirty minutes is a proposed teaching policy,not a universal financial threshold. No quote-age selector/calendar integration was implemented."
+  },
+  {
+    "id": "7.7-E8",
+    "prompt": "Propose a documented zero-weight exception and tests for it, retaining the original strict implementation for comparison.",
+    "source": "chapter-07/7.07-missing-financial-data.md",
+    "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-missingness-exercises/README.md",
+    "baseline": "8cbba0741fd27713b7cf67b2c5d97c558a1b6e04",
+    "kind": "STRICT SOURCE COMPARISON + EXCEPTION DESIGN",
+    "answer": "Original strict assess([1,0],[ALPHA:.1]) returnsNone because expected BETA is absent; adding observed BETA0 allows0.1. A separate proposed exception may waive only an exactly zero opening exposure,retaining all expected rows and separate data_complete=False versus calculation_eligible=True. Never treat tiny positive weights as zero via tolerance; never waive invalid observed returns,duplicate/unexpected IDs,invalid weights or metadata. Approved exempt missing contributions could be explicit policy-derived0 with an exemption flag,never labeled observed. Require every positive-weight return and publish only after those checks. DESIGN.md lists proposed tests; the exception is not implemented or accepted. Original strict behavior remains unchanged."
+  }
+]

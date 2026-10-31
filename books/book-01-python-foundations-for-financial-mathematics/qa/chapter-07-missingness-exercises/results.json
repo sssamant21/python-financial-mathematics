@@ -1,0 +1,241 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.07-missing-financial-data.md",
+  "source_sha256": "ba5dd715aef1b9defc467395280efc8ad99d998032b7bc0f1de71f12b7c203c6",
+  "program_fence": 1,
+  "test_fence": 2,
+  "program_sha256": "ede0ce4d1fbacd11932bbcb043d6755fb1dbde9c39f31c3e7206ad6871aecd7d",
+  "test_sha256": "49dfdcb67174673b8684d694c8ef38ae00ed97ff44c4f23f4789d5950bf47dd1",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 24,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_77/missingness.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Missing assets: BETA\nCoverage: 2/3; total=None\nComplete portfolio price return: 4.50%\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_77",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_absent_vs_explicit_missing (test_missingness.MissingnessTests.test_absent_vs_explicit_missing) ... ok\ntest_all_missing_and_empty_returns (test_missingness.MissingnessTests.test_all_missing_and_empty_returns) ... ok\ntest_complete_known_answer (test_missingness.MissingnessTests.test_complete_known_answer) ... ok\ntest_fill_and_unknown_logic (test_missingness.MissingnessTests.test_fill_and_unknown_logic) ... ok\ntest_input_preservation (test_missingness.MissingnessTests.test_input_preservation) ... ok\ntest_invalid_data (test_missingness.MissingnessTests.test_invalid_data) ... ok\ntest_skip_drop_and_renormalization (test_missingness.MissingnessTests.test_skip_drop_and_renormalization) ... ok\ntest_zero_is_observed_and_zero_weight_policy (test_missingness.MissingnessTests.test_zero_is_observed_and_zero_weight_policy) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.015s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_77"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listings unchanged",
+      "actual": "{'missingness.py': 'ede0ce4d1fbacd11932bbcb043d6755fb1dbde9c39f31c3e7206ad6871aecd7d', 'test_missingness.py': '49dfdcb67174673b8684d694c8ef38ae00ed97ff44c4f23f4789d5950bf47dd1'}",
+      "expected": "{'missingness.py': 'ede0ce4d1fbacd11932bbcb043d6755fb1dbde9c39f31c3e7206ad6871aecd7d', 'test_missingness.py': '49dfdcb67174673b8684d694c8ef38ae00ed97ff44c4f23f4789d5950bf47dd1'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "absent versus explicit missing counts",
+      "actual": "(1, 1, 1, 0)",
+      "expected": "(1, 1, 1, 0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "both input states withhold total",
+      "actual": "(None, None)",
+      "expected": "(None, None)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "distinct structural flags on BETA",
+      "actual": "(np.True_, np.False_, np.True_, np.True_)",
+      "expected": "(True, False, True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "observed zero is complete",
+      "actual": "(0.0, {'expected': 3, 'observed': 3, 'missing': 0, 'absent': 0, 'complete': True})",
+      "expected": "(0.0, {'expected': 3, 'observed': 3, 'missing': 0, 'absent': 0, 'complete': True})",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "zero contributions observed not imputed",
+      "actual": "[0.0, 0.0, 0.0]",
+      "expected": "[0.0, 0.0, 0.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "empty returns retain expected coverage",
+      "actual": "(None, {'expected': 3, 'observed': 0, 'missing': 3, 'absent': 3, 'complete': False})",
+      "expected": "(None, {'expected': 3, 'observed': 0, 'missing': 3, 'absent': 3, 'complete': False})",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "all expected identities remain in report",
+      "actual": "(['ALPHA', 'BETA', 'CASH'], [True, True, True])",
+      "expected": "(['ALPHA', 'BETA', 'CASH'], [True, True, True])",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "independent rational alternatives",
+      "actual": "(Fraction(3, 50), Fraction(3, 35), Fraction(9, 200))",
+      "expected": "(Fraction(3, 50), Fraction(3, 35), Fraction(9, 200))",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "unguarded partial contribution agrees with scalar benchmark",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "renormalized observed exposures are another question",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "complete source return matches rational benchmark",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "display values only for interpretation",
+      "actual": "['6.0000%', '8.5714%', '4.5000%']",
+      "expected": "['6.0000%', '8.5714%', '4.5000%']",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "partial total never published by strict API",
+      "actual": "(None, False)",
+      "expected": "(None, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "unexpected return identifier rejects",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review.py\", line 57, in <lambda>\n    extra=pd.concat([full,pd.Series([.02],index=['OTHER'])]);reject('E5','unexpected return identifier rejects',lambda:m.assess(w,extra))\n                                                                                                                       ^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.07-missing-financial-data.md\", line 30, in assess\n    |---|---|---|\n            ^^^^^^\nValueError: unexpected return identifiers\n"
+    },
+    {
+      "section": "E6",
+      "label": "forward fill uses prior observation",
+      "actual": "[100.0, 100.0, 110.0]",
+      "expected": "[100.0, 100.0, 110.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "backward fill uses later observation",
+      "actual": "[100.0, 110.0, 110.0]",
+      "expected": "[100.0, 110.0, 110.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "fill returns new object without changing missing source",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "original strict implementation blocks missing zero-weight return",
+      "actual": "(None, 1, 1, False)",
+      "expected": "(None, 1, 1, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "observed zero-weight return permits strict complete calculation",
+      "actual": "(0.1, True)",
+      "expected": "(0.1, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "small positive missing exposure also blocks strict total",
+      "actual": "None",
+      "expected": "None",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "invalid observed return still rejected on zero weight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-missingness-exercises/review.py\", line 67, in <lambda>\n    reject('E8','invalid observed return still rejected on zero weight',lambda:m.assess(zero_weights,pd.Series([.1,np.inf],index=zero_weights.index)))\n                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7missing/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.07-missing-financial-data.md\", line 33, in assess\n    | NaT | Missing datetime observation | Missing temporal value |\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: observed returns must be finite and at least -1\n"
+    },
+    {
+      "section": "ALL",
+      "label": "report mutation preserves caller inputs",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Original strict source assessment and supplemental rational/fill mechanics;E7 quote-age and E8 zero-weight exception designs not implemented"
+}
