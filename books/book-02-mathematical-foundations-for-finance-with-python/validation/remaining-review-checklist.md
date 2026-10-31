@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-31  
-**Full-runtime candidate source revision:** `5396db3f4b64acb358f08ccfd89b13427ae33268`  
-**Latest scoped source revision:** `0c6adb3eee831bb109290c5c9e093a05cbdce19a`  
-**Disposition:** Earlier V-52 full candidate runtime plus subsequent affine interpolation scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `4d90b8d6a3fdd397c7d071582829d5384fa410ab`  
+**Latest scoped source revision:** `4d90b8d6a3fdd397c7d071582829d5384fa410ab`  
+**Disposition:** V-53 full candidate runtime refreshed; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-53 twenty-second refresh](runtime-refresh-2026-10-31-r2.md):495 compiled,284 scripts passed,496 required hashes verified before/after. Includes both interpolation corrections/checkers. G2–G8 unchanged.
 
 [V-52 twenty-first refresh](runtime-refresh-2026-10-31.md):493 compiled,282 scripts passed,494 required hashes verified before/after. Includes quadrature/continuous-PV corrections and both new checkers. Current candidate execution; G2–G8 unchanged.
 
@@ -61,7 +63,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-52 earlier full pin:493 compiled/282 scripts/494 hashes; affine interpolation has33-file/23-script pass at `0c6adb3eee831bb109290c5c9e093a05cbdce19a` | Automated run recorded |
+| G1 Candidate compilation/runtime | Candidate Linux pass | V-53:495 compiled,284 scripts passed,496 hashes verified before/after at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`; supported-platform and release checks remain open. [Evidence](runtime-refresh-2026-10-31-r2.md). |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -272,3 +274,9 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Complete affine interpolation correction — 2026-10-31
 
 [Sections18.6/18.10 evidence](chapter-18-linear-range-followup.md) preserves five initial probes (including one control) and a failed regression. Complete rational affine evaluation now prevents nonfinite/wrong/false-zero results from intermediate differences or ratios; the final helper shares this implementation. Twelve two-entrypoint2500-digit Decimal reference sets,five multisegment values,explicit extrapolation policies,range/input rejections and a shared call pass. All33 chapter sources compiled and23 scripts passed at `0c6adb3eee831bb109290c5c9e093a05cbdce19a`; hashes match the pinned tree and remain unchanged after execution. Inventory494 Python files/283 scripts is not a new full run; V-52 remains the earlier493/282 full pass. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.6 Lagrange polynomial normalization/product/sum range and knot recovery,with independent polynomial references. Financial curve suitability,conditioning,independent-review,supported-platform and release obligations stay open.
+
+## Complete polynomial interpolation correction and V-53 — 2026-10-31
+
+[Section18.6 polynomial evidence](chapter-18-polynomial-range-followup.md) retains four baseline probes and the original failed regression. Complete rational basis/product/sum evaluation now rounds once; exact zero is accepted and final overflow or nonzero underflow raises ValueError. Nineteen independently known polynomial/2500-digit Decimal values, two range and four invalid-input cases pass. All34 Chapter18 sources compiled and24 scripts passed at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`.
+
+[V-53 full refresh](runtime-refresh-2026-10-31-r2.md) includes both interpolation corrections/checkers: **495 compiled,284 scripts passed,496 required hashes verified before/after** at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`. Thirty selected categories remain partially addressed; none closed by the register. Next substantive executable item: COV-79 Section18.3 per-iteration bisection halving, midpoint error bounds and the documented iteration-count exercise, using observed callbacks and independent exact bounds. Do not repeat the completed Section18.9 trace audit. Financial/model suitability, conditioning, independent review, supported-platform and release obligations remain open.
