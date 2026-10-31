@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-31  
-**Full-runtime candidate source revision:** `ae81661567a38edf78cac3a8c95bc0897819989a`  
-**Latest scoped source revision:** `bb4535d9b6692b7e33430e91b33a6808ded5e4b4`  
-**Disposition:** Earlier V-51 full candidate runtime plus subsequent quadrature correction scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `5396db3f4b64acb358f08ccfd89b13427ae33268`  
+**Latest scoped source revision:** `5396db3f4b64acb358f08ccfd89b13427ae33268`  
+**Disposition:** V-52 full candidate runtime includes quadrature and continuous-PV corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-52 twenty-first refresh](runtime-refresh-2026-10-31.md):493 compiled,282 scripts passed,494 required hashes verified before/after. Includes quadrature/continuous-PV corrections and both new checkers. Current candidate execution; G2–G8 unchanged.
 
 [V-51 twentieth refresh](runtime-refresh-2026-10-30-r15.md):491 compiled,280 scripts passed,492 required hashes verified before/after. Includes final sensitivity/PV integration and shared periodic valuation with both new checkers. Current candidate execution; G2–G8 unchanged.
 
@@ -59,7 +61,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-51 earlier full pin:491 compiled/280 scripts/492 hashes; quadrature correction has31-file/21-script pass at `bb4535d9b6692b7e33430e91b33a6808ded5e4b4` | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-52 at `5396db3f4b64acb358f08ccfd89b13427ae33268`:493 compiled/282 scripts/494 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -262,3 +264,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Quadrature grid/range correction — 2026-10-31
 
 [Sections18.7/18.10 evidence](chapter-18-quadrature-range-followup.md) preserves nine original false-zero/range probes and a failed regression. Exact nominal grids now reject collapsed queries before callbacks; complete rational weighted sums avoid intermediate width/sum loss,and final Simpson shares the corrected helper. Thirty-two2500-digit Decimal rule/grid references,six grid guards,nine callback guards,six final-range rejections and one shared call pass. All31 chapter sources compiled and21 scripts passed at `bb4535d9b6692b7e33430e91b33a6808ded5e4b4`; hashes match the pinned tree and remain unchanged after execution. Inventory492 Python files/281 scripts is not a full execution; V-51 remains the earlier491/280 full pass. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 continuous_cashflow_pv combined product/quotient and small-exponent range,with explicit large-growth-factor limits. Broader smoothness/model,independent-review,supported-platform and release obligations stay open.
+
+## Continuous-stream PV correction and V-52 — 2026-10-31
+
+[Section18.7 evidence](chapter-18-continuous-pv-range-followup.md) preserves five original wrong-value/range probes and a failed regression. Complete product/quotient arithmetic,bounded small-exponent exprel evaluation and an approximate log-growth fallback now retain selected representable PVs; finite inputs validate before zero shortcuts. Eighteen2500-digit Decimal/decay-limit references,five final-range and five invalid-input cases pass. All32 chapter sources compiled and22 scripts passed. [V-52 full execution](runtime-refresh-2026-10-31.md) compiled493 files,passed282 scripts and verified494 required hashes before/after at `5396db3f4b64acb358f08ccfd89b13427ae33268`,including quadrature corrections and both new checkers. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.6 piecewise-linear/Section18.10 interpolation accepted-input and result range,complete affine quotients and extrapolation policy,with independent affine references. Broader scale/conditioning,financial/model,independent-review,supported-platform and release obligations stay open.
