@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-31  
-**Full-runtime candidate source revision:** `4d90b8d6a3fdd397c7d071582829d5384fa410ab`  
-**Latest scoped source revision:** `aa176cb320bc21daf02b18bafa4fde1ec93bbfba`  
-**Disposition:** V-53 full candidate runtime plus subsequent Section18.3 scoped checker; independent review and release approval pending.
+**Full-runtime candidate source revision:** `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`  
+**Latest scoped source revision:** `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`  
+**Disposition:** V-54 full candidate runtime refreshed; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-54 twenty-third refresh](runtime-refresh-2026-10-31-r3.md):498 compiled,287 scripts passed,499 required hashes verified before/after. Includes bisection bounds,Newton order/safeguards and tiny discount-change oracles. G2–G8 unchanged.
 
 [V-53 twenty-second refresh](runtime-refresh-2026-10-31-r2.md):495 compiled,284 scripts passed,496 required hashes verified before/after. Includes both interpolation corrections/checkers. G2–G8 unchanged.
 
@@ -63,7 +65,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | V-53:495 compiled,284 scripts passed,496 hashes verified before/after at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`; supported-platform and release checks remain open. [Evidence](runtime-refresh-2026-10-31-r2.md). |
+| G1 Candidate compilation/runtime | Candidate Linux pass | V-54:498 compiled,287 scripts passed,499 hashes verified before/after at `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`; platform/release checks remain open. [Evidence](runtime-refresh-2026-10-31-r3.md). | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -286,3 +288,11 @@ External reviews and approval are not claimed, and no review requests have been 
 [Section18.3 evidence](chapter-18-bisection-bounds-followup.md) checks observed callback points against known rational roots on five convergence/exhaustion paths. Dyadic midpoint/width/error bounds are exact; the0.2-to1e-6 exercise uses disclosed binary-rounding allowances and confirms eighteen reductions. Exact N+3 objective-call accounting and five altered records are checked. Initial audit passed; implementation unchanged. All35 Chapter18 files compiled and25 scripts passed at `aa176cb320bc21daf02b18bafa4fde1ec93bbfba`; scoped hashes match the pinned tree and remain unchanged after execution.
 
 Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495/284 full pass with496 required hashes. Thirty selected COV categories remain partially addressed; none closed by the register. Next substantive executable item: Section18.4 observed local Newton convergence-order evidence using an independent root/error reference and actual proposal/callback observations, preserving safeguard conditions; the completed Section18.9 trace audit is separate. Broader continuity/uniqueness, numerical ranges, independent review, supported-platform and release obligations remain open.
+
+## Newton order, tiny discount changes and V-54 — 2026-10-31
+
+[Section18.4 evidence](chapter-18-newton-order-followup.md) records24 accepted isolated Newton proposals,21 local error-order ratios (1.940–1.999), three complete hybrid traces and three altered records. The local simple-root identities use independent100-digit square roots. Each full hybrid accepts one Newton step then34 midpoint fallbacks; quadratic order is not claimed for the hybrid. The initial harness midpoint-assumption failure and corrected reruns are retained; the implementation is unchanged. All36 Chapter18 files compiled and26 scripts passed at `51abbe74562487aed5b14fb4fc84ee4f0b6dc30c`.
+
+[Section18.2 evidence](chapter-18-discount-change-followup.md) adds59 selected1200-digit Decimal power references for tiny discount changes, with a four-ulp allowance and explicit sign/zero checks. Forty-six naive false zeros and three wrong variants are detected. Initial audit passed; implementation unchanged. All37 chapter files compiled and27 scripts passed at `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`.
+
+[V-54 full refresh](runtime-refresh-2026-10-31-r3.md) compiled498 files,passed287 scripts and verified499 required hashes before/after at `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`,including all three checkers added since V-53. Thirty selected COV categories remain partially addressed; none closed by the register. Next substantive executable item: Section18.2 annuity PV accepted-input and complete product/quotient range,including tiny-rate/period scaling,zero-rate branch and representable versus unrepresentable final values,with independent cash-flow/analytic references. Broader local-convergence proof,continuity/uniqueness,conditioning,financial/model,independent-review,supported-platform and release obligations remain open.
