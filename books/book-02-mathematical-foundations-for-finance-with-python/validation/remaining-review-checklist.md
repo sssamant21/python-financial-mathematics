@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `54c73a8f98043676edad54efc5725e80f4af883c`  
-**Latest scoped source revision:** `015137295af393e4f1783474fc1d24a7cb1c1c7b`  
-**Disposition:** Earlier V-50 full candidate runtime plus subsequent final-study integration scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `ae81661567a38edf78cac3a8c95bc0897819989a`  
+**Latest scoped source revision:** `ae81661567a38edf78cac3a8c95bc0897819989a`  
+**Disposition:** V-51 full candidate runtime includes final studies and periodic valuation correction; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-51 twentieth refresh](runtime-refresh-2026-10-30-r15.md):491 compiled,280 scripts passed,492 required hashes verified before/after. Includes final sensitivity/PV integration and shared periodic valuation with both new checkers. Current candidate execution; G2–G8 unchanged.
 
 [V-50 nineteenth refresh](runtime-refresh-2026-10-30-r14.md):489 compiled,278 scripts passed,490 required hashes verified before/after. Includes the project-error checker and final solver/curve integration/checker. Current candidate execution; G2–G8 unchanged.
 
@@ -57,7 +59,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-50 earlier full pin:489 compiled/278 scripts/490 hashes; subsequent final-study integration has29-file/19-script pass at `015137295af393e4f1783474fc1d24a7cb1c1c7b` | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-51 at `ae81661567a38edf78cac3a8c95bc0897819989a`:491 compiled/280 scripts/492 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -252,3 +254,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Final sensitivity/quadrature integration — 2026-10-30
 
 [Section18.10 evidence](chapter-18-final-studies-followup.md) preserves the missing-study baseline failure and a separate corrected checker-import error. The final report now uses actual Section18.7 price/difference/quadrature/analytic-PV helpers for three sensitivity steps and20/40/80 panels, with units,rounded-reference errors and refinement limits. Decimal/geometric-series references,observed helper calls,seven wrong outputs and strict JSON are checked. All29 chapter sources compiled and19 scripts passed at `015137295af393e4f1783474fc1d24a7cb1c1c7b`; hashes match the pinned tree and remain unchanged after execution. Current inventory490 Python files/279 scripts is not a full run; V-50 remains the earlier489/278 full execution. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-81 Section18.10 multiple-IRR valuation/input/range and false-root rejection, sharing corrected finite-period arithmetic while preserving single-flow/all-zero valuation and stricter discovery contracts. Broader model/conditioning,independent-review,supported-platform and release obligations stay open.
+
+## Final NPV correction and V-51 — 2026-10-30
+
+[Section18.10 evidence](chapter-18-final-npv-followup.md) preserves two false endpoint-root reports and a failed first regression. Shared exact periodic valuation now rejects those non-root brackets,preserves generic single/all-zero valuations and keeps the IRR-specific flow rules strict. Twenty-one rational references,six discovery rejections,two final-range and seven invalid-input cases,true roots,shared-call observation and a false-zero variant are checked. All30 chapter files compiled and20 scripts passed. [V-51 full execution](runtime-refresh-2026-10-30-r15.md) compiled491 files,passed280 scripts and verified492 required hashes before/after at `ae81661567a38edf78cac3a8c95bc0897819989a`,including final sensitivity/PV integration and both new checkers. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 Sections18.7/18.10 quadrature grid/result range,underflowed/collapsed steps and weighted-sum/intermediate overflow,preserving the retained order/financial oracles. Broader financial/model,applied-negative-case,independent-review,supported-platform and release obligations stay open.
