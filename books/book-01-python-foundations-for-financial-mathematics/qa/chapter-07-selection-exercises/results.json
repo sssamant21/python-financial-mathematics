@@ -1,0 +1,235 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.04-indexing-and-selection.md",
+  "source_sha256": "58da8aeebca66b0edb8f6a3b71a83223436d6547ddca4b1428852719d7ea6b00",
+  "program_fence": 2,
+  "test_fence": 3,
+  "program_sha256": "d18e0c5ee4d5ef0be5a1b3a33c4b338499988129ea04e80da933467c1b0eab83",
+  "test_sha256": "bd8b5992978db20f1d16a305da42e2a771fd9065735a2a057c10534075ba76ee",
+  "supplement_sha256": "421dba2b8425e20efb0e6744e86e8cef8324ea5de9b956cc5ae16d459f2e9894",
+  "answers": 8,
+  "command_records": 4,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 21,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_74/selection.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "       price  market_value\nasset                     \nCASH  100.00        100.00\nALPHA 100.00        600.00\nFiltered assets: ALPHA, BETA\nSynthetic repriced total: 1060.00\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_74",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_axis_and_dtype_rejections (test_selection.SelectionTests.test_axis_and_dtype_rejections) ... ok\ntest_copy_isolation (test_selection.SelectionTests.test_copy_isolation) ... ok\ntest_label_position_and_scalar_access (test_selection.SelectionTests.test_label_position_and_scalar_access) ... ok\ntest_masks_and_alignment (test_selection.SelectionTests.test_masks_and_alignment) ... ok\ntest_one_step_assignment_and_recalculation (test_selection.SelectionTests.test_one_step_assignment_and_recalculation) ... ok\ntest_order_and_dimensions (test_selection.SelectionTests.test_order_and_dimensions) ... ok\ntest_requests_rejected (test_selection.SelectionTests.test_requests_rejected) ... ok\ntest_slices_and_absent_labels (test_selection.SelectionTests.test_slices_and_absent_labels) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.016s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_74"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "supplemental unknown-condition caller",
+      "args": [
+        "pandas_lab_74/guard_demo.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "unknown Boolean condition: selection withheld\nALPHA\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listings unchanged",
+      "actual": "{'selection.py': 'd18e0c5ee4d5ef0be5a1b3a33c4b338499988129ea04e80da933467c1b0eab83', 'test_selection.py': 'bd8b5992978db20f1d16a305da42e2a771fd9065735a2a057c10534075ba76ee'}",
+      "expected": "{'selection.py': 'd18e0c5ee4d5ef0be5a1b3a33c4b338499988129ea04e80da933467c1b0eab83', 'test_selection.py': 'bd8b5992978db20f1d16a305da42e2a771fd9065735a2a057c10534075ba76ee'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "requested ordered one-column table",
+      "actual": "(True, (2, 1), ['BETA', 'CASH'], ['market_value'], [300.0, 100.0])",
+      "expected": "(True, (2, 1), ['BETA', 'CASH'], ['market_value'], [300.0, 100.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "label and position result ranks",
+      "actual": "[('Series', (3,)), ('DataFrame', (1, 3)), ('Series', (3,)), ('DataFrame', (1, 3))]",
+      "expected": "[('Series', (3,)), ('DataFrame', (1, 3)), ('Series', (3,)), ('DataFrame', (1, 3))]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "equivalent label/position values on supplied order",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "inclusive label slice versus exclusive positional stop",
+      "actual": "(['ALPHA', 'BETA'], ['ALPHA'])",
+      "expected": "(['ALPHA', 'BETA'], ['ALPHA'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "unmoved positional mask changes selected identities",
+      "actual": "(['ALPHA', 'BETA'], ['CASH', 'ALPHA'])",
+      "expected": "(['ALPHA', 'BETA'], ['CASH', 'ALPHA'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "label mask retains asset meaning after target reorder",
+      "actual": "['ALPHA', 'BETA']",
+      "expected": "['ALPHA', 'BETA']",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "explicitly realigned array restores intended result",
+      "actual": "['ALPHA', 'BETA']",
+      "expected": "['ALPHA', 'BETA']",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "unguarded pandas omits unknown condition",
+      "actual": "([False, True, False], ['ALPHA'])",
+      "expected": "([False, True, False], ['ALPHA'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "supplemental explicit unknown rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-selection-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-selection-exercises/review.py\", line 51, in <lambda>\n    reject('E5','supplemental explicit unknown rejection',lambda:select_known(table,unknown))\n                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-selection-exercises/known_condition.py\", line 9, in select_known\n    raise ValueError('unknown Boolean condition: selection withheld')\nValueError: unknown Boolean condition: selection withheld\n"
+    },
+    {
+      "section": "E5",
+      "label": "same guard allows fully known condition",
+      "actual": "['ALPHA']",
+      "expected": "['ALPHA']",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "loc required absent label",
+      "actual": "'KeyError'",
+      "expected": "'KeyError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-selection-exercises/review.py\", line 55, in run\n    try:table.loc[['ABSENT']];actual='no exception';trace=''\n        ~~~~~~~~~^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/indexing.py\", line 1191, in __getitem__\n    return self._getitem_axis(maybe_callable, axis=axis)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/indexing.py\", line 1420, in _getitem_axis\n    return self._getitem_iterable(key, axis=axis)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/indexing.py\", line 1360, in _getitem_iterable\n    keyarr, indexer = self._get_listlike_indexer(key, axis)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/indexing.py\", line 1558, in _get_listlike_indexer\n    keyarr, indexer = ax._get_indexer_strict(key, axis_name)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 6200, in _get_indexer_strict\n    self._raise_if_missing(keyarr, indexer, axis_name)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/indexes/base.py\", line 6249, in _raise_if_missing\n    raise KeyError(f\"None of [{key}] are in the [{axis_name}]\")\nKeyError: \"None of [Index(['ABSENT'], dtype='object', name='asset')] are in the [index]\"\n"
+    },
+    {
+      "section": "E6",
+      "label": "reindex constructs unknown row",
+      "actual": "(['ABSENT'], (1, 3), np.True_)",
+      "expected": "(['ABSENT'], (1, 3), True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "checked selector rejects absent requested asset",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-selection-exercises/review.py\", line 14, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-selection-exercises/review.py\", line 59, in <lambda>\n    reject('E6','checked selector rejects absent requested asset',lambda:m.select_assets(table,('ABSENT',),('price',)))\n                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7selection/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.04-indexing-and-selection.md\", line 38, in select_assets\nValueError: assets: unknown label\n"
+    },
+    {
+      "section": "E7",
+      "label": "repricing alone leaves stored BETA value stale",
+      "actual": "np.float64(300.0)",
+      "expected": "300.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "independent rational BETA repricing",
+      "actual": "(np.float64(270.0), np.float64(970.0))",
+      "expected": "(270.0, 970.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "scenario update preserves source",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "selector intentionally does not reconcile financial values",
+      "actual": "[90.0, 300.0]",
+      "expected": "[90.0, 300.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "selector intentionally permits numeric missingness",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "selected output mutation leaves source intact",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Unchanged selection source and explicit pandas mechanics;E5 supplemental known-condition guard;E8 source-boundary probes plus conceptual currency/context limits"
+}

@@ -1,0 +1,69 @@
+# Section 7.4 — Eight scoped local answers
+
+QA answers correspond to the supplied prompts without changing the manuscript. Exact source calls and explicit pandas mechanics are separated from E5's supplemental unknown-condition guard and conceptual metadata interpretation.
+
+## 7.4-E1
+
+**Prompt:** Select BETA and CASH, in that order, retaining only market_value as a one-column DataFrame.
+
+**Scope:** SOURCE SELECTOR
+
+select_assets(t,("BETA","CASH"),("market_value",)) returns a DataFrame with shape(2,1), rows BETA then CASH, one market_value column and values300,100. Nonempty tuple requests preserve requested axes and singleton field rank; mutation of the returned numeric copy leaves source data unchanged.
+
+## 7.4-E2
+
+**Prompt:** Compare `.loc['BETA']`, `.loc[['BETA']]`, `.iloc[1]`, and `.iloc[[1]]`; report their result types.
+
+**Scope:** SOURCE RESULT + DIMENSION MECHANICS
+
+On the unique supplied axes, .loc["BETA"] and .iloc[1] produce equal row Series of shape(3,). .loc[["BETA"]] and .iloc[[1]] produce equal one-row DataFrames of shape(1,3). Label identity and second position coincide only in this fixture order; wrapping the selector in a list preserves the row axis.
+
+## 7.4-E3
+
+**Prompt:** Compare the fixture label slice ALPHA through BETA with positional slice 0:1.
+
+**Scope:** SOURCE RESULT + SLICE CONTRACT
+
+t.loc["ALPHA":"BETA"] includes ALPHA and BETA. t.iloc[0:1] contains only ALPHA because positional stop1 is excluded. This label-slice statement applies to the supplied unique ordered axis, not arbitrary sorting or duplicate-index behavior.
+
+## 7.4-E4
+
+**Prompt:** Reorder the table and explain why an unchanged positional Boolean array can select different assets.
+
+**Scope:** PANDAS MASK MECHANICS
+
+The original complete mask is[True,True,False] for ALPHA,BETA,CASH. Keeping that bare Boolean array after reordering rows to CASH,ALPHA,BETA selects CASH and ALPHA, so the population changes. A labeled mask used with .loc still selects ALPHA and BETA; alternatively reindex the mask to the target axis before exporting it for .iloc. Validate identity/coverage before discarding labels.
+
+## 7.4-E5
+
+**Prompt:** Create a nullable Boolean condition with one unknown entry. Implement an explicit rejection before selection.
+
+**Scope:** SUPPLEMENTAL KNOWN-CONDITION GUARD
+
+A nullable Boolean mask[True,pd.NA,False] selects only ALPHA under ordinary pandas behavior; unknown BETA is excluded rather than proven false. known_condition.select_known explicitly raises ValueError when mask.isna().any() before selection. With a fully known aligned Boolean mask[True,False,False], it returns ALPHA. The small supplement assumes an already validated table and unique matching Boolean mask identities/dtype; it is not an arbitrary mask parser or valuation validator.
+
+## 7.4-E6
+
+**Prompt:** Request an absent asset through `.loc`, through `.reindex`, and through the helper. Explain the different contracts.
+
+**Scope:** SOURCE + PANDAS ERROR POLICIES
+
+t.loc[["ABSENT"]] raises KeyError for a required missing label. t.reindex(["ABSENT"]) constructs a one-row three-column all-missing frame to expose a requested axis. select_assets(t,("ABSENT",),("price",)) raises ValueError during application validation before selection. These are distinct contracts, not equivalent ways to substitute a zero-valued holding.
+
+## 7.4-E7
+
+**Prompt:** Reprice BETA to 90 in a copied scenario, recompute market_value, and verify the total is 970.
+
+**Scope:** SOURCE FIXTURE + SUPPLEMENTAL SCENARIO
+
+Copy the source, set scenario.loc["BETA","price"]=90, then recalculate scenario.loc[:,"market_value"]=scenario["quantity"]*scenario["price"]. BETA is3*90=270; exact scalar total6*100+3*90+1*100=970. Updating price alone first leaves BETA market_value stale at300. Source remains unchanged. This is synthetic repricing, not trading or performance.
+
+## 7.4-E8
+
+**Prompt:** Explain why selecting a well-labeled numeric subset does not prove currency consistency or eliminate stale derived values.
+
+**Scope:** SOURCE BOUNDARY PROBES + CONCEPTUAL CONTEXT
+
+The helper selects the stale pair BETA price90/market_value300 and also accepts a selected numeric NaN price, as explicitly documented. It validates selection identity,dimensions,dtype and numeric-copy ownership, not price/quantity reconciliation or completeness. It receives no currency/valuation-time metadata and cannot prove units,source freshness or financial comparability. Validate the whole source and its context upstream, refresh derived fields after edits and retain independently expected coverage before using a subset.
+
+All three documented source commands and one supplemental caller pass. Expected errors retain their types/traces; first-run evidence is retained. No unexpected failure or manuscript defect surfaced. Ordinary pandas exclusion of unknown mask entries and the selector's permissive numerical policy are documented behaviors, not new findings. F28/F32,upstream financial validation,platform and independent acceptance remain open.
