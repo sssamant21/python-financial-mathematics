@@ -1,0 +1,231 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.05-reading-financial-data.md",
+  "source_sha256": "b259e7d5ada815f0a499cfddf618d615c2d34787151e363e50f3b254dd959357",
+  "program_fence": 0,
+  "test_fence": 1,
+  "program_sha256": "cc53aeee6f3f4c36b1af762f2ba9a2be5042ad6580b355e1feff40a3d7a5e349",
+  "test_sha256": "a2e74a838c909031b003d3a5103d855fa48b37eaadcb4aed1b263a0457886aca",
+  "fixture_sha256": "e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11",
+  "snapshots_sha256": "c3204b708a172142984a02cde14d82c0ccced05dd170f447b7bbc59475c8e926",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 22,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_75/read_holdings.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "       quantity  price  market_value\nasset                               \n00123      6.00 100.00        600.00\nBETA       3.00 100.00        300.00\nNA         1.00 100.00        100.00\nTotal: 1000.00 USD\nRows: 3; SHA-256: e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_75",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_context_rejections (test_read_holdings.ReadTests.test_context_rejections) ... ok\ntest_header_and_record_shape (test_read_holdings.ReadTests.test_header_and_record_shape) ... ok\ntest_identity_rejections (test_read_holdings.ReadTests.test_identity_rejections) ... ok\ntest_known_values_and_identifiers (test_read_holdings.ReadTests.test_known_values_and_identifiers) ... ok\ntest_limits_and_overflow (test_read_holdings.ReadTests.test_limits_and_overflow) ... ok\ntest_numeric_rejections (test_read_holdings.ReadTests.test_numeric_rejections) ... ok\ntest_snapshot_hash (test_read_holdings.ReadTests.test_snapshot_hash) ... ok\ntest_zero_fraction_and_reordered_rows (test_read_holdings.ReadTests.test_zero_fraction_and_reordered_rows) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.042s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_75"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "two source listings and CSV unchanged",
+      "actual": "{'read_holdings.py': 'cc53aeee6f3f4c36b1af762f2ba9a2be5042ad6580b355e1feff40a3d7a5e349', 'test_read_holdings.py': 'a2e74a838c909031b003d3a5103d855fa48b37eaadcb4aed1b263a0457886aca', 'holdings.csv': 'e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11'}",
+      "expected": "{'read_holdings.py': 'cc53aeee6f3f4c36b1af762f2ba9a2be5042ad6580b355e1feff40a3d7a5e349', 'test_read_holdings.py': 'a2e74a838c909031b003d3a5103d855fa48b37eaadcb4aed1b263a0457886aca', 'holdings.csv': 'e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11'}",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "independent fixture value and literal IDs",
+      "actual": "(['00123', 'BETA', 'NA'], [600.0, 300.0, 100.0], 1000.0)",
+      "expected": "(['00123', 'BETA', 'NA'], [600.0, 300.0, 100.0], 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "leading-zero replacement is literal text",
+      "actual": "('00007', True)",
+      "expected": "('00007', True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "renaming does not change per-row value",
+      "actual": "(np.float64(600.0), 1000.0)",
+      "expected": "(600.0, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "missing whole record still satisfies local uniqueness",
+      "actual": "(True, 2, ['00123', 'NA'])",
+      "expected": "(True, 2, ['00123', 'NA'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "missing BETA accepted subtotal is not original full value",
+      "actual": "700.0",
+      "expected": "700.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "changed currency rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 53, in <lambda>\n    reject('E3','changed currency rejected',lambda:load(payload.replace(b'USD',b'EUR',1)))\n                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 42, in load\n    probe=parent/'probe.csv';probe.write_bytes(data);return m.load_holdings(probe,currency='USD',valuation_date='2026-01-30')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 59, in load_holdings\n    A generic `pd.read_csv(path)` can infer numeric types and recognize default missing-value tokens. That is convenient for exploration, but potentially wrong for identifiers. A numeric-looking asset identifier such as 00123 must remain text. The identifier NA is literal text in this fixture and must not become missing.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: currency differs from expected snapshot\n"
+    },
+    {
+      "section": "E3",
+      "label": "changed calendar label rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 54, in <lambda>\n    reject('E3','changed calendar label rejected',lambda:load(payload.replace(b'2026-01-30',b'2026-01-29',1)))\n                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 42, in load\n    probe=parent/'probe.csv';probe.write_bytes(data);return m.load_holdings(probe,currency='USD',valuation_date='2026-01-30')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 61, in load_holdings\n    The lab uses `dtype=str`, `keep_default_na=False`, and `na_filter=False` so fields first enter pandas as text without automatic missing-token conversion. Explicit validators then reject empty or invalid numeric fields, while accepting the literal identifier NA. No missing price is replaced by zero.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: date differs from expected snapshot\n"
+    },
+    {
+      "section": "E4",
+      "label": "empty supplied price rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 55, in <lambda>\n    reject('E4','empty supplied price rejected',lambda:load(payload.replace(b'BETA,3,100,',b'BETA,3,,')))\n                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 42, in load\n    probe=parent/'probe.csv';probe.write_bytes(data);return m.load_holdings(probe,currency='USD',valuation_date='2026-01-30')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 64, in load_holdings\nValueError: price: unsigned decimal text required\n"
+    },
+    {
+      "section": "E4",
+      "label": "literal zero accepted as different economic observation",
+      "actual": "(np.float64(0.0), 700.0)",
+      "expected": "(0.0, 700.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "LF and CRLF retain equal financial rows",
+      "actual": "(True, 1000.0)",
+      "expected": "(True, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "each snapshot hashes actual bytes",
+      "actual": "('e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11', '86492ee0de168dcea173b9af8c403230ad935559efd0f8bf16f00d26f0728dff')",
+      "expected": "('e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11', '86492ee0de168dcea173b9af8c403230ad935559efd0f8bf16f00d26f0728dff')",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "byte identity differs with line endings",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "one extra CR per LF line",
+      "actual": "4",
+      "expected": "4",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "loader retains reversed source record order",
+      "actual": "['NA', 'BETA', '00123']",
+      "expected": "['NA', 'BETA', '00123']",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "asset-level values and total preserved",
+      "actual": "(True, 1000.0)",
+      "expected": "(True, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "reordered bytes have different source hash",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "current loader has no external expected-set boundary",
+      "actual": "(['00123', 'BETA', 'NA', 'OTHER'], 1001.0)",
+      "expected": "(['00123', 'BETA', 'NA', 'OTHER'], 1001.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "single full-file loader detects duplicate across appended groups",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 67, in <lambda>\n    reject('E8','single full-file loader detects duplicate across appended groups',lambda:load(payload+lines[1].encode()+b'\\n'))\n                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-csv-exercises/review.py\", line 42, in load\n    probe=parent/'probe.csv';probe.write_bytes(data);return m.load_holdings(probe,currency='USD',valuation_date='2026-01-30')\n                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7csv/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.05-reading-financial-data.md\", line 57, in load_holdings\n    ## 7.5.5 Preserve Text Before Converting Numbers\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unique trimmed nonempty asset identifiers required\n"
+    },
+    {
+      "section": "ALL",
+      "label": "documented LF fixture hash",
+      "actual": "'e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11'",
+      "expected": "'e68b437d0a8476c1b21a01a0ae4577144b54c79b8383d1f0d9779dd958297c11'",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "source CSV unchanged",
+      "actual": "b'asset,quantity,price,currency,valuation_date\\n00123,6,100,USD,2026-01-30\\nBETA,3,100,USD,2026-01-30\\nNA,1,100,USD,2026-01-30\\n'",
+      "expected": "b'asset,quantity,price,currency,valuation_date\\n00123,6,100,USD,2026-01-30\\nBETA,3,100,USD,2026-01-30\\nNA,1,100,USD,2026-01-30\\n'",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "E1-6 original loader calls;E7 expected-set contract/test design only;E8 chunked design plus single-full-file duplicate illustration,not streaming execution"
+}

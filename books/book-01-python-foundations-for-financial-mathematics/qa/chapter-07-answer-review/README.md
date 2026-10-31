@@ -32,4 +32,6 @@ Earlier checkpoint: [Section 7.2 local exercises](../chapter-07-series-exercises
 
 Earlier checkpoint: [Section 7.3 local exercises](../chapter-07-dataframe-exercises/README.md):8 answers,3 commands,22 predicates and8 existing methods passed. 24/136 local prompts reviewed; 112 remain. Next: Section 7.4 local exercises.
 
-Current checkpoint: [Section 7.4 local exercises](../chapter-07-selection-exercises/README.md): 8 answers,4 commands,21 predicates and8 existing methods passed. 32/136 local prompts reviewed; 104 remain. Next: Section 7.5 local exercises.
+Earlier checkpoint: [Section 7.4 local exercises](../chapter-07-selection-exercises/README.md): 8 answers,4 commands,21 predicates and8 existing methods passed. 32/136 local prompts reviewed; 104 remain. Next: Section 7.5 local exercises.
+
+Current checkpoint: [Section 7.5 local exercises](../chapter-07-csv-exercises/README.md):8 answers,3 commands,22 predicates and8 existing methods passed. 40/136 local prompts reviewed; 96 remain. Next: Section 7.6 local exercises.
