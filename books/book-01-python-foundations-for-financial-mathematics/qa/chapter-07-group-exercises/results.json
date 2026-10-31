@@ -1,0 +1,212 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.11-grouping-and-aggregation.md",
+  "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+  "program_fence": 3,
+  "test_fence": 4,
+  "program_sha256": "0842043e45ae9efbb7554bc1b20029383442e579e6cd7642a9637c61c45b9cc9",
+  "test_sha256": "0319c49ff9701477b972621de3a8a5f392248ad03e0eeb2cf619024ba48cee28",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 20,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_711/grouping.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "        asset_count  opening_value  price_pnl  portfolio_weight  portfolio_contribution  sector_return\nsector                                                                                                \ncash              1       100.0000     0.0000            0.1000                  0.0000         0.0000\nequity            2       900.0000    45.0000            0.9000                  0.0450         0.0500\nunused            1         0.0000     0.0000            0.0000                  0.0000            NaN\nPortfolio price return: 4.50%\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_711",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_domain_schema_and_range (test_grouping.GroupTests.test_domain_schema_and_range) ... ok\ntest_groupby_missing_keys_and_transform (test_grouping.GroupTests.test_groupby_missing_keys_and_transform) ... ok\ntest_known_answers (test_grouping.GroupTests.test_known_answers) ... ok\ntest_missing_and_duplicate_rejections (test_grouping.GroupTests.test_missing_and_duplicate_rejections) ... ok\ntest_permutation_and_source (test_grouping.GroupTests.test_permutation_and_source) ... ok\ntest_scalar_oracle_and_reconciliation (test_grouping.GroupTests.test_scalar_oracle_and_reconciliation) ... ok\ntest_weighted_vs_simple_mean (test_grouping.GroupTests.test_weighted_vs_simple_mean) ... ok\ntest_zero_sector_and_zero_portfolio (test_grouping.GroupTests.test_zero_sector_and_zero_portfolio) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.037s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_711"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'grouping.py': '0842043e45ae9efbb7554bc1b20029383442e579e6cd7642a9637c61c45b9cc9', 'test_grouping.py': '0319c49ff9701477b972621de3a8a5f392248ad03e0eeb2cf619024ba48cee28'}",
+      "expected": "{'grouping.py': '0842043e45ae9efbb7554bc1b20029383442e579e6cd7642a9637c61c45b9cc9', 'test_grouping.py': '0319c49ff9701477b972621de3a8a5f392248ad03e0eeb2cf619024ba48cee28'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "independent rational mean/weighted/contribution",
+      "actual": "(Fraction(1, 40), Fraction(1, 20), Fraction(9, 200))",
+      "expected": "(Fraction(1, 40), Fraction(1, 20), Fraction(9, 200))",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "source equity denominators and portfolio total",
+      "actual": "(np.True_, np.True_, True)",
+      "expected": "(True, True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "fixture reversal preserves keyed summary",
+      "actual": "(True, 0.045)",
+      "expected": "(True, 0.045)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "report keys deliberately sorted",
+      "actual": "['cash', 'equity', 'unused']",
+      "expected": "['cash', 'equity', 'unused']",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "new cash sector counts and scalar PnL",
+      "actual": "(np.int64(2), np.float64(300.0), np.float64(4.0))",
+      "expected": "(2, 300.0, 4.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "new invested portfolio conserves rows/value/PnL",
+      "actual": "(5, np.float64(1200.0), np.float64(49.0))",
+      "expected": "(5, 1200.0, 49.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "cash sector return and portfolio contribution use different denominators",
+      "actual": "(np.True_, np.True_)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "independent new portfolio price return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "group contributions reconcile new portfolio",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "generic pandas dropna choice changes population",
+      "actual": "(3, 4)",
+      "expected": "(3, 4)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "generic default drops unclassified opening exposure",
+      "actual": "np.float64(400.0)",
+      "expected": "400.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "public source rejects missing classification",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7groupex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-group-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7groupex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-group-exercises/review.py\", line 53, in <lambda>\n    reject('E4','public source rejects missing classification',lambda:m.summarize(missing))\n                                                                      ^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7groupex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.11-grouping-and-aggregation.md\", line 18, in summarize\n    1. Explain split-apply-combine and define the input record grain.\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: complete trimmed asset and sector strings required\n"
+    },
+    {
+      "section": "E5",
+      "label": "observed zero sector remains with undefined own return",
+      "actual": "(np.int64(1), np.float64(0.0), True, np.float64(0.0))",
+      "expected": "(1, 0.0, True, 0.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "zero exposure does not change total return",
+      "actual": "0.045",
+      "expected": "0.045",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "row-aligned sector totals",
+      "actual": "[900.0, 900.0, 100.0, 0.0]",
+      "expected": "[900.0, 900.0, 100.0, 0.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "summing repeated transform is not group reconciliation",
+      "actual": "(np.float64(1900.0), np.float64(1000.0))",
+      "expected": "(1900.0, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "whole missing asset can still pass local source validation",
+      "actual": "(3, np.float64(700.0), True)",
+      "expected": "(3, 700.0, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "source preserved",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Exact original source and supplemental group/transform mechanics;independent rational denominators;E7 account keys and E8 external population reconciliation conceptual only"
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.11-E1",
+    "prompt": "Reproduce equity's 2.50% simple mean, 5.00% weighted return and 4.50% portfolio contribution by hand.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "SOURCE + RATIONAL DERIVATION",
+    "answer": "Equity simple mean=(1/10\u22121/20)/2=1/40=2.50%. P&L600/10\u2212300/20=45 and opening value900 give weighted sector return45/900=1/20=5.00%. Contribution to portfolio uses denominator1000,so45/1000=9/200=4.50percentage points. These have different weights/denominators;sector returns must not simply be summed as portfolio return."
+  },
+  {
+    "id": "7.11-E2",
+    "prompt": "Reverse source ordering and verify report keys and results remain consistent for the fixture.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "EXACT SOURCE ORDERING",
+    "answer": "Reverse the source rows and call summarize again. For the controlled fixture,the full keyed report and portfolio return remain equal,with sorted sector keys cash,equity,unused. This confirms identity preservation for this case,not universal bitwise invariance for arbitrary floating-point reduction orders."
+  },
+  {
+    "id": "7.11-E3",
+    "prompt": "Add another invested cash asset and reconcile group counts, values and contributions.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "EXACT SOURCE + RATIONAL ADDED-CASH ORACLE",
+    "answer": "Append CASH2 in sectorcash with opening200 and common-interval return0.02. New cash opening300,P&L4,count2;equity remains900/P&L45/count2;unused count1 haszeroexposure. Five records reconcile to opening1200 and P&L49. Cash ownreturn4/300=1/75,portfolio contribution4/1200=1/300;equity contribution45/1200=3/80. Contributions sum49/1200\u22484.08333%. Inputs share the original no-flows/common-currency/common-interval assumptions."
+  },
+  {
+    "id": "7.11-E4",
+    "prompt": "Replace one sector with a missing value; contrast general pandas behavior with the public function's rejection.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "SOURCE REJECTION + GENERAL GROUPBY CONTRAST",
+    "answer": "Set ALPHA sector toNone. General default groupby drops that missing-key row,retaining3records and opening exposure400;dropna=False retains4records including the unknown-classification group. The public function raises ValueError for incomplete sector text before aggregation. Missing grouping keys must not silently erase600 of opening exposure from a complete-portfolio claim."
+  },
+  {
+    "id": "7.11-E5",
+    "prompt": "Add a zero-valued observed sector and explain its undefined return.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "EXACT SOURCE ZERO-DENOMINATOR POLICY",
+    "answer": "Append assetZERO2 in new observed sectorotherzero with opening0 and observed return0.1. Report retains its count1,opening0,P&L0,contribution0 and ownsectorreturnNaN because the own-return denominator is0. Portfolio return remains0.045. This is an observed zero-exposure sector,not an unused categorical level or missing source return."
+  },
+  {
+    "id": "7.11-E6",
+    "prompt": "Use transform to attach sector opening totals to rows, then explain why summing those repeated totals is wrong.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "SUPPLEMENTAL TRANSFORM MECHANICS",
+    "answer": "raw.groupby(\"sector\")[\"opening_value\"].transform(\"sum\") returns[900,900,100,0] aligned to asset rows. Equity total900 is repeated for two assets,so summing the vector gives1900 rather than the true grouped opening1000. Use one summary row per sector for reconciliation;transform supports row-level comparisons,not an independently additive sector table."
+  },
+  {
+    "id": "7.11-E7",
+    "prompt": "Design account-and-sector keys for separate account reports; state which denominator each contribution should use.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "ACCOUNT/SECTOR DESIGN \u2014 NOT IMPLEMENTED",
+    "answer": "For separate account reports define source grain(account_id,asset_or_position_id,valuation_snapshot),with each position mapped to one sector under a documented classification version. Group by(account_id,sector) within compatible currency/time/return conventions. Divide sector P&L by that account total opening value for contribution to the account,not by the consolidated portfolio;own-sector return divides by that account-sector opening value. Preserve zero-denominator/missingness policy per account and reconcile each account before any explicitly authorized consolidation. Do not silently deduplicate the same instrument held in different accounts. No multi-account API or denominator implementation was added."
+  },
+  {
+    "id": "7.11-E8",
+    "prompt": "Explain why complete observed groups still require an independently expected asset population before claiming portfolio completeness.",
+    "source": "chapter-07/7.11-grouping-and-aggregation.md",
+    "source_sha256": "7ecd99165c33114db04b73b0166f84ea91a5458eb93c81538d7bf650cd1356c1",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-group-exercises/README.md",
+    "baseline": "fcef8fc1b4ca70003d02b930c9f07ba71da87906",
+    "kind": "SOURCE COVERAGE LIMIT + EXTERNAL CONTROL DESIGN",
+    "answer": "Complete observed numeric groups establish only internal record/count/value reconciliation. Omitting BETA entirely still passes current source validation and returns3records,opening700,priceP&L60 and return60/700=3/35. Detecting that omission needs an independently maintained expected asset/position population,valuation context and source control totals. Compare missing/extra keys and unresolved classifications before claiming full portfolio completeness;do not derive expected assets from observed group output. No independent source-universe integration was implemented or accepted."
+  }
+]

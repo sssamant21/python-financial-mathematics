@@ -44,4 +44,6 @@ Earlier checkpoint: [Section 7.8 local exercises](../chapter-07-cleaning-exercis
 
 Earlier checkpoint: [Section 7.9 local exercises](../chapter-07-date-exercises/README.md):8 answers,3 commands,16 predicates and8 existing methods passed. 72/136 local prompts reviewed; 64 remain. Next: Section 7.10 local exercises.
 
-Current checkpoint: [Section 7.10 local exercises](../chapter-07-screen-exercises/README.md):8 answers,3 commands,18 predicates and8 existing methods passed. 80/136 local prompts reviewed;56 remain. Next: Section 7.11 local exercises.
+Earlier checkpoint: [Section 7.10 local exercises](../chapter-07-screen-exercises/README.md):8 answers,3 commands,18 predicates and8 existing methods passed. 80/136 local prompts reviewed;56 remain. Next: Section 7.11 local exercises.
+
+Current checkpoint: [Section 7.11 local exercises](../chapter-07-group-exercises/README.md):8 answers,3 commands,20 predicates and8 existing methods passed. 88/136 local prompts reviewed;48 remain. Next: Section 7.12 local exercises.
