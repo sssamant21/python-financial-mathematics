@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `e5780915662a4c69e0ef7acbbb961eadc16f2237`  
-**Latest scoped source revision:** `0939286f031fc23b7b86f25b2f6dc80cb0bda807`  
-**Disposition:** Earlier V-49 full candidate runtime plus subsequent Section18.9 project-error scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `54c73a8f98043676edad54efc5725e80f4af883c`  
+**Latest scoped source revision:** `54c73a8f98043676edad54efc5725e80f4af883c`  
+**Disposition:** V-50 full candidate runtime includes project-error checks and final solver/curve integration; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-50 nineteenth refresh](runtime-refresh-2026-10-30-r14.md):489 compiled,278 scripts passed,490 required hashes verified before/after. Includes the project-error checker and final solver/curve integration/checker. Current candidate execution; G2–G8 unchanged.
 
 [V-49 eighteenth refresh](runtime-refresh-2026-10-30-r13.md):487 compiled,276 scripts passed,488 required hashes verified before/after. Includes complete-stencil corrections and all three recent Chapter18 checkers. Current candidate execution; G2–G8 unchanged.
 
@@ -55,7 +57,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-49 earlier full pin:487 compiled/276 scripts/488 hashes; subsequent Section18.9 checker has27-file/17-script scoped pass at `0939286f031fc23b7b86f25b2f6dc80cb0bda807` | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-50 at `54c73a8f98043676edad54efc5725e80f4af883c`:489 compiled/278 scripts/490 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -242,3 +244,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Project evaluation-error contract — 2026-10-30
 
 [Section18.9 evidence](chapter-18-project-errors-followup.md) directly checks9 pre-callback invalid controls,5 derivative-error cases,15 objective-error positions,3 unneeded-derivative paths,2 affine fallbacks,unchanged callback exception propagation and eager endpoint validation. Two wrong policies are detected; the first checker run passed against the unchanged solver. All27 chapter sources compiled and17 scripts passed at `0939286f031fc23b7b86f25b2f6dc80cb0bda807`; hashes match the pinned tree and remain unchanged after execution. Current inventory488 Python files/277 scripts is not a new full run; V-49 remains the earlier487/276 full execution. COV-81 is newly partially addressed:30 selected categories remain partially addressed,none closed by the register; these are gaps,not defect counts or percentages. Next executable item: COV-81 Section18.10 actual safeguarded-Newton/bisection and three-convention interpolation report integration, with independent references and injected wrong outputs. Broader applied-study, financial/model, independent-review,supported-platform and release obligations stay open.
+
+## Final solver/curve integration and V-50 — 2026-10-30
+
+[Section18.10 evidence](chapter-18-final-method-integration-followup.md) preserves the initial missing-comparison failure and integrates actual Section18.9 safeguarded Newton plus Section18.6 three-convention curve output. Common absolute width thresholds,100-digit Decimal references,independent callback counts,two helper calls and five injected wrong outputs are checked. The recorded Newton implementation uses more callbacks than bisection; no speed claim is made. All28 chapter files compiled and18 scripts passed. [V-50 full execution](runtime-refresh-2026-10-30-r14.md) compiled489 files,passed278 scripts and verified490 required hashes before/after at `54c73a8f98043676edad54efc5725e80f4af883c`, including the preceding project-error checker. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-81 Section18.10 actual three-step first/second sensitivity and trapezoid/Simpson PV report integration using Section18.7 helpers; the supplemental checker is not itself an integrated final-report field. Broader multiple-IRR input/range,applied/model,independent-review,supported-platform and release obligations stay open.
