@@ -5,6 +5,7 @@ from section_18_07 import central_difference as _shared_central_difference
 import section_18_06 as interpolation_lab
 import section_18_09 as solver_project
 import section_18_07 as numerical_lab
+from section_18_05 import periodic_npv as _shared_periodic_npv
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -24,12 +25,7 @@ def zero_price(r,face=1000.0,years=2.0):
     return finite(face*math.exp(-years*math.log1p(r)),"price")
 
 def npv(rate,flows):
-    r=finite(rate,"rate")
-    if r<=-1 or not isinstance(flows,(tuple,list)) or not flows:
-        raise ValueError("invalid rate or cash flows")
-    values=[finite(x,"cash flow") for x in flows]
-    z=math.exp(-math.log1p(r))
-    return finite(math.fsum(c*z**i for i,c in enumerate(values)),"NPV")
+    return _shared_periodic_npv(rate,flows)
 
 def bisect(f,a,b,tol=1e-12,max_iter=200):
     a,b,tol=finite(a,"lower"),finite(b,"upper"),finite(tol,"tolerance")
