@@ -1,7 +1,7 @@
 {
   "total": 136,
-  "reviewed": 40,
-  "pending": 96,
+  "reviewed": 48,
+  "pending": 88,
   "records": [
     {
       "id": "7.1-E1",
@@ -368,64 +368,72 @@
       "prompt": "Add another leading-zero identifier and confirm its spelling survives conversion.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "EXACT SOURCE"
     },
     {
       "id": "7.6-E2",
       "prompt": "Explain why empty lot_count is accepted but empty price is rejected.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "EXACT SOURCE + FIELD POLICY"
     },
     {
       "id": "7.6-E3",
       "prompt": "Compare Int64 with int64 using one missing observation; inspect dtype and missingness.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "PANDAS REPRESENTATION MECHANICS"
     },
     {
       "id": "7.6-E4",
       "prompt": "Add a documented Boolean token vocabulary such as Y/N in a separate adapter, with explicit rejection tests.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "SUPPLEMENTAL ADAPTER + ORIGINAL CONVERTER"
     },
     {
       "id": "7.6-E5",
       "prompt": "Audit ['10','BAD',None,'20'] using errors='coerce'; report newly introduced failures separately from all missing results.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "SUPPLEMENTAL COERCION AUDIT"
     },
     {
       "id": "7.6-E6",
       "prompt": "Explain why casting a truncated integer back to float cannot restore its source fraction.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "CAST MECHANICS + RATIONAL ORACLE"
     },
     {
       "id": "7.6-E7",
       "prompt": "Propose a scaled-integer cents field with an explicit maximum and rounding policy; distinguish it from this approximate price field.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "SCALED-CENTS POLICY DESIGN \u2014 NOT IMPLEMENTED"
     },
     {
       "id": "7.6-E8",
       "prompt": "Explain the extra checks needed before aggregating or multiplying nullable lot counts near their maximum range.",
       "source": "chapter-07/7.06-data-types-and-conversion.md",
       "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-conversion-exercises/README.md",
+      "kind": "EXACT BOUNDARY + DOWNSTREAM ARITHMETIC DESIGN"
     },
     {
       "id": "7.7-E1",

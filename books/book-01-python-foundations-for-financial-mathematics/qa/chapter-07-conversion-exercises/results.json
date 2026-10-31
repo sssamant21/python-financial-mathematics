@@ -1,0 +1,293 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.06-data-types-and-conversion.md",
+  "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+  "program_fence": 1,
+  "test_fence": 2,
+  "program_sha256": "7ca9b528ff3a2b2d3f499fafb48489894dbb99dc7deadf224bb8ba0fb7723980",
+  "test_sha256": "7030cde39d2eb404aa1846e3bf0268c41b17a8b777de6d196cf9e48baa14905d",
+  "adapter_sha256": "64343417fb24bfa294f608c8658c02a5c228985948b8a3851329abf1f32e9fb7",
+  "answers": 8,
+  "command_records": 4,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 28,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_76/conversion.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "asset  lot_count  price  reviewed\n00123          6 100.25      True\n   NA       <NA>  80.00     False\n BETA          0   0.00      True\nDtypes: asset=string, lot_count=Int64, price=float64, reviewed=boolean\nUnknown lot counts: 1\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_76",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_mapping (test_conversion.ConversionTests.test_boolean_mapping) ... ok\ntest_coercion_audit_and_precision (test_conversion.ConversionTests.test_coercion_audit_and_precision) ... ok\ntest_input_and_identity_rejections (test_conversion.ConversionTests.test_input_and_identity_rejections) ... ok\ntest_invalid_count_tokens (test_conversion.ConversionTests.test_invalid_count_tokens) ... ok\ntest_invalid_price_tokens (test_conversion.ConversionTests.test_invalid_price_tokens) ... ok\ntest_nullable_count_and_exact_range (test_conversion.ConversionTests.test_nullable_count_and_exact_range) ... ok\ntest_schema_and_values (test_conversion.ConversionTests.test_schema_and_values) ... ok\ntest_source_ownership_and_row_index (test_conversion.ConversionTests.test_source_ownership_and_row_index) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.021s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_76"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "supplemental adapter caller",
+      "args": [
+        "pandas_lab_76/adapter_demo.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "[True, False, True]\nreviewed must be exactly Y or N\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'conversion.py': '7ca9b528ff3a2b2d3f499fafb48489894dbb99dc7deadf224bb8ba0fb7723980', 'test_conversion.py': '7030cde39d2eb404aa1846e3bf0268c41b17a8b777de6d196cf9e48baa14905d'}",
+      "expected": "{'conversion.py': '7ca9b528ff3a2b2d3f499fafb48489894dbb99dc7deadf224bb8ba0fb7723980', 'test_conversion.py': '7030cde39d2eb404aa1846e3bf0268c41b17a8b777de6d196cf9e48baa14905d'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "additional leading-zero identifier survives",
+      "actual": "('00007', True)",
+      "expected": "('00007', True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "extended dtypes remain explicit",
+      "actual": "['string', 'Int64', 'float64', 'boolean']",
+      "expected": "['string', 'Int64', 'float64', 'boolean']",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "price independent rational reference",
+      "actual": "np.float64(12.5)",
+      "expected": "12.5",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "unknown count distinct from known zero",
+      "actual": "(True, np.int64(0))",
+      "expected": "(True, 0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "empty price rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 44, in <lambda>\n    bad=raw.copy();bad.loc[0,'price']='';reject('E2','empty price rejected',lambda:m.convert_records(bad))\n                                                                                   ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.06-data-types-and-conversion.md\", line 38, in convert_records\n    Prices are synthetic, share a supplied currency/per-unit convention, and are observations at one common valuation context. This converter does not authenticate those facts or load a data source. It handles representation and field-level domains.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: price must be unsigned decimal text\n"
+    },
+    {
+      "section": "E3",
+      "label": "nullable integer dtype and missing mask",
+      "actual": "('Int64', [False, True])",
+      "expected": "('Int64', [False, True])",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "ordinary int64 cannot retain that NaN",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "actual_exception": "ValueError",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 47, in run\n    try:pd.Series([1,np.nan],dtype='int64');actual='no exception';trace='';failed=False\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/series.py\", line 584, in __init__\n    data = sanitize_array(data, index, dtype, copy)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/construction.py\", line 651, in sanitize_array\n    subarr = _try_cast(data, dtype, copy)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/construction.py\", line 818, in _try_cast\n    subarr = maybe_cast_to_integer_array(arr, dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/dtypes/cast.py\", line 1654, in maybe_cast_to_integer_array\n    casted = np.asarray(arr, dtype=dtype)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: cannot convert float NaN to integer\n"
+    },
+    {
+      "section": "E4",
+      "label": "explicit Y/N mapping output",
+      "actual": "([True, False, True], 'boolean')",
+      "expected": "([True, False, True], 'boolean')",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "other typed source fields unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "adapter preserves source tokens",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token 'y'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token 'n'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token 'yes'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token 'true'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "unknown Boolean token False",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 59, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'reviewed']=token;reject('E4','unknown Boolean token '+repr(token),lambda:adapter.convert_yn(invalid))\n                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 11, in convert_yn\n    raise ValueError('reviewed must be exactly Y or N')\nValueError: reviewed must be exactly Y or N\n"
+    },
+    {
+      "section": "E4",
+      "label": "adapter does not bypass original price grammar",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 60, in <lambda>\n    invalid=yn.copy();invalid.loc[0,'price']='BAD';reject('E4','adapter does not bypass original price grammar',lambda:adapter.convert_yn(invalid))\n                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/yn_adapter.py\", line 14, in convert_yn\n    return convert_records(mapped)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.06-data-types-and-conversion.md\", line 38, in convert_records\n    Prices are synthetic, share a supplied currency/per-unit convention, and are observations at one common valuation context. This converter does not authenticate those facts or load a data source. It handles representation and field-level domains.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: price must be unsigned decimal text\n"
+    },
+    {
+      "section": "E5",
+      "label": "coercion audit introduced versus all missing",
+      "actual": "([False, True, False, False], [False, True, True, False], 1, 2)",
+      "expected": "([False, True, False, False], [False, True, True, False], 1, 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "observed parsed numeric values",
+      "actual": "[10.0, 20.0]",
+      "expected": "[10.0, 20.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "roundtrip cast cannot recover fractional source",
+      "actual": "(np.float64(1.0), np.False_)",
+      "expected": "(1.0, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "exact lost fraction",
+      "actual": "0.75",
+      "expected": "0.75",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "original exact integer count boundary",
+      "actual": "9223372036854775807",
+      "expected": "9223372036854775807",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "independent unbounded arithmetic exceeds storage range",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "original converter rejects above exact bound",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-conversion-exercises/review.py\", line 73, in <lambda>\n    at_limit.loc[0,'lot_count']=str(maximum+1);reject('E8','original converter rejects above exact bound',lambda:m.convert_records(at_limit))\n                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7conversion/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.06-data-types-and-conversion.md\", line 33, in convert_records\n    | price | 100.25, 80, 0 | float64 | Approximate nonnegative analysis price |\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: lot_count exceeds Int64 range\n"
+    },
+    {
+      "section": "ALL",
+      "label": "original source preserved",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Exact original source;E4 separate Y/N adapter;E7 scaled-cents design and E8 downstream arithmetic policy not implemented"
+}

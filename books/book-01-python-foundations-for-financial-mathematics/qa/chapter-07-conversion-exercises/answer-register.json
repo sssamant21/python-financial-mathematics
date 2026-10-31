@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.6-E1",
+    "prompt": "Add another leading-zero identifier and confirm its spelling survives conversion.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "EXACT SOURCE",
+    "answer": "Append asset00007 with text count2,price12.50,reviewedfalse at a new unique source index10. The original converter preserves the literal string00007 and emits string/Int64/float64/boolean dtypes. Independent25/2 gives price12.5. Identity is not routed through a number."
+  },
+  {
+    "id": "7.6-E2",
+    "prompt": "Explain why empty lot_count is accepted but empty price is rejected.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "EXACT SOURCE + FIELD POLICY",
+    "answer": "The empty lot_count token is explicitly approved unknown and becomes pd.NA in Int64; known zero on BETA stays0. Empty price raises ValueError because price completeness is required. Nullable storage permits missingness but does not authorize it for every field. No valuation or replacement of unknown counts by zero is performed."
+  },
+  {
+    "id": "7.6-E3",
+    "prompt": "Compare Int64 with int64 using one missing observation; inspect dtype and missingness.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "PANDAS REPRESENTATION MECHANICS",
+    "answer": "pd.Series([1,pd.NA],dtype=\"Int64\") has nullable integer dtype and mask[False,True]. Constructing ordinary int64 with [1,np.nan] raises a ValueError subtype; exact exception name/trace retained. Ordinary NumPy-backed int64 cannot store that NaN. An inferred float64 representation would be a different dtype,not evidence that int64 can hold missing integers."
+  },
+  {
+    "id": "7.6-E4",
+    "prompt": "Add a documented Boolean token vocabulary such as Y/N in a separate adapter, with explicit rejection tests.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "SUPPLEMENTAL ADAPTER + ORIGINAL CONVERTER",
+    "answer": "yn_adapter.convert_yn requires the exact source schema and exact uppercase Y/N strings, maps them to original true/false tokens on a deep copy,then calls unchanged convert_records. Y,N,Y becomes True,False,True in boolean dtype; other typed fields match original output and source tokens stay unchanged. y,n,yes,true,empty,None and rawFalse reject; invalid price still rejects downstream. No automatic trimming,case folding or generic truthiness is used."
+  },
+  {
+    "id": "7.6-E5",
+    "prompt": "Audit ['10','BAD',None,'20'] using errors='coerce'; report newly introduced failures separately from all missing results.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "SUPPLEMENTAL COERCION AUDIT",
+    "answer": "For [\"10\",\"BAD\",None,\"20\"], errors=\"coerce\" yields observed10,20 and missing positions1,2. introduced=raw.notna() & parsed.isna() is[False,True,False,False],so one new conversion failure versus two missing results overall. Retain BAD and source identity for investigation; the originally missing None is not another newly introduced parse failure. No incomplete financial total is accepted."
+  },
+  {
+    "id": "7.6-E6",
+    "prompt": "Explain why casting a truncated integer back to float cannot restore its source fraction.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "CAST MECHANICS + RATIONAL ORACLE",
+    "answer": "The tested1.75 -> int64 -> float64 route yields1.0,not1.75. Exact source7/4 loses3/4 when cast to integer; the later float conversion can represent only the already-truncated1. Distinct fractional sources can collapse to the same integer,so the inverse cannot reconstruct the original value without retained source data. A cast is not a whole-count validator."
+  },
+  {
+    "id": "7.6-E7",
+    "prompt": "Propose a scaled-integer cents field with an explicit maximum and rounding policy; distinguish it from this approximate price field.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "SCALED-CENTS POLICY DESIGN \u2014 NOT IMPLEMENTED",
+    "answer": "Propose a separate nonnegative USD cents field with scale100 and maximum1,000,000,000,000 cents ($10,000,000,000.00). Parse original decimal text exactly,never through float; reject missing/nonfinite/negative amounts. Specify round-half-even to two decimal places when higher precision is permitted,retaining original and rounded values; alternatively reject overprecision if exact cents are required. Under the proposed rounding policy1.005 becomes100cents and1.015 becomes102cents. Validate both pre-round admissibility and final scaled integer bounds; a rounded value beyond the maximum rejects. This is a proposed business policy,not a universal monetary rule. Distinguish a cents-per-unit price from a cash amount; fractional quantities/multipliers can require further rounding decisions. No scaled-money parser or arithmetic was implemented or tested."
+  },
+  {
+    "id": "7.6-E8",
+    "prompt": "Explain the extra checks needed before aggregating or multiplying nullable lot counts near their maximum range.",
+    "source": "chapter-07/7.06-data-types-and-conversion.md",
+    "source_sha256": "5a7db246289dc3f9a6e88ead0054fe2bc8770d17cb1027a0285d2caf231082e7",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-conversion-exercises/README.md",
+    "baseline": "62c4777599cf30ca874d69f1f88f8c465a824857",
+    "kind": "EXACT BOUNDARY + DOWNSTREAM ARITHMETIC DESIGN",
+    "answer": "The original converter preserves exact Int64 maximum2**63\u22121 and rejects maximum+1. The independent Python-int sum of that accepted count and1 exceeds the storage range; conversion success does not prove later sums/products safe. Before arithmetic,define missingness/completeness,nonnegative domains,target range and aggregation units; accumulate in checked wider/Python integers with explicit bound checks before casting,or reject projected range overflow. Count*price requires currency/quantity semantics and a separate precision policy. Never rely on nullable Int64 wrapping,skip-missing sums or a float conversion to enforce exact range. No general checked aggregation/multiplication API was implemented."
+  }
+]
