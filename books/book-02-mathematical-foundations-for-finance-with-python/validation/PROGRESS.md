@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-31  
-**Overall status:** In progress — V-53 full pinned runtime passed (495 compiled files; 284 successful script exits; 496 required hashes verified before/after); coverage, independent review and release/platform validation remain pending.
+**Overall status:** In progress — V-53 full runtime passed (495 compiled files;284 successful exits;496 required hashes); subsequent Section18.3 checker passed with35-file/25-script scoped evidence. Coverage, independent review and release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -545,3 +545,9 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 [Section18.6 polynomial evidence](chapter-18-polynomial-range-followup.md) retains four baseline probes and the original failed regression. Complete rational basis/product/sum evaluation now rounds once; exact zero is accepted and final overflow or nonzero underflow raises ValueError. Nineteen independently known polynomial/2500-digit Decimal values, two range and four invalid-input cases pass. All34 Chapter18 sources compiled and24 scripts passed at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`.
 
 [V-53 full refresh](runtime-refresh-2026-10-31-r2.md) includes both interpolation corrections/checkers: **495 compiled,284 scripts passed,496 required hashes verified before/after** at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`. Thirty selected categories remain partially addressed; none closed by the register. Next substantive executable item: COV-79 Section18.3 per-iteration bisection halving, midpoint error bounds and the documented iteration-count exercise, using observed callbacks and independent exact bounds. Do not repeat the completed Section18.9 trace audit. Financial/model suitability, conditioning, independent review, supported-platform and release obligations remain open.
+
+## Bisection halving and iteration-count references — 2026-10-31
+
+[Section18.3 evidence](chapter-18-bisection-bounds-followup.md) checks observed callback points against known rational roots on five convergence/exhaustion paths. Dyadic midpoint/width/error bounds are exact; the0.2-to1e-6 exercise uses disclosed binary-rounding allowances and confirms eighteen reductions. Exact N+3 objective-call accounting and five altered records are checked. Initial audit passed; implementation unchanged. All35 Chapter18 files compiled and25 scripts passed at `aa176cb320bc21daf02b18bafa4fde1ec93bbfba`; scoped hashes match the pinned tree and remain unchanged after execution.
+
+Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495/284 full pass with496 required hashes. Thirty selected COV categories remain partially addressed; none closed by the register. Next substantive executable item: Section18.4 observed local Newton convergence-order evidence using an independent root/error reference and actual proposal/callback observations, preserving safeguard conditions; the completed Section18.9 trace audit is separate. Broader continuity/uniqueness, numerical ranges, independent review, supported-platform and release obligations remain open.
