@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-30  
-**Overall status:** In progress — earlier full pinned-revision runtime pass complete (484 compiled files; 273 successful script exits); subsequent Section18.6 interpolation checker has scoped24-file/14-script evidence; coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — earlier full pinned-revision runtime pass complete (484 compiled files; 273 successful script exits); subsequent Section18.7 order/step checker has scoped25-file/15-script evidence; coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -503,3 +503,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Interpolation curvature-bound oracle — 2026-10-30
 
 [Section18.6 evidence](chapter-18-interpolation-bound-followup.md) checks the exact quadratic identity L(q)-f(q)=a(q-A)(B-q), curvature bound and midpoint equality across100 selected quarter-grid queries;16 additional midpoint queries verify factor-four error reduction on interval halving. An extrapolation counterexample keeps the bound's interval hypothesis explicit; three wrong methods are detected. The first checker run passed against the unchanged helper. All24 chapter files compiled and14 scripts passed at `7678af6b436748470a1a1798256d8fd546bcbade`; all24 source hashes match the pinned tree and remain unchanged after execution. Current inventory is485 Python files/274 check-test scripts, not a new full run; V-48 remains the earlier484/273 full execution. Twenty-nine selected categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.7 selected exact signed trapezoid/Simpson error/order ladders and three-step first/second derivative sensitivity evidence, rather than error decrease alone. Broader smoothness/conditioning, input/result range, financial model review, independent-review, supported-platform and release obligations remain open.
+
+## Quadrature-order and derivative-step oracle — 2026-10-30
+
+[Section18.7 evidence](chapter-18-order-step-followup.md) adds48 rounded exact rule references,36 measured order checks, three polynomial difference steps and a100-digit Decimal three-step bond study with explicit callback/rounding allowances. Three wrong methods are detected. The first checker run passed against the unchanged helper. All25 chapter sources compiled and15 scripts passed at `497e1892a8bc08b353d711a092f40ddada9531bf`; hashes match the pinned tree and remain unchanged after execution. Current inventory486 Python files/275 check-test scripts is not a full runtime pass; V-48 remains the earlier484/273 run. Twenty-nine categories remain partially addressed; none closed by the register. Next executable item: COV-80 Sections18.7/18.10 finite-difference range contracts, including finite samples, combined numerator/denominator arithmetic and nonzero-to-zero results. Broader conditioning/model, independent-review, supported-platform and release obligations stay open.
