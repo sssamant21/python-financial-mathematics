@@ -1,6 +1,7 @@
 """Book 02 Section 18.10: Chapter 18 applied exercises and reference calculations."""
 import json
 import math
+from section_18_07 import central_difference as _shared_central_difference
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -64,10 +65,7 @@ def interpolate(x0,y0,x1,y1,x):
     return y0+(x-x0)*(y1-y0)/(x1-x0)
 
 def central_derivative(f,x,h):
-    x,h=finite(x,"x"),finite(h,"step")
-    if h<=0 or x-h==x or x+h==x:
-        raise ValueError("invalid step")
-    return finite((finite(f(x+h),"f+")-finite(f(x-h),"f-"))/(2*h),"derivative")
+    return _shared_central_difference(f,x,h)
 
 def simpson(f,a,b,n):
     a,b=finite(a,"lower"),finite(b,"upper")
