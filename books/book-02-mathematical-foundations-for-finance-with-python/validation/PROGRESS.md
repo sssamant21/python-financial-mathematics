@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-31  
-**Overall status:** In progress — earlier full pinned-revision runtime pass complete (493 compiled files; 282 successful script exits); subsequent affine interpolation correction has scoped33-file/23-script evidence; coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — V-53 full pinned runtime passed (495 compiled files; 284 successful script exits; 496 required hashes verified before/after); coverage, independent review and release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Earlier full pass; subsequent scoped change | 493/493 files compiled at `5396db3f4b64acb358f08ccfd89b13427ae33268` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-31.md). |
-| Automated script execution | Earlier full pass; subsequent scoped change | 282/282 scripts exited zero at `5396db3f4b64acb358f08ccfd89b13427ae33268`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-31.md). |
+| Python compilation | Full candidate pass | 495/495 files compiled at `4d90b8d6a3fdd397c7d071582829d5384fa410ab` on Python3.12.14/Linux. [V-53 evidence](runtime-refresh-2026-10-31-r2.md). |
+| Automated script execution | Full candidate pass | 284/284 scripts exited zero at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`. Counts overlap and do not measure independent coverage. [V-53 evidence](runtime-refresh-2026-10-31-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-52 twenty-first refresh](runtime-refresh-2026-10-31.md):493 compiled,282 scripts passed and494 required hashes verified before/after at `5396db3f4b64acb358f08ccfd89b13427ae33268`.
+- **Latest full run:** [V-53](runtime-refresh-2026-10-31-r2.md):495 compiled,284 scripts passed,496 required hashes verified before/after at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -539,3 +539,9 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Complete affine interpolation correction — 2026-10-31
 
 [Sections18.6/18.10 evidence](chapter-18-linear-range-followup.md) preserves five initial probes (including one control) and a failed regression. Complete rational affine evaluation now prevents nonfinite/wrong/false-zero results from intermediate differences or ratios; the final helper shares this implementation. Twelve two-entrypoint2500-digit Decimal reference sets,five multisegment values,explicit extrapolation policies,range/input rejections and a shared call pass. All33 chapter sources compiled and23 scripts passed at `0c6adb3eee831bb109290c5c9e093a05cbdce19a`; hashes match the pinned tree and remain unchanged after execution. Inventory494 Python files/283 scripts is not a new full run; V-52 remains the earlier493/282 full pass. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.6 Lagrange polynomial normalization/product/sum range and knot recovery,with independent polynomial references. Financial curve suitability,conditioning,independent-review,supported-platform and release obligations stay open.
+
+## Complete polynomial interpolation correction and V-53 — 2026-10-31
+
+[Section18.6 polynomial evidence](chapter-18-polynomial-range-followup.md) retains four baseline probes and the original failed regression. Complete rational basis/product/sum evaluation now rounds once; exact zero is accepted and final overflow or nonzero underflow raises ValueError. Nineteen independently known polynomial/2500-digit Decimal values, two range and four invalid-input cases pass. All34 Chapter18 sources compiled and24 scripts passed at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`.
+
+[V-53 full refresh](runtime-refresh-2026-10-31-r2.md) includes both interpolation corrections/checkers: **495 compiled,284 scripts passed,496 required hashes verified before/after** at `4d90b8d6a3fdd397c7d071582829d5384fa410ab`. Thirty selected categories remain partially addressed; none closed by the register. Next substantive executable item: COV-79 Section18.3 per-iteration bisection halving, midpoint error bounds and the documented iteration-count exercise, using observed callbacks and independent exact bounds. Do not repeat the completed Section18.9 trace audit. Financial/model suitability, conditioning, independent review, supported-platform and release obligations remain open.
