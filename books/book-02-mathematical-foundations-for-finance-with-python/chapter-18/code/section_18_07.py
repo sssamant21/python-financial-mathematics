@@ -95,9 +95,36 @@ def continuous_cashflow_pv(cashflow_rate,discount_rate,years):
     c,r,t=finite(cashflow_rate,"cashflow_rate"),finite(discount_rate,"discount_rate"),finite(years,"years")
     if c<0 or t<0:
         raise ValueError("cashflow rate and maturity must be nonnegative")
+    if c==0 or t==0:
+        return 0.0
     if r==0:
-        return finite(c*t,"PV")
-    return finite(-c*math.expm1(-r*t)/r,"PV")
+        return _difference_result(Fraction(c)*Fraction(t),"PV")
+    exponent=-Fraction(r)*Fraction(t)
+    if abs(exponent)<=Fraction(1,2**26):
+        # exprel(x)=(exp(x)-1)/x. On this interval the omitted relative
+        # term is bounded by exp(abs(x))*abs(x)^4/120 (< 5e-34).
+        factor=1+exponent/2+exponent**2/6+exponent**3/24
+        return _difference_result(Fraction(c)*Fraction(t)*factor,"PV")
+    try:
+        x=float(exponent)
+    except OverflowError:
+        x=-math.inf if exponent<0 else math.inf
+    try:
+        growth=math.expm1(x)
+    except OverflowError:
+        growth=math.inf
+    if math.isfinite(growth):
+        return _difference_result(-Fraction(c)*Fraction(growth)/Fraction(r),"PV")
+    # For positive growth too large for expm1, scale in the log domain.
+    # This branch has ordinary math-library rounding, not an exact contract.
+    log_value=math.log(c)-math.log(-r)+x+math.log1p(-math.exp(-x))
+    try:
+        result=math.exp(log_value)
+    except OverflowError as exc:
+        raise ValueError("PV outside floating-point range") from exc
+    if result==0:
+        raise ValueError("nonzero PV underflows floating-point range")
+    return finite(result,"PV")
 
 def assessment():
     r=0.05
