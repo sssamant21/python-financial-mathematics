@@ -1,0 +1,262 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.08-cleaning-financial-datasets.md",
+  "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
+  "program_fence": 1,
+  "test_fence": 2,
+  "program_sha256": "bcb949725180fb3f6ca97849a25b19856abd53a17f69a07d6a369ef3b5f5ef63",
+  "test_sha256": "f6821838318c9ed5c056fdb4c20c93b622c8c84340711c625e6145611c26062d",
+  "extension_sha256": "a40354cf3370faf689c360cb6ae598ce7f70f209c8b2d12518c96bb77fa012c8",
+  "audit_sha256": "424e5a899b969a29a78c2c50a9313e442b609204a5faebf7e164c4a09a62a722",
+  "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+  "answers": 8,
+  "command_records": 4,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 25,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_78/cleaning.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Input=6; accepted=2; rejected=4\nAccepted assets: ALPHA, CASH\nChanged rows: 2\nBatch valuation ready: False\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_78",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_all_duplicates_rejected (test_cleaning.CleaningTests.test_all_duplicates_rejected) ... ok\ntest_fixture_and_conservation (test_cleaning.CleaningTests.test_fixture_and_conservation) ... ok\ntest_invalid_fields (test_cleaning.CleaningTests.test_invalid_fields) ... ok\ntest_original_tokens_and_multiple_reasons (test_cleaning.CleaningTests.test_original_tokens_and_multiple_reasons) ... ok\ntest_repeatable_and_idempotent_normalization (test_cleaning.CleaningTests.test_repeatable_and_idempotent_normalization) ... ok\ntest_schema_and_cell_type (test_cleaning.CleaningTests.test_schema_and_cell_type) ... ok\ntest_source_preservation_and_local_ordinals (test_cleaning.CleaningTests.test_source_preservation_and_local_ordinals) ... ok\ntest_valid_zero_fraction_and_case (test_cleaning.CleaningTests.test_valid_zero_fraction_and_case) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.106s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_78"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "E5/E8",
+      "label": "supplemental audit caller",
+      "args": [
+        "pandas_lab_78/audit_demo.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Field changes: 3\nChanged rows: 2\nBatch digest characters: 64\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'cleaning.py': 'bcb949725180fb3f6ca97849a25b19856abd53a17f69a07d6a369ef3b5f5ef63', 'test_cleaning.py': 'f6821838318c9ed5c056fdb4c20c93b622c8c84340711c625e6145611c26062d'}",
+      "expected": "{'cleaning.py': 'bcb949725180fb3f6ca97849a25b19856abd53a17f69a07d6a369ef3b5f5ef63', 'test_cleaning.py': 'f6821838318c9ed5c056fdb4c20c93b622c8c84340711c625e6145611c26062d'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "all three output populations",
+      "actual": "(2, 4, 6)",
+      "expected": "(2, 4, 6)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "raw rejection lineage and reasons",
+      "actual": "[(1, 'BETA', 'duplicate_asset'), (2, ' BETA ', 'duplicate_asset'), (4, 'BAD', 'invalid_price'), (5, 'EURO', 'unsupported_currency')]",
+      "expected": "[(1, 'BETA', 'duplicate_asset'), (2, ' BETA ', 'duplicate_asset'), (4, 'BAD', 'invalid_price'), (5, 'EURO', 'unsupported_currency')]",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "each source ordinal accounted once",
+      "actual": "[0, 1, 2, 3, 4, 5]",
+      "expected": "[0, 1, 2, 3, 4, 5]",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "decision log all source ordinals/status",
+      "actual": "[(0, 'accepted'), (1, 'rejected'), (2, 'rejected'), (3, 'accepted'), (4, 'rejected'), (5, 'rejected')]",
+      "expected": "[(0, 'accepted'), (1, 'rejected'), (2, 'rejected'), (3, 'accepted'), (4, 'rejected'), (5, 'rejected')]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "leading-zero identifier retained",
+      "actual": "(['ALPHA', 'CASH', '00007'], np.float64(50.0))",
+      "expected": "(['ALPHA', 'CASH', '00007'], 50.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "new record does not cure other batch rejections",
+      "actual": "(4, 7, 7)",
+      "expected": "(4, 7, 7)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "all BETA records stay quarantined",
+      "actual": "[1, 2, 6]",
+      "expected": "[1, 2, 6]",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "third BETA keeps both reasons",
+      "actual": "'duplicate_asset;invalid_price'",
+      "expected": "'duplicate_asset;invalid_price'",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "no BETA winner appears",
+      "actual": "(['ALPHA', 'CASH'], 5)",
+      "expected": "(['ALPHA', 'CASH'], 5)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "field-level changes preserve exact tokens",
+      "actual": "[(0, 'asset', ' ALPHA ', 'ALPHA'), (0, 'currency', ' usd ', 'USD'), (2, 'asset', ' BETA ', 'BETA')]",
+      "expected": "[(0, 'asset', ' ALPHA ', 'ALPHA'), (0, 'currency', ' usd ', 'USD'), (2, 'asset', ' BETA ', 'BETA')]",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "three field changes across two changed rows",
+      "actual": "(3, 2, 2)",
+      "expected": "(3, 2, 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "supplement preserves original cleaning outputs",
+      "actual": "(True, True, True)",
+      "expected": "(True, True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "supplement does not mutate raw source",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "EUR remains unsupported not relabeled",
+      "actual": "['EUR', 'unsupported_currency']",
+      "expected": "['EUR', 'unsupported_currency']",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "current batch has unresolved records",
+      "actual": "(False, ['ALPHA', 'CASH'])",
+      "expected": "(False, ['ALPHA', 'CASH'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "batch hash binds exact retained parsed-record bytes",
+      "actual": "'33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'",
+      "expected": "'33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "all decisions carry digest and explicit policy",
+      "actual": "(['33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'], ['book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1'])",
+      "expected": "(['33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'], ['book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "field changes carry same batch/policy",
+      "actual": "(['33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'], ['book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1'])",
+      "expected": "(['33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4', '33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'], ['book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1', 'book1-7.8-strip-uppercase-currency-v1'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "hash kind distinguishes record serialization from file bytes",
+      "actual": "'sha256-canonical-utf8-json-records-v1'",
+      "expected": "'sha256-canonical-utf8-json-records-v1'",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "repeat same source produces same batch hash",
+      "actual": "'33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'",
+      "expected": "'33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "source order changes batch bytes/hash",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "original pandas index excluded from declared record hash",
+      "actual": "'33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'",
+      "expected": "'33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4'",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "local ordinals still distinct from batch identity",
+      "actual": "[0, 1, 2, 3, 4, 5]",
+      "expected": "[0, 1, 2, 3, 4, 5]",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Exact original cleaner plus separate E5/E8 field-change/record-hash audit;E4 lot grain/E7 expected universe are designs,not revised financial model"
+}

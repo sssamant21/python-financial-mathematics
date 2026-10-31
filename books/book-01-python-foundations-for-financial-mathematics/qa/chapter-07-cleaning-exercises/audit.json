@@ -1,0 +1,144 @@
+{
+  "accepted": [
+    {
+      "source_row": 0,
+      "asset": "ALPHA",
+      "quantity": 6.0,
+      "price": 100.0,
+      "currency": "USD",
+      "market_value": 600.0
+    },
+    {
+      "source_row": 3,
+      "asset": "CASH",
+      "quantity": 1.0,
+      "price": 100.0,
+      "currency": "USD",
+      "market_value": 100.0
+    }
+  ],
+  "rejected": [
+    {
+      "source_row": 1,
+      "asset": "BETA",
+      "quantity": "3",
+      "price": "100",
+      "currency": "USD",
+      "normalized_asset": "BETA",
+      "reason": "duplicate_asset"
+    },
+    {
+      "source_row": 2,
+      "asset": " BETA ",
+      "quantity": "3",
+      "price": "101",
+      "currency": "USD",
+      "normalized_asset": "BETA",
+      "reason": "duplicate_asset"
+    },
+    {
+      "source_row": 4,
+      "asset": "BAD",
+      "quantity": "1",
+      "price": "oops",
+      "currency": "USD",
+      "normalized_asset": "BAD",
+      "reason": "invalid_price"
+    },
+    {
+      "source_row": 5,
+      "asset": "EURO",
+      "quantity": "1",
+      "price": "100",
+      "currency": "EUR",
+      "normalized_asset": "EURO",
+      "reason": "unsupported_currency"
+    }
+  ],
+  "decision_log": [
+    {
+      "source_row": 0,
+      "changed": true,
+      "status": "accepted",
+      "reason": "",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 1,
+      "changed": false,
+      "status": "rejected",
+      "reason": "duplicate_asset",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 2,
+      "changed": true,
+      "status": "rejected",
+      "reason": "duplicate_asset",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 3,
+      "changed": false,
+      "status": "accepted",
+      "reason": "",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 4,
+      "changed": false,
+      "status": "rejected",
+      "reason": "invalid_price",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 5,
+      "changed": false,
+      "status": "rejected",
+      "reason": "unsupported_currency",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    }
+  ],
+  "field_changes": [
+    {
+      "source_row": 0,
+      "field": "asset",
+      "before": " ALPHA ",
+      "after": "ALPHA",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 0,
+      "field": "currency",
+      "before": " usd ",
+      "after": "USD",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    },
+    {
+      "source_row": 2,
+      "field": "asset",
+      "before": " BETA ",
+      "after": "BETA",
+      "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+      "policy_version": "book1-7.8-strip-uppercase-currency-v1"
+    }
+  ],
+  "source_batch_sha256": "33b55276d8c408f6271f59beb7141113ab37433d8ae29c19bda63119b5699da4",
+  "source_hash_kind": "sha256-canonical-utf8-json-records-v1",
+  "policy_version": "book1-7.8-strip-uppercase-currency-v1",
+  "scope": "Supplemental audit wrapper;source hash covers canonical parsed records,not original CSV;not complete portfolio valuation"
+}

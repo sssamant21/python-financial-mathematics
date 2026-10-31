@@ -1,7 +1,7 @@
 {
   "total": 136,
-  "reviewed": 56,
-  "pending": 80,
+  "reviewed": 64,
+  "pending": 72,
   "records": [
     {
       "id": "7.1-E1",
@@ -512,64 +512,72 @@
       "prompt": "Inspect all three output tables and identify the source records behind each rejection.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "EXACT SOURCE + ROW LINEAGE"
     },
     {
       "id": "7.8-E2",
       "prompt": "Add a valid record with leading-zero identifier 00007 and confirm spelling is preserved.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "EXACT SOURCE + RATIONAL ORACLE"
     },
     {
       "id": "7.8-E3",
       "prompt": "Add a third BETA record with an invalid price and confirm all BETA rows remain rejected.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "EXACT SOURCE DUPLICATE POLICY"
     },
     {
       "id": "7.8-E4",
       "prompt": "Propose a lot-level composite key and explain why the current asset-level duplicate rule would be wrong for it.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "LOT-GRAIN DESIGN \u2014 NOT IMPLEMENTED"
     },
     {
       "id": "7.8-E5",
       "prompt": "Add field-level before/after change records without modifying original input.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "SUPPLEMENTAL FIELD-AUDIT IMPLEMENTATION"
     },
     {
       "id": "7.8-E6",
       "prompt": "Explain why relabeling EUR as USD without conversion is not cleaning.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "EXACT SOURCE + CURRENCY INTERPRETATION"
     },
     {
       "id": "7.8-E7",
       "prompt": "Design an expected-asset-set check that runs after rejection handling and before valuation.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "EXPECTED-UNIVERSE DESIGN \u2014 NOT IMPLEMENTED"
     },
     {
       "id": "7.8-E8",
       "prompt": "Extend the audit with a source batch hash and policy version; distinguish those fields from the local row ordinal.",
       "source": "chapter-07/7.08-cleaning-financial-datasets.md",
       "source_sha256": "a23407282ce18a14126023337064afb2d0a511cc7f395341ea4085cd6c3ab5cf",
-      "status": "NOT_REVIEWED",
-      "evidence": null
+      "status": "REVIEWED_SCOPED",
+      "evidence": "../chapter-07-cleaning-exercises/README.md",
+      "kind": "SUPPLEMENTAL RECORD-HASH/POLICY AUDIT"
     },
     {
       "id": "7.9-E1",
