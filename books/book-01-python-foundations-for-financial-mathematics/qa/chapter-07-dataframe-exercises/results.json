@@ -1,0 +1,229 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.03-dataframe.md",
+  "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+  "program_fence": 3,
+  "test_fence": 4,
+  "program_sha256": "9cd00e8c29f4dceda9e08d5e268acbcef6be8a9b2eee9675bf082d01d3cbd681",
+  "test_sha256": "54e3dcd77373306318b5a53c431ca850dcf5d67ed59733c484211f403fb6eb59",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 22,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_73/holdings.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "       quantity  price  market_value\nasset                               \nALPHA      6.00 100.00        600.00\nBETA       3.00 100.00        300.00\nCASH       1.00 100.00        100.00\nTotal market value: 1000.00\nAt least 300: ALPHA, BETA\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_73",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_identity_and_size_rejections (test_holdings.HoldingsTests.test_identity_and_size_rejections) ... ok\ntest_input_preservation_and_assignment_alignment (test_holdings.HoldingsTests.test_input_preservation_and_assignment_alignment) ... ok\ntest_known_values_and_schema (test_holdings.HoldingsTests.test_known_values_and_schema) ... ok\ntest_numeric_rejections_and_zero (test_holdings.HoldingsTests.test_numeric_rejections_and_zero) ... ok\ntest_overflow_and_scalar_oracle (test_holdings.HoldingsTests.test_overflow_and_scalar_oracle) ... ok\ntest_row_and_column_order (test_holdings.HoldingsTests.test_row_and_column_order) ... ok\ntest_schema_rejections (test_holdings.HoldingsTests.test_schema_rejections) ... ok\ntest_selection_dimensions (test_holdings.HoldingsTests.test_selection_dimensions) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.293s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_73"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listings unchanged",
+      "actual": "{'holdings.py': '9cd00e8c29f4dceda9e08d5e268acbcef6be8a9b2eee9675bf082d01d3cbd681', 'test_holdings.py': '54e3dcd77373306318b5a53c431ca850dcf5d67ed59733c484211f403fb6eb59'}",
+      "expected": "{'holdings.py': '9cd00e8c29f4dceda9e08d5e268acbcef6be8a9b2eee9675bf082d01d3cbd681', 'test_holdings.py': '54e3dcd77373306318b5a53c431ca850dcf5d67ed59733c484211f403fb6eb59'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "single bracket price selection is Series",
+      "actual": "(True, (3,), 1)",
+      "expected": "(True, (3,), 1)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "list bracket price selection is DataFrame",
+      "actual": "(True, (3, 1), 2)",
+      "expected": "(True, (3, 1), 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "row order reversed with full labels",
+      "actual": "(['CASH', 'BETA', 'ALPHA'], [100.0, 300.0, 600.0])",
+      "expected": "(['CASH', 'BETA', 'ALPHA'], [100.0, 300.0, 600.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "independent exact total invariant",
+      "actual": "(1000.0, 1000.0)",
+      "expected": "(1000.0, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "output fields normalized while input order flexible",
+      "actual": "['quantity', 'price', 'market_value']",
+      "expected": "['quantity', 'price', 'market_value']",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "column reorder preserves all asset values",
+      "actual": "(True, 1000.0)",
+      "expected": "(True, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "separate derived price field not a holdings-value computation",
+      "actual": "[200.0, 200.0, 200.0]",
+      "expected": "[200.0, 200.0, 200.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "derived field has different values from market value",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "assign leaves original report unchanged",
+      "actual": "(True, False)",
+      "expected": "(True, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "external Series aligns existing asset labels",
+      "actual": "(np.float64(101.0), np.float64(1.0))",
+      "expected": "(101.0, 1.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "missing BETA remains explicit",
+      "actual": "{'ALPHA': False, 'BETA': True, 'CASH': False}",
+      "expected": "{'ALPHA': False, 'BETA': True, 'CASH': False}",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "assignment neither fills gaps nor mutates original",
+      "actual": "(np.int64(2), True)",
+      "expected": "(2, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "duplicate asset index rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 55, in <lambda>\n    duplicate=raw.copy();duplicate.index=['ALPHA','ALPHA','CASH'];reject('E6','duplicate asset index rejected',lambda:m.holdings_table(duplicate))\n                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.03-dataframe.md\", line 17, in holdings_table\nValueError: unique flat asset index required\n"
+    },
+    {
+      "section": "E6",
+      "label": "duplicate source columns rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 56, in <lambda>\n    dupcol=pd.DataFrame([[6.,100.]],index=['ALPHA'],columns=['quantity','quantity']);reject('E6','duplicate source columns rejected',lambda:m.holdings_table(dupcol))\n                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.03-dataframe.md\", line 15, in holdings_table\nValueError: exactly quantity and price columns required\n"
+    },
+    {
+      "section": "E6",
+      "label": "unexpected currency source field rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 57, in <lambda>\n    reject('E6','unexpected currency source field rejected',lambda:m.holdings_table(raw.assign(currency='USD')))\n                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.03-dataframe.md\", line 15, in holdings_table\nValueError: exactly quantity and price columns required\n"
+    },
+    {
+      "section": "E7",
+      "label": "quantity edit leaves stored derived value stale",
+      "actual": "(np.float64(7.0), np.float64(600.0), 1000.0)",
+      "expected": "(7.0, 600.0, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "passing stale report directly violates source schema",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-dataframe-exercises/review.py\", line 60, in <lambda>\n    reject('E7','passing stale report directly violates source schema',lambda:m.holdings_table(changed))\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7frame/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.03-dataframe.md\", line 15, in holdings_table\nValueError: exactly quantity and price columns required\n"
+    },
+    {
+      "section": "E7",
+      "label": "independent recomputed values and total",
+      "actual": "([700.0, 300.0, 100.0], 1100.0)",
+      "expected": "([700.0, 300.0, 100.0], 1100.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "recomputation returns new output not reactive linkage",
+      "actual": "(np.float64(600.0), np.float64(700.0))",
+      "expected": "(600.0, 700.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "all source calls preserve original fixture",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "E1-7 exact source plus supplemental pandas field/selection mechanics;E8 multi-context valuation design only;no replacement financial API"
+}

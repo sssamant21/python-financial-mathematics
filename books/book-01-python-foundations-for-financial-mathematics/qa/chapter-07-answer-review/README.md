@@ -28,4 +28,6 @@ Earlier checkpoint: [Section 7.17 project/checklists](../chapter-07-project-revi
 
 Earlier checkpoint: [Section 7.1 local exercises](../chapter-07-alignment-exercises/README.md):8 answers,4 commands,23 predicates and8 existing methods passed. 8/136 local prompts reviewed; 128 remain. Next: Section 7.2 local exercises.
 
-Current checkpoint: [Section 7.2 local exercises](../chapter-07-series-exercises/README.md):8 answers,3 command checks,23 predicates and8 existing methods passed. 16/136 local prompts reviewed; 120 remain. Next: Section 7.3 local exercises.
+Earlier checkpoint: [Section 7.2 local exercises](../chapter-07-series-exercises/README.md):8 answers,3 command checks,23 predicates and8 existing methods passed. 16/136 local prompts reviewed; 120 remain. Next: Section 7.3 local exercises.
+
+Current checkpoint: [Section 7.3 local exercises](../chapter-07-dataframe-exercises/README.md):8 answers,3 commands,22 predicates and8 existing methods passed. 24/136 local prompts reviewed; 112 remain. Next: Section 7.4 local exercises.

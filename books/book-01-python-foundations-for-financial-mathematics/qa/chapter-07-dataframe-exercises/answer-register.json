@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.3-E1",
+    "prompt": "Select price once as a Series and once as a DataFrame; report both shapes.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SOURCE RESULT + DIMENSION MECHANICS",
+    "answer": "table[\"price\"] selects a Series of shape(3,) and ndim1. table[[\"price\"]] selects a DataFrame of shape(3,1) and ndim2. Both contain the same asset prices; the list selector preserves the field axis for callers requiring a table. No rank assumption should be inferred solely from one displayed column."
+  },
+  {
+    "id": "7.3-E2",
+    "prompt": "Reverse the asset row order and confirm the total is unchanged while labels remain correct.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SOURCE + RATIONAL ORACLE",
+    "answer": "Pass fixture().iloc[::-1] into the original holdings_table. Output rows are CASH,BETA,ALPHA with market values100,300,600. Input row ordering is retained while asset/value pairings remain correct. Independent integer arithmetic1*100+3*100+6*100=1000 gives the unchanged total; this fixture does not establish universal bitwise invariance for every floating reduction."
+  },
+  {
+    "id": "7.3-E3",
+    "prompt": "Reverse input column order and inspect the function's fixed output order.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SOURCE SCHEMA CONTRACT",
+    "answer": "Select source columns in order price,quantity. The API accepts the exact unique field set in either order and constructs output order quantity,price,market_value. Output values and total equal the original report; changing field order does not change field identity. Missing,extra or duplicate fields still reject."
+  },
+  {
+    "id": "7.3-E4",
+    "prompt": "Add a derived field named price_times_two to a separate report. State its units and explain why it is not another holding value.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SUPPLEMENTAL DERIVED FIELD + UNITS REVIEW",
+    "answer": "Use a separate table.assign(price_times_two=table[\"price\"]*2). The fixture gives200 for each asset while leaving the original report unchanged. The factor2 is dimensionless, so this field remains currency per asset unit; it is not quantity*price and is not another holding value. It is not an FX conversion unless a separate documented conversion contract supplies that meaning. Summing it into market value would mix dimensions."
+  },
+  {
+    "id": "7.3-E5",
+    "prompt": "Assign a Series lacking BETA to a copied table; inspect the resulting missing cell without silently filling it.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SUPPLEMENTAL ASSIGNMENT + SOURCE OWNERSHIP",
+    "answer": "Copy the report and assign external_price=pd.Series([1.,101.],index=[\"CASH\",\"ALPHA\"]). ALPHA receives101,CASH1,BETA NaN. The missing mask isFalse,True,False and count2. pandas aligns by key but does not certify full coverage; retain the unknown BETA cell and original source/report without silently filling. This is an inspection table, not a validated replacement price feed."
+  },
+  {
+    "id": "7.3-E6",
+    "prompt": "Reject a duplicate asset, a duplicate column, and an unexpected currency column through the validated function.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SOURCE REJECTION + IDENTITY/SCHEMA REVIEW",
+    "answer": "An ALPHA,ALPHA,CASH asset index rejects because each asset must be unique. Duplicate quantity columns reject because a field would be ambiguous and the schema would not have exactly one quantity and one price. Adding currency=\"USD\" also rejects: even a plausible extra field violates this intentionally narrow API. The wider workflow must validate common currency before stripping/transforming metadata; this component performs no FX conversion."
+  },
+  {
+    "id": "7.3-E7",
+    "prompt": "Change ALPHA's quantity in a returned report. Demonstrate that market_value becomes stale, then recompute using only the two source columns.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "SOURCE + STALE-DERIVATION PROBE",
+    "answer": "In a separate returned report, set ALPHA quantity from6 to7. Stored market_value remains600 and its summed total remains1000, demonstrating a stale derived field. Passing the whole report rejects its extra market_value field. Call holdings_table(changed.loc[:,[\"quantity\",\"price\"]]) to recompute ALPHA700 and total1100 independently from7*100+3*100+1*100. The source fixture still has quantity6 and the edited intermediate report stays stale until explicitly replaced; derived columns are not spreadsheet formulas."
+  },
+  {
+    "id": "7.3-E8",
+    "prompt": "Explain what would need to change before valuing holdings with different currencies, contract multipliers, or valuation timestamps.",
+    "source": "chapter-07/7.03-dataframe.md",
+    "source_sha256": "83bcbdfadbcb493f44deb5bf9cd062d33028b829ac2cef156e1c9e36fd2695d6",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-dataframe-exercises/README.md",
+    "baseline": "c53e9555dedf71fdab975ac8703c9ed2393cacaa",
+    "kind": "CONCEPTUAL VALUATION DESIGN \u2014 NOT EXECUTED INTEGRATION",
+    "answer": "Define an expanded schema and financial contract before accepting heterogeneous sources. Carry instrument/position identity,currency,quantity units,price units,contract multiplier and valuation/availability timestamps; validate compatible q*price*multiplier dimensions,then convert to a reporting currency using independently sourced FX with explicit direction,rate date/age,alignment and missingness policy. Establish a common valuation instant or an explicit as-of policy with quote-age and decision-time constraints. Reconcile coverage,avoid duplicate positions,select appropriate exact/approximate arithmetic and add unit/context/boundary/rejection tests before implementation. Do not merely append fields and remove them to satisfy this API. No multi-currency,multiplier or temporal matching implementation was validated here."
+  }
+]
