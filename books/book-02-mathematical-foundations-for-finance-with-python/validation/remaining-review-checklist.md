@@ -2,8 +2,8 @@
 
 **Date:** 2026-10-30  
 **Full-runtime candidate source revision:** `f02d9dc8de4198e2804737313a0ef9e05dcff50d`  
-**Latest scoped source revision:** `f02d9dc8de4198e2804737313a0ef9e05dcff50d`  
-**Disposition:** V-48 full candidate runtime includes Section18.5 correction and Section18.9 trace checker; independent review and release approval pending.
+**Latest scoped source revision:** `7678af6b436748470a1a1798256d8fd546bcbade`  
+**Disposition:** Earlier V-48 full candidate runtime plus subsequent Section18.6 interpolation-checker scoped evidence; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -53,7 +53,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-48 at `f02d9dc8de4198e2804737313a0ef9e05dcff50d`:484 compiled/273 scripts/485 required hashes before and after | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-48 earlier full pin:484 compiled/273 scripts/485 required hashes; subsequent Section18.6 checker has24-file/14-script scoped pass at `7678af6b436748470a1a1798256d8fd546bcbade` | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -224,3 +224,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Root-scan correction and V-48 — 2026-10-30
 
 [Section18.5 evidence](chapter-18-root-scan-followup.md) preserves false-zero NPV probes, an original regression failure, finite-grid intermediate overflow and an intermediate missing-grid-metadata failure. Complete rational NPV/grid evaluation now prevents those false roots/range failures; nonzero NPV underflow and collapsed grids reject explicitly. Declared configurable merging retains candidates and the default1e-9 threshold; zero threshold preserves selected nearby roots. Thirteen rational NPV references, four repeated-root grids, five merging boundaries, four grid sets and selected range/input cases pass. All23 chapter sources compiled and13 scripts passed. [V-48 full execution](runtime-refresh-2026-10-30-r12.md) compiled484 files, passed273 scripts and verified485 required hashes before/after at `f02d9dc8de4198e2804737313a0ef9e05dcff50d`, including the preceding project-trace checker. COV-80 is newly partially addressed:29 selected categories remain partially addressed, none closed by the register. These are gap categories, not defect counts or completion percentages. Next executable item: COV-80 Section18.6 interpolation curvature-bound and half-width/factor-four references, with extrapolation kept outside the interpolation guarantee. Broader scan completeness, numerical range, independent-review, supported-platform and release obligations remain open.
+
+## Interpolation curvature-bound oracle — 2026-10-30
+
+[Section18.6 evidence](chapter-18-interpolation-bound-followup.md) checks the exact quadratic identity L(q)-f(q)=a(q-A)(B-q), curvature bound and midpoint equality across100 selected quarter-grid queries;16 additional midpoint queries verify factor-four error reduction on interval halving. An extrapolation counterexample keeps the bound's interval hypothesis explicit; three wrong methods are detected. The first checker run passed against the unchanged helper. All24 chapter files compiled and14 scripts passed at `7678af6b436748470a1a1798256d8fd546bcbade`; all24 source hashes match the pinned tree and remain unchanged after execution. Current inventory is485 Python files/274 check-test scripts, not a new full run; V-48 remains the earlier484/273 full execution. Twenty-nine selected categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.7 selected exact signed trapezoid/Simpson error/order ladders and three-step first/second derivative sensitivity evidence, rather than error decrease alone. Broader smoothness/conditioning, input/result range, financial model review, independent-review, supported-platform and release obligations remain open.
