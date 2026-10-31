@@ -1,0 +1,201 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.12-joining-and-merging-financial-data.md",
+  "source_sha256": "7808cc5a746f6ac82b95676e42a3148495f3d887e4af513ee3b106b26ae48ea5",
+  "program_fence": 1,
+  "test_fence": 2,
+  "program_sha256": "b21b432bdd3ecbd7cdb04dc045dc2d2d9572c55619796cccaca87a22cc9a6abd",
+  "test_sha256": "315e6795bc2c24d534b0e5e55a6fce9f049a25fdbd1f976529cf817bacf6d8e5",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 18,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_712/merging.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Matched=3; total=1000.00 USD\nUnmatched assets: CASH\nIncomplete valuation: result=None; total=None\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_712",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_complete_known_answer (test_merging.MergeTests.test_complete_known_answer) ... ok\ntest_context_and_numeric_rejections (test_merging.MergeTests.test_context_and_numeric_rejections) ... ok\ntest_duplicate_and_null_keys (test_merging.MergeTests.test_duplicate_and_null_keys) ... ok\ntest_missing_and_extra_quotes (test_merging.MergeTests.test_missing_and_extra_quotes) ... ok\ntest_multiplication_risk_and_validate (test_merging.MergeTests.test_multiplication_risk_and_validate) ... ok\ntest_null_match_and_join_mechanics (test_merging.MergeTests.test_null_match_and_join_mechanics) ... ok\ntest_permutation_and_sources (test_merging.MergeTests.test_permutation_and_sources) ... ok\ntest_scalar_oracle_zero_and_overflow (test_merging.MergeTests.test_scalar_oracle_zero_and_overflow) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.083s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_712"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'merging.py': 'b21b432bdd3ecbd7cdb04dc045dc2d2d9572c55619796cccaca87a22cc9a6abd', 'test_merging.py': '315e6795bc2c24d534b0e5e55a6fce9f049a25fdbd1f976529cf817bacf6d8e5'}",
+      "expected": "{'merging.py': 'b21b432bdd3ecbd7cdb04dc045dc2d2d9572c55619796cccaca87a22cc9a6abd', 'test_merging.py': '315e6795bc2c24d534b0e5e55a6fce9f049a25fdbd1f976529cf817bacf6d8e5'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "unpriced CASH remains visible",
+      "actual": "('left_only', np.float64(1.0), True)",
+      "expected": "('left_only', 1.0, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "incomplete match withholds all valuation",
+      "actual": "(None, None)",
+      "expected": "(None, None)",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "outer audit preserves all holdings",
+      "actual": "['ALPHA', 'BETA', 'CASH']",
+      "expected": "['ALPHA', 'BETA', 'CASH']",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "extra quote visible under exact-population contract",
+      "actual": "(['OTHER'], None, None)",
+      "expected": "(['OTHER'], None, None)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "broader-reference left join is a different controlled population",
+      "actual": "(3, np.True_)",
+      "expected": "(3, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "public prevalidation rejects duplicate quote key",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 46, in <lambda>\n    duplicated=pd.concat([q,q.iloc[[0]]]);reject('E3','public prevalidation rejects duplicate quote key',lambda:m.reconcile(h,duplicated))\n                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.12-joining-and-merging-financial-data.md\", line 34, in reconcile\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.12-joining-and-merging-financial-data.md\", line 18, in validate\n    1. Define row grain and composite keys before merging.\n                                        ^^^^^^^^^^^^^^^^^^^\nValueError: duplicate composite key\n"
+    },
+    {
+      "section": "E3",
+      "label": "pandas one_to_one guard independently rejects duplicate",
+      "actual": "'MergeError'",
+      "expected": "'MergeError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 47, in run\n    try:h.merge(duplicated,on=m.KEY,how='outer',validate='one_to_one');actual='no exception';trace=''\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/frame.py\", line 10832, in merge\n    return merge(\n           ^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/reshape/merge.py\", line 170, in merge\n    op = _MergeOperation(\n         ^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/reshape/merge.py\", line 813, in __init__\n    self._validate_validate_kwd(validate)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/core/reshape/merge.py\", line 1657, in _validate_validate_kwd\n    raise MergeError(\npandas.errors.MergeError: Merge keys are not unique in right dataset; not a one-to-one merge\n"
+    },
+    {
+      "section": "E4",
+      "label": "two-by-two keyed merge creates four pairs",
+      "actual": "[(1.0, 10.0), (1.0, 11.0), (2.0, 10.0), (2.0, 11.0)]",
+      "expected": "[(1.0, 10.0), (1.0, 11.0), (2.0, 10.0), (2.0, 11.0)]",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "merged quantity count is doubled",
+      "actual": "(4, np.float64(6.0), np.float64(3.0))",
+      "expected": "(4, 6.0, 3.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "independent candidate-pair value sum",
+      "actual": "63.0",
+      "expected": "63.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "source reversal preserves normalized audits and valuations",
+      "actual": "(True, True, 1000.0, 1000.0)",
+      "expected": "(True, True, 1000.0, 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "independent keyed valuation",
+      "actual": "([600.0, 300.0, 100.0], 1000.0)",
+      "expected": "([600.0, 300.0, 100.0], 1000.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "mechanical many-left to unique-right example",
+      "actual": "(2, np.float64(3.0))",
+      "expected": "(2, 3.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "different date rejected before matching",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 58, in <lambda>\n    wrong=q.copy();wrong['valuation_date']='2026-01-29';reject('E7','different date rejected before matching',lambda:m.reconcile(h,wrong))\n                                                                                                                     ^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.12-joining-and-merging-financial-data.md\", line 34, in reconcile\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.12-joining-and-merging-financial-data.md\", line 17, in validate\nValueError: expected USD / 2026-01-30 snapshot required\n"
+    },
+    {
+      "section": "E8",
+      "label": "original narrow schema rejects extra provenance fields",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-merge-exercises/review.py\", line 59, in <lambda>\n    reject('E8','original narrow schema rejects extra provenance fields',lambda:m.reconcile(h.assign(holdings_source_row=range(3)),q))\n                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.12-joining-and-merging-financial-data.md\", line 34, in reconcile\n  File \"/tmp/book1_ch7mergeex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.12-joining-and-merging-financial-data.md\", line 12, in validate\n    Combining financial tables requires more than finding equal asset names. A valid merge needs a defined record grain, complete keys, an expected match relationship and a policy for unmatched records. Otherwise a join can silently remove holdings or multiply their exposures.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: exact ordered schema required\n"
+    },
+    {
+      "section": "ALL",
+      "label": "report mutation preserves both sources",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Exact original strict reconciliation;mechanical pandas cardinality/left-join examples;E6 account contract/E7 intraday metadata/E8 provenance designs not integrated"
+}
