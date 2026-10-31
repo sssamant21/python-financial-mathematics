@@ -1,0 +1,218 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.14-rolling-and-expanding-calculations.md",
+  "source_sha256": "be636ab7060ca069ed2a390fbb06398ec5a3461dcac47d30188a4cef12df6fa4",
+  "program_fence": 4,
+  "test_fence": 5,
+  "program_sha256": "099e3cc4d35469a5fefc12f5b4ff8cc67f5ec4a41cc8cff96f3025e2a0442918",
+  "test_sha256": "a3aa4da0dc5777e7680d66b99c50536e9cee79e6682071fd50d55575511ab5cc",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 21,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_714/windows.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "                           price  rolling_mean  rolling_std  expanding_mean  prior_mean\n2026-01-30 14:00:00+00:00 100.00           NaN          NaN          100.00         NaN\n2026-01-30 14:10:00+00:00 102.00           NaN          NaN          101.00         NaN\n2026-01-30 14:40:00+00:00 104.00        102.00         2.00          102.00         NaN\n2026-01-30 15:00:00+00:00 106.00        104.00         2.00          103.00      102.00\n2026-01-30 15:10:00+00:00 108.00        106.00         2.00          104.00      104.00\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_714",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_time_axis (test_windows.WindowTests.test_bad_time_axis) ... ok\ntest_bad_values (test_windows.WindowTests.test_bad_values) ... ok\ntest_future_perturbation_and_current_effect (test_windows.WindowTests.test_future_perturbation_and_current_effect) ... ok\ntest_known_means_and_warmup (test_windows.WindowTests.test_known_means_and_warmup) ... ok\ntest_missing_min_periods_and_ddof (test_windows.WindowTests.test_missing_min_periods_and_ddof) ... ok\ntest_scalar_oracle_and_std (test_windows.WindowTests.test_scalar_oracle_and_std) ... ok\ntest_short_constant_and_source (test_windows.WindowTests.test_short_constant_and_source) ... ok\ntest_time_window_is_different (test_windows.WindowTests.test_time_window_is_different) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.019s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_714"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'windows.py': '099e3cc4d35469a5fefc12f5b4ff8cc67f5ec4a41cc8cff96f3025e2a0442918', 'test_windows.py': 'a3aa4da0dc5777e7680d66b99c50536e9cee79e6682071fd50d55575511ab5cc'}",
+      "expected": "{'windows.py': '099e3cc4d35469a5fefc12f5b4ff8cc67f5ec4a41cc8cff96f3025e2a0442918', 'test_windows.py': 'a3aa4da0dc5777e7680d66b99c50536e9cee79e6682071fd50d55575511ab5cc'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "independent final rolling and expanding means",
+      "actual": "(np.float64(106.0), np.float64(104.0))",
+      "expected": "(106.0, 104.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "rolling warmup mask",
+      "actual": "[True, True, False, False, False]",
+      "expected": "[True, True, False, False, False]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "previous-row warmup mask",
+      "actual": "[True, True, True, False, False]",
+      "expected": "[True, True, True, False, False]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "first mature prior mean",
+      "actual": "np.float64(102.0)",
+      "expected": "102.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "explicit30min population excludes left endpoint",
+      "actual": "([Timestamp('2026-01-30 14:40:00+0000', tz='UTC')], [104.0])",
+      "expected": "([Timestamp('2026-01-30 14:40:00+0000', tz='UTC')], [104.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "three-row population is different",
+      "actual": "[100.0, 102.0, 104.0]",
+      "expected": "[100.0, 102.0, 104.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "time versus observation means",
+      "actual": "(np.float64(104.0), np.float64(102.0))",
+      "expected": "(104.0, 102.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "future perturbation preserves earlier complete output",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "current final mean changes but prior does not",
+      "actual": "(np.True_, np.float64(104.0))",
+      "expected": "(True, 104.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "independent changed expanding mean",
+      "actual": "np.float64(282.4)",
+      "expected": "282.4",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "independent ddof variance references",
+      "actual": "(Fraction(8, 3), Fraction(4, 1))",
+      "expected": "(Fraction(8, 3), Fraction(4, 1))",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "pandas standard deviations agree with scalar sqrt",
+      "actual": "(np.True_, np.float64(2.0))",
+      "expected": "(True, 2.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "prior feature delays are rows not fixed elapsed duration",
+      "actual": "[1200.0, 600.0]",
+      "expected": "[1200.0, 600.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "scalar expanding prefix row0",
+      "actual": "np.float64(100.0)",
+      "expected": "100.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "scalar expanding prefix row1",
+      "actual": "np.float64(101.0)",
+      "expected": "101.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "scalar expanding prefix row2",
+      "actual": "np.float64(102.0)",
+      "expected": "102.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "scalar expanding prefix row3",
+      "actual": "np.float64(103.0)",
+      "expected": "103.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "scalar expanding prefix row4",
+      "actual": "np.float64(104.0)",
+      "expected": "104.0",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original prices unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Original trailing/expanding descriptive source and independent prefix/variance oracles;E7 availability contract conceptual only,no historical strategy acceptance"
+}
