@@ -1,0 +1,190 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "timezone_type": "pytz.tzfile.America/New_York",
+  "timezone_packages": {
+    "pytz": "2026.5",
+    "tzdata": "2026.5"
+  },
+  "source": "chapter-07/7.09-date-and-time-indexes.md",
+  "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+  "program_fence": 3,
+  "test_fence": 4,
+  "program_sha256": "a7a0fa00905606b265386b44ff13518b6e056bc6e0c35a38e7f6a9c741c7f4a4",
+  "test_sha256": "bf60992bb02fa94a67970dbcfca3ac3ce575753ba2c88d2be4c14f1b5a14c8a2",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 16,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_79/time_index.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "Duplicate example rejected: unique nonmissing UTC instants required\n2026-01-30T14:30:00+00:00: 100.00\n2026-01-30T15:00:00+00:00: 101.00\n2026-01-30T15:30:00+00:00: 102.00\nHalf-open interval observations: 1\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_79",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_price_and_schema (test_time_index.TimeTests.test_bad_price_and_schema) ... ok\ntest_bad_timestamps (test_time_index.TimeTests.test_bad_timestamps) ... ok\ntest_duplicate_instants (test_time_index.TimeTests.test_duplicate_instants) ... ok\ntest_interval_and_elapsed_time (test_time_index.TimeTests.test_interval_and_elapsed_time) ... ok\ntest_localization_and_dst (test_time_index.TimeTests.test_localization_and_dst) ... ok\ntest_sorted_utc_prices (test_time_index.TimeTests.test_sorted_utc_prices) ... ok\ntest_source_and_order_independence (test_time_index.TimeTests.test_source_and_order_independence) ... ok\ntest_zone_conversion_preserves_instant (test_time_index.TimeTests.test_zone_conversion_preserves_instant) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.044s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_79"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'time_index.py': 'a7a0fa00905606b265386b44ff13518b6e056bc6e0c35a38e7f6a9c741c7f4a4', 'test_time_index.py': 'bf60992bb02fa94a67970dbcfca3ac3ce575753ba2c88d2be4c14f1b5a14c8a2'}",
+      "expected": "{'time_index.py': 'a7a0fa00905606b265386b44ff13518b6e056bc6e0c35a38e7f6a9c741c7f4a4', 'test_time_index.py': 'bf60992bb02fa94a67970dbcfca3ac3ce575753ba2c88d2be4c14f1b5a14c8a2'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "independent standard-library offset arithmetic",
+      "actual": "'2026-01-30T14:30:00+00:00'",
+      "expected": "'2026-01-30T14:30:00+00:00'",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "pandas explicit stamps identify same instant",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "removed offset rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7dateex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-date-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7dateex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-date-exercises/review.py\", line 44, in <lambda>\n    naive=raw.copy();naive.loc[0,'timestamp']='2026-01-30T10:00:00';reject('E2','removed offset rejected',lambda:m.price_series(naive))\n                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7dateex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.09-date-and-time-indexes.md\", line 20, in price_series\n    3. Explain naive times, numeric offsets and named time zones.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: second-resolution timestamp with explicit offset required\n"
+    },
+    {
+      "section": "E3",
+      "label": "reverse valid fixture retains full timestamp-price pairing",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "independent expected UTC pairs",
+      "actual": "[('2026-01-30T14:30:00+00:00', 100.0), ('2026-01-30T15:00:00+00:00', 101.0), ('2026-01-30T15:30:00+00:00', 102.0)]",
+      "expected": "[('2026-01-30T14:30:00+00:00', 100.0), ('2026-01-30T15:00:00+00:00', 101.0), ('2026-01-30T15:30:00+00:00', 102.0)]",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "uncorrected fixture still rejects duplicate instants",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7dateex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-date-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7dateex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-date-exercises/review.py\", line 47, in <lambda>\n    reject('E3','uncorrected fixture still rejects duplicate instants',lambda:m.price_series(m.fixture()))\n                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7dateex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.09-date-and-time-indexes.md\", line 33, in price_series\n    | Elapsed duration | Timedelta | Thirty elapsed minutes between observations |\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: unique nonmissing UTC instants required\n"
+    },
+    {
+      "section": "E4",
+      "label": "inclusive versus half-open values",
+      "actual": "([101.0, 102.0], [101.0])",
+      "expected": "([101.0, 102.0], [101.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "inclusive versus half-open endpoint counts",
+      "actual": "(2, 1)",
+      "expected": "(2, 1)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "winter localized UTC matches independent oracle",
+      "actual": "datetime.datetime(2026, 1, 30, 14, 30, tzinfo=datetime.timezone.utc)",
+      "expected": "datetime.datetime(2026, 1, 30, 14, 30, tzinfo=datetime.timezone.utc)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "aware roundtrip preserves instant and local clock",
+      "actual": "(True, True)",
+      "expected": "(True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "runtime regional offset differs winter/summer",
+      "actual": "(-18000.0, -14400.0)",
+      "expected": "(-18000.0, -14400.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "runtime summer NewYork opening converts13:30UTC",
+      "actual": "'2026-07-30T13:30:00+00:00'",
+      "expected": "'2026-07-30T13:30:00+00:00'",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "fixed offset is a different summer instant",
+      "actual": "3600.0",
+      "expected": "3600.0",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "source unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "E1-6 original source and supplemental explicit time arithmetic;E7 composite key/E8 availability metadata conceptual only;host/provider results not platform acceptance"
+}

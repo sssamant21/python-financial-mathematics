@@ -40,4 +40,6 @@ Earlier checkpoint: [Section 7.6 local exercises](../chapter-07-conversion-exerc
 
 Earlier checkpoint: [Section 7.7 local exercises](../chapter-07-missingness-exercises/README.md):8 answers,3 final commands,24 final predicates and8 existing methods passed;F37 QA failure/corrected rerun retained. 56/136 local prompts reviewed; 80 remain. Next: Section 7.8 local exercises.
 
-Current checkpoint: [Section 7.8 local exercises](../chapter-07-cleaning-exercises/README.md):8 answers,4 commands,25 predicates and8 existing methods passed. 64/136 local prompts reviewed; 72 remain. Next: Section 7.9 local exercises.
+Earlier checkpoint: [Section 7.8 local exercises](../chapter-07-cleaning-exercises/README.md):8 answers,4 commands,25 predicates and8 existing methods passed. 64/136 local prompts reviewed; 72 remain. Next: Section 7.9 local exercises.
+
+Current checkpoint: [Section 7.9 local exercises](../chapter-07-date-exercises/README.md):8 answers,3 commands,16 predicates and8 existing methods passed. 72/136 local prompts reviewed; 64 remain. Next: Section 7.10 local exercises.

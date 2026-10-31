@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.9-E1",
+    "prompt": "Show that 09:30\u221205:00 and 14:30Z represent the same instant in the winter fixture.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "EXPLICIT TIME ARITHMETIC",
+    "answer": "09:30 with offset\u221205:00 adds5hours to reach14:30UTC. Standard-library datetime.fromisoformat/astimezone independently yields2026-01-30T14:30:00+00:00;explicit pandas UTC parsing of that token and14:30Z identifies the same instant. Numeric offset describes this instant,not a geographic timezone identity."
+  },
+  {
+    "id": "7.9-E2",
+    "prompt": "Remove the offset from one timestamp and explain why rejection is preferable to an inferred source zone.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "EXACT SOURCE REJECTION",
+    "answer": "Remove the offset from one timestamp in the otherwise valid corrected fixture. price_series raises ValueError at the explicit syntax boundary instead of assuming UTC or guessing a source zone. Naive wall time alone cannot identify a global instant;wrong zone inference could reorder observations,collapse keys or select the wrong interval."
+  },
+  {
+    "id": "7.9-E3",
+    "prompt": "Reverse source-row order and verify that the sorted output preserves every timestamp-price pairing.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "EXACT SOURCE + PAIRING ORACLE",
+    "answer": "Use the documented valid demo fixture,changing its second15:00UTC encoding to16:30+01:00 before reversing rows. Original source returns identical sorted pairs14:30UTC->100,15:00UTC->101,15:30UTC->102 for both orders. The uncorrected original fixture intentionally has two encodings of15:00UTC and still rejects. Sorting complete records preserves pairing;sorting timestamps separately and attaching unsorted prices would not."
+  },
+  {
+    "id": "7.9-E4",
+    "prompt": "Compare inclusive and half-open selections from 15:00 through 15:30 UTC.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "SOURCE RESULT + INTERVAL MECHANICS",
+    "answer": "For start15:00UTC,end15:30UTC,series.loc[start:end] includes both endpoint observations101,102(count2). Explicit >=start and <end selects only101(count1). Adjacent half-open windows avoid double-counting a boundary observation when that convention matches the reporting contract;no convention is universally correct."
+  },
+  {
+    "id": "7.9-E5",
+    "prompt": "Localize a winter New York wall time, convert to UTC, and verify a round trip.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "SUPPLEMENTAL LOCALIZATION/ROUNDTRIP",
+    "answer": "Localize naive2026-01-30 09:30 to America/New_York with ambiguous/nonexistent bothraise,then tz_convert(\"UTC\") to14:30UTC. Conversion back preserves the aware index and naive local clock fields. Localization supplies a source-zone interpretation;conversion preserves an already identified instant. This executes only the recorded host/provider,not universal platform acceptance."
+  },
+  {
+    "id": "7.9-E6",
+    "prompt": "Explain why a fixed \u221205:00 offset is not a complete year-round New York timezone policy.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "HOST TIMEZONE MECHANICS + POLICY INTERPRETATION",
+    "answer": "On recorded pytz/tzdata2026.5,the fixture January NewYork wall time uses\u221205:00,while July30 09:30 uses\u221204:00 and becomes13:30UTC. Hard-coding\u221205:00 for that July wall time produces14:30UTC,a one-hour different instant. A regional zone carries date-dependent rules;an offset alone does not. Source geographic zone,rule data and ambiguity policies must be explicit;these examples do not establish all historical/future rules or venue calendars."
+  },
+  {
+    "id": "7.9-E7",
+    "prompt": "Propose a composite key for multi-asset observations sharing timestamps.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "COMPOSITE-KEY DESIGN \u2014 NOT IMPLEMENTED",
+    "answer": "For one price per instrument per instant,propose(stable_instrument_id,event_time_utc) with explicit currency/unit/adjustment context. Several assets may legitimately share one timestamp. If multiple venues,revisions or events per instrument/instant are valid,extend grain with venue,event_id or revision identity and define authoritative selection/order policy separately. Normalize instants before key checks;never globally deduplicate timestamps or choose a duplicate winner solely by input order. No multi-asset loader or precedence algorithm was implemented."
+  },
+  {
+    "id": "7.9-E8",
+    "prompt": "List event/publication/ingestion timestamps needed before using these prices in a historical decision simulation.",
+    "source": "chapter-07/7.09-date-and-time-indexes.md",
+    "source_sha256": "5cc042c3cd89f53969d8000f2df5e68ced17e65e90789074c31ac4deb0ede29f",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-date-exercises/README.md",
+    "baseline": "822608699c4bbab15f209d44f20a85b2abab27ab",
+    "kind": "INFORMATION-AVAILABILITY DESIGN \u2014 NOT EXECUTED SIMULATION",
+    "answer": "Retain original event/observation time,publication/release time,ingestion/receipt time and revision/version availability,plus exact historical decision cutoff. Require aware zones/offsets,source instrument/venue,price adjustment basis,calendar/session,quote-age policy and reproducible batch/version lineage. A point-in-time simulation must select only the version actually available by that decision time and apply event/valuation timing constraints;later revisions must not leak backward. Sorted UTC observations alone cannot establish availability,remove look-ahead bias or prove a complete expected schedule. No backtest or live feed was exercised."
+  }
+]
