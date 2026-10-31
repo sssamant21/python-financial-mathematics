@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `60cd09c1072aec6d6f437b62961d0b4e50cad50c`  
-**Latest scoped source revision:** `f431e9daabc74a3cb25b254a2c219573f1267144`  
-**Disposition:** Earlier V-47 full candidate runtime plus subsequent Section18.9 trace-checker scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `f02d9dc8de4198e2804737313a0ef9e05dcff50d`  
+**Latest scoped source revision:** `f02d9dc8de4198e2804737313a0ef9e05dcff50d`  
+**Disposition:** V-48 full candidate runtime includes Section18.5 correction and Section18.9 trace checker; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-48 seventeenth refresh](runtime-refresh-2026-10-30-r12.md):484 compiled,273 scripts passed,485 required hashes verified before/after. Includes Section18.5 root-scan correction/checker and Section18.9 trace checker. Current candidate execution; G2–G8 unchanged.
 
 [V-47 sixteenth refresh](runtime-refresh-2026-10-30-r11.md): 482 sources compiled, 271 scripts passed, 483 required hashes verified before/after. Includes Section17.9 report and Section17.10 LP integration with both checkers. Current candidate execution; G2–G8 unchanged.
 
@@ -51,7 +53,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-47 earlier full pin:482 compiled/271 scripts/483 required hashes; subsequent Section18.9 checker has22-file/12-script scoped pass at `f431e9daabc74a3cb25b254a2c219573f1267144` | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-48 at `f02d9dc8de4198e2804737313a0ef9e05dcff50d`:484 compiled/273 scripts/485 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -218,3 +220,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Project safeguarded-Newton trace audit — 2026-10-30
 
 [Section18.9 evidence](chapter-18-project-trace-followup.md) logs ten selected pure-polynomial solver paths and independently audits87 trace rows,200 objective calls and87 derivative calls, strict middle-half safeguards, endpoint signs/updates, returned residuals and terminal conditions. Two quadratic paths have100-digit Decimal containment/half-width references; five altered reports are detected. The first new checker run passed against the unchanged helper. All22 Chapter18 files compiled and12 scripts passed at `f431e9daabc74a3cb25b254a2c219573f1267144`; all22 source hashes match the pinned tree and remain unchanged after execution. Current inventory is483 Python files/272 check-test scripts, not a new full runtime pass; V-47 remains the earlier482/271 full execution. Twenty-eight categories remain partially addressed; none closed by the register. Next executable item: COV-80 Section18.5 exact-grid repeated roots, scan/refinement deduplication threshold and nearby distinct-root separation, with polynomial references and explicit nonexhaustive flags. Continuity/uniqueness proofs, project evaluation-error paths, broader financial range/applied scope, independent-review, supported-platform and release obligations remain open.
+
+## Root-scan correction and V-48 — 2026-10-30
+
+[Section18.5 evidence](chapter-18-root-scan-followup.md) preserves false-zero NPV probes, an original regression failure, finite-grid intermediate overflow and an intermediate missing-grid-metadata failure. Complete rational NPV/grid evaluation now prevents those false roots/range failures; nonzero NPV underflow and collapsed grids reject explicitly. Declared configurable merging retains candidates and the default1e-9 threshold; zero threshold preserves selected nearby roots. Thirteen rational NPV references, four repeated-root grids, five merging boundaries, four grid sets and selected range/input cases pass. All23 chapter sources compiled and13 scripts passed. [V-48 full execution](runtime-refresh-2026-10-30-r12.md) compiled484 files, passed273 scripts and verified485 required hashes before/after at `f02d9dc8de4198e2804737313a0ef9e05dcff50d`, including the preceding project-trace checker. COV-80 is newly partially addressed:29 selected categories remain partially addressed, none closed by the register. These are gap categories, not defect counts or completion percentages. Next executable item: COV-80 Section18.6 interpolation curvature-bound and half-width/factor-four references, with extrapolation kept outside the interpolation guarantee. Broader scan completeness, numerical range, independent-review, supported-platform and release obligations remain open.
