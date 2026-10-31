@@ -29,6 +29,17 @@ def npv(rate,flows=CASH_FLOWS):
     values=validate_flows(flows)
     if r<=-1:
         raise ValueError("rate must exceed -1")
+    return _periodic_value(r,values)
+
+def periodic_npv(rate,flows):
+    """Valuation API: nonempty finite cash flows, including zero/single flows."""
+    r=finite(rate,"rate")
+    if r<=-1 or not isinstance(flows,(tuple,list)) or not flows:
+        raise ValueError("invalid rate or cash flows")
+    values=tuple(finite(c,"cash flow") for c in flows)
+    return _periodic_value(r,values)
+
+def _periodic_value(r,values):
     # Integer periods make NPV a rational polynomial for represented inputs.
     # Round only the complete Horner result, so cancellation cannot invent
     # exact grid roots in a closely spaced or repeated-root example.
