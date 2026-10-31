@@ -2,8 +2,8 @@
 
 **Date:** 2026-10-30  
 **Full-runtime candidate source revision:** `54c73a8f98043676edad54efc5725e80f4af883c`  
-**Latest scoped source revision:** `54c73a8f98043676edad54efc5725e80f4af883c`  
-**Disposition:** V-50 full candidate runtime includes project-error checks and final solver/curve integration; independent review and release approval pending.
+**Latest scoped source revision:** `015137295af393e4f1783474fc1d24a7cb1c1c7b`  
+**Disposition:** Earlier V-50 full candidate runtime plus subsequent final-study integration scoped evidence; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -57,7 +57,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-50 at `54c73a8f98043676edad54efc5725e80f4af883c`:489 compiled/278 scripts/490 required hashes before and after | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-50 earlier full pin:489 compiled/278 scripts/490 hashes; subsequent final-study integration has29-file/19-script pass at `015137295af393e4f1783474fc1d24a7cb1c1c7b` | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -248,3 +248,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Final solver/curve integration and V-50 — 2026-10-30
 
 [Section18.10 evidence](chapter-18-final-method-integration-followup.md) preserves the initial missing-comparison failure and integrates actual Section18.9 safeguarded Newton plus Section18.6 three-convention curve output. Common absolute width thresholds,100-digit Decimal references,independent callback counts,two helper calls and five injected wrong outputs are checked. The recorded Newton implementation uses more callbacks than bisection; no speed claim is made. All28 chapter files compiled and18 scripts passed. [V-50 full execution](runtime-refresh-2026-10-30-r14.md) compiled489 files,passed278 scripts and verified490 required hashes before/after at `54c73a8f98043676edad54efc5725e80f4af883c`, including the preceding project-error checker. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-81 Section18.10 actual three-step first/second sensitivity and trapezoid/Simpson PV report integration using Section18.7 helpers; the supplemental checker is not itself an integrated final-report field. Broader multiple-IRR input/range,applied/model,independent-review,supported-platform and release obligations stay open.
+
+## Final sensitivity/quadrature integration — 2026-10-30
+
+[Section18.10 evidence](chapter-18-final-studies-followup.md) preserves the missing-study baseline failure and a separate corrected checker-import error. The final report now uses actual Section18.7 price/difference/quadrature/analytic-PV helpers for three sensitivity steps and20/40/80 panels, with units,rounded-reference errors and refinement limits. Decimal/geometric-series references,observed helper calls,seven wrong outputs and strict JSON are checked. All29 chapter sources compiled and19 scripts passed at `015137295af393e4f1783474fc1d24a7cb1c1c7b`; hashes match the pinned tree and remain unchanged after execution. Current inventory490 Python files/279 scripts is not a full run; V-50 remains the earlier489/278 full execution. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-81 Section18.10 multiple-IRR valuation/input/range and false-root rejection, sharing corrected finite-period arithmetic while preserving single-flow/all-zero valuation and stricter discovery contracts. Broader model/conditioning,independent-review,supported-platform and release obligations stay open.
