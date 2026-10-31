@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-10-30  
+**Date:** 2026-10-31  
 **Full-runtime candidate source revision:** `ae81661567a38edf78cac3a8c95bc0897819989a`  
-**Latest scoped source revision:** `ae81661567a38edf78cac3a8c95bc0897819989a`  
-**Disposition:** V-51 full candidate runtime includes final studies and periodic valuation correction; independent review and release approval pending.
+**Latest scoped source revision:** `bb4535d9b6692b7e33430e91b33a6808ded5e4b4`  
+**Disposition:** Earlier V-51 full candidate runtime plus subsequent quadrature correction scoped evidence; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -59,7 +59,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-51 at `ae81661567a38edf78cac3a8c95bc0897819989a`:491 compiled/280 scripts/492 required hashes before and after | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-51 earlier full pin:491 compiled/280 scripts/492 hashes; quadrature correction has31-file/21-script pass at `bb4535d9b6692b7e33430e91b33a6808ded5e4b4` | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -258,3 +258,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Final NPV correction and V-51 — 2026-10-30
 
 [Section18.10 evidence](chapter-18-final-npv-followup.md) preserves two false endpoint-root reports and a failed first regression. Shared exact periodic valuation now rejects those non-root brackets,preserves generic single/all-zero valuations and keeps the IRR-specific flow rules strict. Twenty-one rational references,six discovery rejections,two final-range and seven invalid-input cases,true roots,shared-call observation and a false-zero variant are checked. All30 chapter files compiled and20 scripts passed. [V-51 full execution](runtime-refresh-2026-10-30-r15.md) compiled491 files,passed280 scripts and verified492 required hashes before/after at `ae81661567a38edf78cac3a8c95bc0897819989a`,including final sensitivity/PV integration and both new checkers. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 Sections18.7/18.10 quadrature grid/result range,underflowed/collapsed steps and weighted-sum/intermediate overflow,preserving the retained order/financial oracles. Broader financial/model,applied-negative-case,independent-review,supported-platform and release obligations stay open.
+
+## Quadrature grid/range correction — 2026-10-31
+
+[Sections18.7/18.10 evidence](chapter-18-quadrature-range-followup.md) preserves nine original false-zero/range probes and a failed regression. Exact nominal grids now reject collapsed queries before callbacks; complete rational weighted sums avoid intermediate width/sum loss,and final Simpson shares the corrected helper. Thirty-two2500-digit Decimal rule/grid references,six grid guards,nine callback guards,six final-range rejections and one shared call pass. All31 chapter sources compiled and21 scripts passed at `bb4535d9b6692b7e33430e91b33a6808ded5e4b4`; hashes match the pinned tree and remain unchanged after execution. Inventory492 Python files/281 scripts is not a full execution; V-51 remains the earlier491/280 full pass. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 continuous_cashflow_pv combined product/quotient and small-exponent range,with explicit large-growth-factor limits. Broader smoothness/model,independent-review,supported-platform and release obligations stay open.
