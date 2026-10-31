@@ -1,6 +1,7 @@
 """Book 02 Section 18.6: interpolation and extrapolation lab."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -24,6 +25,22 @@ def nodes(xs,ys):
         raise ValueError("knots must be strictly increasing")
     return x,y
 
+def _rounded_interpolant(exact):
+    try:
+        result=float(exact)
+    except OverflowError as exc:
+        raise ValueError("interpolated result outside floating-point range") from exc
+    if exact and result==0:
+        raise ValueError("nonzero interpolated result underflows floating-point range")
+    return finite(result,"interpolated result")
+
+def linear_segment(x0,y0,x1,y1,query):
+    a,u,b,v,q=(finite(value,"linear input") for value in (x0,y0,x1,y1,query))
+    if a>=b:
+        raise ValueError("knots must increase")
+    exact=Fraction(u)+(Fraction(q)-Fraction(a))*(Fraction(v)-Fraction(u))/(Fraction(b)-Fraction(a))
+    return _rounded_interpolant(exact)
+
 def piecewise_linear(xs,ys,query,allow_extrapolation=False):
     x,y=nodes(xs,ys)
     q=finite(query,"query")
@@ -35,8 +52,7 @@ def piecewise_linear(xs,ys,query,allow_extrapolation=False):
         i=len(x)-2
     else:
         i=next(j for j in range(len(x)-1) if x[j]<=q<=x[j+1])
-    t=(q-x[i])/(x[i+1]-x[i])
-    return y[i]+t*(y[i+1]-y[i])
+    return linear_segment(x[i],y[i],x[i+1],y[i+1],q)
 
 def lagrange(xs,ys,query):
     x,y=nodes(xs,ys)
