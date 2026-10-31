@@ -69,18 +69,27 @@ def quadrature_inputs(a,b,n,simpson=False):
     return lo,hi
 
 def trapezoid(f,a,b,n):
-    lo,hi=quadrature_inputs(a,b,n)
-    h=(hi-lo)/n
-    terms=[0.5*finite(f(lo),"f(lower)"),0.5*finite(f(hi),"f(upper)")]
-    terms.extend(finite(f(lo+i*h),"integrand") for i in range(1,n))
-    return finite(h*math.fsum(terms),"integral")
+    grid,h=_quadrature_grid(a,b,n)
+    total=(Fraction(finite(f(grid[0]),"f(lower)"))+
+           Fraction(finite(f(grid[-1]),"f(upper)")))/2
+    for x in grid[1:-1]:
+        total+=Fraction(finite(f(x),"integrand"))
+    return _difference_result(h*total,"integral")
+
+def _quadrature_grid(a,b,n,simpson=False):
+    lo,hi=quadrature_inputs(a,b,n,simpson)
+    lower=Fraction(lo);h=(Fraction(hi)-lower)/n
+    grid=[float(lower+i*h) for i in range(n+1)]
+    if any(x>=y for x,y in zip(grid,grid[1:])):
+        raise ValueError("quadrature grid collapses in floating-point representation")
+    return grid,h
 
 def simpson(f,a,b,n):
-    lo,hi=quadrature_inputs(a,b,n,True)
-    h=(hi-lo)/n
-    terms=[finite(f(lo),"f(lower)"),finite(f(hi),"f(upper)")]
-    terms.extend((4 if i%2 else 2)*finite(f(lo+i*h),"integrand") for i in range(1,n))
-    return finite(h*math.fsum(terms)/3,"integral")
+    grid,h=_quadrature_grid(a,b,n,True)
+    total=Fraction(finite(f(grid[0]),"f(lower)"))+Fraction(finite(f(grid[-1]),"f(upper)"))
+    for i,x in enumerate(grid[1:-1],1):
+        total+=(4 if i%2 else 2)*Fraction(finite(f(x),"integrand"))
+    return _difference_result(h*total/3,"integral")
 
 def continuous_cashflow_pv(cashflow_rate,discount_rate,years):
     c,r,t=finite(cashflow_rate,"cashflow_rate"),finite(discount_rate,"discount_rate"),finite(years,"years")
