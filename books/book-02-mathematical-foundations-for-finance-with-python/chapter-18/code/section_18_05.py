@@ -1,6 +1,7 @@
 """Book 02 Section 18.5: multiple IRRs and cash-flow root scanning."""
 import json
 import math
+from fractions import Fraction
 
 CASH_FLOWS=(-100.0,230.0,-132.0)
 
@@ -28,8 +29,19 @@ def npv(rate,flows=CASH_FLOWS):
     values=validate_flows(flows)
     if r<=-1:
         raise ValueError("rate must exceed -1")
-    z=math.exp(-math.log1p(r))
-    result=math.fsum(c*z**t for t,c in enumerate(values))
+    # Integer periods make NPV a rational polynomial for represented inputs.
+    # Round only the complete Horner result, so cancellation cannot invent
+    # exact grid roots in a closely spaced or repeated-root example.
+    z=1/(1+Fraction(r))
+    exact=Fraction(0)
+    for cash_flow in reversed(values):
+        exact=exact*z+Fraction(cash_flow)
+    try:
+        result=float(exact)
+    except OverflowError as exc:
+        raise ValueError("NPV outside floating-point range") from exc
+    if exact and result==0:
+        raise ValueError("nonzero NPV underflows floating-point range")
     return finite(result,"NPV")
 
 def opposite(a,b):
@@ -40,7 +52,12 @@ def scan_brackets(flows,low=0.0,high=0.3,steps=30):
     lo,hi=finite(low,"low"),finite(high,"high")
     if lo<=-1 or hi<=lo or type(steps) is not int or steps<1:
         raise ValueError("invalid scan interval or steps")
-    xs=[lo+(hi-lo)*i/steps for i in range(steps+1)]
+    # Form each finite endpoint interpolation before final float rounding;
+    # width*i can overflow even when every requested grid point is finite.
+    lower=Fraction(lo);span=Fraction(hi)-lower
+    xs=[float(lower+span*Fraction(i,steps)) for i in range(steps+1)]
+    if any(a>=b for a,b in zip(xs,xs[1:])):
+        raise ValueError("scan grid collapses in floating-point representation")
     ys=[npv(x,values) for x in xs]
     brackets=[]
     exact=[]
@@ -50,6 +67,7 @@ def scan_brackets(flows,low=0.0,high=0.3,steps=30):
         if i and opposite(ys[i-1],y):
             brackets.append((xs[i-1],x))
     return {"brackets":brackets,"exact_grid_roots":exact,
+            "grid":xs,"npv_values":ys,
             "exhaustive":False,"grid_steps":steps}
 
 def bisect_npv(flows,a,b,width_tol=1e-12,max_iter=200):
@@ -78,16 +96,22 @@ def bisect_npv(flows,a,b,width_tol=1e-12,max_iter=200):
             lo,flo=mid,fm
     raise ArithmeticError("maximum iterations reached")
 
-def discover_roots(flows=CASH_FLOWS,low=0.0,high=0.3,steps=30):
+def discover_roots(flows=CASH_FLOWS,low=0.0,high=0.3,steps=30,dedup_tol=1e-9):
+    tolerance=finite(dedup_tol,"dedup_tol")
+    if tolerance<0:
+        raise ValueError("dedup_tol must be nonnegative")
     scanned=scan_brackets(flows,low,high,steps)
     candidates=list(scanned["exact_grid_roots"])
     candidates.extend(bisect_npv(flows,a,b) for a,b in scanned["brackets"])
     candidates.sort()
     distinct=[]
     for x in candidates:
-        if not distinct or abs(x-distinct[-1])>1e-9:
+        if not distinct or abs(Fraction(x)-Fraction(distinct[-1]))>Fraction(tolerance):
             distinct.append(x)
-    return {"roots":distinct,"scan":scanned,
+    return {"roots":distinct,"candidate_roots":candidates,"scan":scanned,
+            "deduplication":{"absolute_rate_tolerance":tolerance,
+                             "comparison":"exact represented-float distance to last retained candidate; strictly greater retains",
+                             "merged_count":len(candidates)-len(distinct)},
             "completeness_certified":False}
 
 def assessment():
