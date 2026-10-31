@@ -58,10 +58,7 @@ def bisect(f,a,b,tol=1e-12,max_iter=200):
     raise AssertionError("unreachable")
 
 def interpolate(x0,y0,x1,y1,x):
-    x0,y0,x1,y1,x=(finite(v,"interpolation input") for v in (x0,y0,x1,y1,x))
-    if x0>=x1:
-        raise ValueError("knots must increase")
-    return y0+(x-x0)*(y1-y0)/(x1-x0)
+    return interpolation_lab.linear_segment(x0,y0,x1,y1,x)
 
 def central_derivative(f,x,h):
     return _shared_central_difference(f,x,h)
