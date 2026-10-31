@@ -56,15 +56,16 @@ def piecewise_linear(xs,ys,query,allow_extrapolation=False):
 
 def lagrange(xs,ys,query):
     x,y=nodes(xs,ys)
-    q=finite(query,"query")
-    total=0.0
+    q=Fraction(finite(query,"query"))
+    x=tuple(Fraction(xi) for xi in x)
+    total=Fraction(0)
     for i,yi in enumerate(y):
-        basis=1.0
+        basis=Fraction(1)
         for j,xj in enumerate(x):
             if i!=j:
                 basis*=(q-xj)/(x[i]-xj)
-        total+=yi*basis
-    return finite(total,"polynomial result")
+        total+=Fraction(yi)*basis
+    return _rounded_interpolant(total)
 
 def discount_factor(rate,years):
     r,t=finite(rate,"rate"),finite(years,"years")
