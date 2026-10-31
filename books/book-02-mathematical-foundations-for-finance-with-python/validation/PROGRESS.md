@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-10-30  
-**Overall status:** In progress — latest full pinned-revision runtime pass complete (491 compiled files; 280 successful script exits), including final studies and periodic valuation correction; coverage, independent review and final release/platform validation remain pending.
+**Updated:** 2026-10-31  
+**Overall status:** In progress — earlier full pinned-revision runtime pass complete (491 compiled files; 280 successful script exits); subsequent quadrature correction has scoped31-file/21-script evidence; coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full pinned pass | 491/491 files compiled at `ae81661567a38edf78cac3a8c95bc0897819989a` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r15.md). |
-| Automated script execution | Full pinned pass | 280/280 scripts exited zero at `ae81661567a38edf78cac3a8c95bc0897819989a`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r15.md). |
+| Python compilation | Earlier full pass; subsequent scoped change | 491/491 files compiled at `ae81661567a38edf78cac3a8c95bc0897819989a` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r15.md). |
+| Automated script execution | Earlier full pass; subsequent scoped change | 280/280 scripts exited zero at `ae81661567a38edf78cac3a8c95bc0897819989a`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r15.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -527,3 +527,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Final NPV correction and V-51 — 2026-10-30
 
 [Section18.10 evidence](chapter-18-final-npv-followup.md) preserves two false endpoint-root reports and a failed first regression. Shared exact periodic valuation now rejects those non-root brackets,preserves generic single/all-zero valuations and keeps the IRR-specific flow rules strict. Twenty-one rational references,six discovery rejections,two final-range and seven invalid-input cases,true roots,shared-call observation and a false-zero variant are checked. All30 chapter files compiled and20 scripts passed. [V-51 full execution](runtime-refresh-2026-10-30-r15.md) compiled491 files,passed280 scripts and verified492 required hashes before/after at `ae81661567a38edf78cac3a8c95bc0897819989a`,including final sensitivity/PV integration and both new checkers. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 Sections18.7/18.10 quadrature grid/result range,underflowed/collapsed steps and weighted-sum/intermediate overflow,preserving the retained order/financial oracles. Broader financial/model,applied-negative-case,independent-review,supported-platform and release obligations stay open.
+
+## Quadrature grid/range correction — 2026-10-31
+
+[Sections18.7/18.10 evidence](chapter-18-quadrature-range-followup.md) preserves nine original false-zero/range probes and a failed regression. Exact nominal grids now reject collapsed queries before callbacks; complete rational weighted sums avoid intermediate width/sum loss,and final Simpson shares the corrected helper. Thirty-two2500-digit Decimal rule/grid references,six grid guards,nine callback guards,six final-range rejections and one shared call pass. All31 chapter sources compiled and21 scripts passed at `bb4535d9b6692b7e33430e91b33a6808ded5e4b4`; hashes match the pinned tree and remain unchanged after execution. Inventory492 Python files/281 scripts is not a full execution; V-51 remains the earlier491/280 full pass. Thirty categories remain partially addressed; none closed by the register. Next executable item: COV-80 continuous_cashflow_pv combined product/quotient and small-exponent range,with explicit large-growth-factor limits. Broader smoothness/model,independent-review,supported-platform and release obligations stay open.
