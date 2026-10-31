@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-10-30  
-**Full-runtime candidate source revision:** `f02d9dc8de4198e2804737313a0ef9e05dcff50d`  
-**Latest scoped source revision:** `497e1892a8bc08b353d711a092f40ddada9531bf`  
-**Disposition:** Earlier V-48 full candidate runtime plus subsequent Section18.7 order/step-checker scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `e5780915662a4c69e0ef7acbbb961eadc16f2237`  
+**Latest scoped source revision:** `e5780915662a4c69e0ef7acbbb961eadc16f2237`  
+**Disposition:** V-49 full candidate runtime includes complete-stencil corrections and all three recent Chapter18 checkers; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-49 eighteenth refresh](runtime-refresh-2026-10-30-r13.md):487 compiled,276 scripts passed,488 required hashes verified before/after. Includes complete-stencil corrections and all three recent Chapter18 checkers. Current candidate execution; G2–G8 unchanged.
 
 [V-48 seventeenth refresh](runtime-refresh-2026-10-30-r12.md):484 compiled,273 scripts passed,485 required hashes verified before/after. Includes Section18.5 root-scan correction/checker and Section18.9 trace checker. Current candidate execution; G2–G8 unchanged.
 
@@ -53,7 +55,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Passed, scoped | V-48 earlier full pin:484 compiled/273 scripts/485 required hashes; subsequent Section18.6 checker has24-file/14-script scoped pass at `7678af6b436748470a1a1798256d8fd546bcbade` | Automated run recorded |
+| G1 Candidate compilation/runtime | Passed, scoped | V-49 at `e5780915662a4c69e0ef7acbbb961eadc16f2237`:487 compiled/276 scripts/488 required hashes before and after | Automated run recorded |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -232,3 +234,7 @@ External reviews and approval are not claimed, and no review requests have been 
 ## Quadrature-order and derivative-step oracle — 2026-10-30
 
 [Section18.7 evidence](chapter-18-order-step-followup.md) adds48 rounded exact rule references,36 measured order checks, three polynomial difference steps and a100-digit Decimal three-step bond study with explicit callback/rounding allowances. Three wrong methods are detected. The first checker run passed against the unchanged helper. All25 chapter sources compiled and15 scripts passed at `497e1892a8bc08b353d711a092f40ddada9531bf`; hashes match the pinned tree and remain unchanged after execution. Current inventory486 Python files/275 check-test scripts is not a full runtime pass; V-48 remains the earlier484/273 run. Twenty-nine categories remain partially addressed; none closed by the register. Next executable item: COV-80 Sections18.7/18.10 finite-difference range contracts, including finite samples, combined numerator/denominator arithmetic and nonzero-to-zero results. Broader conditioning/model, independent-review, supported-platform and release obligations stay open.
+
+## Complete-stencil range correction and V-49 — 2026-10-30
+
+[Sections18.7/18.10 evidence](chapter-18-difference-range-followup.md) preserves five original false-zero/range probes and a failed first regression. Shared complete rational stencils now avoid intermediate numerator/denominator range loss, reject nonfinite/collapsed sample points before callbacks and reject unrepresentable nonzero/final results. Thirteen2500-digit Decimal references,11 point guards,12 callback-value guards,four final-range rejections and a shared-call observation pass. All26 chapter sources compiled and16 scripts passed. [V-49 full execution](runtime-refresh-2026-10-30-r13.md) compiled487 files,passed276 scripts and verified488 required hashes before/after at `e5780915662a4c69e0ef7acbbb961eadc16f2237`, including all three checkers added since V-48. Twenty-nine categories remain partially addressed; none closed by the register. Next executable item: COV-81 Section18.9 project nonfinite-derivative/evaluation-error contract, invalid relative tolerances/iteration controls and callback sequencing, preserving zero-derivative fallback. Broader final applied-scope, conditioning/model, independent-review, supported-platform and release obligations stay open.
