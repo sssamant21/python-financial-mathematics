@@ -4,6 +4,7 @@ import math
 from section_18_07 import central_difference as _shared_central_difference
 import section_18_06 as interpolation_lab
 import section_18_09 as solver_project
+import section_18_07 as numerical_lab
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -95,6 +96,48 @@ def solver_comparison():
             "model":"face1000,price900,maturity2; annual effective rate",
             "count_convention":"solver calls; separate bisection residual verification"}
 
+def sensitivity_study():
+    rate=0.05
+    price=numerical_lab.zero_price(rate)
+    first=-2000/(1+rate)**3
+    second=6000/(1+rate)**4
+    rows=[]
+    for h in (2e-4,1e-4,5e-5):
+        forward=numerical_lab.forward_difference(numerical_lab.zero_price,rate,h)
+        central=numerical_lab.central_difference(numerical_lab.zero_price,rate,h)
+        curvature=numerical_lab.second_difference(numerical_lab.zero_price,rate,h)
+        rows.append({"step":h,"forward_derivative":forward,"central_derivative":central,
+                     "second_derivative":curvature,"numerical_duration":-central/price,
+                     "numerical_convexity":curvature/price,"forward_error":forward-first,
+                     "central_error":central-first,"second_error":curvature-second})
+    return {"rate":rate,"face":1000.0,"years":2.0,"price":price,
+            "analytic_first_derivative":first,"analytic_second_derivative":second,
+            "analytic_duration":2/(1+rate),"analytic_convexity":6/(1+rate)**2,
+            "rows":rows,"error_reference":"retained rounded analytic derivatives",
+            "step_selection":"diagnostic only; no optimal step selected",
+            "rate_convention":"annual effective"}
+
+def continuous_pv_study():
+    cashflow,rate,years=100.0,0.03,5.0
+    exact=numerical_lab.continuous_cashflow_pv(cashflow,rate,years)
+    integrand=lambda t:cashflow*math.exp(-rate*t)
+    rows=[]
+    for n in (20,40,80):
+        trap=numerical_lab.trapezoid(integrand,0.0,years,n)
+        simp=numerical_lab.simpson(integrand,0.0,years,n)
+        rows.append({"panels":n,"step":years/n,"trapezoid":trap,"simpson":simp,
+                     "trapezoid_error":trap-exact,"simpson_error":simp-exact})
+    refinement=[]
+    for coarse,fine in zip(rows,rows[1:]):
+        refinement.append({"coarse_panels":coarse["panels"],"fine_panels":fine["panels"],
+                           "trapezoid_error_ratio":abs(coarse["trapezoid_error"]/fine["trapezoid_error"]),
+                           "simpson_error_ratio":abs(coarse["simpson_error"]/fine["simpson_error"])})
+    return {"cashflow_rate":cashflow,"discount_rate":rate,"years":years,
+            "analytic_reference":exact,"rows":rows,"refinement":refinement,
+            "refinement_estimate_is_bound":False,"rate_convention":"continuous compounding",
+            "cashflow_units":"currency per year","pv_units":"currency",
+            "error_reference":"retained rounded analytic_reference"}
+
 def assessment():
     yield_reference=math.sqrt(10/9)-1
     comparison=solver_comparison()
@@ -103,19 +146,20 @@ def assessment():
               bisect(lambda r:npv(r,(-100,230,-132)),0.15,0.3))
     curve=interpolation_lab.financial_comparison()
     rate=curve["rate_midpoint"]
-    derivative=central_derivative(lambda r:zero_price(r),0.05,1e-4)
-    pv=simpson(lambda t:100*math.exp(-0.03*t),0,5,40)
+    sensitivity=sensitivity_study()
+    pv_study=continuous_pv_study()
     return {"yield_reference":yield_reference,"yield_solution":solved,
             "solver_comparison":comparison,"interpolation_comparison":curve,
+            "sensitivity_study":sensitivity,"continuous_pv_study":pv_study,
             "multiple_irr_solutions":two_irrs,
             "rate_interpolation":rate,
             "discount_interpolation":curve["discount_linear"],
             "discount_log_interpolation":curve["discount_log_linear"],
             "discount_from_rate_interpolation":curve["discount_from_rate"],
-            "duration_estimate":-derivative/zero_price(0.05),
+            "duration_estimate":sensitivity["rows"][1]["numerical_duration"],
             "duration_reference":2/1.05,
-            "simpson_continuous_pv":pv,
-            "continuous_pv_reference":-100*math.expm1(-0.15)/0.03,
+            "simpson_continuous_pv":pv_study["rows"][1]["simpson"],
+            "continuous_pv_reference":pv_study["analytic_reference"],
             "runtime_certified":False,
             "independent_review_completed":False}
 
