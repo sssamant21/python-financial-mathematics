@@ -1,6 +1,7 @@
 """Book 02 Section 18.7: numerical differentiation and integration lab."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -19,23 +20,41 @@ def step(value):
         raise ValueError("step must be positive")
     return h
 
-def forward_difference(f,x,h):
+def _difference_points(x,h,two_sided):
     x,h=finite(x,"x"),step(h)
-    if x+h==x:
+    plus=finite(x+h,"x+h")
+    minus=finite(x-h,"x-h") if two_sided else None
+    if plus==x or (two_sided and minus==x):
         raise ValueError("step too small to change x")
-    return finite((finite(f(x+h),"f(x+h)")-finite(f(x),"f(x)"))/h,"derivative")
+    return x,h,plus,minus
+
+def _difference_result(exact,name):
+    try:
+        result=float(exact)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside floating-point range") from exc
+    if exact and result==0:
+        raise ValueError(f"nonzero {name} underflows floating-point range")
+    return finite(result,name)
+
+def forward_difference(f,x,h):
+    x,h,plus,_=_difference_points(x,h,False)
+    yp=Fraction(finite(f(plus),"f(x+h)"))
+    y0=Fraction(finite(f(x),"f(x)"))
+    return _difference_result((yp-y0)/Fraction(h),"derivative")
 
 def central_difference(f,x,h):
-    x,h=finite(x,"x"),step(h)
-    if x+h==x or x-h==x:
-        raise ValueError("step too small to change x")
-    return finite((finite(f(x+h),"f(x+h)")-finite(f(x-h),"f(x-h)"))/(2*h),"derivative")
+    x,h,plus,minus=_difference_points(x,h,True)
+    yp=Fraction(finite(f(plus),"f(x+h)"))
+    ym=Fraction(finite(f(minus),"f(x-h)"))
+    return _difference_result((yp-ym)/(2*Fraction(h)),"derivative")
 
 def second_difference(f,x,h):
-    x,h=finite(x,"x"),step(h)
-    if x+h==x or x-h==x:
-        raise ValueError("step too small to change x")
-    return finite((finite(f(x+h),"f(x+h)")-2*finite(f(x),"f(x)")+finite(f(x-h),"f(x-h)"))/h**2,"second derivative")
+    x,h,plus,minus=_difference_points(x,h,True)
+    yp=Fraction(finite(f(plus),"f(x+h)"))
+    y0=Fraction(finite(f(x),"f(x)"))
+    ym=Fraction(finite(f(minus),"f(x-h)"))
+    return _difference_result((yp-2*y0+ym)/Fraction(h)**2,"second derivative")
 
 def zero_price(rate,face=1000,years=2):
     r,f,t=finite(rate,"rate"),finite(face,"face"),finite(years,"years")
