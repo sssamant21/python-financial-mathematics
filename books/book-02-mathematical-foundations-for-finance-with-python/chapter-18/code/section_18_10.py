@@ -2,6 +2,8 @@
 import json
 import math
 from section_18_07 import central_difference as _shared_central_difference
+import section_18_06 as interpolation_lab
+import section_18_09 as solver_project
 
 def finite(x,name):
     if type(x) not in (int,float):
@@ -76,19 +78,40 @@ def simpson(f,a,b,n):
     terms.extend((4 if i%2 else 2)*finite(f(a+i*h),"integrand") for i in range(1,n))
     return finite(h*math.fsum(terms)/3,"integral")
 
+def solver_comparison():
+    calls=0
+    def objective(rate):
+        nonlocal calls
+        calls+=1
+        return zero_price(rate)-900
+    bisection=bisect(objective,0.0,0.2,tol=1e-12,max_iter=200)
+    safeguarded=solver_project.solve(solver_project.zero_coupon,solver_project.zero_coupon_derivative,
+                                     0.0,0.2,atol=1e-12,rtol=0.0,max_iter=200)
+    return {"bisection":bisection,"safeguarded_newton":safeguarded,
+            "bisection_width":bisection["bracket"][1]-bisection["bracket"][0],
+            "bisection_residual":zero_price(bisection["root"])-900,
+            "bisection_function_evaluations":calls,"bisection_residual_evaluations":1,
+            "initial_bracket":(0.0,0.2),"absolute_width_tolerance":1e-12,
+            "model":"face1000,price900,maturity2; annual effective rate",
+            "count_convention":"solver calls; separate bisection residual verification"}
+
 def assessment():
     yield_reference=math.sqrt(10/9)-1
-    solved=bisect(lambda r:zero_price(r)-900,0,0.2)
+    comparison=solver_comparison()
+    solved=comparison["bisection"]
     two_irrs=(bisect(lambda r:npv(r,(-100,230,-132)),0,0.15),
               bisect(lambda r:npv(r,(-100,230,-132)),0.15,0.3))
-    rate=interpolate(1,0.04,3,0.05,2)
-    d1,d3=zero_price(0.04,1,1),zero_price(0.05,1,3)
+    curve=interpolation_lab.financial_comparison()
+    rate=curve["rate_midpoint"]
     derivative=central_derivative(lambda r:zero_price(r),0.05,1e-4)
     pv=simpson(lambda t:100*math.exp(-0.03*t),0,5,40)
     return {"yield_reference":yield_reference,"yield_solution":solved,
+            "solver_comparison":comparison,"interpolation_comparison":curve,
             "multiple_irr_solutions":two_irrs,
             "rate_interpolation":rate,
-            "discount_interpolation":interpolate(1,d1,3,d3,2),
+            "discount_interpolation":curve["discount_linear"],
+            "discount_log_interpolation":curve["discount_log_linear"],
+            "discount_from_rate_interpolation":curve["discount_from_rate"],
             "duration_estimate":-derivative/zero_price(0.05),
             "duration_reference":2/1.05,
             "simpson_continuous_pv":pv,
