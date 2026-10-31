@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-10-30  
-**Overall status:** In progress — earlier full pinned-revision runtime pass complete (484 compiled files; 273 successful script exits); subsequent Section18.7 order/step checker has scoped25-file/15-script evidence; coverage, independent review and final release/platform validation remain pending.
+**Overall status:** In progress — latest full pinned-revision runtime pass complete (487 compiled files; 276 successful script exits), including complete-stencil corrections and all three recent Chapter18 checkers; coverage, independent review and final release/platform validation remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Earlier full pass; subsequent scoped checker | 484/484 files compiled at `f02d9dc8de4198e2804737313a0ef9e05dcff50d` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r12.md). |
-| Automated script execution | Earlier full pass; subsequent scoped checker | 273/273 scripts exited zero at `f02d9dc8de4198e2804737313a0ef9e05dcff50d`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r12.md). |
+| Python compilation | Full pinned pass | 487/487 files compiled at `e5780915662a4c69e0ef7acbbb961eadc16f2237` on Python3.12.14/Linux. [Latest evidence](runtime-refresh-2026-10-30-r13.md). |
+| Automated script execution | Full pinned pass | 276/276 scripts exited zero at `e5780915662a4c69e0ef7acbbb961eadc16f2237`. Aggregate scripts repeat checks; counts do not measure independent coverage. [Latest evidence](runtime-refresh-2026-10-30-r13.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-48 seventeenth refresh](runtime-refresh-2026-10-30-r12.md):484 compiled,273 scripts passed and485 required hashes verified before/after at `f02d9dc8de4198e2804737313a0ef9e05dcff50d`.
+- **Latest full run:** [V-49 eighteenth refresh](runtime-refresh-2026-10-30-r13.md):487 compiled,276 scripts passed and488 required hashes verified before/after at `e5780915662a4c69e0ef7acbbb961eadc16f2237`.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -507,3 +507,7 @@ Candidate revision `f4cffe7ec0877454330b96ff07a15cdea1a5abbb` passed on Python 3
 ## Quadrature-order and derivative-step oracle — 2026-10-30
 
 [Section18.7 evidence](chapter-18-order-step-followup.md) adds48 rounded exact rule references,36 measured order checks, three polynomial difference steps and a100-digit Decimal three-step bond study with explicit callback/rounding allowances. Three wrong methods are detected. The first checker run passed against the unchanged helper. All25 chapter sources compiled and15 scripts passed at `497e1892a8bc08b353d711a092f40ddada9531bf`; hashes match the pinned tree and remain unchanged after execution. Current inventory486 Python files/275 check-test scripts is not a full runtime pass; V-48 remains the earlier484/273 run. Twenty-nine categories remain partially addressed; none closed by the register. Next executable item: COV-80 Sections18.7/18.10 finite-difference range contracts, including finite samples, combined numerator/denominator arithmetic and nonzero-to-zero results. Broader conditioning/model, independent-review, supported-platform and release obligations stay open.
+
+## Complete-stencil range correction and V-49 — 2026-10-30
+
+[Sections18.7/18.10 evidence](chapter-18-difference-range-followup.md) preserves five original false-zero/range probes and a failed first regression. Shared complete rational stencils now avoid intermediate numerator/denominator range loss, reject nonfinite/collapsed sample points before callbacks and reject unrepresentable nonzero/final results. Thirteen2500-digit Decimal references,11 point guards,12 callback-value guards,four final-range rejections and a shared-call observation pass. All26 chapter sources compiled and16 scripts passed. [V-49 full execution](runtime-refresh-2026-10-30-r13.md) compiled487 files,passed276 scripts and verified488 required hashes before/after at `e5780915662a4c69e0ef7acbbb961eadc16f2237`, including all three checkers added since V-48. Twenty-nine categories remain partially addressed; none closed by the register. Next executable item: COV-81 Section18.9 project nonfinite-derivative/evaluation-error contract, invalid relative tolerances/iteration controls and callback sequencing, preserving zero-derivative fallback. Broader final applied-scope, conditioning/model, independent-review, supported-platform and release obligations stay open.
