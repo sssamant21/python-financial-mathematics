@@ -1,0 +1,198 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.10-sorting-filtering-and-querying.md",
+  "source_sha256": "00b6cc514d66a1f6bf0730c1579542f244e4ad2435a7f998bbd843e34afdc0b5",
+  "program_fence": 4,
+  "test_fence": 5,
+  "program_sha256": "56b720cd0f0c336577ee060c97f798db6a1e2670086a5a880911ac9c5ff67400",
+  "test_sha256": "5762a4bb3eeae4a80aca52523206fb087d01aae43e24c25b018e3c025d64de36",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 18,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_710/screen.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "asset sector  market_value\nALPHA equity        600.00\n BETA equity        600.00\nEligible=3; returned=2\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_710",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_full_input_validation (test_screen.ScreenTests.test_full_input_validation) ... ok\ntest_inclusive_floor_and_filter_before_head (test_screen.ScreenTests.test_inclusive_floor_and_filter_before_head) ... ok\ntest_input_copy_and_index (test_screen.ScreenTests.test_input_copy_and_index) ... ok\ntest_known_answer_and_counts (test_screen.ScreenTests.test_known_answer_and_counts) ... ok\ntest_no_match_preserves_schema (test_screen.ScreenTests.test_no_match_preserves_schema) ... ok\ntest_parameter_rejections (test_screen.ScreenTests.test_parameter_rejections) ... ok\ntest_permutation_and_tie_break (test_screen.ScreenTests.test_permutation_and_tie_break) ... ok\ntest_sort_and_query_mechanics (test_screen.ScreenTests.test_sort_and_query_mechanics) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.024s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_710"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'screen.py': '56b720cd0f0c336577ee060c97f798db6a1e2670086a5a880911ac9c5ff67400', 'test_screen.py': '5762a4bb3eeae4a80aca52523206fb087d01aae43e24c25b018e3c025d64de36'}",
+      "expected": "{'screen.py': '56b720cd0f0c336577ee060c97f798db6a1e2670086a5a880911ac9c5ff67400', 'test_screen.py': '5762a4bb3eeae4a80aca52523206fb087d01aae43e24c25b018e3c025d64de36'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "all eligible equity records sorted deterministically",
+      "actual": "(['ALPHA', 'BETA', 'GAMMA'], [600.0, 600.0, 300.0])",
+      "expected": "(['ALPHA', 'BETA', 'GAMMA'], [600.0, 600.0, 300.0])",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "input/eligible/returned reconciliation",
+      "actual": "(5, 3, 3)",
+      "expected": "(5, 3, 3)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "inclusive floor keeps both equal values",
+      "actual": "(['ALPHA', 'BETA'], 2)",
+      "expected": "(['ALPHA', 'BETA'], 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "above-boundary next representable floor excludes equality",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "limit-one tie break independent of source order",
+      "actual": "(['ALPHA'], ['ALPHA'])",
+      "expected": "(['ALPHA'], ['ALPHA'])",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "eligibility before head preserves DELTA",
+      "actual": "(['DELTA'], [])",
+      "expected": "(['DELTA'], [])",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "bond population evidence",
+      "actual": "(5, 1, 1)",
+      "expected": "(5, 1, 1)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "maximum-row policy resolves tied cutoff by asset",
+      "actual": "(['ALPHA', 'BETA', 'GAMMA'], 4, 3)",
+      "expected": "(['ALPHA', 'BETA', 'GAMMA'], 4, 3)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "same maximum-row result after permutation",
+      "actual": "['ALPHA', 'BETA', 'GAMMA']",
+      "expected": "['ALPHA', 'BETA', 'GAMMA']",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "fixed two-sector query equals isin mask",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "two-sector source-order population",
+      "actual": "['BETA', 'ALPHA', 'GAMMA', 'DELTA']",
+      "expected": "['BETA', 'ALPHA', 'GAMMA', 'DELTA']",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "unselected DELTA missing value still rejects",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7screenex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-screen-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7screenex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-screen-exercises/review.py\", line 54, in <lambda>\n    missing=raw.copy();missing.loc[4,'market_value']=np.nan;reject('E7','unselected DELTA missing value still rejects',lambda:m.screen(missing))\n                                                                                                                              ^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7screenex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.10-sorting-filtering-and-querying.md\", line 25, in screen\n    8. Test order independence, empty results and full-input validation.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: finite nonnegative market values required\n"
+    },
+    {
+      "section": "E8",
+      "label": "existing evidence distinguishes no matches",
+      "actual": "(True, 5, 0, 0)",
+      "expected": "(True, 5, 0, 0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "existing counts identify truncation",
+      "actual": "(5, 3, 2, True)",
+      "expected": "(5, 3, 2, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "existing criteria explicit",
+      "actual": "(300.0, 'equity', 2)",
+      "expected": "(300.0, 'equity', 2)",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original source unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Original single-sector source;E6 supplemental authored two-sector expression;E8 proposed richer status/provenance evidence not implemented"
+}
