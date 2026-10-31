@@ -48,4 +48,6 @@ Earlier checkpoint: [Section 7.10 local exercises](../chapter-07-screen-exercise
 
 Earlier checkpoint: [Section 7.11 local exercises](../chapter-07-group-exercises/README.md):8 answers,3 commands,20 predicates and8 existing methods passed. 88/136 local prompts reviewed;48 remain. Next: Section 7.12 local exercises.
 
-Current checkpoint: [Section 7.12 local exercises](../chapter-07-merge-exercises/README.md): 8 answers, 3 commands, 18 predicates and 8 existing methods passed. 96/136 local prompts reviewed; 40 remain. Next: Section 7.13 local exercises.
+Earlier checkpoint: [Section 7.12 local exercises](../chapter-07-merge-exercises/README.md): 8 answers, 3 commands, 18 predicates and 8 existing methods passed. 96/136 local prompts reviewed; 40 remain. Next: Section 7.13 local exercises.
+
+Current checkpoint: [Section 7.13 local exercises](../chapter-07-resampling-exercises/README.md): 8 answers, 3 commands, 18 predicates and 8 existing methods passed. 104/136 local prompts reviewed; 32 remain. Next: Section 7.14 local exercises.

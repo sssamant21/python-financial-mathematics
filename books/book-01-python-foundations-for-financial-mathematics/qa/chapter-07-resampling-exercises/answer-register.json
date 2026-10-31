@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.13-E1",
+    "prompt": "Verify the first bin's OHLC and volume by hand.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "SOURCE + SCALAR OHLC/VOLUME",
+    "answer": "The first[14:00,14:30) bin contains prices100 and102 with event volumes10 and20. Chronological open100,high102,low100,close102 and volume10+20=30 follow directly. All supplied bins account for4events and total42volume units. Prices are not additive volume-like flows;the sum202 is not a bar close or portfolio value."
+  },
+  {
+    "id": "7.13-E2",
+    "prompt": "Explain why the 14:30 event belongs to the bin labeled 15:00.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "EXACT SOURCE INTERVAL MEMBERSHIP",
+    "answer": "closed=\"left\" includes14:30 in[14:30,15:00),not[14:00,14:30). label=\"right\" names that bin15:00;its open/close is101 with event_count1. Output label and endpoint membership are separate settings;the label is not the actual timestamp of the close observation or proof of availability."
+  },
+  {
+    "id": "7.13-E3",
+    "prompt": "Remove the first two events and inspect the newly visible leading empty bin.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "EXACT SOURCE HORIZON",
+    "answer": "Remove the first two events. The independent14:00..16:00 reporting horizon still yields4bins and counts[0,1,0,1]. Leading14:30-labeled bin has unknownOHLC/volume rather than disappearing or becoming observedzero. Explicit horizon reindexing is different from inferring the report span from supplied events alone."
+  },
+  {
+    "id": "7.13-E4",
+    "prompt": "Set all supplied volumes to zero and distinguish observed zero from the empty bin's NaN.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "EXACT SOURCE MISSING/ZERO CONTRAST",
+    "answer": "Set all supplied event volumes to0. The three nonempty bins have known volume0;the empty third bin has volumeNaN,event_count0,has_observationsFalse. min_count=1 prevents an empty group from becoming observedzero. Unknown/no-supplied-event state does not by itself mean confirmed no trading."
+  },
+  {
+    "id": "7.13-E5",
+    "prompt": "Add an event exactly at reporting end and explain the rejection.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "EXACT SOURCE REJECTION",
+    "answer": "Append an event exactly16:00UTC. The half-open horizon[start,end) rejects it instead of silently assigning it outside the requested report. The existing15:45 event remains in the last bin closing103. Extending the report horizon would be a different explicit request,not an automatic adjustment."
+  },
+  {
+    "id": "7.13-E6",
+    "prompt": "Contrast asfreq with the bar close for the first interval.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "SUPPLEMENTAL GRID-SELECTION CONTRAST",
+    "answer": "asfreq(\"30min\") selects the exact14:00 observation100 for its first grid point;the first aggregated bar closes102 from the14:29 event. The14:29 event is off the asfreq grid. Grid selection does not compute OHLC or establish that intervening prices were unchanged;no interpolation/fill is authorized."
+  },
+  {
+    "id": "7.13-E7",
+    "prompt": "Design a multiple-events-per-timestamp key and deterministic within-time ordering policy.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "COMPOSITE EVENT-GRAIN DESIGN \u2014 NOT IMPLEMENTED",
+    "answer": "Propose(source_or_venue,instrument_id,event_id) as stable event identity,with event_timeUTC and a source-backed sequence number for deterministic within-time order. For open/close,sort by eventtime then sequence after validating sequence uniqueness/continuity and revision/cancel policy;reject or flag ties whose order cannot be established. Do not invent economic order from arbitrary file position or delete legitimate simultaneous trades. Original bars still rejects duplicate instants,as probed;no event-ID/sequence-aware bar implementation was added."
+  },
+  {
+    "id": "7.13-E8",
+    "prompt": "List calendar and feed-completeness evidence required before treating an empty interval as confirmed no trading.",
+    "source": "chapter-07/7.13-resampling-time-series.md",
+    "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-resampling-exercises/README.md",
+    "baseline": "3acde555dbd2f6f2460024d2feb5fed1ab37c4f0",
+    "kind": "SOURCE LIMIT + EXTERNAL COMPLETENESS DESIGN",
+    "answer": "The original empty interval means no supplied events only. Before claiming confirmed no trading,need instrument/venue session and holiday/early-close calendars,timezone/rule versions,halt/status evidence,source availability and coverage guarantees,sequence-gap/replay checks,complete reporting horizon,late/corrected event policy and reconciliation controls. Removing the whole14:29 event still yields a locally valid3-event report with first-binclose100;count conservation cannot discover that omitted source event. A nonempty bin can also be incomplete. No exchange calendar or live feed certification was performed."
+  }
+]

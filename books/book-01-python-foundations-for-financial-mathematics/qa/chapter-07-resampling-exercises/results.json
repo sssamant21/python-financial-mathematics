@@ -1,0 +1,199 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.13-resampling-time-series.md",
+  "source_sha256": "23d50ea12d4d9e2a140ada7fe4354e1d11d909a74b259fcb7d86ff25491f843a",
+  "program_fence": 2,
+  "test_fence": 3,
+  "program_sha256": "906593d7ccbb85055555673e2b802adc39753744dcbe9de219e36dbc07159306",
+  "test_sha256": "7e6ee346bcd174f843744afb25468b586d9a235038341d37a55465cd6bcb7716",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 18,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_713/resampling.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "                            open   high    low  close  volume  event_count  has_observations\ninterval_end                                                                                \n2026-01-30 14:30:00+00:00  100.0  102.0  100.0  102.0    30.0            2              True\n2026-01-30 15:00:00+00:00  101.0  101.0  101.0  101.0     5.0            1              True\n2026-01-30 15:30:00+00:00    NaN    NaN    NaN    NaN     NaN            0             False\n2026-01-30 16:00:00+00:00  103.0  103.0  103.0  103.0     7.0            1              True\nEvents accounted for: 4\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_713",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_asfreq_is_not_aggregation (test_resampling.BarTests.test_asfreq_is_not_aggregation) ... ok\ntest_conservation_and_scalar_oracle (test_resampling.BarTests.test_conservation_and_scalar_oracle) ... ok\ntest_empty_bin_unknown_values (test_resampling.BarTests.test_empty_bin_unknown_values) ... ok\ntest_horizon_boundaries_and_leading_empty (test_resampling.BarTests.test_horizon_boundaries_and_leading_empty) ... ok\ntest_invalid_time_contract (test_resampling.BarTests.test_invalid_time_contract) ... ok\ntest_invalid_values_and_zero (test_resampling.BarTests.test_invalid_values_and_zero) ... ok\ntest_known_bars (test_resampling.BarTests.test_known_bars) ... ok\ntest_order_zone_and_source (test_resampling.BarTests.test_order_zone_and_source) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.056s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_713"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "ALL",
+      "label": "source listing hashes",
+      "actual": "{'resampling.py': '906593d7ccbb85055555673e2b802adc39753744dcbe9de219e36dbc07159306', 'test_resampling.py': '7e6ee346bcd174f843744afb25468b586d9a235038341d37a55465cd6bcb7716'}",
+      "expected": "{'resampling.py': '906593d7ccbb85055555673e2b802adc39753744dcbe9de219e36dbc07159306', 'test_resampling.py': '7e6ee346bcd174f843744afb25468b586d9a235038341d37a55465cd6bcb7716'}",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "independent first-bin OHLC and volume",
+      "actual": "[np.float64(100.0), np.float64(102.0), np.float64(100.0), np.float64(102.0), np.float64(30.0)]",
+      "expected": "[100.0, 102.0, 100.0, 102.0, 30.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "four supplied events and volume conservation",
+      "actual": "(4, np.float64(42.0))",
+      "expected": "(4, 42.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "boundary event enters next bin",
+      "actual": "[np.float64(101.0), np.float64(101.0), np.int64(1)]",
+      "expected": "[101.0, 101.0, 1]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "all bin memberships",
+      "actual": "[2, 1, 0, 1]",
+      "expected": "[2, 1, 0, 1]",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "explicit horizon retains leading empty bin",
+      "actual": "((4, 7), [0, 1, 0, 1])",
+      "expected": "((4, 7), [0, 1, 0, 1])",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "leading empty financial fields remain unknown",
+      "actual": "np.True_",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "observed zero volume bins remain zero",
+      "actual": "[0.0, 0.0, 0.0]",
+      "expected": "[0.0, 0.0, 0.0]",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "empty bin has unknown volume and no observations",
+      "actual": "(True, np.False_, np.int64(0))",
+      "expected": "(True, False, 0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "exact reporting-end event rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-resampling-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-resampling-exercises/review.py\", line 48, in <lambda>\n    terminal=raw.iloc[[0]].copy();terminal.index=pd.DatetimeIndex([end]);reject('E5','exact reporting-end event rejected',lambda:bars(pd.concat([raw,terminal])))\n                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-resampling-exercises/review.py\", line 38, in bars\n    def bars(data):return m.bars(data,start=start,end=end)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.13-resampling-time-series.md\", line 29, in bars\n    Each input row represents one supplied trade event for one instrument, with a price and event volume. Prices share one currency/per-unit convention; volumes share one unit convention. Volume is the amount associated with that event, not a cumulative exchange counter. There are no corporate-action adjustments, FX conversions or portfolio calculations.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: every supplied event must be inside the horizon\n"
+    },
+    {
+      "section": "E5",
+      "label": "last permitted supplied event still assigned",
+      "actual": "np.float64(103.0)",
+      "expected": "103.0",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "asfreq selects grid observation rather than last-bin-event close",
+      "actual": "(np.float64(100.0), np.float64(102.0))",
+      "expected": "(100.0, 102.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "off-grid14:29 event is not an asfreq sample",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "section": "E7",
+      "label": "original simplified instant key rejects multiple simultaneous events",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-resampling-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-resampling-exercises/review.py\", line 52, in <lambda>\n    reject('E7','original simplified instant key rejects multiple simultaneous events',lambda:bars(pd.concat([raw,raw.iloc[[0]]])))\n                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-resampling-exercises/review.py\", line 38, in bars\n    def bars(data):return m.bars(data,start=start,end=end)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book1_ch7barex/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.13-resampling-time-series.md\", line 27, in bars\n    ## 7.13.3 Synthetic Event Contract\n                                  ^^^^^\nValueError: unique event instants required\n"
+    },
+    {
+      "section": "E8",
+      "label": "missing whole event not discoverable from local conservation",
+      "actual": "(3, np.int64(1), np.float64(100.0))",
+      "expected": "(3, 1, 100.0)",
+      "status": "PASS"
+    },
+    {
+      "section": "E8",
+      "label": "original empty interval has no supplied observations",
+      "actual": "(np.int64(0), np.False_)",
+      "expected": "(0, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "source remains unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "prepared versions",
+      "actual": "('3.12.14', '2.2.3', '2.3.5')",
+      "expected": "('3.12.14', '2.2.3', '2.3.5')",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Original observed-event bars;independent OHLC/volume membership;E7 simultaneous-event key and E8 calendar/feed completeness controls remain designs"
+}
