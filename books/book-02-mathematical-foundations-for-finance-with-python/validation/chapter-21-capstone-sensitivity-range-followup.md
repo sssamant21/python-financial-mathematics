@@ -1,0 +1,13 @@
+# Section 21.4 complete analytic sensitivity and Taylor scaling
+
+Date: 2026-11-05. Baseline: `239085a0580b7a97db6787e415c36f20d11f706c`. Corrected executable revision: `77a943c4ee6551431485c3a53d71f789691c2392`. Final Chapter 21 revision: `77a943c4ee6551431485c3a53d71f789691c2392`.
+
+The scalar PV, first and second analytic derivatives, and first/second-order Taylor expressions evaluate their complete signed coefficients before rounding the scaled results. For represented inputs, coefficients use exact rational products, with a high-precision exponential when the exponent is nonzero. This recovers finite derivatives when a separately rounded PV is zero, and finite Taylor values when an unscaled derivative or addition term would overflow. Extreme-exponent bounds account for derivative and Taylor coefficients rather than the input amount alone. True output overflow and input rejection remain; underflow may still yield zero. The centered finite-difference stencil and its perturbation/denominator guards are unchanged.
+
+A 2,500-digit Decimal reference computes the unrounded base, derivatives and Taylor terms independently. Selected cases include recovered subnormal derivatives, large time/change cancellation, signed results and a finite second-order output at an exponent below -2,000. It also checks the actual capstone analytic field and callable identity. The baseline had 17 mismatches across 32 rows; all 32 pass after correction. Nonzero results use a one-ulp comparison; zero and exception classifications are separate. This does not guarantee arbitrary finite-difference accuracy or correct rounding across every input.
+
+Final Chapter 21 scope: 21 files compiled, 12 scripts passed, and matching source hashes before and after. [Raw baseline, rerun and scoped hashes](chapter-21-capstone-sensitivity-range-followup.json) · [Runnable checker](../chapter-21/code/check_capstone_sensitivity_range.py).
+
+Replay from Book 02's chapter-21/code at the corrected revision: run python check_capstone_sensitivity_range.py with assertions enabled. For the baseline, save the checker externally, check out the stated baseline and overlay only that checker. Compile each .py via py_compile.compile(path,doraise=True), run check_/test_ basenames in separate Python processes from their parent directories with a 60-second timeout, and verify the raw Git blob hashes before and after. Successful stdout is omitted from the scope summary.
+
+COV-90 receives selected partial evidence only; none of its broader proof, units, scope or independent review obligations are closed. Selected assistant-run Linux evidence only; not independent reviewer sign-off, supported-platform validation, release acceptance or canonical approval.
