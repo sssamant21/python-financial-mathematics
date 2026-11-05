@@ -1,0 +1,98 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "png_sha256": "bed0e78307a8c21cbbe80bcbf0a840900a65915b3eb51f7bf424b71b6f14239d",
+  "source_sha256": "483dde4063d284bd0ebb7ce64ca9eeff03ed82f9faa02621461a950766001589",
+  "program_sha256": "363bdee18c4d06f492b41eef343dcd7162a93beb653356c4f3314c25e080a5ad",
+  "tests_sha256": "4dcf805a6f276a6364a990f069e59785c0fb67c8463d4c7ffe4d6ae7e735d3ae",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_artists_and_png (test_visualization_purpose.VisualizationTests.test_artists_and_png) ... ok\ntest_bad_names (test_visualization_purpose.VisualizationTests.test_bad_names) ... ok\ntest_bad_prices (test_visualization_purpose.VisualizationTests.test_bad_prices) ... ok\ntest_bad_time_grid (test_visualization_purpose.VisualizationTests.test_bad_time_grid) ... ok\ntest_gap_does_not_become_zero_or_bridge_return (test_visualization_purpose.VisualizationTests.test_gap_does_not_become_zero_or_bridge_return) ... ok\ntest_indexed_paths_and_endpoint (test_visualization_purpose.VisualizationTests.test_indexed_paths_and_endpoint) ... ok\ntest_inputs_unchanged_and_output_independent (test_visualization_purpose.VisualizationTests.test_inputs_unchanged_and_output_independent) ... ok\ntest_scale_invariance (test_visualization_purpose.VisualizationTests.test_scale_invariance) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.174s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "visualization_purpose.py"
+      ],
+      "returncode": 0,
+      "stdout": "CALM: endpoint=20.00%; known intervals=4/4\nDIP: endpoint=20.00%; known intervals=4/4\nGAP: endpoint=20.00%; known intervals=2/4\nSaved output/why_visualization.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "all indexed values match rational reference",
+      "passed": true,
+      "expected": "array([[100., 100., 100.],\n       [105.,  80.,  98.],\n       [110.,  90.,  nan],\n       [115., 105., 112.],\n       [120., 120., 120.]])"
+    },
+    {
+      "label": "all adjacent returns match rational reference",
+      "passed": true,
+      "expected": "array([[ 0.05      , -0.2       , -0.02      ],\n       [ 0.04761905,  0.125     ,         nan],\n       [ 0.04545455,  0.16666667,         nan],\n       [ 0.04347826,  0.14285714,  0.07142857]])"
+    },
+    {
+      "label": "80 to 92 gives index 115 and return 15%",
+      "passed": true
+    },
+    {
+      "label": "DIP scale by seven leaves transformed arrays unchanged",
+      "passed": true
+    },
+    {
+      "label": "dropping day 4 makes a distinct four-day GAP interval",
+      "passed": true
+    },
+    {
+      "label": "artists preserve irregular elapsed-day coordinates",
+      "passed": true
+    },
+    {
+      "label": "GAP artists preserve price and return omissions",
+      "passed": true
+    },
+    {
+      "label": "DIP first plotted return expressed in percent",
+      "passed": true
+    },
+    {
+      "label": "unsupported percentage is rejected before rendering",
+      "passed": false,
+      "actual": "array([-100.,   inf])",
+      "warnings": [
+        "overflow encountered in multiply"
+      ]
+    }
+  ]
+}
