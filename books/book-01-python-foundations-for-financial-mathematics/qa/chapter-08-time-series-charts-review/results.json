@@ -1,0 +1,101 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "tzdata_package": "2026.5",
+  "zoneinfo_search": [
+    "/usr/share/zoneinfo",
+    "/usr/lib/zoneinfo",
+    "/usr/share/lib/zoneinfo",
+    "/etc/zoneinfo"
+  ],
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "d2eea766191c4c71c00328e7c14f243df4f80269bfe15bdf9bb322c4a2e87128",
+  "program_sha256": "91fc16baf31f0f0c7a0fb8874961e7d3b252e31cbcaf4a120fd6177083f7ba2d",
+  "tests_sha256": "afc6fd072b788119ca064edfa9c81ead2ded458e1032c9208c55dbd9345950a0",
+  "png_sha256": "77dd59204791ee71ef79ffb5389d9bddd9c52ead4aa56d435d2682a081cf8a91",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_alignment_coverage_and_index_values (test_time_series_charts.TimeSeriesTests.test_alignment_coverage_and_index_values) ... ok\ntest_artist_gaps_and_formatter (test_time_series_charts.TimeSeriesTests.test_artist_gaps_and_formatter) ... ok\ntest_invalid_prices_schema_and_baseline (test_time_series_charts.TimeSeriesTests.test_invalid_prices_schema_and_baseline) ... ok\ntest_invalid_time_indexes (test_time_series_charts.TimeSeriesTests.test_invalid_time_indexes) ... ok\ntest_png_and_cleanup (test_time_series_charts.TimeSeriesTests.test_png_and_cleanup) ... ok\ntest_repeated_clock_hour_and_elapsed_spacing (test_time_series_charts.TimeSeriesTests.test_repeated_clock_hour_and_elapsed_spacing) ... ok\ntest_source_preserved (test_time_series_charts.TimeSeriesTests.test_source_preserved) ... ok\ntest_zone_conversion_preserves_instants (test_time_series_charts.TimeSeriesTests.test_zone_conversion_preserves_instants) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.202s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "time_series_charts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Expected instants: 6; source rows: 5\nAbsent rows: 1; observed price cells: 9/12\n2026-11-01 01:30 EDT -0400\n2026-11-01 01:30 EST -0500\nSaved output/financial_time_series.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "observed cell counts per instant",
+      "passed": true
+    },
+    {
+      "label": "presence distinct from cell counts",
+      "passed": true
+    },
+    {
+      "label": "independent base ratios for every observed price",
+      "passed": true,
+      "expected": "array([[100., 100.],\n       [101., 101.],\n       [ nan,  nan],\n       [103.,  nan],\n       [102., 102.],\n       [104., 103.]])"
+    },
+    {
+      "label": "different aware timezone yields identical aligned values and flags",
+      "passed": true
+    },
+    {
+      "label": "missing common baseline rejected",
+      "passed": true
+    },
+    {
+      "label": "present all-missing row and absent row both zero but flags differ",
+      "passed": true
+    },
+    {
+      "label": "artist UTC spacing is one hour across clock rollback",
+      "passed": true
+    },
+    {
+      "label": "repeated local labels differ by offset",
+      "passed": true
+    },
+    {
+      "label": "absence marker shown only at the missing row",
+      "passed": true
+    }
+  ]
+}
