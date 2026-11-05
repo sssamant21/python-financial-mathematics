@@ -1,0 +1,19 @@
+# Chapter 9 — Twenty chapter-wide answer reviews
+
+Baseline `baf06212851ca7949fad4376e4b9857184fb1cb9`. [Runner](review.py) · [Initial alignment failure](initial-results.json) · [Corrected results](results.json) · [Observer output](observer.log) · [Twenty answers](ANSWERS.md).
+
+**Twenty chapter-wide answers scoped; three command checks and 29 supplemental predicates passed.** The sole Section9.17 Python listing was extracted verbatim as chapter09_reference_checks.py, executed (twenty methods) and compiled in an isolated temporary directory. The same twenty methods were then rerun with assertion observers; the separate corrected Section9.16 capstone listing executed twelve methods. Final method invocations are 20+20+12=52, not 52 new historical methods. No historical unique methods, additional core workflows or local prompts are added by this answer batch.
+
+No separate Chapter9 companion was found: the twenty solutions and standalone checks are inline in Section9.17. Earlier queue wording “companion alignment” is resolved as inline prompt/answer/reference alignment. All twenty source assertion observations are compared against independently derived exact fractions or 100-digit Decimal expectations. Observer wrappers record original assertion arguments and call the original unittest methods; they do not replace assertions or change calculation statements. Raw observer diagnostics are retained. Initial and final source/listing/project hashes identify the exact payloads.
+
+**F51:** Problem20 asks to compute NPV but originally supplies only a formula and an instruction to evaluate without early rounding. A prompt-alignment predicate failed while all source methods and other checks passed. The answer now includes NPV≈31.8192 USD, independently derived as31.819158817370702… using rational powers of150/151. The corrected result passes the stated5e-5 display tolerance. Initial results and observer output are retained; source Python code is unchanged. Reproduce the initial failure using this runner against the baseline Section9.17 manuscript. The source completion checklist now links actual runtime evidence; independent/editorial/production approval items remain unchecked.
+
+The source functions are fixed-fixture reference helpers, not general-purpose validated APIs. Problem2's source assertion only checks the first event's year; the supplemental AST check verifies the entire exact literal timeline. Problem14's first full annual crossing is independently bracketed with exact rational powers. Problem15's continuous percentage is independently derived with Decimal; its source test calculates only nominal monthly conversion. Problem19's parser runs in the source test; the full literal and first signed amount are separately checked. No calendar implementation, contract schedule or market forecasting is inferred.
+
+Prepared Linux CPython3.12.14, standard library only; no external module, network or dataset required. Both script commands are exercised; no fresh install, Windows/PowerShell or notebook workflow ran. Rational and Decimal implementations are independent QA oracles, not replacement source valuations. Project integration is separately identified; its existing evidence has initial numerical/CSV failures and corrected runs. The twenty answers have reviewed units, signs, initial-cost treatment and rounded displays; rubric80/100 is an educational target, not operational/model certification.
+
+```bash
+python3 -B books/book-01-python-foundations-for-financial-mathematics/qa/chapter-09-answer-review/review.py
+```
+
+Chapter9 listed scope now has sixteen core workflows,88 local prompts and20 separate chapter-wide answer records. Platform/notebook, F28/F32, broader numerical/input-domain, source/editorial and independent acceptance remain open. Next: Chapter10 Section10.1 formal lab and local-answer review.

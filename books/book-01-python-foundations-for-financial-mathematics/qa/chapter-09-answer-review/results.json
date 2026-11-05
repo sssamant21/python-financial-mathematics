@@ -1,0 +1,443 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "a8cea25ce47c14bc77c6713af67297097fe64a2da6a7f1a0bf4acd13bab14c47",
+  "listing_sha256": "6dbd6cece7917479093b966602068a6bdb6571e07a710327f2002dc66e483e1e",
+  "project_sha256": "a3d5bff5614333bbf0b03d92d2fce629d07bcd3e55110dc12700a824f4189f1c",
+  "commands": [
+    {
+      "label": "exact twenty reference methods",
+      "args": [
+        "chapter09_reference_checks.py"
+      ],
+      "stdout": "",
+      "stderr": "test_01 (__main__.ChapterNineChecks.test_01) ... ok\ntest_02 (__main__.ChapterNineChecks.test_02) ... ok\ntest_03 (__main__.ChapterNineChecks.test_03) ... ok\ntest_04 (__main__.ChapterNineChecks.test_04) ... ok\ntest_05 (__main__.ChapterNineChecks.test_05) ... ok\ntest_06 (__main__.ChapterNineChecks.test_06) ... ok\ntest_07 (__main__.ChapterNineChecks.test_07) ... ok\ntest_08 (__main__.ChapterNineChecks.test_08) ... ok\ntest_09 (__main__.ChapterNineChecks.test_09) ... ok\ntest_10 (__main__.ChapterNineChecks.test_10) ... ok\ntest_11 (__main__.ChapterNineChecks.test_11) ... ok\ntest_12 (__main__.ChapterNineChecks.test_12) ... ok\ntest_13 (__main__.ChapterNineChecks.test_13) ... ok\ntest_14 (__main__.ChapterNineChecks.test_14) ... ok\ntest_15 (__main__.ChapterNineChecks.test_15) ... ok\ntest_16 (__main__.ChapterNineChecks.test_16) ... ok\ntest_17 (__main__.ChapterNineChecks.test_17) ... ok\ntest_18 (__main__.ChapterNineChecks.test_18) ... ok\ntest_19 (__main__.ChapterNineChecks.test_19) ... ok\ntest_20 (__main__.ChapterNineChecks.test_20) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.001s\n\nOK\n",
+      "methods": 20,
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "chapter09_reference_checks.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "separate corrected capstone integration",
+      "args": [
+        "tvm_engine.py"
+      ],
+      "stdout": "{\n  \"rate_convention\": \"nominal_annual\",\n  \"nominal_annual_rate\": 0.08,\n  \"compounds_per_year\": 12,\n  \"effective_annual_rate\": 0.08299950680751075,\n  \"event_count\": 4,\n  \"cash_flows\": [\n    {\n      \"event\": 1,\n      \"year\": 0.0,\n      \"amount\": -1000.0,\n      \"discount_factor\": 1.0,\n      \"present_value\": -999.9999999999998\n    },\n    {\n      \"event\": 2,\n      \"year\": 1.0,\n      \"amount\": 400.0,\n      \"discount_factor\": 0.9233614546582958,\n      \"present_value\": 369.34458186331835\n    },\n    {\n      \"event\": 3,\n      \"year\": 2.0,\n      \"amount\": 500.0,\n      \"discount_factor\": 0.852596375948684,\n      \"present_value\": 426.29818797434183\n    },\n    {\n      \"event\": 4,\n      \"year\": 3.0,\n      \"amount\": 300.0,\n      \"discount_factor\": 0.787254629932368,\n      \"present_value\": 236.17638897971045\n    }\n  ],\n  \"npv\": 31.819158817370862\n}\n",
+      "stderr": "test_01_future_present_round_trip (__main__.EngineAcceptanceTests.test_01_future_present_round_trip) ... ok\ntest_02_effective_annual (__main__.EngineAcceptanceTests.test_02_effective_annual) ... ok\ntest_03_continuous_round_trip (__main__.EngineAcceptanceTests.test_03_continuous_round_trip) ... ok\ntest_04_inverse_rate (__main__.EngineAcceptanceTests.test_04_inverse_rate) ... ok\ntest_05_inverse_time (__main__.EngineAcceptanceTests.test_05_inverse_time) ... ok\ntest_06_npv_break_even (__main__.EngineAcceptanceTests.test_06_npv_break_even) ... ok\ntest_07_csv_json_audit (__main__.EngineAcceptanceTests.test_07_csv_json_audit) ... ok\ntest_08_negative_rate (__main__.EngineAcceptanceTests.test_08_negative_rate) ... ok\ntest_09_zero_rate (__main__.EngineAcceptanceTests.test_09_zero_rate) ... ok\ntest_10_invalid_inputs (__main__.EngineAcceptanceTests.test_10_invalid_inputs) ... ok\ntest_11_same_date_netting (__main__.EngineAcceptanceTests.test_11_same_date_netting) ... ok\ntest_12_no_hidden_initial_cost (__main__.EngineAcceptanceTests.test_12_no_hidden_initial_cost) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "returncode": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "same twenty observer methods",
+      "passed": true,
+      "methods": 20
+    },
+    {
+      "label": "P01 observed exact source value",
+      "passed": true,
+      "actual": 5092.592592592593,
+      "reference": "5092.592592592592592592592592592592592592592592592592592592592592592592592592592592592592592592592593",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P02 observed exact source value",
+      "passed": true,
+      "actual": 0,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P03 observed exact source value",
+      "passed": true,
+      "actual": 2950.0,
+      "reference": "2950",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P04 observed exact source value",
+      "passed": true,
+      "actual": 2977.54,
+      "reference": "2977.54",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P05 observed exact source value",
+      "passed": true,
+      "actual": 6581.619798335056,
+      "reference": "6581.619798335055866639928836235930502208441955769458199001444871221353242733223296877329919118062947",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P06 observed exact source value",
+      "passed": true,
+      "actual": 3649.9587071999995,
+      "reference": "3649.9587072",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P07 observed exact source value",
+      "passed": true,
+      "actual": 0.816297876890852,
+      "reference": "0.8162978768908519945830472889523061639468981905124962960483836077590745794229263789107810909494605495",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P08 observed exact source value",
+      "passed": true,
+      "actual": 256.19834710743805,
+      "reference": "256.1983471074380165289256198347107438016528925619834710743801652892561983471074380165289256198347107",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P09 observed exact source value",
+      "passed": true,
+      "actual": 41.32231404958674,
+      "reference": "41.32231404958677685950413223140495867768595041322314049586776859504132231404958677685950413223140496",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 observed exact source value",
+      "passed": true,
+      "actual": 0.12682503013196977,
+      "reference": "0.126825030131969720661201",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 observed exact source value",
+      "passed": true,
+      "actual": 1061.6778118644995,
+      "reference": "1061.677811864499568789707617431640625",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 observed exact source value",
+      "passed": true,
+      "actual": 1657.7563771134717,
+      "reference": "1657.756377113471437217561739735370002336820792106278078189294934161451950121481454483714978456122981",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13 observed exact source value",
+      "passed": true,
+      "actual": 0.10000000000000009,
+      "reference": "0.1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P14 observed exact source value",
+      "passed": true,
+      "actual": 9.006468342000595,
+      "reference": "9.006468342000595600016800502267797402620531796237113187957505412989481262817424759126635086075627497",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P15 observed exact source value",
+      "passed": true,
+      "actual": 0.0956896851468449,
+      "reference": "0.095689685146844892792382130678763998190061741727709497202455838594272795112945949196047619975862576",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P16 observed exact source value",
+      "passed": true,
+      "actual": 2000.0,
+      "reference": "2000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P17 observed exact source value",
+      "passed": true,
+      "actual": 902.5,
+      "reference": "902.5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P18 observed exact source value",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P19 observed exact source value",
+      "passed": true,
+      "actual": 3,
+      "reference": "3",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P20 observed exact source value",
+      "passed": true,
+      "actual": 31.81915881737072,
+      "reference": "31.81915881737070233754749360314639050189319310517319449345714322304137777973375628230373462007790833",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P02 full source timeline",
+      "passed": true,
+      "actual": [
+        [
+          0,
+          -2000
+        ],
+        [
+          1,
+          900
+        ],
+        [
+          3,
+          1400
+        ]
+      ]
+    },
+    {
+      "label": "P01 premium over immediate receipt",
+      "passed": true,
+      "actual": 92.59259259259306,
+      "reference": "92.59259259259259259259259259",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P14 first complete annual credit is10",
+      "passed": true
+    },
+    {
+      "label": "P15 continuous quote rounded percent",
+      "passed": true,
+      "decimal_reference": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307"
+    },
+    {
+      "label": "P15 nominal quote rounded percent",
+      "passed": true
+    },
+    {
+      "label": "P19 first signed amount",
+      "passed": true,
+      "actual": -1000.0,
+      "reference": "-1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P19 complete source CSV literal",
+      "passed": true
+    },
+    {
+      "label": "P20 prompt requests evaluated numeric NPV",
+      "passed": true,
+      "expected": "31.81915881737070233754749360314639050189319310517319449345714322304137777973375628230373462007790833",
+      "numeric_answer_found": "31.8192"
+    }
+  ],
+  "observed_assertions": {
+    "test_01": [
+      {
+        "assertion": "assertGreater",
+        "actual": 5092.592592592593,
+        "expected": 5000
+      }
+    ],
+    "test_02": [
+      {
+        "assertion": "assertEqual",
+        "actual": 0,
+        "expected": 0
+      }
+    ],
+    "test_03": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 2950.0,
+        "expected": 2950
+      }
+    ],
+    "test_04": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 2977.54,
+        "expected": 2977.54
+      }
+    ],
+    "test_05": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 6581.619798335056,
+        "expected": 6581.619798335055
+      }
+    ],
+    "test_06": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 3649.9587071999995,
+        "expected": 3649.9587072000004
+      }
+    ],
+    "test_07": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 0.816297876890852,
+        "expected": 0.8162978768908519
+      }
+    ],
+    "test_08": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 256.19834710743805,
+        "expected": 256.198347107438
+      }
+    ],
+    "test_09": [
+      {
+        "assertion": "assertGreater",
+        "actual": 41.32231404958674,
+        "expected": 0
+      }
+    ],
+    "test_10": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 0.12682503013196977,
+        "expected": 0.12682503013196977
+      }
+    ],
+    "test_11": [
+      {
+        "assertion": "assertGreater",
+        "actual": 1061.6778118644995,
+        "expected": 1060.0
+      }
+    ],
+    "test_12": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 1657.7563771134717,
+        "expected": 1657.756377113472
+      }
+    ],
+    "test_13": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 0.10000000000000009,
+        "expected": 0.1
+      }
+    ],
+    "test_14": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 9.006468342000595,
+        "expected": 9.006468342000588
+      }
+    ],
+    "test_15": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 0.0956896851468449,
+        "expected": 0.09568968514684517
+      }
+    ],
+    "test_16": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 2000.0,
+        "expected": 2000
+      }
+    ],
+    "test_17": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 902.5,
+        "expected": 902.5
+      }
+    ],
+    "test_18": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 0.0,
+        "expected": 0
+      }
+    ],
+    "test_19": [
+      {
+        "assertion": "assertEqual",
+        "actual": 3,
+        "expected": 3
+      },
+      {
+        "assertion": "assertEqual",
+        "actual": -1000.0,
+        "expected": -1000
+      }
+    ],
+    "test_20": [
+      {
+        "assertion": "assertAlmostEqual",
+        "actual": 31.81915881737072,
+        "expected": 31.819158817372227
+      }
+    ]
+  },
+  "independent_expectations": {
+    "1": "5092.592592592592592592592592592592592592592592592592592592592592592592592592592592592592592592592593",
+    "2": "0",
+    "3": "2950",
+    "4": "2977.54",
+    "5": "6581.619798335055866639928836235930502208441955769458199001444871221353242733223296877329919118062947",
+    "6": "3649.9587072",
+    "7": "0.8162978768908519945830472889523061639468981905124962960483836077590745794229263789107810909494605495",
+    "8": "256.1983471074380165289256198347107438016528925619834710743801652892561983471074380165289256198347107",
+    "9": "41.32231404958677685950413223140495867768595041322314049586776859504132231404958677685950413223140496",
+    "10": "0.126825030131969720661201",
+    "11": "1061.677811864499568789707617431640625",
+    "13": "0.1",
+    "16": "2000",
+    "17": "902.5",
+    "18": "0",
+    "19": "3",
+    "20": "31.81915881737070233754749360314639050189319310517319449345714322304137777973375628230373462007790833",
+    "12": "1657.756377113471437217561739735370002336820792106278078189294934161451950121481454483714978456122981",
+    "14": "9.006468342000595600016800502267797402620531796237113187957505412989481262817424759126635086075627497",
+    "15": "0.095689685146844892792382130678763998190061741727709497202455838594272795112945949196047619975862576"
+  },
+  "chapter_wide_answer_records": 20,
+  "section_workflows_added": 0,
+  "local_prompt_records_added": 0,
+  "existing_method_invocations_final": 52,
+  "historical_unique_methods_added": 0
+}
