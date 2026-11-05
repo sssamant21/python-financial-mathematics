@@ -1,6 +1,7 @@
 """Metamorphic checks with bounded, synthetic cash flows; educational draft."""
 import math
 import random
+from fractions import Fraction
 from numbers import Real
 
 def finite(value, name):
@@ -31,7 +32,11 @@ def pv(amount, rate, years):
 def portfolio(flows, rate):
     """flows is a sequence of (amount, years) pairs."""
     rate = finite(rate, "rate")
-    return math.fsum(pv(amount, rate, years) for amount, years in flows)
+    total = sum((Fraction(pv(amount, rate, years)) for amount, years in flows), Fraction(0))
+    try:
+        return float(total)
+    except OverflowError as exc:
+        raise OverflowError("portfolio value exceeds float range") from exc
 
 def close(a, b):
     return math.isclose(a, b, rel_tol=1e-12, abs_tol=1e-9)
