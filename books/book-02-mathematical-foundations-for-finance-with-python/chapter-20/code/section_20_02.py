@@ -82,11 +82,18 @@ def depletion_time(initial,rate,withdrawal):
 def solve_two_by_two(a,b,c,d,y1,y2):
     a,b,c,d,y1,y2=(finite(v,n) for v,n in
                     ((a,"a"),(b,"b"),(c,"c"),(d,"d"),(y1,"y1"),(y2,"y2")))
+    a,b,c,d,y1,y2=map(Fraction,(a,b,c,d,y1,y2))
     det=a*d-b*c
-    if det==0 or not math.isfinite(det):
-        raise ValueError("singular or unrepresentable determinant")
-    return (finite((d*y1-b*y2)/det,"x1"),
-            finite((a*y2-c*y1)/det,"x2"))
+    if det==0:
+        raise ValueError("singular system")
+    exact=((d*y1-b*y2)/det,(a*y2-c*y1)/det)
+    try:
+        result=tuple(map(float,exact))
+    except OverflowError as exc:
+        raise ValueError("solution outside floating-point range") from exc
+    if any(not math.isfinite(f) or (q and f==0) for q,f in zip(exact,result)):
+        raise ValueError("solution outside floating-point range")
+    return result
 
 def assessment():
     rc=nominal_to_continuous(0.06,12)
