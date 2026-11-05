@@ -1,0 +1,218 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "7318a2f8100768c870506b06f0db7998547dce77ad5472aab5260cce8514934c",
+  "listing_sha256": "c2317c23d6c369fcf6bde35785f21a5693dcf960eb911b4d61e6b6fc205dd257",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "level_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV: 399.27\nFV: 586.66\n",
+      "stderr": "test_01_equal_payments (__main__.AnnuityTests.test_01_equal_payments) ... ok\ntest_02_ordinary_pv (__main__.AnnuityTests.test_02_ordinary_pv) ... ok\ntest_03_ordinary_fv (__main__.AnnuityTests.test_03_ordinary_fv) ... ok\ntest_04_zero_rate (__main__.AnnuityTests.test_04_zero_rate) ... ok\ntest_05_empty (__main__.AnnuityTests.test_05_empty) ... ok\ntest_06_negative_rate (__main__.AnnuityTests.test_06_negative_rate) ... ok\ntest_07_timeline_crosscheck (__main__.AnnuityTests.test_07_timeline_crosscheck) ... ok\ntest_08_shifted_timeline (__main__.AnnuityTests.test_08_shifted_timeline) ... ok\ntest_09_pv_fv_identity (__main__.AnnuityTests.test_09_pv_fv_identity) ... ok\ntest_10_invalid_inputs (__main__.AnnuityTests.test_10_invalid_inputs) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+      "methods": 10,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "level_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 complete schedule",
+      "passed": true
+    },
+    {
+      "label": "P3 PV",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 FV",
+      "passed": true,
+      "actual": 331.0,
+      "rational_reference": "331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 zero rate",
+      "passed": true,
+      "actual": 1000,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 nominal monthly conversion",
+      "passed": true,
+      "periodic_decimal": ".005",
+      "scope": "supplemental exact rational rate derivation, no source conversion function"
+    },
+    {
+      "label": "P7 negative rate",
+      "passed": true,
+      "actual": 234.56790123456793,
+      "rational_reference": "19000/81",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 shifted payments",
+      "passed": true,
+      "actual": 226.07745372583838,
+      "rational_reference": "3310000/14641",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 PV/FV via independent sum",
+      "passed": true,
+      "actual": 1360.3825625000002,
+      "rational_reference": "21766121/16000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "worked PV timeline",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "demonstration PV",
+      "passed": true,
+      "actual": 399.2710037078086,
+      "rational_reference": "5729102500/14348907",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "demonstration FV",
+      "passed": true,
+      "actual": 586.660096,
+      "rational_reference": "9166564/15625",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "signed payment",
+      "passed": true,
+      "actual": -248.68519909842223,
+      "rational_reference": "-331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty PV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty FV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero timeline empty",
+      "passed": true
+    },
+    {
+      "label": "small rate finite-series oracle",
+      "passed": true,
+      "actual": 999.9999999999994,
+      "rational_reference": "999.9999999999994500000000000002199999999999999285000000000000200199999999999949950000000000011440000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 smallest-rate PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 smallest-rate FV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 fractional count",
+      "passed": true,
+      "exception": "TypeError('periods must be an integer')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('periodic growth factor must be positive')"
+    },
+    {
+      "label": "bool payment",
+      "passed": true,
+      "exception": "TypeError('payment must be numeric')"
+    },
+    {
+      "label": "negative first period",
+      "passed": true,
+      "exception": "ValueError('first_period must be a nonnegative integer')"
+    },
+    {
+      "label": "F54 zero-rate PV overflow",
+      "passed": true,
+      "exception": "ValueError('PV outside supported range')"
+    },
+    {
+      "label": "F54 zero-rate FV overflow",
+      "passed": true,
+      "exception": "ValueError('FV outside supported range')"
+    },
+    {
+      "label": "F54 timeline factor underflow",
+      "passed": true,
+      "exception": "ValueError('discount factor outside supported range')"
+    },
+    {
+      "label": "F54 timeline nonzero term underflow",
+      "passed": true,
+      "exception": "ValueError('discounted payment outside supported range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 10,
+  "conceptual_only_prompts": [
+    1
+  ],
+  "supplemental_only_prompts": [
+    6
+  ],
+  "historical_unique_methods_added": 0
+}
