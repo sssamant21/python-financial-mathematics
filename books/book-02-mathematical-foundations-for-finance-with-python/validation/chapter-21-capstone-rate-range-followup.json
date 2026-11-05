@@ -1,0 +1,959 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "2f860f73540630ea58b1bd75616ebfa38e003980",
+  "corrected_revision": "239085a0580b7a97db6787e415c36f20d11f706c",
+  "initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-capstone77/check_capstone_rate_range.py\", line 105, in <module>\n    check()\n  File \"/tmp/book02-capstone77/check_capstone_rate_range.py\", line 101, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "helper": "discount_factor",
+        "inputs": "(3, 0.5, 'effective_annual')",
+        "expected": 0.5,
+        "actual": 0.5,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.75, 0.5, 'effective_annual')",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(0.25, 2.5, 'effective_annual')",
+        "expected": 0.5724334022399462,
+        "actual": 0.5724334022399462,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.9999999999999999, 0.5, 'effective_annual')",
+        "expected": 94906265.62425156,
+        "actual": 94906265.62425151,
+        "passed": false
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(5e-324, 1.7976931348623157e+308, 'effective_annual')",
+        "expected": 0.9999999999999991,
+        "actual": 0.9999999999999991,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(5.551115123125783e-17, 18014398509481984, 'effective_annual')",
+        "expected": 0.36787944117144233,
+        "actual": 0.36787944117144233,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(1.7976931348623157e+308, 0.25, 'effective_annual')",
+        "expected": 8.636168555094445e-78,
+        "actual": 8.636168555094496e-78,
+        "passed": false
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(1.7976931348623157e+308, 2, 'continuous')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-1.7976931348623157e+308, 2, 'continuous')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-1.25, 0.75, 'continuous')",
+        "expected": 2.553589458062927,
+        "actual": 2.553589458062927,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.9999999999999999, 21.5, 'effective_annual')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.9999999999999999, 0, 'effective_annual')",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(0, 2.5, 'effective_annual')",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(5e-324, 21.5), (-5e-324, 20.5)], -0.9999999999999999, 'effective_annual')",
+        "expected": 52175271301331124000,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, 21.5)], -0.9999999999999999, 'effective_annual')",
+        "expected": 0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1075.5)], 1, 'effective_annual')",
+        "expected": 3.14018491736755e-16,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1024.5), (-8.988465674311579e+307, 1024.5)], 1, 'effective_annual')",
+        "expected": 0.35355339059327373,
+        "actual": 0.35355339059329166,
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(7, 0.5), (-3, 1.5), (11, 2.25)], -0.75, 'effective_annual')",
+        "expected": 238.90158697766472,
+        "actual": 238.9015869776647,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(11, 2.25), (-3, 1.5), (7, 0.5)], -0.75, 'effective_annual')",
+        "expected": 238.90158697766472,
+        "actual": 238.9015869776647,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1), (1.7976931348623157e+308, 1), (-1.7976931348623157e+308, 1), (5e-324, 1)], 0, 'effective_annual')",
+        "expected": 1.7976931348623157e+308,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0)], 0, 'effective_annual')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 21.5), (-1.7976931348623157e+308, 21.5)], -0.9999999999999999, 'effective_annual')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, 2)], -1.7976931348623157e+308, 'continuous')",
+        "expected": 0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1000.5)], 1, 'continuous')",
+        "expected": 5.53460225517259e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(5e-324, 1000.5)], -1, 'continuous')",
+        "expected": 1.6047737104686097e+111,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(5e-324, 1000.5)], 1, 'continuous')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 2)], -1.7976931348623157e+308, 'continuous')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1, 0.5)], 5e-324, 'effective_annual')",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], -0.9999999999999999, 'effective_annual')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-0.9999999999999999,)",
+        "expected": -36.7368005696771,
+        "actual": -36.7368005696771,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-0.75,)",
+        "expected": -1.3862943611198906,
+        "actual": -1.3862943611198906,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-5e-324,)",
+        "expected": -5e-324,
+        "actual": -5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(5e-324,)",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(0.25,)",
+        "expected": 0.22314355131420976,
+        "actual": 0.22314355131420976,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(1.7976931348623157e+308,)",
+        "expected": 709.782712893384,
+        "actual": 709.782712893384,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-37.429947750237055,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-37.42994775023705,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-37.42994775023704,)",
+        "expected": -0.9999999999999999,
+        "actual": -0.9999999999999999,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-1000.0,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-2.0,)",
+        "expected": -0.8646647167633873,
+        "actual": -0.8646647167633873,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-5e-324,)",
+        "expected": -5e-324,
+        "actual": -5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(5e-324,)",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(1.0,)",
+        "expected": 1.7182818284590453,
+        "actual": 1.718281828459045,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(710.0,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "actual capstone cash-flow field",
+        "expected": 50,
+        "actual": 50,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], True, 'effective_annual')",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], -1, 'effective_annual')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], 0, 'nominal')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, -1)], 0, 'continuous')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, True)], 0, 'effective_annual')",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(nan, 0, 'effective_annual')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-1,)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(True,)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      }
+    ]
+  },
+  "rerun": {
+    "exit": 0,
+    "stderr": "",
+    "rows": [
+      {
+        "helper": "discount_factor",
+        "inputs": "(3, 0.5, 'effective_annual')",
+        "expected": 0.5,
+        "actual": 0.5,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.75, 0.5, 'effective_annual')",
+        "expected": 2,
+        "actual": 2,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(0.25, 2.5, 'effective_annual')",
+        "expected": 0.5724334022399462,
+        "actual": 0.5724334022399462,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.9999999999999999, 0.5, 'effective_annual')",
+        "expected": 94906265.62425156,
+        "actual": 94906265.62425156,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(5e-324, 1.7976931348623157e+308, 'effective_annual')",
+        "expected": 0.9999999999999991,
+        "actual": 0.9999999999999991,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(5.551115123125783e-17, 18014398509481984, 'effective_annual')",
+        "expected": 0.36787944117144233,
+        "actual": 0.36787944117144233,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(1.7976931348623157e+308, 0.25, 'effective_annual')",
+        "expected": 8.636168555094445e-78,
+        "actual": 8.636168555094445e-78,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(1.7976931348623157e+308, 2, 'continuous')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-1.7976931348623157e+308, 2, 'continuous')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-1.25, 0.75, 'continuous')",
+        "expected": 2.553589458062927,
+        "actual": 2.553589458062927,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.9999999999999999, 21.5, 'effective_annual')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(-0.9999999999999999, 0, 'effective_annual')",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(0, 2.5, 'effective_annual')",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(5e-324, 21.5), (-5e-324, 20.5)], -0.9999999999999999, 'effective_annual')",
+        "expected": 52175271301331124000,
+        "actual": 52175271301331124000,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, 21.5)], -0.9999999999999999, 'effective_annual')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1075.5)], 1, 'effective_annual')",
+        "expected": 3.14018491736755e-16,
+        "actual": 3.14018491736755e-16,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1024.5), (-8.988465674311579e+307, 1024.5)], 1, 'effective_annual')",
+        "expected": 0.35355339059327373,
+        "actual": 0.35355339059327373,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(7, 0.5), (-3, 1.5), (11, 2.25)], -0.75, 'effective_annual')",
+        "expected": 238.90158697766472,
+        "actual": 238.90158697766472,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(11, 2.25), (-3, 1.5), (7, 0.5)], -0.75, 'effective_annual')",
+        "expected": 238.90158697766472,
+        "actual": 238.90158697766472,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1), (1.7976931348623157e+308, 1), (-1.7976931348623157e+308, 1), (5e-324, 1)], 0, 'effective_annual')",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0)], 0, 'effective_annual')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 21.5), (-1.7976931348623157e+308, 21.5)], -0.9999999999999999, 'effective_annual')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, 2)], -1.7976931348623157e+308, 'continuous')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 1000.5)], 1, 'continuous')",
+        "expected": 5.53460225517259e-127,
+        "actual": 5.53460225517259e-127,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(5e-324, 1000.5)], -1, 'continuous')",
+        "expected": 1.6047737104686097e+111,
+        "actual": 1.6047737104686097e+111,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(5e-324, 1000.5)], 1, 'continuous')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1.7976931348623157e+308, 2)], -1.7976931348623157e+308, 'continuous')",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(1, 0.5)], 5e-324, 'effective_annual')",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], -0.9999999999999999, 'effective_annual')",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-0.9999999999999999,)",
+        "expected": -36.7368005696771,
+        "actual": -36.7368005696771,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-0.75,)",
+        "expected": -1.3862943611198906,
+        "actual": -1.3862943611198906,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-5e-324,)",
+        "expected": -5e-324,
+        "actual": -5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(5e-324,)",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(0.25,)",
+        "expected": 0.22314355131420976,
+        "actual": 0.22314355131420976,
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(1.7976931348623157e+308,)",
+        "expected": 709.782712893384,
+        "actual": 709.782712893384,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-37.429947750237055,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-37.42994775023705,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-37.42994775023704,)",
+        "expected": -0.9999999999999999,
+        "actual": -0.9999999999999999,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-1000.0,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-2.0,)",
+        "expected": -0.8646647167633873,
+        "actual": -0.8646647167633873,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(-5e-324,)",
+        "expected": -5e-324,
+        "actual": -5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(5e-324,)",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(1.0,)",
+        "expected": 1.7182818284590453,
+        "actual": 1.718281828459045,
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(710.0,)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "actual capstone cash-flow field",
+        "expected": 50,
+        "actual": 50,
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], True, 'effective_annual')",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], -1, 'effective_annual')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([], 0, 'nominal')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, -1)], 0, 'continuous')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "present_value",
+        "inputs": "([(0, True)], 0, 'effective_annual')",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "discount_factor",
+        "inputs": "(nan, 0, 'effective_annual')",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "to_continuous",
+        "inputs": "(-1,)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "to_effective",
+        "inputs": "(True,)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      }
+    ]
+  },
+  "scoped": {
+    "source_revision": "239085a0580b7a97db6787e415c36f20d11f706c",
+    "blobs": {
+      "check_capstone_rate_range.py": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6",
+      "check_section_21_01.py": "5173ec340bdf9ae0ad1ac66340fd27934c203757",
+      "check_section_21_02.py": "a191d1bd2e62477377058f5f01993e72f547557a",
+      "check_section_21_03.py": "215527059ec1ad4bdf8f526cc8995eff62e0144c",
+      "check_section_21_04.py": "78b58cc70349220d885baaa1956aa1c332c01bcc",
+      "check_section_21_05.py": "1b3e22921f93d5944f389a46c316f731a5e05010",
+      "check_section_21_06.py": "9dfa992eb888c99817f61ff39cb736188e818974",
+      "check_section_21_07.py": "84fa5b120006c1e029621cd16c04435b63bd91f9",
+      "check_section_21_08.py": "35e3eca1cf74659a3fd038558a05eb371bbfea54",
+      "check_section_21_09.py": "183ba902d9b2e844c2c95a444014ca57787588c3",
+      "check_section_21_10.py": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f",
+      "section_21_01.py": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64",
+      "section_21_02.py": "a36569438bc8ac086445f6c7556852efa908f8e4",
+      "section_21_03.py": "d9a85153cc6fbf46d7de69e39668b0fd32b527e8",
+      "section_21_04.py": "267e644f10aa280809e9f608aca2ede9ea840bc5",
+      "section_21_05.py": "bc6b558e7b00bfad82338fb01f4c037971af28d0",
+      "section_21_06.py": "0d0d7ac2f8cbdecbb932efad206755ce1e74943d",
+      "section_21_07.py": "463b82ea88ea1e0ca318fe65f2e519914a60a1de",
+      "section_21_08.py": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a",
+      "section_21_09.py": "ca2ff456691be2946163995558ecca4518b37f95"
+    },
+    "compiled": 20,
+    "runs": {
+      "check_capstone_rate_range.py": {
+        "exit": 0,
+        "seconds": 3.85778622600003,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_21_01.py": {
+        "exit": 0,
+        "seconds": 0.04080449899998939,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_02.py": {
+        "exit": 0,
+        "seconds": 0.041151638999963325,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_03.py": {
+        "exit": 0,
+        "seconds": 0.13337222600000587,
+        "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.066s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_04.py": {
+        "exit": 0,
+        "seconds": 0.03994084300001077,
+        "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_05.py": {
+        "exit": 0,
+        "seconds": 0.06683189099999254,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_06.py": {
+        "exit": 0,
+        "seconds": 0.04185532299999295,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_07.py": {
+        "exit": 0,
+        "seconds": 0.03644323200001054,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_08.py": {
+        "exit": 0,
+        "seconds": 0.033226275999993504,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_09.py": {
+        "exit": 0,
+        "seconds": 0.2196112620000008,
+        "stderr": "..................\n----------------------------------------------------------------------\nRan 18 tests in 0.141s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_10.py": {
+        "exit": 0,
+        "seconds": 0.07169726600000104,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.034s\n\nOK\n",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "final_scope": {
+    "source_revision": "77a943c4ee6551431485c3a53d71f789691c2392",
+    "blobs": {
+      "check_capstone_rate_range.py": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6",
+      "check_capstone_sensitivity_range.py": "6c43e8a57858861798f7c23486f3db6f109e48ee",
+      "check_section_21_01.py": "5173ec340bdf9ae0ad1ac66340fd27934c203757",
+      "check_section_21_02.py": "a191d1bd2e62477377058f5f01993e72f547557a",
+      "check_section_21_03.py": "215527059ec1ad4bdf8f526cc8995eff62e0144c",
+      "check_section_21_04.py": "78b58cc70349220d885baaa1956aa1c332c01bcc",
+      "check_section_21_05.py": "1b3e22921f93d5944f389a46c316f731a5e05010",
+      "check_section_21_06.py": "9dfa992eb888c99817f61ff39cb736188e818974",
+      "check_section_21_07.py": "84fa5b120006c1e029621cd16c04435b63bd91f9",
+      "check_section_21_08.py": "35e3eca1cf74659a3fd038558a05eb371bbfea54",
+      "check_section_21_09.py": "183ba902d9b2e844c2c95a444014ca57787588c3",
+      "check_section_21_10.py": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f",
+      "section_21_01.py": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64",
+      "section_21_02.py": "a36569438bc8ac086445f6c7556852efa908f8e4",
+      "section_21_03.py": "d9a85153cc6fbf46d7de69e39668b0fd32b527e8",
+      "section_21_04.py": "bf4700160749afdf39d28a21ecda3d5c981f0adf",
+      "section_21_05.py": "bc6b558e7b00bfad82338fb01f4c037971af28d0",
+      "section_21_06.py": "0d0d7ac2f8cbdecbb932efad206755ce1e74943d",
+      "section_21_07.py": "463b82ea88ea1e0ca318fe65f2e519914a60a1de",
+      "section_21_08.py": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a",
+      "section_21_09.py": "ca2ff456691be2946163995558ecca4518b37f95"
+    },
+    "compiled": 21,
+    "runs": {
+      "check_capstone_rate_range.py": {
+        "exit": 0,
+        "seconds": 4.061349833999998,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_capstone_sensitivity_range.py": {
+        "exit": 0,
+        "seconds": 2.542420458000038,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_21_01.py": {
+        "exit": 0,
+        "seconds": 0.05987065599993002,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_02.py": {
+        "exit": 0,
+        "seconds": 0.047070306000023265,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_03.py": {
+        "exit": 0,
+        "seconds": 0.12880498599997736,
+        "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.075s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_04.py": {
+        "exit": 0,
+        "seconds": 0.18897896700002548,
+        "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.145s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_05.py": {
+        "exit": 0,
+        "seconds": 0.05951859399999648,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_06.py": {
+        "exit": 0,
+        "seconds": 0.035681705000001784,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_07.py": {
+        "exit": 0,
+        "seconds": 0.03836566400002539,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_08.py": {
+        "exit": 0,
+        "seconds": 0.050682864999998856,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_09.py": {
+        "exit": 0,
+        "seconds": 0.9461717940000653,
+        "stderr": "..................\n----------------------------------------------------------------------\nRan 18 tests in 0.868s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_10.py": {
+        "exit": 0,
+        "seconds": 0.11361558699991292,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.075s\n\nOK\n",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Selected assistant-run Linux evidence only; not independent reviewer sign-off, supported-platform validation, release acceptance or canonical approval."
+}
