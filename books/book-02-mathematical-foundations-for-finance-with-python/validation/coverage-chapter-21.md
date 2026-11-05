@@ -48,3 +48,14 @@ These extend COV-01–COV-87; ninety coverage categories are not ninety proven d
 ## Subsequent COV-89 remediation — 2026-10-29
 
 The [integrated diagnostics follow-up](chapter-21-integrated-diagnostics-followup.md) adds centered first-derivative diagnostics with step/error/units, deterministic JSON output, selected report-schema checks and injected failure propagation. All 19 chapter files compiled and 10 scripts passed; Section 21.9 passed 18 unittest methods. COV-89 remains partially open for broader interfaces/error paths and independent review. Original map evidence remains historical.
+
+
+## Capstone valuation and analytic sensitivity — V-76 (2026-11-05)
+
+[Section 21.3 rate and valuation evidence](chapter-21-capstone-rate-range-followup.md) retains ten baseline mismatches and a 53-case pass. Independent effective gross-power, continuous exponential and conversion references cover fractional horizons, negative rates, the rounded-minus-one boundary, complete term scaling and the actual capstone cash-flow field. Conversion code is unchanged. Chapter scope at `239085a0580b7a97db6787e415c36f20d11f706c`: 20 files compiled and 11 scripts passed.
+
+[Section 21.4 sensitivity evidence](chapter-21-capstone-sensitivity-range-followup.md) retains 17 baseline mismatches and a 32-case pass. Selected independent complete PV, derivative and Taylor references and the actual capstone analytic field verify the corrected scaling; finite-difference stencil guards are unchanged. This adds selected partial COV-90 evidence, not a general range proof.
+
+[V-76](runtime-refresh-2026-11-05-r18.md) compiled all 540 Python files, passed all 327 discovered scripts and matched all 541 required source/fixture hashes before and after at `77a943c4ee6551431485c3a53d71f789691c2392`. Final Chapter 21 scope: 21 compiled files and 12 passing scripts. Thirty-four selected COV categories are partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: Section 21.5 replication screening, solve and residual ranges. Derive independent normalized determinant and pivoted-solve expectations, check the declared screening threshold separately from singularity, and check residuals on the returned represented holdings. Include selected finite results hidden by overflowing intermediate products and the actual integrated report path. Preserve the limited 2x2 interface and do not repeat the Section 20.2 benchmark fixtures as new coverage. Chapter 21 actual provenance and independent review, Section 19.8's end-period exponent boundary, and other manual obligations remain open.
