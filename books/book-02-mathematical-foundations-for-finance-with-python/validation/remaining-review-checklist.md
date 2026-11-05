@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`  
-**Latest scoped source revision:** `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`  
-**Disposition:** V-61 full candidate pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`  
+**Latest scoped source revision:** `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`  
+**Disposition:** V-62 full candidate pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-62](runtime-refresh-2026-11-05-r4.md):514 compiled,303 passed,515 required hashes verified before/after; G2–G8 unchanged.
 
 [V-61](runtime-refresh-2026-11-05-r3.md):512 compiled,301 passed,513 required hashes verified before/after; G2–G8 unchanged.
 
@@ -79,7 +81,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-61](runtime-refresh-2026-11-05-r3.md) at `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-62](runtime-refresh-2026-11-05-r4.md) at `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -352,3 +354,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Piecewise evidence](chapter-19-piecewise-continuity-followup.md) passes nine independent prefix references,18 two-sided transition probes and zero/split-segment controls. [Logistic evidence](chapter-19-logistic-trajectory-followup.md) passes54 reciprocal-coordinate references and five split-time controls, including above-capacity trajectories. Both initial audits passed; numerical helpers are unchanged. All28 Chapter19 files compiled and18 scripts passed at `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`.
 
 [V-61](runtime-refresh-2026-11-05-r3.md) compiled512 Python files,passed301 scripts and matched513 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.2 logistic accepted-input and result range, including t=0 identity at extreme initial/capacity ratios, positive subnormal results and large-exponent saturation, with independent reciprocal/rational references. Independent review, supported platforms and release approval remain pending.
+
+## Logistic and quadratic growth range — 2026-11-05
+
+[Logistic evidence](chapter-19-logistic-range-followup.md) preserves ten initial failures and a25-case pass with independent reciprocal-coordinate references. [Quadratic evidence](chapter-19-quadratic-range-followup.md) preserves two initial failures and a22-case pass against an exact reciprocal-state oracle. All30 Chapter19 files compiled and20 scripts passed at `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`.
+
+[V-62](runtime-refresh-2026-11-05-r4.md) compiled514 Python files,passed303 scripts and matched515 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.2 pure growth, affine-time-rate growth and proportional-withdrawal accepted-input/result range, including complete exponent cancellation and finite scaled outputs, with independent integrated-rate references. Independent review, supported platforms and release approval remain pending.
