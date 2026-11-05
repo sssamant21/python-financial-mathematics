@@ -1,6 +1,7 @@
 """Book 02 Section 19.8: continuous/discrete financial comparison."""
 import json
 import math
+from section_19_02 import _scaled_exponential
 from fractions import Fraction
 from decimal import Context, Decimal, localcontext
 
@@ -60,15 +61,25 @@ def continuous_growth(initial,rate,years):
     a,r,t=finite(initial,"initial"),finite(rate,"rate"),finite(years,"years")
     if t<0:
         raise ValueError("years must be nonnegative")
-    return finite(a*math.exp(r*t),"balance")
+    return _scaled_exponential(a,Fraction(r)*Fraction(t))
 
 def discrete_growth(initial,nominal,frequency,periods):
     a,j=finite(initial,"initial"),finite(nominal,"nominal")
     if type(frequency) is not int or frequency<1 or type(periods) is not int or periods<0:
         raise ValueError("frequency positive; periods nonnegative integer")
-    if j/frequency<=-1:
+    q=Fraction(j)/frequency
+    if q<=-1:
         raise ValueError("periodic gross growth factor must be positive")
-    return finite(a*math.exp(periods*math.log1p(j/frequency)),"balance")
+    if a==0 or periods==0 or q==0:
+        return a
+    if abs(q)<=Fraction(1,2**26):
+        integral=periods*q*(1-q/2+q*q/3-q**3/4)
+    else:
+        with localcontext(Context(prec=850)):
+            dm=Decimal(frequency)
+            logarithm=((dm+Decimal(j))/dm).ln()
+        integral=periods*Fraction(logarithm)
+    return _scaled_exponential(a,integral)
 
 def continuous_contributions(initial,rate,flow,years):
     a,r,u,t=(finite(v,n) for v,n in
