@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-04  
-**Overall status:** In progress — V-55 full pinned runtime passed (499 compiled, 288 scripts passed, 500 required hashes verified before and after). Independent review, platform validation and release approval remain pending.
+**Overall status:** In progress — V-56 full candidate runtime passed (501 files, 290 scripts, 502 hashes); subsequent cent rounding correction passed Chapter 18 scope.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate pass | 499/499 compiled at `eac8f8da5643d573ad9f5946c09b12622c422c7e`. [V-55 evidence](runtime-refresh-2026-11-04.md). |
-| Automated script execution | Full candidate pass | 288/288 scripts exited zero at `eac8f8da5643d573ad9f5946c09b12622c422c7e`. [V-55 evidence](runtime-refresh-2026-11-04.md). |
+| Python compilation | Full candidate pass | 501/501 at `5504f2cf019487dae61912e6b01bdb6440931307`. [V-56](runtime-refresh-2026-11-04-r2.md). |
+| Automated script execution | Full candidate pass | 290/290 at `5504f2cf019487dae61912e6b01bdb6440931307`. [V-56](runtime-refresh-2026-11-04-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-55](runtime-refresh-2026-11-04.md): 499 compiled, 288 scripts passed, 500 required hashes verified before and after at `eac8f8da5643d573ad9f5946c09b12622c422c7e`.
+- **Latest full run:** [V-56](runtime-refresh-2026-11-04-r2.md): 501 compiled, 290 passed, 502 hashes verified at `5504f2cf019487dae61912e6b01bdb6440931307`.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -567,3 +567,7 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 ## Taylor remainder oracle — 2026-11-04
 
 [Section 18.1 evidence](chapter-18-taylor-remainder-followup.md) compares 11 actual reports with independent positive and alternating-series bounds and high-precision references. Two rounded zero differences are distinguished from nonzero mathematical remainders. The first audit passed; the numerical helper is unchanged. All 39 Chapter 18 sources compiled and 29 scripts passed at `9c77e189563fd2fc7bbcee7b43d2ee0c8a82b191`. V-55 remains the latest full pass (499 files, 288 scripts, 500 hashes); this subsequent checker has scoped evidence. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.1 present-value and error-report range, including false zero from an overflowing discount denominator and representable versus out-of-range diagnostics. Independent review, supported platforms and release approval remain pending.
+
+## Present-value, error-report and cent rounding range — 2026-11-04
+
+[PV and error-report checks](chapter-18-pv-error-range-followup.md) preserve 13 initial failures and a 26-case pass at `5504f2cf019487dae61912e6b01bdb6440931307`. [V-56](runtime-refresh-2026-11-04-r2.md) compiled 501 files, passed 290 scripts and matched 502 required hashes before and after execution. The subsequent [cent rounding checks](chapter-18-cents-range-followup.md) preserve 18 initial failures and pass all 32 observations at `7b779924a288286a39a55a98f7383bdc4310989d`; 41 Chapter 18 files compiled and 31 scripts passed. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.2 growth factor, growth increment and discount-change range and saturation policy with independent power references. Independent review, supported platforms and release approval remain pending.
