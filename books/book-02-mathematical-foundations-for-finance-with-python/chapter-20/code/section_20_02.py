@@ -2,6 +2,8 @@
 import json
 import math
 from fractions import Fraction
+from _continuous_account import (account as _account_balance,
+                                 depletion_time as _account_depletion)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -69,27 +71,14 @@ def account(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    try:
-        return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
-    except OverflowError as exc:
-        raise ValueError("balance overflow") from exc
+    return _account_balance(a,r,u,t)
 
 def depletion_time(initial,rate,withdrawal):
     a,r,w=(finite(v,n) for v,n in
            ((initial,"initial"),(rate,"rate"),(withdrawal,"withdrawal")))
     if a<0 or w<0:
         raise ValueError("initial and withdrawal must be nonnegative")
-    if a==0:
-        return 0.0
-    if w==0:
-        return None
-    if r==0:
-        return a/w
-    if r*a/w>=1:
-        return None
-    return finite(-math.log1p(-r*a/w)/r,"depletion_time")
+    return _account_depletion(a,r,w)
 
 def solve_two_by_two(a,b,c,d,y1,y2):
     a,b,c,d,y1,y2=(finite(v,n) for v,n in
