@@ -1,0 +1,105 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "9af35170951dcb30cd8d2fd4edf25c5c4112d1a28c6314b93b61403d71893f53",
+  "program_sha256": "446ba0ae0b2d1080aa91d451a6813668397c9b2bef27ff1ff2de88df7ce041f1",
+  "tests_sha256": "2353cdb1842f163bf5d1d4e59a291a3fed701abde6a6c7c869cbe6a5b7c99b04",
+  "png_sha256": "939f2af50eaf3c0729eab09e74cf23b2241bdd65e2fd53f216db24997559d936",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_axis_baseline_labels_and_missing_note (test_chart_design.DesignTests.test_axis_baseline_labels_and_missing_note) ... ok\ntest_color_and_monochrome_share_data_and_hatch (test_chart_design.DesignTests.test_color_and_monochrome_share_data_and_hatch) ... ok\ntest_exports_and_cleanup (test_chart_design.DesignTests.test_exports_and_cleanup) ... ok\ntest_inputs_preserved_and_order_invariance (test_chart_design.DesignTests.test_inputs_preserved_and_order_invariance) ... ok\ntest_invalid_labels (test_chart_design.DesignTests.test_invalid_labels) ... ok\ntest_invalid_returns_and_empty_observed_sample (test_chart_design.DesignTests.test_invalid_returns_and_empty_observed_sample) ... ok\ntest_order_zero_and_omission (test_chart_design.DesignTests.test_order_zero_and_omission) ... ok\ntest_reporting_window_and_zone_equivalence (test_chart_design.DesignTests.test_reporting_window_and_zone_equivalence) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 1.327s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "chart_design.py"
+      ],
+      "returncode": 0,
+      "stdout": "Observed: 4/5; unknown: 1\nDisplayed order: DELTA, ALPHA, GAMMA, BETA\nUnknown and omitted: EPSILON\nSaved output/financial_chart.png\nSaved output/financial_chart.svg\nSaved output/financial_chart_monochrome.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "SVG parses and monochrome PNG is distinct",
+      "passed": true
+    },
+    {
+      "label": "independent numeric descending order with labeled values",
+      "passed": true
+    },
+    {
+      "label": "missing retained as omission not numeric zero",
+      "passed": true
+    },
+    {
+      "label": "controlled tie orders asset labels ascending",
+      "passed": true
+    },
+    {
+      "label": "False signed artist widths match fractions",
+      "passed": true
+    },
+    {
+      "label": "False direct signs and hatch preserved",
+      "passed": true
+    },
+    {
+      "label": "False visible zero marker remains",
+      "passed": true
+    },
+    {
+      "label": "False common UTC window and omission note",
+      "passed": true
+    },
+    {
+      "label": "True signed artist widths match fractions",
+      "passed": true
+    },
+    {
+      "label": "True direct signs and hatch preserved",
+      "passed": true
+    },
+    {
+      "label": "True visible zero marker remains",
+      "passed": true
+    },
+    {
+      "label": "True common UTC window and omission note",
+      "passed": true
+    }
+  ]
+}
