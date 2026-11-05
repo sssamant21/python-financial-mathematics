@@ -32,10 +32,10 @@ def make_manifest(data):
 
 def write_manifest(path, data):
     path = Path(path)
+    payload = json.dumps(make_manifest(data), indent=2, sort_keys=True, allow_nan=False) + "\n"
     # Exclusive creation protects existing evidence from accidental replacement.
     with path.open("x", encoding="utf-8") as handle:
-        json.dump(make_manifest(data), handle, indent=2, sort_keys=True, allow_nan=False)
-        handle.write("\n")
+        handle.write(payload)
 
 if __name__ == "__main__":
     synthetic = b'{"amount":100,"rate":0,"years":2}'
