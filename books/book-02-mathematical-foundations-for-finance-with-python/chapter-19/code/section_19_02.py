@@ -1,6 +1,8 @@
 """Book 02 Section 19.2: separable equations lab."""
 import json
 import math
+from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -31,22 +33,36 @@ def logistic(initial,rate,capacity,years):
                ((initial,"initial"),(rate,"rate"),(capacity,"capacity"),(years,"years")))
     if a<0 or r<=0 or k<=0 or t<0:
         raise ValueError("invalid logistic inputs")
-    if a==0:
-        return 0.0
-    q=(k/a)-1
-    denominator=1+q*math.exp(-r*t)
-    if denominator<=0:
-        raise ValueError("logistic solution outside valid interval")
-    return finite(k/denominator,"logistic balance")
+    if a==0 or t==0 or a==k:
+        return a
+    # Coarse saturation lies beyond even the largest initial/capacity ratio.
+    if r*t>2000:
+        return k
+    # Keep both positive weights, avoiding k/a and subtraction of a ratio
+    # rounded to one. Tiny products need more range than binary64 supplies.
+    with localcontext(Context(prec=850)):
+        da,dk=Decimal(a),Decimal(k)
+        decay=(-Decimal(r)*Decimal(t)).exp()
+        denominator=dk*decay+da*(1-decay)
+        result=float(da*dk/denominator)
+    if not math.isfinite(result) or result<=0:
+        raise ValueError("logistic result outside floating-point range")
+    return result
 
 def quadratic_growth(initial,rate,years):
     a,k,t=finite(initial,"initial"),finite(rate,"rate"),finite(years,"years")
     if a<=0 or k<=0 or t<0:
         raise ValueError("initial and rate must be positive; years nonnegative")
-    singularity=1/(k*a)
-    if t>=singularity:
+    denominator=1-Fraction(k)*Fraction(a)*Fraction(t)
+    if denominator<=0:
         raise ValueError("at or beyond finite-time singularity")
-    return finite(a/(1-k*a*t),"quadratic growth balance")
+    try:
+        result=float(Fraction(a)/denominator)
+    except OverflowError as exc:
+        raise ValueError("quadratic growth outside floating-point range") from exc
+    if not math.isfinite(result) or result==0:
+        raise ValueError("quadratic growth outside floating-point range")
+    return result
 
 def proportional_withdrawals(initial,growth_rate,withdrawal_rate,years):
     a,r,w,t=(finite(v,n) for v,n in
