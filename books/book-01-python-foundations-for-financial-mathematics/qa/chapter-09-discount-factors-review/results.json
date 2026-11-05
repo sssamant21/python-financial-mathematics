@@ -1,0 +1,173 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "fc05b6dd34b1ef3c318dbebfc118942c53ac580cfb86f0654db35060c80ce643",
+  "listing_sha256": "9ef1cb308789f261a8d9fb49b46933392e3724f5677801b2c6af6fedb27c8199",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "discount_factors.py"
+      ],
+      "stdout": "Periods | Factor at 4% | PV of 5000 (illustrative USD)\n0 | 1.000000000 | 5000.00\n1 | 0.961538462 | 4807.69\n2 | 0.924556213 | 4622.78\n3 | 0.888996359 | 4444.98\n",
+      "stderr": "test_01_reference_grid (__main__.DiscountFactorTests.test_01_reference_grid) ... ok\ntest_02_payment_scaling_and_sign (__main__.DiscountFactorTests.test_02_payment_scaling_and_sign) ... ok\ntest_03_reciprocal (__main__.DiscountFactorTests.test_03_reciprocal) ... ok\ntest_04_composition_and_ratio (__main__.DiscountFactorTests.test_04_composition_and_ratio) ... ok\ntest_05_zero_and_negative_rate_boundaries (__main__.DiscountFactorTests.test_05_zero_and_negative_rate_boundaries) ... ok\ntest_06_positive_rate_ordering_not_probability (__main__.DiscountFactorTests.test_06_positive_rate_ordering_not_probability) ... ok\ntest_07_invalid_inputs (__main__.DiscountFactorTests.test_07_invalid_inputs) ... ok\ntest_08_numerical_limits (__main__.DiscountFactorTests.test_08_numerical_limits) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "discount_factors.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "workedfactor row0",
+      "passed": true,
+      "actual": 1.0,
+      "exact_reference": "1",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedpayment row0",
+      "passed": true,
+      "actual": 5000.0,
+      "exact_reference": "5000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedfactor row1",
+      "passed": true,
+      "actual": 0.9615384615384615,
+      "exact_reference": "25/26",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedpayment row1",
+      "passed": true,
+      "actual": 4807.692307692308,
+      "exact_reference": "62500/13",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedfactor row2",
+      "passed": true,
+      "actual": 0.9245562130177514,
+      "exact_reference": "625/676",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedpayment row2",
+      "passed": true,
+      "actual": 4622.781065088757,
+      "exact_reference": "781250/169",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedfactor row3",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "exact_reference": "15625/17576",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedpayment row3",
+      "passed": true,
+      "actual": 4444.981793354575,
+      "exact_reference": "9765625/2197",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "ratio commonorigin yields elapsed3",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "exact_reference": "15625/17576",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "between2and5 useselapsed3",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "exact_reference": "15625/17576",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "composition0to2to5",
+      "passed": true,
+      "actual": 0.8219271067593517,
+      "exact_reference": "9765625/11881376",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 factor10% twoyears",
+      "passed": true,
+      "actual": 0.8264462809917354,
+      "exact_reference": "100/121",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 payment1210",
+      "passed": true,
+      "actual": 999.9999999999999,
+      "exact_reference": "1000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 year4payment valuedat1",
+      "passed": true,
+      "actual": 0.863837598531476,
+      "exact_reference": "8000/9261",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 immediatepaymentfactor",
+      "passed": true,
+      "actual": 1.0,
+      "exact_reference": "1",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P4 grid not probabilitynormalized",
+      "passed": true
+    },
+    {
+      "label": "negative rate aboveone",
+      "passed": true,
+      "actual": 1.0204081632653061,
+      "exact_reference": "50/49",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "signed factor scaling",
+      "passed": true,
+      "actual": -4444.981793354575,
+      "exact_reference": "-9765625/2197",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P5 signedobligation times suppliedfactor",
+      "passed": true,
+      "actual": -1900.0,
+      "exact_reference": "-1900",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "F46 lostnonzeroamount rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
