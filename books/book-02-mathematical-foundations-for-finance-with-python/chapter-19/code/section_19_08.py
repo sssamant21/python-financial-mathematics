@@ -1,6 +1,8 @@
 """Book 02 Section 19.8: continuous/discrete financial comparison."""
 import json
 import math
+from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -13,17 +15,46 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return result
 
+def _rounded_rate(value):
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError("converted rate outside floating-point range") from exc
+    if not math.isfinite(result) or (value and result==0):
+        raise ValueError("converted rate outside floating-point range")
+    return result
+
 def nominal_to_continuous(nominal,frequency):
     j=finite(nominal,"nominal")
-    if type(frequency) is not int or frequency<1 or j/frequency<=-1:
-        raise ValueError("invalid nominal rate or frequency")
-    return finite(frequency*math.log1p(j/frequency),"continuous rate")
+    if type(frequency) is not int or frequency<1:
+        raise ValueError("frequency must be a positive integer")
+    q=Fraction(j)/frequency
+    if q<=-1:
+        raise ValueError("periodic gross growth factor must be positive")
+    if abs(q)<=Fraction(1,2**26):
+        # ln(1+q)/q; omitted relative tail is below 2^-103.
+        return _rounded_rate(Fraction(j)*(1-q/2+q*q/3-q**3/4))
+    with localcontext(Context(prec=850)):
+        dm=Decimal(frequency)
+        value=dm*((dm+Decimal(j))/dm).ln()
+    return _rounded_rate(value)
 
 def continuous_to_nominal(rate,frequency):
     r=finite(rate,"continuous rate")
     if type(frequency) is not int or frequency<1:
         raise ValueError("frequency must be a positive integer")
-    return finite(frequency*math.expm1(r/frequency),"nominal rate")
+    q=Fraction(r)/frequency
+    if abs(q)<=Fraction(1,2**26):
+        # expm1(q)/q; bounded small-argument evaluation retains scaling.
+        return _rounded_rate(Fraction(r)*(1+q/2+q*q/6+q**3/24))
+    if q>800:
+        raise ValueError("converted rate outside floating-point range")
+    if q < -800:
+        return _rounded_rate(-frequency)
+    with localcontext(Context(prec=850)):
+        dm=Decimal(frequency)
+        value=dm*((Decimal(r)/dm).exp()-1)
+    return _rounded_rate(value)
 
 def continuous_growth(initial,rate,years):
     a,r,t=finite(initial,"initial"),finite(rate,"rate"),finite(years,"years")
