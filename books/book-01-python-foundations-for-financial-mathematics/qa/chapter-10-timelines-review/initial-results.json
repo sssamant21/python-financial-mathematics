@@ -1,0 +1,203 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "e9ea5154099baffaf300bc6f561d601a5b39863d6706287dfd4a5e8478d68686",
+  "listing_sha256": "0511a55c4470cfa5bda1a7e113cabf7cc4755b78ef850893d79b127794a1a37f",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "cash_flow_timelines.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_zero (__main__.Tests.test_01_zero) ... ok\ntest_02_365 (__main__.Tests.test_02_365) ... ok\ntest_03_360 (__main__.Tests.test_03_360) ... ok\ntest_04_sort (__main__.Tests.test_04_sort) ... ok\ntest_05_same_day (__main__.Tests.test_05_same_day) ... ok\ntest_06_discount (__main__.Tests.test_06_discount) ... ok\ntest_07_npv (__main__.Tests.test_07_npv) ... ok\ntest_08_leap (__main__.Tests.test_08_leap) ... ok\ntest_09_empty (__main__.Tests.test_09_empty) ... ok\ntest_10_validation (__main__.Tests.test_10_validation) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+      "methods": 10,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "cash_flow_timelines.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 borrower perspective",
+      "passed": true
+    },
+    {
+      "label": "P2 timezero payment",
+      "passed": true,
+      "actual": -250.0,
+      "rational_reference": "-250",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 ACT365F",
+      "passed": true,
+      "actual": 1.0,
+      "rational_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 ACT360",
+      "passed": true,
+      "actual": 1.0138888888888888,
+      "rational_reference": "73/72",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 leapyear",
+      "passed": true,
+      "actual": 1.0027397260273974,
+      "rational_reference": "366/365",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 same-day total",
+      "passed": true,
+      "actual": 250.0,
+      "rational_reference": "250",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 annual discount",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 zero NPV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 reordered NPV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 preserve rows stablelabels",
+      "passed": true
+    },
+    {
+      "label": "zero rate generator",
+      "passed": true,
+      "actual": 10.0,
+      "rational_reference": "10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty schedule valid",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "leapyear actual valuation",
+      "passed": true,
+      "actual": 99.97389103095612,
+      "rational_reference": "99.97389103095612060363091801714130290125194891758675543302481817834558868075847115697144361447917576",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "ACT360 actual valuation",
+      "passed": true,
+      "actual": 99.86771232765763,
+      "rational_reference": "99.86771232765761717290131448926761307272300345230202362925202705909304859677477337067080876464879051",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative rate",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "past event",
+      "passed": true,
+      "exception": "ValueError('historical event not supported')"
+    },
+    {
+      "label": "bool cash",
+      "passed": true,
+      "exception": "TypeError('numeric amount required')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('invalid effective annual rate')"
+    },
+    {
+      "label": "unsupported basis with event",
+      "passed": true,
+      "exception": "ValueError('unsupported basis')"
+    },
+    {
+      "label": "discount factor underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "nonzero PV underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "empty bad basis",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "empty bad origin",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "intraday CashFlow",
+      "passed": false,
+      "actual": "CashFlow(when=datetime.datetime(2026, 1, 1, 12, 0), amount=100, label='')"
+    },
+    {
+      "label": "intraday daycount",
+      "passed": false,
+      "actual": "0.0"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 10,
+  "conceptual_only_prompts": [
+    10
+  ],
+  "historical_unique_methods_added": 0
+}
