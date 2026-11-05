@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `36006c921c0c005f2812e0589f2b68e64dfc17b4`  
-**Latest scoped source revision:** `36006c921c0c005f2812e0589f2b68e64dfc17b4`  
-**Disposition:** V-59 full candidate pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`  
+**Latest scoped source revision:** `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`  
+**Disposition:** V-60 full candidate pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-60](runtime-refresh-2026-11-05-r2.md):510 compiled,299 passed,511 required hashes verified before/after. Includes forcing oracle and nonterminal jump correction; G2–G8 unchanged.
 
 [V-59](runtime-refresh-2026-11-05.md): 508 compiled, 297 passed, 509 required hashes matched before and after. Includes Chapter 19 applied and frequency/stability follow-ups; G2–G8 unchanged.
 
@@ -75,7 +77,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-59](runtime-refresh-2026-11-05.md) at `36006c921c0c005f2812e0589f2b68e64dfc17b4`. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-60](runtime-refresh-2026-11-05-r2.md) at `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -336,3 +338,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Section 19.8 evidence](chapter-19-contribution-frequency-followup.md) checks 20 finite-sum references, six identity controls, 16 observed/reference order ratios and three wrong variants. The initial harness failure and corrected rounding allowance are retained; the numerical helper is unchanged. [Section 19.5 evidence](chapter-19-euler-stability-followup.md) checks six observed four-step decay paths against exact amplification references and detects three altered records. All 24 Chapter 19 sources compiled and 14 scripts passed at `36006c921c0c005f2812e0589f2b68e64dfc17b4`.
 
 [V-59](runtime-refresh-2026-11-05.md) compiled 508 Python files, passed 297 scripts and matched 509 required source/fixture hashes before and after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section 19.5/19.6 arbitrary time-varying forcing, with independent polynomial solution/stage references and actual callback-time observations; selected constant-flow and decay cases are already covered. Independent review, supported platforms and release approval remain pending.
+
+## Time-varying forcing, nonterminal jumps and V-60 — 2026-11-05
+
+[Forcing evidence](chapter-19-time-varying-forcing-followup.md) covers20 Euler/RK4 grids, six observed order ratios and a coupled four-stage rational reference; the initial checker allowance failure and rerun are retained. [Section19.7 nonterminal evidence](chapter-19-nonterminal-jump-followup.md) preserves two initial failed policy cases and an eight-case pass, plus unchanged public-domain validation. Signed continuation now works across negative intermediate balances only in explicit nonterminal mode. All26 Chapter19 sources compiled and16 scripts passed at `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`.
+
+[V-60](runtime-refresh-2026-11-05-r2.md) compiled510 Python files,passed299 scripts and matched511 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.3 piecewise contribution-transition continuity and independent segment-integral references, rather than reusing the account primitive for expected values. Independent review, supported platforms and release approval remain pending.
