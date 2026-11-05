@@ -2,7 +2,7 @@
 import json
 import math
 import sys
-from decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext
+from decimal import Context, Decimal, InvalidOperation, ROUND_HALF_EVEN, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -80,10 +80,16 @@ def annuity_present_value(payment,rate,periods):
 def decimal_cents(text):
     if not isinstance(text,str):
         raise TypeError("pass exact decimal text")
-    d=Decimal(text)
-    if not d.is_finite():
-        raise ValueError("decimal amount must be finite")
-    return str(d.quantize(Decimal("0.01"),rounding=ROUND_HALF_EVEN))
+    # Preserve the default 28-digit output limit independently of the caller.
+    with localcontext(Context(prec=28,rounding=ROUND_HALF_EVEN)):
+        try:
+            d=Decimal(text)
+            if not d.is_finite():
+                raise ValueError("decimal amount must be finite")
+            return str(d.quantize(Decimal("0.01")))
+        except InvalidOperation as exc:
+            raise ValueError("invalid decimal text or cents output exceeds 26 integer digits") from exc
+
 
 def assessment():
     x=1e-12
