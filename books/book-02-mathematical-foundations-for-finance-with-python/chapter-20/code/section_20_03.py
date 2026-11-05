@@ -1,6 +1,7 @@
 """Book 02 Section 20.3: financial and mathematical invariants (draft)."""
 import json
 import math
+from _continuous_account import account as _account_balance
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -40,12 +41,7 @@ def account_transition(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    try:
-        if r==0:
-            return finite(a+u*t,"balance")
-        return finite(a*math.exp(r*t)+u*math.expm1(r*t)/r,"balance")
-    except OverflowError as exc:
-        raise ValueError("account transition overflow") from exc
+    return _account_balance(a,r,u,t)
 
 def cash_flow_pv(flows,rate):
     r=finite(rate,"rate")
