@@ -1,5 +1,7 @@
 """Educational continuous-discount sensitivity calculations."""
 import math
+from decimal import Context, Decimal, localcontext
+from fractions import Fraction
 from numbers import Real
 
 def finite(x, name):
@@ -19,18 +21,31 @@ def checked(x):
     if not math.isfinite(x): raise OverflowError("result exceeds float range")
     return x
 
+def _scaled_terms(coefficients, exponent):
+    if not exponent or not any(coefficients):
+        return tuple(checked(float(c)) for c in coefficients)
+    # The finite binary64 inputs give dyadic coefficients with magnitude
+    # below 2**5120 and nonzero magnitude at least 2**-5371, even for
+    # amount * (1 - years*change + (years*change)**2/2).
+    if exponent > 5000:
+        raise OverflowError("result exceeds float range")
+    if exponent < -5000:
+        return tuple(-0. if c < 0 else 0. for c in coefficients)
+    with localcontext(Context(prec=1800)):
+        factor = (Decimal(exponent.numerator) / Decimal(exponent.denominator)).exp()
+        return tuple(checked(float(Decimal(c.numerator) * factor / Decimal(c.denominator)))
+                     for c in coefficients)
+
 def pv(amount, rate, years):
     amount, rate, years = inputs(amount, rate, years)
-    try: result = amount * math.exp(-rate * years)
-    except OverflowError as exc: raise OverflowError("discount factor exceeds float range") from exc
-    return checked(result)
+    if not amount or not rate or not years:
+        return amount
+    return _scaled_terms((Fraction(amount),), -Fraction(rate) * Fraction(years))[0]
 
 def derivatives(amount, rate, years):
     amount, rate, years = inputs(amount, rate, years)
-    p = pv(amount, rate, years)
-    first = checked(-years * p)
-    second = checked(-years * first)
-    return first, second
+    a, r, t = map(Fraction, (amount, rate, years))
+    return _scaled_terms((-a*t, a*t*t), -r*t)
 
 def central_difference(amount, rate, years, step):
     amount, rate, years = inputs(amount, rate, years)
@@ -45,11 +60,9 @@ def central_difference(amount, rate, years, step):
 
 def approximations(amount, rate, years, change):
     change = finite(change, "change")
-    base = pv(amount, rate, years)
-    first, second = derivatives(amount, rate, years)
-    linear = checked(base + first * change)
-    quadratic = checked(linear + .5 * second * change * change)
-    return linear, quadratic
+    a, r, t = map(Fraction, inputs(amount, rate, years))
+    z = t * Fraction(change)
+    return _scaled_terms((a*(1-z), a*(1-z+z*z/2)), -r*t)
 
 if __name__ == "__main__":
     print("First and second derivatives:", derivatives(100, 0, 2))
