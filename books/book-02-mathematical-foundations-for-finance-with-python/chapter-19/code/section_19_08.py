@@ -217,13 +217,19 @@ def depletion_time(initial,rate,withdrawal):
     if w==0:
         return None
     if r==0:
-        return a/w
-    ratio=r*a/w
+        return _rounded_balance(Fraction(a)/Fraction(w))
+    ratio=Fraction(r)*Fraction(a)/Fraction(w)
     if ratio>=1:
         return None
-    if ratio==0:
-        return finite(a/w,"depletion time")
-    return finite(-math.log1p(-ratio)/r,"depletion time")
+    if abs(ratio)<=Fraction(1,2**26):
+        # -ln(1-q)/q, keeping the full a/w scale.
+        series=1+ratio/2+ratio**2/3+ratio**3/4
+        return _rounded_balance(Fraction(a)/Fraction(w)*series)
+    with localcontext(Context(prec=850)):
+        margin=1-ratio
+        logarithm=(Decimal(margin.numerator)/Decimal(margin.denominator)).ln()
+        value=-logarithm/Decimal(r)
+    return _rounded_balance(value)
 
 def assessment():
     j=0.06
