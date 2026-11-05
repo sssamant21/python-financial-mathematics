@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `908a65f2cd68240d65ef70f8a86c63078660218e`  
-**Latest scoped source revision:** `f60205d5025a2eb4a4055ad746074fe3a198f3c7`  
-**Disposition:** V-68 full candidate pass plus subsequent affine account-step scoped evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `e747c068bfebd0959444b62b31fe25fe784cfa46`  
+**Latest scoped source revision:** `e747c068bfebd0959444b62b31fe25fe784cfa46` (included in V-69)  
+**Disposition:** V-69 full candidate Linux pass includes cumulative account and affine step corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-69](runtime-refresh-2026-11-05-r11.md): 524 compiled, 313 passed, 525 required hashes verified before/after. Includes prior Section 19.8 scoped changes and cumulative account/step corrections. Earlier execution blocker resolved for this run; G2–G8 unchanged.
 
 [V-68](runtime-refresh-2026-11-05-r10.md): 521 compiled, 310 passed, 522 required hashes verified before/after. Later account-step correction/checker passed 38-file/28-script scope; G2–G8 unchanged.
 
@@ -93,7 +95,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Earlier Linux pass plus scope | [V-67](runtime-refresh-2026-11-05-r9.md) at `175c27e55a4eb0d48011937661f3295363d2c890`; later project changes have scoped evidence. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-69](runtime-refresh-2026-11-05-r11.md) at `e747c068bfebd0959444b62b31fe25fe784cfa46`; all 524 sources/313 scripts/525 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -426,3 +428,13 @@ Resume next: when execution is available, run the retained Section 19.10 baselin
 COV-85 is newly partially addressed for this selected manuscript/counterexample scope: 32 selected categories now partially addressed, none closed. This count is not a defect total or completion percentage. No Python source/checker changed; V-68 and the later Section 19.8 scoped run remain the established runtime evidence. The execution environment is unavailable, so no new compile/script/full-book pass is claimed.
 
 Resume Section 19.10's retained baseline range/integration probes once Python execution returns. If it remains blocked, next independent manuscript task: reconcile Section 20.5's vector/scaled-residual lab promises with its source and actual assertions. Chapter 19 command fences and Section 20.3 scope are completed for their recorded static boundaries; do not repeat them as new numerical results. Independent review, supported platforms and release approval remain pending.
+
+## Cumulative account/step range and V-69 — 2026-11-05
+
+Python execution is available again; the earlier environment blocker is resolved for this run. [Cumulative account evidence](chapter-19-cumulative-account-range-followup.md) preserves 17 baseline failed cases and a 44-case pass against independent integral/reciprocal-log/separately compounded payment references. Actual deposit and depletion shared-helper use is observed; signed analytical jump scope and finite intermediate-state requirements remain explicit. All 39 chapter files compiled and 29 scripts passed at `baf06212851ca7949fad4376e4b9857184fb1cb9`.
+
+[Cumulative step evidence](chapter-19-cumulative-step-range-followup.md) preserves nine baseline failed cases and a 30-case pass with rational whole-horizon geometric method expectations and actual report fields. Six observed shared-method calls verify assessment integration. All 40 chapter files compiled and 30 scripts passed at `e747c068bfebd0959444b62b31fe25fe784cfa46`.
+
+[V-69](runtime-refresh-2026-11-05-r11.md) compiled all 524 Python files, passed all 313 discovered scripts and matched all 525 required source/fixture hashes before/after at that same pin. It includes the prior Section 19.8 account-step change and both cumulative corrections/checkers. The baseline snapshot newline-transfer failure/correction is retained separately from numerical failures. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive numerical item: Section 20.2 known-value benchmark helper range, starting with the closed annuity's complete payment/geometric scaling and explicit-sum comparison. The source still evaluates payment*expm1 before its final division; independently classify finite final values, genuine overflow/underflow and valid zero identities before changing behavior. Exercise the actual Section 20.2 helpers, not only already-tested Section 20.4 counterparts. Section 20.5 vector/scaled-residual manuscript scope remains a separate pending task. Section 19.10's selected range/integration obligations above are complete for the retained fixtures, not general numerical certification. Section 19.8 end-period abs(rate*years)>4000 remains an open evaluation boundary.
