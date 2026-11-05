@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-04  
-**Full-runtime candidate source revision:** `5504f2cf019487dae61912e6b01bdb6440931307`  
-**Latest scoped source revision:** `7b779924a288286a39a55a98f7383bdc4310989d`  
-**Disposition:** V-56 full candidate pass plus subsequent Chapter 18 cent rounding scope; independent review and release approval pending.
+**Full-runtime candidate source revision:** `1cdc4c891bd443dbbc5303d2f5715b26350da7bc`  
+**Latest scoped source revision:** `1cdc4c891bd443dbbc5303d2f5715b26350da7bc`  
+**Disposition:** V-57 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-57](runtime-refresh-2026-11-04-r3.md): 503 compiled, 292 passed, 504 hashes verified. G2–G8 unchanged.
 
 [V-56](runtime-refresh-2026-11-04-r2.md): 501 compiled, 290 passed, 502 hashes verified. Subsequent cent rounding has scoped evidence only.
 
@@ -69,7 +71,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-56](runtime-refresh-2026-11-04-r2.md) at `5504f2cf019487dae61912e6b01bdb6440931307`; subsequent cent rounding has scoped evidence. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-57](runtime-refresh-2026-11-04-r3.md) at `1cdc4c891bd443dbbc5303d2f5715b26350da7bc`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -312,3 +314,7 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 ## Present-value, error-report and cent rounding range — 2026-11-04
 
 [PV and error-report checks](chapter-18-pv-error-range-followup.md) preserve 13 initial failures and a 26-case pass at `5504f2cf019487dae61912e6b01bdb6440931307`. [V-56](runtime-refresh-2026-11-04-r2.md) compiled 501 files, passed 290 scripts and matched 502 required hashes before and after execution. The subsequent [cent rounding checks](chapter-18-cents-range-followup.md) preserve 18 initial failures and pass all 32 observations at `7b779924a288286a39a55a98f7383bdc4310989d`; 41 Chapter 18 files compiled and 31 scripts passed. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.2 growth factor, growth increment and discount-change range and saturation policy with independent power references. Independent review, supported platforms and release approval remain pending.
+
+## Compound growth and discount range — 2026-11-04
+
+[Section 18.2 range checks](chapter-18-growth-discount-range-followup.md) preserve 27 initial failures and a 75-case pass at `1cdc4c891bd443dbbc5303d2f5715b26350da7bc`. [V-57](runtime-refresh-2026-11-04-r3.md) compiled 503 files, passed 292 scripts and verified 504 required hashes before and after execution. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.2 decimal-text cent rounding, including caller context isolation, half-even ties and explicit accepted magnitude/output limits. Independent review, supported platforms and release approval remain pending.
