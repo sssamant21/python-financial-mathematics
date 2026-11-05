@@ -1,0 +1,101 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "c8ec659ff472e8d6e97910efc239dfcde3a1de1a722ab4987b09b40b0a624ba6",
+  "program_sha256": "3870b21e9474f8484408cbf91496a86fe86d190c48eddd71e7f993fae67406bb",
+  "tests_sha256": "e04223e732fee236c77a3f94738651739455068d525720bd9d02c1717037650d",
+  "png_sha256": "3f6205a5cc0242e970d2a2a868ba28f8e679e7400eb7520f797e2cde8511465c",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_artists_percentage_and_gap_markers (test_return_charts.ReturnChartTests.test_artists_percentage_and_gap_markers) ... ok\ntest_complete_path_matches_direct_prices (test_return_charts.ReturnChartTests.test_complete_path_matches_direct_prices) ... ok\ntest_invalid_grid (test_return_charts.ReturnChartTests.test_invalid_grid) ... ok\ntest_invalid_prices_and_schema (test_return_charts.ReturnChartTests.test_invalid_prices_and_schema) ... ok\ntest_known_loss_recovery_and_compounding (test_return_charts.ReturnChartTests.test_known_loss_recovery_and_compounding) ... ok\ntest_missing_intervals_zero_and_strict_path (test_return_charts.ReturnChartTests.test_missing_intervals_zero_and_strict_path) ... ok\ntest_png_and_cleanup (test_return_charts.ReturnChartTests.test_png_and_cleanup) ... ok\ntest_source_preservation_and_zone_equivalence (test_return_charts.ReturnChartTests.test_source_preservation_and_zone_equivalence) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.241s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "return_charts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Known adjacent intervals: 3/5\nEndpoint-only price change: 8.00%\nLast finite linked value: -1.00%\nFinal linked value unknown: True\nSaved output/return_charts.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "supplemental exact compounding gives -4 percent",
+      "passed": true
+    },
+    {
+      "label": "baseline adjacent undefined and linked baseline zero",
+      "passed": true
+    },
+    {
+      "label": "known simple returns match independent fractions",
+      "passed": true
+    },
+    {
+      "label": "last zero observed while strict path stays unknown",
+      "passed": true
+    },
+    {
+      "label": "independent endpoint comparison",
+      "passed": true
+    },
+    {
+      "label": "exact source rejects a deleted expected day",
+      "passed": true
+    },
+    {
+      "label": "supplemental Jan 3 to Jan 5 ratio is 1/11 over 48 hours",
+      "passed": true
+    },
+    {
+      "label": "full synthetic path telescopes",
+      "passed": true
+    },
+    {
+      "label": "source percent scale uses one as 100%",
+      "passed": true
+    },
+    {
+      "label": "missing markers and observed zero are separate",
+      "passed": true
+    },
+    {
+      "label": "source linked artist stops after first missing interval",
+      "passed": true
+    }
+  ]
+}
