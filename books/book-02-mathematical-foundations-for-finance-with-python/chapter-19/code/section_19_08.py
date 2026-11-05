@@ -81,33 +81,107 @@ def discrete_growth(initial,nominal,frequency,periods):
         integral=periods*Fraction(logarithm)
     return _scaled_exponential(a,integral)
 
+def _rounded_balance(value):
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError("balance outside floating-point range") from exc
+    if not math.isfinite(result) or (value and result==0):
+        raise ValueError("balance outside floating-point range")
+    return result
+
+def _decimal_fraction(value):
+    return Decimal(value.numerator)/Decimal(value.denominator)
+
+def _exprel_decimal(value):
+    x=_decimal_fraction(value)
+    if abs(value)>Fraction(1,2**26):
+        return (x.exp()-1)/x
+    total=term=Decimal(1)
+    k=1
+    while True:
+        term=term*x/(k+1)
+        updated=total+term
+        if updated==total:
+            return total
+        total=updated
+        k+=1
+
+def _exprel_fraction(value):
+    if abs(value)<Fraction(1,10**400):
+        # Retain tiny period corrections before multiplication by a large
+        # total accumulation factor; Decimal rounding to one is too early.
+        total=term=Fraction(1)
+        for k in range(1,11):
+            term=term*value/(k+1)
+            total+=term
+        return total
+    return Fraction(_exprel_decimal(value))
+
+def _limiting_balance(offset,correction_sign):
+    # A nonzero correction can decide an exact half-subnormal tie even
+    # when the exponential is far below the decimal evaluation range.
+    try:
+        value=float(offset)
+    except OverflowError as exc:
+        raise ValueError("balance outside floating-point range") from exc
+    if not math.isfinite(value):
+        raise ValueError("balance outside floating-point range")
+    delta=offset-Fraction(value)
+    if delta and correction_sign*delta>0:
+        neighbor=math.nextafter(value,math.inf if delta>0 else -math.inf)
+        if math.isfinite(neighbor) and offset==(Fraction(value)+Fraction(neighbor))/2:
+            value=neighbor
+    if value==0 and (offset or correction_sign):
+        raise ValueError("balance outside floating-point range")
+    return value
+
 def continuous_contributions(initial,rate,flow,years):
     a,r,u,t=(finite(v,n) for v,n in
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)+u*factor,"balance")
+    if r==0 or t==0:
+        return _rounded_balance(Fraction(a)+Fraction(u)*Fraction(t))
+    coefficient=Fraction(a)+Fraction(u)/Fraction(r)
+    offset=-Fraction(u)/Fraction(r)
+    if not coefficient:
+        return _rounded_balance(offset)
+    x=Fraction(r)*Fraction(t)
+    if x>4000:
+        raise ValueError("balance outside floating-point range")
+    if x < -4000:
+        return _limiting_balance(offset,1 if coefficient>0 else -1)
+    with localcontext(Context(prec=1100)):
+        if abs(x)<=Fraction(1,2**26):
+            value=Fraction(a)+coefficient*x*_exprel_fraction(x)
+        else:
+            value=(_decimal_fraction(coefficient)*_decimal_fraction(x).exp()+
+                   _decimal_fraction(offset))
+        return _rounded_balance(value)
 
 def end_period_contributions(initial,rate,flow,years,periods):
     a,r,u,t=(finite(v,n) for v,n in
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(periods) is not int or periods<1:
         raise ValueError("invalid years or periods")
-    h=t/periods
     if r==0 or t==0:
-        return finite(a+u*t,"balance")
-    total_exponent=r*t
-    period_exponent=r*h
-    # expm1(x)/x has the continuous value 1 at zero, including when
-    # a nonzero mathematical product rounds to zero in floating point.
-    def exprel(x):
-        return 1.0 if x==0 else math.expm1(x)/x
-    factor=t*(exprel(total_exponent)/exprel(period_exponent))
-    return finite(a*math.exp(total_exponent)+u*factor,"balance")
+        return _rounded_balance(Fraction(a)+Fraction(u)*Fraction(t))
+    if a==0 and u==0:
+        return 0.0
+    if u==0:
+        return continuous_growth(a,r,t)
+    x=Fraction(r)*Fraction(t)
+    # Explicit evaluation domain for this educational finite-payment helper.
+    # This is not a claim that every excluded case has an infinite balance.
+    if abs(x)>4000:
+        raise ValueError("end-period exponent exceeds supported evaluation range")
+    with localcontext(Context(prec=1100)):
+        rel=_exprel_fraction(x)
+        period_rel=_exprel_fraction(x/periods)
+        exponential=1+x*rel
+        value=Fraction(a)*exponential+Fraction(u)*Fraction(t)*rel/period_rel
+        return _rounded_balance(value)
 
 def euler_account(initial,rate,flow,years,steps):
     a,r,u,t=(finite(v,n) for v,n in
