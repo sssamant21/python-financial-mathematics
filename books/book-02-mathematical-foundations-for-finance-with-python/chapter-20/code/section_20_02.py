@@ -1,6 +1,7 @@
 """Book 02 Section 20.2: known-value and analytic benchmarks (draft)."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -28,21 +29,40 @@ def nominal_to_continuous(nominal,frequency):
         raise ValueError("invalid nominal rate or frequency")
     return finite(frequency*math.log1p(j/frequency),"continuous_rate")
 
+def _annuity_float(value):
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError("annuity outside floating-point range") from exc
+    if not math.isfinite(result) or (value and result==0):
+        raise ValueError("annuity outside floating-point range")
+    return result
+
 def annuity_explicit(payment,period_rate,periods):
     c,i=finite(payment,"payment"),finite(period_rate,"period_rate")
     if type(periods) is not int or periods<0 or i<=-1:
         raise ValueError("invalid periods or rate")
-    return finite(math.fsum(c*(1+i)**(-k) for k in range(1,periods+1)),"annuity")
+    if periods==0 or c==0:
+        return 0.0
+    gross=1+Fraction(i)
+    term=Fraction(c)
+    total=Fraction(0)
+    for _ in range(periods):
+        term/=gross
+        total+=term
+    return _annuity_float(total)
 
 def annuity_closed(payment,period_rate,periods):
     c,i=finite(payment,"payment"),finite(period_rate,"period_rate")
     if type(periods) is not int or periods<0 or i<=-1:
         raise ValueError("invalid periods or rate")
-    if periods==0:
+    if periods==0 or c==0:
         return 0.0
     if i==0:
-        return finite(c*periods,"annuity")
-    return finite(-c*math.expm1(-periods*math.log1p(i))/i,"annuity")
+        return _annuity_float(Fraction(c)*periods)
+    # Exact represented-input benchmark; integer sizes grow with periods.
+    gross=1+Fraction(i)
+    return _annuity_float(Fraction(c)*(1-gross**(-periods))/Fraction(i))
 
 def account(initial,rate,flow,years):
     a,r,u,t=(finite(v,n) for v,n in
