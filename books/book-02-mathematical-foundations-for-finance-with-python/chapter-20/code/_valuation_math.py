@@ -14,17 +14,19 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return result
 
-def scaled_exponential(initial,integral):
+def scaled_exponential(initial,integral,*,allow_underflow=False):
     if initial==0 or integral==0:
         return initial
     # Beyond this bound no nonzero binary64 initial amount can recover
     # a representable scaled result. Test the complete exact integral.
     if abs(integral)>2000:
+        if allow_underflow and integral<0:
+            return math.copysign(0.0,initial)
         raise ValueError("growth result outside floating-point range")
     with localcontext(Context(prec=850)):
         exponent=Decimal(integral.numerator)/Decimal(integral.denominator)
         result=float(Decimal(initial)*exponent.exp())
-    if not math.isfinite(result) or result==0:
+    if not math.isfinite(result) or (result==0 and not allow_underflow):
         raise ValueError("growth result outside floating-point range")
     return result
 
