@@ -1,0 +1,15 @@
+# Section 20.4 discrete valuation range
+
+Date: 2026-11-05. Baseline: `5813a24f9a5356dd2ed8cb8f38e26fbebf680a95`. Final executable revision: `8795c02e5bbe873cd6db42a26564cc9adc7a070e`.
+
+The actual discrete present-value and ordinary-annuity helpers keep their finite-real, nonnegative-integer horizon and rate-above-minus-one domains. Validation precedes identities, so an invalid rate or Boolean period still rejects for a zero amount. Genuine final overflow remains OverflowError, and genuine underflow may return signed zero. This is intentionally distinct from the benchmark policy in Section 20.2.
+
+Complete amount scaling now precedes final conversion. Small horizons use exact represented gross powers. Power-of-two PV gross factors use integer binary shifts and ldexp, preserving subnormal ties. Other longer horizons use 1,800-digit Decimal logarithm/exponential evaluation and bounded extreme-exponent branches. A huge positive-rate annuity approaches its limit from below; the limiting branch handles exact float midpoints rather than blindly returning a rounded perpetuity. These checks do not prove correctly rounded results for every longer non-dyadic horizon.
+
+The reference uses a rational gross power for PV and a backward finite payment recurrence for annuities. Huge-count cases use identities, rounding bounds and limiting signs rather than constructing unbounded rational powers. The original 60 probes had 22 mismatches, including precision-only mismatches, not 22 adjudicated defects. Increasing the precision of the tiny-rate limit bound from 100 to 500 digits preserved those outcomes. The first fix passed all 60 but an expanded 64-case run found three exact half-subnormal tie failures at periods 256 and 1,500. The final binary-scaling fix passes all 64. This retains the first executable pin and both rounds of failure evidence.
+
+Final Chapter 20 scope: 31 compiled files and 20 passing scripts, with matching source hashes before and after. [Raw attempts, results and scoped hashes](chapter-20-boundary-discrete-range-followup.json) · [Runnable checker](../chapter-20/code/check_boundary_discrete_range.py).
+
+Replay from Book 02's chapter-20/code at the final revision: run python check_boundary_discrete_range.py with assertions enabled. To reproduce the baseline, save the checker externally, check out the stated baseline and overlay only the checker. For the 60-case discrete baseline omit the four added binary-tie probes; overlaying the full checker on the recorded intermediate revision reproduces the expanded probe. Compile each .py via py_compile.compile(path,doraise=True), run each check_/test_ basename from its parent directory in a fresh process with timeout=60, and verify the raw Git blob hashes before and after. Successful stdout is omitted from the scope summary.
+
+COV-87 remains partial; 32 selected categories remain partially addressed and none closed. Selected assistant-run Linux evidence only. No independent sign-off, supported-platform validation, release acceptance or canonical approval.
