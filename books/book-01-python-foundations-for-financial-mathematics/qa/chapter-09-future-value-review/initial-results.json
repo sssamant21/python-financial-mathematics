@@ -1,0 +1,135 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "8f5a5da23d324b897d748f1e85c057d3672c90fed11e236cc80a7958badc318b",
+  "listing_sha256": "c75f56a5dcd1b3a2d048b2174f312f505d9b9ccceb1ec43b76b3f1d486e9fce2",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "future_value.py"
+      ],
+      "stdout": "7500 today at 4.5% effective annually: year-4 FV = 8943.89\n",
+      "stderr": "test_01_worked_amount (__main__.FutureValueTests.test_01_worked_amount) ... ok\ntest_02_target_elapsed_time (__main__.FutureValueTests.test_02_target_elapsed_time) ... ok\ntest_03_common_target_comparison (__main__.FutureValueTests.test_03_common_target_comparison) ... ok\ntest_04_inverse_and_composition (__main__.FutureValueTests.test_04_inverse_and_composition) ... ok\ntest_05_zero_and_signed_amounts (__main__.FutureValueTests.test_05_zero_and_signed_amounts) ... ok\ntest_06_ordering_and_negative_rate (__main__.FutureValueTests.test_06_ordering_and_negative_rate) ... ok\ntest_07_rejected_inputs (__main__.FutureValueTests.test_07_rejected_inputs) ... ok\ntest_08_range_and_display (__main__.FutureValueTests.test_08_range_and_display) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "future_value.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked7500 toyear4",
+      "passed": true,
+      "actual": 8943.889504687499,
+      "exact_reference": "5724089283/640000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "workedtotalgrowth",
+      "passed": true,
+      "actual": 1443.8895046874986,
+      "exact_reference": "924089283/640000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "start2 target5 uses3periods",
+      "passed": true,
+      "actual": 2315.2500000000005,
+      "exact_reference": "9261/4",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "start2 target5 is not five periods",
+      "passed": true
+    },
+    {
+      "label": "common target later8000",
+      "passed": true,
+      "actual": 8736.199999999999,
+      "exact_reference": "43681/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "common target difference",
+      "passed": true,
+      "actual": 207.68950468749972,
+      "exact_reference": "132921283/640000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 3000 today toyear2",
+      "passed": true,
+      "actual": 3370.8000000000006,
+      "exact_reference": "16854/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 growth",
+      "passed": true,
+      "actual": 370.80000000000064,
+      "exact_reference": "1854/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 3000 atyear2 toyear4",
+      "passed": true,
+      "actual": 3370.8000000000006,
+      "exact_reference": "16854/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 common future for1000 now",
+      "passed": true,
+      "actual": 1102.5,
+      "exact_reference": "2205/2",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 common future for1050 at1",
+      "passed": true,
+      "actual": 1102.5,
+      "exact_reference": "2205/2",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P4 signed obligation",
+      "passed": true,
+      "actual": -1050.0,
+      "exact_reference": "-1050",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "negative rate shrinks positive balance",
+      "passed": true,
+      "actual": 960.3999999999999,
+      "exact_reference": "4802/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "same-date is identity after validinput",
+      "passed": true
+    },
+    {
+      "label": "F46 input underflow rejection",
+      "passed": false,
+      "actual": "returnedzero for nonzero rational amount"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
