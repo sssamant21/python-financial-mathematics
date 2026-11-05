@@ -1,0 +1,94 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "6d871fa3e1f3f4c1b07597305f37b5a71a2c558eeffa529df5ff497b91f4e1d2",
+  "listing_sha256": "b9ed5b706c133d5e03bd0819430521017b7394a5af847c270dc695f3fe6e0782",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "financial_timeline.py"
+      ],
+      "stdout": "Investor cash flows; USD; annual boundary periods\nt=0: -1000.00\nt=1: +75.00\nt=2: +0.00\nt=3: +1080.00\n",
+      "stderr": "test_01_expected_period_grid (__main__.TimelineTests.test_01_expected_period_grid) ... ok\ntest_02_sorting_and_same_time_events (__main__.TimelineTests.test_02_sorting_and_same_time_events) ... ok\ntest_03_perspective_reversal (__main__.TimelineTests.test_03_perspective_reversal) ... ok\ntest_04_beginning_and_end_positions (__main__.TimelineTests.test_04_beginning_and_end_positions) ... ok\ntest_05_zero_net_preserves_gross_events (__main__.TimelineTests.test_05_zero_net_preserves_gross_events) ... ok\ntest_06_duplicate_and_unknown_rejection (__main__.TimelineTests.test_06_duplicate_and_unknown_rejection) ... ok\ntest_07_period_currency_and_record_validation (__main__.TimelineTests.test_07_period_currency_and_record_validation) ... ok\ntest_08_decimal_totals_and_nominal_sum (__main__.TimelineTests.test_08_decimal_totals_and_nominal_sum) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "financial_timeline.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "every fixture total from independent integer cents",
+      "passed": true
+    },
+    {
+      "label": "dense grid includes four boundaries for three intervals",
+      "passed": true
+    },
+    {
+      "label": "five separate event identities retained",
+      "passed": true
+    },
+    {
+      "label": "simultaneous events sorted deterministically by ID",
+      "passed": true
+    },
+    {
+      "label": "source order does not change ledger or period totals",
+      "passed": true
+    },
+    {
+      "label": "P1 borrower and opposite lender schedules",
+      "passed": true
+    },
+    {
+      "label": "P1 undiscounted signed sum is minus200",
+      "passed": true
+    },
+    {
+      "label": "P2 shifting dates does not shift amount signs",
+      "passed": true
+    },
+    {
+      "label": "P3 two gross events with zero period total",
+      "passed": true
+    },
+    {
+      "label": "zero grid does not identify gross events",
+      "passed": true
+    },
+    {
+      "label": "P5 fixture undiscounted sum155 agrees with independent cents",
+      "passed": true
+    },
+    {
+      "label": "input frozen events and original sequence preserved",
+      "passed": true
+    },
+    {
+      "label": "unknown amount rejected without imputing zero",
+      "passed": true
+    },
+    {
+      "label": "float amount rejected before summing",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
