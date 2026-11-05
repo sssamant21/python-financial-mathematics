@@ -1,0 +1,168 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "af0f3eaebedb7c8b824f8dc64eddbea5b00d44701c4bfd2ecf0d544a05d260df",
+  "listing_sha256": "eebdbb59174814361e9b172c89502e195f66a0889c2dadcba71cf7a5774fe5f0",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "compound_interest.py"
+      ],
+      "stdout": "Period | Opening | Interest | Closing (illustrative USD)\n1 | 2000.000 | 80.000 | 2080.000\n2 | 2080.000 | 83.200 | 2163.200\n3 | 2163.200 | 86.528 | 2249.728\n",
+      "stderr": "test_01_worked_schedule (__main__.CompoundTests.test_01_worked_schedule) ... ok\ntest_02_loop_closed_form_and_interest_sum (__main__.CompoundTests.test_02_loop_closed_form_and_interest_sum) ... ok\ntest_03_composition (__main__.CompoundTests.test_03_composition) ... ok\ntest_04_zero_and_one_period (__main__.CompoundTests.test_04_zero_and_one_period) ... ok\ntest_05_simple_comparison (__main__.CompoundTests.test_05_simple_comparison) ... ok\ntest_06_negative_rate (__main__.CompoundTests.test_06_negative_rate) ... ok\ntest_07_rejected_inputs (__main__.CompoundTests.test_07_rejected_inputs) ... ok\ntest_08_numerical_range_and_rounding (__main__.CompoundTests.test_08_numerical_range_and_rounding) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "compound_interest.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked period1 every field",
+      "passed": true,
+      "actual": [
+        1,
+        2000.0,
+        80.0,
+        2080.0
+      ],
+      "exact_reference": [
+        "2000",
+        "80",
+        "2080"
+      ]
+    },
+    {
+      "label": "worked period2 every field",
+      "passed": true,
+      "actual": [
+        2,
+        2080.0,
+        83.2,
+        2163.2
+      ],
+      "exact_reference": [
+        "2080",
+        "416/5",
+        "10816/5"
+      ]
+    },
+    {
+      "label": "worked period3 every field",
+      "passed": true,
+      "actual": [
+        3,
+        2163.2,
+        86.52799999999999,
+        2249.7279999999996
+      ],
+      "exact_reference": [
+        "10816/5",
+        "10816/125",
+        "281216/125"
+      ]
+    },
+    {
+      "label": "closed formula independent rational result",
+      "passed": true,
+      "actual": 2249.728,
+      "exact_reference": "281216/125",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "sum of retained credits",
+      "passed": true,
+      "actual": 249.728,
+      "exact_reference": "31216/125",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "every row opens at previous closing",
+      "passed": true
+    },
+    {
+      "label": "P1 first closing",
+      "passed": true,
+      "actual": 1545.0,
+      "exact_reference": "1545",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 second closing",
+      "passed": true,
+      "actual": 1591.35,
+      "exact_reference": "31827/20",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 total interest",
+      "passed": true,
+      "actual": 91.35,
+      "exact_reference": "1827/20",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 difference from unchanged-principal simple amount",
+      "passed": true,
+      "actual": 1.349999999999909,
+      "exact_reference": "27/20",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 closing",
+      "passed": true,
+      "actual": 848.9664000000001,
+      "exact_reference": "530604/625",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 total credits",
+      "passed": true,
+      "actual": 48.9664,
+      "exact_reference": "30604/625",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P4 second credit uses2080 base",
+      "passed": true,
+      "actual": 83.2,
+      "exact_reference": "416/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "same-rate staged composition",
+      "passed": true,
+      "actual": 2433.3058048000007,
+      "exact_reference": "190102016/78125",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "negative-rate exact closing",
+      "passed": true,
+      "actual": 960.3999999999999,
+      "exact_reference": "4802/5",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "zero-time and zero-principal boundaries",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
