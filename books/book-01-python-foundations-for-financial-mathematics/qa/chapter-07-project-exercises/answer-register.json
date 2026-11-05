@@ -1,0 +1,90 @@
+[
+  {
+    "id": "7.17-E1",
+    "prompt": "Add BETA's middle price 210 and independently calculate both returns.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "EXACT SOURCE + RATIONAL ORACLE",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Insert 2026-01-31T16:00:00Z,BETA,USD,210. BETA returns are 210/200 − 1 = 1/20 and 220/210 − 1 = 1/21. Gross linking gives (21/20)(22/21) − 1 = 1/10. Both grid intervals are now complete across both assets; the first row remains a baseline."
+  },
+  {
+    "id": "7.17-E2",
+    "prompt": "Remove ALPHA's final price and distinguish endpoint coverage from partial earlier observations.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "EXACT SOURCE + RATIONAL ORACLE",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Remove the ALPHA record at 2026-02-01T16:00:00Z but leave the expected grid intact. ALPHA has two of three prices and one observed interval (110/100 − 1 = 10%). The final interval, endpoint return and full linked return are unavailable. The valid earlier observation and return remain visible."
+  },
+  {
+    "id": "7.17-E3",
+    "prompt": "Add a wholly absent expected asset and confirm an all-missing column remains visible.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "EXACT SOURCE MISSINGNESS",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Append CASH to the expected universe without adding CSV records. Its entire price and return columns remain missing, with zero observed prices and intervals, no endpoint or linked return and an incomplete path. CASH is only a label here; no cash return is imputed."
+  },
+  {
+    "id": "7.17-E4",
+    "prompt": "Design a serialized configuration containing expected assets, exact UTC grid and policy version.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "CONFIGURATION DESIGN",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Use a versioned JSON object with ordered expected_assets [ALPHA, BETA], expected_utc_grid containing the three exact UTC strings from the fixture, and policy_version 1. Validate field types, uniqueness, supported sizes, UTC parsing and strict grid order before constructing the tuple and DatetimeIndex. Reject unknown versions and preserve config bytes/hash with input evidence. Never infer either axis from the received CSV."
+  },
+  {
+    "id": "7.17-E5",
+    "prompt": "Add a report writer only after defining output format, missing-value representation and provenance fields.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "REPORT WRITER DESIGN",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Specify a versioned report schema before writing code: ordered asset and interval labels, explicit start/end and UTC, raw fractional returns and coverage flags, and JSON null for missing values (never zero or NaN tokens). Retain input and configuration hashes, version, currency and runtime. Use a temporary file and atomic replace for a local writer; test null round trips, order and validation failures. The retained QA snapshots are supplemental and do not constitute a source writer."
+  },
+  {
+    "id": "7.17-E6",
+    "prompt": "Add source availability timestamps and tests before treating descriptive outputs as historical decision features.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "POINT-IN-TIME DESIGN",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Record event time, observed availability time and data revision identity separately. Require a timezone-aware decision cutoff; choose only revisions available by that cutoff and compute the feature from eligible observations. Add tests that late prints and corrections do not alter historical outputs before their availability and that exact-cutoff inclusion follows the declared rule. Existing descriptive output has no such guarantee."
+  },
+  {
+    "id": "7.17-E7",
+    "prompt": "Extend to multiple currencies only after defining an explicit FX alignment and conversion contract.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "FX DESIGN",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Define local quote currency, target currency and units of FX (target units per local unit). Match prices and FX at both endpoints under an explicit timestamp/availability policy; reject absent, stale or inconsistent rates unless the policy specifies otherwise. Converted gross return is local gross return multiplied by FX_end/FX_start. Preserve FX provenance; the existing USD parser rejects other currencies."
+  },
+  {
+    "id": "7.17-E8",
+    "prompt": "Add a separately validated portfolio module with labeled weights and exact interval matching; do not average available asset returns as a shortcut.",
+    "source": "chapter-07/7.17-chapter-project-financial-time-series-analyzer.md",
+    "source_sha256": "bf7ca9c2093206554f3f5f549deb817a4cb37bef879ef1b6fb2467f189848edb",
+    "status": "REVIEWED_SCOPED",
+    "evidence": "../chapter-07-project-exercises/README.md",
+    "kind": "PORTFOLIO DESIGN",
+    "baseline": "fa2802c2818d97464a058fbfad71a2c563b18d38",
+    "answer": "Require unique labeled weights and exact asset and interval agreement; validate currency, adjustment, weight timing, finite values and normalization under the declared portfolio policy. For start weights 60% ALPHA, 40% BETA and the first complete interval, 0.6×10%+0.4×5%=8%. This is a hand-derived illustration. Missing constituent returns invalidate the interval under a complete-case policy; averaging available asset returns changes the exposure."
+  }
+]
