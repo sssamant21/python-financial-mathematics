@@ -1,6 +1,8 @@
 """Book 02 Section 19.10: cumulative Chapter 19 analytical and numerical lab."""
 import json
 import math
+from section_19_08 import (continuous_contributions as _continuous_account,
+                           depletion_time as _account_depletion)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -18,11 +20,7 @@ def exact_account(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)+u*factor,"balance")
+    return _continuous_account(a,r,u,t)
 
 def classify_equilibrium(derivative):
     d=finite(derivative,"derivative")
@@ -58,18 +56,7 @@ def depletion_time(initial,rate,withdrawal):
            ((initial,"initial"),(rate,"rate"),(withdrawal,"withdrawal")))
     if a<0 or w<0:
         raise ValueError("balance and withdrawal must be nonnegative")
-    if a==0:
-        return 0.0
-    if w==0:
-        return None
-    if r==0:
-        return a/w
-    ratio=r*a/w
-    if ratio>=1:
-        return None
-    if ratio==0:
-        return finite(a/w,"depletion time")
-    return finite(-math.log1p(-ratio)/r,"depletion time")
+    return _account_depletion(a,r,w)
 
 def deposit_at(initial,rate,deposit,deposit_year,horizon):
     a,r,j,tj,T=(finite(v,n) for v,n in
