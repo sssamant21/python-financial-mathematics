@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-73 full candidate Linux pass (534 files, 321 scripts, 535 required hashes), including matrix/feasibility and two-by-two corrections. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-74 full candidate Linux pass (536 files, 323 scripts, 537 required hashes), including discrete valuation and aggregate corrections. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 534/534 at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`. [V-73](runtime-refresh-2026-11-05-r15.md). |
-| Automated script execution | Full candidate Linux pass | 321/321 at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`; all 535 required hashes matched before/after. [V-73](runtime-refresh-2026-11-05-r15.md). |
+| Python compilation | Full candidate Linux pass | 536/536 at `8795c02e5bbe873cd6db42a26564cc9adc7a070e`. [V-74](runtime-refresh-2026-11-05-r16.md). |
+| Automated script execution | Full candidate Linux pass | 323/323 at `8795c02e5bbe873cd6db42a26564cc9adc7a070e`; all 537 required hashes matched before/after. [V-74](runtime-refresh-2026-11-05-r16.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -712,3 +712,14 @@ Next substantive numerical item: Section 20.3 raw quadratic-form and portfolio-f
 [V-73](runtime-refresh-2026-11-05-r15.md) compiled all 534 Python files, passed all 321 discovered scripts and matched all 535 required source/fixture hashes before and after at that executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: Section 20.4 discrete present-value and annuity result-range boundaries beyond the retained subnormal-payment fix. Derive independent represented-gross power and finite payment-sum expectations; preserve the declared rate/period domains and assess the existing OverflowError contract separately from Section 20.2. Probe valid zero identities, full amount scaling and final range rejection before changing the helpers. The selected matrix, feasibility and two-by-two fixtures above are complete for their retained scope. Section 19.8's end-period exponent boundary and other manual/provenance obligations remain open.
+
+
+## Discrete valuation and rounded-term aggregation — V-74 (2026-11-05)
+
+[Section 20.4 discrete range](chapter-20-boundary-discrete-range-followup.md) retains 22 original mismatches across 60 cases and three intermediate failures from expanded exact half-subnormal probes. All 64 final cases pass. Independent represented-gross powers, payment recurrence and huge-count bounds check complete scaling, zero identities and rounding behavior. Genuine overflow still raises OverflowError and genuine underflow may return signed zero; the longer non-dyadic evaluation is not a general correct-rounding proof.
+
+[Section 20.6 aggregate range](chapter-20-metamorphic-aggregate-range-followup.md) retains seven failed baseline cases and a 27-case pass. A common-scale dyadic oracle and observed calls verify complete accumulation of rounded terms, permutation stability and final overflow. Per-term discounting and its validation/range rules are unchanged.
+
+[V-74](runtime-refresh-2026-11-05-r16.md) compiled all 536 Python files, passed all 323 discovered scripts and matched all 537 required source/fixture hashes before and after at `8795c02e5bbe873cd6db42a26564cc9adc7a070e`. Final Chapter 20 scope: 31 files compiled and 20 scripts passed. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: Section 20.9 project valuation result-range and Section 20.10 delegation checks. The project still forms its discount factor separately from the monetary term and uses a potentially overflowing partial sum. Derive independent complete-term and final-aggregate expectations, distinguish its existing domain and exception contract, and verify the actual Section 20.10 assessment path. The pending dossier must remain separate from runtime evidence and approval. Do not repeat the completed Section 20.4 or 20.6 fixtures as new coverage. Section 19.8's end-period exponent boundary and other manual/provenance obligations remain open.
