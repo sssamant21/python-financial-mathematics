@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `e747c068bfebd0959444b62b31fe25fe784cfa46`  
-**Latest scoped source revision:** `e747c068bfebd0959444b62b31fe25fe784cfa46` (included in V-69)  
-**Disposition:** V-69 full candidate Linux pass includes cumulative account and affine step corrections; independent review and release approval pending.
+**Full-runtime candidate source revision:** `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`  
+**Latest scoped source revision:** `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67` (included in V-70)  
+**Disposition:** V-70 full candidate Linux pass includes benchmark annuity corrections and vector/residual design evidence; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-70](runtime-refresh-2026-11-05-r12.md): 526 compiled, 315 passed, 527 required hashes verified before/after. Both new Chapter 20 checkers and corrected annuity helpers are included; G2–G8 unchanged.
 
 [V-69](runtime-refresh-2026-11-05-r11.md): 524 compiled, 313 passed, 525 required hashes verified before/after. Includes prior Section 19.8 scoped changes and cumulative account/step corrections. Earlier execution blocker resolved for this run; G2–G8 unchanged.
 
@@ -95,7 +97,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-69](runtime-refresh-2026-11-05-r11.md) at `e747c068bfebd0959444b62b31fe25fe784cfa46`; all 524 sources/313 scripts/525 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-70](runtime-refresh-2026-11-05-r12.md) at `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`; all 526 sources/315 scripts/527 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -438,3 +440,13 @@ Python execution is available again; the earlier environment blocker is resolved
 [V-69](runtime-refresh-2026-11-05-r11.md) compiled all 524 Python files, passed all 313 discovered scripts and matched all 525 required source/fixture hashes before/after at that same pin. It includes the prior Section 19.8 account-step change and both cumulative corrections/checkers. The baseline snapshot newline-transfer failure/correction is retained separately from numerical failures. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive numerical item: Section 20.2 known-value benchmark helper range, starting with the closed annuity's complete payment/geometric scaling and explicit-sum comparison. The source still evaluates payment*expm1 before its final division; independently classify finite final values, genuine overflow/underflow and valid zero identities before changing behavior. Exercise the actual Section 20.2 helpers, not only already-tested Section 20.4 counterparts. Section 20.5 vector/scaled-residual manuscript scope remains a separate pending task. Section 19.10's selected range/integration obligations above are complete for the retained fixtures, not general numerical certification. Section 19.8 end-period abs(rate*years)>4000 remains an open evaluation boundary.
+
+## Benchmark annuity range, vector/residual design and V-70 — 2026-11-05
+
+[Section 20.2 annuity evidence](chapter-20-benchmark-annuity-range-followup.md) retains 20 original failed cases and a 62-case pass against an independent backward cash-flow recurrence. Exact represented-input arithmetic now preserves selected tiny payments, small rates and finite sums hidden by large powers; true final overflow/nonzero underflow rejects. The initial summary-only KeyError after result capture is recorded separately. Exact rational numerator/denominator sizes and memory/time grow with period count; these are reference benchmarks, not a constant-cost arbitrary-horizon pricing implementation. All 20 chapter sources compiled and 11 scripts passed at `825bca6fb21fec89f5598a26de3ee0c7745f1202`.
+
+[Section 20.5 design evidence](chapter-20-vector-residual-design-followup.md) passes six initial cases: two componentwise-versus-vector-norm counterexamples and four exact diagonal-system scaled-residual/forward-error examples. Actual scalar comparator/error functions are exercised; the scalar implementation is unchanged. The manuscript separates selected design work from a general vector/solver API and distinguishes signed constraint residual from nonnegative violation. All 21 chapter sources compiled and 12 scripts passed at `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`.
+
+[V-70](runtime-refresh-2026-11-05-r12.md) compiled all 526 Python files, passed all 315 discovered scripts and matched all 527 required source/fixture hashes before/after at the same final executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive numerical item: Section 20.2's remaining continuous-account and depletion accepted-input/result-range contracts, including actual assessment integration. Its account still forms separate exponential/flow terms and its depletion helper still forms the rounded rate*balance/withdrawal ratio; compare independent complete-balance and exact threshold/reciprocal-log expectations before sharing or changing implementations. The annuity cases above are complete for their selected scope and must not be repeated as new progress. Present-value/rate-conversion copies and broader matrix/vector/unit work remain separate obligations. Section 19.8 end-period abs(rate*years)>4000 remains an open evaluation boundary.
