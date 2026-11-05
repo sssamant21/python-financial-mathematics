@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-68 full candidate Linux pass plus later Section 19.8 scoped evidence. Chapter 19 manuscript scope/command audit complete; new numerical execution blocked by unavailable environment. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-69 full candidate Linux pass (524 files, 313 scripts, 525 required hashes), including cumulative account/step corrections. Earlier execution blocker resolved for this run. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Earlier full pass plus scoped change | 521/521 at `908a65f2cd68240d65ef70f8a86c63078660218e`; later 38-file chapter scope passed. [V-68](runtime-refresh-2026-11-05-r10.md). |
-| Automated script execution | Earlier full pass plus scoped change | 310/310 at `908a65f2cd68240d65ef70f8a86c63078660218e`; later 28-script chapter scope passed. [V-68](runtime-refresh-2026-11-05-r10.md). |
+| Python compilation | Full candidate Linux pass | 524/524 at `e747c068bfebd0959444b62b31fe25fe784cfa46`. [V-69](runtime-refresh-2026-11-05-r11.md). |
+| Automated script execution | Full candidate Linux pass | 313/313 at `e747c068bfebd0959444b62b31fe25fe784cfa46`; all 525 required hashes matched before/after. [V-69](runtime-refresh-2026-11-05-r11.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -661,3 +661,13 @@ Resume next: when execution is available, run the retained Section 19.10 baselin
 COV-85 is newly partially addressed for this selected manuscript/counterexample scope: 32 selected categories now partially addressed, none closed. This count is not a defect total or completion percentage. No Python source/checker changed; V-68 and the later Section 19.8 scoped run remain the established runtime evidence. The execution environment is unavailable, so no new compile/script/full-book pass is claimed.
 
 Resume Section 19.10's retained baseline range/integration probes once Python execution returns. If it remains blocked, next independent manuscript task: reconcile Section 20.5's vector/scaled-residual lab promises with its source and actual assertions. Chapter 19 command fences and Section 20.3 scope are completed for their recorded static boundaries; do not repeat them as new numerical results. Independent review, supported platforms and release approval remain pending.
+
+## Cumulative account/step range and V-69 — 2026-11-05
+
+Python execution is available again; the earlier environment blocker is resolved for this run. [Cumulative account evidence](chapter-19-cumulative-account-range-followup.md) preserves 17 baseline failed cases and a 44-case pass against independent integral/reciprocal-log/separately compounded payment references. Actual deposit and depletion shared-helper use is observed; signed analytical jump scope and finite intermediate-state requirements remain explicit. All 39 chapter files compiled and 29 scripts passed at `baf06212851ca7949fad4376e4b9857184fb1cb9`.
+
+[Cumulative step evidence](chapter-19-cumulative-step-range-followup.md) preserves nine baseline failed cases and a 30-case pass with rational whole-horizon geometric method expectations and actual report fields. Six observed shared-method calls verify assessment integration. All 40 chapter files compiled and 30 scripts passed at `e747c068bfebd0959444b62b31fe25fe784cfa46`.
+
+[V-69](runtime-refresh-2026-11-05-r11.md) compiled all 524 Python files, passed all 313 discovered scripts and matched all 525 required source/fixture hashes before/after at that same pin. It includes the prior Section 19.8 account-step change and both cumulative corrections/checkers. The baseline snapshot newline-transfer failure/correction is retained separately from numerical failures. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive numerical item: Section 20.2 known-value benchmark helper range, starting with the closed annuity's complete payment/geometric scaling and explicit-sum comparison. The source still evaluates payment*expm1 before its final division; independently classify finite final values, genuine overflow/underflow and valid zero identities before changing behavior. Exercise the actual Section 20.2 helpers, not only already-tested Section 20.4 counterparts. Section 20.5 vector/scaled-residual manuscript scope remains a separate pending task. Section 19.10's selected range/integration obligations above are complete for the retained fixtures, not general numerical certification. Section 19.8 end-period abs(rate*years)>4000 remains an open evaluation boundary.
