@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-64 full candidate Linux pass (516 files, 305 scripts, 517 required hashes). Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-65 full candidate Linux pass (517 files, 306 scripts, 518 required hashes). Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate pass | 516/516 at `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`. [V-64](runtime-refresh-2026-11-05-r6.md). |
-| Automated script execution | Full candidate pass | 305/305 at `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`. [V-64](runtime-refresh-2026-11-05-r6.md). |
+| Python compilation | Full candidate pass | 517/517 at `47511f620984be32b808cd5b50897fbf18eb9f19`. [V-65](runtime-refresh-2026-11-05-r7.md). |
+| Automated script execution | Full candidate pass | 306/306 at `47511f620984be32b808cd5b50897fbf18eb9f19`. [V-65](runtime-refresh-2026-11-05-r7.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-64](runtime-refresh-2026-11-05-r6.md): 516 compiled, 305 passed, 517 hashes matched before/after at `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`.
+- **Latest full run:** [V-65](runtime-refresh-2026-11-05-r7.md): 517 compiled, 306 passed, 518 hashes matched before/after at `47511f620984be32b808cd5b50897fbf18eb9f19`.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -619,3 +619,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Section 19.8 evidence](chapter-19-rate-conversion-range-followup.md) preserves 24 initial failed checks and a final 52-case pass, including tiny quotients, 1,001-digit frequency inputs, inverse conversion range and invalid-frequency controls. Complete scaling now retains selected finite rates; negative nominal saturation and the loss of round-trip invertibility at the rounded boundary are documented. All 32 Chapter 19 sources compiled and 22 scripts passed at `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`.
 
 [V-64](runtime-refresh-2026-11-05-r6.md) compiled 516 Python files, passed 305 scripts and matched 517 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section 19.8 continuous/discrete growth balance range, including complete nominal-period exponent and initial-amount scaling, time-zero identities and representable final results, with independent finite-power/integrated-rate references. Independent review, supported platforms and release approval remain pending.
+
+## Continuous/discrete growth-balance range and V-65 — 2026-11-05
+
+[Section19.8 evidence](chapter-19-growth-balance-range-followup.md) preserves15 initial failures and a31-case pass. Complete nominal-period scaling and shared final exponential evaluation now retain selected representable balances; two observed calls check actual shared-helper use. All33 Chapter19 sources compiled and23 scripts passed at `47511f620984be32b808cd5b50897fbf18eb9f19`.
+
+[V-65](runtime-refresh-2026-11-05-r7.md) compiled517 Python files,passed306 scripts and matched518 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.8 continuous/end-period contribution balance range, including complete weighted accumulation, signed-flow cancellation, zero-rate/time identities and representable final values, with independent finite-payment/integral references. The contribution-frequency order oracle is already complete for its selected scope. Independent review, supported platforms and release approval remain pending.
