@@ -1,0 +1,254 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "7959b0dea5af54e81e4f2f5a7442f2240b2158ad30671c8fc68bbdc9b408eaab",
+  "listing_sha256": "c7a60ff74bbffa3b4c1ab207167c52d05467a33b89d1fd8f22b4877b34dd1c65",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "annuities_due.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV due: 273.55\nFV due: 364.10\n",
+      "stderr": "test_01_timing (__main__.AnnuityDueTests.test_01_timing) ... ok\ntest_02_pv (__main__.AnnuityDueTests.test_02_pv) ... ok\ntest_03_fv (__main__.AnnuityDueTests.test_03_fv) ... ok\ntest_04_due_ordinary_relation (__main__.AnnuityDueTests.test_04_due_ordinary_relation) ... ok\ntest_05_zero_rate (__main__.AnnuityDueTests.test_05_zero_rate) ... ok\ntest_06_zero_periods (__main__.AnnuityDueTests.test_06_zero_periods) ... ok\ntest_07_negative_rate (__main__.AnnuityDueTests.test_07_negative_rate) ... ok\ntest_08_timeline (__main__.AnnuityDueTests.test_08_timeline) ... ok\ntest_09_payment_inverse (__main__.AnnuityDueTests.test_09_payment_inverse) ... ok\ntest_10_fv_pv_identity (__main__.AnnuityDueTests.test_10_fv_pv_identity) ... ok\ntest_11_signed (__main__.AnnuityDueTests.test_11_signed) ... ok\ntest_12_invalid (__main__.AnnuityDueTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "annuities_due.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P3 due PV",
+      "passed": true,
+      "actual": 273.55371900826447,
+      "rational_reference": "33100/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 due FV",
+      "passed": true,
+      "actual": 364.1,
+      "rational_reference": "3641/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 due versus ordinary",
+      "passed": true,
+      "actual": 273.55371900826447,
+      "rational_reference": "33100/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 ordinary component",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 zero rate",
+      "passed": true,
+      "actual": 1000,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 negative rate",
+      "passed": true,
+      "actual": 211.11111111111111,
+      "rational_reference": "1900/9",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 nominal monthly",
+      "passed": true,
+      "scope": "supplemental rational conversion, no source converter"
+    },
+    {
+      "label": "P9 conversion identity",
+      "passed": true,
+      "decimal_periodic_rate": "0.004867550565343037541198945587505995057443158397727418065101030053643133030199992717627946205583258",
+      "scope": "supplemental Decimal conversion"
+    },
+    {
+      "label": "P10 payment inverse",
+      "passed": true,
+      "actual": 123.33769044329208,
+      "rational_reference": "123.3376904432920909521968326226740454274964888751820042932613990210075678819133416064410093414470800",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 inverse reconstruction",
+      "passed": true,
+      "actual": 1000.0,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 empty PV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 empty FV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 timeline",
+      "passed": true,
+      "actual": 1982.105208381601,
+      "rational_reference": "694246511342089253430524087275543875/350257144982200575261531309080576",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "signed due PV",
+      "passed": true,
+      "actual": -273.55371900826447,
+      "rational_reference": "-33100/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "genuine zero inverse",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "single payment has timezero PV",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate ordinary PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate due PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate due FV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 due PV without ordinary overflow",
+      "passed": true,
+      "actual": 1e+308,
+      "rational_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 due FV without product overflow",
+      "passed": true,
+      "actual": 1.8888888888888885e+307,
+      "rational_reference": "18888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888887000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must exceed -1')"
+    },
+    {
+      "label": "fractional count",
+      "passed": true,
+      "exception": "TypeError('periods must be integer')"
+    },
+    {
+      "label": "empty inverse",
+      "passed": true,
+      "exception": "ValueError('no payments to solve')"
+    },
+    {
+      "label": "bool target",
+      "passed": true,
+      "exception": "TypeError('numeric input required')"
+    },
+    {
+      "label": "F54 ordinary zero-rate overflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 due zero-rate FV overflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 timeline factor underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 timeline payment underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F55 inverse payment underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_only_prompts": [
+    1,
+    2
+  ],
+  "supplemental_only_prompts": [
+    8,
+    9
+  ],
+  "historical_unique_methods_added": 0
+}
