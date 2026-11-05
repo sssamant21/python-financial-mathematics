@@ -1,0 +1,142 @@
+{
+  "source_sha256": "f125ff650e07c89c3621b0ccb9a6001e17e29d9914d6451cc3951240264ce54e",
+  "program_sha256": "3b3b3dd4425756f3ef66035eed0ff0fc21d1cb2d3809cb5ec9132a9a4b81ab11",
+  "tests_sha256": "20549c9d6e7fb7c862b4c8aa2c9b8a4b866878d7cdaa8d78feca4e2790fb2c71",
+  "verifier_sha256": "29051b986aa5a7419f6f6d7f76fd58d9f1dbddd92f1cbc5eaa4c74e52a1b7aae",
+  "fixture_sha256": "0f9ec721d779423c2505a6c7788b81d60fba107e8347c7891c1f4973c006f27c",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "commands": [
+    {
+      "label": "documented unittest",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_01_ingestion_hash_and_grid_coverage (test_dashboard.DashboardTests.test_01_ingestion_hash_and_grid_coverage) ... ok\ntest_02_exact_returns_and_genuine_zero (test_dashboard.DashboardTests.test_02_exact_returns_and_genuine_zero) ... ok\ntest_03_strict_linking_and_endpoint_separation (test_dashboard.DashboardTests.test_03_strict_linking_and_endpoint_separation) ... ok\ntest_04_exact_complete_pair_selection (test_dashboard.DashboardTests.test_04_exact_complete_pair_selection) ... ok\ntest_05_duplicate_key_rejected (test_dashboard.DashboardTests.test_05_duplicate_key_rejected) ... ok\ntest_06_schema_and_field_count_rejected (test_dashboard.DashboardTests.test_06_schema_and_field_count_rejected) ... ok\ntest_07_currency_and_asset_rejected (test_dashboard.DashboardTests.test_07_currency_and_asset_rejected) ... ok\ntest_08_timestamp_and_offgrid_rejected (test_dashboard.DashboardTests.test_08_timestamp_and_offgrid_rejected) ... ok\ntest_09_bad_price_tokens_and_bounds (test_dashboard.DashboardTests.test_09_bad_price_tokens_and_bounds) ... ok\ntest_10_byte_limit_and_encoding (test_dashboard.DashboardTests.test_10_byte_limit_and_encoding) ... ok\ntest_11_expected_grid_and_baseline (test_dashboard.DashboardTests.test_11_expected_grid_and_baseline) ... ok\ntest_12_row_order_and_source_preservation (test_dashboard.DashboardTests.test_12_row_order_and_source_preservation) ... ok\ntest_13_no_complete_intervals_diagnostic (test_dashboard.DashboardTests.test_13_no_complete_intervals_diagnostic) ... ok\ntest_14_plot_values_and_histogram_accounting (test_dashboard.DashboardTests.test_14_plot_values_and_histogram_accounting) ... ok\ntest_15_full_export_hashes_json_csv_and_cleanup (test_dashboard.DashboardTests.test_15_full_export_hashes_json_csv_and_cleanup) ... ok\ntest_16_existing_output_and_validation_before_writes (test_dashboard.DashboardTests.test_16_existing_output_and_validation_before_writes) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.784s\n\nOK\n",
+      "returncode": 0,
+      "methods": 16,
+      "passed": true
+    },
+    {
+      "label": "documented demonstration",
+      "args": [
+        "dashboard.py",
+        "--input",
+        "prices.csv",
+        "--out",
+        "output/run01"
+      ],
+      "stdout": "Price coverage: 11/12\nComplete return pairs: 3/5\nFull strict linked paths: 1/2\nInput SHA-256: 0f9ec721d779423c2505a6c7788b81d60fba107e8347c7891c1f4973c006f27c\nSaved dashboard, audit tables, and evidence to output/run01\n",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "documented compile",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "optional exact evidence verifier",
+      "args": [
+        "verify_outputs.py"
+      ],
+      "stdout": "All recorded output digests match.\n",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "fixture publication digest",
+      "passed": true
+    },
+    {
+      "label": "code and input evidence identify consumed listings",
+      "passed": true
+    },
+    {
+      "label": "all six output hashes recomputed independently",
+      "passed": true
+    },
+    {
+      "label": "every aligned price and gap",
+      "passed": true
+    },
+    {
+      "label": "every adjacent return rational oracle",
+      "passed": true
+    },
+    {
+      "label": "strict linked ALPHA blocks after first missing ratio",
+      "passed": true
+    },
+    {
+      "label": "strict linked BETA matches independent endpoint ratios at every row",
+      "passed": true
+    },
+    {
+      "label": "endpoint-only and full-path releases distinct",
+      "passed": true
+    },
+    {
+      "label": "pair endpoints exactly Jan2 Jan3 Jan6",
+      "passed": true
+    },
+    {
+      "label": "reversed bytes differ but financial products unchanged",
+      "passed": true
+    },
+    {
+      "label": "duplicate rejected before report directory creation",
+      "passed": true,
+      "error": "duplicate/off-grid key or price outside [1e-6,1e6]"
+    },
+    {
+      "label": "separate complete fixture releases two paths and all pairs",
+      "passed": true
+    },
+    {
+      "label": "independent schedule retains wholly absent instant",
+      "passed": true
+    },
+    {
+      "label": "price and linked artists preserve distinct gaps",
+      "passed": true
+    },
+    {
+      "label": "histogram counts preserve sample sizes",
+      "passed": true
+    },
+    {
+      "label": "scatter uses BETA x ALPHA y with observed zero",
+      "passed": true
+    },
+    {
+      "label": "expected partial export has PNG but no completion record and closes figure",
+      "passed": true
+    },
+    {
+      "label": "existing report directory remains byte-identical",
+      "passed": true
+    }
+  ]
+}
