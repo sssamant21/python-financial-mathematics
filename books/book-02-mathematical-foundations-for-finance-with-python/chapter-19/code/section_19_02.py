@@ -15,18 +15,33 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return x
 
+def _scaled_exponential(initial,integral):
+    if initial==0 or integral==0:
+        return initial
+    # Beyond this bound no nonzero binary64 initial amount can recover
+    # a representable scaled result. Test the complete exact integral.
+    if abs(integral)>2000:
+        raise ValueError("growth result outside floating-point range")
+    with localcontext(Context(prec=850)):
+        exponent=Decimal(integral.numerator)/Decimal(integral.denominator)
+        result=float(Decimal(initial)*exponent.exp())
+    if not math.isfinite(result) or result==0:
+        raise ValueError("growth result outside floating-point range")
+    return result
+
 def growth(initial,rate,years):
     a,r,t=finite(initial,"initial"),finite(rate,"rate"),finite(years,"years")
     if t<0:
         raise ValueError("years must be nonnegative")
-    return finite(a*math.exp(r*t),"growth balance")
+    return _scaled_exponential(a,Fraction(r)*Fraction(t))
 
 def variable_growth(initial,a,b,years):
     start,base,slope,t=(finite(v,n) for v,n in
                          ((initial,"initial"),(a,"a"),(b,"b"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    return finite(start*math.exp(base*t+0.5*slope*t*t),"variable growth balance")
+    integral=Fraction(base)*Fraction(t)+Fraction(slope)*Fraction(t)**2/2
+    return _scaled_exponential(start,integral)
 
 def logistic(initial,rate,capacity,years):
     a,r,k,t=(finite(v,n) for v,n in
@@ -70,7 +85,7 @@ def proportional_withdrawals(initial,growth_rate,withdrawal_rate,years):
                (withdrawal_rate,"withdrawal rate"),(years,"years")))
     if a<0 or w<0 or t<0:
         raise ValueError("invalid withdrawal inputs")
-    return growth(a,r-w,t)
+    return _scaled_exponential(a,(Fraction(r)-Fraction(w))*Fraction(t))
 
 def assessment():
     return {"exponential_growth":growth(1000,0.04,3),
