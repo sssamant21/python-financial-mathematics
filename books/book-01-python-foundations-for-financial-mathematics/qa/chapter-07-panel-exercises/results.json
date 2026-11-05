@@ -1,0 +1,175 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.16-multi-asset-datasets.md",
+  "source_sha256": "83e517d913a9e54e553439bdc018fdb81a45b723de87834ab3476b5858d70d5f",
+  "program_fence": 3,
+  "test_fence": 4,
+  "program_sha256": "0f84765d3142255aaa7e521d1def68219da57ec28445fcfdecd52519b03d50e8",
+  "test_sha256": "696cffc8a2296977d31ee722e8a3a6b299b017d6c27aa85d61a4d007746de91b",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 13,
+  "failed": 0,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_716/panel.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "asset                      ALPHA   BETA\ntime                                   \n2026-01-30 16:00:00+00:00  100.0  200.0\n2026-01-31 16:00:00+00:00  110.0    NaN\n2026-02-01 16:00:00+00:00   99.0  220.0\nasset                       ALPHA  BETA\ntime                                   \n2026-01-30 16:00:00+00:00     NaN   NaN\n2026-01-31 16:00:00+00:00  0.1000   NaN\n2026-02-01 16:00:00+00:00 -0.1000   NaN\nComplete aligned intervals: 0\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_716",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_asset_specific_interval_differs (test_panel.PanelTests.test_asset_specific_interval_differs) ... ok\ntest_complete_fixture_and_scalar (test_panel.PanelTests.test_complete_fixture_and_scalar) ... ok\ntest_duplicates_and_unexpected_keys (test_panel.PanelTests.test_duplicates_and_unexpected_keys) ... ok\ntest_invalid_numeric_and_axis (test_panel.PanelTests.test_invalid_numeric_and_axis) ... ok\ntest_known_layout_and_returns (test_panel.PanelTests.test_known_layout_and_returns) ... ok\ntest_long_roundtrip (test_panel.PanelTests.test_long_roundtrip) ... ok\ntest_missing_entire_asset_and_time (test_panel.PanelTests.test_missing_entire_asset_and_time) ... ok\ntest_order_and_ownership (test_panel.PanelTests.test_order_and_ownership) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.079s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_716"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "E1",
+      "label": "complete intervals",
+      "actual": "[False, True, True]",
+      "expected": "[False, True, True]",
+      "status": "PASS"
+    },
+    {
+      "section": "E1",
+      "label": "ALPHA rational returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "time\n2026-01-31 16:00:00+00:00    0.1\n2026-02-01 16:00:00+00:00   -0.1\nFreq: D, Name: ALPHA, dtype: float64",
+      "reference": "[Fraction(1, 10), Fraction(-1, 10)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E1",
+      "label": "BETA rational returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "time\n2026-01-31 16:00:00+00:00    0.050000\n2026-02-01 16:00:00+00:00    0.047619\nFreq: D, Name: BETA, dtype: float64",
+      "reference": "[Fraction(1, 20), Fraction(1, 21)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E2",
+      "label": "expected BETA retained",
+      "actual": "(['ALPHA', 'BETA'], np.True_, np.True_, np.False_)",
+      "expected": "(['ALPHA', 'BETA'], True, True, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "all-missing middle row and no bridged intervals",
+      "actual": "(True, np.True_, np.True_, np.False_)",
+      "expected": "(True, True, True, False)",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "duplicate conflicts rejected",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-panel-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-panel-exercises/review.py\", line 68, in <lambda>\n    reject('E4','duplicate conflicts rejected',lambda:m.panel(duplicated,assets,times))\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.16-multi-asset-datasets.md\", line 32, in panel\n    |---|---|---:|\n                   \nValueError: duplicate asset-time key\n"
+    },
+    {
+      "section": "E5",
+      "label": "expected columns move together",
+      "actual": "['BETA', 'ALPHA']",
+      "expected": "['BETA', 'ALPHA']",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "labeled prices and returns preserved",
+      "actual": "(True, True, True)",
+      "expected": "(True, True, True)",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "BETA daily intervals remain unknown",
+      "actual": "[True, True, True]",
+      "expected": "[True, True, True]",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "supplemental BETA two-day endpoint",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "np.float64(0.10000000000000009)",
+      "reference": "Fraction(1, 10)",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E7",
+      "label": "supplemental common two-day endpoint",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "asset\nALPHA   -0.01\nBETA     0.10\ndtype: float64",
+      "reference": "[Fraction(-1, 100), Fraction(1, 10)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E7",
+      "label": "endpoint horizon days",
+      "actual": "2",
+      "expected": "2",
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "input unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Exact panel workflow with rational oracles; endpoint ratios are supplemental, and export/portfolio risk remains design"
+}

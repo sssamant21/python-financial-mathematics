@@ -54,4 +54,6 @@ Earlier checkpoint: [Section 7.13 local exercises](../chapter-07-resampling-exer
 
 Earlier checkpoint: [Section 7.14 local exercises](../chapter-07-window-exercises/README.md): 8 answers, 3 command checks, 21 predicates and 8 existing methods passed. 112/136 local prompts reviewed; 24 remain. Next: Section 7.15 local exercises.
 
-Current checkpoint: [Section 7.15 local exercises](../chapter-07-price-return-exercises/README.md): 8 answers, 3 command checks, 24 predicates and 8 existing methods passed after F38 correction. 120/136 local prompts reviewed; 16 remain. Next: Section 7.16 local exercises.
+Earlier checkpoint: [Section 7.15 local exercises](../chapter-07-price-return-exercises/README.md): 8 answers, 3 command checks, 24 predicates and 8 existing methods passed after F38 correction. 120/136 local prompts reviewed; 16 remain. Next: Section 7.16 local exercises.
+
+Current checkpoint: [Section 7.16 local exercises](../chapter-07-panel-exercises/README.md): 8 answers, 3 command checks, 13 predicates and 8 existing methods passed. 128/136 local prompts reviewed; 8 remain. Next: Section 7.17 local exercises.
