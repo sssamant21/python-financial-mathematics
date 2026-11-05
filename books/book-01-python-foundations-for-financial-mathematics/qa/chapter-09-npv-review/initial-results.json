@@ -1,0 +1,163 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "1fb5a82f5e475af31b36b61f9506d309dd6451c1d6c34028298b4ecc6dd9e298",
+  "listing_sha256": "cd2148584363d0aa08bb61dcecf0f1b972d64029616b7f3b53d8d548993bc366",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "net_present_value.py"
+      ],
+      "stdout": "PV of future net flows: 1130.55 USD\nInitial cost: 1100.00 USD; NPV: +30.55 USD at t=0\nRate 0%: NPV +180.00 USD\nRate 5%: NPV +30.55 USD\nRate 10%: NPV -93.99 USD\n",
+      "stderr": "test_01_reference_project (__main__.NPVTests.test_01_reference_project) ... ok\ntest_02_price_and_break_even (__main__.NPVTests.test_02_price_and_break_even) ... ok\ntest_03_positive_zero_negative (__main__.NPVTests.test_03_positive_zero_negative) ... ok\ntest_04_zero_rate_and_future_cost (__main__.NPVTests.test_04_zero_rate_and_future_cost) ... ok\ntest_05_rate_scenarios_and_nonconventional_shape (__main__.NPVTests.test_05_rate_scenarios_and_nonconventional_shape) ... ok\ntest_06_incremental_comparison (__main__.NPVTests.test_06_incremental_comparison) ... ok\ntest_07_input_contract (__main__.NPVTests.test_07_input_contract) ... ok\ntest_08_range_and_order (__main__.NPVTests.test_08_range_and_order) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "net_present_value.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked futureflows PV",
+      "passed": true,
+      "actual": 1130.5474570780693,
+      "exact_reference": "3490000/3087",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "worked NPV includes costonce",
+      "passed": true,
+      "actual": 30.547457078069307,
+      "exact_reference": "94300/3087",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "initial cost audit factor1 and negated amount",
+      "passed": true
+    },
+    {
+      "label": "price sensitivity",
+      "passed": true,
+      "actual": -19.452542921930693,
+      "exact_reference": "-60050/3087",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "break-even cost computed at fullprecision",
+      "passed": true,
+      "actual": -2.1316282072803006e-14,
+      "exact_reference": "0",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "fixed schedule rate scenario 0",
+      "passed": true,
+      "actual": 180.0,
+      "exact_reference": "180",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "fixed schedule rate scenario 1/20",
+      "passed": true,
+      "actual": 30.547457078069307,
+      "exact_reference": "94300/3087",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "fixed schedule rate scenario 1/10",
+      "passed": true,
+      "actual": -93.98948159278764,
+      "exact_reference": "-125100/1331",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 nominalgrowth does not imply positiveNPV",
+      "passed": true,
+      "actual": -1.1368683772161603e-13,
+      "exact_reference": "0",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 added initialcost decreases NPV",
+      "passed": true,
+      "actual": -50.000000000000114,
+      "exact_reference": "-50",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 supplemental costs subtractedonce",
+      "passed": true,
+      "scope": "Given aggregate PV and cost, not a separately specified event schedule"
+    },
+    {
+      "label": "P4 unknown cleanup rejected",
+      "passed": true
+    },
+    {
+      "label": "mixed signs exact NPV 1/10",
+      "passed": true,
+      "actual": 1.4210854715202004e-14,
+      "exact_reference": "0",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "mixed signs exact NPV 1/5",
+      "passed": true,
+      "actual": 2.842170943040401e-14,
+      "exact_reference": "0",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "mixed signs exact NPV 3/20",
+      "passed": true,
+      "actual": 0.18903591682420995,
+      "exact_reference": "100/529",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "incremental BminusA",
+      "passed": true,
+      "actual": -27.272727272727252,
+      "exact_reference": "-300/11",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "separate incremental schedule",
+      "passed": true,
+      "actual": -27.27272727272728,
+      "exact_reference": "-300/11",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "order reversal preserves all auditrows",
+      "passed": true
+    },
+    {
+      "label": "F46 cost conversion loss rejected",
+      "passed": false,
+      "actual": "nonzero scalar accepted aszero"
+    },
+    {
+      "label": "F46 futureevent conversion loss rejected",
+      "passed": false,
+      "actual": "nonzero scalar accepted aszero"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
