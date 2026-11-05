@@ -1,0 +1,198 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "a1d3236708b6ce36bd2ae438a796ef08267d587807d86280e8ed0a4d358cca7e",
+  "listing_sha256": "470d2d414b4367d83eb7b2438f626f7151352bf996b198cf361c3a31d4164405",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "simple_interest.py"
+      ],
+      "stdout": "Interest: 216.00; maturity amount: 2616.00\n",
+      "stderr": "test_01_reference_case (__main__.SimpleInterestTests.test_01_reference_case) ... ok\ntest_02_matching_monthly_units (__main__.SimpleInterestTests.test_02_matching_monthly_units) ... ok\ntest_03_fixed_day_bases (__main__.SimpleInterestTests.test_03_fixed_day_bases) ... ok\ntest_04_zero_boundaries (__main__.SimpleInterestTests.test_04_zero_boundaries) ... ok\ntest_05_additive_interest_not_rollover (__main__.SimpleInterestTests.test_05_additive_interest_not_rollover) ... ok\ntest_06_scalar_input_rejection (__main__.SimpleInterestTests.test_06_scalar_input_rejection) ... ok\ntest_07_day_input_rejection (__main__.SimpleInterestTests.test_07_day_input_rejection) ... ok\ntest_08_numerical_range_and_maturity_identity (__main__.SimpleInterestTests.test_08_numerical_range_and_maturity_identity) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "simple_interest.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked18month case",
+      "passed": true,
+      "actual": [
+        216.0,
+        2616.0
+      ],
+      "exact_reference": [
+        "216",
+        "2616"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "every worked half-year accrual 0",
+      "passed": true,
+      "actual": [
+        0.0,
+        2400.0
+      ],
+      "exact_reference": [
+        "0",
+        "2400"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "every worked half-year accrual 1/2",
+      "passed": true,
+      "actual": [
+        72.0,
+        2472.0
+      ],
+      "exact_reference": [
+        "72",
+        "2472"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "every worked half-year accrual 1",
+      "passed": true,
+      "actual": [
+        144.0,
+        2544.0
+      ],
+      "exact_reference": [
+        "144",
+        "2544"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "every worked half-year accrual 3/2",
+      "passed": true,
+      "actual": [
+        216.0,
+        2616.0
+      ],
+      "exact_reference": [
+        "216",
+        "2616"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "same proportional simple model in monthly units",
+      "passed": true,
+      "actual": [
+        216.0,
+        2616.0
+      ],
+      "exact_reference": [
+        "216",
+        "2616"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "fixed day denominator 360",
+      "passed": true,
+      "actual": [
+        150.0,
+        10150.0
+      ],
+      "exact_reference": [
+        "150",
+        "10150"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "fixed day denominator 365",
+      "passed": true,
+      "actual": [
+        147.94520547945206,
+        10147.945205479453
+      ],
+      "exact_reference": [
+        "10800/73",
+        "740800/73"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 3500 at4.2% for2.25years",
+      "passed": true,
+      "actual": [
+        330.75,
+        3830.75
+      ],
+      "exact_reference": [
+        "1323/4",
+        "15323/4"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 8000 at3% for halfyear",
+      "passed": true,
+      "actual": [
+        120.0,
+        8120.0
+      ],
+      "exact_reference": [
+        "120",
+        "8120"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 fixed360 daybasis",
+      "passed": true,
+      "actual": [
+        90.0,
+        12090.0
+      ],
+      "exact_reference": [
+        "90",
+        "12090"
+      ],
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P4 second-year accrual50 versus rollover52.50",
+      "passed": true
+    },
+    {
+      "label": "P5 term9% is6% annual simple",
+      "passed": true,
+      "scope": "Independent unit derivation, not rate inference by validator"
+    },
+    {
+      "label": "zero factors preserve principal without interest",
+      "passed": true
+    },
+    {
+      "label": "unchanged-base durations are additive",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
