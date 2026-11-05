@@ -1,0 +1,303 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "b607240fa5ec916ed17c28335f7e1fff45b17a918ec2c84b6974052e6955b649",
+  "listing_sha256": "f46061f9b7c07428a4822f8019c6f9d61419baee960e6b6496361ae1769da9f0",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "payment_stream_values.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV = -17.66\n",
+      "stderr": "test_01_ordinary_pv (__main__.Tests.test_01_ordinary_pv) ... ok\ntest_02_ordinary_fv (__main__.Tests.test_02_ordinary_fv) ... ok\ntest_03_due (__main__.Tests.test_03_due) ... ok\ntest_04_deferred (__main__.Tests.test_04_deferred) ... ok\ntest_05_irregular (__main__.Tests.test_05_irregular) ... ok\ntest_06_repeated_dates (__main__.Tests.test_06_repeated_dates) ... ok\ntest_07_empty (__main__.Tests.test_07_empty) ... ok\ntest_08_zero_rate (__main__.Tests.test_08_zero_rate) ... ok\ntest_09_negative_rate (__main__.Tests.test_09_negative_rate) ... ok\ntest_10_consistency (__main__.Tests.test_10_consistency) ... ok\ntest_11_prior_horizon (__main__.Tests.test_11_prior_horizon) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "payment_stream_values.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 single dated PV",
+      "passed": true,
+      "actual": 75.13148009015778,
+      "rational_reference": "100000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 single flow at horizon=1",
+      "passed": true,
+      "actual": 82.64462809917356,
+      "rational_reference": "10000/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 single flow at horizon=3",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 single flow at horizon=5",
+      "passed": true,
+      "actual": 121.0,
+      "rational_reference": "121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 time zero outflow",
+      "passed": true,
+      "actual": -500.0,
+      "rational_reference": "-500",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 ordinary dates and amounts",
+      "passed": true,
+      "actual": [
+        [
+          1,
+          100
+        ],
+        [
+          2,
+          100
+        ],
+        [
+          3,
+          100
+        ]
+      ]
+    },
+    {
+      "label": "P4 ordinary PV",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 due dates and amounts",
+      "passed": true,
+      "actual": [
+        [
+          0,
+          100
+        ],
+        [
+          1,
+          100
+        ],
+        [
+          2,
+          100
+        ]
+      ]
+    },
+    {
+      "label": "P5 due PV",
+      "passed": true,
+      "actual": 273.55371900826447,
+      "rational_reference": "33100/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 deferred dates and amounts",
+      "passed": true,
+      "actual": [
+        [
+          3,
+          100
+        ],
+        [
+          4,
+          100
+        ],
+        [
+          5,
+          100
+        ]
+      ]
+    },
+    {
+      "label": "P6 deferred PV",
+      "passed": true,
+      "actual": 205.52495793258035,
+      "rational_reference": "33100000/161051",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 repeated date",
+      "passed": true,
+      "actual": 68.18181818181819,
+      "rational_reference": "750/11",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 zero rate",
+      "passed": true,
+      "actual": 300.0,
+      "rational_reference": "300",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 negative rate",
+      "passed": true,
+      "actual": 111.11111111111111,
+      "rational_reference": "1000/9",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 worked mixed PV",
+      "passed": true,
+      "actual": -17.655897821187068,
+      "rational_reference": "-23500/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 mixed terminal value",
+      "passed": true,
+      "actual": -23.5,
+      "rational_reference": "-47/2",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 same PV-to-FV identity",
+      "passed": true,
+      "actual": -23.5,
+      "rational_reference": "-47/2",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 source level stream direct sum",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "ordinary terminal FV",
+      "passed": true,
+      "actual": 331.0,
+      "rational_reference": "331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "unsorted generator",
+      "passed": true,
+      "actual": -17.655897821187068,
+      "rational_reference": "-23500/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty stream",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "fsum mixed signs",
+      "passed": true,
+      "actual": 1.0,
+      "rational_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 zero cash flow needs no factor",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 zero rate needs no date conversion",
+      "passed": true,
+      "actual": 40.0,
+      "rational_reference": "40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 discount factor underflow",
+      "passed": true,
+      "exception": "ValueError('nonzero payment value outside supported range')"
+    },
+    {
+      "label": "F54 nonzero payment underflow",
+      "passed": true,
+      "exception": "ValueError('nonzero payment value outside supported range')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must exceed -1')"
+    },
+    {
+      "label": "invalid amount",
+      "passed": true,
+      "exception": "ValueError('payment must be finite')"
+    },
+    {
+      "label": "invalid period",
+      "passed": true,
+      "exception": "ValueError('payment period must be a nonnegative integer')"
+    },
+    {
+      "label": "bool period",
+      "passed": true,
+      "exception": "ValueError('payment period must be a nonnegative integer')"
+    },
+    {
+      "label": "fractional horizon",
+      "passed": true,
+      "exception": "ValueError('valuation period must be nonnegative integer')"
+    },
+    {
+      "label": "negative count",
+      "passed": true,
+      "exception": "ValueError('count must be nonnegative integer')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "supplemental_audit": [
+    12
+  ],
+  "historical_unique_methods_added": 0
+}
