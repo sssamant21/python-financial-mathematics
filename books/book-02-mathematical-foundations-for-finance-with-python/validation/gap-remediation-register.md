@@ -2,7 +2,7 @@
 
 **Updated:** 2026-11-04
 **Scope:** Selected follow-ups after the 215-section substantive mapping pass.
-**Disposition:** Thirty COV categories partially addressed; none closed by this register.
+**Disposition:** Thirty-one COV categories partially addressed; none closed by this register.
 
 This register separates concrete changes from remaining obligations. It is not a completion percentage for the ninety categories: categories differ in scope, overlap and contain manual proof/review requirements. Earlier chapter fixes remain in their own records.
 
@@ -36,6 +36,7 @@ This register separates concrete changes from remaining obligations. It is not a
 | COV-81 | Section18.9 error contracts; actual final solver/curve/sensitivity/PV integration; shared periodic valuation fixes false endpoint roots while preserving valuation versus discovery input rules. | Broader applied-negative cases,financial/data/model governance,general range and independent review. | [Errors](chapter-18-project-errors-followup.md) · [Methods](chapter-18-final-method-integration-followup.md) · [Studies](chapter-18-final-studies-followup.md) · [Final NPV](chapter-18-final-npv-followup.md) |
 | COV-82 | Section 19.6 stage/controller/rejection policy checked with Fraction stability references and callback traces; nine faulty variants detected. | Broader adaptive ODE behavior, numerical range, failure modes and independent review. | [Adaptive policy](chapter-19-adaptive-policy-followup.md) |
 | COV-83 | Section 19.9 retains validated inputs/schedule and model/policy metadata; selected negative-jump/adjacent-time/log and JSON cases added. | Broader event numerics, cross-section policies and independent review. | [Provenance](chapter-19-input-provenance-followup.md) |
+| COV-84 | Section 19.10 applied target adjustment and timed-deposit comparisons checked against independent analytical references. | Discrete-to-continuous frequency convergence, other applied variants and independent review. | [Applied C/D](chapter-19-applied-target-timing-followup.md) |
 | COV-87 | Section 20.5 now raises explicit numerical-range errors for unrepresentable error magnitudes; exact tolerance comparison remains independent; extreme/subnormal cases added. | Section 20.6 now also validates numeric inputs/results and empty-portfolio rates. Other duplicated contracts/ranges, underflow interpretation and independent review remain. | [Error range](chapter-20-error-range-followup.md) · [PV contract](chapter-20-metamorphic-contract-followup.md) |
 | COV-89 | Section 21.9 adds first-derivative finite-difference diagnostics, deterministic JSON, selected schema and injected failure propagation checks. | Broader interfaces, error paths and independent review. | [Integrated diagnostics](chapter-21-integrated-diagnostics-followup.md) |
 
@@ -325,3 +326,7 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 ## Decimal-text cents — 2026-11-04
 
 [Section 18.2 evidence](chapter-18-decimal-text-cents-followup.md) preserves 16 initial failures and a 32-observation pass at `3bb510f1715d9f734bc5e73ea19783e73f0ac4bf`. The formatter now isolates caller context and documents the original default output limit. All 43 Chapter 18 sources compiled and 33 scripts passed. V-57 remains the latest full run; this later change has scoped evidence. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.1 exponential approximation and cancellation-report range contracts, separating true saturation from a rounded zero and checking error behavior at extreme exponents. Independent review, supported platforms and release approval remain pending.
+
+## Exponential reports and Chapter 19 applied cases — 2026-11-04
+
+[Section 18.1 evidence](chapter-18-exponential-report-range-followup.md) preserves eight initial failures and a 44-case pass. [V-58](runtime-refresh-2026-11-04-r4.md) compiled 505 Python files, passed 294 scripts and verified 506 required hashes before and after at `46aa9c5a32f9a3293bcd7926efa4c04c984a3258`. Subsequent [Section 19.10 evidence](chapter-19-applied-target-timing-followup.md) preserves the missing applied outputs and passes all 11 observations at `62691beb94b8747787990a187ea5925eaeb9208d`; all 22 Chapter 19 sources compiled and 12 scripts passed. COV-84 is newly partially addressed, bringing the register to 31 selected categories partially addressed and none closed. Next substantive item: Section 19.8 discrete-to-continuous contribution frequency convergence, with independent finite cash-flow and integral references. Independent review, supported platforms and release approval remain pending.
