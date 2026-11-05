@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`  
-**Latest scoped source revision:** `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`  
-**Disposition:** V-66 full candidate pass with 60-second script budget; independent review and release approval pending.
+**Full-runtime candidate source revision:** `175c27e55a4eb0d48011937661f3295363d2c890`  
+**Latest scoped source revision:** `95dcc535a881a90fad323f8a2528cd2caf7f0fff`  
+**Disposition:** V-67 full candidate pass plus subsequent project scoped evidence; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-67](runtime-refresh-2026-11-05-r9.md):519 compiled,308 passed,520 required hashes verified before/after. Later project adapter/checker passed36-file/26-script scope; G2–G8 unchanged.
 
 [V-66](runtime-refresh-2026-11-05-r8.md): 518 compiled, 307 passed, 519 required hashes verified before/after. Prior scoped15-second timeout is retained; final run uses60 seconds per script. G2–G8 unchanged.
 
@@ -89,7 +91,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-66](runtime-refresh-2026-11-05-r8.md) at `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`; 60-second script budget. | Unassigned |
+| G1 Candidate compilation/runtime | Earlier Linux pass plus scope | [V-67](runtime-refresh-2026-11-05-r9.md) at `175c27e55a4eb0d48011937661f3295363d2c890`; later project changes have scoped evidence. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -392,3 +394,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Section19.8 evidence](chapter-19-contribution-balance-range-followup.md) preserves17 original failed cases, the first correction's pass, an intermediate false-finite large-period probe and a final33-case pass. Complete accumulation, exact zero-rate arithmetic and retained tiny period corrections now preserve selected balances. The declared end-period exponent evaluation limit remains an explicit open scope boundary. All34 Chapter19 files compiled and24 scripts passed at `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`.
 
 [V-66](runtime-refresh-2026-11-05-r8.md) compiled518 Python files,passed307 scripts and matched519 required source/fixture hashes before/after at the same pin. A15-second scoped timeout in the unchanged rate-conversion checker is retained separately; scoped and full reruns used60 seconds per script. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.8 depletion-time accepted-input/classification range, including complete rate*balance/withdrawal ratios near the nondepletion threshold and zero-rate quotient representability, with independent reciprocal/logarithmic references. Do not repeat the already-retained small-rate depletion cases. Independent review, supported platforms and release approval remain pending.
+
+## Depletion classification, project event range and V-67 — 2026-11-05
+
+[Section19.8 evidence](chapter-19-depletion-classification-range-followup.md) preserves seven initial failures and a24-case pass using independent reciprocal/logarithmic references. Exact threshold classification and complete scaling now preserve selected finite depletion times and reject unrepresentable nonzero times. [Section19.9 project evidence](chapter-19-project-depletion-range-followup.md) preserves four original failed simulator scenarios and passes all four after signed-flow delegation; one injected call verifies actual shared use. All36 chapter files compiled and26 scripts passed at `95dcc535a881a90fad323f8a2528cd2caf7f0fff`.
+
+[V-67](runtime-refresh-2026-11-05-r9.md) compiled519 Python files,passed308 scripts and matched520 required source/fixture hashes before/after at `175c27e55a4eb0d48011937661f3295363d2c890`. The project adapter/checker are subsequent scoped evidence; current520-file/309-script inventory is not a new full run. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.9 signed continuous-transition range and resulting project report consistency, including equilibrium cancellation and finite scaled balances between jumps. The exact depletion/classification scenarios above are complete for their selected scope. Independent review, supported platforms and release approval remain pending.
