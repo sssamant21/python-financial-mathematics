@@ -1,0 +1,757 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "239085a0580b7a97db6787e415c36f20d11f706c",
+  "corrected_revision": "77a943c4ee6551431485c3a53d71f789691c2392",
+  "initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-capstone77/check_capstone_sensitivity_range.py\", line 77, in <module>\n    check()\n  File \"/tmp/book02-capstone77/check_capstone_sensitivity_range.py\", line 73, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "helper": "pv",
+        "inputs": "(1.7976931348623157e+308, 1, 1000.5)",
+        "expected": 5.53460225517259e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "pv",
+        "inputs": "(5e-324, -1, 1000.5)",
+        "expected": 1.6047737104686097e+111,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "pv",
+        "inputs": "(0, -1.7976931348623157e+308, 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "pv",
+        "inputs": "(-1.7976931348623157e+308, 1, 1000.5)",
+        "expected": -5.53460225517259e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "pv",
+        "inputs": "(5e-324, 1, 1000.5)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(1.7976931348623157e+308, -1, 1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(100, -0.125, 2.5)",
+        "expected": 136.68379411737965,
+        "actual": 136.68379411737962,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(100, 0.1, 0)",
+        "expected": 100,
+        "actual": 100,
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(1, 1, 750)",
+        "expected": [
+          -1.5e-323,
+          1.0697e-320
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": false
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(1.7976931348623157e+308, 1.1e-305, 1.7976931348623157e+308)",
+        "expected": [
+          -5.109773282292162e-243,
+          9.185804350279501e+65
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": false
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(5e-324, 0, 1.7976931348623157e+308)",
+        "expected": [
+          -8.881784197001251e-16,
+          1.5966722476277755e+293
+        ],
+        "actual": [
+          -8.881784197001251e-16,
+          1.5966722476277755e+293
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(-1.7976931348623157e+308, 1.1e-305, 1.7976931348623157e+308)",
+        "expected": [
+          5.109773282292162e-243,
+          -9.185804350279501e+65
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": false
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(0, -1.7976931348623157e+308, 1.7976931348623157e+308)",
+        "expected": [
+          0,
+          0
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(1, 0, 1.7976931348623157e+308)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(5e-324, -1000, 1)",
+        "expected": [
+          -9.733444573000164e+110,
+          9.733444573000164e+110
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(100, -0.125, 2.5)",
+        "expected": [
+          -341.70948529344906,
+          854.2737132336227
+        ],
+        "actual": [
+          -341.70948529344906,
+          854.2737132336226
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(-100, 0.1, 0)",
+        "expected": [
+          0,
+          0
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1, 0, 8.98846567431158e+307, 1.1125369292536007e-308)",
+        "expected": [
+          0,
+          0.5
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(4.4942328371557893e+307, 0, 2, 1.5)",
+        "expected": [
+          -8.988465674311579e+307,
+          1.1235582092889472e+308
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(-4.4942328371557893e+307, 0, 2, 1.5)",
+        "expected": [
+          8.988465674311579e+307,
+          -1.1235582092889472e+308
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1.7976931348623157e+308, 2e-305, 1.7976931348623157e+308, 1.7976931348623157e+308)",
+        "expected": [
+          0,
+          3.281939355553251e-21
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(0, -1.7976931348623157e+308, 1.7976931348623157e+308, 1)",
+        "expected": [
+          0,
+          0
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1.7976931348623157e+308, 0, 1, 2)",
+        "expected": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(100, 0, 2, 0.01)",
+        "expected": [
+          98,
+          98.02
+        ],
+        "actual": [
+          98,
+          98.02
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1, 0, 8.98846567431158e+307, -1.1125369292536007e-308)",
+        "expected": [
+          2,
+          2.5
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(5e-324, -1000, 1, 0)",
+        "expected": [
+          9.733444573000164e+110,
+          9.733444573000164e+110
+        ],
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "pv",
+        "inputs": "(True, 0, 0)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(0, nan, 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(0, 0, -1)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(0, 0, 0, True)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(0, 0, 0, inf)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "actual integrated analytic field",
+        "expected": [
+          -200,
+          400
+        ],
+        "actual": [
+          -200,
+          400
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "rerun": {
+    "exit": 0,
+    "stderr": "",
+    "rows": [
+      {
+        "helper": "pv",
+        "inputs": "(1.7976931348623157e+308, 1, 1000.5)",
+        "expected": 5.53460225517259e-127,
+        "actual": 5.53460225517259e-127,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(5e-324, -1, 1000.5)",
+        "expected": 1.6047737104686097e+111,
+        "actual": 1.6047737104686097e+111,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(0, -1.7976931348623157e+308, 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(-1.7976931348623157e+308, 1, 1000.5)",
+        "expected": -5.53460225517259e-127,
+        "actual": -5.53460225517259e-127,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(5e-324, 1, 1000.5)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(1.7976931348623157e+308, -1, 1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(100, -0.125, 2.5)",
+        "expected": 136.68379411737965,
+        "actual": 136.68379411737965,
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(100, 0.1, 0)",
+        "expected": 100,
+        "actual": 100,
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(1, 1, 750)",
+        "expected": [
+          -1.5e-323,
+          1.0697e-320
+        ],
+        "actual": [
+          -1.5e-323,
+          1.0697e-320
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(1.7976931348623157e+308, 1.1e-305, 1.7976931348623157e+308)",
+        "expected": [
+          -5.109773282292162e-243,
+          9.185804350279501e+65
+        ],
+        "actual": [
+          -5.109773282292162e-243,
+          9.185804350279501e+65
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(5e-324, 0, 1.7976931348623157e+308)",
+        "expected": [
+          -8.881784197001251e-16,
+          1.5966722476277755e+293
+        ],
+        "actual": [
+          -8.881784197001251e-16,
+          1.5966722476277755e+293
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(-1.7976931348623157e+308, 1.1e-305, 1.7976931348623157e+308)",
+        "expected": [
+          5.109773282292162e-243,
+          -9.185804350279501e+65
+        ],
+        "actual": [
+          5.109773282292162e-243,
+          -9.185804350279501e+65
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(0, -1.7976931348623157e+308, 1.7976931348623157e+308)",
+        "expected": [
+          0,
+          0
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(1, 0, 1.7976931348623157e+308)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(5e-324, -1000, 1)",
+        "expected": [
+          -9.733444573000164e+110,
+          9.733444573000164e+110
+        ],
+        "actual": [
+          -9.733444573000164e+110,
+          9.733444573000164e+110
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(100, -0.125, 2.5)",
+        "expected": [
+          -341.70948529344906,
+          854.2737132336227
+        ],
+        "actual": [
+          -341.70948529344906,
+          854.2737132336227
+        ],
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(-100, 0.1, 0)",
+        "expected": [
+          0,
+          0
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1, 0, 8.98846567431158e+307, 1.1125369292536007e-308)",
+        "expected": [
+          0,
+          0.5
+        ],
+        "actual": [
+          0,
+          0.5
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(4.4942328371557893e+307, 0, 2, 1.5)",
+        "expected": [
+          -8.988465674311579e+307,
+          1.1235582092889472e+308
+        ],
+        "actual": [
+          -8.988465674311579e+307,
+          1.1235582092889472e+308
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(-4.4942328371557893e+307, 0, 2, 1.5)",
+        "expected": [
+          8.988465674311579e+307,
+          -1.1235582092889472e+308
+        ],
+        "actual": [
+          8.988465674311579e+307,
+          -1.1235582092889472e+308
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1.7976931348623157e+308, 2e-305, 1.7976931348623157e+308, 1.7976931348623157e+308)",
+        "expected": [
+          0,
+          3.281939355553251e-21
+        ],
+        "actual": [
+          0,
+          3.281939355553251e-21
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(0, -1.7976931348623157e+308, 1.7976931348623157e+308, 1)",
+        "expected": [
+          0,
+          0
+        ],
+        "actual": [
+          0,
+          0
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1.7976931348623157e+308, 0, 1, 2)",
+        "expected": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(100, 0, 2, 0.01)",
+        "expected": [
+          98,
+          98.02
+        ],
+        "actual": [
+          98,
+          98.02
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(1, 0, 8.98846567431158e+307, -1.1125369292536007e-308)",
+        "expected": [
+          2,
+          2.5
+        ],
+        "actual": [
+          2,
+          2.5
+        ],
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(5e-324, -1000, 1, 0)",
+        "expected": [
+          9.733444573000164e+110,
+          9.733444573000164e+110
+        ],
+        "actual": [
+          9.733444573000164e+110,
+          9.733444573000164e+110
+        ],
+        "passed": true
+      },
+      {
+        "helper": "pv",
+        "inputs": "(True, 0, 0)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(0, nan, 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "derivatives",
+        "inputs": "(0, 0, -1)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(0, 0, 0, True)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "approximations",
+        "inputs": "(0, 0, 0, inf)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "actual integrated analytic field",
+        "expected": [
+          -200,
+          400
+        ],
+        "actual": [
+          -200,
+          400
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "final_scope": {
+    "source_revision": "77a943c4ee6551431485c3a53d71f789691c2392",
+    "blobs": {
+      "check_capstone_rate_range.py": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6",
+      "check_capstone_sensitivity_range.py": "6c43e8a57858861798f7c23486f3db6f109e48ee",
+      "check_section_21_01.py": "5173ec340bdf9ae0ad1ac66340fd27934c203757",
+      "check_section_21_02.py": "a191d1bd2e62477377058f5f01993e72f547557a",
+      "check_section_21_03.py": "215527059ec1ad4bdf8f526cc8995eff62e0144c",
+      "check_section_21_04.py": "78b58cc70349220d885baaa1956aa1c332c01bcc",
+      "check_section_21_05.py": "1b3e22921f93d5944f389a46c316f731a5e05010",
+      "check_section_21_06.py": "9dfa992eb888c99817f61ff39cb736188e818974",
+      "check_section_21_07.py": "84fa5b120006c1e029621cd16c04435b63bd91f9",
+      "check_section_21_08.py": "35e3eca1cf74659a3fd038558a05eb371bbfea54",
+      "check_section_21_09.py": "183ba902d9b2e844c2c95a444014ca57787588c3",
+      "check_section_21_10.py": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f",
+      "section_21_01.py": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64",
+      "section_21_02.py": "a36569438bc8ac086445f6c7556852efa908f8e4",
+      "section_21_03.py": "d9a85153cc6fbf46d7de69e39668b0fd32b527e8",
+      "section_21_04.py": "bf4700160749afdf39d28a21ecda3d5c981f0adf",
+      "section_21_05.py": "bc6b558e7b00bfad82338fb01f4c037971af28d0",
+      "section_21_06.py": "0d0d7ac2f8cbdecbb932efad206755ce1e74943d",
+      "section_21_07.py": "463b82ea88ea1e0ca318fe65f2e519914a60a1de",
+      "section_21_08.py": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a",
+      "section_21_09.py": "ca2ff456691be2946163995558ecca4518b37f95"
+    },
+    "compiled": 21,
+    "runs": {
+      "check_capstone_rate_range.py": {
+        "exit": 0,
+        "seconds": 4.061349833999998,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_capstone_sensitivity_range.py": {
+        "exit": 0,
+        "seconds": 2.542420458000038,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_21_01.py": {
+        "exit": 0,
+        "seconds": 0.05987065599993002,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_02.py": {
+        "exit": 0,
+        "seconds": 0.047070306000023265,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_03.py": {
+        "exit": 0,
+        "seconds": 0.12880498599997736,
+        "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.075s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_04.py": {
+        "exit": 0,
+        "seconds": 0.18897896700002548,
+        "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.145s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_05.py": {
+        "exit": 0,
+        "seconds": 0.05951859399999648,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_06.py": {
+        "exit": 0,
+        "seconds": 0.035681705000001784,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_07.py": {
+        "exit": 0,
+        "seconds": 0.03836566400002539,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_08.py": {
+        "exit": 0,
+        "seconds": 0.050682864999998856,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_09.py": {
+        "exit": 0,
+        "seconds": 0.9461717940000653,
+        "stderr": "..................\n----------------------------------------------------------------------\nRan 18 tests in 0.868s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_21_10.py": {
+        "exit": 0,
+        "seconds": 0.11361558699991292,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.075s\n\nOK\n",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Selected assistant-run Linux evidence only; not independent reviewer sign-off, supported-platform validation, release acceptance or canonical approval."
+}
