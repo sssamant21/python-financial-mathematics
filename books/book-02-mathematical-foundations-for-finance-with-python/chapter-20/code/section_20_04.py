@@ -59,8 +59,20 @@ def present_value(amount, rate, years):
         raise ValueError("years must be nonnegative and rate must exceed -1")
     if amount == 0 or rate == 0 or years == 0:
         return amount
+    gross = 1 + Fraction(rate)
+    numerator = gross.numerator
+    if (numerator & (numerator - 1)) == 0:
+        # A dyadic power needs no logarithm, including at subnormal ties.
+        shift = (gross.denominator.bit_length() - numerator.bit_length()) * years
+        if shift < -2200:
+            return math.copysign(0., amount)
+        if shift > 2200:
+            raise OverflowError("present value exceeds numerical range")
+        try:
+            return math.ldexp(amount, shift)
+        except OverflowError as exc:
+            raise OverflowError("present value exceeds numerical range") from exc
     if years <= 128:
-        gross = 1 + Fraction(rate)
         return _rounded_value(Fraction(amount) / gross**years, "present value")
     with localcontext(Context(prec=1800)):
         exponent = _discount_exponent(rate, years)
