@@ -48,15 +48,28 @@ def errors(reference,estimate):
 
 def exponential_approximation(x):
     x=finite(x,"x")
-    exact=math.exp(x)
+    try:
+        exact=math.exp(x)
+    except OverflowError as exc:
+        raise ValueError("exponential reference outside floating-point range") from exc
+    if exact==0 or not math.isfinite(exact):
+        raise ValueError("exponential reference outside floating-point range")
     first_order=1+x
     return {"exact":exact,"first_order":first_order,
             "error":errors(exact,first_order)}
 
 def cancellation_demo(x=1e-12):
     x=finite(x,"x")
-    return {"x":x,"direct":math.exp(x)-1,
-            "stable":math.expm1(x)}
+    try:
+        direct=math.exp(x)-1
+        stable=math.expm1(x)
+    except OverflowError as exc:
+        raise ValueError("exponential change outside floating-point range") from exc
+    # The direct path deliberately exhibits cancellation. Both paths can
+    # legitimately round to -1 even if the exponential itself underflows.
+    if not math.isfinite(stable) or (x!=0 and stable==0):
+        raise ValueError("exponential change outside floating-point range")
+    return {"x":x,"direct":direct,"stable":stable}
 
 def money_cents(value):
     v=finite(value,"value")
