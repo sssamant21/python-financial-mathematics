@@ -1,3 +1,11 @@
+# Section 9.16 — Current runtime review
+
+**PASS (scoped):** two documented commands, 37 supplemental predicates and twelve existing source methods passed after F46/F48/F49/F50 fixes. One workflow and eight local prompts reviewed; prompt8 is design-only. See [runtime evidence and all initial/corrected runs](RUNTIME-REVIEW.md). Next: Section9.17 chapter-wide answers. F28/F32, platform and independent acceptance remain open.
+
+The following static checkpoint and checkpoint.json are historical records of the earlier unavailable environment; they do not describe the current CLI runtime status. The original static review was resumed without duplicating its eight answer records.
+
+---
+
 # Section 9.16 — Project review checkpoint
 
 **Date:** 2026-11-05. **Baseline:** `6a393b6bb977938709ec0bd555c305b0d9d54414`. **Source Git blob:** `7e70580b8b7ad7b3bac06b9192c31be961e1d32d`. Source: [9.16 project](../../chapter-09/9.16-chapter-project-time-value-of-money-engine.md).

@@ -1,3 +1,5 @@
+**Runtime follow-up:** this static candidate ledger is historical. All five candidate groups were reproduced and corrected; see [F46/F48/F49/F50 disposition and retained runs](RUNTIME-REVIEW.md). The twelve listed gates ran in the source suite. Earlier “pending”/“has not run” text below describes the initial checkpoint.
+
 # Section 9.16 — Project contract review and pending probes
 
 ## Prerequisites and evidence flow

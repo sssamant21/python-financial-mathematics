@@ -119,6 +119,25 @@ def main():
         check("negative rate",lambda:close(m.future_value(100,c(-.1),2),81))
         check("continuous roundtrip",lambda:close(m.continuous_present_value(m.continuous_future_value(2500,.04,3),.04,3),2500))
         check("signed discrete roundtrip",lambda:close(m.present_value(m.future_value(-100,c(.05,12),2),c(.05,12),2),-100))
+        def frozen_config():
+            from dataclasses import FrozenInstanceError
+            config=c(.05,12)
+            try:
+                config.rate=.06
+            except FrozenInstanceError:
+                return "mutation rejected"
+            raise AssertionError("configuration was mutable")
+        check("immutable configuration",frozen_config)
+        def literal_zeros():
+            parsed=m.parse_cashflow_csv("year,amount\n0,0\n-0,-0.0\n")
+            assert parsed == [(0,0),(0,0)]
+            return dict(events=parsed)
+        check("literal CSV zeros stay valid",literal_zeros)
+        with localcontext() as ctx:
+            ctx.prec=100
+            scaled_ref=D('1e-300')*D(1000).exp()
+        check("small amount avoids intermediate factor overflow",
+              lambda:close(m.continuous_future_value(1e-300,1000,1),scaled_ref,atol=0))
         for label,fn in [
             ("negative date",lambda:m.future_value(100,c(.05),-1)),
             ("zero rate indeterminate",lambda:m.solve_time(100,100,c(0))),
@@ -133,6 +152,7 @@ def main():
             ("CSV negative time underflow",lambda:m.parse_cashflow_csv("year,amount\n-1e-400,100\n")),
             ("F48 total-period overflow",lambda:m.solve_rate(1,2,1e308,12)),
             ("F48 inferred-rate underflow",lambda:m.solve_rate(1,math.nextafter(1.,2.),1e308)),
+            ("F49 nonfinite nominal log factor",lambda:m.solve_time(100,50,c(-9e307,10**308))),
             ("F49 elapsed-time underflow",lambda:m.solve_time(1,math.nextafter(1.,0.),c(-8e307,10**308)))
         ]:
             check(label,lambda fn=fn:reject(fn))

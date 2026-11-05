@@ -1,0 +1,360 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source": "/workspace/scratch/50da9af75d6f/run916/books/book-01-python-foundations-for-financial-mathematics/chapter-09/9.16-chapter-project-time-value-of-money-engine.md",
+  "source_sha256": "a3d5bff5614333bbf0b03d92d2fce629d07bcd3e55110dc12700a824f4189f1c",
+  "listing_sha256": "d183292bae8d3067713e7ef65535ccd8f6fcc137642fb33a09f206a9211f93d5",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve embedded tests",
+      "argv": [
+        "tvm_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"rate_convention\": \"nominal_annual\",\n  \"nominal_annual_rate\": 0.08,\n  \"compounds_per_year\": 12,\n  \"effective_annual_rate\": 0.08299950680751075,\n  \"event_count\": 4,\n  \"cash_flows\": [\n    {\n      \"event\": 1,\n      \"year\": 0.0,\n      \"amount\": -1000.0,\n      \"discount_factor\": 1.0,\n      \"present_value\": -999.9999999999998\n    },\n    {\n      \"event\": 2,\n      \"year\": 1.0,\n      \"amount\": 400.0,\n      \"discount_factor\": 0.9233614546582958,\n      \"present_value\": 369.34458186331835\n    },\n    {\n      \"event\": 3,\n      \"year\": 2.0,\n      \"amount\": 500.0,\n      \"discount_factor\": 0.852596375948684,\n      \"present_value\": 426.29818797434183\n    },\n    {\n      \"event\": 4,\n      \"year\": 3.0,\n      \"amount\": 300.0,\n      \"discount_factor\": 0.787254629932368,\n      \"present_value\": 236.17638897971045\n    }\n  ],\n  \"npv\": 31.819158817370862\n}\n",
+      "stderr": "test_01_future_present_round_trip (__main__.EngineAcceptanceTests.test_01_future_present_round_trip) ... ok\ntest_02_effective_annual (__main__.EngineAcceptanceTests.test_02_effective_annual) ... ok\ntest_03_continuous_round_trip (__main__.EngineAcceptanceTests.test_03_continuous_round_trip) ... ok\ntest_04_inverse_rate (__main__.EngineAcceptanceTests.test_04_inverse_rate) ... ok\ntest_05_inverse_time (__main__.EngineAcceptanceTests.test_05_inverse_time) ... ok\ntest_06_npv_break_even (__main__.EngineAcceptanceTests.test_06_npv_break_even) ... ok\ntest_07_csv_json_audit (__main__.EngineAcceptanceTests.test_07_csv_json_audit) ... ok\ntest_08_negative_rate (__main__.EngineAcceptanceTests.test_08_negative_rate) ... ok\ntest_09_zero_rate (__main__.EngineAcceptanceTests.test_09_zero_rate) ... ok\ntest_10_invalid_inputs (__main__.EngineAcceptanceTests.test_10_invalid_inputs) ... ok\ntest_11_same_date_netting (__main__.EngineAcceptanceTests.test_11_same_date_netting) ... ok\ntest_12_no_hidden_initial_cost (__main__.EngineAcceptanceTests.test_12_no_hidden_initial_cost) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.003s\n\nOK\n",
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "argv": [
+        "-m",
+        "compileall",
+        "-q",
+        "tvm_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 monthly accumulation",
+      "passed": true,
+      "detail": {
+        "actual": 1127.1597762053918,
+        "expected": "1127.159776205391741353560909647289734632907050717058467924594879150390625000",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "P2 effective annual",
+      "passed": true,
+      "detail": {
+        "actual": 0.06167781186449957,
+        "expected": "0.061677811864499568789707617431640625",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "P3 break-even NPV",
+      "passed": true,
+      "detail": {
+        "actual": 0.0,
+        "expected": "0",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "P4 reverse annual rate",
+      "passed": true,
+      "detail": {
+        "actual": 0.09999999999999999,
+        "expected": "1/10",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "P5 reverse years",
+      "passed": true,
+      "detail": {
+        "actual": 1.9999999999999998,
+        "expected": "2",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "P6 invalid frequency",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('frequency must be positive')"
+      }
+    },
+    {
+      "label": "P7 separate rows and net",
+      "passed": true,
+      "detail": {
+        "actual": -5.684341886080802e-14,
+        "expected": "0",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "source CSV-report pipeline",
+      "passed": true,
+      "detail": {
+        "npv": 31.819158817370862,
+        "decimal_reference": "31.8191588173707023375474936031463905018931931051731944934571432230413777797337562823037346200779088"
+      }
+    },
+    {
+      "label": "exact printed demo JSON",
+      "passed": true,
+      "detail": {
+        "actual": 31.819158817370862,
+        "expected": "31.8191588173707023375474936031463905018931931051731944934571432230413777797337562823037346200779088",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "empty input report",
+      "passed": true,
+      "detail": {
+        "actual": 0.0,
+        "expected": "0",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "no hidden cost",
+      "passed": true,
+      "detail": {
+        "actual": 100.00000000000004,
+        "expected": "100",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "negative rate",
+      "passed": true,
+      "detail": {
+        "actual": 81.00000000000003,
+        "expected": "81",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "continuous roundtrip",
+      "passed": true,
+      "detail": {
+        "actual": 2499.9999999999995,
+        "expected": "2500",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "signed discrete roundtrip",
+      "passed": true,
+      "detail": {
+        "actual": -100.00000000000004,
+        "expected": "-100",
+        "absolute_tolerance": 1e-10,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "immutable configuration",
+      "passed": true,
+      "detail": "mutation rejected"
+    },
+    {
+      "label": "literal CSV zeros stay valid",
+      "passed": true,
+      "detail": {
+        "events": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            -0.0,
+            -0.0
+          ]
+        ]
+      }
+    },
+    {
+      "label": "small amount avoids intermediate factor overflow",
+      "passed": true,
+      "detail": {
+        "actual": 1.9700711140170936e+134,
+        "expected": "1.970071114017046993888879352243323125316937985323845789952802991385063850782441193474978076563026890E+134",
+        "absolute_tolerance": 0,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "negative date",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('time must be nonnegative')"
+      }
+    },
+    {
+      "label": "zero rate indeterminate",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('zero growth gives no unique finite time')"
+      }
+    },
+    {
+      "label": "zero rate impossible",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('zero growth gives no unique finite time')"
+      }
+    },
+    {
+      "label": "missing CSV field",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('invalid CSV record on line 2')"
+      }
+    },
+    {
+      "label": "extra CSV field",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('invalid CSV record on line 2')"
+      }
+    },
+    {
+      "label": "CSV nonfinite",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('invalid CSV record on line 2')"
+      }
+    },
+    {
+      "label": "F46 amount",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('amount underflow during float conversion')"
+      }
+    },
+    {
+      "label": "F46 rate",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('rate underflow during float conversion')"
+      }
+    },
+    {
+      "label": "F46 horizon",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('time in years underflow during float conversion')"
+      }
+    },
+    {
+      "label": "CSV nonzero amount underflow",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('invalid CSV record on line 2')"
+      }
+    },
+    {
+      "label": "CSV negative time underflow",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('invalid CSV record on line 2')"
+      }
+    },
+    {
+      "label": "F48 total-period overflow",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('total periods outside supported range')"
+      }
+    },
+    {
+      "label": "F48 inferred-rate underflow",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('implied rate underflow')"
+      }
+    },
+    {
+      "label": "F49 nonfinite nominal log factor",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('log growth outside supported range')"
+      }
+    },
+    {
+      "label": "F49 elapsed-time underflow",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('target unreachable at nonnegative finite time')"
+      }
+    },
+    {
+      "label": "F49 nearby time increase",
+      "passed": true,
+      "detail": {
+        "actual": 3.047780088039606e-15,
+        "expected": "3.047780088039605732763055310156559949308945932428655266709648344422556924912398341392119479812650824E-15",
+        "absolute_tolerance": 0,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "F49 nearby rate increase",
+      "passed": true,
+      "detail": {
+        "actual": 1.487016908477783e-16,
+        "expected": "1.48701690847778298472259622308865158709423943539488879487981769811791761045319230543E-16",
+        "absolute_tolerance": 0,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "F49 nearby time decline",
+      "passed": true,
+      "detail": {
+        "actual": 2.899047382768027e-15,
+        "expected": "2.899047382768027140327336019076526609566497015354362430530373423923289940282475034321141754819744903E-15",
+        "absolute_tolerance": 0,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "F49 nearby rate decline",
+      "passed": true,
+      "detail": {
+        "actual": -1.487016908477783e-16,
+        "expected": "-1.487016908477782984722596223088651587094239435394888794879817698117917610453192305429E-16",
+        "absolute_tolerance": 0,
+        "relative_tolerance": 1e-12
+      }
+    },
+    {
+      "label": "F49 opposed nearby target",
+      "passed": true,
+      "detail": {
+        "exception": "ValueError('target unreachable at nonnegative finite time')"
+      }
+    }
+  ],
+  "section_workflow_records": 1,
+  "local_prompt_records": 8,
+  "conceptual_only_prompts": [
+    8
+  ],
+  "historical_unique_methods_added": 0,
+  "existing_methods_expected": 12,
+  "independent_acceptance": false
+}
