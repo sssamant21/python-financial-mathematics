@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`  
-**Latest scoped source revision:** `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`  
-**Disposition:** V-60 full candidate pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`  
+**Latest scoped source revision:** `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`  
+**Disposition:** V-61 full candidate pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-61](runtime-refresh-2026-11-05-r3.md):512 compiled,301 passed,513 required hashes verified before/after; G2–G8 unchanged.
 
 [V-60](runtime-refresh-2026-11-05-r2.md):510 compiled,299 passed,511 required hashes verified before/after. Includes forcing oracle and nonterminal jump correction; G2–G8 unchanged.
 
@@ -77,7 +79,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-60](runtime-refresh-2026-11-05-r2.md) at `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-61](runtime-refresh-2026-11-05-r3.md) at `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -344,3 +346,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Forcing evidence](chapter-19-time-varying-forcing-followup.md) covers20 Euler/RK4 grids, six observed order ratios and a coupled four-stage rational reference; the initial checker allowance failure and rerun are retained. [Section19.7 nonterminal evidence](chapter-19-nonterminal-jump-followup.md) preserves two initial failed policy cases and an eight-case pass, plus unchanged public-domain validation. Signed continuation now works across negative intermediate balances only in explicit nonterminal mode. All26 Chapter19 sources compiled and16 scripts passed at `9f2f2ae7297b44fa443a0fe70a5e2616a74a4536`.
 
 [V-60](runtime-refresh-2026-11-05-r2.md) compiled510 Python files,passed299 scripts and matched511 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.3 piecewise contribution-transition continuity and independent segment-integral references, rather than reusing the account primitive for expected values. Independent review, supported platforms and release approval remain pending.
+
+## Piecewise continuity, logistic trajectories and V-61 — 2026-11-05
+
+[Piecewise evidence](chapter-19-piecewise-continuity-followup.md) passes nine independent prefix references,18 two-sided transition probes and zero/split-segment controls. [Logistic evidence](chapter-19-logistic-trajectory-followup.md) passes54 reciprocal-coordinate references and five split-time controls, including above-capacity trajectories. Both initial audits passed; numerical helpers are unchanged. All28 Chapter19 files compiled and18 scripts passed at `9f66a3c24a0c66a7afc6605a6ccd0b04ac334b0c`.
+
+[V-61](runtime-refresh-2026-11-05-r3.md) compiled512 Python files,passed301 scripts and matched513 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.2 logistic accepted-input and result range, including t=0 identity at extreme initial/capacity ratios, positive subnormal results and large-exponent saturation, with independent reciprocal/rational references. Independent review, supported platforms and release approval remain pending.
