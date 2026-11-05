@@ -1,6 +1,8 @@
 """Book 02 Section 20.3: financial and mathematical invariants (draft)."""
 import json
 import math
+from fractions import Fraction
+from _valuation_math import scaled_exponential as _scaled_valuation
 from _continuous_account import account as _account_balance
 
 def finite(value,name):
@@ -18,23 +20,19 @@ def discount_factor(rate,years):
     r,t=finite(rate,"rate"),finite(years,"years")
     if t<0:
         raise ValueError("years must be nonnegative")
-    try:
-        return finite(math.exp(-r*t),"discount_factor")
-    except OverflowError as exc:
-        raise ValueError("discount factor overflow") from exc
+    return _scaled_valuation(1.,-Fraction(r)*Fraction(t))
 
 def present_value(flow,rate,years):
-    f=finite(flow,"flow")
-    return finite(f*discount_factor(rate,years),"present_value")
+    f,r,t=(finite(v,n) for v,n in ((flow,"flow"),(rate,"rate"),(years,"years")))
+    if t<0:
+        raise ValueError("years must be nonnegative")
+    return _scaled_valuation(f,-Fraction(r)*Fraction(t))
 
 def future_value(flow,rate,years):
     f,r,t=finite(flow,"flow"),finite(rate,"rate"),finite(years,"years")
     if t<0:
         raise ValueError("years must be nonnegative")
-    try:
-        return finite(f*math.exp(r*t),"future_value")
-    except OverflowError as exc:
-        raise ValueError("future value overflow") from exc
+    return _scaled_valuation(f,Fraction(r)*Fraction(t))
 
 def account_transition(initial,rate,flow,years):
     a,r,u,t=(finite(v,n) for v,n in
