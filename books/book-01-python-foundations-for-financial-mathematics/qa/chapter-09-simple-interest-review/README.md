@@ -11,3 +11,5 @@ python3 -B books/book-01-python-foundations-for-financial-mathematics/qa/chapter
 ```
 
 Next: Section 9.4 formal lab and local answers.
+
+Later F46 follow-up: [conversion-underflow correction and exact-source rerun](../chapter-09-present-value-review/README.md). Original results above remain pinned historical evidence.

@@ -1,0 +1,247 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "d9b85146a430501baaba0cd2bb3040c31e4ce72458be8bc82c4af434c93e5bd7",
+  "listing_sha256": "7a026300e4fbd16e23da0e4c857245d21c0c585a2ffc6d1c099b8c3371237a34",
+  "all_source_sha256": {
+    "chapter-09/9.05-present-value.md": "d9b85146a430501baaba0cd2bb3040c31e4ce72458be8bc82c4af434c93e5bd7",
+    "chapter-09/9.01-the-time-value-of-money.md": "6f1e20cc174a90bdec1ccd4b4e8bc8012f1ee2288e22d4a8f383e87d180070c3",
+    "chapter-09/9.03-simple-interest.md": "7f76ae0a06f9e97ede6be391b3e0dfccb36ce48f325d93cc6df77f29f27f8aa8",
+    "chapter-09/9.04-compound-interest.md": "d77f6aaf14e5d5cf845321edfc7c7cc68649cee5211a09f8cf4bd6b696860416"
+  },
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "present_value.py"
+      ],
+      "stdout": "5000 in three years at 4% effective annually: PV = 4444.98\n",
+      "stderr": "test_01_worked_value (__main__.PresentValueTests.test_01_worked_value) ... ok\ntest_02_forward_reverse (__main__.PresentValueTests.test_02_forward_reverse) ... ok\ntest_03_zero_boundaries (__main__.PresentValueTests.test_03_zero_boundaries) ... ok\ntest_04_rate_and_time_ordering (__main__.PresentValueTests.test_04_rate_and_time_ordering) ... ok\ntest_05_signed_payments (__main__.PresentValueTests.test_05_signed_payments) ... ok\ntest_06_common_date_comparison (__main__.PresentValueTests.test_06_common_date_comparison) ... ok\ntest_07_invalid_inputs (__main__.PresentValueTests.test_07_invalid_inputs) ... ok\ntest_08_numerical_limits_and_staged_discount (__main__.PresentValueTests.test_08_numerical_limits_and_staged_discount) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "present_value.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    },
+    {
+      "section": "9.1",
+      "label": "legacy exact unittest",
+      "args": [
+        "-m",
+        "unittest",
+        "tvm_introduction",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_01_one_period_equivalence (tvm_introduction.TVMIntroductionTests.test_01_one_period_equivalence) ... ok\ntest_02_common_date_comparison (tvm_introduction.TVMIntroductionTests.test_02_common_date_comparison) ... ok\ntest_03_round_trip_and_composition (tvm_introduction.TVMIntroductionTests.test_03_round_trip_and_composition) ... ok\ntest_04_zero_time_and_zero_rate (tvm_introduction.TVMIntroductionTests.test_04_zero_time_and_zero_rate) ... ok\ntest_05_negative_rate_and_signed_amount (tvm_introduction.TVMIntroductionTests.test_05_negative_rate_and_signed_amount) ... ok\ntest_06_invalid_inputs (tvm_introduction.TVMIntroductionTests.test_06_invalid_inputs) ... ok\ntest_07_float_range_failures (tvm_introduction.TVMIntroductionTests.test_07_float_range_failures) ... ok\ntest_08_purchasing_power_is_separate (tvm_introduction.TVMIntroductionTests.test_08_purchasing_power_is_separate) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "section": "9.1",
+      "label": "legacy exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "tvm_introduction.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    },
+    {
+      "section": "9.3",
+      "label": "legacy exact unittest",
+      "args": [
+        "-m",
+        "unittest",
+        "simple_interest",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_01_reference_case (simple_interest.SimpleInterestTests.test_01_reference_case) ... ok\ntest_02_matching_monthly_units (simple_interest.SimpleInterestTests.test_02_matching_monthly_units) ... ok\ntest_03_fixed_day_bases (simple_interest.SimpleInterestTests.test_03_fixed_day_bases) ... ok\ntest_04_zero_boundaries (simple_interest.SimpleInterestTests.test_04_zero_boundaries) ... ok\ntest_05_additive_interest_not_rollover (simple_interest.SimpleInterestTests.test_05_additive_interest_not_rollover) ... ok\ntest_06_scalar_input_rejection (simple_interest.SimpleInterestTests.test_06_scalar_input_rejection) ... ok\ntest_07_day_input_rejection (simple_interest.SimpleInterestTests.test_07_day_input_rejection) ... ok\ntest_08_numerical_range_and_maturity_identity (simple_interest.SimpleInterestTests.test_08_numerical_range_and_maturity_identity) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "section": "9.3",
+      "label": "legacy exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "simple_interest.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    },
+    {
+      "section": "9.4",
+      "label": "legacy exact unittest",
+      "args": [
+        "-m",
+        "unittest",
+        "compound_interest",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_01_worked_schedule (compound_interest.CompoundTests.test_01_worked_schedule) ... ok\ntest_02_loop_closed_form_and_interest_sum (compound_interest.CompoundTests.test_02_loop_closed_form_and_interest_sum) ... ok\ntest_03_composition (compound_interest.CompoundTests.test_03_composition) ... ok\ntest_04_zero_and_one_period (compound_interest.CompoundTests.test_04_zero_and_one_period) ... ok\ntest_05_simple_comparison (compound_interest.CompoundTests.test_05_simple_comparison) ... ok\ntest_06_negative_rate (compound_interest.CompoundTests.test_06_negative_rate) ... ok\ntest_07_rejected_inputs (compound_interest.CompoundTests.test_07_rejected_inputs) ... ok\ntest_08_numerical_range_and_rounding (compound_interest.CompoundTests.test_08_numerical_range_and_rounding) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "section": "9.4",
+      "label": "legacy exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "compound_interest.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked present value from rational reciprocal",
+      "passed": true,
+      "actual": 4444.981793354574,
+      "exact_reference": "9765625/2197",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "worked future reconstruction retains full input",
+      "passed": true,
+      "actual": 5000.0,
+      "exact_reference": "5000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "wrong subtraction fails to invert",
+      "passed": true,
+      "actual": 4949.4016,
+      "exact_reference": "3093376/625",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "today common-date advantage",
+      "passed": true,
+      "actual": 55.01820664542629,
+      "exact_reference": "120875/2197",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "year3 common-date advantage",
+      "passed": true,
+      "actual": 61.88800000000083,
+      "exact_reference": "7736/125",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 1210 discounts to1000",
+      "passed": true,
+      "actual": 999.9999999999999,
+      "exact_reference": "1000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 rational roundtrip",
+      "passed": true,
+      "actual": 1209.9999999999998,
+      "exact_reference": "1210",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 payer obligation staysnegative",
+      "passed": true,
+      "actual": -1999.9999999999998,
+      "exact_reference": "-2000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 offers equal at common valuation date",
+      "passed": true,
+      "actual": 999.9999999999999,
+      "exact_reference": "1000",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P4 fixed positive payment decreases at higher rate",
+      "passed": true
+    },
+    {
+      "label": "P5 display rounding changes reverse amount",
+      "passed": true
+    },
+    {
+      "label": "negative-rate present exceeds future amount",
+      "passed": true,
+      "actual": 1020.4081632653061,
+      "exact_reference": "50000/49",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "staged constant-rate discount",
+      "passed": true,
+      "actual": 4444.981793354574,
+      "exact_reference": "9765625/2197",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "zero boundaries preserve signed amount",
+      "passed": true
+    },
+    {
+      "label": "9.5 rejects nonzero principal/payment lost during input conversion",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion",
+      "exact_input": "1 / 2**2000"
+    },
+    {
+      "label": "9.1 rejects nonzero principal/payment lost during input conversion",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion",
+      "exact_input": "1 / 2**2000"
+    },
+    {
+      "label": "9.3 rejects nonzero principal/payment lost during input conversion",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion",
+      "exact_input": "1 / 2**2000"
+    },
+    {
+      "label": "9.4 rejects nonzero principal/payment lost during input conversion",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion",
+      "exact_input": "1 / 2**2000"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
