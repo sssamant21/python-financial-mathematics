@@ -1,0 +1,13 @@
+# Section 19.8 — Contribution balance range and cancellation
+
+Date: 2026-11-05. Baseline: `a3f1269fd8fff56114f3db54ab98505b9325f977`. Corrected executable revision: `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`.
+
+The original continuous/end-period accumulation helpers failed17 of29 checks. Intermediate exponential/product range loss, zero-rate overflow and cancellation could hide a representable final balance. Continuous accumulation now forms exact represented-input equilibrium coefficients before wide exponential evaluation. Exact zero-rate/time arithmetic, equilibrium identities and selected negative-exponent half-subnormal limits are preserved. Nonzero final values rounding to zero or nonfinite final values raise ValueError.
+
+End-period accumulation retains the complete exp-relative ratio and weighted sum before conversion. Tiny period corrections use rational terms before amplification by a large total factor. The first correction passed the initial29 cases, but a separate1,201-digit-period probe still returned1 for a balance beyond float range. That intermediate observation and a2,001-digit-period control are retained. The corrected expanded33-case run passes, including the explicit evaluation-domain control.
+
+**Scoped limit:** the finite-payment helper rejects abs(rate*years)>4000, except exact zero/zero-rate/time/no-flow shortcuts. This is a declared educational evaluation domain, not a claim that every excluded balance is unrepresentable. Its removal and broader cancellation/correct-rounding work remain open. Nonterminal signed balances remain permitted as before; the selected arithmetic checks do not approve an overdraft model.
+
+[Runnable checker](../chapter-19/code/check_contribution_balance_range.py) uses separately accumulated finite payments, independent high-precision integrals and justified equilibrium/asymptotic references. [Raw evidence](chapter-19-contribution-balance-range-followup.json) retains initial failures, the first correction's pass, the intermediate false-finite probe, expanded final pass and scoped hashes. Run from chapter-19/code. Selected reference precision was reduced from2,200 to1,600 digits for the final checker; no ordinary float formula supplies its expected values.
+
+The first scoped rerun timed out after15 seconds in the unchanged rate-conversion checker, with no numerical failure output. That timeout is recorded separately. A60-second-budget rerun compiled34 Chapter19 files and passed24 scripts; its slowest script took about10.70 seconds. [V-66](runtime-refresh-2026-11-05-r8.md) passed under the same60-second budget. Independent review, supported platforms and release approval remain pending.
