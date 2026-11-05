@@ -1,0 +1,655 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "5f5ab519941f85d7e6b062c227757bc3793f8fcf",
+  "corrected_revision": "c8110de2a09da05fca5591c5a70c0d9278f51df4",
+  "initial_exit": 1,
+  "rerun_exit": 0,
+  "initial": [
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1e-154, 1e-154)",
+      "expected": 7.190772539449262,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1, -1)",
+      "expected": 0,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 0, 0)",
+      "expected": 0,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(0, 1.7976931348623157e+308, 1.7976931348623157e+308, 0, 5e-324, 1)",
+      "expected": 1.7763568394002503e-15,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(0, 1.7976931348623157e+308, -1.7976931348623157e+308, 0, 1.7976931348623157e+308, 1.7976931348623157e+308)",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 0, 0, -1.7976931348623157e+308, 2, 2)",
+      "expected": 0,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(5e-324, 0, 0, 0, 0.5, 0)",
+      "expected": "ValueError",
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 0, 0, 0, 2, 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(-1.7976931348623157e+308, 0, 0, 0, 2, 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1, 2, 2, 1, 1, -1)",
+      "expected": -2,
+      "actual": -2,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(2, 3, -1, 2, 2, 3)",
+      "expected": 38,
+      "actual": 38,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(5e-324, 0, 0, 0, 1, 0)",
+      "expected": 5e-324,
+      "actual": 5e-324,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(0, 1, 0, 0, 1, -1)",
+      "expected": -1,
+      "actual": -1,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, 5e-324], 0)",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, -5e-324], 5e-324)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, 5e-324], 5e-324)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, 1e-323], 5e-324)",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.7976931348623157e+308, 1.7976931348623157e+308], 0)",
+      "expected": false,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.7976931348623157e+308, 1.7976931348623157e+308], 1.7976931348623157e+308)",
+      "expected": false,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.7976931348623157e+308, 1.7976931348623157e+308, -1.7976931348623157e+308, -1.7976931348623157e+308, 1], 1.7976931348623157e+308)",
+      "expected": true,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.5, 0.5], 0)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.4, 0.6], 0)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.1, 0.9], 0)",
+      "expected": false,
+      "actual": true,
+      "passed": false
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.125], 0.125)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.875], 0.125)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.1250000000000002], 0.125)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([-0.125, 1.125], 0.125)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([-0.12500000000000003, 1.125], 0.125)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(True, 0, 0, 0, 0, 0)",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1, 0, 0, 1, 0, nan)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([], 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1], -5e-324)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([True], 0)",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1], inf)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "assessment.portfolio_feasible",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "assessment.indefinite_matrix_quadratic",
+      "expected": -2,
+      "actual": -2,
+      "passed": true
+    }
+  ],
+  "rerun": [
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1e-154, 1e-154)",
+      "expected": 7.190772539449262,
+      "actual": 7.190772539449262,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1, -1)",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 1.7976931348623157e+308, 0, 0)",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(0, 1.7976931348623157e+308, 1.7976931348623157e+308, 0, 5e-324, 1)",
+      "expected": 1.7763568394002503e-15,
+      "actual": 1.7763568394002503e-15,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(0, 1.7976931348623157e+308, -1.7976931348623157e+308, 0, 1.7976931348623157e+308, 1.7976931348623157e+308)",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 0, 0, -1.7976931348623157e+308, 2, 2)",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(5e-324, 0, 0, 0, 0.5, 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1.7976931348623157e+308, 0, 0, 0, 2, 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(-1.7976931348623157e+308, 0, 0, 0, 2, 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1, 2, 2, 1, 1, -1)",
+      "expected": -2,
+      "actual": -2,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(2, 3, -1, 2, 2, 3)",
+      "expected": 38,
+      "actual": 38,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(5e-324, 0, 0, 0, 1, 0)",
+      "expected": 5e-324,
+      "actual": 5e-324,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(0, 1, 0, 0, 1, -1)",
+      "expected": -1,
+      "actual": -1,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, 5e-324], 0)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, -5e-324], 5e-324)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, 5e-324], 5e-324)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1, 1e-323], 5e-324)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.7976931348623157e+308, 1.7976931348623157e+308], 0)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.7976931348623157e+308, 1.7976931348623157e+308], 1.7976931348623157e+308)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.7976931348623157e+308, 1.7976931348623157e+308, -1.7976931348623157e+308, -1.7976931348623157e+308, 1], 1.7976931348623157e+308)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.5, 0.5], 0)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.4, 0.6], 0)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.1, 0.9], 0)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.125], 0.125)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([0.875], 0.125)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1.1250000000000002], 0.125)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([-0.125, 1.125], 0.125)",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([-0.12500000000000003, 1.125], 0.125)",
+      "expected": false,
+      "actual": false,
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(True, 0, 0, 0, 0, 0)",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "helper": "covariance_quadratic_2x2",
+      "inputs": "(1, 0, 0, 1, 0, nan)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([], 0)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1], -5e-324)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([True], 0)",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "helper": "portfolio_feasible",
+      "inputs": "([1], inf)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "helper": "assessment.portfolio_feasible",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "helper": "assessment.indefinite_matrix_quadratic",
+      "expected": -2,
+      "actual": -2,
+      "passed": true
+    }
+  ],
+  "initial_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-matrix74/check_invariant_matrix_range.py\", line 78, in <module>\n    check()\n  File \"/tmp/book02-matrix74/check_invariant_matrix_range.py\", line 74, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "rerun_stderr": "",
+  "scope": {
+    "source_revision": "c8110de2a09da05fca5591c5a70c0d9278f51df4",
+    "blobs": {
+      "_continuous_account.py": "0240f600c8d783d13c62e46f726c785e19fa9564",
+      "_valuation_math.py": "21b39151f766662fe030482ce067ccd2760bfb0c",
+      "check_benchmark_account_range.py": "2a20524a10a9287f9f4fbe47f229fbadcbf8a3ca",
+      "check_benchmark_annuity_range.py": "b9aaddd7cbfe1e094fe8e32653c91d0a0bfb052b",
+      "check_benchmark_valuation_range.py": "01f0097fdd5d7e95c12a3a924b566b40a391b814",
+      "check_invariant_account_range.py": "d950321410e66d963a7db24526c99e978cfffaf8",
+      "check_invariant_matrix_range.py": "bf3d5afe684901f59a8e55dd5731476169f0bc74",
+      "check_invariant_valuation_range.py": "dc81391777cbfa40388ba42c8b3dc7d47c1ba020",
+      "check_section_20_01.py": "9d8f2cdc2bde2283ba1b9f610518af137c44f0a9",
+      "check_section_20_02.py": "f6187e2a0bfb5c11bb350f2387580da42f8cc08e",
+      "check_section_20_03.py": "f70be5be10dc48777295cbae632262ecbfdab01c",
+      "check_section_20_04.py": "77ef70afca83e701cd00cc44a3e6b22163ec4a50",
+      "check_section_20_05.py": "fad230c0d373d7cd09571863067f553f195c255d",
+      "check_section_20_06.py": "5cc023867be43734ffd938fe139c39a0f34edef1",
+      "check_section_20_07.py": "93e32a5ba36bb3d020a1138071f78cc852db23b7",
+      "check_section_20_08.py": "0f3feb5d1d8ebcdf5318864b5de6de4d7f92c7bd",
+      "check_section_20_09.py": "db043d5136d2991db1da6a88b2362b1179f3c699",
+      "check_section_20_10.py": "38cc87d0272db028860c7b794c81a27d3b91976f",
+      "check_vector_residual_design.py": "87d610bd2519bbb8464be51994b7b6e57b266c65",
+      "section_20_01.py": "c8223ece1a69ac2fb33278bccf9e689c64e398c6",
+      "section_20_02.py": "a8fe6cbe055b1b8d8185466d98d611ea98d0e4e3",
+      "section_20_03.py": "c6228eeb2102d7d020b2d77261d742ecbcdb20a2",
+      "section_20_04.py": "ed67ab3983d35041a2e0e1ce2e280ad311986be1",
+      "section_20_05.py": "72360096700472a2824305b3c87d2355d0ac5171",
+      "section_20_06.py": "c4b41dae13b6899a4dc53408d508f66ea9f4659d",
+      "section_20_07.py": "df698ccbb86d18f5d9f91a9a1fc075224575bb63",
+      "section_20_08.py": "40fad3707eea92730a631ecf05a20d0a3544c5be",
+      "section_20_09.py": "4af7dfe33995283bd2d7b615b871a52957fe5b46"
+    },
+    "compiled": 28,
+    "runs": {
+      "check_benchmark_account_range.py": {
+        "exit": 0,
+        "seconds": 1.6180894400000057,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_annuity_range.py": {
+        "exit": 0,
+        "seconds": 0.1482104209999875,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_valuation_range.py": {
+        "exit": 0,
+        "seconds": 3.8007292749999806,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_account_range.py": {
+        "exit": 0,
+        "seconds": 1.1728802539999492,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_matrix_range.py": {
+        "exit": 0,
+        "seconds": 0.33948960499998293,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_valuation_range.py": {
+        "exit": 0,
+        "seconds": 2.7952556910000226,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_01.py": {
+        "exit": 0,
+        "seconds": 0.03295706500000506,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_02.py": {
+        "exit": 0,
+        "seconds": 0.1119067829999949,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_03.py": {
+        "exit": 0,
+        "seconds": 0.24400703800000656,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_04.py": {
+        "exit": 0,
+        "seconds": 0.08982233199998291,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_05.py": {
+        "exit": 0,
+        "seconds": 0.06305335700000114,
+        "stderr": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.002s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_06.py": {
+        "exit": 0,
+        "seconds": 0.06739001000005373,
+        "stderr": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_07.py": {
+        "exit": 0,
+        "seconds": 0.09866603000000396,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_08.py": {
+        "exit": 0,
+        "seconds": 0.05992487499997878,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_09.py": {
+        "exit": 0,
+        "seconds": 0.0640756890000489,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_10.py": {
+        "exit": 0,
+        "seconds": 0.06482198200001221,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_vector_residual_design.py": {
+        "exit": 0,
+        "seconds": 0.2995565630000101,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Selected assistant-run numerical and runtime evidence only; no independent review, supported-platform validation, release acceptance or canonical approval."
+}
