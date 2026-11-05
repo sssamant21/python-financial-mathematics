@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-10-31  
-**Full-runtime candidate source revision:** `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`  
-**Latest scoped source revision:** `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`  
-**Disposition:** V-54 full candidate runtime refreshed; independent review and release approval pending.
+**Date:** 2026-11-04  
+**Full-runtime candidate source revision:** `eac8f8da5643d573ad9f5946c09b12622c422c7e`  
+**Latest scoped source revision:** `eac8f8da5643d573ad9f5946c09b12622c422c7e`  
+**Disposition:** V-55 candidate runtime refreshed; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-55](runtime-refresh-2026-11-04.md): 499 compiled, 288 scripts passed, and 500 required hashes verified before and after. G2–G8 unchanged.
 
 [V-54 twenty-third refresh](runtime-refresh-2026-10-31-r3.md):498 compiled,287 scripts passed,499 required hashes verified before/after. Includes bisection bounds,Newton order/safeguards and tiny discount-change oracles. G2–G8 unchanged.
 
@@ -65,7 +67,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | V-54:498 compiled,287 scripts passed,499 hashes verified before/after at `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`; platform/release checks remain open. [Evidence](runtime-refresh-2026-10-31-r3.md). | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-55](runtime-refresh-2026-11-04.md) at `eac8f8da5643d573ad9f5946c09b12622c422c7e`; platform and release checks remain open. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -296,3 +298,7 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Section18.2 evidence](chapter-18-discount-change-followup.md) adds59 selected1200-digit Decimal power references for tiny discount changes, with a four-ulp allowance and explicit sign/zero checks. Forty-six naive false zeros and three wrong variants are detected. Initial audit passed; implementation unchanged. All37 chapter files compiled and27 scripts passed at `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`.
 
 [V-54 full refresh](runtime-refresh-2026-10-31-r3.md) compiled498 files,passed287 scripts and verified499 required hashes before/after at `228a2ce79ca4d14cd4c6196238ba2e5a112ea8f5`,including all three checkers added since V-53. Thirty selected COV categories remain partially addressed; none closed by the register. Next substantive executable item: Section18.2 annuity PV accepted-input and complete product/quotient range,including tiny-rate/period scaling,zero-rate branch and representable versus unrepresentable final values,with independent cash-flow/analytic references. Broader local-convergence proof,continuity/uniqueness,conditioning,financial/model,independent-review,supported-platform and release obligations remain open.
+
+## Annuity PV range and V-55 — 2026-11-04
+
+[Section 18.2 annuity evidence](chapter-18-annuity-range-followup.md) retains 14 initial failed numerical cases and the successful rerun of all 22 numerical and five invalid-input cases. Complete discount and payment scaling now preserves selected representable results and rejects final overflow or nonzero underflow. [V-55](runtime-refresh-2026-11-04.md) compiled 499 files, passed 288 scripts and verified 500 required hashes before and after at `eac8f8da5643d573ad9f5946c09b12622c422c7e`. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.1 Exercise 16, independently bound the exponential Taylor remainder and compare the reported approximation error across selected magnitudes. Independent review, supported platforms and release acceptance remain pending.
