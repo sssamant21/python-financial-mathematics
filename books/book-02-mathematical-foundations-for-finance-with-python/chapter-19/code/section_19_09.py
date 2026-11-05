@@ -1,7 +1,8 @@
 """Book 02 Section 19.9: continuous account and depletion simulator."""
 import json
 import math
-from section_19_08 import depletion_time as _withdrawal_depletion
+from section_19_08 import (depletion_time as _withdrawal_depletion,
+                           continuous_contributions as _continuous_transition)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -19,11 +20,7 @@ def transition(balance,rate,flow,years):
              ((balance,"balance"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)+u*factor,"balance")
+    return _continuous_transition(a,r,u,t)
 
 def depletion_time(balance,rate,flow):
     a,r,u=finite(balance,"balance"),finite(rate,"rate"),finite(flow,"flow")
