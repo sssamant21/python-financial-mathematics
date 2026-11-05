@@ -1,7 +1,8 @@
 """Book 02 Section 18.1: financial numerical error taxonomy lab."""
 import json
 import math
-from decimal import Decimal, ROUND_HALF_EVEN
+from decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -14,19 +15,36 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return x
 
+def _round_result(value,name):
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside floating-point range") from exc
+    if not math.isfinite(result) or (value and result==0):
+        raise ValueError(f"{name} outside floating-point range")
+    return result
+
 def present_value(payment,rate,periods):
     c,r,n=(finite(v,name) for v,name in
            ((payment,"payment"),(rate,"rate"),(periods,"periods")))
     if c<0 or r<=-1 or n<0:
         raise ValueError("invalid payment, rate, or period")
-    return c/(1+r)**n
+    if c==0 or n==0 or r==0:
+        return c
+    # This coarse bound is beyond the combined payment and result ranges.
+    if abs(n*math.log1p(r))>2000:
+        raise ValueError("present value outside floating-point range")
+    with localcontext(Context(prec=850)):
+        value=Decimal(c)*(1+Decimal(r))**(-Decimal(n))
+    return _round_result(value,"present value")
 
 def errors(reference,estimate):
     y=finite(reference,"reference")
     z=finite(estimate,"estimate")
-    absolute=abs(z-y)
-    return {"absolute":absolute,
-            "relative":None if y==0 else absolute/abs(y)}
+    delta=abs(Fraction(z)-Fraction(y))
+    return {"absolute":_round_result(delta,"absolute error"),
+            "relative":None if y==0 else _round_result(
+                delta/abs(Fraction(y)),"relative error")}
 
 def exponential_approximation(x):
     x=finite(x,"x")
