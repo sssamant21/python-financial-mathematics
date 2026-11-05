@@ -88,7 +88,21 @@ def assessment():
         comparisons[str(n)]={"euler":e,"rk4":k,
                              "euler_absolute_error":abs(e-exact),
                              "rk4_absolute_error":abs(k-exact)}
-    return {"exact_growth":exact,"convergence":comparisons,
+    target_speed,target,initial=0.6,5000.0,3000.0
+    half_life=math.log(2)/target_speed
+    target_flow=target_speed*target
+    early=deposit_at(1000,0.05,500,1,5)
+    late=deposit_at(1000,0.05,500,3,5)
+    return {"applied_target_adjustment":{
+                "equilibrium":target,
+                "classification":classify_equilibrium(-target_speed),
+                "half_life":half_life,
+                "balance_at_half_life":exact_account(initial,-target_speed,target_flow,half_life),
+                "balance_at_year_five":exact_account(initial,-target_speed,target_flow,5)},
+            "applied_jump_timing":{"deposit":500.0,"horizon":5.0,
+                                   "deposit_year_one":early,"deposit_year_three":late,
+                                   "earlier_minus_later":early-late},
+            "exact_growth":exact,"convergence":comparisons,
             "contributions":exact_account(1000,0.04,200,5),
             "withdrawal_equilibrium":2500.0,
             "withdrawal_equilibrium_classification":classify_equilibrium(0.04),
