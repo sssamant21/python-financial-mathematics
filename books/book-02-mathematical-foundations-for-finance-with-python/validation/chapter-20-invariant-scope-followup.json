@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-05",
+  "inspected_revision": "a269480a0cf03aeb5829b218bd3cfd7600b99204",
+  "corrected_manuscript_revision": "281fc1a142978bcd1f23af9384173945bb844b84",
+  "source_blobs": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-20/code/section_20_03.py",
+      "sha": "ff299a5c6be9a7f4ba00d8f477a11824fdb20067"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-20/code/check_section_20_03.py",
+      "sha": "f70be5be10dc48777295cbae632262ecbfdab01c"
+    }
+  ],
+  "initial_source_scope": {
+    "lab_step_11": "Check covariance symmetry, nonnegative quadratic forms, and portfolio feasibility.",
+    "lab_step_12": "Emit an evidence manifest with runtime and review flags set to pending.",
+    "actual_quadratic_helper": "(a,b,c,d,x,y):\n    a,b,c,d,x,y=(finite(v,n) for v,n in\n                 ((a,\"a\"),(b,\"b\"),(c,\"c\"),(d,\"d\"),(x,\"x\"),(y,\"y\")))\n    if a!=a or d!=d:\n        raise ValueError(\"invalid diagonal\")\n    return finite(a*x*x+(b+c)*x*y+d*y*y,\"quadratic\")\n",
+    "actual_assessment": "\n    rate=0.04\n    first=account_transition(1000,rate,200,2)\n    return {\n        \"discount_zero_horizon\":discount_factor(rate,0),\n        \"discount_composition_left\":discount_factor(rate,5),\n        \"discount_composition_right\":discount_factor(rate,2)*discount_factor(rate,3),\n        \"pv_split_left\":present_value(100,rate,2),\n        \"pv_split_right\":present_value(40,rate,2)+present_value(60,rate,2),\n        \"pv_future_round_trip\":present_value(future_value(1000,rate,5),rate,5),\n        \"account_composition_left\":account_transition(1000,rate,200,5),\n        \"account_composition_right\":account_transition(first,rate,200,3),\n        \"cash_flow_split\":cash_flow_pv([(40,2),(60,2)],rate),\n        \"zero_interest_reconciliation\":account_transition(1000,0,200,5)-1000,\n        \"portfolio_feasible\":portfolio_feasible([0.4,0.6]),\n        \"indefinite_matrix_quadratic\":covariance_quadratic_2x2(1,2,2,1,1,-1),\n        \"runtime_certified\":False,\n        \"independent_review_completed\":False\n    }\n\nif __name__==\"__main__\":\n    print(json.dumps(assessment(),indent=2,allow_nan=False))\n"
+  },
+  "integer_reference_results": {
+    "rows": [
+      {
+        "vector": [
+          "1",
+          "0"
+        ],
+        "nonsymmetric": "2",
+        "symmetric": "2",
+        "sum_of_squares": "2"
+      },
+      {
+        "vector": [
+          "0",
+          "1"
+        ],
+        "nonsymmetric": "2",
+        "symmetric": "2",
+        "sum_of_squares": "2"
+      },
+      {
+        "vector": [
+          "1",
+          "-1"
+        ],
+        "nonsymmetric": "2",
+        "symmetric": "2",
+        "sum_of_squares": "2"
+      },
+      {
+        "vector": [
+          "2",
+          "3"
+        ],
+        "nonsymmetric": "38",
+        "symmetric": "38",
+        "sum_of_squares": "38"
+      },
+      {
+        "vector": [
+          "-4",
+          "5"
+        ],
+        "nonsymmetric": "42",
+        "symmetric": "42",
+        "sum_of_squares": "42"
+      },
+      {
+        "vector": [
+          "0",
+          "0"
+        ],
+        "nonsymmetric": "0",
+        "symmetric": "0",
+        "sum_of_squares": "0"
+      }
+    ],
+    "nonsymmetric_matrix_is_symmetric": false,
+    "symmetric_matrix_is_symmetric": true,
+    "applied_D_quadratic": "-2"
+  },
+  "replay_javascript": "(() => {\nconst A = [[2n,3n],[-1n,2n]], S = [[2n,1n],[1n,2n]];\nconst vectors = [[1n,0n],[0n,1n],[1n,-1n],[2n,3n],[-4n,5n],[0n,0n]];\nconst q = (m,x) => x[0]*(m[0][0]*x[0]+m[0][1]*x[1]) + x[1]*(m[1][0]*x[0]+m[1][1]*x[1]);\nconst rows = vectors.map(x => {\n const a = q(A,x), s = q(S,x), squares = x[0]**2n+x[1]**2n+(x[0]+x[1])**2n;\n if (a !== s || s !== squares || (x.some(v=>v!==0n) && s<=0n)) throw Error(\"quadratic reference mismatch\");\n return {vector:x.map(String), nonsymmetric:a.toString(), symmetric:s.toString(), sum_of_squares:squares.toString()};\n});\nif (A[0][1]===A[1][0] || S[0][1]!==S[1][0]) throw Error(\"symmetry control\");\nconst negative = q([[1n,2n],[2n,1n]],[1n,-1n]);\nif (negative!==-2n) throw Error(\"Applied D reference\");\nreturn {rows, nonsymmetric_matrix_is_symmetric:false, symmetric_matrix_is_symmetric:true, applied_D_quadratic:negative.toString()};\n})()",
+  "python_execution_performed": false,
+  "blocker": "No usable execution environment is available. Wait for an environment to become available before using this tool.",
+  "limits": "Source/manuscript scope reconciliation plus exact BigInt arithmetic in JavaScript. No execution of the Python quadratic helper, no general covariance validator, no independent reviewer sign-off, no platform or release acceptance."
+}
