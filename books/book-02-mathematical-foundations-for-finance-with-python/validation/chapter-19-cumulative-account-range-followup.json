@@ -1,0 +1,893 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "0e875ff0c65c8c302bc6b0b04f042710ba246f42",
+  "corrected_revision": "baf06212851ca7949fad4376e4b9857184fb1cb9",
+  "initial_exit": 1,
+  "rerun_exit": 0,
+  "initial": [
+    {
+      "helper": "exact_account",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 2)",
+      "expected": "-1.7976931348623157e+308",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 1000, -1000, 1)",
+      "expected": "1.0",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(5e-324, 1000, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(-5e-324, 1000, 0, 1)",
+      "expected": "-9.733444573000164e+110",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(0, 1.7976931348623157e+308, 0, 1.7976931348623157e+308)",
+      "expected": "0.0",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 1.7976931348623157e+308, 1.7976931348623157e+308, 0)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 0, -1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1000, 0.04, 200, 5)",
+      "expected": "2328.416548961019",
+      "actual": "2328.416548961019",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1.7976931348623157e+308, 1, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, -1000, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.0000000000000002, 0.9999999999999998, 1.0)",
+      "expected": "72.08730677823432",
+      "actual": "None",
+      "passed": false
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, 1, 1)",
+      "expected": "None",
+      "actual": "None",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.0000000000000002, 1, 1)",
+      "expected": "None",
+      "actual": "None",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.7976931348623157e+308, -1.7976931348623157e+308, 5e-324)",
+      "expected": "1.2037680156540672e-305",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, -1.7976931348623157e+308, 5e-324)",
+      "expected": "8.089382757342194e-306",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(5e-324, 0, 2)",
+      "expected": "'ValueError'",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.7976931348623157e+308, 0, 5e-324)",
+      "expected": "'ValueError'",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.7976931348623157e+308, 0, 1.7976931348623157e+308)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(0, 1, 0)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, -1, 0)",
+      "expected": "None",
+      "actual": "None",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1000, 0.04, 100)",
+      "expected": "12.770640594149768",
+      "actual": "12.770640594149768",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1000, -0.02, 50)",
+      "expected": "16.823611831060646",
+      "actual": "16.823611831060646",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(5e-324, 1000, 0, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 0, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(0, 0, -1, 0, 1)",
+      "expected": "-1.0",
+      "actual": "-1.0",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 0, 2)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, 0, -2, 1, 2)",
+      "expected": "-1.0",
+      "actual": "-1.0",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1000, 0.05, 200, 2, 5)",
+      "expected": "1516.3922652333981",
+      "actual": "1516.3922652333981",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1000, 0.05, 500, 1, 5)",
+      "expected": "1894.7267957678264",
+      "actual": "1894.7267957678266",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1000, 0.05, 500, 3, 5)",
+      "expected": "1836.6108757255654",
+      "actual": "1836.6108757255654",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(0, 1000, 5e-324, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, 0, 1.7976931348623157e+308, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, -1000, 0, 0.5, 1)",
+      "expected": "'ValueError'",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 0, 0, -1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(-1, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, 0, -1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, 0, 1, 2, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(True, 0, 0, 0)",
+      "expected": "'TypeError'",
+      "actual": "'TypeError'",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, nan, 0, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "assessment.exact_growth",
+      "expected": "1105.1709180756477",
+      "actual": "1105.1709180756477",
+      "passed": true
+    },
+    {
+      "helper": "assessment.contributions",
+      "expected": "2328.416548961019",
+      "actual": "2328.416548961019",
+      "passed": true
+    },
+    {
+      "helper": "assessment.deposit_at_year_two",
+      "expected": "1516.3922652333981",
+      "actual": "1516.3922652333981",
+      "passed": true
+    }
+  ],
+  "rerun": [
+    {
+      "helper": "exact_account",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 2)",
+      "expected": "-1.7976931348623157e+308",
+      "actual": "-1.7976931348623157e+308",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 1000, -1000, 1)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(5e-324, 1000, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "9.733444573000164e+110",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "9.125016462967946e-127",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(-5e-324, 1000, 0, 1)",
+      "expected": "-9.733444573000164e+110",
+      "actual": "-9.733444573000164e+110",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(0, 1.7976931348623157e+308, 0, 1.7976931348623157e+308)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 1.7976931348623157e+308, 1.7976931348623157e+308, 0)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 0, -1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1000, 0.04, 200, 5)",
+      "expected": "2328.416548961019",
+      "actual": "2328.416548961019",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1.7976931348623157e+308, 1, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, -1000, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.0000000000000002, 0.9999999999999998, 1.0)",
+      "expected": "72.08730677823432",
+      "actual": "72.08730677823432",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, 1, 1)",
+      "expected": "None",
+      "actual": "None",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.0000000000000002, 1, 1)",
+      "expected": "None",
+      "actual": "None",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.7976931348623157e+308, -1.7976931348623157e+308, 5e-324)",
+      "expected": "1.2037680156540672e-305",
+      "actual": "1.2037680156540672e-305",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, -1.7976931348623157e+308, 5e-324)",
+      "expected": "8.089382757342194e-306",
+      "actual": "8.089382757342194e-306",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(5e-324, 0, 2)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.7976931348623157e+308, 0, 5e-324)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1.7976931348623157e+308, 0, 1.7976931348623157e+308)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(0, 1, 0)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, -1, 0)",
+      "expected": "None",
+      "actual": "None",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1000, 0.04, 100)",
+      "expected": "12.770640594149768",
+      "actual": "12.770640594149768",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1000, -0.02, 50)",
+      "expected": "16.823611831060646",
+      "actual": "16.823611831060646",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(5e-324, 1000, 0, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "9.733444573000164e+110",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 0, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "9.125016462967946e-127",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(0, 0, -1, 0, 1)",
+      "expected": "-1.0",
+      "actual": "-1.0",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 0, 2)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, 0, -2, 1, 2)",
+      "expected": "-1.0",
+      "actual": "-1.0",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1000, 0.05, 200, 2, 5)",
+      "expected": "1516.3922652333981",
+      "actual": "1516.3922652333981",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1000, 0.05, 500, 1, 5)",
+      "expected": "1894.7267957678264",
+      "actual": "1894.7267957678264",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1000, 0.05, 500, 3, 5)",
+      "expected": "1836.6108757255654",
+      "actual": "1836.6108757255654",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(0, 1000, 5e-324, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "9.733444573000164e+110",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "9.125016462967946e-127",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1.7976931348623157e+308, 0, 1.7976931348623157e+308, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, -1000, 0, 0.5, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(1, 0, 0, -1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(-1, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "depletion_time",
+      "inputs": "(1, 0, -1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, 0, 1, 2, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "exact_account",
+      "inputs": "(True, 0, 0, 0)",
+      "expected": "'TypeError'",
+      "actual": "'TypeError'",
+      "passed": true
+    },
+    {
+      "helper": "deposit_at",
+      "inputs": "(1, nan, 0, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "assessment.exact_growth",
+      "expected": "1105.1709180756477",
+      "actual": "1105.1709180756477",
+      "passed": true
+    },
+    {
+      "helper": "assessment.contributions",
+      "expected": "2328.416548961019",
+      "actual": "2328.416548961019",
+      "passed": true
+    },
+    {
+      "helper": "assessment.deposit_at_year_two",
+      "expected": "1516.3922652333981",
+      "actual": "1516.3922652333981",
+      "passed": true
+    }
+  ],
+  "scope": {
+    "source_revision": "baf06212851ca7949fad4376e4b9857184fb1cb9",
+    "blobs": {
+      "check_account_step_range.py": "fba4cc2d01a10a4bb0ec79754c16417de5c23f75",
+      "check_applied_target_and_timing.py": "9d23d57ce7cd88a5832f056cf9a957e0e4fa9a4c",
+      "check_continuous_rate_edges.py": "7656fdadde1233c130a3ec241dad7233e8d8c89a",
+      "check_contribution_balance_range.py": "45c318153473c83b7e6acae013e0f0234535540f",
+      "check_contribution_frequency.py": "cc3588e76f2e7bc9158f2d06385df600b8543788",
+      "check_cumulative_account_range.py": "ff399ce2d50d3692ab185a0f2b460dbe00b3253f",
+      "check_depletion_classification_range.py": "9716736dd2ce06789b1248ed4e32ad6002ea9e16",
+      "check_euler_decay_stability.py": "0cf72c28b8f971ef6bd598a572ba001a3c227ec1",
+      "check_growth_balance_range.py": "2bf4ce58e3f423a1d3e719a5147ae0d8ff546759",
+      "check_integrated_growth_range.py": "b60899a49afbc9217593b6c72cb90dd9b23a27c2",
+      "check_logistic_range.py": "8546d272fd8265d3b23344396496fe0318dfe904",
+      "check_logistic_trajectories.py": "35141bf5ba91e30460305dbb23ed7f8ebbd972fa",
+      "check_nonterminal_jump_policy.py": "e0246e8816ff7ea6d54acbf27a1da5827df97c30",
+      "check_piecewise_continuity.py": "c2aef20c80ce1adca9e8c2ff72af0ff20f34f8cc",
+      "check_project_depletion_range.py": "55c565dcceaf6dd4435fba1b13a7d24c88df8daf",
+      "check_project_transition_range.py": "72334a7c37fb17537588a48c748776c41a3b7dea",
+      "check_quadratic_growth_range.py": "a601b3e9c23fec6cbaaf27a569cba18fe5e5af48",
+      "check_rate_conversion_range.py": "28bb4e5ec861e1aa613ad01e3cbb483cf9a5b9e4",
+      "check_section_19_01.py": "f75db61ff944189b8f1d4ec72db59f6f42976ecd",
+      "check_section_19_02.py": "409c65c02954c9f78184b0c4bfad3739f0e76f61",
+      "check_section_19_03.py": "45ee6d9f50331ceca3e4e5e9db1025d5481958bf",
+      "check_section_19_04.py": "304ff63a628430f74bfa4e2c10b03abf38b719a1",
+      "check_section_19_05.py": "220cedf1eab821ddc24768315c5a99f62024e684",
+      "check_section_19_06.py": "45e9eb2d28ba1f7874714ec9b116b7a89271fdd8",
+      "check_section_19_07.py": "f1a4d8cf7b38b2d9d1ea4aaedb4abf1635e807ef",
+      "check_section_19_08.py": "3466f971caa572474199bae9ced8ef94dc97db69",
+      "check_section_19_09.py": "06f760fb4887afd7c04553d3300c3c2f80be3d0f",
+      "check_section_19_10.py": "50098fdabf76330c2d420a3e98fa16f41e2614a0",
+      "check_time_varying_forcing.py": "52ceae3d2a420d8abbce3299c67fdf312c918bf1",
+      "section_19_01.py": "6a7c1ab15f03113cbe1ca6933d3dcf822a936374",
+      "section_19_02.py": "3fe68e5de05ea6840049a7f425f53a20ce7cbdc1",
+      "section_19_03.py": "5d369547d21fe5e3c6ed6b5839562944a8740caa",
+      "section_19_04.py": "2d611a1b29bc475a12c219e05e86a962ae0ff9f3",
+      "section_19_05.py": "f6b9ef50437dcd16d784a084a1047de788bd61a2",
+      "section_19_06.py": "8a9bac4c4b973db41c0274e0f7ada06ec131d71a",
+      "section_19_07.py": "454bbaf1759b096f88eb0fb2d09d4d9fcd97f22f",
+      "section_19_08.py": "8300579fb2fe18cb70f6ba73c7308074e2b0de2d",
+      "section_19_09.py": "844e5e139a6a89790b28f739346b8e1060d38eb4",
+      "section_19_10.py": "edcfe99c3fddbc9ef4849e5fb15429000e41c262"
+    },
+    "compiled": 39,
+    "runs": {
+      "check_account_step_range.py": {
+        "exit": 0,
+        "seconds": 0.0743593340000075,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_applied_target_and_timing.py": {
+        "exit": 0,
+        "seconds": 0.26663056000001006,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_continuous_rate_edges.py": {
+        "exit": 0,
+        "seconds": 0.10568199699997649,
+        "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_contribution_balance_range.py": {
+        "exit": 0,
+        "seconds": 2.696928712999977,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_contribution_frequency.py": {
+        "exit": 0,
+        "seconds": 0.9301728059999732,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_cumulative_account_range.py": {
+        "exit": 0,
+        "seconds": 3.230344236999997,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_depletion_classification_range.py": {
+        "exit": 0,
+        "seconds": 1.1963695869999924,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_euler_decay_stability.py": {
+        "exit": 0,
+        "seconds": 0.10428971799996134,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_growth_balance_range.py": {
+        "exit": 0,
+        "seconds": 1.1466883690000031,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_integrated_growth_range.py": {
+        "exit": 0,
+        "seconds": 1.2476680539999734,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_logistic_range.py": {
+        "exit": 0,
+        "seconds": 0.6121964590000175,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_logistic_trajectories.py": {
+        "exit": 0,
+        "seconds": 0.563421400999971,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_nonterminal_jump_policy.py": {
+        "exit": 0,
+        "seconds": 0.037150988999997026,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_piecewise_continuity.py": {
+        "exit": 0,
+        "seconds": 0.035739986999999473,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_project_depletion_range.py": {
+        "exit": 0,
+        "seconds": 0.4801860399999782,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_project_transition_range.py": {
+        "exit": 0,
+        "seconds": 0.8999568689999933,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_quadratic_growth_range.py": {
+        "exit": 0,
+        "seconds": 0.03143142900000839,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_rate_conversion_range.py": {
+        "exit": 0,
+        "seconds": 5.786744371999987,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_01.py": {
+        "exit": 0,
+        "seconds": 0.0422645050000483,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_02.py": {
+        "exit": 0,
+        "seconds": 0.10411588300001995,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_03.py": {
+        "exit": 0,
+        "seconds": 0.026344793000021127,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_04.py": {
+        "exit": 0,
+        "seconds": 0.03462298300001976,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_05.py": {
+        "exit": 0,
+        "seconds": 0.028317156000014165,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_06.py": {
+        "exit": 0,
+        "seconds": 0.03671445899999526,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_07.py": {
+        "exit": 0,
+        "seconds": 0.044064928000011605,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_08.py": {
+        "exit": 0,
+        "seconds": 0.16714558299997861,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_09.py": {
+        "exit": 0,
+        "seconds": 0.1108985409999832,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_10.py": {
+        "exit": 0,
+        "seconds": 0.1735727320000251,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_time_varying_forcing.py": {
+        "exit": 0,
+        "seconds": 0.035064126000008855,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Selected assistant-derived references and Python 3.12.14/Linux checks only. No independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval, arbitrary-range accuracy or real financial model validation is established. COV categories remain partial.",
+  "materialization": {
+    "initial_failure": "Git blob mismatch: check_account_step_range.py; no numerical checker ran",
+    "cause": "Patch transfer appended one extra newline",
+    "corrected_files": [
+      "check_account_step_range.py",
+      "check_applied_target_and_timing.py",
+      "check_continuous_rate_edges.py",
+      "check_contribution_balance_range.py",
+      "check_contribution_frequency.py",
+      "check_depletion_classification_range.py",
+      "check_euler_decay_stability.py",
+      "check_growth_balance_range.py",
+      "check_integrated_growth_range.py",
+      "check_logistic_range.py",
+      "check_logistic_trajectories.py",
+      "check_nonterminal_jump_policy.py",
+      "check_piecewise_continuity.py",
+      "check_project_depletion_range.py",
+      "check_project_transition_range.py",
+      "check_quadratic_growth_range.py",
+      "check_rate_conversion_range.py",
+      "check_section_19_01.py",
+      "check_section_19_02.py",
+      "check_section_19_03.py",
+      "check_section_19_04.py",
+      "check_section_19_05.py",
+      "check_section_19_06.py",
+      "check_section_19_07.py",
+      "check_section_19_08.py",
+      "check_section_19_09.py",
+      "check_section_19_10.py",
+      "check_time_varying_forcing.py",
+      "section_19_01.py",
+      "section_19_02.py",
+      "section_19_03.py",
+      "section_19_04.py",
+      "section_19_05.py",
+      "section_19_06.py",
+      "section_19_07.py",
+      "section_19_08.py",
+      "section_19_09.py",
+      "section_19_10.py"
+    ],
+    "verified_files": 38
+  },
+  "account-initial_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-cumulative-range/check_cumulative_account_range.py\", line 125, in <module>\n    check()\n  File \"/tmp/book02-cumulative-range/check_cumulative_account_range.py\", line 121, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "account-rerun_stderr": ""
+}
