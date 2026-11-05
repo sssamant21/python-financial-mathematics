@@ -1,0 +1,99 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "a5d874f5b8482a18bfa9f48b13632ce89050bf205179ced7209318ff2330e05c",
+  "program_sha256": "a23ab50a90afc18a105749c18d27038053f26e5fdf16ae97a65b118acf43112a",
+  "tests_sha256": "b162689a7ee775c53f67d97a28e1a5d56ec2948a515089e5fb6ffec4d112915d",
+  "png_sha256": "047153e038f6faad52f57f0fb68cbb53baa2b54c8c90ff07bb90a2f5808c0d38",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_correlation_independent_centered_formula (test_scatter_relationships.ScatterTests.test_correlation_independent_centered_formula) ... ok\ntest_degenerate_correlation_and_no_pairs (test_scatter_relationships.ScatterTests.test_degenerate_correlation_and_no_pairs) ... ok\ntest_exact_label_pairing_and_coverage (test_scatter_relationships.ScatterTests.test_exact_label_pairing_and_coverage) ... ok\ntest_invalid_indexes (test_scatter_relationships.ScatterTests.test_invalid_indexes) ... ok\ntest_invalid_values_and_dtype (test_scatter_relationships.ScatterTests.test_invalid_values_and_dtype) ... ok\ntest_offsets_reference_export_and_cleanup (test_scatter_relationships.ScatterTests.test_offsets_reference_export_and_cleanup) ... ok\ntest_source_order_and_zone_invariance (test_scatter_relationships.ScatterTests.test_source_order_and_zone_invariance) ... ok\ntest_source_preservation (test_scatter_relationships.ScatterTests.test_source_preservation) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.173s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "scatter_relationships.py"
+      ],
+      "returncode": 0,
+      "stdout": "Expected: 8; complete pairs: 6; excluded: 2\nBenchmark absent endpoints: 1\nAsset explicit missing cells: 1\nPaired sample Pearson r: 0.9388\nSaved output/scatter_relationships.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "matched pair date identifies 2%,1% point",
+      "passed": true
+    },
+    {
+      "label": "explicit missing and absent rows are distinct",
+      "passed": true
+    },
+    {
+      "label": "zero pair retained",
+      "passed": true
+    },
+    {
+      "label": "supplemental vertical difference is half a percentage point",
+      "passed": true
+    },
+    {
+      "label": "independent centered-sum correlation",
+      "passed": true,
+      "numerator": 550,
+      "denominator_squared": 343252
+    },
+    {
+      "label": "controlled affine relation has unit correlation but slope two",
+      "passed": true
+    },
+    {
+      "label": "constant input still displays pairs but withholds coefficient",
+      "passed": true
+    },
+    {
+      "label": "source reversal preserves aligned frames and report",
+      "passed": true
+    },
+    {
+      "label": "artist coordinates are exact matched pairs",
+      "passed": true
+    },
+    {
+      "label": "reference is equality with common bounds and aspect",
+      "passed": true
+    }
+  ]
+}
