@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-11-04  
-**Full-runtime candidate source revision:** `46aa9c5a32f9a3293bcd7926efa4c04c984a3258`  
-**Latest scoped source revision:** `62691beb94b8747787990a187ea5925eaeb9208d`  
-**Disposition:** V-58 full candidate pass plus subsequent Chapter 19 scope; independent review and release approval pending.
+**Date:** 2026-11-05  
+**Full-runtime candidate source revision:** `36006c921c0c005f2812e0589f2b68e64dfc17b4`  
+**Latest scoped source revision:** `36006c921c0c005f2812e0589f2b68e64dfc17b4`  
+**Disposition:** V-59 full candidate pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-59](runtime-refresh-2026-11-05.md): 508 compiled, 297 passed, 509 required hashes matched before and after. Includes Chapter 19 applied and frequency/stability follow-ups; G2–G8 unchanged.
 
 [V-58](runtime-refresh-2026-11-04-r4.md): 505 compiled, 294 passed, 506 required hashes verified. Chapter 19 applied changes followed this full run.
 
@@ -73,7 +75,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-58](runtime-refresh-2026-11-04-r4.md) at `46aa9c5a32f9a3293bcd7926efa4c04c984a3258`; later Chapter 19 changes have scoped evidence. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-59](runtime-refresh-2026-11-05.md) at `36006c921c0c005f2812e0589f2b68e64dfc17b4`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -328,3 +330,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 ## Exponential reports and Chapter 19 applied cases — 2026-11-04
 
 [Section 18.1 evidence](chapter-18-exponential-report-range-followup.md) preserves eight initial failures and a 44-case pass. [V-58](runtime-refresh-2026-11-04-r4.md) compiled 505 Python files, passed 294 scripts and verified 506 required hashes before and after at `46aa9c5a32f9a3293bcd7926efa4c04c984a3258`. Subsequent [Section 19.10 evidence](chapter-19-applied-target-timing-followup.md) preserves the missing applied outputs and passes all 11 observations at `62691beb94b8747787990a187ea5925eaeb9208d`; all 22 Chapter 19 sources compiled and 12 scripts passed. COV-84 is newly partially addressed, bringing the register to 31 selected categories partially addressed and none closed. Next substantive item: Section 19.8 discrete-to-continuous contribution frequency convergence, with independent finite cash-flow and integral references. Independent review, supported platforms and release approval remain pending.
+
+## Contribution frequency, Euler stability and V-59 — 2026-11-05
+
+[Section 19.8 evidence](chapter-19-contribution-frequency-followup.md) checks 20 finite-sum references, six identity controls, 16 observed/reference order ratios and three wrong variants. The initial harness failure and corrected rounding allowance are retained; the numerical helper is unchanged. [Section 19.5 evidence](chapter-19-euler-stability-followup.md) checks six observed four-step decay paths against exact amplification references and detects three altered records. All 24 Chapter 19 sources compiled and 14 scripts passed at `36006c921c0c005f2812e0589f2b68e64dfc17b4`.
+
+[V-59](runtime-refresh-2026-11-05.md) compiled 508 Python files, passed 297 scripts and matched 509 required source/fixture hashes before and after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section 19.5/19.6 arbitrary time-varying forcing, with independent polynomial solution/stage references and actual callback-time observations; selected constant-flow and decay cases are already covered. Independent review, supported platforms and release approval remain pending.
