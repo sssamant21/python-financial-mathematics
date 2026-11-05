@@ -59,14 +59,21 @@ def portfolio_feasible(weights,tolerance=1e-10):
     if not isinstance(weights,(list,tuple)) or not weights:
         raise ValueError("weights must be a nonempty sequence")
     w=[finite(v,"weight") for v in weights]
-    return all(x>=-tol for x in w) and abs(math.fsum(w)-1)<=tol
+    bound=Fraction(tol)
+    return all(x>=-tol for x in w) and abs(sum(map(Fraction,w))-1)<=bound
 
 def covariance_quadratic_2x2(a,b,c,d,x,y):
     a,b,c,d,x,y=(finite(v,n) for v,n in
                  ((a,"a"),(b,"b"),(c,"c"),(d,"d"),(x,"x"),(y,"y")))
-    if a!=a or d!=d:
-        raise ValueError("invalid diagonal")
-    return finite(a*x*x+(b+c)*x*y+d*y*y,"quadratic")
+    a,b,c,d,x,y=map(Fraction,(a,b,c,d,x,y))
+    value=a*x*x+(b+c)*x*y+d*y*y
+    try:
+        result=float(value)
+    except OverflowError as exc:
+        raise ValueError("quadratic outside floating-point range") from exc
+    if value and result==0:
+        raise ValueError("quadratic outside floating-point range")
+    return result
 
 def assessment():
     rate=0.04
