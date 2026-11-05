@@ -1,0 +1,101 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "a0ec0c187fd9b8b36a49bf4ae0cf4e23cd6041534004522cfc2cd95fe9616c5f",
+  "program_sha256": "dca8377ee46b877dc45ac4412eac20ee793d26f6f57dc77e68085294b32d150c",
+  "tests_sha256": "2c7b7502f275048415c0f521f8b3c1bb15c826d21af2530d70c92a37015dfc23",
+  "png_sha256": "34ecfffabd400a1dd4d8b9f375feba06488a66f6f792b85b72c6e6626f66225c",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_artists_heatmap_export_and_cleanup (test_scenario_charts.ScenarioTests.test_artists_heatmap_export_and_cleanup) ... ok\ntest_invalid_horizons (test_scenario_charts.ScenarioTests.test_invalid_horizons) ... ok\ntest_invalid_principal_and_rates (test_scenario_charts.ScenarioTests.test_invalid_principal_and_rates) ... ok\ntest_known_values_and_matrix_orientation (test_scenario_charts.ScenarioTests.test_known_values_and_matrix_orientation) ... ok\ntest_local_derivative_independent_formula (test_scenario_charts.ScenarioTests.test_local_derivative_independent_formula) ... ok\ntest_monotonicity_for_positive_fixture (test_scenario_charts.ScenarioTests.test_monotonicity_for_positive_fixture) ... ok\ntest_named_scenarios_full_revaluation (test_scenario_charts.ScenarioTests.test_named_scenarios_full_revaluation) ... ok\ntest_source_copies_scaling_and_negative_rates (test_scenario_charts.ScenarioTests.test_source_copies_scaling_and_negative_rates) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.451s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "scenario_charts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Reference terminal balance: USD 1628.89\n3% rate, 8 years: balance USD 1266.77; difference USD -362.12\nReference: 5%, 10 years: balance USD 1628.89; difference USD +0.00\n7% rate, 12 years: balance USD 2252.19; difference USD +623.30\nSaved output/scenario_charts.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "reference input contract and independent exact balance",
+      "passed": true,
+      "rational_balance": "16679880978201/10240000000"
+    },
+    {
+      "label": "all named outputs and deltas match rational oracle",
+      "passed": true
+    },
+    {
+      "label": "supplemental basis point conversion",
+      "passed": true
+    },
+    {
+      "label": "local derivative units differ from full finite shock",
+      "passed": true,
+      "derivative": "794280046581/51200000",
+      "first_order": "794280046581/5120000000",
+      "finite_shock": "16195306976541221551/100000000000000000"
+    },
+    {
+      "label": "entire rate-row horizon-column grid matches independent fractions",
+      "passed": true
+    },
+    {
+      "label": "matrix index2,1 is reference",
+      "passed": true
+    },
+    {
+      "label": "declared Real Fraction principal accepted",
+      "passed": false,
+      "error": "TypeError(\"ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''\")"
+    },
+    {
+      "label": "source scenario bar heights show full joint deltas",
+      "passed": true
+    },
+    {
+      "label": "mesh values preserve numerical grid orientation",
+      "passed": true
+    },
+    {
+      "label": "colorbar identifies USD and no probability is assigned",
+      "passed": true
+    }
+  ]
+}
