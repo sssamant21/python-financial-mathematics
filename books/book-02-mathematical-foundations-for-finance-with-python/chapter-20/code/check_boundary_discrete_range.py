@@ -55,6 +55,9 @@ def check():
                  (100,.25,12),(100,-.1,12),(100,0,5),(s,0,1),
                  (m,1,128),(m,1,129),(s,.1,129)]:
         rows.append(observe(lab.annuity_pv,args,annuity_reference(*args)))
+    for args in [(math.ldexp(1.,-819),1,256),(-math.ldexp(1.,-819),1,256),
+                 (math.ldexp(1.,425),1,1500),(math.nextafter(math.ldexp(1.,-819),1.),1,256)]:
+        rows.append(observe(lab.present_value,args,pv_reference(*args)))
     # For n=1/s, 1-s/2 <= n*ln(1+s) <= 1. The correction is
     # too small to change either of these rounded exponential limits.
     with localcontext() as ctx:
