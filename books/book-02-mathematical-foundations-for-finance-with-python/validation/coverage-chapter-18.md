@@ -130,3 +130,7 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 ## Compound growth and discount range — 2026-11-04
 
 [Section 18.2 range checks](chapter-18-growth-discount-range-followup.md) preserve 27 initial failures and a 75-case pass at `1cdc4c891bd443dbbc5303d2f5715b26350da7bc`. [V-57](runtime-refresh-2026-11-04-r3.md) compiled 503 files, passed 292 scripts and verified 504 required hashes before and after execution. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.2 decimal-text cent rounding, including caller context isolation, half-even ties and explicit accepted magnitude/output limits. Independent review, supported platforms and release approval remain pending.
+
+## Decimal-text cents — 2026-11-04
+
+[Section 18.2 evidence](chapter-18-decimal-text-cents-followup.md) preserves 16 initial failures and a 32-observation pass at `3bb510f1715d9f734bc5e73ea19783e73f0ac4bf`. The formatter now isolates caller context and documents the original default output limit. All 43 Chapter 18 sources compiled and 33 scripts passed. V-57 remains the latest full run; this later change has scoped evidence. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.1 exponential approximation and cancellation-report range contracts, separating true saturation from a rounded zero and checking error behavior at extreme exponents. Independent review, supported platforms and release approval remain pending.
