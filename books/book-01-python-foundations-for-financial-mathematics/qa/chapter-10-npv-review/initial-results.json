@@ -1,0 +1,274 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "becf6377e22e27616d6f1da01a02fd4f8146d8adac3f03678d434a4a37f5ccdb",
+  "listing_sha256": "be29b120f278c636f7dea474b40d7e608985c8957fecbb93bec54e1d889fec34",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "net_present_value.py"
+      ],
+      "returncode": 0,
+      "stdout": "Example NPV: 4.13\n",
+      "stderr": "test_01_positive (__main__.Tests.test_01_positive) ... ok\ntest_02_negative (__main__.Tests.test_02_negative) ... ok\ntest_03_zero (__main__.Tests.test_03_zero) ... ok\ntest_04_initial_not_discounted (__main__.Tests.test_04_initial_not_discounted) ... ok\ntest_05_zero_rate (__main__.Tests.test_05_zero_rate) ... ok\ntest_06_negative_rate (__main__.Tests.test_06_negative_rate) ... ok\ntest_07_empty (__main__.Tests.test_07_empty) ... ok\ntest_08_components (__main__.Tests.test_08_components) ... ok\ntest_09_rate_sensitivity (__main__.Tests.test_09_rate_sensitivity) ... ok\ntest_10_profitability_index (__main__.Tests.test_10_profitability_index) ... ok\ntest_11_nonconventional (__main__.Tests.test_11_nonconventional) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "net_present_value.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 initial cost",
+      "passed": true,
+      "actual": -100.0,
+      "rational_reference": "-100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 one-year receipt",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 break-even",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 positive NPV",
+      "passed": true,
+      "actual": 4.132231404958681,
+      "rational_reference": "500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 negative NPV",
+      "passed": true,
+      "actual": -30.578512396694215,
+      "rational_reference": "-3700/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 zero rate",
+      "passed": true,
+      "actual": 25.0,
+      "rational_reference": "25",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative rate",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nonconventional",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 sensitivity 1/20",
+      "passed": true,
+      "actual": 11.564625850340136,
+      "rational_reference": "1700/147",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 sensitivity 1/10",
+      "passed": true,
+      "actual": 4.132231404958681,
+      "rational_reference": "500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 sensitivity 3/20",
+      "passed": true,
+      "actual": -2.457466918714559,
+      "rational_reference": "-1300/529",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 conventional sensitivity ordering",
+      "passed": true
+    },
+    {
+      "label": "P11 profitability index",
+      "passed": true,
+      "actual": 1.0413223140495866,
+      "rational_reference": "126/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 zero receipts PI",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "component period 0",
+      "passed": true
+    },
+    {
+      "label": "component amount 0",
+      "passed": true,
+      "actual": -100.0,
+      "rational_reference": "-100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "component period 1",
+      "passed": true
+    },
+    {
+      "label": "component amount 1",
+      "passed": true,
+      "actual": 54.54545454545454,
+      "rational_reference": "600/11",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "component period 2",
+      "passed": true
+    },
+    {
+      "label": "component amount 2",
+      "passed": true,
+      "actual": 49.58677685950413,
+      "rational_reference": "6000/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "component sum equals independent NPV",
+      "passed": true,
+      "actual": 4.132231404958667,
+      "rational_reference": "500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "signed cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "rational_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 components need not form overflowing power",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')",
+      "reference": "0"
+    },
+    {
+      "label": "F56 zero future flow need not form overflowing factor",
+      "passed": false,
+      "exception": "ValueError('valuation overflow')",
+      "reference": "0"
+    },
+    {
+      "label": "F54 discount factor underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 PI overflow",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 PI underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F59 PI nonfinite initial cost",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F59 PI NaN initial cost",
+      "passed": false,
+      "actual": "nan"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must be finite and greater than -1')"
+    },
+    {
+      "label": "invalid receipt",
+      "passed": true,
+      "exception": "ValueError('cash flows must be finite numbers')"
+    },
+    {
+      "label": "nonconventional PI rejected",
+      "passed": true,
+      "exception": "ValueError('simple PI requires no subsequent outflows')"
+    },
+    {
+      "label": "nonnegative initial cost",
+      "passed": true,
+      "exception": "ValueError('initial investment must be negative')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_prompts": [
+    1,
+    8,
+    9,
+    12
+  ],
+  "historical_unique_methods_added": 0
+}
