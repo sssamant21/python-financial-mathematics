@@ -1,0 +1,105 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "a19224bd35e546c1b299304e9a2e0668c3b976806656fc4f15422fa07ab36baa",
+  "program_sha256": "bbeecc7a0314205b3be41e8fe4263c80191afdd8eb57cef15b551f38d3db24f2",
+  "tests_sha256": "b225d2334893b79e79ccfaac1cc39863ae732d357a5843cfd4d11af0c9c82d7a",
+  "png_sha256": "a42cc9d0568df95c6a3dffb8f10b54bbb243083cd020ebbca0c88a7bf38fb387",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_chart_data_scales_steps_export_and_cleanup (test_growth_curves.GrowthTests.test_chart_data_scales_steps_export_and_cleanup) ... ok\ntest_equivalent_annual_rates (test_growth_curves.GrowthTests.test_equivalent_annual_rates) ... ok\ntest_grid_and_credit_period_validation (test_growth_curves.GrowthTests.test_grid_and_credit_period_validation) ... ok\ntest_invalid_scalars_and_conventions (test_growth_curves.GrowthTests.test_invalid_scalars_and_conventions) ... ok\ntest_known_endpoints_and_initial_principal (test_growth_curves.GrowthTests.test_known_endpoints_and_initial_principal) ... ok\ntest_periodic_recurrence_independent_route (test_growth_curves.GrowthTests.test_periodic_recurrence_independent_route) ... ok\ntest_source_preservation_and_positive_scaling (test_growth_curves.GrowthTests.test_source_preservation_and_positive_scaling) ... ok\ntest_zero_and_negative_rates_and_positive_domain (test_growth_curves.GrowthTests.test_zero_and_negative_rates_and_positive_domain) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.275s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "growth_curves.py"
+      ],
+      "returncode": 0,
+      "stdout": "Simple 5% per year: year 20 balance USD 2000.00\nAnnual 5% nominal: year 20 balance USD 2653.30\nMonthly 5% nominal: year 20 balance USD 2712.64\nContinuous 5% force: year 20 balance USD 2718.28\nEffective annual rate from monthly 5% nominal: 5.116190%\nSaved output/growth_curves.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "independent high-precision four endpoints",
+      "passed": true,
+      "decimal_references": [
+        "2000.00",
+        "2653.2977051444201339454307651519775390625000",
+        "2712.64028548199843532005100725485657590288891661815564893537",
+        "2718.28182845904523536028747135266249775724709369995957496697"
+      ]
+    },
+    {
+      "label": "simple interest at10 and annual recurrence",
+      "passed": true
+    },
+    {
+      "label": "nominal monthly effective annual exceeds five percent",
+      "passed": true,
+      "reference": "0.05116189788173318980487389096080009852688855382185534236166"
+    },
+    {
+      "label": "equivalent monthly nominal matches every common year-end",
+      "passed": true,
+      "equivalent_nominal": "0.04888948540377961926503523206528596303895435291752931843196"
+    },
+    {
+      "label": "annual rejects half-year credit",
+      "passed": true
+    },
+    {
+      "label": "monthly accepts six completed periods",
+      "passed": true
+    },
+    {
+      "label": "simple negative rate rejects zero balance",
+      "passed": true
+    },
+    {
+      "label": "declared Real Fraction scalars accepted",
+      "passed": false,
+      "error": "TypeError(\"ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''\")"
+    },
+    {
+      "label": "log scale retains exact source monetary arrays",
+      "passed": true
+    },
+    {
+      "label": "periodic artists are post-step and others linearly connected",
+      "passed": true
+    }
+  ]
+}
