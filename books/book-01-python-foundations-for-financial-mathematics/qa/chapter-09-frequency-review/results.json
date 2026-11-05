@@ -1,0 +1,228 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "57248537ad33325019f2061f37f8572168f2dc10c507cc586d6338eb00da61b1",
+  "listing_sha256": "9ce009bbc16e3c799bd95e2b5f8ccfbfb018d4f3ad1e6b44133ec98823050910",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "compounding_frequency.py"
+      ],
+      "stdout": "Annual        EAR=6.00000000% balance=10,600.00\nSemiannual    EAR=6.09000000% balance=10,609.00\nQuarterly     EAR=6.13635506% balance=10,613.64\nMonthly       EAR=6.16778119% balance=10,616.78\nDaily (365)   EAR=6.18313107% balance=10,618.31\n",
+      "stderr": "test_01_annual (__main__.FrequencyTests.test_01_annual) ... ok\ntest_02_semiannual (__main__.FrequencyTests.test_02_semiannual) ... ok\ntest_03_quarterly (__main__.FrequencyTests.test_03_quarterly) ... ok\ntest_04_monthly (__main__.FrequencyTests.test_04_monthly) ... ok\ntest_05_frequency_order (__main__.FrequencyTests.test_05_frequency_order) ... ok\ntest_06_fixed_effective (__main__.FrequencyTests.test_06_fixed_effective) ... ok\ntest_07_limit_and_multiyear (__main__.FrequencyTests.test_07_limit_and_multiyear) ... ok\ntest_08_invalid_and_zero (__main__.FrequencyTests.test_08_invalid_and_zero) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "compounding_frequency.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "Annual effective annual Decimal reference",
+      "passed": true,
+      "actual": 0.06,
+      "high_precision_reference": "0.06",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "Annual balance rational reference",
+      "passed": true,
+      "actual": 10600.0,
+      "high_precision_reference": "10600",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "Semiannual effective annual Decimal reference",
+      "passed": true,
+      "actual": 0.060899999999999996,
+      "high_precision_reference": "0.0609",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "Semiannual balance rational reference",
+      "passed": true,
+      "actual": 10609.0,
+      "high_precision_reference": "10609",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "Quarterly effective annual Decimal reference",
+      "passed": true,
+      "actual": 0.061363550625,
+      "high_precision_reference": "0.061363550625",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "Quarterly balance rational reference",
+      "passed": true,
+      "actual": 10613.63550625,
+      "high_precision_reference": "1698181681/160000",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "Monthly effective annual Decimal reference",
+      "passed": true,
+      "actual": 0.06167781186449957,
+      "high_precision_reference": "0.061677811864499568789707617431640625",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "Monthly balance rational reference",
+      "passed": true,
+      "actual": 10616.778118644996,
+      "high_precision_reference": "4348632317396990233762642401/409600000000000000000000",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "Daily (365) effective annual Decimal reference",
+      "passed": true,
+      "actual": 0.0618313106778537,
+      "high_precision_reference": "0.06183131067785368935076847909991102404347259640942689055168985711795648844956131488907082",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "Daily (365) balance rational reference",
+      "passed": true,
+      "actual": 10618.313106778536,
+      "high_precision_reference": "24378256188178083484687007650773599887405775462789967307357258233117008789867542152570734769701967840266450405665987503115759778864099705896664733834498769165827802201032708613411734487820145941291552548843580978613361462684382267064702992169461810447555493683580826714084782565124238208248513156129527453100527748256975640101039122185551059104035841392706315316830837510221185650798066120394466901207349636231491073404127147183753207888157986339518451365019164694251955264136815936744169198498477335963383143025925136893266302989225761998021500016727179956850909191325368024154664125986355397049295765454753474221913512307310451401306361943604511620725310133736285351478987410165681279702159319275993574810142440609675659077468223110674084806171463454344720459659973543518882066645826077084841282424099154610252867695619780878560489589554262298620440929212344282256743747337009743443354103115141948064271495799452058946877401347389221436164579812938049475568975719914151155388419514920292941248095228882809774457615954539247951985515477031334182713178870282586735509460208380860773091808468750421853361378947604359801141275966080673585419703541084999714817491796487728908945181404848322633750137754699303052737809476172857329426514665299629772335431047669707173139433931204490309591615437587844302687685218770918575807116253846378446668111154151043963803539989227333912438611254017309083428110981273611121509243722407881182327801098042956852706607859200058306272648294579864461958099836564523730121087553464478171201440652505172692575877754380521312092093/2295869027690985169557869628832577169241397906261199134389783623633713916194607045772745730440377279689330463580333116016461201817351331134891165302696107379996154818718135122744754040421370203240041207474864695474953483090280301685782489644115674474592701401365567003987660681760440397467913258666189054785167929653176975018237702805493535172103674909403643213042497021404987532375762444211912177405532213908444488119308808506237361805064793464851706733639537206387734018505864945621263523906678152538295931159998796129950121017961561944391688138673070408280529732944641186236239849347182668017695080034448765499109270894779661639253718412652531314073817983088267824414198156003467955397578336440791348022486027367755868962453055549478924337538673572124970073405205735303468542215139664291802692255679891804176687618538488477770475641638950398101771792698577767200786292727080267074033046802080223394240816102797578746386414275416788162005664973128198641720614462251194511644047885214183274204375341272207970742868925435836646320686996220621917834250947590664046001090759820719570889676892159624936255925274577925153079690771521900846277539589608421635724688769641943508759140968322753906250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "fixed effective annual6% nominal 1",
+      "passed": true,
+      "actual": 0.06,
+      "high_precision_reference": "0.06",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "fixed effective annual balance 1",
+      "passed": true,
+      "actual": 10600.0,
+      "high_precision_reference": "10600",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "fixed effective annual6% nominal 2",
+      "passed": true,
+      "actual": 0.059126028197400066,
+      "high_precision_reference": "0.05912602819740006315947389283950999573976028469839138444892120827961242559955775480591060",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "fixed effective annual balance 2",
+      "passed": true,
+      "actual": 10600.0,
+      "high_precision_reference": "10600",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "fixed effective annual6% nominal 4",
+      "passed": true,
+      "actual": 0.05869538467463711,
+      "high_precision_reference": "0.05869538467463711004391256287339027570847619706422422823807446240409052520726913642718564",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "fixed effective annual balance 4",
+      "passed": true,
+      "actual": 10600.0,
+      "high_precision_reference": "10600",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "fixed effective annual6% nominal 12",
+      "passed": true,
+      "actual": 0.05841060678411644,
+      "high_precision_reference": "0.05841060678411645049438734705007194068931790077272901678121236064371759636239991261153540",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "fixed effective annual balance 12",
+      "passed": true,
+      "actual": 10600.0,
+      "high_precision_reference": "10600",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "fixed effective annual6% nominal 365",
+      "passed": true,
+      "actual": 0.05827355942032582,
+      "high_precision_reference": "0.05827355942032581622615785782948469819112997750956260598390439180596207879695696220652370",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "fixed effective annual balance 365",
+      "passed": true,
+      "actual": 10600.0,
+      "high_precision_reference": "10600",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "P1 nominal8% periodic quarterly",
+      "passed": true,
+      "actual": 0.02,
+      "high_precision_reference": "1/50",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P2 nominal8% quarterly EAR",
+      "passed": true,
+      "actual": 0.08243216,
+      "high_precision_reference": "515201/6250000",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P3 monthlynominal6% differs from effective6%",
+      "passed": true
+    },
+    {
+      "label": "P4 doubling monthlyfrequency does not double interest",
+      "passed": true
+    },
+    {
+      "label": "P5 threeyears monthly36period balance",
+      "passed": true,
+      "actual": 11966.805248234194,
+      "high_precision_reference": "82235259486027235213933829995832012184270450326653370748675067205483419745145207201/6871947673600000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 1e-08
+    },
+    {
+      "label": "daily finitefrequency below independent continuous limit",
+      "passed": true,
+      "limit": "11972.1736312181016487682397360047947986882245546462517129863977602089261572639886513710920"
+    },
+    {
+      "label": "F46 forward input conversion loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F46 reverse input conversion loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F47 reverse intermediate underflow rejected",
+      "passed": true,
+      "exception": "nominal rate outside supported range",
+      "input": "5e-324"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 6,
+  "historical_unique_methods_added": 0
+}
