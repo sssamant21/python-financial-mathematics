@@ -1,0 +1,388 @@
+{
+  "baseline": "a6045562df26603dc69339e9b9ffc28549df57b4",
+  "corrected": "eac8f8da5643d573ad9f5946c09b12622c422c7e",
+  "command": "python check_annuity_range.py",
+  "working_directory": "chapter-18/code",
+  "initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/34a1183c1f47/annuity_range_followup/check_annuity_range.py\", line 74, in <module>\n    check()\n  File \"/workspace/scratch/34a1183c1f47/annuity_range_followup/check_annuity_range.py\", line 70, in check\n    assert all(row['pass'] for row in rows) and all(invalid)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "results": {
+      "cases": [
+        {
+          "payment": 100,
+          "rate": 0.05,
+          "periods": 12,
+          "actual": "886.325163644881",
+          "rounded_reference": "886.325163644881",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": -0.05,
+          "periods": 12,
+          "actual": "1701.2356124434195",
+          "rounded_reference": "1701.2356124434195",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": 0,
+          "periods": 12,
+          "actual": "1200.0",
+          "rounded_reference": "1200.0",
+          "pass": true
+        },
+        {
+          "payment": 1e-300,
+          "rate": 1e-100,
+          "periods": 12,
+          "actual": "0.0",
+          "rounded_reference": "1.2e-299",
+          "pass": false
+        },
+        {
+          "payment": 1e-300,
+          "rate": -1e-100,
+          "periods": 12,
+          "actual": "0.0",
+          "rounded_reference": "1.2e-299",
+          "pass": false
+        },
+        {
+          "payment": 1e+308,
+          "rate": 1e-100,
+          "periods": 5e-324,
+          "actual": "0.0",
+          "rounded_reference": "4.9406564584124655e-16",
+          "pass": false
+        },
+        {
+          "payment": 1e+308,
+          "rate": -1e-100,
+          "periods": 5e-324,
+          "actual": "0.0",
+          "rounded_reference": "4.9406564584124655e-16",
+          "pass": false
+        },
+        {
+          "payment": 1e-300,
+          "rate": -0.5,
+          "periods": 2000,
+          "actual": "OverflowError",
+          "rounded_reference": "2.296261390548509e+302",
+          "pass": false
+        },
+        {
+          "payment": 1e+308,
+          "rate": -0.5,
+          "periods": 0.5,
+          "actual": "8.2842712474619e+307",
+          "rounded_reference": "8.284271247461901e+307",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 0.05,
+          "periods": 2,
+          "actual": "inf",
+          "rounded_reference": "inf",
+          "pass": false
+        },
+        {
+          "payment": 1e+308,
+          "rate": 0,
+          "periods": 2,
+          "actual": "inf",
+          "rounded_reference": "inf",
+          "pass": false
+        },
+        {
+          "payment": 5e-324,
+          "rate": 1,
+          "periods": 1,
+          "actual": "0.0",
+          "rounded_reference": "0.0",
+          "pass": false
+        },
+        {
+          "payment": 5e-324,
+          "rate": 1,
+          "periods": 0.5,
+          "actual": "0.0",
+          "rounded_reference": "0.0",
+          "pass": false
+        },
+        {
+          "payment": 5e-324,
+          "rate": 0,
+          "periods": 0.5,
+          "actual": "0.0",
+          "rounded_reference": "0.0",
+          "pass": false
+        },
+        {
+          "payment": 0,
+          "rate": -0.5,
+          "periods": 2000,
+          "actual": "OverflowError",
+          "rounded_reference": "0.0",
+          "pass": false
+        },
+        {
+          "payment": 1e+308,
+          "rate": -0.5,
+          "periods": 0,
+          "actual": "0.0",
+          "rounded_reference": "0.0",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": -5e-324,
+          "periods": 0.5,
+          "actual": "0.0",
+          "rounded_reference": "50.0",
+          "pass": false
+        },
+        {
+          "payment": 100,
+          "rate": 5e-324,
+          "periods": 0.5,
+          "actual": "0.0",
+          "rounded_reference": "50.0",
+          "pass": false
+        },
+        {
+          "payment": 1e+308,
+          "rate": 1e+308,
+          "periods": 1,
+          "actual": "1.0",
+          "rounded_reference": "1.0",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 1e+308,
+          "periods": 2,
+          "actual": "1.0",
+          "rounded_reference": "1.0",
+          "pass": true
+        },
+        {
+          "payment": 1,
+          "rate": -0.5,
+          "periods": 1e+308,
+          "actual": "OverflowError",
+          "rounded_reference": "inf",
+          "pass": false
+        },
+        {
+          "payment": 1,
+          "rate": 1,
+          "periods": 1e+308,
+          "actual": "1.0",
+          "rounded_reference": "1.0",
+          "pass": true
+        }
+      ],
+      "invalid_inputs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "rerun": {
+    "exit": 0,
+    "stderr": "",
+    "results": {
+      "cases": [
+        {
+          "payment": 100,
+          "rate": 0.05,
+          "periods": 12,
+          "actual": "886.325163644881",
+          "rounded_reference": "886.325163644881",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": -0.05,
+          "periods": 12,
+          "actual": "1701.2356124434195",
+          "rounded_reference": "1701.2356124434195",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": 0,
+          "periods": 12,
+          "actual": "1200.0",
+          "rounded_reference": "1200.0",
+          "pass": true
+        },
+        {
+          "payment": 1e-300,
+          "rate": 1e-100,
+          "periods": 12,
+          "actual": "1.2e-299",
+          "rounded_reference": "1.2e-299",
+          "pass": true
+        },
+        {
+          "payment": 1e-300,
+          "rate": -1e-100,
+          "periods": 12,
+          "actual": "1.2e-299",
+          "rounded_reference": "1.2e-299",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 1e-100,
+          "periods": 5e-324,
+          "actual": "4.9406564584124655e-16",
+          "rounded_reference": "4.9406564584124655e-16",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": -1e-100,
+          "periods": 5e-324,
+          "actual": "4.9406564584124655e-16",
+          "rounded_reference": "4.9406564584124655e-16",
+          "pass": true
+        },
+        {
+          "payment": 1e-300,
+          "rate": -0.5,
+          "periods": 2000,
+          "actual": "2.296261390548509e+302",
+          "rounded_reference": "2.296261390548509e+302",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": -0.5,
+          "periods": 0.5,
+          "actual": "8.284271247461901e+307",
+          "rounded_reference": "8.284271247461901e+307",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 0.05,
+          "periods": 2,
+          "actual": "ValueError",
+          "rounded_reference": "inf",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 0,
+          "periods": 2,
+          "actual": "ValueError",
+          "rounded_reference": "inf",
+          "pass": true
+        },
+        {
+          "payment": 5e-324,
+          "rate": 1,
+          "periods": 1,
+          "actual": "ValueError",
+          "rounded_reference": "0.0",
+          "pass": true
+        },
+        {
+          "payment": 5e-324,
+          "rate": 1,
+          "periods": 0.5,
+          "actual": "ValueError",
+          "rounded_reference": "0.0",
+          "pass": true
+        },
+        {
+          "payment": 5e-324,
+          "rate": 0,
+          "periods": 0.5,
+          "actual": "ValueError",
+          "rounded_reference": "0.0",
+          "pass": true
+        },
+        {
+          "payment": 0,
+          "rate": -0.5,
+          "periods": 2000,
+          "actual": "0.0",
+          "rounded_reference": "0.0",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": -0.5,
+          "periods": 0,
+          "actual": "0.0",
+          "rounded_reference": "0.0",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": -5e-324,
+          "periods": 0.5,
+          "actual": "50.0",
+          "rounded_reference": "50.0",
+          "pass": true
+        },
+        {
+          "payment": 100,
+          "rate": 5e-324,
+          "periods": 0.5,
+          "actual": "50.0",
+          "rounded_reference": "50.0",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 1e+308,
+          "periods": 1,
+          "actual": "1.0",
+          "rounded_reference": "1.0",
+          "pass": true
+        },
+        {
+          "payment": 1e+308,
+          "rate": 1e+308,
+          "periods": 2,
+          "actual": "1.0",
+          "rounded_reference": "1.0",
+          "pass": true
+        },
+        {
+          "payment": 1,
+          "rate": -0.5,
+          "periods": 1e+308,
+          "actual": "ValueError",
+          "rounded_reference": "inf",
+          "pass": true
+        },
+        {
+          "payment": 1,
+          "rate": 1,
+          "periods": 1e+308,
+          "actual": "1.0",
+          "rounded_reference": "1.0",
+          "pass": true
+        }
+      ],
+      "invalid_inputs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  }
+}
