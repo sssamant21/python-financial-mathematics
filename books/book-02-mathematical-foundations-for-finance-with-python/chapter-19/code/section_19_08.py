@@ -188,9 +188,12 @@ def euler_account(initial,rate,flow,years,steps):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid years or steps")
-    h=t/steps
+    if t==0:
+        return a
+    h=Fraction(t)/steps
+    rf,uf=Fraction(r),Fraction(u)
     for _ in range(steps):
-        a=finite(a+h*(r*a+u),"Euler balance")
+        a=_rounded_balance(Fraction(a)+h*(rf*Fraction(a)+uf))
     return a
 
 def rk4_account(initial,rate,flow,years,steps):
@@ -198,13 +201,15 @@ def rk4_account(initial,rate,flow,years,steps):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid years or steps")
-    h=t/steps
+    if t==0:
+        return a
+    h=Fraction(t)/steps
+    rf,uf=Fraction(r),Fraction(u)
+    z=rf*h
+    # Exact combined RK4 stages for this autonomous affine account model.
+    weight=1+z/2+z*z/6+z**3/24
     for _ in range(steps):
-        k1=r*a+u
-        k2=r*(a+h*k1/2)+u
-        k3=r*(a+h*k2/2)+u
-        k4=r*(a+h*k3)+u
-        a=finite(a+h*(k1+2*k2+2*k3+k4)/6,"RK4 balance")
+        a=_rounded_balance(Fraction(a)+h*(rf*Fraction(a)+uf)*weight)
     return a
 
 def depletion_time(initial,rate,withdrawal):
