@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `081a73dce77591e11377df37ff7b23c5d1836674`  
-**Latest scoped source revision:** `081a73dce77591e11377df37ff7b23c5d1836674` (included in V-75)  
-**Disposition:** V-75 full candidate Linux pass includes project valuation/delegation and manifest preflight; independent review and release approval pending.
+**Full-runtime candidate source revision:** `77a943c4ee6551431485c3a53d71f789691c2392`  
+**Latest scoped source revision:** `77a943c4ee6551431485c3a53d71f789691c2392` (included in V-76)  
+**Disposition:** V-76 full candidate Linux pass includes capstone valuation and analytic sensitivity; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-76](runtime-refresh-2026-11-05-r18.md): 540 compiled, 327 passed, 541 required hashes verified before/after. Both new checkers are included; G2–G8 unchanged.
 
 [V-75](runtime-refresh-2026-11-05-r17.md): 538 compiled, 325 passed, 539 required hashes verified before/after. Both new checkers are included; G2–G8 unchanged.
 
@@ -107,7 +109,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-75](runtime-refresh-2026-11-05-r17.md) at `081a73dce77591e11377df37ff7b23c5d1836674`; 538 sources/325 scripts/539 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-76](runtime-refresh-2026-11-05-r18.md) at `77a943c4ee6551431485c3a53d71f789691c2392`; 540 sources/327 scripts/541 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -513,3 +515,14 @@ Next substantive item: Section 20.9 project valuation result-range and Section 2
 [V-75](runtime-refresh-2026-11-05-r17.md) compiled all 538 Python files, passed all 325 discovered scripts and matched all 539 required source/fixture hashes before and after at `081a73dce77591e11377df37ff7b23c5d1836674`. Final Chapter 20 scope: 33 compiled files and 22 passing scripts. Thirty-three selected COV categories are partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: Section 21.3 effective/continuous conversion and fractional-horizon valuation boundaries from the Chapter 21 map. Derive independent effective gross-power and continuous exponential expectations, check negative rates and the rounded effective-minus-one rejection boundary, and verify distinct convention and input rules before editing. Do not count repeated Chapter 20 fixtures as new coverage. Chapter 21 actual provenance and independent review, Section 19.8's end-period exponent boundary, and other manual obligations remain open.
+
+
+## Capstone valuation and analytic sensitivity — V-76 (2026-11-05)
+
+[Section 21.3 rate and valuation evidence](chapter-21-capstone-rate-range-followup.md) retains ten baseline mismatches and a 53-case pass. Independent effective gross-power, continuous exponential and conversion references cover fractional horizons, negative rates, the rounded-minus-one boundary, complete term scaling and the actual capstone cash-flow field. Conversion code is unchanged. Chapter scope at `239085a0580b7a97db6787e415c36f20d11f706c`: 20 files compiled and 11 scripts passed.
+
+[Section 21.4 sensitivity evidence](chapter-21-capstone-sensitivity-range-followup.md) retains 17 baseline mismatches and a 32-case pass. Selected independent complete PV, derivative and Taylor references and the actual capstone analytic field verify the corrected scaling; finite-difference stencil guards are unchanged. This adds selected partial COV-90 evidence, not a general range proof.
+
+[V-76](runtime-refresh-2026-11-05-r18.md) compiled all 540 Python files, passed all 327 discovered scripts and matched all 541 required source/fixture hashes before and after at `77a943c4ee6551431485c3a53d71f789691c2392`. Final Chapter 21 scope: 21 compiled files and 12 passing scripts. Thirty-four selected COV categories are partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: Section 21.5 replication screening, solve and residual ranges. Derive independent normalized determinant and pivoted-solve expectations, check the declared screening threshold separately from singularity, and check residuals on the returned represented holdings. Include selected finite results hidden by overflowing intermediate products and the actual integrated report path. Preserve the limited 2x2 interface and do not repeat the Section 20.2 benchmark fixtures as new coverage. Chapter 21 actual provenance and independent review, Section 19.8's end-period exponent boundary, and other manual obligations remain open.
