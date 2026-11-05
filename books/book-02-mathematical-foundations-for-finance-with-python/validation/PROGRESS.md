@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-70 full candidate Linux pass (526 files, 315 scripts, 527 required hashes), including annuity benchmark and vector/residual design checks. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-71 full candidate Linux pass (529 files, 317 scripts, 530 required hashes), including benchmark/invariant account corrections. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 526/526 at `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`. [V-70](runtime-refresh-2026-11-05-r12.md). |
-| Automated script execution | Full candidate Linux pass | 315/315 at `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`; all 527 required hashes matched before/after. [V-70](runtime-refresh-2026-11-05-r12.md). |
+| Python compilation | Full candidate Linux pass | 529/529 at `d0266c34257e717c964b8bc8c8a145c9d8448e53`. [V-71](runtime-refresh-2026-11-05-r13.md). |
+| Automated script execution | Full candidate Linux pass | 317/317 at `d0266c34257e717c964b8bc8c8a145c9d8448e53`; all 530 required hashes matched before/after. [V-71](runtime-refresh-2026-11-05-r13.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -681,3 +681,13 @@ Next substantive numerical item: Section 20.2 known-value benchmark helper range
 [V-70](runtime-refresh-2026-11-05-r12.md) compiled all 526 Python files, passed all 315 discovered scripts and matched all 527 required source/fixture hashes before/after at the same final executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive numerical item: Section 20.2's remaining continuous-account and depletion accepted-input/result-range contracts, including actual assessment integration. Its account still forms separate exponential/flow terms and its depletion helper still forms the rounded rate*balance/withdrawal ratio; compare independent complete-balance and exact threshold/reciprocal-log expectations before sharing or changing implementations. The annuity cases above are complete for their selected scope and must not be repeated as new progress. Present-value/rate-conversion copies and broader matrix/vector/unit work remain separate obligations. Section 19.8 end-period abs(rate*years)>4000 remains an open evaluation boundary.
+
+## Benchmark/invariant account range and V-71 — 2026-11-05
+
+[Section 20.2 account/depletion evidence](chapter-20-benchmark-account-range-followup.md) retains 16 initial failed cases and a 36-case pass against independent complete-balance, exact-threshold and reciprocal-log references, including two exact half-subnormal rounding controls. Actual assessment account/depletion calls are observed. The new chapter-local kernel adapts selected pinned Section 19.8 calculation bodies without cross-chapter imports or sys.path mutation; public guards and signed analytical scope remain. All 23 chapter files compiled and 13 scripts passed at `1008849303f6317fcaa343dde97ee8b9fc73216a`.
+
+[Section 20.3 composition evidence](chapter-20-invariant-account-range-followup.md) retains 11 original failed cases and a 20-case pass. Direct, prefix and split balances use independent references, and four observed assessment calls verify actual prefix/resume/reconciliation integration. All 24 chapter files compiled and 14 scripts passed at `d0266c34257e717c964b8bc8c8a145c9d8448e53`.
+
+[V-71](runtime-refresh-2026-11-05-r13.md) compiled all 529 Python files, passed all 317 discovered scripts and matched all 530 required source/fixture hashes before/after at that same pin. Thirty-two selected COV categories remain partially addressed; none closed. Case failures are not defect totals or completion percentages. Independent review, supported platforms and release approval remain pending.
+
+Next substantive numerical item: Section 20.2 present-value and nominal-to-continuous benchmark range, including complete rate*time scaling, tiny rate/frequency quotients, valid zero identities, actual assessment use and independently derived valuation/conversion expectations. Those copied helpers still use separate float exponent/rate-quotient arithmetic. The selected account/depletion/composition cases above are complete for their retained scope; do not repeat them as a new result. Other Section 20.3 discount/FV, matrix/portfolio and provenance/manual work remain open. Section 19.8 end-period abs(rate*years)>4000 remains an explicit evaluation boundary.
