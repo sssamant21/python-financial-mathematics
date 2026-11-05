@@ -1,0 +1,13 @@
+# V-72 — Full Book 02 runtime refresh
+
+Date: 2026-11-05. Exact source revision: `ec2d14291906ca137698e6716779a4634495b18b`.
+
+All 532 Python files compiled; all 319 discovered check/test scripts exited zero; all 533 required source/fixture Git blob hashes matched before and after execution. The required fixture is chapter-01/data/section-1.14-cases.json. Counts derive from this pinned tree, including the new chapter-local valuation kernel. No script failed or timed out. Python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]. Platform: Linux-6.18.57-x86_64-with-glibc2.39. Assertions enabled; a fresh Python process, parent-directory cwd and 60-second timeout for every script. Slowest: check_rate_conversion_range.py, 4.660 seconds.
+
+Includes the [Section 20.2 valuation/conversion correction](chapter-20-benchmark-valuation-range-followup.md), retaining 15 original failed cases and a 39-case pass, and [Section 20.3 factor/PV/FV correction](chapter-20-invariant-valuation-range-followup.md), retaining 16 original failed cases and a 40-case pass. Their chapter scopes were 26 files/15 scripts and 27 files/16 scripts respectively. Case failures are not defect counts or completion percentages.
+
+[Full source/fixture manifest and individual results](runtime-refresh-2026-11-05-r14.json).
+
+Replay from a clean checkout at the exact source revision. Verify SHA1(b'blob '+decimal_byte_length+b'\\0'+file_bytes) for every JSON manifest path; compile every .py with py_compile.compile(path,doraise=True); run every basename beginning check_ or test_ from its parent directory using a fresh Python process, assertions enabled, timeout=60. Verify every manifest hash after execution. Raw evidence retains compiled paths, hashes, exits, stderr and timings; successful stdout is omitted. Snapshot reconstruction reused cached blobs only when exact expected hashes matched and retrieved other blobs at the pin, followed by complete before/after verification.
+
+The local valuation kernel adapts selected pinned Section 19.2/19.8 calculations without cross-chapter runtime imports or sys.path changes. Nonzero underflow/final overflow rejects, valid zero identities follow validation, and separately unrepresentable factors do not by themselves invalidate a finite scaled amount. Cash-flow terms still round before summation. These selected checks do not certify all cancellation, aggregate, matrix or solver ranges. Thirty-two selected COV categories remain partially addressed; none closed. Assistant-run Python 3.12.14/Linux evidence does not establish independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval or real financial model suitability. G2–G8 remain pending.
