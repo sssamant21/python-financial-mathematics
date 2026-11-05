@@ -1,0 +1,665 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "baf06212851ca7949fad4376e4b9857184fb1cb9",
+  "corrected_revision": "e747c068bfebd0959444b62b31fe25fe784cfa46",
+  "initial_exit": 1,
+  "rerun_exit": 0,
+  "initial": [
+    {
+      "helper": "euler",
+      "inputs": "(2, 1e+308, 0, 1e-308, 1)",
+      "expected": "4.0",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "euler",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 5e-324, 2)",
+      "expected": "8.881784197001251e-16",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "euler",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 1e-308, 1)",
+      "expected": "1.7976931348623155",
+      "actual": "1.7976931348623155",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 0, 0, 2)",
+      "expected": "1.7976931348623157e+308",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 1.7976931348623157e+308, -1.7976931348623157e+308, 2, 3)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(5e-324, 0, 5e-324, 5e-324, 3)",
+      "expected": "5e-324",
+      "actual": "5e-324",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(0, 0, 5e-324, 5e-324, 2)",
+      "expected": "'ValueError'",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 0, -1, 1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1000, 0.05, 0, 2, 10)",
+      "expected": "1104.6221254112045",
+      "actual": "1104.6221254112043",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 0, 0, 0, 0)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 0, 0, -1, 1)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(True, 0, 0, 0, 1)",
+      "expected": "TypeError",
+      "actual": "'TypeError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(2, 1e+308, 0, 1e-308, 1)",
+      "expected": "5.416666666666666",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 5e-324, 2)",
+      "expected": "8.881784197001251e-16",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 1e-308, 1)",
+      "expected": "1.7976931348623155",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 0, 0, 2)",
+      "expected": "1.7976931348623157e+308",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 1.7976931348623157e+308, -1.7976931348623157e+308, 2, 3)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(5e-324, 0, 5e-324, 5e-324, 3)",
+      "expected": "5e-324",
+      "actual": "5e-324",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(0, 0, 5e-324, 5e-324, 2)",
+      "expected": "'ValueError'",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 0, -1, 1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1000, 0.05, 0, 2, 10)",
+      "expected": "1105.1709180665143",
+      "actual": "1105.1709180665139",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 0, 0, 0, 0)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 0, 0, -1, 1)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(True, 0, 0, 0, 1)",
+      "expected": "TypeError",
+      "actual": "'TypeError'",
+      "passed": true
+    },
+    {
+      "helper": "assessment.euler",
+      "steps": 10,
+      "expected": 1104.6221254112045,
+      "actual": 1104.6221254112043,
+      "passed": true
+    },
+    {
+      "helper": "assessment.rk4",
+      "steps": 10,
+      "expected": 1105.1709180665143,
+      "actual": 1105.1709180665139,
+      "passed": true
+    },
+    {
+      "helper": "assessment.euler",
+      "steps": 20,
+      "expected": 1104.8955771867309,
+      "actual": 1104.8955771867309,
+      "passed": true
+    },
+    {
+      "helper": "assessment.rk4",
+      "steps": 20,
+      "expected": 1105.1709180750745,
+      "actual": 1105.1709180750743,
+      "passed": true
+    },
+    {
+      "helper": "assessment.euler",
+      "steps": 40,
+      "expected": 1105.0330101290708,
+      "actual": 1105.0330101290704,
+      "passed": true
+    },
+    {
+      "helper": "assessment.rk4",
+      "steps": 40,
+      "expected": 1105.1709180756118,
+      "actual": 1105.1709180756118,
+      "passed": true
+    }
+  ],
+  "rerun": [
+    {
+      "helper": "euler",
+      "inputs": "(2, 1e+308, 0, 1e-308, 1)",
+      "expected": "4.0",
+      "actual": "4.0",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 5e-324, 2)",
+      "expected": "8.881784197001251e-16",
+      "actual": "8.881784197001251e-16",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 1e-308, 1)",
+      "expected": "1.7976931348623155",
+      "actual": "1.7976931348623155",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 0, 0, 2)",
+      "expected": "1.7976931348623157e+308",
+      "actual": "1.7976931348623157e+308",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 1.7976931348623157e+308, -1.7976931348623157e+308, 2, 3)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(5e-324, 0, 5e-324, 5e-324, 3)",
+      "expected": "5e-324",
+      "actual": "5e-324",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(0, 0, 5e-324, 5e-324, 2)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 0, -1, 1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1000, 0.05, 0, 2, 10)",
+      "expected": "1104.6221254112045",
+      "actual": "1104.6221254112043",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 0, 0, 0, 0)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(1, 0, 0, -1, 1)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "euler",
+      "inputs": "(True, 0, 0, 0, 1)",
+      "expected": "TypeError",
+      "actual": "'TypeError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(2, 1e+308, 0, 1e-308, 1)",
+      "expected": "5.416666666666666",
+      "actual": "5.416666666666666",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 5e-324, 2)",
+      "expected": "8.881784197001251e-16",
+      "actual": "8.881784197001251e-16",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(0, 0, 1.7976931348623157e+308, 1e-308, 1)",
+      "expected": "1.7976931348623155",
+      "actual": "1.7976931348623155",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1.7976931348623157e+308, 1.7976931348623157e+308, 0, 0, 2)",
+      "expected": "1.7976931348623157e+308",
+      "actual": "1.7976931348623157e+308",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 1.7976931348623157e+308, -1.7976931348623157e+308, 2, 3)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(5e-324, 0, 5e-324, 5e-324, 3)",
+      "expected": "5e-324",
+      "actual": "5e-324",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(0, 0, 5e-324, 5e-324, 2)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 0, -1, 1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1000, 0.05, 0, 2, 10)",
+      "expected": "1105.1709180665143",
+      "actual": "1105.1709180665139",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 0, 0, 0, 0)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(1, 0, 0, -1, 1)",
+      "expected": "ValueError",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "helper": "rk4",
+      "inputs": "(True, 0, 0, 0, 1)",
+      "expected": "TypeError",
+      "actual": "'TypeError'",
+      "passed": true
+    },
+    {
+      "helper": "assessment.euler",
+      "steps": 10,
+      "expected": 1104.6221254112045,
+      "actual": 1104.6221254112043,
+      "passed": true
+    },
+    {
+      "helper": "assessment.rk4",
+      "steps": 10,
+      "expected": 1105.1709180665143,
+      "actual": 1105.1709180665139,
+      "passed": true
+    },
+    {
+      "helper": "assessment.euler",
+      "steps": 20,
+      "expected": 1104.8955771867309,
+      "actual": 1104.8955771867309,
+      "passed": true
+    },
+    {
+      "helper": "assessment.rk4",
+      "steps": 20,
+      "expected": 1105.1709180750745,
+      "actual": 1105.1709180750743,
+      "passed": true
+    },
+    {
+      "helper": "assessment.euler",
+      "steps": 40,
+      "expected": 1105.0330101290708,
+      "actual": 1105.0330101290704,
+      "passed": true
+    },
+    {
+      "helper": "assessment.rk4",
+      "steps": 40,
+      "expected": 1105.1709180756118,
+      "actual": 1105.1709180756118,
+      "passed": true
+    }
+  ],
+  "scope": {
+    "source_revision": "e747c068bfebd0959444b62b31fe25fe784cfa46",
+    "blobs": {
+      "check_account_step_range.py": "fba4cc2d01a10a4bb0ec79754c16417de5c23f75",
+      "check_applied_target_and_timing.py": "9d23d57ce7cd88a5832f056cf9a957e0e4fa9a4c",
+      "check_continuous_rate_edges.py": "7656fdadde1233c130a3ec241dad7233e8d8c89a",
+      "check_contribution_balance_range.py": "45c318153473c83b7e6acae013e0f0234535540f",
+      "check_contribution_frequency.py": "cc3588e76f2e7bc9158f2d06385df600b8543788",
+      "check_cumulative_account_range.py": "ff399ce2d50d3692ab185a0f2b460dbe00b3253f",
+      "check_cumulative_step_range.py": "610a1d60aa8aee72f3b19d75e11b51ddeb9ab1af",
+      "check_depletion_classification_range.py": "9716736dd2ce06789b1248ed4e32ad6002ea9e16",
+      "check_euler_decay_stability.py": "0cf72c28b8f971ef6bd598a572ba001a3c227ec1",
+      "check_growth_balance_range.py": "2bf4ce58e3f423a1d3e719a5147ae0d8ff546759",
+      "check_integrated_growth_range.py": "b60899a49afbc9217593b6c72cb90dd9b23a27c2",
+      "check_logistic_range.py": "8546d272fd8265d3b23344396496fe0318dfe904",
+      "check_logistic_trajectories.py": "35141bf5ba91e30460305dbb23ed7f8ebbd972fa",
+      "check_nonterminal_jump_policy.py": "e0246e8816ff7ea6d54acbf27a1da5827df97c30",
+      "check_piecewise_continuity.py": "c2aef20c80ce1adca9e8c2ff72af0ff20f34f8cc",
+      "check_project_depletion_range.py": "55c565dcceaf6dd4435fba1b13a7d24c88df8daf",
+      "check_project_transition_range.py": "72334a7c37fb17537588a48c748776c41a3b7dea",
+      "check_quadratic_growth_range.py": "a601b3e9c23fec6cbaaf27a569cba18fe5e5af48",
+      "check_rate_conversion_range.py": "28bb4e5ec861e1aa613ad01e3cbb483cf9a5b9e4",
+      "check_section_19_01.py": "f75db61ff944189b8f1d4ec72db59f6f42976ecd",
+      "check_section_19_02.py": "409c65c02954c9f78184b0c4bfad3739f0e76f61",
+      "check_section_19_03.py": "45ee6d9f50331ceca3e4e5e9db1025d5481958bf",
+      "check_section_19_04.py": "304ff63a628430f74bfa4e2c10b03abf38b719a1",
+      "check_section_19_05.py": "220cedf1eab821ddc24768315c5a99f62024e684",
+      "check_section_19_06.py": "45e9eb2d28ba1f7874714ec9b116b7a89271fdd8",
+      "check_section_19_07.py": "f1a4d8cf7b38b2d9d1ea4aaedb4abf1635e807ef",
+      "check_section_19_08.py": "3466f971caa572474199bae9ced8ef94dc97db69",
+      "check_section_19_09.py": "06f760fb4887afd7c04553d3300c3c2f80be3d0f",
+      "check_section_19_10.py": "50098fdabf76330c2d420a3e98fa16f41e2614a0",
+      "check_time_varying_forcing.py": "52ceae3d2a420d8abbce3299c67fdf312c918bf1",
+      "section_19_01.py": "6a7c1ab15f03113cbe1ca6933d3dcf822a936374",
+      "section_19_02.py": "3fe68e5de05ea6840049a7f425f53a20ce7cbdc1",
+      "section_19_03.py": "5d369547d21fe5e3c6ed6b5839562944a8740caa",
+      "section_19_04.py": "2d611a1b29bc475a12c219e05e86a962ae0ff9f3",
+      "section_19_05.py": "f6b9ef50437dcd16d784a084a1047de788bd61a2",
+      "section_19_06.py": "8a9bac4c4b973db41c0274e0f7ada06ec131d71a",
+      "section_19_07.py": "454bbaf1759b096f88eb0fb2d09d4d9fcd97f22f",
+      "section_19_08.py": "8300579fb2fe18cb70f6ba73c7308074e2b0de2d",
+      "section_19_09.py": "844e5e139a6a89790b28f739346b8e1060d38eb4",
+      "section_19_10.py": "678d19b7f7248438aa2aa04d04647995f2b62882"
+    },
+    "compiled": 40,
+    "runs": {
+      "check_account_step_range.py": {
+        "exit": 0,
+        "seconds": 0.05496993900004554,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_applied_target_and_timing.py": {
+        "exit": 0,
+        "seconds": 0.21456212399999686,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_continuous_rate_edges.py": {
+        "exit": 0,
+        "seconds": 0.0938875790000111,
+        "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_contribution_balance_range.py": {
+        "exit": 0,
+        "seconds": 2.22684756000001,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_contribution_frequency.py": {
+        "exit": 0,
+        "seconds": 0.6524281399999836,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_cumulative_account_range.py": {
+        "exit": 0,
+        "seconds": 2.286718212999972,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_cumulative_step_range.py": {
+        "exit": 0,
+        "seconds": 0.36372146399997973,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_depletion_classification_range.py": {
+        "exit": 0,
+        "seconds": 0.9895698450000054,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_euler_decay_stability.py": {
+        "exit": 0,
+        "seconds": 0.06489407300000494,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_growth_balance_range.py": {
+        "exit": 0,
+        "seconds": 0.681244214000003,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_integrated_growth_range.py": {
+        "exit": 0,
+        "seconds": 0.8307002829999988,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_logistic_range.py": {
+        "exit": 0,
+        "seconds": 0.45673659699997415,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_logistic_trajectories.py": {
+        "exit": 0,
+        "seconds": 0.5051600329999815,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_nonterminal_jump_policy.py": {
+        "exit": 0,
+        "seconds": 0.03661537099998213,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_piecewise_continuity.py": {
+        "exit": 0,
+        "seconds": 0.03704457100002401,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_project_depletion_range.py": {
+        "exit": 0,
+        "seconds": 0.4614568380000037,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_project_transition_range.py": {
+        "exit": 0,
+        "seconds": 0.9843755499999816,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_quadratic_growth_range.py": {
+        "exit": 0,
+        "seconds": 0.03059073399998624,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_rate_conversion_range.py": {
+        "exit": 0,
+        "seconds": 5.611275182999975,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_01.py": {
+        "exit": 0,
+        "seconds": 0.055442477000042345,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_02.py": {
+        "exit": 0,
+        "seconds": 0.09445609199997307,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_03.py": {
+        "exit": 0,
+        "seconds": 0.03533071099997187,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_04.py": {
+        "exit": 0,
+        "seconds": 0.027126728999974148,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_05.py": {
+        "exit": 0,
+        "seconds": 0.026814486999967357,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_06.py": {
+        "exit": 0,
+        "seconds": 0.03914471299998468,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_07.py": {
+        "exit": 0,
+        "seconds": 0.02481537699998171,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_08.py": {
+        "exit": 0,
+        "seconds": 0.20683638400004156,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_09.py": {
+        "exit": 0,
+        "seconds": 0.12198577999998861,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_19_10.py": {
+        "exit": 0,
+        "seconds": 0.18999984800001357,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_time_varying_forcing.py": {
+        "exit": 0,
+        "seconds": 0.036868637999987186,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Selected assistant-derived references and Python 3.12.14/Linux checks only. No independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval, arbitrary-range accuracy or real financial model validation is established. COV categories remain partial.",
+  "steps-initial_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-cumulative-range/check_cumulative_step_range.py\", line 82, in <module>\n    check()\n  File \"/tmp/book02-cumulative-range/check_cumulative_step_range.py\", line 78, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "steps-rerun_stderr": ""
+}
