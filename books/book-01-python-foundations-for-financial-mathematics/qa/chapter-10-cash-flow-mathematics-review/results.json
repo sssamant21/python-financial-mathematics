@@ -1,0 +1,194 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "a68855046b4351dbd26feca4ccab466be956d0377f6037da9ce44e92699649a5",
+  "listing_sha256": "9228778f47825847b97d83a7b87918462f85ceb3367970a0cce46ff2f736c80a",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "cash_flow_mathematics.py"
+      ],
+      "returncode": 0,
+      "stdout": "Example NPV: 41.32\n",
+      "stderr": "test_01_timeline (__main__.CashFlowTests.test_01_timeline) ... ok\ntest_02_discount_factor (__main__.CashFlowTests.test_02_discount_factor) ... ok\ntest_03_single_present_value (__main__.CashFlowTests.test_03_single_present_value) ... ok\ntest_04_multiple_flows (__main__.CashFlowTests.test_04_multiple_flows) ... ok\ntest_05_change_valuation_date (__main__.CashFlowTests.test_05_change_valuation_date) ... ok\ntest_06_zero_rate (__main__.CashFlowTests.test_06_zero_rate) ... ok\ntest_07_negative_rate (__main__.CashFlowTests.test_07_negative_rate) ... ok\ntest_08_invalid_inputs (__main__.CashFlowTests.test_08_invalid_inputs) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "cash_flow_mathematics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 full signed timeline",
+      "passed": true
+    },
+    {
+      "label": "P2 discount1210",
+      "passed": true,
+      "actual": 1000.0,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 multiple dates",
+      "passed": true,
+      "actual": 256.19834710743805,
+      "rational_reference": "31000/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 NPV",
+      "passed": true,
+      "actual": 41.32231404958674,
+      "rational_reference": "5000/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 date shift",
+      "passed": true,
+      "actual": 110.25,
+      "rational_reference": "441/4",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 zero rate",
+      "passed": true,
+      "actual": 50.0,
+      "rational_reference": "50",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 negative rate",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "worked single receipt",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "discount factor",
+      "passed": true,
+      "actual": 0.8264462809917356,
+      "rational_reference": "100/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nonzero future valuation date",
+      "passed": true,
+      "actual": 341.0,
+      "rational_reference": "341",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nonzero date identity",
+      "passed": true,
+      "actual": 341.0,
+      "rational_reference": "341",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty iterator",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "same-date net",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "fsum cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "rational_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative time",
+      "passed": true,
+      "exception": "ValueError('year cannot be negative')"
+    },
+    {
+      "label": "bool amount",
+      "passed": true,
+      "exception": "TypeError('amount must be numeric')"
+    },
+    {
+      "label": "bool rate",
+      "passed": true,
+      "exception": "TypeError('rate must be numeric')"
+    },
+    {
+      "label": "invalid growth",
+      "passed": true,
+      "exception": "ValueError('effective annual rate must be finite and > -1')"
+    },
+    {
+      "label": "tuple instead of CashFlow",
+      "passed": true,
+      "exception": "TypeError('flows must contain CashFlow objects')"
+    },
+    {
+      "label": "negative valuation date",
+      "passed": true,
+      "exception": "ValueError('year cannot be negative')"
+    },
+    {
+      "label": "factor underflow",
+      "passed": true,
+      "exception": "ValueError('discount factor outside supported range')"
+    },
+    {
+      "label": "factor overflow",
+      "passed": true,
+      "exception": "ValueError('discount factor outside supported range')"
+    },
+    {
+      "label": "nonfinite amount",
+      "passed": true,
+      "exception": "ValueError('amount must be finite')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 8,
+  "conceptual_only_prompts": [
+    8
+  ],
+  "historical_unique_methods_added": 0
+}
