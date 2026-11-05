@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-72 full candidate Linux pass (532 files, 319 scripts, 533 required hashes), including benchmark/invariant valuation corrections. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-73 full candidate Linux pass (534 files, 321 scripts, 535 required hashes), including matrix/feasibility and two-by-two corrections. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 532/532 at `ec2d14291906ca137698e6716779a4634495b18b`. [V-72](runtime-refresh-2026-11-05-r14.md). |
-| Automated script execution | Full candidate Linux pass | 319/319 at `ec2d14291906ca137698e6716779a4634495b18b`; all 533 required hashes matched before/after. [V-72](runtime-refresh-2026-11-05-r14.md). |
+| Python compilation | Full candidate Linux pass | 534/534 at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`. [V-73](runtime-refresh-2026-11-05-r15.md). |
+| Automated script execution | Full candidate Linux pass | 321/321 at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`; all 535 required hashes matched before/after. [V-73](runtime-refresh-2026-11-05-r15.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -701,3 +701,14 @@ Next substantive numerical item: Section 20.2 present-value and nominal-to-conti
 [V-72](runtime-refresh-2026-11-05-r14.md) compiled all 532 Python files, passed all 319 discovered scripts and matched all 533 required source/fixture hashes before/after at the same pin. Thirty-two selected COV categories remain partially addressed; none closed. Case failures are not defect totals or completion percentages. Independent review, supported platforms and release approval remain pending.
 
 Next substantive numerical item: Section 20.3 raw quadratic-form and portfolio-feasibility accepted-input/result-range contracts. Derive complete rational quadratic-form and weight-sum/threshold expectations before changing behavior; distinguish numerical arithmetic/classification from unimplemented general symmetry/PSD validation. The scalar helper still forms b+c and its products separately, and feasibility still depends on a rounded floating-point sum. The selected valuation/conversion cases above are complete for their retained scope and must not be repeated as new progress. Other benchmark linear-system/provenance/manual obligations remain open. Section 19.8 end-period abs(rate*years)>4000 remains an explicit evaluation boundary.
+
+
+## Matrix/feasibility and two-by-two benchmarks — V-73 (2026-11-05)
+
+[Section 20.3 matrix range](chapter-20-invariant-matrix-range-followup.md) retains 12 original failed cases and a 36-case pass. Decimal row-product references and exact integer-scale feasibility expectations cover complete arithmetic, cancellation, range limits and actual assessment integration. Exact budget checks use the represented inputs; symmetry, PSD and optimality remain separate. Chapter scope: 28 files compiled and 17 scripts passed at `c8110de2a09da05fca5591c5a70c0d9278f51df4`.
+
+[Section 20.2 linear benchmark range](chapter-20-benchmark-linear-range-followup.md) retains seven original failed cases and a 19-case pass. Independent exact pivoted elimination, equation residuals and assessment observation cover determinants lost to intermediate range or cancellation and final solution range rejection. Chapter scope: 29 files compiled and 18 scripts passed at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`.
+
+[V-73](runtime-refresh-2026-11-05-r15.md) compiled all 534 Python files, passed all 321 discovered scripts and matched all 535 required source/fixture hashes before and after at that executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: Section 20.4 discrete present-value and annuity result-range boundaries beyond the retained subnormal-payment fix. Derive independent represented-gross power and finite payment-sum expectations; preserve the declared rate/period domains and assess the existing OverflowError contract separately from Section 20.2. Probe valid zero identities, full amount scaling and final range rejection before changing the helpers. The selected matrix, feasibility and two-by-two fixtures above are complete for their retained scope. Section 19.8's end-period exponent boundary and other manual/provenance obligations remain open.
