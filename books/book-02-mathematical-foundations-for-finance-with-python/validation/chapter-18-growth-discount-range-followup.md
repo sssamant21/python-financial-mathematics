@@ -1,0 +1,7 @@
+# Section 18.2 — Growth and discount result range
+
+Baseline: `e5bb22c3c22d2c59a8d7fcde5bf01249a331b87a`. Corrected executable revision: `1cdc4c891bd443dbbc5303d2f5715b26350da7bc`.
+
+The first run failed 27 of 75 checks. A large growth power overflowed or lost accuracy near the top of binary64; a small growth factor could round to zero; and rounding the binary exponent could lose a change that should round to a minimum subnormal. The lab now evaluates the represented-input power and subtraction in a private wide decimal context, with coarse exponential bounds only to avoid extreme powers. For a nonzero result, overflow or rounding to zero raises ValueError. A change that rounds to −1 is valid: the exact change approaches −1 as the factor tends to zero. Zero rate and zero periods retain exact identity results after validation.
+
+[Runnable checker](../chapter-18/code/check_growth_discount_range.py) uses exact rational integer powers and reciprocal changes, exact square roots and inequalities at half-period subnormal ties, and analytically bounded extreme cases. All 75 checks passed on rerun. [Initial failures and rerun](chapter-18-growth-discount-range-followup.json) retain observations and exits. Run from chapter-18/code. This is selected evidence, not an all-input correct-rounding guarantee for decimal powers or independent review. See [V-57](runtime-refresh-2026-11-04-r3.md) for full candidate execution.
