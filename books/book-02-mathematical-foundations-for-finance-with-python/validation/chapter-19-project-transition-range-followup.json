@@ -1,0 +1,728 @@
+{
+  "baseline_revision": "c8c7a10dc8a2e74e11f32a0b517a242387b12bb6",
+  "corrected_revision": "908a65f2cd68240d65ef70f8a86c63078660218e",
+  "initial_exit": 1,
+  "rerun_exit": 0,
+  "initial": [
+    {
+      "kind": "transition",
+      "inputs": "(1, 1000, -1000, 1)",
+      "expected": "1.0",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, 1.7976931348623157e+308, -1.7976931348623157e+308, 1)",
+      "expected": "1.0",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(5e-324, 1000, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 2)",
+      "expected": "-1.7976931348623157e+308",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, 0, -1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(0, 1.7976931348623157e+308, 0, 1.7976931348623157e+308)",
+      "expected": "0.0",
+      "actual": "'ValueError'",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1.7976931348623157e+308, 1, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, -1000, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "0.0",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(-5e-324, 1000, 0, 1)",
+      "expected": "-9.733444573000164e+110",
+      "actual": "'OverflowError'",
+      "passed": false
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, 1.7976931348623157e+308, 1.7976931348623157e+308, 0)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(0, 5e-324, 1.7976931348623157e+308, 5e-324)",
+      "expected": "8.881784197001251e-16",
+      "actual": "8.881784197001251e-16",
+      "passed": true
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(5e-324, 1000, 0, 1, ())",
+      "expected_balance": "9.733444573000164e+110",
+      "result": "OverflowError",
+      "passed": false
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1, ())",
+      "expected_balance": "9.125016462967946e-127",
+      "result": {
+        "inputs": {
+          "initial": 1.7976931348623157e+308,
+          "rate": -1000,
+          "flow": 0,
+          "horizon": 1,
+          "jumps": []
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "depleted",
+        "final_time": 1,
+        "final_balance": 0,
+        "depletion_time": 1,
+        "scheduled_jumps": 0,
+        "applied_jumps": 0,
+        "events": [
+          {
+            "type": "depletion",
+            "time": 1
+          }
+        ],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": false
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(1.7976931348623157e+308, 1, -1.7976931348623157e+308, 3, ())",
+      "expected_balance": "1.7976931348623157e+308",
+      "result": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(1, 1000, -1000, 1, ((0.5, 1),))",
+      "expected_balance": "1.4035922178528375e+217",
+      "result": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(10, 0, 2, 3, ((1, -5), (2, 7)))",
+      "expected_balance": "18.0",
+      "result": {
+        "inputs": {
+          "initial": 10,
+          "rate": 0,
+          "flow": 2,
+          "horizon": 3,
+          "jumps": [
+            [
+              1,
+              -5
+            ],
+            [
+              2,
+              7
+            ]
+          ]
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "completed",
+        "final_time": 3,
+        "final_balance": 18,
+        "depletion_time": null,
+        "scheduled_jumps": 2,
+        "applied_jumps": 2,
+        "events": [
+          {
+            "type": "jump",
+            "time": 1,
+            "amount": -5,
+            "balance": 7
+          },
+          {
+            "type": "jump",
+            "time": 2,
+            "amount": 7,
+            "balance": 16
+          }
+        ],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "post-jump depletion",
+      "expected_time": 0.5013862943611199,
+      "result": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "no false depletion from rounded zero",
+      "passed": false
+    }
+  ],
+  "rerun": [
+    {
+      "kind": "transition",
+      "inputs": "(1, 1000, -1000, 1)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, 1.7976931348623157e+308, -1.7976931348623157e+308, 1)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(5e-324, 1000, 0, 1)",
+      "expected": "9.733444573000164e+110",
+      "actual": "9.733444573000164e+110",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1)",
+      "expected": "9.125016462967946e-127",
+      "actual": "9.125016462967946e-127",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 2)",
+      "expected": "-1.7976931348623157e+308",
+      "actual": "-1.7976931348623157e+308",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, 0, -1, 1)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(0, 1.7976931348623157e+308, 0, 1.7976931348623157e+308)",
+      "expected": "0.0",
+      "actual": "0.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1.7976931348623157e+308, 1, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, -1000, 0, 1)",
+      "expected": "'ValueError'",
+      "actual": "'ValueError'",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(-5e-324, 1000, 0, 1)",
+      "expected": "-9.733444573000164e+110",
+      "actual": "-9.733444573000164e+110",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(1, 1.7976931348623157e+308, 1.7976931348623157e+308, 0)",
+      "expected": "1.0",
+      "actual": "1.0",
+      "passed": true
+    },
+    {
+      "kind": "transition",
+      "inputs": "(0, 5e-324, 1.7976931348623157e+308, 5e-324)",
+      "expected": "8.881784197001251e-16",
+      "actual": "8.881784197001251e-16",
+      "passed": true
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(5e-324, 1000, 0, 1, ())",
+      "expected_balance": "9.733444573000164e+110",
+      "result": {
+        "inputs": {
+          "initial": 5e-324,
+          "rate": 1000,
+          "flow": 0,
+          "horizon": 1,
+          "jumps": []
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "completed",
+        "final_time": 1,
+        "final_balance": 9.733444573000164e+110,
+        "depletion_time": null,
+        "scheduled_jumps": 0,
+        "applied_jumps": 0,
+        "events": [],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1, ())",
+      "expected_balance": "9.125016462967946e-127",
+      "result": {
+        "inputs": {
+          "initial": 1.7976931348623157e+308,
+          "rate": -1000,
+          "flow": 0,
+          "horizon": 1,
+          "jumps": []
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "completed",
+        "final_time": 1,
+        "final_balance": 9.125016462967946e-127,
+        "depletion_time": null,
+        "scheduled_jumps": 0,
+        "applied_jumps": 0,
+        "events": [],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(1.7976931348623157e+308, 1, -1.7976931348623157e+308, 3, ())",
+      "expected_balance": "1.7976931348623157e+308",
+      "result": {
+        "inputs": {
+          "initial": 1.7976931348623157e+308,
+          "rate": 1,
+          "flow": -1.7976931348623157e+308,
+          "horizon": 3,
+          "jumps": []
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "completed",
+        "final_time": 3,
+        "final_balance": 1.7976931348623157e+308,
+        "depletion_time": null,
+        "scheduled_jumps": 0,
+        "applied_jumps": 0,
+        "events": [],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(1, 1000, -1000, 1, ((0.5, 1),))",
+      "expected_balance": "1.4035922178528375e+217",
+      "result": {
+        "inputs": {
+          "initial": 1,
+          "rate": 1000,
+          "flow": -1000,
+          "horizon": 1,
+          "jumps": [
+            [
+              0.5,
+              1
+            ]
+          ]
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "completed",
+        "final_time": 1,
+        "final_balance": 1.4035922178528375e+217,
+        "depletion_time": null,
+        "scheduled_jumps": 1,
+        "applied_jumps": 1,
+        "events": [
+          {
+            "type": "jump",
+            "time": 0.5,
+            "amount": 1,
+            "balance": 2
+          }
+        ],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "simulator",
+      "inputs": "(10, 0, 2, 3, ((1, -5), (2, 7)))",
+      "expected_balance": "18.0",
+      "result": {
+        "inputs": {
+          "initial": 10,
+          "rate": 0,
+          "flow": 2,
+          "horizon": 3,
+          "jumps": [
+            [
+              1,
+              -5
+            ],
+            [
+              2,
+              7
+            ]
+          ]
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "completed",
+        "final_time": 3,
+        "final_balance": 18,
+        "depletion_time": null,
+        "scheduled_jumps": 2,
+        "applied_jumps": 2,
+        "events": [
+          {
+            "type": "jump",
+            "time": 1,
+            "amount": -5,
+            "balance": 7
+          },
+          {
+            "type": "jump",
+            "time": 2,
+            "amount": 7,
+            "balance": 16
+          }
+        ],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "post-jump depletion",
+      "expected_time": 0.5013862943611199,
+      "result": {
+        "inputs": {
+          "initial": 1,
+          "rate": 1000,
+          "flow": -1000,
+          "horizon": 1,
+          "jumps": [
+            [
+              0.5,
+              -0.25
+            ]
+          ]
+        },
+        "model": "constant_rate_continuous_account",
+        "event_policy": {
+          "initial_jump": "before_initial_depletion",
+          "coincident_future_jump": "depletion_first"
+        },
+        "status": "depleted",
+        "final_time": 0.5013862943611199,
+        "final_balance": 0,
+        "depletion_time": 0.5013862943611199,
+        "scheduled_jumps": 1,
+        "applied_jumps": 1,
+        "events": [
+          {
+            "type": "jump",
+            "time": 0.5,
+            "amount": -0.25,
+            "balance": 0.75
+          },
+          {
+            "type": "depletion",
+            "time": 0.5013862943611199
+          }
+        ],
+        "units": {
+          "time": "years",
+          "balance": "currency",
+          "rate": "inverse_years",
+          "flow": "currency_per_year"
+        },
+        "runtime_certified": false,
+        "independent_review_completed": false
+      },
+      "passed": true
+    },
+    {
+      "kind": "no false depletion from rounded zero",
+      "passed": true
+    }
+  ],
+  "scope": {
+    "source_revision": "908a65f2cd68240d65ef70f8a86c63078660218e",
+    "compiled_count": 37,
+    "hashes_verified_before_after": true,
+    "blobs": {
+      "check_applied_target_and_timing.py": "9d23d57ce7cd88a5832f056cf9a957e0e4fa9a4c",
+      "check_continuous_rate_edges.py": "7656fdadde1233c130a3ec241dad7233e8d8c89a",
+      "check_contribution_balance_range.py": "45c318153473c83b7e6acae013e0f0234535540f",
+      "check_contribution_frequency.py": "cc3588e76f2e7bc9158f2d06385df600b8543788",
+      "check_depletion_classification_range.py": "9716736dd2ce06789b1248ed4e32ad6002ea9e16",
+      "check_euler_decay_stability.py": "0cf72c28b8f971ef6bd598a572ba001a3c227ec1",
+      "check_growth_balance_range.py": "2bf4ce58e3f423a1d3e719a5147ae0d8ff546759",
+      "check_integrated_growth_range.py": "b60899a49afbc9217593b6c72cb90dd9b23a27c2",
+      "check_logistic_range.py": "8546d272fd8265d3b23344396496fe0318dfe904",
+      "check_logistic_trajectories.py": "35141bf5ba91e30460305dbb23ed7f8ebbd972fa",
+      "check_nonterminal_jump_policy.py": "e0246e8816ff7ea6d54acbf27a1da5827df97c30",
+      "check_piecewise_continuity.py": "c2aef20c80ce1adca9e8c2ff72af0ff20f34f8cc",
+      "check_project_depletion_range.py": "55c565dcceaf6dd4435fba1b13a7d24c88df8daf",
+      "check_project_transition_range.py": "72334a7c37fb17537588a48c748776c41a3b7dea",
+      "check_quadratic_growth_range.py": "a601b3e9c23fec6cbaaf27a569cba18fe5e5af48",
+      "check_rate_conversion_range.py": "28bb4e5ec861e1aa613ad01e3cbb483cf9a5b9e4",
+      "check_section_19_01.py": "f75db61ff944189b8f1d4ec72db59f6f42976ecd",
+      "check_section_19_02.py": "409c65c02954c9f78184b0c4bfad3739f0e76f61",
+      "check_section_19_03.py": "45ee6d9f50331ceca3e4e5e9db1025d5481958bf",
+      "check_section_19_04.py": "304ff63a628430f74bfa4e2c10b03abf38b719a1",
+      "check_section_19_05.py": "220cedf1eab821ddc24768315c5a99f62024e684",
+      "check_section_19_06.py": "45e9eb2d28ba1f7874714ec9b116b7a89271fdd8",
+      "check_section_19_07.py": "f1a4d8cf7b38b2d9d1ea4aaedb4abf1635e807ef",
+      "check_section_19_08.py": "3466f971caa572474199bae9ced8ef94dc97db69",
+      "check_section_19_09.py": "06f760fb4887afd7c04553d3300c3c2f80be3d0f",
+      "check_section_19_10.py": "50098fdabf76330c2d420a3e98fa16f41e2614a0",
+      "check_time_varying_forcing.py": "52ceae3d2a420d8abbce3299c67fdf312c918bf1",
+      "section_19_01.py": "6a7c1ab15f03113cbe1ca6933d3dcf822a936374",
+      "section_19_02.py": "3fe68e5de05ea6840049a7f425f53a20ce7cbdc1",
+      "section_19_03.py": "5d369547d21fe5e3c6ed6b5839562944a8740caa",
+      "section_19_04.py": "2d611a1b29bc475a12c219e05e86a962ae0ff9f3",
+      "section_19_05.py": "f6b9ef50437dcd16d784a084a1047de788bd61a2",
+      "section_19_06.py": "8a9bac4c4b973db41c0274e0f7ada06ec131d71a",
+      "section_19_07.py": "454bbaf1759b096f88eb0fb2d09d4d9fcd97f22f",
+      "section_19_08.py": "c9e6283c5d4e20405d00cbaa7e3a295eff225e5b",
+      "section_19_09.py": "844e5e139a6a89790b28f739346b8e1060d38eb4",
+      "section_19_10.py": "8beb284f93cfbbbcf701e7826a0e33f606d7af4a"
+    },
+    "runs": {
+      "check_applied_target_and_timing.py": {
+        "exit": 0,
+        "seconds": 0.040865553000003274
+      },
+      "check_continuous_rate_edges.py": {
+        "exit": 0,
+        "seconds": 0.06018184299995255
+      },
+      "check_contribution_balance_range.py": {
+        "exit": 0,
+        "seconds": 1.9175573330000475
+      },
+      "check_contribution_frequency.py": {
+        "exit": 0,
+        "seconds": 0.5686363510000092
+      },
+      "check_depletion_classification_range.py": {
+        "exit": 0,
+        "seconds": 0.7329220970000279
+      },
+      "check_euler_decay_stability.py": {
+        "exit": 0,
+        "seconds": 0.022645650000015394
+      },
+      "check_growth_balance_range.py": {
+        "exit": 0,
+        "seconds": 0.6618556710000121
+      },
+      "check_integrated_growth_range.py": {
+        "exit": 0,
+        "seconds": 0.6985037069999862
+      },
+      "check_logistic_range.py": {
+        "exit": 0,
+        "seconds": 0.3955203599999777
+      },
+      "check_logistic_trajectories.py": {
+        "exit": 0,
+        "seconds": 0.43355972199998405
+      },
+      "check_nonterminal_jump_policy.py": {
+        "exit": 0,
+        "seconds": 0.019701541999950223
+      },
+      "check_piecewise_continuity.py": {
+        "exit": 0,
+        "seconds": 0.023289610999995602
+      },
+      "check_project_depletion_range.py": {
+        "exit": 0,
+        "seconds": 0.41894946600001504
+      },
+      "check_project_transition_range.py": {
+        "exit": 0,
+        "seconds": 0.800113212000042
+      },
+      "check_quadratic_growth_range.py": {
+        "exit": 0,
+        "seconds": 0.022573972000031972
+      },
+      "check_rate_conversion_range.py": {
+        "exit": 0,
+        "seconds": 4.612243583000009
+      },
+      "check_section_19_01.py": {
+        "exit": 0,
+        "seconds": 0.02241334999996525
+      },
+      "check_section_19_02.py": {
+        "exit": 0,
+        "seconds": 0.07631382599998915
+      },
+      "check_section_19_03.py": {
+        "exit": 0,
+        "seconds": 0.028291973000023063
+      },
+      "check_section_19_04.py": {
+        "exit": 0,
+        "seconds": 0.0213395039999682
+      },
+      "check_section_19_05.py": {
+        "exit": 0,
+        "seconds": 0.017778251999970962
+      },
+      "check_section_19_06.py": {
+        "exit": 0,
+        "seconds": 0.022429649999992307
+      },
+      "check_section_19_07.py": {
+        "exit": 0,
+        "seconds": 0.021314755999981116
+      },
+      "check_section_19_08.py": {
+        "exit": 0,
+        "seconds": 0.14109460399998852
+      },
+      "check_section_19_09.py": {
+        "exit": 0,
+        "seconds": 0.10224931800001968
+      },
+      "check_section_19_10.py": {
+        "exit": 0,
+        "seconds": 0.0289700079999875
+      },
+      "check_time_varying_forcing.py": {
+        "exit": 0,
+        "seconds": 0.028108803000009175
+      }
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Assistant checks on Python 3.12.14/Linux only. Selected fixtures do not establish arbitrary-range accuracy, model suitability, independent reviewer sign-off, supported-platform validation, release acceptance or canonical approval. COV categories remain partially addressed.",
+  "transition-initial_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-project-transition/check_project_transition_range.py\", line 101, in <module>\n    check()\n  File \"/tmp/book02-project-transition/check_project_transition_range.py\", line 97, in check\n    assert all(r['passed'] for r in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "transition-rerun_stderr": ""
+}
