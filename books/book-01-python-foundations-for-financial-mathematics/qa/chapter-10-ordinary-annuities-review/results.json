@@ -1,0 +1,240 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "fa87b1b7f101510af5f0ddf6b354c620ebb01c11e5127fd53c2ba1a9c4ead190",
+  "listing_sha256": "312d10f33fdaf02474af0593293d0aad8449c1bb76733fa3692f35c0240d2e23",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "ordinary_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_fv (__main__.Checks.test_fv) ... ok\ntest_identity (__main__.Checks.test_identity) ... ok\ntest_invalid_periods (__main__.Checks.test_invalid_periods) ... ok\ntest_invalid_rate (__main__.Checks.test_invalid_rate) ... ok\ntest_monthly (__main__.Checks.test_monthly) ... ok\ntest_negative_payment (__main__.Checks.test_negative_payment) ... ok\ntest_negative_rate (__main__.Checks.test_negative_rate) ... ok\ntest_payment (__main__.Checks.test_payment) ... ok\ntest_pv (__main__.Checks.test_pv) ... ok\ntest_small_rate (__main__.Checks.test_small_rate) ... ok\ntest_zero_periods (__main__.Checks.test_zero_periods) ... ok\ntest_zero_rate (__main__.Checks.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "ordinary_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 present value",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 future value",
+      "passed": true,
+      "actual": 331.0,
+      "rational_reference": "331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 zero rate",
+      "passed": true,
+      "actual": 1000,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 nominal monthly",
+      "passed": true,
+      "periodic_rate": ".005",
+      "scope": "independent rational conversion"
+    },
+    {
+      "label": "P6 printed effective monthly percentage",
+      "passed": true,
+      "decimal_periodic_rate": "0.004867550565343037541198945587505995057443158397727418065101030053643133030199992717627946205583258",
+      "scope": "independent Decimal conversion, no source conversion helper"
+    },
+    {
+      "label": "P7 inverse payment",
+      "passed": true,
+      "actual": 129.5045749654567,
+      "rational_reference": "129.5045749654566954998066742538077476988713133189411045079244689720579462760090086867630598085194340",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 negative rate",
+      "passed": true,
+      "actual": 234.56790123456793,
+      "rational_reference": "19000/81",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 FV identity independently summed",
+      "passed": true,
+      "actual": 331.0,
+      "rational_reference": "331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 signed payments",
+      "passed": true,
+      "actual": -248.68519909842223,
+      "rational_reference": "-331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 empty PV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 empty FV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 independent timeline sum",
+      "passed": true,
+      "actual": 753.6078016925105,
+      "rational_reference": "113112488152010620000/150094635296999121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "source inverse reconstruction",
+      "passed": true,
+      "actual": 1000.0,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero target remains valid",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "signed inverse payment",
+      "passed": true,
+      "actual": -200.0,
+      "rational_reference": "-200",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate FV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 finite FV despite unsupported PV",
+      "passed": true,
+      "actual": 111.11111111111111,
+      "rational_reference": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "fractional count",
+      "passed": true,
+      "exception": "ValueError('periods must be a nonnegative integer')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must exceed -1')"
+    },
+    {
+      "label": "zero-count inverse",
+      "passed": true,
+      "exception": "ValueError('payment not identifiable')"
+    },
+    {
+      "label": "F54 zero-rate PV overflow",
+      "passed": true,
+      "exception": "ValueError('annuity result outside supported range')"
+    },
+    {
+      "label": "F54 zero-rate FV overflow",
+      "passed": true,
+      "exception": "ValueError('annuity result outside supported range')"
+    },
+    {
+      "label": "F54 positive-rate PV overflow",
+      "passed": true,
+      "exception": "ValueError('annuity result outside supported range')"
+    },
+    {
+      "label": "F55 bool target",
+      "passed": true,
+      "exception": "ValueError('finite numeric inputs required')"
+    },
+    {
+      "label": "F55 NaN target",
+      "passed": true,
+      "exception": "ValueError('finite numeric inputs required')"
+    },
+    {
+      "label": "F55 infinite target",
+      "passed": true,
+      "exception": "ValueError('finite numeric inputs required')"
+    },
+    {
+      "label": "F55 inverse output overflow",
+      "passed": true,
+      "exception": "ValueError('annuity result outside supported range')"
+    },
+    {
+      "label": "F55 inverse output underflow",
+      "passed": true,
+      "exception": "ValueError('annuity result outside supported range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_only_prompts": [
+    1
+  ],
+  "supplemental_only_prompts": [
+    5,
+    6
+  ],
+  "historical_unique_methods_added": 0
+}
