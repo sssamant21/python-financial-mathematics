@@ -1,0 +1,154 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "651fcd48ce2500694f20b60622d3d67d3e4000c0545cc049ce9f85bb21530828",
+  "listing_sha256": "39bb9cc278bbc25ccc2d436c183ae5a1e68b189752a39d3ed372da03f728a0c9",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "solving_for_time.py"
+      ],
+      "stdout": "Time to grow 1000 to 1210 at 10% EAR: 2.000000 years\n",
+      "stderr": "test_01_periodic_doubling (__main__.TimeTests.test_01_periodic_doubling) ... ok\ntest_02_effective_years (__main__.TimeTests.test_02_effective_years) ... ok\ntest_03_continuous (__main__.TimeTests.test_03_continuous) ... ok\ntest_04_nominal_monthly (__main__.TimeTests.test_04_nominal_monthly) ... ok\ntest_05_decline (__main__.TimeTests.test_05_decline) ... ok\ntest_06_same_balance (__main__.TimeTests.test_06_same_balance) ... ok\ntest_07_unreachable_or_indeterminate (__main__.TimeTests.test_07_unreachable_or_indeterminate) ... ok\ntest_08_bad_inputs (__main__.TimeTests.test_08_bad_inputs) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "solving_for_time.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked annual1000to1210",
+      "passed": true,
+      "actual": 1.9999999999999998,
+      "high_precision_reference": "2",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "P1 annual500to605",
+      "passed": true,
+      "actual": 1.9999999999999998,
+      "high_precision_reference": "2",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "P2 doubling8%",
+      "passed": true,
+      "actual": 9.006468342000595,
+      "high_precision_reference": "9.006468342000595600016800502267797402620531796237113187957505412989481262817424759126635086075627497",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "P4 monthlyperiods",
+      "passed": true,
+      "actual": 9.578594039813167,
+      "high_precision_reference": "9.578594039813166670372792512512992260728562104731782272307401274997746664067280518674033689177955629",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "worked doubling7%",
+      "passed": true,
+      "actual": 10.244768351058719,
+      "high_precision_reference": "10.24476835105872035959563062901912384317422041360130673423412524279636813159592608832302187221904666",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "P3 continuousfactor exp.15",
+      "passed": true,
+      "actual": 3.000000000000001,
+      "high_precision_reference": "3",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "nominalmonthly24periods",
+      "passed": true,
+      "actual": 2.0000000000000013,
+      "high_precision_reference": "2",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "P5 negativeannualdecline",
+      "passed": true,
+      "actual": 2.0,
+      "high_precision_reference": "2",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "same-sign liabilitydecline",
+      "passed": true,
+      "actual": 2.0,
+      "high_precision_reference": "2",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "label": "P4 firstfull monthlycredit is10",
+      "passed": true
+    },
+    {
+      "label": "worked doublingfirstannualcredit is11",
+      "passed": true
+    },
+    {
+      "label": "P6 impossible zero rate rejected",
+      "passed": true,
+      "exception": "target cannot be reached at zero growth"
+    },
+    {
+      "label": "P6 nonunique zero rate rejected",
+      "passed": true,
+      "exception": "any time fits; time is not uniquely identifiable"
+    },
+    {
+      "label": "equal balances at nonzero rate havezero time",
+      "passed": true
+    },
+    {
+      "label": "F49 adjacentlargebalance increase",
+      "passed": true,
+      "actual": 3.047780088039606e-15,
+      "decimal_reference": "3.047780088039605732763055310156559949308945932428655266709648344422556924912398341392119479812650824E-15",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F49 adjacentlargebalance decline",
+      "passed": true,
+      "actual": 2.899047382768027e-15,
+      "decimal_reference": "2.899047382768027140327336019076526609566497015354362430530373423923289940282475034321141754819744903E-15",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F49 opposed adjacent target rejected",
+      "passed": true,
+      "exception": "target is unreachable at nonnegative time"
+    },
+    {
+      "label": "F49 division underflow rejected",
+      "passed": true,
+      "exception": "time outside supported float range"
+    },
+    {
+      "label": "F49 nonfinite nominal log factor rejected",
+      "passed": true,
+      "exception": "log growth outside supported range"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 6,
+  "historical_unique_methods_added": 0
+}
