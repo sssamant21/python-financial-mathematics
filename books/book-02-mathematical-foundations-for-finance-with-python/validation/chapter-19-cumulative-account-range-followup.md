@@ -1,0 +1,17 @@
+# Cumulative account, depletion and deposit range
+
+Date: 2026-11-05. Baseline: `0e875ff0c65c8c302bc6b0b04f042710ba246f42`. Corrected executable revision: `baf06212851ca7949fad4376e4b9857184fb1cb9`.
+
+The actual Section 19.10 exact-account and depletion entry points now share Section 19.8's complete accumulation and exact-threshold/time evaluation. The existing signed timed-deposit helper reaches the shared account calculation through both of its analytical segments. Public finite/domain guards, signed-balance scope, scalar returns, report fields and lack of terminal scheduling are preserved.
+
+Independent expectations use a 1,600-digit separate exponential/integral reference; zero-rate and equilibrium identities use exact represented-input fractions. Depletion expectations derive from the reciprocal logarithm w/(w-r*A), with exact rational nondepletion classification. Timed-deposit expectations separately compound initial capital and the dated payment; they do not compose the implementation for expected values. A finite pre-jump transition and post-jump state remain required. In particular an overflowing intermediate jump is rejected even when a later formal balance might be finite. Nonzero segment/final balances and depletion times rounding to zero reject; exact zero states remain valid.
+
+The 44 cases comprise 11 account cases, 12 depletion cases, 12 deposit cases, six domain/type controls and three actual assessment-field references. Allowances are eight ulps with exact zero/nonzero classification. Baseline exit 1 retained 17 failed cases; corrected exit 0 passed all 44. These are case failures, not 17 adjudicated defects. In addition, injected observations verify two actual shared transition calls inside deposit composition and one shared depletion call. All 39 Chapter 19 Python files compiled and 29 scripts passed with before/after hash verification.
+
+Snapshot preparation initially detected an extra newline introduced by patch transport, before any numerical checker ran. Only removal of a final newline producing the exact expected blob hash was accepted; all 38 baseline blobs then matched. The raw record preserves this materialization failure/correction separately from numerical results.
+
+[Raw initial failures, reruns and scoped manifests](chapter-19-cumulative-account-range-followup.json) · [Runnable checker](../chapter-19/code/check_cumulative_account_range.py)
+
+Replay: use a clean repository checkout at the corrected revision, change to Book 02's chapter-19/code, and run `python check_cumulative_account_range.py` with assertions enabled. To reproduce the initial failures, retain that checker outside the checkout, select the stated baseline revision, overlay only the checker, then run it there. Record stdout, stderr and exit separately. For the chapter scope, compile every chapter-19/code/*.py using py_compile.compile(path,doraise=True), then execute every check_/test_ basename in its parent directory with a fresh Python process and a 60-second timeout. Verify the raw manifest Git blob hashes before and afterward. The expanded scope contains existing checkers, not only the new file.
+
+Selected assistant-derived references and Python 3.12.14/Linux checks only. No independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval, arbitrary-range accuracy or real financial model validation is established. COV categories remain partial.
