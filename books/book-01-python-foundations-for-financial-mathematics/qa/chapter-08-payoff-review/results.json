@@ -1,0 +1,100 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "044310cc938fa3a03d7604774c7a90248b65f24ba85b63a832b2d48292fa8410",
+  "program_sha256": "876b1b148595c262444134ff1f168d20cd161243482ad3cdc11e667c676ef6ce",
+  "tests_sha256": "6c6867570fdbac6dc234a3a2d432f222dab941ad502d082e9dfd111755e66898",
+  "png_sha256": "8f9023041a784e8377cf072985ce95c4abde4f60117eef31174f9f80ad000193",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_artists_png_and_cleanup (test_payoff_diagrams.PayoffTests.test_artists_png_and_cleanup) ... ok\ntest_invalid_scalars (test_payoff_diagrams.PayoffTests.test_invalid_scalars) ... ok\ntest_invalid_terminal_grid (test_payoff_diagrams.PayoffTests.test_invalid_terminal_grid) ... ok\ntest_kinks_breakeven_and_premium_gap (test_payoff_diagrams.PayoffTests.test_kinks_breakeven_and_premium_gap) ... ok\ntest_known_call_and_put_values (test_payoff_diagrams.PayoffTests.test_known_call_and_put_values) ... ok\ntest_short_mirror_and_position_scaling (test_payoff_diagrams.PayoffTests.test_short_mirror_and_position_scaling) ... ok\ntest_source_and_outputs_independent (test_payoff_diagrams.PayoffTests.test_source_and_outputs_independent) ... ok\ntest_terminal_identity_and_monotonicity (test_payoff_diagrams.PayoffTests.test_terminal_identity_and_monotonicity) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.211s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "payoff_diagrams.py"
+      ],
+      "returncode": 0,
+      "stdout": "call: terminal prices [0.0, 96.0, 100.0, 106.0, 120.0]\n  payoff USD: [0.0, 0.0, 0.0, 600.0, 2000.0]\n  simplified profit USD: [-600.0, -600.0, -600.0, 0.0, 1400.0]\nput: terminal prices [0.0, 96.0, 100.0, 106.0, 120.0]\n  payoff USD: [10000.0, 400.0, 0.0, 0.0, 0.0]\n  simplified profit USD: [9600.0, 0.0, -400.0, -400.0, -400.0]\nSaved output/payoff_diagrams.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "call full per-position monetary oracle",
+      "passed": true
+    },
+    {
+      "label": "put full per-position monetary oracle",
+      "passed": true
+    },
+    {
+      "label": "call at103 and strike100",
+      "passed": true
+    },
+    {
+      "label": "premium8 shifts profit down200 with zero at108",
+      "passed": true
+    },
+    {
+      "label": "call multiplier10 scales money one tenth",
+      "passed": true
+    },
+    {
+      "label": "put multiplier10 scales money one tenth",
+      "passed": true
+    },
+    {
+      "label": "supplemental endpoint interpolation invents payoff at strike",
+      "passed": true
+    },
+    {
+      "label": "per-unit terminal positive-part identity",
+      "passed": true
+    },
+    {
+      "label": "declared Real Fraction contract computes known amounts",
+      "passed": true
+    },
+    {
+      "label": "plotted call grid includes strike and break-even",
+      "passed": true
+    },
+    {
+      "label": "plotted put grid includes strike and break-even",
+      "passed": true
+    }
+  ]
+}
