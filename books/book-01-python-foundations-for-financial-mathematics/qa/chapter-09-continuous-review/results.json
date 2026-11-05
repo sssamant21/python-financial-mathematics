@@ -1,0 +1,179 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "eb6e69d6e3e76cdf293082e06b18b4d29d8ae8b3754af2907abe1aa0ac3a2aac",
+  "listing_sha256": "aa666bc24919fdc8e71e7f9ceac343403164b21d010c55280c64eabb52e54c6a",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "continuous_compounding.py"
+      ],
+      "stdout": "Continuous FV: 10,618.37\nContinuous EAR: 6.18365465%\n",
+      "stderr": "test_01_zero_rate (__main__.ContinuousTests.test_01_zero_rate) ... ok\ntest_02_one_year (__main__.ContinuousTests.test_02_one_year) ... ok\ntest_03_inverse (__main__.ContinuousTests.test_03_inverse) ... ok\ntest_04_effective_conversion (__main__.ContinuousTests.test_04_effective_conversion) ... ok\ntest_05_nominal_equivalence (__main__.ContinuousTests.test_05_nominal_equivalence) ... ok\ntest_06_continuous_limit (__main__.ContinuousTests.test_06_continuous_limit) ... ok\ntest_07_negative_and_zero_time (__main__.ContinuousTests.test_07_negative_and_zero_time) ... ok\ntest_08_validation (__main__.ContinuousTests.test_08_validation) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "continuous_compounding.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked one-year balance",
+      "passed": true,
+      "actual": 10618.365465453597,
+      "high_precision_reference": "10618.3654654535962222468487716837232842826042033007905977294622488557261464608479502872711",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "worked effective annual",
+      "passed": true,
+      "actual": 0.06183654654535962,
+      "high_precision_reference": "0.06183654654535962222468487716837232842826042033007905977294622488557261464608479502872711",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "worked PV15000 in3years",
+      "passed": true,
+      "actual": 13303.806550757363,
+      "high_precision_reference": "13303.8065507573627329134784315475602841863287323589736170172378415828095432282589774982513",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P1 FV5000 at3% fortwoyears",
+      "passed": true,
+      "actual": 5309.182732726798,
+      "high_precision_reference": "5309.18273272679811112342438584186164214130210165039529886473112442786307323042397514363555",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 continuous5% to effective",
+      "passed": true,
+      "actual": 0.05127109637602404,
+      "high_precision_reference": "0.05127109637602403969751763633564522017482129605506252878393847916627986965056126890988738",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P3 effective5% to continuous",
+      "passed": true,
+      "actual": 0.04879016416943201,
+      "high_precision_reference": "0.0487901641694320030653744042231646586079736644155824100400765731141079243236310388194137213",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P4 PV2000 at4% for1.5years",
+      "passed": true,
+      "actual": 1883.5290671684975,
+      "high_precision_reference": "1883.52906716849741907430556654229941218937732508367844274809447084064243192533798891136935",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "nominal6% equivalent continuous freq1",
+      "passed": true,
+      "actual": 0.058268908123975775,
+      "high_precision_reference": "0.0582689081239757755257183511185059232332749100139269051021536775762530365584796136685288613",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "nominal6% equivalent continuous freq2",
+      "passed": true,
+      "actual": 0.0591176044830888,
+      "high_precision_reference": "0.0591176044830888054652388113694248108521162622265144210891503141907719701861786182395031298",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "nominal6% equivalent continuous freq4",
+      "passed": true,
+      "actual": 0.059554449975002616,
+      "high_precision_reference": "0.0595544499750026193416389799127454074155781275472162447748987606072872102620877000126715048",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "nominal6% equivalent continuous freq12",
+      "passed": true,
+      "actual": 0.059850498132468885,
+      "high_precision_reference": "0.0598504981324688833452264295121216632406441931221229922217118358106874890675542492160664655",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "nominal6% equivalent continuous freq365",
+      "passed": true,
+      "actual": 0.059995069033523175,
+      "high_precision_reference": "0.0599950690335231709878762641239630669823833237984481740001847577031067554793052267015366054",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "negative continuous2% twoyears",
+      "passed": true,
+      "actual": 9607.894391523232,
+      "high_precision_reference": "9607.89439152323209439210691323245886027972093717916571623439633811042154420819724236101001",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P5 continuous6% not effective6%",
+      "passed": true
+    },
+    {
+      "label": "P6 intervalcomposition",
+      "passed": true,
+      "actual": 1.1502737988572274,
+      "high_precision_reference": "1.1502737988572274",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "unrounded PV inverse",
+      "passed": true,
+      "actual": 15000.000000000002,
+      "high_precision_reference": "15000",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "signed zero-time identity",
+      "passed": true,
+      "actual": -200.0,
+      "high_precision_reference": "-200",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "F46 futureamount input loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F46 presentamount input loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F46 continuousrate input loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F46 effectiverate input loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F46 nominalrate input loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 6,
+  "historical_unique_methods_added": 0
+}
