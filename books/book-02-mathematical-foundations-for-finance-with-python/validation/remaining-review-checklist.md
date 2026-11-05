@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `ec2d14291906ca137698e6716779a4634495b18b`  
-**Latest scoped source revision:** `ec2d14291906ca137698e6716779a4634495b18b` (included in V-72)  
-**Disposition:** V-72 full candidate Linux pass includes local valuation kernel and benchmark/invariant corrections; independent review and release approval pending.
+**Full-runtime candidate source revision:** `5988dee92cf70f48f718bf8b96e0ae465d22ee42`  
+**Latest scoped source revision:** `5988dee92cf70f48f718bf8b96e0ae465d22ee42` (included in V-73)  
+**Disposition:** V-73 full candidate Linux pass includes matrix/feasibility and two-by-two range corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-73](runtime-refresh-2026-11-05-r15.md): 534 compiled, 321 passed, 535 required hashes verified before/after. Both matrix range checkers are included; G2–G8 unchanged.
 
 [V-72](runtime-refresh-2026-11-05-r14.md): 532 compiled, 319 passed, 533 required hashes verified before/after. The local valuation kernel, corrected wrappers and both new checkers are included; G2–G8 unchanged.
 
@@ -101,7 +103,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-72](runtime-refresh-2026-11-05-r14.md) at `ec2d14291906ca137698e6716779a4634495b18b`; all 532 sources/319 scripts/533 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-73](runtime-refresh-2026-11-05-r15.md) at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`; all 534 sources/321 scripts/535 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -474,3 +476,14 @@ Next substantive numerical item: Section 20.2 present-value and nominal-to-conti
 [V-72](runtime-refresh-2026-11-05-r14.md) compiled all 532 Python files, passed all 319 discovered scripts and matched all 533 required source/fixture hashes before/after at the same pin. Thirty-two selected COV categories remain partially addressed; none closed. Case failures are not defect totals or completion percentages. Independent review, supported platforms and release approval remain pending.
 
 Next substantive numerical item: Section 20.3 raw quadratic-form and portfolio-feasibility accepted-input/result-range contracts. Derive complete rational quadratic-form and weight-sum/threshold expectations before changing behavior; distinguish numerical arithmetic/classification from unimplemented general symmetry/PSD validation. The scalar helper still forms b+c and its products separately, and feasibility still depends on a rounded floating-point sum. The selected valuation/conversion cases above are complete for their retained scope and must not be repeated as new progress. Other benchmark linear-system/provenance/manual obligations remain open. Section 19.8 end-period abs(rate*years)>4000 remains an explicit evaluation boundary.
+
+
+## Matrix/feasibility and two-by-two benchmarks — V-73 (2026-11-05)
+
+[Section 20.3 matrix range](chapter-20-invariant-matrix-range-followup.md) retains 12 original failed cases and a 36-case pass. Decimal row-product references and exact integer-scale feasibility expectations cover complete arithmetic, cancellation, range limits and actual assessment integration. Exact budget checks use the represented inputs; symmetry, PSD and optimality remain separate. Chapter scope: 28 files compiled and 17 scripts passed at `c8110de2a09da05fca5591c5a70c0d9278f51df4`.
+
+[Section 20.2 linear benchmark range](chapter-20-benchmark-linear-range-followup.md) retains seven original failed cases and a 19-case pass. Independent exact pivoted elimination, equation residuals and assessment observation cover determinants lost to intermediate range or cancellation and final solution range rejection. Chapter scope: 29 files compiled and 18 scripts passed at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`.
+
+[V-73](runtime-refresh-2026-11-05-r15.md) compiled all 534 Python files, passed all 321 discovered scripts and matched all 535 required source/fixture hashes before and after at that executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: Section 20.4 discrete present-value and annuity result-range boundaries beyond the retained subnormal-payment fix. Derive independent represented-gross power and finite payment-sum expectations; preserve the declared rate/period domains and assess the existing OverflowError contract separately from Section 20.2. Probe valid zero identities, full amount scaling and final range rejection before changing the helpers. The selected matrix, feasibility and two-by-two fixtures above are complete for their retained scope. Section 19.8's end-period exponent boundary and other manual/provenance obligations remain open.
