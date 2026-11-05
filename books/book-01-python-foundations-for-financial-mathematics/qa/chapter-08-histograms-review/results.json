@@ -1,0 +1,104 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "60837cbdb395fbed4143380ef725d614e4350fb0a0a09f049eacac3b876562b2",
+  "program_sha256": "66f30369f493fbe36041f6f6f349f44d4c04c2ec2552681416c9d56c70e1e65f",
+  "tests_sha256": "fb1b42230ec32f0072e6275ad85610800ffdc4a2b9175ecb2f4e07206621778e",
+  "png_sha256": "75ffea5a1d283cf33f6852409acc82cd3fbacd71400b4dfaaa645f19ab06fabc",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_artists_png_and_cleanup (test_return_histograms.HistogramTests.test_artists_png_and_cleanup) ... ok\ntest_density_area_and_independent_numpy_route (test_return_histograms.HistogramTests.test_density_area_and_independent_numpy_route) ... ok\ntest_edge_assignment_including_final_edge (test_return_histograms.HistogramTests.test_edge_assignment_including_final_edge) ... ok\ntest_inputs_preserved_and_zero_sample_supported (test_return_histograms.HistogramTests.test_inputs_preserved_and_zero_sample_supported) ... ok\ntest_invalid_edges_and_uncovered_tails (test_return_histograms.HistogramTests.test_invalid_edges_and_uncovered_tails) ... ok\ntest_invalid_returns (test_return_histograms.HistogramTests.test_invalid_returns) ... ok\ntest_known_counts_and_coverage (test_return_histograms.HistogramTests.test_known_counts_and_coverage) ... ok\ntest_permutation_invariance (test_return_histograms.HistogramTests.test_permutation_invariance) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.172s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "return_histograms.py"
+      ],
+      "returncode": 0,
+      "stdout": "Slots: 13; observed: 11; missing: 2\nUnequal-bin counts: [2, 2, 3, 4]\nSample shares sum: 1.000000\nDensity area: 1.000000\nObserved negative fraction: 36.36%\nSaved output/return_histograms.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "scalar half-open bin oracle with closed final edge",
+      "passed": true,
+      "expected": [
+        2,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "label": "all unequal densities match rational reference",
+      "passed": true,
+      "expected": [
+        "25/11",
+        "100/11",
+        "150/11",
+        "50/11"
+      ]
+    },
+    {
+      "label": "exact boundary -2% starts second bin and +10% is included",
+      "passed": true
+    },
+    {
+      "label": "observed negative fraction uses eleven eligible values",
+      "passed": true
+    },
+    {
+      "label": "supplemental rational area and density units",
+      "passed": true
+    },
+    {
+      "label": "reversal preserves counts and densities",
+      "passed": true
+    },
+    {
+      "label": "supplemental zero filling changes denominator and zero bin",
+      "passed": true
+    },
+    {
+      "label": "figure rejects tail outside declared support",
+      "passed": true
+    },
+    {
+      "label": "source stairs are counts on left and density on right",
+      "passed": true
+    }
+  ]
+}
