@@ -21,17 +21,34 @@ def valid_rate_periods(rate,periods):
         raise ValueError("rate must exceed -1 and periods must be nonnegative")
     return r,n
 
-def growth_factor(rate,periods):
+def _compound_result(rate,periods,*,inverse=False,change=False):
     r,n=valid_rate_periods(rate,periods)
-    return math.exp(n*math.log1p(r))
+    if r==0 or n==0:
+        return 0.0 if change else 1.0
+    exponent=n*math.log1p(r)
+    if inverse:
+        exponent=-exponent
+    # Conservative bounds: exp(800) overflows binary64 and
+    # exp(-800) rounds to zero, or gives a change rounding to -1.
+    if exponent < -800 and change:
+        return -1.0
+    if abs(exponent)>800:
+        raise ValueError("compound result outside floating-point range")
+    with localcontext(Context(prec=850)):
+        power=(1+Decimal(r))**(Decimal(-n) if inverse else Decimal(n))
+        result=float(power-1 if change else power)
+    if not math.isfinite(result) or result==0:
+        raise ValueError("compound result outside floating-point range")
+    return result
+
+def growth_factor(rate,periods):
+    return _compound_result(rate,periods)
 
 def growth_increment(rate,periods):
-    r,n=valid_rate_periods(rate,periods)
-    return math.expm1(n*math.log1p(r))
+    return _compound_result(rate,periods,change=True)
 
 def discount_change(rate,periods):
-    r,n=valid_rate_periods(rate,periods)
-    return math.expm1(-n*math.log1p(r))
+    return _compound_result(rate,periods,inverse=True,change=True)
 
 def annuity_present_value(payment,rate,periods):
     c=finite(payment,"payment")
