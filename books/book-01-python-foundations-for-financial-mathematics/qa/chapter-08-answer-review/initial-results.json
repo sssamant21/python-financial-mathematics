@@ -1,0 +1,171 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "4d1e619c90088bf5b3493e876f98474829102c15f28dbfea4530d8e8890333df",
+  "prompt_sha256": "0ba69675f52bba1caa7beab5f9dc68e9ca807a641714fba2915b6c2d02de273f",
+  "listing_sha256": "4a25fcc71e964e7abd7722efb29ccf7983ccdf85899cee69dc2ecd4460cff606",
+  "commands": [
+    {
+      "label": "original reference suite",
+      "args": [
+        "chapter08_solutions.py"
+      ],
+      "stdout": "",
+      "stderr": "test_01_same_endpoint_different_paths (__main__.Chapter08Solutions.test_01_same_endpoint_different_paths) ... ok\ntest_02_figure_axes_axis_artist (__main__.Chapter08Solutions.test_02_figure_axes_axis_artist) ... ok\ntest_03_coordinate_order_and_spacing (__main__.Chapter08Solutions.test_03_coordinate_order_and_spacing) ... ok\ntest_04_nan_gap_versus_dropped_point (__main__.Chapter08Solutions.test_04_nan_gap_versus_dropped_point) ... ok\ntest_05_post_step_effective_state (__main__.Chapter08Solutions.test_05_post_step_effective_state) ... ok\ntest_06_repeated_clock_hour (__main__.Chapter08Solutions.test_06_repeated_clock_hour) ... ok\ntest_07_expected_grid_row_and_cell_missingness (__main__.Chapter08Solutions.test_07_expected_grid_row_and_cell_missingness) ... ok\ntest_08_simple_log_and_compounded_returns (__main__.Chapter08Solutions.test_08_simple_log_and_compounded_returns) ... ok\ntest_09_strict_linked_unknown_and_later_zero (__main__.Chapter08Solutions.test_09_strict_linked_unknown_and_later_zero) ... ok\ntest_10_histogram_boundary_and_zero (__main__.Chapter08Solutions.test_10_histogram_boundary_and_zero) ... ok\ntest_11_density_area_and_units (__main__.Chapter08Solutions.test_11_density_area_and_units) ... ok\ntest_12_scatter_label_alignment_and_joint_mask (__main__.Chapter08Solutions.test_12_scatter_label_alignment_and_joint_mask) ... ok\ntest_13_correlation_is_not_slope (__main__.Chapter08Solutions.test_13_correlation_is_not_slope) ... ok\ntest_14_signed_weights_and_absolute_shares (__main__.Chapter08Solutions.test_14_signed_weights_and_absolute_shares) ... ok\ntest_15_payoff_profit_and_multiplier (__main__.Chapter08Solutions.test_15_payoff_profit_and_multiplier) ... ok\ntest_16_equal_numeric_and_equivalent_rates (__main__.Chapter08Solutions.test_16_equal_numeric_and_equivalent_rates) ... ok\ntest_17_scenario_orientation_and_reference_difference (__main__.Chapter08Solutions.test_17_scenario_orientation_and_reference_difference) ... ok\ntest_18_chart_units_zero_omission_and_sign_cues (__main__.Chapter08Solutions.test_18_chart_units_zero_omission_and_sign_cues) ... ok\ntest_19_export_objects_and_cleanup (__main__.Chapter08Solutions.test_19_export_objects_and_cleanup) ... ok\ntest_20_dashboard_coverage_and_evidence_semantics (__main__.Chapter08Solutions.test_20_dashboard_coverage_and_evidence_semantics) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.096s\n\nOK\n",
+      "returncode": 0,
+      "methods": 20,
+      "passed": true
+    },
+    {
+      "label": "original compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "chapter08_solutions.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "Problem20 separate original project integration suite",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "stdout": "",
+      "stderr": "test_dashboard (unittest.loader._FailedTest.test_dashboard) ... ERROR\n\n======================================================================\nERROR: test_dashboard (unittest.loader._FailedTest.test_dashboard)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_dashboard\nTraceback (most recent call last):\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py\", line 396, in _find_test_path\n    module = self._get_module_from_name(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py\", line 339, in _get_module_from_name\n    __import__(name)\n  File \"/tmp/chapter08-answers-vz_uwkjk/integration/test_dashboard.py\", line 14, in <module>\n    RAW = (HERE/'prices.csv').read_bytes()\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1019, in read_bytes\n    with self.open(mode='rb') as f:\n         ^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/chapter08-answers-vz_uwkjk/integration/prices.csv'\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n",
+      "returncode": 1,
+      "methods": 1,
+      "passed": false
+    }
+  ],
+  "checks": [
+    {
+      "problem": "ALL",
+      "label": "observer rerun same20 methods and captures",
+      "passed": true
+    },
+    {
+      "problem": 1,
+      "label": "indexed values from per-column rational bases",
+      "passed": true
+    },
+    {
+      "problem": 2,
+      "label": "upper Axes owns line and vertical Axis",
+      "passed": true
+    },
+    {
+      "problem": 3,
+      "label": "observed coordinate spacing",
+      "passed": true
+    },
+    {
+      "problem": 4,
+      "label": "dropped point does not preserve unknown slot",
+      "passed": true
+    },
+    {
+      "problem": 5,
+      "label": "post-step first vertices are exact held states",
+      "passed": true
+    },
+    {
+      "problem": 6,
+      "label": "UTC instants differ one hour independent of local labels",
+      "passed": true
+    },
+    {
+      "problem": 7,
+      "label": "independent row and cell counts",
+      "passed": true
+    },
+    {
+      "problem": 8,
+      "label": "rational gross product and log reconstruction",
+      "passed": true
+    },
+    {
+      "problem": 9,
+      "label": "full strict path including baseline and unrestarted gap",
+      "passed": true
+    },
+    {
+      "problem": 10,
+      "label": "scalar bin assignment",
+      "passed": true
+    },
+    {
+      "problem": 11,
+      "label": "rational densities and areas",
+      "passed": true
+    },
+    {
+      "problem": 12,
+      "label": "manual label pair map",
+      "passed": true
+    },
+    {
+      "problem": 13,
+      "label": "affine y values not equality",
+      "passed": true
+    },
+    {
+      "problem": 14,
+      "label": "integer denominators and rational exposure shares",
+      "passed": true
+    },
+    {
+      "problem": 15,
+      "label": "complete call and put payoff oracles",
+      "passed": true
+    },
+    {
+      "problem": 16,
+      "label": "independent high-precision rates and endpoints",
+      "passed": true,
+      "annual": "2653.2977051444201339454307651519775390625000",
+      "monthly": "2712.64028548199843532005100725485657590288891661815564893537",
+      "nominal": "0.04888948540377961926503523206528596303895435291752931843196",
+      "continuous": "0.0487901641694320030653744042231646586079736644155824100400766"
+    },
+    {
+      "problem": 17,
+      "label": "entire grid and joint difference",
+      "passed": true
+    },
+    {
+      "problem": 18,
+      "label": "correct label order zero and hatch",
+      "passed": true
+    },
+    {
+      "problem": 19,
+      "label": "plotted balance oracle and cleanup",
+      "passed": true
+    },
+    {
+      "problem": 20,
+      "label": "mini fixture only: five cells one complete pair null result",
+      "passed": true
+    },
+    {
+      "problem": 20,
+      "label": "prior real project integration remains exact-source applicable",
+      "passed": true,
+      "evidence": "../chapter-08-dashboard-review/README.md",
+      "scope": "Earlier batch integration,not rerun here"
+    }
+  ],
+  "observer_methods": 20,
+  "historical_unique_methods_added": 0,
+  "source_method_invocations_this_batch": 56
+}
