@@ -1,0 +1,330 @@
+{
+  "baseline": "9d5c9ce9786c2963561a64905d73a6e6a4bf73f0",
+  "corrected": "5504f2cf019487dae61912e6b01bdb6440931307",
+  "command": "python check_pv_error_range.py",
+  "cwd": "chapter-18/code",
+  "initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/34a1183c1f47/pv_followup/check_pv_error_range.py\", line 54, in <module>\n    check()\n  File \"/workspace/scratch/34a1183c1f47/pv_followup/check_pv_error_range.py\", line 50, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "results": [
+      {
+        "case": "(1.7976931348623157e+308, 1, 1024)",
+        "expected": "0.9999999999999999",
+        "actual": "'OverflowError'",
+        "passed": false
+      },
+      {
+        "case": "(5e-324, -0.5, 1075)",
+        "expected": "2.0",
+        "actual": "'ZeroDivisionError'",
+        "passed": false
+      },
+      {
+        "case": "(1, 1, 1075)",
+        "expected": "'ValueError'",
+        "actual": "'OverflowError'",
+        "passed": false
+      },
+      {
+        "case": "(1.7976931348623157e+308, -0.5, 1)",
+        "expected": "'ValueError'",
+        "actual": "inf",
+        "passed": false
+      },
+      {
+        "case": "(5e-324, 1, 1)",
+        "expected": "'ValueError'",
+        "actual": "0.0",
+        "passed": false
+      },
+      {
+        "case": "(0, -0.5, 5000)",
+        "expected": "0.0",
+        "actual": "'ZeroDivisionError'",
+        "passed": false
+      },
+      {
+        "case": "(1, 0.5, 0)",
+        "expected": "1.0",
+        "actual": "1.0",
+        "passed": true
+      },
+      {
+        "case": "(1000, 0.05, 2)",
+        "expected": "907.0294784580499",
+        "actual": "907.0294784580499",
+        "passed": true
+      },
+      {
+        "case": "(1, 5.551115123125783e-17, 4)",
+        "expected": "0.9999999999999998",
+        "actual": "1.0",
+        "passed": false
+      },
+      {
+        "case": "(1.7976931348623157e+308, 1, 2098)",
+        "expected": "5e-324",
+        "actual": "'OverflowError'",
+        "passed": false
+      },
+      {
+        "case": "(1.7976931348623157e+308, 1, 2099)",
+        "expected": "'ValueError'",
+        "actual": "'OverflowError'",
+        "passed": false
+      },
+      {
+        "case": "half-period sqrt(4)",
+        "expected": "5.0",
+        "actual": "5.0",
+        "passed": true
+      },
+      {
+        "case": "discount saturation",
+        "expected": "'ValueError'",
+        "actual": "'OverflowError'",
+        "passed": false
+      },
+      {
+        "case": "discount growth",
+        "expected": "'ValueError'",
+        "actual": "'ZeroDivisionError'",
+        "passed": false
+      },
+      {
+        "case": "zero still validates rate",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "boolean payment",
+        "expected": "'TypeError'",
+        "actual": "'TypeError'",
+        "passed": true
+      },
+      {
+        "case": "('errors', 1.7976931348623157e+308, -1.7976931348623157e+308)",
+        "expected": "'ValueError'",
+        "actual": "{'absolute': inf, 'relative': inf}",
+        "passed": false
+      },
+      {
+        "case": "('errors', 5e-324, 1.7976931348623157e+308)",
+        "expected": "'ValueError'",
+        "actual": "{'absolute': 1.7976931348623157e+308, 'relative': inf}",
+        "passed": false
+      },
+      {
+        "case": "('errors', 1.7976931348623157e+308, 5e-324)",
+        "expected": "{'absolute': 1.7976931348623157e+308, 'relative': 1.0}",
+        "actual": "{'absolute': 1.7976931348623157e+308, 'relative': 1.0}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 3, 4)",
+        "expected": "{'absolute': 1.0, 'relative': 0.3333333333333333}",
+        "actual": "{'absolute': 1.0, 'relative': 0.3333333333333333}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 0, 1.7976931348623157e+308)",
+        "expected": "{'absolute': 1.7976931348623157e+308, 'relative': None}",
+        "actual": "{'absolute': 1.7976931348623157e+308, 'relative': None}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 5e-324, 0)",
+        "expected": "{'absolute': 5e-324, 'relative': 1.0}",
+        "actual": "{'absolute': 5e-324, 'relative': 1.0}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 1.7976931348623157e+308, 1.7976931348623155e+308)",
+        "expected": "{'absolute': 1.99584030953472e+292, 'relative': 1.1102230246251568e-16}",
+        "actual": "{'absolute': 1.99584030953472e+292, 'relative': 1.1102230246251568e-16}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 0, 0)",
+        "expected": "{'absolute': 0.0, 'relative': None}",
+        "actual": "{'absolute': 0.0, 'relative': None}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 5e-324, 1e-323)",
+        "expected": "{'absolute': 5e-324, 'relative': 1.0}",
+        "actual": "{'absolute': 5e-324, 'relative': 1.0}",
+        "passed": true
+      },
+      {
+        "case": "('errors', -3, 4)",
+        "expected": "{'absolute': 7.0, 'relative': 2.3333333333333335}",
+        "actual": "{'absolute': 7.0, 'relative': 2.3333333333333335}",
+        "passed": true
+      }
+    ]
+  },
+  "rerun": {
+    "exit": 0,
+    "stderr": "",
+    "results": [
+      {
+        "case": "(1.7976931348623157e+308, 1, 1024)",
+        "expected": "0.9999999999999999",
+        "actual": "0.9999999999999999",
+        "passed": true
+      },
+      {
+        "case": "(5e-324, -0.5, 1075)",
+        "expected": "2.0",
+        "actual": "2.0",
+        "passed": true
+      },
+      {
+        "case": "(1, 1, 1075)",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "(1.7976931348623157e+308, -0.5, 1)",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "(5e-324, 1, 1)",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "(0, -0.5, 5000)",
+        "expected": "0.0",
+        "actual": "0.0",
+        "passed": true
+      },
+      {
+        "case": "(1, 0.5, 0)",
+        "expected": "1.0",
+        "actual": "1.0",
+        "passed": true
+      },
+      {
+        "case": "(1000, 0.05, 2)",
+        "expected": "907.0294784580499",
+        "actual": "907.0294784580499",
+        "passed": true
+      },
+      {
+        "case": "(1, 5.551115123125783e-17, 4)",
+        "expected": "0.9999999999999998",
+        "actual": "0.9999999999999998",
+        "passed": true
+      },
+      {
+        "case": "(1.7976931348623157e+308, 1, 2098)",
+        "expected": "5e-324",
+        "actual": "5e-324",
+        "passed": true
+      },
+      {
+        "case": "(1.7976931348623157e+308, 1, 2099)",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "half-period sqrt(4)",
+        "expected": "5.0",
+        "actual": "5.0",
+        "passed": true
+      },
+      {
+        "case": "discount saturation",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "discount growth",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "zero still validates rate",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "boolean payment",
+        "expected": "'TypeError'",
+        "actual": "'TypeError'",
+        "passed": true
+      },
+      {
+        "case": "('errors', 1.7976931348623157e+308, -1.7976931348623157e+308)",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "('errors', 5e-324, 1.7976931348623157e+308)",
+        "expected": "'ValueError'",
+        "actual": "'ValueError'",
+        "passed": true
+      },
+      {
+        "case": "('errors', 1.7976931348623157e+308, 5e-324)",
+        "expected": "{'absolute': 1.7976931348623157e+308, 'relative': 1.0}",
+        "actual": "{'absolute': 1.7976931348623157e+308, 'relative': 1.0}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 3, 4)",
+        "expected": "{'absolute': 1.0, 'relative': 0.3333333333333333}",
+        "actual": "{'absolute': 1.0, 'relative': 0.3333333333333333}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 0, 1.7976931348623157e+308)",
+        "expected": "{'absolute': 1.7976931348623157e+308, 'relative': None}",
+        "actual": "{'absolute': 1.7976931348623157e+308, 'relative': None}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 5e-324, 0)",
+        "expected": "{'absolute': 5e-324, 'relative': 1.0}",
+        "actual": "{'absolute': 5e-324, 'relative': 1.0}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 1.7976931348623157e+308, 1.7976931348623155e+308)",
+        "expected": "{'absolute': 1.99584030953472e+292, 'relative': 1.1102230246251568e-16}",
+        "actual": "{'absolute': 1.99584030953472e+292, 'relative': 1.1102230246251568e-16}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 0, 0)",
+        "expected": "{'absolute': 0.0, 'relative': None}",
+        "actual": "{'absolute': 0.0, 'relative': None}",
+        "passed": true
+      },
+      {
+        "case": "('errors', 5e-324, 1e-323)",
+        "expected": "{'absolute': 5e-324, 'relative': 1.0}",
+        "actual": "{'absolute': 5e-324, 'relative': 1.0}",
+        "passed": true
+      },
+      {
+        "case": "('errors', -3, 4)",
+        "expected": "{'absolute': 7.0, 'relative': 2.3333333333333335}",
+        "actual": "{'absolute': 7.0, 'relative': 2.3333333333333335}",
+        "passed": true
+      }
+    ]
+  }
+}
