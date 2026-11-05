@@ -1,0 +1,92 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "f99a47ffcc6d745d4f1859a24cf0b2bd9292c01daef2c36d70b6f7b1c92ed4ba",
+  "program_sha256": "3067cf95a7ee0be0ca26e928ef33bb7c417276c88dbbfbe74ae41b1522ad6b17",
+  "tests_sha256": "b3d455370547e73f25fc9a1eb1b0cf61b2cf69d743f229dbb7752293e388f98d",
+  "png_sha256": "3cc27f3e6adad92d10ce8ef1aebda759c40673949b6dafb83dee04a6335f46ce",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_gap_expansion_and_original_missingness (test_line_charts.LineChartTests.test_gap_expansion_and_original_missingness) ... ok\ntest_invalid_days (test_line_charts.LineChartTests.test_invalid_days) ... ok\ntest_invalid_gap_policy (test_line_charts.LineChartTests.test_invalid_gap_policy) ... ok\ntest_invalid_values_and_states (test_line_charts.LineChartTests.test_invalid_values_and_states) ... ok\ntest_line_and_step_artists (test_line_charts.LineChartTests.test_line_and_step_artists) ... ok\ntest_png_and_cleanup (test_line_charts.LineChartTests.test_png_and_cleanup) ... ok\ntest_source_preserved_and_copies_independent (test_line_charts.LineChartTests.test_source_preserved_and_copies_independent) ... ok\ntest_threshold_boundary_and_no_filtering (test_line_charts.LineChartTests.test_threshold_boundary_and_no_filtering) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.196s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "line_charts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Source observations: 6; plotted rows: 7\nObserved account values: 11/12\nInserted gap-separator rows: 1\nSaved output/line_charts.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "supplemental linear midpoint is 1015 and is absent from source",
+      "passed": true
+    },
+    {
+      "label": "duration equal to threshold keeps day 1 to 3 adjacent",
+      "passed": true
+    },
+    {
+      "label": "one rendering separator before day 7, not a source row",
+      "passed": true
+    },
+    {
+      "label": "observed source count is 11 and source missing value persists",
+      "passed": true
+    },
+    {
+      "label": "threshold three reconnects Account B across day 4 to 7",
+      "passed": true
+    },
+    {
+      "label": "threshold three preserves source missing Account A at day 4",
+      "passed": true
+    },
+    {
+      "label": "supplemental lookup gives 12 shares at day 2",
+      "passed": true
+    },
+    {
+      "label": "repeated day 4 state remains eight",
+      "passed": true
+    },
+    {
+      "label": "exact artists retain separate account and ledger contracts",
+      "passed": true
+    }
+  ]
+}
