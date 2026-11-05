@@ -1,0 +1,248 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "b44d3aac0f24fc696c0d65c2e0aa94e6ca5fd4c47f19682b820f19e21d9076a8",
+  "listing_sha256": "844c3dbf7ac63a6286aa6055f5951967c60abf235f2233283a1e8b52ca9d1e02",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "tvm_functions.py"
+      ],
+      "stdout": "FV: 1,127.16\nEAR: 6.167781%\n",
+      "stderr": "test_01_future_value (__main__.TVMTests.test_01_future_value) ... ok\ntest_02_present_value (__main__.TVMTests.test_02_present_value) ... ok\ntest_03_monthly (__main__.TVMTests.test_03_monthly) ... ok\ntest_04_continuous (__main__.TVMTests.test_04_continuous) ... ok\ntest_05_rate_conversion (__main__.TVMTests.test_05_rate_conversion) ... ok\ntest_06_solve_rate_and_time (__main__.TVMTests.test_06_solve_rate_and_time) ... ok\ntest_07_npv_and_signed_flows (__main__.TVMTests.test_07_npv_and_signed_flows) ... ok\ntest_08_validation (__main__.TVMTests.test_08_validation) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "tvm_functions.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked monthly FV",
+      "passed": true,
+      "actual": 1127.1597762053918,
+      "reference": "1127.159776205391741353560909647289734632907050717058467924594879150390625000",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "worked NPV",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P1 FV",
+      "passed": true,
+      "actual": 2205.0,
+      "reference": "2205",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 PV",
+      "passed": true,
+      "actual": 2000.0,
+      "reference": "2000",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 EAR",
+      "passed": true,
+      "actual": 0.06167781186449957,
+      "reference": "0.061677811864499568789707617431640625",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 continuous FV",
+      "passed": true,
+      "actual": 563.7484257896879,
+      "reference": "563.7484257896878357396327846874242353671432639127785661022877113001341383962080695480613563690904915",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 NPV",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nominal conversion back",
+      "passed": true,
+      "actual": 0.06,
+      "reference": "0.06",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nominal inverse",
+      "passed": true,
+      "actual": 0.06000000000000012,
+      "reference": "0.06",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "time inverse",
+      "passed": true,
+      "actual": 2.000000000000004,
+      "reference": "2",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "discrete roundtrip",
+      "passed": true,
+      "actual": -1200.0,
+      "reference": "-1200",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "continuous roundtrip",
+      "passed": true,
+      "actual": 750.0,
+      "reference": "750",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty iterable",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "cancellation fsum",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "true zero inferred rate",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "true zero elapsed time",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative date",
+      "passed": true,
+      "exception": "years must be nonnegative"
+    },
+    {
+      "label": "zero rate nonunique time",
+      "passed": true,
+      "exception": "zero growth gives no unique finite time"
+    },
+    {
+      "label": "zero rate unreachable time",
+      "passed": true,
+      "exception": "zero growth gives no unique finite time"
+    },
+    {
+      "label": "F46 nonzero amount conversion underflow",
+      "passed": false,
+      "actual": 0.0
+    },
+    {
+      "label": "F46 nonzero rate conversion underflow",
+      "passed": false,
+      "actual": 100.0
+    },
+    {
+      "label": "F47 nominal reverse underflow",
+      "passed": false,
+      "actual": 0.0
+    },
+    {
+      "label": "F48 totalperiod overflow",
+      "passed": false,
+      "actual": 0.0
+    },
+    {
+      "label": "F48 inference division underflow",
+      "passed": false,
+      "actual": 0.0
+    },
+    {
+      "label": "F49 nearby time increase",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "3.047780088039605732763055310156559949308945932428655266709648344422556924912398341392119479812650824E-15",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F49 nearby implied rate increase",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1.48701690847778298472259622308865158709423943539488879487981769811791761045319230543E-16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F49 nearby time decline",
+      "passed": false,
+      "actual": -0.0,
+      "reference": "2.899047382768027140327336019076526609566497015354362430530373423923289940282475034321141754819744903E-15",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F49 nearby implied rate decline",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "-1.487016908477782984722596223088651587094239435394888794879817698117917610453192305429E-16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F49 opposed nearby target",
+      "passed": false,
+      "actual": -0.0
+    },
+    {
+      "label": "F49 elapsed division underflow",
+      "passed": false,
+      "actual": 0.0
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 6,
+  "historical_unique_methods_added": 0
+}
