@@ -1,0 +1,134 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "c1f6ad16abba6a69288372d26aa3932f259d684654273a01ca73037466b33988",
+  "listing_sha256": "0e3347e9c4118513df15742ebbb1a053975d81e798389ef19c8b7dce2d697eae",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "solving_for_rate.py"
+      ],
+      "stdout": "Two-year EAR: 10.000000%\n",
+      "stderr": "test_01_one_period (__main__.RateTests.test_01_one_period) ... ok\ntest_02_multi_period (__main__.RateTests.test_02_multi_period) ... ok\ntest_03_effective_annual (__main__.RateTests.test_03_effective_annual) ... ok\ntest_04_continuous (__main__.RateTests.test_04_continuous) ... ok\ntest_05_nominal_monthly (__main__.RateTests.test_05_nominal_monthly) ... ok\ntest_06_negative_rate (__main__.RateTests.test_06_negative_rate) ... ok\ntest_07_signed_balances (__main__.RateTests.test_07_signed_balances) ... ok\ntest_08_invalid (__main__.RateTests.test_08_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "solving_for_rate.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked8000to9680 over2periods",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "high_precision_reference": "1/10",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P1 400to420 over1period",
+      "passed": true,
+      "actual": 0.050000000000000044,
+      "high_precision_reference": "1/20",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P2 5000to6050 over2years",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "high_precision_reference": "1/10",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P4 decline100to81",
+      "passed": true,
+      "actual": -0.09999999999999996,
+      "high_precision_reference": "-1/10",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "same sign negativebalance support",
+      "passed": true,
+      "actual": 0.10000000000000009,
+      "high_precision_reference": "1/10",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P3 continuous10%effective",
+      "passed": true,
+      "actual": 0.09531017980432485,
+      "high_precision_reference": "0.0953101798043248600439521232807650922206053653086441991852398081630010142358842328390575029",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "fractionalyear smoothannual model",
+      "passed": true,
+      "actual": 0.13550812700200385,
+      "high_precision_reference": "0.13550812700200387513494374751067177290378308020130272575639524223817572019525717213852985",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "nominalmonthly inverse24completeperiods",
+      "passed": true,
+      "actual": 0.06000000000000001,
+      "high_precision_reference": "0.06",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "quarterannualization only when periodisquarter",
+      "passed": true,
+      "actual": 0.4641000000000004,
+      "high_precision_reference": "4641/10000",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P5 zero growth across all conventions",
+      "passed": true
+    },
+    {
+      "label": "inferred rate reconstructs unroundedbalance",
+      "passed": true
+    },
+    {
+      "label": "F48 nominal period-product overflow rejected",
+      "passed": true,
+      "exception": "total compounding periods outside supported range"
+    },
+    {
+      "label": "F48 periodic rate underflow rejected",
+      "passed": true,
+      "exception": "periodic rate outside supported range"
+    },
+    {
+      "label": "F48 effective rate underflow rejected",
+      "passed": true,
+      "exception": "effective rate outside supported range"
+    },
+    {
+      "label": "F48 continuous rate underflow rejected",
+      "passed": true,
+      "exception": "continuous rate outside supported range"
+    },
+    {
+      "label": "F48 nominal rate underflow rejected",
+      "passed": true,
+      "exception": "nominal rate outside supported range"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 6,
+  "historical_unique_methods_added": 0
+}
