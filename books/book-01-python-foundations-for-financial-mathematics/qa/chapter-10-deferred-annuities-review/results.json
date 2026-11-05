@@ -1,0 +1,232 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "6183829cad212af694c0a1df54af15a1a9418d84724244d336a4b8776e907d63",
+  "listing_sha256": "9738175783428f3e61b734be70e48ae626764806520921b6853641c6a19aa242",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "deferred_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV deferred: 205.52\n",
+      "stderr": "test_01_dates (__main__.DeferredAnnuityTests.test_01_dates) ... ok\ntest_02_ordinary_at_zero_delay (__main__.DeferredAnnuityTests.test_02_ordinary_at_zero_delay) ... ok\ntest_03_two_period_delay (__main__.DeferredAnnuityTests.test_03_two_period_delay) ... ok\ntest_04_discount_identity (__main__.DeferredAnnuityTests.test_04_discount_identity) ... ok\ntest_05_zero_rate (__main__.DeferredAnnuityTests.test_05_zero_rate) ... ok\ntest_06_zero_payments (__main__.DeferredAnnuityTests.test_06_zero_payments) ... ok\ntest_07_negative_rate (__main__.DeferredAnnuityTests.test_07_negative_rate) ... ok\ntest_08_timeline_reconciliation (__main__.DeferredAnnuityTests.test_08_timeline_reconciliation) ... ok\ntest_09_inverse_payment (__main__.DeferredAnnuityTests.test_09_inverse_payment) ... ok\ntest_10_signed_flows (__main__.DeferredAnnuityTests.test_10_signed_flows) ... ok\ntest_11_delay_effect (__main__.DeferredAnnuityTests.test_11_delay_effect) ... ok\ntest_12_invalid (__main__.DeferredAnnuityTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "deferred_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 zero delay ordinary",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 deferred PV",
+      "passed": true,
+      "actual": 205.52495793258038,
+      "rational_reference": "33100000/161051",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 discount identity",
+      "passed": true,
+      "actual": 205.52495793258038,
+      "rational_reference": "33100000/161051",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 zero rate",
+      "passed": true,
+      "actual": 1000.0,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 empty schedule",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 negative rate",
+      "passed": true,
+      "actual": 260.6310013717422,
+      "rational_reference": "190000/729",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 one extra delay",
+      "passed": true,
+      "actual": 186.84087084780032,
+      "rational_reference": "331000000/1771561",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 nominal monthly",
+      "passed": true,
+      "scope": "supplemental rational conversion, no source converter"
+    },
+    {
+      "label": "P10 inverse payment",
+      "passed": true,
+      "actual": 149.91773359438682,
+      "rational_reference": "149.9177335943868071279637012830641939299059040808391961059860633937785800577649286810140871108373097",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 reconstruction",
+      "passed": true,
+      "actual": 1000.0,
+      "rational_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 outgoing stream",
+      "passed": true,
+      "actual": -205.52495793258038,
+      "rational_reference": "-33100000/161051",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 explicit timeline",
+      "passed": true,
+      "actual": 1448.3048610478522,
+      "rational_reference": "105933610739454536961444715465628643035888671875/73143171433403393900724146770015259539275776",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative rate extra delay",
+      "passed": true,
+      "actual": 289.5900015241579,
+      "rational_reference": "1900000/6561",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero target inverse valid",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate ordinary PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate deferred PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 finite deferred PV despite ordinary overflow",
+      "passed": true,
+      "actual": 5.871985603521638e+306,
+      "rational_reference": "163270379748297095039296356234267341640171520000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/27804969353190843603887312348492931681894944661289444015873167435060088964437471545718785022400701763709293853585698347774166558403795076548960201",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must exceed -1')"
+    },
+    {
+      "label": "negative delay",
+      "passed": true,
+      "exception": "ValueError('delay cannot be negative')"
+    },
+    {
+      "label": "fractional count",
+      "passed": true,
+      "exception": "TypeError('periods must be an integer')"
+    },
+    {
+      "label": "empty inverse",
+      "passed": true,
+      "exception": "ValueError('payment cannot be inferred with no payments')"
+    },
+    {
+      "label": "bool target",
+      "passed": true,
+      "exception": "TypeError('payment must be numeric')"
+    },
+    {
+      "label": "F54 zero-rate ordinary overflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 deferral factor underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 deferred nonzero value underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 timeline factor underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F54 timeline payment underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    },
+    {
+      "label": "F55 inverse underflow",
+      "passed": true,
+      "exception": "ValueError('annuity value outside supported range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_only_prompts": [
+    1
+  ],
+  "supplemental_only_prompts": [
+    9
+  ],
+  "historical_unique_methods_added": 0
+}
