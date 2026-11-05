@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-65 full candidate Linux pass (517 files, 306 scripts, 518 required hashes). Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-66 full candidate Linux pass (518 files, 307 scripts, 519 required hashes; 60-second per-script budget). Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate pass | 517/517 at `47511f620984be32b808cd5b50897fbf18eb9f19`. [V-65](runtime-refresh-2026-11-05-r7.md). |
-| Automated script execution | Full candidate pass | 306/306 at `47511f620984be32b808cd5b50897fbf18eb9f19`. [V-65](runtime-refresh-2026-11-05-r7.md). |
+| Python compilation | Full candidate pass | 518/518 at `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`. [V-66](runtime-refresh-2026-11-05-r8.md). |
+| Automated script execution | Full candidate pass | 307/307 at `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`; 60-second budget, prior scoped timeout retained. [V-66](runtime-refresh-2026-11-05-r8.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -230,7 +230,7 @@ Section 15.2 finite-difference guard fix published; 21 Chapter 15 files compiled
 
 ## Runtime evidence and scope
 
-- **Latest full run:** [V-65](runtime-refresh-2026-11-05-r7.md): 517 compiled, 306 passed, 518 hashes matched before/after at `47511f620984be32b808cd5b50897fbf18eb9f19`.
+- **Latest full run:** [V-66](runtime-refresh-2026-11-05-r8.md): 518 compiled, 307 passed, 519 hashes matched before/after at `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`; 60-second budget.
 
 - **Historical seventh refresh:** [V-38 seventh refresh](runtime-refresh-2026-10-30-r2.md): 464 compiled sources, 253 successful scripts and 465 required hashes verified before/after at `378775bc25034f5551f1d1efa51d836da77d6737`.
 
@@ -625,3 +625,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Section19.8 evidence](chapter-19-growth-balance-range-followup.md) preserves15 initial failures and a31-case pass. Complete nominal-period scaling and shared final exponential evaluation now retain selected representable balances; two observed calls check actual shared-helper use. All33 Chapter19 sources compiled and23 scripts passed at `47511f620984be32b808cd5b50897fbf18eb9f19`.
 
 [V-65](runtime-refresh-2026-11-05-r7.md) compiled517 Python files,passed306 scripts and matched518 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.8 continuous/end-period contribution balance range, including complete weighted accumulation, signed-flow cancellation, zero-rate/time identities and representable final values, with independent finite-payment/integral references. The contribution-frequency order oracle is already complete for its selected scope. Independent review, supported platforms and release approval remain pending.
+
+## Contribution-balance range and V-66 — 2026-11-05
+
+[Section19.8 evidence](chapter-19-contribution-balance-range-followup.md) preserves17 original failed cases, the first correction's pass, an intermediate false-finite large-period probe and a final33-case pass. Complete accumulation, exact zero-rate arithmetic and retained tiny period corrections now preserve selected balances. The declared end-period exponent evaluation limit remains an explicit open scope boundary. All34 Chapter19 files compiled and24 scripts passed at `552d14965ec893cb3022e7f9d1ee6e6596f9f7e5`.
+
+[V-66](runtime-refresh-2026-11-05-r8.md) compiled518 Python files,passed307 scripts and matched519 required source/fixture hashes before/after at the same pin. A15-second scoped timeout in the unchanged rate-conversion checker is retained separately; scoped and full reruns used60 seconds per script. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.8 depletion-time accepted-input/classification range, including complete rate*balance/withdrawal ratios near the nondepletion threshold and zero-rate quotient representability, with independent reciprocal/logarithmic references. Do not repeat the already-retained small-rate depletion cases. Independent review, supported platforms and release approval remain pending.
