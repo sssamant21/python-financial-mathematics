@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `5988dee92cf70f48f718bf8b96e0ae465d22ee42`  
-**Latest scoped source revision:** `5988dee92cf70f48f718bf8b96e0ae465d22ee42` (included in V-73)  
-**Disposition:** V-73 full candidate Linux pass includes matrix/feasibility and two-by-two range corrections; independent review and release approval pending.
+**Full-runtime candidate source revision:** `8795c02e5bbe873cd6db42a26564cc9adc7a070e`  
+**Latest scoped source revision:** `8795c02e5bbe873cd6db42a26564cc9adc7a070e` (included in V-74)  
+**Disposition:** V-74 full candidate Linux pass includes discrete valuation and aggregate corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-74](runtime-refresh-2026-11-05-r16.md): 536 compiled, 323 passed, 537 required hashes verified before/after. Both new range checkers are included; G2–G8 unchanged.
 
 [V-73](runtime-refresh-2026-11-05-r15.md): 534 compiled, 321 passed, 535 required hashes verified before/after. Both matrix range checkers are included; G2–G8 unchanged.
 
@@ -103,7 +105,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-73](runtime-refresh-2026-11-05-r15.md) at `5988dee92cf70f48f718bf8b96e0ae465d22ee42`; all 534 sources/321 scripts/535 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-74](runtime-refresh-2026-11-05-r16.md) at `8795c02e5bbe873cd6db42a26564cc9adc7a070e`; 536 sources/323 scripts/537 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -487,3 +489,14 @@ Next substantive numerical item: Section 20.3 raw quadratic-form and portfolio-f
 [V-73](runtime-refresh-2026-11-05-r15.md) compiled all 534 Python files, passed all 321 discovered scripts and matched all 535 required source/fixture hashes before and after at that executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: Section 20.4 discrete present-value and annuity result-range boundaries beyond the retained subnormal-payment fix. Derive independent represented-gross power and finite payment-sum expectations; preserve the declared rate/period domains and assess the existing OverflowError contract separately from Section 20.2. Probe valid zero identities, full amount scaling and final range rejection before changing the helpers. The selected matrix, feasibility and two-by-two fixtures above are complete for their retained scope. Section 19.8's end-period exponent boundary and other manual/provenance obligations remain open.
+
+
+## Discrete valuation and rounded-term aggregation — V-74 (2026-11-05)
+
+[Section 20.4 discrete range](chapter-20-boundary-discrete-range-followup.md) retains 22 original mismatches across 60 cases and three intermediate failures from expanded exact half-subnormal probes. All 64 final cases pass. Independent represented-gross powers, payment recurrence and huge-count bounds check complete scaling, zero identities and rounding behavior. Genuine overflow still raises OverflowError and genuine underflow may return signed zero; the longer non-dyadic evaluation is not a general correct-rounding proof.
+
+[Section 20.6 aggregate range](chapter-20-metamorphic-aggregate-range-followup.md) retains seven failed baseline cases and a 27-case pass. A common-scale dyadic oracle and observed calls verify complete accumulation of rounded terms, permutation stability and final overflow. Per-term discounting and its validation/range rules are unchanged.
+
+[V-74](runtime-refresh-2026-11-05-r16.md) compiled all 536 Python files, passed all 323 discovered scripts and matched all 537 required source/fixture hashes before and after at `8795c02e5bbe873cd6db42a26564cc9adc7a070e`. Final Chapter 20 scope: 31 files compiled and 20 scripts passed. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: Section 20.9 project valuation result-range and Section 20.10 delegation checks. The project still forms its discount factor separately from the monetary term and uses a potentially overflowing partial sum. Derive independent complete-term and final-aggregate expectations, distinguish its existing domain and exception contract, and verify the actual Section 20.10 assessment path. The pending dossier must remain separate from runtime evidence and approval. Do not repeat the completed Section 20.4 or 20.6 fixtures as new coverage. Section 19.8's end-period exponent boundary and other manual/provenance obligations remain open.
