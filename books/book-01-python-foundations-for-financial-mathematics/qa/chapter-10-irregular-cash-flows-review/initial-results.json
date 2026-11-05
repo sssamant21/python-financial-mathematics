@@ -1,0 +1,236 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "f3b7adcc6a62a19507496189c14cb0fdad98fe9d2fc8db529dcf9653d566ba15",
+  "listing_sha256": "2acb06fa977e15d2b8da226a8fe5e5f813d277ace7c0d0b4455410238b598747",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "irregular_cash_flows.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_anchor (__main__.Tests.test_01_anchor) ... ok\ntest_02_one_year (__main__.Tests.test_02_one_year) ... ok\ntest_03_zero_rate (__main__.Tests.test_03_zero_rate) ... ok\ntest_04_mixed (__main__.Tests.test_04_mixed) ... ok\ntest_05_order (__main__.Tests.test_05_order) ... ok\ntest_06_repeated_date (__main__.Tests.test_06_repeated_date) ... ok\ntest_07_leap_year (__main__.Tests.test_07_leap_year) ... ok\ntest_08_negative_rate (__main__.Tests.test_08_negative_rate) ... ok\ntest_09_future_anchor (__main__.Tests.test_09_future_anchor) ... ok\ntest_10_empty (__main__.Tests.test_10_empty) ... ok\ntest_11_negative_amount (__main__.Tests.test_11_negative_amount) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "irregular_cash_flows.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked date offsets",
+      "passed": true,
+      "expected": [
+        0,
+        104,
+        333,
+        424
+      ]
+    },
+    {
+      "label": "worked PV explicit anchor",
+      "passed": true,
+      "actual": 59.73867754061527,
+      "independent_reference": "59.7386775406152952547069065914345190065869157215389265076439433566158195112552736817710985817613638",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 reversed default-anchor stream",
+      "passed": true,
+      "actual": 59.73867754061527,
+      "independent_reference": "59.7386775406152952547069065914345190065869157215389265076439433566158195112552736817710985817613638",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 unsorted generator",
+      "passed": true,
+      "actual": 59.73867754061527,
+      "independent_reference": "59.7386775406152952547069065914345190065869157215389265076439433566158195112552736817710985817613638",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "explicit later anchor",
+      "passed": true,
+      "actual": 65.71254529467677,
+      "independent_reference": "65.7125452946768247801775972505779709072456072936928191584083376922774014623808010499482084399375001",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "explicit earlier anchor",
+      "passed": true,
+      "actual": 54.307888673286755,
+      "independent_reference": "54.3078886732866320497335514467586536423517415650353877342217666878325631920502488016100896197830581",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 to P5 actual day-count fractions",
+      "passed": true,
+      "fractions": [
+        "1",
+        "366/365"
+      ]
+    },
+    {
+      "label": "P5 leap-year PV",
+      "passed": true,
+      "actual": 90.88535548268737,
+      "independent_reference": "90.88535548268738236693719819740118445568358992507886857547710743485962607341679196088313055861743251",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 one-year 110",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 time-zero receipt",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 time-zero outflow",
+      "passed": true,
+      "actual": -100.0,
+      "independent_reference": "-100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 repeated date",
+      "passed": true,
+      "actual": 27.27272727272727,
+      "independent_reference": "300/11",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 consolidated payment",
+      "passed": true,
+      "actual": 27.272727272727273,
+      "independent_reference": "300/11",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 zero-rate signed sum",
+      "passed": true,
+      "actual": 150.0,
+      "independent_reference": "150",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative discount",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty default anchor",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty valid explicit anchor",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "fsum cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 exact zero payment with distant anchor",
+      "passed": false,
+      "exception": "ValueError('discount overflow')",
+      "reference": "0"
+    },
+    {
+      "label": "F53 empty stream invalid anchor",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F53 empty stream timestamp anchor",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 discount factor underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 nonzero payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "timestamp cash-flow date",
+      "passed": true,
+      "exception": "TypeError('dates must be datetime.date')"
+    },
+    {
+      "label": "invalid amount",
+      "passed": true,
+      "exception": "ValueError('amounts must be finite numbers')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must be finite and greater than -1')"
+    },
+    {
+      "label": "invalid nonempty anchor",
+      "passed": true,
+      "exception": "TypeError('anchor must be datetime.date')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_prompts": [
+    1,
+    2,
+    3,
+    12
+  ],
+  "historical_unique_methods_added": 0
+}
