@@ -1,0 +1,343 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "ee65d5b0c59eea2774c526672abeaca46718ae10d46bd6a7ca112fa8751c2c25",
+  "listing_sha256": "1a345e70c42ed57ea830cb58de66eaa7ac4cce683e779e5baeedc33c8deca243",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "cash_flow_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "NPV at 10%: 4.13\nIRR: 0.130662\n",
+      "stderr": "test_01_initial (__main__.EngineTests.test_01_initial) ... ok\ntest_02_ordinary (__main__.EngineTests.test_02_ordinary) ... ok\ntest_03_due (__main__.EngineTests.test_03_due) ... ok\ntest_04_deferred (__main__.EngineTests.test_04_deferred) ... ok\ntest_05_growing (__main__.EngineTests.test_05_growing) ... ok\ntest_06_fv_identity (__main__.EngineTests.test_06_fv_identity) ... ok\ntest_07_mixed (__main__.EngineTests.test_07_mixed) ... ok\ntest_08_irr (__main__.EngineTests.test_08_irr) ... ok\ntest_09_multiple_irr (__main__.EngineTests.test_09_multiple_irr) ... ok\ntest_10_zero (__main__.EngineTests.test_10_zero) ... ok\ntest_11_invalid (__main__.EngineTests.test_11_invalid) ... ok\ntest_12_no_bracket (__main__.EngineTests.test_12_no_bracket) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "cash_flow_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 signed time-zero record",
+      "passed": true
+    },
+    {
+      "label": "P2 ordinary schedule",
+      "passed": true
+    },
+    {
+      "label": "P2 ordinary valuation",
+      "passed": true,
+      "actual": 124.34259954921112,
+      "rational_reference": "165500/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 due schedule",
+      "passed": true
+    },
+    {
+      "label": "P3 due valuation",
+      "passed": true,
+      "actual": 136.77685950413223,
+      "rational_reference": "16550/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 deferred schedule",
+      "passed": true
+    },
+    {
+      "label": "P4 deferred valuation",
+      "passed": true,
+      "actual": 93.42043542390016,
+      "rational_reference": "165500000/1771561",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 growing dates and amounts",
+      "passed": true
+    },
+    {
+      "label": "P5 growing valuation",
+      "passed": true,
+      "actual": 260.5184072126221,
+      "rational_reference": "346750/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 and P9 worked NPV",
+      "passed": true,
+      "actual": 4.132231404958681,
+      "rational_reference": "500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 value at period five",
+      "passed": true,
+      "actual": 6.654999999999987,
+      "rational_reference": "1331/200",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 reconciliation",
+      "passed": true,
+      "actual": 6.654999999999987,
+      "rational_reference": "1331/200",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "value before last receipt",
+      "passed": true,
+      "actual": 4.5454545454545325,
+      "rational_reference": "50/11",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "repeated dates and signed receipts",
+      "passed": true,
+      "actual": 27.272727272727273,
+      "rational_reference": "300/11",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "unsorted generator",
+      "passed": true,
+      "actual": 4.132231404958681,
+      "rational_reference": "500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero rate",
+      "passed": true,
+      "actual": 20.0,
+      "rational_reference": "20",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative rate",
+      "passed": true,
+      "actual": 100.0,
+      "rational_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "empty valuation",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 one period",
+      "passed": true,
+      "actual": 0.10000000000582077,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 one period independent residual and bracket",
+      "passed": true,
+      "residual": -5.291605537559945e-10
+    },
+    {
+      "label": "worked quadratic",
+      "passed": true,
+      "actual": 0.13066238627652638,
+      "rational_reference": "0.130662386291807485258426274490749201023221424895565577943218836903758503342315157386739850823235705",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "worked quadratic independent residual and bracket",
+      "passed": true,
+      "residual": 1.985836620746732e-09
+    },
+    {
+      "label": "P11 first root",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 first root independent residual and bracket",
+      "passed": true,
+      "residual": 4.587698448864283e-17
+    },
+    {
+      "label": "P11 second root",
+      "passed": true,
+      "actual": 0.19999999998835846,
+      "rational_reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 second root independent residual and bracket",
+      "passed": true,
+      "residual": 8.084401203249463e-11
+    },
+    {
+      "label": "lower endpoint",
+      "passed": true,
+      "actual": 0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lower endpoint independent residual and bracket",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "label": "upper endpoint",
+      "passed": true,
+      "actual": 1,
+      "rational_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "upper endpoint independent residual and bracket",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "label": "F60 scaled IRR",
+      "passed": false,
+      "actual": 0.0,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F60 large finite bracket midpoint",
+      "passed": false,
+      "actual": 1e+308,
+      "rational_reference": "101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653145462660171805/708407886575587",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 zero amount with distant valuation period",
+      "passed": false,
+      "exception": "ValueError('valuation overflow')",
+      "reference": "0"
+    },
+    {
+      "label": "F56 zero rate with huge integer date",
+      "passed": false,
+      "exception": "ValueError('valuation overflow')",
+      "reference": "30"
+    },
+    {
+      "label": "F56 growing avoids overflowing standalone power",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')",
+      "reference": "10120112665365530222218721780308794942910329706925279369658756958137163493810937662060932169485230117701255552901081576443287577496685723701437018666526215956869806670159976546580085349908994392351883949000143528892046661849554270405906724943329669032192517144550613048781556593619530000836358455527249009512598247455410467844256718393884336618297312660524653974078414846496589049543848436571067408469217230166804025318356651675633109101125875866783178993748817183207486264888649716473570100671956712952617848491490121265233894548494549587438282813607470967309099420680852059053766878900636797031675439398901886987809698411400983657/101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653853870546747392"
+    },
+    {
+      "label": "P12 not a calendar-date engine",
+      "passed": true,
+      "exception": "ValueError('period must be a nonnegative integer')"
+    },
+    {
+      "label": "invalid record in IRR",
+      "passed": false,
+      "exception": "AttributeError(\"'tuple' object has no attribute 'amount'\")"
+    },
+    {
+      "label": "invalid value_at rate",
+      "passed": true,
+      "exception": "ValueError('periodic rate must be finite and > -1')"
+    },
+    {
+      "label": "F54 nonzero discount underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 growing nonzero amount underflow",
+      "passed": false,
+      "actual": "[CashFlow(period=1, amount=5e-324), CashFlow(period=2, amount=0.0)]"
+    },
+    {
+      "label": "F60 tiny same-sign bracket",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F61 infinite tolerance",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F61 bool iteration cap",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F62 identically zero IRR",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F63 invalid empty ordinary payment",
+      "passed": false,
+      "actual": "[]"
+    },
+    {
+      "label": "F63 invalid empty growing payment",
+      "passed": false,
+      "actual": "[]"
+    },
+    {
+      "label": "F63 bool first payment",
+      "passed": false,
+      "actual": "[CashFlow(period=1, amount=1.0), CashFlow(period=2, amount=1.05)]"
+    },
+    {
+      "label": "absent bracket",
+      "passed": true,
+      "exception": "ValueError('no sign change within bracket')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "project_acceptance_records": 6,
+  "conceptual_prompts": [
+    12
+  ],
+  "historical_unique_methods_added": 0
+}
