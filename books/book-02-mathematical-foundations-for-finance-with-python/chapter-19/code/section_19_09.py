@@ -1,6 +1,7 @@
 """Book 02 Section 19.9: continuous account and depletion simulator."""
 import json
 import math
+from section_19_08 import depletion_time as _withdrawal_depletion
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -32,15 +33,7 @@ def depletion_time(balance,rate,flow):
         return 0.0
     if u>=0:
         return None
-    w=-u
-    if r==0:
-        return a/w
-    ratio=r*a/w
-    if ratio==0:
-        return finite(a/w,"depletion time")
-    if ratio>=1:
-        return None
-    return finite(-math.log1p(-ratio)/r,"depletion time")
+    return _withdrawal_depletion(a,r,-u)
 
 def simulate(initial,rate,flow,horizon,jumps=()):
     a,r,u,T=(finite(v,n) for v,n in
