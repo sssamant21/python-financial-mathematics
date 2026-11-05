@@ -1,0 +1,455 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "2232d967907eb3f0ab9f7a2244556f0d3fc068ed6389b27fff0d6102afcb1bf0",
+  "listing_sha256": "eafb8709cffe0c5ea77af8369598b7d40c8cda79beebc43a4243261935767485",
+  "linked_source_listing_sha256": {
+    "10.08": "23204a061d83d59835e09a99f56a25e3ffe326acb3358b8943a2bca68b05f43c",
+    "10.09": "7d8ad6732055ea247531384f7eb77132c0d47eac142c0fa7259ed9980f62c6e8",
+    "10.11": "ad6c22695fed93fb3a1e1a7f79969e22fbc4a975a4b96e66a5e8ba9afee6f83e"
+  },
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "chapter10_acceptance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_timeline (__main__.Chapter10Acceptance.test_01_timeline) ... ok\ntest_02_ordinary_annuity (__main__.Chapter10Acceptance.test_02_ordinary_annuity) ... ok\ntest_03_due (__main__.Chapter10Acceptance.test_03_due) ... ok\ntest_04_deferred (__main__.Chapter10Acceptance.test_04_deferred) ... ok\ntest_05_growing (__main__.Chapter10Acceptance.test_05_growing) ... ok\ntest_06_level_perpetuity (__main__.Chapter10Acceptance.test_06_level_perpetuity) ... ok\ntest_07_growing_perpetuity (__main__.Chapter10Acceptance.test_07_growing_perpetuity) ... ok\ntest_08_stream_fv (__main__.Chapter10Acceptance.test_08_stream_fv) ... ok\ntest_09_irregular_periods (__main__.Chapter10Acceptance.test_09_irregular_periods) ... ok\ntest_10_npv (__main__.Chapter10Acceptance.test_10_npv) ... ok\ntest_11_irr (__main__.Chapter10Acceptance.test_11_irr) ... ok\ntest_12_multiple_irr (__main__.Chapter10Acceptance.test_12_multiple_irr) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "chapter10_acceptance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 signed timeline",
+      "passed": true,
+      "actual": 48.468221307727504,
+      "independent_reference": "106000/2187",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 signed timeline",
+      "passed": true,
+      "actual": -80.16528925619835,
+      "independent_reference": "-9700/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 value at 0",
+      "passed": true,
+      "actual": 444.99822000712,
+      "independent_reference": "1250000/2809",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 value at 5",
+      "passed": true,
+      "actual": 595.508,
+      "independent_reference": "148877/250",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$445.00",
+        "$595.51"
+      ],
+      "required_phrase": null,
+      "answer": " PV(0) = 500/1.06\u00b2 \u2248 $445.00. Value at time 5 = 500 \u00d7 1.06\u00b3 \u2248 $595.51. Verify that value at time 5 also equals PV(0) \u00d7 1.06\u2075."
+    },
+    {
+      "label": "E4 annuity valuation",
+      "passed": true,
+      "actual": 4100.1974359475935,
+      "independent_reference": "57507390100000/14025517307",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$4,100.20"
+      ],
+      "required_phrase": null,
+      "answer": " PV = 1000 \u00d7 [1 - (1.07)^(-5)]/0.07 \u2248 $4,100.20. A direct sum of 1000/(1.07)^t for t = 1, ..., 5 gives the same result."
+    },
+    {
+      "label": "E6 annuity valuation",
+      "passed": true,
+      "actual": 1788.5484936239395,
+      "independent_reference": "35204000/19683",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$1,788.55"
+      ],
+      "required_phrase": null,
+      "answer": " PV_due = 500 \u00d7 [1 - 1.08^(-4)]/0.08 \u00d7 1.08 \u2248 $1,788.55. The extra factor 1.08 reflects the one-period shift from an ordinary annuity."
+    },
+    {
+      "label": "E7 annuity valuation",
+      "passed": true,
+      "actual": 673.2937129631263,
+      "independent_reference": "14923125000000/22164361129",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$673.29"
+      ],
+      "required_phrase": null,
+      "answer": " PV = 300/1.06\u2074 + 300/1.06\u2075 + 300/1.06\u2076 \u2248 $673.29. Equivalently, PV = 300 \u00d7 [1 - 1.06^(-3)]/0.06 \u00d7 1.06^(-3). The first payment is at time 4, not time 3."
+    },
+    {
+      "label": "E5 ordinary FV",
+      "passed": true,
+      "actual": 1077.53125,
+      "independent_reference": "34481/32",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$1,077.53"
+      ],
+      "required_phrase": null,
+      "answer": " FV = 250 \u00d7 [(1.05)^4 - 1]/0.05 = $1,077.53. The last payment at time 4 earns no additional interest."
+    },
+    {
+      "label": "E8 growing annuity",
+      "passed": true,
+      "actual": 260.5184072126221,
+      "independent_reference": "346750/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$260.52"
+      ],
+      "required_phrase": null,
+      "answer": " Cash flows are 100, 105, and 110.25. PV = 100/1.1 + 105/1.1\u00b2 + 110.25/1.1\u00b3 \u2248 $260.52. The first payment is not increased by the growth rate."
+    },
+    {
+      "label": "E9 linked level perpetuity",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 linked growing perpetuity",
+      "passed": true,
+      "actual": 1666.6666666666667,
+      "independent_reference": "5000/3",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 linked nonconvergence",
+      "passed": true,
+      "exception": "ValueError('require growth > -1 and discount > growth')"
+    },
+    {
+      "label": "E12 PV",
+      "passed": true,
+      "actual": 4.132231404958681,
+      "independent_reference": "500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 FV",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$4.13",
+        "$5.00"
+      ],
+      "required_phrase": null,
+      "answer": " PV = -100 + 60/1.1 + 60/1.1\u00b2 \u2248 +$4.13. FV(2) = -100(1.1\u00b2) + 60(1.1) + 60 = $5.00. The identity FV(2) = PV \u00d7 1.1\u00b2 holds."
+    },
+    {
+      "label": "E13 linked ACT/365F source",
+      "passed": true,
+      "actual": 348.059285386372,
+      "independent_reference": "348.0592853863719870322314677599217017942638896313103936084675459404804156932147904269413047899986265",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 investment NPV",
+      "passed": true,
+      "actual": 20.66115702479337,
+      "independent_reference": "2500/121",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$20.66"
+      ],
+      "required_phrase": null,
+      "answer": " NPV = -500 + 300/1.1 + 300/1.1\u00b2 \u2248 +$20.66. Under the modeled assumptions, the investment passes the positive-NPV criterion."
+    },
+    {
+      "label": "E15 single root",
+      "passed": true,
+      "actual": 0.1500000000014552,
+      "independent_reference": "3/20",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 single root independent residual",
+      "passed": true,
+      "residual": -5.061535731599457e-10
+    },
+    {
+      "label": "E16 first root",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 first root independent residual",
+      "passed": true,
+      "residual": 4.587698448864283e-17
+    },
+    {
+      "label": "E16 second root",
+      "passed": true,
+      "actual": 0.19999999999708962,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 second root independent residual",
+      "passed": true,
+      "residual": 2.021099337224156e-11
+    },
+    {
+      "label": "E17 cost=4000",
+      "passed": true,
+      "actual": -25.44779194680143,
+      "independent_reference": "-4508000/177147",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 cost=5000",
+      "passed": true,
+      "actual": 133.79660206871495,
+      "independent_reference": "71105000/531441",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 benchmark selects B",
+      "passed": true
+    },
+    {
+      "label": "E17 published rounded answer",
+      "passed": true,
+      "expected": [
+        "-$25.45",
+        "$133.80"
+      ],
+      "required_phrase": "B has the higher NPV",
+      "answer": " NPV_A = -4000 + 1200 \u00d7 [1 - 1.08^(-4)]/0.08. NPV_B = -5000 + 1550 \u00d7 [1 - 1.08^(-4)]/0.08. NPV_A \u2248 -$25.45 and NPV_B \u2248 $133.80. B has the higher NPV and passes the positive-NPV criterion. Compare signed NPVs, not their magnitudes, and confirm comparable service and risk assumptions."
+    },
+    {
+      "label": "E18 monthly model",
+      "passed": true,
+      "actual": 124.74887018940296,
+      "independent_reference": "124.7488701894030600507308082212823843830476050902054540345121859821395563331992911608045685603086987",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$124.75"
+      ],
+      "required_phrase": null,
+      "answer": " Under a simplified monthly model, the effective monthly rate is (1.08)^(1/12) - 1. NPV = -2000 + 1300/(1+r_m)^3 + 900/(1+r_m)^9 \u2248 $124.75. For exact settlement dates, instead use an explicitly chosen calendar day-count convention."
+    },
+    {
+      "label": "E19 sensitivity 1/20",
+      "passed": true,
+      "actual": 221.0344455242414,
+      "independent_reference": "2047000/9261",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 sensitivity 1/10",
+      "passed": true,
+      "actual": 111.19459053343354,
+      "independent_reference": "148000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 sensitivity 3/20",
+      "passed": true,
+      "actual": 16.84885345606972,
+      "independent_reference": "205000/12167",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 all positive and decreasing",
+      "passed": true
+    },
+    {
+      "label": "E19 published rounded answer",
+      "passed": true,
+      "expected": [
+        "$221.03",
+        "$111.19",
+        "$16.85"
+      ],
+      "required_phrase": "all three",
+      "answer": " For each rate r, compute NPV(r) = -1000 + 400/(1+r) + 450/(1+r)\u00b2 + 500/(1+r)\u00b3. With conventional positive future receipts, NPV decreases as r increases. NPVs at 5%, 10%, and 15% are $221.03, $111.19, and $16.85 respectively; all three pass the positive-NPV criterion under the modeled assumptions."
+    },
+    {
+      "label": "F60 scaled IRR",
+      "passed": true,
+      "actual": 0.09999999999854481,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F60 large bracket midpoint",
+      "passed": true,
+      "actual": 1.4285714285716496e+308,
+      "independent_reference": "101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653145462660171805/708407886575587",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F65 iterator reused by bisection",
+      "passed": true,
+      "actual": 0.09999999999854481,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 zero cash flow",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 growing without overflowing power",
+      "passed": true,
+      "actual": 9.999999999999998e+307,
+      "independent_reference": "10120112665365530222218721780308794942910329706925279369658756958137163493810937662060932169485230117701255552901081576443287577496685723701437018666526215956869806670159976546580085349908994392351883949000143528892046661849554270405906724943329669032192517144550613048781556593619530000836358455527249009512699448582064123145367812002785880586912480593861940757400818791191292895290713949661301830596257722707217407621011268034199503625219015887900893837576924718810780633108407135433022458851426835459965815941868838473179420980939194224275716635710915863348525256557059950011124202924004192381585681106214236675732638112122592571/101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653853870546747392",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 discounted term underflow",
+      "passed": true,
+      "exception": "ValueError('nonzero cash-flow value outside supported range')"
+    },
+    {
+      "label": "F54 growing amount underflow",
+      "passed": true,
+      "exception": "ValueError('growing payment outside supported range')"
+    },
+    {
+      "label": "F60 tiny same-sign bracket",
+      "passed": true,
+      "exception": "ValueError('no sign change within bracket')"
+    },
+    {
+      "label": "F61 infinite tolerance",
+      "passed": true,
+      "exception": "ValueError('invalid root bracket or solver settings')"
+    },
+    {
+      "label": "F62 indeterminate root",
+      "passed": true,
+      "exception": "ValueError('IRR indeterminate: net payments are zero at every period')"
+    },
+    {
+      "label": "F63 boolean payment",
+      "passed": true,
+      "exception": "ValueError('payment must be finite numeric')"
+    },
+    {
+      "label": "F63 empty schedule validates payment",
+      "passed": true,
+      "exception": "ValueError('payment must be finite numeric')"
+    },
+    {
+      "label": "F63 negative period",
+      "passed": true,
+      "exception": "ValueError('period must be a nonnegative integer')"
+    },
+    {
+      "label": "F63 invalid growth",
+      "passed": true,
+      "exception": "ValueError('invalid rate')"
+    }
+  ],
+  "assessment_workflow_records": 1,
+  "chapter_wide_answer_records": 20,
+  "conceptual_prompts": [
+    20
+  ],
+  "historical_unique_methods_added": 0
+}

@@ -22,7 +22,9 @@
 
 **Manuscript progress:** 10.1–10.15 complete (15/15 sections).  
 **Chapter status:** Manuscript complete; scoped reference runtime passed; independent mathematical and editorial review pending.  
-**Next:** 11.1 — Loan Mathematics.
+**Next:** [11.1 — Loan Mathematics](../chapter-11/11.01-loan-mathematics.md).
+
+[Chapter-wide applied-answer review](../qa/chapter-10-applied-answers-review/README.md) records the scoped assessment rerun, separate from independent acceptance.
 
 ## Publication and validation policy
 
