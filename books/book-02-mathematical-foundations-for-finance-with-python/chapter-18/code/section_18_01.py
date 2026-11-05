@@ -60,8 +60,9 @@ def cancellation_demo(x=1e-12):
 
 def money_cents(value):
     v=finite(value,"value")
-    return str(Decimal(str(v)).quantize(Decimal("0.01"),
-                                       rounding=ROUND_HALF_EVEN))
+    # A finite binary64 can need 309 integer digits and two cent digits.
+    with localcontext(Context(prec=311,rounding=ROUND_HALF_EVEN)):
+        return str(Decimal(str(v)).quantize(Decimal("0.01")))
 
 def assessment():
     reference=present_value(1000,0.05,2)
