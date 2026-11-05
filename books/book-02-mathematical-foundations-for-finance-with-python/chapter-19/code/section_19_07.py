@@ -18,6 +18,11 @@ def account(initial,rate,withdrawal,years):
              ((initial,"initial"),(rate,"rate"),(withdrawal,"withdrawal"),(years,"years")))
     if a<0 or w<0 or t<0:
         raise ValueError("initial, withdrawal, and years must be nonnegative")
+    return _account_transition(a,r,w,t)
+
+def _account_transition(a,r,w,t):
+    # Internal signed continuation after validated jumps. The public account
+    # helper still requires a nonnegative initial balance.
     if r==0:
         return finite(a-w*t,"balance")
     exponent=r*t
@@ -77,7 +82,8 @@ def simulate_jumps(initial,rate,withdrawal,horizon,jumps,stop_at_depletion=True)
             if crossing is not None and crossing<dt:
                 return {"status":"depleted","event_time":current_time+crossing,
                         "final_time":current_time+crossing,"final_balance":0.0}
-        a=account(a,r,w,dt)
+        a=(account(a,r,w,dt) if stop_at_depletion else
+           _account_transition(a,r,w,dt))
         current_time=next_time
         if stop_at_depletion and a<0:
             return {"status":"depleted","event_time":current_time,
