@@ -1,0 +1,264 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "659d501d2ab1f4a7b844fbb13902a5cb65ba444b946cb47598663f7924710f73",
+  "listing_sha256": "23204a061d83d59835e09a99f56a25e3ffe326acb3358b8943a2bca68b05f43c",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "perpetuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV: 2000.00\n",
+      "stderr": "test_01_basic (__main__.PerpetuityTests.test_01_basic) ... ok\ntest_02_payment_inverse (__main__.PerpetuityTests.test_02_payment_inverse) ... ok\ntest_03_rate_inverse (__main__.PerpetuityTests.test_03_rate_inverse) ... ok\ntest_04_finite_approach (__main__.PerpetuityTests.test_04_finite_approach) ... ok\ntest_05_finite_below_infinite (__main__.PerpetuityTests.test_05_finite_below_infinite) ... ok\ntest_06_due (__main__.PerpetuityTests.test_06_due) ... ok\ntest_07_deferred (__main__.PerpetuityTests.test_07_deferred) ... ok\ntest_08_zero_payments (__main__.PerpetuityTests.test_08_zero_payments) ... ok\ntest_09_signed (__main__.PerpetuityTests.test_09_signed) ... ok\ntest_10_zero_periods (__main__.PerpetuityTests.test_10_zero_periods) ... ok\ntest_11_invalid_rates (__main__.PerpetuityTests.test_11_invalid_rates) ... ok\ntest_12_invalid_types (__main__.PerpetuityTests.test_12_invalid_types) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "perpetuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 ordinary perpetuity",
+      "passed": true,
+      "actual": 2000.0,
+      "rational_reference": "2000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 independent inverse payment",
+      "passed": true,
+      "reference": "200",
+      "scope": "supplemental algebra; no inverse function"
+    },
+    {
+      "label": "P3 reconstructed PV",
+      "passed": true,
+      "actual": 4000.0,
+      "rational_reference": "4000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 implied rate from observed PV",
+      "passed": true,
+      "actual": 0.05,
+      "rational_reference": "1/20",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 due perpetuity",
+      "passed": true,
+      "actual": 2100.0,
+      "rational_reference": "2100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 deferred perpetuity",
+      "passed": true,
+      "actual": 1814.0589569160998,
+      "rational_reference": "800000/441",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 zero delay",
+      "passed": true,
+      "actual": 2000.0,
+      "rational_reference": "2000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 twenty-payment direct sum",
+      "passed": true,
+      "actual": 1246.2210342539984,
+      "rational_reference": "346721658893903097274392802000/278218429446951548637196401",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 finite is below infinite",
+      "passed": true,
+      "actual": 1246.2210342539984
+    },
+    {
+      "label": "P11 signed obligation",
+      "passed": true,
+      "actual": -2000.0,
+      "rational_reference": "-2000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 finite direct sum n=1",
+      "passed": true,
+      "actual": 95.23809523809524,
+      "rational_reference": "2000/21",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 finite direct sum n=100",
+      "passed": true,
+      "actual": 1984.7910200042527,
+      "rational_reference": "3308599956788110130362010151994013058334601335657902028662730938724266058140655733266066129264853812761801836090192425262412711164002000/1666976484396337359195972108050766529167300667828951014331365469362133029070327866633033064632426906380900918045096212631206355582001",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 finite direct sum n=1000",
+      "passed": true,
+      "actual": 2000.0,
+      "rational_reference": "331378806603847891793047037091621513631374413523625538463774863686391107561323018648271984602759018277830124177082153649944594419966113228306231034420167876055172755569918348336412404905211730389072883620952943845074220092684127084815265000983111384841168738996204586689365763412666558805154958672091110064509867777439192725693302434935521646168889515864115666571360855210819691553265293289833899881927085087278708490674228677732997295166501338068041142135018209301366171853737821790298083179680970653867232429733025344510103100694082651661106528663513601056584262414515718407416538915907899052600020626665863790228376036978949158767484350088052486123304907251975351500524232605858766730990477113028597703201747753274040387722608416298286839471385227679565380432935213855945829210590189189390729370479672894619244476588878896779647360386063148292504558606471454200059994196988640566039257953544400968511133790288675989218395527967985681401033342642746422456214202045428411528543515956424712802484807693410371959599626605334816277459154800754823450183011017453386591996277484181474229550824431313194173436449265336665702400805269443576914240168844844232944941827582558605056582830019097114310328878819986368863083853475472831521908926602542326746051033689725504587599493288915026205396849804758389516436472181942732271640002000/165689403301923945896630669406529383547782049266718769412943572324366107141405884362973027406492002751164381926422646410785056677274811928835634231738653169431946223560706159916245548130354107504390652556527095633955889588163594007157468319904229680096176024937563063973828593671110144824254083634362081276123305945400290122846651217467760823084444757932057833285680427605409845776632646644916949940963542543639354245337114338866498647583250669034020571067509104650683085926868910895149041589840485326933616214866512672255051550347041325830553264331756800528292131207257859203708269457953949526300010313332931895114188018489474579383742175044026243061652453625987675750262116302929383365495238556514298851600873876637020193861304208149143419735692613839782690216467606927972914605295094594695364685239836447309622238294439448389823680193031574146252279303235727100029997098494320283019628976772200484255566895144337994609197763983992840700516671321373211228107101022714205764271757978212356401242403846705185979799813302667408138729577400377411725091505508726693295998138742090737114775412215656597086718224632668332851200402634721788457120084422422116472470913791279302528291415009548557155164439409993184431541926737736415760954463301271163373025516844862752293799746644457513102698424902379194758218236090971366135820001",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 exact tail bound",
+      "passed": true,
+      "tail_approx": 1.2933942495208748e-18
+    },
+    {
+      "label": "empty finite stream",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "genuine zero perpetuity",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "genuine zero due",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "genuine zero deferred",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate finite PV",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 due time-zero contribution despite ordinary underflow",
+      "passed": true,
+      "actual": 1e-323,
+      "rational_reference": "3/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 finite deferred PV despite ordinary overflow",
+      "passed": true,
+      "actual": 1.520897999574701e+307,
+      "rational_reference": "25353012004564588029934064107520000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/1666976484396337359195972108050766529167300667828951014331365469362133029070327866633033064632426906380900918045096212631206355582001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "tiny-rate deferred division remains supported",
+      "passed": true,
+      "actual": 1.0,
+      "rational_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 zero rate invalid",
+      "passed": true,
+      "exception": "ValueError('positive periodic discount rate required')"
+    },
+    {
+      "label": "P10 negative rate invalid",
+      "passed": true,
+      "exception": "ValueError('positive periodic discount rate required')"
+    },
+    {
+      "label": "zero cash flow still needs positive rate",
+      "passed": true,
+      "exception": "ValueError('positive periodic discount rate required')"
+    },
+    {
+      "label": "bool payment",
+      "passed": true,
+      "exception": "TypeError('payment must be numeric')"
+    },
+    {
+      "label": "noninteger finite count",
+      "passed": true,
+      "exception": "TypeError('periods must be integer')"
+    },
+    {
+      "label": "negative delay",
+      "passed": true,
+      "exception": "ValueError('delay must be nonnegative')"
+    },
+    {
+      "label": "F54 ordinary PV underflow",
+      "passed": true,
+      "exception": "ValueError('value outside supported range')"
+    },
+    {
+      "label": "F54 finite PV underflow",
+      "passed": true,
+      "exception": "ValueError('value outside supported range')"
+    },
+    {
+      "label": "F54 deferred factor underflow",
+      "passed": true,
+      "exception": "ValueError('value outside supported range')"
+    },
+    {
+      "label": "F54 deferred PV underflow",
+      "passed": true,
+      "exception": "ValueError('value outside supported range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_definition_and_convergence": [
+    1,
+    5
+  ],
+  "supplemental_inverse_arithmetic": [
+    3,
+    4
+  ],
+  "historical_unique_methods_added": 0
+}
