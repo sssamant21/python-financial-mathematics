@@ -1,0 +1,877 @@
+{
+  "implementation_revision": "e5cfc81a96ea8a64bdec3adedab1f11086ee753a",
+  "checker_revision": "52dc87eab3d4c7c6c0e2d00bce344259af8af85f",
+  "final_scope_revision": "9f2f2ae7297b44fa443a0fe70a5e2616a74a4536",
+  "command": "python check_time_varying_forcing.py",
+  "scope": {
+    "blobs": {
+      "check_applied_target_and_timing.py": "9d23d57ce7cd88a5832f056cf9a957e0e4fa9a4c",
+      "check_continuous_rate_edges.py": "7656fdadde1233c130a3ec241dad7233e8d8c89a",
+      "check_contribution_frequency.py": "cc3588e76f2e7bc9158f2d06385df600b8543788",
+      "check_euler_decay_stability.py": "0cf72c28b8f971ef6bd598a572ba001a3c227ec1",
+      "check_nonterminal_jump_policy.py": "e0246e8816ff7ea6d54acbf27a1da5827df97c30",
+      "check_section_19_01.py": "f75db61ff944189b8f1d4ec72db59f6f42976ecd",
+      "check_section_19_02.py": "409c65c02954c9f78184b0c4bfad3739f0e76f61",
+      "check_section_19_03.py": "45ee6d9f50331ceca3e4e5e9db1025d5481958bf",
+      "check_section_19_04.py": "304ff63a628430f74bfa4e2c10b03abf38b719a1",
+      "check_section_19_05.py": "220cedf1eab821ddc24768315c5a99f62024e684",
+      "check_section_19_06.py": "45e9eb2d28ba1f7874714ec9b116b7a89271fdd8",
+      "check_section_19_07.py": "f1a4d8cf7b38b2d9d1ea4aaedb4abf1635e807ef",
+      "check_section_19_08.py": "3466f971caa572474199bae9ced8ef94dc97db69",
+      "check_section_19_09.py": "06f760fb4887afd7c04553d3300c3c2f80be3d0f",
+      "check_section_19_10.py": "50098fdabf76330c2d420a3e98fa16f41e2614a0",
+      "check_time_varying_forcing.py": "52ceae3d2a420d8abbce3299c67fdf312c918bf1",
+      "section_19_01.py": "6a7c1ab15f03113cbe1ca6933d3dcf822a936374",
+      "section_19_02.py": "bb3894b8ed815dc89d6657c3d6aac522dcc00222",
+      "section_19_03.py": "5d369547d21fe5e3c6ed6b5839562944a8740caa",
+      "section_19_04.py": "2d611a1b29bc475a12c219e05e86a962ae0ff9f3",
+      "section_19_05.py": "f6b9ef50437dcd16d784a084a1047de788bd61a2",
+      "section_19_06.py": "8a9bac4c4b973db41c0274e0f7ada06ec131d71a",
+      "section_19_07.py": "454bbaf1759b096f88eb0fb2d09d4d9fcd97f22f",
+      "section_19_08.py": "e951242ea659154e883a80018ae064299ede9510",
+      "section_19_09.py": "7630bbadf395ecc9033bfd4fd58b8c60cf57a06d",
+      "section_19_10.py": "8beb284f93cfbbbcf701e7826a0e33f606d7af4a"
+    },
+    "runs": {
+      "check_applied_target_and_timing.py": 0,
+      "check_continuous_rate_edges.py": 0,
+      "check_contribution_frequency.py": 0,
+      "check_euler_decay_stability.py": 0,
+      "check_nonterminal_jump_policy.py": 0,
+      "check_section_19_01.py": 0,
+      "check_section_19_02.py": 0,
+      "check_section_19_03.py": 0,
+      "check_section_19_04.py": 0,
+      "check_section_19_05.py": 0,
+      "check_section_19_06.py": 0,
+      "check_section_19_07.py": 0,
+      "check_section_19_08.py": 0,
+      "check_section_19_09.py": 0,
+      "check_section_19_10.py": 0,
+      "check_time_varying_forcing.py": 0
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+  },
+  "forcing-initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-forcing/check_time_varying_forcing.py\", line 85, in <module>\n    check()\n  File \"/tmp/book02-forcing/check_time_varying_forcing.py\", line 56, in check\n    near(error,F(1,120)*h**4) if n<=2 else None\n    ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/book02-forcing/check_time_varying_forcing.py\", line 16, in near\n    assert abs(a-float(q))<=16*math.ulp(float(q)),(a,str(q))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (0.008333333333333304, '1/120')\n",
+    "results": null
+  },
+  "forcing-rerun": {
+    "exit": 0,
+    "stderr": "",
+    "results": {
+      "cases": [
+        {
+          "power": 0,
+          "steps": 1,
+          "euler": {
+            "final_state": 3,
+            "steps": 1,
+            "step_size": 1,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 3,
+            "final_time": 1,
+            "steps": 1,
+            "evaluations": 4,
+            "status": "completed"
+          },
+          "euler_reference": "3",
+          "rk4_reference": "3"
+        },
+        {
+          "power": 0,
+          "steps": 2,
+          "euler": {
+            "final_state": 3,
+            "steps": 2,
+            "step_size": 0.5,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 3,
+            "final_time": 1,
+            "steps": 2,
+            "evaluations": 8,
+            "status": "completed"
+          },
+          "euler_reference": "3",
+          "rk4_reference": "3"
+        },
+        {
+          "power": 0,
+          "steps": 4,
+          "euler": {
+            "final_state": 3,
+            "steps": 4,
+            "step_size": 0.25,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 3,
+            "final_time": 1,
+            "steps": 4,
+            "evaluations": 16,
+            "status": "completed"
+          },
+          "euler_reference": "3",
+          "rk4_reference": "3"
+        },
+        {
+          "power": 0,
+          "steps": 8,
+          "euler": {
+            "final_state": 3,
+            "steps": 8,
+            "step_size": 0.125,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 3,
+            "final_time": 1,
+            "steps": 8,
+            "evaluations": 32,
+            "status": "completed"
+          },
+          "euler_reference": "3",
+          "rk4_reference": "3"
+        },
+        {
+          "power": 1,
+          "steps": 1,
+          "euler": {
+            "final_state": 2,
+            "steps": 1,
+            "step_size": 1,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.5,
+            "final_time": 1,
+            "steps": 1,
+            "evaluations": 4,
+            "status": "completed"
+          },
+          "euler_reference": "2",
+          "rk4_reference": "5/2"
+        },
+        {
+          "power": 1,
+          "steps": 2,
+          "euler": {
+            "final_state": 2.25,
+            "steps": 2,
+            "step_size": 0.5,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.5,
+            "final_time": 1,
+            "steps": 2,
+            "evaluations": 8,
+            "status": "completed"
+          },
+          "euler_reference": "9/4",
+          "rk4_reference": "5/2"
+        },
+        {
+          "power": 1,
+          "steps": 4,
+          "euler": {
+            "final_state": 2.375,
+            "steps": 4,
+            "step_size": 0.25,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.5,
+            "final_time": 1,
+            "steps": 4,
+            "evaluations": 16,
+            "status": "completed"
+          },
+          "euler_reference": "19/8",
+          "rk4_reference": "5/2"
+        },
+        {
+          "power": 1,
+          "steps": 8,
+          "euler": {
+            "final_state": 2.4375,
+            "steps": 8,
+            "step_size": 0.125,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.5,
+            "final_time": 1,
+            "steps": 8,
+            "evaluations": 32,
+            "status": "completed"
+          },
+          "euler_reference": "39/16",
+          "rk4_reference": "5/2"
+        },
+        {
+          "power": 2,
+          "steps": 1,
+          "euler": {
+            "final_state": 2,
+            "steps": 1,
+            "step_size": 1,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.3333333333333335,
+            "final_time": 1,
+            "steps": 1,
+            "evaluations": 4,
+            "status": "completed"
+          },
+          "euler_reference": "2",
+          "rk4_reference": "7/3"
+        },
+        {
+          "power": 2,
+          "steps": 2,
+          "euler": {
+            "final_state": 2.125,
+            "steps": 2,
+            "step_size": 0.5,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.333333333333333,
+            "final_time": 1,
+            "steps": 2,
+            "evaluations": 8,
+            "status": "completed"
+          },
+          "euler_reference": "17/8",
+          "rk4_reference": "7/3"
+        },
+        {
+          "power": 2,
+          "steps": 4,
+          "euler": {
+            "final_state": 2.21875,
+            "steps": 4,
+            "step_size": 0.25,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.333333333333334,
+            "final_time": 1,
+            "steps": 4,
+            "evaluations": 16,
+            "status": "completed"
+          },
+          "euler_reference": "71/32",
+          "rk4_reference": "7/3"
+        },
+        {
+          "power": 2,
+          "steps": 8,
+          "euler": {
+            "final_state": 2.2734375,
+            "steps": 8,
+            "step_size": 0.125,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.333333333333332,
+            "final_time": 1,
+            "steps": 8,
+            "evaluations": 32,
+            "status": "completed"
+          },
+          "euler_reference": "291/128",
+          "rk4_reference": "7/3"
+        },
+        {
+          "power": 3,
+          "steps": 1,
+          "euler": {
+            "final_state": 2,
+            "steps": 1,
+            "step_size": 1,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.25,
+            "final_time": 1,
+            "steps": 1,
+            "evaluations": 4,
+            "status": "completed"
+          },
+          "euler_reference": "2",
+          "rk4_reference": "9/4"
+        },
+        {
+          "power": 3,
+          "steps": 2,
+          "euler": {
+            "final_state": 2.0625,
+            "steps": 2,
+            "step_size": 0.5,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.25,
+            "final_time": 1,
+            "steps": 2,
+            "evaluations": 8,
+            "status": "completed"
+          },
+          "euler_reference": "33/16",
+          "rk4_reference": "9/4"
+        },
+        {
+          "power": 3,
+          "steps": 4,
+          "euler": {
+            "final_state": 2.140625,
+            "steps": 4,
+            "step_size": 0.25,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.25,
+            "final_time": 1,
+            "steps": 4,
+            "evaluations": 16,
+            "status": "completed"
+          },
+          "euler_reference": "137/64",
+          "rk4_reference": "9/4"
+        },
+        {
+          "power": 3,
+          "steps": 8,
+          "euler": {
+            "final_state": 2.19140625,
+            "steps": 8,
+            "step_size": 0.125,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.25,
+            "final_time": 1,
+            "steps": 8,
+            "evaluations": 32,
+            "status": "completed"
+          },
+          "euler_reference": "561/256",
+          "rk4_reference": "9/4"
+        },
+        {
+          "power": 4,
+          "steps": 1,
+          "euler": {
+            "final_state": 2,
+            "steps": 1,
+            "step_size": 1,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.2083333333333335,
+            "final_time": 1,
+            "steps": 1,
+            "evaluations": 4,
+            "status": "completed"
+          },
+          "euler_reference": "2",
+          "rk4_reference": "53/24"
+        },
+        {
+          "power": 4,
+          "steps": 2,
+          "euler": {
+            "final_state": 2.03125,
+            "steps": 2,
+            "step_size": 0.5,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.200520833333333,
+            "final_time": 1,
+            "steps": 2,
+            "evaluations": 8,
+            "status": "completed"
+          },
+          "euler_reference": "65/32",
+          "rk4_reference": "845/384"
+        },
+        {
+          "power": 4,
+          "steps": 4,
+          "euler": {
+            "final_state": 2.095703125,
+            "steps": 4,
+            "step_size": 0.25,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.200032552083334,
+            "final_time": 1,
+            "steps": 4,
+            "evaluations": 16,
+            "status": "completed"
+          },
+          "euler_reference": "1073/512",
+          "rk4_reference": "13517/6144"
+        },
+        {
+          "power": 4,
+          "steps": 8,
+          "euler": {
+            "final_state": 2.1427001953125,
+            "steps": 8,
+            "step_size": 0.125,
+            "status": "completed"
+          },
+          "rk4": {
+            "final_state": 2.200002034505207,
+            "final_time": 1,
+            "steps": 8,
+            "evaluations": 32,
+            "status": "completed"
+          },
+          "euler_reference": "17553/8192",
+          "rk4_reference": "216269/98304"
+        }
+      ],
+      "observed_order_ratios": [
+        2,
+        2,
+        2,
+        16.000000000014495,
+        15.999999999781721,
+        16.000000010913936
+      ],
+      "coupled": {
+        "value": 1.2493489583333333,
+        "events": [
+          [
+            0,
+            1
+          ],
+          [
+            0.25,
+            1
+          ],
+          [
+            0.25,
+            1.109375
+          ],
+          [
+            0.5,
+            1.2734375
+          ]
+        ],
+        "exact_solution": 1.25
+      },
+      "wrong_variants_detected": 3
+    }
+  },
+  "event-initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-forcing/check_nonterminal_jump_policy.py\", line 40, in <module>\n    check()\n  File \"/tmp/book02-forcing/check_nonterminal_jump_policy.py\", line 36, in check\n    assert all(r['passed'] for r in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "results": [
+      {
+        "initial": 10,
+        "withdrawal": 2,
+        "horizon": 10,
+        "jumps": [],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": -10
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": -10
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 2,
+        "horizon": 10,
+        "jumps": [
+          [
+            6,
+            20
+          ]
+        ],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": 10
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": 10
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 2,
+        "horizon": 10,
+        "jumps": [
+          [
+            6,
+            20
+          ]
+        ],
+        "terminal": true,
+        "actual": {
+          "status": "depleted",
+          "event_time": 5,
+          "final_time": 5,
+          "final_balance": 0
+        },
+        "expected": {
+          "status": "depleted",
+          "event_time": 5,
+          "final_time": 5,
+          "final_balance": 0
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 1,
+        "horizon": 4,
+        "jumps": [
+          [
+            2,
+            -10
+          ]
+        ],
+        "terminal": false,
+        "actual": "ValueError",
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 4,
+          "final_balance": -4
+        },
+        "passed": false
+      },
+      {
+        "initial": 10,
+        "withdrawal": 1,
+        "horizon": 4,
+        "jumps": [
+          [
+            2,
+            -10
+          ]
+        ],
+        "terminal": true,
+        "actual": {
+          "status": "depleted",
+          "event_time": 2,
+          "final_time": 2,
+          "final_balance": 0
+        },
+        "expected": {
+          "status": "depleted",
+          "event_time": 2,
+          "final_time": 2,
+          "final_balance": 0
+        },
+        "passed": true
+      },
+      {
+        "initial": 0,
+        "withdrawal": 1,
+        "horizon": 1,
+        "jumps": [],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 1,
+          "final_balance": -1
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 1,
+          "final_balance": -1
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 0,
+        "horizon": 3,
+        "jumps": [
+          [
+            1,
+            -20
+          ],
+          [
+            2,
+            15
+          ]
+        ],
+        "terminal": false,
+        "actual": "ValueError",
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 3,
+          "final_balance": 5
+        },
+        "passed": false
+      },
+      {
+        "initial": 10,
+        "withdrawal": 0,
+        "horizon": 3,
+        "jumps": [
+          [
+            1,
+            -20
+          ],
+          [
+            2,
+            15
+          ]
+        ],
+        "terminal": true,
+        "actual": {
+          "status": "depleted",
+          "event_time": 1,
+          "final_time": 1,
+          "final_balance": 0
+        },
+        "expected": {
+          "status": "depleted",
+          "event_time": 1,
+          "final_time": 1,
+          "final_balance": 0
+        },
+        "passed": true
+      }
+    ]
+  },
+  "event-rerun": {
+    "exit": 0,
+    "stderr": "",
+    "results": [
+      {
+        "initial": 10,
+        "withdrawal": 2,
+        "horizon": 10,
+        "jumps": [],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": -10
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": -10
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 2,
+        "horizon": 10,
+        "jumps": [
+          [
+            6,
+            20
+          ]
+        ],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": 10
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 10,
+          "final_balance": 10
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 2,
+        "horizon": 10,
+        "jumps": [
+          [
+            6,
+            20
+          ]
+        ],
+        "terminal": true,
+        "actual": {
+          "status": "depleted",
+          "event_time": 5,
+          "final_time": 5,
+          "final_balance": 0
+        },
+        "expected": {
+          "status": "depleted",
+          "event_time": 5,
+          "final_time": 5,
+          "final_balance": 0
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 1,
+        "horizon": 4,
+        "jumps": [
+          [
+            2,
+            -10
+          ]
+        ],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 4,
+          "final_balance": -4
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 4,
+          "final_balance": -4
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 1,
+        "horizon": 4,
+        "jumps": [
+          [
+            2,
+            -10
+          ]
+        ],
+        "terminal": true,
+        "actual": {
+          "status": "depleted",
+          "event_time": 2,
+          "final_time": 2,
+          "final_balance": 0
+        },
+        "expected": {
+          "status": "depleted",
+          "event_time": 2,
+          "final_time": 2,
+          "final_balance": 0
+        },
+        "passed": true
+      },
+      {
+        "initial": 0,
+        "withdrawal": 1,
+        "horizon": 1,
+        "jumps": [],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 1,
+          "final_balance": -1
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 1,
+          "final_balance": -1
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 0,
+        "horizon": 3,
+        "jumps": [
+          [
+            1,
+            -20
+          ],
+          [
+            2,
+            15
+          ]
+        ],
+        "terminal": false,
+        "actual": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 3,
+          "final_balance": 5
+        },
+        "expected": {
+          "status": "completed",
+          "event_time": null,
+          "final_time": 3,
+          "final_balance": 5
+        },
+        "passed": true
+      },
+      {
+        "initial": 10,
+        "withdrawal": 0,
+        "horizon": 3,
+        "jumps": [
+          [
+            1,
+            -20
+          ],
+          [
+            2,
+            15
+          ]
+        ],
+        "terminal": true,
+        "actual": {
+          "status": "depleted",
+          "event_time": 1,
+          "final_time": 1,
+          "final_balance": 0
+        },
+        "expected": {
+          "status": "depleted",
+          "event_time": 1,
+          "final_time": 1,
+          "final_balance": 0
+        },
+        "passed": true
+      }
+    ]
+  }
+}
