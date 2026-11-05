@@ -1,0 +1,19 @@
+# Section 20.2 valuation and nominal-rate range
+
+Date: 2026-11-05. Baseline: `3fbb5be6d8e2e06c5bace03036048998a688abb3`. Corrected executable pin: `df88087d11b755fa379796ad1efdd2932a7f2811`.
+
+The actual Section 20.2 present-value and nominal-to-continuous wrappers now use a Chapter 20 local valuation kernel. Present value retains the exact represented rate*time exponent until complete amount scaling; rate conversion retains the nominal/frequency quotient and exact positive periodic-gross condition. Public finite/type/time/count guards remain, and valid zero identities follow validation. Nonfinite final results and nonzero results rounding to zero raise ValueError.
+
+Independent expectations evaluate the complete discounted amount at 1,600 decimal digits. A separate broad log-magnitude bound classifies only arguments far outside possible binary64 final range. Conversion expectations derive exact rational periodic gross growth before a high-precision logarithm multiplied by the full integer frequency; they do not call the implementation's series or scaled kernel. Cases include signed amounts, finite results hidden by unrepresentable standalone factors, tiny quotients, a positive gross factor rounded onto the old inverse-domain boundary, 1,001-digit frequencies, zero identities, genuine output range errors and input guards.
+
+The initial run exited 1 with 15 failed cases; the corrected run exited 0 with all 39 passing. There are 13 valuation probes, 15 conversion probes, eight input controls and three actual assessment-field checks. Four ulps and exact zero/nonzero classification are required. Two injected observations additionally verify the actual assessment's valuation/conversion calls and use of the returned rate in continuous one-year growth; helpers are restored afterward. All 26 chapter sources compiled and 15 scripts passed with matching hashes before/after. Case failures are not an adjudicated defect count.
+
+A positive mathematical gross factor does not make every converted float rate representable. Signed rate convention and positive integer frequency requirements remain. Valid zero amounts can be valued without representing a separate exponential factor, but invalid rates/times are still rejected first.
+
+[Raw failures, rerun, scoped hashes and exact kernel provenance](chapter-20-benchmark-valuation-range-followup.json) · [Runnable checker](../chapter-20/code/check_benchmark_valuation_range.py) · [Local kernel](../chapter-20/code/_valuation_math.py).
+
+The local kernel adapts selected calculation bodies from pinned Section 19.2/19.8 sources, recorded by path and blob in the raw evidence. It has no cross-chapter runtime imports or sys.path changes. Adaptation and assistant checks are not independent reviewer approval.
+
+Replay from a clean checkout at the corrected pin: change to Book 02's chapter-20/code and run python check_benchmark_valuation_range.py, assertions enabled. For initial failures, save that checker externally, select the stated baseline revision, overlay only the checker and run it there. Compile every chapter-20/code/*.py using py_compile.compile(path,doraise=True); run every check_/test_ basename separately from its parent directory in a fresh Python process with timeout=60. Compare the raw manifest Git blob SHA-1 values before/after. Include the local kernel in the corrected snapshot. Successful stdout is omitted from the scope summary.
+
+COV-87 remains partial; 32 selected categories remain partially addressed and none closed. Section 19.8 end-period abs(rate*years)>4000 remains an explicit evaluation boundary. Selected assistant-derived references and Python 3.12.14/Linux checks only; no independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval, general numerical accuracy or financial model validation.
