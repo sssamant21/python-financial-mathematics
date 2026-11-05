@@ -1,0 +1,109 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "66a1f92ab3cd11768c43e4a7224458ed28ef357fe66120d4dc2e43f55fd90544",
+  "program_sha256": "f2e3437f2927b27695ff0850404ca4162a51aa9e26801387ad858146e8e0e4fa",
+  "tests_sha256": "3c3390a1fb47aec2aff8e890339995be54c65a90f90d78960b59deff64a4b81d",
+  "png_sha256": "47cacf471afa3c1dea365ac38871845bd621ebb008bc81423af278edc38baf1d",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_exports_and_explicit_close (test_matplotlib_fundamentals.FundamentalsTests.test_exports_and_explicit_close) ... ok\ntest_figure_objects_and_data (test_matplotlib_fundamentals.FundamentalsTests.test_figure_objects_and_data) ... ok\ntest_invalid_scalar_contract (test_matplotlib_fundamentals.FundamentalsTests.test_invalid_scalar_contract) ... ok\ntest_invalid_year_grid (test_matplotlib_fundamentals.FundamentalsTests.test_invalid_year_grid) ... ok\ntest_known_schedule_and_recurrence (test_matplotlib_fundamentals.FundamentalsTests.test_known_schedule_and_recurrence) ... ok\ntest_source_and_outputs_independent (test_matplotlib_fundamentals.FundamentalsTests.test_source_and_outputs_independent) ... ok\ntest_style_restored (test_matplotlib_fundamentals.FundamentalsTests.test_style_restored) ... ok\ntest_zero_and_negative_rates (test_matplotlib_fundamentals.FundamentalsTests.test_zero_and_negative_rates) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.334s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "matplotlib_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "Final balance: USD 1215.51\nCumulative gain: USD 215.51\nAxes array shape: (2, 1)\nSaved output/matplotlib_fundamentals.png\nSaved output/matplotlib_fundamentals.svg\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "documented SVG parses",
+      "passed": true
+    },
+    {
+      "label": "independent rational balances and gains",
+      "passed": true,
+      "expected": [
+        "1000",
+        "1050",
+        "2205/2",
+        "9261/8",
+        "194481/160"
+      ]
+    },
+    {
+      "label": "year-two cumulative gain differs from one-year increase",
+      "passed": true
+    },
+    {
+      "label": "supported Real fractions produce the known schedule",
+      "passed": false,
+      "error": "TypeError(\"ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''\")"
+    },
+    {
+      "label": "rate rounding to -1 rejected by range validation",
+      "passed": false,
+      "actual": "TypeError(\"ufunc 'isfinite' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''\")"
+    },
+    {
+      "label": "Figure, Axes and y-axis ownership",
+      "passed": true
+    },
+    {
+      "label": "style is restored outside source build",
+      "passed": true
+    },
+    {
+      "label": "source closes figure and retains PNG after simulated SVG error",
+      "passed": true
+    },
+    {
+      "label": "supplemental subplot keeps 1 by 1 container",
+      "passed": true
+    },
+    {
+      "label": "supplemental plot returns a list of Line2D objects",
+      "passed": true
+    },
+    {
+      "label": "supplemental uncropped raster is 2000 by 800",
+      "passed": true
+    }
+  ]
+}
