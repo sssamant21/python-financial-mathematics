@@ -50,3 +50,11 @@ The [error-range follow-up](chapter-20-error-range-followup.md) fixes Section 20
 ## Subsequent Section 20.6 contract follow-up
 
 The [metamorphic PV contract record](chapter-20-metamorphic-contract-followup.md) adds boolean/type/finiteness and exponent/result-range validation, including invalid rates on empty portfolios. Underflow and summation limitations are documented. All 19 chapter sources compiled and 10 scripts passed; Section 20.6 passed 19 methods. COV-87 retains other duplicated-contract/range and independent-review obligations. Original mapping evidence remains historical.
+
+## Invariant lab scope and exact matrix counterexample — 2026-11-05
+
+[Section 20.3 scope evidence](chapter-20-invariant-scope-followup.md) reconciles the advertised covariance/evidence lab with the actual scalar 2×2 quadratic helper and fixed-scenario assessment. The manuscript now states that symmetry, general PSD/orthogonality, variable-rate curves and source/command provenance are not implemented by this companion. An independently derived nonsymmetric-matrix counterexample has exactly the same positive quadratic form as a symmetric positive-definite matrix. Six direct matrix-vector calculations, sum-of-squares identities, symmetry controls and the Applied D negative value passed exact BigInt checks in JavaScript; Python helper execution is not claimed.
+
+COV-85 is newly partially addressed for this selected manuscript/counterexample scope: 32 selected categories now partially addressed, none closed. This count is not a defect total or completion percentage. No Python source/checker changed; V-68 and the later Section 19.8 scoped run remain the established runtime evidence. The execution environment is unavailable, so no new compile/script/full-book pass is claimed.
+
+Resume Section 19.10's retained baseline range/integration probes once Python execution returns. If it remains blocked, next independent manuscript task: reconcile Section 20.5's vector/scaled-residual lab promises with its source and actual assertions. Chapter 19 command fences and Section 20.3 scope are completed for their recorded static boundaries; do not repeat them as new numerical results. Independent review, supported platforms and release approval remain pending.
