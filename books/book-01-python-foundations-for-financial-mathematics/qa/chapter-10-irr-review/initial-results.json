@@ -1,0 +1,244 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "f38f23075c83374de58720eb6f29350d5c09655aec10c661669d6cc0cf203fc6",
+  "listing_sha256": "8bc14fd1be11bd87edae8c576fa3577b51cb7ac865f8109d68d47b8ca9cc79ed",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "irr_root_finding.py"
+      ],
+      "returncode": 0,
+      "stdout": "IRR: 0.1306623862919878\n",
+      "stderr": "test_01_one_period (__main__.Tests.test_01_one_period) ... ok\ntest_02_two_period (__main__.Tests.test_02_two_period) ... ok\ntest_03_zero (__main__.Tests.test_03_zero) ... ok\ntest_04_negative (__main__.Tests.test_04_negative) ... ok\ntest_05_root_at_high (__main__.Tests.test_05_root_at_high) ... ok\ntest_06_nonstandard_first (__main__.Tests.test_06_nonstandard_first) ... ok\ntest_07_multiple_root_a (__main__.Tests.test_07_multiple_root_a) ... ok\ntest_08_multiple_root_b (__main__.Tests.test_08_multiple_root_b) ... ok\ntest_09_no_sign_change (__main__.Tests.test_09_no_sign_change) ... ok\ntest_10_same_sign (__main__.Tests.test_10_same_sign) ... ok\ntest_11_invalid_rate (__main__.Tests.test_11_invalid_rate) ... ok\ntest_12_bad_bracket (__main__.Tests.test_12_bad_bracket) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "irr_root_finding.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 one-period",
+      "passed": true,
+      "actual": 0.0999999999994543,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 one-period independent residual and bracket",
+      "passed": true,
+      "residual": "4.96088019149116051276400842099615428696994198499122249333512274584791246165258578042415E-11"
+    },
+    {
+      "label": "P3 negative IRR",
+      "passed": true,
+      "actual": -0.0999999999994543,
+      "rational_reference": "-1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 negative IRR independent residual and bracket",
+      "passed": true,
+      "residual": "-6.063298011815845227822249189419488630428883886979487285687974091897141398117493650474524E-11"
+    },
+    {
+      "label": "P4 zero IRR",
+      "passed": true,
+      "actual": 0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 zero IRR independent residual and bracket",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "label": "P5 quadratic IRR",
+      "passed": true,
+      "actual": 0.1306623862919878,
+      "rational_reference": "0.130662386291807485258426274490749201023221424895565577943218836903758503342315157386739850823235705",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 quadratic IRR independent residual and bracket",
+      "passed": true,
+      "residual": "-2.343081815902092125265273894077474264006300564935840634785255342337078501246617870220969E-11"
+    },
+    {
+      "label": "P8 first root",
+      "passed": true,
+      "actual": 0.1,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 first root independent residual and bracket",
+      "passed": true,
+      "residual": "4.58769844886428292391926802551048698028876639852580520709222547671487596429824106E-17"
+    },
+    {
+      "label": "P8 second root",
+      "passed": true,
+      "actual": 0.1999999999998181,
+      "rational_reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 second root independent residual and bracket",
+      "passed": true,
+      "residual": "1.26318708579381889383442163544998612744145371829168093799758968765299979934977565026603E-12"
+    },
+    {
+      "label": "P6 upper endpoint",
+      "passed": true,
+      "actual": 1,
+      "rational_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 upper endpoint independent residual and bracket",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "label": "reverse cash-flow signs",
+      "passed": true,
+      "actual": 0.0999999999994543,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "reverse cash-flow signs independent residual and bracket",
+      "passed": true,
+      "residual": "-4.96088019149116051276400842099615428696994198499122249333512274584791246165258578042415E-11"
+    },
+    {
+      "label": "exact demonstration vs quadratic",
+      "passed": true,
+      "actual": 0.1306623862919878,
+      "rational_reference": "0.130662386291807485258426274490749201023221424895565577943218836903758503342315157386739850823235705",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 endpoints bracket conventional root",
+      "passed": true
+    },
+    {
+      "label": "P7 tangent root exact derivation",
+      "passed": true
+    },
+    {
+      "label": "P10 supplemental monthly conversion",
+      "passed": true,
+      "exact": "126825030131969720661201/1000000000000000000000000"
+    },
+    {
+      "label": "F60 tiny scaled root",
+      "passed": false,
+      "actual": 0.5,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F60 finite midpoint with large endpoints",
+      "passed": false,
+      "exception": "ValueError('rate must be finite and > -1')",
+      "reference": "101201126653655309176247673359458653524778324882071059178450679013715169783997673445980191850718562247593538932158405955694904368692896738433506699970369254960758712138283180682233453871046608170619883839236372534281003741712346349309051677824579778170405028256179384776166707307615251266093163754323003131653145462660171805/708407886575587"
+    },
+    {
+      "label": "F56 zero flow does not require a factor",
+      "passed": false,
+      "exception": "ZeroDivisionError('float division by zero')",
+      "reference": "0"
+    },
+    {
+      "label": "P7 tangent not detected by sign bracket",
+      "passed": true,
+      "exception": "ValueError('bracket does not contain a sign change')"
+    },
+    {
+      "label": "P8 wide bracket can hide two roots",
+      "passed": true,
+      "exception": "ValueError('bracket does not contain a sign change')"
+    },
+    {
+      "label": "F60 tiny same-sign bracket",
+      "passed": false,
+      "actual": "0.5"
+    },
+    {
+      "label": "F54 discounted nonzero term underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F61 infinite tolerance",
+      "passed": false,
+      "actual": "0.5"
+    },
+    {
+      "label": "F61 bool rate",
+      "passed": false,
+      "actual": "-45.0"
+    },
+    {
+      "label": "F61 bool flow",
+      "passed": false,
+      "actual": "0.1000000000003638"
+    },
+    {
+      "label": "F61 bool iteration cap",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "invalid bracket",
+      "passed": true,
+      "exception": "ValueError('invalid bracket or solver settings')"
+    },
+    {
+      "label": "same-sign flows",
+      "passed": true,
+      "exception": "ValueError('both cash-flow signs required')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_prompts": [
+    1,
+    6,
+    7,
+    9,
+    11,
+    12
+  ],
+  "supplemental_arithmetic": [
+    10
+  ],
+  "historical_unique_methods_added": 0
+}
