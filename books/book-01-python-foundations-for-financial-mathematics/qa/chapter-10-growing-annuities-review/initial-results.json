@@ -1,0 +1,251 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "f703c32e39750edf1122b60c195d36d1530ea9e4b3477c3c78002ca6afb0d912",
+  "listing_sha256": "7173a639aab187c60b9ff07eabbd6250d573bbf4f6169e33ebe61416d2fc1164",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "growing_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_timeline (__main__.Tests.test_01_timeline) ... ok\ntest_02_closed_form (__main__.Tests.test_02_closed_form) ... ok\ntest_03_equal_rates (__main__.Tests.test_03_equal_rates) ... ok\ntest_04_level_annuity (__main__.Tests.test_04_level_annuity) ... ok\ntest_05_zero_discount (__main__.Tests.test_05_zero_discount) ... ok\ntest_06_zero_periods (__main__.Tests.test_06_zero_periods) ... ok\ntest_07_negative_growth (__main__.Tests.test_07_negative_growth) ... ok\ntest_08_growth_above_discount (__main__.Tests.test_08_growth_above_discount) ... ok\ntest_09_fv (__main__.Tests.test_09_fv) ... ok\ntest_10_signed (__main__.Tests.test_10_signed) ... ok\ntest_11_near_equal (__main__.Tests.test_11_near_equal) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\ntest_13_near_equal_decimal_reference (__main__.Tests.test_13_near_equal_decimal_reference) ... ok\ntest_14_extreme_ratio_fallback (__main__.Tests.test_14_extreme_ratio_fallback) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n",
+      "methods": 14,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "growing_annuities.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 exact payment list",
+      "passed": true
+    },
+    {
+      "label": "P2 PV",
+      "passed": true,
+      "actual": 260.5184072126221,
+      "rational_reference": "346750/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 equal rates",
+      "passed": true,
+      "actual": 380.95238095238096,
+      "rational_reference": "8000/21",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 zero growth",
+      "passed": true,
+      "actual": 248.68519909842223,
+      "rational_reference": "331000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 zero discount",
+      "passed": true,
+      "actual": 331.0,
+      "rational_reference": "331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 exact declining payments",
+      "passed": true
+    },
+    {
+      "label": "P6 declining PV",
+      "passed": true,
+      "actual": 226.1457550713749,
+      "rational_reference": "301000/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 growth above discount",
+      "passed": true,
+      "actual": 534.910612379939,
+      "rational_reference": "6201080050000/11592740743",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 empty PV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 empty FV",
+      "passed": true,
+      "actual": 0.0,
+      "rational_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 terminal FV",
+      "passed": true,
+      "actual": 346.75,
+      "rational_reference": "1387/4",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 signed PV",
+      "passed": true,
+      "actual": -260.5184072126221,
+      "rational_reference": "-346750/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 equal-rate FV",
+      "passed": true,
+      "actual": 463.05,
+      "rational_reference": "9261/20",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 explicit timeline",
+      "passed": true,
+      "actual": 260.5184072126221,
+      "rational_reference": "346750/1331",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F11 near-equal represented rates (0.05, 0.050000000100000004)",
+      "passed": true,
+      "actual": 1142.857143455782,
+      "rational_reference": "40218014118841299170021044737787931602611309350765751891269865465464583581774924042924375267444677368769525436666360153382281008634418764054666893072854804859440335933671571897566079227821176342826922803200/35190762335552880153348981393507412969942298270423079312183589943364001634543001497131046410255530344044484799258034736598715682828485740294768081893575693293525482649441975363950185623576348101272682161",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F11 near-equal represented rates (0.050000000100000004, 0.05)",
+      "passed": true,
+      "actual": 1142.85714214966,
+      "rational_reference": "6589319433230958456016247969839174713771836924029460789865654757861717374038003555192729643818135940099199047543416447530152920454663170302716623761056531228170704639372750339697226420686221532008763032076288/5765654507646303405532505643136606374648591277389770178655983528025075077117259995019799850745694589696960403861213037918017822964291163557016705600995824855698985598259199744013866120471854378000791015625",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F11 near-equal represented rates (0.05, 0.05000000000000001)",
+      "passed": true,
+      "actual": 1142.8571428571427,
+      "rational_reference": "40218014097774721530731709722627805677347265840645990430314054360816786093853437458858345186435190282766141308282016806047777227340634841277884640038703058685645619307659936433152773072029110651381088256000/35190762335552880153348981393507412969942298270423079312183589943364001634543001497131046410255530344044484799258034736598715682828485740294768081893575693293525482649441975363950185623576348101272682161",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F11 extreme ratio fallback",
+      "passed": true,
+      "actual": 1e-306,
+      "rational_reference": "100/100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118337",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate PV",
+      "passed": false,
+      "actual": 0.0,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny-rate FV",
+      "passed": false,
+      "actual": 0.0,
+      "rational_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 equal-rate avoidable intermediate overflow",
+      "passed": false,
+      "actual": "inf",
+      "rational_reference": "200000000000000002195812725888091083480984619354623692673621365806315170809822983074326657956989377798122499339442345031223180567486280176656614018396292092062543329005866054371394979399177118086676768932330002356853795252425890355256182391573414916245567940343568830210583605786415746545949771430860446236672/100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118337",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 finite FV without representable PV",
+      "passed": false,
+      "exception": "ValueError('present value overflow')",
+      "reference": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "label": "F54 equal-rate overflow",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 nonzero PV underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 timeline payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 nonzero FV underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "invalid discount",
+      "passed": true,
+      "exception": "ValueError('rates must exceed -1')"
+    },
+    {
+      "label": "invalid growth",
+      "passed": true,
+      "exception": "ValueError('rates must exceed -1')"
+    },
+    {
+      "label": "fractional count",
+      "passed": true,
+      "exception": "ValueError('periods must be nonnegative integer')"
+    },
+    {
+      "label": "bool payment",
+      "passed": true,
+      "exception": "ValueError('finite numeric inputs required')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "supplemental_payment_lists": [
+    1,
+    6
+  ],
+  "conceptual_branch_explanation": [
+    11
+  ],
+  "historical_unique_methods_added": 0
+}
