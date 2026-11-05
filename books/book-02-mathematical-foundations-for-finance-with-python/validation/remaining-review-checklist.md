@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`  
-**Latest scoped source revision:** `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`  
-**Disposition:** V-62 full candidate pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `ea55f5efc6c94d8e8f64b791641c48e7a064947e`  
+**Latest scoped source revision:** `ea55f5efc6c94d8e8f64b791641c48e7a064947e`  
+**Disposition:** V-63 full candidate pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-63](runtime-refresh-2026-11-05-r5.md): 515 compiled, 304 passed, 516 required hashes verified before/after; G2–G8 unchanged.
 
 [V-62](runtime-refresh-2026-11-05-r4.md):514 compiled,303 passed,515 required hashes verified before/after; G2–G8 unchanged.
 
@@ -81,7 +83,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-62](runtime-refresh-2026-11-05-r4.md) at `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-63](runtime-refresh-2026-11-05-r5.md) at `ea55f5efc6c94d8e8f64b791641c48e7a064947e`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -360,3 +362,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Logistic evidence](chapter-19-logistic-range-followup.md) preserves ten initial failures and a25-case pass with independent reciprocal-coordinate references. [Quadratic evidence](chapter-19-quadratic-range-followup.md) preserves two initial failures and a22-case pass against an exact reciprocal-state oracle. All30 Chapter19 files compiled and20 scripts passed at `9b4ae81bb9d057d7a904083f34f7586dcf3ec301`.
 
 [V-62](runtime-refresh-2026-11-05-r4.md) compiled514 Python files,passed303 scripts and matched515 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.2 pure growth, affine-time-rate growth and proportional-withdrawal accepted-input/result range, including complete exponent cancellation and finite scaled outputs, with independent integrated-rate references. Independent review, supported platforms and release approval remain pending.
+
+## Integrated growth range and V-63 — 2026-11-05
+
+[Section 19.2 evidence](chapter-19-integrated-growth-range-followup.md) preserves 18 initial failed cases, an intermediate rerun with six remaining affine-rate failures, and a final 36-case pass. Complete exact integrated rates and wider scaled exponential evaluation now retain selected finite amounts; nonzero final underflow and overflow reject explicitly. All 31 Chapter 19 sources compiled and 21 scripts passed at `ea55f5efc6c94d8e8f64b791641c48e7a064947e`.
+
+[V-63](runtime-refresh-2026-11-05-r5.md) compiled 515 Python files, passed 304 scripts and matched 516 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section 19.8 nominal/continuous rate-conversion accepted-input and result range, including tiny rate-to-frequency quotients, large integer frequencies and finite inverse conversions, with independent logarithm/power references. Independent review, supported platforms and release approval remain pending.
