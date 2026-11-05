@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-04  
-**Full-runtime candidate source revision:** `eac8f8da5643d573ad9f5946c09b12622c422c7e`  
-**Latest scoped source revision:** `9c77e189563fd2fc7bbcee7b43d2ee0c8a82b191`  
-**Disposition:** V-55 candidate runtime refreshed; independent review and release approval pending.
+**Full-runtime candidate source revision:** `5504f2cf019487dae61912e6b01bdb6440931307`  
+**Latest scoped source revision:** `7b779924a288286a39a55a98f7383bdc4310989d`  
+**Disposition:** V-56 full candidate pass plus subsequent Chapter 18 cent rounding scope; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-56](runtime-refresh-2026-11-04-r2.md): 501 compiled, 290 passed, 502 hashes verified. Subsequent cent rounding has scoped evidence only.
 
 [V-55](runtime-refresh-2026-11-04.md): 499 compiled, 288 scripts passed, and 500 required hashes verified before and after. G2–G8 unchanged.
 
@@ -67,7 +69,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-55](runtime-refresh-2026-11-04.md) at `eac8f8da5643d573ad9f5946c09b12622c422c7e`; platform and release checks remain open. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-56](runtime-refresh-2026-11-04-r2.md) at `5504f2cf019487dae61912e6b01bdb6440931307`; subsequent cent rounding has scoped evidence. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -306,3 +308,7 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 ## Taylor remainder oracle — 2026-11-04
 
 [Section 18.1 evidence](chapter-18-taylor-remainder-followup.md) compares 11 actual reports with independent positive and alternating-series bounds and high-precision references. Two rounded zero differences are distinguished from nonzero mathematical remainders. The first audit passed; the numerical helper is unchanged. All 39 Chapter 18 sources compiled and 29 scripts passed at `9c77e189563fd2fc7bbcee7b43d2ee0c8a82b191`. V-55 remains the latest full pass (499 files, 288 scripts, 500 hashes); this subsequent checker has scoped evidence. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.1 present-value and error-report range, including false zero from an overflowing discount denominator and representable versus out-of-range diagnostics. Independent review, supported platforms and release approval remain pending.
+
+## Present-value, error-report and cent rounding range — 2026-11-04
+
+[PV and error-report checks](chapter-18-pv-error-range-followup.md) preserve 13 initial failures and a 26-case pass at `5504f2cf019487dae61912e6b01bdb6440931307`. [V-56](runtime-refresh-2026-11-04-r2.md) compiled 501 files, passed 290 scripts and matched 502 required hashes before and after execution. The subsequent [cent rounding checks](chapter-18-cents-range-followup.md) preserve 18 initial failures and pass all 32 observations at `7b779924a288286a39a55a98f7383bdc4310989d`; 41 Chapter 18 files compiled and 31 scripts passed. Thirty COV categories remain partially addressed; none closed. Next substantive item: Section 18.2 growth factor, growth increment and discount-change range and saturation policy with independent power references. Independent review, supported platforms and release approval remain pending.
