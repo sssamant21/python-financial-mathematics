@@ -2,7 +2,7 @@
 import json
 import math
 import sys
-from decimal import Decimal, ROUND_HALF_EVEN
+from decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -38,9 +38,27 @@ def annuity_present_value(payment,rate,periods):
     r,n=valid_rate_periods(rate,periods)
     if c<0:
         raise ValueError("payment must be nonnegative")
+    if c==0 or n==0:
+        return 0.0
     if r==0:
-        return c*n
-    return c*(-math.expm1(-n*math.log1p(r)))/r
+        value=c*n
+    else:
+        # Use the binary exponent only for coarse range decisions. A positive
+        # exponent above 2000 overflows even at the smallest positive payment
+        # (and here abs(rate)<1). Below -2000 the discount is negligible.
+        exponent=-n*math.log1p(r)
+        if exponent>2000:
+            raise ValueError("annuity PV outside floating-point range")
+        # Keep tiny discount changes and the complete scaling in a wider
+        # format. Even two minimum subnormal inputs give a change near 1e-647.
+        with localcontext(Context(prec=850)):
+            dr=Decimal(r)
+            numerator=(Decimal(1) if exponent < -2000
+                       else 1-(1+dr)**(-Decimal(n)))
+            value=float(Decimal(c)*numerator/dr)
+    if not math.isfinite(value) or value==0:
+        raise ValueError("annuity PV outside floating-point range")
+    return value
 
 def decimal_cents(text):
     if not isinstance(text,str):
