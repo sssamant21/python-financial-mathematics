@@ -1,6 +1,8 @@
 """Educational deterministic valuation and pending dossier template."""
 import math
+from fractions import Fraction
 from numbers import Real
+from _valuation_math import scaled_exponential
 
 def finite(x, name):
     if isinstance(x, bool) or not isinstance(x, Real):
@@ -15,19 +17,17 @@ def finite(x, name):
 
 def value(flows, rate):
     r = finite(rate, "rate")
-    terms = []
+    total = Fraction(0)
     for amount, years in flows:
         c, t = finite(amount, "amount"), finite(years, "time")
         if t < 0: raise ValueError("time must be nonnegative")
         try:
-            term = c * math.exp(-r * t)
-        except OverflowError as exc:
-            raise OverflowError("discount factor exceeds numerical range") from exc
-        if not math.isfinite(term):
-            raise OverflowError("discounted cash flow exceeds numerical range")
-        terms.append(term)
+            term = scaled_exponential(c, -Fraction(r) * Fraction(t), allow_underflow=True)
+        except ValueError as exc:
+            raise OverflowError("discounted cash flow exceeds numerical range") from exc
+        total += Fraction(term)
     try:
-        result = math.fsum(terms)
+        result = float(total)
     except OverflowError as exc:
         raise OverflowError("portfolio exceeds numerical range") from exc
     if not math.isfinite(result): raise OverflowError("portfolio exceeds numerical range")
