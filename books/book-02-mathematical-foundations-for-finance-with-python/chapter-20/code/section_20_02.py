@@ -2,6 +2,8 @@
 import json
 import math
 from fractions import Fraction
+from _valuation_math import (scaled_exponential as _scaled_valuation,
+                             nominal_to_continuous as _nominal_conversion)
 from _continuous_account import (account as _account_balance,
                                  depletion_time as _account_depletion)
 
@@ -20,16 +22,13 @@ def present_value(flow,rate,years):
     f,r,t=(finite(v,n) for v,n in ((flow,"flow"),(rate,"rate"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    try:
-        return finite(f*math.exp(-r*t),"present_value")
-    except OverflowError as exc:
-        raise ValueError("present value overflow") from exc
+    return _scaled_valuation(f,-Fraction(r)*Fraction(t))
 
 def nominal_to_continuous(nominal,frequency):
     j=finite(nominal,"nominal")
-    if type(frequency) is not int or frequency<1 or j/frequency<=-1:
+    if type(frequency) is not int or frequency<1:
         raise ValueError("invalid nominal rate or frequency")
-    return finite(frequency*math.log1p(j/frequency),"continuous_rate")
+    return _nominal_conversion(j,frequency)
 
 def _annuity_float(value):
     try:
