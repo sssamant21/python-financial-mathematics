@@ -1,0 +1,93 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "eb64c30e32ebd44645ea181d1991339666090602281360941d195be1825f0e6b",
+  "program_sha256": "46bf690edd3498eac2a3698102b9097f719b84c18fccee9513dd8c84e8f3f72b",
+  "tests_sha256": "d611621a2b842761b311954d930d08dbe8f73ce0e06e062aab4cec079bdfe372",
+  "png_sha256": "5f4926b5766823356b786c0444052c52c7c3d15aedb5fd64260de30a5223198d",
+  "commands": [
+    {
+      "label": "test discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bar_widths_labels_png_and_cleanup (test_portfolio_visualizations.PortfolioTests.test_bar_widths_labels_png_and_cleanup) ... ok\ntest_cash_contract_and_nonpositive_net (test_portfolio_visualizations.PortfolioTests.test_cash_contract_and_nonpositive_net) ... ok\ntest_known_values_and_two_denominators (test_portfolio_visualizations.PortfolioTests.test_known_values_and_two_denominators) ... ok\ntest_missing_invalid_and_schema (test_portfolio_visualizations.PortfolioTests.test_missing_invalid_and_schema) ... ok\ntest_row_order_and_positive_scaling (test_portfolio_visualizations.PortfolioTests.test_row_order_and_positive_scaling) ... ok\ntest_source_preservation (test_portfolio_visualizations.PortfolioTests.test_source_preservation) ... ok\ntest_valuation_time (test_portfolio_visualizations.PortfolioTests.test_valuation_time) ... ok\ntest_zero_position_and_long_only_case (test_portfolio_visualizations.PortfolioTests.test_zero_position_and_long_only_case) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.156s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "demonstration",
+      "args": [
+        "portfolio_visualizations.py"
+      ],
+      "returncode": 0,
+      "stdout": "Net marked value: USD 1000.00\nAbsolute marked value including cash: USD 1400.00\nSigned weight sum: 1.000000\nAbsolute share sum: 1.000000\nRisky gross / net value (cash excluded): 120.00%\nSaved output/portfolio_visualizations.png\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "PNG produced at documented relative path",
+      "passed": true
+    },
+    {
+      "label": "independent net and absolute sums",
+      "passed": true
+    },
+    {
+      "label": "all signed weights and absolute shares match fractions",
+      "passed": true
+    },
+    {
+      "label": "risky gross numerator excludes cash",
+      "passed": true
+    },
+    {
+      "label": "missing short valuation rejects entire snapshot",
+      "passed": true
+    },
+    {
+      "label": "long-only denominators coincide and zero holding remains",
+      "passed": true
+    },
+    {
+      "label": "doubling quantities doubles monetary values but preserves ratios",
+      "passed": true
+    },
+    {
+      "label": "deterministic tie sorts CASH before GAMMA",
+      "passed": true
+    },
+    {
+      "label": "left artist retains short sign and right magnitude",
+      "passed": true
+    },
+    {
+      "label": "chart tick labels follow deterministic sorted rows",
+      "passed": true
+    }
+  ]
+}
