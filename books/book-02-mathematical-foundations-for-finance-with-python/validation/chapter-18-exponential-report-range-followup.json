@@ -1,0 +1,929 @@
+{
+  "baseline": "505aa5aedb4cad6c20fdc69f6e6bb9d36f71dfc3",
+  "corrected": "46aa9c5a32f9a3293bcd7926efa4c04c984a3258",
+  "command": "python check_exponential_report_range.py",
+  "initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-exp/check_exponential_report_range.py\", line 70, in <module>\n    check()\n  File \"/tmp/book02-exp/check_exponential_report_range.py\", line 66, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "helper": "exponential_approximation",
+        "x": "-800.0",
+        "expected": "ValueError",
+        "actual": {
+          "exact": 0,
+          "first_order": -799,
+          "error": {
+            "absolute": 799,
+            "relative": null
+          }
+        },
+        "passed": false
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-800.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -800,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-746.0",
+        "expected": "ValueError",
+        "actual": {
+          "exact": 0,
+          "first_order": -745,
+          "error": {
+            "absolute": 745,
+            "relative": null
+          }
+        },
+        "passed": false
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-746.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -746,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-745.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-745.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -745,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-710.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-710.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -710,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-704.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-704.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -704,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-54.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 3.532628572200807e-24,
+          "first_order": -53,
+          "error": {
+            "absolute": 53,
+            "relative": 1.5002992507355878e+25
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-54.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -54,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-37.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 8.533047625744066e-17,
+          "first_order": -36,
+          "error": {
+            "absolute": 36,
+            "relative": 421889125420894000
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-37.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -37,
+          "direct": -0.9999999999999999,
+          "stable": -0.9999999999999999
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-1.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 0.36787944117144233,
+          "first_order": 0,
+          "error": {
+            "absolute": 0.36787944117144233,
+            "relative": 1
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-1.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -1,
+          "direct": -0.6321205588285577,
+          "stable": -0.6321205588285577
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-5.551115123125783e-17",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-5.551115123125783e-17",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -5.551115123125783e-17,
+          "direct": 0,
+          "stable": -5.551115123125783e-17
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-5e-324",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-5e-324",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -5e-324,
+          "direct": 0,
+          "stable": -5e-324
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "0.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "0.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 0,
+          "direct": 0,
+          "stable": 0
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "5e-324",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "5e-324",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 5e-324,
+          "direct": 0,
+          "stable": 5e-324
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "5.551115123125783e-17",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "5.551115123125783e-17",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 5.551115123125783e-17,
+          "direct": 0,
+          "stable": 5.551115123125783e-17
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "1.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 2.718281828459045,
+          "first_order": 2,
+          "error": {
+            "absolute": 0.7182818284590451,
+            "relative": 0.26424111765711533
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "1.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 1,
+          "direct": 1.718281828459045,
+          "stable": 1.718281828459045
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "709.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 8.218407461554972e+307,
+          "first_order": 710,
+          "error": {
+            "absolute": 8.218407461554972e+307,
+            "relative": 1
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "709.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 709,
+          "direct": 8.218407461554972e+307,
+          "stable": 8.218407461554972e+307
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "709.78",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1.7928227943945155e+308,
+          "first_order": 710.78,
+          "error": {
+            "absolute": 1.7928227943945155e+308,
+            "relative": 1
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "709.78",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 709.78,
+          "direct": 1.7928227943945155e+308,
+          "stable": 1.7928227943945155e+308
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "710.0",
+        "expected": "ValueError",
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "710.0",
+        "expected": "ValueError",
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "800.0",
+        "expected": "ValueError",
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "800.0",
+        "expected": "ValueError",
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "True",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "nan",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "inf",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "1e+308",
+        "expected": "ValueError",
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "True",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "nan",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "inf",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "1e+308",
+        "expected": "ValueError",
+        "actual": "OverflowError",
+        "passed": false
+      }
+    ]
+  },
+  "rerun": {
+    "exit": 0,
+    "stderr": "",
+    "rows": [
+      {
+        "helper": "exponential_approximation",
+        "x": "-800.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-800.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -800,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-746.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-746.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -746,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-745.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-745.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -745,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-710.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-710.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -710,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-704.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-704.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -704,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-54.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 3.532628572200807e-24,
+          "first_order": -53,
+          "error": {
+            "absolute": 53,
+            "relative": 1.5002992507355878e+25
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-54.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -54,
+          "direct": -1,
+          "stable": -1
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-37.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 8.533047625744066e-17,
+          "first_order": -36,
+          "error": {
+            "absolute": 36,
+            "relative": 421889125420894000
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-37.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -37,
+          "direct": -0.9999999999999999,
+          "stable": -0.9999999999999999
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-1.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 0.36787944117144233,
+          "first_order": 0,
+          "error": {
+            "absolute": 0.36787944117144233,
+            "relative": 1
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-1.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -1,
+          "direct": -0.6321205588285577,
+          "stable": -0.6321205588285577
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-5.551115123125783e-17",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-5.551115123125783e-17",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -5.551115123125783e-17,
+          "direct": 0,
+          "stable": -5.551115123125783e-17
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "-5e-324",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "-5e-324",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": -5e-324,
+          "direct": 0,
+          "stable": -5e-324
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "0.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "0.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 0,
+          "direct": 0,
+          "stable": 0
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "5e-324",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "5e-324",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 5e-324,
+          "direct": 0,
+          "stable": 5e-324
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "5.551115123125783e-17",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1,
+          "first_order": 1,
+          "error": {
+            "absolute": 0,
+            "relative": 0
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "5.551115123125783e-17",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 5.551115123125783e-17,
+          "direct": 0,
+          "stable": 5.551115123125783e-17
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "1.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 2.718281828459045,
+          "first_order": 2,
+          "error": {
+            "absolute": 0.7182818284590451,
+            "relative": 0.26424111765711533
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "1.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 1,
+          "direct": 1.718281828459045,
+          "stable": 1.718281828459045
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "709.0",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 8.218407461554972e+307,
+          "first_order": 710,
+          "error": {
+            "absolute": 8.218407461554972e+307,
+            "relative": 1
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "709.0",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 709,
+          "direct": 8.218407461554972e+307,
+          "stable": 8.218407461554972e+307
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "709.78",
+        "expected": "finite approximation",
+        "actual": {
+          "exact": 1.7928227943945155e+308,
+          "first_order": 710.78,
+          "error": {
+            "absolute": 1.7928227943945155e+308,
+            "relative": 1
+          }
+        },
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "709.78",
+        "expected": "finite cancellation report",
+        "actual": {
+          "x": 709.78,
+          "direct": 1.7928227943945155e+308,
+          "stable": 1.7928227943945155e+308
+        },
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "710.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "710.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "800.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "800.0",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "True",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "nan",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "inf",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "exponential_approximation",
+        "x": "1e+308",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "True",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "nan",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "inf",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "cancellation_demo",
+        "x": "1e+308",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      }
+    ]
+  }
+}
