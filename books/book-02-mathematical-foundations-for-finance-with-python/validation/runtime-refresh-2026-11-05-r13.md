@@ -1,0 +1,13 @@
+# V-71 — Full Book 02 runtime refresh
+
+Date: 2026-11-05. Exact source revision: `d0266c34257e717c964b8bc8c8a145c9d8448e53`.
+
+529 Python files compiled; all 317 discovered check/test scripts exited zero; all 530 required source/fixture Git blob hashes matched before and after execution. The required fixture is chapter-01/data/section-1.14-cases.json. Counts derive from this pinned tree, including the new chapter-local account kernel. No script failed or timed out. Python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]. Platform: Linux-6.18.57-x86_64-with-glibc2.39. Assertions enabled; fresh Python subprocess, parent-directory cwd and a 60-second timeout for each script. Slowest: check_rate_conversion_range.py, 10.597 seconds.
+
+Includes both the [benchmark account/depletion correction](chapter-20-benchmark-account-range-followup.md), retaining 16 initial failed cases and a 36-case pass, and [invariant account composition correction](chapter-20-invariant-account-range-followup.md), retaining 11 initial failed cases and a 20-case pass. Their Chapter 20 scopes were 23 files/13 scripts and 24 files/14 scripts respectively. Case counts are not defect totals, COV closure or completion percentages.
+
+[Source/fixture manifest and individual results](runtime-refresh-2026-11-05-r13.json).
+
+Replay from a clean checkout at the exact source revision. Verify SHA1(b'blob '+decimal_byte_length+b'\\0'+file_bytes) for every JSON manifest path; compile every .py with py_compile.compile(path,doraise=True); run every basename beginning check_ or test_ from its parent directory using a fresh Python process, assertions enabled, timeout=60. Verify all manifest hashes after execution. Raw results retain compiled paths, hashes, exits, stderr and timings; successful stdout is omitted. Snapshot reconstruction reused cached files only when their exact pinned hashes matched and retrieved other blobs at the pin, followed by complete before/after verification.
+
+The local account kernel adapts selected Section 19.8 calculations; it has no Chapter 19 runtime import or sys.path modification. Selected high-precision/original-failure evidence is separate from independent review. Other valuation, conversion, matrix and report scopes remain open; Section 19.8's end-period exponent evaluation boundary remains unchanged. Thirty-two selected COV categories remain partially addressed; none closed. Assistant-run Python 3.12.14/Linux evidence does not establish independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval or real financial model suitability. G2–G8 remain pending.
