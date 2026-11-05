@@ -1,0 +1,278 @@
+{
+  "python": "3.12.14",
+  "pandas": "2.2.3",
+  "numpy": "2.3.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "copy_on_write": false,
+  "source": "chapter-07/7.15-price-to-return-transformation.md",
+  "source_sha256": "e04602878a849a0612c475f95acb2fa4f31b0fef4462d232779a45efecdd24d8",
+  "program_fence": 3,
+  "test_fence": 4,
+  "program_sha256": "d1e7d9ab7cd6785c4759931a4c4711fa6d797e5b276397ff4927c0f7c1280df2",
+  "test_sha256": "fd8990cfb23dd5142a186732240365fbeec5c3e01fc3c558a2945d95d8643163",
+  "answers": 8,
+  "command_records": 3,
+  "command_failed": 0,
+  "existing_method_invocations": 8,
+  "predicates": 24,
+  "failed": 1,
+  "commands": [
+    {
+      "section": "ALL",
+      "label": "original demonstration",
+      "args": [
+        "pandas_lab_715/returns.py"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "                             price  simple_return  cumulative_price_return\n2026-01-30 16:00:00+00:00 100.0000            NaN                   0.0000\n2026-02-02 16:00:00+00:00 110.0000         0.1000                   0.1000\n2026-02-03 16:00:00+00:00  99.0000        -0.1000                  -0.0100\nEndpoint price return: -1.00%\nElapsed intervals: 3 days 00:00:00, 1 days 00:00:00\n",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original unittest discovery",
+      "args": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "pandas_lab_715",
+        "-v"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_future_and_constant (test_returns.ReturnTests.test_future_and_constant) ... ok\ntest_interval_alignment (test_returns.ReturnTests.test_interval_alignment) ... ok\ntest_invalid_numeric_domain (test_returns.ReturnTests.test_invalid_numeric_domain) ... ok\ntest_invalid_time_axis (test_returns.ReturnTests.test_invalid_time_axis) ... ok\ntest_known_answer_and_first_row (test_returns.ReturnTests.test_known_answer_and_first_row) ... ok\ntest_missing_policy_and_no_fill_mechanics (test_returns.ReturnTests.test_missing_policy_and_no_fill_mechanics) ... ok\ntest_scalar_and_linked_reconciliation (test_returns.ReturnTests.test_scalar_and_linked_reconciliation) ... ok\ntest_source_and_scale (test_returns.ReturnTests.test_source_and_scale) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.038s\n\nOK\n",
+      "actual_methods": 8,
+      "status": "PASS"
+    },
+    {
+      "section": "ALL",
+      "label": "original compileall",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "pandas_lab_715"
+      ],
+      "cwd_role": "parent directory",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "actual_methods": null,
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "section": "E1",
+      "label": "adjacent returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    0.1\n2026-02-03 16:00:00+00:00   -0.1\nName: simple_return, dtype: float64",
+      "reference": "[Fraction(1, 10), Fraction(-1, 10)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E1",
+      "label": "linked return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "np.float64(-0.010000000000000009)",
+      "reference": "Fraction(-1, 100)",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E2",
+      "label": "first interval fields undefined",
+      "actual": "[True, True, True, True, True]",
+      "expected": "[True, True, True, True, True]",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "baseline defined",
+      "actual": "np.float64(0.0)",
+      "expected": "0",
+      "status": "PASS"
+    },
+    {
+      "section": "E2",
+      "label": "right alignment and elapsed days",
+      "actual": "(True, [Timestamp('2026-01-30 16:00:00+0000', tz='UTC'), Timestamp('2026-02-02 16:00:00+0000', tz='UTC')], [3, 1])",
+      "expected": "(True, [Timestamp('2026-01-30 16:00:00+0000', tz='UTC'), Timestamp('2026-02-02 16:00:00+0000', tz='UTC')], [3, 1])",
+      "status": "PASS"
+    },
+    {
+      "section": "E3",
+      "label": "adjacent returns",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    0.1\n2026-02-03 16:00:00+00:00    0.1\nName: simple_return, dtype: float64",
+      "reference": "[Fraction(1, 10), Fraction(1, 10)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E3",
+      "label": "independent endpoint",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "np.float64(0.20999999999999996)",
+      "reference": "Fraction(21, 100)",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E3",
+      "label": "linked from source intervals",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "np.float64(0.2100000000000002)",
+      "reference": "Fraction(21, 100)",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E4",
+      "label": "source rejects missing price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-price-return-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-price-return-exercises/review.py\", line 63, in <lambda>\n    reject('E4','source rejects missing price',lambda:m.transform(q))\n                                                      ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.15-price-to-return-transformation.md\", line 23, in transform\n    6. Compare logarithmic returns and multiplicative simple-return linking.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: complete finite strictly positive prices required\n"
+    },
+    {
+      "section": "E4",
+      "label": "supplemental no-fill has no defined return",
+      "actual": "[True, True, True]",
+      "expected": "[True, True, True]",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "forward fill first row still undefined",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E4",
+      "label": "forward fill manufactures an intermediate zero",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    0.00\n2026-02-03 16:00:00+00:00   -0.01\nName: price, dtype: float64",
+      "reference": "[Fraction(0, 1), Fraction(-1, 100)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E4",
+      "label": "dropped-row return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "np.float64(-0.010000000000000009)",
+      "reference": "Fraction(-1, 100)",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E4",
+      "label": "dropped row changes interval",
+      "actual": "Timedelta('4 days 00:00:00')",
+      "expected": "Timedelta('4 days 00:00:00')",
+      "status": "PASS"
+    },
+    {
+      "section": "E5",
+      "label": "simple_return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    0.1\n2026-02-03 16:00:00+00:00   -0.1\nName: simple_return, dtype: float64",
+      "reference": "2026-02-02 16:00:00+00:00    0.1\n2026-02-03 16:00:00+00:00   -0.1\nName: simple_return, dtype: float64",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E5",
+      "label": "gross_return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    1.1\n2026-02-03 16:00:00+00:00    0.9\nName: gross_return, dtype: float64",
+      "reference": "2026-02-02 16:00:00+00:00    1.1\n2026-02-03 16:00:00+00:00    0.9\nName: gross_return, dtype: float64",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E5",
+      "label": "log_return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    0.095310\n2026-02-03 16:00:00+00:00   -0.105361\nName: log_return, dtype: float64",
+      "reference": "2026-02-02 16:00:00+00:00    0.095310\n2026-02-03 16:00:00+00:00   -0.105361\nName: log_return, dtype: float64",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E5",
+      "label": "cumulative_price_return",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "2026-02-02 16:00:00+00:00    0.10\n2026-02-03 16:00:00+00:00   -0.01\nName: cumulative_price_return, dtype: float64",
+      "reference": "2026-02-02 16:00:00+00:00    0.10\n2026-02-03 16:00:00+00:00   -0.01\nName: cumulative_price_return, dtype: float64",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E5",
+      "label": "source unchanged",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "E6",
+      "label": "supplemental changing FX on flat local series",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS",
+      "values": "array([0.1       , 0.09090909])",
+      "reference": "[Fraction(1, 10), Fraction(1, 11)]",
+      "absolute_tolerance": 1e-12
+    },
+    {
+      "section": "E7",
+      "label": "combined source rejects terminal zero",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "status": "PASS",
+      "expected_exception_trace": "Traceback (most recent call last):\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-price-return-exercises/review.py\", line 13, in reject\n    try:fn();actual='no exception';detail=''\n        ^^^^\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-07-price-return-exercises/review.py\", line 78, in <lambda>\n    reject('E7','combined source rejects terminal zero',lambda:m.transform(q))\n                                                               ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/50da9af75d6f/active/books/book-01-python-foundations-for-financial-mathematics/chapter-07/7.15-price-to-return-transformation.md\", line 23, in transform\n    6. Compare logarithmic returns and multiplicative simple-return linking.\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: complete finite strictly positive prices required\n"
+    },
+    {
+      "section": "range",
+      "label": "rational cumulative gross below half-ulp at one",
+      "actual": "False",
+      "expected": "False",
+      "status": "PASS"
+    },
+    {
+      "section": "range",
+      "label": "endpoint gross positive and below rounding threshold",
+      "actual": "True",
+      "expected": "True",
+      "status": "PASS"
+    },
+    {
+      "section": "range",
+      "label": "source rejects cumulative return rounded to -100%",
+      "actual": "'no exception'",
+      "expected": "'ValueError'",
+      "status": "FAIL",
+      "expected_exception_trace": ""
+    }
+  ],
+  "scope": "Exact return transformation, rational oracles and separately identified supplemental illustrations; FX ingestion, simple-only API and source metadata design not implemented"
+}
