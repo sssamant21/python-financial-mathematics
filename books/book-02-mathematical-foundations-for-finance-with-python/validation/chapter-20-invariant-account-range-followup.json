@@ -1,0 +1,489 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "1008849303f6317fcaa343dde97ee8b9fc73216a",
+  "corrected_revision": "d0266c34257e717c964b8bc8c8a145c9d8448e53",
+  "initial_exit": 1,
+  "rerun_exit": 0,
+  "initial": [
+    {
+      "kind": "direct",
+      "inputs": "(5e-324, 1000, 0, 1)",
+      "expected": 9.733444573000164e+110,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "direct",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1)",
+      "expected": 9.125016462967946e-127,
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "kind": "direct",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 2)",
+      "expected": -1.7976931348623157e+308,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "direct",
+      "inputs": "(1, 1000, -1000, 1)",
+      "expected": 1,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "direct",
+      "inputs": "(0, 5e-324, 1.7976931348623157e+308, 5e-324)",
+      "expected": 8.881784197001251e-16,
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "kind": "direct",
+      "inputs": "(-5e-324, 1000, 0, 1)",
+      "expected": -9.733444573000164e+110,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "composition",
+      "inputs": "(5e-324, 1000, 0, 0.5, 0.5)",
+      "expected_prefix": 6.934666956112098e-107,
+      "expected_final": 9.733444573000164e+110,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 0.5, 0.5)",
+      "expected_prefix": 1.2807802095200834e+91,
+      "expected_final": 9.125016462967946e-127,
+      "actual": {
+        "prefix": 1.2807802095200834e+91,
+        "split": 9.125016462967946e-127,
+        "direct": 0
+      },
+      "passed": false
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1, 1000, -1000, 0.5, 0.5)",
+      "expected_prefix": 1,
+      "expected_final": 1,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 1, 1)",
+      "expected_prefix": 0,
+      "expected_final": -1.7976931348623157e+308,
+      "actual": "ValueError",
+      "passed": false
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1000, 0.04, 200, 2, 3)",
+      "expected_prefix": 1499.7224060497513,
+      "expected_final": 2328.416548961019,
+      "actual": {
+        "prefix": 1499.7224060497515,
+        "split": 2328.416548961019,
+        "direct": 2328.416548961019
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(-1000, -0.04, 200, 2, 3)",
+      "expected_prefix": -538.6980783198147,
+      "expected_final": 87.61548153210884,
+      "actual": {
+        "prefix": -538.6980783198147,
+        "split": 87.6154815321089,
+        "direct": 87.6154815321089
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(10, 0, -7, 1, 2)",
+      "expected_prefix": 3,
+      "expected_final": -11,
+      "actual": {
+        "prefix": 3,
+        "split": -11,
+        "direct": -11
+      },
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(1, -1000, 0, 1)",
+      "expected": "ValueError",
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "kind": "guard",
+      "inputs": "(1.7976931348623157e+308, 1, 0, 1)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(True, 0, 0, 0)",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(1, 0, 0, -1)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "kind": "assessment",
+      "key": "account_composition_left",
+      "expected": 2328.416548961019,
+      "actual": 2328.416548961019,
+      "passed": true
+    },
+    {
+      "kind": "assessment",
+      "key": "account_composition_right",
+      "expected": 2328.416548961019,
+      "actual": 2328.416548961019,
+      "passed": true
+    },
+    {
+      "kind": "assessment",
+      "key": "zero_interest_reconciliation",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    }
+  ],
+  "rerun": [
+    {
+      "kind": "direct",
+      "inputs": "(5e-324, 1000, 0, 1)",
+      "expected": 9.733444573000164e+110,
+      "actual": 9.733444573000164e+110,
+      "passed": true
+    },
+    {
+      "kind": "direct",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 1)",
+      "expected": 9.125016462967946e-127,
+      "actual": 9.125016462967946e-127,
+      "passed": true
+    },
+    {
+      "kind": "direct",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 2)",
+      "expected": -1.7976931348623157e+308,
+      "actual": -1.7976931348623157e+308,
+      "passed": true
+    },
+    {
+      "kind": "direct",
+      "inputs": "(1, 1000, -1000, 1)",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "kind": "direct",
+      "inputs": "(0, 5e-324, 1.7976931348623157e+308, 5e-324)",
+      "expected": 8.881784197001251e-16,
+      "actual": 8.881784197001251e-16,
+      "passed": true
+    },
+    {
+      "kind": "direct",
+      "inputs": "(-5e-324, 1000, 0, 1)",
+      "expected": -9.733444573000164e+110,
+      "actual": -9.733444573000164e+110,
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(5e-324, 1000, 0, 0.5, 0.5)",
+      "expected_prefix": 6.934666956112098e-107,
+      "expected_final": 9.733444573000164e+110,
+      "actual": {
+        "prefix": 6.934666956112098e-107,
+        "split": 9.733444573000164e+110,
+        "direct": 9.733444573000164e+110
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1.7976931348623157e+308, -1000, 0, 0.5, 0.5)",
+      "expected_prefix": 1.2807802095200834e+91,
+      "expected_final": 9.125016462967946e-127,
+      "actual": {
+        "prefix": 1.2807802095200834e+91,
+        "split": 9.125016462967946e-127,
+        "direct": 9.125016462967946e-127
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1, 1000, -1000, 0.5, 0.5)",
+      "expected_prefix": 1,
+      "expected_final": 1,
+      "actual": {
+        "prefix": 1,
+        "split": 1,
+        "direct": 1
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1.7976931348623157e+308, 0, -1.7976931348623157e+308, 1, 1)",
+      "expected_prefix": 0,
+      "expected_final": -1.7976931348623157e+308,
+      "actual": {
+        "prefix": 0,
+        "split": -1.7976931348623157e+308,
+        "direct": -1.7976931348623157e+308
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(1000, 0.04, 200, 2, 3)",
+      "expected_prefix": 1499.7224060497513,
+      "expected_final": 2328.416548961019,
+      "actual": {
+        "prefix": 1499.7224060497513,
+        "split": 2328.416548961019,
+        "direct": 2328.416548961019
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(-1000, -0.04, 200, 2, 3)",
+      "expected_prefix": -538.6980783198147,
+      "expected_final": 87.61548153210884,
+      "actual": {
+        "prefix": -538.6980783198147,
+        "split": 87.61548153210882,
+        "direct": 87.61548153210884
+      },
+      "passed": true
+    },
+    {
+      "kind": "composition",
+      "inputs": "(10, 0, -7, 1, 2)",
+      "expected_prefix": 3,
+      "expected_final": -11,
+      "actual": {
+        "prefix": 3,
+        "split": -11,
+        "direct": -11
+      },
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(1, -1000, 0, 1)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(1.7976931348623157e+308, 1, 0, 1)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(True, 0, 0, 0)",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "kind": "guard",
+      "inputs": "(1, 0, 0, -1)",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "kind": "assessment",
+      "key": "account_composition_left",
+      "expected": 2328.416548961019,
+      "actual": 2328.416548961019,
+      "passed": true
+    },
+    {
+      "kind": "assessment",
+      "key": "account_composition_right",
+      "expected": 2328.416548961019,
+      "actual": 2328.416548961019,
+      "passed": true
+    },
+    {
+      "kind": "assessment",
+      "key": "zero_interest_reconciliation",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    }
+  ],
+  "scope": {
+    "source_revision": "d0266c34257e717c964b8bc8c8a145c9d8448e53",
+    "blobs": {
+      "_continuous_account.py": "0240f600c8d783d13c62e46f726c785e19fa9564",
+      "check_benchmark_account_range.py": "2a20524a10a9287f9f4fbe47f229fbadcbf8a3ca",
+      "check_benchmark_annuity_range.py": "b9aaddd7cbfe1e094fe8e32653c91d0a0bfb052b",
+      "check_invariant_account_range.py": "d950321410e66d963a7db24526c99e978cfffaf8",
+      "check_section_20_01.py": "9d8f2cdc2bde2283ba1b9f610518af137c44f0a9",
+      "check_section_20_02.py": "f6187e2a0bfb5c11bb350f2387580da42f8cc08e",
+      "check_section_20_03.py": "f70be5be10dc48777295cbae632262ecbfdab01c",
+      "check_section_20_04.py": "77ef70afca83e701cd00cc44a3e6b22163ec4a50",
+      "check_section_20_05.py": "fad230c0d373d7cd09571863067f553f195c255d",
+      "check_section_20_06.py": "5cc023867be43734ffd938fe139c39a0f34edef1",
+      "check_section_20_07.py": "93e32a5ba36bb3d020a1138071f78cc852db23b7",
+      "check_section_20_08.py": "0f3feb5d1d8ebcdf5318864b5de6de4d7f92c7bd",
+      "check_section_20_09.py": "db043d5136d2991db1da6a88b2362b1179f3c699",
+      "check_section_20_10.py": "38cc87d0272db028860c7b794c81a27d3b91976f",
+      "check_vector_residual_design.py": "87d610bd2519bbb8464be51994b7b6e57b266c65",
+      "section_20_01.py": "c8223ece1a69ac2fb33278bccf9e689c64e398c6",
+      "section_20_02.py": "5c449f3ee9dc65d2191588e5d2add9caeff9c0e9",
+      "section_20_03.py": "4aaec7138c22c69068e70b4cd707b631fcea2109",
+      "section_20_04.py": "ed67ab3983d35041a2e0e1ce2e280ad311986be1",
+      "section_20_05.py": "72360096700472a2824305b3c87d2355d0ac5171",
+      "section_20_06.py": "c4b41dae13b6899a4dc53408d508f66ea9f4659d",
+      "section_20_07.py": "df698ccbb86d18f5d9f91a9a1fc075224575bb63",
+      "section_20_08.py": "40fad3707eea92730a631ecf05a20d0a3544c5be",
+      "section_20_09.py": "4af7dfe33995283bd2d7b615b871a52957fe5b46"
+    },
+    "compiled": 24,
+    "runs": {
+      "check_benchmark_account_range.py": {
+        "exit": 0,
+        "seconds": 1.45890294000003,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_annuity_range.py": {
+        "exit": 0,
+        "seconds": 0.13866575999998076,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_account_range.py": {
+        "exit": 0,
+        "seconds": 0.8751205969999774,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_01.py": {
+        "exit": 0,
+        "seconds": 0.028901577000056022,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_02.py": {
+        "exit": 0,
+        "seconds": 0.06098523399998612,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_03.py": {
+        "exit": 0,
+        "seconds": 0.07781167899997854,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_04.py": {
+        "exit": 0,
+        "seconds": 0.06717856800003119,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_05.py": {
+        "exit": 0,
+        "seconds": 0.06269471899997825,
+        "stderr": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_06.py": {
+        "exit": 0,
+        "seconds": 0.05903243199998087,
+        "stderr": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_07.py": {
+        "exit": 0,
+        "seconds": 0.07972104899999977,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_08.py": {
+        "exit": 0,
+        "seconds": 0.060940210000012485,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_09.py": {
+        "exit": 0,
+        "seconds": 0.05980485699990368,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_10.py": {
+        "exit": 0,
+        "seconds": 0.05527988800008643,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_vector_residual_design.py": {
+        "exit": 0,
+        "seconds": 0.03626626999994187,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "kernel_provenance": {
+    "adapted_from_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-19/code/section_19_08.py",
+    "adapted_from_blob": "8300579fb2fe18cb70f6ba73c7308074e2b0de2d",
+    "baseline_revision": "bad500a1e19b0e30a844757f7ba251f7700a9eb6",
+    "new_kernel_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-20/code/_continuous_account.py",
+    "new_kernel_blob": "0240f600c8d783d13c62e46f726c785e19fa9564",
+    "selected_functions": [
+      "finite",
+      "_rounded_balance",
+      "_decimal_fraction",
+      "_exprel_decimal",
+      "_exprel_fraction",
+      "_limiting_balance",
+      "continuous_contributions (renamed account)",
+      "depletion_time"
+    ],
+    "scope": "Selected calculation bodies adapted locally; no Chapter 19 runtime import or cross-chapter sys.path changes. Existing finite/time/domain guards remain at public Chapter 20 wrappers."
+  },
+  "limits": "Selected assistant-derived expectations and Python 3.12.14/Linux checks only. No independent reviewer sign-off, supported-platform validation, release acceptance, canonical approval, general numerical-range certification or financial model validation.",
+  "invariant-initial_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-benchmark-account/check_invariant_account_range.py\", line 83, in <module>\n    check()\n  File \"/tmp/book02-benchmark-account/check_invariant_account_range.py\", line 79, in check\n    assert all(row['passed'] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "invariant-rerun_stderr": ""
+}
