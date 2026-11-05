@@ -1,0 +1,1093 @@
+{
+  "date": "2026-11-05",
+  "baseline_revision": "a1fa0e326baecda17be1c1c19461c4f35629af8a",
+  "corrected_revision": "503edbdc3e622f98acabea861a53ac1581b9132f",
+  "initial": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-project76/check_project_valuation_range.py\", line 95, in <module>\n    check()\n  File \"/tmp/book02-project76/check_project_valuation_range.py\", line 91, in check\n    assert all(r['passed'] for r in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "helper": "project.value",
+        "inputs": "([(5e-324, 1)], -1000)",
+        "expected": 9.733444573000164e+110,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(5e-324, 1)], -1000)",
+        "expected": 9.733444573000164e+110,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(-5e-324, 1)], -1000)",
+        "expected": -9.733444573000164e+110,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(-5e-324, 1)], -1000)",
+        "expected": -9.733444573000164e+110,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], 1000)",
+        "expected": 9.125016462967946e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], 1000)",
+        "expected": 9.125016462967946e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 1), (-8.988465674311579e+307, 1)], 1000)",
+        "expected": 4.562508231483973e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 1), (-8.988465674311579e+307, 1)], 1000)",
+        "expected": 4.562508231483973e-127,
+        "actual": 0,
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(0, 2)], -1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(0, 2)], -1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(5e-324, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(5e-324, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], -1.7976931348623157e+308)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], -1.7976931348623157e+308)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(5e-324, 1)], 1)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(5e-324, 1)], 1)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], -1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], -1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(-1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (5e-324, 0), (1.7976931348623157e+308, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(-1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (5e-324, 0), (1.7976931348623157e+308, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 5e-324,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 5e-324,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.9792015476736e+291, 0)], 0)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.9792015476736e+291, 0)], 0)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.979201547673598e+291, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.979201547673598e+291, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(80, 1), (40, 2)], 0.6931471805599453)",
+        "expected": 50,
+        "actual": 50,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(80, 1), (40, 2)], 0.6931471805599453)",
+        "expected": 50,
+        "actual": 50,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(2, 1), (-3, 4), (7, 5)], 0.125)",
+        "expected": 3.692231825664222,
+        "actual": 3.692231825664223,
+        "passed": false
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(2, 1), (-3, 4), (7, 5)], 0.125)",
+        "expected": 3.692231825664222,
+        "actual": 3.692231825664223,
+        "passed": false
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([], 0.125)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([], 0.125)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([], nan)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([], True)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(0, -1)], 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(0, inf)], 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(True, 0)], 0)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(1,)], 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(1.7976931348623157e+308, 1), (-1.7976931348623157e+308, 1)], -1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment iterable",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "helper": "assessment suite",
+        "expected": 12,
+        "actual": 12,
+        "passed": true,
+        "detail": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+      },
+      {
+        "helper": "assessment delegation identity",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "helper": "pending dossier after checks",
+        "expected": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      },
+      {
+        "helper": "fresh dossier isolation",
+        "expected": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      }
+    ]
+  },
+  "rerun": {
+    "exit": 0,
+    "stderr": "",
+    "rows": [
+      {
+        "helper": "project.value",
+        "inputs": "([(5e-324, 1)], -1000)",
+        "expected": 9.733444573000164e+110,
+        "actual": 9.733444573000164e+110,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(5e-324, 1)], -1000)",
+        "expected": 9.733444573000164e+110,
+        "actual": 9.733444573000164e+110,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(-5e-324, 1)], -1000)",
+        "expected": -9.733444573000164e+110,
+        "actual": -9.733444573000164e+110,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(-5e-324, 1)], -1000)",
+        "expected": -9.733444573000164e+110,
+        "actual": -9.733444573000164e+110,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], 1000)",
+        "expected": 9.125016462967946e-127,
+        "actual": 9.125016462967946e-127,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], 1000)",
+        "expected": 9.125016462967946e-127,
+        "actual": 9.125016462967946e-127,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 1), (-8.988465674311579e+307, 1)], 1000)",
+        "expected": 4.562508231483973e-127,
+        "actual": 4.562508231483973e-127,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 1), (-8.988465674311579e+307, 1)], 1000)",
+        "expected": 4.562508231483973e-127,
+        "actual": 4.562508231483973e-127,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(0, 2)], -1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(0, 2)], -1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(5e-324, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(5e-324, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], 1.7976931348623157e+308)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], -1.7976931348623157e+308)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 2)], -1.7976931348623157e+308)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(5e-324, 1)], 1)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(5e-324, 1)], 1)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], -1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 1)], -1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(-1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (5e-324, 0), (1.7976931348623157e+308, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(-1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (5e-324, 0), (1.7976931348623157e+308, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0), (5e-324, 0)], 0)",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.9792015476736e+291, 0)], 0)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.9792015476736e+291, 0)], 0)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.979201547673598e+291, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(1.7976931348623157e+308, 0), (9.979201547673598e+291, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(80, 1), (40, 2)], 0.6931471805599453)",
+        "expected": 50,
+        "actual": 50,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(80, 1), (40, 2)], 0.6931471805599453)",
+        "expected": 50,
+        "actual": 50,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([(2, 1), (-3, 4), (7, 5)], 0.125)",
+        "expected": 3.692231825664222,
+        "actual": 3.692231825664222,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([(2, 1), (-3, 4), (7, 5)], 0.125)",
+        "expected": 3.692231825664222,
+        "actual": 3.692231825664222,
+        "passed": true
+      },
+      {
+        "helper": "project.value",
+        "inputs": "([], 0.125)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "assessment.value",
+        "inputs": "([], 0.125)",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([], nan)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([], True)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(0, -1)], 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(0, inf)], 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(True, 0)], 0)",
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(1,)], 0)",
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "helper": "project guards",
+        "inputs": "([(1.7976931348623157e+308, 1), (-1.7976931348623157e+308, 1)], -1)",
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "helper": "assessment iterable",
+        "inputs": "([(1.7976931348623157e+308, 0), (1.7976931348623157e+308, 0), (-1.7976931348623157e+308, 0)], 0)",
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "helper": "assessment suite",
+        "expected": 12,
+        "actual": 12,
+        "passed": true,
+        "detail": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.099s\n\nOK\n"
+      },
+      {
+        "helper": "assessment delegation identity",
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "helper": "pending dossier after checks",
+        "expected": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      },
+      {
+        "helper": "fresh dossier isolation",
+        "expected": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-rate continuous discounting",
+          "source_commit": null,
+          "environment": null,
+          "execution": "not run",
+          "findings": [],
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      }
+    ]
+  },
+  "project_scope": {
+    "source_revision": "503edbdc3e622f98acabea861a53ac1581b9132f",
+    "blobs": {
+      "_continuous_account.py": "0240f600c8d783d13c62e46f726c785e19fa9564",
+      "_valuation_math.py": "7be81ab4d8261643bcbb2d97f49fe800bd0aa47d",
+      "check_benchmark_account_range.py": "2a20524a10a9287f9f4fbe47f229fbadcbf8a3ca",
+      "check_benchmark_annuity_range.py": "b9aaddd7cbfe1e094fe8e32653c91d0a0bfb052b",
+      "check_benchmark_linear_range.py": "2cddf6f8e6305f5437555d29d3026749c5ef6a27",
+      "check_benchmark_valuation_range.py": "01f0097fdd5d7e95c12a3a924b566b40a391b814",
+      "check_boundary_discrete_range.py": "6a56e3b23a9453f54439954e25155771fc3d28a8",
+      "check_invariant_account_range.py": "d950321410e66d963a7db24526c99e978cfffaf8",
+      "check_invariant_matrix_range.py": "bf3d5afe684901f59a8e55dd5731476169f0bc74",
+      "check_invariant_valuation_range.py": "dc81391777cbfa40388ba42c8b3dc7d47c1ba020",
+      "check_metamorphic_aggregate_range.py": "c49fcb4465fb7d106784ed44481a6a4cb1a0688e",
+      "check_project_valuation_range.py": "23bda1dbb693b6181493b6a8391fd5fddb09b84b",
+      "check_section_20_01.py": "9d8f2cdc2bde2283ba1b9f610518af137c44f0a9",
+      "check_section_20_02.py": "f6187e2a0bfb5c11bb350f2387580da42f8cc08e",
+      "check_section_20_03.py": "f70be5be10dc48777295cbae632262ecbfdab01c",
+      "check_section_20_04.py": "77ef70afca83e701cd00cc44a3e6b22163ec4a50",
+      "check_section_20_05.py": "fad230c0d373d7cd09571863067f553f195c255d",
+      "check_section_20_06.py": "5cc023867be43734ffd938fe139c39a0f34edef1",
+      "check_section_20_07.py": "93e32a5ba36bb3d020a1138071f78cc852db23b7",
+      "check_section_20_08.py": "0f3feb5d1d8ebcdf5318864b5de6de4d7f92c7bd",
+      "check_section_20_09.py": "db043d5136d2991db1da6a88b2362b1179f3c699",
+      "check_section_20_10.py": "38cc87d0272db028860c7b794c81a27d3b91976f",
+      "check_vector_residual_design.py": "87d610bd2519bbb8464be51994b7b6e57b266c65",
+      "section_20_01.py": "c8223ece1a69ac2fb33278bccf9e689c64e398c6",
+      "section_20_02.py": "b42fcd8f685e3c74bddae0b6cb23ca7d2ed0b515",
+      "section_20_03.py": "c6228eeb2102d7d020b2d77261d742ecbcdb20a2",
+      "section_20_04.py": "154f2a8e7d918e02c8ea1162073d1c13081a4e57",
+      "section_20_05.py": "72360096700472a2824305b3c87d2355d0ac5171",
+      "section_20_06.py": "f8c04ae58d3d04d61822fbc13387098d814be893",
+      "section_20_07.py": "df698ccbb86d18f5d9f91a9a1fc075224575bb63",
+      "section_20_08.py": "40fad3707eea92730a631ecf05a20d0a3544c5be",
+      "section_20_09.py": "3a9a0367a0847f71b2d343dcbd59e9cce5b0ba1e"
+    },
+    "compiled": 32,
+    "runs": {
+      "check_benchmark_account_range.py": {
+        "exit": 0,
+        "seconds": 1.1768540269999903,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_annuity_range.py": {
+        "exit": 0,
+        "seconds": 0.13829089099999692,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_linear_range.py": {
+        "exit": 0,
+        "seconds": 0.1250931659999992,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_valuation_range.py": {
+        "exit": 0,
+        "seconds": 2.639216310999984,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_boundary_discrete_range.py": {
+        "exit": 0,
+        "seconds": 1.3734521000000086,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_account_range.py": {
+        "exit": 0,
+        "seconds": 0.8397423360000289,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_matrix_range.py": {
+        "exit": 0,
+        "seconds": 0.24398169800002734,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_valuation_range.py": {
+        "exit": 0,
+        "seconds": 1.9188473590000399,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_metamorphic_aggregate_range.py": {
+        "exit": 0,
+        "seconds": 0.02876093699995863,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_project_valuation_range.py": {
+        "exit": 0,
+        "seconds": 0.8160310860000095,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_01.py": {
+        "exit": 0,
+        "seconds": 0.023859947000005377,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_02.py": {
+        "exit": 0,
+        "seconds": 0.08441214300000865,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_03.py": {
+        "exit": 0,
+        "seconds": 0.15402273900002683,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_04.py": {
+        "exit": 0,
+        "seconds": 0.1129177089999871,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.068s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_05.py": {
+        "exit": 0,
+        "seconds": 0.05193467200001578,
+        "stderr": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_06.py": {
+        "exit": 0,
+        "seconds": 0.05591678799999045,
+        "stderr": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_07.py": {
+        "exit": 0,
+        "seconds": 0.05737758599997278,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_08.py": {
+        "exit": 0,
+        "seconds": 0.044295798999996805,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_09.py": {
+        "exit": 0,
+        "seconds": 0.12461733300000333,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.085s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_10.py": {
+        "exit": 0,
+        "seconds": 0.14678419500000928,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.101s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_vector_residual_design.py": {
+        "exit": 0,
+        "seconds": 0.021710493000000497,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "final_scope": {
+    "source_revision": "081a73dce77591e11377df37ff7b23c5d1836674",
+    "blobs": {
+      "_continuous_account.py": "0240f600c8d783d13c62e46f726c785e19fa9564",
+      "_valuation_math.py": "7be81ab4d8261643bcbb2d97f49fe800bd0aa47d",
+      "check_benchmark_account_range.py": "2a20524a10a9287f9f4fbe47f229fbadcbf8a3ca",
+      "check_benchmark_annuity_range.py": "b9aaddd7cbfe1e094fe8e32653c91d0a0bfb052b",
+      "check_benchmark_linear_range.py": "2cddf6f8e6305f5437555d29d3026749c5ef6a27",
+      "check_benchmark_valuation_range.py": "01f0097fdd5d7e95c12a3a924b566b40a391b814",
+      "check_boundary_discrete_range.py": "6a56e3b23a9453f54439954e25155771fc3d28a8",
+      "check_invariant_account_range.py": "d950321410e66d963a7db24526c99e978cfffaf8",
+      "check_invariant_matrix_range.py": "bf3d5afe684901f59a8e55dd5731476169f0bc74",
+      "check_invariant_valuation_range.py": "dc81391777cbfa40388ba42c8b3dc7d47c1ba020",
+      "check_manifest_preflight.py": "f2618db4b9684754305de565f6bf3e5d3917f6cd",
+      "check_metamorphic_aggregate_range.py": "c49fcb4465fb7d106784ed44481a6a4cb1a0688e",
+      "check_project_valuation_range.py": "23bda1dbb693b6181493b6a8391fd5fddb09b84b",
+      "check_section_20_01.py": "9d8f2cdc2bde2283ba1b9f610518af137c44f0a9",
+      "check_section_20_02.py": "f6187e2a0bfb5c11bb350f2387580da42f8cc08e",
+      "check_section_20_03.py": "f70be5be10dc48777295cbae632262ecbfdab01c",
+      "check_section_20_04.py": "77ef70afca83e701cd00cc44a3e6b22163ec4a50",
+      "check_section_20_05.py": "fad230c0d373d7cd09571863067f553f195c255d",
+      "check_section_20_06.py": "5cc023867be43734ffd938fe139c39a0f34edef1",
+      "check_section_20_07.py": "93e32a5ba36bb3d020a1138071f78cc852db23b7",
+      "check_section_20_08.py": "0f3feb5d1d8ebcdf5318864b5de6de4d7f92c7bd",
+      "check_section_20_09.py": "db043d5136d2991db1da6a88b2362b1179f3c699",
+      "check_section_20_10.py": "38cc87d0272db028860c7b794c81a27d3b91976f",
+      "check_vector_residual_design.py": "87d610bd2519bbb8464be51994b7b6e57b266c65",
+      "section_20_01.py": "c8223ece1a69ac2fb33278bccf9e689c64e398c6",
+      "section_20_02.py": "b42fcd8f685e3c74bddae0b6cb23ca7d2ed0b515",
+      "section_20_03.py": "c6228eeb2102d7d020b2d77261d742ecbcdb20a2",
+      "section_20_04.py": "154f2a8e7d918e02c8ea1162073d1c13081a4e57",
+      "section_20_05.py": "72360096700472a2824305b3c87d2355d0ac5171",
+      "section_20_06.py": "f8c04ae58d3d04d61822fbc13387098d814be893",
+      "section_20_07.py": "ba7b73820ac8503b4e284ebf40c3aa07c9e60a48",
+      "section_20_08.py": "40fad3707eea92730a631ecf05a20d0a3544c5be",
+      "section_20_09.py": "3a9a0367a0847f71b2d343dcbd59e9cce5b0ba1e"
+    },
+    "compiled": 33,
+    "runs": {
+      "check_benchmark_account_range.py": {
+        "exit": 0,
+        "seconds": 1.1896293959999866,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_annuity_range.py": {
+        "exit": 0,
+        "seconds": 0.10723996599995189,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_linear_range.py": {
+        "exit": 0,
+        "seconds": 0.11845215799996822,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_benchmark_valuation_range.py": {
+        "exit": 0,
+        "seconds": 2.7477826379999897,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_boundary_discrete_range.py": {
+        "exit": 0,
+        "seconds": 1.4493462380000892,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_account_range.py": {
+        "exit": 0,
+        "seconds": 0.8985784550000062,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_matrix_range.py": {
+        "exit": 0,
+        "seconds": 0.2577470569999605,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_invariant_valuation_range.py": {
+        "exit": 0,
+        "seconds": 1.9482969499999854,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_manifest_preflight.py": {
+        "exit": 0,
+        "seconds": 0.05300372800002151,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_metamorphic_aggregate_range.py": {
+        "exit": 0,
+        "seconds": 0.02746330599995872,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_project_valuation_range.py": {
+        "exit": 0,
+        "seconds": 0.8649493400000665,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_01.py": {
+        "exit": 0,
+        "seconds": 0.021875207999983104,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_02.py": {
+        "exit": 0,
+        "seconds": 0.0940488200000118,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_03.py": {
+        "exit": 0,
+        "seconds": 0.15053110199994535,
+        "stderr": "",
+        "stdout": ""
+      },
+      "check_section_20_04.py": {
+        "exit": 0,
+        "seconds": 0.11469352800008892,
+        "stderr": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.069s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_05.py": {
+        "exit": 0,
+        "seconds": 0.05620038100005331,
+        "stderr": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_06.py": {
+        "exit": 0,
+        "seconds": 0.04557517899991126,
+        "stderr": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_07.py": {
+        "exit": 0,
+        "seconds": 0.050375551000001906,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_08.py": {
+        "exit": 0,
+        "seconds": 0.038743327000020145,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_09.py": {
+        "exit": 0,
+        "seconds": 0.12990261899994948,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.089s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_section_20_10.py": {
+        "exit": 0,
+        "seconds": 0.16120527700002185,
+        "stderr": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.111s\n\nOK\n",
+        "stdout": ""
+      },
+      "check_vector_residual_design.py": {
+        "exit": 0,
+        "seconds": 0.025481539999987035,
+        "stderr": "",
+        "stdout": ""
+      }
+    },
+    "verified_before_after": true,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "timeout_seconds": 60
+  },
+  "limits": "Selected assistant-run Linux evidence only. No independent sign-off, supported-platform validation, release acceptance or canonical approval."
+}
