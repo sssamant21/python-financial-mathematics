@@ -2,7 +2,9 @@
 import json
 import math
 from section_19_08 import (continuous_contributions as _continuous_account,
-                           depletion_time as _account_depletion)
+                           depletion_time as _account_depletion,
+                           euler_account as _euler_account,
+                           rk4_account as _rk4_account)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -32,24 +34,14 @@ def euler(initial,rate,flow,years,steps):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid years or step count")
-    h=t/steps
-    for _ in range(steps):
-        a=finite(a+h*(r*a+u),"Euler balance")
-    return a
+    return _euler_account(a,r,u,t,steps)
 
 def rk4(initial,rate,flow,years,steps):
     a,r,u,t=(finite(v,n) for v,n in
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid years or step count")
-    h=t/steps
-    for _ in range(steps):
-        k1=r*a+u
-        k2=r*(a+h*k1/2)+u
-        k3=r*(a+h*k2/2)+u
-        k4=r*(a+h*k3)+u
-        a=finite(a+h*(k1+2*k2+2*k3+k4)/6,"RK4 balance")
-    return a
+    return _rk4_account(a,r,u,t,steps)
 
 def depletion_time(initial,rate,withdrawal):
     a,r,w=(finite(v,n) for v,n in
