@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`  
-**Latest scoped source revision:** `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`  
-**Disposition:** V-64 full candidate pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `47511f620984be32b808cd5b50897fbf18eb9f19`  
+**Latest scoped source revision:** `47511f620984be32b808cd5b50897fbf18eb9f19`  
+**Disposition:** V-65 full candidate pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-65](runtime-refresh-2026-11-05-r7.md): 517 compiled, 306 passed, 518 required hashes verified before/after; G2–G8 unchanged.
 
 [V-64](runtime-refresh-2026-11-05-r6.md): 516 compiled, 305 passed, 517 required hashes verified before/after; G2–G8 unchanged.
 
@@ -85,7 +87,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Candidate Linux pass | [V-64](runtime-refresh-2026-11-05-r6.md) at `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`. | Unassigned |
+| G1 Candidate compilation/runtime | Candidate Linux pass | [V-65](runtime-refresh-2026-11-05-r7.md) at `47511f620984be32b808cd5b50897fbf18eb9f19`. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -376,3 +378,9 @@ Inventory496 Python files/285 scripts is not a new full run; V-53 remains the495
 [Section 19.8 evidence](chapter-19-rate-conversion-range-followup.md) preserves 24 initial failed checks and a final 52-case pass, including tiny quotients, 1,001-digit frequency inputs, inverse conversion range and invalid-frequency controls. Complete scaling now retains selected finite rates; negative nominal saturation and the loss of round-trip invertibility at the rounded boundary are documented. All 32 Chapter 19 sources compiled and 22 scripts passed at `29e2c8fc93087cb58cf08f641f49c58e9ac33a05`.
 
 [V-64](runtime-refresh-2026-11-05-r6.md) compiled 516 Python files, passed 305 scripts and matched 517 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section 19.8 continuous/discrete growth balance range, including complete nominal-period exponent and initial-amount scaling, time-zero identities and representable final results, with independent finite-power/integrated-rate references. Independent review, supported platforms and release approval remain pending.
+
+## Continuous/discrete growth-balance range and V-65 — 2026-11-05
+
+[Section19.8 evidence](chapter-19-growth-balance-range-followup.md) preserves15 initial failures and a31-case pass. Complete nominal-period scaling and shared final exponential evaluation now retain selected representable balances; two observed calls check actual shared-helper use. All33 Chapter19 sources compiled and23 scripts passed at `47511f620984be32b808cd5b50897fbf18eb9f19`.
+
+[V-65](runtime-refresh-2026-11-05-r7.md) compiled517 Python files,passed306 scripts and matched518 required source/fixture hashes before/after at the same pin. Thirty-one selected COV categories remain partially addressed; none closed. Next substantive item: Section19.8 continuous/end-period contribution balance range, including complete weighted accumulation, signed-flow cancellation, zero-rate/time identities and representable final values, with independent finite-payment/integral references. The contribution-frequency order oracle is already complete for its selected scope. Independent review, supported platforms and release approval remain pending.
