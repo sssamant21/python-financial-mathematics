@@ -1,0 +1,135 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "8bcbe8df1c275fd4fa91352dca9eb79ad410e7174f5ebe1a1c9b3c66804490b2",
+  "listing_sha256": "f45dee49f20728423b0575ffa9579239186ebd8633f67f4fe9031d9723d4b895",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "multiple_cash_flows.py"
+      ],
+      "stdout": "Event | Period | Amount | Factor to t=0 | Equivalent (USD)\nincome1 | 1 | +300.00 | 0.952380952 | +285.71\nfee2 | 2 | -40.00 | 0.907029478 | -36.28\nincome3 | 3 | +120.00 | 0.863837599 | +103.66\nprincipal3 | 3 | +900.00 | 0.863837599 | +777.45\nTotal at t=0: 1130.55 USD\nTotal at t=3: 1308.75 USD\n",
+      "stderr": "test_01_manual_pv (__main__.MultipleFlowTests.test_01_manual_pv) ... ok\ntest_02_common_target_identity (__main__.MultipleFlowTests.test_02_common_target_identity) ... ok\ntest_03_order_and_same_date_netting (__main__.MultipleFlowTests.test_03_order_and_same_date_netting) ... ok\ntest_04_time_zero_and_empty_schedule (__main__.MultipleFlowTests.test_04_time_zero_and_empty_schedule) ... ok\ntest_05_zero_and_negative_rates (__main__.MultipleFlowTests.test_05_zero_and_negative_rates) ... ok\ntest_06_perspective_and_cancellation (__main__.MultipleFlowTests.test_06_perspective_and_cancellation) ... ok\ntest_07_invalid_and_missing_inputs (__main__.MultipleFlowTests.test_07_invalid_and_missing_inputs) ... ok\ntest_08_range_failures_and_careful_sum (__main__.MultipleFlowTests.test_08_range_failures_and_careful_sum) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "multiple_cash_flows.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "full auditrow income1",
+      "passed": true,
+      "exact_factor": "20/21",
+      "exact_equivalent": "2000/7"
+    },
+    {
+      "label": "full auditrow fee2",
+      "passed": true,
+      "exact_factor": "400/441",
+      "exact_equivalent": "-16000/441"
+    },
+    {
+      "label": "full auditrow income3",
+      "passed": true,
+      "exact_factor": "8000/9261",
+      "exact_equivalent": "320000/3087"
+    },
+    {
+      "label": "full auditrow principal3",
+      "passed": true,
+      "exact_factor": "8000/9261",
+      "exact_equivalent": "800000/1029"
+    },
+    {
+      "label": "independent summed PV",
+      "passed": true,
+      "actual": 1130.5474570780693,
+      "exact_reference": "3490000/3087",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "common future target3",
+      "passed": true,
+      "actual": 1308.75,
+      "exact_reference": "5235/4",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "common intermediate target2",
+      "passed": true,
+      "actual": 1246.4285714285713,
+      "exact_reference": "8725/7",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "source reversal retains ordered audit and total",
+      "passed": true
+    },
+    {
+      "label": "P1 time0 two receipts",
+      "passed": true,
+      "actual": 200.0,
+      "exact_reference": "200",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P2 target2 two receipts",
+      "passed": true,
+      "actual": 242.0,
+      "exact_reference": "242",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "P3 same-date net retains two sourceevents",
+      "passed": true
+    },
+    {
+      "label": "P4 differently dated equal nominal amounts do notcancel",
+      "passed": true,
+      "actual": 8.854335384947632,
+      "exact_reference": "82000/9261",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "perspective reversal",
+      "passed": true,
+      "actual": -1130.5474570780693,
+      "exact_reference": "-3490000/3087",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "immediate empty and explicitzero remain distinct audit",
+      "passed": true
+    },
+    {
+      "label": "careful source summation preserves cancellation residual",
+      "passed": true,
+      "actual": 1.0,
+      "exact_reference": "1",
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "F46 lostnonzeroevent rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
