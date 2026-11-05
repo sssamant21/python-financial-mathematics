@@ -1,0 +1,127 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "f9e335850ade4ca791c4237a126b7a62cfd9e2ce4d7b909168fc654e4bc1ae50",
+  "listing_sha256": "adf45ac2bef2c9e531d7ef3a96692ee3cbad1ee67b696f0cb57b3009a33c754b",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "rate_conventions.py"
+      ],
+      "stdout": "6% nominal, monthly -> effective annual 6.16778119%\n6% effective annual -> nominal, monthly 5.84106068%\n",
+      "stderr": "test_01_monthly_example (__main__.RateTests.test_01_monthly_example) ... ok\ntest_02_reverse_conversion (__main__.RateTests.test_02_reverse_conversion) ... ok\ntest_03_round_trip_frequencies (__main__.RateTests.test_03_round_trip_frequencies) ... ok\ntest_04_comparable_offer_ranking (__main__.RateTests.test_04_comparable_offer_ranking) ... ok\ntest_05_equivalent_balances (__main__.RateTests.test_05_equivalent_balances) ... ok\ntest_06_zero_annual_and_negative (__main__.RateTests.test_06_zero_annual_and_negative) ... ok\ntest_07_invalid_inputs (__main__.RateTests.test_07_invalid_inputs) ... ok\ntest_08_small_rates_and_range (__main__.RateTests.test_08_small_rates_and_range) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "rate_conventions.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked monthly nominal6% forward",
+      "passed": true,
+      "actual": 0.06167781186449957,
+      "high_precision_reference": "0.061677811864499568789707617431640625",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "worked effective6% reverse",
+      "passed": true,
+      "actual": 0.05841060678411644,
+      "high_precision_reference": "0.05841060678411645049438734705007194068931790077272901678121236064371759636239991261153540",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P1 quarterly8%nominal",
+      "passed": true,
+      "actual": 0.08243216,
+      "high_precision_reference": "0.08243216",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P2 quarterly8%effective",
+      "passed": true,
+      "actual": 0.07770618763309405,
+      "high_precision_reference": "0.07770618763309404990029959733795941660090901182744625738877073345465975438449966536248512",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "P4 correct monthly effective",
+      "passed": true,
+      "actual": 0.004867550565343037,
+      "high_precision_reference": "0.00486755056534303754119894558750599505744315839772741806510103005364313303019999271762795",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "negative-rate nominal conversion",
+      "passed": true,
+      "actual": -0.01981768137590615,
+      "high_precision_reference": "-0.019817681375906149661908822218226140548762703667951851663684209535959777284778554910140546",
+      "absolute_tolerance": 1e-14
+    },
+    {
+      "label": "tiny finitefloat forward preserved independently",
+      "passed": true,
+      "actual": 1e-16,
+      "high_precision_reference": "1.0000000000000000458333333333333346064814814814815053530092592592595775459E-16",
+      "absolute_tolerance": 1e-30
+    },
+    {
+      "label": "tiny finitefloat reverse preserved independently",
+      "passed": true,
+      "actual": 1e-16,
+      "high_precision_reference": "9.999999999999999541666666666666695949074074074071938898533950617451206036E-17",
+      "absolute_tolerance": 1e-30
+    },
+    {
+      "label": "three-year balances agree to rational reference",
+      "passed": true,
+      "actual": 11966.805248234195,
+      "high_precision_reference": "82235259486027235213933829995832012184270450326653370748675067205483419745145207201/6871947673600000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 1e-09
+    },
+    {
+      "label": "common basis offer ranking",
+      "passed": true
+    },
+    {
+      "label": "P3 annual identity",
+      "passed": true
+    },
+    {
+      "label": "zero conversions are genuine zeros",
+      "passed": true
+    },
+    {
+      "label": "P4 annualeffective divide12 is different scenario",
+      "passed": true
+    },
+    {
+      "label": "F46 nominal input conversion loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    },
+    {
+      "label": "F46 effective input conversion loss rejected",
+      "passed": true,
+      "exception": "nonzero input underflowed during float conversion"
+    }
+  ],
+  "workflow_records": 1,
+  "local_exercises": 5,
+  "historical_unique_methods_added": 0
+}
