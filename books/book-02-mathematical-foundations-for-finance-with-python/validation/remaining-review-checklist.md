@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`  
-**Latest scoped source revision:** `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67` (included in V-70)  
-**Disposition:** V-70 full candidate Linux pass includes benchmark annuity corrections and vector/residual design evidence; independent review and release approval pending.
+**Full-runtime candidate source revision:** `d0266c34257e717c964b8bc8c8a145c9d8448e53`  
+**Latest scoped source revision:** `d0266c34257e717c964b8bc8c8a145c9d8448e53` (included in V-71)  
+**Disposition:** V-71 full candidate Linux pass includes local account kernel and benchmark/invariant corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-71](runtime-refresh-2026-11-05-r13.md): 529 compiled, 317 passed, 530 required hashes verified before/after. The local kernel, both corrected wrappers and new checkers are included; G2–G8 unchanged.
 
 [V-70](runtime-refresh-2026-11-05-r12.md): 526 compiled, 315 passed, 527 required hashes verified before/after. Both new Chapter 20 checkers and corrected annuity helpers are included; G2–G8 unchanged.
 
@@ -97,7 +99,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-70](runtime-refresh-2026-11-05-r12.md) at `e1364e25cf09cadb7210372c24d2cf8ef4ab0f67`; all 526 sources/315 scripts/527 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-71](runtime-refresh-2026-11-05-r13.md) at `d0266c34257e717c964b8bc8c8a145c9d8448e53`; all 529 sources/317 scripts/530 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -450,3 +452,13 @@ Next substantive numerical item: Section 20.2 known-value benchmark helper range
 [V-70](runtime-refresh-2026-11-05-r12.md) compiled all 526 Python files, passed all 315 discovered scripts and matched all 527 required source/fixture hashes before/after at the same final executable pin. Thirty-two selected COV categories remain partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive numerical item: Section 20.2's remaining continuous-account and depletion accepted-input/result-range contracts, including actual assessment integration. Its account still forms separate exponential/flow terms and its depletion helper still forms the rounded rate*balance/withdrawal ratio; compare independent complete-balance and exact threshold/reciprocal-log expectations before sharing or changing implementations. The annuity cases above are complete for their selected scope and must not be repeated as new progress. Present-value/rate-conversion copies and broader matrix/vector/unit work remain separate obligations. Section 19.8 end-period abs(rate*years)>4000 remains an open evaluation boundary.
+
+## Benchmark/invariant account range and V-71 — 2026-11-05
+
+[Section 20.2 account/depletion evidence](chapter-20-benchmark-account-range-followup.md) retains 16 initial failed cases and a 36-case pass against independent complete-balance, exact-threshold and reciprocal-log references, including two exact half-subnormal rounding controls. Actual assessment account/depletion calls are observed. The new chapter-local kernel adapts selected pinned Section 19.8 calculation bodies without cross-chapter imports or sys.path mutation; public guards and signed analytical scope remain. All 23 chapter files compiled and 13 scripts passed at `1008849303f6317fcaa343dde97ee8b9fc73216a`.
+
+[Section 20.3 composition evidence](chapter-20-invariant-account-range-followup.md) retains 11 original failed cases and a 20-case pass. Direct, prefix and split balances use independent references, and four observed assessment calls verify actual prefix/resume/reconciliation integration. All 24 chapter files compiled and 14 scripts passed at `d0266c34257e717c964b8bc8c8a145c9d8448e53`.
+
+[V-71](runtime-refresh-2026-11-05-r13.md) compiled all 529 Python files, passed all 317 discovered scripts and matched all 530 required source/fixture hashes before/after at that same pin. Thirty-two selected COV categories remain partially addressed; none closed. Case failures are not defect totals or completion percentages. Independent review, supported platforms and release approval remain pending.
+
+Next substantive numerical item: Section 20.2 present-value and nominal-to-continuous benchmark range, including complete rate*time scaling, tiny rate/frequency quotients, valid zero identities, actual assessment use and independently derived valuation/conversion expectations. Those copied helpers still use separate float exponent/rate-quotient arithmetic. The selected account/depletion/composition cases above are complete for their retained scope; do not repeat them as a new result. Other Section 20.3 discount/FV, matrix/portfolio and provenance/manual work remain open. Section 19.8 end-period abs(rate*years)>4000 remains an explicit evaluation boundary.
