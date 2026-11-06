@@ -1,0 +1,395 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "9bb1c81e30d2df0357a0315e0fdc0d17c44d573ba238d9c0365f45f850e6d713",
+  "listing_sha256": "32d98b975515c5857cd47ed28eed5365a7a88fdc74f792200fb4610717463d20",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "logarithmic_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "Prices: [100, 110, 99, 108.9]\nLog returns: [0.09531018, -0.10536052, 0.09531018]\nSum of log returns: 0.08525984395082359\nEndpoint log return: 0.0852598439508234\nLinked simple return: 0.08900000000000019\n",
+      "stderr": "test_01_positive (__main__.LogReturnTests.test_01_positive) ... ok\ntest_02_negative (__main__.LogReturnTests.test_02_negative) ... ok\ntest_03_zero (__main__.LogReturnTests.test_03_zero) ... ok\ntest_04_inverse (__main__.LogReturnTests.test_04_inverse) ... ok\ntest_05_price_ratio (__main__.LogReturnTests.test_05_price_ratio) ... ok\ntest_06_additivity (__main__.LogReturnTests.test_06_additivity) ... ok\ntest_07_linked (__main__.LogReturnTests.test_07_linked) ... ok\ntest_08_series (__main__.LogReturnTests.test_08_series) ... ok\ntest_09_annualize (__main__.LogReturnTests.test_09_annualize) ... ok\ntest_10_fx (__main__.LogReturnTests.test_10_fx) ... ok\ntest_11_small_return (__main__.LogReturnTests.test_11_small_return) ... ok\ntest_12_invalid (__main__.LogReturnTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import logarithmic_returns"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "logarithmic_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "two contextual source fragments inventoried",
+      "passed": true
+    },
+    {
+      "label": "contextual source fragment 1",
+      "passed": true,
+      "actual": 0.07696104113612832,
+      "independent_reference": "0.07696104113612832498421704431520183489126896493121291137878721796412490424051137136058",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "contextual source fragment 2",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1 positive log return",
+      "passed": true,
+      "actual": 0.09531017980432487,
+      "independent_reference": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283906",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 negative log return",
+      "passed": true,
+      "actual": -0.10536051565782631,
+      "independent_reference": "-0.1053605156578263012275009808393127983061203729832740725639392336925840232401345464888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 zero",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 price ratio",
+      "passed": true,
+      "actual": 0.09531017980432493,
+      "independent_reference": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283906",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 inverse positive",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 inverse negative",
+      "passed": true,
+      "actual": -0.05,
+      "independent_reference": "-1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 two log periods",
+      "passed": true,
+      "actual": -0.010050335853501444,
+      "independent_reference": "-0.01005033585350144118354885755854770608551500767462987337869942552958300900425031364971",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 linked two periods",
+      "passed": true,
+      "actual": -0.010000000000000002,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 three-period gross",
+      "passed": true,
+      "actual": 1.089,
+      "independent_reference": "1089/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 three-period log",
+      "passed": true,
+      "actual": 0.08525984395082342,
+      "independent_reference": "0.08525984395082341886040326572221738613509035763401432580654038263341800523163391918935",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 small log",
+      "passed": true,
+      "actual": 9.999995000003334e-07,
+      "independent_reference": "9.999995000003333330833335333331666668095236845239206348206350115439282107551336837053E-7",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 annualized log",
+      "passed": true,
+      "actual": 0.09531017980432487,
+      "independent_reference": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283906",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 annual-effective equivalent",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 domestic log",
+      "passed": true,
+      "actual": 0.056758333818608876,
+      "independent_reference": "0.05675833381860887657617174329100944703873558119764459035159172539753303235963966206977",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F98 finite log of extreme positive price ratio",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1418.392417284332141355082736085568351882278516995324153236529986996024727561249127825",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F98 finite log of extreme negative price ratio",
+      "passed": false,
+      "exception": "ValueError('math domain error')"
+    },
+    {
+      "label": "F98 linked exact recovery",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F98 aggregate log preserves tiny gain between recovery factors",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1E-30",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 E17 supplemental portfolio aggregation",
+      "passed": true
+    },
+    {
+      "label": "project log series row 1",
+      "passed": true,
+      "actual": 0.02955880224154443,
+      "independent_reference": "0.02955880224154440273261940568471240542605813111325721054457515709538598509308930911975",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project source conversion row 1",
+      "passed": true,
+      "actual": 0.0295588022415444,
+      "independent_reference": "0.02955880224154440273261940568471240542605813111325721054457515709538598509308930911975",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project cumulative row 1",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project log series row 2",
+      "passed": true,
+      "actual": -0.030459207484708574,
+      "independent_reference": "-0.03045920748470854591926128766476670139328807459876459609042143317496792757651783512971",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project source conversion row 2",
+      "passed": true,
+      "actual": -0.030459207484708546,
+      "independent_reference": "-0.03045920748470854591926128766476670139328807459876459609042143317496792757651783512971",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project cumulative row 2",
+      "passed": true,
+      "actual": -0.0009000000000000018,
+      "independent_reference": "-9/10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project log series row 3",
+      "passed": true,
+      "actual": 0.04879016416943205,
+      "independent_reference": "0.04879016416943200306537440422316465860797366441558241004007657311410792432363103881941",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project source conversion row 3",
+      "passed": true,
+      "actual": 0.04879016416943201,
+      "independent_reference": "0.04879016416943200306537440422316465860797366441558241004007657311410792432363103881941",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project cumulative row 3",
+      "passed": true,
+      "actual": 0.049055,
+      "independent_reference": "9811/200000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project log series row 4",
+      "passed": true,
+      "actual": -0.020202707317519466,
+      "independent_reference": "-0.02020270731751944840804530102419238785253338373356832102719549256659187188087170929081",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project source conversion row 4",
+      "passed": true,
+      "actual": -0.02020270731751945,
+      "independent_reference": "-0.02020270731751944840804530102419238785253338373356832102719549256659187188087170929081",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project cumulative row 4",
+      "passed": true,
+      "actual": 0.028073900000000002,
+      "independent_reference": "280739/10000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project endpoint log",
+      "passed": true,
+      "actual": 0.02768705160874829,
+      "independent_reference": "0.02768705160874841147068722121891797478821033719650670346703480446793410995933080351864",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project sum of source logs",
+      "passed": true,
+      "actual": 0.027687051608748438,
+      "independent_reference": "0.02768705160874841147068722121891797478821033719650670346703480446793410995933080351864",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project inverse linked",
+      "passed": true,
+      "actual": 0.028073900000000027,
+      "independent_reference": "280739/10000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project means differ",
+      "passed": true
+    },
+    {
+      "label": "project zero terminal price has simple return minus one",
+      "passed": true
+    },
+    {
+      "label": "E11 total loss log rejected",
+      "passed": true,
+      "exception": "ValueError('log return requires positive gross factor')"
+    },
+    {
+      "label": "project zero terminal price rejected by log series",
+      "passed": true,
+      "exception": "ValueError('strictly positive prices required')"
+    },
+    {
+      "label": "F54 unrepresentable annual log rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 overflowing inverse rejected",
+      "passed": false,
+      "exception": "OverflowError('math range error')"
+    },
+    {
+      "label": "F98 positive gross cannot report total loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "demo prices and logs",
+      "passed": true
+    },
+    {
+      "label": "demo line 2",
+      "passed": true
+    },
+    {
+      "label": "demo line 3",
+      "passed": true
+    },
+    {
+      "label": "demo line 4",
+      "passed": true
+    },
+    {
+      "label": "F98 E10 shown at six-place rounding",
+      "passed": false
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "contextual_fragments": 2,
+  "conceptual_prompts": [
+    11,
+    16,
+    17
+  ],
+  "historical_unique_methods_added": 0
+}
