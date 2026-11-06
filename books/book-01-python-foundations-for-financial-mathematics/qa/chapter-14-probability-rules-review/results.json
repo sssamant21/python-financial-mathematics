@@ -1,0 +1,332 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "c7ef878a0451be4ced42ceae5c2269774b65991e7e7ba6cab82e46b4b48ca33e",
+  "listing_sha256": "7a7306957dd4894b17254621b6e02e65794f142ed10c37939e0bc9bac7dd900d",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "probability_rules.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_total (__main__.ProbabilityRulesTests.test_01_total) ... ok\ntest_02_empty (__main__.ProbabilityRulesTests.test_02_empty) ... ok\ntest_03_complement (__main__.ProbabilityRulesTests.test_03_complement) ... ok\ntest_04_stress (__main__.ProbabilityRulesTests.test_04_stress) ... ok\ntest_05_default (__main__.ProbabilityRulesTests.test_05_default) ... ok\ntest_06_intersection (__main__.ProbabilityRulesTests.test_06_intersection) ... ok\ntest_07_union (__main__.ProbabilityRulesTests.test_07_union) ... ok\ntest_08_conditional (__main__.ProbabilityRulesTests.test_08_conditional) ... ok\ntest_09_dependent (__main__.ProbabilityRulesTests.test_09_dependent) ... ok\ntest_10_disjoint_addition (__main__.ProbabilityRulesTests.test_10_disjoint_addition) ... ok\ntest_11_invalid_weights (__main__.ProbabilityRulesTests.test_11_invalid_weights) ... ok\ntest_12_invalid_events (__main__.ProbabilityRulesTests.test_12_invalid_events) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import probability_rules"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "probability_rules.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E2 whole space",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 empty event",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 complement",
+      "passed": true,
+      "actual": 0.96,
+      "independent_reference": "24/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 disjoint addition",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 overlapping union",
+      "passed": true,
+      "actual": 0.6,
+      "independent_reference": "3/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 intersection recovery",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 complement of neither",
+      "passed": true,
+      "actual": 0.55,
+      "independent_reference": "11/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 exclusive or",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 independent joint atom",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 independent union",
+      "passed": true,
+      "actual": 0.8,
+      "independent_reference": "4/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13/project conditional default under stress",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14/project conditional stress given default",
+      "passed": true,
+      "actual": 0.38461538461538464,
+      "independent_reference": "5/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 independent survival",
+      "passed": true,
+      "actual": 0.9506,
+      "independent_reference": "4753/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 at least one default",
+      "passed": true,
+      "actual": 0.0494,
+      "independent_reference": "247/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project default",
+      "passed": true,
+      "actual": 0.13,
+      "independent_reference": "13/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project intersection",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project union",
+      "passed": true,
+      "actual": 0.28,
+      "independent_reference": "7/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project default under normal",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project total probability",
+      "passed": true,
+      "actual": 0.13,
+      "independent_reference": "13/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project Bayes inversion",
+      "passed": true,
+      "actual": 0.38461538461538464,
+      "independent_reference": "5/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 dependent",
+      "passed": true
+    },
+    {
+      "label": "E20 valid distribution",
+      "passed": true
+    },
+    {
+      "label": "E23 disjoint positive events not independent",
+      "passed": true
+    },
+    {
+      "label": "exact independence on a four-atom product",
+      "passed": true
+    },
+    {
+      "label": "F112 rare event not independent of itself",
+      "passed": true
+    },
+    {
+      "label": "F112 normalize accepted near-unit mass",
+      "passed": true
+    },
+    {
+      "label": "E1 invalid probability",
+      "passed": true,
+      "exception": "ValueError('require a finite numeric value between 0 and 1')"
+    },
+    {
+      "label": "E21 invalid mass",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to 1 within 1e-12')"
+    },
+    {
+      "label": "E22 zero denominator",
+      "passed": true,
+      "exception": "ValueError('conditioning event has zero probability')"
+    },
+    {
+      "label": "F112 invalid complement operand",
+      "passed": true,
+      "exception": "ValueError('event outside sample space')"
+    },
+    {
+      "label": "F112 invalid intersection operand",
+      "passed": true,
+      "exception": "ValueError('event outside sample space')"
+    },
+    {
+      "label": "F112 invalid conditional numerator event",
+      "passed": true,
+      "exception": "ValueError('event outside sample space')"
+    },
+    {
+      "label": "F112 invalid union operand",
+      "passed": true,
+      "exception": "ValueError('event outside sample space')"
+    },
+    {
+      "label": "F112 invalid negative tolerance",
+      "passed": true,
+      "exception": "ValueError('require a finite numeric value between 0 and 1')"
+    },
+    {
+      "label": "F112 invalid boolean tolerance",
+      "passed": true,
+      "exception": "ValueError('require a finite numeric value between 0 and 1')"
+    },
+    {
+      "label": "F112 invalid infinite tolerance",
+      "passed": true,
+      "exception": "ValueError('require a finite numeric value between 0 and 1')"
+    },
+    {
+      "label": "F112 huge integer weight rejected",
+      "passed": true,
+      "exception": "ValueError('require a finite numeric value between 0 and 1')"
+    },
+    {
+      "label": "all event pairs satisfy subset and union identities",
+      "passed": true
+    },
+    {
+      "label": "test-only listing has no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "project_report": {
+    "version": "14.3 synthetic fixture",
+    "weights": {
+      "normal_ok": 0.72,
+      "normal_default": 0.08,
+      "stress_ok": 0.15,
+      "stress_default": 0.05
+    },
+    "stress": [
+      "stress_default",
+      "stress_ok"
+    ],
+    "default": [
+      "normal_default",
+      "stress_default"
+    ],
+    "both": "5/100",
+    "either": "(20+13-5)/100",
+    "default_given_stress": "5/20",
+    "default_given_normal": "8/80",
+    "stress_given_default": "5/13",
+    "independent": false,
+    "weight_mass_tolerance": "1e-12",
+    "assumptions": "Four hypothetical exhaustive joint states; no empirical calibration."
+  },
+  "historical_unique_methods_added": 0
+}
