@@ -1,0 +1,255 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "77eb1f15a3d2dedf8e388b02c92a36e51a36b9ee55701ba2db2a449702098929",
+  "listing_sha256": "fde01195d23b4b00eee7c56d78cc232189c29e98bad82ea1184261651c142155",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "bond_cash_flows.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'period': 1, 'time_years': 0.5, 'coupon': 30.0, 'principal': 0.0, 'cash_flow': 30.0}\n{'period': 2, 'time_years': 1.0, 'coupon': 30.0, 'principal': 0.0, 'cash_flow': 30.0}\n{'period': 3, 'time_years': 1.5, 'coupon': 30.0, 'principal': 0.0, 'cash_flow': 30.0}\n{'period': 4, 'time_years': 2.0, 'coupon': 30.0, 'principal': 0.0, 'cash_flow': 30.0}\n{'period': 5, 'time_years': 2.5, 'coupon': 30.0, 'principal': 0.0, 'cash_flow': 30.0}\n{'period': 6, 'time_years': 3.0, 'coupon': 30.0, 'principal': 1000, 'cash_flow': 1030.0}\nTotals: {'coupon': 180.0, 'principal': 1000.0, 'cash_flow': 1180.0}\nPrice at 6% nominal yield: 1000.0\n",
+      "stderr": "test_01_period_count (__main__.Tests.test_01_period_count) ... ok\ntest_02_coupon (__main__.Tests.test_02_coupon) ... ok\ntest_03_final_payment (__main__.Tests.test_03_final_payment) ... ok\ntest_04_first_time (__main__.Tests.test_04_first_time) ... ok\ntest_05_last_time (__main__.Tests.test_05_last_time) ... ok\ntest_06_coupon_total (__main__.Tests.test_06_coupon_total) ... ok\ntest_07_principal_total (__main__.Tests.test_07_principal_total) ... ok\ntest_08_cash_flow_total (__main__.Tests.test_08_cash_flow_total) ... ok\ntest_09_par_price (__main__.Tests.test_09_par_price) ... ok\ntest_10_zero_coupon (__main__.Tests.test_10_zero_coupon) ... ok\ntest_11_zero_yield (__main__.Tests.test_11_zero_yield) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "bond_cash_flows.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "A exact period rows and maturity redemption",
+      "passed": true
+    },
+    {
+      "label": "A totals",
+      "passed": true
+    },
+    {
+      "label": "A explicit row composition",
+      "passed": true
+    },
+    {
+      "label": "A nominal yield 1/25",
+      "passed": true,
+      "actual": 1056.014308906904,
+      "independent_reference": "18581931701500/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A nominal yield 3/50",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A nominal yield 2/25",
+      "passed": true,
+      "actual": 947.5786314325364,
+      "independent_reference": "146360994125/154457888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A declining prices",
+      "passed": true
+    },
+    {
+      "label": "B exact period rows and maturity redemption",
+      "passed": true
+    },
+    {
+      "label": "B totals",
+      "passed": true
+    },
+    {
+      "label": "B explicit row composition",
+      "passed": true
+    },
+    {
+      "label": "B nominal yield 1/25",
+      "passed": true,
+      "actual": 887.971382186192,
+      "independent_reference": "15625000000000/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B nominal yield 3/50",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B nominal yield 2/25",
+      "passed": true,
+      "actual": 790.314525730146,
+      "independent_reference": "30517578125/38614472",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B declining prices",
+      "passed": true
+    },
+    {
+      "label": "C exact period rows and maturity redemption",
+      "passed": true
+    },
+    {
+      "label": "C totals",
+      "passed": true
+    },
+    {
+      "label": "C explicit row composition",
+      "passed": true
+    },
+    {
+      "label": "C nominal yield 1/25",
+      "passed": true,
+      "actual": 2360.911059325409,
+      "independent_reference": "28807601597918672979309963662102567608004000/12201900399479668244827490915525641902001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C nominal yield 3/50",
+      "passed": true,
+      "actual": 2171.6863878508193,
+      "independent_reference": "30670288942619508258215451311819651964824139736000/14122798353482315596830794241932369486809052401",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C nominal yield 2/25",
+      "passed": true,
+      "actual": 2000.0,
+      "independent_reference": "2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C declining prices",
+      "passed": true
+    },
+    {
+      "label": "worked par",
+      "passed": true
+    },
+    {
+      "label": "zero-yield identity",
+      "passed": true,
+      "actual": 1180.0,
+      "independent_reference": "1180",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 zero-coupon price",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact demo rows",
+      "passed": true
+    },
+    {
+      "label": "exact demo totals and price",
+      "passed": true
+    },
+    {
+      "label": "F54 finite coupon after scaling",
+      "passed": false
+    },
+    {
+      "label": "F54 representable PV despite tiny discount factor",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F78 near-zero count cannot round to zero",
+      "passed": false,
+      "actual": "[]"
+    },
+    {
+      "label": "F78 decimal fractional count cannot round to one",
+      "passed": false,
+      "actual": "[{'period': 1, 'time_years': 0.3333333333333333, 'coupon': 20.0, 'principal': 1000, 'cash_flow': 1020.0}]"
+    },
+    {
+      "label": "F79 reject schedule and discount frequency mismatch",
+      "passed": false,
+      "actual": "1085.4578074821288"
+    },
+    {
+      "label": "F79 reject duplicate period",
+      "passed": false,
+      "actual": "1000.8483363182204"
+    },
+    {
+      "label": "F79 reject wrong row composition",
+      "passed": false,
+      "actual": "1000.9708737864078"
+    },
+    {
+      "label": "F79 reject nonfinite row in totals",
+      "passed": false,
+      "actual": "{'coupon': 180.0, 'principal': 1000.0, 'cash_flow': nan}"
+    },
+    {
+      "label": "F79 reject missing bullet redemption",
+      "passed": false,
+      "actual": "137.39121561583602"
+    },
+    {
+      "label": "F54 reject nonfinite maturity flow",
+      "passed": false,
+      "actual": "[{'period': 1, 'time_years': 1.0, 'coupon': inf, 'principal': 1e+308, 'cash_flow': inf}]"
+    },
+    {
+      "label": "F54 reject unrepresentable positive price",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 reject overflowing nominal total",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "applied_project_records": 1,
+  "conceptual_prompts": [
+    15,
+    16,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
