@@ -237,24 +237,29 @@ def depletion_time(initial,rate,withdrawal):
            ((initial,"initial"),(rate,"rate"),(withdrawal,"withdrawal")))
     if a<0 or w<0:
         raise ValueError("balance and withdrawal must be nonnegative")
+    elapsed=_depletion_elapsed(a,r,w)
+    return None if elapsed is None else _rounded_balance(elapsed)
+
+def _depletion_elapsed(a,r,w,*,for_order=False):
+    """Crossing interval before float rounding, for validated inputs."""
     if a==0:
-        return 0.0
+        return Fraction(0)
     if w==0:
         return None
     if r==0:
-        return _rounded_balance(Fraction(a)/Fraction(w))
+        return Fraction(a)/Fraction(w)
     ratio=Fraction(r)*Fraction(a)/Fraction(w)
     if ratio>=1:
         return None
-    if abs(ratio)<=Fraction(1,2**26):
+    if not for_order and abs(ratio)<=Fraction(1,2**26):
         # -ln(1-q)/q, keeping the full a/w scale.
         series=1+ratio/2+ratio**2/3+ratio**3/4
-        return _rounded_balance(Fraction(a)/Fraction(w)*series)
-    with localcontext(Context(prec=850)):
-        margin=1-ratio
-        logarithm=(Decimal(margin.numerator)/Decimal(margin.denominator)).ln()
-        value=-logarithm/Decimal(r)
-    return _rounded_balance(value)
+        return Fraction(a)/Fraction(w)*series
+    # For ordering, retain the difference from one even for a ratio
+    # formed from two minimum subnormals divided by a maximum float.
+    with localcontext(Context(prec=1200 if for_order else 850)):
+        logarithm=_decimal_fraction(1-ratio).ln()
+        return -logarithm/Decimal(r)
 
 def assessment():
     j=0.06
