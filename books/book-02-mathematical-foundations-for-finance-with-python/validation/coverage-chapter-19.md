@@ -146,3 +146,11 @@ Next substantive numerical item: Section 20.2 known-value benchmark helper range
 [V-79](runtime-refresh-2026-11-05-r21.md) compiled 544 files, passed 331 scripts and matched 545 required blobs before and after at `c961e9064fbb07217c8c7af64adf909e399f165f`. Chapter 19: 41 compiled files and 31 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-range-baseline.md) records two observed failures involving a finite weighted increment and a finite callback stage. Derive exact stage inputs and outputs and check actual fixed/adaptive consumers; treat adaptive estimator/scale range as a separate obligation. Wider capstone provenance and manual reviews remain open.
+
+## RK4 stage and adaptive trial range — V-80
+
+[Section 19.6 RK4 range](chapter-19-rk4-range-followup.md) preserves 15 baseline mismatches, an intermediate half-step failure and a 23-case pass. It checks actual callbacks and fixed/adaptive consumers plus controlled adaptive acceptance and controller inputs. Finite complete stages, states, error and tolerance ratios are retained; an unrepresentable equal half-step split is reported without callbacks. This adds selected COV-82 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-80](runtime-refresh-2026-11-05-r22.md) compiled 545 files, passed 332 scripts and matched 546 required blobs before and after at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`. Chapter 19: 42 compiled files and 32 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Fixed RK4 horizon baseline](chapter-19-rk4-fixed-grid-baseline.md) reproduces two fixed-grid false completed results, one beyond and one short of the reported horizon. Check representable grid alignment against independently derived constant-derivative balances and callback times. Wider floating-time behavior, capstone provenance and manual reviews remain open.
