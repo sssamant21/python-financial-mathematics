@@ -24,7 +24,10 @@ def rk4_step(f,t,y,h):
     t,y,h=finite(t,"time"),finite(y,"state"),finite(h,"step")
     if h<=0:
         raise ValueError("step must be positive")
-    tf,yf,hf=map(Fraction,(t,y,h))
+    return _rk4_interval(f,t,y,Fraction(h))
+
+def _rk4_interval(f,t,y,hf):
+    tf,yf=map(Fraction,(t,y))
     k1=Fraction(finite(f(t,y),"k1"))
     midpoint=_rounded(tf+hf/2,"RK4 midpoint time")
     k2=Fraction(finite(f(midpoint,_rounded(yf+hf*k1/2,"RK4 second stage state")),"k2"))
@@ -48,12 +51,29 @@ def fixed_rk4(f,initial,horizon,steps):
     y,T=finite(initial,"initial"),finite(horizon,"horizon")
     if T<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid horizon or step count")
-    h=T/steps
     if T==0:
         return {"final_state":y,"final_time":0.0,"steps":0,"evaluations":0,
                 "status":"completed"}
-    for n in range(steps):
-        y=rk4_step(f,n*h,y,h)
+    width=Fraction(T)/steps
+    message="fixed RK4 grid has non-increasing endpoints"
+    if width<Fraction(math.ulp(0.0)):
+        raise ValueError(message)
+
+    # Round each ideal endpoint, then integrate exactly the represented
+    # interval between adjacent endpoints instead of repeating rounded T/n.
+    def intervals():
+        left=0.0
+        for n in range(1,steps+1):
+            right=float(n*width)
+            yield left,right
+            left=right
+
+    # Reject the entire grid before calling the RHS, even for a collapse
+    # near the end. Regenerate it so storage does not grow with steps.
+    if any(right<=left for left,right in intervals()):
+        raise ValueError(message)
+    for left,right in intervals():
+        y=_rk4_interval(f,left,y,Fraction(right)-Fraction(left))
     return {"final_state":y,"final_time":T,"steps":steps,
             "evaluations":4*steps,"status":"completed"}
 
