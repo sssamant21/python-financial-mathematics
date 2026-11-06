@@ -28,7 +28,7 @@ def rk4_step(f,t,y,h):
 
 def _rk4_interval(f,t,y,hf):
     tf,yf=map(Fraction,(t,y))
-    k1=Fraction(finite(f(t,y),"k1"))
+    k1=Fraction(finite(f(float(t),y),"k1"))
     midpoint=_rounded(tf+hf/2,"RK4 midpoint time")
     k2=Fraction(finite(f(midpoint,_rounded(yf+hf*k1/2,"RK4 second stage state")),"k2"))
     k3=Fraction(finite(f(midpoint,_rounded(yf+hf*k2/2,"RK4 third stage state")),"k3"))
@@ -114,25 +114,32 @@ def adaptive_rk4(f,initial,horizon,atol=1e-7,rtol=1e-9,
         if remaining<=0:
             break
         h=min(h,remaining)
-        half_step=h/2
-        if h<min_step or t+h==t or 2*half_step!=h:
+        end=T if h==remaining else min(T,t+h)
+        start=Fraction(t)
+        width=Fraction(end)-start
+        half_step=width/2
+        midpoint=start+half_step
+        # Both paths integrate the same represented clock interval. Keep
+        # the midpoint exact internally and round only callback times.
+        if (h<min_step or width<min_step or not t<float(midpoint)<end
+                or 2*float(half_step)!=float(width)):
             return {"status":"step_too_small","final_state":y,"final_time":t,
                     "accepted_steps":accepted,"rejected_steps":rejected,
                     "evaluations":evaluations,"atol":atol,"rtol":rtol}
-        full=rk4_step(f,t,y,h)
-        mid=rk4_step(f,t,y,half_step)
-        half=rk4_step(f,t+half_step,mid,half_step)
+        full=_rk4_interval(f,start,y,width)
+        mid=_rk4_interval(f,start,y,half_step)
+        half=_rk4_interval(f,midpoint,mid,half_step)
         evaluations+=12
         error=abs(Fraction(half)-Fraction(full))/15
         scale=Fraction(atol)+Fraction(rtol)*Fraction(max(abs(y),abs(half)))
         if error<=scale:
             y=half
-            t=min(T,t+h)
+            t=end
             accepted+=1
         else:
             rejected+=1
         factor=_step_factor(scale,error)
-        h*=factor
+        h=float(width)*factor
     if t<T:
         status="attempt_budget_exhausted"
     else:
