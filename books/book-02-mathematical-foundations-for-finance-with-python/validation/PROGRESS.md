@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-85 full candidate Linux pass (550 files, 337 scripts, 551 required hashes), including Euler analytical boundary checks. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-86 full candidate Linux pass (551 files, 338 scripts, 552 required hashes), including Section 19.9 depletion and jump ordering. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 550/550 at `5621a516346213dd09780c0eba7c49a402aee143`. [V-85](runtime-refresh-2026-11-06-r04.md). |
-| Automated script execution | Full candidate Linux pass | 337/337 at `5621a516346213dd09780c0eba7c49a402aee143`; all 551 required hashes matched before/after. [V-85](runtime-refresh-2026-11-06-r04.md). |
+| Python compilation | Full candidate Linux pass | 551/551 at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`. [V-86](runtime-refresh-2026-11-06-r05.md). |
+| Automated script execution | Full candidate Linux pass | 338/338 at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`; all 552 required hashes matched before/after. [V-86](runtime-refresh-2026-11-06-r05.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -819,3 +819,11 @@ Next substantive item: [Euler amplification boundary baseline](chapter-19-euler-
 [V-85](runtime-refresh-2026-11-06-r04.md) compiled 550 files, passed 337 scripts and matched 551 required blobs before and after at `5621a516346213dd09780c0eba7c49a402aee143`. Chapter 19: 47 compiled files and 37 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.9 event order baseline](chapter-19-project-event-order-boundary-baseline.md) reproduces two deposits skipped because the rounded depletion time matched the jump time, although the deposits occurred strictly earlier. Verify ordering before timestamp rounding, keeping the exact-equality and time-zero policies, with actual event logs and independent zero- and nonzero-rate references. Wider capstone provenance and manual reviews remain open.
+
+## Depletion and jump ordering — V-86
+
+[Section 19.9 event ordering](chapter-19-project-event-order-followup.md) retains seven baseline mismatches and an 11-scenario pass. It checks event order before timestamp rounding, exact represented elapsed intervals, both time-zero and coincidence policies, and actual statuses, balances and event logs. This adds selected COV-83 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-86](runtime-refresh-2026-11-06-r05.md) compiled 551 files, passed 338 scripts and matched 552 required blobs before and after at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`. Chapter 19: 48 compiled files and 38 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.7 terminal jump and interpolation baseline](chapter-19-jump-policy-crossing-baseline.md) reproduces a strictly later deposit that incorrectly rescues a terminal simulation and a finite interpolation rejected by intermediate overflow. Verify actual terminal and nonterminal behavior, keeping Section 19.7's distinct exact-tie policy. Wider capstone provenance and manual reviews remain open.
