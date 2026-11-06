@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`  
-**Latest scoped source revision:** `bf9d4fccf807a1ee631a737cb4b20e507808e0cc` (included in V-90)  
-**Disposition:** V-90 full candidate Linux pass includes Section 19.3 applied linear-account range; independent review and release approval pending.
+**Full-runtime candidate source revision:** `b8d9ad694136393a36aca2c06d9c0798062cb21c`  
+**Latest scoped source revision:** `b8d9ad694136393a36aca2c06d9c0798062cb21c` (included in V-91)  
+**Disposition:** V-91 full candidate Linux pass includes Section 19.1 account range and assessment; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-90](runtime-refresh-2026-11-06-r09.md): 555 compiled, 342 passed, 556 required hashes verified before/after. G2–G8 unchanged.
+[V-91](runtime-refresh-2026-11-06-r10.md): 556 compiled, 343 passed, 557 required hashes verified before/after. G2–G8 unchanged.
+
+[V-90](runtime-refresh-2026-11-06-r09.md): 555 compiled, 342 passed, 556 required hashes verified before/after.
 
 [V-89](runtime-refresh-2026-11-06-r08.md): 554 compiled, 341 passed, 555 required hashes verified before/after.
 
@@ -137,7 +139,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-90](runtime-refresh-2026-11-06-r09.md) at `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`; 555 sources/342 scripts/556 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-91](runtime-refresh-2026-11-06-r10.md) at `b8d9ad694136393a36aca2c06d9c0798062cb21c`; 556 sources/343 scripts/557 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -662,3 +664,11 @@ Next: [Section 19.3 applied range baseline](chapter-19-linear-applied-range-base
 [V-90](runtime-refresh-2026-11-06-r09.md) compiled 555 files, passed 342 scripts and matched 556 required blobs before and after at `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`. Chapter 19: 52 compiled files and 42 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-baseline.md) records finite growth, equilibrium and Euler failures, a rate endpoint boundary and an assessment output gap. Resume with independently derived expected results and reconcile the rate policy with Section 19.1. Wider capstone provenance and manual reviews remain open.
+
+## Introductory account range and assessment — V-91
+
+[Section 19.1 range and assessment](chapter-19-introductory-range-followup.md) retains 21 baseline mismatches, an identical replay, one intermediate signed-zero mismatch, and a 39-case final pass. This adds selected COV-84 evidence for complete balances, the effective-rate endpoint and actual Euler error fields. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-91](runtime-refresh-2026-11-06-r10.md) compiled 556 Python files, passed 343 scripts and verified 557 required blobs before and after at `b8d9ad694136393a36aca2c06d9c0798062cb21c`. Chapter 19: 53 compiled files and 43 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 20.7 execution provenance baseline](chapter-20-execution-provenance-baseline.md) starts the outstanding COV-86 checks for actual source, environment, command and output provenance. The synthetic example’s pending fields are verified and intentional. Wider Chapter 19 capstone provenance and manual reviews remain open.
