@@ -1,0 +1,334 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "9770ffda391ad04ce34d1991f0a3718d3d88fe5f69e4c6829435bbb34839d858",
+  "listing_sha256": "de38fc4d9266d1ddcb3a07bef9fa78cdbd8134ac3078fbab6454225a475afc1f",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "variance_and_standard_deviation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_mean (__main__.VarianceTests.test_01_mean) ... ok\ntest_02_variance (__main__.VarianceTests.test_02_variance) ... ok\ntest_03_standard_deviation (__main__.VarianceTests.test_03_standard_deviation) ... ok\ntest_04_constant (__main__.VarianceTests.test_04_constant) ... ok\ntest_05_shift (__main__.VarianceTests.test_05_shift) ... ok\ntest_06_scale (__main__.VarianceTests.test_06_scale) ... ok\ntest_07_negative_scale (__main__.VarianceTests.test_07_negative_scale) ... ok\ntest_08_sample_variance (__main__.VarianceTests.test_08_sample_variance) ... ok\ntest_09_population_variance (__main__.VarianceTests.test_09_population_variance) ... ok\ntest_10_bernoulli (__main__.VarianceTests.test_10_bernoulli) ... ok\ntest_11_single_population (__main__.VarianceTests.test_11_single_population) ... ok\ntest_12_invalid (__main__.VarianceTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import variance_and_standard_deviation"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "variance_and_standard_deviation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 mean",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2/E5 variance",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "625/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 standard deviation",
+      "passed": true,
+      "actual": 17.67766952966369,
+      "independent_reference": "17.67766952966369",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 constant",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 shift",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "312.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 scale",
+      "passed": true,
+      "actual": 1250.0,
+      "independent_reference": "1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 reversal",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "312.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10/project transformed SD",
+      "passed": true,
+      "actual": 35.35533905932738,
+      "independent_reference": "35.35533905932738",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project transformed mean",
+      "passed": true,
+      "actual": 20.0,
+      "independent_reference": "20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 Bernoulli",
+      "passed": true,
+      "actual": 0.16,
+      "independent_reference": "4/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 population",
+      "passed": true,
+      "actual": 0.6666666666666666,
+      "independent_reference": "2/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 sample",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 sample n=5",
+      "passed": true,
+      "actual": 2.5,
+      "independent_reference": "5/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 two-point variance",
+      "passed": true,
+      "actual": 25.0,
+      "independent_reference": "25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project default variance",
+      "passed": true,
+      "actual": 0.0196,
+      "independent_reference": "49/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 PMF integer spread",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 sample integer spread",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 population integer spread",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 transform preserves spread",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 SD despite overflowing variance",
+      "passed": true,
+      "actual": 1e+200,
+      "independent_reference": "1e+200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 SD despite underflowing variance",
+      "passed": true,
+      "actual": 1e-200,
+      "independent_reference": "1e-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 zero-weight atom",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F119 normalized accepted weights",
+      "passed": true
+    },
+    {
+      "label": "E24 invalid weights",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one within 1e-12')"
+    },
+    {
+      "label": "nonfinite outcome",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "short sample",
+      "passed": true,
+      "exception": "ValueError('insufficient finite observations')"
+    },
+    {
+      "label": "F119 unreportable variance",
+      "passed": true,
+      "exception": "ValueError('result exceeds float range')"
+    },
+    {
+      "label": "project covariance fixture X",
+      "passed": true,
+      "actual": 4.0,
+      "independent_reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project covariance fixture Y",
+      "passed": true,
+      "actual": 9.0,
+      "independent_reference": "9",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project covariance fixture X+Y",
+      "passed": true,
+      "actual": 17.0,
+      "independent_reference": "17",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project covariance fixture X-Y",
+      "passed": true,
+      "actual": 9.0,
+      "independent_reference": "9",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project direct covariance and E22 perfect hedge",
+      "passed": true
+    },
+    {
+      "label": "project empirical pairwise identity",
+      "passed": true
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "second_moment": "675/2",
+    "covariance_fixture": [
+      [
+        -2,
+        -5
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        -1
+      ],
+      [
+        -2,
+        3
+      ],
+      [
+        2,
+        -3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "units": "dollars and dollars squared; indicator variance dimensionless"
+  }
+}
