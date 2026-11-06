@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-78 full candidate Linux pass (543 files, 330 scripts, 544 required hashes), including capstone account and cash-flow preflight. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-79 full candidate Linux pass (544 files, 331 scripts, 545 required hashes), including the Chapter 19 end-period extension. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 543/543 at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. [V-78](runtime-refresh-2026-11-05-r20.md). |
-| Automated script execution | Full candidate Linux pass | 330/330 at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`; all 544 required hashes matched before/after. [V-78](runtime-refresh-2026-11-05-r20.md). |
+| Python compilation | Full candidate Linux pass | 544/544 at `c961e9064fbb07217c8c7af64adf909e399f165f`. [V-79](runtime-refresh-2026-11-05-r21.md). |
+| Automated script execution | Full candidate Linux pass | 331/331 at `c961e9064fbb07217c8c7af64adf909e399f165f`; all 545 required hashes matched before/after. [V-79](runtime-refresh-2026-11-05-r21.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -763,3 +763,11 @@ Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-accoun
 [V-78](runtime-refresh-2026-11-05-r20.md) compiled 543 files, passed 330 scripts and matched 544 required blobs before and after at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. Chapter 21: 24 compiled files and 15 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) records four finite-payment cases rejected under the documented exponent limit. Evaluate a bounded extension against independently derived end-period sums and genuine range failures; keep the Chapter 19 underflow contract. Wider Chapter 21 provenance, proofs and review remain open.
+
+## End-period exponent extension — V-79
+
+[Section 19.8 end-period extension](chapter-19-end-period-exponent-followup.md) preserves 15 baseline mismatches, separates a checker exception-classification issue, and records a 23-case pass against separately timed sums and analytical bounds. The nontrivial end-period domain extends through abs(rate*years)=5000; final overflow and nonzero underflow still reject. Broader exponent and rounding coverage remains open under COV-84. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-79](runtime-refresh-2026-11-05-r21.md) compiled 544 files, passed 331 scripts and matched 545 required blobs before and after at `c961e9064fbb07217c8c7af64adf909e399f165f`. Chapter 19: 41 compiled files and 31 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-range-baseline.md) records two observed failures involving a finite weighted increment and a finite callback stage. Derive exact stage inputs and outputs and check actual fixed/adaptive consumers; treat adaptive estimator/scale range as a separate obligation. Wider capstone provenance and manual reviews remain open.
