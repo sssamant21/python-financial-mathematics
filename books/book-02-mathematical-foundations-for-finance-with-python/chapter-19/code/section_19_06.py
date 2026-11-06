@@ -2,6 +2,7 @@
 import json
 import math
 from fractions import Fraction
+from section_19_08 import _continuous_balance
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -82,11 +83,9 @@ def exact_account(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)+u*factor,"balance")
+    if t==0:
+        return a
+    return _continuous_balance(a,r,u,t,reject_underflow=False)
 
 def adaptive_rk4(f,initial,horizon,atol=1e-7,rtol=1e-9,
                  initial_step=None,max_attempts=10000,min_step=1e-12):
