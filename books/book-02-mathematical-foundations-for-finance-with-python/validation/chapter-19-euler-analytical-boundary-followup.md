@@ -1,0 +1,9 @@
+# Section 19.5 — Euler analytical boundaries
+
+Baseline `726d007a18647764a0e6c93b94807ea1583501d7` with only the new checker overlaid: eight of 34 checks disagreed. Corrected executable revision `5621a516346213dd09780c0eba7c49a402aee143`: all 34 passed. The [raw log](chapter-19-euler-analytical-boundary-followup.json) retains the initial run, identical baseline replay and corrected rerun, with both Chapter 19 blob manifests. The [original probes](chapter-19-euler-amplification-boundary-baseline.md) are retained.
+
+The amplification helper rounds the complete factor once. The stability predicate compares the exact factor for the represented inputs to the strict boundary. It can classify an unstable case even if the display helper rejects a nonrepresentable factor. Exact hand-derived factors, equality and adjacent controls, and actual Euler callback traces distinguish mathematical contraction from rounding to constant or alternating unit-magnitude iterates. The Euler update and grid logic did not change in this batch.
+
+The separate Section 19.5 analytical account reference now uses the shared continuous balance kernel. It returns the initial state at zero horizon, permits signed zero on underflow, and raises `ValueError` for genuine overflow. The checker uses equilibrium and zero-rate identities and high-precision integrating-factor references, and reads the actual assessment reference and amplification fields and its unchanged review flags. The existing Euler, decay-stability, range/grid and time-varying forcing scripts pass. [V-85](runtime-refresh-2026-11-06-r04.md) records the full candidate Linux run.
+
+Run [the checker](../chapter-19/code/check_euler_analytical_boundaries.py) from the book root: `python chapter-19/code/check_euler_analytical_boundaries.py`. For the baseline, overlay only that checker on the named baseline revision. This is selected COV-84 evidence; it is not a convergence guarantee or independent review.
