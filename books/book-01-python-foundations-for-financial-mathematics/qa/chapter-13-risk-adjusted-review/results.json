@@ -1,0 +1,390 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "1e945cd8c772c1ce102b00c6ea60c27c07c74b4b8d9ba5ed934153f721f235b6",
+  "listing_sha256": "fb2684038b8eb3293be87403b5ddd240bf496a9fbb5415ab695f9202a2ab8fce",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "risk_adjusted_performance.py"
+      ],
+      "returncode": 0,
+      "stdout": "Sharpe (zero periodic risk-free rate): 0.5779\nSortino (zero target): 1.8\nMaximum drawdown: -2.00%\n",
+      "stderr": "test_01_mean (__main__.RiskAdjustedTests.test_01_mean) ... ok\ntest_02_sample_std (__main__.RiskAdjustedTests.test_02_sample_std) ... ok\ntest_03_sharpe (__main__.RiskAdjustedTests.test_03_sharpe) ... ok\ntest_04_sharpe_rf (__main__.RiskAdjustedTests.test_04_sharpe_rf) ... ok\ntest_05_sortino (__main__.RiskAdjustedTests.test_05_sortino) ... ok\ntest_06_downside (__main__.RiskAdjustedTests.test_06_downside) ... ok\ntest_07_max_drawdown (__main__.RiskAdjustedTests.test_07_max_drawdown) ... ok\ntest_08_calmar (__main__.RiskAdjustedTests.test_08_calmar) ... ok\ntest_09_information (__main__.RiskAdjustedTests.test_09_information) ... ok\ntest_10_beta (__main__.RiskAdjustedTests.test_10_beta) ... ok\ntest_11_annual_sharpe (__main__.RiskAdjustedTests.test_11_annual_sharpe) ... ok\ntest_12_invalid (__main__.RiskAdjustedTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import risk_adjusted_performance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "risk_adjusted_performance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 mean",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 sample volatility",
+      "passed": true,
+      "actual": 0.1414213562373095,
+      "independent_reference": "0.1414213562373095048801688724209698078569671875376948073",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 zero Sharpe",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 periodic excess",
+      "passed": true,
+      "actual": -0.07071067811865475,
+      "independent_reference": "-0.07071067811865475244008443621",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 target deviation",
+      "passed": true,
+      "actual": 0.07071067811865475,
+      "independent_reference": "0.07071067811865475244008443621048490392848359376884740366",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 zero Sortino",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 Calmar",
+      "passed": true,
+      "actual": 0.6,
+      "independent_reference": "3/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 zero IR",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 tracking error",
+      "passed": true,
+      "actual": 0.0282842712474619,
+      "independent_reference": "0.02828427124746190097603377448419396157139343750753896146",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 beta slope",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 nonzero annual scale",
+      "passed": true,
+      "actual": 1.7320508075688772,
+      "independent_reference": "1.732050807568877293527446341505872366942805253810380628",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 finite mean despite overflow",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 tiny volatility",
+      "passed": true,
+      "actual": 1.414213562373095e-200,
+      "independent_reference": "1.414213562373095048801688724209698078569671875376948073E-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 tiny downside",
+      "passed": true,
+      "actual": 7.071067811865475e-201,
+      "independent_reference": "7.071067811865475244008443621048490392848359376884740366E-201",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 beta at extreme scales",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 risk-free subtraction preserves variation",
+      "passed": true,
+      "actual": -7.071067811865475e+200,
+      "independent_reference": "-7.071067811865475244008443621E+200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 drawdown after cumulative growth beyond float range",
+      "passed": true,
+      "actual": -0.5,
+      "independent_reference": "-1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F107 small drawdown",
+      "passed": true,
+      "actual": -1e-18,
+      "independent_reference": "-1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 zero excess volatility",
+      "passed": true,
+      "exception": "ValueError('require positive scale and nonzero risk denominator')"
+    },
+    {
+      "label": "E14 no downside",
+      "passed": true,
+      "exception": "ValueError('require positive scale and nonzero risk denominator')"
+    },
+    {
+      "label": "E15 zero drawdown",
+      "passed": true,
+      "exception": "ValueError('negative nonzero maximum drawdown required')"
+    },
+    {
+      "label": "E16 zero benchmark variance",
+      "passed": true,
+      "exception": "ValueError('zero benchmark variance')"
+    },
+    {
+      "label": "F107 NaN annual scale",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "F107 infinite annual scale",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "F107 boolean annual scale",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "F107 boolean risk-free input",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "F107 unreportable Calmar",
+      "passed": true,
+      "exception": "ValueError('result exceeds finite float range')"
+    },
+    {
+      "label": "F107 no false complete loss",
+      "passed": true,
+      "exception": "ValueError('positive wealth rounds to complete loss')"
+    },
+    {
+      "label": "unequal alignment",
+      "passed": true,
+      "exception": "ValueError('aligned return series required')"
+    },
+    {
+      "label": "E12 monthly effective conversion",
+      "passed": true
+    },
+    {
+      "label": "project A mean_monthly",
+      "passed": true,
+      "actual": 0.011666666666666667,
+      "independent_reference": "7/600",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A vol_monthly",
+      "passed": true,
+      "actual": 0.023166067138525405,
+      "independent_reference": "0.02316606713852540544489875456617390315287628199400645932",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A vol_annual",
+      "passed": true,
+      "actual": 0.0802496105909555,
+      "independent_reference": "0.08024961059095551773255705580030509293706143922992465528",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A sharpe_annual",
+      "passed": true,
+      "actual": 1.4454898802097578,
+      "independent_reference": "1.445489880209757772822456285",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A sortino_annual",
+      "passed": true,
+      "actual": 4.427188724235731,
+      "independent_reference": "4.427188724235731064798450962",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A mdd",
+      "passed": true,
+      "actual": -0.02,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A ir_annual",
+      "passed": true,
+      "actual": 1.651445647689541,
+      "independent_reference": "1.651445647689540908412290623",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A beta",
+      "passed": true,
+      "actual": 1.6428571428571428,
+      "independent_reference": "23/14",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B mean_monthly",
+      "passed": true,
+      "actual": 0.008333333333333333,
+      "independent_reference": "1/120",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B vol_monthly",
+      "passed": true,
+      "actual": 0.019407902170679517,
+      "independent_reference": "0.01940790217067951593982619824680898999992287507333302920",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B vol_annual",
+      "passed": true,
+      "actual": 0.06723094525588644,
+      "independent_reference": "0.06723094525588644436369388821550992885587189791427200037",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B sharpe_annual",
+      "passed": true,
+      "actual": 1.1304318228865862,
+      "independent_reference": "1.130431822886586232663879536",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B sortino_annual",
+      "passed": true,
+      "actual": 3.1622776601683795,
+      "independent_reference": "3.162277660168379331998893544",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B mdd",
+      "passed": true,
+      "actual": -0.02,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B ir_annual",
+      "passed": true,
+      "actual": 0.7669649888473704,
+      "independent_reference": "0.7669649888473704370097613597",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B beta",
+      "passed": true,
+      "actual": 1.3571428571428572,
+      "independent_reference": "19/14",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "supplemental scorecard CSV keys and strategy order",
+      "passed": true
+    },
+    {
+      "label": "exact demo labels and max drawdown",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "historical_unique_methods_added": 0
+}

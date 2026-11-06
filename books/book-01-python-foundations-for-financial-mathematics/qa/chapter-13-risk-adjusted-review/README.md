@@ -1,0 +1,14 @@
+# Section 13.13 — scoped risk-adjusted performance review
+
+Reviewed [Risk-Adjusted Performance Concepts](../../chapter-13/13.13-risk-adjusted-performance-concepts.md) at parent `08821c3755545efe52ed655fbab159b8a858f1ab`. Run `python -B review.py` here. [Original results](baseline.json) and [corrected rerun](results.json) record the manuscript and listing hashes, command outputs and observed/reference values. The exact standard-library fence was saved verbatim, run with its twelve existing tests, compiled, and imported in isolation. Three command checks and 48 extra predicates passed after correction; 13 manuscript predicates originally failed. A preliminary observer check used the wrong expected demo Sharpe; it was corrected using the independent variance calculation before recording the baseline. No historical unique methods were added.
+
+| Local answers | Independent review |
+|---|---|
+| 1–4 | The opposite moves sum to zero; the two deviations have squared sum .02 and the sample divisor is one. Subtracting a common risk-free rate changes only the numerator, from zero to −.01. |
+| 5–9 | Only −.10 contributes to downside, so its square is divided by two; the resulting Sortino is zero. Calmar is .12/.20. Opposite active moves sum to zero and their sample sum of squares is .0008. |
+| 10–12 | The benchmark regression has slope two. Under equal-variance uncorrelated periods, variance grows by twelve, hence .5√12. A monthly factor raised to the twelfth power must equal 1.05. |
+| 13–18 | Constant excess returns, no downside, no drawdown, and constant benchmark respectively make the corresponding denominators zero. Currency conventions must match, and benchmark-relative consistency calls for active-return dispersion, not total volatility. |
+
+The eight-task project compares both strategies via pairwise variance and covariance identities and an enumeration of ordered wealth ratios. The exact functions match all sixteen scorecard values. The [supplemental scorecard](project.py) supplies fixtures, converts aligned returns to active returns, invokes the source and renders CSV; it is not part of the manuscript listing. Six rows and conventions come from the prompt. Comparison confirms annualized Sharpe of 1.4455 and 1.1304 and maximum drawdown of −2.00% for both. Constant and mismatched controls were executed. Real currency/date alignment, near-zero-denominator policy, statistical reliability and operational monitoring remain design considerations.
+
+**F107.** The original implementation could erase dispersion and small drawdowns, overflow before producing finite metrics, and accept invalid scaling inputs. The corrected implementation preserves exact intermediates, computes drawdown relative to the running peak, and checks results at float conversion. Only the recorded Linux CPython fixtures were executed. F28, F32 and independent acceptance remain open.
