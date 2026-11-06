@@ -1,5 +1,6 @@
 """Illustrative 2x2 replication solver, not a general-purpose solver."""
 import math
+from fractions import Fraction
 from numbers import Real
 
 def finite(x, name):
@@ -18,24 +19,25 @@ def solve_2x2(matrix, target, *, threshold=1e-12):
     y, z = (finite(x, "target") for x in target)
     threshold = finite(threshold, "threshold")
     if threshold < 0: raise ValueError("threshold must be nonnegative")
+    # Work exactly on the represented floats; round only reported results.
+    a, b, c, d, y, z = map(Fraction, (a, b, c, d, y, z))
     scale = max(abs(a), abs(b), abs(c), abs(d))
     if scale == 0: raise ValueError("zero matrix is singular")
-    aa, bb, cc, dd = a/scale, b/scale, c/scale, d/scale
-    det = aa*dd - bb*cc
-    if abs(det) <= threshold: raise ValueError("singular or below screening threshold")
-    yy, zz = y/scale, z/scale
-    x1, x2 = (yy*dd - bb*zz)/det, (aa*zz - yy*cc)/det
-    if not all(math.isfinite(x) for x in (x1, x2)):
-        raise OverflowError("solution exceeds float range")
+    det = a*d - b*c
+    screen = det / scale**2
+    if abs(screen) <= Fraction(threshold):
+        raise ValueError("singular or below screening threshold")
     try:
-        residual = (math.fsum((a*x1, b*x2, -y)),
-                    math.fsum((c*x1, d*x2, -z)))
-    except (OverflowError, ValueError) as exc:
+        x1, x2 = float((y*d - b*z)/det), float((a*z - y*c)/det)
+    except OverflowError as exc:
+        raise OverflowError("solution exceeds float range") from exc
+    h1, h2 = Fraction(x1), Fraction(x2)
+    try:
+        residual = (float(a*h1 + b*h2 - y), float(c*h1 + d*h2 - z))
+    except OverflowError as exc:
         raise OverflowError("residual exceeds float range") from exc
-    if not all(math.isfinite(x) for x in residual):
-        raise OverflowError("residual exceeds float range")
     return {"solution": (x1, x2), "residual": residual,
-            "normalized_determinant": det, "screening_threshold": threshold}
+            "normalized_determinant": float(screen), "screening_threshold": threshold}
 
 if __name__ == "__main__":
     print(solve_2x2([[1, 1], [1, 2]], [3, 5]))
