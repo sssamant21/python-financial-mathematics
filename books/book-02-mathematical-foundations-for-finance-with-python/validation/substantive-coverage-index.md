@@ -669,3 +669,11 @@ Next substantive item: [Section 19.7 standalone depletion baseline](chapter-19-s
 [V-89](runtime-refresh-2026-11-06-r08.md) compiled 554 files, passed 341 scripts and matched 555 required blobs before and after at `2dccee14e57ace03c2fc58a3226ff7d4d19fc7d5`. Chapter 19: 51 files and 41 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next: [Section 19.3 applied range baseline](chapter-19-linear-applied-range-baseline.md) records three finite results rejected by the actual Section 19.3 variable-rate, piecewise and Euler entry points. Check complete exponents, ordered segment balances and whole Euler updates. Wider capstone provenance and manual reviews remain open.
+
+## Applied linear-account follow-up — V-90
+
+[Section 19.3 applied range follow-up](chapter-19-linear-applied-range-followup.md) retains 12 baseline mismatches, an identical replay and a 27-case corrected pass. Independent references cover complete exponents, ordered segment states, affine Euler updates and actual assessment fields. This adds selected COV-84 evidence. Thirty-five selected categories remain partially addressed; none closed.
+
+[V-90](runtime-refresh-2026-11-06-r09.md) compiled 555 files, passed 342 scripts and matched 556 required blobs before and after at `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`. Chapter 19: 52 compiled files and 42 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-baseline.md) records finite growth, equilibrium and Euler failures, a rate endpoint boundary and an assessment output gap. Resume with independently derived expected results and reconcile the rate policy with Section 19.1. Wider capstone provenance and manual reviews remain open.
