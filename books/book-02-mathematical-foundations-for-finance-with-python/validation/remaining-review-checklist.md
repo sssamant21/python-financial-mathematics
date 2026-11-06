@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `5621a516346213dd09780c0eba7c49a402aee143`  
-**Latest scoped source revision:** `5621a516346213dd09780c0eba7c49a402aee143` (included in V-85)  
-**Disposition:** V-85 full candidate Linux pass includes Euler analytical boundaries; independent review and release approval pending.
+**Full-runtime candidate source revision:** `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`  
+**Latest scoped source revision:** `ab4dfb16846ebe7dff9867b9a0864870d7893f0f` (included in V-86)  
+**Disposition:** V-86 full candidate Linux pass includes Section 19.9 depletion and jump ordering; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-86](runtime-refresh-2026-11-06-r05.md): 551 compiled, 338 passed, 552 required hashes verified before/after. G2–G8 unchanged.
 
 [V-85](runtime-refresh-2026-11-06-r04.md): 550 compiled, 337 passed, 551 required hashes verified before/after. G2–G8 unchanged.
 
@@ -127,7 +129,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-85](runtime-refresh-2026-11-06-r04.md) at `5621a516346213dd09780c0eba7c49a402aee143`; 550 sources/337 scripts/551 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-86](runtime-refresh-2026-11-06-r05.md) at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`; 551 sources/338 scripts/552 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -618,3 +620,11 @@ Next substantive item: [Euler amplification boundary baseline](chapter-19-euler-
 [V-85](runtime-refresh-2026-11-06-r04.md) compiled 550 files, passed 337 scripts and matched 551 required blobs before and after at `5621a516346213dd09780c0eba7c49a402aee143`. Chapter 19: 47 compiled files and 37 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.9 event order baseline](chapter-19-project-event-order-boundary-baseline.md) reproduces two deposits skipped because the rounded depletion time matched the jump time, although the deposits occurred strictly earlier. Verify ordering before timestamp rounding, keeping the exact-equality and time-zero policies, with actual event logs and independent zero- and nonzero-rate references. Wider capstone provenance and manual reviews remain open.
+
+## Depletion and jump ordering — V-86
+
+[Section 19.9 event ordering](chapter-19-project-event-order-followup.md) retains seven baseline mismatches and an 11-scenario pass. It checks event order before timestamp rounding, exact represented elapsed intervals, both time-zero and coincidence policies, and actual statuses, balances and event logs. This adds selected COV-83 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-86](runtime-refresh-2026-11-06-r05.md) compiled 551 files, passed 338 scripts and matched 552 required blobs before and after at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`. Chapter 19: 48 compiled files and 38 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.7 terminal jump and interpolation baseline](chapter-19-jump-policy-crossing-baseline.md) reproduces a strictly later deposit that incorrectly rescues a terminal simulation and a finite interpolation rejected by intermediate overflow. Verify actual terminal and nonterminal behavior, keeping Section 19.7's distinct exact-tie policy. Wider capstone provenance and manual reviews remain open.
