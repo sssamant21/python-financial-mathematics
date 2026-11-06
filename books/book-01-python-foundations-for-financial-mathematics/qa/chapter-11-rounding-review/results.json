@@ -1,0 +1,350 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "d6fa6353f99ff86a5f2efdc84db7792d99648e2850f1567bf801b8d3f84590d2",
+  "listing_sha256": "70d766d25e4cbfaf5e3c4eeac483eaf1d2a8920b36d88c549d266eb868af116b",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "numerical_and_rounding_considerations.py"
+      ],
+      "returncode": 0,
+      "stdout": "Stable payment: 443.20610252756904\nRegular installment: 443.21 final: 443.11\nReconciled: True\n",
+      "stderr": "test_01_zero_rate (__main__.Tests.test_01_zero_rate) ... ok\ntest_02_standard (__main__.Tests.test_02_standard) ... ok\ntest_03_small_rate (__main__.Tests.test_03_small_rate) ... ok\ntest_04_round_half_up (__main__.Tests.test_04_round_half_up) ... ok\ntest_05_row_count (__main__.Tests.test_05_row_count) ... ok\ntest_06_reconcile (__main__.Tests.test_06_reconcile) ... ok\ntest_07_zero_rate_schedule (__main__.Tests.test_07_zero_rate_schedule) ... ok\ntest_08_final_payment (__main__.Tests.test_08_final_payment) ... ok\ntest_09_sum_interest (__main__.Tests.test_09_sum_interest) ... ok\ntest_10_continuity (__main__.Tests.test_10_continuity) ... ok\ntest_11_one_period (__main__.Tests.test_11_one_period) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "numerical_and_rounding_considerations.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact float snippet",
+      "args": [
+        "-c"
+      ],
+      "returncode": 0,
+      "stdout": "False\nTrue\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact Decimal snippet",
+      "args": [
+        "-c"
+      ],
+      "returncode": 0,
+      "stdout": "1.01\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "F75 optimized reconciliation probe",
+      "args": [
+        "-O",
+        "-c"
+      ],
+      "returncode": 0,
+      "stdout": "rejected\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2 ordinary stable payment",
+      "passed": true,
+      "actual": 443.20610252756904,
+      "independent_reference": 443.20610252756904,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 ordinary naive payment",
+      "passed": true,
+      "actual": 443.2061025275781,
+      "independent_reference": 443.20610252756904,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 zero rate",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": 100.0,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "tiny positive rate versus exact rational value",
+      "passed": true,
+      "actual": 27.777777782791667,
+      "independent_reference": 27.777777782791667,
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "naive loses accuracy at tiny rate",
+      "passed": true
+    },
+    {
+      "label": "P5 positive half-cent rounds up",
+      "passed": true
+    },
+    {
+      "label": "P5 negative half-cent rounds away from zero",
+      "passed": true
+    },
+    {
+      "label": "P6 first interest",
+      "passed": true
+    },
+    {
+      "label": "P7\u2013P12 all ordinary rows and cent totals",
+      "passed": true,
+      "first": {
+        "k": 1,
+        "opening": 1000000,
+        "payment": 44321,
+        "interest": 5000,
+        "principal": 39321,
+        "closing": 960679
+      },
+      "last": {
+        "k": 24,
+        "opening": 44091,
+        "payment": 44311,
+        "interest": 220,
+        "principal": 44091,
+        "closing": 0
+      },
+      "expected_first": {
+        "k": 1,
+        "opening": 1000000,
+        "payment": 44321,
+        "interest": 5000,
+        "principal": 39321,
+        "closing": 960679
+      },
+      "expected_last": {
+        "k": 24,
+        "opening": 44091,
+        "payment": 44311,
+        "interest": 220,
+        "principal": 44091,
+        "closing": 0
+      }
+    },
+    {
+      "label": "zero-rate rows",
+      "passed": true,
+      "first": {
+        "k": 1,
+        "opening": 120000,
+        "payment": 10000,
+        "interest": 0,
+        "principal": 10000,
+        "closing": 110000
+      },
+      "last": {
+        "k": 12,
+        "opening": 10000,
+        "payment": 10000,
+        "interest": 0,
+        "principal": 10000,
+        "closing": 0
+      },
+      "expected_first": {
+        "k": 1,
+        "opening": 120000,
+        "payment": 10000,
+        "interest": 0,
+        "principal": 10000,
+        "closing": 110000
+      },
+      "expected_last": {
+        "k": 12,
+        "opening": 10000,
+        "payment": 10000,
+        "interest": 0,
+        "principal": 10000,
+        "closing": 0
+      }
+    },
+    {
+      "label": "F70 exact regular installment half-cent tie",
+      "passed": true,
+      "first": {
+        "k": 1,
+        "opening": 15,
+        "payment": 3,
+        "interest": 0,
+        "principal": 3,
+        "closing": 12
+      },
+      "last": {
+        "k": 6,
+        "opening": 0,
+        "payment": 0,
+        "interest": 0,
+        "principal": 0,
+        "closing": 0
+      },
+      "expected_first": {
+        "k": 1,
+        "opening": 15,
+        "payment": 3,
+        "interest": 0,
+        "principal": 3,
+        "closing": 12
+      },
+      "expected_last": {
+        "k": 6,
+        "opening": 0,
+        "payment": 0,
+        "interest": 0,
+        "principal": 0,
+        "closing": 0
+      }
+    },
+    {
+      "label": "F70 installment based on booked principal",
+      "passed": true,
+      "first": {
+        "k": 1,
+        "opening": 1,
+        "payment": 1,
+        "interest": 0,
+        "principal": 1,
+        "closing": 0
+      },
+      "last": {
+        "k": 2,
+        "opening": 0,
+        "payment": 0,
+        "interest": 0,
+        "principal": 0,
+        "closing": 0
+      },
+      "expected_first": {
+        "k": 1,
+        "opening": 1,
+        "payment": 1,
+        "interest": 0,
+        "principal": 1,
+        "closing": 0
+      },
+      "expected_last": {
+        "k": 2,
+        "opening": 0,
+        "payment": 0,
+        "interest": 0,
+        "principal": 0,
+        "closing": 0
+      }
+    },
+    {
+      "label": "F70 finite large cent values",
+      "passed": true,
+      "first": {
+        "k": 1,
+        "opening": 100000000000000000000000000000000,
+        "payment": 100000000000000000000000000000000,
+        "interest": 0,
+        "principal": 100000000000000000000000000000000,
+        "closing": 0
+      },
+      "last": {
+        "k": 1,
+        "opening": 100000000000000000000000000000000,
+        "payment": 100000000000000000000000000000000,
+        "interest": 0,
+        "principal": 100000000000000000000000000000000,
+        "closing": 0
+      },
+      "expected_first": {
+        "k": 1,
+        "opening": 100000000000000000000000000000000,
+        "payment": 100000000000000000000000000000000,
+        "interest": 0,
+        "principal": 100000000000000000000000000000000,
+        "closing": 0
+      },
+      "expected_last": {
+        "k": 1,
+        "opening": 100000000000000000000000000000000,
+        "payment": 100000000000000000000000000000000,
+        "interest": 0,
+        "principal": 100000000000000000000000000000000,
+        "closing": 0
+      }
+    },
+    {
+      "label": "P11 final adjustment",
+      "passed": true
+    },
+    {
+      "label": "P12 exact maturity and reconciliation",
+      "passed": true
+    },
+    {
+      "label": "F54 stable tiny-rate one-period payment",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": 0.1,
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F75 explicit rejection of inconsistent row",
+      "passed": true,
+      "exception": "ValueError('row 1 does not reconcile')"
+    },
+    {
+      "label": "F75 explicit rejection of empty schedule",
+      "passed": true,
+      "exception": "ValueError('schedule must contain rows for positive booked principal')"
+    },
+    {
+      "label": "F70 zero booked principal is invalid",
+      "passed": true,
+      "exception": "ValueError('booked opening must be at least one cent')"
+    },
+    {
+      "label": "F54 stable payment underflow",
+      "passed": true,
+      "exception": "ValueError('payment outside supported range')"
+    },
+    {
+      "label": "F54 stable payment overflow",
+      "passed": true,
+      "exception": "ValueError('payment outside supported range')"
+    },
+    {
+      "label": "demo installments and reconciliation",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 14,
+  "conceptual_prompts": [
+    4,
+    13,
+    14
+  ],
+  "historical_unique_methods_added": 0
+}

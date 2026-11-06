@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/50da9af75d6f/run1112/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-11-rounding-review/review.py", line 105, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ^^^^^^
+  File "/workspace/scratch/50da9af75d6f/run1112/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-11-rounding-review/review.py", line 70, in main
+    close('tiny positive rate versus exact rational value',m.stable_payment(L,1e-12,360),tiny,atol=0)
+  File "/workspace/scratch/50da9af75d6f/run1112/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-11-rounding-review/review.py", line 12, in close
+    ck(label,math.isclose(value,float(expected),abs_tol=atol,rel_tol=rtol),actual=value if math.isfinite(value) else repr(value),independent_reference=str(expected),absolute_tolerance=atol,relative_tolerance=rtol)
+                                                                                                                                                       ^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/fractions.py", line 415, in __str__
+    return '%s/%s' % (self._numerator, self._denominator)
+                      ^^^^^^^^^^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
