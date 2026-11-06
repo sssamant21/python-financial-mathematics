@@ -1,0 +1,314 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "dfa1b79d6f07dce57eb7ffe75d80ffe3a0cb34c48240ff01e2f75a9506d0ac65",
+  "listing_sha256": "e51f35688733b89c2cb60e8c404a14e09e12fc86fae5d441855845ebead81503",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "accrued_interest.py"
+      ],
+      "returncode": 0,
+      "stdout": "Accrued interest: 14.917127; dirty price: 1034.917127\n",
+      "stderr": "test_01_coupon (__main__.Tests.test_01_coupon) ... ok\ntest_02_start (__main__.Tests.test_02_start) ... ok\ntest_03_days (__main__.Tests.test_03_days) ... ok\ntest_04_elapsed (__main__.Tests.test_04_elapsed) ... ok\ntest_05_fraction (__main__.Tests.test_05_fraction) ... ok\ntest_06_interest (__main__.Tests.test_06_interest) ... ok\ntest_07_dirty (__main__.Tests.test_07_dirty) ... ok\ntest_08_clean (__main__.Tests.test_08_clean) ... ok\ntest_09_roundtrip (__main__.Tests.test_09_roundtrip) ... ok\ntest_10_quarterly (__main__.Tests.test_10_quarterly) ... ok\ntest_11_leap (__main__.Tests.test_11_leap) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "accrued_interest.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P5 semiannual coupon",
+      "passed": true
+    },
+    {
+      "label": "P6 P7 independent month lengths",
+      "passed": true
+    },
+    {
+      "label": "date 2026-01-01 fraction",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-01-01 accrued",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-01-01 dirty",
+      "passed": true,
+      "actual": 1020.0,
+      "independent_reference": "1020",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-01-01 reverse reconciliation",
+      "passed": true,
+      "actual": 1020.0,
+      "independent_reference": "1020",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-02-01 fraction",
+      "passed": true,
+      "actual": 0.1712707182320442,
+      "independent_reference": "31/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-02-01 accrued",
+      "passed": true,
+      "actual": 5.138121546961326,
+      "independent_reference": "930/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-02-01 dirty",
+      "passed": true,
+      "actual": 1025.1381215469614,
+      "independent_reference": "185550/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-02-01 reverse reconciliation",
+      "passed": true,
+      "actual": 1020.0000000000001,
+      "independent_reference": "1020",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-04-01 fraction",
+      "passed": true,
+      "actual": 0.4972375690607735,
+      "independent_reference": "90/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-04-01 accrued",
+      "passed": true,
+      "actual": 14.917127071823204,
+      "independent_reference": "2700/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-04-01 dirty",
+      "passed": true,
+      "actual": 1034.9171270718232,
+      "independent_reference": "187320/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-04-01 reverse reconciliation",
+      "passed": true,
+      "actual": 1020.0,
+      "independent_reference": "1020",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-01 fraction",
+      "passed": true,
+      "actual": 0.8342541436464088,
+      "independent_reference": "151/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-01 accrued",
+      "passed": true,
+      "actual": 25.027624309392266,
+      "independent_reference": "4530/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-01 dirty",
+      "passed": true,
+      "actual": 1045.0276243093922,
+      "independent_reference": "189150/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-01 reverse reconciliation",
+      "passed": true,
+      "actual": 1019.9999999999999,
+      "independent_reference": "1020",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-30 fraction",
+      "passed": true,
+      "actual": 0.994475138121547,
+      "independent_reference": "180/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-30 accrued",
+      "passed": true,
+      "actual": 29.834254143646408,
+      "independent_reference": "5400/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-30 dirty",
+      "passed": true,
+      "actual": 1049.8342541436464,
+      "independent_reference": "190020/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "date 2026-06-30 reverse reconciliation",
+      "passed": true,
+      "actual": 1020.0,
+      "independent_reference": "1020",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "leap-year actual period",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "new period resets on coupon date",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 quarterly coupon",
+      "passed": true,
+      "actual": 40.0,
+      "independent_reference": "40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13 P14 supplemental quote conversion",
+      "passed": true
+    },
+    {
+      "label": "P15 Actual/360 differs from modeled period",
+      "passed": true
+    },
+    {
+      "label": "exact demo matches independent fixture",
+      "passed": true,
+      "expected": "Accrued interest: 14.917127; dirty price: 1034.917127"
+    },
+    {
+      "label": "F54 finite coupon despite unscaled overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite accrued despite coupon outside float range",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F85 datetime silently truncates partial days",
+      "passed": false,
+      "actual": "0.4972375690607735"
+    },
+    {
+      "label": "F85 mixed date and datetime rejected",
+      "passed": true,
+      "exception": "TypeError(\"can't compare datetime.datetime to datetime.date\")"
+    },
+    {
+      "label": "next coupon date excluded",
+      "passed": true,
+      "exception": "ValueError('settlement outside coupon period')"
+    },
+    {
+      "label": "earlier settlement rejected",
+      "passed": true,
+      "exception": "ValueError('settlement outside coupon period')"
+    },
+    {
+      "label": "zero-length period rejected",
+      "passed": true,
+      "exception": "ValueError('settlement outside coupon period')"
+    },
+    {
+      "label": "F54 dirty total overflow rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 coupon overflow rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 coupon underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "negative clean price rejected",
+      "passed": true,
+      "exception": "ValueError('invalid price')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    2,
+    3,
+    4,
+    16,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
