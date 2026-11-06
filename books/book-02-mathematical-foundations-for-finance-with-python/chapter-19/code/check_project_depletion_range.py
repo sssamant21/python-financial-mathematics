@@ -34,18 +34,18 @@ def check():
                 and result['event_policy']['coincident_future_jump']=='depletion_first')
             rows.append(dict(inputs=repr((a,r,u,T,jumps)),expected_time=crossing,
                              result=result,passed=ok))
-    original=lab._withdrawal_depletion
+    original=lab._depletion_elapsed
     calls=[]
-    def observed(a,r,w):
-        calls.append((a,r,w))
+    def observed(a,r,w,*,for_order):
+        calls.append((a,r,w,for_order))
         return .125
-    lab._withdrawal_depletion=observed
+    lab._depletion_elapsed=observed
     try:
         result=lab.simulate(1,0,-1,1)
         assert result['depletion_time']==.125
     finally:
-        lab._withdrawal_depletion=original
-    assert calls==[(1.,0.,1.)]
+        lab._depletion_elapsed=original
+    assert calls==[(1.,0.,1.,True)]
     print(json.dumps(rows,indent=2))
     assert all(row['passed'] for row in rows)
 
