@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `22336bded4cb65dce8a0557561e7095978fd403f`  
-**Latest scoped source revision:** `22336bded4cb65dce8a0557561e7095978fd403f` (included in V-81)  
-**Disposition:** V-81 full candidate Linux pass includes fixed RK4 horizon alignment; independent review and release approval pending.
+**Date:** 2026-11-06  
+**Full-runtime candidate source revision:** `f462da2d7ff63750780e72884557ccfd4fa7df98`  
+**Latest scoped source revision:** `f462da2d7ff63750780e72884557ccfd4fa7df98` (included in V-82)  
+**Disposition:** V-82 full candidate Linux pass includes adaptive RK4 clock alignment; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-82](runtime-refresh-2026-11-06-r01.md): 547 compiled, 334 passed, 548 required hashes verified before/after. G2–G8 unchanged.
 
 [V-81](runtime-refresh-2026-11-05-r23.md): 546 compiled, 333 passed, 547 required hashes verified before/after. G2–G8 unchanged.
 
@@ -119,7 +121,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-81](runtime-refresh-2026-11-05-r23.md) at `22336bded4cb65dce8a0557561e7095978fd403f`; 546 sources/333 scripts/547 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-82](runtime-refresh-2026-11-06-r01.md) at `f462da2d7ff63750780e72884557ccfd4fa7df98`; 547 sources/334 scripts/548 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -578,3 +580,11 @@ Next substantive item: [Fixed RK4 horizon baseline](chapter-19-rk4-fixed-grid-ba
 [V-81](runtime-refresh-2026-11-05-r23.md) compiled 546 files, passed 333 scripts and matched 547 required blobs before and after at `22336bded4cb65dce8a0557561e7095978fd403f`. Chapter 19: 43 compiled files and 33 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Adaptive RK4 clock baseline](chapter-19-rk4-adaptive-grid-baseline.md) reproduces a state/time discrepancy when the proposed interval and represented time advance differ, even with an equal representable split in step-length arithmetic. Check common full and doubled endpoints, elapsed state and explicit resolution failures; preserve controller and evaluation-count behavior. Wider capstone provenance and manual reviews remain open.
+
+## Adaptive RK4 clock alignment — V-82
+
+[Adaptive RK4 clock correction](chapter-19-rk4-adaptive-clock-followup.md) retains eight baseline mismatches and a 21-case pass. The two trial paths use a common represented endpoint and the same elapsed interval. Near-ulp, no-progress, midpoint collapse and clipped final intervals are checked using real derivative callbacks and independently derived balances. Existing acceptance/rejection and range checks pass. This adds selected COV-82 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-82](runtime-refresh-2026-11-06-r01.md) compiled 547 files, passed 334 scripts and matched 548 required blobs before and after at `f462da2d7ff63750780e72884557ccfd4fa7df98`. Chapter 19: 44 compiled files and 34 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.6 account reference baseline](chapter-19-rk4-account-reference-baseline.md) reproduces three finite-result failures in the benchmark used by the Section 19.6 assessment. Check complete balances and actual assessment fields against independent references; reconcile true range failures with this helper’s contract. Wider capstone provenance and manual reviews remain open.
