@@ -1,0 +1,302 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "07591e8aede0a1126fa40de7fe263471615a7eca68a5b100887d7e8561771fa0",
+  "listing_sha256": "752d49d9b45739a749d69d7e44f11abf05a9af1b540512a9f6c25c75b5ae9fe3",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "conditional_probability.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_stress (__main__.ConditionalProbabilityTests.test_01_stress) ... ok\ntest_02_default (__main__.ConditionalProbabilityTests.test_02_default) ... ok\ntest_03_default_given_stress (__main__.ConditionalProbabilityTests.test_03_default_given_stress) ... ok\ntest_04_default_given_normal (__main__.ConditionalProbabilityTests.test_04_default_given_normal) ... ok\ntest_05_stress_given_default (__main__.ConditionalProbabilityTests.test_05_stress_given_default) ... ok\ntest_06_total_probability (__main__.ConditionalProbabilityTests.test_06_total_probability) ... ok\ntest_07_bayes (__main__.ConditionalProbabilityTests.test_07_bayes) ... ok\ntest_08_certain_given_self (__main__.ConditionalProbabilityTests.test_08_certain_given_self) ... ok\ntest_09_disjoint (__main__.ConditionalProbabilityTests.test_09_disjoint) ... ok\ntest_10_zero_condition (__main__.ConditionalProbabilityTests.test_10_zero_condition) ... ok\ntest_11_invalid_prior (__main__.ConditionalProbabilityTests.test_11_invalid_prior) ... ok\ntest_12_invalid_weights (__main__.ConditionalProbabilityTests.test_12_invalid_weights) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import conditional_probability"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "conditional_probability.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 definition",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 reverse conditioning",
+      "passed": true,
+      "actual": 0.4,
+      "independent_reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project full distribution",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 stress default",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 normal default",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 marginal default",
+      "passed": true,
+      "actual": 0.13,
+      "independent_reference": "13/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 stress given default",
+      "passed": true,
+      "actual": 0.38461538461538464,
+      "independent_reference": "5/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 survival given stress",
+      "passed": true,
+      "actual": 0.7499999999999999,
+      "independent_reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8/project joint, stress first",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project joint, default first",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9/project total probability",
+      "passed": true,
+      "actual": 0.13,
+      "independent_reference": "13/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 alert posterior via integer counts",
+      "passed": true,
+      "actual": 0.08333333333333333,
+      "independent_reference": "1/12",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 no false positives",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 independent conditional",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 dependent conditional",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 disjoint conditional",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 self conditional",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 regime average",
+      "passed": true,
+      "actual": 0.05800000000000001,
+      "independent_reference": "29/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 Bayes regime reversal",
+      "passed": true,
+      "actual": 0.6896551724137931,
+      "independent_reference": "20/29",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 total loss event mass",
+      "passed": true,
+      "actual": 0.18,
+      "independent_reference": "9/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F113 rare evidence remains positive before division",
+      "passed": false,
+      "exception": "ValueError('zero-probability evidence')"
+    },
+    {
+      "label": "F113 single-pass regime iterable",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "13/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F113 exact unit mass despite accepted weight rounding",
+      "passed": false
+    },
+    {
+      "label": "F113 normalized total probability cannot exceed one",
+      "passed": false
+    },
+    {
+      "label": "E12 zero evidence",
+      "passed": true,
+      "exception": "ValueError('zero-probability evidence')"
+    },
+    {
+      "label": "zero-mass conditioning with nonempty event",
+      "passed": true,
+      "exception": "ValueError('conditioning event has probability zero')"
+    },
+    {
+      "label": "F113 unknown event cannot disappear in intersection",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F113 invalid regime type raises domain error",
+      "passed": true,
+      "exception": "TypeError('must be real number, not str')"
+    },
+    {
+      "label": "F113 oversized integer probability rejected",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "invalid probability sum",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one')"
+    },
+    {
+      "label": "negative conditional rate rejected",
+      "passed": true,
+      "exception": "ValueError('invalid regime probability')"
+    },
+    {
+      "label": "project independence fails on direct atoms",
+      "passed": true
+    },
+    {
+      "label": "test-only listing has no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "project_report": {
+    "version": "14.4 synthetic fixture",
+    "assumptions": "Hypothetical exhaustive market/default atoms, no calibration",
+    "weights": {
+      "normal_survive": 0.72,
+      "normal_default": 0.08,
+      "stress_survive": 0.15,
+      "stress_default": 0.05
+    },
+    "conditioning_denominators": {
+      "stress": 0.2,
+      "normal": 0.8,
+      "default": 0.13,
+      "flag": 0.108
+    },
+    "weight_mass_tolerance": "1e-12",
+    "comparison_relative_tolerance": 1e-12,
+    "source_results": {
+      "stress": 0.2,
+      "default": 0.13,
+      "default_given_stress": 0.25,
+      "default_given_normal": 0.1,
+      "stress_given_default": 0.38461538461538464,
+      "alert_posterior": 0.08333333333333333
+    }
+  },
+  "historical_unique_methods_added": 0
+}
