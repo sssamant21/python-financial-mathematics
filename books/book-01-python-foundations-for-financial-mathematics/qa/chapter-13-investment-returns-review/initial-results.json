@@ -1,0 +1,349 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "e628bc4f57ba3518d2eee54bc7aac42bd66789294154e6530c6725d9c480ea67",
+  "listing_sha256": "2aa9cb4bfaa0d61394bc3f6477a5545b4c8892db103b57892a9d79a21fc24436",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "measuring_investment_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "Price return: 5.00%\nTotal return with dividend and costs: 7.00%\nTwo-period compounded return: -1.00%\nAnnualized two-year 21%: 10.00%\nInflation-adjusted 8%: 4.8544%\n",
+      "stderr": "test_01_price_gain (__main__.ReturnTests.test_01_price_gain) ... ok\ntest_02_price_loss (__main__.ReturnTests.test_02_price_loss) ... ok\ntest_03_dividend (__main__.ReturnTests.test_03_dividend) ... ok\ntest_04_costs (__main__.ReturnTests.test_04_costs) ... ok\ntest_05_gross (__main__.ReturnTests.test_05_gross) ... ok\ntest_06_compound (__main__.ReturnTests.test_06_compound) ... ok\ntest_07_annualization (__main__.ReturnTests.test_07_annualization) ... ok\ntest_08_log_inverse (__main__.ReturnTests.test_08_log_inverse) ... ok\ntest_09_real (__main__.ReturnTests.test_09_real) ... ok\ntest_10_portfolio (__main__.ReturnTests.test_10_portfolio) ... ok\ntest_11_total_loss (__main__.ReturnTests.test_11_total_loss) ... ok\ntest_12_invalid (__main__.ReturnTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import measuring_investment_returns"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "measuring_investment_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E2 price gain",
+      "passed": true,
+      "actual": 0.14,
+      "independent_reference": "7/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 loss",
+      "passed": true,
+      "actual": -0.15,
+      "independent_reference": "-3/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 dividend",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 fee",
+      "passed": true,
+      "actual": 0.07,
+      "independent_reference": "7/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 gross",
+      "passed": true,
+      "actual": 1.12,
+      "independent_reference": "28/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 positive gross on negative return",
+      "passed": true,
+      "actual": 0.7,
+      "independent_reference": "7/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 cumulative return",
+      "passed": true,
+      "actual": -0.009999999999999898,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 recovery",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 annualized 21%",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 annualized 44%",
+      "passed": true,
+      "actual": 0.19999999999999998,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 real return",
+      "passed": true,
+      "actual": 0.04854368932038833,
+      "independent_reference": "5/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 total return",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 log transform",
+      "passed": true,
+      "actual": 0.09531017980432487,
+      "independent_reference": "0.09531017980432486004395212328",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 log inverse",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "portfolio fixed weights",
+      "passed": true,
+      "actual": 0.039999999999999994,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "total loss",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F95 tiny linked gain survives gross rounding",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F95 tiny real return survives ratio rounding",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite linked product despite intermediate overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 scaled HPR despite intermediate overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "9",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 1 pre-flow return",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 1 total return",
+      "passed": true,
+      "actual": 0.048,
+      "independent_reference": "6/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 1 gross",
+      "passed": true,
+      "actual": 1.048,
+      "independent_reference": "131/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 1 net ending equals next beginning",
+      "passed": true
+    },
+    {
+      "label": "project 2 pre-flow return",
+      "passed": true,
+      "actual": -0.04103053435114504,
+      "independent_reference": "-43/1048",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2 total return",
+      "passed": true,
+      "actual": -0.03244274809160305,
+      "independent_reference": "-17/524",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2 gross",
+      "passed": true,
+      "actual": 0.9675572519083969,
+      "independent_reference": "507/524",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2 net ending equals next beginning",
+      "passed": true
+    },
+    {
+      "label": "project 3 pre-flow return",
+      "passed": true,
+      "actual": 0.07495069033530571,
+      "independent_reference": "38/507",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 3 total return",
+      "passed": true,
+      "actual": 0.07100591715976332,
+      "independent_reference": "12/169",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 3 gross",
+      "passed": true,
+      "actual": 1.0710059171597632,
+      "independent_reference": "181/169",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project linked return equals terminal wealth ratio",
+      "passed": true,
+      "actual": 0.08599999999999985,
+      "independent_reference": "43/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F95 project describes carried cash and the wealth identity",
+      "passed": false
+    },
+    {
+      "label": "F95 negative closing wealth outside unlevered model",
+      "passed": false,
+      "actual": "-1.01"
+    },
+    {
+      "label": "F95 long-only asset return below total loss",
+      "passed": false,
+      "actual": "-1.1"
+    },
+    {
+      "label": "F54 compound overflow rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 log inverse overflow rejected",
+      "passed": false,
+      "exception": "OverflowError('math range error')"
+    },
+    {
+      "label": "F54 annualized saturation rejected",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F54 input outside finite float range",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "exact demo outputs",
+      "passed": true,
+      "expected": [
+        "Price return: 5.00%",
+        "Total return with dividend and costs: 7.00%",
+        "Two-period compounded return: -1.00%",
+        "Annualized two-year 21%: 10.00%",
+        "Inflation-adjusted 8%: 4.8544%"
+      ]
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    14,
+    15,
+    16
+  ],
+  "historical_unique_methods_added": 0
+}
