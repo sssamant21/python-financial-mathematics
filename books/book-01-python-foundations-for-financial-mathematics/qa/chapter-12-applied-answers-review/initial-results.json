@@ -1,0 +1,460 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "6e5dc214539bd31a04aab8d0c854b3a92e8d607b2eeffeabf9bb3e233f825268",
+  "listing_sha256": "2ab6f16542f4cecc9dc12f4bda4eaa50054383784f7f5984340117e4472689d5",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "chapter12_review.py"
+      ],
+      "returncode": 0,
+      "stdout": "YTM 4.0%: price=1056.0143\nYTM 5.0%: price=1027.5406\nYTM 6.0%: price=1000.0000\nYTM 7.0%: price=973.3572\nYTM 8.0%: price=947.5786\nAnalytics: (999.9999999999999, 2.7898535935972673, 2.708595721939094, 8.977372930301094, 0.2708595721939094)\nShock -200 bp: (56.01430890690392, 54.171914438781876, 55.96738902484209)\nShock -100 bp: (27.540626807899912, 27.085957219390938, 27.534825865905994)\nShock -50 bp: (13.655916944486648, 13.542978609695469, 13.655195771324232)\nShock 50 bp: (-13.431474845730122, -13.542978609695469, -13.430761448066706)\nShock 100 bp: (-26.642765098891914, -27.085957219390938, -26.637088572875882)\nShock 200 bp: (-52.421368567463674, -54.171914438781876, -52.37643985272166)\n",
+      "stderr": "test_01_par (__main__.ReviewTests.test_01_par) ... ok\ntest_02_premium (__main__.ReviewTests.test_02_premium) ... ok\ntest_03_discount (__main__.ReviewTests.test_03_discount) ... ok\ntest_04_zero (__main__.ReviewTests.test_04_zero) ... ok\ntest_05_price_yield (__main__.ReviewTests.test_05_price_yield) ... ok\ntest_06_duration (__main__.ReviewTests.test_06_duration) ... ok\ntest_07_convexity (__main__.ReviewTests.test_07_convexity) ... ok\ntest_08_dv01 (__main__.ReviewTests.test_08_dv01) ... ok\ntest_09_spot (__main__.ReviewTests.test_09_spot) ... ok\ntest_10_forward (__main__.ReviewTests.test_10_forward) ... ok\ntest_11_approximation (__main__.ReviewTests.test_11_approximation) ... ok\ntest_12_invalid (__main__.ReviewTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import chapter12_review"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "chapter12_review.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "case bond 1 analytics",
+      "passed": true,
+      "actual": "(999.9999999999999, 2.7898535935972673, 2.708595721939094, 8.977372930301094, 0.2708595721939094)",
+      "expected": [
+        1000.0,
+        2.7898535935972677,
+        2.7085957219390946,
+        8.977372930301096,
+        0.2708595721939095
+      ]
+    },
+    {
+      "label": "F94 case bond 1 source cash flows",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'cashflows'\")"
+    },
+    {
+      "label": "case bond 2 analytics",
+      "passed": true,
+      "actual": "(1912.4793606902924, 4.569507732461663, 4.458056324352842, 23.19440990761669, 0.8525940709119639)",
+      "expected": [
+        1912.4793606902906,
+        4.569507732461664,
+        4.458056324352843,
+        23.194409907616695,
+        0.8525940709119634
+      ]
+    },
+    {
+      "label": "F94 case bond 2 source cash flows",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'cashflows'\")"
+    },
+    {
+      "label": "case bond 3 analytics",
+      "passed": true,
+      "actual": "(1255.4075195274431, 4.0, 3.9119804400977998, 17.216539834171247, 0.49111296607430543)",
+      "expected": [
+        1255.407519527443,
+        4.000000000000002,
+        3.911980440097801,
+        17.21653983417125,
+        0.49111296607430543
+      ]
+    },
+    {
+      "label": "F94 case bond 3 source cash flows",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'cashflows'\")"
+    },
+    {
+      "label": "case -200 bp bond 1",
+      "passed": true,
+      "actual": "(56.01430890690392, 54.171914438781876, 55.96738902484209)",
+      "expected": [
+        56.01430890690397,
+        54.17191443878189,
+        55.96738902484211
+      ]
+    },
+    {
+      "label": "case -200 bp bond 2",
+      "passed": true,
+      "actual": "(179.74248482825374, 170.5188141823928, 179.39058022873425)",
+      "expected": [
+        179.74248482825368,
+        170.51881418239267,
+        179.39058022873414
+      ]
+    },
+    {
+      "label": "case -200 bp bond 3",
+      "passed": true,
+      "actual": "(102.69014996384976, 98.22259321486108, 102.54534792847355)",
+      "expected": [
+        102.69014996384968,
+        98.22259321486109,
+        102.54534792847356
+      ]
+    },
+    {
+      "label": "F94 case -200 bp portfolio",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'portfolio_shock'\")"
+    },
+    {
+      "label": "case -100 bp bond 1",
+      "passed": true,
+      "actual": "(27.540626807899912, 27.085957219390938, 27.534825865905994)",
+      "expected": [
+        27.54062680789914,
+        27.085957219390945,
+        27.534825865906
+      ]
+    },
+    {
+      "label": "case -100 bp bond 2",
+      "passed": true,
+      "actual": "(87.52063930970735, 85.2594070911964, 87.47734860278176)",
+      "expected": [
+        87.52063930970935,
+        85.25940709119634,
+        87.4773486027817
+      ]
+    },
+    {
+      "label": "case -100 bp bond 3",
+      "passed": true,
+      "actual": "(50.209840111325775, 49.11129660743054, 50.19198528583365)",
+      "expected": [
+        50.20984011132678,
+        49.111296607430546,
+        50.19198528583366
+      ]
+    },
+    {
+      "label": "F94 case -100 bp portfolio",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'portfolio_shock'\")"
+    },
+    {
+      "label": "case -50 bp bond 1",
+      "passed": true,
+      "actual": "(13.655916944486648, 13.542978609695469, 13.655195771324232)",
+      "expected": [
+        13.655916944486894,
+        13.542978609695473,
+        13.655195771324237
+      ]
+    },
+    {
+      "label": "case -50 bp bond 2",
+      "passed": true,
+      "actual": "(43.18955756536525, 42.6297035455982, 43.18418892349454)",
+      "expected": [
+        43.18955756536642,
+        42.62970354559817,
+        43.18418892349451
+      ]
+    },
+    {
+      "label": "case -50 bp bond 3",
+      "passed": true,
+      "actual": "(24.828037257723963, 24.55564830371527, 24.82582047331605)",
+      "expected": [
+        24.82803725772449,
+        24.555648303715273,
+        24.82582047331605
+      ]
+    },
+    {
+      "label": "F94 case -50 bp portfolio",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'portfolio_shock'\")"
+    },
+    {
+      "label": "case +50 bp bond 1",
+      "passed": true,
+      "actual": "(-13.431474845730122, -13.542978609695469, -13.430761448066706)",
+      "expected": [
+        -13.431474845730413,
+        -13.542978609695473,
+        -13.43076144806671
+      ]
+    },
+    {
+      "label": "case +50 bp bond 2",
+      "passed": true,
+      "actual": "(-42.08050314112461, -42.6297035455982, -42.075218167701856)",
+      "expected": [
+        -42.08050314112146,
+        -42.62970354559817,
+        -42.07521816770183
+      ]
+    },
+    {
+      "label": "case +50 bp bond 3",
+      "passed": true,
+      "actual": "(-24.287663307804905, -24.55564830371527, -24.28547613411449)",
+      "expected": [
+        -24.28766330780553,
+        -24.555648303715273,
+        -24.285476134114493
+      ]
+    },
+    {
+      "label": "F94 case +50 bp portfolio",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'portfolio_shock'\")"
+    },
+    {
+      "label": "case +100 bp bond 1",
+      "passed": true,
+      "actual": "(-26.642765098891914, -27.085957219390938, -26.637088572875882)",
+      "expected": [
+        -26.642765098892504,
+        -27.085957219390945,
+        -26.637088572875893
+      ]
+    },
+    {
+      "label": "case +100 bp bond 2",
+      "passed": true,
+      "actual": "(-83.08341742580933, -85.2594070911964, -83.04146557961103)",
+      "expected": [
+        -83.08341742580724,
+        -85.25940709119634,
+        -83.04146557961097
+      ]
+    },
+    {
+      "label": "case +100 bp bond 3",
+      "passed": true,
+      "actual": "(-48.047988938857316, -49.11129660743054, -48.030607929027425)",
+      "expected": [
+        -48.047988938856435,
+        -49.111296607430546,
+        -48.030607929027425
+      ]
+    },
+    {
+      "label": "F94 case +100 bp portfolio",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'portfolio_shock'\")"
+    },
+    {
+      "label": "case +200 bp bond 1",
+      "passed": true,
+      "actual": "(-52.421368567463674, -54.171914438781876, -52.37643985272166)",
+      "expected": [
+        -52.42136856746352,
+        -54.17191443878189,
+        -52.376439852721674
+      ]
+    },
+    {
+      "label": "case +200 bp bond 2",
+      "passed": true,
+      "actual": "(-161.97752036762972, -170.5188141823928, -161.64704813605132)",
+      "expected": [
+        -161.9775203676293,
+        -170.51881418239267,
+        -161.6470481360512
+      ]
+    },
+    {
+      "label": "case +200 bp bond 3",
+      "passed": true,
+      "actual": "(-94.03705665716097, -98.22259321486108, -93.89983850124861)",
+      "expected": [
+        -94.03705665716095,
+        -98.22259321486109,
+        -93.89983850124862
+      ]
+    },
+    {
+      "label": "F94 case +200 bp portfolio",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_assessment' has no attribute 'portfolio_shock'\")"
+    },
+    {
+      "label": "independent largest loss at +100 bp is B",
+      "passed": true,
+      "losses": [
+        -26.642765098892504,
+        -83.08341742580724,
+        -48.047988938856435
+      ]
+    },
+    {
+      "label": "F94 demo portfolio lines and largest contributor",
+      "passed": false,
+      "expected": [
+        "Portfolio -200 bp: 338.45, 322.91, 337.90",
+        "Portfolio -100 bp: 165.27, 161.46, 165.20",
+        "Portfolio -50 bp: 81.67, 80.73, 81.67",
+        "Portfolio +50 bp: -79.80, -80.73, -79.79",
+        "Portfolio +100 bp: -157.77, -161.46, -157.71",
+        "Portfolio +200 bp: -308.44, -322.91, -307.92"
+      ]
+    },
+    {
+      "label": "demo five quote prices",
+      "passed": true
+    },
+    {
+      "label": "E4 premium fixture",
+      "passed": true,
+      "actual": 1054.1719144387819,
+      "independent_reference": "1258736395372000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 E8 matching par and YTM",
+      "passed": true,
+      "actual": 999.9999999999999,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 zero coupon price",
+      "passed": true,
+      "actual": 923.8454260265142,
+      "independent_reference": "6250000000/6765201",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 rising yield lowers price",
+      "passed": true
+    },
+    {
+      "label": "E9 E10 supplemental accrual arithmetic",
+      "passed": true
+    },
+    {
+      "label": "E11\u2013E14 duration and convexity arithmetic",
+      "passed": true
+    },
+    {
+      "label": "E16 source factor via unit flow",
+      "passed": true,
+      "actual": 0.9245562130177514,
+      "independent_reference": "625/676",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 spot PV",
+      "passed": true,
+      "actual": 963.0865166579451,
+      "independent_reference": "5521375/5733",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 annual forward",
+      "passed": true,
+      "actual": 0.04002427184466023,
+      "independent_reference": "1649/41200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19\u2013E22 supplemental signed risk and compounding",
+      "passed": true
+    },
+    {
+      "label": "E23 negative rate factor",
+      "passed": true,
+      "actual": 1.0203040506070808,
+      "independent_reference": "10000/9801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F94 tiny nonzero shock preserved",
+      "passed": false,
+      "actual": "(0.0, -2.7085957219390937e-22, -2.7085957219390937e-22)",
+      "expected": [
+        -2.708595721939094e-22,
+        -2.7085957219390946e-22,
+        -2.7085957219390946e-22
+      ]
+    },
+    {
+      "label": "F54 finite PV after discount-factor underflow",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F54 finite scaled price",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F94 normalized time-zero factor",
+      "passed": false,
+      "actual": "0.12499999999999997"
+    },
+    {
+      "label": "F54 reject unrepresentable price",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F54 reject unrepresentable spot PV",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "reject missing spot",
+      "passed": true,
+      "exception": "ValueError('missing spot')"
+    },
+    {
+      "label": "F94 worked case states aggregate and contributor",
+      "passed": false
+    }
+  ],
+  "workflow_records": 1,
+  "chapterwide_answer_records": 24,
+  "applied_case_records": 7,
+  "conceptual_prompts": [
+    15,
+    24
+  ],
+  "historical_unique_methods_added": 0
+}
