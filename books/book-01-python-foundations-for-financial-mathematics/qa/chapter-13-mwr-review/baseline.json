@@ -1,0 +1,291 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "1eb06f8e1954fc6e92acbfc6965825f6124d045269cdd4fb2a550f93a74b6f38",
+  "listing_sha256": "41c6e143b962c493c7e0417fe0ffe1433f2fc1a05ed4d192ccfe539b435a5629",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "money_weighted_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "Periodic money-weighted return: 11.4734%\nNPV residual: -2.879119165299926e-11\n",
+      "stderr": "test_01_npv_zero (__main__.MoneyWeightedTests.test_01_npv_zero) ... ok\ntest_02_irr_gain (__main__.MoneyWeightedTests.test_02_irr_gain) ... ok\ntest_03_irr_loss (__main__.MoneyWeightedTests.test_03_irr_loss) ... ok\ntest_04_irr_two_year (__main__.MoneyWeightedTests.test_04_irr_two_year) ... ok\ntest_05_irr_contribution (__main__.MoneyWeightedTests.test_05_irr_contribution) ... ok\ntest_06_xnpv (__main__.MoneyWeightedTests.test_06_xnpv) ... ok\ntest_07_xirr (__main__.MoneyWeightedTests.test_07_xirr) ... ok\ntest_08_zero_irr (__main__.MoneyWeightedTests.test_08_zero_irr) ... ok\ntest_09_multi_sign (__main__.MoneyWeightedTests.test_09_multi_sign) ... ok\ntest_10_dated_contribution (__main__.MoneyWeightedTests.test_10_dated_contribution) ... ok\ntest_11_no_bracket (__main__.MoneyWeightedTests.test_11_no_bracket) ... ok\ntest_12_invalid (__main__.MoneyWeightedTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import money_weighted_return"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "money_weighted_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 gain",
+      "passed": true,
+      "actual": 0.10000000000024761,
+      "independent_reference": "0.1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 loss",
+      "passed": true,
+      "actual": -0.09999999999969733,
+      "independent_reference": "-0.1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 square root",
+      "passed": true,
+      "actual": 0.10000000000024761,
+      "independent_reference": "0.1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 zero",
+      "passed": true,
+      "actual": -1.793973578438842e-13,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 quadratic",
+      "passed": true,
+      "actual": 0.11473440639574911,
+      "independent_reference": "0.1147344063956180627879203436730579197512234700613",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 quadratic",
+      "passed": true,
+      "actual": -0.024234932787310967,
+      "independent_reference": "-0.02423493278687371462080621258214301499533724767465",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 365 day annual rate",
+      "passed": true,
+      "actual": 0.10000000001309672,
+      "independent_reference": "0.1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 zero residual",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 lower bracket root",
+      "passed": true,
+      "actual": 0.09999999999990905,
+      "independent_reference": "0.1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 upper bracket root",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "0.2",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "\u00a710 terminal proceeds with distribution",
+      "passed": true,
+      "actual": 0.15000000000000657,
+      "independent_reference": "0.15",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F104 tiny-scale periodic root",
+      "passed": false,
+      "actual": 0.0005000000000000004,
+      "independent_reference": "0.125",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F104 tiny-scale dated root",
+      "passed": false,
+      "actual": 0.04999999999999999,
+      "independent_reference": "0.125",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F104 dated upper endpoint",
+      "passed": false,
+      "actual": 0.12499999997089617,
+      "independent_reference": "0.125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F104 dated lower endpoint",
+      "passed": false,
+      "actual": 0.12500000004365575,
+      "independent_reference": "0.125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 same sign bracket may contain two roots",
+      "passed": true,
+      "exception": "ValueError('no sign-changing root in bracket')"
+    },
+    {
+      "label": "F104 scaled same sign bracket",
+      "passed": false,
+      "actual": "0.25"
+    },
+    {
+      "label": "F104 reverse bracket",
+      "passed": false,
+      "actual": "0.25"
+    },
+    {
+      "label": "F104 zero-width endpoint",
+      "passed": false,
+      "actual": "0.125"
+    },
+    {
+      "label": "F104 infinite tolerance",
+      "passed": false,
+      "actual": "0.0005000000000000004"
+    },
+    {
+      "label": "F104 boolean tolerance",
+      "passed": false,
+      "actual": "0.525"
+    },
+    {
+      "label": "F104 boolean rate",
+      "passed": false,
+      "actual": "-45.0"
+    },
+    {
+      "label": "F104 fractional iteration count",
+      "passed": true,
+      "exception": "TypeError(\"'float' object cannot be interpreted as an integer\")"
+    },
+    {
+      "label": "F104 dates decrease after the first date",
+      "passed": false,
+      "actual": "4.474521093673243"
+    },
+    {
+      "label": "F104 timestamps must not silently discard hours",
+      "passed": false,
+      "actual": "-1.4210854715202004e-14"
+    },
+    {
+      "label": "F104 same-date cancellation is not a unique root",
+      "passed": false,
+      "actual": "0.04999999999999999"
+    },
+    {
+      "label": "F104 all-date cancellation is not a unique root",
+      "passed": false,
+      "actual": "0.04999999999999999"
+    },
+    {
+      "label": "366 days under Actual/365 Fixed",
+      "passed": true,
+      "actual": 0.09971358593757029,
+      "independent_reference": "0.09971358593414137",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project base XIRR",
+      "passed": true,
+      "actual": 0.10594686972763154,
+      "independent_reference": "0.105946869721405702366458223350764264910855616552062230",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project base XNPV residual",
+      "passed": true,
+      "actual": -6.36892423244717e-08,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-07,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project terminal haircut XIRR",
+      "passed": true,
+      "actual": -0.06212550818017918,
+      "independent_reference": "-0.0621255082040073857877311259311162210055290224953231879",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project terminal haircut XNPV residual",
+      "passed": false,
+      "actual": -2.885299181798473e-07,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-07,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project equal intervals",
+      "passed": true,
+      "actual": 0.03466088170652552,
+      "independent_reference": "0.034660881706688645379501180786230886411397061916950597",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project signed capital and multiple",
+      "passed": true
+    },
+    {
+      "label": "F104 printed exercise rates agree with closed form",
+      "passed": false
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "historical_unique_methods_added": 0
+}
