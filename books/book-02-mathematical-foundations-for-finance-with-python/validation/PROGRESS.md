@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-91 full candidate Linux pass (556 files, 343 scripts, 557 required hashes), including Section 19.1 introductory account range and assessment. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-92 full candidate Linux pass (557 files, 344 scripts, 558 required hashes), including Section 20.7 execution provenance. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 556/556 at `b8d9ad694136393a36aca2c06d9c0798062cb21c`. [V-91](runtime-refresh-2026-11-06-r10.md). |
-| Automated script execution | Full candidate Linux pass | 343/343 at `b8d9ad694136393a36aca2c06d9c0798062cb21c`; all 557 required hashes matched before/after. [V-91](runtime-refresh-2026-11-06-r10.md). |
+| Python compilation | Full candidate Linux pass | 557/557 at `641c6ad0304d242fd3a780b12908726b4778d724`. [V-92](runtime-refresh-2026-11-06-r11.md). |
+| Automated script execution | Full candidate Linux pass | 344/344 at `641c6ad0304d242fd3a780b12908726b4778d724`; all 558 required hashes matched before/after. [V-92](runtime-refresh-2026-11-06-r11.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -861,3 +861,11 @@ Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-b
 [V-91](runtime-refresh-2026-11-06-r10.md) compiled 556 Python files, passed 343 scripts and verified 557 required blobs before and after at `b8d9ad694136393a36aca2c06d9c0798062cb21c`. Chapter 19: 53 compiled files and 43 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 20.7 execution provenance baseline](chapter-20-execution-provenance-baseline.md) starts the outstanding COV-86 checks for actual source, environment, command and output provenance. The synthetic example’s pending fields are verified and intentional. Wider Chapter 19 capstone provenance and manual reviews remain open.
+
+## Actual execution provenance — V-92
+
+[Section 20.7 actual provenance](chapter-20-execution-provenance-followup.md) records an actual local child execution, observed Git source state, interpreter and argv, input hash, output and result. All 21 expanded cases passed; the baseline's 20 missing-behavior observations and initial reruns are retained. The original synthetic template still records pending execution. This adds selected COV-86 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-92](runtime-refresh-2026-11-06-r11.md) compiled 557 files, passed 344 scripts and verified 558 required blobs before and after at `641c6ad0304d242fd3a780b12908726b4778d724`. Chapter 20: 34 compiled files and 23 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 20.7 interrupted-write baseline](chapter-20-manifest-interrupted-write-baseline.md) reproduces a partial final JSON artifact and blocked retry after an injected write error. Check publication and no-overwrite behavior separately from durability and authenticity. Wider capstone provenance and manual reviews remain open.
