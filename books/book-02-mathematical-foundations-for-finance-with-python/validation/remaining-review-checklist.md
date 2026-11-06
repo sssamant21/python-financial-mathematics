@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `59f713d346fbcbf14e7125902637cd2f6e2c56e4`  
-**Latest scoped source revision:** `59f713d346fbcbf14e7125902637cd2f6e2c56e4` (included in V-78)  
-**Disposition:** V-78 full candidate Linux pass includes capstone account and cash-flow preflight; independent review and release approval pending.
+**Full-runtime candidate source revision:** `c961e9064fbb07217c8c7af64adf909e399f165f`  
+**Latest scoped source revision:** `c961e9064fbb07217c8c7af64adf909e399f165f` (included in V-79)  
+**Disposition:** V-79 full candidate Linux pass includes the Chapter 19 end-period extension; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-79](runtime-refresh-2026-11-05-r21.md): 544 compiled, 331 passed, 545 required hashes verified before/after. G2–G8 unchanged.
 
 [V-78](runtime-refresh-2026-11-05-r20.md): 543 compiled, 330 passed, 544 required hashes verified before/after. G2–G8 unchanged.
 
@@ -113,7 +115,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-78](runtime-refresh-2026-11-05-r20.md) at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`; 543 sources/330 scripts/544 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-79](runtime-refresh-2026-11-05-r21.md) at `c961e9064fbb07217c8c7af64adf909e399f165f`; 544 sources/331 scripts/545 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -548,3 +550,11 @@ Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-accoun
 [V-78](runtime-refresh-2026-11-05-r20.md) compiled 543 files, passed 330 scripts and matched 544 required blobs before and after at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. Chapter 21: 24 compiled files and 15 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) records four finite-payment cases rejected under the documented exponent limit. Evaluate a bounded extension against independently derived end-period sums and genuine range failures; keep the Chapter 19 underflow contract. Wider Chapter 21 provenance, proofs and review remain open.
+
+## End-period exponent extension — V-79
+
+[Section 19.8 end-period extension](chapter-19-end-period-exponent-followup.md) preserves 15 baseline mismatches, separates a checker exception-classification issue, and records a 23-case pass against separately timed sums and analytical bounds. The nontrivial end-period domain extends through abs(rate*years)=5000; final overflow and nonzero underflow still reject. Broader exponent and rounding coverage remains open under COV-84. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-79](runtime-refresh-2026-11-05-r21.md) compiled 544 files, passed 331 scripts and matched 545 required blobs before and after at `c961e9064fbb07217c8c7af64adf909e399f165f`. Chapter 19: 41 compiled files and 31 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-range-baseline.md) records two observed failures involving a finite weighted increment and a finite callback stage. Derive exact stage inputs and outputs and check actual fixed/adaptive consumers; treat adaptive estimator/scale range as a separate obligation. Wider capstone provenance and manual reviews remain open.
