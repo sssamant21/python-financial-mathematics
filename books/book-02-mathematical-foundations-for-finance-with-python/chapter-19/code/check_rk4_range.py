@@ -89,20 +89,20 @@ def main():
 
     # These deliberately injected, finite step results isolate adaptive arithmetic.
     # The error from opposite extreme states is 2*M/15, smaller than atol=M.
-    with patch.object(lab, "rk4_step", side_effect=(-M, 0., M)):
+    with patch.object(lab, "_rk4_interval", side_effect=(-M, 0., M)):
         record("adaptive_difference_range", ("completed", M, 1., 1, 0, 12),
                outcome(lambda: metrics(lab.adaptive_rk4(
                    constant, 0., 1., atol=M, rtol=0., initial_step=1., max_attempts=1))))
     # With a zero full estimate, error=M/15; scale=M+2*M. Even though
     # scale itself exceeds float range, its ratio is finite (45).
     # The next step is .9 * 45**.2, below the upper clamp and horizon.
-    with patch.object(lab, "rk4_step", side_effect=(0., 0., M, M, M, M)) as step:
+    with patch.object(lab, "_rk4_interval", side_effect=(0., 0., M, M, M, M)) as step:
         result = lab.adaptive_rk4(constant, 0., 10., atol=M, rtol=2.,
                                   initial_step=1., max_attempts=2)
         h2 = .9 * 45**.2
         record("adaptive_scale_range", ("attempt_budget_exhausted", M, 1.+h2, 2, 0, 24),
                metrics(result))
-        record("adaptive_scale_retry_size", h2, step.call_args_list[3].args[3])
+        record("adaptive_scale_retry_size", Q(1.+h2)-1, step.call_args_list[3].args[3])
 
     seen = []
     record("unrepresentable_half_step", ("step_too_small", 0., 0., 0, 0, 0),
