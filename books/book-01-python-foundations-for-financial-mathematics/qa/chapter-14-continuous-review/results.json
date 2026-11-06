@@ -1,0 +1,267 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "bb67e3cd4e03240d454a0cadbdcedd22bae39fe6ab822dd55f9082399e3ff4b8",
+  "listing_sha256": "11ce8b403112172c1b1f63d4ec5becfa84456df2fe5331e7cb6090855c531b05",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "continuous_random_variables.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_density_origin (__main__.ContinuousTests.test_01_density_origin) ... ok\ntest_02_negative_density (__main__.ContinuousTests.test_02_negative_density) ... ok\ntest_03_cdf_origin (__main__.ContinuousTests.test_03_cdf_origin) ... ok\ntest_04_cdf_negative (__main__.ContinuousTests.test_04_cdf_negative) ... ok\ntest_05_cdf_one (__main__.ContinuousTests.test_05_cdf_one) ... ok\ntest_06_survival (__main__.ContinuousTests.test_06_survival) ... ok\ntest_07_interval (__main__.ContinuousTests.test_07_interval) ... ok\ntest_08_quantile (__main__.ContinuousTests.test_08_quantile) ... ok\ntest_09_median (__main__.ContinuousTests.test_09_median) ... ok\ntest_10_seed (__main__.ContinuousTests.test_10_seed) ... ok\ntest_11_sample_nonnegative (__main__.ContinuousTests.test_11_sample_nonnegative) ... ok\ntest_12_invalid (__main__.ContinuousTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import continuous_random_variables"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "continuous_random_variables.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 origin density",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "0.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 one-hour density",
+      "passed": true,
+      "actual": 0.3032653298563167,
+      "independent_reference": "0.3032653298563167118018997675",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 negative support",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 origin CDF",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 one-hour CDF",
+      "passed": true,
+      "actual": 0.3934693402873666,
+      "independent_reference": "0.3934693402873665763962004650",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 one-hour survival",
+      "passed": true,
+      "actual": 0.6065306597126334,
+      "independent_reference": "0.606530659712633423603799534991180453441918135487186955682892",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 two-hour survival",
+      "passed": true,
+      "actual": 0.36787944117144233,
+      "independent_reference": "0.367879441171442321595523770161460867445811131031767834507837",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 interval",
+      "passed": true,
+      "actual": 0.2386512185411911,
+      "independent_reference": "0.2386512185411911020082757648",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 median",
+      "passed": true,
+      "actual": 1.3862943611198906,
+      "independent_reference": "1.38629436111989061883446424291635313615100026872051050824136",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13/E20 90th percentile",
+      "passed": true,
+      "actual": 4.605170185988092,
+      "independent_reference": "4.60517018598809136803598290936872841520220297725754595206666",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 CDF and survival",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "point interval probability",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval crosses origin",
+      "passed": true,
+      "actual": 0.3934693402873666,
+      "independent_reference": "0.3934693402873665763962004650",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval below origin",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "tiny CDF not erased",
+      "passed": true,
+      "actual": 5e-21,
+      "independent_reference": "5e-21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F117 interval survives far-tail cancellation",
+      "passed": true,
+      "actual": 2.6854720659566e-18,
+      "independent_reference": "2.68547206595660022723835178775282386285918242557450295142528E-18",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F117 density survives intermediate underflow",
+      "passed": true,
+      "actual": 1.901684963475032e-18,
+      "independent_reference": "1.90168496347500643999545623673401637523297343478490481040955E-18",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 monotone CDF",
+      "passed": true
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('rate must be positive')"
+    },
+    {
+      "label": "reversed interval",
+      "passed": true,
+      "exception": "ValueError('invalid interval')"
+    },
+    {
+      "label": "unbounded quantile",
+      "passed": true,
+      "exception": "ValueError('p must lie in [0,1)')"
+    },
+    {
+      "label": "invalid sample size",
+      "passed": true,
+      "exception": "ValueError('n must be positive integer')"
+    },
+    {
+      "label": "F117 boolean time rejected",
+      "passed": true,
+      "exception": "ValueError('time must be finite and numeric')"
+    },
+    {
+      "label": "F117 string time rejected",
+      "passed": true,
+      "exception": "ValueError('time must be finite and numeric')"
+    },
+    {
+      "label": "F117 enormous integer rate rejected",
+      "passed": true,
+      "exception": "ValueError('rate exceeds float range')"
+    },
+    {
+      "label": "F117 unreportable quantile rejected",
+      "passed": true,
+      "exception": "ValueError('quantile must be finite and numeric')"
+    },
+    {
+      "label": "F117 unreportable sample rejected",
+      "passed": true,
+      "exception": "ValueError('draw must be finite and numeric')"
+    },
+    {
+      "label": "project reproducible sequence and inverse-CDF agreement",
+      "passed": true
+    },
+    {
+      "label": "project sample mean within four standard errors",
+      "passed": true,
+      "actual": 2.0052176550319896,
+      "standard_error": 0.01414213562373095
+    },
+    {
+      "label": "project nearest-rank quantile within four asymptotic standard errors",
+      "passed": true,
+      "actual": 4.60754341033821,
+      "standard_error": 0.04242640687119285
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "version": "14.8 synthetic fixture",
+    "rate_per_hour": 0.5,
+    "seed": 42,
+    "trials": 20000,
+    "analytic_mean_hours": "2",
+    "analytic_variance_hours_squared": "4",
+    "empirical_mean_hours": 2.0052176550319896,
+    "empirical_nearest_rank_q90_hours": 4.60754341033821
+  }
+}
