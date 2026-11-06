@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `2dccee14e57ace03c2fc58a3226ff7d4d19fc7d5`  
-**Latest scoped source revision:** `2dccee14e57ace03c2fc58a3226ff7d4d19fc7d5` (included in V-89)  
-**Disposition:** V-89 full candidate Linux pass includes Section 19.4 transition range; independent review and release approval pending.
+**Full-runtime candidate source revision:** `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`  
+**Latest scoped source revision:** `bf9d4fccf807a1ee631a737cb4b20e507808e0cc` (included in V-90)  
+**Disposition:** V-90 full candidate Linux pass includes Section 19.3 applied linear-account range; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-89](runtime-refresh-2026-11-06-r08.md): 554 compiled, 341 passed, 555 required hashes verified before/after. G2–G8 unchanged.
+[V-90](runtime-refresh-2026-11-06-r09.md): 555 compiled, 342 passed, 556 required hashes verified before/after. G2–G8 unchanged.
+
+[V-89](runtime-refresh-2026-11-06-r08.md): 554 compiled, 341 passed, 555 required hashes verified before/after.
 
 [V-88](runtime-refresh-2026-11-06-r07.md): 553 compiled, 340 passed, 554 required hashes verified before/after.
 
@@ -135,7 +137,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-89](runtime-refresh-2026-11-06-r08.md) at `2dccee14e57ace03c2fc58a3226ff7d4d19fc7d5`; 554 sources/341 scripts/555 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-90](runtime-refresh-2026-11-06-r09.md) at `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`; 555 sources/342 scripts/556 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -652,3 +654,11 @@ Next substantive item: [Section 19.7 standalone depletion baseline](chapter-19-s
 [V-89](runtime-refresh-2026-11-06-r08.md) compiled 554 files, passed 341 scripts and matched 555 required blobs before and after at `2dccee14e57ace03c2fc58a3226ff7d4d19fc7d5`. Chapter 19: 51 files and 41 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next: [Section 19.3 applied range baseline](chapter-19-linear-applied-range-baseline.md) records three finite results rejected by the actual Section 19.3 variable-rate, piecewise and Euler entry points. Check complete exponents, ordered segment balances and whole Euler updates. Wider capstone provenance and manual reviews remain open.
+
+## Applied linear-account follow-up — V-90
+
+[Section 19.3 applied range follow-up](chapter-19-linear-applied-range-followup.md) retains 12 baseline mismatches, an identical replay and a 27-case corrected pass. Independent references cover complete exponents, ordered segment states, affine Euler updates and actual assessment fields. This adds selected COV-84 evidence. Thirty-five selected categories remain partially addressed; none closed.
+
+[V-90](runtime-refresh-2026-11-06-r09.md) compiled 555 files, passed 342 scripts and matched 556 required blobs before and after at `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`. Chapter 19: 52 compiled files and 42 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-baseline.md) records finite growth, equilibrium and Euler failures, a rate endpoint boundary and an assessment output gap. Resume with independently derived expected results and reconcile the rate policy with Section 19.1. Wider capstone provenance and manual reviews remain open.
