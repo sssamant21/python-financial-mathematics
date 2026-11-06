@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-77 full candidate Linux pass (542 files, 329 scripts, 543 required hashes), including capstone replication and allocation. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-78 full candidate Linux pass (543 files, 330 scripts, 544 required hashes), including capstone account and cash-flow preflight. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 542/542 at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`. [V-77](runtime-refresh-2026-11-05-r19.md). |
-| Automated script execution | Full candidate Linux pass | 329/329 at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`; all 543 required hashes matched before/after. [V-77](runtime-refresh-2026-11-05-r19.md). |
+| Python compilation | Full candidate Linux pass | 543/543 at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. [V-78](runtime-refresh-2026-11-05-r20.md). |
+| Automated script execution | Full candidate Linux pass | 330/330 at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`; all 544 required hashes matched before/after. [V-78](runtime-refresh-2026-11-05-r20.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -753,3 +753,13 @@ Next substantive item: Section 21.5 replication screening, solve and residual ra
 [V-77](runtime-refresh-2026-11-05-r19.md) compiled 542 files, passed 329 scripts and matched 543 required blobs before and after at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`. Chapter 21 scope: 23 compiled files, 14 passing scripts. Independent review, supported-platform evidence and release approval remain pending.
 
 Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-account-range-baseline.md) reproduced four false overflow results in the unconstrained transition. Retain that initial evidence and build an independent account oracle for equilibrium, scaled growth and flow, cancellation and genuine overflow. Check the actual Section 21.9 account field and document the output underflow policy. Section 19.8's end-period exponent boundary, COV-88 provenance and requirement fulfillment, and wider manual obligations remain open.
+
+## Capstone account and requirements traceability — V-78
+
+[Account range](chapter-21-capstone-account-range-followup.md) retains 17 initial mismatches and a 29-case pass for the complete account transition and actual integrated field. It covers equilibria, scaled growth and flow, cancellation, signed zero, and genuine overflow while keeping the unconstrained final-state contract.
+
+[Requirements and preflight evidence](chapter-21-capstone-requirements-evidence-map.md) maps F1–F8 to implemented evidence and manual obligations. It retains the cash-flow preflight failure and the 16-test pass: both row orders now report the invalid date before discounting, and a valid one-shot iterator still works. The map distinguishes proposed diagnostics from the actual report and its pending placeholders. COV-88 is newly partially addressed; COV-90 gains selected account evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-78](runtime-refresh-2026-11-05-r20.md) compiled 543 files, passed 330 scripts and matched 544 required blobs before and after at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. Chapter 21: 24 compiled files and 15 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) records four finite-payment cases rejected under the documented exponent limit. Evaluate a bounded extension against independently derived end-period sums and genuine range failures; keep the Chapter 19 underflow contract. Wider Chapter 21 provenance, proofs and review remain open.
