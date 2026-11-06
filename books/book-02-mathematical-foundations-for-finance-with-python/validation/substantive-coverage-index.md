@@ -651,3 +651,11 @@ Next substantive item: [Section 19.9 event order baseline](chapter-19-project-ev
 [V-86](runtime-refresh-2026-11-06-r05.md) compiled 551 files, passed 338 scripts and matched 552 required blobs before and after at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`. Chapter 19: 48 compiled files and 38 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.7 terminal jump and interpolation baseline](chapter-19-jump-policy-crossing-baseline.md) reproduces a strictly later deposit that incorrectly rescues a terminal simulation and a finite interpolation rejected by intermediate overflow. Verify actual terminal and nonterminal behavior, keeping Section 19.7's distinct exact-tie policy. Wider capstone provenance and manual reviews remain open.
+
+## Terminal jump ordering and interpolation — V-87
+
+[Section 19.7 terminal jump and interpolation](chapter-19-jump-policy-crossing-followup.md) retains seven baseline mismatches and a 17-case pass. It checks event order before timestamp rounding, exact represented elapsed intervals, exact-coincidence and time-zero rescue, signed nonterminal continuation, and finite crossing interpolation. Section 19.9’s distinct depletion-first tie policy is unchanged. This adds selected COV-83 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-87](runtime-refresh-2026-11-06-r06.md) compiled 552 files, passed 339 scripts and matched 553 required blobs before and after at `f8e663fe51f1105dff594e5219320214076bafa8`. Chapter 19: 49 compiled files and 39 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.7 standalone depletion baseline](chapter-19-standalone-depletion-boundary-baseline.md) reproduces a false no-crossing classification and infinity from the standalone Section 19.7 helper. Check the exact threshold, finite range and actual assessment fields. Wider capstone provenance and manual reviews remain open.
