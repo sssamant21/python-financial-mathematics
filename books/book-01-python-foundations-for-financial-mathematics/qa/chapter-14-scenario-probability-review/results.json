@@ -1,0 +1,258 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "948aaea69a38b98a425aa8fc502b7724ccbda7f368d20c18cace0cd294215650",
+  "listing_sha256": "c7f4ab69ff7a699746027afd5daa34884201d736fe718c5fbdbae14035f80af7",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "why_probability_matters.py"
+      ],
+      "returncode": 0,
+      "stdout": "Expected payoff: 5.0\nVariance: 312.5\nProbability of loss: 0.25\nExpected loss below zero: 5.0\nSimulated mean: 4.95\n",
+      "stderr": "test_01_expectation (__main__.ProbabilityFinanceTests.test_01_expectation) ... ok\ntest_02_variance (__main__.ProbabilityFinanceTests.test_02_variance) ... ok\ntest_03_loss_probability (__main__.ProbabilityFinanceTests.test_03_loss_probability) ... ok\ntest_04_expected_shortfall (__main__.ProbabilityFinanceTests.test_04_expected_shortfall) ... ok\ntest_05_constant_payoff (__main__.ProbabilityFinanceTests.test_05_constant_payoff) ... ok\ntest_06_zero_probability (__main__.ProbabilityFinanceTests.test_06_zero_probability) ... ok\ntest_07_negative_expectation (__main__.ProbabilityFinanceTests.test_07_negative_expectation) ... ok\ntest_08_reproducible (__main__.ProbabilityFinanceTests.test_08_reproducible) ... ok\ntest_09_sample_count (__main__.ProbabilityFinanceTests.test_09_sample_count) ... ok\ntest_10_simulation_approximation (__main__.ProbabilityFinanceTests.test_10_simulation_approximation) ... ok\ntest_11_invalid_probability (__main__.ProbabilityFinanceTests.test_11_invalid_probability) ... ok\ntest_12_invalid_input (__main__.ProbabilityFinanceTests.test_12_invalid_input) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.116s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import why_probability_matters"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "why_probability_matters.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 modeled certainty",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 expected return",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 probability of loss",
+      "passed": true,
+      "actual": 0.4,
+      "independent_reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 two-point variance",
+      "passed": true,
+      "actual": 0.0216,
+      "independent_reference": "27/1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 payout",
+      "passed": true,
+      "actual": 30.0,
+      "independent_reference": "30",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 expected loss magnitude",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 expected loss magnitude",
+      "passed": true,
+      "actual": 0.005,
+      "independent_reference": "1/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 zero mean",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 variance",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 constant payoff variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project return",
+      "passed": true,
+      "actual": 0.0325,
+      "independent_reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project variance via pairwise differences",
+      "passed": true,
+      "actual": 0.01641875,
+      "independent_reference": "2627/160000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project probability of loss",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project expected loss contribution",
+      "passed": true,
+      "actual": 0.0375,
+      "independent_reference": "3/80",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F110 impossible outcomes cannot overflow variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F110 weighted variance despite oversized square",
+      "passed": true,
+      "actual": 1e+300,
+      "independent_reference": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F110 simulated mean despite overflow in sum",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 reject excess mass",
+      "passed": true,
+      "exception": "ValueError('nonempty probabilities must sum to one within 1e-12')"
+    },
+    {
+      "label": "project reject negative weight",
+      "passed": true,
+      "exception": "ValueError('probability outside [0, 1]')"
+    },
+    {
+      "label": "F110 unreportable variance",
+      "passed": true,
+      "exception": "ValueError('result exceeds finite float range')"
+    },
+    {
+      "label": "F110 unreportable nonzero mean",
+      "passed": true,
+      "exception": "ValueError('result outside reportable float range')"
+    },
+    {
+      "label": "nonfinite payoff",
+      "passed": true,
+      "exception": "ValueError('finite numeric inputs required')"
+    },
+    {
+      "label": "F110 near-unit mass normalized for theory",
+      "passed": true
+    },
+    {
+      "label": "project exact mass and variance",
+      "passed": true
+    },
+    {
+      "label": "project fixed-environment stream for seed 42",
+      "passed": true
+    },
+    {
+      "label": "project realized mean for seed 42",
+      "passed": true,
+      "actual": 0.033378,
+      "independent_reference": "16689/500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fixed-environment stream for seed 43",
+      "passed": true
+    },
+    {
+      "label": "project realized mean for seed 43",
+      "passed": true,
+      "actual": 0.033255,
+      "independent_reference": "6651/200000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project samples differ and errors within four standard errors",
+      "passed": true
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 22,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_standard_error": 0.0012813567028739498,
+  "project_seed_means": [
+    0.033378,
+    0.033255
+  ]
+}
