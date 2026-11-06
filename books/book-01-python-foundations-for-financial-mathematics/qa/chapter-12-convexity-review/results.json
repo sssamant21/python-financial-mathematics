@@ -1,0 +1,388 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "9a558c99fe5edc7f0082ff21ba2fb0d40909c376aac52b8d8c4e7381d928c4c9",
+  "listing_sha256": "dac7f2d1085f9e7b15442fea2eb479e0bddbd1467040e156bdece39a71f31c82",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "bond_convexity.py"
+      ],
+      "returncode": 0,
+      "stdout": "Price 1000.0 Duration 2.708596 Convexity 8.977373\n-100 bp {'exact_pct': 0.027540626807899142, 'duration_pct': 0.02708595721939094, 'duration_convexity_pct': 0.027534825865905995}\n-50 bp {'exact_pct': 0.013655916944486892, 'duration_pct': 0.01354297860969547, 'duration_convexity_pct': 0.013655195771324234}\n25 bp {'exact_pct': -0.006743524430376329, 'duration_pct': -0.006771489304847735, 'duration_convexity_pct': -0.006743435014440544}\n50 bp {'exact_pct': -0.013431474845730413, 'duration_pct': -0.01354297860969547, 'duration_convexity_pct': -0.013430761448066706}\n100 bp {'exact_pct': -0.026642765098892504, 'duration_pct': -0.02708595721939094, 'duration_convexity_pct': -0.026637088572875885}\n",
+      "stderr": "test_01_par (__main__.Tests.test_01_par) ... ok\ntest_02_negative_slope (__main__.Tests.test_02_negative_slope) ... ok\ntest_03_positive_curvature (__main__.Tests.test_03_positive_curvature) ... ok\ntest_04_positive_convexity (__main__.Tests.test_04_positive_convexity) ... ok\ntest_05_duration_positive (__main__.Tests.test_05_duration_positive) ... ok\ntest_06_zero_coupon (__main__.Tests.test_06_zero_coupon) ... ok\ntest_07_central_difference (__main__.Tests.test_07_central_difference) ... ok\ntest_08_up (__main__.Tests.test_08_up) ... ok\ntest_09_down (__main__.Tests.test_09_down) ... ok\ntest_10_improved_positive_shock (__main__.Tests.test_10_improved_positive_shock) ... ok\ntest_11_improved_negative_shock (__main__.Tests.test_11_improved_negative_shock) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "bond_convexity.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "independent base price",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000.0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent base slope",
+      "passed": true,
+      "actual": -2708.595721939094,
+      "independent_reference": "-2708.595721939095",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent base curvature",
+      "passed": true,
+      "actual": 8977.372930301095,
+      "independent_reference": "8977.372930301097",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent base modified_duration",
+      "passed": true,
+      "actual": 2.708595721939094,
+      "independent_reference": "2.7085957219390946",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent base convexity",
+      "passed": true,
+      "actual": 8.977372930301096,
+      "independent_reference": "8.977372930301096",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P15 closed-form zero convexity",
+      "passed": true,
+      "actual": 9.897257045904421,
+      "independent_reference": "105000/10609",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7\u2013P11 worked approximation arithmetic",
+      "passed": true
+    },
+    {
+      "label": "P12\u2013P14 bond inputs",
+      "passed": true
+    },
+    {
+      "label": "-200 bp exact_pct",
+      "passed": true,
+      "actual": 0.056014308906903974,
+      "independent_reference": "0.056014308906903974",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-200 bp duration_pct",
+      "passed": true,
+      "actual": 0.05417191443878188,
+      "independent_reference": "0.054171914438781894",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-200 bp duration_convexity_pct",
+      "passed": true,
+      "actual": 0.0559673890248421,
+      "independent_reference": "0.055967389024842114",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-200 bp second-order improves",
+      "passed": true,
+      "linear_error": 0.0018423944681220938,
+      "quadratic_error": 4.691988206187436e-05
+    },
+    {
+      "label": "-100 bp exact_pct",
+      "passed": true,
+      "actual": 0.027540626807899142,
+      "independent_reference": "0.027540626807899142",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-100 bp duration_pct",
+      "passed": true,
+      "actual": 0.02708595721939094,
+      "independent_reference": "0.027085957219390947",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-100 bp duration_convexity_pct",
+      "passed": true,
+      "actual": 0.027534825865905995,
+      "independent_reference": "0.027534825865906002",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-100 bp second-order improves",
+      "passed": true,
+      "linear_error": 0.0004546695885082018,
+      "quadratic_error": 5.80094199314693e-06
+    },
+    {
+      "label": "-50 bp exact_pct",
+      "passed": true,
+      "actual": 0.013655916944486892,
+      "independent_reference": "0.013655916944486892",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-50 bp duration_pct",
+      "passed": true,
+      "actual": 0.01354297860969547,
+      "independent_reference": "0.013542978609695474",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-50 bp duration_convexity_pct",
+      "passed": true,
+      "actual": 0.013655195771324234,
+      "independent_reference": "0.013655195771324237",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-50 bp second-order improves",
+      "passed": true,
+      "linear_error": 0.00011293833479142194,
+      "quadratic_error": 7.211731626582257e-07
+    },
+    {
+      "label": "-25 bp exact_pct",
+      "passed": true,
+      "actual": 0.00679963349715159,
+      "independent_reference": "0.00679963349715159",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-25 bp duration_pct",
+      "passed": true,
+      "actual": 0.006771489304847735,
+      "independent_reference": "0.006771489304847737",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-25 bp duration_convexity_pct",
+      "passed": true,
+      "actual": 0.006799543595254926,
+      "independent_reference": "0.006799543595254928",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "-25 bp second-order improves",
+      "passed": true,
+      "linear_error": 2.8144192303855044e-05,
+      "quadratic_error": 8.990189666411436e-08
+    },
+    {
+      "label": "+25 bp exact_pct",
+      "passed": true,
+      "actual": -0.006743524430376329,
+      "independent_reference": "-0.006743524430376329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+25 bp duration_pct",
+      "passed": true,
+      "actual": -0.006771489304847735,
+      "independent_reference": "-0.006771489304847737",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+25 bp duration_convexity_pct",
+      "passed": true,
+      "actual": -0.006743435014440544,
+      "independent_reference": "-0.006743435014440546",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+25 bp second-order improves",
+      "passed": true,
+      "linear_error": 2.796487447140599e-05,
+      "quadratic_error": 8.941593578493806e-08
+    },
+    {
+      "label": "+50 bp exact_pct",
+      "passed": true,
+      "actual": -0.013431474845730413,
+      "independent_reference": "-0.013431474845730413",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+50 bp duration_pct",
+      "passed": true,
+      "actual": -0.01354297860969547,
+      "independent_reference": "-0.013542978609695474",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+50 bp duration_convexity_pct",
+      "passed": true,
+      "actual": -0.013430761448066706,
+      "independent_reference": "-0.01343076144806671",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+50 bp second-order improves",
+      "passed": true,
+      "linear_error": 0.00011150376396505679,
+      "quadratic_error": 7.133976637069273e-07
+    },
+    {
+      "label": "+100 bp exact_pct",
+      "passed": true,
+      "actual": -0.026642765098892504,
+      "independent_reference": "-0.026642765098892504",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+100 bp duration_pct",
+      "passed": true,
+      "actual": -0.02708595721939094,
+      "independent_reference": "-0.027085957219390947",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+100 bp duration_convexity_pct",
+      "passed": true,
+      "actual": -0.026637088572875885,
+      "independent_reference": "-0.026637088572875892",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+100 bp second-order improves",
+      "passed": true,
+      "linear_error": 0.0004431921204984361,
+      "quadratic_error": 5.676526016618749e-06
+    },
+    {
+      "label": "+200 bp exact_pct",
+      "passed": true,
+      "actual": -0.05242136856746352,
+      "independent_reference": "-0.05242136856746352",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+200 bp duration_pct",
+      "passed": true,
+      "actual": -0.05417191443878188,
+      "independent_reference": "-0.054171914438781894",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+200 bp duration_convexity_pct",
+      "passed": true,
+      "actual": -0.05237643985272166,
+      "independent_reference": "-0.052376439852721675",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "+200 bp second-order improves",
+      "passed": true,
+      "linear_error": 0.0017505458713183639,
+      "quadratic_error": 4.492871474185561e-05
+    },
+    {
+      "label": "gain exceeds loss at symmetric shocks",
+      "passed": true
+    },
+    {
+      "label": "exact demo matches derived values",
+      "passed": true
+    },
+    {
+      "label": "F88 tiny exact relative change",
+      "passed": true,
+      "actual": -2.708595721939094e-25,
+      "independent_reference": "-20698911629760000000000002598584328000000000000000171061360000000000000000006291600000000000000000000123000000000000000000000001/76419346977856000000000022258062226560000000000002701221144000000000000000174836320000000000000000006365400000000000000000000123600000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite extreme curvature",
+      "passed": true,
+      "actual": 2e-157,
+      "independent_reference": "200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite relative risk despite overflowing absolute curvature",
+      "passed": true,
+      "actual": "{'exact_pct': -0.029409852072355556, 'duration_pct': -0.03, 'duration_convexity_pct': -0.0294}"
+    },
+    {
+      "label": "F54 reject overflowing curvature",
+      "passed": true,
+      "exception": "ValueError('slope outside supported range')"
+    },
+    {
+      "label": "F54 reject underflowed price",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "bump below yield domain rejected",
+      "passed": true,
+      "exception": "ValueError('periodic yield must exceed -100%')"
+    },
+    {
+      "label": "boolean shock rejected",
+      "passed": true,
+      "exception": "ValueError('invalid yield change')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
