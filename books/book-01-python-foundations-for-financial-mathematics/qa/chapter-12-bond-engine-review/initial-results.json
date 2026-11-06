@@ -1,0 +1,550 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "227176c3b8c3e997352aa81bd1f013c6f3d5f1c8d4566acb08b6ebc44738d76b",
+  "listing_sha256": "742892b001abbd50bb804f231ae8cf3c60c1c90b7dc2f278ced9368116c1922c",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "bond_analytics_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "Bond 1 {'price': 1000.0, 'macaulay': 2.789854, 'modified': 2.708596, 'convexity': 8.977373, 'dv01': 0.27086}\nRecovered YTM: 0.06\nBond 2 {'price': 1912.479361, 'macaulay': 4.569508, 'modified': 4.458056, 'convexity': 23.19441, 'dv01': 0.852594}\nRecovered YTM: 0.05\nBond 3 {'price': 1255.40752, 'macaulay': 4.0, 'modified': 3.91198, 'convexity': 17.21654, 'dv01': 0.491113}\nRecovered YTM: 0.045\nPortfolio shock -200 bp {'exact': 338.4469436990073, 'duration': 322.91332183603555, 'duration_convexity': 337.9033171820497}\nPortfolio shock -100 bp {'exact': 165.27110622893542, 'duration': 161.45666091801777, 'duration_convexity': 165.2041597545213}\nPortfolio shock -50 bp {'exact': 81.67351176757768, 'duration': 80.72833045900889, 'duration_convexity': 81.66520516813476}\nPortfolio shock 50 bp {'exact': -79.79964129465748, 'duration': -80.72833045900889, 'duration_convexity': -79.791455749883}\nPortfolio shock 100 bp {'exact': -157.77417146355594, 'duration': -161.45666091801777, 'duration_convexity': -157.70916208151422}\nPortfolio shock 200 bp {'exact': -308.43594559225403, 'duration': -322.91332183603555, 'duration_convexity': -307.9233264900214}\n",
+      "stderr": "test_01_cashflows (__main__.EngineTests.test_01_cashflows) ... ok\ntest_02_par_price (__main__.EngineTests.test_02_par_price) ... ok\ntest_03_ytm_roundtrip (__main__.EngineTests.test_03_ytm_roundtrip) ... ok\ntest_04_discount_price (__main__.EngineTests.test_04_discount_price) ... ok\ntest_05_macaulay (__main__.EngineTests.test_05_macaulay) ... ok\ntest_06_modified (__main__.EngineTests.test_06_modified) ... ok\ntest_07_convexity (__main__.EngineTests.test_07_convexity) ... ok\ntest_08_dv01 (__main__.EngineTests.test_08_dv01) ... ok\ntest_09_spot_flat_equivalence (__main__.EngineTests.test_09_spot_flat_equivalence) ... ok\ntest_10_scenario_improvement (__main__.EngineTests.test_10_scenario_improvement) ... ok\ntest_11_portfolio_additivity (__main__.EngineTests.test_11_portfolio_additivity) ... ok\ntest_12_validation (__main__.EngineTests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.003s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import bond_analytics_engine"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "bond_analytics_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "A cash-flow table",
+      "passed": true
+    },
+    {
+      "label": "C single promised principal",
+      "passed": true
+    },
+    {
+      "label": "bond 1 base analytics",
+      "passed": true,
+      "actual": "{'price': 1000.0, 'macaulay': 2.789853593597267, 'modified': 2.7085957219390937, 'convexity': 8.977372930301096, 'dv01': 0.2708595721939094}",
+      "expected": {
+        "price": 1000.0,
+        "macaulay": 2.7898535935972677,
+        "modified": 2.7085957219390946,
+        "convexity": 8.977372930301096,
+        "dv01": 0.2708595721939095
+      }
+    },
+    {
+      "label": "bond 1 roundtrip from independent price",
+      "passed": true,
+      "actual": 0.06000000000000298,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "demo bond 1 metrics and yield",
+      "passed": true
+    },
+    {
+      "label": "bond 2 base analytics",
+      "passed": true,
+      "actual": "{'price': 1912.4793606902906, 'macaulay': 4.569507732461663, 'modified': 4.458056324352842, 'convexity': 23.19440990761669, 'dv01': 0.852594070911963}",
+      "expected": {
+        "price": 1912.4793606902906,
+        "macaulay": 4.569507732461664,
+        "modified": 4.458056324352843,
+        "convexity": 23.194409907616695,
+        "dv01": 0.8525940709119634
+      }
+    },
+    {
+      "label": "bond 2 roundtrip from independent price",
+      "passed": true,
+      "actual": 0.04999999999999999,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "demo bond 2 metrics and yield",
+      "passed": true
+    },
+    {
+      "label": "bond 3 base analytics",
+      "passed": true,
+      "actual": "{'price': 1255.407519527443, 'macaulay': 4.0, 'modified': 3.9119804400977998, 'convexity': 17.216539834171247, 'dv01': 0.4911129660743053}",
+      "expected": {
+        "price": 1255.407519527443,
+        "macaulay": 4.000000000000002,
+        "modified": 3.911980440097801,
+        "convexity": 17.21653983417125,
+        "dv01": 0.49111296607430543
+      }
+    },
+    {
+      "label": "bond 3 roundtrip from independent price",
+      "passed": true,
+      "actual": 0.0449999999999985,
+      "independent_reference": "9/200",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "demo bond 3 metrics and yield",
+      "passed": true
+    },
+    {
+      "label": "-200 bp bond 1",
+      "passed": true,
+      "actual": "{'exact': 56.014308906904034, 'duration': 54.171914438781876, 'duration_convexity': 55.96738902484209, 'shocked_price': 1056.014308906904}",
+      "expected": {
+        "exact": 56.01430890690397,
+        "duration": 54.17191443878189,
+        "duration_convexity": 55.96738902484211,
+        "shocked_price": 1056.014308906904
+      }
+    },
+    {
+      "label": "-200 bp bond 2",
+      "passed": true,
+      "actual": "{'exact': 179.74248482825374, 'duration': 170.5188141823926, 'duration_convexity': 179.39058022873405, 'shocked_price': 2092.2218455185443}",
+      "expected": {
+        "exact": 179.74248482825368,
+        "duration": 170.51881418239267,
+        "duration_convexity": 179.39058022873414,
+        "shocked_price": 2092.2218455185443
+      }
+    },
+    {
+      "label": "-200 bp bond 3",
+      "passed": true,
+      "actual": "{'exact': 102.69014996384954, 'duration': 98.22259321486106, 'duration_convexity': 102.54534792847353, 'shocked_price': 1358.0976694912924}",
+      "expected": {
+        "exact": 102.69014996384968,
+        "duration": 98.22259321486109,
+        "duration_convexity": 102.54534792847356,
+        "shocked_price": 1358.0976694912924
+      }
+    },
+    {
+      "label": "-200 bp portfolio P&L",
+      "passed": true,
+      "actual": "{'exact': 338.4469436990073, 'duration': 322.91332183603555, 'duration_convexity': 337.9033171820497}",
+      "expected": {
+        "exact": 338.44694369900736,
+        "duration": 322.91332183603566,
+        "duration_convexity": 337.9033171820498
+      }
+    },
+    {
+      "label": "-200 bp demo portfolio",
+      "passed": true,
+      "actual": "{'exact': 338.4469436990073, 'duration': 322.91332183603555, 'duration_convexity': 337.9033171820497}",
+      "expected": {
+        "exact": 338.44694369900736,
+        "duration": 322.91332183603566,
+        "duration_convexity": 337.9033171820498
+      }
+    },
+    {
+      "label": "-200 bp quadratic improves aggregate",
+      "passed": true
+    },
+    {
+      "label": "-100 bp bond 1",
+      "passed": true,
+      "actual": "{'exact': 27.540626807899116, 'duration': 27.085957219390938, 'duration_convexity': 27.534825865905994, 'shocked_price': 1027.5406268078991}",
+      "expected": {
+        "exact": 27.54062680789914,
+        "duration": 27.085957219390945,
+        "duration_convexity": 27.534825865906,
+        "shocked_price": 1027.5406268078991
+      }
+    },
+    {
+      "label": "-100 bp bond 2",
+      "passed": true,
+      "actual": "{'exact': 87.52063930970962, 'duration': 85.2594070911963, 'duration_convexity': 87.47734860278166, 'shocked_price': 2000.0000000000002}",
+      "expected": {
+        "exact": 87.52063930970935,
+        "duration": 85.25940709119634,
+        "duration_convexity": 87.4773486027817,
+        "shocked_price": 2000.0
+      }
+    },
+    {
+      "label": "-100 bp bond 3",
+      "passed": true,
+      "actual": "{'exact': 50.209840111326685, 'duration': 49.11129660743053, 'duration_convexity': 50.191985285833645, 'shocked_price': 1305.6173596387696}",
+      "expected": {
+        "exact": 50.20984011132678,
+        "duration": 49.111296607430546,
+        "duration_convexity": 50.19198528583366,
+        "shocked_price": 1305.6173596387696
+      }
+    },
+    {
+      "label": "-100 bp portfolio P&L",
+      "passed": true,
+      "actual": "{'exact': 165.27110622893542, 'duration': 161.45666091801777, 'duration_convexity': 165.2041597545213}",
+      "expected": {
+        "exact": 165.27110622893525,
+        "duration": 161.45666091801783,
+        "duration_convexity": 165.20415975452136
+      }
+    },
+    {
+      "label": "-100 bp demo portfolio",
+      "passed": true,
+      "actual": "{'exact': 165.27110622893542, 'duration': 161.45666091801777, 'duration_convexity': 165.2041597545213}",
+      "expected": {
+        "exact": 165.27110622893525,
+        "duration": 161.45666091801783,
+        "duration_convexity": 165.20415975452136
+      }
+    },
+    {
+      "label": "-100 bp quadratic improves aggregate",
+      "passed": true
+    },
+    {
+      "label": "-50 bp bond 1",
+      "passed": true,
+      "actual": "{'exact': 13.655916944486876, 'duration': 13.542978609695469, 'duration_convexity': 13.655195771324232, 'shocked_price': 1013.6559169444869}",
+      "expected": {
+        "exact": 13.655916944486894,
+        "duration": 13.542978609695473,
+        "duration_convexity": 13.655195771324237,
+        "shocked_price": 1013.6559169444869
+      }
+    },
+    {
+      "label": "-50 bp bond 2",
+      "passed": true,
+      "actual": "{'exact': 43.189557565366385, 'duration': 42.62970354559815, 'duration_convexity': 43.18418892349449, 'shocked_price': 1955.668918255657}",
+      "expected": {
+        "exact": 43.18955756536642,
+        "duration": 42.62970354559817,
+        "duration_convexity": 43.18418892349451,
+        "shocked_price": 1955.668918255657
+      }
+    },
+    {
+      "label": "-50 bp bond 3",
+      "passed": true,
+      "actual": "{'exact': 24.828037257724418, 'duration': 24.555648303715266, 'duration_convexity': 24.825820473316046, 'shocked_price': 1280.2355567851673}",
+      "expected": {
+        "exact": 24.82803725772449,
+        "duration": 24.555648303715273,
+        "duration_convexity": 24.82582047331605,
+        "shocked_price": 1280.2355567851673
+      }
+    },
+    {
+      "label": "-50 bp portfolio P&L",
+      "passed": true,
+      "actual": "{'exact': 81.67351176757768, 'duration': 80.72833045900889, 'duration_convexity': 81.66520516813476}",
+      "expected": {
+        "exact": 81.6735117675778,
+        "duration": 80.72833045900892,
+        "duration_convexity": 81.66520516813479
+      }
+    },
+    {
+      "label": "-50 bp demo portfolio",
+      "passed": true,
+      "actual": "{'exact': 81.67351176757768, 'duration': 80.72833045900889, 'duration_convexity': 81.66520516813476}",
+      "expected": {
+        "exact": 81.6735117675778,
+        "duration": 80.72833045900892,
+        "duration_convexity": 81.66520516813479
+      }
+    },
+    {
+      "label": "-50 bp quadratic improves aggregate",
+      "passed": true
+    },
+    {
+      "label": "+50 bp bond 1",
+      "passed": true,
+      "actual": "{'exact': -13.431474845730463, 'duration': -13.542978609695469, 'duration_convexity': -13.430761448066706, 'shocked_price': 986.5685251542695}",
+      "expected": {
+        "exact": -13.431474845730413,
+        "duration": -13.542978609695473,
+        "duration_convexity": -13.43076144806671,
+        "shocked_price": 986.5685251542695
+      }
+    },
+    {
+      "label": "+50 bp bond 2",
+      "passed": true,
+      "actual": "{'exact': -42.080503141121426, 'duration': -42.62970354559815, 'duration_convexity': -42.075218167701806, 'shocked_price': 1870.3988575491692}",
+      "expected": {
+        "exact": -42.08050314112146,
+        "duration": -42.62970354559817,
+        "duration_convexity": -42.07521816770183,
+        "shocked_price": 1870.3988575491692
+      }
+    },
+    {
+      "label": "+50 bp bond 3",
+      "passed": true,
+      "actual": "{'exact': -24.287663307805587, 'duration': -24.555648303715266, 'duration_convexity': -24.285476134114486, 'shocked_price': 1231.1198562196373}",
+      "expected": {
+        "exact": -24.28766330780553,
+        "duration": -24.555648303715273,
+        "duration_convexity": -24.285476134114493,
+        "shocked_price": 1231.1198562196373
+      }
+    },
+    {
+      "label": "+50 bp portfolio P&L",
+      "passed": true,
+      "actual": "{'exact': -79.79964129465748, 'duration': -80.72833045900889, 'duration_convexity': -79.791455749883}",
+      "expected": {
+        "exact": -79.7996412946574,
+        "duration": -80.72833045900892,
+        "duration_convexity": -79.79145574988303
+      }
+    },
+    {
+      "label": "+50 bp demo portfolio",
+      "passed": true,
+      "actual": "{'exact': -79.79964129465748, 'duration': -80.72833045900889, 'duration_convexity': -79.791455749883}",
+      "expected": {
+        "exact": -79.7996412946574,
+        "duration": -80.72833045900892,
+        "duration_convexity": -79.79145574988303
+      }
+    },
+    {
+      "label": "+50 bp quadratic improves aggregate",
+      "passed": true
+    },
+    {
+      "label": "+100 bp bond 1",
+      "passed": true,
+      "actual": "{'exact': -26.642765098892482, 'duration': -27.085957219390938, 'duration_convexity': -26.637088572875882, 'shocked_price': 973.3572349011075}",
+      "expected": {
+        "exact": -26.642765098892504,
+        "duration": -27.085957219390945,
+        "duration_convexity": -26.637088572875893,
+        "shocked_price": 973.3572349011075
+      }
+    },
+    {
+      "label": "+100 bp bond 2",
+      "passed": true,
+      "actual": "{'exact': -83.08341742580706, 'duration': -85.2594070911963, 'duration_convexity': -83.04146557961093, 'shocked_price': 1829.3959432644835}",
+      "expected": {
+        "exact": -83.08341742580724,
+        "duration": -85.25940709119634,
+        "duration_convexity": -83.04146557961097,
+        "shocked_price": 1829.3959432644833
+      }
+    },
+    {
+      "label": "+100 bp bond 3",
+      "passed": true,
+      "actual": "{'exact': -48.047988938856406, 'duration': -49.11129660743053, 'duration_convexity': -48.03060792902742, 'shocked_price': 1207.3595305885865}",
+      "expected": {
+        "exact": -48.047988938856435,
+        "duration": -49.111296607430546,
+        "duration_convexity": -48.030607929027425,
+        "shocked_price": 1207.3595305885865
+      }
+    },
+    {
+      "label": "+100 bp portfolio P&L",
+      "passed": true,
+      "actual": "{'exact': -157.77417146355594, 'duration': -161.45666091801777, 'duration_convexity': -157.70916208151422}",
+      "expected": {
+        "exact": -157.77417146355617,
+        "duration": -161.45666091801783,
+        "duration_convexity": -157.70916208151428
+      }
+    },
+    {
+      "label": "+100 bp demo portfolio",
+      "passed": true,
+      "actual": "{'exact': -157.77417146355594, 'duration': -161.45666091801777, 'duration_convexity': -157.70916208151422}",
+      "expected": {
+        "exact": -157.77417146355617,
+        "duration": -161.45666091801783,
+        "duration_convexity": -157.70916208151428
+      }
+    },
+    {
+      "label": "+100 bp quadratic improves aggregate",
+      "passed": true
+    },
+    {
+      "label": "+200 bp bond 1",
+      "passed": true,
+      "actual": "{'exact': -52.42136856746356, 'duration': -54.171914438781876, 'duration_convexity': -52.37643985272166, 'shocked_price': 947.5786314325364}",
+      "expected": {
+        "exact": -52.42136856746352,
+        "duration": -54.17191443878189,
+        "duration_convexity": -52.376439852721674,
+        "shocked_price": 947.5786314325364
+      }
+    },
+    {
+      "label": "+200 bp bond 2",
+      "passed": true,
+      "actual": "{'exact': -161.9775203676295, 'duration': -170.5188141823926, 'duration_convexity': -161.64704813605113, 'shocked_price': 1750.501840322661}",
+      "expected": {
+        "exact": -161.9775203676293,
+        "duration": -170.51881418239267,
+        "duration_convexity": -161.6470481360512,
+        "shocked_price": 1750.5018403226613
+      }
+    },
+    {
+      "label": "+200 bp bond 3",
+      "passed": true,
+      "actual": "{'exact': -94.03705665716097, 'duration': -98.22259321486106, 'duration_convexity': -93.8998385012486, 'shocked_price': 1161.370462870282}",
+      "expected": {
+        "exact": -94.03705665716095,
+        "duration": -98.22259321486109,
+        "duration_convexity": -93.89983850124862,
+        "shocked_price": 1161.370462870282
+      }
+    },
+    {
+      "label": "+200 bp portfolio P&L",
+      "passed": true,
+      "actual": "{'exact': -308.43594559225403, 'duration': -322.91332183603555, 'duration_convexity': -307.9233264900214}",
+      "expected": {
+        "exact": -308.43594559225374,
+        "duration": -322.91332183603566,
+        "duration_convexity": -307.9233264900215
+      }
+    },
+    {
+      "label": "+200 bp demo portfolio",
+      "passed": true,
+      "actual": "{'exact': -308.43594559225403, 'duration': -322.91332183603555, 'duration_convexity': -307.9233264900214}",
+      "expected": {
+        "exact": -308.43594559225374,
+        "duration": -322.91332183603566,
+        "duration_convexity": -307.9233264900215
+      }
+    },
+    {
+      "label": "+200 bp quadratic improves aggregate",
+      "passed": true
+    },
+    {
+      "label": "flat effective spot at 6.09% reconciles to par",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nonflat spot valuation uses each date",
+      "passed": true,
+      "actual": 1069.089959378403,
+      "independent_reference": "1069.0899593784030117378897018645436734409738567456806569290131072",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F93 tiny notional YTM respects relative residual",
+      "passed": false,
+      "actual": 0.04999999999999999,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F93 tiny shock survives subtraction",
+      "passed": false,
+      "actual": "{'exact': 0.0, 'duration': -2.7085957219390937e-22, 'duration_convexity': -2.7085957219390937e-22, 'shocked_price': 1000.0}",
+      "expected": {
+        "exact": -2.708595721939094e-22,
+        "duration": -2.7085957219390946e-22,
+        "duration_convexity": -2.7085957219390946e-22,
+        "shocked_price": 1000.0
+      }
+    },
+    {
+      "label": "F54 finite spot PV despite discount underflow",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "7.5638913231041e-170",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F93 reject invalid solver tolerance",
+      "passed": false,
+      "actual": "0.07875976562499999"
+    },
+    {
+      "label": "F93 reject unachievable solver tolerance",
+      "passed": false,
+      "actual": "0.07904659626342429"
+    },
+    {
+      "label": "reject bracket without root",
+      "passed": true,
+      "exception": "ValueError('yield not bracketed')"
+    },
+    {
+      "label": "reject missing spot date",
+      "passed": true,
+      "exception": "ValueError('missing spot node at cashflow date')"
+    },
+    {
+      "label": "reject invalid shock",
+      "passed": true,
+      "exception": "ValueError('invalid shock')"
+    },
+    {
+      "label": "F54 reject overflowing analytics",
+      "passed": false,
+      "actual": "{'price': inf, 'macaulay': nan, 'modified': nan, 'convexity': nan, 'dv01': nan}"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "project_deliverable_records": 6,
+  "conceptual_prompts": [
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
