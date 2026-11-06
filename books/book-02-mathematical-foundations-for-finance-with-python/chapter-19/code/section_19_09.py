@@ -1,8 +1,10 @@
 """Book 02 Section 19.9: continuous account and depletion simulator."""
 import json
 import math
+from fractions import Fraction
 from section_19_08 import (depletion_time as _withdrawal_depletion,
-                           continuous_contributions as _continuous_transition)
+                           continuous_contributions as _continuous_transition,
+                           _continuous_balance, _depletion_elapsed)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -64,15 +66,18 @@ def simulate(initial,rate,flow,horizon,jumps=()):
         log.append({"type":"depletion","time":0.0})
         return _result("depleted",0,0,0.0,len(jumps),applied,log,inputs)
     for event_time,jump,is_scheduled in [(t,j,True) for t,j in scheduled]+[(T,0.0,False)]:
-        dt=event_time-time
-        crossing=depletion_time(a,r,u)
-        # Depletion takes precedence when simultaneous with a scheduled jump.
-        if crossing is not None and crossing<=dt:
-            event_at=time+crossing
+        start=Fraction(time)
+        dt=Fraction(event_time)-start
+        crossing=_depletion_elapsed(a,r,-u,for_order=True) if u<0 else None
+        # Order before rounding the reported absolute timestamp.
+        if crossing is not None and Fraction(crossing)<=dt:
+            event_at=float(start+Fraction(crossing))
             log.append({"type":"depletion","time":event_at})
             return _result("depleted",event_at,0.0,event_at,
                            len(jumps),applied,log,inputs)
-        a=transition(a,r,u,dt)
+        rounded_dt=float(dt)
+        a=(transition(a,r,u,rounded_dt) if Fraction(rounded_dt)==dt
+           else _continuous_balance(a,r,u,dt))
         time=event_time
         if a<=0:
             log.append({"type":"depletion","time":time})
