@@ -2,9 +2,11 @@
 import hashlib
 import json
 import math
+import os
 import platform
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 def input_digest(data):
@@ -35,9 +37,21 @@ def make_manifest(data):
 
 def _write_payload(path, manifest):
     payload = json.dumps(manifest, indent=2, sort_keys=True, allow_nan=False) + "\n"
-    # Exclusive creation protects existing evidence from accidental replacement.
-    with Path(path).open("x", encoding="utf-8") as handle:
-        handle.write(payload)
+    destination = Path(path)
+    staged = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", newline="\n", dir=destination.parent,
+            prefix=".evidence-", suffix=".tmp", delete=False,
+        ) as handle:
+            staged = Path(handle.name)
+            handle.write(payload)
+        # Publish only a closed file. Linking fails if the name already exists,
+        # including when another writer wins between staging and publication.
+        os.link(staged, destination)
+    finally:
+        if staged is not None:
+            staged.unlink(missing_ok=True)
 
 
 def write_manifest(path, data):
