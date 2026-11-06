@@ -635,3 +635,11 @@ Next substantive item: [Section 19.5 Euler range and grid baseline](chapter-19-e
 [V-84](runtime-refresh-2026-11-06-r03.md) compiled 549 files, passed 336 scripts and matched 550 required blobs before and after at `c7fb27159683d94cdf41aa1f6bd8a1cb6e5bd946`. Chapter 19: 46 compiled files and 36 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Euler amplification boundary baseline](chapter-19-euler-amplification-boundary-baseline.md) reproduces three discrepancies at the strict stability or cancellation boundaries. Verify complete-factor rounding separately from the exact classification and observed rounded trajectories. Wider capstone provenance and manual reviews remain open.
+
+## Euler analytical boundaries — V-85
+
+[Euler analytical boundaries](chapter-19-euler-analytical-boundary-followup.md) retains eight baseline mismatches and a 34-case pass. It checks exact stability separately from the rounded factor and observed Euler paths, and verifies the complete account benchmark and actual assessment fields. Existing Euler checks pass. This adds selected COV-84 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-85](runtime-refresh-2026-11-06-r04.md) compiled 550 files, passed 337 scripts and matched 551 required blobs before and after at `5621a516346213dd09780c0eba7c49a402aee143`. Chapter 19: 47 compiled files and 37 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.9 event order baseline](chapter-19-project-event-order-boundary-baseline.md) reproduces two deposits skipped because the rounded depletion time matched the jump time, although the deposits occurred strictly earlier. Verify ordering before timestamp rounding, keeping the exact-equality and time-zero policies, with actual event logs and independent zero- and nonzero-rate references. Wider capstone provenance and manual reviews remain open.
