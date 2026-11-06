@@ -77,3 +77,11 @@ Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-accoun
 [V-78](runtime-refresh-2026-11-05-r20.md) compiled 543 files, passed 330 scripts and matched 544 required blobs before and after at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. Chapter 21: 24 compiled files and 15 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) records four finite-payment cases rejected under the documented exponent limit. Evaluate a bounded extension against independently derived end-period sums and genuine range failures; keep the Chapter 19 underflow contract. Wider Chapter 21 provenance, proofs and review remain open.
+
+## Integrated capstone execution evidence — V-94
+
+[Chapter 21 integrated run receipt](chapter-21-integrated-provenance-followup.md) records actual Section 21.9 CLI bytes, source hashes, command and exit. All ten checks passed, including changed-source and altered-output detection and a retained real import failure. The report itself remains unchanged and retains pending status. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-94](runtime-refresh-2026-11-06-r13.md) compiled 559 files, passed 346 scripts and verified 560 required blobs before and after at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 21.4 central-difference baseline](chapter-21-central-difference-range-baseline.md) reproduces two finite complete stencil values rejected by the actual helper. Check COV-90 centered-difference arithmetic, existing perturbation guards and the actual integrated diagnostic. Wider capstone requirements and manual reviews remain open.
