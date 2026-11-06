@@ -2,7 +2,8 @@
 import json
 import math
 from fractions import Fraction
-from section_19_08 import _continuous_balance, _depletion_elapsed
+from section_19_08 import (_continuous_balance, _depletion_elapsed,
+                           depletion_time as _withdrawal_depletion)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -31,18 +32,7 @@ def depletion_time(initial,rate,withdrawal):
            ((initial,"initial"),(rate,"rate"),(withdrawal,"withdrawal")))
     if a<0 or w<0:
         raise ValueError("initial and withdrawal must be nonnegative")
-    if a==0:
-        return 0.0
-    if w==0:
-        return None
-    if r==0:
-        return a/w
-    ratio=r*a/w
-    if ratio==0:
-        return finite(a/w,"depletion time")
-    if ratio>=1:
-        return None
-    return finite(-math.log1p(-ratio)/r,"depletion time")
+    return _withdrawal_depletion(a,r,w)
 
 def linear_crossing(t0,t1,y0,y1):
     a,b,ya,yb=(finite(v,n) for v,n in
