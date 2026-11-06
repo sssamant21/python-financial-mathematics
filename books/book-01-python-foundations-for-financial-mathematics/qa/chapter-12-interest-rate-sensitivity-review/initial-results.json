@@ -1,0 +1,335 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "507858495ebe891d1e37a1a574b9c7aa4bbf7eba654f2a24143f3c71f1fa9da2",
+  "listing_sha256": "acf5eac82726742892fd55643a3add5ada2a451c97f5a72e0619c312544888ac",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "interest_rate_sensitivity.py"
+      ],
+      "returncode": 0,
+      "stdout": "Base analytics: {'price': 1000.0, 'duration': 2.7085957219390937, 'convexity': 8.977372930301096, 'dv01': 0.2708595721939094}\n-200 bp: {'exact': 56.014308906904034, 'duration': 54.171914438781876, 'second_order': 55.96738902484209}\n-100 bp: {'exact': 27.540626807899116, 'duration': 27.085957219390938, 'second_order': 27.53482586590599}\n-50 bp: {'exact': 13.655916944486876, 'duration': 13.542978609695469, 'second_order': 13.655195771324232}\n-25 bp: {'exact': 6.79963349715149, 'duration': 6.7714893048477345, 'second_order': 6.799543595254925}\n25 bp: {'exact': -6.743524430376283, 'duration': -6.7714893048477345, 'second_order': -6.743435014440543}\n50 bp: {'exact': -13.431474845730463, 'duration': -13.542978609695469, 'second_order': -13.430761448066704}\n100 bp: {'exact': -26.642765098892482, 'duration': -27.085957219390938, 'second_order': -26.637088572875882}\n200 bp: {'exact': -52.42136856746356, 'duration': -54.171914438781876, 'second_order': -52.37643985272165}\n",
+      "stderr": "test_01_par (__main__.Tests.test_01_par) ... ok\ntest_02_duration (__main__.Tests.test_02_duration) ... ok\ntest_03_convexity (__main__.Tests.test_03_convexity) ... ok\ntest_04_dv01 (__main__.Tests.test_04_dv01) ... ok\ntest_05_rise (__main__.Tests.test_05_rise) ... ok\ntest_06_fall (__main__.Tests.test_06_fall) ... ok\ntest_07_zero (__main__.Tests.test_07_zero) ... ok\ntest_08_quadratic_improves_up (__main__.Tests.test_08_quadratic_improves_up) ... ok\ntest_09_quadratic_improves_down (__main__.Tests.test_09_quadratic_improves_down) ... ok\ntest_10_portfolio_additivity (__main__.Tests.test_10_portfolio_additivity) ... ok\ntest_11_notional_scaling (__main__.Tests.test_11_notional_scaling) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "interest_rate_sensitivity.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "project bond 1 analytics",
+      "passed": true,
+      "actual": "{'price': 1000.0, 'duration': 2.7085957219390937, 'convexity': 8.977372930301096, 'dv01': 0.2708595721939094}",
+      "expected": {
+        "price": 1000.0,
+        "duration": 2.7085957219390946,
+        "convexity": 8.977372930301096,
+        "dv01": 0.2708595721939095
+      }
+    },
+    {
+      "label": "project bond 2 analytics",
+      "passed": true,
+      "actual": "{'price': 1912.4793606902906, 'duration': 4.4580563243528415, 'convexity': 23.19440990761669, 'dv01': 0.852594070911963}",
+      "expected": {
+        "price": 1912.4793606902906,
+        "duration": 4.458056324352843,
+        "convexity": 23.194409907616695,
+        "dv01": 0.8525940709119634
+      }
+    },
+    {
+      "label": "project bond 3 analytics",
+      "passed": true,
+      "actual": "{'price': 1255.407519527443, 'duration': 3.9119804400977998, 'convexity': 17.21653983417125, 'dv01': 0.4911129660743053}",
+      "expected": {
+        "price": 1255.407519527443,
+        "duration": 3.911980440097801,
+        "convexity": 17.21653983417125,
+        "dv01": 0.49111296607430543
+      }
+    },
+    {
+      "label": "F89 source portfolio base analytics",
+      "passed": false,
+      "exception": "AttributeError(\"module 'exact_portfolio' has no attribute 'portfolio_analytics'\")"
+    },
+    {
+      "label": "F89 project portfolio common -200 bp with explicit frequency",
+      "passed": false,
+      "exception": "ValueError('positive integer periods and frequency required')"
+    },
+    {
+      "label": "project -200 bp component reconciliation",
+      "passed": true
+    },
+    {
+      "label": "project -200 bp quadratic improves",
+      "passed": true
+    },
+    {
+      "label": "F89 project portfolio common -100 bp with explicit frequency",
+      "passed": false,
+      "exception": "ValueError('positive integer periods and frequency required')"
+    },
+    {
+      "label": "project -100 bp component reconciliation",
+      "passed": true
+    },
+    {
+      "label": "project -100 bp quadratic improves",
+      "passed": true
+    },
+    {
+      "label": "F89 project portfolio common -50 bp with explicit frequency",
+      "passed": false,
+      "exception": "ValueError('positive integer periods and frequency required')"
+    },
+    {
+      "label": "project -50 bp component reconciliation",
+      "passed": true
+    },
+    {
+      "label": "project -50 bp quadratic improves",
+      "passed": true
+    },
+    {
+      "label": "F89 project portfolio common +50 bp with explicit frequency",
+      "passed": false,
+      "actual": "{'exact': -0.15098398573832128, 'duration': -0.15098692040979506, 'second_order': -0.15098398569512472}",
+      "expected": {
+        "exact": -79.7996412946574,
+        "duration": -80.72833045900892,
+        "second_order": -79.79145574988303
+      }
+    },
+    {
+      "label": "project +50 bp component reconciliation",
+      "passed": true
+    },
+    {
+      "label": "project +50 bp quadratic improves",
+      "passed": true
+    },
+    {
+      "label": "F89 project portfolio common +100 bp with explicit frequency",
+      "passed": false,
+      "actual": "{'exact': -0.07574542920849581, 'duration': -0.0757461660341645, 'second_order': -0.07574542920288206}",
+      "expected": {
+        "exact": -157.77417146355617,
+        "duration": -161.45666091801783,
+        "second_order": -157.70916208151428
+      }
+    },
+    {
+      "label": "project +100 bp component reconciliation",
+      "passed": true
+    },
+    {
+      "label": "project +100 bp quadratic improves",
+      "passed": true
+    },
+    {
+      "label": "F89 project portfolio common +200 bp with explicit frequency",
+      "passed": false,
+      "actual": "{'exact': -0.037936286213152925, 'duration': -0.03793647081583995, 'second_order': -0.03793628621243431}",
+      "expected": {
+        "exact": -308.43594559225374,
+        "duration": -322.91332183603566,
+        "second_order": -307.9233264900215
+      }
+    },
+    {
+      "label": "project +200 bp component reconciliation",
+      "passed": true
+    },
+    {
+      "label": "project +200 bp quadratic improves",
+      "passed": true
+    },
+    {
+      "label": "F89 mixed frequencies and fractional bp",
+      "passed": false,
+      "exception": "ValueError('positive integer periods and frequency required')"
+    },
+    {
+      "label": "DV01 scales with face",
+      "passed": true,
+      "actual": 2.7085957219390946,
+      "independent_reference": "2.7085957219390946",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero shock all outputs",
+      "passed": true,
+      "actual": "{'exact': 0.0, 'duration': 0.0, 'second_order': 0.0}",
+      "expected": {
+        "exact": 0.0,
+        "duration": 0.0,
+        "second_order": 0.0
+      }
+    },
+    {
+      "label": "F89 tiny exact price change",
+      "passed": false,
+      "actual": "{'exact': 0.0, 'duration': -2.7085957219390937e-22, 'second_order': -2.7085957219390937e-22}",
+      "expected": {
+        "exact": -2.708595721939094e-22,
+        "duration": -2.7085957219390946e-22,
+        "second_order": -2.7085957219390946e-22
+      }
+    },
+    {
+      "label": "P6\u2013P11 exercise basis points and P&L",
+      "passed": true
+    },
+    {
+      "label": "demo base",
+      "passed": true,
+      "actual": "{'price': 1000.0, 'duration': 2.7085957219390937, 'convexity': 8.977372930301096, 'dv01': 0.2708595721939094}",
+      "expected": {
+        "price": 1000.0,
+        "duration": 2.7085957219390946,
+        "convexity": 8.977372930301096,
+        "dv01": 0.2708595721939095
+      }
+    },
+    {
+      "label": "demo shock -200",
+      "passed": true,
+      "actual": "{'exact': 56.014308906904034, 'duration': 54.171914438781876, 'second_order': 55.96738902484209}",
+      "expected": {
+        "exact": 56.01430890690397,
+        "duration": 54.17191443878189,
+        "second_order": 55.96738902484211
+      }
+    },
+    {
+      "label": "demo shock -100",
+      "passed": true,
+      "actual": "{'exact': 27.540626807899116, 'duration': 27.085957219390938, 'second_order': 27.53482586590599}",
+      "expected": {
+        "exact": 27.54062680789914,
+        "duration": 27.085957219390945,
+        "second_order": 27.534825865906
+      }
+    },
+    {
+      "label": "demo shock -50",
+      "passed": true,
+      "actual": "{'exact': 13.655916944486876, 'duration': 13.542978609695469, 'second_order': 13.655195771324232}",
+      "expected": {
+        "exact": 13.655916944486894,
+        "duration": 13.542978609695473,
+        "second_order": 13.655195771324237
+      }
+    },
+    {
+      "label": "demo shock -25",
+      "passed": true,
+      "actual": "{'exact': 6.79963349715149, 'duration': 6.7714893048477345, 'second_order': 6.799543595254925}",
+      "expected": {
+        "exact": 6.79963349715159,
+        "duration": 6.771489304847736,
+        "second_order": 6.799543595254928
+      }
+    },
+    {
+      "label": "demo shock 25",
+      "passed": true,
+      "actual": "{'exact': -6.743524430376283, 'duration': -6.7714893048477345, 'second_order': -6.743435014440543}",
+      "expected": {
+        "exact": -6.743524430376329,
+        "duration": -6.771489304847736,
+        "second_order": -6.7434350144405455
+      }
+    },
+    {
+      "label": "demo shock 50",
+      "passed": true,
+      "actual": "{'exact': -13.431474845730463, 'duration': -13.542978609695469, 'second_order': -13.430761448066704}",
+      "expected": {
+        "exact": -13.431474845730413,
+        "duration": -13.542978609695473,
+        "second_order": -13.43076144806671
+      }
+    },
+    {
+      "label": "demo shock 100",
+      "passed": true,
+      "actual": "{'exact': -26.642765098892482, 'duration': -27.085957219390938, 'second_order': -26.637088572875882}",
+      "expected": {
+        "exact": -26.642765098892504,
+        "duration": -27.085957219390945,
+        "second_order": -26.637088572875893
+      }
+    },
+    {
+      "label": "demo shock 200",
+      "passed": true,
+      "actual": "{'exact': -52.42136856746356, 'duration': -54.171914438781876, 'second_order': -52.37643985272165}",
+      "expected": {
+        "exact": -52.42136856746352,
+        "duration": -54.17191443878189,
+        "second_order": -52.376439852721674
+      }
+    },
+    {
+      "label": "F54 finite shock despite out-of-range absolute slope",
+      "passed": false,
+      "actual": "{'exact': -2.9994000999841585e+304, 'duration': -inf, 'second_order': nan}",
+      "expected": {
+        "exact": -2.999400099985002e+304,
+        "duration": -3.000000000000001e+304,
+        "second_order": -2.999400000000001e+304
+      }
+    },
+    {
+      "label": "F89 position row arity rejected",
+      "passed": true,
+      "exception": "TypeError(\"shock() missing 1 required positional argument: 'bp'\")"
+    },
+    {
+      "label": "F89 invalid explicit frequency rejected",
+      "passed": true,
+      "exception": "ValueError('invalid shock')"
+    },
+    {
+      "label": "F54 reject unrepresentable bond output",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "negative bumped periodic base rejected",
+      "passed": true,
+      "exception": "ValueError('invalid bond terms')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "historical_unique_methods_added": 0
+}
