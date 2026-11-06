@@ -1,0 +1,255 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "dd8b3698671aafbb0d0ec0564b50ccf309ddedf25b0f2290505258100ebe8b66",
+  "listing_sha256": "27e7b43975a443485c048c967015a61b3d74439cbcbf637d12d7a1fdad92d22d",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "random_variables.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_distribution (__main__.RandomVariableTests.test_01_distribution) ... ok\ntest_02_expectation (__main__.RandomVariableTests.test_02_expectation) ... ok\ntest_03_variance (__main__.RandomVariableTests.test_03_variance) ... ok\ntest_04_sd (__main__.RandomVariableTests.test_04_sd) ... ok\ntest_05_loss_event (__main__.RandomVariableTests.test_05_loss_event) ... ok\ntest_06_positive_event (__main__.RandomVariableTests.test_06_positive_event) ... ok\ntest_07_constant (__main__.RandomVariableTests.test_07_constant) ... ok\ntest_08_transform (__main__.RandomVariableTests.test_08_transform) ... ok\ntest_09_aggregation (__main__.RandomVariableTests.test_09_aggregation) ... ok\ntest_10_reproducibility (__main__.RandomVariableTests.test_10_reproducibility) ... ok\ntest_11_simulation_length (__main__.RandomVariableTests.test_11_simulation_length) ... ok\ntest_12_invalid (__main__.RandomVariableTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import random_variables"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "random_variables.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E2 point mass",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 mean",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 variance from second moment",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "625/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 SD",
+      "passed": true,
+      "actual": 17.67766952966369,
+      "independent_reference": "17.67766952966369",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 negative",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 positive",
+      "passed": true,
+      "actual": 0.75,
+      "independent_reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 transformed mean",
+      "passed": true,
+      "actual": 11.0,
+      "independent_reference": "11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 transformed variance",
+      "passed": true,
+      "actual": 1250.0,
+      "independent_reference": "1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 constant variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 Bernoulli mean",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 default loss",
+      "passed": true,
+      "actual": 80.0,
+      "independent_reference": "80",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 inclusive CDF",
+      "passed": true,
+      "actual": 0.75,
+      "independent_reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 strict CDF",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 threshold",
+      "passed": true,
+      "actual": 0.75,
+      "independent_reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 expected loss",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F115 distinct adjacent integer payoff variance",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F115 zero-weight state cannot overflow variance",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F115 weighted variance despite oversized square",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "E11 aggregation",
+      "passed": true
+    },
+    {
+      "label": "project PMF",
+      "passed": true
+    },
+    {
+      "label": "F115 normalized whole-space mass",
+      "passed": false
+    },
+    {
+      "label": "missing mapping",
+      "passed": true,
+      "exception": "ValueError('mapping must cover all outcomes')"
+    },
+    {
+      "label": "extra mapping",
+      "passed": true,
+      "exception": "ValueError('mapping must cover all outcomes')"
+    },
+    {
+      "label": "invalid weights",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one')"
+    },
+    {
+      "label": "nonfinite payoff",
+      "passed": true,
+      "exception": "ValueError('random variable values must be finite numbers')"
+    },
+    {
+      "label": "F115 invalid oversized probability",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F115 unreportable variance",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "project all 10000 outcomes match inverse-CDF replay",
+      "passed": true
+    },
+    {
+      "label": "project sample mean within four theoretical standard errors",
+      "passed": true
+    },
+    {
+      "label": "test-only source emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "seed": 42,
+    "trials": 10000,
+    "counts": {
+      "5": 5058,
+      "-20": 2481,
+      "30": 2461
+    },
+    "mean": "99/20",
+    "standard_error": 0.1767766952966369
+  }
+}
