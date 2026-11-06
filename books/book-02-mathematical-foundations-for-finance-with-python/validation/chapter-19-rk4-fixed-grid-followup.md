@@ -1,0 +1,9 @@
+# Section 19.6 — Fixed RK4 grid and horizon alignment
+
+Baseline `41342a08f9f874a6f87154ffe49c93a8cafc55b1` with the final checker overlaid: nine of 19 checks disagreed. Corrected executable revision `22336bded4cb65dce8a0557561e7095978fd403f`: all 19 passed. The [raw log](chapter-19-rk4-fixed-grid-followup.json) retains the first baseline, expanded baseline replay, corrected rerun, and both Chapter 19 source manifests. The [original two probes](chapter-19-rk4-fixed-grid-baseline.md) are retained.
+
+The fixed driver rounds each ideal endpoint `n*T/steps` separately. It uses the exact difference between adjacent represented endpoints for the RK4 increment. Consequently each step shares an endpoint with the next and the final callback endpoint is the reported horizon. If any represented endpoints fail to increase, it rejects the grid before invoking the callback. On valid grids the driver still reports four evaluations per step. This does not change the adaptive controller or force midpoint callback times to be distinct from the endpoints of a very narrow interval.
+
+Independent expectations use exact constant-derivative integration, hand-derived subnormal tick and midpoint sequences, and exact integrals of linear and quadratic time-only slopes. The tests observe the actual callback times, output balances, evaluation counts, grid rejection and zero-horizon identity. They exercise both the original overshoot and undershoot. The ordinary Section 19.6 checks, RK4 range checks and time-varying forcing checks also pass. [V-81](runtime-refresh-2026-11-05-r23.md) records the full candidate Linux run.
+
+Run [the checker](../chapter-19/code/check_rk4_fixed_grid.py) from the book root: `python chapter-19/code/check_rk4_fixed_grid.py`. To replay baseline, overlay only that checker onto the baseline revision. This adds selected COV-82 evidence. Adaptive represented-clock alignment, broad error guarantees and independent review remain open.
