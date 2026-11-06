@@ -1,0 +1,331 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "18a614784964914f5dae3251e4d39b7358d695a7e8f37d89a70b97dddfc90d14",
+  "listing_sha256": "dbc3c1747de066f0282c024246c6669f110d247c130d5fa6fd68fd28884ae9d6",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "arithmetic_geometric_means.py"
+      ],
+      "returncode": 0,
+      "stdout": "Arithmetic mean: 0.0000%\nGeometric mean: -13.3975%\nCumulative return: -25.0000%\nTerminal wealth: $750.00\n",
+      "stderr": "test_01_arithmetic (__main__.MeanReturnTests.test_01_arithmetic) ... ok\ntest_02_geometric (__main__.MeanReturnTests.test_02_geometric) ... ok\ntest_03_cumulative (__main__.MeanReturnTests.test_03_cumulative) ... ok\ntest_04_wealth (__main__.MeanReturnTests.test_04_wealth) ... ok\ntest_05_equivalent (__main__.MeanReturnTests.test_05_equivalent) ... ok\ntest_06_constant (__main__.MeanReturnTests.test_06_constant) ... ok\ntest_07_inequality (__main__.MeanReturnTests.test_07_inequality) ... ok\ntest_08_zero_loss (__main__.MeanReturnTests.test_08_zero_loss) ... ok\ntest_09_variance (__main__.MeanReturnTests.test_09_variance) ... ok\ntest_10_approximation (__main__.MeanReturnTests.test_10_approximation) ... ok\ntest_11_roundtrip (__main__.MeanReturnTests.test_11_roundtrip) ... ok\ntest_12_invalid (__main__.MeanReturnTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.061s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import arithmetic_geometric_means"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "arithmetic_geometric_means.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 arithmetic mean",
+      "passed": true,
+      "actual": 0.15,
+      "independent_reference": "3/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 geometric mean",
+      "passed": true,
+      "actual": 0.14891252930760573,
+      "independent_reference": "0.1489125293076057319701222936437858636440528915965584735399754941",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 arithmetic mean",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 cumulative loss",
+      "passed": true,
+      "actual": -0.25,
+      "independent_reference": "-1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 geometric loss",
+      "passed": true,
+      "actual": -0.13397459621556135,
+      "independent_reference": "-0.13397459621556135323627682924706381652859737309480968597209651027",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 terminal wealth",
+      "passed": true,
+      "actual": 750.0,
+      "independent_reference": "750",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 constant geometric mean",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 arithmetic mixed",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 geometric mixed",
+      "passed": true,
+      "actual": 0.039230484541326376,
+      "independent_reference": "0.0392304845413263761164678049035234201656831522862283768334841877",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 recovery product",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 recovery arithmetic",
+      "passed": true,
+      "actual": 0.025,
+      "independent_reference": "1/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 recovery geometric",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 variance uses n",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 variance drag",
+      "passed": true,
+      "actual": -0.005,
+      "independent_reference": "-1/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 exact mean",
+      "passed": true,
+      "actual": -0.005012562893380045,
+      "independent_reference": "-0.00501256289338004526552017899879399482187343632319392088239535617",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 annual growth via equivalent wealth",
+      "passed": true,
+      "actual": 0.12682503013196977,
+      "independent_reference": "126825030131969720661201/1000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 total loss",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F102 finite terminal wealth despite cumulative saturation",
+      "passed": true,
+      "actual": 1e+288,
+      "independent_reference": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite mean despite sum overflow",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite variance despite sum overflow",
+      "passed": true,
+      "actual": 2.5e+307,
+      "independent_reference": "25000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite equivalent wealth despite intermediate overflow",
+      "passed": true,
+      "actual": 1e+32,
+      "independent_reference": "1e+32",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project arithmetic mean",
+      "passed": true,
+      "actual": 0.011666666666666667,
+      "independent_reference": "7/600",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project cumulative",
+      "passed": true,
+      "actual": 0.06210548864,
+      "independent_reference": "48519913/781250000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project geometric",
+      "passed": true,
+      "actual": 0.010092800190824975,
+      "independent_reference": "0.0100928001908249750564940804371133103282904784989137416330904372",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project terminal wealth",
+      "passed": true,
+      "actual": 21242.1097728,
+      "independent_reference": "1659539826/78125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project equivalent terminal wealth",
+      "passed": true,
+      "actual": 21242.1097728,
+      "independent_reference": "1659539826/78125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project population variance",
+      "passed": true,
+      "actual": 0.0031805555555555554,
+      "independent_reference": "229/72000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximate geometric",
+      "passed": true,
+      "actual": 0.010076388888888888,
+      "independent_reference": "1451/144000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project annualized growth",
+      "passed": true,
+      "actual": 0.12806806899921308,
+      "independent_reference": "78166546020027569/610351562500000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project zero-factor stress",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project AM\u2013GM and nonzero variance-drag error",
+      "passed": true
+    },
+    {
+      "label": "contextual exact expression with supplied math and returns",
+      "passed": true,
+      "actual": 0.010092800190824978,
+      "independent_reference": "0.0100928001908249750564940804371133103282904784989137416330904372",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 unrepresentable variance rejected",
+      "passed": true,
+      "exception": "ValueError('population variance outside supported range')"
+    },
+    {
+      "label": "F54 unrepresentable wealth rejected",
+      "passed": true,
+      "exception": "ValueError('terminal wealth outside supported range')"
+    },
+    {
+      "label": "F102 positive gross cannot report complete loss",
+      "passed": true,
+      "exception": "ValueError('positive gross return rounds to total loss')"
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    },
+    {
+      "label": "F102 worked final numbers supplied",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "contextual_fragments": 1,
+  "conceptual_prompts": [
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
