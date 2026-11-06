@@ -228,3 +228,11 @@ Next: [Section 19.3 applied range baseline](chapter-19-linear-applied-range-base
 [V-90](runtime-refresh-2026-11-06-r09.md) compiled 555 files, passed 342 scripts and matched 556 required blobs before and after at `bf9d4fccf807a1ee631a737cb4b20e507808e0cc`. Chapter 19: 52 compiled files and 42 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-baseline.md) records finite growth, equilibrium and Euler failures, a rate endpoint boundary and an assessment output gap. Resume with independently derived expected results and reconcile the rate policy with Section 19.1. Wider capstone provenance and manual reviews remain open.
+
+## Introductory account range and assessment — V-91
+
+[Section 19.1 range and assessment](chapter-19-introductory-range-followup.md) retains 21 baseline mismatches, an identical replay, one intermediate signed-zero mismatch, and a 39-case final pass. This adds selected COV-84 evidence for complete balances, the effective-rate endpoint and actual Euler error fields. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-91](runtime-refresh-2026-11-06-r10.md) compiled 556 Python files, passed 343 scripts and verified 557 required blobs before and after at `b8d9ad694136393a36aca2c06d9c0798062cb21c`. Chapter 19: 53 compiled files and 43 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 20.7 execution provenance baseline](chapter-20-execution-provenance-baseline.md) starts the outstanding COV-86 checks for actual source, environment, command and output provenance. The synthetic example’s pending fields are verified and intentional. Wider Chapter 19 capstone provenance and manual reviews remain open.
