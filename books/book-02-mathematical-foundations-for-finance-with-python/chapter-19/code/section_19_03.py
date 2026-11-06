@@ -1,6 +1,10 @@
 """Book 02 Section 19.3: linear first-order financial equations."""
 import json
 import math
+from fractions import Fraction
+from section_19_02 import _scaled_exponential
+from section_19_08 import (_continuous_balance, _euler_balance,
+                           depletion_time as _withdrawal_depletion)
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -18,32 +22,25 @@ def account(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)+u*factor,"balance")
+    if t==0:
+        return a
+    return _continuous_balance(a,r,u,t,reject_underflow=False)
 
 def depletion_time(initial,rate,withdrawal):
     a,r,w=(finite(v,n) for v,n in
            ((initial,"initial"),(rate,"rate"),(withdrawal,"withdrawal")))
     if a<=0 or r<0 or w<=0:
         raise ValueError("requires positive balance and withdrawal, nonnegative rate")
-    if r==0:
-        return a/w
-    if w<=r*a:
-        return None
-    ratio=r*a/w
-    if ratio==0:
-        return finite(a/w,"depletion time")
-    return finite(-math.log1p(-ratio)/r,"depletion time")
+    return _withdrawal_depletion(a,r,w)
 
 def variable_rate_no_flow(initial,base,slope,years):
     a,r,b,t=(finite(v,n) for v,n in
              ((initial,"initial"),(base,"base"),(slope,"slope"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    return finite(a*math.exp(r*t+0.5*b*t*t),"balance")
+    time=Fraction(t)
+    exponent=Fraction(r)*time+Fraction(b)*time**2/2
+    return _scaled_exponential(a,exponent,reject_underflow=False)
 
 def piecewise_account(initial,rate,segments):
     a=finite(initial,"initial")
@@ -62,10 +59,7 @@ def euler_account(initial,rate,flow,years,steps):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid years or step count")
-    h=t/steps
-    for _ in range(steps):
-        a=finite(a+h*(r*a+u),"Euler balance")
-    return a
+    return _euler_balance(a,r,u,t,steps,reject_underflow=False)
 
 def assessment():
     exact=account(1000,0.04,200,5)
