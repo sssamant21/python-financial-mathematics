@@ -1,0 +1,394 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "50df2ee125bb1964947fe96fe4de4d40b2f714f046119ca38bb0230bf01674f5",
+  "listing_sha256": "32a517a9246f22c4cdc164dae510d5930df1b63274970e16156e4b1afe0af75d",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "amortization_schedules.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'period': 1, 'opening': Decimal('10000.00'), 'payment': Decimal('443.21'), 'interest': Decimal('50.00'), 'principal': Decimal('393.21'), 'closing': Decimal('9606.79')}\n{'period': 2, 'opening': Decimal('9606.79'), 'payment': Decimal('443.21'), 'interest': Decimal('48.03'), 'principal': Decimal('395.18'), 'closing': Decimal('9211.61')}\n{'period': 3, 'opening': Decimal('9211.61'), 'payment': Decimal('443.21'), 'interest': Decimal('46.06'), 'principal': Decimal('397.15'), 'closing': Decimal('8814.46')}\nFinal: {'period': 24, 'opening': Decimal('440.91'), 'payment': Decimal('443.11'), 'interest': Decimal('2.20'), 'principal': Decimal('440.91'), 'closing': Decimal('0.00')}\n",
+      "stderr": "test_01_row_count (__main__.Tests.test_01_row_count) ... ok\ntest_02_first_interest (__main__.Tests.test_02_first_interest) ... ok\ntest_03_first_balance (__main__.Tests.test_03_first_balance) ... ok\ntest_04_component_identity (__main__.Tests.test_04_component_identity) ... ok\ntest_05_balance_identity (__main__.Tests.test_05_balance_identity) ... ok\ntest_06_total_principal (__main__.Tests.test_06_total_principal) ... ok\ntest_07_total_interest (__main__.Tests.test_07_total_interest) ... ok\ntest_08_final_balance (__main__.Tests.test_08_final_balance) ... ok\ntest_09_zero_rate (__main__.Tests.test_09_zero_rate) ... ok\ntest_10_rounded_final (__main__.Tests.test_10_rounded_final) ... ok\ntest_11_rounded_reconcile (__main__.Tests.test_11_rounded_reconcile) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "amortization_schedules.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 exact six-column contract",
+      "passed": true
+    },
+    {
+      "label": "all exact rows vs independent Fraction recurrence",
+      "passed": true
+    },
+    {
+      "label": "F68 printed table row 1",
+      "passed": true,
+      "actual": [
+        "10000.00",
+        "50.00",
+        "393.21",
+        "443.21",
+        "9606.79"
+      ],
+      "expected": [
+        "10000.00",
+        "50.00",
+        "393.21",
+        "443.21",
+        "9606.79"
+      ]
+    },
+    {
+      "label": "F68 printed table row 2",
+      "passed": true,
+      "actual": [
+        "9606.79",
+        "48.03",
+        "395.17",
+        "443.21",
+        "9211.62"
+      ],
+      "expected": [
+        "9606.79",
+        "48.03",
+        "395.17",
+        "443.21",
+        "9211.62"
+      ]
+    },
+    {
+      "label": "F68 printed table row 3",
+      "passed": true,
+      "actual": [
+        "9211.62",
+        "46.06",
+        "397.15",
+        "443.21",
+        "8814.47"
+      ],
+      "expected": [
+        "9211.62",
+        "46.06",
+        "397.15",
+        "443.21",
+        "8814.47"
+      ]
+    },
+    {
+      "label": "P2\u2013P5 row 1 interest",
+      "passed": true,
+      "actual": 50.0,
+      "independent_reference": "50",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2\u2013P5 row 1 principal",
+      "passed": true,
+      "actual": 393.20610252756904,
+      "independent_reference": "838860800000000000000000000000000000000000000000000000000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2\u2013P5 row 1 closing",
+      "passed": true,
+      "actual": 9606.793897472431,
+      "independent_reference": "20495009519095176093048237503090636925189622978030448010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2\u2013P5 row 2 interest",
+      "passed": true,
+      "actual": 48.03396948736216,
+      "independent_reference": "102475047595475880465241187515453184625948114890152240050/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 exact payment identity",
+      "passed": true
+    },
+    {
+      "label": "P7 exact balance identity",
+      "passed": true
+    },
+    {
+      "label": "P8 exact principal total",
+      "passed": true,
+      "actual": 10000.0,
+      "independent_reference": "10000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 exact interest total",
+      "passed": true,
+      "actual": 636.9464606616572,
+      "independent_reference": "1358853319196245038117550997280239505833131779333205751200/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 zero-rate schedule",
+      "passed": true
+    },
+    {
+      "label": "all rounded rows vs independent integer-cent oracle",
+      "passed": true
+    },
+    {
+      "label": "exact demonstration first three and final rounded rows",
+      "passed": true,
+      "expected": [
+        "{'period': 1, 'opening': Decimal('10000.00'), 'payment': Decimal('443.21'), 'interest': Decimal('50.00'), 'principal': Decimal('393.21'), 'closing': Decimal('9606.79')}",
+        "{'period': 2, 'opening': Decimal('9606.79'), 'payment': Decimal('443.21'), 'interest': Decimal('48.03'), 'principal': Decimal('395.18'), 'closing': Decimal('9211.61')}",
+        "{'period': 3, 'opening': Decimal('9211.61'), 'payment': Decimal('443.21'), 'interest': Decimal('46.06'), 'principal': Decimal('397.15'), 'closing': Decimal('8814.46')}",
+        "Final: {'period': 24, 'opening': Decimal('440.91'), 'payment': Decimal('443.11'), 'interest': Decimal('2.20'), 'principal': Decimal('440.91'), 'closing': Decimal('0.00')}"
+      ]
+    },
+    {
+      "label": "P11 final rounded installment differs",
+      "passed": true,
+      "first": "443.21",
+      "final": "443.11"
+    },
+    {
+      "label": "P12 both policies mature at zero within tolerance",
+      "passed": true
+    },
+    {
+      "label": "P13 interest on opening balance",
+      "passed": true
+    },
+    {
+      "label": "F70 half-up payment tie .15/6",
+      "passed": true,
+      "expected": [
+        {
+          "period": 1,
+          "opening": 15,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 12
+        },
+        {
+          "period": 2,
+          "opening": 12,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 9
+        },
+        {
+          "period": 3,
+          "opening": 9,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 6
+        },
+        {
+          "period": 4,
+          "opening": 6,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 3
+        },
+        {
+          "period": 5,
+          "opening": 3,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 0
+        },
+        {
+          "period": 6,
+          "opening": 0,
+          "payment": 0,
+          "interest": 0,
+          "principal": 0,
+          "closing": 0
+        }
+      ],
+      "actual": [
+        {
+          "period": 1,
+          "opening": 15,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 12
+        },
+        {
+          "period": 2,
+          "opening": 12,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 9
+        },
+        {
+          "period": 3,
+          "opening": 9,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 6
+        },
+        {
+          "period": 4,
+          "opening": 6,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 3
+        },
+        {
+          "period": 5,
+          "opening": 3,
+          "payment": 3,
+          "interest": 0,
+          "principal": 3,
+          "closing": 0
+        },
+        {
+          "period": 6,
+          "opening": 0,
+          "payment": 0,
+          "interest": 0,
+          "principal": 0,
+          "closing": 0
+        }
+      ]
+    },
+    {
+      "label": "F70 regular payment based on rounded opening",
+      "passed": true,
+      "expected": [
+        {
+          "period": 1,
+          "opening": 1,
+          "payment": 1,
+          "interest": 0,
+          "principal": 1,
+          "closing": 0
+        },
+        {
+          "period": 2,
+          "opening": 0,
+          "payment": 0,
+          "interest": 0,
+          "principal": 0,
+          "closing": 0
+        }
+      ],
+      "actual": [
+        {
+          "period": 1,
+          "opening": 1,
+          "payment": 1,
+          "interest": 0,
+          "principal": 1,
+          "closing": 0
+        },
+        {
+          "period": 2,
+          "opening": 0,
+          "payment": 0,
+          "interest": 0,
+          "principal": 0,
+          "closing": 0
+        }
+      ]
+    },
+    {
+      "label": "F70 finite large cent schedule",
+      "passed": true,
+      "closing": "0.00"
+    },
+    {
+      "label": "F54 tiny-rate payment",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F66 large-rate first principal",
+      "passed": true,
+      "actual": 9.99999999999978e-101,
+      "independent_reference": "1/10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815106",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F66 one-payment final balance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 payment underflow",
+      "passed": true,
+      "exception": "ValueError('payment outside supported range')"
+    },
+    {
+      "label": "F54 payment overflow",
+      "passed": true,
+      "exception": "ValueError('payment outside supported range')"
+    },
+    {
+      "label": "F54 interest underflow",
+      "passed": true,
+      "exception": "ValueError('interest outside supported range')"
+    },
+    {
+      "label": "F70 rounded opening cannot be zero",
+      "passed": true,
+      "exception": "ValueError('booked opening must be at least one cent')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('invalid principal, rate, or term')"
+    },
+    {
+      "label": "invalid count",
+      "passed": true,
+      "exception": "ValueError('invalid principal, rate, or term')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 14,
+  "conceptual_prompts": [
+    14
+  ],
+  "historical_unique_methods_added": 0
+}
