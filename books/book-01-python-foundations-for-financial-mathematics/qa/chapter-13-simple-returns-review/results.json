@@ -1,0 +1,364 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "93d94b1358dddcfb4a61c1c6f1e6d5624595b58c0e645c16f73fa9fbd513bf7c",
+  "listing_sha256": "50b88cf7c44c546315e0a08a4f8972df4e13074f01d9e1eb415eff5c5cd1bb0e",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "simple_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "Prices: [100, 110, 99, 108.9]\nSimple period returns: [0.1, -0.1, 0.1]\nArithmetic mean: 0.03333333333333333\nLinked return: 0.089\nEndpoint return: 0.089\n",
+      "stderr": "test_01_gain (__main__.Tests.test_01_gain) ... ok\ntest_02_loss (__main__.Tests.test_02_loss) ... ok\ntest_03_flat (__main__.Tests.test_03_flat) ... ok\ntest_04_total_loss (__main__.Tests.test_04_total_loss) ... ok\ntest_05_distribution (__main__.Tests.test_05_distribution) ... ok\ntest_06_cost (__main__.Tests.test_06_cost) ... ok\ntest_07_wealth (__main__.Tests.test_07_wealth) ... ok\ntest_08_compound (__main__.Tests.test_08_compound) ... ok\ntest_09_average (__main__.Tests.test_09_average) ... ok\ntest_10_fx (__main__.Tests.test_10_fx) ... ok\ntest_11_price_series (__main__.Tests.test_11_price_series) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import simple_returns"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "simple_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 price gain",
+      "passed": true,
+      "actual": 0.12,
+      "independent_reference": "3/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 price loss",
+      "passed": true,
+      "actual": -0.12,
+      "independent_reference": "-3/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 flat price",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 total loss",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 E6 price and dollar gain",
+      "passed": true,
+      "actual": 0.12,
+      "independent_reference": "3/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 gross factor",
+      "passed": true,
+      "actual": 1.08,
+      "independent_reference": "27/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 loss gross factor",
+      "passed": true,
+      "actual": 0.7,
+      "independent_reference": "7/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 distribution",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 net of cost",
+      "passed": true,
+      "actual": 0.07,
+      "independent_reference": "7/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 two linked returns",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 three linked returns",
+      "passed": true,
+      "actual": 0.089,
+      "independent_reference": "89/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 arithmetic average",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 recovery 20%",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 recovery 50%",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 FX return",
+      "passed": true,
+      "actual": 0.0584,
+      "independent_reference": "73/1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F96 tiny FX return",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F95 tiny linked return",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite mean despite sum overflow",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite wealth despite intermediate rounding",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite total despite intermediate overflow",
+      "passed": true,
+      "actual": 9.0,
+      "independent_reference": "9",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 supplemental geometric mean",
+      "passed": true
+    },
+    {
+      "label": "project daily return 1",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project gross factor 1",
+      "passed": true,
+      "actual": 1.03,
+      "independent_reference": "103/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project daily return 2",
+      "passed": true,
+      "actual": -0.03,
+      "independent_reference": "-3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project gross factor 2",
+      "passed": true,
+      "actual": 0.97,
+      "independent_reference": "97/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project daily return 3",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project gross factor 3",
+      "passed": true,
+      "actual": 1.05,
+      "independent_reference": "21/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project daily return 4",
+      "passed": true,
+      "actual": -0.02,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project gross factor 4",
+      "passed": true,
+      "actual": 0.98,
+      "independent_reference": "49/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project arithmetic average",
+      "passed": true,
+      "actual": 0.0075,
+      "independent_reference": "3/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project linked endpoint reconciliation",
+      "passed": true,
+      "actual": 0.0280739,
+      "independent_reference": "280739/10000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project direct endpoint",
+      "passed": true,
+      "actual": 0.0280739,
+      "independent_reference": "280739/10000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project terminal dividend increases total by 0.5pp",
+      "passed": true,
+      "actual": 0.0330739,
+      "independent_reference": "330739/10000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 zero denominator rejected",
+      "passed": true,
+      "exception": "ValueError('invalid start')"
+    },
+    {
+      "label": "F96 negative terminal wealth rejected",
+      "passed": true,
+      "exception": "ValueError('negative closing wealth is outside this model')"
+    },
+    {
+      "label": "F54 wealth overflow rejected",
+      "passed": true,
+      "exception": "ValueError('wealth outside supported range')"
+    },
+    {
+      "label": "F54 price return overflow rejected",
+      "passed": true,
+      "exception": "ValueError('return outside supported range')"
+    },
+    {
+      "label": "F54 FX result overflow rejected",
+      "passed": true,
+      "exception": "ValueError('return outside supported range')"
+    },
+    {
+      "label": "F54 linked result overflow rejected",
+      "passed": true,
+      "exception": "ValueError('return outside supported range')"
+    },
+    {
+      "label": "demo raw prices and period returns",
+      "passed": true
+    },
+    {
+      "label": "demo numeric line 2",
+      "passed": true
+    },
+    {
+      "label": "demo numeric line 3",
+      "passed": true
+    },
+    {
+      "label": "demo numeric line 4",
+      "passed": true
+    },
+    {
+      "label": "F96 worked project supplies average and total result",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
