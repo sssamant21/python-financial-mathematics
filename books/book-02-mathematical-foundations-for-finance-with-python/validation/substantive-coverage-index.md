@@ -643,3 +643,11 @@ Next substantive item: [Euler amplification boundary baseline](chapter-19-euler-
 [V-85](runtime-refresh-2026-11-06-r04.md) compiled 550 files, passed 337 scripts and matched 551 required blobs before and after at `5621a516346213dd09780c0eba7c49a402aee143`. Chapter 19: 47 compiled files and 37 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.9 event order baseline](chapter-19-project-event-order-boundary-baseline.md) reproduces two deposits skipped because the rounded depletion time matched the jump time, although the deposits occurred strictly earlier. Verify ordering before timestamp rounding, keeping the exact-equality and time-zero policies, with actual event logs and independent zero- and nonzero-rate references. Wider capstone provenance and manual reviews remain open.
+
+## Depletion and jump ordering — V-86
+
+[Section 19.9 event ordering](chapter-19-project-event-order-followup.md) retains seven baseline mismatches and an 11-scenario pass. It checks event order before timestamp rounding, exact represented elapsed intervals, both time-zero and coincidence policies, and actual statuses, balances and event logs. This adds selected COV-83 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-86](runtime-refresh-2026-11-06-r05.md) compiled 551 files, passed 338 scripts and matched 552 required blobs before and after at `ab4dfb16846ebe7dff9867b9a0864870d7893f0f`. Chapter 19: 48 compiled files and 38 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.7 terminal jump and interpolation baseline](chapter-19-jump-policy-crossing-baseline.md) reproduces a strictly later deposit that incorrectly rescues a terminal simulation and a finite interpolation rejected by intermediate overflow. Verify actual terminal and nonterminal behavior, keeping Section 19.7's distinct exact-tie policy. Wider capstone provenance and manual reviews remain open.
