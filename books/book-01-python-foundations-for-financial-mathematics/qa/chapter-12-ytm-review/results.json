@@ -1,0 +1,278 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "d5bf7c20c205f9efa6c17a55e406e7fc752547b8e6018a3f5850b059011867ba",
+  "listing_sha256": "7ac52fc70d85817e9d9153fe227fe462857814472fe85b5a9f0a7d70a5d2acec",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "yield_to_maturity.py"
+      ],
+      "returncode": 0,
+      "stdout": "Market price: 950.00; YTM: 7.904660%; repriced: 950.000000\nMarket price: 1000.00; YTM: 6.000000%; repriced: 1000.000000\nMarket price: 1050.00; YTM: 4.208457%; repriced: 1050.000000\n",
+      "stderr": "test_01_par (__main__.Tests.test_01_par) ... ok\ntest_02_premium (__main__.Tests.test_02_premium) ... ok\ntest_03_discount (__main__.Tests.test_03_discount) ... ok\ntest_04_roundtrip (__main__.Tests.test_04_roundtrip) ... ok\ntest_05_zero_coupon (__main__.Tests.test_05_zero_coupon) ... ok\ntest_06_zero_yield (__main__.Tests.test_06_zero_yield) ... ok\ntest_07_negative_yield (__main__.Tests.test_07_negative_yield) ... ok\ntest_08_annual (__main__.Tests.test_08_annual) ... ok\ntest_09_current_yield (__main__.Tests.test_09_current_yield) ... ok\ntest_10_price_monotonic (__main__.Tests.test_10_price_monotonic) ... ok\ntest_11_small_positive (__main__.Tests.test_11_small_positive) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.123s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "yield_to_maturity.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "project independent yield at 900",
+      "passed": true,
+      "actual": 0.09936339244119706,
+      "independent_reference": "0.099363392441197055888508946762290452007352667785040573310482680087",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project relative repricing residual at 900",
+      "passed": true
+    },
+    {
+      "label": "project current yield at 900",
+      "passed": true,
+      "actual": 0.06666666666666667,
+      "independent_reference": "1/15",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project independent yield at 950",
+      "passed": true,
+      "actual": 0.07904659626342432,
+      "independent_reference": "0.079046596263424319061059260999762720883521910293696247137272685501",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project relative repricing residual at 950",
+      "passed": true
+    },
+    {
+      "label": "project current yield at 950",
+      "passed": true,
+      "actual": 0.06315789473684211,
+      "independent_reference": "6/95",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project independent yield at 1000",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "0.059999999999999999999999999999999999999999999999999999999999999989",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project relative repricing residual at 1000",
+      "passed": true
+    },
+    {
+      "label": "project current yield at 1000",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project independent yield at 1050",
+      "passed": true,
+      "actual": 0.042084571759077545,
+      "independent_reference": "0.042084571759077545737501771834105981825988678180329470973767895742",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project relative repricing residual at 1050",
+      "passed": true
+    },
+    {
+      "label": "project current yield at 1050",
+      "passed": true,
+      "actual": 0.05714285714285714,
+      "independent_reference": "2/35",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project independent yield at 1100",
+      "passed": true,
+      "actual": 0.02518237885361188,
+      "independent_reference": "0.025182378853611882519768016826844402922272281274931281070106996990",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project relative repricing residual at 1100",
+      "passed": true
+    },
+    {
+      "label": "project current yield at 1100",
+      "passed": true,
+      "actual": 0.05454545454545454,
+      "independent_reference": "3/55",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project yields decrease with market price",
+      "passed": true
+    },
+    {
+      "label": "project known yield round-trip",
+      "passed": true,
+      "actual": 0.04750000000000003,
+      "independent_reference": "19/400",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13 exact zero yield",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P14 negative yield from independent price",
+      "passed": true,
+      "actual": -0.009999999999999993,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 zero coupon independently inverted",
+      "passed": true,
+      "actual": 0.059999999999999984,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 3e-11,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 P4 coupon count and cash-flow amount",
+      "passed": true
+    },
+    {
+      "label": "F83 tiny notional still uses relative residual",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F83 supported high yield beyond legacy bracket",
+      "passed": true,
+      "actual": 9999999999.0,
+      "independent_reference": "9999999999",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F83 multi-payment price with a near-zero yield",
+      "passed": true,
+      "actual": 1e-100,
+      "independent_reference": "1/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 repricing despite underflowing discount factor",
+      "passed": true,
+      "actual": 1e-92,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite current yield after intermediate scaling",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F83 zero tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('invalid relative repricing tolerance')"
+    },
+    {
+      "label": "F83 boolean tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('invalid relative repricing tolerance')"
+    },
+    {
+      "label": "F83 unsatisfied repricing tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('reported yield does not meet relative repricing tolerance')"
+    },
+    {
+      "label": "F83 invalid current-yield face",
+      "passed": true,
+      "exception": "ValueError('invalid face')"
+    },
+    {
+      "label": "F83 invalid current-yield coupon",
+      "passed": true,
+      "exception": "ValueError('invalid coupon rate')"
+    },
+    {
+      "label": "F83 root rounding to lower domain boundary rejected",
+      "passed": true,
+      "exception": "ValueError('reported yield is outside the model domain')"
+    },
+    {
+      "label": "F54 reject underflowed price",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "F54 reject overflowing negative-yield price",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "exact demo outputs",
+      "passed": true,
+      "expected": [
+        "Market price: 950.00; YTM: 7.904660%; repriced: 950.000000",
+        "Market price: 1000.00; YTM: 6.000000%; repriced: 1000.000000",
+        "Market price: 1050.00; YTM: 4.208457%; repriced: 1050.000000"
+      ]
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    2,
+    9,
+    10,
+    11,
+    16,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
