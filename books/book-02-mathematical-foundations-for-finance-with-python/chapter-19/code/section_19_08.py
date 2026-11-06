@@ -81,12 +81,12 @@ def discrete_growth(initial,nominal,frequency,periods):
         integral=periods*Fraction(logarithm)
     return _scaled_exponential(a,integral)
 
-def _rounded_balance(value):
+def _rounded_balance(value,*,reject_underflow=True):
     try:
         result=float(value)
     except OverflowError as exc:
         raise ValueError("balance outside floating-point range") from exc
-    if not math.isfinite(result) or (value and result==0):
+    if not math.isfinite(result) or (reject_underflow and value and result==0):
         raise ValueError("balance outside floating-point range")
     return result
 
@@ -118,7 +118,7 @@ def _exprel_fraction(value):
         return total
     return Fraction(_exprel_decimal(value))
 
-def _limiting_balance(offset,correction_sign):
+def _limiting_balance(offset,correction_sign,*,reject_underflow=True):
     # A nonzero correction can decide an exact half-subnormal tie even
     # when the exponential is far below the decimal evaluation range.
     try:
@@ -132,8 +132,10 @@ def _limiting_balance(offset,correction_sign):
         neighbor=math.nextafter(value,math.inf if delta>0 else -math.inf)
         if math.isfinite(neighbor) and offset==(Fraction(value)+Fraction(neighbor))/2:
             value=neighbor
-    if value==0 and (offset or correction_sign):
+    if reject_underflow and value==0 and (offset or correction_sign):
         raise ValueError("balance outside floating-point range")
+    if value==0 and not offset:
+        return math.copysign(0.0,correction_sign)
     return value
 
 def continuous_contributions(initial,rate,flow,years):
@@ -141,24 +143,31 @@ def continuous_contributions(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
+    return _continuous_balance(a,r,u,t)
+
+def _continuous_balance(a,r,u,t,*,reject_underflow=True):
+    """Shared arithmetic for already validated float inputs."""
     if r==0 or t==0:
-        return _rounded_balance(Fraction(a)+Fraction(u)*Fraction(t))
+        return _rounded_balance(Fraction(a)+Fraction(u)*Fraction(t),
+                                reject_underflow=reject_underflow)
     coefficient=Fraction(a)+Fraction(u)/Fraction(r)
     offset=-Fraction(u)/Fraction(r)
     if not coefficient:
-        return _rounded_balance(offset)
+        return _rounded_balance(offset,reject_underflow=reject_underflow)
     x=Fraction(r)*Fraction(t)
     if x>4000:
         raise ValueError("balance outside floating-point range")
     if x < -4000:
-        return _limiting_balance(offset,1 if coefficient>0 else -1)
-    with localcontext(Context(prec=1100)):
+        return _limiting_balance(offset,1 if coefficient>0 else -1,
+                                 reject_underflow=reject_underflow)
+    # Deep but finite decay can resolve a subnormal rounding tie.
+    with localcontext(Context(prec=2600 if x < -1000 else 1100)):
         if abs(x)<=Fraction(1,2**26):
             value=Fraction(a)+coefficient*x*_exprel_fraction(x)
         else:
             value=(_decimal_fraction(coefficient)*_decimal_fraction(x).exp()+
                    _decimal_fraction(offset))
-        return _rounded_balance(value)
+        return _rounded_balance(value,reject_underflow=reject_underflow)
 
 def end_period_contributions(initial,rate,flow,years,periods):
     a,r,u,t=(finite(v,n) for v,n in
