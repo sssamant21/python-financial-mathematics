@@ -1,0 +1,348 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "2421e939d125ea4721c576c2bece3f9bbf70c6e2a6bb8e2c18dd6a00d91d2806",
+  "listing_sha256": "afd7388bcda2fc4d750167a73e7847b6631ebe1aef5f1ddccdda96efe094e11c",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "yield_curves.py"
+      ],
+      "returncode": 0,
+      "stdout": "Curve shape: upward\n1.0y: spot=3.0000%, DF=0.970874\n1.5y: spot=3.2500%, DF=0.953158\n2.0y: spot=3.5000%, DF=0.933511\n3.0y: spot=4.0000%, DF=0.888996\n4.0y: spot=4.2500%, DF=0.846634\n5.0y: spot=4.5000%, DF=0.802451\n1y-2y forward: 0.040024271844660196\n",
+      "stderr": "test_01_node (__main__.Tests.test_01_node) ... ok\ntest_02_midpoint (__main__.Tests.test_02_midpoint) ... ok\ntest_03_long_interval (__main__.Tests.test_03_long_interval) ... ok\ntest_04_discount (__main__.Tests.test_04_discount) ... ok\ntest_05_price (__main__.Tests.test_05_price) ... ok\ntest_06_forward (__main__.Tests.test_06_forward) ... ok\ntest_07_shape (__main__.Tests.test_07_shape) ... ok\ntest_08_inverted (__main__.Tests.test_08_inverted) ... ok\ntest_09_flat (__main__.Tests.test_09_flat) ... ok\ntest_10_discount_monotonic (__main__.Tests.test_10_discount_monotonic) ... ok\ntest_11_positive_price (__main__.Tests.test_11_positive_price) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.085s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "yield_curves.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "base 1y rate",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1y discount",
+      "passed": true,
+      "actual": 0.970873786407767,
+      "independent_reference": "0.97087378640776699029126213592233009708737864077669902912621359223",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1y zero price",
+      "passed": true,
+      "actual": 970.8737864077669,
+      "independent_reference": "970.8737864077669902912621359",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1.5y rate",
+      "passed": true,
+      "actual": 0.0325,
+      "independent_reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1.5y discount",
+      "passed": true,
+      "actual": 0.9531580267411581,
+      "independent_reference": "0.95315802674115813665422327524871996834871357930772005739273901731",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1.5y zero price",
+      "passed": true,
+      "actual": 953.1580267411581,
+      "independent_reference": "953.1580267411581366542232752",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2y rate",
+      "passed": true,
+      "actual": 0.035,
+      "independent_reference": "7/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2y discount",
+      "passed": true,
+      "actual": 0.9335107003664029,
+      "independent_reference": "0.93351070036640294989381315783332166444957875329645966066886041681",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2y zero price",
+      "passed": true,
+      "actual": 933.510700366403,
+      "independent_reference": "933.5107003664029498938131578",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3y rate",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3y discount",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "independent_reference": "0.88899635867091488393263541192535275375512061902594446973145197997",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3y zero price",
+      "passed": true,
+      "actual": 888.9963586709149,
+      "independent_reference": "888.9963586709148839326354119",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 4y rate",
+      "passed": true,
+      "actual": 0.0425,
+      "independent_reference": "17/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 4y discount",
+      "passed": true,
+      "actual": 0.8466340781408359,
+      "independent_reference": "0.84663407814083589098817804452907856401088734900165837661312437303",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 4y zero price",
+      "passed": true,
+      "actual": 846.6340781408359,
+      "independent_reference": "846.6340781408358909881780445",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 5y rate",
+      "passed": true,
+      "actual": 0.045,
+      "independent_reference": "9/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 5y discount",
+      "passed": true,
+      "actual": 0.8024510465006838,
+      "independent_reference": "0.80245104650068376031536149528062813142415155361347611680733132887",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 5y zero price",
+      "passed": true,
+      "actual": 802.4510465006838,
+      "independent_reference": "802.4510465006837603153614953",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "endpoint slope 150bp",
+      "passed": true
+    },
+    {
+      "label": "shape describes endpoints, not the interior",
+      "passed": true
+    },
+    {
+      "label": "1y\u20132y implied forward",
+      "passed": true,
+      "actual": 0.040024271844660196,
+      "independent_reference": "1649/41200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "2y\u20133y implied forward",
+      "passed": true,
+      "actual": 0.05007258045695349,
+      "independent_reference": "53639/1071225",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "supplemental parallel construction; exact source prices",
+      "passed": true,
+      "actual": [
+        966.1835748792271,
+        946.2760359977175,
+        924.5562130177515,
+        876.2966040549092,
+        830.5845979356761,
+        783.526166468459
+      ],
+      "expected": [
+        966.1835748792271,
+        946.2760359977175,
+        924.5562130177515,
+        876.2966040549092,
+        830.5845979356761,
+        783.526166468459
+      ]
+    },
+    {
+      "label": "supplemental steepening construction; exact source prices",
+      "passed": true,
+      "actual": [
+        970.8737864077669,
+        951.4297259587006,
+        929.0172739149368,
+        876.2966040549092,
+        822.702474791882,
+        765.1343538409492
+      ],
+      "expected": [
+        970.8737864077669,
+        951.4297259587006,
+        929.0172739149368,
+        876.2966040549092,
+        822.702474791882,
+        765.1343538409492
+      ]
+    },
+    {
+      "label": "supplemental flattening construction; exact source prices",
+      "passed": true,
+      "actual": [
+        961.5384615384615,
+        941.1687059784399,
+        920.1272075864488,
+        876.2966040549092,
+        838.5613435932145,
+        802.4510465006838
+      ],
+      "expected": [
+        961.5384615384615,
+        941.1687059784399,
+        920.1272075864488,
+        876.2966040549092,
+        838.5613435932145,
+        802.4510465006838
+      ]
+    },
+    {
+      "label": "exact demo rows and forward",
+      "passed": true
+    },
+    {
+      "label": "F90 worked 2y values agree with rational price",
+      "passed": true,
+      "expected_df": "0.93351",
+      "expected_price": "933.51"
+    },
+    {
+      "label": "F90 tiny forward survives rounded discount cancellation",
+      "passed": true,
+      "actual": 1e-50,
+      "independent_reference": "1/100000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 forward survives discount underflow",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 scaled zero price survives discount underflow",
+      "passed": true,
+      "actual": 7.5638913231041e-170,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/1322070819480806636890455259752144365965422032752148167664920368226828597346704899540778313850608061963909777696872582355950954582100618911865342725257953674027620225198320803878014774228964841274390400117588618041128947815623094438061566173054086674490506178125480344405547054397038895817465368254916136220830268563778582290228416398307887896918556404084898937609373242171846359938695516765018940588109060426089671438864102814350385648747165832010614366132173102768902855220001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite interpolation despite intermediate rate difference",
+      "passed": true,
+      "actual": 4.4444444444444443e+307,
+      "independent_reference": "266666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666665/6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F90 validate rejects spot at -100%",
+      "passed": true,
+      "exception": "ValueError('annual-effective spot rate must exceed -100%')"
+    },
+    {
+      "label": "F90 shape rejects spot below -100%",
+      "passed": true,
+      "exception": "ValueError('annual-effective spot rate must exceed -100%')"
+    },
+    {
+      "label": "no extrapolation",
+      "passed": true,
+      "exception": "ValueError('tenor outside curve range')"
+    },
+    {
+      "label": "invalid forward interval",
+      "passed": true,
+      "exception": "ValueError('invalid forward interval')"
+    },
+    {
+      "label": "F54 unreportable discount rejected",
+      "passed": true,
+      "exception": "ValueError('discount factor outside supported range')"
+    },
+    {
+      "label": "F54 unreportable zero price rejected",
+      "passed": true,
+      "exception": "ValueError('zero price outside supported range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    2,
+    3,
+    4,
+    14,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
