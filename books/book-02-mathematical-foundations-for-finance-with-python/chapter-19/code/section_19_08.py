@@ -174,13 +174,24 @@ def end_period_contributions(initial,rate,flow,years,periods):
     x=Fraction(r)*Fraction(t)
     # Explicit evaluation domain for this educational finite-payment helper.
     # This is not a claim that every excluded case has an infinite balance.
-    if abs(x)>4000:
+    if abs(x)>5000:
         raise ValueError("end-period exponent exceeds supported evaluation range")
-    with localcontext(Context(prec=1100)):
-        rel=_exprel_fraction(x)
+    # On deep decay, preserve the growth term and the tiny correction
+    # to the geometric sum; either can decide a final rounding midpoint.
+    precision=3200 if x < -1000 else 1100
+    with localcontext(Context(prec=precision)):
+        if abs(x)<=Fraction(1,2**26):
+            growth_minus_one=x*_exprel_fraction(x)
+            growth=1+growth_minus_one
+        else:
+            growth=Fraction(_decimal_fraction(x).exp())
+            growth_minus_one=growth-1
+        if periods==1:
+            return _rounded_balance(Fraction(a)*growth+Fraction(u)*Fraction(t))
         period_rel=_exprel_fraction(x/periods)
-        exponential=1+x*rel
-        value=Fraction(a)*exponential+Fraction(u)*Fraction(t)*rel/period_rel
+        # Keep the timing correction even when it is too small to affect
+        # the period factor in float but is amplified by total growth.
+        value=Fraction(a)*growth+(Fraction(u)/Fraction(r))*growth_minus_one/period_rel
         return _rounded_balance(value)
 
 def euler_account(initial,rate,flow,years,steps):
