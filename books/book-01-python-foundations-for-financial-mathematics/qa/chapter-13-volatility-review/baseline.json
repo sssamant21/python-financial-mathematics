@@ -1,0 +1,378 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "b4d18afc842ab78830ad5d615ea1b768782ad64d19b32f07100faba926ecd780",
+  "listing_sha256": "b0ebafdb24458505b320bcfd045118db6890a69b76c26cfea55f001d2c7c1c82",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "volatility.py"
+      ],
+      "returncode": 0,
+      "stdout": "Sample daily volatility: 2.0736%\nAnnualized volatility (252-day convention): 32.9181%\n",
+      "stderr": "test_01_mean (__main__.VolatilityTests.test_01_mean) ... ok\ntest_02_population (__main__.VolatilityTests.test_02_population) ... ok\ntest_03_sample (__main__.VolatilityTests.test_03_sample) ... ok\ntest_04_constant (__main__.VolatilityTests.test_04_constant) ... ok\ntest_05_annual (__main__.VolatilityTests.test_05_annual) ... ok\ntest_06_downside (__main__.VolatilityTests.test_06_downside) ... ok\ntest_07_target (__main__.VolatilityTests.test_07_target) ... ok\ntest_08_rolling (__main__.VolatilityTests.test_08_rolling) ... ok\ntest_09_portfolio_zero_corr (__main__.VolatilityTests.test_09_portfolio_zero_corr) ... ok\ntest_10_perfect_corr (__main__.VolatilityTests.test_10_perfect_corr) ... ok\ntest_11_perfect_hedge (__main__.VolatilityTests.test_11_perfect_hedge) ... ok\ntest_12_invalid (__main__.VolatilityTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.008s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import volatility"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "volatility.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "exact data fragment matches independent five-day fixture",
+      "passed": true
+    },
+    {
+      "label": "E1 mean",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 population",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 sample",
+      "passed": true,
+      "actual": 0.14142135623730953,
+      "independent_reference": "0.1414213562373095048801688724209698078569671875376948073",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 constant",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 five-day mean",
+      "passed": true,
+      "actual": 0.006,
+      "independent_reference": "3/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 five-day population",
+      "passed": true,
+      "actual": 0.01854723699099141,
+      "independent_reference": "0.01854723699099140750503283214798034925252693782415259643",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 five-day sample",
+      "passed": true,
+      "actual": 0.020736441353327723,
+      "independent_reference": "0.02073644135332772087455898679984992632401184434584868958",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 annualization",
+      "passed": true,
+      "actual": 0.15874507866387544,
+      "independent_reference": "0.1587450786638754354300969452183556255426155509849470108",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 downside",
+      "passed": true,
+      "actual": 0.07071067811865477,
+      "independent_reference": "0.07071067811865475244008443621048490392848359376884740366",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 zero correlation",
+      "passed": true,
+      "actual": 0.14142135623730953,
+      "independent_reference": "0.1414213562373095048801688724209698078569671875376948073",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 positive correlation",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 ideal hedge",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F105 finite mean despite sum overflow",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F105 integer spread survives input conversion",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F105 finite large population",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F105 finite large sample",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F105 tiny sample",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1.414213562373095048801688724209698078569671875376948073E-250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F105 tiny downside",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "7.071067811865475244008443621048490392848359376884740366E-251",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F105 large perfectly offset portfolio exposures",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F105 tiny portfolio exposure",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F105 near-cancelling portfolio exposure",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1.414213562373095048801688724209698078569671875376948073E+146",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project mean",
+      "passed": true,
+      "actual": 0.0014999999999999996,
+      "independent_reference": "3/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project population",
+      "passed": true,
+      "actual": 0.01156935607542615,
+      "independent_reference": "0.01156935607542615139126567141256054445687489123790836977",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project sample",
+      "passed": true,
+      "actual": 0.012195172086617813,
+      "independent_reference": "0.01219517208661781132400498261366450686655493327155484074",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project annual",
+      "passed": true,
+      "actual": 0.19359235522096427,
+      "independent_reference": "0.1935923552209642393966817670",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project downside",
+      "passed": true,
+      "actual": 0.006978538528947161,
+      "independent_reference": "0.006978538528947160581120380312498842412748428856807064810",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stressed sample",
+      "passed": true,
+      "actual": 0.04624499972970051,
+      "independent_reference": "0.04624499972970050737310178706499511972017876856508040213",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stressed last window",
+      "passed": true,
+      "actual": 0.08638479804533511,
+      "independent_reference": "0.08638479804533511400511731688876756442872240492729008514",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 independently derived sum of squared deviations",
+      "passed": true
+    },
+    {
+      "label": "E14 complete four-observation windows",
+      "passed": true
+    },
+    {
+      "label": "project eight complete windows",
+      "passed": true
+    },
+    {
+      "label": "project window ending day 3",
+      "passed": true,
+      "actual": 0.010408329997330663,
+      "independent_reference": "0.01040832999733066367641148853489965743512159996331942718",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 4",
+      "passed": true,
+      "actual": 0.013228756555322952,
+      "independent_reference": "0.01322875655532295295250807876819630212855129591541225090",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 5",
+      "passed": true,
+      "actual": 0.012767145334803704,
+      "independent_reference": "0.01276714533480370466171095200978089234738236378030125885",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 6",
+      "passed": true,
+      "actual": 0.00929157324317757,
+      "independent_reference": "0.009291573243177569298438656373705417753249298717316182051",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 7",
+      "passed": true,
+      "actual": 0.015,
+      "independent_reference": "0.015",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 8",
+      "passed": true,
+      "actual": 0.020420577856662136,
+      "independent_reference": "0.02042057785666213707208133509387442568692253147085632333",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 9",
+      "passed": true,
+      "actual": 0.019519221295943134,
+      "independent_reference": "0.01951922129594313503642539896474560824348601688922214768",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window ending day 10",
+      "passed": true,
+      "actual": 0.010692676621563627,
+      "independent_reference": "0.01069267662156362668203877678536535314096373201245860110",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project latest window vs full sample",
+      "passed": true
+    },
+    {
+      "label": "F105 nonrepresentable annual volatility",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F105 nonrepresentable sample",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F105 sample flag must be bool",
+      "passed": false,
+      "actual": "0.1"
+    },
+    {
+      "label": "missing observation",
+      "passed": true,
+      "exception": "ValueError('returns must be finite numbers')"
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    },
+    {
+      "label": "F105 printed five-day results match rounded roots",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "historical_unique_methods_added": 0
+}
