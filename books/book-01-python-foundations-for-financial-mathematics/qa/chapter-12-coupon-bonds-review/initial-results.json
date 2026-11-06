@@ -1,0 +1,285 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "86c1f16ddd544729224bf26607a9e646acbd734afcd7b34bc627539f38e435e0",
+  "listing_sha256": "0b563ca5e84ae910cdb235fa7cb33dd4a5a6702b2d63cfa1666fe4a77be49821",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "coupon_bonds.py"
+      ],
+      "returncode": 0,
+      "stdout": "Yield 4.0%: price=1056.01; premium\nYield 6.0%: price=1000.00; par\nYield 8.0%: price=947.58; discount\n",
+      "stderr": "test_01_coupon_amount (__main__.Tests.test_01_coupon_amount) ... ok\ntest_02_periods (__main__.Tests.test_02_periods) ... ok\ntest_03_maturity (__main__.Tests.test_03_maturity) ... ok\ntest_04_coupon_income (__main__.Tests.test_04_coupon_income) ... ok\ntest_05_par (__main__.Tests.test_05_par) ... ok\ntest_06_premium (__main__.Tests.test_06_premium) ... ok\ntest_07_discount (__main__.Tests.test_07_discount) ... ok\ntest_08_annuity_equivalence (__main__.Tests.test_08_annuity_equivalence) ... ok\ntest_09_zero_yield (__main__.Tests.test_09_zero_yield) ... ok\ntest_10_zero_coupon (__main__.Tests.test_10_zero_coupon) ... ok\ntest_11_monotonic (__main__.Tests.test_11_monotonic) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "coupon_bonds.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2\u2013P7 full contractual flows",
+      "passed": true
+    },
+    {
+      "label": "P6 lifetime coupon income",
+      "passed": true,
+      "actual": 180.0,
+      "independent_reference": "180",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 P13 annual coupon and current yield",
+      "passed": true
+    },
+    {
+      "label": "P17 quarterly coupon",
+      "passed": true
+    },
+    {
+      "label": "direct 3%",
+      "passed": true,
+      "actual": 1085.4578074821286,
+      "independent_reference": "75960737784658000/69980368892329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "annuity 3%",
+      "passed": true,
+      "actual": 1085.4578074821286,
+      "independent_reference": "75960737784658000/69980368892329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "method agreement 3%",
+      "passed": true
+    },
+    {
+      "label": "classification 3%",
+      "passed": true
+    },
+    {
+      "label": "direct 4%",
+      "passed": true,
+      "actual": 1056.014308906904,
+      "independent_reference": "18581931701500/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "annuity 4%",
+      "passed": true,
+      "actual": 1056.014308906904,
+      "independent_reference": "18581931701500/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "method agreement 4%",
+      "passed": true
+    },
+    {
+      "label": "classification 4%",
+      "passed": true
+    },
+    {
+      "label": "direct 5%",
+      "passed": true,
+      "actual": 1027.5406268078991,
+      "independent_reference": "4880925089200/4750104241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "annuity 5%",
+      "passed": true,
+      "actual": 1027.5406268078991,
+      "independent_reference": "4880925089200/4750104241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "method agreement 5%",
+      "passed": true
+    },
+    {
+      "label": "classification 5%",
+      "passed": true
+    },
+    {
+      "label": "direct 6%",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "annuity 6%",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "method agreement 6%",
+      "passed": true
+    },
+    {
+      "label": "classification 6%",
+      "passed": true
+    },
+    {
+      "label": "direct 7%",
+      "passed": true,
+      "actual": 973.3572349011075,
+      "independent_reference": "76576292188042000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "annuity 7%",
+      "passed": true,
+      "actual": 973.3572349011075,
+      "independent_reference": "76576292188042000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "method agreement 7%",
+      "passed": true
+    },
+    {
+      "label": "classification 7%",
+      "passed": true
+    },
+    {
+      "label": "direct 8%",
+      "passed": true,
+      "actual": 947.5786314325366,
+      "independent_reference": "146360994125/154457888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "annuity 8%",
+      "passed": true,
+      "actual": 947.5786314325366,
+      "independent_reference": "146360994125/154457888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "method agreement 8%",
+      "passed": true
+    },
+    {
+      "label": "classification 8%",
+      "passed": true
+    },
+    {
+      "label": "project prices strictly decline",
+      "passed": true
+    },
+    {
+      "label": "exact demo output",
+      "passed": true,
+      "expected": [
+        "Yield 4.0%: price=1056.01; premium",
+        "Yield 6.0%: price=1000.00; par",
+        "Yield 8.0%: price=947.58; discount"
+      ]
+    },
+    {
+      "label": "P15 zero yield",
+      "passed": true,
+      "actual": 1180.0,
+      "independent_reference": "1180",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P16 zero coupon",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F80 coupon income lost beside large principal",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite par despite overflowing coupon product",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite PV despite tiny discount factor",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F78 tiny non-par bond retains classification",
+      "passed": false
+    },
+    {
+      "label": "F78 rejects maturity rounded to zero",
+      "passed": false,
+      "actual": "0"
+    },
+    {
+      "label": "F78 rejects fractional count rounded to one",
+      "passed": false,
+      "actual": "1000.0"
+    },
+    {
+      "label": "F54 rejects overflowing final flow",
+      "passed": false,
+      "actual": "[(1, inf)]"
+    },
+    {
+      "label": "F54 rejects underflowed positive price",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 rejects overflowing nominal coupon income",
+      "passed": false,
+      "actual": "inf"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "historical_unique_methods_added": 0
+}
