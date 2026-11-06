@@ -1,0 +1,348 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "58d56dcc2e44ce624a7788f49ee32f800ab2dad2d79e6c2cb7f04c994f0d1653",
+  "listing_sha256": "5f76593e08e248cc24e971c648ec7ed18e39e42498e205fada94175aab22bc35",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "extra_payments_and_prepayment.py"
+      ],
+      "returncode": 0,
+      "stdout": "0 {'periods': 24, 'interest': 636.9464606616574, 'paid': 10636.946460661657, 'final_balance': 0.0}\n50 {'periods': 22, 'interest': 570.6208609022877, 'paid': 10570.62086090229, 'final_balance': 0.0}\n100 {'periods': 20, 'interest': 517.0942912219257, 'paid': 10517.094291221927, 'final_balance': 0.0}\n",
+      "stderr": "test_01_baseline_periods (__main__.Tests.test_01_baseline_periods) ... ok\ntest_02_baseline_final (__main__.Tests.test_02_baseline_final) ... ok\ntest_03_extra_shortens (__main__.Tests.test_03_extra_shortens) ... ok\ntest_04_extra_saves_interest (__main__.Tests.test_04_extra_saves_interest) ... ok\ntest_05_principal_reconciliation (__main__.Tests.test_05_principal_reconciliation) ... ok\ntest_06_payment_identity (__main__.Tests.test_06_payment_identity) ... ok\ntest_07_balance_identity (__main__.Tests.test_07_balance_identity) ... ok\ntest_08_zero_rate (__main__.Tests.test_08_zero_rate) ... ok\ntest_09_delayed_extra (__main__.Tests.test_09_delayed_extra) ... ok\ntest_10_large_extra (__main__.Tests.test_10_large_extra) ... ok\ntest_11_no_overpayment (__main__.Tests.test_11_no_overpayment) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "extra_payments_and_prepayment.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P3 baseline exact schedule",
+      "passed": true,
+      "actual_periods": 24,
+      "expected_periods": 24,
+      "actual_last": "{'period': 24, 'opening': 441.0010970423612, 'interest': 2.205005485211806, 'scheduled': 443.20610252756904, 'extra': 0, 'payment': 443.20610252756904, 'closing': 0.0}",
+      "expected_last": {
+        "period": 24.0,
+        "opening": 441.0010970423573,
+        "interest": 2.205005485211786,
+        "scheduled": 443.20610252756904,
+        "extra": 0.0,
+        "payment": 443.20610252756904,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "P3 and P13 recurring 50",
+      "passed": true,
+      "actual_periods": 22,
+      "expected_periods": 22,
+      "actual_last": "{'period': 22, 'opening': 212.23155007297618, 'interest': 1.0611577503648808, 'scheduled': 213.29270782334106, 'extra': 0.0, 'payment': 213.29270782334106, 'closing': 0.0}",
+      "expected_last": {
+        "period": 22.0,
+        "opening": 212.23155007297262,
+        "interest": 1.0611577503648633,
+        "scheduled": 213.2927078233375,
+        "extra": 0.0,
+        "payment": 213.2927078233375,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "P3 and P13 recurring 100",
+      "passed": true,
+      "actual_periods": 20,
+      "expected_periods": 20,
+      "actual_last": "{'period': 20, 'opening': 195.20233154041284, 'interest': 0.9760116577020642, 'scheduled': 196.1783431981149, 'extra': 0.0, 'payment': 196.1783431981149, 'closing': 0.0}",
+      "expected_last": {
+        "period": 20.0,
+        "opening": 195.20233154041154,
+        "interest": 0.9760116577020577,
+        "scheduled": 196.1783431981136,
+        "extra": 0.0,
+        "payment": 196.1783431981136,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "P12 recurring 100 from period 12",
+      "passed": true,
+      "actual_periods": 22,
+      "expected_periods": 22,
+      "actual_last": "{'period': 22, 'opening': 293.6294599838053, 'interest': 1.4681472999190266, 'scheduled': 295.09760728372436, 'extra': 0.0, 'payment': 295.09760728372436, 'closing': 0.0}",
+      "expected_last": {
+        "period": 22.0,
+        "opening": 293.62945998380417,
+        "interest": 1.468147299919021,
+        "scheduled": 295.0976072837232,
+        "extra": 0.0,
+        "payment": 295.0976072837232,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "start after maturity is baseline",
+      "passed": true,
+      "actual_periods": 24,
+      "expected_periods": 24,
+      "actual_last": "{'period': 24, 'opening': 441.0010970423612, 'interest': 2.205005485211806, 'scheduled': 443.20610252756904, 'extra': 0.0, 'payment': 443.20610252756904, 'closing': 0.0}",
+      "expected_last": {
+        "period": 24.0,
+        "opening": 441.0010970423573,
+        "interest": 2.205005485211786,
+        "scheduled": 443.20610252756904,
+        "extra": 0.0,
+        "payment": 443.20610252756904,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "zero rate with extras",
+      "passed": true,
+      "actual_periods": 10,
+      "expected_periods": 10,
+      "actual_last": "{'period': 10, 'opening': 75.0, 'interest': 0.0, 'scheduled': 75.0, 'extra': 0.0, 'payment': 75.0, 'closing': 0.0}",
+      "expected_last": {
+        "period": 10.0,
+        "opening": 75.0,
+        "interest": 0.0,
+        "scheduled": 75.0,
+        "extra": 0.0,
+        "payment": 75.0,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "P13 large extra capped",
+      "passed": true,
+      "actual_periods": 1,
+      "expected_periods": 1,
+      "actual_last": "{'period': 1, 'opening': 1000, 'interest': 10.0, 'scheduled': 88.8487886783417, 'extra': 921.1512113216583, 'payment': 1010.0, 'closing': 0.0}",
+      "expected_last": {
+        "period": 1.0,
+        "opening": 1000.0,
+        "interest": 10.0,
+        "scheduled": 88.8487886783417,
+        "extra": 921.1512113216583,
+        "payment": 1010.0,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "F72 tiny balance may not be written off",
+      "passed": false,
+      "actual_periods": 1,
+      "expected_periods": 4,
+      "actual_last": "{'period': 1, 'opening': 1e-10, 'interest': 0.0, 'scheduled': 2.5e-11, 'extra': 0, 'payment': 2.5e-11, 'closing': 0.0}",
+      "expected_last": {
+        "period": 4.0,
+        "opening": 2.5e-11,
+        "interest": 0.0,
+        "scheduled": 2.5e-11,
+        "extra": 0.0,
+        "payment": 2.5e-11,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "F72 positive residual at former absolute threshold",
+      "passed": false,
+      "actual_periods": 1,
+      "expected_periods": 2,
+      "actual_last": "{'period': 1, 'opening': 1, 'interest': 0, 'scheduled': 0.5, 'extra': 0.4999999999, 'payment': 0.9999999999, 'closing': 0.0}",
+      "expected_last": {
+        "period": 2.0,
+        "opening": 1e-10,
+        "interest": 0.0,
+        "scheduled": 1e-10,
+        "extra": 0.0,
+        "payment": 1e-10,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "F72 one-payment loan at very large rate",
+      "passed": true,
+      "actual_periods": 1,
+      "expected_periods": 1,
+      "actual_last": "{'period': 1, 'opening': 1, 'interest': 1e+308, 'scheduled': 1e+308, 'extra': 0, 'payment': 1e+308, 'closing': 0.0}",
+      "expected_last": {
+        "period": 1.0,
+        "opening": 1.0,
+        "interest": 1e+308,
+        "scheduled": 1e+308,
+        "extra": 0.0,
+        "payment": 1e+308,
+        "closing": 0.0
+      }
+    },
+    {
+      "label": "demo scenario 0",
+      "passed": true,
+      "expected": {
+        "periods": 24.0,
+        "interest": 636.9464606616572,
+        "paid": 10636.946460661657,
+        "final_balance": 0.0
+      }
+    },
+    {
+      "label": "demo scenario 50",
+      "passed": true,
+      "expected": {
+        "periods": 22.0,
+        "interest": 570.6208609022875,
+        "paid": 10570.620860902287,
+        "final_balance": 0.0
+      }
+    },
+    {
+      "label": "demo scenario 100",
+      "passed": true,
+      "expected": {
+        "periods": 20.0,
+        "interest": 517.0942912219255,
+        "paid": 10517.094291221925,
+        "final_balance": 0.0
+      }
+    },
+    {
+      "label": "P2 payment",
+      "passed": true,
+      "actual": 443.20610252756904,
+      "independent_reference": "945530151595475880465241187515453184625948114890152240050/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 first interest",
+      "passed": true,
+      "actual": 50.0,
+      "independent_reference": "50",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 first payment",
+      "passed": true,
+      "actual": 543.2061025275691,
+      "independent_reference": "1158868854786427641395723562546359553877844344670456720150/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 first principal",
+      "passed": true,
+      "actual": 493.2061025275691,
+      "independent_reference": "1052199503190951760930482375030906369251896229780304480100/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 first closing",
+      "passed": true,
+      "actual": 9506.793897472431,
+      "independent_reference": "20281670815904224332117755128059730555937726748250143529900/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 next interest effect",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 interest savings",
+      "passed": true,
+      "actual": 119.85216943973171,
+      "independent_reference": "134055756577607871600506462938718498490576831998135469404321199814647106792053776517467867589848801/1118509220185777168347207434402038385223381705190562752626688000000000000000000000000000000000000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 periods saved",
+      "passed": true,
+      "actual": 4,
+      "independent_reference": "4",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 delayed recurring interest",
+      "passed": true
+    },
+    {
+      "label": "row payment and balance identities",
+      "passed": true
+    },
+    {
+      "label": "total principal",
+      "passed": true,
+      "actual": 10000.000000000002,
+      "independent_reference": "10000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 payment overflow",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 interest underflow",
+      "passed": false,
+      "actual": "[{'period': 1, 'opening': 5e-324, 'interest': 0.0, 'scheduled': 0.0, 'extra': 0, 'payment': 0.0, 'closing': 0.0}]"
+    },
+    {
+      "label": "F54 due overflow",
+      "passed": false,
+      "actual": "[{'period': 1, 'opening': 1e+308, 'interest': 1e+308, 'scheduled': 1.1428571428571429e+308, 'extra': 0, 'payment': 1.1428571428571429e+308, 'closing': inf}, {'period': 2, 'opening': inf, 'interest': inf, 'scheduled': 1.1428571428571429e+308, 'extra': 0, 'payment': 1.1428571428571429e+308, 'closing': inf}, {'period': 3, 'opening': inf, 'interest': inf, 'scheduled': 1.1428571428571429e+308, 'extra': 0, 'payment': 1.1428571428571429e+308, 'closing': inf}]"
+    },
+    {
+      "label": "F54 aggregate paid overflow",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "invalid extra start",
+      "passed": true,
+      "exception": "ValueError('invalid extra start')"
+    },
+    {
+      "label": "invalid extra",
+      "passed": true,
+      "exception": "ValueError('extra must be finite and nonnegative')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 14,
+  "conceptual_prompts": [
+    1,
+    10,
+    14
+  ],
+  "historical_unique_methods_added": 0
+}
