@@ -1,6 +1,8 @@
 """Book 02 Section 19.4: equilibria and local stability."""
 import json
 import math
+from decimal import Context, Decimal, localcontext
+from section_19_02 import logistic as _logistic
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -27,13 +29,23 @@ def mean_reversion(initial,target,speed,years):
                    (speed,"speed"),(years,"years")))
     if k<=0 or t<0:
         raise ValueError("speed must be positive and years nonnegative")
-    return finite(target+(a-target)*math.exp(-k*t),"balance")
+    if t==0 or a==target:
+        return a
+    with localcontext(Context(prec=1800)):
+        exponent=Decimal(k)*Decimal(t)
+        if exponent>2000:
+            # Even the largest finite endpoint difference cannot affect
+            # rounding at this decay scale.
+            return target if target else math.copysign(0.0,a)
+        start,end=Decimal(a),Decimal(target)
+        return float(end+(start-end)*(-exponent).exp())
 
 def half_life(speed):
     k=finite(speed,"speed")
     if k<=0:
         raise ValueError("speed must be positive")
-    return math.log(2)/k
+    with localcontext(Context(prec=100)):
+        return finite(float(Decimal(2).ln()/Decimal(k)),"half-life")
 
 def account_equilibrium(rate,flow):
     r,u=finite(rate,"rate"),finite(flow,"flow")
@@ -50,14 +62,7 @@ def logistic_equilibria(rate,capacity):
              "classification":classify_derivative(-r)}]
 
 def logistic(initial,rate,capacity,years):
-    a,r,k,t=(finite(v,n) for v,n in
-             ((initial,"initial"),(rate,"rate"),
-              (capacity,"capacity"),(years,"years")))
-    if a<0 or r<=0 or k<=0 or t<0:
-        raise ValueError("invalid logistic inputs")
-    if a==0:
-        return 0.0
-    return finite(k/(1+(k/a-1)*math.exp(-r*t)),"logistic balance")
+    return _logistic(initial,rate,capacity,years)
 
 def phase_direction(value):
     x=finite(value,"velocity")
