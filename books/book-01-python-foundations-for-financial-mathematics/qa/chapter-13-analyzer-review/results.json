@@ -1,0 +1,446 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "e82a261c2852b320406f31944d1eccf31ed1beced4f50c7742b7fbd3eedcba35",
+  "listing_sha256": "dcc5b9e235e492dd910adf5312ebfec54784b510bac3dc0e871ceeb066632ef0",
+  "fragment_sha256": "04823f7033ad1cd01a7c3b0962b36ecfa76e6c5c698e3e5c9cfe6a580a8250dc",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "investment_performance_analyzer.py"
+      ],
+      "returncode": 0,
+      "stdout": "arithmetic: 0.011667\ngeometric: 0.011445\ncumulative: 0.070664\nsample_volatility: 0.023166\nmaximum_drawdown: -0.020000\nannualized_sharpe: 1.445490\nannualized_volatility: 0.080250\n",
+      "stderr": "test_01_simple_returns (__main__.AnalyzerTests.test_01_simple_returns) ... ok\ntest_02_arithmetic (__main__.AnalyzerTests.test_02_arithmetic) ... ok\ntest_03_geometric (__main__.AnalyzerTests.test_03_geometric) ... ok\ntest_04_link (__main__.AnalyzerTests.test_04_link) ... ok\ntest_05_total_loss (__main__.AnalyzerTests.test_05_total_loss) ... ok\ntest_06_volatility (__main__.AnalyzerTests.test_06_volatility) ... ok\ntest_07_drawdown (__main__.AnalyzerTests.test_07_drawdown) ... ok\ntest_08_sharpe (__main__.AnalyzerTests.test_08_sharpe) ... ok\ntest_09_twr (__main__.AnalyzerTests.test_09_twr) ... ok\ntest_10_irr (__main__.AnalyzerTests.test_10_irr) ... ok\ntest_11_reconciliation (__main__.AnalyzerTests.test_11_reconciliation) ... ok\ntest_12_invalid (__main__.AnalyzerTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.020s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import investment_performance_analyzer"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "investment_performance_analyzer.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 dataset A arithmetic",
+      "passed": true,
+      "actual": 0.011666666666666667,
+      "independent_reference": "7/600",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 factor",
+      "passed": true,
+      "actual": 1.0094,
+      "independent_reference": "5047/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 link",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 geometric",
+      "passed": true,
+      "actual": 0.039230484541326376,
+      "independent_reference": "0.03923048454132637611646780490",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 arithmetic",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 sample volatility",
+      "passed": true,
+      "actual": 0.1414213562373095,
+      "independent_reference": "0.1414213562373095048801688724209698078569671875376948073",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 drawdown",
+      "passed": true,
+      "actual": -0.25,
+      "independent_reference": "-1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 periodic Sharpe",
+      "passed": true,
+      "actual": 0.4,
+      "independent_reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 annualized Sharpe",
+      "passed": true,
+      "actual": 1.3856406460551018,
+      "independent_reference": "1.385640646055101834821957073204697893554244203048304502",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 simple return",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 second return",
+      "passed": true,
+      "actual": -0.1,
+      "independent_reference": "-1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 B exact TWR",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 periodic IRR",
+      "passed": true,
+      "actual": 0.09999999999970441,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 NPV residual",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C IRR via positive quadratic gross root",
+      "passed": true,
+      "actual": -0.024234932786816897,
+      "independent_reference": "-0.024234932786873714620806212582143014995337247674634488",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C residual",
+      "passed": true,
+      "actual": -1.4629508909278145e-11,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-07,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A sample volatility",
+      "passed": true,
+      "actual": 0.023166067138525405,
+      "independent_reference": "0.02316606713852540544489875456617390315287628199400645932",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A annualized Sharpe",
+      "passed": true,
+      "actual": 1.4454898802097578,
+      "independent_reference": "1.445489880209757772822456284601768754766945178675661493",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A cumulative return",
+      "passed": true,
+      "actual": 0.070664442848,
+      "independent_reference": "2208263839/31250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A geometric mean",
+      "passed": true,
+      "actual": 0.011444902502713664,
+      "independent_reference": "0.01144490250271366327259770587",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A contextual geometric fragment",
+      "passed": true,
+      "actual": 0.011444902502713662,
+      "independent_reference": "0.01144490250271366327259770587",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A geometric reconciliation",
+      "passed": true,
+      "actual": 1.070664442848,
+      "independent_reference": "33458263839/31250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A wealth reconciliation",
+      "passed": true,
+      "actual": 107.06644428479999,
+      "independent_reference": "33458263839/312500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "true depletion geometric",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "true depletion drawdown",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 tiny simple return",
+      "passed": true,
+      "actual": 1e-18,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 tiny link",
+      "passed": true,
+      "actual": 1e-18,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 link after offsetting large factors",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 TWR after offsetting large factors",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 tiny sample volatility",
+      "passed": true,
+      "actual": 1.414213562373095e-200,
+      "independent_reference": "1.414213562373095048801688724209698078569671875376948073E-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 tiny cash-flow IRR",
+      "passed": true,
+      "actual": 0.12500000000020464,
+      "independent_reference": "1/8",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 tiny drawdown",
+      "passed": true,
+      "actual": -1e-18,
+      "independent_reference": "-1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 undefined scalar Sharpe",
+      "passed": true,
+      "exception": "ValueError('undefined Sharpe: zero volatility')"
+    },
+    {
+      "label": "F108 empty drawdown",
+      "passed": true,
+      "exception": "ValueError('insufficient returns or a return below -100%')"
+    },
+    {
+      "label": "F108 impossible arithmetic return",
+      "passed": true,
+      "exception": "ValueError('insufficient returns or a return below -100%')"
+    },
+    {
+      "label": "F108 positive linked factor not a true total loss",
+      "passed": true,
+      "exception": "ValueError('positive gross factor rounds to complete loss')"
+    },
+    {
+      "label": "F108 scaled same-sign bracket",
+      "passed": true,
+      "exception": "ValueError('no bracketed root; check multiple roots')"
+    },
+    {
+      "label": "nonfinite return",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "nonpositive post-flow base",
+      "passed": true,
+      "exception": "ValueError('nonpositive post-flow value')"
+    },
+    {
+      "label": "A drawdown observation 0",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown observation 1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown observation 2",
+      "passed": true,
+      "actual": -0.02,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown observation 3",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown observation 4",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown observation 5",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown observation 6",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A drawdown count and range",
+      "passed": true
+    },
+    {
+      "label": "A AM\u2013GM",
+      "passed": true
+    },
+    {
+      "label": "F108 report retains defined metrics on flat returns",
+      "passed": true
+    },
+    {
+      "label": "F108 annual volatility in report",
+      "passed": true,
+      "actual": 0.08024961059095552,
+      "independent_reference": "0.08024961059095551773255705580030509293706143922992465528",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F108 Dataset C prose agrees with reference",
+      "passed": true
+    },
+    {
+      "label": "exact demo lines",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "lab_step_records": 12,
+  "local_prompt_records": 18,
+  "extension_records": 5,
+  "historical_unique_methods_added": 0,
+  "independent_dataset_a": {
+    "arithmetic": "7/600",
+    "geometric": "0.01144490250271366327259770587",
+    "cumulative": "2208263839/31250000000",
+    "sample_volatility": "0.02316606713852540544489875456617390315287628199400645932",
+    "maximum_drawdown": "-1/50",
+    "annualized_sharpe": "1.445489880209757772822456284601768754766945178675661493",
+    "annualized_volatility": "0.08024961059095551773255705580030509293706143922992465528"
+  },
+  "independent_wealth_index": [
+    "100",
+    "103",
+    "5047/50",
+    "65611/625",
+    "6495489/62500",
+    "331269939/3125000",
+    "33458263839/312500000"
+  ]
+}
