@@ -35,3 +35,9 @@ PY
 ```
 
 The first two probes reproduce numerical defects. The rate pair exposes a contract boundary: reconcile the published policy before choosing the forward behavior and test the nearest valid effective rate as well. Extend the follow-up to genuine overflow, the introductory Euler path and actual assessment fields. These probes are a baseline; no Section 19.1 fix or comprehensive review is claimed.
+
+### Additional baseline observations at the same source
+
+- `euler_account(2.0, 1e308, -1e308, 0.5, 1)` raised `ValueError: Euler balance must be finite`. The exact affine step is `2 + (2r-r)/2 = 2+r/2` with the represented rate `r=1e308`, which rounds to `5e307`.
+- `math.nextafter(-1.0, 0.0)` successfully round-trips; the intermediate continuous rate is approximately `-36.7368005696771`.
+- The actual `assessment()` returns the Euler balances but no absolute errors, which the manuscript's Numerical comparison asks readers to report. The analytic growth and the geometric Euler values, evaluated with the represented rate in 80-digit Decimal, give absolute errors of about `0.5487926644431149`, `0.27534088891683794` and `0.1379079465768582` for 10, 20 and 40 steps. Determine whether the source report should include those fields and test them if added.
