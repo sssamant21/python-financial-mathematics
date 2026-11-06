@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`  
-**Latest scoped source revision:** `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd` (included in V-83)  
-**Disposition:** V-83 full candidate Linux pass includes the analytical account reference correction; independent review and release approval pending.
+**Full-runtime candidate source revision:** `c7fb27159683d94cdf41aa1f6bd8a1cb6e5bd946`  
+**Latest scoped source revision:** `c7fb27159683d94cdf41aa1f6bd8a1cb6e5bd946` (included in V-84)  
+**Disposition:** V-84 full candidate Linux pass includes the Euler range and grid correction; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-84](runtime-refresh-2026-11-06-r03.md): 549 compiled, 336 passed, 550 required hashes verified before/after. G2–G8 unchanged.
 
 [V-83](runtime-refresh-2026-11-06-r02.md): 548 compiled, 335 passed, 549 required hashes verified before/after. G2–G8 unchanged.
 
@@ -123,7 +125,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-83](runtime-refresh-2026-11-06-r02.md) at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`; 548 sources/335 scripts/549 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-84](runtime-refresh-2026-11-06-r03.md) at `c7fb27159683d94cdf41aa1f6bd8a1cb6e5bd946`; 549 sources/336 scripts/550 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -598,3 +600,11 @@ Next substantive item: [Section 19.6 account reference baseline](chapter-19-rk4-
 [V-83](runtime-refresh-2026-11-06-r02.md) compiled 548 files, passed 335 scripts and matched 549 required blobs before and after at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`. Chapter 19: 45 compiled files and 35 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.5 Euler range and grid baseline](chapter-19-euler-range-grid-baseline.md) records a false Euler overflow, horizon overshoot and callbacks at zero horizon. Validate the distinct Euler driver against independent complete updates and represented time grids, and reconcile its step metadata. Wider capstone provenance and manual reviews remain open.
+
+## Euler complete updates and represented time grid — V-84
+
+[Section 19.5 Euler range and grid](chapter-19-euler-range-grid-followup.md) retains 13 baseline mismatches (including newly specified metadata) and a 21-case pass. It checks complete updates, independently derived represented endpoints, derivative calls and interval metadata. Existing Euler stability and convergence checks pass. This adds selected COV-84 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-84](runtime-refresh-2026-11-06-r03.md) compiled 549 files, passed 336 scripts and matched 550 required blobs before and after at `c7fb27159683d94cdf41aa1f6bd8a1cb6e5bd946`. Chapter 19: 46 compiled files and 36 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Euler amplification boundary baseline](chapter-19-euler-amplification-boundary-baseline.md) reproduces three discrepancies at the strict stability or cancellation boundaries. Verify complete-factor rounding separately from the exact classification and observed rounded trajectories. Wider capstone provenance and manual reviews remain open.
