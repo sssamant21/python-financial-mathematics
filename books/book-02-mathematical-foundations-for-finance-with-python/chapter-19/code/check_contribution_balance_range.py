@@ -66,7 +66,7 @@ def check():
         rows.append(observe(lab.end_period_contributions,(0,5000,0,1,2),0.0))
         # Explicit educational evaluation limit, not mathematical overflow.
         rows.append(observe(lab.end_period_contributions,
-                            (1,4001,-4001,1,10**2000),'ValueError'))
+                            (1,5001,-5001,1,10**2000),'ValueError'))
         for fn,args in [(lab.continuous_contributions,(0,float('inf'),0,0)),
                         (lab.continuous_contributions,(0,0,0,-1)),
                         (lab.end_period_contributions,(0,0,0,0,0)),
