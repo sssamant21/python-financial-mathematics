@@ -1,0 +1,290 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "12d426ab701b6adbb4d945ee6f91194cc90d94e163f74d4ba384743464324631",
+  "listing_sha256": "dbee2f3ed4848662810e1a249e6a92061cfa23972af94866813ec2681403212c",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "outstanding_loan_balance.py"
+      ],
+      "returncode": 0,
+      "stdout": "Payment: 443.21\nBalance after 12 payments: 5149.58\n",
+      "stderr": "test_01_start (__main__.Tests.test_01_start) ... ok\ntest_02_end (__main__.Tests.test_02_end) ... ok\ntest_03_first_period (__main__.Tests.test_03_first_period) ... ok\ntest_04_methods (__main__.Tests.test_04_methods) ... ok\ntest_05_zero_rate (__main__.Tests.test_05_zero_rate) ... ok\ntest_06_zero_rate_retrospective (__main__.Tests.test_06_zero_rate_retrospective) ... ok\ntest_07_decreasing (__main__.Tests.test_07_decreasing) ... ok\ntest_08_remaining_pv (__main__.Tests.test_08_remaining_pv) ... ok\ntest_09_extra (__main__.Tests.test_09_extra) ... ok\ntest_10_full_payoff (__main__.Tests.test_10_full_payoff) ... ok\ntest_11_bad_k (__main__.Tests.test_11_bad_k) ... ok\ntest_12_bad_extra (__main__.Tests.test_12_bad_extra) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "outstanding_loan_balance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "worked payment",
+      "passed": true,
+      "actual": 443.20610252756904,
+      "independent_reference": "945530151595475880465241187515453184625948114890152240050/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "prospective k=0",
+      "passed": true,
+      "actual": 10000.0,
+      "independent_reference": "10000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "retrospective k=0",
+      "passed": true,
+      "actual": 10000.0,
+      "independent_reference": "10000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "prospective k=1",
+      "passed": true,
+      "actual": 9606.793897472431,
+      "independent_reference": "20495009519095176093048237503090636925189622978030448010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "retrospective k=1",
+      "passed": true,
+      "actual": 9606.79389747243,
+      "independent_reference": "20495009519095176093048237503090636925189622978030448010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "prospective k=5",
+      "passed": true,
+      "actual": 8014.210634710576,
+      "independent_reference": "17097413039082888093048237503090636925189622978030448010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "retrospective k=5",
+      "passed": true,
+      "actual": 8014.210634710577,
+      "independent_reference": "17097413039082888093048237503090636925189622978030448010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "prospective k=12",
+      "passed": true,
+      "actual": 5149.581596866294,
+      "independent_reference": "43486323173969902337626424010000/8444632317396990233762642401",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "retrospective k=12",
+      "passed": true,
+      "actual": 5149.581596866294,
+      "independent_reference": "43486323173969902337626424010000/8444632317396990233762642401",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "prospective k=23",
+      "passed": true,
+      "actual": 441.00109704235723,
+      "independent_reference": "940826021488035701955463868174580283209898621781246010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "retrospective k=23",
+      "passed": true,
+      "actual": 441.00109704235547,
+      "independent_reference": "940826021488035701955463868174580283209898621781246010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "prospective k=24",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "retrospective k=24",
+      "passed": true,
+      "actual": 1.8189894035458565e-12,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 remaining count",
+      "passed": true
+    },
+    {
+      "label": "P6 zero-rate prospective_balance",
+      "passed": true,
+      "actual": 900.0,
+      "independent_reference": "900",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 zero-rate retrospective_balance",
+      "passed": true,
+      "actual": 900.0,
+      "independent_reference": "900",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P10 exact extra-payment example",
+      "passed": true,
+      "actual": 4600.0,
+      "independent_reference": "4600",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "partial extra at period five",
+      "passed": true,
+      "actual": 7614.210634710576,
+      "independent_reference": "16244058226319081049326308002967011448182038058909230089600/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "full principal payoff",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "worked display",
+      "passed": true
+    },
+    {
+      "label": "F54 tiny rate payment",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny rate prospective balance",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/15",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 prospective start independent of payment",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 retrospective start independent of payment",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 retrospective maturity without overflow",
+      "passed": false,
+      "exception": "OverflowError('math range error')",
+      "reference": "0"
+    },
+    {
+      "label": "F66 zero-rate retrospective cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "381469726562500004188180400634939352952927817067382226321451884853964177722593275211957279123286014171833990744480791151472436079952774384797313725273689445614897401820880993597784003065447078870156801094684605325419989113666325293075909407755689461222778206526887569829146586964446538059138815747948544/3814697265625",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F66 long retrospective with finite result",
+      "passed": false,
+      "exception": "OverflowError('math range error')",
+      "reference": "11481306952742545242328332011776819840223177020886952004776427368257662613923703138566594863165062699184459646389874627734471189608630553314259313561666531853912998914531228000068877914824004487142892699006348624478161546364638836394731702604046635397090499655816239880894462960562331164953616422197033268134416890898445850560237948480791405890093477650042900271670662583052200813223628129176126788331720659899539641812702177985840404215985318325154088943390209192055495778358967203916008195721663058275538042558372601552834878641943205450891527578388262517543552880082284277081796545376218485114902937600/229626139054850904846566640235536396804463540417739040095528547365153252278474062771331897263301253983689192927797492554689423792172611066285186271233330637078259978290624560001377558296480089742857853980126972489563230927292776727894634052080932707941809993116324797617889259211246623299072328443940665362688337817968917011204758969615828117801869553000858005433413251661044016264472562583522535766634413197990792836254043559716808084319706366503081778867804183841109915567179344078320163914433261165510760851167452031056697572838864109017830551567765250350871057601645685541635930907524369702298058751"
+    },
+    {
+      "label": "F54 zero-rate payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 nonfinite payment",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 remaining balance underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F69 slight overpayment still exceeds balance",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F69 nonzero extra at maturity",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "bad completed count",
+      "passed": true,
+      "exception": "ValueError('completed payments must be between 0 and term')"
+    },
+    {
+      "label": "negative extra",
+      "passed": true,
+      "exception": "ValueError('extra payment must be finite nonnegative')"
+    },
+    {
+      "label": "large extra",
+      "passed": true,
+      "exception": "ValueError('extra payment exceeds balance')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_prompts": [
+    1,
+    9,
+    11
+  ],
+  "supplemental_arithmetic": [
+    8
+  ],
+  "historical_unique_methods_added": 0
+}
