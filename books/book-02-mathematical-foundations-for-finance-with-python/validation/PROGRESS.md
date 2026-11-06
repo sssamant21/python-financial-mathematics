@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-93 full candidate Linux pass (558 files, 345 scripts, 559 required hashes), including Section 20.7 manifest publication. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-94 full candidate Linux pass (559 files, 346 scripts, 560 required hashes), including Chapter 21 integrated execution evidence. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 558/558 at `7b2430e2a88336993306dd6b1394ee250cb357e2`. [V-93](runtime-refresh-2026-11-06-r12.md). |
-| Automated script execution | Full candidate Linux pass | 345/345 at `7b2430e2a88336993306dd6b1394ee250cb357e2`; all 559 required hashes matched before/after. [V-93](runtime-refresh-2026-11-06-r12.md). |
+| Python compilation | Full candidate Linux pass | 559/559 at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`. [V-94](runtime-refresh-2026-11-06-r13.md). |
+| Automated script execution | Full candidate Linux pass | 346/346 at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`; all 560 required hashes matched before/after. [V-94](runtime-refresh-2026-11-06-r13.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -877,3 +877,11 @@ Next: [Section 20.7 interrupted-write baseline](chapter-20-manifest-interrupted-
 [V-93](runtime-refresh-2026-11-06-r12.md) compiled 558 files, passed 345 scripts and verified 559 required blobs before and after at `7b2430e2a88336993306dd6b1394ee250cb357e2`. Chapter 20: 35 compiled files and 24 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Chapter 21 integrated execution baseline](chapter-21-integrated-provenance-baseline.md) records actual deterministic CLI output. Check an external run record binding command, dependency source bytes and stdout under COV-88, while keeping the teaching payload's pending fields. Wider capstone requirements and manual reviews remain open.
+
+## Integrated capstone execution evidence — V-94
+
+[Chapter 21 integrated run receipt](chapter-21-integrated-provenance-followup.md) records actual Section 21.9 CLI bytes, source hashes, command and exit. All ten checks passed, including changed-source and altered-output detection and a retained real import failure. The report itself remains unchanged and retains pending status. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-94](runtime-refresh-2026-11-06-r13.md) compiled 559 files, passed 346 scripts and verified 560 required blobs before and after at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 21.4 central-difference baseline](chapter-21-central-difference-range-baseline.md) reproduces two finite complete stencil values rejected by the actual helper. Check COV-90 centered-difference arithmetic, existing perturbation guards and the actual integrated diagnostic. Wider capstone requirements and manual reviews remain open.
