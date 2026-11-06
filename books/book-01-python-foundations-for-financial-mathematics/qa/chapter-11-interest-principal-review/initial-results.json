@@ -1,0 +1,302 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "0dacbd713fff13f5aa2552a4725b211c67d977a1165f1ad25abcf2432da13c10",
+  "listing_sha256": "463b5ae0edf68a00c9c34f178d7368d7842cc4096f5bc8f65f21ddf191a21508",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "interest_principal_components.py"
+      ],
+      "returncode": 0,
+      "stdout": "1 payment 443.21 interest 50.0 principal 393.21 balance 9606.79\n2 payment 443.21 interest 48.03 principal 395.17 balance 9211.62\n3 payment 443.21 interest 46.06 principal 397.15 balance 8814.47\n",
+      "stderr": "test_01_zero_rate (__main__.Tests.test_01_zero_rate) ... ok\ntest_02_first_interest (__main__.Tests.test_02_first_interest) ... ok\ntest_03_first_principal (__main__.Tests.test_03_first_principal) ... ok\ntest_04_balance_update (__main__.Tests.test_04_balance_update) ... ok\ntest_05_payment_reconciliation (__main__.Tests.test_05_payment_reconciliation) ... ok\ntest_06_interest_declines (__main__.Tests.test_06_interest_declines) ... ok\ntest_07_principal_grows (__main__.Tests.test_07_principal_grows) ... ok\ntest_08_principal_total (__main__.Tests.test_08_principal_total) ... ok\ntest_09_interest_total (__main__.Tests.test_09_interest_total) ... ok\ntest_10_final_balance (__main__.Tests.test_10_final_balance) ... ok\ntest_11_zero_rate_components (__main__.Tests.test_11_zero_rate_components) ... ok\ntest_12_invalid_inputs (__main__.Tests.test_12_invalid_inputs) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "interest_principal_components.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "all 24 rows vs exact retrospective recurrence",
+      "passed": true
+    },
+    {
+      "label": "demonstration period 1",
+      "passed": true
+    },
+    {
+      "label": "demonstration row 1 payment",
+      "passed": true,
+      "expected": 443.21,
+      "actual": "443.21"
+    },
+    {
+      "label": "demonstration row 1 interest",
+      "passed": true,
+      "expected": 50.0,
+      "actual": "50.0"
+    },
+    {
+      "label": "demonstration row 1 principal",
+      "passed": true,
+      "expected": 393.21,
+      "actual": "393.21"
+    },
+    {
+      "label": "demonstration row 1 balance",
+      "passed": true,
+      "expected": 9606.79,
+      "actual": "9606.79"
+    },
+    {
+      "label": "demonstration period 2",
+      "passed": true
+    },
+    {
+      "label": "demonstration row 2 payment",
+      "passed": true,
+      "expected": 443.21,
+      "actual": "443.21"
+    },
+    {
+      "label": "demonstration row 2 interest",
+      "passed": true,
+      "expected": 48.03,
+      "actual": "48.03"
+    },
+    {
+      "label": "demonstration row 2 principal",
+      "passed": true,
+      "expected": 395.17,
+      "actual": "395.17"
+    },
+    {
+      "label": "demonstration row 2 balance",
+      "passed": true,
+      "expected": 9211.62,
+      "actual": "9211.62"
+    },
+    {
+      "label": "demonstration period 3",
+      "passed": true
+    },
+    {
+      "label": "demonstration row 3 payment",
+      "passed": true,
+      "expected": 443.21,
+      "actual": "443.21"
+    },
+    {
+      "label": "demonstration row 3 interest",
+      "passed": true,
+      "expected": 46.06,
+      "actual": "46.06"
+    },
+    {
+      "label": "demonstration row 3 principal",
+      "passed": true,
+      "expected": 397.15,
+      "actual": "397.15"
+    },
+    {
+      "label": "demonstration row 3 balance",
+      "passed": true,
+      "expected": 8814.47,
+      "actual": "8814.47"
+    },
+    {
+      "label": "F68 printed worked table row 1",
+      "passed": true,
+      "expected": [
+        "50.00",
+        "393.21",
+        "9606.79"
+      ],
+      "actual": [
+        "50.00",
+        "393.21",
+        "9606.79"
+      ]
+    },
+    {
+      "label": "F68 printed worked table row 2",
+      "passed": false,
+      "expected": [
+        "48.03",
+        "395.17",
+        "9211.62"
+      ],
+      "actual": [
+        "48.03",
+        "395.18",
+        "9211.61"
+      ]
+    },
+    {
+      "label": "F68 printed worked table row 3",
+      "passed": false,
+      "expected": [
+        "46.06",
+        "397.15",
+        "8814.47"
+      ],
+      "actual": [
+        "46.06",
+        "397.15",
+        "8814.46"
+      ]
+    },
+    {
+      "label": "P1/P3 each payment equals both components",
+      "passed": true
+    },
+    {
+      "label": "P2/P5 first interest",
+      "passed": true,
+      "actual": 50.0,
+      "independent_reference": "50",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 first principal",
+      "passed": true,
+      "actual": 393.20610252756904,
+      "independent_reference": "838860800000000000000000000000000000000000000000000000000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 closing balance",
+      "passed": true,
+      "actual": 9606.793897472431,
+      "independent_reference": "20495009519095176093048237503090636925189622978030448010000/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 next interest",
+      "passed": true,
+      "actual": 48.03396948736216,
+      "independent_reference": "102475047595475880465241187515453184625948114890152240050/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 balance recurrence across rows",
+      "passed": true
+    },
+    {
+      "label": "P9 interest declines and principal grows",
+      "passed": true
+    },
+    {
+      "label": "P10 total principal",
+      "passed": true,
+      "actual": 10000.0,
+      "independent_reference": "10000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 total interest",
+      "passed": true,
+      "actual": 636.9464606616573,
+      "independent_reference": "1358853319196245038117550997280239505833131779333205751200/2133387031909517609304823750309063692518962297803044801",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "summary final balance",
+      "passed": true,
+      "actual": 1.1937117960769683e-12,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero-rate summary",
+      "passed": true
+    },
+    {
+      "label": "F54 tiny positive rate payment",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F66 large interest first principal",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815106",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F66 one-payment closing balance",
+      "passed": false,
+      "actual": 1.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 zero-rate payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 nonfinite payment",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 nonzero interest underflow",
+      "passed": false,
+      "actual": "[{'period': 1, 'payment': 0.0, 'interest': 0.0, 'principal': 0.0, 'balance': 5e-324}]"
+    },
+    {
+      "label": "F54 summary interest overflow",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "bad principal",
+      "passed": true,
+      "exception": "ValueError('principal must be finite and positive')"
+    },
+    {
+      "label": "bad rate",
+      "passed": true,
+      "exception": "ValueError('rate must be finite and nonnegative')"
+    },
+    {
+      "label": "bad count",
+      "passed": true,
+      "exception": "ValueError('periods must be a positive integer')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "conceptual_prompts": [
+    12
+  ],
+  "historical_unique_methods_added": 0
+}
