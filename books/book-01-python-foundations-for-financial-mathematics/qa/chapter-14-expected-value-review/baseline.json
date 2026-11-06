@@ -1,0 +1,311 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "c3a00ebd96739710b57fcdbdc9329a48aad81d834c28b188751b045883cb39f3",
+  "listing_sha256": "e614714432d04d25acfcc8f508933611d98dd81c75c7ab0166413d840ccc12f4",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "expected_value.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_payoff (__main__.ExpectedValueTests.test_01_payoff) ... ok\ntest_02_constant (__main__.ExpectedValueTests.test_02_constant) ... ok\ntest_03_bernoulli (__main__.ExpectedValueTests.test_03_bernoulli) ... ok\ntest_04_linear (__main__.ExpectedValueTests.test_04_linear) ... ok\ntest_05_square (__main__.ExpectedValueTests.test_05_square) ... ok\ntest_06_expected_loss (__main__.ExpectedValueTests.test_06_expected_loss) ... ok\ntest_07_zero_default (__main__.ExpectedValueTests.test_07_zero_default) ... ok\ntest_08_discount (__main__.ExpectedValueTests.test_08_discount) ... ok\ntest_09_scenarios (__main__.ExpectedValueTests.test_09_scenarios) ... ok\ntest_10_negative_expected (__main__.ExpectedValueTests.test_10_negative_expected) ... ok\ntest_11_invariance (__main__.ExpectedValueTests.test_11_invariance) ... ok\ntest_12_invalid (__main__.ExpectedValueTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import expected_value"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "expected_value.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 signed mean",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 certain payoff",
+      "passed": true,
+      "actual": 7.0,
+      "independent_reference": "7",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 default indicator",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 expected credit loss",
+      "passed": true,
+      "actual": 80.0,
+      "independent_reference": "80",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 zero default",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 full loss",
+      "passed": true,
+      "actual": 500,
+      "independent_reference": "500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 negative mean",
+      "passed": true,
+      "actual": -6.0,
+      "independent_reference": "-6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 transformed mean",
+      "passed": true,
+      "actual": 11.0,
+      "independent_reference": "11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 shifted mean",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 second moment",
+      "passed": true,
+      "actual": 337.5,
+      "independent_reference": "675/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12/E13 discounted expectation",
+      "passed": true,
+      "actual": 99.99999999999999,
+      "independent_reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 claim average",
+      "passed": true,
+      "actual": 50.0,
+      "independent_reference": "50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 weighted scenarios",
+      "passed": true,
+      "actual": 14.0,
+      "independent_reference": "14",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 expected return",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 indicator",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 conditional model",
+      "passed": true,
+      "actual": 40.0,
+      "independent_reference": "40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 square average",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project PD 1 percent",
+      "passed": true,
+      "actual": 40.0,
+      "independent_reference": "40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project PD 5 percent",
+      "passed": true,
+      "actual": 200.0,
+      "independent_reference": "200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F118 cancellation preserves integer difference",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F118 transformed cancellation preserves difference",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F118 scenario cancellation preserves difference",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F118 discount rescues finite present value",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F118 negative rate and zero periods",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F118 normalize PMF mass",
+      "passed": false
+    },
+    {
+      "label": "F118 normalize scenario mass",
+      "passed": false
+    },
+    {
+      "label": "E11 nonlinear expectation differs from squared mean",
+      "passed": true
+    },
+    {
+      "label": "E18 linearly related outcomes require no independence",
+      "passed": true
+    },
+    {
+      "label": "E24 invalid probability mass",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one')"
+    },
+    {
+      "label": "invalid PD",
+      "passed": true,
+      "exception": "ValueError('invalid loss inputs')"
+    },
+    {
+      "label": "invalid LGD",
+      "passed": true,
+      "exception": "ValueError('invalid loss inputs')"
+    },
+    {
+      "label": "nonfinite scenario payoff",
+      "passed": true,
+      "exception": "ValueError('invalid scenario payoff')"
+    },
+    {
+      "label": "scenario length mismatch",
+      "passed": true,
+      "exception": "ValueError('scenario lengths differ or empty')"
+    },
+    {
+      "label": "F118 enormous invalid weight rejected",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F118 nonrepresentable discounted output",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F118 nonzero weighted expectation must not silently underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "fixture": "hypothetical investment and credit loss, USD",
+    "credit_horizon_years": 1,
+    "investment_horizon": "one modeled period",
+    "credit_losses": {
+      "0.01": 40.0,
+      "0.02": 80.0,
+      "0.05": 200.0
+    }
+  }
+}
