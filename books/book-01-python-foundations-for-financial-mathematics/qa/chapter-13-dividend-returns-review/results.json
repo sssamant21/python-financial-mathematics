@@ -1,0 +1,291 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "9b1f9064b44c53767a8498bb1fc2771f975c6275fbb1ad3e8682a6b36888a2d7",
+  "listing_sha256": "47804575acbdad514aa258983c2084cadd4b99c4c756b925f358bc277309d1d3",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "dividends_total_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "Price return: 5.00%\nTotal return: 8.00%\nNet return: 7.00%\n",
+      "stderr": "test_01_price_only (__main__.DividendReturnTests.test_01_price_only) ... ok\ntest_02_dividend (__main__.DividendReturnTests.test_02_dividend) ... ok\ntest_03_cost (__main__.DividendReturnTests.test_03_cost) ... ok\ntest_04_yield (__main__.DividendReturnTests.test_04_yield) ... ok\ntest_05_flat_price (__main__.DividendReturnTests.test_05_flat_price) ... ok\ntest_06_reinvest_shares (__main__.DividendReturnTests.test_06_reinvest_shares) ... ok\ntest_07_reinvest_return (__main__.DividendReturnTests.test_07_reinvest_return) ... ok\ntest_08_split (__main__.DividendReturnTests.test_08_split) ... ok\ntest_09_split_gain (__main__.DividendReturnTests.test_09_split_gain) ... ok\ntest_10_link (__main__.DividendReturnTests.test_10_link) ... ok\ntest_11_total_loss (__main__.DividendReturnTests.test_11_total_loss) ... ok\ntest_12_invalid (__main__.DividendReturnTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import dividends_total_return"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "dividends_total_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E8 E10 supplemental withholding and dividend cash",
+      "passed": true
+    },
+    {
+      "label": "E1 price gain",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 dividend contribution",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 total gain",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 fee deducted once",
+      "passed": true,
+      "actual": 0.07,
+      "independent_reference": "7/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 ex-dividend price drop offset",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 dividend yield",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 positive total despite lower price",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 net-of-withholding return",
+      "passed": true,
+      "actual": 0.0755,
+      "independent_reference": "151/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 new shares",
+      "passed": true,
+      "actual": 0.40000000000000036,
+      "independent_reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 final market value",
+      "passed": true,
+      "actual": 572.0,
+      "independent_reference": "572",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 reinvested return",
+      "passed": true,
+      "actual": 0.144,
+      "independent_reference": "18/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 cash-held return",
+      "passed": true,
+      "actual": 0.14,
+      "independent_reference": "7/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 split neutral",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 split gain",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 linked return",
+      "passed": true,
+      "actual": 0.0584,
+      "independent_reference": "73/1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F101 tiny dividend change survives gross rounding",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F95 tiny linked gain",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite reinvested return despite overflowed notionals",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite split adjustment despite intermediate overflow",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite shares despite intermediate dividend ratio overflow",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fractional new shares",
+      "passed": true,
+      "actual": 0.8333333333333321,
+      "independent_reference": "5/6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project ending shares",
+      "passed": true,
+      "actual": 20.833333333333332,
+      "independent_reference": "125/6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project final market value",
+      "passed": true,
+      "actual": 1125.0,
+      "independent_reference": "1125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project reinvested total",
+      "passed": true,
+      "actual": 0.12499999999999993,
+      "independent_reference": "1/8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project alternative cash-held total",
+      "passed": true,
+      "actual": 0.12,
+      "independent_reference": "3/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project purchase consumes dividend exactly once",
+      "passed": true
+    },
+    {
+      "label": "exact demo outputs",
+      "passed": true
+    },
+    {
+      "label": "negative ending net wealth rejected",
+      "passed": true,
+      "exception": "ValueError('negative terminal wealth')"
+    },
+    {
+      "label": "F54 nonrepresentable dividend yield rejected",
+      "passed": true,
+      "exception": "ValueError('cash dividend yield outside supported range')"
+    },
+    {
+      "label": "F54 nonrepresentable linked return rejected",
+      "passed": true,
+      "exception": "ValueError('return outside supported range')"
+    },
+    {
+      "label": "F54 share result overflow rejected",
+      "passed": true,
+      "exception": "ValueError('share count outside supported range')"
+    },
+    {
+      "label": "F101 distinguish near-total loss from zero wealth",
+      "passed": true,
+      "exception": "ValueError('positive gross return rounds to total loss')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
