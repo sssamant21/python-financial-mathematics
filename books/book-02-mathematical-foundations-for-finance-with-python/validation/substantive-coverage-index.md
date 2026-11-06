@@ -587,3 +587,11 @@ Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-accoun
 [V-78](runtime-refresh-2026-11-05-r20.md) compiled 543 files, passed 330 scripts and matched 544 required blobs before and after at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. Chapter 21: 24 compiled files and 15 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) records four finite-payment cases rejected under the documented exponent limit. Evaluate a bounded extension against independently derived end-period sums and genuine range failures; keep the Chapter 19 underflow contract. Wider Chapter 21 provenance, proofs and review remain open.
+
+## End-period exponent extension — V-79
+
+[Section 19.8 end-period extension](chapter-19-end-period-exponent-followup.md) preserves 15 baseline mismatches, separates a checker exception-classification issue, and records a 23-case pass against separately timed sums and analytical bounds. The nontrivial end-period domain extends through abs(rate*years)=5000; final overflow and nonzero underflow still reject. Broader exponent and rounding coverage remains open under COV-84. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-79](runtime-refresh-2026-11-05-r21.md) compiled 544 files, passed 331 scripts and matched 545 required blobs before and after at `c961e9064fbb07217c8c7af64adf909e399f165f`. Chapter 19: 41 compiled files and 31 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-range-baseline.md) records two observed failures involving a finite weighted increment and a finite callback stage. Derive exact stage inputs and outputs and check actual fixed/adaptive consumers; treat adaptive estimator/scale range as a separate obligation. Wider capstone provenance and manual reviews remain open.
