@@ -1,0 +1,341 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "a65de93d8e098dfef83a9244d4e77b5f36a1ea915fcc8d3df37bea16e5e8a2f1",
+  "listing_sha256": "6b1e5053639f78731af4ce666fa36eee22ac3f943c81d11ea4caef5c1d261604",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "annualization.py"
+      ],
+      "returncode": 0,
+      "stdout": "21% over 2 years: 10.0000%\n5% over 6 months: 10.2500%\n6% nominal semiannual: 6.0900%\n",
+      "stderr": "test_01_two_year (__main__.AnnualizationTests.test_01_two_year) ... ok\ntest_02_one_year (__main__.AnnualizationTests.test_02_one_year) ... ok\ntest_03_half_year (__main__.AnnualizationTests.test_03_half_year) ... ok\ntest_04_loss (__main__.AnnualizationTests.test_04_loss) ... ok\ntest_05_total_loss (__main__.AnnualizationTests.test_05_total_loss) ... ok\ntest_06_inverse (__main__.AnnualizationTests.test_06_inverse) ... ok\ntest_07_periods (__main__.AnnualizationTests.test_07_periods) ... ok\ntest_08_daily (__main__.AnnualizationTests.test_08_daily) ... ok\ntest_09_dates (__main__.AnnualizationTests.test_09_dates) ... ok\ntest_10_nominal (__main__.AnnualizationTests.test_10_nominal) ... ok\ntest_11_roundtrip (__main__.AnnualizationTests.test_11_roundtrip) ... ok\ntest_12_invalid (__main__.AnnualizationTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import annualization"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "annualization.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1\u2013E6 annualize 0.08 over 1",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E6 annualize 0.21 over 2",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E6 annualize 0.44 over 2",
+      "passed": true,
+      "actual": 0.19999999999999998,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E6 annualize 0.05 over 0.5",
+      "passed": true,
+      "actual": 0.10250000000000001,
+      "independent_reference": "41/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E6 annualize -0.19 over 2",
+      "passed": true,
+      "actual": -0.1,
+      "independent_reference": "-1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E6 annualize -0.08 over 1",
+      "passed": true,
+      "actual": -0.08,
+      "independent_reference": "-2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 deannualized gain",
+      "passed": true,
+      "actual": 0.331,
+      "independent_reference": "331/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 deannualized loss",
+      "passed": true,
+      "actual": -0.19,
+      "independent_reference": "-19/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 supplemental quarterly cumulative",
+      "passed": true
+    },
+    {
+      "label": "E10 quarterly annualization",
+      "passed": true,
+      "actual": 0.03978809,
+      "independent_reference": "3978809/100000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 daily annualization",
+      "passed": true,
+      "actual": 0.28643404437618775,
+      "independent_reference": "0.28643404437618775",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 actual 90-day annualization",
+      "passed": true,
+      "actual": 0.08362364865431263,
+      "independent_reference": "0.0836236486543126360516025880143781667173619444688513003638291658603354601709100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "leap-year Actual/365 Fixed uses 366 elapsed days",
+      "passed": true,
+      "actual": 1.0027397260273974,
+      "independent_reference": "366/365",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 E14 supplemental log",
+      "passed": true
+    },
+    {
+      "label": "E15 nominal to effective",
+      "passed": true,
+      "actual": 0.060899999999999996,
+      "independent_reference": "609/10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 effective to nominal",
+      "passed": true,
+      "actual": 0.060000000000000005,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 explicit total-loss policy",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "valid total loss series",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A annual-effective",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "independent_reference": "0.1000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project A inverse residual <= 1e-10",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "label": "project A supplemental annual log",
+      "passed": true,
+      "actual": 0.09531017980432485,
+      "independent_reference": "0.09531017980432485",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B annual-effective",
+      "passed": true,
+      "actual": 0.10250000000000001,
+      "independent_reference": "0.1025",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project B inverse residual <= 1e-10",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "label": "project B supplemental annual log",
+      "passed": true,
+      "actual": 0.09758032833886401,
+      "independent_reference": "0.09758032833886401",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project C annual-effective",
+      "passed": true,
+      "actual": -0.1,
+      "independent_reference": "-0.10000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project C inverse residual <= 1e-10",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "label": "project C supplemental annual log",
+      "passed": true,
+      "actual": -0.10536051565782631,
+      "independent_reference": "-0.10536051565782631",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project D annual-effective",
+      "passed": true,
+      "actual": 0.08362364865431263,
+      "independent_reference": "0.0836236486543126360516025880143781667173619444688513003638291658603354601709100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project D inverse residual <= 1e-10",
+      "passed": true,
+      "residual": 0.0
+    },
+    {
+      "label": "project D supplemental annual log",
+      "passed": true,
+      "actual": 0.08031065514561772,
+      "independent_reference": "0.08031065514561772",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project rankings differ",
+      "passed": true
+    },
+    {
+      "label": "F100 corrected actual/365 rounding appears in all three places",
+      "passed": false,
+      "expected": "8.362%"
+    },
+    {
+      "label": "F100 tiny compounded gain through recovery",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny nominal input survives frequency scaling",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 invalid horizon",
+      "passed": true,
+      "exception": "ValueError('invalid return or years')"
+    },
+    {
+      "label": "F100 total loss does not hide later invalid data",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F100 total loss does not hide later invalid return",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F100 timestamps not valid calendar dates",
+      "passed": false,
+      "actual": "0.2465753424657534"
+    },
+    {
+      "label": "F54 overflowed annualization rejected",
+      "passed": false,
+      "exception": "OverflowError('math range error')"
+    },
+    {
+      "label": "F54 positive factor cannot report total loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "frequency one preserves valid negative quote",
+      "passed": true,
+      "actual": -0.9999999999999999,
+      "independent_reference": "-9999999999999999/10000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
