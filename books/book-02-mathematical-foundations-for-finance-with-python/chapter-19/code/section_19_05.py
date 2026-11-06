@@ -2,6 +2,7 @@
 import json
 import math
 from fractions import Fraction
+from section_19_08 import _continuous_balance
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -53,23 +54,28 @@ def exact_account(initial,rate,flow,years):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    if r==0:
-        return finite(a+u*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)+u*factor,"balance")
+    if t==0:
+        return a
+    return _continuous_balance(a,r,u,t,reject_underflow=False)
 
-def linear_amplification(rate,step):
-    lam,h=finite(rate,"rate"),finite(step,"step")
+def _amplification_factor(lam,step):
+    h=finite(step,"step")
     if h<=0:
         raise ValueError("step must be positive")
-    return finite(1+h*lam,"amplification")
+    return 1+Fraction(h)*Fraction(lam)
+
+def linear_amplification(rate,step):
+    factor=_amplification_factor(finite(rate,"rate"),step)
+    try:
+        return float(factor)
+    except OverflowError as exc:
+        raise ValueError("amplification outside floating-point range") from exc
 
 def stable_linear_decay(rate,step):
     lam=finite(rate,"rate")
     if lam>=0:
         raise ValueError("requires a negative decay rate")
-    return abs(linear_amplification(lam,step))<1
+    return abs(_amplification_factor(lam,step))<1
 
 def assessment():
     exact=exact_account(1000,0.05,0,2)
