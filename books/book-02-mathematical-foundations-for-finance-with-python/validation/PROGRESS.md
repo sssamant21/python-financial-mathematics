@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-76 full candidate Linux pass (540 files, 327 scripts, 541 required hashes), including capstone valuation and analytic sensitivity. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-77 full candidate Linux pass (542 files, 329 scripts, 543 required hashes), including capstone replication and allocation. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 540/540 at `77a943c4ee6551431485c3a53d71f789691c2392`. [V-76](runtime-refresh-2026-11-05-r18.md). |
-| Automated script execution | Full candidate Linux pass | 327/327 at `77a943c4ee6551431485c3a53d71f789691c2392`; all 541 required hashes matched before/after. [V-76](runtime-refresh-2026-11-05-r18.md). |
+| Python compilation | Full candidate Linux pass | 542/542 at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`. [V-77](runtime-refresh-2026-11-05-r19.md). |
+| Automated script execution | Full candidate Linux pass | 329/329 at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`; all 543 required hashes matched before/after. [V-77](runtime-refresh-2026-11-05-r19.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -745,3 +745,11 @@ Next substantive item: Section 21.3 effective/continuous conversion and fraction
 [V-76](runtime-refresh-2026-11-05-r18.md) compiled all 540 Python files, passed all 327 discovered scripts and matched all 541 required source/fixture hashes before and after at `77a943c4ee6551431485c3a53d71f789691c2392`. Final Chapter 21 scope: 21 compiled files and 12 passing scripts. Thirty-four selected COV categories are partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: Section 21.5 replication screening, solve and residual ranges. Derive independent normalized determinant and pivoted-solve expectations, check the declared screening threshold separately from singularity, and check residuals on the returned represented holdings. Include selected finite results hidden by overflowing intermediate products and the actual integrated report path. Preserve the limited 2x2 interface and do not repeat the Section 20.2 benchmark fixtures as new coverage. Chapter 21 actual provenance and independent review, Section 19.8's end-period exponent boundary, and other manual obligations remain open.
+
+## Capstone replication and allocation — V-77
+
+[Replication](chapter-21-capstone-replication-range-followup.md) records five baseline mismatches and a 14-case pass against independent pivoted elimination, exact screening and residual checks on returned holdings. [Allocation](chapter-21-capstone-allocation-range-followup.md) records seven baseline mismatches and a 20-case pass against a high-precision projection and represented-weight feasibility reference. Both check the actual integrated report fields. Section 21.5 keeps its two-by-two screen; Section 21.6 keeps its two-weight teaching objective. These are selected additions to COV-90. Thirty-four selected COV categories are partially addressed; none closed.
+
+[V-77](runtime-refresh-2026-11-05-r19.md) compiled 542 files, passed 329 scripts and matched 543 required blobs before and after at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`. Chapter 21 scope: 23 compiled files, 14 passing scripts. Independent review, supported-platform evidence and release approval remain pending.
+
+Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-account-range-baseline.md) reproduced four false overflow results in the unconstrained transition. Retain that initial evidence and build an independent account oracle for equilibrium, scaled growth and flow, cancellation and genuine overflow. Check the actual Section 21.9 account field and document the output underflow policy. Section 19.8's end-period exponent boundary, COV-88 provenance and requirement fulfillment, and wider manual obligations remain open.
