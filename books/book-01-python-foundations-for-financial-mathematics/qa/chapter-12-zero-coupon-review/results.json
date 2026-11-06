@@ -1,0 +1,457 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "51efa7971a514f137ce29f13624cbf6e53f1c9649df093553cc22a8bb73e48f2",
+  "listing_sha256": "7e4e96ab66dd7dfdc11424293c8befed566bde2a2e4e507a576dd78baf0b120b",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "zero_coupon_bonds.py"
+      ],
+      "returncode": 0,
+      "stdout": "Price: 837.48\nImplied nominal annual yield: 0.06\nDiscount factor: 0.83748426\nModified duration: 2.912621\n",
+      "stderr": "test_01_zero_yield (__main__.Tests.test_01_zero_yield) ... ok\ntest_02_discount (__main__.Tests.test_02_discount) ... ok\ntest_03_inverse (__main__.Tests.test_03_inverse) ... ok\ntest_04_par_yield (__main__.Tests.test_04_par_yield) ... ok\ntest_05_negative_yield (__main__.Tests.test_05_negative_yield) ... ok\ntest_06_higher_yield (__main__.Tests.test_06_higher_yield) ... ok\ntest_07_longer_maturity (__main__.Tests.test_07_longer_maturity) ... ok\ntest_08_discount_factor (__main__.Tests.test_08_discount_factor) ... ok\ntest_09_duration (__main__.Tests.test_09_duration) ... ok\ntest_10_convexity (__main__.Tests.test_10_convexity) ... ok\ntest_11_annual_frequency (__main__.Tests.test_11_annual_frequency) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.188s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "zero_coupon_bonds.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "matrix T=1, y=2%",
+      "passed": true,
+      "actual": [
+        980.2960494069209,
+        0.9802960494069209,
+        0.9900990099009901,
+        0.01999999999999999
+      ],
+      "expected": [
+        980.2960494069209,
+        0.9802960494069209,
+        0.9900990099009901,
+        0.02
+      ]
+    },
+    {
+      "label": "matrix T=1, y=4%",
+      "passed": true,
+      "actual": [
+        961.1687812379854,
+        0.9611687812379854,
+        0.9803921568627451,
+        0.03999999999999999
+      ],
+      "expected": [
+        961.1687812379854,
+        0.9611687812379854,
+        0.9803921568627451,
+        0.04
+      ]
+    },
+    {
+      "label": "matrix T=1, y=6%",
+      "passed": true,
+      "actual": [
+        942.5959091337544,
+        0.9425959091337544,
+        0.970873786407767,
+        0.059999999999999956
+      ],
+      "expected": [
+        942.5959091337544,
+        0.9425959091337544,
+        0.970873786407767,
+        0.06
+      ]
+    },
+    {
+      "label": "matrix T=1, y=8%",
+      "passed": true,
+      "actual": [
+        924.5562130177515,
+        0.9245562130177515,
+        0.9615384615384616,
+        0.07999999999999997
+      ],
+      "expected": [
+        924.5562130177515,
+        0.9245562130177515,
+        0.9615384615384616,
+        0.08
+      ]
+    },
+    {
+      "label": "matrix T=3, y=2%",
+      "passed": true,
+      "actual": [
+        942.0452352542068,
+        0.9420452352542067,
+        2.9702970297029703,
+        0.019999999999999973
+      ],
+      "expected": [
+        942.0452352542068,
+        0.9420452352542067,
+        2.9702970297029703,
+        0.02
+      ]
+    },
+    {
+      "label": "matrix T=3, y=4%",
+      "passed": true,
+      "actual": [
+        887.971382186192,
+        0.8879713821861921,
+        2.9411764705882355,
+        0.04000000000000002
+      ],
+      "expected": [
+        887.971382186192,
+        0.8879713821861921,
+        2.9411764705882355,
+        0.04
+      ]
+    },
+    {
+      "label": "matrix T=3, y=6%",
+      "passed": true,
+      "actual": [
+        837.4842566836544,
+        0.8374842566836543,
+        2.912621359223301,
+        0.059999999999999984
+      ],
+      "expected": [
+        837.4842566836544,
+        0.8374842566836543,
+        2.912621359223301,
+        0.06
+      ]
+    },
+    {
+      "label": "matrix T=3, y=8%",
+      "passed": true,
+      "actual": [
+        790.314525730146,
+        0.7903145257301459,
+        2.8846153846153846,
+        0.07999999999999997
+      ],
+      "expected": [
+        790.314525730146,
+        0.7903145257301459,
+        2.8846153846153846,
+        0.08
+      ]
+    },
+    {
+      "label": "matrix T=5, y=2%",
+      "passed": true,
+      "actual": [
+        905.2869546929833,
+        0.9052869546929833,
+        4.9504950495049505,
+        0.019999999999999997
+      ],
+      "expected": [
+        905.2869546929833,
+        0.9052869546929833,
+        4.9504950495049505,
+        0.02
+      ]
+    },
+    {
+      "label": "matrix T=5, y=4%",
+      "passed": true,
+      "actual": [
+        820.3482998751552,
+        0.8203482998751552,
+        4.901960784313726,
+        0.04000000000000002
+      ],
+      "expected": [
+        820.3482998751552,
+        0.8203482998751552,
+        4.901960784313726,
+        0.04
+      ]
+    },
+    {
+      "label": "matrix T=5, y=6%",
+      "passed": true,
+      "actual": [
+        744.0939148967251,
+        0.7440939148967252,
+        4.854368932038835,
+        0.060000000000000005
+      ],
+      "expected": [
+        744.0939148967251,
+        0.7440939148967252,
+        4.854368932038835,
+        0.06
+      ]
+    },
+    {
+      "label": "matrix T=5, y=8%",
+      "passed": true,
+      "actual": [
+        675.5641688257989,
+        0.6755641688257988,
+        4.8076923076923075,
+        0.07999999999999999
+      ],
+      "expected": [
+        675.5641688257989,
+        0.6755641688257988,
+        4.8076923076923075,
+        0.08
+      ]
+    },
+    {
+      "label": "matrix T=10, y=2%",
+      "passed": true,
+      "actual": [
+        819.5444703372956,
+        0.8195444703372956,
+        9.900990099009901,
+        0.019999999999999997
+      ],
+      "expected": [
+        819.5444703372956,
+        0.8195444703372956,
+        9.900990099009901,
+        0.02
+      ]
+    },
+    {
+      "label": "matrix T=10, y=4%",
+      "passed": true,
+      "actual": [
+        672.9713331080577,
+        0.6729713331080577,
+        9.803921568627452,
+        0.04
+      ],
+      "expected": [
+        672.9713331080577,
+        0.6729713331080577,
+        9.803921568627452,
+        0.04
+      ]
+    },
+    {
+      "label": "matrix T=10, y=6%",
+      "passed": true,
+      "actual": [
+        553.6757541863348,
+        0.5536757541863347,
+        9.70873786407767,
+        0.06
+      ],
+      "expected": [
+        553.6757541863348,
+        0.5536757541863347,
+        9.70873786407767,
+        0.06
+      ]
+    },
+    {
+      "label": "matrix T=10, y=8%",
+      "passed": true,
+      "actual": [
+        456.38694620129246,
+        0.45638694620129244,
+        9.615384615384615,
+        0.08
+      ],
+      "expected": [
+        456.38694620129246,
+        0.45638694620129244,
+        9.615384615384615,
+        0.08
+      ]
+    },
+    {
+      "label": "prices decrease with yield",
+      "passed": true
+    },
+    {
+      "label": "prices decrease with maturity at positive yield",
+      "passed": true
+    },
+    {
+      "label": "P6 price",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 discount to face",
+      "passed": true,
+      "actual": 162.5157433163456,
+      "independent_reference": "194052296529000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 rounded price implies a different yield",
+      "passed": true,
+      "actual": 0.06000174506650059,
+      "independent_reference": "0.060001745066500592940660218",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 P10 supplemental annual equivalents",
+      "passed": true
+    },
+    {
+      "label": "P12 zero yield",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13 negative yield",
+      "passed": true,
+      "actual": 1030.532079544781,
+      "independent_reference": "64000000000000000/62103840598801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative yield round-trip",
+      "passed": true,
+      "actual": -0.009999999999999957,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P17 analytic convexity",
+      "passed": true,
+      "actual": 9.897257045904421,
+      "independent_reference": "105000/10609",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P16 independent first price derivative",
+      "passed": true,
+      "actual": 2.912621359223301,
+      "independent_reference": "2.912621359223300977279778023239107304407178356925669070690018267151108",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P17 independent second price derivative",
+      "passed": true,
+      "actual": 9.897257045904421,
+      "independent_reference": "9.897257045904420788807508312618183782682899157509551760476079150100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite price despite underflowed discount factor",
+      "passed": true,
+      "actual": 1e-92,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F81 finite yield despite overflowing face/price ratio",
+      "passed": true,
+      "actual": 1e+154,
+      "independent_reference": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F81 negative yield despite underflowing face/price ratio",
+      "passed": true,
+      "actual": -0.7578970953263822,
+      "independent_reference": "-0.7578970953263821865950315573",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F81 finite convexity with large maturity and yield",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 reject overflowing negative-yield price",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "F54 reject underflowed positive price",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "F81 reject rounded lower-bound inverse",
+      "passed": true,
+      "exception": "ValueError('implied yield rounds to or below the periodic lower bound')"
+    },
+    {
+      "label": "F81 duration rejects bool rate",
+      "passed": true,
+      "exception": "ValueError('yield must be finite')"
+    },
+    {
+      "label": "F81 convexity rejects bool rate",
+      "passed": true,
+      "exception": "ValueError('yield must be finite')"
+    },
+    {
+      "label": "invalid periodic yield at -100%",
+      "passed": true,
+      "exception": "ValueError('periodic yield must exceed -100%')"
+    },
+    {
+      "label": "exact demo values",
+      "passed": true,
+      "expected": [
+        "Price: 837.48",
+        "Implied nominal annual yield: 0.06",
+        "Discount factor: 0.83748426",
+        "Modified duration: 2.912621"
+      ]
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    2,
+    15,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
