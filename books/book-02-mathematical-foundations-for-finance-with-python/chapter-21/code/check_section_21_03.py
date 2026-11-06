@@ -26,4 +26,18 @@ class CashFlowChecks(unittest.TestCase):
     def test_overflow(self):
         with self.assertRaises(OverflowError): discount_factor(-1000, 1, "continuous")
 
+    def test_invalid_row_precedes_calculation_failure(self):
+        # At rate -1, the first positive-dated term requires exp(1000).
+        # A malformed domain anywhere in the stream must be reported first.
+        overflowing = (1., 1000.)
+        invalid = (2., -1.)
+        for rows in ((overflowing, invalid), (invalid, overflowing)):
+            with self.subTest(rows=rows):
+                with self.assertRaisesRegex(ValueError, "years must be nonnegative"):
+                    present_value(iter(rows), -1., "continuous")
+
+    def test_one_shot_paired_stream(self):
+        # Zero rate leaves the signed sum, independently of date.
+        self.assertEqual(present_value(iter([(3., 2.), (-1., .5)]), 0., "continuous"), 2.)
+
 if __name__ == "__main__": unittest.main()
