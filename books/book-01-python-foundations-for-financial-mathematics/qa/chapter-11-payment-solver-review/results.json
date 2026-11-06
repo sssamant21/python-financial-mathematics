@@ -1,0 +1,269 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "source_sha256": "90149c431e77978ef90dfb6c1ccc863a9610612aa0c8b33f642c69f2facb45d6",
+  "listing_sha256": "d97c3e76683f5ba1fce2d8d315e5612da03dad268e9518cb984058634fcb0a98",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "solving_for_payment.py"
+      ],
+      "returncode": 0,
+      "stdout": "Monthly payment: 1498.88\n",
+      "stderr": "test_01_zero_rate (__main__.Tests.test_01_zero_rate) ... ok\ntest_02_one_period (__main__.Tests.test_02_one_period) ... ok\ntest_03_standard (__main__.Tests.test_03_standard) ... ok\ntest_04_pv_reconciliation (__main__.Tests.test_04_pv_reconciliation) ... ok\ntest_05_scaling (__main__.Tests.test_05_scaling) ... ok\ntest_06_rate_sensitivity (__main__.Tests.test_06_rate_sensitivity) ... ok\ntest_07_term_sensitivity (__main__.Tests.test_07_term_sensitivity) ... ok\ntest_08_inverse_principal (__main__.Tests.test_08_inverse_principal) ... ok\ntest_09_zero_balloon (__main__.Tests.test_09_zero_balloon) ... ok\ntest_10_balloon (__main__.Tests.test_10_balloon) ... ok\ntest_11_interest (__main__.Tests.test_11_interest) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "solving_for_payment.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1/P6 worked payment",
+      "passed": true,
+      "actual": 1498.876312881881,
+      "independent_reference": "17680342929947900771544120834098143582436834270608692515068994645213657644130976234209433890517821311606355977776020412169462551044471587751278278753965119461281735134860487779490383201821796419801332359420844868515105472059334010445268765227082025788499193829480501354704483372710371905917600944082655086179749722750142631574533188682135651817043134203583578776247513775023650159458118131796997832720222079649397385013806734851915973939504174331268334754219536253774905528319199388845764385736307682600108204012213852252422866143737485225481430009966855279179767247469502323047055525594069958111943637865878461286938888545350138702096461103893159239269992205613833422528595329177153074801501476678335308914139520889039557517709155154920069621528421310470972585295217535152807594186487145724430242492506351974457778976536431090001250/11795731761184487389345816070489177838573784867578634141347904744638717090190172543903848114029488346253149806220816329735570040835577270201022623003172095569025388107888390223592306561457437135841065887536675894812084377647467208356215012181665620630799355063584401083763586698168297524734080755266124068943799778200114105259626550945708521453634507362866863020998011020018920127566494505437598266176177663719517908011045387881532779151603339465014667803375629003019924422655359511076611508589046146080086563209771081801938292914989988180385144007973484223343813797975601858437644420475255966489554910292702769029551110836280110961677168883114527391415993764491066738022876263341722459841201181342668247131311616711231646014167324123936055697222737048376778068236174028122246075349189716579544193994005081579566223181229144872001",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 zero-rate payment",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 one-period payment",
+      "passed": true,
+      "actual": 110.00000000000001,
+      "independent_reference": "110",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 supplemental nominal monthly arithmetic",
+      "passed": true
+    },
+    {
+      "label": "P5 supplemental payment count",
+      "passed": true
+    },
+    {
+      "label": "worked display",
+      "passed": true
+    },
+    {
+      "label": "P7 independent PV from solved payment",
+      "passed": true,
+      "actual": 250000.0,
+      "independent_reference": "250000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 higher rate",
+      "passed": true,
+      "actual": 94.55959662295147,
+      "independent_reference": "6192586887512428312020/65488719375621415601",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P9 longer term",
+      "passed": true,
+      "actual": 47.07347222326471,
+      "independent_reference": "12697346485319144689037148804934554221046267624010/269734648531914468903714880493455422104626762401",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "ordinary comparator",
+      "passed": true,
+      "actual": 88.84878867834172,
+      "independent_reference": "11268250301319697206612010/126825030131969720661201",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8/P9 ordered sensitivities",
+      "passed": true
+    },
+    {
+      "label": "P10 supplemental total interest reconciliation",
+      "passed": true
+    },
+    {
+      "label": "P11 inverse principal",
+      "passed": true,
+      "actual": 250000.0,
+      "independent_reference": "250000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 zero-rate inverse",
+      "passed": true,
+      "actual": 1200,
+      "independent_reference": "1200",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 balloon regular payment",
+      "passed": true,
+      "actual": 73.07903094267337,
+      "independent_reference": "9268250301319697206612010/126825030131969720661201",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 independent PV with additional balloon",
+      "passed": true,
+      "actual": 1000.0000000000001,
+      "independent_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 lowers scheduled payment",
+      "passed": true
+    },
+    {
+      "label": "zero-rate balloon",
+      "passed": true,
+      "actual": 200.0,
+      "independent_reference": "200",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero balloon ordinary",
+      "passed": true,
+      "actual": 88.84878867834172,
+      "independent_reference": "11268250301319697206612010/126825030131969720661201",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "first interest",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero-rate first interest",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny rate payment",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 finite balloon despite overflowing ordinary payment",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F56 long balloon horizon",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "459252278109701809693133280471072793608927080835478080191057094730306504556948125542663794526602507967378385855594985109378847584345222132570372542466661274156519956581249120002755116592960179485715707960253944979126461854585553455789268104161865415883619986232649595235778518422493246598144656887881330725376675635937834022409517939231656235603739106001716010866826503322088032528945125167045071533268826395981585672508087119433616168639412733006163557735608367682219831134358688156640327828866522331021521702334904062113395145677728218035661103135530500701742115203291371083271861815048739404596117496/4592522781097018096931332804710727936089270808354780801910570947303065045569481255426637945266025079673783858555949851093788475843452221325703725424666612741565199565812491200027551165929601794857157079602539449791264618545855534557892681041618654158836199862326495952357785184224932465981446568878813307253766756359378340224095179392316562356037391060017160108668265033220880325289451251670450715332688263959815856725080871194336161686394127330061635577356083676822198311343586881566403278288665223310215217023349040621133951456777282180356611031355305007017421152032913710832718618150487394045961175",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F66 tiny positive balloon installment",
+      "passed": true,
+      "actual": 4.94e-322,
+      "independent_reference": "25/50600563326827654588123836679729326762389162441035529589225339506857584891998836722990095925359281123796769466079202977847452184346448369216753349985184627480379356069141590341116726935523304085309941919618186267140501870856173174654525838912289889085202514128089692388083353653807625633046581877161501565826926935273373696",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 payment underflow",
+      "passed": true,
+      "exception": "ValueError('payment outside supported positive range')"
+    },
+    {
+      "label": "F54 inverse underflow",
+      "passed": true,
+      "exception": "ValueError('principal outside supported positive range')"
+    },
+    {
+      "label": "F54 inverse overflow",
+      "passed": true,
+      "exception": "ValueError('principal outside supported positive range')"
+    },
+    {
+      "label": "F54 first interest underflow",
+      "passed": true,
+      "exception": "ValueError('interest outside supported positive range')"
+    },
+    {
+      "label": "F54 first interest overflow",
+      "passed": true,
+      "exception": "ValueError('interest outside supported positive range')"
+    },
+    {
+      "label": "F67 first interest negative rate",
+      "passed": true,
+      "exception": "ValueError('rate must be nonnegative finite')"
+    },
+    {
+      "label": "F67 first interest invalid term",
+      "passed": true,
+      "exception": "ValueError('periods must be positive integer')"
+    },
+    {
+      "label": "F67 first interest invalid principal",
+      "passed": true,
+      "exception": "ValueError('principal must be positive finite')"
+    },
+    {
+      "label": "nonpositive balloon schedule",
+      "passed": true,
+      "exception": "ValueError('balloon payment outside supported positive range')"
+    },
+    {
+      "label": "negative balloon",
+      "passed": true,
+      "exception": "ValueError('balloon must be nonnegative finite')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 12,
+  "supplemental_arithmetic": [
+    4,
+    5,
+    10
+  ],
+  "historical_unique_methods_added": 0
+}
