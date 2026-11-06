@@ -121,3 +121,11 @@ Next substantive item: Section 20.9 project valuation result-range and Section 2
 [V-75](runtime-refresh-2026-11-05-r17.md) compiled all 538 Python files, passed all 325 discovered scripts and matched all 539 required source/fixture hashes before and after at `081a73dce77591e11377df37ff7b23c5d1836674`. Final Chapter 20 scope: 33 compiled files and 22 passing scripts. Thirty-three selected COV categories are partially addressed; none closed. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: Section 21.3 effective/continuous conversion and fractional-horizon valuation boundaries from the Chapter 21 map. Derive independent effective gross-power and continuous exponential expectations, check negative rates and the rounded effective-minus-one rejection boundary, and verify distinct convention and input rules before editing. Do not count repeated Chapter 20 fixtures as new coverage. Chapter 21 actual provenance and independent review, Section 19.8's end-period exponent boundary, and other manual obligations remain open.
+
+## Actual execution provenance — V-92
+
+[Section 20.7 actual provenance](chapter-20-execution-provenance-followup.md) records an actual local child execution, observed Git source state, interpreter and argv, input hash, output and result. All 21 expanded cases passed; the baseline's 20 missing-behavior observations and initial reruns are retained. The original synthetic template still records pending execution. This adds selected COV-86 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-92](runtime-refresh-2026-11-06-r11.md) compiled 557 files, passed 344 scripts and verified 558 required blobs before and after at `641c6ad0304d242fd3a780b12908726b4778d724`. Chapter 20: 34 compiled files and 23 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 20.7 interrupted-write baseline](chapter-20-manifest-interrupted-write-baseline.md) reproduces a partial final JSON artifact and blocked retry after an injected write error. Check publication and no-overwrite behavior separately from durability and authenticity. Wider capstone provenance and manual reviews remain open.
