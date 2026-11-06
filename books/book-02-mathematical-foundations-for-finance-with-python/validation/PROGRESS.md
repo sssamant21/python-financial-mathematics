@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-82 full candidate Linux pass (547 files, 334 scripts, 548 required hashes), including adaptive RK4 clock alignment. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-83 full candidate Linux pass (548 files, 335 scripts, 549 required hashes), including the Section 19.6 analytical account reference. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 547/547 at `f462da2d7ff63750780e72884557ccfd4fa7df98`. [V-82](runtime-refresh-2026-11-06-r01.md). |
-| Automated script execution | Full candidate Linux pass | 334/334 at `f462da2d7ff63750780e72884557ccfd4fa7df98`; all 548 required hashes matched before/after. [V-82](runtime-refresh-2026-11-06-r01.md). |
+| Python compilation | Full candidate Linux pass | 548/548 at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`. [V-83](runtime-refresh-2026-11-06-r02.md). |
+| Automated script execution | Full candidate Linux pass | 335/335 at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`; all 549 required hashes matched before/after. [V-83](runtime-refresh-2026-11-06-r02.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -795,3 +795,11 @@ Next substantive item: [Adaptive RK4 clock baseline](chapter-19-rk4-adaptive-gri
 [V-82](runtime-refresh-2026-11-06-r01.md) compiled 547 files, passed 334 scripts and matched 548 required blobs before and after at `f462da2d7ff63750780e72884557ccfd4fa7df98`. Chapter 19: 44 compiled files and 34 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.6 account reference baseline](chapter-19-rk4-account-reference-baseline.md) reproduces three finite-result failures in the benchmark used by the Section 19.6 assessment. Check complete balances and actual assessment fields against independent references; reconcile true range failures with this helper’s contract. Wider capstone provenance and manual reviews remain open.
+
+## Analytical account reference range — V-83
+
+[Section 19.6 analytical account reference](chapter-19-rk4-account-reference-followup.md) retains 13 baseline mismatches, intermediate failures and a 28-case pass. It exercises the actual Section 19.6 assessment, complete balance arithmetic, signed underflow and Section 19.8’s stricter contract. This adds selected COV-84 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-83](runtime-refresh-2026-11-06-r02.md) compiled 548 files, passed 335 scripts and matched 549 required blobs before and after at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`. Chapter 19: 45 compiled files and 35 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.5 Euler range and grid baseline](chapter-19-euler-range-grid-baseline.md) records a false Euler overflow, horizon overshoot and callbacks at zero horizon. Validate the distinct Euler driver against independent complete updates and represented time grids, and reconcile its step metadata. Wider capstone provenance and manual reviews remain open.
