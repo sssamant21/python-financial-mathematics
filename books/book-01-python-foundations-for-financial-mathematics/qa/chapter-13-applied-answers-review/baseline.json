@@ -1,0 +1,503 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "bd81deac9e33e12c4264e77c4a05c7cb07cca1a29a69590fb9d6a6b1a95a5372",
+  "listing_sha256": "ebfa56baf412396b8220d247ec7ec6e2ce51500f775b14dcc8004b1aade90357",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "chapter13_exercises.py"
+      ],
+      "returncode": 0,
+      "stdout": "Cumulative: 7.066444%\nGeometric monthly: 1.144490%\nSample monthly volatility: 2.316607%\nMaximum drawdown: -2.000000%\nAnnualized Sharpe: 1.445490\n",
+      "stderr": "test_01_simple_cumulative (__main__.Chapter13AcceptanceTests.test_01_simple_cumulative) ... ok\ntest_02_arithmetic (__main__.Chapter13AcceptanceTests.test_02_arithmetic) ... ok\ntest_03_geometric (__main__.Chapter13AcceptanceTests.test_03_geometric) ... ok\ntest_04_reconciliation (__main__.Chapter13AcceptanceTests.test_04_reconciliation) ... ok\ntest_05_total_loss (__main__.Chapter13AcceptanceTests.test_05_total_loss) ... ok\ntest_06_volatility (__main__.Chapter13AcceptanceTests.test_06_volatility) ... ok\ntest_07_drawdown (__main__.Chapter13AcceptanceTests.test_07_drawdown) ... ok\ntest_08_sharpe (__main__.Chapter13AcceptanceTests.test_08_sharpe) ... ok\ntest_09_twr (__main__.Chapter13AcceptanceTests.test_09_twr) ... ok\ntest_10_irr (__main__.Chapter13AcceptanceTests.test_10_irr) ... ok\ntest_11_npv_residual (__main__.Chapter13AcceptanceTests.test_11_npv_residual) ... ok\ntest_12_invalid (__main__.Chapter13AcceptanceTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import chapter13_exercises"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "chapter13_exercises.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E5 compounded return",
+      "passed": true,
+      "actual": -0.009999999999999898,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 three-period return",
+      "passed": true,
+      "actual": 0.05986999999999987,
+      "independent_reference": "5987/100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 arithmetic",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 geometric",
+      "passed": true,
+      "actual": 0.03923048454132637,
+      "independent_reference": "0.03923048454132637611646780490",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 portfolio TWR",
+      "passed": true,
+      "actual": -0.009999999999999898,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 investor IRR",
+      "passed": true,
+      "actual": 0.0999999999992724,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 and B investor IRR",
+      "passed": true,
+      "actual": -0.024234932787248926,
+      "independent_reference": "-0.024234932786873714620806212582143014995337247674634488",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B IRR repricing",
+      "passed": true,
+      "actual": 9.661960120865842e-11,
+      "independent_reference": "0",
+      "absolute_tolerance": 1e-07,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 sample dispersion",
+      "passed": true,
+      "actual": 0.14142135623730953,
+      "independent_reference": "0.1414213562373095048801688724209698078569671875376948073",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 drawdown",
+      "passed": true,
+      "actual": -0.25,
+      "independent_reference": "-1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 annual Sharpe",
+      "passed": true,
+      "actual": 1.3856406460551018,
+      "independent_reference": "1.385640646055101834821957073204697893554244203048304502",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E27 and E left root",
+      "passed": true,
+      "actual": 0.10000000001164153,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E27 and E right root",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E28 total loss",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A cash-held return using account-level periods",
+      "passed": true,
+      "actual": 0.030000000000000027,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A reinvestment contrast",
+      "passed": true,
+      "actual": 0.029423076923076996,
+      "independent_reference": "153/5200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F109 tiny cumulative return",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F109 growth cancellation with total loss",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F109 tiny volatility",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1.414213562373095048801688724209698078569671875376948073E-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F109 TWR after offsetting factors",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F109 IRR scale invariance",
+      "passed": false,
+      "actual": 0.04999999999999999,
+      "independent_reference": "1/8",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E30 flat Sharpe",
+      "passed": true,
+      "exception": "ValueError('undefined Sharpe: zero volatility')"
+    },
+    {
+      "label": "E same sign bracket cannot disambiguate",
+      "passed": true,
+      "exception": "ValueError('no sign-changing root in bracket')"
+    },
+    {
+      "label": "F109 scaled same-sign bracket",
+      "passed": false,
+      "actual": "0.25"
+    },
+    {
+      "label": "F109 numeric-string risk-free rate",
+      "passed": false,
+      "actual": "6.368673331236263"
+    },
+    {
+      "label": "F109 boolean flow",
+      "passed": false,
+      "actual": "0.09009009009009006"
+    },
+    {
+      "label": "F109 boolean discount rate",
+      "passed": false,
+      "actual": "-45.0"
+    },
+    {
+      "label": "F109 false complete loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "missing return",
+      "passed": true,
+      "exception": "ValueError('nonempty finite simple-return series, r >= -1, required')"
+    },
+    {
+      "label": "E15 elapsed day count",
+      "passed": true
+    },
+    {
+      "label": "C observation 0",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 2",
+      "passed": true,
+      "actual": -0.03703703703703709,
+      "independent_reference": "-1/27",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 3",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 4",
+      "passed": true,
+      "actual": -0.125,
+      "independent_reference": "-1/8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 5",
+      "passed": true,
+      "actual": -0.1875,
+      "independent_reference": "-3/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 6",
+      "passed": true,
+      "actual": -0.1071428571428571,
+      "independent_reference": "-3/28",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 7",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C observation 8",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C peak/trough/recovery/high-water and gain",
+      "passed": true
+    },
+    {
+      "label": "C depth",
+      "passed": true
+    },
+    {
+      "label": "D A mean",
+      "passed": true,
+      "actual": 0.011666666666666667,
+      "independent_reference": "7/600",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A geo",
+      "passed": true,
+      "actual": 0.011444902502713662,
+      "independent_reference": "0.01144490250271366327259770587",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A cumulative",
+      "passed": true,
+      "actual": 0.07066444284799989,
+      "independent_reference": "2208263839/31250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A vol",
+      "passed": true,
+      "actual": 0.02316606713852541,
+      "independent_reference": "0.02316606713852540544489875456617390315287628199400645932",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A annual_vol",
+      "passed": true,
+      "actual": 0.08024961059095552,
+      "independent_reference": "0.08024961059095551773255705580030509293706143922992465528",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A mdd",
+      "passed": true,
+      "actual": -0.019999999999999907,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A sharpe",
+      "passed": true,
+      "actual": 1.4454898802097575,
+      "independent_reference": "1.445489880209757772822456284601768754766945178675661493",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D A geometric reconciliation and AM\u2013GM",
+      "passed": true
+    },
+    {
+      "label": "D B mean",
+      "passed": true,
+      "actual": 0.008333333333333333,
+      "independent_reference": "1/120",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B geo",
+      "passed": true,
+      "actual": 0.008176806376711138,
+      "independent_reference": "0.008176806376711137864484146103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B cumulative",
+      "passed": true,
+      "actual": 0.050074742023999974,
+      "independent_reference": "6259342753/125000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B vol",
+      "passed": true,
+      "actual": 0.019407902170679517,
+      "independent_reference": "0.01940790217067951593982619824680898999992287507333302920",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B annual_vol",
+      "passed": true,
+      "actual": 0.06723094525588644,
+      "independent_reference": "0.06723094525588644436369388821550992885587189791427200037",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B mdd",
+      "passed": true,
+      "actual": -0.020000000000000018,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B sharpe",
+      "passed": true,
+      "actual": 1.1304318228865862,
+      "independent_reference": "1.130431822886586232663879536366981104656253150770945139",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "D B geometric reconciliation and AM\u2013GM",
+      "passed": true
+    },
+    {
+      "label": "F109 printed IRRs agree",
+      "passed": false
+    },
+    {
+      "label": "F109 printed downside, Sortino and IR supplied",
+      "passed": false
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "chapter_wide_prompt_records": 30,
+  "applied_problem_records": 5,
+  "acceptance_project_deliverable_records": 12,
+  "knowledge_check_records": 7,
+  "historical_unique_methods_added": 0,
+  "supplemental_strategy_scorecards": {
+    "A": {
+      "mean": "7/600",
+      "geo": "0.01144490250271366327259770587",
+      "cumulative": "2208263839/31250000000",
+      "vol": "0.02316606713852540544489875456617390315287628199400645932",
+      "annual_vol": "0.08024961059095551773255705580030509293706143922992465528",
+      "mdd": "-1/50",
+      "sharpe": "1.445489880209757772822456284601768754766945178675661493",
+      "downside": "0.009128709291752768557616163046680035565879078249966387570",
+      "sortino": "4.427188724235731064798450962205805947207377195055303558",
+      "information": "1.651445647689540908412290623482651108651674090987279727"
+    },
+    "B": {
+      "mean": "1/120",
+      "geo": "0.008176806376711137864484146103",
+      "cumulative": "6259342753/125000000000",
+      "vol": "0.01940790217067951593982619824680898999992287507333302920",
+      "annual_vol": "0.06723094525588644436369388821550992885587189791427200037",
+      "mdd": "-1/50",
+      "sharpe": "1.130431822886586232663879536366981104656253150770945139",
+      "downside": "0.009128709291752768557616163046680035565879078249966387570",
+      "sortino": "3.162277660168379331998893544432718533719555139325216827",
+      "information": "0.7669649888473704370097613596975511078268345622247135834"
+    }
+  }
+}
