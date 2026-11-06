@@ -1,0 +1,359 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "122b7008dcdec45b3d1b2ec2541c4a4463711c67a1ab6e9affb50671f6cd26ce",
+  "listing_sha256": "5640c1ae656c2beebd14eccf7b3fa6a5301ce7c749b61b7ef632357befc82cf4",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "bond_duration.py"
+      ],
+      "returncode": 0,
+      "stdout": "Price 1000.0 Macaulay 2.789854 Modified 2.708596\n",
+      "stderr": "test_01_par (__main__.Tests.test_01_par) ... ok\ntest_02_weights (__main__.Tests.test_02_weights) ... ok\ntest_03_duration_positive (__main__.Tests.test_03_duration_positive) ... ok\ntest_04_less_than_maturity (__main__.Tests.test_04_less_than_maturity) ... ok\ntest_05_zero_coupon (__main__.Tests.test_05_zero_coupon) ... ok\ntest_06_modified (__main__.Tests.test_06_modified) ... ok\ntest_07_price_sensitivity (__main__.Tests.test_07_price_sensitivity) ... ok\ntest_08_negative_shock (__main__.Tests.test_08_negative_shock) ... ok\ntest_09_longer_zero (__main__.Tests.test_09_longer_zero) ... ok\ntest_10_lower_coupon (__main__.Tests.test_10_lower_coupon) ... ok\ntest_11_finite_difference (__main__.Tests.test_11_finite_difference) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "bond_duration.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "project 0% price",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "837.4842566836544",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 0% macaulay_duration",
+      "passed": true,
+      "actual": 3.0000000000000004,
+      "independent_reference": "3.0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 0% modified_duration",
+      "passed": true,
+      "actual": 2.9126213592233015,
+      "independent_reference": "2.912621359223301",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 0% weights reconcile",
+      "passed": true
+    },
+    {
+      "label": "project 0% +50bp first-order change",
+      "passed": true,
+      "actual": -12.196372670150309,
+      "independent_reference": "-12.196372670150307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 0% +50bp exact reprice",
+      "passed": true,
+      "actual": -12.093429678149846,
+      "independent_reference": "-71659395747225000000000000000/5925481658581803427783238761",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 0% signed approximation error",
+      "passed": true,
+      "approximate": -12.196372670150309,
+      "exact": -12.093429678149718
+    },
+    {
+      "label": "project 2% price",
+      "passed": true,
+      "actual": 891.6561711224363,
+      "independent_reference": "891.6561711224363",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2% macaulay_duration",
+      "passed": true,
+      "actual": 2.9214396710269326,
+      "independent_reference": "2.9214396710269326",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2% modified_duration",
+      "passed": true,
+      "actual": 2.836349195171779,
+      "independent_reference": "2.836349195171779",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2% weights reconcile",
+      "passed": true
+    },
+    {
+      "label": "project 2% +50bp first-order change",
+      "passed": true,
+      "actual": -12.645241316665361,
+      "independent_reference": "-12.645241316665361",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2% +50bp exact reprice",
+      "passed": true,
+      "actual": -12.53944473401009,
+      "independent_reference": "-74302249780176139173929199000/5925481658581803427783238761",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 2% signed approximation error",
+      "passed": true,
+      "approximate": -12.645241316665361,
+      "exact": -12.53944473400995
+    },
+    {
+      "label": "project 4% price",
+      "passed": true,
+      "actual": 945.828085561218,
+      "independent_reference": "945.8280855612181",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 4% macaulay_duration",
+      "passed": true,
+      "actual": 2.8518783630903073,
+      "independent_reference": "2.8518783630903073",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 4% modified_duration",
+      "passed": true,
+      "actual": 2.7688139447478712,
+      "independent_reference": "2.768813944747871",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 4% weights reconcile",
+      "passed": true
+    },
+    {
+      "label": "project 4% +50bp first-order change",
+      "passed": true,
+      "actual": -13.094109963180415,
+      "independent_reference": "-13.094109963180415",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 4% +50bp exact reprice",
+      "passed": true,
+      "actual": -12.985459789870106,
+      "independent_reference": "-76945103813127278347858398000/5925481658581803427783238761",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 4% signed approximation error",
+      "passed": true,
+      "approximate": -13.094109963180415,
+      "exact": -12.98545978987018
+    },
+    {
+      "label": "project 6% price",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000.0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 6% macaulay_duration",
+      "passed": true,
+      "actual": 2.789853593597267,
+      "independent_reference": "2.789853593597267",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 6% modified_duration",
+      "passed": true,
+      "actual": 2.7085957219390937,
+      "independent_reference": "2.708595721939094",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 6% weights reconcile",
+      "passed": true
+    },
+    {
+      "label": "project 6% +50bp first-order change",
+      "passed": true,
+      "actual": -13.542978609695469,
+      "independent_reference": "-13.54297860969547",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 6% +50bp exact reprice",
+      "passed": true,
+      "actual": -13.431474845730463,
+      "independent_reference": "-66653661717693000/4962497602330009",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 6% signed approximation error",
+      "passed": true,
+      "approximate": -13.542978609695469,
+      "exact": -13.431474845730413
+    },
+    {
+      "label": "project 8% price",
+      "passed": true,
+      "actual": 1054.1719144387819,
+      "independent_reference": "1054.1719144387819",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 8% macaulay_duration",
+      "passed": true,
+      "actual": 2.7342034968877464,
+      "independent_reference": "2.734203496887747",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 8% modified_duration",
+      "passed": true,
+      "actual": 2.6545665018327633,
+      "independent_reference": "2.654566501832764",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 8% weights reconcile",
+      "passed": true
+    },
+    {
+      "label": "project 8% +50bp first-order change",
+      "passed": true,
+      "actual": -13.991847256210521,
+      "independent_reference": "-13.991847256210525",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 8% +50bp exact reprice",
+      "passed": true,
+      "actual": -13.877489901590707,
+      "independent_reference": "-82230811879029556695716796000/5925481658581803427783238761",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 8% signed approximation error",
+      "passed": true,
+      "approximate": -13.991847256210521,
+      "exact": -13.877489901590645
+    },
+    {
+      "label": "P8 P10 P11 durations decrease with coupon",
+      "passed": false
+    },
+    {
+      "label": "P5 P6 full timeline",
+      "passed": true
+    },
+    {
+      "label": "P9 five-year zero Macaulay duration",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13\u2013P17 shock and DV01 units",
+      "passed": true
+    },
+    {
+      "label": "exact demo output",
+      "passed": true
+    },
+    {
+      "label": "F54 finite duration despite overflowing weighted sum",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite duration despite discount underflow",
+      "passed": false,
+      "exception": "ZeroDivisionError('float division by zero')"
+    },
+    {
+      "label": "F54 finite scaled shock despite overflowing intermediate",
+      "passed": false,
+      "actual": "-inf",
+      "independent_reference": "-300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F86 boolean shock rejected",
+      "passed": false,
+      "actual": "-2708.595721939094"
+    },
+    {
+      "label": "F54 unrepresentable shock rejected",
+      "passed": false,
+      "actual": "-inf"
+    },
+    {
+      "label": "F54 nonfinite maturity cash flow rejected",
+      "passed": false,
+      "actual": "[(1.0, inf)]"
+    },
+    {
+      "label": "F54 underflowing price rejected",
+      "passed": false,
+      "exception": "ZeroDivisionError('float division by zero')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    2,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
