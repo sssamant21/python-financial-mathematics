@@ -701,3 +701,11 @@ Next: [Section 20.7 interrupted-write baseline](chapter-20-manifest-interrupted-
 [V-93](runtime-refresh-2026-11-06-r12.md) compiled 558 files, passed 345 scripts and verified 559 required blobs before and after at `7b2430e2a88336993306dd6b1394ee250cb357e2`. Chapter 20: 35 compiled files and 24 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Chapter 21 integrated execution baseline](chapter-21-integrated-provenance-baseline.md) records actual deterministic CLI output. Check an external run record binding command, dependency source bytes and stdout under COV-88, while keeping the teaching payload's pending fields. Wider capstone requirements and manual reviews remain open.
+
+## Integrated capstone execution evidence — V-94
+
+[Chapter 21 integrated run receipt](chapter-21-integrated-provenance-followup.md) records actual Section 21.9 CLI bytes, source hashes, command and exit. All ten checks passed, including changed-source and altered-output detection and a retained real import failure. The report itself remains unchanged and retains pending status. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-94](runtime-refresh-2026-11-06-r13.md) compiled 559 files, passed 346 scripts and verified 560 required blobs before and after at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 21.4 central-difference baseline](chapter-21-central-difference-range-baseline.md) reproduces two finite complete stencil values rejected by the actual helper. Check COV-90 centered-difference arithmetic, existing perturbation guards and the actual integrated diagnostic. Wider capstone requirements and manual reviews remain open.
