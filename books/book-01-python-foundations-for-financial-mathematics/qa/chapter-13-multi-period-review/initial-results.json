@@ -1,0 +1,373 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "8c2db15903fdda4f3f8d4c2b6df895622d9f12a7131119ad17f3009309d581a2",
+  "listing_sha256": "cc2175e7d35f7dff7802be33bf949756b3ea5eff0fc4a1f205ca22d959a15a29",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "multi_period_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "Wealth path: [10000.0, 11000.0, 9900.0, 10395.0, 10187.1]\nCumulative return: 1.8710%\nGeometric mean per period: 0.4645%\n",
+      "stderr": "test_01_one_period (__main__.MultiPeriodTests.test_01_one_period) ... ok\ntest_02_two_periods (__main__.MultiPeriodTests.test_02_two_periods) ... ok\ntest_03_three_periods (__main__.MultiPeriodTests.test_03_three_periods) ... ok\ntest_04_zero_return (__main__.MultiPeriodTests.test_04_zero_return) ... ok\ntest_05_total_loss (__main__.MultiPeriodTests.test_05_total_loss) ... ok\ntest_06_wealth_path (__main__.MultiPeriodTests.test_06_wealth_path) ... ok\ntest_07_wealth_endpoint (__main__.MultiPeriodTests.test_07_wealth_endpoint) ... ok\ntest_08_price_reconciliation (__main__.MultiPeriodTests.test_08_price_reconciliation) ... ok\ntest_09_geometric (__main__.MultiPeriodTests.test_09_geometric) ... ok\ntest_10_annualization (__main__.MultiPeriodTests.test_10_annualization) ... ok\ntest_11_twr (__main__.MultiPeriodTests.test_11_twr) ... ok\ntest_12_invalid (__main__.MultiPeriodTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import multi_period_returns"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "multi_period_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 two gains",
+      "passed": true,
+      "actual": 0.2100000000000002,
+      "independent_reference": "21/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 gain and loss",
+      "passed": true,
+      "actual": -0.040000000000000036,
+      "independent_reference": "-1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 two losses",
+      "passed": true,
+      "actual": -0.18999999999999995,
+      "independent_reference": "-19/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 three periods",
+      "passed": true,
+      "actual": 0.08900000000000019,
+      "independent_reference": "89/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 four periods",
+      "passed": true,
+      "actual": 0.018710000000000004,
+      "independent_reference": "1871/100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 total loss",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 demo wealth",
+      "passed": true,
+      "actual": 10187.1,
+      "independent_reference": "101871/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7\u2013E9 exact index path",
+      "passed": true
+    },
+    {
+      "label": "E10 endpoint return",
+      "passed": true,
+      "actual": 0.08899999999999997,
+      "independent_reference": "89/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 arithmetic sum differs",
+      "passed": true
+    },
+    {
+      "label": "E12 geometric mean",
+      "passed": true,
+      "actual": -0.005012562893380046,
+      "independent_reference": "-0.00501256289338004526552017899879399482187343632319392088239535617",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 annualization",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 E16 supplemental contribution boundary",
+      "passed": true
+    },
+    {
+      "label": "E17 exact linking of supplied flow-free subperiods",
+      "passed": true,
+      "actual": -0.009999999999999898,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 price series telescopes",
+      "passed": true,
+      "actual": 0.028073900000000096,
+      "independent_reference": "280739/10000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 1 cumulative factor",
+      "passed": true,
+      "actual": 1.03,
+      "independent_reference": "103/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 1 wealth",
+      "passed": true,
+      "actual": 25750.0,
+      "independent_reference": "25750",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 1 index",
+      "passed": true,
+      "actual": 103.0,
+      "independent_reference": "103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 2 cumulative factor",
+      "passed": true,
+      "actual": 1.0094,
+      "independent_reference": "5047/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 2 wealth",
+      "passed": true,
+      "actual": 25235.0,
+      "independent_reference": "25235",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 2 index",
+      "passed": true,
+      "actual": 100.94,
+      "independent_reference": "5047/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 3 cumulative factor",
+      "passed": true,
+      "actual": 1.049776,
+      "independent_reference": "65611/62500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 3 wealth",
+      "passed": true,
+      "actual": 26244.4,
+      "independent_reference": "131222/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 3 index",
+      "passed": true,
+      "actual": 104.9776,
+      "independent_reference": "65611/625",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 4 cumulative factor",
+      "passed": true,
+      "actual": 1.03927824,
+      "independent_reference": "6495489/6250000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 4 wealth",
+      "passed": true,
+      "actual": 25981.956000000002,
+      "independent_reference": "6495489/250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 4 index",
+      "passed": true,
+      "actual": 103.927824,
+      "independent_reference": "6495489/62500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 5 cumulative factor",
+      "passed": true,
+      "actual": 1.0600638048,
+      "independent_reference": "331269939/312500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 5 wealth",
+      "passed": true,
+      "actual": 26501.59512,
+      "independent_reference": "331269939/12500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 5 index",
+      "passed": true,
+      "actual": 106.00638048,
+      "independent_reference": "331269939/3125000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project supplied daily gross and arithmetic mean",
+      "passed": true
+    },
+    {
+      "label": "project geometric mean",
+      "passed": true,
+      "actual": 0.011734130957390627,
+      "independent_reference": "0.0117341309573906301730063993510760327120227836619017331351968498",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project 252-day annualization",
+      "passed": true,
+      "actual": 17.911810400274167,
+      "independent_reference": "17.911810400274171371955897163628679491858337959066091735340424242",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project independent wealth reconciliation",
+      "passed": true,
+      "actual": 1.0600638048000002,
+      "independent_reference": "331269939/312500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stressed wealth remains zero",
+      "passed": true
+    },
+    {
+      "label": "F99 tiny linked return",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F99 tiny gain survives recovery in geometric mean",
+      "passed": true,
+      "actual": 3.3333333333333338e-31,
+      "independent_reference": "3.333333333333333333333333333332222E-31",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite linked result despite intermediate overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 overflowed wealth rejected",
+      "passed": false,
+      "actual": "[1e+308, inf]"
+    },
+    {
+      "label": "F54 positive wealth underflow rejected",
+      "passed": false,
+      "actual": "[5e-324, 0.0]"
+    },
+    {
+      "label": "F54 unrepresentable endpoint return rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F99 positive gross cannot report total loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "zero price series remains explicitly unsupported",
+      "passed": true,
+      "exception": "ValueError('strictly positive finite prices required')"
+    },
+    {
+      "label": "exact demo outputs",
+      "passed": true
+    },
+    {
+      "label": "F99 final project answers written",
+      "passed": false
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    15,
+    16,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
