@@ -64,11 +64,15 @@ def to_effective(continuous_rate):
 def present_value(flows, rate, convention):
     # Validate rate and convention even for an empty stream.
     rate = _validated_rate(rate, convention)
-    total = Fraction(0)
+    pairs = []
     for amount, years in flows:
         amount = _finite(amount, "amount")
         years = _finite(years, "years")
         if years < 0: raise ValueError("years must be nonnegative")
+        pairs.append((amount, years))
+    # Preflight the whole stream before discounting any valid row.
+    total = Fraction(0)
+    for amount, years in pairs:
         term = _scaled_discount(amount, rate, years, convention, "cash-flow value")
         total += Fraction(term)
     return _rounded(total, "portfolio")
