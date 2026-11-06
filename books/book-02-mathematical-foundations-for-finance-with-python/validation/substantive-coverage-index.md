@@ -659,3 +659,13 @@ Next substantive item: [Section 19.7 terminal jump and interpolation baseline](c
 [V-87](runtime-refresh-2026-11-06-r06.md) compiled 552 files, passed 339 scripts and matched 553 required blobs before and after at `f8e663fe51f1105dff594e5219320214076bafa8`. Chapter 19: 49 compiled files and 39 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.7 standalone depletion baseline](chapter-19-standalone-depletion-boundary-baseline.md) reproduces a false no-crossing classification and infinity from the standalone Section 19.7 helper. Check the exact threshold, finite range and actual assessment fields. Wider capstone provenance and manual reviews remain open.
+
+## Standalone depletion and equilibrium transition follow-ups — V-88–V-89
+
+[Section 19.7 standalone depletion](chapter-19-standalone-depletion-boundary-followup.md) retains five baseline mismatches and a 24-case pass for the threshold, time range and actual assessment. The simulator policy is unchanged. [V-88](runtime-refresh-2026-11-06-r07.md) recorded 553 compiled files, 340 passing scripts and 554 required blobs verified. Its manifest was re-fetched and matched the starting main tree. This adds selected COV-83 evidence.
+
+[Section 19.4 transition range](chapter-19-equilibrium-transition-range-followup.md) retains nine baseline mismatches and a 22-case pass against independent mean-reversion, reciprocal logistic and half-life references, including the actual assessment. This adds selected COV-84 evidence. Thirty-five selected categories remain partially addressed; none closed.
+
+[V-89](runtime-refresh-2026-11-06-r08.md) compiled 554 files, passed 341 scripts and matched 555 required blobs before and after at `2dccee14e57ace03c2fc58a3226ff7d4d19fc7d5`. Chapter 19: 51 files and 41 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next: [Section 19.3 applied range baseline](chapter-19-linear-applied-range-baseline.md) records three finite results rejected by the actual Section 19.3 variable-rate, piecewise and Euler entry points. Check complete exponents, ordered segment balances and whole Euler updates. Wider capstone provenance and manual reviews remain open.
