@@ -1,0 +1,449 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "a61d231cfab3644f39d60bff601699a31fde86a99e4da08f3561931a0a142455",
+  "listing_sha256": "b4819a1c2cea852d681c497af550e2a1052e55d242273346663aa6c3228c5d05",
+  "driver_sha256": "298177cb77e934867655676ba29e5052cc983ec8094fc45463a43ca4655adf9a",
+  "commands": [
+    {
+      "label": "exact unit tests",
+      "args": [
+        "financial_probability_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_mean (__main__.SimulatorTests.test_01_mean) ... ok\ntest_02_variance (__main__.SimulatorTests.test_02_variance) ... ok\ntest_03_sd (__main__.SimulatorTests.test_03_sd) ... ok\ntest_04_replay (__main__.SimulatorTests.test_04_replay) ... ok\ntest_05_count (__main__.SimulatorTests.test_05_count) ... ok\ntest_06_quantile (__main__.SimulatorTests.test_06_quantile) ... ok\ntest_07_loss_rate (__main__.SimulatorTests.test_07_loss_rate) ... ok\ntest_08_se (__main__.SimulatorTests.test_08_se) ... ok\ntest_09_bootstrap (__main__.SimulatorTests.test_09_bootstrap) ... ok\ntest_10_stress (__main__.SimulatorTests.test_10_stress) ... ok\ntest_11_defaults (__main__.SimulatorTests.test_11_defaults) ... ok\ntest_12_invalid (__main__.SimulatorTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "financial_probability_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "driver compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "run_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import financial_probability_simulator"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact driver",
+      "args": [
+        "run_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "Exact moments: (5.0, 312.5, 17.67766952966369)\nSimulation: {'mean': 5.07625, 'sample_sd': 17.70885699638195, 'se': 0.1252205286920451, 'p05': -20.0, 'p95': 30.0, 'loss_probability': 0.24935}\nBootstrap SE: 0.12227943752091298\nStress: {'mean': 7.07625, 'sample_sd': 17.70885699638195, 'se': 0.1252205286920451, 'p05': -18.0, 'p95': 32.0, 'loss_probability': 0.24935}\nAverage defaults: 0.9896\nManifest: {'configuration': {'seed': 42, 'trials': 20000, 'outcomes': [-20.0, 5.0, 30.0], 'probabilities': [0.25, 0.5, 0.25], 'prng': 'random.Random'}, 'sha256': '36a6790631cff15e34126a1c98d01a8da1dade399e2a1d769c8c00da8184baf2'}\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact driver replay",
+      "args": [
+        "run_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "Exact moments: (5.0, 312.5, 17.67766952966369)\nSimulation: {'mean': 5.07625, 'sample_sd': 17.70885699638195, 'se': 0.1252205286920451, 'p05': -20.0, 'p95': 30.0, 'loss_probability': 0.24935}\nBootstrap SE: 0.12227943752091298\nStress: {'mean': 7.07625, 'sample_sd': 17.70885699638195, 'se': 0.1252205286920451, 'p05': -18.0, 'p95': 32.0, 'loss_probability': 0.24935}\nAverage defaults: 0.9896\nManifest: {'configuration': {'seed': 42, 'trials': 20000, 'outcomes': [-20.0, 5.0, 30.0], 'probabilities': [0.25, 0.5, 0.25], 'prng': 'random.Random'}, 'sha256': '36a6790631cff15e34126a1c98d01a8da1dade399e2a1d769c8c00da8184baf2'}\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E2 expectation",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 variance",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "625/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 SD",
+      "passed": true,
+      "actual": 17.67766952966369,
+      "independent_reference": "17.67766952966369",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 stress mean",
+      "passed": true,
+      "actual": 7.0,
+      "independent_reference": "7",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 translation variance",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "312.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 scale mean",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 scale variance",
+      "passed": true,
+      "actual": 1250.0,
+      "independent_reference": "1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 median",
+      "passed": true,
+      "actual": 2.5,
+      "independent_reference": "2.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 sample SE",
+      "passed": true,
+      "actual": 0.5773502691896258,
+      "independent_reference": "0.5773502691896257",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F125 extreme median",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F125 large mean",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F125 integer variance spread",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F125 zero-weight outcome",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F125 near-unit mass normalized",
+      "passed": false
+    },
+    {
+      "label": "F125 manifest retains generator inputs",
+      "passed": false
+    },
+    {
+      "label": "F125 nonfinite stressed payoff rejected",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "invalid probabilities",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one')"
+    },
+    {
+      "label": "invalid bootstrap count",
+      "passed": true,
+      "exception": "ValueError('invalid bootstrap parameters')"
+    },
+    {
+      "label": "invalid default count",
+      "passed": true,
+      "exception": "ValueError('invalid counts or seed')"
+    },
+    {
+      "label": "phase D weighted replay 1000",
+      "passed": true
+    },
+    {
+      "label": "phase D summary 1000 mean",
+      "passed": true,
+      "actual": 5.475,
+      "independent_reference": "5.475",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 1000 sample_sd",
+      "passed": true,
+      "actual": 17.591442062373222,
+      "independent_reference": "17.591442062373222",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 1000 se",
+      "passed": true,
+      "actual": 0.556290242439892,
+      "independent_reference": "0.556290242439892",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 1000 p05",
+      "passed": true,
+      "actual": -20.0,
+      "independent_reference": "-20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 1000 p95",
+      "passed": true,
+      "actual": 30.0,
+      "independent_reference": "30",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 1000 loss_probability",
+      "passed": true,
+      "actual": 0.238,
+      "independent_reference": "0.238",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D weighted replay 20000",
+      "passed": true
+    },
+    {
+      "label": "phase D summary 20000 mean",
+      "passed": true,
+      "actual": 5.07625,
+      "independent_reference": "5.07625",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 20000 sample_sd",
+      "passed": true,
+      "actual": 17.70885699638195,
+      "independent_reference": "17.70885699638195",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 20000 se",
+      "passed": true,
+      "actual": 0.1252205286920451,
+      "independent_reference": "0.1252205286920451",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 20000 p05",
+      "passed": true,
+      "actual": -20.0,
+      "independent_reference": "-20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 20000 p95",
+      "passed": true,
+      "actual": 30.0,
+      "independent_reference": "30",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 20000 loss_probability",
+      "passed": true,
+      "actual": 0.24935,
+      "independent_reference": "0.24935",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D weighted replay 40000",
+      "passed": true
+    },
+    {
+      "label": "phase D summary 40000 mean",
+      "passed": true,
+      "actual": 5.06,
+      "independent_reference": "5.06",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 40000 sample_sd",
+      "passed": true,
+      "actual": 17.654792332177326,
+      "independent_reference": "17.654792332177326",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 40000 se",
+      "passed": true,
+      "actual": 0.08827396166088664,
+      "independent_reference": "0.08827396166088664",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 40000 p05",
+      "passed": true,
+      "actual": -20.0,
+      "independent_reference": "-20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 40000 p95",
+      "passed": true,
+      "actual": 30.0,
+      "independent_reference": "30",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D summary 40000 loss_probability",
+      "passed": true,
+      "actual": 0.24815,
+      "independent_reference": "0.24815",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D stress keeps pairing",
+      "passed": true
+    },
+    {
+      "label": "phase D default count replay",
+      "passed": true
+    },
+    {
+      "label": "phase C driver stdout exactly repeats",
+      "passed": true
+    },
+    {
+      "label": "phase B exact output",
+      "passed": true
+    },
+    {
+      "label": "phase C driver simulation summary",
+      "passed": true
+    },
+    {
+      "label": "phase D driver bootstrap SD",
+      "passed": true,
+      "actual": 0.12227943752091298,
+      "independent_reference": "0.12227943752091298",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase D driver average defaults",
+      "passed": true,
+      "actual": 0.9896,
+      "independent_reference": "1237/1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "phase C driver configuration digest and change",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "acceptance_lab_phase_records": 5,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "stats": {
+      "1000": {
+        "mean": 5.475,
+        "sample_sd": 17.591442062373222,
+        "se": 0.556290242439892,
+        "p05": -20.0,
+        "p95": 30.0,
+        "loss_probability": 0.238
+      },
+      "20000": {
+        "mean": 5.07625,
+        "sample_sd": 17.70885699638195,
+        "se": 0.1252205286920451,
+        "p05": -20.0,
+        "p95": 30.0,
+        "loss_probability": 0.24935
+      },
+      "40000": {
+        "mean": 5.06,
+        "sample_sd": 17.654792332177326,
+        "se": 0.08827396166088664,
+        "p05": -20.0,
+        "p95": 30.0,
+        "loss_probability": 0.24815
+      }
+    },
+    "bootstrap_sd": 0.12227943752091298,
+    "default_counts": {
+      "2": 3924,
+      "1": 7638,
+      "3": 1097,
+      "0": 7096,
+      "4": 216,
+      "6": 6,
+      "5": 23
+    },
+    "seed": 42
+  }
+}

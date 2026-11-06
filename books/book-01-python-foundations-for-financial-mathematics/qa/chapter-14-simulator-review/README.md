@@ -1,0 +1,13 @@
+# Section 14.16 — scoped simulator project review
+
+Reviewed [Financial Probability Simulator](../../chapter-14/14.16-chapter-project-financial-probability-simulator.md) at `59dd770f2b5d6394111abb1d50743199dd113a6c`. Run `python -B review.py`. The [baseline](baseline.json) retains seven failures and the [rerun](results.json) records both source fences, hashes, full commands and outputs. Six command checks passed: twelve existing methods, compilation of both files, isolated implementation import, and two byte-for-byte equivalent driver runs. All 48 additional predicates passed. No historical unique methods were added.
+
+| Answers | Independent review |
+|---|---|
+| 1–8 | Weights are 1:2:1, mean is 5 and second moment 337.5, so centered variance is 312.5 and SD √312.5. Only the −20 state contributes loss (probability .25, expected positive magnitude 5); its complement is .75. |
+| 9–15 | Translation raises mean to 7 and preserves variance; doubling gives 10 and 1250. For the default indicator E[D²]=E[D]=.1, so variance .09; summing independent indicators yields mean 1 and variance .9. |
+| 16–24 | All-survival mass .9¹⁰ gives the any-default complement. Poisson zero mass is exp(−1). At 10,000 draws SE is √312.5/100; quadrupling n halves it. Median interpolation gives 2.5 and the three-observation SE is 1/√3. Each paired stress adds 2. Correlated defaults invalidate the independent-binomial assumption. |
+
+All five acceptance phases were reviewed. The two exact listings are standard-library only and use synthetic data. Supplemental uniform replay checks 1,000, 20,000 and 40,000 draws against the exact source. Direct integer moment sums check each summary; independent index replay checks the driver's 500 bootstrap means through their SD, and a separate Bernoulli loop checks the exact default-count sequence. The driver mean $5.07625, bootstrap SE $0.12228, stress mean $7.07625 and average count .9896 are retained. The replay hashes identical configuration bytes and changes the digest when the seed changes. The manifest covers the base run only; the two fence hashes, driver and runtime are recorded separately. Model uncertainty, production architecture, and independent sign-off remain design or acceptance scope.
+
+**F125.** The original simulator lost small spread and could overflow during a finite mean or median, failed on extreme zero-weight atoms, used unnormalized moments, exhausted manifest iterators, or emitted infinite stressed payoffs. The corrected code retains exact intermediates, reuses validated input lists and rejects unreportable values. F28 and F32 remain open.
