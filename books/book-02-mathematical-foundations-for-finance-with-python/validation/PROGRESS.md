@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-05  
-**Overall status:** In progress — V-80 full candidate Linux pass (545 files, 332 scripts, 546 required hashes), including RK4 stage and adaptive trial range. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-81 full candidate Linux pass (546 files, 333 scripts, 547 required hashes), including fixed RK4 horizon alignment. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 545/545 at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`. [V-80](runtime-refresh-2026-11-05-r22.md). |
-| Automated script execution | Full candidate Linux pass | 332/332 at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`; all 546 required hashes matched before/after. [V-80](runtime-refresh-2026-11-05-r22.md). |
+| Python compilation | Full candidate Linux pass | 546/546 at `22336bded4cb65dce8a0557561e7095978fd403f`. [V-81](runtime-refresh-2026-11-05-r23.md). |
+| Automated script execution | Full candidate Linux pass | 333/333 at `22336bded4cb65dce8a0557561e7095978fd403f`; all 547 required hashes matched before/after. [V-81](runtime-refresh-2026-11-05-r23.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -779,3 +779,11 @@ Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-ra
 [V-80](runtime-refresh-2026-11-05-r22.md) compiled 545 files, passed 332 scripts and matched 546 required blobs before and after at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`. Chapter 19: 42 compiled files and 32 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Fixed RK4 horizon baseline](chapter-19-rk4-fixed-grid-baseline.md) reproduces two fixed-grid false completed results, one beyond and one short of the reported horizon. Check representable grid alignment against independently derived constant-derivative balances and callback times. Wider floating-time behavior, capstone provenance and manual reviews remain open.
+
+## Fixed RK4 horizon alignment — V-81
+
+[Fixed RK4 grid correction](chapter-19-rk4-fixed-grid-followup.md) preserves nine baseline mismatches and a 19-case pass. The fixed solver integrates adjacent rounded endpoints, reaches the requested horizon and rejects collapsed grids before callbacks. Actual traces and independently derived balances cover overshoot, undershoot, ordinary non-dyadic grids and constant, linear and quadratic slopes. This adds selected COV-82 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-81](runtime-refresh-2026-11-05-r23.md) compiled 546 files, passed 333 scripts and matched 547 required blobs before and after at `22336bded4cb65dce8a0557561e7095978fd403f`. Chapter 19: 43 compiled files and 33 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Adaptive RK4 clock baseline](chapter-19-rk4-adaptive-grid-baseline.md) reproduces a state/time discrepancy when the proposed interval and represented time advance differ, even with an equal representable split in step-length arithmetic. Check common full and doubled endpoints, elapsed state and explicit resolution failures; preserve controller and evaluation-count behavior. Wider capstone provenance and manual reviews remain open.
