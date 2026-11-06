@@ -178,3 +178,11 @@ Next substantive item: [Section 19.6 account reference baseline](chapter-19-rk4-
 [V-83](runtime-refresh-2026-11-06-r02.md) compiled 548 files, passed 335 scripts and matched 549 required blobs before and after at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`. Chapter 19: 45 compiled files and 35 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.5 Euler range and grid baseline](chapter-19-euler-range-grid-baseline.md) records a false Euler overflow, horizon overshoot and callbacks at zero horizon. Validate the distinct Euler driver against independent complete updates and represented time grids, and reconcile its step metadata. Wider capstone provenance and manual reviews remain open.
+
+## Euler complete updates and represented time grid — V-84
+
+[Section 19.5 Euler range and grid](chapter-19-euler-range-grid-followup.md) retains 13 baseline mismatches (including newly specified metadata) and a 21-case pass. It checks complete updates, independently derived represented endpoints, derivative calls and interval metadata. Existing Euler stability and convergence checks pass. This adds selected COV-84 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-84](runtime-refresh-2026-11-06-r03.md) compiled 549 files, passed 336 scripts and matched 550 required blobs before and after at `c7fb27159683d94cdf41aa1f6bd8a1cb6e5bd946`. Chapter 19: 46 compiled files and 36 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Euler amplification boundary baseline](chapter-19-euler-amplification-boundary-baseline.md) reproduces three discrepancies at the strict stability or cancellation boundaries. Verify complete-factor rounding separately from the exact classification and observed rounded trajectories. Wider capstone provenance and manual reviews remain open.
