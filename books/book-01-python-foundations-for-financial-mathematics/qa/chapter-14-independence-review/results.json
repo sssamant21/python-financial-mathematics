@@ -1,0 +1,383 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "f6b531ea41c9f129362fdab1cfe11c8fc38dff9f51c07b4c762f1e4ad4aca19d",
+  "listing_sha256": "088a75b3611b3dbd8650477c651ac9124f7217d872f076c28389a7cd7e0c5852",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "independence.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_marginals (__main__.IndependenceTests.test_01_marginals) ... ok\ntest_02_joint (__main__.IndependenceTests.test_02_joint) ... ok\ntest_03_dependence (__main__.IndependenceTests.test_03_dependence) ... ok\ntest_04_conditional (__main__.IndependenceTests.test_04_conditional) ... ok\ntest_05_independent_joint (__main__.IndependenceTests.test_05_independent_joint) ... ok\ntest_06_independent_intersection (__main__.IndependenceTests.test_06_independent_intersection) ... ok\ntest_07_at_least_one (__main__.IndependenceTests.test_07_at_least_one) ... ok\ntest_08_certain_event (__main__.IndependenceTests.test_08_certain_event) ... ok\ntest_09_impossible_event (__main__.IndependenceTests.test_09_impossible_event) ... ok\ntest_10_disjoint_positive (__main__.IndependenceTests.test_10_disjoint_positive) ... ok\ntest_11_invalid_weights (__main__.IndependenceTests.test_11_invalid_weights) ... ok\ntest_12_invalid_inputs (__main__.IndependenceTests.test_12_invalid_inputs) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import independence"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "independence.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 independent product",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 independent union",
+      "passed": true,
+      "actual": 0.44,
+      "independent_reference": "11/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 independent union",
+      "passed": true,
+      "actual": 0.0494,
+      "independent_reference": "247/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 neither",
+      "passed": true,
+      "actual": 0.9506,
+      "independent_reference": "4753/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 exactly one",
+      "passed": true,
+      "actual": 0.0488,
+      "independent_reference": "61/1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 joint",
+      "passed": true,
+      "actual": 0.0006,
+      "independent_reference": "3/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 conditional equals marginal",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 three defaults",
+      "passed": true,
+      "actual": 0.058906,
+      "independent_reference": "29453/500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F114 tiny independent union remains nonzero",
+      "passed": true,
+      "actual": 3e-20,
+      "independent_reference": "149999999999999999999/5000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress-to-baseline multiple",
+      "passed": true,
+      "actual": 16.666666666666668,
+      "independent_reference": "50/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8/E9 stress dependence",
+      "passed": true
+    },
+    {
+      "label": "E10 disjoint positive events",
+      "passed": true
+    },
+    {
+      "label": "E11 impossible event",
+      "passed": true
+    },
+    {
+      "label": "E12 certain event",
+      "passed": true
+    },
+    {
+      "label": "E13 parity pairwise but not mutual",
+      "passed": true
+    },
+    {
+      "label": "E16 explicit conditional counterexample",
+      "passed": true
+    },
+    {
+      "label": "E22 feasible joint bounds",
+      "passed": true
+    },
+    {
+      "label": "E23 independent .20 and .30 model",
+      "passed": true
+    },
+    {
+      "label": "F114 rare event dependent on itself",
+      "passed": true
+    },
+    {
+      "label": "F114 normalized near-unit mass",
+      "passed": true
+    },
+    {
+      "label": "F114 independent model remains exact when reused",
+      "passed": true
+    },
+    {
+      "label": "F114 undeclared conditional operand",
+      "passed": true,
+      "exception": "ValueError('event outside sample space')"
+    },
+    {
+      "label": "F114 bool is not a tolerance",
+      "passed": true,
+      "exception": "ValueError('invalid probability or tolerance')"
+    },
+    {
+      "label": "F114 huge invalid integer rejected",
+      "passed": true,
+      "exception": "ValueError('invalid probability or tolerance')"
+    },
+    {
+      "label": "invalid weight mass",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one within 1e-12')"
+    },
+    {
+      "label": "zero conditioning mass",
+      "passed": true,
+      "exception": "ValueError('conditioning event has zero probability')"
+    },
+    {
+      "label": "project baseline A",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project baseline B",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project baseline both",
+      "passed": true,
+      "actual": 0.0006,
+      "independent_reference": "3/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project baseline neither",
+      "passed": true,
+      "actual": 0.9506,
+      "independent_reference": "4753/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project baseline either",
+      "passed": true,
+      "actual": 0.0494,
+      "independent_reference": "247/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project baseline total",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project baseline independence",
+      "passed": true
+    },
+    {
+      "label": "project stress A",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress B",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress both",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress neither",
+      "passed": true,
+      "actual": 0.96,
+      "independent_reference": "24/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress either",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress total",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress independence",
+      "passed": true
+    },
+    {
+      "label": "test-only listing has no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 8,
+  "project_report": {
+    "baseline": {
+      "joint_atoms": [
+        [
+          [
+            0,
+            0
+          ],
+          9506
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          294
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          194
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          6
+        ]
+      ],
+      "probability_units": "basis points",
+      "any_default": 0.0494,
+      "both_default": 0.0006,
+      "independent": true
+    },
+    "stress": {
+      "joint_atoms": [
+        [
+          [
+            0,
+            0
+          ],
+          9600
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          200
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          100
+        ],
+        [
+          [
+            1,
+            1
+          ],
+          100
+        ]
+      ],
+      "probability_units": "basis points",
+      "any_default": 0.04,
+      "both_default": 0.01,
+      "independent": false
+    }
+  },
+  "historical_unique_methods_added": 0
+}
