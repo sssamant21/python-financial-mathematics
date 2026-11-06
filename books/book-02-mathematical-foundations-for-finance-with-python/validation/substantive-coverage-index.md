@@ -577,3 +577,13 @@ Next substantive item: Section 21.5 replication screening, solve and residual ra
 [V-77](runtime-refresh-2026-11-05-r19.md) compiled 542 files, passed 329 scripts and matched 543 required blobs before and after at `bc29b0d67dfd61b3d522d36d956b768101fee0ab`. Chapter 21 scope: 23 compiled files, 14 passing scripts. Independent review, supported-platform evidence and release approval remain pending.
 
 Next substantive item: [Section 21.7 baseline probes](chapter-21-capstone-account-range-baseline.md) reproduced four false overflow results in the unconstrained transition. Retain that initial evidence and build an independent account oracle for equilibrium, scaled growth and flow, cancellation and genuine overflow. Check the actual Section 21.9 account field and document the output underflow policy. Section 19.8's end-period exponent boundary, COV-88 provenance and requirement fulfillment, and wider manual obligations remain open.
+
+## Capstone account and requirements traceability — V-78
+
+[Account range](chapter-21-capstone-account-range-followup.md) retains 17 initial mismatches and a 29-case pass for the complete account transition and actual integrated field. It covers equilibria, scaled growth and flow, cancellation, signed zero, and genuine overflow while keeping the unconstrained final-state contract.
+
+[Requirements and preflight evidence](chapter-21-capstone-requirements-evidence-map.md) maps F1–F8 to implemented evidence and manual obligations. It retains the cash-flow preflight failure and the 16-test pass: both row orders now report the invalid date before discounting, and a valid one-shot iterator still works. The map distinguishes proposed diagnostics from the actual report and its pending placeholders. COV-88 is newly partially addressed; COV-90 gains selected account evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-78](runtime-refresh-2026-11-05-r20.md) compiled 543 files, passed 330 scripts and matched 544 required blobs before and after at `59f713d346fbcbf14e7125902637cd2f6e2c56e4`. Chapter 21: 24 compiled files and 15 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) records four finite-payment cases rejected under the documented exponent limit. Evaluate a bounded extension against independently derived end-period sums and genuine range failures; keep the Chapter 19 underflow contract. Wider Chapter 21 provenance, proofs and review remain open.
