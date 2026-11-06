@@ -1,0 +1,308 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "e2fcc7e486014dc024d0e27ff99dc93df2334bce7f0260c695df6b830ce18401",
+  "listing_sha256": "09a15986726ba3e46049ca5dda60ffc30d439b915b140066482539aaef51ea82",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "normal_distribution.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_pdf (__main__.Tests.test_01_pdf) ... ok\ntest_02_cdf (__main__.Tests.test_02_cdf) ... ok\ntest_03_survival (__main__.Tests.test_03_survival) ... ok\ntest_04_one (__main__.Tests.test_04_one) ... ok\ntest_05_left (__main__.Tests.test_05_left) ... ok\ntest_06_right (__main__.Tests.test_06_right) ... ok\ntest_07_interval (__main__.Tests.test_07_interval) ... ok\ntest_08_median (__main__.Tests.test_08_median) ... ok\ntest_09_percentile (__main__.Tests.test_09_percentile) ... ok\ntest_10_var (__main__.Tests.test_10_var) ... ok\ntest_11_seed (__main__.Tests.test_11_seed) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import normal_distribution"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "normal_distribution.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 origin density",
+      "passed": true,
+      "actual": 0.3989422804014327,
+      "independent_reference": "0.3989422804014327",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E2 center CDF",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "0.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E3/E4 one sigma CDF",
+      "passed": true,
+      "actual": 0.8413447460685429,
+      "independent_reference": "0.8413447460685429",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E5 one sigma survival",
+      "passed": true,
+      "actual": 0.15865525393145707,
+      "independent_reference": "0.15865525393145707",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E6 interval one SD",
+      "passed": true,
+      "actual": 0.6826894921370859,
+      "independent_reference": "0.6826894921370862",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E7 interval two SD",
+      "passed": true,
+      "actual": 0.9544997361036416,
+      "independent_reference": "0.9544997361036405",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E8 interval three SD",
+      "passed": true,
+      "actual": 0.9973002039367398,
+      "independent_reference": "0.9973002039367359",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E10 nonstandard CDF",
+      "passed": true,
+      "actual": 0.8413447460685429,
+      "independent_reference": "0.8413447460685429",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E11 nonstandard tail",
+      "passed": true,
+      "actual": 0.15865525393145707,
+      "independent_reference": "0.15865525393145707",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E12 nonstandard interval",
+      "passed": true,
+      "actual": 0.6826894921370859,
+      "independent_reference": "0.6826894921370862",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E13 median",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E15 upper quantile",
+      "passed": true,
+      "actual": 1.6448536269514715,
+      "independent_reference": "1.6448536269514307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E16 lower quantile",
+      "passed": true,
+      "actual": -1.6448536269514729,
+      "independent_reference": "-1.6448536269514307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E20 loss VaR",
+      "passed": true,
+      "actual": 2289.707253902943,
+      "independent_reference": "2289.707253902861",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E21 negative unfloored VaR",
+      "passed": true,
+      "actual": -6710.292746097058,
+      "independent_reference": "-6710.29274609714",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project probability of nonpositive return",
+      "passed": true,
+      "actual": 0.3085375387259869,
+      "independent_reference": "0.3085375387259869",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project probability of return at or below -3%",
+      "passed": true,
+      "actual": 0.02275013194817922,
+      "independent_reference": "0.02275013194817921",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project 5th percentile",
+      "passed": true,
+      "actual": -0.022897072539029464,
+      "independent_reference": "-0.02289707253902861",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project 95th percentile",
+      "passed": true,
+      "actual": 0.04289707253902944,
+      "independent_reference": "0.042897072539028615",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 far right interval",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "7.61966195820455e-24",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 extreme finite standardization",
+      "passed": false,
+      "actual": 1.0,
+      "independent_reference": "0.9772498680518208",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 median when old bracket overflows",
+      "passed": false,
+      "exception": "ValueError('invalid x')"
+    },
+    {
+      "label": "F122 scaled VaR retains a finite result",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "2.6448536269514305e+307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 lower quantile below old bracket via quadrature",
+      "passed": false,
+      "actual": 1.776482112077724e-33,
+      "independent_reference": "1e-50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-09
+    },
+    {
+      "label": "invalid sigma",
+      "passed": true,
+      "exception": "ValueError('invalid normal parameters')"
+    },
+    {
+      "label": "invalid confidence",
+      "passed": true,
+      "exception": "ValueError('invalid probability')"
+    },
+    {
+      "label": "invalid exposure",
+      "passed": true,
+      "exception": "ValueError('invalid exposure')"
+    },
+    {
+      "label": "invalid count",
+      "passed": true,
+      "exception": "ValueError('invalid simulation inputs')"
+    },
+    {
+      "label": "F122 boolean observation",
+      "passed": false,
+      "actual": "0.24197072451914337"
+    },
+    {
+      "label": "F122 unreportable quantile",
+      "passed": true,
+      "exception": "ValueError('invalid x')"
+    },
+    {
+      "label": "F122 unreportable simulated output",
+      "passed": false,
+      "actual": "[8.559096704220717e+307, 8.270963996684807e+307, 8.886841384323375e+307, 1.701983725098863e+308, 8.724117162171129e+307, -4.973534143409575e+307, 1.3323183440677153e+308, 7.326625215028318e+307, 7.83041315854805e+307, 1.1158847867008551e+308, 1.2322977369067208e+308, inf, 1.6566365067986688e+308, 1.110507177443832e+308, 2.6167839765517944e+307, -1.466236748771707e+306, 1.246342195211202e+308, inf, 1.041656863903384e+308, 8.936767062292157e+307, 1.5317762204008692e+308, -4.535452980086781e+307, 6.877226828554402e+307, 1.4903625325935249e+308, inf, 7.593703273448645e+307, 1.3765998586879103e+308, 1.2482134493284145e+308, 1.7823268087036422e+308, -1.1322221424817268e+307, 1.5682506875853857e+308, -5.145203917251398e+307, -inf, 3.931092718004974e+307, 8.418995365400529e+306, inf, 1.664265899612895e+308, -2.1907474129569528e+307, inf, -2.202824242349697e+305, 9.137561536637159e+307, 7.061002220434678e+307, 1.1144198574609212e+308, inf, 1.6384137907924436e+308, 1.3498851018692087e+308, 1.6499480978062986e+308, 1.4784920376501185e+308, 3.730145347804001e+307, 2.8262890618342255e+307, 5.300317258639862e+307, 1.4993264004767815e+308, 7.498844290026159e+307, inf, 1.8070745781350652e+307, -9.887459990215833e+306, 1.7684735154696965e+308, inf, 1.50569269083926e+308, inf, inf, 9.059725239836961e+307, -4.2295893313897725e+307, 4.679234516812873e+307, inf, -4.4367840607828804e+307, 1.0335313207872614e+308, 1.253237359342062e+308, 6.844078351863294e+307, 1.7236319863680965e+308, 1.5807797415265664e+308, inf, 1.6199677677731356e+308, 3.9059654135693793e+307, 4.382024076659694e+307, 1.6841889875799347e+307, inf, 4.3316716518629906e+307, 9.297392262994023e+307, 1.7493026192896752e+308, 2.765370093485933e+307, 7.063420363822815e+307, -inf, -8.247861903871326e+306, 4.322635878081502e+307, 1.4157609885166717e+308, inf, 9.815331868362884e+307, 1.2613642791998028e+308, 1.167969368547232e+308, inf, inf, 1.2736933154075422e+308, -1.094430344531185e+306, inf, 1.3810471279557523e+308, inf, 9.700934073187865e+307, inf, 6.411236596781774e+307]"
+    },
+    {
+      "label": "project seeded Box\u2013Muller replay",
+      "passed": true
+    },
+    {
+      "label": "project simulated mean",
+      "passed": true,
+      "actual": 0.009923879817034858
+    },
+    {
+      "label": "project simulated SD",
+      "passed": true,
+      "actual": 0.019978719869080362
+    },
+    {
+      "label": "project nearest-rank 5th percentile",
+      "passed": true,
+      "actual": -0.02325365150623329
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "trials": 20000,
+    "seed": 42,
+    "mean": 0.009923879817034858,
+    "sample_sd": 0.019978719869080362,
+    "nearest_rank_q05": -0.02325365150623329,
+    "quadrature_z95": 1.6448536269514307,
+    "model": "synthetic one-period decimal returns; unfloored loss in dollars"
+  }
+}

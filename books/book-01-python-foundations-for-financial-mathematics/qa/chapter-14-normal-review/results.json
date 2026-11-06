@@ -1,0 +1,311 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "71c7d0e5547e5449d9fb10c7d544f2ed49a1a911a7b5095e854917e1101ac5ef",
+  "listing_sha256": "b8ed7024f90c21119e8d0352e0b949b41f12168aac4f2b1175e9b9f559465933",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "normal_distribution.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_pdf (__main__.Tests.test_01_pdf) ... ok\ntest_02_cdf (__main__.Tests.test_02_cdf) ... ok\ntest_03_survival (__main__.Tests.test_03_survival) ... ok\ntest_04_one (__main__.Tests.test_04_one) ... ok\ntest_05_left (__main__.Tests.test_05_left) ... ok\ntest_06_right (__main__.Tests.test_06_right) ... ok\ntest_07_interval (__main__.Tests.test_07_interval) ... ok\ntest_08_median (__main__.Tests.test_08_median) ... ok\ntest_09_percentile (__main__.Tests.test_09_percentile) ... ok\ntest_10_var (__main__.Tests.test_10_var) ... ok\ntest_11_seed (__main__.Tests.test_11_seed) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import normal_distribution"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "normal_distribution.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 origin density",
+      "passed": true,
+      "actual": 0.3989422804014327,
+      "independent_reference": "0.3989422804014327",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E2 center CDF",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "0.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E3/E4 one sigma CDF",
+      "passed": true,
+      "actual": 0.8413447460685429,
+      "independent_reference": "0.8413447460685429",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E5 one sigma survival",
+      "passed": true,
+      "actual": 0.15865525393145707,
+      "independent_reference": "0.15865525393145707",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E6 interval one SD",
+      "passed": true,
+      "actual": 0.6826894921370859,
+      "independent_reference": "0.6826894921370862",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E7 interval two SD",
+      "passed": true,
+      "actual": 0.9544997361036416,
+      "independent_reference": "0.9544997361036405",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E8 interval three SD",
+      "passed": true,
+      "actual": 0.9973002039367398,
+      "independent_reference": "0.9973002039367359",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E10 nonstandard CDF",
+      "passed": true,
+      "actual": 0.8413447460685429,
+      "independent_reference": "0.8413447460685429",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E11 nonstandard tail",
+      "passed": true,
+      "actual": 0.15865525393145707,
+      "independent_reference": "0.15865525393145707",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E12 nonstandard interval",
+      "passed": true,
+      "actual": 0.6826894921370859,
+      "independent_reference": "0.6826894921370862",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E13 median",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E15 upper quantile",
+      "passed": true,
+      "actual": 1.6448536269514729,
+      "independent_reference": "1.6448536269514307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E16 lower quantile",
+      "passed": true,
+      "actual": -1.6448536269514729,
+      "independent_reference": "-1.6448536269514307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E20 loss VaR",
+      "passed": true,
+      "actual": 2289.707253902946,
+      "independent_reference": "2289.707253902861",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "E21 negative unfloored VaR",
+      "passed": true,
+      "actual": -6710.292746097054,
+      "independent_reference": "-6710.29274609714",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project probability of nonpositive return",
+      "passed": true,
+      "actual": 0.3085375387259869,
+      "independent_reference": "0.3085375387259869",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project probability of return at or below -3%",
+      "passed": true,
+      "actual": 0.02275013194817922,
+      "independent_reference": "0.02275013194817921",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project 5th percentile",
+      "passed": true,
+      "actual": -0.022897072539029457,
+      "independent_reference": "-0.02289707253902861",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "project 95th percentile",
+      "passed": true,
+      "actual": 0.042897072539029454,
+      "independent_reference": "0.042897072539028615",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 far right interval",
+      "passed": true,
+      "actual": 7.619661958203143e-24,
+      "independent_reference": "7.61966195820455e-24",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 extreme finite standardization",
+      "passed": true,
+      "actual": 0.9772498680518208,
+      "independent_reference": "0.9772498680518208",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 median when old bracket overflows",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 scaled VaR retains a finite result",
+      "passed": true,
+      "actual": 2.644853626951473e+307,
+      "independent_reference": "2.6448536269514305e+307",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-10
+    },
+    {
+      "label": "F122 lower quantile below old bracket via quadrature",
+      "passed": true,
+      "actual": 1.0000000000000618e-50,
+      "independent_reference": "1e-50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-09
+    },
+    {
+      "label": "invalid sigma",
+      "passed": true,
+      "exception": "ValueError('sigma must be positive')"
+    },
+    {
+      "label": "invalid confidence",
+      "passed": true,
+      "exception": "ValueError('require both tail masses to be at least 1e-300')"
+    },
+    {
+      "label": "invalid exposure",
+      "passed": true,
+      "exception": "ValueError('exposure must be nonnegative')"
+    },
+    {
+      "label": "invalid count",
+      "passed": true,
+      "exception": "ValueError('invalid simulation inputs')"
+    },
+    {
+      "label": "F122 boolean observation",
+      "passed": true,
+      "exception": "ValueError('finite numeric input required')"
+    },
+    {
+      "label": "F122 unreportable quantile",
+      "passed": true,
+      "exception": "ValueError('result exceeds float range')"
+    },
+    {
+      "label": "F122 unreportable simulated output",
+      "passed": true,
+      "exception": "ValueError('result exceeds float range')"
+    },
+    {
+      "label": "project seeded Box\u2013Muller replay",
+      "passed": true
+    },
+    {
+      "label": "project simulated mean",
+      "passed": true,
+      "actual": 0.009923879817034858
+    },
+    {
+      "label": "project simulated SD",
+      "passed": true,
+      "actual": 0.019978719869080362
+    },
+    {
+      "label": "project nearest-rank 5th percentile",
+      "passed": true,
+      "actual": -0.02325365150623329
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "trials": 20000,
+    "seed": 42,
+    "mean": 0.009923879817034858,
+    "sample_sd": 0.019978719869080362,
+    "nearest_rank_q05": -0.02325365150623329,
+    "quadrature_z95": 1.6448536269514307,
+    "model": "synthetic one-period decimal returns; unfloored loss in dollars"
+  }
+}
