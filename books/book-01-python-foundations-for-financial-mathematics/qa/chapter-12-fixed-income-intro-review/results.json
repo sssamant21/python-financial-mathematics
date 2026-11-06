@@ -1,0 +1,198 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "04944160d4bc772a3a2fdafb2875c53912bfe018c9809e0bc545a9b6c671def3",
+  "listing_sha256": "c94e526d4ea4013d8aab6a86794764e61c0743b7cc10026973c107be752b0a00",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "introduction_to_fixed_income.py"
+      ],
+      "returncode": 0,
+      "stdout": "Yield: 3.0% Price: 1056.97 Classification: premium\nYield: 5.0% Price: 1000.00 Classification: par\nYield: 7.0% Price: 946.71 Classification: discount\n",
+      "stderr": "test_01_cash_flow_count (__main__.Tests.test_01_cash_flow_count) ... ok\ntest_02_coupon (__main__.Tests.test_02_coupon) ... ok\ntest_03_maturity_cash_flow (__main__.Tests.test_03_maturity_cash_flow) ... ok\ntest_04_total_undiscounted (__main__.Tests.test_04_total_undiscounted) ... ok\ntest_05_at_par (__main__.Tests.test_05_at_par) ... ok\ntest_06_premium (__main__.Tests.test_06_premium) ... ok\ntest_07_discount (__main__.Tests.test_07_discount) ... ok\ntest_08_zero_coupon (__main__.Tests.test_08_zero_coupon) ... ok\ntest_09_zero_yield (__main__.Tests.test_09_zero_yield) ... ok\ntest_10_price_decreases_with_yield (__main__.Tests.test_10_price_decreases_with_yield) ... ok\ntest_11_classifications (__main__.Tests.test_11_classifications) ... ok\ntest_12_invalid_inputs (__main__.Tests.test_12_invalid_inputs) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "introduction_to_fixed_income.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P2\u2013P6 six promised flows and total",
+      "passed": true
+    },
+    {
+      "label": "project independent price at 3%",
+      "passed": true,
+      "actual": 1056.9718716547525,
+      "independent_reference": "73967281487215000/69980368892329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project classification at 3%",
+      "passed": true
+    },
+    {
+      "label": "project independent price at 4%",
+      "passed": true,
+      "actual": 1028.007154453452,
+      "independent_reference": "18089109751250/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project classification at 4%",
+      "passed": true
+    },
+    {
+      "label": "project independent price at 5%",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project classification at 5%",
+      "passed": true
+    },
+    {
+      "label": "project independent price at 6%",
+      "passed": true,
+      "actual": 972.9140427806091,
+      "independent_reference": "1161710247107500/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project classification at 6%",
+      "passed": true
+    },
+    {
+      "label": "project independent price at 7%",
+      "passed": true,
+      "actual": 946.714469802215,
+      "independent_reference": "74480243490035000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project classification at 7%",
+      "passed": true
+    },
+    {
+      "label": "project positive finite decreasing prices",
+      "passed": true
+    },
+    {
+      "label": "exact demo displays 3, 5 and 7 percent",
+      "passed": true,
+      "expected": [
+        "Yield: 3.0% Price: 1056.97 Classification: premium",
+        "Yield: 5.0% Price: 1000.00 Classification: par",
+        "Yield: 7.0% Price: 946.71 Classification: discount"
+      ]
+    },
+    {
+      "label": "P8 P12 zero coupon and periodic yield",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero yield equals promised total",
+      "passed": true,
+      "actual": 1150.0,
+      "independent_reference": "1150",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "fractional year with a whole count",
+      "passed": true
+    },
+    {
+      "label": "F78 tiny face discount must not be par",
+      "passed": true
+    },
+    {
+      "label": "F78 close but unequal yield is premium",
+      "passed": true
+    },
+    {
+      "label": "F54 finite PV despite overflowing raw coupon product",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite discounted principal despite underflowing discount factor",
+      "passed": true,
+      "actual": 1e-92,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F78 nonintegral count near zero",
+      "passed": true,
+      "exception": "ValueError('years * frequency must be a positive integer')"
+    },
+    {
+      "label": "F78 nonintegral count at float rounding boundary",
+      "passed": true,
+      "exception": "ValueError('years * frequency must be a positive integer')"
+    },
+    {
+      "label": "F54 underflowed positive price",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "F54 nonfinite undiscounted total",
+      "passed": true,
+      "exception": "ValueError('price outside supported range')"
+    },
+    {
+      "label": "F54 nonfinite maturity flow",
+      "passed": true,
+      "exception": "ValueError('maturity cash flow outside supported range')"
+    },
+    {
+      "label": "negative yield rejected within teaching contract",
+      "passed": true,
+      "exception": "ValueError('invalid yield')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 16,
+  "applied_mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    7,
+    13,
+    14,
+    15,
+    16
+  ],
+  "historical_unique_methods_added": 0
+}
