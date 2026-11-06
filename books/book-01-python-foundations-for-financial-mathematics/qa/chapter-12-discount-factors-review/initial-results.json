@@ -1,0 +1,374 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "6cc91edb3ce819eeb5810943a4643ee20b307b4a2d13c81267a482f5e4734e18",
+  "listing_sha256": "a470afdaca9fe4c382c1d88d5a68f80f87d5293d3014dd4075eb56134960ee30",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "discount_factors_spot_rates.py"
+      ],
+      "returncode": 0,
+      "stdout": "1y spot=3.00% DF=0.97087379 recovered=3.00%\n2y spot=3.50% DF=0.93351070 recovered=3.50%\n3y spot=4.00% DF=0.88899636 recovered=4.00%\nCoupon bond PV: 963.0865166579453\n",
+      "stderr": "test_01_annual (__main__.Tests.test_01_annual) ... ok\ntest_02_continuous (__main__.Tests.test_02_continuous) ... ok\ntest_03_periodic (__main__.Tests.test_03_periodic) ... ok\ntest_04_annual_inverse (__main__.Tests.test_04_annual_inverse) ... ok\ntest_05_cont_inverse (__main__.Tests.test_05_cont_inverse) ... ok\ntest_06_periodic_inverse (__main__.Tests.test_06_periodic_inverse) ... ok\ntest_07_zero_rate (__main__.Tests.test_07_zero_rate) ... ok\ntest_08_negative_rate (__main__.Tests.test_08_negative_rate) ... ok\ntest_09_pv (__main__.Tests.test_09_pv) ... ok\ntest_10_forward (__main__.Tests.test_10_forward) ... ok\ntest_11_linearity (__main__.Tests.test_11_linearity) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "discount_factors_spot_rates.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "1y annual DF",
+      "passed": true,
+      "actual": 0.970873786407767,
+      "independent_reference": "100/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "1y inverse",
+      "passed": true,
+      "actual": 0.02999999999999999,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "1y continuous equivalent",
+      "passed": true,
+      "actual": 0.970873786407767,
+      "independent_reference": "100/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "1y zero PV",
+      "passed": true,
+      "actual": 970.873786407767,
+      "independent_reference": "100000/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "1y\u20132y forward",
+      "passed": true,
+      "actual": 0.040024271844660175,
+      "independent_reference": "1649/41200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "2y annual DF",
+      "passed": true,
+      "actual": 0.9335107003664029,
+      "independent_reference": "40000/42849",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "2y inverse",
+      "passed": true,
+      "actual": 0.03500000000000001,
+      "independent_reference": "7/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "2y continuous equivalent",
+      "passed": true,
+      "actual": 0.9335107003664029,
+      "independent_reference": "40000/42849",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "2y zero PV",
+      "passed": true,
+      "actual": 933.510700366403,
+      "independent_reference": "40000000/42849",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "2y\u20133y forward",
+      "passed": true,
+      "actual": 0.05007258045695351,
+      "independent_reference": "53639/1071225",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "3y annual DF",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "independent_reference": "15625/17576",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "3y inverse",
+      "passed": true,
+      "actual": 0.04000000000000001,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "3y continuous equivalent",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "independent_reference": "15625/17576",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "3y zero PV",
+      "passed": true,
+      "actual": 888.9963586709149,
+      "independent_reference": "1953125/2197",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "3y\u20134y forward",
+      "passed": true,
+      "actual": 0.05003611551179743,
+      "independent_reference": "1440865921/28796518400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "4y annual DF",
+      "passed": true,
+      "actual": 0.8466340781408359,
+      "independent_reference": "25600000000/30237384321",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "4y inverse",
+      "passed": true,
+      "actual": 0.042499999999999996,
+      "independent_reference": "17/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "4y continuous equivalent",
+      "passed": true,
+      "actual": 0.8466340781408359,
+      "independent_reference": "25600000000/30237384321",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "4y zero PV",
+      "passed": true,
+      "actual": 846.6340781408359,
+      "independent_reference": "25600000000000/30237384321",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "4y\u20135y forward",
+      "passed": true,
+      "actual": 0.05506009598071415,
+      "independent_reference": "41621832073/755934608025",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "5y annual DF",
+      "passed": true,
+      "actual": 0.8024510465006838,
+      "independent_reference": "320000000000/398778220049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "5y inverse",
+      "passed": true,
+      "actual": 0.045,
+      "independent_reference": "9/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "5y continuous equivalent",
+      "passed": true,
+      "actual": 0.8024510465006838,
+      "independent_reference": "320000000000/398778220049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "5y zero PV",
+      "passed": true,
+      "actual": 802.4510465006838,
+      "independent_reference": "320000000000000/398778220049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project five-year annual coupon PV",
+      "passed": true,
+      "actual": 1024.574345005014,
+      "independent_reference": "5915644572170673598839400255274375/5773758245080520796057710306124",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project continuous coupon PV equivalent",
+      "passed": true,
+      "actual": 1024.574345005014,
+      "independent_reference": "5915644572170673598839400255274375/5773758245080520796057710306124",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 annual 4% DF",
+      "passed": true,
+      "actual": 0.9245562130177515,
+      "independent_reference": "625/676",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 semiannual 4% DF",
+      "passed": true,
+      "actual": 0.9238454260265142,
+      "independent_reference": "6250000/6765201",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 continuous 4% DF",
+      "passed": true,
+      "actual": 0.9231163463866358,
+      "independent_reference": "0.92311634638663578291075984957238881004358306314608649938789299606",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 continuous inverse",
+      "passed": true,
+      "actual": 0.040000000000000015,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "periodic inversion at quarterly frequency",
+      "passed": true,
+      "actual": 0.03999999999999997,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 negative spot factor exceeds one",
+      "passed": true,
+      "actual": 1.0203040506070808,
+      "independent_reference": "10000/9801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 worked multirate price",
+      "passed": true,
+      "actual": 963.0865166579453,
+      "independent_reference": "5521375/5733",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F91 quarterly PV accepts explicit frequency",
+      "passed": false,
+      "exception": "TypeError(\"pv() got an unexpected keyword argument 'frequency'\")"
+    },
+    {
+      "label": "F54 finite scaled PV despite factor underflow",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/1322070819480806636890455259752144365965422032752148167664920368226828597346704899540778313850608061963909777696872582355950954582100618911865342725257953674027620225198320803878014774228964841274390400117588618041128947815623094438061566173054086674490506178125480344405547054397038895817465368254916136220830268563778582290228416398307887896918556404084898937609373242171846359938695516765018940588109060426089671438864102814350385648747165832010614366132173102768902855220001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite forward despite factor ratio overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "3.130475019901613607947600371",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 signed PV offsets before reporting",
+      "passed": false,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F54 unsupported factor underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 unsupported factor overflow",
+      "passed": false,
+      "exception": "OverflowError('math range error')"
+    },
+    {
+      "label": "F91 inverse rounds to invalid lower bound",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F91 negative forward rounds to invalid lower bound",
+      "passed": true,
+      "exception": "ValueError('math domain error')"
+    },
+    {
+      "label": "F91 validate periodic frequency in PV",
+      "passed": true,
+      "exception": "TypeError(\"pv() got an unexpected keyword argument 'frequency'\")"
+    },
+    {
+      "label": "missing maturity rate rejected",
+      "passed": true,
+      "exception": "ValueError('missing spot rate')"
+    },
+    {
+      "label": "F91 worked values correctly rounded in prose and exercises",
+      "passed": true,
+      "expected_pv": "963.09",
+      "expected_semiannual": "0.92384543"
+    },
+    {
+      "label": "exact demo output",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
