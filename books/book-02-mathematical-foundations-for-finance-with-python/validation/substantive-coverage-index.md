@@ -685,3 +685,11 @@ Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-b
 [V-91](runtime-refresh-2026-11-06-r10.md) compiled 556 Python files, passed 343 scripts and verified 557 required blobs before and after at `b8d9ad694136393a36aca2c06d9c0798062cb21c`. Chapter 19: 53 compiled files and 43 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 20.7 execution provenance baseline](chapter-20-execution-provenance-baseline.md) starts the outstanding COV-86 checks for actual source, environment, command and output provenance. The synthetic example’s pending fields are verified and intentional. Wider Chapter 19 capstone provenance and manual reviews remain open.
+
+## Actual execution provenance — V-92
+
+[Section 20.7 actual provenance](chapter-20-execution-provenance-followup.md) records an actual local child execution, observed Git source state, interpreter and argv, input hash, output and result. All 21 expanded cases passed; the baseline's 20 missing-behavior observations and initial reruns are retained. The original synthetic template still records pending execution. This adds selected COV-86 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-92](runtime-refresh-2026-11-06-r11.md) compiled 557 files, passed 344 scripts and verified 558 required blobs before and after at `641c6ad0304d242fd3a780b12908726b4778d724`. Chapter 20: 34 compiled files and 23 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 20.7 interrupted-write baseline](chapter-20-manifest-interrupted-write-baseline.md) reproduces a partial final JSON artifact and blocked retry after an injected write error. Check publication and no-overwrite behavior separately from durability and authenticity. Wider capstone provenance and manual reviews remain open.
