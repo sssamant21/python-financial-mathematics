@@ -619,3 +619,11 @@ Next substantive item: [Adaptive RK4 clock baseline](chapter-19-rk4-adaptive-gri
 [V-82](runtime-refresh-2026-11-06-r01.md) compiled 547 files, passed 334 scripts and matched 548 required blobs before and after at `f462da2d7ff63750780e72884557ccfd4fa7df98`. Chapter 19: 44 compiled files and 34 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.6 account reference baseline](chapter-19-rk4-account-reference-baseline.md) reproduces three finite-result failures in the benchmark used by the Section 19.6 assessment. Check complete balances and actual assessment fields against independent references; reconcile true range failures with this helper’s contract. Wider capstone provenance and manual reviews remain open.
+
+## Analytical account reference range — V-83
+
+[Section 19.6 analytical account reference](chapter-19-rk4-account-reference-followup.md) retains 13 baseline mismatches, intermediate failures and a 28-case pass. It exercises the actual Section 19.6 assessment, complete balance arithmetic, signed underflow and Section 19.8’s stricter contract. This adds selected COV-84 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-83](runtime-refresh-2026-11-06-r02.md) compiled 548 files, passed 335 scripts and matched 549 required blobs before and after at `b5ed61885fc661feb72e9c27c8eb9f9ae220fecd`. Chapter 19: 45 compiled files and 35 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.5 Euler range and grid baseline](chapter-19-euler-range-grid-baseline.md) records a false Euler overflow, horizon overshoot and callbacks at zero horizon. Validate the distinct Euler driver against independent complete updates and represented time grids, and reconcile its step metadata. Wider capstone provenance and manual reviews remain open.
