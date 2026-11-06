@@ -1,0 +1,1343 @@
+{
+  "command": [
+    "python",
+    "chapter-21/code/check_capstone_account_range.py"
+  ],
+  "baseline_overlay": "chapter-21/code/check_capstone_account_range.py",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "assertions_enabled": true,
+  "initial_capture": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-account79/chapter-21/code/check_capstone_account_range.py\", line 106, in <module>\n    main()\n  File \"/tmp/book02-account79/chapter-21/code/check_capstone_account_range.py\", line 102, in main\n    assert all(row[\"passed\"] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "case": "zero_rate_cancel",
+        "inputs": [
+          -1.7976931348623157e+308,
+          0.0,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "exact_equilibrium",
+        "inputs": [
+          1.0,
+          1024.0,
+          -1024.0,
+          1.0
+        ],
+        "expected": 1.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "negative_exponent_product_overflow",
+        "inputs": [
+          1.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "zero_state_large_exponent",
+        "inputs": [
+          0.0,
+          1.7976931348623157e+308,
+          0.0,
+          2.0
+        ],
+        "expected": 0.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "negative_limit_without_equilibrium",
+        "inputs": [
+          0.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "positive_exponent_product_overflow",
+        "inputs": [
+          1.0,
+          1.7976931348623157e+308,
+          0.0,
+          2.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "approach_half_from_above",
+        "inputs": [
+          1.0,
+          -2.0,
+          5e-324,
+          3000.0
+        ],
+        "expected": 5e-324,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "approach_half_from_below",
+        "inputs": [
+          0.0,
+          -2.0,
+          5e-324,
+          3000.0
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "approach_negative_half",
+        "inputs": [
+          -1.0,
+          -2.0,
+          -5e-324,
+          3000.0
+        ],
+        "expected": -5e-324,
+        "actual": -0.0,
+        "passed": false
+      },
+      {
+        "case": "negative_underflow",
+        "inputs": [
+          -1.0,
+          -4.0,
+          0.0,
+          1500.0
+        ],
+        "expected": -0.0,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "zero_time_preserves_sign",
+        "inputs": [
+          -0.0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0.0
+        ],
+        "expected": -0.0,
+        "actual": -0.0,
+        "passed": true
+      },
+      {
+        "case": "invalid_horizon",
+        "inputs": [
+          1.0,
+          0.1,
+          0.0,
+          -1.0
+        ],
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "boolean_flow",
+        "inputs": [
+          1.0,
+          0.1,
+          true,
+          1.0
+        ],
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "case": "small_initial_large_growth",
+        "inputs": [
+          5e-324,
+          750.0,
+          0.0,
+          1.0
+        ],
+        "expected": 259.80415017765375,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "small_flow_large_growth",
+        "inputs": [
+          0.0,
+          760.0,
+          5e-324,
+          1.0
+        ],
+        "expected": 7529.693720048575,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "large_initial_tiny_growth",
+        "inputs": [
+          1.7976931348623157e+308,
+          -760.0,
+          0.0,
+          1.0
+        ],
+        "expected": 1.5520628844214957e-22,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "large_factor_finite_flow",
+        "inputs": [
+          0.0,
+          0.5,
+          5e-324,
+          1420.0
+        ],
+        "expected": 2.2074801338993005e-15,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "drift_cancellation",
+        "inputs": [
+          1e+307,
+          1.0,
+          -9.999999999999999e+306,
+          25.0
+        ],
+        "expected": 1.0000089818925362e+307,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "tiny_exponent_rounded_zero",
+        "inputs": [
+          0.0,
+          5e-324,
+          1.7976931348623157e+308,
+          0.25
+        ],
+        "expected": 4.4942328371557893e+307,
+        "actual": 4.4942328371557893e+307,
+        "passed": true
+      },
+      {
+        "case": "zero_rate_round_once",
+        "inputs": [
+          -1.0,
+          0.0,
+          1.0000000000000002,
+          0.9999999999999999
+        ],
+        "expected": 1.1102230246251563e-16,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "zero_rate_tie",
+        "inputs": [
+          0.0,
+          0.0,
+          5e-324,
+          0.5
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "true_zero_rate_overflow",
+        "inputs": [
+          1.7976931348623157e+308,
+          0.0,
+          1.7976931348623157e+308,
+          1.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "true_positive_overflow",
+        "inputs": [
+          1.0,
+          800.0,
+          0.0,
+          1.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "ordinary_unconstrained",
+        "inputs": [
+          100.0,
+          0.125,
+          -40.0,
+          4.0
+        ],
+        "expected": -42.71867955402819,
+        "actual": -42.7186795540282,
+        "passed": false
+      },
+      {
+        "case": "large_negative_flow_factor",
+        "inputs": [
+          0.0,
+          -1.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": -1.7976931348623157e+308,
+        "actual": -1.7976931348623155e+308,
+        "passed": false
+      },
+      {
+        "case": "moderate_exponent_negative_underflow",
+        "inputs": [
+          -5e-324,
+          -2.0,
+          0.0,
+          1.0
+        ],
+        "expected": -0.0,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "integrated_account_field",
+        "inputs": null,
+        "expected": {
+          "model": "constant-coefficient unconstrained account",
+          "inputs": {
+            "initial": 1000,
+            "rate": 0,
+            "flow": 200,
+            "years": 3
+          },
+          "units": {
+            "initial": "currency",
+            "rate": "per year",
+            "flow": "currency per year",
+            "years": "years"
+          },
+          "ending_balance": 1600.0,
+          "boundary_policy": "unconstrained; negative balances allowed",
+          "validation_execution": "not run",
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-coefficient unconstrained account",
+          "inputs": {
+            "initial": 1000,
+            "rate": 0,
+            "flow": 200,
+            "years": 3
+          },
+          "units": {
+            "initial": "currency",
+            "rate": "per year",
+            "flow": "currency per year",
+            "years": "years"
+          },
+          "ending_balance": 1600.0,
+          "boundary_policy": "unconstrained; negative balances allowed",
+          "validation_execution": "not run",
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      },
+      {
+        "case": "integrated_callable",
+        "inputs": null,
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "case": "account_failure_propagates",
+        "inputs": null,
+        "expected": "account failure",
+        "actual": "account failure",
+        "passed": true
+      }
+    ]
+  },
+  "baseline": {
+    "source_revision": "3d4624e1a47463e906fb8897fb88babf955a5583",
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-account79/baseline/chapter-21/code/check_capstone_account_range.py\", line 106, in <module>\n    main()\n  File \"/tmp/book02-account79/baseline/chapter-21/code/check_capstone_account_range.py\", line 102, in main\n    assert all(row[\"passed\"] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "verified_before": 24,
+    "verified_after": 24,
+    "manifest": [
+      {
+        "path": "chapter-21/code/check_capstone_allocation_range.py",
+        "sha": "e68baf38ee28d51253912d8c1f36dbf8bcb50b56"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_rate_range.py",
+        "sha": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_replication_range.py",
+        "sha": "14d282ae418503efc4bc1cd358d0937273b888a9"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_sensitivity_range.py",
+        "sha": "6c43e8a57858861798f7c23486f3db6f109e48ee"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_01.py",
+        "sha": "5173ec340bdf9ae0ad1ac66340fd27934c203757"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_02.py",
+        "sha": "a191d1bd2e62477377058f5f01993e72f547557a"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_03.py",
+        "sha": "215527059ec1ad4bdf8f526cc8995eff62e0144c"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_04.py",
+        "sha": "78b58cc70349220d885baaa1956aa1c332c01bcc"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_05.py",
+        "sha": "1b3e22921f93d5944f389a46c316f731a5e05010"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_06.py",
+        "sha": "9dfa992eb888c99817f61ff39cb736188e818974"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_07.py",
+        "sha": "84fa5b120006c1e029621cd16c04435b63bd91f9"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_08.py",
+        "sha": "35e3eca1cf74659a3fd038558a05eb371bbfea54"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_09.py",
+        "sha": "183ba902d9b2e844c2c95a444014ca57787588c3"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_10.py",
+        "sha": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f"
+      },
+      {
+        "path": "chapter-21/code/section_21_01.py",
+        "sha": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64"
+      },
+      {
+        "path": "chapter-21/code/section_21_02.py",
+        "sha": "a36569438bc8ac086445f6c7556852efa908f8e4"
+      },
+      {
+        "path": "chapter-21/code/section_21_03.py",
+        "sha": "d9a85153cc6fbf46d7de69e39668b0fd32b527e8"
+      },
+      {
+        "path": "chapter-21/code/section_21_04.py",
+        "sha": "bf4700160749afdf39d28a21ecda3d5c981f0adf"
+      },
+      {
+        "path": "chapter-21/code/section_21_05.py",
+        "sha": "4a1cd9cc6ec0c278de94ba23231a5fc340065d7a"
+      },
+      {
+        "path": "chapter-21/code/section_21_06.py",
+        "sha": "b52db4d4d97ebf6898fa8b51bbbeb321e2bd6d47"
+      },
+      {
+        "path": "chapter-21/code/section_21_07.py",
+        "sha": "463b82ea88ea1e0ca318fe65f2e519914a60a1de"
+      },
+      {
+        "path": "chapter-21/code/section_21_08.py",
+        "sha": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a"
+      },
+      {
+        "path": "chapter-21/code/section_21_09.py",
+        "sha": "ca2ff456691be2946163995558ecca4518b37f95"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_account_range.py",
+        "sha": "9ffb1b59fbc28dc25640375538214765a094c1c6"
+      }
+    ],
+    "rows": [
+      {
+        "case": "zero_rate_cancel",
+        "inputs": [
+          -1.7976931348623157e+308,
+          0.0,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "exact_equilibrium",
+        "inputs": [
+          1.0,
+          1024.0,
+          -1024.0,
+          1.0
+        ],
+        "expected": 1.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "negative_exponent_product_overflow",
+        "inputs": [
+          1.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "zero_state_large_exponent",
+        "inputs": [
+          0.0,
+          1.7976931348623157e+308,
+          0.0,
+          2.0
+        ],
+        "expected": 0.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "negative_limit_without_equilibrium",
+        "inputs": [
+          0.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.0,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "positive_exponent_product_overflow",
+        "inputs": [
+          1.0,
+          1.7976931348623157e+308,
+          0.0,
+          2.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "approach_half_from_above",
+        "inputs": [
+          1.0,
+          -2.0,
+          5e-324,
+          3000.0
+        ],
+        "expected": 5e-324,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "approach_half_from_below",
+        "inputs": [
+          0.0,
+          -2.0,
+          5e-324,
+          3000.0
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "approach_negative_half",
+        "inputs": [
+          -1.0,
+          -2.0,
+          -5e-324,
+          3000.0
+        ],
+        "expected": -5e-324,
+        "actual": -0.0,
+        "passed": false
+      },
+      {
+        "case": "negative_underflow",
+        "inputs": [
+          -1.0,
+          -4.0,
+          0.0,
+          1500.0
+        ],
+        "expected": -0.0,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "zero_time_preserves_sign",
+        "inputs": [
+          -0.0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0.0
+        ],
+        "expected": -0.0,
+        "actual": -0.0,
+        "passed": true
+      },
+      {
+        "case": "invalid_horizon",
+        "inputs": [
+          1.0,
+          0.1,
+          0.0,
+          -1.0
+        ],
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "boolean_flow",
+        "inputs": [
+          1.0,
+          0.1,
+          true,
+          1.0
+        ],
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "case": "small_initial_large_growth",
+        "inputs": [
+          5e-324,
+          750.0,
+          0.0,
+          1.0
+        ],
+        "expected": 259.80415017765375,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "small_flow_large_growth",
+        "inputs": [
+          0.0,
+          760.0,
+          5e-324,
+          1.0
+        ],
+        "expected": 7529.693720048575,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "large_initial_tiny_growth",
+        "inputs": [
+          1.7976931348623157e+308,
+          -760.0,
+          0.0,
+          1.0
+        ],
+        "expected": 1.5520628844214957e-22,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "large_factor_finite_flow",
+        "inputs": [
+          0.0,
+          0.5,
+          5e-324,
+          1420.0
+        ],
+        "expected": 2.2074801338993005e-15,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "drift_cancellation",
+        "inputs": [
+          1e+307,
+          1.0,
+          -9.999999999999999e+306,
+          25.0
+        ],
+        "expected": 1.0000089818925362e+307,
+        "actual": "OverflowError",
+        "passed": false
+      },
+      {
+        "case": "tiny_exponent_rounded_zero",
+        "inputs": [
+          0.0,
+          5e-324,
+          1.7976931348623157e+308,
+          0.25
+        ],
+        "expected": 4.4942328371557893e+307,
+        "actual": 4.4942328371557893e+307,
+        "passed": true
+      },
+      {
+        "case": "zero_rate_round_once",
+        "inputs": [
+          -1.0,
+          0.0,
+          1.0000000000000002,
+          0.9999999999999999
+        ],
+        "expected": 1.1102230246251563e-16,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "zero_rate_tie",
+        "inputs": [
+          0.0,
+          0.0,
+          5e-324,
+          0.5
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "true_zero_rate_overflow",
+        "inputs": [
+          1.7976931348623157e+308,
+          0.0,
+          1.7976931348623157e+308,
+          1.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "true_positive_overflow",
+        "inputs": [
+          1.0,
+          800.0,
+          0.0,
+          1.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "ordinary_unconstrained",
+        "inputs": [
+          100.0,
+          0.125,
+          -40.0,
+          4.0
+        ],
+        "expected": -42.71867955402819,
+        "actual": -42.7186795540282,
+        "passed": false
+      },
+      {
+        "case": "large_negative_flow_factor",
+        "inputs": [
+          0.0,
+          -1.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": -1.7976931348623157e+308,
+        "actual": -1.7976931348623155e+308,
+        "passed": false
+      },
+      {
+        "case": "moderate_exponent_negative_underflow",
+        "inputs": [
+          -5e-324,
+          -2.0,
+          0.0,
+          1.0
+        ],
+        "expected": -0.0,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "integrated_account_field",
+        "inputs": null,
+        "expected": {
+          "model": "constant-coefficient unconstrained account",
+          "inputs": {
+            "initial": 1000,
+            "rate": 0,
+            "flow": 200,
+            "years": 3
+          },
+          "units": {
+            "initial": "currency",
+            "rate": "per year",
+            "flow": "currency per year",
+            "years": "years"
+          },
+          "ending_balance": 1600.0,
+          "boundary_policy": "unconstrained; negative balances allowed",
+          "validation_execution": "not run",
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-coefficient unconstrained account",
+          "inputs": {
+            "initial": 1000,
+            "rate": 0,
+            "flow": 200,
+            "years": 3
+          },
+          "units": {
+            "initial": "currency",
+            "rate": "per year",
+            "flow": "currency per year",
+            "years": "years"
+          },
+          "ending_balance": 1600.0,
+          "boundary_policy": "unconstrained; negative balances allowed",
+          "validation_execution": "not run",
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      },
+      {
+        "case": "integrated_callable",
+        "inputs": null,
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "case": "account_failure_propagates",
+        "inputs": null,
+        "expected": "account failure",
+        "actual": "account failure",
+        "passed": true
+      }
+    ]
+  },
+  "corrected": {
+    "source_revision": "59f713d346fbcbf14e7125902637cd2f6e2c56e4",
+    "exit": 0,
+    "stderr": "",
+    "verified_before": 24,
+    "verified_after": 24,
+    "manifest": [
+      {
+        "path": "chapter-21/code/check_capstone_account_range.py",
+        "sha": "9ffb1b59fbc28dc25640375538214765a094c1c6"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_allocation_range.py",
+        "sha": "e68baf38ee28d51253912d8c1f36dbf8bcb50b56"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_rate_range.py",
+        "sha": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_replication_range.py",
+        "sha": "14d282ae418503efc4bc1cd358d0937273b888a9"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_sensitivity_range.py",
+        "sha": "6c43e8a57858861798f7c23486f3db6f109e48ee"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_01.py",
+        "sha": "5173ec340bdf9ae0ad1ac66340fd27934c203757"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_02.py",
+        "sha": "a191d1bd2e62477377058f5f01993e72f547557a"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_03.py",
+        "sha": "f77ed7defcee77f78d2507f67fc5718e8cdeb6f3"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_04.py",
+        "sha": "78b58cc70349220d885baaa1956aa1c332c01bcc"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_05.py",
+        "sha": "1b3e22921f93d5944f389a46c316f731a5e05010"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_06.py",
+        "sha": "9dfa992eb888c99817f61ff39cb736188e818974"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_07.py",
+        "sha": "84fa5b120006c1e029621cd16c04435b63bd91f9"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_08.py",
+        "sha": "35e3eca1cf74659a3fd038558a05eb371bbfea54"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_09.py",
+        "sha": "183ba902d9b2e844c2c95a444014ca57787588c3"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_10.py",
+        "sha": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f"
+      },
+      {
+        "path": "chapter-21/code/section_21_01.py",
+        "sha": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64"
+      },
+      {
+        "path": "chapter-21/code/section_21_02.py",
+        "sha": "a36569438bc8ac086445f6c7556852efa908f8e4"
+      },
+      {
+        "path": "chapter-21/code/section_21_03.py",
+        "sha": "ebf9d4733542fb11b5c8121fb9ec8725d2b260c4"
+      },
+      {
+        "path": "chapter-21/code/section_21_04.py",
+        "sha": "bf4700160749afdf39d28a21ecda3d5c981f0adf"
+      },
+      {
+        "path": "chapter-21/code/section_21_05.py",
+        "sha": "4a1cd9cc6ec0c278de94ba23231a5fc340065d7a"
+      },
+      {
+        "path": "chapter-21/code/section_21_06.py",
+        "sha": "b52db4d4d97ebf6898fa8b51bbbeb321e2bd6d47"
+      },
+      {
+        "path": "chapter-21/code/section_21_07.py",
+        "sha": "b69ce3fe06d596266f3c338b6bf0fc55800b3aed"
+      },
+      {
+        "path": "chapter-21/code/section_21_08.py",
+        "sha": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a"
+      },
+      {
+        "path": "chapter-21/code/section_21_09.py",
+        "sha": "ca2ff456691be2946163995558ecca4518b37f95"
+      }
+    ],
+    "rows": [
+      {
+        "case": "zero_rate_cancel",
+        "inputs": [
+          -1.7976931348623157e+308,
+          0.0,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "actual": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "exact_equilibrium",
+        "inputs": [
+          1.0,
+          1024.0,
+          -1024.0,
+          1.0
+        ],
+        "expected": 1.0,
+        "actual": 1.0,
+        "passed": true
+      },
+      {
+        "case": "negative_exponent_product_overflow",
+        "inputs": [
+          1.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.0,
+        "actual": 1.0,
+        "passed": true
+      },
+      {
+        "case": "zero_state_large_exponent",
+        "inputs": [
+          0.0,
+          1.7976931348623157e+308,
+          0.0,
+          2.0
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "negative_limit_without_equilibrium",
+        "inputs": [
+          0.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          2.0
+        ],
+        "expected": 1.0,
+        "actual": 1.0,
+        "passed": true
+      },
+      {
+        "case": "positive_exponent_product_overflow",
+        "inputs": [
+          1.0,
+          1.7976931348623157e+308,
+          0.0,
+          2.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "approach_half_from_above",
+        "inputs": [
+          1.0,
+          -2.0,
+          5e-324,
+          3000.0
+        ],
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "case": "approach_half_from_below",
+        "inputs": [
+          0.0,
+          -2.0,
+          5e-324,
+          3000.0
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "approach_negative_half",
+        "inputs": [
+          -1.0,
+          -2.0,
+          -5e-324,
+          3000.0
+        ],
+        "expected": -5e-324,
+        "actual": -5e-324,
+        "passed": true
+      },
+      {
+        "case": "negative_underflow",
+        "inputs": [
+          -1.0,
+          -4.0,
+          0.0,
+          1500.0
+        ],
+        "expected": -0.0,
+        "actual": -0.0,
+        "passed": true
+      },
+      {
+        "case": "zero_time_preserves_sign",
+        "inputs": [
+          -0.0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0.0
+        ],
+        "expected": -0.0,
+        "actual": -0.0,
+        "passed": true
+      },
+      {
+        "case": "invalid_horizon",
+        "inputs": [
+          1.0,
+          0.1,
+          0.0,
+          -1.0
+        ],
+        "expected": "ValueError",
+        "actual": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "boolean_flow",
+        "inputs": [
+          1.0,
+          0.1,
+          true,
+          1.0
+        ],
+        "expected": "TypeError",
+        "actual": "TypeError",
+        "passed": true
+      },
+      {
+        "case": "small_initial_large_growth",
+        "inputs": [
+          5e-324,
+          750.0,
+          0.0,
+          1.0
+        ],
+        "expected": 259.80415017765375,
+        "actual": 259.80415017765375,
+        "passed": true
+      },
+      {
+        "case": "small_flow_large_growth",
+        "inputs": [
+          0.0,
+          760.0,
+          5e-324,
+          1.0
+        ],
+        "expected": 7529.693720048575,
+        "actual": 7529.693720048575,
+        "passed": true
+      },
+      {
+        "case": "large_initial_tiny_growth",
+        "inputs": [
+          1.7976931348623157e+308,
+          -760.0,
+          0.0,
+          1.0
+        ],
+        "expected": 1.5520628844214957e-22,
+        "actual": 1.5520628844214957e-22,
+        "passed": true
+      },
+      {
+        "case": "large_factor_finite_flow",
+        "inputs": [
+          0.0,
+          0.5,
+          5e-324,
+          1420.0
+        ],
+        "expected": 2.2074801338993005e-15,
+        "actual": 2.2074801338993005e-15,
+        "passed": true
+      },
+      {
+        "case": "drift_cancellation",
+        "inputs": [
+          1e+307,
+          1.0,
+          -9.999999999999999e+306,
+          25.0
+        ],
+        "expected": 1.0000089818925362e+307,
+        "actual": 1.0000089818925362e+307,
+        "passed": true
+      },
+      {
+        "case": "tiny_exponent_rounded_zero",
+        "inputs": [
+          0.0,
+          5e-324,
+          1.7976931348623157e+308,
+          0.25
+        ],
+        "expected": 4.4942328371557893e+307,
+        "actual": 4.4942328371557893e+307,
+        "passed": true
+      },
+      {
+        "case": "zero_rate_round_once",
+        "inputs": [
+          -1.0,
+          0.0,
+          1.0000000000000002,
+          0.9999999999999999
+        ],
+        "expected": 1.1102230246251563e-16,
+        "actual": 1.1102230246251563e-16,
+        "passed": true
+      },
+      {
+        "case": "zero_rate_tie",
+        "inputs": [
+          0.0,
+          0.0,
+          5e-324,
+          0.5
+        ],
+        "expected": 0.0,
+        "actual": 0.0,
+        "passed": true
+      },
+      {
+        "case": "true_zero_rate_overflow",
+        "inputs": [
+          1.7976931348623157e+308,
+          0.0,
+          1.7976931348623157e+308,
+          1.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "true_positive_overflow",
+        "inputs": [
+          1.0,
+          800.0,
+          0.0,
+          1.0
+        ],
+        "expected": "OverflowError",
+        "actual": "OverflowError",
+        "passed": true
+      },
+      {
+        "case": "ordinary_unconstrained",
+        "inputs": [
+          100.0,
+          0.125,
+          -40.0,
+          4.0
+        ],
+        "expected": -42.71867955402819,
+        "actual": -42.71867955402819,
+        "passed": true
+      },
+      {
+        "case": "large_negative_flow_factor",
+        "inputs": [
+          0.0,
+          -1.0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": -1.7976931348623157e+308,
+        "actual": -1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "moderate_exponent_negative_underflow",
+        "inputs": [
+          -5e-324,
+          -2.0,
+          0.0,
+          1.0
+        ],
+        "expected": -0.0,
+        "actual": -0.0,
+        "passed": true
+      },
+      {
+        "case": "integrated_account_field",
+        "inputs": null,
+        "expected": {
+          "model": "constant-coefficient unconstrained account",
+          "inputs": {
+            "initial": 1000,
+            "rate": 0,
+            "flow": 200,
+            "years": 3
+          },
+          "units": {
+            "initial": "currency",
+            "rate": "per year",
+            "flow": "currency per year",
+            "years": "years"
+          },
+          "ending_balance": 1600.0,
+          "boundary_policy": "unconstrained; negative balances allowed",
+          "validation_execution": "not run",
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "actual": {
+          "model": "constant-coefficient unconstrained account",
+          "inputs": {
+            "initial": 1000,
+            "rate": 0,
+            "flow": 200,
+            "years": 3
+          },
+          "units": {
+            "initial": "currency",
+            "rate": "per year",
+            "flow": "currency per year",
+            "years": "years"
+          },
+          "ending_balance": 1600.0,
+          "boundary_policy": "unconstrained; negative balances allowed",
+          "validation_execution": "not run",
+          "independent_review": "pending",
+          "approval": "pending"
+        },
+        "passed": true
+      },
+      {
+        "case": "integrated_callable",
+        "inputs": null,
+        "expected": true,
+        "actual": true,
+        "passed": true
+      },
+      {
+        "case": "account_failure_propagates",
+        "inputs": null,
+        "expected": "account failure",
+        "actual": "account failure",
+        "passed": true
+      }
+    ]
+  }
+}
