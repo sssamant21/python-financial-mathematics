@@ -154,3 +154,11 @@ Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-ra
 [V-80](runtime-refresh-2026-11-05-r22.md) compiled 545 files, passed 332 scripts and matched 546 required blobs before and after at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`. Chapter 19: 42 compiled files and 32 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Fixed RK4 horizon baseline](chapter-19-rk4-fixed-grid-baseline.md) reproduces two fixed-grid false completed results, one beyond and one short of the reported horizon. Check representable grid alignment against independently derived constant-derivative balances and callback times. Wider floating-time behavior, capstone provenance and manual reviews remain open.
+
+## Fixed RK4 horizon alignment — V-81
+
+[Fixed RK4 grid correction](chapter-19-rk4-fixed-grid-followup.md) preserves nine baseline mismatches and a 19-case pass. The fixed solver integrates adjacent rounded endpoints, reaches the requested horizon and rejects collapsed grids before callbacks. Actual traces and independently derived balances cover overshoot, undershoot, ordinary non-dyadic grids and constant, linear and quadratic slopes. This adds selected COV-82 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-81](runtime-refresh-2026-11-05-r23.md) compiled 546 files, passed 333 scripts and matched 547 required blobs before and after at `22336bded4cb65dce8a0557561e7095978fd403f`. Chapter 19: 43 compiled files and 33 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Adaptive RK4 clock baseline](chapter-19-rk4-adaptive-grid-baseline.md) reproduces a state/time discrepancy when the proposed interval and represented time advance differ, even with an equal representable split in step-length arithmetic. Check common full and doubled endpoints, elapsed state and explicit resolution failures; preserve controller and evaluation-count behavior. Wider capstone provenance and manual reviews remain open.
