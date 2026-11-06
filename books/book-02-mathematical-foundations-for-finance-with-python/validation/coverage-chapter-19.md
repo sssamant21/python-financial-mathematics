@@ -138,3 +138,11 @@ Next substantive numerical item: Section 20.2 known-value benchmark helper range
 ## Next end-period evaluation boundary
 
 [Section 19.8 end-period exponent baseline](chapter-19-end-period-exponent-baseline.md) preserves four independently derived finite balances currently rejected by the documented bound. No Chapter 19 runtime behavior changed. Next evaluate a bounded extension and test it against both finite sums and genuine range failures.
+
+## End-period exponent extension — V-79
+
+[Section 19.8 end-period extension](chapter-19-end-period-exponent-followup.md) preserves 15 baseline mismatches, separates a checker exception-classification issue, and records a 23-case pass against separately timed sums and analytical bounds. The nontrivial end-period domain extends through abs(rate*years)=5000; final overflow and nonzero underflow still reject. Broader exponent and rounding coverage remains open under COV-84. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-79](runtime-refresh-2026-11-05-r21.md) compiled 544 files, passed 331 scripts and matched 545 required blobs before and after at `c961e9064fbb07217c8c7af64adf909e399f165f`. Chapter 19: 41 compiled files and 31 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-range-baseline.md) records two observed failures involving a finite weighted increment and a finite callback stage. Derive exact stage inputs and outputs and check actual fixed/adaptive consumers; treat adaptive estimator/scale range as a separate obligation. Wider capstone provenance and manual reviews remain open.
