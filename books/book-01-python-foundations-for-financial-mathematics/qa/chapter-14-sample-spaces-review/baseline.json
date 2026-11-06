@@ -1,0 +1,300 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "ef420c8f3a92588c02682ceebf143d30a836e9068417b12337fc35be92c21a46",
+  "listing_sha256": "c0fc0882947524d970fbac34c42e1890be5d67f0aaecc41df355cfe69b38af67",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "sample_spaces_and_events.py"
+      ],
+      "returncode": 0,
+      "stdout": "Sample space: ('up', 'flat', 'down')\nProbability of loss: 0.3\nProbability of no loss: 0.7\n",
+      "stderr": "test_01_space (__main__.SampleSpaceTests.test_01_space) ... ok\ntest_02_event (__main__.SampleSpaceTests.test_02_event) ... ok\ntest_03_singleton (__main__.SampleSpaceTests.test_03_singleton) ... ok\ntest_04_complement (__main__.SampleSpaceTests.test_04_complement) ... ok\ntest_05_complement_probability (__main__.SampleSpaceTests.test_05_complement_probability) ... ok\ntest_06_union (__main__.SampleSpaceTests.test_06_union) ... ok\ntest_07_intersection (__main__.SampleSpaceTests.test_07_intersection) ... ok\ntest_08_disjoint (__main__.SampleSpaceTests.test_08_disjoint) ... ok\ntest_09_overlap (__main__.SampleSpaceTests.test_09_overlap) ... ok\ntest_10_empty_event (__main__.SampleSpaceTests.test_10_empty_event) ... ok\ntest_11_certain_event (__main__.SampleSpaceTests.test_11_certain_event) ... ok\ntest_12_invalid (__main__.SampleSpaceTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import sample_spaces_and_events"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "sample_spaces_and_events.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E2 three-by-three ordered outcomes",
+      "passed": true,
+      "actual": "9",
+      "expected": "9"
+    },
+    {
+      "label": "E4 predicate event",
+      "passed": true,
+      "actual": "frozenset({'up', 'flat'})",
+      "expected": "{'up', 'flat'}"
+    },
+    {
+      "label": "E5 complement",
+      "passed": true,
+      "actual": "frozenset({'up', 'flat'})",
+      "expected": "{'up', 'flat'}"
+    },
+    {
+      "label": "E6 empty event",
+      "passed": true,
+      "actual": "0.0",
+      "expected": "0"
+    },
+    {
+      "label": "E7 full event",
+      "passed": true,
+      "actual": "1.0",
+      "expected": "1"
+    },
+    {
+      "label": "E9 union",
+      "passed": true,
+      "actual": "frozenset({'up', 'down', 'flat'})",
+      "expected": "{'up', 'down', 'flat'}"
+    },
+    {
+      "label": "E10 intersection",
+      "passed": true,
+      "actual": "frozenset({'flat'})",
+      "expected": "{'flat'}"
+    },
+    {
+      "label": "E11 disjoint",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "label": "E12 overlap",
+      "passed": true,
+      "actual": "False",
+      "expected": "False"
+    },
+    {
+      "label": "E13/E15 no loss",
+      "passed": true,
+      "actual": 0.7,
+      "independent_reference": "7/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 loss",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 union from disjoint atoms",
+      "passed": true,
+      "actual": 0.9,
+      "independent_reference": "9/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 two-loan universe",
+      "passed": true
+    },
+    {
+      "label": "E19 exactly one default",
+      "passed": true
+    },
+    {
+      "label": "E20 at least one default",
+      "passed": true
+    },
+    {
+      "label": "E22 partition",
+      "passed": true
+    },
+    {
+      "label": "E17 reject excess mass",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to 1')"
+    },
+    {
+      "label": "F111 exhausted dimension rejected",
+      "passed": false,
+      "actual": "()"
+    },
+    {
+      "label": "F111 duplicate labels rejected",
+      "passed": false,
+      "actual": "(('up',), ('up',))"
+    },
+    {
+      "label": "F111 unhashable labels rejected",
+      "passed": false,
+      "actual": "((['up'],),)"
+    },
+    {
+      "label": "F111 huge invalid integer weight rejected",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "unknown event member rejected",
+      "passed": true,
+      "exception": "ValueError('event contains outcome outside sample space')"
+    },
+    {
+      "label": "unknown complement member rejected",
+      "passed": true,
+      "exception": "ValueError('event outside sample space')"
+    },
+    {
+      "label": "F111 normalized mass stays within probability bounds",
+      "passed": false
+    },
+    {
+      "label": "project mass",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project default",
+      "passed": true,
+      "actual": 0.13,
+      "independent_reference": "13/100",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project intersection",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project union",
+      "passed": true,
+      "actual": 0.28,
+      "independent_reference": "7/25",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project conditional with positive denominator",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project dependence and inclusion\u2013exclusion",
+      "passed": true
+    },
+    {
+      "label": "project undeclared event state",
+      "passed": true,
+      "exception": "ValueError('event contains outcome outside sample space')"
+    },
+    {
+      "label": "all 16 joint-space events reconcile",
+      "passed": true
+    },
+    {
+      "label": "exact demonstration",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assumption": "Hypothetical joint weights, not measured frequencies",
+    "stress": [
+      [
+        "stress",
+        "default"
+      ],
+      [
+        "stress",
+        "survive"
+      ]
+    ],
+    "default": [
+      [
+        "normal",
+        "default"
+      ],
+      [
+        "stress",
+        "default"
+      ]
+    ],
+    "input_weights": [
+      [
+        "normal",
+        "survive",
+        0.72
+      ],
+      [
+        "normal",
+        "default",
+        0.08
+      ],
+      [
+        "stress",
+        "survive",
+        0.15
+      ],
+      [
+        "stress",
+        "default",
+        0.05
+      ]
+    ],
+    "p_stress": 0.2,
+    "p_default": 0.13,
+    "p_both": 0.05,
+    "p_either": 0.28,
+    "p_default_given_stress": 0.25
+  }
+}
