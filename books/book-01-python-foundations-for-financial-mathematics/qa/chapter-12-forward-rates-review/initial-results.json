@@ -1,0 +1,436 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "bee548349c6378e8c57d868985b79c0fcc40d4a572ade0ef069c575c4afb905a",
+  "listing_sha256": "5914d9b9e62a091353cc06345ceb8c87dcb64fcf0c9a0223d68c5a630e49bf27",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "forward_rates.py"
+      ],
+      "returncode": 0,
+      "stdout": "0-1y spot=3.000% DF=0.97087379 implied_forward=3.0000%\n1-2y spot=3.500% DF=0.93351070 implied_forward=4.0024%\n2-3y spot=4.000% DF=0.88899636 implied_forward=5.0073%\n3-5y spot=4.500% DF=0.80245105 implied_forward=5.2545%\n",
+      "stderr": "test_01_annual_spot_identity (__main__.ForwardRateTests.test_01_annual_spot_identity) ... ok\ntest_02_continuous_identity (__main__.ForwardRateTests.test_02_continuous_identity) ... ok\ntest_03_flat_annual (__main__.ForwardRateTests.test_03_flat_annual) ... ok\ntest_04_flat_continuous (__main__.ForwardRateTests.test_04_flat_continuous) ... ok\ntest_05_periodic_identity (__main__.ForwardRateTests.test_05_periodic_identity) ... ok\ntest_06_reconstruct_df (__main__.ForwardRateTests.test_06_reconstruct_df) ... ok\ntest_07_start_zero (__main__.ForwardRateTests.test_07_start_zero) ... ok\ntest_08_negative_forward (__main__.ForwardRateTests.test_08_negative_forward) ... ok\ntest_09_table (__main__.ForwardRateTests.test_09_table) ... ok\ntest_10_df_zero (__main__.ForwardRateTests.test_10_df_zero) ... ok\ntest_11_conversion_consistency (__main__.ForwardRateTests.test_11_conversion_consistency) ... ok\ntest_12_invalid (__main__.ForwardRateTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "forward_rates.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "base count",
+      "passed": true
+    },
+    {
+      "label": "base 0\u20131 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "base 1 discount",
+      "passed": true,
+      "actual": 0.970873786407767,
+      "independent_reference": "100/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 0\u20131 forward",
+      "passed": true,
+      "actual": 0.02999999999999999,
+      "independent_reference": "0.03",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 0\u20131 reconstruct",
+      "passed": true,
+      "actual": 0.970873786407767,
+      "independent_reference": "100/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 0\u20131 continuous conversion",
+      "passed": true,
+      "actual": 0.02955880224154439,
+      "independent_reference": "0.029558802241544402732619405684712405426058131113257210544575157095",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1\u20132 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "base 2 discount",
+      "passed": true,
+      "actual": 0.9335107003664029,
+      "independent_reference": "40000/42849",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1\u20132 forward",
+      "passed": true,
+      "actual": 0.04002427184466023,
+      "independent_reference": "0.0400242718446601941747572815533980582524271844660194174757281553",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1\u20132 reconstruct",
+      "passed": true,
+      "actual": 0.9335107003664029,
+      "independent_reference": "40000/42849",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 1\u20132 continuous conversion",
+      "passed": true,
+      "actual": 0.039244051193120424,
+      "independent_reference": "0.039244051193120389555437143971972683493258506623009668016801309525",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2\u20133 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "base 3 discount",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "independent_reference": "15625/17576",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2\u20133 forward",
+      "passed": true,
+      "actual": 0.05007258045695349,
+      "independent_reference": "0.0500725804569534878293542439730215407594109547480687997386170039",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2\u20133 reconstruct",
+      "passed": true,
+      "actual": 0.8889963586709149,
+      "independent_reference": "15625/17576",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 2\u20133 continuous conversion",
+      "passed": true,
+      "actual": 0.0488592860251791,
+      "independent_reference": "0.048859286025179096519546140056674592569379474014013901581912744969",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3\u20135 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "base 5 discount",
+      "passed": true,
+      "actual": 0.8024510465006838,
+      "independent_reference": "320000000000/398778220049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3\u20135 forward",
+      "passed": true,
+      "actual": 0.05254510820918889,
+      "independent_reference": "0.0525451082091889150343583453067455150547233768244631980364536101",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3\u20135 reconstruct",
+      "passed": true,
+      "actual": 0.8024510465006838,
+      "independent_reference": "320000000000/398778220049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "base 3\u20135 continuous conversion",
+      "passed": true,
+      "actual": 0.051211143812013846,
+      "independent_reference": "0.051211143812013872140588602708514793709109453171721578851335729455",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted count",
+      "passed": true
+    },
+    {
+      "label": "shifted 0\u20131 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "shifted 1 discount",
+      "passed": true,
+      "actual": 0.966183574879227,
+      "independent_reference": "200/207",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 0\u20131 forward",
+      "passed": true,
+      "actual": 0.03500000000000004,
+      "independent_reference": "0.035",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 0\u20131 reconstruct",
+      "passed": true,
+      "actual": 0.966183574879227,
+      "independent_reference": "200/207",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 0\u20131 continuous conversion",
+      "passed": true,
+      "actual": 0.034401426717332435,
+      "independent_reference": "0.034401426717332396144028274828342544459658318868133439280688233329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 1\u20132 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "shifted 2 discount",
+      "passed": true,
+      "actual": 0.9245562130177515,
+      "independent_reference": "625/676",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 1\u20132 forward",
+      "passed": true,
+      "actual": 0.04502415458937194,
+      "independent_reference": "0.0450241545893719806763285024154589371980676328502415458937198068",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 1\u20132 reconstruct",
+      "passed": true,
+      "actual": 0.9245562130177515,
+      "independent_reference": "625/676",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 1\u20132 continuous conversion",
+      "passed": true,
+      "actual": 0.044039999589230154,
+      "independent_reference": "0.044039999589230196394373518313897243199472422298720414148171241123",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 2\u20133 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "shifted 3 discount",
+      "passed": true,
+      "actual": 0.8762966040549092,
+      "independent_reference": "8000000/9129329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 2\u20133 forward",
+      "passed": true,
+      "actual": 0.055072230954142036,
+      "independent_reference": "0.0550722309541420118343195266272189349112426035502958579881656805",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 2\u20133 reconstruct",
+      "passed": true,
+      "actual": 0.8762966040549092,
+      "independent_reference": "8000000/9129329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 2\u20133 continuous conversion",
+      "passed": true,
+      "actual": 0.05360922994376041,
+      "independent_reference": "0.053609229943760387314866143935993773685018269689380509278716927942",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 3\u20135 timeline and spot",
+      "passed": true
+    },
+    {
+      "label": "shifted 5 discount",
+      "passed": true,
+      "actual": 0.7835261664684591,
+      "independent_reference": "3200000/4084101",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 3\u20135 forward",
+      "passed": true,
+      "actual": 0.057544892208668014,
+      "independent_reference": "0.0575448922086680516483896144128069092243465788329115782407839867",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 3\u20135 reconstruct",
+      "passed": true,
+      "actual": 0.7835261664684591,
+      "independent_reference": "3200000/4084101",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shifted 3\u20135 continuous conversion",
+      "passed": true,
+      "actual": 0.05595008229841848,
+      "independent_reference": "0.055950082298418517736802042018794865847859655610838843746403231635",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "parallel spot shift changes forward intervals differently",
+      "passed": true,
+      "forward_changes": {
+        "1": 0.005,
+        "2": 0.004999882744711787,
+        "3": 0.004999650497188524,
+        "5": 0.0049997839994791364
+      }
+    },
+    {
+      "label": "exact demo",
+      "passed": true,
+      "expected": [
+        "0-1y spot=3.000% DF=0.97087379 implied_forward=3.0000%",
+        "1-2y spot=3.500% DF=0.93351070 implied_forward=4.0024%",
+        "2-3y spot=4.000% DF=0.88899636 implied_forward=5.0073%",
+        "3-5y spot=4.500% DF=0.80245105 implied_forward=5.2545%"
+      ]
+    },
+    {
+      "label": "P12 continuous forward",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13 nominal quarterly forward",
+      "passed": true,
+      "actual": 0.05002481389578161,
+      "independent_reference": "0.0500248138957816377171215880893300248138957816377171215880893300",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P16 negative forward",
+      "passed": true,
+      "actual": -0.009142857142857244,
+      "independent_reference": "-8/875",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F92 tiny forward from spots",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/100000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 forward despite standalone discounts underflowing",
+      "passed": false,
+      "exception": "ValueError('invalid interval or discount factor')"
+    },
+    {
+      "label": "F54 scaled reconstruction despite standalone discount underflow",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/1322070819480806636890455259752144365965422032752148167664920368226828597346704899540778313850608061963909777696872582355950954582100618911865342725257953674027620225198320803878014774228964841274390400117588618041128947815623094438061566173054086674490506178125480344405547054397038895817465368254916136220830268563778582290228416398307887896918556404084898937609373242171846359938695516765018940588109060426089671438864102814350385648747165832010614366132173102768902855220001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F92 normalized time-zero factor",
+      "passed": false,
+      "actual": "0.12499999999999997"
+    },
+    {
+      "label": "F92 reject invalid start quote at time zero",
+      "passed": false,
+      "actual": "0.02999999999999999"
+    },
+    {
+      "label": "F92 reject forward rounded to lower bound",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F54 reject underflowed discount factor",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 reject overflowed reconstruction",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "invalid reversed node order",
+      "passed": true,
+      "exception": "ValueError('tenors must strictly increase')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    1,
+    2,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
