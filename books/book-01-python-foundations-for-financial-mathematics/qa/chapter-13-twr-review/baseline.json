@@ -1,0 +1,326 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "d9c650c343dd1f6d91ef82644959830d357952f6585baa892c1873be9cb6a37c",
+  "listing_sha256": "17dc61834c9c5072bec6c8da250d4921a34dc0b8981025ad1d51efae636aaef6",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "time_weighted_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "Exact TWR: -1.00%\nModified Dietz illustration: 12.00%\n",
+      "stderr": "test_01_one_period (__main__.TWRTests.test_01_one_period) ... ok\ntest_02_loss (__main__.TWRTests.test_02_loss) ... ok\ntest_03_link (__main__.TWRTests.test_03_link) ... ok\ntest_04_exact_contribution (__main__.TWRTests.test_04_exact_contribution) ... ok\ntest_05_exact_withdrawal (__main__.TWRTests.test_05_exact_withdrawal) ... ok\ntest_06_no_flows (__main__.TWRTests.test_06_no_flows) ... ok\ntest_07_zero_return (__main__.TWRTests.test_07_zero_return) ... ok\ntest_08_total_loss (__main__.TWRTests.test_08_total_loss) ... ok\ntest_09_dietz_no_flows (__main__.TWRTests.test_09_dietz_no_flows) ... ok\ntest_10_dietz_midpoint (__main__.TWRTests.test_10_dietz_midpoint) ... ok\ntest_11_dietz_zero (__main__.TWRTests.test_11_dietz_zero) ... ok\ntest_12_invalid (__main__.TWRTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import time_weighted_return"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "time_weighted_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 one gain",
+      "passed": true,
+      "actual": 0.10000000000000009,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 one loss",
+      "passed": true,
+      "actual": -0.09999999999999998,
+      "independent_reference": "-1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 linked gain/loss",
+      "passed": true,
+      "actual": -0.009999999999999898,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 post-withdrawal",
+      "passed": true,
+      "actual": 0.10000000000000009,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 linked withdrawal",
+      "passed": true,
+      "actual": 0.2100000000000002,
+      "independent_reference": "21/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 quarterly factor 131222/125000",
+      "passed": true,
+      "actual": 0.04977600000000004,
+      "independent_reference": "3111/62500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 Dietz midpoint",
+      "passed": true,
+      "actual": 0.12,
+      "independent_reference": "3/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 zero profit",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "\u00a73 exact contribution",
+      "passed": true,
+      "actual": -0.009999999999999898,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "\u00a75 genuine depletion with recapitalization",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "\u00a78 weight endpoints with signed flows",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 tiny subperiod gain",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 tiny subperiod loss",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "-1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 tiny linked loss",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "-1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 tiny exact gain",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 offsetting huge factors",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 exact post-flow opening",
+      "passed": false,
+      "actual": -1.0,
+      "independent_reference": "-1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 true total loss after linked overflow",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 Dietz offsetting large flows",
+      "passed": false,
+      "actual": "-inf",
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F103 nonrepresentable subperiod",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F103 rounded subperiod total loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F103 nonrepresentable linked return",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F103 rounded linked total loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F103 rounded exact total loss",
+      "passed": false,
+      "actual": "-1.0"
+    },
+    {
+      "label": "F103 oversized Dietz output",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "empty ledger",
+      "passed": true,
+      "exception": "ValueError('events required')"
+    },
+    {
+      "label": "missing valuation",
+      "passed": true,
+      "exception": "ValueError('pre_flow: finite numeric value required')"
+    },
+    {
+      "label": "nonfinite external flow",
+      "passed": true,
+      "exception": "ValueError('invalid flow')"
+    },
+    {
+      "label": "negative post-flow capital",
+      "passed": true,
+      "exception": "ValueError('nonpositive post-flow opening value')"
+    },
+    {
+      "label": "flow at final event",
+      "passed": true,
+      "exception": "ValueError('final event must have zero flow')"
+    },
+    {
+      "label": "zero weighted capital",
+      "passed": true,
+      "exception": "ValueError('nonpositive weighted capital base')"
+    },
+    {
+      "label": "project row contracts",
+      "passed": true
+    },
+    {
+      "label": "project supplemental index matches independent share accounting",
+      "passed": true
+    },
+    {
+      "label": "project exact TWR matches independent unit price",
+      "passed": true,
+      "actual": 0.12859999999999983,
+      "independent_reference": "643/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project naive growth and net flows",
+      "passed": true
+    },
+    {
+      "label": "project supplemental CSV contract",
+      "passed": true
+    },
+    {
+      "label": "project supplemental duplicate order",
+      "passed": true,
+      "exception": "ValueError('event order must increase')"
+    },
+    {
+      "label": "project supplemental reverse order",
+      "passed": true,
+      "exception": "ValueError('event order must increase')"
+    },
+    {
+      "label": "project supplemental missing valuation",
+      "passed": true,
+      "exception": "ValueError(\"Invalid literal for Fraction: 'None'\")"
+    },
+    {
+      "label": "project supplemental nonfinite flow",
+      "passed": true,
+      "exception": "ValueError(\"Invalid literal for Fraction: 'inf'\")"
+    },
+    {
+      "label": "project supplemental zero capital",
+      "passed": true,
+      "exception": "ValueError('invalid valuation, final flow, or next opening')"
+    },
+    {
+      "label": "F103 project order field and worked index supplied",
+      "passed": false
+    },
+    {
+      "label": "exact demo",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    15,
+    16,
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
