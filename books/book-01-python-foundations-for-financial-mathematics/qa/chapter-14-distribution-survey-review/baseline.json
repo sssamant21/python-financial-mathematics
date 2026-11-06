@@ -1,0 +1,336 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "66de1a66afaf0b8c56c2f43b7033f969981c77e9b5f49fbbd5682f713bc0b80b",
+  "listing_sha256": "0105437f4d2679419c19600ea8e973c05f1a8147327c95bfb3217908f6b58b0d",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "common_probability_distributions.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_bernoulli (__main__.DistributionTests.test_01_bernoulli) ... ok\ntest_02_bernoulli_zero (__main__.DistributionTests.test_02_bernoulli_zero) ... ok\ntest_03_binomial_zero (__main__.DistributionTests.test_03_binomial_zero) ... ok\ntest_04_binomial_one (__main__.DistributionTests.test_04_binomial_one) ... ok\ntest_05_binomial_normalization (__main__.DistributionTests.test_05_binomial_normalization) ... ok\ntest_06_poisson_zero (__main__.DistributionTests.test_06_poisson_zero) ... ok\ntest_07_poisson_one (__main__.DistributionTests.test_07_poisson_one) ... ok\ntest_08_uniform (__main__.DistributionTests.test_08_uniform) ... ok\ntest_09_exponential (__main__.DistributionTests.test_09_exponential) ... ok\ntest_10_normal (__main__.DistributionTests.test_10_normal) ... ok\ntest_11_seed (__main__.DistributionTests.test_11_seed) ... ok\ntest_12_invalid (__main__.DistributionTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import common_probability_distributions"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "common_probability_distributions.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 Bernoulli event",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 Bernoulli complement",
+      "passed": true,
+      "actual": 0.98,
+      "independent_reference": "49/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 binomial zero",
+      "passed": true,
+      "actual": 0.3486784401000001,
+      "independent_reference": "3486784401/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 binomial one",
+      "passed": true,
+      "actual": 0.3874204890000001,
+      "independent_reference": "387420489/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 binomial two",
+      "passed": true,
+      "actual": 0.2109375,
+      "independent_reference": "27/128",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 any default",
+      "passed": true,
+      "actual": 0.6513215599,
+      "independent_reference": "6513215599/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 Poisson zero",
+      "passed": true,
+      "actual": 0.1353352832366127,
+      "independent_reference": "0.1353352832366127",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 Poisson one",
+      "passed": true,
+      "actual": 0.2706705664732254,
+      "independent_reference": "0.2706705664732254",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 uniform interval",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 exponential tail",
+      "passed": true,
+      "actual": 0.36787944117144233,
+      "independent_reference": "0.36787944117144233",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 normal center",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 normal symmetry",
+      "passed": true,
+      "actual": 0.15865525393145707,
+      "independent_reference": "0.15865525393145705",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F121 binomial center n=1100",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F121 uniform huge symmetric endpoints",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F121 standardize without premature overflow",
+      "passed": false,
+      "actual": 1.0,
+      "independent_reference": "0.9772498680518208",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F121 normal left tail at -10",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "7.61985302416119e-24",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-09
+    },
+    {
+      "label": "invalid binomial count",
+      "passed": true,
+      "exception": "ValueError('invalid integer count')"
+    },
+    {
+      "label": "invalid probability",
+      "passed": true,
+      "exception": "ValueError('probability must lie in [0,1]')"
+    },
+    {
+      "label": "F121 oversized probability rejected",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "invalid rate",
+      "passed": true,
+      "exception": "ValueError('positive finite parameter required')"
+    },
+    {
+      "label": "invalid uniform endpoints",
+      "passed": true,
+      "exception": "ValueError('invalid uniform inputs')"
+    },
+    {
+      "label": "invalid normal sigma",
+      "passed": true,
+      "exception": "ValueError('positive finite parameter required')"
+    },
+    {
+      "label": "invalid simulation count",
+      "passed": true,
+      "exception": "ValueError('invalid integer count')"
+    },
+    {
+      "label": "project binomial mass 0",
+      "passed": true,
+      "actual": 0.3486784401000001,
+      "independent_reference": "3486784401/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 1",
+      "passed": true,
+      "actual": 0.3874204890000001,
+      "independent_reference": "387420489/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 2",
+      "passed": true,
+      "actual": 0.19371024450000007,
+      "independent_reference": "387420489/2000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 3",
+      "passed": true,
+      "actual": 0.05739562800000002,
+      "independent_reference": "14348907/250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 4",
+      "passed": true,
+      "actual": 0.011160261000000003,
+      "independent_reference": "11160261/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 5",
+      "passed": true,
+      "actual": 0.0014880348000000005,
+      "independent_reference": "3720087/2500000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 6",
+      "passed": true,
+      "actual": 0.00013778100000000007,
+      "independent_reference": "137781/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 7",
+      "passed": true,
+      "actual": 8.748000000000003e-06,
+      "independent_reference": "2187/250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 8",
+      "passed": true,
+      "actual": 3.6450000000000023e-07,
+      "independent_reference": "729/2000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 9",
+      "passed": true,
+      "actual": 9.000000000000004e-09,
+      "independent_reference": "9/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project binomial mass 10",
+      "passed": true,
+      "actual": 1.0000000000000006e-10,
+      "independent_reference": "1/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project integer path normalization and moments",
+      "passed": true
+    },
+    {
+      "label": "project Poisson recurrence through count 10",
+      "passed": true
+    },
+    {
+      "label": "project seeded replay and reproducibility",
+      "passed": true
+    },
+    {
+      "label": "project empirical count probabilities versus exact",
+      "passed": true
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "trials": 20000,
+    "seed": 42,
+    "empirical_counts": {
+      "0": 6960,
+      "1": 7766,
+      "2": 3850,
+      "3": 1162,
+      "4": 230,
+      "5": 30,
+      "6": 2
+    },
+    "mean": 1.0017,
+    "poisson_zero": 0.36787944117144233,
+    "binomial_zero": 0.3486784401
+  }
+}
