@@ -1,6 +1,7 @@
 """Book 02 Section 19.5: Euler time stepping and diagnostics."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -17,11 +18,35 @@ def euler(f,initial,horizon,steps):
     y,t=finite(initial,"initial"),finite(horizon,"horizon")
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("horizon must be nonnegative; steps positive integer")
-    h=t/steps
-    for n in range(steps):
-        slope=finite(f(n*h,y),"derivative")
-        y=finite(y+h*slope,"Euler state")
-    return {"final_state":y,"steps":steps,"step_size":h,"status":"completed"}
+    if t==0:
+        return {"final_state":y,"final_time":0.0,"steps":0,"step_size":0.0,
+                "min_step_size":0.0,"max_step_size":0.0,"status":"completed"}
+    nominal=Fraction(t)/steps
+    message="Euler grid has non-increasing endpoints"
+    if nominal<Fraction(math.ulp(0.0)):
+        raise ValueError(message)
+
+    def intervals():
+        left=0.0
+        for n in range(1,steps+1):
+            right=float(n*nominal)
+            yield left,right
+            left=right
+
+    if any(right<=left for left,right in intervals()):
+        raise ValueError(message)
+    shortest,longest=Fraction(t),Fraction(0)
+    for left,right in intervals():
+        width=Fraction(right)-Fraction(left)
+        slope=finite(f(left,y),"derivative")
+        try:
+            y=float(Fraction(y)+width*Fraction(slope))
+        except OverflowError as exc:
+            raise ValueError("Euler state outside floating-point range") from exc
+        shortest,longest=min(shortest,width),max(longest,width)
+    return {"final_state":y,"final_time":t,"steps":steps,"step_size":float(nominal),
+            "min_step_size":float(shortest),"max_step_size":float(longest),
+            "status":"completed"}
 
 def exact_account(initial,rate,flow,years):
     a,r,u,t=(finite(v,n) for v,n in
