@@ -1,0 +1,439 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "8733f1c8f374718cb8507fc8e58c238216d6c1816f74d8ef74cd3616c34c756f",
+  "listing_sha256": "520530bcde61655b6242d76413bcc77535a8f7740cd55d793c2b8aa6b6b88ff3",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "gross_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "Period gross factors: [1.1, 0.9, 1.05, 0.98]\nLinked factor: 1.01871\nLinked simple return: 0.01871\nGeometric mean: 0.0046450351336161985\n",
+      "stderr": "test_01_positive (__main__.GrossReturnTests.test_01_positive) ... ok\ntest_02_negative (__main__.GrossReturnTests.test_02_negative) ... ok\ntest_03_zero (__main__.GrossReturnTests.test_03_zero) ... ok\ntest_04_full_loss (__main__.GrossReturnTests.test_04_full_loss) ... ok\ntest_05_inverse (__main__.GrossReturnTests.test_05_inverse) ... ok\ntest_06_prices (__main__.GrossReturnTests.test_06_prices) ... ok\ntest_07_link (__main__.GrossReturnTests.test_07_link) ... ok\ntest_08_return (__main__.GrossReturnTests.test_08_return) ... ok\ntest_09_annualize (__main__.GrossReturnTests.test_09_annualize) ... ok\ntest_10_geometric (__main__.GrossReturnTests.test_10_geometric) ... ok\ntest_11_fx_total (__main__.GrossReturnTests.test_11_fx_total) ... ok\ntest_12_invalid (__main__.GrossReturnTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.030s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import gross_returns"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "gross_returns.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1\u2013E4 gross factor 0.12",
+      "passed": true,
+      "actual": 1.12,
+      "independent_reference": "28/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E4 gross factor -0.25",
+      "passed": true,
+      "actual": 0.75,
+      "independent_reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E4 gross factor 0",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1\u2013E4 gross factor -1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 inverse gain",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 inverse loss",
+      "passed": true,
+      "actual": -0.08,
+      "independent_reference": "-2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 price factor",
+      "passed": true,
+      "actual": 1.1,
+      "independent_reference": "11/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8\u2013E10 2 periods factor",
+      "passed": true,
+      "actual": 0.99,
+      "independent_reference": "99/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8\u2013E10 2 periods return",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8\u2013E10 3 periods factor",
+      "passed": true,
+      "actual": 1.0395,
+      "independent_reference": "2079/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8\u2013E10 3 periods return",
+      "passed": true,
+      "actual": 0.0395,
+      "independent_reference": "79/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8\u2013E10 4 periods factor",
+      "passed": true,
+      "actual": 1.01871,
+      "independent_reference": "101871/100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8\u2013E10 4 periods return",
+      "passed": true,
+      "actual": 0.01871,
+      "independent_reference": "1871/100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 gross wealth calculation",
+      "passed": true
+    },
+    {
+      "label": "E12 E13 geometric average",
+      "passed": true,
+      "actual": -0.005012562893380045,
+      "independent_reference": "-0.00501256289338004526552017899879399482187343632319392088239535617",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 annualization",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 income net of cost",
+      "passed": true,
+      "actual": 1.07,
+      "independent_reference": "107/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 FX gross",
+      "passed": true,
+      "actual": 1.0584,
+      "independent_reference": "1323/1250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 supplemental beginning-weight arithmetic",
+      "passed": true
+    },
+    {
+      "label": "E18 geometric total loss branch",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 1 factor",
+      "passed": true,
+      "actual": 1.03,
+      "independent_reference": "103/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 1 cumulative factor",
+      "passed": true,
+      "actual": 1.03,
+      "independent_reference": "103/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 1 cumulative return",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 2 factor",
+      "passed": true,
+      "actual": 0.98,
+      "independent_reference": "49/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 2 cumulative factor",
+      "passed": true,
+      "actual": 1.0094,
+      "independent_reference": "5047/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 2 cumulative return",
+      "passed": true,
+      "actual": 0.0094,
+      "independent_reference": "47/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 3 factor",
+      "passed": true,
+      "actual": 1.04,
+      "independent_reference": "26/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 3 cumulative factor",
+      "passed": true,
+      "actual": 1.049776,
+      "independent_reference": "65611/62500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 3 cumulative return",
+      "passed": true,
+      "actual": 0.049776,
+      "independent_reference": "3111/62500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 4 factor",
+      "passed": true,
+      "actual": 0.99,
+      "independent_reference": "99/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 4 cumulative factor",
+      "passed": true,
+      "actual": 1.03927824,
+      "independent_reference": "6495489/6250000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 4 cumulative return",
+      "passed": true,
+      "actual": 0.03927824,
+      "independent_reference": "245489/6250000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 5 factor",
+      "passed": true,
+      "actual": 1.02,
+      "independent_reference": "51/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 5 cumulative factor",
+      "passed": true,
+      "actual": 1.0600638048,
+      "independent_reference": "331269939/312500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project day 5 cumulative return",
+      "passed": true,
+      "actual": 0.0600638048,
+      "independent_reference": "18769939/312500000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project final wealth",
+      "passed": true,
+      "actual": 26501.595119999998,
+      "independent_reference": "331269939/12500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project geometric daily mean",
+      "passed": true,
+      "actual": 0.011734130957390631,
+      "independent_reference": "0.0117341309573906301730063993510760327120227836619017331351968498",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project annualization with 252 trading days",
+      "passed": true,
+      "actual": 17.911810400274174,
+      "independent_reference": "17.911810400274171371955897163628679491858337959066091735340424242",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project arithmetic mean supplemental",
+      "passed": true
+    },
+    {
+      "label": "project zero-factor wealth path",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F97 tiny geometric gain survives rounded gross factor",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F95 tiny linked return",
+      "passed": true,
+      "actual": 1e-30,
+      "independent_reference": "1/1000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 linked factor survives intermediate overflow",
+      "passed": true,
+      "actual": 1e+160,
+      "independent_reference": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite wealth factor despite intermediate overflow",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 overflowed linked factor rejected",
+      "passed": true,
+      "exception": "ValueError('linked factor outside supported range')"
+    },
+    {
+      "label": "F54 positive factor underflow rejected",
+      "passed": true,
+      "exception": "ValueError('gross factor outside supported range')"
+    },
+    {
+      "label": "F54 annualized overflow rejected",
+      "passed": true,
+      "exception": "ValueError('return outside supported range')"
+    },
+    {
+      "label": "F97 positive annual gross cannot report total loss",
+      "passed": true,
+      "exception": "ValueError('positive gross return rounds to total loss')"
+    },
+    {
+      "label": "negative terminal wealth rejected",
+      "passed": true,
+      "exception": "ValueError('terminal wealth cannot be negative')"
+    },
+    {
+      "label": "exact demo factors",
+      "passed": true
+    },
+    {
+      "label": "exact demo line 1",
+      "passed": true
+    },
+    {
+      "label": "exact demo line 2",
+      "passed": true
+    },
+    {
+      "label": "exact demo line 3",
+      "passed": true
+    },
+    {
+      "label": "F97 worked project states final results",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
