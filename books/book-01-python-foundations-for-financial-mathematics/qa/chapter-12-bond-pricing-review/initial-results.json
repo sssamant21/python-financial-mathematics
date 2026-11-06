@@ -1,0 +1,325 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "8689f915b2e5980969e1d0483d5ca6ea5da3ef2a6ff1ca60603f1143e7d0f125",
+  "listing_sha256": "9c3745a5346c17d0d70635409a6bfa98f5739aa6c3d365f8ac487dab13ebf761",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "bond_pricing.py"
+      ],
+      "returncode": 0,
+      "stdout": "Yield 4.0%: price 1056.01\nYield 6.0%: price 1000.00\nYield 8.0%: price 947.58\n100bp yield rise price change: -26.64\n",
+      "stderr": "test_01_count (__main__.Tests.test_01_count) ... ok\ntest_02_first (__main__.Tests.test_02_first) ... ok\ntest_03_final (__main__.Tests.test_03_final) ... ok\ntest_04_par (__main__.Tests.test_04_par) ... ok\ntest_05_premium (__main__.Tests.test_05_premium) ... ok\ntest_06_discount (__main__.Tests.test_06_discount) ... ok\ntest_07_annuity (__main__.Tests.test_07_annuity) ... ok\ntest_08_zero_yield (__main__.Tests.test_08_zero_yield) ... ok\ntest_09_zero_coupon (__main__.Tests.test_09_zero_coupon) ... ok\ntest_10_curve_flat_equivalence (__main__.Tests.test_10_curve_flat_equivalence) ... ok\ntest_11_parallel_shock (__main__.Tests.test_11_parallel_shock) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "bond_pricing.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1\u2013P5 full six rows",
+      "passed": true
+    },
+    {
+      "label": "matrix direct 3%",
+      "passed": true,
+      "actual": 1085.4578074821288,
+      "independent_reference": "75960737784658000/69980368892329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix annuity 3%",
+      "passed": true,
+      "actual": 1085.4578074821286,
+      "independent_reference": "75960737784658000/69980368892329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix +100bp shock 3%",
+      "passed": true,
+      "actual": -29.443498575224794,
+      "independent_reference": "-36256568432104645089264500/1231394711449568665178529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix direct 4%",
+      "passed": true,
+      "actual": 1056.014308906904,
+      "independent_reference": "18581931701500/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix annuity 4%",
+      "passed": true,
+      "actual": 1056.014308906904,
+      "independent_reference": "18581931701500/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix +100bp shock 4%",
+      "passed": true,
+      "actual": -28.473682099004918,
+      "independent_reference": "-2379949976582699212300/83584201309386664041",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix direct 5%",
+      "passed": true,
+      "actual": 1027.5406268078991,
+      "independent_reference": "4880925089200/4750104241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix annuity 5%",
+      "passed": true,
+      "actual": 1027.5406268078991,
+      "independent_reference": "4880925089200/4750104241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix +100bp shock 5%",
+      "passed": true,
+      "actual": -27.540626807899116,
+      "independent_reference": "-130820848200/4750104241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix direct 6%",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix annuity 6%",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix +100bp shock 6%",
+      "passed": true,
+      "actual": -26.642765098892482,
+      "independent_reference": "-2096048698007000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix direct 7%",
+      "passed": true,
+      "actual": 973.3572349011075,
+      "independent_reference": "76576292188042000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix annuity 7%",
+      "passed": true,
+      "actual": 973.3572349011075,
+      "independent_reference": "76576292188042000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix +100bp shock 7%",
+      "passed": true,
+      "actual": -25.778603468571077,
+      "independent_reference": "-313250340012851191833875/12151563617275177204512",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix direct 8%",
+      "passed": true,
+      "actual": 947.5786314325364,
+      "independent_reference": "146360994125/154457888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix annuity 8%",
+      "passed": true,
+      "actual": 947.5786314325366,
+      "independent_reference": "146360994125/154457888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "matrix +100bp shock 8%",
+      "passed": true,
+      "actual": -24.946718673147643,
+      "independent_reference": "-321145054399143077662125/12873238304676069471008",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P6 P10 P11 premium par discount",
+      "passed": true
+    },
+    {
+      "label": "P12 strictly decreasing prices",
+      "passed": true
+    },
+    {
+      "label": "P9 zero yield",
+      "passed": true,
+      "actual": 1180.0,
+      "independent_reference": "1180",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "negative yield",
+      "passed": true,
+      "actual": 1213.724556813468,
+      "independent_reference": "75376956407194000/62103840598801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P13 flat discount factors",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P14 explicit nonflat curve",
+      "passed": true,
+      "actual": 1057.8999999999999,
+      "independent_reference": "10579/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P15 zero coupon",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P16 deliberate doubled redemption adds discounted face",
+      "passed": true,
+      "actual": 837.4842566836544,
+      "independent_reference": "1000000000000000/1194052296529",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite PV despite discount underflow",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite annuity PV before cash flow reporting",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F82 tiny signed shock does not cancel",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "-206989116297600000259858432800000000171061360000000000062916000000000000012300000000000000001000/76419346977856000222580622265600000270122114400000000174836320000000000063654000000000000012360000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F82 mismatch between frequency and schedule",
+      "passed": false,
+      "actual": "1085.4578074821288"
+    },
+    {
+      "label": "F82 duplicate period rejects positional curve",
+      "passed": false,
+      "actual": "1180.0"
+    },
+    {
+      "label": "F82 negative row amount",
+      "passed": false,
+      "actual": "-97.0873786407767"
+    },
+    {
+      "label": "F82 no promised positive flow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F82 annuity bool yield",
+      "passed": false,
+      "actual": "142.52400548696843"
+    },
+    {
+      "label": "F82 shock bool",
+      "passed": false,
+      "actual": "-869.852513833998"
+    },
+    {
+      "label": "F54 overflowing curve PV",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 underflowed curve PV",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "exact demo",
+      "passed": true,
+      "expected": [
+        "Yield 4.0%: price 1056.01",
+        "Yield 6.0%: price 1000.00",
+        "Yield 8.0%: price 947.58",
+        "100bp yield rise price change: -26.64"
+      ]
+    },
+    {
+      "label": "F82 nonflat factor fixture supplied in project",
+      "passed": false
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    17,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
