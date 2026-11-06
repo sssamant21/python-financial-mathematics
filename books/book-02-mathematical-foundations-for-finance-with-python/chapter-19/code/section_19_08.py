@@ -208,12 +208,17 @@ def euler_account(initial,rate,flow,years,steps):
              ((initial,"initial"),(rate,"rate"),(flow,"flow"),(years,"years")))
     if t<0 or type(steps) is not int or steps<1:
         raise ValueError("invalid years or steps")
+    return _euler_balance(a,r,u,t,steps)
+
+def _euler_balance(a,r,u,t,steps,*,reject_underflow=True):
+    """Shared Euler updates for validated inputs, rounding at each state."""
     if t==0:
         return a
     h=Fraction(t)/steps
     rf,uf=Fraction(r),Fraction(u)
     for _ in range(steps):
-        a=_rounded_balance(Fraction(a)+h*(rf*Fraction(a)+uf))
+        a=_rounded_balance(Fraction(a)+h*(rf*Fraction(a)+uf),
+                           reject_underflow=reject_underflow)
     return a
 
 def rk4_account(initial,rate,flow,years,steps):
