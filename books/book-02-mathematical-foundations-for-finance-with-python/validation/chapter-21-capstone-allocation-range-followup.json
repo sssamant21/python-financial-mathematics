@@ -1,0 +1,1580 @@
+{
+  "command": [
+    "python",
+    "chapter-21/code/check_capstone_allocation_range.py"
+  ],
+  "baseline_overlay": {
+    "path": "chapter-21/code/check_capstone_allocation_range.py",
+    "sha": "e68baf38ee28d51253912d8c1f36dbf8bcb50b56"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+    "assertions_enabled": true
+  },
+  "timeout_seconds": 60,
+  "initial_capture": {
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-replication78/chapter-21/code/check_capstone_allocation_range.py\", line 99, in <module>\n    main()\n  File \"/tmp/book02-replication78/chapter-21/code/check_capstone_allocation_range.py\", line 95, in main\n    assert all(row[\"passed\"] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "case": "equal_large",
+        "expected": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "equal_negative_large",
+        "expected": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "small_second_weight",
+        "expected": {
+          "weights": [
+            1.0,
+            5.551115123125783e-17
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 1.232595164407831e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "small_first_weight",
+        "expected": {
+          "weights": [
+            5.551115123125783e-17,
+            1.0
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            5.551115123125783e-17,
+            1.0
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "upper_endpoint",
+        "expected": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "lower_endpoint",
+        "expected": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "above_upper_endpoint",
+        "expected": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "below_lower_endpoint",
+        "expected": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "true_objective_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "ordinary_asymmetric",
+        "expected": {
+          "weights": [
+            0.11699999999999999,
+            0.883
+          ],
+          "objective": 0.1152,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.11699999999999999,
+            0.883
+          ],
+          "objective": 0.1152,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "sum_recovers_subnormal",
+        "expected": 5e-324,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "objective_large_finite",
+        "expected": 8.98846567431158e+307,
+        "actual": 8.98846567431158e+307,
+        "passed": true
+      },
+      {
+        "case": "objective_true_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "positive_tolerance_rounding",
+        "expected": {
+          "equality_residual": 1.0,
+          "long_only_violation": 0.0,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "actual": {
+          "equality_residual": 1.0,
+          "long_only_violation": 0.0,
+          "tolerance": 1.0,
+          "feasible": true
+        },
+        "passed": false
+      },
+      {
+        "case": "negative_tolerance_rounding",
+        "expected": {
+          "equality_residual": -1.0,
+          "long_only_violation": 5.551115123125783e-17,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "actual": {
+          "equality_residual": -1.0,
+          "long_only_violation": 5.551115123125783e-17,
+          "tolerance": 1.0,
+          "feasible": true
+        },
+        "passed": false
+      },
+      {
+        "case": "exact_tolerance_equality",
+        "expected": {
+          "equality_residual": 0.125,
+          "long_only_violation": 0.125,
+          "tolerance": 0.125,
+          "feasible": true
+        },
+        "actual": {
+          "equality_residual": 0.125,
+          "long_only_violation": 0.125,
+          "tolerance": 0.125,
+          "feasible": true
+        },
+        "passed": true
+      },
+      {
+        "case": "large_opposite_weights",
+        "expected": {
+          "equality_residual": -1.0,
+          "long_only_violation": 1.7976931348623157e+308,
+          "tolerance": 1.7976931348623157e+308,
+          "feasible": true
+        },
+        "actual": {
+          "equality_residual": -1.0,
+          "long_only_violation": 1.7976931348623157e+308,
+          "tolerance": 1.7976931348623157e+308,
+          "feasible": true
+        },
+        "passed": true
+      },
+      {
+        "case": "true_residual_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "integrated_allocation",
+        "expected": {
+          "inputs": {
+            "target_a": 0.7,
+            "target_b": 0.2,
+            "constraints": "long-only; weights sum to one"
+          },
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "objective": 0.005000000000000004,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "inputs": {
+            "target_a": 0.7,
+            "target_b": 0.2,
+            "constraints": "long-only; weights sum to one"
+          },
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "objective": 0.005000000000000003,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "report_path_and_status",
+        "expected": [
+          true,
+          "not run",
+          "pending",
+          "pending"
+        ],
+        "actual": [
+          true,
+          "not run",
+          "pending",
+          "pending"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "baseline": {
+    "source_revision": "4c9d4825d2debbc4f3bebf74232d901f5486471b",
+    "exit": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-replication78/baseline/chapter-21/code/check_capstone_allocation_range.py\", line 99, in <module>\n    main()\n  File \"/tmp/book02-replication78/baseline/chapter-21/code/check_capstone_allocation_range.py\", line 95, in main\n    assert all(row[\"passed\"] for row in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "rows": [
+      {
+        "case": "equal_large",
+        "expected": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "equal_negative_large",
+        "expected": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "small_second_weight",
+        "expected": {
+          "weights": [
+            1.0,
+            5.551115123125783e-17
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 1.232595164407831e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "small_first_weight",
+        "expected": {
+          "weights": [
+            5.551115123125783e-17,
+            1.0
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            5.551115123125783e-17,
+            1.0
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "upper_endpoint",
+        "expected": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "lower_endpoint",
+        "expected": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "above_upper_endpoint",
+        "expected": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "below_lower_endpoint",
+        "expected": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "true_objective_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "ordinary_asymmetric",
+        "expected": {
+          "weights": [
+            0.11699999999999999,
+            0.883
+          ],
+          "objective": 0.1152,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.11699999999999999,
+            0.883
+          ],
+          "objective": 0.1152,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "sum_recovers_subnormal",
+        "expected": 5e-324,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "case": "objective_large_finite",
+        "expected": 8.98846567431158e+307,
+        "actual": 8.98846567431158e+307,
+        "passed": true
+      },
+      {
+        "case": "objective_true_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "positive_tolerance_rounding",
+        "expected": {
+          "equality_residual": 1.0,
+          "long_only_violation": 0.0,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "actual": {
+          "equality_residual": 1.0,
+          "long_only_violation": 0.0,
+          "tolerance": 1.0,
+          "feasible": true
+        },
+        "passed": false
+      },
+      {
+        "case": "negative_tolerance_rounding",
+        "expected": {
+          "equality_residual": -1.0,
+          "long_only_violation": 5.551115123125783e-17,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "actual": {
+          "equality_residual": -1.0,
+          "long_only_violation": 5.551115123125783e-17,
+          "tolerance": 1.0,
+          "feasible": true
+        },
+        "passed": false
+      },
+      {
+        "case": "exact_tolerance_equality",
+        "expected": {
+          "equality_residual": 0.125,
+          "long_only_violation": 0.125,
+          "tolerance": 0.125,
+          "feasible": true
+        },
+        "actual": {
+          "equality_residual": 0.125,
+          "long_only_violation": 0.125,
+          "tolerance": 0.125,
+          "feasible": true
+        },
+        "passed": true
+      },
+      {
+        "case": "large_opposite_weights",
+        "expected": {
+          "equality_residual": -1.0,
+          "long_only_violation": 1.7976931348623157e+308,
+          "tolerance": 1.7976931348623157e+308,
+          "feasible": true
+        },
+        "actual": {
+          "equality_residual": -1.0,
+          "long_only_violation": 1.7976931348623157e+308,
+          "tolerance": 1.7976931348623157e+308,
+          "feasible": true
+        },
+        "passed": true
+      },
+      {
+        "case": "true_residual_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "integrated_allocation",
+        "expected": {
+          "inputs": {
+            "target_a": 0.7,
+            "target_b": 0.2,
+            "constraints": "long-only; weights sum to one"
+          },
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "objective": 0.005000000000000004,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "inputs": {
+            "target_a": 0.7,
+            "target_b": 0.2,
+            "constraints": "long-only; weights sum to one"
+          },
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "objective": 0.005000000000000003,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": false
+      },
+      {
+        "case": "report_path_and_status",
+        "expected": [
+          true,
+          "not run",
+          "pending",
+          "pending"
+        ],
+        "actual": [
+          true,
+          "not run",
+          "pending",
+          "pending"
+        ],
+        "passed": true
+      }
+    ],
+    "verified_before": 22,
+    "verified_after": 22,
+    "manifest": [
+      {
+        "path": "chapter-21/code/check_capstone_rate_range.py",
+        "sha": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_sensitivity_range.py",
+        "sha": "6c43e8a57858861798f7c23486f3db6f109e48ee"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_01.py",
+        "sha": "5173ec340bdf9ae0ad1ac66340fd27934c203757"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_02.py",
+        "sha": "a191d1bd2e62477377058f5f01993e72f547557a"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_03.py",
+        "sha": "215527059ec1ad4bdf8f526cc8995eff62e0144c"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_04.py",
+        "sha": "78b58cc70349220d885baaa1956aa1c332c01bcc"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_05.py",
+        "sha": "1b3e22921f93d5944f389a46c316f731a5e05010"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_06.py",
+        "sha": "9dfa992eb888c99817f61ff39cb736188e818974"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_07.py",
+        "sha": "84fa5b120006c1e029621cd16c04435b63bd91f9"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_08.py",
+        "sha": "35e3eca1cf74659a3fd038558a05eb371bbfea54"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_09.py",
+        "sha": "183ba902d9b2e844c2c95a444014ca57787588c3"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_10.py",
+        "sha": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f"
+      },
+      {
+        "path": "chapter-21/code/section_21_01.py",
+        "sha": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64"
+      },
+      {
+        "path": "chapter-21/code/section_21_02.py",
+        "sha": "a36569438bc8ac086445f6c7556852efa908f8e4"
+      },
+      {
+        "path": "chapter-21/code/section_21_03.py",
+        "sha": "d9a85153cc6fbf46d7de69e39668b0fd32b527e8"
+      },
+      {
+        "path": "chapter-21/code/section_21_04.py",
+        "sha": "bf4700160749afdf39d28a21ecda3d5c981f0adf"
+      },
+      {
+        "path": "chapter-21/code/section_21_05.py",
+        "sha": "bc6b558e7b00bfad82338fb01f4c037971af28d0"
+      },
+      {
+        "path": "chapter-21/code/section_21_06.py",
+        "sha": "0d0d7ac2f8cbdecbb932efad206755ce1e74943d"
+      },
+      {
+        "path": "chapter-21/code/section_21_07.py",
+        "sha": "463b82ea88ea1e0ca318fe65f2e519914a60a1de"
+      },
+      {
+        "path": "chapter-21/code/section_21_08.py",
+        "sha": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a"
+      },
+      {
+        "path": "chapter-21/code/section_21_09.py",
+        "sha": "ca2ff456691be2946163995558ecca4518b37f95"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_allocation_range.py",
+        "sha": "e68baf38ee28d51253912d8c1f36dbf8bcb50b56"
+      }
+    ]
+  },
+  "corrected": {
+    "source_revision": "bc29b0d67dfd61b3d522d36d956b768101fee0ab",
+    "exit": 0,
+    "stderr": "",
+    "rows": [
+      {
+        "case": "equal_large",
+        "expected": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "equal_negative_large",
+        "expected": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.5,
+            0.5
+          ],
+          "objective": 3.2138760885179806e+60,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "small_second_weight",
+        "expected": {
+          "weights": [
+            1.0,
+            5.551115123125783e-17
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            5.551115123125783e-17
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "small_first_weight",
+        "expected": {
+          "weights": [
+            5.551115123125783e-17,
+            1.0
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            5.551115123125783e-17,
+            1.0
+          ],
+          "objective": 1.5407439555097887e-32,
+          "diagnostics": {
+            "equality_residual": 5.551115123125783e-17,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": false
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "upper_endpoint",
+        "expected": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "lower_endpoint",
+        "expected": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 0.0,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "above_upper_endpoint",
+        "expected": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "below_lower_endpoint",
+        "expected": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.0,
+            1.0
+          ],
+          "objective": 4.930380657631324e-32,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 0.0,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "true_objective_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "ordinary_asymmetric",
+        "expected": {
+          "weights": [
+            0.11699999999999999,
+            0.883
+          ],
+          "objective": 0.1152,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "weights": [
+            0.11699999999999999,
+            0.883
+          ],
+          "objective": 0.1152,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "sum_recovers_subnormal",
+        "expected": 5e-324,
+        "actual": 5e-324,
+        "passed": true
+      },
+      {
+        "case": "objective_large_finite",
+        "expected": 8.98846567431158e+307,
+        "actual": 8.98846567431158e+307,
+        "passed": true
+      },
+      {
+        "case": "objective_true_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "positive_tolerance_rounding",
+        "expected": {
+          "equality_residual": 1.0,
+          "long_only_violation": 0.0,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "actual": {
+          "equality_residual": 1.0,
+          "long_only_violation": 0.0,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "passed": true
+      },
+      {
+        "case": "negative_tolerance_rounding",
+        "expected": {
+          "equality_residual": -1.0,
+          "long_only_violation": 5.551115123125783e-17,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "actual": {
+          "equality_residual": -1.0,
+          "long_only_violation": 5.551115123125783e-17,
+          "tolerance": 1.0,
+          "feasible": false
+        },
+        "passed": true
+      },
+      {
+        "case": "exact_tolerance_equality",
+        "expected": {
+          "equality_residual": 0.125,
+          "long_only_violation": 0.125,
+          "tolerance": 0.125,
+          "feasible": true
+        },
+        "actual": {
+          "equality_residual": 0.125,
+          "long_only_violation": 0.125,
+          "tolerance": 0.125,
+          "feasible": true
+        },
+        "passed": true
+      },
+      {
+        "case": "large_opposite_weights",
+        "expected": {
+          "equality_residual": -1.0,
+          "long_only_violation": 1.7976931348623157e+308,
+          "tolerance": 1.7976931348623157e+308,
+          "feasible": true
+        },
+        "actual": {
+          "equality_residual": -1.0,
+          "long_only_violation": 1.7976931348623157e+308,
+          "tolerance": 1.7976931348623157e+308,
+          "feasible": true
+        },
+        "passed": true
+      },
+      {
+        "case": "true_residual_overflow",
+        "expected": {
+          "error": "OverflowError"
+        },
+        "actual": {
+          "error": "OverflowError"
+        },
+        "passed": true
+      },
+      {
+        "case": "integrated_allocation",
+        "expected": {
+          "inputs": {
+            "target_a": 0.7,
+            "target_b": 0.2,
+            "constraints": "long-only; weights sum to one"
+          },
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "objective": 0.005000000000000004,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "actual": {
+          "inputs": {
+            "target_a": 0.7,
+            "target_b": 0.2,
+            "constraints": "long-only; weights sum to one"
+          },
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "objective": 0.005000000000000004,
+          "diagnostics": {
+            "equality_residual": 0.0,
+            "long_only_violation": 0.0,
+            "tolerance": 1e-12,
+            "feasible": true
+          },
+          "method": "analytic solution for two-weight quadratic"
+        },
+        "passed": true
+      },
+      {
+        "case": "report_path_and_status",
+        "expected": [
+          true,
+          "not run",
+          "pending",
+          "pending"
+        ],
+        "actual": [
+          true,
+          "not run",
+          "pending",
+          "pending"
+        ],
+        "passed": true
+      }
+    ],
+    "verified_before": 23,
+    "verified_after": 23,
+    "manifest": [
+      {
+        "path": "chapter-21/code/check_capstone_allocation_range.py",
+        "sha": "e68baf38ee28d51253912d8c1f36dbf8bcb50b56"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_rate_range.py",
+        "sha": "9dc0ca69ffd14da699d8d25c6fa01ca40410cac6"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_replication_range.py",
+        "sha": "14d282ae418503efc4bc1cd358d0937273b888a9"
+      },
+      {
+        "path": "chapter-21/code/check_capstone_sensitivity_range.py",
+        "sha": "6c43e8a57858861798f7c23486f3db6f109e48ee"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_01.py",
+        "sha": "5173ec340bdf9ae0ad1ac66340fd27934c203757"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_02.py",
+        "sha": "a191d1bd2e62477377058f5f01993e72f547557a"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_03.py",
+        "sha": "215527059ec1ad4bdf8f526cc8995eff62e0144c"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_04.py",
+        "sha": "78b58cc70349220d885baaa1956aa1c332c01bcc"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_05.py",
+        "sha": "1b3e22921f93d5944f389a46c316f731a5e05010"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_06.py",
+        "sha": "9dfa992eb888c99817f61ff39cb736188e818974"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_07.py",
+        "sha": "84fa5b120006c1e029621cd16c04435b63bd91f9"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_08.py",
+        "sha": "35e3eca1cf74659a3fd038558a05eb371bbfea54"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_09.py",
+        "sha": "183ba902d9b2e844c2c95a444014ca57787588c3"
+      },
+      {
+        "path": "chapter-21/code/check_section_21_10.py",
+        "sha": "d57b19cac5078cb2bc47efa4cebe03e1f3df3a9f"
+      },
+      {
+        "path": "chapter-21/code/section_21_01.py",
+        "sha": "a9ffcbcc857e622d1607cc5b2b8ae7b9cc812e64"
+      },
+      {
+        "path": "chapter-21/code/section_21_02.py",
+        "sha": "a36569438bc8ac086445f6c7556852efa908f8e4"
+      },
+      {
+        "path": "chapter-21/code/section_21_03.py",
+        "sha": "d9a85153cc6fbf46d7de69e39668b0fd32b527e8"
+      },
+      {
+        "path": "chapter-21/code/section_21_04.py",
+        "sha": "bf4700160749afdf39d28a21ecda3d5c981f0adf"
+      },
+      {
+        "path": "chapter-21/code/section_21_05.py",
+        "sha": "4a1cd9cc6ec0c278de94ba23231a5fc340065d7a"
+      },
+      {
+        "path": "chapter-21/code/section_21_06.py",
+        "sha": "b52db4d4d97ebf6898fa8b51bbbeb321e2bd6d47"
+      },
+      {
+        "path": "chapter-21/code/section_21_07.py",
+        "sha": "463b82ea88ea1e0ca318fe65f2e519914a60a1de"
+      },
+      {
+        "path": "chapter-21/code/section_21_08.py",
+        "sha": "e5fe6b791c9f8a91722926e1ca73bc49f488e57a"
+      },
+      {
+        "path": "chapter-21/code/section_21_09.py",
+        "sha": "ca2ff456691be2946163995558ecca4518b37f95"
+      }
+    ]
+  }
+}
