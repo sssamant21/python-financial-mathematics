@@ -1,6 +1,8 @@
 """Book 02 Section 19.7: financial depletion, events and jump rules."""
 import json
 import math
+from fractions import Fraction
+from section_19_08 import _continuous_balance, _depletion_elapsed
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -20,14 +22,9 @@ def account(initial,rate,withdrawal,years):
         raise ValueError("initial, withdrawal, and years must be nonnegative")
     return _account_transition(a,r,w,t)
 
-def _account_transition(a,r,w,t):
-    # Internal signed continuation after validated jumps. The public account
-    # helper still requires a nonnegative initial balance.
-    if r==0:
-        return finite(a-w*t,"balance")
-    exponent=r*t
-    factor=t if exponent==0 else t*(math.expm1(exponent)/exponent)
-    return finite(a*math.exp(exponent)-w*factor,"balance")
+def _account_transition(a,r,w,t,*,reject_underflow=False):
+    # Signed continuation remains internal; public account inputs are checked.
+    return _continuous_balance(a,r,-w,t,reject_underflow=reject_underflow)
 
 def depletion_time(initial,rate,withdrawal):
     a,r,w=(finite(v,n) for v,n in
@@ -52,7 +49,8 @@ def linear_crossing(t0,t1,y0,y1):
                ((t0,"t0"),(t1,"t1"),(y0,"y0"),(y1,"y1")))
     if b<=a or ya<=0 or yb>0:
         raise ValueError("requires a positive-to-nonpositive crossing on an increasing interval")
-    return finite(a+(b-a)*ya/(ya-yb),"crossing time")
+    left,right,positive,nonpositive=map(Fraction,(a,b,ya,yb))
+    return float((right*positive-left*nonpositive)/(positive-nonpositive))
 
 def simulate_jumps(initial,rate,withdrawal,horizon,jumps,stop_at_depletion=True):
     a,r,w,T=(finite(v,n) for v,n in
@@ -74,16 +72,19 @@ def simulate_jumps(initial,rate,withdrawal,horizon,jumps,stop_at_depletion=True)
     current_time=0.0
     # Policy: at t=0, apply scheduled jumps before checking depletion.
     for next_time,jump in events+[(T,0.0)]:
-        dt=next_time-current_time
+        start=Fraction(current_time)
+        dt=Fraction(next_time)-start
         if dt<0:
             raise ValueError("unordered events")
-        if stop_at_depletion:
-            crossing=depletion_time(a,r,w)
-            if crossing is not None and crossing<dt:
-                return {"status":"depleted","event_time":current_time+crossing,
-                        "final_time":current_time+crossing,"final_balance":0.0}
-        a=(account(a,r,w,dt) if stop_at_depletion else
-           _account_transition(a,r,w,dt))
+        crossing=_depletion_elapsed(a,r,w,for_order=True) if stop_at_depletion else None
+        elapsed=Fraction(crossing) if crossing is not None else None
+        if elapsed is not None and elapsed<dt:
+            event_at=float(start+elapsed)
+            return {"status":"depleted","event_time":event_at,
+                    "final_time":event_at,"final_balance":0.0}
+        # At exact coincidence, start the jump from mathematical zero.
+        a=(0.0 if elapsed==dt else
+           _account_transition(a,r,w,dt,reject_underflow=stop_at_depletion))
         current_time=next_time
         if stop_at_depletion and a<0:
             return {"status":"depleted","event_time":current_time,
