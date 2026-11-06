@@ -1,6 +1,7 @@
 """Book 02 Section 19.6: RK4 and adaptive step-doubling solver."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -13,15 +14,35 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return x
 
+def _rounded(value,name):
+    try:
+        return float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside floating-point range") from exc
+
 def rk4_step(f,t,y,h):
     t,y,h=finite(t,"time"),finite(y,"state"),finite(h,"step")
     if h<=0:
         raise ValueError("step must be positive")
-    k1=finite(f(t,y),"k1")
-    k2=finite(f(t+h/2,y+h*k1/2),"k2")
-    k3=finite(f(t+h/2,y+h*k2/2),"k3")
-    k4=finite(f(t+h,y+h*k3),"k4")
-    return finite(y+h*(k1+2*k2+2*k3+k4)/6,"RK4 state")
+    tf,yf,hf=map(Fraction,(t,y,h))
+    k1=Fraction(finite(f(t,y),"k1"))
+    midpoint=_rounded(tf+hf/2,"RK4 midpoint time")
+    k2=Fraction(finite(f(midpoint,_rounded(yf+hf*k1/2,"RK4 second stage state")),"k2"))
+    k3=Fraction(finite(f(midpoint,_rounded(yf+hf*k2/2,"RK4 third stage state")),"k3"))
+    endpoint=_rounded(tf+hf,"RK4 endpoint time")
+    k4=Fraction(finite(f(endpoint,_rounded(yf+hf*k3,"RK4 fourth stage state")),"k4"))
+    return _rounded(yf+hf*(k1+2*k2+2*k3+k4)/6,"RK4 state")
+
+def _step_factor(scale,error):
+    if not error:
+        return 5.0
+    ratio=scale/error
+    # Clamp before converting extreme ratios to float.
+    if ratio<=Fraction(1,10000):
+        return 0.2
+    if ratio>=10000:
+        return 5.0
+    return max(0.2,min(5.0,0.9*float(ratio)**0.2))
 
 def fixed_rk4(f,initial,horizon,steps):
     y,T=finite(initial,"initial"),finite(horizon,"horizon")
@@ -73,23 +94,24 @@ def adaptive_rk4(f,initial,horizon,atol=1e-7,rtol=1e-9,
         if remaining<=0:
             break
         h=min(h,remaining)
-        if h<min_step or t+h==t:
+        half_step=h/2
+        if h<min_step or t+h==t or 2*half_step!=h:
             return {"status":"step_too_small","final_state":y,"final_time":t,
                     "accepted_steps":accepted,"rejected_steps":rejected,
                     "evaluations":evaluations,"atol":atol,"rtol":rtol}
         full=rk4_step(f,t,y,h)
-        mid=rk4_step(f,t,y,h/2)
-        half=rk4_step(f,t+h/2,mid,h/2)
+        mid=rk4_step(f,t,y,half_step)
+        half=rk4_step(f,t+half_step,mid,half_step)
         evaluations+=12
-        error=abs(half-full)/15
-        scale=atol+rtol*max(abs(y),abs(half))
+        error=abs(Fraction(half)-Fraction(full))/15
+        scale=Fraction(atol)+Fraction(rtol)*Fraction(max(abs(y),abs(half)))
         if error<=scale:
             y=half
             t=min(T,t+h)
             accepted+=1
         else:
             rejected+=1
-        factor=5.0 if error==0 else max(0.2,min(5.0,0.9*(scale/error)**0.2))
+        factor=_step_factor(scale,error)
         h*=factor
     if t<T:
         status="attempt_budget_exhausted"
