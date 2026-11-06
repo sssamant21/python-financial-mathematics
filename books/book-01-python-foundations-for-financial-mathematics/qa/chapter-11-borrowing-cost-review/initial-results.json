@@ -1,0 +1,226 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "b31bbb53c88df0f7dbaf21be83c3f34043cbd8c15973ca60f699abf9ade89585",
+  "listing_sha256": "b9555d7e8f2bef1aaf103b67cd0632cc0e0f97bacdf2f7cec72092d44bddc234",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "effective_borrowing_cost.py"
+      ],
+      "returncode": 0,
+      "stdout": "Net proceeds: 9800\nPeriodic cost: 0.00666269\nAnnualized nominal: 0.079952\nEffective annual: 0.082948\n",
+      "stderr": "test_01_zero_fee (__main__.Tests.test_01_zero_fee) ... ok\ntest_02_fee_increases_cost (__main__.Tests.test_02_fee_increases_cost) ... ok\ntest_03_more_fee (__main__.Tests.test_03_more_fee) ... ok\ntest_04_pv_reconciles (__main__.Tests.test_04_pv_reconciles) ... ok\ntest_05_proceeds (__main__.Tests.test_05_proceeds) ... ok\ntest_06_nominal (__main__.Tests.test_06_nominal) ... ok\ntest_07_effective (__main__.Tests.test_07_effective) ... ok\ntest_08_effective_gt_nominal (__main__.Tests.test_08_effective_gt_nominal) ... ok\ntest_09_zero_rate_with_fee (__main__.Tests.test_09_zero_rate_with_fee) ... ok\ntest_10_zero_rate_no_fee (__main__.Tests.test_10_zero_rate_no_fee) ... ok\ntest_11_zero_rate_pv (__main__.Tests.test_11_zero_rate_pv) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "effective_borrowing_cost.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "P1 net proceeds",
+      "passed": true,
+      "actual": 9800,
+      "independent_reference": "9800",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P2 contractual payment on face amount",
+      "passed": true,
+      "actual": 443.20610252756904,
+      "independent_reference": "443.20610252756904739290973247503971124875446827931032549805594033",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P3 P10 effective periodic root",
+      "passed": true,
+      "actual": 0.006662685323938253,
+      "independent_reference": "0.0066626853239382660280364423115593114927630226176209744755576056273",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P4 no fee root",
+      "passed": true,
+      "actual": 0.005,
+      "independent_reference": "1/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 higher fee root",
+      "passed": true,
+      "actual": 0.0075120022329625,
+      "independent_reference": "0.0075120022329625055387300814580987322616173140627587177215506430483",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P5 monotonic fee effect",
+      "passed": true
+    },
+    {
+      "label": "P6 nominal annualization",
+      "passed": true,
+      "actual": 0.12,
+      "independent_reference": "3/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P7 effective annualization",
+      "passed": true,
+      "actual": 0.12682503013196972,
+      "independent_reference": "126825030131969720661201/1000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8 effective exceeds nominal",
+      "passed": true
+    },
+    {
+      "label": "P9 zero note rate with fee",
+      "passed": true,
+      "actual": 0.006609153389987892,
+      "independent_reference": "0.0066091533899879123758738595543268069240683182434450772827710047488",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P11 PV reconciliation",
+      "passed": true,
+      "actual": 9800.0,
+      "independent_reference": "9800",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "demo reconciles to independent root",
+      "passed": true,
+      "expected": [
+        "Net proceeds: 9800",
+        "Periodic cost: 0.00666269",
+        "Annualized nominal: 0.079952",
+        "Effective annual: 0.082948"
+      ]
+    },
+    {
+      "label": "F74 very small positive two-period bisection root",
+      "passed": false,
+      "actual": 3.2626522339992623e-57,
+      "independent_reference": "6.6666666666666666666666666666666666666666666666666666666666666667E-101",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F74 very small positive one-period root",
+      "passed": false,
+      "actual": 3.2626522339992623e-57,
+      "independent_reference": "1/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F74 subnormal-fee one-period root",
+      "passed": false,
+      "actual": 3.2626522339992623e-57,
+      "independent_reference": "1/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F74 large finite root despite bracket doubling overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/9",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 tiny positive note payment",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite PV avoids underflowing intermediate",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F74 annualization rejects boolean rate",
+      "passed": false,
+      "actual": "(12, 4094.999999999997)"
+    },
+    {
+      "label": "F74 PV rejects boolean period",
+      "passed": false,
+      "actual": "99.00990099009901"
+    },
+    {
+      "label": "F74 PV rejects negative installment",
+      "passed": false,
+      "actual": "-11.25507747348463"
+    },
+    {
+      "label": "F74 PV rejects negative period",
+      "passed": false,
+      "actual": "-100.0"
+    },
+    {
+      "label": "F54 annualization overflow",
+      "passed": false,
+      "exception": "OverflowError('math range error')"
+    },
+    {
+      "label": "F54 payment underflow",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F54 payment overflow",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F54 PV overflow",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "invalid fees equal principal",
+      "passed": true,
+      "exception": "ValueError('fees must be finite, nonnegative, and less than principal')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 14,
+  "conceptual_prompts": [
+    12,
+    13,
+    14
+  ],
+  "historical_unique_methods_added": 0
+}
