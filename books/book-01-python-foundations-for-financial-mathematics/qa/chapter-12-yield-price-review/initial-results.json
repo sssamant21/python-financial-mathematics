@@ -1,0 +1,299 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "f68abf11da68b696ed424d0f5eff0388a71f52aef2a1a794435be115a7dacffa",
+  "listing_sha256": "99e8fcbe56db580649ab362381370086526ed81bb6659c7739d578430a485631",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "yield_price_relationships.py"
+      ],
+      "returncode": 0,
+      "stdout": "Yield=4.0%; price=1056.01; duration=2.7417; convexity=9.1824\nYield=5.0%; price=1027.54; duration=2.7251; convexity=9.0792\nYield=6.0%; price=1000.00; duration=2.7086; convexity=8.9774\nYield=7.0%; price=973.36; duration=2.6922; convexity=8.8769\nYield=8.0%; price=947.58; duration=2.6760; convexity=8.7779\n",
+      "stderr": "test_01_par (__main__.Tests.test_01_par) ... ok\ntest_02_price_down (__main__.Tests.test_02_price_down) ... ok\ntest_03_price_up (__main__.Tests.test_03_price_up) ... ok\ntest_04_negative_slope (__main__.Tests.test_04_negative_slope) ... ok\ntest_05_positive_curvature (__main__.Tests.test_05_positive_curvature) ... ok\ntest_06_duration_positive (__main__.Tests.test_06_duration_positive) ... ok\ntest_07_convexity_positive (__main__.Tests.test_07_convexity_positive) ... ok\ntest_08_slope_finite_difference (__main__.Tests.test_08_slope_finite_difference) ... ok\ntest_09_curvature_finite_difference (__main__.Tests.test_09_curvature_finite_difference) ... ok\ntest_10_zero_coupon_duration (__main__.Tests.test_10_zero_coupon_duration) ... ok\ntest_11_longer_zero_coupon (__main__.Tests.test_11_longer_zero_coupon) ... ok\ntest_12_validation (__main__.Tests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "yield_price_relationships.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "project price 3%",
+      "passed": true,
+      "actual": 1085.4578074821288,
+      "independent_reference": "75960737784658000/69980368892329",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project price 4%",
+      "passed": true,
+      "actual": 1056.014308906904,
+      "independent_reference": "18581931701500/17596287801",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project price 5%",
+      "passed": true,
+      "actual": 1027.5406268078991,
+      "independent_reference": "4880925089200/4750104241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project price 6%",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project price 7%",
+      "passed": true,
+      "actual": 973.3572349011075,
+      "independent_reference": "76576292188042000/78672340886049",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project price 8%",
+      "passed": true,
+      "actual": 947.5786314325364,
+      "independent_reference": "146360994125/154457888",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project price 9%",
+      "passed": true,
+      "actual": 922.6319127593888,
+      "independent_reference": "76896431993494000/83344647990241",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P1 P5\u2013P7 monotonicity and par crossing",
+      "passed": true
+    },
+    {
+      "label": "P3 P4 source flows",
+      "passed": true
+    },
+    {
+      "label": "exact demo",
+      "passed": true,
+      "expected": [
+        "Yield=4.0%; price=1056.01; duration=2.7417; convexity=9.1824",
+        "Yield=5.0%; price=1027.54; duration=2.7251; convexity=9.0792",
+        "Yield=6.0%; price=1000.00; duration=2.7086; convexity=8.9774",
+        "Yield=7.0%; price=973.36; duration=2.6922; convexity=8.8769",
+        "Yield=8.0%; price=947.58; duration=2.6760; convexity=8.7779"
+      ]
+    },
+    {
+      "label": "P8\u2013P11 independent first_derivative",
+      "passed": true,
+      "actual": -2708.595721939094,
+      "independent_reference": "-541719144387819/200000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8\u2013P11 independent second_derivative",
+      "passed": true,
+      "actual": 8977.372930301095,
+      "independent_reference": "8977372930301097/1000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8\u2013P11 independent modified_duration",
+      "passed": true,
+      "actual": 2.7085957219390937,
+      "independent_reference": "13542978609695473/5000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P8\u2013P11 independent convexity",
+      "passed": true,
+      "actual": 8.977372930301096,
+      "independent_reference": "1122171616287637/125000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P12 P13 duration and basis point arithmetic",
+      "passed": true
+    },
+    {
+      "label": "project repricing 25 bp",
+      "passed": true,
+      "actual": -6.743524430376283,
+      "independent_reference": "-8709045800/1291467969",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximation 25 bp",
+      "passed": true,
+      "exact": -6.743524430376329,
+      "duration": -6.7714893048477345,
+      "duration_convexity": -6.743435014440544
+    },
+    {
+      "label": "project repricing 50 bp",
+      "passed": true,
+      "actual": -13.431474845730463,
+      "independent_reference": "-66653661717693000/4962497602330009",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximation 50 bp",
+      "passed": true,
+      "exact": -13.431474845730413,
+      "duration": -13.542978609695469,
+      "duration_convexity": -13.430761448066706
+    },
+    {
+      "label": "project repricing 100 bp",
+      "passed": true,
+      "actual": -26.642765098892482,
+      "independent_reference": "-2096048698007000/78672340886049",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximation 100 bp",
+      "passed": true,
+      "exact": -26.642765098892504,
+      "duration": -27.085957219390938,
+      "duration_convexity": -26.637088572875882
+    },
+    {
+      "label": "project repricing -25 bp",
+      "passed": true,
+      "actual": 6.79963349715149,
+      "independent_reference": "2112927112873143000/310741323596082289",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximation -25 bp",
+      "passed": true,
+      "exact": 6.79963349715159,
+      "duration": 6.7714893048477345,
+      "duration_convexity": 6.799543595254925
+    },
+    {
+      "label": "project repricing -50 bp",
+      "passed": true,
+      "actual": 13.655916944486876,
+      "independent_reference": "65822109699451000/4820043206693961",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximation -50 bp",
+      "passed": true,
+      "exact": 13.655916944486894,
+      "duration": 13.542978609695469,
+      "duration_convexity": 13.655195771324232
+    },
+    {
+      "label": "project repricing -100 bp",
+      "passed": true,
+      "actual": 27.540626807899116,
+      "independent_reference": "130820848200/4750104241",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project approximation -100 bp",
+      "passed": true,
+      "exact": 27.54062680789914,
+      "duration": 27.085957219390938,
+      "duration_convexity": 27.534825865905994
+    },
+    {
+      "label": "P15 source default finite differences",
+      "passed": true
+    },
+    {
+      "label": "F84 tiny step slope",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "-541719144387819/200000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F84 tiny step curvature",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "8977372930301097/1000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "P17 zero-coupon modified duration at five years",
+      "passed": true,
+      "actual": 4.854368932038835,
+      "independent_reference": "500/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F54 finite extreme derivative outputs",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F84 boolean step rejected",
+      "passed": false,
+      "actual": "{'slope': -23901.668059118758, 'curvature': 46063.63109056952}"
+    },
+    {
+      "label": "F84 step crossing lower yield bound rejected",
+      "passed": true,
+      "exception": "ValueError('periodic yield must exceed -100%')"
+    },
+    {
+      "label": "F54 overflowing derivative rejected",
+      "passed": false,
+      "actual": "{'price': 1e+308, 'first_derivative': -1e+308, 'second_derivative': inf, 'modified_duration': 1.0, 'convexity': inf}"
+    },
+    {
+      "label": "F54 underflowing positive result rejected",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 18,
+  "mini_project_records": 1,
+  "conceptual_prompts": [
+    2,
+    10,
+    16,
+    18
+  ],
+  "historical_unique_methods_added": 0
+}
