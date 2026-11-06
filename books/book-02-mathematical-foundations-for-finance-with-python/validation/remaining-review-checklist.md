@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `b8d9ad694136393a36aca2c06d9c0798062cb21c`  
-**Latest scoped source revision:** `b8d9ad694136393a36aca2c06d9c0798062cb21c` (included in V-91)  
-**Disposition:** V-91 full candidate Linux pass includes Section 19.1 account range and assessment; independent review and release approval pending.
+**Full-runtime candidate source revision:** `641c6ad0304d242fd3a780b12908726b4778d724`  
+**Latest scoped source revision:** `641c6ad0304d242fd3a780b12908726b4778d724` (included in V-92)  
+**Disposition:** V-92 full candidate Linux pass includes Section 20.7 execution provenance; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-91](runtime-refresh-2026-11-06-r10.md): 556 compiled, 343 passed, 557 required hashes verified before/after. G2–G8 unchanged.
+[V-92](runtime-refresh-2026-11-06-r11.md): 557 compiled, 344 passed, 558 required hashes verified before/after. G2–G8 unchanged.
+
+[V-91](runtime-refresh-2026-11-06-r10.md): 556 compiled, 343 passed, 557 required hashes verified before/after.
 
 [V-90](runtime-refresh-2026-11-06-r09.md): 555 compiled, 342 passed, 556 required hashes verified before/after.
 
@@ -139,7 +141,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-91](runtime-refresh-2026-11-06-r10.md) at `b8d9ad694136393a36aca2c06d9c0798062cb21c`; 556 sources/343 scripts/557 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-92](runtime-refresh-2026-11-06-r11.md) at `641c6ad0304d242fd3a780b12908726b4778d724`; 557 sources/344 scripts/558 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -672,3 +674,11 @@ Next: [Section 19.1 introductory model baseline](chapter-19-introductory-range-b
 [V-91](runtime-refresh-2026-11-06-r10.md) compiled 556 Python files, passed 343 scripts and verified 557 required blobs before and after at `b8d9ad694136393a36aca2c06d9c0798062cb21c`. Chapter 19: 53 compiled files and 43 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 20.7 execution provenance baseline](chapter-20-execution-provenance-baseline.md) starts the outstanding COV-86 checks for actual source, environment, command and output provenance. The synthetic example’s pending fields are verified and intentional. Wider Chapter 19 capstone provenance and manual reviews remain open.
+
+## Actual execution provenance — V-92
+
+[Section 20.7 actual provenance](chapter-20-execution-provenance-followup.md) records an actual local child execution, observed Git source state, interpreter and argv, input hash, output and result. All 21 expanded cases passed; the baseline's 20 missing-behavior observations and initial reruns are retained. The original synthetic template still records pending execution. This adds selected COV-86 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-92](runtime-refresh-2026-11-06-r11.md) compiled 557 files, passed 344 scripts and verified 558 required blobs before and after at `641c6ad0304d242fd3a780b12908726b4778d724`. Chapter 20: 34 compiled files and 23 passing scripts. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 20.7 interrupted-write baseline](chapter-20-manifest-interrupted-write-baseline.md) reproduces a partial final JSON artifact and blocked retry after an injected write error. Check publication and no-overwrite behavior separately from durability and authenticity. Wider capstone provenance and manual reviews remain open.
