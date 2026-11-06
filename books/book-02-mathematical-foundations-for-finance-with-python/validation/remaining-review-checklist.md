@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-05  
-**Full-runtime candidate source revision:** `c961e9064fbb07217c8c7af64adf909e399f165f`  
-**Latest scoped source revision:** `c961e9064fbb07217c8c7af64adf909e399f165f` (included in V-79)  
-**Disposition:** V-79 full candidate Linux pass includes the Chapter 19 end-period extension; independent review and release approval pending.
+**Full-runtime candidate source revision:** `eaed8250b3400bedc612aa415c3cecb8f23b2af5`  
+**Latest scoped source revision:** `eaed8250b3400bedc612aa415c3cecb8f23b2af5` (included in V-80)  
+**Disposition:** V-80 full candidate Linux pass includes the RK4 range correction; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-80](runtime-refresh-2026-11-05-r22.md): 545 compiled, 332 passed, 546 required hashes verified before/after. G2–G8 unchanged.
 
 [V-79](runtime-refresh-2026-11-05-r21.md): 544 compiled, 331 passed, 545 required hashes verified before/after. G2–G8 unchanged.
 
@@ -115,7 +117,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-79](runtime-refresh-2026-11-05-r21.md) at `c961e9064fbb07217c8c7af64adf909e399f165f`; 544 sources/331 scripts/545 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-80](runtime-refresh-2026-11-05-r22.md) at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`; 545 sources/332 scripts/546 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -558,3 +560,11 @@ Next substantive item: [Section 19.8 end-period exponent baseline](chapter-19-en
 [V-79](runtime-refresh-2026-11-05-r21.md) compiled 544 files, passed 331 scripts and matched 545 required blobs before and after at `c961e9064fbb07217c8c7af64adf909e399f165f`. Chapter 19: 41 compiled files and 31 passing scripts. Independent review, supported platforms and release approval remain pending.
 
 Next substantive item: [Section 19.6 RK4 range baseline](chapter-19-rk4-stage-range-baseline.md) records two observed failures involving a finite weighted increment and a finite callback stage. Derive exact stage inputs and outputs and check actual fixed/adaptive consumers; treat adaptive estimator/scale range as a separate obligation. Wider capstone provenance and manual reviews remain open.
+
+## RK4 stage and adaptive trial range — V-80
+
+[Section 19.6 RK4 range](chapter-19-rk4-range-followup.md) preserves 15 baseline mismatches, an intermediate half-step failure and a 23-case pass. It checks actual callbacks and fixed/adaptive consumers plus controlled adaptive acceptance and controller inputs. Finite complete stages, states, error and tolerance ratios are retained; an unrepresentable equal half-step split is reported without callbacks. This adds selected COV-82 evidence. Thirty-five selected COV categories are partially addressed; none closed.
+
+[V-80](runtime-refresh-2026-11-05-r22.md) compiled 545 files, passed 332 scripts and matched 546 required blobs before and after at `eaed8250b3400bedc612aa415c3cecb8f23b2af5`. Chapter 19: 42 compiled files and 32 passing scripts. Independent review, supported platforms and release approval remain pending.
+
+Next substantive item: [Fixed RK4 horizon baseline](chapter-19-rk4-fixed-grid-baseline.md) reproduces two fixed-grid false completed results, one beyond and one short of the reported horizon. Check representable grid alignment against independently derived constant-derivative balances and callback times. Wider floating-time behavior, capstone provenance and manual reviews remain open.
