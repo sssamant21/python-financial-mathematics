@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-96 full candidate Linux pass (561 files, 348 scripts, 562 required hashes), including Chapter 21 implemented-interface checks. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-97 full candidate Linux pass (562 files, 349 scripts, 563 required hashes), including CF-04 splitting acceptance. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 561/561 at `00fd462aa3a0da15d5babd6c26dc6e49c072e425`. [V-96](runtime-refresh-2026-11-07-r02.md). |
-| Automated script execution | Full candidate Linux pass | 348/348 at `00fd462aa3a0da15d5babd6c26dc6e49c072e425`; all 562 required hashes matched before/after. [V-96](runtime-refresh-2026-11-07-r02.md). |
+| Python compilation | Full candidate Linux pass | 562/562 at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`. [V-97](runtime-refresh-2026-11-07-r03.md). |
+| Automated script execution | Full candidate Linux pass | 349/349 at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`; all 563 required hashes matched before/after. [V-97](runtime-refresh-2026-11-07-r03.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -901,3 +901,11 @@ Next: [Implemented-interface baseline](chapter-21-implemented-interface-baseline
 [V-96](runtime-refresh-2026-11-07-r02.md) compiled 561 files, passed 348 scripts and verified 562 required blobs before and after at `00fd462aa3a0da15d5babd6c26dc6e49c072e425`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [CF-04 splitting-property baseline](chapter-21-splitting-property-baseline.md) records subnormal rounding and individual-term overflow boundaries for the plan's same-date splitting claim. Reconcile its acceptance domain and tolerance with the implemented aggregation policy. Wider capstone requirements and manual reviews remain open.
+
+## Cash-flow splitting acceptance — V-97
+
+[CF-04 acceptance reconciliation](chapter-21-splitting-property-followup.md) specifies the represented-amount identity, finite-term domain and rounding comparison for CF-04. All 23 final checks passed; the two missing-policy baseline observations, exact replay and initial checker-assumption correction are retained. The valuation aggregation policy is unchanged. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-97](runtime-refresh-2026-11-07-r03.md) compiled 562 files, passed 349 scripts and verified 563 required blobs before and after at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [INT-01 equivalent-factor baseline](chapter-21-equivalent-factor-property-baseline.md) records two finite long-horizon discrepancies after rounded rate conversion. Specify INT-01 acceptance using independently derived conversion-error propagation and convention references. Wider capstone requirements and manual reviews remain open.
