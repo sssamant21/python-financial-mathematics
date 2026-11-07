@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-07  
-**Overall status:** In progress — V-104 full candidate Linux pass (570 files, 357 scripts, 571 required hashes), including Section 8.2 polynomial range and centered-copy fixes. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-105 full candidate Linux pass (571 files, 358 scripts, 572 required hashes), including Section 8.2 cost-output contract. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 570/570 at `78b09101177563c3511c1932f6a4e7469567e7bc`. [V-104](runtime-refresh-2026-11-07-r10.md). |
-| Automated script execution | Full candidate Linux pass | 357/357 at `78b09101177563c3511c1932f6a4e7469567e7bc`; 571 required blobs verified before/after. [V-104](runtime-refresh-2026-11-07-r10.md). |
+| Python compilation | Full candidate Linux pass | 571/571 at `7db1525c2f390b0eb9afa431c08648b6450737d3`. [V-105](runtime-refresh-2026-11-07-r11.md). |
+| Automated script execution | Full candidate Linux pass | 358/358 at `7db1525c2f390b0eb9afa431c08648b6450737d3`; 572 required blobs verified before/after. [V-105](runtime-refresh-2026-11-07-r11.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -965,3 +965,11 @@ Next substantive work: [Section 8.2 polynomial range baseline](chapter-08-polyno
 [V-104](runtime-refresh-2026-11-07-r10.md) at `78b09101177563c3511c1932f6a4e7469567e7bc`: 570 files compiled, 357 scripts passed, 571 required hashes verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer sign-off, supported platforms, release acceptance and canonical approval remain pending.
 
 Next substantive obligation: [Section 8.2 financial cost-output baseline](chapter-08-cost-output-baseline.md), where a finite accepted quantity returns infinity. Derive complete financial references and establish the finite-output contract; do not repeat the completed polynomial or centered-copy corpus.
+
+## V-105 checkpoint — Section 8.2 cost output
+
+[Cost-output follow-up](chapter-08-cost-output-followup.md) retains four baseline mismatches and an identical replay; all 50 corrected checks pass. Thirty-two independent Decimal value/derivative references establish complete-expression rounding, twelve guard checks preserve quantity domains, and six composition regressions preserve profit call relationships. Three returned infinities now raise OverflowError; one one-ulp difference is reconciled under the explicit new rounding policy. No marginal-cost baseline failure is claimed. Existing Section 8.2 and polynomial-range suites pass.
+
+[V-105](runtime-refresh-2026-11-07-r11.md) at `7db1525c2f390b0eb9afa431c08648b6450737d3`: 571 files compiled, 358 scripts passed, 572 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callback-baseline.md). Actual probes retain a nonfinite chain product, an identity quotient yielding NaN instead of 1, and collapsed perturbations that still invoke callbacks. Preserve callback order/count and derive full sampled quotient/error contracts; do not repeat completed Section 8.2 cost/polynomial examples.
