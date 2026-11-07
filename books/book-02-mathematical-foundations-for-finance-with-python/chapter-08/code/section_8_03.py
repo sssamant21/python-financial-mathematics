@@ -55,29 +55,46 @@ def marginal_revenue(q):
         raise ValueError("quantity must be in [0,400]")
     return 120-0.6*q
 
+def _financial_result(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("financial result outside finite float range") from exc
+    return finite(result, "financial result")
+
+
 def average_cost(q):
     q = finite(q, "quantity")
     if q <= 0:
         raise ValueError("quantity must be positive")
-    return (500+10*q+0.1*q*q)/q
+    q = Fraction(q)
+    return _financial_result(500/q + 10 + Fraction(0.1)*q)
+
 
 def average_cost_derivative(q):
     q = finite(q, "quantity")
     if q <= 0:
         raise ValueError("quantity must be positive")
-    return 0.1-500/(q*q)
+    q = Fraction(q)
+    return _financial_result(Fraction(0.1)-500/(q*q))
+
+
+def _coverage_terms(t):
+    t = Fraction(finite(t, "time"))
+    denominator = 50+3*t
+    if denominator == 0:
+        raise ValueError("liabilities denominator is zero")
+    return t, denominator
+
 
 def coverage_ratio(t):
-    t = finite(t, "time")
-    if 50+3*t == 0:
-        raise ValueError("liabilities denominator is zero")
-    return (100+8*t)/(50+3*t)
+    t, denominator = _coverage_terms(t)
+    return _financial_result((100+8*t)/denominator)
+
 
 def coverage_ratio_derivative(t):
-    t = finite(t, "time")
-    if 50+3*t == 0:
-        raise ValueError("liabilities denominator is zero")
-    return 100/(50+3*t)**2
+    _, denominator = _coverage_terms(t)
+    return _financial_result(100/(denominator*denominator))
 
 def discounted_value(t, rate, payment, payment_derivative):
     t, r = finite(t, "time"), finite(rate, "rate")
