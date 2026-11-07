@@ -749,3 +749,11 @@ Next: [Section 8.1 earlier-helper baseline](chapter-08-earlier-derivative-guards
 [V-99](runtime-refresh-2026-11-07-r05.md) compiled 564 files, passed 351 scripts and verified 565 required blobs before and after at `d702d2761735c11ab501900c899cae4557742a09`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.3 product/quotient baseline](chapter-08-product-quotient-range-baseline.md) records finite analytic product/quotient derivative results lost to intermediate overflow. Check complete expressions, callbacks and true final range without attributing completed sampled-stencil cases to those separate helpers. Remaining financial-PV and copied-helper ranges and manual review remain open.
+
+## Complete product and quotient derivatives — V-100
+
+[Section 8.3 analytic derivative follow-up](chapter-08-product-quotient-range-followup.md) retains eleven baseline mismatches, an identical replay and 34 passing corrected observations. Exact local-series references check complete results while actual callback traces check validation, order and single evaluation. The existing Section 8.3 suite passes. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-100](runtime-refresh-2026-11-07-r06.md) compiled 565 files, passed 352 scripts and verified 566 required blobs before and after at `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.3 financial rational baseline](chapter-08-financial-rational-range-baseline.md) records finite average-cost and coverage-derivative results lost to separate float terms. Reconcile complete rational-expression ranges and denominator-domain guards for the financial examples. Discounted-payment and copied finite-difference helpers and manual review remain open.
