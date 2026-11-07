@@ -1,0 +1,44 @@
+{
+  "source_revision": "df9ac9bf2952edc78ec5264a25d7caf7f90a21e5",
+  "source_blob": "697e04b9c408ab22d97dfa602cbba7c05ac5dbd7",
+  "observations": [
+    {
+      "principal": 1,
+      "periods_per_year": "10**400",
+      "years": 1,
+      "factor": 0,
+      "independent_rounded_ratio": 0,
+      "independent_rounded_base": 1,
+      "expected_value": 1,
+      "expected_sensitivity": 0.001,
+      "actual_value": "OverflowError",
+      "actual_sensitivity": "OverflowError"
+    },
+    {
+      "principal": 0,
+      "periods_per_year": "10**400",
+      "years": 1,
+      "factor": 0,
+      "independent_rounded_ratio": 0,
+      "independent_rounded_base": 1,
+      "expected_value": 0,
+      "expected_sensitivity": 0,
+      "actual_value": "OverflowError",
+      "actual_sensitivity": "OverflowError"
+    },
+    {
+      "principal": 1.7976931348623157e+308,
+      "periods_per_year": "10**400",
+      "years": 1,
+      "factor": 0,
+      "independent_rounded_ratio": 0,
+      "independent_rounded_base": 1,
+      "expected_value": 1.7976931348623157e+308,
+      "expected_sensitivity": 1.7976931348623156e+305,
+      "actual_value": "OverflowError",
+      "actual_sensitivity": "OverflowError"
+    }
+  ],
+  "reference_method": "Exact rational represented nominal rate divided by integer 10**400 rounds to zero, so the rounded base is one. Value is principal and sensitivity is exact principal times represented 0.001 for years one.",
+  "limits": "Next-batch failures, not corrected passes; preserve existing working count/base conventions when extending conversion."
+}
