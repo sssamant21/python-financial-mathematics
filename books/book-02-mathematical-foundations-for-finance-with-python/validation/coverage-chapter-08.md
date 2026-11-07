@@ -155,3 +155,11 @@ Next: [Section 8.1 initial-PV baseline](chapter-08-initial-pv-range-baseline.md)
 [V-103](runtime-refresh-2026-11-07-r09.md) at `a6441d707337946a76e059c6cf53a5b05291afa0`: 569 Python files compiled, 356 scripts passed, 570 required source/fixture hashes verified before/after. Counts derive from this pinned tree. Thirty-five selected COV categories remain partial, none closed; this is not a completion percentage or independent sign-off.
 
 Next substantive work: [Section 8.2 polynomial range baseline](chapter-08-polynomial-range-baseline.md), including two confirmed finite-result failures and the remaining centered-difference copy. Resume there without repeating completed Section 8.1 financial or Section 8.3 wrapper examples. Reviewer, supported-platform, release and canonical decisions remain pending.
+
+## V-104 checkpoint — Section 8.2
+
+[Polynomial and centered-copy follow-up](chapter-08-polynomial-range-followup.md): 64 checks pass, with 22 baseline mismatches and a byte-identical replay retained. Exact power-sum references independently check rational Horner evaluation and point-specific derivatives; the coefficient API rejects unrepresentable outputs and the centered wrapper uses the guarded Section 8.1 helper. Initial checker serialization failure and reruns are disclosed. Existing Section 8.2 reference checks also pass.
+
+[V-104](runtime-refresh-2026-11-07-r10.md) at `78b09101177563c3511c1932f6a4e7469567e7bc`: 570 files compiled, 357 scripts passed, 571 required hashes verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer sign-off, supported platforms, release acceptance and canonical approval remain pending.
+
+Next substantive obligation: [Section 8.2 financial cost-output baseline](chapter-08-cost-output-baseline.md), where a finite accepted quantity returns infinity. Derive complete financial references and establish the finite-output contract; do not repeat the completed polynomial or centered-copy corpus.
