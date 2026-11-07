@@ -1,0 +1,502 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "e5e1dd507edf8c76526d880048e000ee3cb29dffcdfc308d88485e4d0ed5fe30",
+  "listing_sha256": "8ada54bd217958bb553524856d45b49f327de58926be4574c3223911b70b1aea",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "portfolio_variance.py"
+      ],
+      "returncode": 0,
+      "stdout": "Variance: 0.0336\nVolatility: 0.1833030277982336\nComponents: {'diagonal': 0.028800000000000003, 'cross': 0.0048, 'total': 0.0336}\n",
+      "stderr": "test_01_two_asset (__main__.PortfolioVarianceTests.test_01_two_asset) ... ok\ntest_02_volatility (__main__.PortfolioVarianceTests.test_02_volatility) ... ok\ntest_03_diagonal (__main__.PortfolioVarianceTests.test_03_diagonal) ... ok\ntest_04_cross (__main__.PortfolioVarianceTests.test_04_cross) ... ok\ntest_05_single_asset (__main__.PortfolioVarianceTests.test_05_single_asset) ... ok\ntest_06_uncorrelated (__main__.PortfolioVarianceTests.test_06_uncorrelated) ... ok\ntest_07_perfect_hedge (__main__.PortfolioVarianceTests.test_07_perfect_hedge) ... ok\ntest_08_contributions (__main__.PortfolioVarianceTests.test_08_contributions) ... ok\ntest_09_marginal (__main__.PortfolioVarianceTests.test_09_marginal) ... ok\ntest_10_short (__main__.PortfolioVarianceTests.test_10_short) ... ok\ntest_11_bad_matrix (__main__.PortfolioVarianceTests.test_11_bad_matrix) ... ok\ntest_12_bad_weights (__main__.PortfolioVarianceTests.test_12_bad_weights) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import portfolio_variance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_variance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 single asset",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 independent two-asset",
+      "passed": true,
+      "actual": 0.0325,
+      "independent_reference": "13/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3/E7 worked total",
+      "passed": true,
+      "actual": 0.0336,
+      "independent_reference": "21/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4 worked volatility",
+      "passed": true,
+      "actual": 0.1833030277982336,
+      "independent_reference": "0.18330302779823360026352188774912033955937826307071887610428968495627473702191084",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 diagonal",
+      "passed": true,
+      "actual": 0.028800000000000003,
+      "independent_reference": "18/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 cross",
+      "passed": true,
+      "actual": 0.0048,
+      "independent_reference": "3/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 zero correlation equal risk",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 perfect positive equal risk",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10/E11 perfect hedge",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12 concentrated portfolio",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 contribution A",
+      "passed": true,
+      "actual": 0.0168,
+      "independent_reference": "21/1250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 contribution B",
+      "passed": true,
+      "actual": 0.0168,
+      "independent_reference": "21/1250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E15 contribution reconciliation",
+      "passed": true,
+      "actual": 0.0336,
+      "independent_reference": "21/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16 unconstrained marginal A",
+      "passed": true,
+      "actual": 0.056,
+      "independent_reference": "7/125",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E17 unconstrained marginal B",
+      "passed": true,
+      "actual": 0.08399999999999999,
+      "independent_reference": "21/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 covariance sensitivity",
+      "passed": true,
+      "actual": 0.0023999999999999994,
+      "independent_reference": "3/1250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 permitted signed portfolio",
+      "passed": true,
+      "actual": 0.0564,
+      "independent_reference": "141/2500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E27 percent scaling",
+      "passed": true,
+      "actual": 336.0,
+      "independent_reference": "336",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E30 negative hedge contribution",
+      "passed": true,
+      "actual": -0.125,
+      "independent_reference": "-1/8",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F147 integer weight cancellation",
+      "passed": false,
+      "exception": "ValueError('fully invested weights must sum to one')"
+    },
+    {
+      "label": "F147 large signed quadratic cancellation",
+      "passed": false,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F147 large signed marginal cancellation",
+      "passed": false,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F147 normalized tolerated budget variance",
+      "passed": false,
+      "actual": 1.0000000001,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F147 normalized tolerated budget contribution",
+      "passed": false,
+      "actual": 1.0000000001,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F147 normalized tolerated budget marginal",
+      "passed": false,
+      "actual": 2.0000000001,
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F147 volatility before overflowing variance",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1.5811388300841896659994467722163592668597775696626084134287524263962972193196191E+154",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F147 volatility before unreportable variance",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "3.1622776601683793319988935444327185337195551393252168268575048527925944386392382E-163",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab feasible central directional derivative",
+      "passed": true,
+      "actual": -0.027999999999999997,
+      "independent_reference": "-7/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab gradient directional derivative",
+      "passed": true,
+      "actual": -0.02799999999999999,
+      "independent_reference": "-7/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab diagonal plus cross reconciliation",
+      "passed": true,
+      "actual": 0.033600000000000005,
+      "independent_reference": "21/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab no covariance variance",
+      "passed": true,
+      "actual": 0.0288,
+      "independent_reference": "18/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab raised covariance variance",
+      "passed": true,
+      "actual": 0.036,
+      "independent_reference": "9/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 supplemental scaling only",
+      "passed": true,
+      "reference": "84/625",
+      "scope": "unnormalized rational quadratic, fully invested source rejects doubled weights"
+    },
+    {
+      "label": "E24 supplementary annual variance",
+      "passed": true,
+      "actual": 0.0252,
+      "independent_reference": "63/2500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E25 supplementary annual volatility",
+      "passed": true,
+      "actual": 0.15874507866387544,
+      "independent_reference": "0.15874507866387543543009694521835562554261555098494701082210006755206412939381702",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 misordered weights change variance",
+      "passed": true,
+      "actual": 0.0436,
+      "independent_reference": "109/2500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 consistently permuted weights restore result",
+      "passed": true,
+      "actual": 0.0336,
+      "independent_reference": "21/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "PSD extension invalid untested direction variance",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "PSD extension invalid untested direction decomposition",
+      "passed": false,
+      "actual": "{'diagonal': 1.0, 'cross': 0.0, 'total': 1.0}"
+    },
+    {
+      "label": "PSD extension invalid untested direction marginal",
+      "passed": false,
+      "actual": "[2.0, 4.0]"
+    },
+    {
+      "label": "PSD extension invalid untested direction contribution",
+      "passed": false,
+      "actual": "[1.0, 0.0]"
+    },
+    {
+      "label": "PSD extension invalid untested direction volatility",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F147 negative tiny diagonal rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F147 nonboolean short policy rejected",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F147 bad tolerance rejected",
+      "passed": false,
+      "actual": "[[1.0]]"
+    },
+    {
+      "label": "F147 boolean tolerance rejected",
+      "passed": false,
+      "actual": "[[1.0]]"
+    },
+    {
+      "label": "F147 unreportable variance rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F147 underflow variance rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F147 unreportable decomposition field rejected",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F147 unreportable contribution rejected",
+      "passed": true,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F147 unreportable marginal rejected",
+      "passed": false,
+      "actual": "[inf]"
+    },
+    {
+      "label": "F147 huge integer matrix ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F147 negative exact requested form rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "E19 doubled budget rejected",
+      "passed": true,
+      "exception": "ValueError('fully invested weights must sum to one')"
+    },
+    {
+      "label": "short permission required",
+      "passed": true,
+      "exception": "ValueError('negative weight requires short permission')"
+    },
+    {
+      "label": "invalid budget rejected",
+      "passed": true,
+      "exception": "ValueError('fully invested weights must sum to one')"
+    },
+    {
+      "label": "ragged matrix rejected",
+      "passed": true,
+      "exception": "ValueError('square covariance matrix required')"
+    },
+    {
+      "label": "nonfinite matrix rejected",
+      "passed": true,
+      "exception": "ValueError('finite covariance entries required')"
+    },
+    {
+      "label": "zero diagonal nonzero covariance rejected",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "lab original inputs preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B"
+    ],
+    "weights": [
+      0.6,
+      0.4
+    ],
+    "covariance": [
+      [
+        0.04,
+        0.01
+      ],
+      [
+        0.01,
+        0.09
+      ]
+    ],
+    "horizon": "one common synthetic period",
+    "currency": "fictional common USD",
+    "units": "squared decimal simple-return units",
+    "dates": null,
+    "estimator": "supplied synthetic PSD matrix; no sampling/calibration claim",
+    "decomposition": {
+      "diagonal": 0.028800000000000003,
+      "cross": 0.0048,
+      "total": 0.0336
+    },
+    "variance_contributions": [
+      0.0168,
+      0.0168
+    ],
+    "marginal_variance": [
+      0.056,
+      0.08399999999999999
+    ],
+    "variance": 0.0336,
+    "volatility": 0.1833030277982336,
+    "covariance_weighted_exposures": [
+      ".028",
+      ".042"
+    ],
+    "feasible_direction": [
+      1,
+      -1
+    ],
+    "feasible_derivative": "-.028",
+    "covariance_increase": ".005",
+    "variance_increase": ".0024",
+    "fixture_sha256": "82f13cbbe15beb35aabd34e8f95d9593054f94ce737c17c6fa3b86158aa6d0a6"
+  }
+}
