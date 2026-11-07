@@ -1,0 +1,462 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "c280689a2bac55b91e3008b0bf79140b927171784b65e0f5fc6e161fd06d2514",
+  "listing_sha256": "328874ff7e50cfa3f211620cc52518a94a6e61244de2234fc83b9161605d2a16",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "portfolio_constraints.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'feasible': True, 'violations': [], 'group_exposures': {'equity': 0.8}, 'one_way_turnover': 0.1}\n",
+      "stderr": "test_01_feasible (__main__.ConstraintTests.test_01_feasible) ... ok\ntest_02_weight_violation (__main__.ConstraintTests.test_02_weight_violation) ... ok\ntest_03_group (__main__.ConstraintTests.test_03_group) ... ok\ntest_04_group_violation (__main__.ConstraintTests.test_04_group_violation) ... ok\ntest_05_turnover (__main__.ConstraintTests.test_05_turnover) ... ok\ntest_06_turnover_violation (__main__.ConstraintTests.test_06_turnover_violation) ... ok\ntest_07_budget_bounds (__main__.ConstraintTests.test_07_budget_bounds) ... ok\ntest_08_infeasible_bounds (__main__.ConstraintTests.test_08_infeasible_bounds) ... ok\ntest_09_gross (__main__.ConstraintTests.test_09_gross) ... ok\ntest_10_return (__main__.ConstraintTests.test_10_return) ... ok\ntest_11_empty (__main__.ConstraintTests.test_11_empty) ... ok\ntest_12_invalid (__main__.ConstraintTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import portfolio_constraints"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_constraints.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "lab base mandate passes",
+      "passed": true
+    },
+    {
+      "label": "E4 source equity exposure",
+      "passed": true,
+      "actual": 0.8,
+      "independent_reference": "4/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 source one-way turnover",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 cap breach",
+      "passed": true
+    },
+    {
+      "label": "E2 position maximum breach",
+      "passed": true
+    },
+    {
+      "label": "E14 turnover breach",
+      "passed": true
+    },
+    {
+      "label": "E3 position floor breach",
+      "passed": true
+    },
+    {
+      "label": "E6 group floor passes",
+      "passed": true
+    },
+    {
+      "label": "E7 gross signed exposure",
+      "passed": true,
+      "actual": 1.4,
+      "independent_reference": "7/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 supplemental net signed exposure",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 proposed short not long-only feasible",
+      "passed": true
+    },
+    {
+      "label": "E10 contradictory lower budget",
+      "passed": true
+    },
+    {
+      "label": "E11 insufficient upper budget",
+      "passed": true
+    },
+    {
+      "label": "E12 feasible independent bounds",
+      "passed": true
+    },
+    {
+      "label": "E1 supplemental budget",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 cap excess",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 floor shortfall",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 sector excess",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 turnover excess",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E17 return floor shortfall",
+      "passed": true,
+      "actual": 0.001,
+      "independent_reference": "1/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 liquidity excess",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 cash shortfall",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 leverage excess",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F154 E15 prompt/answer total-traded-notional cost",
+      "passed": false,
+      "worked_solution": "Approximate cost=.0002 of NAV under one-way convention..",
+      "independent_reference": "2 * .002 * .1 = .0004 of NAV",
+      "scope": "text alignment plus supplemental rational fee formula, no source cost function"
+    },
+    {
+      "label": "E15 supplemental symmetric fee from source turnover",
+      "passed": true,
+      "actual": 0.0004,
+      "independent_reference": "1/2500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16 source expected return",
+      "passed": true,
+      "actual": 0.059,
+      "independent_reference": "59/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E21 overlapping equity group",
+      "passed": true,
+      "actual": 0.8,
+      "independent_reference": "4/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E21 overlapping country group",
+      "passed": true,
+      "actual": 0.7,
+      "independent_reference": "7/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E23 supplemental weighted duration",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 independent position bounds pass",
+      "passed": true
+    },
+    {
+      "label": "E28 proposed portfolio rejected under conflicting group floors",
+      "passed": true,
+      "joint_infeasibility_proof": "disjoint lower group sums .7+.7=1.4>1; supplemental proof, not a solver"
+    },
+    {
+      "label": "F154 tiny negative holding not hidden",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "F154 tiny position breach not hidden",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "F154 tiny group breach not hidden",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "F154 tiny turnover breach not hidden",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "F154 near-unit insufficient bounds not rounded feasible",
+      "passed": false,
+      "actual": true,
+      "expected": false
+    },
+    {
+      "label": "F154 integer expectation cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F154 signed product cancellation before overflow",
+      "passed": false,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F154 malformed group container ValueError",
+      "passed": false,
+      "exception": "TypeError(\"'int' object is not iterable\")"
+    },
+    {
+      "label": "F154 group name schema ValueError",
+      "passed": false,
+      "exception": "TypeError('can only concatenate str (not \"int\") to str')"
+    },
+    {
+      "label": "F154 huge integer input ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F154 unreportable gross ValueError",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "invalid budget rejected",
+      "passed": true,
+      "exception": "ValueError('weights must sum to one')"
+    },
+    {
+      "label": "duplicate group member rejected",
+      "passed": true,
+      "exception": "ValueError('duplicate group member')"
+    },
+    {
+      "label": "group mismatch rejected",
+      "passed": true,
+      "exception": "ValueError('group definitions and limits must match')"
+    },
+    {
+      "label": "invalid independent bounds rejected",
+      "passed": true,
+      "exception": "ValueError('invalid long-only bounds')"
+    },
+    {
+      "label": "paired reference required",
+      "passed": true,
+      "exception": "ValueError('reference and turnover limit required together')"
+    },
+    {
+      "label": "policy extension explicit approximate audit",
+      "passed": false,
+      "exception": "TypeError(\"check_constraints() got an unexpected keyword argument 'tolerance'\")"
+    },
+    {
+      "label": "policy extension recorded supplied budget residual",
+      "passed": false,
+      "exception": "KeyError('budget_residual')"
+    },
+    {
+      "label": "F154 nonzero expectation underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "lab original fixtures preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B",
+      "cash-like C"
+    ],
+    "weights": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "lower": [
+      0,
+      0,
+      0
+    ],
+    "upper": [
+      0.6,
+      0.6,
+      0.4
+    ],
+    "reference": [
+      0.4,
+      0.4,
+      0.2
+    ],
+    "group": {
+      "equity": [
+        0,
+        1
+      ]
+    },
+    "base": {
+      "feasible": true,
+      "violations": [],
+      "group_exposures": {
+        "equity": 0.8
+      },
+      "one_way_turnover": 0.1
+    },
+    "cap_breach": {
+      "feasible": false,
+      "violations": [
+        "group equity outside bounds"
+      ],
+      "group_exposures": {
+        "equity": 0.8
+      },
+      "one_way_turnover": 0.1
+    },
+    "position_breach": {
+      "feasible": false,
+      "violations": [
+        "asset 0 outside bounds",
+        "group equity outside bounds",
+        "one-way turnover exceeds limit"
+      ],
+      "group_exposures": {
+        "equity": 0.8999999999999999
+      },
+      "one_way_turnover": 0.3
+    },
+    "turnover_breach": {
+      "feasible": false,
+      "violations": [
+        "one-way turnover exceeds limit"
+      ],
+      "group_exposures": {
+        "equity": 0.8
+      },
+      "one_way_turnover": 0.1
+    },
+    "overlapping_groups": {
+      "feasible": true,
+      "violations": [],
+      "group_exposures": {
+        "equity": 0.8,
+        "country": 0.7
+      },
+      "one_way_turnover": null
+    },
+    "conflicting_groups": {
+      "feasible": false,
+      "violations": [
+        "group first outside bounds",
+        "group rest outside bounds"
+      ],
+      "group_exposures": {
+        "first": 0.5,
+        "rest": 0.5
+      },
+      "one_way_turnover": null
+    },
+    "fee_rate_per_total_traded": ".002",
+    "total_traded": ".2",
+    "one_way_turnover": ".1",
+    "supplemental_fee": ".0004",
+    "units": "weights/NAV fractions, common fictional USD",
+    "valuation_time": "synthetic common t0",
+    "dates": null,
+    "external_flows": "none",
+    "scope": "proposal audit only, no optimizer, orders, actual classifications or mandate approval",
+    "fixture_sha256": "4bd9eb72af570154c84c90fc1cc0f76d1583e12a0fb13f57ed7062168c66ffec"
+  }
+}
