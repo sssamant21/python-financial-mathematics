@@ -797,3 +797,11 @@ Next substantive obligation: [Section 8.2 financial cost-output baseline](chapte
 [V-105](runtime-refresh-2026-11-07-r11.md) at `7db1525c2f390b0eb9afa431c08648b6450737d3`: 571 files compiled, 358 scripts passed, 572 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callback-baseline.md). Actual probes retain a nonfinite chain product, an identity quotient yielding NaN instead of 1, and collapsed perturbations that still invoke callbacks. Preserve callback order/count and derive full sampled quotient/error contracts; do not repeat completed Section 8.2 cost/polynomial examples.
+
+## V-106 checkpoint — Section 8.4 callback and centered copy
+
+[Chain callback follow-up](chapter-08-chain-callback-followup.md): all 55 checks pass; ten baseline mismatches and an identical original-source replay retained. Independent Decimal products and exact sampled quotient references check actual Section 8.4 calls. Callback arguments/order/counts, short circuit, exception identity, signed zero/underflow, default step and callable-before-controls precedence are checked. Nonfinite final chain products reject and invalid perturbations reject before callbacks. The existing Section 8.4 suite also passes.
+
+[V-106](runtime-refresh-2026-11-07-r12.md) at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`: 572 files compiled, 359 scripts passed, 573 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 variable-rate PV baseline](chapter-08-variable-rate-pv-baseline.md). Actual probes lose finite complete PV/sensitivity results to underflow and return NaN for zero amount. Independent 200/400-digit references agree for the returned represented rate. Establish complete scaling and zero identities while preserving the intended factor-rate convention; do not repeat completed callback/centered-copy examples.
