@@ -147,3 +147,11 @@ Next: [Discounted-payment baseline](chapter-08-discounted-payment-range-baseline
 [V-102](runtime-refresh-2026-11-07-r08.md) compiled 567 files, passed 354 scripts and verified 568 required blobs before and after at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.1 initial-PV baseline](chapter-08-initial-pv-range-baseline.md) records finite PV/derivative/stable-quotient results lost to premature underflow in Section 8.1's distinct financial functions. Preserve their domains and derive complete references. The copied Section 8.3 centered difference and other early derivative helpers and manual review remain open.
+
+## V-103 checkpoint — 2026-11-07
+
+[Section 8.1 financial range](chapter-08-initial-pv-range-followup.md): forty corrected checks pass; seventeen baseline mismatches and valid baseline replay retained. [Section 8.3 centered wrapper](chapter-08-centered-copy-followup.md): eight checks pass; six baseline observations retained, including two new delegation requirements. The invalid missing-directory replay setup and corrected harness are disclosed separately.
+
+[V-103](runtime-refresh-2026-11-07-r09.md) at `a6441d707337946a76e059c6cf53a5b05291afa0`: 569 Python files compiled, 356 scripts passed, 570 required source/fixture hashes verified before/after. Counts derive from this pinned tree. Thirty-five selected COV categories remain partial, none closed; this is not a completion percentage or independent sign-off.
+
+Next substantive work: [Section 8.2 polynomial range baseline](chapter-08-polynomial-range-baseline.md), including two confirmed finite-result failures and the remaining centered-difference copy. Resume there without repeating completed Section 8.1 financial or Section 8.3 wrapper examples. Reviewer, supported-platform, release and canonical decisions remain pending.
