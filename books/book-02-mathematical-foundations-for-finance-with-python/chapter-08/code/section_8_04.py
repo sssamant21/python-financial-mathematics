@@ -1,5 +1,7 @@
 """Section 8.4: chain rule and financial sensitivity."""
 import math
+from fractions import Fraction
+from section_8_01 import _scaled_pv
 from section_8_01 import centered_difference as _centered_difference
 
 def finite(value, name):
@@ -27,15 +29,27 @@ def nested_power_derivative(x):
 def rate_from_factor(z):
     return 0.03+0.002*finite(z, "factor")
 
-def variable_rate_pv(amount, years, factor):
+def _variable_rate_inputs(amount, years, factor):
     c, t, z = finite(amount, "amount"), finite(years, "years"), finite(factor, "factor")
     if c < 0 or t < 0:
         raise ValueError("amount and years must be nonnegative")
-    return c*math.exp(-t*rate_from_factor(z))
+    # Retain the public affine-rate helper's two binary64 roundings.
+    return c, t, rate_from_factor(z)
+
+def variable_rate_pv(amount, years, factor):
+    c, t, rate = _variable_rate_inputs(amount, years, factor)
+    if c == 0 or t == 0:
+        return c
+    return _scaled_pv(Fraction(c), -Fraction(t)*Fraction(rate))
 
 def variable_rate_pv_derivative(amount, years, factor):
     t = finite(years, "years")
-    return -t*variable_rate_pv(amount, years, factor)*0.002
+    c, t, rate = _variable_rate_inputs(amount, t, factor)
+    if c == 0 or t == 0:
+        return -t*c*0.002
+    # Combine all sensitivity coefficients before any binary64 rounding.
+    coefficient = -Fraction(t)*Fraction(c)*Fraction(0.002)
+    return _scaled_pv(coefficient, -Fraction(t)*Fraction(rate))
 
 def nominal_rate(z):
     return 0.04+0.001*finite(z, "factor")
