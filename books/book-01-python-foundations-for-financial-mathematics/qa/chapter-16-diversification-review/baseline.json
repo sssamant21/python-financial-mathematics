@@ -1,0 +1,629 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "49ec19ee47df5b205d512bae5987956519d6441680b95fa48d5b187fdb20ddfe",
+  "listing_sha256": "f72df9afe01cdb885084ead3b6c6cdc9f60e2bfd672e66d57df2a06c71f3b286",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "diversification.py"
+      ],
+      "returncode": 0,
+      "stdout": "Portfolio volatility: 0.14142135623730953\nDiversification ratio: 1.414213562373095\nEffective number of holdings: 2.0\n",
+      "stderr": "test_01_uncorrelated (__main__.DiversificationTests.test_01_uncorrelated) ... ok\ntest_02_perfect_positive (__main__.DiversificationTests.test_02_perfect_positive) ... ok\ntest_03_negative (__main__.DiversificationTests.test_03_negative) ... ok\ntest_04_ratio (__main__.DiversificationTests.test_04_ratio) ... ok\ntest_05_benefit (__main__.DiversificationTests.test_05_benefit) ... ok\ntest_06_equal_number (__main__.DiversificationTests.test_06_equal_number) ... ok\ntest_07_concentrated (__main__.DiversificationTests.test_07_concentrated) ... ok\ntest_08_mixed (__main__.DiversificationTests.test_08_mixed) ... ok\ntest_09_three_assets (__main__.DiversificationTests.test_09_three_assets) ... ok\ntest_10_zero_volatility (__main__.DiversificationTests.test_10_zero_volatility) ... ok\ntest_11_invalid_equicorrelation (__main__.DiversificationTests.test_11_invalid_equicorrelation) ... ok\ntest_12_invalid_weights (__main__.DiversificationTests.test_12_invalid_weights) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import diversification"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "diversification.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "lab scenario variance 1",
+      "passed": true,
+      "actual": 0.04000000000000001,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario SD 1",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "0.2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario weighted standalone 1",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario benefit 1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0.0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario ratio 1",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario variance 0.5",
+      "passed": true,
+      "actual": 0.030000000000000006,
+      "independent_reference": "3/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario SD 0.5",
+      "passed": true,
+      "actual": 0.17320508075688776,
+      "independent_reference": "0.17320508075688772935274463415058723669428052538103806280558069794519330169088000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario weighted standalone 0.5",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario benefit 0.5",
+      "passed": true,
+      "actual": 0.026794919243112253,
+      "independent_reference": "0.02679491924311227064725536585",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario ratio 0.5",
+      "passed": true,
+      "actual": 1.1547005383792515,
+      "independent_reference": "1.154700538379251529018297561",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario variance 0",
+      "passed": true,
+      "actual": 0.020000000000000004,
+      "independent_reference": "1/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario SD 0",
+      "passed": true,
+      "actual": 0.14142135623730953,
+      "independent_reference": "0.14142135623730950488016887242096980785696718753769480731766797379907324784621070",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario weighted standalone 0",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario benefit 0",
+      "passed": true,
+      "actual": 0.05857864376269048,
+      "independent_reference": "0.05857864376269049511983112758",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario ratio 0",
+      "passed": true,
+      "actual": 1.414213562373095,
+      "independent_reference": "1.414213562373095048801688724",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario variance -1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario SD -1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario weighted standalone -1",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab scenario benefit -1",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "0.2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab zero-risk ratio undefined",
+      "passed": true,
+      "exception": "ValueError('diversification ratio undefined at zero portfolio volatility')"
+    },
+    {
+      "label": "E10-E13 count 3 variance",
+      "passed": true,
+      "actual": 0.029999999999999995,
+      "independent_reference": "3/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 3 SD",
+      "passed": true,
+      "actual": 0.1732050807568877,
+      "independent_reference": "0.17320508075688772935274463415058723669428052538103806280558069794519330169088000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 10 variance",
+      "passed": true,
+      "actual": 0.004000000000000001,
+      "independent_reference": "1/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 10 SD",
+      "passed": true,
+      "actual": 0.0632455532033676,
+      "independent_reference": "0.063245553203367586639977870888654370674391102786504336537150097055851888772784764",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 25 variance",
+      "passed": true,
+      "actual": 0.0016000000000000003,
+      "independent_reference": "1/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 25 SD",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "0.04",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 5 variance",
+      "passed": true,
+      "actual": 0.016000000000000004,
+      "independent_reference": "2/125",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10-E13 count 5 SD",
+      "passed": true,
+      "actual": 0.1264911064067352,
+      "independent_reference": "0.12649110640673517327995574177730874134878220557300867307430019411170377754556953",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16 concentrated effective holdings",
+      "passed": true,
+      "actual": 2.6666666666666665,
+      "independent_reference": "8/3",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E17 equal effective holdings",
+      "passed": true,
+      "actual": 4.0,
+      "independent_reference": "4",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 one effective holding",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 normalized tolerated budget variance",
+      "passed": false,
+      "actual": 1.0000000001,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 normalized tolerated budget HHI inverse",
+      "passed": false,
+      "actual": 0.9999999999,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 tiny-benefit cancellation avoided",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 SD before covariance quadratic underflow",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "3.1622776601683793319988935444327185337195551393252168268575048527925944386392382E-163",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 generated boundary rho above one snapped",
+      "passed": true,
+      "actual": 0.04000000000002001,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 generated boundary lower rho snapped",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F149 zero-diagonal valid asset retained",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "generated rounded boundary requested variance 4",
+      "passed": true,
+      "actual": 0.0,
+      "maximum_rounding_variance": 1e-16
+    },
+    {
+      "label": "generated rounded lower bound 4",
+      "passed": true,
+      "actual": "-1666666666666667/125000000000000000",
+      "lower_bound": "-4000000000000001/300000000000000000"
+    },
+    {
+      "label": "generated rounded boundary requested variance 7",
+      "passed": true,
+      "actual": 3.7947076036992655e-19,
+      "maximum_rounding_variance": 1e-16
+    },
+    {
+      "label": "generated rounded lower bound 7",
+      "passed": true,
+      "actual": "-1666666666666667/250000000000000000",
+      "lower_bound": "-4000000000000001/600000000000000000"
+    },
+    {
+      "label": "generated rounded boundary requested variance 12",
+      "passed": true,
+      "actual": 2.0328790734103208e-19,
+      "maximum_rounding_variance": 1e-16
+    },
+    {
+      "label": "generated rounded lower bound 12",
+      "passed": true,
+      "actual": "-9090909090909093/2500000000000000000",
+      "lower_bound": "-4000000000000001/1100000000000000000"
+    },
+    {
+      "label": "lab three-asset boundary PSD hedge",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab three-asset boundary entry",
+      "passed": true,
+      "actual": -0.020000000000000004,
+      "independent_reference": "-1/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E15 supplemental HHI",
+      "passed": true,
+      "actual": 0.375,
+      "independent_reference": "3/8",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 supplemental common-correlation limiting SD",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab stress increases SD",
+      "passed": true
+    },
+    {
+      "label": "E28 correlated three-name effective count",
+      "passed": true,
+      "actual": 3.0,
+      "independent_reference": "3",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 correlated three-name volatility",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "PSD extension requested positive direction rejected",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "PSD extension standalone validates entire matrix",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "PSD extension pairwise bounds insufficient",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F149 generated covariance underflow rejected",
+      "passed": false,
+      "actual": "[[0.0, 0.0], [0.0, 0.0]]"
+    },
+    {
+      "label": "F149 generated covariance overflow ValueError",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F149 tiny negative form not clipped",
+      "passed": false,
+      "actual": "0"
+    },
+    {
+      "label": "F149 zero-variance nonzero covariance rejected",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F149 variance output underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F149 huge integer matrix ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "invalid three-asset equicorrelation rejected",
+      "passed": true,
+      "exception": "ValueError('equicorrelation must be PSD')"
+    },
+    {
+      "label": "invalid count rejected",
+      "passed": true,
+      "exception": "ValueError('positive integer asset count required')"
+    },
+    {
+      "label": "short weights rejected",
+      "passed": true,
+      "exception": "ValueError('nonnegative finite weights required')"
+    },
+    {
+      "label": "invalid budget rejected",
+      "passed": true,
+      "exception": "ValueError('weights must sum to one')"
+    },
+    {
+      "label": "asymmetric matrix rejected",
+      "passed": true,
+      "exception": "ValueError('symmetric covariance required')"
+    },
+    {
+      "label": "nonfinite matrix rejected",
+      "passed": true,
+      "exception": "ValueError('finite covariance entries required')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B"
+    ],
+    "units": "decimal simple-return SD and squared decimal covariance",
+    "horizon": "one common synthetic period",
+    "currency": "fictional common USD",
+    "dates": null,
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "standalone_volatilities": [
+      0.2,
+      0.2
+    ],
+    "scenarios": [
+      {
+        "correlation": 1,
+        "covariance": [
+          [
+            0.04000000000000001,
+            0.04000000000000001
+          ],
+          [
+            0.04000000000000001,
+            0.04000000000000001
+          ]
+        ],
+        "variance": 0.04000000000000001,
+        "volatility": 0.2,
+        "benefit": 0.0,
+        "ratio": 1.0
+      },
+      {
+        "correlation": 0.5,
+        "covariance": [
+          [
+            0.04000000000000001,
+            0.020000000000000004
+          ],
+          [
+            0.020000000000000004,
+            0.04000000000000001
+          ]
+        ],
+        "variance": 0.030000000000000006,
+        "volatility": 0.17320508075688776,
+        "benefit": 0.026794919243112253,
+        "ratio": 1.1547005383792515
+      },
+      {
+        "correlation": 0,
+        "covariance": [
+          [
+            0.04000000000000001,
+            0.0
+          ],
+          [
+            0.0,
+            0.04000000000000001
+          ]
+        ],
+        "variance": 0.020000000000000004,
+        "volatility": 0.14142135623730953,
+        "benefit": 0.05857864376269048,
+        "ratio": 1.414213562373095
+      },
+      {
+        "correlation": -1,
+        "covariance": [
+          [
+            0.04000000000000001,
+            -0.04000000000000001
+          ],
+          [
+            -0.04000000000000001,
+            0.04000000000000001
+          ]
+        ],
+        "variance": 0.0,
+        "volatility": 0.0,
+        "benefit": 0.2,
+        "ratio": null
+      }
+    ],
+    "three_asset_boundary_matrix": [
+      [
+        0.04000000000000001,
+        -0.020000000000000004,
+        -0.020000000000000004
+      ],
+      [
+        -0.020000000000000004,
+        0.04000000000000001,
+        -0.020000000000000004
+      ],
+      [
+        -0.020000000000000004,
+        -0.020000000000000004,
+        0.04000000000000001
+      ]
+    ],
+    "concentration_weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "HHI": "3/8",
+    "effective_holdings": 2.6666666666666665,
+    "fixture_sha256": "7e4f68ddfbbbf8fdcc893539adfa96836d82821693bdca31ef1bd1d616c9781a",
+    "scope": "static synthetic covariance and concentration; no actual data calibration, FX, costs or rebalance"
+  }
+}
