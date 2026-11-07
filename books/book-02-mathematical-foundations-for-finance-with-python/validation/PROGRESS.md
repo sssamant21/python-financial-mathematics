@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-07  
-**Overall status:** In progress — V-106 full candidate Linux pass (572 files, 359 scripts, 573 required hashes), including Section 8.4 callback and centered-copy contracts. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-107 full candidate Linux pass (573 files, 360 scripts, 574 required hashes), including Section 8.4 variable-rate PV scaling. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 572/572 at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`. [V-106](runtime-refresh-2026-11-07-r12.md). |
-| Automated script execution | Full candidate Linux pass | 359/359 at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`; 573 required blobs verified before/after. [V-106](runtime-refresh-2026-11-07-r12.md). |
+| Python compilation | Full candidate Linux pass | 573/573 at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`. [V-107](runtime-refresh-2026-11-07-r13.md). |
+| Automated script execution | Full candidate Linux pass | 360/360 at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`; 574 required blobs verified before/after. [V-107](runtime-refresh-2026-11-07-r13.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -981,3 +981,11 @@ Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callbac
 [V-106](runtime-refresh-2026-11-07-r12.md) at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`: 572 files compiled, 359 scripts passed, 573 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.4 variable-rate PV baseline](chapter-08-variable-rate-pv-baseline.md). Actual probes lose finite complete PV/sensitivity results to underflow and return NaN for zero amount. Independent 200/400-digit references agree for the returned represented rate. Establish complete scaling and zero identities while preserving the intended factor-rate convention; do not repeat completed callback/centered-copy examples.
+
+## V-107 checkpoint — Section 8.4 variable-rate PV
+
+[Variable-rate PV follow-up](chapter-08-variable-rate-pv-followup.md): all 63 checks pass; sixteen baseline mismatches, an identical replay and corrected rerun retained. Independent 1800/2400-digit log-scale references check complete coefficients/exponents, zero identities and finite sensitivity recovery when PV rounds to zero. Six independently rounded affine-rate cases preserve the public rate convention. Input domains, signed zeros and validation precedence remain checked. The strengthened validation-priority discriminator did not change observation JSON. Existing Section 8.4 and callback suites also pass.
+
+[V-107](runtime-refresh-2026-11-07-r13.md) at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`: 573 files compiled, 360 scripts passed, 574 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 discrete-compounding baseline](chapter-08-discrete-compounding-range-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-discrete-compounding-range-baseline.json). Actual intermediate overflow/underflow loses finite complete values and zero-principal identities. Preserve the intended nominal-rate/base/exponent conventions while deriving full results; do not repeat completed variable-rate PV examples.
