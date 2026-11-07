@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`  
-**Latest scoped source revision:** `2f6b47559fc7baa82e59772bbdfbd6445e5374e1` (included in V-100)  
-**Disposition:** V-100 full candidate Linux pass includes Section 8.3 analytic derivative range corrections; independent review and release approval pending.
+**Full-runtime candidate source revision:** `e674373645a4b9787b3a412fd8262ff9a4c30fdf`  
+**Latest scoped source revision:** `e674373645a4b9787b3a412fd8262ff9a4c30fdf` (included in V-101)  
+**Disposition:** V-101 full candidate Linux pass includes Section 8.3 financial rational-expression corrections; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-100](runtime-refresh-2026-11-07-r06.md): 565 compiled, 352 passed, 566 required hashes verified before/after. G2–G8 unchanged.
+[V-101](runtime-refresh-2026-11-07-r07.md): 566 compiled, 353 passed, 567 required hashes verified before/after. G2–G8 unchanged.
+
+[V-100](runtime-refresh-2026-11-07-r06.md): 565 compiled, 352 passed, 566 required hashes verified before/after.
 
 [V-99](runtime-refresh-2026-11-07-r05.md): 564 compiled, 351 passed, 565 required hashes verified before/after.
 
@@ -157,7 +159,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-100](runtime-refresh-2026-11-07-r06.md) at `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`; 565 sources/352 scripts/566 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-101](runtime-refresh-2026-11-07-r07.md) at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`; 566 sources/353 scripts/567 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -762,3 +764,11 @@ Next: [Section 8.3 product/quotient baseline](chapter-08-product-quotient-range-
 [V-100](runtime-refresh-2026-11-07-r06.md) compiled 565 files, passed 352 scripts and verified 566 required blobs before and after at `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.3 financial rational baseline](chapter-08-financial-rational-range-baseline.md) records finite average-cost and coverage-derivative results lost to separate float terms. Reconcile complete rational-expression ranges and denominator-domain guards for the financial examples. Discounted-payment and copied finite-difference helpers and manual review remain open.
+
+## Financial rational-expression range — V-101
+
+[Section 8.3 financial rational follow-up](chapter-08-financial-rational-range-followup.md) retains eleven baseline mismatches, an identical replay and 41 passing corrected observations. Complete polynomial-quotient references check finite results, true range failures and adjacent-pole behavior; the exact represented coverage denominator is documented separately from its financial interpretation. The existing Section 8.3 suite passes. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-101](runtime-refresh-2026-11-07-r07.md) compiled 566 files, passed 353 scripts and verified 567 required blobs before and after at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Discounted-payment baseline](chapter-08-discounted-payment-range-baseline.md) records finite/zero values and a finite derivative lost to separate exponential/coefficient arithmetic. Check actual payment callbacks and complete scaling; preserve the value wrapper's unused derivative-argument behavior. Copied finite-difference and Section 8.1 financial helpers and manual review remain open.
