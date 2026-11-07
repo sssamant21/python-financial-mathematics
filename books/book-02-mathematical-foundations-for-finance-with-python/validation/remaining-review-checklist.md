@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`  
-**Latest scoped source revision:** `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e` (included in V-94)  
-**Disposition:** V-94 full candidate Linux pass includes the Chapter 21 capstone receipt checker; independent review and release approval pending.
+**Full-runtime candidate source revision:** `a3f898d3824e5287da47129b18f58d6ec16af05b`  
+**Latest scoped source revision:** `a3f898d3824e5287da47129b18f58d6ec16af05b` (included in V-95)  
+**Disposition:** V-95 full candidate Linux pass includes the Section 21.4 complete stencil; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-94](runtime-refresh-2026-11-06-r13.md): 559 compiled, 346 passed, 560 required hashes verified before/after. G2–G8 unchanged.
+[V-95](runtime-refresh-2026-11-07-r01.md): 560 compiled, 347 passed, 561 required hashes verified before/after. G2–G8 unchanged.
+
+[V-94](runtime-refresh-2026-11-06-r13.md): 559 compiled, 346 passed, 560 required hashes verified before/after.
 
 [V-93](runtime-refresh-2026-11-06-r12.md): 558 compiled, 345 passed, 559 required hashes verified before/after.
 
@@ -145,7 +147,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-94](runtime-refresh-2026-11-06-r13.md) at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`; 559 sources/346 scripts/560 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-95](runtime-refresh-2026-11-07-r01.md) at `a3f898d3824e5287da47129b18f58d6ec16af05b`; 560 sources/347 scripts/561 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -702,3 +704,11 @@ Next: [Chapter 21 integrated execution baseline](chapter-21-integrated-provenanc
 [V-94](runtime-refresh-2026-11-06-r13.md) compiled 559 files, passed 346 scripts and verified 560 required blobs before and after at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 21.4 central-difference baseline](chapter-21-central-difference-range-baseline.md) reproduces two finite complete stencil values rejected by the actual helper. Check COV-90 centered-difference arithmetic, existing perturbation guards and the actual integrated diagnostic. Wider capstone requirements and manual reviews remain open.
+
+## Complete central-difference evaluation — V-95
+
+[Section 21.4 complete central difference](chapter-21-central-difference-range-followup.md) retains 14 baseline mismatches, an identical replay, and a 24-case corrected pass including the actual integrated diagnostic. The 14-method existing regression passes with the former denominator-rejection test replaced by an independent finite-result reference. This adds selected COV-90 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-95](runtime-refresh-2026-11-07-r01.md) compiled 560 files, passed 347 scripts and verified 561 required blobs before and after at `a3f898d3824e5287da47129b18f58d6ec16af05b`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Implemented-interface baseline](chapter-21-implemented-interface-baseline.md) records actual callable signatures and report fields versus the intentional design catalog. Reconcile the implemented COV-88 contract without claiming that the draft's general interfaces already exist. Wider capstone requirements and manual reviews remain open.
