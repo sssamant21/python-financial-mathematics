@@ -19,8 +19,14 @@ class SensitivityChecks(unittest.TestCase):
         with self.assertRaises(ValueError): central_difference(100, 0, 2, 0)
     def test_tiny_step(self):
         with self.assertRaises(ValueError): central_difference(100, 1, 2, 1e-30)
-    def test_denominator_overflow(self):
-        with self.assertRaises(OverflowError): central_difference(100, 0, 1e-308, 1e308)
+    def test_finite_stencil_with_large_denominator(self):
+        from decimal import Decimal as D, localcontext
+        with localcontext() as context:
+            context.prec = 90
+            z = D(1e-308)*D(1e308)
+            expected = float(D(100)*((-z).exp()-z.exp())/(2*D(1e308)))
+        actual = central_difference(100, 0, 1e-308, 1e308)
+        self.assertTrue(math.isclose(actual, expected, rel_tol=1e-14, abs_tol=0.))
     def test_bad_time(self):
         with self.assertRaises(ValueError): pv(100, 0, -1)
     def test_nonfinite(self):
