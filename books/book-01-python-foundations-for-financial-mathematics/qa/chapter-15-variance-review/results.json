@@ -1,0 +1,432 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "d4c768b043888f2641eeba40cb470c7a82e552421058ec924302a5509c539edc",
+  "listing_sha256": "0139e5fd37f894ef8c1d000b66328ecc9f1e73c998bb95ff15b3514e8c156aaa",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "variance_standard_deviation.py"
+      ],
+      "returncode": 0,
+      "stdout": "Sample: {'count': 4, 'mean': 0.01, 'sum_squared_deviations': 0.001, 'variance': 0.0003333333333333333, 'standard_deviation': 0.018257418583505537, 'ddof': 1}\nPopulation: {'count': 4, 'mean': 0.01, 'sum_squared_deviations': 0.001, 'variance': 0.00025, 'standard_deviation': 0.015811388300841896, 'ddof': 0}\n",
+      "stderr": "test_01_count (__main__.VarianceSDTests.test_01_count) ... ok\ntest_02_mean (__main__.VarianceSDTests.test_02_mean) ... ok\ntest_03_ss (__main__.VarianceSDTests.test_03_ss) ... ok\ntest_04_sample_variance (__main__.VarianceSDTests.test_04_sample_variance) ... ok\ntest_05_population_variance (__main__.VarianceSDTests.test_05_population_variance) ... ok\ntest_06_sample_sd (__main__.VarianceSDTests.test_06_sample_sd) ... ok\ntest_07_constant (__main__.VarianceSDTests.test_07_constant) ... ok\ntest_08_single_population (__main__.VarianceSDTests.test_08_single_population) ... ok\ntest_09_downside (__main__.VarianceSDTests.test_09_downside) ... ok\ntest_10_annualization (__main__.VarianceSDTests.test_10_annualization) ... ok\ntest_11_portfolio (__main__.VarianceSDTests.test_11_portfolio) ... ok\ntest_12_invalid (__main__.VarianceSDTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import variance_standard_deviation"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "variance_standard_deviation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1-E8 0 count",
+      "passed": true,
+      "actual": 4,
+      "independent_reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 0 mean",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 0 sum_squared_deviations",
+      "passed": true,
+      "actual": 0.001,
+      "independent_reference": "1/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 0 variance",
+      "passed": true,
+      "actual": 0.00025,
+      "independent_reference": "1/4000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 0 standard_deviation",
+      "passed": true,
+      "actual": 0.015811388300841896,
+      "independent_reference": "0.015811388300841896659994467722163592668597775696626084134287524263962972193196191",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 0 ddof",
+      "passed": true,
+      "actual": 0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 1 count",
+      "passed": true,
+      "actual": 4,
+      "independent_reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 1 mean",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 1 sum_squared_deviations",
+      "passed": true,
+      "actual": 0.001,
+      "independent_reference": "1/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 1 variance",
+      "passed": true,
+      "actual": 0.0003333333333333333,
+      "independent_reference": "1/3000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 1 standard_deviation",
+      "passed": true,
+      "actual": 0.018257418583505537,
+      "independent_reference": "0.018257418583505537115232326093360071131758156499932775140896481657749775904090758",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E8 1 ddof",
+      "passed": true,
+      "actual": 1,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 constant zero",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 singleton population",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 two-point sample",
+      "passed": true,
+      "actual": 0.0002,
+      "independent_reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 shifted variance",
+      "passed": true,
+      "actual": 0.0003333333333333334,
+      "independent_reference": "1/3000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 scaled variance",
+      "passed": true,
+      "actual": 0.0013333333333333333,
+      "independent_reference": "1/750",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 squared-percent units",
+      "passed": true,
+      "actual": 3.3333333333333335,
+      "independent_reference": "10/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 downside all-n",
+      "passed": true,
+      "actual": 0.005,
+      "independent_reference": "1/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 annualized",
+      "passed": true,
+      "actual": 0.15874507866387544,
+      "independent_reference": "0.15874507866387543543009694521835562554261555098494701082210006755206412939381702",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 portfolio variance",
+      "passed": true,
+      "actual": 0.0325,
+      "independent_reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 portfolio SD",
+      "passed": true,
+      "actual": 0.18027756377319948,
+      "independent_reference": "0.18027756377319946465596106337352479731256482869226231063552265281135834741465052",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 perfect positive",
+      "passed": true,
+      "actual": 0.0625,
+      "independent_reference": "1/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 perfect negative",
+      "passed": true,
+      "actual": 0.0025,
+      "independent_reference": "1/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 outlier variance",
+      "passed": true,
+      "actual": 0.0012,
+      "independent_reference": "3/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project annualized sample SD",
+      "passed": true,
+      "actual": 0.28982753492378877,
+      "independent_reference": "0.28982753492378877147437328314339543446280265749517946177391849614236288745307361",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project stress variance",
+      "passed": true,
+      "actual": 0.004166666666666667,
+      "independent_reference": "1/240",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 exact constant variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 large constant mean",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 integer spread",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 tiny downside avoids squared underflow",
+      "passed": true,
+      "actual": 1e-200,
+      "independent_reference": "1e-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 large downside avoids squared overflow",
+      "passed": true,
+      "actual": 1e+200,
+      "independent_reference": "1e+200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 valid large covariance",
+      "passed": true,
+      "actual": 1e+200,
+      "independent_reference": "1e+200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F129 exact zero on constant input",
+      "passed": true
+    },
+    {
+      "label": "E10 single sample undefined",
+      "passed": true,
+      "exception": "ValueError('insufficient observations')"
+    },
+    {
+      "label": "empty rejected",
+      "passed": true,
+      "exception": "ValueError('nonempty list or tuple required')"
+    },
+    {
+      "label": "missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "boolean ddof rejected",
+      "passed": true,
+      "exception": "ValueError('ddof must be 0 or 1')"
+    },
+    {
+      "label": "invalid ddof rejected",
+      "passed": true,
+      "exception": "ValueError('ddof must be 0 or 1')"
+    },
+    {
+      "label": "negative annualization rejected",
+      "passed": true,
+      "exception": "ValueError('positive annualization factor required')"
+    },
+    {
+      "label": "bad threshold rejected",
+      "passed": true,
+      "exception": "ValueError('finite threshold required')"
+    },
+    {
+      "label": "F129 zero variance forbids covariance",
+      "passed": true,
+      "exception": "ValueError('invalid variance/covariance parameters')"
+    },
+    {
+      "label": "F129 tiny infeasible covariance rejected",
+      "passed": true,
+      "exception": "ValueError('invalid variance/covariance parameters')"
+    },
+    {
+      "label": "F129 annualization overflow rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F129 unreportable moment variance rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "project source fixture preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "source_returns": [
+      0.02,
+      -0.01,
+      0.03,
+      0
+    ],
+    "dates": null,
+    "frequency": "hypothetical daily",
+    "units": "decimal simple returns",
+    "source": "synthetic manuscript fixture",
+    "corporate_actions": "not applicable; supplied returns",
+    "fixture_sha256": "66f9edbab2236250e6ee53ab1bbf3665c381c7cdf924233ce2ce20b3af4be3d7",
+    "population": {
+      "count": 4,
+      "mean": 0.01,
+      "sum_squared_deviations": 0.001,
+      "variance": 0.00025,
+      "standard_deviation": 0.015811388300841896,
+      "ddof": 0
+    },
+    "sample": {
+      "count": 4,
+      "mean": 0.01,
+      "sum_squared_deviations": 0.001,
+      "variance": 0.0003333333333333333,
+      "standard_deviation": 0.018257418583505537,
+      "ddof": 1
+    },
+    "downside": 0.005,
+    "annualization_factor": 252,
+    "annualized": 0.28982753492378877,
+    "stress_returns": [
+      0.02,
+      -0.01,
+      0.13,
+      0
+    ],
+    "stress_sample": {
+      "count": 4,
+      "mean": 0.035,
+      "sum_squared_deviations": 0.0125,
+      "variance": 0.004166666666666667,
+      "standard_deviation": 0.06454972243679029,
+      "ddof": 1
+    },
+    "portfolio_variance": 0.0325
+  }
+}
