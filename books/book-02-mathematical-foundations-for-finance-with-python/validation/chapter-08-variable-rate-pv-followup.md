@@ -1,0 +1,17 @@
+# Section 8.4 variable-rate PV follow-up
+
+Baseline `232476e4b766bcbae0c52357dd952ff9cd663bc6`, Section 8.4 blob `8ec9d1318064214866472b83691a602f3d4a5f0e`. Corrected executable tree `21ebbc28a1b08b93c9103d791c90d6bab15ec815`. [Exact dependencies, initial failures, replay and reruns](chapter-08-variable-rate-pv-followup.json).
+
+**63 checks pass**, with sixteen baseline mismatches retained. Initial baseline/replay observations match byte for byte, as do initial corrected/rerun observations. Existing Section 8.4 and 55-case callback suites also pass.
+
+The independent oracle uses 1800- and 2400-digit log-scale expressions: log(amount) - horizon·returned_rate, adding log(horizon) and log(represented 0.002) for sensitivity. Both precision runs agree on every selected rounding. Production instead combines exact rational coefficients with the shared exponential kernel. Zero identities and extreme exponent bounds are derived separately. This is selected numerical evidence, not a universal transcendental error-bound proof.
+
+The 36 value/sensitivity observations cover coefficient/exponential rescue, sensitivity recovery when PV itself rounds to zero, signed zeros, subnormal inputs, zero-rate models, genuine final overflow and ordinary values. Six further observations independently reproduce each of the two binary64 affine-rate roundings using Decimal operands. Twenty-one guard/validation observations preserve type/domain requirements, including invalid factors on zero identities and derivative horizon-first validation.
+
+The two ordinary sensitivity mismatches of one ulp are reconciled under the explicit complete-expression rounding contract; they are not claimed as violations of a previously documented one-rounding requirement. Fourteen other selected mismatches include lost finite outputs, NaN zero identities and nonfinite final results. Counts are observations, not distinct defects or coverage percentages.
+
+The wrapper retains the public rate helper's returned float, combines the exact represented horizon-rate product and all sensitivity coefficients, and handles zero amount/horizon only after validation. The sensitivity is the analytic model expression using the represented coefficient, not the derivative of discontinuous machine rounding. Final nonfinite financial outputs raise ValueError. The shared kernel uses precision 1300 and conservative ±10000 exponent cutoffs; finite c and t and the fixed 0.002 coefficient cannot offset those extremes. Other function formulas are unchanged.
+
+Run `python check_variable_rate_pv_range.py` in `chapter-08/code`. For baseline replay retrieve the original Section 8.4 source at the baseline revision into a separate directory and pass that directory as the corrected checker's sole argument. Its source hash is verified; Section 8.1 is the unchanged pinned dependency. Baseline/replay exit 1, corrected/rerun exit 0. A validation-priority discriminator was strengthened from two TypeError inputs to NaN amount plus bool horizon; all observation JSON stayed identical. A rejected local delete/add patch was retried as an update before execution; this staging issue is separate from numerical failures.
+
+[V-107 full runtime](runtime-refresh-2026-11-07-r13.md). Next: [discrete-compounding scaling baseline](chapter-08-discrete-compounding-range-baseline.md). COV-51 remains partial; thirty-five selected categories are partially addressed, none closed. Independent reviewer, supported-platform, release and canonical approval remain pending.
