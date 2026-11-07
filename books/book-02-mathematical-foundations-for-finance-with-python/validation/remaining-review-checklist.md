@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `00fd462aa3a0da15d5babd6c26dc6e49c072e425`  
-**Latest scoped source revision:** `00fd462aa3a0da15d5babd6c26dc6e49c072e425` (included in V-96)  
-**Disposition:** V-96 full candidate Linux pass includes the Chapter 21 implemented-interface map; independent review and release approval pending.
+**Full-runtime candidate source revision:** `12de5ae82ef9155593bf2b97ebfd034524bef0b5`  
+**Latest scoped source revision:** `12de5ae82ef9155593bf2b97ebfd034524bef0b5` (included in V-97)  
+**Disposition:** V-97 full candidate Linux pass includes CF-04 acceptance and its checker; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-96](runtime-refresh-2026-11-07-r02.md): 561 compiled, 348 passed, 562 required hashes verified before/after. G2–G8 unchanged.
+[V-97](runtime-refresh-2026-11-07-r03.md): 562 compiled, 349 passed, 563 required hashes verified before/after. G2–G8 unchanged.
+
+[V-96](runtime-refresh-2026-11-07-r02.md): 561 compiled, 348 passed, 562 required hashes verified before/after.
 
 [V-95](runtime-refresh-2026-11-07-r01.md): 560 compiled, 347 passed, 561 required hashes verified before/after.
 
@@ -149,7 +151,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-96](runtime-refresh-2026-11-07-r02.md) at `00fd462aa3a0da15d5babd6c26dc6e49c072e425`; 561 sources/348 scripts/562 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-97](runtime-refresh-2026-11-07-r03.md) at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`; 562 sources/349 scripts/563 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -722,3 +724,11 @@ Next: [Implemented-interface baseline](chapter-21-implemented-interface-baseline
 [V-96](runtime-refresh-2026-11-07-r02.md) compiled 561 files, passed 348 scripts and verified 562 required blobs before and after at `00fd462aa3a0da15d5babd6c26dc6e49c072e425`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [CF-04 splitting-property baseline](chapter-21-splitting-property-baseline.md) records subnormal rounding and individual-term overflow boundaries for the plan's same-date splitting claim. Reconcile its acceptance domain and tolerance with the implemented aggregation policy. Wider capstone requirements and manual reviews remain open.
+
+## Cash-flow splitting acceptance — V-97
+
+[CF-04 acceptance reconciliation](chapter-21-splitting-property-followup.md) specifies the represented-amount identity, finite-term domain and rounding comparison for CF-04. All 23 final checks passed; the two missing-policy baseline observations, exact replay and initial checker-assumption correction are retained. The valuation aggregation policy is unchanged. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-97](runtime-refresh-2026-11-07-r03.md) compiled 562 files, passed 349 scripts and verified 563 required blobs before and after at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [INT-01 equivalent-factor baseline](chapter-21-equivalent-factor-property-baseline.md) records two finite long-horizon discrepancies after rounded rate conversion. Specify INT-01 acceptance using independently derived conversion-error propagation and convention references. Wider capstone requirements and manual reviews remain open.
