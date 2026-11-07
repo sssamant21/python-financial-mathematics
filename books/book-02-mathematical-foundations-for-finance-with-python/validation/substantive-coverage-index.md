@@ -805,3 +805,11 @@ Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callbac
 [V-106](runtime-refresh-2026-11-07-r12.md) at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`: 572 files compiled, 359 scripts passed, 573 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.4 variable-rate PV baseline](chapter-08-variable-rate-pv-baseline.md). Actual probes lose finite complete PV/sensitivity results to underflow and return NaN for zero amount. Independent 200/400-digit references agree for the returned represented rate. Establish complete scaling and zero identities while preserving the intended factor-rate convention; do not repeat completed callback/centered-copy examples.
+
+## V-107 checkpoint — Section 8.4 variable-rate PV
+
+[Variable-rate PV follow-up](chapter-08-variable-rate-pv-followup.md): all 63 checks pass; sixteen baseline mismatches, an identical replay and corrected rerun retained. Independent 1800/2400-digit log-scale references check complete coefficients/exponents, zero identities and finite sensitivity recovery when PV rounds to zero. Six independently rounded affine-rate cases preserve the public rate convention. Input domains, signed zeros and validation precedence remain checked. The strengthened validation-priority discriminator did not change observation JSON. Existing Section 8.4 and callback suites also pass.
+
+[V-107](runtime-refresh-2026-11-07-r13.md) at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`: 573 files compiled, 360 scripts passed, 574 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 discrete-compounding baseline](chapter-08-discrete-compounding-range-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-discrete-compounding-range-baseline.json). Actual intermediate overflow/underflow loses finite complete values and zero-principal identities. Preserve the intended nominal-rate/base/exponent conventions while deriving full results; do not repeat completed variable-rate PV examples.
