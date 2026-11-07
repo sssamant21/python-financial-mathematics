@@ -1,5 +1,6 @@
 """Section 8.3: product and quotient derivatives with financial examples."""
 import math
+from section_8_01 import centered_difference as _centered_difference
 from fractions import Fraction
 from decimal import Context, Decimal, localcontext
 
@@ -134,10 +135,7 @@ def discounted_value_derivative(t, rate, payment, payment_derivative):
     return _scaled_payment(coefficient, -Fraction(r)*Fraction(t))
 
 def centered_difference(function, x, step=1e-4):
-    x, h = finite(x, "x"), finite(step, "step")
-    if h == 0:
-        raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    return _centered_difference(function, x, step)
 
 if __name__ == "__main__":
     print("Product derivative at x=2:", product_derivative(lambda x:x*x, lambda x:2*x, lambda x:3*x+1, lambda x:3, 2))
