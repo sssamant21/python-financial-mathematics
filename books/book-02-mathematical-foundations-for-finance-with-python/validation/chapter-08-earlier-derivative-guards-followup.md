@@ -1,0 +1,11 @@
+# Section 8.1 earlier derivative-helper guards
+
+[Initial probes](chapter-08-earlier-derivative-guards-baseline.md) · [Exact observations and source blobs](chapter-08-earlier-derivative-guards-followup.json) · [Corrected source](https://github.com/sssamant21/python-financial-mathematics/blob/d702d2761735c11ab501900c899cae4557742a09/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py).
+
+The baseline failed ten of 25 checks. Replaying the pinned checker against the original source produced identical rows. All 25 corrected cases pass, and the unchanged Section 8.1 regression suite passes against the corrected module. The first checker attempt could not serialize an infinite callback coordinate with strict JSON; its exit, stderr and source hash are retained separately. The checker was corrected to encode nonfinite coordinates as strings, not to accept the bad callback behavior.
+
+The helpers now validate finite distinct represented perturbations before any callback, retain signed nonzero steps and original evaluation order, and validate callback results. Complete sampled differences and specified denominators are combined exactly with Fraction before final float conversion. True final overflow raises ValueError. Finite results hidden by separate numerator or denominator overflow are retained; the financial PV helpers are unchanged.
+
+The checker observes callback counts/arguments and uses independently derived rational expectations from represented samples. It checks collapsed/overflowed points, zero steps, signed steps, callback NaN/bool, noncallables, large finite quotients, subnormal steps and true final-range failure. It checks these actual Section 8.1 entry points rather than attributing Section 8.8 results to the earlier copies. It does not guarantee that an arbitrary step accurately estimates a derivative.
+
+Run `python check_earlier_derivative_guards.py` from `chapter-08/code` at revision `d702d2761735c11ab501900c899cae4557742a09`. Baseline replay: pass the original checkout's absolute `chapter-08/code` directory as the sole argument. This adds selected COV-51 evidence only. Independent review, supported platforms, release acceptance and canonical approval remain pending. [Full candidate run](runtime-refresh-2026-11-07-r05.md).
