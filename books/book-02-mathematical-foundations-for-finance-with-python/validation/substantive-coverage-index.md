@@ -789,3 +789,11 @@ Next substantive work: [Section 8.2 polynomial range baseline](chapter-08-polyno
 [V-104](runtime-refresh-2026-11-07-r10.md) at `78b09101177563c3511c1932f6a4e7469567e7bc`: 570 files compiled, 357 scripts passed, 571 required hashes verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer sign-off, supported platforms, release acceptance and canonical approval remain pending.
 
 Next substantive obligation: [Section 8.2 financial cost-output baseline](chapter-08-cost-output-baseline.md), where a finite accepted quantity returns infinity. Derive complete financial references and establish the finite-output contract; do not repeat the completed polynomial or centered-copy corpus.
+
+## V-105 checkpoint — Section 8.2 cost output
+
+[Cost-output follow-up](chapter-08-cost-output-followup.md) retains four baseline mismatches and an identical replay; all 50 corrected checks pass. Thirty-two independent Decimal value/derivative references establish complete-expression rounding, twelve guard checks preserve quantity domains, and six composition regressions preserve profit call relationships. Three returned infinities now raise OverflowError; one one-ulp difference is reconciled under the explicit new rounding policy. No marginal-cost baseline failure is claimed. Existing Section 8.2 and polynomial-range suites pass.
+
+[V-105](runtime-refresh-2026-11-07-r11.md) at `7db1525c2f390b0eb9afa431c08648b6450737d3`: 571 files compiled, 358 scripts passed, 572 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callback-baseline.md). Actual probes retain a nonfinite chain product, an identity quotient yielding NaN instead of 1, and collapsed perturbations that still invoke callbacks. Preserve callback order/count and derive full sampled quotient/error contracts; do not repeat completed Section 8.2 cost/polynomial examples.
