@@ -1547,5 +1547,6 @@
   "oracle": "Independent 1800/2400-digit log-scale references, independently rounded two-step affine rates; 36 value/sensitivity observations, six affine-rounding observations and 21 input/validation observations.",
   "checker_refinement": "The initial validation-priority test used two invalid inputs that both raised TypeError. Replaced invalid amount text with NaN, so incorrect amount-first validation would raise ValueError. Baseline replay and corrected rerun remained byte-identical to their initial observations.",
   "setup_note": "An initial local apply_patch attempt combined delete/add for the same path and was rejected without editing files; retried as a single update. This is a staging issue, not a numerical failure.",
-  "limits": "Selected represented-rate PV model; no derivative of rounding discontinuities, universal transcendental error proof, independent reviewer or release/platform approval."
+  "limits": "Selected represented-rate PV model; no derivative of rounding discontinuities, universal transcendental error proof, independent reviewer or release/platform approval.",
+  "pinned_replay": "The exact published checker replayed against the original source blob and exited 1 with byte-identical baseline JSON. An initial comparison ran before the child completed and saw an empty output file; comparison was repeated only after process exit and passed. This premature comparison is a harness sequencing issue, not a numerical mismatch."
 }
