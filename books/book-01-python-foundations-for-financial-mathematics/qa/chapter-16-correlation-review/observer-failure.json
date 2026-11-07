@@ -1,0 +1,8 @@
+{
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/50da9af75d6f/run1611/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-16-correlation-review/review.py\", line 109, in <module>\n    if __name__=='__main__':raise SystemExit(main())\n                                             ^^^^^^\n  File \"/workspace/scratch/50da9af75d6f/run1611/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-16-correlation-review/review.py\", line 75, in main\n    close('lab rescaled empirical-dependence model SD',normal_risk,F(1,5)*root(F(1,3)))\n                                                                   ~~~~~~^~~~~~~~~~~~~\nTypeError: unsupported operand type(s) for *: 'Fraction' and 'decimal.Decimal'\n",
+  "cause": "QA oracle multiplied Fraction by Decimal; the unevaluated simplified SD reference also incorrectly assumed all three sample correlations were zero.",
+  "correction": "Use Decimal consistently and derive SD from the actual independent pairwise-difference covariance: correlations AB=AC=0, BC=-1/sqrt(3).",
+  "scope": "Observer error before a complete baseline report; manuscript unchanged."
+}
