@@ -1,0 +1,416 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "b0160b00368c24e8d353c6c1eda84186645b94c0001b4fd128aac84fd126d6eb",
+  "listing_sha256": "fcd5225d43f5cbf797676839f9dd171e002fe4b91d0c3444a32d41351616534f",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "mean_median_quantiles.py"
+      ],
+      "returncode": 0,
+      "stdout": "mean 0.01\nmedian 0.0\nQ05 -0.034\nQ95 0.06799999999999999\n",
+      "stderr": "test_01_mean (__main__.MeanMedianQuantileTests.test_01_mean) ... ok\ntest_02_median (__main__.MeanMedianQuantileTests.test_02_median) ... ok\ntest_03_q0 (__main__.MeanMedianQuantileTests.test_03_q0) ... ok\ntest_04_q25 (__main__.MeanMedianQuantileTests.test_04_q25) ... ok\ntest_05_q50 (__main__.MeanMedianQuantileTests.test_05_q50) ... ok\ntest_06_q75 (__main__.MeanMedianQuantileTests.test_06_q75) ... ok\ntest_07_q100 (__main__.MeanMedianQuantileTests.test_07_q100) ... ok\ntest_08_interpolation (__main__.MeanMedianQuantileTests.test_08_interpolation) ... ok\ntest_09_nearest_rank (__main__.MeanMedianQuantileTests.test_09_nearest_rank) ... ok\ntest_10_trimmed (__main__.MeanMedianQuantileTests.test_10_trimmed) ... ok\ntest_11_weighted (__main__.MeanMedianQuantileTests.test_11_weighted) ... ok\ntest_12_validation (__main__.MeanMedianQuantileTests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import mean_median_quantiles"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "mean_median_quantiles.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 mean",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 odd median",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 even median",
+      "passed": true,
+      "actual": 0.005,
+      "independent_reference": "1/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 minimum",
+      "passed": true,
+      "actual": -0.04,
+      "independent_reference": "-1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 maximum",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 Q1",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 Q3",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 IQR",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 interpolation",
+      "passed": true,
+      "actual": 7.5,
+      "independent_reference": "15/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 nearest rank",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 median equivalence",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 strict downside",
+      "passed": true,
+      "actual": 0.4,
+      "independent_reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 outlier mean",
+      "passed": true,
+      "actual": 0.065,
+      "independent_reference": "13/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 outlier median",
+      "passed": true,
+      "actual": 0.025,
+      "independent_reference": "1/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 trimmed",
+      "passed": true,
+      "actual": 0.025,
+      "independent_reference": "1/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 weighted",
+      "passed": true,
+      "actual": 0.035,
+      "independent_reference": "7/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 unequal weights",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 stress mean",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 stress median",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 Q05",
+      "passed": true,
+      "actual": -0.034,
+      "independent_reference": "-17/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 Q95",
+      "passed": true,
+      "actual": 0.06799999999999999,
+      "independent_reference": "17/250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E24 stylized loss",
+      "passed": true,
+      "actual": 3400.0000000000005,
+      "independent_reference": "3400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F128 large mean",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F128 large even median",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F128 large trimmed mean",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F128 opposite extreme interpolation",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F128 extreme endpoint",
+      "passed": true,
+      "actual": -1e+308,
+      "independent_reference": "-1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F128 weighted product overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F128 weight sum overflow",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F128 exact nearest-rank boundary",
+      "passed": false,
+      "actual": 14.0,
+      "independent_reference": "13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F128 integer order preserved",
+      "passed": false
+    },
+    {
+      "label": "F128 integer ranked value preserved",
+      "passed": false
+    },
+    {
+      "label": "E17 shift mean",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "0.03",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 scale mean",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1.0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 shift median",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "0.02",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 scale median",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0.0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 shift quantile",
+      "passed": true,
+      "actual": 0.012,
+      "independent_reference": "0.012",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 scale quantile",
+      "passed": true,
+      "actual": -0.8,
+      "independent_reference": "-0.8",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "empty rejected",
+      "passed": true,
+      "exception": "ValueError('nonempty list or tuple required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "bad probability rejected",
+      "passed": true,
+      "exception": "ValueError('quantile probability must be in [0,1]')"
+    },
+    {
+      "label": "nearest-rank zero rejected",
+      "passed": true,
+      "exception": "ValueError('nearest-rank p must be in (0,1]')"
+    },
+    {
+      "label": "trim all rejected",
+      "passed": true,
+      "exception": "ValueError('invalid trimming')"
+    },
+    {
+      "label": "negative weight rejected",
+      "passed": true,
+      "exception": "ValueError('invalid values or weights')"
+    },
+    {
+      "label": "zero weights rejected",
+      "passed": true,
+      "exception": "ValueError('positive total weight required')"
+    },
+    {
+      "label": "weight mismatch rejected",
+      "passed": true,
+      "exception": "ValueError('length mismatch')"
+    },
+    {
+      "label": "source input unchanged",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "source_returns": [
+      -0.04,
+      -0.01,
+      0,
+      0.02,
+      0.08
+    ],
+    "dates": null,
+    "frequency": "not supplied; hypothetical common period",
+    "units": "decimal simple returns",
+    "fixture_sha256": "290b099dd6bb46e02cc6fc59c24679c6022d081771d8d7e3f6433bf920a98e28",
+    "quantile_method": "type 7",
+    "missing_policy": "reject; filtering must be disclosed upstream",
+    "weighted_fixture_returns": [
+      0.02,
+      0.08
+    ],
+    "weighted_fixture_weights": [
+      0.75,
+      0.25
+    ]
+  }
+}
