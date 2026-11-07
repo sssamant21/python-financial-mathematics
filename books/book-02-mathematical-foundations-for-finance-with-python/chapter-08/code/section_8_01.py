@@ -1,5 +1,6 @@
 """Section 8.1: the derivative as a limit."""
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -19,21 +20,42 @@ def quadratic(x):
 def quadratic_derivative(x):
     return 2*finite(x, "x")
 
-def forward_difference(function, x, step):
+def _difference_points(function, x, step, centered):
     x, h = finite(x, "x"), finite(step, "step")
     if not callable(function):
         raise TypeError("function must be callable")
     if h == 0:
         raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x), "f(x)"))/h
+    up = x+h
+    down = x-h if centered else x
+    if (not math.isfinite(up) or not math.isfinite(down)
+            or up == x or (centered and down == x)):
+        raise ValueError("step must produce finite distinct perturbations")
+    return up, down, Fraction(h)*(2 if centered else 1)
+
+
+def _difference_result(first, second, denominator):
+    if first == second:
+        return (first-second) * (-1. if denominator < 0 else 1.)
+    try:
+        result = float((Fraction(first)-Fraction(second))/denominator)
+    except OverflowError as exc:
+        raise ValueError("difference estimate outside finite float range") from exc
+    return finite(result, "difference estimate")
+
+
+def forward_difference(function, x, step):
+    up, base, denominator = _difference_points(function, x, step, False)
+    first = finite(function(up), "f(x+h)")
+    second = finite(function(base), "f(x)")
+    return _difference_result(first, second, denominator)
+
 
 def centered_difference(function, x, step):
-    x, h = finite(x, "x"), finite(step, "step")
-    if not callable(function):
-        raise TypeError("function must be callable")
-    if h == 0:
-        raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    up, down, denominator = _difference_points(function, x, step, True)
+    first = finite(function(up), "f(x+h)")
+    second = finite(function(down), "f(x-h)")
+    return _difference_result(first, second, denominator)
 
 def present_value(amount, rate, years):
     c, r, t = finite(amount, "amount"), finite(rate, "rate"), finite(years, "years")
