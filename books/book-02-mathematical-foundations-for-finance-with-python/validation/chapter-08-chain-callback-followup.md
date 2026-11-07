@@ -1,0 +1,13 @@
+# Section 8.4 chain callback and centered-copy follow-up
+
+Baseline `880945028862ef69c463abc320e4842b88128217`; original Section 8.4 blob `c48e262b311561edccd42deaaf8407054baed103`. Corrected executable tree `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`. [Exact dependencies and all retained observations](chapter-08-chain-callback-followup.json).
+
+**55 checks pass**, with ten baseline mismatches and a byte-identical baseline replay. The mismatches include returned infinities/NaNs and callback side effects; they are not ten distinct numerical defects or category closures.
+
+Independent 2500-digit Decimal products check twelve represented callback-output pairs, including signed zero, signed underflow, finite scaling and true overflow. The implementation adds a finite-result guard after the existing product: nonfinite final derivatives raise ValueError. Actual callback instrumentation checks inner(x), outer_derivative(inner_value), inner_derivative(x) ordering and arguments, short circuit after nonfinite results, and exception identity at each stage. Preflight type/domain behavior is checked. No callback is retried.
+
+The actual Section 8.4 centered wrapper delegates to Section 8.1's guarded implementation while preserving its default step 1e-4 and callable-before-controls validation precedence. Seven complete sampled quotients have independent exact rational references from the represented samples and steps. Identity samples ±maximum float with steps ±maximum float correctly yield 1 despite overflowing naive intermediates. True final overflow rejects, sample arguments retain order/sign, collapsed or overflowed perturbations reject before callbacks, and callback type/error propagation is checked. These actual wrapper checks do not count inherited helper evidence as a new reviewer sign-off.
+
+Run `python check_chain_callback_range.py` from `chapter-08/code`. For baseline replay retrieve the original Section 8.4 module at the baseline revision into a separate directory and pass that directory as the corrected checker's sole argument. The requested file must exist; Section 8.1 is the unchanged dependency in the pinned tree. Original source hash verified. Baseline and replay exit 1 with identical observations; corrected run and existing Section 8.4 reference suite exit 0. No initial checker correction was required in this batch.
+
+[V-106 full runtime](runtime-refresh-2026-11-07-r12.md). Next: [variable-rate PV scaling baseline](chapter-08-variable-rate-pv-baseline.md). Financial formulas, nested polynomial and other range/domain obligations remain open under COV-51. Thirty-five selected categories remain partial, none closed. Independent reviewer, supported-platform, release and canonical approval remain pending.
