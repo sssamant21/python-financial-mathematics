@@ -1,0 +1,451 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "d2caf92d172d875caa1644898d884cf1bdead3d351fcfe98b88cf21dd9811f0f",
+  "listing_sha256": "650dbd9cb69ae05a51b489aef78993c71d03b52f49c565475acd53b1e1d2ad92",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "correlation.py"
+      ],
+      "returncode": 0,
+      "stdout": "Pearson: 1.0\nSpearman: 1.0\n",
+      "stderr": "test_01_perfect_positive (__main__.CorrelationTests.test_01_perfect_positive) ... ok\ntest_02_perfect_negative (__main__.CorrelationTests.test_02_perfect_negative) ... ok\ntest_03_symmetry (__main__.CorrelationTests.test_03_symmetry) ... ok\ntest_04_shift (__main__.CorrelationTests.test_04_shift) ... ok\ntest_05_scale (__main__.CorrelationTests.test_05_scale) ... ok\ntest_06_rank_positive (__main__.CorrelationTests.test_06_rank_positive) ... ok\ntest_07_rank_negative (__main__.CorrelationTests.test_07_rank_negative) ... ok\ntest_08_tie_ranks (__main__.CorrelationTests.test_08_tie_ranks) ... ok\ntest_09_rolling (__main__.CorrelationTests.test_09_rolling) ... ok\ntest_10_matrix (__main__.CorrelationTests.test_10_matrix) ... ok\ntest_11_nonlinear (__main__.CorrelationTests.test_11_nonlinear) ... ok\ntest_12_invalid (__main__.CorrelationTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import correlation"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "correlation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 positive",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 negative",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 dependent zero",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 units",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 ratio",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 shift",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 reversal",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 symmetry",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 nonlinear Pearson",
+      "passed": true,
+      "actual": 0.9843740386976972,
+      "independent_reference": "0.98437403869769721994089587190779161285707235493715682829561175507185369443331961",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 monotonic Spearman",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 inverse Spearman",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 tied Spearman",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "0.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 symmetric dependence",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F132 integer Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F132 integer Spearman",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F132 large-product Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F132 small-product Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F132 opposite-extreme Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F132 large-offset mean Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 average ranks",
+      "passed": true
+    },
+    {
+      "label": "project Pearson/covariance-SD ratio",
+      "passed": true,
+      "actual": 0.8285714285714286,
+      "independent_reference": "0.82857142857142857142857142857142857142857142857142857142857142857142857142857143",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project Spearman",
+      "passed": true,
+      "actual": 0.8285714285714286,
+      "independent_reference": "0.82857142857142857142857142857142857142857142857142857142857142857142857142857143",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19/project rolling count 3",
+      "passed": true
+    },
+    {
+      "label": "project rolling (3, 0)",
+      "passed": true,
+      "actual": 0.6546536707079772,
+      "independent_reference": "0.65465367070797714379829245624685835556920808239542455751532030341526691793539584",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project rolling (3, 1)",
+      "passed": true,
+      "actual": 0.6546536707079772,
+      "independent_reference": "0.65465367070797714379829245624685835556920808239542455751532030341526691793539584",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project rolling (3, 2)",
+      "passed": true,
+      "actual": 0.6546536707079772,
+      "independent_reference": "0.65465367070797714379829245624685835556920808239542455751532030341526691793539584",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project rolling (3, 3)",
+      "passed": true,
+      "actual": 0.6546536707079772,
+      "independent_reference": "0.65465367070797714379829245624685835556920808239542455751532030341526691793539584",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19/project rolling count 4",
+      "passed": true
+    },
+    {
+      "label": "project rolling (4, 0)",
+      "passed": true,
+      "actual": 0.6,
+      "independent_reference": "0.6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project rolling (4, 1)",
+      "passed": true,
+      "actual": 0.8682431421244592,
+      "independent_reference": "0.86824314212445919333178911710963689104524267906553867254701764192072499472584334",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project rolling (4, 2)",
+      "passed": true,
+      "actual": 0.6,
+      "independent_reference": "0.6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21/project matrix (0, 0)",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21/project matrix (0, 1)",
+      "passed": true,
+      "actual": 0.8285714285714286,
+      "independent_reference": "0.82857142857142857142857142857142857142857142857142857142857142857142857142857143",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21/project matrix (1, 0)",
+      "passed": true,
+      "actual": 0.8285714285714286,
+      "independent_reference": "0.82857142857142857142857142857142857142857142857142857142857142857142857142857143",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21/project matrix (1, 1)",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 matrix range",
+      "passed": true
+    },
+    {
+      "label": "matrix PSD in this two-asset fixture",
+      "passed": true
+    },
+    {
+      "label": "E14 constant undefined",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "F132 decimal constant undefined",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "constant ranks undefined",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "empty rejected",
+      "passed": true,
+      "exception": "ValueError('aligned nonempty equal-length observations required')"
+    },
+    {
+      "label": "one pair rejected",
+      "passed": true,
+      "exception": "ValueError('at least two pairs required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "length mismatch rejected",
+      "passed": true,
+      "exception": "ValueError('aligned nonempty equal-length observations required')"
+    },
+    {
+      "label": "bad rolling size rejected",
+      "passed": true,
+      "exception": "ValueError('invalid rolling window')"
+    },
+    {
+      "label": "constant rolling window rejected",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "matrix length mismatch rejected",
+      "passed": true,
+      "exception": "ValueError('series lengths must match')"
+    },
+    {
+      "label": "project inputs unchanged",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "a": [
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06
+    ],
+    "b": [
+      0.02,
+      0.01,
+      0.04,
+      0.03,
+      0.06,
+      0.05
+    ],
+    "period_labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "frequency": "hypothetical daily",
+    "dates": null,
+    "units": "decimal simple returns",
+    "source": "synthetic fixture declared in reviewed manuscript",
+    "fixture_sha256": "792b32946b0464d781cc5c1855f32016351b25a5f1f3d48aa4204780964bf513",
+    "pearson": 0.8285714285714286,
+    "spearman": 0.8285714285714286,
+    "rolling": {
+      "3": [
+        0.6546536707079772,
+        0.6546536707079772,
+        0.6546536707079772,
+        0.6546536707079772
+      ],
+      "4": [
+        0.6,
+        0.8682431421244592,
+        0.6
+      ]
+    },
+    "matrix": [
+      [
+        1.0,
+        0.8285714285714286
+      ],
+      [
+        0.8285714285714286,
+        1.0
+      ]
+    ],
+    "monotonic_pearson": 0.9843740386976972,
+    "monotonic_spearman": 1.0,
+    "symmetric_pearson": 0.0
+  }
+}
