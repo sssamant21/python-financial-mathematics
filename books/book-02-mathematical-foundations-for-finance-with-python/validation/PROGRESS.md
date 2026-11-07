@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-98 full candidate Linux pass (563 files, 350 scripts, 564 required hashes), including INT-01 equivalent-factor acceptance. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-99 full candidate Linux pass (564 files, 351 scripts, 565 required hashes), including Section 8.1 derivative-helper guards. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 563/563 at `2a87994b660c5ea1f600a9187edf097d3ca70dce`. [V-98](runtime-refresh-2026-11-07-r04.md). |
-| Automated script execution | Full candidate Linux pass | 350/350 at `2a87994b660c5ea1f600a9187edf097d3ca70dce`; all 564 required hashes matched before/after. [V-98](runtime-refresh-2026-11-07-r04.md). |
+| Python compilation | Full candidate Linux pass | 564/564 at `d702d2761735c11ab501900c899cae4557742a09`. [V-99](runtime-refresh-2026-11-07-r05.md). |
+| Automated script execution | Full candidate Linux pass | 351/351 at `d702d2761735c11ab501900c899cae4557742a09`; all 565 required hashes matched before/after. [V-99](runtime-refresh-2026-11-07-r05.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -917,3 +917,11 @@ Next: [INT-01 equivalent-factor baseline](chapter-21-equivalent-factor-property-
 [V-98](runtime-refresh-2026-11-07-r04.md) compiled 563 files, passed 350 scripts and verified 564 required blobs before and after at `2a87994b660c5ea1f600a9187edf097d3ca70dce`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.1 earlier-helper baseline](chapter-08-earlier-derivative-guards-baseline.md) addresses the register's COV-51 earlier copies: Section 8.1 invokes callbacks on collapsed perturbations and returns an infinite estimate from finite samples. Check actual callback/preflight and complete-stencil range behavior without repeating Section 8.8 cases as new coverage. Other capstone requirements and manual reviews remain open.
+
+## Earlier derivative-helper guards — V-99
+
+[Section 8.1 earlier-helper follow-up](chapter-08-earlier-derivative-guards-followup.md) retains ten baseline mismatches, an identical replay, an initial checker serialization failure and 25 passing corrected cases. Section 8.1 now preflights represented perturbations before callbacks and evaluates complete sampled quotients before final rounding. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-99](runtime-refresh-2026-11-07-r05.md) compiled 564 files, passed 351 scripts and verified 565 required blobs before and after at `d702d2761735c11ab501900c899cae4557742a09`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.3 product/quotient baseline](chapter-08-product-quotient-range-baseline.md) records finite analytic product/quotient derivative results lost to intermediate overflow. Check complete expressions, callbacks and true final range without attributing completed sampled-stencil cases to those separate helpers. Remaining financial-PV and copied-helper ranges and manual review remain open.
