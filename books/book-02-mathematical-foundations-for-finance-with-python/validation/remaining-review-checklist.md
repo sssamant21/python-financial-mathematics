@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`  
-**Latest scoped source revision:** `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed` (included in V-102)  
-**Disposition:** V-102 full candidate Linux pass includes Section 8.3 discounted-payment corrections; independent review and release approval pending.
+**Date:** 2026-11-07  
+**Full-runtime candidate source revision:** `a6441d707337946a76e059c6cf53a5b05291afa0`  
+**Latest scoped source revision:** `a6441d707337946a76e059c6cf53a5b05291afa0` (included in V-103)  
+**Disposition:** V-103 full candidate Linux pass includes Section 8.1 financial range and Section 8.3 centered wrapper; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-103](runtime-refresh-2026-11-07-r09.md): 569 compiled, 356 passed, 570 required hashes verified before/after. G2–G8 unchanged.
 
 [V-102](runtime-refresh-2026-11-07-r08.md): 567 compiled, 354 passed, 568 required hashes verified before/after. G2–G8 unchanged.
 
@@ -161,7 +163,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-102](runtime-refresh-2026-11-07-r08.md) at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`; 567 sources/354 scripts/568 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-103](runtime-refresh-2026-11-07-r09.md) at `a6441d707337946a76e059c6cf53a5b05291afa0`; 569 sources/356 scripts/570 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -782,3 +784,11 @@ Next: [Discounted-payment baseline](chapter-08-discounted-payment-range-baseline
 [V-102](runtime-refresh-2026-11-07-r08.md) compiled 567 files, passed 354 scripts and verified 568 required blobs before and after at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.1 initial-PV baseline](chapter-08-initial-pv-range-baseline.md) records finite PV/derivative/stable-quotient results lost to premature underflow in Section 8.1's distinct financial functions. Preserve their domains and derive complete references. The copied Section 8.3 centered difference and other early derivative helpers and manual review remain open.
+
+## V-103 checkpoint — 2026-11-07
+
+[Section 8.1 financial range](chapter-08-initial-pv-range-followup.md): forty corrected checks pass; seventeen baseline mismatches and valid baseline replay retained. [Section 8.3 centered wrapper](chapter-08-centered-copy-followup.md): eight checks pass; six baseline observations retained, including two new delegation requirements. The invalid missing-directory replay setup and corrected harness are disclosed separately.
+
+[V-103](runtime-refresh-2026-11-07-r09.md) at `a6441d707337946a76e059c6cf53a5b05291afa0`: 569 Python files compiled, 356 scripts passed, 570 required source/fixture hashes verified before/after. Counts derive from this pinned tree. Thirty-five selected COV categories remain partial, none closed; this is not a completion percentage or independent sign-off.
+
+Next substantive work: [Section 8.2 polynomial range baseline](chapter-08-polynomial-range-baseline.md), including two confirmed finite-result failures and the remaining centered-difference copy. Resume there without repeating completed Section 8.1 financial or Section 8.3 wrapper examples. Reviewer, supported-platform, release and canonical decisions remain pending.
