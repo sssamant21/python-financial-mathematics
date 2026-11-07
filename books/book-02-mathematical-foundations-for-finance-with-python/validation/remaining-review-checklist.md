@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `12de5ae82ef9155593bf2b97ebfd034524bef0b5`  
-**Latest scoped source revision:** `12de5ae82ef9155593bf2b97ebfd034524bef0b5` (included in V-97)  
-**Disposition:** V-97 full candidate Linux pass includes CF-04 acceptance and its checker; independent review and release approval pending.
+**Full-runtime candidate source revision:** `2a87994b660c5ea1f600a9187edf097d3ca70dce`  
+**Latest scoped source revision:** `2a87994b660c5ea1f600a9187edf097d3ca70dce` (included in V-98)  
+**Disposition:** V-98 full candidate Linux pass includes INT-01 acceptance and its checker; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-97](runtime-refresh-2026-11-07-r03.md): 562 compiled, 349 passed, 563 required hashes verified before/after. G2–G8 unchanged.
+[V-98](runtime-refresh-2026-11-07-r04.md): 563 compiled, 350 passed, 564 required hashes verified before/after. G2–G8 unchanged.
+
+[V-97](runtime-refresh-2026-11-07-r03.md): 562 compiled, 349 passed, 563 required hashes verified before/after.
 
 [V-96](runtime-refresh-2026-11-07-r02.md): 561 compiled, 348 passed, 562 required hashes verified before/after.
 
@@ -151,7 +153,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-97](runtime-refresh-2026-11-07-r03.md) at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`; 562 sources/349 scripts/563 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-98](runtime-refresh-2026-11-07-r04.md) at `2a87994b660c5ea1f600a9187edf097d3ca70dce`; 563 sources/350 scripts/564 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -732,3 +734,11 @@ Next: [CF-04 splitting-property baseline](chapter-21-splitting-property-baseline
 [V-97](runtime-refresh-2026-11-07-r03.md) compiled 562 files, passed 349 scripts and verified 563 required blobs before and after at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [INT-01 equivalent-factor baseline](chapter-21-equivalent-factor-property-baseline.md) records two finite long-horizon discrepancies after rounded rate conversion. Specify INT-01 acceptance using independently derived conversion-error propagation and convention references. Wider capstone requirements and manual reviews remain open.
+
+## Equivalent-rate factor acceptance — V-98
+
+[INT-01 factor acceptance](chapter-21-equivalent-factor-property-followup.md) specifies finite positive factors and conversion-error propagation for INT-01. All 33 checks passed, with two baseline policy gaps and an identical replay retained. Conversion and valuation implementations remain unchanged. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-98](runtime-refresh-2026-11-07-r04.md) compiled 563 files, passed 350 scripts and verified 564 required blobs before and after at `2a87994b660c5ea1f600a9187edf097d3ca70dce`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.1 earlier-helper baseline](chapter-08-earlier-derivative-guards-baseline.md) addresses the register's COV-51 earlier copies: Section 8.1 invokes callbacks on collapsed perturbations and returns an infinite estimate from finite samples. Check actual callback/preflight and complete-stencil range behavior without repeating Section 8.8 cases as new coverage. Other capstone requirements and manual reviews remain open.
