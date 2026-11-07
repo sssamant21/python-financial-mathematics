@@ -741,3 +741,11 @@ Next: [INT-01 equivalent-factor baseline](chapter-21-equivalent-factor-property-
 [V-98](runtime-refresh-2026-11-07-r04.md) compiled 563 files, passed 350 scripts and verified 564 required blobs before and after at `2a87994b660c5ea1f600a9187edf097d3ca70dce`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.1 earlier-helper baseline](chapter-08-earlier-derivative-guards-baseline.md) addresses the register's COV-51 earlier copies: Section 8.1 invokes callbacks on collapsed perturbations and returns an infinite estimate from finite samples. Check actual callback/preflight and complete-stencil range behavior without repeating Section 8.8 cases as new coverage. Other capstone requirements and manual reviews remain open.
+
+## Earlier derivative-helper guards — V-99
+
+[Section 8.1 earlier-helper follow-up](chapter-08-earlier-derivative-guards-followup.md) retains ten baseline mismatches, an identical replay, an initial checker serialization failure and 25 passing corrected cases. Section 8.1 now preflights represented perturbations before callbacks and evaluates complete sampled quotients before final rounding. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-99](runtime-refresh-2026-11-07-r05.md) compiled 564 files, passed 351 scripts and verified 565 required blobs before and after at `d702d2761735c11ab501900c899cae4557742a09`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.3 product/quotient baseline](chapter-08-product-quotient-range-baseline.md) records finite analytic product/quotient derivative results lost to intermediate overflow. Check complete expressions, callbacks and true final range without attributing completed sampled-stencil cases to those separate helpers. Remaining financial-PV and copied-helper ranges and manual review remain open.
