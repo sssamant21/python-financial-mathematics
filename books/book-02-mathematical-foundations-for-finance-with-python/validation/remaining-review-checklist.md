@@ -1,13 +1,15 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-06  
-**Full-runtime candidate source revision:** `e674373645a4b9787b3a412fd8262ff9a4c30fdf`  
-**Latest scoped source revision:** `e674373645a4b9787b3a412fd8262ff9a4c30fdf` (included in V-101)  
-**Disposition:** V-101 full candidate Linux pass includes Section 8.3 financial rational-expression corrections; independent review and release approval pending.
+**Full-runtime candidate source revision:** `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`  
+**Latest scoped source revision:** `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed` (included in V-102)  
+**Disposition:** V-102 full candidate Linux pass includes Section 8.3 discounted-payment corrections; independent review and release approval pending.
 
 ## Reconciled evidence
 
-[V-101](runtime-refresh-2026-11-07-r07.md): 566 compiled, 353 passed, 567 required hashes verified before/after. G2–G8 unchanged.
+[V-102](runtime-refresh-2026-11-07-r08.md): 567 compiled, 354 passed, 568 required hashes verified before/after. G2–G8 unchanged.
+
+[V-101](runtime-refresh-2026-11-07-r07.md): 566 compiled, 353 passed, 567 required hashes verified before/after.
 
 [V-100](runtime-refresh-2026-11-07-r06.md): 565 compiled, 352 passed, 566 required hashes verified before/after.
 
@@ -159,7 +161,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-101](runtime-refresh-2026-11-07-r07.md) at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`; 566 sources/353 scripts/567 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-102](runtime-refresh-2026-11-07-r08.md) at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`; 567 sources/354 scripts/568 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -772,3 +774,11 @@ Next: [Section 8.3 financial rational baseline](chapter-08-financial-rational-ra
 [V-101](runtime-refresh-2026-11-07-r07.md) compiled 566 files, passed 353 scripts and verified 567 required blobs before and after at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Discounted-payment baseline](chapter-08-discounted-payment-range-baseline.md) records finite/zero values and a finite derivative lost to separate exponential/coefficient arithmetic. Check actual payment callbacks and complete scaling; preserve the value wrapper's unused derivative-argument behavior. Copied finite-difference and Section 8.1 financial helpers and manual review remain open.
+
+## Discounted-payment callback range — V-102
+
+[Section 8.3 discounted-payment follow-up](chapter-08-discounted-payment-range-followup.md) retains eleven expanded baseline mismatches, an identical replay, earlier screen/rerun and 32 passing final cases. Independent separate discounted-term references check complete coefficient scaling, zero/cancelled identities, genuine final overflow and actual callback arguments/order. The existing Section 8.3 suite passes. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-102](runtime-refresh-2026-11-07-r08.md) compiled 567 files, passed 354 scripts and verified 568 required blobs before and after at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.1 initial-PV baseline](chapter-08-initial-pv-range-baseline.md) records finite PV/derivative/stable-quotient results lost to premature underflow in Section 8.1's distinct financial functions. Preserve their domains and derive complete references. The copied Section 8.3 centered difference and other early derivative helpers and manual review remain open.
