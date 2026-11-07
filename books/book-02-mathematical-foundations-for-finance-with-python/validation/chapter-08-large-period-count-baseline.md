@@ -16,6 +16,6 @@ Next batch should extend the count conversion without silently changing already 
 
 ## Existing count boundary must be preserved
 
-A fresh actual probe at n=9007199254740993 (2^53+1), years one and factor 960.0000000000002 returns nominal rate 1.0000000000000002. The existing float/int division and addition yield base 1.0000000000000002. Replacing the division globally with float(Fraction(rate)/n) instead yields base 1.0. This would materially change the model's value.
+A fresh actual probe at n=9007199254740993 (2^53+1), years one and factor 960.0000000000001 returns nominal rate 1.0000000000000002. The existing float/int division and addition yield base 1.0000000000000002. Replacing the division globally with float(Fraction(rate)/n) instead yields base 1.0. This would materially change the model's value.
 
 The actual complete-model value is 7.38905609893065 and sensitivity 0.007389056098930649. Decimal direct-power references at 200/400 digits agree. These observations are retained in the JSON alongside the three huge-count failures. The next fix should preserve the working conversion/base expression where it succeeds and handle the overflow case explicitly; do not assume exact integer division is behaviorally equivalent for all counts. Current checker final-base samples do not cover every such conversion boundary.
