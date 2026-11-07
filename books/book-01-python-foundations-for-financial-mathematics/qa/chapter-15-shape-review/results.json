@@ -1,0 +1,461 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "84892a6236f05625fc41ad4ba284cc4276fdf222e86df6bf96397fa15a1eb7bb",
+  "listing_sha256": "2e75a19568b43442dc2c4c28280f266c338fa6282f9365ea1a09656b1e6d0533",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "skewness_kurtosis.py"
+      ],
+      "returncode": 0,
+      "stdout": "Return distribution shape: {'n': 5, 'mean': 0.01, 'm2': 0.0016, 'skewness': 0.65625, 'kurtosis': 2.378125, 'excess_kurtosis': -0.621875}\n",
+      "stderr": "test_01_symmetric_skew (__main__.ShapeTests.test_01_symmetric_skew) ... ok\ntest_02_symmetric_kurtosis (__main__.ShapeTests.test_02_symmetric_kurtosis) ... ok\ntest_03_symmetric_excess (__main__.ShapeTests.test_03_symmetric_excess) ... ok\ntest_04_positive_skew (__main__.ShapeTests.test_04_positive_skew) ... ok\ntest_05_negative_skew (__main__.ShapeTests.test_05_negative_skew) ... ok\ntest_06_translation (__main__.ShapeTests.test_06_translation) ... ok\ntest_07_positive_scaling (__main__.ShapeTests.test_07_positive_scaling) ... ok\ntest_08_negative_scaling (__main__.ShapeTests.test_08_negative_scaling) ... ok\ntest_09_adjusted_skew (__main__.ShapeTests.test_09_adjusted_skew) ... ok\ntest_10_adjusted_kurtosis (__main__.ShapeTests.test_10_adjusted_kurtosis) ... ok\ntest_11_downside_frequency (__main__.ShapeTests.test_11_downside_frequency) ... ok\ntest_12_validation (__main__.ShapeTests.test_12_validation) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import skewness_kurtosis"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "skewness_kurtosis.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "project n",
+      "passed": true,
+      "actual": 5,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project mean",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project m2",
+      "passed": true,
+      "actual": 0.0016,
+      "independent_reference": "1/625",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project skewness",
+      "passed": true,
+      "actual": 0.65625,
+      "independent_reference": "0.65625",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project kurtosis",
+      "passed": true,
+      "actual": 2.378125,
+      "independent_reference": "761/320",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project excess_kurtosis",
+      "passed": true,
+      "actual": -0.621875,
+      "independent_reference": "-199/320",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project adjusted skew",
+      "passed": true,
+      "actual": 0.978279740156158,
+      "independent_reference": "0.978279740156158",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project adjusted excess",
+      "passed": true,
+      "actual": 1.5125,
+      "independent_reference": "121/80",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E9 symmetric skewness",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0.0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E9 symmetric kurtosis",
+      "passed": true,
+      "actual": 1.5,
+      "independent_reference": "3/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1-E9 symmetric excess_kurtosis",
+      "passed": true,
+      "actual": -1.5,
+      "independent_reference": "-3/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 right skew skewness",
+      "passed": true,
+      "actual": 1.1547005383792515,
+      "independent_reference": "1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 right skew kurtosis",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 right skew excess_kurtosis",
+      "passed": true,
+      "actual": -0.6666666666666666,
+      "independent_reference": "-2/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 left skew skewness",
+      "passed": true,
+      "actual": -1.1547005383792515,
+      "independent_reference": "-1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 left skew kurtosis",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 left skew excess_kurtosis",
+      "passed": true,
+      "actual": -0.6666666666666666,
+      "independent_reference": "-2/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project positive stress skewness",
+      "passed": true,
+      "actual": 1.395948042299686,
+      "independent_reference": "1.395948042299686",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project positive stress kurtosis",
+      "passed": true,
+      "actual": 3.1185553633217995,
+      "independent_reference": "72101/23120",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project positive stress excess_kurtosis",
+      "passed": true,
+      "actual": 0.1185553633217993,
+      "independent_reference": "2741/23120",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project negative stress skewness",
+      "passed": true,
+      "actual": -1.1821678532819835,
+      "independent_reference": "-1.1821678532819835",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project negative stress kurtosis",
+      "passed": true,
+      "actual": 2.9145,
+      "independent_reference": "5829/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project negative stress excess_kurtosis",
+      "passed": true,
+      "actual": -0.0855,
+      "independent_reference": "-171/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 integer offset skewness",
+      "passed": true,
+      "actual": 0.6872431934890912,
+      "independent_reference": "0.6872431934890912",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 integer offset kurtosis",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 integer offset excess_kurtosis",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 large fourth power skewness",
+      "passed": true,
+      "actual": 1.1547005383792515,
+      "independent_reference": "1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 large fourth power kurtosis",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 large fourth power excess_kurtosis",
+      "passed": true,
+      "actual": -0.6666666666666666,
+      "independent_reference": "-2/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 small fourth power skewness",
+      "passed": true,
+      "actual": 1.1547005383792515,
+      "independent_reference": "1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 small fourth power kurtosis",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F130 small fourth power excess_kurtosis",
+      "passed": true,
+      "actual": -0.6666666666666666,
+      "independent_reference": "-2/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 shifted skew",
+      "passed": true,
+      "actual": 1.1547005383792515,
+      "independent_reference": "1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 shifted kurt",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 scaled skew",
+      "passed": true,
+      "actual": 1.1547005383792515,
+      "independent_reference": "1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 scaled kurt",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 reflected skew",
+      "passed": true,
+      "actual": -1.1547005383792515,
+      "independent_reference": "-1.1547005383792515",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 reflected kurt",
+      "passed": true,
+      "actual": 2.3333333333333335,
+      "independent_reference": "7/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 downside",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 adjusted n4",
+      "passed": true,
+      "actual": 4.0,
+      "independent_reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 constant undefined",
+      "passed": true,
+      "exception": "ValueError('standardized moments undefined for constant observations')"
+    },
+    {
+      "label": "E16 adjusted skew n2",
+      "passed": true,
+      "exception": "ValueError('adjusted sample skewness requires n >= 3')"
+    },
+    {
+      "label": "E17 adjusted excess n3",
+      "passed": true,
+      "exception": "ValueError('adjusted excess kurtosis requires n >= 4')"
+    },
+    {
+      "label": "empty rejected",
+      "passed": true,
+      "exception": "ValueError('nonempty sequence required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "threshold rejected",
+      "passed": true,
+      "exception": "ValueError('finite threshold required')"
+    },
+    {
+      "label": "F130 unreportable required variance rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "project input unchanged",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "source_returns": [
+      -0.04,
+      -0.01,
+      0,
+      0.02,
+      0.08
+    ],
+    "frequency": null,
+    "instrument": "fictional strategy",
+    "units": "decimal simple returns",
+    "source": "synthetic manuscript fixture",
+    "fixture_sha256": "290b099dd6bb46e02cc6fc59c24679c6022d081771d8d7e3f6433bf920a98e28",
+    "source_report": {
+      "n": 5,
+      "mean": 0.01,
+      "m2": 0.0016,
+      "skewness": 0.65625,
+      "kurtosis": 2.378125,
+      "excess_kurtosis": -0.621875
+    },
+    "supplemental_m3": "21/500000",
+    "supplemental_m4": "761/125000000",
+    "supplemental_population_sd": "0.04",
+    "supplemental_median": "0",
+    "supplemental_type7_q05": "-17/500",
+    "source_adjusted_skew": 0.978279740156158,
+    "source_adjusted_excess": 1.5125,
+    "positive_stress": {
+      "n": 5,
+      "mean": 0.05,
+      "m2": 0.0136,
+      "skewness": 1.395948042299686,
+      "kurtosis": 3.1185553633217995,
+      "excess_kurtosis": 0.1185553633217993
+    },
+    "negative_stress": {
+      "n": 5,
+      "mean": -0.03,
+      "m2": 0.012,
+      "skewness": -1.1821678532819835,
+      "kurtosis": 2.9145,
+      "excess_kurtosis": -0.0855
+    }
+  }
+}
