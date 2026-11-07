@@ -1,5 +1,6 @@
 """Section 8.4: chain rule and financial sensitivity."""
 import math
+from decimal import Context, Decimal, localcontext
 from fractions import Fraction
 from section_8_01 import _scaled_pv
 from section_8_01 import centered_difference as _centered_difference
@@ -54,27 +55,54 @@ def variable_rate_pv_derivative(amount, years, factor):
 def nominal_rate(z):
     return 0.04+0.001*finite(z, "factor")
 
-def discrete_future_value(principal, periods_per_year, years, factor):
+def _discrete_inputs(principal, periods_per_year, years, factor):
     p, t, z = finite(principal, "principal"), finite(years, "years"), finite(factor, "factor")
     if type(periods_per_year) is not int or periods_per_year < 1:
         raise ValueError("periods_per_year must be a positive integer")
     if p < 0 or t < 0:
         raise ValueError("principal and years must be nonnegative")
+    # Preserve the existing rounded nominal rate, division and base addition.
     base = 1+nominal_rate(z)/periods_per_year
     if base <= 0:
         raise ValueError("compounding base must be positive")
-    return p*math.exp((periods_per_year*t)*math.log(base))
+    return p, t, base
+
+def _discrete_result(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("FV result outside finite float range") from exc
+    return finite(result, "FV result")
+
+def _scaled_discrete(coefficient, base, exponent):
+    if base == 1 or exponent == 0:
+        return _discrete_result(coefficient)
+    with localcontext(Context(prec=1300)):
+        def dec(value):
+            return Decimal(value.numerator)/Decimal(value.denominator)
+        log_power = dec(exponent)*Decimal.from_float(base).ln()
+        # Nonzero coefficients here lie between 2^-2158 and 2^2039.
+        # Neither can offset these conservative log-power bounds.
+        if log_power > 10000:
+            raise ValueError("FV result outside finite float range")
+        if log_power < -10000:
+            return 0.0
+        return _discrete_result(dec(coefficient)*log_power.exp())
+
+def discrete_future_value(principal, periods_per_year, years, factor):
+    p, t, base = _discrete_inputs(principal, periods_per_year, years, factor)
+    if p == 0 or t == 0:
+        return p
+    exponent = Fraction(periods_per_year)*Fraction(t)
+    return _scaled_discrete(Fraction(p), base, exponent)
 
 def discrete_future_value_derivative(principal, periods_per_year, years, factor):
-    p, t, z = finite(principal, "principal"), finite(years, "years"), finite(factor, "factor")
-    if type(periods_per_year) is not int or periods_per_year < 1:
-        raise ValueError("periods_per_year must be a positive integer")
-    if p < 0 or t < 0:
-        raise ValueError("principal and years must be nonnegative")
-    base = 1+nominal_rate(z)/periods_per_year
-    if base <= 0:
-        raise ValueError("compounding base must be positive")
-    return p*t*base**(periods_per_year*t-1)*0.001
+    p, t, base = _discrete_inputs(principal, periods_per_year, years, factor)
+    if p == 0 or t == 0:
+        return p*t*0.001
+    exponent = Fraction(periods_per_year)*Fraction(t)-1
+    coefficient = Fraction(p)*Fraction(t)*Fraction(0.001)
+    return _scaled_discrete(coefficient, base, exponent)
 
 def price(t):
     t = finite(t, "time")
