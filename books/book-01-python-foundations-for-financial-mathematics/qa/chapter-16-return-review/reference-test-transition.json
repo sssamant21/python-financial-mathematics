@@ -1,0 +1,499 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "c2fa47a7c4355ee7279723f35221273c3771b75847522b6aad9a714d70be0c80",
+  "listing_sha256": "335b29e0cf5e787864fafa1531a65795bc201078b5aa4b19f8885e5526f54941",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "portfolio_return.py"
+      ],
+      "returncode": 1,
+      "stdout": "Buy and hold: {'period_returns': [0.1, 0.09090909090909091], 'cumulative_return': 0.2, 'ending_weights': [0.5, 0.5]}\nConstant mix: {'period_returns': [0.1, 0.1], 'cumulative_return': 0.21}\n",
+      "stderr": "test_01_weighted (__main__.PortfolioReturnTests.test_01_weighted) ... ok\ntest_02_equal (__main__.PortfolioReturnTests.test_02_equal) ... ok\ntest_03_contribution (__main__.PortfolioReturnTests.test_03_contribution) ... FAIL\ntest_04_value (__main__.PortfolioReturnTests.test_04_value) ... ok\ntest_05_buy_hold (__main__.PortfolioReturnTests.test_05_buy_hold) ... ok\ntest_06_constant_mix (__main__.PortfolioReturnTests.test_06_constant_mix) ... ok\ntest_07_drift (__main__.PortfolioReturnTests.test_07_drift) ... ok\ntest_08_short (__main__.PortfolioReturnTests.test_08_short) ... ok\ntest_09_zero (__main__.PortfolioReturnTests.test_09_zero) ... ok\ntest_10_loss (__main__.PortfolioReturnTests.test_10_loss) ... ok\ntest_11_rebalance_difference (__main__.PortfolioReturnTests.test_11_rebalance_difference) ... ok\ntest_12_invalid (__main__.PortfolioReturnTests.test_12_invalid) ... ok\n\n======================================================================\nFAIL: test_03_contribution (__main__.PortfolioReturnTests.test_03_contribution)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/book1-1603-v1jjafvh/portfolio_return.py\", line 110, in test_03_contribution\n    def test_03_contribution(self): self.assertEqual(contribution([.6,.4],[.1,-.05]),[.06,-.020000000000000004])\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: [0.06, -0.02] != [0.06, -0.020000000000000004]\n\nFirst differing element 1:\n-0.02\n-0.020000000000000004\n\n- [0.06, -0.02]\n+ [0.06, -0.020000000000000004]\n\n----------------------------------------------------------------------\nRan 12 tests in 0.004s\n\nFAILED (failures=1)\n",
+      "methods": 12,
+      "passed": false
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import portfolio_return"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 weighted return",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 contribution A",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 contribution B",
+      "passed": true,
+      "actual": -0.02,
+      "independent_reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 equal weight",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 zero allocation",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 signed return",
+      "passed": true,
+      "actual": 0.11,
+      "independent_reference": "11/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 no-flow NAV return",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 drift A",
+      "passed": true,
+      "actual": 0.5238095238095238,
+      "independent_reference": "11/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 partial bankruptcy",
+      "passed": true,
+      "actual": -0.5,
+      "independent_reference": "-1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 linked return",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 integer NAV increment",
+      "passed": true,
+      "actual": 1e-18,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 cancellation before net return",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 accepted-budget no-return buy hold",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 tiny buy hold gain",
+      "passed": true,
+      "actual": 1e-18,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 tiny constant mix gain",
+      "passed": true,
+      "actual": 1e-18,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 oversized interim BH then bankruptcy",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F144 oversized interim mix then bankruptcy",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab buy-hold period 0",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab buy-hold period 1",
+      "passed": true,
+      "actual": 0.09090909090909091,
+      "independent_reference": "1/11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab constant-mix period 0",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab constant-mix period 1",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 buy hold cumulative",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 constant mix cumulative",
+      "passed": true,
+      "actual": 0.21,
+      "independent_reference": "21/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab ending buy-hold allocation 0",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab ending buy-hold allocation 1",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 path-specific premium",
+      "passed": true,
+      "actual": 0.009999999999999981,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab supplemental funded-fee terminal rate 0",
+      "passed": true,
+      "actual": 0.21,
+      "independent_reference": "21/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab supplemental funded-fee terminal rate 1/1000",
+      "passed": true,
+      "actual": 0.20989,
+      "independent_reference": "20989/100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab supplemental funded-fee terminal rate 1/10",
+      "passed": true,
+      "actual": 0.199,
+      "independent_reference": "199/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab separate cash buy hold",
+      "passed": true,
+      "actual": 0.18,
+      "independent_reference": "9/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab separate cash constant mix",
+      "passed": true,
+      "actual": 0.1881,
+      "independent_reference": "1881/10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "terminal bankruptcy has no ending weights",
+      "passed": true
+    },
+    {
+      "label": "incomplete weights rejected",
+      "passed": true,
+      "exception": "ValueError('weights must sum to 1 within tolerance')"
+    },
+    {
+      "label": "unequal return length rejected",
+      "passed": true,
+      "exception": "ValueError('aligned simple asset returns >= -100% required')"
+    },
+    {
+      "label": "E9/E22 nonzero external flow rejected",
+      "passed": true,
+      "exception": "ValueError('flow timing requires a specified performance convention')"
+    },
+    {
+      "label": "nonfinite NAV rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "below asset total loss rejected",
+      "passed": true,
+      "exception": "ValueError('aligned simple asset returns >= -100% required')"
+    },
+    {
+      "label": "missing return rejected",
+      "passed": true,
+      "exception": "ValueError('finite numbers required')"
+    },
+    {
+      "label": "F144 inconsistent contribution return domain rejected",
+      "passed": true,
+      "exception": "ValueError('aligned simple asset returns >= -100% required')"
+    },
+    {
+      "label": "F144 nonboolean short policy rejected",
+      "passed": true,
+      "exception": "ValueError('boolean allow_short required')"
+    },
+    {
+      "label": "buy hold after depletion rejected",
+      "passed": true,
+      "exception": "ValueError('portfolio depleted')"
+    },
+    {
+      "label": "F144 implicit bankrupt-asset refill rejected",
+      "passed": true,
+      "exception": "ValueError('rebalancing into an extinguished asset requires a replacement policy')"
+    },
+    {
+      "label": "F144 constant mix after depletion rejected",
+      "passed": true,
+      "exception": "ValueError('rebalancing into an extinguished asset requires a replacement policy')"
+    },
+    {
+      "label": "F144 BH false total loss rejected",
+      "passed": true,
+      "exception": "ValueError('nonzero ending wealth would falsely round to total loss')"
+    },
+    {
+      "label": "F144 mix false total loss rejected",
+      "passed": true,
+      "exception": "ValueError('nonzero ending wealth would falsely round to total loss')"
+    },
+    {
+      "label": "F144 unreportable NAV return rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F144 false NAV total loss rejected",
+      "passed": true,
+      "exception": "ValueError('nonzero ending wealth would falsely round to total loss')"
+    },
+    {
+      "label": "F144 unreportable contribution rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "source inputs preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "start_weights": [
+      0.5,
+      0.5
+    ],
+    "return_rows": [
+      [
+        0.2,
+        0
+      ],
+      [
+        0,
+        0.2
+      ]
+    ],
+    "frequency": "hypothetical common period",
+    "dates": null,
+    "units": "decimal total returns; unit initial wealth",
+    "external_flows": 0,
+    "asset_distributions": "already included in supplied total returns",
+    "fixture_sha256": "b0dcd3f21f8caddccf7de8586129cb3e2515d607fcd514b9a3bfeca3b6e27555",
+    "buy_and_hold": {
+      "period_returns": [
+        0.1,
+        0.09090909090909091
+      ],
+      "cumulative_return": 0.2,
+      "ending_weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "constant_mix": {
+      "period_returns": [
+        0.1,
+        0.1
+      ],
+      "cumulative_return": 0.21
+    },
+    "first_period_values": [
+      "3/5",
+      "1/2"
+    ],
+    "between_period_no_cost_trades": [
+      "-1/20",
+      "1/20"
+    ],
+    "fee_cases": [
+      {
+        "rate": "0",
+        "gross_traded": "1/10",
+        "fee": "0",
+        "post_rebalance_wealth": "11/10",
+        "terminal_wealth": "121/100",
+        "net_return": "21/100"
+      },
+      {
+        "rate": "1/1000",
+        "gross_traded": "1/10",
+        "fee": "1/10000",
+        "post_rebalance_wealth": "10999/10000",
+        "terminal_wealth": "120989/100000",
+        "net_return": "20989/100000"
+      },
+      {
+        "rate": "1/10",
+        "gross_traded": "1/10",
+        "fee": "1/100",
+        "post_rebalance_wealth": "109/100",
+        "terminal_wealth": "1199/1000",
+        "net_return": "199/1000"
+      }
+    ],
+    "fee_scope": "supplemental exact account, fees funded between periods; source path engines remain cost-free",
+    "cash_weights": [
+      0.45,
+      0.45,
+      0.1
+    ],
+    "cash_return_rows": [
+      [
+        0.2,
+        0,
+        0
+      ],
+      [
+        0,
+        0.2,
+        0
+      ]
+    ],
+    "cash_buy_and_hold": {
+      "period_returns": [
+        0.09,
+        0.08256880733944955
+      ],
+      "cumulative_return": 0.18,
+      "ending_weights": [
+        0.4576271186440678,
+        0.4576271186440678,
+        0.0847457627118644
+      ]
+    },
+    "cash_constant_mix": {
+      "period_returns": [
+        0.09,
+        0.09
+      ],
+      "cumulative_return": 0.1881
+    },
+    "timing": "period 1 close available before hypothetical between-period rebalance; period 2 begins after rebalance; real availability/fills/costs not provided"
+  }
+}
