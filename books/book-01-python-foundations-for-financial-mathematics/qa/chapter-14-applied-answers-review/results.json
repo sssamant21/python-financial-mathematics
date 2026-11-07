@@ -1,0 +1,426 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "1b8005d42aca7bd0c71e456420515cc2e1cf362e3d0a54fb33b4be6685bd260b",
+  "listing_sha256": "3d86d1e9ae5af6e46f58268184902fd59962ced1c64902b41c71578ee8187925",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "chapter14_final_exercises.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_01_binomial_zero (__main__.ChapterTests.test_01_binomial_zero) ... ok\ntest_02_binomial_one (__main__.ChapterTests.test_02_binomial_one) ... ok\ntest_03_binomial_normalization (__main__.ChapterTests.test_03_binomial_normalization) ... ok\ntest_04_poisson (__main__.ChapterTests.test_04_poisson) ... ok\ntest_05_normal_center (__main__.ChapterTests.test_05_normal_center) ... ok\ntest_06_normal_one (__main__.ChapterTests.test_06_normal_one) ... ok\ntest_07_mean (__main__.ChapterTests.test_07_mean) ... ok\ntest_08_variance (__main__.ChapterTests.test_08_variance) ... ok\ntest_09_median (__main__.ChapterTests.test_09_median) ... ok\ntest_10_replay (__main__.ChapterTests.test_10_replay) ... ok\ntest_11_bootstrap (__main__.ChapterTests.test_11_bootstrap) ... ok\ntest_12_invalid (__main__.ChapterTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import chapter14_final_exercises"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "chapter14_final_exercises.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E11 zero defaults",
+      "passed": true,
+      "actual": 0.3486784401,
+      "independent_reference": "3486784401/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 any default",
+      "passed": true,
+      "actual": 0.6513215599,
+      "independent_reference": "6513215599/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 Poisson zero",
+      "passed": true,
+      "actual": 0.1353352832366127,
+      "independent_reference": "0.1353352832366127",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 standard normal",
+      "passed": true,
+      "actual": 0.8413447460685429,
+      "independent_reference": "0.8413447460685429",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 central interval",
+      "passed": true,
+      "actual": 0.6826894921370859,
+      "independent_reference": "0.6826894921370859",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 payoff mean",
+      "passed": true,
+      "actual": 5.0,
+      "independent_reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 payoff variance",
+      "passed": true,
+      "actual": 312.5,
+      "independent_reference": "312.5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 binomial center n=1100",
+      "passed": true,
+      "actual": 0.024051657768231812,
+      "independent_reference": "20418332104867814131396690137022649252877613556034348836093967261528965686135565248523227673960258853100403117107483659378212179586599126122836179269314546181608816994279136654543071784588946623746608254889393676252342564338383127721351842025838807428125378669286670797696108276517284027966822074060870285136265814977331301194295/848936580655866155798344642724541736627183654332340343592824793579883182971401155450337005200472537018661141434615461467189920346452183123197221771425039295117860218712899395736429009010292545672927322532888948532049902235758122284584705377012692523798484983270012436568430250254319757692759242214823978654216571809299409546510336",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 finite normal standardization",
+      "passed": true,
+      "actual": 0.9772498680518208,
+      "independent_reference": "0.9772498680518208",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 integer spread",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "0.25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 zero-weight variance contribution",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 mean with unrepresentable sum",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 finite extreme median",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F126 bootstrap finite large mean",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "invalid probability mass",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one within 1e-12')"
+    },
+    {
+      "label": "invalid seed",
+      "passed": true,
+      "exception": "ValueError('invalid sample count or seed')"
+    },
+    {
+      "label": "invalid sigma",
+      "passed": true,
+      "exception": "ValueError('invalid normal inputs')"
+    },
+    {
+      "label": "F126 enormous invalid probability",
+      "passed": true,
+      "exception": "ValueError('invalid probability')"
+    },
+    {
+      "label": "F126 unreportable variance",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F126 normalized near-unit mass",
+      "passed": true
+    },
+    {
+      "label": "F126 sampling supports one-pass inputs",
+      "passed": true
+    },
+    {
+      "label": "A exact default mass 0",
+      "passed": true,
+      "actual": 0.3486784401,
+      "independent_reference": "3486784401/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 1",
+      "passed": true,
+      "actual": 0.387420489,
+      "independent_reference": "387420489/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 2",
+      "passed": true,
+      "actual": 0.1937102445,
+      "independent_reference": "387420489/2000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 3",
+      "passed": true,
+      "actual": 0.057395628,
+      "independent_reference": "14348907/250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 4",
+      "passed": true,
+      "actual": 0.011160261,
+      "independent_reference": "11160261/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 5",
+      "passed": true,
+      "actual": 0.0014880348,
+      "independent_reference": "3720087/2500000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 6",
+      "passed": true,
+      "actual": 0.000137781,
+      "independent_reference": "137781/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 7",
+      "passed": true,
+      "actual": 8.748e-06,
+      "independent_reference": "2187/250000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 8",
+      "passed": true,
+      "actual": 3.645e-07,
+      "independent_reference": "729/2000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 9",
+      "passed": true,
+      "actual": 9e-09,
+      "independent_reference": "9/1000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A exact default mass 10",
+      "passed": true,
+      "actual": 1e-10,
+      "independent_reference": "1/10000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "A supplemental default simulation versus exact masses",
+      "passed": true
+    },
+    {
+      "label": "B weighted replay 1000",
+      "passed": true
+    },
+    {
+      "label": "B 1000 mean",
+      "passed": true,
+      "actual": 5.475,
+      "independent_reference": "219/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B 1000 SD",
+      "passed": true,
+      "actual": 17.591442062373222,
+      "independent_reference": "17.591442062373222",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B 1000 SE",
+      "passed": true,
+      "actual": 0.556290242439892,
+      "independent_reference": "0.556290242439892",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B 1000 empirical quantiles",
+      "passed": true
+    },
+    {
+      "label": "B weighted replay 20000",
+      "passed": true
+    },
+    {
+      "label": "B 20000 mean",
+      "passed": true,
+      "actual": 5.07625,
+      "independent_reference": "4061/800",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B 20000 SD",
+      "passed": true,
+      "actual": 17.70885699638195,
+      "independent_reference": "17.70885699638195",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B 20000 SE",
+      "passed": true,
+      "actual": 0.1252205286920451,
+      "independent_reference": "0.1252205286920451",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "B 20000 empirical quantiles",
+      "passed": true
+    },
+    {
+      "label": "B 500 bootstrap means match index replay",
+      "passed": true
+    },
+    {
+      "label": "B paired additive stress",
+      "passed": true
+    },
+    {
+      "label": "C probability below zero",
+      "passed": true,
+      "actual": 0.3085375387259869,
+      "independent_reference": "0.3085375387259869",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C source CDF at independent return quantile",
+      "passed": true,
+      "actual": 0.05000000000000439,
+      "independent_reference": "0.05",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "C supplemental loss VaR round cents",
+      "passed": true
+    },
+    {
+      "label": "test-only listing emits no demo stdout",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "chapter_wide_prompt_records": 24,
+  "applied_problem_records": 3,
+  "capstone_checklist_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "seed": 42,
+    "bootstrap_seed": 43,
+    "bootstrap_reps": 500,
+    "bootstrap_source_n": 1000,
+    "scenario_inputs": [
+      [
+        -20,
+        5,
+        30
+      ],
+      [
+        0.25,
+        0.5,
+        0.25
+      ]
+    ],
+    "scenario_summaries": {
+      "1000": [
+        5.475,
+        17.591442062373222,
+        0.556290242439892
+      ],
+      "20000": [
+        5.07625,
+        17.70885699638195,
+        0.1252205286920451
+      ]
+    },
+    "default_counts": {
+      "0": 6960,
+      "1": 7766,
+      "2": 3850,
+      "3": 1162,
+      "4": 230,
+      "5": 30,
+      "6": 2
+    },
+    "return_q05": -0.02289707253902861,
+    "loss_var": 2289.707253902861
+  }
+}
