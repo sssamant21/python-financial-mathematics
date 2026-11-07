@@ -1,0 +1,385 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "0cb47308a9a2a6df609b94bc2817683a586bdd5cfd2ffca8ae92bb99f6726e29",
+  "listing_sha256": "df1921e6eaf324dd3e1d8c751414afb4e7c34f106c3613dd0dd4c2aa0267f29e",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "confidence_intervals.py"
+      ],
+      "returncode": 0,
+      "stdout": "Normal approximation: (0.008684142659238283, 0.03131585734076172)\nStudent t (df=2): (-0.004841377118437528, 0.044841377118437525)\nBootstrap percentile: (0.01, 0.03)\n",
+      "stderr": "test_01_mean (__main__.ConfidenceIntervalTests.test_01_mean) ... ok\ntest_02_se (__main__.ConfidenceIntervalTests.test_02_se) ... ok\ntest_03_normal_center (__main__.ConfidenceIntervalTests.test_03_normal_center) ... ok\ntest_04_normal_halfwidth (__main__.ConfidenceIntervalTests.test_04_normal_halfwidth) ... ok\ntest_05_t_critical (__main__.ConfidenceIntervalTests.test_05_t_critical) ... ok\ntest_06_percentile_endpoints (__main__.ConfidenceIntervalTests.test_06_percentile_endpoints) ... ok\ntest_07_percentile_mid (__main__.ConfidenceIntervalTests.test_07_percentile_mid) ... ok\ntest_08_bootstrap_order (__main__.ConfidenceIntervalTests.test_08_bootstrap_order) ... ok\ntest_09_bootstrap_reproducibility (__main__.ConfidenceIntervalTests.test_09_bootstrap_reproducibility) ... ok\ntest_10_wilson_zero (__main__.ConfidenceIntervalTests.test_10_wilson_zero) ... ok\ntest_11_wilson_full (__main__.ConfidenceIntervalTests.test_11_wilson_full) ... ok\ntest_12_invalid (__main__.ConfidenceIntervalTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.008s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import confidence_intervals"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "confidence_intervals.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 mean",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2/E3 standard error",
+      "passed": true,
+      "actual": 0.005773502691896258,
+      "independent_reference": "0.0057735026918962576450914878050195745564760175127012687601860232648397767230293334",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4/E5 normal endpoint 0",
+      "passed": true,
+      "actual": 0.008684142659238283,
+      "independent_reference": "0.008684142659238283128466687990924181099252190397829151517126690261714441483991182",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8/E9 t endpoint 0",
+      "passed": true,
+      "actual": -0.004841377118437528,
+      "independent_reference": "-0.004841377118437527807097765644468437913359714178028589051663688237558873415759706",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4/E5 normal endpoint 1",
+      "passed": true,
+      "actual": 0.03131585734076172,
+      "independent_reference": "0.031315857340761716871533312009075818900747809602170848482873309738285558516008818",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8/E9 t endpoint 1",
+      "passed": true,
+      "actual": 0.044841377118437525,
+      "independent_reference": "0.044841377118437527807097765644468437913359714178028589051663688237558873415759706",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 t wider than normal",
+      "passed": true
+    },
+    {
+      "label": "E6/E7 independent df2 t critical",
+      "passed": true,
+      "actual": 4.302652729911275,
+      "independent_reference": "4.3026527297494638523209438926211750081876448753255625307177911917586066365762414",
+      "absolute_tolerance": 5e-09,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E13 alpha tails",
+      "passed": true
+    },
+    {
+      "label": "E17 type7 median",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "type7 nonintegral rank",
+      "passed": true,
+      "actual": 7.5,
+      "independent_reference": "15/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project exact 2000-draw percentile endpoint 0",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project exact 2000-draw percentile endpoint 1",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 Wilson (0, 0)",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 Wilson (0, 1)",
+      "passed": true,
+      "actual": 0.2775327998628892,
+      "independent_reference": "0.27753279986288920452603092704329433847366686390426817927791088209377610897156559",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 Wilson (3, 0)",
+      "passed": true,
+      "actual": 0.10779126740630103,
+      "independent_reference": "0.10779126740630103391603651751392031258503751511919751950294281857817640824411593",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 Wilson (3, 1)",
+      "passed": true,
+      "actual": 0.6032218525388546,
+      "independent_reference": "0.60322185253885464789437585330339742280442923044250975220822153425933403534451031",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 Wilson (10, 0)",
+      "passed": true,
+      "actual": 0.7224672001371107,
+      "independent_reference": "0.72246720013711079547396907295670566152633313609573182072208911790622389102843441",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 Wilson (10, 1)",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 large constant mean",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 exact constant SE",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 integer spread SE",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 tiny SE",
+      "passed": true,
+      "actual": 1e-200,
+      "independent_reference": "1e-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 large reportable interval lower",
+      "passed": true,
+      "actual": -1e+308,
+      "independent_reference": "-1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 stable extreme interpolation",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 extreme endpoint",
+      "passed": true,
+      "actual": -1e+308,
+      "independent_reference": "-1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 large constant bootstrap",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 extreme Wilson zero lower",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F134 extreme Wilson zero upper",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "singleton rejected",
+      "passed": true,
+      "exception": "ValueError('at least two observations required')"
+    },
+    {
+      "label": "missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "bad critical rejected",
+      "passed": true,
+      "exception": "ValueError('positive finite critical value required')"
+    },
+    {
+      "label": "bad t rejected",
+      "passed": true,
+      "exception": "ValueError('positive finite critical value required')"
+    },
+    {
+      "label": "unsorted percentile rejected",
+      "passed": true,
+      "exception": "ValueError('sorted data and probability in [0,1] required')"
+    },
+    {
+      "label": "bad probability rejected",
+      "passed": true,
+      "exception": "ValueError('sorted data and probability in [0,1] required')"
+    },
+    {
+      "label": "bad alpha rejected",
+      "passed": true,
+      "exception": "ValueError('alpha must be between zero and one')"
+    },
+    {
+      "label": "too few replicates rejected",
+      "passed": true,
+      "exception": "ValueError('at least two observations and replicates required')"
+    },
+    {
+      "label": "bad success count rejected",
+      "passed": true,
+      "exception": "ValueError('require integer 0 <= successes <= trials')"
+    },
+    {
+      "label": "F134 overflowing endpoint rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F134 collapsed positive-width interval rejected",
+      "passed": true,
+      "exception": "ValueError('positive interval width lost in float reporting')"
+    },
+    {
+      "label": "source input preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "source_returns": [
+      0.01,
+      0.02,
+      0.03
+    ],
+    "frequency": "hypothetical daily",
+    "period_labels": [
+      1,
+      2,
+      3
+    ],
+    "dates": null,
+    "units": "decimal simple returns",
+    "estimand": "fictional iid population mean",
+    "fixture_sha256": "43509825efe6b93760c0c58a34dd8545a6180ef21b25bddb75483b46fdbef921",
+    "mean_se": [
+      0.02,
+      0.005773502691896258
+    ],
+    "normal": [
+      0.008684142659238283,
+      0.03131585734076172
+    ],
+    "t": [
+      -0.004841377118437528,
+      0.044841377118437525
+    ],
+    "bootstrap": [
+      0.01,
+      0.03
+    ],
+    "bootstrap_seed": 42,
+    "replicates": 2000,
+    "bootstrap_quantile": "type 7",
+    "wilson_zero": [
+      0.0,
+      0.2775327998628892
+    ]
+  }
+}
