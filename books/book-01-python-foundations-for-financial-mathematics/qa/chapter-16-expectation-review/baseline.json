@@ -1,0 +1,445 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "50ac57749ad524e256debffb3de5d457eedb9a7700f9776555c4a67a3c260ea4",
+  "listing_sha256": "7d72fe5f0be7fa4707cde16df110584e4a1ac122767234a6b9383714b175525f",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "expected_portfolio_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "Expected return: 0.064\n",
+      "stderr": "test_01_weighted (__main__.ExpectedPortfolioReturnTests.test_01_weighted) ... ok\ntest_02_equal (__main__.ExpectedPortfolioReturnTests.test_02_equal) ... ok\ntest_03_cash (__main__.ExpectedPortfolioReturnTests.test_03_cash) ... ok\ntest_04_short (__main__.ExpectedPortfolioReturnTests.test_04_short) ... ok\ntest_05_scenario_mu (__main__.ExpectedPortfolioReturnTests.test_05_scenario_mu) ... ok\ntest_06_scenario_portfolio (__main__.ExpectedPortfolioReturnTests.test_06_scenario_portfolio) ... ok\ntest_07_scenario_variance (__main__.ExpectedPortfolioReturnTests.test_07_scenario_variance) ... ok\ntest_08_historical (__main__.ExpectedPortfolioReturnTests.test_08_historical) ... ok\ntest_09_forecast_error (__main__.ExpectedPortfolioReturnTests.test_09_forecast_error) ... ok\ntest_10_zero_weight (__main__.ExpectedPortfolioReturnTests.test_10_zero_weight) ... ok\ntest_11_one_scenario (__main__.ExpectedPortfolioReturnTests.test_11_one_scenario) ... ok\ntest_12_invalid (__main__.ExpectedPortfolioReturnTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import expected_portfolio_return"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "expected_portfolio_return.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 weighted expectation",
+      "passed": true,
+      "actual": 0.064,
+      "independent_reference": "8/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 equal weights",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 cash",
+      "passed": true,
+      "actual": 0.058,
+      "independent_reference": "29/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 zero weight",
+      "passed": true,
+      "actual": 0.03,
+      "independent_reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 three assets",
+      "passed": true,
+      "actual": 0.048,
+      "independent_reference": "6/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 signed expectation",
+      "passed": true,
+      "actual": 0.10999999999999999,
+      "independent_reference": "11/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 one asset",
+      "passed": true,
+      "actual": 0.07,
+      "independent_reference": "7/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 scenario A",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 scenario B",
+      "passed": true,
+      "actual": 0.07500000000000001,
+      "independent_reference": "3/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 scenario portfolio",
+      "passed": true,
+      "actual": 0.0625,
+      "independent_reference": "1/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 scenario variance",
+      "passed": true,
+      "actual": 0.010000000000000002,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 scenario SD",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 historical mean",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 forecast error",
+      "passed": true,
+      "actual": -0.030000000000000002,
+      "independent_reference": "-3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F145 signed product cancellation",
+      "passed": false,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F145 integer forecast-error precision",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F145 large historical mean",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F145 normalized probability constant mean",
+      "passed": false,
+      "actual": 0.100000000005,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F145 normalized probability constant variance",
+      "passed": false,
+      "actual": 2.500000413826872e-23,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F145 zero-mass huge scenario variance",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F145 rare large scenario finite weighted variance",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "lab scenario asset mean 0",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab scenario asset mean 1",
+      "passed": true,
+      "actual": 0.07500000000000001,
+      "independent_reference": "3/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab scenario asset mean 2",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab scenario portfolio return 0",
+      "passed": true,
+      "actual": 0.10200000000000001,
+      "independent_reference": "51/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab scenario portfolio return 1",
+      "passed": true,
+      "actual": 0.04200000000000001,
+      "independent_reference": "21/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab scenario route through asset means",
+      "passed": true,
+      "actual": 0.05700000000000001,
+      "independent_reference": "57/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab direct scenario mean",
+      "passed": true,
+      "actual": 0.05700000000000001,
+      "independent_reference": "57/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab independent scenario variance",
+      "passed": true,
+      "actual": 0.000675,
+      "independent_reference": "27/40000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab independent scenario SD",
+      "passed": true,
+      "actual": 0.02598076211353316,
+      "independent_reference": "0.025980762113533159402911695122588085504142078807155709420837104691778995253632001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab labelled historical substitution",
+      "passed": true,
+      "actual": 0.11800000000000001,
+      "independent_reference": "59/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab original-forecast outcome error",
+      "passed": true,
+      "actual": -0.038000000000000006,
+      "independent_reference": "-19/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21/E22 arithmetic vs deterministic compound",
+      "passed": true,
+      "arithmetic_reference": ".12",
+      "compound_reference": "0.126825030131969720661201",
+      "scope": "supplemental derivation, not an exported source annualization function"
+    },
+    {
+      "label": "invalid budget rejected",
+      "passed": true,
+      "exception": "ValueError('fully invested weights must sum to one')"
+    },
+    {
+      "label": "long-only short rejected",
+      "passed": true,
+      "exception": "ValueError('long-only weights required')"
+    },
+    {
+      "label": "F145 explicit short policy required",
+      "passed": false,
+      "actual": "{'scenario_returns': [0.10999999999999999], 'mean': 0.10999999999999999, 'variance': 0.0, 'sd': 0.0}"
+    },
+    {
+      "label": "F145 nonboolean short policy rejected",
+      "passed": false,
+      "actual": "0.1"
+    },
+    {
+      "label": "bad probability mass rejected",
+      "passed": true,
+      "exception": "ValueError('valid scenario probabilities must sum to one')"
+    },
+    {
+      "label": "negative probability rejected",
+      "passed": true,
+      "exception": "ValueError('valid scenario probabilities must sum to one')"
+    },
+    {
+      "label": "ragged scenario rows rejected",
+      "passed": true,
+      "exception": "ValueError('scenario rows must have equal asset count')"
+    },
+    {
+      "label": "nonfinite scenario rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "missing historical data rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "unequal error dimensions rejected",
+      "passed": true,
+      "exception": "ValueError('aligned vectors required')"
+    },
+    {
+      "label": "F145 unreportable forecast error rejected",
+      "passed": false,
+      "actual": "[inf]"
+    },
+    {
+      "label": "F145 unreportable required scenario variance rejected",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F145 outer scenario shape has ValueError contract",
+      "passed": false,
+      "exception": "TypeError(\"object of type 'NoneType' has no len()\")"
+    },
+    {
+      "label": "lab input models preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "asset_ids": [
+      "fictional A",
+      "fictional B",
+      "cash-like C"
+    ],
+    "weights": [
+      0.5,
+      0.4,
+      0.1
+    ],
+    "original_forecast": [
+      0.08,
+      0.04,
+      0.02
+    ],
+    "original_expected_portfolio": 0.058,
+    "original_contributions": [
+      ".04",
+      ".016",
+      ".002"
+    ],
+    "scenario_probabilities": [
+      0.25,
+      0.75
+    ],
+    "scenario_rows": [
+      [
+        0.2,
+        0,
+        0.02
+      ],
+      [
+        0,
+        0.1,
+        0.02
+      ]
+    ],
+    "scenario_asset_means": [
+      0.05,
+      0.07500000000000001,
+      0.02
+    ],
+    "scenario_portfolio": {
+      "scenario_returns": [
+        0.10200000000000001,
+        0.04200000000000001
+      ],
+      "mean": 0.05700000000000001,
+      "variance": 0.000675,
+      "sd": 0.02598076211353316
+    },
+    "historical_A_observations": [
+      0.1,
+      0.3
+    ],
+    "historical_A_mean": 0.2,
+    "revised_forecast": [
+      0.2,
+      0.04,
+      0.02
+    ],
+    "revised_expected": 0.11800000000000001,
+    "hypothetical_realized_portfolio_return": 0.02,
+    "forecast_error": -0.038000000000000006,
+    "forecast_version": "synthetic original t0",
+    "outcome_time": "synthetic t1",
+    "dates": null,
+    "units": "decimal one-period simple returns",
+    "currency": "fictional common USD",
+    "risk_free_scope": "cash-like assumed mean only, not accepted risklessness",
+    "fixture_sha256": "dcd23be0fbdd0e0e10041cadb65b94411783565d4b5cb920307839f86062f559",
+    "model_scope": "distinct forecasts/scenarios/historical estimate; no empirical calibration or financing"
+  }
+}
