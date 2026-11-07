@@ -1,4 +1,4 @@
-"""Exact manuscript listing execution; independent pairwise covariance benchmarks."""
+"""Portfolio variance, attribution and independent rational benchmarks."""
 import hashlib,json,math,platform,re,subprocess,sys,tempfile,types
 from fractions import Fraction as F
 from decimal import Decimal as D,localcontext
@@ -26,9 +26,6 @@ def main():
         v=F(v)
         with localcontext() as ctx:
             ctx.prec=80;return (D(v.numerator)/D(v.denominator)).sqrt()
-    def paircov(rows,ddof):
-        rows=[[F(str(v)) for v in row] for row in rows];t=len(rows);n=len(rows[0])
-        return [[sum((rows[a][i]-rows[b][i])*(rows[a][j]-rows[b][j]) for a in range(t) for b in range(a+1,t))/(t*(t-ddof)) for j in range(n)] for i in range(n)]
     with tempfile.TemporaryDirectory(prefix='book1-1606-') as tmp:
         Path(tmp,'portfolio_variance.py').write_bytes(code)
         for label,args in [('exact demonstration and 12 embedded tests',['portfolio_variance.py']),('isolated import',['-c','import portfolio_variance']),('exact compilation',['-m','compileall','-q','portfolio_variance.py'])]:
@@ -90,6 +87,7 @@ def main():
       reject('PSD extension invalid untested direction '+name,lambda fn=fn:fn([1,0],[[1,2],[2,1]]))
     for label,fn in [
       ('F147 negative tiny diagonal rejected',lambda:m.portfolio_variance([1],[[-1e-300]])),
+      ('reporting follow-up nonreconcilable contributions rejected',lambda:m.asset_variance_contributions([10**18+1,-10**18],[[1,1],[1,1]],True)),
       ('F147 nonboolean short policy rejected',lambda:m.portfolio_variance([1],[[1]],'yes')),
       ('F147 bad tolerance rejected',lambda:m.validate_covariance([[1]],math.nan)),
       ('F147 boolean tolerance rejected',lambda:m.validate_covariance([[1]],True)),

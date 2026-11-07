@@ -14,7 +14,7 @@ Reproduce unchanged-source failures (baseline must exist in Git history; expecte
 python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-16-variance-review/review.py e9923503c1330e6c9612fd36222426bdf4308098
 ```
 
-The runner extracts the exact reference Python fence. It runs the printed demonstration and twelve existing unittest methods, checks silent import and executes the printed compileall command in isolated temporary directories. Final `results.json` records three successful commands, 60 passing supplemental predicates, hashes, runtime, raw output and independent references/tolerances. No new historical unique methods.
+The runner extracts the exact reference Python fence. It runs the printed demonstration and twelve existing unittest methods, checks silent import and executes the printed compileall command in isolated temporary directories. Final `results.json` records three successful commands, 61 passing supplemental predicates, hashes, runtime, raw output and independent references/tolerances. No new historical unique methods.
 
 ## Initial evidence, correction and added scope
 
@@ -27,6 +27,10 @@ Initial observer records are preserved separately. `baseline-observer-initial.js
 Fully invested budgets within 1e-10 are normalized explicitly before all calculations. Signed positions require a boolean permission; financing/margin remain external. Matrix validation averages within-tolerance asymmetric pairs, forbids negative diagonals and nonzero zero-variance rows, and applies a rational Schur-complement screen to the matrix plus delta times identity. Delta is the declared relative tolerance times the largest diagonal (default 1e-10). This permits bounded numerical matrix error, not arbitrary non-PSD inputs. The exact requested quadratic form must be nonnegative for every risk API. Unlike Section 16.5's documented clipping policy, this section rejects any negative requested exact form so attribution and total do not silently disagree. Float rounding can affect near-singular inputs and public validation helper outputs; calculation routines retain exact normalized intermediates.
 
 Output availability is per API: variance can be unreportable while its SD is finite; decomposition or contributions can be unreportable even when total variance is finite. Volatility therefore roots the exact quadratic before conversion, not a prematurely rounded variance.
+
+## Reporting follow-up during Section 16.7
+
+The expanded runner now includes a 61st predicate. `reporting-baseline.json` executes the published Section 16.6 listing at `5cbc3c95ef40a75d3af5aba8893064fbf745ad7b`: its 60 prior predicates pass, while an integer-hedge contribution vector loses float-output reconciliation (exact [1e18+1,−1e18], reported [1e18,−1e18], total zero versus exact variance one). The correction requires reported diagonal/cross and asset contributions to reconcile to total within relative 1e-10, no absolute floor, or raises ValueError. The final expanded 61 checks and twelve existing methods pass. The original-baseline report was regenerated with the added predicate and retains the same 24 failed predicates; prior inventories remain in publication history. See [Section 16.7](../chapter-16-volatility-review/README.md) for the linked batch. No new historical unique method.
 
 ## Independent expectations and all 30 answers
 

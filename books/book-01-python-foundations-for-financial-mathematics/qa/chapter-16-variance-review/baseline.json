@@ -11,7 +11,7 @@
       ],
       "returncode": 0,
       "stdout": "Variance: 0.0336\nVolatility: 0.1833030277982336\nComponents: {'diagonal': 0.028800000000000003, 'cross': 0.0048, 'total': 0.0336}\n",
-      "stderr": "test_01_two_asset (__main__.PortfolioVarianceTests.test_01_two_asset) ... ok\ntest_02_volatility (__main__.PortfolioVarianceTests.test_02_volatility) ... ok\ntest_03_diagonal (__main__.PortfolioVarianceTests.test_03_diagonal) ... ok\ntest_04_cross (__main__.PortfolioVarianceTests.test_04_cross) ... ok\ntest_05_single_asset (__main__.PortfolioVarianceTests.test_05_single_asset) ... ok\ntest_06_uncorrelated (__main__.PortfolioVarianceTests.test_06_uncorrelated) ... ok\ntest_07_perfect_hedge (__main__.PortfolioVarianceTests.test_07_perfect_hedge) ... ok\ntest_08_contributions (__main__.PortfolioVarianceTests.test_08_contributions) ... ok\ntest_09_marginal (__main__.PortfolioVarianceTests.test_09_marginal) ... ok\ntest_10_short (__main__.PortfolioVarianceTests.test_10_short) ... ok\ntest_11_bad_matrix (__main__.PortfolioVarianceTests.test_11_bad_matrix) ... ok\ntest_12_bad_weights (__main__.PortfolioVarianceTests.test_12_bad_weights) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "stderr": "test_01_two_asset (__main__.PortfolioVarianceTests.test_01_two_asset) ... ok\ntest_02_volatility (__main__.PortfolioVarianceTests.test_02_volatility) ... ok\ntest_03_diagonal (__main__.PortfolioVarianceTests.test_03_diagonal) ... ok\ntest_04_cross (__main__.PortfolioVarianceTests.test_04_cross) ... ok\ntest_05_single_asset (__main__.PortfolioVarianceTests.test_05_single_asset) ... ok\ntest_06_uncorrelated (__main__.PortfolioVarianceTests.test_06_uncorrelated) ... ok\ntest_07_perfect_hedge (__main__.PortfolioVarianceTests.test_07_perfect_hedge) ... ok\ntest_08_contributions (__main__.PortfolioVarianceTests.test_08_contributions) ... ok\ntest_09_marginal (__main__.PortfolioVarianceTests.test_09_marginal) ... ok\ntest_10_short (__main__.PortfolioVarianceTests.test_10_short) ... ok\ntest_11_bad_matrix (__main__.PortfolioVarianceTests.test_11_bad_matrix) ... ok\ntest_12_bad_weights (__main__.PortfolioVarianceTests.test_12_bad_weights) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
       "methods": 12,
       "passed": true
     },
@@ -357,6 +357,11 @@
       "label": "F147 negative tiny diagonal rejected",
       "passed": false,
       "actual": "0.0"
+    },
+    {
+      "label": "reporting follow-up nonreconcilable contributions rejected",
+      "passed": true,
+      "exception": "ValueError('fully invested weights must sum to one')"
     },
     {
       "label": "F147 nonboolean short policy rejected",
