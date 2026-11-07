@@ -1,5 +1,7 @@
 """Section 8.2: polynomial differentiation and financial marginal analysis."""
 import math
+from fractions import Fraction
+from section_8_01 import centered_difference as _centered_difference
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -21,30 +23,41 @@ def coefficients(values):
         raise ValueError("coefficients must not be empty")
     return tuple(finite(value, "coefficient") for value in data)
 
+def _rounded_polynomial(coeffs, x):
+    """Round the complete exact polynomial in represented binary64 inputs."""
+    result = Fraction(0)
+    point = Fraction(x)
+    for coefficient in reversed(coeffs):
+        result = result*point+coefficient
+    try:
+        value = float(result)
+    except OverflowError as exc:
+        raise OverflowError("polynomial overflow") from exc
+    if not math.isfinite(value):
+        raise OverflowError("polynomial overflow")
+    return value
+
 def polynomial(values, x):
     coeffs = coefficients(values)
     x = finite(x, "x")
-    result = 0.0
-    for coefficient in reversed(coeffs):
-        result = result*x+coefficient
-    if not math.isfinite(result):
-        raise OverflowError("polynomial overflow")
-    return result
+    return _rounded_polynomial(tuple(map(Fraction, coeffs)), x)
 
 def derivative_coefficients(values):
     coeffs = coefficients(values)
-    return tuple(i*coeffs[i] for i in range(1, len(coeffs))) or (0.0,)
+    result = tuple(i*coeffs[i] for i in range(1, len(coeffs))) or (0.0,)
+    if not all(math.isfinite(value) for value in result):
+        raise OverflowError("derivative coefficient overflow")
+    return result
 
 def polynomial_derivative(values, x):
-    return polynomial(derivative_coefficients(values), x)
+    # Evaluate the derivative at the point without rounding its coefficients.
+    coeffs = coefficients(values)
+    x = finite(x, "x")
+    derived = tuple(i*Fraction(coeffs[i]) for i in range(1, len(coeffs)))
+    return _rounded_polynomial(derived, x)
 
 def centered_difference(function, x, step):
-    if not callable(function):
-        raise TypeError("function must be callable")
-    x, h = finite(x, "x"), finite(step, "step")
-    if h == 0:
-        raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    return _centered_difference(function, x, step)
 
 def revenue(quantity):
     q = finite(quantity, "quantity")
