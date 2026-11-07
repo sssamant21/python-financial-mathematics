@@ -1,5 +1,6 @@
 """Section 8.4: chain rule and financial sensitivity."""
 import math
+from section_8_01 import centered_difference as _centered_difference
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -16,7 +17,8 @@ def chain_derivative(outer_derivative, inner, inner_derivative, x):
     if not all(callable(fn) for fn in (outer_derivative, inner, inner_derivative)):
         raise TypeError("all function arguments must be callable")
     x = finite(x, "x")
-    return finite(outer_derivative(finite(inner(x), "inner(x)")), "outer derivative") * finite(inner_derivative(x), "inner derivative")
+    result = finite(outer_derivative(finite(inner(x), "inner(x)")), "outer derivative") * finite(inner_derivative(x), "inner derivative")
+    return finite(result, "chain derivative")
 
 def nested_power_derivative(x):
     x = finite(x, "x")
@@ -73,12 +75,10 @@ def log_price_growth(t):
     return 0.06/(1+0.02*t)
 
 def centered_difference(function, x, step=1e-4):
+    # Retain this entry point's callable-before-controls validation precedence.
     if not callable(function):
         raise TypeError("function must be callable")
-    x, h = finite(x, "x"), finite(step, "step")
-    if h == 0:
-        raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    return _centered_difference(function, x, step)
 
 if __name__ == "__main__":
     print("Nested power derivative at x=2:", nested_power_derivative(2))
