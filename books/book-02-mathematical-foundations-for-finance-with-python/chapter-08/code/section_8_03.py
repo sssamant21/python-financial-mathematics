@@ -1,6 +1,7 @@
 """Section 8.3: product and quotient derivatives with financial examples."""
 import math
 from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -96,17 +97,41 @@ def coverage_ratio_derivative(t):
     _, denominator = _coverage_terms(t)
     return _financial_result(100/(denominator*denominator))
 
+def _scaled_payment(coefficient, exponent):
+    if coefficient == 0:
+        return 0.
+    if exponent == 0:
+        return _financial_result(coefficient)
+    # A coefficient made from these finite binary64 payment/rate inputs
+    # cannot compensate for an exponent beyond this coarse bound.
+    if exponent > 5000:
+        raise ValueError("discounted result outside finite float range")
+    if exponent < -5000:
+        return -0. if coefficient < 0 else 0.
+    with localcontext(Context(prec=1100)):
+        factor = (Decimal(exponent.numerator)/Decimal(exponent.denominator)).exp()
+        result = Decimal(coefficient.numerator)*factor/Decimal(coefficient.denominator)
+        return _financial_result(result)
+
+
 def discounted_value(t, rate, payment, payment_derivative):
     t, r = finite(t, "time"), finite(rate, "rate")
     if t < 0:
         raise ValueError("time must be nonnegative")
-    return finite(payment(t), "payment")*math.exp(-r*t)
+    amount = finite(payment(t), "payment")
+    if amount == 0:
+        return amount
+    return _scaled_payment(Fraction(amount), -Fraction(r)*Fraction(t))
+
 
 def discounted_value_derivative(t, rate, payment, payment_derivative):
     t, r = finite(t, "time"), finite(rate, "rate")
     if t < 0:
         raise ValueError("time must be nonnegative")
-    return math.exp(-r*t)*(finite(payment_derivative(t), "payment derivative")-r*finite(payment(t), "payment"))
+    slope = Fraction(finite(payment_derivative(t), "payment derivative"))
+    amount = Fraction(finite(payment(t), "payment"))
+    coefficient = slope-Fraction(r)*amount
+    return _scaled_payment(coefficient, -Fraction(r)*Fraction(t))
 
 def centered_difference(function, x, step=1e-4):
     x, h = finite(x, "x"), finite(step, "step")
