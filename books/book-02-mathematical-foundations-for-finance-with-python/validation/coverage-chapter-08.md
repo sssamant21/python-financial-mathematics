@@ -187,3 +187,11 @@ Next: [Section 8.4 variable-rate PV baseline](chapter-08-variable-rate-pv-baseli
 [V-107](runtime-refresh-2026-11-07-r13.md) at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`: 573 files compiled, 360 scripts passed, 574 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.4 discrete-compounding baseline](chapter-08-discrete-compounding-range-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-discrete-compounding-range-baseline.json). Actual intermediate overflow/underflow loses finite complete values and zero-principal identities. Preserve the intended nominal-rate/base/exponent conventions while deriving full results; do not repeat completed variable-rate PV examples.
+
+## V-108 checkpoint — Section 8.4 discrete compounding
+
+[Discrete-compounding follow-up](chapter-08-discrete-compounding-range-followup.md): all 74 expanded checks pass; sixteen expanded baseline mismatches and a byte-identical replay retained. The initial 69-case baseline/corrected run is also retained. Exact rational integer powers and independent Decimal direct powers at 1600/2200 digits check complete values/sensitivities. Selected rounded bases, exact n·t and n·t−1 behavior near 2^53, signed zero identities, final output/error policy and invalid base/count/quantity behavior are checked. Existing Section 8.4 and variable-rate PV suites pass.
+
+[V-108](runtime-refresh-2026-11-07-r14.md) at `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`: 574 files compiled, 361 scripts passed, 575 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [large integer period-count baseline](chapter-08-large-period-count-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-large-period-count-baseline.json). Count 10**400 is accepted by the positive-integer guard but base division raises OverflowError despite finite rounded-base expectations. Extend conversion while preserving already working base conventions; do not repeat completed power-scaling examples.
