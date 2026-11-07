@@ -1,0 +1,623 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "3365358a043969a70205c83c3f93538cdcde58440fe72a5cd4ffd3d7878bf930",
+  "listing_sha256": "8f531241883eeca8f8897b2bdddf66d1cc302680d7726071394932b2c777861e",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "multi_asset_portfolios.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'expected_return': 0.059, 'variance': 0.019916, 'volatility': 0.141124058898545, 'variance_contributions': [0.0109, 0.009, 1.6e-05]}\n",
+      "stderr": "test_01_expected (__main__.MultiAssetTests.test_01_expected) ... ok\ntest_02_variance (__main__.MultiAssetTests.test_02_variance) ... ok\ntest_03_volatility (__main__.MultiAssetTests.test_03_volatility) ... ok\ntest_04_contributions (__main__.MultiAssetTests.test_04_contributions) ... ok\ntest_05_normalize (__main__.MultiAssetTests.test_05_normalize) ... ok\ntest_06_drift (__main__.MultiAssetTests.test_06_drift) ... ok\ntest_07_scenarios (__main__.MultiAssetTests.test_07_scenarios) ... ok\ntest_08_one_asset (__main__.MultiAssetTests.test_08_one_asset) ... ok\ntest_09_short (__main__.MultiAssetTests.test_09_short) ... ok\ntest_10_zero_return_drift (__main__.MultiAssetTests.test_10_zero_return_drift) ... ok\ntest_11_invalid_weights (__main__.MultiAssetTests.test_11_invalid_weights) ... ok\ntest_12_invalid_data (__main__.MultiAssetTests.test_12_invalid_data) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import multi_asset_portfolios"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "multi_asset_portfolios.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1/E10/E11 main expected_return",
+      "passed": true,
+      "actual": 0.059,
+      "independent_reference": "59/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E1/E10/E11 main variance",
+      "passed": true,
+      "actual": 0.019916,
+      "independent_reference": "4979/250000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E1/E10/E11 main volatility",
+      "passed": true,
+      "actual": 0.141124058898545,
+      "independent_reference": "0.14112405889854500638231672556284625447879991921519752760178921537842439179182316",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab variance contribution 0",
+      "passed": true,
+      "actual": 0.0109,
+      "independent_reference": "109/10000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab variance contribution 1",
+      "passed": true,
+      "actual": 0.009,
+      "independent_reference": "9/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab variance contribution 2",
+      "passed": true,
+      "actual": 1.6e-05,
+      "independent_reference": "1/62500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 source contribution sum",
+      "passed": true,
+      "actual": 0.019916,
+      "independent_reference": "4979/250000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 supplemental weight budget",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3-E5 supplemental expected contribution 0",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6-E8 supplemental diagonal term 0",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3-E5 supplemental expected contribution 1",
+      "passed": true,
+      "actual": 0.015,
+      "independent_reference": "3/200",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6-E8 supplemental diagonal term 1",
+      "passed": true,
+      "actual": 0.0081,
+      "independent_reference": "81/10000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3-E5 supplemental expected contribution 2",
+      "passed": true,
+      "actual": 0.004,
+      "independent_reference": "1/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6-E8 supplemental diagonal term 2",
+      "passed": true,
+      "actual": 1.6e-05,
+      "independent_reference": "1/62500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 supplemental cross term",
+      "passed": true,
+      "actual": 0.0018,
+      "independent_reference": "9/5000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12/E13 source normalized [50, 30, 20]",
+      "passed": true
+    },
+    {
+      "label": "E12/E13 source normalized [500, 300, 200]",
+      "passed": true
+    },
+    {
+      "label": "E14 zero-weight assets",
+      "passed": true,
+      "actual": 0.08,
+      "independent_reference": "2/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 drift A",
+      "passed": true,
+      "actual": 0.5238095238095238,
+      "independent_reference": "11/21",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 drift B",
+      "passed": true,
+      "actual": 0.47619047619047616,
+      "independent_reference": "10/21",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 supplemental realized portfolio return",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E21 source scenario mean",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22 source scenario variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E23 permitted signed expected return",
+      "passed": true,
+      "actual": 0.11,
+      "independent_reference": "11/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source drift 0",
+      "passed": true,
+      "actual": 0.5314009661835749,
+      "independent_reference": "110/207",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source drift 1",
+      "passed": true,
+      "actual": 0.2753623188405797,
+      "independent_reference": "19/69",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source drift 2",
+      "passed": true,
+      "actual": 0.1932367149758454,
+      "independent_reference": "40/207",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source chained updated mean",
+      "passed": true,
+      "actual": 0.060144927536231886,
+      "independent_reference": "83/1380",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source chained updated variance",
+      "passed": true,
+      "actual": 0.01989054587038204,
+      "independent_reference": "85229/4284900",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source scenario return 0",
+      "passed": true,
+      "actual": 0.039,
+      "independent_reference": "39/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source scenario return 1",
+      "passed": true,
+      "actual": -0.034,
+      "independent_reference": "-17/500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source scenario mean",
+      "passed": true,
+      "actual": -0.01575,
+      "independent_reference": "-63/4000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source scenario variance",
+      "passed": true,
+      "actual": 0.0009991875,
+      "independent_reference": "15987/16000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source scenario SD",
+      "passed": true,
+      "actual": 0.03160992723813201,
+      "independent_reference": "0.031609927238132010606875895732482170696706195882039446462018477374997777558585601",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab same-model source moment route mean",
+      "passed": true,
+      "actual": -0.01575,
+      "independent_reference": "-63/4000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab same-model source moment route variance",
+      "passed": true,
+      "actual": 0.0009991875,
+      "independent_reference": "15987/16000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "policy extension explicit signed scenario permission",
+      "passed": true,
+      "actual": 0.11,
+      "independent_reference": "11/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 normalized tolerated budget mean",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 normalized tolerated budget variance",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 allocation total overflow avoided",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 scenario mass normalized constant mean",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 scenario mass normalized constant variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 zero-probability huge shock variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 rare-large finite scenario variance",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 expected integer cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F151 normalized drift at finite-return limit",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "PSD extension positive supplied direction rejected",
+      "passed": true,
+      "exception": "ValueError('covariance is not PSD within scale-relative tolerance')"
+    },
+    {
+      "label": "F151 nonboolean short policy rejected",
+      "passed": true,
+      "exception": "ValueError('allow_short must be boolean')"
+    },
+    {
+      "label": "policy extension default signed scenario rejected",
+      "passed": true,
+      "exception": "ValueError('weights must be nonnegative')"
+    },
+    {
+      "label": "F151 nonzero normalized allocation underflow rejected",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')"
+    },
+    {
+      "label": "F151 nonzero variance underflow rejected",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')"
+    },
+    {
+      "label": "F151 variance overflow ValueError",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')"
+    },
+    {
+      "label": "F151 unreconcilable contribution outputs rejected",
+      "passed": true,
+      "exception": "ValueError('reported outputs lose reconciliation')"
+    },
+    {
+      "label": "F151 huge integer inputs ValueError",
+      "passed": true,
+      "exception": "ValueError('input outside finite float range')"
+    },
+    {
+      "label": "F151 malformed scenario outer ValueError",
+      "passed": true,
+      "exception": "ValueError('aligned scenario list/tuple required')"
+    },
+    {
+      "label": "F151 zero-diagonal covariance row rejected",
+      "passed": true,
+      "exception": "ValueError('zero variance requires zero covariance row')"
+    },
+    {
+      "label": "negative allocations rejected",
+      "passed": true,
+      "exception": "ValueError('nonnegative allocations with positive total required')"
+    },
+    {
+      "label": "exhausted NAV rejected",
+      "passed": true,
+      "exception": "ValueError('portfolio NAV exhausted')"
+    },
+    {
+      "label": "unleveraged return below minus one rejected",
+      "passed": true,
+      "exception": "ValueError('unleveraged simple return cannot be below -100%')"
+    },
+    {
+      "label": "bad scenario mass rejected",
+      "passed": true,
+      "exception": "ValueError('probabilities must sum to one')"
+    },
+    {
+      "label": "short static weights require permission",
+      "passed": true,
+      "exception": "ValueError('weights must be nonnegative')"
+    },
+    {
+      "label": "lab input fixtures preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B",
+      "cash-like C"
+    ],
+    "weights": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "original_means": [
+      0.08,
+      0.05,
+      0.02
+    ],
+    "covariance": [
+      [
+        0.04,
+        0.006,
+        0
+      ],
+      [
+        0.006,
+        0.09,
+        0
+      ],
+      [
+        0,
+        0,
+        0.0004
+      ]
+    ],
+    "original_statistics": {
+      "expected_return": 0.059,
+      "variance": 0.019916,
+      "volatility": 0.141124058898545,
+      "variance_contributions": [
+        0.0109,
+        0.009,
+        1.6e-05
+      ]
+    },
+    "realized_returns": [
+      0.1,
+      -0.05,
+      0
+    ],
+    "normalized_allocations": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "drifted_weights": [
+      0.5314009661835749,
+      0.2753623188405797,
+      0.1932367149758454
+    ],
+    "updated_statistics": {
+      "expected_return": 0.060144927536231886,
+      "variance": 0.01989054587038204,
+      "volatility": 0.14103384654182144,
+      "variance_contributions": [
+        0.012173446288128078,
+        0.007702163411048099,
+        1.4936171205862445e-05
+      ]
+    },
+    "scenario_probabilities": [
+      0.25,
+      0.75
+    ],
+    "scenario_rows": [
+      [
+        0.1,
+        -0.05,
+        0.02
+      ],
+      [
+        -0.1,
+        0.04,
+        0.02
+      ]
+    ],
+    "scenario_statistics": {
+      "scenario_returns": [
+        0.039,
+        -0.034
+      ],
+      "expected_return": -0.01575,
+      "variance": 0.0009991875,
+      "volatility": 0.03160992723813201
+    },
+    "scenario_implied_means": [
+      "-1/20",
+      "7/400",
+      "1/50"
+    ],
+    "scenario_implied_covariance": [
+      [
+        "3/400",
+        "-27/8000",
+        "0"
+      ],
+      [
+        "-27/8000",
+        "243/160000",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "same_model_moment_route": {
+      "expected_return": -0.01575,
+      "variance": 0.0009991875,
+      "volatility": 0.03160992723813201,
+      "variance_contributions": [
+        0.00136875,
+        -0.0003695625,
+        0.0
+      ]
+    },
+    "units": "decimal simple returns and squared decimal covariance",
+    "horizon": "one common synthetic period",
+    "currency": "fictional common USD",
+    "dates": null,
+    "scenario_scope": "separate alternative model from original 5.9-percent forecast",
+    "fixture_sha256": "7a33e2e9047d6b4f2ec3e93b7e4112dd13e76758b86a1d8d25373501ad5e616e",
+    "scope": "local source API chain only; no actual NAV/FX/as-of source integration or costs"
+  }
+}
