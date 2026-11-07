@@ -1,0 +1,569 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "23f280771556825b46fe8a048d836b8ef30a8256f7f6fc36863a1d7255612530",
+  "listing_sha256": "31a4f1cd59fc7d0b762132e4b6f47a2fd3eaf7674a35f4ae2e7caf1d13c42f8f",
+  "helper_sha256": "964bbee43936d5db864f2421ccafa050017c65ce15a8c7b1ff444a0154ee423a",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "financial_statistics_toolkit.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}\n",
+      "stderr": "test_01_mean (__main__.ToolkitTests.test_01_mean) ... ok\ntest_02_sd (__main__.ToolkitTests.test_02_sd) ... ok\ntest_03_covariance (__main__.ToolkitTests.test_03_covariance) ... ok\ntest_04_correlation (__main__.ToolkitTests.test_04_correlation) ... ok\ntest_05_returns (__main__.ToolkitTests.test_05_returns) ... ok\ntest_06_compounding (__main__.ToolkitTests.test_06_compounding) ... ok\ntest_07_rolling (__main__.ToolkitTests.test_07_rolling) ... ok\ntest_08_ci_center (__main__.ToolkitTests.test_08_ci_center) ... ok\ntest_09_ols (__main__.ToolkitTests.test_09_ols) ... ok\ntest_10_tail (__main__.ToolkitTests.test_10_tail) ... ok\ntest_11_report (__main__.ToolkitTests.test_11_report) ... ok\ntest_12_invalid (__main__.ToolkitTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "exact CSV usage example",
+      "args": [
+        "csv_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "2026-01-05 2026-01-09 {'observations': 4, 'mean_return': 0.012376251759956122, 'volatility': 0.016720680640921515, 'cumulative_return': 0.05, 'correlation': 0.9544585794527587, 'regression': {'alpha': -0.0016242215226564846, 'beta': 0.9472792795880587, 'r2': 0.9109911798909782, 'sse': 7.465556782151252e-05}, 'normal_ci_approx': (-0.004009714166645016, 0.02876221768655726), 'historical_tail': {'var': 0.009708737864077669, 'es': 0.009708737864077669, 'tail_count': 1}, 'rolling_mean': [0.0149009900990099, 0.005046621166971067, 0.009851513420902342]}\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import financial_statistics_toolkit"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "financial_statistics_toolkit.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "lab B/C report observations",
+      "passed": true,
+      "actual": 4,
+      "independent_reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab B/C report mean_return",
+      "passed": true,
+      "actual": 0.012376251759956122,
+      "independent_reference": "875501/70740400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab B/C report volatility",
+      "passed": true,
+      "actual": 0.016720680640921515,
+      "independent_reference": "0.016720680640921516107223350328426030661505466898307847156801430368035619256290685",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab B/C report cumulative_return",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab B/C report correlation",
+      "passed": true,
+      "actual": 0.9544585794527587,
+      "independent_reference": "0.9544585794527588",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab C regression alpha",
+      "passed": true,
+      "actual": -0.0016242215226564846,
+      "independent_reference": "-729997741650995/449444691791210532",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab C regression beta",
+      "passed": true,
+      "actual": 0.9472792795880587,
+      "independent_reference": "20262214156418/21389905377461",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab C regression r2",
+      "passed": true,
+      "actual": 0.9109911798909782,
+      "independent_reference": "607333317338085803802649/666673103696533828217649",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab C regression sse",
+      "passed": true,
+      "actual": 7.465556782151252e-05,
+      "independent_reference": "11867957271689604883/158969486375934747589464",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab E w2 mean 0",
+      "passed": true,
+      "actual": 0.0149009900990099,
+      "independent_reference": "301/20200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab E w2 mean 1",
+      "passed": true,
+      "actual": 0.005046621166971067,
+      "independent_reference": "105/20806",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab E w2 mean 2",
+      "passed": true,
+      "actual": 0.009851513420902342,
+      "independent_reference": "69/7004",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab E w3 mean 0",
+      "passed": true,
+      "actual": 0.0066977474446473775,
+      "independent_reference": "20903/3120900",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab E w3 mean 1",
+      "passed": true,
+      "actual": 0.013168335679941495,
+      "independent_reference": "13973/1061106",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab D tail var",
+      "passed": true,
+      "actual": 0.009708737864077669,
+      "independent_reference": "1/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab D tail es",
+      "passed": true,
+      "actual": 0.009708737864077669,
+      "independent_reference": "1/103",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab D tail tail_count",
+      "passed": true,
+      "actual": 1,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab D normal CI 0",
+      "passed": true,
+      "actual": -0.004009714166645016,
+      "independent_reference": "-0.004009714166645018047227471415901947579805287797882566332692733566578639772969965",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab D normal CI 1",
+      "passed": true,
+      "actual": 0.02876221768655726,
+      "independent_reference": "0.028762217686557260556458405931398043163092914104773678059513616682874278474475753",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab A canonical fixture dates",
+      "passed": true
+    },
+    {
+      "label": "E1 mean",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 sample SD",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 covariance",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 correlation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 simple return",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 compound",
+      "passed": true,
+      "actual": -0.01,
+      "independent_reference": "-1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 slope",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 intercept",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 R2",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 VaR",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 ES",
+      "passed": true,
+      "actual": 0.075,
+      "independent_reference": "3/40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab B disclosed large-loss stress",
+      "passed": true,
+      "actual": -0.469447,
+      "independent_reference": "-469447/1000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 large mean",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 integer SD",
+      "passed": true,
+      "actual": 1.4142135623730951,
+      "independent_reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 tiny SD",
+      "passed": true,
+      "actual": 1.414213562373095e-200,
+      "independent_reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070E-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 small-product Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 large-product Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 reportable-large-scale Pearson",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 tiny CI lower endpoint",
+      "passed": true,
+      "actual": -9.599639845400538e-201,
+      "independent_reference": "-9.59963984540054E-201",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 integer OLS slope",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 tiny price increment",
+      "passed": true,
+      "actual": 1e-18,
+      "independent_reference": "1/1000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 tail boundary",
+      "passed": true,
+      "actual": 14,
+      "independent_reference": "14",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 true bankruptcy",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F140 valid near-one confidence",
+      "passed": true,
+      "actual": [
+        -2.7947701007979013,
+        6.794770100797901
+      ]
+    },
+    {
+      "label": "lab A CSV zero price",
+      "passed": true,
+      "exception": "ValueError('finite positive price required')"
+    },
+    {
+      "label": "lab A CSV duplicate date",
+      "passed": true,
+      "exception": "ValueError('dates must be canonical, unique and increasing YYYY-MM-DD')"
+    },
+    {
+      "label": "lab A CSV invalid ISO calendar date",
+      "passed": true,
+      "exception": "ValueError('valid ISO calendar dates required')"
+    },
+    {
+      "label": "lab A CSV lexical dates",
+      "passed": true,
+      "exception": "ValueError('valid ISO calendar dates required')"
+    },
+    {
+      "label": "lab A CSV missing schema column",
+      "passed": true,
+      "exception": "ValueError('exactly date, asset_price, benchmark_price columns required')"
+    },
+    {
+      "label": "lab A CSV duplicate schema column",
+      "passed": true,
+      "exception": "ValueError('exactly date, asset_price, benchmark_price columns required')"
+    },
+    {
+      "label": "lab A CSV ragged row",
+      "passed": true,
+      "exception": "ValueError('each CSV row requires exactly three nonempty fields')"
+    },
+    {
+      "label": "lab A CSV extra row value",
+      "passed": true,
+      "exception": "ValueError('each CSV row requires exactly three nonempty fields')"
+    },
+    {
+      "label": "lab A CSV nonfinite price",
+      "passed": true,
+      "exception": "ValueError('finite positive price required')"
+    },
+    {
+      "label": "E15 constant correlation rejected",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "F140 decimal constant correlation rejected",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "F140 decimal constant OLS rejected",
+      "passed": true,
+      "exception": "ValueError('constant predictor')"
+    },
+    {
+      "label": "nonfinite price rejected",
+      "passed": true,
+      "exception": "ValueError('all values must be finite numbers')"
+    },
+    {
+      "label": "missing observation rejected",
+      "passed": true,
+      "exception": "ValueError('all values must be finite numbers')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('all values must be finite numbers')"
+    },
+    {
+      "label": "F140 false total loss rejected",
+      "passed": true,
+      "exception": "ValueError('positive wealth would falsely round to total loss')"
+    },
+    {
+      "label": "F140 unreportable compound rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F140 collapsed CI rejected",
+      "passed": true,
+      "exception": "ValueError('positive CI width lost in float reporting')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "lab_phase_records": 6,
+  "lab_step_records": 32,
+  "project_deliverable_records": 7,
+  "readiness_domain_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "dates": [
+      "2026-01-05",
+      "2026-01-06",
+      "2026-01-07",
+      "2026-01-08",
+      "2026-01-09"
+    ],
+    "asset_prices": [
+      100,
+      101,
+      103,
+      102,
+      105
+    ],
+    "benchmark_prices": [
+      100,
+      102,
+      104,
+      103,
+      106
+    ],
+    "price_units": "fictional USD",
+    "return_units": "decimal simple returns",
+    "adjustment_policy": "raw fictional prices; no dividends/splits supplied",
+    "frequency": "hypothetical daily",
+    "csv_sha256": "f34a0b1589c2f2e12f950c8ba2e5820bdbda059e9ea8fa7d8aa808db7c067bb0",
+    "source_report": {
+      "observations": 4,
+      "mean_return": 0.012376251759956122,
+      "volatility": 0.016720680640921515,
+      "cumulative_return": 0.05,
+      "correlation": 0.9544585794527587,
+      "regression": {
+        "alpha": -0.0016242215226564846,
+        "beta": 0.9472792795880587,
+        "r2": 0.9109911798909782,
+        "sse": 7.465556782151252e-05
+      },
+      "normal_ci_approx": [
+        -0.004009714166645016,
+        0.02876221768655726
+      ],
+      "historical_tail": {
+        "var": 0.009708737864077669,
+        "es": 0.009708737864077669,
+        "tail_count": 1
+      },
+      "rolling_mean": [
+        0.0149009900990099,
+        0.005046621166971067,
+        0.009851513420902342
+      ]
+    },
+    "lab_phases": [
+      "A dataset",
+      "B summaries",
+      "C dependence",
+      "D uncertainty/tails",
+      "E rolling",
+      "F audit design"
+    ],
+    "lab_step_records": 32,
+    "audit_scope": "synthetic fixture only; actual corporate actions, as-of feeds, universe, timing, security, performance and independent acceptance unresolved"
+  }
+}
