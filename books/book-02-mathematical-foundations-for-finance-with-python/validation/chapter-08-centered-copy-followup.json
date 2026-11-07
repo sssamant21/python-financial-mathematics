@@ -1,0 +1,307 @@
+{
+  "baseline_revision": "3bd554d420d7e3d60ca32b3e4b1a48d6f611858a",
+  "corrected_revision": "a6441d707337946a76e059c6cf53a5b05291afa0",
+  "sources": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+      "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_03.py",
+      "sha": "75b7c35571d07c72197cc2d4019a25b53120f53f"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_centered_copy.py",
+      "sha": "83065755973a972445df016e17937953baa4eb9a"
+    }
+  ],
+  "baseline": [
+    {
+      "case": "collapsed control",
+      "expected": "ValueError",
+      "actual": 0,
+      "expected_calls": [],
+      "actual_calls": [
+        1,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "case": "nonfinite control",
+      "expected": "ValueError",
+      "actual": 0,
+      "expected_calls": [],
+      "actual_calls": [
+        "inf",
+        0
+      ],
+      "passed": false
+    },
+    {
+      "case": "finite whole quotient",
+      "expected": 1,
+      "actual": "nan",
+      "expected_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": false
+    },
+    {
+      "case": "genuine final overflow",
+      "expected": "ValueError",
+      "actual": "inf",
+      "expected_calls": [
+        0.25,
+        -0.25
+      ],
+      "actual_calls": [
+        0.25,
+        -0.25
+      ],
+      "passed": false
+    },
+    {
+      "case": "negative step",
+      "expected": 1,
+      "actual": 1,
+      "expected_calls": [
+        -0.5,
+        0.5
+      ],
+      "actual_calls": [
+        -0.5,
+        0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "public default retained",
+      "expected": 0.0001,
+      "actual": 0.0001,
+      "passed": true
+    },
+    {
+      "case": "actual wrapper passes callback and default to helper",
+      "expected": [
+        7,
+        [
+          [
+            true,
+            0,
+            0.0001
+          ]
+        ]
+      ],
+      "actual": [
+        "missing shared wrapper",
+        []
+      ],
+      "passed": false
+    },
+    {
+      "case": "shared helper identity",
+      "expected": true,
+      "actual": false,
+      "passed": false
+    }
+  ],
+  "baseline_replay": [
+    {
+      "case": "collapsed control",
+      "expected": "ValueError",
+      "actual": 0,
+      "expected_calls": [],
+      "actual_calls": [
+        1,
+        1
+      ],
+      "passed": false
+    },
+    {
+      "case": "nonfinite control",
+      "expected": "ValueError",
+      "actual": 0,
+      "expected_calls": [],
+      "actual_calls": [
+        "inf",
+        0
+      ],
+      "passed": false
+    },
+    {
+      "case": "finite whole quotient",
+      "expected": 1,
+      "actual": "nan",
+      "expected_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": false
+    },
+    {
+      "case": "genuine final overflow",
+      "expected": "ValueError",
+      "actual": "inf",
+      "expected_calls": [
+        0.25,
+        -0.25
+      ],
+      "actual_calls": [
+        0.25,
+        -0.25
+      ],
+      "passed": false
+    },
+    {
+      "case": "negative step",
+      "expected": 1,
+      "actual": 1,
+      "expected_calls": [
+        -0.5,
+        0.5
+      ],
+      "actual_calls": [
+        -0.5,
+        0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "public default retained",
+      "expected": 0.0001,
+      "actual": 0.0001,
+      "passed": true
+    },
+    {
+      "case": "actual wrapper passes callback and default to helper",
+      "expected": [
+        7,
+        [
+          [
+            true,
+            0,
+            0.0001
+          ]
+        ]
+      ],
+      "actual": [
+        "missing shared wrapper",
+        []
+      ],
+      "passed": false
+    },
+    {
+      "case": "shared helper identity",
+      "expected": true,
+      "actual": false,
+      "passed": false
+    }
+  ],
+  "corrected": [
+    {
+      "case": "collapsed control",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "expected_calls": [],
+      "actual_calls": [],
+      "passed": true
+    },
+    {
+      "case": "nonfinite control",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "expected_calls": [],
+      "actual_calls": [],
+      "passed": true
+    },
+    {
+      "case": "finite whole quotient",
+      "expected": 1,
+      "actual": 1,
+      "expected_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "genuine final overflow",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "expected_calls": [
+        0.25,
+        -0.25
+      ],
+      "actual_calls": [
+        0.25,
+        -0.25
+      ],
+      "passed": true
+    },
+    {
+      "case": "negative step",
+      "expected": 1,
+      "actual": 1,
+      "expected_calls": [
+        -0.5,
+        0.5
+      ],
+      "actual_calls": [
+        -0.5,
+        0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "public default retained",
+      "expected": 0.0001,
+      "actual": 0.0001,
+      "passed": true
+    },
+    {
+      "case": "actual wrapper passes callback and default to helper",
+      "expected": [
+        7,
+        [
+          [
+            true,
+            0,
+            0.0001
+          ]
+        ]
+      ],
+      "actual": [
+        7,
+        [
+          [
+            true,
+            0,
+            0.0001
+          ]
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "shared helper identity",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "limits": "Assistant checks on one Linux environment; no independent reviewer, platform, release or canonical approval."
+}
