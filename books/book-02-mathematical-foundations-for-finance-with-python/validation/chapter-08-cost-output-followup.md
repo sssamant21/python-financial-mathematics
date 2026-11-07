@@ -1,0 +1,15 @@
+# Section 8.2 cost-output follow-up
+
+Baseline `60d4db0ff54e8dc0ca38af5656da7cc60b091698`, original Section 8.2 blob `a497e6c64b4964effda0326f1bb2ddcff66648ab`. Corrected executable tree: `7db1525c2f390b0eb9afa431c08648b6450737d3`. [Exact dependencies and retained observations](chapter-08-cost-output-followup.json).
+
+**50 checks pass**, with four baseline mismatches and a byte-identical baseline replay. Three baseline observations returned infinity where the complete result cannot be represented. One adjacent-boundary result differed by one ulp under the now explicit one-final-rounding accuracy contract; the earlier exploratory record did not claim this was already a documented requirement. No marginal-cost baseline failure was observed in this corpus. Both helpers now share the complete-evaluation contract.
+
+A 2500-digit Decimal oracle separately sums 1000 + 20q + aq², with a equal to the represented binary64 0.05. Its analytic derivative is 20 + 2aq; doubling this coefficient yields the represented 0.1 exactly. These references differ from the implementation's rational Horner recurrence. The Decimal precision exceeds the significant digits needed for these finite binary64 inputs and quadratic terms; a 120-digit quadratic root only selects nearby inputs and is not used as an acceptance tolerance.
+
+The corpus comprises 32 independent cost/marginal references across sixteen quantities, twelve invalid-type/domain observations and six composition regressions. It covers signed zero, subnormal and normal tiny quantities, ordinary quantities, large finite costs, adjacent boundary floats, and genuine final overflow. Profit and marginal profit retain their composed call relationships on [0,500]; those six regressions are not six new independent oracles.
+
+The implementation routes cost and marginal cost through the previously checked complete polynomial evaluator. Invalid quantity types/domains retain TypeError/ValueError; an unrepresentable final cost raises OverflowError. Cost at maximum float therefore rejects instead of returning infinity. The manuscript records the new rounding and finite-output policy. Existing Section 8.2 checks and the 64-case polynomial-range checker also passed.
+
+Run `python check_cost_output_range.py` from `chapter-08/code`. For a baseline replay, retrieve the original Section 8.2 module at the baseline revision into a separate directory and pass that directory as the corrected checker's sole argument. The requested file must exist; Section 8.1 remains the unchanged dependency from the pinned source tree. Baseline/replay exit 1; corrected run exits 0. Exact original source hash was verified. No initial checker correction was needed in this batch.
+
+[V-105 full runtime](runtime-refresh-2026-11-07-r11.md). Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callback-baseline.md). COV-51 stays partial. Independent reviewer sign-off, supported-platform validation, release acceptance and canonical approval remain pending.
