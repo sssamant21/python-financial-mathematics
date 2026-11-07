@@ -54,9 +54,25 @@ def central_difference(amount, rate, years, step):
     up, down = rate + step, rate - step
     if not math.isfinite(up) or not math.isfinite(down) or up == rate or down == rate:
         raise ValueError("step does not produce finite distinct perturbations")
-    if not math.isfinite(2 * step):
-        raise OverflowError("central-difference denominator exceeds float range")
-    return checked((pv(amount, up, years) - pv(amount, down, years)) / (2 * step))
+    if amount == 0 or years == 0:
+        return 0.
+    a, t, h = map(Fraction, (amount, years, step))
+    # Use the rounded perturbations of the public stencil, but evaluate the
+    # complete difference before requiring any intermediate PV to fit a float.
+    exponent = -Fraction(down)*t
+    gap = (Fraction(up)-Fraction(down))*t
+    # Nonzero dyadic inputs bound the prefactor and the cancellation gap:
+    # neither can offset an exponent with magnitude above this coarse cutoff.
+    if exponent > 10000:
+        raise OverflowError("result exceeds float range")
+    if exponent < -10000:
+        return math.copysign(0., -amount)
+    with localcontext(Context(prec=1800)):
+        def dec(q):
+            return Decimal(q.numerator)/Decimal(q.denominator)
+        difference = Decimal(1) if gap > 10000 else 1-(-dec(gap)).exp()
+        result = -dec(a/(2*h))*dec(exponent).exp()*difference
+        return checked(float(result))
 
 def approximations(amount, rate, years, change):
     change = finite(change, "change")
