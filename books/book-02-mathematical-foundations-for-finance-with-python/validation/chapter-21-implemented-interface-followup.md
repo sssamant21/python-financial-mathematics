@@ -1,0 +1,9 @@
+# Chapter 21 implemented-interface reconciliation
+
+[Baseline](chapter-21-implemented-interface-baseline.md) · [Exact observations and source blobs](chapter-21-implemented-interface-followup.json) · [Corrected source](https://github.com/sssamant21/python-financial-mathematics/blob/00fd462aa3a0da15d5babd6c26dc6e49c072e425/books/book-02-mathematical-foundations-for-finance-with-python/chapter-21/code/section_21_02.py).
+
+The original catalog remains a six-area design draft. A separate copied map now describes seven selected implemented entry points across those six areas, including signatures, top-level return fields and explicit scope limits. This does not add a general optimizer, trajectory engine, condition-number calculation or parameterized report.
+
+The checker found 11 missing-map observations on the baseline; an identical replay is retained. All 26 observations pass after the map was added. Those missing-map observations describe one scope gap, not eleven numerical defects. The checks execute positional and keyword calls, inspect actual signatures, compare returned shapes, verify keyword-only and unsupported arguments, test deep-copy independence, and show that the checker detects an altered signature and missing report field. Numerical values remain covered by existing independent oracles; these calls are not counted as new numerical examples.
+
+Run `python check_implemented_interfaces.py` from `chapter-21/code` at revision `00fd462aa3a0da15d5babd6c26dc6e49c072e425`. For baseline replay, pass the baseline checkout's absolute `chapter-21/code` path as the sole argument. The JSON pins the catalog, all chapter module blobs and checker. Selected COV-88 evidence only: nested schema/domain exhaustiveness, independent review, supported-platform validation, release acceptance and canonical approval remain open. [Full candidate run](runtime-refresh-2026-11-07-r02.md).
