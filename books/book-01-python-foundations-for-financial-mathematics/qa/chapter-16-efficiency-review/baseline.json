@@ -1,0 +1,981 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "a8935030aa200638d34fffd3a9b5cd6564f3d944e61147bfbc67d7ab8a5b236a",
+  "listing_sha256": "3012f12c2e570ba498957c23ccbab45287bc56abe4e3bdd1bb74869dc25f4e5e",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "efficient_portfolio_concepts.py"
+      ],
+      "returncode": 0,
+      "stdout": "Grid minimum variance: {'weights': (0.7, 0.3), 'expected_return': 0.06799999999999999, 'variance': 0.027699999999999995, 'volatility': 0.16643316977093237}\nGrid efficient count: 7\n",
+      "stderr": "test_01_return (__main__.EfficientTests.test_01_return) ... ok\ntest_02_variance (__main__.EfficientTests.test_02_variance) ... ok\ntest_03_volatility (__main__.EfficientTests.test_03_volatility) ... ok\ntest_04_grid_count (__main__.EfficientTests.test_04_grid_count) ... ok\ntest_05_three_asset_count (__main__.EfficientTests.test_05_three_asset_count) ... ok\ntest_06_sum (__main__.EfficientTests.test_06_sum) ... ok\ntest_07_dominance (__main__.EfficientTests.test_07_dominance) ... ok\ntest_08_nondominance (__main__.EfficientTests.test_08_nondominance) ... ok\ntest_09_min_variance (__main__.EfficientTests.test_09_min_variance) ... ok\ntest_10_target (__main__.EfficientTests.test_10_target) ... ok\ntest_11_sharpe (__main__.EfficientTests.test_11_sharpe) ... ok\ntest_12_invalid (__main__.EfficientTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import efficient_portfolio_concepts"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "efficient_portfolio_concepts.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1-E3 expected_return",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E1-E3 variance",
+      "passed": true,
+      "actual": 0.0325,
+      "independent_reference": "13/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E1-E3 volatility",
+      "passed": true,
+      "actual": 0.18027756377319948,
+      "independent_reference": "0.18027756377319946465596106337352479731256482869226231063552265281135834741465052",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4/E5/E23 grid count (2, 10)",
+      "passed": true
+    },
+    {
+      "label": "grid nonnegative unit budgets (2, 10)",
+      "passed": true
+    },
+    {
+      "label": "E4/E5/E23 grid count (3, 4)",
+      "passed": true
+    },
+    {
+      "label": "grid nonnegative unit budgets (3, 4)",
+      "passed": true
+    },
+    {
+      "label": "E4/E5/E23 grid count (2, 20)",
+      "passed": true
+    },
+    {
+      "label": "grid nonnegative unit budgets (2, 20)",
+      "passed": true
+    },
+    {
+      "label": "E7 strict dominance",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "E8 genuine tradeoff",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "label": "E9 equal risk higher mean",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "E10 equal mean lower risk",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "identical points nondominating",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "label": "F153 tiny tradeoff not tolerance-dominated",
+      "passed": false,
+      "actual": true,
+      "expected": false
+    },
+    {
+      "label": "F153 small improvement not erased",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "lab full candidate 0",
+      "passed": true,
+      "mean_reference": "1/25",
+      "variance_reference": "9/100",
+      "actual_mean": 0.04,
+      "actual_variance": 0.09
+    },
+    {
+      "label": "lab full candidate 1",
+      "passed": true,
+      "mean_reference": "21/500",
+      "variance_reference": "3253/40000",
+      "actual_mean": 0.041999999999999996,
+      "actual_variance": 0.081325
+    },
+    {
+      "label": "lab full candidate 2",
+      "passed": true,
+      "mean_reference": "11/250",
+      "variance_reference": "733/10000",
+      "actual_mean": 0.044000000000000004,
+      "actual_variance": 0.0733
+    },
+    {
+      "label": "lab full candidate 3",
+      "passed": true,
+      "mean_reference": "23/500",
+      "variance_reference": "2637/40000",
+      "actual_mean": 0.046,
+      "actual_variance": 0.065925
+    },
+    {
+      "label": "lab full candidate 4",
+      "passed": true,
+      "mean_reference": "6/125",
+      "variance_reference": "37/625",
+      "actual_mean": 0.048,
+      "actual_variance": 0.059199999999999996
+    },
+    {
+      "label": "lab full candidate 5",
+      "passed": true,
+      "mean_reference": "1/20",
+      "variance_reference": "17/320",
+      "actual_mean": 0.05,
+      "actual_variance": 0.053125000000000006
+    },
+    {
+      "label": "lab full candidate 6",
+      "passed": true,
+      "mean_reference": "13/250",
+      "variance_reference": "477/10000",
+      "actual_mean": 0.052,
+      "actual_variance": 0.0477
+    },
+    {
+      "label": "lab full candidate 7",
+      "passed": true,
+      "mean_reference": "27/500",
+      "variance_reference": "1717/40000",
+      "actual_mean": 0.054,
+      "actual_variance": 0.042925
+    },
+    {
+      "label": "lab full candidate 8",
+      "passed": true,
+      "mean_reference": "7/125",
+      "variance_reference": "97/2500",
+      "actual_mean": 0.056,
+      "actual_variance": 0.0388
+    },
+    {
+      "label": "lab full candidate 9",
+      "passed": true,
+      "mean_reference": "29/500",
+      "variance_reference": "1413/40000",
+      "actual_mean": 0.05800000000000001,
+      "actual_variance": 0.035325
+    },
+    {
+      "label": "lab full candidate 10",
+      "passed": true,
+      "mean_reference": "3/50",
+      "variance_reference": "13/400",
+      "actual_mean": 0.06,
+      "actual_variance": 0.0325
+    },
+    {
+      "label": "lab full candidate 11",
+      "passed": true,
+      "mean_reference": "31/500",
+      "variance_reference": "1213/40000",
+      "actual_mean": 0.062000000000000006,
+      "actual_variance": 0.030325000000000005
+    },
+    {
+      "label": "lab full candidate 12",
+      "passed": true,
+      "mean_reference": "8/125",
+      "variance_reference": "18/625",
+      "actual_mean": 0.064,
+      "actual_variance": 0.0288
+    },
+    {
+      "label": "lab full candidate 13",
+      "passed": true,
+      "mean_reference": "33/500",
+      "variance_reference": "1117/40000",
+      "actual_mean": 0.066,
+      "actual_variance": 0.027925000000000002
+    },
+    {
+      "label": "lab full candidate 14",
+      "passed": true,
+      "mean_reference": "17/250",
+      "variance_reference": "277/10000",
+      "actual_mean": 0.06799999999999999,
+      "actual_variance": 0.027699999999999995
+    },
+    {
+      "label": "lab full candidate 15",
+      "passed": true,
+      "mean_reference": "7/100",
+      "variance_reference": "9/320",
+      "actual_mean": 0.06999999999999999,
+      "actual_variance": 0.028124999999999997
+    },
+    {
+      "label": "lab full candidate 16",
+      "passed": true,
+      "mean_reference": "9/125",
+      "variance_reference": "73/2500",
+      "actual_mean": 0.07200000000000001,
+      "actual_variance": 0.0292
+    },
+    {
+      "label": "lab full candidate 17",
+      "passed": true,
+      "mean_reference": "37/500",
+      "variance_reference": "1237/40000",
+      "actual_mean": 0.07400000000000001,
+      "actual_variance": 0.030925
+    },
+    {
+      "label": "lab full candidate 18",
+      "passed": true,
+      "mean_reference": "19/250",
+      "variance_reference": "333/10000",
+      "actual_mean": 0.07600000000000001,
+      "actual_variance": 0.0333
+    },
+    {
+      "label": "lab full candidate 19",
+      "passed": true,
+      "mean_reference": "39/500",
+      "variance_reference": "1453/40000",
+      "actual_mean": 0.078,
+      "actual_variance": 0.036325
+    },
+    {
+      "label": "lab full candidate 20",
+      "passed": true,
+      "mean_reference": "2/25",
+      "variance_reference": "1/25",
+      "actual_mean": 0.08,
+      "actual_variance": 0.04
+    },
+    {
+      "label": "lab grid GMV weight",
+      "passed": true,
+      "actual": 0.7,
+      "independent_reference": "7/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab grid GMV variance",
+      "passed": true,
+      "actual": 0.027699999999999995,
+      "independent_reference": "277/10000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 supplemental analytical GMV weight",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "independent_reference": "9/13",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12/E13 supplemental analytical minimum variance",
+      "passed": true,
+      "actual": 0.027692307692307693,
+      "independent_reference": "9/325",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab grid variance approximation gap",
+      "passed": true,
+      "actual": 7.692307692302308e-06,
+      "independent_reference": "1/130000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab efficient weights exact grid oracle",
+      "passed": true,
+      "actual": [
+        [
+          0.7,
+          0.3
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.8,
+          0.2
+        ],
+        [
+          0.85,
+          0.15
+        ],
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.95,
+          0.05
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "label": "E14 target weight",
+      "passed": true,
+      "actual": 0.75,
+      "independent_reference": "3/4",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab target return",
+      "passed": true,
+      "actual": 0.06999999999999999,
+      "independent_reference": "7/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab target variance",
+      "passed": true,
+      "actual": 0.028124999999999997,
+      "independent_reference": "9/320",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab grid containing continuous optimizer",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "independent_reference": "9/13",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16 Sharpe",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E17 supplemental excess return",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22 supplemental gross exposure",
+      "passed": true,
+      "actual": 1.4,
+      "independent_reference": "7/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab all Sharpe values independent oracle",
+      "passed": true
+    },
+    {
+      "label": "explicit approximate dominance is opt-in",
+      "passed": true
+    },
+    {
+      "label": "lab max-Sharpe grid independent squared-ratio oracle",
+      "passed": true,
+      "actual": [
+        0.85,
+        0.15
+      ]
+    },
+    {
+      "label": "lab stressed grid weight 0.5",
+      "passed": true,
+      "actual": 0.85,
+      "independent_reference": "17/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab stressed grid variance 0.5",
+      "passed": true,
+      "actual": 0.038575,
+      "independent_reference": "1543/40000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab stressed grid weight 1",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab stressed grid variance 1",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "explicit target slack is opt-in",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F153 exact target requirement not relaxed by default",
+      "passed": false,
+      "actual": 0.01,
+      "independent_reference": "1/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F153 normalized budget expected return",
+      "passed": false,
+      "actual": 1.00000000005,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F153 normalized budget variance",
+      "passed": false,
+      "actual": 1.0000000001,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F153 expected integer offset retained",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F153 Sharpe integer offset retained",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F153 finite Sharpe before excess overflow",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "PSD extension invalid global covariance rejected",
+      "passed": false,
+      "actual": "{'weights': (1, 0), 'expected_return': 0.0, 'variance': 1.0, 'volatility': 1.0}"
+    },
+    {
+      "label": "F153 negative tiny variance not clipped",
+      "passed": true,
+      "exception": "ValueError('negative variance')"
+    },
+    {
+      "label": "F153 invalid dominance tolerance rejected",
+      "passed": false,
+      "actual": "False"
+    },
+    {
+      "label": "F153 invalid target tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('target infeasible on grid')"
+    },
+    {
+      "label": "F153 invalid candidate negative risk rejected",
+      "passed": false,
+      "actual": "{'expected_return': 0.1, 'variance': -1}"
+    },
+    {
+      "label": "F153 malformed evaluation ValueError",
+      "passed": false,
+      "exception": "TypeError(\"object of type 'NoneType' has no len()\")"
+    },
+    {
+      "label": "F153 unreportable variance rejected",
+      "passed": false,
+      "actual": "{'weights': (0.1, 0.9), 'expected_return': 0.0, 'variance': 0, 'volatility': 0.0}"
+    },
+    {
+      "label": "F153 unreportable Sharpe overflow rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F153 unreportable Sharpe underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F153 huge integer parameter ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "E15 infeasible target rejected",
+      "passed": true,
+      "exception": "ValueError('target infeasible on grid')"
+    },
+    {
+      "label": "E18 zero-volatility Sharpe undefined",
+      "passed": true,
+      "exception": "ValueError('positive volatility required')"
+    },
+    {
+      "label": "E21 short weights rejected",
+      "passed": true,
+      "exception": "ValueError('long-only weights must sum to one')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B"
+    ],
+    "means": [
+      0.08,
+      0.04
+    ],
+    "covariance": [
+      [
+        0.04,
+        0
+      ],
+      [
+        0,
+        0.09
+      ]
+    ],
+    "steps": 20,
+    "grid": [
+      {
+        "weights": [
+          0.0,
+          1.0
+        ],
+        "expected_return": 0.04,
+        "variance": 0.09,
+        "volatility": 0.3
+      },
+      {
+        "weights": [
+          0.05,
+          0.95
+        ],
+        "expected_return": 0.041999999999999996,
+        "variance": 0.081325,
+        "volatility": 0.28517538463198394
+      },
+      {
+        "weights": [
+          0.1,
+          0.9
+        ],
+        "expected_return": 0.044000000000000004,
+        "variance": 0.0733,
+        "volatility": 0.2707397274136177
+      },
+      {
+        "weights": [
+          0.15,
+          0.85
+        ],
+        "expected_return": 0.046,
+        "variance": 0.065925,
+        "volatility": 0.25675864152935535
+      },
+      {
+        "weights": [
+          0.2,
+          0.8
+        ],
+        "expected_return": 0.048,
+        "variance": 0.059199999999999996,
+        "volatility": 0.2433105012119288
+      },
+      {
+        "weights": [
+          0.25,
+          0.75
+        ],
+        "expected_return": 0.05,
+        "variance": 0.053125000000000006,
+        "volatility": 0.2304886114323222
+      },
+      {
+        "weights": [
+          0.3,
+          0.7
+        ],
+        "expected_return": 0.052,
+        "variance": 0.0477,
+        "volatility": 0.21840329667841554
+      },
+      {
+        "weights": [
+          0.35,
+          0.65
+        ],
+        "expected_return": 0.054,
+        "variance": 0.042925,
+        "volatility": 0.2071834935510066
+      },
+      {
+        "weights": [
+          0.4,
+          0.6
+        ],
+        "expected_return": 0.056,
+        "variance": 0.0388,
+        "volatility": 0.19697715603592209
+      },
+      {
+        "weights": [
+          0.45,
+          0.55
+        ],
+        "expected_return": 0.05800000000000001,
+        "variance": 0.035325,
+        "volatility": 0.18794946129212503
+      },
+      {
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "expected_return": 0.06,
+        "variance": 0.0325,
+        "volatility": 0.18027756377319948
+      },
+      {
+        "weights": [
+          0.55,
+          0.45
+        ],
+        "expected_return": 0.062000000000000006,
+        "variance": 0.030325000000000005,
+        "volatility": 0.17414074767268
+      },
+      {
+        "weights": [
+          0.6,
+          0.4
+        ],
+        "expected_return": 0.064,
+        "variance": 0.0288,
+        "volatility": 0.16970562748477142
+      },
+      {
+        "weights": [
+          0.65,
+          0.35
+        ],
+        "expected_return": 0.066,
+        "variance": 0.027925000000000002,
+        "volatility": 0.16710774967068404
+      },
+      {
+        "weights": [
+          0.7,
+          0.3
+        ],
+        "expected_return": 0.06799999999999999,
+        "variance": 0.027699999999999995,
+        "volatility": 0.16643316977093237
+      },
+      {
+        "weights": [
+          0.75,
+          0.25
+        ],
+        "expected_return": 0.06999999999999999,
+        "variance": 0.028124999999999997,
+        "volatility": 0.16770509831248423
+      },
+      {
+        "weights": [
+          0.8,
+          0.2
+        ],
+        "expected_return": 0.07200000000000001,
+        "variance": 0.0292,
+        "volatility": 0.17088007490635063
+      },
+      {
+        "weights": [
+          0.85,
+          0.15
+        ],
+        "expected_return": 0.07400000000000001,
+        "variance": 0.030925,
+        "volatility": 0.17585505395068973
+      },
+      {
+        "weights": [
+          0.9,
+          0.1
+        ],
+        "expected_return": 0.07600000000000001,
+        "variance": 0.0333,
+        "volatility": 0.1824828759089466
+      },
+      {
+        "weights": [
+          0.95,
+          0.05
+        ],
+        "expected_return": 0.078,
+        "variance": 0.036325,
+        "volatility": 0.19059118552545917
+      },
+      {
+        "weights": [
+          1.0,
+          0.0
+        ],
+        "expected_return": 0.08,
+        "variance": 0.04,
+        "volatility": 0.2
+      }
+    ],
+    "grid_gmv": {
+      "weights": [
+        0.7,
+        0.3
+      ],
+      "expected_return": 0.06799999999999999,
+      "variance": 0.027699999999999995,
+      "volatility": 0.16643316977093237
+    },
+    "analytical_gmv_weight": "9/13",
+    "analytical_min_variance": "9/325",
+    "grid_variance_gap": "1/130000",
+    "efficient_weights": [
+      [
+        0.7,
+        0.3
+      ],
+      [
+        0.75,
+        0.25
+      ],
+      [
+        0.8,
+        0.2
+      ],
+      [
+        0.85,
+        0.15
+      ],
+      [
+        0.9,
+        0.1
+      ],
+      [
+        0.95,
+        0.05
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "target": 0.07,
+    "target_result": {
+      "weights": [
+        0.75,
+        0.25
+      ],
+      "expected_return": 0.06999999999999999,
+      "variance": 0.028124999999999997,
+      "volatility": 0.16770509831248423
+    },
+    "risk_free": 0.02,
+    "grid_sharpes": [
+      0.06666666666666667,
+      0.07714550829269777,
+      0.08864602261837415,
+      0.1012624145584109,
+      0.1150792911137501,
+      0.1301582746911937,
+      0.14651793487860162,
+      0.16410573746614388,
+      0.18276230972405147,
+      0.20218201073179762,
+      0.2218800784900916,
+      0.24118421771649004,
+      0.2592724864350674,
+      0.27527149453362454,
+      0.2884040487005326,
+      0.2981423969999719,
+      0.3043069827099395,
+      0.3070710723795391,
+      0.30687810963666695,
+      0.30431627695737457,
+      0.3
+    ],
+    "max_sharpe_grid": {
+      "weights": [
+        0.85,
+        0.15
+      ],
+      "expected_return": 0.07400000000000001,
+      "variance": 0.030925,
+      "volatility": 0.17585505395068973
+    },
+    "stress_models": [
+      {
+        "rho": 0.5,
+        "covariance": [
+          [
+            0.04,
+            0.03
+          ],
+          [
+            0.03,
+            0.09
+          ]
+        ],
+        "grid_gmv": {
+          "weights": [
+            0.85,
+            0.15
+          ],
+          "expected_return": 0.07400000000000001,
+          "variance": 0.038575,
+          "volatility": 0.19640519341402354
+        },
+        "efficient_weights": [
+          [
+            0.85,
+            0.15
+          ],
+          [
+            0.9,
+            0.1
+          ],
+          [
+            0.95,
+            0.05
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "rho": 1,
+        "covariance": [
+          [
+            0.04,
+            0.06
+          ],
+          [
+            0.06,
+            0.09
+          ]
+        ],
+        "grid_gmv": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "expected_return": 0.08,
+          "variance": 0.04,
+          "volatility": 0.2
+        },
+        "efficient_weights": [
+          [
+            1.0,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "units": "decimal one-period simple-return forecasts and squared covariance",
+    "horizon": "one shared synthetic period",
+    "currency": "fictional common USD",
+    "dates": null,
+    "scope": "reported discrete candidate metrics only, no continuous/empirical acceptance",
+    "fixture_sha256": "5dd8d517252e180294b1d31f69c2efda6d139afa81d7c7740616cabc599d376f"
+  }
+}
