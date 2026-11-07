@@ -5,7 +5,15 @@ PLAN = [
     {"id": "CF-01", "layer": "known_value", "description": "continuous PV: 100 at ln(2), one year -> 50"},
     {"id": "CF-02", "layer": "boundary", "description": "zero horizon returns the amount"},
     {"id": "CF-03", "layer": "invalid", "description": "negative horizon is rejected"},
-    {"id": "CF-04", "layer": "property", "description": "same-date cash-flow splitting preserves PV"},
+    {"id": "CF-04", "layer": "property",
+     "description": "same-date splitting preserves mathematical PV; compare float outputs within a rounding bound",
+     "acceptance": {
+         "amount_identity": "exact sum of normalized split floats equals merged float",
+         "range_scope": "each discounted term and final value finite",
+         "comparison": "absolute rounding bound",
+         "bound": "half-ulp of every split discounted term, merged discounted term, and split final value",
+         "exclusions": "individual-term or final overflow; changed amount or date",
+     }},
     {"id": "INT-01", "layer": "integration", "description": "equivalent rates produce equivalent factors"},
     {"id": "CT-01", "layer": "known_value", "description": "zero-rate account: 1000 + 200*3 = 1600"},
 ]
