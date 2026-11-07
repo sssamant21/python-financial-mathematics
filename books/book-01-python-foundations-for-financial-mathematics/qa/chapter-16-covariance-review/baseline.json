@@ -1,0 +1,599 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "127b1f9fbdc09ae9ba3fccea99e3d454143dcbbe603c1e7e97c83b3d87265aee",
+  "listing_sha256": "1a01da0c34454dfc1c66f3d185ec54d243a62babb3bf42ef6f42cc1e9d412058",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "covariance_matrices.py"
+      ],
+      "returncode": 0,
+      "stdout": "Sample covariance: [[0.00016666666666666666, 0.00019999999999999998], [0.00019999999999999998, 0.00033333333333333327]]\nEqual-weight variance: 0.00022499999999999997\n",
+      "stderr": "test_01_sample (__main__.CovarianceTests.test_01_sample) ... ok\ntest_02_population (__main__.CovarianceTests.test_02_population) ... ok\ntest_03_symmetry (__main__.CovarianceTests.test_03_symmetry) ... ok\ntest_04_variance (__main__.CovarianceTests.test_04_variance) ... ok\ntest_05_perfect (__main__.CovarianceTests.test_05_perfect) ... ok\ntest_06_hedge (__main__.CovarianceTests.test_06_hedge) ... ok\ntest_07_correlation (__main__.CovarianceTests.test_07_correlation) ... ok\ntest_08_negative (__main__.CovarianceTests.test_08_negative) ... ok\ntest_09_one_asset (__main__.CovarianceTests.test_09_one_asset) ... ok\ntest_10_zero_weights (__main__.CovarianceTests.test_10_zero_weights) ... ok\ntest_11_invalid_data (__main__.CovarianceTests.test_11_invalid_data) ... ok\ntest_12_invalid_matrix (__main__.CovarianceTests.test_12_invalid_matrix) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import covariance_matrices"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "covariance_matrices.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 sample covariance",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 sample variance",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 population covariance",
+      "passed": true,
+      "actual": 1.3333333333333333,
+      "independent_reference": "4/3",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7 perfect correlation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 negative correlation",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 uncorrelated",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10 equal weights",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 source variance then independently rooted SD",
+      "passed": true,
+      "actual": 0.7071067811865476,
+      "independent_reference": "0.70710678118654752440084436210484903928483593768847403658833986899536623923105352",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12 collinear risk",
+      "passed": true,
+      "actual": 2.25,
+      "independent_reference": "9/4",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 perfect hedge",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E15 percent scaling",
+      "passed": true,
+      "actual": 20000.0,
+      "independent_reference": "20000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 quadratic form",
+      "passed": true,
+      "actual": 0.0336,
+      "independent_reference": "21/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E29 source variance then independently rooted SD",
+      "passed": true,
+      "actual": 0.1833030277982336,
+      "independent_reference": "0.18330302779823360026352188774912033955937826307071887610428968495627473702191084",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F146 integer centered precision",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F146 constant large rows avoid mean overflow",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F146 finite covariance after denominator",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F146 tiny normalized correlation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F146 large correlation denominator",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F146 signed quadratic cancellation",
+      "passed": false,
+      "exception": "ValueError('-inf + inf in fsum')"
+    },
+    {
+      "label": "F146 weights retain integer difference",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4/E5 full sample matrix and symmetry",
+      "passed": true
+    },
+    {
+      "label": "lab sample entry 0,0",
+      "passed": true,
+      "actual": 0.00016666666666666666,
+      "independent_reference": "1/6000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab population entry 0,0",
+      "passed": true,
+      "actual": 0.000125,
+      "independent_reference": "1/8000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab sample entry 0,1",
+      "passed": true,
+      "actual": 0.00019999999999999998,
+      "independent_reference": "1/5000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab population entry 0,1",
+      "passed": true,
+      "actual": 0.00015,
+      "independent_reference": "3/20000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab sample entry 1,0",
+      "passed": true,
+      "actual": 0.00019999999999999998,
+      "independent_reference": "1/5000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab population entry 1,0",
+      "passed": true,
+      "actual": 0.00015,
+      "independent_reference": "3/20000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab sample entry 1,1",
+      "passed": true,
+      "actual": 0.00033333333333333327,
+      "independent_reference": "1/3000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab population entry 1,1",
+      "passed": true,
+      "actual": 0.00024999999999999995,
+      "independent_reference": "1/4000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab correlation",
+      "passed": true,
+      "actual": 0.8485281374238569,
+      "independent_reference": "20000000000000000000000000000000000000000000000000000000000000000000000000000000/23570226039551584146694812070161634642827864589615801219611328966512207974368451",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab variance [0.5, 0.5]",
+      "passed": true,
+      "actual": 0.00022499999999999997,
+      "independent_reference": "9/40000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab variance [1, 0]",
+      "passed": true,
+      "actual": 0.00016666666666666666,
+      "independent_reference": "1/6000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab variance [0, 1]",
+      "passed": true,
+      "actual": 0.00033333333333333327,
+      "independent_reference": "1/3000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab feasible covariance stress -1",
+      "passed": true,
+      "actual": 7.1488698022420725e-06,
+      "independent_reference": "0.0000071488698022420792665259396",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab feasible covariance stress 0",
+      "passed": true,
+      "actual": 0.000125,
+      "independent_reference": "0.0001250000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab feasible covariance stress 1",
+      "passed": true,
+      "actual": 0.0002428511301977579,
+      "independent_reference": "0.0002428511301977579207334740604",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab population portfolio variance",
+      "passed": true,
+      "actual": 0.00016874999999999998,
+      "independent_reference": "27/160000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab population correlation invariant",
+      "passed": true,
+      "actual": 0.848528137423857,
+      "independent_reference": "0.84852813742385702928101323452581884714180312522616884390600784279443948707726422",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "PSD tolerance small negative direction clipped",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "relative tiny-scale PSD valid direction",
+      "passed": true,
+      "actual": 1e-300,
+      "independent_reference": "1/1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "relative tiny-scale PSD invalid direction rejected",
+      "passed": false,
+      "actual": "1e-300"
+    },
+    {
+      "label": "near-symmetric input uses declared average",
+      "passed": true,
+      "actual": 0.6000000000025,
+      "independent_reference": "240000000001/400000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "zero-variance asset allowed for quadratic form",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "singular hedge direction",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E30 covariance sensitivity",
+      "passed": true,
+      "actual": 0.004799999999999999,
+      "independent_reference": "3/625",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16 rank-one five-asset construction",
+      "passed": true
+    },
+    {
+      "label": "E26 three full rolling windows",
+      "passed": true,
+      "scope": "supplemental count, no source rolling estimator"
+    },
+    {
+      "label": "F146 PSD rejected even for nonnegative supplied direction",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F146 PSD rejected for zero supplied weights",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F146 full PSD beyond pairwise correlation bounds",
+      "passed": false,
+      "actual": "[[1.0, 0.9, 0.9], [0.9, 1.0, -0.9], [0.9, -0.9, 1.0]]"
+    },
+    {
+      "label": "F146 tiny-scale invalid negative variance rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F146 correlation rejects asymmetry",
+      "passed": false,
+      "actual": "[[1.0, 0.2], [0.4, 1.0]]"
+    },
+    {
+      "label": "F146 correlation rejects NaN",
+      "passed": false,
+      "actual": "[[1.0, nan], [nan, 1.0]]"
+    },
+    {
+      "label": "F146 impossible correlation rejected",
+      "passed": false,
+      "actual": "[[1.0, 2.0], [2.0, 1.0]]"
+    },
+    {
+      "label": "F146 zero-variance nonzero covariance rejected",
+      "passed": false,
+      "actual": "1.0"
+    },
+    {
+      "label": "F146 nonzero covariance underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F146 unreportable covariance rejected",
+      "passed": false,
+      "actual": "[[inf]]"
+    },
+    {
+      "label": "F146 nonzero quadratic underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F146 unreportable quadratic rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "F146 huge integer data gets ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F146 malformed correlation outer gets ValueError",
+      "passed": false,
+      "exception": "TypeError(\"object of type 'NoneType' has no len()\")"
+    },
+    {
+      "label": "F146 malformed correlation row gets ValueError",
+      "passed": false,
+      "exception": "TypeError(\"object of type 'int' has no len()\")"
+    },
+    {
+      "label": "E18 zero variance correlation undefined",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for zero variance')"
+    },
+    {
+      "label": "invalid ddof rejected",
+      "passed": true,
+      "exception": "ValueError('ddof must be 0 or 1')"
+    },
+    {
+      "label": "misaligned data rejected",
+      "passed": true,
+      "exception": "ValueError('rectangular aligned data required')"
+    },
+    {
+      "label": "boolean covariance rejected",
+      "passed": false,
+      "actual": "[[1.0]]"
+    },
+    {
+      "label": "lab inputs preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B"
+    ],
+    "rows": [
+      [
+        0.01,
+        0.02
+      ],
+      [
+        -0.01,
+        0
+      ],
+      [
+        0.02,
+        0.03
+      ],
+      [
+        0,
+        -0.01
+      ]
+    ],
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "means": [
+      "1/200",
+      "1/100"
+    ],
+    "centered": [
+      [
+        "1/200",
+        "1/100"
+      ],
+      [
+        "-3/200",
+        "-1/100"
+      ],
+      [
+        "3/200",
+        "1/50"
+      ],
+      [
+        "-1/200",
+        "-1/50"
+      ]
+    ],
+    "sample": [
+      [
+        0.00016666666666666666,
+        0.00019999999999999998
+      ],
+      [
+        0.00019999999999999998,
+        0.00033333333333333327
+      ]
+    ],
+    "population": [
+      [
+        0.000125,
+        0.00015
+      ],
+      [
+        0.00015,
+        0.00024999999999999995
+      ]
+    ],
+    "correlation": [
+      [
+        1.0,
+        0.8485281374238569
+      ],
+      [
+        0.8485281374238569,
+        0.9999999999999999
+      ]
+    ],
+    "standard_deviations": [
+      "0.012909944487358056283930884665941332036109739017638636088625245887044943639789930",
+      "0.018257418583505537115232326093360071131758156499932775140896481657749775904090758"
+    ],
+    "equal_weight_variance": 0.00022499999999999997,
+    "covariance_stress_equal_weight_variances": [
+      7.1488698022420725e-06,
+      0.000125,
+      0.0002428511301977579
+    ],
+    "fixture_sha256": "460b443a806e1bea792de6c6c218d90d01bced5f4f95c615a3afe30bca9bd005",
+    "horizon": "one common synthetic period",
+    "currency": "fictional common USD",
+    "timestamps": "synchronized observation labels 1-4, no real dates",
+    "missingness": "complete listwise panel, no imputation",
+    "source_root_scope": "standard deviations supplemented by independent Decimal roots"
+  }
+}
