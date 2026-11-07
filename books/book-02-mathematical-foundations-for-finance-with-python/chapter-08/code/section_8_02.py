@@ -75,13 +75,13 @@ def cost(quantity):
     q = finite(quantity, "quantity")
     if q < 0:
         raise ValueError("quantity must be nonnegative")
-    return 1000+20*q+0.05*q*q
+    return polynomial((1000, 20, 0.05), q)
 
 def marginal_cost(quantity):
     q = finite(quantity, "quantity")
     if q < 0:
         raise ValueError("quantity must be nonnegative")
-    return 20+0.1*q
+    return polynomial((20, 0.1), q)
 
 def profit(quantity):
     q = finite(quantity, "quantity")
