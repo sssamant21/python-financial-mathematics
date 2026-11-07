@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-11-06  
-**Overall status:** In progress — V-102 full candidate Linux pass (567 files, 354 scripts, 568 required hashes), including Section 8.3 discounted-payment callback range. Independent review, supported platforms and release approval remain pending.
+**Updated:** 2026-11-07  
+**Overall status:** In progress — V-103 full candidate Linux pass (569 files, 356 scripts, 570 required hashes), including Section 8.1 financial range and Section 8.3 centered wrapper. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 567/567 at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`. [V-102](runtime-refresh-2026-11-07-r08.md). |
-| Automated script execution | Full candidate Linux pass | 354/354 at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`; all 568 required hashes matched before/after. [V-102](runtime-refresh-2026-11-07-r08.md). |
+| Python compilation | Full candidate Linux pass | 569/569 at `a6441d707337946a76e059c6cf53a5b05291afa0`. [V-103](runtime-refresh-2026-11-07-r09.md). |
+| Automated script execution | Full candidate Linux pass | 356/356 at `a6441d707337946a76e059c6cf53a5b05291afa0`; all 570 required hashes matched before/after. [V-103](runtime-refresh-2026-11-07-r09.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -949,3 +949,11 @@ Next: [Discounted-payment baseline](chapter-08-discounted-payment-range-baseline
 [V-102](runtime-refresh-2026-11-07-r08.md) compiled 567 files, passed 354 scripts and verified 568 required blobs before and after at `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.1 initial-PV baseline](chapter-08-initial-pv-range-baseline.md) records finite PV/derivative/stable-quotient results lost to premature underflow in Section 8.1's distinct financial functions. Preserve their domains and derive complete references. The copied Section 8.3 centered difference and other early derivative helpers and manual review remain open.
+
+## V-103 checkpoint — 2026-11-07
+
+[Section 8.1 financial range](chapter-08-initial-pv-range-followup.md): forty corrected checks pass; seventeen baseline mismatches and valid baseline replay retained. [Section 8.3 centered wrapper](chapter-08-centered-copy-followup.md): eight checks pass; six baseline observations retained, including two new delegation requirements. The invalid missing-directory replay setup and corrected harness are disclosed separately.
+
+[V-103](runtime-refresh-2026-11-07-r09.md) at `a6441d707337946a76e059c6cf53a5b05291afa0`: 569 Python files compiled, 356 scripts passed, 570 required source/fixture hashes verified before/after. Counts derive from this pinned tree. Thirty-five selected COV categories remain partial, none closed; this is not a completion percentage or independent sign-off.
+
+Next substantive work: [Section 8.2 polynomial range baseline](chapter-08-polynomial-range-baseline.md), including two confirmed finite-result failures and the remaining centered-difference copy. Resume there without repeating completed Section 8.1 financial or Section 8.3 wrapper examples. Reviewer, supported-platform, release and canonical decisions remain pending.
