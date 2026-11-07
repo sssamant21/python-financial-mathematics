@@ -1,0 +1,11 @@
+# Section 8.3 discounted-payment callback range
+
+[Initial probes](chapter-08-discounted-payment-range-baseline.md) · [Exact observations and source blobs](chapter-08-discounted-payment-range-followup.json) · [Corrected source](https://github.com/sssamant21/python-financial-mathematics/blob/0b109a17f2ee256a3cdffeeeffb0417720bcf3ed/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_03.py).
+
+The expanded baseline failed eleven of 32 observations; replay against the original module is identical. All 32 corrected observations pass. The earlier 28-case screen and rerun are retained separately, and the existing Section 8.3 regression passes against the corrected source.
+
+The wrappers validate input domain before callbacks, evaluate the required payment/derivative exactly once in the retained order, and combine the complete coefficient and discount exponent before conversion to float. A zero payment preserves its signed zero, a cancelled derivative coefficient returns zero even with a growing exponential, and the value wrapper never evaluates its unused derivative argument (which may be None). Invalid callback values reject. True final overflow raises ValueError, and final underflow may yield signed zero.
+
+The 1500-digit Decimal oracle evaluates separate discounted derivative terms rather than reusing the production's factored coefficient. Exact represented inputs determine the expected zero and cancellation cases. Fixtures cover finite scaled results lost to exponent underflow/overflow, a large recovered coefficient, genuine final overflow, growing/decaying coarse bounds, callback traces and bad callback/input values. The coarse exponent cutoff is justified by the finite binary64 coefficient bounds; this is selected evidence, not a universal correctly-rounded guarantee.
+
+Run `python check_discounted_payment_range.py` from `chapter-08/code` at revision `0b109a17f2ee256a3cdffeeeffb0417720bcf3ed`. Baseline replay: pass the original checkout's absolute `chapter-08/code` directory to the pinned checker. Selected COV-51 evidence only; copied finite-difference and Section 8.1 financial helpers, independent review, supported platforms, release acceptance and canonical approval remain open. [Full candidate run](runtime-refresh-2026-11-07-r08.md).
