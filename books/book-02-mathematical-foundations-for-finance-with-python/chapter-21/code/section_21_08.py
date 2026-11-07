@@ -14,7 +14,15 @@ PLAN = [
          "bound": "half-ulp of every split discounted term, merged discounted term, and split final value",
          "exclusions": "individual-term or final overflow; changed amount or date",
      }},
-    {"id": "INT-01", "layer": "integration", "description": "equivalent rates produce equivalent factors"},
+    {"id": "INT-01", "layer": "integration",
+     "description": "equivalent factors agree within propagated conversion and factor rounding error",
+     "acceptance": {
+         "domain": "finite converted rate and finite positive factors",
+         "comparison": "conversion-error propagation plus factor rounding",
+         "bound": "effective factor * abs(expm1(-conversion_error * years)) plus half-ulp of each factor",
+         "conversion_error": "represented converted rate minus high-precision log1p of the represented effective rate",
+         "exclusions": "invalid rates, conversion overflow, factor overflow or factor underflow to zero",
+     }},
     {"id": "CT-01", "layer": "known_value", "description": "zero-rate account: 1000 + 200*3 = 1600"},
 ]
 
