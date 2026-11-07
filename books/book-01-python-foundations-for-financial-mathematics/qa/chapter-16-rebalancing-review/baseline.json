@@ -1,0 +1,607 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "a108f937eb3735a06c77c369089cf9241c69890a9f973b1c15cb2b37eb0c260e",
+  "listing_sha256": "edad08fb0f47e6e51b980a967ba2014bb87e94b4172616a751569edaf869f017",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "rebalancing_mathematics.py"
+      ],
+      "returncode": 0,
+      "stdout": "Drift: {'portfolio_return': 0.050000000000000044, 'ending_weights': [0.5238095238095238, 0.47619047619047616], 'ending_nav_per_unit': 1.05}\nRebalance: {'trade_weights': [0.09999999999999998, -0.09999999999999998], 'trade_dollars': [9.999999999999998, -9.999999999999998], 'buys': 9.999999999999998, 'sells': 9.999999999999998, 'one_way_turnover': 0.09999999999999998}\nAfter costs: {'cost': 0.019999999999999997, 'post_cost_nav': 99.98, 'trade_dollars': [9.990000000000002, -10.009999999999998], 'post_cost_weights': [0.5, 0.5], 'total_traded': 20.0}\n",
+      "stderr": "test_01_return (__main__.RebalancingTests.test_01_return) ... ok\ntest_02_drift (__main__.RebalancingTests.test_02_drift) ... ok\ntest_03_no_change (__main__.RebalancingTests.test_03_no_change) ... ok\ntest_04_turnover (__main__.RebalancingTests.test_04_turnover) ... ok\ntest_05_buy (__main__.RebalancingTests.test_05_buy) ... ok\ntest_06_sell (__main__.RebalancingTests.test_06_sell) ... ok\ntest_07_cost_zero (__main__.RebalancingTests.test_07_cost_zero) ... ok\ntest_08_cost_positive (__main__.RebalancingTests.test_08_cost_positive) ... ok\ntest_09_cost_accounting (__main__.RebalancingTests.test_09_cost_accounting) ... ok\ntest_10_trigger (__main__.RebalancingTests.test_10_trigger) ... ok\ntest_11_no_trigger (__main__.RebalancingTests.test_11_no_trigger) ... ok\ntest_12_invalid (__main__.RebalancingTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import rebalancing_mathematics"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "rebalancing_mathematics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 source period return",
+      "passed": true,
+      "actual": 0.050000000000000044,
+      "independent_reference": "1/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 source drift A",
+      "passed": true,
+      "actual": 0.5238095238095238,
+      "independent_reference": "11/21",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 source drift B",
+      "passed": true,
+      "actual": 0.47619047619047616,
+      "independent_reference": "10/21",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4 source ending NAV scaled",
+      "passed": true,
+      "actual": 105.0,
+      "independent_reference": "105",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5/E6 equal-return no drift [0, 0]",
+      "passed": true
+    },
+    {
+      "label": "E5/E6 equal-return no drift [0.1, 0.1]",
+      "passed": true
+    },
+    {
+      "label": "E7 buy",
+      "passed": true,
+      "actual": 9.999999999999998,
+      "independent_reference": "10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 sell",
+      "passed": true,
+      "actual": 9.999999999999998,
+      "independent_reference": "10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 turnover",
+      "passed": true,
+      "actual": 0.09999999999999998,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10 gross traded",
+      "passed": true,
+      "actual": 19.999999999999996,
+      "independent_reference": "20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 exact zero fee",
+      "passed": false,
+      "actual": 3.944304526105059e-29,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 zero-fee NAV",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12 supplemental pre-cost notional fee",
+      "passed": true,
+      "actual": 0.02,
+      "independent_reference": "1/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 supplemental pre-cost NAV approximation",
+      "passed": true,
+      "actual": 99.98,
+      "independent_reference": "4999/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 band breached",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "E15 band not breached",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "label": "E16 absolute band breached",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "F155 exact threshold equality does not trigger",
+      "passed": false,
+      "actual": true,
+      "expected": false
+    },
+    {
+      "label": "E17 supplemental relative deviation",
+      "passed": true,
+      "actual": 0.2,
+      "independent_reference": "1/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source fee vs Decimal bisection ([0.4, 0.6], 0.001)",
+      "passed": true,
+      "actual": 0.019999999999999997,
+      "independent_reference": "0.02000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source NAV conservation ([0.4, 0.6], 0.001)",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source fee/gross identity ([0.4, 0.6], 0.001)",
+      "passed": true,
+      "actual": 0.019999999999999997,
+      "independent_reference": "1/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source trade cash conservation ([0.4, 0.6], 0.001)",
+      "passed": true,
+      "signed_trade_sum": -0.01999999999999602,
+      "fee": 0.019999999999999997,
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "source fee vs Decimal bisection ([0.8, 0.2], 0.1)",
+      "passed": true,
+      "actual": 6.0,
+      "independent_reference": "6.000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source NAV conservation ([0.8, 0.2], 0.1)",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source fee/gross identity ([0.8, 0.2], 0.1)",
+      "passed": true,
+      "actual": 6.0,
+      "independent_reference": "6",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source trade cash conservation ([0.8, 0.2], 0.1)",
+      "passed": true,
+      "signed_trade_sum": -6.0,
+      "fee": 6.0,
+      "absolute_tolerance": 1e-10
+    },
+    {
+      "label": "source fee vs Decimal bisection ([0.2, 0.3, 0.5], 0.001)",
+      "passed": true,
+      "actual": 0.1999600079984003,
+      "independent_reference": "0.1999600079984003199360127974",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source NAV conservation ([0.2, 0.3, 0.5], 0.001)",
+      "passed": true,
+      "actual": 250.0,
+      "independent_reference": "250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source fee/gross identity ([0.2, 0.3, 0.5], 0.001)",
+      "passed": true,
+      "actual": 0.1999600079984003,
+      "independent_reference": "1999600079984003/10000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source trade cash conservation ([0.2, 0.3, 0.5], 0.001)",
+      "passed": true,
+      "signed_trade_sum": -0.1999600079983921,
+      "fee": 0.1999600079984003,
+      "absolute_tolerance": 2.5e-10
+    },
+    {
+      "label": "source fee vs Decimal bisection ([0.2, 0.3, 0.5], 0.9)",
+      "passed": true,
+      "actual": 152.5423728813559,
+      "independent_reference": "152.5423728813559322033898305",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source NAV conservation ([0.2, 0.3, 0.5], 0.9)",
+      "passed": true,
+      "actual": 250.0,
+      "independent_reference": "250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source fee/gross identity ([0.2, 0.3, 0.5], 0.9)",
+      "passed": true,
+      "actual": 152.5423728813559,
+      "independent_reference": "152542372881355947/1000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source trade cash conservation ([0.2, 0.3, 0.5], 0.9)",
+      "passed": true,
+      "signed_trade_sum": -152.5423728813559,
+      "fee": 152.5423728813559,
+      "absolute_tolerance": 2.5e-10
+    },
+    {
+      "label": "lab frictionless sale A",
+      "passed": true,
+      "actual": -2.5000000000000027,
+      "independent_reference": "-5/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab frictionless purchase B",
+      "passed": true,
+      "actual": 2.5000000000000027,
+      "independent_reference": "5/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab one-way turnover",
+      "passed": true,
+      "actual": 0.023809523809523836,
+      "independent_reference": "1/42",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab gross notional",
+      "passed": true,
+      "actual": 5.000000000000005,
+      "independent_reference": "5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab exact fee",
+      "passed": true,
+      "actual": 0.004999999999999999,
+      "independent_reference": "1/200",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab post-cost NAV",
+      "passed": true,
+      "actual": 104.995,
+      "independent_reference": "20999/200",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab fee-funded sale",
+      "passed": true,
+      "actual": -2.5024999999999977,
+      "independent_reference": "-1001/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab fee-funded purchase",
+      "passed": true,
+      "actual": 2.4975000000000023,
+      "independent_reference": "999/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab reconstructed ending holding 0",
+      "passed": true,
+      "actual": 52.4975,
+      "independent_reference": "20999/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab reconstructed ending holding 1",
+      "passed": true,
+      "actual": 52.4975,
+      "independent_reference": "20999/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab five-point band no trigger",
+      "passed": true
+    },
+    {
+      "label": "F155 tiny return retained",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F155 tolerated weight budget normalized",
+      "passed": false,
+      "actual": 5.000000413701855e-11,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F155 no-trade fee exactly zero",
+      "passed": false,
+      "actual": 3.944304526105059e-29,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F155 tiny positive fee retained",
+      "passed": false,
+      "actual": 3.944304526105059e-29,
+      "independent_reference": "1/500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F155 scale-free large NAV fee",
+      "passed": true,
+      "actual": 1.999999999999999e+304,
+      "independent_reference": "20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F155 positive NAV cannot report false total loss",
+      "passed": false,
+      "actual": "{'portfolio_return': -1.0, 'ending_weights': [0.0, 1.0], 'ending_nav_per_unit': 1e-308}"
+    },
+    {
+      "label": "F155 unreportable required return ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F155 unreportable gross output ValueError",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F155 huge integer input ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "exhausted NAV rejected",
+      "passed": true,
+      "exception": "ValueError('NAV exhausted')"
+    },
+    {
+      "label": "invalid simple return rejected",
+      "passed": true,
+      "exception": "ValueError('aligned simple returns >= -100% required')"
+    },
+    {
+      "label": "invalid cost rate rejected",
+      "passed": true,
+      "exception": "ValueError('cost rate must be in [0,1)')"
+    },
+    {
+      "label": "negative band rejected",
+      "passed": true,
+      "exception": "ValueError('aligned weights and nonnegative tolerance required')"
+    },
+    {
+      "label": "negative NAV rejected",
+      "passed": true,
+      "exception": "ValueError('aligned weights and positive NAV required')"
+    },
+    {
+      "label": "lab input fixtures preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B"
+    ],
+    "initial_nav": 100,
+    "initial_weights": [
+      0.5,
+      0.5
+    ],
+    "returns": [
+      0.1,
+      0
+    ],
+    "drift": {
+      "portfolio_return": 0.050000000000000044,
+      "ending_weights": [
+        0.5238095238095238,
+        0.47619047619047616
+      ],
+      "ending_nav_per_unit": 1.05
+    },
+    "pretrade_holdings": [
+      55,
+      50
+    ],
+    "pretrade_nav": 105,
+    "frictionless_plan": {
+      "trade_weights": [
+        -0.023809523809523836,
+        0.023809523809523836
+      ],
+      "trade_dollars": [
+        -2.5000000000000027,
+        2.5000000000000027
+      ],
+      "buys": 2.5000000000000027,
+      "sells": 2.5000000000000027,
+      "one_way_turnover": 0.023809523809523836
+    },
+    "cost_rate": 0.001,
+    "cost_plan": {
+      "cost": 0.004999999999999999,
+      "post_cost_nav": 104.995,
+      "trade_dollars": [
+        -2.5024999999999977,
+        2.4975000000000023
+      ],
+      "post_cost_weights": [
+        0.5,
+        0.5
+      ],
+      "total_traded": 5.0
+    },
+    "reconstructed_post_cost_holdings": [
+      52.4975,
+      52.4975
+    ],
+    "general_fee_cases": [
+      {
+        "cost": 0.019999999999999997,
+        "post_cost_nav": 99.98,
+        "trade_dollars": [
+          9.990000000000002,
+          -10.009999999999998
+        ],
+        "post_cost_weights": [
+          0.5,
+          0.5
+        ],
+        "total_traded": 20.0
+      },
+      {
+        "cost": 6.0,
+        "post_cost_nav": 94.0,
+        "trade_dollars": [
+          -33.0,
+          27.0
+        ],
+        "post_cost_weights": [
+          0.5,
+          0.5
+        ],
+        "total_traded": 60.0
+      },
+      {
+        "cost": 0.1999600079984003,
+        "post_cost_nav": 249.8000399920016,
+        "trade_dollars": [
+          99.88002399520096,
+          -25.03999200159968,
+          -75.03999200159967
+        ],
+        "post_cost_weights": [
+          0.6,
+          0.2,
+          0.2
+        ],
+        "total_traded": 199.9600079984003
+      },
+      {
+        "cost": 152.5423728813559,
+        "post_cost_nav": 97.4576271186441,
+        "trade_dollars": [
+          8.474576271186457,
+          -55.50847457627118,
+          -105.50847457627118
+        ],
+        "post_cost_weights": [
+          0.6,
+          0.2,
+          0.2
+        ],
+        "total_traded": 169.49152542372883
+      }
+    ],
+    "units": "common fictional USD dollar NAV, decimal simple returns/weights",
+    "timing": "synthetic t0 holdings, t1 total returns, t1-close rebalance at fixed values",
+    "dates": null,
+    "external_flows": "none",
+    "scope": "static continuous-dollar plan, not actual orders, fills, tax, settlement or out-of-sample strategy",
+    "fixture_sha256": "608eec3e67d2634fa96607bc741db5eda3d89c1d9e3cdf3b3b06b7772cd76444"
+  }
+}

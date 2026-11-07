@@ -1,0 +1,7 @@
+{
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/50da9af75d6f/run1614/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-16-rebalancing-review/review.py\", line 107, in <module>\n    if __name__=='__main__':raise SystemExit(main())\n                                             ^^^^^^\n  File \"/workspace/scratch/50da9af75d6f/run1614/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-16-rebalancing-review/review.py\", line 105, in main\n    print(len(commands),len(checks),sum(not v['passed'] for v in commands+checks))\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/50da9af75d6f/run1614/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-16-rebalancing-review/review.py\", line 105, in <genexpr>\n    print(len(commands),len(checks),sum(not v['passed'] for v in commands+checks))\n                                            ~^^^^^^^^^^\nKeyError: 'passed'\n",
+  "cause": "QA case-results list shadowed the predicate accumulator named checks; initial report is invalid as a predicate inventory.",
+  "correction": "Rename case-result list fee_cases; regenerate baseline/final reports with unchanged manuscript."
+}
