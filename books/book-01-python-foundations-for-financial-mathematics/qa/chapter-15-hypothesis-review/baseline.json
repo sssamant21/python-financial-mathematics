@@ -1,0 +1,292 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "6c28c7357d1d1e819104923b59e6244e3a2e1e605b4dbb2bc07328a3b9c9ef92",
+  "listing_sha256": "3396c1ffcc14d1f4ad1a2a0fb3ae0a31d34c777335ab56e0252f91c8513eb448",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "hypothesis_testing.py"
+      ],
+      "returncode": 0,
+      "stdout": "One-sample t statistic: 3.4641016151377544\nIllustrative normal two-sided p at z=1.96: 0.04999579029644087\nExact sign-test p: 0.0625\n",
+      "stderr": "test_01_t_statistic (__main__.HypothesisTestingTests.test_01_t_statistic) ... ok\ntest_02_t_zero (__main__.HypothesisTestingTests.test_02_t_zero) ... ok\ntest_03_normal_cdf_zero (__main__.HypothesisTestingTests.test_03_normal_cdf_zero) ... ok\ntest_04_normal_p_zero (__main__.HypothesisTestingTests.test_04_normal_p_zero) ... ok\ntest_05_normal_p_196 (__main__.HypothesisTestingTests.test_05_normal_p_196) ... ok\ntest_06_normal_symmetry (__main__.HypothesisTestingTests.test_06_normal_symmetry) ... ok\ntest_07_sign_all_positive (__main__.HypothesisTestingTests.test_07_sign_all_positive) ... ok\ntest_08_sign_balanced (__main__.HypothesisTestingTests.test_08_sign_balanced) ... ok\ntest_09_sign_ties_removed (__main__.HypothesisTestingTests.test_09_sign_ties_removed) ... ok\ntest_10_reject (__main__.HypothesisTestingTests.test_10_reject) ... ok\ntest_11_do_not_reject (__main__.HypothesisTestingTests.test_11_do_not_reject) ... ok\ntest_12_invalid (__main__.HypothesisTestingTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import hypothesis_testing"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "hypothesis_testing.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E8 source t statistic",
+      "passed": true,
+      "actual": 3.4641016151377544,
+      "independent_reference": "3.4641016151377545870548926830117447338856105076207612561116139589038660338176001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "source null at sample mean",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 normal p zero",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 normal p at 1.96",
+      "passed": true,
+      "actual": 0.04999579029644087,
+      "independent_reference": "0.04999579029644086827316853808167438004499955812376678217143420825763685200732992",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "normal CDF zero",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "normal p symmetry",
+      "passed": true,
+      "actual": 0.04999579029644087,
+      "independent_reference": "0.04999579029644086827316853808167438004499955812376678217143420825763685200732992",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 sign five positive",
+      "passed": true,
+      "actual": 0.0625,
+      "independent_reference": "1/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 sign ties discarded",
+      "passed": true,
+      "actual": 0.25,
+      "independent_reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "balanced sign",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F135 integer centered t",
+      "passed": false,
+      "exception": "ValueError('t statistic undefined for zero sample variance')"
+    },
+    {
+      "label": "F135 small-scale t",
+      "passed": false,
+      "exception": "ValueError('t statistic undefined for zero sample variance')"
+    },
+    {
+      "label": "F135 large-scale t",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F135 extreme finite t",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F135 integer sign counts",
+      "passed": false,
+      "exception": "ValueError('no nonzero differences')"
+    },
+    {
+      "label": "F135 reportable subnormal sign probability",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project hypothetical cost threshold t",
+      "passed": true,
+      "actual": 2.5980762113533156,
+      "independent_reference": "2.598076211353315940291169512",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 reject",
+      "passed": true
+    },
+    {
+      "label": "E14 not reject",
+      "passed": true
+    },
+    {
+      "label": "E15 boundary",
+      "passed": true
+    },
+    {
+      "label": "enumerated 32 sign outcomes",
+      "passed": true,
+      "actual": 0.0625,
+      "independent_reference": "1/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "singleton rejected",
+      "passed": true,
+      "exception": "ValueError('n >= 2 and finite null mean required')"
+    },
+    {
+      "label": "constant rejected",
+      "passed": true,
+      "exception": "ValueError('t statistic undefined for zero sample variance')"
+    },
+    {
+      "label": "F135 decimal constant rejected",
+      "passed": false,
+      "actual": "1.0190482676041238e+16"
+    },
+    {
+      "label": "missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "bad null rejected",
+      "passed": true,
+      "exception": "ValueError('n >= 2 and finite null mean required')"
+    },
+    {
+      "label": "all ties rejected",
+      "passed": true,
+      "exception": "ValueError('no nonzero differences')"
+    },
+    {
+      "label": "bad p rejected",
+      "passed": true,
+      "exception": "ValueError('p-value in [0,1] required')"
+    },
+    {
+      "label": "bad alpha rejected",
+      "passed": true,
+      "exception": "ValueError('alpha in (0,1) required')"
+    },
+    {
+      "label": "F135 unreportable sign probability rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F135 unreportable normal tail rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "project matching t CI and df2 test both do not reject",
+      "passed": true
+    },
+    {
+      "label": "project sign p .0625 does not reject",
+      "passed": true
+    },
+    {
+      "label": "source returns unchanged",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "additional_exact_source_ci_calls": 1,
+  "project_report": {
+    "source_returns": [
+      0.01,
+      0.02,
+      0.03
+    ],
+    "period_labels": [
+      1,
+      2,
+      3
+    ],
+    "dates": null,
+    "frequency": "hypothetical daily",
+    "units": "decimal simple returns",
+    "null_mean": 0,
+    "alternative": "two-sided, prespecified",
+    "alpha": 0.05,
+    "fixture_sha256": "43509825efe6b93760c0c58a34dd8545a6180ef21b25bddb75483b46fdbef921",
+    "source_t": 3.4641016151377544,
+    "df": 2,
+    "supplemental_df2_p": "0.07417990022744853843343322341600047747068509899166477861266365745576894602227937",
+    "supplemental_df2_method": "closed-form t(df=2) CDF=1/2+t/(2sqrt(t^2+2)); p=1-sqrt(6/7)",
+    "decision": "do not reject H0",
+    "matching_ci": [
+      -0.004841377118437528,
+      0.044841377118437525
+    ],
+    "ci_listing_sha256": "df1921e6eaf324dd3e1d8c751414afb4e7c34f106c3613dd0dd4c2aa0267f29e",
+    "ci_source_sha256": "0cb47308a9a2a6df609b94bc2817683a586bdd5cfd2ffca8ae92bb99f6726e29",
+    "source_sign_p": 0.0625,
+    "hypothetical_per_period_cost": 0.005,
+    "net_effect": 0.015,
+    "cost_threshold_t": 2.5980762113533156
+  }
+}
