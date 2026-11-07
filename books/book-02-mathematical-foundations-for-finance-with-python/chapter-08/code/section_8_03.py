@@ -1,5 +1,6 @@
 """Section 8.3: product and quotient derivatives with financial examples."""
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -12,16 +13,35 @@ def finite(value, name):
         raise ValueError(f"{name} must be finite")
     return result
 
+def _derivative_result(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("derivative outside finite float range") from exc
+    return finite(result, "derivative")
+
+
 def product_derivative(u, du, v, dv, x):
     x = finite(x, "x")
-    return finite(du(x), "du")*finite(v(x), "v")+finite(u(x), "u")*finite(dv(x), "dv")
+    # Preserve the public callback order and evaluate every required value once.
+    left_slope = Fraction(finite(du(x), "du"))
+    right = Fraction(finite(v(x), "v"))
+    left = Fraction(finite(u(x), "u"))
+    right_slope = Fraction(finite(dv(x), "dv"))
+    return _derivative_result(left_slope*right + left*right_slope)
+
 
 def quotient_derivative(u, du, v, dv, x):
     x = finite(x, "x")
     denominator = finite(v(x), "v")
     if denominator == 0:
         raise ValueError("denominator must be nonzero")
-    return (finite(du(x), "du")*denominator-finite(u(x), "u")*finite(dv(x), "dv"))/(denominator**2)
+    denominator = Fraction(denominator)
+    left_slope = Fraction(finite(du(x), "du"))
+    left = Fraction(finite(u(x), "u"))
+    right_slope = Fraction(finite(dv(x), "dv"))
+    return _derivative_result(
+        (left_slope*denominator-left*right_slope)/(denominator*denominator))
 
 def revenue(q):
     q = finite(q, "quantity")
