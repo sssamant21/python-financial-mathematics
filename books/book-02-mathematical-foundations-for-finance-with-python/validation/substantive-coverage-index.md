@@ -717,3 +717,11 @@ Next: [Section 21.4 central-difference baseline](chapter-21-central-difference-r
 [V-95](runtime-refresh-2026-11-07-r01.md) compiled 560 files, passed 347 scripts and verified 561 required blobs before and after at `a3f898d3824e5287da47129b18f58d6ec16af05b`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Implemented-interface baseline](chapter-21-implemented-interface-baseline.md) records actual callable signatures and report fields versus the intentional design catalog. Reconcile the implemented COV-88 contract without claiming that the draft's general interfaces already exist. Wider capstone requirements and manual reviews remain open.
+
+## Implemented versus planned interfaces — V-96
+
+[Implemented-interface reconciliation](chapter-21-implemented-interface-followup.md) retains eleven missing-map baseline observations, an identical replay, and 26 passing actual interface checks. Seven selected entry points are described separately from the unchanged six-area draft. This adds selected COV-88 evidence; it does not count reused numerical examples as new coverage. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-96](runtime-refresh-2026-11-07-r02.md) compiled 561 files, passed 348 scripts and verified 562 required blobs before and after at `00fd462aa3a0da15d5babd6c26dc6e49c072e425`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [CF-04 splitting-property baseline](chapter-21-splitting-property-baseline.md) records subnormal rounding and individual-term overflow boundaries for the plan's same-date splitting claim. Reconcile its acceptance domain and tolerance with the implemented aggregation policy. Wider capstone requirements and manual reviews remain open.
