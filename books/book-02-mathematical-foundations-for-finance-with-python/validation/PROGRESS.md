@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-06  
-**Overall status:** In progress — V-100 full candidate Linux pass (565 files, 352 scripts, 566 required hashes), including Section 8.3 product/quotient derivatives. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-101 full candidate Linux pass (566 files, 353 scripts, 567 required hashes), including Section 8.3 financial rational-expression range. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 565/565 at `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`. [V-100](runtime-refresh-2026-11-07-r06.md). |
-| Automated script execution | Full candidate Linux pass | 352/352 at `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`; all 566 required hashes matched before/after. [V-100](runtime-refresh-2026-11-07-r06.md). |
+| Python compilation | Full candidate Linux pass | 566/566 at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`. [V-101](runtime-refresh-2026-11-07-r07.md). |
+| Automated script execution | Full candidate Linux pass | 353/353 at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`; all 567 required hashes matched before/after. [V-101](runtime-refresh-2026-11-07-r07.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -933,3 +933,11 @@ Next: [Section 8.3 product/quotient baseline](chapter-08-product-quotient-range-
 [V-100](runtime-refresh-2026-11-07-r06.md) compiled 565 files, passed 352 scripts and verified 566 required blobs before and after at `2f6b47559fc7baa82e59772bbdfbd6445e5374e1`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 8.3 financial rational baseline](chapter-08-financial-rational-range-baseline.md) records finite average-cost and coverage-derivative results lost to separate float terms. Reconcile complete rational-expression ranges and denominator-domain guards for the financial examples. Discounted-payment and copied finite-difference helpers and manual review remain open.
+
+## Financial rational-expression range — V-101
+
+[Section 8.3 financial rational follow-up](chapter-08-financial-rational-range-followup.md) retains eleven baseline mismatches, an identical replay and 41 passing corrected observations. Complete polynomial-quotient references check finite results, true range failures and adjacent-pole behavior; the exact represented coverage denominator is documented separately from its financial interpretation. The existing Section 8.3 suite passes. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-101](runtime-refresh-2026-11-07-r07.md) compiled 566 files, passed 353 scripts and verified 567 required blobs before and after at `e674373645a4b9787b3a412fd8262ff9a4c30fdf`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Discounted-payment baseline](chapter-08-discounted-payment-range-baseline.md) records finite/zero values and a finite derivative lost to separate exponential/coefficient arithmetic. Check actual payment callbacks and complete scaling; preserve the value wrapper's unused derivative-argument behavior. Copied finite-difference and Section 8.1 financial helpers and manual review remain open.
