@@ -1,0 +1,385 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "a7d5bcbdad5600acac2c004c50c05932cffabaef218a906968ed5b6bc2480a64",
+  "listing_sha256": "baa3a880fde546b9fb33b7bb749c67f271452f7a125014ca8a5f28dfb21ecf8a",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "covariance.py"
+      ],
+      "returncode": 0,
+      "stdout": "Sample covariance: 0.00019999999999999998\nSample correlation: 1.0\nCovariance matrix: [[9.999999999999999e-05, 0.00019999999999999998], [0.00019999999999999998, 0.00039999999999999996]]\n",
+      "stderr": "test_01_sample_covariance (__main__.CovarianceTests.test_01_sample_covariance) ... ok\ntest_02_population_covariance (__main__.CovarianceTests.test_02_population_covariance) ... ok\ntest_03_sample_variance (__main__.CovarianceTests.test_03_sample_variance) ... ok\ntest_04_symmetry (__main__.CovarianceTests.test_04_symmetry) ... ok\ntest_05_perfect_positive (__main__.CovarianceTests.test_05_perfect_positive) ... ok\ntest_06_perfect_negative (__main__.CovarianceTests.test_06_perfect_negative) ... ok\ntest_07_shift_invariance (__main__.CovarianceTests.test_07_shift_invariance) ... ok\ntest_08_scaling (__main__.CovarianceTests.test_08_scaling) ... ok\ntest_09_portfolio (__main__.CovarianceTests.test_09_portfolio) ... ok\ntest_10_matrix (__main__.CovarianceTests.test_10_matrix) ... ok\ntest_11_constant_covariance (__main__.CovarianceTests.test_11_constant_covariance) ... ok\ntest_12_invalid (__main__.CovarianceTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import covariance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "covariance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E5 sample covariance",
+      "passed": true,
+      "actual": 0.00019999999999999998,
+      "independent_reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 population covariance",
+      "passed": true,
+      "actual": 0.0001333333333333333,
+      "independent_reference": "1/7500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 variance A",
+      "passed": true,
+      "actual": 9.999999999999999e-05,
+      "independent_reference": "1/10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 variance B",
+      "passed": true,
+      "actual": 0.00039999999999999996,
+      "independent_reference": "1/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 correlation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 reflected covariance",
+      "passed": true,
+      "actual": -0.00019999999999999998,
+      "independent_reference": "-1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 symmetry",
+      "passed": true,
+      "actual": 0.00019999999999999998,
+      "independent_reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 shifted covariance",
+      "passed": true,
+      "actual": 0.00019999999999999996,
+      "independent_reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 scaled covariance",
+      "passed": true,
+      "actual": 0.0005999999999999998,
+      "independent_reference": "3/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 constant covariance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 equal-weight variance",
+      "passed": true,
+      "actual": 0.000225,
+      "independent_reference": "9/40000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 portfolio SD",
+      "passed": true,
+      "actual": 0.015,
+      "independent_reference": "3/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 singleton population",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E24 percent-unit covariance",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F131 integer-offset covariance",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F131 integer-offset correlation",
+      "passed": false,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "F131 small-variance correlation",
+      "passed": false,
+      "exception": "ZeroDivisionError('float division by zero')"
+    },
+    {
+      "label": "F131 large-variance correlation",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F131 balanced-scale covariance",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F131 balanced-scale correlation",
+      "passed": false,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "F131 large common-offset constant",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')"
+    },
+    {
+      "label": "F131 offset portfolio cancellation",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "E18/E19 matrix (0, 0)",
+      "passed": true,
+      "actual": 9.999999999999999e-05,
+      "independent_reference": "1/10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 matrix (0, 1)",
+      "passed": true,
+      "actual": 0.00019999999999999998,
+      "independent_reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 matrix (1, 0)",
+      "passed": true,
+      "actual": 0.00019999999999999998,
+      "independent_reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18/E19 matrix (1, 1)",
+      "passed": true,
+      "actual": 0.00039999999999999996,
+      "independent_reference": "1/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 Cauchy-Schwarz equality and singular matrix",
+      "passed": true
+    },
+    {
+      "label": "matrix quadratic form nonnegative for nine signed vectors",
+      "passed": true
+    },
+    {
+      "label": "nonlinear zero covariance 0",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "nonlinear zero covariance 1",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "mixed unsorted pairs 0",
+      "passed": true,
+      "actual": -2.0,
+      "independent_reference": "-2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "mixed unsorted pairs 1",
+      "passed": true,
+      "actual": -2.6666666666666665,
+      "independent_reference": "-8/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 constant correlation undefined",
+      "passed": true,
+      "exception": "ValueError('correlation undefined for constant series')"
+    },
+    {
+      "label": "E23 single sample undefined",
+      "passed": true,
+      "exception": "ValueError('insufficient observations')"
+    },
+    {
+      "label": "empty rejected",
+      "passed": true,
+      "exception": "ValueError('nonempty aligned equal-length observations required')"
+    },
+    {
+      "label": "missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "invalid ddof rejected",
+      "passed": true,
+      "exception": "ValueError('ddof must be 0 or 1')"
+    },
+    {
+      "label": "length mismatch rejected",
+      "passed": true,
+      "exception": "ValueError('nonempty aligned equal-length observations required')"
+    },
+    {
+      "label": "matrix unequal lengths rejected",
+      "passed": true,
+      "exception": "ValueError('all series must have equal length')"
+    },
+    {
+      "label": "weight nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite weight required')"
+    },
+    {
+      "label": "F131 unreportable covariance rejected",
+      "passed": false,
+      "actual": "inf"
+    },
+    {
+      "label": "project fixtures preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "dates": [
+      "synthetic period 1",
+      "synthetic period 2",
+      "synthetic period 3"
+    ],
+    "frequency": "unspecified common period",
+    "units": "decimal simple returns",
+    "source": "synthetic manuscript fixture",
+    "a": [
+      0.01,
+      0.02,
+      0.03
+    ],
+    "b": [
+      0.02,
+      0.04,
+      0.06
+    ],
+    "fixture_sha256": "d7d60e44811f8e08bbb9f93be389b7014ee4f45a82f7832eca3d06836714faaf",
+    "supplemental_means": [
+      "1/50",
+      "1/25"
+    ],
+    "sample_covariance": 0.00019999999999999998,
+    "population_covariance": 0.0001333333333333333,
+    "covariance_matrix": [
+      [
+        9.999999999999999e-05,
+        0.00019999999999999998
+      ],
+      [
+        0.00019999999999999998,
+        0.00039999999999999996
+      ]
+    ],
+    "correlation": 1.0,
+    "portfolio_variance": 0.000225,
+    "portfolio_sd": 0.015,
+    "reflected_covariance": -0.00019999999999999998
+  }
+}
