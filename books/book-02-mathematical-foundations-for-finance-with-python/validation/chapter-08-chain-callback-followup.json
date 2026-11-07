@@ -1,0 +1,1353 @@
+{
+  "baseline_revision": "880945028862ef69c463abc320e4842b88128217",
+  "baseline_source_blob": "c48e262b311561edccd42deaaf8407054baed103",
+  "corrected_revision": "9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1",
+  "sources": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_chain_callback_range.py",
+      "sha": "3545bcff0cb4ec76b886312a50bbccaabc5fc9fb"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+      "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_04.py",
+      "sha": "8ec9d1318064214866472b83691a602f3d4a5f0e"
+    }
+  ],
+  "baseline": [
+    {
+      "case": "chain product 0",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "chain product 1",
+      "expected": "ValueError",
+      "actual": "-inf",
+      "passed": false
+    },
+    {
+      "case": "chain product 2",
+      "expected": "ValueError",
+      "actual": "-inf",
+      "passed": false
+    },
+    {
+      "case": "chain product 3",
+      "expected": 8.988465674311579e+307,
+      "actual": 8.988465674311579e+307,
+      "passed": true
+    },
+    {
+      "case": "chain product 4",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 5",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 6",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 7",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 8",
+      "expected": 5e-324,
+      "actual": 5e-324,
+      "passed": true
+    },
+    {
+      "case": "chain product 9",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "case": "chain product 10",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 11",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "ordinary chain",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "case": "chain order arguments",
+      "expected": [
+        [
+          "inner",
+          2
+        ],
+        [
+          "outer",
+          3
+        ],
+        [
+          "derivative",
+          2
+        ]
+      ],
+      "actual": [
+        [
+          "inner",
+          2
+        ],
+        [
+          "outer",
+          3
+        ],
+        [
+          "derivative",
+          2
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity inner",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit inner",
+      "expected": [
+        "inner"
+      ],
+      "actual": [
+        "inner"
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity outer",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit outer",
+      "expected": [
+        "inner",
+        "outer"
+      ],
+      "actual": [
+        "inner",
+        "outer"
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity derivative",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit derivative",
+      "expected": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "actual": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite inner",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit inner",
+      "expected": [
+        "inner"
+      ],
+      "actual": [
+        "inner"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite outer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit outer",
+      "expected": [
+        "inner",
+        "outer"
+      ],
+      "actual": [
+        "inner",
+        "outer"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite derivative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit derivative",
+      "expected": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "actual": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "passed": true
+    },
+    {
+      "case": "chain callable preflight",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "chain bool control",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "chain nonfinite control",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center callable priority",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "center zero step",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center bool step",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 0",
+      "expected": 1,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 0",
+      "expected": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 1",
+      "expected": 1,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 1",
+      "expected": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "actual": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 2",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 2",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 3",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 3",
+      "expected": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 4",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 4",
+      "expected": [
+        0.5,
+        -0.5
+      ],
+      "actual": [
+        0.5,
+        -0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 5",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 5",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 6",
+      "expected": "ValueError",
+      "actual": "-inf",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 6",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "collapsed",
+      "expected": "ValueError",
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "case": "collapsed callback count",
+      "expected": 0,
+      "actual": 2,
+      "passed": false
+    },
+    {
+      "case": "overflowed points",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "overflowed points callback count",
+      "expected": 0,
+      "actual": 1,
+      "passed": false
+    },
+    {
+      "case": "default step value",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "default step arguments",
+      "expected": [
+        0.0001,
+        -0.0001
+      ],
+      "actual": [
+        0.0001,
+        -0.0001
+      ],
+      "passed": true
+    },
+    {
+      "case": "center bool callback",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "center nonfinite callback",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center exception identity",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "baseline-replay": [
+    {
+      "case": "chain product 0",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "chain product 1",
+      "expected": "ValueError",
+      "actual": "-inf",
+      "passed": false
+    },
+    {
+      "case": "chain product 2",
+      "expected": "ValueError",
+      "actual": "-inf",
+      "passed": false
+    },
+    {
+      "case": "chain product 3",
+      "expected": 8.988465674311579e+307,
+      "actual": 8.988465674311579e+307,
+      "passed": true
+    },
+    {
+      "case": "chain product 4",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 5",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 6",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 7",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 8",
+      "expected": 5e-324,
+      "actual": 5e-324,
+      "passed": true
+    },
+    {
+      "case": "chain product 9",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "case": "chain product 10",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 11",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "ordinary chain",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "case": "chain order arguments",
+      "expected": [
+        [
+          "inner",
+          2
+        ],
+        [
+          "outer",
+          3
+        ],
+        [
+          "derivative",
+          2
+        ]
+      ],
+      "actual": [
+        [
+          "inner",
+          2
+        ],
+        [
+          "outer",
+          3
+        ],
+        [
+          "derivative",
+          2
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity inner",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit inner",
+      "expected": [
+        "inner"
+      ],
+      "actual": [
+        "inner"
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity outer",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit outer",
+      "expected": [
+        "inner",
+        "outer"
+      ],
+      "actual": [
+        "inner",
+        "outer"
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity derivative",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit derivative",
+      "expected": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "actual": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite inner",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit inner",
+      "expected": [
+        "inner"
+      ],
+      "actual": [
+        "inner"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite outer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit outer",
+      "expected": [
+        "inner",
+        "outer"
+      ],
+      "actual": [
+        "inner",
+        "outer"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite derivative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit derivative",
+      "expected": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "actual": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "passed": true
+    },
+    {
+      "case": "chain callable preflight",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "chain bool control",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "chain nonfinite control",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center callable priority",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "center zero step",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center bool step",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 0",
+      "expected": 1,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 0",
+      "expected": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 1",
+      "expected": 1,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 1",
+      "expected": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "actual": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 2",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 2",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 3",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 3",
+      "expected": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 4",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 4",
+      "expected": [
+        0.5,
+        -0.5
+      ],
+      "actual": [
+        0.5,
+        -0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 5",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 5",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 6",
+      "expected": "ValueError",
+      "actual": "-inf",
+      "passed": false
+    },
+    {
+      "case": "sampled argument order 6",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "collapsed",
+      "expected": "ValueError",
+      "actual": 0,
+      "passed": false
+    },
+    {
+      "case": "collapsed callback count",
+      "expected": 0,
+      "actual": 2,
+      "passed": false
+    },
+    {
+      "case": "overflowed points",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "overflowed points callback count",
+      "expected": 0,
+      "actual": 1,
+      "passed": false
+    },
+    {
+      "case": "default step value",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "default step arguments",
+      "expected": [
+        0.0001,
+        -0.0001
+      ],
+      "actual": [
+        0.0001,
+        -0.0001
+      ],
+      "passed": true
+    },
+    {
+      "case": "center bool callback",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "center nonfinite callback",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center exception identity",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "corrected": [
+    {
+      "case": "chain product 0",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "chain product 1",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "chain product 2",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "chain product 3",
+      "expected": 8.988465674311579e+307,
+      "actual": 8.988465674311579e+307,
+      "passed": true
+    },
+    {
+      "case": "chain product 4",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 5",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 6",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 7",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 8",
+      "expected": 5e-324,
+      "actual": 5e-324,
+      "passed": true
+    },
+    {
+      "case": "chain product 9",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "case": "chain product 10",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "chain product 11",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "ordinary chain",
+      "expected": 12,
+      "actual": 12,
+      "passed": true
+    },
+    {
+      "case": "chain order arguments",
+      "expected": [
+        [
+          "inner",
+          2
+        ],
+        [
+          "outer",
+          3
+        ],
+        [
+          "derivative",
+          2
+        ]
+      ],
+      "actual": [
+        [
+          "inner",
+          2
+        ],
+        [
+          "outer",
+          3
+        ],
+        [
+          "derivative",
+          2
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity inner",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit inner",
+      "expected": [
+        "inner"
+      ],
+      "actual": [
+        "inner"
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity outer",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit outer",
+      "expected": [
+        "inner",
+        "outer"
+      ],
+      "actual": [
+        "inner",
+        "outer"
+      ],
+      "passed": true
+    },
+    {
+      "case": "exception identity derivative",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "case": "exception short circuit derivative",
+      "expected": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "actual": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite inner",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit inner",
+      "expected": [
+        "inner"
+      ],
+      "actual": [
+        "inner"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite outer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit outer",
+      "expected": [
+        "inner",
+        "outer"
+      ],
+      "actual": [
+        "inner",
+        "outer"
+      ],
+      "passed": true
+    },
+    {
+      "case": "nonfinite derivative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "nonfinite short circuit derivative",
+      "expected": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "actual": [
+        "inner",
+        "outer",
+        "derivative"
+      ],
+      "passed": true
+    },
+    {
+      "case": "chain callable preflight",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "chain bool control",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "chain nonfinite control",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center callable priority",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "center zero step",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center bool step",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 0",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 0",
+      "expected": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 1",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 1",
+      "expected": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "actual": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 2",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 2",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 3",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 3",
+      "expected": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 4",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 4",
+      "expected": [
+        0.5,
+        -0.5
+      ],
+      "actual": [
+        0.5,
+        -0.5
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 5",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 5",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "sampled quotient 6",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "sampled argument order 6",
+      "expected": [
+        5e-324,
+        -5e-324
+      ],
+      "actual": [
+        5e-324,
+        -5e-324
+      ],
+      "passed": true
+    },
+    {
+      "case": "collapsed",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "collapsed callback count",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "overflowed points",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "overflowed points callback count",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "default step value",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "case": "default step arguments",
+      "expected": [
+        0.0001,
+        -0.0001
+      ],
+      "actual": [
+        0.0001,
+        -0.0001
+      ],
+      "passed": true
+    },
+    {
+      "case": "center bool callback",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "center nonfinite callback",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "center exception identity",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "process_results": {
+    "baseline": 1,
+    "baseline_replay": 1,
+    "corrected": 0,
+    "existing_section_checker": 0
+  },
+  "oracle": "Independent 2500-digit Decimal products of represented callback values, and exact rational complete sampled quotients. Instrumented actual Section 8.4 calls check callback arguments/order/counts, exception identity and short circuit. Default step and callable-first validation priority retained.",
+  "limits": "Selected callback/sampled-quotient contract checks; inherited numerical checks not counted as new independent reviewer sign-off. Financial formulas and other implicit-domain/range obligations remain open."
+}
