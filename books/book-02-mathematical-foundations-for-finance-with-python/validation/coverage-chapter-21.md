@@ -109,3 +109,11 @@ Next: [CF-04 splitting-property baseline](chapter-21-splitting-property-baseline
 [V-97](runtime-refresh-2026-11-07-r03.md) compiled 562 files, passed 349 scripts and verified 563 required blobs before and after at `12de5ae82ef9155593bf2b97ebfd034524bef0b5`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [INT-01 equivalent-factor baseline](chapter-21-equivalent-factor-property-baseline.md) records two finite long-horizon discrepancies after rounded rate conversion. Specify INT-01 acceptance using independently derived conversion-error propagation and convention references. Wider capstone requirements and manual reviews remain open.
+
+## Equivalent-rate factor acceptance — V-98
+
+[INT-01 factor acceptance](chapter-21-equivalent-factor-property-followup.md) specifies finite positive factors and conversion-error propagation for INT-01. All 33 checks passed, with two baseline policy gaps and an identical replay retained. Conversion and valuation implementations remain unchanged. This adds selected COV-88 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-98](runtime-refresh-2026-11-07-r04.md) compiled 563 files, passed 350 scripts and verified 564 required blobs before and after at `2a87994b660c5ea1f600a9187edf097d3ca70dce`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.1 earlier-helper baseline](chapter-08-earlier-derivative-guards-baseline.md) addresses the register's COV-51 earlier copies: Section 8.1 invokes callbacks on collapsed perturbations and returns an infinite estimate from finite samples. Check actual callback/preflight and complete-stencil range behavior without repeating Section 8.8 cases as new coverage. Other capstone requirements and manual reviews remain open.
