@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-07  
-**Overall status:** In progress — V-105 full candidate Linux pass (571 files, 358 scripts, 572 required hashes), including Section 8.2 cost-output contract. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-106 full candidate Linux pass (572 files, 359 scripts, 573 required hashes), including Section 8.4 callback and centered-copy contracts. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 571/571 at `7db1525c2f390b0eb9afa431c08648b6450737d3`. [V-105](runtime-refresh-2026-11-07-r11.md). |
-| Automated script execution | Full candidate Linux pass | 358/358 at `7db1525c2f390b0eb9afa431c08648b6450737d3`; 572 required blobs verified before/after. [V-105](runtime-refresh-2026-11-07-r11.md). |
+| Python compilation | Full candidate Linux pass | 572/572 at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`. [V-106](runtime-refresh-2026-11-07-r12.md). |
+| Automated script execution | Full candidate Linux pass | 359/359 at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`; 573 required blobs verified before/after. [V-106](runtime-refresh-2026-11-07-r12.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -973,3 +973,11 @@ Next substantive obligation: [Section 8.2 financial cost-output baseline](chapte
 [V-105](runtime-refresh-2026-11-07-r11.md) at `7db1525c2f390b0eb9afa431c08648b6450737d3`: 571 files compiled, 358 scripts passed, 572 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callback-baseline.md). Actual probes retain a nonfinite chain product, an identity quotient yielding NaN instead of 1, and collapsed perturbations that still invoke callbacks. Preserve callback order/count and derive full sampled quotient/error contracts; do not repeat completed Section 8.2 cost/polynomial examples.
+
+## V-106 checkpoint — Section 8.4 callback and centered copy
+
+[Chain callback follow-up](chapter-08-chain-callback-followup.md): all 55 checks pass; ten baseline mismatches and an identical original-source replay retained. Independent Decimal products and exact sampled quotient references check actual Section 8.4 calls. Callback arguments/order/counts, short circuit, exception identity, signed zero/underflow, default step and callable-before-controls precedence are checked. Nonfinite final chain products reject and invalid perturbations reject before callbacks. The existing Section 8.4 suite also passes.
+
+[V-106](runtime-refresh-2026-11-07-r12.md) at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`: 572 files compiled, 359 scripts passed, 573 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 variable-rate PV baseline](chapter-08-variable-rate-pv-baseline.md). Actual probes lose finite complete PV/sensitivity results to underflow and return NaN for zero amount. Independent 200/400-digit references agree for the returned represented rate. Establish complete scaling and zero identities while preserving the intended factor-rate convention; do not repeat completed callback/centered-copy examples.
