@@ -40,5 +40,17 @@
     }
   ],
   "reference_method": "Exact rational represented nominal rate divided by integer 10**400 rounds to zero, so the rounded base is one. Value is principal and sensitivity is exact principal times represented 0.001 for years one.",
-  "limits": "Next-batch failures, not corrected passes; preserve existing working count/base conventions when extending conversion."
+  "limits": "Next-batch failures, not corrected passes; preserve existing working count/base conventions when extending conversion.",
+  "existing_count_boundary": {
+    "periods_per_year": "9007199254740993",
+    "factor": 960.0000000000001,
+    "nominal_rate": 1.0000000000000002,
+    "existing_expression_base": 1.0000000000000002,
+    "exact_integer_division_base": 1,
+    "actual_value": 7.38905609893065,
+    "actual_sensitivity": 0.007389056098930649,
+    "reference_value": 7.38905609893065,
+    "reference_sensitivity": 0.007389056098930649
+  },
+  "boundary_note": "Existing float/int division converts a float-representable integer denominator to float before division. At this boundary, replacing it globally with exact integer division changes the rounded base and hence the model. Preserve that working convention when adding an overflow fallback; references using exact integer denominators alone are insufficient here."
 }
