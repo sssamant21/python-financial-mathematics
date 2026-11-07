@@ -1,0 +1,722 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "92632757126f1bacf4dcba901137f5b0467a1572f4147561eda800424c359c60",
+  "listing_sha256": "9b92d6c90b2435a1993ec30d64210ceeb8fbbddd31ff320ddc2f0c129047b01a",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "linear_regression.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'n': 4, 'intercept': 1.0, 'slope': 2.0, 'coefficient_ratios': {'intercept': '1', 'slope': '2'}, 'sse': 0.0, 'sst': 20.0, 'r_squared': 1.0, 'residual_variance': 0.0, 'slope_standard_error': 0.0}\nPrediction for x=5: 11.0\n",
+      "stderr": "test_01_slope (__main__.RegressionTests.test_01_slope) ... ok\ntest_02_intercept (__main__.RegressionTests.test_02_intercept) ... ok\ntest_03_r_squared (__main__.RegressionTests.test_03_r_squared) ... ok\ntest_04_sse (__main__.RegressionTests.test_04_sse) ... ok\ntest_05_predict (__main__.RegressionTests.test_05_predict) ... ok\ntest_06_rmse (__main__.RegressionTests.test_06_rmse) ... ok\ntest_07_residual_sum (__main__.RegressionTests.test_07_residual_sum) ... ok\ntest_08_noisy_data (__main__.RegressionTests.test_08_noisy_data) ... ok\ntest_09_constant_response (__main__.RegressionTests.test_09_constant_response) ... ok\ntest_10_shift_response (__main__.RegressionTests.test_10_shift_response) ... ok\ntest_11_scale_predictor (__main__.RegressionTests.test_11_scale_predictor) ... ok\ntest_12_invalid (__main__.RegressionTests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import linear_regression"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "linear_regression.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E6-E15 perfect slope",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6-E15 perfect intercept",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6-E15 perfect sse",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6-E15 perfect sst",
+      "passed": true,
+      "actual": 20.0,
+      "independent_reference": "20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6-E15 perfect r_squared",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6-E15 perfect residual_variance",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6-E15 perfect slope_standard_error",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 prediction",
+      "passed": true,
+      "actual": 11.0,
+      "independent_reference": "11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 RMSE",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 response shift",
+      "passed": true,
+      "actual": 11.0,
+      "independent_reference": "11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 predictor scale",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train intercept",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train slope",
+      "passed": true,
+      "actual": 2.05,
+      "independent_reference": "41/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train sse",
+      "passed": true,
+      "actual": 0.000485,
+      "independent_reference": "97/200000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train sst",
+      "passed": true,
+      "actual": 0.0046875,
+      "independent_reference": "3/640",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train r_squared",
+      "passed": true,
+      "actual": 0.8965333333333333,
+      "independent_reference": "1681/1875",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train residual_variance",
+      "passed": true,
+      "actual": 8.083333333333334e-05,
+      "independent_reference": "97/1200000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project train slope_standard_error",
+      "passed": true,
+      "actual": 0.2843120351538663,
+      "independent_reference": "0.28431203515386634672299130896701849960307265641223391861064690401509217560144815",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 0",
+      "passed": true,
+      "actual": 0.0205,
+      "independent_reference": "41/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 0",
+      "passed": true,
+      "actual": -0.0005,
+      "independent_reference": "-1/2000",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 1",
+      "passed": true,
+      "actual": 0.041,
+      "independent_reference": "41/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 1",
+      "passed": true,
+      "actual": -0.001,
+      "independent_reference": "-1/1000",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 2",
+      "passed": true,
+      "actual": 0.0615,
+      "independent_reference": "123/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 2",
+      "passed": true,
+      "actual": -0.0115,
+      "independent_reference": "-23/2000",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 3",
+      "passed": true,
+      "actual": 0.082,
+      "independent_reference": "41/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 3",
+      "passed": true,
+      "actual": 0.008,
+      "independent_reference": "1/125",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 4",
+      "passed": true,
+      "actual": 0.0205,
+      "independent_reference": "41/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 4",
+      "passed": true,
+      "actual": 0.0095,
+      "independent_reference": "19/2000",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 5",
+      "passed": true,
+      "actual": 0.041,
+      "independent_reference": "41/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 5",
+      "passed": true,
+      "actual": -0.011,
+      "independent_reference": "-11/1000",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 6",
+      "passed": true,
+      "actual": 0.0615,
+      "independent_reference": "123/2000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 6",
+      "passed": true,
+      "actual": 0.0085,
+      "independent_reference": "17/2000",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project fitted 7",
+      "passed": true,
+      "actual": 0.082,
+      "independent_reference": "41/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project residual 7",
+      "passed": true,
+      "actual": -0.002,
+      "independent_reference": "-1/500",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project training RMSE",
+      "passed": true,
+      "actual": 0.007786205751198719,
+      "independent_reference": "0.0077862057511987184835542699341836266965677455393317919739480395522372385702623985",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window 0 intercept",
+      "passed": true,
+      "actual": -0.005,
+      "independent_reference": "-1/200",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window 0 slope",
+      "passed": true,
+      "actual": 2.2,
+      "independent_reference": "11/5",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window 4 intercept",
+      "passed": true,
+      "actual": 0.005,
+      "independent_reference": "1/200",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project window 4 slope",
+      "passed": true,
+      "actual": 1.9,
+      "independent_reference": "19/10",
+      "absolute_tolerance": 1e-17,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project chronological holdout 0",
+      "passed": true,
+      "actual": 0.1025,
+      "independent_reference": "41/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project chronological holdout 1",
+      "passed": true,
+      "actual": 0.123,
+      "independent_reference": "123/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project holdout RMSE",
+      "passed": true,
+      "actual": 0.017106285394556,
+      "independent_reference": "0.017106285394556002204030890540312260850352509616632244219991661126174355953474257",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "project training-only mean baseline RMSE",
+      "passed": true,
+      "actual": 0.05398205720422296,
+      "independent_reference": "0.053982057204222960217067890912140542799366163112018547579753571915183263801091431",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 integer offset slope",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 integer offset prediction",
+      "passed": true,
+      "actual": 11.0,
+      "independent_reference": "11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 tiny predictor slope",
+      "passed": true,
+      "actual": 1e+200,
+      "independent_reference": "1e+200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 huge predictor slope",
+      "passed": true,
+      "actual": 1e-200,
+      "independent_reference": "1e-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 large constant response",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 RMSE large squares",
+      "passed": true,
+      "actual": 1e+200,
+      "independent_reference": "1e+200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 RMSE tiny squares",
+      "passed": true,
+      "actual": 1e-200,
+      "independent_reference": "1e-200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F136 prediction cancels intermediate overflow",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 zero predictor variance",
+      "passed": true,
+      "exception": "ValueError('predictor has zero variance')"
+    },
+    {
+      "label": "F136 decimal constant predictor",
+      "passed": true,
+      "exception": "ValueError('predictor has zero variance')"
+    },
+    {
+      "label": "insufficient residual df",
+      "passed": true,
+      "exception": "ValueError('at least three observations required for residual variance')"
+    },
+    {
+      "label": "unequal lengths rejected",
+      "passed": true,
+      "exception": "ValueError('nonempty equal-length positional sequences required')"
+    },
+    {
+      "label": "missing rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "nonfinite rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "boolean rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric observations required')"
+    },
+    {
+      "label": "F136 unreportable fit aggregate rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F136 unreportable prediction rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "project fixtures preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "mini_project_records": 1,
+  "mini_project_task_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "market": [
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06
+    ],
+    "asset": [
+      0.02,
+      0.04,
+      0.05,
+      0.09,
+      0.03,
+      0.03,
+      0.07,
+      0.08,
+      0.11,
+      0.1
+    ],
+    "period_labels": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "dates": null,
+    "frequency": "hypothetical daily",
+    "return_convention": "raw decimal simple returns; no risk-free adjustment",
+    "fixture_sha256": "a5cda21173172c91656e226cef9b51d53df6a400f7388a958489b4e0ad2cfff0",
+    "train_periods": [
+      1,
+      8
+    ],
+    "window_periods": [
+      [
+        1,
+        4
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "holdout_periods": [
+      9,
+      10
+    ],
+    "train": {
+      "n": 8,
+      "intercept": 0.0,
+      "slope": 2.05,
+      "coefficient_ratios": {
+        "intercept": "0",
+        "slope": "41/20"
+      },
+      "fitted": [
+        0.0205,
+        0.041,
+        0.0615,
+        0.082,
+        0.0205,
+        0.041,
+        0.0615,
+        0.082
+      ],
+      "residuals": [
+        -0.0005,
+        -0.001,
+        -0.0115,
+        0.008,
+        0.0095,
+        -0.011,
+        0.0085,
+        -0.002
+      ],
+      "sse": 0.000485,
+      "sst": 0.0046875,
+      "r_squared": 0.8965333333333333,
+      "residual_variance": 8.083333333333334e-05,
+      "slope_standard_error": 0.2843120351538663
+    },
+    "windows": [
+      {
+        "n": 4,
+        "intercept": -0.005,
+        "slope": 2.2,
+        "coefficient_ratios": {
+          "intercept": "-1/200",
+          "slope": "11/5"
+        },
+        "fitted": [
+          0.017,
+          0.039,
+          0.061,
+          0.083
+        ],
+        "residuals": [
+          0.003,
+          0.001,
+          -0.011,
+          0.007
+        ],
+        "sse": 0.00018,
+        "sst": 0.0026,
+        "r_squared": 0.9307692307692308,
+        "residual_variance": 9e-05,
+        "slope_standard_error": 0.4242640687119285
+      },
+      {
+        "n": 4,
+        "intercept": 0.005,
+        "slope": 1.9,
+        "coefficient_ratios": {
+          "intercept": "1/200",
+          "slope": "19/10"
+        },
+        "fitted": [
+          0.024,
+          0.043,
+          0.062,
+          0.081
+        ],
+        "residuals": [
+          0.006,
+          -0.013,
+          0.008,
+          -0.001
+        ],
+        "sse": 0.00027,
+        "sst": 0.002075,
+        "r_squared": 0.8698795180722891,
+        "residual_variance": 0.000135,
+        "slope_standard_error": 0.5196152422706631
+      }
+    ],
+    "holdout_predictions": [
+      0.1025,
+      0.123
+    ],
+    "holdout_rmse": 0.017106285394556,
+    "naive_training_mean": 0.05125,
+    "naive_rmse": 0.05398205720422296,
+    "residual_table": [
+      {
+        "period": 1,
+        "market": 0.01,
+        "asset": 0.02,
+        "fitted": 0.0205,
+        "residual": -0.0005
+      },
+      {
+        "period": 2,
+        "market": 0.02,
+        "asset": 0.04,
+        "fitted": 0.041,
+        "residual": -0.001
+      },
+      {
+        "period": 3,
+        "market": 0.03,
+        "asset": 0.05,
+        "fitted": 0.0615,
+        "residual": -0.0115
+      },
+      {
+        "period": 4,
+        "market": 0.04,
+        "asset": 0.09,
+        "fitted": 0.082,
+        "residual": 0.008
+      },
+      {
+        "period": 5,
+        "market": 0.01,
+        "asset": 0.03,
+        "fitted": 0.0205,
+        "residual": 0.0095
+      },
+      {
+        "period": 6,
+        "market": 0.02,
+        "asset": 0.03,
+        "fitted": 0.041,
+        "residual": -0.011
+      },
+      {
+        "period": 7,
+        "market": 0.03,
+        "asset": 0.07,
+        "fitted": 0.0615,
+        "residual": 0.0085
+      },
+      {
+        "period": 8,
+        "market": 0.04,
+        "asset": 0.08,
+        "fitted": 0.082,
+        "residual": -0.002
+      }
+    ]
+  }
+}
