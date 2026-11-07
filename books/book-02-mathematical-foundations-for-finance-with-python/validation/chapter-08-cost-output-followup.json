@@ -1,0 +1,934 @@
+{
+  "baseline_revision": "60d4db0ff54e8dc0ca38af5656da7cc60b091698",
+  "baseline_source_blob": "a497e6c64b4964effda0326f1bb2ddcff66648ab",
+  "corrected_revision": "7db1525c2f390b0eb9afa431c08648b6450737d3",
+  "sources": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_cost_output_range.py",
+      "sha": "53a198d711b60924b34f4d596c76a24fed7d25cd"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+      "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_02.py",
+      "sha": "d17dbf514c45f35386c5d9cfa64cad8842ba57f7"
+    }
+  ],
+  "baseline": [
+    {
+      "case": "cost0",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal0",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost1",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal1",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost2",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal2",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost3",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal3",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost4",
+      "expected": 1020.05,
+      "actual": 1020.05,
+      "passed": true
+    },
+    {
+      "case": "marginal4",
+      "expected": 20.1,
+      "actual": 20.1,
+      "passed": true
+    },
+    {
+      "case": "cost5",
+      "expected": 1060.45,
+      "actual": 1060.45,
+      "passed": true
+    },
+    {
+      "case": "marginal5",
+      "expected": 20.3,
+      "actual": 20.3,
+      "passed": true
+    },
+    {
+      "case": "cost6",
+      "expected": 3500,
+      "actual": 3500,
+      "passed": true
+    },
+    {
+      "case": "marginal6",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "case": "cost7",
+      "expected": 23500,
+      "actual": 23500,
+      "passed": true
+    },
+    {
+      "case": "marginal7",
+      "expected": 70,
+      "actual": 70,
+      "passed": true
+    },
+    {
+      "case": "cost8",
+      "expected": 5000000200000001000,
+      "actual": 5000000200000001000,
+      "passed": true
+    },
+    {
+      "case": "marginal8",
+      "expected": 1000000020,
+      "actual": 1000000020,
+      "passed": true
+    },
+    {
+      "case": "cost9",
+      "expected": 5e+198,
+      "actual": 5e+198,
+      "passed": true
+    },
+    {
+      "case": "marginal9",
+      "expected": 1.0000000000000001e+99,
+      "actual": 1.0000000000000001e+99,
+      "passed": true
+    },
+    {
+      "case": "cost10",
+      "expected": 1.25e+308,
+      "actual": 1.25e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal10",
+      "expected": 5e+153,
+      "actual": 5e+153,
+      "passed": true
+    },
+    {
+      "case": "cost11",
+      "expected": 1.7976931348623155e+308,
+      "actual": 1.7976931348623153e+308,
+      "passed": false
+    },
+    {
+      "case": "marginal11",
+      "expected": 5.996153992122476e+153,
+      "actual": 5.996153992122476e+153,
+      "passed": true
+    },
+    {
+      "case": "cost12",
+      "expected": 1.7976931348623147e+308,
+      "actual": 1.7976931348623147e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal12",
+      "expected": 5.996153992122475e+153,
+      "actual": 5.996153992122475e+153,
+      "passed": true
+    },
+    {
+      "case": "cost13",
+      "expected": "OverflowError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "marginal13",
+      "expected": 5.9961539921224776e+153,
+      "actual": 5.9961539921224776e+153,
+      "passed": true
+    },
+    {
+      "case": "cost14",
+      "expected": "OverflowError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "marginal14",
+      "expected": 1e+154,
+      "actual": 1e+154,
+      "passed": true
+    },
+    {
+      "case": "cost15",
+      "expected": "OverflowError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "marginal15",
+      "expected": 1.7976931348623158e+307,
+      "actual": 1.7976931348623158e+307,
+      "passed": true
+    },
+    {
+      "case": "cost negative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost nan",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost infinity",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost bool",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "cost text",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "cost huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost negative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost nan",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost infinity",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost bool",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost text",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "profit composition 0.0",
+      "expected": -1000,
+      "actual": -1000,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 0.0",
+      "expected": 80,
+      "actual": 80,
+      "passed": true
+    },
+    {
+      "case": "profit composition 100.0",
+      "expected": 4500,
+      "actual": 4500,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 100.0",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "case": "profit composition 500.0",
+      "expected": -23500,
+      "actual": -23500,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 500.0",
+      "expected": -170,
+      "actual": -170,
+      "passed": true
+    }
+  ],
+  "baseline-replay": [
+    {
+      "case": "cost0",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal0",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost1",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal1",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost2",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal2",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost3",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal3",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost4",
+      "expected": 1020.05,
+      "actual": 1020.05,
+      "passed": true
+    },
+    {
+      "case": "marginal4",
+      "expected": 20.1,
+      "actual": 20.1,
+      "passed": true
+    },
+    {
+      "case": "cost5",
+      "expected": 1060.45,
+      "actual": 1060.45,
+      "passed": true
+    },
+    {
+      "case": "marginal5",
+      "expected": 20.3,
+      "actual": 20.3,
+      "passed": true
+    },
+    {
+      "case": "cost6",
+      "expected": 3500,
+      "actual": 3500,
+      "passed": true
+    },
+    {
+      "case": "marginal6",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "case": "cost7",
+      "expected": 23500,
+      "actual": 23500,
+      "passed": true
+    },
+    {
+      "case": "marginal7",
+      "expected": 70,
+      "actual": 70,
+      "passed": true
+    },
+    {
+      "case": "cost8",
+      "expected": 5000000200000001000,
+      "actual": 5000000200000001000,
+      "passed": true
+    },
+    {
+      "case": "marginal8",
+      "expected": 1000000020,
+      "actual": 1000000020,
+      "passed": true
+    },
+    {
+      "case": "cost9",
+      "expected": 5e+198,
+      "actual": 5e+198,
+      "passed": true
+    },
+    {
+      "case": "marginal9",
+      "expected": 1.0000000000000001e+99,
+      "actual": 1.0000000000000001e+99,
+      "passed": true
+    },
+    {
+      "case": "cost10",
+      "expected": 1.25e+308,
+      "actual": 1.25e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal10",
+      "expected": 5e+153,
+      "actual": 5e+153,
+      "passed": true
+    },
+    {
+      "case": "cost11",
+      "expected": 1.7976931348623155e+308,
+      "actual": 1.7976931348623153e+308,
+      "passed": false
+    },
+    {
+      "case": "marginal11",
+      "expected": 5.996153992122476e+153,
+      "actual": 5.996153992122476e+153,
+      "passed": true
+    },
+    {
+      "case": "cost12",
+      "expected": 1.7976931348623147e+308,
+      "actual": 1.7976931348623147e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal12",
+      "expected": 5.996153992122475e+153,
+      "actual": 5.996153992122475e+153,
+      "passed": true
+    },
+    {
+      "case": "cost13",
+      "expected": "OverflowError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "marginal13",
+      "expected": 5.9961539921224776e+153,
+      "actual": 5.9961539921224776e+153,
+      "passed": true
+    },
+    {
+      "case": "cost14",
+      "expected": "OverflowError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "marginal14",
+      "expected": 1e+154,
+      "actual": 1e+154,
+      "passed": true
+    },
+    {
+      "case": "cost15",
+      "expected": "OverflowError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "marginal15",
+      "expected": 1.7976931348623158e+307,
+      "actual": 1.7976931348623158e+307,
+      "passed": true
+    },
+    {
+      "case": "cost negative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost nan",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost infinity",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost bool",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "cost text",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "cost huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost negative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost nan",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost infinity",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost bool",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost text",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "profit composition 0.0",
+      "expected": -1000,
+      "actual": -1000,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 0.0",
+      "expected": 80,
+      "actual": 80,
+      "passed": true
+    },
+    {
+      "case": "profit composition 100.0",
+      "expected": 4500,
+      "actual": 4500,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 100.0",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "case": "profit composition 500.0",
+      "expected": -23500,
+      "actual": -23500,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 500.0",
+      "expected": -170,
+      "actual": -170,
+      "passed": true
+    }
+  ],
+  "corrected": [
+    {
+      "case": "cost0",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal0",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost1",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal1",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost2",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal2",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost3",
+      "expected": 1000,
+      "actual": 1000,
+      "passed": true
+    },
+    {
+      "case": "marginal3",
+      "expected": 20,
+      "actual": 20,
+      "passed": true
+    },
+    {
+      "case": "cost4",
+      "expected": 1020.05,
+      "actual": 1020.05,
+      "passed": true
+    },
+    {
+      "case": "marginal4",
+      "expected": 20.1,
+      "actual": 20.1,
+      "passed": true
+    },
+    {
+      "case": "cost5",
+      "expected": 1060.45,
+      "actual": 1060.45,
+      "passed": true
+    },
+    {
+      "case": "marginal5",
+      "expected": 20.3,
+      "actual": 20.3,
+      "passed": true
+    },
+    {
+      "case": "cost6",
+      "expected": 3500,
+      "actual": 3500,
+      "passed": true
+    },
+    {
+      "case": "marginal6",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "case": "cost7",
+      "expected": 23500,
+      "actual": 23500,
+      "passed": true
+    },
+    {
+      "case": "marginal7",
+      "expected": 70,
+      "actual": 70,
+      "passed": true
+    },
+    {
+      "case": "cost8",
+      "expected": 5000000200000001000,
+      "actual": 5000000200000001000,
+      "passed": true
+    },
+    {
+      "case": "marginal8",
+      "expected": 1000000020,
+      "actual": 1000000020,
+      "passed": true
+    },
+    {
+      "case": "cost9",
+      "expected": 5e+198,
+      "actual": 5e+198,
+      "passed": true
+    },
+    {
+      "case": "marginal9",
+      "expected": 1.0000000000000001e+99,
+      "actual": 1.0000000000000001e+99,
+      "passed": true
+    },
+    {
+      "case": "cost10",
+      "expected": 1.25e+308,
+      "actual": 1.25e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal10",
+      "expected": 5e+153,
+      "actual": 5e+153,
+      "passed": true
+    },
+    {
+      "case": "cost11",
+      "expected": 1.7976931348623155e+308,
+      "actual": 1.7976931348623155e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal11",
+      "expected": 5.996153992122476e+153,
+      "actual": 5.996153992122476e+153,
+      "passed": true
+    },
+    {
+      "case": "cost12",
+      "expected": 1.7976931348623147e+308,
+      "actual": 1.7976931348623147e+308,
+      "passed": true
+    },
+    {
+      "case": "marginal12",
+      "expected": 5.996153992122475e+153,
+      "actual": 5.996153992122475e+153,
+      "passed": true
+    },
+    {
+      "case": "cost13",
+      "expected": "OverflowError",
+      "actual": "OverflowError",
+      "passed": true
+    },
+    {
+      "case": "marginal13",
+      "expected": 5.9961539921224776e+153,
+      "actual": 5.9961539921224776e+153,
+      "passed": true
+    },
+    {
+      "case": "cost14",
+      "expected": "OverflowError",
+      "actual": "OverflowError",
+      "passed": true
+    },
+    {
+      "case": "marginal14",
+      "expected": 1e+154,
+      "actual": 1e+154,
+      "passed": true
+    },
+    {
+      "case": "cost15",
+      "expected": "OverflowError",
+      "actual": "OverflowError",
+      "passed": true
+    },
+    {
+      "case": "marginal15",
+      "expected": 1.7976931348623158e+307,
+      "actual": 1.7976931348623158e+307,
+      "passed": true
+    },
+    {
+      "case": "cost negative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost nan",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost infinity",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "cost bool",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "cost text",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "cost huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost negative",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost nan",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost infinity",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost bool",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost text",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "marginal_cost huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "profit composition 0.0",
+      "expected": -1000,
+      "actual": -1000,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 0.0",
+      "expected": 80,
+      "actual": 80,
+      "passed": true
+    },
+    {
+      "case": "profit composition 100.0",
+      "expected": 4500,
+      "actual": 4500,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 100.0",
+      "expected": 30,
+      "actual": 30,
+      "passed": true
+    },
+    {
+      "case": "profit composition 500.0",
+      "expected": -23500,
+      "actual": -23500,
+      "passed": true
+    },
+    {
+      "case": "marginal composition 500.0",
+      "expected": -170,
+      "actual": -170,
+      "passed": true
+    }
+  ],
+  "process_results": {
+    "baseline": 1,
+    "baseline_replay": 1,
+    "corrected": 0,
+    "existing_section_checker": 0,
+    "polynomial_range_checker": 0
+  },
+  "oracle": "2500-digit Decimal separate complete monomial sum and analytically differentiated coefficients; production uses rational Horner. A 120-digit root only selects adjacent boundary inputs. 32 independent value/derivative references, 12 guard observations, six composition regressions.",
+  "limits": "One candidate Linux environment; selected range/accuracy contract only; no independent reviewer, supported-platform, release or canonical approval."
+}
