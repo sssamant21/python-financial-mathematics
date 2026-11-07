@@ -115,3 +115,11 @@ The [helper guard record](chapter-08-helper-guards-followup.md) rejects nonfinit
 ## Subsequent normalized-sensitivity follow-up
 
 The [sensitivity range record](chapter-08-sensitivity-range-followup.md) rejects zero price normalization and nonfinite prices/ratios, and checks independent hyperbolic-function stencil ratios at three cash-flow scales. All 21 chapter files compiled and 11 scripts passed. This extends partial COV-51 remediation; cancellation/subnormal and broader domain/review work remain open.
+
+## Earlier derivative-helper guards — V-99
+
+[Section 8.1 earlier-helper follow-up](chapter-08-earlier-derivative-guards-followup.md) retains ten baseline mismatches, an identical replay, an initial checker serialization failure and 25 passing corrected cases. Section 8.1 now preflights represented perturbations before callbacks and evaluates complete sampled quotients before final rounding. This adds selected COV-51 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-99](runtime-refresh-2026-11-07-r05.md) compiled 564 files, passed 351 scripts and verified 565 required blobs before and after at `d702d2761735c11ab501900c899cae4557742a09`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Section 8.3 product/quotient baseline](chapter-08-product-quotient-range-baseline.md) records finite analytic product/quotient derivative results lost to intermediate overflow. Check complete expressions, callbacks and true final range without attributing completed sampled-stencil cases to those separate helpers. Remaining financial-PV and copied-helper ranges and manual review remain open.
