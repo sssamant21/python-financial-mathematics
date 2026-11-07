@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-07  
-**Full-runtime candidate source revision:** `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`  
-**Latest scoped source revision:** `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1` (included in V-106)  
-**Disposition:** V-106 full candidate Linux pass includes Section 8.4 callback and centered-copy contracts; independent review and release approval pending.
+**Full-runtime candidate source revision:** `21ebbc28a1b08b93c9103d791c90d6bab15ec815`  
+**Latest scoped source revision:** `21ebbc28a1b08b93c9103d791c90d6bab15ec815` (included in V-107)  
+**Disposition:** V-107 full candidate Linux pass includes Section 8.4 variable-rate PV scaling; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-107](runtime-refresh-2026-11-07-r13.md): 573 compiled, 360 passed, 574 required hashes verified before/after. G2–G8 unchanged.
 
 [V-106](runtime-refresh-2026-11-07-r12.md): 572 compiled, 359 passed, 573 required hashes verified before/after. G2–G8 unchanged.
 
@@ -169,7 +171,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-106](runtime-refresh-2026-11-07-r12.md) at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`; 572 sources/359 scripts/573 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-107](runtime-refresh-2026-11-07-r13.md) at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`; 573 sources/360 scripts/574 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -822,3 +824,11 @@ Next: [Section 8.4 callback and centered-copy baseline](chapter-08-chain-callbac
 [V-106](runtime-refresh-2026-11-07-r12.md) at `9d138bf2bd1fa0ab5806d0ec3e9202b0f26f2cf1`: 572 files compiled, 359 scripts passed, 573 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.4 variable-rate PV baseline](chapter-08-variable-rate-pv-baseline.md). Actual probes lose finite complete PV/sensitivity results to underflow and return NaN for zero amount. Independent 200/400-digit references agree for the returned represented rate. Establish complete scaling and zero identities while preserving the intended factor-rate convention; do not repeat completed callback/centered-copy examples.
+
+## V-107 checkpoint — Section 8.4 variable-rate PV
+
+[Variable-rate PV follow-up](chapter-08-variable-rate-pv-followup.md): all 63 checks pass; sixteen baseline mismatches, an identical replay and corrected rerun retained. Independent 1800/2400-digit log-scale references check complete coefficients/exponents, zero identities and finite sensitivity recovery when PV rounds to zero. Six independently rounded affine-rate cases preserve the public rate convention. Input domains, signed zeros and validation precedence remain checked. The strengthened validation-priority discriminator did not change observation JSON. Existing Section 8.4 and callback suites also pass.
+
+[V-107](runtime-refresh-2026-11-07-r13.md) at `21ebbc28a1b08b93c9103d791c90d6bab15ec815`: 573 files compiled, 360 scripts passed, 574 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.4 discrete-compounding baseline](chapter-08-discrete-compounding-range-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-discrete-compounding-range-baseline.json). Actual intermediate overflow/underflow loses finite complete values and zero-principal identities. Preserve the intended nominal-rate/base/exponent conventions while deriving full results; do not repeat completed variable-rate PV examples.
