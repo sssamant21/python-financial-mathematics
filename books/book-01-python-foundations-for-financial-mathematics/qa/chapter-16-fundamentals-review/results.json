@@ -1,0 +1,387 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "b319d6a34623f4c3a0c5eb58324a0c94b4d1b6c33d889f41a75c817425cd193a",
+  "listing_sha256": "5841606a1a8a7cceffa65bf21b389f50508c73f7dc0a3066f8f82a85d3a9d4c4",
+  "commands": [
+    {
+      "label": "exact demonstration and embedded tests",
+      "args": [
+        "portfolio_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "Portfolio return: 0.04\nDrifted weights: [0.5238095238095238, 0.47619047619047616]\n",
+      "stderr": "test_01_weights (__main__.PortfolioFundamentalsTests.test_01_weights) ... ok\ntest_02_portfolio_return (__main__.PortfolioFundamentalsTests.test_02_portfolio_return) ... ok\ntest_03_equal_weight (__main__.PortfolioFundamentalsTests.test_03_equal_weight) ... ok\ntest_04_value (__main__.PortfolioFundamentalsTests.test_04_value) ... ok\ntest_05_value_weights (__main__.PortfolioFundamentalsTests.test_05_value_weights) ... ok\ntest_06_drift (__main__.PortfolioFundamentalsTests.test_06_drift) ... ok\ntest_07_zero_weight (__main__.PortfolioFundamentalsTests.test_07_zero_weight) ... ok\ntest_08_short_allowed (__main__.PortfolioFundamentalsTests.test_08_short_allowed) ... ok\ntest_09_invalid_sum (__main__.PortfolioFundamentalsTests.test_09_invalid_sum) ... ok\ntest_10_invalid_negative (__main__.PortfolioFundamentalsTests.test_10_invalid_negative) ... ok\ntest_11_invalid_price (__main__.PortfolioFundamentalsTests.test_11_invalid_price) ... ok\ntest_12_invalid_bankruptcy (__main__.PortfolioFundamentalsTests.test_12_invalid_bankruptcy) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import portfolio_fundamentals"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E2 market value",
+      "passed": true,
+      "actual": 350.0,
+      "independent_reference": "350",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 weighted return",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 signed return",
+      "passed": true,
+      "actual": 0.11,
+      "independent_reference": "11/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 drift A",
+      "passed": true,
+      "actual": 0.5238095238095238,
+      "independent_reference": "11/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 drift B",
+      "passed": true,
+      "actual": 0.47619047619047616,
+      "independent_reference": "10/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 expected return",
+      "passed": true,
+      "actual": 0.064,
+      "independent_reference": "8/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F142 mixed tuple/list contract",
+      "passed": true,
+      "actual": 350.0,
+      "independent_reference": "350",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F142 cancellation before reporting value",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F142 large values normalize A",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F142 product cancellation return",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F142 unreportable grown values normalize",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 values-to-weights",
+      "passed": true
+    },
+    {
+      "label": "E4 full investment",
+      "passed": true
+    },
+    {
+      "label": "E6 explicit cash slot",
+      "passed": true
+    },
+    {
+      "label": "E7 equal weights",
+      "passed": true
+    },
+    {
+      "label": "E11 long-only",
+      "passed": true
+    },
+    {
+      "label": "E12/E13 signed net/gross arithmetic",
+      "passed": true
+    },
+    {
+      "label": "lab initial value",
+      "passed": true,
+      "actual": 1000.0,
+      "independent_reference": "1000",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab end value",
+      "passed": true,
+      "actual": 1040.0,
+      "independent_reference": "1040",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab realized return",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab end/initial reconciliation",
+      "passed": true,
+      "actual": 0.040000000000000036,
+      "independent_reference": "1/25",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab drift A",
+      "passed": true,
+      "actual": 0.6346153846153846,
+      "independent_reference": "33/52",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab drift B",
+      "passed": true,
+      "actual": 0.36538461538461536,
+      "independent_reference": "19/52",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab no-cost rebalanced value",
+      "passed": true,
+      "actual": 1040.0,
+      "independent_reference": "1040",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab funded cost rebalanced value",
+      "passed": true,
+      "actual": 1039.9279855971192,
+      "independent_reference": "5198600/4999",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab self-financing cost budget",
+      "passed": true
+    },
+    {
+      "label": "E5 sum less than one rejected",
+      "passed": true,
+      "exception": "ValueError('fully invested weights must sum to 1 within tolerance')"
+    },
+    {
+      "label": "negative long-only rejected",
+      "passed": true,
+      "exception": "ValueError('long-only weights cannot be negative')"
+    },
+    {
+      "label": "return lengths rejected",
+      "passed": true,
+      "exception": "ValueError('one return per asset required')"
+    },
+    {
+      "label": "missing return rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric returns required')"
+    },
+    {
+      "label": "nonfinite return rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric returns required')"
+    },
+    {
+      "label": "boolean quantity rejected",
+      "passed": true,
+      "exception": "ValueError('finite numeric values required')"
+    },
+    {
+      "label": "zero price rejected",
+      "passed": true,
+      "exception": "ValueError('positive prices required')"
+    },
+    {
+      "label": "negative value allocation rejected",
+      "passed": true,
+      "exception": "ValueError('nonnegative finite values required')"
+    },
+    {
+      "label": "zero total values rejected",
+      "passed": true,
+      "exception": "ValueError('total portfolio value must be positive')"
+    },
+    {
+      "label": "bankruptcy drift rejected",
+      "passed": true,
+      "exception": "ValueError('aligned returns > -100% required')"
+    },
+    {
+      "label": "F142 infinite tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('finite tolerance in [0,1) and boolean long_only required')"
+    },
+    {
+      "label": "F142 NaN tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('finite tolerance in [0,1) and boolean long_only required')"
+    },
+    {
+      "label": "F142 negative tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('finite tolerance in [0,1) and boolean long_only required')"
+    },
+    {
+      "label": "F142 nonboolean policy rejected",
+      "passed": true,
+      "exception": "ValueError('finite tolerance in [0,1) and boolean long_only required')"
+    },
+    {
+      "label": "F142 unreportable value rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "F142 vanished positive allocation rejected",
+      "passed": true,
+      "exception": "ValueError('result outside float range')"
+    },
+    {
+      "label": "lab source fixtures unchanged",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 24,
+  "lab_step_records": 10,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "quantities": [
+      6,
+      8
+    ],
+    "initial_prices": [
+      100,
+      50
+    ],
+    "initial_values": [
+      600,
+      400
+    ],
+    "initial_wealth": 1000.0,
+    "initial_weights": [
+      0.6,
+      0.4
+    ],
+    "asset_returns": [
+      0.1,
+      -0.05
+    ],
+    "expected_returns": [
+      0.08,
+      0.04
+    ],
+    "expected_portfolio_return": 0.064,
+    "end_prices": [
+      110,
+      47.5
+    ],
+    "end_values": [
+      660,
+      380
+    ],
+    "end_wealth": 1040.0,
+    "realized_return": 0.04,
+    "drifted_weights": [
+      0.6346153846153846,
+      0.36538461538461536
+    ],
+    "target_weights": [
+      0.6,
+      0.4
+    ],
+    "no_cost_trade_values": [
+      -36,
+      36
+    ],
+    "no_cost_target_quantities": [
+      "312/55",
+      "832/95"
+    ],
+    "hypothetical_cost_rate": "1/1000",
+    "cost_funding_equation": "V'=1040-.001*(280-.2*V')",
+    "funded_cost": "360/4999",
+    "post_cost_wealth": "5198600/4999",
+    "post_cost_target_quantities": [
+      "28356/4999",
+      "831776/94981"
+    ],
+    "units": "fictional USD prices/wealth; decimal one-period total returns; fractional shares",
+    "valuation_times": [
+      "synthetic start",
+      "synthetic end"
+    ],
+    "dates": null,
+    "external_flows": 0,
+    "fx": "single currency",
+    "fixture_sha256": "1dd94fd344f0ca26971ee387e2b438752080355f8b294b0f01bed6423ec75646",
+    "execution_scope": "supplemental rebalance design/source valuation calls; no actual trades, taxes, spread, lots or margin model"
+  }
+}
