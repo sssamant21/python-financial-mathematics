@@ -1,0 +1,28 @@
+{
+  "source_revision": "78b09101177563c3511c1932f6a4e7469567e7bc",
+  "source_blob": "a497e6c64b4964effda0326f1bb2ddcff66648ab",
+  "observations": [
+    {
+      "quantity": 5.996153992122475e+154,
+      "exact_rounded_reference": 1.7976931348623147e+308,
+      "actual": 1.7976931348623147e+308
+    },
+    {
+      "quantity": 5.996153992122476e+154,
+      "exact_rounded_reference": 1.7976931348623155e+308,
+      "actual": 1.7976931348623153e+308
+    },
+    {
+      "quantity": 5.996153992122477e+154,
+      "exact_rounded_reference": "OverflowError",
+      "actual": "inf"
+    },
+    {
+      "quantity": 1.7976931348623157e+308,
+      "exact_rounded_reference": "OverflowError",
+      "actual": "inf"
+    }
+  ],
+  "method": "120-digit Decimal positive quadratic root locates the neighborhood; adjacent binary64 quantities are evaluated with a separate exact rational monomial sum using the represented coefficient 0.05. References labeled OverflowError mean exact complete result cannot round to finite binary64. Current returned infinity is recorded, not accepted as a pass; a one-ulp finite difference needs an explicit accuracy contract.",
+  "limits": "Exploratory next-batch baseline, not a completed cost contract or independent reviewer sign-off."
+}
