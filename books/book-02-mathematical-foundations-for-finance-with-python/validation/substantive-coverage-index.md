@@ -709,3 +709,11 @@ Next: [Chapter 21 integrated execution baseline](chapter-21-integrated-provenanc
 [V-94](runtime-refresh-2026-11-06-r13.md) compiled 559 files, passed 346 scripts and verified 560 required blobs before and after at `44c6a0bcd5d5e8e6ab8ac84e9691c89610d3ed3e`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
 
 Next: [Section 21.4 central-difference baseline](chapter-21-central-difference-range-baseline.md) reproduces two finite complete stencil values rejected by the actual helper. Check COV-90 centered-difference arithmetic, existing perturbation guards and the actual integrated diagnostic. Wider capstone requirements and manual reviews remain open.
+
+## Complete central-difference evaluation — V-95
+
+[Section 21.4 complete central difference](chapter-21-central-difference-range-followup.md) retains 14 baseline mismatches, an identical replay, and a 24-case corrected pass including the actual integrated diagnostic. The 14-method existing regression passes with the former denominator-rejection test replaced by an independent finite-result reference. This adds selected COV-90 evidence. Thirty-five selected categories remain partially addressed; none are closed.
+
+[V-95](runtime-refresh-2026-11-07-r01.md) compiled 560 files, passed 347 scripts and verified 561 required blobs before and after at `a3f898d3824e5287da47129b18f58d6ec16af05b`. Independent review, supported platforms, release acceptance and canonical approval remain pending.
+
+Next: [Implemented-interface baseline](chapter-21-implemented-interface-baseline.md) records actual callable signatures and report fields versus the intentional design catalog. Reconcile the implemented COV-88 contract without claiming that the draft's general interfaces already exist. Wider capstone requirements and manual reviews remain open.
