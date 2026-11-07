@@ -1,0 +1,11 @@
+# Section 8.3 financial rational-expression range
+
+[Initial probes](chapter-08-financial-rational-range-baseline.md) · [Exact observations and source blobs](chapter-08-financial-rational-range-followup.json) · [Corrected source](https://github.com/sssamant21/python-financial-mathematics/blob/e674373645a4b9787b3a412fd8262ff9a4c30fdf/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_03.py).
+
+Eleven of 41 observations failed on the baseline; replay against the original module is identical. All 41 corrected observations and the existing Section 8.3 regression suite pass. The four financial helpers now evaluate complete rational expressions before final float conversion; true final overflow raises ValueError and underflow may yield signed zero.
+
+The oracle constructs the total-cost polynomial and its marginal cost, then derives average cost and its derivative through the complete quotient. Coverage value and derivative come from independent asset/liability polynomials and their quotient. Fraction preserves represented inputs and the existing binary64 coefficient 0.1. Cases include extreme/tiny quantities, true range errors, signed times, large denominators, bool/nonfinite inputs and the adjacent floats around the coverage pole.
+
+The coverage domain is reconciled with the mathematical denominator in the manuscript: an exact zero is invalid. The nearest float to −50/3 has a nonzero exact represented denominator even though separate float arithmetic rounds 50+3t to zero. It is now evaluated rather than falsely rejected. The financial example still assumes positive liabilities; the algebraic helper's signed-time extension is not an economic-suitability claim. The doc and raw results preserve this intentional boundary correction.
+
+Run `python check_financial_rational_range.py` from `chapter-08/code` at revision `e674373645a4b9787b3a412fd8262ff9a4c30fdf`. Baseline replay: pass the original checkout's absolute `chapter-08/code` directory to the pinned checker. Selected COV-51 evidence only; discounted-payment and copied-helper ranges, independent review, supported platforms, release acceptance and canonical approval remain open. [Full candidate run](runtime-refresh-2026-11-07-r07.md).
