@@ -1,0 +1,11 @@
+# Section 8.1 financial range follow-up
+
+Baseline: `3bd554d420d7e3d60ca32b3e4b1a48d6f611858a`. Corrected executable tree: `a6441d707337946a76e059c6cf53a5b05291afa0`. Exact corrected blob IDs and all observations: [JSON evidence](chapter-08-initial-pv-range-followup.json).
+
+The retained 40 observations contain seventeen baseline mismatches; all 40 pass after correction. A 2200-digit Decimal oracle computes full base and shifted prices separately and then subtracts/divides, independently of the implementation's exponential factorization. Selected huge-horizon closed forms bound otherwise impractical exponents. Tests cover signed nonzero steps, underflowing horizon-step products, exact represented rate-plus-step cancellation, amount/exponent scaling, finite output, zero identities and invalid domains.
+
+Financial helpers combine the coefficient and exponential before rounding. The quotient uses the exact sum of represented rate and step, including a negative step, and preserves tiny nonzero products. Decimal working precision is 1300; coarse exponent cutoffs of ±10000 are justified only by these finite binary64 inputs and their bounded rational products/ratios. This is selected range evidence, not a universal error-bound proof or a performance guarantee.
+
+Run `python check_initial_pv_range.py` from `chapter-08/code`. To replay baseline, retrieve the Section 8.1 source at the baseline revision into a separate directory and pass that directory as the sole positional argument to the corrected checker. Original and replay observations match byte for byte. The initial replay setup referenced a missing directory and silently imported corrected source; that invalid replay is preserved separately in JSON. Both new checker CLIs now explicitly reject absent requested modules. The valid replay was repeated after fixing the harness.
+
+Existing Section 8.1 and 8.3 regression scripts also passed locally. [V-103 full runtime](runtime-refresh-2026-11-07-r09.md) records broader execution. COV-51 remains partially addressed; [next polynomial checkpoint](chapter-08-polynomial-range-baseline.md). No independent reviewer sign-off, supported-platform validation, release acceptance or canonical approval is implied.
