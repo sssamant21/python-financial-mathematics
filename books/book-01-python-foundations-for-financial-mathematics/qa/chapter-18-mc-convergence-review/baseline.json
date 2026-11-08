@@ -1,0 +1,811 @@
+{
+  "source_sha256": "df8a377e4c3d10383bf3900a7416ff885015206a6fef789f36226213860b8dc7",
+  "listing_sha256": "dd78143993905f95cbfd816ce19ca98f2ffdf6d8b0ed97b9473b33baa5bcbb4a",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "generator": "source random.Random / Mersenne Twister",
+  "numpy": "2.3.5",
+  "supplemental_bit_generator": "PCG64",
+  "supplemental_spawn_parent": 2026,
+  "source_nested_rows": [
+    {
+      "count": 100,
+      "mean": 98.6,
+      "estimated_se": 1.4285685425656274,
+      "absolute_error": 1.4000000000000057
+    },
+    {
+      "count": 400,
+      "mean": 100.15,
+      "estimated_se": 0.7237079057410387,
+      "absolute_error": 0.15000000000000568
+    },
+    {
+      "count": 10000,
+      "mean": 99.96,
+      "estimated_se": 0.1406051812050259,
+      "absolute_error": 0.04000000000000625
+    },
+    {
+      "count": 40000,
+      "mean": 100.048,
+      "estimated_se": 0.0706191693287093,
+      "absolute_error": 0.04800000000000182
+    }
+  ],
+  "supplemental_discounted_prefix_rows": [
+    {
+      "count": 100,
+      "mean": 93.90476190476191,
+      "estimated_se": 1.3605414691101214,
+      "absolute_error": 1.3333333333333286
+    },
+    {
+      "count": 400,
+      "mean": 95.38095238095238,
+      "estimated_se": 0.689245624515275,
+      "absolute_error": 0.1428571428571388
+    },
+    {
+      "count": 10000,
+      "mean": 95.2,
+      "estimated_se": 0.133909696385739,
+      "absolute_error": 0.03809523809523796
+    },
+    {
+      "count": 40000,
+      "mean": 95.28380952380952,
+      "estimated_se": 0.06725635174162792,
+      "absolute_error": 0.04571428571428271
+    }
+  ],
+  "source_samples_sha256": "b0947caa3733c1e30e0a30cfa832b0bf11058433996f49b93889a91281aa78fc",
+  "supplemental_replications": [
+    {
+      "worker": 0,
+      "spawn_key": [
+        0
+      ],
+      "rows": [
+        {
+          "count": 10000,
+          "mean": 100.048,
+          "estimated_se": 0.1417666370410817,
+          "absolute_error": 0.04800000000000182
+        }
+      ],
+      "observations_sha256": "e324b4c2fde8e3b05108b87d6fb8a95ee06582b1bda57ede25df3fc47d1ea998",
+      "scope": "supplemental NumPy PCG64 sampler with source prefix/summary; designed spawning not a proof of independent streams"
+    },
+    {
+      "worker": 1,
+      "spawn_key": [
+        1
+      ],
+      "rows": [
+        {
+          "count": 10000,
+          "mean": 100.278,
+          "estimated_se": 0.14195170526859782,
+          "absolute_error": 0.2780000000000058
+        }
+      ],
+      "observations_sha256": "0364df285ae49111ae053af1429c7be922dca0196236ddbe0226f041097a989b",
+      "scope": "supplemental NumPy PCG64 sampler with source prefix/summary; designed spawning not a proof of independent streams"
+    },
+    {
+      "worker": 2,
+      "spawn_key": [
+        2
+      ],
+      "rows": [
+        {
+          "count": 10000,
+          "mean": 99.926,
+          "estimated_se": 0.14024770708262646,
+          "absolute_error": 0.07399999999999807
+        }
+      ],
+      "observations_sha256": "dd616c5bf73cf8d1013f6a65a9827137131afedabf90b22bd4fbe107ffa04179",
+      "scope": "supplemental NumPy PCG64 sampler with source prefix/summary; designed spawning not a proof of independent streams"
+    }
+  ],
+  "rare_event_probability_of_zero_count": "0.3676954247709640446268061392204613439724998938053158514513036618155885836911717592985737697408906700",
+  "commands": [
+    {
+      "label": "exact demo/tests",
+      "args": [
+        "monte_carlo_convergence.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'count': 100, 'mean': 98.6, 'estimated_se': 1.4285685425656274, 'absolute_error': 1.4000000000000057}\n{'count': 400, 'mean': 100.15, 'estimated_se': 0.7237079057410387, 'absolute_error': 0.15000000000000568}\n{'count': 10000, 'mean': 99.96, 'estimated_se': 0.1406051812050259, 'absolute_error': 0.04000000000000625}\n",
+      "stderr": "test_bad_count (__main__.ConvergenceTests.test_bad_count) ... ok\ntest_bad_sd (__main__.ConvergenceTests.test_bad_sd) ... ok\ntest_bad_sizes (__main__.ConvergenceTests.test_bad_sizes) ... ok\ntest_constant (__main__.ConvergenceTests.test_constant) ... ok\ntest_error (__main__.ConvergenceTests.test_error) ... ok\ntest_fourfold (__main__.ConvergenceTests.test_fourfold) ... ok\ntest_known_mean (__main__.ConvergenceTests.test_known_mean) ... ok\ntest_known_se (__main__.ConvergenceTests.test_known_se) ... ok\ntest_nonfinite (__main__.ConvergenceTests.test_nonfinite) ... ok\ntest_prefix_counts (__main__.ConvergenceTests.test_prefix_counts) ... ok\ntest_replay (__main__.ConvergenceTests.test_replay) ... ok\ntest_support (__main__.ConvergenceTests.test_support) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "existing_methods": 12,
+      "passed": true
+    },
+    {
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import monte_carlo_convergence"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "compile",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "monte_carlo_convergence.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E4 exact model mean",
+      "actual": "100",
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 exact model variance",
+      "actual": "200",
+      "expected": "200",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 printed SD",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "source theoretical SE 100",
+      "actual": 1.4142135623730951,
+      "expected": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed table SE 100",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "source theoretical SE 400",
+      "actual": 0.7071067811865476,
+      "expected": "0.70710678118654752440084436210484903928483593768847403658833986899536623923105351942519376716382078636750692311545614851246241802792536860632206074854996791570661133296375279637789997525057639103028574",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed table SE 400",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "source theoretical SE 10000",
+      "actual": 0.1414213562373095,
+      "expected": "0.14142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed table SE 10000",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "source theoretical SE 40000",
+      "actual": 0.07071067811865475,
+      "expected": "0.070710678118654752440084436210484903928483593768847403658833986899536623923105351942519376716382078636750692311545614851246241802792536860632206074854996791570661133296375279637789997525057639103028574",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed table SE 40000",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E7 printed exercise SE100",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E8 printed exercise SE400",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E10 theoretical fourfold factor",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 inverse squared factor",
+      "actual": "4",
+      "expected": "4",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 supplemental discounted expectation",
+      "actual": "2000/21",
+      "expected": "2000/21",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed discounted expectation",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E21 rare event expected count",
+      "actual": "1",
+      "expected": "1",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22 zero-event probability nonzero",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E23 theoretical event SE not plugin zero",
+      "actual": "0.00099949987493746091013572606111578966865028881436907338737858097563056480671103573631451593786503252031072423457866544711333524479148475845141645093015653418269023411994005580687011242761017762504434466",
+      "expected": "0.00099949987493746091013572606111578966865028881436907338737858097563056480671103573631451593786503252031072423457866544711333524479148475845141645093015653418269023411994005580687011242761017762504434466",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known sample mean",
+      "actual": 100,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known sample SE",
+      "actual": 11.547005383792516,
+      "expected": "11.547005383792515290182975610039149112952035025402537520372046529679553446058666913874307911714990504504174276102711353533132967299993016525411036747295824323520621546015370547119832134007231166155100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known absolute error",
+      "actual": 0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E32 constant SE",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E35 theoretical SE count1 allowed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "nested errors need not improve",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "only used prefix observations validated",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "one-pass samples and sizes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "integer mean identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "error calculated before mean rounding",
+      "actual": 0.0,
+      "expected": "1/2",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "finite SE despite overflowing SD",
+      "actual": "OverflowError('integer division result too large for a float')",
+      "expected": "179000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "tiny positive SE",
+      "actual": 1e-308,
+      "expected": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "large theoretical count support",
+      "actual": "OverflowError('int too large to convert to float')",
+      "expected": "1/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "zero SD arbitrary positive count",
+      "actual": "OverflowError('int too large to convert to float')",
+      "expected": "0",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "reject count1 sample",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject bool seed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary noniterable",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject summary short",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary huge observation",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject summary huge reference",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject unreportable absolute error",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject nonfinite observations",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject prefix noniterable samples",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject prefix noniterable sizes",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject empty sizes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject descending sizes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject duplicate sizes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject oversized prefix",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject used prefix malformed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject SD negative",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject SD bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject SD huge int",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject theoretical zero count",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject theoretical bool count",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject theoretical SE underflow",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "local RNG preserves global state",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "same seed replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "source nested stream independent prefix (100, 'mean')",
+      "actual": 98.6,
+      "expected": "493/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (100, 'estimated_se')",
+      "actual": 1.4285685425656274,
+      "expected": "1.4285685425656274082230468560447131538252848193451426080953762065094732533482876510833993046301488525465678865997413586717562101847120139847062531610536033921973908934305393602522961139659854086170227",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (100, 'absolute_error')",
+      "actual": 1.4000000000000057,
+      "expected": "7/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (400, 'mean')",
+      "actual": 100.15,
+      "expected": "2003/20",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (400, 'estimated_se')",
+      "actual": 0.7237079057410387,
+      "expected": "0.72370790574103873091735451757465385591797941930683304073957075363089906322202718308787628956115228578500214641735408885801910565847216979539251478192559620586971089009935247492527659090740749180327059",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (400, 'absolute_error')",
+      "actual": 0.15000000000000568,
+      "expected": "3/20",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (10000, 'mean')",
+      "actual": 99.96,
+      "expected": "2499/25",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (10000, 'estimated_se')",
+      "actual": 0.1406051812050259,
+      "expected": "0.14060518120502590432619291861316180645450093867846586709746651143363830802710712771032460810092091635031449713634931613112722108156123726553162269132224763029098828137229763341971796467501312610311963",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (10000, 'absolute_error')",
+      "actual": 0.04000000000000625,
+      "expected": "1/25",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (40000, 'mean')",
+      "actual": 100.048,
+      "expected": "12506/125",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (40000, 'estimated_se')",
+      "actual": 0.0706191693287093,
+      "expected": "0.070619169328709304232065279528412969476194067193349977250110392094448780527665033697203444547447877721121933499430528849620312486228987209498185939348361974321766618733127423624104555971760173227828529",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source nested stream independent prefix (40000, 'absolute_error')",
+      "actual": 0.04800000000000182,
+      "expected": "6/125",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "prefix matches shorter seed replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "discounted prefix mean 100",
+      "actual": 93.90476190476191,
+      "expected": "1972/21",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix SE 100",
+      "actual": 1.3605414691101214,
+      "expected": "1020406101832591/750000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix mean 400",
+      "actual": 95.38095238095238,
+      "expected": "2003/21",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix SE 400",
+      "actual": 0.689245624515275,
+      "expected": "7237079057410387/10500000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix mean 10000",
+      "actual": 95.2,
+      "expected": "476/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix SE 10000",
+      "actual": 0.133909696385739,
+      "expected": "1406051812050259/10500000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix mean 40000",
+      "actual": 95.28380952380952,
+      "expected": "50024/525",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discounted prefix SE 40000",
+      "actual": 0.06725635174162792,
+      "expected": "706191693287093/10500000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 0 independent prefix (10000, 'mean')",
+      "actual": 100.048,
+      "expected": "12506/125",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 0 independent prefix (10000, 'estimated_se')",
+      "actual": 0.1417666370410817,
+      "expected": "0.14176663704108168545216401272955650931734461458408518146005610049416483972227405742519908838564986731004122199097493211710257323912787767235294334256034594889502089566657103544679699531253308026216131",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 0 independent prefix (10000, 'absolute_error')",
+      "actual": 0.04800000000000182,
+      "expected": "6/125",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 1 independent prefix (10000, 'mean')",
+      "actual": 100.278,
+      "expected": "50139/500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 1 independent prefix (10000, 'estimated_se')",
+      "actual": 0.14195170526859782,
+      "expected": "0.14195170526859783478642918031287022298017013092568516927304705119441576450319804407472759497294903736655153152642534198803904615005342195874073923699505484506409526267164788510949399788678284918483936",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 1 independent prefix (10000, 'absolute_error')",
+      "actual": 0.2780000000000058,
+      "expected": "139/500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 2 independent prefix (10000, 'mean')",
+      "actual": 99.926,
+      "expected": "49963/500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 2 independent prefix (10000, 'estimated_se')",
+      "actual": 0.14024770708262646,
+      "expected": "0.14024770708262646466125396806309956683602291225893272319483248326939072070188847337115181924645188964652499305733537165691153453230904119047249038705036102599963767940521966966961419945130762189532668",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "supplemental spawned 2 independent prefix (10000, 'absolute_error')",
+      "actual": 0.07399999999999807,
+      "expected": "37/500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    }
+  ],
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 12,
+    "new_historical_methods": 0
+  },
+  "model": {
+    "payoffs": [
+      80,
+      100,
+      120
+    ],
+    "probabilities": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "units": "fictional common currency",
+    "discounted_example": "one-year payoff at constant annual effective5%; no market-price claim",
+    "sample_sizes": [
+      100,
+      400,
+      10000,
+      40000
+    ],
+    "reference": 100,
+    "stopping": "fixed predefined sizes, no sequential stopping rule"
+  },
+  "limits": "One source nested stream and supplemental designed replications only; no LLN/CLT theorem proved by finite runs, no formal independence/coverage/tail/monitoring/sequential or independent model acceptance; F28/F32/F165 retained. Unused trailing samples are not validated."
+}
