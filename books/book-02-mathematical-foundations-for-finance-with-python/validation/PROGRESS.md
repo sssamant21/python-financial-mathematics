@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-07  
-**Overall status:** In progress — V-112 full candidate Linux pass (578 files, 365 scripts, 579 required hashes), including Section 8.5 exponential-derivative scaling. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-113 full candidate Linux pass (579 files, 366 scripts, 580 required hashes), including Section 8.5 logarithm quotient recovery with retained domain. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 578/578 at `8a23628022d832fbd80422aaf6ca582b28917de6`. [V-112](runtime-refresh-2026-11-07-r18.md). |
-| Automated script execution | Full candidate Linux pass | 365/365 at `8a23628022d832fbd80422aaf6ca582b28917de6`; 579 required blobs verified before/after. [V-112](runtime-refresh-2026-11-07-r18.md). |
+| Python compilation | Full candidate Linux pass | 579/579 at `04f45d68c3aaf1c3a25838fba4417df5198614c0`. [V-113](runtime-refresh-2026-11-07-r19.md). |
+| Automated script execution | Full candidate Linux pass | 366/366 at `04f45d68c3aaf1c3a25838fba4417df5198614c0`; 580 required blobs verified before/after. [V-113](runtime-refresh-2026-11-07-r19.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1029,3 +1029,11 @@ Next: [Section 8.5 exponential-derivative baseline](chapter-08-exponential-deriv
 [V-112](runtime-refresh-2026-11-07-r18.md) at `8a23628022d832fbd80422aaf6ca582b28917de6`: 578 files compiled, 365 scripts passed, 579 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [logarithm-derivative baseline](chapter-08-logarithm-derivative-range-baseline.md), with [four retained probes](chapter-08-logarithm-derivative-range-baseline.json). Three positive-argument examples lose finite complete ratios; a cancellation-domain example requires explicit reconciliation of exact represented versus rounded argument policies. Derive signed/zero/overflow quotient expectations and preserve validation behavior. Other Section 8.5 financial and copied-helper obligations remain open. Do not repeat completed exponential-derivative or Section 8.4 examples.
+
+## V-113 checkpoint — Section 8.5 logarithm derivative
+
+[Logarithm-derivative follow-up](chapter-08-logarithm-derivative-range-followup.md): all 33 checks pass; seven baseline mismatches and an identical replay retained. Independent Decimal rounded-domain operations and rational reciprocal references check complete quotient recovery, signed zero/underflow and final output guards. The rounded-positive argument gate is explicitly retained, including the cancellation probe's ValueError; the domain is not widened. Existing Section 8.5 and 34-case exponential suites pass.
+
+[V-113](runtime-refresh-2026-11-07-r19.md) at `04f45d68c3aaf1c3a25838fba4417df5198614c0`: 579 files compiled, 366 scripts passed, 580 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [accumulation scaling baseline](chapter-08-accumulation-range-baseline.md), with [four retained value/time/rate triples](chapter-08-accumulation-range-baseline.json). Complete Decimal references at 200/400 digits expose finite-result loss, zero identities and sensitivities that remain finite when the value itself is unrepresentable. Establish scaling/output policy and preserve input domains/order. PV/shock, log-return, stable quotient and centered-copy obligations remain open. Do not repeat completed exponential/logarithm derivative examples.
