@@ -1,0 +1,279 @@
+{
+  "candidate_based_on": "5e574af2b055c7822e053fed5d0f5f24870d79bb",
+  "selected_revision": null,
+  "source_sha256": "5895270a0d8c328666a22308a8c1640fb6a937fd917d3ad203b290b081975f4f",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_json_data.py"
+      ],
+      "returncode": 0,
+      "stdout": "record: {'instrument': 'EXAMPLE', 'observation_date': datetime.date(2026, 1, 6), 'close': Decimal('101.50'), 'currency': 'USD', 'price_type': 'unadjusted_close'}\nreturn: 0.015\nraw sha256: 972090fccd64b545b783ffb391622820a93d95d641872492d184b07096ddc232\n",
+      "stderr": "test_bad_date (__main__.JsonTests.test_bad_date) ... ok\ntest_duplicate (__main__.JsonTests.test_duplicate) ... ok\ntest_hash (__main__.JsonTests.test_hash) ... ok\ntest_invalid_encoding (__main__.JsonTests.test_invalid_encoding) ... ok\ntest_missing (__main__.JsonTests.test_missing) ... ok\ntest_nan (__main__.JsonTests.test_nan) ... ok\ntest_null (__main__.JsonTests.test_null) ... ok\ntest_numeric_not_string (__main__.JsonTests.test_numeric_not_string) ... ok\ntest_parse (__main__.JsonTests.test_parse) ... ok\ntest_return (__main__.JsonTests.test_return) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_json_data.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_json_data"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "close exact",
+      "passed": true,
+      "actual": "Decimal('101.50')",
+      "expected": "Decimal('101.50')"
+    },
+    {
+      "name": "semantic key/whitespace equivalence",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "name": "raw hash",
+      "passed": true,
+      "actual": "'972090fccd64b545b783ffb391622820a93d95d641872492d184b07096ddc232'",
+      "expected": "'972090fccd64b545b783ffb391622820a93d95d641872492d184b07096ddc232'"
+    },
+    {
+      "name": "format hash differs",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "name": "nonbytes",
+      "passed": true,
+      "actual": "ValueError: raw bytes required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad encoding",
+      "passed": true,
+      "actual": "ValueError: invalid UTF-8 or JSON",
+      "expected": "ValueError"
+    },
+    {
+      "name": "BOM not supported",
+      "passed": true,
+      "actual": "ValueError: invalid UTF-8 or JSON",
+      "expected": "ValueError"
+    },
+    {
+      "name": "syntax",
+      "passed": true,
+      "actual": "ValueError: invalid UTF-8 or JSON",
+      "expected": "ValueError"
+    },
+    {
+      "name": "array",
+      "passed": true,
+      "actual": "ValueError: expected object with exact fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "null top",
+      "passed": true,
+      "actual": "ValueError: expected object with exact fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "numeric top",
+      "passed": true,
+      "actual": "ValueError: expected object with exact fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "duplicate",
+      "passed": true,
+      "actual": "ValueError: duplicate JSON key",
+      "expected": "ValueError"
+    },
+    {
+      "name": "nested duplicate",
+      "passed": true,
+      "actual": "ValueError: duplicate JSON key",
+      "expected": "ValueError"
+    },
+    {
+      "name": "NaN literal",
+      "passed": true,
+      "actual": "ValueError: nonstandard numeric constant: NaN",
+      "expected": "ValueError"
+    },
+    {
+      "name": "Infinity literal",
+      "passed": true,
+      "actual": "ValueError: nonstandard numeric constant: Infinity",
+      "expected": "ValueError"
+    },
+    {
+      "name": "null close",
+      "passed": true,
+      "actual": "ValueError: all fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "zero numeric",
+      "passed": true,
+      "actual": "ValueError: all fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "float close",
+      "passed": true,
+      "actual": "ValueError: all fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bool close",
+      "passed": true,
+      "actual": "ValueError: all fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "empty close",
+      "passed": true,
+      "actual": "ValueError: invalid date or price",
+      "expected": "ValueError"
+    },
+    {
+      "name": "NA close",
+      "passed": true,
+      "actual": "ValueError: invalid date or price",
+      "expected": "ValueError"
+    },
+    {
+      "name": "NaN string",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "inf string",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "zero string",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "negative close",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "empty instrument",
+      "passed": true,
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "EUR",
+      "passed": true,
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "adjusted",
+      "passed": true,
+      "actual": "ValueError: unsupported price type",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad date",
+      "passed": true,
+      "actual": "ValueError: invalid date or price",
+      "expected": "ValueError"
+    },
+    {
+      "name": "missing close",
+      "passed": true,
+      "actual": "ValueError: expected object with exact fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "extra field",
+      "passed": true,
+      "actual": "ValueError: expected object with exact fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "raw hash wrong type",
+      "passed": true,
+      "actual": "ValueError: raw bytes required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "return ('100', '101.50')",
+      "passed": true,
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "return ('1', '1.000000000000000000000000000001')",
+      "passed": true,
+      "actual": "Decimal('1E-30')",
+      "expected": "Decimal('1E-30')"
+    },
+    {
+      "name": "return ('2', '0')",
+      "passed": true,
+      "actual": "Decimal('-1')",
+      "expected": "Decimal('-1')"
+    },
+    {
+      "name": "private return context",
+      "passed": true,
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "bad return (Decimal('0'), Decimal('1'))",
+      "passed": true,
+      "actual": "ValueError: positive starting price and nonnegative ending price required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad return (True, Decimal('1'))",
+      "passed": true,
+      "actual": "ValueError: Decimal prices required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad return (Decimal('1'), Decimal('-1'))",
+      "passed": true,
+      "actual": "ValueError: positive starting price and nonnegative ending price required",
+      "expected": "ValueError"
+    }
+  ],
+  "existing_unique_methods": 10,
+  "new_historical_methods": 0,
+  "scope": "Strict synthetic record/schema and return arithmetic;no live API,pagination,resource cap,authenticity,point-in-time,platform or independent acceptance"
+}

@@ -925,3 +925,10 @@ Next substantive item: Section8.7 exposure/circle-slope and centered-copy numeri
 
 
 Next-item checkpoint: [nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md) retain five initial mismatches and four controls,including proposed output/preflight policies and actual callback traces. No correction/pass claimed;expanded contract review is next.
+
+
+## V-130 checkpoint — Full pinned candidate Linux refresh
+
+[V-130 full evidence](runtime-refresh-2026-11-08-r7.md) at `5e574af2b055c7822e053fed5d0f5f24870d79bb`:593/593 Python sources compiled,380/380 check/test scripts passed,594/594 required Python/fixture blobs verified before/after. Includes accumulated V-128/V-129 executable/checker changes. Per-file outputs/digests,exact runner and source manifest retained;earlier scoped failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
+
+Next substantive item:[nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md),five initial mismatches/four controls;reconcile complete-output and callback-preflight contracts,then expand references and correct. Conditioning/branch/noise/resource scope stays open. Book1 tracked independently.

@@ -84,3 +84,5 @@ This source loads input bytes and retains rows/global duplicate keys;it is not a
 | 40 | Tests: | No. | Contract/conceptual review; not source accuracy,license,availability,streaming or spreadsheet-safety acceptance |
 
 Next: Section19.3 JSON Data formal workflow/local-answer review;broader Book1 validation remains in progress.
+
+Corrected CSV executable/source publication pin:`5e574af2b055c7822e053fed5d0f5f24870d79bb`;all31publication blobs matched the published tree,including the tested51-file Book2 scope. This pins prior CSV evidence;JSON follow-up has its own source identity and counts.

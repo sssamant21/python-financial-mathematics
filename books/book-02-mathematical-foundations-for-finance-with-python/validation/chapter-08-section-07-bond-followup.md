@@ -17,3 +17,5 @@ python books/book-02-mathematical-foundations-for-finance-with-python/validation
 Final Chapter8 scope:51 Python files compiled and41 scripts passed,51 exact source/check blobs verified before/after in [scope evidence](chapter-08-section-07-bond-scope.json). Per-script stdout/stderr and Python/platform retained. Fresh inventory593 Python/380 scripts/594 required Python-fixture blobs is not a full run. V-127 remains latest full candidate Linux runtime pending accumulated-change refresh. No observer correction needed in this batch.
 
 Thirty-five selected categories remain partially addressed;none closed. Independent review,supported platforms,resource/conditioning/release/canonical approval remain open. Next: Section8.7 exposure/circle-slope and centered-copy numerical/input/output contracts;broader implicit-function branch/model review remains separate. Book1 has independent progress.
+
+Corrected executable publication pin:`5e574af2b055c7822e053fed5d0f5f24870d79bb`;all31publication blobs and51tested Chapter8 inputs verified. The next slope/exposure/centered screen is pinned to this unchanged candidate source by its SHA256.

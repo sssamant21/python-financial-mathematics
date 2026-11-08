@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-08  
-**Full-runtime candidate source revision:** `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2` (V-127)
+**Full-runtime candidate source revision:** `5e574af2b055c7822e053fed5d0f5f24870d79bb` (V-130)
 **Latest scoped source:** V-125 candidate based on `5ad0dc3066bfcca85a3c50d1aac8a538c6459851`; exact48-file manifest in [evidence](chapter-08-polynomial-range-followup.md).
-**Disposition:** V-129 scoped bond pass after V-127 full candidate Linux pass; independent review and release approval pending.
+**Disposition:** V-130 full candidate Linux pass including V-128/V-129; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -201,7 +201,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-127](runtime-refresh-2026-11-08-r6.md) at `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`;591 sources/378 scripts/592 hashes verified. G2–G8 unchanged. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-130](runtime-refresh-2026-11-08-r7.md) at `5e574af2b055c7822e053fed5d0f5f24870d79bb`;593sources/380scripts/594hashes verified. G2–G8 unchanged. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -1047,3 +1047,10 @@ Next substantive item: Section8.7 exposure/circle-slope and centered-copy numeri
 
 
 Next-item checkpoint: [nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md) retain five initial mismatches and four controls,including proposed output/preflight policies and actual callback traces. No correction/pass claimed;expanded contract review is next.
+
+
+## V-130 checkpoint — Full pinned candidate Linux refresh
+
+[V-130 full evidence](runtime-refresh-2026-11-08-r7.md) at `5e574af2b055c7822e053fed5d0f5f24870d79bb`:593/593 Python sources compiled,380/380 check/test scripts passed,594/594 required Python/fixture blobs verified before/after. Includes accumulated V-128/V-129 executable/checker changes. Per-file outputs/digests,exact runner and source manifest retained;earlier scoped failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
+
+Next substantive item:[nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md),five initial mismatches/four controls;reconcile complete-output and callback-preflight contracts,then expand references and correct. Conditioning/branch/noise/resource scope stays open. Book1 tracked independently.
