@@ -1,0 +1,519 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "source_sha256": "8df8552a228716c515a80ef0b0a6be9e89d2830ff66178d9567dace6b99eaeb0",
+  "listing_sha256": "4fa00e5805585c75736ad596865d7aa81a0c6e8a02b3b24fd8cd23526f3e8ff8",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "numerical_stability.py"
+      ],
+      "returncode": 0,
+      "stdout": "epsilon: 2.220446049250313e-16\nannuity: 199.9999999998\ncompensated sum: 1.0\n",
+      "stderr": "test_01_zero_annuity (__main__.StabilityTests.test_01_zero_annuity) ... ok\ntest_02_small_annuity (__main__.StabilityTests.test_02_small_annuity) ... ok\ntest_03_discount (__main__.StabilityTests.test_03_discount) ... ok\ntest_04_log_return (__main__.StabilityTests.test_04_log_return) ... ok\ntest_05_compound (__main__.StabilityTests.test_05_compound) ... ok\ntest_06_fsum (__main__.StabilityTests.test_06_fsum) ... ok\ntest_07_roots (__main__.StabilityTests.test_07_roots) ... ok\ntest_08_logsumexp (__main__.StabilityTests.test_08_logsumexp) ... ok\ntest_09_npv (__main__.StabilityTests.test_09_npv) ... ok\ntest_10_residual (__main__.StabilityTests.test_10_residual) ... ok\ntest_11_bad_rate (__main__.StabilityTests.test_11_bad_rate) ... ok\ntest_12_bad_input (__main__.StabilityTests.test_12_bad_input) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import numerical_stability"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "numerical_stability.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "epsilon example",
+      "args": [
+        "example_0.py"
+      ],
+      "returncode": 0,
+      "stdout": "2.220446049250313e-16\nFalse\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "summation example",
+      "args": [
+        "example_1.py"
+      ],
+      "returncode": 0,
+      "stdout": "1.0\n1.0\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "log-return contextual example",
+      "args": [
+        "-c",
+        "exec(compile(open('example_2.py').read(),'example_2.py',\"exec\"),{'P0': 100, 'P1': 101})"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "SciPy stability snippet",
+      "args": [
+        "example_3.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy linear solve component0",
+      "passed": true,
+      "actual": 0.09090909090909091,
+      "reference": "1/11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy linear solve component1",
+      "passed": true,
+      "actual": 0.6363636363636364,
+      "reference": "7/11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy survival at8 independent erfc oracle",
+      "passed": true,
+      "actual": 6.22096057427174e-16,
+      "reference": "6.220960574271819e-16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy logsumexp independent log2",
+      "passed": true,
+      "actual": 1000.6931471805599,
+      "reference": "1000.6931471805599",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 zero annuity",
+      "passed": true,
+      "actual": 200.0,
+      "reference": "200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 positive annuity",
+      "passed": true,
+      "actual": 190.32516392808085,
+      "reference": "190.3251639280808536715018811071267576105892780391980958874853658884400693115032779749931079278190855230425093707033630045021836775224198096214411374885503201362953720279768589975120667789921101867452384924125645076835059933582179278624976570822640422450519160373378466452423660243107686908447442747033448266936757795829074944902087323479940082302493440900267948258207626308356001679148577384860961892859661356152553944858548220241365641187990124486890182973868368368348283709614129647789617013448231379018185415238855125977669551547879330436735843418866028154181983126091878697352821751923559958819272216580630910511737449150131881483803392443903229316758486071769859834279252641921096125052842856041925104789524456503215964667595512463375807181703515429994674472673956894689576968185420743886163897864685846467530895695761920360360353866978972028786555122820367941914964008576726373192833829833118505271401532605380379014570608947910276167427514924997823165315163002508302621478319076134708915714168",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab tiny-rate annuity",
+      "passed": true,
+      "actual": 199.9999999998,
+      "reference": "199.9999999998000000000001333333333332666666666666933333333333244444444444469841269841263492063492064902998236331287477954144672118005451330233552455775993553771331361172631013925913396812864580060347256482955206889183996076135652323762395600966610917049873104463014930727721240977294044226967779297951806497004382299692956995313257119845176032932162970548799754803699528126772870369329019913183234071996493803630159387911632140430527455524486688512440072544946452867802596938841185421675508062410173129135800982926058975167473909134010282049597262383186752828726012116511553357571695906818387172471704824688084249569368015682471110923489520967961656603381148349378955795351834060342002581893838504630813363634677804172989607004529349842753770930171731960353037959523617227812456482797288006386419609918727544453244372274358902530681137868344549738416482951936817070407270809538659877481479816127767561284411972999669022497682116436414888603729207832233379019614777564015243743337290486953000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 log return",
+      "passed": true,
+      "actual": 0.009950330853168083,
+      "reference": "0.009950330853168082848215357544",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 compound",
+      "passed": true,
+      "actual": 1.1268250301319698,
+      "reference": "1.126825030131969720661201",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 NPV known zero",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 logsumexp",
+      "passed": true,
+      "actual": 1000.6931471805599,
+      "reference": "1000.6931471805599",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled annuity avoids tiny product loss",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 annuity exponential overflow avoided",
+      "passed": true,
+      "actual": 1.970071114017047e+123,
+      "reference": "1970071114017046993888879352243323125316937985323845789952802991385063850782441193474978076563026889930963817987520226935982.981730544612899232627836601528252323205351695845667561922715676027880714224668263140068551685086534979416603160453678179380929052997285801328699458564702865343759004565643555891562204223202605188261122886383583722487247252145061504188819374941008712642322484363157605603774399306239597058441895090500470742175672267578083308102070668818911968536445918206584929433885943734416066833995904928281627706135987730904979566512246702227965470280600169740154332169201122794194769119334980240147712089576923975942544366215939426101781299421858554271852298015286303411058042095685866168239536053428580900735188184273075136717125183129388223688310255949141146674987544438726686065824907707203395789112200325628195551034220107289821072957315749621922062772097208051047568893649549635990627082681006282905378167473398226026683503867394140748723651685213836918959449223430784235236845739442",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 zero intensity avoids irrelevant overflow",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 log return huge ratio",
+      "passed": true,
+      "actual": 1418.3924172843322,
+      "reference": "1418.392417284332141355082736085568351882278516995324153236529986996024727561249127825374278335192551778652154970048329158180267686491008962106433019364849520721470840328541683399780735212959650293490399270322672683299369236633592929222103450235870899164233013857008935510143538002665151445553110536816742655931677027185975179060170230972982119666681559071967284884601876604566067987977301358794393471277016351916817094165390871587516150387237482713307798004040232551394749824611227664985254443432350719817420779586228389255997767926270174511310321489639847126844204148314365387821002440952221794669136836524110753076058310587764456904386126673797747129702719392426443394644290440984710320430236566435421639381938562020245096263661996005423700846271100387759267402772347605588574341137321465569297408943460556519033788024915622951583399136701997253532010545485372914918811917976289594436376378003431562034920633237215562166639098206743438300639663313645894015036909466551541696877050829134403919449159",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 log return tiny ratio",
+      "passed": true,
+      "actual": -1418.3924172843322,
+      "reference": "-1418.392417284332141355082736085568351882278516995324153236529986996024727561249127825374278335192551778652154970048329158180267686491008962106433019364849520721470840328541683399780735212959650293490399270322672683299369236633592929222103450235870899164233013857008935510143538002665151445553110536816742655931677027185975179060170230972982119666681559071967284884601876604566067987977301358794393471277016351916817094165390871587516150387237482713307798004040232551394749824611227664985254443432350719817420779586228389255997767926270174511310321489639847126844204148314365387821002440952221794669136836524110753076058310587764456904386126673797747129702719392426443394644290440984710320430236566435421639381938562020245096263661996005423700846271100387759267402772347605588574341137321465569297408943460556519033788024915622951583399136701997253532010545485372914918811917976289594436376378003431562034920633237215562166639098206743438300639663313645894015036909466551541696877050829134403919449159",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 finite sum despite intermediate overflow",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 integer NPV difference retained",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 tiny NPV rate retained",
+      "passed": true,
+      "actual": -1e-308,
+      "reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 discounted flow before exponential underflow",
+      "passed": true,
+      "actual": 1e-308,
+      "reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 logsumexp small positive correction",
+      "passed": true,
+      "actual": 4.248354255291589e-18,
+      "reference": "4.248354255291588986304977843631582181877750679822974542205451375458783923974602881307052756226314358741954317749251648920347057454398955665476220521052409923462473321376056552560638469797903544509145689092716485592896934557119042436337727533333124270061560767779907475890427410463606094550180554090133692382330013545818260405275890412740478088293219373694638037751739355027493998660997590359034515044751902738534256431052512034849111805705538384069593808349281840265642674631210928653411609051273908868503647551424095690198628435682671396011750608821331684674266418033255842586198833597597025433520884393180709633366512140381793117847600224249150727900757013320849946461853662880546358387435996419272659019071708306796414685962133569110636247232721743555306649268170411490514900969584846579183643450141458194172367464515632435624596039363456822066226246064831531200174713010410913139103705628015210178578704916256384366775519224267517155654654479364214228245067468790302472954110330732248393830648534E-18",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero periods compound",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "zero tenor annuity",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled quadratic (1, 0)",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled quadratic (1, 1)",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled quadratic (1e+200, 0)",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled quadratic (1e+200, 1)",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled quadratic (1e-200, 0)",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 scaled quadratic (1e-200, 1)",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 large linear coefficient quadratic 0",
+      "passed": true,
+      "actual": -1e+308,
+      "reference": "-1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F168 large linear coefficient quadratic 1",
+      "passed": true,
+      "actual": -1e-308,
+      "reference": "-1e-308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "quadratic repeated root",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "quadratic b-zero branch",
+      "passed": true,
+      "actual": -1.0,
+      "reference": "-1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 stable sum",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "residual absolute value",
+      "passed": true,
+      "actual": 3,
+      "reference": "3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1 binary64 spacing observation",
+      "passed": true,
+      "epsilon": 2.220446049250313e-16,
+      "scope": "recorded runtime, not cross-platform acceptance"
+    },
+    {
+      "label": "E2 nonassociative operations",
+      "passed": true
+    },
+    {
+      "label": "E4 E5 small increment log example",
+      "passed": true,
+      "naive": 0.0,
+      "stable": 1e-16
+    },
+    {
+      "label": "E6 expm1 example",
+      "passed": true,
+      "naive": 0.0,
+      "stable": 1e-16
+    },
+    {
+      "label": "E27 naive quadratic cancellation observed",
+      "passed": true,
+      "naive_small_root": 7.450580596923828e-09,
+      "scope": "contrast demonstration; source roots checked independently above"
+    },
+    {
+      "label": "F168 discount underflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 discount overflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 compound underflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 compound overflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 annuity underflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 negative tiny discriminant",
+      "passed": true,
+      "exception": "ValueError('no real roots')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 huge integer finite-range check",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 noncallable residual",
+      "passed": true,
+      "exception": "ValueError('callable required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 boolean residual coordinate",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 unreportable positive logsumexp",
+      "passed": true,
+      "exception": "ValueError('positive log-sum-exp correction below float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 nonfinite sum",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 invalid NPV rate",
+      "passed": true,
+      "exception": "ValueError('periodic rate > -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 empty NPV",
+      "passed": true,
+      "exception": "ValueError('nonempty terms required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 Decimal exponential underflow guarded",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F168 enormous-period compound underflow guarded",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "observations": {
+    "sum_builtin": 0.0,
+    "sum_fsum": 1.0,
+    "epsilon": 2.220446049250313e-16,
+    "context_fragment_bindings": {
+      "P0": 100,
+      "P1": 101
+    }
+  },
+  "model": {
+    "cashflows": [
+      -100,
+      110
+    ],
+    "periodic_rate": 0.1,
+    "continuous_annuity": {
+      "rate": 0.05,
+      "tenor": 2,
+      "intensity": 100
+    },
+    "units": "fictional currency/intensity per year, compatible periodic returns and continuous annual rates",
+    "timing": "periodic t0/t1 and separate continuous payments; no market inputs"
+  }
+}
