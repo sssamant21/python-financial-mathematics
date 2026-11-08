@@ -961,3 +961,13 @@ Next substantive item remains Section 8.6 polynomial/derivative-coefficient comp
 [Polynomial follow-up](chapter-08-section-06-polynomial-followup.md):128 corrected predicates passed;127 baseline observations retain five mismatches and an identical replay. Excessive-order baseline omitted explicitly; corrected guard executed. Source/manuscript now agree on exact represented-input complete-expression rounding, finite-output errors, signed underflow, order/consumption/validation priority. Forty-eight Chapter8 files compiled and38 scripts passed; candidate blobs verified before/after. Fresh inventory590 Python/377 scripts/591 required Python-fixture blobs is not a full pass; V-124 remains latest full candidate Linux runtime. Thirty-five selected COV categories remain partially addressed; none closed.
 
 Next substantive item: Section8.6 sampled-second-difference numerator/denominator/output range and callback contracts with independent rational expectations. Arbitrary-degree resources, broader coverage and reviewer/platform/release/canonical acceptance remain open. Book1 has separate trackers.
+
+
+## V-126 checkpoint — Complete sampled second difference
+
+[Section8.6 sampled quotient](chapter-08-section-06-centered-followup.md):70 corrected predicates passed;16 baseline mismatches and identical70-observation replay retained. Callback/control contracts preserved; exact h² and complete numerator/output conventions explicit. Initial replay-selector error and two legacy Section8.6 policy-assertion failures retained separately, followed by corrected reruns. Final Chapter8 scope49 compiled/39 scripts passed with exact49 blobs verified before/after. Fresh inventory591/378/592 is not a full runtime; V-124 remains latest full pinned run pending refresh. Thirty-five selected COV categories remain partial; none closed.
+
+Next substantive item: Section8.7 implicit circle/break-even numerical range and input/output contracts, then bond/exposure/centered-copy obligations. Broader noisy-sample/resource coverage and independent reviewer/platform/release/canonical approval remain open. Book1 progress remains separately tracked.
+
+
+Section8.7 next-item checkpoint: [eight circle/break-even probes](chapter-08-section-07-circle-break-even-baseline.md) retain five mismatches against complete independent references and three controls. Source unchanged; contract reconciliation/correction is next, followed by bond/exposure/centered-copy obligations. No COV closure.

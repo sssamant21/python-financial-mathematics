@@ -1,0 +1,738 @@
+{
+  "candidate_based_on": "79b2bd3053d0099d7d1f8af7d8fb9c52d13781a3",
+  "source_blob": "cb3408e44cab5d4b228ae44c9dbd2e33f63dc842",
+  "observations": [
+    {
+      "name": "constant huge",
+      "actual": "-inf",
+      "expected": "0.0",
+      "passed": false,
+      "trace": [
+        1.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "finite overflowing numerator",
+      "actual": "inf",
+      "expected": "5e+307",
+      "passed": false,
+      "trace": [
+        2.0,
+        0.0,
+        -2.0
+      ]
+    },
+    {
+      "name": "true overflow",
+      "actual": "inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        0.5,
+        0.0,
+        -0.5
+      ]
+    },
+    {
+      "name": "tiny denominator",
+      "actual": "<class 'ValueError'>",
+      "expected": "2e+100",
+      "passed": false,
+      "trace": []
+    },
+    {
+      "name": "huge denominator",
+      "actual": "<class 'ValueError'>",
+      "expected": "2e-92",
+      "passed": false,
+      "trace": []
+    },
+    {
+      "name": "tiny zero",
+      "actual": "<class 'ValueError'>",
+      "expected": "0.0",
+      "passed": false,
+      "trace": []
+    },
+    {
+      "name": "negative step",
+      "actual": "inf",
+      "expected": "5e+307",
+      "passed": false,
+      "trace": [
+        -2.0,
+        0.0,
+        2.0
+      ]
+    },
+    {
+      "name": "negative underflow",
+      "actual": "-0.0",
+      "expected": "-0.0",
+      "passed": true,
+      "trace": [
+        1e+150,
+        0.0,
+        -1e+150
+      ]
+    },
+    {
+      "name": "ordinary",
+      "actual": "2.0",
+      "expected": "2.0",
+      "passed": true,
+      "trace": [
+        1.25,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "name": "default step",
+      "actual": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "trace": [
+        1.001,
+        1.0,
+        0.999
+      ]
+    },
+    {
+      "name": "seeded 0",
+      "actual": "-4.3321443518736956e-198",
+      "expected": "-4.3321443518736956e-198",
+      "passed": true,
+      "trace": [
+        1.1908525658859223e+139,
+        0.0,
+        -1.1908525658859223e+139
+      ]
+    },
+    {
+      "name": "seeded 1",
+      "actual": "-125079.2378301202",
+      "expected": "-125079.2378301202",
+      "passed": true,
+      "trace": [
+        7.482888383134223e+50,
+        0.0,
+        -7.482888383134223e+50
+      ]
+    },
+    {
+      "name": "seeded 2",
+      "actual": "-7.346197174819166e-27",
+      "expected": "-7.346197174819166e-27",
+      "passed": true,
+      "trace": [
+        5.928554968950589e+79,
+        0.0,
+        -5.928554968950589e+79
+      ]
+    },
+    {
+      "name": "seeded 3",
+      "actual": "-8.098144514163632e-27",
+      "expected": "-8.098144514163632e-27",
+      "passed": true,
+      "trace": [
+        2.1062458333711437e+65,
+        0.0,
+        -2.1062458333711437e+65
+      ]
+    },
+    {
+      "name": "seeded 4",
+      "actual": "1.4645862613608821e+178",
+      "expected": "1.4645862613608821e+178",
+      "passed": true,
+      "trace": [
+        8.077935669463161e-28,
+        0.0,
+        -8.077935669463161e-28
+      ]
+    },
+    {
+      "name": "seeded 5",
+      "actual": "1.1276044260069554e-213",
+      "expected": "1.1276044260069554e-213",
+      "passed": true,
+      "trace": [
+        4.994797680505588e+145,
+        0.0,
+        -4.994797680505588e+145
+      ]
+    },
+    {
+      "name": "seeded 6",
+      "actual": "5.462991552728203e-153",
+      "expected": "5.462991552728203e-153",
+      "passed": true,
+      "trace": [
+        1.3998404638611276e+101,
+        0.0,
+        -1.3998404638611276e+101
+      ]
+    },
+    {
+      "name": "seeded 7",
+      "actual": "-1.0276519453308477e-122",
+      "expected": "-1.0276519453308477e-122",
+      "passed": true,
+      "trace": [
+        5.814709794364855e+135,
+        0.0,
+        -5.814709794364855e+135
+      ]
+    },
+    {
+      "name": "seeded 8",
+      "actual": "-inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        1.3952482803738708e-104,
+        0.0,
+        -1.3952482803738708e-104
+      ]
+    },
+    {
+      "name": "seeded 9",
+      "actual": "-2028415432449753.0",
+      "expected": "-2028415432449753.0",
+      "passed": true,
+      "trace": [
+        2.535301200456459e+30,
+        0.0,
+        -2.535301200456459e+30
+      ]
+    },
+    {
+      "name": "seeded 10",
+      "actual": "8.980793914422055e+208",
+      "expected": "8.980793914422055e+208",
+      "passed": true,
+      "trace": [
+        8.843436600416711e-75,
+        0.0,
+        -8.843436600416711e-75
+      ]
+    },
+    {
+      "name": "seeded 11",
+      "actual": "inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        1.3952482803738708e-104,
+        0.0,
+        -1.3952482803738708e-104
+      ]
+    },
+    {
+      "name": "seeded 12",
+      "actual": "1.0047810478760326e+28",
+      "expected": "1.0047810478760326e+28",
+      "passed": true,
+      "trace": [
+        7.778769097326427e-62,
+        0.0,
+        -7.778769097326427e-62
+      ]
+    },
+    {
+      "name": "seeded 13",
+      "actual": "-inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        1.2392294127517818e-119,
+        0.0,
+        -1.2392294127517818e-119
+      ]
+    },
+    {
+      "name": "seeded 14",
+      "actual": "1.8208539319533748e-28",
+      "expected": "1.8208539319533748e-28",
+      "passed": true,
+      "trace": [
+        1.9807040628566084e+28,
+        0.0,
+        -1.9807040628566084e+28
+      ]
+    },
+    {
+      "name": "seeded 15",
+      "actual": "-4.158373736551831e+100",
+      "expected": "-4.158373736551831e+100",
+      "passed": true,
+      "trace": [
+        4.76837158203125e-07,
+        0.0,
+        -4.76837158203125e-07
+      ]
+    },
+    {
+      "name": "seeded 16",
+      "actual": "6.2409100095087876e-58",
+      "expected": "6.2409100095087876e-58",
+      "passed": true,
+      "trace": [
+        3.583591587484487e+103,
+        0.0,
+        -3.583591587484487e+103
+      ]
+    },
+    {
+      "name": "seeded 17",
+      "actual": "1.1763143647794253e+90",
+      "expected": "1.1763143647794253e+90",
+      "passed": true,
+      "trace": [
+        2.039157646249539e-56,
+        0.0,
+        -2.039157646249539e-56
+      ]
+    },
+    {
+      "name": "seeded 18",
+      "actual": "1.909435335055815e-104",
+      "expected": "1.909435335055815e-104",
+      "passed": true,
+      "trace": [
+        2.0173827172553973e+118,
+        0.0,
+        -2.0173827172553973e+118
+      ]
+    },
+    {
+      "name": "seeded 19",
+      "actual": "-2.9765401218018553e+83",
+      "expected": "-2.9765401218018553e+83",
+      "passed": true,
+      "trace": [
+        7.174648137343064e-43,
+        0.0,
+        -7.174648137343064e-43
+      ]
+    },
+    {
+      "name": "seeded 20",
+      "actual": "-7.408210319498247e-60",
+      "expected": "-7.408210319498247e-60",
+      "passed": true,
+      "trace": [
+        8.834235323891922e+71,
+        0.0,
+        -8.834235323891922e+71
+      ]
+    },
+    {
+      "name": "seeded 21",
+      "actual": "8.021168510658812e+108",
+      "expected": "8.021168510658812e+108",
+      "passed": true,
+      "trace": [
+        9.223372036854776e+18,
+        0.0,
+        -9.223372036854776e+18
+      ]
+    },
+    {
+      "name": "seeded 22",
+      "actual": "4.0363939298242314e+35",
+      "expected": "4.0363939298242314e+35",
+      "passed": true,
+      "trace": [
+        2199023255552.0,
+        0.0,
+        -2199023255552.0
+      ]
+    },
+    {
+      "name": "seeded 23",
+      "actual": "-8.431675901941423e+297",
+      "expected": "-8.431675901941423e+297",
+      "passed": true,
+      "trace": [
+        2.1590421387736112e-78,
+        0.0,
+        -2.1590421387736112e-78
+      ]
+    },
+    {
+      "name": "seeded 24",
+      "actual": "-2.8527659937683428e+76",
+      "expected": "-2.8527659937683428e+76",
+      "passed": true,
+      "trace": [
+        2147483648.0,
+        0.0,
+        -2147483648.0
+      ]
+    },
+    {
+      "name": "seeded 25",
+      "actual": "1.6975580782936966e-09",
+      "expected": "1.6975580782936966e-09",
+      "passed": true,
+      "trace": [
+        3.831238852164722e+53,
+        0.0,
+        -3.831238852164722e+53
+      ]
+    },
+    {
+      "name": "seeded 26",
+      "actual": "2.8552161016800817e+134",
+      "expected": "2.8552161016800817e+134",
+      "passed": true,
+      "trace": [
+        8.470329472543003e-22,
+        0.0,
+        -8.470329472543003e-22
+      ]
+    },
+    {
+      "name": "seeded 27",
+      "actual": "inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        5.503284107318959e-135,
+        0.0,
+        -5.503284107318959e-135
+      ]
+    },
+    {
+      "name": "seeded 28",
+      "actual": "1.8727336752861137e-131",
+      "expected": "1.8727336752861137e-131",
+      "passed": true,
+      "trace": [
+        6.96898287454082e+41,
+        0.0,
+        -6.96898287454082e+41
+      ]
+    },
+    {
+      "name": "seeded 29",
+      "actual": "-4.578629870581118e+298",
+      "expected": "-4.578629870581118e+298",
+      "passed": true,
+      "trace": [
+        9.363352709384397e-97,
+        0.0,
+        -9.363352709384397e-97
+      ]
+    },
+    {
+      "name": "seeded 30",
+      "actual": "3.4535118647462905e+168",
+      "expected": "3.4535118647462905e+168",
+      "passed": true,
+      "trace": [
+        4.9784122222889134e-60,
+        0.0,
+        -4.9784122222889134e-60
+      ]
+    },
+    {
+      "name": "seeded 31",
+      "actual": "1.5423568335409662e+300",
+      "expected": "1.5423568335409662e+300",
+      "passed": true,
+      "trace": [
+        6.136366831622158e-92,
+        0.0,
+        -6.136366831622158e-92
+      ]
+    },
+    {
+      "name": "seeded 32",
+      "actual": "-inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        1.463023860841312e-98,
+        0.0,
+        -1.463023860841312e-98
+      ]
+    },
+    {
+      "name": "seeded 33",
+      "actual": "-2.540919679098511e+293",
+      "expected": "-2.540919679098511e+293",
+      "passed": true,
+      "trace": [
+        1.7440603504673385e-105,
+        0.0,
+        -1.7440603504673385e-105
+      ]
+    },
+    {
+      "name": "seeded 34",
+      "actual": "inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        6.196147063758909e-120,
+        0.0,
+        -6.196147063758909e-120
+      ]
+    },
+    {
+      "name": "seeded 35",
+      "actual": "3.374050558487244e-255",
+      "expected": "3.374050558487244e-255",
+      "passed": true,
+      "trace": [
+        7.880401239278896e+115,
+        0.0,
+        -7.880401239278896e+115
+      ]
+    },
+    {
+      "name": "seeded 36",
+      "actual": "-2.2599770943866885e-126",
+      "expected": "-2.2599770943866885e-126",
+      "passed": true,
+      "trace": [
+        1.613906173804318e+119,
+        0.0,
+        -1.613906173804318e+119
+      ]
+    },
+    {
+      "name": "seeded 37",
+      "actual": "-4.663528409535154e-174",
+      "expected": "-4.663528409535154e-174",
+      "passed": true,
+      "trace": [
+        3.1521604957115583e+116,
+        0.0,
+        -3.1521604957115583e+116
+      ]
+    },
+    {
+      "name": "seeded 38",
+      "actual": "-4.2131630473776085e-283",
+      "expected": "-4.2131630473776085e-283",
+      "passed": true,
+      "trace": [
+        5.415370496329717e+126,
+        0.0,
+        -5.415370496329717e+126
+      ]
+    },
+    {
+      "name": "seeded 39",
+      "actual": "1.7247299220597982e-119",
+      "expected": "1.7247299220597982e-119",
+      "passed": true,
+      "trace": [
+        5.164499756173817e+120,
+        0.0,
+        -5.164499756173817e+120
+      ]
+    },
+    {
+      "name": "seeded 40",
+      "actual": "-4.105825140739577e+75",
+      "expected": "-4.105825140739577e+75",
+      "passed": true,
+      "trace": [
+        1.0141204801825835e+31,
+        0.0,
+        -1.0141204801825835e+31
+      ]
+    },
+    {
+      "name": "seeded 41",
+      "actual": "-2.744916386889704e+231",
+      "expected": "-2.744916386889704e+231",
+      "passed": true,
+      "trace": [
+        1.5192908393215678e-64,
+        0.0,
+        -1.5192908393215678e-64
+      ]
+    },
+    {
+      "name": "seeded 42",
+      "actual": "inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        3.2033329522929615e-145,
+        0.0,
+        -3.2033329522929615e-145
+      ]
+    },
+    {
+      "name": "seeded 43",
+      "actual": "-3.022412168444197e+270",
+      "expected": "-3.022412168444197e+270",
+      "passed": true,
+      "trace": [
+        1.7197762835371747e-136,
+        0.0,
+        -1.7197762835371747e-136
+      ]
+    },
+    {
+      "name": "seeded 44",
+      "actual": "-inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        4.5719495651291e-100,
+        0.0,
+        -4.5719495651291e-100
+      ]
+    },
+    {
+      "name": "seeded 45",
+      "actual": "inf",
+      "expected": "<class 'ValueError'>",
+      "passed": false,
+      "trace": [
+        8.397345134458861e-140,
+        0.0,
+        -8.397345134458861e-140
+      ]
+    },
+    {
+      "name": "seeded 46",
+      "actual": "4.905985628422573e+103",
+      "expected": "4.905985628422573e+103",
+      "passed": true,
+      "trace": [
+        1.1641532182693481e-10,
+        0.0,
+        -1.1641532182693481e-10
+      ]
+    },
+    {
+      "name": "seeded 47",
+      "actual": "8.537277852473285e+126",
+      "expected": "8.537277852473285e+126",
+      "passed": true,
+      "trace": [
+        3.725290298461914e-09,
+        0.0,
+        -3.725290298461914e-09
+      ]
+    },
+    {
+      "name": "seeded 48",
+      "actual": "3.3387505911330712e+41",
+      "expected": "3.3387505911330712e+41",
+      "passed": true,
+      "trace": [
+        1.661534994731145e+35,
+        0.0,
+        -1.661534994731145e+35
+      ]
+    },
+    {
+      "name": "seeded 49",
+      "actual": "-6.59733150509792e+115",
+      "expected": "-6.59733150509792e+115",
+      "passed": true,
+      "trace": [
+        1.1368683772161603e-13,
+        0.0,
+        -1.1368683772161603e-13
+      ]
+    },
+    {
+      "name": "callable first",
+      "actual": "<class 'TypeError'>",
+      "expected": "<class 'TypeError'>",
+      "passed": true,
+      "trace": []
+    },
+    {
+      "name": "zero step",
+      "actual": "<class 'ValueError'>",
+      "expected": "<class 'ValueError'>",
+      "passed": true,
+      "trace": []
+    },
+    {
+      "name": "bool x",
+      "actual": "<class 'TypeError'>",
+      "expected": "<class 'TypeError'>",
+      "passed": true,
+      "trace": []
+    },
+    {
+      "name": "collapsed",
+      "actual": "<class 'ValueError'>",
+      "expected": "<class 'ValueError'>",
+      "passed": true,
+      "trace": []
+    },
+    {
+      "name": "overflow perturbation",
+      "actual": "<class 'ValueError'>",
+      "expected": "<class 'ValueError'>",
+      "passed": true,
+      "trace": []
+    },
+    {
+      "name": "nonfinite step",
+      "actual": "<class 'ValueError'>",
+      "expected": "<class 'ValueError'>",
+      "passed": true,
+      "trace": []
+    },
+    {
+      "name": "bad first",
+      "actual": "<class 'TypeError'>",
+      "expected": "<class 'TypeError'>",
+      "passed": true,
+      "trace": [
+        1.0
+      ]
+    },
+    {
+      "name": "bad center",
+      "actual": "<class 'ValueError'>",
+      "expected": "<class 'ValueError'>",
+      "passed": true,
+      "trace": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "name": "bad last",
+      "actual": "<class 'ValueError'>",
+      "expected": "<class 'ValueError'>",
+      "passed": true,
+      "trace": [
+        1.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "name": "callback exception",
+      "actual": "'callback sentinel'",
+      "expected": "'callback sentinel'",
+      "passed": true,
+      "trace": [
+        1.0
+      ]
+    }
+  ],
+  "passed": 54,
+  "failed": 16,
+  "scope": "Complete sampled quotient, not exact derivative or accuracy proof; deliberate denominator/output policies labeled in report"
+}

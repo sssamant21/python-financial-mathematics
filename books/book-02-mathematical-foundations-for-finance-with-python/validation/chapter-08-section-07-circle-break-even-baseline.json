@@ -1,0 +1,91 @@
+{
+  "source_revision": "79b2bd3053d0099d7d1f8af7d8fb9c52d13781a3",
+  "source_sha256": "53ef568b0ce3431b80c428b2dc08b725bd794c575d29e11408ff78614ade7bc9",
+  "observations": [
+    {
+      "helper": "circle_upper",
+      "args": [
+        0.0,
+        1e+308
+      ],
+      "expected": "1e+308",
+      "actual": "inf",
+      "matches": false
+    },
+    {
+      "helper": "circle_upper",
+      "args": [
+        0.0,
+        1e-200
+      ],
+      "expected": "1e-200",
+      "actual": "0.0",
+      "matches": false
+    },
+    {
+      "helper": "circle_upper",
+      "args": [
+        1e+308,
+        1e+308
+      ],
+      "expected": "0.0",
+      "actual": "nan",
+      "matches": false
+    },
+    {
+      "helper": "circle_upper",
+      "args": [
+        3.0,
+        5.0
+      ],
+      "expected": "4.0",
+      "actual": "4.0",
+      "matches": true
+    },
+    {
+      "helper": "break_even_quantity",
+      "args": [
+        1e+308,
+        -1e+308,
+        1e+308
+      ],
+      "expected": "0.5",
+      "actual": "0.0",
+      "matches": false
+    },
+    {
+      "helper": "break_even_sensitivity",
+      "args": [
+        1e+308,
+        -1e+308,
+        1e+308
+      ],
+      "expected": "-2.5e-309",
+      "actual": "-0.0",
+      "matches": false
+    },
+    {
+      "helper": "break_even_quantity",
+      "args": [
+        50.0,
+        20.0,
+        1200.0
+      ],
+      "expected": "40.0",
+      "actual": "40.0",
+      "matches": true
+    },
+    {
+      "helper": "break_even_sensitivity",
+      "args": [
+        50.0,
+        20.0,
+        1200.0
+      ],
+      "expected": "-1.3333333333333333",
+      "actual": "-1.3333333333333333",
+      "matches": true
+    }
+  ],
+  "scope": "Initial Section8.7 screen, no source fix or complete contract/acceptance claim; precision agreement is not a proof"
+}

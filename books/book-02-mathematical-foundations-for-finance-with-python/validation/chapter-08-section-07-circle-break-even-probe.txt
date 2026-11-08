@@ -1,0 +1,24 @@
+from pathlib import Path
+from decimal import Decimal,localcontext
+from fractions import Fraction
+import sys,json,subprocess,hashlib
+root=Path(sys.argv[1]).resolve();b=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=b/'chapter-08/code';sys.path.insert(0,str(code));import section_8_07 as source
+rows=[]
+for x,radius in [(0.,1e308),(0.,1e-200),(1e308,1e308),(3.,5.)]:
+ refs=[]
+ for precision in [200,400]:
+  with localcontext() as ctx:
+   ctx.prec=precision;refs.append(float((Decimal.from_float(radius)**2-Decimal.from_float(x)**2).sqrt()))
+ assert refs[0]==refs[1]
+ try:actual=source.circle_upper(x,radius);observed=repr(actual);matches=actual==refs[0]
+ except Exception as e:observed=type(e).__name__;matches=False
+ rows.append(dict(helper='circle_upper',args=[x,radius],expected=repr(refs[0]),actual=observed,matches=matches))
+for p,c,k in [(1e308,-1e308,1e308),(50.,20.,1200.)]:
+ gap=Fraction(p)-Fraction(c)
+ for name,exact in [('break_even_quantity',Fraction(k)/gap),('break_even_sensitivity',-Fraction(k)/gap**2)]:
+  expected=float(exact)
+  try:actual=getattr(source,name)(p,c,k);observed=repr(actual);matches=actual==expected
+  except Exception as e:observed=type(e).__name__;matches=False
+  rows.append(dict(helper=name,args=[p,c,k],expected=repr(expected),actual=observed,matches=matches))
+out=dict(source_revision=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),source_sha256=hashlib.sha256((code/'section_8_07.py').read_bytes()).hexdigest(),observations=rows,scope='Initial Section8.7 screen, no source fix or complete contract/acceptance claim; precision agreement is not a proof')
+(b/'validation/chapter-08-section-07-circle-break-even-baseline.json').write_text(json.dumps(out,indent=2)+'\n');print(len(rows),'observations',sum(not x['matches'] for x in rows),'mismatches')

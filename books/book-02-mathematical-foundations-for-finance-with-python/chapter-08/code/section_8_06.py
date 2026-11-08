@@ -169,10 +169,16 @@ def centered_second_difference(function, x, step=1e-3):
         raise ValueError("step must be nonzero")
     if not math.isfinite(x+h) or not math.isfinite(x-h) or x+h==x or x-h==x:
         raise ValueError("step must produce finite distinct perturbations")
-    if h*h==0 or not math.isfinite(h*h):
-        raise ValueError("squared step must be finite and nonzero")
-    return (finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
-            +finite(function(x-h), "f(x-h)"))/(h*h)
+    samples = [Fraction(finite(function(z), name)) for z, name in
+               ((x+h, "f(x+h)"), (x, "f(x)"), (x-h, "f(x-h)"))]
+    exact = (samples[0]-2*samples[1]+samples[2])/Fraction(h)**2
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("sampled second difference outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("sampled second difference outside finite float range")
+    return result
 
 if __name__ == "__main__":
     print("Polynomial third derivative:", derivative_coefficients((0, 1, 0, -3, 2), 3))
