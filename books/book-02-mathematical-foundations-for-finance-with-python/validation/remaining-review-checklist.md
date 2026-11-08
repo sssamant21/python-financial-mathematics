@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-07  
-**Full-runtime candidate source revision:** `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe`  
-**Latest scoped source revision:** `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe` (included in V-110)  
-**Disposition:** V-110 full candidate Linux pass includes Section 8.4 nested-power output contract; independent review and release approval pending.
+**Full-runtime candidate source revision:** `99ef9ddc1fab5e20ca83df6254d639720ff23b36`  
+**Latest scoped source revision:** `99ef9ddc1fab5e20ca83df6254d639720ff23b36` (included in V-111)  
+**Disposition:** V-111 full candidate Linux pass includes Section 8.4 price/log-growth contracts; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-111](runtime-refresh-2026-11-07-r17.md): 577 compiled, 364 passed, 578 required hashes verified before/after. G2–G8 unchanged.
 
 [V-110](runtime-refresh-2026-11-07-r16.md): 576 compiled, 363 passed, 577 required hashes verified before/after. G2–G8 unchanged.
 
@@ -177,7 +179,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-110](runtime-refresh-2026-11-07-r16.md) at `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe`; 576 sources/363 scripts/577 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-111](runtime-refresh-2026-11-07-r17.md) at `99ef9ddc1fab5e20ca83df6254d639720ff23b36`; 577 sources/364 scripts/578 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -862,3 +864,11 @@ Next: [nested-power range baseline](chapter-08-nested-power-range-baseline.md), 
 [V-110](runtime-refresh-2026-11-07-r16.md) at `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe`: 576 files compiled, 363 scripts passed, 577 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [price/log-growth baseline](chapter-08-price-log-growth-baseline.md), with [five retained probe pairs](chapter-08-price-log-growth-baseline.json). Price returns infinity at 1e104 while larger unrepresentable cases raise OverflowError; selected log-growth outputs match their represented-ratio references. Establish price output/accuracy consistency and preserve or explicitly reconcile the rounded base and represented coefficient convention. Do not repeat completed nested-power/count examples.
+
+## V-111 checkpoint — Section 8.4 price/log-growth contracts
+
+[Price/log-growth follow-up](chapter-08-price-log-growth-followup.md): all 62 checks pass; nine baseline price mismatches and an identical replay retained. Two returned infinities now raise OverflowError; seven finite differences are reconciled under the explicit complete-cubic rounding contract. Independent two-stage affine bases, exact Decimal cubic products, rational growth ratios and an oracle-only adjacent price boundary search preserve existing represented-base semantics. Log-growth code is unchanged; its endpoint/monotonicity finite-output argument states binary64 rounding assumptions. Existing Section 8.4 and nested-power suites pass.
+
+[V-111](runtime-refresh-2026-11-07-r17.md) at `99ef9ddc1fab5e20ca83df6254d639720ff23b36`: 577 files compiled, 364 scripts passed, 578 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [Section 8.5 exponential-derivative baseline](chapter-08-exponential-derivative-range-baseline.md), with [four retained probes](chapter-08-exponential-derivative-range-baseline.json). Separate coefficient/exponential arithmetic loses finite signed results and zero-scale identities. Establish complete represented-input scaling and final output/error conventions while preserving type/domain behavior; other Section 8.5 helper/copy and independent review obligations remain open. Do not repeat completed Section 8.4 price/nested-power examples.
