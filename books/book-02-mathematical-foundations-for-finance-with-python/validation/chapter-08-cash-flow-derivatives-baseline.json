@@ -1,0 +1,181 @@
+{
+  "source_revision": "37b29e56354a02fbccb747ff0c77bbd45cd67edd",
+  "source_blob": "2d9b3b26df93997a7aa9359185a3b7829f7f2704",
+  "observations": [
+    {
+      "case": "cancel-derivatives",
+      "cash_flows": [
+        [
+          1.7976931348623157e+308,
+          2
+        ],
+        [
+          -1.7976931348623157e+308,
+          2
+        ]
+      ],
+      "rate": 0,
+      "reference_value_first_second": [
+        0,
+        0,
+        0
+      ],
+      "reference_zero_signs": [
+        1,
+        1,
+        1
+      ],
+      "actual": [
+        0,
+        "nan",
+        "nan"
+      ],
+      "actual_zero_signs": [
+        1,
+        null,
+        null
+      ]
+    },
+    {
+      "case": "overflow-order",
+      "cash_flows": [
+        [
+          1.7976931348623157e+308,
+          0
+        ],
+        [
+          1.7976931348623157e+308,
+          0
+        ],
+        [
+          -1.7976931348623157e+308,
+          0
+        ]
+      ],
+      "rate": 0,
+      "reference_value_first_second": [
+        1.7976931348623157e+308,
+        0,
+        0
+      ],
+      "reference_zero_signs": [
+        null,
+        1,
+        1
+      ],
+      "actual": [
+        "inf",
+        0,
+        0
+      ],
+      "actual_zero_signs": [
+        null,
+        1,
+        1
+      ]
+    },
+    {
+      "case": "reordered-control",
+      "cash_flows": [
+        [
+          1.7976931348623157e+308,
+          0
+        ],
+        [
+          -1.7976931348623157e+308,
+          0
+        ],
+        [
+          1.7976931348623157e+308,
+          0
+        ]
+      ],
+      "rate": 0,
+      "reference_value_first_second": [
+        1.7976931348623157e+308,
+        0,
+        0
+      ],
+      "reference_zero_signs": [
+        null,
+        1,
+        1
+      ],
+      "actual": [
+        1.7976931348623157e+308,
+        0,
+        0
+      ],
+      "actual_zero_signs": [
+        null,
+        1,
+        1
+      ]
+    },
+    {
+      "case": "signed-extremes",
+      "cash_flows": [
+        [
+          5e-324,
+          2000
+        ],
+        [
+          -5e-324,
+          1998
+        ]
+      ],
+      "rate": -0.5,
+      "reference_value_first_second": [
+        6.152710422811656e+110,
+        -1.2312582313923687e+114,
+        2.4639473241511528e+117
+      ],
+      "reference_zero_signs": [
+        null,
+        null,
+        null
+      ],
+      "actual": "OverflowError",
+      "actual_zero_signs": null
+    },
+    {
+      "case": "derivative-underflow",
+      "cash_flows": [
+        [
+          1,
+          750
+        ],
+        [
+          1,
+          751
+        ]
+      ],
+      "rate": 1,
+      "reference_value_first_second": [
+        0,
+        -2e-323,
+        1.4644e-320
+      ],
+      "reference_zero_signs": [
+        1,
+        null,
+        null
+      ],
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "actual_zero_signs": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "reference_method": "Complete signed Decimal aggregate value/first/second derivatives at 200/400 digits, agreeing final floats/signs; zero-rate cancellation and reorder identities also follow exact signed sums.",
+  "pinned_probe_matched_local": true,
+  "required_source_dependency_blobs_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom decimal import Decimal,localcontext\nimport section_8_06 as s\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(\"cancel-derivatives\",[(M,2.),(-M,2.)],0.),\n       (\"overflow-order\",[(M,0.),(M,0.),(-M,0.)],0.),\n       (\"reordered-control\",[(M,0.),(-M,0.),(M,0.)],0.),\n       (\"signed-extremes\",[(T,2000.),(-T,1998.)],-.5),\n       (\"derivative-underflow\",[(1.,750.),(1.,751.)],1.)]\ndef reference(flows,rate,precision):\n with localcontext() as ctx:\n  ctx.prec=precision\n  r=Decimal.from_float(rate);totals=[Decimal(0)]*3\n  for payment,years in flows:\n   c,t=map(Decimal.from_float,(payment,years));value=c*(-r*t).exp()\n   for i,z in enumerate((value,-t*value,t*t*value)):totals[i]+=z\n  return [float(z) if math.isfinite(float(z)) else \"unrepresentable\" for z in totals]\ndef zs(v):return int(math.copysign(1,v)) if type(v) is float and v==0 else None\nrows=[]\nfor label,flows,rate in cases:\n expected=reference(flows,rate,200);repeated=reference(flows,rate,400)\n assert expected==repeated and list(map(zs,expected))==list(map(zs,repeated))\n try:actual=[z if math.isfinite(z) else repr(z) for z in s.cash_flow_rate_derivatives(iter(flows),rate)]\n except Exception as exc:actual=type(exc).__name__\n rows.append(dict(case=label,cash_flows=flows,rate=rate,reference_value_first_second=expected,\n  reference_zero_signs=list(map(zs,expected)),actual=actual,\n  actual_zero_signs=list(map(zs,actual)) if isinstance(actual,list) else None))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Five selected aggregate probe triples including a reordered working control. Signed cash flows remain allowed; aggregate scaling/output and zero-sign policies require separate reconciliation."
+}
