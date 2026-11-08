@@ -1,0 +1,48 @@
+{
+  "source_revision": "76208b8f944cf6ab706ae75f94cc0329d1f3dbfe",
+  "source_blob": "7fc5617f5953e85890d0b61bffa92f383b6148f9",
+  "observations": [
+    {
+      "time": -49.99999999999999,
+      "rounded_base": 1.1102230246251565e-16,
+      "complete_price_reference": 1.3684555315672042e-46,
+      "actual_price": 1.3684555315672042e-46,
+      "represented_ratio_reference": 540431955284459.5,
+      "actual_log_growth": 540431955284459.5
+    },
+    {
+      "time": 0,
+      "rounded_base": 1,
+      "complete_price_reference": 100,
+      "actual_price": 100,
+      "represented_ratio_reference": 0.06,
+      "actual_log_growth": 0.06
+    },
+    {
+      "time": 1e+103,
+      "rounded_base": 2e+101,
+      "complete_price_reference": 8e+305,
+      "actual_price": 8e+305,
+      "represented_ratio_reference": 3e-103,
+      "actual_log_growth": 3e-103
+    },
+    {
+      "time": 1e+104,
+      "rounded_base": 2e+102,
+      "complete_price_reference": "OverflowError",
+      "actual_price": "inf",
+      "represented_ratio_reference": 3e-104,
+      "actual_log_growth": 3e-104
+    },
+    {
+      "time": 1.7976931348623157e+308,
+      "rounded_base": 3.595386269724631e+306,
+      "complete_price_reference": "OverflowError",
+      "actual_price": "OverflowError",
+      "represented_ratio_reference": 1.668805393880401e-308,
+      "actual_log_growth": 1.668805393880401e-308
+    }
+  ],
+  "reference_method": "For the currently rounded base 1+0.02*t, evaluate exact rational 100*base^3 and represented 0.06/base, then round once. These references do not silently substitute an exact affine base.",
+  "limits": "Exploratory next-batch evidence. Selected log-growth outputs match their represented-ratio references; no log-growth defect is claimed. Price nonfinite output/error policy and wider domains/accuracy need review."
+}
