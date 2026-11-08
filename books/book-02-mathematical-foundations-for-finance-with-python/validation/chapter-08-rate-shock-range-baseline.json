@@ -1,0 +1,59 @@
+{
+  "source_revision": "536dc531ca19a913507977f63df20d2cefd1f90b",
+  "source_blob": "3c383e586995712a6342be44d43dbb2367c1ffb3",
+  "observations": [
+    {
+      "args": [
+        1,
+        1,
+        1000,
+        -1
+      ],
+      "expected": 1,
+      "expected_zero_sign": null,
+      "actual": "OverflowError",
+      "actual_zero_sign": null
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308,
+        5e-324,
+        1.7976931348623157e+308
+      ],
+      "expected": -1.5966722476277762e+293,
+      "expected_zero_sign": null,
+      "actual": "ValueError",
+      "actual_zero_sign": null
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        0,
+        5e-324,
+        0.1
+      ],
+      "expected": -8.881784197001252e-17,
+      "expected_zero_sign": null,
+      "actual": 0,
+      "actual_zero_sign": -1
+    },
+    {
+      "args": [
+        0,
+        0,
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "expected": 0,
+      "expected_zero_sign": 1,
+      "actual": "nan",
+      "actual_zero_sign": null
+    }
+  ],
+  "reference_method": "Difference of two complete Decimal prices at 1600/2200 digits; exact represented inputs; zero-payment identity applied before exponentiation; references agree, including explicit zero signs.",
+  "pinned_probe_matched_local": true,
+  "required_source_and_dependency_hashes_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom decimal import Decimal,localcontext\nimport section_8_05 as s\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(1.,1.,1000.,-1.),(M,-M,T,M),(M,0.,T,.1),(0.,0.,M,-M)]\ndef reference(args,prec):\n with localcontext() as ctx:\n  ctx.prec=prec\n  c,r,t,h=map(Decimal.from_float,args)\n  if not c:return 0.\n  result=c*((-(r+h)*t).exp()-(-r*t).exp())\n  v=float(result)\n  return v if math.isfinite(v) else \"unrepresentable\"\ndef zs(x):return int(math.copysign(1,x)) if type(x) is float and x==0 else None\nrows=[]\nfor args in cases:\n expected=reference(args,1600);repeated=reference(args,2200)\n assert expected==repeated and zs(expected)==zs(repeated)\n try:\n  actual=s.present_value_rate_shock(*args)\n  if not math.isfinite(actual):actual=repr(actual)\n except Exception as exc:actual=type(exc).__name__\n rows.append(dict(args=args,expected=expected,expected_zero_sign=zs(expected),actual=actual,actual_zero_sign=zs(actual)))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Exploratory next-batch baseline; rate-shock expression remains unfixed. No reviewer/platform/release acceptance."
+}
