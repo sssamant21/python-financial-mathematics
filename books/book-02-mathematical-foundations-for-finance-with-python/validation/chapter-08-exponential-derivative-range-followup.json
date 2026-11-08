@@ -1,0 +1,645 @@
+{
+  "baseline_revision": "18b6240459c2480a3bb54793c080177985d0dc9b",
+  "baseline_source_blob": "f4354c95dc4c355b20ed2407f9f0e706a7c75e83",
+  "corrected_revision": "8a23628022d832fbd80422aaf6ca582b28917de6",
+  "sources": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_exponential_derivative_range.py",
+      "sha": "ae6d2e33c7fbc8a4d87ec0dc7ef3ad9b5d464cc5"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+      "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_05.py",
+      "sha": "cc61abb6a366aaf6d95ae87e12d4807314d4a003"
+    }
+  ],
+  "baseline": [
+    {
+      "case": "complete expression 0",
+      "expected": 1.8250032925935892e-126,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 1",
+      "expected": 9.733444573000164e+110,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 2",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 3",
+      "expected": -1.8250032925935892e-126,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 4",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 5",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 6",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 7",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "complete expression 8",
+      "expected": 9.73344457300041e-190,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 9",
+      "expected": -9.733444573000164e+110,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 10",
+      "expected": -9.733444573000164e+110,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 11",
+      "expected": -1.8250032925935892e-126,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 12",
+      "expected": 8.881784197001251e-16,
+      "actual": 8.881784197001251e-16,
+      "passed": true
+    },
+    {
+      "case": "complete expression 13",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 14",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 15",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "complete expression 16",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 17",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 18",
+      "expected": 421.79627538694103,
+      "actual": 421.79627538694103,
+      "passed": true
+    },
+    {
+      "case": "complete expression 19",
+      "expected": 0.05205379570999353,
+      "actual": 0.05205379570999353,
+      "passed": true
+    },
+    {
+      "case": "complete expression 20",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "case": "complete expression 21",
+      "expected": 1.3498588075760032,
+      "actual": 1.3498588075760032,
+      "passed": true
+    },
+    {
+      "case": "complete expression 22",
+      "expected": -50.31077670365875,
+      "actual": -50.310776703658746,
+      "passed": false
+    },
+    {
+      "case": "retained defaults",
+      "expected": 2.718281828459045,
+      "actual": 2.718281828459045,
+      "passed": true
+    },
+    {
+      "case": "bool x",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "bool scale",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "bool growth",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "nan x",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "infinite scale",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "infinite growth",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "zero scale invalid x",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "zero growth invalid scale",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "text scale",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    }
+  ],
+  "baseline-replay": [
+    {
+      "case": "complete expression 0",
+      "expected": 1.8250032925935892e-126,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 1",
+      "expected": 9.733444573000164e+110,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 2",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 3",
+      "expected": -1.8250032925935892e-126,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 4",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 5",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 6",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 7",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "complete expression 8",
+      "expected": 9.73344457300041e-190,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 9",
+      "expected": -9.733444573000164e+110,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 10",
+      "expected": -9.733444573000164e+110,
+      "actual": "OverflowError",
+      "passed": false
+    },
+    {
+      "case": "complete expression 11",
+      "expected": -1.8250032925935892e-126,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 12",
+      "expected": 8.881784197001251e-16,
+      "actual": 8.881784197001251e-16,
+      "passed": true
+    },
+    {
+      "case": "complete expression 13",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 14",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 15",
+      "expected": "ValueError",
+      "actual": "inf",
+      "passed": false
+    },
+    {
+      "case": "complete expression 16",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 17",
+      "expected": 0,
+      "actual": "nan",
+      "passed": false
+    },
+    {
+      "case": "complete expression 18",
+      "expected": 421.79627538694103,
+      "actual": 421.79627538694103,
+      "passed": true
+    },
+    {
+      "case": "complete expression 19",
+      "expected": 0.05205379570999353,
+      "actual": 0.05205379570999353,
+      "passed": true
+    },
+    {
+      "case": "complete expression 20",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "case": "complete expression 21",
+      "expected": 1.3498588075760032,
+      "actual": 1.3498588075760032,
+      "passed": true
+    },
+    {
+      "case": "complete expression 22",
+      "expected": -50.31077670365875,
+      "actual": -50.310776703658746,
+      "passed": false
+    },
+    {
+      "case": "retained defaults",
+      "expected": 2.718281828459045,
+      "actual": 2.718281828459045,
+      "passed": true
+    },
+    {
+      "case": "bool x",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "bool scale",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "bool growth",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "nan x",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "infinite scale",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "infinite growth",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "zero scale invalid x",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "zero growth invalid scale",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "text scale",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    }
+  ],
+  "corrected": [
+    {
+      "case": "complete expression 0",
+      "expected": 1.8250032925935892e-126,
+      "actual": 1.8250032925935892e-126,
+      "passed": true
+    },
+    {
+      "case": "complete expression 1",
+      "expected": 9.733444573000164e+110,
+      "actual": 9.733444573000164e+110,
+      "passed": true
+    },
+    {
+      "case": "complete expression 2",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 3",
+      "expected": -1.8250032925935892e-126,
+      "actual": -1.8250032925935892e-126,
+      "passed": true
+    },
+    {
+      "case": "complete expression 4",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 5",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 6",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 7",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "complete expression 8",
+      "expected": 9.73344457300041e-190,
+      "actual": 9.73344457300041e-190,
+      "passed": true
+    },
+    {
+      "case": "complete expression 9",
+      "expected": -9.733444573000164e+110,
+      "actual": -9.733444573000164e+110,
+      "passed": true
+    },
+    {
+      "case": "complete expression 10",
+      "expected": -9.733444573000164e+110,
+      "actual": -9.733444573000164e+110,
+      "passed": true
+    },
+    {
+      "case": "complete expression 11",
+      "expected": -1.8250032925935892e-126,
+      "actual": -1.8250032925935892e-126,
+      "passed": true
+    },
+    {
+      "case": "complete expression 12",
+      "expected": 8.881784197001251e-16,
+      "actual": 8.881784197001251e-16,
+      "passed": true
+    },
+    {
+      "case": "complete expression 13",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 14",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 15",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "complete expression 16",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 17",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "case": "complete expression 18",
+      "expected": 421.79627538694103,
+      "actual": 421.79627538694103,
+      "passed": true
+    },
+    {
+      "case": "complete expression 19",
+      "expected": 0.05205379570999353,
+      "actual": 0.05205379570999353,
+      "passed": true
+    },
+    {
+      "case": "complete expression 20",
+      "expected": 6,
+      "actual": 6,
+      "passed": true
+    },
+    {
+      "case": "complete expression 21",
+      "expected": 1.3498588075760032,
+      "actual": 1.3498588075760032,
+      "passed": true
+    },
+    {
+      "case": "complete expression 22",
+      "expected": -50.31077670365875,
+      "actual": -50.31077670365875,
+      "passed": true
+    },
+    {
+      "case": "retained defaults",
+      "expected": 2.718281828459045,
+      "actual": 2.718281828459045,
+      "passed": true
+    },
+    {
+      "case": "bool x",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "bool scale",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "bool growth",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    },
+    {
+      "case": "nan x",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "infinite scale",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "infinite growth",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "zero scale invalid x",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "zero growth invalid scale",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "huge integer",
+      "expected": "ValueError",
+      "actual": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "text scale",
+      "expected": "TypeError",
+      "actual": "TypeError",
+      "passed": true
+    }
+  ],
+  "process_results": {
+    "baseline": 1,
+    "baseline_replay": 1,
+    "corrected": 0,
+    "existing_section_checker": 0
+  },
+  "oracle": "Independent log-amplitude references at 1600/2200 digits, exact zero/product special cases and independent extreme-exponent bounds; production uses rational coefficient/exponent products with a shared exponential kernel.",
+  "limits": "Explicit complete represented-input convention and ValueError final-output policy. Selected precision agreement is not a universal transcendental rounding proof or independent/platform/release/canonical approval."
+}
