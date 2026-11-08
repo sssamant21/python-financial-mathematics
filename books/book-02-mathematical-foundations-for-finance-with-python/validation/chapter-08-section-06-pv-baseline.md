@@ -1,6 +1,6 @@
 # Next checkpoint: local Section 8.6 PV and first derivative
 
-Executable revision `274ce4598c7a97d25f996a33512c1d8f5e176048`. [Four actual paired probes and independent complete references](chapter-08-section-06-pv-baseline.json).
+Executable revision `ac2909c8f4b7b557c278f8f99f0c672862c3f3b3`. [Four actual paired probes and independent complete references](chapter-08-section-06-pv-baseline.json).
 
 These are `section_8_06.present_value` and `pv_rate_first`, separate from the corrected curvature helper and Section 8.5 implementations. New inputs retain finite complete prices/sensitivities lost to exponential overflow, a nonzero sensitivity beside a price rounded to zero, finite sensitivity beside unrepresentable price and zero-payment NaNs.
 
