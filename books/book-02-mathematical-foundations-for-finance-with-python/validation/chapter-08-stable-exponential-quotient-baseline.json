@@ -1,0 +1,47 @@
+{
+  "source_revision": "31c777e7b1e41eaa3913a5144a69c6cb56cf914a",
+  "source_blob": "25628c7427517aabaf3dc5968f4171971be6b21d",
+  "observations": [
+    {
+      "x": 1000,
+      "step": -1.7976931348623157e+308,
+      "expected": 1.095888433799873e+126,
+      "actual": "OverflowError"
+    },
+    {
+      "x": -1000,
+      "step": 1000,
+      "expected": 0.001,
+      "actual": "OverflowError"
+    },
+    {
+      "x": -750,
+      "step": 100,
+      "expected": 5.111951948651156e-285,
+      "actual": 0
+    },
+    {
+      "x": 700,
+      "step": 10,
+      "expected": 2.2338933429562376e+307,
+      "actual": "inf"
+    },
+    {
+      "x": 0,
+      "step": 5e-324,
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "x": 700,
+      "step": -1.7976931348623157e+308,
+      "expected": 0.000056418530786272595,
+      "actual": 0.000056418530786272595
+    }
+  ],
+  "reference_method": "Independent complete exponential-price difference divided by the represented step, at Decimal 1600/2200 digits; both references agree.",
+  "pinned_probe_matched_local": true,
+  "required_source_and_dependency_hashes_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom decimal import Decimal,localcontext\nimport section_8_05 as s\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(1000.,-M),(-1000.,1000.),(-750.,100.),(700.,10.),(0.,T),(700.,-M)]\nrows=[]\nfor x,h in cases:\n refs=[]\n for precision in (1600,2200):\n  with localcontext() as ctx:\n   ctx.prec=precision\n   dx,dh=map(Decimal.from_float,(x,h))\n   def exp(v):return Decimal(0) if v< -20000 else v.exp()\n   refs.append(float((exp(dx+dh)-exp(dx))/dh))\n assert refs[0]==refs[1]\n try:\n  actual=s.stable_exponential_difference_quotient(x,h)\n  if not math.isfinite(actual):actual=repr(actual)\n except Exception as exc:actual=type(exc).__name__\n rows.append(dict(x=x,step=h,expected=refs[0],actual=actual))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Six selected numerical observations: four finite-model range failures, two working controls. Not fixed; next-batch baseline, not acceptance."
+}
