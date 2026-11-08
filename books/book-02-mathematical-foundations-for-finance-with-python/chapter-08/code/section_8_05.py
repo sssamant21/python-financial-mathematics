@@ -35,19 +35,33 @@ def logarithm_derivative(x, offset=1.0, slope=2.0):
         raise ValueError("logarithm derivative outside finite float range") from exc
     return finite(result, "logarithm derivative")
 
-def accumulation(principal, rate, years):
+def _accumulation_inputs(principal, rate, years):
     p, r, t = finite(principal, "principal"), finite(rate, "rate"), finite(years, "years")
     if p < 0 or t < 0:
         raise ValueError("principal and years must be nonnegative")
-    return p*math.exp(r*t)
+    return p, r, t
+
+def accumulation(principal, rate, years):
+    p, r, t = _accumulation_inputs(principal, rate, years)
+    if p == 0:
+        return p
+    return _scaled_pv(Fraction(p), Fraction(r)*Fraction(t))
 
 def accumulation_time_derivative(principal, rate, years):
+    # Retain rate-first validation, then the value helper's input order.
     r = finite(rate, "rate")
-    return r*accumulation(principal, rate, years)
+    p, r, t = _accumulation_inputs(principal, rate, years)
+    if p == 0 or r == 0:
+        return p*r
+    return _scaled_pv(Fraction(p)*Fraction(r), Fraction(r)*Fraction(t))
 
 def accumulation_rate_derivative(principal, rate, years):
+    # A finite sensitivity need not require a representable accumulated value.
     t = finite(years, "years")
-    return t*accumulation(principal, rate, years)
+    p, r, t = _accumulation_inputs(principal, rate, years)
+    if p == 0 or t == 0:
+        return p*t
+    return _scaled_pv(Fraction(p)*Fraction(t), Fraction(r)*Fraction(t))
 
 def present_value(payment, rate, years):
     c, r, t = finite(payment, "payment"), finite(rate, "rate"), finite(years, "years")
