@@ -1434,5 +1434,11 @@
     "compounding_checker": 0
   },
   "oracle": "Decimal conversion independently rounds integer denominators for the existing branch; exact Decimal integer denominator is used beyond conversion overflow. Direct Decimal powers at 1600/2200 digits agree on selected financial roundings. 36 value/sensitivity, eighteen actual base and twenty-four guard observations.",
-  "scope": "Fallback only after float/int division raises OverflowError. Working rounded denominator/base behavior is preserved; selected model is not the continuous-compounding limit. Integer bit-length resource costs and independent review remain open."
+  "scope": "Fallback only after float/int division raises OverflowError. Working rounded denominator/base behavior is preserved; selected model is not the continuous-compounding limit. Integer bit-length resource costs and independent review remain open.",
+  "pinned_replay": {
+    "checker_revision": "a93acb89609087281b4e1872c6420313ddf7adca",
+    "original_source_blob": "697e04b9c408ab22d97dfa602cbba7c05ac5dbd7",
+    "exit": 1,
+    "baseline_observations_byte_identical": true
+  }
 }
