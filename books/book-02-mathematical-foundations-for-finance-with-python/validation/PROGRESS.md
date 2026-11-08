@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-120 scoped PV-curvature pass (four files/two scripts), after V-119 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-121 full candidate Linux pass (587 files, 374 scripts, 588 required hashes), including Section 8.6 curvature and local PV-copy corrections. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 585/585 at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`. [V-119](runtime-refresh-2026-11-08-r3.md). V-120: four scoped files compiled; [evidence](chapter-08-pv-curvature-range-followup.md). |
-| Automated script execution | Full candidate Linux pass | 372/372 at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`; 586 required blobs verified before/after. [V-119](runtime-refresh-2026-11-08-r3.md). V-120: two selected scripts passed; include additions in the next full refresh. |
+| Python compilation | Full candidate Linux pass | 587/587 at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`. [V-121](runtime-refresh-2026-11-08-r4.md). |
+| Automated script execution | Full candidate Linux pass | 374/374 at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`; 588 required blobs verified before/after. [V-121](runtime-refresh-2026-11-08-r4.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1093,3 +1093,11 @@ Next: [distinct Section 8.6 PV-curvature baseline](chapter-08-pv-curvature-range
 At `ac2909c8f4b7b557c278f8f99f0c672862c3f3b3`, four scoped Python files compiled and two scripts passed, with four exact Git blobs verified before/after. Fresh full-tree inventory: 586 Python files, 373 check/test scripts and 587 required source/fixture blobs. This is scoped validation; [V-119](runtime-refresh-2026-11-08-r3.md) remains the latest full candidate Linux pass (585/372/586 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [local Section 8.6 PV/first-derivative baseline](chapter-08-section-06-pv-baseline.md), with [four pinned paired probes](chapter-08-section-06-pv-baseline.json). Independent complete Decimal references at 200/400 digits expose lost finite prices/sensitivities, finite sensitivity beside unrepresentable price and zero identities. Preserve local validation/domain conventions. Taylor/exact shocks, cash-flow, polynomial and sampled-second-difference range obligations remain separate; do not attribute completed Section 8.5/curvature passes to them. Resource limits and independent review remain open.
+
+## V-121 checkpoint — Local Section 8.6 PV and first sensitivity
+
+[Local PV-copy follow-up](chapter-08-section-06-pv-followup.md): all 93 checks pass; 31 baseline mismatches and a byte-identical replay retained. Independent log-amplitude references at Decimal 1600/2200 digits check complete values/sensitivities, finite sensitivity beside zero/unrepresentable PV, signed zero/underflow, final overflow and validation priority. One baseline mismatch enforces complete first-sensitivity independence; mismatches are not distinct defect counts. Pinned corrected observations match local results; curvature/reference/order regressions are included.
+
+[V-121 full runtime](runtime-refresh-2026-11-08-r4.md) at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`: 587 Python files compiled, 374 scripts passed and 588 required source/fixture hashes verified before/after. This fresh pinned-tree run includes V-120 curvature and V-121 local PV-copy changes/checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [local Section 8.6 Taylor/exact-shock baseline](chapter-08-section-06-shock-baseline.md), with [four actual probe triples](chapter-08-section-06-shock-baseline.json). Complete Decimal Taylor/price-difference references agree at 1600/2200 digits. Probes distinguish working controls, finite complete changes/sums lost to intermediate range and zero-shock identities. Explicitly reconcile represented product/sum, zero signs, order guards and final-output policy before editing. Cash-flow, polynomial, sampled-second-difference, resource and independent-review obligations remain separate.
