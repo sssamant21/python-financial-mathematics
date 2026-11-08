@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-11-07  
-**Overall status:** In progress — V-113 full candidate Linux pass (579 files, 366 scripts, 580 required hashes), including Section 8.5 logarithm quotient recovery with retained domain. Independent review, supported platforms and release approval remain pending.
+**Updated:** 2026-11-08  
+**Overall status:** In progress — V-114 scoped accumulation pass (six files/four scripts), after V-113 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 579/579 at `04f45d68c3aaf1c3a25838fba4417df5198614c0`. [V-113](runtime-refresh-2026-11-07-r19.md). |
-| Automated script execution | Full candidate Linux pass | 366/366 at `04f45d68c3aaf1c3a25838fba4417df5198614c0`; 580 required blobs verified before/after. [V-113](runtime-refresh-2026-11-07-r19.md). |
+| Python compilation | Full candidate Linux pass | 579/579 at `04f45d68c3aaf1c3a25838fba4417df5198614c0`. [V-113](runtime-refresh-2026-11-07-r19.md). V-114: six scoped files compiled; [evidence](chapter-08-accumulation-range-followup.md). |
+| Automated script execution | Full candidate Linux pass | 366/366 at `04f45d68c3aaf1c3a25838fba4417df5198614c0`; 580 required blobs verified before/after. [V-113](runtime-refresh-2026-11-07-r19.md). V-114: four selected scripts passed; full-tree additions await the next full refresh. |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1037,3 +1037,11 @@ Next: [logarithm-derivative baseline](chapter-08-logarithm-derivative-range-base
 [V-113](runtime-refresh-2026-11-07-r19.md) at `04f45d68c3aaf1c3a25838fba4417df5198614c0`: 579 files compiled, 366 scripts passed, 580 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [accumulation scaling baseline](chapter-08-accumulation-range-baseline.md), with [four retained value/time/rate triples](chapter-08-accumulation-range-baseline.json). Complete Decimal references at 200/400 digits expose finite-result loss, zero identities and sensitivities that remain finite when the value itself is unrepresentable. Establish scaling/output policy and preserve input domains/order. PV/shock, log-return, stable quotient and centered-copy obligations remain open. Do not repeat completed exponential/logarithm derivative examples.
+
+## V-114 checkpoint — Section 8.5 accumulation scaling
+
+[Accumulation follow-up](chapter-08-accumulation-range-followup.md): all 137 checks pass; 37 baseline mismatches and a byte-identical replay retained. Independent 1600/2200-digit log-amplitude references check complete values and sensitivities, signed zero/underflow, true final overflow and validation precedence. Two baseline mismatches enforce the new no-rounded-value-delegation requirement; mismatches are not distinct defect counts. Existing Section 8.5, exponential and logarithm suites pass.
+
+At `a2de6dbfdacb2ef34d30674ee51b5509a8dc4f35`, six scoped files compiled and four scripts passed, with six source/checker hashes verified before/after. Fresh full-tree inventory: 580 Python files, 367 check/test scripts and 581 required source/fixture blobs. This is scoped validation; V-113 remains the latest full candidate Linux run (579/366/580 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [PV/rate-sensitivity baseline](chapter-08-pv-range-baseline.md), with [four pinned actual probe pairs](chapter-08-pv-range-baseline.json). Complete 200/400-digit references expose finite-result loss, nonzero sensitivity beside a zero price, finite sensitivity beside unrepresentable PV and lost zero-payment identities. Establish the final-output/scaling policy and preserve input order/domains, then address rate shock. Log-return, stable quotient, centered copy, resource limits and independent review remain open. Do not repeat the completed accumulation, exponential or logarithm corpus.
