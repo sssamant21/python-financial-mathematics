@@ -79,16 +79,37 @@ def pv_rate_second(payment, rate, years):
         return math.copysign(0.0, c)
     return _scaled_pv(Fraction(c)*Fraction(t)**2, -Fraction(r)*Fraction(t))
 
+def _shock_inputs(payment, rate, years):
+    c, r, t = finite(payment, "payment"), finite(rate, "rate"), finite(years, "years")
+    if c < 0 or t < 0:
+        raise ValueError("payment and years must be nonnegative")
+    return c, r, t
+
 def pv_shock(payment, rate, years, shock, order=2):
     h, t = finite(shock, "shock"), finite(years, "years")
     if order not in (1, 2) or type(order) is not int:
         raise ValueError("order must be 1 or 2")
-    first = pv_rate_first(payment, rate, years)*h
-    return first if order == 1 else first+0.5*pv_rate_second(payment, rate, years)*h*h
+    c, r, t = _shock_inputs(payment, rate, years)
+    if c == 0 or t == 0 or h == 0:
+        first = -0. * c * t * h
+        return first if order == 1 else first + math.copysign(0.0, c)
+    c, r, t, h = map(Fraction, (c, r, t, h))
+    gap = t*h
+    coefficient = -c*gap if order == 1 else c*gap*(gap/2-1)
+    if coefficient == 0:
+        return 0.0
+    return _scaled_pv(coefficient, -r*t)
 
 def pv_shock_exact(payment, rate, years, shock):
     h, t = finite(shock, "shock"), finite(years, "years")
-    return present_value(payment, rate, years)*math.expm1(-t*h)
+    c, r, t = _shock_inputs(payment, rate, years)
+    if c == 0 or t == 0 or h == 0:
+        return -0. * c * t * h
+    c, r, t, h = map(Fraction, (c, r, t, h))
+    gap = abs(t*h)
+    if h > 0:
+        return _scaled_pv(-c, -r*t, gap)
+    return _scaled_pv(c, -(r+h)*t, gap)
 
 def cash_flow_rate_derivatives(cash_flows, rate):
     r = finite(rate, "rate")
