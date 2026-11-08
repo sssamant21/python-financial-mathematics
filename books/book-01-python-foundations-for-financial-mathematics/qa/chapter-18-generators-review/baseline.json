@@ -1,0 +1,797 @@
+{
+  "source_sha256": "22d1a4dcfb1cedeb2dab526f75ccfd1f77a93cfd2920b8a4ae501a644757c8d7",
+  "listing_sha256": [
+    "5ad64096cfe654c2a6cace85d482f22416e7c9454d582a919a4f0c570efeaafe",
+    "826bfbdb211a3e74968dc87b2b82e6177e642933f99b98ed51e6c68c280ff9e2",
+    "100e0a9b558c2ee4c475976ac29f6b5bb406b77460a6e7015c21800b48ffbc1a",
+    "0f32e10ff689231c55d5b397bc01b8cc0bd130e30e95766e9ebb26285e08bbfa",
+    "a31ac77271c4d164095ae23c2be0a92482d814c6414ac26c94b0e05125a64885",
+    "773ad8a181fc929f43b7e45e095ed94feee31d96509e75abe3d57679e031926f"
+  ],
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "bit_generator": "PCG64",
+  "commands": [
+    {
+      "label": "exact fence 1",
+      "args": [
+        "example1.py"
+      ],
+      "stdout": "[0.11911988496396309, 0.5025157552312506, 0.511822712773071, 0.8600005876492754, 0.10263685050695981]\n",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 2",
+      "args": [
+        "example2.py"
+      ],
+      "stdout": "[0.08679895125617951, -0.02452667101168042, 0.2382178896586194, 0.029291140588578218, -0.09637304999429873]\n",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 3",
+      "args": [
+        "example3.py"
+      ],
+      "stdout": "0.49712159756933416 0.052106988005821156\n",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 4",
+      "args": [
+        "example4.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 5",
+      "args": [
+        "example5.py"
+      ],
+      "stdout": "[0.3826911772203264, 0.6711128139283759, 0.5508442104534835, 0.7433341197823008]\n",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 6",
+      "args": [
+        "random_generators.py"
+      ],
+      "stdout": "{'count': 10000, 'mean': 101.914, 'sample_variance': 96.34623862386252, 'standard_error': 0.09815611984174115}\n",
+      "stderr": "test_bad_probability (__main__.GeneratorTests.test_bad_probability) ... ok\ntest_bad_return (__main__.GeneratorTests.test_bad_return) ... ok\ntest_bad_sd (__main__.GeneratorTests.test_bad_sd) ... ok\ntest_known_summary (__main__.GeneratorTests.test_known_summary) ... ok\ntest_normal_zero_sd (__main__.GeneratorTests.test_normal_zero_sd) ... ok\ntest_probability_one (__main__.GeneratorTests.test_probability_one) ... ok\ntest_probability_zero (__main__.GeneratorTests.test_probability_zero) ... ok\ntest_range (__main__.GeneratorTests.test_range) ... ok\ntest_replay (__main__.GeneratorTests.test_replay) ... ok\ntest_terminal_value (__main__.GeneratorTests.test_terminal_value) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n",
+      "returncode": 0,
+      "existing_methods": 10,
+      "passed": true
+    },
+    {
+      "label": "exact module check",
+      "args": [
+        "-c",
+        "import random_generators"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact module check",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "random_generators.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "independent ideal uniform mean integral",
+      "passed": true,
+      "actual": "1/2",
+      "expected": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "independent ideal uniform variance integral",
+      "passed": true,
+      "actual": "1/12",
+      "expected": "1/12",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 independent two-outcome expectation",
+      "passed": true,
+      "actual": "102",
+      "expected": "102",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "independent two-outcome variance",
+      "passed": true,
+      "actual": "96",
+      "expected": "96",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 normal variance",
+      "passed": true,
+      "actual": "9/400",
+      "expected": "9/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E30 SE",
+      "passed": true,
+      "actual": "1/10",
+      "expected": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E31 fourfold N factor",
+      "passed": true,
+      "actual": "0.5",
+      "expected": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction variance 0",
+      "passed": true,
+      "actual": "1",
+      "expected": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction covariance 0",
+      "passed": true,
+      "actual": "0",
+      "expected": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction variance 1",
+      "passed": true,
+      "actual": "1",
+      "expected": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction covariance 1",
+      "passed": true,
+      "actual": "1",
+      "expected": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction variance -1",
+      "passed": true,
+      "actual": "1",
+      "expected": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction covariance -1",
+      "passed": true,
+      "actual": "-1",
+      "expected": "-1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction variance 3/5",
+      "passed": true,
+      "actual": "1",
+      "expected": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "correlation construction covariance 3/5",
+      "passed": true,
+      "actual": "3/5",
+      "expected": "3/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E29 invalid correlation domain",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "E33 negative simple-return terminal",
+      "passed": true,
+      "actual": "-10",
+      "expected": "-10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample mean",
+      "passed": true,
+      "actual": 0.5,
+      "expected": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample variance ddof1",
+      "passed": true,
+      "actual": 0.3333333333333333,
+      "expected": "1/3",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample SE",
+      "passed": true,
+      "actual": 0.28867513459481287,
+      "expected": "0.28867513459481288225457439025097872782380087563506343800930116324198883615146667284685769779287476261260435690256778383832832418249982541313527591868239560808801553865038426367799580335018077915387750",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "constant SE E37",
+      "passed": true,
+      "actual": 0.0,
+      "expected": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "normal zero SD",
+      "passed": true,
+      "actual": 2.0,
+      "expected": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "exact terminal increment",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "exact mean integer identity",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "used branches only policy",
+      "passed": false,
+      "actual": "ValueError('nonfinite terminal value')",
+      "expected": "1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "true total-loss zero",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "normal zero SD preserves integer",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "reject bad probability",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject bool probability",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject huge probability",
+      "passed": false,
+      "actual": "OverflowError",
+      "expected": true
+    },
+    {
+      "label": "reject count1",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject bool count",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject bool seed",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject negative sd",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject huge normal mean",
+      "passed": false,
+      "actual": "OverflowError",
+      "expected": true
+    },
+    {
+      "label": "reject normal output overflow",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "reject short sample",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject sample noniterable",
+      "passed": false,
+      "actual": "TypeError",
+      "expected": true
+    },
+    {
+      "label": "reject sample malformed",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject bool sample",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject infinite sample",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject huge sample",
+      "passed": false,
+      "actual": "OverflowError",
+      "expected": true
+    },
+    {
+      "label": "reject variance overflow",
+      "passed": false,
+      "actual": "OverflowError",
+      "expected": true
+    },
+    {
+      "label": "reject variance underflow",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "reject outcomes noniterable",
+      "passed": false,
+      "actual": "TypeError",
+      "expected": true
+    },
+    {
+      "label": "reject bool outcome",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject bad return",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "reject huge initial",
+      "passed": false,
+      "actual": "OverflowError",
+      "expected": true
+    },
+    {
+      "label": "reject terminal underflow",
+      "passed": false,
+      "actual": false,
+      "expected": true
+    },
+    {
+      "label": "reject terminal overflow",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "global state unchanged",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "uniform range",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "uniform replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "Bernoulli replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "normal replay",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "Bernoulli p0",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "Bernoulli p1",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "Bernoulli threshold mapping shares uniform generator",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "uniform independent decimal sample mean",
+      "passed": true,
+      "actual": 0.4983659359955837,
+      "expected": "12459148399889592451283/25000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "uniform independent decimal sample variance",
+      "passed": true,
+      "actual": 0.08027719072879945,
+      "expected": "50123070961294157098326136267220531833790411/624375000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "uniform independent decimal sample SE",
+      "passed": true,
+      "actual": 0.008959753943541052,
+      "expected": "0.0089597539435410530032698024965829748792644388947743481170495556374392798666607213834684683440748113924814133100589351847595595666056533519872185227073250160853591995886800715062992500764345454454290768",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "normal independent decimal sample mean",
+      "passed": true,
+      "actual": 0.051545071072600854,
+      "expected": "2577253553630042857071/50000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "normal independent decimal sample variance",
+      "passed": true,
+      "actual": 0.02231623827259292,
+      "expected": "55734805085800818849780669582763700756401459/2497500000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "normal independent decimal sample SE",
+      "passed": true,
+      "actual": 0.004724006591082713,
+      "expected": "0.0047240065910827135996015166158793383605849971829391214419797878768930370800203742212227334172395583956997168553435929766357678789791008615296624749721081001376547760967868601514957041783316246238172722",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle mean 42",
+      "passed": true,
+      "actual": 101.60000000000001,
+      "expected": "508/5",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle variance 42",
+      "passed": true,
+      "actual": 97.53753753753767,
+      "expected": "32480/333",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle SE 42",
+      "passed": true,
+      "actual": 0.3123100023014596,
+      "expected": "0.31231000230145933886334483221195805573895346441190747560141240232159117322147435574642213542345713187823768173165736097789571918683441725296604375423604957158137654758591275636306257285758084208073210",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle mean 43",
+      "passed": true,
+      "actual": 102.14000000000001,
+      "expected": "5107/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle variance 43",
+      "passed": true,
+      "actual": 95.51591591591605,
+      "expected": "159034/1665",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle SE 43",
+      "passed": true,
+      "actual": 0.30905649308163075,
+      "expected": "0.30905649308163049159632504268023617044852879083337076950069089483070572258714523276298132827614628319158673361206188811535231572729510634996383981117218665317559352220842737940107091322368304466341067",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle mean 44",
+      "passed": true,
+      "actual": 101.98,
+      "expected": "5099/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle variance 44",
+      "passed": true,
+      "actual": 96.17577577577592,
+      "expected": "480398/4995",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count oracle SE 44",
+      "passed": true,
+      "actual": 0.3101221949099676,
+      "expected": "0.31012219490996734491652539863261942731390760341038138389290155383527859517531440030776912509010867883812879354334817045726362762881965546241910863583288188187207883539109671707133659908100353663505720",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "state restoration",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "extra draw shifts selected stream",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "spawn replay fixed assignment",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "chosen child streams differ",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "label": "identically seeded workers duplicate",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    }
+  ],
+  "source_lab_summaries": {
+    "uniform": {
+      "count": 1000,
+      "mean": 0.4983659359955837,
+      "sample_variance": 0.08027719072879945,
+      "standard_error": 0.008959753943541052
+    },
+    "normal": {
+      "count": 1000,
+      "mean": 0.051545071072600854,
+      "sample_variance": 0.02231623827259292,
+      "standard_error": 0.004724006591082713
+    }
+  },
+  "uniform_lab": {
+    "count": 1000,
+    "mean": 0.4983659359955837,
+    "sample_variance": 0.08027719072879945,
+    "sample_sd": 0.2833322973626541
+  },
+  "normal_lab": {
+    "count": 1000,
+    "mean": 0.051545071072600854,
+    "sample_variance": 0.02231623827259292,
+    "sample_sd": 0.14938620509469044,
+    "below_minus_one": 0
+  },
+  "bernoulli_runs": [
+    {
+      "seed": 42,
+      "up_count": 580,
+      "frequency": 0.58,
+      "summary": {
+        "count": 1000,
+        "mean": 101.60000000000001,
+        "sample_variance": 97.53753753753767,
+        "standard_error": 0.3123100023014596
+      }
+    },
+    {
+      "seed": 43,
+      "up_count": 607,
+      "frequency": 0.607,
+      "summary": {
+        "count": 1000,
+        "mean": 102.14000000000001,
+        "sample_variance": 95.51591591591605,
+        "standard_error": 0.30905649308163075
+      }
+    },
+    {
+      "seed": 44,
+      "up_count": 599,
+      "frequency": 0.599,
+      "summary": {
+        "count": 1000,
+        "mean": 101.98,
+        "sample_variance": 96.17577577577592,
+        "standard_error": 0.3101221949099676
+      }
+    }
+  ],
+  "children": [
+    {
+      "worker": 0,
+      "spawn_key": [
+        0
+      ],
+      "draws": [
+        0.3826911772203264,
+        0.020440605975802884,
+        0.9319648962692549,
+        0.5266818260948598,
+        0.7690468916200117,
+        0.8535020648078232,
+        0.6324345388875887,
+        0.9668498681723666,
+        0.2046075444709209,
+        0.3036051957891539
+      ]
+    },
+    {
+      "worker": 1,
+      "spawn_key": [
+        1
+      ],
+      "draws": [
+        0.6711128139283759,
+        0.15799921160719677,
+        0.9414204385127094,
+        0.9485368412361052,
+        0.9456874243074027,
+        0.6452889663486533,
+        0.15738958662183844,
+        0.4116637260224908,
+        0.2189750817793934,
+        0.8584647820981091
+      ]
+    },
+    {
+      "worker": 2,
+      "spawn_key": [
+        2
+      ],
+      "draws": [
+        0.5508442104534835,
+        0.23392673835604905,
+        0.6394300472103863,
+        0.9471026314549612,
+        0.8405743395346765,
+        0.18562524970436467,
+        0.6134105969958124,
+        0.7622838490614557,
+        0.7621534275573538,
+        0.9413190541963472
+      ]
+    },
+    {
+      "worker": 3,
+      "spawn_key": [
+        3
+      ],
+      "draws": [
+        0.7433341197823008,
+        0.17888494995472726,
+        0.7329027324316378,
+        0.8594538036435151,
+        0.17355146232414842,
+        0.4290568760900342,
+        0.7997785478193166,
+        0.7257632594971921,
+        0.8922910921436656,
+        0.18538011733299053
+      ]
+    }
+  ],
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 10,
+    "new_historical_methods": 0
+  },
+  "limits": "Rational moments are ideal-model derivations; exact-count checks validate mapping/statistics, state/spawn checks share generators. No independence, distribution-tail, model or platform certification. Binary uniform draws have 53-bit grid resolution; arbitrary probabilities only approximate ideal Bernoulli laws."
+}
