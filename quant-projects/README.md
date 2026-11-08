@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Five self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Six self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -9,6 +9,8 @@ Five self-contained labs complement the financial-mathematics books without dupl
 | [03](03-five-stock-optimization/README.md) | Correlation/covariance, efficient frontier, constrained optimization, GBM Monte Carlo | Hypothetical | `five_stock_quant_lab.py` |
 | [04](04-historical-backtesting/README.md) | Real-stock prices, walk-forward optimization, drawdowns, ex-ante VaR breaches | Download-on-demand | `backtest.py` |
 | [05](05-regime-stress-stability/README.md) | Walk-forward covariance stability, stress windows, transaction costs, forecast-risk shocks | Seeded synthetic / optional licensed input | `stress_lab.py` |
+
+| [06](06-tail-risk-bootstrap/README.md) | Rolling historical and normal VaR, CVaR, bootstrap uncertainty and breach diagnostics | Seeded synthetic / licensed input | `tail_risk.py` |
 
 ## Quick start (Windows PowerShell)
 

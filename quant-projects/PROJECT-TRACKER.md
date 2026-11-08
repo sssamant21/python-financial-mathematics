@@ -9,6 +9,8 @@
 
 | 05 — Regime stress and parameter stability | Synthetic-first source, tests, and documentation published | Prototype 7/7 local tests passed; follow-up risk-calibration module 6/6 local tests passed; exact GitHub revision CI and independent review pending |
 
-Next: verify exact published Project 05 revision in CI, assess non-overlapping calibration and licensed 2020/2022 data provenance. Then Project 06 — historical versus parametric VaR and bootstrap tail-risk estimation.
+| 06 — Tail risk and bootstrap uncertainty | Synthetic-first source, tests, docs and runnable CLI published | 7/7 local tests on prepared source; exact-revision CI and independent review pending |
+
+Next: verify exact published Project 05 revision in CI, assess non-overlapping calibration and licensed 2020/2022 data provenance. Then extend Project 06 with block bootstrap, conditional coverage and real-data provenance; Project 07 will address multi-horizon portfolio risk.
 
 Do **not** label production-certified; this is an educational research series. No live trading or broker integration.
