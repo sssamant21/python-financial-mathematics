@@ -116,3 +116,5 @@ Reports/state counts for two actual seeds are retained, with sample means/SD/SE 
 Configurable probabilities/costs, independent replications, suitable binomial intervals, weighted-scenario risk, joint portfolio and alternative quantile definitions each need a separate specification/test/model review. No implementation or acceptance of these extensions is claimed.
 
 Next: Section18.15 chapter-wide Exercises and Applied Problems; Chapter18 and broader Book1 acceptance remain in progress.
+
+Publication verified at `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`: source/evidence blobs fetched and matched, with concurrent unrelated main work preserved via expected-head lease. This pins the corrected execution; the assessment follow-up has its own evidence and counts.

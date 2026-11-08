@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-126 scoped sampled-quotient pass (49 Chapter8 files/39 scripts), after V-124 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-127 full candidate Linux pass (591 sources/378 scripts/592 required blobs), including V-125/V-126 changes. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 589/589 at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`. [V-124](runtime-refresh-2026-11-08-r5.md). |
-| Automated script execution | Full candidate Linux pass | 376/376 at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`; 590 required blobs verified before/after. [V-124](runtime-refresh-2026-11-08-r5.md). |
+| Python compilation | Full candidate Linux pass | 591/591 at `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`. [V-127](runtime-refresh-2026-11-08-r6.md). |
+| Automated script execution | Full candidate Linux pass | 378/378 at `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`;592 required blobs verified before/after. [V-127](runtime-refresh-2026-11-08-r6.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1147,3 +1147,10 @@ Next substantive item: Section8.7 implicit circle/break-even numerical range and
 
 
 Section8.7 next-item checkpoint: [eight circle/break-even probes](chapter-08-section-07-circle-break-even-baseline.md) retain five mismatches against complete independent references and three controls. Source unchanged; contract reconciliation/correction is next, followed by bond/exposure/centered-copy obligations. No COV closure.
+
+
+## V-127 checkpoint — Full pinned candidate Linux refresh
+
+[V-127 full report](runtime-refresh-2026-11-08-r6.md) at `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`:591/591 Python files compiled,378/378 check/test scripts passed,592/592 required Python/fixture hashes verified before/after. Includes accumulated V-125/V-126 executable/checker changes. Exact runner,per-file outputs/digests and source manifest retained. Earlier baseline and legacy-predicate failures remain separate. Thirty-five selected COV categories remain partially addressed; none closed. One candidate Linux runtime only; independent mathematical/editorial/platform/release/canonical acceptance remains open.
+
+Next substantive item: [Section8.7 circle/break-even baseline](chapter-08-section-07-circle-break-even-baseline.md),eight actual probes/five mismatches; reconcile numerical and input/output contracts before correction, followed by bond/exposure/centered-copy obligations. Book1 remains separately tracked.

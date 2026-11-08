@@ -1,0 +1,352 @@
+[
+  {
+    "exercise": 1,
+    "title": "Outcome and expectation",
+    "prompt": "A value is 90 or 110 with equal probability. Find its expected value.",
+    "source_solution": ".5(90)+.5(110)=**100**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 2,
+    "title": "Unequal probabilities",
+    "prompt": "The probability of 110 is .6. Find the expected value.",
+    "source_solution": ".6(110)+.4(90)=**102**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 3,
+    "title": "Sample mean",
+    "prompt": "A sample is [90,110,110,110]. Calculate its mean.",
+    "source_solution": "420/4=**105**. Sampling variation explains why this sample need not equal the model mean 100.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 4,
+    "title": "Loss frequency",
+    "prompt": "Initial value 100; use the sample in Exercise 3. Define loss as terminal value <100.",
+    "source_solution": "One of four observations is below 100, so observed loss frequency is **.25**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 5,
+    "title": "Scenario versus probability",
+    "prompt": "A stress assumes a 20% asset decline. Is its probability known?",
+    "source_solution": "No. A deterministic stress is a conditional calculation; a probability requires an explicit justified model.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 6,
+    "title": "Pseudorandom state",
+    "prompt": "What happens when a generator consumes an additional draw?",
+    "source_solution": "Its state advances, so later draws typically change. A seed alone is insufficient if operation order changes.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 7,
+    "title": "Reproducibility",
+    "prompt": "What must be recorded beyond a seed?",
+    "source_solution": "Model inputs, generator and implementation, versions, code, path count, draw order, stream assignment and relevant platform settings.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 8,
+    "title": "Parallel streams",
+    "prompt": "Four workers each start with the same seed. What risk arises?",
+    "source_solution": "They may produce duplicate sequences, overstating the effective sample size. Use documented stream spawning and record assignments.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 9,
+    "title": "Uniform mapping",
+    "prompt": "U is uniform on [0,1); use U<.25 for down, .25\u2264U<.75 for flat, and U\u2265.75 for up. What state is U=.75?",
+    "source_solution": "**Up**, because the final interval includes .75.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 10,
+    "title": "Model versus data",
+    "prompt": "Does a large simulation sample make a poorly specified model correct?",
+    "source_solution": "No. More paths can reduce sampling variability but do not repair wrong assumptions or inputs.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 11,
+    "title": "Simple return",
+    "prompt": "Price increases from 100 to 110. Calculate simple return.",
+    "source_solution": "(110\u2212100)/100=**.10**, or 10%.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 12,
+    "title": "Log return",
+    "prompt": "Calculate log return for 100\u2192110.",
+    "source_solution": "ln(1.1)\u2248**.0953102**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 13,
+    "title": "Compounding",
+    "prompt": "Starting at 100, return +10% then \u221210%.",
+    "source_solution": "100\u00d71.1\u00d7.9=**99**, a cumulative simple return of \u22121%.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 14,
+    "title": "Simple-return boundary",
+    "prompt": "What simple return corresponds to a price falling from 100 to zero?",
+    "source_solution": "**\u22121**, or \u2212100%. A finite log return is not defined at zero terminal price.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 15,
+    "title": "Normal simple-return model",
+    "prompt": "Why can an unbounded normal simple-return model be unsuitable for a limited-liability asset?",
+    "source_solution": "It assigns positive probability to returns below \u22121, implying negative values. Clipping or discarding those draws changes the distribution.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 16,
+    "title": "Normal log-return expectation",
+    "prompt": "V\u2080=100, one-year log return L~N(.04,.20\u00b2). Find expected terminal value.",
+    "source_solution": "E[V\u2081]=100exp(.04+.20\u00b2/2)=100exp(.06)\u2248**106.18365**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 17,
+    "title": "Median terminal value",
+    "prompt": "Find the median under Exercise 16.",
+    "source_solution": "100exp(.04)\u2248**104.08108**. It differs from the mean because the terminal distribution is right-skewed.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 18,
+    "title": "Discounting",
+    "prompt": "A one-year expected payoff is 100 and the annual effective rate is .05. Find its discounted expectation.",
+    "source_solution": "100/1.05\u2248**95.2381** under the stated assumptions. This is not automatically a risk-neutral price.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 19,
+    "title": "Costs",
+    "prompt": "A fixed fee of 2 is paid at the end of the year from an expected terminal value of 100.",
+    "source_solution": "Expected net terminal value is **98**. State fee timing and avoid double counting.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 20,
+    "title": "Model probability",
+    "prompt": "Values 80, 100, 120 have probabilities .25, .5, .25. Find P(V\u2081<100).",
+    "source_solution": "Only the 80 state qualifies, so **.25**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 21,
+    "title": "Model variance",
+    "prompt": "Calculate variance of the distribution in Exercise 20.",
+    "source_solution": ".25(80\u2212100)\u00b2+.5(0)\u00b2+.25(120\u2212100)\u00b2=**200**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 22,
+    "title": "Standard error",
+    "prompt": "For 10,000 independent draws from that model, calculate theoretical SE of the mean.",
+    "source_solution": "\u221a200/\u221a10000\u2248**.14142**. Outcome SD is \u221a200\u224814.1421.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 23,
+    "title": "Fourfold sample size",
+    "prompt": "What is the approximate effect of quadrupling independent paths?",
+    "source_solution": "Mean SE is halved, assuming the same finite-variance model and appropriate independent observations.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 24,
+    "title": "One realization",
+    "prompt": "Must a particular estimate improve when path count increases?",
+    "source_solution": "No. Sampling error is random, so observed absolute error need not decrease monotonically.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 25,
+    "title": "Sample variance",
+    "prompt": "For [80,100,120], find the sample variance using N\u22121.",
+    "source_solution": "[(\u221220)\u00b2+0\u00b2+20\u00b2]/2=**400**; sample SD is 20.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 26,
+    "title": "Nominal normal interval",
+    "prompt": "An estimated mean is 100.1 with SE=.2. Calculate the nominal 95% normal interval.",
+    "source_solution": "100.1\u00b11.96(.2)=**[99.708,100.492]**. This interval is an approximation under suitable assumptions.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 27,
+    "title": "Confidence interpretation",
+    "prompt": "What does nominal 95% coverage mean in frequentist repeated sampling?",
+    "source_solution": "Under the method's assumptions, approximately 95% of such intervals across repeated samples cover the fixed model mean. The realized interval either covers it or does not.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 28,
+    "title": "Rare events",
+    "prompt": "An event has model probability .001 and N=1,000 independent paths. What is the expected event count?",
+    "source_solution": "Np=**1**. Observing zero events does not prove the probability is zero.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 29,
+    "title": "Optional stopping",
+    "prompt": "Can a fixed-N interval be checked repeatedly and stopped when narrow while retaining its stated coverage automatically?",
+    "source_solution": "No. Prespecify N or use a method designed for sequential stopping.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 30,
+    "title": "Model error",
+    "prompt": "A Monte Carlo interval is narrow but the underlying parameters are wrong. What does the interval establish?",
+    "source_solution": "At most sampling precision for the specified model under its assumptions; it does not quantify the model error automatically.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 31,
+    "title": "Time grid",
+    "prompt": "Simulate one year using 12 equal steps. What is \u0394t?",
+    "source_solution": "**1/12 year**. The number of steps is distinct from the number of paths.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 32,
+    "title": "GBM log drift",
+    "prompt": "For GBM with \u03bc=.05 and \u03c3=.20, find \u03bc\u2212\u03c3\u00b2/2.",
+    "source_solution": ".05\u2212.04/2=**.03** per year.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 33,
+    "title": "GBM benchmark",
+    "prompt": "Under constant-parameter GBM, S\u2080=100, \u03bc=.05, T=1. Find E[S\u209c].",
+    "source_solution": "100e^.05\u2248**105.12711**, under the specified probability measure.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 34,
+    "title": "Barrier monitoring",
+    "prompt": "Can a path observed only at month-end miss a barrier crossing between observations?",
+    "source_solution": "Yes. Exact GBM updates at grid times do not provide continuous monitoring.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 35,
+    "title": "Portfolio return",
+    "prompt": "Weights .6 and .4, returns +10% and \u22125%.",
+    "source_solution": ".6(.10)+.4(\u2212.05)=**.04**, or 4%.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 36,
+    "title": "Portfolio variance",
+    "prompt": "Weights .6/.4, standard deviations .2/.1 and correlation .25.",
+    "source_solution": "Covariance=.25(.2)(.1)=.005; variance=.6\u00b2(.2\u00b2)+.4\u00b2(.1\u00b2)+2(.6)(.4)(.005)=**.0184**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 37,
+    "title": "Rebalancing",
+    "prompt": "Do weights remain fixed automatically in a buy-and-hold portfolio?",
+    "source_solution": "No. They drift as asset values change. Resetting weights requires an explicit rebalancing rule and cost assumptions.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 38,
+    "title": "Loss sign",
+    "prompt": "Initial value 100, terminal value 80. Define loss as initial minus terminal.",
+    "source_solution": "Loss is **20**. Terminal value 110 would produce loss \u221210, a gain.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 39,
+    "title": "Empirical VaR",
+    "prompt": "Sorted equally weighted losses [\u221210,0,20,40], \u03b1=.75. Use nearest rank ceil(\u03b1N).",
+    "source_solution": "Rank=ceil(3)=3; **VaR=20**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 40,
+    "title": "Empirical Expected Shortfall",
+    "prompt": "Using the same sample and \u03b1=.75, average the upper 25% of empirical quantile mass.",
+    "source_solution": "One observation-equivalent lies in the tail, so **ES=40**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 41,
+    "title": "Fractional tail",
+    "prompt": "Same losses, \u03b1=.625. Calculate empirical ES with fractional boundary weight.",
+    "source_solution": "Upper tail contains 1.5 observation-equivalents: (40+.5\u00d720)/1.5=**100/3\u224833.3333**.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 42,
+    "title": "Discrete VaR boundary",
+    "prompt": "Same four-point distribution at \u03b1=.80. Find VaR and P(L>VaR).",
+    "source_solution": "VaR=40 and P(L>40)=0. Discrete mass means the strict exceedance probability need not equal 1\u2212\u03b1.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 43,
+    "title": "Memory estimate",
+    "prompt": "Store 100,000 paths with 253 binary64 values each. Calculate element storage.",
+    "source_solution": "100,000\u00d7253\u00d78=202,400,000 bytes, about **193.0 MiB**, excluding overhead and temporary arrays.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 44,
+    "title": "Batching",
+    "prompt": "Process 100,001 paths in batches of 10,000.",
+    "source_solution": "Ten full batches and one final batch of one path. Batch size and draw order can affect reproducibility.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 45,
+    "title": "Streaming statistics",
+    "prompt": "Does a running mean and variance retain enough information to calculate exact empirical VaR?",
+    "source_solution": "No. The distribution's ordering is not determined by its first two moments.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 46,
+    "title": "Paired comparisons",
+    "prompt": "Two scenarios share random draws intentionally. How should uncertainty of their difference be calculated?",
+    "source_solution": "Use independent paired differences and their variability, subject to the sampling design. Pairing does not guarantee variance reduction.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 47,
+    "title": "Deterministic stress",
+    "prompt": "A 60/40 portfolio experiences asset returns \u221220% and \u221210%. Find portfolio return.",
+    "source_solution": ".6(\u2212.2)+.4(\u2212.1)=**\u2212.16**. For initial value 100, loss is 16 before costs.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 48,
+    "title": "Currency scenario",
+    "prompt": "EUR 100 at 1.10 USD/EUR moves to 1.05 USD/EUR with no change in EUR value.",
+    "source_solution": "USD value moves from 110 to 105, a **\u22125 USD P&L**. Quote direction is essential.",
+    "review": "Numeric/formula alignment with direct rational or Decimal reference and/or linked source call"
+  },
+  {
+    "exercise": 49,
+    "title": "Rare-event plug-in error",
+    "prompt": "No losses occur in 100 paths. Does a plug-in SE of zero imply no uncertainty?",
+    "source_solution": "No. A suitable binomial interval recognizes uncertainty at the boundary; model and sampling assumptions remain important.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  },
+  {
+    "exercise": 50,
+    "title": "Review decision",
+    "prompt": "A result is reproducible and its sampling interval is narrow, but input volatility and dependence have not been reviewed. Is the model validated?",
+    "source_solution": "No. Reproducibility and sampling precision do not establish appropriate inputs, dependence or model suitability.",
+    "review": "Conceptual/design/interpretation alignment; no new implementation or statistical acceptance"
+  }
+]

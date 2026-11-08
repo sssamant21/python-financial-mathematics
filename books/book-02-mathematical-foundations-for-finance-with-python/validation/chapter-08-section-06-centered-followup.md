@@ -23,3 +23,5 @@ The first scope run stopped at check_difference_denominators.py: two Section8.6 
 Final scoped run:49 Chapter8 Python files compiled and39 check/test scripts passed; exact49 source/check blobs matched before/after. Fresh inventory591 Python/378 scripts/592 required Python-fixture blobs is not a full pass. V-124 remains latest full candidate Linux run until a fresh pinned refresh executes. Thirty-five selected COV categories remain partially addressed; none closed. Independent mathematical/editorial review, platform, resource, release and canonical acceptance remain open.
 
 Next substantive item: Section8.7 implicit helper circle/break-even numerical range and output/input contracts, followed by bond/exposure/centered-copy obligations. Broader COV-49 noisy/wrong-reference/resource cases remain open; do not repeat completed Section8.6 scaling examples.
+
+Corrected executable publication pin: `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`; all31 publication blobs verified, including the tested49-file Chapter8 scope. Concurrent unrelated main work preserved with expected-head lease.

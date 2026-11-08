@@ -1,0 +1,349 @@
+{
+  "executable_source_revision": "1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2",
+  "source_sha256": "04a487c4a384f7ca40a39ab15ba0a3f0ac30a949ae1cad22e3d87e59975ace62",
+  "linked_source_sha256": "930a87b1dfc3476db1dbd6edc044db2c99b67c000372edcb28040a4895caf05f",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "exercise_snippet.py"
+      ],
+      "returncode": 0,
+      "stdout": "mean: 99.96 estimated SE: 0.1406051812050259\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "monte_carlo_financial_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "model: three-state one-period; generator: random.Random\nseed: 42 paths: 10000 alpha: 0.75\n{'count': 10000, 'mean_terminal': 99.96, 'sample_sd': 14.060518120502591, 'standard_error_mean': 0.1406051812050259, 'loss_frequency': 0.2481, 'alpha': 0.75, 'var_nearest_rank': 0, 'es_fractional_tail': 19.848}\n",
+      "stderr": "test_bad_alpha (__main__.SimulatorTests.test_bad_alpha) ... ok\ntest_bad_count (__main__.SimulatorTests.test_bad_count) ... ok\ntest_es (__main__.SimulatorTests.test_es) ... ok\ntest_fractional_tail (__main__.SimulatorTests.test_fractional_tail) ... ok\ntest_known_mean (__main__.SimulatorTests.test_known_mean) ... ok\ntest_known_sd (__main__.SimulatorTests.test_known_sd) ... ok\ntest_loss_frequency (__main__.SimulatorTests.test_loss_frequency) ... ok\ntest_loss_sign (__main__.SimulatorTests.test_loss_sign) ... ok\ntest_nonfinite (__main__.SimulatorTests.test_nonfinite) ... ok\ntest_replay (__main__.SimulatorTests.test_replay) ... ok\ntest_support (__main__.SimulatorTests.test_support) ... ok\ntest_var (__main__.SimulatorTests.test_var) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "exercise_snippet.py",
+        "monte_carlo_financial_simulator.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "E1",
+      "actual": "Fraction(100, 1)",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "E2",
+      "actual": "Fraction(102, 1)",
+      "expected": "102",
+      "passed": true
+    },
+    {
+      "name": "E3",
+      "actual": "Fraction(105, 1)",
+      "expected": "105",
+      "passed": true
+    },
+    {
+      "name": "E4",
+      "actual": "Fraction(1, 4)",
+      "expected": "Fraction(1, 4)",
+      "passed": true
+    },
+    {
+      "name": "E9",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "E11",
+      "actual": "Fraction(1, 10)",
+      "expected": "Fraction(1, 10)",
+      "passed": true
+    },
+    {
+      "name": "E13",
+      "actual": "Fraction(99, 1)",
+      "expected": "99",
+      "passed": true
+    },
+    {
+      "name": "E14",
+      "actual": "Fraction(-1, 1)",
+      "expected": "-1",
+      "passed": true
+    },
+    {
+      "name": "E18",
+      "actual": "Fraction(2000, 21)",
+      "expected": "Fraction(2000, 21)",
+      "passed": true
+    },
+    {
+      "name": "E19",
+      "actual": "98",
+      "expected": "98",
+      "passed": true
+    },
+    {
+      "name": "E20",
+      "actual": "Fraction(1, 4)",
+      "expected": "Fraction(1, 4)",
+      "passed": true
+    },
+    {
+      "name": "E21",
+      "actual": "Fraction(200, 1)",
+      "expected": "200",
+      "passed": true
+    },
+    {
+      "name": "E23",
+      "actual": "0.07071067811865475",
+      "expected": "0.07071067811865475",
+      "passed": true
+    },
+    {
+      "name": "E25",
+      "actual": "Fraction(400, 1)",
+      "expected": "400",
+      "passed": true
+    },
+    {
+      "name": "E26 lower",
+      "actual": "Fraction(24927, 250)",
+      "expected": "Fraction(24927, 250)",
+      "passed": true
+    },
+    {
+      "name": "E26 upper",
+      "actual": "Fraction(25123, 250)",
+      "expected": "Fraction(25123, 250)",
+      "passed": true
+    },
+    {
+      "name": "E28",
+      "actual": "Fraction(1, 1)",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "E31",
+      "actual": "Fraction(1, 12)",
+      "expected": "Fraction(1, 12)",
+      "passed": true
+    },
+    {
+      "name": "E32",
+      "actual": "Fraction(3, 100)",
+      "expected": "Fraction(3, 100)",
+      "passed": true
+    },
+    {
+      "name": "E35",
+      "actual": "Fraction(1, 25)",
+      "expected": "Fraction(1, 25)",
+      "passed": true
+    },
+    {
+      "name": "E36",
+      "actual": "Fraction(23, 1250)",
+      "expected": "Fraction(23, 1250)",
+      "passed": true
+    },
+    {
+      "name": "E38",
+      "actual": "20",
+      "expected": "20",
+      "passed": true
+    },
+    {
+      "name": "E43",
+      "actual": "202400000",
+      "expected": "202400000",
+      "passed": true
+    },
+    {
+      "name": "E44",
+      "actual": "(10, 1)",
+      "expected": "(10, 1)",
+      "passed": true
+    },
+    {
+      "name": "E47",
+      "actual": "Fraction(-4, 25)",
+      "expected": "Fraction(-4, 25)",
+      "passed": true
+    },
+    {
+      "name": "E48",
+      "actual": "Fraction(-5, 1)",
+      "expected": "-5",
+      "passed": true
+    },
+    {
+      "name": "E12 decimal 80",
+      "actual": "0.09531017980432493",
+      "expected": "0.09531017980432487",
+      "passed": true
+    },
+    {
+      "name": "E16 decimal 80",
+      "actual": "106.18365465453596",
+      "expected": "106.18365465453596",
+      "passed": true
+    },
+    {
+      "name": "E17 decimal 80",
+      "actual": "104.08107741923882",
+      "expected": "104.08107741923882",
+      "passed": true
+    },
+    {
+      "name": "E22 decimal 80",
+      "actual": "0.1414213562373095",
+      "expected": "0.1414213562373095",
+      "passed": true
+    },
+    {
+      "name": "E33 decimal 80",
+      "actual": "105.12710963760242",
+      "expected": "105.1271096376024",
+      "passed": true
+    },
+    {
+      "name": "E12 decimal 120",
+      "actual": "0.09531017980432493",
+      "expected": "0.09531017980432487",
+      "passed": true
+    },
+    {
+      "name": "E16 decimal 120",
+      "actual": "106.18365465453596",
+      "expected": "106.18365465453596",
+      "passed": true
+    },
+    {
+      "name": "E17 decimal 120",
+      "actual": "104.08107741923882",
+      "expected": "104.08107741923882",
+      "passed": true
+    },
+    {
+      "name": "E22 decimal 120",
+      "actual": "0.1414213562373095",
+      "expected": "0.1414213562373095",
+      "passed": true
+    },
+    {
+      "name": "E33 decimal 120",
+      "actual": "105.12710963760242",
+      "expected": "105.1271096376024",
+      "passed": true
+    },
+    {
+      "name": "E39-42 VaR 0.75",
+      "actual": "20",
+      "expected": "20",
+      "passed": true
+    },
+    {
+      "name": "E39-42 ES 0.75",
+      "actual": "40",
+      "expected": "40",
+      "passed": true
+    },
+    {
+      "name": "E39-42 VaR 0.625",
+      "actual": "20",
+      "expected": "20",
+      "passed": true
+    },
+    {
+      "name": "E39-42 ES 0.625",
+      "actual": "33.333333333333336",
+      "expected": "33.333333333333336",
+      "passed": true
+    },
+    {
+      "name": "E39-42 VaR 0.8",
+      "actual": "40",
+      "expected": "40",
+      "passed": true
+    },
+    {
+      "name": "E39-42 ES 0.8",
+      "actual": "40",
+      "expected": "40",
+      "passed": true
+    },
+    {
+      "name": "lab sample mean 42",
+      "actual": "99.96",
+      "expected": "99.96",
+      "passed": true
+    },
+    {
+      "name": "lab sample SE 42",
+      "actual": "0.1406051812050259",
+      "expected": "0.1406051812050259",
+      "passed": true
+    },
+    {
+      "name": "lab sample mean 7",
+      "actual": "99.978",
+      "expected": "99.978",
+      "passed": true
+    },
+    {
+      "name": "lab sample SE 7",
+      "actual": "0.14164024073609724",
+      "expected": "0.14164024073609724",
+      "passed": true
+    }
+  ],
+  "replications": [
+    {
+      "seed": 42,
+      "report": {
+        "count": 10000,
+        "mean_terminal": 99.96,
+        "sample_sd": 14.060518120502591,
+        "standard_error_mean": 0.1406051812050259,
+        "loss_frequency": 0.2481,
+        "alpha": 0.75,
+        "var_nearest_rank": 0,
+        "es_fractional_tail": 19.848
+      }
+    },
+    {
+      "seed": 7,
+      "report": {
+        "count": 10000,
+        "mean_terminal": 99.978,
+        "sample_sd": 14.164024073609724,
+        "standard_error_mean": 0.14164024073609724,
+        "loss_frequency": 0.2513,
+        "alpha": 0.75,
+        "var_nearest_rank": 20,
+        "es_fractional_tail": 20
+      }
+    }
+  ],
+  "existing_unique_methods_rerun": 12,
+  "new_historical_methods": 0,
+  "limits": "50 chapter-wide answer records/12 lab records, not added to560 local answers; source/supplemental/conceptual scopes distinct; no confidence coverage/model/platform/independent acceptance"
+}
