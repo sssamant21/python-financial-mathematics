@@ -12,7 +12,7 @@ Seven self-contained labs complement the financial-mathematics books without dup
 
 | [06](06-tail-risk-bootstrap/README.md) | Rolling historical and normal VaR, CVaR, bootstrap uncertainty and breach diagnostics | Seeded synthetic / licensed input | `tail_risk.py` |
 
-| [07](07-multi-horizon-risk/README.md) | Horizon-aligned historical and parametric VaR/CVaR with non-overlapping forward outcomes | Seeded synthetic / optional licensed prices | `multi_horizon.py` |
+| [07](07-multi-horizon-risk/README.md) | Horizon-aligned historical/parametric VaR/CVaR, dependent bootstrap forecasts, and non-overlapping forward outcomes | Seeded synthetic / optional licensed prices | `multi_horizon.py` |
 
 ## Quick start (Windows PowerShell)
 
