@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-07  
-**Overall status:** In progress — V-108 full candidate Linux pass (574 files, 361 scripts, 575 required hashes), including Section 8.4 discrete-compounding scaling. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-109 full candidate Linux pass (575 files, 362 scripts, 576 required hashes), including Section 8.4 large period-count conversion. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 574/574 at `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`. [V-108](runtime-refresh-2026-11-07-r14.md). |
-| Automated script execution | Full candidate Linux pass | 361/361 at `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`; 575 required blobs verified before/after. [V-108](runtime-refresh-2026-11-07-r14.md). |
+| Python compilation | Full candidate Linux pass | 575/575 at `a93acb89609087281b4e1872c6420313ddf7adca`. [V-109](runtime-refresh-2026-11-07-r15.md). |
+| Automated script execution | Full candidate Linux pass | 362/362 at `a93acb89609087281b4e1872c6420313ddf7adca`; 576 required blobs verified before/after. [V-109](runtime-refresh-2026-11-07-r15.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -997,3 +997,11 @@ Next: [Section 8.4 discrete-compounding baseline](chapter-08-discrete-compoundin
 [V-108](runtime-refresh-2026-11-07-r14.md) at `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`: 574 files compiled, 361 scripts passed, 575 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [large integer period-count baseline](chapter-08-large-period-count-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-large-period-count-baseline.json). Count 10**400 is accepted by the positive-integer guard but base division raises OverflowError despite finite rounded-base expectations. Extend conversion while preserving already working base conventions; do not repeat completed power-scaling examples.
+
+## V-109 checkpoint — Section 8.4 large period counts
+
+[Large-count follow-up](chapter-08-large-period-count-followup.md): all 78 checks pass; forty-two baseline observations and a byte-identical replay retained. Fourteen base/value/sensitivity triples fail at the same original conversion point; this is not forty-two distinct defects. Independent Decimal count conversion and direct powers at 1600/2200 digits check conversion thresholds, huge counts with nonzero quotients and working 2^53+1 denominator rounding. The fallback is used only when float/int division overflows. Existing Section 8.4 and 74-case compounding suites pass.
+
+[V-109](runtime-refresh-2026-11-07-r15.md) at `a93acb89609087281b4e1872c6420313ddf7adca`: 575 files compiled, 362 scripts passed, 576 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [nested-power range baseline](chapter-08-nested-power-range-baseline.md), with [five exact-polynomial/actual probe pairs](chapter-08-nested-power-range-baseline.json). Actual finite outputs differ from one-rounding references and nonfinite outputs/errors are inconsistent; establish the accuracy/overflow contract before editing. Price/log-growth, other earlier copies and independent review remain open. Do not repeat completed count-conversion or compounding examples.
