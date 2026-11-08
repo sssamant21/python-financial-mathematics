@@ -1,0 +1,669 @@
+{
+  "source_sha256": "e3a80ba526dd1c9bc6a4348c92936d2e090cf049b6b0306f626677542f2973f8",
+  "listing_sha256": "137d024e676855b700632c62ea33c9c4c7045ff738a8a15b06754d13357c763a",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "generator": "random.Random / Mersenne Twister normalvariate",
+  "commands": [
+    {
+      "label": "exact demo/tests",
+      "args": [
+        "return_simulations.py"
+      ],
+      "returncode": 0,
+      "stdout": "simulation: {'count': 10000, 'mean_terminal': 106.1983037392661, 'mean_simple_return': 0.06198303739266091, 'standard_error_terminal': 0.21806875180228977, 'loss_frequency': 0.4237}\nanalytical mean: 106.18365465453596\n",
+      "stderr": "test_bad_count (__main__.ReturnTests.test_bad_count) ... ok\ntest_bad_initial (__main__.ReturnTests.test_bad_initial) ... ok\ntest_bad_volatility (__main__.ReturnTests.test_bad_volatility) ... ok\ntest_constant_summary (__main__.ReturnTests.test_constant_summary) ... ok\ntest_expectation (__main__.ReturnTests.test_expectation) ... ok\ntest_loss_threshold (__main__.ReturnTests.test_loss_threshold) ... ok\ntest_seed_replay (__main__.ReturnTests.test_seed_replay) ... ok\ntest_terminal_known (__main__.ReturnTests.test_terminal_known) ... ok\ntest_terminal_zero_return (__main__.ReturnTests.test_terminal_zero_return) ... ok\ntest_zero_volatility (__main__.ReturnTests.test_zero_volatility) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+      "existing_methods": 10,
+      "passed": true
+    },
+    {
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import return_simulations"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "compile",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "return_simulations.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 simple up",
+      "actual": "1/10",
+      "expected": "1/10",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 simple down",
+      "actual": "-1/10",
+      "expected": "-1/10",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 terminal",
+      "actual": "105",
+      "expected": "105",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4 profit",
+      "actual": "5",
+      "expected": "5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 zero price return",
+      "actual": "-1",
+      "expected": "-1",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 zero log conversion",
+      "actual": "0",
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 compounded return",
+      "actual": "-1/100",
+      "expected": "-1/100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10 discrete mean",
+      "actual": "0",
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 discrete variance",
+      "actual": "1/100",
+      "expected": "1/100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12 discrete SD",
+      "actual": "0.1",
+      "expected": "1/10",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 discrete loss",
+      "actual": "1/2",
+      "expected": "1/2",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 mean simple return",
+      "actual": "0.06183654654535962222468487717",
+      "expected": "0.06183654654535962222468487717",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 source expectation",
+      "actual": 106.18365465453596,
+      "expected": "106.1836546545359622224684877",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 median",
+      "actual": "104.0810774192388226757044758",
+      "expected": "104.0810774192388226757044758",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22 source deterministic terminal",
+      "actual": 104.08107741923882,
+      "expected": "104.0810774192388226757044758",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E23 zero drift volatility",
+      "actual": 100,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E26 sample SE example",
+      "actual": "1/5",
+      "expected": "1/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E27 fourfold N factor",
+      "actual": "0.5",
+      "expected": "1/2",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E33 discounted expectation",
+      "actual": "2000/21",
+      "expected": "2000/21",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7 log return Decimal",
+      "actual": 0.09531017980432487,
+      "expected": "0.09531017980432486004395212328076509222060536530864419918523980816300101423588423283905750291303649307",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed log",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed mean",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed median",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed simple return",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed discount",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E21 independently integrated central CDF rounded",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E24 exact threshold not loss",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "constant sample SE",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known sample return",
+      "actual": 0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known sample SE",
+      "actual": 5.773502691896257,
+      "expected": "5.7735026918962576450914878050195745564760175127012687601860232648397767230293334569371539558574952522520871380513556767665664836499965082627055183736479121617603107730076852735599160670036155830775500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "integer zero-log identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "integer zero-expectation identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "small return from integer outcomes",
+      "actual": 1e-18,
+      "expected": "1/1000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "tiny positive SE",
+      "actual": 1e-308,
+      "expected": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "large spread finite SE",
+      "actual": 8.95e+307,
+      "expected": "89500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E34 small log1p supplemental",
+      "actual": 1e-20,
+      "expected": "1E-20",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E35 small expm1 supplemental",
+      "actual": 1e-20,
+      "expected": "1E-20",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "scaled exponential extension high exponent",
+      "actual": 1.970071114017047e+126,
+      "expected": "1.970071114017046993888879352E+126",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "scaled exponential extension low exponent",
+      "actual": 5.075958897549457e-127,
+      "expected": "5.075958897549456765291809480E-127",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "reject huge drift",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative volatility",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject boolean drift",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject normal generated overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject count1",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject bool seed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject initial zero",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge initial",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject noniterable returns",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject bool return",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge log return",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal underflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary noniterable",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary huge initial",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary negative observation",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary bool observation",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary huge observation",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject summary overflow simple return",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject expectation huge int",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject expectation overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject expectation underflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "early positive exponent bound",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "early negative exponent bound",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "empty log return iterable",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "local RNG preserves global state",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "seed replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "sample mean independent arithmetic (42, 0.2)",
+      "actual": 106.1983037392661,
+      "expected": "1061983037392660908551/10000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample return independent arithmetic (42, 0.2)",
+      "actual": 0.06198303739266091,
+      "expected": "61983037392660908551/1000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample SE independent arithmetic (42, 0.2)",
+      "actual": 0.21806875180228977,
+      "expected": "0.21806875180228977947400864206454229174555260810207699979609284045839428863211533012339718104887136609869287350596954858587915081448668061463830707250937150738402692706615891474171097901971367905250683",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample strict loss count (42, 0.2)",
+      "actual": 0.4237,
+      "expected": "4237/10000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample mean independent arithmetic (43, 0.2)",
+      "actual": 106.34067423336751,
+      "expected": "106340674233367510891/1000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample return independent arithmetic (43, 0.2)",
+      "actual": 0.0634067423336751,
+      "expected": "6340674233367510891/100000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample SE independent arithmetic (43, 0.2)",
+      "actual": 0.21317643380242254,
+      "expected": "0.21317643380242254982229592983045635372226226827663889228527000904579325571734905414951628321519393021481343709240427247622252836541759120831172779898246021426219865272840110925883930246648541622552666",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample strict loss count (43, 0.2)",
+      "actual": 0.4171,
+      "expected": "4171/10000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample mean independent arithmetic (42, 0)",
+      "actual": 104.08107741923882,
+      "expected": "5204053870961941/50000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample return independent arithmetic (42, 0)",
+      "actual": 0.0408107741923882,
+      "expected": "204053870961941/5000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample SE independent arithmetic (42, 0)",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample strict loss count (42, 0)",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    }
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "sd_log": 0.2,
+      "count": 10000,
+      "summary": {
+        "count": 10000,
+        "mean_terminal": 106.1983037392661,
+        "mean_simple_return": 0.06198303739266091,
+        "standard_error_terminal": 0.21806875180228977,
+        "loss_frequency": 0.4237
+      },
+      "loss_count": 4237,
+      "log_stream_sha256": "dd454db517065a60d6134eea3d846a67971508132488338c2f26a2813a700ee2",
+      "analytical_mean": "106.1836546545359622224684877",
+      "limit": "actual source observations; sample arithmetic independent, statistical distribution or generator independence not certified"
+    },
+    {
+      "seed": 43,
+      "sd_log": 0.2,
+      "count": 10000,
+      "summary": {
+        "count": 10000,
+        "mean_terminal": 106.34067423336751,
+        "mean_simple_return": 0.0634067423336751,
+        "standard_error_terminal": 0.21317643380242254,
+        "loss_frequency": 0.4171
+      },
+      "loss_count": 4171,
+      "log_stream_sha256": "6f6a1a67be5ca243dd5139c5a20b85ad8b9dad63d21230a490f992db228a38f0",
+      "analytical_mean": "106.1836546545359622224684877",
+      "limit": "actual source observations; sample arithmetic independent, statistical distribution or generator independence not certified"
+    },
+    {
+      "seed": 42,
+      "sd_log": 0,
+      "count": 10000,
+      "summary": {
+        "count": 10000,
+        "mean_terminal": 104.08107741923882,
+        "mean_simple_return": 0.0408107741923882,
+        "standard_error_terminal": 0.0,
+        "loss_frequency": 0.0
+      },
+      "loss_count": 0,
+      "log_stream_sha256": "cd7f2b1ba83459e997f3d46936d99ee1753134b202f7ba8bb4f703dfe16eed9e",
+      "analytical_mean": "104.0810774192388226757044758",
+      "limit": "actual source observations; sample arithmetic independent, statistical distribution or generator independence not certified"
+    }
+  ],
+  "integrated_central_loss_probability": "0.4207402905608969769575620470436995655703655868188461174590062975665394534184332026121059519857489807",
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 10,
+    "new_historical_methods": 0
+  },
+  "model": {
+    "initial": 100,
+    "mean_log": ".04",
+    "sd_log": ".2",
+    "horizon": "one year",
+    "units": "fictional common currency; one-period dimensionless log returns",
+    "measure": "uncalibrated illustrative probability distribution, not market price or forecast"
+  },
+  "limits": "Central CDF series is a supplemental fixed-point oracle, not a tail-capable source API; F165 remains open. No rare-event/interval-coverage/independence/platform or independent model acceptance."
+}
