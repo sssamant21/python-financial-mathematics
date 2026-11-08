@@ -62,7 +62,14 @@ def _discrete_inputs(principal, periods_per_year, years, factor):
     if p < 0 or t < 0:
         raise ValueError("principal and years must be nonnegative")
     # Preserve the existing rounded nominal rate, division and base addition.
-    base = 1+nominal_rate(z)/periods_per_year
+    rate = nominal_rate(z)
+    try:
+        period_rate = rate/periods_per_year
+    except OverflowError:
+        # The count alone exceeds float conversion range. Its exact integer
+        # denominator still gives a finite quotient, since the rate is finite.
+        period_rate = float(Fraction(rate)/periods_per_year)
+    base = 1+period_rate
     if base <= 0:
         raise ValueError("compounding base must be positive")
     return p, t, base
