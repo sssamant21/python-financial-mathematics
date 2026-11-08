@@ -1,0 +1,586 @@
+{
+  "source_sha256": "45580a0453786696b2d3b94c4e891db0049b585b6691def9a761fffe0d42d9e4",
+  "listing_sha256": "078a7dbd5297c78c0068cc01c5f10dfb64669c891c8fb5d685f6f96a87b2a35c",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "label": "exact demo/tests",
+      "args": [
+        "scenario_analysis.py"
+      ],
+      "returncode": 0,
+      "stdout": "scenarios: [{'baseline': 100.0, 'terminal': 103.8, 'pnl': 3.799999999999997}, {'baseline': 100.0, 'terminal': 84.0, 'pnl': -16.0}, {'baseline': 100.0, 'terminal': 112.2, 'pnl': 12.200000000000003}]\nweighted: {'expected_terminal': 99.53999999999999, 'expected_pnl': -0.4600000000000004, 'loss_probability': 0.3}\n",
+      "stderr": "test_bad_length (__main__.ScenarioTests.test_bad_length) ... ok\ntest_bad_probabilities (__main__.ScenarioTests.test_bad_probabilities) ... ok\ntest_bad_return (__main__.ScenarioTests.test_bad_return) ... ok\ntest_base (__main__.ScenarioTests.test_base) ... ok\ntest_downside (__main__.ScenarioTests.test_downside) ... ok\ntest_fee (__main__.ScenarioTests.test_fee) ... ok\ntest_nonfinite (__main__.ScenarioTests.test_nonfinite) ... ok\ntest_upside (__main__.ScenarioTests.test_upside) ... ok\ntest_weighted (__main__.ScenarioTests.test_weighted) ... ok\ntest_zero_shock (__main__.ScenarioTests.test_zero_shock) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n",
+      "existing_methods": 10,
+      "passed": true
+    },
+    {
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import scenario_analysis"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "compile",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "scenario_analysis.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "base baseline",
+      "actual": 100.0,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "base terminal",
+      "actual": 103.8,
+      "expected": "519/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "base pnl",
+      "actual": 3.799999999999997,
+      "expected": "19/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "downside baseline",
+      "actual": 100.0,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "downside terminal",
+      "actual": 84.0,
+      "expected": "84",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "downside pnl",
+      "actual": -16.0,
+      "expected": "-16",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "upside baseline",
+      "actual": 100.0,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "upside terminal",
+      "actual": 112.2,
+      "expected": "561/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "upside pnl",
+      "actual": 12.200000000000003,
+      "expected": "61/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16-18 expected_terminal",
+      "actual": 99.53999999999999,
+      "expected": "4977/50",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16-18 expected_pnl",
+      "actual": -0.4600000000000004,
+      "expected": "-23/50",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16-18 loss_probability",
+      "actual": 0.3,
+      "expected": "3/10",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E1 baseline",
+      "actual": "100",
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 A base",
+      "actual": "63",
+      "expected": "63",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 B base",
+      "actual": "204/5",
+      "expected": "204/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 down A",
+      "actual": "48",
+      "expected": "48",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7 down B",
+      "actual": "36",
+      "expected": "36",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 source 1pp sensitivity",
+      "actual": 0.5999999999999943,
+      "expected": "3/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12 source 1bp sensitivity",
+      "actual": 0.006000000000000227,
+      "expected": "3/500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 100bp",
+      "actual": "1/100",
+      "expected": "1/100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 sequential return",
+      "actual": "-1/100",
+      "expected": "-1/100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E15 probability sum",
+      "actual": "1",
+      "expected": "1",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E21 source fee",
+      "actual": -2.0,
+      "expected": "-2",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22 source zero shock",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E23 bond baseline",
+      "actual": "2000/21",
+      "expected": "2000/21",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E24 bond shock",
+      "actual": "5000/53",
+      "expected": "5000/53",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E25 bond PnL",
+      "actual": "-1000/1113",
+      "expected": "-1000/1113",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E26 FX baseline",
+      "actual": "110",
+      "expected": "110",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E27 FX shocked",
+      "actual": "105",
+      "expected": "105",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 FX PnL",
+      "actual": "-5",
+      "expected": "-5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E36 total loss",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed rate baseline",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed rate shock",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed rate PnL",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "zero-probability loss does not contribute",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "strict PnL zero not loss",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "one-pass inputs",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "baseline identity large integer",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "terminal identity large integer",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "tiny positive PnL",
+      "actual": 0.0,
+      "expected": "1",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "tiny negative PnL",
+      "actual": 0.0,
+      "expected": "-1",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "tiny loss recognized in weighted summary",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "terminal fee integer identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "finite helper huge int returns false",
+      "actual": "OverflowError('int too large to convert to float')",
+      "expected": false,
+      "passed": false
+    },
+    {
+      "label": "normalization policy keeps all-loss probability exactly one",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "normalization policy constant expectation identity",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject exposures noniterable",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject returns noniterable",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject empty exposures",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject mismatched inputs",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative exposure",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject below total loss",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge exposure",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject huge return",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject huge fee",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject bool return",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative fee",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal underflow",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject results noniterable",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject probabilities noniterable",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject missing key",
+      "actual": "KeyError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject malformed result",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject huge result",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject huge probability",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject nonunit probability sum",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative probability",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject nonzero weighted underflow",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "external baseline contract not enforced",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "scenarios": [
+    {
+      "baseline": 100.0,
+      "terminal": 103.8,
+      "pnl": 3.799999999999997
+    },
+    {
+      "baseline": 100.0,
+      "terminal": 84.0,
+      "pnl": -16.0
+    },
+    {
+      "baseline": 100.0,
+      "terminal": 112.2,
+      "pnl": 12.200000000000003
+    }
+  ],
+  "weighted": {
+    "expected_terminal": 99.53999999999999,
+    "expected_pnl": -0.4600000000000004,
+    "loss_probability": 0.3
+  },
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 10,
+    "new_historical_methods": 0
+  },
+  "model": {
+    "exposures": [
+      60,
+      40
+    ],
+    "currency": "fictional common currency",
+    "horizon": "one unspecified common portfolio period; separate bond example one year",
+    "valuation_date": "no actual as-of date or market dataset supplied; execution date is not valuation date",
+    "returns": [
+      [
+        0.05,
+        0.02
+      ],
+      [
+        -0.2,
+        -0.1
+      ],
+      [
+        0.15,
+        0.08
+      ]
+    ],
+    "probabilities": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "fee_timing": "fixed end-period fee, subtracted once"
+  },
+  "limits": "Deterministic source scenarios and supplemental bond/FX calculations; no Monte Carlo source API, calibrated likelihood, joint-distribution or independent model acceptance. Common baseline/horizon externally required, not enforced. F28/F32/F165 retained."
+}
