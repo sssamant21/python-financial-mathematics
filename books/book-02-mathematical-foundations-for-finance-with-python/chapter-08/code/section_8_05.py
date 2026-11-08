@@ -85,7 +85,16 @@ def present_value_rate_derivative(payment, rate, years):
 
 def present_value_rate_shock(payment, rate, years, change):
     t, h = finite(years, "years"), finite(change, "change")
-    return present_value(payment, rate, years)*math.expm1(-t*h)
+    c, r, t = _present_value_inputs(payment, rate, years)
+    if c == 0 or t == 0 or h == 0:
+        # Algebraic zero with the sign of -c*t*h; no large product is formed.
+        return -0. * c * t * h
+    c, r, t, h = map(Fraction, (c, r, t, h))
+    gap = abs(t*h)
+    # Factor out the larger complete price before taking the difference.
+    if h > 0:
+        return _scaled_pv(-c, -r*t, gap)
+    return _scaled_pv(c, -(r+h)*t, gap)
 
 def log_return(start, end):
     s, e = finite(start, "start"), finite(end, "end")
