@@ -1,0 +1,103 @@
+{
+  "source_revision": "274ce4598c7a97d25f996a33512c1d8f5e176048",
+  "source_blob": "39268cf39d2ad15549b98a5bb6b3bb1698e2c329",
+  "observations": [
+    {
+      "args": [
+        5e-324,
+        -0.5,
+        2000
+      ],
+      "reference": [
+        9.733444573000164e+110,
+        -1.9466889146000326e+114
+      ],
+      "reference_zero_signs": [
+        null,
+        null
+      ],
+      "actual": [
+        "OverflowError",
+        "OverflowError"
+      ],
+      "actual_zero_signs": [
+        null,
+        null
+      ]
+    },
+    {
+      "args": [
+        2,
+        2,
+        375
+      ],
+      "reference": [
+        0,
+        -1.5e-323
+      ],
+      "reference_zero_signs": [
+        1,
+        null
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "actual_zero_signs": [
+        1,
+        -1
+      ]
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        -8.988465674311579e+307,
+        1e-323
+      ],
+      "reference": [
+        "unrepresentable",
+        -1.776356839400252e-15
+      ],
+      "reference_zero_signs": [
+        null,
+        null
+      ],
+      "actual": [
+        "inf",
+        "-inf"
+      ],
+      "actual_zero_signs": [
+        null,
+        null
+      ]
+    },
+    {
+      "args": [
+        0,
+        -8.988465674311579e+307,
+        8.988465674311579e+307
+      ],
+      "reference": [
+        0,
+        0
+      ],
+      "reference_zero_signs": [
+        1,
+        -1
+      ],
+      "actual": [
+        "nan",
+        "nan"
+      ],
+      "actual_zero_signs": [
+        null,
+        null
+      ]
+    }
+  ],
+  "reference_method": "Complete C*exp(-r*t) and -C*t*exp(-r*t) using Decimal 200/400 digits; references agree, with zero-payment algebraic identities and explicit zero signs. Unrepresentable final prices labeled without selecting next error policy.",
+  "pinned_probe_matched_local": true,
+  "required_source_dependency_blobs_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom decimal import Decimal,localcontext\nimport section_8_06 as s\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(T,-.5,2000.),(2.,2.,375.),(M,-M/2,2*T),(0.,-M/2,M/2)]\ndef ref(args,prec):\n with localcontext() as ctx:\n  ctx.prec=prec\n  c,r,t=map(Decimal.from_float,args)\n  if not c:return [0.,-0.]\n  v=c*(-r*t).exp();d=-t*v\n  return [float(z) if math.isfinite(float(z)) else \"unrepresentable\" for z in (v,d)]\ndef zs(x):return int(math.copysign(1,x)) if type(x) is float and x==0 else None\nrows=[]\nfor args in cases:\n a=ref(args,200);b=ref(args,400);assert a==b and list(map(zs,a))==list(map(zs,b))\n actual=[]\n for fn in (s.present_value,s.pv_rate_first):\n  try:\n   z=fn(*args);actual.append(z if math.isfinite(z) else repr(z))\n  except Exception as exc:actual.append(type(exc).__name__)\n rows.append(dict(args=args,reference=a,reference_zero_signs=list(map(zs,a)),actual=actual,actual_zero_signs=list(map(zs,actual))))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Four selected paired probes for distinct local Section 8.6 value/first-derivative helpers. These remain unfixed; curvature passes do not establish their contracts."
+}
