@@ -116,7 +116,10 @@ def stable_exponential_difference_quotient(x, step):
     x, h = finite(x, "x"), finite(step, "step")
     if h == 0:
         raise ValueError("step must be nonzero")
-    return math.exp(x)*math.expm1(h)/h
+    x, h = Fraction(x), Fraction(h)
+    # Divide only after complete coefficient/exponent/gap scaling.
+    exponent = x+h if h > 0 else x
+    return _scaled_pv(1/abs(h), exponent, abs(h))
 
 def centered_difference(function, x, step=1e-4):
     if not callable(function):
