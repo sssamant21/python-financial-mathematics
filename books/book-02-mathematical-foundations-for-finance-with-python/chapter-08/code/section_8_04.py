@@ -25,7 +25,16 @@ def chain_derivative(outer_derivative, inner, inner_derivative, x):
 
 def nested_power_derivative(x):
     x = finite(x, "x")
-    return 24*x*(3*x*x+2)**3
+    if x == 0:
+        return x
+    point = Fraction(x)
+    try:
+        result = float(24*point*(3*point*point+2)**3)
+    except OverflowError as exc:
+        raise OverflowError("nested derivative overflow") from exc
+    if not math.isfinite(result):
+        raise OverflowError("nested derivative overflow")
+    return result
 
 def rate_from_factor(z):
     return 0.03+0.002*finite(z, "factor")
