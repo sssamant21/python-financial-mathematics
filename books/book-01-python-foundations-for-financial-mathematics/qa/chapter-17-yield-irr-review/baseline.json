@@ -1,0 +1,499 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "8ce4eb804b8662f18d0f733c4cc2854e583834053e96ab6f46f359c9d28ce644",
+  "listing_sha256": "7eef0e15e58bb7e9d45f9b2523319bfcf2527bbed6ca059876ce8ccab66e5ad4",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 tests",
+      "args": [
+        "solving_yield_and_irr_problems.py"
+      ],
+      "returncode": 0,
+      "stdout": "3y 5% coupon price at 6% yield: 97.32698805053835\nIRR: {'root': 0.10000000000013635, 'residual': -1.240607616637135e-11, 'iterations': 41}\n",
+      "stderr": "test_01_npv (__main__.YieldIRRTests.test_01_npv) ... ok\ntest_02_irr (__main__.YieldIRRTests.test_02_irr) ... ok\ntest_03_par_bond (__main__.YieldIRRTests.test_03_par_bond) ... ok\ntest_04_discount_bond (__main__.YieldIRRTests.test_04_discount_bond) ... ok\ntest_05_premium_bond (__main__.YieldIRRTests.test_05_premium_bond) ... ok\ntest_06_yield (__main__.YieldIRRTests.test_06_yield) ... ok\ntest_07_zero_coupon (__main__.YieldIRRTests.test_07_zero_coupon) ... ok\ntest_08_multiple_irrs (__main__.YieldIRRTests.test_08_multiple_irrs) ... ok\ntest_09_bad_bracket (__main__.YieldIRRTests.test_09_bad_bracket) ... ok\ntest_10_bad_rate (__main__.YieldIRRTests.test_10_bad_rate) ... ok\ntest_11_xirr (__main__.YieldIRRTests.test_11_xirr) ... ok\ntest_12_price_monotonic (__main__.YieldIRRTests.test_12_price_monotonic) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import solving_yield_and_irr_problems"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "solving_yield_and_irr_problems.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy IRR example",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "IRR: 0.1306623862918075\nNPV residual: -7.105427357601002e-15\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 periodic IRR",
+      "passed": true,
+      "actual": 0.10000000000013635,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 two-year periodic IRR",
+      "passed": true,
+      "actual": 0.10000000000013635,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 zero NPV",
+      "passed": true,
+      "actual": 20.0,
+      "reference": "20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 tenth NPV",
+      "passed": true,
+      "actual": 4.132231404958667,
+      "reference": "500/121",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 upper bracket NPV",
+      "passed": true,
+      "actual": -8.333333333333329,
+      "reference": "-25/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab two-receipt IRR",
+      "passed": true,
+      "actual": 0.13066238629180588,
+      "reference": "0.130662386291807485258426274490749201023221424895565577943218836903758503342315157386739850823235705",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 zero-coupon price",
+      "passed": true,
+      "actual": 82.64462809917354,
+      "reference": "10000/121",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 rounded-price implied yield",
+      "passed": true,
+      "actual": 0.09999998735020199,
+      "reference": "0.099999987350000176529866727",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 par bond",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 coupon",
+      "passed": true,
+      "actual": "40",
+      "reference": "40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 clean plus accrued supplemental",
+      "passed": true,
+      "actual": "401/4",
+      "reference": "401/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E32 residual supplemental",
+      "passed": true,
+      "actual": "1/100000",
+      "reference": "1/100000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E33 half-width supplemental",
+      "passed": true,
+      "actual": "1/20000000000",
+      "reference": "1/20000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E36 duration supplemental",
+      "passed": true,
+      "actual": "2",
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "dated annual XNPV",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "dated annual XIRR",
+      "passed": true,
+      "actual": 0.10000000000013635,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "dated 182-day XIRR",
+      "passed": true,
+      "actual": 0.21063382153783994,
+      "reference": "0.210633821537083935436760005541181379639110482425725627458253976946070021122226631672073288069550077",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F161 periodic integer cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F161 periodic tiny rate",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F161 periodic power overflow",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')",
+      "reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "label": "F161 finite bond after coupon overflow",
+      "passed": false,
+      "exception": "ValueError('cash flows must be finite')",
+      "reference": "300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/11"
+    },
+    {
+      "label": "F161 dated integer cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F161 dated tiny rate",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F161 dated huge-rate exponent",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')",
+      "reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "label": "F161 wide midpoint",
+      "passed": false,
+      "exception": "ValueError('nonfinite midpoint')",
+      "reference": "0"
+    },
+    {
+      "label": "bond rational repricing 0.04",
+      "passed": true,
+      "actual": 102.77509103322713,
+      "reference": "1806375/17576",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "bond rational repricing 0.05",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "bond rational repricing 0.06",
+      "passed": true,
+      "actual": 97.32698805053835,
+      "reference": "14489750/148877",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 E10 E14 price direction",
+      "passed": true,
+      "prices": [
+        102.77509103322713,
+        100.0,
+        97.32698805053835
+      ]
+    },
+    {
+      "label": "lab recover six-percent YTM",
+      "passed": true,
+      "actual": 0.06000000000040018,
+      "reference": "3/50",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E20 separate IRR bracket 0.05",
+      "passed": true,
+      "actual": 0.1000000000007276,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E20 substitution 1/10",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E20 separate IRR bracket 0.15",
+      "passed": true,
+      "actual": 0.2000000000007276,
+      "reference": "1/5",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E20 substitution 1/5",
+      "passed": true,
+      "actual": 1.4210854715202004e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "F161 all-zero periodic IRR",
+      "passed": false,
+      "actual": "{'root': -0.9, 'residual': 0.0, 'iterations': 0}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 all-zero dated IRR",
+      "passed": false,
+      "actual": "{'root': -0.9, 'residual': 0.0, 'iterations': 0}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 same-date cancelling XIRR",
+      "passed": false,
+      "actual": "{'root': -0.9, 'residual': 0.0, 'iterations': 0}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 dated generator rejected explicitly",
+      "passed": false,
+      "actual": "{'root': 1, 'residual': 0.0, 'iterations': 0}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 datetime base rejected explicitly",
+      "passed": false,
+      "actual": "-1.4210854715202004e-14",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 malformed dated flow",
+      "passed": true,
+      "exception": "ValueError('too many values to unpack (expected 2)')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 bad periodic rate",
+      "passed": true,
+      "exception": "ValueError('rate must be finite and > -1')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 bad string bound",
+      "passed": false,
+      "exception": "TypeError(\"'<=' not supported between instances of 'str' and 'int'\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 unreportable positive PV",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 all negative no IRR",
+      "passed": true,
+      "exception": "ValueError('endpoints do not bracket a sign change')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 no sign change",
+      "passed": true,
+      "exception": "ValueError('endpoints do not bracket a sign change')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 iteration budget",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F161 coordinate stagnation",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F161 noncallable",
+      "passed": false,
+      "exception": "TypeError(\"'NoneType' object is not callable\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F161 huge integer input",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "E29 leap-year XIRR",
+      "passed": true,
+      "actual": 0.09971358593497817,
+      "reference": "0.099713585934141241287216920352387027070528184272520643159877768677160057162166202464188725171097132",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "dated pre-base annual amount",
+      "passed": true,
+      "actual": 110.0,
+      "reference": "110",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "dated unordered duplicate aggregation",
+      "passed": false,
+      "actual": -28.000000000000014,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "dated fractional exponent repricing",
+      "passed": true,
+      "actual": 104.89457915753675,
+      "reference": "104.8945791575367632151930451",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E30 exact IRR endpoint",
+      "passed": false,
+      "exception": "ValueError('endpoints do not bracket a sign change')",
+      "reference": "1/10"
+    },
+    {
+      "label": "lab independent repricing at solved rate",
+      "passed": true,
+      "actual": 2.0860927311668753e-13,
+      "reference": "0",
+      "absolute_tolerance": 1e-09,
+      "relative_tolerance": 0
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "model": {
+    "periodic_flows": [
+      -100,
+      60,
+      60
+    ],
+    "bond": {
+      "face": 100,
+      "coupon_rate": 0.05,
+      "years": 3,
+      "prices": [
+        102.77509103322713,
+        100.0,
+        97.32698805053835
+      ]
+    },
+    "dated_flows": [
+      [
+        "2025-01-01",
+        -100
+      ],
+      [
+        "2026-01-01",
+        110
+      ]
+    ],
+    "day_count": "ACT/365 fixed",
+    "units": "fictional common currency and annual effective rates",
+    "timing": "t0 initial plus exact annual period ends; dated case uses actual elapsed calendar days",
+    "irr_result": {
+      "root": 0.13066238629180588,
+      "residual": 1.9895196601282805e-13,
+      "iterations": 38
+    }
+  }
+}
