@@ -1,0 +1,15 @@
+# Section 8.5 exponential-derivative scaling follow-up
+
+Baseline `18b6240459c2480a3bb54793c080177985d0dc9b`, original Section 8.5 blob `f4354c95dc4c355b20ed2407f9f0e706a7c75e83`. Corrected executable tree `8a23628022d832fbd80422aaf6ca582b28917de6`. [Exact dependencies, retained failures, replay and zero-sign evidence](chapter-08-exponential-derivative-range-followup.json).
+
+**34 checks pass**, with fourteen baseline mismatches and a byte-identical replay. Thirteen selected mismatches involve lost finite results, zero identities or nonfinite final outputs; one ordinary finite difference is reconciled under the explicit complete-expression convention, not claimed as a violation of a prior one-rounding requirement. Existing Section 8.5 reference checks pass.
+
+For 23 explicit triples, the independent oracle evaluates the log amplitude ln|scale|+ln|growth|+growth·x at 1600 and 2200 digits and restores its sign; selected roundings agree. Zero/product special cases and extreme-exponent bounds are independently derived. A retained-defaults check and ten invalid-input/validation observations complete the 34. Production instead combines rational coefficient/exponent products before calling the shared exponential kernel. The represented product growth·x is exact at this stage, rather than prematurely rounded as in the old expression.
+
+Cases cover positive/negative scales and growth, coefficient overflow with exponential decay, coefficient underflow with exponential growth, signed zero scale/growth, tiny values, genuine final overflow and ordinary values. All inputs are validated before zero identities. Nonfinite final output raises ValueError consistently with the shared scaled-result policy; type/domain input errors remain unchanged.
+
+For nonzero finite scale and growth, coefficient magnitude lies between 2^-2148 and 2^2048. Neither bound can offset the shared kernel's conservative log-exponent cutoffs ±10000. The kernel uses precision 1300; selected agreement with higher-precision log references is not a universal transcendental rounding proof. Explicit zero-sign flags and raw stdout hashes are retained because generic numeric JSON serialization may normalize negative zero.
+
+Run `python check_exponential_derivative_range.py` from `chapter-08/code`. For baseline replay retrieve the original Section 8.5 source at the baseline revision into a separate directory and pass that directory as the corrected checker's sole argument. The requested source must exist; Section 8.1 remains the pinned unchanged dependency. Original source hash verified. Baseline/replay exit 1 with identical raw stdout, corrected and existing section checks exit 0. No numerical checker correction was needed in this batch.
+
+[V-112 full runtime](runtime-refresh-2026-11-07-r18.md). Next: [logarithm-derivative quotient/domain baseline](chapter-08-logarithm-derivative-range-baseline.md). Other Section 8.5 helpers/copies and independent review remain open under COV-51. Thirty-five selected categories remain partial, none closed. Independent reviewer, supported-platform, release and canonical approval remain pending.
