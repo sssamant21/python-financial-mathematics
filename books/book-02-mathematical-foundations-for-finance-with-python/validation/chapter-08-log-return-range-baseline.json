@@ -1,0 +1,58 @@
+{
+  "source_revision": "63ff224ef85691be6a513db55f27c3f567889f76",
+  "source_blob": "49ab0874ff725e3138c4e36d6dd4f66663d9341c",
+  "observations": [
+    {
+      "start": 1.7976931348623157e+308,
+      "end": 5e-324,
+      "expected": -1454.2227848147652,
+      "actual": "ValueError"
+    },
+    {
+      "start": 5e-324,
+      "end": 1.7976931348623157e+308,
+      "expected": 1454.2227848147652,
+      "actual": "inf"
+    },
+    {
+      "start": 1e+300,
+      "end": 1e-300,
+      "expected": -1381.5510557964274,
+      "actual": "ValueError"
+    },
+    {
+      "start": 5e-324,
+      "end": 1,
+      "expected": 744.4400719213812,
+      "actual": "inf"
+    },
+    {
+      "start": 1.7976931348623157e+308,
+      "end": 8.988465674311579e+307,
+      "expected": -0.6931471805599453,
+      "actual": -0.6931471805599453
+    },
+    {
+      "start": 1,
+      "end": 1.0000000000000002,
+      "expected": 2.2204460492503128e-16,
+      "actual": 2.2204460492503128e-16
+    },
+    {
+      "start": 1,
+      "end": 0.9999999999999999,
+      "expected": -1.1102230246251565e-16,
+      "actual": -1.1102230246251565e-16
+    },
+    {
+      "start": 5e-324,
+      "end": 5e-324,
+      "expected": 0,
+      "actual": 0
+    }
+  ],
+  "reference_method": "Independent Decimal ln(end)-ln(start) at 200/400 digits; both references agree. Finite positive binary64 price inputs have finite model log returns.",
+  "pinned_probe_matched_local": true,
+  "runnable_probe": "import math,json,sys\nfrom decimal import Decimal,localcontext\nimport section_8_05 as s\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(M,T),(T,M),(1e300,1e-300),(T,1.),(M,M/2),(1.,math.nextafter(1.,2.)),(1.,math.nextafter(1.,0.)),(T,T)]\nrows=[]\nfor a,b in cases:\n refs=[]\n for prec in (200,400):\n  with localcontext() as ctx:\n   ctx.prec=prec\n   refs.append(float(Decimal.from_float(b).ln()-Decimal.from_float(a).ln()))\n assert refs[0]==refs[1]\n try:\n  actual=s.log_return(a,b)\n  if not math.isfinite(actual):actual=repr(actual)\n except Exception as exc:actual=type(exc).__name__\n rows.append(dict(start=a,end=b,expected=refs[0],actual=actual))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Eight selected observations: four range failures and four retained ordinary/near-unity/equal-price controls. Not fixed; next-batch baseline."
+}
