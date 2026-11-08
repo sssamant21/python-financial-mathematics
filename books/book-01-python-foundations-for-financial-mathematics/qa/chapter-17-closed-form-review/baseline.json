@@ -1,0 +1,558 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "41cac65527d03a0dcdbbe2c80ad7532ede79d0ec077e99d247192b668f4b95b5",
+  "listing_sha256": "604676612a493c75efdfa791d4cd30afd4bcf342e5f1099448f8704fa6f920e1",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "closed_form_vs_numerical_solutions.py"
+      ],
+      "returncode": 0,
+      "stdout": "Closed-form rate: 0.09999999999999999\nNumerical IRR: 0.10000000000013635\nAnnuity cross-check: 432.94766706308195 432.9476670630819\n",
+      "stderr": "test_01_fv (__main__.Tests.test_01_fv) ... ok\ntest_02_inverse (__main__.Tests.test_02_inverse) ... ok\ntest_03_npv (__main__.Tests.test_03_npv) ... ok\ntest_04_irr (__main__.Tests.test_04_irr) ... ok\ntest_05_quadratic (__main__.Tests.test_05_quadratic) ... ok\ntest_06_annuity (__main__.Tests.test_06_annuity) ... ok\ntest_07_zero_rate (__main__.Tests.test_07_zero_rate) ... ok\ntest_08_integral (__main__.Tests.test_08_integral) ... ok\ntest_09_convergence (__main__.Tests.test_09_convergence) ... ok\ntest_10_bad_bracket (__main__.Tests.test_10_bad_bracket) ... ok\ntest_11_bad_rate (__main__.Tests.test_11_bad_rate) ... ok\ntest_12_multiple_roots (__main__.Tests.test_12_multiple_roots) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import closed_form_vs_numerical_solutions"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "closed_form_vs_numerical_solutions.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 source future value",
+      "passed": true,
+      "actual": 121.00000000000001,
+      "independent_reference": "121",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 source inverse rate",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4 source zero-rate annuity",
+      "passed": true,
+      "actual": 500.0,
+      "independent_reference": "500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F159 tiny implied rate from integer amounts",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "1/1000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F159 extreme ratio implied rate finite",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F159 future value avoids power overflow",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F159 zero principal avoids irrelevant power overflow",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F159 tiny NPV retained",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F159 NPV avoids power overflow",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F159 quadrature finite after accumulation",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F159 wide-bracket midpoint stable",
+      "passed": false,
+      "exception": "ValueError('nonfinite midpoint')"
+    },
+    {
+      "label": "E8 source single IRR",
+      "passed": true,
+      "actual": 0.10000000000013635,
+      "independent_reference": "1/10",
+      "absolute_rate_tolerance": "1e-12"
+    },
+    {
+      "label": "E3 supplemental discount inverse",
+      "passed": true,
+      "actual": 100.0,
+      "independent_reference": "100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 exact rational annuity expectation",
+      "passed": true,
+      "actual": 432.94766706308195,
+      "independent_reference": "1768202000/4084101",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 independent direct sum expectation",
+      "passed": true,
+      "actual": 432.9476670630819,
+      "independent_reference": "1768202000/4084101",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source annuity annuity_pv (1e-12, 5)",
+      "passed": true,
+      "actual": 499.99999999849996,
+      "independent_reference": "500000000001000000000001000000000000500000000000100000000000000/1000000000005000000000010000000000010000000000005000000000001",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source annuity annuity_pv_sum (1e-12, 5)",
+      "passed": true,
+      "actual": 499.9999999984999,
+      "independent_reference": "500000000001000000000001000000000000500000000000100000000000000/1000000000005000000000010000000000010000000000005000000000001",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source annuity annuity_pv (-0.5, 1100)",
+      "passed": false,
+      "exception": "OverflowError('math range error')"
+    },
+    {
+      "label": "source annuity annuity_pv_sum (-0.5, 1100)",
+      "passed": false,
+      "exception": "ZeroDivisionError('float division by zero')"
+    },
+    {
+      "label": "source annuity annuity_pv (1e+308, 5)",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source annuity annuity_pv_sum (1e+308, 5)",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "E7/E12 original NPV substitution 0.1",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "absolute_dollar_tolerance": 1e-12
+    },
+    {
+      "label": "E7/E12 original NPV substitution 0.2",
+      "passed": true,
+      "actual": 1.4210854715202004e-14,
+      "absolute_dollar_tolerance": 1e-12
+    },
+    {
+      "label": "lab separate bracket (0.05, 0.15)",
+      "passed": true,
+      "actual": 0.1000000000007276,
+      "reference": "1/10"
+    },
+    {
+      "label": "lab separate bracket (0.15, 0.25)",
+      "passed": true,
+      "actual": 0.2000000000007276,
+      "reference": "1/5"
+    },
+    {
+      "label": "source quadratic root (1, -3, 0)",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1, -3, 1)",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1e+200, -3e+200, 0)",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1e+200, -3e+200, 1)",
+      "passed": false,
+      "actual": "nan",
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1e-200, -3e-200, 0)",
+      "passed": false,
+      "actual": 1.5,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1e-200, -3e-200, 1)",
+      "passed": false,
+      "actual": 1.5,
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1, 1e+308, 0)",
+      "passed": false,
+      "actual": "-inf",
+      "independent_reference": "-1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1, 1e+308, 1)",
+      "passed": false,
+      "actual": -0.0,
+      "independent_reference": "-1e-308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1, -1e+16, 0)",
+      "passed": true,
+      "actual": 1e-16,
+      "independent_reference": "1e-16",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "source quadratic root (1, -1e+16, 1)",
+      "passed": true,
+      "actual": 1e+16,
+      "independent_reference": "1e+16",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "quadratic zero-linear coefficient negative root",
+      "passed": true,
+      "actual": -1.0,
+      "independent_reference": "-1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "quadratic zero-linear coefficient positive root",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "quadratic repeated root",
+      "passed": true
+    },
+    {
+      "label": "lab numerical sqrt2 independent error",
+      "passed": true,
+      "actual": 1.4142135623724243,
+      "reference": "sqrt(2)"
+    },
+    {
+      "label": "E14 supplemental midpoint",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E15 supplemental ten-halving width",
+      "passed": true,
+      "actual": 0.001953125,
+      "independent_reference": "1/512",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 supplemental Newton step",
+      "passed": true,
+      "actual": 1.5,
+      "independent_reference": "3/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22/E23 finite trapezoid 10",
+      "passed": true,
+      "actual": 0.3350000000000001,
+      "independent_reference": "67/200",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E22/E23 finite trapezoid 20",
+      "passed": true,
+      "actual": 0.33375000000000005,
+      "independent_reference": "267/800",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20/E21 source linear integral",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "quadrature error shrinks by factor four",
+      "passed": true
+    },
+    {
+      "label": "E26 supplemental portfolio variance",
+      "passed": true,
+      "actual": 0.0325,
+      "independent_reference": "13/400",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E33 float example remains approximate",
+      "passed": true,
+      "scope": "binary-float demonstration, not a source financial-result policy claim"
+    },
+    {
+      "label": "E11 no real roots rejects",
+      "passed": true,
+      "exception": "ValueError('no real roots')"
+    },
+    {
+      "label": "F159 tiny negative discriminant not erased",
+      "passed": false,
+      "actual": "(0.0, 0.0)"
+    },
+    {
+      "label": "F159 future-value underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F159 covariance-like quadratic unreportable root rejected",
+      "passed": false,
+      "actual": "(-inf, -0.0)"
+    },
+    {
+      "label": "F159 zero-cashflow IRR nonidentifiable",
+      "passed": false,
+      "actual": "-0.9"
+    },
+    {
+      "label": "F159 huge integer input ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "F159 finite callback bool only rejected",
+      "passed": true,
+      "exception": "ValueError('nonfinite endpoint')"
+    },
+    {
+      "label": "F159 unreportable quadrature rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "E17 bad bracket rejected",
+      "passed": true,
+      "exception": "ValueError('no sign-changing bracket')"
+    },
+    {
+      "label": "invalid rate rejected",
+      "passed": true,
+      "exception": "ValueError('rate > -1 and cash flows required')"
+    },
+    {
+      "label": "invalid periods rejected",
+      "passed": true,
+      "exception": "ValueError('invalid annuity inputs')"
+    },
+    {
+      "label": "F159 exhausted coordinates report failure",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit reached')"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "cashflows": [
+      -100,
+      110
+    ],
+    "principal": 100,
+    "future": 121,
+    "periods": 2,
+    "annuity_payment": 100,
+    "annuity_rate": 0.05,
+    "annuity_periods": 5,
+    "annuity_closed": 432.94766706308195,
+    "annuity_direct": 432.9476670630819,
+    "other_annuity_cases": [
+      {
+        "payment": 100,
+        "rate": 1e-12,
+        "periods": 5,
+        "closed": 499.99999999849996,
+        "direct": 499.9999999984999
+      },
+      {
+        "rate": -0.5,
+        "periods": 1100,
+        "error": "OverflowError('math range error')"
+      },
+      {
+        "rate": 1e+308,
+        "periods": 5,
+        "error": "OverflowError(34, 'Numerical result out of range')"
+      }
+    ],
+    "multiple_irr": [
+      0.1000000000007276,
+      0.2000000000007276
+    ],
+    "quadratics": [
+      {
+        "coefficients": [
+          1,
+          -3,
+          2
+        ],
+        "roots": [
+          1.0,
+          2.0
+        ]
+      },
+      {
+        "coefficients": [
+          1e+200,
+          -3e+200,
+          2e+200
+        ],
+        "roots": [
+          "nan",
+          "nan"
+        ]
+      },
+      {
+        "coefficients": [
+          1e-200,
+          -3e-200,
+          2e-200
+        ],
+        "roots": [
+          1.5,
+          1.5
+        ]
+      },
+      {
+        "coefficients": [
+          1,
+          1e+308,
+          1
+        ],
+        "roots": [
+          "-inf",
+          -0.0
+        ]
+      },
+      {
+        "coefficients": [
+          1,
+          -1e+16,
+          1
+        ],
+        "roots": [
+          1e-16,
+          1e+16
+        ]
+      }
+    ],
+    "quadratic_integrals": [
+      0.3350000000000001,
+      0.33375000000000005
+    ],
+    "units": "fictional USD principal/period-end payments; dimensionless periodic rates",
+    "timing": "equally spaced periods, initial t0 and end-of-period future flows",
+    "dates": null,
+    "scope": "standard-library benchmarks, no actual market calibration or SciPy backend",
+    "fixture_sha256": "c573d54b51c10a3c8acb189a87a7e40e448ef18112e52bfb4f42f55d926fc89c"
+  }
+}
