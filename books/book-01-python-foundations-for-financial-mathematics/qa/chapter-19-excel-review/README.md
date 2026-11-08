@@ -86,3 +86,5 @@ Actual serialized fixtures cover1900/1904 workbook date systems,hidden rows,blan
 Next: Section19.5 APIs and Financial Data formal workflow/local-answer review;broader Book1 validation remains in progress.
 
 Dependency prerequisite:openpyxl3.1.5 was already installed;the installation command was not rerun. Native Excel recalculation/UI/platform checks remain unexecuted.
+
+Corrected executable/source revision:`9079c61bf30d0223278e740c0fbbb617f8c4b35d`. [Publication verification](publication-verification.json) pins tested input identities andverified source tree;the following metadata commit does not change these executed sources.
