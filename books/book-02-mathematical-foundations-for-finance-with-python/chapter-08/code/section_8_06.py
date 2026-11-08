@@ -1,5 +1,7 @@
 """Section 8.6: higher derivatives, curvature, and PV convexity."""
 import math
+from fractions import Fraction
+from section_8_01 import _scaled_pv
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -62,7 +64,13 @@ def pv_rate_first(payment, rate, years):
 
 def pv_rate_second(payment, rate, years):
     t = finite(years, "years")
-    return t*t*present_value(payment, rate, years)
+    c, r, t = finite(payment, "payment"), finite(rate, "rate"), finite(years, "years")
+    if c < 0 or t < 0:
+        raise ValueError("payment and years must be nonnegative")
+    if c == 0 or t == 0:
+        # Sign of c*t*t, without squaring a large or tiny horizon first.
+        return math.copysign(0.0, c)
+    return _scaled_pv(Fraction(c)*Fraction(t)**2, -Fraction(r)*Fraction(t))
 
 def pv_shock(payment, rate, years, shock, order=2):
     h, t = finite(shock, "shock"), finite(years, "years")
