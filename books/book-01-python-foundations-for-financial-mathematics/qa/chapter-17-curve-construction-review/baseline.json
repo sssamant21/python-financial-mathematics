@@ -1,0 +1,398 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "dff416dd933c9ae5763bfd0cdc14a08d898c77d06ca7a36933326d320b1eae8b",
+  "listing_sha256": "6e3e8cf90d37b1bfe203533c2750219611972cc49b7743b2c5e31a7a5eb76f91",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "curve_construction.py"
+      ],
+      "returncode": 0,
+      "stdout": "DF 2.5y: 0.8759029341062031\nBond PV: 99.81187608953738\n",
+      "stderr": "test_01_discount (__main__.CurveTests.test_01_discount) ... ok\ntest_02_zero (__main__.CurveTests.test_02_zero) ... ok\ntest_03_node (__main__.CurveTests.test_03_node) ... ok\ntest_04_midpoint (__main__.CurveTests.test_04_midpoint) ... ok\ntest_05_flat_forward (__main__.CurveTests.test_05_flat_forward) ... ok\ntest_06_cashflow (__main__.CurveTests.test_06_cashflow) ... ok\ntest_07_bootstrap_one (__main__.CurveTests.test_07_bootstrap_one) ... ok\ntest_08_bootstrap_two (__main__.CurveTests.test_08_bootstrap_two) ... ok\ntest_09_unsorted (__main__.CurveTests.test_09_unsorted) ... ok\ntest_10_outside (__main__.CurveTests.test_10_outside) ... ok\ntest_11_bad_bootstrap (__main__.CurveTests.test_11_bad_bootstrap) ... ok\ntest_12_negative_rate (__main__.CurveTests.test_12_negative_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import curve_construction"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "curve_construction.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy bootstrap snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "Bootstrapped D(2): 0.9071428571428571\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy independent bootstrap DF",
+      "passed": true,
+      "actual": 0.9071428571428571,
+      "reference": "127/140",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy independent rational repricing",
+      "passed": true,
+      "actual": "199999999999999991/2000000000000000",
+      "reference": "100",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E1 source discount",
+      "passed": true,
+      "actual": 0.9048374180359595,
+      "reference": "0.9048374180359595731642490594464366211947053609804009520562573170557799653442483610125034460360904572384787453146483184977489081612387900951892794312557248399318523139860115705012439666105039449066273807537937177461582470033208910360687511714588679788774740419813310766773788169878446156545776278626483275866531621102085462527548956338260029958848753279549866025870896186845821999160425711307569519054",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 source zero",
+      "passed": true,
+      "actual": 0.04999999999999997,
+      "reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 source negative rate",
+      "passed": true,
+      "actual": 1.0202013400267558,
+      "reference": "1.020201340026755810160143920",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 supplemental single PV",
+      "passed": true,
+      "actual": "90",
+      "reference": "90",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 source coupon PV",
+      "passed": true,
+      "actual": 99.81187608953738,
+      "reference": "99.81187608953737122944220469849207465558392337153168282402421645991210713325017652749336683733976588026984441890781861733557553237173165208283987181475673712223631398984355503587445065372390352235701144781445701593320016360252113522010936285123977676823895174315664015368379683632368638137675081914728236738689585213780816403572653113586161328415609023114911155877885488069648805942035137771639353526",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 one-year bootstrap",
+      "passed": true,
+      "actual": 0.95,
+      "reference": "19/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 two-year bootstrap",
+      "passed": true,
+      "actual": 0.9071428571428571,
+      "reference": "127/140",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab bootstrapped zero recovery",
+      "passed": true,
+      "actual": 0.048727668075356514,
+      "reference": "0.04872766807535651274656775593471405521988861432240182785306642627068041633127054294181195553569258937729045615781605698672762727974669420020911068375724214240041329817787182027561681224345732062254505592771434118575458406497412991742471952032495845767380205864990466918303082875603372309759396205816848538024471636862828033511160723215282245014906585835950458201530756913671623554429768681899362032987",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab two-year bond repricing",
+      "passed": true,
+      "actual": "199999999999999991/2000000000000000",
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab three-node interpolation",
+      "passed": true,
+      "actual": 0.8759029341062031,
+      "reference": "0.8759029341062031733060961483941335704979499310147265251016539249299310962264257606639868793695550985051322904679020431094534670095572063664782394283531833588565941543244581300125846211194964435547048829289425194875648914478875257070791542286486520384220265511363010181635861089916443742214810006719824367528842200050844632599274454986025071179894015557469738384661959235800272485644299119838560188009",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 average forward",
+      "passed": true,
+      "actual": 0.059999999999999803,
+      "reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 negative forward",
+      "passed": true,
+      "actual": -0.019999999999999938,
+      "reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E35 parallel-zero-bump price",
+      "passed": true,
+      "actual": 99.79239603308989,
+      "reference": "99.79239603308988222835785168053783726224188987841169253316619915986790814704105506116225940650720607564440754588809767205634345846037529276349554824699055404489185361325804212014390210152725067261391582974625433515253331032160174884116535097630118837531626900980797664226311532344858598364396845717039128017742762023549635931563412721579137473579769922581505177064648512555753120119661762404310305830",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F167 integer cashflow cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F167 cashflow accumulation avoids overflow",
+      "passed": false,
+      "exception": "OverflowError('intermediate overflow in fsum')",
+      "reference": "1"
+    },
+    {
+      "label": "F167 discount underflow offset before PV reporting",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "3.667874584177687213455495654260798215469634226612640705069151310903542448310183622525663193492234050522686942648268458091563051359388853898198378621294703268579785645516375784327119837975447259146845024135882968934604687271161141673034818611933286388839739004218693567880247406915097576615402625376740051342548712650360235135655578416475416777656821948393972897521185001583935991772677475245798408155E-40",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F167 log-node products cancel before exponential",
+      "passed": false,
+      "actual": "nan",
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F167 finite two-year bootstrap despite denominator overflow",
+      "passed": false,
+      "exception": "ValueError('nonpositive bootstrapped discount')",
+      "reference": "1/4"
+    },
+    {
+      "label": "F167 bootstrap integer numerator retained",
+      "passed": true,
+      "actual": 1e-18,
+      "reference": "1/1000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F167 exact-ratio tiny forward",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "9.999999999999999995000000000000000003333333333333333330833333333333333335333333333333333331666666666666666668095238095238095236845238095238095239206349206349206348206349206349206350115440115440115439282106782106782107551337551337551336837051837051837052503718503718503717878718503718503719091953797836150776771692359927654045827419914107220608268596384695455903362433919709461504672594347516948136578E-19",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F167 huge forward ratio",
+      "passed": false,
+      "actual": "inf",
+      "reference": "1418.392417284332141355082736085568351882278516995324153236529986996024727561249127825374278335192551778652154970048329158180267686491008962106433019364849520721470840328541683399780735212959650293490399270322672683299369236633592929222103450235870899164233013857008935510143538002665151445553110536816742655931677027185975179060170230972982119666681559071967284884601876604566067987977301358794393471",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "local bootstrap-zero-price chain",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "parallel upward zero shift decreases positive-CF PV",
+      "passed": true,
+      "scope": "direct zero-node shift, NOT market-quote bootstrap DV01"
+    },
+    {
+      "label": "F167 malformed curve",
+      "passed": false,
+      "exception": "TypeError(\"object of type 'NoneType' has no len()\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 huge integer input",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 DF underflow rejects",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 DF overflow rejects",
+      "passed": false,
+      "exception": "OverflowError('math range error')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 unreportable zero rate",
+      "passed": false,
+      "actual": "inf",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 one-year ratio underflow rejects",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 generator policy explicit",
+      "passed": false,
+      "actual": "99.81187608953738",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 empty generator policy explicit",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 malformed cashflow record",
+      "passed": true,
+      "exception": "ValueError('too many values to unpack (expected 2)')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 boolean cashflow time",
+      "passed": true,
+      "exception": "ValueError('tenor outside curve domain')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 unreportable PV",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 negative discount",
+      "passed": true,
+      "exception": "ValueError('positive tenor and discount required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 out-of-domain cashflow",
+      "passed": true,
+      "exception": "ValueError('tenor outside curve domain')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 negative tenor",
+      "passed": true,
+      "exception": "ValueError('invalid tenor or rate')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 duplicate curve tenor",
+      "passed": true,
+      "exception": "ValueError('positive, strictly increasing tenors required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 unsorted tenor",
+      "passed": true,
+      "exception": "ValueError('positive, strictly increasing tenors required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 negative bootstrap discount",
+      "passed": true,
+      "exception": "ValueError('nonpositive bootstrapped discount')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F167 nonpositive face",
+      "passed": true,
+      "exception": "ValueError('positive price and face required')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "acceptance_control_records": 12,
+  "historical_unique_methods_added": 0,
+  "model": {
+    "tenors": [
+      1,
+      2,
+      3
+    ],
+    "continuous_zero_rates": [
+      0.04,
+      0.05,
+      0.055
+    ],
+    "cashflows": [
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        105
+      ]
+    ],
+    "bootstrap": {
+      "zero_price": 95,
+      "face": 100,
+      "coupon_price": 100,
+      "coupon": 5,
+      "df1": 0.95,
+      "df2": 0.9071428571428571
+    },
+    "units": "years, continuous annual zero/forward rates, fictional common currency and dimensionless DFs",
+    "timing": "annual coupon dates only; no actual valuation/settlement/calendars/market close"
+  },
+  "scipy_secondary_stdout": "Bootstrapped D(2): 0.9071428571428571\n"
+}
