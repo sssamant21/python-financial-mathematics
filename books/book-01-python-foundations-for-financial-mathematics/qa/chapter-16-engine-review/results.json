@@ -1,0 +1,770 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "409edbcdac9ac7d726b1652b86ae3e7c8cf29e814b1797460df9d40496669422",
+  "listing_sha256": "1fbcebb7e6c345b0e77e7793e49e254d15fafbeb3f6ced1e16ab5ce06a23bd62",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "portfolio_risk_return_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'expected_return': 0.059, 'variance': 0.019916, 'volatility': 0.141124058898545, 'variance_contributions': [0.0109, 0.009, 1.6e-05], 'volatility_contributions': [0.07723700753133865, 0.06377367594330714, 0.00011337542389921269]}\n",
+      "stderr": "test_01_mean (__main__.Tests.test_01_mean) ... ok\ntest_02_variance (__main__.Tests.test_02_variance) ... ok\ntest_03_sd (__main__.Tests.test_03_sd) ... ok\ntest_04_vc (__main__.Tests.test_04_vc) ... ok\ntest_05_rc (__main__.Tests.test_05_rc) ... ok\ntest_06_sample (__main__.Tests.test_06_sample) ... ok\ntest_07_drift (__main__.Tests.test_07_drift) ... ok\ntest_08_turnover (__main__.Tests.test_08_turnover) ... ok\ntest_09_stress (__main__.Tests.test_09_stress) ... ok\ntest_10_caps (__main__.Tests.test_10_caps) ... ok\ntest_11_single (__main__.Tests.test_11_single) ... ok\ntest_12_invalid (__main__.Tests.test_12_invalid) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import portfolio_risk_return_engine"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_risk_return_engine.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 supplemental budget",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2/E11/E12 source expected_return",
+      "passed": true,
+      "actual": 0.059,
+      "independent_reference": "59/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2/E11/E12 source variance",
+      "passed": true,
+      "actual": 0.019916,
+      "independent_reference": "4979/250000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2/E11/E12 source volatility",
+      "passed": true,
+      "actual": 0.141124058898545,
+      "independent_reference": "0.14112405889854500638231672556284625447879991921519752760178921537842439179182316",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 supplemental expected contribution 0",
+      "passed": true,
+      "actual": 0.04,
+      "independent_reference": "1/25",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 supplemental expected contribution 1",
+      "passed": true,
+      "actual": 0.015,
+      "independent_reference": "3/200",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 supplemental expected contribution 2",
+      "passed": true,
+      "actual": 0.004,
+      "independent_reference": "1/250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4/E5 matrix dimension and symmetry",
+      "passed": true
+    },
+    {
+      "label": "E7-E9 supplemental diagonal 0",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7-E9 supplemental diagonal 1",
+      "passed": true,
+      "actual": 0.0081,
+      "independent_reference": "81/10000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7-E9 supplemental diagonal 2",
+      "passed": true,
+      "actual": 1.6e-05,
+      "independent_reference": "1/62500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10 supplemental AB cross",
+      "passed": true,
+      "actual": 0.0018,
+      "independent_reference": "9/5000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16-E18 source variance contribution 0",
+      "passed": true,
+      "actual": 0.0109,
+      "independent_reference": "109/10000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 source volatility contribution 0",
+      "passed": true,
+      "actual": 0.07723700753133865,
+      "independent_reference": "0.077237007531338650811772058075669018568935485009321804120280299639728151763952224",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16-E18 source variance contribution 1",
+      "passed": true,
+      "actual": 0.009,
+      "independent_reference": "9/1000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 source volatility contribution 1",
+      "passed": true,
+      "actual": 0.06377367594330714,
+      "independent_reference": "0.063773675943307142872105369053304694231231134411366627255277311629133336318859634",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16-E18 source variance contribution 2",
+      "passed": true,
+      "actual": 1.6e-05,
+      "independent_reference": "1/62500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 source volatility contribution 2",
+      "passed": true,
+      "actual": 0.00011337542389921269,
+      "independent_reference": "0.00011337542389921269843929843387254167863329979450909622623160410956290370901130602",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 source variance reconciliation",
+      "passed": true,
+      "actual": 0.019916,
+      "independent_reference": "4979/250000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E20 source volatility reconciliation",
+      "passed": true,
+      "actual": 0.141124058898545,
+      "independent_reference": "0.14112405889854500638231672556284625447879991921519752760178921537842439179182316",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 E13 derivative prompt/answer alignment",
+      "passed": true,
+      "worked_solution": "For variance V=w\u1d40\u03a3w, the derivative is 2(\u03a3w)=.0436 for this asset. The covariance-weighted exposure (\u03a3w)=.0218 is half that derivative; a budget-preserving directional derivative also changes another weight.",
+      "independent_reference": ".0436",
+      "scope": "text derivative alignment plus independent 2*Sigma-w derivation, no source gradient export"
+    },
+    {
+      "label": "F156 E14 derivative prompt/answer alignment",
+      "passed": true,
+      "worked_solution": "For variance V=w\u1d40\u03a3w, the derivative is 2(\u03a3w)=.06 for this asset. The covariance-weighted exposure (\u03a3w)=.03 is half that derivative; a budget-preserving directional derivative also changes another weight.",
+      "independent_reference": ".06",
+      "scope": "text derivative alignment plus independent 2*Sigma-w derivation, no source gradient export"
+    },
+    {
+      "label": "F156 E15 derivative prompt/answer alignment",
+      "passed": true,
+      "worked_solution": "For variance V=w\u1d40\u03a3w, the derivative is 2(\u03a3w)=.00016 for this asset. The covariance-weighted exposure (\u03a3w)=.00008 is half that derivative; a budget-preserving directional derivative also changes another weight.",
+      "independent_reference": ".00016",
+      "scope": "text derivative alignment plus independent 2*Sigma-w derivation, no source gradient export"
+    },
+    {
+      "label": "E13-E15 independent derivative from source VC 0",
+      "passed": true,
+      "actual": 0.0436,
+      "independent_reference": "109/2500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13-E15 independent derivative from source VC 1",
+      "passed": true,
+      "actual": 0.06,
+      "independent_reference": "3/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13-E15 independent derivative from source VC 2",
+      "passed": true,
+      "actual": 0.00016,
+      "independent_reference": "1/6250",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "zero-risk volatility attribution remains undefined",
+      "passed": true
+    },
+    {
+      "label": "lab source sample covariance (0, 0)",
+      "passed": true,
+      "actual": 0.00016666666666666666,
+      "independent_reference": "1/6000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (0, 1)",
+      "passed": true,
+      "actual": 0.0002,
+      "independent_reference": "1/5000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (0, 2)",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (1, 0)",
+      "passed": true,
+      "actual": 0.0002,
+      "independent_reference": "1/5000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (1, 1)",
+      "passed": true,
+      "actual": 0.0003333333333333333,
+      "independent_reference": "1/3000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (1, 2)",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (2, 0)",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (2, 1)",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab source sample covariance (2, 2)",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab local historical-moment route expectation",
+      "passed": true,
+      "actual": 0.0057,
+      "independent_reference": "57/10000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab local historical-moment route variance",
+      "passed": true,
+      "actual": 0.00013166666666666665,
+      "independent_reference": "79/600000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E21 separate written sample covariance",
+      "passed": true,
+      "actual": 2.0,
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E24 source drift A",
+      "passed": true,
+      "actual": 0.5238095238095238,
+      "independent_reference": "11/21",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E24 source drift B",
+      "passed": true,
+      "actual": 0.47619047619047616,
+      "independent_reference": "10/21",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E25 ending NAV from source return",
+      "passed": true,
+      "actual": 105.0,
+      "independent_reference": "105",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E26 source buy",
+      "passed": true,
+      "actual": 10.0,
+      "independent_reference": "10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E26 source sell",
+      "passed": true,
+      "actual": -10.0,
+      "independent_reference": "-10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E27 source turnover",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 source gross traded",
+      "passed": true,
+      "actual": 20.0,
+      "independent_reference": "20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab drift-to-rebalance sale",
+      "passed": true,
+      "actual": -2.5000000000000013,
+      "independent_reference": "-5/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab drift-to-rebalance buy",
+      "passed": true,
+      "actual": 2.5000000000000013,
+      "independent_reference": "5/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab drift-to-rebalance turnover",
+      "passed": true,
+      "actual": 0.023809523809523822,
+      "independent_reference": "1/42",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E29 deliberately breached cap",
+      "passed": true
+    },
+    {
+      "label": "lab original caps pass",
+      "passed": true
+    },
+    {
+      "label": "E30 coherent stress variance",
+      "passed": true,
+      "actual": 0.079664,
+      "independent_reference": "4979/62500",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E30 coherent stress SD",
+      "passed": true,
+      "actual": 0.28224811779709,
+      "independent_reference": "0.2822481177970900127646334511",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "stress expectation unchanged and attribution scales",
+      "passed": true
+    },
+    {
+      "label": "F156 explicit budget policy normalized mean",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 explicit budget policy normalized variance",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 integer expected-return cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 integer sample centering",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 large constant sample mean",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 finite covariance after denominator",
+      "passed": true,
+      "actual": 1e+308,
+      "independent_reference": "1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 tiny drift return retained",
+      "passed": true,
+      "actual": 1e-308,
+      "independent_reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 large NAV turnover avoids denominator overflow",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 zero covariance huge multiplier remains zero",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 stress finite after intermediate square overflow",
+      "passed": true,
+      "actual": 1e+100,
+      "independent_reference": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F156 tiny cap breach not hidden",
+      "passed": true,
+      "actual": false
+    },
+    {
+      "label": "PSD extension invalid direction rejected",
+      "passed": true,
+      "exception": "ValueError('covariance is not PSD within scale-relative tolerance')"
+    },
+    {
+      "label": "F156 zero multiplier cannot hide invalid covariance",
+      "passed": true,
+      "exception": "ValueError('negative asset variance')"
+    },
+    {
+      "label": "F156 negative tiny variance not clipped",
+      "passed": true,
+      "exception": "ValueError('negative asset variance')"
+    },
+    {
+      "label": "F156 unreportable required variance rejected",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')"
+    },
+    {
+      "label": "F156 unreportable gross trade ValueError",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')"
+    },
+    {
+      "label": "F156 budget outside absolute tolerance rejected",
+      "passed": true,
+      "exception": "ValueError('long-only absolute budget tolerance 1e-10 required')"
+    },
+    {
+      "label": "F156 invalid cap weights rejected",
+      "passed": true,
+      "exception": "ValueError('long-only absolute budget tolerance 1e-10 required')"
+    },
+    {
+      "label": "F156 malformed report ValueError",
+      "passed": true,
+      "exception": "ValueError('weights must be a nonempty list/tuple')"
+    },
+    {
+      "label": "F156 invalid drift return type ValueError",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')"
+    },
+    {
+      "label": "F156 huge integer input ValueError",
+      "passed": true,
+      "exception": "ValueError('input outside finite float range')"
+    },
+    {
+      "label": "F156 covariance underflow ValueError",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')"
+    },
+    {
+      "label": "F156 positive wealth cannot report false total loss",
+      "passed": true,
+      "exception": "ValueError('positive ending NAV cannot report total loss')"
+    },
+    {
+      "label": "exhausted NAV rejected",
+      "passed": true,
+      "exception": "ValueError('NAV exhausted')"
+    },
+    {
+      "label": "misaligned rebalance rejected",
+      "passed": true,
+      "exception": "ValueError('aligned weights and positive NAV required')"
+    },
+    {
+      "label": "lab fixtures preserved",
+      "passed": true
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 30,
+  "lab_step_records": 12,
+  "acceptance_checklist_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "assets": [
+      "fictional A",
+      "fictional B",
+      "cash-like C"
+    ],
+    "weights": [
+      0.5,
+      0.3,
+      0.2
+    ],
+    "original_means": [
+      0.08,
+      0.05,
+      0.02
+    ],
+    "original_covariance": [
+      [
+        0.04,
+        0.006,
+        0
+      ],
+      [
+        0.006,
+        0.09,
+        0
+      ],
+      [
+        0,
+        0,
+        0.0004
+      ]
+    ],
+    "original_report": {
+      "expected_return": 0.059,
+      "variance": 0.019916,
+      "volatility": 0.141124058898545,
+      "variance_contributions": [
+        0.0109,
+        0.009,
+        1.6e-05
+      ],
+      "volatility_contributions": [
+        0.07723700753133865,
+        0.06377367594330714,
+        0.00011337542389921269
+      ]
+    },
+    "historical_series_asset_major": [
+      [
+        0.01,
+        -0.01,
+        0.02,
+        0
+      ],
+      [
+        0.02,
+        0,
+        0.03,
+        -0.01
+      ],
+      [
+        0.001,
+        0.001,
+        0.001,
+        0.001
+      ]
+    ],
+    "historical_means": [
+      "1/200",
+      "1/100",
+      "1/1000"
+    ],
+    "historical_covariance": [
+      [
+        0.00016666666666666666,
+        0.0002,
+        0.0
+      ],
+      [
+        0.0002,
+        0.0003333333333333333,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "historical_report": {
+      "expected_return": 0.0057,
+      "variance": 0.00013166666666666665,
+      "volatility": 0.011474609652039003,
+      "variance_contributions": [
+        7.166666666666667e-05,
+        5.9999999999999995e-05,
+        0.0
+      ],
+      "volatility_contributions": [
+        0.006245673608071863,
+        0.005228936043967141,
+        0.0
+      ]
+    },
+    "drift": {
+      "portfolio_return": 0.05,
+      "ending_weights": [
+        0.5238095238095238,
+        0.47619047619047616
+      ]
+    },
+    "written_trade_example": {
+      "trades": [
+        10.0,
+        -10.0
+      ],
+      "gross_traded": 20.0,
+      "one_way_turnover": 0.1
+    },
+    "drift_to_rebalance": {
+      "trades": [
+        -2.5000000000000013,
+        2.5000000000000013
+      ],
+      "gross_traded": 5.000000000000003,
+      "one_way_turnover": 0.023809523809523822
+    },
+    "stress_2x": {
+      "expected_return": 0.059,
+      "variance": 0.079664,
+      "volatility": 0.28224811779709,
+      "variance_contributions": [
+        0.0436,
+        0.036,
+        6.4e-05
+      ],
+      "volatility_contributions": [
+        0.1544740150626773,
+        0.12754735188661429,
+        0.00022675084779842539
+      ]
+    },
+    "units": "decimal simple returns and squared covariance; fictional USD NAV",
+    "timing": "synthetic t0 forecasts, four historical common labels, separate t0-t1 two-asset realized-return fixture",
+    "dates": null,
+    "missingness": "complete common observations, no imputation",
+    "scope": "separate forecast/history/drift models, no costs, actual IDs/timestamps/NAV/FX integration or independent acceptance",
+    "fixture_sha256": "ae5e809a79d09aeaa1e69f434ddede098a7376b4f47d08c094484b978f3568e7"
+  }
+}
