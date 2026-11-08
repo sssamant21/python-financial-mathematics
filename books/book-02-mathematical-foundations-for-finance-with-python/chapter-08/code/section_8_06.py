@@ -56,11 +56,18 @@ def present_value(payment, rate, years):
     c, r, t = finite(payment, "payment"), finite(rate, "rate"), finite(years, "years")
     if c < 0 or t < 0:
         raise ValueError("payment and years must be nonnegative")
-    return c*math.exp(-r*t)
+    if c == 0 or t == 0:
+        return c
+    return _scaled_pv(Fraction(c), -Fraction(r)*Fraction(t))
 
 def pv_rate_first(payment, rate, years):
     t = finite(years, "years")
-    return -t*present_value(payment, rate, years)
+    c, r, t = finite(payment, "payment"), finite(rate, "rate"), finite(years, "years")
+    if c < 0 or t < 0:
+        raise ValueError("payment and years must be nonnegative")
+    if c == 0 or t == 0:
+        return -t*c
+    return _scaled_pv(-Fraction(t)*Fraction(c), -Fraction(r)*Fraction(t))
 
 def pv_rate_second(payment, rate, years):
     t = finite(years, "years")
