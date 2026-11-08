@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-130 full candidate Linux pass (593 sources/380 scripts/594 required blobs), including V-128/V-129 changes. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-131 scoped implicit-ratio/centered pass (52 Chapter8 files/42 scripts), after V-130 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1181,3 +1181,13 @@ Next-item checkpoint: [nine Section8.7 slope/exposure/centered probes](chapter-0
 [V-130 full evidence](runtime-refresh-2026-11-08-r7.md) at `5e574af2b055c7822e053fed5d0f5f24870d79bb`:593/593 Python sources compiled,380/380 check/test scripts passed,594/594 required Python/fixture blobs verified before/after. Includes accumulated V-128/V-129 executable/checker changes. Per-file outputs/digests,exact runner and source manifest retained;earlier scoped failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
 
 Next substantive item:[nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md),five initial mismatches/four controls;reconcile complete-output and callback-preflight contracts,then expand references and correct. Conditioning/branch/noise/resource scope stays open. Book1 tracked independently.
+
+
+## V-131 checkpoint — Implicit ratios and centered copy
+
+[Section8.7 follow-up](chapter-08-section-07-slopes-centered-followup.md):151corrected predicates passed;34expanded baseline mismatches andidentical151-observation replay retained,alongside original9-probe screen. Complete ratios/sampled quotients,finite-output/zero-sign andcallback-preflight policies documented;existing domains/input order/default/signed-step contracts preserved. Chapter8 scope52compiled/42scripts passed;52candidate blobs verified before/after. Fresh inventory594/381/595 is not a full run;V-130 remains latest full candidate Linux evidence. Thirty-five selected COV categories partial;none closed.
+
+Next:Section8.8 remaining complete sampled-quotient/Richardson range andfinancial-helper contracts. Branch/conditioning/noise/resource,independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 tracked separately.
+
+
+Next-item checkpoint:[7Section8.8 complete quotient/Richardson probes](chapter-08-section-08-complete-quotient-baseline.md) retain6initial mismatches/1control with actual callback traces. Complete output/denominator/extrapolation conventions remain proposed;source unchanged andno corrected pass claimed. Continue this substantive range item,then financial/suggested-step obligations;no COV closure.

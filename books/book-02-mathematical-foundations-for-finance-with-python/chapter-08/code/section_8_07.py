@@ -31,7 +31,9 @@ def circle_slope(x, y):
     x, y = finite(x, "x"), finite(y, "y")
     if y == 0:
         raise ValueError("implicit slope undefined where y=0")
-    return -x/y
+    if x == 0:
+        return -x/y
+    return _implicit_report(-Fraction(x)/Fraction(y))
 
 def _break_even_inputs(price, variable_cost, fixed_cost):
     p, c, k = finite(price, "price"), finite(variable_cost, "variable_cost"), finite(fixed_cost, "fixed_cost")
@@ -89,11 +91,19 @@ def yield_price_sensitivity(cash_flows, yield_per_period):
     # its float report would be zero or nonfinite.
     return _bond_report(1/_bond_exact(flows, discount, derivative=True))
 
+def _implicit_report(exact):
+    try:
+        return finite(float(exact), "implicit result")
+    except OverflowError as exc:
+        raise ValueError("implicit result outside finite float range") from exc
+
 def exposure_slope(x, y, a, b):
     x, y, a, b = (finite(v, n) for v, n in ((x,"x"),(y,"y"),(a,"a"),(b,"b")))
     if a <= 0 or b <= 0 or y == 0:
         raise ValueError("a and b must be positive and y nonzero")
-    return -a*x/(b*y)
+    if x == 0:
+        return -x/y
+    return _implicit_report(-Fraction(a)*Fraction(x)/(Fraction(b)*Fraction(y)))
 
 def centered_difference(function, x, step=1e-4):
     if not callable(function):
@@ -101,7 +111,15 @@ def centered_difference(function, x, step=1e-4):
     x, h = finite(x, "x"), finite(step, "step")
     if h == 0:
         raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    if not math.isfinite(x+h) or not math.isfinite(x-h) or x+h == x or x-h == x:
+        raise ValueError("step must produce finite distinct perturbations")
+    first = finite(function(x+h), "f(x+h)")
+    last = finite(function(x-h), "f(x-h)")
+    exact = (Fraction(first)-Fraction(last))/(2*Fraction(h))
+    if exact == 0:
+        # Preserve represented numerator-zero/denominator signs without 2*h.
+        return (first-last)/math.copysign(1.0,h)
+    return _implicit_report(exact)
 
 if __name__ == "__main__":
     print("Circle slope at (3,4):", circle_slope(3, 4))

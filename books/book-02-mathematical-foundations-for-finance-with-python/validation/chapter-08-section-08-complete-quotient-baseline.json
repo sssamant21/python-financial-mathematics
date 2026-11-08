@@ -1,0 +1,129 @@
+{
+  "source_revision": "2e211d5f6b7c0d1875a7f84000083ddaca425554",
+  "source_sha256": "85989b2c04899ba7465fa9fac76bbe77548a0c40e7cb1aba45c46229fd6178a1",
+  "observations": [
+    {
+      "helper": "forward_difference",
+      "args": [
+        0.0,
+        2.0
+      ],
+      "sample_values": [
+        1e+308,
+        -1e+308
+      ],
+      "expected": "1e+308",
+      "actual": "ValueError",
+      "matches": false,
+      "trace": [
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "helper": "backward_difference",
+      "args": [
+        0.0,
+        2.0
+      ],
+      "sample_values": [
+        1e+308,
+        -1e+308
+      ],
+      "expected": "1e+308",
+      "actual": "ValueError",
+      "matches": false,
+      "trace": [
+        0.0,
+        -2.0
+      ]
+    },
+    {
+      "helper": "centered_difference",
+      "args": [
+        0.0,
+        1e+308
+      ],
+      "sample_values": [
+        1e+308,
+        -1e+308
+      ],
+      "expected": "1.0",
+      "actual": "ValueError",
+      "matches": false,
+      "trace": []
+    },
+    {
+      "helper": "second_difference",
+      "args": [
+        0.0,
+        1.0
+      ],
+      "sample_values": [
+        1e+308,
+        1e+308,
+        1e+308
+      ],
+      "expected": "0.0",
+      "actual": "ValueError",
+      "matches": false,
+      "trace": [
+        1.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "helper": "second_difference",
+      "args": [
+        0.0,
+        1e-200
+      ],
+      "sample_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expected": "0.0",
+      "actual": "ValueError",
+      "matches": false,
+      "trace": []
+    },
+    {
+      "helper": "centered_difference",
+      "args": [
+        0.0,
+        0.5
+      ],
+      "sample_values": [
+        0.5,
+        -0.5
+      ],
+      "expected": "1.0",
+      "actual": "1.0",
+      "matches": true,
+      "trace": [
+        0.5,
+        -0.5
+      ]
+    },
+    {
+      "helper": "richardson_first",
+      "args": [
+        0.0,
+        0.5
+      ],
+      "expected": "-1.6666666666666668e+308",
+      "actual": "ValueError",
+      "matches": false,
+      "trace": [
+        0.5,
+        -0.5,
+        0.25,
+        -0.25
+      ],
+      "scope": "Table samples define extrapolated quotient,not derivative accuracy"
+    }
+  ],
+  "scope": "Initial actual range screen;complete-quotient/h\u00b2/Richardson conventions proposed,not prior promises;no source fix or pass claimed"
+}

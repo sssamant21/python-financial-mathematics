@@ -1,0 +1,21 @@
+from pathlib import Path
+from fractions import Fraction
+import sys,json,hashlib,subprocess
+root=Path(sys.argv[1]).resolve();book=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=book/'chapter-08/code';sys.path.insert(0,str(code));import section_8_08 as source
+rows=[]
+for name,x,h,values in [('forward_difference',0.,2.,[1e308,-1e308]),('backward_difference',0.,2.,[1e308,-1e308]),('centered_difference',0.,1e308,[1e308,-1e308]),('second_difference',0.,1.,[1e308]*3),('second_difference',0.,1e-200,[1.,1.,1.]),('centered_difference',0.,.5,[.5,-.5])]:
+ trace=[];it=iter(values)
+ def cb(z):trace.append(z);return next(it)
+ exact=(Fraction(values[0])-Fraction(values[1]))/(Fraction(h)*(2 if name=='centered_difference' else 1)) if name!='second_difference' else (Fraction(values[0])-2*Fraction(values[1])+Fraction(values[2]))/Fraction(h)**2
+ expected=float(exact)
+ try:actual=source.__dict__[name](cb,x,h);observation=repr(actual);matches=actual==expected
+ except Exception as e:observation=type(e).__name__;matches=False
+ rows.append(dict(helper=name,args=[x,h],sample_values=values,expected=repr(expected),actual=observation,matches=matches,trace=trace))
+trace=[];table={.5:1e308,-.5:0.,.25:-5e307,-.25:0.}
+def cb(z):trace.append(z);return table[z]
+coarse=(Fraction(table[.5])-Fraction(table[-.5]))/Fraction(1);fine=(Fraction(table[.25])-Fraction(table[-.25]))/Fraction(.5);expected=float((4*fine-coarse)/3)
+try:actual=source.richardson_first(cb,0.,.5);observation=repr(actual);matches=actual==expected
+except Exception as e:observation=type(e).__name__;matches=False
+rows.append(dict(helper='richardson_first',args=[0.,.5],expected=repr(expected),actual=observation,matches=matches,trace=trace,scope='Table samples define extrapolated quotient,not derivative accuracy'))
+result=dict(source_revision=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),source_sha256=hashlib.sha256((code/'section_8_08.py').read_bytes()).hexdigest(),observations=rows,scope='Initial actual range screen;complete-quotient/h²/Richardson conventions proposed,not prior promises;no source fix or pass claimed')
+(book/'validation/chapter-08-section-08-complete-quotient-baseline.json').write_text(json.dumps(result,indent=2)+'\n');print(len(rows),'probes',sum(not x['matches'] for x in rows),'mismatches including proposed policies')
