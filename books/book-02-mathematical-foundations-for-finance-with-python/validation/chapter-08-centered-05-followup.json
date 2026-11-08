@@ -1,0 +1,2944 @@
+{
+  "validation": "V-119",
+  "date": "2026-11-08",
+  "baseline_revision": "24957071300057f05fe26ed816c9135f906d3640",
+  "baseline_source_blob": "21eda96c3f8b2f7cfd8488646ba2b16dec5db225",
+  "executable_source_revision": "5b919e8b93caf2cd4d6f003b61f60d07bec4bd69",
+  "baseline_reproduction_files": [
+    [
+      "section_8_05.py",
+      "24957071300057f05fe26ed816c9135f906d3640",
+      "21eda96c3f8b2f7cfd8488646ba2b16dec5db225"
+    ],
+    [
+      "section_8_01.py",
+      "24957071300057f05fe26ed816c9135f906d3640",
+      "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    ],
+    [
+      "check_centered_05.py",
+      "5b919e8b93caf2cd4d6f003b61f60d07bec4bd69",
+      "073e15cdc247e95c0e3a1d3295b7d0ab102621ea"
+    ]
+  ],
+  "baseline": {
+    "reference": "Exact rational sampled-output quotient; explicit signed-zero, preflight and callback contracts",
+    "tolerance": "Exact final float equality, zero signs, exception identity and call traces",
+    "observations": [
+      {
+        "case": "outputs-0",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-1",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-2",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-3",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-4",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 8.988465674311579e+307,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 8.988465674311579e+307,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-5",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          5e-324,
+          -5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-6",
+        "x": 0,
+        "step": -5e-324,
+        "callback_outputs": [
+          -5e-324,
+          5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-7",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-8",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          5e-324,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-9",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          5e-324,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-10",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          1,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-11",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          1,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-12",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          -1,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-13",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          -1,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-14",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-15",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "default",
+        "x": 1,
+        "step": null,
+        "callback_outputs": [
+          1.0001,
+          0.9999
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0.9999999999998899,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.0001,
+          0.9999
+        ],
+        "actual": 0.9999999999998899,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.0001,
+          0.9999
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 1,
+        "step": 0.1,
+        "callback_outputs": [
+          1.1,
+          0.9
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.0000000000000002,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.1,
+          0.9
+        ],
+        "actual": 1.0000000000000002,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.1,
+          0.9
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": -3,
+        "step": 0.125,
+        "callback_outputs": [
+          -2.875,
+          -3.125
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -2.875,
+          -3.125
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -2.875,
+          -3.125
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          5e-324,
+          -5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 0,
+        "step": -5e-324,
+        "callback_outputs": [
+          -5e-324,
+          5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "preflight-0",
+        "x": 1,
+        "step": 5e-324,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0,
+        "actual_calls": [
+          1,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-1",
+        "x": 1,
+        "step": -5e-324,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0,
+        "actual_calls": [
+          1,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-2",
+        "x": 1,
+        "step": 1.1102230246251565e-16,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0.5,
+        "actual_calls": [
+          1,
+          0.9999999999999999
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-3",
+        "x": 1,
+        "step": -1.1102230246251565e-16,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0.5,
+        "actual_calls": [
+          0.9999999999999999,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-4",
+        "x": 1.7976931348623157e+308,
+        "step": 1.7976931348623157e+308,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [
+          "inf"
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": false
+      },
+      {
+        "case": "preflight-5",
+        "x": -1.7976931348623157e+308,
+        "step": 1.7976931348623157e+308,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [
+          0,
+          "-inf"
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": false
+      },
+      {
+        "case": "preflight-6",
+        "x": 1,
+        "step": 0,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be nonzero",
+        "passed": true
+      },
+      {
+        "case": "preflight-7",
+        "x": 1,
+        "step": 0,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be nonzero",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "inf",
+        "position": 0,
+        "expected": "ValueError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "inf",
+        "position": 1,
+        "expected": "ValueError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "nan",
+        "position": 0,
+        "expected": "ValueError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "nan",
+        "position": 1,
+        "expected": "ValueError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": true,
+        "position": 0,
+        "expected": "TypeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": true,
+        "position": 1,
+        "expected": "TypeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "bad",
+        "position": 0,
+        "expected": "TypeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "bad",
+        "position": 1,
+        "expected": "TypeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "callback-exception",
+        "position": 0,
+        "expected": "RuntimeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "RuntimeError",
+        "actual_calls": [
+          1
+        ],
+        "same_exception": true,
+        "passed": true
+      },
+      {
+        "case": "callback-exception",
+        "position": 1,
+        "expected": "RuntimeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "RuntimeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "same_exception": true,
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": true,
+        "step": "bad",
+        "expected": "TypeError",
+        "expected_message_prefix": "function",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "function must be callable",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 0,
+        "step": 0,
+        "expected": "TypeError",
+        "expected_message_prefix": "function",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "function must be callable",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": true,
+        "step": "bad",
+        "expected": "TypeError",
+        "expected_message_prefix": "x",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "x must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": true,
+        "expected": "TypeError",
+        "expected_message_prefix": "step",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "step must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": "inf",
+        "step": 0,
+        "expected": "ValueError",
+        "expected_message_prefix": "x",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "x must be finite",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": "inf",
+        "expected": "ValueError",
+        "expected_message_prefix": "step",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be finite",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": null,
+        "step": 1,
+        "expected": "ValueError",
+        "expected_message_prefix": "x",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "x is outside finite float range",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": null,
+        "expected": "ValueError",
+        "expected_message_prefix": "step",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step is outside finite float range",
+        "passed": true
+      }
+    ]
+  },
+  "baseline_replay": {
+    "reference": "Exact rational sampled-output quotient; explicit signed-zero, preflight and callback contracts",
+    "tolerance": "Exact final float equality, zero signs, exception identity and call traces",
+    "observations": [
+      {
+        "case": "outputs-0",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-1",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-2",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-3",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-4",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 8.988465674311579e+307,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 8.988465674311579e+307,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-5",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          5e-324,
+          -5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-6",
+        "x": 0,
+        "step": -5e-324,
+        "callback_outputs": [
+          -5e-324,
+          5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-7",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "outputs-8",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          5e-324,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-9",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          5e-324,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-10",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          1,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-11",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          1,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-12",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          -1,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-13",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          -1,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-14",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-15",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "default",
+        "x": 1,
+        "step": null,
+        "callback_outputs": [
+          1.0001,
+          0.9999
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0.9999999999998899,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.0001,
+          0.9999
+        ],
+        "actual": 0.9999999999998899,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.0001,
+          0.9999
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 1,
+        "step": 0.1,
+        "callback_outputs": [
+          1.1,
+          0.9
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.0000000000000002,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.1,
+          0.9
+        ],
+        "actual": 1.0000000000000002,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.1,
+          0.9
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": -3,
+        "step": 0.125,
+        "callback_outputs": [
+          -2.875,
+          -3.125
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -2.875,
+          -3.125
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -2.875,
+          -3.125
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          5e-324,
+          -5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 0,
+        "step": -5e-324,
+        "callback_outputs": [
+          -5e-324,
+          5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "preflight-0",
+        "x": 1,
+        "step": 5e-324,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0,
+        "actual_calls": [
+          1,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-1",
+        "x": 1,
+        "step": -5e-324,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0,
+        "actual_calls": [
+          1,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-2",
+        "x": 1,
+        "step": 1.1102230246251565e-16,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0.5,
+        "actual_calls": [
+          1,
+          0.9999999999999999
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-3",
+        "x": 1,
+        "step": -1.1102230246251565e-16,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": 0.5,
+        "actual_calls": [
+          0.9999999999999999,
+          1
+        ],
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": "preflight-4",
+        "x": 1.7976931348623157e+308,
+        "step": 1.7976931348623157e+308,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [
+          "inf"
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": false
+      },
+      {
+        "case": "preflight-5",
+        "x": -1.7976931348623157e+308,
+        "step": 1.7976931348623157e+308,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [
+          0,
+          "-inf"
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": false
+      },
+      {
+        "case": "preflight-6",
+        "x": 1,
+        "step": 0,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be nonzero",
+        "passed": true
+      },
+      {
+        "case": "preflight-7",
+        "x": 1,
+        "step": 0,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be nonzero",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "inf",
+        "position": 0,
+        "expected": "ValueError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "inf",
+        "position": 1,
+        "expected": "ValueError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "nan",
+        "position": 0,
+        "expected": "ValueError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "nan",
+        "position": 1,
+        "expected": "ValueError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": true,
+        "position": 0,
+        "expected": "TypeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": true,
+        "position": 1,
+        "expected": "TypeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "bad",
+        "position": 0,
+        "expected": "TypeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "bad",
+        "position": 1,
+        "expected": "TypeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "callback-exception",
+        "position": 0,
+        "expected": "RuntimeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "RuntimeError",
+        "actual_calls": [
+          1
+        ],
+        "same_exception": true,
+        "passed": true
+      },
+      {
+        "case": "callback-exception",
+        "position": 1,
+        "expected": "RuntimeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "RuntimeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "same_exception": true,
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": true,
+        "step": "bad",
+        "expected": "TypeError",
+        "expected_message_prefix": "function",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "function must be callable",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 0,
+        "step": 0,
+        "expected": "TypeError",
+        "expected_message_prefix": "function",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "function must be callable",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": true,
+        "step": "bad",
+        "expected": "TypeError",
+        "expected_message_prefix": "x",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "x must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": true,
+        "expected": "TypeError",
+        "expected_message_prefix": "step",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "step must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": "inf",
+        "step": 0,
+        "expected": "ValueError",
+        "expected_message_prefix": "x",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "x must be finite",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": "inf",
+        "expected": "ValueError",
+        "expected_message_prefix": "step",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be finite",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": null,
+        "step": 1,
+        "expected": "ValueError",
+        "expected_message_prefix": "x",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "x is outside finite float range",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": null,
+        "expected": "ValueError",
+        "expected_message_prefix": "step",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step is outside finite float range",
+        "passed": true
+      }
+    ]
+  },
+  "corrected": {
+    "reference": "Exact rational sampled-output quotient; explicit signed-zero, preflight and callback contracts",
+    "tolerance": "Exact final float equality, zero signs, exception identity and call traces",
+    "observations": [
+      {
+        "case": "outputs-0",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-1",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-2",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-3",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-4",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 8.988465674311579e+307,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 8.988465674311579e+307,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-5",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          5e-324,
+          -5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-6",
+        "x": 0,
+        "step": -5e-324,
+        "callback_outputs": [
+          -5e-324,
+          5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-7",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": "difference estimate outside finite float range",
+        "passed": true
+      },
+      {
+        "case": "outputs-8",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          5e-324,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-9",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          5e-324,
+          0
+        ],
+        "output_zero_signs": [
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-10",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          1,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-11",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          1,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-12",
+        "x": 0,
+        "step": 1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          -1,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-13",
+        "x": 0,
+        "step": -1,
+        "callback_outputs": [
+          0,
+          0
+        ],
+        "output_zero_signs": [
+          -1,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          -1,
+          1
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          -1,
+          1
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-14",
+        "x": 0,
+        "step": 1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "expected_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "actual_calls": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "outputs-15",
+        "x": 0,
+        "step": -1.7976931348623157e+308,
+        "callback_outputs": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "expected_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "actual_calls": [
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "default",
+        "x": 1,
+        "step": null,
+        "callback_outputs": [
+          1.0001,
+          0.9999
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 0.9999999999998899,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.0001,
+          0.9999
+        ],
+        "actual": 0.9999999999998899,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.0001,
+          0.9999
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 1,
+        "step": 0.1,
+        "callback_outputs": [
+          1.1,
+          0.9
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1.0000000000000002,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          1.1,
+          0.9
+        ],
+        "actual": 1.0000000000000002,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          1.1,
+          0.9
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": -3,
+        "step": 0.125,
+        "callback_outputs": [
+          -2.875,
+          -3.125
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -2.875,
+          -3.125
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -2.875,
+          -3.125
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 0,
+        "step": 5e-324,
+        "callback_outputs": [
+          5e-324,
+          -5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          5e-324,
+          -5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "identity",
+        "x": 0,
+        "step": -5e-324,
+        "callback_outputs": [
+          -5e-324,
+          5e-324
+        ],
+        "output_zero_signs": [
+          null,
+          null
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "expected_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "actual": 1,
+        "actual_zero_sign": null,
+        "actual_calls": [
+          -5e-324,
+          5e-324
+        ],
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": "preflight-0",
+        "x": 1,
+        "step": 5e-324,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must produce finite distinct perturbations",
+        "passed": true
+      },
+      {
+        "case": "preflight-1",
+        "x": 1,
+        "step": -5e-324,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must produce finite distinct perturbations",
+        "passed": true
+      },
+      {
+        "case": "preflight-2",
+        "x": 1,
+        "step": 1.1102230246251565e-16,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must produce finite distinct perturbations",
+        "passed": true
+      },
+      {
+        "case": "preflight-3",
+        "x": 1,
+        "step": -1.1102230246251565e-16,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must produce finite distinct perturbations",
+        "passed": true
+      },
+      {
+        "case": "preflight-4",
+        "x": 1.7976931348623157e+308,
+        "step": 1.7976931348623157e+308,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must produce finite distinct perturbations",
+        "passed": true
+      },
+      {
+        "case": "preflight-5",
+        "x": -1.7976931348623157e+308,
+        "step": 1.7976931348623157e+308,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must produce finite distinct perturbations",
+        "passed": true
+      },
+      {
+        "case": "preflight-6",
+        "x": 1,
+        "step": 0,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be nonzero",
+        "passed": true
+      },
+      {
+        "case": "preflight-7",
+        "x": 1,
+        "step": 0,
+        "expected": "ValueError",
+        "expected_calls": [],
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be nonzero",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "inf",
+        "position": 0,
+        "expected": "ValueError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "inf",
+        "position": 1,
+        "expected": "ValueError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "nan",
+        "position": 0,
+        "expected": "ValueError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "nan",
+        "position": 1,
+        "expected": "ValueError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "ValueError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be finite",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": true,
+        "position": 0,
+        "expected": "TypeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": true,
+        "position": 1,
+        "expected": "TypeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "bad",
+        "position": 0,
+        "expected": "TypeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1
+        ],
+        "exception_message": "f(x+h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "invalid-output",
+        "output": "bad",
+        "position": 1,
+        "expected": "TypeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "TypeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "exception_message": "f(x-h) must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "callback-exception",
+        "position": 0,
+        "expected": "RuntimeError",
+        "expected_calls": [
+          1
+        ],
+        "actual": "RuntimeError",
+        "actual_calls": [
+          1
+        ],
+        "same_exception": true,
+        "passed": true
+      },
+      {
+        "case": "callback-exception",
+        "position": 1,
+        "expected": "RuntimeError",
+        "expected_calls": [
+          1,
+          -1
+        ],
+        "actual": "RuntimeError",
+        "actual_calls": [
+          1,
+          -1
+        ],
+        "same_exception": true,
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": true,
+        "step": "bad",
+        "expected": "TypeError",
+        "expected_message_prefix": "function",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "function must be callable",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 0,
+        "step": 0,
+        "expected": "TypeError",
+        "expected_message_prefix": "function",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "function must be callable",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": true,
+        "step": "bad",
+        "expected": "TypeError",
+        "expected_message_prefix": "x",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "x must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": true,
+        "expected": "TypeError",
+        "expected_message_prefix": "step",
+        "actual": "TypeError",
+        "actual_calls": [],
+        "exception_message": "step must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": "inf",
+        "step": 0,
+        "expected": "ValueError",
+        "expected_message_prefix": "x",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "x must be finite",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": "inf",
+        "expected": "ValueError",
+        "expected_message_prefix": "step",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step must be finite",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": null,
+        "step": 1,
+        "expected": "ValueError",
+        "expected_message_prefix": "x",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "x outside finite float range",
+        "passed": true
+      },
+      {
+        "case": "input-priority",
+        "x": 1,
+        "step": null,
+        "expected": "ValueError",
+        "expected_message_prefix": "step",
+        "actual": "ValueError",
+        "actual_calls": [],
+        "exception_message": "step outside finite float range",
+        "passed": true
+      }
+    ]
+  },
+  "baseline_replay_byte_identical": true,
+  "pinned_corrected_matches_local": true,
+  "raw_stdout_sha256": {
+    "baseline.json": "3847a40f41b5ababed7270a36ac9e06fd0855d6a037fc6a37c22d0abedadc480",
+    "baseline-replay.json": "3847a40f41b5ababed7270a36ac9e06fd0855d6a037fc6a37c22d0abedadc480",
+    "corrected.json": "39fdf4de4bbc467b38dc78a9faa806b11ea6d23c7b97a0f19bb6834b87c7bcd3"
+  },
+  "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-centered119/baseline/check_centered_05.py\", line 103, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-centered119/baseline/check_centered_05.py\", line 101, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 11 mismatches\n",
+  "replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-centered119/baseline/check_centered_05.py\", line 103, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-centered119/baseline/check_centered_05.py\", line 101, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 11 mismatches\n",
+  "corrected_stderr": "",
+  "pinned_stdout_sha256": "39fdf4de4bbc467b38dc78a9faa806b11ea6d23c7b97a0f19bb6834b87c7bcd3",
+  "independent_decimal_oracle_crosschecks": [
+    {
+      "case": "outputs-0",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-1",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-2",
+      "reference": 1.7976931348623157e+308,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-3",
+      "reference": 1.7976931348623157e+308,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-4",
+      "reference": 8.988465674311579e+307,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-5",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-6",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-7",
+      "reference": "ValueError",
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-8",
+      "reference": 0,
+      "expected_zero_sign": 1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-9",
+      "reference": 0,
+      "expected_zero_sign": -1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-10",
+      "reference": 0,
+      "expected_zero_sign": 1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-11",
+      "reference": 0,
+      "expected_zero_sign": -1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-12",
+      "reference": 0,
+      "expected_zero_sign": -1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-13",
+      "reference": 0,
+      "expected_zero_sign": 1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-14",
+      "reference": 0,
+      "expected_zero_sign": 1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "outputs-15",
+      "reference": 0,
+      "expected_zero_sign": -1,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "default",
+      "reference": 0.9999999999998899,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "identity",
+      "reference": 1.0000000000000002,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "identity",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "identity",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    },
+    {
+      "case": "identity",
+      "reference": 1,
+      "expected_zero_sign": null,
+      "precision_agreement": true,
+      "matched_rational_reference": true
+    }
+  ],
+  "oracle_crosscheck_reproduction": {
+    "input": "Run python check_centered_05.py > corrected.json beside the pinned source, then execute this code.",
+    "code": "import json,math\nfrom decimal import Decimal,localcontext\nfrom pathlib import Path\ndata=json.loads(Path('corrected.json').read_text())\nrows=[]\nfor row in data['observations']:\n if 'callback_outputs' not in row:continue\n first,second=row['callback_outputs'];h=1e-4 if row['step'] is None else row['step'];answers=[]\n for precision in (1600,2200):\n  with localcontext() as ctx:\n   ctx.prec=precision\n   a,b,step=map(Decimal.from_float,(first,second,h))\n   value=float((a-b)/(2*step))\n   answers.append(value if math.isfinite(value) else 'ValueError')\n expected=row['expected'];sign=row.get('expected_zero_sign')\n def matches(value):\n  return value==expected and (isinstance(value,str) or value!=0 or int(math.copysign(1,value))==sign)\n assert all(matches(v) for v in answers)\n rows.append(dict(case=row['case'],reference=answers[0],expected_zero_sign=sign,precision_agreement=True,matched_rational_reference=True))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n"
+  },
+  "limits": "47 selected centered-copy checks; 11 baseline mismatches include six strengthened-preflight observations, not 11 distinct defects. 21 numerical reference values independently crosschecked at Decimal 1600/2200 digits. Full runtime recorded separately. 35 selected COV categories partial; none closed. No independent/platform/release/canonical approval."
+}
