@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-118 scoped stable-quotient pass (ten files/eight scripts), after V-117 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-119 full candidate Linux pass (585 files, 372 scripts, 586 required hashes), including Section 8.5 quotient and centered-copy corrections. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 583/583 at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`. [V-117](runtime-refresh-2026-11-08-r2.md). V-118: ten scoped files compiled; [evidence](chapter-08-stable-exponential-quotient-followup.md). |
-| Automated script execution | Full candidate Linux pass | 370/370 at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`; 584 required blobs verified before/after. [V-117](runtime-refresh-2026-11-08-r2.md). V-118: eight selected scripts passed; include additions in the next full refresh. |
+| Python compilation | Full candidate Linux pass | 585/585 at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`. [V-119](runtime-refresh-2026-11-08-r3.md). |
+| Automated script execution | Full candidate Linux pass | 372/372 at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`; 586 required blobs verified before/after. [V-119](runtime-refresh-2026-11-08-r3.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1077,3 +1077,11 @@ Next: [stable exponential quotient baseline](chapter-08-stable-exponential-quoti
 At `67cfc7f76615c8144d200c0b9478547b894fe506`, ten scoped Python files compiled and eight scripts passed, with ten exact Git blobs verified before/after. Fresh full-tree inventory: 584 Python files, 371 check/test scripts and 585 required source/fixture blobs. This is scoped validation; [V-117](runtime-refresh-2026-11-08-r2.md) remains the latest full candidate Linux pass (583/370/584 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.5 centered-copy baseline](chapter-08-centered-05-baseline.md), with [five pinned actual probes and callback traces](chapter-08-centered-05-baseline.json): two NaN failures, two explicit finite/distinct-perturbation preflight requirements and one default-step control. Use rational sampled quotient expectations and preserve callable-before-controls validation, default step, callback order/count and exception propagation. Resource limits and independent review remain open. Do not repeat completed Section 8.5 analytic helpers.
+
+## V-119 checkpoint — Section 8.5 centered-difference copy
+
+[Centered-copy follow-up](chapter-08-centered-05-followup.md): all 47 checks pass; 11 baseline mismatches and a byte-identical replay retained. Six mismatches exercise strengthened perturbation preflight; five concern returned nonfinite estimates. Exact rational sampled quotients, 21 separate Decimal oracle crosschecks at 1600/2200 digits, actual callback order/count, invalid-result short circuit, original-exception identity and callable-before-controls priority are checked. Pinned corrected observations match local results. Mismatches are not distinct defect counts.
+
+[V-119 full runtime](runtime-refresh-2026-11-08-r3.md) at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`: 585 Python files compiled, 372 scripts passed and 586 required source/fixture hashes verified before/after. This fresh pinned-tree run includes both V-118 quotient and V-119 centered-copy changes/checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [distinct Section 8.6 PV-curvature baseline](chapter-08-pv-curvature-range-baseline.md), with [six pinned actual failures](chapter-08-pv-curvature-range-baseline.json). Complete C·t²·exp(-r·t) references at 200/400 digits agree and expose subnormal loss, squared-horizon underflow/overflow, premature exponential overflow and lost zero identities. Preserve years-first validation and input domains; assess other Section 8.6 copies separately. This continues COV-49 other-helper/range and COV-51 implicit-contract/resource/review scope without repeating completed Section 8.5 examples.
