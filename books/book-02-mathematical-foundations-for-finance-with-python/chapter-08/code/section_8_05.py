@@ -1,5 +1,7 @@
 """Section 8.5: exponential and logarithmic derivatives in finance."""
 import math
+from fractions import Fraction
+from section_8_01 import _scaled_pv
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -14,7 +16,9 @@ def finite(value, name):
 
 def exponential_derivative(x, scale=1.0, growth=1.0):
     x, a, k = finite(x, "x"), finite(scale, "scale"), finite(growth, "growth")
-    return a*k*math.exp(k*x)
+    if a == 0 or k == 0:
+        return a*k
+    return _scaled_pv(Fraction(a)*Fraction(k), Fraction(k)*Fraction(x))
 
 def logarithm_derivative(x, offset=1.0, slope=2.0):
     x, a, b = finite(x, "x"), finite(offset, "offset"), finite(slope, "slope")
