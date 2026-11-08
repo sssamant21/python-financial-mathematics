@@ -1,0 +1,8 @@
+{
+  "reason": "The initial observer incorrectly required exp(-1e-16)==1. Actual binary64 exp(-1e-16)=0.9999999999999999: downward spacing near1 differs from upward spacing, so naive subtraction is nonzero but inaccurate. The direct-vs-expm1 cancellation illustration now uses1e-20. This is observer selection/assumption correction, not a source defect. Initial65-predicate one-failure baseline retained; an unrelated NPV-zero probe mislabeled as a quadratic exercise was removed rather than counted as optimization evidence. Final64-predicate inventory has no failures.",
+  "original_argument": 1e-16,
+  "original_naive": 1.1102230246251565e-16,
+  "original_stable": 1e-16,
+  "corrected_demonstration_argument": 1e-20,
+  "removed_probe": "E11 linked unconstrained quadratic minimizer incorrectly called zero-flow NPV; E11/E12 remain independent analytic square/derivative reviews."
+}

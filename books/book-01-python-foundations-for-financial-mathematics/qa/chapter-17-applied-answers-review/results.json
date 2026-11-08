@@ -1,0 +1,640 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "5e18f68ba46f4202ecd775709ebcde973f68bf3e59749bf6d7152d5d967b7e95",
+  "snippet_sha256": "e7f1458384571fb17a51d6d7a7459c687572ebd1a90601a99d8d3376f686ac22",
+  "linked_sources": {
+    "project": {
+      "path": "chapter-17/17.14-chapter-project-financial-numerical-solver.md",
+      "source_sha256": "76bc1899421fbcb6243c7838854f6b05d4c03c8731e1e8ea593b7ab57fcd9603",
+      "listing_sha256": "1f8b61e3fbce72b359342983ee33252d4940cdd0f63917228f3e58d60c1529d6"
+    },
+    "portfolio": {
+      "path": "chapter-17/17.07-portfolio-optimization.md",
+      "source_sha256": "608c5fb6ac417e72e1073a0342677d9ee64e43349fce9ad7e3449ead9443bea9",
+      "listing_sha256": "580be8d4f45a2d4301e2ceae1016728bf4ab745dfffc54add5f9acd02a7b42a3"
+    },
+    "integration": {
+      "path": "chapter-17/17.12-convergence-and-error.md",
+      "source_sha256": "80ddac9bd6800f072adc84f15f33b2860169b003f38f3dfa0c6b3ca6b582f0fa",
+      "listing_sha256": "a5f1bd71ec2b3419ae04c17e7234b76a1b506e8dcfe1e584e7d6e78032acd020"
+    },
+    "interpolation": {
+      "path": "chapter-17/17.09-interpolation.md",
+      "source_sha256": "4319eb33a572abd9afd9517249a2984ec5edb2d0f5c72ee6bf50e8d8939941fa",
+      "listing_sha256": "8ab0727ba1392657b2fef5d0fbe618ffd19da17c4249c050c6129d9ef2b5968c"
+    },
+    "stability": {
+      "path": "chapter-17/17.11-numerical-stability.md",
+      "source_sha256": "d791fe5c42d68838ae967cb1cf9d489a3e6bb05883cbb339c986cd6d3da95427",
+      "listing_sha256": "3ce7516798e615d88bd259ef741d63bf0d7b09ae8af65988f8ab975924345f3d"
+    },
+    "validation": {
+      "path": "chapter-17/17.13-validation-of-numerical-results.md",
+      "source_sha256": "2273cfc541f9f9c35a1e8e627afa40fe7bfd266206b139c466fb3fc6f1447f26",
+      "listing_sha256": "37c0dd01c19028ebd5535df8bc819a4c20b10cee0e8b078b0b5e9af68ed62683"
+    }
+  },
+  "commands": [
+    {
+      "label": "exact assessment SciPy snippet",
+      "args": [
+        "assessment_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "rate: 0.13066238629180682\nNPV residual: 8.526512829121202e-14\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact linked project demonstration",
+      "args": [
+        "financial_solver.py"
+      ],
+      "returncode": 0,
+      "stdout": "cash flows: [-100.0, 110.0]\nNPV at 10%: 0.0\nroot report: SolveReport(rate=0.1, residual=0.0, converged=True, iterations=6, function_calls=7, method='brentq', bracket=(0.0, 0.2), rate_xtol=1e-12, residual_tolerance=1e-08, residual_accepted=True, residual_scale=110.0, callback_units='NPV / max_abs_cashflow')\nNPV at 11%: -0.9009009009009009\nNPV change for +1 bp: -0.00909008271975275\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "linked twelve existing project methods",
+      "args": [
+        "-m",
+        "unittest",
+        "-v",
+        "test_financial_solver"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_endpoint_root (test_financial_solver.SolverTests.test_endpoint_root) ... ok\ntest_higher_rate (test_financial_solver.SolverTests.test_higher_rate) ... ok\ntest_invalid_bracket (test_financial_solver.SolverTests.test_invalid_bracket) ... ok\ntest_invalid_rate (test_financial_solver.SolverTests.test_invalid_rate) ... ok\ntest_known_npv (test_financial_solver.SolverTests.test_known_npv) ... ok\ntest_known_root_and_residual (test_financial_solver.SolverTests.test_known_root_and_residual) ... ok\ntest_multiple_roots_by_bracket (test_financial_solver.SolverTests.test_multiple_roots_by_bracket) ... ok\ntest_nonfinite_input (test_financial_solver.SolverTests.test_nonfinite_input) ... ok\ntest_one_bp_direction (test_financial_solver.SolverTests.test_one_bp_direction) ... ok\ntest_residual_acceptance_is_separate (test_financial_solver.SolverTests.test_residual_acceptance_is_separate) ... ok\ntest_scaling (test_financial_solver.SolverTests.test_scaling) ... ok\ntest_zero_rate (test_financial_solver.SolverTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "compile exact snippet and project files",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "assessment_example.py",
+        "financial_solver.py",
+        "test_financial_solver.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "silent linked project/test import",
+      "args": [
+        "-c",
+        "import financial_solver,test_financial_solver"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "exact assessment snippet independent two-period root",
+      "passed": true,
+      "actual": 0.13066238629180682,
+      "reference": "0.1306623862918074852584262744907492010232214248955655779432188369037585033423151573867398508232357050265014039857905871556496805316977293367746636290053719034821984536354012870227653115749321291231644",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "exact snippet independently repriced",
+      "passed": true,
+      "actual": 8.645279443382427e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E1 linked one-period PV",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 linked one-period root",
+      "passed": true,
+      "actual": 0.1,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 left bracket residual",
+      "passed": true,
+      "actual": 10.0,
+      "reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 right bracket residual",
+      "passed": true,
+      "actual": -8.333333333333334,
+      "reference": "-25/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 exact midpoint NPV",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 ideal ten-halving width",
+      "passed": true,
+      "actual": "1/5120",
+      "reference": "1/5120",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 midpoint basis-point bound",
+      "passed": true,
+      "actual": "125/128",
+      "reference": "125/128",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 returned-rate residual",
+      "passed": true,
+      "actual": -0.09082652134423251,
+      "reference": "-100/1101",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 endpoint root",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 exact budget residual supplemental",
+      "passed": true,
+      "actual": "0",
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 budget violation supplemental",
+      "passed": true,
+      "actual": "1/100",
+      "reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 linked equal-weight variance",
+      "passed": true,
+      "actual": 0.0325,
+      "reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 linked equal-weight volatility",
+      "passed": true,
+      "actual": 0.18027756377319948,
+      "reference": "0.18027756377319946465596106337352479731256482869226231063552265281135834741465052226023095410092453588367570910120317701880153391323489038525815085834463548788713452821370763166169151974811734723981366",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 linked correlated variance",
+      "passed": true,
+      "actual": 0.0475,
+      "reference": "19/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 linked correlated volatility",
+      "passed": true,
+      "actual": 0.21794494717703367,
+      "reference": "0.21794494717703367761184909919298078295685019626162224684451720690797786641015790428280795779259722634528293106491371068147919963919130585060782804182087349504888764594397029450309983578315603701115512",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 exact antiderivative benchmark supplemental",
+      "passed": true,
+      "actual": "1/3",
+      "reference": "1/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 linked two-panel trapezoid",
+      "passed": true,
+      "actual": 0.375,
+      "reference": "3/8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 linked four-panel trapezoid",
+      "passed": true,
+      "actual": 0.34375,
+      "reference": "11/32",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E24 linked continuous annuity",
+      "passed": true,
+      "actual": 190.32516392808085,
+      "reference": "190.32516392808085367150188110712675761058927803919809588748536588844006931150327797499310792781908552304250937070336300450218367752241980962144113748855032013629537202797685899751206677899211018674524",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E26 linked linear-zero midpoint",
+      "passed": true,
+      "actual": 0.05,
+      "reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E28 linked average forward",
+      "passed": true,
+      "actual": 0.060000000000000074,
+      "reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E32 accurate-sum primitive",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E33 linked log return",
+      "passed": true,
+      "actual": 0.009950330853168083,
+      "reference": "0.0099503308531680828482153575442607416886796099400587978646095597668666642476389110326856965627601611645256051738464847880707475234877013112485359899665628564615468674191312254128121384929569634035662311",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E34 linked log-sum-exp",
+      "passed": true,
+      "actual": 1000.6931471805599,
+      "reference": "1000.6931471805599",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E35 absolute price error supplemental",
+      "passed": true,
+      "actual": "1/50",
+      "reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E35 relative price error supplemental",
+      "passed": true,
+      "actual": "1/5000",
+      "reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E38 flat residual supplemental",
+      "passed": true,
+      "actual": "1/1000000",
+      "reference": "1/1000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E38 root error supplemental",
+      "passed": true,
+      "actual": "1/100",
+      "reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E41 linked annual coupon price",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E42 linked coupon price residual",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E43 linked single-payment11percent price",
+      "passed": true,
+      "actual": 99.09909909909909,
+      "reference": "11000/111",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E44 linked one-bp finite price change",
+      "passed": true,
+      "actual": -0.00909008271975275,
+      "reference": "-100/11001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E44 linked bumped price",
+      "passed": true,
+      "actual": 99.99090991728025,
+      "reference": "1100000/11001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E45 linked currency-scaled NPV",
+      "passed": true,
+      "actual": 4761.9047619047615,
+      "reference": "100000/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E45 linked currency-scaled root",
+      "passed": true,
+      "actual": 0.1,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E46 linked two-period NPV",
+      "passed": true,
+      "actual": 4.132231404958677,
+      "reference": "500/121",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E47 linked two-period IRR",
+      "passed": true,
+      "actual": 0.13066238629180676,
+      "reference": "0.1306623862918074852584262744907492010232214248955655779432188369037585033423151573867398508232357050265014039857905871556496805316977293367746636290053719034821984536354012870227653115749321291231644",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E48 materiality supplemental",
+      "passed": true,
+      "actual": "10000",
+      "reference": "10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E49 standard-error arithmetic supplemental",
+      "passed": true,
+      "actual": "1/5",
+      "reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 analytic quadratic optimum",
+      "passed": true,
+      "derivation": "square>=0,unique zero atx=3; supplemental analytic proof, not NPV export"
+    },
+    {
+      "label": "E12 analytic constrained optimum",
+      "passed": true,
+      "derivation": "on[0,2],derivative2(x-3)<0,so right boundary minimizes"
+    },
+    {
+      "label": "E23 actual error ratio supplemental",
+      "passed": true,
+      "actual": "4",
+      "reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E25 small subtraction primitive",
+      "passed": true,
+      "argument": 1e-20,
+      "naive": 0.0,
+      "stable": 1e-20
+    },
+    {
+      "label": "E31 binary64 operation observed",
+      "passed": true
+    },
+    {
+      "label": "E37 linked mixed tolerance fails",
+      "passed": true,
+      "independent_error": ".02",
+      "independent_threshold": ".015"
+    },
+    {
+      "label": "E9 separate root bracket 0.05",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E9 separate root bracket 0.15",
+      "passed": true,
+      "actual": 0.20000000000000767,
+      "reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E6 linked no-bracket guard",
+      "passed": true,
+      "exception": "ValueError('bracket endpoints must have opposite NPV signs')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "E17 linked invalid covariance guard",
+      "passed": true,
+      "exception": "ValueError('covariance is not PSD')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "E27 linked default extrapolation rejection",
+      "passed": true,
+      "exception": "ValueError('query outside curve')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "lab linked invalid rate guard",
+      "passed": true,
+      "exception": "ValueError('periodic effective rate > -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "lab linked nonfinite flow guard",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "worked-answer rounded presentation E7",
+      "passed": true,
+      "unrounded": -0.09082652134423251,
+      "decimal_places": 6,
+      "presented": -0.090827
+    },
+    {
+      "label": "worked-answer rounded presentation E15",
+      "passed": true,
+      "unrounded": 0.18027756377319948,
+      "decimal_places": 5,
+      "presented": 0.18028
+    },
+    {
+      "label": "worked-answer rounded presentation E16",
+      "passed": true,
+      "unrounded": 0.21794494717703367,
+      "decimal_places": 5,
+      "presented": 0.21794
+    },
+    {
+      "label": "worked-answer rounded presentation E24",
+      "passed": true,
+      "unrounded": 190.32516392808085,
+      "decimal_places": 5,
+      "presented": 190.32516
+    },
+    {
+      "label": "worked-answer rounded presentation E33",
+      "passed": true,
+      "unrounded": 0.009950330853168083,
+      "decimal_places": 8,
+      "presented": 0.00995033
+    },
+    {
+      "label": "worked-answer rounded presentation E43",
+      "passed": true,
+      "unrounded": 99.09909909909909,
+      "decimal_places": 6,
+      "presented": 99.099099
+    },
+    {
+      "label": "worked-answer rounded presentation E44 price",
+      "passed": true,
+      "unrounded": 99.99090991728025,
+      "decimal_places": 6,
+      "presented": 99.99091
+    },
+    {
+      "label": "worked-answer rounded presentation E44 change",
+      "passed": true,
+      "unrounded": -0.00909008271975275,
+      "decimal_places": 6,
+      "presented": -0.00909
+    },
+    {
+      "label": "worked-answer rounded presentation E46",
+      "passed": true,
+      "unrounded": 4.132231404958677,
+      "decimal_places": 5,
+      "presented": 4.13223
+    },
+    {
+      "label": "worked-answer rounded presentation E47",
+      "passed": true,
+      "unrounded": 0.1306623862918075,
+      "decimal_places": 6,
+      "presented": 0.130662
+    }
+  ],
+  "workflow_records": 1,
+  "chapter_wide_answer_records": 50,
+  "local_prompt_records": 0,
+  "applied_case_records": 10,
+  "applied_cases_are_subset_of_answers": true,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "existing_linked_project_methods_rerun": 12,
+  "model": {
+    "cashflows": [
+      -100,
+      110
+    ],
+    "coupon_cashflows": [
+      0,
+      5,
+      105
+    ],
+    "two_period_flows": [
+      -100,
+      60,
+      60
+    ],
+    "root_bracket": [
+      0,
+      0.3
+    ],
+    "risk": {
+      "variances": [
+        0.04,
+        0.09
+      ],
+      "covariances": [
+        0,
+        0.03
+      ]
+    },
+    "units": "fictional common currency; annual-effective periodic rates except explicit continuous annuity/forward/log-return examples",
+    "timing": "t0 initial then integer year ends; no actual market/calendar data"
+  },
+  "criteria": {
+    "ordinary_rtol": 1e-12,
+    "known_zero_currency_atol": 1e-12,
+    "root_atol": 1e-12,
+    "multiple_root_atol": 1e-10,
+    "optional_snippet_repricing_atol": 1e-10
+  },
+  "assessment_snippet_secondary_stdout": "rate: 0.13066238629180682\nNPV residual: 8.526512829121202e-14\n",
+  "prior_clean_project_evidence": {
+    "path": "qa/chapter-17-solver-project-review/setup-results.json",
+    "source_sha256": "76bc1899421fbcb6243c7838854f6b05d4c03c8731e1e8ea593b7ab57fcd9603",
+    "matches_current_linked_project": true,
+    "scope": "prior clean install/project execution, not a new environment run in this assessment"
+  }
+}
