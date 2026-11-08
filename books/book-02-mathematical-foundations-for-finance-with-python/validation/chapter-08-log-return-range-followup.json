@@ -1,0 +1,3190 @@
+{
+  "validation": "V-117",
+  "date": "2026-11-08",
+  "baseline_revision": "a029e1d587ac54836bdcc639905cdbcdab1fb2ed",
+  "baseline_source_blob": "49ab0874ff725e3138c4e36d6dd4f66663d9341c",
+  "executable_source_revision": "31c777e7b1e41eaa3913a5144a69c6cb56cf914a",
+  "baseline_reproduction_files": [
+    [
+      "section_8_05.py",
+      "a029e1d587ac54836bdcc639905cdbcdab1fb2ed",
+      "49ab0874ff725e3138c4e36d6dd4f66663d9341c"
+    ],
+    [
+      "section_8_01.py",
+      "a029e1d587ac54836bdcc639905cdbcdab1fb2ed",
+      "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    ],
+    [
+      "check_log_return_range.py",
+      "31c777e7b1e41eaa3913a5144a69c6cb56cf914a",
+      "2165173f64ab347220daa064fe857301c9d383fe"
+    ]
+  ],
+  "baseline": {
+    "reference": "Decimal logarithm of the complete represented-price ratio at 200/400 digits",
+    "tolerance": "4e-15 relative, no absolute floor; exact equal-price zero sign and exception types",
+    "observations": [
+      {
+        "case": 0,
+        "start": 1.7976931348623157e+308,
+        "end": 5e-324,
+        "expected": -1454.2227848147652,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 1,
+        "start": 5e-324,
+        "end": 1.7976931348623157e+308,
+        "expected": 1454.2227848147652,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "start": 1e+300,
+        "end": 1e-300,
+        "expected": -1381.5510557964274,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 3,
+        "start": 5e-324,
+        "end": 1,
+        "expected": 744.4400719213812,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "start": 1.7976931348623157e+308,
+        "end": 8.988465674311579e+307,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "start": 1,
+        "end": 1.0000000000000002,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "start": 1,
+        "end": 0.9999999999999999,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "start": 5e-324,
+        "end": 5e-324,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "start": 8.900295434028806e-308,
+        "end": 4.4501477170144023e-308,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "start": 8.900295434028806e-308,
+        "end": 4.450147717014403e-308,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "start": 8.900295434028806e-308,
+        "end": 4.450147717014404e-308,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028805e-308,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028806e-308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028808e-308,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "start": 8.900295434028806e-308,
+        "end": 1.780059086805761e-307,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "start": 8.900295434028806e-308,
+        "end": 1.7800590868057611e-307,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "start": 8.900295434028806e-308,
+        "end": 1.7800590868057615e-307,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "start": 8.900295434028806e-308,
+        "end": 4.3611447626741146e-308,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "start": 8.900295434028806e-308,
+        "end": 1.7889593822397897e-307,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "start": 1,
+        "end": 0.49999999999999994,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "start": 1,
+        "end": 0.5,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 21,
+        "start": 1,
+        "end": 0.5000000000000001,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "start": 1,
+        "end": 0.9999999999999999,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "start": 1,
+        "end": 1,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "start": 1,
+        "end": 1.0000000000000002,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "start": 1,
+        "end": 1.9999999999999998,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 26,
+        "start": 1,
+        "end": 2,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "start": 1,
+        "end": 2.0000000000000004,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "start": 1,
+        "end": 0.49,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "start": 1,
+        "end": 2.01,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "start": 1.1235582092889474e+307,
+        "end": 5.6177910464447366e+306,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "start": 1.1235582092889474e+307,
+        "end": 5.617791046444737e+306,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 32,
+        "start": 1.1235582092889474e+307,
+        "end": 5.617791046444738e+306,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 33,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889473e+307,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 34,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889474e+307,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 35,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889477e+307,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 36,
+        "start": 1.1235582092889474e+307,
+        "end": 2.2471164185778946e+307,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 37,
+        "start": 1.1235582092889474e+307,
+        "end": 2.247116418577895e+307,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 38,
+        "start": 1.1235582092889474e+307,
+        "end": 2.2471164185778954e+307,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 39,
+        "start": 1.1235582092889474e+307,
+        "end": 5.5054352255158424e+306,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 40,
+        "start": 1.1235582092889474e+307,
+        "end": 2.258352000670784e+307,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 41,
+        "start": 5e-324,
+        "end": 5e-324,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 42,
+        "start": 5e-324,
+        "end": 1e-323,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 43,
+        "start": 1e-323,
+        "end": 5e-324,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 44,
+        "start": 1e-323,
+        "end": 1e-323,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 45,
+        "start": 1e-323,
+        "end": 1.5e-323,
+        "expected": 0.4054651081081644,
+        "expected_zero_sign": null,
+        "actual": 0.4054651081081644,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 46,
+        "start": 1.5e-323,
+        "end": 1e-323,
+        "expected": -0.4054651081081644,
+        "expected_zero_sign": null,
+        "actual": -0.4054651081081644,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 47,
+        "start": 1.5e-323,
+        "end": 1.5e-323,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 48,
+        "start": 1.5e-323,
+        "end": 2e-323,
+        "expected": 0.2876820724517809,
+        "expected_zero_sign": null,
+        "actual": 0.2876820724517809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 49,
+        "start": 2.2250738585072014e-308,
+        "end": 2.225073858507201e-308,
+        "expected": -2.2204460492503136e-16,
+        "expected_zero_sign": null,
+        "actual": -2.220446049250313e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 50,
+        "start": 2.2250738585072014e-308,
+        "end": 2.2250738585072014e-308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 51,
+        "start": 2.2250738585072014e-308,
+        "end": 2.225073858507202e-308,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 52,
+        "start": 8.98846567431158e+307,
+        "end": 8.988465674311579e+307,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 53,
+        "start": 8.98846567431158e+307,
+        "end": 8.98846567431158e+307,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 54,
+        "start": 8.98846567431158e+307,
+        "end": 8.988465674311582e+307,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 55,
+        "start": 1.7976931348623157e+308,
+        "end": 1.7976931348623155e+308,
+        "expected": -1.1102230246251568e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251568e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 56,
+        "start": 1.7976931348623157e+308,
+        "end": 1.7976931348623157e+308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 57,
+        "start": 1.1444976594489657e+195,
+        "end": 5.109990128062487e-252,
+        "expected": -1027.7593049113766,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 58,
+        "start": 1.425278649918784e-151,
+        "end": 3.42782703660243e+198,
+        "expected": 804.4797566599104,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 59,
+        "start": 3.536595774247556e-282,
+        "end": 7.575310838942561e-16,
+        "expected": 613.2493645030386,
+        "expected_zero_sign": null,
+        "actual": 613.2493645030386,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 60,
+        "start": 5.767799706895011e-154,
+        "end": 9.351054767218993e-257,
+        "expected": -236.6830661066206,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 61,
+        "start": 1.2603605186915287e-104,
+        "end": 5.688290037789607e+296,
+        "expected": 922.5410490740089,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 62,
+        "start": 1.8999304223189346e-163,
+        "end": 2.886299977761007e-219,
+        "expected": -128.52660707598812,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 63,
+        "start": 1.657465403830382e+264,
+        "end": 2.3757503666774597e-131,
+        "expected": -909.1610879715565,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 64,
+        "start": 1.2264805397082933e+241,
+        "end": 1.1527816943418136e-235,
+        "expected": -1096.0924750969562,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 65,
+        "start": 8.58152528563562e-292,
+        "end": 1.8863056438257355e-92,
+        "expected": 459.0020271592639,
+        "expected_zero_sign": null,
+        "actual": 459.0020271592639,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 66,
+        "start": 1.887551224504234e-306,
+        "end": 4.2449390202213275e-47,
+        "expected": 597.1799861994517,
+        "expected_zero_sign": null,
+        "actual": 597.1799861994517,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 67,
+        "start": 2.2468529632278663e+251,
+        "end": 5.453056175152269e-254,
+        "expected": -1161.918826298542,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 68,
+        "start": 3.603388012303376e+283,
+        "end": 3.838375133506456e-186,
+        "expected": -1079.8492339968939,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 69,
+        "start": 5.16034271816679e-274,
+        "end": 0.000003082342707634097,
+        "expected": 616.5774918540899,
+        "expected_zero_sign": null,
+        "actual": 616.5774918540899,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 70,
+        "start": 8.659845300021554e-107,
+        "end": 1.8037444074069285e+230,
+        "expected": 774.4023442108819,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 71,
+        "start": 9.584401552063743e-278,
+        "end": 2.8765242033285366e+208,
+        "expected": 1117.8528009478855,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 72,
+        "start": 4.492104368324489e+180,
+        "end": 5.843890559910316e+166,
+        "expected": -31.97311580599091,
+        "expected_zero_sign": null,
+        "actual": -31.983210378570735,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 73,
+        "start": 2.654925855884831e+171,
+        "end": 1.1989485299047516e+76,
+        "expected": -219.5405556149129,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 74,
+        "start": 2.501813516155309e-79,
+        "end": 406.54572336297804,
+        "expected": 186.99490287443356,
+        "expected_zero_sign": null,
+        "actual": 186.99490287443356,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 75,
+        "start": 1.5255462078016107e-78,
+        "end": 5.481105305597079e-222,
+        "expected": -330.2932991274017,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 76,
+        "start": 1.350825046494909e+229,
+        "end": 2.8138063410446724e+29,
+        "expected": -459.7831960136274,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 77,
+        "start": 3.8235582791205547e-255,
+        "end": 1.0266948923134922e-102,
+        "expected": 350.98068255280685,
+        "expected_zero_sign": null,
+        "actual": 350.98068255280685,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 78,
+        "start": 2.0694141147945147e-276,
+        "end": 1.6481830682808086e-18,
+        "expected": 593.8393619720197,
+        "expected_zero_sign": null,
+        "actual": 593.8393619720197,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 79,
+        "start": 4.08743964256627e-68,
+        "end": 1.4781878123301426e-131,
+        "expected": -146.07996274199962,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 80,
+        "start": 2.2137398500017037e-167,
+        "end": 1.0375812902168037e-157,
+        "expected": 22.268059926885083,
+        "expected_zero_sign": null,
+        "actual": 22.268059926885083,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "args": [
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          "inf",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "start",
+        "actual": "ValueError",
+        "exception_message": "start must be finite",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          "nan"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "end",
+        "actual": "ValueError",
+        "exception_message": "end must be finite",
+        "passed": true
+      },
+      {
+        "args": [
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "start",
+        "actual": "ValueError",
+        "exception_message": "start is outside finite float range",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "end",
+        "actual": "ValueError",
+        "exception_message": "end is outside finite float range",
+        "passed": true
+      },
+      {
+        "args": [
+          0,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          -1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          "bad",
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          0,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      }
+    ]
+  },
+  "baseline_replay": {
+    "reference": "Decimal logarithm of the complete represented-price ratio at 200/400 digits",
+    "tolerance": "4e-15 relative, no absolute floor; exact equal-price zero sign and exception types",
+    "observations": [
+      {
+        "case": 0,
+        "start": 1.7976931348623157e+308,
+        "end": 5e-324,
+        "expected": -1454.2227848147652,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 1,
+        "start": 5e-324,
+        "end": 1.7976931348623157e+308,
+        "expected": 1454.2227848147652,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "start": 1e+300,
+        "end": 1e-300,
+        "expected": -1381.5510557964274,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 3,
+        "start": 5e-324,
+        "end": 1,
+        "expected": 744.4400719213812,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "start": 1.7976931348623157e+308,
+        "end": 8.988465674311579e+307,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "start": 1,
+        "end": 1.0000000000000002,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "start": 1,
+        "end": 0.9999999999999999,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "start": 5e-324,
+        "end": 5e-324,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "start": 8.900295434028806e-308,
+        "end": 4.4501477170144023e-308,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "start": 8.900295434028806e-308,
+        "end": 4.450147717014403e-308,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "start": 8.900295434028806e-308,
+        "end": 4.450147717014404e-308,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028805e-308,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028806e-308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028808e-308,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "start": 8.900295434028806e-308,
+        "end": 1.780059086805761e-307,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "start": 8.900295434028806e-308,
+        "end": 1.7800590868057611e-307,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "start": 8.900295434028806e-308,
+        "end": 1.7800590868057615e-307,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "start": 8.900295434028806e-308,
+        "end": 4.3611447626741146e-308,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "start": 8.900295434028806e-308,
+        "end": 1.7889593822397897e-307,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "start": 1,
+        "end": 0.49999999999999994,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "start": 1,
+        "end": 0.5,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 21,
+        "start": 1,
+        "end": 0.5000000000000001,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "start": 1,
+        "end": 0.9999999999999999,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "start": 1,
+        "end": 1,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "start": 1,
+        "end": 1.0000000000000002,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "start": 1,
+        "end": 1.9999999999999998,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 26,
+        "start": 1,
+        "end": 2,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "start": 1,
+        "end": 2.0000000000000004,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "start": 1,
+        "end": 0.49,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "start": 1,
+        "end": 2.01,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "start": 1.1235582092889474e+307,
+        "end": 5.6177910464447366e+306,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "start": 1.1235582092889474e+307,
+        "end": 5.617791046444737e+306,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 32,
+        "start": 1.1235582092889474e+307,
+        "end": 5.617791046444738e+306,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 33,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889473e+307,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 34,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889474e+307,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 35,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889477e+307,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 36,
+        "start": 1.1235582092889474e+307,
+        "end": 2.2471164185778946e+307,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 37,
+        "start": 1.1235582092889474e+307,
+        "end": 2.247116418577895e+307,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 38,
+        "start": 1.1235582092889474e+307,
+        "end": 2.2471164185778954e+307,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 39,
+        "start": 1.1235582092889474e+307,
+        "end": 5.5054352255158424e+306,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 40,
+        "start": 1.1235582092889474e+307,
+        "end": 2.258352000670784e+307,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 41,
+        "start": 5e-324,
+        "end": 5e-324,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 42,
+        "start": 5e-324,
+        "end": 1e-323,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 43,
+        "start": 1e-323,
+        "end": 5e-324,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 44,
+        "start": 1e-323,
+        "end": 1e-323,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 45,
+        "start": 1e-323,
+        "end": 1.5e-323,
+        "expected": 0.4054651081081644,
+        "expected_zero_sign": null,
+        "actual": 0.4054651081081644,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 46,
+        "start": 1.5e-323,
+        "end": 1e-323,
+        "expected": -0.4054651081081644,
+        "expected_zero_sign": null,
+        "actual": -0.4054651081081644,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 47,
+        "start": 1.5e-323,
+        "end": 1.5e-323,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 48,
+        "start": 1.5e-323,
+        "end": 2e-323,
+        "expected": 0.2876820724517809,
+        "expected_zero_sign": null,
+        "actual": 0.2876820724517809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 49,
+        "start": 2.2250738585072014e-308,
+        "end": 2.225073858507201e-308,
+        "expected": -2.2204460492503136e-16,
+        "expected_zero_sign": null,
+        "actual": -2.220446049250313e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 50,
+        "start": 2.2250738585072014e-308,
+        "end": 2.2250738585072014e-308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 51,
+        "start": 2.2250738585072014e-308,
+        "end": 2.225073858507202e-308,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 52,
+        "start": 8.98846567431158e+307,
+        "end": 8.988465674311579e+307,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 53,
+        "start": 8.98846567431158e+307,
+        "end": 8.98846567431158e+307,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 54,
+        "start": 8.98846567431158e+307,
+        "end": 8.988465674311582e+307,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 55,
+        "start": 1.7976931348623157e+308,
+        "end": 1.7976931348623155e+308,
+        "expected": -1.1102230246251568e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251568e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 56,
+        "start": 1.7976931348623157e+308,
+        "end": 1.7976931348623157e+308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 57,
+        "start": 1.1444976594489657e+195,
+        "end": 5.109990128062487e-252,
+        "expected": -1027.7593049113766,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 58,
+        "start": 1.425278649918784e-151,
+        "end": 3.42782703660243e+198,
+        "expected": 804.4797566599104,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 59,
+        "start": 3.536595774247556e-282,
+        "end": 7.575310838942561e-16,
+        "expected": 613.2493645030386,
+        "expected_zero_sign": null,
+        "actual": 613.2493645030386,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 60,
+        "start": 5.767799706895011e-154,
+        "end": 9.351054767218993e-257,
+        "expected": -236.6830661066206,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 61,
+        "start": 1.2603605186915287e-104,
+        "end": 5.688290037789607e+296,
+        "expected": 922.5410490740089,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 62,
+        "start": 1.8999304223189346e-163,
+        "end": 2.886299977761007e-219,
+        "expected": -128.52660707598812,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 63,
+        "start": 1.657465403830382e+264,
+        "end": 2.3757503666774597e-131,
+        "expected": -909.1610879715565,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 64,
+        "start": 1.2264805397082933e+241,
+        "end": 1.1527816943418136e-235,
+        "expected": -1096.0924750969562,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 65,
+        "start": 8.58152528563562e-292,
+        "end": 1.8863056438257355e-92,
+        "expected": 459.0020271592639,
+        "expected_zero_sign": null,
+        "actual": 459.0020271592639,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 66,
+        "start": 1.887551224504234e-306,
+        "end": 4.2449390202213275e-47,
+        "expected": 597.1799861994517,
+        "expected_zero_sign": null,
+        "actual": 597.1799861994517,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 67,
+        "start": 2.2468529632278663e+251,
+        "end": 5.453056175152269e-254,
+        "expected": -1161.918826298542,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 68,
+        "start": 3.603388012303376e+283,
+        "end": 3.838375133506456e-186,
+        "expected": -1079.8492339968939,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 69,
+        "start": 5.16034271816679e-274,
+        "end": 0.000003082342707634097,
+        "expected": 616.5774918540899,
+        "expected_zero_sign": null,
+        "actual": 616.5774918540899,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 70,
+        "start": 8.659845300021554e-107,
+        "end": 1.8037444074069285e+230,
+        "expected": 774.4023442108819,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 71,
+        "start": 9.584401552063743e-278,
+        "end": 2.8765242033285366e+208,
+        "expected": 1117.8528009478855,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 72,
+        "start": 4.492104368324489e+180,
+        "end": 5.843890559910316e+166,
+        "expected": -31.97311580599091,
+        "expected_zero_sign": null,
+        "actual": -31.983210378570735,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 73,
+        "start": 2.654925855884831e+171,
+        "end": 1.1989485299047516e+76,
+        "expected": -219.5405556149129,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 74,
+        "start": 2.501813516155309e-79,
+        "end": 406.54572336297804,
+        "expected": 186.99490287443356,
+        "expected_zero_sign": null,
+        "actual": 186.99490287443356,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 75,
+        "start": 1.5255462078016107e-78,
+        "end": 5.481105305597079e-222,
+        "expected": -330.2932991274017,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 76,
+        "start": 1.350825046494909e+229,
+        "end": 2.8138063410446724e+29,
+        "expected": -459.7831960136274,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 77,
+        "start": 3.8235582791205547e-255,
+        "end": 1.0266948923134922e-102,
+        "expected": 350.98068255280685,
+        "expected_zero_sign": null,
+        "actual": 350.98068255280685,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 78,
+        "start": 2.0694141147945147e-276,
+        "end": 1.6481830682808086e-18,
+        "expected": 593.8393619720197,
+        "expected_zero_sign": null,
+        "actual": 593.8393619720197,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 79,
+        "start": 4.08743964256627e-68,
+        "end": 1.4781878123301426e-131,
+        "expected": -146.07996274199962,
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "math domain error",
+        "passed": false
+      },
+      {
+        "case": 80,
+        "start": 2.2137398500017037e-167,
+        "end": 1.0375812902168037e-157,
+        "expected": 22.268059926885083,
+        "expected_zero_sign": null,
+        "actual": 22.268059926885083,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "args": [
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          "inf",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "start",
+        "actual": "ValueError",
+        "exception_message": "start must be finite",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          "nan"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "end",
+        "actual": "ValueError",
+        "exception_message": "end must be finite",
+        "passed": true
+      },
+      {
+        "args": [
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "start",
+        "actual": "ValueError",
+        "exception_message": "start is outside finite float range",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "end",
+        "actual": "ValueError",
+        "exception_message": "end is outside finite float range",
+        "passed": true
+      },
+      {
+        "args": [
+          0,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          -1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          "bad",
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          0,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      }
+    ]
+  },
+  "corrected": {
+    "reference": "Decimal logarithm of the complete represented-price ratio at 200/400 digits",
+    "tolerance": "4e-15 relative, no absolute floor; exact equal-price zero sign and exception types",
+    "observations": [
+      {
+        "case": 0,
+        "start": 1.7976931348623157e+308,
+        "end": 5e-324,
+        "expected": -1454.2227848147652,
+        "expected_zero_sign": null,
+        "actual": -1454.2227848147652,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "start": 5e-324,
+        "end": 1.7976931348623157e+308,
+        "expected": 1454.2227848147652,
+        "expected_zero_sign": null,
+        "actual": 1454.2227848147652,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 2,
+        "start": 1e+300,
+        "end": 1e-300,
+        "expected": -1381.5510557964274,
+        "expected_zero_sign": null,
+        "actual": -1381.5510557964274,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 3,
+        "start": 5e-324,
+        "end": 1,
+        "expected": 744.4400719213812,
+        "expected_zero_sign": null,
+        "actual": 744.4400719213812,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 4,
+        "start": 1.7976931348623157e+308,
+        "end": 8.988465674311579e+307,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "start": 1,
+        "end": 1.0000000000000002,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "start": 1,
+        "end": 0.9999999999999999,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "start": 5e-324,
+        "end": 5e-324,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "start": 8.900295434028806e-308,
+        "end": 4.4501477170144023e-308,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "start": 8.900295434028806e-308,
+        "end": 4.450147717014403e-308,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "start": 8.900295434028806e-308,
+        "end": 4.450147717014404e-308,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028805e-308,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028806e-308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "start": 8.900295434028806e-308,
+        "end": 8.900295434028808e-308,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "start": 8.900295434028806e-308,
+        "end": 1.780059086805761e-307,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "start": 8.900295434028806e-308,
+        "end": 1.7800590868057611e-307,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "start": 8.900295434028806e-308,
+        "end": 1.7800590868057615e-307,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "start": 8.900295434028806e-308,
+        "end": 4.3611447626741146e-308,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "start": 8.900295434028806e-308,
+        "end": 1.7889593822397897e-307,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "start": 1,
+        "end": 0.49999999999999994,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "start": 1,
+        "end": 0.5,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 21,
+        "start": 1,
+        "end": 0.5000000000000001,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "start": 1,
+        "end": 0.9999999999999999,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "start": 1,
+        "end": 1,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "start": 1,
+        "end": 1.0000000000000002,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "start": 1,
+        "end": 1.9999999999999998,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 26,
+        "start": 1,
+        "end": 2,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "start": 1,
+        "end": 2.0000000000000004,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "start": 1,
+        "end": 0.49,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "start": 1,
+        "end": 2.01,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "start": 1.1235582092889474e+307,
+        "end": 5.6177910464447366e+306,
+        "expected": -0.6931471805599454,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "start": 1.1235582092889474e+307,
+        "end": 5.617791046444737e+306,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 32,
+        "start": 1.1235582092889474e+307,
+        "end": 5.617791046444738e+306,
+        "expected": -0.6931471805599451,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599451,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 33,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889473e+307,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 34,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889474e+307,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 35,
+        "start": 1.1235582092889474e+307,
+        "end": 1.1235582092889477e+307,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 36,
+        "start": 1.1235582092889474e+307,
+        "end": 2.2471164185778946e+307,
+        "expected": 0.6931471805599452,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599452,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 37,
+        "start": 1.1235582092889474e+307,
+        "end": 2.247116418577895e+307,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 38,
+        "start": 1.1235582092889474e+307,
+        "end": 2.2471164185778954e+307,
+        "expected": 0.6931471805599455,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 39,
+        "start": 1.1235582092889474e+307,
+        "end": 5.5054352255158424e+306,
+        "expected": -0.7133498878774648,
+        "expected_zero_sign": null,
+        "actual": -0.7133498878774648,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 40,
+        "start": 1.1235582092889474e+307,
+        "end": 2.258352000670784e+307,
+        "expected": 0.6981347220709843,
+        "expected_zero_sign": null,
+        "actual": 0.6981347220709843,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 41,
+        "start": 5e-324,
+        "end": 5e-324,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 42,
+        "start": 5e-324,
+        "end": 1e-323,
+        "expected": 0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": 0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 43,
+        "start": 1e-323,
+        "end": 5e-324,
+        "expected": -0.6931471805599453,
+        "expected_zero_sign": null,
+        "actual": -0.6931471805599453,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 44,
+        "start": 1e-323,
+        "end": 1e-323,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 45,
+        "start": 1e-323,
+        "end": 1.5e-323,
+        "expected": 0.4054651081081644,
+        "expected_zero_sign": null,
+        "actual": 0.4054651081081644,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 46,
+        "start": 1.5e-323,
+        "end": 1e-323,
+        "expected": -0.4054651081081644,
+        "expected_zero_sign": null,
+        "actual": -0.4054651081081644,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 47,
+        "start": 1.5e-323,
+        "end": 1.5e-323,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 48,
+        "start": 1.5e-323,
+        "end": 2e-323,
+        "expected": 0.2876820724517809,
+        "expected_zero_sign": null,
+        "actual": 0.2876820724517809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 49,
+        "start": 2.2250738585072014e-308,
+        "end": 2.225073858507201e-308,
+        "expected": -2.2204460492503136e-16,
+        "expected_zero_sign": null,
+        "actual": -2.220446049250313e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 50,
+        "start": 2.2250738585072014e-308,
+        "end": 2.2250738585072014e-308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 51,
+        "start": 2.2250738585072014e-308,
+        "end": 2.225073858507202e-308,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 52,
+        "start": 8.98846567431158e+307,
+        "end": 8.988465674311579e+307,
+        "expected": -1.1102230246251565e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251565e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 53,
+        "start": 8.98846567431158e+307,
+        "end": 8.98846567431158e+307,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 54,
+        "start": 8.98846567431158e+307,
+        "end": 8.988465674311582e+307,
+        "expected": 2.2204460492503128e-16,
+        "expected_zero_sign": null,
+        "actual": 2.2204460492503128e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 55,
+        "start": 1.7976931348623157e+308,
+        "end": 1.7976931348623155e+308,
+        "expected": -1.1102230246251568e-16,
+        "expected_zero_sign": null,
+        "actual": -1.1102230246251568e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 56,
+        "start": 1.7976931348623157e+308,
+        "end": 1.7976931348623157e+308,
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 57,
+        "start": 1.1444976594489657e+195,
+        "end": 5.109990128062487e-252,
+        "expected": -1027.7593049113766,
+        "expected_zero_sign": null,
+        "actual": -1027.7593049113766,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 58,
+        "start": 1.425278649918784e-151,
+        "end": 3.42782703660243e+198,
+        "expected": 804.4797566599104,
+        "expected_zero_sign": null,
+        "actual": 804.4797566599104,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 59,
+        "start": 3.536595774247556e-282,
+        "end": 7.575310838942561e-16,
+        "expected": 613.2493645030386,
+        "expected_zero_sign": null,
+        "actual": 613.2493645030385,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 60,
+        "start": 5.767799706895011e-154,
+        "end": 9.351054767218993e-257,
+        "expected": -236.6830661066206,
+        "expected_zero_sign": null,
+        "actual": -236.68306610662057,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 61,
+        "start": 1.2603605186915287e-104,
+        "end": 5.688290037789607e+296,
+        "expected": 922.5410490740089,
+        "expected_zero_sign": null,
+        "actual": 922.5410490740089,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 62,
+        "start": 1.8999304223189346e-163,
+        "end": 2.886299977761007e-219,
+        "expected": -128.52660707598812,
+        "expected_zero_sign": null,
+        "actual": -128.52660707598812,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 63,
+        "start": 1.657465403830382e+264,
+        "end": 2.3757503666774597e-131,
+        "expected": -909.1610879715565,
+        "expected_zero_sign": null,
+        "actual": -909.1610879715565,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 64,
+        "start": 1.2264805397082933e+241,
+        "end": 1.1527816943418136e-235,
+        "expected": -1096.0924750969562,
+        "expected_zero_sign": null,
+        "actual": -1096.0924750969562,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 65,
+        "start": 8.58152528563562e-292,
+        "end": 1.8863056438257355e-92,
+        "expected": 459.0020271592639,
+        "expected_zero_sign": null,
+        "actual": 459.0020271592639,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 66,
+        "start": 1.887551224504234e-306,
+        "end": 4.2449390202213275e-47,
+        "expected": 597.1799861994517,
+        "expected_zero_sign": null,
+        "actual": 597.1799861994516,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 67,
+        "start": 2.2468529632278663e+251,
+        "end": 5.453056175152269e-254,
+        "expected": -1161.918826298542,
+        "expected_zero_sign": null,
+        "actual": -1161.9188262985417,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 68,
+        "start": 3.603388012303376e+283,
+        "end": 3.838375133506456e-186,
+        "expected": -1079.8492339968939,
+        "expected_zero_sign": null,
+        "actual": -1079.8492339968939,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 69,
+        "start": 5.16034271816679e-274,
+        "end": 0.000003082342707634097,
+        "expected": 616.5774918540899,
+        "expected_zero_sign": null,
+        "actual": 616.5774918540899,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 70,
+        "start": 8.659845300021554e-107,
+        "end": 1.8037444074069285e+230,
+        "expected": 774.4023442108819,
+        "expected_zero_sign": null,
+        "actual": 774.4023442108819,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 71,
+        "start": 9.584401552063743e-278,
+        "end": 2.8765242033285366e+208,
+        "expected": 1117.8528009478855,
+        "expected_zero_sign": null,
+        "actual": 1117.8528009478855,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 72,
+        "start": 4.492104368324489e+180,
+        "end": 5.843890559910316e+166,
+        "expected": -31.97311580599091,
+        "expected_zero_sign": null,
+        "actual": -31.973115805990915,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 73,
+        "start": 2.654925855884831e+171,
+        "end": 1.1989485299047516e+76,
+        "expected": -219.5405556149129,
+        "expected_zero_sign": null,
+        "actual": -219.5405556149129,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 74,
+        "start": 2.501813516155309e-79,
+        "end": 406.54572336297804,
+        "expected": 186.99490287443356,
+        "expected_zero_sign": null,
+        "actual": 186.99490287443354,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 75,
+        "start": 1.5255462078016107e-78,
+        "end": 5.481105305597079e-222,
+        "expected": -330.2932991274017,
+        "expected_zero_sign": null,
+        "actual": -330.29329912740167,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 76,
+        "start": 1.350825046494909e+229,
+        "end": 2.8138063410446724e+29,
+        "expected": -459.7831960136274,
+        "expected_zero_sign": null,
+        "actual": -459.7831960136274,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 77,
+        "start": 3.8235582791205547e-255,
+        "end": 1.0266948923134922e-102,
+        "expected": 350.98068255280685,
+        "expected_zero_sign": null,
+        "actual": 350.9806825528068,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 78,
+        "start": 2.0694141147945147e-276,
+        "end": 1.6481830682808086e-18,
+        "expected": 593.8393619720197,
+        "expected_zero_sign": null,
+        "actual": 593.8393619720197,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 79,
+        "start": 4.08743964256627e-68,
+        "end": 1.4781878123301426e-131,
+        "expected": -146.07996274199962,
+        "expected_zero_sign": null,
+        "actual": -146.07996274199962,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 80,
+        "start": 2.2137398500017037e-167,
+        "end": 1.0375812902168037e-157,
+        "expected": 22.268059926885083,
+        "expected_zero_sign": null,
+        "actual": 22.268059926885083,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "args": [
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          "inf",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "start",
+        "actual": "ValueError",
+        "exception_message": "start must be finite",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          "nan"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "end",
+        "actual": "ValueError",
+        "exception_message": "end must be finite",
+        "passed": true
+      },
+      {
+        "args": [
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "start",
+        "actual": "ValueError",
+        "exception_message": "start is outside finite float range",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "end",
+        "actual": "ValueError",
+        "exception_message": "end is outside finite float range",
+        "passed": true
+      },
+      {
+        "args": [
+          0,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          -1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "prices",
+        "actual": "ValueError",
+        "exception_message": "prices must be positive",
+        "passed": true
+      },
+      {
+        "args": [
+          "bad",
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "start",
+        "actual": "TypeError",
+        "exception_message": "start must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "args": [
+          0,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "end",
+        "actual": "TypeError",
+        "exception_message": "end must be numeric, excluding bool",
+        "passed": true
+      }
+    ]
+  },
+  "baseline_replay_byte_identical": true,
+  "pinned_corrected_matches_local": true,
+  "raw_stdout_sha256": {
+    "baseline.json": "6b9a4cf8c5731445cbbf7a20945b828e620f2e5c1a539815aecc7e6197c01e9e",
+    "baseline-replay.json": "6b9a4cf8c5731445cbbf7a20945b828e620f2e5c1a539815aecc7e6197c01e9e",
+    "corrected.json": "68a1126ac84f55ef10e8f21fdbca92010db13238af36b6b8a4992baa0d2864ac"
+  },
+  "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-log117/baseline/check_log_return_range.py\", line 67, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-log117/baseline/check_log_return_range.py\", line 65, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 20 mismatches\n",
+  "replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-log117/baseline/check_log_return_range.py\", line 67, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-log117/baseline/check_log_return_range.py\", line 65, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 20 mismatches\n",
+  "corrected_stderr": "",
+  "harness_note": "The first orchestration tried to store an absent session ID after an already-completed baseline process. Actual baseline/corrected output files were preserved and inspected; the baseline replay completed and was byte-identical. This metadata error is separate from numerical mismatches.",
+  "pinned_stdout_sha256": "68a1126ac84f55ef10e8f21fdbca92010db13238af36b6b8a4992baa0d2864ac",
+  "limits": "95 selected log-return checks; 20 baseline mismatches are not distinct defect counts. Full runtime is recorded separately. 35 selected COV categories partial; none closed. No independent reviewer/platform/release/canonical approval."
+}
