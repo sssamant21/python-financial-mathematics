@@ -1,0 +1,672 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "source_sha256": "608c5fb6ac417e72e1073a0342677d9ee64e43349fce9ad7e3449ead9443bea9",
+  "listing_sha256": "580be8d4f45a2d4301e2ceae1016728bf4ab745dfffc54add5f9acd02a7b42a3",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "portfolio_optimization.py"
+      ],
+      "returncode": 0,
+      "stdout": "GMV: {'weights': (0.6923076923076923, 0.3076923076923077), 'expected_return': 0.06769230769230769, 'variance': 0.027692307692307693, 'volatility': 0.16641005886756874, 'reported_budget_residual': 0.0, 'nonunique': False, 'feasible_weight_interval': (0.0, 1.0), 'method': 'analytic_convex_projection', 'status': 'feasible_analytic_solution'}\nTarget return: {'weights': (0.75, 0.25), 'expected_return': 0.07, 'variance': 0.028125, 'volatility': 0.16770509831248423, 'reported_budget_residual': 0.0, 'nonunique': False, 'feasible_weight_interval': (0.75, 1.0), 'method': 'analytic_convex_projection', 'status': 'feasible_analytic_solution', 'target': 0.07}\nMax Sharpe grid: {'weights': (0.871, 0.129), 'expected_return': 0.07484, 'variance': 0.03184333, 'volatility': 0.17844699493126803, 'reported_budget_residual': 0.0, 'sharpe': 0.3073181480087271, 'method': 'finite_grid_max_sharpe', 'steps': 1000, 'evaluations': 1001, 'zero_volatility_skipped': 0, 'termination': 'all_grid_points_evaluated', 'grid_spacing': 0.001}\n",
+      "stderr": "test_01_equal_return (__main__.PortfolioTests.test_01_equal_return) ... ok\ntest_02_equal_variance (__main__.PortfolioTests.test_02_equal_variance) ... ok\ntest_03_gmv_weight (__main__.PortfolioTests.test_03_gmv_weight) ... ok\ntest_04_gmv_variance (__main__.PortfolioTests.test_04_gmv_variance) ... ok\ntest_05_cap (__main__.PortfolioTests.test_05_cap) ... ok\ntest_06_target (__main__.PortfolioTests.test_06_target) ... ok\ntest_07_target_infeasible (__main__.PortfolioTests.test_07_target_infeasible) ... ok\ntest_08_sharpe (__main__.PortfolioTests.test_08_sharpe) ... ok\ntest_09_grid (__main__.PortfolioTests.test_09_grid) ... ok\ntest_10_bad_cov (__main__.PortfolioTests.test_10_bad_cov) ... ok\ntest_11_bad_cap (__main__.PortfolioTests.test_11_bad_cap) ... ok\ntest_12_zero_vol (__main__.PortfolioTests.test_12_zero_vol) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.004s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import portfolio_optimization"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_optimization.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy SLSQP snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "[0.4 0.6] 0.056 0.0388\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy analytic capped weight A",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy analytic capped weight B",
+      "passed": true,
+      "actual": 0.6,
+      "reference": "3/5",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy independently repriced variance",
+      "passed": true,
+      "actual": "97/2500",
+      "reference": "97/2500",
+      "absolute_tolerance": 1e-09,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy independent feasibility",
+      "passed": true,
+      "actual": [
+        0.4,
+        0.6
+      ],
+      "second_exact_snippet_stdout": "[0.4 0.6] 0.056 0.0388\n"
+    },
+    {
+      "label": "E2 equal expected return",
+      "passed": true,
+      "actual": 0.06,
+      "reference": "3/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 equal variance",
+      "passed": true,
+      "actual": 0.0325,
+      "reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 equal volatility",
+      "passed": true,
+      "actual": 0.18027756377319948,
+      "reference": "0.1802775637731994646559610633735247973125648286922623106355226528113583474146505222602309541009245359",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 supplemental covariance",
+      "passed": true,
+      "actual": "3/100",
+      "reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 free A weight",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E11 free B weight",
+      "passed": true,
+      "actual": 0.3076923076923077,
+      "reference": "4/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 GMV expected return",
+      "passed": true,
+      "actual": 0.06769230769230769,
+      "reference": "22/325",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 GMV variance",
+      "passed": true,
+      "actual": 0.027692307692307693,
+      "reference": "9/325",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 GMV volatility",
+      "passed": true,
+      "actual": 0.16641005886756874,
+      "reference": "0.1664100588675687366055025200370998129039059957159344405866362949027923206904466359325208807085457254",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 capped A",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 capped risk",
+      "passed": true,
+      "actual": 0.0388,
+      "reference": "97/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 capped mean",
+      "passed": true,
+      "actual": 0.056,
+      "reference": "7/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab cap objective increase",
+      "passed": true,
+      "actual": "361/32500",
+      "reference": "361/32500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 target A weight",
+      "passed": true,
+      "actual": 0.75,
+      "reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 target risk",
+      "passed": true,
+      "actual": 0.028125,
+      "reference": "9/320",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 Sharpe",
+      "passed": true,
+      "actual": 0.3,
+      "reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E27 supplemental information ratio",
+      "passed": true,
+      "actual": "1/2",
+      "reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E28 supplemental cost fraction",
+      "passed": true,
+      "actual": "1/5000",
+      "reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E29 supplemental gross turnover",
+      "passed": true,
+      "actual": "1/5",
+      "reference": "1/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F164 tiny scale GMV",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F164 large Sharpe numerator finite ratio",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F164 integer expected-return difference",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F164 negative mean slope target",
+      "passed": true,
+      "actual": 0.25,
+      "reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F164 equal means feasible target",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab frontier weight 0.04",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab frontier weight 0.06",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab frontier weight 0.07",
+      "passed": true,
+      "actual": 0.75,
+      "reference": "3/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab frontier weight 0.08",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "finite Sharpe grid independent rational winner",
+      "passed": true,
+      "actual": 0.871,
+      "reference": "871/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "finite Sharpe grid independent score",
+      "passed": true,
+      "actual": 0.3073181480087271,
+      "reference": "0.3073181480087270732653277953428934577636304695793378583906691550213364024921245295030103029317309319",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "grid score below continuous tangency bound",
+      "passed": true,
+      "continuous_weight": "27/31",
+      "continuous_squared_sharpe": "17/180",
+      "finite_grid_weight": "871/1000"
+    },
+    {
+      "label": "F164 singleton GMV unique",
+      "passed": true,
+      "result": {
+        "weights": [
+          0.4,
+          0.6
+        ],
+        "expected_return": 0.056,
+        "variance": 0.04,
+        "volatility": 0.2,
+        "reported_budget_residual": 0.0,
+        "nonunique": false,
+        "feasible_weight_interval": [
+          0.4,
+          0.4
+        ],
+        "method": "analytic_convex_projection",
+        "status": "feasible_analytic_solution"
+      }
+    },
+    {
+      "label": "identical-assets interval nonunique",
+      "passed": true
+    },
+    {
+      "label": "F164 target below actual cap frontier",
+      "passed": true,
+      "exception": "ValueError('unreachable target; no policy tolerance relaxation')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 negative-slope target above cap frontier",
+      "passed": true,
+      "exception": "ValueError('unreachable target; no policy tolerance relaxation')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 tiny invalid PSD",
+      "passed": true,
+      "exception": "ValueError('covariance is not PSD')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 large invalid PSD",
+      "passed": true,
+      "exception": "ValueError('covariance is not PSD')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 tiny asymmetric covariance",
+      "passed": true,
+      "exception": "ValueError('exact displayed covariance symmetry required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 invalid shape",
+      "passed": true,
+      "exception": "ValueError('two-asset list/tuple inputs required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 huge integer input",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 nonfinite weight",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 ordinary invalid PSD",
+      "passed": true,
+      "exception": "ValueError('covariance is not PSD')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 infeasible caps",
+      "passed": true,
+      "exception": "ValueError('infeasible caps')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 unreachable target",
+      "passed": true,
+      "exception": "ValueError('unreachable target; no policy tolerance relaxation')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 equal means unreachable target",
+      "passed": true,
+      "exception": "ValueError('unreachable equal-means target')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 zero volatility Sharpe",
+      "passed": true,
+      "exception": "ValueError('positive volatility required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 zero volatility grid",
+      "passed": true,
+      "exception": "ValueError('all grid candidates have zero volatility')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 nonzero variance cannot disappear",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F164 boolean input",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "finite grid with zero-risk endpoint winner",
+      "passed": true,
+      "actual": 0.9,
+      "reference": "9/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "finite grid with zero-risk endpoint score",
+      "passed": true,
+      "actual": 1.8666666666666667,
+      "reference": "28/15",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "acceptance_control_records": 12,
+  "historical_unique_methods_added": 0,
+  "lab_results": {
+    "equal": {
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "expected_return": 0.06,
+      "variance": 0.0325,
+      "volatility": 0.18027756377319948,
+      "reported_budget_residual": 0.0
+    },
+    "gmv": {
+      "weights": [
+        0.6923076923076923,
+        0.3076923076923077
+      ],
+      "expected_return": 0.06769230769230769,
+      "variance": 0.027692307692307693,
+      "volatility": 0.16641005886756874,
+      "reported_budget_residual": 0.0,
+      "nonunique": false,
+      "feasible_weight_interval": [
+        0.0,
+        1.0
+      ],
+      "method": "analytic_convex_projection",
+      "status": "feasible_analytic_solution"
+    },
+    "capped": {
+      "weights": [
+        0.4,
+        0.6
+      ],
+      "expected_return": 0.056,
+      "variance": 0.0388,
+      "volatility": 0.19697715603592209,
+      "reported_budget_residual": 0.0,
+      "nonunique": false,
+      "feasible_weight_interval": [
+        0.0,
+        0.4
+      ],
+      "method": "analytic_convex_projection",
+      "status": "feasible_analytic_solution"
+    },
+    "target": {
+      "weights": [
+        0.75,
+        0.25
+      ],
+      "expected_return": 0.07,
+      "variance": 0.028125,
+      "volatility": 0.16770509831248423,
+      "reported_budget_residual": 0.0,
+      "nonunique": false,
+      "feasible_weight_interval": [
+        0.75,
+        1.0
+      ],
+      "method": "analytic_convex_projection",
+      "status": "feasible_analytic_solution",
+      "target": 0.07
+    },
+    "frontier": [
+      {
+        "target": 0.04,
+        "result": {
+          "weights": [
+            0.6923076923076923,
+            0.3076923076923077
+          ],
+          "expected_return": 0.06769230769230769,
+          "variance": 0.027692307692307693,
+          "volatility": 0.16641005886756874,
+          "reported_budget_residual": 0.0,
+          "nonunique": false,
+          "feasible_weight_interval": [
+            0.0,
+            1.0
+          ],
+          "method": "analytic_convex_projection",
+          "status": "feasible_analytic_solution",
+          "target": 0.04
+        }
+      },
+      {
+        "target": 0.06,
+        "result": {
+          "weights": [
+            0.6923076923076923,
+            0.3076923076923077
+          ],
+          "expected_return": 0.06769230769230769,
+          "variance": 0.027692307692307693,
+          "volatility": 0.16641005886756874,
+          "reported_budget_residual": 0.0,
+          "nonunique": false,
+          "feasible_weight_interval": [
+            0.5,
+            1.0
+          ],
+          "method": "analytic_convex_projection",
+          "status": "feasible_analytic_solution",
+          "target": 0.06
+        }
+      },
+      {
+        "target": 0.07,
+        "result": {
+          "weights": [
+            0.75,
+            0.25
+          ],
+          "expected_return": 0.07,
+          "variance": 0.028125,
+          "volatility": 0.16770509831248423,
+          "reported_budget_residual": 0.0,
+          "nonunique": false,
+          "feasible_weight_interval": [
+            0.75,
+            1.0
+          ],
+          "method": "analytic_convex_projection",
+          "status": "feasible_analytic_solution",
+          "target": 0.07
+        }
+      },
+      {
+        "target": 0.08,
+        "result": {
+          "weights": [
+            1.0,
+            0.0
+          ],
+          "expected_return": 0.08,
+          "variance": 0.04,
+          "volatility": 0.2,
+          "reported_budget_residual": 0.0,
+          "nonunique": false,
+          "feasible_weight_interval": [
+            1.0,
+            1.0
+          ],
+          "method": "analytic_convex_projection",
+          "status": "feasible_analytic_solution",
+          "target": 0.08
+        }
+      }
+    ],
+    "sharpe_grid": {
+      "weights": [
+        0.871,
+        0.129
+      ],
+      "expected_return": 0.07484,
+      "variance": 0.03184333,
+      "volatility": 0.17844699493126803,
+      "reported_budget_residual": 0.0,
+      "sharpe": 0.3073181480087271,
+      "method": "finite_grid_max_sharpe",
+      "steps": 1000,
+      "evaluations": 1001,
+      "zero_volatility_skipped": 0,
+      "termination": "all_grid_points_evaluated",
+      "grid_spacing": 0.001
+    }
+  },
+  "model": {
+    "means": [
+      0.08,
+      0.04
+    ],
+    "covariance": [
+      [
+        0.04,
+        0
+      ],
+      [
+        0,
+        0.09
+      ]
+    ],
+    "risk_free": 0.02,
+    "asset_order": [
+      "A",
+      "B"
+    ],
+    "units": "single-period returns, squared-return covariance and dimensionless long-only weights",
+    "timing": "fictional compatible horizon; no market/as-of input"
+  }
+}
