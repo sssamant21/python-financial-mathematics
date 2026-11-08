@@ -1,0 +1,639 @@
+{
+  "source_sha256": "9da436b67eb671ecd96ea5022362339edb3c6cf3f639204d6bfeb252f221a3fc",
+  "listing_sha256": "0d3ddd57058f1944a36fbadf07ee66c5e592601db094d98ff6e85e1252dd28bc",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "generator": "random.Random / Mersenne Twister",
+  "commands": [
+    {
+      "label": "exact demo/tests",
+      "args": [
+        "financial_outcomes.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'count': 10000, 'mean_terminal': 99.96, 'mean_profit': -0.04000000000000625, 'standard_error_mean': 0.1406051812050259, 'loss_count': 2481, 'loss_frequency': 0.2481}\n",
+      "stderr": "test_bad_count (__main__.OutcomeTests.test_bad_count) ... ok\ntest_bad_fee (__main__.OutcomeTests.test_bad_fee) ... ok\ntest_bad_rate (__main__.OutcomeTests.test_bad_rate) ... ok\ntest_constant_sample (__main__.OutcomeTests.test_constant_sample) ... ok\ntest_discount (__main__.OutcomeTests.test_discount) ... ok\ntest_fee (__main__.OutcomeTests.test_fee) ... ok\ntest_known_summary (__main__.OutcomeTests.test_known_summary) ... ok\ntest_replay (__main__.OutcomeTests.test_replay) ... ok\ntest_strict_threshold (__main__.OutcomeTests.test_strict_threshold) ... ok\ntest_values_in_model (__main__.OutcomeTests.test_values_in_model) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK\n",
+      "existing_methods": 10,
+      "passed": true
+    },
+    {
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import financial_outcomes"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "compile",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "financial_outcomes.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 sum probabilities",
+      "actual": "1",
+      "expected": "1",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 down profit",
+      "actual": "-20",
+      "expected": "-20",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E3 flat profit",
+      "actual": "0",
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4 up profit",
+      "actual": "20",
+      "expected": "20",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 down return",
+      "actual": "-1/5",
+      "expected": "-1/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 up return",
+      "actual": "1/5",
+      "expected": "1/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7 model mean",
+      "actual": "100",
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 model profit",
+      "actual": "0",
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E9 strict loss probability",
+      "actual": "1/4",
+      "expected": "1/4",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10 nonpositive profit probability",
+      "actual": "3/4",
+      "expected": "3/4",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 model variance",
+      "actual": "200",
+      "expected": "200",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E15 model SD",
+      "actual": "14.142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715",
+      "expected": "14.142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E16 theoretical SE",
+      "actual": "0.14142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715",
+      "expected": "0.14142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E17 loss indicator SE",
+      "actual": "0.0043301270189221932338186158537646809173570131345259515701395174486298325422720000927028654668931214391890653535385167575749248627374973811970291387802359341213202330797557639551699370502527116873081625",
+      "expected": "0.0043301270189221932338186158537646809173570131345259515701395174486298325422720000927028654668931214391890653535385167575749248627374973811970291387802359341213202330797557639551699370502527116873081625",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 fourfold N SE factor",
+      "actual": "0.5000000000000000000000000000",
+      "expected": "1/2",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E21 exact discount source",
+      "actual": 95.23809523809524,
+      "expected": "2000/21",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E25 fee mean",
+      "actual": "98",
+      "expected": "98",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E26 fee loss probability",
+      "actual": "3/4",
+      "expected": "3/4",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11-13 known sample mean_terminal",
+      "actual": 96,
+      "expected": "96",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11-13 known sample mean_profit",
+      "actual": -4,
+      "expected": "-4",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11-13 known sample loss_frequency",
+      "actual": 0.4,
+      "expected": "2/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11-13 known sample standard_error_mean",
+      "actual": 7.483314773547883,
+      "expected": "7.4833147735478827711674974646330986035120396155574538926074909346400703126138780559536197903887591430019821774555039550910131307363284851853200841051036702348148022489497172638222000304608052559981277",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known sample loss count",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "strict equality not loss",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "constant sample SE",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E28 E29 source threshold boundary injection",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E22-24 fee source mapping injection",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "fee paired same stream",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "integer fee terminal identity",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "large integer mean identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "small profit from large initial",
+      "actual": 1,
+      "expected": "1",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "discount integer identity",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "tiny nonzero sample SD/SE",
+      "actual": 1e-308,
+      "expected": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "true discounted zero valid",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "reject bad count",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject boolean seed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative fee",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject boolean fee",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge fee",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject infinite fee",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject noniterable values",
+      "actual": "TypeError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject malformed values",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject bool values",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject nonfinite values",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject short sample",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge sample",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject huge initial",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject unreportable SE",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject unreportable profit",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject discount invalid rate",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject discount bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject discount huge int",
+      "actual": "OverflowError",
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject discount underflow",
+      "actual": false,
+      "expected": true,
+      "passed": false
+    },
+    {
+      "label": "reject discount overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "global state preserved",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "seed replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "count mean (42, 0)",
+      "actual": 99.96,
+      "expected": "2499/25",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count profit (42, 0)",
+      "actual": -0.04000000000000625,
+      "expected": "-1/25",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count SE (42, 0)",
+      "actual": 0.1406051812050259,
+      "expected": "0.14060518120502590432619291861316180645450093867846586709746651143363830802710712771032460810092091635031449713634931613112722108156123726553162269132224763029098828137229763341971796467501312610311963",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count loss frequency (42, 0)",
+      "actual": 0.2481,
+      "expected": "2481/10000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count loss number (42, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "count mean (43, 0)",
+      "actual": 100.002,
+      "expected": "50001/500",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count profit (43, 0)",
+      "actual": 0.001999999999995339,
+      "expected": "1/500",
+      "passed": false,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count SE (43, 0)",
+      "actual": 0.14013551796864218,
+      "expected": "0.14013551796864217522074962629772855869210368911502954819562293553107177738374701655087223404813276716422954544707907705726924778770033319339368989957600903783203720190889412475437643998197870621050571",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count loss frequency (43, 0)",
+      "actual": 0.2454,
+      "expected": "1227/5000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count loss number (43, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "count mean (42, 2)",
+      "actual": 97.96,
+      "expected": "2449/25",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count profit (42, 2)",
+      "actual": -2.0400000000000063,
+      "expected": "-51/25",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count SE (42, 2)",
+      "actual": 0.1406051812050259,
+      "expected": "0.14060518120502590432619291861316180645450093867846586709746651143363830802710712771032460810092091635031449713634931613112722108156123726553162269132224763029098828137229763341971796467501312610311963",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count loss frequency (42, 2)",
+      "actual": 0.7539,
+      "expected": "7539/10000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "count loss number (42, 2)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "fee": 0,
+      "count": 10000,
+      "state_counts": [
+        2481,
+        5058,
+        2461
+      ],
+      "summary": {
+        "count": 10000,
+        "mean_terminal": 99.96,
+        "mean_profit": -0.04000000000000625,
+        "standard_error_mean": 0.1406051812050259,
+        "loss_count": 2481,
+        "loss_frequency": 0.2481
+      },
+      "stream_sha256": "6d5e91d2c5458ad17478bd0ed28c423677cabb9465be7c1bb07a1c6b9bd9a85f",
+      "limit": "count reference shares random.Random, only count/mapping/summary consistency established"
+    },
+    {
+      "seed": 43,
+      "fee": 0,
+      "count": 10000,
+      "state_counts": [
+        2454,
+        5091,
+        2455
+      ],
+      "summary": {
+        "count": 10000,
+        "mean_terminal": 100.002,
+        "mean_profit": 0.001999999999995339,
+        "standard_error_mean": 0.14013551796864218,
+        "loss_count": 2454,
+        "loss_frequency": 0.2454
+      },
+      "stream_sha256": "dbd6e46a278860e974e7b5eb885a09cf0a7e1086f9cd9c678180291adbd294fe",
+      "limit": "count reference shares random.Random, only count/mapping/summary consistency established"
+    },
+    {
+      "seed": 42,
+      "fee": 2,
+      "count": 10000,
+      "state_counts": [
+        2481,
+        5058,
+        2461
+      ],
+      "summary": {
+        "count": 10000,
+        "mean_terminal": 97.96,
+        "mean_profit": -2.0400000000000063,
+        "standard_error_mean": 0.1406051812050259,
+        "loss_count": 7539,
+        "loss_frequency": 0.7539
+      },
+      "stream_sha256": "1ebfb66a7e21925bbc8d938490942a1fe2a3040c85678b0a7ab0029c89f63c79",
+      "limit": "count reference shares random.Random, only count/mapping/summary consistency established"
+    }
+  ],
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 10,
+    "new_historical_methods": 0
+  },
+  "model": {
+    "initial_cost": 100,
+    "horizon": "one year",
+    "units": "fictional common currency",
+    "states": [
+      80,
+      100,
+      120
+    ],
+    "probabilities": [
+      "1/4",
+      "1/2",
+      "1/4"
+    ],
+    "fee_timing": "terminal, paid once",
+    "discount": "constant annual effective 5 percent; no calibrated probability measure or market-consistent price claim"
+  },
+  "limits": "Analytical probabilities/moments independent; seeded count replay and boundary injection are supplemental. No generator independence, confidence interval coverage, rare-event, platform or independent model acceptance."
+}
