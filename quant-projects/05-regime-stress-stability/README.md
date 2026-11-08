@@ -38,3 +38,14 @@ Training uses only observations **strictly before** the scored week. Named regim
 The local source development run had 7 tests passing after fixing a pandas date-index compatibility issue. The GitHub-published implementation and CI require separate confirmation; see [VALIDATION.md](VALIDATION.md).
 
 Next: add forecast-versus-realized volatility calibration, alternative lookback lengths, historical-bootstrap shocks, and licensed point-in-time data provenance.
+
+## Follow-up — forecast versus forward-realized risk calibration
+
+After running `py stress_lab.py`, run:
+
+```powershell
+py -m pytest -q test_risk_calibration.py
+py risk_calibration.py --weekly reports/weekly_results.csv --output reports --horizon 13
+```
+
+This reads the **gross** weekly portfolio returns (to avoid confusing transaction-cost effects with market volatility) and the annualized volatility forecast from the beginning of each scored week. For each week t, the ex-post annualized realized volatility is the sample standard deviation of the next 13 weekly returns **including t**, multiplied by sqrt(52). It reports bias (forecast minus realized), MAE and RMSE by scenario, plus the exact forward window dates. The final 12 weeks are omitted for lack of complete outcomes. Overlapping windows are dependent: do not use the row count as independent statistical sample size or interpret RMSE as a statistical significance test. Forecast-risk-only shock scenarios intentionally have identical realized returns but different forecast errors. This diagnostic does **not** alter the trading strategy and must not be fed into earlier portfolio decisions.
