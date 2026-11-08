@@ -11,6 +11,6 @@
 
 | 06 — Tail risk and bootstrap uncertainty | Synthetic-first source, tests, docs and runnable CLI published | 7/7 local tests on prepared source; exact-revision CI and independent review pending |
 
-Next: verify exact published Project 05 revision in CI, assess non-overlapping calibration and licensed 2020/2022 data provenance. Then extend Project 06 with block bootstrap, conditional coverage and real-data provenance; Project 07 will address multi-horizon portfolio risk.
+Next: verify exact published Project 05 revision in CI, assess non-overlapping calibration and licensed 2020/2022 data provenance. Project 06 block bootstrap and conditional coverage extension authored; local prototype 7/7 tests passed, exact published revision CI pending. Next: Project 07 multi-horizon portfolio risk and licensed-data provenance.
 
 Do **not** label production-certified; this is an educational research series. No live trading or broker integration.

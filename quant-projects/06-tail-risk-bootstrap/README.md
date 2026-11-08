@@ -45,3 +45,16 @@ Do not publish third-party market data without redistribution rights. Historical
 On 2026-11-08, the prepared Python source was run locally using NumPy 2.3.5, pandas 2.2.3, SciPy 1.17.0 and pytest 9.0.2: **7/7 tests passed**. An end-to-end synthetic run with 100 bootstrap resamples produced 208 scored weeks: historical VaR 18 breaches, normal VaR 12 breaches. These are synthetic outcomes, not investment returns. Exact published-revision CI and independent review remain pending.
 
 Next: dependent-return block bootstrap, horizon-aligned multiweek VaR, conditional coverage, and licensed point-in-time market-data provenance.
+
+## Extension — dependent-return block bootstrap and conditional coverage
+
+[dependence_diagnostics.py](dependence_diagnostics.py) adds a **fixed-length circular moving-block bootstrap** to preserve local return dependence within each resampled block. It reports a 95% percentile interval for *estimation uncertainty* in historical one-week VaR, not a forecast-loss interval. Block length is a sensitivity parameter, not a proven optimal choice. The extension also calculates Christoffersen-style likelihood-ratio unconditional coverage (UC), first-order Markov independence (IND), and joint conditional coverage (CC) diagnostics from one-week VaR breaches. When all breaches are absent or present, independence cannot be identified and its p-value is explicitly null. Chi-square p-values are only asymptotic diagnostics and are unreliable with few tail events or overlapping forecasts.
+
+Run from this directory after installing `../requirements.txt`:
+
+```powershell
+py -m pytest -q test_dependence_diagnostics.py
+py dependence_diagnostics.py --returns C:\\data\\licensed_weekly_returns.csv --lookback 52 --block 4 --bootstrap 500 --seed 42
+```
+
+The input is a locally licensed CSV containing strictly increasing `Date,Return` weekly observations, with decimal simple returns. Generated `reports/block_bootstrap_weekly.csv` and `reports/conditional_coverage.json` are ignored by Git. The week being scored is never in its training window. This extension is one-week only; **multiweek horizon aggregation is not yet implemented**. The synthetic fixtures are tests, not 2020/2022 historical evidence. No third-party data is redistributed.
