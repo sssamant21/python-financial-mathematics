@@ -1,0 +1,123 @@
+{
+  "source_revision": "5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b",
+  "source_blob": "e0b2bbb8f5020e687d4fa59cce25390dd66b088a",
+  "observations": [
+    {
+      "args": [
+        1,
+        1,
+        1000,
+        -1
+      ],
+      "reference_order1_order2_exact": [
+        0,
+        0,
+        1
+      ],
+      "reference_zero_signs": [
+        1,
+        1,
+        null
+      ],
+      "actual_order1_order2_exact": [
+        0,
+        0,
+        "OverflowError"
+      ],
+      "actual_zero_signs": [
+        1,
+        1,
+        null
+      ]
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        0,
+        2.409919865102884e-181,
+        8.299031137761986e+180
+      ],
+      "reference_order1_order2_exact": [
+        "unrepresentable",
+        0,
+        -1.55440182528321e+308
+      ],
+      "reference_zero_signs": [
+        null,
+        1,
+        null
+      ],
+      "actual_order1_order2_exact": [
+        "-inf",
+        "nan",
+        -1.55440182528321e+308
+      ],
+      "actual_zero_signs": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        0,
+        1.7976931348623157e+308,
+        0
+      ],
+      "reference_order1_order2_exact": [
+        0,
+        0,
+        0
+      ],
+      "reference_zero_signs": [
+        -1,
+        1,
+        1
+      ],
+      "actual_order1_order2_exact": [
+        "ValueError",
+        "ValueError",
+        0
+      ],
+      "actual_zero_signs": [
+        null,
+        null,
+        -1
+      ]
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        0,
+        1e-323,
+        0.125
+      ],
+      "reference_order1_order2_exact": [
+        -2.2204460492503128e-16,
+        -2.2204460492503128e-16,
+        -2.2204460492503128e-16
+      ],
+      "reference_zero_signs": [
+        null,
+        null,
+        null
+      ],
+      "actual_order1_order2_exact": [
+        -2.2204460492503128e-16,
+        -2.2204460492503128e-16,
+        0
+      ],
+      "actual_zero_signs": [
+        null,
+        null,
+        -1
+      ]
+    }
+  ],
+  "reference_method": "Independent complete first/second Taylor expressions and two complete exponential-price differences at Decimal 1600/2200 digits; references and explicit zero signs agree.",
+  "pinned_probe_matched_local": true,
+  "required_source_dependency_blobs_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom decimal import Decimal,localcontext\nimport section_8_06 as s\nM=sys.float_info.max;T=math.ulp(0.)\ncases=[(1.,1.,1000.,-1.),(M,0.,math.ldexp(1.,-600),math.ldexp(1.,601)),(M,0.,M,0.),(M,0.,2*T,.125)]\ndef zs(v):return int(math.copysign(1,v)) if type(v) is float and v==0 else None\ndef reference(args,precision):\n with localcontext() as ctx:\n  ctx.prec=precision\n  c,r,t,h=map(Decimal.from_float,args)\n  base=c*(-r*t).exp()\n  first=-c*t*h*(-r*t).exp()\n  second=first+c*t*t*h*h*(-r*t).exp()/2\n  exact=c*((-(r+h)*t).exp()-(-r*t).exp())\n  return [float(v) if math.isfinite(float(v)) else \"unrepresentable\" for v in (first,second,exact)]\nrows=[]\nfor args in cases:\n a=reference(args,1600);b=reference(args,2200)\n assert a==b and list(map(zs,a))==list(map(zs,b))\n actual=[]\n for call in (lambda:s.pv_shock(*args,order=1),lambda:s.pv_shock(*args,order=2),lambda:s.pv_shock_exact(*args)):\n  try:\n   v=call();actual.append(v if math.isfinite(v) else repr(v))\n  except Exception as exc:actual.append(type(exc).__name__)\n rows.append(dict(args=args,reference_order1_order2_exact=a,reference_zero_signs=list(map(zs,a)),actual_order1_order2_exact=actual,actual_zero_signs=list(map(zs,actual))))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Four paired Taylor-order1/order2/exact probes, including working controls and unrepresentable labels. Next batch must explicitly reconcile complete-product/shifted-rate, signed-zero and final-overflow/error conventions; zero-sign differences alone are not predeclared defects."
+}
