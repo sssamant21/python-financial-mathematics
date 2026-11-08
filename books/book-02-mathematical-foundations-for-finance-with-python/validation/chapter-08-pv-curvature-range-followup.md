@@ -1,8 +1,10 @@
 # V-120 — Section 8.6 PV rate-curvature range
 
-Executable revision `274ce4598c7a97d25f996a33512c1d8f5e176048`. [Raw baseline, identical replay, corrected observations and scoped Git manifest/results](chapter-08-pv-curvature-range-followup.json).
+Executable revision `ac2909c8f4b7b557c278f8f99f0c672862c3f3b3`. [Raw baseline, identical replay, corrected observations and scoped Git manifest/results](chapter-08-pv-curvature-range-followup.json).
 
-All **49 checks pass**: 32 numerical triples, 16 invalid-input/validation-priority cases and one new independence requirement. Original source blob `cb05d8a24ea6c4d47d9d2a7503f2420af6c2451b` at `79a67421b80bb7393bdc86169cad62dffa33b79f` has **22 mismatches**, replayed byte for byte. This includes final-output policy differences and one new requirement to avoid a rounded local PV helper; it is not a distinct-defect count. The [earlier six-probe screen](chapter-08-pv-curvature-range-baseline.md) remains retained.
+All **50 checks pass**: 33 numerical triples, 16 invalid-input/validation-priority cases and one new independence requirement. Original source blob `cb05d8a24ea6c4d47d9d2a7503f2420af6c2451b` at `79a67421b80bb7393bdc86169cad62dffa33b79f` has **23 mismatches**, replayed byte for byte. This includes final-output policy differences and one new requirement to avoid a rounded local PV helper; it is not a distinct-defect count. The [earlier six-probe screen](chapter-08-pv-curvature-range-baseline.md) remains retained.
+
+The initial 49-case run (22 mismatches) and its scoped pass remain in JSON. One explicit discriminator was then added: payment 1, rate -8e102, horizon 1e-100 has finite complete curvature about 2.72637e147 while its local PV overflows. The expanded baseline/replay, all 50 corrected observations and re-fetched pinned scoped rerun are retained.
 
 ## Complete model and independent expectation
 
