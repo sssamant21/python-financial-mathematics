@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-08  
-**Full-runtime candidate source revision:** `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`  
-**Latest scoped source revision:** `67cfc7f76615c8144d200c0b9478547b894fe506` (V-118, ten files/eight scripts; after V-117)  
-**Disposition:** V-118 scoped stable-quotient pass after V-117 full candidate Linux pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`  
+**Latest scoped source revision:** `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69` (included in V-119)  
+**Disposition:** V-119 full candidate Linux pass includes quotient/centered-copy corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-119](runtime-refresh-2026-11-08-r3.md): 585 compiled, 372 passed, 586 required hashes verified before/after. G2–G8 unchanged.
 
 [V-118 scoped stable quotient](chapter-08-stable-exponential-quotient-followup.md): ten compiled/eight passed/ten hashes verified before-after. Fresh full-tree inventory 584/371/585 is not a new full runtime result. G2–G8 unchanged.
 
@@ -193,7 +195,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-117](runtime-refresh-2026-11-08-r2.md) at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`; 583 sources/370 scripts/584 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-119](runtime-refresh-2026-11-08-r3.md) at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`; 585 sources/372 scripts/586 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -942,3 +944,11 @@ Next: [stable exponential quotient baseline](chapter-08-stable-exponential-quoti
 At `67cfc7f76615c8144d200c0b9478547b894fe506`, ten scoped Python files compiled and eight scripts passed, with ten exact Git blobs verified before/after. Fresh full-tree inventory: 584 Python files, 371 check/test scripts and 585 required source/fixture blobs. This is scoped validation; [V-117](runtime-refresh-2026-11-08-r2.md) remains the latest full candidate Linux pass (583/370/584 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.5 centered-copy baseline](chapter-08-centered-05-baseline.md), with [five pinned actual probes and callback traces](chapter-08-centered-05-baseline.json): two NaN failures, two explicit finite/distinct-perturbation preflight requirements and one default-step control. Use rational sampled quotient expectations and preserve callable-before-controls validation, default step, callback order/count and exception propagation. Resource limits and independent review remain open. Do not repeat completed Section 8.5 analytic helpers.
+
+## V-119 checkpoint — Section 8.5 centered-difference copy
+
+[Centered-copy follow-up](chapter-08-centered-05-followup.md): all 47 checks pass; 11 baseline mismatches and a byte-identical replay retained. Six mismatches exercise strengthened perturbation preflight; five concern returned nonfinite estimates. Exact rational sampled quotients, 21 separate Decimal oracle crosschecks at 1600/2200 digits, actual callback order/count, invalid-result short circuit, original-exception identity and callable-before-controls priority are checked. Pinned corrected observations match local results. Mismatches are not distinct defect counts.
+
+[V-119 full runtime](runtime-refresh-2026-11-08-r3.md) at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`: 585 Python files compiled, 372 scripts passed and 586 required source/fixture hashes verified before/after. This fresh pinned-tree run includes both V-118 quotient and V-119 centered-copy changes/checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [distinct Section 8.6 PV-curvature baseline](chapter-08-pv-curvature-range-baseline.md), with [six pinned actual failures](chapter-08-pv-curvature-range-baseline.json). Complete C·t²·exp(-r·t) references at 200/400 digits agree and expose subnormal loss, squared-horizon underflow/overflow, premature exponential overflow and lost zero identities. Preserve years-first validation and input domains; assess other Section 8.6 copies separately. This continues COV-49 other-helper/range and COV-51 implicit-contract/resource/review scope without repeating completed Section 8.5 examples.
