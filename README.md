@@ -1,5 +1,7 @@
 # Python for Financial Mathematics & Quantitative Finance
 
+**Hands-on projects:** [Quantitative Finance Python Labs — Monte Carlo, correlation, portfolio optimization & historical backtesting](quant-projects/README.md).
+
 A production-quality educational book series combining financial mathematics, quantitative finance, financial engineering, and Python implementation.
 
 ## Master Series
