@@ -1,0 +1,488 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "b141f645cc9cdca29ce406cf5d4c7ddd707272a61a8a4d87c1d1b1437c5fa287",
+  "listing_sha256": "29169ab2d5cc0e8902f619aa29f9319f6016d7606963138b7e31e93a5bafe978",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "numerical_integration.py"
+      ],
+      "returncode": 0,
+      "stdout": "Integral x^2 on [0,1]: 0.3333333333333333\nNormal CDF(1): 0.8413447460685431\nContinuous annuity: 190.32516392808085\n",
+      "stderr": "test_01_midpoint (__main__.IntegrationTests.test_01_midpoint) ... ok\ntest_02_trapezoid (__main__.IntegrationTests.test_02_trapezoid) ... ok\ntest_03_simpson_quadratic (__main__.IntegrationTests.test_03_simpson_quadratic) ... ok\ntest_04_simpson_cubic (__main__.IntegrationTests.test_04_simpson_cubic) ... ok\ntest_05_normal_half (__main__.IntegrationTests.test_05_normal_half) ... ok\ntest_06_normal_symmetry (__main__.IntegrationTests.test_06_normal_symmetry) ... ok\ntest_07_cashflow_zero_rate (__main__.IntegrationTests.test_07_cashflow_zero_rate) ... ok\ntest_08_cashflow_positive_rate (__main__.IntegrationTests.test_08_cashflow_positive_rate) ... ok\ntest_09_constant (__main__.IntegrationTests.test_09_constant) ... ok\ntest_10_odd_panels (__main__.IntegrationTests.test_10_odd_panels) ... ok\ntest_11_invalid_bounds (__main__.IntegrationTests.test_11_invalid_bounds) ... ok\ntest_12_nonfinite (__main__.IntegrationTests.test_12_nonfinite) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.091s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import numerical_integration"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "numerical_integration.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy quad snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy polynomial independent oracle",
+      "passed": true,
+      "actual": 0.33333333333333337,
+      "reference": "1/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy cashflow independent Decimal oracle",
+      "passed": true,
+      "actual": 190.32516392808088,
+      "reference": "190.3251639280808536715018811071267576105892780391980958874853658884400693115032779749931079278190856",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid midpoint 2",
+      "passed": true,
+      "actual": 0.3125,
+      "reference": "5/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid trapezoid 2",
+      "passed": true,
+      "actual": 0.375,
+      "reference": "3/8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid simpson 2",
+      "passed": true,
+      "actual": 0.3333333333333333,
+      "reference": "1/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid midpoint 10",
+      "passed": true,
+      "actual": 0.3325,
+      "reference": "133/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid trapezoid 10",
+      "passed": true,
+      "actual": 0.335,
+      "reference": "67/200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid simpson 10",
+      "passed": true,
+      "actual": 0.3333333333333333,
+      "reference": "1/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid midpoint 100",
+      "passed": true,
+      "actual": 0.333325,
+      "reference": "13333/40000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid trapezoid 100",
+      "passed": true,
+      "actual": 0.33335,
+      "reference": "6667/20000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab x squared finite-grid simpson 100",
+      "passed": true,
+      "actual": 0.3333333333333333,
+      "reference": "1/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1 constant integral",
+      "passed": true,
+      "actual": 3.0,
+      "reference": "3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 E6 midpoint linear",
+      "passed": true,
+      "actual": 0.5,
+      "reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 trapezoid linear",
+      "passed": true,
+      "actual": 0.5,
+      "reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 E16 cubic Simpson",
+      "passed": true,
+      "actual": 0.25,
+      "reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E25 supplemental uniform variance",
+      "passed": true,
+      "actual": "1/12",
+      "reference": "1/12",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E26 uniform payoff",
+      "passed": true,
+      "actual": 0.125,
+      "reference": "1/8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E28 zero-rate cashflow",
+      "passed": true,
+      "actual": 200.0,
+      "reference": "200",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E31 cashflow PV",
+      "passed": true,
+      "actual": 190.32516392808085,
+      "reference": "190.3251639280808536715018811071267576105892780391980958874853658884400693115032779749931079278190856",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 discounted helper actually discounts",
+      "passed": true,
+      "actual": 0.11310467725449495,
+      "reference": "0.1131046772544949466455311324",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 tiny horizon integrated before report",
+      "passed": true,
+      "actual": 0.9999999999999999,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 paired payoff-density before quadrature",
+      "passed": true,
+      "actual": 9.999999999999998e+307,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 zero cashflow avoids irrelevant exponential overflow",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 midpoint finite large sum",
+      "passed": true,
+      "actual": 1e+308,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 midpoint wide-span constant",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 trapezoid finite large sum",
+      "passed": true,
+      "actual": 1e+308,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 trapezoid wide-span constant",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 simpson finite large sum",
+      "passed": true,
+      "actual": 1e+308,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 simpson wide-span constant",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 quartic Simpson finite-grid 10",
+      "passed": true,
+      "actual": 0.20001333333333332,
+      "reference": "15001/75000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 quartic Simpson finite-grid 20",
+      "passed": true,
+      "actual": 0.20000083333333332,
+      "reference": "240001/1200000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 Phi zero",
+      "passed": true,
+      "actual": 0.5,
+      "reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 normal density zero",
+      "passed": true,
+      "actual": 0.3989422804014327,
+      "reference": "0.398942280401432677939946059934381868475858631164934657",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab normal CDF -1",
+      "passed": true,
+      "actual": 0.15865525393145685,
+      "reference": "0.15865525393145707",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab normal CDF 1",
+      "passed": true,
+      "actual": 0.8413447460685431,
+      "reference": "0.8413447460685429",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E21 CDF symmetry",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E36 normal excluded tails quantified",
+      "passed": true,
+      "excluded_mass": 0.0026997960632601913,
+      "scope": "supplemental erfc tail oracle; not infinite-domain quadrature"
+    },
+    {
+      "label": "F165 negative-rate cashflow finite-grid expectation",
+      "passed": true,
+      "actual": 6.830339288465015e+36,
+      "reference": "6830339288465014211393118842838734907.937048402364217354322968551521576373371361020343963155946697280",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F165 odd Simpson panels",
+      "passed": true,
+      "exception": "ValueError('positive panel count required; Simpson needs even panels')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 reversed bounds",
+      "passed": true,
+      "exception": "ValueError('strictly increasing bounds required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 nonfinite integrand",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 repeated trapezoid grid",
+      "passed": true,
+      "exception": "ValueError('grid requires distinct representable coordinates')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 midpoint not representable",
+      "passed": true,
+      "exception": "ValueError('midpoints must be representable inside panels')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 huge integer bound",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 huge integer callback",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 underflowed nonzero integral",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 normal PDF boolean",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 normal CDF panels validated at zero",
+      "passed": true,
+      "exception": "ValueError('positive panel count required; Simpson needs even panels')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 normal CDF extreme domain disclosed",
+      "passed": true,
+      "exception": "ValueError('educational integrated CDF restricted to |z|<=6; use specialized tails')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 negative payoff density",
+      "passed": true,
+      "exception": "ValueError('nonnegative density required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 boolean payoff",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F165 cashflow integer horizon retains coordinate contract",
+      "passed": true,
+      "exception": "ValueError('integer coordinate not representable under float callback protocol')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "lab_results": [
+    {
+      "panels": 2,
+      "midpoint": 0.3125,
+      "trapezoid": 0.375,
+      "simpson": 0.3333333333333333
+    },
+    {
+      "panels": 10,
+      "midpoint": 0.3325,
+      "trapezoid": 0.335,
+      "simpson": 0.3333333333333333
+    },
+    {
+      "panels": 100,
+      "midpoint": 0.333325,
+      "trapezoid": 0.33335,
+      "simpson": 0.3333333333333333
+    }
+  ],
+  "model": {
+    "domain": [
+      0,
+      1
+    ],
+    "panels": [
+      2,
+      10,
+      100
+    ],
+    "cashflow": {
+      "rate": 0.05,
+      "horizon": 2,
+      "annual_intensity": 100
+    },
+    "units": "years, fictional currency/year cashflow, continuous rate/year; probability/payoff units explicit",
+    "timing": "continuous payment on[0,2]; uniform terminal payoff atT=2 only when discount requested",
+    "normal_reference": "math.erfc independent tail algorithm, not same quadrature implementation"
+  }
+}
