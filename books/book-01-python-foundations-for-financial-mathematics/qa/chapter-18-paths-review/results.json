@@ -1,0 +1,687 @@
+{
+  "source_sha256": "e34e70ac0fff752cd5cd70c5b36d140eae400fd5f98239b8c26f55ba9503f415",
+  "listing_sha256": "47d05af03e9010f46d9530db24b9229314492daed5c067769eb34570bfc5288a",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "generator": "random.Random / Mersenne Twister normalvariate",
+  "commands": [
+    {
+      "label": "exact demo/tests",
+      "args": [
+        "price_path_simulation.py"
+      ],
+      "returncode": 0,
+      "stdout": "terminal summary: {'count': 10000, 'mean': 105.08580059649347, 'standard_error': 0.21254296482289836}\nanalytical mean: 105.1271096376024\n",
+      "stderr": "test_barrier (__main__.PathTests.test_barrier) ... ok\ntest_benchmark (__main__.PathTests.test_benchmark) ... ok\ntest_initial (__main__.PathTests.test_initial) ... ok\ntest_invalid_steps (__main__.PathTests.test_invalid_steps) ... ok\ntest_invalid_volatility (__main__.PathTests.test_invalid_volatility) ... ok\ntest_positive (__main__.PathTests.test_positive) ... ok\ntest_replay (__main__.PathTests.test_replay) ... ok\ntest_shape (__main__.PathTests.test_shape) ... ok\ntest_summary (__main__.PathTests.test_summary) ... ok\ntest_zero_volatility (__main__.PathTests.test_zero_volatility) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.011s\n\nOK\n",
+      "existing_methods": 10,
+      "passed": true
+    },
+    {
+      "label": "quiet import",
+      "args": [
+        "-c",
+        "import price_path_simulation"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "compile",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "price_path_simulation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 compounding",
+      "actual": "99",
+      "expected": "99",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E2 cumulative return",
+      "actual": "-1/100",
+      "expected": "-1/100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E4 monthly dt",
+      "actual": "1/12",
+      "expected": "1/12",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E5 quarterly dt",
+      "actual": "1/4",
+      "expected": "1/4",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 log drift",
+      "actual": "3/100",
+      "expected": "3/100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7 shock scale",
+      "actual": "0.10",
+      "expected": "0.1",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E8 E9 mean",
+      "actual": 105.1271096376024,
+      "expected": "105.1271096376024039697517636",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E10 median",
+      "actual": "103.0454533953516855612439954",
+      "expected": "103.0454533953516855612439954",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E11 log SD",
+      "actual": "0.2",
+      "expected": "1/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E12 four year log SD",
+      "actual": "0.4",
+      "expected": "2/5",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 fourfold paths factor",
+      "actual": "0.5",
+      "expected": "1/2",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "known terminal SE",
+      "actual": 10.0,
+      "expected": "10",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E32 zero horizon benchmark",
+      "actual": 100,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "printed mean",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "printed median",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "time zero barrier equality",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "later barrier equality",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "no observed hit",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "generator barrier consumed once",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "empty-terminal paths rejected",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "terminal-only summary contract",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "zero dynamics integer path identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "zero horizon integer benchmark identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "nonzero horizon zero drift integer identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "integer summary identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "tiny positive SE",
+      "actual": 1e-308,
+      "expected": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "positive spread finite SE",
+      "actual": 8.95e+307,
+      "expected": "89500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "scaled benchmark extension",
+      "actual": 1.970071114017047e+126,
+      "expected": "1.970071114017046993888879352E+126",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "tiny horizon drift not silently discarded",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge initial",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject huge volatility",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative volatility",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject zero horizon",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject zero steps",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject count1",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject bool seed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject bool drift",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject price overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject price underflow",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject paths noniterable",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject path noniterable",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal boolean",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal huge int",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject terminal zero",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject barrier huge int",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject barrier malformed path",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject barrier boolean path",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject barrier huge path",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject benchmark huge int",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject benchmark negative horizon",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "global state preserved",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "seed replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "shared shock independent update (0, 0)",
+      "actual": 100,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (0, 1)",
+      "actual": 103.25512012075424,
+      "expected": "103.2551201207542360296057259306716100416758902287673897523479095476989329529566065623868228829427655",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (0, 2)",
+      "actual": 98.98995425534982,
+      "expected": "98.98995425534980911026533617389954107854778189302854957098418874885807838572050830007005521860743055",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (0, 3)",
+      "actual": 113.06885460402734,
+      "expected": "113.0688546040273418695382387616464507031414562161574388641086859483329239874248654691632157088972615",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (0, 4)",
+      "actual": 112.35809634707131,
+      "expected": "112.3580963470713063095568952768633873787130853430118177063673284984291576170509915642051887893819419",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (1, 0)",
+      "actual": 100,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (1, 1)",
+      "actual": 91.38562155281876,
+      "expected": "91.38562155281876716142034877903052762230388862996665590899999330508141483827734831546381053472093644",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (1, 2)",
+      "actual": 97.42600573986111,
+      "expected": "97.42600573986111717422211730350423157708662231976792592469082949054613525115128753181415564995782679",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (1, 3)",
+      "actual": 87.3417577310513,
+      "expected": "87.34175773105130284513094339818469165959196750054472647165322679066199467287677516196774340452265158",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "shared shock independent update (1, 4)",
+      "actual": 104.7033611194367,
+      "expected": "104.7033611194366999630691069086049604049733276781564546626271844019234648508564631393521157461232445",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "deterministic grid 0",
+      "actual": 100,
+      "expected": "100",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "deterministic grid 1",
+      "actual": 100.41753592911185,
+      "expected": "100.4175359291118529675414575",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "deterministic grid 6",
+      "actual": 102.53151205244288,
+      "expected": "102.5315120524428840678021030",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "deterministic grid 12",
+      "actual": 105.1271096376024,
+      "expected": "105.1271096376024039697517636",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E26 supplemental average payoff depends on observations",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "E27 supplemental terminal call same for same terminal",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "sample independent mean 42",
+      "actual": 105.08580059649347,
+      "expected": "525429002982467339851/5000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample independent SE 42",
+      "actual": 0.21254296482289836,
+      "expected": "0.21254296482289837078414098286101778769016612251262806075053823160732109207797813721701033117995402901513567987927010409820726310006881782694455029982064202461606745691878826820191901897259545905168308",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "N paths and n+1 points 42",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "path-hit count vs minima 42",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "sample independent mean 43",
+      "actual": 105.06879175122633,
+      "expected": "1050687917512263253819/10000000000000000000",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "sample independent SE 43",
+      "actual": 0.21305464403766847,
+      "expected": "0.21305464403766845548248682855318907535630281544347766285406658588141354318675593197210236653773357775125537455674131876857072710467053119130590240646715272563352309413409322523103032757451765932121965",
+      "passed": true,
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "N paths and n+1 points 43",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "path-hit count vs minima 43",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "runs": [
+    {
+      "seed": 42,
+      "path_count": 10000,
+      "steps": 12,
+      "summary": {
+        "count": 10000,
+        "mean": 105.08580059649347,
+        "standard_error": 0.21254296482289836
+      },
+      "barrier": 95,
+      "paths_with_observed_hit": 6267,
+      "observations_at_or_below_barrier": 36463,
+      "total_observations": 130000,
+      "first_paths": [
+        [
+          100,
+          101.68035405539197,
+          99.05237789604377,
+          106.76112684220327,
+          106.17864818126318,
+          100.61325641326658,
+          104.20990808480214,
+          97.66011104399405,
+          108.23861009471437,
+          106.49548556637511,
+          114.30430526120048,
+          124.98805107630336,
+          140.22838367108034
+        ],
+        [
+          100,
+          114.56479534289221,
+          111.80808876992086,
+          122.09619886450663,
+          133.22960489831763,
+          136.42965164676627,
+          131.68111604781927,
+          125.04012866402965,
+          118.67645701666015,
+          121.51760394728004,
+          119.85626866571076,
+          124.74920593341693,
+          110.89188211228117
+        ]
+      ],
+      "paths_sha256": "4c902af71ab15681abdcec5ec6367f975ad168de9a580263424280409a89d5b9",
+      "limits": "discrete monitoring only, includes time zero; hit-path count differs from hit-observation count; different seeds not independence proof"
+    },
+    {
+      "seed": 43,
+      "path_count": 10000,
+      "steps": 12,
+      "summary": {
+        "count": 10000,
+        "mean": 105.06879175122633,
+        "standard_error": 0.21305464403766847
+      },
+      "barrier": 95,
+      "paths_with_observed_hit": 6349,
+      "observations_at_or_below_barrier": 36785,
+      "total_observations": 130000,
+      "first_paths": [
+        [
+          100,
+          93.88336515633787,
+          102.17264655775432,
+          101.48622599562798,
+          93.55203297351582,
+          86.09404061490801,
+          87.96675438385641,
+          87.4906589971485,
+          86.52508821119883,
+          86.95381445882575,
+          93.20832674983322,
+          93.58718708916749,
+          92.62660417633833
+        ],
+        [
+          100,
+          105.15010263772324,
+          114.26091653737839,
+          129.71299845976142,
+          132.61134793763986,
+          140.7479103677495,
+          149.68815536158976,
+          151.50666818674244,
+          154.0775720410373,
+          142.78304338648525,
+          132.6870952462789,
+          136.00958394835678,
+          125.44846404612701
+        ]
+      ],
+      "paths_sha256": "7d7d419492f14a690e18000ffeeb102c15cfdc5a5e91ac534da6f8fa2ef57059",
+      "limits": "discrete monitoring only, includes time zero; hit-path count differs from hit-observation count; different seeds not independence proof"
+    }
+  ],
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 10,
+    "new_historical_methods": 0
+  },
+  "model": {
+    "initial": 100,
+    "drift": ".05",
+    "volatility": ".2",
+    "horizon": "one year",
+    "steps": 12,
+    "measure": "uncalibrated illustrative GBM measure, not a risk-neutral price claim",
+    "units": "fictional currency; annual drift/volatility and year-based horizon"
+  },
+  "limits": "Shared generator shock replay checks update algebra only. Discrete-grid monitoring, model/parameter uncertainty, tail/coverage/independence/platform and independent model acceptance remain open; F28/F32/F165 retained."
+}
