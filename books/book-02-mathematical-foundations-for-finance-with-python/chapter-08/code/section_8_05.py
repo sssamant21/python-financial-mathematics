@@ -63,15 +63,25 @@ def accumulation_rate_derivative(principal, rate, years):
         return p*t
     return _scaled_pv(Fraction(p)*Fraction(t), Fraction(r)*Fraction(t))
 
-def present_value(payment, rate, years):
+def _present_value_inputs(payment, rate, years):
     c, r, t = finite(payment, "payment"), finite(rate, "rate"), finite(years, "years")
     if c < 0 or t < 0:
         raise ValueError("payment and years must be nonnegative")
-    return c*math.exp(-r*t)
+    return c, r, t
+
+def present_value(payment, rate, years):
+    c, r, t = _present_value_inputs(payment, rate, years)
+    if c == 0 or t == 0:
+        return c
+    return _scaled_pv(Fraction(c), -Fraction(r)*Fraction(t))
 
 def present_value_rate_derivative(payment, rate, years):
+    # Preserve years-first validation, independently of any rounded price.
     t = finite(years, "years")
-    return -t*present_value(payment, rate, years)
+    c, r, t = _present_value_inputs(payment, rate, years)
+    if c == 0 or t == 0:
+        return -t*c
+    return _scaled_pv(-Fraction(t)*Fraction(c), -Fraction(r)*Fraction(t))
 
 def present_value_rate_shock(payment, rate, years, change):
     t, h = finite(years, "years"), finite(change, "change")
