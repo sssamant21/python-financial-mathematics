@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-08  
-**Full-runtime candidate source revision:** `536dc531ca19a913507977f63df20d2cefd1f90b`  
-**Latest scoped source revision:** `63ff224ef85691be6a513db55f27c3f567889f76` (V-116, eight files/six scripts; after V-115)  
-**Disposition:** V-116 scoped rate-shock pass after V-115 full candidate Linux pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`  
+**Latest scoped source revision:** `31c777e7b1e41eaa3913a5144a69c6cb56cf914a` (included in V-117)  
+**Disposition:** V-117 full candidate Linux pass includes rate-shock/log-return corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-117](runtime-refresh-2026-11-08-r2.md): 583 compiled, 370 passed, 584 required hashes verified before/after. G2–G8 unchanged.
 
 [V-116 scoped rate shock](chapter-08-rate-shock-range-followup.md): eight compiled/six passed/eight hashes verified before-after. Fresh full-tree inventory 582/369/583 is not a new full runtime result. G2–G8 unchanged.
 
@@ -189,7 +191,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-115](runtime-refresh-2026-11-08.md) at `536dc531ca19a913507977f63df20d2cefd1f90b`; 581 sources/368 scripts/582 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-117](runtime-refresh-2026-11-08-r2.md) at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`; 583 sources/370 scripts/584 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -922,3 +924,11 @@ Next: [rate-shock baseline](chapter-08-rate-shock-range-baseline.md), with [four
 At `63ff224ef85691be6a513db55f27c3f567889f76`, eight scoped Python files compiled and six scripts passed, with eight exact Git blobs verified before/after. Fresh full-tree inventory is 582 Python files, 369 check/test scripts and 583 required source/fixture blobs. This is scoped validation; [V-115](runtime-refresh-2026-11-08.md) remains the latest full candidate Linux pass (581/368/582 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [log-return baseline](chapter-08-log-return-range-baseline.md), with [eight pinned observations](chapter-08-log-return-range-baseline.json): four finite-model range failures and four working half-price, adjacent-unity and equal-price controls. Derive a range-safe evaluation while preserving near-unity accuracy, positive-price domains, validation order and equal-price zero behavior. Stable quotient, centered-copy, resource limits and independent review remain open. Do not repeat completed rate-shock/PV/accumulation examples.
+
+## V-117 checkpoint — Section 8.5 log-return range
+
+[Log-return follow-up](chapter-08-log-return-range-followup.md): all 95 checks pass; 20 baseline failures and a byte-identical replay retained. Independent complete-ratio Decimal logarithms at 200/400 digits check extreme price ratios, branch boundaries, adjacent/equal prices, seeded positive binary64 pairs and input/validation guards. The near-unity formula remains; distant ratios use bounded mantissa/exponent normalization. Pinned corrected observations match local results. Failures are not distinct defect counts.
+
+[V-117 full runtime](runtime-refresh-2026-11-08-r2.md) at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`: 583 Python files compiled, 370 scripts passed and 584 required source/fixture hashes verified before/after. This fresh pinned-tree run includes both V-116 rate-shock and V-117 log-return changes/checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [stable exponential quotient baseline](chapter-08-stable-exponential-quotient-baseline.md), with [six pinned observations](chapter-08-stable-exponential-quotient-baseline.json): four finite-result range failures and two working tiny/large-step controls. Independent complete exponential differences divided by step agree at 1600/2200 digits. Establish complete scaling/output and represented x+h conventions while preserving validation and nonzero-step domain, then continue the centered copy. Resource limits and independent review remain open. Do not repeat completed log-return/rate-shock/PV/accumulation examples.
