@@ -1,0 +1,506 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "80ddac9bd6800f072adc84f15f33b2860169b003f38f3dfa0c6b3ca6b582f0fa",
+  "listing_sha256": "a5f1bd71ec2b3419ae04c17e7234b76a1b506e8dcfe1e584e7d6e78032acd020",
+  "commands": [
+    {
+      "label": "exact eight reference methods",
+      "args": [
+        "convergence_error.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_bracket (__main__.Tests.test_bad_bracket) ... ok\ntest_bracket (__main__.Tests.test_bracket) ... ok\ntest_derivative (__main__.Tests.test_derivative) ... ok\ntest_endpoint (__main__.Tests.test_endpoint) ... ok\ntest_limit (__main__.Tests.test_limit) ... ok\ntest_order (__main__.Tests.test_order) ... ok\ntest_trapezoid (__main__.Tests.test_trapezoid) ... ok\ntest_yield (__main__.Tests.test_yield) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import convergence_error"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "convergence_error.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy root snippet",
+      "args": [
+        "example_0.py"
+      ],
+      "returncode": 0,
+      "stdout": "yield: 0.10000000000000002\nprice residual: -1.4210854715202004e-14\niterations: 7\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy quadrature snippet",
+      "args": [
+        "example_1.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV: 190.32516392808088 estimated integration error: 2.113033791585127e-12\nactual benchmark error: 5.684341886080802e-14\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy independently checked yield",
+      "passed": true,
+      "actual": 0.10000000000000002,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy independently repriced residual",
+      "passed": true,
+      "actual": -1.818181818181818e-15,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy quadrature independent Decimal PV",
+      "passed": true,
+      "actual": 190.32516392808088,
+      "reference": "190.3251639280808536715018811071267576105892780391980958874853658884400693115032779749931079278190855230425093707033630045021836775224198096214411374885503201362953720279768589975120667789921101867452384924125645076835059933582179278624976570822640422450519160373378466452423660243107686908447442747033448266936757795829074944902087323479940082302493440900267948258207626308356001679148577384860961892859661356152553944858548220241365641187990124486890182973868368368348283709614129647789617013448231379018185415238855125977669551547879330436735843418866028154181983126091878697352821751923559958819272216580630910511737449150131881483803392443903229316758486071769859834279252641921096125052842856041925104789524456503215964667595512463375807181703515429994674472673956894689576968185420743886163897864685846467530895695761920360360353866978972028786555122820367941914964008576726373192833829833118505271401532605380379014570608947910276167427514924997823165315163002508302621478319076134708915714168",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E1 supplemental absolute price error",
+      "passed": true,
+      "actual": "1/50",
+      "reference": "1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E2 supplemental relative price error",
+      "passed": true,
+      "actual": "1/5000",
+      "reference": "1/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 ten-halving bracket width",
+      "passed": true,
+      "actual": "1/1024",
+      "reference": "1/1024",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 midpoint bound basis points",
+      "passed": true,
+      "actual": "625/128",
+      "reference": "625/128",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 flat-function residual",
+      "passed": true,
+      "actual": "1/1000000",
+      "reference": "1/1000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 flat-function root error",
+      "passed": true,
+      "actual": "1/100",
+      "reference": "1/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab yield absolute error 1e-06",
+      "passed": true,
+      "actual": 0.09999961853027345,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-06,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab reported bracket width 1e-06",
+      "passed": true,
+      "result": [
+        0.09999961853027345,
+        0.09999923706054688,
+        0.1,
+        18,
+        3.467907808385462e-05
+      ]
+    },
+    {
+      "label": "lab yield absolute error 1e-09",
+      "passed": true,
+      "actual": 0.09999999962747097,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-09,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab reported bracket width 1e-09",
+      "passed": true,
+      "result": [
+        0.09999999962747097,
+        0.09999999925494195,
+        0.1,
+        28,
+        3.3866271564875206e-08
+      ]
+    },
+    {
+      "label": "lab yield absolute error 1e-12",
+      "passed": true,
+      "actual": 0.09999999999963621,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab reported bracket width 1e-12",
+      "passed": true,
+      "result": [
+        0.09999999999963621,
+        0.09999999999927241,
+        0.1,
+        38,
+        3.3082869776990265e-11
+      ]
+    },
+    {
+      "label": "lab refinement halvings nondecreasing",
+      "passed": true
+    },
+    {
+      "label": "E9 E10 price residual at yield zero",
+      "passed": true,
+      "actual": 10.0,
+      "reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "one-period residual at .2",
+      "passed": true,
+      "actual": -8.333333333333329,
+      "reference": "-25/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab finite trapezoid 2",
+      "passed": true,
+      "actual": 0.375,
+      "reference": "3/8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab finite trapezoid 4",
+      "passed": true,
+      "actual": 0.34375,
+      "reference": "11/32",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab finite trapezoid 8",
+      "passed": true,
+      "actual": 0.3359375,
+      "reference": "43/128",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 actual refinement ratio",
+      "passed": true,
+      "actual": "4",
+      "reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 fine error estimate",
+      "passed": true,
+      "actual": 0.010416666666666666,
+      "reference": "1/96",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab finite central-difference expectation 0.01",
+      "passed": true,
+      "actual": -90.91660467807259,
+      "reference": "-1100000/12099",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-08
+    },
+    {
+      "label": "lab finite central-difference expectation 0.001",
+      "passed": true,
+      "actual": -90.90916604063182,
+      "reference": "-110000000/1209999",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-08
+    },
+    {
+      "label": "lab finite central-difference expectation 0.0001",
+      "passed": true,
+      "actual": -90.90909166040717,
+      "reference": "-11000000000/120999999",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-08
+    },
+    {
+      "label": "E25 materiality supplemental",
+      "passed": true,
+      "actual": "10000",
+      "reference": "10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E35 yield sensitivity supplemental",
+      "passed": true,
+      "actual": "1/10000",
+      "reference": "1/10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E36 additive error budget supplemental",
+      "passed": true,
+      "actual": "3/100",
+      "reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 wide bisection midpoint",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 wide trapezoid",
+      "passed": true,
+      "actual": 2.0,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 large weighted trapezoid",
+      "passed": true,
+      "actual": 1e+308,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 estimate avoids difference overflow",
+      "passed": true,
+      "actual": 6.666666666666666e+307,
+      "reference": "200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/3",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 tiny order denominator retained",
+      "passed": true,
+      "actual": 1.4426950408889634,
+      "reference": "1.442695040888963407359924681001892137426645954152985934135449406931109219181185079885526622893506344496997518309652544255593101687168359642720662158223479336274537369884718493630701387663532015533894318916664837643128615424047478422289497904795091530351338588054968865893096996368036110511075630844145427215823344941891933908577715790044171280246848341374522695182369011239094034459968539906113421722886278029158010630061976762445652605995073753240625655815475938178305239725510724813077156267545807578171330193573006168761937372982675897415623817983567103443489750680705518088486561386832917732182934913968431059345407978745141600737181025363276009140286975058774435551611851404867563446235739152944798699961444825967282773543094199406337108491867397274891730155413058116574153251550224551226837759841935485441687268122542060462157968313603948306145655230553205613834711706818654320346695171626099613071048518696189892763330318133933577644515263413905948332817489080209866374780006204379663725686652",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 high-order finite estimate retained",
+      "passed": true,
+      "actual": 8.709809816217217e-295,
+      "reference": "8.709809816217216675576195494778872295859103742705388616643493229498288853406267413784738750799787881065564087177455120636204302371988336325082790824523036861101510642310297318447709123389909423848058563741972347190631037097171023413380668241414700728236292773514839473656091148077736590843829271858158119489111346172569156704165450765756969786882964666248393140109267575668656408298646070204782097365838907453671672111084786993170266671074617066361875947135006391938516720952066668786783643050569131627555772825443192202344728299862325347122982599626872616462694211150589984160695878009089205793496692443229925308148268706283781994901148179307647646211722477921773785813335914289487888575721920221600260019129385804894961817150806290571038055401636924487102216022595067651991681187599973334352221477897189319418673369098704339273905060636030376823888784547495210076181595614603781186150502584201028233907606731645668571777947604901812690932251487175788208421414609755340180906520020918079332684702051E-295",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 derivative numerator finite after division",
+      "passed": true,
+      "actual": 1e+308,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F169 boolean bisection callback",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 noncallable bisection",
+      "passed": true,
+      "exception": "ValueError('callable required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 huge endpoint",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 bad bracket",
+      "passed": true,
+      "exception": "ValueError('endpoints must have opposite signs')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 iteration failure",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit or float-coordinate stagnation')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F169 bisection stagnation",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit or float-coordinate stagnation')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F169 trapezoid repeated nodes",
+      "passed": true,
+      "exception": "ValueError('repeated float grid coordinates')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 trapezoid boolean callback",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 derivative repeated coordinates",
+      "passed": true,
+      "exception": "ValueError('step cannot produce distinct coordinates around x')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 derivative nonfinite callback",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 derivative boolean coordinate",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F169 boolean convergence order",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "lab_results": {
+    "yields": [
+      {
+        "width_tol": 1e-06,
+        "result": [
+          0.09999961853027345,
+          0.09999923706054688,
+          0.1,
+          18,
+          3.467907808385462e-05
+        ],
+        "actual_float_radius": 3.8146972657082667e-07,
+        "radius_basis_points": 0.0038146972657082667
+      },
+      {
+        "width_tol": 1e-09,
+        "result": [
+          0.09999999962747097,
+          0.09999999925494195,
+          0.1,
+          28,
+          3.3866271564875206e-08
+        ],
+        "actual_float_radius": 3.7252903539730653e-10,
+        "radius_basis_points": 3.7252903539730653e-06
+      },
+      {
+        "width_tol": 1e-12,
+        "result": [
+          0.09999999999963621,
+          0.09999999999927241,
+          0.1,
+          38,
+          3.3082869776990265e-11
+        ],
+        "actual_float_radius": 3.63806207381856e-13,
+        "radius_basis_points": 3.63806207381856e-09
+      }
+    ],
+    "trapezoids": [
+      0.375,
+      0.34375,
+      0.3359375
+    ],
+    "derivatives": [
+      {
+        "h": 0.01,
+        "value": -90.91660467807259
+      },
+      {
+        "h": 0.001,
+        "value": -90.90916604063182
+      },
+      {
+        "h": 0.0001,
+        "value": -90.90909166040717
+      }
+    ]
+  },
+  "model": {
+    "one_period_price": 100,
+    "next_period_cashflow": 110,
+    "periodic_yield": 0.1,
+    "units": "fictional currency, decimal periodic yield;1bp=.0001; integration/differentiation fixtures dimensionless unless price/yield",
+    "timing": "t0 price,t1 payment; separate continuous cashflow SciPy example, no market dates"
+  },
+  "scipy_secondary_stdout": "yield: 0.10000000000000002\nprice residual: -1.4210854715202004e-14\niterations: 7\nPV: 190.32516392808088 estimated integration error: 2.113033791585127e-12\nactual benchmark error: 5.684341886080802e-14\n"
+}
