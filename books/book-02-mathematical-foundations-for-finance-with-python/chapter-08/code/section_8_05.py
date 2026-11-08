@@ -100,7 +100,14 @@ def log_return(start, end):
     s, e = finite(start, "start"), finite(end, "end")
     if s <= 0 or e <= 0:
         raise ValueError("prices must be positive")
-    return math.log1p((e-s)/s)
+    # Retain the accurate relative-change formula near unity.
+    if 0.5*s <= e <= 2*s:
+        return math.log1p((e-s)/s)
+    # Normalize first: the mantissa ratio is bounded, even for extreme prices.
+    start_mantissa, start_exponent = math.frexp(s)
+    end_mantissa, end_exponent = math.frexp(e)
+    return (math.log(end_mantissa/start_mantissa)
+            + (end_exponent-start_exponent)*math.log(2.0))
 
 def power_elasticity(exponent):
     return finite(exponent, "exponent")
