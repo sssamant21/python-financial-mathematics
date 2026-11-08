@@ -16,3 +16,7 @@
 Next: verify exact published Project 05 revision in CI, assess non-overlapping calibration and licensed 2020/2022 data provenance. Project 06 block bootstrap and conditional coverage extension authored; local prototype 7/7 tests passed, exact published revision CI pending. Project 07 extension: circular moving-block horizon bootstrap helper and 10 local deterministic tests added; exact published-revision CI and integration into forecast CSV remain pending. Point-in-time provenance checklist documented. Next: integrate bootstrap forecasts with walk-forward scoring and test exact published revision, then Project 08.
 
 Do **not** label production-certified; this is an educational research series. No live trading or broker integration.
+
+### Project 07 integrated bootstrap checkpoint (2026-11-08)
+
+Published `bootstrap_walkforward.py` and `test_bootstrap_walkforward.py`: non-overlapping walk-forward horizons, origin-specific seeded circular-block draws, historical/normal baseline alignment, bootstrap VaR/CVaR and realized breach flags. Added documentation and reproducible CLI. **Integration tests authored but not executed in this run; exact-revision CI remains unverified.** Next: run the full Project 07 test suite on the published SHA, review CI and fix failures; then begin Project 08 if green.
