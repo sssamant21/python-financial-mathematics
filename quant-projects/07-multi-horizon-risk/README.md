@@ -61,3 +61,20 @@ Local isolated validation of this helper and its tests: `python -m pytest -q` in
 ### Point-in-time market data checklist
 
 Before using real data, record source/provider and license, acquisition timestamp (UTC), exact requested and returned date ranges, timezone, adjusted vs unadjusted price convention, dividends/splits/corporate actions, ticker changes and delistings, survivorship-selection policy, missing-week treatment, asset weights and decision timestamp, and SHA-256 of the private input CSV. Keep restricted raw data out of Git. Verify each forecast uses data actually available at its origin, not merely earlier timestamps in a revised dataset.
+
+## Integrated walk-forward bootstrap scoring
+
+The separately runnable `bootstrap_walkforward.py` now joins the circular-block bootstrap with the **same** non-overlapping forecast origins and realized losses as `multi_horizon.py`. For each origin, only the preceding `lookback` weekly returns are passed to the bootstrap; the held-out outcome is used solely for scoring. Outputs add `BootstrapVaR95`, `BootstrapCVaR95`, and `BootstrapBreach` alongside the historical and normal baselines.
+
+From `quant-projects/07-multi-horizon-risk`:
+
+```powershell
+py -m pytest -q test_multi_horizon.py test_dependent_bootstrap.py test_bootstrap_walkforward.py
+py bootstrap_walkforward.py --lookback 104 --horizons 1 4 13 --block-length 4 --draws 2000 --seed 2026
+# Optional private, licensed input:
+py bootstrap_walkforward.py --prices C:\\data\\licensed_weekly_prices.csv --output reports-private
+```
+
+Default outputs go to `reports-bootstrap/` (do not commit private input or generated reports). Bootstrap simulation draws are **not** independent observed weeks, so the number of scored periods—not the number of draws—determines breach-rate sample size. The 13-week synthetic run is still severely underpowered for 95% tail calibration. Try block lengths 1, 4, 8, and 13 to assess sensitivity; block bootstrap preserves within-block short-run order but does not establish a correct model for structural regime changes.
+
+**Validation status:** New deterministic integration tests were authored and published; exact-revision runtime execution, CI outcome, independent review, and licensed historical-data checks are **not yet verified**. The existing 10/10 result applies only to the previously tested standalone helper, not to this integration.
