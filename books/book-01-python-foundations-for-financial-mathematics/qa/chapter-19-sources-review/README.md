@@ -82,3 +82,5 @@ Input is Python str CSV text; required columns are instrument,date,close,currenc
 | 40 | Validation: | No. | Conceptual/source/schema/interpretation alignment; no external-format/live-source acceptance |
 
 Next: Section19.2 CSV and Text Data formal workflow/local-answer review. Broader Book1 validation remains in progress.
+
+Corrected executable revision: `fbb9b3c28b6285777272593e769368bf134fd6dc`. [Publication verification](publication-verification.json) pins the executed manuscript and retained evidence; all28 publication blobs matched the GitHub tree. No independent/platform acceptance is inferred.
