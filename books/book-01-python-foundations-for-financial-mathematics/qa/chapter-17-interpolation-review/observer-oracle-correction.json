@@ -1,0 +1,17 @@
+{
+  "reason": "The first observer used an incorrect not-a-knot cubic midpoint expectation307/6400. Exact four-point rational Lagrange interpolation at5/2 gives609/12800, matching SciPy. This is an observer arithmetic correction, not a source/SciPy defect. The first42-predicate baseline and its16 failures are retained separately; final baseline has15 source/contract failures under the corrected oracle. Inventories are not added.",
+  "nodes": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "ordinates": [
+    ".04",
+    ".045",
+    ".05",
+    ".055"
+  ],
+  "query": "5/2",
+  "derivation": "sum_i y_i product_{j!=i}((5/2-x_j)/(x_i-x_j))=609/12800"
+}

@@ -1,0 +1,407 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "source_sha256": "0199f2473da50d3d27dd174a442913699f6bca273cf3f2be7a231e1829d46080",
+  "listing_sha256": "6c9e270101ea844d96a02d60ff8ee95d590dd69a2866265803fee971b59d2dad",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "interpolation.py"
+      ],
+      "returncode": 0,
+      "stdout": "2.5y discount: 0.8824969025845953\n2.5y zero: 0.050000000000000044\n",
+      "stderr": "test_01_linear_mid (__main__.InterpolationTests.test_01_linear_mid) ... ok\ntest_02_endpoint (__main__.InterpolationTests.test_02_endpoint) ... ok\ntest_03_exact_node (__main__.InterpolationTests.test_03_exact_node) ... ok\ntest_04_outside (__main__.InterpolationTests.test_04_outside) ... ok\ntest_05_extrapolation (__main__.InterpolationTests.test_05_extrapolation) ... ok\ntest_06_unsorted (__main__.InterpolationTests.test_06_unsorted) ... ok\ntest_07_duplicate (__main__.InterpolationTests.test_07_duplicate) ... ok\ntest_08_logdf_mid (__main__.InterpolationTests.test_08_logdf_mid) ... ok\ntest_09_zero (__main__.InterpolationTests.test_09_zero) ... ok\ntest_10_forward (__main__.InterpolationTests.test_10_forward) ... ok\ntest_11_invalid_df (__main__.InterpolationTests.test_11_invalid_df) ... ok\ntest_12_piecewise (__main__.InterpolationTests.test_12_piecewise) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import interpolation"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "interpolation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy interpolation snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "PCHIP zero rate at 2.5y: 0.047692307692307694\nCubic spline zero rate at 2.5y: 0.047578125000000006\nLog-discount interpolated DF: 0.8869204367171575\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy PCHIP independent Hermite midpoint",
+      "passed": true,
+      "actual": 0.047692307692307694,
+      "reference": "31/650",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy spline independent cubic midpoint",
+      "passed": true,
+      "actual": 0.047578125000000006,
+      "reference": "609/12800",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy log-discount independent midpoint",
+      "passed": true,
+      "actual": 0.8869204367171575,
+      "reference": "0.8869204367171575155275652287698373522790885821572649078011491894388539695485505984998834233797481782",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "SciPy sampled shape and domain",
+      "passed": true,
+      "second_exact_stdout": "PCHIP zero rate at 2.5y: 0.047692307692307694\nCubic spline zero rate at 2.5y: 0.047578125000000006\nLog-discount interpolated DF: 0.8869204367171575\n",
+      "scope": "finite monotone-rate sample, not arbitrary curve/arbitrage proof"
+    },
+    {
+      "label": "E1 linear midpoint",
+      "passed": true,
+      "actual": 4.0,
+      "reference": "4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 left endpoint",
+      "passed": true,
+      "actual": 2,
+      "reference": "2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 right endpoint",
+      "passed": true,
+      "actual": 6,
+      "reference": "6",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 explicit extrapolation",
+      "passed": true,
+      "actual": 8.0,
+      "reference": "8",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 linearly interpolated zero",
+      "passed": true,
+      "actual": 0.05,
+      "reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 geometric log-discount midpoint",
+      "passed": true,
+      "actual": 0.8538149682454624,
+      "reference": "0.8538149682454624196397012570",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 wide x span",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 wide y difference",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 huge constant ordinate",
+      "passed": true,
+      "actual": 1e+308,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 integer ordinate cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 exact integer coordinates",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 exact integer right knot preserved",
+      "passed": true
+    },
+    {
+      "label": "F166 supplied log-DF knot preserved",
+      "passed": true
+    },
+    {
+      "label": "F166 tiny integer-ratio forward",
+      "passed": true,
+      "actual": 1e-18,
+      "reference": "9.999999999999999995000000000000000003333333333333333330833333333333333335333333333333333331666666666666666668095238095238095236845238095238095239206349206349206348206349206349206350115440115440115439282106782106782107551337551337551336837051837051837052503718503718503717878718503718503719091953797836150776771692359927654045827419914107220608268596384695455903362433919709461504672594347516948136578E-19",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 huge ratio forward",
+      "passed": true,
+      "actual": 1418.3924172843322,
+      "reference": "1418.392417284332141355082736085568351882278516995324153236529986996024727561249127825374278335192551778652154970048329158180267686491008962106433019364849520721470840328541683399780735212959650293490399270322672683299369236633592929222103450235870899164233013857008935510143538002665151445553110536816742655931677027185975179060170230972982119666681559071967284884601876604566067987977301358794393471",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 tiny ratio forward",
+      "passed": true,
+      "actual": -1418.3924172843322,
+      "reference": "-1418.392417284332141355082736",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E18 source zero recovery",
+      "passed": true,
+      "actual": 0.04999999999999998,
+      "reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab zero-versus-log representation",
+      "passed": true,
+      "actual": 0.8958341352965282,
+      "reference": "0.8958341352965282506768545828765117803873717284891040427970416909375273963345809123034597142503064840704233311767935010898059562297837084648947887578720425839852842325017544813353474411667379258200257031078694380675168168106538709019136205243196572723749671893019112166029828721210107976843187298272023053448150325714560466919229657558762341804108267500673184412176535682028113863500952994139239030293",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab three-node log DF at2.5",
+      "passed": true,
+      "actual": 0.8693582353988057,
+      "reference": "0.8693582353988058196630844162",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab three-node zero at2.5",
+      "passed": true,
+      "actual": 0.05600000000000006,
+      "reference": "7/125",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 huge-tenor close-query forward retained",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1.177830356563834545387941095E-309",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab source piecewise forward",
+      "passed": true,
+      "actual": 0.07,
+      "reference": "7/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E21 interval forward",
+      "passed": true,
+      "actual": 0.05000000000000007,
+      "reference": "1/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E22 E25 negative forward permitted",
+      "passed": true,
+      "actual": -0.01999999999999999,
+      "reference": "-1/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 close-query piecewise forward retained",
+      "passed": true,
+      "actual": 1e-18,
+      "reference": "9.999999999999999995000000000000000003333333333333333330833333333333333335333333333333333331666666666666666668095238095238095236845238095238095239206349206349206348206349206349206350115440115440115439282106782106782107551337551337551336837051837051837052503718503718503717878718503718503719091953797836150776771692359927654045827419914107220608268596384695455903362433919709461504672594347516948136578E-19",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E29 supplemental coupon PV",
+      "passed": true,
+      "actual": "1791/20",
+      "reference": "1791/20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F166 default extrapolation rejects",
+      "passed": true,
+      "exception": "ValueError('query outside curve')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 duplicate nodes",
+      "passed": true,
+      "exception": "ValueError('strictly increasing node coordinates required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 unsorted nodes",
+      "passed": true,
+      "exception": "ValueError('strictly increasing node coordinates required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 shape rejected",
+      "passed": true,
+      "exception": "ValueError('at least two paired list/tuple nodes required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 huge integer invalid finite range",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 nonboolean extrapolation policy",
+      "passed": true,
+      "exception": "ValueError('boolean extrapolation policy required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 unreportable nonzero linear value",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 unreportable extrapolation",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 unreportable forward",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 piecewise query typed",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 piecewise validates empty curve first",
+      "passed": true,
+      "exception": "ValueError('at least two paired list/tuple nodes required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 nonpositive DF",
+      "passed": true,
+      "exception": "ValueError('nonnegative tenors and positive discounts required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 negative curve tenor",
+      "passed": true,
+      "exception": "ValueError('nonnegative tenors and positive discounts required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 zero rate at zero maturity",
+      "passed": true,
+      "exception": "ValueError('positive discount and maturity required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F166 out-of-domain piecewise forward",
+      "passed": true,
+      "exception": "ValueError('forward interval outside curve')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "model": {
+    "tenors": [
+      1,
+      2,
+      3
+    ],
+    "continuous_zero_rates": [
+      0.04,
+      0.05,
+      0.06
+    ],
+    "discounts": [
+      0.9607894391523232,
+      0.9048374180359595,
+      0.835270211411272
+    ],
+    "units": "years, continuous annual zero/forward rates, dimensionless discount factors",
+    "timing": "fictional curve, no market/as-of calendar or day-count calibration",
+    "representation_comparison": {
+      "linear_zero_DF": "0.9048374180359595731642490594464366211947053609804009520562573170557799653442483610125034460360904572384787453146483184977489081612387900951892794312557248399318523139860115705012439666105039449066273807537937177461582470033208910360687511714588679788774740419813310766773788169878446156545776278626483275866531621102085462527548956338260029958848753279549866025870896186845821999160425711307569519054",
+      "log_discount_DF": "0.8958341352965282506768545828765117803873717284891040427970416909375273963345809123034597142503064840704233311767935010898059562297837084648947887578720425839852842325017544813353474411667379258200257031078694380675168168106538709019136205243196572723749671893019112166029828721210107976843187298272023053448150325714560466919229657558762341804108267500673184412176535682028113863500952994139239030293"
+    }
+  }
+}
