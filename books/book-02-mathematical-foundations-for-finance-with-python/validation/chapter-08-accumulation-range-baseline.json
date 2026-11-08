@@ -104,5 +104,60 @@
     }
   ],
   "reference_method": "Complete P*exp(r*t), P*r*exp(r*t), and P*t*exp(r*t) using Decimal at 200/400 digits; references agree. Zero-principal identities avoid evaluating the enormous exponential. Unrepresentable final results are labeled without preselecting the next error policy.",
-  "limits": "Exploratory next-batch baseline only. Preserve finite input/nonnegative principal and horizon domains and explicitly establish complete-scaling/final-output contracts."
+  "limits": "Exploratory next-batch baseline only. Preserve finite input/nonnegative principal and horizon domains and explicitly establish complete-scaling/final-output contracts.",
+  "pinned_probe_replay": {
+    "source_revision": "04f45d68c3aaf1c3a25838fba4417df5198614c0",
+    "source_blob_verified": true,
+    "actual_outputs": [
+      {
+        "actual_value_time_rate": [
+          "OverflowError",
+          "OverflowError",
+          "OverflowError"
+        ],
+        "actual_zero_signs": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "actual_value_time_rate": [
+          0,
+          0,
+          0
+        ],
+        "actual_zero_signs": [
+          1,
+          -1,
+          1
+        ]
+      },
+      {
+        "actual_value_time_rate": [
+          "inf",
+          "inf",
+          "inf"
+        ],
+        "actual_zero_signs": [
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "actual_value_time_rate": [
+          "nan",
+          "nan",
+          "nan"
+        ],
+        "actual_zero_signs": [
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "matched_initial_probes": true
+  }
 }
