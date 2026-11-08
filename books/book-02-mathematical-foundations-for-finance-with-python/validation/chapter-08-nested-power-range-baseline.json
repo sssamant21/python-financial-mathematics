@@ -1,0 +1,33 @@
+{
+  "source_revision": "a93acb89609087281b4e1872c6420313ddf7adca",
+  "source_blob": "269a5196af7f37d5bd998a717c5baddaba04db8a",
+  "observations": [
+    {
+      "x": 4e+43,
+      "exact_polynomial_reference": 1.0616832e+308,
+      "actual": 1.0616832000000005e+308
+    },
+    {
+      "x": -4e+43,
+      "exact_polynomial_reference": -1.0616832e+308,
+      "actual": -1.0616832000000005e+308
+    },
+    {
+      "x": 4.5e+43,
+      "exact_polynomial_reference": "OverflowError",
+      "actual": "inf"
+    },
+    {
+      "x": -4.5e+43,
+      "exact_polynomial_reference": "OverflowError",
+      "actual": "-inf"
+    },
+    {
+      "x": 1e+100,
+      "exact_polynomial_reference": "OverflowError",
+      "actual": "OverflowError"
+    }
+  ],
+  "independent_reference": "Expand 24*x*(3*x*x+2)^3 as 648*x^7 + 1296*x^5 + 864*x^3 + 192*x. Evaluate exact rational monomials for the represented input, then round once to float or record OverflowError.",
+  "limits": "Next-batch baseline; finite discrepancies require explicit accuracy-contract reconciliation. Nonfinite output/error consistency and manual review remain open."
+}
