@@ -1,0 +1,6086 @@
+{
+  "validation": "V-114 scoped accumulation follow-up",
+  "date": "2026-11-08",
+  "baseline_revision": "473cfcd129fe042c9f1ddcde4a8f81c869609add",
+  "baseline_source_blob": "1ba84903bf0647de9691a329b1ba4a151601423d",
+  "baseline_dependency_blob": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248",
+  "executable_source_revision": "a2de6dbfdacb2ef34d30674ee51b5509a8dc4f35",
+  "baseline": {
+    "reference": "Decimal log-amplitude at 1600/2200 digits and signed-zero identities",
+    "tolerance": "4e-15 relative, no absolute floor; exact zero signs and error types",
+    "observations": [
+      {
+        "case": 0,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 0,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 0,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000163e+113,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 1,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "accumulation",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "accumulation",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 5,
+        "function": "accumulation",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 9,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 9,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 10,
+        "function": "accumulation",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "actual": 1,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 12,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 12,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 13,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": 8.881784197001251e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623141e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623141e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": -8.881784197001243e-16,
+        "expected_zero_sign": null,
+        "actual": -8.881784197001243e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 18,
+        "function": "accumulation",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 1221.40275816017,
+        "expected_zero_sign": null,
+        "actual": 1221.40275816017,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 48.85611032640679,
+        "expected_zero_sign": null,
+        "actual": 48.8561103264068,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 6107.013790800849,
+        "expected_zero_sign": null,
+        "actual": 6107.013790800849,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": 818.7307530779818,
+        "expected_zero_sign": null,
+        "actual": 818.7307530779818,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": -32.749230123119276,
+        "expected_zero_sign": null,
+        "actual": -32.749230123119276,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": 4093.6537653899095,
+        "expected_zero_sign": null,
+        "actual": 4093.653765389909,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": 8.218407461554972e+307,
+        "expected_zero_sign": null,
+        "actual": 8.218407461554972e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": 8.218407461554972e+307,
+        "expected_zero_sign": null,
+        "actual": 8.218407461554972e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "accumulation",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 22,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": 1e-323,
+        "expected_zero_sign": null,
+        "actual": 1e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": -1e-323,
+        "expected_zero_sign": null,
+        "actual": -1e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": 5.706e-321,
+        "expected_zero_sign": null,
+        "actual": 7.35e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 23,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": -5e-324,
+        "expected_zero_sign": null,
+        "actual": -5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": 2.105e-321,
+        "expected_zero_sign": null,
+        "actual": 3.68e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": 9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": -9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": 9.125016462967946e-124,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 27,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": -5e-324,
+        "expected_zero_sign": null,
+        "actual": -5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": -1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": -1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 2.7182818284590455,
+        "expected_zero_sign": null,
+        "actual": 2.718281828459045,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 0.27182818284590454,
+        "expected_zero_sign": null,
+        "actual": 0.27182818284590454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 27.182818284590454,
+        "expected_zero_sign": null,
+        "actual": 27.18281828459045,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 5.43656365691809,
+        "expected_zero_sign": null,
+        "actual": 5.43656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation_time_derivative",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 0.543656365691809,
+        "expected_zero_sign": null,
+        "actual": 0.543656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 54.3656365691809,
+        "expected_zero_sign": null,
+        "actual": 54.3656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "contract": "independent complete expression",
+        "expected": 0.41218031767503205,
+        "actual": "AssertionError",
+        "exception_message": "sensitivity called rounded accumulation",
+        "passed": false
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "contract": "independent complete expression",
+        "expected": 13.189770165601026,
+        "actual": "AssertionError",
+        "exception_message": "sensitivity called rounded accumulation",
+        "passed": false
+      }
+    ]
+  },
+  "baseline_replay": {
+    "reference": "Decimal log-amplitude at 1600/2200 digits and signed-zero identities",
+    "tolerance": "4e-15 relative, no absolute floor; exact zero signs and error types",
+    "observations": [
+      {
+        "case": 0,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 0,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 0,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000163e+113,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 1,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "accumulation",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "accumulation",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 5,
+        "function": "accumulation",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 9,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 9,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 10,
+        "function": "accumulation",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "actual": 1,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 12,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 12,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 13,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": 8.881784197001251e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623141e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623141e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": -8.881784197001243e-16,
+        "expected_zero_sign": null,
+        "actual": -8.881784197001243e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 18,
+        "function": "accumulation",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 1221.40275816017,
+        "expected_zero_sign": null,
+        "actual": 1221.40275816017,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 48.85611032640679,
+        "expected_zero_sign": null,
+        "actual": 48.8561103264068,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 6107.013790800849,
+        "expected_zero_sign": null,
+        "actual": 6107.013790800849,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": 818.7307530779818,
+        "expected_zero_sign": null,
+        "actual": 818.7307530779818,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": -32.749230123119276,
+        "expected_zero_sign": null,
+        "actual": -32.749230123119276,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": 4093.6537653899095,
+        "expected_zero_sign": null,
+        "actual": 4093.653765389909,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": 8.218407461554972e+307,
+        "expected_zero_sign": null,
+        "actual": 8.218407461554972e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": 8.218407461554972e+307,
+        "expected_zero_sign": null,
+        "actual": 8.218407461554972e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "accumulation",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 22,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": 1e-323,
+        "expected_zero_sign": null,
+        "actual": 1e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": -1e-323,
+        "expected_zero_sign": null,
+        "actual": -1e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": 5.706e-321,
+        "expected_zero_sign": null,
+        "actual": 7.35e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 23,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": -5e-324,
+        "expected_zero_sign": null,
+        "actual": -5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": 2.105e-321,
+        "expected_zero_sign": null,
+        "actual": 3.68e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": 9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": -9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": 9.125016462967946e-124,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 27,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": -5e-324,
+        "expected_zero_sign": null,
+        "actual": -5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": -1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": -1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 2.7182818284590455,
+        "expected_zero_sign": null,
+        "actual": 2.718281828459045,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 0.27182818284590454,
+        "expected_zero_sign": null,
+        "actual": 0.27182818284590454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 27.182818284590454,
+        "expected_zero_sign": null,
+        "actual": 27.18281828459045,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 5.43656365691809,
+        "expected_zero_sign": null,
+        "actual": 5.43656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation_time_derivative",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 0.543656365691809,
+        "expected_zero_sign": null,
+        "actual": 0.543656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 54.3656365691809,
+        "expected_zero_sign": null,
+        "actual": 54.3656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "contract": "independent complete expression",
+        "expected": 0.41218031767503205,
+        "actual": "AssertionError",
+        "exception_message": "sensitivity called rounded accumulation",
+        "passed": false
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "contract": "independent complete expression",
+        "expected": 13.189770165601026,
+        "actual": "AssertionError",
+        "exception_message": "sensitivity called rounded accumulation",
+        "passed": false
+      }
+    ]
+  },
+  "corrected": {
+    "reference": "Decimal log-amplitude at 1600/2200 digits and signed-zero identities",
+    "tolerance": "4e-15 relative, no absolute floor; exact zero signs and error types",
+    "observations": [
+      {
+        "case": 0,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": 9.733444573000164e+110,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 0,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": 9.733444573000164e+110,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 0,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1000
+        ],
+        "expected": 9.733444573000163e+113,
+        "expected_zero_sign": null,
+        "actual": 9.733444573000163e+113,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          750
+        ],
+        "expected": 1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 1.5e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 2,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 2,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": 8.88178419700126e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 2,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 3,
+        "function": "accumulation",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 3,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 3,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 4,
+        "function": "accumulation",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 4,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 4,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1,
+        "expected_zero_sign": null,
+        "actual": 1,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          -5e-324,
+          5e-324
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": 8.88178419700126e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": 1.7976931348623141e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623141e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": -8.881784197001243e-16,
+        "expected_zero_sign": null,
+        "actual": -8.881784197001243e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 1221.40275816017,
+        "expected_zero_sign": null,
+        "actual": 1221.40275816017,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 48.85611032640679,
+        "expected_zero_sign": null,
+        "actual": 48.85611032640679,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1000,
+          0.04,
+          5
+        ],
+        "expected": 6107.013790800849,
+        "expected_zero_sign": null,
+        "actual": 6107.013790800849,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": 818.7307530779818,
+        "expected_zero_sign": null,
+        "actual": 818.7307530779818,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": -32.749230123119276,
+        "expected_zero_sign": null,
+        "actual": -32.749230123119276,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1000,
+          -0.04,
+          5
+        ],
+        "expected": 4093.6537653899095,
+        "expected_zero_sign": null,
+        "actual": 4093.6537653899095,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": 8.218407461554972e+307,
+        "expected_zero_sign": null,
+        "actual": 8.218407461554972e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": 8.218407461554972e+307,
+        "expected_zero_sign": null,
+        "actual": 8.218407461554972e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          1,
+          709
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 21,
+        "function": "accumulation",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 21,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 21,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          1,
+          710
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": 1e-323,
+        "expected_zero_sign": null,
+        "actual": 1e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": -1e-323,
+        "expected_zero_sign": null,
+        "actual": -1e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          744
+        ],
+        "expected": 5.706e-321,
+        "expected_zero_sign": null,
+        "actual": 5.706e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": -5e-324,
+        "expected_zero_sign": null,
+        "actual": -5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          -1,
+          745
+        ],
+        "expected": 2.105e-321,
+        "expected_zero_sign": null,
+        "actual": 2.105e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": 9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 9.125016462967946e-127,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": -9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": -9.125016462967946e-127,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          1000
+        ],
+        "expected": 9.125016462967946e-124,
+        "expected_zero_sign": null,
+        "actual": 9.125016462967946e-124,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": 2.6350169706336343e+306,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": 2.6350169706336343e+306,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1450
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 26,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 26,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 26,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          1,
+          1500
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation_time_derivative",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": -5e-324,
+        "expected_zero_sign": null,
+        "actual": -5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          5e-324,
+          -1,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": -1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": -1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1.7976931348623157e+308,
+          -1,
+          0
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 2.7182818284590455,
+        "expected_zero_sign": null,
+        "actual": 2.7182818284590455,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 0.27182818284590454,
+        "expected_zero_sign": null,
+        "actual": 0.27182818284590454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "expected": 27.182818284590454,
+        "expected_zero_sign": null,
+        "actual": 27.182818284590454,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 5.43656365691809,
+        "expected_zero_sign": null,
+        "actual": 5.43656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation_time_derivative",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 0.543656365691809,
+        "expected_zero_sign": null,
+        "actual": 0.543656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "accumulation_rate_derivative",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "expected": 54.3656365691809,
+        "expected_zero_sign": null,
+        "actual": 54.3656365691809,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal",
+        "actual": "ValueError",
+        "exception_message": "principal is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years is outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "principal and years",
+        "actual": "ValueError",
+        "exception_message": "principal and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "accumulation",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "principal",
+        "actual": "TypeError",
+        "exception_message": "principal must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "accumulation_time_derivative",
+        "contract": "independent complete expression",
+        "expected": 0.41218031767503205,
+        "actual": 0.41218031767503205,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "accumulation_rate_derivative",
+        "contract": "independent complete expression",
+        "expected": 13.189770165601026,
+        "actual": 13.189770165601026,
+        "exception_message": null,
+        "passed": true
+      }
+    ]
+  },
+  "scoped": {
+    "source_revision": "a2de6dbfdacb2ef34d30674ee51b5509a8dc4f35",
+    "scope_manifest": [
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+        "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_05.py",
+        "sha": "cf3f9e07225d4b87f2b33c43bd8ab300ce40aec3"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_05.py",
+        "sha": "756ccecabce5eb38728cb5e4d6a550f20de3b1ee"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_exponential_derivative_range.py",
+        "sha": "ae6d2e33c7fbc8a4d87ec0dc7ef3ad9b5d464cc5"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_logarithm_derivative_range.py",
+        "sha": "562012e12f5101fdf22193b591d60891a1d85654"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_accumulation_range.py",
+        "sha": "5248d721f871cf4b25f279d8dd8e8641e196c3d3"
+      }
+    ],
+    "inventory_only": {
+      "python": 580,
+      "check_test_scripts": 367,
+      "required": 581
+    },
+    "compiled": [
+      "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+      "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_05.py",
+      "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_05.py",
+      "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_exponential_derivative_range.py",
+      "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_logarithm_derivative_range.py",
+      "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_accumulation_range.py"
+    ],
+    "runs": [
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_05.py",
+        "exit": 0,
+        "seconds": 0.8637499989999924,
+        "stdout": "PASS: Section 8.5 reference checks\n",
+        "stderr": "",
+        "stdout_sha256": "9c9037c91e70cfd596a351cbbcaa4639101e64cc66bff138540bc03f967f297f"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_exponential_derivative_range.py",
+        "exit": 0,
+        "seconds": 10.875995853999996,
+        "stdout": "[{\"case\": \"complete expression 0\", \"expected\": 1.8250032925935892e-126, \"actual\": 1.8250032925935892e-126, \"passed\": true}, {\"case\": \"complete expression 1\", \"expected\": 9.733444573000164e+110, \"actual\": 9.733444573000164e+110, \"passed\": true}, {\"case\": \"complete expression 2\", \"expected\": 0.0, \"actual\": 0.0, \"passed\": true}, {\"case\": \"complete expression 3\", \"expected\": -1.8250032925935892e-126, \"actual\": -1.8250032925935892e-126, \"passed\": true}, {\"case\": \"complete expression 4\", \"expected\": -0.0, \"actual\": -0.0, \"passed\": true}, {\"case\": \"complete expression 5\", \"expected\": 0.0, \"actual\": 0.0, \"passed\": true}, {\"case\": \"complete expression 6\", \"expected\": -0.0, \"actual\": -0.0, \"passed\": true}, {\"case\": \"complete expression 7\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"complete expression 8\", \"expected\": 9.73344457300041e-190, \"actual\": 9.73344457300041e-190, \"passed\": true}, {\"case\": \"complete expression 9\", \"expected\": -9.733444573000164e+110, \"actual\": -9.733444573000164e+110, \"passed\": true}, {\"case\": \"complete expression 10\", \"expected\": -9.733444573000164e+110, \"actual\": -9.733444573000164e+110, \"passed\": true}, {\"case\": \"complete expression 11\", \"expected\": -1.8250032925935892e-126, \"actual\": -1.8250032925935892e-126, \"passed\": true}, {\"case\": \"complete expression 12\", \"expected\": 8.881784197001251e-16, \"actual\": 8.881784197001251e-16, \"passed\": true}, {\"case\": \"complete expression 13\", \"expected\": 0.0, \"actual\": 0.0, \"passed\": true}, {\"case\": \"complete expression 14\", \"expected\": -0.0, \"actual\": -0.0, \"passed\": true}, {\"case\": \"complete expression 15\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"complete expression 16\", \"expected\": -0.0, \"actual\": -0.0, \"passed\": true}, {\"case\": \"complete expression 17\", \"expected\": 0.0, \"actual\": 0.0, \"passed\": true}, {\"case\": \"complete expression 18\", \"expected\": 421.79627538694103, \"actual\": 421.79627538694103, \"passed\": true}, {\"case\": \"complete expression 19\", \"expected\": 0.05205379570999353, \"actual\": 0.05205379570999353, \"passed\": true}, {\"case\": \"complete expression 20\", \"expected\": 6.0, \"actual\": 6.0, \"passed\": true}, {\"case\": \"complete expression 21\", \"expected\": 1.3498588075760032, \"actual\": 1.3498588075760032, \"passed\": true}, {\"case\": \"complete expression 22\", \"expected\": -50.31077670365875, \"actual\": -50.31077670365875, \"passed\": true}, {\"case\": \"retained defaults\", \"expected\": 2.718281828459045, \"actual\": 2.718281828459045, \"passed\": true}, {\"case\": \"bool x\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"passed\": true}, {\"case\": \"bool scale\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"passed\": true}, {\"case\": \"bool growth\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"passed\": true}, {\"case\": \"nan x\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"infinite scale\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"infinite growth\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"zero scale invalid x\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"zero growth invalid scale\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"huge integer\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"passed\": true}, {\"case\": \"text scale\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"passed\": true}]\n",
+        "stderr": "",
+        "stdout_sha256": "2ea470c7e057f685f26c6ae860811fc7222698583ee4b97e3a29577ecbac1929"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_logarithm_derivative_range.py",
+        "exit": 0,
+        "seconds": 0.03703530299998192,
+        "stdout": "{\"domain_policy\": {\"probe_exact_argument_positive\": true, \"probe_rounded_argument_zero\": true, \"retained_rejection\": \"ValueError\"}, \"observations\": [{\"case\": \"complete reciprocal 0\", \"expected\": 5.562684646268003e-309, \"actual\": 5.562684646268003e-309, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 1\", \"expected\": 4503599627370496.0, \"actual\": 4503599627370496.0, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 2\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 3\", \"expected\": -5.562684646268003e-309, \"actual\": -5.562684646268003e-309, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 4\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 5\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 6\", \"expected\": 0.0, \"actual\": 0.0, \"expected_zero_sign\": 1, \"actual_zero_sign\": 1, \"passed\": true}, {\"case\": \"complete reciprocal 7\", \"expected\": -0.0, \"actual\": -0.0, \"expected_zero_sign\": -1, \"actual_zero_sign\": -1, \"passed\": true}, {\"case\": \"complete reciprocal 8\", \"expected\": 0.0, \"actual\": 0.0, \"expected_zero_sign\": 1, \"actual_zero_sign\": 1, \"passed\": true}, {\"case\": \"complete reciprocal 9\", \"expected\": -0.0, \"actual\": -0.0, \"expected_zero_sign\": -1, \"actual_zero_sign\": -1, \"passed\": true}, {\"case\": \"complete reciprocal 10\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 11\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 12\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 13\", \"expected\": 1.8014398509481984e+16, \"actual\": 1.8014398509481984e+16, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 14\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 15\", \"expected\": 0.6666666666666666, \"actual\": 0.6666666666666666, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 16\", \"expected\": 1.0, \"actual\": 1.0, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 17\", \"expected\": 2.0, \"actual\": 2.0, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 18\", \"expected\": 0.18181818181818182, \"actual\": 0.18181818181818182, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 19\", \"expected\": 0.5, \"actual\": 0.5, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 20\", \"expected\": -0.5, \"actual\": -0.5, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"complete reciprocal 21\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"retained defaults\", \"expected\": 0.6666666666666666, \"actual\": 0.6666666666666666, \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"bool x\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"bool offset\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"bool slope\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"nan x\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"infinite offset\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"infinite slope\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"zero slope invalid x\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"zero slope invalid argument\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"huge integer\", \"expected\": \"ValueError\", \"actual\": \"ValueError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}, {\"case\": \"text offset\", \"expected\": \"TypeError\", \"actual\": \"TypeError\", \"expected_zero_sign\": null, \"actual_zero_sign\": null, \"passed\": true}]}\n",
+        "stderr": "",
+        "stdout_sha256": "43e6e5d7eb17c22f1c3e0b1507179ff21b2e4694db631e2413da158846c6c1ef"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_accumulation_range.py",
+        "exit": 0,
+        "seconds": 15.765050761999987,
+        "stdout": "Corrected observations retained above; hash records raw stdout.",
+        "stderr": "",
+        "stdout_sha256": "fc72ad7d36f33d0917068de86ac1762f10cf981c9b79f9cb1cf80b9cba2446ab"
+      }
+    ],
+    "hashes_verified_before": 6,
+    "hashes_verified_after": 6,
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "assertions_enabled": true
+  },
+  "next_pv": [
+    {
+      "args": [
+        5e-324,
+        -1,
+        1000
+      ],
+      "reference": [
+        9.733444573000164e+110,
+        -9.733444573000163e+113
+      ],
+      "reference_zero_signs": [
+        null,
+        null
+      ],
+      "actual": [
+        "OverflowError",
+        "OverflowError"
+      ],
+      "actual_zero_signs": [
+        null,
+        null
+      ]
+    },
+    {
+      "args": [
+        1,
+        1,
+        750
+      ],
+      "reference": [
+        0,
+        -1.5e-323
+      ],
+      "reference_zero_signs": [
+        1,
+        null
+      ],
+      "actual": [
+        0,
+        0
+      ],
+      "actual_zero_signs": [
+        1,
+        -1
+      ]
+    },
+    {
+      "args": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308,
+        5e-324
+      ],
+      "reference": [
+        "unrepresentable",
+        -8.88178419700126e-16
+      ],
+      "reference_zero_signs": [
+        null,
+        null
+      ],
+      "actual": [
+        "inf",
+        "-inf"
+      ],
+      "actual_zero_signs": [
+        null,
+        null
+      ]
+    },
+    {
+      "args": [
+        0,
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "reference": [
+        0,
+        0
+      ],
+      "reference_zero_signs": [
+        1,
+        -1
+      ],
+      "actual": [
+        "nan",
+        "nan"
+      ],
+      "actual_zero_signs": [
+        null,
+        null
+      ]
+    }
+  ],
+  "raw_stdout_sha256": {
+    "baseline.json": "efd84ae353b028dc8f9f7710a33d1e3f210fe3328319ba23c0d750263c37f7a7",
+    "baseline-replay.json": "efd84ae353b028dc8f9f7710a33d1e3f210fe3328319ba23c0d750263c37f7a7",
+    "corrected.json": "fc72ad7d36f33d0917068de86ac1762f10cf981c9b79f9cb1cf80b9cba2446ab",
+    "corrected-rerun.json": "fc72ad7d36f33d0917068de86ac1762f10cf981c9b79f9cb1cf80b9cba2446ab"
+  },
+  "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-acc114/baseline/check_accumulation_range.py\", line 116, in <module>\n    run()\n  File \"/tmp/book02-acc114/baseline/check_accumulation_range.py\", line 113, in run\n    assert all(r[\"passed\"] for r in rows), str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 37 mismatches\n",
+  "baseline_replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-acc114/baseline/check_accumulation_range.py\", line 123, in <module>\n    run()\n  File \"/tmp/book02-acc114/baseline/check_accumulation_range.py\", line 120, in run\n    assert all(r[\"passed\"] for r in rows), str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 37 mismatches\n",
+  "corrected_stderr": "",
+  "harness_notes": [
+    "Repeated oracle logarithms were cached; original and cached baseline/corrected stdout are byte-identical.",
+    "An initial report-assembly attempt before the scoped runner finished found no scoped.json; assembly was rerun after all four scripts exited zero."
+  ],
+  "scope_limits": "Six required scoped Python blobs; four scripts. Fresh full-tree inventory 580 Python/367 check-test scripts/581 required blobs is an inventory, not a full runtime pass. V-113 remains the latest full candidate Linux run. 35 selected categories partial; none closed. No independent reviewer, supported-platform, release or canonical approval."
+}
