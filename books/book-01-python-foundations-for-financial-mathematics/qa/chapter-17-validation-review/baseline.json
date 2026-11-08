@@ -1,0 +1,430 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "8008825126838e00e0bc58ac2883c17a344026f1032d7ef8fb647dc6383682f0",
+  "listing_sha256": "78071daa83b55a25bc6b91d206d241e82ded9b5e2738a4ded1e4b065fe40ad86",
+  "commands": [
+    {
+      "label": "exact eight reference tests",
+      "args": [
+        "validate_numerics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_rate (__main__.ValidationTests.test_bad_rate) ... ok\ntest_known_npv (__main__.ValidationTests.test_known_npv) ... ok\ntest_linearity (__main__.ValidationTests.test_linearity) ... ok\ntest_mixed_tolerance_failure (__main__.ValidationTests.test_mixed_tolerance_failure) ... ok\ntest_monotonic_positive_flow (__main__.ValidationTests.test_monotonic_positive_flow) ... ok\ntest_price_residual (__main__.ValidationTests.test_price_residual) ... ok\ntest_variance (__main__.ValidationTests.test_variance) ... ok\ntest_zero_rate (__main__.ValidationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n",
+      "methods": 8,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import validate_numerics"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "validate_numerics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy root snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "yield: 0.10000000000000002\nprice residual: -1.4210854715202004e-14\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy independently derived yield",
+      "passed": true,
+      "actual": 0.10000000000000002,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy independent repricing",
+      "passed": true,
+      "actual": -1.818181818181818e-15,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E3 one-year PV",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 NPV zero",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 zero-rate PV",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 price residual",
+      "passed": true,
+      "actual": 0.030000000000001137,
+      "reference": "3/100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 separate-price residual",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E25 equal-weight variance",
+      "passed": true,
+      "actual": 0.0325,
+      "reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E35 NPV at11 percent",
+      "passed": true,
+      "actual": -0.9009009009008935,
+      "reference": "-100/111",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F170 integer NPV cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F170 tiny NPV rate",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F170 discounted cashflow remains reportable",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F170 whole price residual before report",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F170 rank-one signed variance cancellation",
+      "passed": false,
+      "actual": "nan",
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "variance does not assert budget feasibility",
+      "passed": true,
+      "actual": 0.020800000000000006,
+      "reference": "13/625",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 specified mixed tolerance fails",
+      "passed": true,
+      "independent_threshold": "3/200=.015",
+      "independent_error": "1/50=.02"
+    },
+    {
+      "label": "F170 exact displayed mixed-tolerance boundary",
+      "passed": false,
+      "independent_error": "3/200",
+      "independent_threshold": "3/200"
+    },
+    {
+      "label": "F170 overflowed difference cannot pass overflowed threshold",
+      "passed": false,
+      "independent_error": "3.58e308",
+      "independent_threshold": "1.969e308"
+    },
+    {
+      "label": "F170 integer versus float reference retains unit gap",
+      "passed": false,
+      "independent_error": "1"
+    },
+    {
+      "label": "mixed tolerance exact equality",
+      "passed": true
+    },
+    {
+      "label": "independent analytic NPV 0",
+      "passed": true,
+      "actual": 10.0,
+      "reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 doubling cashflows 0",
+      "passed": true,
+      "actual": 20.0,
+      "reference": "20",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent analytic NPV 0.05",
+      "passed": true,
+      "actual": 4.761904761904759,
+      "reference": "100/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 doubling cashflows 0.05",
+      "passed": true,
+      "actual": 9.523809523809518,
+      "reference": "200/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent analytic NPV -0.5",
+      "passed": true,
+      "actual": 120.0,
+      "reference": "120",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 doubling cashflows -0.5",
+      "passed": true,
+      "actual": 240.0,
+      "reference": "240",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent analytic NPV 1e-308",
+      "passed": true,
+      "actual": 10.0,
+      "reference": "999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999900/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 doubling cashflows 1e-308",
+      "passed": true,
+      "actual": 20.0,
+      "reference": "1999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999800/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 appended zero preserves existing timing",
+      "passed": true,
+      "actual": 100.0,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "inserted period changes payment time",
+      "passed": true,
+      "actual": 90.9090909090909,
+      "reference": "1000/11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 positive-flow PV decreases with valid rate",
+      "passed": true
+    },
+    {
+      "label": "E30 negative-flow reverses monotonicity",
+      "passed": true
+    },
+    {
+      "label": "currency units scaled consistently",
+      "passed": true,
+      "actual": 10000.0,
+      "reference": "10000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 rate increase in basis points supplemental",
+      "passed": true,
+      "actual": "100",
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E24 budget residual supplemental",
+      "passed": true,
+      "actual": "1/1000",
+      "reference": "1/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F170 nonfinite comparator NaN",
+      "passed": true,
+      "exception": "ValueError('finite values required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 nonfinite comparator infinity",
+      "passed": true,
+      "exception": "ValueError('finite values required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 negative tolerance",
+      "passed": true,
+      "exception": "ValueError('nonnegative tolerances required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 huge integer comparator",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 bad rate",
+      "passed": true,
+      "exception": "ValueError('nonempty flows and finite rate > -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 empty NPV",
+      "passed": true,
+      "exception": "ValueError('nonempty flows and finite rate > -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 malformed NPV iterable",
+      "passed": false,
+      "exception": "TypeError(\"'NoneType' object is not iterable\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 nonfinite flow",
+      "passed": true,
+      "exception": "ValueError('finite cash flows required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 ordinary invalid covariance",
+      "passed": true,
+      "exception": "ValueError('covariance matrix must be positive semidefinite')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 PSD boundary not relaxed by rounded square roots",
+      "passed": false,
+      "actual": "0.04",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 nonzero variance underflow",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F170 boolean weight",
+      "passed": true,
+      "exception": "ValueError('finite inputs required')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "process_control_records": 10,
+  "historical_unique_methods_added": 0,
+  "model": {
+    "price": 100,
+    "future_cashflows": [
+      0,
+      110
+    ],
+    "npv_cashflows": [
+      -100,
+      110
+    ],
+    "rates": [
+      0.1,
+      0.11
+    ],
+    "units": "fictional common currency, annual-effective decimal rate, integer periods;1bp=.0001",
+    "timing": "initial flow at t0, future at t1; price is separate from future_cashflows, no market dates",
+    "variance": {
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "variances": [
+        0.04,
+        0.09
+      ],
+      "covariance": 0
+    }
+  },
+  "criteria": {
+    "known_zero_currency_atol": 1e-12,
+    "scipy_root_atol": 1e-12,
+    "scipy_repricing_currency_atol": 1e-10,
+    "other_numeric_rtol": 1e-12
+  },
+  "scipy_secondary_stdout": "yield: 0.10000000000000002\nprice residual: -1.4210854715202004e-14\n"
+}
