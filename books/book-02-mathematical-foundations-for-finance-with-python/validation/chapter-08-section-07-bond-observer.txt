@@ -1,0 +1,13 @@
+from pathlib import Path
+import sys,subprocess,tempfile,hashlib,json
+root=Path(sys.argv[1]).resolve();mode=sys.argv[2];revision=sys.argv[3] if len(sys.argv)>3 else subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
+book=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=book/'chapter-08/code'
+with tempfile.TemporaryDirectory() as temp:
+    temp=Path(temp)
+    for name in ['section_8_01.py','section_8_07.py']:
+        p=code/name;raw=subprocess.check_output(['git','-C',str(root),'show',revision+':'+str(p.relative_to(root))]) if mode.startswith('baseline') else p.read_bytes();(temp/name).write_bytes(raw)
+    sys.path[:0]=[str(temp),str(code)]
+    import check_section_07_bond_range as checker
+    rows=checker.observations();raw=(temp/'section_8_07.py').read_bytes()
+    out=dict(candidate_based_on=revision,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest(),observations=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='Complete represented-base bond price/derivative/reciprocal; no market or independent acceptance')
+    (book/'validation'/('chapter-08-section-07-bond-'+mode+'.json')).write_text(json.dumps(out,indent=2)+'\n');print(out['passed'],out['failed'])

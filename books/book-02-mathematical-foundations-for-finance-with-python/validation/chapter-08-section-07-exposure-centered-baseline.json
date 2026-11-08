@@ -1,0 +1,115 @@
+{
+  "candidate_based_on": "72aa53dd47dcb91d838e9ece800a1626486e3992",
+  "source_sha256": "b2efbdcea4af32925ee2b2352c8523471288880d337539349f81b6398a4ac92b",
+  "observations": [
+    {
+      "helper": "circle_slope",
+      "args": [
+        1e+308,
+        1e-308
+      ],
+      "expected": "ValueError (proposed)",
+      "actual": "-inf",
+      "matches": false
+    },
+    {
+      "helper": "circle_slope",
+      "args": [
+        1e-308,
+        1e+308
+      ],
+      "expected": "-0.0",
+      "actual": "-0.0",
+      "matches": true
+    },
+    {
+      "helper": "circle_slope",
+      "args": [
+        3.0,
+        4.0
+      ],
+      "expected": "-0.75",
+      "actual": "-0.75",
+      "matches": true
+    },
+    {
+      "helper": "exposure_slope",
+      "args": [
+        1e+200,
+        1e+200,
+        1e+200,
+        1e+200
+      ],
+      "expected": "-1.0",
+      "actual": "nan",
+      "matches": false
+    },
+    {
+      "helper": "exposure_slope",
+      "args": [
+        1e-200,
+        1e-200,
+        1e-200,
+        1e-200
+      ],
+      "expected": "-1.0",
+      "actual": "ZeroDivisionError",
+      "matches": false
+    },
+    {
+      "helper": "exposure_slope",
+      "args": [
+        3.0,
+        4.0,
+        1.0,
+        1.0
+      ],
+      "expected": "-0.75",
+      "actual": "-0.75",
+      "matches": true
+    },
+    {
+      "helper": "centered_difference",
+      "args": [
+        0.0,
+        1e+308
+      ],
+      "expected": "1.0 (complete sampled quotient)",
+      "actual": "nan",
+      "matches": false,
+      "callback_trace": [
+        1e+308,
+        -1e+308
+      ]
+    },
+    {
+      "helper": "centered_difference",
+      "args": [
+        0.0,
+        5e-324
+      ],
+      "expected": "1.0 (complete sampled quotient)",
+      "actual": "1.0",
+      "matches": true,
+      "callback_trace": [
+        5e-324,
+        -5e-324
+      ]
+    },
+    {
+      "helper": "centered_difference",
+      "args": [
+        1.0,
+        1e-30
+      ],
+      "expected": "ValueError before callbacks (proposed)",
+      "actual": "0.0",
+      "matches": false,
+      "callback_trace": [
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "scope": "Initial observations only;complete-output/error and callback-preflight policies proposed,not prior promises;no source fix or pass claimed"
+}

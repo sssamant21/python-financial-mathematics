@@ -1,0 +1,25 @@
+from pathlib import Path
+from fractions import Fraction
+import sys,math,json,hashlib,subprocess
+root=Path(sys.argv[1]).resolve();b=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=b/'chapter-08/code';sys.path.insert(0,str(code));import section_8_07 as source
+rows=[]
+for name,args in [('circle_slope',(1e308,1e-308)),('circle_slope',(1e-308,1e308)),('circle_slope',(3.,4.)),('exposure_slope',(1e200,1e200,1e200,1e200)),('exposure_slope',(1e-200,1e-200,1e-200,1e-200)),('exposure_slope',(3.,4.,1.,1.))]:
+ x,y,*ab=map(Fraction,args);a,bcoef=ab if ab else (Fraction(1),Fraction(1));exact=-a*x/(bcoef*y)
+ try:
+  expected=float(exact)
+  if not math.isfinite(expected):raise OverflowError
+  expected_repr=repr(expected)
+ except OverflowError:expected=None;expected_repr='ValueError (proposed)'
+ try:actual=getattr(source,name)(*args);observed=repr(actual);matches=expected is not None and actual==expected
+ except Exception as e:observed=type(e).__name__;matches=False
+ rows.append(dict(helper=name,args=args,expected=expected_repr,actual=observed,matches=matches))
+for x,h in [(0.,1e308),(0.,5e-324),(1.,1e-30)]:
+ trace=[]
+ def callback(z):trace.append(z);return z
+ control=x+h==x or x-h==x
+ expected='ValueError before callbacks (proposed)' if control else '1.0 (complete sampled quotient)'
+ try:actual=source.centered_difference(callback,x,h);observed=repr(actual);matches=not control and actual==1.
+ except Exception as e:observed=type(e).__name__;matches=False
+ rows.append(dict(helper='centered_difference',args=[x,h],expected=expected,actual=observed,matches=matches,callback_trace=trace))
+out=dict(candidate_based_on=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),source_sha256=hashlib.sha256((code/'section_8_07.py').read_bytes()).hexdigest(),observations=rows,scope='Initial observations only;complete-output/error and callback-preflight policies proposed,not prior promises;no source fix or pass claimed')
+(b/'validation/chapter-08-section-07-exposure-centered-baseline.json').write_text(json.dumps(out,indent=2)+'\n');print(len(rows),'probes',sum(not x['matches'] for x in rows),'mismatches including proposed policies')

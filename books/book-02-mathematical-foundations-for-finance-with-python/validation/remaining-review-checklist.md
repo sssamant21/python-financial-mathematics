@@ -3,7 +3,7 @@
 **Date:** 2026-11-08  
 **Full-runtime candidate source revision:** `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2` (V-127)
 **Latest scoped source:** V-125 candidate based on `5ad0dc3066bfcca85a3c50d1aac8a538c6459851`; exact48-file manifest in [evidence](chapter-08-polynomial-range-followup.md).
-**Disposition:** V-128 scoped circle/break-even pass after V-127 full candidate Linux pass; independent review and release approval pending.
+**Disposition:** V-129 scoped bond pass after V-127 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1037,3 +1037,13 @@ Next: Section8.7 bond price/derivative/reciprocal-yield sensitivity numerical an
 
 
 Next-item checkpoint: [12 Section8.7 bond probes](chapter-08-section-07-bond-baseline.md) retain actual price/derivative/reciprocal observations against proposed complete represented-base references. No bond correction or pass claimed; reconcile input/base/final-output conventions next.
+
+
+## V-129 checkpoint — Complete positive-flow bond outputs
+
+[Section8.7 bond follow-up](chapter-08-section-07-bond-followup.md):177 corrected predicates passed;62 expanded baseline mismatches and identical177-observation replay retained,alongside original12-probe screen. Exact complete price/derivative/reciprocal with represented1+y base,finite-output/signed-underflow policies and input/yield-first/one-shot contracts documented. Chapter8 scope51 compiled/41 scripts passed;51candidate blobs verified before/after. Fresh inventory593/380/594 is not a full run;V-127 remains latest full candidate Linux evidence pending refresh. Thirty-five selected COV categories partial;none closed.
+
+Next substantive item: Section8.7 exposure/circle-slope and centered-copy numerical/input/output contracts. Resource,conditioning,branch/model and independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 tracked separately.
+
+
+Next-item checkpoint: [nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md) retain five initial mismatches and four controls,including proposed output/preflight policies and actual callback traces. No correction/pass claimed;expanded contract review is next.

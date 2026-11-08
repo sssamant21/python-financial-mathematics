@@ -1,0 +1,316 @@
+{
+  "candidate_based_on": "72aa53dd47dcb91d838e9ece800a1626486e3992",
+  "selected_revision": "72aa53dd47dcb91d838e9ece800a1626486e3992",
+  "source_sha256": "6c980b568fe4767b16957f0001da2b33e8f7a1312a2d2eb71b14ea0a7684f389",
+  "linked_source_sha256": "7fc32927e7f0ae38892d289aac547261e727e0956d00bc67e1bab07fe122c677",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "read_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "write_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "csv_financial_data.py"
+      ],
+      "returncode": 0,
+      "stdout": "simple return: 0.015\nraw sha256: 54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f\n",
+      "stderr": "test_bad_encoding (__main__.CsvTests.test_bad_encoding) ... ok\ntest_bom (__main__.CsvTests.test_bom) ... ok\ntest_duplicate_header (__main__.CsvTests.test_duplicate_header) ... ok\ntest_duplicate_key (__main__.CsvTests.test_duplicate_key) ... ok\ntest_extra_field (__main__.CsvTests.test_extra_field) ... ok\ntest_missing_value (__main__.CsvTests.test_missing_value) ... ok\ntest_nonfinite_price (__main__.CsvTests.test_nonfinite_price) ... ok\ntest_parse (__main__.CsvTests.test_parse) ... ok\ntest_raw_hash (__main__.CsvTests.test_raw_hash) ... ok\ntest_return (__main__.CsvTests.test_return) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import csv_financial_data"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "records",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "BOM normalization",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "name": "CRLF normalization",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "name": "raw digest",
+      "passed": true,
+      "actual": "'54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f'",
+      "expected": "'54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f'"
+    },
+    {
+      "name": "BOM digest differs",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "name": "CRLF digest differs",
+      "passed": true,
+      "actual": "True",
+      "expected": "True"
+    },
+    {
+      "name": "writer dialect rows",
+      "passed": true,
+      "actual": "[{'instrument': 'EXAMPLE', 'close': '101.50'}]",
+      "expected": "[{'instrument': 'EXAMPLE', 'close': '101.50'}]"
+    },
+    {
+      "name": "writer columns order",
+      "passed": true,
+      "actual": "b'instrument,close'",
+      "expected": "b'instrument,close'"
+    },
+    {
+      "name": "quoted comma",
+      "passed": true,
+      "actual": "'Example, Class A'",
+      "expected": "'Example, Class A'"
+    },
+    {
+      "name": "quoted newline logical rows",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "quoted newline field",
+      "passed": true,
+      "actual": "'Example\\nClass A'",
+      "expected": "'Example\\nClass A'"
+    },
+    {
+      "name": "bad UTF8",
+      "passed": true,
+      "actual": "ValueError: invalid UTF-8",
+      "expected": "ValueError"
+    },
+    {
+      "name": "wrong type",
+      "passed": true,
+      "actual": "ValueError: raw bytes required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "no header",
+      "passed": true,
+      "actual": "ValueError: missing header",
+      "expected": "ValueError"
+    },
+    {
+      "name": "missing header",
+      "passed": true,
+      "actual": "ValueError: unexpected or missing columns",
+      "expected": "ValueError"
+    },
+    {
+      "name": "duplicate header",
+      "passed": true,
+      "actual": "ValueError: duplicate header",
+      "expected": "ValueError"
+    },
+    {
+      "name": "extra column",
+      "passed": true,
+      "actual": "ValueError: unexpected or missing columns",
+      "expected": "ValueError"
+    },
+    {
+      "name": "duplicate key",
+      "passed": true,
+      "actual": "ValueError: duplicate instrument/date",
+      "expected": "ValueError"
+    },
+    {
+      "name": "empty price",
+      "passed": true,
+      "actual": "ValueError: invalid date or close",
+      "expected": "ValueError"
+    },
+    {
+      "name": "NA price",
+      "passed": true,
+      "actual": "ValueError: invalid date or close",
+      "expected": "ValueError"
+    },
+    {
+      "name": "NaN price",
+      "passed": true,
+      "actual": "ValueError: close must be positive and finite",
+      "expected": "ValueError"
+    },
+    {
+      "name": "inf price",
+      "passed": true,
+      "actual": "ValueError: close must be positive and finite",
+      "expected": "ValueError"
+    },
+    {
+      "name": "negative price",
+      "passed": true,
+      "actual": "ValueError: close must be positive and finite",
+      "expected": "ValueError"
+    },
+    {
+      "name": "zero price",
+      "passed": true,
+      "actual": "ValueError: close must be positive and finite",
+      "expected": "ValueError"
+    },
+    {
+      "name": "short row",
+      "passed": true,
+      "actual": "ValueError: wrong number of fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "long row",
+      "passed": true,
+      "actual": "ValueError: wrong number of fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad currency",
+      "passed": true,
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "empty instrument",
+      "passed": true,
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "invalid date",
+      "passed": true,
+      "actual": "ValueError: invalid date or close",
+      "expected": "ValueError"
+    },
+    {
+      "name": "malformed header",
+      "passed": false,
+      "actual": "Error: unexpected end of data",
+      "expected": "ValueError"
+    },
+    {
+      "name": "malformed row",
+      "passed": true,
+      "actual": "ValueError: invalid CSV syntax",
+      "expected": "ValueError"
+    },
+    {
+      "name": "unsorted accepted",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "different instruments same date accepted",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "return ('100', '101.50')",
+      "passed": true,
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "return ('1', '1.000000000000000000000000000001')",
+      "passed": false,
+      "actual": "Decimal('0E-27')",
+      "expected": "Decimal('1E-30')"
+    },
+    {
+      "name": "return ('2', '0')",
+      "passed": true,
+      "actual": "Decimal('-1')",
+      "expected": "Decimal('-1')"
+    },
+    {
+      "name": "private return context",
+      "passed": false,
+      "actual": "Decimal('0.0')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "invalid return (Decimal('0'), Decimal('1'))",
+      "passed": true,
+      "actual": "ValueError: positive start and nonnegative end required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "invalid return (Decimal('1'), Decimal('-1'))",
+      "passed": true,
+      "actual": "ValueError: positive start and nonnegative end required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "invalid return (True, Decimal('1'))",
+      "passed": true,
+      "actual": "ValueError: Decimal prices required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "linked return contract",
+      "passed": false,
+      "actual": "Decimal('0E-27')",
+      "expected": "Decimal('1E-30')"
+    }
+  ],
+  "existing_unique_methods": 10,
+  "new_historical_methods": 0,
+  "artifacts": {
+    "synthetic.csv": "54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f",
+    "synthetic-bom.csv": "7c9407beb91d95842cd48ac8cb5e6d3042c5b143645a85ae7b5dc7933fe514d8",
+    "synthetic-crlf.csv": "48539e2e96256593e74b5735cc15d4fb3459297273077031c74ae6013782a85f",
+    "writer-output.csv": "006b78aaef5767e052d55d84385b72a70d84251d05923ace8d66e72b2875eef4"
+  },
+  "limits": "Synthetic CSV byte/schema and source read/write checks; no streaming,point-in-time,source accuracy,spreadsheet export safety,platform or independent acceptance"
+}

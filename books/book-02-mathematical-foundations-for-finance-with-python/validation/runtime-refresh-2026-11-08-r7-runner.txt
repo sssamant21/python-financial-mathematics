@@ -1,0 +1,32 @@
+from pathlib import Path
+import subprocess,sys,json,hashlib,tempfile,os,platform,py_compile,time
+repo=Path(sys.argv[1]);revision=sys.argv[2];outdir=Path(sys.argv[3]);prefix='books/book-02-mathematical-foundations-for-finance-with-python/';fixture=prefix+'chapter-01/data/section-1.14-cases.json'
+assert __debug__
+raw=subprocess.check_output(['git','-C',str(repo),'ls-tree','-r',revision,'--',prefix],text=True);manifest=[]
+for line in raw.splitlines():
+ meta,path=line.split('\t',1);sha=meta.split()[2]
+ if path.endswith('.py') or path==fixture:manifest.append(dict(path=path,sha=sha))
+env=dict(os.environ);env.pop('PYTHONOPTIMIZE',None);compiled=[];scripts=[];start=time.monotonic()
+def blob(data):return hashlib.sha1(b'blob '+str(len(data)).encode()+bytes([0])+data).hexdigest()
+with tempfile.TemporaryDirectory(prefix='book2-pinned-full-') as temp:
+ root=Path(temp)
+ for item in manifest:
+  p=root/item['path'];p.parent.mkdir(parents=True,exist_ok=True);data=subprocess.check_output(['git','-C',str(repo),'show',revision+':'+item['path']]);assert blob(data)==item['sha'];p.write_bytes(data)
+ print('PINNED',revision,len(manifest),'required blobs staged and verified',flush=True)
+ for item in manifest:
+  p=root/item['path']
+  if p.suffix!='.py':continue
+  try:py_compile.compile(str(p),doraise=True);compiled.append(dict(path=item['path'],passed=True))
+  except Exception as e:compiled.append(dict(path=item['path'],passed=False,error=repr(e)))
+  if p.name.startswith(('check_','test_')):
+   t=time.monotonic()
+   try:
+    r=subprocess.run([sys.executable,p.name],cwd=p.parent,env=env,timeout=60,capture_output=True,text=True);row=dict(path=item['path'],passed=r.returncode==0,returncode=r.returncode,seconds=time.monotonic()-t,stdout_sha256=hashlib.sha256(r.stdout.encode()).hexdigest(),stderr=r.stderr)
+    if r.returncode:row['stdout']=r.stdout
+   except Exception as e:row=dict(path=item['path'],passed=False,error=repr(e),seconds=time.monotonic()-t)
+   scripts.append(row)
+   if len(scripts)%50==0:print('RUN',len(scripts),'scripts;',sum(not x['passed'] for x in scripts),'failures',flush=True)
+ after=all(blob((root/x['path']).read_bytes())==x['sha'] for x in manifest)
+ result=dict(validation='V-130 full pinned Book2 candidate Linux runtime',executable_source_revision=revision,python=platform.python_version(),platform=platform.platform(),assertions_enabled=True,timeout_seconds=60,manifest=manifest,compiled=compiled,scripts=scripts,hashes_verified_before=True,hashes_verified_after=after,seconds=time.monotonic()-start,limits='One candidate Linux runtime, not mathematical/editorial review, supported-platform, release or canonical approval;35 selected COV categories remain partial, none closed.')
+ outdir.mkdir(parents=True,exist_ok=True);(outdir/'runtime-refresh-2026-11-08-r7.json').write_text(json.dumps(result,indent=2)+'\n');print('FINAL',len(compiled),sum(x['passed'] for x in compiled),len(scripts),sum(x['passed'] for x in scripts),'hashes',len(manifest),after,flush=True)
+ raise SystemExit(not(after and all(x['passed'] for x in compiled+scripts)))

@@ -988,3 +988,13 @@ Next: Section8.7 bond price/derivative/reciprocal-yield sensitivity numerical an
 
 
 Next-item checkpoint: [12 Section8.7 bond probes](chapter-08-section-07-bond-baseline.md) retain actual price/derivative/reciprocal observations against proposed complete represented-base references. No bond correction or pass claimed; reconcile input/base/final-output conventions next.
+
+
+## V-129 checkpoint — Complete positive-flow bond outputs
+
+[Section8.7 bond follow-up](chapter-08-section-07-bond-followup.md):177 corrected predicates passed;62 expanded baseline mismatches and identical177-observation replay retained,alongside original12-probe screen. Exact complete price/derivative/reciprocal with represented1+y base,finite-output/signed-underflow policies and input/yield-first/one-shot contracts documented. Chapter8 scope51 compiled/41 scripts passed;51candidate blobs verified before/after. Fresh inventory593/380/594 is not a full run;V-127 remains latest full candidate Linux evidence pending refresh. Thirty-five selected COV categories partial;none closed.
+
+Next substantive item: Section8.7 exposure/circle-slope and centered-copy numerical/input/output contracts. Resource,conditioning,branch/model and independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 tracked separately.
+
+
+Next-item checkpoint: [nine Section8.7 slope/exposure/centered probes](chapter-08-section-07-exposure-centered-baseline.md) retain five initial mismatches and four controls,including proposed output/preflight policies and actual callback traces. No correction/pass claimed;expanded contract review is next.

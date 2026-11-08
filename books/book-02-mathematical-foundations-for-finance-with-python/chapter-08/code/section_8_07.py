@@ -53,29 +53,41 @@ def break_even_sensitivity(price, variable_cost, fixed_cost):
     gap, k = _break_even_inputs(price, variable_cost, fixed_cost)
     return _break_even_report(-k/gap**2)
 
-def bond_price(cash_flows, yield_per_period):
+def _bond_inputs(cash_flows, yield_per_period):
     y = finite(yield_per_period, "yield_per_period")
     if y <= -1:
         raise ValueError("yield_per_period must exceed -1")
     flows = tuple(finite(c, "cash_flow") for c in cash_flows)
     if not flows or any(c <= 0 for c in flows):
         raise ValueError("cash flows must be a nonempty positive sequence")
-    return sum(c/(1+y)**i for i, c in enumerate(flows, 1))
+    # Retain the existing represented binary64 1+y base convention.
+    return tuple(map(Fraction, flows)), 1/Fraction(1+y)
+
+def _bond_exact(flows, discount, derivative=False):
+    total = Fraction(0)
+    for i in range(len(flows), 0, -1):
+        total = total*discount+(i*flows[i-1] if derivative else flows[i-1])
+    return -discount**2*total if derivative else discount*total
+
+def _bond_report(exact):
+    try:
+        return finite(float(exact), "bond result")
+    except OverflowError as exc:
+        raise ValueError("bond result outside finite float range") from exc
+
+def bond_price(cash_flows, yield_per_period):
+    flows, discount = _bond_inputs(cash_flows, yield_per_period)
+    return _bond_report(_bond_exact(flows, discount))
 
 def bond_price_derivative(cash_flows, yield_per_period):
-    y = finite(yield_per_period, "yield_per_period")
-    if y <= -1:
-        raise ValueError("yield_per_period must exceed -1")
-    flows = tuple(finite(c, "cash_flow") for c in cash_flows)
-    if not flows or any(c <= 0 for c in flows):
-        raise ValueError("cash flows must be a nonempty positive sequence")
-    return -sum(i*c/(1+y)**(i+1) for i, c in enumerate(flows, 1))
+    flows, discount = _bond_inputs(cash_flows, yield_per_period)
+    return _bond_report(_bond_exact(flows, discount, derivative=True))
 
 def yield_price_sensitivity(cash_flows, yield_per_period):
-    derivative = bond_price_derivative(cash_flows, yield_per_period)
-    if derivative == 0:
-        raise ValueError("price derivative is zero")
-    return 1/derivative
+    flows, discount = _bond_inputs(cash_flows, yield_per_period)
+    # Positive flows imply a strictly negative exact derivative, even when
+    # its float report would be zero or nonfinite.
+    return _bond_report(1/_bond_exact(flows, discount, derivative=True))
 
 def exposure_slope(x, y, a, b):
     x, y, a, b = (finite(v, n) for v, n in ((x,"x"),(y,"y"),(a,"a"),(b,"b")))
