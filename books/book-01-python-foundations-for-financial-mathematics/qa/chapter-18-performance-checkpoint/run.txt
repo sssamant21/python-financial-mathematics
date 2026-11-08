@@ -1,0 +1,31 @@
+from pathlib import Path
+import subprocess,sys,tempfile,re,json,hashlib,math,time,statistics,platform,importlib.util
+from fractions import Fraction
+root=Path(sys.argv[1]);pin='a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3'
+b1=root/'books/book-01-python-foundations-for-financial-mathematics';path=b1/'chapter-18/18.13-computational-performance.md';out=b1/'qa/chapter-18-performance-checkpoint';out.mkdir(exist_ok=True)
+s=path.read_text();blocks=re.findall(r'~~~python\n(.*?)\n~~~',s,re.S)
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'simulation_performance.py';p.write_text(blocks[0]);commands=[]
+ for args in [[sys.executable,p.name],[sys.executable,'-m','compileall','-q',p.name]]:
+  r=subprocess.run(args,cwd=t,capture_output=True,text=True);commands.append(dict(args=args,returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0
+ spec=importlib.util.spec_from_file_location('performance',p);m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+ stats=m.RunningStats()
+ for x in (80,100,120):stats.update(x)
+ # Exact independent sum-of-squares, rather than a second Welford implementation.
+ a=list(map(Fraction,(80,100,120)));mean=sum(a)/len(a);var=sum((x-mean)**2 for x in a)/(len(a)-1)
+ checks={'mean_exact':stats.mean==float(mean),'variance_exact':stats.sample_variance()==float(var),'se':math.isclose(stats.standard_error(),math.sqrt(float(var)/3)),'bytes':m.array_bytes(100000,253,8)==202400000,'batch_partial_replay':m.streaming_run(101,42)==m.run_batches(101,10,42),'model_mean':sum(Fraction(p)*x for p,x in [(Fraction(1,4),80),(Fraction(1,2),100),(Fraction(1,4),120)])==100,'model_variance':sum(p*(x-100)**2 for p,x in [(Fraction(1,4),80),(Fraction(1,2),100),(Fraction(1,4),120)])==200}
+ timings=[]
+ for _ in range(5):
+  start=time.perf_counter();m.streaming_run(10000,42);timings.append(time.perf_counter()-start)
+ optional=subprocess.run([sys.executable,'-c',blocks[1]],capture_output=True,text=True);commands.append(dict(args=['python','-c','exact optional NumPy fence'],returncode=optional.returncode,stdout=optional.stdout,stderr=optional.stderr))
+ limits=[]
+ for label,values in [('opposite-extremes',[-1e308,1e308]),('m2-overflow',[1e200,-1e200])]:
+  stat=m.RunningStats()
+  try:
+   for x in values:stat.update(x)
+   observation={'value':repr(stat)}
+  except Exception as e:observation={'exception':type(e).__name__,'message':str(e),'state_after':repr(stat)}
+  limits.append(dict(case=label,observation=observation,classification='Range limitation acknowledged by manuscript; update mutates state before rejecting. Do not reuse rejected accumulator; recovery contract still needs review.'))
+ assert all(checks.values())
+ result=dict(source_revision=pin,source_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),python=sys.version,platform=platform.platform(),commands=commands,supplemental_predicates=checks,existing_unique_test_methods=12,new_historical_methods=0,repeat_timings=dict(samples=timings,median=statistics.median(timings),range=[min(timings),max(timings)],setup='fresh RNG and accumulator included; import excluded',workload='10000 standard-library three-state draws, seed42'),range_observations=limits,scope='Initial execution/precondition checkpoint, not completed 40-answer/12-step formal review or peak-memory benchmark')
+ (out/'results.json').write_text(json.dumps(result,indent=2)+'\n')

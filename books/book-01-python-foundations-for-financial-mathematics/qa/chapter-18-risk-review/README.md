@@ -96,3 +96,5 @@ All forty prompts/answers read in order; conceptual rows are not additional call
 ## Resume
 
 Next: **Section18.13 — Computational Performance**. Book1 remains in progress: twelve scoped Chapter18 workflows and480 local answers, not full acceptance. F28 notebook/platform, F32 shared-input integration, F165 tails and new F185 conversion integration remain open, along with risk-estimator uncertainty/calibration, broader input/branch, editorial/copyright and external independent acceptance.
+
+[Published-source verification](publication-verification.json).

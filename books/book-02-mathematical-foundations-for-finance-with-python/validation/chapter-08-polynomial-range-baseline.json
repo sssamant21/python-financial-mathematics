@@ -1,0 +1,131 @@
+{
+  "source_revision": "a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3",
+  "source_blob": "3da48f7ddcb091907de7f28d39371f2321b2e9eb",
+  "observations": [
+    {
+      "case": "constant",
+      "coefficients": [
+        7.0
+      ],
+      "x": 2.0,
+      "exact_numerator": "7",
+      "exact_denominator": "1",
+      "expected": "7.0",
+      "policy": "finite exact-binary64 polynomial rounded once",
+      "actual": "7.0",
+      "matches": true
+    },
+    {
+      "case": "ordinary",
+      "coefficients": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "x": 2.0,
+      "exact_numerator": "17",
+      "exact_denominator": "1",
+      "expected": "17.0",
+      "policy": "finite exact-binary64 polynomial rounded once",
+      "actual": "17.0",
+      "matches": true
+    },
+    {
+      "case": "recoverable-horner-overflow",
+      "coefficients": [
+        -1e+308,
+        -1e+308,
+        1e+308
+      ],
+      "x": 2.0,
+      "exact_numerator": "100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336",
+      "exact_denominator": "1",
+      "expected": "1e+308",
+      "policy": "finite exact-binary64 polynomial rounded once",
+      "actual": "inf",
+      "matches": false
+    },
+    {
+      "case": "true-overflow",
+      "coefficients": [
+        1e+308,
+        1e+308
+      ],
+      "x": 2.0,
+      "exact_numerator": "300000000000000003293719088832136625221476929031935539010432048709472756214734474611489986935484066697183749009163517546834770851229420264984921027594438138093814993508799081557092469098765677130015153398495003535280692878638835532884273587360122374368351910515353245315875408679623619818924657146290669355008",
+      "exact_denominator": "1",
+      "expected": "ValueError (proposed)",
+      "policy": "proposed ValueError for unrepresentable complete result; not yet adopted",
+      "actual": "inf",
+      "matches": false
+    },
+    {
+      "case": "subnormal-final-rounding",
+      "coefficients": [
+        5e-324,
+        5e-324
+      ],
+      "x": 0.5,
+      "exact_numerator": "3",
+      "exact_denominator": "404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "expected": "1e-323",
+      "policy": "finite exact-binary64 polynomial rounded once",
+      "actual": "5e-324",
+      "matches": false
+    },
+    {
+      "case": "exact-zero",
+      "coefficients": [
+        1e+308,
+        -1e+308
+      ],
+      "x": 1.0,
+      "exact_numerator": "0",
+      "exact_denominator": "1",
+      "expected": "0.0",
+      "policy": "finite exact-binary64 polynomial rounded once",
+      "actual": "0.0",
+      "matches": true
+    },
+    {
+      "case": "derivative coefficients",
+      "coefficients": [
+        0.0,
+        0.0,
+        1e+308
+      ],
+      "order": 1,
+      "expected": "ValueError (proposed)",
+      "actual": "(0.0, inf)",
+      "matches": false,
+      "policy": "exact falling-factorial references; finite output/error contract still to reconcile"
+    },
+    {
+      "case": "derivative coefficients",
+      "coefficients": [
+        0.0,
+        0.0,
+        1e+308
+      ],
+      "order": 3,
+      "expected": "(0.0,)",
+      "actual": "(0.0,)",
+      "matches": true,
+      "policy": "exact falling-factorial references; finite output/error contract still to reconcile"
+    },
+    {
+      "case": "derivative coefficients",
+      "coefficients": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "order": 2,
+      "expected": "(6.0,)",
+      "actual": "(6.0,)",
+      "matches": true,
+      "policy": "exact falling-factorial references; finite output/error contract still to reconcile"
+    }
+  ],
+  "limits": "Screen only; proposed final-output policies are distinct from source defects; no source fix or COV closure."
+}

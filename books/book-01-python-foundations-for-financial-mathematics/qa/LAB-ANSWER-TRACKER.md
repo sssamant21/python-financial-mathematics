@@ -27,3 +27,8 @@
 | 21 | NOT STARTED for this formal step/answer review | Existing scoped runtime/example evidence remains in the [main tracker](VALIDATION-TRACKER.md); full prose/answer rubric still to be recorded. |
 
 The initial 449 lab/exercise heading candidates are a discovery queue, not a count of complete labs. Preserve per-item source hashes, prerequisites, contracts, expected/actual outputs, derivation method, findings and remaining scope. Independent reviewer/model/copyright and final acceptance decisions remain separate.
+
+
+## Section 18.13 execution checkpoint (formal review unfinished)
+
+[Performance checkpoint](chapter-18-performance-checkpoint/README.md): three exact-source command records passed (reference run/compile and optional NumPy fence), twelve existing unique methods and seven supplemental predicates passed; five illustrative repeat timings and two acknowledged range/state observations retained. No formal workflow/answer/step completion counts added. Next: finish Section18.13 forty-answer/twelve-step matrix and classify numerical/state contracts; peak-memory and platform/independent acceptance remain open. F28/F32/F165/F185 retained.

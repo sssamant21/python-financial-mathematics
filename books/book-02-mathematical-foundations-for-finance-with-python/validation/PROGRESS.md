@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-123 scoped signed aggregate pass (seven files/five scripts), after V-121 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-124 full candidate Linux pass (589 sources/376 scripts/590 required blobs), including V-123 signed aggregates. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 587/587 at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`. [V-121](runtime-refresh-2026-11-08-r4.md). V-122: six scoped files compiled; [evidence](chapter-08-section-06-shock-followup.md). |
-| Automated script execution | Full candidate Linux pass | 374/374 at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`; 588 required blobs verified before/after. [V-121](runtime-refresh-2026-11-08-r4.md). V-122: four selected scripts passed; include additions in the next full refresh. |
+| Python compilation | Full candidate Linux pass | 589/589 at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`. [V-124](runtime-refresh-2026-11-08-r5.md). |
+| Automated script execution | Full candidate Linux pass | 376/376 at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`; 590 required blobs verified before/after. [V-124](runtime-refresh-2026-11-08-r5.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1115,6 +1115,18 @@ Next: [signed cash-flow derivative baseline](chapter-08-cash-flow-derivatives-ba
 
 [Cash-flow aggregate follow-up](chapter-08-cash-flow-derivatives-followup.md):63 selected checks pass;21 expanded baseline mismatches and byte-identical replay retained, alongside the original five-probe screen. Complete signed references agree at Decimal1600/2200 digits. Equal-exponent grouping/common-scale summation repairs cancellation, order overflow and subnormal derivatives while preserving signed cash flows, nonnegative horizons, rate-first/empty validation and one-shot iteration. Zero/final-range conventions are explicit; arbitrary cancellation/resource and independent-review limits remain open.
 
-Seven scoped files compiled and five scripts passed, exact candidate blobs verified before/after. Candidate based on ade7da5b8c157c23f8b3be32c06af57add8602f4; executable publication pin follows in the evidence. Fresh inventory589 Python files/376 scripts/590 required source-fixture blobs is an inventory, not a full pass. V-121 remains the last full candidate Linux run pending a fresh pinned refresh after the accumulated V-122/V-123 changes. Thirty-five selected COV categories remain partially addressed; none closed.
+Seven scoped files compiled and five scripts passed, exact candidate blobs verified before/after. Executable source pinned at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`, with [publication verification](chapter-08-cash-flow-derivatives-publication-verification.json). Fresh inventory589 Python files/376 scripts/590 required source-fixture blobs is an inventory, not a full pass. V-121 remains the last full candidate Linux run pending a fresh pinned refresh after the accumulated V-122/V-123 changes. Thirty-five selected COV categories remain partially addressed; none closed.
 
 Next substantive item: Section8.6 polynomial/derivative-coefficient complete-expression range/output contracts with independent exact references, then sampled-second differences. Source/test counts do not grant reviewer/platform/release/canonical approval. Book1 progress remains independently tracked.
+
+
+## V-124 checkpoint — Pinned full candidate Linux refresh
+
+[V-124 report](runtime-refresh-2026-11-08-r5.md): at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`, 589/589 Python files compiled, 376/376 check/test scripts passed, and 590/590 required source/fixture hashes matched before/after execution. Exact runnable observer, per-file results and source manifest retained. Includes accumulated V-122/V-123 executable changes. Thirty-five selected COV categories remain partially addressed; none closed. This is one candidate Linux runtime, not independent review, supported-platform coverage, release or canonical approval.
+
+Next substantive item remains Section 8.6 polynomial/derivative-coefficient complete-expression range/output contracts with independent exact references, then sampled-second differences. Book 1 remains independently tracked.
+
+
+## Polynomial range checkpoint — initial observations retained
+
+[Nine pinned probes](chapter-08-polynomial-range-baseline.md) advance the next Section8.6 polynomial/derivative-coefficient item: four mismatches against independent complete rational references, including two proposed finite-output/error policies. Initial failures retained; source unchanged and no corrected rerun claimed. Next: reconcile rounding/output/validation-order contracts and implement a scoped correction, then sampled-second differences. V-124 remains the full candidate runtime at its pinned revision; no COV category closed.

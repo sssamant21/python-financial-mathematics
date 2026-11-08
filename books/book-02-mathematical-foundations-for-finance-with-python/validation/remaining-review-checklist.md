@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-08  
-**Full-runtime candidate source revision:** `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`  
-**Latest scoped source revision:** `37b29e56354a02fbccb747ff0c77bbd45cd67edd` (V-122, six files/four scripts; after V-121)  
-**Disposition:** V-122 scoped local shock pass after V-121 full candidate Linux pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3` (V-124)
+**Latest scoped source revision:** `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3` (V-123, seven files/five scripts; included in V-124)
+**Disposition:** V-124 full candidate Linux pass including V-123 signed aggregates; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -988,6 +988,18 @@ Next: [signed cash-flow derivative baseline](chapter-08-cash-flow-derivatives-ba
 
 [Cash-flow aggregate follow-up](chapter-08-cash-flow-derivatives-followup.md):63 selected checks pass;21 expanded baseline mismatches and byte-identical replay retained, alongside the original five-probe screen. Complete signed references agree at Decimal1600/2200 digits. Equal-exponent grouping/common-scale summation repairs cancellation, order overflow and subnormal derivatives while preserving signed cash flows, nonnegative horizons, rate-first/empty validation and one-shot iteration. Zero/final-range conventions are explicit; arbitrary cancellation/resource and independent-review limits remain open.
 
-Seven scoped files compiled and five scripts passed, exact candidate blobs verified before/after. Candidate based on ade7da5b8c157c23f8b3be32c06af57add8602f4; executable publication pin follows in the evidence. Fresh inventory589 Python files/376 scripts/590 required source-fixture blobs is an inventory, not a full pass. V-121 remains the last full candidate Linux run pending a fresh pinned refresh after the accumulated V-122/V-123 changes. Thirty-five selected COV categories remain partially addressed; none closed.
+Seven scoped files compiled and five scripts passed, exact candidate blobs verified before/after. Executable source pinned at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`, with [publication verification](chapter-08-cash-flow-derivatives-publication-verification.json). Fresh inventory589 Python files/376 scripts/590 required source-fixture blobs is an inventory, not a full pass. V-121 remains the last full candidate Linux run pending a fresh pinned refresh after the accumulated V-122/V-123 changes. Thirty-five selected COV categories remain partially addressed; none closed.
 
 Next substantive item: Section8.6 polynomial/derivative-coefficient complete-expression range/output contracts with independent exact references, then sampled-second differences. Source/test counts do not grant reviewer/platform/release/canonical approval. Book1 progress remains independently tracked.
+
+
+## V-124 checkpoint — Pinned full candidate Linux refresh
+
+[V-124 report](runtime-refresh-2026-11-08-r5.md): at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`, 589/589 Python files compiled, 376/376 check/test scripts passed, and 590/590 required source/fixture hashes matched before/after execution. Exact runnable observer, per-file results and source manifest retained. Includes accumulated V-122/V-123 executable changes. Thirty-five selected COV categories remain partially addressed; none closed. This is one candidate Linux runtime, not independent review, supported-platform coverage, release or canonical approval.
+
+Next substantive item remains Section 8.6 polynomial/derivative-coefficient complete-expression range/output contracts with independent exact references, then sampled-second differences. Book 1 remains independently tracked.
+
+
+## Polynomial range checkpoint — initial observations retained
+
+[Nine pinned probes](chapter-08-polynomial-range-baseline.md) advance the next Section8.6 polynomial/derivative-coefficient item: four mismatches against independent complete rational references, including two proposed finite-output/error policies. Initial failures retained; source unchanged and no corrected rerun claimed. Next: reconcile rounding/output/validation-order contracts and implement a scoped correction, then sampled-second differences. V-124 remains the full candidate runtime at its pinned revision; no COV category closed.
