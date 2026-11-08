@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-07  
-**Full-runtime candidate source revision:** `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`  
-**Latest scoped source revision:** `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5` (included in V-108)  
-**Disposition:** V-108 full candidate Linux pass includes Section 8.4 discrete-compounding scaling; independent review and release approval pending.
+**Full-runtime candidate source revision:** `a93acb89609087281b4e1872c6420313ddf7adca`  
+**Latest scoped source revision:** `a93acb89609087281b4e1872c6420313ddf7adca` (included in V-109)  
+**Disposition:** V-109 full candidate Linux pass includes Section 8.4 large period-count conversion; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-109](runtime-refresh-2026-11-07-r15.md): 575 compiled, 362 passed, 576 required hashes verified before/after. G2–G8 unchanged.
 
 [V-108](runtime-refresh-2026-11-07-r14.md): 574 compiled, 361 passed, 575 required hashes verified before/after. G2–G8 unchanged.
 
@@ -173,7 +175,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-108](runtime-refresh-2026-11-07-r14.md) at `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`; 574 sources/361 scripts/575 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-109](runtime-refresh-2026-11-07-r15.md) at `a93acb89609087281b4e1872c6420313ddf7adca`; 575 sources/362 scripts/576 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -842,3 +844,11 @@ Next: [Section 8.4 discrete-compounding baseline](chapter-08-discrete-compoundin
 [V-108](runtime-refresh-2026-11-07-r14.md) at `df9ac9bf2952edc78ec5264a25d7caf7f90a21e5`: 574 files compiled, 361 scripts passed, 575 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [large integer period-count baseline](chapter-08-large-period-count-baseline.md), with [three retained value/sensitivity probe pairs](chapter-08-large-period-count-baseline.json). Count 10**400 is accepted by the positive-integer guard but base division raises OverflowError despite finite rounded-base expectations. Extend conversion while preserving already working base conventions; do not repeat completed power-scaling examples.
+
+## V-109 checkpoint — Section 8.4 large period counts
+
+[Large-count follow-up](chapter-08-large-period-count-followup.md): all 78 checks pass; forty-two baseline observations and a byte-identical replay retained. Fourteen base/value/sensitivity triples fail at the same original conversion point; this is not forty-two distinct defects. Independent Decimal count conversion and direct powers at 1600/2200 digits check conversion thresholds, huge counts with nonzero quotients and working 2^53+1 denominator rounding. The fallback is used only when float/int division overflows. Existing Section 8.4 and 74-case compounding suites pass.
+
+[V-109](runtime-refresh-2026-11-07-r15.md) at `a93acb89609087281b4e1872c6420313ddf7adca`: 575 files compiled, 362 scripts passed, 576 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [nested-power range baseline](chapter-08-nested-power-range-baseline.md), with [five exact-polynomial/actual probe pairs](chapter-08-nested-power-range-baseline.json). Actual finite outputs differ from one-rounding references and nonfinite outputs/errors are inconsistent; establish the accuracy/overflow contract before editing. Price/log-growth, other earlier copies and independent review remain open. Do not repeat completed count-conversion or compounding examples.
