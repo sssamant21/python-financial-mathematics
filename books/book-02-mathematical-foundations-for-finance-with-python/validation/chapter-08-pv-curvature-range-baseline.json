@@ -1,0 +1,54 @@
+{
+  "source_revision": "5b919e8b93caf2cd4d6f003b61f60d07bec4bd69",
+  "source_file": "chapter-08/code/section_8_06.py",
+  "source_blob": "cb05d8a24ea6c4d47d9d2a7503f2420af6c2451b",
+  "observations": [
+    {
+      "payment": 1,
+      "rate": 1,
+      "years": 750,
+      "expected": 1.0697e-320,
+      "actual": 0
+    },
+    {
+      "payment": 5e-324,
+      "rate": -1,
+      "years": 1000,
+      "expected": 9.733444573000163e+116,
+      "actual": "OverflowError"
+    },
+    {
+      "payment": 1.7976931348623157e+308,
+      "rate": 1.7976931348623157e+308,
+      "years": 1.7976931348623157e+308,
+      "expected": 0,
+      "actual": "nan"
+    },
+    {
+      "payment": 0,
+      "rate": -1.7976931348623157e+308,
+      "years": 1.7976931348623157e+308,
+      "expected": 0,
+      "actual": "nan"
+    },
+    {
+      "payment": 1.7976931348623157e+308,
+      "rate": 0,
+      "years": 1e-200,
+      "expected": 1.7976931348623158e-92,
+      "actual": 0
+    },
+    {
+      "payment": 5e-324,
+      "rate": 0,
+      "years": 1.7976931348623157e+308,
+      "expected": 1.5966722476277755e+293,
+      "actual": "inf"
+    }
+  ],
+  "reference_method": "Complete C*t^2*exp(-r*t) at Decimal 200/400 digits with agreeing final floats. Zero-factor identities precede exponential evaluation; exponent below -10000 is conservative for a coefficient containing at most three finite binary64 factors.",
+  "pinned_probe_matched_local": true,
+  "required_source_blob_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom decimal import Decimal,localcontext\nimport section_8_06 as subject\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(1.,1.,750.),(T,-1.,1000.),(M,M,M),(0.,-M,M),(M,0.,1e-200),(T,0.,M)]\nrows=[]\nfor args in cases:\n refs=[]\n for precision in (200,400):\n  with localcontext() as ctx:\n   ctx.prec=precision\n   c,r,t=map(Decimal.from_float,args)\n   if not c or not t or -r*t < -10000:result=Decimal(0)\n   else:result=c*t*t*(-r*t).exp()\n   refs.append(float(result))\n assert refs[0]==refs[1]\n try:\n  actual=subject.pv_rate_second(*args)\n  if not math.isfinite(actual):actual=repr(actual)\n except Exception as exc:actual=type(exc).__name__\n rows.append(dict(payment=args[0],rate=args[1],years=args[2],expected=refs[0],actual=actual))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Six selected failing observations for the distinct Section 8.6 pv_rate_second helper, not six reviewed defects. Local first derivative/shock/cash-flow helpers need separate assessment."
+}
