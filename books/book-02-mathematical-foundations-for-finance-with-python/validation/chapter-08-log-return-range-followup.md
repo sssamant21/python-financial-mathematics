@@ -16,7 +16,7 @@ The existing Section 8.5 suite passed before publication. The new checker then r
 
 ## Reproduce
 
-At the executable revision, run `python check_log_return_range.py` from `chapter-08/code`. To reproduce both initial failures, download the raw JSON beside this script and run from repository root with assertions enabled:
+At the executable revision, run `python check_log_return_range.py` from `chapter-08/code`. To reproduce the baseline and its replay, download the raw JSON beside this script and run from repository root with assertions enabled:
 
 ```python
 from pathlib import Path
