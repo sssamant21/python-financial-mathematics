@@ -641,5 +641,167 @@
     "existing_section_checker": 0
   },
   "oracle": "Independent log-amplitude references at 1600/2200 digits, exact zero/product special cases and independent extreme-exponent bounds; production uses rational coefficient/exponent products with a shared exponential kernel.",
-  "limits": "Explicit complete represented-input convention and ValueError final-output policy. Selected precision agreement is not a universal transcendental rounding proof or independent/platform/release/canonical approval."
+  "limits": "Explicit complete represented-input convention and ValueError final-output policy. Selected precision agreement is not a universal transcendental rounding proof or independent/platform/release/canonical approval.",
+  "raw_stdout_evidence": {
+    "baseline": {
+      "stdout_sha256": "84b6176e71645f6a10bf5aaf6bdca45738e9c73cae4c2273258a743997ceb98d",
+      "zero_signs": [
+        {
+          "case": "complete expression 2",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": null,
+          "passed": false
+        },
+        {
+          "case": "complete expression 4",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": null,
+          "passed": false
+        },
+        {
+          "case": "complete expression 5",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 6",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 13",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 14",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 16",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": null,
+          "passed": false
+        },
+        {
+          "case": "complete expression 17",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": null,
+          "passed": false
+        }
+      ]
+    },
+    "baseline-replay": {
+      "stdout_sha256": "84b6176e71645f6a10bf5aaf6bdca45738e9c73cae4c2273258a743997ceb98d",
+      "zero_signs": [
+        {
+          "case": "complete expression 2",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": null,
+          "passed": false
+        },
+        {
+          "case": "complete expression 4",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": null,
+          "passed": false
+        },
+        {
+          "case": "complete expression 5",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 6",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 13",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 14",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 16",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": null,
+          "passed": false
+        },
+        {
+          "case": "complete expression 17",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": null,
+          "passed": false
+        }
+      ]
+    },
+    "corrected": {
+      "stdout_sha256": "2ea470c7e057f685f26c6ae860811fc7222698583ee4b97e3a29577ecbac1929",
+      "zero_signs": [
+        {
+          "case": "complete expression 2",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 4",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 5",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 6",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 13",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 14",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 16",
+          "expected_zero_sign": -1,
+          "actual_zero_sign": -1,
+          "passed": true
+        },
+        {
+          "case": "complete expression 17",
+          "expected_zero_sign": 1,
+          "actual_zero_sign": 1,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "zero_sign_note": "Numeric JSON serialization may normalize negative zero. Explicit sign fields from the original Python observations preserve that distinction; raw stdout hashes support exact replay."
 }
