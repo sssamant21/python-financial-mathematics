@@ -1,0 +1,15 @@
+# Section 8.4 large integer period-count follow-up
+
+Baseline `affb1442a6416ddce58240601a5045a266d1a913`; original Section 8.4 blob `697e04b9c408ab22d97dfa602cbba7c05ac5dbd7`. Corrected executable tree `a93acb89609087281b4e1872c6420313ddf7adca`. [Exact dependencies, baseline observations, replay and corrected results](chapter-08-large-period-count-followup.json).
+
+**78 checks pass**, with forty-two baseline observations retained and a byte-identical replay. Eighteen cases each check actual base, value and sensitivity; fourteen case triples fail at the same original count-conversion point. These are not forty-two distinct defects. The corpus has 36 value/sensitivity references, eighteen actual base observations and twenty-four guard observations.
+
+The implementation first retains rate/count float-int division. Only OverflowError from this division triggers a rational quotient of the represented finite rate by the exact integer denominator. That quotient is necessarily finite because the overflow is solely the positive count's conversion. Input/base guards and previously established complete powers/exponents are unchanged.
+
+Independent Decimal integer conversion reproduces float-denominator rounding where finite; the exact Decimal count is used only beyond conversion overflow. This explicitly preserves the n=2^53+1, factor≈960 boundary where globally replacing every division by exact integer division would change base 1.0000000000000002 to 1.0. Complete value/sensitivity references use direct Decimal powers at 1600 and 2200 digits, with exact base-one identities and independent bounds for extreme powers. Precision runs agree on selected final roundings.
+
+Tests straddle H=2^1024−2^970, the integer-to-binary64 overflow midpoint above maximum finite float; H−1 converts finitely and H rounds to the overflowing endpoint. They include huge counts with nonzero representable quotients, positive and negative rates, signed zeros, zero principal/horizon validation, finite and genuinely overflowing final outputs, and counts 10^310/10^400. A base that rounds to one follows this model and is not the continuous-compounding limit.
+
+Run `python check_large_period_count.py` in `chapter-08/code`. For baseline replay retrieve the original Section 8.4 module at the baseline revision into a separate directory and pass that directory as the corrected checker's sole argument. Requested source existence is enforced; Section 8.1 remains the pinned unchanged dependency. Original source hash verified. Baseline/replay exit 1 with identical JSON; corrected, existing Section 8.4 and 74-case compounding regression runs exit 0.
+
+[V-109 full runtime](runtime-refresh-2026-11-07-r15.md). Next: [nested-power output baseline](chapter-08-nested-power-range-baseline.md). Integer arithmetic cost grows with bit length; selected checks do not establish a universal resource bound or transcendental rounding proof. COV-51 remains partial; thirty-five selected categories remain partial, none closed. Independent reviewer, supported-platform, release and canonical approval remain pending.
