@@ -1,0 +1,443 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "76bc1899421fbcb6243c7838854f6b05d4c03c8731e1e8ea593b7ab57fcd9603",
+  "implementation_sha256": "1f8b61e3fbce72b359342983ee33252d4940cdd0f63917228f3e58d60c1529d6",
+  "tests_sha256": "e51902f47764bf66d09a1312954db53ea0137d848bbce3cc99cbf5dd4128bb8d",
+  "commands": [
+    {
+      "label": "exact project demonstration",
+      "args": [
+        "financial_solver.py"
+      ],
+      "returncode": 0,
+      "stdout": "cash flows: [-100.0, 110.0]\nNPV at 10%: 0.0\nroot report: SolveReport(rate=0.1, residual=0.0, converged=True, iterations=6, function_calls=7, method='brentq', bracket=(0.0, 0.2), rate_xtol=1e-12, residual_tolerance=1e-08, residual_accepted=True, residual_scale=110.0, callback_units='NPV / max_abs_cashflow')\nNPV at 11%: -0.9009009009009009\nNPV change for +1 bp: -0.00909008271975275\n",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact twelve separate-file methods",
+      "args": [
+        "-m",
+        "unittest",
+        "-v",
+        "test_financial_solver"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_endpoint_root (test_financial_solver.SolverTests.test_endpoint_root) ... ok\ntest_higher_rate (test_financial_solver.SolverTests.test_higher_rate) ... ok\ntest_invalid_bracket (test_financial_solver.SolverTests.test_invalid_bracket) ... ok\ntest_invalid_rate (test_financial_solver.SolverTests.test_invalid_rate) ... ok\ntest_known_npv (test_financial_solver.SolverTests.test_known_npv) ... ok\ntest_known_root_and_residual (test_financial_solver.SolverTests.test_known_root_and_residual) ... ok\ntest_multiple_roots_by_bracket (test_financial_solver.SolverTests.test_multiple_roots_by_bracket) ... ok\ntest_nonfinite_input (test_financial_solver.SolverTests.test_nonfinite_input) ... ok\ntest_one_bp_direction (test_financial_solver.SolverTests.test_one_bp_direction) ... ok\ntest_residual_acceptance_is_separate (test_financial_solver.SolverTests.test_residual_acceptance_is_separate) ... ok\ntest_scaling (test_financial_solver.SolverTests.test_scaling) ... ok\ntest_zero_rate (test_financial_solver.SolverTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "compile both exact files",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "financial_solver.py",
+        "test_financial_solver.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "silent implementation and test import",
+      "args": [
+        "-c",
+        "import financial_solver,test_financial_solver"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "baseline zero-rate NPV",
+      "passed": true,
+      "actual": 10.0,
+      "reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "baseline ten-percent NPV",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 eleven-percent NPV",
+      "passed": true,
+      "actual": -0.9009009009009009,
+      "reference": "-100/111",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 analytic root",
+      "passed": true,
+      "actual": 0.1,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E31 finite one-bp change",
+      "passed": true,
+      "actual": -0.00909008271975275,
+      "reference": "-100/11001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 doubled-flow NPV",
+      "passed": true,
+      "actual": 9.523809523809524,
+      "reference": "200/21",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E20 appended zero preserves timing",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E32 inserted zero delays terminal payment",
+      "passed": true,
+      "actual": -9.090909090909092,
+      "reference": "-100/11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E25 valid negative rate",
+      "passed": true,
+      "actual": 15.789473684210526,
+      "reference": "300/19",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F171 integer NPV cancellation",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F171 tiny NPV rate retained",
+      "passed": true,
+      "actual": -1e-308,
+      "reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F171 discounted value before power loss",
+      "passed": true,
+      "actual": 1e-308,
+      "reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F171 one-bp original iterable consumed once",
+      "passed": true,
+      "actual": -0.00909008271975275,
+      "reference": "-100/11001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F171 one-bp difference before large NPV reporting",
+      "passed": true,
+      "actual": -0.00909008271975275,
+      "reference": "-100/11001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F171 one-bp rate addition retains tiny bump",
+      "passed": true,
+      "actual": -1e-24,
+      "reference": "-100000000000000000000/100000000000000000002000100000000000000010001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "independent repricing at returned root",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "endpoint diagnostics",
+      "passed": true,
+      "report": {
+        "rate": 0.0,
+        "residual": 0.0,
+        "converged": true,
+        "iterations": 0,
+        "function_calls": 2,
+        "method": "endpoint",
+        "bracket": [
+          0.0,
+          0.2
+        ],
+        "rate_xtol": 1e-12,
+        "residual_tolerance": 1e-08,
+        "residual_accepted": true,
+        "residual_scale": 1.0,
+        "callback_units": "currency"
+      }
+    },
+    {
+      "label": "brent diagnostics bounded and separate",
+      "passed": true,
+      "report": {
+        "rate": 0.1,
+        "residual": 0.0,
+        "converged": true,
+        "iterations": 6,
+        "function_calls": 7,
+        "method": "brentq",
+        "bracket": [
+          0.0,
+          0.2
+        ],
+        "rate_xtol": 1e-12,
+        "residual_tolerance": 1e-08,
+        "residual_accepted": true,
+        "residual_scale": 110.0,
+        "callback_units": "NPV / max_abs_cashflow"
+      }
+    },
+    {
+      "label": "E16 rate convergence does not force residual acceptance",
+      "passed": true,
+      "report": {
+        "rate": 0.09992486851990985,
+        "residual": 6.830601092895467e+195,
+        "converged": true,
+        "iterations": 3,
+        "function_calls": 4,
+        "method": "brentq",
+        "bracket": [
+          0.0,
+          0.2
+        ],
+        "rate_xtol": 0.01,
+        "residual_tolerance": 1e-08,
+        "residual_accepted": false,
+        "residual_scale": 1.1e+200,
+        "callback_units": "NPV / max_abs_cashflow"
+      }
+    },
+    {
+      "label": "E13 bracketed root 0.05",
+      "passed": true,
+      "actual": 0.09999999999999999,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E13 original-equation repricing 0.05",
+      "passed": true,
+      "actual": -8.264462809917356e-17,
+      "reference": "0",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E13 bracketed root 0.15",
+      "passed": true,
+      "actual": 0.20000000000000767,
+      "reference": "1/5",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E13 original-equation repricing 0.15",
+      "passed": true,
+      "actual": -5.326388888889229e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "small-scale root with explicit currency budget",
+      "passed": true,
+      "actual": 0.1,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "F171 all-zero flows non-identifiable",
+      "passed": true,
+      "exception": "ValueError('all-zero cashflows: rate is non-identifiable')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 invalid rate",
+      "passed": true,
+      "exception": "ValueError('periodic effective rate > -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 invalid bracket",
+      "passed": true,
+      "exception": "ValueError('bracket endpoints must have opposite NPV signs')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 bracket encloses two crossings same signs",
+      "passed": true,
+      "exception": "ValueError('bracket endpoints must have opposite NPV signs')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 empty flows",
+      "passed": true,
+      "exception": "ValueError('at least two cashflows required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 nonfinite flow",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 malformed iterable",
+      "passed": true,
+      "exception": "ValueError('iterable cashflows required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 huge integer input",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 unreportable nonzero NPV",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 integer bound would lose identity",
+      "passed": true,
+      "exception": "ValueError('integer coordinate not representable under float callback protocol')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F171 nonconverged maxiter",
+      "passed": true,
+      "exception": "RuntimeError('solver did not converge: convergence error')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F171 boolean rate",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "architecture_acceptance_records": 6,
+  "worked_example_records": 4,
+  "extension_design_records": 5,
+  "historical_unique_methods_added": 0,
+  "reports": {
+    "baseline": {
+      "rate": 0.1,
+      "residual": 0.0,
+      "converged": true,
+      "iterations": 6,
+      "function_calls": 7,
+      "method": "brentq",
+      "bracket": [
+        0.0,
+        0.2
+      ],
+      "rate_xtol": 1e-12,
+      "residual_tolerance": 1e-08,
+      "residual_accepted": true,
+      "residual_scale": 110.0,
+      "callback_units": "NPV / max_abs_cashflow"
+    },
+    "endpoint": {
+      "rate": 0.0,
+      "residual": 0.0,
+      "converged": true,
+      "iterations": 0,
+      "function_calls": 2,
+      "method": "endpoint",
+      "bracket": [
+        0.0,
+        0.2
+      ],
+      "rate_xtol": 1e-12,
+      "residual_tolerance": 1e-08,
+      "residual_accepted": true,
+      "residual_scale": 1.0,
+      "callback_units": "currency"
+    },
+    "converged_residual_rejected": {
+      "rate": 0.09992486851990985,
+      "residual": 6.830601092895467e+195,
+      "converged": true,
+      "iterations": 3,
+      "function_calls": 4,
+      "method": "brentq",
+      "bracket": [
+        0.0,
+        0.2
+      ],
+      "rate_xtol": 0.01,
+      "residual_tolerance": 1e-08,
+      "residual_accepted": false,
+      "residual_scale": 1.1e+200,
+      "callback_units": "NPV / max_abs_cashflow"
+    }
+  },
+  "model": {
+    "cashflows": [
+      -100,
+      110
+    ],
+    "bracket": [
+      0,
+      0.2
+    ],
+    "rate_xtol": 1e-12,
+    "currency_residual_tolerance": 1e-08,
+    "one_bp": "1/10000",
+    "timing": "t0 purchase and t1 payment, integer periods",
+    "units": "fictional common currency, periodic effective decimal rate",
+    "scope": "no dates/day-count/fees unless supplied; no investment recommendation"
+  }
+}
