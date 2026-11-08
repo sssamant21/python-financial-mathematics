@@ -124,7 +124,15 @@ def price(t):
     t = finite(t, "time")
     if t <= -50:
         raise ValueError("price model requires t > -50")
-    return 100*(1+0.02*t)**3
+    # Retain the two rounded affine-base operations used by log_price_growth.
+    base = 1+0.02*t
+    try:
+        result = float(100*Fraction(base)**3)
+    except OverflowError as exc:
+        raise OverflowError("price overflow") from exc
+    if not math.isfinite(result):
+        raise OverflowError("price overflow")
+    return result
 
 def log_price_growth(t):
     t = finite(t, "time")
