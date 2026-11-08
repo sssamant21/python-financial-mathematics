@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Six self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Seven self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -11,6 +11,8 @@ Six self-contained labs complement the financial-mathematics books without dupli
 | [05](05-regime-stress-stability/README.md) | Walk-forward covariance stability, stress windows, transaction costs, forecast-risk shocks | Seeded synthetic / optional licensed input | `stress_lab.py` |
 
 | [06](06-tail-risk-bootstrap/README.md) | Rolling historical and normal VaR, CVaR, bootstrap uncertainty and breach diagnostics | Seeded synthetic / licensed input | `tail_risk.py` |
+
+| [07](07-multi-horizon-risk/README.md) | Horizon-aligned historical and parametric VaR/CVaR with non-overlapping forward outcomes | Seeded synthetic / optional licensed prices | `multi_horizon.py` |
 
 ## Quick start (Windows PowerShell)
 

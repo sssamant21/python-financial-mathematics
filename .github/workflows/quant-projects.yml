@@ -34,5 +34,7 @@ jobs:
           python -m pytest -q quant-projects/05-regime-stress-stability/test_risk_calibration.py
       - name: Validate Project 06 tail-risk fixture
         run: python -m pytest -q quant-projects/06-tail-risk-bootstrap/test_tail_risk.py
+      - name: Validate Project 07 horizon alignment
+        run: python -m pytest -q quant-projects/07-multi-horizon-risk/test_multi_horizon.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
