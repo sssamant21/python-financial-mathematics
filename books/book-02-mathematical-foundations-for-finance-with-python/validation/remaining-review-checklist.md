@@ -2,8 +2,8 @@
 
 **Date:** 2026-11-08  
 **Full-runtime candidate source revision:** `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3` (V-124)
-**Latest scoped source revision:** `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3` (V-123, seven files/five scripts; included in V-124)
-**Disposition:** V-124 full candidate Linux pass including V-123 signed aggregates; independent review and release approval pending.
+**Latest scoped source:** V-125 candidate based on `5ad0dc3066bfcca85a3c50d1aac8a538c6459851`; exact48-file manifest in [evidence](chapter-08-polynomial-range-followup.md).
+**Disposition:** V-125 scoped polynomial pass after V-124 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -201,7 +201,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-121](runtime-refresh-2026-11-08-r4.md) at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`; 587 sources/374 scripts/588 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass; later scoped changes | [V-124](runtime-refresh-2026-11-08-r5.md) at `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`; 589 sources/376 scripts/590 hashes verified. V-125 is scoped48/38, not a new full pass. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -1002,4 +1002,11 @@ Next substantive item remains Section 8.6 polynomial/derivative-coefficient comp
 
 ## Polynomial range checkpoint — initial observations retained
 
-[Nine pinned probes](chapter-08-polynomial-range-baseline.md) advance the next Section8.6 polynomial/derivative-coefficient item: four mismatches against independent complete rational references, including two proposed finite-output/error policies. Initial failures retained; source unchanged and no corrected rerun claimed. Next: reconcile rounding/output/validation-order contracts and implement a scoped correction, then sampled-second differences. V-124 remains the full candidate runtime at its pinned revision; no COV category closed.
+[Nine pinned probes](chapter-08-section-06-polynomial-baseline.md) advance the next Section8.6 polynomial/derivative-coefficient item: four mismatches against independent complete rational references, including two proposed finite-output/error policies. Initial failures retained; source unchanged and no corrected rerun claimed. Next: reconcile rounding/output/validation-order contracts and implement a scoped correction, then sampled-second differences. V-124 remains the full candidate runtime at its pinned revision; no COV category closed.
+
+
+## V-125 checkpoint — Complete polynomial/derivative output
+
+[Polynomial follow-up](chapter-08-section-06-polynomial-followup.md):128 corrected predicates passed;127 baseline observations retain five mismatches and an identical replay. Excessive-order baseline omitted explicitly; corrected guard executed. Source/manuscript now agree on exact represented-input complete-expression rounding, finite-output errors, signed underflow, order/consumption/validation priority. Forty-eight Chapter8 files compiled and38 scripts passed; candidate blobs verified before/after. Fresh inventory590 Python/377 scripts/591 required Python-fixture blobs is not a full pass; V-124 remains latest full candidate Linux runtime. Thirty-five selected COV categories remain partially addressed; none closed.
+
+Next substantive item: Section8.6 sampled-second-difference numerator/denominator/output range and callback contracts with independent rational expectations. Arbitrary-degree resources, broader coverage and reviewer/platform/release/canonical acceptance remain open. Book1 has separate trackers.

@@ -15,15 +15,24 @@ def finite(value, name):
         raise ValueError(f"{name} must be finite")
     return x
 
+def _polynomial_report(exact):
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("polynomial result outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("polynomial result outside finite float range")
+    return result
+
 def polynomial(values, x):
     values = tuple(finite(c, "coefficient") for c in values)
     if not values:
         raise ValueError("coefficients must not be empty")
-    x = finite(x, "x")
-    result = 0.0
+    x = Fraction(finite(x, "x"))
+    result = Fraction(0)
     for coefficient in reversed(values):
-        result = result*x+coefficient
-    return result
+        result = result*x+Fraction(coefficient)
+    return _polynomial_report(result)
 
 def derivative_coefficients(values, order=1):
     values = tuple(finite(c, "coefficient") for c in values)
@@ -31,9 +40,19 @@ def derivative_coefficients(values, order=1):
         raise ValueError("coefficients must not be empty")
     if type(order) is not int or order < 0:
         raise ValueError("order must be a nonnegative integer")
-    for _ in range(order):
-        values = tuple(i*values[i] for i in range(1, len(values))) or (0.0,)
-    return values
+    if order == 0:
+        return values
+    if order >= len(values):
+        return (0.0,)
+    # Scale each original coefficient once by its exact falling factorial.
+    # No overflowing intermediate derivatives and no loop over excessive order.
+    factor = math.factorial(order)
+    result = []
+    for i in range(order, len(values)):
+        if i > order:
+            factor = factor*i//(i-order)
+        result.append(_polynomial_report(Fraction(values[i])*factor))
+    return tuple(result)
 
 def profit(q):
     q = finite(q, "quantity")

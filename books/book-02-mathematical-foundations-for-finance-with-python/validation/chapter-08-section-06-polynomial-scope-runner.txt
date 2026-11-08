@@ -1,0 +1,12 @@
+from pathlib import Path
+import subprocess,sys,json,hashlib,py_compile,platform
+root=Path(sys.argv[1]).resolve();book=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=book/'chapter-08/code';files=sorted(code.glob('*.py'));rows=[];manifest=[]
+def blob(b):return hashlib.sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest()
+for p in files:
+ manifest.append(dict(path=str(p.relative_to(root)),sha=blob(p.read_bytes())));py_compile.compile(str(p),doraise=True)
+ if p.name.startswith(('check_','test_')):
+  r=subprocess.run([sys.executable,p.name],cwd=code,capture_output=True,text=True,timeout=60);rows.append(dict(path=str(p.relative_to(root)),returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0,rows[-1]
+assert all(blob((root/x['path']).read_bytes())==x['sha'] for x in manifest)
+tracked=subprocess.check_output(['git','-C',str(root),'ls-files','--',str(book.relative_to(root))],text=True).splitlines();new=subprocess.check_output(['git','-C',str(root),'ls-files','--others','--exclude-standard','--',str(book.relative_to(root))],text=True).splitlines();inventory=sorted(set(p for p in tracked+new if p.endswith('.py') and '/__pycache__/' not in p));scripts=[p for p in inventory if Path(p).name.startswith(('check_','test_'))]
+out=dict(candidate_based_on=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),python=platform.python_version(),platform=platform.platform(),compiled=len(files),scripts=rows,manifest=manifest,verified_before_after=True,fresh_inventory=dict(python_files=len(inventory),check_test_scripts=len(scripts),required_python_fixture_blobs=len(inventory)+1),limits='Chapter8 scoped run; V124 is latest full pinned run, not this inventory;35 COV categories remain partial, none closed')
+(book/'validation/chapter-08-section-06-polynomial-scope.json').write_text(json.dumps(out,indent=2)+'\n');print(len(files),'compiled',len(rows),'scripts passed;inventory',out['fresh_inventory'])

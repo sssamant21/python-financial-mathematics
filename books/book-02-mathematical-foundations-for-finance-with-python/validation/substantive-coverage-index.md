@@ -953,4 +953,11 @@ Next substantive item remains Section 8.6 polynomial/derivative-coefficient comp
 
 ## Polynomial range checkpoint — initial observations retained
 
-[Nine pinned probes](chapter-08-polynomial-range-baseline.md) advance the next Section8.6 polynomial/derivative-coefficient item: four mismatches against independent complete rational references, including two proposed finite-output/error policies. Initial failures retained; source unchanged and no corrected rerun claimed. Next: reconcile rounding/output/validation-order contracts and implement a scoped correction, then sampled-second differences. V-124 remains the full candidate runtime at its pinned revision; no COV category closed.
+[Nine pinned probes](chapter-08-section-06-polynomial-baseline.md) advance the next Section8.6 polynomial/derivative-coefficient item: four mismatches against independent complete rational references, including two proposed finite-output/error policies. Initial failures retained; source unchanged and no corrected rerun claimed. Next: reconcile rounding/output/validation-order contracts and implement a scoped correction, then sampled-second differences. V-124 remains the full candidate runtime at its pinned revision; no COV category closed.
+
+
+## V-125 checkpoint — Complete polynomial/derivative output
+
+[Polynomial follow-up](chapter-08-section-06-polynomial-followup.md):128 corrected predicates passed;127 baseline observations retain five mismatches and an identical replay. Excessive-order baseline omitted explicitly; corrected guard executed. Source/manuscript now agree on exact represented-input complete-expression rounding, finite-output errors, signed underflow, order/consumption/validation priority. Forty-eight Chapter8 files compiled and38 scripts passed; candidate blobs verified before/after. Fresh inventory590 Python/377 scripts/591 required Python-fixture blobs is not a full pass; V-124 remains latest full candidate Linux runtime. Thirty-five selected COV categories remain partially addressed; none closed.
+
+Next substantive item: Section8.6 sampled-second-difference numerator/denominator/output range and callback contracts with independent rational expectations. Arbitrary-degree resources, broader coverage and reviewer/platform/release/canonical acceptance remain open. Book1 has separate trackers.

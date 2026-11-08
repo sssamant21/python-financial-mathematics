@@ -1,11 +1,17 @@
-# Section 8.6 polynomial range — retained initial screen
+# Next checkpoint: Section 8.2 polynomial range
 
-Pinned executable revision: `a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3`. [Nine actual observations with exact source blob](chapter-08-polynomial-range-baseline.json) · [Runnable probe](chapter-08-polynomial-range-probe.txt).
+Source revision `a6441d707337946a76e059c6cf53a5b05291afa0`; unchanged `chapter-08/code/section_8_02.py` blob `c625e24ea17d574f4d60ec335b315216893b3ca1`.
 
-```bash
-python books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-08-polynomial-range-probe.txt .
+Actual probes on this source:
+
+```python
+import sys
+from section_8_02 import polynomial, polynomial_derivative
+M = sys.float_info.max
+polynomial([-M, M], 2.0)  # raises OverflowError: polynomial overflow
+polynomial_derivative([0.0, 0.0, M], 0.0)  # raises ValueError: coefficient must be finite
 ```
 
-Independent rational monomial sums use each represented binary64 coefficient and argument exactly, rounding only the final expectation. Falling-factorial coefficients derive derivatives directly instead of repeating the implementation's derivative loop. Four mismatches are retained, not four distinct defects: recoverable Horner intermediate overflow (exact rounded answer1e308), subnormal final rounding (exact rounded answer1e-323), and two nonfinite outputs where ValueError is a proposed final-output policy. Constant/ordinary/exact-zero and derivative-order controls remain distinct from failures. No fixes or corrected passes are claimed.
+Independent algebra gives -M + 2M = M for the first result and 2M·0 = 0 for the second. Both final results are representable; intermediate floating products or derivative coefficients are not. These are two substantiated next-batch failures, not corrected passes. Preserve this baseline and derive exact rational full-polynomial and point-specific derivative references before changing behavior. Distinguish an unrepresentable coefficient-returning API from a finite derivative value and preserve documented exception conventions. The Section 8.2 centered-difference copy is also still open.
 
-Next: reconcile complete-expression versus ordinary-Horner rounding guarantees, final finite/underflow/zero/error semantics and validation order before implementing corrections. Preserve one-shot coefficient consumption, nonempty/finite input checks, order0, order above degree and bool rejection; derive meaningful additional guards without an unbounded order loop. Then assess sampled-second differences separately. This screen is not the completed polynomial contract review, a new full runtime, a defect total or COV closure. Thirty-five selected categories remain partially addressed; reviewer/platform/resource/release/canonical limits remain open.
+COV-51 stays partial. Resume here; do not repeat completed Section 8.1 financial or Section 8.3 wrapper examples. Independent review/platform/release decisions remain separate.

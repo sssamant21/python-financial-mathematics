@@ -1,0 +1,21 @@
+from pathlib import Path
+from fractions import Fraction
+import sys,math,json,subprocess
+root=Path(sys.argv[1]);pin="a02160a18fcb320ffb537ea5b5cf7bce8e64a3d3"
+b2=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=b2/'chapter-08/code';sys.path.insert(0,str(code));import section_8_06 as m
+cases=[('constant',[7.],2.),('ordinary',[1.,2.,3.],2.),('recoverable-horner-overflow',[-1e308,-1e308,1e308],2.),('true-overflow',[1e308,1e308],2.),('subnormal-final-rounding',[5e-324,5e-324],.5),('exact-zero',[1e308,-1e308],1.)];rows=[]
+for name,c,x in cases:
+ q=sum(Fraction(v)*Fraction(x)**i for i,v in enumerate(c))
+ try:expected=float(q); policy='finite exact-binary64 polynomial rounded once'
+ except OverflowError:expected=None;policy='proposed ValueError for unrepresentable complete result; not yet adopted'
+ actual=m.polynomial(c,x);ok=expected is not None and actual==expected and math.isfinite(actual)
+ rows.append(dict(case=name,coefficients=c,x=x,exact_numerator=str(q.numerator),exact_denominator=str(q.denominator),expected=repr(expected) if expected is not None else 'ValueError (proposed)',policy=policy,actual=repr(actual),matches=ok))
+for c,order in [([0.,0.,1e308],1),([0.,0.,1e308],3),([1.,2.,3.],2)]:
+ factors=[]
+ for i in range(order,len(c)):
+  factor=math.prod(range(i-order+1,i+1));factors.append(Fraction(c[i])*factor)
+ factors=factors or [Fraction(0)]
+ try:expected=tuple(float(q) for q in factors)
+ except OverflowError:expected=None
+ actual=m.derivative_coefficients(c,order);rows.append(dict(case='derivative coefficients',coefficients=c,order=order,expected=repr(expected) if expected is not None else 'ValueError (proposed)',actual=repr(actual),matches=actual==expected,policy='exact falling-factorial references; finite output/error contract still to reconcile'))
+v=b2/'validation';(v/'chapter-08-section-06-polynomial-baseline.json').write_text(json.dumps(dict(source_revision=pin,source_blob=subprocess.check_output(['git','-C',str(root),'rev-parse',pin+':books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_06.py'],text=True).strip(),observations=rows,limits='Screen only; proposed final-output policies are distinct from source defects; no source fix or COV closure.'),indent=2)+'\n')

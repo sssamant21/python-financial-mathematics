@@ -1,0 +1,17 @@
+from pathlib import Path
+import sys,json,subprocess,hashlib,tempfile,importlib.util
+root=Path(sys.argv[1]).resolve();mode=sys.argv[2];book=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=book/'chapter-08/code'
+revision=sys.argv[3] if len(sys.argv)>3 else subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
+with tempfile.TemporaryDirectory() as temp:
+    temp=Path(temp)
+    for name in ['section_8_01.py','section_8_06.py']:
+        path=code/name
+        data=subprocess.check_output(['git','-C',str(root),'show',revision+':'+str(path.relative_to(root))]) if mode=='baseline' else path.read_bytes()
+        (temp/name).write_bytes(data)
+    sys.path[:0]=[str(temp),str(code)]
+    import check_section_06_polynomial_range as checker
+    rows=checker.observations(include_resource=mode!='baseline')
+    raw=(temp/'section_8_06.py').read_bytes()
+    result=dict(candidate_based_on=revision,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest(),source_sha256=hashlib.sha256(raw).hexdigest(),observations=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),resource_case='omitted to avoid unbounded old order loop' if mode=='baseline' else 'executed',scope='Independent algebra with shared Fraction backend, not a library proof, full runtime or COV closure')
+    target=book/'validation'/('chapter-08-section-06-polynomial-'+mode+'-replay.json')
+    target.write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed'])

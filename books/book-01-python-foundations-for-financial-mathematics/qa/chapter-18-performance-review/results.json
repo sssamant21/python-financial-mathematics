@@ -1,0 +1,274 @@
+{
+  "candidate_based_on": "5ad0dc3066bfcca85a3c50d1aac8a538c6459851",
+  "source_revision": "candidate manuscript SHA256 below",
+  "source_sha256": "9758db6a50d35c1dc39cf0627f3d45c8ef49c3dcc38639c336a7263c13d72bec",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "cpu": "",
+  "numpy_version": "2.3.5",
+  "numpy_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  - AVX512_SPR\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n\n",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "simulation_performance.py"
+      ],
+      "returncode": 0,
+      "stdout": "count: 10000 mean: 99.96000000000006 standard error: 0.1406051812050256 seconds: 0.006240486000024248\n",
+      "stderr": "test_array_size (__main__.PerformanceTests.test_array_size) ... ok\ntest_bad_batch (__main__.PerformanceTests.test_bad_batch) ... ok\ntest_bad_count (__main__.PerformanceTests.test_bad_count) ... ok\ntest_bad_dimensions (__main__.PerformanceTests.test_bad_dimensions) ... ok\ntest_batches_match_stream_order (__main__.PerformanceTests.test_batches_match_stream_order) ... ok\ntest_constant (__main__.PerformanceTests.test_constant) ... ok\ntest_mean (__main__.PerformanceTests.test_mean) ... ok\ntest_nonfinite (__main__.PerformanceTests.test_nonfinite) ... ok\ntest_replay (__main__.PerformanceTests.test_replay) ... ok\ntest_short_sample (__main__.PerformanceTests.test_short_sample) ... ok\ntest_standard_error (__main__.PerformanceTests.test_standard_error) ... ok\ntest_variance (__main__.PerformanceTests.test_variance) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "simulation_performance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import simulation_performance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "python",
+        "-c",
+        "exact NumPy fence"
+      ],
+      "returncode": 0,
+      "stdout": "mean: 100.0034\n",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "sample mean [80, 100, 120]",
+      "passed": true
+    },
+    {
+      "name": "sample variance [80, 100, 120]",
+      "passed": true
+    },
+    {
+      "name": "sample SE [80, 100, 120]",
+      "passed": true
+    },
+    {
+      "name": "sample mean [100, 100]",
+      "passed": true
+    },
+    {
+      "name": "sample variance [100, 100]",
+      "passed": true
+    },
+    {
+      "name": "sample SE [100, 100]",
+      "passed": true
+    },
+    {
+      "name": "sample mean [80, 80, 100, 120]",
+      "passed": true
+    },
+    {
+      "name": "sample variance [80, 80, 100, 120]",
+      "passed": true
+    },
+    {
+      "name": "sample SE [80, 80, 100, 120]",
+      "passed": true
+    },
+    {
+      "name": "sample mean [1000000000001.0, 1000000000002.0, 1000000000003.0]",
+      "passed": true
+    },
+    {
+      "name": "sample variance [1000000000001.0, 1000000000002.0, 1000000000003.0]",
+      "passed": true
+    },
+    {
+      "name": "sample SE [1000000000001.0, 1000000000002.0, 1000000000003.0]",
+      "passed": true
+    },
+    {
+      "name": "shared draw replay (2, 1)",
+      "passed": true
+    },
+    {
+      "name": "shared draw replay (101, 10)",
+      "passed": true
+    },
+    {
+      "name": "shared draw replay (100, 1000)",
+      "passed": true
+    },
+    {
+      "name": "shared draw replay (100, 100)",
+      "passed": true
+    },
+    {
+      "name": "sample count",
+      "passed": true
+    },
+    {
+      "name": "count-derived sample mean",
+      "passed": true
+    },
+    {
+      "name": "count-derived sample variance",
+      "passed": true
+    },
+    {
+      "name": "bytes exact",
+      "passed": true
+    },
+    {
+      "name": "MiB rounding",
+      "passed": true
+    },
+    {
+      "name": "partial partition",
+      "passed": true
+    },
+    {
+      "name": "full partition",
+      "passed": true
+    },
+    {
+      "name": "model expectation",
+      "passed": true
+    },
+    {
+      "name": "model variance",
+      "passed": true
+    },
+    {
+      "name": "fourfold SE",
+      "passed": true
+    },
+    {
+      "name": "reject (True, 42)",
+      "passed": true
+    },
+    {
+      "name": "reject (2, True)",
+      "passed": true
+    },
+    {
+      "name": "reject (2, False, 42)",
+      "passed": true
+    },
+    {
+      "name": "reject (1, 1, 42)",
+      "passed": true
+    },
+    {
+      "name": "reject (1, True, 8)",
+      "passed": true
+    },
+    {
+      "name": "reject (inf,)",
+      "passed": true
+    },
+    {
+      "name": "reject (True,)",
+      "passed": true
+    },
+    {
+      "name": "opposite-extremes normalized rejection",
+      "passed": true
+    },
+    {
+      "name": "opposite-extremes rejected update preserves state",
+      "passed": true
+    },
+    {
+      "name": "m2-overflow normalized rejection",
+      "passed": true
+    },
+    {
+      "name": "m2-overflow rejected update preserves state",
+      "passed": true
+    },
+    {
+      "name": "huge-integer normalized rejection",
+      "passed": true
+    },
+    {
+      "name": "huge-integer rejected update preserves state",
+      "passed": true
+    }
+  ],
+  "existing_unique_methods": 12,
+  "new_historical_methods": 0,
+  "independent_expectations": {
+    "model_mean": 100,
+    "model_variance": 200,
+    "sample_mean": 99.96,
+    "sample_variance": 197.6981698169817,
+    "sample_SE": 0.1406051812050259,
+    "standardized_mean_deviation": -0.2844845378891734
+  },
+  "timing": {
+    "samples": [
+      0.0032048649999296686,
+      0.0032182520000105796,
+      0.003747438000004877,
+      0.0038793940000232396,
+      0.0031334340000057637
+    ],
+    "median": 0.0032182520000105796,
+    "range": [
+      0.0031334340000057637,
+      0.0038793940000232396
+    ],
+    "setup": "fresh RNG and accumulator included; import excluded;10000 paths,seed42"
+  },
+  "python_traced_allocations": [
+    {
+      "count": 1000,
+      "current": 0,
+      "peak": 3096
+    },
+    {
+      "count": 10000,
+      "current": 0,
+      "peak": 3088
+    },
+    {
+      "count": 100000,
+      "current": 0,
+      "peak": 3080
+    }
+  ],
+  "initial_range_observations": [
+    {
+      "name": "opposite-extremes",
+      "result": "ValueError: nonfinite running statistics",
+      "state": "RunningStats(count=1, mean=-1e+308, m2=0.0)",
+      "previous_state": "RunningStats(count=1, mean=-1e+308, m2=0.0)"
+    },
+    {
+      "name": "m2-overflow",
+      "result": "ValueError: nonfinite running statistics",
+      "state": "RunningStats(count=1, mean=1e+200, m2=0.0)",
+      "previous_state": "RunningStats(count=1, mean=1e+200, m2=0.0)"
+    },
+    {
+      "name": "huge-integer",
+      "result": "ValueError: finite observation required",
+      "state": "RunningStats(count=0, mean=0.0, m2=0.0)",
+      "previous_state": "RunningStats(count=0, mean=0.0, m2=0.0)"
+    }
+  ],
+  "limits": "Candidate Linux execution; traced Python allocations exclude native NumPy memory/RSS and do not certify asymptotic memory or speedups. Source selected by retained SHA256. No independent statistical/platform acceptance."
+}
