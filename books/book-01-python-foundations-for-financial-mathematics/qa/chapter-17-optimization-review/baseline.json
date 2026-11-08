@@ -1,0 +1,506 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "b8d2e820a2f00a61e5e4a160e7350a7c04035ec02c4bfc27e1b8d04260df297a",
+  "listing_sha256": "975f06948e813d535a7af2f623e9e0fc6c13ca8695738eca4a36fcb115955fa4",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "optimization_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "Grid: {'x': 0.3, 'value': 0.0, 'index': 30, 'spacing': 0.01}\nGolden: {'x': 0.2999999999928936, 'value': 5.050050946008352e-23, 'iterations': 48, 'interval': (0.29999999994638177, 0.3000000000394054)}\nTwo-asset GMV: {'weight_a': 0.6923076923076923, 'weight_b': 0.3076923076923077, 'nonunique': False}\n",
+      "stderr": "test_01_grid (__main__.OptimizationTests.test_01_grid) ... ok\ntest_02_golden (__main__.OptimizationTests.test_02_golden) ... ok\ntest_03_boundary (__main__.OptimizationTests.test_03_boundary) ... ok\ntest_04_min_value (__main__.OptimizationTests.test_04_min_value) ... ok\ntest_05_portfolio (__main__.OptimizationTests.test_05_portfolio) ... ok\ntest_06_min_var (__main__.OptimizationTests.test_06_min_var) ... ok\ntest_07_cap_boundary (__main__.OptimizationTests.test_07_cap_boundary) ... ok\ntest_08_nonunique (__main__.OptimizationTests.test_08_nonunique) ... ok\ntest_09_invalid_psd (__main__.OptimizationTests.test_09_invalid_psd) ... ok\ntest_10_budget (__main__.OptimizationTests.test_10_budget) ... ok\ntest_11_nonfinite (__main__.OptimizationTests.test_11_nonfinite) ... ok\ntest_12_iteration (__main__.OptimizationTests.test_12_iteration) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import optimization_fundamentals"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "optimization_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy scalar analytic optimum",
+      "passed": true,
+      "actual": 0.3,
+      "reference": "3/10",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy vector analytic weight A",
+      "passed": true,
+      "actual": 0.666666667494509,
+      "reference": "2/3",
+      "absolute_tolerance": 1e-06,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy vector analytic weight B",
+      "passed": true,
+      "actual": 0.333333332505491,
+      "reference": "1/3",
+      "absolute_tolerance": 1e-06,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy vector independently repriced objective",
+      "passed": true,
+      "actual": "666666666666666668722635453243/1000000000000000000000000000000",
+      "reference": "2/3",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy vector independent feasibility",
+      "passed": true,
+      "actual": [
+        0.666666667494509,
+        0.333333332505491
+      ]
+    },
+    {
+      "label": "lab grid optimum 10",
+      "passed": true,
+      "actual": 0.30000000000000004,
+      "reference": "3/10",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab grid optimum 100",
+      "passed": true,
+      "actual": 0.3,
+      "reference": "3/10",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab grid optimum 1000",
+      "passed": true,
+      "actual": 0.3,
+      "reference": "3/10",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab golden optimum",
+      "passed": true,
+      "actual": 0.2999999999928936,
+      "reference": "3/10",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E1 known minimum",
+      "passed": true,
+      "actual": 3.000000000004806,
+      "reference": "3",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E2 maximization via negative objective",
+      "passed": true,
+      "actual": 1.99999998512414,
+      "reference": "2",
+      "absolute_tolerance": 2e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E7 constrained grid endpoint",
+      "passed": true,
+      "actual": 0.5,
+      "reference": "1/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E7 constrained golden endpoint",
+      "passed": true,
+      "actual": 0.5000000000376288,
+      "reference": "1/2",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E8 grid spacing",
+      "passed": true,
+      "actual": 0.1,
+      "reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E9 discrete optimum .34 on coarse grid",
+      "passed": true,
+      "actual": 0.30000000000000004,
+      "reference": "3/10",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E10 refined grid .34",
+      "passed": true,
+      "actual": 0.34,
+      "reference": "17/50",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E22 GMV A",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 supplemental expected return",
+      "passed": true,
+      "actual": "22/325",
+      "reference": "22/325",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab equal-weight risk",
+      "passed": true,
+      "actual": 0.0325,
+      "reference": "13/400",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E24 analytic GMV risk",
+      "passed": true,
+      "actual": 0.027692307692307693,
+      "reference": "9/325",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "cap .4 boundary risk",
+      "passed": true,
+      "actual": 0.0388,
+      "reference": "97/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab finite-grid GMV weight",
+      "passed": true,
+      "actual": 0.6920000000000001,
+      "reference": "173/250",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab finite-grid GMV value",
+      "passed": true,
+      "actual": 0.02769232,
+      "reference": "173077/6250000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F162 scaled covariance GMV 1e-200",
+      "passed": false,
+      "actual": 0.5,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F162 scaled covariance GMV 1e+200",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F162 tiny reportable variance",
+      "passed": true,
+      "actual": 3.25e-200,
+      "reference": "13/400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F162 normalized tolerated budget",
+      "passed": false,
+      "actual": 5.0000000001e+199,
+      "reference": "500000000010000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/10000000000200000000001",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F162 wide grid coordinate",
+      "passed": false,
+      "exception": "ValueError('nonfinite objective')",
+      "reference": "0"
+    },
+    {
+      "label": "F162 wide golden minimizer",
+      "passed": false,
+      "exception": "ValueError('nonfinite objective')",
+      "reference": "0"
+    },
+    {
+      "label": "F162 preserve integer objective ordering",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E27 exact nonuniqueness",
+      "passed": true
+    },
+    {
+      "label": "F162 tiny invalid PSD not hidden",
+      "passed": false,
+      "actual": "{'weight_a': 0.5, 'weight_b': 0.5, 'nonunique': True}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 large invalid PSD not hidden",
+      "passed": false,
+      "actual": "{'weight_a': 0.5, 'weight_b': 0.5, 'nonunique': True}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 arbitrary matrix untested negative direction",
+      "passed": false,
+      "actual": "1.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 negative tiny diagonal",
+      "passed": false,
+      "actual": "1.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 tiny asymmetry",
+      "passed": false,
+      "actual": "5.00000000025e-201",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 unreportable nonzero variance",
+      "passed": false,
+      "actual": "0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 golden coordinate stagnation",
+      "passed": false,
+      "actual": "{'x': 1.0, 'value': 1.0, 'iterations': 2, 'interval': (1, 1.0)}",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F162 grid repeated coordinates",
+      "passed": false,
+      "actual": "{'x': 1.0, 'value': 1.0, 'index': 0, 'spacing': 1.1102230246251565e-16}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 huge integer bound",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 noncallable objective",
+      "passed": false,
+      "exception": "TypeError(\"'NoneType' object is not callable\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 bad covariance shape",
+      "passed": false,
+      "exception": "TypeError(\"object of type 'NoneType' has no len()\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 nonfinite objective",
+      "passed": true,
+      "exception": "ValueError('nonfinite objective')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 boolean objective",
+      "passed": true,
+      "exception": "ValueError('nonfinite objective')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 bad budget",
+      "passed": true,
+      "exception": "ValueError('long-only budget')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 obvious non PSD",
+      "passed": true,
+      "exception": "ValueError('non-PSD two-asset covariance')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F162 iteration limit",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "E26 singular PSD risk",
+      "passed": true,
+      "actual": 0.0625,
+      "reference": "1/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "PSD zero pivot with zero coupling",
+      "passed": true,
+      "actual": 0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "three-asset diagonal benchmark",
+      "passed": true,
+      "actual": 0.0038,
+      "reference": "19/5000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "PSD zero pivot with nonzero coupling",
+      "passed": false,
+      "actual": "1.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "strict displayed budget policy",
+      "passed": false,
+      "exception": "TypeError(\"portfolio_variance() got an unexpected keyword argument 'budget_tolerance'\")",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "lab_results": [
+    {
+      "method": "grid",
+      "steps": 10,
+      "result": {
+        "x": 0.30000000000000004,
+        "value": 3.0814879110195774e-33,
+        "index": 3,
+        "spacing": 0.1
+      }
+    },
+    {
+      "method": "grid",
+      "steps": 100,
+      "result": {
+        "x": 0.3,
+        "value": 0.0,
+        "index": 30,
+        "spacing": 0.01
+      }
+    },
+    {
+      "method": "grid",
+      "steps": 1000,
+      "result": {
+        "x": 0.3,
+        "value": 0.0,
+        "index": 300,
+        "spacing": 0.001
+      }
+    },
+    {
+      "method": "golden",
+      "result": {
+        "x": 0.2999999999928936,
+        "value": 5.050050946008352e-23,
+        "iterations": 48,
+        "interval": [
+          0.29999999994638177,
+          0.3000000000394054
+        ]
+      }
+    },
+    {
+      "method": "portfolio_grid",
+      "result": {
+        "x": 0.6920000000000001,
+        "value": 0.02769232,
+        "index": 692,
+        "spacing": 0.001
+      }
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "model": {
+    "covariance": [
+      [
+        0.04,
+        0
+      ],
+      [
+        0,
+        0.09
+      ]
+    ],
+    "means": [
+      0.08,
+      0.04
+    ],
+    "units": "dimensionless weights, single-period returns and squared-return variances",
+    "timing": "same hypothetical period, no market observations/as-of dates"
+  }
+}
