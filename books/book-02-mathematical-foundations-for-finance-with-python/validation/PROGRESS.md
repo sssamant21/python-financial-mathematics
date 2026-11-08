@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-07  
-**Overall status:** In progress — V-109 full candidate Linux pass (575 files, 362 scripts, 576 required hashes), including Section 8.4 large period-count conversion. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-110 full candidate Linux pass (576 files, 363 scripts, 577 required hashes), including Section 8.4 nested-power output contract. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 575/575 at `a93acb89609087281b4e1872c6420313ddf7adca`. [V-109](runtime-refresh-2026-11-07-r15.md). |
-| Automated script execution | Full candidate Linux pass | 362/362 at `a93acb89609087281b4e1872c6420313ddf7adca`; 576 required blobs verified before/after. [V-109](runtime-refresh-2026-11-07-r15.md). |
+| Python compilation | Full candidate Linux pass | 576/576 at `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe`. [V-110](runtime-refresh-2026-11-07-r16.md). |
+| Automated script execution | Full candidate Linux pass | 363/363 at `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe`; 577 required blobs verified before/after. [V-110](runtime-refresh-2026-11-07-r16.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1005,3 +1005,11 @@ Next: [large integer period-count baseline](chapter-08-large-period-count-baseli
 [V-109](runtime-refresh-2026-11-07-r15.md) at `a93acb89609087281b4e1872c6420313ddf7adca`: 575 files compiled, 362 scripts passed, 576 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [nested-power range baseline](chapter-08-nested-power-range-baseline.md), with [five exact-polynomial/actual probe pairs](chapter-08-nested-power-range-baseline.json). Actual finite outputs differ from one-rounding references and nonfinite outputs/errors are inconsistent; establish the accuracy/overflow contract before editing. Price/log-growth, other earlier copies and independent review remain open. Do not repeat completed count-conversion or compounding examples.
+
+## V-110 checkpoint — Section 8.4 nested-power derivative
+
+[Nested-power follow-up](chapter-08-nested-power-range-followup.md): all 45 checks pass; seventeen baseline mismatches and an identical replay retained. Independent expanded rational monomials check a factored rational implementation with one final rounding. An oracle-only monotone float-bit search finds adjacent finite/overflow inputs; both signs, tiny values, seeded magnitudes and type/domain guards are checked. Six baseline infinities now raise OverflowError; eleven finite differences are reconciled under the explicit accuracy contract. Existing Section 8.4 and 78-case large-count suites pass.
+
+[V-110](runtime-refresh-2026-11-07-r16.md) at `76208b8f944cf6ab706ae75f94cc0329d1f3dbfe`: 576 files compiled, 363 scripts passed, 577 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [price/log-growth baseline](chapter-08-price-log-growth-baseline.md), with [five retained probe pairs](chapter-08-price-log-growth-baseline.json). Price returns infinity at 1e104 while larger unrepresentable cases raise OverflowError; selected log-growth outputs match their represented-ratio references. Establish price output/accuracy consistency and preserve or explicitly reconcile the rounded base and represented coefficient convention. Do not repeat completed nested-power/count examples.
