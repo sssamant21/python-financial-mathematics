@@ -1,0 +1,33 @@
+name: Quant projects CI
+
+on:
+  push:
+    paths:
+      - 'quant-projects/**'
+      - '.github/workflows/quant-projects.yml'
+  pull_request:
+    paths:
+      - 'quant-projects/**'
+      - '.github/workflows/quant-projects.yml'
+  workflow_dispatch:
+
+jobs:
+  quant-labs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: quant-projects/requirements.txt
+      - name: Install requirements
+        run: python -m pip install -r quant-projects/requirements.txt
+      - name: Validate Monte Carlo, optimization, and backtest fixture
+        run: |
+          python -m pytest -q quant-projects/01-single-stock-monte-carlo/test_stock_monte_carlo.py
+          python -m pytest -q quant-projects/03-five-stock-optimization/test_lab.py
+          python -m pytest -q quant-projects/04-historical-backtesting/test_backtest.py
+      - name: Run two-stock Monte Carlo end-to-end
+        run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py

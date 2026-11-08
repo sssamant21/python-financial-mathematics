@@ -1,4 +1,4 @@
-"""Five-stock walk-forward portfolio backtest, using a bundled real-price snapshot.
+"""Five-stock walk-forward portfolio backtest, using an independently downloaded real-price snapshot.
 
 Research/education only. All five companies were selected with hindsight and the
 historical adjusted-price snapshot is not point-in-time investable data.
