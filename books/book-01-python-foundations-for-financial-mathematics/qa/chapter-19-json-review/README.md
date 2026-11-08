@@ -80,3 +80,5 @@ The source JSON parser itself is unchanged. It accepts UTF-8 bytes,an exact-fiel
 Next: Section19.4 Excel Data formal workflow/local-answer review;broader and independent Book1 acceptance remains open.
 
 Nested-duplicate scope:the nested case also contains an extra field,so rejection by that predicate alone would not distinguish the duplicate policy from schema rejection. The source object_pairs_hook applies reject_duplicates at every object level;that mechanism is confirmed by source review rather than treating this combined negative case as isolated parser-depth coverage.
+
+Corrected executable source revision:`0cb56e043276f5f0f2d4496d4adaf3a1a12a593c`. [Publication verification](publication-verification.json) pins this manuscript/observer/fixture snapshot;source inputs remain unchanged in the following verification commit.
