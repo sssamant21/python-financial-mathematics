@@ -2,10 +2,12 @@
 
 **Date:** 2026-11-08  
 **Full-runtime candidate source revision:** `536dc531ca19a913507977f63df20d2cefd1f90b`  
-**Latest scoped source revision:** `536dc531ca19a913507977f63df20d2cefd1f90b` (included in V-115)  
-**Disposition:** V-115 full candidate Linux pass includes accumulation/PV corrections; independent review and release approval pending.
+**Latest scoped source revision:** `63ff224ef85691be6a513db55f27c3f567889f76` (V-116, eight files/six scripts; after V-115)  
+**Disposition:** V-116 scoped rate-shock pass after V-115 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-116 scoped rate shock](chapter-08-rate-shock-range-followup.md): eight compiled/six passed/eight hashes verified before-after. Fresh full-tree inventory 582/369/583 is not a new full runtime result. G2–G8 unchanged.
 
 [V-115](runtime-refresh-2026-11-08.md): 581 compiled, 368 passed, 582 required hashes verified before/after. G2–G8 unchanged.
 
@@ -912,3 +914,11 @@ Next: [PV/rate-sensitivity baseline](chapter-08-pv-range-baseline.md), with [fou
 [V-115 full runtime](runtime-refresh-2026-11-08.md) at `536dc531ca19a913507977f63df20d2cefd1f90b`: 581 Python files compiled, 368 scripts passed and 582 required source/fixture hashes verified before/after. This fresh pinned-tree run includes both V-114 accumulation and V-115 PV checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [rate-shock baseline](chapter-08-rate-shock-range-baseline.md), with [four pinned actual probe/reference pairs](chapter-08-rate-shock-range-baseline.json). Independent complete-price differences at 1600/2200 digits expose finite-change loss through intermediate PV/exponential/product range and a lost zero-payment identity. Preserve years/change prevalidation and remaining input domains/order, explicitly reconcile shifted-rate/exponent/final-output conventions, then continue log-return, stable quotient and centered copy. Resource limits and independent review remain open. Do not repeat completed PV/sensitivity or accumulation examples.
+
+## V-116 checkpoint — Section 8.5 complete rate shock
+
+[Rate-shock follow-up](chapter-08-rate-shock-range-followup.md): all 57 checks pass; 14 baseline mismatches and a byte-identical replay retained. Independent complete Decimal price differences at 1600/2200 digits check signed shocks, tiny products, large/cancelled exponents, zero identities, final overflow and validation priority. One baseline mismatch enforces the new complete-change independence requirement; mismatches are not distinct defect counts. Pinned corrected observations match local results.
+
+At `63ff224ef85691be6a513db55f27c3f567889f76`, eight scoped Python files compiled and six scripts passed, with eight exact Git blobs verified before/after. Fresh full-tree inventory is 582 Python files, 369 check/test scripts and 583 required source/fixture blobs. This is scoped validation; [V-115](runtime-refresh-2026-11-08.md) remains the latest full candidate Linux pass (581/368/582 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [log-return baseline](chapter-08-log-return-range-baseline.md), with [eight pinned observations](chapter-08-log-return-range-baseline.json): four finite-model range failures and four working half-price, adjacent-unity and equal-price controls. Derive a range-safe evaluation while preserving near-unity accuracy, positive-price domains, validation order and equal-price zero behavior. Stable quotient, centered-copy, resource limits and independent review remain open. Do not repeat completed rate-shock/PV/accumulation examples.
