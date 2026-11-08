@@ -1,0 +1,142 @@
+{
+  "candidate_based_on": "7789936172ba8ca0545bc051eddee4f9ee08a3cd",
+  "source_sha256": "95ecd97b5d45e26512dd5fdda8f43f925eea485287880ea4a13171aea1d12c66",
+  "observations": [
+    {
+      "helper": "bond_price",
+      "flows": [
+        105.0
+      ],
+      "yield_per_period": 0.05,
+      "expected": "100.0",
+      "actual": "100.0",
+      "matches": true,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "bond_price_derivative",
+      "flows": [
+        105.0
+      ],
+      "yield_per_period": 0.05,
+      "expected": "-95.23809523809523",
+      "actual": "-95.23809523809524",
+      "matches": false,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "yield_price_sensitivity",
+      "flows": [
+        105.0
+      ],
+      "yield_per_period": 0.05,
+      "expected": "-0.0105",
+      "actual": "-0.010499999999999999",
+      "matches": false,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "bond_price",
+      "flows": [
+        1e+308
+      ],
+      "yield_per_period": -0.5,
+      "expected": "ValueError (proposed)",
+      "actual": "inf",
+      "matches": false,
+      "policy": "explicit nonfinite-output policy not yet adopted"
+    },
+    {
+      "helper": "bond_price_derivative",
+      "flows": [
+        1e+308
+      ],
+      "yield_per_period": -0.5,
+      "expected": "ValueError (proposed)",
+      "actual": "-inf",
+      "matches": false,
+      "policy": "explicit nonfinite-output policy not yet adopted"
+    },
+    {
+      "helper": "yield_price_sensitivity",
+      "flows": [
+        1e+308
+      ],
+      "yield_per_period": -0.5,
+      "expected": "-2.5e-309",
+      "actual": "-0.0",
+      "matches": false,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "bond_price",
+      "flows": [
+        1e+308,
+        1e+308
+      ],
+      "yield_per_period": 1e+154,
+      "expected": "1e+154",
+      "actual": "1e+154",
+      "matches": true,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "bond_price_derivative",
+      "flows": [
+        1e+308,
+        1e+308
+      ],
+      "yield_per_period": 1e+154,
+      "expected": "-0.9999999999999999",
+      "actual": "OverflowError",
+      "matches": false,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "yield_price_sensitivity",
+      "flows": [
+        1e+308,
+        1e+308
+      ],
+      "yield_per_period": 1e+154,
+      "expected": "-1.0",
+      "actual": "OverflowError",
+      "matches": false,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "bond_price",
+      "flows": [
+        105.0
+      ],
+      "yield_per_period": 1e+308,
+      "expected": "1.05e-306",
+      "actual": "1.05e-306",
+      "matches": true,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "bond_price_derivative",
+      "flows": [
+        105.0
+      ],
+      "yield_per_period": 1e+308,
+      "expected": "-0.0",
+      "actual": "OverflowError",
+      "matches": false,
+      "policy": "complete exact represented-base expression,final binary64 report; proposed semantics"
+    },
+    {
+      "helper": "yield_price_sensitivity",
+      "flows": [
+        105.0
+      ],
+      "yield_per_period": 1e+308,
+      "expected": "ValueError (proposed)",
+      "actual": "OverflowError",
+      "matches": false,
+      "policy": "explicit nonfinite-output policy not yet adopted"
+    }
+  ],
+  "scope": "Initial actual probes; no bond source correction; represented rounded1+y base chosen explicitly for expectation; source revision must be identified by candidate hash until publication"
+}

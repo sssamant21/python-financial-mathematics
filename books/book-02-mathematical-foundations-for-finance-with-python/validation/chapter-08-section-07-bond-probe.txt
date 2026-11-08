@@ -1,0 +1,19 @@
+from pathlib import Path
+from fractions import Fraction
+import sys,math,json,hashlib,subprocess
+root=Path(sys.argv[1]).resolve();b=root/'books/book-02-mathematical-foundations-for-finance-with-python';c=b/'chapter-08/code';sys.path.insert(0,str(c));import section_8_07 as source
+rows=[]
+for flows,y in [([105.],.05),([1e308],-.5),([1e308,1e308],1e154),([105.],1e308)]:
+ base=Fraction(1+y);price=sum(Fraction(v)/base**i for i,v in enumerate(flows,1));derivative=-sum(i*Fraction(v)/base**(i+1) for i,v in enumerate(flows,1))
+ for name,exact in [('bond_price',price),('bond_price_derivative',derivative),('yield_price_sensitivity',1/derivative)]:
+  try:
+   expected=float(exact)
+   if not math.isfinite(expected):raise OverflowError
+   expected_repr=repr(expected);policy='complete exact represented-base expression,final binary64 report; proposed semantics'
+  except OverflowError:expected=None;expected_repr='ValueError (proposed)';policy='explicit nonfinite-output policy not yet adopted'
+  try:
+   actual=getattr(source,name)(iter(flows),y);actual_repr=repr(actual);ok=expected is not None and actual==expected
+  except Exception as e:actual_repr=type(e).__name__;ok=False
+  rows.append(dict(helper=name,flows=flows,yield_per_period=y,expected=expected_repr,actual=actual_repr,matches=ok,policy=policy))
+out=dict(candidate_based_on=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),source_sha256=hashlib.sha256((c/'section_8_07.py').read_bytes()).hexdigest(),observations=rows,scope='Initial actual probes; no bond source correction; represented rounded1+y base chosen explicitly for expectation; source revision must be identified by candidate hash until publication')
+(b/'validation/chapter-08-section-07-bond-baseline.json').write_text(json.dumps(out,indent=2)+'\n');print(len(rows),'observations',sum(not x['matches'] for x in rows),'mismatches including proposed conventions')

@@ -1,0 +1,292 @@
+{
+  "candidate_based_on": "7789936172ba8ca0545bc051eddee4f9ee08a3cd",
+  "selected_revision": null,
+  "source_sha256": "7fc32927e7f0ae38892d289aac547261e727e0956d00bc67e1bab07fe122c677",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_data_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "return: 0.015\nsha256 of UTF-8 text: 54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f\n",
+      "stderr": "test_bad_currency (__main__.DataTests.test_bad_currency) ... ok\ntest_bad_date (__main__.DataTests.test_bad_date) ... ok\ntest_bad_price (__main__.DataTests.test_bad_price) ... ok\ntest_decimal (__main__.DataTests.test_decimal) ... ok\ntest_duplicate_date (__main__.DataTests.test_duplicate_date) ... ok\ntest_hash_replay (__main__.DataTests.test_hash_replay) ... ok\ntest_missing_header (__main__.DataTests.test_missing_header) ... ok\ntest_parse (__main__.DataTests.test_parse) ... ok\ntest_return (__main__.DataTests.test_return) ... ok\ntest_zero_start (__main__.DataTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_data_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_data_basics"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "CSV fixture records",
+      "actual": "2",
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "name": "JSON close text",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV JSON close match",
+      "actual": "Decimal('101.50')",
+      "expected": "Decimal('101.50')",
+      "passed": true
+    },
+    {
+      "name": "fixture return",
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')",
+      "passed": true
+    },
+    {
+      "name": "encoded hash",
+      "actual": "'54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f'",
+      "expected": "'54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f'",
+      "passed": true
+    },
+    {
+      "name": "newline bytes differ",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "duplicate date",
+      "actual": "ValueError: one instrument and increasing dates required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "decreasing date",
+      "actual": "ValueError: one instrument and increasing dates required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "missing header",
+      "actual": "ValueError: missing required columns",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "duplicate header",
+      "actual": "ValueError: missing or duplicate headers",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "null row value",
+      "actual": "ValueError: malformed row",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "extra row field",
+      "actual": "ValueError: malformed row",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "empty instrument",
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "mixed instrument",
+      "actual": "ValueError: one instrument and increasing dates required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "bad currency",
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "bad date",
+      "actual": "ValueError: invalid date or price",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "nan price",
+      "actual": "ValueError: positive finite price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "inf price",
+      "actual": "ValueError: positive finite price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "negative price",
+      "actual": "ValueError: positive finite price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "zero price",
+      "actual": "ValueError: positive finite price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "bad number",
+      "actual": "ValueError: invalid date or price",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "single row",
+      "actual": "ValueError: at least two records required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "nontext CSV",
+      "actual": "ValueError: CSV text required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "nontext hash",
+      "actual": "ValueError: text required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "complete return ('100', '101.50')",
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')",
+      "passed": true
+    },
+    {
+      "name": "complete return ('1', '1.000000000000000000000000000001')",
+      "actual": "Decimal('1E-30')",
+      "expected": "Decimal('1E-30')",
+      "passed": true
+    },
+    {
+      "name": "complete return ('1e308', '1e308')",
+      "actual": "Decimal('0')",
+      "expected": "Decimal('0')",
+      "passed": true
+    },
+    {
+      "name": "complete return ('1e-308', '2e-308')",
+      "actual": "Decimal('1')",
+      "expected": "Decimal('1')",
+      "passed": true
+    },
+    {
+      "name": "complete return ('7', '8')",
+      "actual": "Decimal('0.1428571428571428571428571428571429')",
+      "expected": "Decimal('0.1428571428571428571428571428571429')",
+      "passed": true
+    },
+    {
+      "name": "complete return ('2', '0')",
+      "actual": "Decimal('-1')",
+      "expected": "Decimal('-1')",
+      "passed": true
+    },
+    {
+      "name": "complete return ('123456789012345678901234567890', '123456789012345678901234567891')",
+      "actual": "Decimal('8.100000072900000663390006036857155E-30')",
+      "expected": "Decimal('8.100000072900000663390006036857155E-30')",
+      "passed": true
+    },
+    {
+      "name": "ambient context independence",
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')",
+      "passed": true
+    },
+    {
+      "name": "context settings unchanged",
+      "actual": "(2, 'ROUND_HALF_EVEN')",
+      "expected": "(2, 'ROUND_HALF_EVEN')",
+      "passed": true
+    },
+    {
+      "name": "return invalid (1, Decimal('2'))",
+      "actual": "ValueError: Decimal prices required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "return invalid (Decimal('0'), Decimal('1'))",
+      "actual": "ValueError: positive starting price and nonnegative ending price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "return invalid (Decimal('1'), Decimal('-1'))",
+      "actual": "ValueError: positive starting price and nonnegative ending price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "return invalid (Decimal('NaN'), Decimal('1'))",
+      "actual": "ValueError: positive starting price and nonnegative ending price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "return invalid (Decimal('1'), Decimal('Infinity'))",
+      "actual": "ValueError: positive starting price and nonnegative ending price required",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "units cents",
+      "actual": "Fraction(100, 1)",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "percentage",
+      "actual": "Fraction(1, 20)",
+      "expected": "Fraction(1, 20)",
+      "passed": true
+    },
+    {
+      "name": "basis point",
+      "actual": "Fraction(1, 10000)",
+      "expected": "Fraction(1, 10000)",
+      "passed": true
+    }
+  ],
+  "existing_unique_methods": 10,
+  "new_historical_methods": 0,
+  "fixture_sha256": "54e56754dab729b6c7338a5d3ba8dfe1ef0c2a2df8535a0948226d9ef4ff6c3f",
+  "limits": "Synthetic text parser and one price return; no source authenticity,license,live API,Excel/Parquet,point-in-time or supported-platform/independent acceptance"
+}

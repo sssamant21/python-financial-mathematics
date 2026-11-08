@@ -978,3 +978,13 @@ Section8.7 next-item checkpoint: [eight circle/break-even probes](chapter-08-sec
 [V-127 full report](runtime-refresh-2026-11-08-r6.md) at `1c7aa7fb7d3fd229f77ef9d0a03584d010e9f9f2`:591/591 Python files compiled,378/378 check/test scripts passed,592/592 required Python/fixture hashes verified before/after. Includes accumulated V-125/V-126 executable/checker changes. Exact runner,per-file outputs/digests and source manifest retained. Earlier baseline and legacy-predicate failures remain separate. Thirty-five selected COV categories remain partially addressed; none closed. One candidate Linux runtime only; independent mathematical/editorial/platform/release/canonical acceptance remains open.
 
 Next substantive item: [Section8.7 circle/break-even baseline](chapter-08-section-07-circle-break-even-baseline.md),eight actual probes/five mismatches; reconcile numerical and input/output contracts before correction, followed by bond/exposure/centered-copy obligations. Book1 remains separately tracked.
+
+
+## V-128 checkpoint — Circle and break-even output contracts
+
+[Section8.7 implicit follow-up](chapter-08-section-07-circle-break-even-followup.md):142 corrected predicates passed;29 expanded baseline mismatches and identical142-observation replay retained,alongside the original8-probe screen. Complete circle/break-even expressions avoid intermediate range loss; finite-output/signed-zero/composition policies and preserved input domains/priority documented. Chapter8 scope50 compiled/40 scripts passed,50 exact candidate blobs verified before/after. Fresh inventory592/379/593 is not a full run;V-127 remains latest full candidate Linux pass. Thirty-five selected categories partial;none closed.
+
+Next: Section8.7 bond price/derivative/reciprocal-yield sensitivity numerical and input/output contracts,then exposure/slope/centered copy. Conditioning/branch/resource and independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 has separate trackers.
+
+
+Next-item checkpoint: [12 Section8.7 bond probes](chapter-08-section-07-bond-baseline.md) retain actual price/derivative/reciprocal observations against proposed complete represented-base references. No bond correction or pass claimed; reconcile input/base/final-output conventions next.

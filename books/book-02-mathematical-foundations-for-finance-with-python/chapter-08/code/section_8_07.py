@@ -1,5 +1,7 @@
 """Section 8.7: implicit differentiation and financial sensitivity."""
 import math
+from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -16,7 +18,14 @@ def circle_upper(x, radius=5):
     x, radius = finite(x, "x"), finite(radius, "radius")
     if radius <= 0 or abs(x) > radius:
         raise ValueError("radius must be positive and |x| <= radius")
-    return math.sqrt((radius-x)*(radius+x))
+    if abs(x) == radius:
+        return 0.0
+    if x == 0:
+        return radius
+    radicand = (Fraction(radius)-Fraction(x))*(Fraction(radius)+Fraction(x))
+    with localcontext(Context(prec=100)):
+        exact_scale = Decimal(radicand.numerator)/Decimal(radicand.denominator)
+        return finite(float(exact_scale.sqrt()), "circle height")
 
 def circle_slope(x, y):
     x, y = finite(x, "x"), finite(y, "y")
@@ -24,16 +33,25 @@ def circle_slope(x, y):
         raise ValueError("implicit slope undefined where y=0")
     return -x/y
 
-def break_even_quantity(price, variable_cost, fixed_cost):
+def _break_even_inputs(price, variable_cost, fixed_cost):
     p, c, k = finite(price, "price"), finite(variable_cost, "variable_cost"), finite(fixed_cost, "fixed_cost")
     if k <= 0 or p <= c:
         raise ValueError("require fixed_cost > 0 and price > variable_cost")
-    return k/(p-c)
+    return Fraction(p)-Fraction(c), Fraction(k)
+
+def _break_even_report(value):
+    try:
+        return finite(float(value), "break-even result")
+    except OverflowError as exc:
+        raise ValueError("break-even result outside finite float range") from exc
+
+def break_even_quantity(price, variable_cost, fixed_cost):
+    gap, k = _break_even_inputs(price, variable_cost, fixed_cost)
+    return _break_even_report(k/gap)
 
 def break_even_sensitivity(price, variable_cost, fixed_cost):
-    p, c = finite(price, "price"), finite(variable_cost, "variable_cost")
-    q = break_even_quantity(p, c, fixed_cost)
-    return -q/(p-c)
+    gap, k = _break_even_inputs(price, variable_cost, fixed_cost)
+    return _break_even_report(-k/gap**2)
 
 def bond_price(cash_flows, yield_per_period):
     y = finite(yield_per_period, "yield_per_period")
