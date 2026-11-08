@@ -1,0 +1,588 @@
+{
+  "source_sha256": "24c404c7168eac8b119e4cf6a795fe03016aa2c0df94fc462dc50ce3b9ee614d",
+  "listing_sha256": [
+    "6fd6bdb0b377cc4cbfc2238e679b6aaabd940c54079c7d041fbba2e6b63e200f",
+    "4de076f16ac06e0d025a0e007daa57bf3c036976a53fca3a5bb03f3b7c27bed6",
+    "cc84007dc5c4a515145fb2f8dda33f1619517c068eb0fb338ee0bae14e09cd84",
+    "abb4967c2d830bdad467fff7fe31c43081a581979c6601d3f501d7f63708f6c1"
+  ],
+  "python": "3.12.14",
+  "python_implementation": "CPython",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "bit_generator": "PCG64",
+  "commands": [
+    {
+      "label": "exact fence 1",
+      "args": [
+        "example1.py"
+      ],
+      "stdout": "[0.6394267984578837, 0.025010755222666936, 0.27502931836911926, 0.22321073814882275, 0.7364712141640124]\n",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 2",
+      "args": [
+        "example2.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 3",
+      "args": [
+        "example3.py"
+      ],
+      "stdout": "[0.9167441575549085, 0.4674907799518424]\n",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact fence 4",
+      "args": [
+        "reproducible_simulation.py"
+      ],
+      "stdout": "{\"count\":10000,\"down_value\":90,\"generator\":\"random.Random / Mersenne Twister\",\"initial_value\":100,\"mean\":101.914,\"model\":\"two-outcome-terminal-value\",\"python_implementation\":\"CPython\",\"python_version\":\"3.12.14\",\"schema_version\":1,\"seed\":42,\"up_count\":5957,\"up_probability\":0.6,\"up_value\":110}\nmanifest_sha256: e01929a9367342d652ee617ccc88fb4b30bae184f179c18e6e494effe840d62e\n",
+      "stderr": "test_all_down (__main__.ReproducibilityTests.test_all_down) ... ok\ntest_all_up (__main__.ReproducibilityTests.test_all_up) ... ok\ntest_canonical_key_order (__main__.ReproducibilityTests.test_canonical_key_order) ... ok\ntest_digest_changes (__main__.ReproducibilityTests.test_digest_changes) ... ok\ntest_digest_replay (__main__.ReproducibilityTests.test_digest_replay) ... ok\ntest_invalid_count (__main__.ReproducibilityTests.test_invalid_count) ... ok\ntest_invalid_probability (__main__.ReproducibilityTests.test_invalid_probability) ... ok\ntest_replay (__main__.ReproducibilityTests.test_replay) ... ok\ntest_tolerance_fail (__main__.ReproducibilityTests.test_tolerance_fail) ... ok\ntest_tolerance_pass (__main__.ReproducibilityTests.test_tolerance_pass) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+      "returncode": 0,
+      "existing_methods": 10,
+      "passed": true
+    },
+    {
+      "label": "exact module check",
+      "args": [
+        "-c",
+        "import reproducible_simulation"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    },
+    {
+      "label": "exact module check",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "reproducible_simulation.py"
+      ],
+      "stdout": "",
+      "stderr": "",
+      "returncode": 0,
+      "existing_methods": 0,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "shared-generator count (42, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "rational mean (42, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "canonical bytes (42, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "digest of independently encoded fields (42, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "shared-generator count (43, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "rational mean (43, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "canonical bytes (43, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "digest of independently encoded fields (43, 10000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "shared-generator count (42, 10000, 0.5)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "rational mean (42, 10000, 0.5)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "canonical bytes (42, 10000, 0.5)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "digest of independently encoded fields (42, 10000, 0.5)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "shared-generator count (42, 1000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "rational mean (42, 1000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "canonical bytes (42, 1000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "digest of independently encoded fields (42, 1000, 0.6)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "identical manifest replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "identical digest replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "input change seed changes fields/digest",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "input change probability changes fields/digest",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "input change count changes fields/digest",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "ideal mean E7 independent rational",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "ideal mean E8 independent rational",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "all-up source",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "all-down source",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "local generator preserves global state",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "restore complete selected stream",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "extra draw shifts selected sequence",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reset-per-path duplicates first draws",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (100.01, 100, 0.02, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (100.02, 100, 0.01, 0)",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (1.1, 1, 0.1, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (-1.1, -1, 0.1, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (1.2, 1, 0.1, 0.1)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (1.79e+308, -1.79e+308, 1e+308, 1)",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (5e-324, 1e-323, 0, 0.4)",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (1e-10, 0, 1e-10, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (1e-10, 0, 0, 0.001)",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (100.11, 100, 0.01, 0.001)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "displayed-decimal additive tolerance (0, 0, 0, 0)",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject probability huge int",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject probability bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject probability outside",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject seed bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject count bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject count1",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject probability nan",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject comparator huge int",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject comparator bool",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject negative tolerance",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject nonfinite comparator",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reject nonfinite manifest",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "key insertion order digest stable",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "literal manifest encoding oracle",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "known SHA256 empty object oracle",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "encoding distinguishes int and float",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "adding timestamp changes manifest identity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "reduction-order illustration",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "paired differences constant mean10",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "paired variance zero",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "independent-estimates variance differs",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "spawn chosen child draws differ",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "label": "spawn fixed assignment replay",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "manifests": [
+    {
+      "manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 10000,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 5957,
+        "mean": 101.914
+      },
+      "canonical": "{\"count\":10000,\"down_value\":90,\"generator\":\"random.Random / Mersenne Twister\",\"initial_value\":100,\"mean\":101.914,\"model\":\"two-outcome-terminal-value\",\"python_implementation\":\"CPython\",\"python_version\":\"3.12.14\",\"schema_version\":1,\"seed\":42,\"up_count\":5957,\"up_probability\":0.6,\"up_value\":110}",
+      "digest": "e01929a9367342d652ee617ccc88fb4b30bae184f179c18e6e494effe840d62e",
+      "analytical_mean": "102",
+      "limit": "count replay uses the same generator; rational summary/hash checks do not establish statistical independence"
+    },
+    {
+      "manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 43,
+        "count": 10000,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 6027,
+        "mean": 102.054
+      },
+      "canonical": "{\"count\":10000,\"down_value\":90,\"generator\":\"random.Random / Mersenne Twister\",\"initial_value\":100,\"mean\":102.054,\"model\":\"two-outcome-terminal-value\",\"python_implementation\":\"CPython\",\"python_version\":\"3.12.14\",\"schema_version\":1,\"seed\":43,\"up_count\":6027,\"up_probability\":0.6,\"up_value\":110}",
+      "digest": "ab9b5df7389eeb7a1e3127ce16add413fa3460201e5e4765ff5bbf31adbccde4",
+      "analytical_mean": "102",
+      "limit": "count replay uses the same generator; rational summary/hash checks do not establish statistical independence"
+    },
+    {
+      "manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.5,
+        "seed": 42,
+        "count": 10000,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 4990,
+        "mean": 99.98
+      },
+      "canonical": "{\"count\":10000,\"down_value\":90,\"generator\":\"random.Random / Mersenne Twister\",\"initial_value\":100,\"mean\":99.98,\"model\":\"two-outcome-terminal-value\",\"python_implementation\":\"CPython\",\"python_version\":\"3.12.14\",\"schema_version\":1,\"seed\":42,\"up_count\":4990,\"up_probability\":0.5,\"up_value\":110}",
+      "digest": "56dab8ece06ff74e58f827f87eed4be8833f937764d0bfe25dfd587e624e1b77",
+      "analytical_mean": "100",
+      "limit": "count replay uses the same generator; rational summary/hash checks do not establish statistical independence"
+    },
+    {
+      "manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 1000,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 580,
+        "mean": 101.6
+      },
+      "canonical": "{\"count\":1000,\"down_value\":90,\"generator\":\"random.Random / Mersenne Twister\",\"initial_value\":100,\"mean\":101.6,\"model\":\"two-outcome-terminal-value\",\"python_implementation\":\"CPython\",\"python_version\":\"3.12.14\",\"schema_version\":1,\"seed\":42,\"up_count\":580,\"up_probability\":0.6,\"up_value\":110}",
+      "digest": "dbd2e4e2e872bc9585cb63400faa9ca655de85346877e89bfea68684368a3de4",
+      "analytical_mean": "102",
+      "limit": "count replay uses the same generator; rational summary/hash checks do not establish statistical independence"
+    }
+  ],
+  "children": [
+    {
+      "task": 0,
+      "spawn_key": [
+        0
+      ],
+      "draws": [
+        0.9167441575549085,
+        0.9109866676343232,
+        0.8765925046098457,
+        0.3093184096141446,
+        0.9546560744177962
+      ]
+    },
+    {
+      "task": 1,
+      "spawn_key": [
+        1
+      ],
+      "draws": [
+        0.4674907799518424,
+        0.04644889644868733,
+        0.5955100095961371,
+        0.10727525115747005,
+        0.9748964849195676
+      ]
+    }
+  ],
+  "counts": {
+    "workflows": 1,
+    "local_answers": 40,
+    "lab_steps": 12,
+    "existing_unique_methods_rerun": 10,
+    "new_historical_methods": 0
+  },
+  "limits": "Source manifest has no external dataset, code checksum or financial conventions: QA source hashes and fictional-model contract supplement it. No production audit completeness, portable JSON canonicalization standard, cross-platform bitwise replay or independent statistical/model acceptance."
+}
