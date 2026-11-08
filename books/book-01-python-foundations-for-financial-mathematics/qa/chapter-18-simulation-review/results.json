@@ -1,0 +1,507 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "25088ef821e6b88146c3ee22e1d8590a37a0793eb53513c3556e428f3bd9dd06",
+  "listing_sha256": "1306a2b186fb3954d0fa207599903f3b0cf585b3b858b89e8984bc3af0c32d64",
+  "commands": [
+    {
+      "label": "exact demonstration and ten methods",
+      "args": [
+        "simulation_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'count': 10000, 'mean': 99.98, 'sample_sd': 10.000480036483049, 'standard_error': 0.10000480036483049, 'loss_frequency': 0.501}\n",
+      "stderr": "test_all_down (__main__.SimulationTests.test_all_down) ... ok\ntest_all_up (__main__.SimulationTests.test_all_up) ... ok\ntest_bad_count (__main__.SimulationTests.test_bad_count) ... ok\ntest_bad_probability (__main__.SimulationTests.test_bad_probability) ... ok\ntest_bad_rate (__main__.SimulationTests.test_bad_rate) ... ok\ntest_bad_return (__main__.SimulationTests.test_bad_return) ... ok\ntest_constant_standard_error (__main__.SimulationTests.test_constant_standard_error) ... ok\ntest_discount (__main__.SimulationTests.test_discount) ... ok\ntest_known_sample (__main__.SimulationTests.test_known_sample) ... ok\ntest_seed_reproducibility (__main__.SimulationTests.test_seed_reproducibility) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n",
+      "methods": 10,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import simulation_fundamentals"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "simulation_fundamentals.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E9 known sample mean",
+      "passed": true,
+      "actual": 105,
+      "reference": "105",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E10 known loss frequency",
+      "passed": true,
+      "actual": 0.25,
+      "reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "known sample SD",
+      "passed": true,
+      "actual": 10.0,
+      "reference": "10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "known sample standard error",
+      "passed": true,
+      "actual": 5.0,
+      "reference": "5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E8 analytical model mean supplemental",
+      "passed": true,
+      "actual": "100",
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 analytical changed probability mean supplemental",
+      "passed": true,
+      "actual": "102",
+      "reference": "102",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E16 analytical model variance supplemental",
+      "passed": true,
+      "actual": "100",
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E17 theoretical SE supplemental",
+      "passed": true,
+      "actual": "1/10",
+      "reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 source discount",
+      "passed": true,
+      "actual": 100,
+      "reference": "100",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 source discounted expectation",
+      "passed": true,
+      "actual": 90.9090909090909,
+      "reference": "1000/11",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E34 constant sample SE",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E35 equality is not loss",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E36 supplemental compound value",
+      "passed": true,
+      "actual": "99",
+      "reference": "99",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay mean (1000, 42, 0.5)",
+      "passed": true,
+      "actual": 99.6,
+      "reference": "498/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay loss (1000, 42, 0.5)",
+      "passed": true,
+      "actual": 0.52,
+      "reference": "13/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SD (1000, 42, 0.5)",
+      "passed": true,
+      "actual": 9.996996545960188,
+      "reference": "9.9969965459601885340062392668908784262704537337270279216642255766336922486211522171881394471625260466554970676841142084659585294389155949111190709572340132333846765041559351196043502349907866239675246",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SE (1000, 42, 0.5)",
+      "passed": true,
+      "actual": 0.31613278846070353,
+      "reference": "0.31613278846070355050880103345769461117365036480363607484368546687982901215108162821777217379759056698161893097882249276328018541449092089709463539441354810162388351569622386984216771452313672577279187",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay mean (1000, 43, 0.5)",
+      "passed": true,
+      "actual": 100.12,
+      "reference": "2503/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay loss (1000, 43, 0.5)",
+      "passed": true,
+      "actual": 0.494,
+      "reference": "247/500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SD (1000, 43, 0.5)",
+      "passed": true,
+      "actual": 10.004283366922675,
+      "reference": "10.004283366922674571153003730374009597105498340752362792086177764450473230336310616881283417787607519942288363344182325866151831404212748427545128922346294884534821568739792884169486219039004304177887",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SE (1000, 43, 0.5)",
+      "passed": true,
+      "actual": 0.31636321797213673,
+      "reference": "0.31636321797213671294257305683374530266100616221155708976232202113365405107016430749916923681260241075897835663789276894571327651344303760067101631144081543749647440664887043104394680154659113639036968",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay mean (10000, 42, 0.5)",
+      "passed": true,
+      "actual": 99.98,
+      "reference": "4999/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay loss (10000, 42, 0.5)",
+      "passed": true,
+      "actual": 0.501,
+      "reference": "501/1000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SD (10000, 42, 0.5)",
+      "passed": true,
+      "actual": 10.000480036483049,
+      "reference": "10.000480036483049227134458301005789968973763450614441341852484023154538212010263011761289271163076616602256902522358946957949211351877648260011815677967521582810027948707927665788904658853435608567102",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SE (10000, 42, 0.5)",
+      "passed": true,
+      "actual": 0.10000480036483049,
+      "reference": "0.10000480036483049227134458301005789968973763450614441341852484023154538212010263011761289271163076616602256902522358946957949211351877648260011815677967521582810027948707927665788904658853435608567102",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay mean (1000, 42, 0.6)",
+      "passed": true,
+      "actual": 101.6,
+      "reference": "508/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "shared-generator replay loss (1000, 42, 0.6)",
+      "passed": true,
+      "actual": 0.42,
+      "reference": "21/50",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SD (1000, 42, 0.6)",
+      "passed": true,
+      "actual": 9.8761094332504,
+      "reference": "9.8761094332504000225001778474253084942142590714783571022647602998811518491511031872520716225444399626248986728159785552016445466104548462380774885916717377793007378480341249010725427085669303265008006",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "exact-count sample SE (1000, 42, 0.6)",
+      "passed": true,
+      "actual": 0.31231000230145933,
+      "reference": "0.31231000230145933886334483221195805573895346441190747560141240232159117322147435574642213542345713187823768173165736097789571918683441725296604375423604957158137654758591275636306257285758084208073210",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "same seed reproduces sequence",
+      "passed": true
+    },
+    {
+      "label": "local generator preserves global state",
+      "passed": true
+    },
+    {
+      "label": "chosen alternate seed observed different stream",
+      "passed": true,
+      "scope": "observation for these seeds, not all-seed independence proof"
+    },
+    {
+      "label": "E32 all-up outcome",
+      "passed": true
+    },
+    {
+      "label": "E33 all-down outcome",
+      "passed": true
+    },
+    {
+      "label": "E31 initial200 scaling",
+      "passed": true
+    },
+    {
+      "label": "F173 exact integer terminal increment preserved",
+      "passed": true
+    },
+    {
+      "label": "F173 unreachable branch overflow not evaluated",
+      "passed": true,
+      "actual": 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+      "reference": "1e+308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F173 integer summary mean preserved",
+      "passed": true
+    },
+    {
+      "label": "F173 tiny SD remains reportable",
+      "passed": true,
+      "actual": 1.414213562373095e-308,
+      "reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070388503875343276415727350138462309122970249248360558507372126441214970999358314132226659275055927557999505011527820605715E-308",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "true total-loss zero remains valid",
+      "passed": true
+    },
+    {
+      "label": "F173 invalid probability",
+      "passed": true,
+      "exception": "ValueError('probability outside [0,1]')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 invalid count",
+      "passed": true,
+      "exception": "ValueError('at least two samples required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 invalid return below minus1",
+      "passed": true,
+      "exception": "ValueError('positive initial and simple returns >= -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 noninteger seed",
+      "passed": true,
+      "exception": "ValueError('integer seed required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 huge integer input",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 nonzero terminal underflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 nonfinite sample",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 boolean sample",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 boolean threshold",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 malformed sample iterable",
+      "passed": true,
+      "exception": "ValueError('iterable sample required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 malformed sample value",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 unreportable sample SD",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 discount underflow",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 invalid rate",
+      "passed": true,
+      "exception": "ValueError('annual effective rate > -1 required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F173 nonfinite rate",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "process_control_records": 8,
+  "historical_unique_methods_added": 0,
+  "streams": [
+    {
+      "count": 1000,
+      "seed": 42,
+      "up_probability": 0.5,
+      "up_count": 480,
+      "summary": {
+        "count": 1000,
+        "mean": 99.6,
+        "sample_sd": 9.996996545960188,
+        "standard_error": 0.31613278846070353,
+        "loss_frequency": 0.52
+      },
+      "sample_sha256": "5776c2dc34deca18670c2d076f81b051b0c12cdf8829cfa503bfcb7660809655",
+      "oracle_limit": "replays same random.Random generator; verifies mapping/arithmetic, not independent randomness/distribution quality"
+    },
+    {
+      "count": 1000,
+      "seed": 43,
+      "up_probability": 0.5,
+      "up_count": 506,
+      "summary": {
+        "count": 1000,
+        "mean": 100.12,
+        "sample_sd": 10.004283366922675,
+        "standard_error": 0.31636321797213673,
+        "loss_frequency": 0.494
+      },
+      "sample_sha256": "4d8c469a3156e573ceb251a2053f0fdb027db4f752c8e8fa90d982497ef058a6",
+      "oracle_limit": "replays same random.Random generator; verifies mapping/arithmetic, not independent randomness/distribution quality"
+    },
+    {
+      "count": 10000,
+      "seed": 42,
+      "up_probability": 0.5,
+      "up_count": 4990,
+      "summary": {
+        "count": 10000,
+        "mean": 99.98,
+        "sample_sd": 10.000480036483049,
+        "standard_error": 0.10000480036483049,
+        "loss_frequency": 0.501
+      },
+      "sample_sha256": "f44f16e9322e495be15efe10af25b184f451f1a1a82558c7bfbdfbd1bc75e31c",
+      "oracle_limit": "replays same random.Random generator; verifies mapping/arithmetic, not independent randomness/distribution quality"
+    },
+    {
+      "count": 1000,
+      "seed": 42,
+      "up_probability": 0.6,
+      "up_count": 580,
+      "summary": {
+        "count": 1000,
+        "mean": 101.6,
+        "sample_sd": 9.8761094332504,
+        "standard_error": 0.31231000230145933,
+        "loss_frequency": 0.42
+      },
+      "sample_sha256": "7d0e5efc2d2bc83480fb033ef7b10ef19b4b6589ac20e638214c82029a1f0c4b",
+      "oracle_limit": "replays same random.Random generator; verifies mapping/arithmetic, not independent randomness/distribution quality"
+    }
+  ],
+  "model": {
+    "initial": 100,
+    "returns": [
+      0.1,
+      -0.1
+    ],
+    "probabilities": [
+      0.5,
+      0.5
+    ],
+    "theoretical_mean": 100,
+    "theoretical_sd": 10,
+    "theoretical_SE_at10000": 0.1,
+    "loss_definition": "terminal < initial",
+    "units": "fictional common currency, one-year simple returns, annual-effective discount rate.1",
+    "timing": "one-year terminal outcome; no market/as-of data or measure calibration"
+  },
+  "statistical_limits": "No requirement that every larger run be closer, no nominal interval coverage test or RNG independence proof; same-generator replay is not an independent statistical reference."
+}
