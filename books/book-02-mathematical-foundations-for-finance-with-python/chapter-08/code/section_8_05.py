@@ -1,7 +1,7 @@
 """Section 8.5: exponential and logarithmic derivatives in finance."""
 import math
 from fractions import Fraction
-from section_8_01 import _scaled_pv
+from section_8_01 import _scaled_pv, centered_difference as _centered_difference
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -124,10 +124,7 @@ def stable_exponential_difference_quotient(x, step):
 def centered_difference(function, x, step=1e-4):
     if not callable(function):
         raise TypeError("function must be callable")
-    x, h = finite(x, "x"), finite(step, "step")
-    if h == 0:
-        raise ValueError("step must be nonzero")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    return _centered_difference(function, x, step)
 
 if __name__ == "__main__":
     print("Derivative of 7e^(3x) at x=1:", exponential_derivative(1, 7, 3))
