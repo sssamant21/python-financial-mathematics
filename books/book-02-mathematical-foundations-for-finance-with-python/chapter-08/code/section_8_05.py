@@ -25,7 +25,15 @@ def logarithm_derivative(x, offset=1.0, slope=2.0):
     u = a+b*x
     if u <= 0:
         raise ValueError("logarithm argument must be positive")
-    return b/u
+    # Preserve the existing rounded-argument domain gate above.
+    argument = Fraction(a)+Fraction(b)*Fraction(x)
+    if b == 0:
+        return b
+    try:
+        result = float(Fraction(b)/argument)
+    except OverflowError as exc:
+        raise ValueError("logarithm derivative outside finite float range") from exc
+    return finite(result, "logarithm derivative")
 
 def accumulation(principal, rate, years):
     p, r, t = finite(principal, "principal"), finite(rate, "rate"), finite(years, "years")
