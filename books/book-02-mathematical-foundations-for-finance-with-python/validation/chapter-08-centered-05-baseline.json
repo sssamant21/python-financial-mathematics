@@ -1,0 +1,79 @@
+{
+  "source_revision": "67cfc7f76615c8144d200c0b9478547b894fe506",
+  "source_blob": "21eda96c3f8b2f7cfd8488646ba2b16dec5db225",
+  "observations": [
+    {
+      "case": "large-positive",
+      "x": 0,
+      "step": 1.7976931348623157e+308,
+      "expected": 1,
+      "expected_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ],
+      "actual": "nan",
+      "actual_calls": [
+        1.7976931348623157e+308,
+        -1.7976931348623157e+308
+      ]
+    },
+    {
+      "case": "large-negative",
+      "x": 0,
+      "step": -1.7976931348623157e+308,
+      "expected": 1,
+      "expected_calls": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ],
+      "actual": "nan",
+      "actual_calls": [
+        -1.7976931348623157e+308,
+        1.7976931348623157e+308
+      ]
+    },
+    {
+      "case": "collapsed",
+      "x": 1,
+      "step": 5e-324,
+      "expected": "ValueError",
+      "expected_calls": [],
+      "actual": 0,
+      "actual_calls": [
+        1,
+        1
+      ]
+    },
+    {
+      "case": "nonfinite-point",
+      "x": 1.7976931348623157e+308,
+      "step": 1.7976931348623157e+308,
+      "expected": "ValueError",
+      "expected_calls": [],
+      "actual": "ValueError",
+      "actual_calls": [
+        "inf"
+      ]
+    },
+    {
+      "case": "default",
+      "x": 1,
+      "step": null,
+      "expected": 0.9999999999998899,
+      "expected_calls": [
+        1.0001,
+        0.9999
+      ],
+      "actual": 0.9999999999998899,
+      "actual_calls": [
+        1.0001,
+        0.9999
+      ]
+    }
+  ],
+  "reference_method": "Exact rational sampled identity quotient from independently rounded perturbations; explicit desired preflight for finite/distinct points, requiring no callbacks before rejection. Default-step expectation is the sampled quotient, not the analytic derivative.",
+  "pinned_probe_matched_local": true,
+  "required_source_and_dependency_hashes_verified": true,
+  "runnable_probe": "import json,math,sys\nfrom fractions import Fraction\nimport section_8_05 as s\nT,M=math.ulp(0.),sys.float_info.max\ncases=[(\"large-positive\",0.,M),(\"large-negative\",0.,-M),(\"collapsed\",1.,T),(\"nonfinite-point\",M,M),(\"default\",1.,None)]\ndef tok(x):return repr(x) if not math.isfinite(x) else x\nrows=[]\nfor name,x,h in cases:\n step=1e-4 if h is None else h\n up,down=x+step,x-step\n if not math.isfinite(up) or not math.isfinite(down) or up==x or down==x:\n  expected=\"ValueError\";expected_calls=[]\n else:\n  expected=float((Fraction(up)-Fraction(down))/(2*Fraction(step)));expected_calls=[up,down]\n calls=[]\n def identity(z):calls.append(tok(z));return z\n try:actual=s.centered_difference(identity,x) if h is None else s.centered_difference(identity,x,h)\n except Exception as exc:actual=type(exc).__name__\n if type(actual) is float and not math.isfinite(actual):actual=repr(actual)\n rows.append(dict(case=name,x=x,step=h,expected=expected,expected_calls=expected_calls,actual=actual,actual_calls=calls))\nprint(json.dumps(rows,indent=2,allow_nan=False))\n",
+  "limits": "Five selected observations: two numerical NaN failures, two explicit preflight requirements and one default-step control. Not fixed; next batch."
+}
