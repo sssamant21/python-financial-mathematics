@@ -1,0 +1,5007 @@
+{
+  "validation": "V-121",
+  "date": "2026-11-08",
+  "baseline_revision": "35be44f1096e4da87ba2b75c8f87a9e903cc230a",
+  "baseline_source_blob": "39268cf39d2ad15549b98a5bb6b3bb1698e2c329",
+  "executable_source_revision": "5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b",
+  "baseline_reproduction_files": [
+    [
+      "section_8_06.py",
+      "35be44f1096e4da87ba2b75c8f87a9e903cc230a",
+      "39268cf39d2ad15549b98a5bb6b3bb1698e2c329"
+    ],
+    [
+      "section_8_01.py",
+      "35be44f1096e4da87ba2b75c8f87a9e903cc230a",
+      "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    ],
+    [
+      "check_section_06_pv_range.py",
+      "5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b",
+      "df0972abb12d058241161454d0ec73d2f5992c09"
+    ]
+  ],
+  "baseline": {
+    "reference": "Independent complete log-amplitude at Decimal 1600/2200 digits",
+    "tolerance": "4e-15 relative, no absolute floor; exact signs/error types",
+    "observations": [
+      {
+        "case": 0,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 0,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.9466889146000326e+114,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 1,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          375
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          375
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -8.988465674311579e+307,
+          1e-323
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -8.988465674311579e+307,
+          1e-323
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.776356839400252e-15,
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "present_value",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "present_value",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 5,
+        "function": "present_value",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "present_value",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 8,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 9,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 10,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          -1,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          -1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 11,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          -1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          5e-324,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          5e-324,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": -8.881784197001251e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 1.7976931348623141e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623141e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 17,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 17,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 18,
+        "function": "present_value",
+        "args": [
+          10000,
+          0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 8187.307530779819,
+        "expected_zero_sign": null,
+        "actual": 8187.307530779818,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "pv_rate_first",
+        "args": [
+          10000,
+          0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -40936.53765389909,
+        "expected_zero_sign": null,
+        "actual": -40936.53765389909,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "present_value",
+        "args": [
+          10000,
+          -0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 12214.027581601698,
+        "expected_zero_sign": null,
+        "actual": 12214.027581601698,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "pv_rate_first",
+        "args": [
+          10000,
+          -0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -61070.137908008495,
+        "expected_zero_sign": null,
+        "actual": -61070.13790800849,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "present_value",
+        "args": [
+          3,
+          -1,
+          708
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.070149432828166e+307,
+        "expected_zero_sign": null,
+        "actual": 9.070149432828166e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "pv_rate_first",
+        "args": [
+          3,
+          -1,
+          708
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "present_value",
+        "args": [
+          3,
+          -1,
+          710
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "pv_rate_first",
+        "args": [
+          3,
+          -1,
+          710
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 22,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          372
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 2e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 22,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          372
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -5.706e-321,
+        "expected_zero_sign": null,
+        "actual": -7.35e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 23,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          373
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          373
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -7.76e-322,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.8250032925935892e-123,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          2900
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          2900
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          3000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          3000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 27,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "present_value",
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 29,
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -2.7263745721125602e+247,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 30,
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0.3678794411714423,
+        "expected_zero_sign": null,
+        "actual": 0.36787944117144233,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -3.678794411714423,
+        "expected_zero_sign": null,
+        "actual": -3.6787944117144233,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "function": "present_value",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0.7357588823428847,
+        "expected_zero_sign": null,
+        "actual": 0.7357588823428848,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -7.357588823428847,
+        "expected_zero_sign": null,
+        "actual": -7.357588823428848,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "contract": "independent complete first sensitivity",
+        "expected": -4.852245277701067,
+        "actual": "AssertionError",
+        "exception_message": "first derivative called rounded present_value",
+        "passed": false
+      }
+    ]
+  },
+  "baseline_replay": {
+    "reference": "Independent complete log-amplitude at Decimal 1600/2200 digits",
+    "tolerance": "4e-15 relative, no absolute floor; exact signs/error types",
+    "observations": [
+      {
+        "case": 0,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 0,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.9466889146000326e+114,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 1,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          375
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          375
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -8.988465674311579e+307,
+          1e-323
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 2,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -8.988465674311579e+307,
+          1e-323
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.776356839400252e-15,
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "present_value",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 3,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "present_value",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 4,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": "nan",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 5,
+        "function": "present_value",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "present_value",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 8,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 9,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 10,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          -1,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          -1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 11,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          -1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          5e-324,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          5e-324,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": -8.881784197001251e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 1.7976931348623141e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623141e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 17,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 17,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 18,
+        "function": "present_value",
+        "args": [
+          10000,
+          0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 8187.307530779819,
+        "expected_zero_sign": null,
+        "actual": 8187.307530779818,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "pv_rate_first",
+        "args": [
+          10000,
+          0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -40936.53765389909,
+        "expected_zero_sign": null,
+        "actual": -40936.53765389909,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "present_value",
+        "args": [
+          10000,
+          -0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 12214.027581601698,
+        "expected_zero_sign": null,
+        "actual": 12214.027581601698,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "pv_rate_first",
+        "args": [
+          10000,
+          -0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -61070.137908008495,
+        "expected_zero_sign": null,
+        "actual": -61070.13790800849,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "present_value",
+        "args": [
+          3,
+          -1,
+          708
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.070149432828166e+307,
+        "expected_zero_sign": null,
+        "actual": 9.070149432828166e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "pv_rate_first",
+        "args": [
+          3,
+          -1,
+          708
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "-inf",
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "present_value",
+        "args": [
+          3,
+          -1,
+          710
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 21,
+        "function": "pv_rate_first",
+        "args": [
+          3,
+          -1,
+          710
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 22,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          372
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 2e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 22,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          372
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -5.706e-321,
+        "expected_zero_sign": null,
+        "actual": -7.35e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 23,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          373
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          373
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -7.76e-322,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 24,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.8250032925935892e-123,
+        "expected_zero_sign": null,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          2900
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 25,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          2900
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          3000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 26,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          3000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 27,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "present_value",
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 29,
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -2.7263745721125602e+247,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
+        "case": 30,
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0.3678794411714423,
+        "expected_zero_sign": null,
+        "actual": 0.36787944117144233,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -3.678794411714423,
+        "expected_zero_sign": null,
+        "actual": -3.6787944117144233,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "function": "present_value",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0.7357588823428847,
+        "expected_zero_sign": null,
+        "actual": 0.7357588823428848,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -7.357588823428847,
+        "expected_zero_sign": null,
+        "actual": -7.357588823428848,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "contract": "independent complete first sensitivity",
+        "expected": -4.852245277701067,
+        "actual": "AssertionError",
+        "exception_message": "first derivative called rounded present_value",
+        "passed": false
+      }
+    ]
+  },
+  "corrected": {
+    "reference": "Independent complete log-amplitude at Decimal 1600/2200 digits",
+    "tolerance": "4e-15 relative, no absolute floor; exact signs/error types",
+    "observations": [
+      {
+        "case": 0,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.733444573000164e+110,
+        "expected_zero_sign": null,
+        "actual": 9.733444573000164e+110,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 0,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.9466889146000326e+114,
+        "expected_zero_sign": null,
+        "actual": -1.9466889146000326e+114,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          375
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 1,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          375
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.5e-323,
+        "expected_zero_sign": null,
+        "actual": -1.5e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 2,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -8.988465674311579e+307,
+          1e-323
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 2,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -8.988465674311579e+307,
+          1e-323
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.776356839400252e-15,
+        "expected_zero_sign": null,
+        "actual": -1.776356839400252e-15,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 3,
+        "function": "present_value",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 3,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 4,
+        "function": "present_value",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 4,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          -8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "present_value",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 5,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "present_value",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 6,
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          8.988465674311579e+307,
+          8.988465674311579e+307
+        ],
+        "args_zero_signs": [
+          -1,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 7,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 8,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -1.7976931348623157e+308,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 9,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          -1,
+          null
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 10,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          -1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result outside finite float range",
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 11,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          -1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 12,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1.7976931348623157e+308,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          -1
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 13,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          0,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          1,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          5e-324,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 14,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          5e-324,
+          5e-324
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 15,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -8.88178419700126e-16,
+        "expected_zero_sign": null,
+        "actual": -8.88178419700126e-16,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 1.7976931348623141e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623141e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 16,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 17,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          -5e-324,
+          1.7976931348623157e+308
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "present_value",
+        "args": [
+          10000,
+          0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 8187.307530779819,
+        "expected_zero_sign": null,
+        "actual": 8187.307530779819,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 18,
+        "function": "pv_rate_first",
+        "args": [
+          10000,
+          0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -40936.53765389909,
+        "expected_zero_sign": null,
+        "actual": -40936.53765389909,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "present_value",
+        "args": [
+          10000,
+          -0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 12214.027581601698,
+        "expected_zero_sign": null,
+        "actual": 12214.027581601698,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 19,
+        "function": "pv_rate_first",
+        "args": [
+          10000,
+          -0.04,
+          5
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -61070.137908008495,
+        "expected_zero_sign": null,
+        "actual": -61070.137908008495,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "present_value",
+        "args": [
+          3,
+          -1,
+          708
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.070149432828166e+307,
+        "expected_zero_sign": null,
+        "actual": 9.070149432828166e+307,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 20,
+        "function": "pv_rate_first",
+        "args": [
+          3,
+          -1,
+          708
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 21,
+        "function": "present_value",
+        "args": [
+          3,
+          -1,
+          710
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 21,
+        "function": "pv_rate_first",
+        "args": [
+          3,
+          -1,
+          710
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          372
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 1.5e-323,
+        "expected_zero_sign": null,
+        "actual": 1.5e-323,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 22,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          372
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -5.706e-321,
+        "expected_zero_sign": null,
+        "actual": -5.706e-321,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "present_value",
+        "args": [
+          2,
+          2,
+          373
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0,
+        "expected_zero_sign": 1,
+        "actual": 0,
+        "actual_zero_sign": 1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 23,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          2,
+          373
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -7.76e-322,
+        "expected_zero_sign": null,
+        "actual": -7.76e-322,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 9.125016462967946e-127,
+        "expected_zero_sign": null,
+        "actual": 9.125016462967946e-127,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 24,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          0.5,
+          2000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -1.8250032925935892e-123,
+        "expected_zero_sign": null,
+        "actual": -1.8250032925935892e-123,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          2900
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 2.6350169706336343e+306,
+        "expected_zero_sign": null,
+        "actual": 2.6350169706336343e+306,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 25,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          2900
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 26,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          -0.5,
+          3000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 26,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          -0.5,
+          3000
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "present_value",
+        "args": [
+          5e-324,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 5e-324,
+        "expected_zero_sign": null,
+        "actual": 5e-324,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 27,
+        "function": "pv_rate_first",
+        "args": [
+          5e-324,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "present_value",
+        "args": [
+          1.7976931348623157e+308,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 1.7976931348623157e+308,
+        "expected_zero_sign": null,
+        "actual": 1.7976931348623157e+308,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 28,
+        "function": "pv_rate_first",
+        "args": [
+          1.7976931348623157e+308,
+          1,
+          0
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          1
+        ],
+        "expected": 0,
+        "expected_zero_sign": -1,
+        "actual": 0,
+        "actual_zero_sign": -1,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "present_value",
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_zero_sign": null,
+        "actual": "ValueError",
+        "actual_zero_sign": null,
+        "exception_message": "PV result must be finite",
+        "passed": true
+      },
+      {
+        "case": 29,
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -2.7263745721125602e+247,
+        "expected_zero_sign": null,
+        "actual": -2.7263745721125602e+247,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0.3678794411714423,
+        "expected_zero_sign": null,
+        "actual": 0.3678794411714423,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 30,
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -3.678794411714423,
+        "expected_zero_sign": null,
+        "actual": -3.678794411714423,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "function": "present_value",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 0.7357588823428847,
+        "expected_zero_sign": null,
+        "actual": 0.7357588823428847,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "case": 31,
+        "function": "pv_rate_first",
+        "args": [
+          2,
+          0.09999999999999999,
+          10
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": -7.357588823428847,
+        "expected_zero_sign": null,
+        "actual": -7.357588823428847,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          true,
+          0.1,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          true,
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          true
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          -1,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          "inf",
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          "nan",
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          "inf"
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years must be finite",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          null,
+          0.1,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment",
+        "actual": "ValueError",
+        "exception_message": "payment outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          null,
+          1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "rate",
+        "actual": "ValueError",
+        "exception_message": "rate outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          1,
+          0.1,
+          null
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "years",
+        "actual": "ValueError",
+        "exception_message": "years outside finite float range",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          "bad",
+          1
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "rate",
+        "actual": "TypeError",
+        "exception_message": "rate must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          0,
+          0.1,
+          -1
+        ],
+        "expected": "ValueError",
+        "expected_message_prefix": "payment and years",
+        "actual": "ValueError",
+        "exception_message": "payment and years must be nonnegative",
+        "passed": true
+      },
+      {
+        "function": "present_value",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "payment",
+        "actual": "TypeError",
+        "exception_message": "payment must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "function": "pv_rate_first",
+        "args": [
+          "bad",
+          true,
+          "bad"
+        ],
+        "expected": "TypeError",
+        "expected_message_prefix": "years",
+        "actual": "TypeError",
+        "exception_message": "years must be numeric, excluding bool",
+        "passed": true
+      },
+      {
+        "contract": "independent complete first sensitivity",
+        "expected": -4.852245277701067,
+        "actual": -4.852245277701067,
+        "exception_message": null,
+        "passed": true
+      }
+    ]
+  },
+  "baseline_replay_byte_identical": true,
+  "pinned_corrected_matches_local": true,
+  "raw_stdout_sha256": {
+    "baseline.json": "35e60842de1b1c9794619227fa8f3b9df8b01cd66d4ba669d425a5984de08c89",
+    "baseline-replay.json": "35e60842de1b1c9794619227fa8f3b9df8b01cd66d4ba669d425a5984de08c89",
+    "corrected.json": "a7ba85f45380beb38d6504a90cb7fba5ee35d18c54fc8611bc8388d13a6c5283"
+  },
+  "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-localpv121/baseline/check_section_06_pv_range.py\", line 90, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-localpv121/baseline/check_section_06_pv_range.py\", line 88, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 31 mismatches\n",
+  "replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-localpv121/baseline/check_section_06_pv_range.py\", line 90, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-localpv121/baseline/check_section_06_pv_range.py\", line 88, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 31 mismatches\n",
+  "corrected_stderr": "",
+  "pinned_stdout_sha256": "a7ba85f45380beb38d6504a90cb7fba5ee35d18c54fc8611bc8388d13a6c5283",
+  "limits": "93 selected local Section 8.6 PV/first-derivative checks; 31 baseline mismatches include one independence requirement and final-output policy differences, not distinct defect counts. Full runtime recorded separately. 35 selected COV categories partial; none closed. No independent/platform/release/canonical approval."
+}
