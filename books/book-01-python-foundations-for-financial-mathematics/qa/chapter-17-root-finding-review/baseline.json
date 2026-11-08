@@ -1,0 +1,476 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "source_sha256": "69ed99571a14b1b3919df45a077aad974d875407a5917aa86c642ae5d5dc2815",
+  "listing_sha256": "ec12b7d262b3cd469154f9023c7a83fb20605db27845e2b4d4bfba22223d74b9",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "numerical_root_finding.py"
+      ],
+      "returncode": 0,
+      "stdout": "Bisection: {'root': 1.4142135623724243, 'residual': -1.8969270598745425e-12, 'iterations': 41, 'converged': True, 'bracket': (1.4142135623715149, 1.4142135623733338)}\nNewton: {'root': 1.4142135623746899, 'residual': 4.510614104447086e-12, 'iterations': 4, 'converged': True}\nSecant: {'root': 1.4142135623730954, 'residual': 8.881784197001252e-16, 'iterations': 6, 'converged': True}\nIRR: {'root': 0.10000000000013635, 'residual': -1.240607616637135e-11, 'iterations': 41, 'converged': True, 'bracket': (0.09999999999927234, 0.10000000000100037)}\n",
+      "stderr": "test_01_bisection (__main__.RootFindingTests.test_01_bisection) ... ok\ntest_02_newton (__main__.RootFindingTests.test_02_newton) ... ok\ntest_03_secant (__main__.RootFindingTests.test_03_secant) ... ok\ntest_04_irr (__main__.RootFindingTests.test_04_irr) ... ok\ntest_05_endpoint (__main__.RootFindingTests.test_05_endpoint) ... ok\ntest_06_bad_bracket (__main__.RootFindingTests.test_06_bad_bracket) ... ok\ntest_07_zero_derivative (__main__.RootFindingTests.test_07_zero_derivative) ... ok\ntest_08_domain (__main__.RootFindingTests.test_08_domain) ... ok\ntest_09_secant_slope (__main__.RootFindingTests.test_09_secant_slope) ... ok\ntest_10_npv (__main__.RootFindingTests.test_10_npv) ... ok\ntest_11_multi_irr (__main__.RootFindingTests.test_11_multi_irr) ... ok\ntest_12_iteration_limit (__main__.RootFindingTests.test_12_iteration_limit) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent isolated import",
+      "args": [
+        "-c",
+        "import numerical_root_finding"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "numerical_root_finding.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "lab bisection root",
+      "passed": true,
+      "actual": 1.4142135623724243,
+      "reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab bisection original residual",
+      "passed": true,
+      "actual": -1.8969270598745425e-12,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab newton root",
+      "passed": true,
+      "actual": 1.4142135623746899,
+      "reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab newton original residual",
+      "passed": true,
+      "actual": 4.510614104447086e-12,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab secant root",
+      "passed": true,
+      "actual": 1.4142135623730954,
+      "reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab secant original residual",
+      "passed": true,
+      "actual": 8.881784197001252e-16,
+      "reference": "0",
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E3 first midpoint",
+      "passed": true,
+      "actual": "3/2",
+      "reference": "3/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E3 residual",
+      "passed": true,
+      "actual": "1/4",
+      "reference": "1/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 second midpoint",
+      "passed": true,
+      "actual": "5/4",
+      "reference": "5/4",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E4 residual",
+      "passed": true,
+      "actual": "-7/16",
+      "reference": "-7/16",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E5 ten retained halvings width",
+      "passed": true,
+      "actual": "1/1024",
+      "reference": "1/1024",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E6 midpoint bound",
+      "passed": true,
+      "actual": "1/2048",
+      "reference": "1/2048",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 Newton first update",
+      "passed": true,
+      "actual": "3/2",
+      "reference": "3/2",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 second update",
+      "passed": true,
+      "actual": "17/12",
+      "reference": "17/12",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E23 residual",
+      "passed": true,
+      "actual": "-1/25",
+      "reference": "-1/25",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E24 root error",
+      "passed": true,
+      "actual": "0.01421356237309504880168872421",
+      "reference": "0.01421356237309504880168872421",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 lab IRR",
+      "passed": true,
+      "actual": 0.10000000000013635,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E18 source NPV",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E21 separate bracket 0.05",
+      "passed": true,
+      "actual": 0.1000000000007276,
+      "reference": "1/10",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E21 substitute 1/10",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E21 separate bracket 0.15",
+      "passed": true,
+      "actual": 0.2000000000007276,
+      "reference": "1/5",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E21 substitute 1/5",
+      "passed": true,
+      "actual": 1.4210854715202004e-14,
+      "reference": "0",
+      "absolute_tolerance": 1e-12,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "F160 stable wide midpoint",
+      "passed": false,
+      "exception": "ValueError('nonfinite function value')",
+      "reference": "0"
+    },
+    {
+      "label": "F160 Newton tiny nonzero derivative",
+      "passed": false,
+      "exception": "ValueError('zero or invalid derivative')",
+      "reference": "2"
+    },
+    {
+      "label": "F160 secant large coordinates",
+      "passed": false,
+      "exception": "ValueError('nonfinite secant step')",
+      "reference": "0"
+    },
+    {
+      "label": "F160 secant first guess already root",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F160 NPV preserves integer cancellation",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F160 NPV tiny rate",
+      "passed": false,
+      "actual": 0.0,
+      "reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F160 NPV avoids power overflow",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')",
+      "reference": "1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "label": "F160 Newton large step finite destination",
+      "passed": false,
+      "exception": "ValueError('nonfinite Newton step')",
+      "reference": "-1e+308"
+    },
+    {
+      "label": "F160 secant function difference overflow",
+      "passed": false,
+      "exception": "ValueError('nonfinite secant step')",
+      "reference": "0"
+    },
+    {
+      "label": "F160 no bracket",
+      "passed": true,
+      "exception": "ValueError('no sign change')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 even multiplicity no bracket",
+      "passed": true,
+      "exception": "ValueError('no sign change')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 zero derivative",
+      "passed": true,
+      "exception": "ValueError('zero or invalid derivative')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 Newton domain",
+      "passed": true,
+      "exception": "ValueError('iterate outside domain')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 secant zero slope",
+      "passed": true,
+      "exception": "ValueError('zero secant slope')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 invalid NPV domain",
+      "passed": true,
+      "exception": "ValueError('finite rate > -1 and finite cash flows required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 bisection iteration budget",
+      "passed": true,
+      "exception": "RuntimeError('bisection iteration limit')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F160 bisection float stagnation",
+      "passed": true,
+      "exception": "RuntimeError('bisection iteration limit')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F160 Newton float stagnation",
+      "passed": true,
+      "exception": "RuntimeError('Newton iteration limit')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F160 secant float stagnation",
+      "passed": false,
+      "exception": "ValueError('zero secant slope')",
+      "expected_exception": "RuntimeError"
+    },
+    {
+      "label": "F160 huge integer coordinate",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 unrepresentable integer coordinate",
+      "passed": true,
+      "exception": "ValueError('no sign change')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 all zero IRR",
+      "passed": false,
+      "actual": "{'root': -0.9, 'residual': 0.0, 'iterations': 0, 'converged': True, 'bracket': (-0.9, 1)}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 IRR invalid string bound",
+      "passed": false,
+      "exception": "TypeError(\"'<=' not supported between instances of 'str' and 'int'\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 NPV unreportable nonzero",
+      "passed": false,
+      "actual": "0.0",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 boolean callback",
+      "passed": true,
+      "exception": "ValueError('nonfinite endpoint')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 boolean derivative",
+      "passed": true,
+      "exception": "ValueError('zero or invalid derivative')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 noncallable function",
+      "passed": false,
+      "exception": "TypeError(\"'NoneType' object is not callable\")",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F160 nonboolean domain decision",
+      "passed": false,
+      "actual": "{'root': 1.0, 'residual': 0.0, 'iterations': 1, 'converged': True}",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "discontinuity can meet interval rule without zero residual",
+      "passed": true,
+      "result": {
+        "root": 0.3000000000001819,
+        "residual": 1,
+        "iterations": 40,
+        "converged": true,
+        "bracket": [
+          0.2999999999992724,
+          0.3000000000010914
+        ]
+      },
+      "limit": "not evidence of a mathematical root"
+    },
+    {
+      "label": "bisection explicit termination and radius",
+      "passed": false
+    },
+    {
+      "label": "E25 tiny residual can accept inaccurate root",
+      "passed": true,
+      "root_error": 2,
+      "result": {
+        "root": 0,
+        "residual": -2e-20,
+        "iterations": 0,
+        "converged": true
+      }
+    }
+  ],
+  "lab_results": [
+    {
+      "method": "bisection",
+      "result": {
+        "root": 1.4142135623724243,
+        "residual": -1.8969270598745425e-12,
+        "iterations": 40,
+        "converged": true,
+        "bracket": [
+          1.4142135623715149,
+          1.4142135623733338
+        ]
+      }
+    },
+    {
+      "method": "newton",
+      "result": {
+        "root": 1.4142135623746899,
+        "residual": 4.510614104447086e-12,
+        "iterations": 4,
+        "converged": true
+      }
+    },
+    {
+      "method": "secant",
+      "result": {
+        "root": 1.4142135623730954,
+        "residual": 8.881784197001252e-16,
+        "iterations": 6,
+        "converged": true
+      }
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0
+}
