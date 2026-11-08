@@ -1,0 +1,491 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "d9a9aa9212522556cd865745c9eb07595bdcc9035a7834e6ac8b85579ca19bdc",
+  "listing_sha256": "8f6ebf5e66c050bbd53d04f6cc04f038165b136fc5db2df500ca49495dd233a8",
+  "commands": [
+    {
+      "label": "exact demonstration and 12 embedded tests",
+      "args": [
+        "why_numerical_methods_are_needed.py"
+      ],
+      "returncode": 0,
+      "stdout": "IRR example: {'root': 0.10000000000013641, 'iterations': 41, 'residual': -1.240607616637135e-11}\nIntegral: 0.3333335\nGrid: {'x': 0.3, 'value': 0.0, 'grid_spacing': 0.1}\n",
+      "stderr": "test_01_npv (__main__.NumericalMotivationTests.test_01_npv) ... ok\ntest_02_irr (__main__.NumericalMotivationTests.test_02_irr) ... ok\ntest_03_bisection (__main__.NumericalMotivationTests.test_03_bisection) ... ok\ntest_04_exact_endpoint (__main__.NumericalMotivationTests.test_04_exact_endpoint) ... ok\ntest_05_bad_bracket (__main__.NumericalMotivationTests.test_05_bad_bracket) ... ok\ntest_06_bad_rate (__main__.NumericalMotivationTests.test_06_bad_rate) ... ok\ntest_07_trapezoid_linear (__main__.NumericalMotivationTests.test_07_trapezoid_linear) ... ok\ntest_08_trapezoid_quadratic (__main__.NumericalMotivationTests.test_08_trapezoid_quadratic) ... ok\ntest_09_grid (__main__.NumericalMotivationTests.test_09_grid) ... ok\ntest_10_grid_spacing (__main__.NumericalMotivationTests.test_10_grid_spacing) ... ok\ntest_11_iteration_limit (__main__.NumericalMotivationTests.test_11_iteration_limit) ... ok\ntest_12_multiple_irr_warning (__main__.NumericalMotivationTests.test_12_multiple_irr_warning) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "isolated import",
+      "args": [
+        "-c",
+        "import why_numerical_methods_are_needed"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact compilation",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "why_numerical_methods_are_needed.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "E1 source NPV at ten percent",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "independent_reference": "0",
+      "absolute_dollar_tolerance": 1e-12
+    },
+    {
+      "label": "E30 original-equation residual",
+      "passed": true,
+      "actual": 1.240607616637135e-11,
+      "independent_reference": "248121523327427/20000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab IRR independently bounded root error",
+      "passed": true,
+      "actual": {
+        "root": 0.10000000000013641,
+        "iterations": 41,
+        "residual": -1.240607616637135e-11
+      },
+      "reference": "1/10",
+      "absolute_root_tolerance": "1e-12"
+    },
+    {
+      "label": "lab sqrt2 root absolute error 1e-06",
+      "passed": true,
+      "actual": {
+        "root": 1.4142141342163086,
+        "iterations": 21,
+        "residual": 1.6174171832972206e-06
+      },
+      "independent_reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070"
+    },
+    {
+      "label": "lab sqrt2 root absolute error 1e-09",
+      "passed": true,
+      "actual": {
+        "root": 1.4142135614529252,
+        "iterations": 31,
+        "residual": -2.6026334420947705e-09
+      },
+      "independent_reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070"
+    },
+    {
+      "label": "lab sqrt2 root absolute error 1e-12",
+      "passed": true,
+      "actual": {
+        "root": 1.4142135623724243,
+        "iterations": 41,
+        "residual": -1.8969270598745425e-12
+      },
+      "independent_reference": "1.4142135623730950488016887242096980785696718753769480731766797379907324784621070"
+    },
+    {
+      "label": "diagnostic extension reported radius meets coordinate tolerance",
+      "passed": false,
+      "exception": "KeyError('x_error_bound')"
+    },
+    {
+      "label": "lab tighter tolerance takes no fewer iterations",
+      "passed": true
+    },
+    {
+      "label": "E5 supplemental midpoint",
+      "passed": true,
+      "actual": 1.0,
+      "independent_reference": "1",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E6 supplemental bracket width",
+      "passed": true,
+      "actual": 0.001953125,
+      "independent_reference": "1/512",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E7 supplemental midpoint bound after ten halvings",
+      "passed": true,
+      "actual": 0.0009765625,
+      "independent_reference": "1/1024",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "endpoint root no iterations",
+      "passed": true
+    },
+    {
+      "label": "E9 independent NPV root 0.1",
+      "passed": true,
+      "actual": -1.4210854715202004e-14,
+      "independent_reference": "0",
+      "absolute_dollar_tolerance": 1e-12
+    },
+    {
+      "label": "E9 independent NPV root 0.2",
+      "passed": true,
+      "actual": 1.4210854715202004e-14,
+      "independent_reference": "0",
+      "absolute_dollar_tolerance": 1e-12
+    },
+    {
+      "label": "lab separate multiple-IRR bracket (0.05, 0.15)",
+      "passed": true,
+      "actual": {
+        "root": 0.1000000000007276,
+        "iterations": 37,
+        "residual": 5.9969806898152456e-12
+      },
+      "independent_reference": "1/10"
+    },
+    {
+      "label": "lab separate multiple-IRR bracket (0.15, 0.25)",
+      "passed": true,
+      "actual": {
+        "root": 0.2000000000007276,
+        "iterations": 37,
+        "residual": -5.059064278611913e-12
+      },
+      "independent_reference": "1/5"
+    },
+    {
+      "label": "E18 linear trapezoid 1",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 linear trapezoid 10",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E18 linear trapezoid 100",
+      "passed": true,
+      "actual": 0.5,
+      "independent_reference": "1/2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 exact finite-grid quadratic trapezoid 10",
+      "passed": true,
+      "actual": 0.3350000000000001,
+      "independent_reference": "67/200",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 exact finite-grid quadratic trapezoid 100",
+      "passed": true,
+      "actual": 0.33335000000000004,
+      "independent_reference": "6667/20000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E19 exact finite-grid quadratic trapezoid 1000",
+      "passed": true,
+      "actual": 0.3333335,
+      "independent_reference": "666667/2000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E29 quadrature refinement errors shrink",
+      "passed": true,
+      "actual": [
+        0.3350000000000001,
+        0.33335000000000004,
+        0.3333335
+      ],
+      "oracle_error": "1/(6*N^2)"
+    },
+    {
+      "label": "lab grid spacing 10",
+      "passed": true,
+      "actual": 0.1,
+      "independent_reference": "1/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab grid spacing 20",
+      "passed": true,
+      "actual": 0.05,
+      "independent_reference": "1/20",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab grid spacing 100",
+      "passed": true,
+      "actual": 0.01,
+      "independent_reference": "1/100",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E14 coarse-grid minimizer",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "lab fine grid hits minimizer",
+      "passed": true,
+      "actual": 0.34,
+      "independent_reference": "17/50",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 exact grid optimum",
+      "passed": true,
+      "actual": 0.3,
+      "independent_reference": "3/10",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "E13 exact grid objective",
+      "passed": true,
+      "actual": 0.0,
+      "independent_reference": "0",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F158 tiny NPV difference retained",
+      "passed": false,
+      "actual": 0.0,
+      "independent_reference": "-1/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F158 NPV avoids discount-power overflow",
+      "passed": false,
+      "exception": "OverflowError(34, 'Numerical result out of range')"
+    },
+    {
+      "label": "F158 finite integral after weighted accumulation",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "1e+308",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F158 finite integral across huge interval",
+      "passed": false,
+      "actual": "inf",
+      "independent_reference": "2",
+      "relative_tolerance": 1e-12,
+      "absolute_tolerance": 0
+    },
+    {
+      "label": "F158 large-coordinate grid avoids width overflow",
+      "passed": false,
+      "exception": "ValueError('finite objective required')"
+    },
+    {
+      "label": "F158 large-coordinate midpoint avoids overflow",
+      "passed": false,
+      "exception": "ValueError('nonfinite function value')"
+    },
+    {
+      "label": "F158 tiny same-sign endpoints reject",
+      "passed": false,
+      "actual": "{'root': 0.9999999999990905, 'iterations': 40, 'residual': 1e-300}"
+    },
+    {
+      "label": "F158 unresolved integer coordinate interval rejected",
+      "passed": false,
+      "actual": "{'root': 1e+18, 'iterations': 2, 'residual': -0.5}"
+    },
+    {
+      "label": "F158 typed callback bool rejects",
+      "passed": false,
+      "actual": "{'root': 0, 'iterations': 0, 'residual': 0.0}"
+    },
+    {
+      "label": "F158 nonnumeric callback has ValueError",
+      "passed": false,
+      "exception": "TypeError('must be real number, not NoneType')"
+    },
+    {
+      "label": "F158 grid rejects boolean bounds",
+      "passed": false,
+      "actual": "{'x': 0.0, 'value': 0.0, 'grid_spacing': 0.5}"
+    },
+    {
+      "label": "F158 grid rejects infinite bounds",
+      "passed": false,
+      "actual": "{'x': nan, 'value': 1, 'grid_spacing': inf}"
+    },
+    {
+      "label": "F158 nonzero integral underflow rejected",
+      "passed": false,
+      "actual": "0.0"
+    },
+    {
+      "label": "F158 huge integer input has ValueError",
+      "passed": false,
+      "exception": "OverflowError('int too large to convert to float')"
+    },
+    {
+      "label": "E10 nonidentifiable zero-cashflow IRR rejected",
+      "passed": false,
+      "actual": "{'root': -0.9, 'iterations': 0, 'residual': 0.0}"
+    },
+    {
+      "label": "invalid discount domain rejected",
+      "passed": true,
+      "exception": "ValueError('finite rate > -1 required')"
+    },
+    {
+      "label": "E8 nonbracketing function rejected",
+      "passed": true,
+      "exception": "ValueError('endpoints must bracket a sign change')"
+    },
+    {
+      "label": "nonfinite interior value rejected",
+      "passed": true,
+      "exception": "ValueError('nonfinite function value')"
+    },
+    {
+      "label": "E34 iteration cap reported",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit reached')"
+    },
+    {
+      "label": "F158 coordinate stagnation reports failure",
+      "passed": true,
+      "exception": "RuntimeError('iteration limit reached')"
+    },
+    {
+      "label": "E11 width convergence does not prove continuity",
+      "passed": true,
+      "actual": {
+        "root": 0.3000000000001819,
+        "iterations": 40,
+        "residual": 1
+      },
+      "scope": "counterexample: bracket-width termination is not original-equation residual or existence proof"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 35,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "project_report": {
+    "single_year_cashflows": [
+      -100,
+      110
+    ],
+    "single_year_irr": {
+      "root": 0.10000000000013641,
+      "iterations": 41,
+      "residual": -1.240607616637135e-11
+    },
+    "sqrt2_tolerance_runs": [
+      {
+        "root": 1.4142141342163086,
+        "iterations": 21,
+        "residual": 1.6174171832972206e-06
+      },
+      {
+        "root": 1.4142135614529252,
+        "iterations": 31,
+        "residual": -2.6026334420947705e-09
+      },
+      {
+        "root": 1.4142135623724243,
+        "iterations": 41,
+        "residual": -1.8969270598745425e-12
+      }
+    ],
+    "multiple_cashflows": [
+      -100,
+      230,
+      -132
+    ],
+    "multiple_brackets": [
+      [
+        0.05,
+        0.15
+      ],
+      [
+        0.15,
+        0.25
+      ]
+    ],
+    "quadratic_steps": [
+      10,
+      100,
+      1000
+    ],
+    "quadratic_integrals": [
+      0.3350000000000001,
+      0.33335000000000004,
+      0.3333335
+    ],
+    "grid_steps": [
+      10,
+      20,
+      100
+    ],
+    "grid_results": [
+      {
+        "x": 0.3,
+        "value": 0.001600000000000003,
+        "grid_spacing": 0.1
+      },
+      {
+        "x": 0.35,
+        "value": 9.999999999999907e-05,
+        "grid_spacing": 0.05
+      },
+      {
+        "x": 0.34,
+        "value": 0.0,
+        "grid_spacing": 0.01
+      }
+    ],
+    "units": "fictional common USD cashflows at integer annual times; dimensionless rates and toy function coordinates",
+    "cashflow_timing": "initial t0 followed by equally spaced year-end flows",
+    "dates": null,
+    "scope": "numerical examples only; continuity/financial model assumptions are caller responsibilities, no SciPy backend executed",
+    "fixture_sha256": "28c039d9682c29b9f388a59eca32e86502166c61e987671c85bb54318e92f9e8"
+  }
+}
