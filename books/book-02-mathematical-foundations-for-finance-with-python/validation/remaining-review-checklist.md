@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-07  
-**Full-runtime candidate source revision:** `99ef9ddc1fab5e20ca83df6254d639720ff23b36`  
-**Latest scoped source revision:** `99ef9ddc1fab5e20ca83df6254d639720ff23b36` (included in V-111)  
-**Disposition:** V-111 full candidate Linux pass includes Section 8.4 price/log-growth contracts; independent review and release approval pending.
+**Full-runtime candidate source revision:** `8a23628022d832fbd80422aaf6ca582b28917de6`  
+**Latest scoped source revision:** `8a23628022d832fbd80422aaf6ca582b28917de6` (included in V-112)  
+**Disposition:** V-112 full candidate Linux pass includes Section 8.5 exponential-derivative scaling; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-112](runtime-refresh-2026-11-07-r18.md): 578 compiled, 365 passed, 579 required hashes verified before/after. G2–G8 unchanged.
 
 [V-111](runtime-refresh-2026-11-07-r17.md): 577 compiled, 364 passed, 578 required hashes verified before/after. G2–G8 unchanged.
 
@@ -179,7 +181,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-111](runtime-refresh-2026-11-07-r17.md) at `99ef9ddc1fab5e20ca83df6254d639720ff23b36`; 577 sources/364 scripts/578 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-112](runtime-refresh-2026-11-07-r18.md) at `8a23628022d832fbd80422aaf6ca582b28917de6`; 578 sources/365 scripts/579 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -872,3 +874,11 @@ Next: [price/log-growth baseline](chapter-08-price-log-growth-baseline.md), with
 [V-111](runtime-refresh-2026-11-07-r17.md) at `99ef9ddc1fab5e20ca83df6254d639720ff23b36`: 577 files compiled, 364 scripts passed, 578 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [Section 8.5 exponential-derivative baseline](chapter-08-exponential-derivative-range-baseline.md), with [four retained probes](chapter-08-exponential-derivative-range-baseline.json). Separate coefficient/exponential arithmetic loses finite signed results and zero-scale identities. Establish complete represented-input scaling and final output/error conventions while preserving type/domain behavior; other Section 8.5 helper/copy and independent review obligations remain open. Do not repeat completed Section 8.4 price/nested-power examples.
+
+## V-112 checkpoint — Section 8.5 exponential derivative
+
+[Exponential-derivative follow-up](chapter-08-exponential-derivative-range-followup.md): all 34 checks pass; fourteen baseline mismatches and a byte-identical replay retained. Independent log-amplitude references at 1600/2200 digits and exact special cases check complete coefficient/exponent scaling, signed zeros, tiny inputs and true final overflow. One ordinary rounding difference is reconciled under the explicit complete-expression contract. Zero-sign flags and raw stdout hashes preserve sign details across JSON serialization. Existing Section 8.5 checks pass.
+
+[V-112](runtime-refresh-2026-11-07-r18.md) at `8a23628022d832fbd80422aaf6ca582b28917de6`: 578 files compiled, 365 scripts passed, 579 required blobs verified before/after. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [logarithm-derivative baseline](chapter-08-logarithm-derivative-range-baseline.md), with [four retained probes](chapter-08-logarithm-derivative-range-baseline.json). Three positive-argument examples lose finite complete ratios; a cancellation-domain example requires explicit reconciliation of exact represented versus rounded argument policies. Derive signed/zero/overflow quotient expectations and preserve validation behavior. Other Section 8.5 financial and copied-helper obligations remain open. Do not repeat completed exponential-derivative or Section 8.4 examples.
