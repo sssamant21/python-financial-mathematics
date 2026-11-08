@@ -3,7 +3,7 @@
   "date": "2026-11-08",
   "baseline_revision": "79a67421b80bb7393bdc86169cad62dffa33b79f",
   "baseline_source_blob": "cb05d8a24ea6c4d47d9d2a7503f2420af6c2451b",
-  "executable_source_revision": "274ce4598c7a97d25f996a33512c1d8f5e176048",
+  "executable_source_revision": "ac2909c8f4b7b557c278f8f99f0c672862c3f3b3",
   "baseline": {
     "reference": "Independent log-amplitude ln(C)+2*ln(t)-r*t at Decimal 1600/2200 digits",
     "tolerance": "4e-15 relative, no absolute floor; exact zero signs/error types",
@@ -614,6 +614,25 @@
         "actual": "inf",
         "actual_zero_sign": null,
         "exception_message": null,
+        "passed": false
+      },
+      {
+        "case": 32,
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 2.7263745721125602e+147,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
         "passed": false
       },
       {
@@ -1430,6 +1449,25 @@
         "passed": false
       },
       {
+        "case": 32,
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 2.7263745721125602e+147,
+        "expected_zero_sign": null,
+        "actual": "OverflowError",
+        "actual_zero_sign": null,
+        "exception_message": "math range error",
+        "passed": false
+      },
+      {
         "args": [
           true,
           0.1,
@@ -2243,6 +2281,25 @@
         "passed": true
       },
       {
+        "case": 32,
+        "args": [
+          1,
+          -8e+102,
+          1e-100
+        ],
+        "args_zero_signs": [
+          null,
+          null,
+          null
+        ],
+        "expected": 2.7263745721125602e+147,
+        "expected_zero_sign": null,
+        "actual": 2.7263745721125602e+147,
+        "actual_zero_sign": null,
+        "exception_message": null,
+        "passed": true
+      },
+      {
         "args": [
           true,
           0.1,
@@ -2444,7 +2501,7 @@
     ]
   },
   "scoped": {
-    "source_revision": "274ce4598c7a97d25f996a33512c1d8f5e176048",
+    "source_revision": "ac2909c8f4b7b557c278f8f99f0c672862c3f3b3",
     "scope_manifest": [
       {
         "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
@@ -2460,7 +2517,7 @@
       },
       {
         "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_pv_curvature_range.py",
-        "sha": "d94955e1b676b875efd22256981e9d0949a92760"
+        "sha": "47f5f8da66ce71eee52edf6c595d67e0ce3fe1bb"
       }
     ],
     "inventory_only": {
@@ -2479,7 +2536,7 @@
       {
         "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_06.py",
         "exit": 0,
-        "seconds": 0.6719519640000158,
+        "seconds": 0.893907678000005,
         "stdout_sha256": "5ada323ffea8541f53ef2334c48bb22bf40edc10206abb4706f72cb2e2d38f70",
         "stdout": "",
         "stderr": ""
@@ -2487,8 +2544,8 @@
       {
         "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_pv_curvature_range.py",
         "exit": 0,
-        "seconds": 9.327666383000007,
-        "stdout_sha256": "ee8371827e60954d97cc7fd52db1e7c91f656b73eb1bc24299aad27583b24708",
+        "seconds": 12.292400685000075,
+        "stdout_sha256": "117b327403a98dc2500fc75c1684517f6c4447d98e9a81f5c2b02ff84499621b",
         "stdout": "",
         "stderr": ""
       }
@@ -2500,15 +2557,2530 @@
     "timeout_seconds": 60
   },
   "raw_stdout_sha256": {
-    "baseline.json": "30636c8c683bfd14944bbd358fde6273effcc8e83692cf5f6e5d122fb6157005",
-    "baseline-replay.json": "30636c8c683bfd14944bbd358fde6273effcc8e83692cf5f6e5d122fb6157005",
-    "corrected.json": "ee8371827e60954d97cc7fd52db1e7c91f656b73eb1bc24299aad27583b24708",
-    "pinned-corrected.json": "ee8371827e60954d97cc7fd52db1e7c91f656b73eb1bc24299aad27583b24708"
+    "baseline-expanded.json": "94ef5a74ee1da61984ef46b9fda5f954a6bbfd9cd45362b3adedade2c2bd6132",
+    "baseline-expanded-replay.json": "94ef5a74ee1da61984ef46b9fda5f954a6bbfd9cd45362b3adedade2c2bd6132",
+    "corrected-expanded.json": "117b327403a98dc2500fc75c1684517f6c4447d98e9a81f5c2b02ff84499621b",
+    "pinned-corrected.json": "117b327403a98dc2500fc75c1684517f6c4447d98e9a81f5c2b02ff84499621b"
   },
-  "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 79, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 77, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 22 mismatches\n",
-  "replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 79, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 77, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 22 mismatches\n",
+  "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 79, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 77, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 23 mismatches\n",
+  "replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 79, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 77, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 23 mismatches\n",
   "corrected_stderr": "",
   "pinned_corrected_matches_local": true,
   "baseline_replay_byte_identical": true,
-  "limits": "Four scoped Python files/two scripts. Fresh full-tree inventory 586 Python/373 scripts/587 required blobs is inventory only. V-119 remains latest full runtime. 49 selected checks; 22 baseline mismatches include one new independent-curvature requirement and final-output policy differences, not distinct defect counts. 35 selected COV categories partial; none closed. No independent/platform/release/canonical approval."
+  "initial_49_case_evidence": {
+    "validation": "V-120 scoped Section 8.6 PV curvature",
+    "date": "2026-11-08",
+    "baseline_revision": "79a67421b80bb7393bdc86169cad62dffa33b79f",
+    "baseline_source_blob": "cb05d8a24ea6c4d47d9d2a7503f2420af6c2451b",
+    "executable_source_revision": "274ce4598c7a97d25f996a33512c1d8f5e176048",
+    "baseline": {
+      "reference": "Independent log-amplitude ln(C)+2*ln(t)-r*t at Decimal 1600/2200 digits",
+      "tolerance": "4e-15 relative, no absolute floor; exact zero signs/error types",
+      "observations": [
+        {
+          "case": 0,
+          "args": [
+            1,
+            1,
+            750
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.0697e-320,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 1,
+          "args": [
+            5e-324,
+            -1,
+            1000
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 9.733444573000163e+116,
+          "expected_zero_sign": null,
+          "actual": "OverflowError",
+          "actual_zero_sign": null,
+          "exception_message": "math range error",
+          "passed": false
+        },
+        {
+          "case": 2,
+          "args": [
+            1.7976931348623157e+308,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 3,
+          "args": [
+            0,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 4,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            1e-200
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1.7976931348623158e-92,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 5,
+          "args": [
+            5e-324,
+            0,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1.5966722476277755e+293,
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 6,
+          "args": [
+            0,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            -1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 7,
+          "args": [
+            0,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 8,
+          "args": [
+            0,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            -1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 9,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 10,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            -1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 11,
+          "args": [
+            0,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            -1,
+            1,
+            -1
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": 0,
+          "actual_zero_sign": -1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 12,
+          "args": [
+            1.7976931348623157e+308,
+            -1.7976931348623157e+308,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 13,
+          "args": [
+            1,
+            0,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 14,
+          "args": [
+            5e-324,
+            0,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 15,
+          "args": [
+            1.7976931348623157e+308,
+            5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 16,
+          "args": [
+            1.7976931348623157e+308,
+            -5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 17,
+          "args": [
+            10000,
+            0.04,
+            5
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 204682.68826949547,
+          "expected_zero_sign": null,
+          "actual": 204682.68826949544,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 18,
+          "args": [
+            10000,
+            -0.04,
+            5
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 305350.6895400425,
+          "expected_zero_sign": null,
+          "actual": 305350.6895400425,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 19,
+          "args": [
+            1,
+            -1,
+            700
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 20,
+          "args": [
+            1,
+            1,
+            744
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 4.246697e-318,
+          "expected_zero_sign": null,
+          "actual": 5.46966e-318,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 21,
+          "args": [
+            1,
+            1,
+            745
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.566475e-318,
+          "expected_zero_sign": null,
+          "actual": 2.74219e-318,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 22,
+          "args": [
+            1,
+            1,
+            746
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 5.7782e-319,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 23,
+          "args": [
+            1.7976931348623157e+308,
+            1,
+            1000
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 9.125016462967947e-121,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 24,
+          "args": [
+            5e-324,
+            -1,
+            1450
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "OverflowError",
+          "actual_zero_sign": null,
+          "exception_message": "math range error",
+          "passed": false
+        },
+        {
+          "case": 25,
+          "args": [
+            5e-324,
+            -1,
+            1500
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "OverflowError",
+          "actual_zero_sign": null,
+          "exception_message": "math range error",
+          "passed": false
+        },
+        {
+          "case": 26,
+          "args": [
+            1.7976931348623157e+308,
+            1.7976931348623157e+308,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 27,
+          "args": [
+            5e-324,
+            5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.596672247627774e+293,
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 28,
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1,
+          "expected_zero_sign": null,
+          "actual": 1,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 29,
+          "args": [
+            1,
+            0.1,
+            10
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 36.78794411714423,
+          "expected_zero_sign": null,
+          "actual": 36.787944117144235,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 30,
+          "args": [
+            1,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 31,
+          "args": [
+            5e-324,
+            0,
+            1e+200
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 4.940656458412465e+76,
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "args": [
+            true,
+            0.1,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "payment",
+          "actual": "TypeError",
+          "exception_message": "payment must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            true,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            true
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "years",
+          "actual": "TypeError",
+          "exception_message": "years must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            -1,
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            -1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            "inf",
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment",
+          "actual": "ValueError",
+          "exception_message": "payment must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            "nan",
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "rate",
+          "actual": "ValueError",
+          "exception_message": "rate must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            "inf"
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "years",
+          "actual": "ValueError",
+          "exception_message": "years must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            null,
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment",
+          "actual": "ValueError",
+          "exception_message": "payment outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            null,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "rate",
+          "actual": "ValueError",
+          "exception_message": "rate outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "years",
+          "actual": "ValueError",
+          "exception_message": "years outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            "bad",
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            0.1,
+            -1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            "bad",
+            true,
+            "bad"
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "years",
+          "actual": "TypeError",
+          "exception_message": "years must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            "bad",
+            true,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "payment",
+          "actual": "TypeError",
+          "exception_message": "payment must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            true,
+            -1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "contract": "complete curvature independent of rounded PV",
+          "expected": 19.40898111080427,
+          "actual": "AssertionError",
+          "exception_message": "curvature called rounded present_value",
+          "passed": false
+        }
+      ]
+    },
+    "baseline_replay": {
+      "reference": "Independent log-amplitude ln(C)+2*ln(t)-r*t at Decimal 1600/2200 digits",
+      "tolerance": "4e-15 relative, no absolute floor; exact zero signs/error types",
+      "observations": [
+        {
+          "case": 0,
+          "args": [
+            1,
+            1,
+            750
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.0697e-320,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 1,
+          "args": [
+            5e-324,
+            -1,
+            1000
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 9.733444573000163e+116,
+          "expected_zero_sign": null,
+          "actual": "OverflowError",
+          "actual_zero_sign": null,
+          "exception_message": "math range error",
+          "passed": false
+        },
+        {
+          "case": 2,
+          "args": [
+            1.7976931348623157e+308,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 3,
+          "args": [
+            0,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 4,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            1e-200
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1.7976931348623158e-92,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 5,
+          "args": [
+            5e-324,
+            0,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1.5966722476277755e+293,
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 6,
+          "args": [
+            0,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            -1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 7,
+          "args": [
+            0,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 8,
+          "args": [
+            0,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            -1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": "nan",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 9,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 10,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            -1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 11,
+          "args": [
+            0,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            -1,
+            1,
+            -1
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": 0,
+          "actual_zero_sign": -1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 12,
+          "args": [
+            1.7976931348623157e+308,
+            -1.7976931348623157e+308,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 13,
+          "args": [
+            1,
+            0,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 14,
+          "args": [
+            5e-324,
+            0,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 15,
+          "args": [
+            1.7976931348623157e+308,
+            5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 16,
+          "args": [
+            1.7976931348623157e+308,
+            -5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 17,
+          "args": [
+            10000,
+            0.04,
+            5
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 204682.68826949547,
+          "expected_zero_sign": null,
+          "actual": 204682.68826949544,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 18,
+          "args": [
+            10000,
+            -0.04,
+            5
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 305350.6895400425,
+          "expected_zero_sign": null,
+          "actual": 305350.6895400425,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 19,
+          "args": [
+            1,
+            -1,
+            700
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 20,
+          "args": [
+            1,
+            1,
+            744
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 4.246697e-318,
+          "expected_zero_sign": null,
+          "actual": 5.46966e-318,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 21,
+          "args": [
+            1,
+            1,
+            745
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.566475e-318,
+          "expected_zero_sign": null,
+          "actual": 2.74219e-318,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 22,
+          "args": [
+            1,
+            1,
+            746
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 5.7782e-319,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 23,
+          "args": [
+            1.7976931348623157e+308,
+            1,
+            1000
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 9.125016462967947e-121,
+          "expected_zero_sign": null,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 24,
+          "args": [
+            5e-324,
+            -1,
+            1450
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "OverflowError",
+          "actual_zero_sign": null,
+          "exception_message": "math range error",
+          "passed": false
+        },
+        {
+          "case": 25,
+          "args": [
+            5e-324,
+            -1,
+            1500
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "OverflowError",
+          "actual_zero_sign": null,
+          "exception_message": "math range error",
+          "passed": false
+        },
+        {
+          "case": 26,
+          "args": [
+            1.7976931348623157e+308,
+            1.7976931348623157e+308,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 27,
+          "args": [
+            5e-324,
+            5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.596672247627774e+293,
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 28,
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1,
+          "expected_zero_sign": null,
+          "actual": 1,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 29,
+          "args": [
+            1,
+            0.1,
+            10
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 36.78794411714423,
+          "expected_zero_sign": null,
+          "actual": 36.787944117144235,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 30,
+          "args": [
+            1,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "case": 31,
+          "args": [
+            5e-324,
+            0,
+            1e+200
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 4.940656458412465e+76,
+          "expected_zero_sign": null,
+          "actual": "inf",
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": false
+        },
+        {
+          "args": [
+            true,
+            0.1,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "payment",
+          "actual": "TypeError",
+          "exception_message": "payment must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            true,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            true
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "years",
+          "actual": "TypeError",
+          "exception_message": "years must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            -1,
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            -1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            "inf",
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment",
+          "actual": "ValueError",
+          "exception_message": "payment must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            "nan",
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "rate",
+          "actual": "ValueError",
+          "exception_message": "rate must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            "inf"
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "years",
+          "actual": "ValueError",
+          "exception_message": "years must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            null,
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment",
+          "actual": "ValueError",
+          "exception_message": "payment outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            null,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "rate",
+          "actual": "ValueError",
+          "exception_message": "rate outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "years",
+          "actual": "ValueError",
+          "exception_message": "years outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            "bad",
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            0.1,
+            -1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            "bad",
+            true,
+            "bad"
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "years",
+          "actual": "TypeError",
+          "exception_message": "years must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            "bad",
+            true,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "payment",
+          "actual": "TypeError",
+          "exception_message": "payment must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            true,
+            -1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "contract": "complete curvature independent of rounded PV",
+          "expected": 19.40898111080427,
+          "actual": "AssertionError",
+          "exception_message": "curvature called rounded present_value",
+          "passed": false
+        }
+      ]
+    },
+    "corrected": {
+      "reference": "Independent log-amplitude ln(C)+2*ln(t)-r*t at Decimal 1600/2200 digits",
+      "tolerance": "4e-15 relative, no absolute floor; exact zero signs/error types",
+      "observations": [
+        {
+          "case": 0,
+          "args": [
+            1,
+            1,
+            750
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.0697e-320,
+          "expected_zero_sign": null,
+          "actual": 1.0697e-320,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 1,
+          "args": [
+            5e-324,
+            -1,
+            1000
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 9.733444573000163e+116,
+          "expected_zero_sign": null,
+          "actual": 9.733444573000163e+116,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 2,
+          "args": [
+            1.7976931348623157e+308,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 3,
+          "args": [
+            0,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 4,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            1e-200
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1.7976931348623158e-92,
+          "expected_zero_sign": null,
+          "actual": 1.7976931348623158e-92,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 5,
+          "args": [
+            5e-324,
+            0,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1.5966722476277755e+293,
+          "expected_zero_sign": null,
+          "actual": 1.5966722476277755e+293,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 6,
+          "args": [
+            0,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            -1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": 0,
+          "actual_zero_sign": -1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 7,
+          "args": [
+            0,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 8,
+          "args": [
+            0,
+            1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            -1,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": 0,
+          "actual_zero_sign": -1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 9,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 10,
+          "args": [
+            1.7976931348623157e+308,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            -1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 11,
+          "args": [
+            0,
+            0,
+            0
+          ],
+          "args_zero_signs": [
+            -1,
+            1,
+            -1
+          ],
+          "expected": 0,
+          "expected_zero_sign": -1,
+          "actual": 0,
+          "actual_zero_sign": -1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 12,
+          "args": [
+            1.7976931348623157e+308,
+            -1.7976931348623157e+308,
+            0
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            1
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 13,
+          "args": [
+            1,
+            0,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 14,
+          "args": [
+            5e-324,
+            0,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 15,
+          "args": [
+            1.7976931348623157e+308,
+            5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "ValueError",
+          "actual_zero_sign": null,
+          "exception_message": "PV result must be finite",
+          "passed": true
+        },
+        {
+          "case": 16,
+          "args": [
+            1.7976931348623157e+308,
+            -5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "ValueError",
+          "actual_zero_sign": null,
+          "exception_message": "PV result must be finite",
+          "passed": true
+        },
+        {
+          "case": 17,
+          "args": [
+            10000,
+            0.04,
+            5
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 204682.68826949547,
+          "expected_zero_sign": null,
+          "actual": 204682.68826949547,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 18,
+          "args": [
+            10000,
+            -0.04,
+            5
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 305350.6895400425,
+          "expected_zero_sign": null,
+          "actual": 305350.6895400425,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 19,
+          "args": [
+            1,
+            -1,
+            700
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "ValueError",
+          "actual_zero_sign": null,
+          "exception_message": "PV result must be finite",
+          "passed": true
+        },
+        {
+          "case": 20,
+          "args": [
+            1,
+            1,
+            744
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 4.246697e-318,
+          "expected_zero_sign": null,
+          "actual": 4.246697e-318,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 21,
+          "args": [
+            1,
+            1,
+            745
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.566475e-318,
+          "expected_zero_sign": null,
+          "actual": 1.566475e-318,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 22,
+          "args": [
+            1,
+            1,
+            746
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 5.7782e-319,
+          "expected_zero_sign": null,
+          "actual": 5.7782e-319,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 23,
+          "args": [
+            1.7976931348623157e+308,
+            1,
+            1000
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 9.125016462967947e-121,
+          "expected_zero_sign": null,
+          "actual": 9.125016462967947e-121,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 24,
+          "args": [
+            5e-324,
+            -1,
+            1450
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "ValueError",
+          "actual_zero_sign": null,
+          "exception_message": "PV result must be finite",
+          "passed": true
+        },
+        {
+          "case": 25,
+          "args": [
+            5e-324,
+            -1,
+            1500
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "ValueError",
+          "actual_zero_sign": null,
+          "exception_message": "PV result must be finite",
+          "passed": true
+        },
+        {
+          "case": 26,
+          "args": [
+            1.7976931348623157e+308,
+            1.7976931348623157e+308,
+            5e-324
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 0,
+          "expected_zero_sign": 1,
+          "actual": 0,
+          "actual_zero_sign": 1,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 27,
+          "args": [
+            5e-324,
+            5e-324,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 1.596672247627774e+293,
+          "expected_zero_sign": null,
+          "actual": 1.596672247627774e+293,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 28,
+          "args": [
+            1,
+            0,
+            1
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 1,
+          "expected_zero_sign": null,
+          "actual": 1,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 29,
+          "args": [
+            1,
+            0.1,
+            10
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": 36.78794411714423,
+          "expected_zero_sign": null,
+          "actual": 36.78794411714423,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "case": 30,
+          "args": [
+            1,
+            -1.7976931348623157e+308,
+            1.7976931348623157e+308
+          ],
+          "args_zero_signs": [
+            null,
+            null,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_zero_sign": null,
+          "actual": "ValueError",
+          "actual_zero_sign": null,
+          "exception_message": "PV result outside finite float range",
+          "passed": true
+        },
+        {
+          "case": 31,
+          "args": [
+            5e-324,
+            0,
+            1e+200
+          ],
+          "args_zero_signs": [
+            null,
+            1,
+            null
+          ],
+          "expected": 4.940656458412465e+76,
+          "expected_zero_sign": null,
+          "actual": 4.940656458412465e+76,
+          "actual_zero_sign": null,
+          "exception_message": null,
+          "passed": true
+        },
+        {
+          "args": [
+            true,
+            0.1,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "payment",
+          "actual": "TypeError",
+          "exception_message": "payment must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            true,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            true
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "years",
+          "actual": "TypeError",
+          "exception_message": "years must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            -1,
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            -1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            "inf",
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment",
+          "actual": "ValueError",
+          "exception_message": "payment must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            "nan",
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "rate",
+          "actual": "ValueError",
+          "exception_message": "rate must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            "inf"
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "years",
+          "actual": "ValueError",
+          "exception_message": "years must be finite",
+          "passed": true
+        },
+        {
+          "args": [
+            null,
+            0.1,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment",
+          "actual": "ValueError",
+          "exception_message": "payment outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            null,
+            1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "rate",
+          "actual": "ValueError",
+          "exception_message": "rate outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            1,
+            0.1,
+            null
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "years",
+          "actual": "ValueError",
+          "exception_message": "years outside finite float range",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            "bad",
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            0.1,
+            -1
+          ],
+          "expected": "ValueError",
+          "expected_message_prefix": "payment and years",
+          "actual": "ValueError",
+          "exception_message": "payment and years must be nonnegative",
+          "passed": true
+        },
+        {
+          "args": [
+            "bad",
+            true,
+            "bad"
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "years",
+          "actual": "TypeError",
+          "exception_message": "years must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            "bad",
+            true,
+            1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "payment",
+          "actual": "TypeError",
+          "exception_message": "payment must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "args": [
+            0,
+            true,
+            -1
+          ],
+          "expected": "TypeError",
+          "expected_message_prefix": "rate",
+          "actual": "TypeError",
+          "exception_message": "rate must be numeric, excluding bool",
+          "passed": true
+        },
+        {
+          "contract": "complete curvature independent of rounded PV",
+          "expected": 19.40898111080427,
+          "actual": 19.40898111080427,
+          "exception_message": null,
+          "passed": true
+        }
+      ]
+    },
+    "scoped": {
+      "source_revision": "274ce4598c7a97d25f996a33512c1d8f5e176048",
+      "scope_manifest": [
+        {
+          "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+          "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+        },
+        {
+          "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_06.py",
+          "sha": "39268cf39d2ad15549b98a5bb6b3bb1698e2c329"
+        },
+        {
+          "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_06.py",
+          "sha": "5b46254c42da72e81f6a843692e7aa6168a5044c"
+        },
+        {
+          "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_pv_curvature_range.py",
+          "sha": "d94955e1b676b875efd22256981e9d0949a92760"
+        }
+      ],
+      "inventory_only": {
+        "python": 586,
+        "check_test_scripts": 373,
+        "required_blobs": 587
+      },
+      "verified_before": 4,
+      "compiled": [
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_06.py",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_06.py",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_pv_curvature_range.py"
+      ],
+      "runs": [
+        {
+          "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_06.py",
+          "exit": 0,
+          "seconds": 0.6719519640000158,
+          "stdout_sha256": "5ada323ffea8541f53ef2334c48bb22bf40edc10206abb4706f72cb2e2d38f70",
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_pv_curvature_range.py",
+          "exit": 0,
+          "seconds": 9.327666383000007,
+          "stdout_sha256": "ee8371827e60954d97cc7fd52db1e7c91f656b73eb1bc24299aad27583b24708",
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "verified_after": 4,
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "assertions_enabled": true,
+      "timeout_seconds": 60
+    },
+    "raw_stdout_sha256": {
+      "baseline.json": "30636c8c683bfd14944bbd358fde6273effcc8e83692cf5f6e5d122fb6157005",
+      "baseline-replay.json": "30636c8c683bfd14944bbd358fde6273effcc8e83692cf5f6e5d122fb6157005",
+      "corrected.json": "ee8371827e60954d97cc7fd52db1e7c91f656b73eb1bc24299aad27583b24708",
+      "pinned-corrected.json": "ee8371827e60954d97cc7fd52db1e7c91f656b73eb1bc24299aad27583b24708"
+    },
+    "baseline_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 79, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 77, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 22 mismatches\n",
+    "replay_stderr": "Traceback (most recent call last):\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 79, in <module>\n    if __name__==\"__main__\":run()\n                            ^^^^^\n  File \"/tmp/book02-curv120/baseline/check_pv_curvature_range.py\", line 77, in run\n    assert all(r[\"passed\"] for r in rows),str(sum(not r[\"passed\"] for r in rows))+\" mismatches\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 22 mismatches\n",
+    "corrected_stderr": "",
+    "pinned_corrected_matches_local": true,
+    "baseline_replay_byte_identical": true,
+    "limits": "Four scoped Python files/two scripts. Fresh full-tree inventory 586 Python/373 scripts/587 required blobs is inventory only. V-119 remains latest full runtime. 49 selected checks; 22 baseline mismatches include one new independent-curvature requirement and final-output policy differences, not distinct defect counts. 35 selected COV categories partial; none closed. No independent/platform/release/canonical approval."
+  },
+  "expansion_note": "Added one explicit finite-curvature/overflowing-local-PV discriminator after the initial 49-case run. The expanded 50-case baseline, replay, corrected and exact-pin scoped results are retained alongside the complete initial evidence.",
+  "limits": "Four scoped Python files/two scripts. Fresh full-tree inventory 586 Python/373 scripts/587 required blobs is inventory only. V-119 remains latest full runtime. 50 selected checks; 23 baseline mismatches include one new independent-curvature requirement and final-output policy differences, not distinct defect counts. 35 selected COV categories partial; none closed. No independent/platform/release/canonical approval."
 }
