@@ -1,0 +1,510 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scipy": "1.17.0",
+  "numpy": "2.3.5",
+  "source_sha256": "960a4931800972215209ae3086964e14f504035ba11813db3ad741711a277760",
+  "listing_sha256": "623ee82915dc90e18921964ccba6e6b474782533a0d1c80aaf683459a1de719b",
+  "commands": [
+    {
+      "label": "exact demonstration and twelve tests",
+      "args": [
+        "constrained_optimization.py"
+      ],
+      "returncode": 0,
+      "stdout": "Unconstrained: {'weight_a': 0.6923076923076923, 'weight_b': 0.3076923076923077, 'variance': 0.027692307692307693, 'feasible_interval': (0.0, 1.0), 'nonunique': False, 'reported_budget_residual': 0.0, 'method': 'analytic_convex_projection', 'status': 'feasible_analytic_solution'}\nCapped: {'weight_a': 0.4, 'weight_b': 0.6, 'variance': 0.0388, 'feasible_interval': (0.0, 0.4), 'nonunique': False, 'reported_budget_residual': 0.0, 'method': 'analytic_convex_projection', 'status': 'feasible_analytic_solution'}\n",
+      "stderr": "test_01_interval (__main__.ConstrainedTests.test_01_interval) ... ok\ntest_02_gmv (__main__.ConstrainedTests.test_02_gmv) ... ok\ntest_03_cap (__main__.ConstrainedTests.test_03_cap) ... ok\ntest_04_b_cap (__main__.ConstrainedTests.test_04_b_cap) ... ok\ntest_05_min_a (__main__.ConstrainedTests.test_05_min_a) ... ok\ntest_06_infeasible (__main__.ConstrainedTests.test_06_infeasible) ... ok\ntest_07_inverted (__main__.ConstrainedTests.test_07_inverted) ... ok\ntest_08_nonpsd (__main__.ConstrainedTests.test_08_nonpsd) ... ok\ntest_09_nonunique (__main__.ConstrainedTests.test_09_nonunique) ... ok\ntest_10_grid (__main__.ConstrainedTests.test_10_grid) ... ok\ntest_11_slacks (__main__.ConstrainedTests.test_11_slacks) ... ok\ntest_12_variance (__main__.ConstrainedTests.test_12_variance) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n",
+      "methods": 12,
+      "passed": true
+    },
+    {
+      "label": "silent import",
+      "args": [
+        "-c",
+        "import constrained_optimization"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "compile exact listing",
+      "args": [
+        "-m",
+        "compileall",
+        "-q",
+        "constrained_optimization.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    },
+    {
+      "label": "exact SciPy SLSQP snippet",
+      "args": [
+        "scipy_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "methods": null,
+      "passed": true
+    }
+  ],
+  "checks": [
+    {
+      "label": "SciPy analytic cap weight A",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy analytic cap weight B",
+      "passed": true,
+      "actual": 0.6,
+      "reference": "3/5",
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy independent objective",
+      "passed": true,
+      "actual": "97/2500",
+      "reference": "97/2500",
+      "absolute_tolerance": 1e-09,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "SciPy independent bounds and budget",
+      "passed": true,
+      "weights": [
+        0.4,
+        0.6
+      ]
+    },
+    {
+      "label": "interval () 0",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval () 1",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval (0.4, 1) 0",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval (0.4, 1) 1",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval (1, 0.6) 0",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval (1, 0.6) 1",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval (0.6, 0.7, 0.2, 0.1) 0",
+      "passed": true,
+      "actual": 0.3,
+      "reference": "3/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "interval (0.6, 0.7, 0.2, 0.1) 1",
+      "passed": true,
+      "actual": 0.6,
+      "reference": "3/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E12 free weight",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E15 free risk",
+      "passed": true,
+      "actual": 0.027692307692307693,
+      "reference": "9/325",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E13 cap weight",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E14 cap risk",
+      "passed": true,
+      "actual": 0.0388,
+      "reference": "97/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab objective cost of cap",
+      "passed": true,
+      "actual": "361/32500",
+      "reference": "361/32500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "E19 E20 cap slack 0.3",
+      "passed": true,
+      "actual": 0.1,
+      "reference": "1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "budget identity 0.3",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E19 E20 cap slack 0.4",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "budget identity 0.4",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "E19 E20 cap slack 0.5",
+      "passed": true,
+      "actual": -0.1,
+      "reference": "-1/10",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "budget identity 0.5",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 1e-15,
+      "relative_tolerance": 0
+    },
+    {
+      "label": "lab grid winner",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab grid risk",
+      "passed": true,
+      "actual": 0.0388,
+      "reference": "97/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "lab grid spacing",
+      "passed": true,
+      "actual": 0.0004,
+      "reference": "1/2500",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 scale-invariant weight 1e-200",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 scale-invariant weight 1e+200",
+      "passed": true,
+      "actual": 0.6923076923076923,
+      "reference": "9/13",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 large risk cancellation",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 tiny positive risk retained",
+      "passed": true,
+      "actual": 3.25e-200,
+      "reference": "13/400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 wide grid",
+      "passed": true,
+      "actual": 0.0,
+      "reference": "0",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 integer objective ordering",
+      "passed": true,
+      "actual": 1.0,
+      "reference": "1",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "F163 singleton feasible set is unique",
+      "passed": true,
+      "result": {
+        "weight_a": 0.4,
+        "weight_b": 0.6,
+        "variance": 0.04,
+        "feasible_interval": [
+          0.4,
+          0.4
+        ],
+        "nonunique": false,
+        "reported_budget_residual": 0.0,
+        "method": "analytic_convex_projection",
+        "status": "feasible_analytic_solution"
+      }
+    },
+    {
+      "label": "constant objective interval remains nonunique",
+      "passed": true
+    },
+    {
+      "label": "F163 small actual infeasibility",
+      "passed": true,
+      "exception": "ValueError('infeasible portfolio; policy is not relaxed')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 two 40 percent caps",
+      "passed": true,
+      "exception": "ValueError('infeasible portfolio; policy is not relaxed')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 inverted asset bounds",
+      "passed": true,
+      "exception": "ValueError('invalid long-only asset bounds')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 tiny invalid covariance",
+      "passed": true,
+      "exception": "ValueError('invalid two-asset PSD covariance')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 large invalid covariance",
+      "passed": true,
+      "exception": "ValueError('invalid two-asset PSD covariance')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 variance export validates covariance",
+      "passed": true,
+      "exception": "ValueError('invalid two-asset PSD covariance')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 variance export validates weight",
+      "passed": true,
+      "exception": "ValueError('finite int/float required; booleans excluded')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 variance export long-only domain",
+      "passed": true,
+      "exception": "ValueError('long-only weight required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 variance underflow rejects",
+      "passed": true,
+      "exception": "ValueError('unreportable numeric result')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 grid repeated coordinates",
+      "passed": true,
+      "exception": "ValueError('grid requires distinct float coordinates')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 noncallable objective",
+      "passed": true,
+      "exception": "ValueError('callable required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 slack nonfinite input",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 slack invalid bound policy",
+      "passed": true,
+      "exception": "ValueError('invalid long-only asset bounds')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 huge integer input",
+      "passed": true,
+      "exception": "ValueError('number outside finite float range')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "F163 nonfinite objective",
+      "passed": true,
+      "exception": "ValueError('finite number required')",
+      "expected_exception": "ValueError"
+    },
+    {
+      "label": "singleton grid",
+      "passed": true,
+      "actual": 0.4,
+      "reference": "2/5",
+      "absolute_tolerance": 0,
+      "relative_tolerance": 1e-12
+    },
+    {
+      "label": "supplemental KKT cap certificate",
+      "passed": true,
+      "derivative": "-19/250",
+      "upper_multiplier": "19/250",
+      "scope": "analytic reduced convex fixture, not a source multiplier export"
+    },
+    {
+      "label": "F163 interval reporting cannot relax tiny hard minimum",
+      "passed": true,
+      "exception": "ValueError('interval reporting would relax an exact bound')",
+      "expected_exception": "ValueError"
+    }
+  ],
+  "workflow_records": 1,
+  "local_prompt_records": 40,
+  "lab_step_records": 12,
+  "historical_unique_methods_added": 0,
+  "lab_results": {
+    "free": {
+      "weight_a": 0.6923076923076923,
+      "weight_b": 0.3076923076923077,
+      "variance": 0.027692307692307693,
+      "feasible_interval": [
+        0.0,
+        1.0
+      ],
+      "nonunique": false,
+      "reported_budget_residual": 0.0,
+      "method": "analytic_convex_projection",
+      "status": "feasible_analytic_solution"
+    },
+    "capped": {
+      "weight_a": 0.4,
+      "weight_b": 0.6,
+      "variance": 0.0388,
+      "feasible_interval": [
+        0.0,
+        0.4
+      ],
+      "nonunique": false,
+      "reported_budget_residual": 0.0,
+      "method": "analytic_convex_projection",
+      "status": "feasible_analytic_solution"
+    },
+    "grid": {
+      "x": 0.4,
+      "value": 0.0388,
+      "grid_spacing": 0.0004,
+      "evaluations": 1001,
+      "method": "grid",
+      "termination": "all_grid_points_evaluated"
+    },
+    "slacks": {
+      "budget": 0.0,
+      "a_min_slack": 0.4,
+      "a_max_slack": 0.0,
+      "b_min_slack": 0.6,
+      "b_max_slack": 0.4
+    }
+  },
+  "model": {
+    "covariance": [
+      [
+        0.04,
+        0
+      ],
+      [
+        0,
+        0.09
+      ]
+    ],
+    "cap_a": 0.4,
+    "units": "dimensionless weights and compatible single-period squared-return variance",
+    "timing": "fictional same-horizon risk model; no market/as-of data"
+  }
+}
