@@ -1,11 +1,13 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-08  
-**Full-runtime candidate source revision:** `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`  
-**Latest scoped source revision:** `ac2909c8f4b7b557c278f8f99f0c672862c3f3b3` (V-120, four files/two scripts; after V-119)  
-**Disposition:** V-120 scoped PV-curvature pass after V-119 full candidate Linux pass; independent review and release approval pending.
+**Full-runtime candidate source revision:** `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`  
+**Latest scoped source revision:** `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b` (included in V-121)  
+**Disposition:** V-121 full candidate Linux pass includes local Section 8.6 curvature/PV corrections; independent review and release approval pending.
 
 ## Reconciled evidence
+
+[V-121](runtime-refresh-2026-11-08-r4.md): 587 compiled, 374 passed, 588 required hashes verified before/after. G2–G8 unchanged.
 
 [V-120 scoped curvature](chapter-08-pv-curvature-range-followup.md): four compiled/two passed/four hashes verified before-after. Fresh full-tree inventory 586/373/587 is not a new full runtime result. G2–G8 unchanged.
 
@@ -197,7 +199,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-119](runtime-refresh-2026-11-08-r3.md) at `5b919e8b93caf2cd4d6f003b61f60d07bec4bd69`; 585 sources/372 scripts/586 hashes verified. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-121](runtime-refresh-2026-11-08-r4.md) at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`; 587 sources/374 scripts/588 hashes verified. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -962,3 +964,11 @@ Next: [distinct Section 8.6 PV-curvature baseline](chapter-08-pv-curvature-range
 At `ac2909c8f4b7b557c278f8f99f0c672862c3f3b3`, four scoped Python files compiled and two scripts passed, with four exact Git blobs verified before/after. Fresh full-tree inventory: 586 Python files, 373 check/test scripts and 587 required source/fixture blobs. This is scoped validation; [V-119](runtime-refresh-2026-11-08-r3.md) remains the latest full candidate Linux pass (585/372/586 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [local Section 8.6 PV/first-derivative baseline](chapter-08-section-06-pv-baseline.md), with [four pinned paired probes](chapter-08-section-06-pv-baseline.json). Independent complete Decimal references at 200/400 digits expose lost finite prices/sensitivities, finite sensitivity beside unrepresentable price and zero identities. Preserve local validation/domain conventions. Taylor/exact shocks, cash-flow, polynomial and sampled-second-difference range obligations remain separate; do not attribute completed Section 8.5/curvature passes to them. Resource limits and independent review remain open.
+
+## V-121 checkpoint — Local Section 8.6 PV and first sensitivity
+
+[Local PV-copy follow-up](chapter-08-section-06-pv-followup.md): all 93 checks pass; 31 baseline mismatches and a byte-identical replay retained. Independent log-amplitude references at Decimal 1600/2200 digits check complete values/sensitivities, finite sensitivity beside zero/unrepresentable PV, signed zero/underflow, final overflow and validation priority. One baseline mismatch enforces complete first-sensitivity independence; mismatches are not distinct defect counts. Pinned corrected observations match local results; curvature/reference/order regressions are included.
+
+[V-121 full runtime](runtime-refresh-2026-11-08-r4.md) at `5eeda11e6454396ad61cd0ea69e19ebc7c5fc38b`: 587 Python files compiled, 374 scripts passed and 588 required source/fixture hashes verified before/after. This fresh pinned-tree run includes V-120 curvature and V-121 local PV-copy changes/checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [local Section 8.6 Taylor/exact-shock baseline](chapter-08-section-06-shock-baseline.md), with [four actual probe triples](chapter-08-section-06-shock-baseline.json). Complete Decimal Taylor/price-difference references agree at 1600/2200 digits. Probes distinguish working controls, finite complete changes/sums lost to intermediate range and zero-shock identities. Explicitly reconcile represented product/sum, zero signs, order guards and final-output policy before editing. Cash-flow, polynomial, sampled-second-difference, resource and independent-review obligations remain separate.
