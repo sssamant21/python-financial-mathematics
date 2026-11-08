@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-116 scoped rate-shock pass (eight files/six scripts), after V-115 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-117 full candidate Linux pass (583 files, 370 scripts, 584 required hashes), including Section 8.5 rate-shock and log-return corrections. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 581/581 at `536dc531ca19a913507977f63df20d2cefd1f90b`. [V-115](runtime-refresh-2026-11-08.md). V-116: eight scoped files compiled; [evidence](chapter-08-rate-shock-range-followup.md). |
-| Automated script execution | Full candidate Linux pass | 368/368 at `536dc531ca19a913507977f63df20d2cefd1f90b`; 582 required blobs verified before/after. [V-115](runtime-refresh-2026-11-08.md). V-116: six selected scripts passed; include additions in the next full refresh. |
+| Python compilation | Full candidate Linux pass | 583/583 at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`. [V-117](runtime-refresh-2026-11-08-r2.md). |
+| Automated script execution | Full candidate Linux pass | 370/370 at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`; 584 required blobs verified before/after. [V-117](runtime-refresh-2026-11-08-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1061,3 +1061,11 @@ Next: [rate-shock baseline](chapter-08-rate-shock-range-baseline.md), with [four
 At `63ff224ef85691be6a513db55f27c3f567889f76`, eight scoped Python files compiled and six scripts passed, with eight exact Git blobs verified before/after. Fresh full-tree inventory is 582 Python files, 369 check/test scripts and 583 required source/fixture blobs. This is scoped validation; [V-115](runtime-refresh-2026-11-08.md) remains the latest full candidate Linux pass (581/368/582 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [log-return baseline](chapter-08-log-return-range-baseline.md), with [eight pinned observations](chapter-08-log-return-range-baseline.json): four finite-model range failures and four working half-price, adjacent-unity and equal-price controls. Derive a range-safe evaluation while preserving near-unity accuracy, positive-price domains, validation order and equal-price zero behavior. Stable quotient, centered-copy, resource limits and independent review remain open. Do not repeat completed rate-shock/PV/accumulation examples.
+
+## V-117 checkpoint — Section 8.5 log-return range
+
+[Log-return follow-up](chapter-08-log-return-range-followup.md): all 95 checks pass; 20 baseline failures and a byte-identical replay retained. Independent complete-ratio Decimal logarithms at 200/400 digits check extreme price ratios, branch boundaries, adjacent/equal prices, seeded positive binary64 pairs and input/validation guards. The near-unity formula remains; distant ratios use bounded mantissa/exponent normalization. Pinned corrected observations match local results. Failures are not distinct defect counts.
+
+[V-117 full runtime](runtime-refresh-2026-11-08-r2.md) at `31c777e7b1e41eaa3913a5144a69c6cb56cf914a`: 583 Python files compiled, 370 scripts passed and 584 required source/fixture hashes verified before/after. This fresh pinned-tree run includes both V-116 rate-shock and V-117 log-return changes/checkers. Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
+
+Next: [stable exponential quotient baseline](chapter-08-stable-exponential-quotient-baseline.md), with [six pinned observations](chapter-08-stable-exponential-quotient-baseline.json): four finite-result range failures and two working tiny/large-step controls. Independent complete exponential differences divided by step agree at 1600/2200 digits. Establish complete scaling/output and represented x+h conventions while preserving validation and nonzero-step domain, then continue the centered copy. Resource limits and independent review remain open. Do not repeat completed log-return/rate-shock/PV/accumulation examples.
