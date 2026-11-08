@@ -1,0 +1,1417 @@
+{
+  "validation": "V-123 scoped signed cash-flow aggregates",
+  "baseline_revision": "ade7da5b8c157c23f8b3be32c06af57add8602f4",
+  "baseline_source_blob": "2d9b3b26df93997a7aa9359185a3b7829f7f2704",
+  "candidate_based_on": "ade7da5b8c157c23f8b3be32c06af57add8602f4",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "baseline": {
+    "source_sha256": "2a5d44ea3a64fc7754b0162209d9001c63c59b32bf6b945ff4bdf90d8afc2218",
+    "checks": [
+      {
+        "case": "cancel-derivatives",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "cancel-derivatives",
+        "component": 1,
+        "actual": "nan",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "cancel-derivatives",
+        "component": 2,
+        "actual": "nan",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "overflow-order",
+        "component": 0,
+        "actual": "inf",
+        "reference": 1.7976931348623157e+308,
+        "passed": false
+      },
+      {
+        "case": "overflow-order",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "overflow-order",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "signed-extremes",
+        "component": 0,
+        "actual": "OverflowError",
+        "reference": 6.152710422811656e+110,
+        "passed": false
+      },
+      {
+        "case": "signed-extremes",
+        "component": 1,
+        "actual": "OverflowError",
+        "reference": -1.2312582313923687e+114,
+        "passed": false
+      },
+      {
+        "case": "signed-extremes",
+        "component": 2,
+        "actual": "OverflowError",
+        "reference": 2.4639473241511528e+117,
+        "passed": false
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 1,
+        "actual": 0.0,
+        "reference": -2e-323,
+        "passed": false
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 1.4644e-320,
+        "passed": false
+      },
+      {
+        "case": "ordinary",
+        "component": 0,
+        "actual": 76.14360525713418,
+        "reference": 76.14360525713417,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 1,
+        "actual": -74.37842759269812,
+        "reference": -74.3784275926981,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 2,
+        "actual": 105.27639132082831,
+        "reference": 105.27639132082827,
+        "passed": true
+      },
+      {
+        "case": "negative-underflow",
+        "component": 0,
+        "actual": 0.0,
+        "reference": -0.0,
+        "passed": false
+      },
+      {
+        "case": "negative-underflow",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 2e-323,
+        "passed": false
+      },
+      {
+        "case": "negative-underflow",
+        "component": 2,
+        "actual": 0.0,
+        "reference": -1.4644e-320,
+        "passed": false
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 0,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 1,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 2,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 0,
+        "actual": 5e-324,
+        "reference": 5e-324,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "final-overflow",
+        "actual": [
+          1.7976931348623157e+308,
+          "-inf",
+          "inf"
+        ],
+        "reference": "ValueError",
+        "passed": false
+      },
+      {
+        "case": "negative-final-overflow",
+        "actual": [
+          -1.7976931348623157e+308,
+          "inf",
+          "-inf"
+        ],
+        "reference": "ValueError",
+        "passed": false
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 0,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 1,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 2,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "empty",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 0,
+        "actual": 5.0,
+        "reference": 5.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 1,
+        "actual": -4.0,
+        "reference": -4.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 2,
+        "actual": 8.0,
+        "reference": 8.0,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 0,
+        "actual": "inf",
+        "reference": 1.7976931348623157e+308,
+        "passed": false
+      },
+      {
+        "case": "permutation0",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 0,
+        "actual": "inf",
+        "reference": 1.7976931348623157e+308,
+        "passed": false
+      },
+      {
+        "case": "permutation2",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "one-shot collection",
+        "passed": true
+      },
+      {
+        "case": "rate-first",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "negative-years",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "bool-payment",
+        "actual": "TypeError",
+        "reference": "TypeError",
+        "passed": true
+      },
+      {
+        "case": "huge-payment",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "empty-rate-validation",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "signed aggregate independent of nonnegative helper",
+        "passed": true
+      }
+    ],
+    "oracle": "Complete signed term sums at Decimal.from_float 1600/2200 digits; independent of grouped implementation",
+    "relative_tolerance": 4e-15,
+    "absolute_tolerance": 0,
+    "zero_policy": "Exact algebraic zero canonical positive; nonzero underflow retains sign",
+    "limits": "Selected complete aggregates and guards, not arbitrary cancellation/correct-rounding or resource-limit certification"
+  },
+  "baseline_replay": {
+    "source_sha256": "2a5d44ea3a64fc7754b0162209d9001c63c59b32bf6b945ff4bdf90d8afc2218",
+    "checks": [
+      {
+        "case": "cancel-derivatives",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "cancel-derivatives",
+        "component": 1,
+        "actual": "nan",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "cancel-derivatives",
+        "component": 2,
+        "actual": "nan",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "overflow-order",
+        "component": 0,
+        "actual": "inf",
+        "reference": 1.7976931348623157e+308,
+        "passed": false
+      },
+      {
+        "case": "overflow-order",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "overflow-order",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "signed-extremes",
+        "component": 0,
+        "actual": "OverflowError",
+        "reference": 6.152710422811656e+110,
+        "passed": false
+      },
+      {
+        "case": "signed-extremes",
+        "component": 1,
+        "actual": "OverflowError",
+        "reference": -1.2312582313923687e+114,
+        "passed": false
+      },
+      {
+        "case": "signed-extremes",
+        "component": 2,
+        "actual": "OverflowError",
+        "reference": 2.4639473241511528e+117,
+        "passed": false
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 1,
+        "actual": 0.0,
+        "reference": -2e-323,
+        "passed": false
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 1.4644e-320,
+        "passed": false
+      },
+      {
+        "case": "ordinary",
+        "component": 0,
+        "actual": 76.14360525713418,
+        "reference": 76.14360525713417,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 1,
+        "actual": -74.37842759269812,
+        "reference": -74.3784275926981,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 2,
+        "actual": 105.27639132082831,
+        "reference": 105.27639132082827,
+        "passed": true
+      },
+      {
+        "case": "negative-underflow",
+        "component": 0,
+        "actual": 0.0,
+        "reference": -0.0,
+        "passed": false
+      },
+      {
+        "case": "negative-underflow",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 2e-323,
+        "passed": false
+      },
+      {
+        "case": "negative-underflow",
+        "component": 2,
+        "actual": 0.0,
+        "reference": -1.4644e-320,
+        "passed": false
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 0,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 1,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 2,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 0,
+        "actual": 5e-324,
+        "reference": 5e-324,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "final-overflow",
+        "actual": [
+          1.7976931348623157e+308,
+          "-inf",
+          "inf"
+        ],
+        "reference": "ValueError",
+        "passed": false
+      },
+      {
+        "case": "negative-final-overflow",
+        "actual": [
+          -1.7976931348623157e+308,
+          "inf",
+          "-inf"
+        ],
+        "reference": "ValueError",
+        "passed": false
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 0,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 1,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 2,
+        "actual": "OverflowError",
+        "reference": 0.0,
+        "passed": false
+      },
+      {
+        "case": "empty",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 0,
+        "actual": 5.0,
+        "reference": 5.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 1,
+        "actual": -4.0,
+        "reference": -4.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 2,
+        "actual": 8.0,
+        "reference": 8.0,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 0,
+        "actual": "inf",
+        "reference": 1.7976931348623157e+308,
+        "passed": false
+      },
+      {
+        "case": "permutation0",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 0,
+        "actual": "inf",
+        "reference": 1.7976931348623157e+308,
+        "passed": false
+      },
+      {
+        "case": "permutation2",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "one-shot collection",
+        "passed": true
+      },
+      {
+        "case": "rate-first",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "negative-years",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "bool-payment",
+        "actual": "TypeError",
+        "reference": "TypeError",
+        "passed": true
+      },
+      {
+        "case": "huge-payment",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "empty-rate-validation",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "signed aggregate independent of nonnegative helper",
+        "passed": true
+      }
+    ],
+    "oracle": "Complete signed term sums at Decimal.from_float 1600/2200 digits; independent of grouped implementation",
+    "relative_tolerance": 4e-15,
+    "absolute_tolerance": 0,
+    "zero_policy": "Exact algebraic zero canonical positive; nonzero underflow retains sign",
+    "limits": "Selected complete aggregates and guards, not arbitrary cancellation/correct-rounding or resource-limit certification"
+  },
+  "baseline_replay_byte_identical": true,
+  "corrected": {
+    "source_sha256": "bbe9c0bf358f734ac65507f6875a694e6683b6ad6e66a05ed6312361545be8da",
+    "checks": [
+      {
+        "case": "cancel-derivatives",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "cancel-derivatives",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "cancel-derivatives",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "overflow-order",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "overflow-order",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "overflow-order",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "reordered-control",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "signed-extremes",
+        "component": 0,
+        "actual": 6.152710422811656e+110,
+        "reference": 6.152710422811656e+110,
+        "passed": true
+      },
+      {
+        "case": "signed-extremes",
+        "component": 1,
+        "actual": -1.2312582313923687e+114,
+        "reference": -1.2312582313923687e+114,
+        "passed": true
+      },
+      {
+        "case": "signed-extremes",
+        "component": 2,
+        "actual": 2.4639473241511528e+117,
+        "reference": 2.4639473241511528e+117,
+        "passed": true
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 1,
+        "actual": -2e-323,
+        "reference": -2e-323,
+        "passed": true
+      },
+      {
+        "case": "derivative-underflow",
+        "component": 2,
+        "actual": 1.4644e-320,
+        "reference": 1.4644e-320,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 0,
+        "actual": 76.14360525713417,
+        "reference": 76.14360525713417,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 1,
+        "actual": -74.3784275926981,
+        "reference": -74.3784275926981,
+        "passed": true
+      },
+      {
+        "case": "ordinary",
+        "component": 2,
+        "actual": 105.27639132082827,
+        "reference": 105.27639132082827,
+        "passed": true
+      },
+      {
+        "case": "negative-underflow",
+        "component": 0,
+        "actual": -0.0,
+        "reference": -0.0,
+        "passed": true
+      },
+      {
+        "case": "negative-underflow",
+        "component": 1,
+        "actual": 2e-323,
+        "reference": 2e-323,
+        "passed": true
+      },
+      {
+        "case": "negative-underflow",
+        "component": 2,
+        "actual": -1.4644e-320,
+        "reference": -1.4644e-320,
+        "passed": true
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "exact-exp-cancel",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 0,
+        "actual": 5e-324,
+        "reference": 5e-324,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-horizon-signed",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "final-overflow",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "negative-final-overflow",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "signed-zero-payments",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 0,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "empty",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 0,
+        "actual": 5.0,
+        "reference": 5.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 1,
+        "actual": -4.0,
+        "reference": -4.0,
+        "passed": true
+      },
+      {
+        "case": "zero-rate-different-times",
+        "component": 2,
+        "actual": 8.0,
+        "reference": 8.0,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation0",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation1",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation2",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation3",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation4",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 0,
+        "actual": 1.7976931348623157e+308,
+        "reference": 1.7976931348623157e+308,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 1,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "permutation5",
+        "component": 2,
+        "actual": 0.0,
+        "reference": 0.0,
+        "passed": true
+      },
+      {
+        "case": "one-shot collection",
+        "passed": true
+      },
+      {
+        "case": "rate-first",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "negative-years",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "bool-payment",
+        "actual": "TypeError",
+        "reference": "TypeError",
+        "passed": true
+      },
+      {
+        "case": "huge-payment",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "empty-rate-validation",
+        "actual": "ValueError",
+        "reference": "ValueError",
+        "passed": true
+      },
+      {
+        "case": "signed aggregate independent of nonnegative helper",
+        "passed": true
+      }
+    ],
+    "oracle": "Complete signed term sums at Decimal.from_float 1600/2200 digits; independent of grouped implementation",
+    "relative_tolerance": 4e-15,
+    "absolute_tolerance": 0,
+    "zero_policy": "Exact algebraic zero canonical positive; nonzero underflow retains sign",
+    "limits": "Selected complete aggregates and guards, not arbitrary cancellation/correct-rounding or resource-limit certification"
+  },
+  "scoped": {
+    "compiled": 7,
+    "scripts_passed": 5,
+    "scope_manifest": [
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+        "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_06.py",
+        "sha": "3da48f7ddcb091907de7f28d39371f2321b2e9eb"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_06.py",
+        "sha": "5b46254c42da72e81f6a843692e7aa6168a5044c"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_pv_curvature_range.py",
+        "sha": "47f5f8da66ce71eee52edf6c595d67e0ce3fe1bb"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_06_pv_range.py",
+        "sha": "df0972abb12d058241161454d0ec73d2f5992c09"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_06_shocks.py",
+        "sha": "59bff14a612f5fcd83a32da03d3a125c733f55bc"
+      },
+      {
+        "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_06_cash_flows.py",
+        "sha": "ed851b0c2198e6f1dfc828d6d1c5f9b2ae41d97b"
+      }
+    ],
+    "commands": [
+      {
+        "script": "check_section_8_06.py",
+        "returncode": 0,
+        "seconds": 2.494186304999971,
+        "stdout_sha256": "5ada323ffea8541f53ef2334c48bb22bf40edc10206abb4706f72cb2e2d38f70",
+        "stdout": null,
+        "stderr": ""
+      },
+      {
+        "script": "check_pv_curvature_range.py",
+        "returncode": 0,
+        "seconds": 6.787027024999929,
+        "stdout_sha256": "117b327403a98dc2500fc75c1684517f6c4447d98e9a81f5c2b02ff84499621b",
+        "stdout": null,
+        "stderr": ""
+      },
+      {
+        "script": "check_section_06_pv_range.py",
+        "returncode": 0,
+        "seconds": 10.88422016100003,
+        "stdout_sha256": "a7ba85f45380beb38d6504a90cb7fba5ee35d18c54fc8611bc8388d13a6c5283",
+        "stdout": null,
+        "stderr": ""
+      },
+      {
+        "script": "check_section_06_shocks.py",
+        "returncode": 0,
+        "seconds": 17.05461034999996,
+        "stdout_sha256": "a29afdc56ec0bb6cdeaec2f96a8d2dc31aa2f054c919d6f638945d5680138b8f",
+        "stdout": null,
+        "stderr": ""
+      },
+      {
+        "script": "check_section_06_cash_flows.py",
+        "returncode": 0,
+        "seconds": 4.21256913000002,
+        "stdout_sha256": "baf994d7c45f783cdb09015cbd4e2b709882af3bf7e960a51542c274bfabf38d",
+        "stdout": null,
+        "stderr": ""
+      }
+    ],
+    "verified_before_after": true
+  },
+  "limits": "Complete-expression aggregate range under selected cases; finite1600-digit context, count/resource and independent-review obligations remain open. Source pinned by manifest until publication verification records executable commit."
+}

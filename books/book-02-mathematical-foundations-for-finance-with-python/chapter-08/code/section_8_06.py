@@ -1,6 +1,7 @@
 """Section 8.6: higher derivatives, curvature, and PV convexity."""
 import math
 from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 from section_8_01 import _scaled_pv
 
 def finite(value, name):
@@ -111,18 +112,35 @@ def pv_shock_exact(payment, rate, years, shock):
         return _scaled_pv(-c, -r*t, gap)
     return _scaled_pv(c, -(r+h)*t, gap)
 
+def _cash_flow_component(groups):
+    groups={exponent:coefficient for exponent,coefficient in groups.items() if coefficient}
+    if not groups:return 0.0
+    if len(groups)==1 and 0 in groups:
+        try:return finite(float(groups[0]), "cash-flow aggregate")
+        except OverflowError as exc:raise ValueError("cash-flow aggregate outside finite float range") from exc
+    pivot=max(groups)
+    with localcontext(Context(prec=1600)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        # Group equal exponents exactly first; sum complete signed contributions
+        # relative to a common exponent before converting any term to float.
+        total=sum((dec(c)*dec(e-pivot).exp() for e,c in sorted(groups.items())),Decimal(0))
+        if not total:return 0.0
+        amplitude=dec(pivot)+abs(total).ln()
+        if amplitude>10000:raise ValueError("cash-flow aggregate outside finite float range")
+        if amplitude< -10000:return -0.0 if total<0 else 0.0
+        result=amplitude.exp().copy_sign(total)
+        try:return finite(float(result), "cash-flow aggregate")
+        except OverflowError as exc:raise ValueError("cash-flow aggregate outside finite float range") from exc
+
 def cash_flow_rate_derivatives(cash_flows, rate):
-    r = finite(rate, "rate")
-    value = first = second = 0.0
-    for payment, years in cash_flows:
-        c, t = finite(payment, "payment"), finite(years, "years")
-        if t < 0:
-            raise ValueError("cash-flow horizons must be nonnegative")
-        pv = c*math.exp(-r*t)
-        value += pv
-        first -= t*pv
-        second += t*t*pv
-    return value, first, second
+    r=Fraction(finite(rate, "rate"));groups=[{}, {}, {}]
+    for payment,years in cash_flows:
+        c,t=finite(payment,"payment"),finite(years,"years")
+        if t<0:raise ValueError("cash-flow horizons must be nonnegative")
+        c,t=Fraction(c),Fraction(t);exponent=-r*t
+        for grouped,coefficient in zip(groups,(c,-t*c,t*t*c)):
+            grouped[exponent]=grouped.get(exponent,Fraction(0))+coefficient
+    return tuple(_cash_flow_component(grouped) for grouped in groups)
 
 def centered_second_difference(function, x, step=1e-3):
     if not callable(function):

@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-122 scoped local shock pass (six files/four scripts), after V-121 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-123 scoped signed aggregate pass (seven files/five scripts), after V-121 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1109,3 +1109,12 @@ Next: [local Section 8.6 Taylor/exact-shock baseline](chapter-08-section-06-shoc
 At `37b29e56354a02fbccb747ff0c77bbd45cd67edd`, six scoped Python files compiled and four scripts passed, with six exact Git blobs verified before/after. Fresh full-tree inventory: 588 Python files, 375 check/test scripts and 589 required source/fixture blobs. This is scoped validation; [V-121](runtime-refresh-2026-11-08-r4.md) remains the latest full candidate Linux pass (587/374/588 at its earlier revision). Thirty-five selected COV categories remain partially addressed; none is closed. Independent reviewer, supported-platform, release and canonical decisions remain pending.
 
 Next: [signed cash-flow derivative baseline](chapter-08-cash-flow-derivatives-baseline.md), with [five actual aggregate probes](chapter-08-cash-flow-derivatives-baseline.json) including a reordered working control. Complete signed references expose cancellation, order-dependent overflow, extreme discounted terms and subnormal derivative loss. Preserve signed payments, nonnegative horizons, rate-first/empty validation and one-shot iteration; reconcile aggregate output policy before term rounding. Polynomial, sampled-second-difference, resource and independent-review obligations remain separate.
+
+
+## V-123 checkpoint — Signed cash-flow aggregate derivatives
+
+[Cash-flow aggregate follow-up](chapter-08-cash-flow-derivatives-followup.md):63 selected checks pass;21 expanded baseline mismatches and byte-identical replay retained, alongside the original five-probe screen. Complete signed references agree at Decimal1600/2200 digits. Equal-exponent grouping/common-scale summation repairs cancellation, order overflow and subnormal derivatives while preserving signed cash flows, nonnegative horizons, rate-first/empty validation and one-shot iteration. Zero/final-range conventions are explicit; arbitrary cancellation/resource and independent-review limits remain open.
+
+Seven scoped files compiled and five scripts passed, exact candidate blobs verified before/after. Candidate based on ade7da5b8c157c23f8b3be32c06af57add8602f4; executable publication pin follows in the evidence. Fresh inventory589 Python files/376 scripts/590 required source-fixture blobs is an inventory, not a full pass. V-121 remains the last full candidate Linux run pending a fresh pinned refresh after the accumulated V-122/V-123 changes. Thirty-five selected COV categories remain partially addressed; none closed.
+
+Next substantive item: Section8.6 polynomial/derivative-coefficient complete-expression range/output contracts with independent exact references, then sampled-second differences. Source/test counts do not grant reviewer/platform/release/canonical approval. Book1 progress remains independently tracked.
