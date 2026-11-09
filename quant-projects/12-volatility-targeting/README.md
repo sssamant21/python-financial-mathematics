@@ -31,3 +31,16 @@ Synthetic daily returns switch from a low-volatility to a high-volatility regime
 - Synthetic test passes establish software behavior, **not** statistical validity, independent review, market performance, or production certification.
 
 **Next:** walk-forward risk-target calibration, leverage-cap and cost sensitivity, realized-volatility tracking error under structural breaks.
+
+## Walk-forward calibration and fixed sensitivity grid
+
+`calibration_walkforward.py` evaluates a **fixed** volatility-targeting decision at each origin. Its trailing sample volatility uses only observations before the origin. The exposure is held unchanged across the next `horizon` observations; evaluation windows do not overlap. This isolates realized volatility tracking from intra-window rebalancing. The forecast is `weight × trailing annualized volatility`, and the held-out realized volatility is the sample standard deviation of forward gross portfolio returns. Their absolute difference is a *descriptive forecast error*, not a confidence interval or guaranteed risk budget.
+
+The grid compares predeclared leverage caps (1.0, 1.5) and entry-cost assumptions (0, 10, 25 bps). Entry cost is charged once per held-out rebalance and is **not** a full multi-period execution or financing model. The diagnostic reports gross compounded forward return separately; do not interpret it as net performance. In particular, the fixed-horizon experiment is different from the daily-rebalanced strategy above.
+
+```bash
+python calibration_walkforward.py --seed 20261109 --window 20 --horizon 20
+python -m pytest -q test_calibration_walkforward.py
+```
+
+No market data are downloaded. Parameter grids must be fixed before examining held-out results to avoid selection bias. These synthetic results cannot establish calibration in 2020/2022 markets, live execution quality, or production readiness.
