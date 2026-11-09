@@ -45,3 +45,5 @@ Run `py -m pytest -q` inside Projects 01, 03, 04, 05, 06, 07, 08, and 09 (Projec
 See [PROJECT-TRACKER.md](PROJECT-TRACKER.md) for scope, next exercises, and acceptance status.
 
 Project 08 also includes `oos_covariance.py`, a synthetic walk-forward comparison of fixed covariance-shrinkage scenarios with non-overlapping forward variance scoring. Run `python -m pytest -q test_oos_covariance.py` from its directory; see the Project 08 README for model-validation limits.
+
+Project 09 also provides `walkforward.py` for training-only rolling drawdown scenario scoring and non-overlapping held-out 26-week outcomes, with 2/4/8-week circular-block sensitivity. Run `python -m pytest -q test_walkforward.py` in its folder.
