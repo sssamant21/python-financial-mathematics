@@ -92,3 +92,14 @@ Added `13-risk-parity/compare.py` and `test_compare.py`: both inverse-volatility
 ### Project 14 — Minimum-variance hedge ratio stability (2026-11-09)
 
 Published `14-hedge-ratio-stability/` with training-only rolling hedge ratios, signed exposure caps, non-overlapping held-out variance scoring, a seeded beta-regime shift, transaction-cost sensitivity, and 12 authored synthetic tests. **Local tests and exact-revision CI have not yet been confirmed.** No licensed historical-market validation, self-financing hedge ledger, independent review, or production certification. Next: verify CI and compare window/shrinkage sensitivity with regime-specific uncertainty diagnostics.
+
+### Project 14 hedge estimator sensitivity checkpoint (2026-11-09)
+
+Added `sensitivity.py` and `test_sensitivity.py` with common historical-only
+origins, fixed window/shrinkage grids, non-overlapping held-out variance
+reduction, synthetic early/late regime labels, and future-data mutation
+checks. **Tests authored but not executed locally in this run; exact-revision
+CI unverified.** This is not nested model selection, and regime-specific
+uncertainty intervals remain pending. No licensed market data, independent
+review, or production certification. Next: verify new CI and address failures,
+then add block-bootstrap regime uncertainty with predeclared evaluation rules.
