@@ -50,6 +50,8 @@ jobs:
           python -m pytest -q quant-projects/09-drawdown-recovery/test_drawdown.py
           python -m pytest -q quant-projects/09-drawdown-recovery/test_walkforward.py
       - name: Validate Project 10 liquidity capacity
-        run: |\n          python -m pytest -q quant-projects/10-liquidity-rebalancing/test_liquidity.py\n          python -m pytest -q quant-projects/10-liquidity-rebalancing/test_adv_walkforward.py
+        run: |
+          python -m pytest -q quant-projects/10-liquidity-rebalancing/test_liquidity.py
+          python -m pytest -q quant-projects/10-liquidity-rebalancing/test_adv_walkforward.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
