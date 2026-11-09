@@ -39,4 +39,17 @@ This project attributes *covariance-based volatility* and zero-mean **parametric
 
 A local isolated Python prototype with NumPy and pytest completed **10/10 tests** on 2026-11-08. The published implementation must still be checked against its exact GitHub revision; CI, independent review, and licensed historical-data acceptance remain pending until separately verified.
 
+## Extension — covariance estimation stability and gradient cross-check
+
+Run from this project directory:
+
+```bash
+python stability.py
+python -m pytest -q test_risk_attribution.py test_stability.py
+```
+
+The synthetic example generates 120 monthly three-asset observations with a seeded common factor. It estimates a sample covariance matrix, explicitly multiplies by 12 for **annualized covariance**, and compares fixed diagonal-shrinkage intensities 0, 0.5, and 1.0. The choice of shrinkage is a sensitivity scenario, **not** a statistically optimized estimator. For each case, the program checks the analytical Euler marginal-volatility gradient against a central finite difference. The finite-difference perturbations deliberately do **not** renormalize weights: Euler's derivative is an unconstrained gradient in weight space; a self-financing trade gradient would be a different quantity. Shrinkage to the diagonal may reduce unstable off-diagonal estimates but can erase genuine diversification/hedging effects. Never select a parameter using future realized outcomes. A point-in-time rolling training window and out-of-sample forecast comparison are needed before empirical stability claims.
+
+**Validation boundary:** 13 closely related local prototype tests passed in an isolated Python environment; the two published extension files were adapted for integration with `risk_attribution.py`, so **exact published-revision tests and CI are not yet confirmed**. The prototype used synthetic observations only; no historical market-data acceptance or independent review was performed.
+
 Previous: [Project 07](../07-multi-horizon-risk/README.md). Index: [Quant projects](../README.md).
