@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Thirteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Fourteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -20,6 +20,7 @@ Thirteen self-contained labs complement the financial-mathematics books without 
 | [10](10-liquidity-rebalancing/README.md) | Liquidity-aware rebalancing, participation capacity, spread and impact stress | Deterministic synthetic | `liquidity.py` |
 | [11](11-factor-exposure-stability/README.md) | Rolling factor exposures, ex-post held-out decomposition, and regime drift | Seeded synthetic | `factor_lab.py` |\n| [12](12-volatility-targeting/README.md) | Lagged realized-volatility targeting, turnover and linear transaction-cost sensitivity | Seeded synthetic | `volatility_targeting.py` |
 | [13](13-risk-parity/README.md) | Inverse-volatility and covariance-aware ERC, matched held-out cost/risk comparison | Seeded synthetic | `risk_parity.py` |
+| [14](14-hedge-ratio-stability/README.md) | Rolling minimum-variance hedge ratios, beta regime drift and costs | Seeded synthetic | `hedge_lab.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -69,3 +70,5 @@ Project 13 uses training-only inverse-volatility allocation, capped long-only we
 Project 13 also includes `erc.py` and `test_erc.py` for covariance-aware equal-risk-contribution optimization and non-overlapping held-out risk-budget drift. Run `python -m pytest -q test_erc.py` from `13-risk-parity/`. This extension uses synthetic observations only.
 
 Project 13 also includes `compare.py` and `test_compare.py` for matched uncapped long-only inverse-volatility versus ERC allocation, non-overlapping buy-and-hold blocks, drifted holdings, turnover and ex-post risk-budget comparison. Run `python -m pytest -q test_compare.py` from its folder.
+
+Project 14 uses synthetic rolling hedge ratios and non-overlapping held-out variance scoring; run `python -m pytest -q test_hedge_lab.py` from its folder. Real-market validation and independent review are outstanding.
