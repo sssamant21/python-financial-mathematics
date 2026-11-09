@@ -75,3 +75,5 @@ Project 13 also includes `compare.py` and `test_compare.py` for matched uncapped
 Project 14 uses synthetic rolling hedge ratios and non-overlapping held-out variance scoring; run `python -m pytest -q test_hedge_lab.py` from its folder. Real-market validation and independent review are outstanding.
 
 Project 14 also includes `sensitivity.py` and `test_sensitivity.py` for matched-origin 26/52/78-week hedge-window and fixed covariance-shrinkage sensitivity. This is synthetic ex-post evaluation, not a trading strategy.
+
+Project 14 also includes `regime_uncertainty.py` and `test_regime_uncertainty.py` for seeded, descriptive block-bootstrap intervals on predeclared held-out hedge variance-reduction scores. Run `python -m pytest -q test_regime_uncertainty.py` from its directory. These intervals are not certified coverage estimates.
