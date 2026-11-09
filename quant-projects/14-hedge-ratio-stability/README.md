@@ -49,3 +49,8 @@ Do not select the best configuration on the same held-out blocks and call it
 out-of-sample validated. The grid is a sensitivity exercise, not a nested
 selection protocol. No bootstrap confidence coverage, margin ledger,
 licensed 2020/2022 data, or independent review is claimed.
+
+## Regime-specific block-bootstrap uncertainty (descriptive)
+
+Run `python regime_uncertainty.py --seed 14` and `python -m pytest -q test_regime_uncertainty.py`.
+For the **predeclared** 52-week, zero-shrinkage estimator, `block_intervals` resamples complete, non-overlapping 13-week held-out variance-reduction scores **within** each synthetic early/late regime. For regime `g`, its reported point estimate is the mean of block scores, `mean(VR[g, j])`; percentile limits come from seeded bootstrap resampling of whole block scores. At least three usable blocks per regime are required; otherwise results are marked insufficient, never silently fabricated. The intervals are descriptive sampling-sensitivity summaries, **not** calibrated future prediction intervals, proof of 95% coverage, or evidence of real 2020/2022 stress performance. Adjacent blocks may still be dependent, and the early/late label is known only in the synthetic generator. No parameter is selected on the held-out observations.
