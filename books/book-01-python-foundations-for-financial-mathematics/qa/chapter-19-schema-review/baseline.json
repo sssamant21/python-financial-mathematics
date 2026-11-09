@@ -1,0 +1,286 @@
+{
+  "candidate_based_on": "39c3e62d59aade825ff6c414ba6bbbcd66666a90",
+  "selected_revision": null,
+  "source_sha256": "ee3b054807cd4b1bc966424cc10a61fb8e10c89f4a3de41e9b74bb0607aade3b",
+  "fixture_sha256": "495375d77ce5e71c6382ce1f07c5e6d2683accf783cdcb23f964a798651a7284",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "schema_data_types.py"
+      ],
+      "returncode": 0,
+      "stdout": "records: [{'instrument': 'EXAMPLE', 'observation_date': datetime.date(2026, 1, 5), 'close': Decimal('100.00'), 'currency': 'USD', 'price_type': 'unadjusted_close'}, {'instrument': 'EXAMPLE', 'observation_date': datetime.date(2026, 1, 6), 'close': Decimal('101.50'), 'currency': 'USD', 'price_type': 'unadjusted_close'}]\nsimple return: 0.015\n",
+      "stderr": "test_currency (__main__.SchemaTests.test_currency) ... ok\ntest_date (__main__.SchemaTests.test_date) ... ok\ntest_duplicate (__main__.SchemaTests.test_duplicate) ... ok\ntest_extra_field (__main__.SchemaTests.test_extra_field) ... ok\ntest_integral_width (__main__.SchemaTests.test_integral_width) ... ok\ntest_missing (__main__.SchemaTests.test_missing) ... ok\ntest_notation (__main__.SchemaTests.test_notation) ... ok\ntest_null (__main__.SchemaTests.test_null) ... ok\ntest_return (__main__.SchemaTests.test_return) ... ok\ntest_scale (__main__.SchemaTests.test_scale) ... ok\ntest_valid (__main__.SchemaTests.test_valid) ... ok\ntest_zero (__main__.SchemaTests.test_zero) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "schema_data_types.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import schema_data_types"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "accepted price 123456.78",
+      "passed": true,
+      "actual": "Decimal('123456.78')",
+      "expected": "Decimal('123456.78')"
+    },
+    {
+      "name": "accepted price 999999.99",
+      "passed": true,
+      "actual": "Decimal('999999.99')",
+      "expected": "Decimal('999999.99')"
+    },
+    {
+      "name": "accepted price 000001.20",
+      "passed": true,
+      "actual": "Decimal('1.20')",
+      "expected": "Decimal('1.20')"
+    },
+    {
+      "name": "accepted price 000000.01",
+      "passed": true,
+      "actual": "Decimal('0.01')",
+      "expected": "Decimal('0.01')"
+    },
+    {
+      "name": "accepted price 1",
+      "passed": true,
+      "actual": "Decimal('1')",
+      "expected": "Decimal('1')"
+    },
+    {
+      "name": "accepted price 1.2",
+      "passed": true,
+      "actual": "Decimal('1.2')",
+      "expected": "Decimal('1.2')"
+    },
+    {
+      "name": "accepted price 1.20",
+      "passed": true,
+      "actual": "Decimal('1.20')",
+      "expected": "Decimal('1.20')"
+    },
+    {
+      "name": "scale preserved",
+      "passed": true,
+      "actual": "-2",
+      "expected": "-2"
+    },
+    {
+      "name": "rejected price '1234567.00'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '1000000.00'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '0000001.2'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '1.234'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '1e2'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '+1'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '-1'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '.5'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '1.'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '1.2\\n'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '\uff11\uff12'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price 'NaN'",
+      "passed": true,
+      "actual": "'precision_or_scale'",
+      "expected": "'precision_or_scale'"
+    },
+    {
+      "name": "rejected price '0.00'",
+      "passed": true,
+      "actual": "'close'",
+      "expected": "'close'"
+    },
+    {
+      "name": "field ('close', True)",
+      "passed": true,
+      "actual": "'type'",
+      "expected": "'type'"
+    },
+    {
+      "name": "field ('close', None)",
+      "passed": true,
+      "actual": "'type'",
+      "expected": "'type'"
+    },
+    {
+      "name": "field ('currency', 'EUR')",
+      "passed": true,
+      "actual": "'semantics'",
+      "expected": "'semantics'"
+    },
+    {
+      "name": "field ('price_type', 'adjusted_close')",
+      "passed": true,
+      "actual": "'semantics'",
+      "expected": "'semantics'"
+    },
+    {
+      "name": "field ('instrument', ' ')",
+      "passed": true,
+      "actual": "'instrument'",
+      "expected": "'instrument'"
+    },
+    {
+      "name": "field ('observation_date', '20260105')",
+      "passed": true,
+      "actual": "'date'",
+      "expected": "'date'"
+    },
+    {
+      "name": "field ('observation_date', '2026-W02-1')",
+      "passed": true,
+      "actual": "'date'",
+      "expected": "'date'"
+    },
+    {
+      "name": "extra field",
+      "passed": true,
+      "actual": "'schema'",
+      "expected": "'schema'"
+    },
+    {
+      "name": "missing fields",
+      "passed": true,
+      "actual": "'schema'",
+      "expected": "'schema'"
+    },
+    {
+      "name": "two rows",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "normalized duplicate",
+      "passed": true,
+      "actual": "ValueError: duplicate",
+      "expected": "ValueError"
+    },
+    {
+      "name": "empty policy",
+      "passed": true,
+      "actual": "[]",
+      "expected": "[]"
+    },
+    {
+      "name": "order retained",
+      "passed": true,
+      "actual": "[datetime.date(2026, 1, 6), datetime.date(2026, 1, 5)]",
+      "expected": "[datetime.date(2026, 1, 6), datetime.date(2026, 1, 5)]"
+    },
+    {
+      "name": "caller unchanged",
+      "passed": true,
+      "actual": "{'instrument': 'EXAMPLE', 'observation_date': '2026-01-05', 'close': '100.00', 'currency': 'USD', 'price_type': 'unadjusted_close'}",
+      "expected": "{'instrument': 'EXAMPLE', 'observation_date': '2026-01-05', 'close': '100.00', 'currency': 'USD', 'price_type': 'unadjusted_close'}"
+    },
+    {
+      "name": "return ('100', '101.50')",
+      "passed": true,
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "return ('1', '1.000000000000000000000000000001')",
+      "passed": false,
+      "actual": "Decimal('0E-27')",
+      "expected": "Decimal('1E-30')"
+    },
+    {
+      "name": "return ('2', '0')",
+      "passed": true,
+      "actual": "Decimal('-1')",
+      "expected": "Decimal('-1')"
+    },
+    {
+      "name": "private return context",
+      "passed": false,
+      "actual": "Decimal('0.0')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "parser text exact under low context",
+      "passed": true,
+      "actual": "Decimal('123456.78')",
+      "expected": "Decimal('123456.78')"
+    }
+  ],
+  "existing_unique_methods": 12,
+  "new_historical_methods": 0,
+  "scope": "Decoded strict price-text/schema/key andstandalone return checks;not syntax decoder,source/financial/point-in-time/resource/platform/independent acceptance"
+}

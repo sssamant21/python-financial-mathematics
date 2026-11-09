@@ -2,6 +2,8 @@
 import math
 import sys
 from fractions import Fraction
+from decimal import Context, Decimal, localcontext
+from section_8_01 import _scaled_pv
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -84,21 +86,40 @@ def discounted_price(cash_flow, years, rate):
     c, t, r = finite(cash_flow, "cash_flow"), finite(years, "years"), finite(rate, "rate")
     if c <= 0 or t < 0:
         raise ValueError("cash_flow must be positive and years nonnegative")
-    exponent = finite(-r*t, "discount exponent")
-    return finite(c*math.exp(exponent), "discounted price")
+    if t == 0:
+        return c
+    return _scaled_pv(Fraction(c), -Fraction(r)*Fraction(t))
+
+def _normalized_report(value, name):
+    try:
+        return finite(float(value), name)
+    except OverflowError as exc:
+        raise ValueError(name+" outside finite float range") from exc
 
 def rate_sensitivity(cash_flow, years, rate, step):
     p = discounted_price(cash_flow, years, rate)
     if p == 0:
         raise ValueError("positive representable price required for normalized sensitivities")
-    function = lambda r: discounted_price(cash_flow, years, r)
-    d1 = centered_difference(function, rate, step)
-    d2 = second_difference(function, rate, step)
+    r, h = validated_step(rate, step)
     t = finite(years, "years")
-    return {"price": p, "duration": finite(-d1/p, "duration"),
-            "convexity": finite(d2/p, "convexity"),
-            "analytic_duration": t,
-            "analytic_convexity": finite(t*t, "analytic convexity")}
+    analytic_convexity = _difference_report(Fraction(t)**2)
+    if t == 0:
+        return {"price":p,"duration":-0.0,"convexity":0.0,
+                "analytic_duration":t,"analytic_convexity":analytic_convexity}
+    # Model-normalized prices cancel the positive cash scale exactly.
+    up_gap = -Fraction(t)*(Fraction(r+h)-Fraction(r))
+    down_gap = -Fraction(t)*(Fraction(r-h)-Fraction(r))
+    if down_gap > 10000:
+        raise ValueError("normalized sensitivity outside finite float range")
+    with localcontext(Context(prec=1600)):
+        def dec(value):return Decimal(value.numerator)/Decimal(value.denominator)
+        up = Decimal(0) if up_gap < -10000 else dec(up_gap).exp()
+        down = dec(down_gap).exp()
+        H = dec(Fraction(h))
+        duration = _normalized_report(-(up-down)/(2*H), "duration")
+        convexity = _normalized_report((up-2+down)/(H*H), "convexity")
+    return {"price":p,"duration":duration,"convexity":convexity,
+            "analytic_duration":t,"analytic_convexity":analytic_convexity}
 
 if __name__ == "__main__":
     x, h = 2, 0.1

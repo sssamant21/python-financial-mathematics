@@ -2,8 +2,8 @@
 
 **Date:** 2026-11-08  
 **Full-runtime candidate source revision:** `30fe802218e5ad9978031287330cd887ebbcf1dc` (V-133)
-**Latest scoped source:** V-125 candidate based on `5ad0dc3066bfcca85a3c50d1aac8a538c6459851`; exact48-file manifest in [evidence](chapter-08-polynomial-range-followup.md).
-**Disposition:** V-133 full candidate Linux pass including V-131/V-132; independent review and release approval pending.
+**Latest scoped source:** V-134 candidate based on `39c3e62d59aade825ff6c414ba6bbbcd66666a90`; exact54-file manifest in [evidence](chapter-08-section-08-financial-followup.md).
+**Disposition:** V-134 scoped financial follow-up after V-133 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1081,3 +1081,10 @@ Next-item checkpoint:[7Section8.8 financial probes](chapter-08-section-08-financ
 [V-133 full evidence](runtime-refresh-2026-11-08-r8.md) at `30fe802218e5ad9978031287330cd887ebbcf1dc`:595/595Python sources compiled,382/382check/test scripts passed,596/596required Python/fixture hashes verified before/after. Includes accumulated V-131/V-132 code/checker changes andlegacy predicate reconciliation. Exact runner/per-file results/digests/source manifest retained;earlier baseline/legacy failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
 
 Next substantive item:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md),5initial mismatches/2controls;reconcile complete price/normalized-rate-sensitivity conventions,then independent suggested-step references. Conditioning/noise/resource scope stays open. Book1 tracked independently.
+
+
+## V-134 checkpoint — Complete financial price and normalized ratios
+
+[Section 8.8 financial follow-up](chapter-08-section-08-financial-followup.md):84/84 corrected predicates passed;45 passes/39 initial expanded mismatches and identical replay retained. Initial79-predicate and actual legacy failure records remain separate. Complete represented-input price and model-normalized sampled-ratio conventions are documented; positive base-price, step/grid, input priority, zero/sign and final-range gates remain explicit. Independent complete absolute-price references agree at1800/2300digits; shared Decimal backend limits are stated. Chapter8:54 compiled/44 scripts passed,54 hashes verified before/after. Fresh596/383/597 inventory is not a full runtime refresh;V-133 remains latest full595/382/596 evidence. Thirty-five selected COV categories remain partial;none closed.
+
+Next substantive item:Section8.8 suggested-step independent numerical references and input/scale/represented-grid contract; broader noise/conditioning/resource and independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 progresses independently.

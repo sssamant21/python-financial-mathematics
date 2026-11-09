@@ -55,8 +55,8 @@ def check_normalized_sensitivity_range():
     assert discounted_price(1000,1,1000)==0
     rejects(ValueError,rate_sensitivity,1000,1,1000,0.01)
     rejects(ValueError,discounted_price,1e308,1,-1)
-    rejects(ValueError,discounted_price,1,2,1e308)
-    rejects(OverflowError,discounted_price,1,1,-1000)
+    assert discounted_price(1,2,1e308)==0
+    rejects(ValueError,discounted_price,1,1,-1000)
     # Independent closed forms for the finite-difference ratios themselves.
     for cash in (1,1000,1e200):
         years,h=5,1e-3
