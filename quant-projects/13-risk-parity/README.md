@@ -41,3 +41,11 @@ python -m pytest -q test_erc.py
 ```
 
 The shrinkage level, training window and evaluation horizon are predeclared teaching assumptions. Covariance estimation error, changing correlations, return-data publication timestamps, real-world turnover and costs, survivorship, financing, and independent statistical review remain unverified. This is not a tradable or certified portfolio model.
+
+## Extension — Matched inverse-volatility versus ERC comparison
+
+Run `python compare.py --seed 13` and `python -m pytest -q test_compare.py`. This seeded, synthetic-only experiment uses the **same** 52-week training lookback, 13-week non-overlapping held-out blocks, 15% fixed covariance shrinkage for ERC and ex-post risk scoring, fully invested long-only portfolios, **no weight cap for either method**, and 10 bps of one-way turnover costs. The earlier inverse-volatility baseline's 70% cap is intentionally disabled (`cap=1`) to avoid an unfair constraint mismatch. There is no leverage, borrowing, shorting, or broker connectivity.
+
+At each rebalance origin, historical training data alone determine the two target weights. For each held-out block, shares are held without intra-block rebalancing: asset growth is `G_i = product_t(1+r_it)`, gross wealth factor is `sum_i w_i G_i`, and the next rebalance starts from drifted weights `w_i G_i / sum_j w_j G_j`. Transaction costs are deducted at the origin using `sum_i |w_i - w_i_previous|` (initial cash-to-risky turnover is 1). The same realized block covariance measures **ex-post** maximum absolute deviation of each fractional variance contribution from `1/N`. It is never used to choose weights.
+
+**Validation limits:** This is a consistent *block-level buy-and-hold* ledger, not an intraday execution simulator. Covariance shrinkage is fixed, held-out covariance is noisy with only 13 weekly observations, no financing/slippage/tax/corporate-action modeling is performed, and risk contributions are not guaranteed to be positive for every covariance. No actual 2020/2022 market-data results, survivorship-free universe, point-in-time vendor timestamps, or independent review are claimed. No allocation is investment advice.
