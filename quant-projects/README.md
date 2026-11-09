@@ -56,3 +56,5 @@ Project 10 also includes `adv_walkforward.py` and `test_adv_walkforward.py` for 
 Project 10 includes `calibration.py` for prequential liquidity-capacity uncertainty diagnostics; run `python -m pytest -q test_calibration.py` in its folder.
 
 Project 11 uses synthetic three-factor observations and rolling training-only regression. Run `python -m pytest -q test_factor_lab.py` in its directory.
+
+Project 11 also includes `beta_diagnostics.py` for point-in-time release-lagged factor beta uncertainty and rolling drift; run `python -m pytest -q test_beta_diagnostics.py` in its folder.

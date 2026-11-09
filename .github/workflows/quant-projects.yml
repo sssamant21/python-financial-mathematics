@@ -55,6 +55,8 @@ jobs:
           python -m pytest -q quant-projects/10-liquidity-rebalancing/test_adv_walkforward.py
           python -m pytest -q quant-projects/10-liquidity-rebalancing/test_calibration.py
       - name: Validate Project 11 rolling factor exposure stability
-        run: python -m pytest -q quant-projects/11-factor-exposure-stability/test_factor_lab.py
+        run: |
+          python -m pytest -q quant-projects/11-factor-exposure-stability/test_factor_lab.py
+          python -m pytest -q quant-projects/11-factor-exposure-stability/test_beta_diagnostics.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
