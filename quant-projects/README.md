@@ -82,3 +82,5 @@ Project 14 also includes `regime_uncertainty.py` and `test_regime_uncertainty.py
 Project 15 provides annual-coupon bond valuation and predeclared parallel yield-shock stress; run `python -m pytest -q test_bond_lab.py` in its directory.
 
 Project 15 also provides `curve_portfolio.py` and `test_curve_portfolio.py` for hypothetical multi-bond spot-curve key-rate DV01 and nonparallel scenario repricing.
+
+Project 15 additionally includes `interpolation_stability.py` and `test_interpolation_stability.py` for a fixed rate-linear versus log-discount interpolation comparison, node DV01 aggregation, and parallel/nonparallel stress sensitivity. Run `python -m pytest -q test_interpolation_stability.py` in Project 15. Synthetic-only; independent review pending.
