@@ -84,3 +84,5 @@ Project 15 provides annual-coupon bond valuation and predeclared parallel yield-
 Project 15 also provides `curve_portfolio.py` and `test_curve_portfolio.py` for hypothetical multi-bond spot-curve key-rate DV01 and nonparallel scenario repricing.
 
 Project 15 additionally includes `interpolation_stability.py` and `test_interpolation_stability.py` for a fixed rate-linear versus log-discount interpolation comparison, node DV01 aggregation, and parallel/nonparallel stress sensitivity. Run `python -m pytest -q test_interpolation_stability.py` in Project 15. Synthetic-only; independent review pending.
+
+Project 15 also includes `forward_diagnostics.py` and `test_forward_diagnostics.py` for annual effective forward-rate consistency under the two predeclared spot-curve interpolation methods, using synthetic rates and a fixed curve shock.
