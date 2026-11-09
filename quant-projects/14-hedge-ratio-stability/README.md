@@ -32,3 +32,20 @@ Tests check analytic beta recovery, signed caps, constant-variance rejection, no
 **Acceptance:** Synthetic fixtures and tests only; licensed historical observations, actual release timestamps, exact-revision CI, independent model review, and production certification must be verified separately. Not financial advice.
 
 **Next exercise:** Compare rolling hedge estimation windows and shrinkage against a no-hedge baseline using held-out regime-specific variance reduction and robust uncertainty intervals.
+
+## Window and shrinkage sensitivity
+
+Run `python sensitivity.py --seed 14` and `python -m pytest -q test_sensitivity.py`.
+This second lab uses common held-out origins for 26/52/78-week training windows and
+fixed 0/50/100% shrinkage of the sample asset–hedge covariance toward zero.
+The estimator is `h = clip((1 - shrinkage) Cov(A,H) / Var(H), -2, 2)`.
+Shrinking covariance toward zero is an explicit *hedge attenuation assumption*,
+not a generally optimal covariance estimator. Each 13-week forward window is
+non-overlapping; no forward returns enter ratio estimation. Variance reduction
+is measured ex post against the unhedged asset, and early/late synthetic
+regimes are descriptive, not estimated change points.
+
+Do not select the best configuration on the same held-out blocks and call it
+out-of-sample validated. The grid is a sensitivity exercise, not a nested
+selection protocol. No bootstrap confidence coverage, margin ledger,
+licensed 2020/2022 data, or independent review is claimed.
