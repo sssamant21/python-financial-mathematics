@@ -36,5 +36,9 @@ jobs:
         run: python -m pytest -q quant-projects/06-tail-risk-bootstrap/test_tail_risk.py
       - name: Validate Project 07 horizon alignment
         run: python -m pytest -q quant-projects/07-multi-horizon-risk/test_multi_horizon.py
+      - name: Validate Project 07 dependent bootstrap and integrated scoring
+        run: |
+          python -m pytest -q quant-projects/07-multi-horizon-risk/test_dependent_bootstrap.py
+          python -m pytest -q quant-projects/07-multi-horizon-risk/test_bootstrap_walkforward.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py

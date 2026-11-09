@@ -20,3 +20,7 @@ Do **not** label production-certified; this is an educational research series. N
 ### Project 07 integrated bootstrap checkpoint (2026-11-08)
 
 Published `bootstrap_walkforward.py` and `test_bootstrap_walkforward.py`: non-overlapping walk-forward horizons, origin-specific seeded circular-block draws, historical/normal baseline alignment, bootstrap VaR/CVaR and realized breach flags. Added documentation and reproducible CLI. **Integration tests authored but not executed in this run; exact-revision CI remains unverified.** Next: run the full Project 07 test suite on the published SHA, review CI and fix failures; then begin Project 08 if green.
+
+### Project 07 exact-revision CI coverage checkpoint (2026-11-08)
+
+GitHub Actions run [42533470625](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42533470625) passed on commit `2e211d5f6b7c0d1875a7f84000083ddaca425554`, but its workflow executed only `test_multi_horizon.py` for Project 07; it **did not execute** `test_dependent_bootstrap.py` or `test_bootstrap_walkforward.py`. The workflow is now extended to run both missing suites on pushes to `quant-projects/`. Treat these new checks as **pending until the workflow run for this commit finishes successfully**; neither the earlier green run nor previously reported local prototype passes certify the integrated bootstrap revision. Next: inspect exact SHA's workflow jobs and address failures before advancing to Project 08 (portfolio risk attribution/component VaR).
