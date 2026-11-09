@@ -103,3 +103,7 @@ CI unverified.** This is not nested model selection, and regime-specific
 uncertainty intervals remain pending. No licensed market data, independent
 review, or production certification. Next: verify new CI and address failures,
 then add block-bootstrap regime uncertainty with predeclared evaluation rules.
+
+### Project 14 regime uncertainty checkpoint (2026-11-09)
+
+Verified previous exact-revision [GitHub Actions run 42671128465](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42671128465) **passed** on SHA `6f85c17d192d373feeaa04ebcaefe13607053d13`. Added `regime_uncertainty.py` and `test_regime_uncertainty.py`: seeded whole-held-out-block resampling, predeclared 52-week zero-shrinkage estimator, early/late synthetic regime separation, minimum-block and nonfinite-result suppression, and future-mutation checks. A source-equivalent local prototype passed **13/13** tests and compiled; **exact published-revision CI is not yet confirmed**. This is descriptive uncertainty, not calibrated interval coverage. No licensed historical data, independent review, or production certification. Next: verify new CI, then begin Project 15 as a distinct exercise.
