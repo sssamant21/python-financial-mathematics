@@ -68,6 +68,8 @@ jobs:
           python -m pytest -q quant-projects/13-risk-parity/test_erc.py
           python -m pytest -q quant-projects/13-risk-parity/test_compare.py
       - name: Validate Project 14 hedge-ratio stability
-        run: python -m pytest -q quant-projects/14-hedge-ratio-stability/test_hedge_lab.py
+        run: |
+          python -m pytest -q quant-projects/14-hedge-ratio-stability/test_hedge_lab.py
+          python -m pytest -q quant-projects/14-hedge-ratio-stability/test_sensitivity.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
