@@ -82,3 +82,5 @@ Empty input is completeTrue by explicit teaching policy;unsorted valid dates rem
 | 40 | Production: | No. | Contract/conceptual review;not syntax decoder,source completeness,publication/financial/platform acceptance |
 
 Next:Section19.7 Schema andData Types formal workflow/local-answer review;broader Book1 validation remains in progress.
+
+Corrected executable/source revision:`8b1f1fa8ba41eba72ec5e56293e4063ab9deb6bd`. [Publication verification](publication-verification.json) pins the tested manuscript/observer/fixture;the following metadata commit leaves these source inputs unchanged.
