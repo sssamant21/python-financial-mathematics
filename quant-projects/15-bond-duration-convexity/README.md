@@ -75,3 +75,15 @@ python -m pytest -q test_interpolation_stability.py
 The seeded-free deterministic scenarios are parallel +100bp, steepening (-50/-25/+25/+100bp) and flattening (+100/+50/-25/-50bp). Report the difference in base portfolio value, exact stress P&L, node DV01 and first-order approximation error **without selecting a winning method after seeing the outcomes**. No external data or dependencies beyond Python's standard library are needed for the model; pytest comes from the repository requirements.
 
 **Guardrails:** strictly increasing knot tenors, annual cash flows covered by the curve, rates above -100%, bounded finite-difference bumps, fixed interpolation choices and input immutability. Log-discount interpolation is a modeling convention, **not** proof of no-arbitrage; neither method is guaranteed to preserve nonnegative forward rates. Annual compounding, synthetic bonds, no credit/spread/optionality/liquidity, no historical curve calibration, no independent review. Exact published-revision CI and full integration must be confirmed separately.
+
+## Implied one-year forward rates (synthetic diagnostics)
+
+**Business question:** Can two interpolation conventions agree at quoted curve knots yet imply materially different one-year rates between knots? The annual effective forward between years t-1 and t is `f(t-1,t) = DF(t-1)/DF(t) - 1`, with `DF(0)=1`. This identity is a *discount-factor consistency diagnostic*, not a forecast of future realized short rates.
+
+```bash
+cd quant-projects/15-bond-duration-convexity
+python forward_diagnostics.py
+python -m pytest -q test_forward_diagnostics.py
+```
+
+The fixed hypothetical 1/3/5/10-year curve is evaluated with rate-linear and log-discount interpolation, plus a predeclared (+100,+50,0,-50) bp node shock. The output reports the maximum absolute between-method annual-forward gap in basis points and minimum base/shocked forward for each method. A negative implied forward is **reported, not silently clipped**; positive spot rates do not guarantee nonnegative forwards. Tests reconstruct discount factors from forwards, check knot agreement and flat-curve behavior, exercise invalid inputs, and verify no input mutation. No historical observations, calibrated uncertainty, arbitrage-free curve fit, day-count conventions, or independent pricing review are claimed. The model assumes annual effective compounding and integer year-end cash flows.
