@@ -65,3 +65,5 @@ Project 12 uses a lagged volatility estimator and seeded regime-shift returns; r
 Project 12 also includes `calibration_walkforward.py` and `test_calibration_walkforward.py` for non-overlapping held-out volatility forecast errors and predeclared leverage/cost sensitivity. This is synthetic educational validation, not live-market calibration.
 
 Project 13 uses training-only inverse-volatility allocation, capped long-only weights and 13-week non-overlapping synthetic evaluation. Run `python -m pytest -q test_risk_parity.py` in its directory.
+
+Project 13 also includes `erc.py` and `test_erc.py` for covariance-aware equal-risk-contribution optimization and non-overlapping held-out risk-budget drift. Run `python -m pytest -q test_erc.py` from `13-risk-parity/`. This extension uses synthetic observations only.
