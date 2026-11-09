@@ -48,3 +48,7 @@ Published `09-drawdown-recovery/` with synthetic wealth/high-water-mark drawdown
 ### Project 09 walk-forward extension (2026-11-09)
 
 Added `09-drawdown-recovery/walkforward.py` and `test_walkforward.py`: 104-week training-only rolling forecasts, 26-week non-overlapping forward drawdown scoring, fixed block-length sensitivity, seeded reproducibility, and future-mutation isolation. Nine local tests passed using a local stand-in for the existing drawdown API, plus CLI smoke and compilation. **Exact published-revision CI is pending**; no independent review or licensed historical-data validation. Next: verify CI on the exact SHA and address failures, then proceed to Project 10 as a distinct portfolio-risk exercise.
+
+### Project 10 initial milestone (2026-11-09)
+
+Added synthetic liquidity-aware rebalancing capacity and transaction-cost stress with input guardrails, a tutorial, and 15 deterministic tests. Local equivalent prototype tests passed 15/15 with a CLI smoke test and compilation. Exact published-revision CI and independent review remain unverified until checked. Project 09's [GitHub Actions run 42571151319](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42571151319) passed on SHA 53a9cbcec725e83f9343ce523a4fc06d132018ba. Next: confirm Project 10 CI, add lagged rolling ADV forecasts and held-out liquidity shocks. No licensed market data or production certification.
