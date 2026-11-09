@@ -57,3 +57,21 @@ The script compares a hypothetical three-bond portfolio under predeclared parall
 **Limitations:** This is a deterministic scenario exercise, not a historical forecast or trading recommendation. The spot curve is hypothetical and the knot interpolation is an assumption. Real fixed-income analytics require day count, coupon calendars, settlement/accrued interest, instrument-specific discount curves, optionality, spread/credit risk, liquidity, and independently validated pricing data. There is no 2020/2022 market evidence, live trading, or third-party market-data redistribution. Synthetic test results do not establish production readiness.
 
 **Next:** Evaluate key-rate aggregation stability, curve interpolation alternatives, and independently sourced historical curve snapshots with observation dates and usage rights.
+
+
+## Interpolation stability and key-rate aggregation (synthetic extension)
+
+**Business question:** Does an apparently small curve-modeling choice change portfolio valuation or nonparallel stress results? This lab compares the existing **linear interpolation of annual spot rates** against **linear interpolation of log discount factors**, using identical hypothetical bond cash flows, 1/3/5/10-year knots and predeclared scenarios.
+
+For annual effective knot rates `s_i`, discount factors are `DF(t_i)=(1+s_i)^(-t_i)`. Between two knots, the alternative method uses `log DF(t)=(1-a)log DF(t_i)+a log DF(t_(i+1))`, with `a=(t-t_i)/(t_(i+1)-t_i)`. The original rate-linear method interpolates `s(t)` before discounting. Both agree **at the knots**, but can differ between them. Each method re-estimates its own central-difference node DV01; a parallel 1bp linear sensitivity is the **sum of node DV01** (subject to finite-difference error).
+
+Run from this directory:
+
+```bash
+python interpolation_stability.py
+python -m pytest -q test_interpolation_stability.py
+```
+
+The seeded-free deterministic scenarios are parallel +100bp, steepening (-50/-25/+25/+100bp) and flattening (+100/+50/-25/-50bp). Report the difference in base portfolio value, exact stress P&L, node DV01 and first-order approximation error **without selecting a winning method after seeing the outcomes**. No external data or dependencies beyond Python's standard library are needed for the model; pytest comes from the repository requirements.
+
+**Guardrails:** strictly increasing knot tenors, annual cash flows covered by the curve, rates above -100%, bounded finite-difference bumps, fixed interpolation choices and input immutability. Log-discount interpolation is a modeling convention, **not** proof of no-arbitrage; neither method is guaranteed to preserve nonnegative forward rates. Annual compounding, synthetic bonds, no credit/spread/optionality/liquidity, no historical curve calibration, no independent review. Exact published-revision CI and full integration must be confirmed separately.
