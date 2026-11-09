@@ -39,3 +39,19 @@ The deterministic example rebalances a fictional $100,000 portfolio from 60/40 t
 Tests check trade self-financing, turnover, execution-day arithmetic, stressed-volume monotonicity, no-trade costs, and input rejection. Published-revision CI and independent review must be verified separately.
 
 Next: point-in-time rolling ADV estimates and held-out liquidity-shock scoring with an explicit signal-to-execution lag.
+
+## Walk-forward ADV extension
+
+`adv_walkforward.py` estimates dollar average daily volume (ADV) using **only completed historical sessions**. At forecast origin `t`, the trailing `window` observations `[t-window,t)` determine the estimate; the next `horizon` observations `[t,t+horizon)` are held out. Origins advance by the horizon so evaluation windows do not overlap. A synthetic volume drop demonstrates when forecast execution-day capacity underestimates realized capacity needs.
+
+`forecast_max_days = max_i |Q_i| / (participation * forecast_ADV_i * stress_factor)`.
+Held-out realized days use observed future ADV *only for scoring*, never for forecasting. Scenarios with 1.0, 0.5, and 0.25 stress multipliers are pre-specified, not tuned on test outcomes. These ratios are **proxies**, not execution forecasts.
+
+```bash
+cd quant-projects/10-liquidity-rebalancing
+python adv_walkforward.py
+python adv_walkforward.py --window 15 --horizon 5
+python -m pytest -q test_adv_walkforward.py
+```
+
+Input arrays are aligned daily observations (days × assets). For any authorized historical study, record provider, retrieval date, symbol universe as known at each decision, adjustment policy, exchange calendar, corporate actions, and observation cutoff; do not commit licensed raw data. The included seeded data are entirely synthetic. There is no fill simulation, price impact calibration, execution feedback, survivorship adjustment, or independent validation. Future work: compare predicted capacity with real authorized point-in-time observations and add uncertainty intervals.
