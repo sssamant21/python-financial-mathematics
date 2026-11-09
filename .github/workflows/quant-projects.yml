@@ -43,6 +43,6 @@ jobs:
       - name: Validate Project 08 portfolio risk attribution and covariance stability
         run: |
           python -m pytest -q quant-projects/08-risk-attribution/test_risk_attribution.py
-          python -m pytest -q quant-projects/08-risk-attribution/test_stability.py
+          python -m pytest -q quant-projects/08-risk-attribution/test_stability.py test_oos_covariance.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
