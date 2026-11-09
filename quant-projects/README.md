@@ -60,3 +60,5 @@ Project 11 uses synthetic three-factor observations and rolling training-only re
 Project 11 also includes `beta_diagnostics.py` for point-in-time release-lagged factor beta uncertainty and rolling drift; run `python -m pytest -q test_beta_diagnostics.py` in its folder.
 
 Project 12 uses a lagged volatility estimator and seeded regime-shift returns; run `python -m pytest -q test_volatility_targeting.py` in its folder.
+
+Project 12 also includes `calibration_walkforward.py` and `test_calibration_walkforward.py` for non-overlapping held-out volatility forecast errors and predeclared leverage/cost sensitivity. This is synthetic educational validation, not live-market calibration.
