@@ -44,3 +44,7 @@ Added `08-risk-attribution/oos_covariance.py` and `test_oos_covariance.py` with 
 ### Project 09 initial publication (2026-11-09)
 
 Published `09-drawdown-recovery/` with synthetic wealth/high-water-mark drawdown diagnostics, censored recovery and underwater duration, and circular-block bootstrap scenarios. **8 local prototype tests passed** and CLI smoke test completed; exact published-revision CI, independent review and licensed historical validation remain pending. Project 08 CI [run 42559320574](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42559320574) completed successfully for SHA `fe67244403e1dec067d09e9767948c1d48fdfcc4`. Next: confirm Project 09 CI and implement training-only walk-forward drawdown scoring and block-length sensitivity.
+
+### Project 09 walk-forward extension (2026-11-09)
+
+Added `09-drawdown-recovery/walkforward.py` and `test_walkforward.py`: 104-week training-only rolling forecasts, 26-week non-overlapping forward drawdown scoring, fixed block-length sensitivity, seeded reproducibility, and future-mutation isolation. Nine local tests passed using a local stand-in for the existing drawdown API, plus CLI smoke and compilation. **Exact published-revision CI is pending**; no independent review or licensed historical-data validation. Next: verify CI on the exact SHA and address failures, then proceed to Project 10 as a distinct portfolio-risk exercise.
