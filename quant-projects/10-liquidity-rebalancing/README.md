@@ -55,3 +55,17 @@ python -m pytest -q test_adv_walkforward.py
 ```
 
 Input arrays are aligned daily observations (days × assets). For any authorized historical study, record provider, retrieval date, symbol universe as known at each decision, adjustment policy, exchange calendar, corporate actions, and observation cutoff; do not commit licensed raw data. The included seeded data are entirely synthetic. There is no fill simulation, price impact calibration, execution feedback, survivorship adjustment, or independent validation. Future work: compare predicted capacity with real authorized point-in-time observations and add uncertainty intervals.
+
+
+## Prequential capacity-forecast calibration
+
+`calibration.py` adds a training-only empirical upper bound for the *maximum execution-day proxy*. Each origin first predicts from lagged ADV, then scores the following non-overlapping window. Only **earlier completed** forecast/outcome pairs calibrate the next origin. For earlier ratios `r = realized_days / predicted_days`, the conservative nearest-rank empirical `(1-alpha)` quantile `q` yields `upper_days = predicted_days * q`. The first three origins intentionally have **no interval**.
+
+```bash
+cd quant-projects/10-liquidity-rebalancing
+python calibration.py
+python calibration.py --alpha 0.2
+python -m pytest -q test_calibration.py
+```
+
+The reported empirical coverage is a **descriptive held-out diagnostic**, not a guaranteed prediction-interval coverage rate. Small calibration samples, serial dependence, regime breaks, and the conservative finite-sample rank can materially affect reliability; the ratios are not exchangeable under liquidity shocks. The tool does not trade, model fills, or claim a validated liquidity risk model. The demo uses seeded synthetic observations only. Independent review and licensed point-in-time market validation remain outstanding.
