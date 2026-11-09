@@ -49,3 +49,5 @@ See [PROJECT-TRACKER.md](PROJECT-TRACKER.md) for scope, next exercises, and acce
 Project 08 also includes `oos_covariance.py`, a synthetic walk-forward comparison of fixed covariance-shrinkage scenarios with non-overlapping forward variance scoring. Run `python -m pytest -q test_oos_covariance.py` from its directory; see the Project 08 README for model-validation limits.
 
 Project 09 also provides `walkforward.py` for training-only rolling drawdown scenario scoring and non-overlapping held-out 26-week outcomes, with 2/4/8-week circular-block sensitivity. Run `python -m pytest -q test_walkforward.py` in its folder.
+
+Project 10 also includes `adv_walkforward.py` and `test_adv_walkforward.py` for lagged rolling dollar-volume forecasts and non-overlapping held-out liquidity-shock scoring on synthetic data.
