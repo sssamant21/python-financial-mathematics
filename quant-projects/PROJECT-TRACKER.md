@@ -111,3 +111,7 @@ Verified previous exact-revision [GitHub Actions run 42671128465](https://github
 ### Project 15 — Bond duration and convexity (2026-11-09)
 
 Project 14 exact-revision [GitHub Actions run 42678936819](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42678936819) passed on SHA `9b43d0249a855627f3feebc0a7465ab18de8c0ce`. Project 15 introduces hypothetical annual-coupon cash flows, exact repricing under fixed parallel yield shocks, modified duration, convexity, analytical/finite-difference checks, and input guardrails. No external data or trading integration. New exact-revision CI and independent review remain unverified until checked. Next: verify CI, then add multi-bond key-rate curve scenarios and nonparallel-shock validation.
+
+### Project 15 spot-curve and key-rate extension (2026-11-09)
+
+Confirmed initial Project 15 exact-revision [CI run 42689667185](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42689667185) passed on SHA 83d9a5aeb689f08c1c7ba4665515ef266c050e38. Added a deterministic annual spot-curve portfolio model, central-difference key-rate DV01, parallel/steepener/flattener scenarios, guardrails and regression tests. A source-equivalent local prototype passed **17/17 tests**, compiled, and completed CLI smoke; the published code is not yet independently executed. New exact-revision CI, historical yield-curve provenance, independent review and production certification remain unverified. Next: inspect new CI and extend with alternative interpolation / key-rate aggregation stability.

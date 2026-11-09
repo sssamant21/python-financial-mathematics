@@ -73,6 +73,6 @@ jobs:
           python -m pytest -q quant-projects/14-hedge-ratio-stability/test_sensitivity.py
           python -m pytest -q quant-projects/14-hedge-ratio-stability/test_regime_uncertainty.py
       - name: Validate Project 15 bond duration and convexity
-        run: python -m pytest -q quant-projects/15-bond-duration-convexity/test_bond_lab.py
+        run: |\n          python -m pytest -q quant-projects/15-bond-duration-convexity/test_bond_lab.py\n          python -m pytest -q quant-projects/15-bond-duration-convexity/test_curve_portfolio.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
