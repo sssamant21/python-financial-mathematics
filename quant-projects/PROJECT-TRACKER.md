@@ -32,3 +32,7 @@ Published `08-risk-attribution/` with a synthetic three-sector Euler volatility/
 ### Project 08 covariance stability extension (2026-11-08)
 
 Added `08-risk-attribution/stability.py` and `test_stability.py`: synthetic sample covariance, fixed diagonal shrinkage scenarios, and finite-difference Euler marginal-risk validation. 13 related local prototype tests passed; the published integration is not yet exact-revision executed and GitHub CI is unverified. Next: run both Project 08 suites on the published commit, inspect CI status, add an out-of-sample covariance-estimation stability comparison with train/test isolation, and then plan Project 09. No market data, production certification, or independent review is claimed.
+
+### Project 08 exact-revision CI coverage follow-up (2026-11-08)
+
+Reconciled current main: the dedicated workflow previously ran `test_risk_attribution.py` but **omitted** `test_stability.py`. Updated `.github/workflows/quant-projects.yml` to execute both suites independently on quant-projects changes (workflow commit `3efdb444fae844c4e216c7d0a363cc6fbb6dab41`). This is **coverage configuration only**, not evidence that either suite passed at this new revision. Prior 13/13 results belong to an isolated prototype, not the exact published code. Next: inspect the Actions run for the updated SHA, repair any failures, then implement a training-only/out-of-sample covariance stability comparison. Independent review and market-data validation remain unverified.
