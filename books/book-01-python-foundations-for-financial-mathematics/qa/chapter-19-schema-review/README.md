@@ -84,3 +84,5 @@ Synthetic fixture serialization/digest identifies observer input,not original ex
 | 40 | Schema-valid: | No. | Contract/conceptual/unit arithmetic;not source/financial/point-in-time/platform acceptance |
 
 Next:Section19.8 Missing andInvalid Values formal workflow/local-answer review;broader Book1 validation remains in progress.
+
+Executable source revision: `f896f2b31702c4d56427e7d6f81f427f6b2ed235`. [Publication source manifest](publication-verification.json). Metadata pins do not change the tested source, observer or fixture.

@@ -38,3 +38,5 @@ The observer retains failed baseline observations as data; inspect its failed co
 ## Limits and next item
 
 Fresh candidate inventory:596 Python files,383 check/test scripts,597 required Python/fixture blobs. This batch executed Chapter 8 only. V-133 at `30fe802218e5ad9978031287330cd887ebbcf1dc` remains the latest full candidate Linux execution:595 compiled,382 scripts passed,596 required blobs verified. Thirty-five selected COV categories remain partially addressed; none closed. COV-51's independent suggested-step references, broader noise/conditioning/resource cases and independent acceptance remain open. Next substantive item: Section 8.8 suggested-step independent numerical references and input/scale/represented-grid contract. Book 1 has separate trackers and evidence.
+
+Executable source revision: `f896f2b31702c4d56427e7d6f81f427f6b2ed235`. [Publication source manifest](chapter-08-section-08-financial-publication-verification.json). All54 tested Python blobs match this revision; metadata-only pins do not change executable inputs.
