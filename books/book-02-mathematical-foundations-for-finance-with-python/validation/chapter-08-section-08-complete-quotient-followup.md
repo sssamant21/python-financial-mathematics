@@ -19,3 +19,5 @@ python books/book-02-mathematical-foundations-for-finance-with-python/validation
 Final Chapter8 scope:53Python files compiled/43scripts passed,53candidate blobs verified before/after in [scope evidence](chapter-08-section-08-complete-quotient-scope.json),actual outputs/versions retained. Fresh inventory595Python/382scripts/596required Python-fixture blobs is not a full pass. V-130 remains latest full candidate Linux evidence pending accumulated V-131/V-132 refresh. Thirty-five selected categories partial;none closed.
 
 Next:Section8.8 discounted-price/normalized-rate-sensitivity complete numerical/input/output contracts andindependent suggested-step expectations;do not repeat completed guard-only examples. Conditioning/noise/resource,independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 has separate progress.
+
+Corrected executable publication revision:`30fe802218e5ad9978031287330cd887ebbcf1dc`;all31publication blobs and53tested Chapter8 inputs verified. Next financial probes retain unchanged helper functions at this source identity.

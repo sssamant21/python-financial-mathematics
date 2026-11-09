@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-08  
-**Full-runtime candidate source revision:** `5e574af2b055c7822e053fed5d0f5f24870d79bb` (V-130)
+**Full-runtime candidate source revision:** `30fe802218e5ad9978031287330cd887ebbcf1dc` (V-133)
 **Latest scoped source:** V-125 candidate based on `5ad0dc3066bfcca85a3c50d1aac8a538c6459851`; exact48-file manifest in [evidence](chapter-08-polynomial-range-followup.md).
-**Disposition:** V-132 scoped complete-quotient pass after V-130 full candidate Linux pass; independent review and release approval pending.
+**Disposition:** V-133 full candidate Linux pass including V-131/V-132; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -201,7 +201,7 @@ No reviewer is assigned by this document. “Unassigned” is an open ownership 
 
 | Gate | State | Required evidence to close | Owner |
 |---|---|---|---|
-| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-130](runtime-refresh-2026-11-08-r7.md) at `5e574af2b055c7822e053fed5d0f5f24870d79bb`;593sources/380scripts/594hashes verified. G2–G8 unchanged. | Unassigned |
+| G1 Candidate compilation/runtime | Full candidate Linux pass | [V-133](runtime-refresh-2026-11-08-r8.md) at `30fe802218e5ad9978031287330cd887ebbcf1dc`;595sources/382scripts/596hashes verified. G2–G8 unchanged. | Unassigned |
 | G2 Curriculum and navigation | In progress | Title/scope mismatch resolved in the [reconciliation](chapter-04-title-scope-reconciliation.md); complete rendered navigation/external checks and record exceptions | Unassigned |
 | G3 Substantive coverage | Mapping complete; gaps open | All215 sections mapped in26 records; disposition COV-01–COV-90 and complete required manual review. [Index and queue](substantive-coverage-index.md) | Unassigned |
 | G4 Independent mathematics/numerics | Pending | Named reviewer, revision, reviewed material, derivations, reference computations, findings and dispositions | Unassigned |
@@ -1074,3 +1074,10 @@ Next substantive item:Section8.8 discounted-price/normalized-rate-sensitivity co
 
 
 Next-item checkpoint:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md) retain5initial mismatches/2controls against500/700digit complete price/normalized references. Source financial helpers unchanged;conventions require reconciliation before correction. Suggested-step/resource/independent obligations remain separate;no COV closure.
+
+
+## V-133 checkpoint — Full pinned candidate Linux refresh
+
+[V-133 full evidence](runtime-refresh-2026-11-08-r8.md) at `30fe802218e5ad9978031287330cd887ebbcf1dc`:595/595Python sources compiled,382/382check/test scripts passed,596/596required Python/fixture hashes verified before/after. Includes accumulated V-131/V-132 code/checker changes andlegacy predicate reconciliation. Exact runner/per-file results/digests/source manifest retained;earlier baseline/legacy failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
+
+Next substantive item:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md),5initial mismatches/2controls;reconcile complete price/normalized-rate-sensitivity conventions,then independent suggested-step references. Conditioning/noise/resource scope stays open. Book1 tracked independently.

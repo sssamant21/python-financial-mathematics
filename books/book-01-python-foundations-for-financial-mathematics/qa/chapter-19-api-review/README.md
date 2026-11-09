@@ -86,3 +86,5 @@ For a fictional permitted read-only operation:a maximum3attempts,5second overall
 | 40 | Quality: | No. | Contract/conceptual/design review;no live HTTP/authentication/retry/provider acceptance |
 
 Next:Section19.6 Parsing and Validation formal workflow/local-answer review;broader Book1 validation remains in progress.
+
+Corrected API executable/source revision:`30fe802218e5ad9978031287330cd887ebbcf1dc`;all31publication blobs and53tested Chapter8 inputs verified. This pins prior API evidence;the validation follow-up has separate source identity/counts.

@@ -1025,3 +1025,10 @@ Next substantive item:Section8.8 discounted-price/normalized-rate-sensitivity co
 
 
 Next-item checkpoint:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md) retain5initial mismatches/2controls against500/700digit complete price/normalized references. Source financial helpers unchanged;conventions require reconciliation before correction. Suggested-step/resource/independent obligations remain separate;no COV closure.
+
+
+## V-133 checkpoint — Full pinned candidate Linux refresh
+
+[V-133 full evidence](runtime-refresh-2026-11-08-r8.md) at `30fe802218e5ad9978031287330cd887ebbcf1dc`:595/595Python sources compiled,382/382check/test scripts passed,596/596required Python/fixture hashes verified before/after. Includes accumulated V-131/V-132 code/checker changes andlegacy predicate reconciliation. Exact runner/per-file results/digests/source manifest retained;earlier baseline/legacy failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
+
+Next substantive item:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md),5initial mismatches/2controls;reconcile complete price/normalized-rate-sensitivity conventions,then independent suggested-step references. Conditioning/noise/resource scope stays open. Book1 tracked independently.

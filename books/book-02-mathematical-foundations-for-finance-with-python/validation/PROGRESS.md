@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-132 scoped complete-quotient pass (53 Chapter8 files/43 scripts), after V-130 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-133 full candidate Linux pass (595 sources/382 scripts/596 required blobs), including V-131/V-132 changes. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 593/593 at `5e574af2b055c7822e053fed5d0f5f24870d79bb`. [V-130](runtime-refresh-2026-11-08-r7.md). |
-| Automated script execution | Full candidate Linux pass | 380/380 at `5e574af2b055c7822e053fed5d0f5f24870d79bb`;594 required blobs verified before/after. [V-130](runtime-refresh-2026-11-08-r7.md). |
+| Python compilation | Full candidate Linux pass | 595/595 at `30fe802218e5ad9978031287330cd887ebbcf1dc`. [V-133](runtime-refresh-2026-11-08-r8.md). |
+| Automated script execution | Full candidate Linux pass | 382/382 at `30fe802218e5ad9978031287330cd887ebbcf1dc`;596required blobs verified before/after. [V-133](runtime-refresh-2026-11-08-r8.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1201,3 +1201,10 @@ Next substantive item:Section8.8 discounted-price/normalized-rate-sensitivity co
 
 
 Next-item checkpoint:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md) retain5initial mismatches/2controls against500/700digit complete price/normalized references. Source financial helpers unchanged;conventions require reconciliation before correction. Suggested-step/resource/independent obligations remain separate;no COV closure.
+
+
+## V-133 checkpoint — Full pinned candidate Linux refresh
+
+[V-133 full evidence](runtime-refresh-2026-11-08-r8.md) at `30fe802218e5ad9978031287330cd887ebbcf1dc`:595/595Python sources compiled,382/382check/test scripts passed,596/596required Python/fixture hashes verified before/after. Includes accumulated V-131/V-132 code/checker changes andlegacy predicate reconciliation. Exact runner/per-file results/digests/source manifest retained;earlier baseline/legacy failures remain separate. Thirty-five selected COV categories partial;none closed. One candidate Linux runtime only;independent mathematical/editorial/platform/release/canonical acceptance remains open.
+
+Next substantive item:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md),5initial mismatches/2controls;reconcile complete price/normalized-rate-sensitivity conventions,then independent suggested-step references. Conditioning/noise/resource scope stays open. Book1 tracked independently.
