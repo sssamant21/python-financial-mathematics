@@ -29,3 +29,11 @@ The output is JSON. Index zero is the initial wealth before the first return. `r
 ## Evidence and next step
 
 Local prototype on 2026-11-09: **8 tests passed** and a seeded 20-simulation CLI smoke test completed. Published-revision CI and independent review are not established by those local checks. Next: out-of-sample walk-forward drawdown scenario scoring and block-length sensitivity.
+
+## Walk-forward extension — training-only scenario scoring (2026-11-09)
+
+Run `python walkforward.py --observations 260 --simulations 200` and `python -m pytest -q test_walkforward.py`. The new `walkforward.py` trains on the preceding 104 synthetic weekly returns, predicts maximum drawdown over the next 26 weeks, and advances by 26 weeks so **held-out outcomes do not overlap**. It compares circular-block lengths 2, 4 and 8, reporting the forecast 95th-percentile maximum drawdown, realized drawdown, exceedance flags, and mean absolute scenario error. All forecast inputs end strictly before each held-out horizon. Block length is a prespecified sensitivity scenario, **not** optimized using future outcomes.
+
+A 95th-percentile maximum-drawdown exceedance is not a calibrated 5% breach guarantee: the bootstrap model, finite sample and regime shifts may invalidate coverage. With only 260 observations and 104-week training, the number of independent 26-week evaluations is small. Avoid conclusions from the exceedance rate alone. Use authorized point-in-time historical prices and document download time, adjustments, missing observations and investable universe before real-market studies. No historical prices are committed.
+
+Local prototype: 9/9 new tests passed on 2026-11-09 with a lightweight local stand-in for the already-published `drawdown.py` API; CLI smoke test and Python compilation passed. **Exact published-revision CI remains unverified** until GitHub Actions completes. Independent review and real-market calibration are pending.
