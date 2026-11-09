@@ -51,3 +51,5 @@ Project 08 also includes `oos_covariance.py`, a synthetic walk-forward compariso
 Project 09 also provides `walkforward.py` for training-only rolling drawdown scenario scoring and non-overlapping held-out 26-week outcomes, with 2/4/8-week circular-block sensitivity. Run `python -m pytest -q test_walkforward.py` in its folder.
 
 Project 10 also includes `adv_walkforward.py` and `test_adv_walkforward.py` for lagged rolling dollar-volume forecasts and non-overlapping held-out liquidity-shock scoring on synthetic data.
+
+Project 10 includes `calibration.py` for prequential liquidity-capacity uncertainty diagnostics; run `python -m pytest -q test_calibration.py` in its folder.
