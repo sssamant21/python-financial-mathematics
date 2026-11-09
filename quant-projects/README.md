@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Fourteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Fifteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -22,6 +22,7 @@ Fourteen self-contained labs complement the financial-mathematics books without 
 | [12](12-volatility-targeting/README.md) | Lagged realized-volatility targeting, turnover and linear transaction-cost sensitivity | Seeded synthetic | `volatility_targeting.py` |
 | [13](13-risk-parity/README.md) | Inverse-volatility and covariance-aware ERC, matched held-out cost/risk comparison | Seeded synthetic | `risk_parity.py` |
 | [14](14-hedge-ratio-stability/README.md) | Rolling minimum-variance hedge ratios, beta regime drift and costs | Seeded synthetic | `hedge_lab.py` |
+| [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel yield shocks | Hypothetical | `bond_lab.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -77,3 +78,5 @@ Project 14 uses synthetic rolling hedge ratios and non-overlapping held-out vari
 Project 14 also includes `sensitivity.py` and `test_sensitivity.py` for matched-origin 26/52/78-week hedge-window and fixed covariance-shrinkage sensitivity. This is synthetic ex-post evaluation, not a trading strategy.
 
 Project 14 also includes `regime_uncertainty.py` and `test_regime_uncertainty.py` for seeded, descriptive block-bootstrap intervals on predeclared held-out hedge variance-reduction scores. Run `python -m pytest -q test_regime_uncertainty.py` from its directory. These intervals are not certified coverage estimates.
+
+Project 15 provides annual-coupon bond valuation and predeclared parallel yield-shock stress; run `python -m pytest -q test_bond_lab.py` in its directory.
