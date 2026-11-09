@@ -1,0 +1,345 @@
+{
+  "candidate_based_on": "dea228397b36589d91f7b325b48a8165a5c43a4e",
+  "selected_revision": null,
+  "source_sha256": "9c91f3e68f400895e22b465520837f8db8e7bb2119d9a261be226ce1b5735cf2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_api_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "records: [{'instrument': 'EXAMPLE', 'date': datetime.date(2026, 1, 5), 'close': Decimal('100.00'), 'currency': 'USD'}, {'instrument': 'EXAMPLE', 'date': datetime.date(2026, 1, 6), 'close': Decimal('101.50'), 'currency': 'USD'}]\nsimple return: 0.015\n",
+      "stderr": "test_bad_cursor (__main__.ApiTests.test_bad_cursor) ... ok\ntest_duplicate_records (__main__.ApiTests.test_duplicate_records) ... ok\ntest_empty_complete (__main__.ApiTests.test_empty_complete) ... ok\ntest_missing_field (__main__.ApiTests.test_missing_field) ... ok\ntest_nonfinite_price (__main__.ApiTests.test_nonfinite_price) ... ok\ntest_null_price (__main__.ApiTests.test_null_price) ... ok\ntest_page_limit (__main__.ApiTests.test_page_limit) ... ok\ntest_repeated_cursor (__main__.ApiTests.test_repeated_cursor) ... ok\ntest_return (__main__.ApiTests.test_return) ... ok\ntest_two_pages (__main__.ApiTests.test_two_pages) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_api_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_api_basics"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "records",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "fetch order",
+      "passed": true,
+      "actual": "[None, 'p2']",
+      "expected": "[None, 'p2']"
+    },
+    {
+      "name": "fixture page count",
+      "passed": true,
+      "actual": "2",
+      "expected": "2"
+    },
+    {
+      "name": "return benchmark",
+      "passed": true,
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "empty complete",
+      "passed": true,
+      "actual": "[]",
+      "expected": "[]"
+    },
+    {
+      "name": "bad cap 0",
+      "passed": true,
+      "actual": "ValueError: positive integer page limit required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cap no calls 0",
+      "passed": true,
+      "actual": "[]",
+      "expected": "[]"
+    },
+    {
+      "name": "bad cap True",
+      "passed": true,
+      "actual": "ValueError: positive integer page limit required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cap no calls True",
+      "passed": true,
+      "actual": "[]",
+      "expected": "[]"
+    },
+    {
+      "name": "bad cap 1.0",
+      "passed": true,
+      "actual": "ValueError: positive integer page limit required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cap no calls 1.0",
+      "passed": true,
+      "actual": "[]",
+      "expected": "[]"
+    },
+    {
+      "name": "page bound incomplete",
+      "passed": true,
+      "actual": "RuntimeError: page limit reached; result incomplete",
+      "expected": "RuntimeError"
+    },
+    {
+      "name": "page bound trace",
+      "passed": true,
+      "actual": "[None]",
+      "expected": "[None]"
+    },
+    {
+      "name": "cycle",
+      "passed": true,
+      "actual": "ValueError: repeated cursor",
+      "expected": "ValueError"
+    },
+    {
+      "name": "cycle trace",
+      "passed": true,
+      "actual": "[None, 'a', 'b']",
+      "expected": "[None, 'a', 'b']"
+    },
+    {
+      "name": "page failure not partial return",
+      "passed": true,
+      "actual": "RuntimeError: page unavailable",
+      "expected": "RuntimeError"
+    },
+    {
+      "name": "failure trace",
+      "passed": true,
+      "actual": "[None, 'p2']",
+      "expected": "[None, 'p2']"
+    },
+    {
+      "name": "cross-page normalized duplicate",
+      "passed": true,
+      "actual": "ValueError: duplicate instrument/date",
+      "expected": "ValueError"
+    },
+    {
+      "name": "opaque whitespace cursor",
+      "passed": true,
+      "actual": "1",
+      "expected": "1"
+    },
+    {
+      "name": "provider order retained",
+      "passed": true,
+      "actual": "[Decimal('101.50'), Decimal('100.00')]",
+      "expected": "[Decimal('101.50'), Decimal('100.00')]"
+    },
+    {
+      "name": "not object",
+      "passed": true,
+      "actual": "ValueError: invalid page object",
+      "expected": "ValueError"
+    },
+    {
+      "name": "missing cursor",
+      "passed": true,
+      "actual": "ValueError: invalid page object",
+      "expected": "ValueError"
+    },
+    {
+      "name": "extra page field",
+      "passed": true,
+      "actual": "ValueError: invalid page object",
+      "expected": "ValueError"
+    },
+    {
+      "name": "records not list",
+      "passed": true,
+      "actual": "ValueError: records must be a list",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cursor ''",
+      "passed": true,
+      "actual": "ValueError: cursor must be nonempty text or null",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cursor True",
+      "passed": true,
+      "actual": "ValueError: cursor must be nonempty text or null",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cursor 123",
+      "passed": true,
+      "actual": "ValueError: cursor must be nonempty text or null",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad cursor []",
+      "passed": true,
+      "actual": "ValueError: cursor must be nonempty text or null",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', None)",
+      "passed": true,
+      "actual": "ValueError: all record fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', 101.5)",
+      "passed": true,
+      "actual": "ValueError: all record fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', True)",
+      "passed": true,
+      "actual": "ValueError: all record fields must be strings",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', 'NaN')",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', 'Infinity')",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', '0')",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('close', '-1')",
+      "passed": true,
+      "actual": "ValueError: positive finite close required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('currency', 'EUR')",
+      "passed": true,
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('instrument', '')",
+      "passed": true,
+      "actual": "ValueError: instrument and USD currency required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad record ('date', 'bad')",
+      "passed": true,
+      "actual": "ValueError: invalid date or close",
+      "expected": "ValueError"
+    },
+    {
+      "name": "record extra",
+      "passed": true,
+      "actual": "ValueError: invalid record fields",
+      "expected": "ValueError"
+    },
+    {
+      "name": "complete return ('1', '1.000000000000000000000000000001')",
+      "passed": false,
+      "actual": "Decimal('0E-27')",
+      "expected": "Decimal('1E-30')"
+    },
+    {
+      "name": "complete return ('2', '0')",
+      "passed": true,
+      "actual": "Decimal('-1')",
+      "expected": "Decimal('-1')"
+    },
+    {
+      "name": "private return context",
+      "passed": false,
+      "actual": "Decimal('0.0')",
+      "expected": "Decimal('0.015')"
+    },
+    {
+      "name": "bad return (Decimal('0'), Decimal('1'))",
+      "passed": true,
+      "actual": "ValueError: positive start and nonnegative end required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad return (True, Decimal('1'))",
+      "passed": true,
+      "actual": "ValueError: Decimal prices required",
+      "expected": "ValueError"
+    },
+    {
+      "name": "bad return (Decimal('1'), Decimal('-1'))",
+      "passed": true,
+      "actual": "ValueError: positive start and nonnegative end required",
+      "expected": "ValueError"
+    }
+  ],
+  "fetch_traces": [
+    {
+      "case": "complete",
+      "calls": [
+        null,
+        "p2"
+      ]
+    },
+    {
+      "case": "page-bound",
+      "calls": [
+        null
+      ]
+    },
+    {
+      "case": "cycle",
+      "calls": [
+        null,
+        "a",
+        "b"
+      ]
+    },
+    {
+      "case": "page-failure",
+      "calls": [
+        null,
+        "p2"
+      ]
+    }
+  ],
+  "existing_unique_methods": 10,
+  "new_historical_methods": 0,
+  "scope": "Injected synthetic decoded pages only;no live HTTP,authentication,timeouts,retries,provider completeness,licensing,source authenticity,point-in-time,platform or independent acceptance"
+}

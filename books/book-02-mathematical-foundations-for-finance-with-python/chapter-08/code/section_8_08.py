@@ -1,6 +1,7 @@
 """Section 8.8: numerical derivatives and step-size selection."""
 import math
 import sys
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -23,26 +24,41 @@ def validated_step(x, step):
         raise ValueError("step must produce finite perturbations")
     return x, h
 
+def _difference_report(exact, zero=0.0):
+    if exact == 0:
+        return zero
+    try:
+        return finite(float(exact), "difference estimate")
+    except OverflowError as exc:
+        raise ValueError("difference estimate outside finite float range") from exc
+
+def _pair_samples(function, first_x, last_x, denominator):
+    first = finite(function(first_x), "first sample")
+    last = finite(function(last_x), "last sample")
+    exact = (Fraction(first)-Fraction(last))/denominator
+    zero = first-last if first == last else 0.0
+    return exact, zero
+
 def forward_difference(function, x, step):
     x, h = validated_step(x, step)
-    return finite((finite(function(x+h), "f(x+h)")-finite(function(x), "f(x)"))/h, "forward estimate")
+    exact, zero = _pair_samples(function,x+h,x,Fraction(h))
+    return _difference_report(exact,zero)
 
 def backward_difference(function, x, step):
     x, h = validated_step(x, step)
-    return finite((finite(function(x), "f(x)")-finite(function(x-h), "f(x-h)"))/h, "backward estimate")
+    exact, zero = _pair_samples(function,x,x-h,Fraction(h))
+    return _difference_report(exact,zero)
 
 def centered_difference(function, x, step):
     x, h = validated_step(x, step)
-    if not math.isfinite(2*h):
-        raise ValueError("central-difference denominator must be finite")
-    return finite((finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h), "centered estimate")
+    exact, zero = _pair_samples(function,x+h,x-h,2*Fraction(h))
+    return _difference_report(exact,zero)
 
 def second_difference(function, x, step):
     x, h = validated_step(x, step)
-    if h*h==0 or not math.isfinite(h*h):
-        raise ValueError("squared step must be finite and nonzero")
-    return finite((finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
-            +finite(function(x-h), "f(x-h)"))/(h*h), "second derivative estimate")
+    samples = [Fraction(finite(function(z), "second-difference sample"))
+               for z in (x+h,x,x-h)]
+    return _difference_report((samples[0]-2*samples[1]+samples[2])/Fraction(h)**2)
 
 def suggested_step(x, derivative_order=1, scale=None):
     x = finite(x, "x")
@@ -58,9 +74,11 @@ def suggested_step(x, derivative_order=1, scale=None):
 
 def richardson_first(function, x, step):
     x, h = validated_step(x, step)
-    coarse = centered_difference(function, x, h)
-    fine = centered_difference(function, x, h/2)
-    return finite(fine+(fine-coarse)/3, "Richardson estimate")
+    coarse, _ = _pair_samples(function,x+h,x-h,2*Fraction(h))
+    # Preserve half-step validation after the two coarse samples.
+    x, half = validated_step(x,h/2)
+    fine, _ = _pair_samples(function,x+half,x-half,2*Fraction(half))
+    return _difference_report((4*fine-coarse)/3)
 
 def discounted_price(cash_flow, years, rate):
     c, t, r = finite(cash_flow, "cash_flow"), finite(years, "years"), finite(rate, "rate")

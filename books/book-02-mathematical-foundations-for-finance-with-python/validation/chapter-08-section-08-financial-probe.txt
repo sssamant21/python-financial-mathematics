@@ -1,0 +1,28 @@
+from pathlib import Path
+from decimal import Decimal,localcontext
+import sys,subprocess,hashlib,json,math
+root=Path(sys.argv[1]).resolve();book=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=book/'chapter-08/code';sys.path.insert(0,str(code));import section_8_08 as source
+rows=[]
+for c,t,r in [(1e-308,1.,-1000.),(1e308,1.,1000.),(1000.,5.,.04),(1.,0.,1e308),(1.,1e308,1e308)]:
+ refs=[]
+ for precision in [500,700]:
+  with localcontext() as ctx:
+   ctx.prec=precision;refs.append(float(Decimal.from_float(c)*(-Decimal.from_float(r)*Decimal.from_float(t)).exp()))
+ assert refs[0]==refs[1]
+ try:actual=source.discounted_price(c,t,r);observed=repr(actual);matches=actual==refs[0]
+ except Exception as e:observed=type(e).__name__;matches=False
+ rows.append(dict(helper='discounted_price',args=[c,t,r],expected=repr(refs[0]),actual=observed,matches=matches))
+for c,t,r,h in [(1e-308,1.,-1000.,.01),(1e308,1.,1000.,.01)]:
+ refs=[]
+ for precision in [500,700]:
+  with localcontext() as ctx:
+   ctx.prec=precision;C,T,H=map(Decimal.from_float,(c,t,h))
+   def p(rate):return C*(-Decimal.from_float(rate)*T).exp()
+   base,plus,minus=p(r),p(r+h),p(r-h);refs.append(tuple(float(x) for x in (base,-(plus-minus)/(2*H*base),(plus-2*base+minus)/(H*H*base))))
+ assert refs[0]==refs[1]
+ try:
+  actual=source.rate_sensitivity(c,t,r,h);observed=repr(actual);matches=all(math.isclose(actual[k],e,rel_tol=1e-12,abs_tol=0) for k,e in zip(['price','duration','convexity'],refs[0]))
+ except Exception as e:observed=type(e).__name__;matches=False
+ rows.append(dict(helper='rate_sensitivity',args=[c,t,r,h],expected=repr(refs[0]),actual=observed,matches=matches,scope='Complete model-price sampled ratios at represented r±h;proposed convention,not source-price-rounded sample contract'))
+out=dict(candidate_based_on=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip(),source_sha256=hashlib.sha256((code/'section_8_08.py').read_bytes()).hexdigest(),observations=rows,scope='Initial actual probes;complete exponent/product/normalized-ratio conventions proposed;no source fix or corrected pass claimed')
+(book/'validation/chapter-08-section-08-financial-baseline.json').write_text(json.dumps(out,indent=2)+'\n');print(len(rows),'probes',sum(not x['matches'] for x in rows),'mismatches including proposed policies')

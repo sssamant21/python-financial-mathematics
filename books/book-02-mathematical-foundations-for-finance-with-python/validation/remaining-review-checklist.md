@@ -3,7 +3,7 @@
 **Date:** 2026-11-08  
 **Full-runtime candidate source revision:** `5e574af2b055c7822e053fed5d0f5f24870d79bb` (V-130)
 **Latest scoped source:** V-125 candidate based on `5ad0dc3066bfcca85a3c50d1aac8a538c6459851`; exact48-file manifest in [evidence](chapter-08-polynomial-range-followup.md).
-**Disposition:** V-131 scoped implicit-ratio/centered pass after V-130 full candidate Linux pass; independent review and release approval pending.
+**Disposition:** V-132 scoped complete-quotient pass after V-130 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1064,3 +1064,13 @@ Next:Section8.8 remaining complete sampled-quotient/Richardson range andfinancia
 
 
 Next-item checkpoint:[7Section8.8 complete quotient/Richardson probes](chapter-08-section-08-complete-quotient-baseline.md) retain6initial mismatches/1control with actual callback traces. Complete output/denominator/extrapolation conventions remain proposed;source unchanged andno corrected pass claimed. Continue this substantive range item,then financial/suggested-step obligations;no COV closure.
+
+
+## V-132 checkpoint — Complete sampled quotients/Richardson
+
+[Section8.8 follow-up](chapter-08-section-08-complete-quotient-followup.md):179corrected predicates passed;18expanded baseline mismatches andidentical179-observation replay retained. Exact sampled denominators/numerators andcomplete unrounded Richardson composition documented;controls-first/strict positive step/symmetric gate/callback order andhalf-step timing preserved. Two initial legacy checker failures retained,affected Section8.8 policies reconciled,corrected scope53compiled/43scripts passed with53candidate blobs verified before/after. Fresh inventory595/382/596 is not a full run;V-130 remains latest full candidate Linux evidence pending refresh. Thirty-five selected COV categories partial;none closed.
+
+Next substantive item:Section8.8 discounted-price/normalized-rate-sensitivity complete contracts andindependent suggested-step references. Conditioning/noise/resource,independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 tracked separately.
+
+
+Next-item checkpoint:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md) retain5initial mismatches/2controls against500/700digit complete price/normalized references. Source financial helpers unchanged;conventions require reconciliation before correction. Suggested-step/resource/independent obligations remain separate;no COV closure.

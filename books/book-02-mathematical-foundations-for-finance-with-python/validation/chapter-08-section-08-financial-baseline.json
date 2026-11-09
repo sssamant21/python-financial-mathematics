@@ -1,0 +1,88 @@
+{
+  "candidate_based_on": "dea228397b36589d91f7b325b48a8165a5c43a4e",
+  "source_sha256": "4e44a4d921429b7536858bc92ada3ab0a86d997960a5633016c26ddb69240cb3",
+  "observations": [
+    {
+      "helper": "discounted_price",
+      "args": [
+        1e-308,
+        1.0,
+        -1000.0
+      ],
+      "expected": "1.9700711140170468e+126",
+      "actual": "OverflowError",
+      "matches": false
+    },
+    {
+      "helper": "discounted_price",
+      "args": [
+        1e+308,
+        1.0,
+        1000.0
+      ],
+      "expected": "5.075958897549457e-127",
+      "actual": "0.0",
+      "matches": false
+    },
+    {
+      "helper": "discounted_price",
+      "args": [
+        1000.0,
+        5.0,
+        0.04
+      ],
+      "expected": "818.7307530779818",
+      "actual": "818.7307530779818",
+      "matches": true
+    },
+    {
+      "helper": "discounted_price",
+      "args": [
+        1.0,
+        0.0,
+        1e+308
+      ],
+      "expected": "1.0",
+      "actual": "1.0",
+      "matches": true
+    },
+    {
+      "helper": "discounted_price",
+      "args": [
+        1.0,
+        1e+308,
+        1e+308
+      ],
+      "expected": "0.0",
+      "actual": "ValueError",
+      "matches": false
+    },
+    {
+      "helper": "rate_sensitivity",
+      "args": [
+        1e-308,
+        1.0,
+        -1000.0,
+        0.01
+      ],
+      "expected": "(1.9700711140170468e+126, 1.0000166667490906, 1.0000083333592922)",
+      "actual": "OverflowError",
+      "matches": false,
+      "scope": "Complete model-price sampled ratios at represented r\u00b1h;proposed convention,not source-price-rounded sample contract"
+    },
+    {
+      "helper": "rate_sensitivity",
+      "args": [
+        1e+308,
+        1.0,
+        1000.0,
+        0.01
+      ],
+      "expected": "(5.075958897549457e-127, 1.0000166667490906, 1.0000083333592922)",
+      "actual": "ValueError",
+      "matches": false,
+      "scope": "Complete model-price sampled ratios at represented r\u00b1h;proposed convention,not source-price-rounded sample contract"
+    }
+  ],
+  "scope": "Initial actual probes;complete exponent/product/normalized-ratio conventions proposed;no source fix or corrected pass claimed"
+}

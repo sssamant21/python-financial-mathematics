@@ -1,0 +1,20 @@
+{
+  "source_sha256": "4e44a4d921429b7536858bc92ada3ab0a86d997960a5633016c26ddb69240cb3",
+  "scripts": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_08.py",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_08.py\", line 108, in <module>\n    run()\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_08.py\", line 76, in run\n    check_helper_guards()\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_08.py\", line 38, in check_helper_guards\n    rejects(ValueError,centered_difference,lambda z:1e308*z,0,1)\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_08.py\", line 16, in rejects\n    raise AssertionError(\"expected \" + exc.__name__)\nAssertionError: expected ValueError\n",
+      "sha256": "e205cc510f6449f3723f22ba6267e484dec8213e2a64bfb5f5944fdb170be3e0"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "F.FF.\n======================================================================\nFAIL: test_first_derivative_denominator_overflow (__main__.DifferenceDenominators.test_first_derivative_denominator_overflow)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py\", line 30, in test_first_derivative_denominator_overflow\n    with self.assertRaises(ValueError): centered_difference(lambda x:x/1e308,0,1e308)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_squared_step_overflow (__main__.DifferenceDenominators.test_squared_step_overflow) (function='section_8_08')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py\", line 22, in test_squared_step_overflow\n    with self.subTest(function=fn.__module__),self.assertRaises(ValueError):\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_squared_step_underflow (__main__.DifferenceDenominators.test_squared_step_underflow) (function='section_8_08')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-api-steps/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py\", line 15, in test_squared_step_underflow\n    with self.subTest(function=fn.__module__),self.assertRaises(ValueError):\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=3)\n",
+      "sha256": "70b5222c1a9fb3526fe38b26e282b28cc8c3bcd13ed66d789518ddd618af0e91"
+    }
+  ],
+  "scope": "Actual legacy guard mismatches after deliberate complete-quotient/h\u00b2/2h policy extension;not claimed passing"
+}

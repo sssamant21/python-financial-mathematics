@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-08  
-**Overall status:** In progress — V-131 scoped implicit-ratio/centered pass (52 Chapter8 files/42 scripts), after V-130 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-132 scoped complete-quotient pass (53 Chapter8 files/43 scripts), after V-130 full candidate Linux pass. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1191,3 +1191,13 @@ Next:Section8.8 remaining complete sampled-quotient/Richardson range andfinancia
 
 
 Next-item checkpoint:[7Section8.8 complete quotient/Richardson probes](chapter-08-section-08-complete-quotient-baseline.md) retain6initial mismatches/1control with actual callback traces. Complete output/denominator/extrapolation conventions remain proposed;source unchanged andno corrected pass claimed. Continue this substantive range item,then financial/suggested-step obligations;no COV closure.
+
+
+## V-132 checkpoint — Complete sampled quotients/Richardson
+
+[Section8.8 follow-up](chapter-08-section-08-complete-quotient-followup.md):179corrected predicates passed;18expanded baseline mismatches andidentical179-observation replay retained. Exact sampled denominators/numerators andcomplete unrounded Richardson composition documented;controls-first/strict positive step/symmetric gate/callback order andhalf-step timing preserved. Two initial legacy checker failures retained,affected Section8.8 policies reconciled,corrected scope53compiled/43scripts passed with53candidate blobs verified before/after. Fresh inventory595/382/596 is not a full run;V-130 remains latest full candidate Linux evidence pending refresh. Thirty-five selected COV categories partial;none closed.
+
+Next substantive item:Section8.8 discounted-price/normalized-rate-sensitivity complete contracts andindependent suggested-step references. Conditioning/noise/resource,independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 tracked separately.
+
+
+Next-item checkpoint:[7Section8.8 financial probes](chapter-08-section-08-financial-baseline.md) retain5initial mismatches/2controls against500/700digit complete price/normalized references. Source financial helpers unchanged;conventions require reconciliation before correction. Suggested-step/resource/independent obligations remain separate;no COV closure.

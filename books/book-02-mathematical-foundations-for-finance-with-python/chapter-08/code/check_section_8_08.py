@@ -35,17 +35,19 @@ def check_helper_guards():
     # Finite callback results can still overflow the subtraction or stencil.
     rejects(ValueError,forward_difference,lambda z:-1e308 if z==0 else 1e308,0,1)
     rejects(ValueError,backward_difference,lambda z:1e308 if z==0 else -1e308,0,1)
-    rejects(ValueError,centered_difference,lambda z:1e308*z,0,1)
+    assert centered_difference(lambda z:1e308*z,0,1)==1e308
     rejects(ValueError,second_difference,lambda z:1e308*z*z,0,1)
     # Equivalent Richardson rearrangement avoids the overflowing 4*fine product.
     assert richardson_first(lambda z:1e308*z,0,0.25)==1e308
     for h in (1e-200,1e200):
         calls=[]
-        rejects(ValueError,second_difference,lambda z:calls.append(z) or z*z,0,h)
-        assert not calls
+        assert second_difference(lambda z:calls.append(z) or 1.,0,h)==0
+        assert calls==[h,0,-h]
+    # Callback overflow is still rejected,after its actual first invocation.
+    rejects(ValueError,second_difference,lambda z:z*z,0,1e200)
     calls=[]
-    rejects(ValueError,centered_difference,lambda z:calls.append(z) or z,0,1e308)
-    assert not calls
+    assert centered_difference(lambda z:calls.append(z) or z,0,1e308)==1
+    assert calls==[1e308,-1e308]
     # h works at full scale but h/2 is too small at the selected base point.
     rejects(ValueError,richardson_first,lambda z:z,1,2.0**-52)
 
