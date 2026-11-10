@@ -201,3 +201,8 @@ Verified [GitHub Actions run 42850207586](https://github.com/sssamant21/python-f
 ### Project 19 initial publication (2026-11-10)
 
 Added `19-liability-cashflow-matching/` with a beginner-friendly synthetic annual asset/liability schedule, present-value funding gaps, cumulative undiscounted cash-flow shortfalls, flat-rate sensitivity, deterministic unit tests and standard-library-only implementation. **Tests authored; local execution and exact-revision CI not yet verified in this run.** No market data, independent model review, or production certification. Next: verify the Project 19 CI suite on its exact SHA, then extend to predeclared synthetic bond candidate matching with feasibility diagnostics and rate stress.
+
+
+### Project 19 exact-revision CI acceptance (2026-11-10)
+
+Verified [GitHub Actions run 42871279651](https://github.com/sssamant21/python-financial-mathematics/actions/runs/42871279651) completed **successfully** for published commit `92e206ed9752b1c10f756bc92a9c0ce547489cb5` (2026-11-10 18:03–18:04 UTC). The hosted `quant-labs` job explicitly passed `python -m unittest -v test_cashflow_matching.py` and `python -m compileall -q cashflow_matching.py test_cashflow_matching.py` under the Project 19 step; all other configured quant-project steps also passed. Individual test counts were not extracted from logs; do not confuse successful job steps with independent model review. The educational synthetic fixture does not establish market calibration, realistic liability dynamics, operational suitability, or production certification. **Next:** extend Project 19 with constrained synthetic bond cash-flow matching, explicit infeasibility diagnostics, and interest-rate sensitivity tests, without modifying unrelated repository paths.
