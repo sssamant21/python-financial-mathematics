@@ -35,3 +35,17 @@ python -m unittest -v test_credit_risk.py test_correlated_defaults.py
 ```
 
 The deterministic CLI uses 10,000 scenarios, seed 42, and a hypothetical 20% latent asset correlation. It reports analytical expected loss, simulated mean loss, empirical 99% loss VaR (nearest-rank), mean of the highest 1% simulated losses (tail-average proxy), and `VaR - analytical EL` as an **illustrative unexpected-loss measure**. This tail-average is not a calibrated regulatory expected shortfall. Finite-sample Monte Carlo noise and discrete losses can produce jumps; increase scenarios and compare seeds before interpreting tails. The simulation does **not** represent observed 2020/2022 default episodes or calibrated economic capital. No third-party data is distributed.
+
+## Asset-correlation and repeated-seed sensitivity (2026-11-10)
+
+The additional `correlation_sensitivity.py` fixes the same hypothetical borrower book, PDs and LGDs, then varies **latent asset correlation** (`rho = 0, 0.2, 0.5`) while repeating simulations with predeclared seeds. This tests whether loss-tail estimates change with common-factor dependence and how much they vary with finite Monte Carlo sampling. Analytical `EL = sum(EAD × PD × LGD)` is independent of rho, whereas loss VaR and tail averages can shift. The tail metrics need **not** rise monotonically for small discrete portfolios or finite simulation samples.
+
+```bash
+cd quant-projects/18-credit-loss-concentration
+python correlation_sensitivity.py
+python -m unittest -v test_credit_risk.py test_correlated_defaults.py test_correlation_sensitivity.py
+```
+
+Python 3.11+ standard library only. Each row reports average simulated loss, 99% loss VaR and tail average across seeds, together with **sample standard deviations across seed runs** (reported as `None` for one seed). These are *descriptive Monte Carlo stability diagnostics*, **not** statistical confidence intervals, real-world loss forecasts, independent scenarios, or regulatory capital. The same seed values are reused across rho settings for paired comparisons. Predeclared parameter grids, finite inputs, unique seeds and a two-million-scenario total budget guard against accidental runaway jobs. Tests use small synthetic books. No external data, broker or live trading actions.
+
+**Limitations:** Three obligors produce a very discrete tail distribution; nearest-rank VaR may jump. The model assumes a single Gaussian factor, constant marginal PDs, fixed LGD and EAD, and no parameter uncertainty. A larger simulated mean at one rho is sampling noise, not evidence that rho changes analytical expected loss. No observed 2020/2022 default calibration, independent model validation or production certification is claimed. Borrower-level tail attribution is a separate future milestone.

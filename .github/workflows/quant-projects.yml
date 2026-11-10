@@ -89,6 +89,6 @@ jobs:
       - name: Validate Project 18 credit expected loss and concentration
         run: |
           cd quant-projects/18-credit-loss-concentration
-          python -m unittest -v test_credit_risk.py test_correlated_defaults.py
+          python -m unittest -v test_credit_risk.py test_correlated_defaults.py test_correlation_sensitivity.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
