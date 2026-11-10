@@ -95,3 +95,6 @@ Project 16 uses standard-library `unittest` for synthetic expiry payoffs and a s
 Project 16 additionally includes `sensitivity.py` and `test_sensitivity.py`, a deterministic synthetic Black–Scholes volatility/maturity grid with parity and edge-case guardrails. Run `python -m unittest -v test_sensitivity.py` in its directory. Exact published-revision CI is tracked separately.
 
 Project 16 also includes `stability_diagnostics.py` and `test_stability_diagnostics.py` for analytical-versus-finite-difference Greeks under predeclared near-expiry and low-volatility synthetic scenarios. Run `python -m unittest -v test_stability_diagnostics.py` from Project 16. Exact-revision CI and independent review remain unverified.
+
+
+Project 17 additionally includes `quote_validation.py` and `test_quote_validation.py` for European call/put bid-ask parity intervals, quote guardrails and synthetic implied-volatility ranges. Run `python -m unittest -v test_implied_vol.py test_quote_validation.py` from Project 17. CI and independent review must be checked on the exact revision.
