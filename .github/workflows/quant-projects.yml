@@ -81,6 +81,6 @@ jobs:
       - name: Validate Project 16 European option payoff and theoretical pricing
         run: |
           cd quant-projects/16-option-payoff-stress
-          python -m unittest -v test_option_payoff.py test_black_scholes.py test_sensitivity.py
+          python -m unittest -v test_option_payoff.py test_black_scholes.py test_sensitivity.py test_stability_diagnostics.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
