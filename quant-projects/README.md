@@ -107,3 +107,5 @@ Project 18 uses standard-library credit risk calculations and deterministic test
 Project 18 also provides `correlated_defaults.py` and `test_correlated_defaults.py` for seeded synthetic one-factor correlated borrower defaults, empirical loss-tail diagnostics and explicit analytical expected-loss comparison. Run `python -m unittest -v test_credit_risk.py test_correlated_defaults.py` from Project 18. No real-default calibration or independent model review is claimed.
 
 Project 18 also includes `correlation_sensitivity.py` and `test_correlation_sensitivity.py` for predeclared latent asset-correlation scenarios and repeated-seed Monte Carlo dispersion. Run `python -m unittest -v test_correlation_sensitivity.py` from Project 18. Synthetic only; exact-revision CI and independent review tracked separately.
+
+Project 18 also provides [borrower-level scenario-tail attribution](18-credit-loss-concentration/README.md) with additivity and EAD concentration sensitivity. Run `python -m unittest -v test_tail_attribution.py` in Project 18; synthetic only.

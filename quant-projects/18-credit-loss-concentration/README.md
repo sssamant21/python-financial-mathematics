@@ -49,3 +49,17 @@ python -m unittest -v test_credit_risk.py test_correlated_defaults.py test_corre
 Python 3.11+ standard library only. Each row reports average simulated loss, 99% loss VaR and tail average across seeds, together with **sample standard deviations across seed runs** (reported as `None` for one seed). These are *descriptive Monte Carlo stability diagnostics*, **not** statistical confidence intervals, real-world loss forecasts, independent scenarios, or regulatory capital. The same seed values are reused across rho settings for paired comparisons. Predeclared parameter grids, finite inputs, unique seeds and a two-million-scenario total budget guard against accidental runaway jobs. Tests use small synthetic books. No external data, broker or live trading actions.
 
 **Limitations:** Three obligors produce a very discrete tail distribution; nearest-rank VaR may jump. The model assumes a single Gaussian factor, constant marginal PDs, fixed LGD and EAD, and no parameter uncertainty. A larger simulated mean at one rho is sampling noise, not evidence that rho changes analytical expected loss. No observed 2020/2022 default calibration, independent model validation or production certification is claimed. Borrower-level tail attribution is a separate future milestone.
+
+## Borrower-level scenario-tail attribution (2026-11-10)
+
+The seeded `tail_attribution.py` reconstructs the one-factor synthetic default model and retains each borrower's loss per scenario. Sort scenario losses descending and select the highest `k = N - ceil(q*N) + 1` scenarios. For borrower `i`, the tail contribution is the **average borrower loss in those same selected scenarios**. By construction, `sum_i contribution_i = average selected portfolio loss` (up to floating-point rounding). Equal-loss ties are broken by original scenario index; this is a **top-k scenario-tail average**, not a unique allocation of VaR or an Euler regulatory-capital contribution.
+
+```bash
+cd quant-projects/18-credit-loss-concentration
+python tail_attribution.py
+python -m unittest -v test_tail_attribution.py
+```
+
+`concentration_comparison` transfers part of the largest EAD to the smallest EAD, holding aggregate EAD and each borrower's PD/LGD assumptions fixed. It uses paired random seeds for descriptive sensitivity, not independent model validation. **Analytical expected loss may change** because EAD is moved between borrowers with different PD/LGD; lower HHI does not guarantee lower tail loss. The simulator caps scenario count and total borrower-scenario work, rejects nonfinite parameters, and uses no downloaded market data. Python 3.11+ standard library only.
+
+**Evidence:** 13/13 local tests, Python compilation and synthetic CLI smoke passed using a locally reconstructed `credit_risk` helper; complete published-revision CI remains unverified until GitHub Actions runs. No historical default/recovery calibration, independent model validation, regulatory capital approval or production certification.
