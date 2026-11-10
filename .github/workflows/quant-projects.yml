@@ -82,5 +82,9 @@ jobs:
         run: |
           cd quant-projects/16-option-payoff-stress
           python -m unittest -v test_option_payoff.py test_black_scholes.py test_sensitivity.py test_stability_diagnostics.py
+      - name: Validate Project 17 implied-volatility inversion
+        run: |
+          cd quant-projects/17-implied-volatility-validation
+          python -m unittest -v test_implied_vol.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py

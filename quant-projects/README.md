@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Sixteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Seventeen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -24,6 +24,8 @@ Sixteen self-contained labs complement the financial-mathematics books without d
 | [14](14-hedge-ratio-stability/README.md) | Rolling minimum-variance hedge ratios, beta regime drift and costs | Seeded synthetic | `hedge_lab.py` |
 | [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel and nonparallel spot-curve shocks, key-rate DV01 | Hypothetical | `bond_lab.py` |
 | [16](16-option-payoff-stress/README.md) | European expiry payoffs, Black–Scholes theoretical pricing, put-call parity, finite-difference Greeks and volatility/maturity sensitivity | Hypothetical | `option_payoff.py`, `black_scholes.py` |
+
+| [17](17-implied-volatility-validation/README.md) | Bounded European implied volatility and no-arbitrage quote validation | Hypothetical | `implied_vol.py` |
 
 ## Quick start (Windows PowerShell)
 
