@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Fifteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Sixteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -22,7 +22,7 @@ Fifteen self-contained labs complement the financial-mathematics books without d
 | [12](12-volatility-targeting/README.md) | Lagged realized-volatility targeting, turnover and linear transaction-cost sensitivity | Seeded synthetic | `volatility_targeting.py` |
 | [13](13-risk-parity/README.md) | Inverse-volatility and covariance-aware ERC, matched held-out cost/risk comparison | Seeded synthetic | `risk_parity.py` |
 | [14](14-hedge-ratio-stability/README.md) | Rolling minimum-variance hedge ratios, beta regime drift and costs | Seeded synthetic | `hedge_lab.py` |
-| [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel and nonparallel spot-curve shocks, key-rate DV01 | Hypothetical | `bond_lab.py` |
+| [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel and nonparallel spot-curve shocks, key-rate DV01 | Hypothetical | `bond_lab.py` |\n| [16](16-option-payoff-stress/README.md) | European option expiry payoffs, debit spreads and deterministic stress | Hypothetical | `option_payoff.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -86,3 +86,5 @@ Project 15 also provides `curve_portfolio.py` and `test_curve_portfolio.py` for 
 Project 15 additionally includes `interpolation_stability.py` and `test_interpolation_stability.py` for a fixed rate-linear versus log-discount interpolation comparison, node DV01 aggregation, and parallel/nonparallel stress sensitivity. Run `python -m pytest -q test_interpolation_stability.py` in Project 15. Synthetic-only; independent review pending.
 
 Project 15 also includes `forward_diagnostics.py` and `test_forward_diagnostics.py` for annual effective forward-rate consistency under the two predeclared spot-curve interpolation methods, using synthetic rates and a fixed curve shock.
+
+Project 16 uses standard-library `unittest` and synthetic option payoffs; run `python -m unittest -v test_option_payoff.py` from `16-option-payoff-stress/`. Exact-revision CI and independent review remain unverified.
