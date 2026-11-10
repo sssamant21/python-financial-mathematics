@@ -45,3 +45,16 @@ python -m compileall -q cashflow_matching.py constrained_matching.py test_cashfl
 ```
 
 The synthetic example requires one short and one long lot at a total purchase cost of 185 units to cover 100 units due in each of years 1 and 2. Budget 180 is infeasible. Fixed-holdings 2%, 4%, 6% parallel-rate stress changes **discounted** cash-flow gaps only; it does not change contractual payments or solve for new holdings. Actual bond price changes, issuer risk, liquidity and stochastic liability changes are not modeled. The deterministic fixture has matching asset/liability flows, so its PV gap is zero at every tested rate. This is educational model validation, not independent review or production certification.
+
+## Fixed-holdings maturity and rate-sensitivity diagnostics
+
+The optional `maturity_diagnostics.py` extension compares **when** asset cash flows arrive versus when liabilities are due. For annual end-of-year promised cash flows, Macaulay duration is `D = sum(t * CF_t / (1+r)^t) / PV`. The signed duration gap is `D_assets - D_liabilities`. The first derivative of the **discounted funding gap** with respect to the common annual rate is `(-PV_assets * D_assets + PV_liabilities * D_liabilities) / (1+r)`. A positive duration gap does **not** guarantee solvency or adequate cash at every due date.
+
+```bash
+cd quant-projects/19-liability-cashflow-matching
+python maturity_diagnostics.py
+python -m unittest -v test_maturity_diagnostics.py
+python -m compileall -q maturity_diagnostics.py test_maturity_diagnostics.py
+```
+
+The synthetic mismatch fixture has assets of 80 in year 1 and 120 in year 2 versus liabilities of 100 in each year. At a 4% flat rate, the asset PV minus liability PV is approximately **-0.739645**, duration gap approximately **+0.100355 years**, and first-year cumulative shortfall **20 units**. The rate derivative is approximately **-17.06873 units per unit change in the annual rate** (about -0.170687 for a 1-percentage-point change, as a first-order approximation). The three fixed 2%/4%/6% scenarios are **not** a forecast, independent yield-curve validation, or a repricing of bond market prices. Duration is undefined for zero-PV cash-flow schedules; these are rejected. The 8 synthetic local tests passed using a source-equivalent copy of the existing cash-flow helper; exact published-revision CI and independent review remain unverified.
