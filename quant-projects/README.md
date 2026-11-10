@@ -113,3 +113,5 @@ Project 18 also includes `correlation_sensitivity.py` and `test_correlation_sens
 Project 18 also provides [borrower-level scenario-tail attribution](18-credit-loss-concentration/README.md) with additivity and EAD concentration sensitivity. Run `python -m unittest -v test_tail_attribution.py` in Project 18; synthetic only.
 
 Project 19 uses standard-library cash-flow matching and synthetic discount-rate stress. Run `python -m unittest -v test_cashflow_matching.py` from `19-liability-cashflow-matching/`. Exact-revision CI and independent review remain unverified.
+
+Project 19 also includes `constrained_matching.py` and `test_constrained_matching.py` for bounded integer-lot synthetic bond cash-flow matching, infeasibility diagnostics, and fixed-holdings parallel-rate PV stress. Run `python -m unittest -v test_constrained_matching.py` from Project 19.
