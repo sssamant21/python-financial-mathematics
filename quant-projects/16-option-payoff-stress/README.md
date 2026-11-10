@@ -66,3 +66,23 @@ A canonical zero-dividend hypothetical benchmark gives call approximately **10.4
 **Model risk:** Constant volatility/rates/dividend yield, frictionless markets, continuous hedging, European exercise, and lognormal diffusion are simplifying assumptions. No calibration to real quotes, stochastic volatility, jumps, discrete dividends, American exercise, funding, margin, liquidity, contract multiplier, transaction costs or broker execution. Inputs are hypothetical; independent model review and production readiness remain unverified.
 
 **Next:** Verify exact-revision CI and add bounded volatility/maturity sensitivity with independent numerical checks before Project 17.
+
+## Extension — volatility and maturity sensitivity (2026-11-09)
+
+**Business question:** How sensitive is the *theoretical* European option value to predeclared volatility and remaining-maturity assumptions? This is not implied-volatility calibration or a forecast.
+
+The Black–Scholes value is evaluated on a fixed 3 × 3 grid: annual volatility 10%, 20%, 40%; maturity 0.25, 1, 2 years; default spot/strike 100, continuously compounded rate 5%, dividend yield 0. Volatility sensitivity is positive for calls and puts under these assumptions. Maturity monotonicity is **not universal** (notably for puts, dividends and negative rates); the regression check restricts its positive-time-value example to an at-the-money, zero-dividend call with positive rate.
+
+```bash
+cd quant-projects/16-option-payoff-stress
+python sensitivity.py --kind call
+python sensitivity.py --kind put
+python -m unittest -v test_option_payoff.py test_black_scholes.py test_sensitivity.py
+python -m compileall -q sensitivity.py test_sensitivity.py
+```
+
+The new grid uses the existing pricing function, verifies put-call parity at every point, and rejects nonfinite/invalid grid inputs and grids larger than 100 points. The deep-out-of-money short-maturity test checks finite, nonnegative values but **does not certify numerical accuracy** in extreme tails. The module uses the standard library only. No market data, quotes, or broker integration.
+
+**Evidence:** Nine extension tests passed in an isolated source-equivalent environment with a locally reconstructed pricing core; compilation and CLI smoke passed. Exact published-revision integration and the updated GitHub Actions run remain unverified until confirmed. No independent review, historical calibration, or production certification.
+
+**Next:** Confirm exact-revision CI and investigate near-expiry/low-volatility finite-difference stability before beginning a distinct Project 17.
