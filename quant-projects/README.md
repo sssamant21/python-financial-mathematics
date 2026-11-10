@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Seventeen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Eighteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -26,6 +26,7 @@ Seventeen self-contained labs complement the financial-mathematics books without
 | [16](16-option-payoff-stress/README.md) | European expiry payoffs, Black–Scholes theoretical pricing, put-call parity, finite-difference Greeks and volatility/maturity sensitivity | Hypothetical | `option_payoff.py`, `black_scholes.py` |
 
 | [17](17-implied-volatility-validation/README.md) | Bounded European implied volatility and no-arbitrage quote validation | Hypothetical | `implied_vol.py` |
+| [18](18-credit-loss-concentration/README.md) | One-year credit expected loss, EAD concentration and PD/LGD stress | Synthetic only | `credit_risk.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -100,3 +101,5 @@ Project 16 also includes `stability_diagnostics.py` and `test_stability_diagnost
 Project 17 additionally includes `quote_validation.py` and `test_quote_validation.py` for European call/put bid-ask parity intervals, quote guardrails and synthetic implied-volatility ranges. Run `python -m unittest -v test_implied_vol.py test_quote_validation.py` from Project 17. CI and independent review must be checked on the exact revision.
 
 Project 17 also includes `surface_checks.py` and `test_surface_checks.py` for synthetic European call cross-strike monotonicity, vertical spread and butterfly inequalities, and zero-dividend/nonnegative-rate calendar monotonicity. Run `python -m unittest -v test_surface_checks.py` from Project 17. These necessary conditions do not certify executable arbitrage absence.
+
+Project 18 uses standard-library credit risk calculations and deterministic tests. Run `python -m unittest -v test_credit_risk.py` from `18-credit-loss-concentration/`.
