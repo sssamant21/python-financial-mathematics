@@ -78,5 +78,9 @@ jobs:
           python -m pytest -q quant-projects/15-bond-duration-convexity/test_curve_portfolio.py
           python -m pytest -q quant-projects/15-bond-duration-convexity/test_interpolation_stability.py
           python -m pytest -q quant-projects/15-bond-duration-convexity/test_forward_diagnostics.py
-      - name: Validate Project 16 European option payoff and theoretical pricing\n        run: |\n          cd quant-projects/16-option-payoff-stress\n          python -m unittest -v test_option_payoff.py test_black_scholes.py\n      - name: Run two-stock Monte Carlo end-to-end
+      - name: Validate Project 16 European option payoff and theoretical pricing
+        run: |
+          cd quant-projects/16-option-payoff-stress
+          python -m unittest -v test_option_payoff.py test_black_scholes.py
+      - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
