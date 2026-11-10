@@ -98,3 +98,5 @@ Project 16 also includes `stability_diagnostics.py` and `test_stability_diagnost
 
 
 Project 17 additionally includes `quote_validation.py` and `test_quote_validation.py` for European call/put bid-ask parity intervals, quote guardrails and synthetic implied-volatility ranges. Run `python -m unittest -v test_implied_vol.py test_quote_validation.py` from Project 17. CI and independent review must be checked on the exact revision.
+
+Project 17 also includes `surface_checks.py` and `test_surface_checks.py` for synthetic European call cross-strike monotonicity, vertical spread and butterfly inequalities, and zero-dividend/nonnegative-rate calendar monotonicity. Run `python -m unittest -v test_surface_checks.py` from Project 17. These necessary conditions do not certify executable arbitrage absence.
