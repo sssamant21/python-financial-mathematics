@@ -90,5 +90,10 @@ jobs:
         run: |
           cd quant-projects/18-credit-loss-concentration
           python -m unittest -v test_credit_risk.py test_correlated_defaults.py test_correlation_sensitivity.py test_tail_attribution.py
+      - name: Validate Project 19 liability cash-flow matching
+        run: |
+          cd quant-projects/19-liability-cashflow-matching
+          python -m unittest -v test_cashflow_matching.py
+          python -m compileall -q cashflow_matching.py test_cashflow_matching.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
