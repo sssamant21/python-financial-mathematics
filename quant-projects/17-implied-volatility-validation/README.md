@@ -35,3 +35,17 @@ python -m unittest -v test_implied_vol.py test_quote_validation.py
 ```
 
 The example uses deterministic synthetic option quotes around a 20% Black–Scholes model, not observed prices. The model does not fetch, store or redistribute market data. Missing independent review and real bid/ask provenance remain **unverified**.
+
+## Cross-strike and calendar consistency (synthetic)
+
+For same-expiry European calls, price must be nonincreasing and convex in strike. A vertical call spread cannot exceed the discounted strike gap: `0 <= C(K1)-C(K2) <= exp(-rT)(K2-K1)` for `K1<K2`. For three strikes `K0<K1<K2`, convexity requires `C(K1) <= w C(K0)+(1-w) C(K2)`, where `w=(K2-K1)/(K2-K0)`. The bid/ask screen flags only *unavoidable* violations, using the most favorable bid/ask combination, and separately checks discounted European price bounds.
+
+For the same strike and underlying, European call prices must be nondecreasing in maturity **only when dividends are zero and the continuously compounded risk-free rate is nonnegative**. The calendar function refuses other assumptions instead of incorrectly applying the rule.
+
+```bash
+cd quant-projects/17-implied-volatility-validation
+python surface_checks.py
+python -m unittest -v test_surface_checks.py
+```
+
+The CLI constructs hypothetical Black–Scholes quotes with a 0.02-wide bid/ask spread. Twelve deterministic regression tests cover consistent surfaces, vertical/butterfly/calendar violations, crossed quotes, invalid coordinates, nonfinite values and unsupported assumptions. These are **necessary checks, not sufficient proof** of executable arbitrage or an arbitrage-free surface: spreads may not be simultaneously executable, and sparse grids, stale/asynchronous quotes, fees, American exercise, financing and stock borrow are excluded. Synthetic tests are not market calibration or independent model validation.
