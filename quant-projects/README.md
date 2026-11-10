@@ -23,7 +23,7 @@ Sixteen self-contained labs complement the financial-mathematics books without d
 | [13](13-risk-parity/README.md) | Inverse-volatility and covariance-aware ERC, matched held-out cost/risk comparison | Seeded synthetic | `risk_parity.py` |
 | [14](14-hedge-ratio-stability/README.md) | Rolling minimum-variance hedge ratios, beta regime drift and costs | Seeded synthetic | `hedge_lab.py` |
 | [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel and nonparallel spot-curve shocks, key-rate DV01 | Hypothetical | `bond_lab.py` |
-| [16](16-option-payoff-stress/README.md) | European expiry payoffs, Black–Scholes theoretical pricing, put-call parity and finite-difference Greeks | Hypothetical | `option_payoff.py`, `black_scholes.py` |
+| [16](16-option-payoff-stress/README.md) | European expiry payoffs, Black–Scholes theoretical pricing, put-call parity, finite-difference Greeks and volatility/maturity sensitivity | Hypothetical | `option_payoff.py`, `black_scholes.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -89,3 +89,5 @@ Project 15 additionally includes `interpolation_stability.py` and `test_interpol
 Project 15 also includes `forward_diagnostics.py` and `test_forward_diagnostics.py` for annual effective forward-rate consistency under the two predeclared spot-curve interpolation methods, using synthetic rates and a fixed curve shock.
 
 Project 16 uses standard-library `unittest` for synthetic expiry payoffs and a separate European Black–Scholes theoretical valuation extension; run `python -m unittest -v test_option_payoff.py test_black_scholes.py` from `16-option-payoff-stress/`. Exact-revision CI and independent review remain unverified.
+
+Project 16 additionally includes `sensitivity.py` and `test_sensitivity.py`, a deterministic synthetic Black–Scholes volatility/maturity grid with parity and edge-case guardrails. Run `python -m unittest -v test_sensitivity.py` in its directory. Exact published-revision CI is tracked separately.
