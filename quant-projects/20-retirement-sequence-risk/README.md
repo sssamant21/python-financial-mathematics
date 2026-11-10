@@ -6,15 +6,13 @@ This synthetic, beginner-friendly lab studies **sequence risk** in retirement-st
 
 ## Business and mathematical context
 
-Let starting capital be (W_0), the start-of-year withdrawal be (C_t=C_1(1+i)^{t-1}), and the annual portfolio return be (r_t). The deliberately simplified wealth recurrence is
+Let starting capital be `W_0`, the start-of-year withdrawal be `C_t = C_1 (1+i)^(t-1)`, and the annual portfolio return be `r_t`. The deliberately simplified wealth recurrence is
 
-[
-W_t = \max(0, W_{t-1}-C_t)(1+r_t).
-]
+`W_t = max(0, W_(t-1) - C_t) * (1 + r_t)`.
 
 A **ruin event** is recorded at the first year when the *scheduled* withdrawal exceeds the capital available before that withdrawal. Exact exhaustion after a fully funded withdrawal is **not** counted as ruin in that year; this convention is explicit and should not be confused with other ruin definitions.
 
-Without withdrawals, the product (prod_t(1+r_t)) is independent of return order. With withdrawals, losses early in the horizon reduce the capital base from which subsequent spending is funded. Thus return order matters even when arithmetic average and geometric total return are held fixed.
+Without withdrawals, the product of all `(1+r_t)` terms is independent of return order. With withdrawals, losses early in the horizon reduce the capital base from which subsequent spending is funded. Thus return order matters even when arithmetic average and geometric total return are held fixed.
 
 ## Reproducible lab (Python 3.11+, standard library only)
 
