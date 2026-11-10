@@ -151,3 +151,8 @@ Verified GitHub Actions [run 42753181413](https://github.com/sssamant21/python-f
 ### Project 17 initial lab (2026-11-10)
 
 Synthetic-first European implied-volatility bisection, theoretical quote bounds, eight regression tests, and reproducible tutorial added. Exact-revision CI, market-data calibration, and independent model review pending. Next: inspect CI, add cross-quote put-call parity and bid/ask consistency checks.
+
+
+### Project 17 synthetic quote consistency extension (2026-11-10)
+
+Added `quote_validation.py` and `test_quote_validation.py`: finite/nonnegative uncrossed call/put bid-ask checks, discounted European no-arbitrage bounds, feasible put-call parity intervals, and bounded synthetic implied-volatility ranges. Eight new regression test methods were authored. **No local execution or exact-revision CI pass is claimed at publication**; CI integration is being updated. No actual option-chain provenance, transaction-cost execution model, independent review, or production certification. Next: verify complete Project 17 CI and repair failures; then assess strike/calendar consistency or begin Project 18 as a distinct exercise.
