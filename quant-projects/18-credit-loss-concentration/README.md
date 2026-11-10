@@ -23,3 +23,15 @@ Expected demonstration values: base EAD 1,750,000 and EL 21,000; stressed EL 50,
 ## Guardrails and validation
 
 Reject duplicate/empty borrower names, empty portfolios, zero aggregate exposure, negative EAD, invalid PD/LGD, nonfinite numeric values, and negative/nonfinite stress inputs. Tests cover numerical identities, stress caps, invalid inputs and input immutability. In real credit modeling, PD/LGD/EAD need point-in-time vintage data, default definitions, exposure changes, recovery timing, correlation and concentration-tail models; none is validated here. **Synthetic tests do not establish calibration, independent model validation, regulatory compliance or production readiness.** Educational only, not financial advice.
+
+## Correlated-default tail simulation (extension)
+
+`correlated_defaults.py` uses a **seeded, synthetic one-factor Gaussian latent-variable model**. Each borrower defaults when `sqrt(rho) * Z + sqrt(1-rho) * epsilon_i < Phi^{-1}(PD_i)`, with one shared standard-normal systematic shock `Z` and independent standard-normal borrower shocks `epsilon_i`. Here `rho` is latent **asset** correlation, not observed default correlation. Marginal PDs remain the input PDs in the model. Loss severity is fixed at `EAD × LGD`; there is no stochastic recovery, exposure migration or multi-period dependence.
+
+```bash
+cd quant-projects/18-credit-loss-concentration
+python correlated_defaults.py
+python -m unittest -v test_credit_risk.py test_correlated_defaults.py
+```
+
+The deterministic CLI uses 10,000 scenarios, seed 42, and a hypothetical 20% latent asset correlation. It reports analytical expected loss, simulated mean loss, empirical 99% loss VaR (nearest-rank), mean of the highest 1% simulated losses (tail-average proxy), and `VaR - analytical EL` as an **illustrative unexpected-loss measure**. This tail-average is not a calibrated regulatory expected shortfall. Finite-sample Monte Carlo noise and discrete losses can produce jumps; increase scenarios and compare seeds before interpreting tails. The simulation does **not** represent observed 2020/2022 default episodes or calibrated economic capital. No third-party data is distributed.
