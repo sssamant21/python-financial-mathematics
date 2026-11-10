@@ -22,3 +22,16 @@ Default call assumptions: hypothetical spot 100, strike 100, maturity 1 year, ra
 ## Model validation and limitations
 
 European exercise only; constant rate, dividend yield and volatility, lognormal underlying, frictionless markets. No American exercise, stale bid/ask quote handling, surface arbitrage, actual option chains, broker integrations or live trades. No third-party market data are redistributed. Passing synthetic tests does not establish historical calibration, independent review, or production certification. Educational research, not investment advice.
+
+
+## Synthetic bid/ask and put-call parity extension
+
+For European calls and puts with matching strike and expiry, define F = S exp(-qT) - K exp(-rT). A feasible bid/ask market must satisfy **call bid − put ask ≤ F ≤ call ask − put bid**. Each quote must also respect its discounted no-arbitrage bounds, be nonnegative, and have an uncrossed spread. The extension returns implied-volatility intervals only if all four quotes are strictly interior and individually bracketed by the bounded solver. This is a necessary consistency screen, **not** a sufficient absence-of-arbitrage proof (execution costs, early exercise, stale/asynchronous quotes, and calendar/strike constraints are excluded).
+
+```bash
+cd quant-projects/17-implied-volatility-validation
+python quote_validation.py
+python -m unittest -v test_implied_vol.py test_quote_validation.py
+```
+
+The example uses deterministic synthetic option quotes around a 20% Black–Scholes model, not observed prices. The model does not fetch, store or redistribute market data. Missing independent review and real bid/ask provenance remain **unverified**.
