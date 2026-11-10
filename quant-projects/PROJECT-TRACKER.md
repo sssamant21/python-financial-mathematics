@@ -123,3 +123,7 @@ Reconciled `main` at `b06ec207f4f995af60d45af2c78f038af1de252c`; corrected Proje
 ### Project 15 annual forward-rate diagnostics (2026-11-09)
 
 Added `forward_diagnostics.py` and `test_forward_diagnostics.py` to compare one-year effective forward rates implied by rate-linear and log-discount interpolation on a fixed synthetic 1/3/5/10-year curve, including predeclared node shocks. An isolated source-equivalent local run passed **11/11 tests**, Python compilation, and a CLI smoke test; exact published-revision integration and GitHub Actions execution remain **unverified**. The fixture's maximum absolute method gap was approximately 32.122 bp, which is not historical evidence or a general result. No licensed yield-curve data, independent review, arbitrage-free calibration, or production certification. Next: verify the exact SHA's CI and address failures before proceeding to Project 16.
+
+### Project 16 — Option expiry payoff stress (2026-11-09)
+
+Published a self-contained European-style expiry P&L exercise with long/short calls and puts, multi-leg aggregation, synthetic scenario CLI, beginner mathematics, and eight deterministic `unittest` test methods. **Tests authored but not executed in this run; exact published-revision CI is unverified.** No market data, pricing calibration, independent review, or production certification. Next: verify full Project 15 CI and Project 16 tests on the published SHA, then extend Project 16 with independently checked Black–Scholes valuation, put-call parity and Greeks under explicit assumptions.
