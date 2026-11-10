@@ -127,3 +127,7 @@ Added `forward_diagnostics.py` and `test_forward_diagnostics.py` to compare one-
 ### Project 16 — Option expiry payoff stress (2026-11-09)
 
 Published a self-contained European-style expiry P&L exercise with long/short calls and puts, multi-leg aggregation, synthetic scenario CLI, beginner mathematics, and eight deterministic `unittest` test methods. **Tests authored but not executed in this run; exact published-revision CI is unverified.** No market data, pricing calibration, independent review, or production certification. Next: verify full Project 15 CI and Project 16 tests on the published SHA, then extend Project 16 with independently checked Black–Scholes valuation, put-call parity and Greeks under explicit assumptions.
+
+### Project 16 Black–Scholes extension (2026-11-09)
+
+Added `black_scholes.py` and `test_black_scholes.py`: continuous-dividend European theoretical valuation, put-call parity residual, central finite-difference delta/gamma/vega, a published numerical benchmark, nine deterministic unit tests and finite-input guardrails. **9/9 authored-source tests passed locally**, compilation and synthetic CLI smoke test passed. Existing Project 16 payoff tests and full exact-revision integration have not yet been rerun. CI integration was configured; **new exact-revision CI and independent review remain unverified**. No historical data or live trading. Next: confirm Project 16 full CI and examine volatility/maturity stress, numerical edge cases, then Project 17.
