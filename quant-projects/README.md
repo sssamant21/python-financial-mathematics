@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Eighteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Nineteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -27,6 +27,8 @@ Eighteen self-contained labs complement the financial-mathematics books without 
 
 | [17](17-implied-volatility-validation/README.md) | Bounded European implied volatility and no-arbitrage quote validation | Hypothetical | `implied_vol.py` |
 | [18](18-credit-loss-concentration/README.md) | One-year credit expected loss, EAD concentration and PD/LGD stress | Synthetic only | `credit_risk.py` |
+
+| [19](19-liability-cashflow-matching/README.md) | Liability cash-flow timing, cumulative funding shortfalls and flat-rate PV sensitivity | Synthetic only | `cashflow_matching.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -109,3 +111,5 @@ Project 18 also provides `correlated_defaults.py` and `test_correlated_defaults.
 Project 18 also includes `correlation_sensitivity.py` and `test_correlation_sensitivity.py` for predeclared latent asset-correlation scenarios and repeated-seed Monte Carlo dispersion. Run `python -m unittest -v test_correlation_sensitivity.py` from Project 18. Synthetic only; exact-revision CI and independent review tracked separately.
 
 Project 18 also provides [borrower-level scenario-tail attribution](18-credit-loss-concentration/README.md) with additivity and EAD concentration sensitivity. Run `python -m unittest -v test_tail_attribution.py` in Project 18; synthetic only.
+
+Project 19 uses standard-library cash-flow matching and synthetic discount-rate stress. Run `python -m unittest -v test_cashflow_matching.py` from `19-liability-cashflow-matching/`. Exact-revision CI and independent review remain unverified.
