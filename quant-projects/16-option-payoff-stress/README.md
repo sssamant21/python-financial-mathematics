@@ -86,3 +86,31 @@ The new grid uses the existing pricing function, verifies put-call parity at eve
 **Evidence:** Nine extension tests passed in an isolated source-equivalent environment with a locally reconstructed pricing core; compilation and CLI smoke passed. Exact published-revision integration and the updated GitHub Actions run remain unverified until confirmed. No independent review, historical calibration, or production certification.
 
 **Next:** Confirm exact-revision CI and investigate near-expiry/low-volatility finite-difference stability before beginning a distinct Project 17.
+
+## Extension — near-expiry and low-volatility numerical stability (2026-11-10)
+
+**Business question:** Can finite-difference delta, gamma and vega become numerically unreliable when expiry is close or volatility is very low? We compare the existing central-difference implementation to independent closed-form Black–Scholes–Merton derivatives on a **predeclared synthetic** grid (one year at 20% volatility, one day at 20%, and one day at 1%). No market data or model fitting.
+
+Analytical Greeks with continuous dividend yield `q`, standard normal density `phi`, and `d1` defined above:
+
+```text
+Call delta = exp(-qT) N(d1)
+Put delta  = exp(-qT) (N(d1)-1)
+Gamma      = exp(-qT) phi(d1)/(S sigma sqrt(T))
+Vega       = S exp(-qT) phi(d1) sqrt(T)
+```
+
+Vega is **per 1.0 volatility change**, not per percentage point. Central differences use `spot_step = 0.0001 * spot` and `vol_step = 0.001 * volatility`. The diagnostic reports absolute error for each Greek and a descriptive pass flag using `abs(error) <= 1e-4 + 0.01*abs(analytic)`. This threshold is an **illustrative numerical check**, not a market calibration or certified accuracy limit. Near expiry the Greeks can become sharply peaked or discontinuous in the limiting case, so finite differences can be step-sensitive.
+
+```bash
+cd quant-projects/16-option-payoff-stress
+python stability_diagnostics.py --kind call
+python stability_diagnostics.py --kind put
+python -m unittest -v test_stability_diagnostics.py
+python -m unittest -v test_option_payoff.py test_black_scholes.py test_sensitivity.py test_stability_diagnostics.py
+python -m compileall -q stability_diagnostics.py test_stability_diagnostics.py
+```
+
+Guardrails reject invalid or nonfinite scenarios, excessive scenario counts and invalid step scales. Tests cover independent analytical benchmarks, call/put derivative identities, finite outputs in near-expiry/low-volatility cases, determinism and invalid inputs. **Execution evidence is pending:** tests were authored and published, but this run could not clone the exact repository revision because the GitHub hostname did not resolve from the local runtime. The dedicated CI workflow now includes the tests; its result must be verified separately. Independent review, real-market calibration and production certification remain unverified.
+
+**Next:** Confirm exact-revision CI and review numerical tolerance behavior; then begin Project 17 as a distinct quantitative-finance exercise.
