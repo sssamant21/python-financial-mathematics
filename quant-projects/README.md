@@ -91,3 +91,5 @@ Project 15 also includes `forward_diagnostics.py` and `test_forward_diagnostics.
 Project 16 uses standard-library `unittest` for synthetic expiry payoffs and a separate European Black–Scholes theoretical valuation extension; run `python -m unittest -v test_option_payoff.py test_black_scholes.py` from `16-option-payoff-stress/`. Exact-revision CI and independent review remain unverified.
 
 Project 16 additionally includes `sensitivity.py` and `test_sensitivity.py`, a deterministic synthetic Black–Scholes volatility/maturity grid with parity and edge-case guardrails. Run `python -m unittest -v test_sensitivity.py` in its directory. Exact published-revision CI is tracked separately.
+
+Project 16 also includes `stability_diagnostics.py` and `test_stability_diagnostics.py` for analytical-versus-finite-difference Greeks under predeclared near-expiry and low-volatility synthetic scenarios. Run `python -m unittest -v test_stability_diagnostics.py` from Project 16. Exact-revision CI and independent review remain unverified.
