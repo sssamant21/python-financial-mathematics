@@ -85,6 +85,6 @@ jobs:
       - name: Validate Project 17 implied-volatility inversion
         run: |
           cd quant-projects/17-implied-volatility-validation
-          python -m unittest -v test_implied_vol.py
+          python -m unittest -v test_implied_vol.py test_quote_validation.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
