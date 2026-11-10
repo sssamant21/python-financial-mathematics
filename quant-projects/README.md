@@ -103,3 +103,5 @@ Project 17 additionally includes `quote_validation.py` and `test_quote_validatio
 Project 17 also includes `surface_checks.py` and `test_surface_checks.py` for synthetic European call cross-strike monotonicity, vertical spread and butterfly inequalities, and zero-dividend/nonnegative-rate calendar monotonicity. Run `python -m unittest -v test_surface_checks.py` from Project 17. These necessary conditions do not certify executable arbitrage absence.
 
 Project 18 uses standard-library credit risk calculations and deterministic tests. Run `python -m unittest -v test_credit_risk.py` from `18-credit-loss-concentration/`.
+
+Project 18 also provides `correlated_defaults.py` and `test_correlated_defaults.py` for seeded synthetic one-factor correlated borrower defaults, empirical loss-tail diagnostics and explicit analytical expected-loss comparison. Run `python -m unittest -v test_credit_risk.py test_correlated_defaults.py` from Project 18. No real-default calibration or independent model review is claimed.
