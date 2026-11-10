@@ -22,7 +22,8 @@ Sixteen self-contained labs complement the financial-mathematics books without d
 | [12](12-volatility-targeting/README.md) | Lagged realized-volatility targeting, turnover and linear transaction-cost sensitivity | Seeded synthetic | `volatility_targeting.py` |
 | [13](13-risk-parity/README.md) | Inverse-volatility and covariance-aware ERC, matched held-out cost/risk comparison | Seeded synthetic | `risk_parity.py` |
 | [14](14-hedge-ratio-stability/README.md) | Rolling minimum-variance hedge ratios, beta regime drift and costs | Seeded synthetic | `hedge_lab.py` |
-| [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel and nonparallel spot-curve shocks, key-rate DV01 | Hypothetical | `bond_lab.py` |\n| [16](16-option-payoff-stress/README.md) | European expiry payoffs, Black–Scholes theoretical pricing, put-call parity and finite-difference Greeks | Hypothetical | `option_payoff.py`, `black_scholes.py` |
+| [15](15-bond-duration-convexity/README.md) | Fixed-coupon bond valuation, duration, convexity, parallel and nonparallel spot-curve shocks, key-rate DV01 | Hypothetical | `bond_lab.py` |
+| [16](16-option-payoff-stress/README.md) | European expiry payoffs, Black–Scholes theoretical pricing, put-call parity and finite-difference Greeks | Hypothetical | `option_payoff.py`, `black_scholes.py` |
 
 ## Quick start (Windows PowerShell)
 
