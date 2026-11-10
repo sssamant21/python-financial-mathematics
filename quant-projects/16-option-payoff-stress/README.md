@@ -37,3 +37,32 @@ Tests check analytical break-even, call/put intrinsic values, short-leg sign, ca
 **Acceptance:** Run tests on exact published GitHub revision and verify CI separately. Independent model review, real-market inputs, pricing calibration and production certification remain unverified.
 
 **Next:** Add an independently tested European Black–Scholes benchmark with clearly stated continuous-rate/dividend assumptions, put-call parity and finite-difference Greeks; retain expiry P&L as a separate concept.
+
+## Extension — Black–Scholes–Merton European valuation (synthetic only)
+
+**Business question:** What is the *theoretical present value* of a European call or put before expiry, assuming a constant annual volatility, continuously compounded risk-free rate and continuous dividend yield? This differs from the expiry-only net P&L above: the option value is not a forecast of realized profit or an executable quote.
+
+Under lognormal diffusion with no arbitrage, constant `r`, `q`, `sigma > 0` and time to expiry `T > 0` in years:
+
+```text
+d1 = [ln(S/K) + (r - q + sigma²/2)T] / (sigma sqrt(T))
+d2 = d1 - sigma sqrt(T)
+Call = S exp(-qT) N(d1) - K exp(-rT) N(d2)
+Put  = K exp(-rT) N(-d2) - S exp(-qT) N(-d1)
+Call - Put = S exp(-qT) - K exp(-rT)
+```
+
+`N` is the standard-normal CDF. `black_scholes.py` uses only Python's standard library. Central finite differences approximate delta (value change per one underlying-price unit), gamma (second spot derivative), and vega (per **1.0** volatility change, not per 1 percentage point). The numerical step sizes are fixed defaults and may be unstable for extreme strikes, tiny maturities or very small volatility.
+
+```bash
+cd quant-projects/16-option-payoff-stress
+python black_scholes.py --spot 100 --strike 100 --years 1 --rate 0.05 --volatility 0.2
+python -m unittest -v test_option_payoff.py test_black_scholes.py
+python -m compileall -q option_payoff.py black_scholes.py test_option_payoff.py test_black_scholes.py
+```
+
+A canonical zero-dividend hypothetical benchmark gives call approximately **10.450584**, put approximately **5.573526**, and near-zero parity residual. Tests cover that benchmark, dividend-adjusted parity, arbitrage bounds, monotonicity, finite-difference Greeks versus analytical values, deterministic results, and invalid inputs. **Nine extension tests passed locally on authored source**; exact published-revision CI remains unverified until GitHub Actions confirms it.
+
+**Model risk:** Constant volatility/rates/dividend yield, frictionless markets, continuous hedging, European exercise, and lognormal diffusion are simplifying assumptions. No calibration to real quotes, stochastic volatility, jumps, discrete dividends, American exercise, funding, margin, liquidity, contract multiplier, transaction costs or broker execution. Inputs are hypothetical; independent model review and production readiness remain unverified.
+
+**Next:** Verify exact-revision CI and add bounded volatility/maturity sensitivity with independent numerical checks before Project 17.
