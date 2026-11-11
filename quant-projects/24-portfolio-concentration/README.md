@@ -41,3 +41,16 @@ Reject fewer than two assets, negative/nonfinite/boolean weights, sums outside a
 ## Validation evidence
 
 Eleven deterministic `unittest` cases, Python compilation and the CLI demonstration **passed in a local standalone source-equivalent run on 2026-11-11**. Exact published-revision GitHub Actions CI and independent model review remain **unverified**. No historical market validation or production certification is claimed.
+
+## Extension: lagged-target rebalancing and cost sensitivity
+
+A target weight vector is fixed **before** each period's realized returns. At period start, compare it with the previous period's drifted weights. One-way turnover is `0.5 * sum(abs(pretrade_i - target_i))`. Charge `cost = start_wealth * turnover * cost_bps / 10000`, invest the remainder at target weights, and apply the period's simple gross portfolio return `sum(target_i * (1 + realized_return_i))`. Drift the resulting holdings for the next period. This makes the cost and turnover convention explicit; it is not a trade-execution simulator. A target schedule constructed using future prices would still introduce look-ahead bias, so targets must be frozen point-in-time.
+
+```bash
+cd quant-projects/24-portfolio-concentration
+python -m unittest -v test_rebalancing.py
+python -m compileall -q rebalancing.py test_rebalancing.py
+python rebalancing.py
+```
+
+The three-period synthetic 0/10/50-bps comparison has the same turnover but different ending wealth. Nine local tests passed against a source-equivalent helper reconstruction; exact published revision CI is pending. Assumes fractional trades, no taxes, no market impact beyond the chosen linear cost, no cash flows, and no shorting/leverage. The exercise uses no market data.
