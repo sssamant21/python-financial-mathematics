@@ -296,3 +296,7 @@ GitHub Actions [run 43044761274](https://github.com/sssamant21/python-financial-
 ### Project 25 initial publication (2026-11-11)
 
 Added `25-high-water-mark-fees/` with a synthetic-only educational net NAV/high-water-mark fee model, a clear monthly crystallization convention, standard-library implementation, tutorial and ten deterministic regression tests. In an isolated local execution, **10/10 tests passed**, Python compilation passed, and the synthetic CLI completed. The published revision's hosted CI, independent review and real-fund contract validation are **unverified**. Next: verify exact-revision CI, add annual-vs-monthly crystallization and explicit hurdle sensitivity, then plan Project 26.
+
+### Project 25 crystallization and hurdle extension (2026-11-11)
+
+Added `crystallization.py` and `test_crystallization.py` for monthly versus annual (also quarterly/semiannual) performance-fee crystallization, monthly management fees, a **simple hard hurdle**, and explicit net-HWM reset conventions. Synthetic 12-month sensitivity is documented in Project 25 README. **11/11 local tests passed**, Python compilation passed, and synthetic CLI passed on prepared source. Exact published-revision hosted CI, fund-contract validation, historical market-data calibration, independent review, and production certification remain **unverified**. Next: verify Project 25 hosted CI on the source SHA, review fee-convention edge cases, then begin distinct Project 26.
