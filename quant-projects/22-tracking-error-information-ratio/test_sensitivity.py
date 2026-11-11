@@ -36,6 +36,17 @@ class SensitivityTests(unittest.TestCase):
         with self.assertRaises(ValueError): sensitivity(self.p,{"A":self.b[:-1]})
     def test_invalid_frequency(self):
         with self.assertRaises(ValueError): sensitivity(self.p,{"A":self.b},10)
+    def test_total_loss_compounds_to_total_loss(self):
+        self.assertEqual(aggregate_compound([.05, -1.0, .25], 3), [-1.0])
+    def test_boolean_block_rejected(self):
+        with self.assertRaises(ValueError):
+            aggregate_compound([.01, .02, .03], True)
+    def test_benchmark_order_does_not_change_results(self):
+        alternative = [x + .001 for x in self.b]
+        first = sensitivity(self.p, {"A": self.b, "B": alternative})
+        second = sensitivity(self.p, {"B": alternative, "A": self.b})
+        self.assertEqual(first["A"], second["A"])
+        self.assertEqual(first["B"], second["B"])
     def test_invalid_returns(self):
         with self.assertRaises(ValueError): aggregate_compound([0,float("nan"),0],3)
 
