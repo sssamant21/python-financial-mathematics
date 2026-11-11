@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-three self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-four self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -33,6 +33,7 @@ Twenty-three self-contained labs complement the financial-mathematics books with
 | [21](21-sector-performance-attribution/README.md) | Single-period Brinson–Fachler allocation, selection and interaction reconciliation | Synthetic only | `attribution.py` |
 | [22](22-tracking-error-information-ratio/README.md) | Ex-post active risk, information ratio, and trailing-window diagnostics | Synthetic only | `tracking_error.py` |
 | [23](23-downside-risk-ratios/README.md) | Downside deviation, Sortino/Omega ratios, MAR sensitivity and trailing diagnostics | Synthetic only | `downside_risk.py` |
+| [24](24-portfolio-concentration/README.md) | Capital concentration, return drift, lagged-target rebalancing and cost sensitivity | Synthetic only | `concentration.py`, `rebalancing.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -139,3 +140,5 @@ Project 22 extension: `sensitivity.py` and `test_sensitivity.py` compare predecl
 Project 23 uses Python standard-library synthetic returns. Run `python -m unittest -v test_downside_risk.py` and `python downside_risk.py` in `23-downside-risk-ratios/`. Undefined zero-shortfall ratios return `None`; no historical calibration or independent review is claimed.
 
 Project 24 — [Portfolio concentration and diversification diagnostics](24-portfolio-concentration/README.md): HHI, effective holding count, Shannon entropy, synthetic post-return weight drift and one-way rebalancing turnover. Run `python -m unittest -v test_concentration.py` and `python concentration.py` from the project directory. Published-revision CI and independent review pending.
+
+Project 24 extension: run `python -m unittest -v test_rebalancing.py` and `python rebalancing.py` from `24-portfolio-concentration/`. Targets are precommitted before period returns; historical validation and independent review are unverified.
