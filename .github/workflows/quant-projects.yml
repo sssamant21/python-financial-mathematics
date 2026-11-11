@@ -107,5 +107,11 @@ jobs:
           python -m compileall -q attribution.py linked_attribution.py test_attribution.py test_linked_attribution.py
           python attribution.py
           python linked_attribution.py
+      - name: Validate Project 22 tracking error and information ratio
+        run: |
+          cd quant-projects/22-tracking-error-information-ratio
+          python -m unittest -v test_tracking_error.py
+          python -m compileall -q tracking_error.py test_tracking_error.py
+          python tracking_error.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
