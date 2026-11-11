@@ -123,3 +123,10 @@ jobs:
           python -m unittest -v test_downside_risk.py
           python -m compileall -q downside_risk.py test_downside_risk.py
           python downside_risk.py
+
+      - name: Validate Project 24 portfolio concentration
+        run: |
+          cd quant-projects/24-portfolio-concentration
+          python -m unittest -v test_concentration.py
+          python -m compileall -q concentration.py test_concentration.py
+          python concentration.py

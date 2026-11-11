@@ -137,3 +137,5 @@ Project 22 uses standard-library tracking error and information ratio diagnostic
 Project 22 extension: `sensitivity.py` and `test_sensitivity.py` compare predeclared synthetic benchmarks and monthly versus nonoverlapping quarterly compounded returns. Run `python -m unittest -v test_sensitivity.py` in its directory; hosted CI and independent review pending.
 
 Project 23 uses Python standard-library synthetic returns. Run `python -m unittest -v test_downside_risk.py` and `python downside_risk.py` in `23-downside-risk-ratios/`. Undefined zero-shortfall ratios return `None`; no historical calibration or independent review is claimed.
+
+Project 24 — [Portfolio concentration and diversification diagnostics](24-portfolio-concentration/README.md): HHI, effective holding count, Shannon entropy, synthetic post-return weight drift and one-way rebalancing turnover. Run `python -m unittest -v test_concentration.py` and `python concentration.py` from the project directory. Published-revision CI and independent review pending.
