@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-one self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -30,6 +30,7 @@ Twenty self-contained labs complement the financial-mathematics books without du
 
 | [19](19-liability-cashflow-matching/README.md) | Liability cash-flow timing, cumulative funding shortfalls and flat-rate PV sensitivity | Synthetic only | `cashflow_matching.py` |
 | [20](20-retirement-sequence-risk/README.md) | Retirement sequence-of-returns risk, withdrawals, and shuffled-return sensitivity | Seeded synthetic | `sequence_risk.py` |
+| [21](21-sector-performance-attribution/README.md) | Single-period Brinson–Fachler allocation, selection and interaction reconciliation | Synthetic only | `attribution.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -124,3 +125,5 @@ Project 20 — [Retirement sequence-of-returns risk](20-retirement-sequence-risk
 Project 20 uses standard-library `unittest` and seeded return permutations. Run `python -m unittest -v test_sequence_risk.py` and `python sequence_risk.py --draws 500 --seed 2026` from `20-retirement-sequence-risk/`. The permutation ruin fraction is not a calibrated retirement-failure probability.
 
 Project 20 extension — [Funded-withdrawal and inflation sensitivity](20-retirement-sequence-risk/README.md): predeclared 3/5/7/9% withdrawal and 0/2/4% inflation grids, per-year funded/unfunded spending and nominal funding ratios. Run `python -m unittest -v test_withdrawal_sensitivity.py` and `python withdrawal_sensitivity.py` from the Project 20 folder. Synthetic only; hosted CI and independent review pending.
+
+Project 21 uses standard-library synthetic one-period sector attribution with ten deterministic regression tests. Run `python -m unittest -v test_attribution.py` and `python attribution.py` from `21-sector-performance-attribution/`. Multi-period linking, real-market validation, and independent review are not established.
