@@ -100,5 +100,11 @@ jobs:
           cd quant-projects/20-retirement-sequence-risk
           python -m unittest -v test_sequence_risk.py test_withdrawal_sensitivity.py
           python -m compileall -q sequence_risk.py withdrawal_sensitivity.py test_sequence_risk.py test_withdrawal_sensitivity.py
+      - name: Validate Project 21 single-period sector attribution
+        run: |
+          cd quant-projects/21-sector-performance-attribution
+          python -m unittest -v test_attribution.py
+          python -m compileall -q attribution.py test_attribution.py
+          python attribution.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
