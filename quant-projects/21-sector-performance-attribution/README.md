@@ -38,3 +38,11 @@ This is **single-period arithmetic attribution** only. Do not add effects across
 A standalone local Python run on 2026-11-10 passed **10/10 unittest tests**, compilation, and the synthetic CLI smoke test. Tests cover active-return reconciliation, pure allocation/selection, equal portfolios, one-sector case, repeatability, and invalid input rejection. **Exact published-revision GitHub Actions CI, independent review, real-world data validation, and production certification remain unverified.**
 
 **Next exercise:** add a separate two-period linked attribution exercise with explicitly documented linking convention and fee/cash-flow limitations.
+
+## Two-period geometric linking extension
+
+Run `python -m unittest -v test_linked_attribution.py`, `python -m compileall -q linked_attribution.py test_linked_attribution.py`, and `python linked_attribution.py` from this folder. Python 3.11+ standard library only; no downloads.
+
+For periods 1 and 2, let portfolio and benchmark simple returns be `P1, P2, B1, B2`. The compounded active return is `(1+P1)(1+P2) - (1+B1)(1+B2)`. For each Brinson-Fachler effect `E`, the **exact two-period geometric linking** used here is `E_linked = E1*(1+P2) + E2*(1+B1)`. Summed effects telescope exactly to compounded arithmetic active return. The convention is **order-dependent** and is not an industry-standard multi-period attribution certification; other linking conventions redistribute effects differently. Do not simply add period effects. Inputs are independently calculated with beginning-of-period weights; no future information is used for either period's calculation. Subsequent returns appear only in retrospective linking.
+
+The invented example gives allocation +0.176000, selection +0.492500, interaction +0.084500, and compounded active +0.753000 **percentage points**. The nine new synthetic tests passed locally using a source-equivalent copy of the baseline helper; compilation and CLI smoke passed. Exact published-revision CI, independent review and historical-market validation remain unverified. No external flows, management fees, taxes, sector reclassifications, derivatives, intra-period trades or external performance standards are modeled. Not investment advice.
