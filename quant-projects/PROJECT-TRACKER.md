@@ -239,3 +239,7 @@ Verified [GitHub Actions run 42936114981](https://github.com/sssamant21/python-f
 ### Project 21 — Sector performance attribution (2026-11-10)
 
 Published `21-sector-performance-attribution/` with Brinson–Fachler single-period allocation, selection, interaction and arithmetic active-return reconciliation. Beginner documentation, a synthetic three-sector CLI, and ten deterministic standard-library regression tests cover valid accounting identities and invalid inputs. **10/10 local tests passed** on the standalone source copy, along with Python compilation and CLI smoke. **Exact published-revision hosted CI remains unverified** until GitHub Actions completes; no real market-data provenance, independent model review, multi-period linking, or production certification is claimed. Next: verify hosted CI and then consider two-period attribution linking as a separate, clearly specified exercise.
+
+### Project 21 two-period linking (2026-11-11)
+
+Added `linked_attribution.py` and `test_linked_attribution.py`: exact two-period retrospective geometric scaling of allocation, selection and interaction effects to compounded active return, nine deterministic synthetic tests, and an explicit linking convention. An equivalent local helper/test implementation passed 9/9 tests, Python compilation, and CLI smoke. **The exact published revision and hosted CI remain unverified**, as do independent review and real-market validation. Next: inspect full hosted Project 21 CI and verify the published integration before Project 22.
