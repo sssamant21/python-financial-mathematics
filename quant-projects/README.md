@@ -127,3 +127,5 @@ Project 20 uses standard-library `unittest` and seeded return permutations. Run 
 Project 20 extension — [Funded-withdrawal and inflation sensitivity](20-retirement-sequence-risk/README.md): predeclared 3/5/7/9% withdrawal and 0/2/4% inflation grids, per-year funded/unfunded spending and nominal funding ratios. Run `python -m unittest -v test_withdrawal_sensitivity.py` and `python withdrawal_sensitivity.py` from the Project 20 folder. Synthetic only; hosted CI and independent review pending.
 
 Project 21 uses standard-library synthetic one-period sector attribution with ten deterministic regression tests. Run `python -m unittest -v test_attribution.py` and `python attribution.py` from `21-sector-performance-attribution/`. Multi-period linking, real-market validation, and independent review are not established.
+
+Project 21 also includes [two-period geometric linking](21-sector-performance-attribution/README.md) via `linked_attribution.py` and `test_linked_attribution.py`; run `python -m unittest -v test_linked_attribution.py` from Project 21. Synthetic only; hosted CI pending.
