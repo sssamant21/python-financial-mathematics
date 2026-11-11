@@ -312,3 +312,7 @@ Added `26-cashflow-performance/` with time-weighted vs money-weighted return acc
 ### Project 26 dated XIRR extension (2026-11-11)
 
 Added `dated_xirr.py` and `test_dated_xirr.py`: actual-calendar-day annualized IRR with explicit 365-day basis, bounded bisection, strictly increasing dates, cash-flow guardrails, conservative suppression of intermediate withdrawals and synthetic contribution-timing sensitivity. A functionally equivalent prepared local implementation passed **11/11** tests, Python compilation, and CLI smoke; this was **not** an exact checkout of the GitHub revision because DNS prevented cloning. Dedicated workflow commands were added. **Exact published-revision hosted CI, independent review, historical market validation, and production certification remain unverified.** Next: verify Project 26 hosted CI and review numerical edge cases, then begin distinct Project 27.
+
+### Project 27 initial publication (2026-11-11)
+
+Published a distinct synthetic-only binary-payoff Kelly estimation-risk lab with analytic bounded long-only fraction, expected-log-growth stress across predeclared true probabilities, 12 deterministic authored unit tests, and Python standard-library-only implementation. **No local execution or exact-revision hosted CI result has been verified in this run.** No real-market calibration, independent model review, or production certification. Next: execute the Project 27 suite on the published revision, inspect hosted CI and repair failures, then extend with explicit estimation-confidence bounds before Project 28.
