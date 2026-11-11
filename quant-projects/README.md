@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-six self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-seven self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -36,6 +36,7 @@ Twenty-six self-contained labs complement the financial-mathematics books withou
 | [24](24-portfolio-concentration/README.md) | Capital concentration, return drift, lagged-target rebalancing and cost sensitivity | Synthetic only | `concentration.py`, `rebalancing.py` |
 | [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, monthly/annual crystallization and hard-hurdle sensitivity | Synthetic only | `fee_lab.py`, `crystallization.py` |
 | [26](26-cashflow-performance/README.md) | Time-weighted vs money-weighted returns, external cash-flow timing, periodic IRR and dated XIRR guardrails | Synthetic only | `performance.py`, `dated_xirr.py` |
+| [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth and probability-estimation stress | Synthetic only | `kelly.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -148,3 +149,5 @@ Project 24 extension: run `python -m unittest -v test_rebalancing.py` and `pytho
 Project 25 extension: run `python -m unittest -v test_crystallization.py` and `python crystallization.py` in `25-high-water-mark-fees/` for synthetic 1/3/6/12-month fee crystallization and hard-hurdle sensitivity. Local standalone 11/11 passed; exact published-revision CI and independent review are unverified.
 
 Project 26: run `python -m unittest -v test_performance.py` and `python performance.py` from `26-cashflow-performance/`. Synthetic-only; exact published CI and independent review pending.
+
+Project 27: run `python -m unittest -v test_kelly.py`, `python -m compileall -q kelly.py test_kelly.py`, and `python kelly.py` from `27-kelly-estimation-risk/`. This is an educational binary-payoff model, not investment guidance; hosted CI and independent review pending.
