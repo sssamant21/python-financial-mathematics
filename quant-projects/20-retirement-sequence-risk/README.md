@@ -40,3 +40,21 @@ On 2026-11-10 a local standalone copy passed **10/10 unittest cases**, Python co
 ## Next exercise
 
 Add fixed, predeclared withdrawal-rate and inflation grids, and distinguish funded-withdrawal shortfalls from terminal wealth depletion. Then test a block-bootstrap variant with a separate point-in-time market-data provenance workflow.
+
+## Extension — funded withdrawal and inflation sensitivity (2026-11-10)
+
+A *scheduled* withdrawal can exceed the wealth available at the start of the year. The baseline model floors wealth at zero. This extension makes the accounting explicit:
+
+`funded_t = min(wealth_(t-1), due_t)`, `shortfall_t = due_t - funded_t`,
+`wealth_t = (wealth_(t-1) - funded_t) * (1 + r_t)`.
+
+The nominal funding ratio is `sum(funded_t) / sum(due_t)` (defined as 1 when no withdrawals are scheduled). It is not an inflation-adjusted welfare metric. **Ruin** means the first *partially unfunded* withdrawal, not merely terminal wealth equal to zero. Predeclared withdrawal rates are 3%, 5%, 7%, 9% of initial wealth, and inflation rates are 0%, 2%, 4%. The grid is a synthetic stress comparison, **not** a recommended withdrawal rate or an estimated probability of success.
+
+```bash
+cd quant-projects/20-retirement-sequence-risk
+python -m unittest -v test_sequence_risk.py test_withdrawal_sensitivity.py
+python -m compileall -q sequence_risk.py withdrawal_sensitivity.py test_sequence_risk.py test_withdrawal_sensitivity.py
+python withdrawal_sensitivity.py --initial 100
+```
+
+The extension uses only Python 3.11+ standard library and the fixed invented returns from the baseline lab. Its 11 new regression tests check the accounting identity, partial funding, exact exhaustion, baseline equivalence, invalid inputs, and repeatability. An isolated source-equivalent local test run passed 11/11, compilation and CLI smoke; full GitHub revision integration and hosted CI are **unverified**. Inflation is deterministic and the annual return path is hypothetical; no historical-data validation or independent review is claimed.
