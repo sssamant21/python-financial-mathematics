@@ -98,7 +98,7 @@ jobs:
       - name: Validate Project 20 retirement sequence risk
         run: |
           cd quant-projects/20-retirement-sequence-risk
-          python -m unittest -v test_sequence_risk.py
-          python -m compileall -q sequence_risk.py test_sequence_risk.py
+          python -m unittest -v test_sequence_risk.py test_withdrawal_sensitivity.py
+          python -m compileall -q sequence_risk.py withdrawal_sensitivity.py test_sequence_risk.py test_withdrawal_sensitivity.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
