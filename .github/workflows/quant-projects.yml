@@ -153,3 +153,10 @@ jobs:
           python -m unittest -v test_dated_xirr.py
           python -m compileall -q dated_xirr.py test_dated_xirr.py
           python dated_xirr.py
+
+      - name: Validate Project 27 Kelly estimation risk
+        run: |
+          cd quant-projects/27-kelly-estimation-risk
+          python -m unittest -v test_kelly.py
+          python -m compileall -q kelly.py test_kelly.py
+          python kelly.py
