@@ -251,3 +251,8 @@ Reconciled the current `main` implementation and dedicated workflow: the Project
 ### Project 22 — Tracking error and information ratio (2026-11-11)
 
 Published standard-library synthetic paired-return diagnostics, sample tracking error, arithmetic annualized active return, information ratio with undefined zero-risk handling, trailing-window metrics, and nine authored deterministic tests. **Local execution and exact-revision hosted CI have not yet been verified.** No historical-data calibration, timestamp-level alignment checks, independent model review, or production certification. Next: verify CI and runtime test results, then extend with benchmark-change and observation-frequency sensitivity before Project 23.
+
+
+### Project 22 local source-equivalent validation (2026-11-11)
+
+Reconciled `main` at `59bc887b9b90c4a1938c522ad23cd9ac80b7aa5e` and copied the exact fetched text of `tracking_error.py` and `test_tracking_error.py` into an isolated Python runtime. Executed `python -m unittest -v test_tracking_error.py` (**9/9 passed**), `python -m compileall -q tracking_error.py test_tracking_error.py` (**passed**), and `python tracking_error.py` (**passed**, 8 synthetic observations, three rolling windows). This is **source-equivalent local execution**, not execution of a checked-out Git tree or hosted CI. GitHub Actions for Project 22, real-market data, independent review, and production certification remain **unverified**. Next: verify exact-revision hosted CI and add predeclared benchmark-change / observation-frequency sensitivity with deterministic regression coverage.
