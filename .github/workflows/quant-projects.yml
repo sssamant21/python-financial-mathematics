@@ -116,3 +116,10 @@ jobs:
           python sensitivity.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
+
+      - name: Validate Project 23 downside risk ratios
+        run: |
+          cd quant-projects/23-downside-risk-ratios
+          python -m unittest -v test_downside_risk.py
+          python -m compileall -q downside_risk.py test_downside_risk.py
+          python downside_risk.py

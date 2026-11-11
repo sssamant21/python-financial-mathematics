@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-three self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -32,6 +32,7 @@ Twenty-two self-contained labs complement the financial-mathematics books withou
 | [20](20-retirement-sequence-risk/README.md) | Retirement sequence-of-returns risk, withdrawals, and shuffled-return sensitivity | Seeded synthetic | `sequence_risk.py` |
 | [21](21-sector-performance-attribution/README.md) | Single-period Brinson–Fachler allocation, selection and interaction reconciliation | Synthetic only | `attribution.py` |
 | [22](22-tracking-error-information-ratio/README.md) | Ex-post active risk, information ratio, and trailing-window diagnostics | Synthetic only | `tracking_error.py` |
+| [23](23-downside-risk-ratios/README.md) | Downside deviation, Sortino/Omega ratios, MAR sensitivity and trailing diagnostics | Synthetic only | `downside_risk.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -134,3 +135,5 @@ Project 21 also includes [two-period geometric linking](21-sector-performance-at
 Project 22 uses standard-library tracking error and information ratio diagnostics. Run `python -m unittest -v test_tracking_error.py` and `python tracking_error.py` from `22-tracking-error-information-ratio/`. Synthetic only; exact-revision CI and independent review pending.
 
 Project 22 extension: `sensitivity.py` and `test_sensitivity.py` compare predeclared synthetic benchmarks and monthly versus nonoverlapping quarterly compounded returns. Run `python -m unittest -v test_sensitivity.py` in its directory; hosted CI and independent review pending.
+
+Project 23 uses Python standard-library synthetic returns. Run `python -m unittest -v test_downside_risk.py` and `python downside_risk.py` in `23-downside-risk-ratios/`. Undefined zero-shortfall ratios return `None`; no historical calibration or independent review is claimed.
