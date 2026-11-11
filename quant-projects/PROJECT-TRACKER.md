@@ -308,3 +308,7 @@ GitHub Actions [run 43074275688](https://github.com/sssamant21/python-financial-
 ### Project 26 initial publication (2026-11-11)
 
 Added `26-cashflow-performance/` with time-weighted vs money-weighted return accounting, explicit beginning-of-period deposits/withdrawals, bounded periodic IRR, conservative ambiguous-root suppression, tutorial and ten deterministic tests. **10/10 local prepared-source tests passed**, Python compilation and synthetic CLI passed. The exact published revision has **not** been tested in hosted CI. No historical market data, independent review, or production certification. Next: verify exact-revision hosted CI, add dated XIRR and cash-flow timing sensitivity, then proceed to Project 27.
+
+### Project 26 dated XIRR extension (2026-11-11)
+
+Added `dated_xirr.py` and `test_dated_xirr.py`: actual-calendar-day annualized IRR with explicit 365-day basis, bounded bisection, strictly increasing dates, cash-flow guardrails, conservative suppression of intermediate withdrawals and synthetic contribution-timing sensitivity. A functionally equivalent prepared local implementation passed **11/11** tests, Python compilation, and CLI smoke; this was **not** an exact checkout of the GitHub revision because DNS prevented cloning. Dedicated workflow commands were added. **Exact published-revision hosted CI, independent review, historical market validation, and production certification remain unverified.** Next: verify Project 26 hosted CI and review numerical edge cases, then begin distinct Project 27.
