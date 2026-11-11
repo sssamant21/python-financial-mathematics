@@ -9,9 +9,9 @@ class DownsideRiskTests(unittest.TestCase):
     def test_known_values(self):
         m = downside_metrics([0.1, -0.2, 0.3, -0.1], periods_per_year=4)
         self.assertAlmostEqual(m["downside_deviation_per_period"], math.sqrt(0.0125))
-        self.assertAlmostEqual(m["omega"], 2.0)
+        self.assertAlmostEqual(m["omega"], 4 / 3)
         self.assertAlmostEqual(m["shortfall_fraction"], 0.5)
-        self.assertAlmostEqual(m["sortino"], 0.05 * 2 / math.sqrt(0.0125))
+        self.assertAlmostEqual(m["sortino"], 0.025 * 2 / math.sqrt(0.0125))
 
     def test_zero_shortfall_undefined(self):
         m = downside_metrics([0.01, 0.02, 0.03])
