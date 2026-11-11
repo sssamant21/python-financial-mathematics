@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-five self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-six self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -35,6 +35,7 @@ Twenty-five self-contained labs complement the financial-mathematics books witho
 | [23](23-downside-risk-ratios/README.md) | Downside deviation, Sortino/Omega ratios, MAR sensitivity and trailing diagnostics | Synthetic only | `downside_risk.py` |
 | [24](24-portfolio-concentration/README.md) | Capital concentration, return drift, lagged-target rebalancing and cost sensitivity | Synthetic only | `concentration.py`, `rebalancing.py` |
 | [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, monthly/annual crystallization and hard-hurdle sensitivity | Synthetic only | `fee_lab.py`, `crystallization.py` |
+| [26](26-cashflow-performance/README.md) | Time-weighted vs money-weighted returns, external cash-flow timing and IRR guardrails | Synthetic only | `performance.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -145,3 +146,5 @@ Project 24 — [Portfolio concentration and diversification diagnostics](24-port
 Project 24 extension: run `python -m unittest -v test_rebalancing.py` and `python rebalancing.py` from `24-portfolio-concentration/`. Targets are precommitted before period returns; historical validation and independent review are unverified.
 
 Project 25 extension: run `python -m unittest -v test_crystallization.py` and `python crystallization.py` in `25-high-water-mark-fees/` for synthetic 1/3/6/12-month fee crystallization and hard-hurdle sensitivity. Local standalone 11/11 passed; exact published-revision CI and independent review are unverified.
+
+Project 26: run `python -m unittest -v test_performance.py` and `python performance.py` from `26-cashflow-performance/`. Synthetic-only; exact published CI and independent review pending.

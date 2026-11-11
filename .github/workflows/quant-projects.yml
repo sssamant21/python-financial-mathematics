@@ -143,3 +143,10 @@ jobs:
           python -m unittest -v test_crystallization.py
           python -m compileall -q crystallization.py test_crystallization.py
           python crystallization.py
+
+      - name: Validate Project 26 cash-flow performance
+        run: |
+          cd quant-projects/26-cashflow-performance
+          python -m unittest -v test_performance.py
+          python -m compileall -q performance.py test_performance.py
+          python performance.py
