@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Nineteen self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -29,6 +29,7 @@ Nineteen self-contained labs complement the financial-mathematics books without 
 | [18](18-credit-loss-concentration/README.md) | One-year credit expected loss, EAD concentration and PD/LGD stress | Synthetic only | `credit_risk.py` |
 
 | [19](19-liability-cashflow-matching/README.md) | Liability cash-flow timing, cumulative funding shortfalls and flat-rate PV sensitivity | Synthetic only | `cashflow_matching.py` |
+| [20](20-retirement-sequence-risk/README.md) | Retirement sequence-of-returns risk, withdrawals, and shuffled-return sensitivity | Seeded synthetic | `sequence_risk.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -119,3 +120,5 @@ Project 19 also includes `constrained_matching.py` and `test_constrained_matchin
 Project 19 also includes `maturity_diagnostics.py` and `test_maturity_diagnostics.py` for synthetic fixed-holdings Macaulay duration-gap and rate-derivative diagnostics. Run `python -m unittest -v test_maturity_diagnostics.py` from its directory; exact published-revision CI and independent review are tracked separately.
 
 Project 20 — [Retirement sequence-of-returns risk](20-retirement-sequence-risk/README.md): standard-library synthetic withdrawal timing, early/late loss ordering, seeded return permutations, and explicit ruin convention. Run `python -m unittest -v test_sequence_risk.py` in the Project 20 folder. Local standalone tests 10/10 passed; exact published CI and independent review unverified.
+
+Project 20 uses standard-library `unittest` and seeded return permutations. Run `python -m unittest -v test_sequence_risk.py` and `python sequence_risk.py --draws 500 --seed 2026` from `20-retirement-sequence-risk/`. The permutation ruin fraction is not a calibrated retirement-failure probability.
