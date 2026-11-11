@@ -28,3 +28,9 @@ Inputs require at least three same-frequency aligned observations, finite simple
 ## Validation status
 
 Nine deterministic synthetic unit tests authored, covering zero variance, a known numerical example, negative information ratio, rolling future-mutation isolation, and invalid inputs. Hosted CI, independently reproduced runtime results, real-market calibration, and independent review remain **unverified** until executed and recorded.
+
+## Benchmark and observation-frequency sensitivity
+
+Run `python -m unittest -v test_sensitivity.py` and `python sensitivity.py`. The standard-library extension compares **two invented, predeclared benchmark series** using identical monthly observations and separately computes nonoverlapping three-month compounded simple returns. It then annualizes using 12 or 4 observations per year, respectively. Aggregating portfolio and benchmark returns **before subtracting** them is essential: compounded active return is generally not the compound of monthly active returns.
+
+Different benchmarks and sampling frequencies change tracking error and information ratio even without changing the portfolio. The synthetic illustration is descriptive, not a claim of manager skill or an optimized benchmark choice. All series must have genuinely matching timestamps and return conventions; array length alone cannot establish this. Blocks must divide the sample, at least three aggregated observations are required, and incomplete blocks are rejected rather than silently discarded. Do not select a favorable benchmark or frequency after inspecting results. No real-market data, independent review, or production certification is claimed.
