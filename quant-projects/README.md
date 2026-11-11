@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-four self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-five self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -34,6 +34,7 @@ Twenty-four self-contained labs complement the financial-mathematics books witho
 | [22](22-tracking-error-information-ratio/README.md) | Ex-post active risk, information ratio, and trailing-window diagnostics | Synthetic only | `tracking_error.py` |
 | [23](23-downside-risk-ratios/README.md) | Downside deviation, Sortino/Omega ratios, MAR sensitivity and trailing diagnostics | Synthetic only | `downside_risk.py` |
 | [24](24-portfolio-concentration/README.md) | Capital concentration, return drift, lagged-target rebalancing and cost sensitivity | Synthetic only | `concentration.py`, `rebalancing.py` |
+| [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, management and performance fee crystallization | Synthetic only | `fee_lab.py` |
 
 ## Quick start (Windows PowerShell)
 

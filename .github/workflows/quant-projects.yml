@@ -133,3 +133,10 @@ jobs:
           python -m unittest -v test_rebalancing.py
           python -m compileall -q rebalancing.py test_rebalancing.py
           python rebalancing.py
+
+      - name: Validate Project 25 high-water-mark fee accounting
+        run: |
+          cd quant-projects/25-high-water-mark-fees
+          python -m unittest -v test_fee_lab.py
+          python -m compileall -q fee_lab.py test_fee_lab.py
+          python fee_lab.py
