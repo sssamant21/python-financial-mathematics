@@ -110,8 +110,9 @@ jobs:
       - name: Validate Project 22 tracking error and information ratio
         run: |
           cd quant-projects/22-tracking-error-information-ratio
-          python -m unittest -v test_tracking_error.py
-          python -m compileall -q tracking_error.py test_tracking_error.py
+          python -m unittest -v test_tracking_error.py test_sensitivity.py
+          python -m compileall -q tracking_error.py test_tracking_error.py sensitivity.py test_sensitivity.py
           python tracking_error.py
+          python sensitivity.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
