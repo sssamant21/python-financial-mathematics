@@ -26,3 +26,20 @@ Synthetic two-period example: start NAV 100; first-period ending NAV 120 (+20%);
 Reject nonfinite/boolean values, nonpositive post-flow capital, zero or negative ending NAV, mismatched histories, and more than 10,000 periods. Return `None` instead of guessing an IRR when intermediate investor withdrawals occur or a finite bracket cannot be established. The restricted cash-flow pattern is a deliberate educational simplification; real IRR/XIRR tools must handle multiple roots, irregular dates, taxes, fees, stale valuations, and intra-period flows. No point-in-time data or historical return claims are made.
 
 Ten deterministic local tests, compilation, and synthetic CLI passed on 2026-11-11 against prepared source. **Exact published-revision hosted CI, independent review, and production certification remain unverified** until independently checked.
+
+## Dated XIRR extension
+
+For irregular dates, periodic IRR is not annualized by assuming equal spacing. Dated XIRR solves the investor-perspective discounted cash-flow equation:
+
+`0 = sum(CF_i / (1+r)^((date_i-date_0)/365))`.
+
+The implementation uses an equivalent terminal-value equation with bounded bisection, strict ISO date ordering, a fixed 365-day annualization convention, and a restricted uniquely rooted cash-flow pattern (initial investment, additional contributions, final liquidation). Intermediate withdrawals/distributions are deliberately suppressed as `None`, rather than guessing a root. It is not a general commercial XIRR solver.
+
+```bash
+cd quant-projects/26-cashflow-performance
+python -m unittest -v test_performance.py test_dated_xirr.py
+python -m compileall -q performance.py dated_xirr.py test_performance.py test_dated_xirr.py
+python dated_xirr.py
+```
+
+A synthetic 2024-01-01 / 2024-07-01 / 2025-01-01 contribution example (`[-100,-50,170]`) yields approximately **16.0552% annualized XIRR**. Holding dates and terminal value fixed while shifting the additional deposit earlier versus later changes XIRR. The dates are invented fixture dates, **not market observations**. The 11 extension tests passed locally against a functionally equivalent prepared implementation on 2026-11-11, alongside compilation and CLI; exact GitHub revision hosted CI and independent review remain unverified.
