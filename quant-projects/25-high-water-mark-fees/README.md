@@ -35,4 +35,24 @@ Ten deterministic `unittest` cases, compilation and the CLI demonstration passed
 
 Inputs require a nonempty list or tuple of finite numeric simple returns (each at least -100%), positive finite initial NAV, valid fee rates, and a positive integer period frequency. Boolean inputs, oversized histories and nonfinite NAV are rejected. There is no market-data download or redistribution, no point-in-time asset universe, no future-data-driven strategy and no trading execution.
 
-**Next extension:** compare monthly versus annual crystallization and introduce a clearly specified hurdle convention, with reconciliation tests.
+
+## Extension — Crystallization schedule and hard hurdle
+
+Run from this folder:
+
+```bash
+python -m unittest -v test_crystallization.py
+python -m compileall -q crystallization.py test_crystallization.py
+python crystallization.py
+```
+
+The independent `crystallization.py` model applies monthly management fees, with a performance-fee crystallization interval of 1, 3, 6 or 12 months. At crystallization it charges
+
+\(F_t=p\max(0,A_t-\max(H_{t-1},B_t(1+h\Delta t/12)))\),
+
+where \(A_t\) is post-management NAV, \(H_{t-1}\) is the previous *net* high-water mark, \(B_t\) is the net HWM at the prior crystallization, \(h\) is the annual **simple** hurdle, and \(\Delta t\) is elapsed months since the prior crystallization. The hurdle is a hard fee threshold, with **no catch-up**, no hurdle carryforward, and a reset at every crystallization. No fees crystallize on an incomplete final interval. This deliberately differs from many real-world fund agreements.
+
+Synthetic twelve-month example: +10%, −5%, then ten flat months, initial NAV 100, 20% performance fee, zero management fee. Monthly crystallization without a hurdle ends at 102.600000 (total performance fees 2.000000); annual crystallization ends at 103.600000 (fees 0.900000). With a 5% simple hurdle, monthly ends at 102.679167 (fees 1.916667) and annual ends at 104.500000 (fees zero). Differences are *convention-dependent*, not expected returns or investment advice.
+
+Eleven deterministic extension tests, Python compilation, and the synthetic CLI passed locally on 2026-11-11. Published-source CI and independent model review remain **unverified**. No subscriptions, redemptions, equalization, incentive-fee accrual between crystallization dates, hurdle compounding, tax, or contract-specific treatment is modeled.
+
