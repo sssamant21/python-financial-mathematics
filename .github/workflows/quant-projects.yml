@@ -104,7 +104,8 @@ jobs:
         run: |
           cd quant-projects/21-sector-performance-attribution
           python -m unittest -v test_attribution.py test_linked_attribution.py
-          python -m compileall -q attribution.py test_attribution.py
+          python -m compileall -q attribution.py linked_attribution.py test_attribution.py test_linked_attribution.py
           python attribution.py
+          python linked_attribution.py
       - name: Run two-stock Monte Carlo end-to-end
         run: python quant-projects/02-two-stock-correlation/two_stock_monte_carlo.py
