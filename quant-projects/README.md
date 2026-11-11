@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-one self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -31,6 +31,7 @@ Twenty-one self-contained labs complement the financial-mathematics books withou
 | [19](19-liability-cashflow-matching/README.md) | Liability cash-flow timing, cumulative funding shortfalls and flat-rate PV sensitivity | Synthetic only | `cashflow_matching.py` |
 | [20](20-retirement-sequence-risk/README.md) | Retirement sequence-of-returns risk, withdrawals, and shuffled-return sensitivity | Seeded synthetic | `sequence_risk.py` |
 | [21](21-sector-performance-attribution/README.md) | Single-period Brinson–Fachler allocation, selection and interaction reconciliation | Synthetic only | `attribution.py` |
+| [22](22-tracking-error-information-ratio/README.md) | Ex-post active risk, information ratio, and trailing-window diagnostics | Synthetic only | `tracking_error.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -129,3 +130,5 @@ Project 20 extension — [Funded-withdrawal and inflation sensitivity](20-retire
 Project 21 uses standard-library synthetic one-period sector attribution with ten deterministic regression tests. Run `python -m unittest -v test_attribution.py` and `python attribution.py` from `21-sector-performance-attribution/`. Multi-period linking, real-market validation, and independent review are not established.
 
 Project 21 also includes [two-period geometric linking](21-sector-performance-attribution/README.md) via `linked_attribution.py` and `test_linked_attribution.py`; run `python -m unittest -v test_linked_attribution.py` from Project 21. Synthetic only; hosted CI pending.
+
+Project 22 uses standard-library tracking error and information ratio diagnostics. Run `python -m unittest -v test_tracking_error.py` and `python tracking_error.py` from `22-tracking-error-information-ratio/`. Synthetic only; exact-revision CI and independent review pending.
