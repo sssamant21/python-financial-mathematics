@@ -284,3 +284,7 @@ GitHub Actions [run 43017541377](https://github.com/sssamant21/python-financial-
 ### Project 24 — Portfolio concentration and drift (2026-11-11)
 
 Added `24-portfolio-concentration/` with standard-library HHI, effective holding count, Shannon entropy, ex-post weight drift, and one-way turnover. Eleven local standalone source-equivalent tests passed, along with compilation and synthetic CLI smoke. Dedicated GitHub Actions validation is configured. **Exact published-revision CI, independent review, point-in-time historical data validation and production certification remain unverified.** Next: verify Project 24 hosted CI on the exact SHA and add a distinct lagged-target-versus-drifted-holdings cost sensitivity extension before Project 25.
+
+### Project 24 lagged-target rebalancing extension (2026-11-11)
+
+Added `rebalancing.py` and `test_rebalancing.py` with period-start precommitted targets, post-return drift, one-way turnover, proportional transaction costs, wealth accounting, 0/10/50-bps sensitivity and future-mutation isolation. Nine local tests passed using a source-equivalent reconstruction of the existing concentration helper, plus Python compilation and synthetic CLI. Exact published-source integrated tests and GitHub Actions CI are **unverified**. No point-in-time market data, execution-cost calibration, independent model review, or production certification. Next: verify exact published-revision CI and then begin distinct Project 25.
