@@ -132,3 +132,5 @@ Project 21 uses standard-library synthetic one-period sector attribution with te
 Project 21 also includes [two-period geometric linking](21-sector-performance-attribution/README.md) via `linked_attribution.py` and `test_linked_attribution.py`; run `python -m unittest -v test_linked_attribution.py` from Project 21. Synthetic only; hosted CI pending.
 
 Project 22 uses standard-library tracking error and information ratio diagnostics. Run `python -m unittest -v test_tracking_error.py` and `python tracking_error.py` from `22-tracking-error-information-ratio/`. Synthetic only; exact-revision CI and independent review pending.
+
+Project 22 extension: `sensitivity.py` and `test_sensitivity.py` compare predeclared synthetic benchmarks and monthly versus nonoverlapping quarterly compounded returns. Run `python -m unittest -v test_sensitivity.py` in its directory; hosted CI and independent review pending.
