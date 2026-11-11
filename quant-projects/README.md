@@ -34,7 +34,7 @@ Twenty-five self-contained labs complement the financial-mathematics books witho
 | [22](22-tracking-error-information-ratio/README.md) | Ex-post active risk, information ratio, and trailing-window diagnostics | Synthetic only | `tracking_error.py` |
 | [23](23-downside-risk-ratios/README.md) | Downside deviation, Sortino/Omega ratios, MAR sensitivity and trailing diagnostics | Synthetic only | `downside_risk.py` |
 | [24](24-portfolio-concentration/README.md) | Capital concentration, return drift, lagged-target rebalancing and cost sensitivity | Synthetic only | `concentration.py`, `rebalancing.py` |
-| [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, management and performance fee crystallization | Synthetic only | `fee_lab.py` |
+| [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, monthly/annual crystallization and hard-hurdle sensitivity | Synthetic only | `fee_lab.py`, `crystallization.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -143,3 +143,5 @@ Project 23 uses Python standard-library synthetic returns. Run `python -m unitte
 Project 24 — [Portfolio concentration and diversification diagnostics](24-portfolio-concentration/README.md): HHI, effective holding count, Shannon entropy, synthetic post-return weight drift and one-way rebalancing turnover. Run `python -m unittest -v test_concentration.py` and `python concentration.py` from the project directory. Published-revision CI and independent review pending.
 
 Project 24 extension: run `python -m unittest -v test_rebalancing.py` and `python rebalancing.py` from `24-portfolio-concentration/`. Targets are precommitted before period returns; historical validation and independent review are unverified.
+
+Project 25 extension: run `python -m unittest -v test_crystallization.py` and `python crystallization.py` in `25-high-water-mark-fees/` for synthetic 1/3/6/12-month fee crystallization and hard-hurdle sensitivity. Local standalone 11/11 passed; exact published-revision CI and independent review are unverified.
