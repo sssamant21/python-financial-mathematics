@@ -194,3 +194,21 @@ jobs:
           python convention_check.py
           python -m unittest -v test_decimal_reference.py
           python -m compileall -q test_decimal_reference.py
+
+  quantlib-cross-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned external bond-pricing library
+        run: python -m pip install "QuantLib==1.39"
+      - name: Require QuantLib and validate synthetic bond NPV
+        run: |
+          cd quant-projects/29-credit-spread-stress
+          python -c "import QuantLib as ql; assert ql.__version__ == '1.39', ql.__version__"
+          python -m unittest -v test_external_pricing_check.py
+          python -m compileall -q external_pricing_check.py test_external_pricing_check.py
+          python external_pricing_check.py
