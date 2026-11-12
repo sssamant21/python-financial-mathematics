@@ -50,7 +50,7 @@ def compare_quantlib(coupon_rate=0.05, annual_continuous_yield=0.045):
         bond.setPricingEngine(ql.DiscountingBondEngine(curve))
         external_npv = bond.NPV()
         future = [(int(cf.date() - settlement), float(cf.amount()))
-                  for cf in bond.cashflows() if cf.date() > settlement]
+                  for cf in bond.cashflows() if cf.date() > settlement and cf.amount() > 0]
         manual_npv = manual_present_value(future, settlement, annual_continuous_yield)
         return {"external_npv": external_npv, "manual_npv": manual_npv,
                 "absolute_difference": abs(external_npv - manual_npv),
