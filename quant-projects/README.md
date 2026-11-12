@@ -38,7 +38,7 @@ Twenty-nine self-contained labs complement the financial-mathematics books witho
 | [26](26-cashflow-performance/README.md) | Time-weighted vs money-weighted returns, external cash-flow timing, periodic IRR and dated XIRR guardrails | Synthetic only | `performance.py`, `dated_xirr.py` |
 | [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth, Wilson uncertainty bounds and sample-size sensitivity | Synthetic only | `kelly.py`, `uncertainty.py` |
 | [28](28-implementation-shortfall/README.md) | Arrival-price shortfall, VWAP benchmark, schedule/participation/impact sensitivity and fees | Synthetic only | `execution.py`, `benchmarks.py`, `schedule_sensitivity.py` |
-| [29](29-credit-spread-stress/README.md) | Credit spread duration/convexity, issuer/sector shocks, concentration, scenario P&L and independent cash-flow repricing and yield-convention consistency checks | Synthetic only | `spread_stress.py`, `issuer_sector.py`, `repricing_check.py` |
+| [29](29-credit-spread-stress/README.md) | Credit spread duration/convexity, issuer/sector shocks, concentration, scenario P&L and independent cash-flow repricing and yield-convention consistency checks | Synthetic only | `spread_stress.py`, `issuer_sector.py`, `repricing_check.py`, `external_pricing_check.py` |
 
 ## Quick start (Windows PowerShell)
 

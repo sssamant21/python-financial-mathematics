@@ -83,3 +83,18 @@ python -m compileall -q test_decimal_reference.py
 ```
 
 Five test methods passed on a prepared local copy of the convention helper (not an exact GitHub checkout). This is an **independent arithmetic path**, not a third-party bond-pricing library, licensed historical benchmark, or independent professional model review. The dedicated CI workflow now includes the test, but hosted execution of this new revision remains unverified. Settlement, day-count, accrued interest, credit events, embedded options and production pricing conventions are outside scope.
+
+## Optional third-party bond-engine cross-check (QuantLib)
+
+`external_pricing_check.py` compares QuantLib's fixed-rate bond NPV with a separate Python discounted-cash-flow sum using **QuantLib-generated contractual cash flows**. Conventions are fixed: evaluation/settlement 2025-01-15, maturity 2030-01-15, semiannual coupons, unadjusted dates, Actual/365 Fixed coupon accrual and discounting, flat continuously compounded yield, 100 face value and zero settlement lag. This compares **dirty NPV at the evaluation date**, not clean quoted prices, accrued interest, market credit spreads or a historical instrument. Both paths share the same cash-flow generation, so this is a discounting cross-check rather than fully independent instrument-model validation.
+
+```bash
+cd quant-projects/29-credit-spread-stress
+python -m unittest -v test_external_pricing_check.py
+# Optional external integration, with an explicit separately installed dependency:
+python -m pip install "QuantLib==1.39"
+python -m unittest -v test_external_pricing_check.py
+python external_pricing_check.py
+```
+
+The external test is explicitly **skipped** when QuantLib is missing; a skipped test is not a pass. The pinned package is optional and has not been installed or verified in the local runner. Python standard-library arithmetic tests remain runnable without it. QuantLib API compatibility, package availability for each Python/platform combination, and hosted external execution remain unverified until an actual installed-dependency run is recorded. The test intentionally does not download or redistribute third-party data. The date-based example does not model holidays, ex-coupon dates, settlement lags, market calendars or day-count alternatives.
