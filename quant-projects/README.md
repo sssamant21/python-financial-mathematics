@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-eight self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Twenty-nine self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -38,6 +38,7 @@ Twenty-eight self-contained labs complement the financial-mathematics books with
 | [26](26-cashflow-performance/README.md) | Time-weighted vs money-weighted returns, external cash-flow timing, periodic IRR and dated XIRR guardrails | Synthetic only | `performance.py`, `dated_xirr.py` |
 | [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth, Wilson uncertainty bounds and sample-size sensitivity | Synthetic only | `kelly.py`, `uncertainty.py` |
 | [28](28-implementation-shortfall/README.md) | Arrival-price shortfall, VWAP benchmark, schedule/participation/impact sensitivity and fees | Synthetic only | `execution.py`, `benchmarks.py`, `schedule_sensitivity.py` |
+| [29](29-credit-spread-stress/README.md) | Credit spread duration/convexity, DV01 and scenario P&L attribution | Synthetic only | `spread_stress.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -158,3 +159,5 @@ Project 27 extension: run `python -m unittest -v test_uncertainty.py` and `pytho
 Project 28 provides offline synthetic execution-shortfall accounting; run `python -m unittest -v test_execution.py` and `python execution.py` from its directory. Hosted CI and independent review are tracked separately.
 
 Project 28 schedule sensitivity: run `python -m unittest -v test_schedule_sensitivity.py` and `python schedule_sensitivity.py` in its folder. Synthetic-only; hosted CI and independent review tracked separately.
+
+Project 29 uses standard-library Python only. Run `python -m unittest -v test_spread_stress.py` from `29-credit-spread-stress/`. Exact published-revision CI and independent review remain unverified.
