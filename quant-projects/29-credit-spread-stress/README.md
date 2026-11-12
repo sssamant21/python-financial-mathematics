@@ -71,3 +71,15 @@ python convention_check.py
 ```
 
 The five-year 5% semiannual-coupon par bond example has price 100 at 5% nominal yield compounded semiannually; the equivalent continuous yield is approximately 4.938523%. Ten local regression tests passed on an authored fixture using a locally reproduced pricing helper, **not** an exact GitHub checkout. The comparison checks algebraic consistency between two discounting conventions, **not an external independent pricing library**. Exact-published-revision hosted CI, external library comparison, licensed historical calibration, independent review and production certification remain unverified.
+
+## Independent high-precision arithmetic cross-check
+
+`test_decimal_reference.py` uses Python's standard-library `decimal.Decimal` at 45-digit precision to price fixed-coupon bonds by directly summing periodic cash flows. Unlike the production convention helper, the reference discounts each cash flow with `(1+y/m)^{-i}` rather than converting yields to continuously compounded form. The synthetic grid includes annual, semiannual and quarterly coupons; zero, positive and negative nominal yields; a par bond; and a negative-rate boundary. It also checks nominal/continuous conversion round-tripping.
+
+```bash
+cd quant-projects/29-credit-spread-stress
+python -m unittest -v test_decimal_reference.py
+python -m compileall -q test_decimal_reference.py
+```
+
+Five test methods passed on a prepared local copy of the convention helper (not an exact GitHub checkout). This is an **independent arithmetic path**, not a third-party bond-pricing library, licensed historical benchmark, or independent professional model review. The dedicated CI workflow now includes the test, but hosted execution of this new revision remains unverified. Settlement, day-count, accrued interest, credit events, embedded options and production pricing conventions are outside scope.
