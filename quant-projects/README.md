@@ -36,7 +36,7 @@ Twenty-seven self-contained labs complement the financial-mathematics books with
 | [24](24-portfolio-concentration/README.md) | Capital concentration, return drift, lagged-target rebalancing and cost sensitivity | Synthetic only | `concentration.py`, `rebalancing.py` |
 | [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, monthly/annual crystallization and hard-hurdle sensitivity | Synthetic only | `fee_lab.py`, `crystallization.py` |
 | [26](26-cashflow-performance/README.md) | Time-weighted vs money-weighted returns, external cash-flow timing, periodic IRR and dated XIRR guardrails | Synthetic only | `performance.py`, `dated_xirr.py` |
-| [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth and probability-estimation stress | Synthetic only | `kelly.py` |
+| [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth, Wilson uncertainty bounds and sample-size sensitivity | Synthetic only | `kelly.py`, `uncertainty.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -151,3 +151,5 @@ Project 25 extension: run `python -m unittest -v test_crystallization.py` and `p
 Project 26: run `python -m unittest -v test_performance.py` and `python performance.py` from `26-cashflow-performance/`. Synthetic-only; exact published CI and independent review pending.
 
 Project 27: run `python -m unittest -v test_kelly.py`, `python -m compileall -q kelly.py test_kelly.py`, and `python kelly.py` from `27-kelly-estimation-risk/`. This is an educational binary-payoff model, not investment guidance; hosted CI and independent review pending.
+
+Project 27 extension: run `python -m unittest -v test_uncertainty.py` and `python uncertainty.py --wins 55 --trials 100` in `27-kelly-estimation-risk/`. Wilson intervals assume independent Bernoulli observations; all inputs and evaluation probabilities are hypothetical.
