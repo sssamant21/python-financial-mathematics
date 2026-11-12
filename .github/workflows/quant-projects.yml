@@ -195,6 +195,13 @@ jobs:
           python -m unittest -v test_decimal_reference.py
           python -m compileall -q test_decimal_reference.py
 
+      - name: Validate Project 30 bond carry and roll-down
+        run: |
+          cd quant-projects/30-bond-carry-roll-down
+          python -m unittest -v test_carry_roll.py
+          python -m compileall -q carry_roll.py test_carry_roll.py
+          python carry_roll.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
