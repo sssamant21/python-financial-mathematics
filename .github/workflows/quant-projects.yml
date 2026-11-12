@@ -198,10 +198,11 @@ jobs:
       - name: Validate Project 30 bond carry and roll-down
         run: |
           cd quant-projects/30-bond-carry-roll-down
-          python -m unittest -v test_carry_roll.py test_sensitivity.py
-          python -m compileall -q carry_roll.py test_carry_roll.py sensitivity.py test_sensitivity.py
+          python -m unittest -v test_carry_roll.py test_sensitivity.py test_interpolation.py
+          python -m compileall -q carry_roll.py test_carry_roll.py sensitivity.py test_sensitivity.py interpolation.py test_interpolation.py
           python carry_roll.py
           python sensitivity.py
+          python interpolation.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
