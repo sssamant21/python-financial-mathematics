@@ -163,3 +163,10 @@ jobs:
           python -m unittest -v test_uncertainty.py
           python -m compileall -q uncertainty.py test_uncertainty.py
           python uncertainty.py --wins 55 --trials 100
+
+      - name: Validate Project 28 implementation shortfall
+        run: |
+          cd quant-projects/28-implementation-shortfall
+          python -m unittest -v test_execution.py
+          python -m compileall -q execution.py test_execution.py
+          python execution.py --fee-bps 2
