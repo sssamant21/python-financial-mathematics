@@ -58,3 +58,16 @@ python repricing_check.py
 ```
 
 For a synthetic five-year annual 5% coupon bond with 105 paid in year five, benchmark yield 3% and spread 1.5%, the illustrative +100 bp spread shock produces approximately −4.518249 by second-order approximation versus −4.520045 by direct repricing, or +0.1765 bp of base price approximation error. At +500 bp the error rises to about +21.0208 bp of base price. These figures are synthetic, not observed bond prices. Tests include zero shock, direction, single-payment analytical duration, small/large shock error and invalid-input guards. This method assumes fixed positive cash flows, continuously compounded flat rates and spreads, no default, no calls/prepayments, no market liquidity changes and no time-varying spread curve. Historical calibration and independent model validation remain unverified.
+
+## Yield-convention consistency (synthetic)
+
+The `convention_check.py` exercise compares **nominal annual yields compounded m times** against a mathematically equivalent **continuously compounded** yield. Conversion is `r_cc = m log(1 + y_nominal/m)`; discount factors are `(1+y_nominal/m)^(-m t) = exp(-r_cc t)`. Never compare equal numeric quotes under different conventions without conversion. Cash-flow times are measured in years; examples use fixed synthetic cash flows and do not handle accrued interest, settlement calendars, day-count conventions, embedded options or credit defaults.
+
+```bash
+cd quant-projects/29-credit-spread-stress
+python -m unittest -v test_convention_check.py
+python -m compileall -q convention_check.py test_convention_check.py
+python convention_check.py
+```
+
+The five-year 5% semiannual-coupon par bond example has price 100 at 5% nominal yield compounded semiannually; the equivalent continuous yield is approximately 4.938523%. Ten local regression tests passed on an authored fixture using a locally reproduced pricing helper, **not** an exact GitHub checkout. The comparison checks algebraic consistency between two discounting conventions, **not an external independent pricing library**. Exact-published-revision hosted CI, external library comparison, licensed historical calibration, independent review and production certification remain unverified.
