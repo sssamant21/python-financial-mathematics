@@ -176,3 +176,10 @@ jobs:
           python -m unittest -v test_schedule_sensitivity.py
           python -m compileall -q schedule_sensitivity.py test_schedule_sensitivity.py
           python schedule_sensitivity.py
+
+      - name: Validate Project 29 credit spread stress
+        run: |
+          cd quant-projects/29-credit-spread-stress
+          python -m unittest -v test_spread_stress.py
+          python -m compileall -q spread_stress.py test_spread_stress.py
+          python spread_stress.py
