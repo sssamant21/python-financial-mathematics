@@ -45,3 +45,16 @@ python issuer_sector.py
 ```
 
 The new tests cover parallel-shock parity with the original model, additive issuer shocks, P&L reconciliation, concentration, invalid inputs and ±2,000 bp limits on both individual and **combined** shocks. No external dependencies or third-party market data are needed. Synthetic-only tests cannot establish historical spread calibration, issuer/sector taxonomy correctness, correlation stability, nonlinear bond repricing accuracy, independent review or production certification. Next: independently compare approximation P&L against a bond-pricing reference and study spread-duration breakdown under large shocks.
+
+## Independent fixed-cash-flow repricing check
+
+The `repricing_check.py` extension validates the *mathematical approximation* against independently discounted deterministic cash flows. For cash flow `CF_t` at time `t` and continuously compounded benchmark rate `r` plus credit spread `s`, the benchmark is `P(s) = sum(CF_t × exp(-(r+s)t))`. Cash-flow-weighted spread duration and convexity are `D = sum(t × PV(CF_t))/P` and `C = sum(t² × PV(CF_t))/P`. Compare the second-order estimate `P(-DΔs + CΔs²/2)` to direct repricing `P(s+Δs)-P(s)`. Both use the same contractual cash flows but distinct numerical evaluation paths; this is a consistency check, **not independent external model review**.
+
+```bash
+cd quant-projects/29-credit-spread-stress
+python -m unittest -v test_repricing_check.py
+python -m compileall -q repricing_check.py test_repricing_check.py
+python repricing_check.py
+```
+
+For a synthetic five-year annual 5% coupon bond with 105 paid in year five, benchmark yield 3% and spread 1.5%, the illustrative +100 bp spread shock produces approximately −4.518249 by second-order approximation versus −4.520045 by direct repricing, or +0.1765 bp of base price approximation error. At +500 bp the error rises to about +21.0208 bp of base price. These figures are synthetic, not observed bond prices. Tests include zero shock, direction, single-payment analytical duration, small/large shock error and invalid-input guards. This method assumes fixed positive cash flows, continuously compounded flat rates and spreads, no default, no calls/prepayments, no market liquidity changes and no time-varying spread curve. Historical calibration and independent model validation remain unverified.
