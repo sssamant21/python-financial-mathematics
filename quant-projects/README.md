@@ -37,7 +37,7 @@ Twenty-eight self-contained labs complement the financial-mathematics books with
 | [25](25-high-water-mark-fees/README.md) | Net NAV accounting, high-water marks, monthly/annual crystallization and hard-hurdle sensitivity | Synthetic only | `fee_lab.py`, `crystallization.py` |
 | [26](26-cashflow-performance/README.md) | Time-weighted vs money-weighted returns, external cash-flow timing, periodic IRR and dated XIRR guardrails | Synthetic only | `performance.py`, `dated_xirr.py` |
 | [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth, Wilson uncertainty bounds and sample-size sensitivity | Synthetic only | `kelly.py`, `uncertainty.py` |
-| [28](28-implementation-shortfall/README.md) | Arrival-price shortfall, VWAP execution benchmark, partial fills, participation checks and fees | Synthetic only | `execution.py`, `benchmarks.py` |
+| [28](28-implementation-shortfall/README.md) | Arrival-price shortfall, VWAP benchmark, schedule/participation/impact sensitivity and fees | Synthetic only | `execution.py`, `benchmarks.py`, `schedule_sensitivity.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -156,3 +156,5 @@ Project 27: run `python -m unittest -v test_kelly.py`, `python -m compileall -q 
 Project 27 extension: run `python -m unittest -v test_uncertainty.py` and `python uncertainty.py --wins 55 --trials 100` in `27-kelly-estimation-risk/`. Wilson intervals assume independent Bernoulli observations; all inputs and evaluation probabilities are hypothetical.
 
 Project 28 provides offline synthetic execution-shortfall accounting; run `python -m unittest -v test_execution.py` and `python execution.py` from its directory. Hosted CI and independent review are tracked separately.
+
+Project 28 schedule sensitivity: run `python -m unittest -v test_schedule_sensitivity.py` and `python schedule_sensitivity.py` in its folder. Synthetic-only; hosted CI and independent review tracked separately.
