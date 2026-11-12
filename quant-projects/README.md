@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Twenty-nine self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Thirty self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -39,6 +39,8 @@ Twenty-nine self-contained labs complement the financial-mathematics books witho
 | [27](27-kelly-estimation-risk/README.md) | Binary-payoff Kelly log-growth, Wilson uncertainty bounds and sample-size sensitivity | Synthetic only | `kelly.py`, `uncertainty.py` |
 | [28](28-implementation-shortfall/README.md) | Arrival-price shortfall, VWAP benchmark, schedule/participation/impact sensitivity and fees | Synthetic only | `execution.py`, `benchmarks.py`, `schedule_sensitivity.py` |
 | [29](29-credit-spread-stress/README.md) | Credit spread duration/convexity, issuer/sector shocks, concentration, scenario P&L and independent cash-flow repricing and yield-convention consistency checks | Synthetic only | `spread_stress.py`, `issuer_sector.py`, `repricing_check.py`, `external_pricing_check.py` |
+
+| [30](30-bond-carry-roll-down/README.md) | Zero-coupon bond carry, frozen-curve roll-down, and shocked-curve P&L attribution | Synthetic only | `carry_roll.py` |
 
 ## Quick start (Windows PowerShell)
 
