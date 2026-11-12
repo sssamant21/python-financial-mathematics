@@ -165,3 +165,5 @@ Project 29 uses standard-library Python only. Run `python -m unittest -v test_sp
 Project 29 issuer/sector extension: run `python -m unittest -v test_issuer_sector.py` and `python issuer_sector.py` from `29-credit-spread-stress/`. This uses predeclared synthetic nonparallel shocks and capital HHI; exact published-revision CI and independent review are tracked separately.
 
 Project 29 additionally includes `convention_check.py` and `test_convention_check.py` for nominal-periodic versus continuously compounded synthetic bond repricing. Run `python -m unittest -v test_convention_check.py` in Project 29. No external pricing-library validation is claimed.
+
+Project 29 now includes [high-precision Decimal reference checks](29-credit-spread-stress/README.md#independent-high-precision-arithmetic-cross-check) for nominal-yield bond pricing. Run `python -m unittest -v test_decimal_reference.py` in its directory. This checks arithmetic consistency using synthetic cash flows; external library comparison and independent review remain pending.
