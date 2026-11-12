@@ -37,3 +37,17 @@ For 100 hypothetical buy shares at arrival 100, with 40 shares at 100.10, 35 at 
 Inputs must be finite and positive (zero permitted for quantities and fees), slices must be typed, participation must be within (0,1], and fills cannot exceed intended quantity. Tests include sell sign, price improvement, unfilled marking, overfill, nonfinite values, and invalid caps. There is no spread decomposition, market impact estimation, intraday timestamp alignment, benchmark VWAP, queue position, survivorship correction or real-market data. No predictive execution quality, independent model review, production certification or investment advice is claimed.
 
 **Next exercise:** Compare arrival-price and predeclared VWAP benchmarks on matched synthetic schedules, with deterministic price-path and fee stress. Any future real-data work must document provider, license, observation dates, and point-in-time availability.
+
+## VWAP benchmark extension (synthetic)
+
+The market volume-weighted average price is `sum(market_price * market_volume) / sum(market_volume)` over the **predeclared full observation window**. Execution VWAP is `sum(fill_price * fill_quantity) / sum(fill_quantity)` for filled shares only. Signed slippage is `side * 10000 * (execution_vwap / market_vwap - 1)` where side is +1 for buys and -1 for sells. Fees are added separately to currency-denominated cost; partial-fill opportunity cost is **not** silently included in VWAP slippage. No-fill cases return undefined execution VWAP and slippage, rather than zero.
+
+Run from this directory:
+
+```bash
+python -m unittest -v test_benchmarks.py
+python -m compileall -q benchmarks.py test_benchmarks.py
+python benchmarks.py
+```
+
+The deterministic example uses three invented market bars and yields market VWAP 101, execution VWAP 101.035, and buy VWAP slippage approximately 3.4653 bps, before fees. **Interpretation:** this is a full-window benchmark; it is not arrival-price shortfall, and can be distorted by intraday timing, missing trades, venue selection, or a benchmark window chosen after observing outcomes. The calculation does not estimate market impact or prove best execution. No third-party data or broker actions are used.
