@@ -40,7 +40,7 @@ Thirty self-contained labs complement the financial-mathematics books without du
 | [28](28-implementation-shortfall/README.md) | Arrival-price shortfall, VWAP benchmark, schedule/participation/impact sensitivity and fees | Synthetic only | `execution.py`, `benchmarks.py`, `schedule_sensitivity.py` |
 | [29](29-credit-spread-stress/README.md) | Credit spread duration/convexity, issuer/sector shocks, concentration, scenario P&L and independent cash-flow repricing and yield-convention consistency checks | Synthetic only | `spread_stress.py`, `issuer_sector.py`, `repricing_check.py`, `external_pricing_check.py` |
 
-| [30](30-bond-carry-roll-down/README.md) | Zero-coupon bond carry, frozen-curve roll-down, and shocked-curve P&L attribution | Synthetic only | `carry_roll.py` |
+| [30](30-bond-carry-roll-down/README.md) | Zero-coupon carry/roll-down, nonparallel curve shocks and interpolation-method stability | Synthetic only | `carry_roll.py`, `sensitivity.py`, `interpolation.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -171,3 +171,5 @@ Project 29 additionally includes `convention_check.py` and `test_convention_chec
 Project 29 now includes [high-precision Decimal reference checks](29-credit-spread-stress/README.md#independent-high-precision-arithmetic-cross-check) for nominal-yield bond pricing. Run `python -m unittest -v test_decimal_reference.py` in its directory. This checks arithmetic consistency using synthetic cash flows; external library comparison and independent review remain pending.
 
 Project 30 also provides [nonparallel curve and holding-horizon sensitivity](30-bond-carry-roll-down/README.md) via `sensitivity.py` and `test_sensitivity.py`; all fixtures are synthetic and require no external dependencies.
+
+Project 30 interpolation diagnostics: run `python -m unittest -v test_interpolation.py` and `python interpolation.py` from `30-bond-carry-roll-down/`. Synthetic-only; exact-revision CI and independent review remain unverified.
