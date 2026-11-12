@@ -51,3 +51,19 @@ python benchmarks.py
 ```
 
 The deterministic example uses three invented market bars and yields market VWAP 101, execution VWAP 101.035, and buy VWAP slippage approximately 3.4653 bps, before fees. **Interpretation:** this is a full-window benchmark; it is not arrival-price shortfall, and can be distorted by intraday timing, missing trades, venue selection, or a benchmark window chosen after observing outcomes. The calculation does not estimate market impact or prove best execution. No third-party data or broker actions are used.
+
+## Execution-schedule sensitivity (synthetic)
+
+**Business question:** How does a fixed *precommitted* front-loaded, even, or back-loaded schedule change fill rate and arrival-price shortfall when market volume, adverse price moves, fees and a participation cap vary? This is an **ex-post stress comparison**, not a schedule optimizer or an executable trading algorithm.
+
+For target shares Q and schedule fractions f_i summing to one, filled shares in bar i are q_i = min(Q f_i, participation_cap × bar_volume_i). Capped shares are **not** moved to future bars. A hypothetical adverse impact assumption marks buy fills at P_i(1 + impact_bps/10000), and sell fills at P_i(1 − impact_bps/10000). Signed filled price cost is s Σ q_i(P_fill,i − P_arrival), with s=+1 for buys and −1 for sells. Add terminal-marked unfilled opportunity cost s(Q−Σq_i)(P_terminal−P_arrival) and explicit fees. Divide by Q × P_arrival and multiply by 10,000 for shortfall bps.
+
+Run in this folder (Python 3.11+, standard library only):
+
+```bash
+python -m unittest -v test_schedule_sensitivity.py
+python -m compileall -q schedule_sensitivity.py test_schedule_sensitivity.py
+python schedule_sensitivity.py
+```
+
+The deterministic illustration uses 150 buy shares, 100 arrival price, three hypothetical bars with prices 100/101/102 and volumes 1000/300/1000, a 10% participation cap, 2 bps fees, and 5 bps adverse impact. Front/even/back schedules respectively produce approximately **66.3289 / 119.4615 / 166.3989 bps** shortfall and **90.00% / 86.67% / 90.00%** fill. The terminal mark is a chosen accounting convention; the impact is an assumed markup, **not a calibrated market-impact model**. The future price path is used only to score fixed schedules, never to select weights. No real-market prices, independent review, production certification, or best-execution claim.
