@@ -40,3 +40,7 @@ independent experiments. Increasing the number of paths reduces Monte Carlo
 noise, **not** time-discretization bias. No monotonic convergence of realized
 RMSE or cost drag is assumed. Outputs are synthetic and require independent
 numerical review; no historical-market calibration is claimed.
+
+## Pathwise fee-accounting invariants
+
+`test_sensitivity.py` additionally checks that, for identical seeded spot paths and zero interest, the difference between zero-cost and 5-bps terminal hedge P&L equals the total charged transaction fees. It also reconciles fees to turnover times the cost rate. With a positive cash rate, fees paid earlier reduce terminal cash by at least their undiscounted amount, since they accrue financing costs. These are accounting identities under the simplified model, **not** evidence of a profitable hedge, discretization convergence, or real-market execution accuracy. Run `python -m unittest -v test_sensitivity.py` in this directory. The new tests require exact-source CI verification.
