@@ -243,6 +243,9 @@ jobs:
           python -m unittest -v test_sensitivity.py
           python -m compileall -q sensitivity.py test_sensitivity.py
           python sensitivity.py --paths 10
+          python -m unittest -v test_grid_refinement.py
+          python -m compileall -q grid_refinement.py test_grid_refinement.py
+          python grid_refinement.py --paths 10
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
