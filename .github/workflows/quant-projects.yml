@@ -230,6 +230,9 @@ jobs:
           python -m unittest -v test_pde_benchmark.py
           python -m compileall -q pde_benchmark.py test_pde_benchmark.py
           python pde_benchmark.py --spot-steps 100 --time-steps 10000
+          python -m unittest -v test_grid_sensitivity.py
+          python -m compileall -q grid_sensitivity.py test_grid_sensitivity.py
+          python grid_sensitivity.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
