@@ -208,11 +208,12 @@ jobs:
       - name: Validate Project 31 option Monte Carlo
         run: |
           cd quant-projects/31-option-monte-carlo
-          python -m unittest -v test_monte_carlo.py test_comparison.py test_sensitivity.py
-          python -m compileall -q monte_carlo.py test_monte_carlo.py comparison.py test_comparison.py sensitivity.py test_sensitivity.py
+          python -m unittest -v test_monte_carlo.py test_comparison.py test_sensitivity.py test_seed_stability.py
+          python -m compileall -q monte_carlo.py test_monte_carlo.py comparison.py test_comparison.py sensitivity.py test_sensitivity.py seed_stability.py test_seed_stability.py
           python monte_carlo.py --pairs 10000 --seed 2026
           python comparison.py --pairs 2000
           python sensitivity.py --pairs 500
+          python seed_stability.py --pairs 500
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
