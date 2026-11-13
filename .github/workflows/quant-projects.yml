@@ -215,6 +215,13 @@ jobs:
           python sensitivity.py --pairs 500
           python seed_stability.py --pairs 500
 
+      - name: Validate Project 32 binomial early exercise
+        run: |
+          cd quant-projects/32-binomial-option-exercise
+          python -m unittest -v test_binomial.py
+          python -m compileall -q binomial.py test_binomial.py
+          python binomial.py --steps 200
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
