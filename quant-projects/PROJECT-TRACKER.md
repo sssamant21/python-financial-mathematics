@@ -479,3 +479,7 @@ assumptions or a PDE/QuantLib benchmark. **New tests authored, not yet
 executed or confirmed by hosted CI**. No market data, independent model review,
 or production certification. Next: run exact-source CI and add a genuine
 independent numerical American-put benchmark before Project 33.
+
+### Project 32 — independent reference CI wiring (2026-11-13)
+
+Added the existing `test_independent_reference.py` regression suite, Python compilation and deterministic `independent_reference.py` CLI smoke test to the dedicated `quant-projects.yml` workflow on `main` ([workflow commit `95a09cb`](https://github.com/sssamant21/python-financial-mathematics/commit/95a09cb1703a072491afb4d4b663784b021515fe)). The source contains six `unittest` methods and a 30-case precommitted same-model CRR comparison; **the new suite was not executed locally in this checkpoint and exact-revision hosted CI remains pending verification**. This does not provide an external PDE/QuantLib American-option model benchmark. No market-data calibration, independent model review, or production certification is claimed. Next: verify workflow run for the source revision, fix any failures, and independently benchmark American-put prices before starting Project 33.
