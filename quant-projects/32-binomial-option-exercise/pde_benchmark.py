@@ -9,7 +9,7 @@ import math
 
 def finite_difference_put(spot=100.0, strike=100.0, rate=0.05, dividend=0.0,
                           volatility=0.2, years=1.0, american=True,
-                          spot_steps=400, time_steps=20000, spot_max=None):
+                          spot_steps=100, time_steps=10000, spot_max=None):
     params = (spot, strike, rate, dividend, volatility, years)
     if any(type(x) not in (int, float) or not math.isfinite(x) for x in params):
         raise ValueError('financial parameters must be finite numbers')
