@@ -240,6 +240,9 @@ jobs:
           python -m unittest -v test_hedge.py
           python -m compileall -q hedge.py test_hedge.py
           python hedge.py --paths 10
+          python -m unittest -v test_sensitivity.py
+          python -m compileall -q sensitivity.py test_sensitivity.py
+          python sensitivity.py --paths 10
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
