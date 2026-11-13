@@ -173,3 +173,5 @@ Project 29 now includes [high-precision Decimal reference checks](29-credit-spre
 Project 30 also provides [nonparallel curve and holding-horizon sensitivity](30-bond-carry-roll-down/README.md) via `sensitivity.py` and `test_sensitivity.py`; all fixtures are synthetic and require no external dependencies.
 
 Project 30 interpolation diagnostics: run `python -m unittest -v test_interpolation.py` and `python interpolation.py` from `30-bond-carry-roll-down/`. Synthetic-only; exact-revision CI and independent review remain unverified.
+
+Project 30 additionally includes `forward_diagnostics.py` and `test_forward_diagnostics.py` for synthetic implied forward-rate discount-ratio consistency and predeclared holding-horizon sensitivity. Run `python -m unittest -v test_forward_diagnostics.py` from Project 30. The forward rates are curve-implied quantities, not market forecasts; exact-revision CI remains to be checked.
