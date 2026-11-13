@@ -38,4 +38,25 @@ class SensitivityTests(unittest.TestCase):
         for vals in ([],[1],[1,float("inf")]):
             with self.assertRaises(ValueError): summarize(vals)
 
+    def test_pathwise_cost_accounting_zero_rate(self):
+        from hedge import simulate
+        for seed in (2026, 2027, 2040):
+            for frequency in (1, 4, 13):
+                free = simulate(seed=seed, rebalance_every=frequency, cost_bps=0, rate=0)
+                paid = simulate(seed=seed, rebalance_every=frequency, cost_bps=5, rate=0)
+                self.assertEqual(free["terminal_spot"], paid["terminal_spot"])
+                self.assertAlmostEqual(free["hedge_pnl"] - paid["hedge_pnl"],
+                                       paid["transaction_cost"], places=9)
+                self.assertAlmostEqual(paid["transaction_cost"],
+                                       paid["turnover_notional"] * 5 / 10000, places=9)
+
+    def test_positive_rate_finances_early_fees(self):
+        from hedge import simulate
+        for frequency in (1, 4, 13):
+            free = simulate(seed=2026, rebalance_every=frequency, cost_bps=0, rate=0.02)
+            paid = simulate(seed=2026, rebalance_every=frequency, cost_bps=5, rate=0.02)
+            self.assertGreaterEqual(free["hedge_pnl"] - paid["hedge_pnl"] + 1e-10,
+                                    paid["transaction_cost"])
+            self.assertEqual(free["terminal_spot"], paid["terminal_spot"])
+
 if __name__=="__main__": unittest.main()
