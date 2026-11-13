@@ -42,7 +42,7 @@ Thirty-one self-contained labs complement the financial-mathematics books withou
 
 | [30](30-bond-carry-roll-down/README.md) | Zero-coupon carry/roll-down, nonparallel curve shocks and interpolation-method stability | Synthetic only | `carry_roll.py`, `sensitivity.py`, `interpolation.py` |
 
-| [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, sampling uncertainty and Black–Scholes numerical benchmark | Seeded synthetic | `monte_carlo.py` |
+| [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, equal-path-budget variance/coverage comparison and Black–Scholes numerical benchmark | Seeded synthetic | `monte_carlo.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -179,3 +179,5 @@ Project 30 interpolation diagnostics: run `python -m unittest -v test_interpolat
 Project 30 additionally includes `forward_diagnostics.py` and `test_forward_diagnostics.py` for synthetic implied forward-rate discount-ratio consistency and predeclared holding-horizon sensitivity. Run `python -m unittest -v test_forward_diagnostics.py` from Project 30. The forward rates are curve-implied quantities, not market forecasts. The dedicated quant-projects workflow now includes the forward-diagnostics tests, compilation and synthetic CLI; its exact-revision hosted result remains unverified.
 
 Project 31: run `python -m unittest -v test_monte_carlo.py` and `python monte_carlo.py --pairs 10000 --seed 2026` from `31-option-monte-carlo/`. Python 3.11+ standard library only; no historical data or independent model certification.
+
+Project 31's equal-budget follow-up: from `31-option-monte-carlo/`, run `python comparison.py --pairs 2000` and `python -m unittest -v test_comparison.py`. Eight fixed synthetic seeds provide descriptive—not certified—variance reduction and interval coverage.
