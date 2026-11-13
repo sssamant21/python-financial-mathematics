@@ -234,6 +234,13 @@ jobs:
           python -m compileall -q grid_sensitivity.py test_grid_sensitivity.py
           python grid_sensitivity.py
 
+      - name: Validate Project 33 delta hedge
+        run: |
+          cd quant-projects/33-delta-hedging-error
+          python -m unittest -v test_hedge.py
+          python -m compileall -q hedge.py test_hedge.py
+          python hedge.py --paths 10
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
