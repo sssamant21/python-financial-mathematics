@@ -201,3 +201,5 @@ Project 32 PDE grid sensitivity: run `python -m unittest -v test_grid_sensitivit
 Project 33: run `python -m unittest -v test_hedge.py` and `python hedge.py --paths 100` from `33-delta-hedging-error/`. Synthetic only; published-source CI and independent review pending.
 
 Project 33 additionally provides `sensitivity.py` and `test_sensitivity.py` for predeclared nested path-count, paired transaction-cost, and volatility stress comparisons. Run `python -m unittest -v test_hedge.py test_sensitivity.py` from its folder. Monte Carlo intervals are model-conditional and do not validate market behavior.
+
+Project 33 extension: [nested Brownian-path hedge-grid refinement](33-delta-hedging-error/README.md#nested-brownian-path-hedge-grid-refinement-synthetic) compares matched 13/26/52/104 hedge dates with fee and turnover diagnostics.
