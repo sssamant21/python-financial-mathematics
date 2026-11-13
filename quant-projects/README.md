@@ -42,7 +42,7 @@ Thirty-one self-contained labs complement the financial-mathematics books withou
 
 | [30](30-bond-carry-roll-down/README.md) | Zero-coupon carry/roll-down, nonparallel curve shocks and interpolation-method stability | Synthetic only | `carry_roll.py`, `sensitivity.py`, `interpolation.py` |
 
-| [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, equal-path-budget variance/coverage, predeclared strike/volatility sensitivity and Black–Scholes benchmark | Seeded synthetic | `monte_carlo.py` |
+| [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, equal-path-budget variance/coverage, predeclared strike/volatility and seed-count sensitivity and Black–Scholes benchmark | Seeded synthetic | `monte_carlo.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -183,3 +183,5 @@ Project 31: run `python -m unittest -v test_monte_carlo.py` and `python monte_ca
 Project 31's equal-budget follow-up: from `31-option-monte-carlo/`, run `python comparison.py --pairs 2000` and `python -m unittest -v test_comparison.py`. Eight fixed synthetic seeds provide descriptive—not certified—variance reduction and interval coverage.
 
 Project 31 sensitivity extension: run `python -m unittest -v test_sensitivity.py` and `python sensitivity.py --pairs 500` in `31-option-monte-carlo/`. Uses fixed synthetic scenarios and eight predetermined seeds; exact-revision CI and independent review must be checked separately.
+
+Project 31 seed-count stability: run `python -m unittest -v test_seed_stability.py` and `python seed_stability.py --pairs 500` in `31-option-monte-carlo/`. Nested 4/8/16 precommitted seeds are descriptive synthetic evidence, not validated coverage.
