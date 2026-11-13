@@ -224,6 +224,9 @@ jobs:
           python -m unittest -v test_diagnostics.py
           python -m compileall -q diagnostics.py test_diagnostics.py
           python diagnostics.py --steps 100
+          python -m unittest -v test_independent_reference.py
+          python -m compileall -q independent_reference.py test_independent_reference.py
+          python independent_reference.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
