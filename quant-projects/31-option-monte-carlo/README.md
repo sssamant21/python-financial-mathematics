@@ -37,3 +37,17 @@ The implementation checks finite parameters, strictly positive spot/strike/volat
 **Limitations:** European exercise only; constant rates, dividends and volatility; lognormal dynamics; no stochastic rates, jumps, transaction costs, volatility surface, or historical calibration. The closed-form comparison validates numerical implementation under shared assumptions, not real-world pricing accuracy. No historical market data, survivorship selection, look-ahead features, investment recommendations, independent review, or production certification.
 
 **Next extension:** compare naive versus antithetic Monte Carlo using equal simulation budgets and repeated independent seeds, reporting empirical standard-error and coverage diagnostics without cherry-picking runs.
+
+## Equal-budget variance-reduction experiment
+
+The follow-up `comparison.py` compares **4,000 discounted payoff paths per method** by default: naive Monte Carlo uses 4,000 independent normals, while antithetic Monte Carlo uses 2,000 independent normals paired with their negatives. Each antithetic pair counts as **one** independent observation when estimating its standard error. Both estimators target the same Black–Scholes value under the same risk-neutral assumptions.
+
+For each of eight **predeclared** independent seeds, we compute each method's estimate, standard error, and whether its nominal 95% normal interval covers the analytical benchmark. We report the sample variance of the eight replicate estimates, their naive-to-antithetic ratio, and observed interval coverage. The ratio measures this fixture's empirical variance reduction, **not a guarantee**; coverage from only eight seeds is especially noisy and must not be interpreted as calibrated 95% coverage. The naive and antithetic estimators share some draws for paired comparisons, but their per-method path budgets match.
+
+```bash
+python comparison.py --pairs 2000
+python -m unittest -v test_comparison.py
+python -m compileall -q comparison.py test_comparison.py
+```
+
+The synthetic local fixture produced a naive-to-antithetic empirical variance ratio of approximately 1.538 across eight seeds. This result is conditional on the fixed model, seeds and parameters; it is not a forecast, a confidence guarantee, or an independently reviewed model. Larger predeclared seed grids, alternative strikes and stress cases are future exercises.
