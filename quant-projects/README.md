@@ -44,7 +44,7 @@ Thirty-two self-contained labs complement the financial-mathematics books withou
 
 | [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, equal-path-budget variance/coverage, predeclared strike/volatility and seed-count sensitivity and Black–Scholes benchmark | Seeded synthetic | `monte_carlo.py` |
 
-| [32](32-binomial-option-exercise/README.md) | CRR European/American put tree, early exercise, convergence and independent top-down implementation cross-check | Hypothetical | `binomial.py` |
+| [32](32-binomial-option-exercise/README.md) | CRR European/American put tree, early exercise, convergence, recursive CRR and finite-difference PDE cross-checks | Hypothetical | `binomial.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -191,3 +191,5 @@ Project 31 seed-count stability: run `python -m unittest -v test_seed_stability.
 Project 32 convergence and exercise-boundary extension: run `python -m unittest -v test_diagnostics.py` and `python diagnostics.py --steps 100` from `32-binomial-option-exercise/`. Fixed 25/50/100/200/400-step European/Black–Scholes comparisons and discrete American put exercise nodes are synthetic diagnostics, not independent certification.
 
 Project 32 also includes `independent_reference.py` and `test_independent_reference.py` for 30 predeclared small-tree, synthetic, separately implemented recursion comparisons. Run `python -m unittest -v test_independent_reference.py` in Project 32; this is not an external model benchmark.
+
+Project 32 now also provides `pde_benchmark.py` and `test_pde_benchmark.py`: a synthetic explicit finite-difference Black–Scholes PDE benchmark with American exercise projection, stability rejection, and coarse-grid comparisons against CRR. Run `python -m unittest -v test_pde_benchmark.py` in Project 32. Local source-equivalent tests passed 6/6; exact-revision hosted CI and independent numerical review remain unverified.
