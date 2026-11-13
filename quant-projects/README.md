@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Thirty-one self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Thirty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -43,6 +43,8 @@ Thirty-one self-contained labs complement the financial-mathematics books withou
 | [30](30-bond-carry-roll-down/README.md) | Zero-coupon carry/roll-down, nonparallel curve shocks and interpolation-method stability | Synthetic only | `carry_roll.py`, `sensitivity.py`, `interpolation.py` |
 
 | [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, equal-path-budget variance/coverage, predeclared strike/volatility and seed-count sensitivity and Black–Scholes benchmark | Seeded synthetic | `monte_carlo.py` |
+
+| [32](32-binomial-option-exercise/README.md) | CRR European/American put tree, early exercise and Black–Scholes convergence check | Hypothetical | `binomial.py` |
 
 ## Quick start (Windows PowerShell)
 
