@@ -187,3 +187,5 @@ Project 31's equal-budget follow-up: from `31-option-monte-carlo/`, run `python 
 Project 31 sensitivity extension: run `python -m unittest -v test_sensitivity.py` and `python sensitivity.py --pairs 500` in `31-option-monte-carlo/`. Uses fixed synthetic scenarios and eight predetermined seeds; exact-revision CI and independent review must be checked separately.
 
 Project 31 seed-count stability: run `python -m unittest -v test_seed_stability.py` and `python seed_stability.py --pairs 500` in `31-option-monte-carlo/`. Nested 4/8/16 precommitted seeds are descriptive synthetic evidence, not validated coverage.
+
+Project 32 convergence and exercise-boundary extension: run `python -m unittest -v test_diagnostics.py` and `python diagnostics.py --steps 100` from `32-binomial-option-exercise/`. Fixed 25/50/100/200/400-step European/Black–Scholes comparisons and discrete American put exercise nodes are synthetic diagnostics, not independent certification.

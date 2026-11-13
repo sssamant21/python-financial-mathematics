@@ -221,6 +221,9 @@ jobs:
           python -m unittest -v test_binomial.py
           python -m compileall -q binomial.py test_binomial.py
           python binomial.py --steps 200
+          python -m unittest -v test_diagnostics.py
+          python -m compileall -q diagnostics.py test_diagnostics.py
+          python diagnostics.py --steps 100
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
