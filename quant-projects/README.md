@@ -46,7 +46,7 @@ Thirty-three self-contained labs complement the financial-mathematics books with
 
 | [32](32-binomial-option-exercise/README.md) | CRR European/American put tree, early exercise, convergence, recursive CRR and finite-difference PDE cross-checks | Hypothetical | `binomial.py` |
 
-| [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py` |
+| [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py`, `sensitivity.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -199,3 +199,5 @@ Project 32 now also provides `pde_benchmark.py` and `test_pde_benchmark.py`: a s
 Project 32 PDE grid sensitivity: run `python -m unittest -v test_grid_sensitivity.py` and `python grid_sensitivity.py` in `32-binomial-option-exercise/`. Three precommitted synthetic grids compare European prices against an analytic Black–Scholes put and report American early-exercise premium. This does not certify convergence or production accuracy.
 
 Project 33: run `python -m unittest -v test_hedge.py` and `python hedge.py --paths 100` from `33-delta-hedging-error/`. Synthetic only; published-source CI and independent review pending.
+
+Project 33 additionally provides `sensitivity.py` and `test_sensitivity.py` for predeclared nested path-count, paired transaction-cost, and volatility stress comparisons. Run `python -m unittest -v test_hedge.py test_sensitivity.py` from its folder. Monte Carlo intervals are model-conditional and do not validate market behavior.
