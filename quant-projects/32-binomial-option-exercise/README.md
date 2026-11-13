@@ -30,3 +30,27 @@ The tree is limited to 2,000 steps, positive finite spot/strike/volatility/matur
 ## Tree-step convergence and early-exercise boundary diagnostics
 
 Run `python -m unittest -v test_diagnostics.py` and `python diagnostics.py --steps 100` from this folder. The fixed tree-step grid 25, 50, 100, 200, 400 compares European CRR put values with an independently evaluated closed-form Black–Scholes put reference (5.5735260223 for S=K=100, r=5%, sigma=20%, q=0, T=1). CRR error can oscillate with odd/even step parity; **do not assume monotonic convergence**. American puts may be worth more than European puts because their holder can exercise before maturity. At each discrete pre-expiry layer, the diagnostic reports the highest in-the-money spot node at which immediate exercise is at least as valuable as discounted continuation. A missing boundary means no eligible node in that layer, not that exercise is impossible at other times. The lattice boundary is discrete and grid-dependent, not an independently validated continuous-time boundary. The code reuses the existing pricer's finite-value, risk-neutral probability and 2,000-step guards. Standard-library Python 3.11 only, no downloads, no broker operations, no historical calibration, and no production certification. Exact-source hosted CI and independent American-option numerical review must be checked separately.
+
+## Independent implementation cross-check (small trees)
+
+`independent_reference.py` uses a separately coded, **top-down memoized**
+recursion rather than the primary engine's in-place backward induction. It
+compares 3 precommitted hypothetical parameter sets × 5 tree sizes
+(1, 2, 5, 10, 20) × European/American exercise = **30 comparisons**.
+This is an implementation cross-check under the **same CRR model**, not an
+independent pricing model, a market calibration, or an external QuantLib
+American-option benchmark. The 24-step cap keeps the reference intentionally
+small. Deep-in-the-money immediate-exercise and American ≥ European checks
+supplement the price comparisons. Exercise-boundary shape across dates is
+not independently certified.
+
+```bash
+cd quant-projects/32-binomial-option-exercise
+python -m unittest -v test_independent_reference.py
+python independent_reference.py
+python -m compileall -q independent_reference.py test_independent_reference.py
+```
+
+Python 3.11 standard library only; no additional dependencies or downloaded
+market data. Check the exact published revision's CI separately. Independent
+finite-difference/PDE or QuantLib American-option comparisons remain future work.
