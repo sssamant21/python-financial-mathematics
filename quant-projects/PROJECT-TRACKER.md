@@ -467,3 +467,15 @@ Added `diagnostics.py` and `test_diagnostics.py` with predeclared CRR tree-step 
 ### Project 32 diagnostics — exact-source hosted CI (2026-11-13)
 
 GitHub Actions [run 43414360097](https://github.com/sssamant21/python-financial-mathematics/actions/runs/43414360097) completed **successfully** for source commit `561b0faaa85a432c4ea37b2452c16ed6efbf3f8d` (2026-11-13 11:06–11:07 UTC). Both `quant-labs` and `quantlib-cross-check` jobs passed. The `Validate Project 32 binomial early exercise` step passed, covering the workflow-configured Project 32 tests and diagnostics; an individual assertion count was not independently extracted. The QuantLib cross-check is for synthetic bond NPV, **not** independent American-put pricing. Historical calibration, independent American-put exercise-boundary benchmarking, and production certification remain **unverified**. Next: implement an independently coded American-put numerical benchmark and compare predeclared exercise values and boundary behavior before starting Project 33.
+
+### Project 32 — independent small-tree implementation cross-check (2026-11-13)
+
+Added `independent_reference.py` and `test_independent_reference.py`:
+a separate top-down memoized CRR implementation with 30 precommitted
+synthetic comparisons (three parameter sets, five step counts, both exercise
+styles), immediate-exercise checks, American/European inequality and input
+guardrails. This is independent **code structure**, not independent model
+assumptions or a PDE/QuantLib benchmark. **New tests authored, not yet
+executed or confirmed by hosted CI**. No market data, independent model review,
+or production certification. Next: run exact-source CI and add a genuine
+independent numerical American-put benchmark before Project 33.
