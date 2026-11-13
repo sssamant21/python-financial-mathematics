@@ -193,3 +193,5 @@ Project 32 convergence and exercise-boundary extension: run `python -m unittest 
 Project 32 also includes `independent_reference.py` and `test_independent_reference.py` for 30 predeclared small-tree, synthetic, separately implemented recursion comparisons. Run `python -m unittest -v test_independent_reference.py` in Project 32; this is not an external model benchmark.
 
 Project 32 now also provides `pde_benchmark.py` and `test_pde_benchmark.py`: a synthetic explicit finite-difference Black–Scholes PDE benchmark with American exercise projection, stability rejection, and coarse-grid comparisons against CRR. Run `python -m unittest -v test_pde_benchmark.py` in Project 32. Local source-equivalent tests passed 6/6; exact-revision hosted CI and independent numerical review remain unverified.
+
+Project 32 PDE grid sensitivity: run `python -m unittest -v test_grid_sensitivity.py` and `python grid_sensitivity.py` in `32-binomial-option-exercise/`. Three precommitted synthetic grids compare European prices against an analytic Black–Scholes put and report American early-exercise premium. This does not certify convergence or production accuracy.
