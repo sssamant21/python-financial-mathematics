@@ -67,3 +67,16 @@ python -m compileall -q pde_benchmark.py test_pde_benchmark.py
 ```
 
 The six synthetic tests compare European and American values with CRR, exercise premium, deep-in-the-money exercise and rejected invalid/unstable grids. No downloaded market data, external dependencies, trading, or production certification. Local validation passed 6/6 on an equivalent locally reconstructed CRR helper; **full exact-revision repository CI is unverified**. Next: verify hosted CI and perform predeclared grid-refinement/error sensitivity before Project 33.
+
+## Predeclared PDE grid-refinement sensitivity
+
+`grid_sensitivity.py` compares three **fixed synthetic grids** (40×2,000, 60×5,000 and 80×9,000 spot×time intervals) against the analytic zero-dividend Black–Scholes European put (S=K=100, r=5%, volatility=20%, T=1). It also reports American put value and early-exercise premium on each grid. The grid choices are fixed before evaluation; error need **not** decrease monotonically because interpolation, upwind bias and time/space discretization interact. The analytic benchmark applies to European puts only; American results have no closed-form reference here. These are descriptive educational checks, not convergence-rate or production accuracy certification.
+
+```bash
+cd quant-projects/32-binomial-option-exercise
+python -m unittest -v test_grid_sensitivity.py
+python -m compileall -q grid_sensitivity.py test_grid_sensitivity.py
+python grid_sensitivity.py
+```
+
+Six deterministic synthetic test methods cover the analytic reference, grid order, finite prices, exercise premium, coarse error and invalid inputs. Standard-library Python 3.11; no market-data download. Exact-revision hosted CI and independent model review must be verified separately.
