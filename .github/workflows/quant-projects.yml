@@ -227,6 +227,9 @@ jobs:
           python -m unittest -v test_independent_reference.py
           python -m compileall -q independent_reference.py test_independent_reference.py
           python independent_reference.py
+          python -m unittest -v test_pde_benchmark.py
+          python -m compileall -q pde_benchmark.py test_pde_benchmark.py
+          python pde_benchmark.py --spot-steps 100 --time-steps 10000
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
