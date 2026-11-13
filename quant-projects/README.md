@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Thirty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Thirty-three self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -45,6 +45,8 @@ Thirty-two self-contained labs complement the financial-mathematics books withou
 | [31](31-option-monte-carlo/README.md) | Risk-neutral European call Monte Carlo, antithetic pairs, equal-path-budget variance/coverage, predeclared strike/volatility and seed-count sensitivity and Black–Scholes benchmark | Seeded synthetic | `monte_carlo.py` |
 
 | [32](32-binomial-option-exercise/README.md) | CRR European/American put tree, early exercise, convergence, recursive CRR and finite-difference PDE cross-checks | Hypothetical | `binomial.py` |
+
+| [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -195,3 +197,5 @@ Project 32 also includes `independent_reference.py` and `test_independent_refere
 Project 32 now also provides `pde_benchmark.py` and `test_pde_benchmark.py`: a synthetic explicit finite-difference Black–Scholes PDE benchmark with American exercise projection, stability rejection, and coarse-grid comparisons against CRR. Run `python -m unittest -v test_pde_benchmark.py` in Project 32. Local source-equivalent tests passed 6/6; exact-revision hosted CI and independent numerical review remain unverified.
 
 Project 32 PDE grid sensitivity: run `python -m unittest -v test_grid_sensitivity.py` and `python grid_sensitivity.py` in `32-binomial-option-exercise/`. Three precommitted synthetic grids compare European prices against an analytic Black–Scholes put and report American early-exercise premium. This does not certify convergence or production accuracy.
+
+Project 33: run `python -m unittest -v test_hedge.py` and `python hedge.py --paths 100` from `33-delta-hedging-error/`. Synthetic only; published-source CI and independent review pending.
