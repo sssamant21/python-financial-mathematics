@@ -51,3 +51,9 @@ python -m compileall -q comparison.py test_comparison.py
 ```
 
 The synthetic local fixture produced a naive-to-antithetic empirical variance ratio of approximately 1.538 across eight seeds. This result is conditional on the fixed model, seeds and parameters; it is not a forecast, a confidence guarantee, or an independently reviewed model. Larger predeclared seed grids, alternative strikes and stress cases are future exercises.
+
+## Predeclared strike and volatility sensitivity
+
+Run `python sensitivity.py --pairs 500` and `python -m unittest -v test_sensitivity.py`. This offline standard-library experiment evaluates strikes 80/100/120 and annual volatilities 10%/20%/40% with eight predetermined seeds. Both estimators use exactly `2 * pairs` discounted paths per seed; antithetic paths are correlated within each pair, so each pair counts as one independent observation. The independent Black–Scholes formula provides a same-assumptions numerical benchmark, not market validation. Output includes across-seed variance ratios and observed nominal 95% coverage fractions; small seed counts make those fractions unreliable as coverage estimates. No scenarios or seeds are selected based on outcomes. Extreme parameters are rejected by the underlying pricing guardrails. Results are hypothetical, not investment advice. No real-market calibration, independent model review or production certification has been performed.
+
+**Next:** verify exact-revision CI for all Project 31 modules, then investigate larger precommitted seed grids and numerical stability without fitting to selected results.
