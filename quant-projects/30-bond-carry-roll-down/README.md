@@ -40,3 +40,17 @@ This is a terminal-horizon **static scenario**, not a realized path, forward-rat
 Run `python -m unittest -v test_interpolation.py` and `python interpolation.py`. This standard-library extension compares **linear continuously compounded spot yields** with **linear log-discount factors** between the same predeclared synthetic 1/2/3/5-year nodes. At observed nodes both methods give `D(t)=exp(-z(t)t)`; between nodes, log-discount interpolation uses `log D(t)=(1-w)log D(a)+w log D(b)`. Thus both methods reproduce the observed discount factors, but their implied intermediate prices and frozen-curve roll-down can differ. The 2.5-year log-discount benchmark is the geometric mean of the two- and three-year discount factors.
 
 The extension checks positive discount factors, exact-node consistency, arithmetic P&L reconciliation, immutability and invalid input rejection. **Positive discount factors alone do not prove nonnegative forward rates or arbitrage-free market calibration.** Holding-period comparisons are static hypothetical scenarios, not ex-ante trading signals. No market data, external validation, or independent review. Authored tests require exact-revision CI verification; local GitHub cloning was blocked by DNS.
+
+## Forward-rate consistency and holding-horizon diagnostics (2026-11-12)
+
+For continuously compounded discount factors, the interval forward yield is **f(a,b) = [ln D(a) - ln D(b)]/(b-a)**. This is an implied break-even discount ratio under the chosen curve, **not** a prediction of future interest rates. The diagnostic compares log-discount interpolation (constant interval forward between observed nodes) with linear-spot interpolation (potentially varying interval forwards). For synthetic two- and three-year nodes, f(2,3) = (0.04×3 − 0.035×2)/(3−2) = **5%** under either method. Within that interval, the methods can disagree.
+
+Run from this folder:
+
+```bash
+python -m unittest -v test_forward_diagnostics.py
+python -m compileall -q forward_diagnostics.py test_forward_diagnostics.py
+python forward_diagnostics.py
+```
+
+The predeclared 0.25/0.5/1-year holding horizons compare frozen-curve P&L on the same three-year hypothetical zero-coupon bond. These are **scenario valuations**, not self-financing returns or tradable signals. The module rejects invalid intervals, extrapolation, duplicated horizons and invalid curves via the existing pricing checks. No third-party data or extra dependencies are used. **Validation boundary:** 11/11 tests, compilation and CLI passed locally against reconstructed copies of the existing pricing/interpolation helpers; exact published-source integration, hosted CI, licensed historical calibration and independent model review remain unverified.
