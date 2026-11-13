@@ -54,3 +54,16 @@ python -m compileall -q independent_reference.py test_independent_reference.py
 Python 3.11 standard library only; no additional dependencies or downloaded
 market data. Check the exact published revision's CI separately. Independent
 finite-difference/PDE or QuantLib American-option comparisons remain future work.
+
+## Independent finite-difference PDE benchmark (synthetic)
+
+`pde_benchmark.py` solves the Black–Scholes put PDE backward on a uniform **spot** grid using explicit time stepping, an upwind first derivative, and an American exercise projection `max(continuation, K-S)` at each time layer. Unlike `independent_reference.py`, this is a **different numerical discretization** from CRR. It remains within the same constant-volatility Black–Scholes assumptions and is **not** an external audited reference. The lower boundary is `K` for American puts and `K exp(-r tau)` for European puts; the upper boundary is zero. Coefficient negativity rejects unstable grids rather than silently returning prices. The default PDE grid can be expensive; the documented quick run uses 100 spot intervals and 10,000 time intervals. Spatial truncation, interpolation, upwind bias, and exercise-grid approximation explain why comparisons use nonzero absolute tolerances (0.20 European, 0.25 American) against a 400-step CRR tree; these are **educational smoke tolerances, not independently established error bounds**.
+
+```bash
+cd quant-projects/32-binomial-option-exercise
+python -m unittest -v test_pde_benchmark.py
+python pde_benchmark.py --spot-steps 100 --time-steps 10000
+python -m compileall -q pde_benchmark.py test_pde_benchmark.py
+```
+
+The six synthetic tests compare European and American values with CRR, exercise premium, deep-in-the-money exercise and rejected invalid/unstable grids. No downloaded market data, external dependencies, trading, or production certification. Local validation passed 6/6 on an equivalent locally reconstructed CRR helper; **full exact-revision repository CI is unverified**. Next: verify hosted CI and perform predeclared grid-refinement/error sensitivity before Project 33.
