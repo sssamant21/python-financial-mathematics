@@ -1,6 +1,7 @@
 """Section 8.9: analytic versus numerical derivative comparator."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -17,6 +18,18 @@ def evaluated(function, x):
     if not callable(function):
         raise TypeError("function must be callable")
     return finite(function(x), "function result")
+
+def _report(exact, zero=0.0):
+    if exact == 0:
+        return zero
+    try:
+        return finite(float(exact), "derivative estimate")
+    except OverflowError as exc:
+        raise ValueError("derivative estimate outside finite float range") from exc
+
+def _within_tolerance(error, absolute, relative, analytic):
+    # Exact threshold for the represented finite report fields and controls.
+    return abs(Fraction(error)) <= Fraction(absolute)+Fraction(relative)*abs(Fraction(analytic))
 
 def compare_derivatives(function, first, x, step, second=None,
                         abs_tol=1e-5, rel_tol=1e-5):
@@ -37,11 +50,15 @@ def compare_derivatives(function, first, x, step, second=None,
     f0, fp, fm = (evaluated(function, z) for z in (x, x+h, x-h))
     fhp, fhm = (evaluated(function, z) for z in (x+h/2, x-h/2))
     analytic_first = evaluated(first, x)
-    forward = (fp-f0)/h
-    backward = (f0-fm)/h
-    centered = (fp-fm)/(2*h)
-    half_centered = (fhp-fhm)/h
-    richardson = (4*half_centered-centered)/3
+    F0, FP, FM, FHP, FHM = map(Fraction, (f0,fp,fm,fhp,fhm))
+    H = Fraction(h)
+    coarse, fine = (FP-FM)/(2*H), (FHP-FHM)/H
+    forward = _report((FP-F0)/H, fp-f0 if fp == f0 else 0.0)
+    backward = _report((F0-FM)/H, f0-fm if f0 == fm else 0.0)
+    centered = _report(coarse, fp-fm if fp == fm else 0.0)
+    richardson_zero = ((4*((fhp-fhm)/h)-(fp-fm)/(2*h))/3
+                       if coarse == 0 and fine == 0 else 0.0)
+    richardson = _report((4*fine-coarse)/3, richardson_zero)
     methods = {}
     for name, approx in (("forward",forward),("backward",backward),
                          ("centered",centered),("richardson",richardson)):
@@ -49,19 +66,20 @@ def compare_derivatives(function, first, x, step, second=None,
         error = finite(approx-analytic_first, "signed derivative error")
         methods[name] = {"estimate":approx,"signed_error":error,
                          "absolute_error":abs(error),
-                         "pass":abs(error) <= a+r*abs(analytic_first)}
+                         "pass":_within_tolerance(error,a,r,analytic_first)}
     result = {"x":x,"step":h,"analytic_first":analytic_first,
               "abs_tol":a,"rel_tol":r,
               "comparison_rule":"abs(error) <= abs_tol + rel_tol*abs(analytic)",
               "first_derivatives":methods}
     if second is not None:
         analytic_second = evaluated(second, x)
-        estimate = finite((fp-2*f0+fm)/(h*h), "second derivative estimate")
+        second_zero = (fp-2*f0+fm)/(h*h) if fp == f0 == fm == 0 else 0.0
+        estimate = _report((FP-2*F0+FM)/(H*H),second_zero)
         error = finite(estimate-analytic_second, "signed second derivative error")
         result["second_derivative"] = {
             "analytic":analytic_second,"estimate":estimate,
             "signed_error":error,"absolute_error":abs(error),
-            "pass":abs(error) <= a+r*abs(analytic_second)}
+            "pass":_within_tolerance(error,a,r,analytic_second)}
     return result
 
 def step_ladder(function, first, x, steps, second=None,
