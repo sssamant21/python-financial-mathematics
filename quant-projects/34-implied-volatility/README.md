@@ -37,3 +37,7 @@ python sensitivity.py --spread 0.05
 ```
 
 The eight added deterministic methods cover finite-difference vega, quote ordering, spread widening, put/call symmetry, reproducibility, invalid inputs, unavailable quote flags, and the local linear approximation. All results are synthetic, with no dividends, quote timestamps, American options, exchange fees or real-world liquidity assumptions. Local equivalent-source testing is not exact-published-source acceptance; GitHub Actions and independent model review must be checked separately.
+
+## Near-expiry identifiability guardrails
+
+Run `python -m unittest -v test_near_expiry.py` to inspect four synthetic numerical tests: at-the-money one-, seven- and thirty-day roundtrips; decreasing at-the-money vega toward expiry; deep out-of-the-money premiums indistinguishable from zero under the solver's **absolute premium tolerance**; and invalid maturity rejection. A returned zero volatility for an effectively zero premium is a **numerical boundary result, not evidence that actual volatility is zero**. These tests are included in dedicated CI, but passing CI is not independent pricing validation. No observed market quotes are used.
