@@ -49,7 +49,7 @@ Thirty-five self-contained labs complement the financial-mathematics books witho
 | [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py`, `sensitivity.py` |
 | [34](34-implied-volatility/README.md) | Synthetic Black–Scholes implied volatility inversion, bid/ask spread and strike/maturity conditioning | Synthetic only | `iv.py`, `sensitivity.py` |
 
-| [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival | Seeded synthetic | `barrier.py` |
+| [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival | Seeded synthetic | `barrier.py`, `matched_convergence.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -212,3 +212,5 @@ Project 35 matched-grid monitoring extension: `35-barrier-option-monte-carlo/mon
 Project 35 also includes `bridge.py` and `test_bridge.py` for conditional continuous-monitoring survival under GBM, matched discrete/continuous payoff bounds, and paired sampling-error diagnostics. Run `python -m unittest -v test_bridge.py` inside its folder. Independent barrier benchmark and historical calibration remain pending.
 
 Project 35 also includes `convergence.py` for exploratory Brownian-bridge monitoring-grid sensitivity, with explicit non-matched-grid sampling caveats and synthetic tests. See [Project 35](35-barrier-option-monte-carlo/README.md).
+
+Project 35 includes `matched_convergence.py` for nested common-Brownian-path grid diagnostics; run `python -m unittest -v test_matched_convergence.py` from its directory. Synthetic only; independent barrier benchmark pending.
