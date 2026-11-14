@@ -80,3 +80,5 @@ Half-even ties1.005→1.00,1.015→1.02 and−1.005→−1.00 execute the source
 | 40 | Production: | No. | Conceptual/design/source-contract review only |
 
 F28 notebook/platform,F32 shared-input integration,F165 tails,F185 signed-normal-terminal integration and independent acceptance remain open. No currency-label/calendar/point-in-time/source-quality/bid-ask/settlement/resource acceptance is inferred. Next:Section19.11 Data Quality Checks formal workflow/local-answer review.
+
+Executable source revision: `309316221a32aaeed52cc896675c3a78dfee8cdd`. [Publication source manifest](publication-verification.json). Tested manuscript/observer blobs match this revision; metadata pins do not alter executable inputs.
