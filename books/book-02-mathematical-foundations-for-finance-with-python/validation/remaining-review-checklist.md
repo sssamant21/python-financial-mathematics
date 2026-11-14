@@ -2,8 +2,8 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `a847812cb63d75354199723e5489cd84a579988d` (V-142)
-**Latest scoped source:** V-141 candidate based on `5106894e21bb783f3a895eb6df58e0f66bc9aed9`; exact5-file manifest in [evidence](chapter-08-factory-followup.md).
-**Disposition:** V-142 full candidate Linux pass including V-141;independent review and release approval pending.
+**Latest scoped source:** V-143 candidate based on `953fa30f7a29cc4a27a2817238e5b72f25c635ef`; exact4-file manifest in [evidence](chapter-08-ladder-followup.md).
+**Disposition:** V-143 scoped ladder/report follow-up after V-142 full candidate Linux pass;independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1130,3 +1130,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-142 checkpoint — Full pinned candidate Linux refresh
 
 [V-142 full runtime](runtime-refresh-2026-11-14-r3.md) at `a847812cb63d75354199723e5489cd84a579988d`:601/601 Python files compiled,388/388 check/test scripts passed,602/602 required source/fixture hashes verified before/after. Includes V-141 complete factory/input/report changes and checker;initial mismatches/replays remain separate. Exact staging runner,per-file exits/output digests and source manifest retained. One candidate Linux execution only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Next:Section8.9 step-ladder/report resource and late-input-failure contracts,then assessment alignment. Book1 tracked independently.
+
+
+## V-143 checkpoint — Ladder resource/report and late failures
+
+[Ladder evidence](chapter-08-ladder-followup.md):25 predicates passed with actual initial pass and identical replay. Exact cubic full report rows,order/duplicates,empty/first-only cases,late invalid/callback/iterator errors and caller islice consumption bounds retained. Selected two-report fixture uses14 callbacks and1225 compact JSON bytes under a4096-byte QA budget;no source cap or rollback is claimed. No helper changed. Four files compiled/two scripts passed/four hashes verified before-after. Fresh602/389/603 inventory is not a full run;V-142 remains latest full601/388/602. Thirty-five selected COV categories partial;none closed. Next:Section8.10 assessment exact prompt/source/reference alignment from existing coverage map;broader branch/conditioning/resource and independent acceptance remain open. Book1 tracked independently.

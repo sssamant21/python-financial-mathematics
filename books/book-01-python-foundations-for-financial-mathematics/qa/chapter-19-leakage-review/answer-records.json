@@ -1,0 +1,322 @@
+[
+  {
+    "number": 1,
+    "topic": "Quarter end:",
+    "prompt": "Is it automatically publication time?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 2,
+    "topic": "April 15:",
+    "prompt": "Value published May 1 available?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 3,
+    "topic": "May 5:",
+    "prompt": "Original value under example?",
+    "worked_answer": "100.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 4,
+    "topic": "May 12:",
+    "prompt": "Latest eligible value?",
+    "worked_answer": "105.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 5,
+    "topic": "Correction:",
+    "prompt": "Using 105 on May 5?",
+    "worked_answer": "Look-ahead.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 6,
+    "topic": "Publication:",
+    "prompt": "Same as ingestion?",
+    "worked_answer": "Not necessarily.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 7,
+    "topic": "Delay:",
+    "prompt": "Published but not ingested before cutoff in this policy?",
+    "worked_answer": "Not eligible.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 8,
+    "topic": "Equality:",
+    "prompt": "Availability exactly at decision under code's rule?",
+    "worked_answer": "Eligible.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 9,
+    "topic": "Offset:",
+    "prompt": "08:00\u221204:00 equals what UTC time?",
+    "worked_answer": "12:00Z.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 10,
+    "topic": "Naive timestamp:",
+    "prompt": "Accepted?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 11,
+    "topic": "Tie:",
+    "prompt": "Equal latest publication times?",
+    "worked_answer": "Reject as ambiguous.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 12,
+    "topic": "Effective date:",
+    "prompt": "Does it establish availability?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 13,
+    "topic": "Current snapshot:",
+    "prompt": "Automatically point-in-time?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 14,
+    "topic": "Revision history:",
+    "prompt": "Why retain it?",
+    "worked_answer": "To reconstruct eligible versions.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 15,
+    "topic": "Close at open:",
+    "prompt": "Can same-day close be known at the open?",
+    "worked_answer": "Generally no.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 16,
+    "topic": "Signal time:",
+    "prompt": "Why record it?",
+    "worked_answer": "To compare with data availability and execution.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 17,
+    "topic": "Centered rolling window:",
+    "prompt": "Leakage risk?",
+    "worked_answer": "It can include future observations.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 18,
+    "topic": "Trailing window:",
+    "prompt": "Always safe?",
+    "worked_answer": "No; current value may not yet be available.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 19,
+    "topic": "Backward fill:",
+    "prompt": "Risk?",
+    "worked_answer": "Uses a later observation for an earlier gap.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 20,
+    "topic": "Forward fill:",
+    "prompt": "Automatically safe?",
+    "worked_answer": "No; freshness and availability rules matter.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 21,
+    "topic": "Scaling:",
+    "prompt": "Fit on all data before split?",
+    "worked_answer": "Can leak evaluation-period information.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 22,
+    "topic": "Training scaler:",
+    "prompt": "How use on test data?",
+    "worked_answer": "Apply parameters fitted on training data.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 23,
+    "topic": "Random split:",
+    "prompt": "Always appropriate for time series?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 24,
+    "topic": "Overlapping labels:",
+    "prompt": "Can chronological split still leak?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 25,
+    "topic": "Gap:",
+    "prompt": "Why use one when justified?",
+    "worked_answer": "To limit information overlap.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 26,
+    "topic": "Survivorship:",
+    "prompt": "What can be omitted?",
+    "worked_answer": "Failed or delisted instruments.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 27,
+    "topic": "Today's index members:",
+    "prompt": "Safe historical universe?",
+    "worked_answer": "Not automatically.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 28,
+    "topic": "Adjusted prices:",
+    "prompt": "Can vendor history change?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 29,
+    "topic": "Corporate action:",
+    "prompt": "Can it affect historical prices?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 30,
+    "topic": "Timezone:",
+    "prompt": "Why record it?",
+    "worked_answer": "To compare instants correctly.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 31,
+    "topic": "Calendar:",
+    "prompt": "Does this code validate exchange sessions?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 32,
+    "topic": "Source truth:",
+    "prompt": "Does timestamp parsing prove it?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 33,
+    "topic": "Duplicate version:",
+    "prompt": "Should precedence be invented?",
+    "worked_answer": "No; use a contract or reject.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 34,
+    "topic": "Irrelevant invalid row:",
+    "prompt": "What does reference code do?",
+    "worked_answer": "Rejects it while parsing all rows.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 35,
+    "topic": "Decimal:",
+    "prompt": "Does a valid value prove availability?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 36,
+    "topic": "Missing history:",
+    "prompt": "Can point-in-time accuracy be certified?",
+    "worked_answer": "Not without sufficient evidence.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 37,
+    "topic": "Test set:",
+    "prompt": "Should it guide feature selection without a new evaluation set?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 38,
+    "topic": "Latency:",
+    "prompt": "Why include ingestion?",
+    "worked_answer": "The system may receive published data later.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Actual source as-of/time/parse execution plus contract review"
+  },
+  {
+    "number": 39,
+    "topic": "Tests:",
+    "prompt": "Does inclusion mean execution?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  },
+  {
+    "number": 40,
+    "topic": "Reproducibility:",
+    "prompt": "Does it alone prove absence of leakage?",
+    "worked_answer": "No.",
+    "review": "Aligned under the synthetic publication-and-ingestion policy",
+    "scope": "Conceptual/design only;not source truth,complete revision history or train/test acceptance"
+  }
+]
