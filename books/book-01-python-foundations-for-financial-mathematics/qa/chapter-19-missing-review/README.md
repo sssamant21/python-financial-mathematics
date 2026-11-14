@@ -80,3 +80,5 @@ The independently derived interval return is (102−100)/100=1/50=.02. The middl
 | 40 | Source quality: | No. | Conceptual/policy only; not source-quality/point-in-time acceptance |
 
 F28 notebook/platform, F32 shared-input integration, F165 tails, F185 signed-normal-terminal integration and independent review remain open. Coefficient/exponent resources, external input decoding, source quality, currency/price semantics, timestamps/calendar, corrections, imputation and publication acceptance are outside this batch. Next: Section 19.9 Date and Timestamp Normalization formal workflow and local answers.
+
+Executable source revision: `3db1be648a9acba29d706e2dba0138540adacc7f`. [Publication source manifest](publication-verification.json). Rebuilt on fresh main `8f78ccf49144b65716bb1e91dcc62596344c6b57` after confirming both book trees unchanged since the baseline; concurrent quant-project changes are preserved. Tested manuscript/observer/fixture blobs match the pinned revision.

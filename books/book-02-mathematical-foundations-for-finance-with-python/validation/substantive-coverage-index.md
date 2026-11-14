@@ -1044,3 +1044,10 @@ Next substantive item:Section8.8 suggested-step independent numerical references
 ## V-135 checkpoint — Suggested-step independent roots and grid contract
 
 [Suggested-step evidence](chapter-08-suggested-step-followup.md):77 predicates passed using exact epsilon and independent 100/160-digit Newton cube/fourth-root references, finite/distinct represented-grid and validation-priority/scale/range guards. No source helper changed. Four Python files compiled/two scripts passed/four hashes verified before-after. Initial observer epsilon and required-fixture inventory corrections are retained separately from source defects. Fresh597/384/598 inventory is not a full run;V-133 remains latest full595/382/596 candidate Linux evidence. Thirty-five selected COV categories remain partial;none closed. Next substantive item:COV-51 conditioning/noise limits for suggested steps and derivative estimates with independently known noisy/quantized callbacks. Broader resource and independent acceptance obligations remain open. Book1 progresses independently.
+
+
+## V-136 checkpoint — Full pinned candidate Linux refresh
+
+[V-136 full runtime](runtime-refresh-2026-11-14.md) at `3db1be648a9acba29d706e2dba0138540adacc7f`:597/597 Python files compiled,384/384 check/test scripts passed,598/598 required source/fixture blobs verified before and after execution. Includes V-134 financial source/checker and V-135 suggested-step evidence. Exact staging runner, source manifest, actual exit results and output digests retained; prior failures/replays/observer corrections remain separate. One candidate Linux runtime only;35 selected COV categories remain partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending.
+
+Next substantive item:COV-51 conditioning/noise limits for suggested steps and derivative estimates with independently known noisy/quantized callbacks; broader resource guarantees remain open. Book1 has separate trackers.

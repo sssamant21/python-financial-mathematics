@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-11-14  
-**Overall status:** In progress — V-135 scoped suggested-step references:77 predicates passed,4 files compiled/2 scripts passed; V-133 remains latest full candidate Linux pass (595/382/596). Independent review, supported platforms and release approval remain pending.
+**Updated:** 2026-11-14
+**Overall status:** In progress — V-136 full candidate Linux pass (597 sources/384 scripts/598 required blobs), including V-134/V-135 changes. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 595/595 at `30fe802218e5ad9978031287330cd887ebbcf1dc`. [V-133](runtime-refresh-2026-11-08-r8.md). |
-| Automated script execution | Full candidate Linux pass | 382/382 at `30fe802218e5ad9978031287330cd887ebbcf1dc`;596required blobs verified before/after. [V-133](runtime-refresh-2026-11-08-r8.md). |
+| Python compilation | Full candidate Linux pass | 597/597 at `3db1be648a9acba29d706e2dba0138540adacc7f`. [V-136](runtime-refresh-2026-11-14.md). |
+| Automated script execution | Full candidate Linux pass | 384/384 at `3db1be648a9acba29d706e2dba0138540adacc7f`;598 required blobs verified before/after. [V-136](runtime-refresh-2026-11-14.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1220,3 +1220,10 @@ Next substantive item:Section8.8 suggested-step independent numerical references
 ## V-135 checkpoint — Suggested-step independent roots and grid contract
 
 [Suggested-step evidence](chapter-08-suggested-step-followup.md):77 predicates passed using exact epsilon and independent 100/160-digit Newton cube/fourth-root references, finite/distinct represented-grid and validation-priority/scale/range guards. No source helper changed. Four Python files compiled/two scripts passed/four hashes verified before-after. Initial observer epsilon and required-fixture inventory corrections are retained separately from source defects. Fresh597/384/598 inventory is not a full run;V-133 remains latest full595/382/596 candidate Linux evidence. Thirty-five selected COV categories remain partial;none closed. Next substantive item:COV-51 conditioning/noise limits for suggested steps and derivative estimates with independently known noisy/quantized callbacks. Broader resource and independent acceptance obligations remain open. Book1 progresses independently.
+
+
+## V-136 checkpoint — Full pinned candidate Linux refresh
+
+[V-136 full runtime](runtime-refresh-2026-11-14.md) at `3db1be648a9acba29d706e2dba0138540adacc7f`:597/597 Python files compiled,384/384 check/test scripts passed,598/598 required source/fixture blobs verified before and after execution. Includes V-134 financial source/checker and V-135 suggested-step evidence. Exact staging runner, source manifest, actual exit results and output digests retained; prior failures/replays/observer corrections remain separate. One candidate Linux runtime only;35 selected COV categories remain partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending.
+
+Next substantive item:COV-51 conditioning/noise limits for suggested steps and derivative estimates with independently known noisy/quantized callbacks; broader resource guarantees remain open. Book1 has separate trackers.
