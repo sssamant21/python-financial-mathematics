@@ -15,3 +15,5 @@ A separate [deliberately faulty return implementation](faulty_variant.py.txt) ma
 Prompt alignment: positive/negative payment monotonicity assumes a future payment (t>0); time-zero payments are constant. Positional append/insertion, generator/empty/invalid domains, zero terminal return and optimization contracts are checked. Definitions, model validation, integration, leakage, simulation, currency and production readiness records are conceptual/design review. No invented parser, simulation or dated API execution.
 
 The NPV implementation remains the stated float/log/exp model with limited extreme-discount/summation/underflow behavior; complete-range NPV and universal financial conventions are not claimed. F28 notebook/platform, F32 shared-input integration, F165/F185 and wider source/resource/platform/independent acceptance remain open. This is one Linux runtime and assistant review, not certification. Next:Section20.2 Assertions and Known-Value Tests.
+
+Executable source/runner revision:`489c46b92214906f22e642b199a8829909a64f00`. [Pinned source manifest](publication-verification.json).

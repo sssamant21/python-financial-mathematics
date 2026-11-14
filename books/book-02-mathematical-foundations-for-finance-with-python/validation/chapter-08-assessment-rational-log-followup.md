@@ -17,3 +17,5 @@ Eight bond vectors test yield and inverse derivative;seven break-even vectors te
 Eight selected files compiled;four Python commands passed (source demo plus three checker invocations),eight input blobs verified before/after. Existing assessment and alignment checkers passed unchanged. Fresh inventory604 Python files/391 check-test scripts/605 required Python-fixture blobs is not itself full execution;the pending pinned refresh records actual full results separately.
 
 COV-51 remains partial and35 selected categories remain partially addressed;none closed. PV/derivative/shock overflow/underflow and centered-helper perturbation/report copies are the next substantive scope. Broader conditioning,resource,model,platform,independent review,release and canonical approval remain pending. Book1 has independent evidence/trackers.
+
+Executable source/checker revision:`489c46b92214906f22e642b199a8829909a64f00`. [Pinned input manifest](chapter-08-assessment-rational-log-publication-verification.json).

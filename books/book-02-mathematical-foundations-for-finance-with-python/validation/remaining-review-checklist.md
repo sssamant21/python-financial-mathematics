@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `a847812cb63d75354199723e5489cd84a579988d` (V-142)
-**Latest scoped source:** V-145 candidate based on `2bd9edae71a0f1def7176b33ec516d3a798393af`;[seven-file source manifest](chapter-08-assessment-alignment-results.json).
+**Full-runtime candidate source revision:** `489c46b92214906f22e642b199a8829909a64f00` (V-147)
+**Latest scoped source:** V-146 at `489c46b92214906f22e642b199a8829909a64f00`;[eight-file source manifest](chapter-08-assessment-rational-log-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Runtime restored;V-145 exact assessment scope passed. V-142 remains latest full Python evidence;independent review/release approval pending.
+**Disposition:** V-146 scoped rational/log checks and V-147 full Python runtime passed;independent review/release approval pending.
 
 ## Reconciled evidence
 
@@ -1151,3 +1151,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-146 checkpoint — Assessment rational/log helper contracts
 
 [Rational/log evidence](chapter-08-assessment-rational-log-followup.md):65 corrected predicates passed;40 initial passes/25 failures and identical replay retained. Independent120/180-digit log and1600/2200-digit rational references cover near-unity,wide-range,subnormal,signed-zero and final-overflow reporting. Eight selected files compiled,four commands passed including three checker invocations,eight hashes verified before-after. Fresh604/391/605 inventory is not a full run;V-142 remains latest full601/388/602 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.10 PV/shock and centered-copy complete-range/preflight/report contracts;broader platform/independent acceptance pending. Book1 tracked independently.
+
+
+## V-147 checkpoint — Full pinned candidate Linux refresh
+
+[V-147 full runtime](runtime-refresh-2026-11-14-r4.md) at `489c46b92214906f22e642b199a8829909a64f00`:604/604 Python files compiled,391/391 check-test scripts passed,605/605 required Python/fixture hashes verified before-after. Includes ladder/alignment checkers and V-146 rational/log fixes;initial failures/replays remain separate. Exact staging runner,per-file outcomes/output digests and full manifest retained. One Linux runtime only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section8.10 PV/shock and centered-copy complete-range/preflight/report contracts. Book1 tracked independently.
