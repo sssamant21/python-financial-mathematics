@@ -250,8 +250,8 @@ jobs:
       - name: Validate Project 34 implied volatility
         run: |
           cd quant-projects/34-implied-volatility
-          python -m unittest -v test_iv.py test_sensitivity.py
-          python -m compileall -q iv.py sensitivity.py test_iv.py test_sensitivity.py
+          python -m unittest -v test_iv.py test_sensitivity.py test_near_expiry.py
+          python -m compileall -q iv.py sensitivity.py test_iv.py test_sensitivity.py test_near_expiry.py
           python iv.py --spot 100 --strike 105 --years 1 --rate 0.02 --vol 0.25 --kind call
           python sensitivity.py --spread 0.05
 
