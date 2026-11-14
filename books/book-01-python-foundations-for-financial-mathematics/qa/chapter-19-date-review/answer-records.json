@@ -1,0 +1,322 @@
+[
+  {
+    "number": 1,
+    "topic": "Date:",
+    "prompt": "Is 2026-01-05 an instant?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 2,
+    "topic": "Offset:",
+    "prompt": "09:30\u221205:00 in UTC.",
+    "worked_answer": "14:30Z.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 3,
+    "topic": "Equivalent:",
+    "prompt": "Is 14:30Z the same instant?",
+    "worked_answer": "Yes.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 4,
+    "topic": "Naive:",
+    "prompt": "Does 09:30 without zone identify an instant?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 5,
+    "topic": "Event time:",
+    "prompt": "Meaning?",
+    "worked_answer": "When the event occurred.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 6,
+    "topic": "Availability time:",
+    "prompt": "Meaning?",
+    "worked_answer": "When information became available.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 7,
+    "topic": "Ingestion time:",
+    "prompt": "Meaning?",
+    "worked_answer": "When the system received it.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 8,
+    "topic": "Decision:",
+    "prompt": "Available 14:30Z, decision 15:00Z.",
+    "worked_answer": "Available by the comparison.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 9,
+    "topic": "Decision:",
+    "prompt": "Available 15:00Z, decision 14:30Z.",
+    "worked_answer": "Not available.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 10,
+    "topic": "Equality:",
+    "prompt": "Available exactly at decision time under the code's rule?",
+    "worked_answer": "Yes.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 11,
+    "topic": "Date validity:",
+    "prompt": "Is February 30 valid?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 12,
+    "topic": "Compact date:",
+    "prompt": "Accepted by reference contract?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 13,
+    "topic": "Offset:",
+    "prompt": "Is +25:00 valid in this parser?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 14,
+    "topic": "Fraction:",
+    "prompt": "Maximum accepted digits?",
+    "worked_answer": "Six.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 15,
+    "topic": "Leap second:",
+    "prompt": "Accepted by this reference parser?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 16,
+    "topic": "Named zone:",
+    "prompt": "Accepted by reference parser?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 17,
+    "topic": "DST spring:",
+    "prompt": "Can a local wall time be nonexistent?",
+    "worked_answer": "Yes.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Separate supplemental zoneinfo execution plus conceptual review"
+  },
+  {
+    "number": 18,
+    "topic": "DST autumn:",
+    "prompt": "Can a local wall time occur twice?",
+    "worked_answer": "Yes.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Separate supplemental zoneinfo execution plus conceptual review"
+  },
+  {
+    "number": 19,
+    "topic": "fold:",
+    "prompt": "What can it distinguish?",
+    "worked_answer": "Repeated local times when used with suitable timezone rules.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Separate supplemental zoneinfo execution plus conceptual review"
+  },
+  {
+    "number": 20,
+    "topic": "Attach zone:",
+    "prompt": "Does it automatically validate every wall time?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Separate supplemental zoneinfo execution plus conceptual review"
+  },
+  {
+    "number": 21,
+    "topic": "Fixed offset:",
+    "prompt": "Does it encode named-zone DST rules?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 22,
+    "topic": "Market date:",
+    "prompt": "Does ISO validity prove a trading day?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 23,
+    "topic": "Weekend:",
+    "prompt": "Are all exchanges closed on all weekends?",
+    "worked_answer": "Do not assume; use the relevant calendar.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 24,
+    "topic": "Early close:",
+    "prompt": "Why record it?",
+    "worked_answer": "Session boundaries differ from ordinary days.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 25,
+    "topic": "Observation date:",
+    "prompt": "Same as publication time?",
+    "worked_answer": "Not necessarily.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 26,
+    "topic": "Revision:",
+    "prompt": "Can effective date precede availability?",
+    "worked_answer": "Yes.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 27,
+    "topic": "Backtest:",
+    "prompt": "What can cause look-ahead?",
+    "worked_answer": "Using data before its availability.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 28,
+    "topic": "Current history:",
+    "prompt": "Automatically point-in-time?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 29,
+    "topic": "Precision:",
+    "prompt": "Can rounding change event order?",
+    "worked_answer": "Yes.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 30,
+    "topic": "Tie:",
+    "prompt": "What may be needed?",
+    "worked_answer": "A source sequence or other documented tie-breaker.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 31,
+    "topic": "Ingestion order:",
+    "prompt": "Always event order?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 32,
+    "topic": "UTC conversion:",
+    "prompt": "Does it change the instant?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Actual reference-source calls"
+  },
+  {
+    "number": 33,
+    "topic": "Date-only:",
+    "prompt": "Should it silently become midnight UTC?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 34,
+    "topic": "Original text:",
+    "prompt": "Why retain it?",
+    "worked_answer": "To support audit and interpretation.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 35,
+    "topic": "Timezone database:",
+    "prompt": "Why record its version where relevant?",
+    "worked_answer": "Named-zone rules can change.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 36,
+    "topic": "Available-by:",
+    "prompt": "Does code verify the source is truthful?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 37,
+    "topic": "Market calendar:",
+    "prompt": "Does reference code validate one?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 38,
+    "topic": "Nonexistent local time:",
+    "prompt": "What needs defining?",
+    "worked_answer": "A rejection or correction policy.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 39,
+    "topic": "Tests:",
+    "prompt": "Does inclusion mean execution?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  },
+  {
+    "number": 40,
+    "topic": "Normalization:",
+    "prompt": "Does it create missing availability information?",
+    "worked_answer": "No.",
+    "alignment": "Aligned within the restricted stated contract",
+    "scope": "Conceptual/design/source-contract review only"
+  }
+]

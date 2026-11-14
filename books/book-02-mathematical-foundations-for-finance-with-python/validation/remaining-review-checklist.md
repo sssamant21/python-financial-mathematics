@@ -2,8 +2,8 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `3db1be648a9acba29d706e2dba0138540adacc7f` (V-136)
-**Latest scoped source:** V-135 candidate based on `f46c548b68ff7426d6d86effc462e352d77ccb35`; exact4-file manifest in [evidence](chapter-08-suggested-step-followup.md).
-**Disposition:** V-136 full candidate Linux pass including V-134/V-135; independent review and release approval pending.
+**Latest scoped source:** V-137 candidate based on `926330850a54eb97363c131b2d0188e7d7ee0bfa`; exact4-file manifest in [evidence](chapter-08-noise-followup.md).
+**Disposition:** V-137 scoped noise evidence after V-136 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1100,3 +1100,8 @@ Next substantive item:Section8.8 suggested-step independent numerical references
 [V-136 full runtime](runtime-refresh-2026-11-14.md) at `3db1be648a9acba29d706e2dba0138540adacc7f`:597/597 Python files compiled,384/384 check/test scripts passed,598/598 required source/fixture blobs verified before and after execution. Includes V-134 financial source/checker and V-135 suggested-step evidence. Exact staging runner, source manifest, actual exit results and output digests retained; prior failures/replays/observer corrections remain separate. One candidate Linux runtime only;35 selected COV categories remain partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending.
 
 Next substantive item:COV-51 conditioning/noise limits for suggested steps and derivative estimates with independently known noisy/quantized callbacks; broader resource guarantees remain open. Book1 has separate trackers.
+
+
+## V-137 checkpoint — Noise arithmetic versus derivative accuracy
+
+[Noise/quantization evidence](chapter-08-noise-followup.md):27 arithmetic/contract predicates passed;23 separate analytic-accuracy diagnostics retain10 nominal-tolerance exceedances,with identical replay. Exact binary quadratic noise/cancellation and nearest-even quantization models demonstrate why a valid suggested step is not an accuracy guarantee. No source helper changed. Four files compiled/two scripts passed/four hashes verified before-after. Fresh598/385/599 inventory is not a full run;V-136 remains latest full597/384/598 evidence. Thirty-five selected COV categories partial;none closed. Next:COV-51 noisy-step sweep/reporting diagnostics with known error trends and callback/input budgets;other helper-copy/conditioning/resource and independent acceptance obligations remain open. Book1 tracked independently.
