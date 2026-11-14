@@ -1,0 +1,527 @@
+{
+  "candidate_based_on": "2bd9edae71a0f1def7176b33ec516d3a798393af",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "compiled": 7,
+  "commands": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_10.py",
+      "returncode": 0,
+      "stdout": "{\n  \"profit_maximizer\": 125.0,\n  \"marginal_profit_at_maximizer\": 0.0,\n  \"pv\": 8187.307530779818,\n  \"pv_rate_first\": -40936.53765389909,\n  \"pv_rate_second\": 204682.68826949544,\n  \"pv_shock_10bp\": {\n    \"first_order\": -40.93653765389909,\n    \"second_order\": -40.83419630976434,\n    \"exact\": -40.83436666567314\n  },\n  \"log_return_80_to_84\": 0.04879016416943201,\n  \"break_even_quantity\": 30.0,\n  \"break_even_derivative\": -1.0,\n  \"bond_yield\": 0.10000000000000009,\n  \"bond_yield_price_derivative\": -0.011,\n  \"cubic_centered_first\": 12.010000000000009,\n  \"quadratic_centered_second\": 2.0000000000000013\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_10.py",
+      "returncode": 0,
+      "stdout": "PASS: Section 8.10 Chapter 08 acceptance checks\n",
+      "stderr": ""
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_08_assessment_alignment.py",
+      "returncode": 0,
+      "stdout": "{\n  \"source_predicates\": [\n    {\n      \"name\": \"P1 x\\u00b2 derivative coefficients\",\n      \"actual\": [\n        0.0,\n        2.0\n      ],\n      \"expected\": [\n        0.0,\n        2.0\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P2 exact assessment polynomial derivative\",\n      \"actual\": [\n        7.0,\n        0.0,\n        -9.0,\n        0.0,\n        20.0\n      ],\n      \"expected\": [\n        7.0,\n        0.0,\n        -9.0,\n        0.0,\n        20.0\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P8 stationary slope\",\n      \"actual\": 0.0,\n      \"expected\": 0,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P8 maximal profit\",\n      \"actual\": 2525.0,\n      \"expected\": 2525,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P8 endpoint comparison\",\n      \"actual\": [\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P10 PV\",\n      \"actual\": 8187.307530779818,\n      \"expected\": 8187.307530779819,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P10 first\",\n      \"actual\": -40936.53765389909,\n      \"expected\": -40936.53765389909,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P10 second\",\n      \"actual\": 204682.68826949544,\n      \"expected\": 204682.68826949547,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P11 first_order\",\n      \"actual\": -40.93653765389909,\n      \"expected\": -40.936537653899094,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P11 second_order\",\n      \"actual\": -40.83419630976434,\n      \"expected\": -40.834196309764344,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P11 exact\",\n      \"actual\": -40.83436666567314,\n      \"expected\": -40.83436666567314,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P11 improvement\",\n      \"actual\": true,\n      \"expected\": true,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P12 log\",\n      \"actual\": 0.04879016416943201,\n      \"expected\": 0.048790164169432,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P14 quantity\",\n      \"actual\": 30.0,\n      \"expected\": 30,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P14 derivative\",\n      \"actual\": -1.0,\n      \"expected\": -1,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P15 yield\",\n      \"actual\": 0.10000000000000009,\n      \"expected\": 0.1,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P15 inverse\",\n      \"actual\": -0.011,\n      \"expected\": -0.011,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P16 second coefficients\",\n      \"actual\": [\n        -12.0,\n        6.0\n      ],\n      \"expected\": [\n        -12.0,\n        6.0\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P16 sign change\",\n      \"actual\": [\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P16 inflection ordinate\",\n      \"actual\": -12.0,\n      \"expected\": -12,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P17 second coefficients\",\n      \"actual\": [\n        0.0,\n        0.0,\n        12.0\n      ],\n      \"expected\": [\n        0.0,\n        0.0,\n        12.0\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P17 selected nonnegative curvature\",\n      \"actual\": [\n        12.0,\n        0.0,\n        12.0\n      ],\n      \"expected\": [\n        12.0,\n        0.0,\n        12.0\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P18 forward earlier exact-source API\",\n      \"actual\": 12.61000000000001,\n      \"expected\": 12.61,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P18 backward earlier exact-source API\",\n      \"actual\": 11.410000000000009,\n      \"expected\": 11.41,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P18 centered assessment API\",\n      \"actual\": 12.010000000000009,\n      \"expected\": 12.01,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P19 second assessment API\",\n      \"actual\": 2.0000000000000013,\n      \"expected\": 2,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P20 Richardson exact cubic API\",\n      \"actual\": 11.999999999999966,\n      \"expected\": 12,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P21 source kink stencils\",\n      \"actual\": [\n        -1.0,\n        1.0,\n        0.0\n      ],\n      \"expected\": [\n        -1.0,\n        1.0,\n        0.0\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r-0.01 field0\",\n      \"actual\": 614.181644899823,\n      \"expected\": 614.181644899823,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r-0.01 field1\",\n      \"actual\": -1436.4946332772843,\n      \"expected\": -1436.4946332772843,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r-0.01 field2\",\n      \"actual\": 3699.393330404317,\n      \"expected\": 3699.393330404317,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 selected sensitivity signs r-0.01\",\n      \"actual\": [\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.0 field0\",\n      \"actual\": 600.0,\n      \"expected\": 600.0,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.0 field1\",\n      \"actual\": -1400.0,\n      \"expected\": -1400.0,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.0 field2\",\n      \"actual\": 3600.0,\n      \"expected\": 3600.0,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 selected sensitivity signs r0.0\",\n      \"actual\": [\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.04 field0\",\n      \"actual\": 546.7783442077067,\n      \"expected\": 546.7783442077067,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.04 field1\",\n      \"actual\": -1263.5538755153284,\n      \"expected\": -1263.5538755153284,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.04 field2\",\n      \"actual\": 3229.2572001608664,\n      \"expected\": 3229.2572001608664,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 selected sensitivity signs r0.04\",\n      \"actual\": [\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.1 field0\",\n      \"actual\": 476.4753586237077,\n      \"expected\": 476.4753586237077,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.1 field1\",\n      \"actual\": -1084.7124416483348,\n      \"expected\": -1084.7124416483348,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 exact schedule r0.1 field2\",\n      \"actual\": 2745.6775401066197,\n      \"expected\": 2745.6775401066197,\n      \"passed\": true\n    },\n    {\n      \"name\": \"P23 selected sensitivity signs r0.1\",\n      \"actual\": [\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P25 three step order\",\n      \"actual\": [\n        0.01,\n        0.001,\n        0.0001\n      ],\n      \"expected\": [\n        0.01,\n        0.001,\n        0.0001\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P25 centered acceptance\",\n      \"actual\": [\n        true,\n        true,\n        true\n      ],\n      \"expected\": [\n        true,\n        true,\n        true\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P25 forward disagreement\",\n      \"actual\": [\n        false,\n        false,\n        false\n      ],\n      \"expected\": [\n        false,\n        false,\n        false\n      ],\n      \"passed\": true\n    },\n    {\n      \"name\": \"P25 wrong reference rejected\",\n      \"actual\": [\n        false,\n        false,\n        false\n      ],\n      \"expected\": [\n        false,\n        false,\n        false\n      ],\n      \"passed\": true\n    }\n  ],\n  \"supplemental_predicates\": [\n    {\n      \"name\": \"P9 accumulation first at3\",\n      \"actual\": 179.5826044682715,\n      \"expected\": 179.5826,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P9 accumulation second coefficient\",\n      \"actual\": 9.0,\n      \"expected\": 9.0,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P12 simple return\",\n      \"actual\": 0.05,\n      \"expected\": 0.05,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P13 demand elasticity\",\n      \"actual\": -1.5,\n      \"expected\": -1.5,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P15 direct price derivative\",\n      \"actual\": -90.9090909090909,\n      \"expected\": -90.9090909090909,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P22 forward epsilon root\",\n      \"actual\": 1.4901161193847656e-08,\n      \"expected\": 1.4901161193847656e-08,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P22 second epsilon root\",\n      \"actual\": 0.0001220703125,\n      \"expected\": 0.0001220703125,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    },\n    {\n      \"name\": \"P24 one basis point\",\n      \"actual\": 0.0001,\n      \"expected\": 0.0001,\n      \"passed\": true,\n      \"scope\": \"Independent supplemental arithmetic;not a missing lab API implementation\"\n    }\n  ]\n}\n48 source predicates; 8 supplemental predicates passed\n",
+      "stderr": ""
+    }
+  ],
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_01.py",
+      "sha": "be0d0c41e965dedd501e7ab6ace951c7dd3a2248"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_06.py",
+      "sha": "15d972a07834b53a30b19adcd3f09263649be6d6"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_08.py",
+      "sha": "8ed804ab65a71bec879b46aad1b0de76de4b2066"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_09.py",
+      "sha": "3bf13315c380e4ad118c13a7025ea135b41ce44a"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_10.py",
+      "sha": "708c6ec561498ba41a804b6639d1e8d2d489d429"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_10.py",
+      "sha": "2974fc80659ac1b79b3a30cbbd542c66e6de53b5"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_08_assessment_alignment.py",
+      "sha": "c4038e95fdeaddb12bbfcedc3b0625387c109d4b"
+    }
+  ],
+  "verified_before_after": true,
+  "source_predicates": [
+    {
+      "name": "P1 x\u00b2 derivative coefficients",
+      "actual": [
+        0.0,
+        2.0
+      ],
+      "expected": [
+        0.0,
+        2.0
+      ],
+      "passed": true
+    },
+    {
+      "name": "P2 exact assessment polynomial derivative",
+      "actual": [
+        7.0,
+        0.0,
+        -9.0,
+        0.0,
+        20.0
+      ],
+      "expected": [
+        7.0,
+        0.0,
+        -9.0,
+        0.0,
+        20.0
+      ],
+      "passed": true
+    },
+    {
+      "name": "P8 stationary slope",
+      "actual": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "P8 maximal profit",
+      "actual": 2525.0,
+      "expected": 2525,
+      "passed": true
+    },
+    {
+      "name": "P8 endpoint comparison",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P10 PV",
+      "actual": 8187.307530779818,
+      "expected": 8187.307530779819,
+      "passed": true
+    },
+    {
+      "name": "P10 first",
+      "actual": -40936.53765389909,
+      "expected": -40936.53765389909,
+      "passed": true
+    },
+    {
+      "name": "P10 second",
+      "actual": 204682.68826949544,
+      "expected": 204682.68826949547,
+      "passed": true
+    },
+    {
+      "name": "P11 first_order",
+      "actual": -40.93653765389909,
+      "expected": -40.936537653899094,
+      "passed": true
+    },
+    {
+      "name": "P11 second_order",
+      "actual": -40.83419630976434,
+      "expected": -40.834196309764344,
+      "passed": true
+    },
+    {
+      "name": "P11 exact",
+      "actual": -40.83436666567314,
+      "expected": -40.83436666567314,
+      "passed": true
+    },
+    {
+      "name": "P11 improvement",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "P12 log",
+      "actual": 0.04879016416943201,
+      "expected": 0.048790164169432,
+      "passed": true
+    },
+    {
+      "name": "P14 quantity",
+      "actual": 30.0,
+      "expected": 30,
+      "passed": true
+    },
+    {
+      "name": "P14 derivative",
+      "actual": -1.0,
+      "expected": -1,
+      "passed": true
+    },
+    {
+      "name": "P15 yield",
+      "actual": 0.10000000000000009,
+      "expected": 0.1,
+      "passed": true
+    },
+    {
+      "name": "P15 inverse",
+      "actual": -0.011,
+      "expected": -0.011,
+      "passed": true
+    },
+    {
+      "name": "P16 second coefficients",
+      "actual": [
+        -12.0,
+        6.0
+      ],
+      "expected": [
+        -12.0,
+        6.0
+      ],
+      "passed": true
+    },
+    {
+      "name": "P16 sign change",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P16 inflection ordinate",
+      "actual": -12.0,
+      "expected": -12,
+      "passed": true
+    },
+    {
+      "name": "P17 second coefficients",
+      "actual": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "passed": true
+    },
+    {
+      "name": "P17 selected nonnegative curvature",
+      "actual": [
+        12.0,
+        0.0,
+        12.0
+      ],
+      "expected": [
+        12.0,
+        0.0,
+        12.0
+      ],
+      "passed": true
+    },
+    {
+      "name": "P18 forward earlier exact-source API",
+      "actual": 12.61000000000001,
+      "expected": 12.61,
+      "passed": true
+    },
+    {
+      "name": "P18 backward earlier exact-source API",
+      "actual": 11.410000000000009,
+      "expected": 11.41,
+      "passed": true
+    },
+    {
+      "name": "P18 centered assessment API",
+      "actual": 12.010000000000009,
+      "expected": 12.01,
+      "passed": true
+    },
+    {
+      "name": "P19 second assessment API",
+      "actual": 2.0000000000000013,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "P20 Richardson exact cubic API",
+      "actual": 11.999999999999966,
+      "expected": 12,
+      "passed": true
+    },
+    {
+      "name": "P21 source kink stencils",
+      "actual": [
+        -1.0,
+        1.0,
+        0.0
+      ],
+      "expected": [
+        -1.0,
+        1.0,
+        0.0
+      ],
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r-0.01 field0",
+      "actual": 614.181644899823,
+      "expected": 614.181644899823,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r-0.01 field1",
+      "actual": -1436.4946332772843,
+      "expected": -1436.4946332772843,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r-0.01 field2",
+      "actual": 3699.393330404317,
+      "expected": 3699.393330404317,
+      "passed": true
+    },
+    {
+      "name": "P23 selected sensitivity signs r-0.01",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.0 field0",
+      "actual": 600.0,
+      "expected": 600.0,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.0 field1",
+      "actual": -1400.0,
+      "expected": -1400.0,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.0 field2",
+      "actual": 3600.0,
+      "expected": 3600.0,
+      "passed": true
+    },
+    {
+      "name": "P23 selected sensitivity signs r0.0",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.04 field0",
+      "actual": 546.7783442077067,
+      "expected": 546.7783442077067,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.04 field1",
+      "actual": -1263.5538755153284,
+      "expected": -1263.5538755153284,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.04 field2",
+      "actual": 3229.2572001608664,
+      "expected": 3229.2572001608664,
+      "passed": true
+    },
+    {
+      "name": "P23 selected sensitivity signs r0.04",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.1 field0",
+      "actual": 476.4753586237077,
+      "expected": 476.4753586237077,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.1 field1",
+      "actual": -1084.7124416483348,
+      "expected": -1084.7124416483348,
+      "passed": true
+    },
+    {
+      "name": "P23 exact schedule r0.1 field2",
+      "actual": 2745.6775401066197,
+      "expected": 2745.6775401066197,
+      "passed": true
+    },
+    {
+      "name": "P23 selected sensitivity signs r0.1",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P25 three step order",
+      "actual": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "expected": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "passed": true
+    },
+    {
+      "name": "P25 centered acceptance",
+      "actual": [
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "P25 forward disagreement",
+      "actual": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "passed": true
+    },
+    {
+      "name": "P25 wrong reference rejected",
+      "actual": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "passed": true
+    }
+  ],
+  "supplemental_predicates": [
+    {
+      "name": "P9 accumulation first at3",
+      "actual": 179.5826044682715,
+      "expected": 179.5826,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P9 accumulation second coefficient",
+      "actual": 9.0,
+      "expected": 9.0,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P12 simple return",
+      "actual": 0.05,
+      "expected": 0.05,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P13 demand elasticity",
+      "actual": -1.5,
+      "expected": -1.5,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P15 direct price derivative",
+      "actual": -90.9090909090909,
+      "expected": -90.9090909090909,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P22 forward epsilon root",
+      "actual": 1.4901161193847656e-08,
+      "expected": 1.4901161193847656e-08,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P22 second epsilon root",
+      "actual": 0.0001220703125,
+      "expected": 0.0001220703125,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    },
+    {
+      "name": "P24 one basis point",
+      "actual": 0.0001,
+      "expected": 0.0001,
+      "passed": true,
+      "scope": "Independent supplemental arithmetic;not a missing lab API implementation"
+    }
+  ],
+  "fresh_inventory": {
+    "python_files": 603,
+    "check_test_scripts": 390,
+    "required_source_fixture_blobs": 604
+  },
+  "limits": "Exact selected assessment inputs across named source APIs; supplemental/model proof/design separate;V142 latest full;35 COV partial,none closed"
+}

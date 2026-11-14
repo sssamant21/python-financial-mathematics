@@ -1,0 +1,108 @@
+{
+  "source_revision": "66ae5eaf6d8c0ea6fcd301407001c13bdab46341",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_10.py",
+      "sha": "708c6ec561498ba41a804b6639d1e8d2d489d429"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_10.py",
+      "sha": "2974fc80659ac1b79b3a30cbbd542c66e6de53b5"
+    }
+  ],
+  "compiled_files": 2,
+  "commands": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/section_8_10.py",
+      "returncode": 0,
+      "stdout": "{\n  \"profit_maximizer\": 125.0,\n  \"marginal_profit_at_maximizer\": 0.0,\n  \"pv\": 8187.307530779818,\n  \"pv_rate_first\": -40936.53765389909,\n  \"pv_rate_second\": 204682.68826949544,\n  \"pv_shock_10bp\": {\n    \"first_order\": -40.93653765389909,\n    \"second_order\": -40.83419630976434,\n    \"exact\": -40.83436666567314\n  },\n  \"log_return_80_to_84\": 0.04879016416943201,\n  \"break_even_quantity\": 30.0,\n  \"break_even_derivative\": -1.0,\n  \"bond_yield\": 0.10000000000000009,\n  \"bond_yield_price_derivative\": -0.011,\n  \"cubic_centered_first\": 12.010000000000009,\n  \"quadratic_centered_second\": 2.0000000000000013\n}\n",
+      "stderr": ""
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_section_8_10.py",
+      "returncode": 0,
+      "stdout": "PASS: Section 8.10 Chapter 08 acceptance checks\n",
+      "stderr": ""
+    }
+  ],
+  "source_predicates": [
+    {
+      "name": "P8 profit",
+      "actual": 2525.0,
+      "expected": 2525,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P8 marginal",
+      "actual": 0.0,
+      "expected": 0,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P10 first",
+      "actual": -40936.53765389909,
+      "expected": -40936.53765389909,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P10 second",
+      "actual": 204682.68826949544,
+      "expected": 204682.68826949544,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P12 log",
+      "actual": 0.04879016416943201,
+      "expected": 0.048790164169432,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P14 quantity",
+      "actual": 30.0,
+      "expected": 30,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P14 sensitivity",
+      "actual": -1.0,
+      "expected": -1,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P15 yield",
+      "actual": 0.10000000000000009,
+      "expected": 0.1,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P15 inverse",
+      "actual": -0.011,
+      "expected": -0.011,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P18 centered",
+      "actual": 12.010000000000009,
+      "expected": 12.01,
+      "tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "P19 second",
+      "actual": 2.0000000000000013,
+      "expected": 2,
+      "tolerance": 1e-08,
+      "passed": true
+    }
+  ],
+  "limits": "Selected exact-source baseline;unmapped exercises and symbolic/design/independent acceptance remain"
+}

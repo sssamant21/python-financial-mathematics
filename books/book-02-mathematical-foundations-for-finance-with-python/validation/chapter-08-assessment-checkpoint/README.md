@@ -1,3 +1,5 @@
+**Runtime update2026-11-14:** [V-145 exact-source alignment](../chapter-08-assessment-alignment-followup.md) now records actual Python execution. Historical static-only checkpoint and blocker below are preserved.
+
 # V-144 — Assessment static alignment checkpoint
 
 Pinned source `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`. [25 prompt/solution/derivation records](answer-map.json) · [21 supplemental observations](reference-observations.json) · [runnable JavaScript oracle](reference-oracle.js) · [markup checks](markup-checks.json).

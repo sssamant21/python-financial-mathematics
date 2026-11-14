@@ -1,0 +1,280 @@
+{
+  "selected_revision": "2bd9edae71a0f1def7176b33ec516d3a798393af",
+  "candidate_based_on": "2bd9edae71a0f1def7176b33ec516d3a798393af",
+  "source_sha256": "317be045810b353c9b0b1a393b0e98e8a2269ab9055648d691a4f15017f09eea",
+  "manuscript_sha256": "94c0dd7da406633254c8ebe4d14def83856f000637e39a846837a4ddf72b5434",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/tmp/tmpv7apyanp/financial_data_pipeline.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}\n{\"decimal_precision\": 28, \"decision_utc\": \"2026-01-07T12:00:00+00:00\", \"input_sha256\": \"1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b\", \"output_sha256\": \"d3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a\", \"python_version\": \"3.12.14\", \"record_count\": 2, \"rounding\": \"ROUND_HALF_EVEN\", \"schema_version\": 1}\n",
+      "stderr": "test_bad_date_order (__main__.PipelineTests.test_bad_date_order) ... ok\ntest_duplicate_key (__main__.PipelineTests.test_duplicate_key) ... ok\ntest_equal_cutoff (__main__.PipelineTests.test_equal_cutoff) ... ok\ntest_future_availability (__main__.PipelineTests.test_future_availability) ... ok\ntest_input_hash (__main__.PipelineTests.test_input_hash) ... ok\ntest_missing (__main__.PipelineTests.test_missing) ... ok\ntest_naive_cutoff (__main__.PipelineTests.test_naive_cutoff) ... ok\ntest_nonfinite (__main__.PipelineTests.test_nonfinite) ... ok\ntest_output_hash (__main__.PipelineTests.test_output_hash) ... ok\ntest_replay (__main__.PipelineTests.test_replay) ... ok\ntest_return (__main__.PipelineTests.test_return) ... ok\ntest_wrong_currency (__main__.PipelineTests.test_wrong_currency) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tmp/tmpv7apyanp/financial_data_pipeline.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_data_pipeline"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "predicates": [
+    {
+      "name": "independent canonical output",
+      "actual": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "expected": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "passed": true
+    },
+    {
+      "name": "manifest input identity",
+      "actual": "1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b",
+      "expected": "1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b",
+      "passed": true
+    },
+    {
+      "name": "manifest output identity",
+      "actual": "d3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a",
+      "expected": "d3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a",
+      "passed": true
+    },
+    {
+      "name": "manifest count/schema/context",
+      "actual": "(2, 1, 28, 'ROUND_HALF_EVEN')",
+      "expected": "(2, 1, 28, 'ROUND_HALF_EVEN')",
+      "passed": true
+    },
+    {
+      "name": "exact replay",
+      "actual": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', {'schema_version': 1, 'input_sha256': '1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b', 'output_sha256': 'd3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a', 'decision_utc': '2026-01-07T12:00:00+00:00', 'decimal_precision': 28, 'rounding': 'ROUND_HALF_EVEN', 'python_version': '3.12.14', 'record_count': 2})",
+      "expected": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', {'schema_version': 1, 'input_sha256': '1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b', 'output_sha256': 'd3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a', 'decision_utc': '2026-01-07T12:00:00+00:00', 'decimal_precision': 28, 'rounding': 'ROUND_HALF_EVEN', 'python_version': '3.12.14', 'record_count': 2})",
+      "passed": true
+    },
+    {
+      "name": "whitespace input identity differs",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "whitespace output stable",
+      "actual": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', 'd3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a')",
+      "expected": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', 'd3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a')",
+      "passed": true
+    },
+    {
+      "name": "equivalent cutoff normalization",
+      "actual": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', {'schema_version': 1, 'input_sha256': '1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b', 'output_sha256': 'd3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a', 'decision_utc': '2026-01-07T12:00:00+00:00', 'decimal_precision': 28, 'rounding': 'ROUND_HALF_EVEN', 'python_version': '3.12.14', 'record_count': 2})",
+      "expected": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', {'schema_version': 1, 'input_sha256': '1dd94d871cc822b9e9706d6d9070df8fe4f7c7661500920660e39dad1a21095b', 'output_sha256': 'd3411b63b7bbb697e8207bf7aaac27d1881c2029362774f2265d7bfc880a884a', 'decision_utc': '2026-01-07T12:00:00+00:00', 'decimal_precision': 28, 'rounding': 'ROUND_HALF_EVEN', 'python_version': '3.12.14', 'record_count': 2})",
+      "passed": true
+    },
+    {
+      "name": "early cutoff",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "equal cutoff",
+      "actual": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "expected": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"price_type\":\"unadjusted_close\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "passed": true
+    },
+    {
+      "name": "wrong bytes",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "invalid UTF8",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "invalid JSON",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "not list",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "empty",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "one row",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON key",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "nonstandard constant",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "missing",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "extra",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "null",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "bool",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "NaN",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "zero",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "currency",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "adjusted type",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "invalid date",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "compact date",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "duplicate date",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reverse dates",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "other instrument",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "timestamp 2026-01-07T12:00:00+01:60",
+      "actual": "2026-01-07 10:00:00+00:00",
+      "expected": "ValueError",
+      "passed": false
+    },
+    {
+      "name": "timestamp 2026-01-07T12:00:00-01:60",
+      "actual": "2026-01-07 14:00:00+00:00",
+      "expected": "ValueError",
+      "passed": false
+    },
+    {
+      "name": "timestamp 2026-01-07T12:00:00+00:99",
+      "actual": "2026-01-07 10:21:00+00:00",
+      "expected": "ValueError",
+      "passed": false
+    },
+    {
+      "name": "timestamp 0001-01-01T00:00:00+00:01",
+      "actual": "OverflowError",
+      "expected": "ValueError",
+      "passed": false
+    },
+    {
+      "name": "timestamp 9999-12-31T23:59:59-00:01",
+      "actual": "OverflowError",
+      "expected": "ValueError",
+      "passed": false
+    },
+    {
+      "name": "near unity complete return",
+      "actual": "0E-27",
+      "expected": "1E-30",
+      "passed": false
+    },
+    {
+      "name": "private rounding trap policy",
+      "actual": "Inexact",
+      "expected": "0.3333333333333333333333333333",
+      "passed": false
+    },
+    {
+      "name": "private exponent range",
+      "actual": "Overflow",
+      "expected": "1000",
+      "passed": false
+    }
+  ],
+  "existing_methods": 12,
+  "new_historical_unique_methods": 0,
+  "limits": "Synthetic two-close strict batch/cutoff/context and byte replay only;not provider truth,revision/sink/resource/platform/independent acceptance"
+}

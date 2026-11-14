@@ -1,3 +1,5 @@
+**Runtime update2026-11-14:** [Formal project baseline/fix/rerun](../chapter-19-project-review/README.md) now executed;F200 scoped resolved. Historical static-only checkpoint below is preserved.
+
 # Section19.14 project — static checkpoint
 
 Source `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`. [Source](../../chapter-19/19.14-chapter-project-financial-data-pipeline.md) · [40 static answer records](static-answer-records.json) · [five supplemental observations](reference-observations.json) · [preserved baseline](baseline-source.txt).

@@ -1,0 +1,16 @@
+from pathlib import Path
+import json,sys,hashlib,subprocess,py_compile,platform,importlib.util
+root=Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve();b=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=b/'chapter-08/code';v=b/'validation'
+paths=[code/x for x in ['section_8_01.py','section_8_06.py','section_8_08.py','section_8_09.py','section_8_10.py','check_section_8_10.py','check_section_08_assessment_alignment.py']]
+def blob(p):
+ d=p.read_bytes();return hashlib.sha1(b'blob '+str(len(d)).encode()+bytes([0])+d).hexdigest()
+manifest=[dict(path=str(p.relative_to(root)),sha=blob(p)) for p in paths]
+for p in paths:py_compile.compile(str(p),doraise=True)
+commands=[]
+for name in ['section_8_10.py','check_section_8_10.py','check_section_08_assessment_alignment.py']:
+ z=subprocess.run([sys.executable,name],cwd=code,capture_output=True,text=True,timeout=60);commands.append(dict(path=str((code/name).relative_to(root)),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+sys.path.insert(0,str(code));spec=importlib.util.spec_from_file_location('assessment_alignment',paths[-1]);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);source,supplement=m.observations()
+assert all(blob(root/x['path'])==x['sha'] for x in manifest)
+tracked=subprocess.check_output(['git','ls-files','--',str(b.relative_to(root))],cwd=root,text=True).splitlines();new=subprocess.check_output(['git','ls-files','--others','--exclude-standard','--',str(b.relative_to(root))],cwd=root,text=True).splitlines();py=sorted(set(x for x in tracked+new if x.endswith('.py') and '/__pycache__/' not in x));checks=[x for x in py if Path(x).name.startswith(('check_','test_'))]
+d=dict(candidate_based_on='2bd9edae71a0f1def7176b33ec516d3a798393af',python=platform.python_version(),platform=platform.platform(),compiled=len(paths),commands=commands,manifest=manifest,verified_before_after=True,source_predicates=source,supplemental_predicates=supplement,fresh_inventory=dict(python_files=len(py),check_test_scripts=len(checks),required_source_fixture_blobs=len(py)+1),limits='Exact selected assessment inputs across named source APIs; supplemental/model proof/design separate;V142 latest full;35 COV partial,none closed')
+(v/'chapter-08-assessment-alignment-results.json').write_text(json.dumps(d,indent=2)+'\n');print(len(source),'source predicates;',len(supplement),'supplemental;',len(paths),'compiled;',len(commands),'commands;inventory',d['fresh_inventory']);assert all(x['returncode']==0 for x in commands) and all(x['passed'] for x in source+supplement)

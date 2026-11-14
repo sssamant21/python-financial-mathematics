@@ -1,0 +1,402 @@
+[
+  {
+    "number": 1,
+    "topic": "Market data",
+    "prompt": "Distinguish a trade from a quote.",
+    "worked_solution": "A trade records an execution; a quote generally describes bid and/or ask prices and possibly sizes. Their timestamps and venues may differ.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 2,
+    "topic": "Price definition",
+    "prompt": "Why is \u201cclose=100\u201d insufficient?",
+    "worked_solution": "It lacks instrument, date, currency, source, price type and adjustment conventions. The value may also have a publication or revision time.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 3,
+    "topic": "Reference data",
+    "prompt": "Is a ticker guaranteed to be a permanent unique instrument identifier?",
+    "worked_solution": "No. Symbols can change, be reused or differ by venue. Record identifier type and effective mapping.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 4,
+    "topic": "Corporate actions",
+    "prompt": "Why can a raw price fall sharply after a stock split without representing an equivalent economic loss?",
+    "worked_solution": "A split changes shares and per-share price. Compare compatible adjusted or unadjusted data under a documented method.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 5,
+    "topic": "Format choice",
+    "prompt": "Does using Parquet or JSON guarantee accurate values?",
+    "worked_solution": "No. A format defines representation, not source accuracy, completeness or financial semantics.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 6,
+    "topic": "CSV quoting",
+    "prompt": "Why is splitting `EXAMPLE,\"Example, Class A\",100` on every comma incorrect?",
+    "worked_solution": "The comma inside quotes belongs to one field. Use a CSV parser configured for the dialect.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 7,
+    "topic": "Encoding",
+    "prompt": "A UTF-8 BOM appears before the first CSV header. What should the pipeline do?",
+    "worked_solution": "Follow the documented encoding policy; `utf-8-sig` can remove a leading UTF-8 BOM. Preserve original bytes when byte identity is required.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 8,
+    "topic": "JSON missingness",
+    "prompt": "Are an absent key, `null`, `0` and `\"\"` equivalent?",
+    "worked_solution": "No. They are different structural or value states. Apply the source contract rather than coercing them silently.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 9,
+    "topic": "Duplicate JSON keys",
+    "prompt": "Why reject or explicitly handle two `close` keys in one object?",
+    "worked_solution": "Consumers can resolve duplicate keys differently, making the intended value ambiguous.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 10,
+    "topic": "Spreadsheet formulas",
+    "prompt": "Does reading an Excel workbook with `openpyxl` calculate its formulas?",
+    "worked_solution": "No. Formula cells and cached results have different meanings; cached results may be absent or stale.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 11,
+    "topic": "API status",
+    "prompt": "Does an HTTP success response prove all requested financial records were returned?",
+    "worked_solution": "No. Validate body schema, pagination, coverage, timestamps and provider-specific completion criteria.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 12,
+    "topic": "Pagination",
+    "prompt": "The first page includes a next cursor. Is the dataset complete?",
+    "worked_solution": "Not under a contract requiring additional pages. Follow the documented cursor until completion or report an incomplete result.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 13,
+    "topic": "Retry",
+    "prompt": "Why should a client not retry a write blindly?",
+    "worked_solution": "Repetition can create side effects or duplicates. Check operation semantics, idempotency keys and provider policy.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 14,
+    "topic": "Credentials",
+    "prompt": "Should an API key be written into source code or logs?",
+    "worked_solution": "No. Use approved secret handling and redact sensitive request information.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 15,
+    "topic": "Parsing versus validation",
+    "prompt": "A close parses as a decimal but uses an unexpected currency. Has it passed financial validation?",
+    "worked_solution": "No. Type conversion succeeds, but the currency contract fails.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 16,
+    "topic": "Decimal text",
+    "prompt": "Why might a contract require `\"101.50\"` as text rather than converting an arbitrary binary float?",
+    "worked_solution": "Decimal text preserves the specified decimal value for deliberate parsing. Precision, rounding and financial meaning still require a policy.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 17,
+    "topic": "Nonfinite values",
+    "prompt": "Should `NaN` be accepted as a positive close?",
+    "worked_solution": "No. It is nonfinite and fails the example's positive finite price contract.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 18,
+    "topic": "Precision and scale",
+    "prompt": "Under a contract allowing six integral digits and two fractional digits, is `123456.78` accepted?",
+    "worked_solution": "Yes. `1234567.00` exceeds integral width; `1.234` exceeds scale.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 19,
+    "topic": "Record identity",
+    "prompt": "Is instrument/date always an adequate duplicate key?",
+    "worked_solution": "No. Venue, source, price type, currency or revision may be required.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 20,
+    "topic": "Schema evolution",
+    "prompt": "A provider changes a rate field from percent to decimal but retains its numeric type. Is this breaking?",
+    "worked_solution": "Yes for consumers relying on the old meaning. Physical type alone does not capture units.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 21,
+    "topic": "Missing price",
+    "prompt": "Why is replacing a missing close with zero dangerous?",
+    "worked_solution": "It can create a false \u2212100% return and distort risk measures. Use an explicit missing-data policy.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 22,
+    "topic": "Source marker",
+    "prompt": "Does `N/A` have a universal meaning?",
+    "worked_solution": "No. Its treatment depends on the source contract.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 23,
+    "topic": "Negative rates",
+    "prompt": "Must every negative yield be rejected?",
+    "worked_solution": "No. Domain checks depend on field meaning and market context.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 24,
+    "topic": "Outlier",
+    "prompt": "A price changes by 40%. Should it be automatically removed?",
+    "worked_solution": "No. It may reflect a genuine move, corporate action or error; flag and investigate.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 25,
+    "topic": "Duplicate revision",
+    "prompt": "Two records share an effective date but have different publication times. Should the latest always overwrite the earlier one?",
+    "worked_solution": "No. Preserve revisions when point-in-time use requires them, and apply a documented precedence policy.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 26,
+    "topic": "Missing-rate denominator",
+    "prompt": "One of four submitted rows has a missing close. Calculate the missing rate.",
+    "worked_solution": "**25%**, if the rule counts one missing row and uses all four submitted rows as the denominator.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 27,
+    "topic": "Empty batch",
+    "prompt": "What is the missing rate for zero submitted rows?",
+    "worked_solution": "It is undefined under a missing/submitted ratio. Report the empty batch explicitly.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 28,
+    "topic": "Quarantine",
+    "prompt": "What does quarantining a record mean?",
+    "worked_solution": "Separating it with an identifiable reason for review rather than silently discarding or correcting it.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 29,
+    "topic": "Completeness",
+    "prompt": "Can every submitted row be valid while the dataset is incomplete?",
+    "worked_solution": "Yes. Expected dates or instruments may be absent; completeness requires an expected coverage definition.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 30,
+    "topic": "Reconciliation",
+    "prompt": "Two price sources disagree. What should be aligned before interpreting the difference?",
+    "worked_solution": "Instrument, venue, price type, currency, time, adjustment, units and rounding.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 31,
+    "topic": "Date versus instant",
+    "prompt": "Does `2026-01-05` identify a UTC instant?",
+    "worked_solution": "No. It is a calendar date without a time or timezone.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 32,
+    "topic": "UTC conversion",
+    "prompt": "Convert 2026-01-05 09:30 at UTC\u221205:00 to UTC.",
+    "worked_solution": "**2026-01-05 14:30 UTC**. The instant remains the same.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 33,
+    "topic": "Daylight saving",
+    "prompt": "Can a local wall time occur twice?",
+    "worked_solution": "Yes, during some fall-back transitions. Require an offset or a documented disambiguation rule.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 34,
+    "topic": "Availability",
+    "prompt": "A record is published at 12:00Z and ingested at 12:01Z. Under a rule requiring both by the decision, is it available at 12:00:30Z?",
+    "worked_solution": "No. Ingestion occurs after the decision.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 35,
+    "topic": "Rate conversion",
+    "prompt": "Convert 5% and 100 basis points to decimal rates.",
+    "worked_solution": "5%=**.05**; 100 bp=**.01**.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 36,
+    "topic": "Percentage-point change",
+    "prompt": "A rate rises from 5% to 6%. Express the change in percentage points, basis points and relative terms.",
+    "worked_solution": "+1 percentage point, +100 bp, and a 20% relative increase.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 37,
+    "topic": "Currency denomination",
+    "prompt": "Convert 10,000 USD cents to dollars under the stated USD convention.",
+    "worked_solution": "**USD 100**. Do not assume all currencies have the same minor-unit convention.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 38,
+    "topic": "FX quote",
+    "prompt": "Convert EUR 100 at 1.10 USD per EUR.",
+    "worked_solution": "100\u00d71.10=**USD 110**. Quote direction determines the operation.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 39,
+    "topic": "FX movement",
+    "prompt": "EUR 100 remains constant while USD/EUR changes from 1.10 to 1.05. Calculate USD P&L.",
+    "worked_solution": "USD value falls from 110 to 105; P&L is **\u2212USD 5**, before costs.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 40,
+    "topic": "Rounding",
+    "prompt": "Under half-even rounding, round 1.005 to two decimal places.",
+    "worked_solution": "**1.00**. This is an illustrative policy, not a universal settlement rule.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 41,
+    "topic": "Input hash",
+    "prompt": "What does a SHA-256 digest of raw file bytes establish?",
+    "worked_solution": "It identifies the bytes hashed for comparison; it does not by itself prove authenticity, completeness or accuracy.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 42,
+    "topic": "Whitespace",
+    "prompt": "Can changing JSON whitespace change the raw hash without changing the parsed object?",
+    "worked_solution": "Yes. Byte identity and semantic equivalence are different; define canonicalization if needed.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 43,
+    "topic": "Determinism",
+    "prompt": "Does a deterministic transformation make an append-only sink idempotent?",
+    "worked_solution": "No. A retry can append duplicate outputs unless the sink has a suitable key and write policy.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 44,
+    "topic": "Late data",
+    "prompt": "Can a watermark based only on maximum event time miss a late correction?",
+    "worked_solution": "Yes. Define late-arrival, revision and reprocessing behavior.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 45,
+    "topic": "Look-ahead",
+    "prompt": "A quarter ends March 31, its value is published May 1, and a decision occurs April 15. May the decision use it?",
+    "worked_solution": "No, under the stated timeline. Effective period and availability time differ.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 46,
+    "topic": "Revision",
+    "prompt": "A value is 100 on May 1 and corrected to 105 on May 10. Which version is available on May 5, assuming publication and ingestion occurred together?",
+    "worked_solution": "**100**. Using 105 on May 5 would leak a later correction.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 47,
+    "topic": "Rolling window",
+    "prompt": "Why can a centered rolling mean leak?",
+    "worked_solution": "It can include future observations relative to the decision point. A trailing window also needs an availability check.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 48,
+    "topic": "Preprocessing",
+    "prompt": "Why fit a scaler using training data only?",
+    "worked_solution": "Fitting it on the full dataset lets evaluation-period information influence training. Apply training-fitted parameters to later data.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 49,
+    "topic": "Survivorship",
+    "prompt": "What can be missed if a historical universe includes only instruments that survive to the end?",
+    "worked_solution": "Failed or delisted instruments, creating survivorship bias. Point-in-time membership and delisting coverage matter.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  },
+  {
+    "number": 50,
+    "topic": "Pipeline acceptance",
+    "prompt": "Two comparable USD closes 100.00 and 101.50 are both available before a decision. Calculate simple return and state what remains to validate.",
+    "worked_solution": "Return=101.50/100\u22121=**.015**, or 1.5%. Validate source identity, price type, currency, corporate actions, availability evidence and revision history.",
+    "review": "Aligned with declared source/unit/time/revision assumptions",
+    "scope": "Selected exact-source lab observations;other conceptual/provider/model claims reviewed manually,not executed acceptance"
+  }
+]

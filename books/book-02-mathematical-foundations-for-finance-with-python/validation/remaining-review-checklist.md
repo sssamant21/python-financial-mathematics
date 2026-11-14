@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `a847812cb63d75354199723e5489cd84a579988d` (V-142)
-**Latest scoped source:** V-143 candidate based on `953fa30f7a29cc4a27a2817238e5b72f25c635ef`; exact4-file manifest in [evidence](chapter-08-ladder-followup.md).
+**Latest scoped source:** V-145 candidate based on `2bd9edae71a0f1def7176b33ec516d3a798393af`;[seven-file source manifest](chapter-08-assessment-alignment-results.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** Assessment Python execution temporarily blocked;V-142 historical full candidate Linux pass and V-143 scoped runtime evidence remain. Independent review/release approval pending.
+**Disposition:** Runtime restored;V-145 exact assessment scope passed. V-142 remains latest full Python evidence;independent review/release approval pending.
 
 ## Reconciled evidence
 
@@ -1141,3 +1141,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-144 checkpoint — Assessment static alignment and markup repair
 
 [Assessment checkpoint](chapter-08-assessment-checkpoint/README.md) records25 prompt/solution/independent-derivation/source-mapping reviews. Twenty-one supplemental JavaScript numeric checks and two Markdown-structure checks passed;the saved JS oracle replayed identically. Escaped lab command fences repaired. No Python implementation changed,and zero Python commands,compilations or tests ran because the execution environment became unavailable. Prepared Python resume runner is uncompiled/unexecuted. Specific exact-assessment input/proof gaps remain mapped. V-142 remains latest full601/388/602 evidence;current602/389/603 inventory is not fresh full execution. Thirty-five selected COV categories partial;none closed. Next:run the pinned Section8.10 exact-source baseline when runtime is restored,finish exact assessment acceptance,then helper-copy contracts. Independent mathematical/editorial/platform/release/canonical approval remains pending;Book1 progresses independently.
+
+
+## V-145 checkpoint — Assessment runtime restored and exact-input mapping
+
+[Assessment alignment](chapter-08-assessment-alignment-followup.md):prior saved baseline runner passed2 compiled/2 commands/11 predicates. Expanded alignment passes48 exact-source and8 separate supplemental predicates;7 files compiled,3 commands passed (assessment demo+2 checkers),7 hashes verified before-after. Exact polynomial,financial,finite-difference,three-cash-flow and protocol inputs executed across named existing APIs;symbolic/design/missing-API cases remain explicitly separate. No Book2 numerical source changed. Fresh603/390/604 inventory is not a full run;V-142 remains latest full601/388/602. V-144 static/blocker history preserved. Thirty-five selected COV categories partial;none closed. Next:Section8.10 copied helper complete-range/log-return/bond/centered-preflight contracts;broader platform/independent acceptance remains pending. Book1 tracked independently.
