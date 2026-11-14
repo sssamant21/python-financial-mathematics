@@ -1,0 +1,9 @@
+from pathlib import Path
+import subprocess,sys,tempfile,json,shutil,hashlib
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];b=r/'books/book-02-mathematical-foundations-for-finance-with-python';code=b/'chapter-08/code';pin='2ee70e207d55c70306860378c29bc0bf331ea834';name='check_difference_denominators.py'
+with tempfile.TemporaryDirectory() as t:
+ t=Path(t)
+ for n in ['section_8_01.py','section_8_06.py','section_8_08.py','section_8_09.py','section_8_10.py']:shutil.copy2(code/n,t/n)
+ p=code/name;raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+str(p.relative_to(r))]) if mode=='initial' else p.read_bytes();(t/name).write_bytes(raw);z=subprocess.run([sys.executable,name],cwd=t,capture_output=True,text=True)
+d=dict(mode=mode,source_candidate=pin,checker_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr,existing_unique_methods=5,new_historical_unique_methods=0,limits='Historical two denominator assertions reconciled to complete sampled-quotient contract;not analytic-derivative acceptance')
+(b/'validation'/('chapter-08-denominator-contract-'+mode+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(mode,'actual exit',z.returncode)

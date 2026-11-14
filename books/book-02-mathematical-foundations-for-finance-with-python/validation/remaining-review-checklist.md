@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `489c46b92214906f22e642b199a8829909a64f00` (V-147)
-**Latest scoped source:** V-148 at `cebfd7261943c3ab9e4411554a15af73f6dda60f`;[nine-file source manifest](chapter-08-assessment-pv-shock-publication-verification.json).
+**Latest scoped source:** V-149 at `2ee70e207d55c70306860378c29bc0bf331ea834`;[ten-file source manifest](chapter-08-assessment-centered-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
 **Disposition:** V-146 scoped rational/log checks and V-147 full Python runtime passed;independent review/release approval pending.
 
@@ -1165,4 +1165,4 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 
 ## V-149 checkpoint — Assessment centered-copy contracts
 
-[Centered evidence](chapter-08-assessment-centered-followup.md):68 corrected predicates passed;53 initial passes/15 failed predicates and identical replay retained. Independent2200/2600-digit represented-sample sums/quotients,explicit zero-sign policy,finite-distinct preflight and callback order/error-consumption checked. Wrappers delegate to reviewed Section8.8 routines. Ten files compiled,six commands/five checker invocations passed,ten hashes verified before-after. Fresh606/393/607 inventory is not full execution;full pinned refresh next. Thirty-five selected COV categories partial,none closed. Then:Section8.10 chapter-report serialization/fields/validation-order coverage against assessment mapping;conditioning/resource/platform/independent acceptance pending. Book1 tracked independently.
+[Centered evidence](chapter-08-assessment-centered-followup.md):68 corrected predicates passed;53 initial passes/15 failed predicates and identical replay retained. Independent2200/2600-digit represented-sample sums/quotients,explicit zero-sign policy,finite-distinct preflight and callback order/error-consumption checked. Wrappers delegate to reviewed Section8.8 routines. Eleven files compiled,seven commands/six checker invocations passed,eleven hashes verified before-after;historical denominator checker reconciled to complete sampled-quotient policy,same five methods rerun. Fresh606/393/607 inventory is not full execution;full pinned refresh next. Thirty-five selected COV categories partial,none closed. Then:Section8.10 chapter-report serialization/fields/validation-order coverage against assessment mapping;conditioning/resource/platform/independent acceptance pending. Book1 tracked independently.

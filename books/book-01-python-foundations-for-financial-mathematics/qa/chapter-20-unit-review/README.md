@@ -15,3 +15,5 @@ Independent normal expectations use Fraction powers of the represented rate:110/
 The [deliberate supplemental sign-defect copy](faulty_variant.py.txt) fails the existing negative-cashflow method (exit1),while unchanged source control passes (exit0). Actual outputs are retained;the faulty copy never mutates the reference source and is not a published-source defect. The same12 original methods passed even on the baseline,illustrating finite coverage limits.
 
 F28 notebook/platform,F32 shared-input integration,F165/F185 and broader source/model/resource/platform/independent acceptance remain open. Chapter20 now3 scoped workflows/120 local answers. Next:Section20.4 Boundary and Edge Cases.
+
+Executable source/runner revision:`2ee70e207d55c70306860378c29bc0bf331ea834`. [Pinned input manifest](publication-verification.json).

@@ -8,21 +8,21 @@ from section_8_10 import centered_second
 
 class DifferenceDenominators(unittest.TestCase):
     def test_squared_step_underflow(self):
-        # Section8.6 now evaluates the exact squared-step sampled quotient.
+        # Sections8.6/8.8/8.10 evaluate the complete squared-step sampled quotient.
         # Callback x*x has already underflowed: zero is not its true derivative.
         self.assertEqual(centered_second_difference(lambda x:x*x,0,1e-200),0)
         self.assertEqual(second_difference(lambda x:x*x,0,1e-200),0)
         for fn in (centered_second,):
-            with self.subTest(function=fn.__module__),self.assertRaises(ValueError):
-                fn(lambda x:x*x,0,1e-200)
+            with self.subTest(function=fn.__module__):
+                self.assertEqual(fn(lambda x:x*x,0,1e-200),0)
         with self.assertRaises(ValueError):
             compare_derivatives(lambda x:x*x,lambda x:2*x,0,1e-200,lambda x:2)
     def test_squared_step_overflow(self):
         self.assertEqual(centered_second_difference(lambda x:1,0,1e200),0)
         self.assertEqual(second_difference(lambda x:1,0,1e200),0)
         for fn in (centered_second,):
-            with self.subTest(function=fn.__module__),self.assertRaises(ValueError):
-                fn(lambda x:1,0,1e200)
+            with self.subTest(function=fn.__module__):
+                self.assertEqual(fn(lambda x:1,0,1e200),0)
     def test_unchanged_perturbation(self):
         with self.assertRaises(ValueError): centered_second_difference(lambda x:x*x,1,1e-30)
     def test_normal_quadratic(self):
