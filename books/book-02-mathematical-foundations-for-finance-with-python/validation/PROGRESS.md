@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-143 scoped ladder/report review;V-142 remains latest full candidate Linux pass (601/388/602). Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-144 static assessment checkpoint;Python execution temporarily blocked. V-142 remains latest full candidate Linux pass (601/388/602). Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1262,3 +1262,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-143 checkpoint — Ladder resource/report and late failures
 
 [Ladder evidence](chapter-08-ladder-followup.md):25 predicates passed with actual initial pass and identical replay. Exact cubic full report rows,order/duplicates,empty/first-only cases,late invalid/callback/iterator errors and caller islice consumption bounds retained. Selected two-report fixture uses14 callbacks and1225 compact JSON bytes under a4096-byte QA budget;no source cap or rollback is claimed. No helper changed. Four files compiled/two scripts passed/four hashes verified before-after. Fresh602/389/603 inventory is not a full run;V-142 remains latest full601/388/602. Thirty-five selected COV categories partial;none closed. Next:Section8.10 assessment exact prompt/source/reference alignment from existing coverage map;broader branch/conditioning/resource and independent acceptance remain open. Book1 tracked independently.
+
+
+## V-144 checkpoint — Assessment static alignment and markup repair
+
+[Assessment checkpoint](chapter-08-assessment-checkpoint/README.md) records25 prompt/solution/independent-derivation/source-mapping reviews. Twenty-one supplemental JavaScript numeric checks and two Markdown-structure checks passed;the saved JS oracle replayed identically. Escaped lab command fences repaired. No Python implementation changed,and zero Python commands,compilations or tests ran because the execution environment became unavailable. Prepared Python resume runner is uncompiled/unexecuted. Specific exact-assessment input/proof gaps remain mapped. V-142 remains latest full601/388/602 evidence;current602/389/603 inventory is not fresh full execution. Thirty-five selected COV categories partial;none closed. Next:run the pinned Section8.10 exact-source baseline when runtime is restored,finish exact assessment acceptance,then helper-copy contracts. Independent mathematical/editorial/platform/release/canonical approval remains pending;Book1 progresses independently.

@@ -1,0 +1,41 @@
+{
+  "source_revision": "66ae5eaf6d8c0ea6fcd301407001c13bdab46341",
+  "engine": "Supplemental JavaScript BigInt rational and explicit-UTC arithmetic",
+  "observations": [
+    {
+      "name": "Nominal exact return",
+      "actual": "150/10000",
+      "reduced": "3/200",
+      "expected_decimal": ".015",
+      "passed": true
+    },
+    {
+      "name": "2026-01-06T21:00:00Z",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "2026-01-06T22:00:00Z",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "2026-01-07T12:00:00Z",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "Near-unity exact return",
+      "numerator": "1",
+      "denominator": "1000000000000000000000000000000",
+      "expected": "1e-30",
+      "passed": true
+    }
+  ],
+  "passed": 5,
+  "python_executions": 0,
+  "limits": "Not execution or acceptance of the Python source"
+}

@@ -1,0 +1,252 @@
+[
+  {
+    "number": 1,
+    "topic": "Definition.",
+    "prompt": "State the limit definition of \\(f'(x)\\), and derive the derivative of \\(f(x)=x^2\\).",
+    "worked_solution": "\\(f'(x)=\\lim_{h\\to0}[f(x+h)-f(x)]/h\\). For \\(x^2\\), the numerator is \\(2xh+h^2\\), so the quotient is \\(2x+h\\) and the limit is \\(2x\\).",
+    "independent_derivation": "Limit quotient 2x+h tends to2x.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Symbolic derivation;no matching exact-expression assertion in this lab.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 2,
+    "topic": "Polynomial.",
+    "prompt": "Differentiate \\(f(x)=4x^5-3x^3+7x-9\\).",
+    "worked_solution": "\\(f'(x)=20x^4-9x^2+7\\).",
+    "independent_derivation": "Termwise derivative20x^4−9x²+7.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related earlier section checks;not this exact polynomial.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 3,
+    "topic": "Product rule.",
+    "prompt": "Differentiate \\(f(x)=(x^2+1)e^{2x}\\).",
+    "worked_solution": "\\(f'(x)=2xe^{2x}+2(x^2+1)e^{2x}=e^{2x}(2x^2+2x+2)\\).",
+    "independent_derivation": "Product derivative e^(2x)(2x²+2x+2).",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related earlier checks;not this exact expression.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 4,
+    "topic": "Quotient rule.",
+    "prompt": "Differentiate \\(f(x)=(2x+1)/(x^2+4)\\).",
+    "worked_solution": "\\(f'(x)=[2(x^2+4)-(2x+1)2x]/(x^2+4)^2=(-2x^2-2x+8)/(x^2+4)^2\\).",
+    "independent_derivation": "Quotient numerator2(x²+4)−2x(2x+1)=−2x²−2x+8;denominator positive.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related quotient checks;not this exact expression.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 5,
+    "topic": "Chain rule.",
+    "prompt": "Differentiate \\(f(x)=(1+3x^2)^{-4}\\).",
+    "worked_solution": "\\(f'(x)=-24x(1+3x^2)^{-5}\\).",
+    "independent_derivation": "Chain factor−4*6x=−24x;1+3x²>0.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related chain checks;not this exact expression.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 6,
+    "topic": "Nested exponential.",
+    "prompt": "Differentiate \\(f(x)=e^{-0.5x^2}\\).",
+    "worked_solution": "\\(f'(x)=-xe^{-0.5x^2}\\).",
+    "independent_derivation": "Inner derivative−x gives−x exp(−x²/2).",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related exponential checks;not this exact expression.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 7,
+    "topic": "Logarithm.",
+    "prompt": "Differentiate \\(f(x)=\\ln(1+4x)\\), and state the domain.",
+    "worked_solution": "\\(f'(x)=4/(1+4x)\\), valid for \\(x>-1/4\\).",
+    "independent_derivation": "Log derivative4/(1+4x);domain x>−1/4.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related log checks;this exact log-domain prompt not asserted here.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 8,
+    "topic": "Marginal profit.",
+    "prompt": "A firm's profit is \\(\\Pi(q)=-600+50q-0.2q^2\\), \\(0\\le q\\le200\\). Find its stationary point and classify it.",
+    "worked_solution": "\\(\\Pi'(q)=50-0.4q\\), so \\(q=125\\). Since \\(\\Pi''=-0.4<0\\), this is the unique maximizer on the feasible interval.",
+    "independent_derivation": "50−.4q=0 at125;second−.4 and feasible interval give unique maximum.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Matching125 slope/profit comparisons;global proof reviewed statically.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 9,
+    "topic": "Continuous accumulation.",
+    "prompt": "With \\(A(t)=2500e^{0.06t}\\), calculate \\(A'(t)\\), \\(A''(t)\\), and \\(A'(3)\\).",
+    "worked_solution": "\\(A'(t)=150e^{0.06t}\\), \\(A''(t)=9e^{0.06t}\\), and \\(A'(3)=150e^{0.18}\\approx179.5826\\).",
+    "independent_derivation": "2500*.06=150;second coefficient9;evaluate at3.",
+    "alignment": "Statically aligned",
+    "source_mapping": "No matching2500/.06 assessment assertion in existing checker.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 10,
+    "topic": "Discount-rate sensitivity.",
+    "prompt": "For \\(PV(r)=10000e^{-5r}\\), derive \\(PV'\\) and \\(PV''\\), and evaluate both at \\(r=0.04\\).",
+    "worked_solution": "\\(PV'(r)=-50000e^{-5r}\\), \\(PV''(r)=250000e^{-5r}\\). At \\(r=0.04\\), \\(PV'=-50000e^{-0.2}\\approx-40936.5377\\), \\(PV''=250000e^{-0.2}\\approx204682.6883\\).",
+    "independent_derivation": "First−50000 exp(−5r),second250000 exp(−5r).",
+    "alignment": "Statically aligned",
+    "source_mapping": "Matching PV first/second numeric asserts present;not rerun.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 11,
+    "topic": "Rate-shock approximation.",
+    "prompt": "For the model in Exercise 10, approximate the change in present value when the decimal rate rises by \\(h=0.001\\), using first and second order Taylor approximations. Compare with the exact change.",
+    "worked_solution": "With \\(PV_0=10000e^{-0.2}\\), first-order change is \\(-5PV_0(0.001)\\approx-40.9365\\). Second-order change is \\(-5PV_0(0.001)+\\tfrac12(25PV_0)(0.001)^2\\approx-40.8342\\). Exact change is \\(PV_0(e^{-0.005}-1)\\approx-40.8344\\). Numerical rounding may vary.",
+    "independent_derivation": "Taylor terms first*h andsecond*h²/2;exact exponential gap.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Matching Taylor/exact change and error-order comparison present;not rerun.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 12,
+    "topic": "Log return.",
+    "prompt": "A price rises from 80 to 84. Compute the simple return and the logarithmic return. Explain why they differ.",
+    "worked_solution": "Simple return \\(=(84-80)/80=0.05\\). Log return \\(=\\ln(84/80)=\\ln(1.05)\\approx0.0487902\\). The logarithm is nonlinear; the two coincide only to first order for small returns.",
+    "independent_derivation": "4/80=.05;log(21/20) differs nonlinearly.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Matching log return;simple.05 not separately asserted.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 13,
+    "topic": "Elasticity.",
+    "prompt": "If demand is \\(Q(p)=400p^{-1.5}\\), \\(p>0\\), calculate point price elasticity \\(pQ'(p)/Q(p)\\).",
+    "worked_solution": "\\(Q'(p)=-600p^{-2.5}\\), so \\(pQ'/Q=-1.5\\).",
+    "independent_derivation": "p*(-600 p^-2.5)/(400 p^-1.5)=−1.5.",
+    "alignment": "Statically aligned",
+    "source_mapping": "No matching negative-demand elasticity assertion.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 14,
+    "topic": "Break-even sensitivity.",
+    "prompt": "For \\((p-15)q=900\\), \\(p>15\\), find \\(dq/dp\\) and evaluate at \\(p=45\\).",
+    "worked_solution": "\\(q=900/(p-15)\\), \\(dq/dp=-900/(p-15)^2\\). At \\(p=45\\), \\(q=30\\) and \\(dq/dp=-1\\) unit per currency-unit increase.",
+    "independent_derivation": "q=900/(p−15);at45 q30,derivative−1.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Matching45/15/900 q30 andslope−1 asserts.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 15,
+    "topic": "Bond yield.",
+    "prompt": "A one-period cash flow of 110 is priced at 100, so \\(P(y)=110/(1+y)\\). Find \\(y\\), \\(dP/dy\\), and \\(dy/dP\\) at the quoted price.",
+    "worked_solution": "\\(y=110/100-1=0.1\\); \\(dP/dy=-110/(1.1)^2=-1000/11\\approx-90.9091\\); \\(dy/dP=-11/1000=-0.011\\) per currency unit.",
+    "independent_derivation": "y=.1;dP/dy=−1000/11;inverse−11/1000.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Matching yield/inverse slope;dP/dy value not explicitly asserted.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 16,
+    "topic": "Concavity.",
+    "prompt": "Find concavity intervals and inflection points for \\(f(x)=x^3-6x^2+4\\).",
+    "worked_solution": "\\(f''(x)=6x-12\\). Concave down for \\(x<2\\), up for \\(x>2\\); inflection point \\((2,-12)\\).",
+    "independent_derivation": "Second derivative6x−12 changes sign at2;f(2)=−12.",
+    "alignment": "Statically aligned",
+    "source_mapping": "No matching concavity-sign-change assertion.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 17,
+    "topic": "Inflection counterexample.",
+    "prompt": "Show that \\(f''(0)=0\\) is not sufficient for an inflection point using \\(f(x)=x^4\\).",
+    "worked_solution": "For \\(x^4\\), \\(f''(x)=12x^2\\ge0\\) on both sides of zero, so concavity does not change.",
+    "independent_derivation": "12x² is nonnegative on both sides;no inflection at0.",
+    "alignment": "Statically aligned",
+    "source_mapping": "No matching x^4 no-inflection assertion.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 18,
+    "topic": "Finite differences.",
+    "prompt": "For \\(f(x)=x^3\\), \\(x=2\\), and \\(h=0.1\\), calculate forward, backward, and centered first differences. Compare with \\(f'(2)\\).",
+    "worked_solution": "\\(f'(2)=12\\). Forward \\(=12.61\\), backward \\(=11.41\\), centered \\(=12.01\\).",
+    "independent_derivation": "Exact cubic stencils12±6h+h² and12+h²;h1/10.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Centered12.01 asserted;forward/backward not in this checker.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 19,
+    "topic": "Second difference.",
+    "prompt": "Apply \\([f(x+h)-2f(x)+f(x-h)]/h^2\\) to \\(f(x)=x^2\\), and explain the result.",
+    "worked_solution": "The second difference of \\(x^2\\) equals \\(2\\) for any nonzero \\(h\\) in exact arithmetic, matching \\(f''(x)=2\\).",
+    "independent_derivation": "Expand (x+h)²−2x²+(x−h)²=2h².",
+    "alignment": "Statically aligned",
+    "source_mapping": "Quadratic second estimate2 asserted.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 20,
+    "topic": "Richardson extrapolation.",
+    "prompt": "Derive the combination \\((4D^0_{h/2}-D^0_h)/3\\), assuming the leading centered-difference error is proportional to \\(h^2\\).",
+    "worked_solution": "If \\(D_h^0=f'+ch^2+O(h^4)\\), then \\(4D^0_{h/2}-D_h^0=3f'+O(h^4)\\); divide by 3.",
+    "independent_derivation": "4*(ch²/4)−ch² cancels leading term;divide3.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related Richardson examples;proof remains manual.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 21,
+    "topic": "Nonsmooth warning.",
+    "prompt": "Explain why the centered difference of \\(f(x)=|x|\\) at zero cannot establish a derivative.",
+    "worked_solution": "The left slope is \\(-1\\) and the right slope \\(+1\\). The symmetric difference is zero by cancellation, despite the derivative not existing.",
+    "independent_derivation": "One-sided slopes−1 and+1 disagree despite symmetric zero.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Related kink examples;nonexistence conclusion manual.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 22,
+    "topic": "Step selection.",
+    "prompt": "State the heuristic powers of machine epsilon for forward first, centered first, and centered second derivatives. Explain why they are not universally optimal.",
+    "worked_solution": "Forward first: \\(\\epsilon^{1/2}\\); centered first: \\(\\epsilon^{1/3}\\); centered second: \\(\\epsilon^{1/4}\\), each multiplied by an appropriate scale. The optimum also depends on smoothness, cancellation, noise, and domain constraints.",
+    "independent_derivation": "Balance O(h) orO(h²) with roundoff O(eps/h) orO(eps/h²);heuristic only.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Three heuristic powers not explicitly asserted here.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 23,
+    "topic": "Multi-cash-flow present value.",
+    "prompt": "Consider \\(V(r)=100e^{-r}+200e^{-2r}+300e^{-3r}\\). Derive \\(V'(r)\\) and \\(V''(r)\\). State the sign of each for real \\(r\\).",
+    "worked_solution": "\\(V'=-100e^{-r}-400e^{-2r}-900e^{-3r}<0\\); \\(V''=100e^{-r}+800e^{-2r}+2700e^{-3r}>0\\) for real \\(r\\).",
+    "independent_derivation": "Differentiate each positive exponential term;negative first andpositive second for all real r.",
+    "alignment": "Statically aligned",
+    "source_mapping": "No matching three-flow schedule assertion.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 24,
+    "topic": "Rate sensitivity units.",
+    "prompt": "For \\(V(r)=Ce^{-tr}\\), explain the difference between \\(V'(r)\\) and the approximate value change from a 1-basis-point increase.",
+    "worked_solution": "\\(V'(r)=-tV(r)\\) is a derivative per unit of decimal rate. A 1-basis-point change is \\(h=0.0001\\), so \\(\\Delta V\\approx-0.0001\\,tV(r)\\), not \\(V'(r)\\) itself.",
+    "independent_derivation": "Decimal-rate derivative must be multiplied by1e-4 for1bp approximation.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Shock computations related;rate-unit interpretation manual.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  },
+  {
+    "number": 25,
+    "topic": "Comparator acceptance.",
+    "prompt": "Design a verification protocol for an analytic first derivative and a centered numerical estimate. Include at least three step sizes, absolute and relative tolerances, domain checks, and recorded evidence.",
+    "worked_solution": "Derive an analytic formula independently; evaluate centered differences at, for example, \\(h=10^{-2},10^{-3},10^{-4}\\) when all perturbed points are valid; compare \\(|D_h-f'|\\) with \\(a_{\\mathrm{tol}}+r_{\\mathrm{tol}}|f'|\\); log variable units, domain, step sizes, Python version, output, and failures; investigate nonconvergence and do not treat agreement as proof.",
+    "independent_derivation": "Protocol must use independent analytic reference,valid perturbed domains,multiple h,tolerances and actual evidence;agreement is not proof.",
+    "alignment": "Statically aligned",
+    "source_mapping": "Design/evidence protocol requires actual execution and review.",
+    "python_runtime_status": "Not run this batch: execution environment unavailable"
+  }
+]
