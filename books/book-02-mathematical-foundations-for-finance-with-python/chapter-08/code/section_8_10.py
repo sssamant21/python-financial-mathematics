@@ -1,5 +1,6 @@
 """Section 8.10: Chapter 08 exercises and financial acceptance lab."""
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -46,30 +47,47 @@ def log_return(start, end):
     s, e = finite(start, "start"), finite(end, "end")
     if s <= 0 or e <= 0:
         raise ValueError("prices must be positive")
-    return math.log1p((e-s)/s)
+    if 0.5*s <= e <= 2*s:
+        return math.log1p((e-s)/s)
+    sm, se = math.frexp(s)
+    em, ee = math.frexp(e)
+    return math.log(em/sm)+(ee-se)*math.log(2.0)
 
-def break_even_quantity(price, variable_cost, fixed_cost):
+def _rational_report(exact):
+    """Round the complete represented-input expression once; allow signed underflow."""
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("result outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("result outside finite float range")
+    return result
+
+def _break_inputs(price, variable_cost, fixed_cost):
     p, c, k = finite(price, "price"), finite(variable_cost, "variable_cost"), finite(fixed_cost, "fixed_cost")
     if k <= 0 or p <= c:
         raise ValueError("require fixed_cost > 0 and price > variable_cost")
-    return k/(p-c)
+    return Fraction(p), Fraction(c), Fraction(k)
+
+def break_even_quantity(price, variable_cost, fixed_cost):
+    p, c, k = _break_inputs(price, variable_cost, fixed_cost)
+    return _rational_report(k/(p-c))
 
 def break_even_derivative(price, variable_cost, fixed_cost):
-    p, c = finite(price, "price"), finite(variable_cost, "variable_cost")
-    q = break_even_quantity(p, c, fixed_cost)
-    return -q/(p-c)
+    p, c, k = _break_inputs(price, variable_cost, fixed_cost)
+    return _rational_report(-k/(p-c)**2)
 
 def bond_yield_from_price(payment, price):
     c, p = finite(payment, "payment"), finite(price, "price")
     if c <= 0 or p <= 0:
         raise ValueError("payment and price must be positive")
-    return c/p-1
+    return _rational_report((Fraction(c)-Fraction(p))/Fraction(p))
 
 def bond_yield_price_derivative(payment, price):
     c, p = finite(payment, "payment"), finite(price, "price")
     if c <= 0 or p <= 0:
         raise ValueError("payment and price must be positive")
-    return -c/(p*p)
+    return _rational_report(-Fraction(c)/Fraction(p)**2)
 
 def centered_first(function, x, step):
     if not callable(function):

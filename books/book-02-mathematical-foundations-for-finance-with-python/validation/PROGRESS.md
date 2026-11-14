@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-145 exact assessment runtime/alignment passed;V-142 remains latest full candidate Linux pass (601/388/602). Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-146 rational/log helper contracts passed;V-142 remains latest full candidate Linux pass (601/388/602). Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1272,3 +1272,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-145 checkpoint — Assessment runtime restored and exact-input mapping
 
 [Assessment alignment](chapter-08-assessment-alignment-followup.md):prior saved baseline runner passed2 compiled/2 commands/11 predicates. Expanded alignment passes48 exact-source and8 separate supplemental predicates;7 files compiled,3 commands passed (assessment demo+2 checkers),7 hashes verified before-after. Exact polynomial,financial,finite-difference,three-cash-flow and protocol inputs executed across named existing APIs;symbolic/design/missing-API cases remain explicitly separate. No Book2 numerical source changed. Fresh603/390/604 inventory is not a full run;V-142 remains latest full601/388/602. V-144 static/blocker history preserved. Thirty-five selected COV categories partial;none closed. Next:Section8.10 copied helper complete-range/log-return/bond/centered-preflight contracts;broader platform/independent acceptance remains pending. Book1 tracked independently.
+
+
+## V-146 checkpoint — Assessment rational/log helper contracts
+
+[Rational/log evidence](chapter-08-assessment-rational-log-followup.md):65 corrected predicates passed;40 initial passes/25 failures and identical replay retained. Independent120/180-digit log and1600/2200-digit rational references cover near-unity,wide-range,subnormal,signed-zero and final-overflow reporting. Eight selected files compiled,four commands passed including three checker invocations,eight hashes verified before-after. Fresh604/391/605 inventory is not a full run;V-142 remains latest full601/388/602 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.10 PV/shock and centered-copy complete-range/preflight/report contracts;broader platform/independent acceptance pending. Book1 tracked independently.

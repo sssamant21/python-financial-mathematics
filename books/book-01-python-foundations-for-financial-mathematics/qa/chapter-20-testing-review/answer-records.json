@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**PV:** 110 in one year at 10%. **Answer:** 100.",
+    "review": "110/1.1=100; exact-source PV110 predicate uses justified float tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**NPV:** [\u2212100,110] at 10%. **Answer:** 0.",
+    "review": "\u2212100+110/1.1=0; source known-NPV predicate and existing method executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Zero rate:** PV of 100 in one year. **Answer:** 100.",
+    "review": "Discount factor at zero is one; zero-rate source predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Negative rate:** PV of 95 at \u22125% for one year. **Answer:** 100.",
+    "review": "95/.95=100; negative-valid source predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Rate \u22121:** Valid for this model? **Answer:** No.",
+    "review": "Rate \u22121 gives zero discount base; source boundary rejection executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Return:** 100\u2192101.50. **Answer:** .015 or 1.5%.",
+    "review": "(101.5\u2212100)/100=.015; source known-return predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Zero start:** Valid return denominator? **Answer:** No.",
+    "review": "Zero denominator is undefined; source zero-start rejection executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Zero end:** Return from 100 to 0? **Answer:** \u22121.",
+    "review": "(0\u2212100)/100=\u22121; source zero-end predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Scaling:** Double all flows. **Answer:** NPV doubles.",
+    "review": "Linearity in flows gives factor two; source scaling predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Append zero:** Effect on NPV? **Answer:** None under the positional model.",
+    "review": "Appended zero contributes zero without shifting earlier positions; source predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Insert zero:** Effect? **Answer:** Later flows shift, so NPV can change.",
+    "review": "Inserting a middle zero shifts subsequent exponents; source counterexample executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Positive payment:** Increase rate. **Answer:** Its PV falls in this model.",
+    "review": "For t>0,C>0 derivative is \u2212t*C/(1+r)^(t+1)<0; selected source comparison executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Negative payment:** Increase rate. **Answer:** Its PV becomes less negative in this model.",
+    "review": "For t>0,C<0 derivative is positive; selected source comparison executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Verification:** What is checked? **Answer:** Implementation against specification.",
+    "review": "Specification comparison is verification; conceptual definition only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Model validation:** What is checked? **Answer:** Appropriateness of model and assumptions.",
+    "review": "Model and assumption appropriateness requires external context; design review only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Passing tests:** Do they prove every case? **Answer:** No.",
+    "review": "Finite examples cannot establish all cases; baseline suite passed despite five added failing predicates.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Known value:** Why independent? **Answer:** To avoid reproducing the same implementation error.",
+    "review": "Independent Fraction expectations avoid repeating source log/exp arithmetic.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Absolute tolerance:** Units? **Answer:** The units of the output.",
+    "review": "Absolute differences have output units; conceptual dimensional review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Relative tolerance:** Units? **Answer:** Dimensionless.",
+    "review": "Ratio of output differences to scale is dimensionless; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Near zero:** Which tolerance is important? **Answer:** A justified absolute tolerance.",
+    "review": "A relative-only tolerance at zero is insufficient; benchmark uses absolute tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**NaN:** Valid input here? **Answer:** No.",
+    "review": "NaN is rejected; actual source predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Empty flows:** Valid input here? **Answer:** No.",
+    "review": "Empty sequence rejected; actual source predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Assertion:** Safe as the only production validation? **Answer:** No; optimization can remove assertions.",
+    "review": "Python optimization removes assert statements; optimized suite executed, API validation remains explicit.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Exception:** Why test it? **Answer:** To confirm invalid inputs are handled as specified.",
+    "review": "Invalid-input predicates confirm exception type; not every possible input covered.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Regression:** Purpose? **Answer:** Detect reintroduction of a known defect.",
+    "review": "Baseline/replay plus corrected return predicates retain the detected regression cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Integration:** Example? **Answer:** Test parsed cash flows feeding the calculation.",
+    "review": "Parsing-to-calculation is an integration proposal; shared-input F32 is not resolved here.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Unit test:** Example? **Answer:** Check NPV of a known sequence.",
+    "review": "Known sequence is a unit-level check; actual source unittest executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Model review:** Is it replaced by a unit test? **Answer:** No.",
+    "review": "Unit-level code outcomes do not judge model appropriateness; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Decimal:** Does it eliminate need for tests? **Answer:** No.",
+    "review": "Decimal still needs contracts, contexts, rounding and tests; no Decimal implementation claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Rounding:** Why document it? **Answer:** It can change reported financial results.",
+    "review": "Reporting rounding affects amounts; this source uses float reporting, not a currency policy.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Currency:** Does a numeric test verify it automatically? **Answer:** No.",
+    "review": "Numbers do not encode/verify currency semantics; conceptual limitation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Date:** Does this reference code support dated cash flows? **Answer:** No.",
+    "review": "Source enumerates annual integer periods; no dated-cash-flow API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Seed:** Does fixing one prove a simulation distribution is correct? **Answer:** No.",
+    "review": "A seed fixes selected draws, not distribution correctness; no simulation executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Data leakage:** Can reproducible code still contain it? **Answer:** Yes.",
+    "review": "Repeatability does not establish availability or prevent leakage; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**One-cent error:** Across one million units? **Answer:** 10,000.",
+    "review": "0.01*1000000=10000; independent arithmetic predicate executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Fees:** Included in reference code automatically? **Answer:** No.",
+    "review": "No fee parameter; source signature/design inspection.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Underflow:** Can it occur despite tests passing? **Answer:** Yes.",
+    "review": "Finite-result tests do not prevent discount-factor underflow; broad NPV extreme range remains unreviewed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Evidence:** What should be recorded? **Answer:** Inputs, command, versions and actual outcome.",
+    "review": "Saved results include input representations, commands, versions, output and retained failures.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference test:** Does inclusion establish execution? **Answer:** No.",
+    "review": "Source inclusion alone is not execution; this batch adds actual command records without rewriting historical publication claims.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Certification:** Do these examples establish production readiness? **Answer:** No.",
+    "review": "No production, platform, independent reviewer or release acceptance follows from these scoped checks.",
+    "status": "reviewed scoped"
+  }
+]

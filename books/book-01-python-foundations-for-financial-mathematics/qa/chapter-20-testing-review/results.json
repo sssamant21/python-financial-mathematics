@@ -1,0 +1,290 @@
+{
+  "selected_revision": null,
+  "candidate_based_on": "815dc77f8f5accf0166b6e4c107f5d861a86f8c2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_sha256": "6b5bf7b98a1169a51aec2e5c3cf9da743ca86926358354b18fc8e808998b504d",
+  "manuscript_sha256": "53f9b4da316b3bb16e35a2095c8723b05001afb6d5badca9af4c2aa0ea564115",
+  "commands": [
+    {
+      "label": "source demo/tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/tmp/tmpn7v7m_a4/financial_testing_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "NPV example: 0.0\n",
+      "stderr": "test_append_zero (__main__.FinancialTests.test_append_zero) ... ok\ntest_bad_rate (__main__.FinancialTests.test_bad_rate) ... ok\ntest_empty (__main__.FinancialTests.test_empty) ... ok\ntest_known_npv (__main__.FinancialTests.test_known_npv) ... ok\ntest_known_return (__main__.FinancialTests.test_known_return) ... ok\ntest_negative_valid_rate (__main__.FinancialTests.test_negative_valid_rate) ... ok\ntest_nonfinite (__main__.FinancialTests.test_nonfinite) ... ok\ntest_positive_flow_monotonicity (__main__.FinancialTests.test_positive_flow_monotonicity) ... ok\ntest_scaling (__main__.FinancialTests.test_scaling) ... ok\ntest_zero_end (__main__.FinancialTests.test_zero_end) ... ok\ntest_zero_rate (__main__.FinancialTests.test_zero_rate) ... ok\ntest_zero_start (__main__.FinancialTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "source compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tmp/tmpn7v7m_a4/financial_testing_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_testing_basics"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "optimized source validation/tests",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "/tmp/tmpn7v7m_a4/financial_testing_basics.py"
+      ],
+      "returncode": 0,
+      "stdout": "NPV example: 0.0\n",
+      "stderr": "test_append_zero (__main__.FinancialTests.test_append_zero) ... ok\ntest_bad_rate (__main__.FinancialTests.test_bad_rate) ... ok\ntest_empty (__main__.FinancialTests.test_empty) ... ok\ntest_known_npv (__main__.FinancialTests.test_known_npv) ... ok\ntest_known_return (__main__.FinancialTests.test_known_return) ... ok\ntest_negative_valid_rate (__main__.FinancialTests.test_negative_valid_rate) ... ok\ntest_nonfinite (__main__.FinancialTests.test_nonfinite) ... ok\ntest_positive_flow_monotonicity (__main__.FinancialTests.test_positive_flow_monotonicity) ... ok\ntest_scaling (__main__.FinancialTests.test_scaling) ... ok\ntest_zero_end (__main__.FinancialTests.test_zero_end) ... ok\ntest_zero_rate (__main__.FinancialTests.test_zero_rate) ... ok\ntest_zero_start (__main__.FinancialTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+    }
+  ],
+  "predicates": [
+    {
+      "name": "known NPV",
+      "actual": "0.0",
+      "expected": "0.0",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "PV110",
+      "actual": "100.0",
+      "expected": "100.0",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "zero rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "negative valid",
+      "actual": "100.0",
+      "expected": "100.0",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent represented-input NPV [-100, 110]",
+      "actual": "4.761904761904759",
+      "expected": "4.761904761904762",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent represented-input NPV [5, -7, 9, 3]",
+      "actual": "12.448559670781892",
+      "expected": "12.448559670781894",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent represented-input NPV [0, 100, 30]",
+      "actual": "104.16666666666667",
+      "expected": "104.16666666666667",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "scaling",
+      "actual": "9.523809523809518",
+      "expected": "9.523809523809518",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "append zero",
+      "actual": "4.761904761904759",
+      "expected": "4.761904761904759",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "insert zero shifts later flow",
+      "actual": "-9.090909090909093",
+      "expected": "-9.090909090909092",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "positive payment monotonicity",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative payment direction",
+      "actual": "True",
+      "expected": "True",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "generator flows",
+      "actual": "0.0",
+      "expected": "0.0",
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "empty",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate boundary",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "below boundary",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN flow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite rate",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool flow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "text flow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized flow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized rate",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "known return",
+      "actual": "0.015",
+      "expected": "0.015",
+      "tolerance": 1e-16,
+      "passed": true
+    },
+    {
+      "name": "zero end",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero start",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative end",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN start",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized return input",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "near-unity complete return",
+      "actual": "1.99584030953472e-16",
+      "expected": "1.99584030953472e-16",
+      "tolerance": 7.98336123813888e-31,
+      "passed": true
+    },
+    {
+      "name": "true final return overflow",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "one cent across million",
+      "actual": "10000",
+      "expected": "10000",
+      "tolerance": 0,
+      "passed": true
+    }
+  ],
+  "supplemental_fault_detection": {
+    "scope": "Existing test on deliberate supplemental faulty copy and unchanged source control;not original-source failure",
+    "faulty": {
+      "returncode": 1,
+      "stdout": "NPV example: 0.0\n",
+      "stderr": "test_known_return (__main__.FinancialTests.test_known_return) ... FAIL\n\n======================================================================\nFAIL: test_known_return (__main__.FinancialTests.test_known_return)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmpn7v7m_a4/faulty_variant.py\", line 45, in test_known_return\n    self.assertAlmostEqual(simple_return(100,101.5),.015)\nAssertionError: 1.5 != 0.015 within 7 places (1.485 difference)\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n"
+    },
+    "source_control": {
+      "returncode": 0,
+      "stdout": "NPV example: 0.0\n",
+      "stderr": "test_known_return (__main__.FinancialTests.test_known_return) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n"
+    }
+  },
+  "existing_unique_methods": 12,
+  "new_historical_unique_methods": 0,
+  "limits": "Annual positional NPV normal-range/return/input scope;NPV extreme discount/sum/underflow/resource behavior not certified;no model/platform/independent acceptance"
+}
