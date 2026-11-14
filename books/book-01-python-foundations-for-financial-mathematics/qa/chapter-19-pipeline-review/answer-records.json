@@ -1,0 +1,322 @@
+[
+  {
+    "number": 1,
+    "topic": "Determinism:",
+    "prompt": "Same inputs and rules under a compatible environment.",
+    "worked_answer": "Same logical result.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 2,
+    "topic": "Replay:",
+    "prompt": "Meaning?",
+    "worked_answer": "Rerun from identified inputs and configuration.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 3,
+    "topic": "Idempotence:",
+    "prompt": "Meaning?",
+    "worked_answer": "Repeating an operation has the same intended effect.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 4,
+    "topic": "Append:",
+    "prompt": "Is a deterministic transform automatically idempotent at the sink?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 5,
+    "topic": "Input hash:",
+    "prompt": "What does it identify?",
+    "worked_answer": "Hashed raw bytes.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 6,
+    "topic": "Hash:",
+    "prompt": "Does it prove accuracy?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 7,
+    "topic": "Whitespace:",
+    "prompt": "Can it change raw JSON hash?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 8,
+    "topic": "Canonical JSON:",
+    "prompt": "Why define it?",
+    "worked_answer": "To obtain a consistent output representation.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 9,
+    "topic": "Key order:",
+    "prompt": "Does sorted output help byte comparison?",
+    "worked_answer": "Yes, under the stated serialization.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 10,
+    "topic": "Timestamp:",
+    "prompt": "Should run time be expected to match between replays?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 11,
+    "topic": "Return:",
+    "prompt": "100\u2192101.50.",
+    "worked_answer": ".015 or 1.5%.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 12,
+    "topic": "Missing row:",
+    "prompt": "Does sample transform produce a partial result?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 13,
+    "topic": "Duplicate JSON key:",
+    "prompt": "Behavior?",
+    "worked_answer": "Reject.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 14,
+    "topic": "NaN:",
+    "prompt": "Accepted as a price?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 15,
+    "topic": "Currency:",
+    "prompt": "Is EUR accepted?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 16,
+    "topic": "Date ordering:",
+    "prompt": "Is a repeated date accepted?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 17,
+    "topic": "Code revision:",
+    "prompt": "Why retain it?",
+    "worked_answer": "It identifies transformation logic.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 18,
+    "topic": "Decimal context:",
+    "prompt": "Why record it?",
+    "worked_answer": "Precision and rounding can affect results.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 19,
+    "topic": "Source:",
+    "prompt": "Is its identity in the example manifest?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Actual reference transform/hash/serialization execution and arithmetic"
+  },
+  {
+    "number": 20,
+    "topic": "Availability:",
+    "prompt": "Is point-in-time correctness established?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 21,
+    "topic": "Watermark:",
+    "prompt": "Can a max event time alone miss late records?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 22,
+    "topic": "Revision:",
+    "prompt": "Why preserve versions?",
+    "worked_answer": "To reconstruct what was available when.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 23,
+    "topic": "Retry:",
+    "prompt": "Is repeating a write always safe?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 24,
+    "topic": "Sink key:",
+    "prompt": "Why define one?",
+    "worked_answer": "To support documented duplicate and update handling.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 25,
+    "topic": "Partial failure:",
+    "prompt": "Should a batch silently appear complete?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 26,
+    "topic": "Counts:",
+    "prompt": "Why retain them?",
+    "worked_answer": "To reconcile inputs, outputs and failures.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 27,
+    "topic": "Secrets:",
+    "prompt": "Include them in manifest?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 28,
+    "topic": "Raw input:",
+    "prompt": "Why retain where permitted?",
+    "worked_answer": "For lineage and reprocessing.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 29,
+    "topic": "Hash:",
+    "prompt": "Does it prove authenticity by itself?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 30,
+    "topic": "Version:",
+    "prompt": "Why record Python and dependencies?",
+    "worked_answer": "To support compatible replay.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 31,
+    "topic": "Floating point:",
+    "prompt": "Can order change last digits?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 32,
+    "topic": "Tolerance:",
+    "prompt": "When useful?",
+    "worked_answer": "When numerical equivalence is required rather than exact bytes.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 33,
+    "topic": "Schema:",
+    "prompt": "Can a unit change be breaking?",
+    "worked_answer": "Yes.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 34,
+    "topic": "Market calendar:",
+    "prompt": "Validated by this example?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 35,
+    "topic": "Corporate actions:",
+    "prompt": "Validated?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 36,
+    "topic": "External writes:",
+    "prompt": "Performed here?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 37,
+    "topic": "Reproducible:",
+    "prompt": "Does it mean correct?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 38,
+    "topic": "Resource limits:",
+    "prompt": "Needed for untrusted input?",
+    "worked_answer": "Yes, according to the environment.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 39,
+    "topic": "Tests:",
+    "prompt": "Does inclusion mean execution?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  },
+  {
+    "number": 40,
+    "topic": "Production:",
+    "prompt": "Does this example certify readiness?",
+    "worked_answer": "No.",
+    "review": "Aligned under identified input/code and controlled active-context scope",
+    "scope": "Conceptual/design review;no idempotent sink,provider,revision or independent acceptance"
+  }
+]

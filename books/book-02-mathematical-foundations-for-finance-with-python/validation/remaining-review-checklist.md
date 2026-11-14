@@ -2,8 +2,8 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `c0afbc3ae3367b263bc0aacef202bb4a80495f50` (V-140)
-**Latest scoped source:** V-139 candidate based on `da173ca7e4bffb6ec72bf861f30b242dda78f910`; exact3-file manifest in [evidence](chapter-08-comparator-followup.md).
-**Disposition:** V-140 full candidate Linux pass including V-137–V-139;independent review and release approval pending.
+**Latest scoped source:** V-141 candidate based on `5106894e21bb783f3a895eb6df58e0f66bc9aed9`; exact5-file manifest in [evidence](chapter-08-factory-followup.md).
+**Disposition:** V-141 scoped factory follow-up after V-140 full candidate Linux pass;independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1120,3 +1120,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-140 checkpoint — Full pinned candidate Linux refresh
 
 [V-140 full runtime](runtime-refresh-2026-11-14-r2.md) at `c0afbc3ae3367b263bc0aacef202bb4a80495f50`:600/600 Python files compiled,387/387 check/test scripts passed,601/601 required source/fixture hashes verified before/after. Includes V-137/V-138 checkers and V-139 comparator source/report changes;earlier failures,replays and accuracy diagnostics retained separately. Exact source staging runner,per-file exits/output digests and full manifest saved. One candidate Linux runtime only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Next:Section8.9 financial model-factory complete-range/domain and report serialization/input-resource contracts. Book1 tracked independently.
+
+
+## V-141 checkpoint — Financial factory complete range/domain and report controls
+
+[Factory evidence](chapter-08-factory-followup.md):130 corrected predicates passed;79 passes/51 initial numerical/input-contract mismatches and identical replay retained. Complete exponential/polynomial/rational model reporting,finite numeric input/domain and final error/sign conventions documented. Independent2000/2600-digit references,16-report JSON roundtrip and seven-call facade checks retained. Five files compiled/three scripts passed/five hashes verified before-after;legacy and V-139 report checks unchanged. Fresh601/388/602 inventory is not a full run;V-140 remains latest full600/387/601 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.9 step-ladder/report resource and late-input-failure contracts,then assessment alignment;broader numerical/platform/independent acceptance remains open. Book1 tracked independently.

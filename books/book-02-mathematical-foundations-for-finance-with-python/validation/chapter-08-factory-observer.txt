@@ -1,0 +1,9 @@
+from pathlib import Path
+import subprocess,sys,tempfile,shutil,json,hashlib,platform
+root=Path(sys.argv[1]).resolve();mode=sys.argv[2];b=root/'books/book-02-mathematical-foundations-for-finance-with-python';v=b/'validation';code=b/'chapter-08/code';base='5106894e21bb783f3a895eb6df58e0f66bc9aed9'
+with tempfile.TemporaryDirectory() as tmp:
+    tmp=Path(tmp);rel=str((code/'section_8_09.py').relative_to(root));source=subprocess.check_output(['git','-C',str(root),'show',base+':'+rel]) if mode.startswith('baseline') else (code/'section_8_09.py').read_bytes();(tmp/'section_8_09.py').write_bytes(source);shutil.copy2(code/'section_8_01.py',tmp/'section_8_01.py');shutil.copy2(code/'check_section_09_factory_range.py',tmp/'check_section_09_factory_range.py');z=subprocess.run([sys.executable,'check_section_09_factory_range.py'],cwd=tmp,text=True,capture_output=True)
+    # JSON report precedes human-readable count; preserve actual process output too.
+    rows=json.JSONDecoder().raw_decode(z.stdout)[0]
+d=dict(candidate_based_on=base,mode=mode,source_blob=hashlib.sha1(b'blob '+str(len(source)).encode()+bytes([0])+source).hexdigest(),predicates=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr,python=platform.python_version(),limits='Selected complete financial model/domain and JSON/facade contracts;not real-market or independent acceptance')
+(v/('chapter-08-factory-'+mode+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(d['passed'],'passed;',d['failed'],'failed;actual exit',z.returncode)

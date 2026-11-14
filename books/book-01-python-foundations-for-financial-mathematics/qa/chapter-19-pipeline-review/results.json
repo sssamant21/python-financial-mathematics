@@ -1,0 +1,270 @@
+{
+  "selected_revision": null,
+  "candidate_based_on": "5106894e21bb783f3a895eb6df58e0f66bc9aed9",
+  "manuscript_sha256": "ad66afacda1a4caa7d647ef28c6ff15dd4e8c45068076d45ef36bb4a36065356",
+  "source_sha256": "0e423aa0947f20d61437061eb507a743550b320697afb51b05ca65baa2bf41c6",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "active_decimal_context": "Context(prec=28, rounding=ROUND_HALF_EVEN, Emin=-999999, Emax=999999, capitals=1, clamp=0, flags=[], traps=[InvalidOperation, DivisionByZero, Overflow])",
+  "input_sha256": "0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/tmp/tmp760e7b69/reproducible_pipeline.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}\n{\"input_sha256\": \"0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2\", \"output_sha256\": \"1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa\", \"python_version\": \"3.12.14\", \"record_count\": 2, \"schema_version\": 1}\n",
+      "stderr": "test_bad_currency (__main__.PipelineTests.test_bad_currency) ... ok\ntest_bad_encoding (__main__.PipelineTests.test_bad_encoding) ... ok\ntest_bad_order (__main__.PipelineTests.test_bad_order) ... ok\ntest_duplicate_key (__main__.PipelineTests.test_duplicate_key) ... ok\ntest_input_hash_changes (__main__.PipelineTests.test_input_hash_changes) ... ok\ntest_missing (__main__.PipelineTests.test_missing) ... ok\ntest_nonfinite (__main__.PipelineTests.test_nonfinite) ... ok\ntest_nonstandard_json (__main__.PipelineTests.test_nonstandard_json) ... ok\ntest_output_hash (__main__.PipelineTests.test_output_hash) ... ok\ntest_replay (__main__.PipelineTests.test_replay) ... ok\ntest_return (__main__.PipelineTests.test_return) ... ok\ntest_wrong_type (__main__.PipelineTests.test_wrong_type) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tmp/tmp760e7b69/reproducible_pipeline.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import reproducible_pipeline"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "predicates": [
+    {
+      "name": "independent canonical benchmark",
+      "actual": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "expected": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "passed": true
+    },
+    {
+      "name": "exact replay",
+      "actual": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', {'schema_version': 1, 'input_sha256': '0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2', 'output_sha256': '1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa', 'python_version': '3.12.14', 'record_count': 2})",
+      "expected": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', {'schema_version': 1, 'input_sha256': '0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2', 'output_sha256': '1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa', 'python_version': '3.12.14', 'record_count': 2})",
+      "passed": true
+    },
+    {
+      "name": "input identity",
+      "actual": "0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2",
+      "expected": "0426380b00958f3a278ba6d580e7339b35fd7af29c92fe9995015d8a080ffbd2",
+      "passed": true
+    },
+    {
+      "name": "output identity",
+      "actual": "1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa",
+      "expected": "1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa",
+      "passed": true
+    },
+    {
+      "name": "manifest schema/count",
+      "actual": "(1, 2)",
+      "expected": "(1, 2)",
+      "passed": true
+    },
+    {
+      "name": "manifest Python",
+      "actual": "3.12.14",
+      "expected": "3.12.14",
+      "passed": true
+    },
+    {
+      "name": "whitespace changes input identity",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "whitespace preserves output",
+      "actual": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', '1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa')",
+      "expected": "(b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}', '1c091d2b3b4dcdb8ea5560068ba6a6734b805159880931fcf28dfebf4b35d8fa')",
+      "passed": true
+    },
+    {
+      "name": "JSON indentation preserves output",
+      "actual": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "expected": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "passed": true
+    },
+    {
+      "name": "input bytes preserved",
+      "actual": "b'[{\"instrument\":\"EXAMPLE\",\"date\":\"2026-01-05\",\"close\":\"100.00\",\"currency\":\"USD\"},{\"instrument\":\"EXAMPLE\",\"date\":\"2026-01-06\",\"close\":\"101.50\",\"currency\":\"USD\"}]'",
+      "expected": "b'[{\"instrument\":\"EXAMPLE\",\"date\":\"2026-01-05\",\"close\":\"100.00\",\"currency\":\"USD\"},{\"instrument\":\"EXAMPLE\",\"date\":\"2026-01-06\",\"close\":\"101.50\",\"currency\":\"USD\"}]'",
+      "passed": true
+    },
+    {
+      "name": "no context metadata promised",
+      "actual": "False",
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "wrong bytes type",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "invalid UTF8",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "invalid JSON",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "not list",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "zero rows",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "one row",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON key",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "nonstandard constant",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "missing field",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "extra field",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "wrong type",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "blank instrument",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "currency",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "calendar date",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "compact date",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "nonfinite",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "zero close",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "negative close",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "different instruments",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "equal date",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reversed dates",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "instrument normalization",
+      "actual": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "expected": "b'{\"currency\":\"USD\",\"end_date\":\"2026-01-06\",\"instrument\":\"EXAMPLE\",\"simple_return\":\"0.015\",\"start_date\":\"2026-01-05\"}'",
+      "passed": true
+    },
+    {
+      "name": "near unity complete return",
+      "actual": "1E-30",
+      "expected": "1E-30",
+      "passed": true
+    },
+    {
+      "name": "controlled precision2 ordinary return",
+      "actual": "0.015",
+      "expected": "0.015",
+      "passed": true
+    },
+    {
+      "name": "controlled active ROUND_FLOOR",
+      "actual": "0.33",
+      "expected": "0.33",
+      "passed": true
+    },
+    {
+      "name": "controlled active ROUND_CEILING",
+      "actual": "0.34",
+      "expected": "0.34",
+      "passed": true
+    }
+  ],
+  "existing_methods": 12,
+  "new_historical_unique_methods": 0,
+  "limits": "Controlled active context;no source/availability/byte portability/idempotent sink/platform/independent acceptance"
+}

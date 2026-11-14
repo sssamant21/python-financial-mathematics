@@ -2,6 +2,7 @@
 import json
 import math
 from fractions import Fraction
+from section_8_01 import _scaled_pv
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -88,48 +89,51 @@ def step_ladder(function, first, x, steps, second=None,
                                 abs_tol, rel_tol) for step in steps]
 
 def accumulation_model():
-    p, rate = 1000.0, 0.04
-    f = lambda t:p*math.exp(rate*t)
-    d1 = lambda t:rate*f(t)
-    d2 = lambda t:rate*rate*f(t)
-    return f, d1, d2, 5.0, "years"
+    principal, rate = Fraction(1000), Fraction(0.04)
+    def expression(t, order):
+        t = finite(t, "years")
+        return _scaled_pv(principal*rate**order,rate*Fraction(t))
+    return (lambda t:expression(t,0),lambda t:expression(t,1),
+            lambda t:expression(t,2),5.0,"years")
 
 def discounted_cash_flow_model():
-    cash, years = 5000.0, 4.0
-    f = lambda rate:cash*math.exp(-rate*years)
-    d1 = lambda rate:-years*f(rate)
-    d2 = lambda rate:years*years*f(rate)
-    return f, d1, d2, 0.03, "decimal rate"
+    def expression(rate, order):
+        rate = finite(rate, "rate")
+        return _scaled_pv(Fraction(5000)*Fraction(-4)**order,-4*Fraction(rate))
+    return (lambda rate:expression(rate,0),lambda rate:expression(rate,1),
+            lambda rate:expression(rate,2),0.03,"decimal rate")
 
 def profit_model():
-    def check(q):
+    def quantity(q):
+        q = finite(q, "quantity")
         if not 0 <= q <= 500:
             raise ValueError("quantity must be in [0,500]")
+        return Fraction(q)
     def f(q):
-        check(q)
-        return -1000+80*q-0.25*q*q
+        q = quantity(q)
+        return _report(-1000+80*q-q*q/4)
     def d1(q):
-        check(q)
-        return 80-0.5*q
+        return _report(80-quantity(q)/2)
     def d2(q):
-        check(q)
+        quantity(q)
         return -0.5
-    return f, d1, d2, 160.0, "units"
+    return f,d1,d2,160.0,"units"
 
 def ratio_model():
-    def check(x):
+    def denominator(x):
+        x = finite(x, "x")
         if x <= 0:
             raise ValueError("x must be positive")
+        return Fraction(50)+3*Fraction(x)
     def f(x):
-        check(x)
-        return (100+8*x)/(50+3*x)
+        d = denominator(x)
+        # x=(d-50)/3; evaluate the complete rational expression.
+        return _report((100+8*(d-50)/3)/d)
     def d1(x):
-        check(x)
-        return 100/(50+3*x)**2
+        return _report(Fraction(100)/denominator(x)**2)
     def d2(x):
-        check(x)
-        return -600/(50+3*x)**3
-    return f, d1, d2, 2.0, "time units"
+        return _report(Fraction(-600)/denominator(x)**3)
+    return f,d1,d2,2.0,"time units"
 
 def run_demo():
     models = {

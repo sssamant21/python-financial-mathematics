@@ -1,0 +1,25 @@
+"""Scoped execution and source-hash capture. Run from repository root."""
+import hashlib,importlib.util,json,platform,py_compile,subprocess,sys
+from pathlib import Path
+root=Path(sys.argv[1] if len(sys.argv)>1 else '.').resolve()
+b=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=b/'chapter-08/code';v=b/'validation'
+paths=[code/n for n in ['section_8_01.py','section_8_09.py','check_section_8_09.py','check_section_09_complete_report.py','check_section_09_factory_range.py']]
+def digest(p):
+    x=p.read_bytes();return hashlib.sha1(b'blob '+str(len(x)).encode()+bytes([0])+x).hexdigest()
+manifest=[dict(path=str(p.relative_to(root)),sha=digest(p)) for p in paths]
+for p in paths:py_compile.compile(str(p),doraise=True)
+scripts=[]
+for name in ['check_section_8_09.py','check_section_09_complete_report.py','check_section_09_factory_range.py']:
+    z=subprocess.run([sys.executable,str(code/name)],cwd=code,capture_output=True,text=True,timeout=60)
+    scripts.append(dict(path=str((code/name).relative_to(root)),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+sys.path.insert(0,str(code));spec=importlib.util.spec_from_file_location('step_check',paths[-1]);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);rows=m.observations()
+assert all(digest(root/x['path'])==x['sha'] for x in manifest)
+tracked=subprocess.check_output(['git','ls-files'],cwd=root,text=True).splitlines()
+tracked=list(set(tracked+[str(paths[-1].relative_to(root))]));own=[n for n in tracked if n.startswith(str(b.relative_to(root))+'/')]
+py=[n for n in own if n.endswith('.py')];checks=[n for n in py if Path(n).name.startswith(('check_','test_'))];fixture=str((b/'chapter-01/data/section-1.14-cases.json').relative_to(root))
+assert fixture in own and (root/fixture).is_file()
+required=py+[fixture]
+d=dict(candidate_based_on='5106894e21bb783f3a895eb6df58e0f66bc9aed9',python=sys.version,platform=platform.platform(),compiled=len(paths),scripts=scripts,manifest=manifest,verified_before_after=True,predicates=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),fresh_inventory=dict(python_files=len(py),check_test_scripts=len(checks),required_python_fixture_blobs=len(required)),limits='Selected complete model/domain/JSON/facade contracts;V140 latest full before refresh;35 COV partial,none closed')
+(v/'chapter-08-factory-scope.json').write_text(json.dumps(d,indent=2)+'\n')
+print(d['passed'],'factory predicates;',len(paths),'compiled;',len(scripts),'scripts;inventory',d['fresh_inventory'])
+assert d['failed']==0 and all(x['returncode']==0 for x in scripts)

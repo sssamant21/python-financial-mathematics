@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-140 full candidate Linux pass (600 sources/387 scripts/601 required blobs),including V-137–V-139 changes. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-141 scoped model-factory review;V-140 remains latest full candidate Linux pass (600/387/601) pending refresh. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1247,3 +1247,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-140 checkpoint — Full pinned candidate Linux refresh
 
 [V-140 full runtime](runtime-refresh-2026-11-14-r2.md) at `c0afbc3ae3367b263bc0aacef202bb4a80495f50`:600/600 Python files compiled,387/387 check/test scripts passed,601/601 required source/fixture hashes verified before/after. Includes V-137/V-138 checkers and V-139 comparator source/report changes;earlier failures,replays and accuracy diagnostics retained separately. Exact source staging runner,per-file exits/output digests and full manifest saved. One candidate Linux runtime only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Next:Section8.9 financial model-factory complete-range/domain and report serialization/input-resource contracts. Book1 tracked independently.
+
+
+## V-141 checkpoint — Financial factory complete range/domain and report controls
+
+[Factory evidence](chapter-08-factory-followup.md):130 corrected predicates passed;79 passes/51 initial numerical/input-contract mismatches and identical replay retained. Complete exponential/polynomial/rational model reporting,finite numeric input/domain and final error/sign conventions documented. Independent2000/2600-digit references,16-report JSON roundtrip and seven-call facade checks retained. Five files compiled/three scripts passed/five hashes verified before-after;legacy and V-139 report checks unchanged. Fresh601/388/602 inventory is not a full run;V-140 remains latest full600/387/601 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.9 step-ladder/report resource and late-input-failure contracts,then assessment alignment;broader numerical/platform/independent acceptance remains open. Book1 tracked independently.
