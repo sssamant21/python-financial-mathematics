@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `3db1be648a9acba29d706e2dba0138540adacc7f` (V-136)
+**Full-runtime candidate source revision:** `c0afbc3ae3367b263bc0aacef202bb4a80495f50` (V-140)
 **Latest scoped source:** V-139 candidate based on `da173ca7e4bffb6ec72bf861f30b242dda78f910`; exact3-file manifest in [evidence](chapter-08-comparator-followup.md).
-**Disposition:** V-139 scoped comparator follow-up after V-136 full candidate Linux pass; independent review and release approval pending.
+**Disposition:** V-140 full candidate Linux pass including V-137–V-139;independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1115,3 +1115,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-139 checkpoint — Comparator complete quotients and exact gates
 
 [Comparator evidence](chapter-08-comparator-followup.md):80 corrected predicates passed;expanded baseline retains73 passes/7 failures and identical replay,with initial77 records separate. Exact sampled quotients/unrounded Richardson and exact represented-report tolerance thresholds correct two range failures and five subnormal false-pass flags. Existing denominator/preflight and callback/error/zero-sign contracts retained. Three files compiled/two scripts passed/three hashes verified before-after;legacy checker passed unchanged. Fresh600/387/601 inventory is not a full run;V-136 remains latest full597/384/598 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.9 financial model-factory complete-range/domain and report serialization/input-resource contracts;broader numerical/platform/independent acceptance remains open. Book1 tracked independently.
+
+
+## V-140 checkpoint — Full pinned candidate Linux refresh
+
+[V-140 full runtime](runtime-refresh-2026-11-14-r2.md) at `c0afbc3ae3367b263bc0aacef202bb4a80495f50`:600/600 Python files compiled,387/387 check/test scripts passed,601/601 required source/fixture hashes verified before/after. Includes V-137/V-138 checkers and V-139 comparator source/report changes;earlier failures,replays and accuracy diagnostics retained separately. Exact source staging runner,per-file exits/output digests and full manifest saved. One candidate Linux runtime only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Next:Section8.9 financial model-factory complete-range/domain and report serialization/input-resource contracts. Book1 tracked independently.

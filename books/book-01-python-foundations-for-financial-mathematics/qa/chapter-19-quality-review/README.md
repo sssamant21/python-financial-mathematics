@@ -79,3 +79,5 @@ No source accuracy,freshness,independent reconciliation,revision completeness,pu
 |40|Quality checks:|No.|Conceptual/design review;not independent source or point-in-time acceptance|
 
 Next:Section19.12 Reproducible Data Pipelines formal workflow/local-answer review. Broader Book1 validation remains in progress.
+
+Verified candidate source revision: `c0afbc3ae3367b263bc0aacef202bb4a80495f50`. [Publication source manifest](publication-verification.json). The unchanged source manuscript and tested observer blobs match this revision.

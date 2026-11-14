@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-139 scoped comparator contracts; V-136 remains latest full candidate Linux pass (597/384/598) pending refresh. Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-140 full candidate Linux pass (600 sources/387 scripts/601 required blobs),including V-137–V-139 changes. Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 597/597 at `3db1be648a9acba29d706e2dba0138540adacc7f`. [V-136](runtime-refresh-2026-11-14.md). |
-| Automated script execution | Full candidate Linux pass | 384/384 at `3db1be648a9acba29d706e2dba0138540adacc7f`;598 required blobs verified before/after. [V-136](runtime-refresh-2026-11-14.md). |
+| Python compilation | Full candidate Linux pass | 600/600 at `c0afbc3ae3367b263bc0aacef202bb4a80495f50`. [V-140](runtime-refresh-2026-11-14-r2.md). |
+| Automated script execution | Full candidate Linux pass | 387/387 at `c0afbc3ae3367b263bc0aacef202bb4a80495f50`;601 required blobs verified before/after. [V-140](runtime-refresh-2026-11-14-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1242,3 +1242,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-139 checkpoint — Comparator complete quotients and exact gates
 
 [Comparator evidence](chapter-08-comparator-followup.md):80 corrected predicates passed;expanded baseline retains73 passes/7 failures and identical replay,with initial77 records separate. Exact sampled quotients/unrounded Richardson and exact represented-report tolerance thresholds correct two range failures and five subnormal false-pass flags. Existing denominator/preflight and callback/error/zero-sign contracts retained. Three files compiled/two scripts passed/three hashes verified before-after;legacy checker passed unchanged. Fresh600/387/601 inventory is not a full run;V-136 remains latest full597/384/598 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.9 financial model-factory complete-range/domain and report serialization/input-resource contracts;broader numerical/platform/independent acceptance remains open. Book1 tracked independently.
+
+
+## V-140 checkpoint — Full pinned candidate Linux refresh
+
+[V-140 full runtime](runtime-refresh-2026-11-14-r2.md) at `c0afbc3ae3367b263bc0aacef202bb4a80495f50`:600/600 Python files compiled,387/387 check/test scripts passed,601/601 required source/fixture hashes verified before/after. Includes V-137/V-138 checkers and V-139 comparator source/report changes;earlier failures,replays and accuracy diagnostics retained separately. Exact source staging runner,per-file exits/output digests and full manifest saved. One candidate Linux runtime only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Next:Section8.9 financial model-factory complete-range/domain and report serialization/input-resource contracts. Book1 tracked independently.
