@@ -214,3 +214,5 @@ Project 35 also includes `bridge.py` and `test_bridge.py` for conditional contin
 Project 35 also includes `convergence.py` for exploratory Brownian-bridge monitoring-grid sensitivity, with explicit non-matched-grid sampling caveats and synthetic tests. See [Project 35](35-barrier-option-monte-carlo/README.md).
 
 Project 35 includes `matched_convergence.py` for nested common-Brownian-path grid diagnostics; run `python -m unittest -v test_matched_convergence.py` from its directory. Synthetic only; independent barrier benchmark pending.
+
+Project 35 now includes `analytical.py` (reflection-density continuous-barrier benchmark) and `test_analytical.py`. Run `python -m unittest -v test_analytical.py` from its folder; exact-source CI and independent validation remain pending.
