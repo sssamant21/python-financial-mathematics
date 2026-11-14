@@ -80,3 +80,5 @@ This is not context-independent replay or byte compatibility across code revisio
 |40|Production:|No.|Conceptual/design review;no idempotent sink,provider,revision or independent acceptance|
 
 F28/F32/F165/F185 and broader integration/platform/independent acceptance remain open. Next:Section19.13 Avoiding Look-Ahead and Data Leakage formal workflow/local-answer review.
+
+Executable source revision: `a847812cb63d75354199723e5489cd84a579988d`. [Publication source and fixture manifest](publication-verification.json). Tested manuscript/observer and exact raw/output/source-manifest bytes match this revision;source API metadata omissions remain explicit.

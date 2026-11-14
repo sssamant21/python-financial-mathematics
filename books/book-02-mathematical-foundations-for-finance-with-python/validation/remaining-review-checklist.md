@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `c0afbc3ae3367b263bc0aacef202bb4a80495f50` (V-140)
+**Full-runtime candidate source revision:** `a847812cb63d75354199723e5489cd84a579988d` (V-142)
 **Latest scoped source:** V-141 candidate based on `5106894e21bb783f3a895eb6df58e0f66bc9aed9`; exact5-file manifest in [evidence](chapter-08-factory-followup.md).
-**Disposition:** V-141 scoped factory follow-up after V-140 full candidate Linux pass;independent review and release approval pending.
+**Disposition:** V-142 full candidate Linux pass including V-141;independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1125,3 +1125,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-141 checkpoint — Financial factory complete range/domain and report controls
 
 [Factory evidence](chapter-08-factory-followup.md):130 corrected predicates passed;79 passes/51 initial numerical/input-contract mismatches and identical replay retained. Complete exponential/polynomial/rational model reporting,finite numeric input/domain and final error/sign conventions documented. Independent2000/2600-digit references,16-report JSON roundtrip and seven-call facade checks retained. Five files compiled/three scripts passed/five hashes verified before-after;legacy and V-139 report checks unchanged. Fresh601/388/602 inventory is not a full run;V-140 remains latest full600/387/601 pending refresh. Thirty-five selected COV categories partial;none closed. Next:Section8.9 step-ladder/report resource and late-input-failure contracts,then assessment alignment;broader numerical/platform/independent acceptance remains open. Book1 tracked independently.
+
+
+## V-142 checkpoint — Full pinned candidate Linux refresh
+
+[V-142 full runtime](runtime-refresh-2026-11-14-r3.md) at `a847812cb63d75354199723e5489cd84a579988d`:601/601 Python files compiled,388/388 check/test scripts passed,602/602 required source/fixture hashes verified before/after. Includes V-141 complete factory/input/report changes and checker;initial mismatches/replays remain separate. Exact staging runner,per-file exits/output digests and source manifest retained. One candidate Linux execution only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Next:Section8.9 step-ladder/report resource and late-input-failure contracts,then assessment alignment. Book1 tracked independently.

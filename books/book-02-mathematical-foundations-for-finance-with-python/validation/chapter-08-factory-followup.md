@@ -29,3 +29,5 @@ Sixty-three numerical reference cases cover seven accumulation points,six discou
 The default demo has fixed16 reports. step_ladder still consumes a caller iterable into memory with no built-in length cap;callers must bound input,callback cost and output size. Standard JSON roundtrip does not certify schema evolution,serialization portability,provider accuracy or sink publication. Broader conditioning/branch/noise,resource and independent mathematical/editorial/platform/release/canonical acceptance remain open.
 
 Next substantive item:Section8.9 step-ladder/report resource and late-input-failure contracts,then Chapter8 assessment alignment. Preserve earlier accuracy diagnostics;no certification claimed. Book1 progresses through independent trackers.
+
+Executable source revision: `a847812cb63d75354199723e5489cd84a579988d`. [Publication source manifest](chapter-08-factory-publication-verification.json). All five scoped tested Python blobs match this revision;metadata-only pins do not change executable inputs.
