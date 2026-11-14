@@ -21,3 +21,5 @@ Four Python files compiled,two selected scripts passed,and four Git input hashes
 This batch establishes selected deterministic noise/cancellation/quantization behavior and correct arithmetic,not derivative accuracy for arbitrary functions,an optimal step selector,provider noise estimation,a smoothness bound,a robust production algorithm or resource guarantees. Thirty-five selected COV categories remain partially addressed;none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending.
 
 Next substantive item:COV-51 noisy-step sweep/reporting diagnostics with independently known error trends and explicit callback/input budgets;then remaining helper-copy/conditioning obligations. Book1 has separate trackers and progression.
+
+Executable source revision: `45aee3efd7f82b754b01420f8c170492a6b601ad`. [Publication source manifest](chapter-08-noise-publication-verification.json). Four scoped tested source/checker blobs match this revision; metadata pins do not alter executable inputs.

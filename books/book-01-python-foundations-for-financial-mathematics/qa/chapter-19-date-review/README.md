@@ -84,3 +84,5 @@ The reference source deliberately accepts fixed offsets only. A separate zoneinf
 | 40 | Normalization: | No. | Conceptual/design/source-contract review only |
 
 F28 notebook/platform,F32 shared-input integration,F165 tails,F185 signed-normal-terminal integration and independent acceptance remain open. Market-calendar versions,provider timestamp truth,full revision history,sequence/tie-breaking,input resource limits and other platforms are outside this scope. Next:Section19.10 Currency and Unit Normalization formal workflow/local-answer review.
+
+Executable source revision: `45aee3efd7f82b754b01420f8c170492a6b601ad`. [Publication source manifest](publication-verification.json). Manuscript/observer hashes match the tested inputs; installed-zone file digests are retained in results as external supplemental dependencies.
