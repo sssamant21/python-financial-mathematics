@@ -49,7 +49,7 @@ Thirty-five self-contained labs complement the financial-mathematics books witho
 | [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py`, `sensitivity.py` |
 | [34](34-implied-volatility/README.md) | Synthetic Black–Scholes implied volatility inversion, bid/ask spread and strike/maturity conditioning | Synthetic only | `iv.py`, `sensitivity.py` |
 
-| [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo and pathwise vanilla bound | Seeded synthetic | `barrier.py` |
+| [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival | Seeded synthetic | `barrier.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -208,3 +208,5 @@ Project 33 additionally provides `sensitivity.py` and `test_sensitivity.py` for 
 Project 33 extension: [nested Brownian-path hedge-grid refinement](33-delta-hedging-error/README.md#nested-brownian-path-hedge-grid-refinement-synthetic) compares matched 13/26/52/104 hedge dates with fee and turnover diagnostics.
 
 Project 35 matched-grid monitoring extension: `35-barrier-option-monte-carlo/monitoring.py` and `test_monitoring.py`; common Brownian paths across nested observation grids and an analytical vanilla Black–Scholes comparison. Run `python -m unittest -v test_monitoring.py` in that folder. Exact-source hosted CI and independent barrier benchmark pending.
+
+Project 35 also includes `bridge.py` and `test_bridge.py` for conditional continuous-monitoring survival under GBM, matched discrete/continuous payoff bounds, and paired sampling-error diagnostics. Run `python -m unittest -v test_bridge.py` inside its folder. Independent barrier benchmark and historical calibration remain pending.
