@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Thirty-three self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Thirty-four self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -47,6 +47,7 @@ Thirty-three self-contained labs complement the financial-mathematics books with
 | [32](32-binomial-option-exercise/README.md) | CRR European/American put tree, early exercise, convergence, recursive CRR and finite-difference PDE cross-checks | Hypothetical | `binomial.py` |
 
 | [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py`, `sensitivity.py` |
+| [34](34-implied-volatility/README.md) | Synthetic Black–Scholes implied volatility inversion and quote validation | Synthetic only | `iv.py` |
 
 ## Quick start (Windows PowerShell)
 
