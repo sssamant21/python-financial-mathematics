@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-148 assessment PV/shock scoped pass;V-147 remains latest full candidate Linux pass (604/391/605). Independent review,supported platforms and release approval remain pending.
+**Overall status:** In progress — V-149 centered-copy scoped pass;V-147 remains latest full candidate Linux pass (604/391/605),pending refresh. Independent/platform/release acceptance pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1287,3 +1287,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-148 checkpoint — Assessment complete PV/shock facade
 
 [PV/shock evidence](chapter-08-assessment-pv-shock-followup.md):69 corrected predicates passed;40 initial passes/29 final baseline source mismatches and identical replay retained. Earlier signed-zero oracle corrections remain separate,not defect counts. Independent1300/1800-digit complete PV/derivative/Taylor/exponential-level difference references and explicit zero/input/report conventions checked. Assessment delegates to reviewed Section8.6 routines. Nine files compiled,five commands/four checker invocations passed,nine hashes verified before-after. Fresh605/392/606 inventory is not a full run;V-147 remains latest full604/391/605. Thirty-five selected COV categories partial,none closed. Next:Section8.10 centered-copy perturbation/preflight,callback and complete quotient/report contracts;then refresh full runtime after those changes. Independent/platform/release acceptance pending. Book1 tracked independently.
+
+
+## V-149 checkpoint — Assessment centered-copy contracts
+
+[Centered evidence](chapter-08-assessment-centered-followup.md):68 corrected predicates passed;53 initial passes/15 failed predicates and identical replay retained. Independent2200/2600-digit represented-sample sums/quotients,explicit zero-sign policy,finite-distinct preflight and callback order/error-consumption checked. Wrappers delegate to reviewed Section8.8 routines. Ten files compiled,six commands/five checker invocations passed,ten hashes verified before-after. Fresh606/393/607 inventory is not full execution;full pinned refresh next. Thirty-five selected COV categories partial,none closed. Then:Section8.10 chapter-report serialization/fields/validation-order coverage against assessment mapping;conditioning/resource/platform/independent acceptance pending. Book1 tracked independently.

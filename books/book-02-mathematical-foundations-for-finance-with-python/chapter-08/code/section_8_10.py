@@ -1,6 +1,8 @@
 """Section 8.10: Chapter 08 exercises and financial acceptance lab."""
 import math
 from fractions import Fraction
+from section_8_08 import (centered_difference as _reviewed_centered_first,
+                          second_difference as _reviewed_centered_second)
 from section_8_06 import (present_value as _reviewed_pv, pv_rate_first,
                           pv_rate_second, pv_shock, pv_shock_exact)
 
@@ -92,21 +94,12 @@ def bond_yield_price_derivative(payment, price):
 def centered_first(function, x, step):
     if not callable(function):
         raise TypeError("function must be callable")
-    x, h = finite(x, "x"), finite(step, "step")
-    if h <= 0 or x+h == x or x-h == x:
-        raise ValueError("step must be positive and representable")
-    return (finite(function(x+h), "f(x+h)")-finite(function(x-h), "f(x-h)"))/(2*h)
+    return _reviewed_centered_first(function, x, step)
 
 def centered_second(function, x, step):
     if not callable(function):
         raise TypeError("function must be callable")
-    x, h = finite(x, "x"), finite(step, "step")
-    if h <= 0 or x+h == x or x-h == x:
-        raise ValueError("step must be positive and representable")
-    if not math.isfinite(x+h) or not math.isfinite(x-h) or h*h==0 or not math.isfinite(h*h):
-        raise ValueError("perturbations and squared step must be finite and nonzero")
-    return (finite(function(x+h), "f(x+h)")-2*finite(function(x), "f(x)")
-            +finite(function(x-h), "f(x-h)"))/(h*h)
+    return _reviewed_centered_second(function, x, step)
 
 def chapter_report():
     pv, first, second = pv_rate_derivatives(10000, 0.04, 5)

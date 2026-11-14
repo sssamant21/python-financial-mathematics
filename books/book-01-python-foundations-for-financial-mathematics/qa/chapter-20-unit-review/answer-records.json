@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Unit test:** What does it check? **Answer:** A focused behavior under controlled inputs.",
+    "review": "Focused behavior under controlled inputs;conceptual definition,not whole-model acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Arrange:** What happens? **Answer:** Inputs and expectations are prepared.",
+    "review": "Known cashflow/rate/period values arrange each executed source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Act:** What happens? **Answer:** The unit is invoked.",
+    "review": "Source present_value invocation is act stage;actual calls recorded.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Assert:** What happens? **Answer:** The observed behavior is checked.",
+    "review": "Expected values/exceptions/invariants are asserted;predicate outcomes retained.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**PV:** 110 at 10% for one period. **Answer:** 100.",
+    "review": "110/1.1=100 independently;source known-value method and rational predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Negative rate:** 95 at \u22125% for one period. **Answer:** 100.",
+    "review": "95/.95=100;negative-rate source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Zero rate:** PV of 100 after one period. **Answer:** 100.",
+    "review": "At r0 discount1;source ordinary and enormous-integer-period identity probes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Zero periods:** PV of 100. **Answer:** 100.",
+    "review": "At n0 discount1;source zero-period predicate and source method.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Negative cash flow:** \u2212110 at 10% for one period. **Answer:** \u2212100.",
+    "review": "\u2212110/1.1=\u2212100;source predicate plus separate sign-defect mutation detection.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Rate \u22121:** Valid? **Answer:** No.",
+    "review": "r\u22121 invalid before identities;source boundary predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Period \u22121:** Valid? **Answer:** No.",
+    "review": "n\u22121 rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Period 1.5:** Accepted by this contract? **Answer:** No.",
+    "review": "Noninteger n1.5 rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Boolean period:** Accepted? **Answer:** No.",
+    "review": "bool deliberately excluded by exact int-type guard;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**NaN:** Accepted? **Answer:** No.",
+    "review": "Nonfinite cashflow/rate rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Tolerance:** Why use it for some floats? **Answer:** Representation and rounding can differ slightly.",
+    "review": "Normal rational references compared at absolute1e\u221210;no arbitrary widening.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Absolute tolerance:** Units? **Answer:** Output units.",
+    "review": "Absolute tolerance has output units;dimensional conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Relative tolerance:** Units? **Answer:** Dimensionless.",
+    "review": "Relative tolerance is dimensionless;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Near zero:** What matters? **Answer:** A justified absolute tolerance.",
+    "review": "Near-zero isclose control executed with absolute1e\u221210;no universal monetary budget.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**math.isclose:** Does it use an asymmetric reference-only formula? **Answer:** No.",
+    "review": "isclose symmetric max rule differs from reference-only sum;conceptual alignment with20.2 evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Exception test:** Why use assertRaises? **Answer:** To verify the expected failure type.",
+    "review": "Existing assertRaises methods and external exception-type predicates executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Linearity:** Double cash flow. **Answer:** PV doubles at fixed rate and time.",
+    "review": "PV(2C)=2PV(C) at fixed r,n;source linearity predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Monotonicity:** Increase rate for a positive future payment. **Answer:** PV falls.",
+    "review": "For C>0,n>0 derivative \u2212n*C/(1+r)^(n+1)<0;selected source comparison.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Negative payment:** Does the same inequality hold? **Answer:** Its direction reverses.",
+    "review": "C<0 reverses rate sensitivity;selected source comparison.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Fixture:** Purpose? **Answer:** Provide controlled repeatable inputs.",
+    "review": "Fixed numerical tuples are fixtures;no external/live data needed here.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Live API:** Good default for a unit test? **Answer:** No; isolate it and test integration separately.",
+    "review": "No live market API used;integration proposal remains design review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Mock:** Does it prove a real API contract? **Answer:** No.",
+    "review": "A mock only tests its own assumed interface;no real API integration claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Credentials:** Should unit tests require a developer's real secrets? **Answer:** No.",
+    "review": "No credentials required or used;source has no credential interface.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Current date:** Why avoid an uncontrolled dependency? **Answer:** It makes tests time-dependent.",
+    "review": "No current-date dependency;all examples fixed integer periods.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Independent benchmark:** Why use it? **Answer:** To avoid reproducing an implementation defect.",
+    "review": "Normal PV oracle uses rational powers,not source log/exp arithmetic.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Regression:** Purpose? **Answer:** Detect reintroduction of a defect.",
+    "review": "Retained finite/identity regression cases and baseline replay discriminate known failures.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Compilation:** Does it prove financial correctness? **Answer:** No.",
+    "review": "Compilation executed separately;it does not establish finance correctness.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Pass:** Does one passing case prove all inputs? **Answer:** No.",
+    "review": "Twelve original methods passed on baseline despite five added failures;no all-input proof.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Model validation:** Replaced by unit tests? **Answer:** No.",
+    "review": "Independent model review remains open;unit evidence is narrower.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Dates:** Supported by reference function? **Answer:** No.",
+    "review": "Function accepts integer periods,not date/calendar inputs.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Currency:** Validated by reference function? **Answer:** No.",
+    "review": "No currency input/validation;static contract review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Fees:** Included automatically? **Answer:** No.",
+    "review": "No fee argument;static contract review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Underflow:** Can it occur outside tested cases? **Answer:** Yes.",
+    "review": "Nonzero extreme discount/large-period scaling and underflow remain outside scoped fix.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Evidence:** What should be recorded? **Answer:** Inputs, command, versions and actual outcome.",
+    "review": "Results retaininputs,argv,versions,source hashes,stdout/stderr andactual exits.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference tests:** Were they executed merely by inclusion? **Answer:** No.",
+    "review": "Historical publication nonexecution statement retained;current actual execution separately recorded.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production:** Do these tests certify readiness? **Answer:** No.",
+    "review": "No production/platform/independent release acceptance from this batch.",
+    "status": "reviewed scoped"
+  }
+]
