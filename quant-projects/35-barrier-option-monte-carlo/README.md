@@ -25,3 +25,14 @@ Compare `--steps 12` and `--steps 252` using identical seeds, while recognizing 
 ## Guardrails and limitations
 
 Inputs must be finite, with positive spot/strike/maturity/volatility, barrier above initial spot, at least two antithetic pairs and one monitoring step. Exponentially unsafe rate and per-step volatility values are rejected. No broker access, external data, dividends, volatility smile, jump risk, transaction costs, early exercise, or live trading. The sample standard error is descriptive and does not establish calibrated confidence interval coverage. Further numerical benchmarking, continuous barrier correction, exact published-source CI and independent model review remain outstanding.
+
+
+## Matched-grid monitoring-frequency lab
+
+Run `python -m unittest -v test_monitoring.py`, `python -m compileall -q monitoring.py test_monitoring.py`, and `python monitoring.py --pairs 2000 --seed 2026`. Python 3.11+ standard library only.
+
+The new `monitoring.py` simulates **one common fine Brownian grid** and reuses exactly the same antithetic price paths for 12, 36, 84 and 252 observation dates. Each coarse grid is a subset of the finer grid. For each simulated path, adding barrier checks cannot increase an up-and-out payoff, so the estimated prices must be non-increasing as monitoring becomes more frequent. This *pathwise* comparison avoids confusing a change in random samples with a monitoring effect.
+
+The independent European vanilla-call Black–Scholes formula is `S0 Φ(d1) - K exp(-rT) Φ(d2)`, with `d1=[ln(S0/K)+(r+σ²/2)T]/(σ√T)` and `d2=d1-σ√T`. The experiment reports its analytical value, the Monte Carlo vanilla estimate, and their difference. The vanilla check **does not validate barrier pricing**; it checks a shared underlying simulation component. The standard errors use independent *antithetic pair means*, not individual correlated paths.
+
+Only divisible, nested monitoring grids are accepted; all grids share the maturity observation. Inputs are bounded and checked for finite values. This is a **discrete-monitoring** experiment, not a continuously monitored barrier option. No dividends, smile, jumps, historical calibration, market quotes, live trading or independent barrier benchmark are included. CI exact-source execution and independent review remain unverified until confirmed.
