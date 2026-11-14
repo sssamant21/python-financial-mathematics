@@ -247,6 +247,13 @@ jobs:
           python -m compileall -q grid_refinement.py test_grid_refinement.py
           python grid_refinement.py --paths 10
 
+      - name: Validate Project 34 implied volatility
+        run: |
+          cd quant-projects/34-implied-volatility
+          python -m unittest -v test_iv.py
+          python -m compileall -q iv.py test_iv.py
+          python iv.py --spot 100 --strike 105 --years 1 --rate 0.02 --vol 0.25 --kind call
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
