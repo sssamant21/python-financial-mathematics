@@ -255,6 +255,13 @@ jobs:
           python iv.py --spot 100 --strike 105 --years 1 --rate 0.02 --vol 0.25 --kind call
           python sensitivity.py --spread 0.05
 
+      - name: Validate Project 35 discrete barrier Monte Carlo
+        run: |
+          cd quant-projects/35-barrier-option-monte-carlo
+          python -m unittest -v test_barrier.py
+          python -m compileall -q barrier.py test_barrier.py
+          python barrier.py --pairs 100 --steps 12 --seed 2026
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
