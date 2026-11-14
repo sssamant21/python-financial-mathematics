@@ -1,0 +1,17 @@
+{
+  "initial_candidate": "2ee70e207d55c70306860378c29bc0bf331ea834",
+  "corrected_candidate": "23d3517e5720e8e7ef541f420cf24412c19c5d8b",
+  "changed_python_files": [
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py"
+  ],
+  "existing_test_methods": [
+    "test_squared_step_underflow",
+    "test_squared_step_overflow",
+    "test_unchanged_perturbation",
+    "test_normal_quadratic",
+    "test_first_derivative_denominator_overflow"
+  ],
+  "new_historical_unique_methods": 0,
+  "patch": "diff --git a/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py b/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py\nindex 9b392f3b..dd6cb8d0 100644\n--- a/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py\n+++ b/books/book-02-mathematical-foundations-for-finance-with-python/chapter-08/code/check_difference_denominators.py\n@@ -8,21 +8,21 @@ from section_8_10 import centered_second\n \n class DifferenceDenominators(unittest.TestCase):\n     def test_squared_step_underflow(self):\n-        # Section8.6 now evaluates the exact squared-step sampled quotient.\n+        # Sections8.6/8.8/8.10 evaluate the complete squared-step sampled quotient.\n         # Callback x*x has already underflowed: zero is not its true derivative.\n         self.assertEqual(centered_second_difference(lambda x:x*x,0,1e-200),0)\n         self.assertEqual(second_difference(lambda x:x*x,0,1e-200),0)\n         for fn in (centered_second,):\n-            with self.subTest(function=fn.__module__),self.assertRaises(ValueError):\n-                fn(lambda x:x*x,0,1e-200)\n+            with self.subTest(function=fn.__module__):\n+                self.assertEqual(fn(lambda x:x*x,0,1e-200),0)\n         with self.assertRaises(ValueError):\n             compare_derivatives(lambda x:x*x,lambda x:2*x,0,1e-200,lambda x:2)\n     def test_squared_step_overflow(self):\n         self.assertEqual(centered_second_difference(lambda x:1,0,1e200),0)\n         self.assertEqual(second_difference(lambda x:1,0,1e200),0)\n         for fn in (centered_second,):\n-            with self.subTest(function=fn.__module__),self.assertRaises(ValueError):\n-                fn(lambda x:1,0,1e200)\n+            with self.subTest(function=fn.__module__):\n+                self.assertEqual(fn(lambda x:1,0,1e200),0)\n     def test_unchanged_perturbation(self):\n         with self.assertRaises(ValueError): centered_second_difference(lambda x:x*x,1,1e-30)\n     def test_normal_quadratic(self):\n",
+  "limits": "Only Python change between full-run candidates is two denominator expectations and a comment;other changed files are scoped evidence/trackers."
+}

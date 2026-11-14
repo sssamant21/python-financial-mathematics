@@ -18,7 +18,7 @@ Source wrappers now preserve callable-first validation and delegate to reviewed 
 
 COV-51 remains partial;35 selected categories partial,none closed. Conditioning,analytic error budgets,broader callback/resource/report interfaces,independent mathematical/editorial review,supported platforms,release and canonical approval remain pending. Next:Section8.10 chapter-report serialization/field/validation-order coverage against existing assessment mapping,then next substantive tracker obligation. Book1 tracked independently.
 
-Executable source/checker revision:`2ee70e207d55c70306860378c29bc0bf331ea834`. [Pinned initial ten-input manifest](chapter-08-assessment-centered-publication-verification.json).
+Executable source/checker revision:`23d3517e5720e8e7ef541f420cf24412c19c5d8b`. [Pinned eleven-input manifest](chapter-08-assessment-centered-publication-verification.json).
 
 
 ### Historical denominator expectations and initial full-run failure
@@ -26,3 +26,5 @@ Executable source/checker revision:`2ee70e207d55c70306860378c29bc0bf331ea834`. [
 The first full refresh at2ee70e207d55c70306860378c29bc0bf331ea834 exposed two failed assertions in one existing checker:[actual two-failure replay](chapter-08-denominator-contract-initial.json). Those assertions required Section8.10 to reject an unrepresentable float h² even though reviewed Section8.6/8.8 already returned the complete sampled quotient. They now require the exact sampled result0,without changing tolerances. At h1e−200,the callback x*x itself rounds both side samples to0;the resulting sampled estimate0 is NOT the analytic second derivative2. At h1e200,the constant callback gives exact zero numerator,so the estimate0 is valid.
 
 [Corrected checker output](chapter-08-denominator-contract-corrected.json) passes the same five existing methods;no new historical methods. [Replay/staging runner](chapter-08-denominator-contract-replay.txt) retains the original checker from the failed candidate. A separate[first staging-harness failure](chapter-08-denominator-contract-harness-failure.json) was a missing Section8.9 dependency,not a numerical-source defect;the runner dependency list was corrected and both actual initial/corrected checker outcomes rerun. Full initial failure and corrected full rerun are recorded separately under V-150.
+
+[Candidate comparison](chapter-08-denominator-contract-comparison.json) verifies the historical checker is the only changed Python file between full-run candidates and the same five test-method names remain;no new historical unique methods.
