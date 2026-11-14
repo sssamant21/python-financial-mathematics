@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `23d3517e5720e8e7ef541f420cf24412c19c5d8b` (V-150)
-**Latest scoped source:** V-149 at `23d3517e5720e8e7ef541f420cf24412c19c5d8b`;[eleven-file source manifest](chapter-08-assessment-centered-publication-verification.json).
+**Latest scoped source:** V-151 at `3b0ae4584e827654ebc78be6d2fe8ca2c040ff5f`;[twelve-file source manifest](chapter-08-chapter-report-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
 **Disposition:** V-149 centered-copy scoped checks and V-150 full Python runtime passed;independent review/release approval pending.
 

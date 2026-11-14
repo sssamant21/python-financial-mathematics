@@ -15,3 +15,5 @@ Independent ordinary PV oracles use rational represented-rate powers. Return/mea
 The two separate comparison controls show math.isclose(abs_tol=...) retains its default relative tolerance,while rel_tol=0 can reject the same difference. Those are semantic demonstrations,not extra financial source cases. Date/calendar/DST,variance/outlier/model/currency/integration statements are conceptual/design reviews;no missing API execution is invented.
 
 Broader nonzero PV discount/underflow,collection/input resources,F28 notebook/platform,F32 shared-input integration,F165/F185 and independent/source/model/platform/release acceptance remain open. Chapter20 now4 scoped workflows/160 local answers. Next:Section20.5 Testing Floating-Point Results.
+
+Executable source/runner revision:`3b0ae4584e827654ebc78be6d2fe8ca2c040ff5f`. [Pinned input manifest](publication-verification.json).
