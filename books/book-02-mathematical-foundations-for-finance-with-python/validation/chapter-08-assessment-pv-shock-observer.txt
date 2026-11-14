@@ -1,0 +1,9 @@
+from pathlib import Path
+import subprocess,sys,tempfile,shutil,json,hashlib,platform
+root=Path(sys.argv[1]).resolve();mode=sys.argv[2];b=root/'books/book-02-mathematical-foundations-for-finance-with-python';v=b/'validation';code=b/'chapter-08/code';base='9392004a95ed37258177ee1cf1018d9170cbb3b3'
+with tempfile.TemporaryDirectory() as tmp:
+ tmp=Path(tmp);rel=str((code/'section_8_10.py').relative_to(root));raw=subprocess.check_output(['git','-C',str(root),'show',base+':'+rel]) if mode.startswith('baseline') else (code/'section_8_10.py').read_bytes();(tmp/'section_8_10.py').write_bytes(raw)
+ for n in ['section_8_01.py','section_8_06.py','check_section_10_pv_shock_range.py']:shutil.copy2(code/n,tmp/n)
+ z=subprocess.run([sys.executable,'check_section_10_pv_shock_range.py'],cwd=tmp,text=True,capture_output=True);rows=json.JSONDecoder().raw_decode(z.stdout)[0]
+d=dict(candidate_based_on=base,mode=mode,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),predicates=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr,python=platform.python_version(),limits='Selected assessment PV/shock complete expressions;centered-copy contracts and independent/platform acceptance remain open')
+(v/('chapter-08-assessment-pv-shock-'+mode+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(d['passed'],'passed;',d['failed'],'failed;actual exit',z.returncode)

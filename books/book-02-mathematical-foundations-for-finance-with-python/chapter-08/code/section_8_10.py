@@ -1,6 +1,8 @@
 """Section 8.10: Chapter 08 exercises and financial acceptance lab."""
 import math
 from fractions import Fraction
+from section_8_06 import (present_value as _reviewed_pv, pv_rate_first,
+                          pv_rate_second, pv_shock, pv_shock_exact)
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -26,22 +28,20 @@ def marginal_profit(quantity):
     return 50-0.4*q
 
 def present_value(amount, rate, years):
-    c, r, t = finite(amount, "amount"), finite(rate, "rate"), finite(years, "years")
-    if c < 0 or t < 0:
-        raise ValueError("amount and years must be nonnegative")
-    return c*math.exp(-r*t)
+    return _reviewed_pv(amount, rate, years)
 
 def pv_rate_derivatives(amount, rate, years):
+    # Keep years-first validation, then evaluate each complete expression.
     t = finite(years, "years")
-    pv = present_value(amount, rate, t)
-    return pv, -t*pv, t*t*pv
+    return (_reviewed_pv(amount, rate, t), pv_rate_first(amount, rate, t),
+            pv_rate_second(amount, rate, t))
 
 def pv_rate_shock(amount, rate, years, shock):
     h, t = finite(shock, "shock"), finite(years, "years")
-    pv, first, second = pv_rate_derivatives(amount, rate, t)
-    return {"first_order":first*h,
-            "second_order":first*h+0.5*second*h*h,
-            "exact":pv*math.expm1(-t*h)}
+    # A small shock may rescue a large derivative; do not round derivatives first.
+    return {"first_order":pv_shock(amount, rate, t, h, order=1),
+            "second_order":pv_shock(amount, rate, t, h, order=2),
+            "exact":pv_shock_exact(amount, rate, t, h)}
 
 def log_return(start, end):
     s, e = finite(start, "start"), finite(end, "end")

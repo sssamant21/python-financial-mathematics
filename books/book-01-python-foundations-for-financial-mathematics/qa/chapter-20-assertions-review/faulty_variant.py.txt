@@ -1,0 +1,73 @@
+import math
+from decimal import Decimal, Context, DecimalException, localcontext, ROUND_HALF_EVEN
+from fractions import Fraction
+import unittest
+
+def finite_number(value):
+    if type(value) not in (int,float):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+def npv(cashflows,rate):
+    flows=list(cashflows)
+    if not flows or not finite_number(rate) or rate<=-1:
+        raise ValueError("nonempty flows and finite rate > -1 required")
+    if any(not finite_number(x) for x in flows):
+        raise ValueError("finite numeric cash flows required")
+    try:
+        value=math.fsum(c*math.exp(-t*math.log1p(rate))
+                        for t,c in enumerate(flows[1:]))
+    except OverflowError as exc:
+        raise ValueError("discount calculation overflow") from exc
+    if not math.isfinite(value):
+        raise ValueError("nonfinite NPV")
+    return value
+
+def decimal_return(start,end):
+    if not isinstance(start,Decimal) or not isinstance(end,Decimal):
+        raise ValueError("Decimal prices required")
+    if not start.is_finite() or not end.is_finite() or start<=0 or end<0:
+        raise ValueError("positive start and nonnegative end required")
+    exact=(Fraction(end)-Fraction(start))/Fraction(start)
+    try:
+        with localcontext(Context(prec=28,rounding=ROUND_HALF_EVEN)):
+            result=Decimal(exact.numerator)/Decimal(exact.denominator)
+    except DecimalException as exc:
+        raise ValueError("return outside decimal reporting range") from exc
+    if not result.is_finite() or (exact != 0 and result == 0):
+        raise ValueError("return outside decimal reporting range")
+    return result
+
+class KnownValueTests(unittest.TestCase):
+    def test_one_period_pv(self):
+        self.assertTrue(math.isclose(npv([0,110],.1),100,rel_tol=0,abs_tol=1e-10))
+    def test_zero_npv(self):
+        self.assertTrue(math.isclose(npv([-100,110],.1),0,rel_tol=0,abs_tol=1e-10))
+    def test_zero_rate(self):
+        self.assertEqual(npv([0,100],0),100)
+    def test_negative_rate(self):
+        self.assertTrue(math.isclose(npv([0,95],-.05),100,rel_tol=0,abs_tol=1e-10))
+    def test_decimal_return(self):
+        self.assertEqual(decimal_return(Decimal("100"),Decimal("101.50")),Decimal(".015"))
+    def test_zero_end(self):
+        self.assertEqual(decimal_return(Decimal("100"),Decimal("0")),Decimal("-1"))
+    def test_scaling(self):
+        self.assertTrue(math.isclose(npv([-200,220],.05),2*npv([-100,110],.05),
+                                     rel_tol=1e-12,abs_tol=1e-10))
+    def test_append_zero(self):
+        self.assertTrue(math.isclose(npv([-100,110],.05),npv([-100,110,0],.05),
+                                     rel_tol=0,abs_tol=1e-10))
+    def test_invalid_rate(self):
+        with self.assertRaises(ValueError): npv([1],-1)
+    def test_empty(self):
+        with self.assertRaises(ValueError): npv([],.05)
+    def test_nonfinite(self):
+        with self.assertRaises(ValueError): npv([1,float("nan")],.05)
+    def test_invalid_start(self):
+        with self.assertRaises(ValueError): decimal_return(Decimal("0"),Decimal("1"))
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

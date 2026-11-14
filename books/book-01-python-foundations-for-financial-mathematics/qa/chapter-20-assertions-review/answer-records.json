@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Assertion:** What happens when its condition is false in a normal run? **Answer:** AssertionError is raised.",
+    "review": "Normal false assertion raises AssertionError; separate assert-False subprocess exit1 recorded.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Optimization:** Can Python omit assert statements under -O? **Answer:** Yes.",
+    "review": "Optimized assert-False supplemental subprocess exits0; exact source assertion fence also executes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Input validation:** Should production rely solely on assert? **Answer:** No.",
+    "review": "Explicit exception guards remain active under optimization; source normal/optimized suites pass.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**PV:** 110 one year at 10%. **Answer:** 100.",
+    "review": "110/1.1=100; PV110 source-call predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**NPV:** [\u2212100,110] at 10%. **Answer:** 0.",
+    "review": "\u2212100+110/1.1=0; zero-NPV predicate and existing method.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero rate:** PV of 100 in one year. **Answer:** 100.",
+    "review": "At r0 the discount factor is1; zero-rate predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Negative rate:** PV of 95 at \u22125% for one year. **Answer:** 100.",
+    "review": "95/.95=100; valid negative-rate predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Rate \u22121:** Valid for this model? **Answer:** No.",
+    "review": "r\u22121 gives zero discount base; source ValueError predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Return:** 100\u2192101.50. **Answer:** .015 or 1.5%.",
+    "review": "(101.50\u2212100)/100=.015 exactly in decimal model; source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Zero start:** Valid return denominator? **Answer:** No.",
+    "review": "Zero start denominator rejected; source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Zero end:** Return from 100 to 0? **Answer:** \u22121.",
+    "review": "(0\u2212100)/100=\u22121; source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Exact comparison:** Suitable for integer 2+2? **Answer:** Yes.",
+    "review": "2+2=4 exactly for these integers; executed predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Float:** Always compare with ==? **Answer:** No; consider numerical error.",
+    "review": "Float equality is conditional,not universal; known-value calls use explicit tolerances.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Absolute tolerance:** Units? **Answer:** Output units.",
+    "review": "Absolute tolerance carries output units; conceptual dimensional review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Relative tolerance:** Units? **Answer:** Dimensionless.",
+    "review": "Relative ratio is dimensionless; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Near zero:** Which tolerance matters? **Answer:** A justified absolute tolerance.",
+    "review": "Near-zero benchmark uses absolute1e\u221210; executed acceptance example.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Tolerance:** Should it be widened simply to pass? **Answer:** No.",
+    "review": "Threshold must derive from specification/error budget,not a desired pass; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**math.isclose:** Does it use exactly atol+rtol\u00d7reference? **Answer:** No; it has a documented symmetric rule.",
+    "review": "Executed a2,b1,rtol.4,atol.7: symmetric max rule fails while asymmetric sum passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Decimal:** Does it eliminate model risk? **Answer:** No.",
+    "review": "Decimal numeric outcomes do not establish model adequacy; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Decimal context:** Why record it? **Answer:** Precision and rounding can change results.",
+    "review": "Private28-digit HALF_EVEN context now avoids inherited traps/exponent bounds; hostile caller cases executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Scaling:** Double flows. **Answer:** NPV doubles under the same schedule and rate.",
+    "review": "Linearity in cash flows gives twice NPV; source scaling predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Append zero:** NPV effect? **Answer:** None under this positional model.",
+    "review": "Append contributes zero and shifts no earlier index; source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Insert zero:** NPV effect? **Answer:** It can shift later cash flows and change NPV.",
+    "review": "Middle insertion shifts later exponents; source counterexample.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Positive future payment:** Increase rate. **Answer:** PV falls for t>0 under this model; a time-zero payment is constant.",
+    "review": "For t>0 derivative \u2212t*C/(1+r)^(t+1)<0; selected source future-payment comparison. Source answer now explicitly excludes constant t0.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Known value:** Why derive independently? **Answer:** To avoid repeating the same defect.",
+    "review": "Independent rational discount powers for NPV and150-digit Decimal difference/quotient followed by28-digit reporting for returns avoid source log/exp and Fraction-return implementation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**assertRaises:** Purpose? **Answer:** Verify the expected exception.",
+    "review": "Existing assertRaises methods run, plus strict external invalid-input predicates.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Empty flows:** Reference behavior? **Answer:** ValueError.",
+    "review": "Empty list returns ValueError; source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**NaN flow:** Reference behavior? **Answer:** ValueError.",
+    "review": "NaN cash flow returns ValueError; source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Time zero:** Which element represents it? **Answer:** The first cash flow.",
+    "review": "enumerate starts0; static contract plus omitted-investment faulty-copy experiment.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Currency:** Does this code validate it? **Answer:** No.",
+    "review": "No currency input/validation exists; conceptual scope.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Dates:** Does this code implement dated payments? **Answer:** No.",
+    "review": "No dates API; integer annual flow indices only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Fees:** Included automatically? **Answer:** No.",
+    "review": "No fee input; source signature inspection.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Passing test:** Does it prove all inputs correct? **Answer:** No.",
+    "review": "Baseline12 tests pass despite nine additional failing predicates; finite passes do not prove all inputs.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Regression:** Why keep a known defect case? **Answer:** To detect its reintroduction.",
+    "review": "Retained cancellation/context/range cases detect known regressions; no broad acceptance claim.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Test message:** Why useful? **Answer:** It clarifies the failed expectation.",
+    "review": "Synthetic assert-False descriptive message appears in retained stderr.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Actual result:** Why retain it? **Answer:** It is execution evidence.",
+    "review": "Saved actual argv/stdout/stderr/return codes,not inferred execution.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Version:** Why record Python version? **Answer:** To support reproducibility.",
+    "review": "Python3.12.14/Linux recorded; other platforms unexecuted.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Seed:** Does a fixed seed validate a statistical model? **Answer:** No.",
+    "review": "No simulation/model-distribution check executed; conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference tests:** Were they run merely because included? **Answer:** No.",
+    "review": "Original publication nonexecution statement is historical; this scoped run supplies separate actual evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production readiness:** Established by these examples? **Answer:** No.",
+    "review": "No independent model/platform/release/production readiness follows.",
+    "status": "reviewed scoped"
+  }
+]

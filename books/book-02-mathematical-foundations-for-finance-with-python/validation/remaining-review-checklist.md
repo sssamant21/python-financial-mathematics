@@ -2,7 +2,7 @@
 
 **Date:** 2026-11-14
 **Full-runtime candidate source revision:** `489c46b92214906f22e642b199a8829909a64f00` (V-147)
-**Latest scoped source:** V-146 at `489c46b92214906f22e642b199a8829909a64f00`;[eight-file source manifest](chapter-08-assessment-rational-log-publication-verification.json).
+**Latest scoped source:** V-148 candidate based on `9392004a95ed37258177ee1cf1018d9170cbb3b3`;[nine-file source manifest](chapter-08-assessment-pv-shock-results.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
 **Disposition:** V-146 scoped rational/log checks and V-147 full Python runtime passed;independent review/release approval pending.
 
@@ -1156,3 +1156,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-147 checkpoint — Full pinned candidate Linux refresh
 
 [V-147 full runtime](runtime-refresh-2026-11-14-r4.md) at `489c46b92214906f22e642b199a8829909a64f00`:604/604 Python files compiled,391/391 check-test scripts passed,605/605 required Python/fixture hashes verified before-after. Includes ladder/alignment checkers and V-146 rational/log fixes;initial failures/replays remain separate. Exact staging runner,per-file outcomes/output digests and full manifest retained. One Linux runtime only;35 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section8.10 PV/shock and centered-copy complete-range/preflight/report contracts. Book1 tracked independently.
+
+
+## V-148 checkpoint — Assessment complete PV/shock facade
+
+[PV/shock evidence](chapter-08-assessment-pv-shock-followup.md):69 corrected predicates passed;40 initial passes/29 final baseline source mismatches and identical replay retained. Earlier signed-zero oracle corrections remain separate,not defect counts. Independent1300/1800-digit complete PV/derivative/Taylor/exponential-level difference references and explicit zero/input/report conventions checked. Assessment delegates to reviewed Section8.6 routines. Nine files compiled,five commands/four checker invocations passed,nine hashes verified before-after. Fresh605/392/606 inventory is not a full run;V-147 remains latest full604/391/605. Thirty-five selected COV categories partial,none closed. Next:Section8.10 centered-copy perturbation/preflight,callback and complete quotient/report contracts;then refresh full runtime after those changes. Independent/platform/release acceptance pending. Book1 tracked independently.

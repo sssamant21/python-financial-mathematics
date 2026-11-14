@@ -357,6 +357,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F199 | As-of timestamp copy normalized invalid offset minutes and leaked UTC calendar overflow. | RESOLVED (scoped) — [as-of evidence](chapter-19-leakage-review/README.md);five baseline failures/39 corrected predicates,12 existing methods. Historical source/calendar/train-test/platform acceptance remains open. |
 | F200 | Integrated project return/context/timestamp copies. | RESOLVED (scoped) — [project runtime](chapter-19-project-review/README.md);eight expanded initial failures/39 corrected predicates and12 existing methods. Source/provenance/resource/platform/independent limits remain open. |
 | F201 | Section20.1 finite-input and complete-return contract. | RESOLVED (scoped) — oversized finite-input exceptions and complete-return cancellation/overflow corrected; five baseline failures/replay retained,31 corrected predicates pass. Broader NPV extreme-range/underflow/resource policy remains open. [Evidence](chapter-20-testing-review/README.md). |
+| F202 | Section20.2 finite-input/complete Decimal-return and context contract;future-payment answer. | RESOLVED (scoped) — nine baseline failures/replay retained,34 corrected predicates pass;unbounded Decimal conversion resources and broader NPV extremes remain open. [Evidence](chapter-20-assertions-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -368,7 +369,7 @@ Add new findings with an ID, affected revision, severity, owner, reproduction, e
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** V06 — continue Chapter20 Section20.2 formal workflow/local-answer review; broader acceptance gaps remain open.
+**Next action:** V06 — continue Chapter20 Section20.3 formal workflow/local-answer review;broader acceptance gaps remain open.
 
 
 ## Section 18.13 execution checkpoint (formal review unfinished)
@@ -469,3 +470,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.1 scoped testing workflow and local answers
 
 [Testing evidence](chapter-20-testing-review/README.md):one workflow,40 local answers/12 lab records;31 corrected source-call predicates and four source commands passed. Five initial failures and identical replay retained;F201 fixes finite oversized-input exceptions and complete-return reporting only. Twelve existing unique methods ran26 invocations including two separate supplemental faulty/control invocations;zero new historical methods. Broader NPV extremes, F28/F32/F165/F185 and platform/independent acceptance remain open. Chapter20 now1 scoped workflow/40 local answers. Next:Section20.2 Assertions and Known-Value Tests.
+
+
+## Section20.2 scoped assertion/known-value review
+
+[Assertion evidence](chapter-20-assertions-review/README.md):one workflow,40 local answers/12 lab steps;34 corrected predicates,five exact-source commands/two compiled fences passed. Nine source baseline failures and identical replay retained;F202 fixes finite oversized-input and complete Decimal-return/private-context reporting,plus future-payment qualification. Initial undetected timing-shift mutation and detected omitted-investment variant remain separate supplemental observations. Twelve existing methods ran26 invocations,zero new historical methods. Chapter20 now2 workflows/80 local answers. F28/F32/F165/F185 and broader NPV/Decimal resource/platform/independent acceptance remain open. Next:Section20.3 Unit Testing.
