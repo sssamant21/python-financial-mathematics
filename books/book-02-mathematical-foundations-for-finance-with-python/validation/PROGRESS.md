@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-137 scoped noise/quantization review; V-136 remains latest full candidate Linux pass (597/384/598). Independent review, supported platforms and release approval remain pending.
+**Overall status:** In progress — V-138 scoped noisy-step sweep/report review; V-136 remains latest full candidate Linux pass (597/384/598). Independent review, supported platforms and release approval remain pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1232,3 +1232,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-137 checkpoint — Noise arithmetic versus derivative accuracy
 
 [Noise/quantization evidence](chapter-08-noise-followup.md):27 arithmetic/contract predicates passed;23 separate analytic-accuracy diagnostics retain10 nominal-tolerance exceedances,with identical replay. Exact binary quadratic noise/cancellation and nearest-even quantization models demonstrate why a valid suggested step is not an accuracy guarantee. No source helper changed. Four files compiled/two scripts passed/four hashes verified before-after. Fresh598/385/599 inventory is not a full run;V-136 remains latest full597/384/598 evidence. Thirty-five selected COV categories partial;none closed. Next:COV-51 noisy-step sweep/reporting diagnostics with known error trends and callback/input budgets;other helper-copy/conditioning/resource and independent acceptance obligations remain open. Book1 tracked independently.
+
+
+## V-138 checkpoint — Bounded noisy-step sweep/report
+
+[Preset sweep evidence](chapter-08-noisy-sweep-followup.md):75 predicates passed over34 steps/86 measured callbacks. Independent exact cubic/quartic truncation-plus-noise curves,finite-grid minima,callback counts/order and complete diagnostic rows agree on an actual replay. No numerical source helper changed;V-137 accuracy exceedances remain separate. Four files compiled/two scripts passed/four hashes verified before-after. Fresh599/386/600 inventory is not a full run;V-136 remains latest full597/384/598 evidence. Thirty-five COV categories partial;none closed. Next:Section8.9 comparator/project complete quotient,error/tolerance-report and callback/input-budget contracts from the existing coverage map;broader noise/conditioning/resource and independent acceptance remain open. Book1 tracked independently.

@@ -1,0 +1,304 @@
+{
+  "selected_revision": null,
+  "candidate_based_on": "2b521783ba191220b3f1f3318ad4d94575e68c4b",
+  "manuscript_sha256": "982e278a498e691c7c89f58ab13f9634d15a5531450f41b85ea40d05eec045a4",
+  "source_sha256": "aaad97754823fae536e6dd43bf0339ae2fc27d5c6a1373ef60ebb0f2e9361dee",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/tmp/tmpmgpzsomo/currency_unit_normalization.py"
+      ],
+      "returncode": 0,
+      "stdout": "5 percent: 0.05\n100 EUR in USD: 110.00\nUSD per EUR reciprocal: 0.9090909090909090909090909091\n",
+      "stderr": "test_basis_points (__main__.UnitTests.test_basis_points) ... ok\ntest_cents (__main__.UnitTests.test_cents) ... ok\ntest_fx (__main__.UnitTests.test_fx) ... ok\ntest_fx_pnl (__main__.UnitTests.test_fx_pnl) ... ok\ntest_invalid_rate (__main__.UnitTests.test_invalid_rate) ... ok\ntest_missing (__main__.UnitTests.test_missing) ... ok\ntest_negative_amount (__main__.UnitTests.test_negative_amount) ... ok\ntest_nonfinite (__main__.UnitTests.test_nonfinite) ... ok\ntest_one_basis_point (__main__.UnitTests.test_one_basis_point) ... ok\ntest_percent (__main__.UnitTests.test_percent) ... ok\ntest_reciprocal (__main__.UnitTests.test_reciprocal) ... ok\ntest_round_half_even (__main__.UnitTests.test_round_half_even) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "/tmp/tmpmgpzsomo/currency_unit_normalization.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import currency_unit_normalization"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "predicates": [
+    {
+      "name": "cents",
+      "actual": "100",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "percent",
+      "actual": "0.05",
+      "expected": "0.05",
+      "passed": true
+    },
+    {
+      "name": "one basis point",
+      "actual": "0.0001",
+      "expected": "0.0001",
+      "passed": true
+    },
+    {
+      "name": "hundred bp",
+      "actual": "0.01",
+      "expected": "0.01",
+      "passed": true
+    },
+    {
+      "name": "negative rate unit",
+      "actual": "-0.05",
+      "expected": "-0.05",
+      "passed": true
+    },
+    {
+      "name": "FX",
+      "actual": "110.00",
+      "expected": "110",
+      "passed": true
+    },
+    {
+      "name": "negative amount",
+      "actual": "-110.00",
+      "expected": "-110",
+      "passed": true
+    },
+    {
+      "name": "zero amount",
+      "actual": "0.00",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "reciprocal",
+      "actual": "0.9090909090909090909090909091",
+      "expected": "0.9090909090909090909090909091",
+      "passed": true
+    },
+    {
+      "name": "reverse conversion",
+      "actual": "100.0000000000000000000000000",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "FX shift",
+      "actual": "105.00",
+      "expected": "105",
+      "passed": true
+    },
+    {
+      "name": "FX PnL",
+      "actual": "-5.00",
+      "expected": "-5",
+      "passed": true
+    },
+    {
+      "name": "half even low tie",
+      "actual": "1.00",
+      "expected": "1.00",
+      "passed": true
+    },
+    {
+      "name": "half even high tie",
+      "actual": "1.02",
+      "expected": "1.02",
+      "passed": true
+    },
+    {
+      "name": "half even negative tie",
+      "actual": "-1.00",
+      "expected": "-1.00",
+      "passed": true
+    },
+    {
+      "name": "no currency boundary by default",
+      "actual": "1.005",
+      "expected": "1.005",
+      "passed": true
+    },
+    {
+      "name": "numeric padding",
+      "actual": "1.00",
+      "expected": "1.00",
+      "passed": true
+    },
+    {
+      "name": "scientific text",
+      "actual": "1E+2",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "scale preserved",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "reject text None",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text True",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text 1",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text Decimal('1')",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text ''",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text ' '",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text 'abc'",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text 'NaN'",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text 'sNaN'",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text 'Infinity'",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject text '-Infinity'",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject FX rate 0",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject reciprocal 0",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject FX rate -1",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "reject reciprocal -1",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "rate move percentage points",
+      "actual": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "rate move relative",
+      "actual": "0.2",
+      "expected": "0.2",
+      "passed": true
+    },
+    {
+      "name": "private reciprocal rounding ROUND_FLOOR",
+      "actual": "0.9090909090909090909090909091",
+      "expected": "0.9090909090909090909090909091",
+      "passed": true
+    },
+    {
+      "name": "private reciprocal rounding ROUND_CEILING",
+      "actual": "0.9090909090909090909090909091",
+      "expected": "0.9090909090909090909090909091",
+      "passed": true
+    },
+    {
+      "name": "private FX exponent bound",
+      "actual": "1100.00",
+      "expected": "1100",
+      "passed": true
+    },
+    {
+      "name": "private FX trap/exponent policy",
+      "actual": "1100.00",
+      "expected": "1100",
+      "passed": true
+    },
+    {
+      "name": "private reciprocal precision",
+      "actual": "0.9090909090909090909090909091",
+      "expected": "0.9090909090909090909090909091",
+      "passed": true
+    },
+    {
+      "name": "private cents precision",
+      "actual": "1234.5678",
+      "expected": "1234.5678",
+      "passed": true
+    }
+  ],
+  "supplemental_rounding": {
+    "name": "lab8 half-up alternative",
+    "actual": "1.01",
+    "expected": "1.01",
+    "passed": true,
+    "scope": "Supplemental policy comparison,not source settlement convention"
+  },
+  "existing_methods": 12,
+  "new_historical_unique_methods": 0
+}
