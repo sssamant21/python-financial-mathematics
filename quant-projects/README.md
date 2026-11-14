@@ -210,3 +210,5 @@ Project 33 extension: [nested Brownian-path hedge-grid refinement](33-delta-hedg
 Project 35 matched-grid monitoring extension: `35-barrier-option-monte-carlo/monitoring.py` and `test_monitoring.py`; common Brownian paths across nested observation grids and an analytical vanilla Black–Scholes comparison. Run `python -m unittest -v test_monitoring.py` in that folder. Exact-source hosted CI and independent barrier benchmark pending.
 
 Project 35 also includes `bridge.py` and `test_bridge.py` for conditional continuous-monitoring survival under GBM, matched discrete/continuous payoff bounds, and paired sampling-error diagnostics. Run `python -m unittest -v test_bridge.py` inside its folder. Independent barrier benchmark and historical calibration remain pending.
+
+Project 35 also includes `convergence.py` for exploratory Brownian-bridge monitoring-grid sensitivity, with explicit non-matched-grid sampling caveats and synthetic tests. See [Project 35](35-barrier-option-monte-carlo/README.md).
