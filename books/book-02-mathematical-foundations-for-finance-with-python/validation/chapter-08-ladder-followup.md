@@ -23,3 +23,5 @@ Twenty-five predicates passed,with actual initial execution and identical replay
 Arbitrary iterable length,callback cost,nested provider behavior,total output memory,timeouts/cancellation and concurrent writers remain caller/environment obligations. Finite-prefix evidence does not close the broader resource gap. Thirty-five selected COV categories remain partial;none closed. Independent mathematical/editorial/platform/release/canonical acceptance remains pending.
 
 Next substantive item:Chapter8 Section8.10 assessment prompt-to-source/reference alignment and uncovered exact exercise inputs identified in the existing coverage map. Remaining branch/conditioning/resource and independent obligations stay open. Book1 has separate progression and evidence.
+
+Executable source/checker revision: `4c927c1a3345a86fbe696544badf13c7d53f8943`. [Publication source manifest and pinned inventory](chapter-08-ladder-publication-verification.json). All four scoped tested Python blobs match this revision;inventory is not full execution.

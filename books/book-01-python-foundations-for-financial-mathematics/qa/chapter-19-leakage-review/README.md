@@ -82,3 +82,5 @@ For lab9,a hypothetical seven-calendar-day label horizon could use training thro
 |40|Reproducibility:|No.|Conceptual/design only;not source truth,complete revision history or train/test acceptance|
 
 F28/F32/F165/F185 and broader integration/platform/independent acceptance remain open. Next:Section19.14 Financial Data Pipeline project and chapter-wide answers.
+
+Executable source revision: `4c927c1a3345a86fbe696544badf13c7d53f8943`. [Publication source/fixture manifest](publication-verification.json). Manuscript,observer and synthetic revision bytes match the tested candidate;metadata pins do not change executable inputs.
