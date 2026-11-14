@@ -28,3 +28,5 @@ The final snippet prints.015. The lab writes a two-record UTF-8 LF CSV,records i
 |12| Source identity,coverage,point-in-time,security,cash/price semantics and platform limits reviewed;no certification.|
 
 Supplemental quoted CSV parsing,relative rate arithmetic and exact Fraction benchmark are separate from manuscript API execution. Format choice/API completeness/Excel recalculation/survivorship/rolling or preprocessing leakage and sink idempotence are conceptual or refer to earlier scoped records,not newly executed platform/provider/model acceptance. Native Excel and supported platforms remain unexecuted here. F28/F32/F165/F185 and independent acceptance remain open. Next:Chapter20 Section20.1 formal workflow/local-answer review. Chapter19's14 core workflows/560 local answers and these50 chapter-wide answers are separate counts.
+
+Executable source revision: `556f351206e6584cafa972dca5b3f1e919809fa3`. [Publication source/fixture manifest](publication-verification.json).

@@ -33,3 +33,5 @@ Independent return:(10150−10000)/10000=3/200=.015. Actual source raw/output ha
 |12| A hypothetical sink requires source+instrument/date/price-type/revision key,transaction boundary,conflict policy,idempotency token/retry/reconciliation and recovery;design review only,no sink executed.|
 
 The raw data and result remain in memory;hashes prove neither authenticity nor confidentiality. Fixed context does not bound arbitrary coefficients/exponents,input bytes or processing cost. Availability timestamps are assumed truthful;no revision selection,exchange calendar,corporate-action or provider completeness is implemented. Source manifest still lacks a complete code/dependency/provenance contract. F28/F32/F165/F185 and independent/platform acceptance remain open. Next:Section19.15 final50 answers and final lab,then Chapter20.
+
+Executable source revision: `556f351206e6584cafa972dca5b3f1e919809fa3`. [Publication source/fixture manifest](publication-verification.json).
