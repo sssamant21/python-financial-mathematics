@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-151 fixed-report/interface scoped pass;V-150 remains latest full candidate Linux pass (606/393/607). Independent/platform/release acceptance pending.
+**Overall status:** In progress — V-152 Section9.1 discounted scoped pass;V-150 remains latest full candidate Linux pass (606/393/607),pending refresh. Independent/platform/release acceptance pending.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1302,3 +1302,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-151 checkpoint — Complete fixed chapter report/interface
 
 [Report evidence](chapter-08-chapter-report-followup.md):38 source/report/priority predicates pass with actual initial pass and identical observation replay;no Book2 implementation changed or defect claimed. Independent150/250-digit full report expectations cover15 numeric leaves,strict CLI/JSON,keys,mutation isolation and10 selected validation priorities. Selected compact payload510 bytes under a4096-byte QA-only budget. Twelve files compiled,eight top-level commands/seven checkers passed (plus one internal CLI call),twelve hashes verified before-after. Fresh607/394/608 inventory is not full execution;V-150 remains latest full606/393/607 and all607 existing required blobs unchanged. Thirty-five selected COV categories partial,none closed. Next:Chapter9 Section9.1 sensitivity helper numerical contracts and exact percent/percentage-point exercise mapping from existing coverage queue. Platform/independent/release acceptance pending. Book1 tracked independently.
+
+
+## V-152 checkpoint — Section9.1 discounted sensitivity/shocks and units
+
+[Discounted evidence](chapter-09-discounted-followup.md):73 corrected source predicates plus5 separate exact-unit controls pass;42 initial passes/31 failed source predicates and identical replay retained. Independent1800/2400-digit complete value/derivative/normalization/shock references,zero/report/input policies and exact E7/E10 source shock inputs checked. Three files compiled,three commands/two checkers passed,three hashes verified before-after. Fresh608/395/609 inventory is not full execution;full pinned refresh next. Three executed demand/portfolio probes remain OPEN for next scope. COV-54 newly selected:36 categories partial,none closed. Next after full refresh:Section9.1 demand/portfolio complete-range and normalization/report contracts. Broader platform/independent/release acceptance pending. Book1 tracked independently.

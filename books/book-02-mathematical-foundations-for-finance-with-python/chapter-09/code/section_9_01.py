@@ -1,5 +1,7 @@
 """Book 02 Section 9.1: absolute and relative financial sensitivity."""
 import math
+from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -12,23 +14,62 @@ def finite(value, name):
         raise ValueError(f"{name} must be finite")
     return x
 
-def discounted_value(cash_flow, rate, years):
+def _report(exact):
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("result outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("result outside finite float range")
+    return result
+
+def _scaled_discount(coefficient, exponent, gap=None, zero=0.0):
+    if coefficient == 0 or gap == 0:
+        return zero
+    # Finite binary64 input products cannot rescue an exponent this large.
+    if exponent > 10000:
+        raise ValueError("discounted result outside finite float range")
+    if exponent < -10000:
+        return -0.0 if coefficient < 0 else 0.0
+    if exponent == 0 and gap is None:
+        return _report(coefficient)
+    with localcontext(Context(prec=1300)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        factor = Decimal(1) if gap is None or gap > 10000 else 1-(-dec(gap)).exp()
+        return _report(dec(coefficient)*dec(exponent).exp()*factor)
+
+def _discount_inputs(cash_flow, rate, years):
     c, r, t = finite(cash_flow, "cash_flow"), finite(rate, "rate"), finite(years, "years")
     if c <= 0 or t < 0:
         raise ValueError("cash_flow must be positive and years nonnegative")
-    return c*math.exp(-r*t)
+    return c, r, t
+
+def discounted_value(cash_flow, rate, years):
+    c, r, t = _discount_inputs(cash_flow, rate, years)
+    return _scaled_discount(Fraction(c), -Fraction(r)*Fraction(t))
 
 def discounted_sensitivity(cash_flow, rate, years):
     r, t = finite(rate, "rate"), finite(years, "years")
-    v = discounted_value(cash_flow, r, t)
-    derivative = -t*v
+    c, r, t = _discount_inputs(cash_flow, r, t)
+    C, R, T = map(Fraction, (c, r, t))
+    v = _scaled_discount(C, -R*T)
+    derivative = _scaled_discount(-T*C, -R*T, zero=-t*0.0)
+    elasticity = -r*t if r == 0 or t == 0 else _report(-R*T)
+    # Exact C*exp(-r*t)>0 even when its final float report underflows.
     return {"value":v, "absolute":derivative,
-            "normalized_rate":-derivative/v, "elasticity":r*derivative/v}
+            "normalized_rate":t, "elasticity":elasticity}
 
 def discounted_shock(cash_flow, rate, years, shock):
     r, t, h = finite(rate, "rate"), finite(years, "years"), finite(shock, "shock")
-    v = discounted_value(cash_flow, r, t)
-    return {"first_order":-t*v*h, "exact":v*math.expm1(-t*h)}
+    c, r, t = _discount_inputs(cash_flow, r, t)
+    if t == 0 or h == 0:
+        zero = -0.0*c*t*h
+        return {"first_order":zero, "exact":zero}
+    C, R, T, H = map(Fraction, (c, r, t, h))
+    first = _scaled_discount(-C*T*H, -R*T)
+    exact = (_scaled_discount(-C, -R*T, T*H) if h > 0 else
+             _scaled_discount(C, -(R+H)*T, -T*H))
+    return {"first_order":first, "exact":exact}
 
 def demand_quantity(price, scale=400.0, exponent=-1.5):
     p, a, e = finite(price, "price"), finite(scale, "scale"), finite(exponent, "exponent")

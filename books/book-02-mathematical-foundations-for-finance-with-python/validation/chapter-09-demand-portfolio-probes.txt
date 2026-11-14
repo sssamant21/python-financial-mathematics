@@ -1,0 +1,12 @@
+from pathlib import Path
+import sys,json,hashlib,importlib.util
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'initial';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';p=b/'chapter-09/code/section_9_01.py';spec=importlib.util.spec_from_file_location('sensitivity_open_probe',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+with localcontext(Context(prec=1600)):
+ low=Decimal(1e-308);high=Decimal(1e308);q_low=float(low*low**(-2));q_high=float(high*high**(-2));d_high=float(-2*high*high**(-3))
+rows=[]
+for label,fn,expectation in [('demand complete quantity rescue',lambda:m.demand_quantity(1e-308,1e-308,-2),dict(quantity=q_low)),('demand finite quantity/analytic elasticity',lambda:m.demand_sensitivity(1e308,1e308,-2),dict(quantity=q_high,absolute=d_high,elasticity=-2)),('portfolio overflowing full report',lambda:m.portfolio_sensitivity(sys.float_info.max,2,sys.float_info.max),'Unrepresentable total value;finite-report/error policy needs explicit review')]:
+ try:a=repr(fn());kind='returned'
+ except Exception as e:a=repr(e);kind=type(e).__name__
+ rows.append(dict(name=label,actual=a,kind=kind,independent_expectation=expectation,status='OPEN — next scoped numerical-contract review;not fixed by discounted-family batch'))
+d=dict(candidate_based_on='cc4c3de4d314d0bb569f78b8be94abe4c1d41c2e',source_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),observations=rows,limits='Executed probes only;no demand/portfolio acceptance or resolved finding claimed');(b/'validation'/('chapter-09-demand-portfolio-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(rows,indent=2))

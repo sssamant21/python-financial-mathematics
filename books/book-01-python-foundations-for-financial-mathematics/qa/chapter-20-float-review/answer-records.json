@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Absolute error:** 100.02 versus 100. **Answer:** .02.",
+    "review": "Printed decimal error100.02\u2212100=.02;represented float inputs differ slightly;gate uses their exact represented values.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Relative error:** Same values. **Answer:** .0002.",
+    "review": "Printed .02/100=.0002;relative error requires nonzero reference;conceptual arithmetic.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Percentage error:** Same values. **Answer:** .02%.",
+    "review": ".0002*100=.02%;printed unit derivation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Mixed threshold:** .01+.00005\u00d7100. **Answer:** .015.",
+    "review": ".01+.00005*100=.015 in printed decimal model;executed represented-input comparison fails as intended.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Mixed result:** Is .02\u2264.015? **Answer:** No.",
+    "review": ".02>.015;source mixed-fail case verified.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Reference zero:** Is relative error defined? **Answer:** No.",
+    "review": "Relative error at zero denominator undefined;near-zero gate source case uses absolute allowance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Near zero:** What should be considered? **Answer:** An appropriate absolute tolerance.",
+    "review": "Selected zero-reference absolute1e\u221210 case passes;no universal financial tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Absolute tolerance:** Units? **Answer:** Output units.",
+    "review": "Absolute allowance carries output units;dimensional review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Relative tolerance:** Units? **Answer:** Dimensionless.",
+    "review": "Relative allowance dimensionless;dimensional review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**One bp:** Decimal yield? **Answer:** .0001.",
+    "review": "1bp=1/10000=.0001;unit definition,not a conversion API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Tolerance:** Is one threshold suitable for every financial quantity? **Answer:** No.",
+    "review": "No universal price/yield threshold;conceptual contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**isclose:** Is its rule the sum criterion in Section 4? **Answer:** No.",
+    "review": "Separate math.isclose max-rule control differs from source sum rule at a2,b1,at.7,rt.4.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Symmetry:** Is the explicit reference-based rule symmetric? **Answer:** Not generally.",
+    "review": "Source asymmetry checked with a1,b2 versus reversed arguments at rtol.6.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**NaN:** Does the reference comparator accept it? **Answer:** No.",
+    "review": "Source NaN actual/rtol rejection verified.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Infinity:** Does the reference comparator accept it? **Answer:** No.",
+    "review": "Source infinite reference/allowance rejected despite math.isclose same-sign infinity control.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**isclose infinity:** Can same-signed infinities compare close? **Answer:** Yes.",
+    "review": "Supplemental math.isclose(inf,inf) control returnsTrue;source rejects nonfinite inputs.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Negative tolerance:** Accepted? **Answer:** No.",
+    "review": "Negative atol/rtol source rejects;exact finite validation precedes gate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**PV:** 110 at 10% for one period. **Answer:** 100.",
+    "review": "110/1.1=100 independently;source npv([0,110],.1) within absolute1e\u221210.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**NPV:** [\u2212100,110] at 10%. **Answer:** 0 in exact arithmetic.",
+    "review": "\u2212100+100=0 in exact printed arithmetic;source known NPV case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Zero rate:** PV of 100 in one period. **Answer:** 100.",
+    "review": "Zero rate discount1;source npv([0,100],0)=100.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Scale:** Double all cash flows. **Answer:** NPV doubles under identical assumptions.",
+    "review": "Linearity with same positional schedule/rate checked;not dated cashflows.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Positive future payment:** Increase rate. **Answer:** PV falls for t>0;time-zero cash flow is constant.",
+    "review": "Positive future payment derivative negative for t>0;selected source comparison. Source answer now qualifies time-zero constancy.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Reference:** Why independently derive it? **Answer:** To reduce shared implementation errors.",
+    "review": "Independent1800/2400-digit Decimal gates avoid source Fraction implementation;normal NPV oracle uses rational powers.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Input precision:** Why relevant to tolerance? **Answer:** It limits meaningful accuracy.",
+    "review": "Input precision limits meaningful financial error budgets;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Cancellation:** What can occur when subtracting close numbers? **Answer:** Significant digits can be lost.",
+    "review": "Direct floating quotient/subtraction may lose significant digits;exact gate preserves represented difference,not original-decimal truth.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Small log:** Suitable primitive? **Answer:** log1p.",
+    "review": "Supplemental log1p(1e\u221212) matches independent100-digit Decimal log reference.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Small exponential difference:** Suitable primitive? **Answer:** expm1.",
+    "review": "Supplemental expm1(1e\u221212) matches independent100-digit Decimal difference.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Ill-conditioned root:** Does small residual imply small root error? **Answer:** Not necessarily.",
+    "review": "Small residual alone does not bound solution error in an ill-conditioned problem;no root/linear-system API claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Overflow:** Can a valid mathematical value exceed float range? **Answer:** Yes.",
+    "review": "Finite inputs may yield unrepresentable outputs;source predicate avoids overflowing arithmetic but NPV range remains limited.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Underflow:** Can a nonzero value round to zero? **Answer:** Yes.",
+    "review": "Subnormal allowance products can round across acceptance boundary;three discriminating source gates retained.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Platform:** Can reduction order affect last digits? **Answer:** Yes.",
+    "review": "Reduction order may affect rounding;no cross-platform reduction validation claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Decimal:** Does using it remove model risk? **Answer:** No.",
+    "review": "Decimal changes arithmetic,not model suitability;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Tolerance:** Should it be increased solely to make tests pass? **Answer:** No.",
+    "review": "Thresholds unchanged across baseline/corrected runs;no widening used.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Price error:** .01 per unit across one million units? **Answer:** 10,000.",
+    "review": "Separate exact Decimal.01*1000000=10000.00 control executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Timing:** Does a numerical comparison validate the payment schedule? **Answer:** No.",
+    "review": "Matching numbers do not establish timing/schedule semantics;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Nonfinite tolerance:** Accepted by the reference comparator? **Answer:** No.",
+    "review": "Infinite/NaN tolerances rejected;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Extreme values:** Can naive float tolerance arithmetic overflow? **Answer:** Yes;the reference comparator avoids that intermediate arithmetic with exact represented-input rationals.",
+    "review": "Naive float intermediates can overflow;current source gate uses exact Fraction and avoids those intermediates.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Compilation:** Does it validate finance semantics? **Answer:** No.",
+    "review": "Compilation passed separately from financial checks.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Original publication nonexecution statement is historical;this batch supplies actual execution evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Certification:** Do these examples establish production readiness? **Answer:** No.",
+    "review": "No platform/model/production/independent release acceptance from these examples.",
+    "status": "reviewed scoped"
+  }
+]
