@@ -19,3 +19,7 @@ E10 is now explicit:1% relative of.04 is delta.0004/new rate.0404,whereas one pe
 Three files compiled;three top-level commands passed (demo+two checker invocations);three hashes verified before-after. Existing Section9.1 checker passes unchanged. Fresh608 Python files/395 check-test scripts/609 required source-fixture blobs is inventory,not itself a full pass;the new full pinned refresh records execution separately.
 
 [Executed open demand/portfolio probes](chapter-09-demand-portfolio-initial.json),[runnable probe](chapter-09-demand-portfolio-probes.txt) retain a finite demand quantity lost to power overflow,finite quantity lost to underflow/division by zero,and an inf/NaN portfolio report. They remain OPEN;no demand/portfolio source changed or acceptance claimed. The next coherent scope is those complete-range and normalization/report contracts. Broader COV-54 elasticity/near-zero obligations remain partial. This adds COV-54 to the selected register:36 selected categories partial,none closed;these are not defect counts or completion percentages. Independent mathematical/editorial/platform/release/canonical acceptance remains pending. Book1 tracked independently.
+
+Executable source/checker/probe revision:`c0fd15b82b1122ee170bbe1b8709f2f05b8681e5`. [Pinned three-input manifest](chapter-09-discounted-publication-verification.json).
+
+[Family scope comparison](chapter-09-family-scope-comparison.json) verifies finite/demand/portfolio function source remains byte-identical to the starting main revision;only the discounted public family changed.

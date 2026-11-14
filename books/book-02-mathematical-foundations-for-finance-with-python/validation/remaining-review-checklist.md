@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `23d3517e5720e8e7ef541f420cf24412c19c5d8b` (V-150)
-**Latest scoped source:** V-151 at `3b0ae4584e827654ebc78be6d2fe8ca2c040ff5f`;[twelve-file source manifest](chapter-08-chapter-report-publication-verification.json).
+**Full-runtime candidate source revision:** `c0fd15b82b1122ee170bbe1b8709f2f05b8681e5` (V-153)
+**Latest scoped source:** V-152 at `c0fd15b82b1122ee170bbe1b8709f2f05b8681e5`;[three-file source manifest](chapter-09-discounted-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-149 centered-copy scoped checks and V-150 full Python runtime passed;independent review/release approval pending.
+**Disposition:** V-152 discounted scoped checks and V-153 full Python runtime passed;demand/portfolio probes,independent review/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1181,3 +1181,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-152 checkpoint — Section9.1 discounted sensitivity/shocks and units
 
 [Discounted evidence](chapter-09-discounted-followup.md):73 corrected source predicates plus5 separate exact-unit controls pass;42 initial passes/31 failed source predicates and identical replay retained. Independent1800/2400-digit complete value/derivative/normalization/shock references,zero/report/input policies and exact E7/E10 source shock inputs checked. Three files compiled,three commands/two checkers passed,three hashes verified before-after. Fresh608/395/609 inventory is not full execution;full pinned refresh next. Three executed demand/portfolio probes remain OPEN for next scope. COV-54 newly selected:36 categories partial,none closed. Next after full refresh:Section9.1 demand/portfolio complete-range and normalization/report contracts. Broader platform/independent/release acceptance pending. Book1 tracked independently.
+
+
+## V-153 checkpoint — Full pinned candidate Linux refresh
+
+[V-153 full runtime](runtime-refresh-2026-11-14-r6.md) at `c0fd15b82b1122ee170bbe1b8709f2f05b8681e5`:608/608 Python files compiled,395/395 check-test scripts passed,609/609 required Python/fixture hashes verified before-after. Includes V-151 report checker and V-152 discounted helper/checker changes;31 initial numerical failures/replay,5 separate unit controls and3 OPEN demand/portfolio probes retain their scopes. Exact staging runner,per-file output/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.1 demand/portfolio complete-range and normalization/report contracts. Book1 tracked independently.
