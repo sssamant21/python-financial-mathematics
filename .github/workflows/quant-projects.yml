@@ -264,6 +264,9 @@ jobs:
           python -m unittest -v test_monitoring.py
           python -m compileall -q monitoring.py test_monitoring.py
           python monitoring.py --pairs 100 --seed 2026
+          python -m unittest -v test_bridge.py
+          python -m compileall -q bridge.py test_bridge.py
+          python bridge.py --pairs 100 --steps 12 --seed 2026
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
