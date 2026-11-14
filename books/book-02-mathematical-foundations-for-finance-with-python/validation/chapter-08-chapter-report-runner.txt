@@ -1,0 +1,15 @@
+from pathlib import Path
+import subprocess,sys,hashlib,py_compile,json,platform
+root=Path(sys.argv[1]).resolve();b=root/'books/book-02-mathematical-foundations-for-finance-with-python';code=b/'chapter-08/code';v=b/'validation'
+names=['section_8_01.py','section_8_06.py','section_8_08.py','section_8_09.py','section_8_10.py','check_section_8_10.py','check_section_08_assessment_alignment.py','check_section_10_rational_log_range.py','check_section_10_pv_shock_range.py','check_section_10_centered_contracts.py','check_difference_denominators.py','check_section_10_chapter_report.py']
+def blob(p):
+ d=p.read_bytes();return hashlib.sha1(b'blob '+str(len(d)).encode()+b'\0'+d).hexdigest()
+manifest=[dict(path=str((code/n).relative_to(root)),sha=blob(code/n)) for n in names];compiled=[];commands=[]
+for n in names:
+ py_compile.compile(str(code/n),doraise=True);compiled.append(n)
+for n in names[4:]:
+ z=subprocess.run([sys.executable,n],cwd=code,capture_output=True,text=True);commands.append(dict(argv=[sys.executable,n],returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+after=all(blob(root/x['path'])==x['sha'] for x in manifest)
+files=list(b.rglob('*.py'));files=[p for p in files if '__pycache__' not in p.parts];inventory=dict(python_files=len(files),check_test_scripts=sum(p.name.startswith(('check_','test_')) for p in files),required_blobs=len(files)+1)
+d=dict(validation='V-151 scoped chapter report contracts',candidate_based_on='04aba8a51eb7b2ddf3208bb1ed045888704e18c2',python=platform.python_version(),platform=platform.platform(),manifest=manifest,compiled=compiled,commands=commands,hashes_verified_before=True,hashes_verified_after=after,inventory=inventory,limits='Twelve selected files/eight top-level commands including seven checker invocations;new checker invokes one internal CLI process. Not full-book or independent/platform acceptance.')
+(v/'chapter-08-chapter-report-results.json').write_text(json.dumps(d,indent=2)+'\n');print(len(compiled),'compiled;',[(x['argv'][-1],x['returncode']) for x in commands],inventory);assert after and all(x['returncode']==0 for x in commands)

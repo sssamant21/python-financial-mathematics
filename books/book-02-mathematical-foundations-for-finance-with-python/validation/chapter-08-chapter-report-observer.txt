@@ -1,0 +1,9 @@
+from pathlib import Path
+import subprocess,sys,tempfile,json,shutil,hashlib,platform
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];b=r/'books/book-02-mathematical-foundations-for-finance-with-python';v=b/'validation';code=b/'chapter-08/code';pin='04aba8a51eb7b2ddf3208bb1ed045888704e18c2';manifest=[]
+with tempfile.TemporaryDirectory() as t:
+ t=Path(t)
+ for n in ['section_8_01.py','section_8_06.py','section_8_08.py','section_8_10.py']:
+  p=code/n;rel=str(p.relative_to(r));raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);assert raw==p.read_bytes();(t/n).write_bytes(raw);manifest.append(dict(path=rel,sha=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()))
+ shutil.copy2(code/'check_section_10_chapter_report.py',t/'check_section_10_chapter_report.py');z=subprocess.run([sys.executable,'check_section_10_chapter_report.py'],cwd=t,capture_output=True,text=True);d=json.JSONDecoder().raw_decode(z.stdout)[0]
+result=dict(executable_implementation_revision=pin,mode=mode,manifest=manifest,python=platform.python_version(),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr,observations=d,limits=d['limits']);(v/('chapter-08-chapter-report-'+mode+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(mode,len(d['predicates']),'predicates',sum(not x['passed'] for x in d['predicates']),'failed;actual exit',z.returncode);assert z.returncode==0 and all(x['passed'] for x in d['predicates'])

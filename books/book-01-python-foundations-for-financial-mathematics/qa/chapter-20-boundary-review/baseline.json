@@ -1,0 +1,488 @@
+{
+  "candidate_based_on": "04aba8a51eb7b2ddf3208bb1ed045888704e18c2",
+  "selected_revision": "04aba8a51eb7b2ddf3208bb1ed045888704e18c2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manuscript_sha256": "6cc80ea1a4c9c69a06541dfd044d8b46af6c298163a8d5ef7155ed12b79824f7",
+  "fence_sha256": "00931ae55fc679c9413385c0807d5523782598eb0c42e35a8fc03d671d317d74",
+  "commands": [
+    {
+      "label": "source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "boundary_cases.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bool_period (__main__.BoundaryTests.test_bool_period) ... ok\ntest_empty (__main__.BoundaryTests.test_empty) ... ok\ntest_infinity (__main__.BoundaryTests.test_infinity) ... ok\ntest_negative_cashflow (__main__.BoundaryTests.test_negative_cashflow) ... ok\ntest_negative_periods (__main__.BoundaryTests.test_negative_periods) ... ok\ntest_nonfinite (__main__.BoundaryTests.test_nonfinite) ... ok\ntest_rate_at_boundary (__main__.BoundaryTests.test_rate_at_boundary) ... ok\ntest_rate_below_boundary (__main__.BoundaryTests.test_rate_below_boundary) ... ok\ntest_single (__main__.BoundaryTests.test_single) ... ok\ntest_valid_negative_rate (__main__.BoundaryTests.test_valid_negative_rate) ... ok\ntest_zero_end (__main__.BoundaryTests.test_zero_end) ... ok\ntest_zero_periods (__main__.BoundaryTests.test_zero_periods) ... ok\ntest_zero_rate (__main__.BoundaryTests.test_zero_rate) ... ok\ntest_zero_start (__main__.BoundaryTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "module suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "boundary_cases"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bool_period (boundary_cases.BoundaryTests.test_bool_period) ... ok\ntest_empty (boundary_cases.BoundaryTests.test_empty) ... ok\ntest_infinity (boundary_cases.BoundaryTests.test_infinity) ... ok\ntest_negative_cashflow (boundary_cases.BoundaryTests.test_negative_cashflow) ... ok\ntest_negative_periods (boundary_cases.BoundaryTests.test_negative_periods) ... ok\ntest_nonfinite (boundary_cases.BoundaryTests.test_nonfinite) ... ok\ntest_rate_at_boundary (boundary_cases.BoundaryTests.test_rate_at_boundary) ... ok\ntest_rate_below_boundary (boundary_cases.BoundaryTests.test_rate_below_boundary) ... ok\ntest_single (boundary_cases.BoundaryTests.test_single) ... ok\ntest_valid_negative_rate (boundary_cases.BoundaryTests.test_valid_negative_rate) ... ok\ntest_zero_end (boundary_cases.BoundaryTests.test_zero_end) ... ok\ntest_zero_periods (boundary_cases.BoundaryTests.test_zero_periods) ... ok\ntest_zero_rate (boundary_cases.BoundaryTests.test_zero_rate) ... ok\ntest_zero_start (boundary_cases.BoundaryTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "label": "compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "boundary_cases.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import boundary_cases"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "optimized source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "boundary_cases.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bool_period (__main__.BoundaryTests.test_bool_period) ... ok\ntest_empty (__main__.BoundaryTests.test_empty) ... ok\ntest_infinity (__main__.BoundaryTests.test_infinity) ... ok\ntest_negative_cashflow (__main__.BoundaryTests.test_negative_cashflow) ... ok\ntest_negative_periods (__main__.BoundaryTests.test_negative_periods) ... ok\ntest_nonfinite (__main__.BoundaryTests.test_nonfinite) ... ok\ntest_rate_at_boundary (__main__.BoundaryTests.test_rate_at_boundary) ... ok\ntest_rate_below_boundary (__main__.BoundaryTests.test_rate_below_boundary) ... ok\ntest_single (__main__.BoundaryTests.test_single) ... ok\ntest_valid_negative_rate (__main__.BoundaryTests.test_valid_negative_rate) ... ok\ntest_zero_end (__main__.BoundaryTests.test_zero_end) ... ok\ntest_zero_periods (__main__.BoundaryTests.test_zero_periods) ... ok\ntest_zero_rate (__main__.BoundaryTests.test_zero_rate) ... ok\ntest_zero_start (__main__.BoundaryTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "rational PV (95, -0.05, 1)",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational PV (-110, 0.1, 1)",
+      "actual": "-100.0",
+      "expected": "-100.0",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational PV (100, 0, 1)",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational PV (100, 0.05, 0)",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational PV (17, 0.2, 3)",
+      "actual": "9.837962962962964",
+      "expected": "9.837962962962962",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational PV (1, -0.9999999999999999, 0)",
+      "actual": "1.0",
+      "expected": "1.0",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational PV (1, -0.9999999999999999, 1)",
+      "actual": "9007199254740986.0",
+      "expected": "9007199254740992.0",
+      "relative_tolerance": 4e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rate boundary",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "below boundary",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative periods",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "fractional periods",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool periods",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN flow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool flow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "text rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "Decimal flow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized flow",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "oversized rate",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero identity invalid rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero flow extreme discount",
+      "actual": "'ValueError'",
+      "expected": "0",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero rate huge periods",
+      "actual": "'ValueError'",
+      "expected": "7",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero flow huge periods",
+      "actual": "'ValueError'",
+      "expected": "0",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete return (100, 0)",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete return (100, 101.5)",
+      "actual": "0.014999999999999902",
+      "expected": "0.015",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete return (1e+308, 1.0000000000000002e+308)",
+      "actual": "2.220446049250313e-16",
+      "expected": "1.99584030953472e-16",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete return (1e-308, 1e+308)",
+      "actual": "inf",
+      "expected": "'ValueError'",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative end",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "missing start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN end",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite end",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized start",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete mean [100]",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete mean [0, 2]",
+      "actual": "1.0",
+      "expected": "1.0",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete mean [1e+16, 1, -1e+16]",
+      "actual": "0.3333333333333333",
+      "expected": "0.3333333333333333",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete mean [1.7976931348623157e+308, 1.7976931348623157e+308]",
+      "actual": "'OverflowError'",
+      "expected": "1.7976931348623157e+308",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete mean [1.7976931348623157e+308, 1.7976931348623157e+308, -1.7976931348623157e+308, -1.7976931348623157e+308]",
+      "actual": "'OverflowError'",
+      "expected": "0.0",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete mean [-1.7976931348623157e+308, -1.7976931348623157e+308]",
+      "actual": "'OverflowError'",
+      "expected": "-1.7976931348623157e+308",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "complete mean [5e-324, 5e-324]",
+      "actual": "5e-324",
+      "expected": "5e-324",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "empty mean",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN mean",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite mean",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool mean",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "text mean",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized mean",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "mean generator",
+      "actual": "2.0",
+      "expected": "2.0",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "iterator error propagates",
+      "actual": "'RuntimeError'",
+      "expected": "'RuntimeError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "supplemental_comparison_predicates": [
+    {
+      "name": "default relative remains with abs_tol",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "explicit zero relative rejects",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "existing_unique_methods": 14,
+  "method_invocations": 42,
+  "new_historical_unique_methods": 0,
+  "limits": "Boundary helper finite/identity/complete-return/complete-mean scope;broader nonzero PV range,discount underflow,collection resources,platform and independent acceptance open"
+}

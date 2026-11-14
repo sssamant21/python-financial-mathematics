@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Rate domain:** Is \u2212.05 valid? **Answer:** Yes.",
+    "review": "r\u2212.05 is above\u22121;source accepts and yields95/.95=100.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Rate boundary:** Is \u22121 valid? **Answer:** No.",
+    "review": "r\u22121 rejected;source boundary predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Below boundary:** Is \u22121.01 valid? **Answer:** No.",
+    "review": "nextafter below\u22121 and printed\u22121.01 both outside domain;source lower-bound predicate plus existing method.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**PV:** 95 at \u22125% for one period. **Answer:** 100.",
+    "review": "95/.95=100 independently;source PV predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**PV:** \u2212110 at 10% for one period. **Answer:** \u2212100.",
+    "review": "\u2212110/1.1=\u2212100 independently;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero rate:** PV of 100 after one period. **Answer:** 100.",
+    "review": "Zero rate identity returnsC;ordinary and huge-period source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Zero periods:** PV of 100. **Answer:** 100.",
+    "review": "Zero-period identity returnsC after every input validates;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Negative periods:** Accepted? **Answer:** No.",
+    "review": "Negative periods rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Fractional periods:** Accepted by this code? **Answer:** No.",
+    "review": "Fractional period1.5 rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Boolean period:** Accepted? **Answer:** No.",
+    "review": "Exact int type excludes bool;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Return:** 100\u21920. **Answer:** \u22121.",
+    "review": "(0\u2212100)/100=\u22121;source return case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Zero start:** Valid denominator? **Answer:** No.",
+    "review": "Zero denominator rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Negative end:** Accepted by this contract? **Answer:** No.",
+    "review": "Negative ending price rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Missing price:** Same as zero? **Answer:** No.",
+    "review": "None is rejected rather than converted to0;source missing-start case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**NaN:** Accepted? **Answer:** No.",
+    "review": "NaN return/mean/PV inputs rejected;actual source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Infinity:** Accepted? **Answer:** No.",
+    "review": "Infinite rate/end/mean rejected;actual source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Empty mean:** Reference behavior? **Answer:** ValueError.",
+    "review": "Empty mean raisesValueError;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Single mean:** Mean of [100]? **Answer:** 100.",
+    "review": "Mean100 is100;source singleton case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Sample variance:** Usually defined with one observation? **Answer:** No, under N\u22121.",
+    "review": "N\u22121 sample variance at N1 has zero denominator;conceptual,not an implemented variance API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Overflow:** Can a mathematically valid input cause it? **Answer:** Yes.",
+    "review": "True final return overflow rejects;nonzero extreme-PV limitations remain explicit.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Underflow:** Can it occur without an exception? **Answer:** Yes.",
+    "review": "Float report may underflow to zero;not every discount/cancellation extreme is detected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Boundary test:** Why test both sides? **Answer:** To distinguish valid from invalid behavior.",
+    "review": "nextafter above/below\u22121 separate valid from invalid input;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Negative rate:** Always invalid financially? **Answer:** No.",
+    "review": "Negative rates valid in this specified model,not every financial convention;conceptual boundary.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Zero cash flow:** Valid here? **Answer:** Yes.",
+    "review": "Zero cashflow valid even under extreme discount/huge periods after validation;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**String input:** Accepted? **Answer:** No.",
+    "review": "Text rate/mean input rejected;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Decimal input:** Accepted by this implementation? **Answer:** No.",
+    "review": "Decimal cashflow rejected because only built-in int/float accepted;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Bool:** Why explicitly reject it? **Answer:** It is a subclass of int in Python.",
+    "review": "bool subclass behavior motivates exact-type check;source bool flow/period/mean/start rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Outlier:** Automatically an error? **Answer:** No; investigate.",
+    "review": "Outlier magnitude alone is not data error;no outlier classifier implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Leap day:** Why test it? **Answer:** Calendar handling can fail at boundaries.",
+    "review": "Leap-day/calendar behavior is a design obligation;no date implementation claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Holiday:** Is a valid date necessarily a trading day? **Answer:** No.",
+    "review": "Calendar validity and trading-day eligibility differ;no calendar execution claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**DST:** Can a local time be ambiguous? **Answer:** Yes.",
+    "review": "DST ambiguity is conceptual here;named-zone tests in earlier QA remain separate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Tolerance:** Why document it? **Answer:** To make numerical acceptance meaningful.",
+    "review": "Declared ordinary PV absolute/relative and return/mean relative thresholds retained;no tolerance widening.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**isclose:** Does specifying abs_tol remove its default rel_tol? **Answer:** No.",
+    "review": "Two separate math.isclose controls show abs_tol alone retains default relative tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Exception:** Why test its type? **Answer:** To verify the documented contract.",
+    "review": "ValueError type is checked for invalid values;iterator RuntimeError propagates separately.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Assertion:** Sole production validation? **Answer:** No; optimization can remove asserts.",
+    "review": "Optimized source suite still validates inputs with explicit exceptions;no assert-only guards.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Single sample:** Does it establish population variance? **Answer:** No.",
+    "review": "One observation/constant sample does not establish population uncertainty;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Underflow:** Does this code detect all cases? **Answer:** No.",
+    "review": "Broader nonzero PV discount/underflow/resource limits remain open.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Model:** Do boundary tests establish suitability? **Answer:** No.",
+    "review": "Passing boundaries do not establish model appropriateness;independent review open.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference tests:** Were they run merely because included? **Answer:** No.",
+    "review": "Historical inclusion claim retained;actual source command output supplied in this QA batch.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Evidence:** What should be retained? **Answer:** Inputs, contract, command, versions and actual output.",
+    "review": "Results include source hashes,versions,inputs in runnable runner,argv,actual outputs and retained failures.",
+    "status": "reviewed scoped"
+  }
+]
