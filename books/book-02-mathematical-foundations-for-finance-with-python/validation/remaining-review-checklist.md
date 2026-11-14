@@ -1,9 +1,9 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-11-08  
+**Date:** 2026-11-14  
 **Full-runtime candidate source revision:** `30fe802218e5ad9978031287330cd887ebbcf1dc` (V-133)
-**Latest scoped source:** V-134 candidate based on `39c3e62d59aade825ff6c414ba6bbbcd66666a90`; exact54-file manifest in [evidence](chapter-08-section-08-financial-followup.md).
-**Disposition:** V-134 scoped financial follow-up after V-133 full candidate Linux pass; independent review and release approval pending.
+**Latest scoped source:** V-135 candidate based on `f46c548b68ff7426d6d86effc462e352d77ccb35`; exact4-file manifest in [evidence](chapter-08-suggested-step-followup.md).
+**Disposition:** V-135 scoped suggested-step follow-up after V-134 financial scope and V-133 full candidate Linux pass; independent review and release approval pending.
 
 ## Reconciled evidence
 
@@ -1088,3 +1088,8 @@ Next substantive item:[7Section8.8 financial probes](chapter-08-section-08-finan
 [Section 8.8 financial follow-up](chapter-08-section-08-financial-followup.md):84/84 corrected predicates passed;45 passes/39 initial expanded mismatches and identical replay retained. Initial79-predicate and actual legacy failure records remain separate. Complete represented-input price and model-normalized sampled-ratio conventions are documented; positive base-price, step/grid, input priority, zero/sign and final-range gates remain explicit. Independent complete absolute-price references agree at1800/2300digits; shared Decimal backend limits are stated. Chapter8:54 compiled/44 scripts passed,54 hashes verified before/after. Fresh596/383/597 inventory is not a full runtime refresh;V-133 remains latest full595/382/596 evidence. Thirty-five selected COV categories remain partial;none closed.
 
 Next substantive item:Section8.8 suggested-step independent numerical references and input/scale/represented-grid contract; broader noise/conditioning/resource and independent mathematical/editorial/platform/release/canonical acceptance remain open. Book1 progresses independently.
+
+
+## V-135 checkpoint — Suggested-step independent roots and grid contract
+
+[Suggested-step evidence](chapter-08-suggested-step-followup.md):77 predicates passed using exact epsilon and independent 100/160-digit Newton cube/fourth-root references, finite/distinct represented-grid and validation-priority/scale/range guards. No source helper changed. Four Python files compiled/two scripts passed/four hashes verified before-after. Initial observer epsilon and required-fixture inventory corrections are retained separately from source defects. Fresh597/384/598 inventory is not a full run;V-133 remains latest full595/382/596 candidate Linux evidence. Thirty-five selected COV categories remain partial;none closed. Next substantive item:COV-51 conditioning/noise limits for suggested steps and derivative estimates with independently known noisy/quantized callbacks. Broader resource and independent acceptance obligations remain open. Book1 progresses independently.
