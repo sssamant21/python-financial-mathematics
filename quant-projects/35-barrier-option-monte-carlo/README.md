@@ -36,3 +36,12 @@ The new `monitoring.py` simulates **one common fine Brownian grid** and reuses e
 The independent European vanilla-call Black–Scholes formula is `S0 Φ(d1) - K exp(-rT) Φ(d2)`, with `d1=[ln(S0/K)+(r+σ²/2)T]/(σ√T)` and `d2=d1-σ√T`. The experiment reports its analytical value, the Monte Carlo vanilla estimate, and their difference. The vanilla check **does not validate barrier pricing**; it checks a shared underlying simulation component. The standard errors use independent *antithetic pair means*, not individual correlated paths.
 
 Only divisible, nested monitoring grids are accepted; all grids share the maturity observation. Inputs are bounded and checked for finite values. This is a **discrete-monitoring** experiment, not a continuously monitored barrier option. No dividends, smile, jumps, historical calibration, market quotes, live trading or independent barrier benchmark are included. CI exact-source execution and independent review remain unverified until confirmed.
+
+## Brownian-bridge continuous-monitoring estimator
+
+Run `python -m unittest -v test_bridge.py`, `python -m compileall -q bridge.py test_bridge.py`, and `python bridge.py --pairs 2000 --steps 52 --seed 2026`. Python 3.11+ standard library only; no downloaded prices.
+
+For two GBM endpoints below upper barrier H, conditional no-hit probability is
+`1 - exp[-2 ln(H/S_start) ln(H/S_end)/(sigma² dt)]`; any endpoint at or above H has survival zero. Multiplying segment survival probabilities and terminal discounted call payoffs gives a Brownian-bridge conditional-expectation estimate of **continuous** knockout under idealized constant-volatility GBM. The discrete estimator checks only simulated endpoints using the **same paths**. Pathwise, continuous bridge-weighted payoff cannot exceed the discretely monitored payoff, which cannot exceed vanilla payoff. The reported gap and paired standard error use antithetic-pair means; the bridge estimate integrates out within-step crossings rather than simulating crossing indicators.
+
+This conditional formula is a model-based numerical reference, **not** an independent externally implemented analytical barrier-price benchmark. Results depend on GBM, zero dividends, idealized continuous monitoring and finite Monte Carlo sampling. The paired standard error does not establish calibrated coverage; historical calibration, independent model review and exact published-revision CI remain unverified.
