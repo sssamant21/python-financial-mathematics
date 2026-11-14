@@ -273,6 +273,9 @@ jobs:
           python -m unittest -v test_matched_convergence.py
           python -m compileall -q matched_convergence.py test_matched_convergence.py
           python matched_convergence.py --pairs 20 --seed 2026 --steps 3 6 12
+          python -m unittest -v test_analytical.py
+          python -m compileall -q analytical.py test_analytical.py
+          python analytical.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
