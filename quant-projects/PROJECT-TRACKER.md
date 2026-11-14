@@ -547,3 +547,7 @@ Added `34-implied-volatility/sensitivity.py` and `test_sensitivity.py` with nine
 ### Project 34 — Near-expiry identifiability checkpoint (2026-11-14)
 
 Added `34-implied-volatility/test_near_expiry.py` with four deterministic synthetic tests for short-dated ATM inversion, vega decay, deep-OTM near-zero-premium boundary behavior and invalid maturity; included it in the dedicated workflow and documented the solver's absolute premium-tolerance limitation. **Tests authored and CI configured, but no local exact-source execution or completed CI for this new revision was verified in this run.** Prior Project 34 CI acceptance applies to the earlier base implementation, not these new tests. Independent model review and licensed market-data validation remain outstanding. Next: inspect the new exact-revision hosted run, fix failures if any, then design distinct Project 35.
+
+### Project 35 — Discrete barrier option Monte Carlo (2026-11-14)
+
+Published standard-library antithetic up-and-out call simulation, six deterministic regression tests, beginner mathematical context, and synthetic CLI. Local equivalent-source tests **6/6 passed**, compilation and CLI smoke passed; exact published-source CI, numerical benchmark, continuous-monitoring correction and independent review remain **unverified**. Project 34 near-expiry exact-source CI remains unverified (commit statuses and PR-filtered workflow lookup returned no results). Next: inspect hosted CI and address failures, then add fixed-seed monitoring-grid convergence and independent benchmark checks.
