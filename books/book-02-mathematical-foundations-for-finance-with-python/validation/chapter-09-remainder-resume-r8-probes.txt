@@ -1,0 +1,16 @@
+from pathlib import Path
+import subprocess,sys,tempfile,importlib,json,math,hashlib
+from decimal import Decimal,Context,localcontext
+from fractions import Fraction
+r=Path(sys.argv[1]).resolve();pin='f57b86902032643b6772d3b8ad377e885f2dcf9e';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_05.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation'
+def call(fn):
+ try:return dict(returned=fn())
+ except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+def reference(prec):
+ with localcontext(Context(prec=prec)):
+  C=Decimal.from_float(1e-308);T=Decimal(2);R=Decimal('.5');H=Decimal(-355);B=C*(-T*R).exp();W=C*(-T*min(R,R+H)).exp();E=C*(-T*(R+H)).exp()-B;L=-T*B*H;Q=L+T*T*B*H*H/2;bound1=T*T*W*H*H/2;bound2=T*T*T*W*abs(H)**3/6
+  return {k:float(x) for k,x in dict(baseline=B,first=-T*B,second=T*T*B,worst_second=T*T*W,worst_third=T*T*T*W,exact=E,linear=L,quadratic=Q,bound1=bound1,bound2=bound2,linear_utilization=abs(E-L)/bound1,quadratic_utilization=abs(E-Q)/bound2).items()}
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_05.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_05');a=reference(1800);b=reference(2400);assert a==b and all(math.isfinite(x) for x in b.values());rows=[dict(name='finite complete remainder report exp rescue',actual=call(lambda:m.single_report(1e-308,2.,.5,-355.)),independent_reference=b,status='OPEN numerical;all selected expected baseline/derivative/bound/change/utilization fields finite versus source OverflowError'),dict(name='complete second derivative underflow rescue',actual=call(lambda:m.single_report(1e308,1e-308,0.,.1)),independent_second_derivative=float(Fraction(1e308)*Fraction(1e-308)**2),status='OPEN numerical;source second_derivative0 versus finite1e-308 reference')]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),reference_precisions=[1800,2400],observations=rows,limits='Two diagnostic observations only,not passing acceptance predicates or full remainder/bound review. Whole-report eligibility/zero-bound utilization and COV52independent nonvacuity remain pending.')
+(v/sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('2 next remainder numerical observations saved')

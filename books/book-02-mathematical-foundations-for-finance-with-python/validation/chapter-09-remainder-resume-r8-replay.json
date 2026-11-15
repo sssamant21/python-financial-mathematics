@@ -1,0 +1,54 @@
+{
+  "source_revision": "f57b86902032643b6772d3b8ad377e885f2dcf9e",
+  "source_blob": "87ce1af35574cddadf63189c1b0289bb81c80079",
+  "reference_precisions": [
+    1800,
+    2400
+  ],
+  "observations": [
+    {
+      "name": "finite complete remainder report exp rescue",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_reference": {
+        "baseline": 3.67879441171442e-309,
+        "first": -7.357588823428847e-309,
+        "second": 1.471517764685769e-308,
+        "worst_second": 3.2873629846219887,
+        "worst_third": 6.5747259692439775,
+        "exact": 0.8218407461554972,
+        "linear": 2.6119440323172403e-306,
+        "quadratic": 9.298520755049376e-304,
+        "bound1": 207144.96006849306,
+        "bound2": 49024307.21621002,
+        "linear_utilization": 3.967466772465781e-06,
+        "quadratic_utilization": 1.676394410901034e-08
+      },
+      "status": "OPEN numerical;all selected expected baseline/derivative/bound/change/utilization fields finite versus source OverflowError"
+    },
+    {
+      "name": "complete second derivative underflow rescue",
+      "actual": {
+        "returned": {
+          "baseline_value": 1e+308,
+          "first_derivative": -0.9999999999999999,
+          "second_derivative": 0.0,
+          "exact_change": -0.10000000000000019,
+          "linear_change": -0.09999999999999999,
+          "quadratic_change": -0.09999999999999999,
+          "linear_error": -1.942890293094024e-16,
+          "quadratic_error": -1.942890293094024e-16,
+          "linear_bound": 0.0,
+          "quadratic_bound": 0.0,
+          "linear_bound_utilization": null,
+          "quadratic_bound_utilization": null
+        }
+      },
+      "independent_second_derivative": 1e-308,
+      "status": "OPEN numerical;source second_derivative0 versus finite1e-308 reference"
+    }
+  ],
+  "limits": "Two diagnostic observations only,not passing acceptance predicates or full remainder/bound review. Whole-report eligibility/zero-bound utilization and COV52independent nonvacuity remain pending."
+}

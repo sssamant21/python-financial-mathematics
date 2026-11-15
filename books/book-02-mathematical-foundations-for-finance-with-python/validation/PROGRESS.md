@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-176 single-flow shock scope and V-177 full candidate Linux pass (620/407/621). Portfolio shock contracts and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-178 portfolio-shock scope and V-179 full candidate Linux pass (621/408/622). Section9.5 numerical/bound and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 620/620 at `b5808b7f52ce3ecec42e99a091e240bf29d5aa11`. [V-177](runtime-refresh-2026-11-15-r7.md). |
-| Automated script execution | Full candidate Linux pass | 407/407 at `b5808b7f52ce3ecec42e99a091e240bf29d5aa11`;621 required blobs verified before/after. [V-177](runtime-refresh-2026-11-15-r7.md). |
+| Python compilation | Full candidate Linux pass | 621/621 at `f57b86902032643b6772d3b8ad377e885f2dcf9e`. [V-179](runtime-refresh-2026-11-15-r8.md). |
+| Automated script execution | Full candidate Linux pass | 408/408 at `f57b86902032643b6772d3b8ad377e885f2dcf9e`;622 required blobs verified before/after. [V-179](runtime-refresh-2026-11-15-r8.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1477,3 +1477,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-178 checkpoint — Section9.4 complete portfolio-shock reports
 
 [Portfolio-shock evidence](chapter-09-portfolio-shock-followup.md):126corrected predicates pass;103initial passes/23failed predicates and identical actual replay retained. Eighteen fields from three saved rejected reports plusfive complete-error fields,not23unique bugs. Independent1800/2400-digit collective endpoint/Taylor/error and baseline references;aggregate eligibility retained,child gates removed consistently. Single_shock strict baseline limitation unchanged. Only portfolio_shock body changed;manuscript delegation/status statements reconciled. Sevenfiles/sevencommands/sixcheckers pass;fresh621/408/622inventory notfullruntime. All36COVcategoriespartial,noneclosed. Next pinned refresh,then9.5complete remainder/error/bound/utilization contracts and COV52independent nonvacuity. Historical records retained;resources/platform/model/independent/release acceptance open. Book1 separate.
+
+
+### Section9.5 remainder/error resume — OPEN
+
+[Initial diagnostics](chapter-09-remainder-resume-r8-initial.json),[actual identical replay](chapter-09-remainder-resume-r8-replay.json),[runner](chapter-09-remainder-resume-r8-probes.txt) atpin f57b86902032643b6772d3b8ad377e885f2dcf9e:complete finite remainder/bound/utilization expectation raises OverflowError,and second derivative underflows0 versus complete1e-308. Two diagnostic observations,not passing126portfolio predicates or full remainder acceptance. Next9.5 whole-report/prerequisite/bound/utilization contracts and COV52independent interval/nonvacuity checks. Historical records retained.
+
+
+## V-179 checkpoint — Full pinned candidate Linux refresh
+
+[V-179 full runtime](runtime-refresh-2026-11-15-r8.md) at`f57b86902032643b6772d3b8ad377e885f2dcf9e`:621/621Python compiled,408/408check-test scripts passed,622/622required source/fixture blobs verified before-after. IncludesV-178portfolio shocks;126corrected predicates and23initial failed predicates/actual replay retained separately,not23unique bugs. Three saved portfolio observations scoped resolved;single_shock strict baseline limitation unchanged. Two next9.5 numerical diagnostics remainOPEN;full runtime does not settle unasserted contracts. Exactrunner/per-file outcomes/digests/fullmanifest retained. All36selected COVcategoriespartial,noneclosed. Next9.5remainder/error/bound/utilization and COV52interval/nonvacuity contracts. Independent mathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.

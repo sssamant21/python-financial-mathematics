@@ -1301,3 +1301,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-178 checkpoint — Section9.4 complete portfolio-shock reports
 
 [Portfolio-shock evidence](chapter-09-portfolio-shock-followup.md):126corrected predicates pass;103initial passes/23failed predicates and identical actual replay retained. Eighteen fields from three saved rejected reports plusfive complete-error fields,not23unique bugs. Independent1800/2400-digit collective endpoint/Taylor/error and baseline references;aggregate eligibility retained,child gates removed consistently. Single_shock strict baseline limitation unchanged. Only portfolio_shock body changed;manuscript delegation/status statements reconciled. Sevenfiles/sevencommands/sixcheckers pass;fresh621/408/622inventory notfullruntime. All36COVcategoriespartial,noneclosed. Next pinned refresh,then9.5complete remainder/error/bound/utilization contracts and COV52independent nonvacuity. Historical records retained;resources/platform/model/independent/release acceptance open. Book1 separate.
+
+
+### Section9.5 remainder/error resume — OPEN
+
+[Initial diagnostics](chapter-09-remainder-resume-r8-initial.json),[actual identical replay](chapter-09-remainder-resume-r8-replay.json),[runner](chapter-09-remainder-resume-r8-probes.txt) atpin f57b86902032643b6772d3b8ad377e885f2dcf9e:complete finite remainder/bound/utilization expectation raises OverflowError,and second derivative underflows0 versus complete1e-308. Two diagnostic observations,not passing126portfolio predicates or full remainder acceptance. Next9.5 whole-report/prerequisite/bound/utilization contracts and COV52independent interval/nonvacuity checks. Historical records retained.
+
+
+## V-179 checkpoint — Full pinned candidate Linux refresh
+
+[V-179 full runtime](runtime-refresh-2026-11-15-r8.md) at`f57b86902032643b6772d3b8ad377e885f2dcf9e`:621/621Python compiled,408/408check-test scripts passed,622/622required source/fixture blobs verified before-after. IncludesV-178portfolio shocks;126corrected predicates and23initial failed predicates/actual replay retained separately,not23unique bugs. Three saved portfolio observations scoped resolved;single_shock strict baseline limitation unchanged. Two next9.5 numerical diagnostics remainOPEN;full runtime does not settle unasserted contracts. Exactrunner/per-file outcomes/digests/fullmanifest retained. All36selected COVcategoriespartial,noneclosed. Next9.5remainder/error/bound/utilization and COV52interval/nonvacuity contracts. Independent mathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.

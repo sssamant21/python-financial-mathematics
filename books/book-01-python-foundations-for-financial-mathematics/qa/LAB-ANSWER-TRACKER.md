@@ -229,3 +229,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.2 scoped requirements workflow and answers
 
 [Requirements evidence](chapter-21-requirements-review/README.md):oneworkflow/40answer records/12lab reviews;32structural source predicates pass,two designobservations and one supplemental monthly-rate derivation separate. Three prior documented commands reused byexactfence hashes;twofreshcommands pass. Checker evidencechain12existingmethods/24invocations,fivecorecommands/twocompiledfences,zero newhistoricalmethods;prior fourth structuralprobe separate. Ten-row mapping reuses unchanged21.1valuation evidence;R01-07scoped cases only,R08-10operationalstore/UNASSIGNEDowner/independent/futureintegration open. Stale Notexecuted matrixlabels reconciled;codefences unchanged,no defectinvented. Chapter21 now2scopedworkflows/80answers;next21.3Project Structure. F28/F32/F209,20.11static,F165/F185 and broader installed/platform/model/release acceptance retained.
+
+
+### Section21.3 partial source runtime resume — OPEN
+
+[Structure checkpoint](chapter-21-structure-resume/README.md):six named fences staged,three source commands/fourcompiledPythonfences/12existingmethods passed,zero newhistoricalmethods. PYTHONPATHsource injection explicit;no editable/wheel/installedartifact acceptance. Next21.3 formal contracts,40answers/12labsteps and feasible isolated packaging checks;reuse source hashes where unchanged.

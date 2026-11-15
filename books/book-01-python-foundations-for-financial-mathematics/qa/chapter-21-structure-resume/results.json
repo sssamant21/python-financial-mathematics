@@ -1,0 +1,67 @@
+{
+  "source_revision": "f57b86902032643b6772d3b8ad377e885f2dcf9e",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-21/21.03-project-structure.md",
+  "source_sha256": "f8879c1868168d6eccf055fd787a2c5e3de90ba4ad392460dc5c01cd7950c527",
+  "fence_sha256": {
+    "src/financial_toolkit/__init__.py": "c6ecdb8c0bcc697f4149a084fe06350543ebe6a6be5ab8f67113e9c84aa9a087",
+    "src/financial_toolkit/time_value.py": "6e01afd6ae37f17a5cd0105f1bc40260681e4bc49c8c989dfc3ebc380e108d2f",
+    "examples/one_period.py": "d92f811b078c34fcda0470d0cc503f9e314c8a57b7d2110ee6b3ef53a5a03b81",
+    "tests/test_time_value.py": "8e035bd80478f9bdf3f824c71f716e20fff38fcf214e0926765ecce0bc65e4db",
+    "pyproject.toml": "aaa1f1be6d9bb115665e95c1b33372c4616fb5a47a862df8a1a9ac3421b9862c",
+    "README.md": "cdd4ae5ec7073c2bcd6cc9f98570aca020fc5de904995824d4381083643fd7e4"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "examples/one_period.py"
+      ],
+      "returncode": 0,
+      "stdout": "PV: 100.00 payment units\n",
+      "stderr": "",
+      "source_path_injection": true
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (test_time_value.TimeValueTests.test_boolean_rejected) ... ok\ntest_integer_rejected (test_time_value.TimeValueTests.test_integer_rejected) ... ok\ntest_known_value (test_time_value.TimeValueTests.test_known_value) ... ok\ntest_negative_payment (test_time_value.TimeValueTests.test_negative_payment) ... ok\ntest_negative_rate (test_time_value.TimeValueTests.test_negative_rate) ... ok\ntest_nonfinite_payment (test_time_value.TimeValueTests.test_nonfinite_payment) ... ok\ntest_nonfinite_rate (test_time_value.TimeValueTests.test_nonfinite_rate) ... ok\ntest_nonfinite_result_rejected (test_time_value.TimeValueTests.test_nonfinite_result_rejected) ... ok\ntest_positive_payment_rate_monotonicity (test_time_value.TimeValueTests.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (test_time_value.TimeValueTests.test_rate_boundary) ... ok\ntest_zero_payment (test_time_value.TimeValueTests.test_zero_payment) ... ok\ntest_zero_rate (test_time_value.TimeValueTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n",
+      "source_path_injection": true
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "examples"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "source_path_injection": true
+    }
+  ],
+  "available_build_tool_versions": {
+    "setuptools": "84.2.1",
+    "wheel": "0.48.0",
+    "build": null,
+    "pip": "26.2.2"
+  },
+  "existing_unique_methods": 12,
+  "method_invocations": 12,
+  "new_historical_unique_methods": 0,
+  "limits": "Only source-tree example/suite/compilation with explicit PYTHONPATH. No venv/editable build,wheel,installed artifact,external dependency or platform/release acceptance. Full21.3 contract/40answer/12lab review remains pending."
+}

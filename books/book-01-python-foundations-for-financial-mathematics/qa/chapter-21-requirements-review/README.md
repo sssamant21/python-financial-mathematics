@@ -7,3 +7,5 @@ Run `python books/book-01-python-foundations-for-financial-mathematics/qa/chapte
 [Forty workedanswer reviews](answer-records.json),[12lab-step reviews](lab-step-records.json) and[ten requirement mappings](requirements-evidence-map.json) distinguish software execution,concepts and external decisions. R01-07 have selected source evidence;R08-10 retain operationalstore,ownership,independent/model and futureintegration gaps. Source matrix's stale Notexecuted labels now point to scoped evidence;this is documentation reconciliation,not new software functionality or canonical approval. Owner remainsUNASSIGNED;appropriate owner decision/independent review NOTPERFORMED.
 
 F28/F32/F209,20.11static,F165tail/F185integration and broader all-range,installedartifact,security/platform/release/independent acceptance remainopen. Chapter21 now2scopedworkflows/80localanswers. Next21.3 Project Structure;owner/platform gaps do not block other authorized reviews.
+
+Executed source pin`f57b86902032643b6772d3b8ad377e885f2dcf9e`;[source verification](publication-verification.json).

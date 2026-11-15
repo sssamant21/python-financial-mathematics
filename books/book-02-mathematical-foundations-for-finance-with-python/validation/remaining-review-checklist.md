@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `b5808b7f52ce3ecec42e99a091e240bf29d5aa11` (V-177)
-**Latest scoped source:** V-176 at `b5808b7f52ce3ecec42e99a091e240bf29d5aa11`;[six-file source manifest](chapter-09-single-shock-publication-verification.json).
+**Full-runtime candidate source revision:** `f57b86902032643b6772d3b8ad377e885f2dcf9e` (V-179)
+**Latest scoped source:** V-178 at `f57b86902032643b6772d3b8ad377e885f2dcf9e`;[seven-file source manifest](chapter-09-portfolio-shock-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-176 single-flow shock scope and V-177 full Python runtime pass;portfolio_shock and independent/release approval remain open.
+**Disposition:** V-178 portfolio-shock scope and V-179 full Python runtime pass;Section9.5 numerical/bound and independent/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1351,3 +1351,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-178 checkpoint — Section9.4 complete portfolio-shock reports
 
 [Portfolio-shock evidence](chapter-09-portfolio-shock-followup.md):126corrected predicates pass;103initial passes/23failed predicates and identical actual replay retained. Eighteen fields from three saved rejected reports plusfive complete-error fields,not23unique bugs. Independent1800/2400-digit collective endpoint/Taylor/error and baseline references;aggregate eligibility retained,child gates removed consistently. Single_shock strict baseline limitation unchanged. Only portfolio_shock body changed;manuscript delegation/status statements reconciled. Sevenfiles/sevencommands/sixcheckers pass;fresh621/408/622inventory notfullruntime. All36COVcategoriespartial,noneclosed. Next pinned refresh,then9.5complete remainder/error/bound/utilization contracts and COV52independent nonvacuity. Historical records retained;resources/platform/model/independent/release acceptance open. Book1 separate.
+
+
+### Section9.5 remainder/error resume — OPEN
+
+[Initial diagnostics](chapter-09-remainder-resume-r8-initial.json),[actual identical replay](chapter-09-remainder-resume-r8-replay.json),[runner](chapter-09-remainder-resume-r8-probes.txt) atpin f57b86902032643b6772d3b8ad377e885f2dcf9e:complete finite remainder/bound/utilization expectation raises OverflowError,and second derivative underflows0 versus complete1e-308. Two diagnostic observations,not passing126portfolio predicates or full remainder acceptance. Next9.5 whole-report/prerequisite/bound/utilization contracts and COV52independent interval/nonvacuity checks. Historical records retained.
+
+
+## V-179 checkpoint — Full pinned candidate Linux refresh
+
+[V-179 full runtime](runtime-refresh-2026-11-15-r8.md) at`f57b86902032643b6772d3b8ad377e885f2dcf9e`:621/621Python compiled,408/408check-test scripts passed,622/622required source/fixture blobs verified before-after. IncludesV-178portfolio shocks;126corrected predicates and23initial failed predicates/actual replay retained separately,not23unique bugs. Three saved portfolio observations scoped resolved;single_shock strict baseline limitation unchanged. Two next9.5 numerical diagnostics remainOPEN;full runtime does not settle unasserted contracts. Exactrunner/per-file outcomes/digests/fullmanifest retained. All36selected COVcategoriespartial,noneclosed. Next9.5remainder/error/bound/utilization and COV52interval/nonvacuity contracts. Independent mathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.
