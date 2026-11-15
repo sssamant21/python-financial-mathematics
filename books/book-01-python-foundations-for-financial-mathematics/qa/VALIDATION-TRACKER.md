@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.6:** [Cashflow](chapter-21-cashflow-review/README.md):updatedartifact,62wheelpredicates+3sourceproperties,40answers/12labreviews;documentedrangelimitsretained.Next21.7;broadergapsopen.
+
 - **Latest21.5:** [TVM](chapter-21-tvm-review/README.md):updatedartifact,38wheelpredicates,40answers/12labreviews;sequentialrangelimitretained.Next21.6;broadergapsopen.
 
 - **Latest21.4:** [Decimalpolicy](chapter-21-policy-review/README.md):45sourcepredicates,40answers/12labreviews;fencesunchanged. Next21.5;broaderowner/platform/model/independentgaps retained.
@@ -630,3 +632,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.6 partial cash-flow integration resume — OPEN
 
 [Cashflowcheckpoint](chapter-21-cashflow-resume/README.md):3sourcecommands/36existingmethods acrossnewcashflow+TVM+retainedscaffoldsuites pass,zero newhistoricalmethods. Sourceinjectiononly;21.5artifactdoesnotcontainnewcashflowmodule. Formal21.6oracles/range/40answers/12lab/updatedartifactreviewnext;noadditionalcompletedworkflow.
+
+
+## Section21.6 scoped cash-flow workflow,artifact and answers
+
+[Cashflowevidence](chapter-21-cashflow-review/README.md):oneworkflow/40answers/12labreviews;11freshpackagecommands and62wheelcontractpredicates pass. Threeadditionalsourcepropertiesseparate. Updatedwheelhashdiffersfrom21.5;outsidehiddensource/cleanconsumerprovenanceverified. Threeearliersourcecommandsreusedby7Pythonfencedigests;36existingmethods/108invocationssource/editable/wheel,zero newhistoricalmethods. Documentedrounded-base/discountleg/fsumintermediatecancellationlimitsretained,notnewdefects;codefencesunchanged. Chapter21now6scopedworkflows/240answers;next21.7LoanModule. Localcashflow-TVMintegrationdoesnotcloseF32. F28/F32/F209,20.11static,F165/F185,R08-10/owner andresource/platform/model/release/independentacceptanceopen.

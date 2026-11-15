@@ -1406,3 +1406,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-185 checkpoint — Full pinned candidate Linux refresh
 
 [V-185fullruntime](runtime-refresh-2026-11-15-r11.md) at`70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`:624/624Pythoncompiled,411/411check-testscripts passed,625/625requiredsource/fixtureblobsverifiedbefore-after. IncludesV-184baseline;141sourcepredicatespass,31initialfailures/actualreplayretained withrange/exception-policy/numericalseparation,not31uniquebugs. Parallel/spotfunctiontextunchanged;twonumericalcasesandoneparent-prerequisitepolicyquestionremainOPEN. Exactrunner/per-fileoutcomes/digests/fullmanifestretained. All37selectedCOVcategoriespartial,noneclosed.Nextparallel_shockcompletefields/prerequisites,then spotcurve/shock. Independentmathematical/editorial/model/platform/release/canonicalacceptancepending;Book1independent.
+
+
+## V-186 checkpoint — Section9.6 complete parallel-shock reports
+
+[Parallelevidence](chapter-09-parallel-report-followup.md):112correctedsourcepredicatespass;95initialpass/17failedandactualidenticalreplayretained. Twelvefieldsfromtworejectedreports+5latenterrorfields,not17uniquebugs. Independent1800/2400-digitbaseline/endpoint/Taylor/errororacles. Existingfullbaselineprerequisiteretained;unusedper-cashfieldzero-shockrejectionremainsdocumenteddesign/rangelimit,notnumericrepairorindependentapproval. Onlyparallelbodychanged;spottextunchanged/pending. Fourfiles/fourcommands/threecheckerspass;fresh625/412/626inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,thencomplete spotcurve/spotshockcontracts. Historicalrecordsretained;resources/platform/model/release/independentacceptanceopen;Book1separate.

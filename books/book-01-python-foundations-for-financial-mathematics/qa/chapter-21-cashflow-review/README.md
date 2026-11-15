@@ -1,0 +1,11 @@
+# Section21.6 scoped cash-flow workflow and updated artifact
+
+Baseline7d6add00a538b049ca8bdeedc8af508c32238221.[Exact-fenceharness](package-review.py),[actualpackageexecution](package-results.json),[artifactcomparison](artifact-manifest.json),[40answers](answer-records.json),[12labsteps](lab-step-records.json). Run `python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-21-cashflow-review/package-review.py [source_revision]`. It stagescashflow/rootexports/example/tests,TVMdependency/tests andretainedscaffoldmetadata/README/tests.
+
+11freshpackagecommands pass,includingeditableandseparateclean-wheel36-methodsuites,outsidehidden-sourceexample/importprovenanceand62contractpredicates (38retainedone-period/TVM+24NPVcases). Threeadditional[sourceproperties](source-properties.json) runvia[source-propertyrunner](source-properties.py):alignedadditivity,positivefuturemonotonicity,mixed-signreverse-directioncase;theseareseparatefromwheelpredicates. Newwheelhashdiffersfrom21.5artifact,eventhoughdraftversion0.1.0unchanged. Buildvenvusespreprovisionedsystem-sitetools;consumerdoesnot.Pipno-index/no-build-isolation/no-depsadaptationexplicit;consumer-I/noPYTHONPATHwithsourcehidden. Noglobalpackages/networkdownloads;binary/tempvenvsnotcommitted;byte-reproducibilitynotclaimed.
+
+[Earlier3sourcecommands](../chapter-21-cashflow-resume/results.json) reusedby7Pythonfencedigests. Evidencechain14package/sourcecommands plusseparatesource-propertiesrun,36existingmethods/108invocations (36source+36editable+36wheel),zero newhistoricalmethods. Helpercaptionmentions12initialwheelchecks;actualJSON62rowsgovern. IndependentFractioncompleteNPVbenchmarksusepredeclared5e-13relative/1e-10amountabsolute;1001zeroentryboundarytestisnotworkloadperformanceacceptance.
+
+Three documentedrangeobservationsretainrounded-baseTVMloss,discounted-legoverflowbeforecancellation,andfsumintermediateoverflowdespitefinitecompleteNPV. Thesearepublishedmethodlimits,notnewfailedacceptancepredicates ordefects.Codefencesunchanged;historicalunexecutedwordingannotatedwithlaterQAevidence.
+
+F28/F32/F209,20.11static,F165/F185,R08-10/owner,universalrange/resources,supportedplatform/model/security/release/independentacceptanceopen.Localcashflow-TVMintegrationdoesnotclosebroaderF32shared-inputintegration.Chapter21now6scopedworkflows/240localanswers.Next21.7LoanModule.

@@ -66,18 +66,32 @@ def portfolio_sensitivity(flows, rate):
                 "value_weights":[_sensitivity_float(x/value) for x in terms]}
 
 def parallel_shock(flows, rate, shock):
+    """Complete latent change/error report;full baseline eligibility retained.
+
+    The baseline prerequisite includes per-cash derivatives even though this
+    API returns only change fields. It is a documented range restriction.
+    """
     items = validate_flows(flows)
     r,h = finite(rate,"rate"),finite(shock,"shock")
-    base = portfolio_sensitivity(items,r)
-    terms = [c*math.exp(-r*t) for c,t in items]
-    exact = math.fsum(v*math.expm1(-t*h) for (_,t),v in zip(items,terms))
-    linear = base["first"]*h
-    quadratic = linear+0.5*base["second"]*h*h
-    if not all(math.isfinite(z) for z in (exact,linear,quadratic)):
-        raise ValueError("nonfinite shock result")
-    return {"shock":h,"exact_change":exact,"linear_change":linear,
-            "quadratic_change":quadratic,
-            "linear_error":exact-linear,"quadratic_error":exact-quadratic}
+    portfolio_sensitivity(items,r)
+    R,H = map(Fraction,(r,h))
+    with localcontext(Context(prec=1700)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        def amount(C,exponent):
+            if exponent > 10000:
+                raise ValueError("parallel report outside finite float range")
+            return Decimal(0) if exponent < -10000 else dec(C)*dec(exponent).exp()
+        exact = first = second = Decimal(0)
+        for c,t in items:
+            C,T = map(Fraction,(c,t));baseline = amount(C,-T*R)
+            endpoint = amount(C,-T*(R+H));TT = dec(T)
+            exact += endpoint-baseline;first -= TT*baseline;second += TT*TT*baseline
+        HH = dec(H);linear = first*HH;quadratic = linear+second*HH*HH/2
+        return {"shock":h,"exact_change":_sensitivity_float(exact),
+                "linear_change":_sensitivity_float(linear),
+                "quadratic_change":_sensitivity_float(quadratic),
+                "linear_error":_sensitivity_float(exact-linear),
+                "quadratic_error":_sensitivity_float(exact-quadratic)}
 
 def spot_curve_sensitivity(flows, spot_rates):
     items = validate_flows(flows)

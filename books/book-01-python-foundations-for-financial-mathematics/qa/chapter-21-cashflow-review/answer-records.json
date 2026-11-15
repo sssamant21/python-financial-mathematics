@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Timeline:** When does the first cash flow occur? **Answer:** At time zero.",
+    "review": "Timezeroelementnotdiscounted;singleton25wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Next flow:** When does the second element occur? **Answer:** At the end of period one.",
+    "review": "Secondentryperiod1consistentTVMenumeration.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Break-even:** NPV of `[-100, 110]` at 10%? **Answer:** Zero in exact arithmetic.",
+    "review": "Independent-100+110/(11/10)=0;abs1e-10wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Two periods:** NPV of `[-100, 60, 60]` at 10%? **Answer:** Approximately 4.132231405.",
+    "review": "Independent-100+600/11+6000/121=500/121;wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Zero rate:** NPV of `[-100, 60, 60]` at zero? **Answer:** 20 in exact arithmetic.",
+    "review": "Zero-ratefinitecashflowsum20wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Time zero:** NPV of `[25]` at 10%? **Answer:** 25.",
+    "review": "Timezero25returnedunchanged.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Gap:** How do you represent 121 due at period two after an initial \u2212100? **Answer:** `[-100.0, 0.0, 121.0]`.",
+    "review": "Zero-filledtimeonegapexplicit;wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Gap benchmark:** NPV of that schedule at 10%? **Answer:** Zero in exact arithmetic.",
+    "review": "Independent-100+121/(11/10)^2=0;wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Negative rate:** PV of `[0, 95]` at \u22125%? **Answer:** 100 in exact arithmetic.",
+    "review": "Independent95/(19/20)=100;wheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Rate unit:** How is 10% expressed? **Answer:** As `0.10`.",
+    "review": ".10effectiveperperiodrate;noautopercentageconversion.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Frequency:** Must rate frequency match cash-flow intervals? **Answer:** Yes.",
+    "review": "Frequencyalignmentcallerassumption,notmetadataenforcement.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Boundary:** Why reject \u22121? **Answer:** Future discounting would divide by zero.",
+    "review": "Rate-1rejectedforallrequests.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Zero-only:** Is an invalid rate accepted for a time-zero-only schedule? **Answer:** No; the module validates the rate for every request.",
+    "review": "Singletoninvalidrate-1/bool/infwheelcasesrejected.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Sign:** Can cash flows be negative? **Answer:** Yes; maintain one consistent perspective.",
+    "review": "Mixedsigncashflowaccepted;testsincludeinitialoutflow.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Units:** Does the module convert currency? **Answer:** No; amounts must already share units and currency.",
+    "review": "NoFXconversion;callerunits/schedulesaligned.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Scale:** What happens when all flows double? **Answer:** NPV doubles in exact arithmetic at the same rate.",
+    "review": "WheelandreferenceNPVscalingcasepass.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Additivity:** What is the NPV of the sum of two aligned schedules? **Answer:** The sum of their NPVs in exact arithmetic at the same rate.",
+    "review": "Three-extra-sourcepropertiesincludealignedadditivity;notclaimednewwheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Positive flow:** What happens to its PV when the rate rises? **Answer:** It decreases, all else equal for a future flow.",
+    "review": "Extra-sourcepositivefutureNPVratecomparisonpass.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Mixed signs:** Must NPV always decrease as the rate rises? **Answer:** No; the signs and timings matter.",
+    "review": "Extra-sourcemixed-signcounterexampledirectionverified.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Empty:** What does the module do with `[]`? **Answer:** Raises `ValueError`.",
+    "review": "Emptylist/tupleValueErrorwheelcases.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Container:** Is a generator accepted? **Answer:** No; only a built-in list or tuple is accepted.",
+    "review": "Generatorrejectedwheelcase;strictbuilt-inlisttuplecontract.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Integer:** Is `[100]` accepted? **Answer:** No; each flow must be a built-in float.",
+    "review": "Integerflowrejectedwheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Boolean:** Is `True` accepted as the rate? **Answer:** No.",
+    "review": "Booleanraterejectedwheelcase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Nonfinite:** Is NaN accepted in a schedule? **Answer:** No.",
+    "review": "NaN/infmembersrejectedwheelcases.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Length:** Is a 1,002-entry schedule accepted? **Answer:** No; the maximum is 1,001.",
+    "review": "1002entryrejection;1001zeroentriesaccepted.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Periods:** What is the last period in a 1,001-entry schedule? **Answer:** Period 1,000.",
+    "review": "Maxlastindex1000;TVMcap10000enough;sourceconstructionreview.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Limit:** Does the length bound guarantee speed or precision? **Answer:** No; workload and numerical analysis remain necessary.",
+    "review": "Lengthcapnotaccuracy/latencyguarantee;resourceanalysisopen.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Complexity:** Why does this reference method perform quadratic work? **Answer:** It repeats a period-by-period discount for every successive flow.",
+    "review": "Repeatedper-flowdiscountcostsum0..n-1=O(n\u00b2);notperformancebenchmark.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Mutation:** Is the caller's list modified? **Answer:** No.",
+    "review": "Callerlistunchangedwheel/sourcecase.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Rounding:** Are results automatically rounded to cents? **Answer:** No.",
+    "review": "Rawfloatoutput;6decimaldisplayonly.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Underflow:** Can a small contribution become zero? **Answer:** Yes.",
+    "review": "Discountingunderflow/roundinglimitsretained,nobroadaccuracyapproval.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Overflow:** What happens if summation overflows? **Answer:** The module raises `ValueError`.",
+    "review": "TotalfsumoverflowValueErrorwheelcase;cause/finite-finalrejectiondocumented.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Summation:** Does `math.fsum` make discounting exact? **Answer:** No.",
+    "review": "fsumdoesnotrepairdiscountloss;separaterangelimitobservationsretained.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Tolerance:** Why specify absolute tolerance near zero? **Answer:** Relative tolerance alone does not allow nonzero difference from zero.",
+    "review": "Publishednearzeroabs1e-10;independentRationalexpectationsnotroundtriponly.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**IRR:** Does this module calculate an internal rate of return? **Answer:** No.",
+    "review": "NoIRRsolverimplemented.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Decision:** Does positive NPV alone prove an investment is suitable? **Answer:** No; other assumptions and risks matter.",
+    "review": "PositiveNPVisnotinvestment/modelapproval.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Benchmark:** Why independently derive expected results? **Answer:** To reduce the chance of reproducing the same error.",
+    "review": "RationalcompleteNPVoraclesindependentofdiscountloop.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Installation:** Does changing source update an installed wheel? **Answer:** No; rebuild and reinstall the artifact.",
+    "review": "Newartifactincludesmodule/rootexport;hashdiffersfrom21.5wheel.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Were these reference tests run during publication? **Answer:** No; actual execution evidence is deferred.",
+    "review": "Originalpublicationunexecuted;currentlaterQAannotatedwithexecutionlinks.",
+    "status": "assistant scoped;external acceptancepending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.7 \u2014 Loan Module.",
+    "review": "Navigation21.07-loan-module.mdexists;nextformalreview.",
+    "status": "assistant scoped;external acceptancepending"
+  }
+]
