@@ -1,5 +1,6 @@
 """Section 9.7: kinks, one-sided derivatives, and payoff scenarios."""
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -67,18 +68,25 @@ def cap_floor_slopes(rate,notional,floor,cap):
     return {"left":left,"right":right,"differentiable":left==right}
 
 def difference_report(function,point,step):
+    """Finite sampled quotients at rounded grid points, nominal h denominator."""
     if not callable(function):
         raise TypeError("function must be callable")
     x,h=finite(point,"point"),finite(step,"step")
-    if h<=0 or x-h==x or x+h==x:
-        raise ValueError("step must be positive and representable")
+    xm,xp=x-h,x+h
+    if h<=0 or not math.isfinite(xm) or not math.isfinite(xp) or xm==x or xp==x:
+        raise ValueError("step must form finite distinct neighboring points")
     f0=finite(function(x),"f(point)")
-    fm=finite(function(x-h),"f(point-step)")
-    fp=finite(function(x+h),"f(point+step)")
-    left=(f0-fm)/h
-    right=(fp-f0)/h
-    return {"left_difference":left,"right_difference":right,
-            "centered_difference":(fp-fm)/(2*h)}
+    fm=finite(function(xm),"f(point-step)")
+    fp=finite(function(xp),"f(point+step)")
+    A,B,C,H=map(Fraction,(f0,fm,fp,h))
+    values=((A-B)/H,(C-A)/H,(C-B)/(2*H))
+    try:
+        reported=[float(value) for value in values]
+    except OverflowError as exc:
+        raise ValueError("difference report outside finite float range") from exc
+    if not all(math.isfinite(value) for value in reported):
+        raise ValueError("difference report outside finite float range")
+    return dict(zip(("left_difference","right_difference","centered_difference"),reported))
 
 def call_scenario(spot,strike,shock,rate=0,years=0):
     s,k,h,r,t=(finite(v,name) for v,name in
