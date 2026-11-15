@@ -1,0 +1,449 @@
+{
+  "candidate_based_on": "78b2ddb63e3bef63f54b89e6e879ef2c4ea46f2c",
+  "selected_revision": "78b2ddb63e3bef63f54b89e6e879ef2c4ea46f2c",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manuscript_sha256": "50aea91b8f6efaddfa3e9645b812c2c0ef69e09966dacb423e5c7c9309951137",
+  "fence_sha256": [
+    "1e81e77cc8220167f785c94465be3d1c870e47680c90c5c6654e22a5edf8ad8a",
+    "e5c64c8c02c47ca1df2b45a08b2d0be800303273835f7dfaaefe1bcdbbab9975",
+    "4606b8d306cc070caebbb083920d4035c460e0eb938060b69761ba389d8e8c76",
+    "37f087b6e9d085472e1837f99b7c31a2b710701e560cd9456baba9406795a07b"
+  ],
+  "staged_paths": [
+    "finlib/__init__.py",
+    "finlib/valuation.py",
+    "example_usage.py",
+    "tests/test_valuation.py"
+  ],
+  "commands": [
+    {
+      "label": "documented discovery",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty (test_valuation.ValuationTests.test_empty) ... ok\ntest_invalid_rate_boundary (test_valuation.ValuationTests.test_invalid_rate_boundary) ... ok\ntest_negative_rate (test_valuation.ValuationTests.test_negative_rate) ... ok\ntest_nonfinite_inputs (test_valuation.ValuationTests.test_nonfinite_inputs) ... ok\ntest_nonfinite_intermediate (test_valuation.ValuationTests.test_nonfinite_intermediate) ... ok\ntest_one_period_break_even (test_valuation.ValuationTests.test_one_period_break_even) ... ok\ntest_rate_monotonicity_positive_future_flow (test_valuation.ValuationTests.test_rate_monotonicity_positive_future_flow) ... ok\ntest_scaling (test_valuation.ValuationTests.test_scaling) ... ok\ntest_time_zero_only (test_valuation.ValuationTests.test_time_zero_only) ... ok\ntest_two_period_benchmark (test_valuation.ValuationTests.test_two_period_benchmark) ... ok\ntest_wrong_types (test_valuation.ValuationTests.test_wrong_types) ... ok\ntest_zero_rate (test_valuation.ValuationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "label": "reference main via root",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import runpy;runpy.run_path(\"tests/test_valuation.py\",run_name=\"__main__\")"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty (__main__.ValuationTests.test_empty) ... ok\ntest_invalid_rate_boundary (__main__.ValuationTests.test_invalid_rate_boundary) ... ok\ntest_negative_rate (__main__.ValuationTests.test_negative_rate) ... ok\ntest_nonfinite_inputs (__main__.ValuationTests.test_nonfinite_inputs) ... ok\ntest_nonfinite_intermediate (__main__.ValuationTests.test_nonfinite_intermediate) ... ok\ntest_one_period_break_even (__main__.ValuationTests.test_one_period_break_even) ... ok\ntest_rate_monotonicity_positive_future_flow (__main__.ValuationTests.test_rate_monotonicity_positive_future_flow) ... ok\ntest_scaling (__main__.ValuationTests.test_scaling) ... ok\ntest_time_zero_only (__main__.ValuationTests.test_time_zero_only) ... ok\ntest_two_period_benchmark (__main__.ValuationTests.test_two_period_benchmark) ... ok\ntest_wrong_types (__main__.ValuationTests.test_wrong_types) ... ok\ntest_zero_rate (__main__.ValuationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "optimized discovery",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty (test_valuation.ValuationTests.test_empty) ... ok\ntest_invalid_rate_boundary (test_valuation.ValuationTests.test_invalid_rate_boundary) ... ok\ntest_negative_rate (test_valuation.ValuationTests.test_negative_rate) ... ok\ntest_nonfinite_inputs (test_valuation.ValuationTests.test_nonfinite_inputs) ... ok\ntest_nonfinite_intermediate (test_valuation.ValuationTests.test_nonfinite_intermediate) ... ok\ntest_one_period_break_even (test_valuation.ValuationTests.test_one_period_break_even) ... ok\ntest_rate_monotonicity_positive_future_flow (test_valuation.ValuationTests.test_rate_monotonicity_positive_future_flow) ... ok\ntest_scaling (test_valuation.ValuationTests.test_scaling) ... ok\ntest_time_zero_only (test_valuation.ValuationTests.test_time_zero_only) ... ok\ntest_two_period_benchmark (test_valuation.ValuationTests.test_two_period_benchmark) ... ok\ntest_wrong_types (test_valuation.ValuationTests.test_wrong_types) ... ok\ntest_zero_rate (test_valuation.ValuationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+    },
+    {
+      "label": "four fence compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "finlib",
+        "tests",
+        "example_usage.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import/root state",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import logging;before=(list(logging.getLogger().handlers),logging.getLogger().level);import finlib;assert before==(list(logging.getLogger().handlers),logging.getLogger().level)"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "provided example",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "example_usage.py"
+      ],
+      "returncode": 0,
+      "stdout": "NPV: 4.132231\n",
+      "stderr": ""
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "independent NPV0",
+      "actual": "-1.4210854715202004e-14",
+      "expected": "-5.046468293750712e-16",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV1",
+      "actual": "4.1322314049586595",
+      "expected": "4.132231404958677",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV2",
+      "actual": "20.0",
+      "expected": "20.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV3",
+      "actual": "50.0",
+      "expected": "50.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV4",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV5",
+      "actual": "-99.99999999999999",
+      "expected": "-100.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV6",
+      "actual": "8.264462809917319",
+      "expected": "8.264462809917354",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV7",
+      "actual": "1.25",
+      "expected": "1.25",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "independent NPV8",
+      "actual": "1e-306",
+      "expected": "1e-306",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "independent NPV9",
+      "actual": "0.0",
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject empty",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject empty tuple",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject generator",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject text",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject mapping",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject integer member",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject bool member",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject Decimal member",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "flow reject inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject integer",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject bool",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject text",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject Decimal",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject boundary",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate reject below",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate validates before schedule",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "caller list unchanged",
+      "actual": "[-100.0, 60.0, 60.0]",
+      "expected": "[-100.0, 60.0, 60.0]",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "exports npv",
+      "actual": "['npv']",
+      "expected": "['npv']",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "package root module",
+      "actual": "'finlib.valuation'",
+      "expected": "'finlib.valuation'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "calculation emits no output",
+      "actual": "''",
+      "expected": "''",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "calculation root state unchanged",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "monotonic positive future flow",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed-sign direction counterexample",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "scaling",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "additivity same timing/rate",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "detected intermediate overflow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "example display output",
+      "actual": "'NPV: 4.132231\\n'",
+      "expected": "'NPV: 4.132231\\n'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "documented_range_observations": [
+    {
+      "name": "documented finite final value rejected by intermediate range",
+      "actual": "'ValueError'",
+      "independent_final": "1e+308",
+      "status": "RETAINED LIMIT \u2014 intentional documented intermediate rejection,not a newly failing acceptance predicate"
+    }
+  ],
+  "existing_unique_methods": 12,
+  "method_invocations": 36,
+  "new_historical_unique_methods": 0,
+  "limits": "Exact project-root imports/examples/tests only;no packaging/installed artifact,all-range NPV,release/production/model/platform or independent acceptance. F28/F32/F209/static-checker and broader gaps open."
+}

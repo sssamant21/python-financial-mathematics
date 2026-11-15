@@ -1,0 +1,18 @@
+{
+  "issue": "Decimal unary-minus handling of exact zero did not encode the retained \u2212t*0 first-derivative sign convention",
+  "source_implementation_changed_for_correction": false,
+  "correction": "Independent expected zero sign derived explicitly from the input time sign;all nonzero numeric references/tolerances unchanged",
+  "initial_baseline_failed_predicates": 31,
+  "qa_zero_sign_errors": 2,
+  "corrected_oracle_baseline_failed_predicates": 29,
+  "initial_records": [
+    "chapter-09-single-report-baseline-initial-oracle.json",
+    "chapter-09-single-report-baseline-replay-initial-oracle.json",
+    "chapter-09-single-report-first-correction.json"
+  ],
+  "runnable_artifacts": [
+    "chapter-09-single-report-initial-oracle-checker.txt",
+    "chapter-09-single-report-first-correction-source.txt"
+  ],
+  "limits": "Oracle repair separate from numerical/report implementation fixes;not two source sign bugs"
+}

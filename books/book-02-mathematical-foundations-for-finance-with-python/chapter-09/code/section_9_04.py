@@ -1,6 +1,7 @@
 """Section 9.4: second-order Taylor approximation and rate convexity."""
 import math
 from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -29,14 +30,41 @@ def taylor_change(first, second, shock, order=2):
         raise ValueError("Taylor change outside finite float range")
     return result
 
+def _single_report(exact):
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("single-flow report outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("single-flow report outside finite float range")
+    return result
+
+def _single_amount(coefficient, exponent, zero=0.0):
+    if coefficient == 0:
+        return zero
+    if exponent > 10000:
+        raise ValueError("single-flow report outside finite float range")
+    if exponent < -10000:
+        return -0.0 if coefficient < 0 else 0.0
+    if exponent == 0:
+        return _single_report(coefficient)
+    with localcontext(Context(prec=1300)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        return _single_report(dec(coefficient)*dec(exponent).exp())
+
 def single_cash_flow(cash, years, rate):
     c, t, r = finite(cash,"cash"), finite(years,"years"), finite(rate,"rate")
     if c <= 0 or t < 0:
         raise ValueError("cash must be positive and years nonnegative")
-    v = c*math.exp(-r*t)
-    if not math.isfinite(v) or v == 0:
+    C,T,R = map(Fraction,(c,t,r))
+    exponent = -R*T
+    v = _single_amount(C,exponent)
+    if v == 0:
         raise ValueError("discounted value must be finite and positive")
-    return {"value":v,"first":-t*v,"second":t*t*v,"duration":t,"convexity":t*t}
+    first = _single_amount(-T*C,exponent,zero=-t*0.0)
+    second = _single_amount(T*T*C,exponent)
+    convexity = _single_report(T*T)
+    return {"value":v,"first":first,"second":second,"duration":t,"convexity":convexity}
 
 def cash_flow_portfolio(cash_flows, rate):
     r = finite(rate,"rate")

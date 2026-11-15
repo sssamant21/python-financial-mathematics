@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Time zero:** NPV of `[50.0]` at 10%? **Answer:** 50; it is not discounted.",
+    "review": "Independent t0-only schedule returns50.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Break-even:** NPV of `[-100.0, 110.0]` at 10%? **Answer:** 0 in exact arithmetic.",
+    "review": "Printed exact0;represented-rate Fraction reference and published absolute1e\u221210 tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Two periods:** NPV of `[-100.0, 60.0, 60.0]` at 10%? **Answer:** Approximately 4.132231405.",
+    "review": "Independent rational full sum\u22484.13223140495868;example prints4.132231.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Zero rate:** NPV of `[-100.0, 60.0, 60.0]` at 0%? **Answer:** 20.",
+    "review": "Zero-rate sum20 actual source.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Negative rate:** PV of 95 one period ahead at \u22125%? **Answer:** 100 in exact arithmetic.",
+    "review": "95/(1\u2212.05)=100 reference;source within monetary tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Rate boundary:** Why reject \u22121? **Answer:** The discount denominator is zero.",
+    "review": "Rate\u22121 rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Units:** What unit does NPV use? **Answer:** The common cash-flow unit.",
+    "review": "Same cash-flow units assumed;no currency metadata validator.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Signs:** Can a cash flow be negative? **Answer:** Yes; signs must follow a consistent perspective.",
+    "review": "Negative-flow source vector passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Frequency:** Can an annual rate directly discount monthly periods? **Answer:** No; first convert to a consistent effective monthly rate.",
+    "review": "Frequency conversion is caller responsibility;no rate conversion API implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Timing:** Where is the first flow? **Answer:** At time zero.",
+    "review": "First flow t0 independently checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Scale:** Double every cash flow. What happens in exact arithmetic? **Answer:** NPV doubles.",
+    "review": "Scaling with stated assumptions passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Additivity:** What happens if corresponding flows of two equal-length schedules are added? **Answer:** Their NPV is the sum of individual NPVs in exact arithmetic, at the same rate.",
+    "review": "Additivity same timing/rate passes for synthetic arrays.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Rate sensitivity:** What happens to a positive future payment's PV when rate rises? **Answer:** It falls, all else equal.",
+    "review": "Positive-future monotonicity passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Mixed signs:** Is total NPV always decreasing with rate? **Answer:** No; cash-flow signs and timing matter.",
+    "review": "Mixed-sign source counterexample shows opposite direction.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Empty schedule:** What is the specified behavior? **Answer:** Raise `ValueError`.",
+    "review": "Empty list/tuple reject.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Integer input:** Does `[100]` satisfy this contract? **Answer:** No; use built-in floats.",
+    "review": "Integer member rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Boolean rate:** Is `True` accepted? **Answer:** No.",
+    "review": "Boolean rate rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**NaN:** Is NaN a valid amount? **Answer:** No; nonfinite inputs are rejected.",
+    "review": "NaN member rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Infinity:** Is an infinite rate accepted? **Answer:** No.",
+    "review": "Infinite rate rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Mutation:** Does the function modify the input list? **Answer:** No.",
+    "review": "Caller list unchanged.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Underflow:** Can a small contribution become zero? **Answer:** Yes, with floating-point underflow or rounding.",
+    "review": "Tiny contribution rounds0 in permitted float policy.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Overflow:** Can finite inputs yield a nonfinite intermediate? **Answer:** Yes; the function raises `ValueError`.",
+    "review": "Actual intermediate overflow raisesValueError.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Cancellation:** Why can close positive and negative terms be difficult? **Answer:** Significant digits can be lost in subtraction.",
+    "review": "Documented finite-final/cancelled-intermediate case retained as separate range limit,not defect.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Tolerance:** Why use an absolute tolerance around zero? **Answer:** Relative tolerance alone is ineffective against a zero benchmark.",
+    "review": "Initial QA relative-only near-zero probe corrected to published absolute tolerance;failure retained.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Rounding:** Does formatted output change the stored result? **Answer:** No.",
+    "review": "Example formatting does not alter function-return contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Currency:** Does the function round to cents? **Answer:** No.",
+    "review": "No cent quantization.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Decimal:** Can `Decimal` be passed directly? **Answer:** No; this contract accepts built-in floats only.",
+    "review": "Decimal member rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Type hints:** Do annotations alone enforce the contract? **Answer:** No; runtime checks do that.",
+    "review": "Runtime checks explicit;static checker execution still open.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Exceptions:** Why avoid returning zero on invalid input? **Answer:** Zero could be mistaken for a valid valuation.",
+    "review": "Wrong input does not return default zero.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Horner:** Why traverse in reverse? **Answer:** It builds the nested discount expression from the last payment to time zero.",
+    "review": "Reverse Horner trace and independent discount sum agree in ordinary examples.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Tests:** Does a passing test prove all inputs correct? **Answer:** No; it checks specified examples and properties.",
+    "review": "Twelve existing methods executed36 invocations;no all-input proof.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Independence:** Why derive a benchmark separately? **Answer:** To reduce the chance of reproducing the same error.",
+    "review": "Fraction oracle differs from Horner implementation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Model:** Do software tests establish suitability for a risky bond? **Answer:** No; credit and other omitted risks need review.",
+    "review": "No risky-bond or model suitability approval.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Regression:** What does a regression test protect? **Answer:** A documented expected behavior against unintended changes.",
+    "review": "Current tests/reference outputs retained for future regression.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Logging:** Should the library configure the root logger? **Answer:** No; leave application logging configuration to the caller.",
+    "review": "Quiet package import and call leave root logging state unchanged.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Sensitive data:** Should all cash flows be logged by default? **Answer:** No; minimize sensitive data in logs.",
+    "review": "No output emitted by calculation in tested call;not organization-wide privacy control.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Reproducibility:** Which evidence identifies a test run? **Answer:** Revision, environment, command and actual results.",
+    "review": "Exact source/environment/commands retained.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Installation:** Is importing from the project root an installed-package test? **Answer:** No.",
+    "review": "Staged root imports are not installed artifact validation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Release:** Does the title imply production approval? **Answer:** No; actual readiness requires appropriate evidence and authorization.",
+    "review": "Draft release assessment explicitly unapproved;no production operation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What remains after this section? **Answer:** Section 20.16, Exercises and Applied Problems.",
+    "review": "Next20.16 exercises remain pending;not chapter completion.",
+    "status": "reviewed scoped"
+  }
+]
