@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-158 model-helper scoped pass;V-157 remains latest full candidate Linux pass (610/397/611),pending refresh. Centered helper and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-158 model-helper scoped pass and V-159 full candidate Linux pass (611/398/612). Centered helper and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 610/610 at `2f3595ce24acb024f48ce9682d357863be8826bd`. [V-157](runtime-refresh-2026-11-14-r8.md). |
-| Automated script execution | Full candidate Linux pass | 397/397 at `2f3595ce24acb024f48ce9682d357863be8826bd`;611 required blobs verified before/after. [V-157](runtime-refresh-2026-11-14-r8.md). |
+| Python compilation | Full candidate Linux pass | 611/611 at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`. [V-159](runtime-refresh-2026-11-14-r9.md). |
+| Automated script execution | Full candidate Linux pass | 398/398 at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`;612 required blobs verified before/after. [V-159](runtime-refresh-2026-11-14-r9.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1337,3 +1337,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-158 checkpoint — Section9.2 constant/linear/income model contracts
 
 [Model evidence](chapter-09-model-contract-followup.md):94 corrected predicates pass;55 initial passes/39 failed predicates and identical replay retained. Independent1800/2400-digit powers/linear references,analytic income identity and input/report controls checked. Three numerical resume cases resolved only in explicit mapped scope;centered callback/preflight observation remains OPEN. Six files compiled,five commands/four checkers pass,six hashes verified before-after;earlier checkers unchanged. Lab escaped fences/dependency contract repaired;separate QA-loader import failure retained and two diagnostic loaders rerun. Fresh611/398/612 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.2 centered preflight/complete sampled report/callback contracts. Broader resource/platform/independent/release acceptance pending. Book1 tracked independently.
+
+
+## V-159 checkpoint — Full pinned candidate Linux refresh
+
+[V-159 full runtime](runtime-refresh-2026-11-14-r9.md) at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`:611/611 Python files compiled,398/398 check-test scripts passed,612/612 required Python/fixture hashes verified before-after. Includes V-158 model contracts;39 initial failed predicates/replay,94 corrected predicates and three scoped numerical-probe resolutions retained separately. QA-loader failure/reruns remain separate diagnostics. Centered callback/preflight observation remains OPEN. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 centered preflight/complete sampled report/callback contracts. Book1 tracked independently.

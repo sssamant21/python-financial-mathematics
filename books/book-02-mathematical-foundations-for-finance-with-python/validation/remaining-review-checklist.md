@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `2f3595ce24acb024f48ce9682d357863be8826bd` (V-157)
-**Latest scoped source:** V-156 at `2f3595ce24acb024f48ce9682d357863be8826bd`;[three-file source manifest](chapter-09-rational-elasticity-publication-verification.json).
+**Full-runtime candidate source revision:** `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba` (V-159)
+**Latest scoped source:** V-158 at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`;[six-file source manifest](chapter-09-model-contract-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-156 point/arc/rate scope and V-157 full Python runtime pass;remaining-helper probes and independent/release approval stay open.
+**Disposition:** V-158 model scope and V-159 full Python runtime pass;centered helper and independent/release approval stay open.
 
 ## Reconciled evidence
 
@@ -1211,3 +1211,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-158 checkpoint — Section9.2 constant/linear/income model contracts
 
 [Model evidence](chapter-09-model-contract-followup.md):94 corrected predicates pass;55 initial passes/39 failed predicates and identical replay retained. Independent1800/2400-digit powers/linear references,analytic income identity and input/report controls checked. Three numerical resume cases resolved only in explicit mapped scope;centered callback/preflight observation remains OPEN. Six files compiled,five commands/four checkers pass,six hashes verified before-after;earlier checkers unchanged. Lab escaped fences/dependency contract repaired;separate QA-loader import failure retained and two diagnostic loaders rerun. Fresh611/398/612 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.2 centered preflight/complete sampled report/callback contracts. Broader resource/platform/independent/release acceptance pending. Book1 tracked independently.
+
+
+## V-159 checkpoint — Full pinned candidate Linux refresh
+
+[V-159 full runtime](runtime-refresh-2026-11-14-r9.md) at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`:611/611 Python files compiled,398/398 check-test scripts passed,612/612 required Python/fixture hashes verified before-after. Includes V-158 model contracts;39 initial failed predicates/replay,94 corrected predicates and three scoped numerical-probe resolutions retained separately. QA-loader failure/reruns remain separate diagnostics. Centered callback/preflight observation remains OPEN. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 centered preflight/complete sampled report/callback contracts. Book1 tracked independently.
