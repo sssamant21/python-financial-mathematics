@@ -47,7 +47,10 @@ def capped_floored_payment(rate,notional,floor,cap):
              ((rate,"rate"),(notional,"notional"),(floor,"floor"),(cap,"cap")))
     if n<=0 or a>=c:
         raise ValueError("notional must be positive and floor less than cap")
-    return n*min(max(r,a),c)
+    payment=n*min(max(r,a),c)
+    if not math.isfinite(payment):
+        raise ValueError("cap/floor payment outside finite float range")
+    return payment
 
 def cap_floor_slopes(rate,notional,floor,cap):
     r,n,a,c=(finite(v,name) for v,name in
