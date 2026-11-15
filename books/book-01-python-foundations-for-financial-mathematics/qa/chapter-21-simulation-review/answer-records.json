@@ -1,0 +1,245 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Model:** How many possible one-period outcomes? **Answer:** Two.",
+    "review": "Two discrete outcomes, one period per scenario; no multi-steppath.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Up value:** Initial 100 and up return 10%? **Answer:** 110 in exact arithmetic.",
+    "review": "Independent100*(1+1/10)=110; controlled-source branch checked to1e-10amount allowance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Down value:** Initial 100 and down return \u221210%? **Answer:** 90 in exact arithmetic.",
+    "review": "Independent100*(1-1/10)=90; controlled-source branch checked.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Expectation:** Equal probabilities for those outcomes give what model mean? **Answer:** 100.",
+    "review": "Exacthalf110+half90=100; theoretical expectation separate from observed native mean.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Unequal probability:** At 75% up probability, what is the model mean? **Answer:** 105.",
+    "review": "Exact3/4*110+1/4*90=105; supplemental model calculation,not a source expectation API.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero probability:** Which outcome is selected? **Answer:** The down outcome.",
+    "review": "Atp0 every legal uniformdraw>=0 selectsdown; controlled0 boundary verifies strict<.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Unit probability:** Which outcome is selected? **Answer:** The up outcome.",
+    "review": "Atp1 every legal uniformdraw<1 selectsup; controlled nearestbelow1 case.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Equal returns:** What if both returns are zero? **Answer:** Every terminal value is the initial amount.",
+    "review": "Equalzero returns yieldinitial regardlessdraw; controlledfixture.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Total loss:** What does a \u2212100% return produce? **Answer:** Zero terminal value.",
+    "review": "Initial*(1-1)=0; existingtotalloss method/sourcecontract.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Below \u2212100%:** Is it accepted by this model? **Answer:** No.",
+    "review": "Returnsbelow-1 rejected beforeRNG; selectedinvalids.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Rate notation:** How is 10% represented? **Answer:** As `0.10`.",
+    "review": "Decimal.10 notnumeric10percent conversion; sourceexpectsreturnfloat.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Output units:** What units do terminal values use? **Answer:** The initial value's units.",
+    "review": "Terminal values useinitialunits; no currency metadata enforcement.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Sample mean:** Must a finite simulated mean equal the model expectation? **Answer:** No.",
+    "review": "Native seed42 n1000 has480 up/520down and mean99.60000000000001, not exact100; no50/50 assertion.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Sampling error:** What does more independent sampling generally reduce? **Answer:** Monte Carlo error under suitable assumptions.",
+    "review": "More IID sampling can reduce samplingvariance; no convergence-rate or interval acceptance fromone run.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Model risk:** Does more sampling fix an incorrect probability? **Answer:** No.",
+    "review": "Wrong model/parameters not repaired by larger n.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Tail risk:** Does this model include losses other than its specified outcomes? **Answer:** No.",
+    "review": "Onlyspecifiedstates represented; omittedtails/modelriskremain.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Forecast:** Is the model expectation a guaranteed market outcome? **Answer:** No.",
+    "review": "Expectationis modelconditional,notforecast guarantee.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Independence:** What is assumed about scenarios? **Answer:** They are modeled as independent draws from the same two-outcome distribution.",
+    "review": "IID two-outcome draws aremodelassumptions; no independent randomness certification.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Horizon:** How many periods are simulated? **Answer:** One.",
+    "review": "One terminalperiod,not n-time steps.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Paths:** Does this module simulate multi-period paths? **Answer:** No.",
+    "review": "No pathdependence/multiple-time engine.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Correlation:** Does it model correlated assets? **Answer:** No.",
+    "review": "No assetcorrelation/covariance model.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Seed:** Does a seed alone guarantee identical results across every environment? **Answer:** No.",
+    "review": "Source/version/generator/method/parameters/artifact/environment externalrecord retained; no crossversion identity guarantee.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Generator:** What generator instance is used? **Answer:** A local `random.Random` instance.",
+    "review": "Localrandom.Random(seed); controlledfactorysubstitution is separate fromnative replay.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Security:** Is this RNG intended for cryptographic secrets? **Answer:** No.",
+    "review": "Pseudorandom simulationgenerator,notcryptographic secret generation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Global state:** Does the function seed the module-level generator? **Answer:** No.",
+    "review": "Native call preservesmodule-level random.getstate; controlledfactoryrestored in finally.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Count:** What is the minimum scenario count? **Answer:** Two.",
+    "review": "Countminimum2; selectedboundaryseed0 passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Maximum:** What is the maximum scenario count? **Answer:** 10,000.",
+    "review": "Maximum10000 accepted atprobability0;10001rejects; no adequacy/resourceproof.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Sufficiency:** Does the maximum guarantee an adequate tail-risk estimate? **Answer:** No.",
+    "review": "Resourcecap doesnotcertifytailrisk estimate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Boolean count:** Is `True` accepted as a count? **Answer:** No.",
+    "review": "Boolcount rejected despiteinteger subclassing.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Seed range:** What is the allowed range in this teaching contract? **Answer:** 0 through $`2^{32}-1`$, inclusive.",
+    "review": "Seed0 and2**32-1 accepted;negative/above/bool/floatrejects;policyis illustrative.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Initial value:** Is zero accepted? **Answer:** No; it must be positive.",
+    "review": "Zero/negative/nonfloat/nonfiniteinitial invalid;selectedpreconditions.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Names:** Must the up return exceed the down return? **Answer:** No; the code does not enforce ordering.",
+    "review": "Reversed namedoutcomes accepted; controlledcaseup-.2/down+.2 validates noordering requirement.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Overflow:** What happens if a selected terminal value is nonfinite? **Answer:** `ValueError` is raised.",
+    "review": "Selectedoverflow raisesValueError; p1 C1e308r1 test.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Unselected outcome:** Is its product checked for overflow? **Answer:** No; only selected outcomes are multiplied.",
+    "review": "Unselected productnotcomputed; p0 allowsC1e308/up1/down0,documentedobservation notnewdefect.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Underflow:** Can a tiny positive value become zero? **Answer:** Yes.",
+    "review": "Smallestpositiveinitial times.5 rounds0; exactpositive reference retained aslimitobservation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Summary:** Does sample standard deviation equal standard error of the mean? **Answer:** No; the latter divides by $`\\sqrt{n}`$ under the stated assumptions.",
+    "review": "Source summarysampleSD differs fromsampleSE; supplemental sampleSE relation only underIID assumptions.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Interval:** Does the module calculate a confidence interval? **Answer:** No.",
+    "review": "No confidenceinterval routine implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Record:** Is the frozen result a durable audit record? **Answer:** No.",
+    "review": "Frozen ordinaryfield assignmentrejects butdoesnotwrite durableaudit; externalqa record is separate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Have the reference tests run? **Answer:** No; execution is deferred.",
+    "review": "Original execution-deferredanswer corrected; originalrecord retained and newscoped evidence linked.",
+    "status": "Assistant scoped technical review; independent acceptance pending",
+    "initial_source_record": "**Evidence:** Have the reference tests run? **Answer:** No; execution is deferred.",
+    "reviewed_record": "**Evidence:** Have the reference tests run? **Answer:** Yes, in the later scoped source, editable and wheel runs linked below; broader independent, model, platform and release acceptance remains pending.",
+    "editorial_status_correction": true
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.13 \u2014 Data Validation Layer.",
+    "review": "21.13-data-validation-layer.md exists; nextformalworkflow.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  }
+]

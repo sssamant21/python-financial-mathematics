@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.12:** [Simulation review](chapter-21-simulation-review/README.md):40 answers /12 labs,updated clean-consumer wheel,355 predicates;12 scoped workflows /480 local answers. Next21.13;broader F28/F32/model/platform/independent gaps remain open.
+
 - **Latest21.11:** [Statistics review](chapter-21-statistical-review/README.md):40 answers /12 labs,updated clean-consumer wheel,299 predicates;11 scoped workflows /440 local answers. Next21.12;broader F28/F32/model/platform/independent gaps remain open.
 
 - **Latest21.10:** [Portfolio review](chapter-21-portfolio-review/README.md):40 answers /12 labs,updated clean-consumer wheel,243 predicates;10 scoped workflows /400 local answers. Next21.11;broader F28/F32/model/platform/independent gaps remain open.
@@ -706,3 +708,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.12 — Partial simulation source checkpoint (OPEN)
 
 [Simulation checkpoint](chapter-21-simulation-resume/README.md): three source commands /108 existing methods pass. Explicit source injection; no new historical methods or completed formal workflow. Statistics wheel excludes simulation. Next21.12 independent scenario/probability/seed/range/model contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains eleven scoped workflows /440 local answers;F28/F32 and broad acceptance remain open.
+
+
+## Section 21.12 — Scoped simulation workflow, answers and updated wheel
+
+[Simulation evidence](chapter-21-simulation-review/README.md):40 answers /12 lab reviews;11 new offline commands and355 installed-wheel predicates pass. Controlled RNG-source branch mapping, native same-seed replay and count-derived sample statistics remain separate from distribution/model acceptance. Seed42 n1000 gives480/520 counts and mean99.60000000000001,not an exact100 target. Selected/unselected overflow and underflow limits retained,not new code defects. Exercise39 status/frozen-record wording corrected,code fences unchanged. Three prior sourcecommands reused by exact hashes;108 existing methods /324 invocations,zero new historical methods. New artifact hash differs at sameillustrativeversion,notreleaseapproval. Chapter21 now12 scopedworkflows /480 localanswers. Next21.13 Data Validation Layer. F28/F32/F209,static-check,F165/F185,R08–10/ownership and broader resource/data/model/platform/release/independent acceptance remainopen.
+
+
+### Section 21.13 — Partial data-validation source checkpoint (OPEN)
+
+[Validation checkpoint](chapter-21-validation-resume/README.md):three source commands /122 existing methods pass (14 validation including two prior DST regressions,plus108 retained). Explicit source injection; no new historical methods or completed formal workflow. Simulation wheel excludes validation. Next21.13 schema/identity/currency/availability/return contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains12 scoped workflows /480 local answers. F28/F32 and broader acceptance remain open.

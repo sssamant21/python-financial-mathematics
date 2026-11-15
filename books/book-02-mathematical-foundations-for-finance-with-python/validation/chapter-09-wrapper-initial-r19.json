@@ -1,0 +1,29 @@
+{
+  "executable_source_revision": "9d368dcaebb13a212403a6bf33503b219d69e720",
+  "source_blob": "cde3f5a0219bd39189c497b8102dba34f322e43f",
+  "reference_precisions": [
+    1800,
+    2400
+  ],
+  "observations": [
+    {
+      "case": "direct endpoint versus baseline plus rounded change",
+      "actual": "{'exact_change': -1.0, 'linear_change': -50.0, 'quadratic_change': 1200.0, 'linear_error': 49.0, 'quadratic_error': -1201.0, 'absolute_linear_error': 49.0, 'absolute_quadratic_error': 1201.0, 'shock_bp': 500000.0, 'shock_decimal': 50.0, 'exact_value': 0.0, 'linear_value': -49.0, 'quadratic_value': 1201.0}",
+      "independent_exact_value": 1.9287498479639178e-22,
+      "status": "OPEN wrapper numerical; prior endpoint persists,not new unique defect"
+    },
+    {
+      "case": "parallel rounded baseline leg lost",
+      "actual": "{'exact_change': 0.0, 'linear_change': 0.0, 'quadratic_change': 0.0, 'linear_error': 0.0, 'quadratic_error': 0.0, 'absolute_linear_error': 0.0, 'absolute_quadratic_error': 0.0, 'shock_bp': -3550000.0, 'shock_decimal': -355.0, 'exact_value': 1.0, 'linear_value': 1.0, 'quadratic_value': 1.0}",
+      "independent_exact_change": 1e-308,
+      "status": "OPEN wrapper latent-baseline contract; direct helper correctly receives zero but cannot recover original cash/rate"
+    },
+    {
+      "case": "spot baseline underflow loses rescued shock",
+      "actual": "{'model': 'independent cash-flow spot rates; continuous annual', 'baseline_value': 1.0, 'spot_rates': [1.0, 0.0], 'shock_bp': [-10000.0, 0.0], 'exact_change': 0.0, 'linear_change': 0.0, 'quadratic_change': 0.0, 'linear_error': 0.0, 'quadratic_error': 0.0, 'absolute_linear_error': 0.0, 'absolute_quadratic_error': 0.0}",
+      "independent_exact_change": 1e+308,
+      "status": "OPEN full spot numerical contract; spot baseline copy still rounds discount factor before cash"
+    }
+  ],
+  "limits": "Three wrapper diagnostics,not passing137 direct helper predicates. Earlier represented-term latent-error and vector-length probes resolved only within V197 helper scope; value/tolerance/spot baseline and metadata acceptance remain open."
+}

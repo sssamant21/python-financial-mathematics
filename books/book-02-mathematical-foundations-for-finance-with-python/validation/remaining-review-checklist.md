@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-15
 **Full-runtime candidate source revision:** `aed197ca5c003269f68c85a87cff502fbb18fac6` (V-196)
-**Latest scoped source:** V-195 at `aed197ca5c003269f68c85a87cff502fbb18fac6`; [three-source manifest](chapter-09-report-baseline-publication-r18.json).
+**Latest scoped source:** V-197 at `9d368dcaebb13a212403a6bf33503b219d69e720`; [four-source manifest](chapter-09-scenario-terms-publication-r19.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-195 baseline/metadata scoped pass and V-196 full runtime pass; remaining9.8 contracts and broader independent/model/platform/release approval remain open.
+**Disposition:** V-197 helper scoped pass;V-196 older-pin full runtime pass. Wrapper/spot contracts and broader independent/platform/release acceptance remain open.
 
 ## Reconciled evidence
 
@@ -1466,3 +1466,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-196 checkpoint — Full pinned candidate Linux refresh
 
 [V-196 runtime](runtime-refresh-2026-11-15-r18.md) at `aed197ca5c003269f68c85a87cff502fbb18fac6`:631/631 Python files compiled,418/418 scripts passed,632/632 required blobs verified before/after. Includes accumulated130 scenario and111 baseline/metadata predicates with retained initial failures/replays and explicit scope/policies. Legacy scenario/helper/value/error/tolerance and full spot numerical obligations remain OPEN;fresh diagnostics retained and full execution does not settle unasserted contracts. Current register38 partial categories,none closed; COV53 newly selected for consumed metadata,not a defect-count/completion claim. Next complete9.8 scenario/helper/wrapper contracts. Independent mathematical/editorial/model/policy/platform/release/canonical acceptance remains pending;Book1 separate.
+
+
+## V-197 checkpoint — Section9.8 complete scenario-term helper
+
+[Helper evidence](chapter-09-scenario-terms-followup-r19.md):137 corrected predicates pass;97 initial passes /40 failures and actual identical replay retained.29 numerical fields,9 direct-policy and2 collection checks,not40 unique defects. Independent1800/2400-digit collective changes/latent signed/absolute errors; equal-length nonnegative term/time and finite shock preconditions explicit,one traversal,empty allowed,no baseline valuation gate. Only helper body changed;facade/baseline text unchanged. Four files compiled /four commands /three checkers pass with before/after hashes. Fresh632/419/633 inventory not full execution;V196 remains latest full pass at older pin. Next wrapper endpoint/value/tolerance and full spot contracts;three fresh facade diagnostics remain OPEN.38 COV categories partial,none closed;broader independent/model/platform/release/canonical approval pending;Book1 separate.

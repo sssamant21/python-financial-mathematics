@@ -1,0 +1,17 @@
+"""Fresh pinned facade diagnostics after represented-term helper correction.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,subprocess,tempfile,importlib,json,hashlib
+r=Path(sys.argv[1]).resolve();pin='9d368dcaebb13a212403a6bf33503b219d69e720';p='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_08.py';raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_08.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_08');refs=[]
+ for prec in [1800,2400]:
+  with localcontext(Context(prec=prec)):
+   tiny=Decimal.from_float(1e-308);large=Decimal.from_float(1e308);refs.append([float(Decimal(-50).exp()),float(tiny*(1-Decimal(-710).exp())),float(large*(1-Decimal(-1000).exp()))])
+ assert refs[0]==refs[1]
+ a=m.parallel_report([(1.,1.)],0.,[500000.]);b=m.parallel_report([(1e-308,2.),(1.,0.)],355.,[-3550000.]);c=m.spot_scenario([(1e308,1000.),(1.,0.)],[1.,0.],[-10000.,0.])
+ rows=[dict(case='direct endpoint versus baseline plus rounded change',actual=repr(a['scenarios'][0]),independent_exact_value=refs[1][0],status='OPEN wrapper numerical; prior endpoint persists,not new unique defect'),dict(case='parallel rounded baseline leg lost',actual=repr(b['scenarios'][0]),independent_exact_change=refs[1][1],status='OPEN wrapper latent-baseline contract; direct helper correctly receives zero but cannot recover original cash/rate'),dict(case='spot baseline underflow loses rescued shock',actual=repr(c),independent_exact_change=refs[1][2],status='OPEN full spot numerical contract; spot baseline copy still rounds discount factor before cash')]
+ d=dict(executable_source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),reference_precisions=[1800,2400],observations=rows,limits='Three wrapper diagnostics,not passing137 direct helper predicates. Earlier represented-term latent-error and vector-length probes resolved only within V197 helper scope; value/tolerance/spot baseline and metadata acceptance remain open.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('Three facade/spot diagnostics retained')
