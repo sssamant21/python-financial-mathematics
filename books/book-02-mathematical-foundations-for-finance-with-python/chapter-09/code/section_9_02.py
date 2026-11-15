@@ -84,12 +84,18 @@ def centered_elasticity(function, x, step=1e-4):
     if not callable(function):
         raise TypeError("function must be callable")
     x, h = finite(x,"x"), finite(step,"step")
-    if x == 0 or h <= 0 or x+h == x or x-h == x:
-        raise ValueError("nonzero input and representable positive step required")
+    plus, minus = x+h, x-h
+    if (x == 0 or h <= 0 or not math.isfinite(plus) or
+            not math.isfinite(minus) or plus == x or minus == x):
+        raise ValueError("nonzero input and finite distinct perturbations required")
     value = finite(function(x),"f(x)")
-    derivative = (finite(function(x+h),"f(x+h)")-
-                  finite(function(x-h),"f(x-h)"))/(2*h)
-    return point_elasticity(x,value,derivative)
+    upper = finite(function(plus),"f(x+h)")
+    lower = finite(function(minus),"f(x-h)")
+    if value == 0:
+        raise ValueError("point elasticity requires nonzero input and output")
+    # Complete sampled nominal-2h ratio;do not round an intermediate derivative.
+    exact = Fraction(x)*(Fraction(upper)-Fraction(lower))/(2*Fraction(h)*Fraction(value))
+    return _rational_report(exact)
 
 if __name__ == "__main__":
     print("Constant elasticity:",constant_elasticity_demand(20))

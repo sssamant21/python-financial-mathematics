@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Zero NPV:** Is it necessarily an error? **Answer:** No.",
+    "review": "Zero is a valid result;zero-NPV source check.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Rate \u2212.05:** Valid under this model? **Answer:** Yes.",
+    "review": "Negative rate above\u22121 passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Rate \u22121:** Valid? **Answer:** No.",
+    "review": "Rate boundary\u22121 raises input category.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Empty flows:** Reference behavior? **Answer:** FinancialInputError.",
+    "review": "Empty source input raises FinancialInputError.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**None flows:** Reference behavior? **Answer:** FinancialInputError.",
+    "review": "Missing source input raises FinancialInputError.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**NaN:** Accepted? **Answer:** No.",
+    "review": "NaN flow rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Infinity:** Accepted? **Answer:** No.",
+    "review": "Infinite flow/rate rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Boolean:** Accepted as a cash flow? **Answer:** No.",
+    "review": "Boolean flow rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**String:** Accepted as a numeric flow? **Answer:** No.",
+    "review": "Text flow rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Overflow:** Reference category? **Answer:** FinancialNumericalError.",
+    "review": "Exponential and fsum overflow raise numerical category.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Cause:** Why use raise from? **Answer:** To retain the original exception chain.",
+    "review": "Noniterable and overflow causes actually inspected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Broad catch:** Why risky? **Answer:** It can hide defects or unintended failures.",
+    "review": "Conceptual:catch only failures that boundary can handle;caller iteration errors propagate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Default zero:** Why risky? **Answer:** It can masquerade as a valid financial result.",
+    "review": "Conceptual:default zero could conceal a failure.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**assert:** Safe as sole input validation? **Answer:** No.",
+    "review": "Optimized source suite executes explicit validation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Exception test:** What should it check? **Answer:** The documented failure type and relevant behavior.",
+    "review": "Actual category,cause and consumption checks supplement existing suite.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Fail-fast:** Meaning? **Answer:** Stop or reject on failure under policy.",
+    "review": "Design only:no batch API implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Quarantine:** Meaning? **Answer:** Separate invalid records for review.",
+    "review": "Design only:no quarantine API implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Partial batch:** Should it appear complete? **Answer:** No.",
+    "review": "Design only:partial counts/completion policy not executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Retry:** Always safe for a remote write? **Answer:** No.",
+    "review": "Design only:no remote write or retry performed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Timeout:** Does it prove a write failed? **Answer:** No.",
+    "review": "Design only:timeout semantics,not executed remote evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Idempotency:** Why define it? **Answer:** To control repeated-operation effects.",
+    "review": "Design only:keys/transactions/reconciliation require external contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Network read:** Does this reference code perform one? **Answer:** No.",
+    "review": "Source makes no network call;no live validation claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Credentials:** Put in error text? **Answer:** No.",
+    "review": "Boundary messages omit tested sentinel;full traceback redaction not established.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Sensitive inputs:** Log indiscriminately? **Answer:** No.",
+    "review": "Conceptual access/retention policy,not security certification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Negative cash flow:** Automatically invalid? **Answer:** No.",
+    "review": "Signed negative flow source case passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Zero rate:** Valid? **Answer:** Yes.",
+    "review": "Zero rate source case passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**PV:** 95 at \u22125% for one period. **Answer:** 100.",
+    "review": "Independent95/(1\u2212.05)=100;represented-rate rational oracle.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**NPV:** [\u2212100,110] at 10%. **Answer:** 0 in exact arithmetic.",
+    "review": "Independent\u2212100+110/1.1=0 printed exact;source absolute tolerance1e\u221210.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Dates:** Validated here? **Answer:** No.",
+    "review": "Source has no dates contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Currency:** Validated here? **Answer:** No.",
+    "review": "Source has no currency contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Underflow:** Does the code detect every case? **Answer:** No.",
+    "review": "All-underflow detection remains outside scope.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Cancellation:** Fully handled? **Answer:** No.",
+    "review": "Broad cancellation/range NPV correctness remains open.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Iterator failure:** All possible failures translated? **Answer:** No.",
+    "review": "Only iter acquisition TypeError translated;late TypeError/RuntimeError actually propagate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Model error:** Is it always an exception? **Answer:** No; wrong assumptions can yield plausible values.",
+    "review": "Conceptual:model assumptions can produce plausible wrong outputs.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**External failure:** Same as invalid input? **Answer:** No; category and response differ.",
+    "review": "Conceptual:external failures require separate policy;no external API here.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Retry:** Should invalid input be retried unchanged indefinitely? **Answer:** No.",
+    "review": "Conceptual:invalid data needs correction,not indefinite unchanged retry.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Evidence:** What retain? **Answer:** Safe error category, context, command and actual outcome.",
+    "review": "Saved commands,actual outputs,categories and causes;synthetic sentinels only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Tests:** Does compilation establish correctness? **Answer:** No.",
+    "review": "Compilation was actually executed;it alone does not establish correctness.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Fourteen existing source methods actually run42 invocations;inclusion alone is not execution.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production:** Do these examples certify readiness? **Answer:** No.",
+    "review": "No independent/platform/security/production certification.",
+    "status": "reviewed scoped"
+  }
+]

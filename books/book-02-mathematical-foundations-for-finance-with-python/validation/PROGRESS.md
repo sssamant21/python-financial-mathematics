@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-158 model-helper scoped pass and V-159 full candidate Linux pass (611/398/612). Centered helper and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-160 centered scope pass;V-159 remains latest full candidate Linux pass (611/398/612),pending refresh. Taylor and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1342,3 +1342,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-159 checkpoint — Full pinned candidate Linux refresh
 
 [V-159 full runtime](runtime-refresh-2026-11-14-r9.md) at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`:611/611 Python files compiled,398/398 check-test scripts passed,612/612 required Python/fixture hashes verified before-after. Includes V-158 model contracts;39 initial failed predicates/replay,94 corrected predicates and three scoped numerical-probe resolutions retained separately. QA-loader failure/reruns remain separate diagnostics. Centered callback/preflight observation remains OPEN. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 centered preflight/complete sampled report/callback contracts. Book1 tracked independently.
+
+
+## V-160 checkpoint — Section9.2 centered sampled reporting/callback contracts
+
+[Centered evidence](chapter-09-centered-contract-followup.md):48 corrected predicates pass;41 initial passes/seven failed predicates and identical replay retained. Independent1800/2400-digit sampled nominal2h references and actual preflight/callback consumption controls checked. Historical centered observation resolved only via later explicit disposition;original records unchanged. Seven files compiled,six commands/five checkers pass,seven hashes verified before-after;other functions/checkers unchanged. Fresh612/399/613 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 complete affine/discounted-change/error-report/callback contracts. Broader domain/smoothness/noise/resource/platform/independent acceptance pending. Book1 tracked independently.

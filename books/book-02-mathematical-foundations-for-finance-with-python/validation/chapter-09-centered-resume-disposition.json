@@ -1,0 +1,33 @@
+{
+  "original_record": "chapter-09-model-helper-resume-initial.json",
+  "prior_disposition": "chapter-09-model-helper-resume-disposition.json",
+  "original_probe": "centered nonfinite perturbation/callback consumption",
+  "disposition": "RESOLVED (scoped)",
+  "corrected_record": "chapter-09-centered-contract-corrected.json",
+  "corrected_predicates": [
+    {
+      "name": "preflight (1e+308, 1e+308)",
+      "x": "1e+308",
+      "step": "1e+308",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "calls": [],
+      "expected_calls": [],
+      "passed": true
+    },
+    {
+      "name": "preflight (-1e+308, 1e+308)",
+      "x": "-1e+308",
+      "step": "1e+308",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "calls": [],
+      "expected_calls": [],
+      "passed": true
+    }
+  ],
+  "limits": "Finite preflight rejects before callback;historical initial records unchanged. No derivative/smoothness/domain/noise/resource/platform/independent acceptance.",
+  "COV_54": "PARTIAL",
+  "selected_categories_partial": 36,
+  "categories_closed": 0
+}

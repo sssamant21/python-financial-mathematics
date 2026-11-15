@@ -1,0 +1,385 @@
+{
+  "candidate_based_on": "14675f3f86154c3cdc5438c2808287592342eca8",
+  "selected_revision": "14675f3f86154c3cdc5438c2808287592342eca8",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "manuscript_sha256": "7735f49a6b988d0d6278dcd7ee61ebbfb9106254bfe722c87bdff7590ca0d4f2",
+  "fence_sha256": "da7376e1395a4dd7243ffe4a2c1016e8959309e2d2fe187fd9b9d0f087d81b6a",
+  "commands": [
+    {
+      "label": "source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_exceptions.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean (__main__.ExceptionTests.test_boolean) ... ok\ntest_empty (__main__.ExceptionTests.test_empty) ... ok\ntest_error_category (__main__.ExceptionTests.test_error_category) ... ok\ntest_infinity (__main__.ExceptionTests.test_infinity) ... ok\ntest_invalid_rate (__main__.ExceptionTests.test_invalid_rate) ... ok\ntest_missing (__main__.ExceptionTests.test_missing) ... ok\ntest_nan (__main__.ExceptionTests.test_nan) ... ok\ntest_negative_cashflow (__main__.ExceptionTests.test_negative_cashflow) ... ok\ntest_noniterable_cause (__main__.ExceptionTests.test_noniterable_cause) ... ok\ntest_overflow (__main__.ExceptionTests.test_overflow) ... ok\ntest_valid_negative_rate (__main__.ExceptionTests.test_valid_negative_rate) ... ok\ntest_valid_zero_npv (__main__.ExceptionTests.test_valid_zero_npv) ... ok\ntest_wrong_type (__main__.ExceptionTests.test_wrong_type) ... ok\ntest_zero_rate (__main__.ExceptionTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "module suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "financial_exceptions"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean (financial_exceptions.ExceptionTests.test_boolean) ... ok\ntest_empty (financial_exceptions.ExceptionTests.test_empty) ... ok\ntest_error_category (financial_exceptions.ExceptionTests.test_error_category) ... ok\ntest_infinity (financial_exceptions.ExceptionTests.test_infinity) ... ok\ntest_invalid_rate (financial_exceptions.ExceptionTests.test_invalid_rate) ... ok\ntest_missing (financial_exceptions.ExceptionTests.test_missing) ... ok\ntest_nan (financial_exceptions.ExceptionTests.test_nan) ... ok\ntest_negative_cashflow (financial_exceptions.ExceptionTests.test_negative_cashflow) ... ok\ntest_noniterable_cause (financial_exceptions.ExceptionTests.test_noniterable_cause) ... ok\ntest_overflow (financial_exceptions.ExceptionTests.test_overflow) ... ok\ntest_valid_negative_rate (financial_exceptions.ExceptionTests.test_valid_negative_rate) ... ok\ntest_valid_zero_npv (financial_exceptions.ExceptionTests.test_valid_zero_npv) ... ok\ntest_wrong_type (financial_exceptions.ExceptionTests.test_wrong_type) ... ok\ntest_zero_rate (financial_exceptions.ExceptionTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_exceptions.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_exceptions"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "optimized suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "financial_exceptions.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean (__main__.ExceptionTests.test_boolean) ... ok\ntest_empty (__main__.ExceptionTests.test_empty) ... ok\ntest_error_category (__main__.ExceptionTests.test_error_category) ... ok\ntest_infinity (__main__.ExceptionTests.test_infinity) ... ok\ntest_invalid_rate (__main__.ExceptionTests.test_invalid_rate) ... ok\ntest_missing (__main__.ExceptionTests.test_missing) ... ok\ntest_nan (__main__.ExceptionTests.test_nan) ... ok\ntest_negative_cashflow (__main__.ExceptionTests.test_negative_cashflow) ... ok\ntest_noniterable_cause (__main__.ExceptionTests.test_noniterable_cause) ... ok\ntest_overflow (__main__.ExceptionTests.test_overflow) ... ok\ntest_valid_negative_rate (__main__.ExceptionTests.test_valid_negative_rate) ... ok\ntest_valid_zero_npv (__main__.ExceptionTests.test_valid_zero_npv) ... ok\ntest_wrong_type (__main__.ExceptionTests.test_wrong_type) ... ok\ntest_zero_rate (__main__.ExceptionTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.002s\n\nOK\n"
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "zero NPV",
+      "actual": "0.0",
+      "expected": "-5.046468293750712e-16",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "negative rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "negative flow",
+      "actual": "-100.0",
+      "expected": "-100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "zero rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "ordinary",
+      "actual": "8.333333333333332",
+      "expected": "8.333333333333334",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input None",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input empty",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input noniterable",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": "TypeError"
+    },
+    {
+      "name": "input text",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input bool",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input string",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input Decimal",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input NaN",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input inf",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input oversized",
+      "actual": "'OverflowError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": false,
+      "cause": null
+    },
+    {
+      "name": "rate boundary",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "rate below",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "rate bool",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "rate text",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "rate NaN",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "rate inf",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "rate oversized",
+      "actual": "'OverflowError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": false,
+      "cause": null
+    },
+    {
+      "name": "accept list",
+      "actual": "0.0",
+      "expected": "0",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "accept tuple",
+      "actual": "0.0",
+      "expected": "0",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "accept generator",
+      "actual": "0.0",
+      "expected": "0",
+      "absolute_tolerance": 1e-10,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "caller unchanged",
+      "actual": "[-100, 110]",
+      "expected": "[-100, 110]",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "noniterable cause",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "noniterable boundary message",
+      "actual": "'cash flows must be iterable'",
+      "expected": "'cash flows must be iterable'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "exponential numerical category",
+      "actual": "'FinancialNumericalError'",
+      "expected": "'FinancialNumericalError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "exponential overflow cause",
+      "actual": "'OverflowError'",
+      "expected": "'OverflowError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "summation numerical category",
+      "actual": "'FinancialNumericalError'",
+      "expected": "'FinancialNumericalError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "summation overflow cause",
+      "actual": "'OverflowError'",
+      "expected": "'OverflowError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "late TypeError propagation",
+      "actual": "'FinancialInputError'",
+      "expected": "'TypeError'",
+      "absolute_tolerance": 0,
+      "passed": false,
+      "cause": "TypeError"
+    },
+    {
+      "name": "late RuntimeError propagation",
+      "actual": "'RuntimeError'",
+      "expected": "'RuntimeError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "invalid rate after materialization",
+      "actual": "'FinancialInputError'",
+      "expected": "'FinancialInputError'",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "actual iterator consumption",
+      "actual": "[1, 2]",
+      "expected": "[1, 2]",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "input category inheritance",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "numerical category inheritance",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    },
+    {
+      "name": "raw input omitted from boundary message",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true,
+      "cause": null
+    }
+  ],
+  "existing_unique_methods": 14,
+  "method_invocations": 42,
+  "new_historical_unique_methods": 0,
+  "limits": "Specific input/numerical/iterator categories and causes only;no external operations,retry,batch quarantine,traceback redaction or all-range NPV acceptance;F28/F32/F209 and independent/platform acceptance open"
+}
