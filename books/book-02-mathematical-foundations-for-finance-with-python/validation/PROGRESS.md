@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-166 shock/error-report scoped pass;V-165 remains latest full candidate Linux pass (614/401/615),pending refresh. Ladder/revenue and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-166 shock/error scope and V-167 full candidate Linux pass (615/402/616). Ladder/revenue observations and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 614/614 at `9a00097d0669af492c85f0468cd93c2bd447100c`. [V-165](runtime-refresh-2026-11-15-r1.md). |
-| Automated script execution | Full candidate Linux pass | 401/401 at `9a00097d0669af492c85f0468cd93c2bd447100c`;615 required blobs verified before/after. [V-165](runtime-refresh-2026-11-15-r1.md). |
+| Python compilation | Full candidate Linux pass | 615/615 at `a876a59f0aafb238d7becf081ba2d32b27049830`. [V-167](runtime-refresh-2026-11-15-r2.md). |
+| Automated script execution | Full candidate Linux pass | 402/402 at `a876a59f0aafb238d7becf081ba2d32b27049830`;616 required blobs verified before/after. [V-167](runtime-refresh-2026-11-15-r2.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1387,3 +1387,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-166 checkpoint — Section9.3 complete discounted-shock/error reports
 
 [Shock evidence](chapter-09-shock-report-followup.md):158 corrected predicates pass;106 initial passes/52 failed predicates and identical replay retained. Independent1800/2400-digit complete endpoint/change/error references,zero/underflow/relative/whole-report/input/private-context controls checked. Three saved failures scoped resolved with explicit signed-zero qualification;historical records unchanged. Five files compiled,five commands/four checkers pass,five hashes verified before-after;only shock function text changed,ladder behavior benefits transitively but full collection/revenue scope remains open. Fresh615/402/616 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 ladder collection/model/consumption and revenue contracts. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.3 ladder/revenue resume checkpoint — OPEN
+
+[Initial diagnostic observations](chapter-09-ladder-revenue-resume-initial.json),[actual identical replay](chapter-09-ladder-revenue-resume-replay.json),[runner](chapter-09-ladder-revenue-resume-probes.txt):empty ladder returns[] without validating invalid model inputs (OPEN DESIGN);revenue(max_float) returns nan while independent decimal-coefficient and represented-float-coefficient references both have a negative unrepresentable final value (OPEN NUMERICAL RANGE/report-policy review). These are two diagnostic observations,not passing acceptance predicates or resolved defects. Resume collection/model/consumption and revenue reporting contracts next.
+
+
+## V-167 checkpoint — Full pinned candidate Linux refresh
+
+[V-167 full runtime](runtime-refresh-2026-11-15-r2.md) at `a876a59f0aafb238d7becf081ba2d32b27049830`:615/615 Python files compiled,402/402 check-test scripts passed,616/616 required Python/fixture hashes verified before-after. Includes V-166 complete shock/error reports;52 initial failed predicates/replay and158 corrected predicates retained separately. Historical records unchanged;three selected saved probes scoped resolved with signed-zero qualification. Next ladder/revenue checkpoint retains two OPEN diagnostic observations,not passing acceptance predicates. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 ladder/revenue collection/model/consumption and numerical/report contracts. Book1 tracked independently.

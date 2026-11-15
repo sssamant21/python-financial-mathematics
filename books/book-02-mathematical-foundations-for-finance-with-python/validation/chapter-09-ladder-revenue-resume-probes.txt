@@ -1,0 +1,20 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,hashlib,math
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='a876a59f0aafb238d7becf081ba2d32b27049830';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_03.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'section_9_03.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('ladder_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ try:a=m.discount_step_ladder(0.,-1.,math.nan,[])
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='empty ladder with invalid model inputs',actual=repr(a),status='OPEN DESIGN — empty-ladder model validation and consumption contract needs review;not a claimed numerical failure or acceptance predicate'))
+ refs=[]
+ for prec in (1800,2400):
+  with localcontext(Context(prec=prec)):
+   Q=Decimal(sys.float_info.max)
+   for coeff in (Decimal('0.1'),Decimal(.1)):
+    z=40*Q-coeff*Q*Q;f=float(z);refs.append(dict(coefficient=str(coeff),negative=z<0,float_report_finite=math.isfinite(f)))
+ assert all(x['negative'] and not x['float_report_finite'] for x in refs)
+ try:a=m.revenue(sys.float_info.max)
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='revenue final-range report',actual=repr(a),independent_reference=refs,status='OPEN NUMERICAL RANGE — actual nan and independently negative unrepresentable final value;finite-report exception policy requires next review,not a passing acceptance predicate'))
+d=dict(executable_source_revision=pin,source=rel,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Two exact-source diagnostic observations for next ladder/revenue contract review;no resolved defect,accepted script predicate or independent/platform acceptance.');(r/('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-ladder-revenue-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print('Two OPEN ladder/revenue diagnostic observations recorded')

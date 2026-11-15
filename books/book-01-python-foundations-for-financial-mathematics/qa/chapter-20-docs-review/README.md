@@ -11,3 +11,5 @@ python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-
 Exact source executes direct,module unittest,compilation,quiet import,help rendering and optimized. Twelve existing unique methods ran36 invocations;zero new historical methods. Six independent represented-rate Fraction NPV references cover normal values,signed flow,zero rate and t0 identity. Four separate docstring/help visibility observations do not certify financial accuracy. Actual printed docstring/help output retained.
 
 Provenance,source truth,availability/look-ahead,unit migration,rounding policy,copyright/editorial/independent model acceptance remain conceptual/manual scope. All-range NPV/intermediate exponential rejection,underflow,cancellation,resource/collection ordering(F209),20.11 static-checker gap,F28 notebook/platform,F32 shared-input integration,F165 tail limits,F185 integration and independent/platform/release acceptance remain open. Chapter20 now12 scoped workflows/480 local answers. Next:Section20.13 Reproducibility.
+
+Executable source/checker bytes verified against `a876a59f0aafb238d7becf081ba2d32b27049830`;[source manifest](publication-verification.json).

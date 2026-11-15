@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `9a00097d0669af492c85f0468cd93c2bd447100c` (V-165)
-**Latest scoped source:** V-164 at `9a00097d0669af492c85f0468cd93c2bd447100c`;[four-file source manifest](chapter-09-discount-value-publication-verification.json).
+**Full-runtime candidate source revision:** `a876a59f0aafb238d7becf081ba2d32b27049830` (V-167)
+**Latest scoped source:** V-166 at `a876a59f0aafb238d7becf081ba2d32b27049830`;[five-file source manifest](chapter-09-shock-report-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-164 standalone value scope and V-165 full Python runtime pass;shock/error report observations and independent/release approval stay open.
+**Disposition:** V-166 complete shock/error scope and V-167 full Python runtime pass;ladder/revenue observations and independent/release approval stay open.
 
 ## Reconciled evidence
 
@@ -1261,3 +1261,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-166 checkpoint — Section9.3 complete discounted-shock/error reports
 
 [Shock evidence](chapter-09-shock-report-followup.md):158 corrected predicates pass;106 initial passes/52 failed predicates and identical replay retained. Independent1800/2400-digit complete endpoint/change/error references,zero/underflow/relative/whole-report/input/private-context controls checked. Three saved failures scoped resolved with explicit signed-zero qualification;historical records unchanged. Five files compiled,five commands/four checkers pass,five hashes verified before-after;only shock function text changed,ladder behavior benefits transitively but full collection/revenue scope remains open. Fresh615/402/616 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 ladder collection/model/consumption and revenue contracts. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.3 ladder/revenue resume checkpoint — OPEN
+
+[Initial diagnostic observations](chapter-09-ladder-revenue-resume-initial.json),[actual identical replay](chapter-09-ladder-revenue-resume-replay.json),[runner](chapter-09-ladder-revenue-resume-probes.txt):empty ladder returns[] without validating invalid model inputs (OPEN DESIGN);revenue(max_float) returns nan while independent decimal-coefficient and represented-float-coefficient references both have a negative unrepresentable final value (OPEN NUMERICAL RANGE/report-policy review). These are two diagnostic observations,not passing acceptance predicates or resolved defects. Resume collection/model/consumption and revenue reporting contracts next.
+
+
+## V-167 checkpoint — Full pinned candidate Linux refresh
+
+[V-167 full runtime](runtime-refresh-2026-11-15-r2.md) at `a876a59f0aafb238d7becf081ba2d32b27049830`:615/615 Python files compiled,402/402 check-test scripts passed,616/616 required Python/fixture hashes verified before-after. Includes V-166 complete shock/error reports;52 initial failed predicates/replay and158 corrected predicates retained separately. Historical records unchanged;three selected saved probes scoped resolved with signed-zero qualification. Next ladder/revenue checkpoint retains two OPEN diagnostic observations,not passing acceptance predicates. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 ladder/revenue collection/model/consumption and numerical/report contracts. Book1 tracked independently.
