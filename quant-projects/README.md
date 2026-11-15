@@ -51,7 +51,7 @@ Thirty-seven self-contained labs complement the financial-mathematics books with
 
 | [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival, reflection-density analytical pricing and independent numerical quadrature | Seeded synthetic | `barrier.py`, `matched_convergence.py` |
 | [36](36-asian-option-monte-carlo/README.md) | Discrete arithmetic-average Asian call with antithetic Monte Carlo, exact geometric-average benchmark and paired control variate | Seeded synthetic | `asian_option.py`, `geometric_control.py` |
-| [37](37-static-option-arbitrage/README.md) | Same-expiry European call strike-grid monotonicity, vertical spread bounds and convexity checks | Synthetic only | `surface.py` |
+| [37](37-static-option-arbitrage/README.md) | European call strike-grid, bid/ask interval and common-forward calendar necessary-condition diagnostics | Synthetic only | `surface.py`, `quote_intervals.py` |
 
 ## Quick start (Windows PowerShell)
 
@@ -222,3 +222,5 @@ Project 35 now includes `analytical.py` (reflection-density continuous-barrier b
 Project 36 numerical stress follow-up: `36-asian-option-monte-carlo/test_geometric_control.py` now includes deep-in-the-money and one-fixing limiting-case checks, seeded high-volatility finite-output stress, and input rejection. Run `python -m unittest -v test_geometric_control.py` from Project 36; newly added tests require exact-revision CI confirmation and independent model review.
 
 Project 37: run `python -m unittest -v test_surface.py`, `python -m compileall -q surface.py test_surface.py`, and `python surface.py` in `37-static-option-arbitrage/`. Five local synthetic unittest methods passed; hosted CI and independent review remain unverified.
+
+Project 37 bid/ask extension: run `python -m unittest -v test_surface.py test_quote_intervals.py` and `python quote_intervals.py` from `37-static-option-arbitrage/`. The calendar screen assumes a common forward at both expiries; passing is not a joint feasibility certificate.
