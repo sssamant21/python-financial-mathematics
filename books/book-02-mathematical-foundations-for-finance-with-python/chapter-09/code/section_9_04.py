@@ -67,20 +67,44 @@ def single_cash_flow(cash, years, rate):
     return {"value":v,"first":first,"second":second,"duration":t,"convexity":convexity}
 
 def cash_flow_portfolio(cash_flows, rate):
+    """Report complete positive-flow sums; per-leg normalized fields are unused.
+
+    All five final fields must be finite and the rounded total value positive.
+    A leg whose value rounds to zero is eligible if the complete total qualifies.
+    """
     r = finite(rate,"rate")
     flows = list(cash_flows)
     if not flows:
         raise ValueError("at least one cash flow is required")
-    v = first = second = 0.0
-    for cash, years in flows:
-        item = single_cash_flow(cash,years,r)
-        v += item["value"]
-        first += item["first"]
-        second += item["second"]
-    if not math.isfinite(v) or v <= 0:
-        raise ValueError("portfolio value must be finite and positive")
-    return {"value":v,"first":first,"second":second,
-            "duration":-first/v,"convexity":second/v}
+    with localcontext(Context(prec=1300)):
+        def dec(x):
+            q = Fraction(x)
+            return Decimal(q.numerator)/Decimal(q.denominator)
+        v = first = second = Decimal(0)
+        for cash, years in flows:
+            c, t = finite(cash,"cash"), finite(years,"years")
+            if c <= 0 or t < 0:
+                raise ValueError("cash must be positive and years nonnegative")
+            C,T,R = map(Fraction,(c,t,r))
+            exponent = -T*R
+            # Positive cash/derivative magnitudes cannot cancel. These bounds
+            # exceed every finite binary64 coefficient C, TC and T^2 C.
+            if exponent > 10000:
+                raise ValueError("portfolio report outside finite float range")
+            if exponent < -10000:
+                continue
+            amount = dec(C)*dec(exponent).exp()
+            horizon = dec(T)
+            v += amount
+            first -= horizon*amount
+            second += horizon*horizon*amount
+        value = _single_report(v)
+        if value <= 0:
+            raise ValueError("portfolio value must be finite and positive")
+        return {"value":value,"first":_single_report(first),
+                "second":_single_report(second),
+                "duration":_single_report(-first/v),
+                "convexity":_single_report(second/v)}
 
 def single_shock(cash, years, rate, shock):
     h = finite(shock,"shock")

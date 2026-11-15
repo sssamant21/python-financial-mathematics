@@ -1,0 +1,379 @@
+{
+  "selected_revision": null,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_paths": [
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-20/20.16-exercises-and-applied-problems.md",
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-20/20.15-chapter-project-production-quality-financial-library.md"
+  ],
+  "source_sha256": [
+    "6d8b4d1f1c9526eb4645043fc4de2649c335f984c2c6be47cbbdc18fdd10e2b1",
+    "3581d861d59198a2da112485b3033d6cf611dda5725f2e04927d0ea1c13bece7"
+  ],
+  "fence_sha256": [
+    [
+      "95677a4ef6df0cddae76b4f9aca87a5d6ba5f0baf950688c0603cfbe4bf2c7c5"
+    ],
+    [
+      "1e81e77cc8220167f785c94465be3d1c870e47680c90c5c6654e22a5edf8ad8a",
+      "e5c64c8c02c47ca1df2b45a08b2d0be800303273835f7dfaaefe1bcdbbab9975",
+      "4606b8d306cc070caebbb083920d4035c460e0eb938060b69761ba389d8e8c76",
+      "37f087b6e9d085472e1837f99b7c31a2b710701e560cd9456baba9406795a07b"
+    ]
+  ],
+  "commands": [
+    {
+      "label": "20.16 direct",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "chapter20_reference_checks.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (__main__.Chapter20Checks.test_boolean_rejected) ... ok\ntest_decimal_rounding_stage (__main__.Chapter20Checks.test_decimal_rounding_stage) ... ok\ntest_known_value (__main__.Chapter20Checks.test_known_value) ... ok\ntest_negative_payment (__main__.Chapter20Checks.test_negative_payment) ... ok\ntest_negative_rate (__main__.Chapter20Checks.test_negative_rate) ... ok\ntest_nonfinite_amount (__main__.Chapter20Checks.test_nonfinite_amount) ... ok\ntest_nonfinite_rate (__main__.Chapter20Checks.test_nonfinite_rate) ... ok\ntest_positive_payment_rate_monotonicity (__main__.Chapter20Checks.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (__main__.Chapter20Checks.test_rate_boundary) ... ok\ntest_scaling (__main__.Chapter20Checks.test_scaling) ... ok\ntest_zero_payment (__main__.Chapter20Checks.test_zero_payment) ... ok\ntest_zero_rate (__main__.Chapter20Checks.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "20.16 optimized",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "chapter20_reference_checks.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (__main__.Chapter20Checks.test_boolean_rejected) ... ok\ntest_decimal_rounding_stage (__main__.Chapter20Checks.test_decimal_rounding_stage) ... ok\ntest_known_value (__main__.Chapter20Checks.test_known_value) ... ok\ntest_negative_payment (__main__.Chapter20Checks.test_negative_payment) ... ok\ntest_negative_rate (__main__.Chapter20Checks.test_negative_rate) ... ok\ntest_nonfinite_amount (__main__.Chapter20Checks.test_nonfinite_amount) ... ok\ntest_nonfinite_rate (__main__.Chapter20Checks.test_nonfinite_rate) ... ok\ntest_positive_payment_rate_monotonicity (__main__.Chapter20Checks.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (__main__.Chapter20Checks.test_rate_boundary) ... ok\ntest_scaling (__main__.Chapter20Checks.test_scaling) ... ok\ntest_zero_payment (__main__.Chapter20Checks.test_zero_payment) ... ok\ntest_zero_rate (__main__.Chapter20Checks.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "20.16 discovery",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "chapter20_reference_checks",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (chapter20_reference_checks.Chapter20Checks.test_boolean_rejected) ... ok\ntest_decimal_rounding_stage (chapter20_reference_checks.Chapter20Checks.test_decimal_rounding_stage) ... ok\ntest_known_value (chapter20_reference_checks.Chapter20Checks.test_known_value) ... ok\ntest_negative_payment (chapter20_reference_checks.Chapter20Checks.test_negative_payment) ... ok\ntest_negative_rate (chapter20_reference_checks.Chapter20Checks.test_negative_rate) ... ok\ntest_nonfinite_amount (chapter20_reference_checks.Chapter20Checks.test_nonfinite_amount) ... ok\ntest_nonfinite_rate (chapter20_reference_checks.Chapter20Checks.test_nonfinite_rate) ... ok\ntest_positive_payment_rate_monotonicity (chapter20_reference_checks.Chapter20Checks.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (chapter20_reference_checks.Chapter20Checks.test_rate_boundary) ... ok\ntest_scaling (chapter20_reference_checks.Chapter20Checks.test_scaling) ... ok\ntest_zero_payment (chapter20_reference_checks.Chapter20Checks.test_zero_payment) ... ok\ntest_zero_rate (chapter20_reference_checks.Chapter20Checks.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "20.15 discovery",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty (test_valuation.ValuationTests.test_empty) ... ok\ntest_invalid_rate_boundary (test_valuation.ValuationTests.test_invalid_rate_boundary) ... ok\ntest_negative_rate (test_valuation.ValuationTests.test_negative_rate) ... ok\ntest_nonfinite_inputs (test_valuation.ValuationTests.test_nonfinite_inputs) ... ok\ntest_nonfinite_intermediate (test_valuation.ValuationTests.test_nonfinite_intermediate) ... ok\ntest_one_period_break_even (test_valuation.ValuationTests.test_one_period_break_even) ... ok\ntest_rate_monotonicity_positive_future_flow (test_valuation.ValuationTests.test_rate_monotonicity_positive_future_flow) ... ok\ntest_scaling (test_valuation.ValuationTests.test_scaling) ... ok\ntest_time_zero_only (test_valuation.ValuationTests.test_time_zero_only) ... ok\ntest_two_period_benchmark (test_valuation.ValuationTests.test_two_period_benchmark) ... ok\ntest_wrong_types (test_valuation.ValuationTests.test_wrong_types) ... ok\ntest_zero_rate (test_valuation.ValuationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "20.15 optimized",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty (test_valuation.ValuationTests.test_empty) ... ok\ntest_invalid_rate_boundary (test_valuation.ValuationTests.test_invalid_rate_boundary) ... ok\ntest_negative_rate (test_valuation.ValuationTests.test_negative_rate) ... ok\ntest_nonfinite_inputs (test_valuation.ValuationTests.test_nonfinite_inputs) ... ok\ntest_nonfinite_intermediate (test_valuation.ValuationTests.test_nonfinite_intermediate) ... ok\ntest_one_period_break_even (test_valuation.ValuationTests.test_one_period_break_even) ... ok\ntest_rate_monotonicity_positive_future_flow (test_valuation.ValuationTests.test_rate_monotonicity_positive_future_flow) ... ok\ntest_scaling (test_valuation.ValuationTests.test_scaling) ... ok\ntest_time_zero_only (test_valuation.ValuationTests.test_time_zero_only) ... ok\ntest_two_period_benchmark (test_valuation.ValuationTests.test_two_period_benchmark) ... ok\ntest_wrong_types (test_valuation.ValuationTests.test_wrong_types) ... ok\ntest_zero_rate (test_valuation.ValuationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "20.15 main via root",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import runpy;runpy.run_path(\"tests/test_valuation.py\",run_name=\"__main__\")"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_empty (__main__.ValuationTests.test_empty) ... ok\ntest_invalid_rate_boundary (__main__.ValuationTests.test_invalid_rate_boundary) ... ok\ntest_negative_rate (__main__.ValuationTests.test_negative_rate) ... ok\ntest_nonfinite_inputs (__main__.ValuationTests.test_nonfinite_inputs) ... ok\ntest_nonfinite_intermediate (__main__.ValuationTests.test_nonfinite_intermediate) ... ok\ntest_one_period_break_even (__main__.ValuationTests.test_one_period_break_even) ... ok\ntest_rate_monotonicity_positive_future_flow (__main__.ValuationTests.test_rate_monotonicity_positive_future_flow) ... ok\ntest_scaling (__main__.ValuationTests.test_scaling) ... ok\ntest_time_zero_only (__main__.ValuationTests.test_time_zero_only) ... ok\ntest_two_period_benchmark (__main__.ValuationTests.test_two_period_benchmark) ... ok\ntest_wrong_types (__main__.ValuationTests.test_wrong_types) ... ok\ntest_zero_rate (__main__.ValuationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "compile five fences",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "20.15 example",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "example_usage.py"
+      ],
+      "returncode": 0,
+      "stdout": "NPV: 4.132231\n",
+      "stderr": ""
+    }
+  ],
+  "source_predicates": [
+    {
+      "name": "ex2 time zero",
+      "actual": "-1.4210854715202004e-14",
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "ex3 two periods",
+      "actual": "4.1322314049586595",
+      "expected": "4.132231404958677",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ex4 zero rate",
+      "actual": "20.0",
+      "expected": "20.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ex5 negative rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ex35 two-year timeline",
+      "actual": "-1.4210854715202004e-14",
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "one-period benchmark 0",
+      "actual": "99.99999999999999",
+      "expected": "100.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "one-period benchmark 1",
+      "actual": "100.0",
+      "expected": "100.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "one-period benchmark 2",
+      "actual": "95.23809523809524",
+      "expected": "95.23809523809524",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "one-period benchmark 3",
+      "actual": "90.9090909090909",
+      "expected": "90.9090909090909",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "one-period benchmark 4",
+      "actual": "-99.99999999999999",
+      "expected": "-100.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "one-period benchmark 5",
+      "actual": "0.0",
+      "expected": "0.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "reference boundary",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "project boundary",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "reference bool",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "reference integer",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "project bool",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "project integer",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "project empty",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "reference nan",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "project infinity",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "project wrong rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "reference overflow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ex16 scaling",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ex17 aligned additivity",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ex18 positive future monotonic",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ex18 mixed-sign counterexample",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ex30 caller ownership",
+      "actual": "[-100.0, 60.0, 60.0]",
+      "expected": "[-100.0, 60.0, 60.0]",
+      "relative_tolerance": null,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ex25 lost subnormal contribution",
+      "actual": "1.0",
+      "expected": "1.0",
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "supplemental_demonstrations": [
+    {
+      "name": "ex34 independently exponentiated monthly rate",
+      "actual": "0.0094887929345829741263550691934939563944607008457894756874682939803798467572333",
+      "display": "0.00948879",
+      "passed": true
+    },
+    {
+      "name": "ex15 rounding stage",
+      "individual": "0.02",
+      "combined": "0.01",
+      "passed": true
+    },
+    {
+      "name": "ex13/ex14 representation",
+      "passed": true
+    }
+  ],
+  "existing_unique_methods": {
+    "exercise_reference": 12,
+    "project_reference": 12
+  },
+  "method_invocations": {
+    "exercise_reference": 36,
+    "project_reference": 36
+  },
+  "new_historical_unique_methods": 0,
+  "limits": "Assistant scoped source execution plus separate supplemental arithmetic and conceptual records;not all-range correctness,installed-package/platform/model/release or independent acceptance. F28/F32 and other tracker gaps retained."
+}

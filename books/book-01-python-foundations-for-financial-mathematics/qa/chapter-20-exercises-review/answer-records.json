@@ -1,0 +1,322 @@
+[
+  {
+    "exercise": 1,
+    "title": "Known value",
+    "prompt": "A payment of 110 is due one period from now. Find its present value at 10% and propose a test.",
+    "answer": "$`110/1.1=100`$ in exact arithmetic. Compare the computed result with 100 using an appropriate absolute tolerance, such as `1e-10` for this small illustrative example.",
+    "review": "110/(11/10)=100 exactly; source pv_one verified with absolute1e-10.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "title": "Time zero",
+    "prompt": "What is the NPV of `[-100, 110]` at 10% when the first element is at time zero?",
+    "answer": "$`-100+110/1.1=0`$ in exact arithmetic. An implementation that discounts both entries has used a different timeline.",
+    "review": "Time zero -100+110/(11/10)=0; source npv tested independently,not pv_one.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "title": "Two periods",
+    "prompt": "Find the NPV of `[-100, 60, 60]` at 10%.",
+    "answer": "$`-100+60/1.1+60/1.1^2\\approx4.132231405`$. A benchmark should be independently derived and recorded with its convention.",
+    "review": "-100+600/11+6000/121=500/121; source benchmark checked.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "title": "Zero rate",
+    "prompt": "What should periodic NPV equal when the rate is zero?",
+    "answer": "The sum of the cash flows in exact arithmetic. Floating-point summation may differ slightly because of rounding.",
+    "review": "At rate0 denominators1,finite cash-flow sum20 verified.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "title": "Negative rates",
+    "prompt": "Find the present value of 95 due in one period at \u22125%.",
+    "answer": "$`95/0.95=100`$ in exact arithmetic. A negative rate above \u22121 is valid for this periodic formula.",
+    "review": "95/(19/20)=100; negative rate in domain tested.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "title": "Boundary",
+    "prompt": "Why reject a periodic rate of \u22121?",
+    "answer": "The discount denominator is zero. Rates below \u22121 are outside the stated model domain as well.",
+    "review": "Denominator zero at-1; both source functions reject.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "title": "Independent expected value",
+    "prompt": "Why is using the function under test to generate its own expected answer weak?",
+    "answer": "The same defect can affect both the result and expected value. Use independently derived values, a separately reviewed benchmark or relevant mathematical properties.",
+    "review": "Concept: independent derivation avoids circular expected values; no outside reviewer claimed.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "title": "Assertion behavior",
+    "prompt": "Is `assert` a suitable sole mechanism for validating public inputs?",
+    "answer": "No. Assertions can be disabled with Python optimization. Explicit checks and documented exceptions are appropriate for required input validation.",
+    "review": "Concept and execution: optimized suites pass explicit input validation; disabling assert not used for public inputs.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "title": "Unit test",
+    "prompt": "What would a unit test for one valuation function isolate?",
+    "answer": "Its specified behavior for selected inputs, including valid values and failures, without requiring unrelated services.",
+    "review": "Concept: unit scope isolates valuation from services; no service dependencies executed.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "title": "Regression test",
+    "prompt": "A defect discounts the initial cash flow. What test prevents its return?",
+    "answer": "Add a case with a nonzero initial flow and an independently derived expected NPV, such as exercise 2. Document the original defect.",
+    "review": "Exercise2 project case detects incorrect t0 convention; no mutation campaign claimed.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "title": "Tolerance around zero",
+    "prompt": "Why compare a near-zero NPV with an absolute tolerance?",
+    "answer": "Relative tolerance alone does not allow a nonzero difference from zero. Choose an absolute tolerance in output units appropriate to the use.",
+    "review": "Zero benchmark uses monetary absolute tolerance1e-10; relative-only fails to bound nonzero versus0.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "title": "Tolerance choice",
+    "prompt": "Does `abs_tol=1e-10` suit every currency amount and application?",
+    "answer": "No. Consider units, scale, algorithms, input uncertainty and materiality. A numerical tolerance is not automatically a business acceptance threshold.",
+    "review": "Concept: illustrative monetary tolerance not universal materiality or acceptance policy.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "title": "Floating-point equality",
+    "prompt": "Why can `0.1 + 0.2 == 0.3` be false?",
+    "answer": "Those decimal fractions generally do not have exact finite binary floating-point representations; intermediate and stored values are rounded.",
+    "review": "Separate exact Python representation demonstration confirms .1+.2!=.3.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "title": "Decimal construction",
+    "prompt": "Why prefer `Decimal(\"0.1\")` to `Decimal(0.1)` when the intended input is exactly one tenth?",
+    "answer": "The string represents the intended decimal value. Constructing from a float captures the float's existing binary approximation.",
+    "review": "Separate Decimal construction demonstration distinguishes float from decimal string.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "title": "Rounding policy",
+    "prompt": "Two amounts of `Decimal(\"0.005\")` are each rounded to cents with `ROUND_HALF_UP`. Compare rounding each first with rounding the sum once.",
+    "answer": "Each rounds to `0.01`, totaling `0.02`; the exact sum is `0.010`, which rounds to `0.01`. The required stage and rounding mode must be specified.",
+    "review": "Separate controlled Decimal rounding demonstration:0.02 versus0.01; reference suite also checks.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "title": "Scaling",
+    "prompt": "At a fixed rate, what is the relationship between the NPV of twice each cash flow and the original NPV?",
+    "answer": "It doubles in exact arithmetic. Allow for floating-point rounding and ensure the scaled values remain within the supported domain.",
+    "review": "Positive scaling checked on aligned project schedules; finite supported inputs only.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "title": "Additivity",
+    "prompt": "At the same rate and timeline, how does the NPV of the elementwise sum of two schedules relate to their individual NPVs?",
+    "answer": "It equals their sum in exact arithmetic. Align time periods and units first; floating-point results may differ slightly.",
+    "review": "Aligned schedule additivity checked; no mixed timing/currency compatibility acceptance.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "title": "Monotonicity",
+    "prompt": "Does a positive future payment's present value fall when the rate increases above \u22121?",
+    "answer": "Yes, for a fixed positive payment and positive number of periods. Mixed-sign schedules need not have monotonic total NPV.",
+    "review": "Positive future monotonicity and mixed-sign reverse direction both source checked.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "title": "Invalid numbers",
+    "prompt": "Why reject `NaN` and infinities for this library's inputs?",
+    "answer": "They violate its finite-input contract and can propagate into misleading output or comparisons. Failure should be explicit.",
+    "review": "Nonfinite cash/rate rejection checked; not all possible failure paths.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "title": "Type boundary",
+    "prompt": "Section 20.15 accepts only built-in floats. Are `True` and `100` accepted?",
+    "answer": "No. This is a deliberate narrow runtime contract. Type annotations alone do not enforce it.",
+    "review": "Both narrow float implementations reject integer/bool cases; annotations not enforcement.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "title": "Empty schedule",
+    "prompt": "What should the project function do for an empty list?",
+    "answer": "Raise the documented `ValueError`. Returning zero would violate its nonempty-input contract.",
+    "review": "Project empty list raises ValueError; one-period teaching function has no list input.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "title": "Exception handling",
+    "prompt": "Why is `except Exception: return 0.0` dangerous around valuation?",
+    "answer": "It hides the cause and makes a failure indistinguishable from a legitimate zero valuation. Catch expected errors at an appropriate boundary and report failure.",
+    "review": "Concept: catch-all zero hides failure; no production retry/quarantine design accepted.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "title": "Exception test",
+    "prompt": "How can a unit test check that a rate of \u22121 raises `ValueError`?",
+    "answer": "Use `with self.assertRaises(ValueError):` around the call, and ensure the tested input otherwise satisfies the contract.",
+    "review": "Reference and project suites actually exercise boundary ValueError with otherwise valid inputs.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "title": "Overflow",
+    "prompt": "Can finite inputs produce a nonfinite intermediate?",
+    "answer": "Yes. For instance, `1e308 / 0.5` exceeds the usual finite float range. Section 20.15 rejects a nonfinite intermediate.",
+    "review": "Finite payment1e308 and denominator.5 causes explicit ValueError; documented range limitation retained.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "title": "Underflow",
+    "prompt": "Does a finite output mean every small cash-flow contribution was represented accurately?",
+    "answer": "No. Underflow, rounding and cancellation can lose contributions; numerical review must assess the intended range.",
+    "review": "Project example loses a subnormal contribution while returning finite1; selected demonstration,not all-range review.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "title": "Logging",
+    "prompt": "Should a reusable financial library configure the application's root logger?",
+    "answer": "Generally leave configuration to the application. Log only appropriate metadata, avoid secrets and sensitive cash flows, and follow organizational policy.",
+    "review": "Concept: library/application log ownership and sensitive-data policy; no audit/security approval.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "title": "Reproducibility",
+    "prompt": "What evidence should accompany a test run?",
+    "answer": "Record the source revision, command, actual output, Python and dependency versions, platform and relevant configuration. Store evidence securely.",
+    "review": "Actual evidence stores revision,digests,commands,stdout/stderr,Python and platform; no supported-platform claim.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "title": "Randomness",
+    "prompt": "Does recording a seed alone guarantee the same simulation results on every platform and software version?",
+    "answer": "No. Record the generator, implementation, versions and environment as well; reproducibility depends on their behavior.",
+    "review": "Concept: seed alone omits algorithm/environment; no stochastic platform experiment claimed.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "title": "Documentation",
+    "prompt": "What minimum financial information should an NPV docstring convey?",
+    "answer": "Timing, rate convention, units, input domain, return value, exceptions and important numerical or model limitations.",
+    "review": "Conceptual docstring contract checklist aligns with project; no external documentation acceptance.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "title": "Input ownership",
+    "prompt": "Why test that an input list remains unchanged?",
+    "answer": "A caller may reuse it. Unexpected mutation can contaminate later calculations and break reproducibility.",
+    "review": "Caller list equality checked after source call.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "title": "Software versus model",
+    "prompt": "If a function correctly discounts a promised payment, is it necessarily suitable for valuing a risky bond?",
+    "answer": "No. Credit, recovery, liquidity, taxes and other assumptions may matter. Software verification and model suitability require distinct evidence.",
+    "review": "Concept: deterministic discounting excludes risky-bond assumptions; no bond-model validation.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "title": "Coverage",
+    "prompt": "Does 100% line coverage prove financial correctness?",
+    "answer": "No. Coverage shows which lines executed, not whether assertions are meaningful or all financial cases and assumptions are correct.",
+    "review": "Concept: coverage is execution reach,not financial correctness; no coverage measurement claimed.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "title": "Review independence",
+    "prompt": "Why independently review benchmarks and assumptions?",
+    "answer": "A separate reviewer can challenge choices and detect shared implementation or specification errors. Appropriate independence depends on the context and risk.",
+    "review": "Concept: assistant arithmetic checks do not supply independent reviewer acceptance.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "title": "Period conversion",
+    "prompt": "Convert an effective annual rate of 12% to an equivalent effective monthly rate.",
+    "answer": "$`(1.12)^{1/12}-1\\approx0.00948879`$, or about 0.948879% per month. Dividing 12% by 12 is not the same effective-rate conversion.",
+    "review": "Independent80-digit Decimal twelfth-root conversion matches0.00948879 to printed precision; separate supplemental calculation.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "title": "Sign and timeline",
+    "prompt": "An investment pays 121 at the end of year two after an initial outflow of 100. NPV at 10% annually?",
+    "answer": "$`-100+121/1.1^2=0`$ in exact arithmetic. The time-one cash flow is zero: `[-100.0, 0.0, 121.0]`.",
+    "review": "-100+121/(11/10)^2=0; source project with explicit time-one0 tested.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "title": "Sensitivity",
+    "prompt": "A positive payment of 100 is due in one period. Compare values at 5% and 10%.",
+    "answer": "Approximately 95.238095 and 90.909091, respectively. The higher rate gives the lower present value.",
+    "review": "Independent2000/21 and1000/11 agree with both displayed six-decimal values; source monotonicity tested.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "title": "Benchmark discrepancy",
+    "prompt": "A reference system gives a different NPV. What should be checked before increasing tolerance?",
+    "answer": "Reconcile time-zero treatment, timing, rate frequency and compounding, signs, currency, rounding, input data and model scope. Investigate genuine differences.",
+    "review": "Conceptual reconciliation checklist preserves timing/rate/sign/unit/rounding before tolerances.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "title": "Change control",
+    "prompt": "A release changes rounding or the interpretation of the first cash flow. What is needed?",
+    "answer": "Assess compatibility and financial impact, update specification and versioning, add independent tests, document migration, and obtain reviews required by policy.",
+    "review": "Concept: version/spec/migration/review obligations; no release operation performed.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "title": "Production release",
+    "prompt": "Do these exercises and reference tests certify a production library?",
+    "answer": "No. Readiness requires documented requirements, independent review, appropriate testing, controlled packaging, operational ownership and applicable approvals.",
+    "review": "Concept: no production certification from exercises or12methods; draft assessment unapproved.",
+    "status": "assistant scoped review; external acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "title": "Chapter transition",
+    "prompt": "What is the next locked manuscript section after Chapter 20?",
+    "answer": "21.1 \u2014 Capstone Architecture. Comprehensive Book 1 validation remains deferred until the manuscript is complete.",
+    "review": "Navigation checked:21.1-capstone-architecture.md exists; broad QA remains unfinished.",
+    "status": "assistant scoped review; external acceptance pending"
+  }
+]
