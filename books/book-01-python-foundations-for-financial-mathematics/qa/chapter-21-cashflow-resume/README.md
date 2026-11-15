@@ -1,0 +1,3 @@
+# Section21.6 partial source integration resume
+
+[Actualcheckpoint](results.json),[runner](checkpoint.py),pin70da93bc07c55a0c0b5eb1a48b7f80bb0614289c. Exactcashflowmodule/rootexports/example/new12-methodsuite,TVMdependency/12methods andretained21.3twelve-methodsuite staged. Three sourcecommands pass;36existingmethods/36invocations,zero newhistoricalmethods. PYTHONPATHsourceinjectionexplicit;the21.5wheeldoesnotcontainthenewcashflowmodule. Formal21.6oracles/range/prerequisite/40answers/12lab andupdatedartifactchecksremainnext. Reusedigestswhereunchanged;noadditionalcompletedformalworkfloworindependent/model/platform/releaseacceptance.

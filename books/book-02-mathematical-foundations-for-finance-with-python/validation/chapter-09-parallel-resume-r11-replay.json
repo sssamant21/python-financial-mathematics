@@ -1,0 +1,40 @@
+{
+  "source_revision": "70da93bc07c55a0c0b5eb1a48b7f80bb0614289c",
+  "source_blob": "ea09401b82ea4aeeeb99350d19db7a5358f1b4a1",
+  "observations": [
+    {
+      "name": "parallel finite exact change",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;expm1OverflowErrorpersists"
+    },
+    {
+      "name": "spot finite exact change",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;spotexpm1OverflowErrorpersists"
+    },
+    {
+      "name": "parallel zero shock unused cash-derivative prerequisite",
+      "actual": {
+        "exception": "ValueError",
+        "message": "sensitivity report outside finite float range"
+      },
+      "independent_change_fields": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "OPEN DESIGN;baselinefullreportrequiresunrepresentableper-cashderivative;parallelonlyreturnschangefields. Parenteligibilitypolicyreviewneeded,notnewnumericfailure."
+    }
+  ],
+  "limits": "Twoopen numericalcasesandoneparentprerequisitepolicyobservation;notpassing141baselinepredicates orcompleteparallel/spotacceptance. Historicalinitialrecordsretained."
+}

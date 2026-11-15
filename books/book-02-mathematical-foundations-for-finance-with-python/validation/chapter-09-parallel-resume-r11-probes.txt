@@ -1,0 +1,13 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib,json,hashlib
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();pin='70da93bc07c55a0c0b5eb1a48b7f80bb0614289c';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_06.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation'
+def call(f):
+ try:return dict(returned=f())
+ except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_06.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_06')
+ with localcontext(Context(prec=2400)):C=Decimal.from_float(1e-308);expected=float(C*(Decimal(709).exp()-Decimal(-1).exp()))
+ f=[(1e-308,2.),(1.,0.)];rows=[dict(name='parallel finite exact change',actual=call(lambda:m.parallel_shock(f,.5,-355.)),independent_exact_change=expected,status='OPEN numerical;expm1OverflowErrorpersists'),dict(name='spot finite exact change',actual=call(lambda:m.spot_shock(f,[.5,0.],[-355.,0.])),independent_exact_change=expected,status='OPEN numerical;spotexpm1OverflowErrorpersists'),dict(name='parallel zero shock unused cash-derivative prerequisite',actual=call(lambda:m.parallel_shock([(1e-308,2.)],-355.,0.)),independent_change_fields=[0.,0.,0.,0.,0.],status='OPEN DESIGN;baselinefullreportrequiresunrepresentableper-cashderivative;parallelonlyreturnschangefields. Parenteligibilitypolicyreviewneeded,notnewnumericfailure.')]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Twoopen numericalcasesandoneparentprerequisitepolicyobservation;notpassing141baselinepredicates orcompleteparallel/spotacceptance. Historicalinitialrecordsretained.')
+(v/sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('2numeric+1parallel-prerequisitepolicyobservationssaved')

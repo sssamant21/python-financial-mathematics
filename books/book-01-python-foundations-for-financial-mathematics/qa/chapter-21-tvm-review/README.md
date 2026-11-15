@@ -9,3 +9,5 @@ Baseline da68056d0ed2d80f4aeb8abbf11ea0a760ae8ce3. [Runnableharness](package-rev
 [Earlier3sourcecommands](../chapter-21-tvm-resume/results.json) reusedbyfiveexactPythonfencedigests. Evidencechain14commands,24existingmethods/72invocations (24source+24editable+24wheel),zero newhistoricalmethods. Helpercaptionmentions12initialwheelchecks;actualJSONrows38govern,with26additionalTVMcases. Predicates,methods,commands,answers,labstepsandrangeobservationremainseparate.
 
 F28/F32/F209,20.11static,F165/F185,R08-10/owner,universalrange/resources,supportedplatform/model/security/release/independentacceptanceopen. Earlier21.3artifactkeepsitsoriginalscope;thisupdatedartifacthasselectedTVMcoverageonly. Chapter21now5scopedworkflows/200localanswers.Next21.6Cash-FlowModule.
+
+Candidate/executedsourcepin`70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`;[hashverification](publication-verification.json).

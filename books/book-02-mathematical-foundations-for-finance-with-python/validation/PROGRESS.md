@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-182 polynomial/manuscript scope and V-183 full candidate Linux pass (623/410/624). Section9.6 numerical/report and independent/platform/release acceptance open.
+**Overall status:** In progress — V-184 baseline sensitivity scope and V-185 full candidate Linux pass (624/411/625). Parallel/spot numerical/prerequisite and independent/platform/release acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 623/623 at `b5bfa28ea4991f2694e88933c43eccb0d44b87be`. [V-183](runtime-refresh-2026-11-15-r10.md). |
-| Automated script execution | Full candidate Linux pass | 410/410 at `b5bfa28ea4991f2694e88933c43eccb0d44b87be`;624 required blobs verified before/after. [V-183](runtime-refresh-2026-11-15-r10.md). |
+| Python compilation | Full candidate Linux pass | 624/624 at `70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`. [V-185](runtime-refresh-2026-11-15-r11.md). |
+| Automated script execution | Full candidate Linux pass | 411/411 at `70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`;625 required blobs verified before/after. [V-185](runtime-refresh-2026-11-15-r11.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1522,3 +1522,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-184 checkpoint — Section9.6 complete baseline sensitivity reports
 
 [Baseline-sensitivityevidence](chapter-09-baseline-sensitivity-followup.md):141correctedsourcepredicatespass;110initialpass/31failed andactualidenticalreplayretained. Fourteenrange/exception-policyfields,17completenumeric/reportfields,not31uniquebugs. Independent1800/2400-digit scalar/normalized/per-cash/weightoracles;allreturnedfieldsfinite,totalpositivepolicyexplicit. Onlybaseline/helper/importschange;parallel/spottextunchangedandtheirnumerical/prerequisitegapsremainOPEN. Threefiles/threecommands/twocheckerspass;fresh624/411/625inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,thenparallel_shock completecontracts,then spotcurve/shock. Historicalrecordsretained;resource/platform/model/release/independentacceptanceopen;Book1separate.
+
+
+### Section9.6 parallel/spot resume — OPEN
+
+[Freshinitialobservations](chapter-09-parallel-resume-r11-initial.json),[actualidenticalreplay](chapter-09-parallel-resume-r11-replay.json),[runner](chapter-09-parallel-resume-r11-probes.txt) at70da93bc07c55a0c0b5eb1a48b7f80bb0614289c. Parallel/spotfiniteexactchangesstillraiseexpm1OverflowError (twoOPENnumericalcases). Parallelzero-shockwithunrepresentableunusedper-cashbaseline-derivativeisrejected (separateOPENparent-prerequisitepolicyquestion). Notpassing141baselinepredicatesorcompletedwrapperreview. Nextparallel_shockcompletefields/prerequisites,then spotcurve/shock;historicalrecordsretained.
+
+
+## V-185 checkpoint — Full pinned candidate Linux refresh
+
+[V-185fullruntime](runtime-refresh-2026-11-15-r11.md) at`70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`:624/624Pythoncompiled,411/411check-testscripts passed,625/625requiredsource/fixtureblobsverifiedbefore-after. IncludesV-184baseline;141sourcepredicatespass,31initialfailures/actualreplayretained withrange/exception-policy/numericalseparation,not31uniquebugs. Parallel/spotfunctiontextunchanged;twonumericalcasesandoneparent-prerequisitepolicyquestionremainOPEN. Exactrunner/per-fileoutcomes/digests/fullmanifestretained. All37selectedCOVcategoriespartial,noneclosed.Nextparallel_shockcompletefields/prerequisites,then spotcurve/shock. Independentmathematical/editorial/model/platform/release/canonicalacceptancepending;Book1independent.

@@ -625,3 +625,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.5 scoped TVM workflow,artifact and answers
 
 [TVMevidence](chapter-21-tvm-review/README.md):oneworkflow/40answers/12labreviews;11freshofflineeditable/build/cleanwheelcommands pass. Newartifacthashdiffersfrom21.3;outsidehiddensourceprovenanceverified. Thirty-eightwheelpredicatespasswithindependentclosedpowerreferences andinput/count/overflowcases. Threeearliersourcecommandsreusedbyfivefencedigests;24existingmethods/72invocationsacrosssource/editable/wheel,14commandsevidencechain,zero newhistoricalmethods. Publishedrounded-base/sequentiallimitretainedasobservation,notnewdefect;codefencesunchanged. Chapter21now5scopedworkflows/200answers;next21.6CashFlowModule. F28/F32/F209,20.11static,F165/F185,R08-10/owner andbroaderresources/platform/model/release/independentacceptanceopen.
+
+
+### Section21.6 partial cash-flow integration resume — OPEN
+
+[Cashflowcheckpoint](chapter-21-cashflow-resume/README.md):3sourcecommands/36existingmethods acrossnewcashflow+TVM+retainedscaffoldsuites pass,zero newhistoricalmethods. Sourceinjectiononly;21.5artifactdoesnotcontainnewcashflowmodule. Formal21.6oracles/range/40answers/12lab/updatedartifactreviewnext;noadditionalcompletedworkflow.

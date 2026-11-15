@@ -1346,3 +1346,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-184 checkpoint — Section9.6 complete baseline sensitivity reports
 
 [Baseline-sensitivityevidence](chapter-09-baseline-sensitivity-followup.md):141correctedsourcepredicatespass;110initialpass/31failed andactualidenticalreplayretained. Fourteenrange/exception-policyfields,17completenumeric/reportfields,not31uniquebugs. Independent1800/2400-digit scalar/normalized/per-cash/weightoracles;allreturnedfieldsfinite,totalpositivepolicyexplicit. Onlybaseline/helper/importschange;parallel/spottextunchangedandtheirnumerical/prerequisitegapsremainOPEN. Threefiles/threecommands/twocheckerspass;fresh624/411/625inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,thenparallel_shock completecontracts,then spotcurve/shock. Historicalrecordsretained;resource/platform/model/release/independentacceptanceopen;Book1separate.
+
+
+### Section9.6 parallel/spot resume — OPEN
+
+[Freshinitialobservations](chapter-09-parallel-resume-r11-initial.json),[actualidenticalreplay](chapter-09-parallel-resume-r11-replay.json),[runner](chapter-09-parallel-resume-r11-probes.txt) at70da93bc07c55a0c0b5eb1a48b7f80bb0614289c. Parallel/spotfiniteexactchangesstillraiseexpm1OverflowError (twoOPENnumericalcases). Parallelzero-shockwithunrepresentableunusedper-cashbaseline-derivativeisrejected (separateOPENparent-prerequisitepolicyquestion). Notpassing141baselinepredicatesorcompletedwrapperreview. Nextparallel_shockcompletefields/prerequisites,then spotcurve/shock;historicalrecordsretained.
+
+
+## V-185 checkpoint — Full pinned candidate Linux refresh
+
+[V-185fullruntime](runtime-refresh-2026-11-15-r11.md) at`70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`:624/624Pythoncompiled,411/411check-testscripts passed,625/625requiredsource/fixtureblobsverifiedbefore-after. IncludesV-184baseline;141sourcepredicatespass,31initialfailures/actualreplayretained withrange/exception-policy/numericalseparation,not31uniquebugs. Parallel/spotfunctiontextunchanged;twonumericalcasesandoneparent-prerequisitepolicyquestionremainOPEN. Exactrunner/per-fileoutcomes/digests/fullmanifestretained. All37selectedCOVcategoriespartial,noneclosed.Nextparallel_shockcompletefields/prerequisites,then spotcurve/shock. Independentmathematical/editorial/model/platform/release/canonicalacceptancepending;Book1independent.
