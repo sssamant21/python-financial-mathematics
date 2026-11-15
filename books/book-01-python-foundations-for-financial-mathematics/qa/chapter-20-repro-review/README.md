@@ -15,3 +15,7 @@ Four separate literal-byte/hash oracle commands use sha256sum on independently s
 F28 notebook/platform,F32 shared-input integration,F209 iterable policy,20.11 static checker,F165 tail limits,F185 integration and broad NPV range/underflow/resources/provenance/independent acceptance remain open. Chapter20 now13 scoped workflows/520 local answers. Next:Section20.14 Model Validation vs.Software Validation.
 
 [Initial harness serialization observation](harness-serialization-note.json) retains both passing original records:an unordered set repr changed order across processes. The QA observer now records sorted keys;this was a harness-output issue,not a source or financial predicate failure.
+
+Executed source/checker/fixture bytes verified against `328b5f7f235063ed058f2c57426dea829c2f5fa7`;[source manifest](publication-verification.json).
+
+[Byte-oracle executable/version inventory](byte-oracle-tool.json) is a separate environment inspection,not an additional source command or financial predicate.

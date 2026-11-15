@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `a876a59f0aafb238d7becf081ba2d32b27049830` (V-167)
-**Latest scoped source:** V-166 at `a876a59f0aafb238d7becf081ba2d32b27049830`;[five-file source manifest](chapter-09-shock-report-publication-verification.json).
+**Full-runtime candidate source revision:** `328b5f7f235063ed058f2c57426dea829c2f5fa7` (V-169)
+**Latest scoped source:** V-168 at `328b5f7f235063ed058f2c57426dea829c2f5fa7`;[six-file source manifest](chapter-09-ladder-revenue-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-166 complete shock/error scope and V-167 full Python runtime pass;ladder/revenue observations and independent/release approval stay open.
+**Disposition:** V-168 ladder/revenue scope and V-169 full Python runtime pass;Section9.4 diagnostics and independent/release approval stay open.
 
 ## Reconciled evidence
 
@@ -1276,3 +1276,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-168 checkpoint — Section9.3 ladder/revenue prerequisite/model/report contracts
 
 [Ladder/revenue evidence](chapter-09-ladder-revenue-followup.md):118 corrected predicates pass;92 initial passes/26 failed predicates and identical replay retained. Ten failures reflect newly declared ladder prerequisite/priority policy,six decimal-polynomial/range contract and ten sampled callback integration;not26 unique implementation defects. Independent1800/2400-digit exact-decimal polynomial and direct shock references,ordering/consumption/zero/range controls checked. Two saved design/range observations scoped settled;historical records unchanged. Six files compiled,six commands/five checkers pass,six hashes verified before-after;only ladder/revenue/derivative text changed. Fresh616/403/617 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.4 quadratic/discounted report/callback contracts. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.4 resume checkpoint — OPEN
+
+[Initial diagnostic observations](chapter-09-quadratic-resume-initial.json),[actual identical replay](chapter-09-quadratic-resume-replay.json),[runner](chapter-09-quadratic-resume-probes.txt):complete quadratic cancellation returns nan versus independent0;half-product underflow returns0 versus independent1e−323;single-flow exponential rescue raises OverflowError versus independent finite2.233994766161711. Boolean order is accepted as1 (separate OPEN DESIGN selector-policy observation). Three numerical cases and one design observation,not passing acceptance predicates. Resume next with exact references and full report/selector contracts;initial records retained.
+
+
+## V-169 checkpoint — Full pinned candidate Linux refresh
+
+[V-169 full runtime](runtime-refresh-2026-11-15-r3.md) at `328b5f7f235063ed058f2c57426dea829c2f5fa7`:616/616 Python files compiled,403/403 check-test scripts passed,617/617 required Python/fixture hashes verified before-after. Includes V-168 ladder/revenue contracts;26 initial policy/model/report predicate failures/replay and118 corrected predicates retained separately,not26 unique implementation bugs. Historical records unchanged;two saved design/range observations scoped settled. Next9.4 checkpoint retains three OPEN numerical cases and one separate selector-design observation,not passing acceptance predicates. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.4 complete quadratic/discounted report/callback contracts. Book1 tracked independently.

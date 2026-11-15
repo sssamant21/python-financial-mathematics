@@ -17,3 +17,7 @@ Three seven-field generic-report integrations derive independently rounded polyn
 Six files compiled,six commands/five checkers pass,six hashes verified before-after;prior section/affine125/value34/shock158 checkers unchanged. Only ladder/revenue/derivative text changes ([comparison](chapter-09-ladder-revenue-scope-comparison.json)). Fresh616 Python/403 check-test/617 required-blob inventory is not full execution;full pinned refresh records execution separately.
 
 [Later dispositions](chapter-09-ladder-revenue-resume-disposition.json) settle two saved design/range observations through explicit scoped contracts;historical initial/replay records unchanged and not relabelled as two prior mathematical bugs. All36 selected COV categories partial,none closed. Next:Section9.4 second-order Taylor complete quadratic update,discounted reports and callback contracts. Broader conditioning,resources,financial/model/independent mathematical/editorial/platform/release/canonical acceptance pending. Book1 tracked independently.
+
+Executed source/checker/fixture bytes verified against `328b5f7f235063ed058f2c57426dea829c2f5fa7`;[source manifest](chapter-09-ladder-revenue-publication-verification.json).
+
+[Next quadratic checkpoint](chapter-09-quadratic-resume-initial.json),[actual replay](chapter-09-quadratic-resume-replay.json),[runner](chapter-09-quadratic-resume-probes.txt) retain three OPEN numerical cases and one separate selector-design observation;not part of the118 passing predicates.

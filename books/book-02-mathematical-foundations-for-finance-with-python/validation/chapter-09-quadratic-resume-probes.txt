@@ -1,0 +1,26 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,hashlib,math
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='328b5f7f235063ed058f2c57426dea829c2f5fa7';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'section_9_04.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('quadratic_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for name,vals in [('complete quadratic cancellation',(-1e308,1e308,2.)),('quadratic half-product underflow',(0.,math.ulp(0.),2.))]:
+  refs=[]
+  for prec in (1800,2400):
+   with localcontext(Context(prec=prec)):
+    A,B,H=map(Decimal,vals);refs.append(float(A*H+B*H*H/2))
+  assert refs[0]==refs[1]
+  try:a=m.taylor_change(*vals)
+  except Exception as e:a=type(e).__name__
+  rows.append(dict(name=name,actual=repr(a),independent_expected=repr(refs[0]),status='OPEN — exact-source numerical mismatch,not a passing acceptance predicate'))
+ refs=[]
+ for prec in (1800,2400):
+  with localcontext(Context(prec=prec)):refs.append(float(Decimal(1e-308)*Decimal(710).exp()))
+ assert refs[0]==refs[1]
+ try:a=m.single_cash_flow(1e-308,2.,-355.)['value']
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='single-flow complete exponential rescue',actual=repr(a),independent_expected=repr(refs[0]),status='OPEN — standalone finite value/whole derivative report contract requires next review'))
+ try:a=m.taylor_change(1.,2.,.1,True)
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='boolean order selector acceptance',actual=repr(a),status='OPEN DESIGN — strict order selector contract needs review,not a claimed derivative error'))
+d=dict(executable_source_revision=pin,source=rel,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Three numerical and one separate selector-design diagnostics for next9.4 batch;not additional passing script predicates or independent/platform acceptance.');(r/('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-quadratic-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print('Three OPEN quadratic/value cases and one separate selector-design observation recorded')
