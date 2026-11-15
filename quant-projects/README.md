@@ -217,3 +217,5 @@ Project 35 also includes `convergence.py` for exploratory Brownian-bridge monito
 Project 35 includes `matched_convergence.py` for nested common-Brownian-path grid diagnostics; run `python -m unittest -v test_matched_convergence.py` from its directory. Synthetic only; independent barrier benchmark pending.
 
 Project 35 now includes `analytical.py` (reflection-density continuous-barrier benchmark) and `test_analytical.py`. Run `python -m unittest -v test_analytical.py` from its folder; exact-source CI and independent validation remain pending.
+
+Project 36 numerical stress follow-up: `36-asian-option-monte-carlo/test_geometric_control.py` now includes deep-in-the-money and one-fixing limiting-case checks, seeded high-volatility finite-output stress, and input rejection. Run `python -m unittest -v test_geometric_control.py` from Project 36; newly added tests require exact-revision CI confirmation and independent model review.
