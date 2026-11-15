@@ -1,0 +1,19 @@
+"""Fresh pinned Section9.7 diagnostics; not passing payoff predicates.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,subprocess,tempfile,importlib,json,hashlib
+r=Path(sys.argv[1]).resolve();pin='ab6eb11ec9e377e3014e9914bb085c619f73a8a6';p='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py';raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_07.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_07')
+ def call(fn):
+  try:return dict(returned=repr(fn()))
+  except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+ trace=[]
+ def constant(x):trace.append(repr(x));return 1.
+ identity=call(lambda:m.difference_report(lambda x:x,0.,1e308));endpoint=call(lambda:m.difference_report(constant,1e308,1e308))
+ with localcontext(Context(prec=2400)):whole=float(Decimal.from_float(1e308)*Decimal(-1000).exp())
+ rows=[dict(case='identity centered denominator overflow',actual=identity,independent_left=1.,independent_right=1.,independent_centered=1.,status='OPEN numerical; finite source samples, centered zero instead of one'),dict(case='nonfinite endpoint still sampled',actual=endpoint,callback_trace=trace,status='OPEN endpoint preflight/finite-grid policy; constant callback accepts inf, no numerical mismatch claimed'),dict(case='scenario complete payoff underflow rescue',actual=call(lambda:m.call_scenario(1e308,1.,0.,1.,1000.)),independent_baseline_and_shocked_value=whole,status='OPEN numerical; cash-weighted finite value lost after factor underflow')]
+ d=dict(executable_source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Three diagnostics only: two numerical and one preflight-policy observation. Complete difference/callback and scenario scope next; not passing182 payoff predicates or independent approval.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('3pinned diagnostics retained')

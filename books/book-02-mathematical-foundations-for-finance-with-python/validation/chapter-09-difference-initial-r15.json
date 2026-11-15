@@ -1,0 +1,37 @@
+{
+  "executable_source_revision": "ab6eb11ec9e377e3014e9914bb085c619f73a8a6",
+  "source_blob": "bb468e6c87a932c92bdf01304456f2989a68a64a",
+  "observations": [
+    {
+      "case": "identity centered denominator overflow",
+      "actual": {
+        "returned": "{'left_difference': 1.0, 'right_difference': 1.0, 'centered_difference': nan}"
+      },
+      "independent_left": 1.0,
+      "independent_right": 1.0,
+      "independent_centered": 1.0,
+      "status": "OPEN numerical; finite source samples, centered zero instead of one"
+    },
+    {
+      "case": "nonfinite endpoint still sampled",
+      "actual": {
+        "returned": "{'left_difference': 0.0, 'right_difference': 0.0, 'centered_difference': 0.0}"
+      },
+      "callback_trace": [
+        "1e+308",
+        "0.0",
+        "inf"
+      ],
+      "status": "OPEN endpoint preflight/finite-grid policy; constant callback accepts inf, no numerical mismatch claimed"
+    },
+    {
+      "case": "scenario complete payoff underflow rescue",
+      "actual": {
+        "returned": "{'baseline_value': 0.0, 'shocked_value': 0.0, 'exact_change': 0.0, 'left_slope': 0.0, 'right_slope': 0.0, 'differentiable': True}"
+      },
+      "independent_baseline_and_shocked_value": 5.075958897549457e-127,
+      "status": "OPEN numerical; cash-weighted finite value lost after factor underflow"
+    }
+  ],
+  "limits": "Three diagnostics only: two numerical and one preflight-policy observation. Complete difference/callback and scenario scope next; not passing182 payoff predicates or independent approval."
+}

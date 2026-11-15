@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.8:** [Bond review](chapter-21-bond-review/README.md):40 answers /12 lab steps, updated clean-consumer wheel and162 predicates;8 scoped workflows /320 local answers. Next21.9; broader F28/F32/model/platform/independent gaps remain open.
+
 - **Latest 21.7:** [Loan review](chapter-21-loan-review/README.md): 40 answers /12 lab steps, updated clean-consumer wheel, 129 installed predicates and 48 existing methods. Seven scoped workflows /280 local answers in Chapter 21. Next: 21.8; [partial bond source checkpoint](chapter-21-bond-resume/README.md) passes 60 existing methods. Broader F28/F32 and independent/model/platform/release gaps remain open.
 
 - **Latest21.6:** [Cashflow](chapter-21-cashflow-review/README.md):updatedartifact,62wheelpredicates+3sourceproperties,40answers/12labreviews;documentedrangelimitsretained.Next21.7;broadergapsopen.
@@ -658,3 +660,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.8 — Partial bond source checkpoint (OPEN)
 
 [Bond checkpoint](chapter-21-bond-resume/README.md): three source commands / 60 existing methods pass across bond, loan, cashflow, TVM and retained scaffold suites. Explicit source injection; no new historical methods or completed formal workflow. Loan wheel excludes bonds. Next: 21.8 independent pricing/range contracts, 40 answers /12 lab steps and updated installed artifact; Chapter 21 remains seven scoped workflows /280 reviewed answers. F28/F32 and broad acceptance remain open.
+
+
+## Section 21.8 — Scoped bond workflow, answers and updated wheel
+
+[Bond evidence](chapter-21-bond-review/README.md): 40 answer records /12 lab-step reviews; all11 new offline packaging commands and162 installed-wheel predicates pass. Includes14 independent rational bond-price references,15 rejection checks and4 separate bond properties plus129 retained predicates. Three earlier source commands reused by exact fence hashes;60 existing methods /180 source-editable-wheel invocations, zero new historical methods. New wheel hash differs from loan artifact; same illustrative version is not release approval. No executable source change/new defect; numerical/model limits retained. Chapter21 now8 scoped workflows /320 reviewed local answers. Next:21.9 Return and Performance Module. F28/F32/F209, static-check, F165/F185, R08–10/ownership and broader resources/model/platform/release/independent gaps remain open.
+
+
+### Section21.9 — Partial return-module source checkpoint (OPEN)
+
+[Return checkpoint](chapter-21-return-resume/README.md):3 source commands /72 existing methods pass across return, bond, loan, cashflow, TVM and scaffold suites. Explicit source injection; no new historical methods or completed formal workflow. Bond wheel excludes returns. Next:21.9 independent numerical/range contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains8 scoped workflows /320 local answers; F28/F32 and broader acceptance remain open.

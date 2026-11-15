@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-189 spot-shock scoped pass and V-190 full pinned Linux pass (627/414/628). Section 9.7 contracts and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-191 payoff/cap-floor scoped pass (182 predicates); latest full Linux pass remains V-190 at its older pin (627/414/628). Difference/scenario and independent/platform/release contracts remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1562,3 +1562,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-190 checkpoint — Full pinned candidate Linux refresh
 
 [V-190 runtime](runtime-refresh-2026-11-15-r14.md) at `e0c17a68fc28195b95f4f6381166adcb405b8353`: 627/627 Python files compiled, 414/414 scripts passed, 628/628 required blobs verified before/after. Includes spot-curve and spot-shock corrections with 73 and 74 scoped predicates, retained initial failures/replays and explicit baseline eligibility. Three fresh Section 9.7 diagnostics remain OPEN; full execution does not settle unasserted contracts. Next: Section 9.7 payoff/cap-floor, one-sided/difference and scenario numerical/report/prerequisite contracts. All 37 selected COV categories remain partial, none closed. Independent mathematical/editorial/model/platform/release/canonical acceptance remains pending. Book 1 retains separate trackers.
+
+
+## V-191 checkpoint — Section9.7 payoff/cap-floor contracts
+
+[Payoff/cap-floor evidence](chapter-09-kinks-followup-r15.md):182 corrected predicates pass;174 initial passes /8 failed range-policy fields and identical replay retained. Exact rational payoffs/neighboring one-sided secants, type/domain/priority and selected properties. All8 initial failures enforce explicit finite-payment policy plus retained full-payment slope prerequisite, not8 numerical bugs. Only payment body changed; difference/scenario text unchanged. Three files compiled /three commands /two checkers pass with before/after hashes. Fresh628/415/629 pinned inventory is not full execution; V190 remains latest full pass at its older pin. Next: difference-report preflight/quotient/callback contracts, then scenarios; fresh diagnostics and zero-spot derivative-interpretation gap remain OPEN. COV51 selected follow-up;37 categories partial,none closed. Broad resource/model/platform/editorial/release/canonical/independent acceptance pending;Book1 separate.

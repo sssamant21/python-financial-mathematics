@@ -1,0 +1,55 @@
+{
+  "baseline_revision": "9c6893a7683dbf39e4dc02105f030ac1bc225a0b",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py",
+      "sha": "bb468e6c87a932c92bdf01304456f2989a68a64a"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_07.py",
+      "sha": "87043f933baaf5f0b2df4ddd8a53c1bbff21ca03"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_payoff_cap_floor.py",
+      "sha": "06b832bab0293aa1d56fc48c05037a8d3cffb211"
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "compiled": [
+    "section_9_07.py",
+    "check_section_9_07.py",
+    "check_section_07_payoff_cap_floor.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"call_at_strike\": {\n    \"left\": 0.0,\n    \"right\": 1.0,\n    \"differentiable\": false\n  },\n  \"put_at_strike\": {\n    \"left\": -1.0,\n    \"right\": 0.0,\n    \"differentiable\": false\n  },\n  \"finite_differences\": {\n    \"left_difference\": 0.0,\n    \"right_difference\": 1.0,\n    \"centered_difference\": 0.5\n  },\n  \"call_up\": {\n    \"baseline_value\": 0.0,\n    \"shocked_value\": 1.8462326927732715,\n    \"exact_change\": 1.8462326927732715,\n    \"left_slope\": 0.0,\n    \"right_slope\": 0.9231163463866358,\n    \"differentiable\": false\n  },\n  \"call_down\": {\n    \"baseline_value\": 0.0,\n    \"shocked_value\": 0.0,\n    \"exact_change\": 0.0,\n    \"left_slope\": 0.0,\n    \"right_slope\": 0.9231163463866358,\n    \"differentiable\": false\n  },\n  \"cap_at_threshold\": {\n    \"left\": 1000.0,\n    \"right\": 0.0,\n    \"differentiable\": false\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.7 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_payoff_cap_floor.py",
+        "books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-kinks-corrected-r15.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"source_predicates\": 182, \"passed\": 182, \"failed\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "limits": "Scoped three-file pass, not full-book runtime. Finite payment output is explicit range policy and slope prerequisite, not repaired finite numerical value."
+}

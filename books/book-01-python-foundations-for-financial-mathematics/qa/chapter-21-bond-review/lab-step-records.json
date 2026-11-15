@@ -1,0 +1,74 @@
+[
+  {
+    "step": 1,
+    "source_record": "Create the Section 21.3 scaffold and apply the module updates through Section 21.7.",
+    "review": "Exact scaffold metadata and all TVM/cashflow/loan/bond code/tests staged; source prerequisites in package hashes.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 2,
+    "source_record": "Add `bonds.py` and update the public exports.",
+    "review": "Bond implementation and six public exports staged; installed provenance/exports verified.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 3,
+    "source_record": "Save the bond reference tests under `tests/`.",
+    "review": "12 bond methods plus48 retained methods;60 existing methods, no new historical unique methods.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 4,
+    "source_record": "Specify face, currency, coupon timing, per-period coupon rate and effective yield.",
+    "review": "Face/currency/timing/rate/yield conventions reviewed; same-unit and date assumptions not metadata-enforced.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 5,
+    "source_record": "Draw the cash-flow timeline for the two-period par bond.",
+    "review": "Timeline0,5,105 explicitly represents no current coupon and one maturity redemption.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 6,
+    "source_record": "Derive its price of 100 independently from its discounted flows.",
+    "review": "Exact rational discounting demonstrates par identity; integration is not the independent benchmark.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 7,
+    "source_record": "Derive the two-period zero-coupon benchmark independently.",
+    "review": "Independent40000/441 benchmark and represented-rate reference both separated.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 8,
+    "source_record": "Convert an effective annual yield to a compatible per-period yield using a stated convention.",
+    "review": "80-digit effective semiannual root retained as supplemental convention calculation, not implemented conversion.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 9,
+    "source_record": "Compare price at two yields and explain the assumptions behind the direction of change.",
+    "review": "Selected positive-flow yield-order and par-order wheel checks; excludes credit/settlement market-price approval.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 10,
+    "source_record": "Identify exclusions including accrued interest, dates, credit and callability.",
+    "review": "Accrued/date/daycount/credit/callability/FX/reinvestment exclusions documented; no missing implemented feature claimed.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 11,
+    "source_record": "During deferred QA, run the commands and capture actual output, revision and environment.",
+    "review": "Three earlier source commands reused by exact staged fence hashes;11 new offline package commands with outputs and artifact hash.",
+    "status": "Scoped review; external acceptance pending"
+  },
+  {
+    "step": 12,
+    "source_record": "Record numerical findings and model limitations and identify the review needed for any intended use.",
+    "review": "Resource/range/rounding/model/ownership/platform/release and independent decisions remain open.",
+    "status": "Scoped review; external acceptance pending"
+  }
+]

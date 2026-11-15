@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Face:** What is the redemption amount in this model? **Answer:** The supplied face amount at maturity.",
+    "review": "Maturity redemption is face; coupon is added once in final flow, not a second redemption.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Coupon:** Face 100 and per-period coupon rate 5% give what coupon? **Answer:** 5 per period.",
+    "review": "Coupon=100*.05=5 in exact decimal convention; independent rational benchmark uses represented inputs.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Timeline:** What flows arise for a two-period bond with those inputs? **Answer:** `[0.0, 5.0, 105.0]`.",
+    "review": "Time-zero zero, one coupon at t1 and coupon+face at t2; example and installed integration property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Time zero:** Is a current coupon included? **Answer:** No; valuation is immediately after the current coupon is paid.",
+    "review": "After-coupon valuation excludes current coupon and accrued interest; explicit model assumption.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Par:** Price with face 100, coupon 5% and yield 5% for two periods? **Answer:** 100 in exact arithmetic.",
+    "review": "5/(1.05)+105/(1.05)^2=100 exactly at decimal 5%; represented-input rational oracle passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero coupon:** Price of face 100 at 5% for two periods? **Answer:** Approximately 90.70294785.",
+    "review": "100/(21/20)^2=40000/441, about90.7029478458; independent zero-coupon oracle passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**One period:** Price of face 100, coupon 5%, yield 10%? **Answer:** Approximately 95.45454545.",
+    "review": "105/(11/10)=1050/11, about95.4545454545; one-period oracle passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Zero yield:** Price of face 100 with two coupons of 5? **Answer:** 110.",
+    "review": "Zero yield sums 5+105=110; oracle and source tests.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Negative yield:** PV of 95 due in one period at \u22125%? **Answer:** 100 in exact arithmetic.",
+    "review": "95/(19/20)=100 exactly; accepted negative-yield one-period oracle passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Yield boundary:** Why reject \u22121? **Answer:** The discount denominator is zero.",
+    "review": "Yield -1 makes positive-time denominator zero; rejection predicate passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Rate units:** How is 5% represented? **Answer:** As `0.05`.",
+    "review": "Decimal per-period .05, not numeric5; caller convention stated.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Coupon frequency:** How is a 6% annual coupon usually allocated across two equal semiannual coupons? **Answer:** 3% of face each half-year under that convention.",
+    "review": "Nominal annual coupon allocation .06/2=.03 per half-year; conceptual convention, not conversion API.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Yield conversion:** What is the half-year effective rate equivalent to 6% effective annually? **Answer:** $`(1.06)^{1/2}-1`$, about 2.9563%.",
+    "review": "Supplemental 80-digit sqrt(1.06)-1 confirms about .0295630141; not source conversion execution.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Yield versus coupon:** Are they necessarily the same? **Answer:** No; coupon determines payments while yield determines discounting.",
+    "review": "Coupon determines payment schedule, yield determines discount factors; independent different-rate fixtures.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Yield increase:** What happens to the modeled price when yield rises? **Answer:** It falls for these positive future flows, all else equal.",
+    "review": "Positive future cash flows divided by increasing positive gross factors decrease; selected monotonicity predicate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Above par:** What is the relationship when coupon exceeds yield in this simplified setting? **Answer:** Price exceeds face.",
+    "review": "Par identity under matching positive periodic coupon/yield; above-par selected case passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Below par:** What is the relationship when yield exceeds coupon? **Answer:** Price is below face.",
+    "review": "Below-par selected higher-yield case passes; no market suitability inference.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Scaling:** What happens when face doubles with rates and term fixed? **Answer:** Price doubles in exact arithmetic.",
+    "review": "Positive face is a multiplicative coefficient in exact valuation; selected installed scaling predicate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Price units:** Is the result automatically quoted per 100 face? **Answer:** No; it values the supplied face amount.",
+    "review": "Result is PV in supplied face units; no automatic normalized market quote.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Maturity:** Does the final flow include the last coupon? **Answer:** Yes, together with face.",
+    "review": "Redemption face+coupon at final index, no duplicate principal; source schedule construction inspected.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Accrued:** Does this module compute accrued interest? **Answer:** No.",
+    "review": "No accrued interest/date-between-coupons calculation implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Dates:** Does it use a day-count convention? **Answer:** No.",
+    "review": "No actual dates/day-count; period counts are abstract equal intervals.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Credit:** Does it model default or recovery? **Answer:** No.",
+    "review": "No default/recovery probabilities or credit spread model.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Callability:** Does it model early redemption? **Answer:** No.",
+    "review": "No call/put/early redemption feature; remains excluded.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Term structure:** Does it use different rates for each period? **Answer:** No; one constant yield is used.",
+    "review": "Single constant effective yield; no separate spot curve.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Yield solver:** Does it calculate yield from a price? **Answer:** No.",
+    "review": "No inverse yield solver implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Duration:** Does it calculate duration? **Answer:** No.",
+    "review": "No duration/convexity helper in this module.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Face domain:** Is zero face accepted? **Answer:** No; face must be positive.",
+    "review": "Positive finite exact float domain; zero/negative/nonfinite and integer/bool rejection covered.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Coupon domain:** Is a negative coupon rate accepted? **Answer:** No, under this teaching contract.",
+    "review": "Coupon between0 and1 inclusive; negative and above-cap reject.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Integer face:** Is `100` accepted? **Answer:** No; use a built-in float such as `100.0`.",
+    "review": "Integer face deliberately rejected rather than coerced.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Boolean periods:** Is `True` accepted? **Answer:** No.",
+    "review": "Bool periods rejected by exact int test; no implicit one-period conversion.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Maximum:** What is the maximum number of periods? **Answer:** 1,000.",
+    "review": "Maximum1000, matching cashflow bound; selected1000-period exact-price cases pass.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Schedule size:** How many elements does a 1,000-period bond require? **Answer:** 1,001 including time zero.",
+    "review": "Schedule length n+1; maturity at n; no extra current payment.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Overflow:** What if face plus final coupon is nonfinite? **Answer:** The function raises `ValueError`.",
+    "review": "Nonfinite redemption triggers ValueError before discounting; selected invalid case passes; intermediate restrictions retained.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Underflow:** Does a finite price guarantee all contributions were preserved? **Answer:** No.",
+    "review": "Zero or rounded-away contributions can remain undetected by a finite output; selected huge-yield zero price allowed by finite-result contract.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Performance:** Why is the reference method quadratic in the number of periods? **Answer:** The underlying module repeatedly discounts each successive cash flow period by period.",
+    "review": "Repeated per-flow discounting performs sum of indices operations, O(n squared); no measured performance guarantee.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Rounding:** Does the function round to cents? **Answer:** No; display formatting is separate.",
+    "review": "No rounding/quantize; .6f example formatting is display only.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Integration:** Is agreement with `net_present_value` an independent benchmark? **Answer:** No; the bond function uses that same implementation.",
+    "review": "Underlying net_present_value is reused; shared integration property separate from independent exact rational price.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Do test definitions prove a passing test run? **Answer:** No; actual execution and results must be recorded.",
+    "review": "Actual prior source and new editable/wheel outputs retained; definitions alone never prove passing execution.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the next locked section? **Answer:** 21.9 \u2014 Return and Performance Module.",
+    "review": "21.09-return-and-performance-module.md exists; next formal workflow after this scoped review.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  }
+]
