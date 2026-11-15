@@ -541,3 +541,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.12 scoped documentation workflow and answers
 
 [Documentation evidence](chapter-20-docs-review/README.md):one workflow,40 local answers/12 steps;32 corrected source predicates/six commands and four separate doc/help visibility observations pass. Four initial predicate failures/two inputs and identical replay retained(F213);noniterable ValueError/cause aligned while late iterator errors/consumption preserved. Twelve existing methods ran36 invocations;zero new historical methods. Chapter20 now12 scoped workflows/480 local answers. Provenance/model/editorial concepts not independently accepted;20.11 static checker,F28/F32/F209,F165 limits,F185 integration and broader NPV/resources/platform acceptance open. Next:Section20.13 Reproducibility.
+
+
+## Section20.13 scoped reproducibility workflow and answers
+
+[Reproducibility evidence](chapter-20-repro-review/README.md):one workflow,40 local answers/12 steps;44 source predicates/seven source commands pass. Four separate literal-byte/hash oracle commands and two manifest/representation design observations retained. Baseline and actual replay already pass;executable fence unchanged,no defect invented. Twelve existing methods ran36 invocations;two fresh process outputs match within one candidate runtime,zero new historical methods. Chapter20 now13 scoped workflows/520 local answers. Supplied revision label/provenance/full environment and cross-platform replay not verified;20.11 static checker,F28/F32/F209,F165 limits,F185 integration and broader NPV/resources/independent acceptance open. Next:Section20.14 Model Validation vs.Software Validation.

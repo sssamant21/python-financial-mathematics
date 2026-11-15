@@ -1,0 +1,41 @@
+{
+  "original_record": "chapter-09-ladder-revenue-resume-initial.json",
+  "original_replay": "chapter-09-ladder-revenue-resume-replay.json",
+  "dispositions": [
+    {
+      "original_observation": "empty ladder with invalid model inputs",
+      "disposition": "RESOLVED (scoped design contract adopted)",
+      "corrected_predicates": [
+        {
+          "name": "empty prerequisite cash zero",
+          "actual": "'ValueError'",
+          "expected": "'ValueError'",
+          "passed": true,
+          "category": "new explicit empty-ladder prerequisite policy"
+        },
+        {
+          "name": "invalid model consumed nothing",
+          "actual": "[]",
+          "expected": "[]",
+          "passed": true,
+          "category": "new explicit prerequisite policy"
+        }
+      ]
+    },
+    {
+      "original_observation": "revenue final-range report",
+      "disposition": "RESOLVED (scoped finite-report policy)",
+      "corrected_predicate": {
+        "name": "decimal-model revenue13",
+        "actual": "'ValueError'",
+        "expected": "'ValueError'",
+        "passed": true,
+        "category": "decimal polynomial/range contract"
+      }
+    }
+  ],
+  "COV_54": "PARTIAL",
+  "selected_categories_partial": 36,
+  "categories_closed": 0,
+  "limits": "Historical observations were design/range questions;not retroactively two mathematical bugs. Original records unchanged;broader resources/model/independent acceptance open."
+}

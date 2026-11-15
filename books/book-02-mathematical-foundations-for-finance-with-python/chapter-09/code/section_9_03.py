@@ -119,20 +119,27 @@ def discount_shock(cash_flow, years, rate, shock):
             "relative_change_error":relative}
 
 def discount_step_ladder(cash_flow, years, rate, steps):
+    c, t, r = (finite(v,n) for v,n in
+               ((cash_flow,"cash_flow"),(years,"years"),(rate,"rate")))
+    if c <= 0 or t < 0:
+        raise ValueError("cash_flow must be positive and years nonnegative")
     return [{"shock":finite(h,"shock"),
-             **discount_shock(cash_flow,years,rate,h)} for h in steps]
+             **discount_shock(c,t,r,h)} for h in steps]
 
 def revenue(quantity):
     q = finite(quantity,"quantity")
     if q < 0:
         raise ValueError("quantity must be nonnegative")
-    return 40*q-0.1*q*q
+    if q == 0:
+        return q
+    Q = Fraction(q)
+    return _report_fraction(40*Q-Q*Q/10)
 
 def revenue_derivative(quantity):
     q = finite(quantity,"quantity")
     if q < 0:
         raise ValueError("quantity must be nonnegative")
-    return 40-0.2*q
+    return _report_fraction(40-Fraction(q)/5)
 
 if __name__ == "__main__":
     import json

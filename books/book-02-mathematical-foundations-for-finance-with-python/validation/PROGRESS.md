@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-166 shock/error scope and V-167 full candidate Linux pass (615/402/616). Ladder/revenue observations and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-168 ladder/revenue scoped contracts pass;V-167 remains latest full candidate Linux pass (615/402/616),pending refresh. Section9.4 and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1397,3 +1397,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-167 checkpoint — Full pinned candidate Linux refresh
 
 [V-167 full runtime](runtime-refresh-2026-11-15-r2.md) at `a876a59f0aafb238d7becf081ba2d32b27049830`:615/615 Python files compiled,402/402 check-test scripts passed,616/616 required Python/fixture hashes verified before-after. Includes V-166 complete shock/error reports;52 initial failed predicates/replay and158 corrected predicates retained separately. Historical records unchanged;three selected saved probes scoped resolved with signed-zero qualification. Next ladder/revenue checkpoint retains two OPEN diagnostic observations,not passing acceptance predicates. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 ladder/revenue collection/model/consumption and numerical/report contracts. Book1 tracked independently.
+
+
+## V-168 checkpoint — Section9.3 ladder/revenue prerequisite/model/report contracts
+
+[Ladder/revenue evidence](chapter-09-ladder-revenue-followup.md):118 corrected predicates pass;92 initial passes/26 failed predicates and identical replay retained. Ten failures reflect newly declared ladder prerequisite/priority policy,six decimal-polynomial/range contract and ten sampled callback integration;not26 unique implementation defects. Independent1800/2400-digit exact-decimal polynomial and direct shock references,ordering/consumption/zero/range controls checked. Two saved design/range observations scoped settled;historical records unchanged. Six files compiled,six commands/five checkers pass,six hashes verified before-after;only ladder/revenue/derivative text changed. Fresh616/403/617 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.4 quadratic/discounted report/callback contracts. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.

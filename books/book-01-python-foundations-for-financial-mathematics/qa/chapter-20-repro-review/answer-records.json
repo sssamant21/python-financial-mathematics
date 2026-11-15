@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Replay:** What must accompany code? **Answer:** Inputs, configuration, environment and conventions.",
+    "review": "Same-runtime replay recorded;complete external inputs/configuration/environment not captured by minimal source.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Revision:** Is a branch name enough? **Answer:** No; a commit identifies the revision more precisely.",
+    "review": "Supplied revision is explicitly unverified label;actual executed source is separately pinned by QA.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Dirty tree:** Why record uncommitted changes? **Answer:** The commit alone does not identify the executed code.",
+    "review": "Uncommitted source identified through exact fence/manuscript hashes;label alone insufficient.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Dependencies:** Why record versions? **Answer:** Changes may alter behavior or availability.",
+    "review": "Python version source field tested;dependency artifact capture conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Platform:** Why record architecture? **Answer:** Numerical behavior can depend on hardware and libraries.",
+    "review": "Actual platform recorded in QA;no cross-platform replay acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Input hash:** What does a SHA-256 digest identify? **Answer:** The exact bytes hashed, subject to collision assumptions.",
+    "review": "Four explicit literal byte fixtures hashed by separate sha256sum commands and compared with source manifests.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Hash:** Does a digest recover missing data? **Answer:** No.",
+    "review": "Digest cannot recover missing data;conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Data:** Why keep a snapshot? **Answer:** A source may change or be revised.",
+    "review": "Synthetic exact input bytes retained;live snapshots/provenance not validated.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Time:** Why record availability time? **Answer:** It helps prevent future information leaking into a historical analysis.",
+    "review": "Availability/look-ahead semantics conceptual,no historical data executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Calendar:** Can a calendar revision change results? **Answer:** Yes, payment dates and schedules may change.",
+    "review": "Calendar model/version conceptual;source has positional periods only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Rate:** What does 0.05 mean here? **Answer:** A 5% effective rate per period.",
+    "review": "Decimal effective per-period units stated;ordinary source reference agrees.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Cash flows:** When is the first flow? **Answer:** At time zero.",
+    "review": "Actual t0-only value3 retains3.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**NPV:** What is the exact NPV of \u2212100 then 110 at 10%? **Answer:** Zero.",
+    "review": "Independent represented-rate Fraction benchmark within1e\u221210;printed exact0.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Seed:** Does a seed prove a model is valid? **Answer:** No.",
+    "review": "No random simulation implemented;seed validity conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Generator:** Why name the algorithm and version? **Answer:** A seed alone may not specify a stream across implementations.",
+    "review": "RNG/version contract conceptual,not executed stream evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Parallel simulation:** Why allocate independent streams deliberately? **Answer:** Scheduling can change which worker consumes which draws.",
+    "review": "Parallel allocation conceptual,no workers/simulation implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Rounding:** Why record the rounding policy? **Answer:** Different policies can change reported or settled amounts.",
+    "review": "Business rounding policy conceptual;source returns unquantized float.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Float:** Must replay be bitwise identical everywhere? **Answer:** No; use justified numerical tolerances where appropriate.",
+    "review": "Two fresh local processes match exact output bytes;not universal bitwise replay.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Summation:** Can order matter? **Answer:** Yes, floating-point addition is not associative.",
+    "review": "Cash-flow order changes actual input bytes;floating summation non-associativity conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Configuration:** Why include valuation date? **Answer:** It determines which data and assumptions apply.",
+    "review": "Valuation date not included in source;missing metadata remains a limitation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Currency:** Why include currency? **Answer:** A bare monetary value has ambiguous meaning.",
+    "review": "Currency not modeled or captured;conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Tolerance:** Should one tolerance fit every quantity? **Answer:** No; units and scale matter.",
+    "review": "Monetary absolute1e\u221210 only ordinary NPV references;not universal tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Secrets:** Should credentials be in a manifest? **Answer:** No; record a safe reference if needed.",
+    "review": "Synthetic label/inputs only;no secrets or access-control certification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Privacy:** Can a hash be sensitive? **Answer:** Yes; low-entropy inputs can be guessed and checked.",
+    "review": "Hash guessability/privacy conceptual;no anonymization claim.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Snapshot:** Is an external URL a permanent snapshot? **Answer:** No; its content can change or disappear.",
+    "review": "External source permanence conceptual;no network snapshot claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Serialization:** Why define canonical bytes? **Answer:** Equivalent objects can otherwise serialize differently.",
+    "review": "Four independently specified literal JSON vectors confirm local serialization;not universal canonical JSON.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**NaN:** Why reject nonfinite JSON values in this example? **Answer:** They are unsuitable for the stated finite input contract.",
+    "review": "NaN/nonfinite cash/rate controls reject.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Hash change:** What if one input byte changes? **Answer:** The digest will normally change.",
+    "review": "One flow/rate/order modifications observed to change bytes/digest as applicable.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Input order:** Does cash-flow order matter? **Answer:** Yes; it defines timing.",
+    "review": "Order encodes positional timing;actual swapped bytes differ.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Tests:** Does the presence of tests establish execution? **Answer:** No; preserve actual results separately.",
+    "review": "Twelve existing methods actually executed36 invocations;reference inclusion alone not evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Logs:** Do logs replace input data? **Answer:** No; they may omit essential values and conventions.",
+    "review": "Input bytes retained separately from process outputs;logs not substitute.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Model:** Does deterministic output prove correctness? **Answer:** No; a repeatable error remains an error.",
+    "review": "Repeatability does not validate model assumptions.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Version:** Does pinning packages guarantee future installation? **Answer:** No; artifacts and platform compatibility also matter.",
+    "review": "Artifact availability/platform installation conceptual,no future guarantee.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Lockfile:** Why retain package hashes? **Answer:** They help identify and verify downloaded artifacts.",
+    "review": "Lockfile/package hashes not captured by minimal source;conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Output:** Why preserve an output digest? **Answer:** It helps compare exact output bytes.",
+    "review": "QA retains exact process output files and artifact identities;source does not emit output digest.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Revision history:** Can corrected market data alter an old result? **Answer:** Yes; retain the as-of dataset and revision.",
+    "review": "Historical-data revision conceptual;no as-of market data examined.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Dates:** Is a date a time zone? **Answer:** No; record the relevant time and zone when needed.",
+    "review": "Source has no dates/time-zone semantics;conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Environment variable:** Can an unrecorded setting change a run? **Answer:** Yes, so capture relevant non-secret configuration.",
+    "review": "Only synthetic local environment recorded;unrecorded non-secret settings remain gap.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Replay failure:** What should be investigated first? **Answer:** Differences in code, data, configuration and environment.",
+    "review": "Actual baseline and replay passed;investigation framework conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Independent review:** Does reproducibility replace model validation? **Answer:** No; the financial assumptions still need review.",
+    "review": "Independent financial/model review remains open.",
+    "status": "reviewed scoped"
+  }
+]
