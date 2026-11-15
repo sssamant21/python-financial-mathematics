@@ -12,4 +12,6 @@ python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-
 
 One separate actual range observation retains a finite exact final1e308 rejected because the Horner intermediate overflows;the manuscript explicitly documents this policy. It is not an added failed predicate or all-range solution. Ordering/type/rate contracts,caller immutability,scaling/additivity and conditional monotonicity checked. [Draft release-scope assessment](release-scope.json) does not approve packaging,installation,production or independent model suitability.
 
-Chapter20 now14 core workflows/560 answers plus one project workflow/40 local answers (15 scoped workflows/600 local answers). Next:20.16 Exercises and Applied Problems,then20.17 answers. 20.11 static checker,F28 notebook/platform,F32 shared-input integration,F209 iterable policy,F165 tail limits,F185 integration and broader numerical/provenance/model/platform/release acceptance remain open.
+Chapter20 now14 core workflows/560 answers plus one project workflow/40 local answers (15 scoped workflows/600 local answers). Next:20.16 Exercises and Applied Problems with embedded solutions. 20.11 static checker,F28 notebook/platform,F32 shared-input integration,F209 iterable policy,F165 tail limits,F185 integration and broader numerical/provenance/model/platform/release acceptance remain open.
+
+Executed source/checker bytes verified against `248b67271091d210fa62d3fb68cdbfb09a5c6793`;[source manifest](publication-verification.json).

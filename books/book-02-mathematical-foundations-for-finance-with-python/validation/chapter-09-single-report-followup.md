@@ -19,3 +19,7 @@ Positive reported value remains required;value underflow to0 still rejects. Comp
 Four files compiled,four commands/three checkers pass,four hashes verified before-after;original section and prior quadratic56 checkers unchanged. Only single_cash_flow text changes with two private helpers ([comparison](chapter-09-single-report-scope-comparison.json));portfolio/shock integrations remain pending despite transitive behavior changes. Fresh618 Python/405 check-test/619 required-blob inventory is not full execution;full pinned refresh records execution separately.
 
 [Later saved-case dispositions](chapter-09-single-report-resume-disposition.json) resolve two numerical cases and adopt whole finite-report policy;historical original/prior records unchanged. All36 selected COV categories partial,none closed. Next:Section9.4 portfolio aggregation/normalization and single/portfolio shock complete-report contracts. Broader conditioning,resources,financial/model/independent mathematical/editorial/platform/release/canonical acceptance pending. Book1 tracked independently.
+
+Executed source/checker bytes verified against `248b67271091d210fa62d3fb68cdbfb09a5c6793`;[source manifest](chapter-09-single-report-publication-verification.json).
+
+[Next portfolio/shock checkpoint](chapter-09-portfolio-shock-resume-initial.json),[actual replay](chapter-09-portfolio-shock-resume-replay.json),[runner](chapter-09-portfolio-shock-resume-probes.txt) retain two OPEN numerical/integration cases and one separate eligibility-policy observation;not part of the118 passing predicates.

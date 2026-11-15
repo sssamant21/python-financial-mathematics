@@ -1,0 +1,32 @@
+{
+  "executable_source_revision": "248b67271091d210fa62d3fb68cdbfb09a5c6793",
+  "source": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py",
+  "source_blob": "62109d761b284da4829e7a095a8c838382148a18",
+  "observations": [
+    {
+      "name": "unused per-leg normalized field rejects finite aggregate",
+      "actual": "'ValueError'",
+      "independent_expected_fields": {
+        "value": "1e+308",
+        "first": "-0.9999999999999999",
+        "second": "1e+308",
+        "duration": "1e-308",
+        "convexity": "0.9999999999999999"
+      },
+      "status": "OPEN \u2014 aggregate integration/range mismatch;per-leg convexity is unrepresentable while complete aggregate fields are finite,not a passing acceptance predicate"
+    },
+    {
+      "name": "single-shock exponential rescue",
+      "actual": "'OverflowError'",
+      "independent_exact_change": "0.8218407461554972",
+      "status": "OPEN \u2014 finite exact-change rescue rejected by exponential intermediate;not a passing acceptance predicate"
+    },
+    {
+      "name": "single-shock latent underflow baseline",
+      "actual": "'ValueError'",
+      "independent_exact_change": "1e-308",
+      "status": "OPEN DESIGN \u2014 parent shock API eligibility with an underflowed baseline requires explicit contract;not a failed acceptance predicate"
+    }
+  ],
+  "limits": "Two numerical/integration and one separate eligibility-policy diagnostics for next9.4 portfolio/shock review;not additional passing script predicates or independent acceptance."
+}

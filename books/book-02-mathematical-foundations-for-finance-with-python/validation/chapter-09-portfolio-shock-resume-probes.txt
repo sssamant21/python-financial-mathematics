@@ -1,0 +1,27 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,hashlib
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='248b67271091d210fa62d3fb68cdbfb09a5c6793';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'section_9_04.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('portfolio_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ flows=[(1e-308,1e308),(1e308,0.)];refs=[]
+ for prec in (1800,2400):
+  with localcontext(Context(prec=prec)):
+   V=A=B=Decimal(0)
+   for c,y in flows:
+    C,T=Decimal(c),Decimal(y);V+=C;A-=T*C;B+=T*T*C
+   refs.append([float(z) for z in (V,A,B,-A/V,B/V)])
+ assert refs[0]==refs[1]
+ try:a=m.cash_flow_portfolio(flows,0.)
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='unused per-leg normalized field rejects finite aggregate',actual=repr(a),independent_expected_fields=dict(zip(['value','first','second','duration','convexity'],map(repr,refs[0]))),status='OPEN — aggregate integration/range mismatch;per-leg convexity is unrepresentable while complete aggregate fields are finite,not a passing acceptance predicate'))
+ for name,vals,policy in [('single-shock exponential rescue',(1e-308,2.,.5,-355.),False),('single-shock latent underflow baseline',(1e-308,2.,355.,-355.),True)]:
+  refs=[]
+  for prec in (1800,2400):
+   with localcontext(Context(prec=prec)):
+    C,T,R,H=map(Decimal,vals);refs.append(float(C*((-T*(R+H)).exp()-(-T*R).exp())))
+  assert refs[0]==refs[1]
+  try:a=m.single_shock(*vals)['exact_change']
+  except Exception as e:a=type(e).__name__
+  rows.append(dict(name=name,actual=repr(a),independent_exact_change=repr(refs[0]),status='OPEN DESIGN — parent shock API eligibility with an underflowed baseline requires explicit contract;not a failed acceptance predicate' if policy else 'OPEN — finite exact-change rescue rejected by exponential intermediate;not a passing acceptance predicate'))
+d=dict(executable_source_revision=pin,source=rel,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Two numerical/integration and one separate eligibility-policy diagnostics for next9.4 portfolio/shock review;not additional passing script predicates or independent acceptance.');(r/('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-portfolio-shock-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print('Two OPEN portfolio/shock numerical cases and one separate eligibility-policy observation recorded')

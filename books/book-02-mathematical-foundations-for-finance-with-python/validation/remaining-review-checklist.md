@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `f8aa4390a2cf5bd69b885a099d0da2ad6082216f` (V-171)
-**Latest scoped source:** V-170 at `f8aa4390a2cf5bd69b885a099d0da2ad6082216f`;[three-file source manifest](chapter-09-quadratic-contract-publication-verification.json).
+**Full-runtime candidate source revision:** `248b67271091d210fa62d3fb68cdbfb09a5c6793` (V-173)
+**Latest scoped source:** V-172 at `248b67271091d210fa62d3fb68cdbfb09a5c6793`;[four-file source manifest](chapter-09-single-report-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-170 Taylor-change/selector scope and V-171 full Python runtime pass;single/portfolio discounted-report cases and independent/release approval stay open.
+**Disposition:** V-172 complete single-flow scope and V-173 full Python runtime pass;portfolio/shock cases and independent/release approval stay open.
 
 ## Reconciled evidence
 
@@ -1306,3 +1306,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-172 checkpoint — Section9.4 complete single-flow report contracts
 
 [Single-flow evidence](chapter-09-single-report-followup.md):118 corrected predicates pass;89 corrected-oracle baseline passes/29 failed predicates and identical replay retained. Initial31-failure baseline/replay and two-failure first correction retain separate oracle zero-sign issue;initial checker/source and actual replay saved. Independent1800/2400-digit complete five-field references,input/context/positive-value/range controls checked;whole finite report policy explicit,not29 unique bugs. Two saved numerical cases scoped resolved and range policy adopted;historical records unchanged. Four files compiled,four commands/three checkers pass,four hashes verified before-after;only single-flow text plus two helpers changed. Fresh618/405/619 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.4 portfolio aggregation/normalization and single/portfolio shock contracts. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.4 portfolio/shock resume checkpoint — OPEN
+
+[Initial diagnostic observations](chapter-09-portfolio-shock-resume-initial.json),[actual identical replay](chapter-09-portfolio-shock-resume-replay.json),[runner](chapter-09-portfolio-shock-resume-probes.txt):unused per-leg normalized-field overflow rejects an independently finite aggregate report;single-shock exact-change rescue raises OverflowError despite finite direct-endpoint expectation. A separate parent-shock eligibility question remains when the baseline report underflows (OPEN DESIGN). Two numerical/integration cases and one policy observation,not passing acceptance predicates. Resume complete aggregate/normalization and shock contracts next;initial records retained.
+
+
+## V-173 checkpoint — Full pinned candidate Linux refresh
+
+[V-173 full runtime](runtime-refresh-2026-11-15-r5.md) at `248b67271091d210fa62d3fb68cdbfb09a5c6793`:618/618 Python files compiled,405/405 check-test scripts passed,619/619 required Python/fixture hashes verified before-after. Includes V-172 single-flow reports;29 corrected-oracle baseline failures/replay and118 corrected predicates retained separately. Initial31-failure baseline and two-failure first correction/source/checker/replay preserve separate oracle zero-sign issue;historical records unchanged. Two numerical probes scoped resolved and finite whole-report policy adopted. Next portfolio/shock checkpoint retains two OPEN numerical/integration cases and one separate eligibility policy observation,not passing acceptance predicates. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.4 portfolio aggregation/normalization and single/portfolio shock complete contracts. Book1 tracked independently.
