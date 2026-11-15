@@ -224,3 +224,5 @@ Project 36 numerical stress follow-up: `36-asian-option-monte-carlo/test_geometr
 Project 37: run `python -m unittest -v test_surface.py`, `python -m compileall -q surface.py test_surface.py`, and `python surface.py` in `37-static-option-arbitrage/`. Five local synthetic unittest methods passed; hosted CI and independent review remain unverified.
 
 Project 37 bid/ask extension: run `python -m unittest -v test_surface.py test_quote_intervals.py` and `python quote_intervals.py` from `37-static-option-arbitrage/`. The calendar screen assumes a common forward at both expiries; passing is not a joint feasibility certificate.
+
+Project 37 joint bid/ask feasibility extension: `37-static-option-arbitrage/joint_feasibility.py` checks simultaneous same-expiry monotonicity, discounted vertical-spread and convexity inequalities for 3–5 synthetic quotes using bounded Fourier–Motzkin elimination. Run `python -m unittest -v test_joint_feasibility.py` from Project 37. Authored tests and hosted exact-source CI remain unverified; this is not complete option-surface certification.
