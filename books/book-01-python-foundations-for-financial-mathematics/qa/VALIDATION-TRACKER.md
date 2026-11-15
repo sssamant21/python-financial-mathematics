@@ -518,3 +518,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.9 scoped exception workflow and answers
 
 [Exception evidence](chapter-20-exceptions-review/README.md):one workflow,40 local answers/12 steps;39 corrected source predicates/five commands pass. Three initial failures and identical replay retained;F210 fixes finite oversized-input category leaks and late iterator TypeError classification. Fourteen existing methods ran42 invocations;zero new historical methods. Categories/causes/materialization order checked;retry/quarantine/security policy reviewed conceptually only. Chapter20 now9 workflows/360 local answers. NPV/resources,F28/F32/F209,F165 limits,F185 integration and independent/platform acceptance remain open. Next:Section20.10 Logging.
+
+
+### Section20.10 resume checkpoint — OPEN
+
+[Two exact-source logging category observations](chapter-20-logging-resume/README.md) retained for next formal workflow/answer review. Oversized flow/rate are logged as numerical rather than invalid_input;no correction or complete logging/security review claimed. Separate from Section20.9's39 passing predicates and formal workflow totals.

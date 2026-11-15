@@ -17,3 +17,7 @@ Fourteen preflight controls,21 sample/exception-stage controls,one zero-center c
 Seven files compiled,six commands/five checker invocations pass,seven hashes verified before-after;prior checkers and all other Section9.2 function text unchanged ([comparison](chapter-09-centered-scope-comparison.json)). Fresh612 Python/399 check-test/613 required-blob inventory is not itself full execution. A full pinned refresh records execution separately.
 
 [Later scoped disposition](chapter-09-centered-resume-disposition.json) resolves the retained nonfinite-perturbation callback observation only;historical initial/prior OPEN records remain unchanged. All36 selected COV categories remain partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 first-order Taylor complete affine update,discounted-change/error report and callback contracts. Book1 tracked independently.
+
+Executable source/checker bytes verified against `ded1212c249a58c750f6218214754d86a77ac178`;[source manifest](chapter-09-centered-contract-publication-verification.json).
+
+[Next Taylor baseline checkpoint](chapter-09-taylor-resume-initial.json) retains two numerical mismatches and one separate callback design observation;not part of the48 passing predicates.

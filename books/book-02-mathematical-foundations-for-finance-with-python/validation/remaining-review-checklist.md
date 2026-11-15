@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba` (V-159)
-**Latest scoped source:** V-158 at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`;[six-file source manifest](chapter-09-model-contract-publication-verification.json).
+**Full-runtime candidate source revision:** `ded1212c249a58c750f6218214754d86a77ac178` (V-161)
+**Latest scoped source:** V-160 at `ded1212c249a58c750f6218214754d86a77ac178`;[seven-file source manifest](chapter-09-centered-contract-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-158 model scope and V-159 full Python runtime pass;centered helper and independent/release approval stay open.
+**Disposition:** V-160 centered scope and V-161 full Python runtime pass;Taylor diagnostics and independent/release approval stay open.
 
 ## Reconciled evidence
 
@@ -1221,3 +1221,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-160 checkpoint — Section9.2 centered sampled reporting/callback contracts
 
 [Centered evidence](chapter-09-centered-contract-followup.md):48 corrected predicates pass;41 initial passes/seven failed predicates and identical replay retained. Independent1800/2400-digit sampled nominal2h references and actual preflight/callback consumption controls checked. Historical centered observation resolved only via later explicit disposition;original records unchanged. Seven files compiled,six commands/five checkers pass,seven hashes verified before-after;other functions/checkers unchanged. Fresh612/399/613 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 complete affine/discounted-change/error-report/callback contracts. Broader domain/smoothness/noise/resource/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.3 resume checkpoint — OPEN
+
+[Runnable Taylor probes](chapter-09-taylor-resume-probes.txt),[initial observations](chapter-09-taylor-resume-initial.json):complete affine rescue returns−inf instead of independently derived−1e308;complete discounted value rescue raises OverflowError despite finite1800/2400-digit reference. A separate constant callback consumes nonfinite x+h;preflight/consumption contract remains OPEN DESIGN,not a wrong analytic derivative claim. These are diagnostic observations,not passing acceptance scripts or added formal predicates. Resume next without duplicating initial records.
+
+
+## V-161 checkpoint — Full pinned candidate Linux refresh
+
+[V-161 full runtime](runtime-refresh-2026-11-14-r10.md) at `ded1212c249a58c750f6218214754d86a77ac178`:612/612 Python files compiled,399/399 check-test scripts passed,613/613 required Python/fixture hashes verified before-after. Includes V-160 centered contracts;seven initial failed predicates/replay,48 corrected predicates and scoped prior-observation disposition retained separately. Historical original/prior records unchanged. Next Taylor checkpoint has two OPEN numerical mismatches and one separate callback/preflight design observation,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 complete affine/discounted-change/error-report/callback contracts. Book1 tracked independently.

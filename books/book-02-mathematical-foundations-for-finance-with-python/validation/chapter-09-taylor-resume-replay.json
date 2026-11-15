@@ -1,0 +1,29 @@
+{
+  "executable_source_revision": "14675f3f86154c3cdc5438c2808287592342eca8",
+  "source": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_03.py",
+  "source_blob": "6065bcbfb91ab1dcc32e53ce47e8868557996576",
+  "observations": [
+    {
+      "name": "complete affine rescue",
+      "actual": "-inf",
+      "independent_expected": "-1e+308",
+      "status": "OPEN \u2014 observed numerical mismatch;not a passing acceptance predicate"
+    },
+    {
+      "name": "complete discounted value rescue",
+      "actual": "'OverflowError'",
+      "independent_expected": "2.233994766161711",
+      "status": "OPEN \u2014 observed numerical mismatch;not a passing acceptance predicate"
+    },
+    {
+      "name": "nonfinite shocked point callback consumption",
+      "actual": "{'baseline_value': 1.0, 'exact_change': 0.0, 'linear_change': 0.0, 'linear_value': 1.0, 'signed_error': 0.0, 'absolute_error': 0.0, 'relative_change_error': None}",
+      "calls": [
+        "1e+308",
+        "inf"
+      ],
+      "status": "OPEN DESIGN \u2014 actual callback consumed infinity;finite-preflight and consumption contract requires review,not a wrong analytic derivative claim"
+    }
+  ],
+  "limits": "Exact source diagnostics with independent Decimal expectations;not an acceptance checker or scoped fix. COV54 remains partial;no independent/platform acceptance."
+}

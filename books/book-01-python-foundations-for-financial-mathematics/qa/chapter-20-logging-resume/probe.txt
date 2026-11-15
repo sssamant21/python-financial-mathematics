@@ -1,0 +1,12 @@
+from pathlib import Path
+import sys,subprocess,tempfile,re,importlib.util,json,hashlib,logging,io
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='14675f3f86154c3cdc5438c2808287592342eca8';rel='books/book-01-python-foundations-for-financial-mathematics/chapter-20/20.10-logging.md';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);code=re.search(r'~~~python\n(.*?)\n~~~',raw.decode(),re.S)[1];rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'logging_ref.py';p.write_text(code);spec=importlib.util.spec_from_file_location('logging_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for name,flows,rate in [('oversized flow',[10**1000],0),('oversized rate',[1],10**1000)]:
+  stream=io.StringIO();handler=logging.StreamHandler(stream);m.LOGGER.addHandler(handler);m.LOGGER.setLevel(logging.INFO);m.LOGGER.propagate=False
+  try:m.run_calculation('synthetic_resume',flows,rate);actual='returned'
+  except Exception as e:actual=type(e).__name__
+  finally:m.LOGGER.removeHandler(handler)
+  rows.append(dict(name=name,actual_exception=actual,log=stream.getvalue(),expected_exception='ValueError',expected_category='invalid_input',status='OPEN — preliminary observed category mismatch;formal workflow/answers not yet reviewed'))
+d=dict(executable_source_revision=pin,source=rel,source_sha256=hashlib.sha256(raw).hexdigest(),fence_sha256=hashlib.sha256(code.encode()).hexdigest(),observations=rows,limits='Two exact-source diagnostic calls only;not an acceptance checker,formal workflow or new historical method. No external logging destination.');out=r/('books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-logging-resume/'+tag+'.json');out.write_text(json.dumps(d,indent=2)+'\n');print('Two OPEN logging observations recorded')

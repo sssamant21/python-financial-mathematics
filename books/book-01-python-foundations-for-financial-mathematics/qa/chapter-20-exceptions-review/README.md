@@ -11,3 +11,5 @@ python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-
 Exact source fence executed direct,module unittest,compilation,quiet import and optimized. Fourteen existing unique methods ran42 invocations;zero new historical methods. Five independent represented-rate Fraction references use full rational discount sums,not the production exponential formula. Printed ordinary examples agree within absolute1e−10. Fresh tuple/list/generator inputs,caller immutability,materialization before invalid-rate rejection and actual consumption are checked.
 
 Retry,idempotence,external writes,batch quarantine,access/retention and secret-safe logging are conceptual/design reviews only. No external operation performed. All-range NPV,underflow,cancellation,resources,shape/order(F209),F28 notebook/platform,F32 shared-input integration,F165 tail limits,F185 integration and independent/platform/release acceptance remain open. Chapter20 now9 scoped workflows/360 local answers. Next:Section20.10 Logging.
+
+Executable source/checker bytes verified against `ded1212c249a58c750f6218214754d86a77ac178`;[source manifest](publication-verification.json).

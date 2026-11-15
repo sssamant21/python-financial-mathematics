@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-160 centered scope pass;V-159 remains latest full candidate Linux pass (611/398/612),pending refresh. Taylor and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-160 centered scope and V-161 full candidate Linux pass (612/399/613). Taylor diagnostic mismatches and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 611/611 at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`. [V-159](runtime-refresh-2026-11-14-r9.md). |
-| Automated script execution | Full candidate Linux pass | 398/398 at `2b64f1adaeae6e143e76d7f5570b5d50fecd3dba`;612 required blobs verified before/after. [V-159](runtime-refresh-2026-11-14-r9.md). |
+| Python compilation | Full candidate Linux pass | 612/612 at `ded1212c249a58c750f6218214754d86a77ac178`. [V-161](runtime-refresh-2026-11-14-r10.md). |
+| Automated script execution | Full candidate Linux pass | 399/399 at `ded1212c249a58c750f6218214754d86a77ac178`;613 required blobs verified before/after. [V-161](runtime-refresh-2026-11-14-r10.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1347,3 +1347,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-160 checkpoint — Section9.2 centered sampled reporting/callback contracts
 
 [Centered evidence](chapter-09-centered-contract-followup.md):48 corrected predicates pass;41 initial passes/seven failed predicates and identical replay retained. Independent1800/2400-digit sampled nominal2h references and actual preflight/callback consumption controls checked. Historical centered observation resolved only via later explicit disposition;original records unchanged. Seven files compiled,six commands/five checkers pass,seven hashes verified before-after;other functions/checkers unchanged. Fresh612/399/613 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 complete affine/discounted-change/error-report/callback contracts. Broader domain/smoothness/noise/resource/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.3 resume checkpoint — OPEN
+
+[Runnable Taylor probes](chapter-09-taylor-resume-probes.txt),[initial observations](chapter-09-taylor-resume-initial.json):complete affine rescue returns−inf instead of independently derived−1e308;complete discounted value rescue raises OverflowError despite finite1800/2400-digit reference. A separate constant callback consumes nonfinite x+h;preflight/consumption contract remains OPEN DESIGN,not a wrong analytic derivative claim. These are diagnostic observations,not passing acceptance scripts or added formal predicates. Resume next without duplicating initial records.
+
+
+## V-161 checkpoint — Full pinned candidate Linux refresh
+
+[V-161 full runtime](runtime-refresh-2026-11-14-r10.md) at `ded1212c249a58c750f6218214754d86a77ac178`:612/612 Python files compiled,399/399 check-test scripts passed,613/613 required Python/fixture hashes verified before-after. Includes V-160 centered contracts;seven initial failed predicates/replay,48 corrected predicates and scoped prior-observation disposition retained separately. Historical original/prior records unchanged. Next Taylor checkpoint has two OPEN numerical mismatches and one separate callback/preflight design observation,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 complete affine/discounted-change/error-report/callback contracts. Book1 tracked independently.
