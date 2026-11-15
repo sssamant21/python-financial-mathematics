@@ -52,3 +52,7 @@ python joint_feasibility.py
 ```
 
 The five synthetic tests cover feasible point quotes, wide intervals, impossible monotonicity, a **jointly infeasible** grid whose separately screened inequalities can pass, and input guards. The implementation has no third-party dependencies (Python 3.11+). **Validation:** an earlier local source-equivalent prototype passed 5/5 tests, compilation and CLI smoke; the published source and its hosted CI remain **unverified**. This is not a full no-arbitrage option-surface certificate: it omits put-call parity, boundary/forward bounds, maturity coupling, trading costs and liquidity. It does not identify an executable trade.
+
+## Boundary and scaling regression checkpoint
+
+`test_boundary_scaling.py` adds five deterministic synthetic tests for exact convex boundaries, strict convexity violations, uniform strike/quote unit rescaling (0.1×, 1×, 100×), a small material convexity violation, and invalid tolerance inputs. Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py` from this directory. The dedicated workflow now invokes both suites. **New exact-source CI is pending; local execution was blocked by GitHub DNS resolution.** These checks do not establish numerical accuracy near the tolerance threshold, scale invariance for arbitrary magnitudes, or independent mathematical certification.
