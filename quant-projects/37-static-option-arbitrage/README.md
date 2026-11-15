@@ -26,3 +26,17 @@ Input arrays require at least three aligned observations, finite numeric values,
 Local authored-source validation: five unittest methods passed, Python compilation passed, and the sample CLI produced a valid synthetic grid. Hosted exact-revision CI, independent review, actual quote quality, and production readiness remain **unverified**.
 
 **Next:** add calendar consistency and executable bid/ask-aware feasibility diagnostics, with a carefully defined forward/discount convention and independently checked fixtures.
+
+## Bid/ask-aware necessary-condition extension
+
+`quote_intervals.py` screens whether **every** choice of theoretical prices inside quoted bid/ask intervals violates strike monotonicity, the discounted vertical spread bound, or convexity on irregular strikes. A violation is a strong quote-quality warning; a pass **does not prove joint feasibility** because the tests check each inequality separately. It does not establish executable arbitrage after fees, latency, margin or liquidity. Quotes are invented, not real-market observations.
+
+The separate calendar check compares earlier **bid** with later **ask**, each divided by its expiry discount factor. **Only use this screen when the European calls have identical strikes and the same forward level at both maturities**, with deterministic discounting and a martingale forward. It is not a general calendar-arbitrage test for equities with dividends or changing forwards. Bid/ask spreads, timestamps and exercise styles must be consistent.
+
+```sh
+python -m unittest -v test_surface.py test_quote_intervals.py
+python -m compileall -q surface.py test_surface.py quote_intervals.py test_quote_intervals.py
+python quote_intervals.py
+```
+
+Eight additional deterministic synthetic tests were authored; exact published-source CI and independent model review remain unverified. No external dependencies (Python 3.11+).
