@@ -1,0 +1,902 @@
+{
+  "source_blob": "44136db5972c3d4e9c739e4ee262bf7a36650003",
+  "reference_precisions": [
+    1800,
+    2400
+  ],
+  "relative_tolerance": 5e-14,
+  "absolute_tolerance": 0.0,
+  "source_predicates": [
+    {
+      "case": "ordinary",
+      "field": "baseline_value",
+      "actual": "1111.5069249405317",
+      "expected": "1111.5069249405317",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "ordinary",
+      "field": "first_derivative",
+      "actual": "-2126.934905965831",
+      "expected": "-2126.934905965831",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "ordinary",
+      "field": "second_derivative",
+      "actual": "4157.79086801643",
+      "expected": "4157.79086801643",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "ordinary",
+      "field": "duration",
+      "actual": "1.9135597433004092",
+      "expected": "1.9135597433004092",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "ordinary",
+      "field": "convexity",
+      "actual": "3.740679229901228",
+      "expected": "3.740679229901228",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "negative",
+      "field": "baseline_value",
+      "actual": "1295.6968518616934",
+      "expected": "1295.6968518616932",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "negative",
+      "field": "first_derivative",
+      "actual": "-2487.3126263041477",
+      "expected": "-2487.3126263041477",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "negative",
+      "field": "second_derivative",
+      "actual": "4870.544175189057",
+      "expected": "4870.544175189057",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "negative",
+      "field": "duration",
+      "actual": "1.9196717370504586",
+      "expected": "1.9196717370504588",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "negative",
+      "field": "convexity",
+      "actual": "3.759015211151376",
+      "expected": "3.7590152111513766",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "factor overflow rescue",
+      "field": "baseline_value",
+      "actual": "'OverflowError'",
+      "expected": "2.233994766161711",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor overflow rescue",
+      "field": "first_derivative",
+      "actual": "'OverflowError'",
+      "expected": "-4.467989532323422",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor overflow rescue",
+      "field": "second_derivative",
+      "actual": "'OverflowError'",
+      "expected": "8.935979064646844",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor overflow rescue",
+      "field": "duration",
+      "actual": "'OverflowError'",
+      "expected": "2.0",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor overflow rescue",
+      "field": "convexity",
+      "actual": "'OverflowError'",
+      "expected": "4.0",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor underflow rescue",
+      "field": "baseline_value",
+      "actual": "'ValueError'",
+      "expected": "5.075958897549457e-127",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor underflow rescue",
+      "field": "first_derivative",
+      "actual": "'ValueError'",
+      "expected": "-5.075958897549457e-124",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor underflow rescue",
+      "field": "second_derivative",
+      "actual": "'ValueError'",
+      "expected": "5.075958897549457e-121",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor underflow rescue",
+      "field": "duration",
+      "actual": "'ValueError'",
+      "expected": "1000.0",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "factor underflow rescue",
+      "field": "convexity",
+      "actual": "'ValueError'",
+      "expected": "1000000.0",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "tiny weighted second",
+      "field": "baseline_value",
+      "actual": "1e+308",
+      "expected": "1e+308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny weighted second",
+      "field": "first_derivative",
+      "actual": "-0.9999999999999999",
+      "expected": "-0.9999999999999999",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny weighted second",
+      "field": "second_derivative",
+      "actual": "0.0",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "tiny weighted second",
+      "field": "duration",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny weighted second",
+      "field": "convexity",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny normalized duration",
+      "field": "baseline_value",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny normalized duration",
+      "field": "first_derivative",
+      "actual": "-0.0",
+      "expected": "-0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny normalized duration",
+      "field": "second_derivative",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny normalized duration",
+      "field": "duration",
+      "actual": "0.0",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": false
+    },
+    {
+      "case": "tiny normalized duration",
+      "field": "convexity",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny all derivatives",
+      "field": "baseline_value",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny all derivatives",
+      "field": "first_derivative",
+      "actual": "-1e-308",
+      "expected": "-1e-308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny all derivatives",
+      "field": "second_derivative",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny all derivatives",
+      "field": "duration",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "tiny all derivatives",
+      "field": "convexity",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "zero time",
+      "field": "baseline_value",
+      "actual": "1e+308",
+      "expected": "1e+308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "zero time",
+      "field": "first_derivative",
+      "actual": "-0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "zero time",
+      "field": "second_derivative",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "zero time",
+      "field": "duration",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "zero time",
+      "field": "convexity",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "subnormal zero time",
+      "field": "baseline_value",
+      "actual": "5e-324",
+      "expected": "5e-324",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "subnormal zero time",
+      "field": "first_derivative",
+      "actual": "-0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "subnormal zero time",
+      "field": "second_derivative",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "subnormal zero time",
+      "field": "duration",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "subnormal zero time",
+      "field": "convexity",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "true sum overflow",
+      "field": "baseline_value",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true sum overflow",
+      "field": "first_derivative",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true sum overflow",
+      "field": "second_derivative",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true sum overflow",
+      "field": "duration",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true sum overflow",
+      "field": "convexity",
+      "actual": "'OverflowError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true derivative overflow",
+      "field": "baseline_value",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "true derivative overflow",
+      "field": "first_derivative",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "true derivative overflow",
+      "field": "second_derivative",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "true derivative overflow",
+      "field": "duration",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "true derivative overflow",
+      "field": "convexity",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "unrepresentable convexity",
+      "field": "baseline_value",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "unrepresentable convexity",
+      "field": "first_derivative",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "unrepresentable convexity",
+      "field": "second_derivative",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "unrepresentable convexity",
+      "field": "duration",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "unrepresentable convexity",
+      "field": "convexity",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "small cash big time",
+      "field": "baseline_value",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "small cash big time",
+      "field": "first_derivative",
+      "actual": "-1e-154",
+      "expected": "-1e-154",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "small cash big time",
+      "field": "second_derivative",
+      "actual": "0.9999999999999999",
+      "expected": "1.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "small cash big time",
+      "field": "duration",
+      "actual": "1e+154",
+      "expected": "1e+154",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "small cash big time",
+      "field": "convexity",
+      "actual": "1e+308",
+      "expected": "1e+308",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "all value underflow",
+      "field": "baseline_value",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "all value underflow",
+      "field": "first_derivative",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "all value underflow",
+      "field": "second_derivative",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "all value underflow",
+      "field": "duration",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "all value underflow",
+      "field": "convexity",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": true
+    },
+    {
+      "case": "integer inputs",
+      "field": "baseline_value",
+      "actual": "1200.0",
+      "expected": "1200.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "integer inputs",
+      "field": "first_derivative",
+      "actual": "-2300.0",
+      "expected": "-2300.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "integer inputs",
+      "field": "second_derivative",
+      "actual": "4500.0",
+      "expected": "4500.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "integer inputs",
+      "field": "duration",
+      "actual": "1.9166666666666667",
+      "expected": "1.9166666666666667",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "integer inputs",
+      "field": "convexity",
+      "actual": "3.75",
+      "expected": "3.75",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "mixed time",
+      "field": "baseline_value",
+      "actual": "87.07079764250578",
+      "expected": "87.07079764250578",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "mixed time",
+      "field": "first_derivative",
+      "actual": "-430.3539882125289",
+      "expected": "-430.3539882125289",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "mixed time",
+      "field": "second_derivative",
+      "actual": "2151.7699410626446",
+      "expected": "2151.7699410626446",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "mixed time",
+      "field": "duration",
+      "actual": "4.942575465766043",
+      "expected": "4.942575465766043",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "mixed time",
+      "field": "convexity",
+      "actual": "24.712877328830217",
+      "expected": "24.712877328830217",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "flows first",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "empty first",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool cash",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative cash",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative years",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool rate",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "nan rate",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "inf cash",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "oversized cash",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool tolerance",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative tolerance",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "inf tolerance",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "baseline ownership",
+      "field": "unchanged",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "one shot flows/empty grid",
+      "field": "report",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "baseline model metadata",
+      "field": "model",
+      "actual": "'positive fixed cash flows; flat continuous annual rate'",
+      "expected": "'positive fixed cash flows; flat continuous annual rate'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "baseline empty scenarios",
+      "field": "scenarios",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "baseline cash metadata",
+      "field": "rows",
+      "actual": "[{'cash': 100.0, 'years': 1.0}, {'cash': 1100.0, 'years': 2.0}]",
+      "expected": "[{'cash': 100.0, 'years': 1.0}, {'cash': 1100.0, 'years': 2.0}]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "baseline optional tolerance",
+      "field": "none",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "selected zero-shock inherited scenario property",
+      "field": "value",
+      "actual": "1111.5069249405317",
+      "expected": "1111.5069249405317",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "list",
+      "field": "shock metadata",
+      "actual": "[25.0]",
+      "expected": "[25.0]",
+      "kind": "collection/provenance",
+      "passed": true
+    },
+    {
+      "case": "list",
+      "field": "metadata/compute consistency property",
+      "actual": "True",
+      "expected": "True",
+      "kind": "collection/provenance",
+      "passed": true
+    },
+    {
+      "case": "tuple",
+      "field": "shock metadata",
+      "actual": "[25.0]",
+      "expected": "[25.0]",
+      "kind": "collection/provenance",
+      "passed": true
+    },
+    {
+      "case": "tuple",
+      "field": "metadata/compute consistency property",
+      "actual": "True",
+      "expected": "True",
+      "kind": "collection/provenance",
+      "passed": true
+    },
+    {
+      "case": "iterator",
+      "field": "shock metadata",
+      "actual": "[]",
+      "expected": "[25.0]",
+      "kind": "collection/provenance",
+      "passed": false
+    },
+    {
+      "case": "iterator",
+      "field": "metadata/compute consistency property",
+      "actual": "False",
+      "expected": "True",
+      "kind": "collection/provenance",
+      "passed": false
+    },
+    {
+      "case": "two shock iterator",
+      "field": "shock metadata",
+      "actual": "[]",
+      "expected": "[10.0, -20.0]",
+      "kind": "collection/provenance",
+      "passed": false
+    },
+    {
+      "case": "two shock iterator",
+      "field": "metadata/compute consistency property",
+      "actual": "False",
+      "expected": "True",
+      "kind": "collection/provenance",
+      "passed": false
+    },
+    {
+      "case": "single traversal shock source",
+      "field": "once",
+      "actual": "False",
+      "expected": "True",
+      "kind": "collection/provenance",
+      "passed": false
+    },
+    {
+      "case": "spot metadata invalid iterable",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "collection/provenance",
+      "passed": true
+    },
+    {
+      "case": "spot metadata invalid iterable",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "collection/provenance",
+      "passed": true
+    },
+    {
+      "case": "spot metadata invalid iterable",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "collection/provenance",
+      "passed": true
+    }
+  ],
+  "passed": 89,
+  "failed": 22,
+  "limits": "Parallel baseline slice with empty grids,plus separate spot shock metadata/iteration properties. Selected zero-shock property is not independent scenario oracle. Legacy scenario/error/tolerance/spot numerical contracts remain open; no universal/resource/platform/independent acceptance; zero signs numeric only."
+}

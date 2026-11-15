@@ -1,0 +1,245 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Mean:** Mean of 1, 2 and 3? **Answer:** 2.",
+    "review": "Exact sum6/count3=2; independent rational mean.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Deviations:** Deviations from that mean? **Answer:** \u22121, 0 and 1.",
+    "review": "Deviations -1,0,1 from exactmean2; conceptual derivation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Squared sum:** Sum of squared deviations? **Answer:** 2.",
+    "review": "Squared deviations1+0+1=2; equivalent pairwise squared-gap identity used in oracle.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Sample variance:** Divide by $`n-1`$: what result? **Answer:** 1.",
+    "review": "Pairwise gaps squared sum6 divided by n(n-1)=6 yields samplevariance1; independent of rounded-mean two-pass source.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Sample standard deviation:** Square root of that variance? **Answer:** 1.",
+    "review": "Independent80-digit root of variance1 gives1; source uses math.sqrt on reported variance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Population variance:** Divide the same squared sum by $`n`$. **Answer:** 2/3.",
+    "review": "Same squaredsum2 divided by3 yields2/3; supplemental population convention is not implemented sampleAPI.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Denominator:** Which convention does the code use? **Answer:** Sample variance with `n-1`.",
+    "review": "Source denominator n-1, selected2/3-observation benchmarks; no convention switch.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Minimum:** Why require two observations? **Answer:** With one observation the sample-variance denominator is zero.",
+    "review": "n>=2 required; singleton/empty reject; no inferred observation independence.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Constant:** Sample variance of `[2, 2, 2]`? **Answer:** Zero.",
+    "review": "Constant observations have exactzero gaps; selectedconstant and10000-element boundary.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Shift:** Add 10 to every observation. What happens to exact variance? **Answer:** It is unchanged.",
+    "review": "All pairwise differences unchanged by common translation; selected shift property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Scale:** Double every observation. What happens to exact variance? **Answer:** It quadruples.",
+    "review": "Pairwise squared gaps scale by4 whenvalues doubled; selectednegativefactor2 variance property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Scale and deviation:** What happens to standard deviation when values are multiplied by \u22122? **Answer:** It doubles.",
+    "review": "Standard deviation scales by absolute factor; selectednegative2 stddev property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Mean units:** What units does a mean use? **Answer:** The observations' units.",
+    "review": "Mean retains observationunits; metadata/period supplied by caller.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Variance units:** What units does variance use? **Answer:** Squared observation units.",
+    "review": "Variance has squaredunits; no annualization applied.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Standard deviation units:** What units does it use? **Answer:** The observations' units.",
+    "review": "Standarddeviation retains observationunits; not a percent-return forecast.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Return mean:** Arithmetic mean of 10% and \u221210%? **Answer:** 0%.",
+    "review": "Exactnominal(+.1-.1)/2=0; representedprice-return integration separated from oracle.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Return variance:** Sample variance of 0.1 and \u22120.1? **Answer:** 0.02 in squared decimal-return units.",
+    "review": "Pairwise gap .2 squared /2=.02; exactnominal1/50 supplemental reference.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Return deviation:** Sample standard deviation of those two returns? **Answer:** Approximately 0.141421, or 14.1421 percentage points.",
+    "review": "sqrt(.02) about.141421; 14.1421 percentagepoints per observation, not automatically annualvolatility.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Linked return:** Compounded return of 10% then \u221210%? **Answer:** \u22121% in exact arithmetic.",
+    "review": "Linked(1.1)(.9)-1=-.01; supplemental conceptual control, not mean.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Mean versus linked:** Are the two measures interchangeable? **Answer:** No; one is arithmetic average per observation, the other compounded return over periods.",
+    "review": "Arithmeticaverage versus geometricperiodproduct differ; observed sourceintegration not methodologycertification.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Annualization:** Is 0.02 per-period standard deviation automatically annual volatility? **Answer:** No; annualization needs a period definition and assumptions.",
+    "review": "Annualization needs time-grid/independence assumptions; not implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Forecast:** Does historical mean guarantee future return? **Answer:** No.",
+    "review": "Historicalmean not guaranteed future performance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Risk:** Does standard deviation capture every risk? **Answer:** No; it does not fully describe tails, liquidity or model risk.",
+    "review": "Dispersion alone omits tails/liquidity/modelrisk; conceptual model limitation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Small sample:** Is a sample of two observations sufficient for reliable inference? **Answer:** Not generally; uncertainty and context matter.",
+    "review": "Twoobservations accepted mathematically, not statistically reliable inference certification.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Missingness:** Does the function drop NaN? **Answer:** No; it rejects it.",
+    "review": "NaN rejected; no silent omission/imputation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Infinity:** Is infinity accepted? **Answer:** No.",
+    "review": "Infinity rejected, including before arithmetic.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Type:** Is integer `1` accepted? **Answer:** No; use a built-in float such as `1.0`.",
+    "review": "Strict built-in float input; integer rejection selected.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Boolean:** Is `True` accepted? **Answer:** No.",
+    "review": "Bool rejected despite integer subclassing.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Container:** Is a generator accepted? **Answer:** No; only a built-in list or tuple is accepted.",
+    "review": "Onlylist/tuple; generator rejects.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Limit:** What is the maximum sample length? **Answer:** 10,000.",
+    "review": "10000constant observations accepted,10001 rejected; no runtimebound guarantee.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Mutation:** Does the function modify the list? **Answer:** No.",
+    "review": "Callerlist preserved; installed ownership property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Frozen:** Does a frozen result create an audit trail? **Answer:** No; durable evidence requires additional controls.",
+    "review": "FrozenInstanceError on ordinaryfield assignment verified; not tamperproof storage or audit trail.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Overflow:** Can finite inputs yield a nonfinite squared deviation? **Answer:** Yes; the function raises `ValueError`.",
+    "review": "Finite extremes can overflow deviation/squares; source explicitly rejects; selectedinvalid/observations.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Underflow:** Can a tiny squared deviation become zero? **Answer:** Yes, with floating-point arithmetic.",
+    "review": "Tiny squared deviations can underflow; independentstddev remainsfinite in savedobservation while source0, retained documentedlimit.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Summation:** Does `math.fsum` guarantee exact statistics? **Answer:** No.",
+    "review": "fsum cannot recover pre-rounded squares/mean; no all-range exactness claim.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Data quality:** Can a correct formula produce misleading results from stale prices? **Answer:** Yes.",
+    "review": "Stale/missing/data-selection bias can invalidate interpretation even with exactarithmetic.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Look-ahead:** Can revised data unavailable at the decision time bias a backtest? **Answer:** Yes.",
+    "review": "Point-in-time/revised-data look-ahead requires source governance, not this unlabeledlist.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Distributions:** Does the integration example include dividends? **Answer:** No; it summarizes price returns.",
+    "review": "simple_price_return integration excludesdividends/fees; no totalreturn inference.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Have the reference tests been executed? **Answer:** No; execution is deferred.",
+    "review": "Original execution-deferred answer corrected to current scoped source/editable/wheel evidence, with original retained.",
+    "status": "Assistant scoped technical review; independent acceptance pending",
+    "initial_source_record": "**Evidence:** Have the reference tests been executed? **Answer:** No; execution is deferred.",
+    "reviewed_record": "**Evidence:** Have the reference tests been executed? **Answer:** Yes, in the later scoped source, editable and wheel runs linked below; broader independent, model, platform and release acceptance remains pending.",
+    "editorial_status_correction": true
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the next locked section? **Answer:** 21.12 \u2014 Simulation Module.",
+    "review": "21.12-simulation-module.md exists; next formal workflow.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  }
+]

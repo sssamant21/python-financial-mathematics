@@ -91,3 +91,7 @@ Project6 tasks: a baseline derivatives supported through reference calculation; 
 | COV-54 | Relative elasticities/near-zero denominators only partly covered | Scale-aware domains and independent near-zero references |
 
 These extend COV-01–COV-51. No new defect or independent sign-off is claimed. Next: Chapter10.
+
+### Later Section9.8 baseline/metadata scope
+
+[V195 evidence](chapter-09-report-baseline-followup-r18.md) adds complete parallel baseline/normalized fields and consumed spot shock metadata, with initial failures/replay retained. COV53 is selected partial for metadata consistency; scenario exact-value reconstruction, complete error/tolerance flags, full spot numerics and manual/report provenance review remain open. These are scoped contracts,not completed exercise or independent acceptance records.

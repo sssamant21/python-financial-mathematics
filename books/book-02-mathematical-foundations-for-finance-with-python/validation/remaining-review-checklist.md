@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `89640b21f73500458a8f1ba47f89fd01a7289d70` (V-193)
-**Latest scoped source:** V-194 at `a5994a19db91af095975607cead2518230e858f0`; [five-source manifest](chapter-09-scenario-publication-r17.json).
+**Full-runtime candidate source revision:** `aed197ca5c003269f68c85a87cff502fbb18fac6` (V-196)
+**Latest scoped source:** V-195 at `aed197ca5c003269f68c85a87cff502fbb18fac6`; [three-source manifest](chapter-09-report-baseline-publication-r18.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-194 scenario scoped pass; V-193 older-pin full runtime pass. Section9.8 contracts and broader independent/platform/release approval remain open.
+**Disposition:** V-195 baseline/metadata scoped pass and V-196 full runtime pass; remaining9.8 contracts and broader independent/model/platform/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1456,3 +1456,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-194 checkpoint — Section 9.7 discounted call scenarios
 
 [Scenario evidence](chapter-09-scenario-followup-r17.md):130 corrected predicates pass;110 initial passes /20 failures and actual identical replay retained. Two numerical fields, six whole-report range fields and twelve factor-range/exception fields, not twenty unique defects. Independent1800/2400-digit complete report references; rounded shifted spot and finite-factor prerequisite retained explicitly. Only scenario body/Decimal import changed. Spot-zero helper behavior clarified as formal extension, not physical-domain left derivative; independent model/interface approval remains open. Five files compiled /five commands /four checkers pass with before/after hashes. Fresh630/417/631 inventory is not full execution; V193 remains latest full pass at older pin. Next Section9.8 complete baseline/report/scenario/tolerance and collection/provenance contracts, with three fresh diagnostics checkpointed. All37 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-195 checkpoint — Section9.8 baseline and consumed shock metadata
+
+[Baseline/metadata evidence](chapter-09-report-baseline-followup-r18.md):111 corrected predicates pass;89 initial passes /22 failures and identical replay retained.12 numerical fields,5 range-exception fields,5 iterator/provenance checks,not22 unique defects. Independent1800/2400-digit complete baseline/normalization references; spot numeric logic/scenario helper unchanged,metadata materialized once. Three files compiled /three commands /two checkers pass with before/after hashes. Fresh631/418/632 inventory not full execution; accumulated pinned refresh next. COV53 newly selected partial for consumed metadata;38 categories partial,none closed. Next complete9.8 scenario/helper/value/error/tolerance and full spot numerical/report contracts;three fresh diagnostics checkpointed. Broad resource/independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-196 checkpoint — Full pinned candidate Linux refresh
+
+[V-196 runtime](runtime-refresh-2026-11-15-r18.md) at `aed197ca5c003269f68c85a87cff502fbb18fac6`:631/631 Python files compiled,418/418 scripts passed,632/632 required blobs verified before/after. Includes accumulated130 scenario and111 baseline/metadata predicates with retained initial failures/replays and explicit scope/policies. Legacy scenario/helper/value/error/tolerance and full spot numerical obligations remain OPEN;fresh diagnostics retained and full execution does not settle unasserted contracts. Current register38 partial categories,none closed; COV53 newly selected for consumed metadata,not a defect-count/completion claim. Next complete9.8 scenario/helper/wrapper contracts. Independent mathematical/editorial/model/policy/platform/release/canonical acceptance remains pending;Book1 separate.

@@ -1,0 +1,18 @@
+"""Fresh pinned scenario/report diagnostics; not passing baseline predicates.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,subprocess,tempfile,importlib,json,hashlib
+r=Path(sys.argv[1]).resolve();pin='aed197ca5c003269f68c85a87cff502fbb18fac6';p='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_08.py';raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_08.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_08')
+ h=m.bp_to_decimal(1e-196);refs=[]
+ for prec in [1800,2400]:
+  with localcontext(Context(prec=prec)):
+   C,H=map(Decimal.from_float,(1e308,h));E=C*(-H).exp()-C;L=-C*H;refs.append([float(Decimal(-50).exp()),float(E-L)])
+ assert refs[0]==refs[1]
+ a=m.parallel_report([(1.,1.)],0.,[500000.]);b=m.parallel_report([(1e308,1.)],0.,[1e-196]);c=m.scenario_from_terms([100.,200.],[1.],[.01])
+ rows=[dict(case='complete scenario exact value',actual=repr(a['scenarios'][0]),independent_exact_value=refs[1][0],status='OPEN numerical; prior endpoint observation persists after baseline correction,not a new unique defect'),dict(case='latent complete linear error',actual=repr(b['scenarios'][0]),represented_shock_decimal=h,independent_linear_error=refs[1][1],status='OPEN numerical; latent error lost after reported changes round'),dict(case='direct helper mismatched vectors',actual=repr(c),input_lengths=[2,1,1],status='OPEN direct helper precondition/collection contract; zip truncates. Facades construct aligned inputs,so not a claimed facade misalignment defect')]
+ d=dict(executable_source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),reference_precisions=[1800,2400],observations=rows,limits='Three next-scope diagnostics only; baseline second derivative and spot metadata probes resolved only in explicit V195 scope. Scenario/helper/error/tolerance and full spot numerical contracts remain open; not passing111 baseline predicates.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('Three pinned scenario/report diagnostics retained')

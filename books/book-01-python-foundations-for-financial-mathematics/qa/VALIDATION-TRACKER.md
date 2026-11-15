@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.11:** [Statistics review](chapter-21-statistical-review/README.md):40 answers /12 labs,updated clean-consumer wheel,299 predicates;11 scoped workflows /440 local answers. Next21.12;broader F28/F32/model/platform/independent gaps remain open.
+
 - **Latest21.10:** [Portfolio review](chapter-21-portfolio-review/README.md):40 answers /12 labs,updated clean-consumer wheel,243 predicates;10 scoped workflows /400 local answers. Next21.11;broader F28/F32/model/platform/independent gaps remain open.
 
 - **Latest21.9:** [Return review](chapter-21-return-review/README.md):40 answers /12 labs,updated clean-consumer wheel,204 predicates;9 scoped workflows /360 local answers. Next21.10;broader F28/F32/model/platform/independent gaps remain open.
@@ -694,3 +696,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.11 — Partial statistical source checkpoint (OPEN)
 
 [Statistical checkpoint](chapter-21-statistical-resume/README.md): three source commands /96 existing methods pass. Explicit source injection; no new historical methods or completed formal workflow. Portfolio wheel excludes statistics. Next: 21.11 independent statistics/range/immutability contracts, 40 answers /12 labs and updated installed artifact. Chapter 21 remains ten scoped workflows /400 local answers; F28/F32 and broad acceptance remain open.
+
+
+## Section 21.11 — Scoped statistics workflow, answers and updated wheel
+
+[Statistics evidence](chapter-21-statistical-review/README.md):40 answers /12 lab reviews;11 new offline packaging commands and299 installed-wheel predicates pass.243 retained plus36 independent statistics fields,14 rejections and6 separate properties. Rational pairwise-gap variance oracle differs from source two-pass formula;3 documented statistical limitations separate from8 retained observations. Count type table andexercise39 execution status corrected; no executable source change/new defect. Three prior source commands reused by exact fences;96 existing methods /288 source-editable-wheel invocations,zero new historical methods. New artifact hash differs at sameillustrativeversion,not release approval. Chapter21now11 scopedworkflows /440 localanswers. Next21.12 Simulation Module. F28/F32/F209,static-check,F165/F185,R08–10/ownership and broad data/resource/model/platform/release/independent acceptance remainopen.
+
+
+### Section 21.12 — Partial simulation source checkpoint (OPEN)
+
+[Simulation checkpoint](chapter-21-simulation-resume/README.md): three source commands /108 existing methods pass. Explicit source injection; no new historical methods or completed formal workflow. Statistics wheel excludes simulation. Next21.12 independent scenario/probability/seed/range/model contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains eleven scoped workflows /440 local answers;F28/F32 and broad acceptance remain open.

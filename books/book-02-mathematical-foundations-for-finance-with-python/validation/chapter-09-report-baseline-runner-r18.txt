@@ -1,0 +1,15 @@
+"""Reproduce baseline/replay or corrected baseline/metadata checker in isolation.
+Usage: python RUNNER repository_root baseline|corrected output.json
+Baseline takes exact module from recorded parent pin; corrected checks current
+module bytes, whose Git blob must match the published results manifest.
+"""
+from pathlib import Path
+import sys,subprocess,tempfile,json,hashlib
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];output=Path(sys.argv[3]).resolve();assert mode in ('baseline','corrected')
+base='books/book-02-mathematical-foundations-for-finance-with-python/';p=base+'chapter-09/code/section_9_08.py';c=base+'chapter-09/code/check_section_08_baseline_metadata.py';pin='f4048915c21df0e62ea1d4aae47d69bb4fab8de8'
+raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r) if mode=='baseline' else (r/p).read_bytes();check=(r/c).read_bytes()
+def blob(x):return hashlib.sha1(b'blob '+str(len(x)).encode()+b'\0'+x).hexdigest()
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_08.py').write_bytes(raw);(t/Path(c).name).write_bytes(check);argv=[sys.executable,str(t/Path(c).name),str(output)];z=subprocess.run(argv,cwd=t,capture_output=True,text=True,timeout=60)
+ d=dict(mode=mode,baseline_revision=pin,module_blob=blob(raw),checker_blob=blob(check),argv=argv,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr)
+ output.with_name(output.stem+'-command.json').write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(d));assert z.returncode==(1 if mode=='baseline' else 0)

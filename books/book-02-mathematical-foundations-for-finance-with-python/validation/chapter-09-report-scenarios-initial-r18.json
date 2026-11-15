@@ -1,0 +1,34 @@
+{
+  "executable_source_revision": "aed197ca5c003269f68c85a87cff502fbb18fac6",
+  "source_blob": "1d71e64ce90347bc8335c31107ded0e7ada30b42",
+  "reference_precisions": [
+    1800,
+    2400
+  ],
+  "observations": [
+    {
+      "case": "complete scenario exact value",
+      "actual": "{'exact_change': -1.0, 'linear_change': -50.0, 'quadratic_change': 1200.0, 'linear_error': 49.0, 'quadratic_error': -1201.0, 'absolute_linear_error': 49.0, 'absolute_quadratic_error': 1201.0, 'shock_bp': 500000.0, 'shock_decimal': 50.0, 'exact_value': 0.0, 'linear_value': -49.0, 'quadratic_value': 1201.0}",
+      "independent_exact_value": 1.9287498479639178e-22,
+      "status": "OPEN numerical; prior endpoint observation persists after baseline correction,not a new unique defect"
+    },
+    {
+      "case": "latent complete linear error",
+      "actual": "{'exact_change': -1e+108, 'linear_change': -1e+108, 'quadratic_change': -1e+108, 'linear_error': 0.0, 'quadratic_error': 0.0, 'absolute_linear_error': 0.0, 'absolute_quadratic_error': 0.0, 'shock_bp': 1e-196, 'shock_decimal': 1e-200, 'exact_value': 1e+308, 'linear_value': 1e+308, 'quadratic_value': 1e+308}",
+      "represented_shock_decimal": 1e-200,
+      "independent_linear_error": 5e-93,
+      "status": "OPEN numerical; latent error lost after reported changes round"
+    },
+    {
+      "case": "direct helper mismatched vectors",
+      "actual": "{'exact_change': -0.9950166250831947, 'linear_change': -1.0, 'quadratic_change': -0.995, 'linear_error': 0.004983374916805339, 'quadratic_error': -1.6625083194665713e-05, 'absolute_linear_error': 0.004983374916805339, 'absolute_quadratic_error': 1.6625083194665713e-05}",
+      "input_lengths": [
+        2,
+        1,
+        1
+      ],
+      "status": "OPEN direct helper precondition/collection contract; zip truncates. Facades construct aligned inputs,so not a claimed facade misalignment defect"
+    }
+  ],
+  "limits": "Three next-scope diagnostics only; baseline second derivative and spot metadata probes resolved only in explicit V195 scope. Scenario/helper/error/tolerance and full spot numerical contracts remain open; not passing111 baseline predicates."
+}
