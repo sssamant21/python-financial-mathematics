@@ -1,0 +1,27 @@
+{
+  "source_revision": "0155afc15de96737b183aaf3eed45cf2280f93ba",
+  "source_blob": "44136db5972c3d4e9c739e4ee262bf7a36650003",
+  "observations": [
+    {
+      "case": "complete exact value after large positive shock",
+      "actual": "{'exact_change': -1.0, 'linear_change': -50.0, 'quadratic_change': 1200.0, 'linear_error': 49.0, 'quadratic_error': -1201.0, 'absolute_linear_error': 49.0, 'absolute_quadratic_error': 1201.0, 'shock_bp': 500000.0, 'shock_decimal': 50.0, 'exact_value': 0.0, 'linear_value': -49.0, 'quadratic_value': 1201.0}",
+      "independent_exact_value": 1.9287498479639178e-22,
+      "status": "OPEN numerical: baseline plus rounded change loses finite endpoint"
+    },
+    {
+      "case": "complete baseline second derivative",
+      "actual": "{'model': 'positive fixed cash flows; flat continuous annual rate', 'baseline_rate': 0.0, 'baseline_value': 1e+308, 'first_derivative': -0.9999999999999999, 'second_derivative': 0.0, 'duration': 1e-308, 'convexity': 0.0, 'cash_flows': [{'cash': 1e+308, 'years': 1e-308}], 'error_tolerance_currency': None, 'scenarios': []}",
+      "independent_second_derivative": 1e-308,
+      "status": "OPEN numerical: time squared underflows before cash multiplication"
+    },
+    {
+      "case": "one-shot spot shock metadata",
+      "actual": "{'model': 'independent cash-flow spot rates; continuous annual', 'baseline_value': 96.07894391523232, 'spot_rates': [0.04], 'shock_bp': [], 'exact_change': -0.23989736313762847, 'linear_change': -0.2401973597880808, 'quadratic_change': -0.2398971130883457, 'linear_error': 0.0002999966504523277, 'quadratic_error': -2.5004928277949645e-07, 'absolute_linear_error': 0.0002999966504523277, 'absolute_quadratic_error': 2.5004928277949645e-07}",
+      "independent_shock_bp_metadata": [
+        25.0
+      ],
+      "status": "OPEN collection/provenance contract: consumed iterable produces empty metadata after its shock was used"
+    }
+  ],
+  "limits": "Three fresh9.8 observations only; not passing130 scenario predicates. Complete baseline/report/scenario/metadata/tolerance contracts next. Historical evidence preserved."
+}

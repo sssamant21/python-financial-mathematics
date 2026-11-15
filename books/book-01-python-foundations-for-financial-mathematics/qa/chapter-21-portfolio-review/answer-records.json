@@ -1,0 +1,245 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Weights:** What do the input weights represent? **Answer:** Beginning-of-period portfolio fractions.",
+    "review": "Beginning-value fractions rather than ending weights; timing is caller metadata,not inferred.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Benchmark:** 60% at 10% and 40% at \u22125%? **Answer:** 4% in exact arithmetic.",
+    "review": "Exact(3/5)*(1/10)+(2/5)*(-1/20)=1/25; represented-input rational dot oracle separate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**One asset:** A 100% weight and 5% return give what portfolio return? **Answer:** 5%.",
+    "review": "Weight1 times.05 gives.05; selected installed single-asset case.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Zero weight:** Does an asset at zero weight affect the exact weighted sum? **Answer:** No.",
+    "review": "Zero coefficient contributes0 to exact sum; selected case.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Validation:** Is its return still validated? **Answer:** Yes.",
+    "review": "All returns validated before products,includingzero-weight NaN rejection.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**All equal:** If all asset returns are 10% and weights sum exactly to one, what is the result? **Answer:** 10% in exact arithmetic.",
+    "review": "If exact sum weights1,constantreturn factors out; selected [.25,.75] oracle.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Total loss:** What if all held assets return \u2212100%? **Answer:** \u2212100% for exactly normalized weights.",
+    "review": "Allreturns-1 and exactnormalizedweights give-1; selectedhalfweights; sum-tolerance caveat explicit.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Rate notation:** How is 4% expressed? **Answer:** As `0.04`.",
+    "review": "Decimal.04 equals4%; no automaticpercent scaling.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Alignment:** Must each weight correspond to the same-position return? **Answer:** Yes.",
+    "review": "Positionalcorrespondence required; pairedpermutationproperty retainsresult.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Identity:** Can this unlabeled function verify instrument identifiers? **Answer:** No.",
+    "review": "NoidentifiersinAPI; one-sidedreturnpermutationgivesdifferent plausible result withoutrejection;F32/data integration retained.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Timing:** Are ending weights suitable as beginning weights without further analysis? **Answer:** No; they may cause a different result or look-ahead.",
+    "review": "Endingweightlook-ahead/modelissue,not type/domain check.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Currency:** Can USD and EUR returns be combined without a currency policy? **Answer:** No; use a consistent currency convention.",
+    "review": "NoFX/currencyfields; consistent currency policy external.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Distribution:** Does the integration example include dividends? **Answer:** No; it uses price returns.",
+    "review": "Integration uses simple_price_return,not totalreturn; dividendexcluded.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Fees:** Are transaction costs included automatically? **Answer:** No.",
+    "review": "Nocost/fee/taxinputs or implementation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Weight sum:** What is the accepted absolute tolerance? **Answer:** `1e-12` from one.",
+    "review": "Gateuses rounded fsum ofweights withabsolute1e-12;6adjacentthreshold cases use independently rounded exact Fraction sum.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Normalization:** Are accepted weights adjusted to sum to one? **Answer:** No.",
+    "review": "Acceptedweightsnotnormalized; observed result1.0000000000005 forunitreturns,notnewdefect.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Bound:** Must the returned value lie strictly between asset returns when accepted weights sum slightly above one? **Answer:** No; the tolerance and rounding can permit a slight deviation.",
+    "review": "Exactconvexboundrequiresweightsum1; retained accepteddriftobservation explains slightoutside max.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Shorts:** Is a negative weight accepted? **Answer:** No.",
+    "review": "Negativeweightrejectselectedcase; long-onlyscope.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Leverage:** Is a weight above one accepted? **Answer:** No.",
+    "review": "Above1weightrejectselectedcase; no leverage.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Loss boundary:** Is a simple return of \u2212100% accepted? **Answer:** Yes.",
+    "review": "Returns-1allowed; selectedtotalloss oracle.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Below boundary:** Is \u2212101% accepted? **Answer:** No under this teaching contract.",
+    "review": "Below-1returnsreject; selectedinvalid.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Type:** Is integer `1` accepted as a weight? **Answer:** No; use `1.0`.",
+    "review": "Integerweightreject; exactfloatdomain.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Boolean:** Is `True` accepted? **Answer:** No.",
+    "review": "Boolweight/returnreject; Pythonboolsubtypingnotaccepted.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Nonfinite:** Is NaN accepted? **Answer:** No.",
+    "review": "NaNweightandzero-weightNaNreturnreject.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Empty:** Are empty inputs accepted? **Answer:** No.",
+    "review": "Emptycontainersreject.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Length:** Are vectors of different length accepted? **Answer:** No.",
+    "review": "Mismatchedlengthreject; noidentityvalidation inferred.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Limit:** What is the maximum number of assets? **Answer:** 10,000.",
+    "review": "10000assetcaseaccepted,10001reject; notlatency guarantee.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Mutation:** Are input lists changed? **Answer:** No.",
+    "review": "Inputlistownershippropertypasses.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Output:** Is the result rounded to a percentage? **Answer:** No; it is an unrounded decimal return.",
+    "review": "Rawdecimalfloat; formattingseparate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Float:** Does `math.fsum` remove all numerical error? **Answer:** No; input and product error and underflow can remain.",
+    "review": "fsumcannotrecoverlostproducts/inputprecision; positiveweightedsubnormalrounds0 observationseparate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Expected return:** Can the formula combine expected returns under fixed weights? **Answer:** Yes, with consistent definitions and periods.",
+    "review": "Linearityofexpectationholdsforfixedweights andcompatiblefinite expectations; conceptual,notforecastAPI.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Forecast:** Is an expected return guaranteed to occur? **Answer:** No.",
+    "review": "Expectedreturnnotguarantee; uncertaintyoutsideimplementation.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Risk:** Does a 4% return reveal portfolio volatility? **Answer:** No.",
+    "review": "A scalarreturndoesnotidentifyvariance/covariance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Variance:** What is the standard covariance expression? **Answer:** $`w^T\\Sigma w`$, under a compatible covariance model.",
+    "review": "w-transpose Sigma w isconceptual compatiblecovariancemodel formula;supplemental2asset rationalcontrolseparate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Covariance:** Does this function validate a covariance matrix? **Answer:** No.",
+    "review": "No covariance inputvalidation,PSD/eigenvalue/missingdata analysisimplemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Linking:** Link portfolio returns of 4% and \u22122%. **Answer:** 1.92% in exact arithmetic.",
+    "review": "Exact(26/25)*(49/50)-1=12/625=.0192;supplementallink separatefromsourceweightedreturn.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Rebalancing:** Does this function update weights for the next period? **Answer:** No.",
+    "review": "No weightupdate/rebalancing; nextperiodweights require methodology.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**External flows:** Does it calculate flow-adjusted account performance automatically? **Answer:** No.",
+    "review": "No external-flow timing oraccountperformance methodology;broader integration remainsopen.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Have the reference tests been run? **Answer:** No; execution is deferred.",
+    "review": "OriginalanswerexecutiondeferredisobsoleteafteractualQA;currentanswerupdated andoriginalretained.",
+    "status": "Assistant scoped technical review; independent acceptance pending",
+    "initial_source_record": "**Evidence:** Have the reference tests been run? **Answer:** No; execution is deferred.",
+    "reviewed_record": "**Evidence:** Have the reference tests been run? **Answer:** Yes, in the later scoped source, editable and wheel runs linked below; broader independent, model, platform and release acceptance remains pending.",
+    "editorial_status_correction": true
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.11 \u2014 Statistical Module.",
+    "review": "21.11-statistical-module.mdexists;nextformalworkflow.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  }
+]

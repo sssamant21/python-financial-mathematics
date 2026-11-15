@@ -1,0 +1,15 @@
+"""Pinned Section9.8 diagnostics; not passing Section9.7 predicates.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,subprocess,tempfile,importlib,json,hashlib
+r=Path(sys.argv[1]).resolve();pin='0155afc15de96737b183aaf3eed45cf2280f93ba';p='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_08.py';raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_08.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_08')
+ with localcontext(Context(prec=2400)):
+  endpoint=float(Decimal(-50).exp());second=float(Decimal.from_float(1e308)*Decimal.from_float(1e-308)**2)
+ a=m.parallel_report([(1.,1.)],0.,[500000.]);b=m.parallel_report([(1e308,1e-308)],0.,[]);c=m.spot_scenario([(100.,1.)],[.04],iter([25.]))
+ rows=[dict(case='complete exact value after large positive shock',actual=repr(a['scenarios'][0]),independent_exact_value=endpoint,status='OPEN numerical: baseline plus rounded change loses finite endpoint'),dict(case='complete baseline second derivative',actual=repr(b),independent_second_derivative=second,status='OPEN numerical: time squared underflows before cash multiplication'),dict(case='one-shot spot shock metadata',actual=repr(c),independent_shock_bp_metadata=[25.],status='OPEN collection/provenance contract: consumed iterable produces empty metadata after its shock was used')]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Three fresh9.8 observations only; not passing130 scenario predicates. Complete baseline/report/scenario/metadata/tolerance contracts next. Historical evidence preserved.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('Three Section9.8 observations retained')

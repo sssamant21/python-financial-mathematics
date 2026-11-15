@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.10:** [Portfolio review](chapter-21-portfolio-review/README.md):40 answers /12 labs,updated clean-consumer wheel,243 predicates;10 scoped workflows /400 local answers. Next21.11;broader F28/F32/model/platform/independent gaps remain open.
+
 - **Latest21.9:** [Return review](chapter-21-return-review/README.md):40 answers /12 labs,updated clean-consumer wheel,204 predicates;9 scoped workflows /360 local answers. Next21.10;broader F28/F32/model/platform/independent gaps remain open.
 
 - **Latest21.8:** [Bond review](chapter-21-bond-review/README.md):40 answers /12 lab steps, updated clean-consumer wheel and162 predicates;8 scoped workflows /320 local answers. Next21.9; broader F28/F32/model/platform/independent gaps remain open.
@@ -682,3 +684,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.10 — Partial portfolio source checkpoint (OPEN)
 
 [Portfolio checkpoint](chapter-21-portfolio-resume/README.md):3 source commands /84 existing methods pass. Explicit source injection; no new historical methods or completed formal workflow. Return wheel excludes portfolio. Next21.10 independent weighting/domain/range/alignment contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains9 scoped workflows /360 local answers;F28/F32 and broad acceptance remain open.
+
+
+## Section21.10 — Scoped portfolio workflow, answers and updated wheel
+
+[Portfolio evidence](chapter-21-portfolio-review/README.md):40 answers /12 lab reviews;11 newofflinepackagecommands and243 installed-wheel predicates pass.204 retained plus11 rationaldot references,6 exact-derived weightgates,18 rejections and4 separate properties. Two portfolio numerical-limit observations separate from6 retained observations;no invented code defect. Exercise39executionstatus corrected,original retained. Threepriorsourcecommands reused by exactfences;84 existingmethods /252 source-editable-wheel invocations,zero newhistoricalmethods. Newartifacthash differs at sameillustrativeversion,notreleaseapproval. Chapter21now10 scopedworkflows /400 localanswers. Next21.11 Statistical Module. F28/F32/F209,static-check,F165/F185,R08–10/ownership andbroader data/resource/model/platform/release/independentgaps remainopen.
+
+
+### Section 21.11 — Partial statistical source checkpoint (OPEN)
+
+[Statistical checkpoint](chapter-21-statistical-resume/README.md): three source commands /96 existing methods pass. Explicit source injection; no new historical methods or completed formal workflow. Portfolio wheel excludes statistics. Next: 21.11 independent statistics/range/immutability contracts, 40 answers /12 labs and updated installed artifact. Chapter 21 remains ten scoped workflows /400 local answers; F28/F32 and broad acceptance remain open.

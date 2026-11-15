@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-192 difference-report scoped pass and V-193 full pinned Linux pass (629/416/630). Scenario contracts and broad independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-194 call-scenario scoped pass (130 predicates); latest full Linux pass remains V-193 at its older pin (629/416/630). Section 9.8 contracts and broader independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1577,3 +1577,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-193 checkpoint — Full pinned candidate Linux refresh
 
 [V-193 runtime](runtime-refresh-2026-11-15-r16.md) at `89640b21f73500458a8f1ba47f89fd01a7289d70`:629/629 Python files compiled,416/416 scripts passed,630/630 required blobs verified before/after. Includes accumulated payoff/cap-floor182 and difference-report111 predicates with explicit policies and retained initial failures/replays;3 separate unequal-grid source controls are not part of111. Huge-step diagnostic interpretation corrected to NaN matching historical raw output. Fresh scenario numerical/range/prerequisite diagnostics and physical spot0 derivative interpretation remain OPEN; full execution does not settle unasserted contracts. Next: call-scenario complete reports,shifted-point/factor and input/range contracts.37 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-194 checkpoint — Section 9.7 discounted call scenarios
+
+[Scenario evidence](chapter-09-scenario-followup-r17.md):130 corrected predicates pass;110 initial passes /20 failures and actual identical replay retained. Two numerical fields, six whole-report range fields and twelve factor-range/exception fields, not twenty unique defects. Independent1800/2400-digit complete report references; rounded shifted spot and finite-factor prerequisite retained explicitly. Only scenario body/Decimal import changed. Spot-zero helper behavior clarified as formal extension, not physical-domain left derivative; independent model/interface approval remains open. Five files compiled /five commands /four checkers pass with before/after hashes. Fresh630/417/631 inventory is not full execution; V193 remains latest full pass at older pin. Next Section9.8 complete baseline/report/scenario/tolerance and collection/provenance contracts, with three fresh diagnostics checkpointed. All37 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.

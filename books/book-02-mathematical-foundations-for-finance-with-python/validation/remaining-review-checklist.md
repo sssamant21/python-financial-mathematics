@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-15
 **Full-runtime candidate source revision:** `89640b21f73500458a8f1ba47f89fd01a7289d70` (V-193)
-**Latest scoped source:** V-192 at `89640b21f73500458a8f1ba47f89fd01a7289d70`; [four-source manifest](chapter-09-difference-publication-r16.json).
+**Latest scoped source:** V-194 at `a5994a19db91af095975607cead2518230e858f0`; [five-source manifest](chapter-09-scenario-publication-r17.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-192 difference-report scoped pass and V-193 full runtime pass; scenario contracts and independent/model/platform/release approval remain open.
+**Disposition:** V-194 scenario scoped pass; V-193 older-pin full runtime pass. Section9.8 contracts and broader independent/platform/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1451,3 +1451,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-193 checkpoint — Full pinned candidate Linux refresh
 
 [V-193 runtime](runtime-refresh-2026-11-15-r16.md) at `89640b21f73500458a8f1ba47f89fd01a7289d70`:629/629 Python files compiled,416/416 scripts passed,630/630 required blobs verified before/after. Includes accumulated payoff/cap-floor182 and difference-report111 predicates with explicit policies and retained initial failures/replays;3 separate unequal-grid source controls are not part of111. Huge-step diagnostic interpretation corrected to NaN matching historical raw output. Fresh scenario numerical/range/prerequisite diagnostics and physical spot0 derivative interpretation remain OPEN; full execution does not settle unasserted contracts. Next: call-scenario complete reports,shifted-point/factor and input/range contracts.37 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-194 checkpoint — Section 9.7 discounted call scenarios
+
+[Scenario evidence](chapter-09-scenario-followup-r17.md):130 corrected predicates pass;110 initial passes /20 failures and actual identical replay retained. Two numerical fields, six whole-report range fields and twelve factor-range/exception fields, not twenty unique defects. Independent1800/2400-digit complete report references; rounded shifted spot and finite-factor prerequisite retained explicitly. Only scenario body/Decimal import changed. Spot-zero helper behavior clarified as formal extension, not physical-domain left derivative; independent model/interface approval remains open. Five files compiled /five commands /four checkers pass with before/after hashes. Fresh630/417/631 inventory is not full execution; V193 remains latest full pass at older pin. Next Section9.8 complete baseline/report/scenario/tolerance and collection/provenance contracts, with three fresh diagnostics checkpointed. All37 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.

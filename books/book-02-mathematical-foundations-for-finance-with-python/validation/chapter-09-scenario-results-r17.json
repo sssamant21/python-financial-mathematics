@@ -1,0 +1,83 @@
+{
+  "baseline_revision": "0155afc15de96737b183aaf3eed45cf2280f93ba",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py",
+      "sha": "169b735c9559d47c77c5925675c68334e4f0b9fc"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_07.py",
+      "sha": "87043f933baaf5f0b2df4ddd8a53c1bbff21ca03"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_payoff_cap_floor.py",
+      "sha": "06b832bab0293aa1d56fc48c05037a8d3cffb211"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_difference_reports.py",
+      "sha": "e953ec2539f6db73e27b6bebe2778028808e4e33"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_scenario_reports.py",
+      "sha": "1d74b85d1f5455ae7d29fa495c2cb3c4f948564e"
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "compiled": [
+    "section_9_07.py",
+    "check_section_9_07.py",
+    "check_section_07_payoff_cap_floor.py",
+    "check_section_07_difference_reports.py",
+    "check_section_07_scenario_reports.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"call_at_strike\": {\n    \"left\": 0.0,\n    \"right\": 1.0,\n    \"differentiable\": false\n  },\n  \"put_at_strike\": {\n    \"left\": -1.0,\n    \"right\": 0.0,\n    \"differentiable\": false\n  },\n  \"finite_differences\": {\n    \"left_difference\": 0.0,\n    \"right_difference\": 1.0,\n    \"centered_difference\": 0.5\n  },\n  \"call_up\": {\n    \"baseline_value\": 0.0,\n    \"shocked_value\": 1.8462326927732715,\n    \"exact_change\": 1.8462326927732715,\n    \"left_slope\": 0.0,\n    \"right_slope\": 0.9231163463866358,\n    \"differentiable\": false\n  },\n  \"call_down\": {\n    \"baseline_value\": 0.0,\n    \"shocked_value\": 0.0,\n    \"exact_change\": 0.0,\n    \"left_slope\": 0.0,\n    \"right_slope\": 0.9231163463866358,\n    \"differentiable\": false\n  },\n  \"cap_at_threshold\": {\n    \"left\": 1000.0,\n    \"right\": 0.0,\n    \"differentiable\": false\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.7 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_payoff_cap_floor.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"source_predicates\": 182, \"passed\": 182, \"failed\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_difference_reports.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"source_predicates\": 111, \"passed\": 111, \"failed\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_07_scenario_reports.py",
+        "books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-scenario-corrected-r17.json"
+      ],
+      "returncode": 0,
+      "stdout": "{\"source_predicates\": 130, \"passed\": 130, \"failed\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "limits": "Five-file scoped execution, not full-book runtime. Numeric repairs and output/factor/shifted-spot policies separate."
+}
