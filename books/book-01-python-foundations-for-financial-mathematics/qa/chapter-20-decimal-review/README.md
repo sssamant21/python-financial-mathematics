@@ -13,3 +13,5 @@ F206: four return precision/cancellation failures;unsupported quantize leaked In
 Independent160-digit Decimal difference/quotient then28-digit reporting checks return expectations;fixed exact products/ties/scale and negative domain examples are separate. Actual source helper calls demonstrate per-line versus final rounding. Raw Decimal1/3 under two precisions is supplemental because the financial helper intentionally fixes28 digits. The same14 source methods passed on baseline despite nine additional failing predicates.
 
 Decimal lexical length,coefficient/exponent size and Fraction conversion have no ingestion resource cap. All magnitude/platform/accounting/model/currency/date/fee policies are not accepted by this teaching example. F28 notebook/platform,F32 shared-input integration,F165/F185 and independent/source/resource/release acceptance remain open. Chapter20 now6 scoped workflows/240 local answers. Next:Section20.7 Financial Invariants.
+
+Executable source/runner revision:`e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`. [Pinned input manifest](publication-verification.json).

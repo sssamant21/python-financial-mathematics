@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `c0fd15b82b1122ee170bbe1b8709f2f05b8681e5` (V-153)
-**Latest scoped source:** V-152 at `c0fd15b82b1122ee170bbe1b8709f2f05b8681e5`;[three-file source manifest](chapter-09-discounted-publication-verification.json).
+**Full-runtime candidate source revision:** `e1be84b08b955bb785a86aa6a1fe6114adbc0cf3` (V-155)
+**Latest scoped source:** V-154 at `e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`;[four-file source manifest](chapter-09-demand-portfolio-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-152 discounted scoped checks and V-153 full Python runtime passed;demand/portfolio probes,independent review/release approval remain open.
+**Disposition:** V-154 scoped demand/portfolio and V-155 full Python runtime pass;new Section9.2 probes,independent review/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1191,3 +1191,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-154 checkpoint — Section9.1 demand/portfolio complete range
 
 [Demand/portfolio evidence](chapter-09-demand-portfolio-followup.md):80 corrected predicates pass;46 initial passes/34 failed predicates and identical replay retained. Independent1800/2400-digit direct powers/products/quotients cover complete quantity/derivative,analytic normalization,signed-zero/final-report and input-order contracts. Three prior probes are RESOLVED only in explicit mapped scope;historical OPEN records preserved. Four files compiled,four commands/three checkers pass,four hashes verified before-after;discounted functions/checker unchanged. Fresh609/396/610 inventory is not full execution;full pinned refresh next. COV-54 and all36 selected categories remain partial,none closed. Next after refresh:Section9.2 elasticity near-zero/arc contracts. Broader resource/platform/independent/release acceptance pending. Book1 tracked independently.
+
+
+## V-155 checkpoint — Full pinned candidate Linux refresh
+
+[V-155 full runtime](runtime-refresh-2026-11-14-r7.md) at `e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`:609/609 Python files compiled,396/396 check-test scripts passed,610/610 required Python/fixture hashes verified before-after. Includes V-154 demand/portfolio changes;34 initial failed predicates/replay and three scoped prior-probe resolutions retained separately. Three new Section9.2 resume probes remain OPEN,not passing script evidence. Exact staging runner,per-file output/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 elasticity product/midpoint/near-zero/final-report contracts,resuming saved probes. Book1 tracked independently.

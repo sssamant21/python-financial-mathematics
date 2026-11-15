@@ -19,3 +19,7 @@ The three[original OPEN probes](chapter-09-demand-portfolio-initial.json) and[ac
 Four files compiled,four commands passed (demo+three checker invocations),four input hashes verified before-after. Existing Section9.1 and discounted73+5 checker pass unchanged. [Function source comparison](chapter-09-demand-portfolio-scope-comparison.json) confirms finite/discounted/helper functions unchanged. Fresh609 Python files/396 check-test scripts/610 required source-fixture blobs is inventory,not full execution;full pinned refresh records actual full outcomes separately.
 
 Broader conditioning/resources/financial interpretations,independent mathematical/editorial/platform/release/canonical acceptance remain pending. Next:Section9.2 elasticity helpers and near-zero denominator/arc-elasticity contracts from the existing Chapter9 coverage queue. Book1 tracked independently.
+
+Executable source/checker revision:`e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`. [Pinned four-input manifest](chapter-09-demand-portfolio-publication-verification.json).
+
+[Section9.2 resume checkpoint](chapter-09-elasticity-resume-initial.json),[runnable probes](chapter-09-elasticity-resume-probes.txt) retain three new OPEN range/normalization observations without source changes. These are not passing acceptance cases. Preserve point-API nonzero supplied-baseline requirements;analytic latent-positive model normalization in9.1 is a distinct contract.
