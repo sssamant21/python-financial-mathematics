@@ -17,6 +17,12 @@ def joint_feasible(strikes, bids, asks, *, discount=1.0, tolerance=1e-9):
         raise ValueError("strikes must increase")
     if any(b < 0 or a < b for b, a in zip(bids, asks)):
         raise ValueError("invalid bid/ask")
+    # Work in dimensionless strike/price units. A common positive scale preserves
+    # all linear no-arbitrage inequalities while making tolerance unit-independent.
+    unit = max(*strikes, *asks, 1e-300)
+    strikes = [k / unit for k in strikes]
+    bids = [b / unit for b in bids]
+    asks = [a / unit for a in asks]
     constraints = []
     def add(coeff, rhs):
         scale = max([1.0, *(abs(x) for x in coeff)])
