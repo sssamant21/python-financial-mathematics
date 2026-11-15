@@ -289,6 +289,14 @@ jobs:
           python -m compileall -q geometric_control.py test_geometric_control.py
           python geometric_control.py --pairs 100 --observations 12 --seed 2026
 
+      - name: Validate Project 37 option quote diagnostics
+        run: |
+          cd quant-projects/37-static-option-arbitrage
+          python -m unittest -v test_surface.py test_quote_intervals.py
+          python -m compileall -q surface.py test_surface.py quote_intervals.py test_quote_intervals.py
+          python surface.py
+          python quote_intervals.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
