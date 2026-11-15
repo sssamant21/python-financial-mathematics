@@ -19,3 +19,7 @@ The three[original OPEN probes](chapter-09-elasticity-resume-initial.json),[actu
 Three files compiled,three commands passed (demo+two checkers),three input hashes verified before-after. Existing Section9.2 checker passes unchanged. Fresh610 Python files/397 check-test scripts/611 required source-fixture blobs is inventory,not full execution;the pinned full refresh records actual execution separately. All36 selected COV categories remain partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending.
 
 Next:Section9.2 constant/linear/income model helper complete-range and near-zero contracts,then centered-elasticity preflight/sampled report/callback contracts. Book1 tracked independently.
+
+Executable source/checker revision:`2f3595ce24acb024f48ce9682d357863be8826bd`. [Pinned three-input manifest and concurrent-main preservation](chapter-09-rational-elasticity-publication-verification.json).
+
+[Remaining-helper resume checkpoint](chapter-09-model-helper-resume-initial.json),[runnable probes](chapter-09-model-helper-resume-probes.txt) retain three OPEN model numeric cases and a separate executed callback-consumption observation. The latter returns0 for a constant function but invokes it at infinity;the desired finite-preflight/consumption rule is pending contract review,not a claim that the numeric constant derivative is wrong. No remaining helper was fixed in this batch.

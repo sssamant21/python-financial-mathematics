@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-156 point/arc/rate scoped pass;V-155 remains latest full candidate Linux pass (609/396/610),pending refresh. Model/centered helper and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-156 point/arc/rate scoped pass and V-157 full candidate Linux pass (610/397/611). Remaining model/centered helpers and independent/platform/release acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 609/609 at `e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`. [V-155](runtime-refresh-2026-11-14-r7.md). |
-| Automated script execution | Full candidate Linux pass | 396/396 at `e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`;610 required blobs verified before/after. [V-155](runtime-refresh-2026-11-14-r7.md). |
+| Python compilation | Full candidate Linux pass | 610/610 at `2f3595ce24acb024f48ce9682d357863be8826bd`. [V-157](runtime-refresh-2026-11-14-r8.md). |
+| Automated script execution | Full candidate Linux pass | 397/397 at `2f3595ce24acb024f48ce9682d357863be8826bd`;611 required blobs verified before/after. [V-157](runtime-refresh-2026-11-14-r8.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1327,3 +1327,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-156 checkpoint — Section9.2 complete point/arc/rate contracts
 
 [Elasticity evidence](chapter-09-rational-elasticity-followup.md):44 corrected predicates pass;31 initial passes/13 failed predicates and identical replay retained. Independent1800/2400-digit complete products/quotients,subnormal/signed-zero/reversal/final-range and original domain controls checked. Three saved probes resolved only in explicit mapped scope;historical OPEN records retained. Three files compiled,three commands/two checkers pass,three hashes verified before-after;existing checker unchanged. Fresh610/397/611 inventory is not full execution;full pinned refresh next. COV-54 and all36 selected categories partial,none closed. Next after refresh:Section9.2 constant/linear/income helper complete-range/near-zero contracts,then centered-elasticity preflight/report/callback contracts. Broader resource/platform/independent/release acceptance pending. Book1 tracked independently.
+
+
+## V-157 checkpoint — Full pinned candidate Linux refresh
+
+[V-157 full runtime](runtime-refresh-2026-11-14-r8.md) at `2f3595ce24acb024f48ce9682d357863be8826bd`:610/610 Python files compiled,397/397 check-test scripts passed,611/611 required Python/fixture hashes verified before-after. Includes V-156 point/arc/rate changes;13 initial failed predicates/replay and three scoped probe resolutions retained separately. Remaining-helper checkpoint has three new OPEN model numeric cases plus a separate executed callback/preflight design observation,not passing script evidence. Exact staging runner,per-file output/digests and full manifest retained. Fresh main preserved concurrent quant/workflow changes. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 constant/linear/income helper contracts,resuming saved probes;then centered-elasticity scope. Book1 tracked independently.
