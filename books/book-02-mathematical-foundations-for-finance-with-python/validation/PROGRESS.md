@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-162 affine/generic report scoped pass;V-161 remains latest full candidate Linux pass (612/399/613),pending refresh. Discounted Taylor helpers and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-162 affine/generic scope and V-163 full candidate Linux pass (613/400/614). Discounted Taylor helper failure and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 612/612 at `ded1212c249a58c750f6218214754d86a77ac178`. [V-161](runtime-refresh-2026-11-14-r10.md). |
-| Automated script execution | Full candidate Linux pass | 399/399 at `ded1212c249a58c750f6218214754d86a77ac178`;613 required blobs verified before/after. [V-161](runtime-refresh-2026-11-14-r10.md). |
+| Python compilation | Full candidate Linux pass | 613/613 at `067c4205c8339341e1f76352f60fdf4fd2615b78`. [V-163](runtime-refresh-2026-11-14-r11.md). |
+| Automated script execution | Full candidate Linux pass | 400/400 at `067c4205c8339341e1f76352f60fdf4fd2615b78`;614 required blobs verified before/after. [V-163](runtime-refresh-2026-11-14-r11.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1362,3 +1362,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-162 checkpoint — Section9.3 complete affine/generic report contracts
 
 [Affine/report evidence](chapter-09-affine-report-followup.md):125 corrected predicates pass;86 initial passes/39 failed predicates and identical replay retained. First correction's one signed-zero failure/source and corrected rerun retained separately. Independent1800/2400-digit complete-affine/seven-field sample-report references plus actual preflight/callback consumption controls checked. Saved affine and preflight cases scoped resolved;discounted-value rescue remains OPEN. Three files compiled,three commands/two checkers pass,three hashes verified before-after;discounted/revenue/ladder functions/checker unchanged. Ten escaped manuscript backticks repaired. Fresh613/400/614 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 discounted value/shock/error-report contracts,then ladder/revenue. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+## V-163 checkpoint — Full pinned candidate Linux refresh
+
+[V-163 full runtime](runtime-refresh-2026-11-14-r11.md) at `067c4205c8339341e1f76352f60fdf4fd2615b78`:613/613 Python files compiled,400/400 check-test scripts passed,614/614 required Python/fixture hashes verified before-after. Includes V-162 affine/report contracts;39 initial failed predicates/replay,one first-correction signed-zero failure/replay and125 corrected predicates retained separately. Historical records unchanged;two selected prior probes scoped resolved. Actual post-affine diagnostics retain discounted-value rescue OPEN,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 discounted value/shock/error-report contracts,then ladder/revenue. Book1 tracked independently.

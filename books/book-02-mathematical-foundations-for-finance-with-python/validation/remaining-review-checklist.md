@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-14
-**Full-runtime candidate source revision:** `ded1212c249a58c750f6218214754d86a77ac178` (V-161)
-**Latest scoped source:** V-160 at `ded1212c249a58c750f6218214754d86a77ac178`;[seven-file source manifest](chapter-09-centered-contract-publication-verification.json).
+**Full-runtime candidate source revision:** `067c4205c8339341e1f76352f60fdf4fd2615b78` (V-163)
+**Latest scoped source:** V-162 at `067c4205c8339341e1f76352f60fdf4fd2615b78`;[three-file source manifest](chapter-09-affine-report-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-160 centered scope and V-161 full Python runtime pass;Taylor diagnostics and independent/release approval stay open.
+**Disposition:** V-162 affine/report scope and V-163 full Python runtime pass;discounted helper failure and independent/release approval stay open.
 
 ## Reconciled evidence
 
@@ -1236,3 +1236,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-162 checkpoint — Section9.3 complete affine/generic report contracts
 
 [Affine/report evidence](chapter-09-affine-report-followup.md):125 corrected predicates pass;86 initial passes/39 failed predicates and identical replay retained. First correction's one signed-zero failure/source and corrected rerun retained separately. Independent1800/2400-digit complete-affine/seven-field sample-report references plus actual preflight/callback consumption controls checked. Saved affine and preflight cases scoped resolved;discounted-value rescue remains OPEN. Three files compiled,three commands/two checkers pass,three hashes verified before-after;discounted/revenue/ladder functions/checker unchanged. Ten escaped manuscript backticks repaired. Fresh613/400/614 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 discounted value/shock/error-report contracts,then ladder/revenue. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+## V-163 checkpoint — Full pinned candidate Linux refresh
+
+[V-163 full runtime](runtime-refresh-2026-11-14-r11.md) at `067c4205c8339341e1f76352f60fdf4fd2615b78`:613/613 Python files compiled,400/400 check-test scripts passed,614/614 required Python/fixture hashes verified before-after. Includes V-162 affine/report contracts;39 initial failed predicates/replay,one first-correction signed-zero failure/replay and125 corrected predicates retained separately. Historical records unchanged;two selected prior probes scoped resolved. Actual post-affine diagnostics retain discounted-value rescue OPEN,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 discounted value/shock/error-report contracts,then ladder/revenue. Book1 tracked independently.

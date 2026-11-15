@@ -1,0 +1,21 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,hashlib
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='067c4205c8339341e1f76352f60fdf4fd2615b78';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_03.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'section_9_03.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('taylor_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for name,fn,kind in [('complete affine rescue',lambda:m.linear_taylor(1e308,-1e308,2.),'affine'),('complete discounted value rescue',lambda:m.discount_value(1e-308,2.,-355.),'discount')]:
+  refs=[]
+  for prec in (1800,2400):
+   with localcontext(Context(prec=prec)):
+    z=Decimal(1e308)+Decimal(-1e308)*Decimal(2.) if kind=='affine' else Decimal(1e-308)*Decimal(710).exp();refs.append(float(z))
+  assert refs[0]==refs[1]
+  try:a=fn()
+  except Exception as e:a=type(e).__name__
+  rows.append(dict(name=name,actual=repr(a),independent_expected=repr(refs[0]),status='DIAGNOSTIC OBSERVATION — consult explicit affine-resume dispositions;not an acceptance predicate'))
+ seen=[]
+ def constant(x):seen.append(x);return 1.
+ try:a=m.compare_change(constant,lambda x:0.,1e308,1e308)
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='nonfinite shocked point callback consumption',actual=repr(a),calls=[repr(x) for x in seen],status='DIAGNOSTIC OBSERVATION — finite-preflight/callback consumption;consult explicit later disposition'))
+d=dict(executable_source_revision=pin,source=rel,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Exact source diagnostics with independent Decimal expectations;not an acceptance checker or scoped fix. COV54 remains partial;no independent/platform acceptance.');(r/('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-taylor-after-affine-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print('Three post-affine diagnostic observations recorded;see explicit scoped dispositions')
