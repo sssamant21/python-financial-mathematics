@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.5:** [TVM](chapter-21-tvm-review/README.md):updatedartifact,38wheelpredicates,40answers/12labreviews;sequentialrangelimitretained.Next21.6;broadergapsopen.
+
 - **Latest21.4:** [Decimalpolicy](chapter-21-policy-review/README.md):45sourcepredicates,40answers/12labreviews;fencesunchanged. Next21.5;broaderowner/platform/model/independentgaps retained.
 
 - **Latest21.3:** [Structure](chapter-21-structure-review/README.md):offlineeditable/build andcleanwheelconsumerchecks pass;40answers/12labreviews. Next21.4;broaderplatform/model/independentgaps retained.
@@ -618,3 +620,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.5 partial TVM integration resume — OPEN
 
 [TVMcheckpoint](chapter-21-tvm-resume/README.md):updatedTVM/reexports/newtests+retained21.3tests pass3sourcecommands/24existingmethods,zero newhistoricalmethods. PYTHONPATHsourceexecution only;updatededitable/wheelartifact nottested. Formal21.5range/oracles/40answers/12labreviewnext;earlier21.3artifactevidencehasolderscope.
+
+
+## Section21.5 scoped TVM workflow,artifact and answers
+
+[TVMevidence](chapter-21-tvm-review/README.md):oneworkflow/40answers/12labreviews;11freshofflineeditable/build/cleanwheelcommands pass. Newartifacthashdiffersfrom21.3;outsidehiddensourceprovenanceverified. Thirty-eightwheelpredicatespasswithindependentclosedpowerreferences andinput/count/overflowcases. Threeearliersourcecommandsreusedbyfivefencedigests;24existingmethods/72invocationsacrosssource/editable/wheel,14commandsevidencechain,zero newhistoricalmethods. Publishedrounded-base/sequentiallimitretainedasobservation,notnewdefect;codefencesunchanged. Chapter21now5scopedworkflows/200answers;next21.6CashFlowModule. F28/F32/F209,20.11static,F165/F185,R08-10/owner andbroaderresources/platform/model/release/independentacceptanceopen.

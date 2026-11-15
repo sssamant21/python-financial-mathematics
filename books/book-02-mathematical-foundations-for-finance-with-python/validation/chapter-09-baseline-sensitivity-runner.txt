@@ -1,0 +1,10 @@
+from pathlib import Path
+import sys,subprocess,json,hashlib,py_compile,platform
+r=Path(sys.argv[1]).resolve();b=r/'books/book-02-mathematical-foundations-for-finance-with-python';v=b/'validation';code=b/'chapter-09/code';names=['section_9_06.py','check_section_9_06.py','check_section_06_baseline_reports.py']
+def blob(p):
+ d=p.read_bytes();return hashlib.sha1(b'blob '+str(len(d)).encode()+b'\0'+d).hexdigest()
+manifest=[dict(path=str((code/n).relative_to(r)),sha=blob(code/n)) for n in names];commands=[]
+for n in names:py_compile.compile(str(code/n),doraise=True)
+for n in names:
+ z=subprocess.run([sys.executable,n],cwd=code,capture_output=True,text=True);commands.append(dict(argv=[sys.executable,n],returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+after=all(blob(r/x['path'])==x['sha'] for x in manifest);files=[p for p in b.rglob('*.py') if '__pycache__' not in p.parts];d=dict(validation='V-184 Section9.6 baseline sensitivity reports',candidate_based_on='da68056d0ed2d80f4aeb8abbf11ea0a760ae8ce3',python=platform.python_version(),platform=platform.platform(),manifest=manifest,compiled=names,commands=commands,hashes_verified_before=True,hashes_verified_after=after,inventory=dict(python_files=len(files),check_test_scripts=sum(p.name.startswith(('check_','test_')) for p in files),required_blobs=len(files)+1),limits='Three selected files/three commands,two checker invocations;parallel/spot/other contracts,universal transcendental rounding and independent/platform acceptance open.');(v/'chapter-09-baseline-sensitivity-results.json').write_text(json.dumps(d,indent=2)+'\n');print(len(names),'compiled;',[(x['argv'][-1],x['returncode']) for x in commands],d['inventory']);assert after and all(x['returncode']==0 for x in commands)

@@ -1,5 +1,7 @@
 """Section 9.6: discounted-value sensitivity under continuous compounding."""
 import math
+from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -24,19 +26,44 @@ def validate_flows(flows):
         clean.append((c,t))
     return clean
 
+def _sensitivity_float(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("sensitivity report outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("sensitivity report outside finite float range")
+    return result
+
 def portfolio_sensitivity(flows, rate):
+    """Complete baseline report;all scalar/list fields finite,total positive.
+
+    Normalize latent derivatives/amounts,not separately rounded floats.
+    Per-cash derivatives can impose a stricter range than total value alone.
+    """
     r = finite(rate,"rate")
     items = validate_flows(flows)
-    terms = [c*math.exp(-r*t) for c,t in items]
-    value = math.fsum(terms)
-    first = -math.fsum(t*v for (_,t),v in zip(items,terms))
-    second = math.fsum(t*t*v for (_,t),v in zip(items,terms))
-    if not all(math.isfinite(z) for z in (value,first,second)) or value <= 0:
-        raise ValueError("valuation and derivatives must be finite, value positive")
-    return {"value":value,"first":first,"second":second,
-            "duration":-first/value,"convexity":second/value,
-            "cash_flow_derivatives":[math.exp(-r*t) for _,t in items],
-            "value_weights":[v/value for v in terms]}
+    R = Fraction(r)
+    with localcontext(Context(prec=1500)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        terms = [];cash_derivatives = [];value = first = second = Decimal(0)
+        for c,t in items:
+            C,T = map(Fraction,(c,t));exponent = -R*T
+            if exponent > 10000:
+                raise ValueError("sensitivity report outside finite float range")
+            factor = Decimal(0) if exponent < -10000 else dec(exponent).exp()
+            amount = dec(C)*factor;TT = dec(T)
+            terms.append(amount);cash_derivatives.append(factor)
+            value += amount;first -= TT*amount;second += TT*TT*amount
+        reported_value = _sensitivity_float(value)
+        if reported_value <= 0:
+            raise ValueError("valuation must report positive")
+        return {"value":reported_value,"first":_sensitivity_float(first),
+                "second":_sensitivity_float(second),
+                "duration":_sensitivity_float(-first/value),
+                "convexity":_sensitivity_float(second/value),
+                "cash_flow_derivatives":[_sensitivity_float(x) for x in cash_derivatives],
+                "value_weights":[_sensitivity_float(x/value) for x in terms]}
 
 def parallel_shock(flows, rate, shock):
     items = validate_flows(flows)

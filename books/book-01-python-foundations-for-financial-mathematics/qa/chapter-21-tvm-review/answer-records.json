@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Future value:** 100 at 10% for two periods? **Answer:** 121 in exact arithmetic.",
+    "review": "Independent100*(11/10)^2=121;installedwheelFVcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Present value:** 121 due in two periods at 10%? **Answer:** 100 in exact arithmetic.",
+    "review": "Independent121/(11/10)^2=100;wheelPVcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Zero periods:** FV of 100 at 5% for zero periods? **Answer:** 100.",
+    "review": "Zero-periodidentity50 andoldreferencechecks;noarithmeticloop.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Zero rate:** PV of 100 after ten periods at zero? **Answer:** 100.",
+    "review": "Zero-rate10000periodidentitycheckedbothfunctions.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Negative rate:** FV of 100 at \u22125% for two periods? **Answer:** 90.25 in exact arithmetic.",
+    "review": "100*(19/20)^2=90.25exact;wheelcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**One period:** PV of 110 at 10%? **Answer:** 100 in exact arithmetic.",
+    "review": "One-periodrootentry retained;old12-methodsuite andnewcompatibilitytestpass.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Rate units:** What is 10% as a decimal? **Answer:** 0.10.",
+    "review": "Decimalrate.10;no percentageconversion.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Rate boundary:** Why is \u22121 rejected? **Answer:** Discounting would divide by zero.",
+    "review": "CommonPV/FVrate-1contractrejects beforeloop.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Below boundary:** Is \u22121.1 accepted? **Answer:** No; the contract requires rate greater than \u22121.",
+    "review": "Ratebelow-1rejected documented;allrangesnotapproved.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Timing:** What does a period count represent? **Answer:** The number of equal periods between present and future amounts.",
+    "review": "Equalperiodcountconcept,notactualdatedaycount.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Frequency:** Can a yearly effective rate be used directly with monthly periods? **Answer:** No; first use a consistent effective monthly rate.",
+    "review": "Frequencyalignmentcallercontract;moduledoesnotconvert.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Conversion:** What monthly effective rate corresponds to 12% effective annually? **Answer:** $`(1.12)^{1/12}-1`$, approximately 0.948879%.",
+    "review": "Monthlyconversionformula retainedconceptually;earlier21.2supplementalarithmeticavailable.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Sign:** May the amount be negative? **Answer:** Yes; use a consistent cash-flow perspective.",
+    "review": "Negativeamount allowed;wheelPV/FVnegativecase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Zero:** What is FV of zero within this contract? **Answer:** Zero, subject to the stated finite-input and count checks.",
+    "review": "Zeroamount validrate/capcount10000 returnszero;inputvalidationnotbypassed.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Scale:** What happens when the amount doubles? **Answer:** PV and FV double in exact arithmetic at the same rate and periods.",
+    "review": "Scalepropertyexactarithmetic;selectedindependentpoweroracles,notgeneralproof.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Positive PV:** What happens when the rate rises? **Answer:** PV falls for a positive future amount and positive period count.",
+    "review": "PVpositive monotonicreferencecase in24-methodsuite.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Negative PV:** What happens when the rate rises? **Answer:** PV rises toward zero for a negative future amount and positive period count.",
+    "review": "NegativePVdirectionfrompositivefactorreciprocal;conceptscope.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Round trip:** Is FV followed by PV exactly equal in floating-point arithmetic? **Answer:** Not necessarily; rounding can cause a small difference.",
+    "review": "Round-triptestpasseswithinillustrativetolerance;notindependentoraclealone.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Benchmark:** Does a round trip alone catch every defect? **Answer:** No; shared errors can cancel.",
+    "review": "Fractionpowerreferenceindependentlychecks beyondroundtrip.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Input type:** Is integer `100` accepted as an amount? **Answer:** No; use a built-in float such as `100.0`.",
+    "review": "Integeramountrejectedbyretainedscaffoldsuite/wheelcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Boolean rate:** Is `True` accepted? **Answer:** No.",
+    "review": "Booleanraterejected.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Period type:** Is `2.0` accepted as a period count? **Answer:** No; the count must be a built-in integer.",
+    "review": "Floatperiod2.0 rejectedbybothfunctions.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Boolean periods:** Is `True` accepted as one period? **Answer:** No.",
+    "review": "Booleanperiodrejectedbybothfunctions.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Period range:** Is 10,001 accepted? **Answer:** No; the illustrative maximum is 10,000.",
+    "review": "10001rejected;10000zero-rate/amountidentitycasespass.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Negative periods:** Is \u22121 accepted? **Answer:** No.",
+    "review": "Negativeperiodrejectedbybothfunctions.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Nonfinite:** Is NaN accepted as an amount? **Answer:** No.",
+    "review": "NaNamountrejectedbyretained/newtests.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Overflow:** What happens to a nonfinite intermediate? **Answer:** The function raises `ValueError`.",
+    "review": "FV1e308*2andPV1e308/.5raiseValueErrorwheelcases.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Underflow:** Can a finite result lose a small amount? **Answer:** Yes; underflow or rounding can produce zero.",
+    "review": "Documentedunderflow/roundinglimitsretained;notallrangeaccuracy.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Precision:** Does a count within the limit guarantee accuracy? **Answer:** No; numerical behavior depends on inputs and operations.",
+    "review": "10000operationalcapdoesnotguaranteeaccuracy;rounded-base1+2^-54lossobservedseparately.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Currency:** Does the module perform FX conversion? **Answer:** No.",
+    "review": "NoFXconversion;unitscallerassumption.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Rounding:** Does the module round to cents? **Answer:** No; it returns an unrounded float.",
+    "review": "Rawfloatnotcents;exactexampledisplaycaptured.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Decimal:** Does the Section 21.4 Decimal policy apply automatically? **Answer:** No; the APIs use different numeric types and contracts.",
+    "review": "Decimalpolicyisaseparatemodule;nosilentconversion.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Tolerance:** What units does an absolute amount tolerance use? **Answer:** The same units as the amount.",
+    "review": "Illustrativeabs1e-10amountunits andrel5e-13forselectedfinitepowers;notbusinessmateriality.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Zero benchmark:** Why use absolute tolerance near zero? **Answer:** Relative tolerance alone cannot allow nonzero error against zero.",
+    "review": "Nearzerotolerancesrequireabscomponent;zerocasesalsoexactidentities.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Model:** Does the module model default? **Answer:** No.",
+    "review": "Default/credit/fees/datesexcluded;no suitabilityapproval.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Multiple flows:** Does it calculate an NPV schedule? **Answer:** No; it values one amount.",
+    "review": "SinglecashflowPV/FVonly;NPVschedulesnotimplementedhere.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Compatibility:** Is the one-period function still exported? **Answer:** Yes, in the proposed replacement `__init__.py`.",
+    "review": "Wheelrootexportsallthreefunctions verified.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Install:** Does a source edit update a previously installed wheel? **Answer:** No; build and install an updated artifact.",
+    "review": "Newwheelbuilt/installedclean;hashdiffersfromearlier21.3artifact,eventhoughdraftversionstays0.1.0.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Do test definitions prove a passing run? **Answer:** No; actual execution and records are needed.",
+    "review": "Actualsource/reused/editable/cleanwheelcommandsandoutputsretained.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the next section? **Answer:** 21.6 \u2014 Cash-Flow Module.",
+    "review": "Navigation21.06-cash-flow-module.mdexists;nextformalreview.",
+    "status": "assistant scoped;external acceptance pending"
+  }
+]

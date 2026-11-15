@@ -1,0 +1,533 @@
+{
+  "source_revision": "da68056d0ed2d80f4aeb8abbf11ea0a760ae8ce3",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "staged_fence_sha256": {
+    "src/financial_toolkit/time_value.py": "96ba4c87f7e5b120db5092859b089cd5bdebe7b07868a85a85369d431dc3ea9b",
+    "src/financial_toolkit/__init__.py": "f9f50a28face333d2c06c3e833be1747ce87080a5c0865bc33f8ad50a2578963",
+    "examples/tvm.py": "115e6a97dfad3d7cbd2fbb5bce1d5c17e5569084256345ff20aaa4908de4d20a",
+    "tests/test_tvm_multi.py": "2f85ab6119197716d1e6d0c11be71655e75d5968f396834d9a539bc372fd03c0",
+    "tests/test_time_value.py": "8e035bd80478f9bdf3f824c71f716e20fff38fcf214e0926765ecce0bc65e4db",
+    "pyproject.toml": "aaa1f1be6d9bb115665e95c1b33372c4616fb5a47a862df8a1a9ac3421b9862c",
+    "README.md": "cdd4ae5ec7073c2bcd6cc9f98570aca020fc5de904995824d4381083643fd7e4"
+  },
+  "reused_source_commands": 3,
+  "reused_source_revision": "b5bfa28ea4991f2694e88933c43eccb0d44b87be",
+  "commands": [
+    {
+      "label": "build venv;preprovisioned local tooling",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "--system-site-packages",
+        "/tmp/book1-scaffold-hdkccqfz/build-env"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "build-tool versions",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/build-env/bin/python",
+        "-c",
+        "import sys,importlib.metadata as m;print(sys.version);print({n:m.version(n) for n in (\"pip\",\"setuptools\",\"wheel\")})"
+      ],
+      "returncode": 0,
+      "stdout": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]\n{'pip': '25.0.1', 'setuptools': '84.2.1', 'wheel': '0.48.0'}\n",
+      "stderr": ""
+    },
+    {
+      "label": "offline editable install",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/build-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-build-isolation",
+        "--no-deps",
+        "-e",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "Obtaining file:///tmp/book1-scaffold-hdkccqfz/project\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: financial-toolkit-educational\n  Building editable for financial-toolkit-educational (pyproject.toml): started\n  Building editable for financial-toolkit-educational (pyproject.toml): finished with status 'done'\n  Created wheel for financial-toolkit-educational: filename=financial_toolkit_educational-0.1.0-0.editable-py3-none-any.whl size=1784 sha256=e0796f41a2752fd5c9848edf89691e55f3a6f9f2d80920a8f7958711d566111e\n  Stored in directory: /tmp/pip-ephem-wheel-cache-afelb7dr/wheels/ff/17/f0/4a956b9a5e3be6425097010afb8f10a32f18e4f2267c65e99d\nSuccessfully built financial-toolkit-educational\nInstalling collected packages: financial-toolkit-educational\nSuccessfully installed financial-toolkit-educational-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "editable example",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/build-env/bin/python",
+        "examples/tvm.py"
+      ],
+      "returncode": 0,
+      "stdout": "121.00000000000003\n99.99999999999999\n",
+      "stderr": ""
+    },
+    {
+      "label": "editable reference suite",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/build-env/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (test_time_value.TimeValueTests.test_boolean_rejected) ... ok\ntest_integer_rejected (test_time_value.TimeValueTests.test_integer_rejected) ... ok\ntest_known_value (test_time_value.TimeValueTests.test_known_value) ... ok\ntest_negative_payment (test_time_value.TimeValueTests.test_negative_payment) ... ok\ntest_negative_rate (test_time_value.TimeValueTests.test_negative_rate) ... ok\ntest_nonfinite_payment (test_time_value.TimeValueTests.test_nonfinite_payment) ... ok\ntest_nonfinite_rate (test_time_value.TimeValueTests.test_nonfinite_rate) ... ok\ntest_nonfinite_result_rejected (test_time_value.TimeValueTests.test_nonfinite_result_rejected) ... ok\ntest_positive_payment_rate_monotonicity (test_time_value.TimeValueTests.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (test_time_value.TimeValueTests.test_rate_boundary) ... ok\ntest_zero_payment (test_time_value.TimeValueTests.test_zero_payment) ... ok\ntest_zero_rate (test_time_value.TimeValueTests.test_zero_rate) ... ok\ntest_future_known_value (test_tvm_multi.TimeValueModuleTests.test_future_known_value) ... ok\ntest_invalid_numeric_inputs (test_tvm_multi.TimeValueModuleTests.test_invalid_numeric_inputs) ... ok\ntest_invalid_periods (test_tvm_multi.TimeValueModuleTests.test_invalid_periods) ... ok\ntest_negative_rate (test_tvm_multi.TimeValueModuleTests.test_negative_rate) ... ok\ntest_nonfinite_intermediate (test_tvm_multi.TimeValueModuleTests.test_nonfinite_intermediate) ... ok\ntest_one_period_compatibility (test_tvm_multi.TimeValueModuleTests.test_one_period_compatibility) ... ok\ntest_positive_pv_decreases_with_rate (test_tvm_multi.TimeValueModuleTests.test_positive_pv_decreases_with_rate) ... ok\ntest_present_known_value (test_tvm_multi.TimeValueModuleTests.test_present_known_value) ... ok\ntest_rate_boundary_rejected (test_tvm_multi.TimeValueModuleTests.test_rate_boundary_rejected) ... ok\ntest_round_trip (test_tvm_multi.TimeValueModuleTests.test_round_trip) ... ok\ntest_zero_period (test_tvm_multi.TimeValueModuleTests.test_zero_period) ... ok\ntest_zero_rate (test_tvm_multi.TimeValueModuleTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "offline wheel build",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/build-env/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-build-isolation",
+        "--no-deps",
+        "--wheel-dir",
+        "/tmp/book1-scaffold-hdkccqfz/wheels",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-scaffold-hdkccqfz/project\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: financial-toolkit-educational\n  Building wheel for financial-toolkit-educational (pyproject.toml): started\n  Building wheel for financial-toolkit-educational (pyproject.toml): finished with status 'done'\n  Created wheel for financial-toolkit-educational: filename=financial_toolkit_educational-0.1.0-py3-none-any.whl size=2580 sha256=b29c2dd5bbf94513edc21bf8538220f1dcb18a120f2764d2282d5bf36b513a9d\n  Stored in directory: /tmp/pip-ephem-wheel-cache-9hp_uf_h/wheels/ff/17/f0/4a956b9a5e3be6425097010afb8f10a32f18e4f2267c65e99d\nSuccessfully built financial-toolkit-educational\n",
+      "stderr": ""
+    },
+    {
+      "label": "clean consumer venv",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/book1-scaffold-hdkccqfz/consumer-env"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "offline wheel install clean consumer",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/consumer-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/book1-scaffold-hdkccqfz/wheels/financial_toolkit_educational-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-scaffold-hdkccqfz/wheels/financial_toolkit_educational-0.1.0-py3-none-any.whl\nInstalling collected packages: financial-toolkit-educational\nSuccessfully installed financial-toolkit-educational-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "outside-source wheel reference suite",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/consumer-env/bin/python",
+        "-I",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/tmp/book1-scaffold-hdkccqfz/outside",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (test_time_value.TimeValueTests.test_boolean_rejected) ... ok\ntest_integer_rejected (test_time_value.TimeValueTests.test_integer_rejected) ... ok\ntest_known_value (test_time_value.TimeValueTests.test_known_value) ... ok\ntest_negative_payment (test_time_value.TimeValueTests.test_negative_payment) ... ok\ntest_negative_rate (test_time_value.TimeValueTests.test_negative_rate) ... ok\ntest_nonfinite_payment (test_time_value.TimeValueTests.test_nonfinite_payment) ... ok\ntest_nonfinite_rate (test_time_value.TimeValueTests.test_nonfinite_rate) ... ok\ntest_nonfinite_result_rejected (test_time_value.TimeValueTests.test_nonfinite_result_rejected) ... ok\ntest_positive_payment_rate_monotonicity (test_time_value.TimeValueTests.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (test_time_value.TimeValueTests.test_rate_boundary) ... ok\ntest_zero_payment (test_time_value.TimeValueTests.test_zero_payment) ... ok\ntest_zero_rate (test_time_value.TimeValueTests.test_zero_rate) ... ok\ntest_future_known_value (test_tvm_multi.TimeValueModuleTests.test_future_known_value) ... ok\ntest_invalid_numeric_inputs (test_tvm_multi.TimeValueModuleTests.test_invalid_numeric_inputs) ... ok\ntest_invalid_periods (test_tvm_multi.TimeValueModuleTests.test_invalid_periods) ... ok\ntest_negative_rate (test_tvm_multi.TimeValueModuleTests.test_negative_rate) ... ok\ntest_nonfinite_intermediate (test_tvm_multi.TimeValueModuleTests.test_nonfinite_intermediate) ... ok\ntest_one_period_compatibility (test_tvm_multi.TimeValueModuleTests.test_one_period_compatibility) ... ok\ntest_positive_pv_decreases_with_rate (test_tvm_multi.TimeValueModuleTests.test_positive_pv_decreases_with_rate) ... ok\ntest_present_known_value (test_tvm_multi.TimeValueModuleTests.test_present_known_value) ... ok\ntest_rate_boundary_rejected (test_tvm_multi.TimeValueModuleTests.test_rate_boundary_rejected) ... ok\ntest_round_trip (test_tvm_multi.TimeValueModuleTests.test_round_trip) ... ok\ntest_zero_period (test_tvm_multi.TimeValueModuleTests.test_zero_period) ... ok\ntest_zero_rate (test_tvm_multi.TimeValueModuleTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "outside-source wheel example",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/consumer-env/bin/python",
+        "-I",
+        "one_period.py"
+      ],
+      "returncode": 0,
+      "stdout": "121.00000000000003\n99.99999999999999\n",
+      "stderr": ""
+    },
+    {
+      "label": "wheel import provenance and12 independent contract predicates",
+      "argv": [
+        "/tmp/book1-scaffold-hdkccqfz/consumer-env/bin/python",
+        "-I",
+        "-c",
+        "import financial_toolkit as m,sys,json,math\nfrom fractions import Fraction\nfrom pathlib import Path\nassert Path(m.__file__).resolve().is_relative_to(Path(sys.prefix).resolve())\np=m.present_value_one_period\nrows=[]\nfor c,r in [(110.,.1),(95.,-.05),(110.,0.),(-110.,.1),(100.,.05),(100.,.1),(0.,.1)]:\n expected=float(Fraction(c)/(1+Fraction(r)));actual=p(c,r);rows.append(dict(payment=c,rate=r,actual=actual,expected=expected,passed=math.isclose(actual,expected,rel_tol=5e-14,abs_tol=1e-10)))\nfor c,r in [(100,.1),(100.,True),(math.nan,.1),(100.,-1.),(1e308,-.5)]:\n try:p(c,r);passed=False\n except ValueError:passed=True\n rows.append(dict(input=repr((c,r)),passed=passed))\npv,fv=m.present_value,m.future_value\nfor name,fn in [('pv',pv),('fv',fv)]:\n for amount,rate,n in [(100.,.1,2),(121.,.1,2),(100.,-.05,2),(50.,.2,0),(50.,0.,10000),(0.,1e308,10000),(-100.,.05,5),(100.,.001,100)]:\n  expected=0. if amount==0 else float(Fraction(amount)*(1+Fraction(rate))**n if name=='fv' else Fraction(amount)/(1+Fraction(rate))**n)\n  working=0. if amount==0 else float(Fraction(amount)*Fraction(1.+rate)**n if name=='fv' else Fraction(amount)/Fraction(1.+rate)**n)\n  actual=fn(amount,rate,n);rows.append(dict(function=name,amount=amount,rate=rate,periods=n,actual=actual,model_reference=expected,working_base_reference=working,relative_tolerance=5e-13,absolute_tolerance=1e-10,passed=math.isclose(actual,expected,rel_tol=5e-13,abs_tol=1e-10) and math.isclose(actual,working,rel_tol=5e-13,abs_tol=1e-10)))\n for n in [-1,10001,True,1.0]:\n  try:fn(100.,.1,n);passed=False\n  except ValueError:passed=True\n  rows.append(dict(function=name,invalid_periods=repr(n),passed=passed))\nfor fn,args in [(fv,(1e308,1.,1)),(pv,(1e308,-.5,1))]:\n try:fn(*args);passed=False\n except ValueError:passed=True\n rows.append(dict(case='declared nonfinite intermediate',passed=passed))\nassert m.__all__==['future_value','present_value','present_value_one_period']\nlimit=dict(name='documented rounded-base loss',actual=fv(1.,2**-54,10000),independent_model=float((1+Fraction(2**-54))**10000),status='Documented rounding limitation;notfailed acceptance predicate.')\nassert all(x['passed'] for x in rows)\nprint(json.dumps(dict(documented_range_observations=[limit],module=m.__file__,prefix=sys.prefix,source_path_injection=False,exports=m.__all__,predicates=rows)))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"documented_range_observations\": [{\"name\": \"documented rounded-base loss\", \"actual\": 1.0, \"independent_model\": 1.0000000000005551, \"status\": \"Documented rounding limitation;notfailed acceptance predicate.\"}], \"module\": \"/tmp/book1-scaffold-hdkccqfz/consumer-env/lib/python3.12/site-packages/financial_toolkit/__init__.py\", \"prefix\": \"/tmp/book1-scaffold-hdkccqfz/consumer-env\", \"source_path_injection\": false, \"exports\": [\"future_value\", \"present_value\", \"present_value_one_period\"], \"predicates\": [{\"payment\": 110.0, \"rate\": 0.1, \"actual\": 99.99999999999999, \"expected\": 100.0, \"passed\": true}, {\"payment\": 95.0, \"rate\": -0.05, \"actual\": 100.0, \"expected\": 100.0, \"passed\": true}, {\"payment\": 110.0, \"rate\": 0.0, \"actual\": 110.0, \"expected\": 110.0, \"passed\": true}, {\"payment\": -110.0, \"rate\": 0.1, \"actual\": -99.99999999999999, \"expected\": -100.0, \"passed\": true}, {\"payment\": 100.0, \"rate\": 0.05, \"actual\": 95.23809523809524, \"expected\": 95.23809523809524, \"passed\": true}, {\"payment\": 100.0, \"rate\": 0.1, \"actual\": 90.9090909090909, \"expected\": 90.9090909090909, \"passed\": true}, {\"payment\": 0.0, \"rate\": 0.1, \"actual\": 0.0, \"expected\": 0.0, \"passed\": true}, {\"input\": \"(100, 0.1)\", \"passed\": true}, {\"input\": \"(100.0, True)\", \"passed\": true}, {\"input\": \"(nan, 0.1)\", \"passed\": true}, {\"input\": \"(100.0, -1.0)\", \"passed\": true}, {\"input\": \"(1e+308, -0.5)\", \"passed\": true}, {\"function\": \"pv\", \"amount\": 100.0, \"rate\": 0.1, \"periods\": 2, \"actual\": 82.64462809917354, \"model_reference\": 82.64462809917356, \"working_base_reference\": 82.64462809917354, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": 121.0, \"rate\": 0.1, \"periods\": 2, \"actual\": 99.99999999999999, \"model_reference\": 100.0, \"working_base_reference\": 99.99999999999999, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": 100.0, \"rate\": -0.05, \"periods\": 2, \"actual\": 110.803324099723, \"model_reference\": 110.80332409972299, \"working_base_reference\": 110.803324099723, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": 50.0, \"rate\": 0.2, \"periods\": 0, \"actual\": 50.0, \"model_reference\": 50.0, \"working_base_reference\": 50.0, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": 50.0, \"rate\": 0.0, \"periods\": 10000, \"actual\": 50.0, \"model_reference\": 50.0, \"working_base_reference\": 50.0, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": 0.0, \"rate\": 1e+308, \"periods\": 10000, \"actual\": 0.0, \"model_reference\": 0.0, \"working_base_reference\": 0.0, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": -100.0, \"rate\": 0.05, \"periods\": 5, \"actual\": -78.35261664684589, \"model_reference\": -78.3526166468459, \"working_base_reference\": -78.35261664684589, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"amount\": 100.0, \"rate\": 0.001, \"periods\": 100, \"actual\": 90.48826308977867, \"model_reference\": 90.48826308977762, \"working_base_reference\": 90.48826308977861, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"pv\", \"invalid_periods\": \"-1\", \"passed\": true}, {\"function\": \"pv\", \"invalid_periods\": \"10001\", \"passed\": true}, {\"function\": \"pv\", \"invalid_periods\": \"True\", \"passed\": true}, {\"function\": \"pv\", \"invalid_periods\": \"1.0\", \"passed\": true}, {\"function\": \"fv\", \"amount\": 100.0, \"rate\": 0.1, \"periods\": 2, \"actual\": 121.00000000000003, \"model_reference\": 121.0, \"working_base_reference\": 121.00000000000001, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": 121.0, \"rate\": 0.1, \"periods\": 2, \"actual\": 146.41000000000003, \"model_reference\": 146.41, \"working_base_reference\": 146.41000000000003, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": 100.0, \"rate\": -0.05, \"periods\": 2, \"actual\": 90.25, \"model_reference\": 90.25, \"working_base_reference\": 90.24999999999999, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": 50.0, \"rate\": 0.2, \"periods\": 0, \"actual\": 50.0, \"model_reference\": 50.0, \"working_base_reference\": 50.0, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": 50.0, \"rate\": 0.0, \"periods\": 10000, \"actual\": 50.0, \"model_reference\": 50.0, \"working_base_reference\": 50.0, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": 0.0, \"rate\": 1e+308, \"periods\": 10000, \"actual\": 0.0, \"model_reference\": 0.0, \"working_base_reference\": 0.0, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": -100.0, \"rate\": 0.05, \"periods\": 5, \"actual\": -127.62815625000002, \"model_reference\": -127.62815625, \"working_base_reference\": -127.62815625000003, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"amount\": 100.0, \"rate\": 0.001, \"periods\": 100, \"actual\": 110.51156977207565, \"model_reference\": 110.5115697720768, \"working_base_reference\": 110.51156977207557, \"relative_tolerance\": 5e-13, \"absolute_tolerance\": 1e-10, \"passed\": true}, {\"function\": \"fv\", \"invalid_periods\": \"-1\", \"passed\": true}, {\"function\": \"fv\", \"invalid_periods\": \"10001\", \"passed\": true}, {\"function\": \"fv\", \"invalid_periods\": \"True\", \"passed\": true}, {\"function\": \"fv\", \"invalid_periods\": \"1.0\", \"passed\": true}, {\"case\": \"declared nonfinite intermediate\", \"passed\": true}, {\"case\": \"declared nonfinite intermediate\", \"passed\": true}]}\n",
+      "stderr": ""
+    }
+  ],
+  "artifact": {
+    "filename": "financial_toolkit_educational-0.1.0-py3-none-any.whl",
+    "sha256": "b29c2dd5bbf94513edc21bf8538220f1dcb18a120f2764d2282d5bf36b513a9d",
+    "size": 2580,
+    "members": [
+      {
+        "name": "financial_toolkit/__init__.py",
+        "size": 211
+      },
+      {
+        "name": "financial_toolkit/time_value.py",
+        "size": 1853
+      },
+      {
+        "name": "financial_toolkit_educational-0.1.0.dist-info/METADATA",
+        "size": 702
+      },
+      {
+        "name": "financial_toolkit_educational-0.1.0.dist-info/WHEEL",
+        "size": 91
+      },
+      {
+        "name": "financial_toolkit_educational-0.1.0.dist-info/top_level.txt",
+        "size": 18
+      },
+      {
+        "name": "financial_toolkit_educational-0.1.0.dist-info/RECORD",
+        "size": 558
+      }
+    ]
+  },
+  "wheel_checks": {
+    "documented_range_observations": [
+      {
+        "name": "documented rounded-base loss",
+        "actual": 1.0,
+        "independent_model": 1.0000000000005551,
+        "status": "Documented rounding limitation;notfailed acceptance predicate."
+      }
+    ],
+    "module": "/tmp/book1-scaffold-hdkccqfz/consumer-env/lib/python3.12/site-packages/financial_toolkit/__init__.py",
+    "prefix": "/tmp/book1-scaffold-hdkccqfz/consumer-env",
+    "source_path_injection": false,
+    "exports": [
+      "future_value",
+      "present_value",
+      "present_value_one_period"
+    ],
+    "predicates": [
+      {
+        "payment": 110.0,
+        "rate": 0.1,
+        "actual": 99.99999999999999,
+        "expected": 100.0,
+        "passed": true
+      },
+      {
+        "payment": 95.0,
+        "rate": -0.05,
+        "actual": 100.0,
+        "expected": 100.0,
+        "passed": true
+      },
+      {
+        "payment": 110.0,
+        "rate": 0.0,
+        "actual": 110.0,
+        "expected": 110.0,
+        "passed": true
+      },
+      {
+        "payment": -110.0,
+        "rate": 0.1,
+        "actual": -99.99999999999999,
+        "expected": -100.0,
+        "passed": true
+      },
+      {
+        "payment": 100.0,
+        "rate": 0.05,
+        "actual": 95.23809523809524,
+        "expected": 95.23809523809524,
+        "passed": true
+      },
+      {
+        "payment": 100.0,
+        "rate": 0.1,
+        "actual": 90.9090909090909,
+        "expected": 90.9090909090909,
+        "passed": true
+      },
+      {
+        "payment": 0.0,
+        "rate": 0.1,
+        "actual": 0.0,
+        "expected": 0.0,
+        "passed": true
+      },
+      {
+        "input": "(100, 0.1)",
+        "passed": true
+      },
+      {
+        "input": "(100.0, True)",
+        "passed": true
+      },
+      {
+        "input": "(nan, 0.1)",
+        "passed": true
+      },
+      {
+        "input": "(100.0, -1.0)",
+        "passed": true
+      },
+      {
+        "input": "(1e+308, -0.5)",
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 100.0,
+        "rate": 0.1,
+        "periods": 2,
+        "actual": 82.64462809917354,
+        "model_reference": 82.64462809917356,
+        "working_base_reference": 82.64462809917354,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 121.0,
+        "rate": 0.1,
+        "periods": 2,
+        "actual": 99.99999999999999,
+        "model_reference": 100.0,
+        "working_base_reference": 99.99999999999999,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 100.0,
+        "rate": -0.05,
+        "periods": 2,
+        "actual": 110.803324099723,
+        "model_reference": 110.80332409972299,
+        "working_base_reference": 110.803324099723,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 50.0,
+        "rate": 0.2,
+        "periods": 0,
+        "actual": 50.0,
+        "model_reference": 50.0,
+        "working_base_reference": 50.0,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 50.0,
+        "rate": 0.0,
+        "periods": 10000,
+        "actual": 50.0,
+        "model_reference": 50.0,
+        "working_base_reference": 50.0,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 0.0,
+        "rate": 1e+308,
+        "periods": 10000,
+        "actual": 0.0,
+        "model_reference": 0.0,
+        "working_base_reference": 0.0,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": -100.0,
+        "rate": 0.05,
+        "periods": 5,
+        "actual": -78.35261664684589,
+        "model_reference": -78.3526166468459,
+        "working_base_reference": -78.35261664684589,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "amount": 100.0,
+        "rate": 0.001,
+        "periods": 100,
+        "actual": 90.48826308977867,
+        "model_reference": 90.48826308977762,
+        "working_base_reference": 90.48826308977861,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "invalid_periods": "-1",
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "invalid_periods": "10001",
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "invalid_periods": "True",
+        "passed": true
+      },
+      {
+        "function": "pv",
+        "invalid_periods": "1.0",
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 100.0,
+        "rate": 0.1,
+        "periods": 2,
+        "actual": 121.00000000000003,
+        "model_reference": 121.0,
+        "working_base_reference": 121.00000000000001,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 121.0,
+        "rate": 0.1,
+        "periods": 2,
+        "actual": 146.41000000000003,
+        "model_reference": 146.41,
+        "working_base_reference": 146.41000000000003,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 100.0,
+        "rate": -0.05,
+        "periods": 2,
+        "actual": 90.25,
+        "model_reference": 90.25,
+        "working_base_reference": 90.24999999999999,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 50.0,
+        "rate": 0.2,
+        "periods": 0,
+        "actual": 50.0,
+        "model_reference": 50.0,
+        "working_base_reference": 50.0,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 50.0,
+        "rate": 0.0,
+        "periods": 10000,
+        "actual": 50.0,
+        "model_reference": 50.0,
+        "working_base_reference": 50.0,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 0.0,
+        "rate": 1e+308,
+        "periods": 10000,
+        "actual": 0.0,
+        "model_reference": 0.0,
+        "working_base_reference": 0.0,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": -100.0,
+        "rate": 0.05,
+        "periods": 5,
+        "actual": -127.62815625000002,
+        "model_reference": -127.62815625,
+        "working_base_reference": -127.62815625000003,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "amount": 100.0,
+        "rate": 0.001,
+        "periods": 100,
+        "actual": 110.51156977207565,
+        "model_reference": 110.5115697720768,
+        "working_base_reference": 110.51156977207557,
+        "relative_tolerance": 5e-13,
+        "absolute_tolerance": 1e-10,
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "invalid_periods": "-1",
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "invalid_periods": "10001",
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "invalid_periods": "True",
+        "passed": true
+      },
+      {
+        "function": "fv",
+        "invalid_periods": "1.0",
+        "passed": true
+      },
+      {
+        "case": "declared nonfinite intermediate",
+        "passed": true
+      },
+      {
+        "case": "declared nonfinite intermediate",
+        "passed": true
+      }
+    ]
+  },
+  "existing_unique_methods": 24,
+  "new_method_invocations": 48,
+  "reused_method_invocations": 24,
+  "new_historical_unique_methods": 0,
+  "limits": "Offline build/editable tooling venv exposes preprovisioned system-site packages;consumer venv is clean,isolated -I outside hidden source. Uses declared local compatible backend with no-build-isolation/no-index/no-deps,not default network-isolated resolution. Wheel hash/list retained;generated binary and temporary environments are not committed. Not reproducible-byte guarantee,all-range correctness,other platforms,model/security/release/independent approval."
+}

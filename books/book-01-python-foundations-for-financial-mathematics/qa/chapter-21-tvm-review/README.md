@@ -1,0 +1,11 @@
+# Section21.5 scoped TVM workflow,answers and updated artifact
+
+Baseline da68056d0ed2d80f4aeb8abbf11ea0a760ae8ce3. [Runnableharness](package-review.py),[actualresults](package-results.json),[artifactcomparison](artifact-manifest.json),[40answers](answer-records.json),[12labsteps](lab-step-records.json). Run `python books/book-01-python-foundations-for-financial-mathematics/qa/chapter-21-tvm-review/package-review.py [source_revision]`. It stagesexact21.5module/reexports/example/tests plus21.3metadata/README/retainedtests.
+
+11freshcommands pass:offlinepreprovisionedbuildvenv,editableinstall/example/24-methodsuite,wheelbuild,separatecleanconsumerinstall,outsidehidden-source24-methodsuite/example/provenance/contracts. Buildvenvintentionallyusessystem-sitetools;consumerdoesnot.Pipno-index/no-build-isolation/no-depsadaptationexplicit;no globalpackages/networkdownloads. Wheelmodulemustresideinsideconsumerprefix;noPYTHONPATH,Python-I. Newhashdiffersfrom21.3wheel,evenwithsameillustrativedraftversion;rawbinary/tempvenvsnotcommittedandbyte-reproducibilitynotclaimed.
+
+38wheelpredicates includeretainedone-periodcases,independentFractionclosedPV/FVpowers (model1+r androundedworkingbase separately),periodtypes/caps,zeroidentitiesandintermediateoverflow. Selectedtolerances5e-13relative/1e-10amountabsolutearepredeclared;10000periodcasesareexactzero-rate/zeroamountidentities,notlarge-horizonaccuracycertification. A separate documentedrangeobservationretainsFV(1,2^-54,10000)=1versusmathematicalabout1.000000000000555:roundedbase/sequentiallimitationsarepublished,notanewdefect orfailedacceptancepredicate. No codefenceschanged orfailureinvented.
+
+[Earlier3sourcecommands](../chapter-21-tvm-resume/results.json) reusedbyfiveexactPythonfencedigests. Evidencechain14commands,24existingmethods/72invocations (24source+24editable+24wheel),zero newhistoricalmethods. Helpercaptionmentions12initialwheelchecks;actualJSONrows38govern,with26additionalTVMcases. Predicates,methods,commands,answers,labstepsandrangeobservationremainseparate.
+
+F28/F32/F209,20.11static,F165/F185,R08-10/owner,universalrange/resources,supportedplatform/model/security/release/independentacceptanceopen. Earlier21.3artifactkeepsitsoriginalscope;thisupdatedartifacthasselectedTVMcoverageonly. Chapter21now5scopedworkflows/200localanswers.Next21.6Cash-FlowModule.

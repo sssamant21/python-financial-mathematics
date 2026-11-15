@@ -1,0 +1,62 @@
+{
+  "validation": "V-184 Section9.6 baseline sensitivity reports",
+  "candidate_based_on": "da68056d0ed2d80f4aeb8abbf11ea0a760ae8ce3",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_06.py",
+      "sha": "ea09401b82ea4aeeeb99350d19db7a5358f1b4a1"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_06.py",
+      "sha": "1a25a6920d171fe60f1c9012e0270c4b41584c37"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_06_baseline_reports.py",
+      "sha": "b1d823385a9fed012e16689d2ceda13d5f08e213"
+    }
+  ],
+  "compiled": [
+    "section_9_06.py",
+    "check_section_9_06.py",
+    "check_section_06_baseline_reports.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"single\": {\n    \"value\": 8187.307530779819,\n    \"first\": -40936.53765389909,\n    \"second\": 204682.68826949547,\n    \"duration\": 5.0,\n    \"convexity\": 25.0,\n    \"cash_flow_derivatives\": [\n      0.8187307530779818\n    ],\n    \"value_weights\": [\n      1.0\n    ]\n  },\n  \"single_10bp\": {\n    \"shock\": 0.001,\n    \"exact_change\": -40.83436666567314,\n    \"linear_change\": -40.93653765389909,\n    \"quadratic_change\": -40.83419630976434,\n    \"linear_error\": 0.10217098822595005,\n    \"quadratic_error\": -0.00017035590879999063\n  },\n  \"portfolio\": {\n    \"value\": 1111.5069249405317,\n    \"first\": -2126.934905965831,\n    \"second\": 4157.79086801643,\n    \"duration\": 1.9135597433004092,\n    \"convexity\": 3.740679229901228,\n    \"cash_flow_derivatives\": [\n      0.9607894391523232,\n      0.9231163463866358\n    ],\n    \"value_weights\": [\n      0.08644025669959077,\n      0.9135597433004092\n    ]\n  },\n  \"parallel_50bp\": {\n    \"shock\": 0.005,\n    \"exact_change\": -10.582872958870686,\n    \"linear_change\": -10.634674529829155,\n    \"quadratic_change\": -10.582702143978949,\n    \"linear_error\": 0.051801570958469156,\n    \"quadratic_error\": -0.00017081489173698117\n  },\n  \"spot_curve\": {\n    \"value\": 1111.988522651056,\n    \"spot_derivatives\": [\n      -96.56054162575664,\n      -2030.8559620505987\n    ],\n    \"parallel_first\": -2127.416503676355\n  },\n  \"nonparallel\": {\n    \"exact_change\": 3.9733339125767544,\n    \"linear_change\": 3.9651513824754407,\n    \"linear_error\": 0.008182530101313645\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.6 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_06_baseline_reports.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"source_predicates\": 141, \"passed\": 141, \"failed\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "inventory": {
+    "python_files": 624,
+    "check_test_scripts": 411,
+    "required_blobs": 625
+  },
+  "limits": "Three selected files/three commands,two checker invocations;parallel/spot/other contracts,universal transcendental rounding and independent/platform acceptance open."
+}
