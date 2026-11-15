@@ -1,0 +1,48 @@
+{
+  "original_record": "chapter-09-quadratic-resume-initial.json",
+  "original_replay": "chapter-09-quadratic-resume-replay.json",
+  "dispositions": [
+    {
+      "original_observation": "complete quadratic cancellation",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicate": {
+        "name": "complete polynomial2 order2",
+        "actual": "0.0",
+        "expected": "0.0",
+        "passed": true,
+        "category": "numeric/report contract"
+      }
+    },
+    {
+      "original_observation": "quadratic half-product underflow",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicate": {
+        "name": "complete polynomial3 order2",
+        "actual": "1e-323",
+        "expected": "1e-323",
+        "passed": true,
+        "category": "numeric/report contract"
+      }
+    },
+    {
+      "original_observation": "single-flow complete exponential rescue",
+      "disposition": "OPEN",
+      "limits": "single_cash_flow unchanged;whole discounted report review next"
+    },
+    {
+      "original_observation": "boolean order selector acceptance",
+      "disposition": "RESOLVED (scoped selector policy adopted)",
+      "corrected_predicate": {
+        "name": "selector type True",
+        "actual": "'TypeError'",
+        "expected": "'TypeError'",
+        "passed": true,
+        "category": "new explicit strict built-in integer selector policy"
+      }
+    }
+  ],
+  "COV_54": "PARTIAL",
+  "selected_categories_partial": 36,
+  "categories_closed": 0,
+  "limits": "Original design observation not reclassified as prior analytic error;historical initial/replay records unchanged;discounted reports and independent acceptance pending"
+}

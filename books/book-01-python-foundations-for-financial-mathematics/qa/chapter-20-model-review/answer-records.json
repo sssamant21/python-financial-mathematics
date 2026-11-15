@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Software:** Does a correct implementation guarantee a suitable model? **Answer:** No; assumptions and intended use also require assessment.",
+    "review": "Software/source arithmetic checked;intended-use suitability independent.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Model:** What is model validation? **Answer:** Assessment of conceptual soundness, implementation and outcomes for intended use.",
+    "review": "Framework conceptual review only;no real model accepted.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Testing:** Does a passing unit test prove a financial assumption? **Answer:** No.",
+    "review": "Twelve source methods pass;no financial assumption proved.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Discounting:** What is 100 due in one period at 10%? **Answer:** 100/1.1, approximately 90.9091.",
+    "review": "Independent represented-rate Fraction100/(1+.1);printed100/1.1\u224890.9091.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Zero rate:** Present value of 100 at zero rate? **Answer:** 100.",
+    "review": "Zero-rate identity100 checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Negative rate:** Present value of 95 at \u22125% for one period? **Answer:** 100.",
+    "review": "Negative-rate95/(1\u2212.05)=100 checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Rate boundary:** Is \u22121 valid for the periodic formula? **Answer:** No; its denominator is zero.",
+    "review": "Rate\u22121 rejects;denominator domain specified.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Rate unit:** Is 5 equal to 5% in decimal units? **Answer:** No; 5% is 0.05.",
+    "review": "Separate exact-unit scenario compares.05 with5;type alone does not define unit.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Tenor:** What happens to present value when a positive rate rises for a positive future cash flow? **Answer:** It decreases, holding other inputs fixed.",
+    "review": "Positive-payment monotonic direction checked;holds with other assumptions fixed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Scale:** Double a fixed cash flow: what happens to present value? **Answer:** It doubles in exact arithmetic.",
+    "review": "Scaling invariant checked,independent arithmetic references separate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Timing:** Can a correct formula misprice a dated payment? **Answer:** Yes, if its periods do not match the payment date convention.",
+    "review": "Dated-payment convention mismatch conceptual;no dated instrument priced.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Liquidity:** Does a risk-free discount example model liquidity risk? **Answer:** No.",
+    "review": "No liquidity model implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Credit:** Does the example model default? **Answer:** No; promised payment is assumed certain.",
+    "review": "Hypothetical default/recovery comparison supplemental only;no calibrated credit model.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Currency:** Does the implementation convert currency? **Answer:** No.",
+    "review": "No currency conversion.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Data:** Why examine source and timestamp? **Answer:** Inputs must be relevant and available at the valuation time.",
+    "review": "Source/time/data relevance conceptual;no market feed reviewed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Historical data:** Can revised data cause look-ahead? **Answer:** Yes, if unavailable revisions are used historically.",
+    "review": "Revision/look-ahead risk conceptual;no historical calibration accepted.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Benchmark:** Why independently derive a benchmark? **Answer:** It reduces the risk of repeating the same implementation error.",
+    "review": "Independent rational expression differs from source float denominator evaluation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Alternative model:** Why compare against one? **Answer:** It can reveal sensitivity to assumptions or implementation choices.",
+    "review": "Richer hypothetical model is separate supplemental calculation,not acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Backtesting:** Do good past results ensure future accuracy? **Answer:** No.",
+    "review": "No backtest/outcome analysis performed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Outcomes:** What should a validator investigate when realized outcomes differ? **Answer:** Data, assumptions, implementation and changing conditions.",
+    "review": "Outcome discrepancy investigation framework conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Stress:** What is a stress scenario? **Answer:** A specified severe or unusual input scenario used to explore behavior.",
+    "review": "Finite overflow check executed;economically appropriate stress scope remains model review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Sensitivity:** What does sensitivity analysis vary? **Answer:** One or more assumptions or inputs to examine their effect.",
+    "review": "Direct source main prints0/.05/.10 sensitivities;direction checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Range:** Does an input accepted by code necessarily fit model scope? **Answer:** No.",
+    "review": "Accepted inputs do not define reviewed intended use.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Independence:** Why have an independent reviewer? **Answer:** To challenge assumptions and reduce conflicts of interest.",
+    "review": "Independent reviewer expertise/conflict assessment remains pending.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Documentation:** What should a model inventory record? **Answer:** Purpose, owner, version, use, limitations and validation status.",
+    "review": "Inventory/owner/use/status governance conceptual;no authorized owner/approval invented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Governance:** What should a validation finding contain? **Answer:** Evidence, impact, severity, owner and remediation or acceptance.",
+    "review": "Finding requirements conceptual;source baseline has no new defect.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Change:** Can a data-source change require renewed review? **Answer:** Yes; its materiality determines review scope.",
+    "review": "Material-change review policy conceptual,no organization policy decision.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Monitoring:** Why monitor after approval? **Answer:** Inputs, usage and market conditions can change.",
+    "review": "Postapproval monitoring conceptual;no approval claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Tolerance:** Why specify units? **Answer:** A price tolerance differs from a rate tolerance.",
+    "review": "Monetary tolerances explicit for selected software predicates;not rate-error acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Zero benchmark:** Why use an absolute tolerance? **Answer:** Relative tolerance alone cannot accommodate nonzero error against zero.",
+    "review": "Absolute-zero tolerance principle reviewed;zero-payment source identity tested.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Overflow:** Can finite inputs still overflow? **Answer:** Yes.",
+    "review": "Actual finite1e308/near-boundary discount raisesValueError.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Underflow:** Can a discount factor underflow? **Answer:** Yes, at extreme values.",
+    "review": "Underflow/rounding possible;not exhaustive financial range acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Precision:** Does rounding a display prove computational accuracy? **Answer:** No.",
+    "review": "Displayed6decimals not an accuracy guarantee.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Regression:** What does a regression test compare? **Answer:** Current behavior against an established expected behavior.",
+    "review": "Baseline/replay/current source predicates pass;future regression evidence pinned.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Reproducibility:** Can a repeatable result still be wrong? **Answer:** Yes.",
+    "review": "Repeatable output not model correctness;conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Boundary:** What does rejecting NaN address? **Answer:** Input integrity, not financial suitability.",
+    "review": "Nonfinite input rejects;financial suitability remains unaccepted.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Code coverage:** Does complete coverage validate all possible inputs? **Answer:** No.",
+    "review": "No complete input or branch coverage claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Exceptions:** Should a failed calculation silently return zero? **Answer:** No; it should communicate failure.",
+    "review": "Overflow communicates failure rather than default zero.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Approval:** Do these reference tests confer approval? **Answer:** No.",
+    "review": "No authority/independent model/code approval conferred.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next step:** When is comprehensive Book 1 QA scheduled? **Answer:** After manuscript completion.",
+    "review": "Publication-era scheduling answer not evidence of completion;current trackers carry ongoing scoped QA and remaining acceptance.",
+    "status": "reviewed scoped"
+  }
+]

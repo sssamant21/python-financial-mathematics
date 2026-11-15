@@ -1,5 +1,6 @@
 """Section 9.4: second-order Taylor approximation and rate convexity."""
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -14,9 +15,19 @@ def finite(value, name):
 
 def taylor_change(first, second, shock, order=2):
     d1, d2, h = finite(first,"first"), finite(second,"second"), finite(shock,"shock")
+    if type(order) is not int:
+        raise TypeError("order must be a built-in integer")
     if order not in (1,2):
         raise ValueError("order must be 1 or 2")
-    return d1*h+(0.5*d2*h*h if order==2 else 0.0)
+    A,B,H = map(Fraction,(d1,d2,h))
+    exact = A*H+(B*H*H/2 if order==2 else 0)
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("Taylor change outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("Taylor change outside finite float range")
+    return result
 
 def single_cash_flow(cash, years, rate):
     c, t, r = finite(cash,"cash"), finite(years,"years"), finite(rate,"rate")
