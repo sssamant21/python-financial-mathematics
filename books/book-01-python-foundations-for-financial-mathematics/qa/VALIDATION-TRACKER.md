@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.1 scope:** [Architecture](chapter-21-architecture-review/README.md):oneworkflow/40answers/12labsteps,36sourcepredicates;3source-identicalcommands reused and2freshcommands pass. No codefix invented;owner/reviewer/install/platform and othergaps remain. Next21.2.
+
 - **Latest scoped batch —20.16:** [Exercises](chapter-20-exercises-review/README.md):40answers/12lab steps,28source predicates/eightcommands/three supplemental demonstrations pass;24existing methods/72invocations,zero new historical methods. Source unchanged. Chapter20 broader acceptance remains open;next21.1 formal review,with[resume observations](chapter-21-architecture-resume/README.md). F28/F32 and other gaps retained.
 
 - **Section18.12 scoped review:** [Risk simulation](chapter-18-risk-review/README.md): one workflow,40 local answers,twelve steps,three exact-source commands,58 supplemental predicates and twelve existing methods passed;fourteen baseline failures retained (F184), including two explicit decimal-boundary/reportability policies. Independent empirical-quantile integration separated from source execution; F185 negative-terminal conversion integration newly OPEN. No new historical unique methods. Next: Section18.13; F28/F32,F165/F185 and comprehensive/independent acceptance remain open.
@@ -570,3 +572,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 [Architecture observations](chapter-21-architecture-resume/README.md):two exact-source observations and actual identical replay retain documented label-only and subnormal-underflow behavior. Not new failed predicates or formal workflow completion. Resume21.1 full contract/reference suite,40answers and12lab-step review next.
 
 Section21.1 partial runtime checkpoint:[three documented commands/two compiled fences](chapter-21-architecture-resume/suite-results.json) passed;12existing methods/12invocations,zero new historical methods. Forty answers/twelve lab-step and broader architecture review remain pending;reuse exact source/fence hashes to avoid duplicate runtime work. Not an additional completed formal workflow.
+
+
+## Section21.1 scoped architecture workflow and answers
+
+[Architecture evidence](chapter-21-architecture-review/README.md):one scopedworkflow/40answer records/12lab reviews;36source predicates pass. Three priorcommands reused by matching both exactfence digests;twofreshcommands pass. Evidencechain12existingmethods/24invocations,fivecommands/twocompiledfences,zero newhistoricalmethods. Baseline/replay pass;fencesunchanged,no defectinvented. Futuremodule integration/reviewer proposal remainsconceptual with UNASSIGNEDowner;installedartifact/model/platform/release/independent acceptance pending. F28/F32/F209,20.11static,F165/F185 and othergaps retained. Chapter21 nowone scopedworkflow/40localanswers;next21.2 Requirements and Assumptions.

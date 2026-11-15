@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Purpose:** What is the capstone? **Answer:** An educational integrated financial mathematics toolkit built incrementally.",
+    "review": "Educational integration purpose;not real-world suitability acceptance.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Status:** Are all listed modules implemented here? **Answer:** No; only the one-period architectural slice is provided.",
+    "review": "Source provides only two executable fences/one-period slice;proposed toolkit modules not installed or validated.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Layers:** What precedes calculation? **Answer:** Validation and any documented normalization.",
+    "review": "Actual evaluate validates before public calculation;input boundary exercised.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Presentation:** Should a plotting layer define financial formulas? **Answer:** No; use calculation results and clearly label transformations.",
+    "review": "Design separation only;no plotting implementation executed.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Dependency:** May a bond module use a cash-flow function? **Answer:** Yes, through a documented contract.",
+    "review": "Documented dependency proposal;no bond/cash-flow integration claimed.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Direction:** Should cash-flow valuation require a plotting package? **Answer:** No; keep presentation outside the calculation core.",
+    "review": "No plotting dependency in source;architecture policy not full-toolkit graph verification.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Known value:** PV of 110 in one period at 10%? **Answer:** 100 in exact arithmetic.",
+    "review": "110/(11/10)=100 independent monetary benchmark and source checks.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Zero rate:** PV of 110 at zero? **Answer:** 110.",
+    "review": "At0 denominator1 returns110 source checked.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Negative rate:** PV of 95 at \u22125%? **Answer:** 100 in exact arithmetic.",
+    "review": "95/(19/20)=100 independent benchmark and source checks.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Boundary:** Why reject rate \u22121? **Answer:** Its denominator is zero.",
+    "review": "Rate-1 rejected at evaluate and direct calculation boundaries.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Rate units:** Is 10.0 equivalent to 10%? **Answer:** No; 10% is 0.10.",
+    "review": "10.0 produces100/11 for payment100,not100/(1+.1);both source cases checked.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Period:** Can an annual rate be applied unconverted to a monthly payment? **Answer:** Not under this contract; periods must match.",
+    "review": "Financial period alignment is caller contract,not runtime metadata validation.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Signs:** Can a payment be negative? **Answer:** Yes; document the perspective.",
+    "review": "Negative payment allowed;source negative100 and110 examples checked.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Currency:** Does `USD` convert the amount? **Answer:** No; it is a label only.",
+    "review": "Label preserved exactly;no FX operation or conversion implemented.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Code:** Does the example verify ISO currency codes? **Answer:** No; it checks only a nonblank string.",
+    "review": "Nonblank non-ISO XYZ label accepted as documented;blank/nonstring rejected.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Rounding:** Is the internal result rounded to cents? **Answer:** No; display formatting is separate.",
+    "review": "Amount unrounded float;reused main display two decimals is presentation,not currency rounding policy.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Overflow:** Can finite inputs create infinity? **Answer:** Yes; the slice rejects a nonfinite result.",
+    "review": "1e308 at-.5 raisesValueError through evaluate;documented range limit retained.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Underflow:** Does a finite result guarantee accuracy? **Answer:** No; underflow and rounding can occur.",
+    "review": "Half-smallest-subnormal source result0 versus nonzero rational expectation documented;no defect invented.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Type:** Is an integer payment accepted by the slice? **Answer:** No; it requires a built-in float.",
+    "review": "Integer payment rejected;strict built-in float contract checked.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Boolean:** Is `True` a valid rate? **Answer:** No, despite Boolean being an integer subtype in Python.",
+    "review": "Boolean payment/rate rejected;optimized suite preserves explicit validation.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Result:** Why keep the rate alongside the amount? **Answer:** To make the result interpretable and support traceability.",
+    "review": "Result metadata checked against exact input/convention/model tuple.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Provenance:** Does an in-memory result constitute an audit trail? **Answer:** No; durable, controlled evidence needs additional design.",
+    "review": "Conceptual distinction:in-memory result lacks persistence/access/change controls;not audit acceptance.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Immutability:** What does a frozen dataclass prevent? **Answer:** Normal reassignment of its fields.",
+    "review": "Normal reassignment on both frozen request and result raisesFrozenInstanceError;not tamper-proof persistence.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Error:** Why raise an exception for invalid input? **Answer:** To distinguish failure from a valid numerical result.",
+    "review": "ValueError distinguished from validzero;exceptions reach caller/testboundary.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Tolerance:** Why give a tolerance units? **Answer:** An amount tolerance differs from a rate tolerance.",
+    "review": "Monetary tolerance units specified;no rate/business materiality threshold inferred.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Benchmark:** Why independently derive 110/1.1? **Answer:** To reduce the risk of reproducing a code defect in the expected value.",
+    "review": "Independent rational arithmetic avoids code-generated expected values;external reviewer remains pending.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Monotonicity:** Does positive-payment PV fall as the rate rises? **Answer:** Yes, for this one-period model above \u22121.",
+    "review": "Positive payment decreasing PV direction source checked.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Mixed signs:** Must a mixed-sign cash-flow NPV always fall as rate rises? **Answer:** No.",
+    "review": "Negative payment reverses direction;generic mixed NPV not implemented by slice.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Model scope:** Does the slice model default? **Answer:** No.",
+    "review": "Default/recovery not in source;model exclusion reviewed conceptually.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Suitability:** Does passing a software test prove the model fits a risky instrument? **Answer:** No; assumptions require independent review.",
+    "review": "No independent risky-instrument suitability acceptance.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Data:** Why record availability time? **Answer:** To avoid using information before it was available.",
+    "review": "Availability-time/look-ahead policy proposed;no data store/integration verified.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Simulation:** Is the seed alone always sufficient for reproduction? **Answer:** No; record generator, version, environment and configuration too.",
+    "review": "Random generator/version/environment requirements conceptual;no simulation in slice.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Portfolio:** Why align identifiers and weights? **Answer:** Misalignment can associate exposures with the wrong assets.",
+    "review": "Identifier/weight alignment concept only;portfolio module not implemented here.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Statistics:** Why specify degrees of freedom? **Answer:** It affects estimators such as sample variance.",
+    "review": "Degrees-of-freedom concept only;no statistic module acceptance.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Logging:** Should sensitive cash flows be logged by default? **Answer:** No; minimize and protect sensitive information.",
+    "review": "No source logging behavior added;quietimport/rootstatechecked;security/retention policy remains external.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Integration:** What should an integration test exercise? **Answer:** The interaction of components across their documented boundaries.",
+    "review": "Actual request/validation/calculation/result integration checked for source slice;future-module integration proposed separately.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Installation:** Does running from a source folder verify an installed package? **Answer:** No.",
+    "review": "Temporary source-root execution is not installed-artifact validation.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Release:** Is this slice production certified? **Answer:** No; it is a draft educational example.",
+    "review": "No release/canonical/production certification;educational draft remains.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** What belongs in a test record? **Answer:** Revision, commands, versions, environment and actual results.",
+    "review": "Actual/reused commands,sourcehashes,versions/platform/outputretained;no broaderplatform guarantee.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows architecture in the locked TOC? **Answer:** 21.2 \u2014 Requirements and Assumptions.",
+    "review": "Navigation verified chapter-21/21.02-requirements-and-assumptions.md exists;next formal review.",
+    "status": "assistant scoped;external acceptance pending"
+  }
+]

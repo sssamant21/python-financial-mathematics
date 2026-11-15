@@ -107,15 +107,29 @@ def cash_flow_portfolio(cash_flows, rate):
                 "convexity":_single_report(second/v)}
 
 def single_shock(cash, years, rate, shock):
+    """Complete six-field report,requiring an eligible baseline single report.
+
+    Errors are latent exact changes minus latent Taylor changes,then rounded.
+    No per-field intermediate float rounding is used for these reports.
+    """
     h = finite(shock,"shock")
-    base = single_cash_flow(cash,years,rate)
-    v, d1, d2 = base["value"], base["first"], base["second"]
-    exact = v*math.expm1(-finite(years,"years")*h)
-    linear = taylor_change(d1,d2,h,1)
-    quadratic = taylor_change(d1,d2,h,2)
-    return {"shock":h,"exact_change":exact,"linear_change":linear,
-            "quadratic_change":quadratic,"linear_error":exact-linear,
-            "quadratic_error":exact-quadratic}
+    single_cash_flow(cash,years,rate)  # retained explicit baseline prerequisite
+    C,T,R,H = map(Fraction,(float(cash),float(years),float(rate),h))
+    with localcontext(Context(prec=1300)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        baseline = dec(C)*dec(-T*R).exp()
+        shifted_exponent = -T*(R+H)
+        if shifted_exponent > 10000:
+            raise ValueError("shock report outside finite float range")
+        endpoint = Decimal(0) if shifted_exponent < -10000 else dec(C)*dec(shifted_exponent).exp()
+        exact = endpoint-baseline
+        linear = baseline*dec(-T*H)
+        quadratic = baseline*dec(-T*H+T*T*H*H/2)
+        return {"shock":h,"exact_change":_single_report(exact),
+                "linear_change":_single_report(linear),
+                "quadratic_change":_single_report(quadratic),
+                "linear_error":_single_report(exact-linear),
+                "quadratic_error":_single_report(exact-quadratic)}
 
 def portfolio_shock(cash_flows, rate, shock):
     h, r = finite(shock,"shock"), finite(rate,"rate")

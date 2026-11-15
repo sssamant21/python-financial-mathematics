@@ -1,0 +1,7 @@
+from pathlib import Path
+import subprocess,sys,tempfile,json,hashlib,platform
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];pin='eb336b137d85b7920ebf1da6cf68db4f398a59a6';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';v=b/'validation';c=b/'chapter-09/code';p=c/'section_9_04.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+str(p.relative_to(r))]) if mode.startswith('baseline') else p.read_bytes()
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/p.name).write_bytes(raw);(t/'check_section_04_single_shocks.py').write_bytes((c/'check_section_04_single_shocks.py').read_bytes());z=subprocess.run([sys.executable,'check_section_04_single_shocks.py','predicates.json'],cwd=t,capture_output=True,text=True);records=json.loads((t/'predicates.json').read_text())
+d=dict(mode=mode,source_revision=pin if mode.startswith('baseline') else None,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),python=platform.python_version(),returncode=z.returncode,stdout=z.stdout,stderr=z.stderr,records=records,limits='Single shock reports only;existing eligible single baseline prerequisite retained explicitly. Portfolio shock and broader resource/platform/independent acceptance open.')
+(v/('chapter-09-single-shock-'+mode+'-run.json')).write_text(json.dumps(d,indent=2)+'\n');print(mode,z.returncode,records['passed'],records['failed'])
