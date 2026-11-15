@@ -228,3 +228,5 @@ Project 37 bid/ask extension: run `python -m unittest -v test_surface.py test_qu
 Project 37 joint bid/ask feasibility extension: `37-static-option-arbitrage/joint_feasibility.py` checks simultaneous same-expiry monotonicity, discounted vertical-spread and convexity inequalities for 3–5 synthetic quotes using bounded Fourier–Motzkin elimination. Run `python -m unittest -v test_joint_feasibility.py` from Project 37. Authored tests and hosted exact-source CI remain unverified; this is not complete option-surface certification.
 
 Project 37 boundary/scale diagnostics: run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py` inside `37-static-option-arbitrage/`. The synthetic tests are configured in hosted CI; their new exact-revision outcome remains unverified.
+
+Project 37 scale-aware tolerance follow-up: the joint solver now normalizes strikes and quote prices to a common unit before elimination. Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py` in `37-static-option-arbitrage/`. New exact-source CI and independent numerical review remain pending.
