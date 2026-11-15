@@ -37,3 +37,7 @@ python geometric_control.py --pairs 5000 --observations 12 --seed 2026
 ```
 
 The analytical expression is a same-model benchmark, **not** independently certified market pricing. The fixed-coefficient estimator can be negative in extreme finite-sample cases; do not interpret it as an arbitrage quote. Local standalone tests (5/5), compilation, and CLI smoke passed on the authored source; exact published-source hosted CI and independent review must be checked separately.
+
+## Limiting-case and numerical stress regression checks
+
+`test_geometric_control.py` additionally tests the one-fixing Black–Scholes identity against a separately written vanilla-call expression, the deep-in-the-money discounted geometric-forward limit, a seeded high-volatility (150% annualized) scenario within the simulator's documented bounds, and exponent/bool-input rejection. These are **synthetic same-model checks**, not an independent market benchmark. Run `python -m unittest -v test_geometric_control.py` and `python -m compileall -q geometric_control.py test_geometric_control.py`. The high-volatility fixture tests finite output and repeatability, **not** guaranteed variance reduction or estimator accuracy. Exact-source hosted CI for these newly added assertions is pending verification.
