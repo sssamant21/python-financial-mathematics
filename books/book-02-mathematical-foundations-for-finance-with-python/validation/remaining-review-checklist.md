@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388` (V-187)
-**Latest scoped source:** V-186 at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`;[four-filesourcemanifest](chapter-09-parallel-report-publication-verification.json).
+**Full-runtime candidate source revision:** `e0c17a68fc28195b95f4f6381166adcb405b8353` (V-190)
+**Latest scoped source:** V-189 at `e0c17a68fc28195b95f4f6381166adcb405b8353`; [six-source manifest](chapter-09-spot-shock-publication-r14.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-186 parallel report scope and V-187 full runtime pass;spot numerical/prerequisite and independent/release approval open.
+**Disposition:** V-189 spot-shock scoped pass and V-190 full runtime pass; Section 9.7 contracts and independent/platform/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1426,3 +1426,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-188 checkpoint — Section 9.6 spot-curve complete report
 
 [Spot-curve evidence](chapter-09-spot-curve-followup-r13.md): 73 corrected source predicates pass; 60 initial passes / 13 failed fields and actual identical replay retained. Five numerical fields and eight report-range/exception fields, not 13 unique defects. Independent 1800/2400-digit references cover complete value, individual spot derivatives, collective parallel-first, collection/input/context contracts. Only the spot-curve body changed; baseline/parallel/spot-shock text unchanged. Five files compiled and five commands/four checker invocations passed. Fresh inventory is 626 Python files / 413 scripts, not full execution; V-187 remains the latest full-book pass at its older pin. Next: spot-shock changes/errors/prerequisites, then full refresh for accumulated changes. Two spot-curve diagnostics resolved only in explicit scope; historical evidence retained. All 37 selected COV categories remain partial, none closed. Resource, supported-platform, model, release, canonical and independent acceptance remain open; Book 1 tracked separately.
+
+
+## V-189 checkpoint — Section 9.6 spot-shock complete reports
+
+[Spot-shock evidence](chapter-09-spot-shock-followup-r14.md): all 74 corrected predicates pass; 64 initial passes /10 failures and actual identical replay retained. Nine numerical fields plus one selected cross-API property, not ten unique defects. Independent 1800/2400-digit complete changes/latent-error oracles, inputs/priority/collection/context/range and retained spot-curve baseline eligibility. Only spot-shock body changed; other functions unchanged. Six files compiled and six commands/five checkers passed. Fresh 627/414/628 inventory is not full execution; accumulated pinned refresh next. Then Section 9.7 substantive contracts, with separately checkpointed diagnostics. All 37 selected COV categories remain partial, none closed. Resources, independent review, supported-platform/model/release/canonical acceptance remain open; Book 1 tracked separately.
+
+
+## V-190 checkpoint — Full pinned candidate Linux refresh
+
+[V-190 runtime](runtime-refresh-2026-11-15-r14.md) at `e0c17a68fc28195b95f4f6381166adcb405b8353`: 627/627 Python files compiled, 414/414 scripts passed, 628/628 required blobs verified before/after. Includes spot-curve and spot-shock corrections with 73 and 74 scoped predicates, retained initial failures/replays and explicit baseline eligibility. Three fresh Section 9.7 diagnostics remain OPEN; full execution does not settle unasserted contracts. Next: Section 9.7 payoff/cap-floor, one-sided/difference and scenario numerical/report/prerequisite contracts. All 37 selected COV categories remain partial, none closed. Independent mathematical/editorial/model/platform/release/canonical acceptance remains pending. Book 1 retains separate trackers.

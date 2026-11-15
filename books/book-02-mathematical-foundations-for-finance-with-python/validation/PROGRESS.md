@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-188 spot-curve scoped pass (73 predicates); latest full Linux pass V-187 covers its older pin (625/412/626). Spot-shock contracts and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-189 spot-shock scoped pass and V-190 full pinned Linux pass (627/414/628). Section 9.7 contracts and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 625/625 at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`. [V-187](runtime-refresh-2026-11-15-r12.md). |
-| Automated script execution | Full candidate Linux pass | 412/412 at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`;626 required blobs verified before/after. [V-187](runtime-refresh-2026-11-15-r12.md). |
+| Python compilation | Full candidate Linux pass | 627/627 at `e0c17a68fc28195b95f4f6381166adcb405b8353`. [V-190](runtime-refresh-2026-11-15-r14.md). |
+| Automated script execution | Full candidate Linux pass | 414/414 at `e0c17a68fc28195b95f4f6381166adcb405b8353`; 628 required blobs verified before/after. [V-190](runtime-refresh-2026-11-15-r14.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1552,3 +1552,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-188 checkpoint — Section 9.6 spot-curve complete report
 
 [Spot-curve evidence](chapter-09-spot-curve-followup-r13.md): 73 corrected source predicates pass; 60 initial passes / 13 failed fields and actual identical replay retained. Five numerical fields and eight report-range/exception fields, not 13 unique defects. Independent 1800/2400-digit references cover complete value, individual spot derivatives, collective parallel-first, collection/input/context contracts. Only the spot-curve body changed; baseline/parallel/spot-shock text unchanged. Five files compiled and five commands/four checker invocations passed. Fresh inventory is 626 Python files / 413 scripts, not full execution; V-187 remains the latest full-book pass at its older pin. Next: spot-shock changes/errors/prerequisites, then full refresh for accumulated changes. Two spot-curve diagnostics resolved only in explicit scope; historical evidence retained. All 37 selected COV categories remain partial, none closed. Resource, supported-platform, model, release, canonical and independent acceptance remain open; Book 1 tracked separately.
+
+
+## V-189 checkpoint — Section 9.6 spot-shock complete reports
+
+[Spot-shock evidence](chapter-09-spot-shock-followup-r14.md): all 74 corrected predicates pass; 64 initial passes /10 failures and actual identical replay retained. Nine numerical fields plus one selected cross-API property, not ten unique defects. Independent 1800/2400-digit complete changes/latent-error oracles, inputs/priority/collection/context/range and retained spot-curve baseline eligibility. Only spot-shock body changed; other functions unchanged. Six files compiled and six commands/five checkers passed. Fresh 627/414/628 inventory is not full execution; accumulated pinned refresh next. Then Section 9.7 substantive contracts, with separately checkpointed diagnostics. All 37 selected COV categories remain partial, none closed. Resources, independent review, supported-platform/model/release/canonical acceptance remain open; Book 1 tracked separately.
+
+
+## V-190 checkpoint — Full pinned candidate Linux refresh
+
+[V-190 runtime](runtime-refresh-2026-11-15-r14.md) at `e0c17a68fc28195b95f4f6381166adcb405b8353`: 627/627 Python files compiled, 414/414 scripts passed, 628/628 required blobs verified before/after. Includes spot-curve and spot-shock corrections with 73 and 74 scoped predicates, retained initial failures/replays and explicit baseline eligibility. Three fresh Section 9.7 diagnostics remain OPEN; full execution does not settle unasserted contracts. Next: Section 9.7 payoff/cap-floor, one-sided/difference and scenario numerical/report/prerequisite contracts. All 37 selected COV categories remain partial, none closed. Independent mathematical/editorial/model/platform/release/canonical acceptance remains pending. Book 1 retains separate trackers.

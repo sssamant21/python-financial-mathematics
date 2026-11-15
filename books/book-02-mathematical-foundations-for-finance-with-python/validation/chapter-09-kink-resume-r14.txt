@@ -1,0 +1,17 @@
+"""Section 9.7 source-bound diagnostics, not passing contract predicates.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,subprocess,tempfile,importlib,json,hashlib
+r=Path(sys.argv[1]).resolve();pin='67d79ea00def267fa318bfc465f70461d823b9a5';p='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py';raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_07.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_07')
+ def call(fn):
+  try:return dict(returned=repr(fn()))
+  except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+ with localcontext(Context(prec=2400)):
+  complete=float(Decimal.from_float(1e308)*Decimal(-1000).exp())
+ rows=[dict(case='cap payment true output overflow',actual=call(lambda:m.capped_floored_payment(1e308,1e308,0.,1e308)),independent_final='about 1e616, outside finite float range',status='OPEN range/report policy; not a finite-result numerical rescue'),dict(case='centered difference denominator overflow',actual=call(lambda:m.difference_report(lambda x:x,0.,1e308)),independent_left=1.,independent_right=1.,independent_centered=1.,status='OPEN numerical: finite callback values, centered result zero instead of one'),dict(case='scenario discount underflow before payoff multiplication',actual=call(lambda:m.call_scenario(1e308,1.,0.,1.,1000.)),independent_baseline_and_shocked_value=complete,status='OPEN numerical: whole finite discounted payoff lost')]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Three diagnostics only. Full payoff/kink/input/prerequisite/resource contracts next. Overflow range policy is distinct from numerical rescue. Not passing spot-shock predicates or independent approval.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('Three Section9.7 diagnostics retained')

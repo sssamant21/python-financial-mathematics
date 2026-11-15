@@ -1,0 +1,33 @@
+{
+  "source_revision": "67d79ea00def267fa318bfc465f70461d823b9a5",
+  "source_blob": "6d1fa570c8ceb853a99d9664edf01f0e69ad36da",
+  "observations": [
+    {
+      "case": "cap payment true output overflow",
+      "actual": {
+        "returned": "inf"
+      },
+      "independent_final": "about 1e616, outside finite float range",
+      "status": "OPEN range/report policy; not a finite-result numerical rescue"
+    },
+    {
+      "case": "centered difference denominator overflow",
+      "actual": {
+        "returned": "{'left_difference': 1.0, 'right_difference': 1.0, 'centered_difference': nan}"
+      },
+      "independent_left": 1.0,
+      "independent_right": 1.0,
+      "independent_centered": 1.0,
+      "status": "OPEN numerical: finite callback values, centered result zero instead of one"
+    },
+    {
+      "case": "scenario discount underflow before payoff multiplication",
+      "actual": {
+        "returned": "{'baseline_value': 0.0, 'shocked_value': 0.0, 'exact_change': 0.0, 'left_slope': 0.0, 'right_slope': 0.0, 'differentiable': True}"
+      },
+      "independent_baseline_and_shocked_value": 5.075958897549457e-127,
+      "status": "OPEN numerical: whole finite discounted payoff lost"
+    }
+  ],
+  "limits": "Three diagnostics only. Full payoff/kink/input/prerequisite/resource contracts next. Overflow range policy is distinct from numerical rescue. Not passing spot-shock predicates or independent approval."
+}

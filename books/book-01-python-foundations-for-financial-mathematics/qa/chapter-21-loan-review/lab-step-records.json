@@ -1,0 +1,74 @@
+[
+  {
+    "step": 1,
+    "source_record": "Create the Section 21.3 teaching scaffold and apply Sections 21.5\u201321.6.",
+    "review": "Prerequisites staged from exact 21.3 metadata/tests plus 21.5 TVM and 21.6 cashflows; package manifest retained.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 2,
+    "source_record": "Add `loans.py` and update public exports as shown.",
+    "review": "Exact loan implementation and five public exports staged; clean wheel exports verified.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 3,
+    "source_record": "Save the reference tests in the `tests/` directory.",
+    "review": "Twelve loan methods plus retained cashflow/TVM/scaffold suites: 48 existing methods; no new historical methods.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 4,
+    "source_record": "Define principal, currency, payment timing and the effective rate period.",
+    "review": "Model review: positive principal, same units, end-of-period and effective matching rate period; no currency/frequency metadata enforcement.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 5,
+    "source_record": "Derive the 1,200 at zero rate over 12 periods benchmark.",
+    "review": "Independent rational sum benchmark 1200/12=100; source and installed checks.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 6,
+    "source_record": "Derive the one-period 1,000 at 10% benchmark.",
+    "review": "Independent one-payment equation 1000*(1+.1)=1100; represented-rate oracle used.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 7,
+    "source_record": "Independently calculate the two-period benchmark and compare the formula.",
+    "review": "Independent individual-payment Fraction sum, avoiding source log1p/expm1; nominal value12100/21 and represented oracle separated.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 8,
+    "source_record": "Express the borrower cash flows with time-zero proceeds and negative payments.",
+    "review": "Actual installed example and selected 2/1000-payment NPV properties; integration is not independent benchmark.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 9,
+    "source_record": "Identify why the 1,200-period loan limit and 1,000-payment cash-flow integration limit differ.",
+    "review": "1000-payment schedule accepted; 1100 loan valid but schedule cap rejects; no truncation.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 10,
+    "source_record": "Describe a proposed installment rounding and final-payment policy without claiming it is implemented.",
+    "review": "Conceptual proposal: round contractual installments to cents, retain exact/defined internal balance and recompute final payoff; requires owner/model approval and is not implemented.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 11,
+    "source_record": "During deferred QA, execute the reference checks and retain actual output, revision and environment.",
+    "review": "Three earlier source commands reused by all nine unchanged Python fence hashes; eleven new package commands with actual outputs/revision/environment; source and wheel evidence separate.",
+    "status": "Scoped technical review; external acceptance pending"
+  },
+  {
+    "step": 12,
+    "source_record": "Record the model exclusions, numerical findings and decision or outstanding review for a specific use.",
+    "review": "Exclusions/limits and owner/independent/platform/model/release decision remain open; no fictitious acceptance.",
+    "status": "Scoped technical review; external acceptance pending"
+  }
+]

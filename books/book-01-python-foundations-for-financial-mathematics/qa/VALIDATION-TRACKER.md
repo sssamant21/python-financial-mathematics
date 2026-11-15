@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest 21.7:** [Loan review](chapter-21-loan-review/README.md): 40 answers /12 lab steps, updated clean-consumer wheel, 129 installed predicates and 48 existing methods. Seven scoped workflows /280 local answers in Chapter 21. Next: 21.8; [partial bond source checkpoint](chapter-21-bond-resume/README.md) passes 60 existing methods. Broader F28/F32 and independent/model/platform/release gaps remain open.
+
 - **Latest21.6:** [Cashflow](chapter-21-cashflow-review/README.md):updatedartifact,62wheelpredicates+3sourceproperties,40answers/12labreviews;documentedrangelimitsretained.Next21.7;broadergapsopen.
 
 - **Latest21.5:** [TVM](chapter-21-tvm-review/README.md):updatedartifact,38wheelpredicates,40answers/12labreviews;sequentialrangelimitretained.Next21.6;broadergapsopen.
@@ -646,3 +648,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.7 — Loan numerical contract checkpoint (formal review OPEN)
 
 [Loan contract evidence](chapter-21-loan-contract-review/README.md): all 64 source predicates pass with identical replay, using exact rational discounted-payment sums, type/domain/range and selected scaling/order checks. Two completed oracle commands are separate from the earlier 48-method source checkpoint; no new historical methods, formal workflows or answer records. A costly broad rational attempt was interrupted before results and narrowed explicitly. No executable source changed and no defect was invented. Chapter 21 remains six scoped workflows / 240 reviewed local answers. Next: 21.7's 40 answers, 12 lab steps and updated clean-consumer wheel; 21.6's artifact excludes loans. F28/F32 and all broader model/platform/ownership/release/independent gaps remain open.
+
+
+## Section 21.7 — Scoped loan workflow, answers and updated wheel
+
+[Loan evidence](chapter-21-loan-review/README.md): 40 worked-answer records and 12 lab-step reviews; all 11 new offline packaging commands pass, including updated clean-consumer wheel, hidden-source provenance, example and suites. 129 wheel predicates comprise 62 retained contracts, 64 loan contracts and three separate integration properties; no new historical methods. Three earlier source commands reused by nine exact Python fence hashes; 48 existing methods / 144 source-editable-wheel invocations, 14-command chain. Supplemental monthly-rate/interest calculations separate. New artifact hash differs from cash-flow wheel at the same illustrative version, not release approval. No executable manuscript change/new defect; documented numerical limits retained. Chapter 21 now seven scoped workflows / 280 local answers. Next: 21.8 Bond Module. F28/F32/F209, static-check, F165/F185, R08–10/ownership and broad resource/model/platform/release/independent acceptance remain open.
+
+
+### Section 21.8 — Partial bond source checkpoint (OPEN)
+
+[Bond checkpoint](chapter-21-bond-resume/README.md): three source commands / 60 existing methods pass across bond, loan, cashflow, TVM and retained scaffold suites. Explicit source injection; no new historical methods or completed formal workflow. Loan wheel excludes bonds. Next: 21.8 independent pricing/range contracts, 40 answers /12 lab steps and updated installed artifact; Chapter 21 remains seven scoped workflows /280 reviewed answers. F28/F32 and broad acceptance remain open.
