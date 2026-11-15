@@ -1,6 +1,7 @@
 """Section 9.7: kinks, one-sided derivatives, and payoff scenarios."""
 import math
 from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -89,21 +90,36 @@ def difference_report(function,point,step):
     return dict(zip(("left_difference","right_difference","centered_difference"),reported))
 
 def call_scenario(spot,strike,shock,rate=0,years=0):
+    """Complete fields, retaining rounded shifted spot and finite factor gate."""
     s,k,h,r,t=(finite(v,name) for v,name in
                ((spot,"spot"),(strike,"strike"),(shock,"shock"),
                 (rate,"rate"),(years,"years")))
     if t<0:
         raise ValueError("years must be nonnegative")
-    base=call_payoff(s,k)
-    changed=call_payoff(s+h,k)
-    factor=math.exp(-r*t)
-    if not math.isfinite(factor):
-        raise ValueError("nonfinite discount factor")
-    return {"baseline_value":factor*base,"shocked_value":factor*changed,
-            "exact_change":factor*(changed-base),
-            "left_slope":factor*call_slopes(s,k)["left"],
-            "right_slope":factor*call_slopes(s,k)["right"],
-            "differentiable":call_slopes(s,k)["differentiable"]}
+    call_payoff(s,k)
+    shifted=s+h
+    call_payoff(shifted,k)
+    S,K,P,R,T=map(Fraction,(s,k,shifted,r,t))
+    with localcontext(Context(prec=1700)):
+        def dec(value):return Decimal(value.numerator)/Decimal(value.denominator)
+        def report(value):
+            result=float(value)
+            if not math.isfinite(result):
+                raise ValueError("scenario report outside finite float range")
+            return result
+        exponent=-R*T
+        if exponent>10000:
+            raise ValueError("nonfinite discount factor")
+        factor=Decimal(0) if exponent < -10000 else dec(exponent).exp()
+        report(factor)  # Deliberately retain unreturned finite-factor prerequisite.
+        base=max(S-K,Fraction(0));changed=max(P-K,Fraction(0))
+        slopes=call_slopes(s,k)
+        return {"baseline_value":report(factor*dec(base)),
+                "shocked_value":report(factor*dec(changed)),
+                "exact_change":report(factor*dec(changed-base)),
+                "left_slope":report(factor*Decimal(slopes["left"])),
+                "right_slope":report(factor*Decimal(slopes["right"])),
+                "differentiable":slopes["differentiable"]}
 
 if __name__=="__main__":
     import json
