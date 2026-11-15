@@ -40,3 +40,15 @@ python quote_intervals.py
 ```
 
 Eight additional deterministic synthetic tests were authored; exact published-source CI and independent model review remain unverified. No external dependencies (Python 3.11+).
+
+## Joint same-expiry quote interval feasibility (small synthetic grids)
+
+The separate `joint_feasibility.py` asks a stronger question than the individual screens: **does one vector of theoretical European call prices simultaneously lie inside all bid/ask intervals and satisfy strike monotonicity, discounted vertical-spread bounds and discrete convexity?** For strikes \(K_i\), the constraints are \(b_i \le C_i \le a_i\), \(-D(K_{i+1}-K_i) \le C_{i+1}-C_i \le 0\), and nondecreasing neighboring secant slopes. Fourier–Motzkin variable elimination checks this finite system of linear inequalities. To bound worst-case combinatorial growth it rejects grids outside 3–5 strikes or more than 20,000 intermediate inequalities. Floating-point tolerances mean borderline cases require higher-precision independent review.
+
+```sh
+python -m unittest -v test_joint_feasibility.py
+python -m compileall -q joint_feasibility.py test_joint_feasibility.py
+python joint_feasibility.py
+```
+
+The five synthetic tests cover feasible point quotes, wide intervals, impossible monotonicity, a **jointly infeasible** grid whose separately screened inequalities can pass, and input guards. The implementation has no third-party dependencies (Python 3.11+). **Validation:** an earlier local source-equivalent prototype passed 5/5 tests, compilation and CLI smoke; the published source and its hosted CI remain **unverified**. This is not a full no-arbitrage option-surface certificate: it omits put-call parity, boundary/forward bounds, maturity coupling, trading costs and liquidity. It does not identify an executable trade.
