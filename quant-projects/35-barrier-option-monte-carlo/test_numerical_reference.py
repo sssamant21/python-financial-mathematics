@@ -59,5 +59,29 @@ class NumericalReferenceTests(unittest.TestCase):
                                        delta=0.0002)
 
 
+    def test_narrow_barrier_cancellation_and_zero_limit(self):
+        # A near-spot upper barrier has a vanishing continuous survival value.
+        # Check against positive-density quadrature, not a negative-price clamp alone.
+        for barrier in (100.0001, 100.001, 100.01):
+            with self.subTest(barrier=barrier):
+                actual = up_and_out_call(barrier=barrier)
+                reference = quadrature_call(barrier=barrier)
+                self.assertTrue(math.isfinite(actual))
+                self.assertGreaterEqual(actual, 0.0)
+                self.assertLessEqual(actual, 1e-5)
+                self.assertAlmostEqual(actual, reference, delta=1e-7)
+
+    def test_strike_barrier_boundary_and_price_bounds(self):
+        for strike in (130.0, 130.00001, 150.0):
+            with self.subTest(strike=strike):
+                self.assertEqual(up_and_out_call(strike=strike), 0.0)
+        # An up-and-out call cannot exceed its spot under zero dividends.
+        for barrier in (101.0, 110.0, 130.0, 200.0, 500.0):
+            with self.subTest(barrier=barrier):
+                value = up_and_out_call(barrier=barrier)
+                self.assertTrue(math.isfinite(value))
+                self.assertGreaterEqual(value, 0.0)
+                self.assertLessEqual(value, 100.0)
+
 if __name__ == "__main__":
     unittest.main()
