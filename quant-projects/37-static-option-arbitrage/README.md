@@ -56,3 +56,9 @@ The five synthetic tests cover feasible point quotes, wide intervals, impossible
 ## Boundary and scaling regression checkpoint
 
 `test_boundary_scaling.py` adds five deterministic synthetic tests for exact convex boundaries, strict convexity violations, uniform strike/quote unit rescaling (0.1×, 1×, 100×), a small material convexity violation, and invalid tolerance inputs. Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py` from this directory. The dedicated workflow now invokes both suites. **New exact-source CI is pending; local execution was blocked by GitHub DNS resolution.** These checks do not establish numerical accuracy near the tolerance threshold, scale invariance for arbitrary magnitudes, or independent mathematical certification.
+
+## Dimensionless tolerance checkpoint (2026-11-15)
+
+The joint solver now divides strikes and bid/ask prices by one common positive scale before Fourier–Motzkin elimination. The public `tolerance` argument is interpreted in **normalized price units**, not dollars: for example `1e-9` is relative to the largest strike/ask scale. The mathematical inequalities are homogeneous under simultaneous rescaling of strike and option-price units; normalizing reduces sensitivity to quote currency units. This is a numerical policy, **not** an economically justified quote-error allowance. Extreme magnitudes, cancellation, the solver's fixed coefficient normalization, and near-zero constraints still need independent numerical assessment.
+
+Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py` and `python -m compileall -q joint_feasibility.py test_normalized_tolerance.py`. The new suite uses synthetic 0.001×/1×/1000× unit changes for a strict convexity violation, an exact boundary, and feasible bid/ask intervals. **Exact published-revision tests and CI are pending; do not infer a pass from publication.**
