@@ -276,6 +276,8 @@ jobs:
           python -m unittest -v test_analytical.py
           python -m compileall -q analytical.py test_analytical.py
           python analytical.py
+          python -m unittest -v test_numerical_reference.py
+          python -m compileall -q test_numerical_reference.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
