@@ -94,17 +94,30 @@ def parallel_shock(flows, rate, shock):
                 "quadratic_error":_sensitivity_float(exact-quadratic)}
 
 def spot_curve_sensitivity(flows, spot_rates):
+    """Finite positive value, per-spot derivatives and finite aggregate first.
+
+    Form complete cash-weighted terms before float conversion; a bare
+    discount factor need not fit float because it is not a returned field.
+    """
     items = validate_flows(flows)
     rates = [finite(x,"spot_rate") for x in spot_rates]
     if len(items)!=len(rates):
         raise ValueError("one spot rate is required per cash flow")
-    terms = [c*math.exp(-z*t) for (c,t),z in zip(items,rates)]
-    value = math.fsum(terms)
-    derivatives = [-t*v for (_,t),v in zip(items,terms)]
-    if not all(math.isfinite(x) for x in [value,*derivatives]) or value <= 0:
-        raise ValueError("nonfinite spot valuation")
-    return {"value":value,"spot_derivatives":derivatives,
-            "parallel_first":math.fsum(derivatives)}
+    with localcontext(Context(prec=1500)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        value = Decimal(0); derivatives = []
+        for (c,t),z in zip(items,rates):
+            C,T,Z = map(Fraction,(c,t,z));exponent = -Z*T
+            if exponent > 10000:
+                raise ValueError("spot report outside finite float range")
+            amount = Decimal(0) if exponent < -10000 else dec(C)*dec(exponent).exp()
+            value += amount;derivatives.append(-dec(T)*amount)
+        reported_value = _sensitivity_float(value)
+        if reported_value <= 0:
+            raise ValueError("valuation must report positive")
+        return {"value":reported_value,
+                "spot_derivatives":[_sensitivity_float(x) for x in derivatives],
+                "parallel_first":_sensitivity_float(sum(derivatives,Decimal(0)))}
 
 def spot_shock(flows, spot_rates, shocks):
     items = validate_flows(flows)

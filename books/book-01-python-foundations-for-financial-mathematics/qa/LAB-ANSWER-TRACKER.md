@@ -273,3 +273,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.7 partial loan integration resume — OPEN
 
 [Loan checkpoint](chapter-21-loan-resume/README.md): three source commands and 48 existing methods across loan/cash-flow/TVM/scaffold suites pass; no new historical methods. This uses source injection. The Section 21.6 artifact does not contain the loan module. Formal oracles, range review, 40 answers, 12 lab steps and an updated artifact remain next; this is not another completed workflow.
+
+
+### Section 21.7 — Loan numerical contract checkpoint (formal review OPEN)
+
+[Loan contract evidence](chapter-21-loan-contract-review/README.md): all 64 source predicates pass with identical replay, using exact rational discounted-payment sums, type/domain/range and selected scaling/order checks. Two completed oracle commands are separate from the earlier 48-method source checkpoint; no new historical methods, formal workflows or answer records. A costly broad rational attempt was interrupted before results and narrowed explicitly. No executable source changed and no defect was invented. Chapter 21 remains six scoped workflows / 240 reviewed local answers. Next: 21.7's 40 answers, 12 lab steps and updated clean-consumer wheel; 21.6's artifact excludes loans. F28/F32 and all broader model/platform/ownership/release/independent gaps remain open.

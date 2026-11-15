@@ -1,0 +1,11 @@
+# Section 21.7 — Loan numerical contracts (partial review)
+
+Pinned manuscript: `a112900d53216e81f73c0ee9223621c951fd7e96`. [Runnable checker](check-contracts.py), [baseline](baseline.json), [identical replay](replay.json), [actual command records](run-results.json).
+
+All **64 source predicates** pass: 32 numerical comparisons, 21 invalid-input/range checks, four scaling checks, four rate-order checks and three term-order checks. The numerical oracle adds individual discounted payments as exact Fractions and divides principal by their sum. It does not reuse the source's `log1p`/`expm1` denominator. Rates are the exact represented binary inputs; relative tolerance is 5e-14 with zero absolute allowance. Selected positive results, not all floats, are checked. The 1,200-period boundary is sampled at rate 1; tiny and smallest-subnormal rates are sampled at 12 periods. A broader exact-rational attempt was interrupted before results because it was too expensive; it is not a source failure or a pass.
+
+The checker executes the exact first manuscript Python fence. No manuscript executable changed and no source defect was substantiated. The earlier [48-method source checkpoint](../chapter-21-loan-resume/README.md) remains separate: these predicates are not new historical unique test methods. Two new oracle commands passed; they do not add a formal workflow or answer record. Chapter 21 remains six scoped workflows / 240 reviewed local answers.
+
+The same-unit, end-of-period, nonnegative effective periodic-rate model is retained. Its unrounded payment is not APR or a contractual amortization schedule. Underflow to zero and overflow are rejected; finite output alone does not guarantee accuracy. The cash-flow integration cap remains 1,000 payments against the loan module's 1,200-period domain; no truncation is allowed.
+
+**Next:** finish the 40 worked-answer and 12 lab-step reviews and the updated editable/wheel artifact checks for 21.7, reusing unchanged fence evidence. Section 21.6's wheel does not contain loans. F28, broad F32 shared-input integration, F209, F165/F185, static-check and R08–10/ownership/resource/model/platform/release/independent gaps remain open. No independent acceptance is claimed.

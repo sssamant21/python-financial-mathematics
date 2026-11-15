@@ -1,0 +1,30 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/e0bed2e906cb/validation-loan-spot/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-21-loan-contract-review/check-contracts.py",
+        "baseline.json"
+      ],
+      "returncode": 0,
+      "stdout": "source numerical contracts; integration cap is reviewed separately\n{\"predicates\": 64, \"passed\": 64, \"failed\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "/workspace/scratch/e0bed2e906cb/validation-loan-spot/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-21-loan-contract-review/check-contracts.py",
+        "replay.json"
+      ],
+      "returncode": 0,
+      "stdout": "source numerical contracts; integration cap is reviewed separately\n{\"predicates\": 64, \"passed\": 64, \"failed\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "initial_oracle_attempt": {
+    "status": "Interrupted before results",
+    "returncode": 130,
+    "reason": "Repeated exact rational summation for n=1200 at rates 1e-308 and the smallest subnormal was too expensive for this batch. Final oracle samples those rates at n=12, and retains n=1200 at rate 1. No source failure or passed predicate claimed for interrupted attempt."
+  },
+  "limits": "Only two completed oracle command invocations here, separate from prior 48 existing test methods."
+}

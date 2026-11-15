@@ -1,0 +1,36 @@
+{
+  "source_revision": "a112900d53216e81f73c0ee9223621c951fd7e96 + spot-curve working blob",
+  "source_blob": "440a2f06cc2571c4b336ad932c0a2b7d156ed9c9",
+  "reference_precisions": [
+    1800,
+    2400
+  ],
+  "observations": [
+    {
+      "case": "finite change exp rescue",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "independent_linear_change": 2.6119440323172403e-306,
+      "independent_linear_error": 0.8218407461554972,
+      "status": "OPEN numerical; full changes/errors/prerequisites next"
+    },
+    {
+      "case": "latent tiny error",
+      "actual": {
+        "returned": {
+          "exact_change": -1e+108,
+          "linear_change": -1e+108,
+          "linear_error": 0.0
+        }
+      },
+      "independent_exact_change": -1e+108,
+      "independent_linear_change": -1e+108,
+      "independent_linear_error": 5e-93,
+      "status": "OPEN numerical; full changes/errors/prerequisites next"
+    }
+  ],
+  "limits": "Two diagnostic cases only; spot_shock text unchanged; not passing spot-curve predicates or independent acceptance."
+}

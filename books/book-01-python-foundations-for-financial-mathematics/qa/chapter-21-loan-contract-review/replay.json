@@ -1,0 +1,379 @@
+{
+  "source_revision": "a112900d53216e81f73c0ee9223621c951fd7e96",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-21/21.07-loan-module.md",
+  "source_blob": "462b101d281bf541ba5fe94a53f44da994d2599d",
+  "source_fence_sha256": "4abf07f902e60565ec5fd15a7263fe9e80cd0790d471ceca8077788490bb0b51",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "oracle": "Exact Fraction sum of n individual discounted payments; divide principal by sum; no log/expm1 oracle.",
+  "relative_tolerance": 5e-14,
+  "absolute_tolerance": 0.0,
+  "source_predicates": [
+    {
+      "case": "annuity sum L=1.0 r=0.0 n=12",
+      "passed": true,
+      "actual": 0.08333333333333333,
+      "expected": 0.08333333333333333
+    },
+    {
+      "case": "annuity sum L=1.0 r=0.1 n=1",
+      "passed": true,
+      "actual": 1.1,
+      "expected": 1.1
+    },
+    {
+      "case": "annuity sum L=1.0 r=0.1 n=2",
+      "passed": true,
+      "actual": 0.5761904761904763,
+      "expected": 0.5761904761904761
+    },
+    {
+      "case": "annuity sum L=1.0 r=1e-12 n=12",
+      "passed": true,
+      "actual": 0.08333333333387499,
+      "expected": 0.083333333333875
+    },
+    {
+      "case": "annuity sum L=1.0 r=0.01 n=360",
+      "passed": true,
+      "actual": 0.010286125969255044,
+      "expected": 0.010286125969255044
+    },
+    {
+      "case": "annuity sum L=1.0 r=1.0 n=1200",
+      "passed": true,
+      "actual": 1.0,
+      "expected": 1.0
+    },
+    {
+      "case": "annuity sum L=1.0 r=1e-308 n=12",
+      "passed": true,
+      "actual": 0.08333333333333333,
+      "expected": 0.08333333333333333
+    },
+    {
+      "case": "annuity sum L=1.0 r=5e-324 n=12",
+      "passed": true,
+      "actual": 0.08333333333333333,
+      "expected": 0.08333333333333333
+    },
+    {
+      "case": "annuity sum L=1000.0 r=0.0 n=12",
+      "passed": true,
+      "actual": 83.33333333333333,
+      "expected": 83.33333333333333
+    },
+    {
+      "case": "annuity sum L=1000.0 r=0.1 n=1",
+      "passed": true,
+      "actual": 1100.0,
+      "expected": 1100.0
+    },
+    {
+      "case": "annuity sum L=1000.0 r=0.1 n=2",
+      "passed": true,
+      "actual": 576.1904761904763,
+      "expected": 576.1904761904761
+    },
+    {
+      "case": "annuity sum L=1000.0 r=1e-12 n=12",
+      "passed": true,
+      "actual": 83.33333333387499,
+      "expected": 83.333333333875
+    },
+    {
+      "case": "annuity sum L=1000.0 r=0.01 n=360",
+      "passed": true,
+      "actual": 10.286125969255044,
+      "expected": 10.286125969255044
+    },
+    {
+      "case": "annuity sum L=1000.0 r=1.0 n=1200",
+      "passed": true,
+      "actual": 1000.0,
+      "expected": 1000.0
+    },
+    {
+      "case": "annuity sum L=1000.0 r=1e-308 n=12",
+      "passed": true,
+      "actual": 83.33333333333333,
+      "expected": 83.33333333333333
+    },
+    {
+      "case": "annuity sum L=1000.0 r=5e-324 n=12",
+      "passed": true,
+      "actual": 83.33333333333333,
+      "expected": 83.33333333333333
+    },
+    {
+      "case": "annuity sum L=1e-200 r=0.0 n=12",
+      "passed": true,
+      "actual": 8.333333333333334e-202,
+      "expected": 8.333333333333334e-202
+    },
+    {
+      "case": "annuity sum L=1e-200 r=0.1 n=1",
+      "passed": true,
+      "actual": 1.1e-200,
+      "expected": 1.0999999999999999e-200
+    },
+    {
+      "case": "annuity sum L=1e-200 r=0.1 n=2",
+      "passed": true,
+      "actual": 5.7619047619047624e-201,
+      "expected": 5.761904761904762e-201
+    },
+    {
+      "case": "annuity sum L=1e-200 r=1e-12 n=12",
+      "passed": true,
+      "actual": 8.3333333333875e-202,
+      "expected": 8.3333333333875e-202
+    },
+    {
+      "case": "annuity sum L=1e-200 r=0.01 n=360",
+      "passed": true,
+      "actual": 1.0286125969255045e-202,
+      "expected": 1.0286125969255045e-202
+    },
+    {
+      "case": "annuity sum L=1e-200 r=1.0 n=1200",
+      "passed": true,
+      "actual": 1e-200,
+      "expected": 1e-200
+    },
+    {
+      "case": "annuity sum L=1e-200 r=1e-308 n=12",
+      "passed": true,
+      "actual": 8.333333333333332e-202,
+      "expected": 8.333333333333334e-202
+    },
+    {
+      "case": "annuity sum L=1e-200 r=5e-324 n=12",
+      "passed": true,
+      "actual": 8.333333333333332e-202,
+      "expected": 8.333333333333334e-202
+    },
+    {
+      "case": "annuity sum L=1e+200 r=0.0 n=12",
+      "passed": true,
+      "actual": 8.333333333333333e+198,
+      "expected": 8.333333333333333e+198
+    },
+    {
+      "case": "annuity sum L=1e+200 r=0.1 n=1",
+      "passed": true,
+      "actual": 1.1e+200,
+      "expected": 1.1e+200
+    },
+    {
+      "case": "annuity sum L=1e+200 r=0.1 n=2",
+      "passed": true,
+      "actual": 5.7619047619047625e+199,
+      "expected": 5.761904761904762e+199
+    },
+    {
+      "case": "annuity sum L=1e+200 r=1e-12 n=12",
+      "passed": true,
+      "actual": 8.333333333387499e+198,
+      "expected": 8.3333333333875e+198
+    },
+    {
+      "case": "annuity sum L=1e+200 r=0.01 n=360",
+      "passed": true,
+      "actual": 1.0286125969255045e+198,
+      "expected": 1.0286125969255045e+198
+    },
+    {
+      "case": "annuity sum L=1e+200 r=1.0 n=1200",
+      "passed": true,
+      "actual": 1e+200,
+      "expected": 1e+200
+    },
+    {
+      "case": "annuity sum L=1e+200 r=1e-308 n=12",
+      "passed": true,
+      "actual": 8.333333333333332e+198,
+      "expected": 8.333333333333333e+198
+    },
+    {
+      "case": "annuity sum L=1e+200 r=5e-324 n=12",
+      "passed": true,
+      "actual": 8.333333333333332e+198,
+      "expected": 8.333333333333333e+198
+    },
+    {
+      "case": "integer principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "bool principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "decimal principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "zero principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "negative principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "nan principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "inf principal",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "integer rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "bool rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "decimal rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "negative rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "over cap rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "nan rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "inf rate",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "bool periods",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "float periods",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "zero periods",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "over cap periods",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "result overflow",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "zero rate underflow",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "positive rate underflow",
+      "passed": true,
+      "actual": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "case": "scale r=0.0 n=12",
+      "passed": true
+    },
+    {
+      "case": "scale r=0.01 n=360",
+      "passed": true
+    },
+    {
+      "case": "scale r=0.1 n=2",
+      "passed": true
+    },
+    {
+      "case": "scale r=1.0 n=1200",
+      "passed": true
+    },
+    {
+      "case": "rate monotonic n=1",
+      "passed": true
+    },
+    {
+      "case": "rate monotonic n=2",
+      "passed": true
+    },
+    {
+      "case": "rate monotonic n=360",
+      "passed": true
+    },
+    {
+      "case": "rate monotonic n=1200",
+      "passed": true
+    },
+    {
+      "case": "term monotonic r=0.0",
+      "passed": true
+    },
+    {
+      "case": "term monotonic r=0.01",
+      "passed": true
+    },
+    {
+      "case": "term monotonic r=0.1",
+      "passed": true
+    }
+  ],
+  "passed": 64,
+  "failed": 0,
+  "new_historical_unique_methods": 0,
+  "limits": "Source numerical contract batch only. No new formal workflow/answer records, wheel installation, model/platform/release/independent acceptance. Earlier 48-method source checkpoint remains separate; 1200 loan periods exceed 1000-payment cashflow integration cap. Rounding/final payoff/fees/APR excluded."
+}

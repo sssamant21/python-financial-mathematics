@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-186 parallel report scope and V-187 full candidate Linux pass (625/412/626). Spot numerical/prerequisite and independent/platform/release acceptance open.
+**Overall status:** In progress — V-188 spot-curve scoped pass (73 predicates); latest full Linux pass V-187 covers its older pin (625/412/626). Spot-shock contracts and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1547,3 +1547,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-187 checkpoint — Full pinned candidate Linux refresh
 
 [V-187 runtime](runtime-refresh-2026-11-15-r12.md) at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`: 625/625 Python files compiled, 412/412 check/test scripts passed, and 626/626 required blobs matched before and after execution. Includes V-186's 112 passing parallel predicates; initial failures/replay and the retained baseline prerequisite remain separately documented. Three spot diagnostics remain open: a full script pass does not settle their unasserted contracts. Runner, manifest, per-file outcomes and output digests are retained. All 37 selected COV categories remain partial, none closed. Next: spot-curve contracts, then spot-shock reports. Independent mathematical/editorial/model/platform/release/canonical acceptance remains pending. Book 1 is tracked separately.
+
+
+## V-188 checkpoint — Section 9.6 spot-curve complete report
+
+[Spot-curve evidence](chapter-09-spot-curve-followup-r13.md): 73 corrected source predicates pass; 60 initial passes / 13 failed fields and actual identical replay retained. Five numerical fields and eight report-range/exception fields, not 13 unique defects. Independent 1800/2400-digit references cover complete value, individual spot derivatives, collective parallel-first, collection/input/context contracts. Only the spot-curve body changed; baseline/parallel/spot-shock text unchanged. Five files compiled and five commands/four checker invocations passed. Fresh inventory is 626 Python files / 413 scripts, not full execution; V-187 remains the latest full-book pass at its older pin. Next: spot-shock changes/errors/prerequisites, then full refresh for accumulated changes. Two spot-curve diagnostics resolved only in explicit scope; historical evidence retained. All 37 selected COV categories remain partial, none closed. Resource, supported-platform, model, release, canonical and independent acceptance remain open; Book 1 tracked separately.

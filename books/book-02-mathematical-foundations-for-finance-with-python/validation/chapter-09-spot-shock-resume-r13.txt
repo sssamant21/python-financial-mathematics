@@ -1,0 +1,23 @@
+"""Fresh source-bound spot-shock diagnostics; not a passing contract suite.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,json,tempfile,importlib,hashlib
+r=Path(sys.argv[1]).resolve();p=r/'books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_06.py';raw=p.read_bytes()
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_06.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_06');rows=[]
+ for label,f,z,h in [('finite change exp rescue',[(1e-308,2.),(1.,0.)],[.5,0.],[-355.,0.]),('latent tiny error',[(1e308,1.)],[0.],[1e-200])]:
+  refs=[]
+  for prec in [1800,2400]:
+   with localcontext(Context(prec=prec)):
+    E=L=Decimal(0)
+    for (c,tt),zz,hh in zip(f,z,h):
+     C,T,Z,H=[Decimal.from_float(float(x)) for x in (c,tt,zz,hh)];v=C*(-Z*T).exp();E+=C*(-(Z+H)*T).exp()-v;L-=T*v*H
+    refs.append([float(E),float(L),float(E-L)])
+  assert refs[0]==refs[1]
+  try:actual=dict(returned=m.spot_shock(f,z,h))
+  except Exception as e:actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(case=label,actual=actual,independent_exact_change=refs[1][0],independent_linear_change=refs[1][1],independent_linear_error=refs[1][2],status='OPEN numerical; full changes/errors/prerequisites next'))
+ d=dict(source_revision='a112900d53216e81f73c0ee9223621c951fd7e96 + spot-curve working blob',source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),reference_precisions=[1800,2400],observations=rows,limits='Two diagnostic cases only; spot_shock text unchanged; not passing spot-curve predicates or independent acceptance.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(rows))
