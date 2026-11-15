@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `9ebd2355077d8c7e8b9348b8f44eb78f57017402` (V-175)
-**Latest scoped source:** V-174 at `9ebd2355077d8c7e8b9348b8f44eb78f57017402`;[five-file source manifest](chapter-09-portfolio-report-publication-verification.json).
+**Full-runtime candidate source revision:** `b5808b7f52ce3ecec42e99a091e240bf29d5aa11` (V-177)
+**Latest scoped source:** V-176 at `b5808b7f52ce3ecec42e99a091e240bf29d5aa11`;[six-file source manifest](chapter-09-single-shock-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-174 aggregate scope and V-175 full Python runtime pass;shock contracts and independent/release approval remain open.
+**Disposition:** V-176 single-flow shock scope and V-177 full Python runtime pass;portfolio_shock and independent/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1336,3 +1336,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-176 checkpoint — Section9.4 complete single-flow shock reports
 
 [Single shock evidence](chapter-09-single-shock-followup.md):131corrected predicates pass;118initial passes/13failed predicates and identical actual replay retained. Six failures arise from one rejected report/saved expm1 overflow;seven are complete error-field numerical/report-contract differences,not13unique bugs. Independent1800/2400-digit direct endpoint/Taylor/error references and domain/context checks;latent error semantics explicit. Existing eligible baseline prerequisite retained,so underflowed baseline remains a documented range/design limit,not a repaired case. Only single_shock body changed. Sixfiles/sixcommands/fivecheckers pass;fresh620/407/621inventory is not full execution. All36COVcategoriespartial,noneclosed. Next pinned refresh,then portfolio_shock complete contracts;unused per-leg normalized rejection remains OPEN. Other resource/platform/independent/release acceptance pending;Book1 separate.
+
+
+### Section9.4 portfolio_shock resume — OPEN
+
+[Fresh initial observations](chapter-09-portfolio-shock-resume-r7-initial.json),[actual identical replay](chapter-09-portfolio-shock-resume-r7-replay.json),[runner](chapter-09-portfolio-shock-resume-r7-probes.txt) pinb5808b7f52ce3ecec42e99a091e240bf29d5aa11. An eligible aggregate still fails zero-shock unused per-leg normalization;finite aggregate exactchange rescue still overflows expm1;an underflowed leg accepted by aggregate is rejected by child-report eligibility. Three diagnostic observations,not passing predicates or settled parent/child policy. Next complete portfolio exact/linear/quadratic/error reports,collection/priority and aggregate eligibility integration. Historical records unchanged.
+
+
+## V-177 checkpoint — Full pinned candidate Linux refresh
+
+[V-177 full runtime](runtime-refresh-2026-11-15-r7.md) at`b5808b7f52ce3ecec42e99a091e240bf29d5aa11`:620/620Python compiled,407/407check-test scripts passed,621/621required source/fixture blobs verified before-after. IncludesV-176 single-shock scope;131corrected predicates and13initial failed predicates/replay retained separately,not13unique bugs. Existing baseline eligibility retained;underflowed baseline remains range/design limit. Exact staging runner,per-file outcomes/outputdigests/fullmanifest saved. Three portfolio_shock diagnostic observations remainOPEN;passing existing scripts does not settle those contracts. All36selected COVcategories partial,noneclosed. Next:complete portfolio_shock reports/collection/aggregate integration. Independent mathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.

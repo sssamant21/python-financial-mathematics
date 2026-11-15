@@ -15,3 +15,12 @@ Existing complete baseline eligibility is deliberately retained:baseline value m
 Each output is rounded from complete latent expressions in a private1300-digit context. The endpoint can exceed float range while its difference remains finite;conversion occurs after subtraction. Scalar finite/domain/priority behavior and ambient Decimal state are checked. Exponent guard10000 is beyond binary64 input/output rescue range under retained eligible-baseline assumptions;negative endpoints below-10000 round away. Selected reference agreement is not proof of universal transcendental correct rounding or resource guarantees.
 
 Next:portfolio_shock complete collection/aggregate/endpoint/Taylor/error contracts. It still requests unused per-leg normalized fields and uses rounded single-flow values/expm1 products;passing old examples or full runtime does not settle that scope. All36selected COV categories remain partial,noneclosed. Independent mathematical/editorial/model/platform/release/canonical acceptance remains pending. Book1 independent.
+
+
+### Section9.4 portfolio_shock resume — OPEN
+
+[Fresh initial observations](chapter-09-portfolio-shock-resume-r7-initial.json),[actual identical replay](chapter-09-portfolio-shock-resume-r7-replay.json),[runner](chapter-09-portfolio-shock-resume-r7-probes.txt) pinb5808b7f52ce3ecec42e99a091e240bf29d5aa11. An eligible aggregate still fails zero-shock unused per-leg normalization;finite aggregate exactchange rescue still overflows expm1;an underflowed leg accepted by aggregate is rejected by child-report eligibility. Three diagnostic observations,not passing predicates or settled parent/child policy. Next complete portfolio exact/linear/quadratic/error reports,collection/priority and aggregate eligibility integration. Historical records unchanged.
+
+Executed source pin`b5808b7f52ce3ecec42e99a091e240bf29d5aa11`;[source verification](chapter-09-single-shock-publication-verification.json).
+
+Checker naming qualification:the case named "report overflow" at cash1e308,h=-1 actually has a finite complete change about1.718e308 and is expected to pass;the expected JSON/reference value governs. Actual whole-report overflow is covered by other vectors,including the huge positive shock.

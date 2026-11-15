@@ -1,0 +1,103 @@
+{
+  "source_revision": "b5808b7f52ce3ecec42e99a091e240bf29d5aa11",
+  "source_blob": "5348137ae0f0f6382de30e926c80c21da0bc55f6",
+  "observations": [
+    {
+      "name": "zero-shock unused per-leg normalized field",
+      "inputs": {
+        "cash_flows": [
+          [
+            1e-308,
+            1e+308
+          ],
+          [
+            1e+308,
+            0.0
+          ]
+        ],
+        "rate": 0.0,
+        "shock": 0.0
+      },
+      "aggregate": {
+        "returned": {
+          "value": 1e+308,
+          "first": -0.9999999999999999,
+          "second": 1e+308,
+          "duration": 1e-308,
+          "convexity": 0.9999999999999999
+        }
+      },
+      "actual": {
+        "exception": "ValueError",
+        "message": "single-flow report outside finite float range"
+      },
+      "independent_exact_change": 0.0,
+      "status": "OPEN integration;eligible aggregate but wrapper calls complete per-leg report"
+    },
+    {
+      "name": "finite complete exact-change rescue",
+      "inputs": {
+        "cash_flows": [
+          [
+            1e-308,
+            2.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "rate": 0.5,
+        "shock": -355.0
+      },
+      "aggregate": {
+        "returned": {
+          "value": 1.0,
+          "first": -7.357588823428847e-309,
+          "second": 1.471517764685769e-308,
+          "duration": 7.357588823428847e-309,
+          "convexity": 1.471517764685769e-308
+        }
+      },
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;per-leg expm1 product overflows"
+    },
+    {
+      "name": "eligible aggregate with underflowed leg",
+      "inputs": {
+        "cash_flows": [
+          [
+            1e-308,
+            2.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "rate": 355.0,
+        "shock": -355.0
+      },
+      "aggregate": {
+        "returned": {
+          "value": 1.0,
+          "first": -0.0,
+          "second": 0.0,
+          "duration": 0.0,
+          "convexity": 0.0
+        }
+      },
+      "actual": {
+        "exception": "ValueError",
+        "message": "discounted value must be finite and positive"
+      },
+      "independent_exact_change": 1e-308,
+      "status": "OPEN parent/child eligibility integration;aggregate accepts,wrapper rejects child"
+    }
+  ],
+  "limits": "Three diagnostics only,not passing predicates or complete portfolio shock review. Parent/child eligibility review remains separate from numerical rescue. Historical initial records unchanged."
+}

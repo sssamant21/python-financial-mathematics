@@ -577,3 +577,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.1 scoped architecture workflow and answers
 
 [Architecture evidence](chapter-21-architecture-review/README.md):one scopedworkflow/40answer records/12lab reviews;36source predicates pass. Three priorcommands reused by matching both exactfence digests;twofreshcommands pass. Evidencechain12existingmethods/24invocations,fivecommands/twocompiledfences,zero newhistoricalmethods. Baseline/replay pass;fencesunchanged,no defectinvented. Futuremodule integration/reviewer proposal remainsconceptual with UNASSIGNEDowner;installedartifact/model/platform/release/independent acceptance pending. F28/F32/F209,20.11static,F165/F185 and othergaps retained. Chapter21 nowone scopedworkflow/40localanswers;next21.2 Requirements and Assumptions.
+
+
+### Section21.2 partial runtime resume — OPEN
+
+[Requirements checkpoint](chapter-21-requirements-resume/README.md):three documented commands/twocompiledfences/12existingmethods pass;one separate fourth structural-only observation accepts a synthetic evidence string as documented,not authentic acceptance. No newhistoricalmethods or completedformalworkflow. Next formal21.2 register/traceability/40answers/12labsteps;owner/independent acceptance and othergaps remainopen. Reuse pin/digests to avoid duplicate runtime.

@@ -7,3 +7,5 @@ Baseline `eb336b137d85b7920ebf1da6cf68db4f398a59a6`. [36source predicates](resul
 Independent rational expectations include110/(11/10)=100,95/(19/20)=100 and represented-input Fraction division. Monetary near-known-value abs1e-10illustrative;othercases use scopedJSON tolerances. Positive/negative sensitivity directions,strictfloat boundaries,metadata,no caller mutation,normal frozenassignment and quietimport checked. Label-only metadata and subnormalunderflow are documented limitations,not newfailedpredicates. Source orchestration is an integration slice,not a full proposed toolkit.
 
 [Future integration/reviewer proposal](integration-review-proposal.json) is conceptual;owner remains UNASSIGNED and independentmodelreview NOTPERFORMED. No installedartifact,fullrange,security/audit,model/platform/release/canonical acceptance. Retain20.11static,F28/F32/F209,F165tail/F185integration and othertracker gaps. Chapter21 nowone scopedworkflow/40localanswers;next21.2 Requirements and Assumptions.
+
+Executed source pin`b5808b7f52ce3ecec42e99a091e240bf29d5aa11`;[source verification](publication-verification.json).

@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-174 aggregate scope and V-175 full candidate Linux pass (619/406/620). Shock contracts and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-176 single-flow shock scope and V-177 full candidate Linux pass (620/407/621). Portfolio shock contracts and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 619/619 at `9ebd2355077d8c7e8b9348b8f44eb78f57017402`. [V-175](runtime-refresh-2026-11-15-r6.md). |
-| Automated script execution | Full candidate Linux pass | 406/406 at `9ebd2355077d8c7e8b9348b8f44eb78f57017402`;620 required blobs verified before/after. [V-175](runtime-refresh-2026-11-15-r6.md). |
+| Python compilation | Full candidate Linux pass | 620/620 at `b5808b7f52ce3ecec42e99a091e240bf29d5aa11`. [V-177](runtime-refresh-2026-11-15-r7.md). |
+| Automated script execution | Full candidate Linux pass | 407/407 at `b5808b7f52ce3ecec42e99a091e240bf29d5aa11`;621 required blobs verified before/after. [V-177](runtime-refresh-2026-11-15-r7.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1462,3 +1462,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-176 checkpoint — Section9.4 complete single-flow shock reports
 
 [Single shock evidence](chapter-09-single-shock-followup.md):131corrected predicates pass;118initial passes/13failed predicates and identical actual replay retained. Six failures arise from one rejected report/saved expm1 overflow;seven are complete error-field numerical/report-contract differences,not13unique bugs. Independent1800/2400-digit direct endpoint/Taylor/error references and domain/context checks;latent error semantics explicit. Existing eligible baseline prerequisite retained,so underflowed baseline remains a documented range/design limit,not a repaired case. Only single_shock body changed. Sixfiles/sixcommands/fivecheckers pass;fresh620/407/621inventory is not full execution. All36COVcategoriespartial,noneclosed. Next pinned refresh,then portfolio_shock complete contracts;unused per-leg normalized rejection remains OPEN. Other resource/platform/independent/release acceptance pending;Book1 separate.
+
+
+### Section9.4 portfolio_shock resume — OPEN
+
+[Fresh initial observations](chapter-09-portfolio-shock-resume-r7-initial.json),[actual identical replay](chapter-09-portfolio-shock-resume-r7-replay.json),[runner](chapter-09-portfolio-shock-resume-r7-probes.txt) pinb5808b7f52ce3ecec42e99a091e240bf29d5aa11. An eligible aggregate still fails zero-shock unused per-leg normalization;finite aggregate exactchange rescue still overflows expm1;an underflowed leg accepted by aggregate is rejected by child-report eligibility. Three diagnostic observations,not passing predicates or settled parent/child policy. Next complete portfolio exact/linear/quadratic/error reports,collection/priority and aggregate eligibility integration. Historical records unchanged.
+
+
+## V-177 checkpoint — Full pinned candidate Linux refresh
+
+[V-177 full runtime](runtime-refresh-2026-11-15-r7.md) at`b5808b7f52ce3ecec42e99a091e240bf29d5aa11`:620/620Python compiled,407/407check-test scripts passed,621/621required source/fixture blobs verified before-after. IncludesV-176 single-shock scope;131corrected predicates and13initial failed predicates/replay retained separately,not13unique bugs. Existing baseline eligibility retained;underflowed baseline remains range/design limit. Exact staging runner,per-file outcomes/outputdigests/fullmanifest saved. Three portfolio_shock diagnostic observations remainOPEN;passing existing scripts does not settle those contracts. All36selected COVcategories partial,noneclosed. Next:complete portfolio_shock reports/collection/aggregate integration. Independent mathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.

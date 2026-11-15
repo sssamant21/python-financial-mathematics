@@ -1,0 +1,15 @@
+from pathlib import Path
+import subprocess,sys,tempfile,importlib,json,hashlib
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();pin='b5808b7f52ce3ecec42e99a091e240bf29d5aa11';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation'
+def call(f):
+ try:return dict(returned=f())
+ except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_04.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_04')
+ with localcontext(Context(prec=2400)):
+  C=Decimal.from_float(1e-308);expect=float(C*((Decimal(709)).exp()-(-Decimal(1)).exp()))
+ cases=[('zero-shock unused per-leg normalized field',[(1e-308,1e308),(1e308,0.)],0.,0.,0.,'OPEN integration;eligible aggregate but wrapper calls complete per-leg report'),('finite complete exact-change rescue',[(1e-308,2.),(1.,0.)],.5,-355.,expect,'OPEN numerical;per-leg expm1 product overflows'),('eligible aggregate with underflowed leg',[(1e-308,2.),(1.,0.)],355.,-355.,1e-308,'OPEN parent/child eligibility integration;aggregate accepts,wrapper rejects child')]
+ rows=[dict(name=n,inputs=dict(cash_flows=f,rate=r,shock=h),aggregate=call(lambda:m.cash_flow_portfolio(f,r)),actual=call(lambda:m.portfolio_shock(f,r,h)),independent_exact_change=e,status=s) for n,f,r,h,e,s in cases]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Three diagnostics only,not passing predicates or complete portfolio shock review. Parent/child eligibility review remains separate from numerical rescue. Historical initial records unchanged.')
+(v/sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('3 portfolio shock resume observations saved')
