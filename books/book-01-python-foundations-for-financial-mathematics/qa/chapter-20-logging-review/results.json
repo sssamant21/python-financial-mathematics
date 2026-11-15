@@ -1,0 +1,765 @@
+{
+  "candidate_based_on": "c7d5060fc6bf7a8f01f7a91dd6651b7bccb25e1c",
+  "selected_revision": null,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "manuscript_sha256": "2a4e666cc37e4412db7ae05d9313177869e3b0aec6b4b8c83d9f742978a945c9",
+  "fence_sha256": "21270441209113a00e1f34809d1cbe5db65f3eb84975bf18df467d11bfb62693",
+  "commands": [
+    {
+      "label": "source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_logging.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "INFO financial_example calculation_started run_id=demo_1\nINFO financial_example calculation_completed run_id=demo_1\ntest_boolean_input (__main__.LoggingTests.test_boolean_input) ... ok\ntest_empty_flows (__main__.LoggingTests.test_empty_flows) ... ok\ntest_invalid_input_event (__main__.LoggingTests.test_invalid_input_event) ... ok\ntest_invalid_rate (__main__.LoggingTests.test_invalid_rate) ... ok\ntest_invalid_run_id (__main__.LoggingTests.test_invalid_run_id) ... ok\ntest_nan (__main__.LoggingTests.test_nan) ... ok\ntest_no_raw_cashflow (__main__.LoggingTests.test_no_raw_cashflow) ... ok\ntest_no_result_logged (__main__.LoggingTests.test_no_result_logged) ... ok\ntest_numerical_event (__main__.LoggingTests.test_numerical_event) ... ok\ntest_start_and_completion (__main__.LoggingTests.test_start_and_completion) ... ok\ntest_valid_negative_rate (__main__.LoggingTests.test_valid_negative_rate) ... ok\ntest_valid_result (__main__.LoggingTests.test_valid_result) ... INFO financial_example calculation_started run_id=run_1\nINFO financial_example calculation_completed run_id=run_1\nok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "label": "module suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "financial_logging"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_input (financial_logging.LoggingTests.test_boolean_input) ... ok\ntest_empty_flows (financial_logging.LoggingTests.test_empty_flows) ... ok\ntest_invalid_input_event (financial_logging.LoggingTests.test_invalid_input_event) ... ok\ntest_invalid_rate (financial_logging.LoggingTests.test_invalid_rate) ... ok\ntest_invalid_run_id (financial_logging.LoggingTests.test_invalid_run_id) ... ok\ntest_nan (financial_logging.LoggingTests.test_nan) ... ok\ntest_no_raw_cashflow (financial_logging.LoggingTests.test_no_raw_cashflow) ... ok\ntest_no_result_logged (financial_logging.LoggingTests.test_no_result_logged) ... ok\ntest_numerical_event (financial_logging.LoggingTests.test_numerical_event) ... ok\ntest_start_and_completion (financial_logging.LoggingTests.test_start_and_completion) ... ok\ntest_valid_negative_rate (financial_logging.LoggingTests.test_valid_negative_rate) ... ok\ntest_valid_result (financial_logging.LoggingTests.test_valid_result) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "label": "compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_logging.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import/root state",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import logging;before=(list(logging.getLogger().handlers),logging.getLogger().level);import financial_logging;assert before==(list(logging.getLogger().handlers),logging.getLogger().level)"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "optimized suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "financial_logging.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "INFO financial_example calculation_started run_id=demo_1\nINFO financial_example calculation_completed run_id=demo_1\ntest_boolean_input (__main__.LoggingTests.test_boolean_input) ... ok\ntest_empty_flows (__main__.LoggingTests.test_empty_flows) ... ok\ntest_invalid_input_event (__main__.LoggingTests.test_invalid_input_event) ... ok\ntest_invalid_rate (__main__.LoggingTests.test_invalid_rate) ... ok\ntest_invalid_run_id (__main__.LoggingTests.test_invalid_run_id) ... ok\ntest_nan (__main__.LoggingTests.test_nan) ... ok\ntest_no_raw_cashflow (__main__.LoggingTests.test_no_raw_cashflow) ... ok\ntest_no_result_logged (__main__.LoggingTests.test_no_result_logged) ... ok\ntest_numerical_event (__main__.LoggingTests.test_numerical_event) ... ok\ntest_start_and_completion (__main__.LoggingTests.test_start_and_completion) ... ok\ntest_valid_negative_rate (__main__.LoggingTests.test_valid_negative_rate) ... ok\ntest_valid_result (__main__.LoggingTests.test_valid_result) ... INFO financial_example calculation_started run_id=run_1\nINFO financial_example calculation_completed run_id=run_1\nok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "zero NPV",
+      "actual": "0.0",
+      "expected": "-5.046468293750712e-16",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "zero NPV start/completion",
+      "actual": "['calculation_started', 'calculation_completed']",
+      "expected": "['calculation_started', 'calculation_completed']",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "negative rate start/completion",
+      "actual": "['calculation_started', 'calculation_completed']",
+      "expected": "['calculation_started', 'calculation_completed']",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative flow",
+      "actual": "-100.0",
+      "expected": "-100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "negative flow start/completion",
+      "actual": "['calculation_started', 'calculation_completed']",
+      "expected": "['calculation_started', 'calculation_completed']",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "zero rate start/completion",
+      "actual": "['calculation_started', 'calculation_completed']",
+      "expected": "['calculation_started', 'calculation_completed']",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary",
+      "actual": "8.333333333333332",
+      "expected": "8.333333333333334",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "ordinary start/completion",
+      "actual": "['calculation_started', 'calculation_completed']",
+      "expected": "['calculation_started', 'calculation_completed']",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "empty category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "empty logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "string category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "string logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite rate category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "infinite rate logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "boundary category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "boundary logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized flow category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized flow logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized rate category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized rate logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "exponential overflow category",
+      "actual": "'ArithmeticError'",
+      "expected": "'ArithmeticError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "exponential overflow log",
+      "actual": "[('INFO', 'calculation_started'), ('ERROR', 'calculation_failed')]",
+      "expected": "[('INFO', 'calculation_started'), ('ERROR', 'calculation_failed')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "sum overflow category",
+      "actual": "'ArithmeticError'",
+      "expected": "'ArithmeticError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "sum overflow log",
+      "actual": "[('INFO', 'calculation_started'), ('ERROR', 'calculation_failed')]",
+      "expected": "[('INFO', 'calculation_started'), ('ERROR', 'calculation_failed')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "runid rejected ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid runid emits nothing ''",
+      "actual": "[]",
+      "expected": "[]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "runid rejected 'bad\\nline'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid runid emits nothing 'bad\\nline'",
+      "actual": "[]",
+      "expected": "[]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "runid rejected 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid runid emits nothing 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'",
+      "actual": "[]",
+      "expected": "[]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "runid rejected 'private secret'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid runid emits nothing 'private secret'",
+      "actual": "[]",
+      "expected": "[]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "runid rejected True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid runid emits nothing True",
+      "actual": "[]",
+      "expected": "[]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "valid runid x",
+      "actual": "1.0",
+      "expected": "1.0",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "valid runid AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "actual": "1.0",
+      "expected": "1.0",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "valid runid run-1_2",
+      "actual": "1.0",
+      "expected": "1.0",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "no raw numeric/result sentinel",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "no raw text sentinel",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "no emitted exception info",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "unknown failure propagates",
+      "actual": "'RuntimeError'",
+      "expected": "'RuntimeError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "unknown failure only start",
+      "actual": "['calculation_started']",
+      "expected": "['calculation_started']",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "caller unchanged",
+      "actual": "[-100, 110]",
+      "expected": "[-100, 110]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "generator accepted",
+      "actual": "0.0",
+      "expected": "0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    }
+  ],
+  "actual_event_records": [
+    {
+      "name": "zero NPV",
+      "actual": "0.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "negative rate",
+      "actual": "100.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "negative flow",
+      "actual": "-100.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "zero rate",
+      "actual": "100.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "ordinary",
+      "actual": "8.333333333333332",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "bool",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "string",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "NaN",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "infinite rate",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "boundary",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "oversized flow",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "oversized rate",
+      "actual": "'ValueError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "WARNING",
+          "message": "calculation_rejected run_id=run_1 category=invalid_input",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "exponential overflow",
+      "actual": "'ArithmeticError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "ERROR",
+          "message": "calculation_failed run_id=run_1 category=numerical",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "sum overflow",
+      "actual": "'ArithmeticError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "ERROR",
+          "message": "calculation_failed run_id=run_1 category=numerical",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "runid ''",
+      "actual": "'ValueError'",
+      "records": []
+    },
+    {
+      "name": "runid 'bad\\nline'",
+      "actual": "'ValueError'",
+      "records": []
+    },
+    {
+      "name": "runid 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'",
+      "actual": "'ValueError'",
+      "records": []
+    },
+    {
+      "name": "runid 'private secret'",
+      "actual": "'ValueError'",
+      "records": []
+    },
+    {
+      "name": "runid True",
+      "actual": "'ValueError'",
+      "records": []
+    },
+    {
+      "name": "valid runid",
+      "actual": "1.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=x",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=x",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "valid runid",
+      "actual": "1.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "valid runid",
+      "actual": "1.0",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run-1_2",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run-1_2",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "private numeric sentinel",
+      "actual": "987654321.123",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        },
+        {
+          "level": "INFO",
+          "message": "calculation_completed run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    },
+    {
+      "name": "unknown iterator failure",
+      "actual": "'RuntimeError'",
+      "records": [
+        {
+          "level": "INFO",
+          "message": "calculation_started run_id=run_1",
+          "exception_info": false
+        }
+      ]
+    }
+  ],
+  "existing_unique_methods": 12,
+  "method_invocations": 36,
+  "new_historical_unique_methods": 0,
+  "limits": "Local synthetic handler events/input/ordinary NPV only;no persistence,delivery,privacy/compliance,all-range NPV,platform or independent acceptance. F28/F32/F209 and broader gaps open."
+}

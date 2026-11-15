@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Logger:** Purpose? **Answer:** Emit events through configured handlers.",
+    "review": "Actual local synthetic handler captures named events.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**INFO:** Typical use? **Answer:** Normal operational milestones.",
+    "review": "INFO start/completion observed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**WARNING:** Typical use? **Answer:** Unexpected potentially recoverable condition.",
+    "review": "WARNING invalid_input observed;policy meaning conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**ERROR:** Typical use? **Answer:** An operation failed.",
+    "review": "ERROR numerical failure observed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**CRITICAL:** Typical use? **Answer:** A severe condition requiring urgent attention.",
+    "review": "Conceptual severe-condition level;no alert routing tested.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Alert:** Does an ERROR automatically page someone? **Answer:** No.",
+    "review": "No paging mechanism;no external action performed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Root logger:** Should a library configure it on import? **Answer:** Generally leave application configuration to the caller.",
+    "review": "Quiet import verifies root handlers/level unchanged.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Duplicate messages:** Possible cause? **Answer:** Multiple handlers or propagation settings.",
+    "review": "Conceptual handler/propagation interaction;observer restores logger configuration.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Run ID:** Purpose? **Answer:** Correlate events.",
+    "review": "Valid controlled identifiers correlate captured events.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Run ID:** Does it prove correctness? **Answer:** No.",
+    "review": "Correlation is not calculation/model acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Token:** Log it? **Answer:** No.",
+    "review": "Conceptual prohibited credential field;synthetic tests only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Raw positions:** Log by default? **Answer:** No.",
+    "review": "Synthetic raw flow/result sentinels omitted from captured messages.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Exception message:** Can it contain sensitive data? **Answer:** Yes.",
+    "review": "Unknown callback exception may contain raw values;logging boundary does not emit it.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Traceback:** Automatically safe for broad access? **Answer:** No.",
+    "review": "No traceback emitted in observed records;surrounding handlers/security not certified.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Error category:** Why use one? **Answer:** To report useful context without raw details.",
+    "review": "Actual fixed invalid/numerical categories observed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Zero NPV:** Is it an error? **Answer:** No.",
+    "review": "Independent rational zero-NPV reference;valid result.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Rate \u22121:** Valid for the example? **Answer:** No.",
+    "review": "Rate\u22121 rejected with WARNING/invalid_input.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Negative rate \u2212.05:** Valid? **Answer:** Yes.",
+    "review": "Negative\u2212.05 accepted with start/completion.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**NaN:** Accepted? **Answer:** No.",
+    "review": "NaN rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Boolean flow:** Accepted? **Answer:** No.",
+    "review": "Boolean flow rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Numerical calculation overflow:** Logged category? **Answer:** numerical.",
+    "review": "Actual discount/summation overflows log ERROR/numerical;oversized inputs are invalid_input.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Invalid input:** Logged category? **Answer:** invalid_input.",
+    "review": "Wrong type/empty/nonfinite/oversized inputs log WARNING/invalid_input.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Unknown exception:** Caught by run_calculation? **Answer:** No.",
+    "review": "RuntimeError during iteration propagates;only start event observed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Newline in run ID:** Accepted? **Answer:** No.",
+    "review": "Invalid newline/run-ID inputs emit no events.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Structured logging:** What does it provide? **Answer:** Named fields for processing and correlation.",
+    "review": "Reference uses fixed plain-text fields;JSON/schema design remains conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Hash:** Does it prove source accuracy? **Answer:** No.",
+    "review": "Hash identifies bytes,not financial source accuracy.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Hashed sensitive ID:** Automatically anonymous? **Answer:** No.",
+    "review": "Conceptual confidentiality;no anonymization claim.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Log:** Automatically immutable audit evidence? **Answer:** No.",
+    "review": "No immutable audit store implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Retention:** Why define it? **Answer:** To meet operational and data-handling requirements.",
+    "review": "Retention/access design only;not executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Clock:** Why synchronize it? **Answer:** To help order and correlate events.",
+    "review": "Clock synchronization design only;not executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Alert routing:** Part of Python logging alone? **Answer:** No.",
+    "review": "No alert routing implementation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Duplicate logging:** Why avoid it? **Answer:** It can mislead counts and obscure an incident.",
+    "review": "Conceptual single-boundary policy;no organization-wide duplicate count certification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Reproducibility:** Does a run ID capture all inputs and versions? **Answer:** No.",
+    "review": "Run ID alone omits provenance/configuration;conceptual.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Model validation:** Replaced by logs? **Answer:** No.",
+    "review": "Model validation independent of event emission.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Availability:** Does an emitted log guarantee delivery? **Answer:** No.",
+    "review": "In-memory emitted event is not delivery/durability assurance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Unit test:** Can assertLogs inspect events? **Answer:** Yes.",
+    "review": "Twelve existing methods include actual assertLogs checks.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Raw result:** Logged by the example? **Answer:** No.",
+    "review": "Tested numeric result sentinel absent from messages.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Currency:** Validated by the calculation? **Answer:** No.",
+    "review": "No currency semantics in this source.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Existing12 methods actually ran36 invocations;inclusion alone is not execution.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Compliance:** Do these examples establish it? **Answer:** No.",
+    "review": "No privacy/audit/platform/production compliance certification.",
+    "status": "reviewed scoped"
+  }
+]

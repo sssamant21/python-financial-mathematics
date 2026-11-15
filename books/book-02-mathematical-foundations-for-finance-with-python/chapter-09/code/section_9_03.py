@@ -1,5 +1,6 @@
 """Book 02 Section 9.3: first-order Taylor approximation."""
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -12,24 +13,39 @@ def finite(value, name):
         raise ValueError(f"{name} must be finite")
     return result
 
+def _report_fraction(exact):
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("Taylor report outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("Taylor report outside finite float range")
+    return result
+
 def linear_taylor(value, derivative, shock):
     v, d, h = finite(value,"value"), finite(derivative,"derivative"), finite(shock,"shock")
-    return v+d*h
+    exact = Fraction(v)+Fraction(d)*Fraction(h)
+    if exact == 0:
+        return v+d*h
+    return _report_fraction(exact)
 
 def compare_change(function, derivative, baseline, shock):
     if not callable(function) or not callable(derivative):
         raise TypeError("function and derivative must be callable")
     x, h = finite(baseline,"baseline"), finite(shock,"shock")
+    point = x+h
+    if not math.isfinite(point):
+        raise ValueError("shocked point must be finite")
     v0 = finite(function(x),"baseline value")
-    v1 = finite(function(x+h),"shocked value")
+    v1 = finite(function(point),"shocked value")
     slope = finite(derivative(x),"derivative")
-    exact = v1-v0
-    approx = slope*h
+    V,W,D,H = map(Fraction,(v0,v1,slope,h))
+    exact, approx = W-V, D*H
     error = exact-approx
-    return {"baseline_value":v0, "exact_change":exact,
-            "linear_change":approx, "linear_value":linear_taylor(v0,slope,h),
-            "signed_error":error, "absolute_error":abs(error),
-            "relative_change_error":None if exact == 0 else abs(error)/abs(exact)}
+    return {"baseline_value":v0, "exact_change":_report_fraction(exact),
+            "linear_change":_report_fraction(approx), "linear_value":_report_fraction(V+approx),
+            "signed_error":_report_fraction(error), "absolute_error":_report_fraction(abs(error)),
+            "relative_change_error":None if exact == 0 else _report_fraction(abs(error)/abs(exact))}
 
 def discount_value(cash_flow, years, rate):
     c, t, r = finite(cash_flow,"cash_flow"), finite(years,"years"), finite(rate,"rate")

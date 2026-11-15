@@ -1,0 +1,90 @@
+"""Book 02 Section 9.3: first-order Taylor approximation."""
+import math
+from fractions import Fraction
+
+def finite(value, name):
+    if type(value) not in (int, float):
+        raise TypeError(f"{name} must be numeric, excluding bool")
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{name} outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError(f"{name} must be finite")
+    return result
+
+def _report_fraction(exact):
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("Taylor report outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("Taylor report outside finite float range")
+    return result
+
+def linear_taylor(value, derivative, shock):
+    v, d, h = finite(value,"value"), finite(derivative,"derivative"), finite(shock,"shock")
+    return _report_fraction(Fraction(v)+Fraction(d)*Fraction(h))
+
+def compare_change(function, derivative, baseline, shock):
+    if not callable(function) or not callable(derivative):
+        raise TypeError("function and derivative must be callable")
+    x, h = finite(baseline,"baseline"), finite(shock,"shock")
+    point = x+h
+    if not math.isfinite(point):
+        raise ValueError("shocked point must be finite")
+    v0 = finite(function(x),"baseline value")
+    v1 = finite(function(point),"shocked value")
+    slope = finite(derivative(x),"derivative")
+    V,W,D,H = map(Fraction,(v0,v1,slope,h))
+    exact, approx = W-V, D*H
+    error = exact-approx
+    return {"baseline_value":v0, "exact_change":_report_fraction(exact),
+            "linear_change":_report_fraction(approx), "linear_value":_report_fraction(V+approx),
+            "signed_error":_report_fraction(error), "absolute_error":_report_fraction(abs(error)),
+            "relative_change_error":None if exact == 0 else _report_fraction(abs(error)/abs(exact))}
+
+def discount_value(cash_flow, years, rate):
+    c, t, r = finite(cash_flow,"cash_flow"), finite(years,"years"), finite(rate,"rate")
+    if c <= 0 or t < 0:
+        raise ValueError("cash_flow must be positive and years nonnegative")
+    return c*math.exp(-t*r)
+
+def discount_shock(cash_flow, years, rate, shock):
+    c, t, r, h = (finite(v,n) for v,n in
+                  ((cash_flow,"cash_flow"),(years,"years"),
+                   (rate,"rate"),(shock,"shock")))
+    v0 = discount_value(c,t,r)
+    exact = v0*math.expm1(-t*h)
+    approx = -t*v0*h
+    error = exact-approx
+    return {"baseline_value":v0, "exact_change":exact,
+            "linear_change":approx, "linear_value":v0+approx,
+            "signed_error":error, "absolute_error":abs(error),
+            "relative_change_error":None if exact == 0 else abs(error)/abs(exact)}
+
+def discount_step_ladder(cash_flow, years, rate, steps):
+    return [{"shock":finite(h,"shock"),
+             **discount_shock(cash_flow,years,rate,h)} for h in steps]
+
+def revenue(quantity):
+    q = finite(quantity,"quantity")
+    if q < 0:
+        raise ValueError("quantity must be nonnegative")
+    return 40*q-0.1*q*q
+
+def revenue_derivative(quantity):
+    q = finite(quantity,"quantity")
+    if q < 0:
+        raise ValueError("quantity must be nonnegative")
+    return 40-0.2*q
+
+if __name__ == "__main__":
+    import json
+    report = {
+        "quadratic":compare_change(lambda x:x*x,lambda x:2*x,3,0.2),
+        "discount_10bp":discount_shock(10000,5,0.04,0.001),
+        "discount_ladder":discount_step_ladder(10000,5,0.04,
+                                             (0.01,0.005,0.001,0.0001)),
+        "revenue":compare_change(revenue,revenue_derivative,100,5)}
+    print(json.dumps(report,indent=2,allow_nan=False))

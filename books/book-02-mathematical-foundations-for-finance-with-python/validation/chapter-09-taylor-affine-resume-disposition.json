@@ -1,0 +1,37 @@
+{
+  "original_record": "chapter-09-taylor-resume-initial.json",
+  "original_replay": "chapter-09-taylor-resume-replay.json",
+  "dispositions": [
+    {
+      "original_probe": "complete affine rescue",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicate": {
+        "name": "affine1",
+        "actual": "-1e+308",
+        "expected": "-1e+308",
+        "passed": true
+      }
+    },
+    {
+      "original_probe": "complete discounted value rescue",
+      "disposition": "OPEN",
+      "limits": "discount_value unchanged;finite independent2.233994766161711 still raises OverflowError"
+    },
+    {
+      "original_probe": "nonfinite shocked point callback consumption",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicate": {
+        "name": "preflight (1e+308, 1e+308)",
+        "actual": "ValueError",
+        "expected": "ValueError",
+        "calls": [],
+        "expected_calls": [],
+        "passed": true
+      }
+    }
+  ],
+  "COV_54": "PARTIAL",
+  "selected_categories_partial": 36,
+  "categories_closed": 0,
+  "limits": "Mapped scalar/preflight scope only;historical records unchanged;discounted helpers and independent acceptance open"
+}

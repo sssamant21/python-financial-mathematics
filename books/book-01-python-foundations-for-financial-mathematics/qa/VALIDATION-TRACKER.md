@@ -366,6 +366,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F208 | Section20.8 finite-input/complete-return and iterator-stage error contracts. | RESOLVED (scoped) —eight initial failures/replay retained;45 corrected source predicates pass. NPV/resources/platform/independent acceptance open. [Evidence](chapter-20-input-review/README.md). |
 | F209 | Section20.8 arbitrary-iterable shape/order acceptance. | OPEN DESIGN —numeric mapping keys,set members and bytes can pass element validation;surrounding collection/order/resource/integration policy not established. Three executed observations are not source-failure predicates or financial acceptance. [Evidence](chapter-20-input-review/README.md). |
 | F210 | Section20.9 oversized input categories and iterator-stage classification. | RESOLVED (scoped) —two oversized-input OverflowError leaks and one late TypeError mistranslation fixed;three baseline failures/replay and39 corrected source predicates/five commands retained. Broader NPV/resources/traceback policy open. [Evidence](chapter-20-exceptions-review/README.md). |
+| F211 | Section20.10 oversized-input exception and emitted category contract. | RESOLVED (scoped) —two oversized-input cases raised OverflowError/logged numerical;four baseline predicate failures/replay and50 corrected source/event predicates retained. Broader logging/privacy/audit/NPV acceptance open. [Evidence](chapter-20-logging-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -523,3 +524,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ### Section20.10 resume checkpoint — OPEN
 
 [Two exact-source logging category observations](chapter-20-logging-resume/README.md) retained for next formal workflow/answer review. Oversized flow/rate are logged as numerical rather than invalid_input;no correction or complete logging/security review claimed. Separate from Section20.9's39 passing predicates and formal workflow totals.
+
+
+## Section20.10 scoped logging workflow and answers
+
+[Logging evidence](chapter-20-logging-review/README.md):one workflow,40 local answers/12 steps;50 corrected source/event predicates/five commands pass. Four initial predicate failures/two cases and identical replay retained(F211). Twelve existing methods ran36 invocations;zero new historical methods. Synthetic event order/category/content and root import state checked;platform/audit/privacy/retention/alerting conceptual only. Saved logging observations have later scoped disposition;historical initial records unchanged. Chapter20 now10 workflows/400 local answers. F28/F32/F209,F165 limits,F185 integration and broader NPV/platform/independent acceptance open. Next:Section20.11 Type Hints.

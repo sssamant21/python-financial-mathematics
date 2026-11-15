@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-160 centered scope and V-161 full candidate Linux pass (612/399/613). Taylor diagnostic mismatches and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-162 affine/generic report scoped pass;V-161 remains latest full candidate Linux pass (612/399/613),pending refresh. Discounted Taylor helpers and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1357,3 +1357,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-161 checkpoint — Full pinned candidate Linux refresh
 
 [V-161 full runtime](runtime-refresh-2026-11-14-r10.md) at `ded1212c249a58c750f6218214754d86a77ac178`:612/612 Python files compiled,399/399 check-test scripts passed,613/613 required Python/fixture hashes verified before-after. Includes V-160 centered contracts;seven initial failed predicates/replay,48 corrected predicates and scoped prior-observation disposition retained separately. Historical original/prior records unchanged. Next Taylor checkpoint has two OPEN numerical mismatches and one separate callback/preflight design observation,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 complete affine/discounted-change/error-report/callback contracts. Book1 tracked independently.
+
+
+## V-162 checkpoint — Section9.3 complete affine/generic report contracts
+
+[Affine/report evidence](chapter-09-affine-report-followup.md):125 corrected predicates pass;86 initial passes/39 failed predicates and identical replay retained. First correction's one signed-zero failure/source and corrected rerun retained separately. Independent1800/2400-digit complete-affine/seven-field sample-report references plus actual preflight/callback consumption controls checked. Saved affine and preflight cases scoped resolved;discounted-value rescue remains OPEN. Three files compiled,three commands/two checkers pass,three hashes verified before-after;discounted/revenue/ladder functions/checker unchanged. Ten escaped manuscript backticks repaired. Fresh613/400/614 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 discounted value/shock/error-report contracts,then ladder/revenue. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.

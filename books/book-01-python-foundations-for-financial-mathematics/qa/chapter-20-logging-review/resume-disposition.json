@@ -1,0 +1,36 @@
+{
+  "original_record": "../chapter-20-logging-resume/initial.json",
+  "original_replay": "../chapter-20-logging-resume/replay.json",
+  "disposition": "RESOLVED (scoped)",
+  "corrected_predicates": [
+    {
+      "name": "oversized flow category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized flow logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized rate category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized rate logged rejection",
+      "actual": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "expected": "[('INFO', 'calculation_started', 'run_id=run_1'), ('WARNING', 'calculation_rejected', 'category=invalid_input')]",
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "limits": "Input/category distinction only;historical initial records unchanged;not logging/privacy/audit certification"
+}
