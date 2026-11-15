@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-180 financial remainder scope and V-181 full candidate Linux pass (622/409/623). Polynomial/remaining review and independent/platform/release acceptance open.
+**Overall status:** In progress — V-182 polynomial/manuscript scope and V-183 full candidate Linux pass (623/410/624). Section9.6 numerical/report and independent/platform/release acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 622/622 at `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`. [V-181](runtime-refresh-2026-11-15-r9.md). |
-| Automated script execution | Full candidate Linux pass | 409/409 at `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`;623 required blobs verified before/after. [V-181](runtime-refresh-2026-11-15-r9.md). |
+| Python compilation | Full candidate Linux pass | 623/623 at `b5bfa28ea4991f2694e88933c43eccb0d44b87be`. [V-183](runtime-refresh-2026-11-15-r10.md). |
+| Automated script execution | Full candidate Linux pass | 410/410 at `b5bfa28ea4991f2694e88933c43eccb0d44b87be`;624 required blobs verified before/after. [V-183](runtime-refresh-2026-11-15-r10.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1507,3 +1507,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-182 checkpoint — Section9.5 polynomial/manuscript/exercise scope
 
 [Polynomial evidence](chapter-09-polynomial-contract-followup.md):117correctedsourcepredicates+3separatesupplementalarithmeticcontrols pass. Initial86pass/31failedsourcepredicatesandactualidenticalreplayretained:20whole-rangepolicyfields,1exactzero-policyfield,10complete-roundingfields,not31uniquebugs. Onlypolynomialbodychanged;financialtextunchanged. Fourfiles/fourcommands/threecheckerspass. Tenexercise/solutionrecords and80digitboundcalculationretained;runtimechecklistreconciled,independentreviewnotgranted. Fresh623/410/624inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,then9.6discounted-valuesensitivitycompletecontracts. Historicalrecordsretained;resource/platform/model/release/independentacceptanceopen. Book1separate.
+
+
+### Section9.6 discounted-sensitivity resume — OPEN
+
+[Initial9.6diagnostics](chapter-09-discounted-resume-r10-initial.json),[actualidenticalreplay](chapter-09-discounted-resume-r10-replay.json),[runner](chapter-09-discounted-resume-r10-probes.txt) atb5bfa28ea4991f2694e88933c43eccb0d44b87be. Secondderivativeunderflows0 versus1e-308;parallel/spotexactchangesraiseexpm1OverflowError versusfinite directendpoint reference. Three numericalobservations,notpassing117polynomialpredicates orcomplete9.6report/denominator/cash-derivative/spot/prerequisiteacceptance. Next9.6completecontracts;historicalrecordsretained.
+
+
+## V-183 checkpoint — Full pinned candidate Linux refresh
+
+[V-183fullruntime](runtime-refresh-2026-11-15-r10.md) at`b5bfa28ea4991f2694e88933c43eccb0d44b87be`:623/623Pythoncompiled,410/410check-testscripts passed,624/624requiredsource/fixtureblobs verifiedbefore-after. IncludesV-182polynomialscope;117sourcepredicates+3supplementalcontrols pass,31initialfailures/actualreplayretained withrange/zero-policy/numericalseparation,not31uniquebugs. Financialtextunchanged;regressioncheckerpassed.Tenexercisereviews/80digitboundretained. Three9.6numericaldiagnosticsremainOPEN;fullruntime doesnotsettle unassertedcontracts. Exactrunner/per-fileoutcomes/digests/fullmanifestretained. All37selectedCOVcategoriespartial,noneclosed. Next9.6discounted-valuesensitivitycompletecontracts. Independentmathematical/editorial/model/platform/release/canonicalacceptancepending;Book1independent.

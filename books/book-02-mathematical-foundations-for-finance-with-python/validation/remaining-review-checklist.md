@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `835777284697e2a6ce3f7fdc27dcd7efa3666e4e` (V-181)
-**Latest scoped source:** V-180 at `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`;[three-file source manifest](chapter-09-remainder-report-publication-verification.json).
+**Full-runtime candidate source revision:** `b5bfa28ea4991f2694e88933c43eccb0d44b87be` (V-183)
+**Latest scoped source:** V-182 at `b5bfa28ea4991f2694e88933c43eccb0d44b87be`;[four-filesourcemanifest](chapter-09-polynomial-contract-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-180 financial remainder scope and V-181 full runtime pass;polynomial/remaining9.5 and independent/release approval open.
+**Disposition:** V-182 polynomial/manuscript scope and V-183 full runtime pass;Section9.6 numerical/report and independent/release approval open.
 
 ## Reconciled evidence
 
@@ -1381,3 +1381,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-182 checkpoint — Section9.5 polynomial/manuscript/exercise scope
 
 [Polynomial evidence](chapter-09-polynomial-contract-followup.md):117correctedsourcepredicates+3separatesupplementalarithmeticcontrols pass. Initial86pass/31failedsourcepredicatesandactualidenticalreplayretained:20whole-rangepolicyfields,1exactzero-policyfield,10complete-roundingfields,not31uniquebugs. Onlypolynomialbodychanged;financialtextunchanged. Fourfiles/fourcommands/threecheckerspass. Tenexercise/solutionrecords and80digitboundcalculationretained;runtimechecklistreconciled,independentreviewnotgranted. Fresh623/410/624inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,then9.6discounted-valuesensitivitycompletecontracts. Historicalrecordsretained;resource/platform/model/release/independentacceptanceopen. Book1separate.
+
+
+### Section9.6 discounted-sensitivity resume — OPEN
+
+[Initial9.6diagnostics](chapter-09-discounted-resume-r10-initial.json),[actualidenticalreplay](chapter-09-discounted-resume-r10-replay.json),[runner](chapter-09-discounted-resume-r10-probes.txt) atb5bfa28ea4991f2694e88933c43eccb0d44b87be. Secondderivativeunderflows0 versus1e-308;parallel/spotexactchangesraiseexpm1OverflowError versusfinite directendpoint reference. Three numericalobservations,notpassing117polynomialpredicates orcomplete9.6report/denominator/cash-derivative/spot/prerequisiteacceptance. Next9.6completecontracts;historicalrecordsretained.
+
+
+## V-183 checkpoint — Full pinned candidate Linux refresh
+
+[V-183fullruntime](runtime-refresh-2026-11-15-r10.md) at`b5bfa28ea4991f2694e88933c43eccb0d44b87be`:623/623Pythoncompiled,410/410check-testscripts passed,624/624requiredsource/fixtureblobs verifiedbefore-after. IncludesV-182polynomialscope;117sourcepredicates+3supplementalcontrols pass,31initialfailures/actualreplayretained withrange/zero-policy/numericalseparation,not31uniquebugs. Financialtextunchanged;regressioncheckerpassed.Tenexercisereviews/80digitboundretained. Three9.6numericaldiagnosticsremainOPEN;fullruntime doesnotsettle unassertedcontracts. Exactrunner/per-fileoutcomes/digests/fullmanifestretained. All37selectedCOVcategoriespartial,noneclosed. Next9.6discounted-valuesensitivitycompletecontracts. Independentmathematical/editorial/model/platform/release/canonicalacceptancepending;Book1independent.

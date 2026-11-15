@@ -613,3 +613,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.4 scoped numerical/Decimal policy and answers
 
 [Policy evidence](chapter-21-policy-review/README.md):oneworkflow/40answers/12labreviews;45sourcepredicates pass viaindependentintegercoefficient/divmod/parityoracle andcontext/inputchecks. Fourseparatearithmeticcontrols;notfinancialmoduleintegration. Baseline/replay pass,codefencesunchanged,no defectinvented. Twoearliercommandsreusedbyexactfencehashes;twofreshcommands pass. Evidencechain4commands/twocompiledfences,12existingmethods/24invocations,zero newhistoricalmethods. Chapter21now4scopedworkflows/160answers;next21.5TVMModule. F28/F32/F209,20.11static,F165/F185,R08-10/owner andcurrency/settlement/model/platform/release/independentacceptance retained.
+
+
+### Section21.5 partial TVM integration resume — OPEN
+
+[TVMcheckpoint](chapter-21-tvm-resume/README.md):updatedTVM/reexports/newtests+retained21.3tests pass3sourcecommands/24existingmethods,zero newhistoricalmethods. PYTHONPATHsourceexecution only;updatededitable/wheelartifact nottested. Formal21.5range/oracles/40answers/12labreviewnext;earlier21.3artifactevidencehasolderscope.

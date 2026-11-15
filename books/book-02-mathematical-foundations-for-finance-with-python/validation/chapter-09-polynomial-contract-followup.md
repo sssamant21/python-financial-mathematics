@@ -6,6 +6,13 @@ Baseline29b6cda78909f0859680a0cf0aefb11c761b7be7. [Scopeproof](chapter-09-polyno
 
 [Corrected117sourcepredicates](chapter-09-polynomial-contract-corrected.json),[actualcorrectedcommand](chapter-09-polynomial-contract-corrected-run.json),[four-file/four-commandscopedrun](chapter-09-polynomial-contract-results.json). [Observer](chapter-09-polynomial-contract-observer.txt):`python books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-polynomial-contract-observer.txt . baseline-replay` stagesbaselinewithnewchecker;correctedusesworkingsource. [Runner](chapter-09-polynomial-contract-runner.txt) compiles4files,runsdemo+3checkersincludingunchangedfinancialreport207source+13oracleboundcontrols. Fresh623Python/410check-test/624requiredblobsisinventoryuntilseparatepinnedfullrun.
 
-[Tensolutionreviews](chapter-09-section-05-exercise-review.json) retainconditionalLagrangeremainderassumptions,cubicrationalM2/B1,positivefixedflowintervalmaxima andindependent80digit10bpbound. Financialrunisreusedbyunchangedfunctiontext;not everyderivationhasindependentreview. Runtimechecklist/contracttextreconciled. No changetofinancialreportpolicyorprior207/13counts. Two polynomialdiagnosticsnowhavescopedrange/semanticdispositions;analytich³isnotroundeddisplay subtraction.
+[Tensolutionreviews](chapter-09-section-05-exercise-review.json) retainconditionalLagrangeremainderassumptions,cubicrationalM2/B1,positivefixedflowintervalmaxima andindependent80digit10bpbound. Earlierfinancialscope/derivationsare retainedbyunchangedfunctiontext;thefinancialcheckeralsoranasselectedregression.Not everyderivationhasindependentreview. Runtimechecklist/contracttextreconciled. No changetofinancialreportpolicyorprior207/13counts. Two polynomialdiagnosticsnowhavescopedrange/semanticdispositions;analytich³isnotroundeddisplay subtraction.
 
 Next9.6discounted-valuesensitivitycompleteoutputs/denominators/prerequisites. Remainingformalproof,resource/platform/model/independentmathematical/editorial/release/canonicalacceptanceopen. All37selectedCOVcategoriespartial,noneclosed;notcompletionpercentages. Book1independent.
+
+
+### Section9.6 discounted-sensitivity resume — OPEN
+
+[Initial9.6diagnostics](chapter-09-discounted-resume-r10-initial.json),[actualidenticalreplay](chapter-09-discounted-resume-r10-replay.json),[runner](chapter-09-discounted-resume-r10-probes.txt) atb5bfa28ea4991f2694e88933c43eccb0d44b87be. Secondderivativeunderflows0 versus1e-308;parallel/spotexactchangesraiseexpm1OverflowError versusfinite directendpoint reference. Three numericalobservations,notpassing117polynomialpredicates orcomplete9.6report/denominator/cash-derivative/spot/prerequisiteacceptance. Next9.6completecontracts;historicalrecordsretained.
+
+Executedsourcepin`b5bfa28ea4991f2694e88933c43eccb0d44b87be`;[hashverification](chapter-09-polynomial-contract-publication-verification.json).

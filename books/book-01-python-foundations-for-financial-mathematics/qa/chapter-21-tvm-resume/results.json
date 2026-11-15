@@ -1,0 +1,69 @@
+{
+  "source_revision": "b5bfa28ea4991f2694e88933c43eccb0d44b87be",
+  "source_paths": [
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-21/21.05-time-value-of-money-module.md",
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-21/21.03-project-structure.md"
+  ],
+  "source_sha256": [
+    "4e14d12dc4b22da5f163c071433418c2f19324f91f0f91d5183294970add8f15",
+    "f0c3adfdb8f7e7ad26b66feb7e54725474cf85e04c3f182debddb53bef94f04b"
+  ],
+  "staged_fence_sha256": {
+    "src/financial_toolkit/time_value.py": "96ba4c87f7e5b120db5092859b089cd5bdebe7b07868a85a85369d431dc3ea9b",
+    "src/financial_toolkit/__init__.py": "f9f50a28face333d2c06c3e833be1747ce87080a5c0865bc33f8ad50a2578963",
+    "examples/tvm.py": "115e6a97dfad3d7cbd2fbb5bce1d5c17e5569084256345ff20aaa4908de4d20a",
+    "tests/test_tvm_multi.py": "2f85ab6119197716d1e6d0c11be71655e75d5968f396834d9a539bc372fd03c0",
+    "tests/test_time_value.py": "8e035bd80478f9bdf3f824c71f716e20fff38fcf214e0926765ecce0bc65e4db"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "examples/tvm.py"
+      ],
+      "returncode": 0,
+      "stdout": "121.00000000000003\n99.99999999999999\n",
+      "stderr": "",
+      "source_path_injection": true
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (test_time_value.TimeValueTests.test_boolean_rejected) ... ok\ntest_integer_rejected (test_time_value.TimeValueTests.test_integer_rejected) ... ok\ntest_known_value (test_time_value.TimeValueTests.test_known_value) ... ok\ntest_negative_payment (test_time_value.TimeValueTests.test_negative_payment) ... ok\ntest_negative_rate (test_time_value.TimeValueTests.test_negative_rate) ... ok\ntest_nonfinite_payment (test_time_value.TimeValueTests.test_nonfinite_payment) ... ok\ntest_nonfinite_rate (test_time_value.TimeValueTests.test_nonfinite_rate) ... ok\ntest_nonfinite_result_rejected (test_time_value.TimeValueTests.test_nonfinite_result_rejected) ... ok\ntest_positive_payment_rate_monotonicity (test_time_value.TimeValueTests.test_positive_payment_rate_monotonicity) ... ok\ntest_rate_boundary (test_time_value.TimeValueTests.test_rate_boundary) ... ok\ntest_zero_payment (test_time_value.TimeValueTests.test_zero_payment) ... ok\ntest_zero_rate (test_time_value.TimeValueTests.test_zero_rate) ... ok\ntest_future_known_value (test_tvm_multi.TimeValueModuleTests.test_future_known_value) ... ok\ntest_invalid_numeric_inputs (test_tvm_multi.TimeValueModuleTests.test_invalid_numeric_inputs) ... ok\ntest_invalid_periods (test_tvm_multi.TimeValueModuleTests.test_invalid_periods) ... ok\ntest_negative_rate (test_tvm_multi.TimeValueModuleTests.test_negative_rate) ... ok\ntest_nonfinite_intermediate (test_tvm_multi.TimeValueModuleTests.test_nonfinite_intermediate) ... ok\ntest_one_period_compatibility (test_tvm_multi.TimeValueModuleTests.test_one_period_compatibility) ... ok\ntest_positive_pv_decreases_with_rate (test_tvm_multi.TimeValueModuleTests.test_positive_pv_decreases_with_rate) ... ok\ntest_present_known_value (test_tvm_multi.TimeValueModuleTests.test_present_known_value) ... ok\ntest_rate_boundary_rejected (test_tvm_multi.TimeValueModuleTests.test_rate_boundary_rejected) ... ok\ntest_round_trip (test_tvm_multi.TimeValueModuleTests.test_round_trip) ... ok\ntest_zero_period (test_tvm_multi.TimeValueModuleTests.test_zero_period) ... ok\ntest_zero_rate (test_tvm_multi.TimeValueModuleTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.001s\n\nOK\n",
+      "source_path_injection": true
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "examples"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "source_path_injection": true
+    }
+  ],
+  "existing_unique_methods": {
+    "tvm": 12,
+    "retained_scaffold": 12
+  },
+  "method_invocations": 24,
+  "new_historical_unique_methods": 0,
+  "limits": "Partialsourceintegration only;updatedmodule/reexports/tests stagedwithretained21.3tests. ExplicitPYTHONPATH;no editable/wheel/installacceptance forupdatedTVM. Full21.5range/oracles/40answers/12lab reviewpending."
+}

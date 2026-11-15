@@ -1,0 +1,45 @@
+{
+  "source_revision": "b5bfa28ea4991f2694e88933c43eccb0d44b87be",
+  "source_blob": "711ed0bdc9cdcd837b5284a394c5db81fcb85742",
+  "observations": [
+    {
+      "name": "complete second derivative",
+      "actual": {
+        "returned": {
+          "value": 1e+308,
+          "first": -0.9999999999999999,
+          "second": 0.0,
+          "duration": 1e-308,
+          "convexity": 0.0,
+          "cash_flow_derivatives": [
+            1.0
+          ],
+          "value_weights": [
+            1.0
+          ]
+        }
+      },
+      "independent_second": 1e-308,
+      "status": "OPEN numerical;source second0 vs complete1e-308"
+    },
+    {
+      "name": "parallel finite exact change",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;source expm1 OverflowError vs finite direct endpoint change"
+    },
+    {
+      "name": "spot finite exact change",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;source expm1 OverflowError vs finite direct endpoint change"
+    }
+  ],
+  "limits": "Threeinitialdiagnostics only;notpassingsourcepredicates orcomplete9.6 whole-report/denominator/cash-derivative/spot/prioritycontracts. Historicalevidenceunchanged."
+}
