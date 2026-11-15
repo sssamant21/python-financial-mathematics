@@ -1,0 +1,14 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib,json,hashlib
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();pin='39ebd9690c5c5b3d946ffd6141b7165b0b8e9388';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_06.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation'
+def call(f):
+ try:return dict(returned=f())
+ except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_06.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_06')
+ with localcontext(Context(prec=2400)):
+  C=Decimal.from_float(1e-308);rescued=C*Decimal(710).exp();small=-Decimal(1000)*Decimal.from_float(1e308)*Decimal(-1000).exp();change=float(C*(Decimal(709).exp()-Decimal(-1).exp()));expected_value=float(rescued);expected_derivative=float(-2*rescued);expected_small=float(small)
+ f=[(1e-308,2.),(1.,0.)];rows=[dict(name='spot value/derivative complete exponent rescue',actual=call(lambda:m.spot_curve_sensitivity([(1e-308,2.)],[-355.])),independent_value=expected_value,independent_spot_derivative=expected_derivative,status='OPEN numerical;finitewholethree-fieldreportvsOverflowError'),dict(name='spot derivative rescue after discount factor underflow',actual=call(lambda:m.spot_curve_sensitivity([(1e308,1000.),(1.,0.)],[1.,0.])),independent_parallel_first=expected_small,status='OPEN numerical;nonzerofiniteaggregate/per-spotderivativevs0'),dict(name='spot shock finite exact change',actual=call(lambda:m.spot_shock(f,[.5,0.],[-355.,0.])),independent_exact_change=change,status='OPEN numerical;expm1OverflowErrorpersists')]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),reference_precision=2400,observations=rows,limits='Threespotdiagnosticsonly,notpassing112parallelpredicates orcompletespotcurve/spotshockcollection/prerequisite/reportacceptance. Historicalrecordsunchanged.')
+(v/sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('3spot numerical observationssaved')

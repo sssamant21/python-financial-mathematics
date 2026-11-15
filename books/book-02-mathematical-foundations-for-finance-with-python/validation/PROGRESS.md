@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-184 baseline sensitivity scope and V-185 full candidate Linux pass (624/411/625). Parallel/spot numerical/prerequisite and independent/platform/release acceptance open.
+**Overall status:** In progress — V-186 parallel report scope and V-187 full candidate Linux pass (625/412/626). Spot numerical/prerequisite and independent/platform/release acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 624/624 at `70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`. [V-185](runtime-refresh-2026-11-15-r11.md). |
-| Automated script execution | Full candidate Linux pass | 411/411 at `70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`;625 required blobs verified before/after. [V-185](runtime-refresh-2026-11-15-r11.md). |
+| Python compilation | Full candidate Linux pass | 625/625 at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`. [V-187](runtime-refresh-2026-11-15-r12.md). |
+| Automated script execution | Full candidate Linux pass | 412/412 at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`;626 required blobs verified before/after. [V-187](runtime-refresh-2026-11-15-r12.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1534,6 +1534,16 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 [V-185fullruntime](runtime-refresh-2026-11-15-r11.md) at`70da93bc07c55a0c0b5eb1a48b7f80bb0614289c`:624/624Pythoncompiled,411/411check-testscripts passed,625/625requiredsource/fixtureblobsverifiedbefore-after. IncludesV-184baseline;141sourcepredicatespass,31initialfailures/actualreplayretained withrange/exception-policy/numericalseparation,not31uniquebugs. Parallel/spotfunctiontextunchanged;twonumericalcasesandoneparent-prerequisitepolicyquestionremainOPEN. Exactrunner/per-fileoutcomes/digests/fullmanifestretained. All37selectedCOVcategoriespartial,noneclosed.Nextparallel_shockcompletefields/prerequisites,then spotcurve/shock. Independentmathematical/editorial/model/platform/release/canonicalacceptancepending;Book1independent.
 
 
-## V-186 checkpoint — Section9.6 complete parallel-shock reports
+## V-186 checkpoint — Section 9.6 parallel-shock reports
 
-[Parallelevidence](chapter-09-parallel-report-followup.md):112correctedsourcepredicatespass;95initialpass/17failedandactualidenticalreplayretained. Twelvefieldsfromtworejectedreports+5latenterrorfields,not17uniquebugs. Independent1800/2400-digitbaseline/endpoint/Taylor/errororacles. Existingfullbaselineprerequisiteretained;unusedper-cashfieldzero-shockrejectionremainsdocumenteddesign/rangelimit,notnumericrepairorindependentapproval. Onlyparallelbodychanged;spottextunchanged/pending. Fourfiles/fourcommands/threecheckerspass;fresh625/412/626inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,thencomplete spotcurve/spotshockcontracts. Historicalrecordsretained;resources/platform/model/release/independentacceptanceopen;Book1separate.
+[Parallel evidence](chapter-09-parallel-report-followup.md): 112 corrected source predicates pass. The initial 95 passes and 17 failures are retained with actual identical replay. Twelve failed fields came from two rejected reports; five concerned latent errors, not 17 unique defects. Independent references use 1,800 and 2,400 decimal digits. The full-baseline prerequisite remains a documented design/range restriction, including unused per-cash fields; it is not a numerical repair or independent policy approval. Only the parallel body changed. Four files compiled and four commands/three checker invocations passed. The fresh 625/412/626 inventory was separate from full execution. All 37 selected COV categories remain partial, none closed. Spot contracts, resources, platforms, model, release and independent acceptance remain open.
+
+
+### Section 9.6 spot resume — OPEN
+
+[Initial diagnostics](chapter-09-spot-resume-r12-initial.json), [actual identical replay](chapter-09-spot-resume-r12-replay.json) and [runner](chapter-09-spot-resume-r12-probes.txt) are pinned to `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`. Three numerical cases remain open: finite spot value/derivative exponential rescue, derivative loss after discount-factor underflow, and spot-shock `expm1` overflow. They are separate from the 112 passing parallel predicates. Next: spot-curve value, per-spot derivative, parallel-first and collection contracts, then spot-shock changes/errors/prerequisites. Historical records are unchanged.
+
+
+## V-187 checkpoint — Full pinned candidate Linux refresh
+
+[V-187 runtime](runtime-refresh-2026-11-15-r12.md) at `39ebd9690c5c5b3d946ffd6141b7165b0b8e9388`: 625/625 Python files compiled, 412/412 check/test scripts passed, and 626/626 required blobs matched before and after execution. Includes V-186's 112 passing parallel predicates; initial failures/replay and the retained baseline prerequisite remain separately documented. Three spot diagnostics remain open: a full script pass does not settle their unasserted contracts. Runner, manifest, per-file outcomes and output digests are retained. All 37 selected COV categories remain partial, none closed. Next: spot-curve contracts, then spot-shock reports. Independent mathematical/editorial/model/platform/release/canonical acceptance remains pending. Book 1 is tracked separately.

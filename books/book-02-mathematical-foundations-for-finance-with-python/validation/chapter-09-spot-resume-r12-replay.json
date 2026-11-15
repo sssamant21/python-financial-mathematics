@@ -1,0 +1,42 @@
+{
+  "source_revision": "39ebd9690c5c5b3d946ffd6141b7165b0b8e9388",
+  "source_blob": "2c896b55a5b2efc694b405c02caa77c171aad3ac",
+  "reference_precision": 2400,
+  "observations": [
+    {
+      "name": "spot value/derivative complete exponent rescue",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_value": 2.233994766161711,
+      "independent_spot_derivative": -4.467989532323422,
+      "status": "OPEN numerical;finitewholethree-fieldreportvsOverflowError"
+    },
+    {
+      "name": "spot derivative rescue after discount factor underflow",
+      "actual": {
+        "returned": {
+          "value": 1.0,
+          "spot_derivatives": [
+            -0.0,
+            -0.0
+          ],
+          "parallel_first": 0.0
+        }
+      },
+      "independent_parallel_first": -5.075958897549457e-124,
+      "status": "OPEN numerical;nonzerofiniteaggregate/per-spotderivativevs0"
+    },
+    {
+      "name": "spot shock finite exact change",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;expm1OverflowErrorpersists"
+    }
+  ],
+  "limits": "Threespotdiagnosticsonly,notpassing112parallelpredicates orcompletespotcurve/spotshockcollection/prerequisite/reportacceptance. Historicalrecordsunchanged."
+}
