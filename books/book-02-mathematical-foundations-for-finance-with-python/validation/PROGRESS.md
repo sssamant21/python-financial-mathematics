@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-154 demand/portfolio scoped pass and V-155 full candidate Linux pass (609/396/610). Section9.2 probes,independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-156 point/arc/rate scoped pass;V-155 remains latest full candidate Linux pass (609/396/610),pending refresh. Model/centered helper and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1322,3 +1322,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-155 checkpoint — Full pinned candidate Linux refresh
 
 [V-155 full runtime](runtime-refresh-2026-11-14-r7.md) at `e1be84b08b955bb785a86aa6a1fe6114adbc0cf3`:609/609 Python files compiled,396/396 check-test scripts passed,610/610 required Python/fixture hashes verified before-after. Includes V-154 demand/portfolio changes;34 initial failed predicates/replay and three scoped prior-probe resolutions retained separately. Three new Section9.2 resume probes remain OPEN,not passing script evidence. Exact staging runner,per-file output/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 elasticity product/midpoint/near-zero/final-report contracts,resuming saved probes. Book1 tracked independently.
+
+
+## V-156 checkpoint — Section9.2 complete point/arc/rate contracts
+
+[Elasticity evidence](chapter-09-rational-elasticity-followup.md):44 corrected predicates pass;31 initial passes/13 failed predicates and identical replay retained. Independent1800/2400-digit complete products/quotients,subnormal/signed-zero/reversal/final-range and original domain controls checked. Three saved probes resolved only in explicit mapped scope;historical OPEN records retained. Three files compiled,three commands/two checkers pass,three hashes verified before-after;existing checker unchanged. Fresh610/397/611 inventory is not full execution;full pinned refresh next. COV-54 and all36 selected categories partial,none closed. Next after refresh:Section9.2 constant/linear/income helper complete-range/near-zero contracts,then centered-elasticity preflight/report/callback contracts. Broader resource/platform/independent/release acceptance pending. Book1 tracked independently.

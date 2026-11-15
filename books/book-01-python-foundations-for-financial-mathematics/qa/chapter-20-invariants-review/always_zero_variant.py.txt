@@ -1,0 +1,79 @@
+import math
+from fractions import Fraction
+import unittest
+
+def finite_number(value):
+    if type(value) not in (int,float):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+def float_report(exact):
+    try:
+        result=float(exact)
+    except OverflowError as exc:
+        raise ValueError("result outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("result outside finite float range")
+    return result
+
+def npv(cashflows,rate):
+    return 0.0
+
+def simple_return(start,end):
+    if not all(finite_number(x) for x in (start,end)) or start<=0 or end<0:
+        raise ValueError("positive start and nonnegative end required")
+    return float_report((Fraction(end)-Fraction(start))/Fraction(start))
+
+def portfolio_return(weights,returns):
+    weights,returns=list(weights),list(returns)
+    if len(weights)!=2 or len(returns)!=2:
+        raise ValueError("two weights and returns required")
+    if not all(finite_number(x) for x in weights+returns):
+        raise ValueError("finite numeric values required")
+    exact_weights=list(map(Fraction,weights))
+    if any(w<0 for w in exact_weights) or abs(sum(exact_weights)-1)>Fraction(1e-12):
+        raise ValueError("nonnegative weights summing to one required")
+    if any(r < -1 for r in returns):
+        raise ValueError("simple returns >= -1 required")
+    return float_report(sum((w*Fraction(r) for w,r in zip(exact_weights,returns)),Fraction(0)))
+
+class InvariantTests(unittest.TestCase):
+    def test_known_nonzero_npv(self):
+        self.assertTrue(math.isclose(npv([-100,110],0),10,rel_tol=0,abs_tol=1e-10))
+    def test_npv_scaling(self):
+        self.assertTrue(math.isclose(npv([-200,220],.05),2*npv([-100,110],.05),
+                                     rel_tol=1e-12,abs_tol=1e-10))
+    def test_append_zero(self):
+        self.assertTrue(math.isclose(npv([-100,110],.1),npv([-100,110,0],.1),
+                                     rel_tol=0,abs_tol=1e-10))
+    def test_insert_zero_changes_timing(self):
+        self.assertLess(npv([-100,0,110],.1),npv([-100,110],.1))
+    def test_positive_flow_monotonicity(self):
+        self.assertGreater(npv([0,100],.05),npv([0,100],.06))
+    def test_negative_flow_direction(self):
+        self.assertLess(npv([0,-100],.05),npv([0,-100],.06))
+    def test_time_zero_independent_of_rate(self):
+        self.assertEqual(npv([100],.05),npv([100],.1))
+    def test_known_return(self):
+        self.assertTrue(math.isclose(simple_return(100,101.5),.015,
+                                     rel_tol=0,abs_tol=1e-12))
+    def test_return_scale(self):
+        self.assertTrue(math.isclose(simple_return(100,101.5),simple_return(200,203),
+                                     rel_tol=0,abs_tol=1e-12))
+    def test_portfolio_known(self):
+        self.assertTrue(math.isclose(portfolio_return([.6,.4],[.1,-.05]),.04,
+                                     rel_tol=0,abs_tol=1e-12))
+    def test_invalid_weights(self):
+        with self.assertRaises(ValueError): portfolio_return([.6,.5],[.1,-.05])
+    def test_invalid_rate(self):
+        with self.assertRaises(ValueError): npv([100],-1)
+    def test_zero_start(self):
+        with self.assertRaises(ValueError): simple_return(0,1)
+    def test_nonfinite(self):
+        with self.assertRaises(ValueError): npv([float("nan")],.05)
+
+if __name__ == "__main__":
+    unittest.main(verbosity=2)

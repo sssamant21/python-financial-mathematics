@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Invariant:** What is it? **Answer:** A property expected under stated assumptions.",
+    "review": "Property under specified assumptions;conceptual definition,not model acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Metamorphic test:** What does it compare? **Answer:** Outputs after a controlled input change.",
+    "review": "Source scaling/append/return-scale changes compare controlled transformations.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**NPV at 0:** [\u2212100,110]. **Answer:** 10.",
+    "review": "At r0,\u2212100+110=10;independent rational source benchmark.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**NPV at 10%:** Same flows. **Answer:** 0 in exact arithmetic.",
+    "review": "At printed r.1,\u2212100+110/1.1=0 exactly;source within absolute1e\u221210.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Scaling:** Double flows at fixed rate. **Answer:** NPV doubles.",
+    "review": "Source scaling at r.05 uses nonzero NPV and a relationship;known nonzero benchmark separate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero-only defect:** Can an always-zero function pass scaling? **Answer:** Yes.",
+    "review": "Actual supplemental always-zero variant passes existing scaling method but fails known nonzero method;outputs retained.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Append zero:** Effect? **Answer:** None under the positional model.",
+    "review": "Append zero changes no earlier positions;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Insert zero:** Effect? **Answer:** It delays later flows and may change NPV.",
+    "review": "Middle zero shifts later exponent;source comparison.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Delayed NPV:** [\u2212100,0,110] at 10%. **Answer:** Approximately \u22129.0909.",
+    "review": "\u2212100+110/1.1\u00b2=\u2212100/11\u2248\u22129.0909;independent rational source check.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Positive payment:** Increase rate. **Answer:** PV decreases for a future payment.",
+    "review": "Positive future discount derivative negative;source rate comparison.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Negative future payment:** Increase rate. **Answer:** PV becomes less negative for t>0;time-zero value is constant.",
+    "review": "Negative future payment reverses direction;source comparison,with time-zero qualification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Time zero:** Effect of rate on PV? **Answer:** None in this model.",
+    "review": "Source time-zero NPV100 unchanged across valid rates.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Return:** 100\u2192101.50. **Answer:** .015.",
+    "review": "(101.5\u2212100)/100=.015;source complete return with independent Decimal reference.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Scaled return:** 200\u2192203. **Answer:** .015.",
+    "review": "(203\u2212200)/200=.015;source independent expected result and scale relation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Zero start:** Accepted? **Answer:** No.",
+    "review": "Zero start rejected;source predicate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Zero end:** Return from 100 to 0. **Answer:** \u22121.",
+    "review": "Zero end gives\u22121;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Compounding:** +10% then \u221210%. **Answer:** \u22121%.",
+    "review": "Separate exact Decimal1.1*.9\u22121=\u2212.01;not an invented compounding API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Portfolio:** .6(.10)+.4(\u2212.05). **Answer:** .04.",
+    "review": ".6*.1+.4*(\u2212.05)=.04 printed arithmetic;represented-input Decimal dot reference checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Weights:** Must every strategy sum to one? **Answer:** No; contract and leverage matter.",
+    "review": "Weights depend on strategy/leverage;source deliberately long-only approximate sum-one domain.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Reference weights:** Must they sum to one? **Answer:** Within the stated1e\u221212 represented-sum tolerance;accepted weights are not renormalized.",
+    "review": "Exact represented sum error\u2264represented1e\u221212;boundary/inside/outside source tests. No normalization is applied.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Short weights:** Supported by reference code? **Answer:** No.",
+    "review": "Negative weights reject;source invalid-short case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Return below \u22121:** Supported by reference code? **Answer:** No.",
+    "review": "Individual simple returns below\u22121 reject;source nextafter case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**PSD covariance:** Exact portfolio variance sign? **Answer:** Nonnegative.",
+    "review": "PSD definition implies w\u1d40\u03a3w\u22650;conceptual mathematical review,no covariance API executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Tiny negative variance:** Always clip silently? **Answer:** No; investigate.",
+    "review": "Tiny negative variance needs justified scale/matrix diagnosis;no clipping implementation claimed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Currency scaling:** What happens to monetary NPV? **Answer:** It scales consistently.",
+    "review": "Monetary NPV scaling checked under unchanged schedule/rate;no FX process.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Currency scaling:** What happens to a dimensionless return? **Answer:** It remains unchanged under consistent scaling.",
+    "review": "Source price scaling by2 leaves return unchanged;floating scaling must preserve declared inputs/units.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**FX round trip:** Always exact? **Answer:** No; rounding and fees matter.",
+    "review": "Rounded FX reciprocity/fees may prevent exact roundtrip;conceptual only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**5%:** Decimal representation? **Answer:** .05.",
+    "review": "Separate exact decimal5/100=.05 arithmetic control.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**One bp:** Decimal representation? **Answer:** .0001.",
+    "review": "Separate1/10000=.0001 control;no source conversion API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Tolerance:** Why use one for floats? **Answer:** Rounding can cause small differences.",
+    "review": "Normal NPV absolute1e\u221210 and return/dot relative4e\u221215 thresholds retained;not widened.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Near zero:** What matters? **Answer:** A justified absolute tolerance.",
+    "review": "Known zero NPV uses absolute allowance;no universal monetary threshold.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**NaN:** Accepted in reference NPV? **Answer:** No.",
+    "review": "Source NPV NaN rejects;original method and external finite/type checks.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Model error:** Can an invariant pass with wrong units? **Answer:** Yes.",
+    "review": "Consistently wrong units can satisfy a property;conceptual model review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Fees:** Can nonlinear fees break linearity? **Answer:** Yes.",
+    "review": "Nonlinear fees can break linearity;not implemented in reference.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Dates:** Supported by reference code? **Answer:** No.",
+    "review": "Only integer flow positions,not dates;no date execution.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Independent benchmark:** Why include one? **Answer:** It catches defects an invariant alone may miss.",
+    "review": "Supplemental zero-variant independent nonzero test fails while scaling passes;actual contrast.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Model validation:** Replaced by property tests? **Answer:** No.",
+    "review": "Property checks do not replace external model review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Underflow:** Can it occur outside tested inputs? **Answer:** Yes.",
+    "review": "Broader NPV discount/sum/underflow and resource behavior remain open.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Historical source inclusion did not imply execution;this batch records actual runs.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production readiness:** Established here? **Answer:** No.",
+    "review": "No platform/financial/model/production certification.",
+    "status": "reviewed scoped"
+  }
+]

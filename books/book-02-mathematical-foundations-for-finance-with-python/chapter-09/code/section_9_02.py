@@ -1,5 +1,6 @@
 """Section 9.2: elasticity calculations and financial interpretation."""
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -12,18 +13,34 @@ def finite(value, name):
         raise ValueError(f"{name} must be finite")
     return result
 
+def _rational_report(exact, zero=0.0):
+    if exact == 0:
+        return zero
+    try:
+        result = float(exact)
+    except OverflowError as exc:
+        raise ValueError("elasticity outside finite float range") from exc
+    if not math.isfinite(result):
+        raise ValueError("elasticity outside finite float range")
+    return result
+
 def point_elasticity(x, value, derivative):
     x, y, d = finite(x, "x"), finite(value, "value"), finite(derivative, "derivative")
     if x == 0 or y == 0:
         raise ValueError("point elasticity requires nonzero input and output")
-    return x*d/y
+    exact = Fraction(x)*Fraction(d)/Fraction(y)
+    zero = x*d/y if d == 0 else 0.0
+    return _rational_report(exact, zero)
 
 def arc_elasticity(x1, x2, y1, y2):
     x1, x2, y1, y2 = (finite(v,n) for v,n in
                        ((x1,"x1"),(x2,"x2"),(y1,"y1"),(y2,"y2")))
-    if x1 == x2 or x1+x2 == 0 or y1+y2 == 0:
+    a,b,c,d = map(Fraction,(x1,x2,y1,y2))
+    if a == b or a+b == 0 or c+d == 0:
         raise ValueError("midpoint arc elasticity denominators must be nonzero")
-    return ((y2-y1)/(0.5*(y1+y2)))/((x2-x1)/(0.5*(x1+x2)))
+    exact = (d-c)*(a+b)/((b-a)*(c+d))
+    sign = 1 if (a+b)*(b-a)*(c+d)>0 else -1
+    return _rational_report(exact, math.copysign(0.0,sign))
 
 def constant_elasticity_demand(price, scale=400, exponent=-1.5):
     p, a, e = finite(price,"price"), finite(scale,"scale"), finite(exponent,"exponent")
@@ -53,7 +70,9 @@ def discounted_rate_elasticity(rate, years):
     r, t = finite(rate,"rate"), finite(years,"years")
     if r == 0 or t < 0:
         raise ValueError("rate must be nonzero and years nonnegative")
-    return -r*t
+    if t == 0:
+        return -r*t
+    return _rational_report(-Fraction(r)*Fraction(t))
 
 def centered_elasticity(function, x, step=1e-4):
     if not callable(function):

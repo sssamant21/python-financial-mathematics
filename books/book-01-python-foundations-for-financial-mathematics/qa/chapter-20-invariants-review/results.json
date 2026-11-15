@@ -1,0 +1,447 @@
+{
+  "candidate_based_on": "55b8ebef2ca9338976fa27b140aae386e7e0d82b",
+  "selected_revision": null,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manuscript_sha256": "5c58c8de7d193df53ff0a21f1295aeded4e40d95b5da25398dfedd88bef54085",
+  "fence_sha256": "01037c604b0e53c6276298c5a946b8f8d7850824c403eee6829fd2c3ac1d1cc5",
+  "commands": [
+    {
+      "label": "source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_invariants.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_append_zero (__main__.InvariantTests.test_append_zero) ... ok\ntest_insert_zero_changes_timing (__main__.InvariantTests.test_insert_zero_changes_timing) ... ok\ntest_invalid_rate (__main__.InvariantTests.test_invalid_rate) ... ok\ntest_invalid_weights (__main__.InvariantTests.test_invalid_weights) ... ok\ntest_known_nonzero_npv (__main__.InvariantTests.test_known_nonzero_npv) ... ok\ntest_known_return (__main__.InvariantTests.test_known_return) ... ok\ntest_negative_flow_direction (__main__.InvariantTests.test_negative_flow_direction) ... ok\ntest_nonfinite (__main__.InvariantTests.test_nonfinite) ... ok\ntest_npv_scaling (__main__.InvariantTests.test_npv_scaling) ... ok\ntest_portfolio_known (__main__.InvariantTests.test_portfolio_known) ... ok\ntest_positive_flow_monotonicity (__main__.InvariantTests.test_positive_flow_monotonicity) ... ok\ntest_return_scale (__main__.InvariantTests.test_return_scale) ... ok\ntest_time_zero_independent_of_rate (__main__.InvariantTests.test_time_zero_independent_of_rate) ... ok\ntest_zero_start (__main__.InvariantTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "module suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "financial_invariants"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_append_zero (financial_invariants.InvariantTests.test_append_zero) ... ok\ntest_insert_zero_changes_timing (financial_invariants.InvariantTests.test_insert_zero_changes_timing) ... ok\ntest_invalid_rate (financial_invariants.InvariantTests.test_invalid_rate) ... ok\ntest_invalid_weights (financial_invariants.InvariantTests.test_invalid_weights) ... ok\ntest_known_nonzero_npv (financial_invariants.InvariantTests.test_known_nonzero_npv) ... ok\ntest_known_return (financial_invariants.InvariantTests.test_known_return) ... ok\ntest_negative_flow_direction (financial_invariants.InvariantTests.test_negative_flow_direction) ... ok\ntest_nonfinite (financial_invariants.InvariantTests.test_nonfinite) ... ok\ntest_npv_scaling (financial_invariants.InvariantTests.test_npv_scaling) ... ok\ntest_portfolio_known (financial_invariants.InvariantTests.test_portfolio_known) ... ok\ntest_positive_flow_monotonicity (financial_invariants.InvariantTests.test_positive_flow_monotonicity) ... ok\ntest_return_scale (financial_invariants.InvariantTests.test_return_scale) ... ok\ntest_time_zero_independent_of_rate (financial_invariants.InvariantTests.test_time_zero_independent_of_rate) ... ok\ntest_zero_start (financial_invariants.InvariantTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_invariants.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import financial_invariants"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "optimized suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "financial_invariants.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_append_zero (__main__.InvariantTests.test_append_zero) ... ok\ntest_insert_zero_changes_timing (__main__.InvariantTests.test_insert_zero_changes_timing) ... ok\ntest_invalid_rate (__main__.InvariantTests.test_invalid_rate) ... ok\ntest_invalid_weights (__main__.InvariantTests.test_invalid_weights) ... ok\ntest_known_nonzero_npv (__main__.InvariantTests.test_known_nonzero_npv) ... ok\ntest_known_return (__main__.InvariantTests.test_known_return) ... ok\ntest_negative_flow_direction (__main__.InvariantTests.test_negative_flow_direction) ... ok\ntest_nonfinite (__main__.InvariantTests.test_nonfinite) ... ok\ntest_npv_scaling (__main__.InvariantTests.test_npv_scaling) ... ok\ntest_portfolio_known (__main__.InvariantTests.test_portfolio_known) ... ok\ntest_positive_flow_monotonicity (__main__.InvariantTests.test_positive_flow_monotonicity) ... ok\ntest_return_scale (__main__.InvariantTests.test_return_scale) ... ok\ntest_time_zero_independent_of_rate (__main__.InvariantTests.test_time_zero_independent_of_rate) ... ok\ntest_zero_start (__main__.InvariantTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "rational NPV ([-100, 110], 0)",
+      "actual": "10.0",
+      "expected": "10.0",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational NPV ([-100, 110], 0.1)",
+      "actual": "0.0",
+      "expected": "-5.046468293750712e-16",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational NPV ([-100, 0, 110], 0.1)",
+      "actual": "-9.090909090909093",
+      "expected": "-9.090909090909092",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "rational NPV ([5, -7, 9], -0.1)",
+      "actual": "8.333333333333332",
+      "expected": "8.333333333333334",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "nonzero NPV scaling",
+      "actual": "9.523809523809518",
+      "expected": "9.523809523809518",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "append zero",
+      "actual": "0.0",
+      "expected": "0.0",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "insertion shifts timing",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "positive future monotonic",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative future direction",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "time zero constant",
+      "actual": "True",
+      "expected": "True",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete return (100, 101.5)",
+      "actual": "0.015",
+      "expected": "0.015",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete return (200, 203)",
+      "actual": "0.015",
+      "expected": "0.015",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete return (100, 0)",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete return (1e+308, 1.0000000000000002e+308)",
+      "actual": "1.99584030953472e-16",
+      "expected": "1.99584030953472e-16",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete return (1e-308, 1e+308)",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "return scale invariant",
+      "actual": "0.015",
+      "expected": "0.015",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([0.6, 0.4], [0.1, -0.05])",
+      "actual": "0.04",
+      "expected": "0.04",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([1.0, 0.0], [0.1, -1.0])",
+      "actual": "0.1",
+      "expected": "0.1",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([0.5, 0.5], [-1.0, -1.0])",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([1.0, 1e-12], [0.1, 0.1])",
+      "actual": "0.10000000000010001",
+      "expected": "0.10000000000010001",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([1.0, 9.999999999999998e-13], [0.1, 0.1])",
+      "actual": "0.10000000000010001",
+      "expected": "0.10000000000010001",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([1.0000000000005, 0.0], [1.7976931348623157e+308, 0.0])",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete portfolio ([5e-324, 1.0], [1.7976931348623157e+308, 0.0])",
+      "actual": "8.881784197001251e-16",
+      "expected": "8.881784197001251e-16",
+      "relative_tolerance": 4e-15,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bad weight count",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bad return count",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "short weight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "weight sum",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "just outside weight budget",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "return below -1",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool weight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized weight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "NaN return",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized return start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative end",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized flow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "oversized rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "portfolio generators",
+      "actual": "0.04",
+      "expected": "0.04",
+      "relative_tolerance": 0,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    }
+  ],
+  "supplemental_experiments": [
+    {
+      "label": "supplemental zero NPV scaling",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "faulty.py",
+        "InvariantTests.test_npv_scaling"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "",
+      "stderr": "test_npv_scaling (__main__.InvariantTests.test_npv_scaling) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "passed": true
+    },
+    {
+      "label": "supplemental zero NPV known nonzero",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "faulty.py",
+        "InvariantTests.test_known_nonzero_npv"
+      ],
+      "returncode": 1,
+      "expected_returncode": 1,
+      "stdout": "",
+      "stderr": "test_known_nonzero_npv (__main__.InvariantTests.test_known_nonzero_npv) ... FAIL\n\n======================================================================\nFAIL: test_known_nonzero_npv (__main__.InvariantTests.test_known_nonzero_npv)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp6asz8pbh/faulty.py\", line 45, in test_known_nonzero_npv\n    self.assertTrue(math.isclose(npv([-100,110],0),10,rel_tol=0,abs_tol=1e-10))\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)\n",
+      "passed": true
+    },
+    {
+      "label": "unchanged source control",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_invariants.py",
+        "InvariantTests.test_known_nonzero_npv"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "",
+      "stderr": "test_known_nonzero_npv (__main__.InvariantTests.test_known_nonzero_npv) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "passed": true
+    }
+  ],
+  "supplemental_arithmetic_predicates": [
+    {
+      "name": "plus10 minus10 compounds",
+      "actual": "-0.01",
+      "expected": "-0.01",
+      "passed": true
+    },
+    {
+      "name": "units percent and basis point",
+      "actual": [
+        "0.05",
+        "0.0001"
+      ],
+      "expected": [
+        "0.05",
+        "0.0001"
+      ],
+      "passed": true
+    }
+  ],
+  "existing_unique_methods": 14,
+  "method_invocations": 45,
+  "new_historical_unique_methods": 0,
+  "limits": "Selected periodic NPV/complete return/long-only approximate weight budget and dot product;broader NPV range,ingestion/resources,covariance/FX/model/platform/independent acceptance open"
+}

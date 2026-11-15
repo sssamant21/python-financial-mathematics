@@ -1,0 +1,62 @@
+{
+  "validation": "V-156 point/arc/rate elasticity contracts",
+  "candidate_based_on": "55b8ebef2ca9338976fa27b140aae386e7e0d82b",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_02.py",
+      "sha": "60118f2f19367e1f7e18a72fde3d9b8e522572a0"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_02.py",
+      "sha": "b69d11e4fedb6c627b40a26ef7495949c882127b"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_02_rational_elasticities.py",
+      "sha": "24cb63a3809e52d7897c0a4ef391d7d17c80c783"
+    }
+  ],
+  "compiled": [
+    "section_9_02.py",
+    "check_section_9_02.py",
+    "check_section_02_rational_elasticities.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_02.py"
+      ],
+      "returncode": 0,
+      "stdout": "Constant elasticity: {'quantity': 4.47213595499958, 'derivative': -0.33541019662496846, 'elasticity': -1.5}\nLinear demand at 10: {'quantity': 80.0, 'derivative': -2.0, 'elasticity': -0.25, 'revenue': 800.0, 'revenue_derivative': 60.0}\nLinear demand at 25: {'quantity': 50.0, 'derivative': -2.0, 'elasticity': -1.0, 'revenue': 1250.0, 'revenue_derivative': 0.0}\nIncome elasticity: 0.6999999999999998\nDiscounted rate elasticity: -0.2\nMidpoint arc elasticity: -0.7333333333333333\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_02.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.2 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_02_rational_elasticities.py"
+      ],
+      "returncode": 0,
+      "stdout": "[\n  {\n    \"name\": \"point vector0\",\n    \"actual\": \"3.0\",\n    \"expected\": \"3.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector1\",\n    \"actual\": \"1e+308\",\n    \"expected\": \"1e+308\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector2\",\n    \"actual\": \"1e-308\",\n    \"expected\": \"1e-308\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector3\",\n    \"actual\": \"5e-324\",\n    \"expected\": \"5e-324\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector4\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector5\",\n    \"actual\": \"-2.6666666666666665\",\n    \"expected\": \"-2.6666666666666665\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector6\",\n    \"actual\": \"0.0\",\n    \"expected\": \"0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector7\",\n    \"actual\": \"-0.0\",\n    \"expected\": \"-0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point vector8\",\n    \"actual\": \"1e+308\",\n    \"expected\": \"1e+308\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector0\",\n    \"actual\": \"-0.7333333333333333\",\n    \"expected\": \"-0.7333333333333333\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse0\",\n    \"actual\": \"-0.7333333333333333\",\n    \"expected\": \"-0.7333333333333333\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector1\",\n    \"actual\": \"-1.6666666666666667\",\n    \"expected\": \"-1.6666666666666667\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse1\",\n    \"actual\": \"-1.6666666666666667\",\n    \"expected\": \"-1.6666666666666667\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector2\",\n    \"actual\": \"1.5\",\n    \"expected\": \"1.5\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse2\",\n    \"actual\": \"1.5\",\n    \"expected\": \"1.5\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector3\",\n    \"actual\": \"-3.0\",\n    \"expected\": \"-3.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse3\",\n    \"actual\": \"-3.0\",\n    \"expected\": \"-3.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector4\",\n    \"actual\": \"0.0\",\n    \"expected\": \"0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse4\",\n    \"actual\": \"-0.0\",\n    \"expected\": \"-0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector5\",\n    \"actual\": \"0.022222222222222223\",\n    \"expected\": \"0.022222222222222223\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse5\",\n    \"actual\": \"0.022222222222222223\",\n    \"expected\": \"0.022222222222222223\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector6\",\n    \"actual\": \"-0.0\",\n    \"expected\": \"-0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse6\",\n    \"actual\": \"0.0\",\n    \"expected\": \"0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc vector7\",\n    \"actual\": \"-1.6225927682921336e+32\",\n    \"expected\": \"-1.6225927682921336e+32\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc reverse7\",\n    \"actual\": \"-1.6225927682921336e+32\",\n    \"expected\": \"-1.6225927682921336e+32\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector0\",\n    \"actual\": \"-0.2\",\n    \"expected\": \"-0.2\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector1\",\n    \"actual\": \"0.2\",\n    \"expected\": \"0.2\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector2\",\n    \"actual\": \"-0.0\",\n    \"expected\": \"-0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector3\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector4\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector5\",\n    \"actual\": \"-0.0\",\n    \"expected\": \"-0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate vector6\",\n    \"actual\": \"0.0\",\n    \"expected\": \"0.0\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point zero x\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point zero value\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point NaN\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point bool before NaN\",\n    \"actual\": \"'TypeError'\",\n    \"expected\": \"'TypeError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"point infinite value\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc equal x\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc zero x midpoint\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc zero y midpoint\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"arc bool\",\n    \"actual\": \"'TypeError'\",\n    \"expected\": \"'TypeError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate zero\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate negative years\",\n    \"actual\": \"'ValueError'\",\n    \"expected\": \"'ValueError'\",\n    \"passed\": true\n  },\n  {\n    \"name\": \"rate bool years\",\n    \"actual\": \"'TypeError'\",\n    \"expected\": \"'TypeError'\",\n    \"passed\": true\n  }\n]\n44 rational elasticity predicates; 0 failed\n",
+      "stderr": ""
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "inventory": {
+    "python_files": 610,
+    "check_test_scripts": 397,
+    "required_blobs": 611
+  },
+  "limits": "Three selected files/three commands,two checker invocations;constant/linear/income/centered helpers remain outside this scope. Not independent/platform/release acceptance."
+}
