@@ -230,3 +230,5 @@ Project 37 joint bid/ask feasibility extension: `37-static-option-arbitrage/join
 Project 37 boundary/scale diagnostics: run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py` inside `37-static-option-arbitrage/`. The synthetic tests are configured in hosted CI; their new exact-revision outcome remains unverified.
 
 Project 37 scale-aware tolerance follow-up: the joint solver now normalizes strikes and quote prices to a common unit before elimination. Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py` in `37-static-option-arbitrage/`. New exact-source CI and independent numerical review remain pending.
+
+**Project 37 numerical reference:** `37-static-option-arbitrage/test_irregular_decimal_reference.py` compares irregular-grid point-quote classifications against an independent high-precision Decimal slope reference. Published-source CI and broader bid/ask interval reference validation remain pending.
