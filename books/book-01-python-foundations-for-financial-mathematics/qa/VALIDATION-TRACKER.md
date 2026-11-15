@@ -368,6 +368,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F210 | Section20.9 oversized input categories and iterator-stage classification. | RESOLVED (scoped) —two oversized-input OverflowError leaks and one late TypeError mistranslation fixed;three baseline failures/replay and39 corrected source predicates/five commands retained. Broader NPV/resources/traceback policy open. [Evidence](chapter-20-exceptions-review/README.md). |
 | F211 | Section20.10 oversized-input exception and emitted category contract. | RESOLVED (scoped) —two oversized-input cases raised OverflowError/logged numerical;four baseline predicate failures/replay and50 corrected source/event predicates retained. Broader logging/privacy/audit/NPV acceptance open. [Evidence](chapter-20-logging-review/README.md). |
 | F212 | Section20.11 complete Decimal return and private context contract. | RESOLVED (scoped) —five source baseline failures/replay and46 corrected source predicates retained;five annotation controls separate. Static checker/configuration,Decimal resources,NPV/platform/independent acceptance remain open. [Evidence](chapter-20-types-review/README.md). |
+| F213 | Section20.12 documented noniterable ValueError/cause and iterator-stage contract. | RESOLVED (scoped) —two inputs/four baseline predicate failures/replay and32 corrected source predicates retained. Doc/help visibility observations separate;broader documentation/provenance/NPV/resource/platform acceptance open. [Evidence](chapter-20-docs-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -535,3 +536,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.11 scoped type-hint/runtime workflow and answers
 
 [Type evidence](chapter-20-types-review/README.md):one scoped workflow,40 local answers/12 lab-step reviews;46 corrected source predicates/five commands and five separate annotation/NewType controls pass. Five initial failures/replay retained(F212);complete Decimal return/private context corrected. Twelve existing methods ran36 invocations;two fences compiled,zero new historical methods. No mypy/pyright installed or checker configuration available;static portions of steps1/11 remain open,not static acceptance. Chapter20 now11 scoped workflows/440 local answers. F28/F32/F209,F165 limits,F185 integration and broader NPV/Decimal resources/platform/independent acceptance open. Next:Section20.12 Documentation.
+
+
+## Section20.12 scoped documentation workflow and answers
+
+[Documentation evidence](chapter-20-docs-review/README.md):one workflow,40 local answers/12 steps;32 corrected source predicates/six commands and four separate doc/help visibility observations pass. Four initial predicate failures/two inputs and identical replay retained(F213);noniterable ValueError/cause aligned while late iterator errors/consumption preserved. Twelve existing methods ran36 invocations;zero new historical methods. Chapter20 now12 scoped workflows/480 local answers. Provenance/model/editorial concepts not independently accepted;20.11 static checker,F28/F32/F209,F165 limits,F185 integration and broader NPV/resources/platform acceptance open. Next:Section20.13 Reproducibility.

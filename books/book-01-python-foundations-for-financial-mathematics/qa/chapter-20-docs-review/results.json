@@ -1,0 +1,330 @@
+{
+  "candidate_based_on": "5ada3da82c869410cdc54311b187fe51e695fdcf",
+  "selected_revision": null,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "manuscript_sha256": "ef64780161ff6da2ab7301a22b29b1ed986722433b1242f5d1c1536bf8f2921d",
+  "fence_sha256": "0411d1520dfc4fe200401299ef6dc1c11c574f5af950a0ae1d0a622fa0ffeaf7",
+  "commands": [
+    {
+      "label": "source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "documented_finance.py"
+      ],
+      "returncode": 0,
+      "stdout": "Calculate NPV for equally spaced periodic cash flows.\n\n    The first flow is at time zero and subsequent flows are one period apart.\n    Rate must be a built-in finite float: a decimal effective rate per\n    period greater than -1.\n    Cash flows must be a nonempty iterable of finite built-in floats.\n\n    Return a float in the same monetary unit, without display rounding.\n    Raise ValueError for contract-invalid input,including a noniterable,\n    or detected numerical overflow. Only failure to obtain an iterator\n    is translated;exceptions raised while consuming it propagate.\n    Materialization precedes rate validation;no resource bound is imposed.\n    Underflow and cancellation remain possible. Dates, currencies, fees,\n    taxes and day-count conventions are not modeled.\n\n    Example: [-100.0, 110.0] at 0.10 has NPV zero in exact arithmetic.\n    \n",
+      "stderr": "test_boolean_rejected (__main__.DocumentationTests.test_boolean_rejected) ... ok\ntest_docstring_exists (__main__.DocumentationTests.test_docstring_exists) ... ok\ntest_empty (__main__.DocumentationTests.test_empty) ... ok\ntest_generator (__main__.DocumentationTests.test_generator) ... ok\ntest_integer_rejected (__main__.DocumentationTests.test_integer_rejected) ... ok\ntest_invalid_rate (__main__.DocumentationTests.test_invalid_rate) ... ok\ntest_known_value (__main__.DocumentationTests.test_known_value) ... ok\ntest_negative_rate (__main__.DocumentationTests.test_negative_rate) ... ok\ntest_nonfinite_flow (__main__.DocumentationTests.test_nonfinite_flow) ... ok\ntest_nonfinite_rate (__main__.DocumentationTests.test_nonfinite_rate) ... ok\ntest_scaling (__main__.DocumentationTests.test_scaling) ... ok\ntest_zero_rate (__main__.DocumentationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "module suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "documented_finance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_boolean_rejected (documented_finance.DocumentationTests.test_boolean_rejected) ... ok\ntest_docstring_exists (documented_finance.DocumentationTests.test_docstring_exists) ... ok\ntest_empty (documented_finance.DocumentationTests.test_empty) ... ok\ntest_generator (documented_finance.DocumentationTests.test_generator) ... ok\ntest_integer_rejected (documented_finance.DocumentationTests.test_integer_rejected) ... ok\ntest_invalid_rate (documented_finance.DocumentationTests.test_invalid_rate) ... ok\ntest_known_value (documented_finance.DocumentationTests.test_known_value) ... ok\ntest_negative_rate (documented_finance.DocumentationTests.test_negative_rate) ... ok\ntest_nonfinite_flow (documented_finance.DocumentationTests.test_nonfinite_flow) ... ok\ntest_nonfinite_rate (documented_finance.DocumentationTests.test_nonfinite_rate) ... ok\ntest_scaling (documented_finance.DocumentationTests.test_scaling) ... ok\ntest_zero_rate (documented_finance.DocumentationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "compilation",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "documented_finance.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import documented_finance"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "help rendering",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "from documented_finance import npv;help(npv)"
+      ],
+      "returncode": 0,
+      "stdout": "Help on function npv in module documented_finance:\n\nnpv(cashflows: collections.abc.Iterable[float], rate: float) -> float\n    Calculate NPV for equally spaced periodic cash flows.\n\n    The first flow is at time zero and subsequent flows are one period apart.\n    Rate must be a built-in finite float: a decimal effective rate per\n    period greater than -1.\n    Cash flows must be a nonempty iterable of finite built-in floats.\n\n    Return a float in the same monetary unit, without display rounding.\n    Raise ValueError for contract-invalid input,including a noniterable,\n    or detected numerical overflow. Only failure to obtain an iterator\n    is translated;exceptions raised while consuming it propagate.\n    Materialization precedes rate validation;no resource bound is imposed.\n    Underflow and cancellation remain possible. Dates, currencies, fees,\n    taxes and day-count conventions are not modeled.\n\n    Example: [-100.0, 110.0] at 0.10 has NPV zero in exact arithmetic.\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "optimized suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "documented_finance.py"
+      ],
+      "returncode": 0,
+      "stdout": "Calculate NPV for equally spaced periodic cash flows.\n\n    The first flow is at time zero and subsequent flows are one period apart.\n    Rate must be a built-in finite float: a decimal effective rate per\n    period greater than -1.\n    Cash flows must be a nonempty iterable of finite built-in floats.\n\n    Return a float in the same monetary unit, without display rounding.\n    Raise ValueError for contract-invalid input,including a noniterable,\n    or detected numerical overflow. Only failure to obtain an iterator\n    is translated;exceptions raised while consuming it propagate.\n    Materialization precedes rate validation;no resource bound is imposed.\n    Underflow and cancellation remain possible. Dates, currencies, fees,\n    taxes and day-count conventions are not modeled.\n\n    Example: [-100.0, 110.0] at 0.10 has NPV zero in exact arithmetic.\n    \n",
+      "stderr": "test_boolean_rejected (__main__.DocumentationTests.test_boolean_rejected) ... ok\ntest_docstring_exists (__main__.DocumentationTests.test_docstring_exists) ... ok\ntest_empty (__main__.DocumentationTests.test_empty) ... ok\ntest_generator (__main__.DocumentationTests.test_generator) ... ok\ntest_integer_rejected (__main__.DocumentationTests.test_integer_rejected) ... ok\ntest_invalid_rate (__main__.DocumentationTests.test_invalid_rate) ... ok\ntest_known_value (__main__.DocumentationTests.test_known_value) ... ok\ntest_negative_rate (__main__.DocumentationTests.test_negative_rate) ... ok\ntest_nonfinite_flow (__main__.DocumentationTests.test_nonfinite_flow) ... ok\ntest_nonfinite_rate (__main__.DocumentationTests.test_nonfinite_rate) ... ok\ntest_scaling (__main__.DocumentationTests.test_scaling) ... ok\ntest_zero_rate (__main__.DocumentationTests.test_zero_rate) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.000s\n\nOK\n"
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "known",
+      "actual": "0.0",
+      "expected": "-5.046468293750712e-16",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "t0 identity",
+      "actual": "3.0",
+      "expected": "3.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "negative rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "negative flow",
+      "actual": "-100.0",
+      "expected": "-100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "zero rate",
+      "actual": "100.0",
+      "expected": "100.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "ordinary",
+      "actual": "8.333333333333332",
+      "expected": "8.333333333333334",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "invalid None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid noniterable",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid empty",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid integer member",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid bool member",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid text",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid Decimal",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "invalid inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate integer",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate bool",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate boundary",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate below",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate NaN",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "rate inf",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "accepted tuple",
+      "actual": "0.0",
+      "expected": "0.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "accepted generator",
+      "actual": "0.0",
+      "expected": "0.0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "noniterable cause None",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "noniterable cause 100",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "late TypeError identity",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "late RuntimeError identity",
+      "actual": "True",
+      "expected": "True",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "materialization before bad rate",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "actual iterator order",
+      "actual": "[-100.0, 110.0]",
+      "expected": "[-100.0, 110.0]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "caller unchanged",
+      "actual": "[-100.0, 110.0]",
+      "expected": "[-100.0, 110.0]",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "detected overflow category",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "detected overflow cause",
+      "actual": "'OverflowError'",
+      "expected": "'OverflowError'",
+      "absolute_tolerance": 0,
+      "passed": true
+    }
+  ],
+  "supplemental_documentation_observations": [
+    {
+      "name": "docstring runtime visibility",
+      "passed": true,
+      "scope": "Documentation visibility/text observation,not financial accuracy acceptance"
+    },
+    {
+      "name": "help contract rendered",
+      "passed": true,
+      "scope": "Documentation visibility/text observation,not financial accuracy acceptance"
+    },
+    {
+      "name": "strict flow contract stated",
+      "passed": true,
+      "scope": "Documentation visibility/text observation,not financial accuracy acceptance"
+    },
+    {
+      "name": "limitations stated",
+      "passed": true,
+      "scope": "Documentation visibility/text observation,not financial accuracy acceptance"
+    }
+  ],
+  "existing_unique_methods": 12,
+  "method_invocations": 36,
+  "new_historical_unique_methods": 0,
+  "limits": "Selected contract/input/iterator/ordinary NPV and help rendering only;not provenance,source truth,all-range NPV,static-checker,platform or independent acceptance. F28/F32/F209 and broader gaps open."
+}

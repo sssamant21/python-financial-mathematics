@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Contract:** Why document units? **Answer:** A number alone does not convey financial meaning.",
+    "review": "Units and financial conventions reviewed conceptually;source NPV uses decimal effective rate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**NPV:** [\u2212100,110] at 10%. **Answer:** 0 in exact arithmetic.",
+    "review": "Independent represented-rate rational benchmark within1e\u221210;printed exact arithmetic0.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Time zero:** Which flow? **Answer:** The first.",
+    "review": "Actual t0-only value3 remains3;first flow un-discounted.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Rate .10:** Meaning? **Answer:** 10% effective per period.",
+    "review": "Rate is decimal effective per positional period;one-year assumption specified separately.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Rate \u22121:** Valid? **Answer:** No.",
+    "review": "Rate\u22121 rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Rate \u2212.05:** Valid? **Answer:** Yes.",
+    "review": "Negative\u2212.05 passes independent95/.95 reference.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Cash-flow sign:** Negative flows valid? **Answer:** Yes.",
+    "review": "Negative-flow source case passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Empty input:** Accepted? **Answer:** No.",
+    "review": "Empty source input rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Integer:** Accepted by runtime example? **Answer:** No.",
+    "review": "Integer member rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Boolean:** Accepted? **Answer:** No.",
+    "review": "Boolean member rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**NaN:** Accepted? **Answer:** No.",
+    "review": "NaN member rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Output unit:** What is it? **Answer:** The cash-flow monetary unit.",
+    "review": "Unit is inherited from cash flows;no unit conversion implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Rounding:** Applied for display? **Answer:** No.",
+    "review": "No display quantization;binary float reported.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Dates:** Modeled? **Answer:** No.",
+    "review": "Dates not supplied or modeled.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Currency:** Validated? **Answer:** No.",
+    "review": "No currency validation API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Fees:** Included? **Answer:** No.",
+    "review": "No fees parameter or fee model.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Docstring:** Does it enforce inputs? **Answer:** No.",
+    "review": "Docstring inspected separately from runtime checks.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Type hint:** Automatically enforced? **Answer:** No.",
+    "review": "Runtime strict float checks explicit;annotations do not enforce them.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Static checker:** Might it accept int for float? **Answer:** Yes.",
+    "review": "Static numerical-tower behavior conceptual;checker execution gap retained from20.11.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Iterable:** Can a generator be consumed? **Answer:** Yes.",
+    "review": "Actual generator consumption retained before bad-rate rejection.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Exception:** Why document it? **Answer:** Callers need failure behavior.",
+    "review": "Noniterable input now raises documented ValueError with TypeError cause;late caller iteration errors propagate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Overflow:** Can it occur? **Answer:** Yes.",
+    "review": "Actual exponential overflow category and cause checked;all-range NPV remains open.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Underflow:** Fully detected? **Answer:** No.",
+    "review": "Source does not detect all underflow.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Example:** Should it use real credentials? **Answer:** No.",
+    "review": "Synthetic examples only;no credentials used.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Price type:** Why document it? **Answer:** Raw and adjusted prices can differ.",
+    "review": "Price-type/provenance distinction conceptual,no market feed executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Date:** Automatically availability time? **Answer:** No.",
+    "review": "Availability-time semantics conceptual,no temporal provenance validation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Revision:** Can it introduce look-ahead? **Answer:** Yes.",
+    "review": "Historical revision/look-ahead risks conceptual,no backtest certification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Tolerance:** Why specify units? **Answer:** Price and rate errors differ.",
+    "review": "Tolerance1e\u221210 only ordinary monetary numeric checks;does not establish yield tolerance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Decimal:** Does it choose a business rounding policy? **Answer:** No.",
+    "review": "Business rounding choices not inferred from Decimal.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Comment:** When useful? **Answer:** For non-obvious decisions.",
+    "review": "Comment maintenance conceptual;no arbitrary comments certified.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Outdated documentation:** Risk? **Answer:** Incorrect use.",
+    "review": "Contract mismatch reproduced/fixed only in specified noniterable scope.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Test:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Twelve existing methods actually execute;inclusion alone not evidence.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Passing tests:** Prove model suitability? **Answer:** No.",
+    "review": "No model suitability acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Version:** Why record revision? **Answer:** To identify behavior used.",
+    "review": "Exact source hashes/revisions recorded.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Schema:** Can a unit change be breaking? **Answer:** Yes.",
+    "review": "Unit/schema migration design conceptual;no migration performed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Secret:** Put it in examples? **Answer:** No.",
+    "review": "No sensitive examples used;not broad secrecy certification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Audit:** Do logs alone prove correctness? **Answer:** No.",
+    "review": "Logs/audit correctness conceptual,not implemented here.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Benchmark:** Why derive independently? **Answer:** To reduce shared errors.",
+    "review": "Independent Fraction sum differs from source exp/log evaluation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Model review:** Replaced by docstring? **Answer:** No.",
+    "review": "Four doc/help visibility controls separate from financial correctness.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production readiness:** Established by this example? **Answer:** No.",
+    "review": "No platform/model/production acceptance.",
+    "status": "reviewed scoped"
+  }
+]

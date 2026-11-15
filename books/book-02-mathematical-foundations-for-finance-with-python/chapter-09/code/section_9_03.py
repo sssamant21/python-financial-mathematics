@@ -72,13 +72,51 @@ def discount_shock(cash_flow, years, rate, shock):
                   ((cash_flow,"cash_flow"),(years,"years"),
                    (rate,"rate"),(shock,"shock")))
     v0 = discount_value(c,t,r)
-    exact = v0*math.expm1(-t*h)
-    approx = -t*v0*h
-    error = exact-approx
+    C,T,R,H = map(Fraction,(c,t,r,h))
+    power, z = -T*R, -T*H
+    if z == 0:
+        zero = -t*0.0*h
+        return {"baseline_value":v0, "exact_change":zero,
+                "linear_change":zero, "linear_value":v0+zero,
+                "signed_error":0.0, "absolute_error":0.0,
+                "relative_change_error":None}
+    with localcontext(Context(prec=1700)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        def report(value):
+            result = float(value)
+            if not math.isfinite(result):
+                raise ValueError("shock report outside finite float range")
+            return result
+        def amount(coefficient, exponent):
+            if coefficient == 0:
+                return float(coefficient)
+            if exponent > 10000:
+                raise ValueError("shock report outside finite float range")
+            if exponent < -10000:
+                return -0.0 if coefficient < 0 else 0.0
+            return report(coefficient*dec(exponent).exp())
+        dc, dz = Decimal(c), dec(z)
+        # B*(exp(z)-1) and B*(exp(z)-1-z),scaled before float reporting.
+        if z > 0:
+            damp = Decimal(0) if z > 10000 else (-dz).exp()
+            delta_factor = 1-damp
+            error_factor = 1-(1+dz)*damp
+            exact = amount(dc*delta_factor,power+z)
+            error = amount(dc*error_factor,power+z)
+        else:
+            w = -dz
+            damp = Decimal(0) if -z > 10000 else (-w).exp()
+            delta_factor = 1-damp
+            error_factor = w-delta_factor
+            exact = amount(-dc*delta_factor,power)
+            error = amount(dc*error_factor,power)
+        approx = amount(dc*dz,power)
+        linear = amount(dc*(1+dz),power)
+        relative = report(error_factor/delta_factor)
     return {"baseline_value":v0, "exact_change":exact,
-            "linear_change":approx, "linear_value":v0+approx,
+            "linear_change":approx, "linear_value":linear,
             "signed_error":error, "absolute_error":abs(error),
-            "relative_change_error":None if exact == 0 else abs(error)/abs(exact)}
+            "relative_change_error":relative}
 
 def discount_step_ladder(cash_flow, years, rate, steps):
     return [{"shock":finite(h,"shock"),
