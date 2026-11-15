@@ -78,13 +78,19 @@ def single_report(cash, years, rate, shock):
     return portfolio_report([(cash,years)],rate,shock)
 
 def polynomial_example(shock):
+    """Round each complete represented-input expression once.
+
+    All five fields must be finite;true range overflow raises ValueError.
+    Exactly zero expressions report positive zero;nonzero underflow may
+    retain a negative zero. Analytic remainder is not display subtraction.
+    """
     h = finite(shock,"shock")
-    exact = (2+h)**3
-    linear = 8+12*h
-    quadratic = linear+6*h*h
-    return {"exact":exact,"linear":linear,"quadratic":quadratic,
-            "quadratic_remainder":h**3,
-            "quadratic_bound":abs(h)**3}
+    H = Fraction(h)
+    return {"exact":_report_float((2+H)**3),
+            "linear":_report_float(8+12*H),
+            "quadratic":_report_float(8+12*H+6*H*H),
+            "quadratic_remainder":_report_float(H**3),
+            "quadratic_bound":_report_float(abs(H)**3)}
 
 if __name__ == "__main__":
     import json

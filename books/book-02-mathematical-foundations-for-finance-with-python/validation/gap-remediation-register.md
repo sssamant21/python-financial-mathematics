@@ -1255,3 +1255,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-181 checkpoint — Full pinned candidate Linux refresh
 
 [V-181 fullruntime](runtime-refresh-2026-11-15-r9.md) at`835777284697e2a6ce3f7fdc27dcd7efa3666e4e`:622/622Pythoncompiled,409/409check-testscripts passed,623/623requiredsource/fixture blobs verifiedbefore-after. IncludesV-180financialreports;207sourcepredicates+13separateoracleboundcontrols pass,82initialsourcefailures/actualreplay retained,not82unique bugs. COV52newlyregisteredpartial;37selectedcategoriespartial,noneclosed (pinnedruntime'searlier36categorylimits annotated separately). Two polynomialdiagnosticsremainOPEN;fullruntime doesnotsettle unassertedcontracts. Next9.5polynomial/remainder/bound andremainingmanuscript/exercise review. Independentmathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.
+
+
+## V-182 checkpoint — Section9.5 polynomial/manuscript/exercise scope
+
+[Polynomial evidence](chapter-09-polynomial-contract-followup.md):117correctedsourcepredicates+3separatesupplementalarithmeticcontrols pass. Initial86pass/31failedsourcepredicatesandactualidenticalreplayretained:20whole-rangepolicyfields,1exactzero-policyfield,10complete-roundingfields,not31uniquebugs. Onlypolynomialbodychanged;financialtextunchanged. Fourfiles/fourcommands/threecheckerspass. Tenexercise/solutionrecords and80digitboundcalculationretained;runtimechecklistreconciled,independentreviewnotgranted. Fresh623/410/624inventorynotfullruntime. All37selectedCOVcategoriespartial,noneclosed. Nextpinnedrefresh,then9.6discounted-valuesensitivitycompletecontracts. Historicalrecordsretained;resource/platform/model/release/independentacceptanceopen. Book1separate.

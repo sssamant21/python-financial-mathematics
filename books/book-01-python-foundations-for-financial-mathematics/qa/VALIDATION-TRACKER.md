@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.4:** [Decimalpolicy](chapter-21-policy-review/README.md):45sourcepredicates,40answers/12labreviews;fencesunchanged. Next21.5;broaderowner/platform/model/independentgaps retained.
+
 - **Latest21.3:** [Structure](chapter-21-structure-review/README.md):offlineeditable/build andcleanwheelconsumerchecks pass;40answers/12labreviews. Next21.4;broaderplatform/model/independentgaps retained.
 
 - **Latest21.2 scope:** [Requirements](chapter-21-requirements-review/README.md):32sourcepredicates,40answers/12labreviews and10requirement mappings. R08-10 and owner/independent gaps remain;next21.3.
@@ -606,3 +608,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.4 partial runtime resume — OPEN
 
 [Policy checkpoint](chapter-21-policy-resume/README.md):two sourcecommands/twocompiledfences/12existingmethods and3targetedpolicy observationspass;zero newhistoricalmethods. Conflictingambientcontext restored;largecoefficientlimitdocumented,notnewdefect. Formal40answers/12lab/context/conversion/range contractsremainnext;noadditionalcompletedworkflow.
+
+
+## Section21.4 scoped numerical/Decimal policy and answers
+
+[Policy evidence](chapter-21-policy-review/README.md):oneworkflow/40answers/12labreviews;45sourcepredicates pass viaindependentintegercoefficient/divmod/parityoracle andcontext/inputchecks. Fourseparatearithmeticcontrols;notfinancialmoduleintegration. Baseline/replay pass,codefencesunchanged,no defectinvented. Twoearliercommandsreusedbyexactfencehashes;twofreshcommands pass. Evidencechain4commands/twocompiledfences,12existingmethods/24invocations,zero newhistoricalmethods. Chapter21now4scopedworkflows/160answers;next21.5TVMModule. F28/F32/F209,20.11static,F165/F185,R08-10/owner andcurrency/settlement/model/platform/release/independentacceptance retained.

@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Policy:** Why define numeric representation? **Answer:** It affects precision, arithmetic and interpretation.",
+    "review": "Representation affects error/interpretation;realusepolicy remains external.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Float:** Is decimal 0.1 exactly representable in ordinary binary float? **Answer:** No.",
+    "review": "Supplemental Decimal(.1) differs from Decimal string;binary approximation retained.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Decimal:** Is `Decimal(\"0.1\")` exactly one tenth? **Answer:** Yes as a decimal value.",
+    "review": "Decimal string exactone-tenth beforecontext operations.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Conversion:** Is `Decimal(0.1)` the same intended decimal input? **Answer:** It captures the float approximation rather than the exact string value.",
+    "review": "Supplemental construction shows floatcoefficientcapture;no silentAPIconversion.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Precision:** What does context precision control? **Answer:** Significant digits in context-controlled arithmetic.",
+    "review": "Source freshcontext precision28 verified;outputcoefficientboundary oracleindependent.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Scale:** What exponent does quantizing to `0.01` specify? **Answer:** \u22122.",
+    "review": "Sourceoutputtuple exponent-2 verified byintegeroracle cases.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Quantum:** Does `quantize(Decimal(\"0.05\"))` round to five-cent increments? **Answer:** No; it sets the exponent to \u22122.",
+    "review": "Supplementalquantize1.03with.05returns1.03,notfive-centincrement.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Half-even:** Round 0.005 to cents. **Answer:** 0.00.",
+    "review": "Integerquotient/remainderoracle0.005tieeven0->0.00 matches source.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Half-even:** Round 0.015 to cents. **Answer:** 0.02.",
+    "review": "0.015tieodd1roundsto2 ->0.02 source.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Half-up:** Round 0.005 to cents. **Answer:** 0.01.",
+    "review": "Separatehalf-upcontrol0.005->0.01;notpolicyAPI mode.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Negative half-up:** Round \u22120.005 to cents. **Answer:** \u22120.01.",
+    "review": "Separatehalf-upnegativecontrol->-0.01.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Stage:** Round two 0.005 amounts individually using half-up, then add. **Answer:** 0.02.",
+    "review": "Separatehalf-upstagecontrol2*0.01=0.02.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Stage:** Add those amounts then round using half-up. **Answer:** 0.01.",
+    "review": "Separatehalf-upcombinedcontrol0.010->0.01.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Currency:** Do all currencies use two decimal places? **Answer:** No; currency and contract rules differ.",
+    "review": "Currency/settlementrulesnotimplemented orapproved.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Display:** Does `f\"{x:.2f}\"` change the stored float? **Answer:** No.",
+    "review": "Displayformatconcept only;doesnotmutatefloat.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Context:** What can a trap do? **Answer:** Cause an arithmetic signal to raise an exception.",
+    "review": "Freshcontext traps exactlyDivisionByZero/InvalidOperation/Overflow verified.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Flag:** What does a Decimal flag indicate? **Answer:** A corresponding condition occurred in that context.",
+    "review": "Freshflagsallclear;callerflagsrestoration tested aftersuccess/exception.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Locality:** Why use a local context? **Answer:** To contain context changes within a block.",
+    "review": "Localfreshcontextisolatescallerprec/round/traps/flags.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Inheritance:** Can a copied ambient context inherit traps? **Answer:** Yes; explicitly configure required settings.",
+    "review": "Conflictingambienttraps/rounding/precision sourcecasespass;contextindependence checked.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Finiteness:** Are Decimal NaN and infinity accepted by the sample? **Answer:** No; it raises `ValueError`.",
+    "review": "NaN,sNaN,+/-infinityrejectedValueError.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Input:** Is a float accepted by `round_to_example_cents`? **Answer:** No.",
+    "review": "Float/int/bool/string/bytes/None rejectedValueError.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Large amount:** Can a finite Decimal fail quantization? **Answer:** Yes, if the result cannot fit the specified context precision.",
+    "review": "Largecoefficient/roundingcarry exceeding28digits raisesInvalidOperation byindependentoracle.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Exception:** What happens on the sample's trapped `InvalidOperation`? **Answer:** It propagates to the caller.",
+    "review": "TrappedInvalidOperationpropagates;callerflagsrestore.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Exactness:** Is every Decimal division exact? **Answer:** No; context precision can require rounding.",
+    "review": "Divisionneednotexact;notanAPIdivisionguarantee.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Units:** What units should an amount tolerance have? **Answer:** The same units as the amount being compared.",
+    "review": "Amounttolmusthaverelevantunits;no businessacceptancethresholdset.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Zero:** Why use absolute tolerance around zero? **Answer:** Relative tolerance alone does not allow nonzero error against zero.",
+    "review": "Rationalzero benchmark supplemental;relative-onlynotadequate.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Tolerance:** Should it be increased just to make a test pass? **Answer:** No; first investigate conventions and numerical error.",
+    "review": "No tolerancewideningused:Decimaloutputs comparedexacttuple.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Benchmark:** PV of 110 at 10% for one period? **Answer:** 100 in exact arithmetic.",
+    "review": "Rational110/(11/10)=100supplemental,notfinancialmoduleexecution.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**NPV:** NPV of `[-100, 110]` at 10% with time zero first? **Answer:** Zero in exact arithmetic.",
+    "review": "Rational-100+110/(11/10)=0supplemental;correcttimezero.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Cancellation:** What can subtracting close large values lose? **Answer:** Significant digits in the result.",
+    "review": "Cancellationconcept separatefromquantizer;allrangeprecisionunproved.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Overflow:** Can finite inputs create a nonfinite float? **Answer:** Yes.",
+    "review": "Finitefloatoverflowconcept;quantizerrejectswrongtypebeforeconversion.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Underflow:** Can a very small contribution be lost? **Answer:** Yes, through underflow or rounding.",
+    "review": "TinyDecimalsquantizetosignedzero asdocumented;oracleverifies.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Summation:** Does `math.fsum` guarantee every calculation is exact? **Answer:** No; it improves many summations but has limits.",
+    "review": "fsumhelpssummationbutnotuniversalaccuracy;notusedinAPI.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Units:** Can USD and EUR be summed without conversion? **Answer:** No; define and apply an explicit FX policy.",
+    "review": "FXconversionnotimplemented;unitscallercontract.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Mixed types:** Should a library silently convert float to Decimal? **Answer:** No; define and document the conversion policy.",
+    "review": "NonDecimalrejectionenforcesexplicittypeconversionboundary.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Model:** Does correct rounding validate a default-risk assumption? **Answer:** No.",
+    "review": "Correctroundingdoesnotvalidatemodelrisk;externalreviewpending.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Evidence:** Does a test definition prove a passing run? **Answer:** No; actual output and environment must be recorded.",
+    "review": "Actual/reusedcommandsandoutputsretained;definitionsnotacceptance.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Range:** Why specify supported magnitudes? **Answer:** Precision and exponent limits can affect behavior.",
+    "review": "20numericcasesinclude28digitboundary/carry/tinyvalues;arbitraryresource/exponentlimitsopen.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Review:** Is a two-cent display rule automatically a settlement rule? **Answer:** No; contractual and currency requirements determine that rule.",
+    "review": "Teachingcentsruleisnotcurrencyincrement/settlementapproval.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.5 \u2014 Time-Value-of-Money Module.",
+    "review": "Navigation21.05-time-value-of-money-module.mdverified;nextformalreview.",
+    "status": "assistant scoped;external acceptance pending"
+  }
+]
