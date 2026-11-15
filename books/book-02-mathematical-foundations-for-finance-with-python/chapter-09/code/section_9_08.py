@@ -1,6 +1,8 @@
 """Section 9.8: reproducible valuation sensitivity and scenario reports."""
 import json
 import math
+from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -40,6 +42,30 @@ def scenario_from_terms(terms,years,shocks):
             "absolute_linear_error":abs(exact-linear),
             "absolute_quadratic_error":abs(exact-quadratic)}
 
+def _parallel_baseline(items,rate):
+    """Complete positive baseline fields; latent normalization before conversion."""
+    R=Fraction(rate)
+    with localcontext(Context(prec=1500)):
+        def dec(value):return Decimal(value.numerator)/Decimal(value.denominator)
+        def reported(value):
+            result=float(value)
+            if not math.isfinite(result):
+                raise ValueError("baseline report outside finite float range")
+            return result
+        value=first=second=Decimal(0);amounts=[]
+        for cash,years in items:
+            C,T=map(Fraction,(cash,years));exponent=-R*T
+            if exponent>10000:
+                raise ValueError("baseline report outside finite float range")
+            amount=Decimal(0) if exponent < -10000 else dec(C)*dec(exponent).exp()
+            TT=dec(T);value+=amount;first-=TT*amount;second+=TT*TT*amount
+            amounts.append(amount)
+        v=reported(value)
+        if v<=0:
+            raise ValueError("baseline value must report positive")
+        return ([reported(x) for x in amounts],v,reported(first),reported(second),
+                reported(-first/value),reported(second/value))
+
 def parallel_report(flows,rate,shock_bp_grid,error_tolerance=None):
     items=validate_flows(flows)
     r=finite(rate,"rate")
@@ -49,12 +75,7 @@ def parallel_report(flows,rate,shock_bp_grid,error_tolerance=None):
             raise ValueError("error_tolerance must be nonnegative")
     else:
         tol=None
-    terms=[c*math.exp(-r*t) for c,t in items]
-    value=math.fsum(terms)
-    first=-math.fsum(t*v for (_,t),v in zip(items,terms))
-    second=math.fsum(t*t*v for (_,t),v in zip(items,terms))
-    if not all(math.isfinite(x) for x in (value,first,second)) or value<=0:
-        raise ValueError("baseline value and derivatives must be finite")
+    terms,value,first,second,duration,convexity=_parallel_baseline(items,r)
     scenarios=[]
     for bp in shock_bp_grid:
         b=finite(bp,"shock_bp")
@@ -71,14 +92,15 @@ def parallel_report(flows,rate,shock_bp_grid,error_tolerance=None):
     return {"model":"positive fixed cash flows; flat continuous annual rate",
             "baseline_rate":r,"baseline_value":value,
             "first_derivative":first,"second_derivative":second,
-            "duration":-first/value,"convexity":second/value,
+            "duration":duration,"convexity":convexity,
             "cash_flows":[{"cash":c,"years":t} for c,t in items],
             "error_tolerance_currency":tol,"scenarios":scenarios}
 
 def spot_scenario(flows,spot_rates,shock_bp):
     items=validate_flows(flows)
     rates=[finite(x,"spot_rate") for x in spot_rates]
-    bumps=[bp_to_decimal(x) for x in shock_bp]
+    used_bp=[finite(x,"basis_points") for x in shock_bp]
+    bumps=[bp_to_decimal(x) for x in used_bp]
     if len(items)!=len(rates) or len(items)!=len(bumps):
         raise ValueError("one spot rate and shock required per cash flow")
     terms=[c*math.exp(-z*t) for (c,t),z in zip(items,rates)]
@@ -88,7 +110,7 @@ def spot_scenario(flows,spot_rates,shock_bp):
     data=scenario_from_terms(terms,[t for _,t in items],bumps)
     return {"model":"independent cash-flow spot rates; continuous annual",
             "baseline_value":value,"spot_rates":rates,
-            "shock_bp":[finite(x,"shock_bp") for x in shock_bp],
+            "shock_bp":used_bp,
             **data}
 
 if __name__=="__main__":
