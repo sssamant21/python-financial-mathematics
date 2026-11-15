@@ -1,0 +1,20 @@
+"""Pinned next-scope scenario diagnostics and separate unequal-grid control.
+Usage: python RUNNER repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+from fractions import Fraction
+import sys,subprocess,tempfile,importlib,json,hashlib,math
+r=Path(sys.argv[1]).resolve();pin='89640b21f73500458a8f1ba47f89fd01a7289d70';p='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py';raw=subprocess.check_output(['git','show',pin+':'+p],cwd=r)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_07.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_07')
+ def call(fn):
+  try:return dict(returned=repr(fn()))
+  except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+ with localcontext(Context(prec=2400)):whole=float(Decimal.from_float(1e308)*Decimal(-1000).exp())
+ rows=[dict(case='complete discounted payoff underflow',actual=call(lambda:m.call_scenario(1e308,1.,0.,1.,1000.)),independent_baseline_and_shocked_value=whole,status='OPEN numerical: whole finite value lost after factor underflow'),dict(case='nonfinite final payoff report',actual=call(lambda:m.call_scenario(1e308,1.,0.,-1.,100.)),independent_final='baseline/shocked values outside finite float range, slopes finite',status='OPEN report-range policy: do not label a finite-result rescue'),dict(case='unused factor prerequisite',actual=call(lambda:m.call_scenario(50.,100.,0.,-355.,2.)),independent_complete_report='zero values/slopes; differentiable true',status='OPEN prerequisite policy: unreturned factor exceeds float although full returned numeric fields would be zero')]
+ x=1.;h=3*2**-53;xm=x-h;xp=x+h;a=m.difference_report(lambda y:y,x,h);X,M,P,H=map(Fraction,(x,xm,xp,h));expected=[float((X-M)/H),float((P-X)/H),float((P-M)/(2*H))];checks=[]
+ for k,want in zip(['left_difference','right_difference','centered_difference'],expected):checks.append(dict(field=k,actual=a[k],expected=want,passed=math.isclose(a[k],want,rel_tol=5e-14,abs_tol=0.)))
+ assert all(c['passed'] for c in checks);assert x-xm!=xp-x
+ d=dict(executable_source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,separate_source_unequal_grid_control=dict(point=x,step=h,minus=xm,plus=xp,actual_minus_spacing=x-xm,actual_plus_spacing=xp-x,predicates=checks,limits='Three supplementary sampled-contract predicates, outside111 main predicates. Nominal h denominator retained; identity analytic derivative1 differs from some sampled quotients. Not convergence/derivative acceptance.'),limits='Three scenario diagnostics: one numerical and two range/prerequisite policies. Physical zero-spot derivative interpretation, complete scenario scope and independent/platform/model/release approval remain open.')
+ Path(sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('3scenario observations;3separate unequal-grid source predicates pass')

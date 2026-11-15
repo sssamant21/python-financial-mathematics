@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.9:** [Return review](chapter-21-return-review/README.md):40 answers /12 labs,updated clean-consumer wheel,204 predicates;9 scoped workflows /360 local answers. Next21.10;broader F28/F32/model/platform/independent gaps remain open.
+
 - **Latest21.8:** [Bond review](chapter-21-bond-review/README.md):40 answers /12 lab steps, updated clean-consumer wheel and162 predicates;8 scoped workflows /320 local answers. Next21.9; broader F28/F32/model/platform/independent gaps remain open.
 
 - **Latest 21.7:** [Loan review](chapter-21-loan-review/README.md): 40 answers /12 lab steps, updated clean-consumer wheel, 129 installed predicates and 48 existing methods. Seven scoped workflows /280 local answers in Chapter 21. Next: 21.8; [partial bond source checkpoint](chapter-21-bond-resume/README.md) passes 60 existing methods. Broader F28/F32 and independent/model/platform/release gaps remain open.
@@ -670,3 +672,13 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.9 — Partial return-module source checkpoint (OPEN)
 
 [Return checkpoint](chapter-21-return-resume/README.md):3 source commands /72 existing methods pass across return, bond, loan, cashflow, TVM and scaffold suites. Explicit source injection; no new historical methods or completed formal workflow. Bond wheel excludes returns. Next:21.9 independent numerical/range contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains8 scoped workflows /320 local answers; F28/F32 and broader acceptance remain open.
+
+
+## Section21.9 — Scoped return workflow, answers and updated wheel
+
+[Return evidence](chapter-21-return-review/README.md):40 answers /12 lab-step reviews;11 new offline packagingcommands and204 installed-wheel predicates pass.162 retained plus18 independent return references,20 rejection cases and4 separate properties. Three return numerical-limit observations separate from predicates and3 retainedTVM/NPV observations; no invented code defect. Exercise39 execution-status answer corrected with original retained. Three prior source commands reused by exact fences;72 existing methods /216 source-editable-wheel invocations, zero new historical methods. New wheel hash differs from bond artifact at same illustrative version; not release approval. Chapter21 now9 scoped workflows /360 local answers. Next21.10 Portfolio Module. F28/F32/F209,static-check,F165/F185,R08–10/ownership and broader resources/data/model/platform/release/independent acceptance remain open.
+
+
+### Section21.10 — Partial portfolio source checkpoint (OPEN)
+
+[Portfolio checkpoint](chapter-21-portfolio-resume/README.md):3 source commands /84 existing methods pass. Explicit source injection; no new historical methods or completed formal workflow. Return wheel excludes portfolio. Next21.10 independent weighting/domain/range/alignment contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains9 scoped workflows /360 local answers;F28/F32 and broad acceptance remain open.

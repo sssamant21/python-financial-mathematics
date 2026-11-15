@@ -1,0 +1,61 @@
+{
+  "executable_source_revision": "89640b21f73500458a8f1ba47f89fd01a7289d70",
+  "source_blob": "db38485152e8fa31e6931f9abea497c122479f3a",
+  "observations": [
+    {
+      "case": "complete discounted payoff underflow",
+      "actual": {
+        "returned": "{'baseline_value': 0.0, 'shocked_value': 0.0, 'exact_change': 0.0, 'left_slope': 0.0, 'right_slope': 0.0, 'differentiable': True}"
+      },
+      "independent_baseline_and_shocked_value": 5.075958897549457e-127,
+      "status": "OPEN numerical: whole finite value lost after factor underflow"
+    },
+    {
+      "case": "nonfinite final payoff report",
+      "actual": {
+        "returned": "{'baseline_value': inf, 'shocked_value': inf, 'exact_change': 0.0, 'left_slope': 2.6881171418161356e+43, 'right_slope': 2.6881171418161356e+43, 'differentiable': True}"
+      },
+      "independent_final": "baseline/shocked values outside finite float range, slopes finite",
+      "status": "OPEN report-range policy: do not label a finite-result rescue"
+    },
+    {
+      "case": "unused factor prerequisite",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_complete_report": "zero values/slopes; differentiable true",
+      "status": "OPEN prerequisite policy: unreturned factor exceeds float although full returned numeric fields would be zero"
+    }
+  ],
+  "separate_source_unequal_grid_control": {
+    "point": 1.0,
+    "step": 3.3306690738754696e-16,
+    "minus": 0.9999999999999997,
+    "plus": 1.0000000000000004,
+    "actual_minus_spacing": 3.3306690738754696e-16,
+    "actual_plus_spacing": 4.440892098500626e-16,
+    "predicates": [
+      {
+        "field": "left_difference",
+        "actual": 1.0,
+        "expected": 1.0,
+        "passed": true
+      },
+      {
+        "field": "right_difference",
+        "actual": 1.3333333333333333,
+        "expected": 1.3333333333333333,
+        "passed": true
+      },
+      {
+        "field": "centered_difference",
+        "actual": 1.1666666666666667,
+        "expected": 1.1666666666666667,
+        "passed": true
+      }
+    ],
+    "limits": "Three supplementary sampled-contract predicates, outside111 main predicates. Nominal h denominator retained; identity analytic derivative1 differs from some sampled quotients. Not convergence/derivative acceptance."
+  },
+  "limits": "Three scenario diagnostics: one numerical and two range/prerequisite policies. Physical zero-spot derivative interpretation, complete scenario scope and independent/platform/model/release approval remain open."
+}

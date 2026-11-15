@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `e0c17a68fc28195b95f4f6381166adcb405b8353` (V-190)
-**Latest scoped source:** V-191 at `ab6eb11ec9e377e3014e9914bb085c619f73a8a6`; [three-source manifest](chapter-09-kinks-publication-r15.json).
+**Full-runtime candidate source revision:** `89640b21f73500458a8f1ba47f89fd01a7289d70` (V-193)
+**Latest scoped source:** V-192 at `89640b21f73500458a8f1ba47f89fd01a7289d70`; [four-source manifest](chapter-09-difference-publication-r16.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-191 payoff/cap-floor scoped pass; V-190 older-pin full runtime pass. Difference/scenario contracts and broader independent/platform/release acceptance remain open.
+**Disposition:** V-192 difference-report scoped pass and V-193 full runtime pass; scenario contracts and independent/model/platform/release approval remain open.
 
 ## Reconciled evidence
 
@@ -1441,3 +1441,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-191 checkpoint — Section9.7 payoff/cap-floor contracts
 
 [Payoff/cap-floor evidence](chapter-09-kinks-followup-r15.md):182 corrected predicates pass;174 initial passes /8 failed range-policy fields and identical replay retained. Exact rational payoffs/neighboring one-sided secants, type/domain/priority and selected properties. All8 initial failures enforce explicit finite-payment policy plus retained full-payment slope prerequisite, not8 numerical bugs. Only payment body changed; difference/scenario text unchanged. Three files compiled /three commands /two checkers pass with before/after hashes. Fresh628/415/629 pinned inventory is not full execution; V190 remains latest full pass at its older pin. Next: difference-report preflight/quotient/callback contracts, then scenarios; fresh diagnostics and zero-spot derivative-interpretation gap remain OPEN. COV51 selected follow-up;37 categories partial,none closed. Broad resource/model/platform/editorial/release/canonical/independent acceptance pending;Book1 separate.
+
+
+## V-192 checkpoint — Section9.7 sampled difference reports
+
+[Difference evidence](chapter-09-difference-followup-r16.md):111 corrected predicates pass;98 initial passes /13 failures and actual identical replay retained.3 numerical fields,6 output-range policy fields,4 finite-grid/no-callback policy checks,not13 unique defects. Independent1800/2400-digit sampled quotients; callback order,short-circuit,exception identity and nominal-h denominators explicit. Only difference body/Fraction import changed. Four files compiled /four commands /three checkers pass with before/after hashes. Three separate actual unequal-grid source controls pass; scenario diagnostics and physical spot0 derivative interpretation remain OPEN. Earlier huge-step zero-description corrected to NaN matching retained raw output; historical evidence intact. Fresh629/416/630 inventory not full execution; accumulated refresh next,then scenario contracts.37 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-193 checkpoint — Full pinned candidate Linux refresh
+
+[V-193 runtime](runtime-refresh-2026-11-15-r16.md) at `89640b21f73500458a8f1ba47f89fd01a7289d70`:629/629 Python files compiled,416/416 scripts passed,630/630 required blobs verified before/after. Includes accumulated payoff/cap-floor182 and difference-report111 predicates with explicit policies and retained initial failures/replays;3 separate unequal-grid source controls are not part of111. Huge-step diagnostic interpretation corrected to NaN matching historical raw output. Fresh scenario numerical/range/prerequisite diagnostics and physical spot0 derivative interpretation remain OPEN; full execution does not settle unasserted contracts. Next: call-scenario complete reports,shifted-point/factor and input/range contracts.37 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.

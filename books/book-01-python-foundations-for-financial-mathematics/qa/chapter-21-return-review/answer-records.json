@@ -1,0 +1,245 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Price gain:** Return from 100 to 110? **Answer:** 10%.",
+    "review": "Exact110/100-1=1/10; represented-float price oracle and suite pass.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Price loss:** Return from 100 to 90? **Answer:** \u221210%.",
+    "review": "Exact90/100-1=-1/10; selected independent price oracle passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Unchanged:** Return from 100 to 100? **Answer:** Zero.",
+    "review": "100/100-1=0; oracle passes with stated absolute return tolerance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Total loss:** Return from 100 to zero? **Answer:** \u2212100%.",
+    "review": "Zero ending price is allowed; result -1 exactly; source/wheel check.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Zero beginning:** Is a return defined from beginning price zero? **Answer:** No; the denominator would be zero.",
+    "review": "Beginning price must be positive; zero denominator input rejects.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Negative ending:** Is it accepted by this price contract? **Answer:** No.",
+    "review": "Negative ending price rejects; strict nonnegative-price model.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Units:** Must both prices use the same currency and units? **Answer:** Yes.",
+    "review": "Same instrument, currency, units and date conventions are caller metadata/data assumptions, not enforced fields.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Rate notation:** How is 5% represented? **Answer:** As `0.05`.",
+    "review": "Decimal return .05 means5%; no implicit percent conversion.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Link:** Link 10% and \u221210%. **Answer:** \u22121% in exact arithmetic.",
+    "review": "(11/10)*(9/10)-1=-1/100; independent exact product separate from source endpoint property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Endpoint:** Return from 100 to 99? **Answer:** \u22121%.",
+    "review": "99/100-1=-1/100; oracle and shared endpoint integration recorded separately.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Gain and loss:** Why do equal percentage gains and losses not cancel? **Answer:** They apply to different bases.",
+    "review": "(1+a)*(1-a)-1=-a squared, so symmetric percentages do not cancel; supplemental exact algebra.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Gross return:** What is the gross return for 5%? **Answer:** 1.05.",
+    "review": "Gross1+.05=1.05; sequential factors are modeled without external flows.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Zero return:** What factor does it contribute? **Answer:** 1.",
+    "review": "Zero return multiplies by1; selected zero-factor insertion property passes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Total loss:** What factor does \u2212100% contribute? **Answer:** Zero.",
+    "review": "Total-loss simple return-1 has gross0; selected absorbing sequence.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**After loss:** Does a later 50% return restore zero wealth without new capital? **Answer:** No.",
+    "review": "Zero wealth times any finite gross remainszero; source sequence[-1,1e308] passes, no recapitalization modeled.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Below \u2212100%:** Is \u2212101% accepted? **Answer:** No, under this nonnegative-wealth contract.",
+    "review": "Below-1 returns reject; selected invalid sequence.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Leverage:** Can another financial definition admit losses below \u2212100%? **Answer:** Yes; leveraged positions can require a different model.",
+    "review": "Leverage/liabilities may need a different definition; design/model note, no leveraged API acceptance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Distribution:** Does price return include a dividend? **Answer:** No.",
+    "review": "Source accepts only two prices; no distribution input.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Total return:** With start 100, end 105 and a one-unit end-of-period distribution, what is a simple total return under the stated no-reinvestment convention? **Answer:** 6%.",
+    "review": "Supplemental(105+1)/100-1=3/50=6%; not source total-return execution.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Fees:** Are fees included by the reference functions? **Answer:** No.",
+    "review": "No fee/tax field; same methodological exclusions in both functions.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**External flows:** Does linked return automatically measure an account with deposits? **Answer:** No; flow timing and valuation boundaries require a defined methodology.",
+    "review": "Deposits/withdrawals require actual flow times and valuation boundaries; broad F32/data integration remains open.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**TWR:** Is linking arbitrary returns automatically a valid time-weighted return? **Answer:** No.",
+    "review": "Arbitrary link is not automatically account TWR; no methodology certification.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Money-weighted:** Does the module calculate IRR? **Answer:** No.",
+    "review": "No cashflow root or money-weighted solver implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Annualization:** Does it annualize returns? **Answer:** No.",
+    "review": "No annualization or day-count convention implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Volatility:** Does it calculate volatility? **Answer:** No.",
+    "review": "No volatility/risk estimator implemented.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Data:** Why inspect corporate-action adjustments? **Answer:** To maintain consistent price definitions and avoid double counting.",
+    "review": "Adjusted/unadjusted price and distributions can double count; conceptual data-governance review only.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Scale:** What happens if both prices double? **Answer:** The exact simple return is unchanged.",
+    "review": "Common positive scale cancels from exact price ratio; selected wheel property.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Single period:** What is the linked return of `[0.05]` in exact arithmetic? **Answer:** 5%.",
+    "review": "Single exact gross minus1 equals supplied return; one-element tuple selected, tolerance1e-12.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Empty sequence:** Is it accepted? **Answer:** No; it raises `ValueError`.",
+    "review": "Empty list/tuple reject; both selected.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Container:** Is a generator accepted? **Answer:** No; the contract accepts built-in lists or tuples.",
+    "review": "Generator rejects; strict built-in list/tuple, no silent consumption.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Integer:** Is price `100` accepted? **Answer:** No; use a built-in float such as `100.0`.",
+    "review": "Integer prices reject; exact built-in float checks verified.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Boolean:** Is `True` accepted as a return? **Answer:** No.",
+    "review": "Boolean return rejects despite bool subclassingint; strict float type.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Nonfinite:** Is NaN accepted? **Answer:** No.",
+    "review": "NaN/inf rejected before linking; no masking by earlier total loss.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Limit:** What is the maximum return count? **Answer:** 10,000.",
+    "review": "10000zero returns accepted and10001rejects; resource limit not performance guarantee.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Overflow:** What happens on a nonfinite intermediate? **Answer:** The function raises `ValueError`.",
+    "review": "Declared intermediate overflow rejects even before later total loss; observation retained with independent final-1.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Underflow:** Can a positive gross value round to zero? **Answer:** Yes; the linked return can then appear as \u2212100%.",
+    "review": "Positive exact gross can underflow; return-1 alone does not diagnose total loss; selected observation separate from predicates.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Tolerance:** Why use an absolute tolerance near zero? **Answer:** Relative tolerance alone cannot allow a nonzero error against zero.",
+    "review": "Near-zero comparison needs an amount/return absolute allowance; adopted1e-12 decimalreturn tolerance not universal accuracy.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Rounding:** Does percent formatting alter the stored float? **Answer:** No.",
+    "review": "Percent format affects display only; actualreturnfloats retained.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Have these reference tests been run? **Answer:** No; actual execution is deferred.",
+    "review": "Original exercise said execution deferred. Updated current answer to link actual source/editable/wheel execution; retain original record and correction.",
+    "status": "Assistant scoped technical review; independent acceptance pending",
+    "initial_source_record": "**Evidence:** Have these reference tests been run? **Answer:** No; actual execution is deferred.",
+    "reviewed_record": "**Evidence:** Have these reference tests been run? **Answer:** Yes, in the later scoped source, editable and wheel runs linked below; broader independent, model, platform and release acceptance remains pending.",
+    "editorial_status_correction": true
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.10 \u2014 Portfolio Module.",
+    "review": "21.10-portfolio-module.md exists; next formal workflow portfolio.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  }
+]

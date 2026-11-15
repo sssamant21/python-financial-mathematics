@@ -1,0 +1,902 @@
+{
+  "source_blob": "bb468e6c87a932c92bdf01304456f2989a68a64a",
+  "reference_precisions": [
+    1800,
+    2400
+  ],
+  "relative_tolerance": 5e-14,
+  "absolute_tolerance": 0.0,
+  "source_predicates": [
+    {
+      "case": "linear",
+      "field": "left_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "linear",
+      "field": "right_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "linear",
+      "field": "centered_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "linear",
+      "field": "callback order",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "call kink",
+      "field": "left_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "call kink",
+      "field": "right_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "call kink",
+      "field": "centered_difference",
+      "actual": "0.5",
+      "expected": "0.5",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "call kink",
+      "field": "callback order",
+      "actual": "[100.0, 98.0, 102.0]",
+      "expected": "[100.0, 98.0, 102.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "identity huge step",
+      "field": "left_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "identity huge step",
+      "field": "right_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "identity huge step",
+      "field": "centered_difference",
+      "actual": "nan",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": false
+    },
+    {
+      "case": "identity huge step",
+      "field": "callback order",
+      "actual": "[0.0, -1e+308, 1e+308]",
+      "expected": "[0.0, -1e+308, 1e+308]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "numerator overflow rescue",
+      "field": "left_difference",
+      "actual": "inf",
+      "expected": "2.0",
+      "kind": "numerical",
+      "passed": false
+    },
+    {
+      "case": "numerator overflow rescue",
+      "field": "right_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "numerator overflow rescue",
+      "field": "centered_difference",
+      "actual": "nan",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": false
+    },
+    {
+      "case": "numerator overflow rescue",
+      "field": "callback order",
+      "actual": "[0.0, -1e+308, 1e+308]",
+      "expected": "[0.0, -1e+308, 1e+308]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "smallest step",
+      "field": "left_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "smallest step",
+      "field": "right_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "smallest step",
+      "field": "centered_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "smallest step",
+      "field": "callback order",
+      "actual": "[0.0, -5e-324, 5e-324]",
+      "expected": "[0.0, -5e-324, 5e-324]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "tiny quotient",
+      "field": "left_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "tiny quotient",
+      "field": "right_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "tiny quotient",
+      "field": "centered_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "tiny quotient",
+      "field": "callback order",
+      "actual": "[0.0, -1e+308, 1e+308]",
+      "expected": "[0.0, -1e+308, 1e+308]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "unequal rounded grid",
+      "field": "left_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "unequal rounded grid",
+      "field": "right_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "unequal rounded grid",
+      "field": "centered_difference",
+      "actual": "1.0",
+      "expected": "1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "unequal rounded grid",
+      "field": "callback order",
+      "actual": "[1.0, 0.9999999999999998, 1.0000000000000002]",
+      "expected": "[1.0, 0.9999999999999998, 1.0000000000000002]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "asymmetric samples",
+      "field": "left_difference",
+      "actual": "3.9000000000000012",
+      "expected": "3.9000000000000012",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "asymmetric samples",
+      "field": "right_difference",
+      "actual": "4.100000000000001",
+      "expected": "4.100000000000001",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "asymmetric samples",
+      "field": "centered_difference",
+      "actual": "4.000000000000001",
+      "expected": "4.000000000000001",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "asymmetric samples",
+      "field": "callback order",
+      "actual": "[2.0, 1.9, 2.1]",
+      "expected": "[2.0, 1.9, 2.1]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "constant",
+      "field": "left_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "constant",
+      "field": "right_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "constant",
+      "field": "centered_difference",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "constant",
+      "field": "callback order",
+      "actual": "[1.0, 0.5, 1.5]",
+      "expected": "[1.0, 0.5, 1.5]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "true quotient overflow",
+      "field": "left_difference",
+      "actual": "inf",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true quotient overflow",
+      "field": "right_difference",
+      "actual": "-inf",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true quotient overflow",
+      "field": "centered_difference",
+      "actual": "0.0",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "true quotient overflow",
+      "field": "callback order",
+      "actual": "[0.0, -1e-308, 1e-308]",
+      "expected": "[0.0, -1e-308, 1e-308]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "opposite true quotient overflow",
+      "field": "left_difference",
+      "actual": "-inf",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "opposite true quotient overflow",
+      "field": "right_difference",
+      "actual": "-inf",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "opposite true quotient overflow",
+      "field": "centered_difference",
+      "actual": "-inf",
+      "expected": "'ValueError'",
+      "kind": "range-policy",
+      "passed": false
+    },
+    {
+      "case": "opposite true quotient overflow",
+      "field": "callback order",
+      "actual": "[0.0, -5e-324, 5e-324]",
+      "expected": "[0.0, -5e-324, 5e-324]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "tiny finite outputs",
+      "field": "left_difference",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "tiny finite outputs",
+      "field": "right_difference",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "tiny finite outputs",
+      "field": "centered_difference",
+      "actual": "1e-308",
+      "expected": "1e-308",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "tiny finite outputs",
+      "field": "callback order",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "integer callback values",
+      "field": "left_difference",
+      "actual": "2.0",
+      "expected": "2.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "integer callback values",
+      "field": "right_difference",
+      "actual": "2.0",
+      "expected": "2.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "integer callback values",
+      "field": "centered_difference",
+      "actual": "2.0",
+      "expected": "2.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "integer callback values",
+      "field": "callback order",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative sampled quotients",
+      "field": "left_difference",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "negative sampled quotients",
+      "field": "right_difference",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "negative sampled quotients",
+      "field": "centered_difference",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "kind": "numerical",
+      "passed": true
+    },
+    {
+      "case": "negative sampled quotients",
+      "field": "callback order",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "zero step",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "zero step",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative step",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative step",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "nan point",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "nan point",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool point",
+      "field": "preflight",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool point",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool step",
+      "field": "preflight",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bool step",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "infinite step",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "infinite step",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "infinite point",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "infinite point",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "huge integer point",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "huge integer point",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "rounded plus point",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "rounded plus point",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "rounded both points",
+      "field": "preflight",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "rounded both points",
+      "field": "no callback",
+      "actual": "[]",
+      "expected": "[]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "positive endpoint overflow",
+      "field": "preflight",
+      "actual": "{'left_difference': 0.0, 'right_difference': 0.0, 'centered_difference': 0.0}",
+      "expected": "'ValueError'",
+      "kind": "grid-policy",
+      "passed": false
+    },
+    {
+      "case": "positive endpoint overflow",
+      "field": "no callback",
+      "actual": "['1e+308', '0.0', 'inf']",
+      "expected": "[]",
+      "kind": "grid-policy",
+      "passed": false
+    },
+    {
+      "case": "negative endpoint overflow",
+      "field": "preflight",
+      "actual": "{'left_difference': 0.0, 'right_difference': 0.0, 'centered_difference': 0.0}",
+      "expected": "'ValueError'",
+      "kind": "grid-policy",
+      "passed": false
+    },
+    {
+      "case": "negative endpoint overflow",
+      "field": "no callback",
+      "actual": "['-1e+308', '-inf', '0.0']",
+      "expected": "[]",
+      "kind": "grid-policy",
+      "passed": false
+    },
+    {
+      "case": "callable before numeric input",
+      "field": "preflight",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 valueTrue",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 valueTrue",
+      "field": "short circuit",
+      "actual": "[0.0]",
+      "expected": "[0.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 valuenan",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 valuenan",
+      "field": "short circuit",
+      "actual": "[0.0]",
+      "expected": "[0.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 valueinf",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 valueinf",
+      "field": "short circuit",
+      "actual": "[0.0]",
+      "expected": "[0.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 value1000000000",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase0 value1000000000",
+      "field": "short circuit",
+      "actual": "[0.0]",
+      "expected": "[0.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 valueTrue",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 valueTrue",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0]",
+      "expected": "[0.0, -1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 valuenan",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 valuenan",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0]",
+      "expected": "[0.0, -1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 valueinf",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 valueinf",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0]",
+      "expected": "[0.0, -1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 value1000000000",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase1 value1000000000",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0]",
+      "expected": "[0.0, -1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 valueTrue",
+      "field": "rejection",
+      "actual": "'TypeError'",
+      "expected": "'TypeError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 valueTrue",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 valuenan",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 valuenan",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 valueinf",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 valueinf",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 value1000000000",
+      "field": "rejection",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "bad callback phase2 value1000000000",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "original exception phase0",
+      "field": "identity",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "original exception phase0",
+      "field": "short circuit",
+      "actual": "[0.0]",
+      "expected": "[0.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "original exception phase1",
+      "field": "identity",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "original exception phase1",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0]",
+      "expected": "[0.0, -1.0]",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "original exception phase2",
+      "field": "identity",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "original exception phase2",
+      "field": "short circuit",
+      "actual": "[0.0, -1.0, 1.0]",
+      "expected": "[0.0, -1.0, 1.0]",
+      "kind": "contract",
+      "passed": true
+    }
+  ],
+  "passed": 98,
+  "failed": 13,
+  "limits": "Sampled quotient contracts at rounded x-h/x+h with nominal represented h denominators; not analytic derivative convergence. Finite endpoint/output policies explicit. Callback order and original exception identity retained. Scenario, physical zero-spot interpretation, resource/platform/independent acceptance remain open; zero signs numeric only."
+}
