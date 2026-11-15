@@ -1,0 +1,19 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,hashlib,math
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='9a00097d0669af492c85f0468cd93c2bd447100c';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_03.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'section_9_03.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('shock_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for name,vals,key in [('baseline underflow with finite shock recovery',(1e-308,2.,355.,-355.),'exact_change'),('tiny-shock relative error cancellation',(1e308,2.,355.,1e-308),'relative_change_error')]:
+  refs=[]
+  for prec in (1800,2400):
+   with localcontext(Context(prec=prec)):
+    C,T,R,H=map(Decimal,vals);B=C*(-T*R).exp();S=C*(-T*(R+H)).exp();E=S-B;A=-T*B*H;error=E-A;refs.append(float(E if key=='exact_change' else abs(error)/abs(E)))
+  assert refs[0]==refs[1]
+  try:a=m.discount_shock(*vals)[key]
+  except Exception as e:a=type(e).__name__
+  rows.append(dict(name=name,field=key,actual=repr(a),independent_expected=repr(refs[0]),status='OPEN — diagnostic numerical mismatch;not a passing acceptance predicate'))
+ try:a=m.discount_shock(1e308,1e308,0.,0.)['linear_change']
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='validated zero shock identity',field='linear_change',actual=repr(a),independent_expected='0.0',status='OPEN — exact zero-shock change identity,report currently nonfinite;not a passing acceptance predicate'))
+d=dict(executable_source_revision=pin,source=rel,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Three exact-source diagnostics for next shock/report batch;standalone value fix does not certify downstream reports. Not additional accepted script predicates or independent/platform acceptance.');(r/('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-discount-shock-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print('Three OPEN discounted-shock report observations recorded')

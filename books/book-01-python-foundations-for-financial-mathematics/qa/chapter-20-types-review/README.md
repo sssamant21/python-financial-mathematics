@@ -13,3 +13,7 @@ Two exact Python fences compiled;full12-method suite ran direct,module and optim
 Five runtime annotation/NewType observations are separate from46 source predicates and from static analysis. Neither mypy nor pyright is installed;no configured checker/version/target execution or static acceptance claimed. This specific missing-tool/configuration gap is retained and does not block other runtime reviews. Static int-for-float behavior,units,currency and data-class validation reviewed conceptually only.
 
 Broader NPV range/underflow,Decimal lexical/coefficient/exponent resources,F28 notebook/platform,F32 shared-input integration,F209 iterable policy,F165 tail limits,F185 integration and independent/platform/release acceptance remain open. Chapter20 now11 scoped workflows/440 local answers. Next:Section20.12 Documentation.
+
+Executable source/checker bytes verified against `9a00097d0669af492c85f0468cd93c2bd447100c`;[source manifest](publication-verification.json).
+
+[Static-tool inventory](static-checker-inventory.json),[runnable inventory](checker-inventory.txt) check both Python packages and CLI executables;this read-only inspection is separate from the five exact-source commands and does not run a type checker.

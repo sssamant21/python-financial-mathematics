@@ -17,3 +17,7 @@ Production retains c,t,r validation order and positive-c/nonnegative-t domain. C
 [Later saved-probe disposition](chapter-09-discount-value-resume-disposition.json) resolves the standalone value case only;historical initial/replay/prior OPEN records unchanged. [Scope comparison](chapter-09-discount-value-scope-comparison.json) shows only discount_value text changed. discount_shock invokes it,so its baseline behavior benefits;whole shock/error report correctness is not implied by unchanged wrapper text.
 
 All36 selected COV categories partial,none closed. Next:Section9.3 discounted shock/error reports,then ladder/revenue contracts. Broader resources,conditioning,financial/model/independent mathematical/editorial/platform/release/canonical acceptance pending. Book1 tracked independently.
+
+Executable source/checker bytes verified against `9a00097d0669af492c85f0468cd93c2bd447100c`;[source manifest](chapter-09-discount-value-publication-verification.json).
+
+[Next shock checkpoint](chapter-09-discount-shock-resume-initial.json),[identical replay](chapter-09-discount-shock-resume-replay.json),[runner](chapter-09-discount-shock-resume-probes.txt) retain three OPEN report observations;these do not add passing predicates to the34-value scope.

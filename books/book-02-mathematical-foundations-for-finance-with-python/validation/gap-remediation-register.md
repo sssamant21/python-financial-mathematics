@@ -1124,3 +1124,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-164 checkpoint — Section9.3 complete discounted value
 
 [Value evidence](chapter-09-discount-value-followup.md):34 corrected predicates pass;26 initial passes/eight failed predicates and identical replay retained. Independent1800/2400-digit complete-value references and input/private-context controls checked. Saved finite-value rescue scoped resolved;historical records unchanged. Four files compiled,four commands/three checkers pass,four hashes verified before-after;only discount_value text changed,downstream shock baseline benefits but shock/error report scope remains open. Fresh614/401/615 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 discounted shock/error-report contracts,then ladder/revenue. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.3 discounted-shock resume checkpoint — OPEN
+
+[Initial exact-source observations](chapter-09-discount-shock-resume-initial.json),[actual identical replay](chapter-09-discount-shock-resume-replay.json),[runner](chapter-09-discount-shock-resume-probes.txt):finite exact-change rescue raises OverflowError;relative error for a tiny shock reports0 versus independent1e−308;validated zero shock produces nan linear_change versus exact0. Three diagnostic observations,not passing acceptance predicates. Standalone value fix does not settle shock/error reports. Resume next;preserve initial failures.
+
+
+## V-165 checkpoint — Full pinned candidate Linux refresh
+
+[V-165 full runtime](runtime-refresh-2026-11-15-r1.md) at `9a00097d0669af492c85f0468cd93c2bd447100c`:614/614 Python files compiled,401/401 check-test scripts passed,615/615 required Python/fixture hashes verified before-after. Includes V-164 standalone value contracts;eight initial failed predicates/replay and34 corrected predicates retained separately. Historical records unchanged;saved standalone value rescue scoped resolved. Next shock checkpoint retains three OPEN report observations,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 discounted shock/error reports,resuming saved cases,then ladder/revenue. Book1 tracked independently.

@@ -1,0 +1,29 @@
+{
+  "executable_source_revision": "9a00097d0669af492c85f0468cd93c2bd447100c",
+  "source": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_03.py",
+  "source_blob": "f36b2318b6427d959a7349e772ad87dde66a6211",
+  "observations": [
+    {
+      "name": "baseline underflow with finite shock recovery",
+      "field": "exact_change",
+      "actual": "'OverflowError'",
+      "independent_expected": "1e-308",
+      "status": "OPEN \u2014 diagnostic numerical mismatch;not a passing acceptance predicate"
+    },
+    {
+      "name": "tiny-shock relative error cancellation",
+      "field": "relative_change_error",
+      "actual": "0.0",
+      "independent_expected": "1e-308",
+      "status": "OPEN \u2014 diagnostic numerical mismatch;not a passing acceptance predicate"
+    },
+    {
+      "name": "validated zero shock identity",
+      "field": "linear_change",
+      "actual": "nan",
+      "independent_expected": "0.0",
+      "status": "OPEN \u2014 exact zero-shock change identity,report currently nonfinite;not a passing acceptance predicate"
+    }
+  ],
+  "limits": "Three exact-source diagnostics for next shock/report batch;standalone value fix does not certify downstream reports. Not additional accepted script predicates or independent/platform acceptance."
+}

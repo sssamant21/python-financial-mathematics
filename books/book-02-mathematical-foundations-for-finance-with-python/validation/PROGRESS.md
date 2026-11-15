@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-11-14
-**Overall status:** In progress — V-164 standalone discounted-value scoped pass;V-163 remains latest full candidate Linux pass (613/400/614),pending refresh. Discounted shock/error reports and independent/platform/release acceptance remain open.
+**Updated:** 2026-11-15
+**Overall status:** In progress — V-164 standalone value scope and V-165 full candidate Linux pass (614/401/615). Shock/error report observations and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 613/613 at `067c4205c8339341e1f76352f60fdf4fd2615b78`. [V-163](runtime-refresh-2026-11-14-r11.md). |
-| Automated script execution | Full candidate Linux pass | 400/400 at `067c4205c8339341e1f76352f60fdf4fd2615b78`;614 required blobs verified before/after. [V-163](runtime-refresh-2026-11-14-r11.md). |
+| Python compilation | Full candidate Linux pass | 614/614 at `9a00097d0669af492c85f0468cd93c2bd447100c`. [V-165](runtime-refresh-2026-11-15-r1.md). |
+| Automated script execution | Full candidate Linux pass | 401/401 at `9a00097d0669af492c85f0468cd93c2bd447100c`;615 required blobs verified before/after. [V-165](runtime-refresh-2026-11-15-r1.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1372,3 +1372,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-164 checkpoint — Section9.3 complete discounted value
 
 [Value evidence](chapter-09-discount-value-followup.md):34 corrected predicates pass;26 initial passes/eight failed predicates and identical replay retained. Independent1800/2400-digit complete-value references and input/private-context controls checked. Saved finite-value rescue scoped resolved;historical records unchanged. Four files compiled,four commands/three checkers pass,four hashes verified before-after;only discount_value text changed,downstream shock baseline benefits but shock/error report scope remains open. Fresh614/401/615 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 discounted shock/error-report contracts,then ladder/revenue. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.3 discounted-shock resume checkpoint — OPEN
+
+[Initial exact-source observations](chapter-09-discount-shock-resume-initial.json),[actual identical replay](chapter-09-discount-shock-resume-replay.json),[runner](chapter-09-discount-shock-resume-probes.txt):finite exact-change rescue raises OverflowError;relative error for a tiny shock reports0 versus independent1e−308;validated zero shock produces nan linear_change versus exact0. Three diagnostic observations,not passing acceptance predicates. Standalone value fix does not settle shock/error reports. Resume next;preserve initial failures.
+
+
+## V-165 checkpoint — Full pinned candidate Linux refresh
+
+[V-165 full runtime](runtime-refresh-2026-11-15-r1.md) at `9a00097d0669af492c85f0468cd93c2bd447100c`:614/614 Python files compiled,401/401 check-test scripts passed,615/615 required Python/fixture hashes verified before-after. Includes V-164 standalone value contracts;eight initial failed predicates/replay and34 corrected predicates retained separately. Historical records unchanged;saved standalone value rescue scoped resolved. Next shock checkpoint retains three OPEN report observations,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 discounted shock/error reports,resuming saved cases,then ladder/revenue. Book1 tracked independently.

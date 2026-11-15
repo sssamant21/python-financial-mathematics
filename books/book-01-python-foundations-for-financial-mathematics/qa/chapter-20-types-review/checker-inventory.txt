@@ -1,0 +1,3 @@
+from pathlib import Path
+import importlib.util,shutil,json,sys
+out=Path(sys.argv[1]);d=dict(python=sys.version,tools={name:dict(python_package_available=importlib.util.find_spec(name) is not None,cli_path=shutil.which(name)) for name in ['mypy','pyright']},status='OPEN — no configured static checker,target or acceptance;inventory is not static checking');out.write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(d))
