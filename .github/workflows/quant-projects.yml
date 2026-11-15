@@ -285,6 +285,9 @@ jobs:
           python -m unittest -v test_asian_option.py
           python -m compileall -q asian_option.py test_asian_option.py
           python asian_option.py --pairs 100 --observations 12 --seed 2026
+          python -m unittest -v test_geometric_control.py
+          python -m compileall -q geometric_control.py test_geometric_control.py
+          python geometric_control.py --pairs 100 --observations 12 --seed 2026
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
