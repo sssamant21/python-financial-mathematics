@@ -71,26 +71,50 @@ def discounted_shock(cash_flow, rate, years, shock):
              _scaled_discount(C, -(R+H)*T, -T*H))
     return {"first_order":first, "exact":exact}
 
-def demand_quantity(price, scale=400.0, exponent=-1.5):
+def _demand_inputs(price, scale, exponent):
     p, a, e = finite(price, "price"), finite(scale, "scale"), finite(exponent, "exponent")
     if p <= 0 or a <= 0:
         raise ValueError("price and scale must be positive")
-    return a*p**e
+    return p, a, e
+
+def _scaled_power(coefficient, price, exponent, zero=0.0):
+    if coefficient == 0:
+        return zero
+    if price == 1 or exponent == 0:
+        return _report(coefficient)
+    with localcontext(Context(prec=1300)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        amplitude = abs(dec(coefficient)).ln()+dec(exponent)*Decimal(price).ln()
+        if amplitude > 10000:
+            raise ValueError("power result outside finite float range")
+        if amplitude < -10000:
+            return -0.0 if coefficient < 0 else 0.0
+        return _report(amplitude.exp().copy_sign(Decimal(-1 if coefficient < 0 else 1)))
+
+def demand_quantity(price, scale=400.0, exponent=-1.5):
+    p, a, e = _demand_inputs(price, scale, exponent)
+    return _scaled_power(Fraction(a), p, Fraction(e))
 
 def demand_sensitivity(price, scale=400.0, exponent=-1.5):
     p, e = finite(price, "price"), finite(exponent, "exponent")
-    q = demand_quantity(p, scale, e)
-    derivative = e*q/p
-    return {"quantity":q, "absolute":derivative, "elasticity":p*derivative/q}
+    p, a, e = _demand_inputs(p, scale, e)
+    A, E = Fraction(a), Fraction(e)
+    q = _scaled_power(A, p, E)
+    derivative = _scaled_power(E*A, p, E-1, zero=e*0.0)
+    # Analytic Q>0 for valid finite inputs,even if its float report underflows.
+    return {"quantity":q, "absolute":derivative, "elasticity":e}
 
 def portfolio_sensitivity(shares, price, cash):
     n, p, b = finite(shares, "shares"), finite(price, "price"), finite(cash, "cash")
     if n < 0 or p <= 0 or b < 0:
         raise ValueError("require shares and cash nonnegative, price positive")
-    v = n*p+b
-    if v <= 0:
+    position = Fraction(n)*Fraction(p)
+    exact_value = position+Fraction(b)
+    if exact_value <= 0:
         raise ValueError("portfolio value must be positive for elasticity")
-    return {"value":v, "absolute":n, "elasticity":p*n/v}
+    value = _report(exact_value)
+    elasticity = _report(position/exact_value) if n != 0 else n*0.0
+    return {"value":value, "absolute":n, "elasticity":elasticity}
 
 if __name__ == "__main__":
     print("Discounted sensitivity:", discounted_sensitivity(10000, 0.04, 5))

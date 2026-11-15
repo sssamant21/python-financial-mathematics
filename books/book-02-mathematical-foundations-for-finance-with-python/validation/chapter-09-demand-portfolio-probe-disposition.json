@@ -1,0 +1,73 @@
+{
+  "original_record": "chapter-09-demand-portfolio-initial.json",
+  "actual_before_fix_replay": "chapter-09-demand-portfolio-before-fix-replay.json",
+  "corrected_record": "chapter-09-demand-portfolio-corrected.json",
+  "probe_dispositions": [
+    {
+      "original_probe": "demand complete quantity rescue",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicates": [
+        {
+          "name": "demand quantity1",
+          "actual": "1e+308",
+          "expected": "1e+308",
+          "passed": true
+        }
+      ],
+      "limits": "Selected complete-expression/finite-report contract only;no universal financial/model acceptance"
+    },
+    {
+      "original_probe": "demand finite quantity/analytic elasticity",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicates": [
+        {
+          "name": "demand sensitivity2 quantity",
+          "actual": "1e-308",
+          "expected": "1e-308",
+          "passed": true
+        },
+        {
+          "name": "demand sensitivity2 absolute",
+          "actual": "-0.0",
+          "expected": "-0.0",
+          "passed": true
+        },
+        {
+          "name": "demand sensitivity2 elasticity",
+          "actual": "-2.0",
+          "expected": "-2.0",
+          "passed": true
+        }
+      ],
+      "limits": "Selected complete-expression/finite-report contract only;no universal financial/model acceptance"
+    },
+    {
+      "original_probe": "portfolio overflowing full report",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicates": [
+        {
+          "name": "portfolio1 value",
+          "actual": "'ValueError'",
+          "expected": "'ValueError'",
+          "passed": true
+        },
+        {
+          "name": "portfolio1 absolute",
+          "actual": "'ValueError'",
+          "expected": "'ValueError'",
+          "passed": true
+        },
+        {
+          "name": "portfolio1 elasticity",
+          "actual": "'ValueError'",
+          "expected": "'ValueError'",
+          "passed": true
+        }
+      ],
+      "limits": "Selected complete-expression/finite-report contract only;no universal financial/model acceptance"
+    }
+  ],
+  "COV_54": "PARTIAL",
+  "selected_categories_partial": 36,
+  "categories_closed": 0
+}

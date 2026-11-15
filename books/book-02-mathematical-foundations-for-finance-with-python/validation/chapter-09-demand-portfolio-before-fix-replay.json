@@ -1,0 +1,34 @@
+{
+  "candidate_based_on": "cc4c3de4d314d0bb569f78b8be94abe4c1d41c2e",
+  "source_sha256": "dc5b525dd928110495f9ed10a9bfad5f4f1c98adda832f4279d4cf90b40fded1",
+  "observations": [
+    {
+      "name": "demand complete quantity rescue",
+      "actual": "OverflowError(34, 'Numerical result out of range')",
+      "kind": "OverflowError",
+      "independent_expectation": {
+        "quantity": 1e+308
+      },
+      "status": "OPEN \u2014 next scoped numerical-contract review;not fixed by discounted-family batch"
+    },
+    {
+      "name": "demand finite quantity/analytic elasticity",
+      "actual": "ZeroDivisionError('float division by zero')",
+      "kind": "ZeroDivisionError",
+      "independent_expectation": {
+        "quantity": 1e-308,
+        "absolute": -0.0,
+        "elasticity": -2
+      },
+      "status": "OPEN \u2014 next scoped numerical-contract review;not fixed by discounted-family batch"
+    },
+    {
+      "name": "portfolio overflowing full report",
+      "actual": "{'value': inf, 'absolute': 1.7976931348623157e+308, 'elasticity': nan}",
+      "kind": "returned",
+      "independent_expectation": "Unrepresentable total value;finite-report/error policy needs explicit review",
+      "status": "OPEN \u2014 next scoped numerical-contract review;not fixed by discounted-family batch"
+    }
+  ],
+  "limits": "Executed probes only;no demand/portfolio acceptance or resolved finding claimed"
+}

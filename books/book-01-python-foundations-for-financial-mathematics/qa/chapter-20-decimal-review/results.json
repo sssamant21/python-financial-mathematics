@@ -1,0 +1,377 @@
+{
+  "candidate_based_on": "ba6d48c308ad25aa6c2d0cfd17f73ac11afa0599",
+  "selected_revision": null,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manuscript_sha256": "8f3420d872ca5f38e2bd59f3700271b907c297320d18a048a8d4016c9c983a52",
+  "fence_sha256": [
+    "d2c61cdcae4e3bdc9729374b44fed619b7b1a7b34bf6757193c9a021a692dd93",
+    "3b10cbb670c999551bed63f388440c316852ec9fe106ff8167dbdd5da57e3d10"
+  ],
+  "commands": [
+    {
+      "label": "construction source",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "construction_example.py"
+      ],
+      "returncode": 0,
+      "stdout": "0.1\n0.1000000000000000055511151231257827021181583404541015625\n",
+      "stderr": ""
+    },
+    {
+      "label": "source suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "decimal_calculation_tests.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_mode (__main__.DecimalTests.test_bad_mode) ... ok\ntest_exponent (__main__.DecimalTests.test_exponent) ... ok\ntest_half_even_down (__main__.DecimalTests.test_half_even_down) ... ok\ntest_half_even_up (__main__.DecimalTests.test_half_even_up) ... ok\ntest_half_up (__main__.DecimalTests.test_half_up) ... ok\ntest_infinity (__main__.DecimalTests.test_infinity) ... ok\ntest_interest (__main__.DecimalTests.test_interest) ... ok\ntest_nan (__main__.DecimalTests.test_nan) ... ok\ntest_return (__main__.DecimalTests.test_return) ... ok\ntest_scaling (__main__.DecimalTests.test_scaling) ... ok\ntest_wrong_type (__main__.DecimalTests.test_wrong_type) ... ok\ntest_zero_end (__main__.DecimalTests.test_zero_end) ... ok\ntest_zero_rate (__main__.DecimalTests.test_zero_rate) ... ok\ntest_zero_start (__main__.DecimalTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "module suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "decimal_calculation_tests"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_mode (decimal_calculation_tests.DecimalTests.test_bad_mode) ... ok\ntest_exponent (decimal_calculation_tests.DecimalTests.test_exponent) ... ok\ntest_half_even_down (decimal_calculation_tests.DecimalTests.test_half_even_down) ... ok\ntest_half_even_up (decimal_calculation_tests.DecimalTests.test_half_even_up) ... ok\ntest_half_up (decimal_calculation_tests.DecimalTests.test_half_up) ... ok\ntest_infinity (decimal_calculation_tests.DecimalTests.test_infinity) ... ok\ntest_interest (decimal_calculation_tests.DecimalTests.test_interest) ... ok\ntest_nan (decimal_calculation_tests.DecimalTests.test_nan) ... ok\ntest_return (decimal_calculation_tests.DecimalTests.test_return) ... ok\ntest_scaling (decimal_calculation_tests.DecimalTests.test_scaling) ... ok\ntest_wrong_type (decimal_calculation_tests.DecimalTests.test_wrong_type) ... ok\ntest_zero_end (decimal_calculation_tests.DecimalTests.test_zero_end) ... ok\ntest_zero_rate (decimal_calculation_tests.DecimalTests.test_zero_rate) ... ok\ntest_zero_start (decimal_calculation_tests.DecimalTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "label": "compile both fences",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "quiet import",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-c",
+        "import decimal_calculation_tests"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "optimized suite",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "decimal_calculation_tests.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_bad_mode (__main__.DecimalTests.test_bad_mode) ... ok\ntest_exponent (__main__.DecimalTests.test_exponent) ... ok\ntest_half_even_down (__main__.DecimalTests.test_half_even_down) ... ok\ntest_half_even_up (__main__.DecimalTests.test_half_even_up) ... ok\ntest_half_up (__main__.DecimalTests.test_half_up) ... ok\ntest_infinity (__main__.DecimalTests.test_infinity) ... ok\ntest_interest (__main__.DecimalTests.test_interest) ... ok\ntest_nan (__main__.DecimalTests.test_nan) ... ok\ntest_return (__main__.DecimalTests.test_return) ... ok\ntest_scaling (__main__.DecimalTests.test_scaling) ... ok\ntest_wrong_type (__main__.DecimalTests.test_wrong_type) ... ok\ntest_zero_end (__main__.DecimalTests.test_zero_end) ... ok\ntest_zero_rate (__main__.DecimalTests.test_zero_rate) ... ok\ntest_zero_start (__main__.DecimalTests.test_zero_start) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "source_call_predicates": [
+    {
+      "name": "interest ('100.00', '.05')",
+      "actual": "Decimal('5.0000')",
+      "expected": "Decimal('5.0000')",
+      "passed": true
+    },
+    {
+      "name": "interest ('100', '0')",
+      "actual": "Decimal('0')",
+      "expected": "Decimal('0')",
+      "passed": true
+    },
+    {
+      "name": "interest ('-100', '.05')",
+      "actual": "Decimal('-5.00')",
+      "expected": "Decimal('-5')",
+      "passed": true
+    },
+    {
+      "name": "interest ('100', '-.05')",
+      "actual": "Decimal('-5.00')",
+      "expected": "Decimal('-5')",
+      "passed": true
+    },
+    {
+      "name": "interest ('200', '.05')",
+      "actual": "Decimal('10.00')",
+      "expected": "Decimal('10')",
+      "passed": true
+    },
+    {
+      "name": "complete decimal return ('100.00', '101.50')",
+      "actual": "Decimal('0.015')",
+      "expected": "Decimal('0.015')",
+      "passed": true
+    },
+    {
+      "name": "complete decimal return ('100', '0')",
+      "actual": "Decimal('-1')",
+      "expected": "Decimal('-1')",
+      "passed": true
+    },
+    {
+      "name": "complete decimal return ('3', '4')",
+      "actual": "Decimal('0.3333333333333333333333333333')",
+      "expected": "Decimal('0.3333333333333333333333333333')",
+      "passed": true
+    },
+    {
+      "name": "complete decimal return ('1', '1.00000000000000000000000000001')",
+      "actual": "Decimal('1E-29')",
+      "expected": "Decimal('1E-29')",
+      "passed": true
+    },
+    {
+      "name": "complete decimal return ('1', '0.99999999999999999999999999999')",
+      "actual": "Decimal('-1E-29')",
+      "expected": "Decimal('-1E-29')",
+      "passed": true
+    },
+    {
+      "name": "complete decimal return ('1e100', '1.00000000000000000000000000001e100')",
+      "actual": "Decimal('1E-29')",
+      "expected": "Decimal('1E-29')",
+      "passed": true
+    },
+    {
+      "name": "cents numeric 1.005ROUND_HALF_EVEN",
+      "actual": "Decimal('1.00')",
+      "expected": "Decimal('1.00')",
+      "passed": true
+    },
+    {
+      "name": "cents exponent 1.005ROUND_HALF_EVEN",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "cents numeric 1.015ROUND_HALF_EVEN",
+      "actual": "Decimal('1.02')",
+      "expected": "Decimal('1.02')",
+      "passed": true
+    },
+    {
+      "name": "cents exponent 1.015ROUND_HALF_EVEN",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "cents numeric 1.005ROUND_HALF_UP",
+      "actual": "Decimal('1.01')",
+      "expected": "Decimal('1.01')",
+      "passed": true
+    },
+    {
+      "name": "cents exponent 1.005ROUND_HALF_UP",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "cents numeric -1.005ROUND_HALF_EVEN",
+      "actual": "Decimal('-1.00')",
+      "expected": "Decimal('-1.00')",
+      "passed": true
+    },
+    {
+      "name": "cents exponent -1.005ROUND_HALF_EVEN",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "cents numeric -1.005ROUND_HALF_UP",
+      "actual": "Decimal('-1.01')",
+      "expected": "Decimal('-1.01')",
+      "passed": true
+    },
+    {
+      "name": "cents exponent -1.005ROUND_HALF_UP",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "cents numeric 0ROUND_HALF_EVEN",
+      "actual": "Decimal('0.00')",
+      "expected": "Decimal('0.00')",
+      "passed": true
+    },
+    {
+      "name": "cents exponent 0ROUND_HALF_EVEN",
+      "actual": "-2",
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "parser reject ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject ' '",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject 'invalid'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject 'NaN'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject 'sNaN'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject 'Infinity'",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject 0.1",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "parser reject True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "zero start",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "negative end",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "bad mode",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "unsupported cents magnitude",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "caller traps isolated interest",
+      "actual": "Decimal('6.283185307179586476925286766')",
+      "expected": "Decimal('6.283185307179586476925286766')",
+      "passed": true
+    },
+    {
+      "name": "caller traps isolated return",
+      "actual": "Decimal('0.3333333333333333333333333333')",
+      "expected": "Decimal('0.3333333333333333333333333333')",
+      "passed": true
+    },
+    {
+      "name": "caller traps isolated cents",
+      "actual": "Decimal('1.00')",
+      "expected": "Decimal('1.00')",
+      "passed": true
+    },
+    {
+      "name": "caller exponent isolated interest",
+      "actual": "Decimal('1E+20')",
+      "expected": "Decimal('1E+20')",
+      "passed": true
+    },
+    {
+      "name": "malformed parser preserves caller flags",
+      "actual": "('ValueError', True)",
+      "expected": "('ValueError', True)",
+      "passed": true
+    },
+    {
+      "name": "successful call preserves configured caller and flags",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "round lines vs total",
+      "actual": "(Decimal('0.00'), Decimal('0.01'))",
+      "expected": "(Decimal('0.00'), Decimal('0.01'))",
+      "passed": true
+    }
+  ],
+  "supplemental_decimal_predicates": [
+    {
+      "name": "text vs float construction differ",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "numeric equality separate from scale",
+      "actual": [
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "one third two precisions",
+      "actual": [
+        "0.3333",
+        "0.3333333333333333333333333333"
+      ],
+      "expected": [
+        "0.3333",
+        "0.3333333333333333333333333333"
+      ],
+      "passed": true
+    }
+  ],
+  "existing_unique_methods": 14,
+  "method_invocations": 42,
+  "new_historical_unique_methods": 0,
+  "limits": "Selected Decimal teaching context/return/rounding/parser contracts;unbounded lexical/coefficient/exponent resources,all magnitude/financial/platform/independent acceptance remain open"
+}

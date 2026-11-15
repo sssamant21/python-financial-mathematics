@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Construction:** Decimal(\"0.1\") represents what? **Answer:** The decimal value 0.1.",
+    "review": "Exact decimal text.1 is represented directly;first exact source fence executes its print.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Float conversion:** Is Decimal(0.1) necessarily the same value? **Answer:** No.",
+    "review": "Float conversion preserves binary approximation;source construction output and separate primitive control retained.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Precision:** What does context precision limit? **Answer:** Significant digits in arithmetic.",
+    "review": "Context precision limits significant digits,not fixed places;conceptual contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Scale:** What does it describe in a fixed-decimal contract? **Answer:** Digits after the decimal point.",
+    "review": "Scale is fixed-decimal places/exponent;cent output exponent\u22122 independently checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Interest:** 100\u00d7.05. **Answer:** 5.",
+    "review": "100.00*.05=5.0000;source numeric result checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero rate:** Interest on 100. **Answer:** 0.",
+    "review": "Zero-rate interest0 source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Scaling:** Double principal at fixed rate. **Answer:** Interest doubles.",
+    "review": "Fixed-rate doubling gives10 vs5;source cases and existing scaling method.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Return:** 100\u2192101.50. **Answer:** .015.",
+    "review": "(101.50\u2212100)/100=.015;source case and independent high-precision return oracle.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Percentage:** .015 as percent. **Answer:** 1.5%.",
+    "review": ".015*100=1.5%;independent unit interpretation,not a percent-conversion API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Zero start:** Valid return denominator? **Answer:** No.",
+    "review": "Zero start rejected;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Zero end:** Return from 100 to 0. **Answer:** \u22121.",
+    "review": "(0\u2212100)/100=\u22121;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Half-even:** 1.005 to cents. **Answer:** 1.00.",
+    "review": "1.005 half-even cents1.00;source value and exponent checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Half-even:** 1.015 to cents. **Answer:** 1.02.",
+    "review": "1.015 half-even cents1.02;source value/exponent checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Half-up:** 1.005 to cents. **Answer:** 1.01.",
+    "review": "1.005 half-up cents1.01;source value/exponent checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Numerical equality:** Is Decimal(\"1.0\")==Decimal(\"1.00\")? **Answer:** Yes.",
+    "review": "Separate Decimal primitive equality1.0==1.00 isTrue.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Representation:** Do their exponents differ? **Answer:** Yes.",
+    "review": "Separate exponent comparison distinguishes\u22121/\u22122;financial output scale checked separately.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Division:** Is 1/3 finite in decimal? **Answer:** No.",
+    "review": "Exact1/3 nonterminating;separate precision4 and28 raw Decimal demonstrations.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Context:** Can finite precision round arithmetic? **Answer:** Yes.",
+    "review": "Precision rounds arithmetic;private28-digit return versus160-digit reference checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Quantize:** What does it specify? **Answer:** A target exponent and rounding behavior.",
+    "review": "quantize target.01 yields exponent\u22122;mode/value checks executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Currency:** Are all currencies rounded to two decimals? **Answer:** No.",
+    "review": "Two decimals is a teaching policy,not universal currency standard.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**NaN:** Accepted by reference parser? **Answer:** No.",
+    "review": "NaN and sNaN parser reject;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Infinity:** Accepted? **Answer:** No.",
+    "review": "Infinity parser rejects;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Float input:** Accepted by decimal_text? **Answer:** No.",
+    "review": "Float input rejected before Decimal construction;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Empty input:** Accepted? **Answer:** No.",
+    "review": "Empty/whitespace strings rejected;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Negative principal:** Accepted by simple_interest example? **Answer:** Yes.",
+    "review": "Negative principal accepted,interest\u22125;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Negative rate:** Accepted by simple_interest example? **Answer:** Yes.",
+    "review": "Negative rate accepted,interest\u22125;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Policy:** Does acceptance prove business suitability? **Answer:** No.",
+    "review": "Numeric acceptance does not establish business/domain suitability.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Flags:** Can context indicate inexact arithmetic? **Answer:** Yes.",
+    "review": "Malformed parsing formerly leaked InvalidOperation flag;caller flag preservation now checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Trap:** Can a decimal signal raise an exception? **Answer:** Yes.",
+    "review": "Caller Inexact/Rounded traps are isolated for return/quantize;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**localcontext:** Why use it? **Answer:** To specify a calculation context without intentionally changing the caller's context.",
+    "review": "Fresh local Context avoids inheriting traps/bounds/flags;successful and malformed-call caller preservation checked.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Intermediate rounding:** Can it change a final total? **Answer:** Yes.",
+    "review": "Two individually rounded .005 lines sum.00 while rounded.010 total is.01;actual source helper calls.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Benchmark:** Why derive independently? **Answer:** To reduce shared implementation errors.",
+    "review": "Independent160-digit Decimal difference/quotient then28-digit report avoids source Fraction return algorithm.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Currency:** Does Decimal identify USD or EUR? **Answer:** No.",
+    "review": "Decimal carries no currency identifier;no USD/EUR contract executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Dates:** Does this example model them? **Answer:** No.",
+    "review": "No date/calendar functions;design limitation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Fees:** Included automatically? **Answer:** No.",
+    "review": "No fee parameter;static contract limitation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Extreme values:** Are all handled by the example? **Answer:** No.",
+    "review": "Unsupported1e30 cent reporting consistently raisesValueError;unbounded ingestion resources and all magnitudes remain outside acceptance.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Exact representation:** Does it validate the financial model? **Answer:** No.",
+    "review": "Exact representation alone does not validate financial assumptions.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Reproducibility:** What should be recorded? **Answer:** Inputs, context, rounding, code and versions.",
+    "review": "Actual commands,source/context details,versions,outputs and retained failures saved.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Historical publication nonexecution statement retained;this batch adds actual scoped execution.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production readiness:** Established by these examples? **Answer:** No.",
+    "review": "No platform/accounting/model/release certification follows.",
+    "status": "reviewed scoped"
+  }
+]

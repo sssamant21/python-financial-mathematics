@@ -361,6 +361,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F203 | Section20.3 finite-input and exact PV-identity contract. | RESOLVED (scoped) — five baseline failures/replay retained;29 corrected predicates pass. Broader nonzero PV range,underflow/resource/platform/independent acceptance open. [Evidence](chapter-20-unit-review/README.md). |
 | F204 | Section20.4 finite/identity/return/mean boundary contracts. | RESOLVED (scoped) —13 initial failures/replay retained;50 corrected source predicates pass. Broader nonzero PV,underflow/collection resources/platform/independent acceptance open. [Evidence](chapter-20-boundary-review/README.md). |
 | F205 | Section20.5 complete represented-input comparison and finite gate. | RESOLVED (scoped) —seven initial failures/replay retained;64 corrected source predicates pass. Broader NPV/resources and financial/platform/independent acceptance open. [Evidence](chapter-20-float-review/README.md). |
+| F206 | Section20.6 complete Decimal return,private contexts and parser/range contract. | RESOLVED (scoped) —nine initial failures/replay retained;43 corrected source predicates pass. Lexical/exponent resources,all magnitudes/platform/independent acceptance open. [Evidence](chapter-20-decimal-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -372,7 +373,7 @@ Add new findings with an ID, affected revision, severity, owner, reproduction, e
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** V06 — continue Chapter20 Section20.6 formal workflow/local-answer review;broader acceptance gaps remain open.
+**Next action:** V06 — continue Chapter20 Section20.7 formal workflow/local-answer review;broader acceptance gaps remain open.
 
 
 ## Section 18.13 execution checkpoint (formal review unfinished)
@@ -493,3 +494,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.5 scoped floating-point workflow and answers
 
 [Float evidence](chapter-20-float-review/README.md):one workflow,40 local answers/12 lab steps;64 corrected source predicates/five commands plus6 separate supplemental primitive/unit controls pass. Seven initial failures and identical replay retained;F205 fixes finite represented-input sum-gate false acceptance and oversized input exceptions,without tolerance widening. Fourteen existing methods ran42 invocations;zero new historical methods. Chapter20 now5 workflows/200 local answers. Broader NPV/underflow/resources,F28/F32/F165/F185 and platform/independent acceptance open. Next:Section20.6 Testing Decimal Calculations.
+
+
+## Section20.6 scoped Decimal workflow and answers
+
+[Decimal evidence](chapter-20-decimal-review/README.md):one workflow,40 local answers/12 lab steps;43 corrected source predicates,six source commands/two compiled fences pass,plus3 separate Decimal demonstrations. Nine initial failures and identical replay retained;F206 fixes complete-return precision/private contexts,range exceptions and parser flag isolation. Fourteen existing methods ran42 invocations;zero new historical methods. Chapter20 now6 workflows/240 local answers. Lexical/coefficient/exponent resources,all magnitudes,F28/F32/F165/F185 and platform/independent acceptance remain open. Next:Section20.7 Financial Invariants.
