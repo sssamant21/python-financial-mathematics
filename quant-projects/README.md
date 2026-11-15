@@ -50,7 +50,7 @@ Thirty-six self-contained labs complement the financial-mathematics books withou
 | [34](34-implied-volatility/README.md) | Synthetic Black–Scholes implied volatility inversion, bid/ask spread and strike/maturity conditioning | Synthetic only | `iv.py`, `sensitivity.py` |
 
 | [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival, reflection-density analytical pricing and independent numerical quadrature | Seeded synthetic | `barrier.py`, `matched_convergence.py` |
-| [36](36-asian-option-monte-carlo/README.md) | Discrete arithmetic-average Asian call pricing with antithetic Monte Carlo | Seeded synthetic | `asian_option.py` |
+| [36](36-asian-option-monte-carlo/README.md) | Discrete arithmetic-average Asian call with antithetic Monte Carlo, exact geometric-average benchmark and paired control variate | Seeded synthetic | `asian_option.py`, `geometric_control.py` |
 
 ## Quick start (Windows PowerShell)
 
