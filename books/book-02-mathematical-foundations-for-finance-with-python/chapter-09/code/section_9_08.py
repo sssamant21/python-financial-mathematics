@@ -31,16 +31,46 @@ def bp_to_decimal(basis_points):
     return finite(basis_points,"basis_points")/10000.0
 
 def scenario_from_terms(terms,years,shocks):
-    exact=math.fsum(v*math.expm1(-t*h) for v,t,h in zip(terms,years,shocks))
-    linear=-math.fsum(t*v*h for v,t,h in zip(terms,years,shocks))
-    quadratic=linear+0.5*math.fsum(t*t*v*h*h for v,t,h in zip(terms,years,shocks))
-    if not all(math.isfinite(x) for x in (exact,linear,quadratic)):
-        raise ValueError("nonfinite scenario result")
-    return {"exact_change":exact,"linear_change":linear,
-            "quadratic_change":quadratic,"linear_error":exact-linear,
-            "quadratic_error":exact-quadratic,
-            "absolute_linear_error":abs(exact-linear),
-            "absolute_quadratic_error":abs(exact-quadratic)}
+    """Complete seven-field change/error report on represented baseline terms.
+
+    Vectors are consumed once and must have equal lengths; empty is allowed.
+    Terms/times are finite nonnegative numbers; shocks finite. No independent
+    baseline-value eligibility gate is added by this direct helper.
+    """
+    values=[finite(x,"term") for x in terms]
+    times=[finite(x,"years") for x in years]
+    bumps=[finite(x,"shock") for x in shocks]
+    if len(values)!=len(times) or len(values)!=len(bumps):
+        raise ValueError("term, time and shock vectors must have equal lengths")
+    if any(x<0 for x in values) or any(x<0 for x in times):
+        raise ValueError("terms and years must be nonnegative")
+    with localcontext(Context(prec=1700)):
+        def dec(value):return Decimal(value.numerator)/Decimal(value.denominator)
+        def reported(value):
+            result=float(value)
+            if not math.isfinite(result):
+                raise ValueError("scenario report outside finite float range")
+            return result
+        exact=linear=second=Decimal(0)
+        for v,t,h in zip(values,times,bumps):
+            V,T,H=map(Fraction,(v,t,h))
+            if V==0:
+                continue
+            exponent=-T*H
+            if exponent>10000:
+                raise ValueError("scenario report outside finite float range")
+            baseline=dec(V)
+            endpoint=Decimal(0) if exponent < -10000 else baseline*dec(exponent).exp()
+            TT,HH=dec(T),dec(H)
+            exact+=endpoint-baseline;linear-=TT*baseline*HH
+            second+=TT*TT*baseline*HH*HH/2
+        quadratic=linear+second
+        return {"exact_change":reported(exact),"linear_change":reported(linear),
+                "quadratic_change":reported(quadratic),
+                "linear_error":reported(exact-linear),
+                "quadratic_error":reported(exact-quadratic),
+                "absolute_linear_error":reported(abs(exact-linear)),
+                "absolute_quadratic_error":reported(abs(exact-quadratic))}
 
 def _parallel_baseline(items,rate):
     """Complete positive baseline fields; latent normalization before conversion."""
