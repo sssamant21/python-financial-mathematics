@@ -49,7 +49,7 @@ Thirty-five self-contained labs complement the financial-mathematics books witho
 | [33](33-delta-hedging-error/README.md) | Discrete European-call delta hedging, turnover and transaction-cost sensitivity | Seeded synthetic | `hedge.py`, `sensitivity.py` |
 | [34](34-implied-volatility/README.md) | Synthetic Black–Scholes implied volatility inversion, bid/ask spread and strike/maturity conditioning | Synthetic only | `iv.py`, `sensitivity.py` |
 
-| [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival | Seeded synthetic | `barrier.py`, `matched_convergence.py` |
+| [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival, reflection-density analytical pricing and independent numerical quadrature | Seeded synthetic | `barrier.py`, `matched_convergence.py` |
 
 ## Quick start (Windows PowerShell)
 
