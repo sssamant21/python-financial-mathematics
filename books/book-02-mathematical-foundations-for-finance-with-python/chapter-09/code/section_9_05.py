@@ -1,5 +1,7 @@
 """Section 9.5: Taylor remainder and guaranteed rate-shock bounds."""
 import math
+from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -24,34 +26,53 @@ def validated_flows(flows):
         result.append((c,t))
     return result
 
+def _report_float(value):
+    try:
+        out = float(value)
+    except OverflowError as exc:
+        raise ValueError("report outside finite float range") from exc
+    if not math.isfinite(out):
+        raise ValueError("report outside finite float range")
+    return out
+
 def portfolio_report(flows, rate, shock):
+    """Complete latent report;positive rounded baseline and finite final fields.
+
+    Internal derivative maxima need not themselves fit float. Utilization
+    uses latent error/bound;if the reported bound is zero,it remains None.
+    """
     items = validated_flows(flows)
     r,h = finite(rate,"rate"),finite(shock,"shock")
-    rmin = min(r,r+h)
-    v = d1 = d2 = m2 = m3 = exact = 0.0
-    for c,t in items:
-        baseline = c*math.exp(-r*t)
-        worst = c*math.exp(-rmin*t)
-        v += baseline
-        d1 -= t*baseline
-        d2 += t*t*baseline
-        m2 += t*t*worst
-        m3 += t*t*t*worst
-        exact += baseline*math.expm1(-t*h)
-    first = d1*h
-    second = first+0.5*d2*h*h
-    bound1 = 0.5*m2*h*h
-    bound2 = m3*abs(h)**3/6
-    values = (v,d1,d2,m2,m3,exact,first,second,bound1,bound2)
-    if not all(math.isfinite(z) for z in values) or v <= 0:
-        raise ValueError("nonfinite calculation or nonpositive valuation")
-    return {"baseline_value":v,"first_derivative":d1,
-            "second_derivative":d2,"exact_change":exact,
-            "linear_change":first,"quadratic_change":second,
-            "linear_error":exact-first,"quadratic_error":exact-second,
-            "linear_bound":bound1,"quadratic_bound":bound2,
-            "linear_bound_utilization":None if bound1==0 else abs(exact-first)/bound1,
-            "quadratic_bound_utilization":None if bound2==0 else abs(exact-second)/bound2}
+    R,H = map(Fraction,(r,h))
+    with localcontext(Context(prec=1700)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        def amount(C,exponent):
+            if exponent > 10000:
+                raise ValueError("report outside finite float range")
+            return Decimal(0) if exponent < -10000 else dec(C)*dec(exponent).exp()
+        v = d1 = d2 = m2 = m3 = exact = Decimal(0)
+        for c,t in items:
+            C,T = map(Fraction,(c,t));baseline = amount(C,-R*T)
+            endpoint = amount(C,-(R+H)*T)
+            worst = amount(C,-min(R,R+H)*T)
+            TT = dec(T)
+            v += baseline;d1 -= TT*baseline;d2 += TT*TT*baseline
+            m2 += TT*TT*worst;m3 += TT*TT*TT*worst
+            exact += endpoint-baseline
+        HH = dec(H);first = d1*HH;second = first+d2*HH*HH/2
+        bound1 = m2*HH*HH/2;bound2 = m3*abs(HH)**3/6
+        linear_error,quadratic_error = exact-first,exact-second
+        values = (v,d1,d2,exact,first,second,linear_error,quadratic_error,bound1,bound2)
+        out = [_report_float(x) for x in values]
+        if out[0] <= 0:
+            raise ValueError("nonpositive reported valuation")
+        keys = ("baseline_value","first_derivative","second_derivative","exact_change",
+                "linear_change","quadratic_change","linear_error","quadratic_error",
+                "linear_bound","quadratic_bound")
+        result = dict(zip(keys,out))
+        result["linear_bound_utilization"] = None if out[8]==0 else _report_float(abs(linear_error)/bound1)
+        result["quadratic_bound_utilization"] = None if out[9]==0 else _report_float(abs(quadratic_error)/bound2)
+        return result
 
 def single_report(cash, years, rate, shock):
     return portfolio_report([(cash,years)],rate,shock)

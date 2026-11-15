@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Purpose:** Why use a project structure? **Answer:** To make code, tests, documentation and boundaries easier to find and maintain.",
+    "review": "Conceptual maintainability boundary;structure not mathematical correctness.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Scope:** Are all planned modules implemented here? **Answer:** No; only a one-period valuation scaffold is provided.",
+    "review": "Only six scaffold files implemented;proposed modules remain planned.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Source:** Where is importable library code? **Answer:** Under `src/financial_toolkit/`.",
+    "review": "Actual source installed fromsrc/financial_toolkit;wheel member list retained.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Tests:** Where are reference tests? **Answer:** In `tests/test_time_value.py` after the reader creates it.",
+    "review": "Exact test fence saved astests/test_time_value.py;editable andwheel suites pass.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Examples:** What data should examples use? **Answer:** Synthetic, non-sensitive inputs.",
+    "review": "Synthetic110/95 payments used;no sensitive data.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Metadata:** What file declares the build backend? **Answer:** `pyproject.toml`.",
+    "review": "Exactpyproject fence built withsetuptools.build_meta.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Distribution:** What is the example distribution name? **Answer:** `financial-toolkit-educational`.",
+    "review": "Artifact distribution name verified financial_toolkit_educational0.1.0wheel.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Import:** What is the Python import name? **Answer:** `financial_toolkit`.",
+    "review": "Actual imported financial_toolkit;different distribution identifier.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Version:** Does `0.1.0` imply production approval? **Answer:** No.",
+    "review": "Version0.1.0educational only;no releaseapproval.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Backend:** Is setuptools a runtime dependency of this calculation? **Answer:** No; it is a declared build dependency.",
+    "review": "Setuptools84.2.1 used aslocalbuild tool;runtimefunctionstdlibonly.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Isolation:** Can an isolated build require network access? **Answer:** Yes, if required build dependencies are not available locally.",
+    "review": "Buildnetworkdisabled,no-build-isolationlocalbackend;defaultnetworkbuild notclaimed.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Reproducibility:** Is `setuptools>=68` an exact pin? **Answer:** No; different compatible versions may be selected.",
+    "review": "Metadata>=68notexactpin;resolvedtools recorded.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Import path:** Why use a `src` layout? **Answer:** It reduces accidental source-root imports and helps expose installation issues.",
+    "review": "Wheelconsumer imported fromcleanvenvoutside hiddenproject with-I,noPYTHONPATH.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Editable install:** Does it test a wheel? **Answer:** No; it typically points at the source tree.",
+    "review": "Editable suite source-linked;recorded separately fromwheelconsumer.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Wheel:** How should an artifact be checked? **Answer:** Install it in a separate clean environment and run checks outside the source checkout.",
+    "review": "Wheelinstalledcleanvenv;outside-sourcesuite/example/provenancepass.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Hash:** Why record an artifact hash? **Answer:** To identify the exact artifact used in a check or release.",
+    "review": "Actualwheelname/SHA256/size/memberlistretained;binarynotcommitted,rebuildnotbyteguarantee.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Environment:** Why use a virtual environment? **Answer:** To isolate project dependencies from other Python installations.",
+    "review": "Buildvenvusedsystem-sitepreprovisionedtools;consumer genuinelycleanvenv.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Interpreter:** Why use `python -m pip`? **Answer:** It associates pip with the selected interpreter.",
+    "review": "Everypipcommand uses selectedvenvpython-mpip.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Public API:** What is the scaffold's public entry point? **Answer:** `financial_toolkit.present_value_one_period`.",
+    "review": "Publicrootpresent_value_one_period exercisedinconsumer.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Exports:** Does `__all__` make private names inaccessible? **Answer:** No; it controls intended wildcard exports.",
+    "review": "__all__rootexports recorded;doesnotenforceprivacy.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Dependencies:** Should calculations import plotting code? **Answer:** Generally no; keep presentation dependent on calculation interfaces.",
+    "review": "No plotting imports required byscaffold;proposedgraphnotfullybuilt.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Circularity:** Why avoid circular imports? **Answer:** They complicate initialization, dependencies and testing.",
+    "review": "Conceptualcircularimportavoidance;onlyscaffolddependenciesexecuted.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Known value:** PV of 110 at 10% for one period? **Answer:** 100 in exact arithmetic.",
+    "review": "Independent110/(11/10)=100;wheelFraction benchmarkwithinabs1e-10.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Zero rate:** PV of 110 at zero? **Answer:** 110.",
+    "review": "Wheelzero-rate110verified.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Negative rate:** PV of 95 at \u22125%? **Answer:** 100 in exact arithmetic.",
+    "review": "Independent95/(19/20)=100;wheelnegative-ratecasepass.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Boundary:** Why reject \u22121? **Answer:** The denominator is zero.",
+    "review": "Rate-1ValueErrorwheelcheckpass.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Rate:** How is 10% represented? **Answer:** As `0.10`.",
+    "review": ".10decimalrateused;no implicitpercentageconversion.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Timing:** When is the example payment due? **Answer:** At the end of one period.",
+    "review": "End-of-one-effective-periodfinancialcontractreviewed.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Units:** Does the function convert currencies? **Answer:** No; input and output share the caller's units.",
+    "review": "NoFXmetadataorconversion;callerkeepsunits.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Float:** Does two-decimal display change the stored value? **Answer:** No.",
+    "review": "Wheelrawfloatindependentreferencevs2decimaldisplay;noaccountingroundpolicy.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Integer:** Is `110` accepted? **Answer:** No; the specified interface accepts built-in floats only.",
+    "review": "Integerpaymentrejectedwheelcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Boolean:** Is `True` accepted as a rate? **Answer:** No.",
+    "review": "Booleanraterejectedwheelcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Overflow:** What happens to a nonfinite result? **Answer:** The function raises `ValueError`.",
+    "review": "Finiteinputoverflow1e308/0.5ValueErrorwheelcase.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Underflow:** Can small values lose precision? **Answer:** Yes; finite output does not guarantee accuracy.",
+    "review": "Documentedsubnormal/roundinglimitsretained;notallrangeaccuracy.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Model:** Does the formula include default risk? **Answer:** No.",
+    "review": "No default/credit/tax/date model;independent suitabilitypending.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Test:** Does a defined test demonstrate it passed? **Answer:** No; execution and recorded results are required.",
+    "review": "Actualsource/reused/editable/wheeloutputsretained;testdefinitionsseparate.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Security:** Where should secrets be stored? **Answer:** In an appropriate controlled secret-management system, not source or examples.",
+    "review": "Secretmanagementpolicyconceptual;no secrets orproductionoperations.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Evidence:** What identifies an actual run? **Answer:** Revision or artifact hash, command, environment, result and relevant review.",
+    "review": "Sourcepin,commands,versions,platform,artifacthash,importpathandactualresultsrecorded.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Approval:** Does correct packaging certify the financial model? **Answer:** No; model and software review remain necessary.",
+    "review": "Localpackagingpassesdonotcertifymodel/platform/security/release.",
+    "status": "assistant scoped;external acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the next locked section? **Answer:** 21.4 \u2014 Numerical and Decimal Policies.",
+    "review": "Navigation21.04-numerical-and-decimal-policies.mdexists;nextformalreview.",
+    "status": "assistant scoped;external acceptance pending"
+  }
+]

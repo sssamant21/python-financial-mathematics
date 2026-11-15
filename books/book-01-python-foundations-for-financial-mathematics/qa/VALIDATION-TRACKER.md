@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.3:** [Structure](chapter-21-structure-review/README.md):offlineeditable/build andcleanwheelconsumerchecks pass;40answers/12labreviews. Next21.4;broaderplatform/model/independentgaps retained.
+
 - **Latest21.2 scope:** [Requirements](chapter-21-requirements-review/README.md):32sourcepredicates,40answers/12labreviews and10requirement mappings. R08-10 and owner/independent gaps remain;next21.3.
 
 - **Latest21.1 scope:** [Architecture](chapter-21-architecture-review/README.md):oneworkflow/40answers/12labsteps,36sourcepredicates;3source-identicalcommands reused and2freshcommands pass. No codefix invented;owner/reviewer/install/platform and othergaps remain. Next21.2.
@@ -594,3 +596,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.3 partial source runtime resume — OPEN
 
 [Structure checkpoint](chapter-21-structure-resume/README.md):six named fences staged,three source commands/fourcompiledPythonfences/12existingmethods passed,zero newhistoricalmethods. PYTHONPATHsource injection explicit;no editable/wheel/installedartifact acceptance. Next21.3 formal contracts,40answers/12labsteps and feasible isolated packaging checks;reuse source hashes where unchanged.
+
+
+## Section21.3 scoped structure,packaging and answers
+
+[Structure evidence](chapter-21-structure-review/README.md):oneworkflow/40answers/12labreviews;11freshcommands pass (offlineeditable/build,cleanwheelinstall,outsidehidden-sourceexample/suite/importprovenance). Twelvewheelcontractpredicatespass. Buildvenvexposespreprovisionedsystemtools;cleanconsumerdoesnot;no-index/no-build-isolation/no-depsadaptationexplicit. Actualwheelhash/memberlistretained;binarynotcommitted. Threepriorsourcecommandsreusedbysixfencedigests. Evidencechain14commands,12existingmethods/36invocations,zero newhistoricalmethods. Fencesunchanged;unexecuteddraftwordingreconciled. Chapter21now3scopedworkflows/120answers;next21.4Numerical/DecimalPolicies. This scaffold'slocalartifactchecksdo not closeotherprojects'installgaps,F28/F32/F209,20.11static,F165/F185,R08-10/owner,platform/model/release/independentacceptance.

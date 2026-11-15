@@ -1,0 +1,62 @@
+{
+  "validation": "V-180 Section9.5 complete remainder reports",
+  "candidate_based_on": "7f6de3a0495e0e3cb65fd3a0f3f5fbf67e902fdd",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_05.py",
+      "sha": "10746dfecceea5696b0c672b8ea625614c24ca2d"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_05.py",
+      "sha": "d0be5f9cd34877853f9ebdfef094369a4f914609"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_05_complete_reports.py",
+      "sha": "789da75acf711de947b248c50e81876ef9cd0434"
+    }
+  ],
+  "compiled": [
+    "section_9_05.py",
+    "check_section_9_05.py",
+    "check_section_05_complete_reports.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"polynomial\": {\n    \"exact\": 9.261000000000001,\n    \"linear\": 9.2,\n    \"quadratic\": 9.26,\n    \"quadratic_remainder\": 0.0010000000000000002,\n    \"quadratic_bound\": 0.0010000000000000002\n  },\n  \"single_10bp\": {\n    \"baseline_value\": 8187.307530779819,\n    \"first_derivative\": -40936.53765389909,\n    \"second_derivative\": 204682.68826949547,\n    \"exact_change\": -40.83436666567314,\n    \"linear_change\": -40.936537653899094,\n    \"quadratic_change\": -40.834196309764344,\n    \"linear_error\": 0.10217098822595652,\n    \"quadratic_error\": -0.00017035590879121667,\n    \"linear_bound\": 0.10234134413474774,\n    \"quadratic_bound\": 0.00017056890689124622,\n    \"linear_bound_utilization\": 0.9983354145850682,\n    \"quadratic_bound_utilization\": 0.998751248959077\n  },\n  \"single_minus_10bp\": {\n    \"baseline_value\": 8187.307530779819,\n    \"first_derivative\": -40936.53765389909,\n    \"second_derivative\": 204682.68826949547,\n    \"exact_change\": 41.039049780365254,\n    \"linear_change\": 40.936537653899094,\n    \"quadratic_change\": 41.038878998033844,\n    \"linear_error\": 0.10251212646616154,\n    \"quadratic_error\": 0.00017078233141379684,\n    \"linear_bound\": 0.1028543322570023,\n    \"quadratic_bound\": 0.00017142388709500385,\n    \"linear_bound_utilization\": 0.9966729083420065,\n    \"quadratic_bound_utilization\": 0.9962574895944842\n  },\n  \"portfolio_50bp\": {\n    \"baseline_value\": 1111.5069249405317,\n    \"first_derivative\": -2126.934905965831,\n    \"second_derivative\": 4157.79086801643,\n    \"exact_change\": -10.582872958870686,\n    \"linear_change\": -10.634674529829155,\n    \"quadratic_change\": -10.58270214397895,\n    \"linear_error\": 0.0518015709584692,\n    \"quadratic_error\": -0.0001708148917361776,\n    \"linear_bound\": 0.051972385850205374,\n    \"quadratic_bound\": 0.00017123964150245058,\n    \"linear_bound_utilization\": 0.9967133528903502,\n    \"quadratic_bound_utilization\": 0.9975195593581824\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.5 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_05_complete_reports.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"predicates\": 220, \"passed\": 220, \"failed\": 0}\n",
+      "stderr": ""
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "inventory": {
+    "python_files": 622,
+    "check_test_scripts": 409,
+    "required_blobs": 623
+  },
+  "limits": "Three selected files/three commands,two checker invocations;polynomial/other contracts,universal transcendental rounding and independent/platform acceptance open."
+}
