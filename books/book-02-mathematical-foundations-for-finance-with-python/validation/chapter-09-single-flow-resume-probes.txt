@@ -1,0 +1,19 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib.util,json,hashlib,math
+from decimal import Decimal,Context,localcontext
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';assert tag in ('initial','replay');pin='f8aa4390a2cf5bd69b885a099d0da2ad6082216f';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);rows=[]
+with tempfile.TemporaryDirectory() as t:
+ p=Path(t)/'section_9_04.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('single_ref',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for name,vals,key in [('retained complete exponential rescue',(1e-308,2.,-355.),'value'),('second derivative product underflow',(1e308,1e-308,0.),'second')]:
+  refs=[]
+  for prec in (1800,2400):
+   with localcontext(Context(prec=prec)):
+    C,T,R=map(Decimal,vals);B=C*(-T*R).exp();refs.append(float(B if key=='value' else C*T*T*(-T*R).exp()))
+  assert refs[0]==refs[1]
+  try:a=m.single_cash_flow(*vals)[key]
+  except Exception as e:a=type(e).__name__
+  rows.append(dict(name=name,field=key,actual=repr(a),independent_expected=repr(refs[0]),status='OPEN — exact-source numerical mismatch;not a passing acceptance predicate'))
+ try:a=m.single_cash_flow(1.,1e308,0.)
+ except Exception as e:a=type(e).__name__
+ rows.append(dict(name='whole-report normalized-field range',actual=repr(a),independent_reference='Exact normalized convexity(1e308)^2 exceeds finite binary64 range',status='OPEN REPORT POLICY — nonfinite fields returned;whole-report finite/overflow contract requires next review,not an accepted numerical predicate'))
+d=dict(executable_source_revision=pin,source=rel,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Two numerical and one separate report-range policy diagnostics for next9.4 batch;not additional passing scripts/predicates or independent/platform acceptance.');(r/('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-single-flow-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print('Two OPEN single-flow numerical cases and one separate report-policy observation recorded')

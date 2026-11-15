@@ -13,3 +13,5 @@ Two separate exact-rational hypothetical/unit scenarios demonstrate default/reco
 [Primary source-currency check](source-currency-check.json) re-opened the cited Federal Reserve letter on2026-11-15,confirming the date and supersession references. Applicability,attachment/framework adequacy and compliance/legal acceptance not assessed. Historical SR11-7 citation remains explicitly historical;no organization-specific policy inferred.
 
 20.11 static checker,F28 notebook/platform,F32 shared-input integration,F209 iterable policy,F165 tail limits,F185 integration and broad numerical/provenance/model/independent/platform/release acceptance remain open. Chapter20 now14 scoped workflows/560 local answers. Next:Section20.15 Chapter Project—Production-Quality Financial Library.
+
+Executed source/checker bytes verified against `f8aa4390a2cf5bd69b885a099d0da2ad6082216f`;[source manifest](publication-verification.json).

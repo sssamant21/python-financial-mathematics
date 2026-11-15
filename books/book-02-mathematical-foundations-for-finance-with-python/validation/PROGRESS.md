@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-170 quadratic/selector scoped pass;V-169 remains latest full candidate Linux pass (616/403/617),pending refresh. Section9.4 discounted reports and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-170 Taylor-change/selector scope and V-171 full candidate Linux pass (617/404/618). Section9.4 discounted reports and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 616/616 at `328b5f7f235063ed058f2c57426dea829c2f5fa7`. [V-169](runtime-refresh-2026-11-15-r3.md). |
-| Automated script execution | Full candidate Linux pass | 403/403 at `328b5f7f235063ed058f2c57426dea829c2f5fa7`;617 required blobs verified before/after. [V-169](runtime-refresh-2026-11-15-r3.md). |
+| Python compilation | Full candidate Linux pass | 617/617 at `f8aa4390a2cf5bd69b885a099d0da2ad6082216f`. [V-171](runtime-refresh-2026-11-15-r4.md). |
+| Automated script execution | Full candidate Linux pass | 404/404 at `f8aa4390a2cf5bd69b885a099d0da2ad6082216f`;618 required blobs verified before/after. [V-171](runtime-refresh-2026-11-15-r4.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1417,3 +1417,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-170 checkpoint — Section9.4 complete quadratic/selector contracts
 
 [Quadratic evidence](chapter-09-quadratic-contract-followup.md):56 corrected predicates pass;38 initial passes/18 failed predicates and identical replay retained. Twelve numeric/report failures include two exact-zero sign-policy alignments;six failures are strict selector-policy adoption,not18 unique preexisting math defects. Independent1800/2400-digit complete polynomial references,input/priority/range controls checked. Two saved numerical cases scoped resolved and strict selector design policy adopted;single-flow rescue remains OPEN,historical records unchanged. Three files compiled,three commands/two checkers pass,three hashes verified before-after;only taylor helper text changed. Eight escaped manuscript backticks repaired. Fresh617/404/618 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.4 complete single-flow reports,then portfolio/shock contracts. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
+
+
+### Section9.4 single-flow resume checkpoint — OPEN
+
+[Initial diagnostic observations](chapter-09-single-flow-resume-initial.json),[actual identical replay](chapter-09-single-flow-resume-replay.json),[runner](chapter-09-single-flow-resume-probes.txt):retained complete-value rescue raises OverflowError versus independent2.233994766161711;second derivative product underflows0 versus independent1e−308. Whole-report normalized-field range returns infinities where exact convexity exceeds float range (separate OPEN REPORT POLICY observation). Two numerical cases and one policy observation,not passing acceptance predicates. Resume complete value/first/second/normalized report contracts next;initial records retained.
+
+
+## V-171 checkpoint — Full pinned candidate Linux refresh
+
+[V-171 full runtime](runtime-refresh-2026-11-15-r4.md) at `f8aa4390a2cf5bd69b885a099d0da2ad6082216f`:617/617 Python files compiled,404/404 check-test scripts passed,618/618 required Python/fixture hashes verified before-after. Includes V-170 Taylor-change/selector contracts;18 initial numeric/policy predicate failures/replay and56 corrected predicates retained separately,not18 unique mathematical bugs. Historical records unchanged;two numerical cases scoped resolved and strict selector policy adopted. Next single-flow checkpoint retains two OPEN numerical cases and one separate range-policy observation,not passing acceptance predicates. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.4 complete single-flow reports,then portfolio/shock contracts. Book1 tracked independently.

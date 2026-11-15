@@ -1,0 +1,28 @@
+{
+  "executable_source_revision": "f8aa4390a2cf5bd69b885a099d0da2ad6082216f",
+  "source": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py",
+  "source_blob": "91cc6f7b4fccabf0f85fbc7a8af7fa73bf2247e0",
+  "observations": [
+    {
+      "name": "retained complete exponential rescue",
+      "field": "value",
+      "actual": "'OverflowError'",
+      "independent_expected": "2.233994766161711",
+      "status": "OPEN \u2014 exact-source numerical mismatch;not a passing acceptance predicate"
+    },
+    {
+      "name": "second derivative product underflow",
+      "field": "second",
+      "actual": "0.0",
+      "independent_expected": "1e-308",
+      "status": "OPEN \u2014 exact-source numerical mismatch;not a passing acceptance predicate"
+    },
+    {
+      "name": "whole-report normalized-field range",
+      "actual": "{'value': 1.0, 'first': -1e+308, 'second': inf, 'duration': 1e+308, 'convexity': inf}",
+      "independent_reference": "Exact normalized convexity(1e308)^2 exceeds finite binary64 range",
+      "status": "OPEN REPORT POLICY \u2014 nonfinite fields returned;whole-report finite/overflow contract requires next review,not an accepted numerical predicate"
+    }
+  ],
+  "limits": "Two numerical and one separate report-range policy diagnostics for next9.4 batch;not additional passing scripts/predicates or independent/platform acceptance."
+}
