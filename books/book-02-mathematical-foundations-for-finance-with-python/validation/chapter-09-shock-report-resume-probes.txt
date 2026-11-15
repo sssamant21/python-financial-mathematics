@@ -1,0 +1,15 @@
+from pathlib import Path
+import sys,subprocess,tempfile,importlib,json,hashlib
+from decimal import Decimal,localcontext,Context
+r=Path(sys.argv[1]).resolve();pin='9ebd2355077d8c7e8b9348b8f44eb78f57017402';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_04.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation'
+def call(fn):
+ try:return dict(returned=fn())
+ except Exception as e:return dict(exception=type(e).__name__,message=str(e))
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_04.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_04')
+ with localcontext(Context(prec=2400)):
+  C=Decimal.from_float(1e-308);T=Decimal(2);R=Decimal('.5');H=Decimal(-355);exact=float(C*((-T*(R+H)).exp()-(-T*R).exp()))
+ flows=[(1e-308,1e308),(1e308,0.)]
+ rows=[dict(name='single exact change rescue',actual=call(lambda:m.single_shock(1e-308,2.,.5,-355.)),independent_exact_change=exact,status='OPEN numerical;finite direct endpoint difference vs expm1 OverflowError'),dict(name='aggregate zero-shock wrapper integration',base=call(lambda:m.cash_flow_portfolio(flows,0.)),actual=call(lambda:m.portfolio_shock(flows,0.,0.)),independent_exact_change=0.,independent_linear_change=0.,independent_quadratic_change=0.,status='OPEN integration;aggregate passes but wrapper unnecessarily requests per-leg normalized fields'),dict(name='underflowed single baseline shock eligibility',actual=call(lambda:m.single_shock(1e-308,2.,355.,-355.)),independent_exact_change=1e-308,status='OPEN DESIGN;parent eligibility policy not yet adopted')]
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Diagnostic exact-source observations only;not passing acceptance predicates,not complete shock review. Original historical resume records unchanged.')
+(v/(sys.argv[2] if len(sys.argv)>2 else 'chapter-09-shock-report-resume-initial.json')).write_text(json.dumps(d,indent=2)+'\n');print('3 shock resume observations;2 numerical/integration,1 eligibility policy')

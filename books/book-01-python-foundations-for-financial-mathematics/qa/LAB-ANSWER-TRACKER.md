@@ -207,3 +207,10 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.16 scoped exercises and embedded solutions
 
 [Exercise evidence](chapter-20-exercises-review/README.md):40 prompt/answer records and12lab steps reviewed;28source predicates,eightcommands/fivecompiled fences and three separate supplemental arithmetic demonstrations pass. Baseline and actual replay already pass;executable fences unchanged,no defect invented. Twelve exercise-reference plus12project-reference existing methods ran36invocations each (24methods/72invocations,zero new historical methods). Chapter20 has14core workflows/560answers,oneproject/40answers,and oneexercise workflow/40answers (16scoped workflows/640reviewed answers),not comprehensive chapter acceptance. 20.11 static checker,F28/F32/F209,F165limits/F185integration,installed artifact/model/platform/release and independent acceptance remain open. Next:21.1 Capstone Architecture formal workflow/answer review.
+
+
+### Section21.1 resume checkpoint — OPEN
+
+[Architecture observations](chapter-21-architecture-resume/README.md):two exact-source observations and actual identical replay retain documented label-only and subnormal-underflow behavior. Not new failed predicates or formal workflow completion. Resume21.1 full contract/reference suite,40answers and12lab-step review next.
+
+Section21.1 partial runtime checkpoint:[three documented commands/two compiled fences](chapter-21-architecture-resume/suite-results.json) passed;12existing methods/12invocations,zero new historical methods. Forty answers/twelve lab-step and broader architecture review remain pending;reuse exact source/fence hashes to avoid duplicate runtime work. Not an additional completed formal workflow.

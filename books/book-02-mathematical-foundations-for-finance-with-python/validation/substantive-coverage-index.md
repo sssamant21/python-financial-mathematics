@@ -1271,3 +1271,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-174 checkpoint — Section9.4 complete aggregate reports
 
 [Aggregate evidence](chapter-09-portfolio-report-followup.md):108 corrected predicates pass;98baseline passes/10failed predicates and identical actual replay retained. Five failed predicates concern one unused per-leg normalized overflow integration case;five concern explicit aggregate underflowed-leg eligibility policy,not10unique defects. Independent1800/2400-digit five-field references and domain/ownership/iterator/context controls;all final fields finite,positive aggregate value. Only aggregate function body changed. Five files compiled,fivecommands/fourchecker invocations pass;fresh619/406/620inventory is not full execution. All36selected COV categories partial,none closed. Next pinned full refresh,then9.4single/portfolio shock complete reports;finite shock-change overflow and underflowed-baseline eligibility remain OPEN. Historical records unchanged;broader resources/platform/independent/release acceptance pending. Book1 independently tracked.
+
+
+### Section9.4 shock report resume checkpoint — OPEN
+
+[Fresh observations](chapter-09-shock-report-resume-initial.json),[actual identical replay](chapter-09-shock-report-resume-replay.json),[runner](chapter-09-shock-report-resume-probes.txt),pinned to9ebd2355077d8c7e8b9348b8f44eb78f57017402:single finite exact-change rescue still overflows;aggregate report now passes the saved large-horizon schedule but its zero-shock wrapper rejects unused per-leg normalized fields. Underflowed single baseline eligibility remains a separate OPEN DESIGN observation. Two numerical/integration cases and one policy question,not passing acceptance predicates. Resume complete single/portfolio shock reports next;historical records unchanged.
+
+
+## V-175 checkpoint — Full pinned candidate Linux refresh
+
+[V-175 full runtime](runtime-refresh-2026-11-15-r6.md) at `9ebd2355077d8c7e8b9348b8f44eb78f57017402`:619/619Python compiled,406/406check-test scripts passed,620/620required source/fixture blobs verified before-after. IncludesV-174 aggregate scope;108corrected predicates and ten initial failures/replay retained separately (five numeric/integration,five explicit eligibility policy;nottenunique bugs). Exact staging runner,per-file results/output digests and full manifest retained. Two OPEN shock numerical/integration observations and one baseline-eligibility policy question remain;full runtime does not settle unasserted contracts. All36selected COVcategories partial,noneclosed. Next:9.4single/portfolio shock complete reports. Independent mathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.

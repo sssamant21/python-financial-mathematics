@@ -1,0 +1,9 @@
+# V-175 — Full pinned Book2 candidate Linux runtime
+
+Executable source revision `9ebd2355077d8c7e8b9348b8f44eb78f57017402`. Derived from the pinned tree:619/619 Python files compiled,406/406 check-test scripts exited0,620/620 required Python/fixture Git blobs verified before and after execution. Assertions enabled;each checker has a60second timeout. Python 3.12.14;platform Linux-6.18.57-x86_64-with-glibc2.41. Actual elapsed 465.1seconds.
+
+[Runnable exact staging runner](runtime-refresh-2026-11-15-r6-runner.txt),[manifest and per-file/command results](runtime-refresh-2026-11-15-r6.json). Run `python books/book-02-mathematical-foundations-for-finance-with-python/validation/runtime-refresh-2026-11-15-r6-runner.txt . 9ebd2355077d8c7e8b9348b8f44eb78f57017402 books/book-02-mathematical-foundations-for-finance-with-python/validation` from repository root. It stages only pinned required source/fixture blobs,not current working files.
+
+Includes[V-174 aggregate reports](chapter-09-portfolio-report-followup.md):108 scoped predicates,10initial failed predicates and actual replay retained separately (five numerical/integration;five explicit eligibility-policy predicates). Five selected files/five commands are scoped evidence,not the full counts above. Historical initial diagnostic and earlier checker records unchanged.
+
+The fresh[shock checkpoint](chapter-09-shock-report-resume-initial.json) retains two OPEN numerical/integration observations and a separate underflowed-baseline eligibility question;passing old examples/full scripts does not resolve these unasserted contracts. Next:complete single/portfolio shock report/error contracts. Selected universal transcendental rounding and resource bounds unproved. One candidate Linux runtime,not supported-platform,independent mathematical/editorial/model/release/canonical acceptance. All36selected COV categories remain partially addressed,none closed. Book1 separate.

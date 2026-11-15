@@ -7,3 +7,5 @@ Run `python books/book-01-python-foundations-for-financial-mathematics/qa/chapte
 [40 prompt/answer records](answer-records.json) and[12 lab contracts](lab-step-records.json) distinguish executed claims from conceptual/design review. Independent rational expectations:110/(11/10)=100;two-period NPV500/121;95/(19/20)=100;two-year break-even0. Monetary near-zero checks use published illustrative abs1e-10;other magnitudes use scoped tolerances in JSON. Monthly conversion and Decimal/float representation demonstrations are supplemental,not project implementation execution.
 
 Release recommendation:HOLD. No installed artifact,external reviewer,model suitability,all-range correctness or supported-platform acceptance. Retain project Horner range limit,20.11 static-checker gap,F28/F32/F209,F165tail/F185integration and other tracker findings. Next:21.1 Capstone Architecture formal workflow/answer review;Chapter20 broader acceptance remains open.
+
+Executed source pinned to `9ebd2355077d8c7e8b9348b8f44eb78f57017402`;[source verification](publication-verification.json).

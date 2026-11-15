@@ -1,0 +1,45 @@
+{
+  "source_revision": "9ebd2355077d8c7e8b9348b8f44eb78f57017402",
+  "source_blob": "a2ed1762a8934bd3fab0307b95cfef20d225fa9c",
+  "observations": [
+    {
+      "name": "single exact change rescue",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "independent_exact_change": 0.8218407461554972,
+      "status": "OPEN numerical;finite direct endpoint difference vs expm1 OverflowError"
+    },
+    {
+      "name": "aggregate zero-shock wrapper integration",
+      "base": {
+        "returned": {
+          "value": 1e+308,
+          "first": -0.9999999999999999,
+          "second": 1e+308,
+          "duration": 1e-308,
+          "convexity": 0.9999999999999999
+        }
+      },
+      "actual": {
+        "exception": "ValueError",
+        "message": "single-flow report outside finite float range"
+      },
+      "independent_exact_change": 0.0,
+      "independent_linear_change": 0.0,
+      "independent_quadratic_change": 0.0,
+      "status": "OPEN integration;aggregate passes but wrapper unnecessarily requests per-leg normalized fields"
+    },
+    {
+      "name": "underflowed single baseline shock eligibility",
+      "actual": {
+        "exception": "ValueError",
+        "message": "discounted value must be finite and positive"
+      },
+      "independent_exact_change": 1e-308,
+      "status": "OPEN DESIGN;parent eligibility policy not yet adopted"
+    }
+  ],
+  "limits": "Diagnostic exact-source observations only;not passing acceptance predicates,not complete shock review. Original historical resume records unchanged."
+}
