@@ -296,8 +296,8 @@ jobs:
           python -m compileall -q surface.py test_surface.py quote_intervals.py test_quote_intervals.py
           python surface.py
           python quote_intervals.py
-          python -m unittest -v test_joint_feasibility.py
-          python -m compileall -q joint_feasibility.py test_joint_feasibility.py
+          python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py
+          python -m compileall -q joint_feasibility.py test_joint_feasibility.py test_boundary_scaling.py
           python joint_feasibility.py
 
   quantlib-cross-check:
