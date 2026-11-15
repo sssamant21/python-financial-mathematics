@@ -120,19 +120,27 @@ def spot_curve_sensitivity(flows, spot_rates):
                 "parallel_first":_sensitivity_float(sum(derivatives,Decimal(0)))}
 
 def spot_shock(flows, spot_rates, shocks):
+    """Complete latent change/error report, retaining spot-curve eligibility."""
     items = validate_flows(flows)
     rates = [finite(z,"spot_rate") for z in spot_rates]
     bumps = [finite(h,"shock") for h in shocks]
     if len(items)!=len(rates) or len(items)!=len(bumps):
         raise ValueError("rates and shocks must match cash-flow count")
-    base = spot_curve_sensitivity(items,rates)
-    exact = math.fsum(c*math.exp(-z*t)*math.expm1(-t*h)
-                      for (c,t),z,h in zip(items,rates,bumps))
-    linear = math.fsum(d*h for d,h in zip(base["spot_derivatives"],bumps))
-    if not math.isfinite(exact) or not math.isfinite(linear):
-        raise ValueError("nonfinite spot shock")
-    return {"exact_change":exact,"linear_change":linear,
-            "linear_error":exact-linear}
+    spot_curve_sensitivity(items,rates)
+    with localcontext(Context(prec=1700)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        def amount(C,exponent):
+            if exponent > 10000:
+                raise ValueError("spot shock outside finite float range")
+            return Decimal(0) if exponent < -10000 else dec(C)*dec(exponent).exp()
+        exact = linear = Decimal(0)
+        for (c,t),z,h in zip(items,rates,bumps):
+            C,T,Z,H = map(Fraction,(c,t,z,h))
+            baseline = amount(C,-Z*T);endpoint = amount(C,-T*(Z+H))
+            exact += endpoint-baseline;linear -= dec(T)*baseline*dec(H)
+        return {"exact_change":_sensitivity_float(exact),
+                "linear_change":_sensitivity_float(linear),
+                "linear_error":_sensitivity_float(exact-linear)}
 
 if __name__ == "__main__":
     import json
