@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Requirement:** What is a requirement? **Answer:** A specified behavior or constraint the system must satisfy.",
+    "review": "Conceptual behavior/constraint definition aligns with register;not an owner-approved baseline.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Assumption:** What is an assumption? **Answer:** A condition taken as given for a model or use.",
+    "review": "Assumption conditional on model/use;does not impose data truth.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Limitation:** What is a limitation? **Answer:** A boundary or shortcoming that constrains use or interpretation.",
+    "review": "Limitations separate from input validation;underflow and omitted risks remain.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Criterion:** What makes acceptance measurable? **Answer:** An observable result, conditions and a defined threshold or rule.",
+    "review": "Criterion observable under specified units/environment;universal threshold not inferred.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Evidence:** Are test definitions evidence that tests passed? **Answer:** No; retain actual execution results.",
+    "review": "Actual evidence linked;definitions alone not acceptance.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Scope:** Is this slice a production trading system? **Answer:** No; it is an educational example.",
+    "review": "Educational slice only;production uses expressly excluded.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Owner:** Why identify one? **Answer:** To establish accountability for requirements, findings and decisions.",
+    "review": "Owner remains UNASSIGNED in proposal;assistant checks do not invent an authorized owner.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Independence:** Is the developer automatically an independent validator? **Answer:** No; independence depends on roles and context.",
+    "review": "Assistant arithmetic review is not independent reviewer sign-off.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Benchmark:** PV of 110 in one period at 10%? **Answer:** 100 in exact arithmetic.",
+    "review": "110/(11/10)=100 exact;prior21.1 source-known benchmark evidence mapped.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Zero rate:** PV of 110 at 0%? **Answer:** 110.",
+    "review": "Zero-rate identity110 in prior source predicates.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Negative rate:** PV of 95 at \u22125%? **Answer:** 100 in exact arithmetic.",
+    "review": "95/(19/20)=100 exact;prior source evidence mapped.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Boundary:** Why reject \u22121? **Answer:** The denominator becomes zero.",
+    "review": "Rate-1 denominator0;prior exception checks mapped.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Unit:** What units does PV use? **Answer:** The same amount and currency units as the payment.",
+    "review": "Output amount unit matches payment;currency metadata not validated/conversion.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Rate:** How is 10% represented? **Answer:** `0.10`.",
+    "review": "10% equals.10;prior 10.0 comparison source case distinguishes.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Frequency:** Does an annual rate directly match a monthly period? **Answer:** No; specify an appropriate conversion.",
+    "review": "Annual/monthly convention is caller assumption,not automatically runtime enforced.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Effective conversion:** Convert 12% effective annually to monthly. **Answer:** $`(1.12)^{1/12}-1`$, about 0.948879%.",
+    "review": "Independent80-digit Decimal twelfth-root gives about.948879%;supplemental arithmetic,not checker finance.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Sign:** Is a negative payment permitted? **Answer:** Yes, under the stated contract.",
+    "review": "Negative payment source-tested in21.1;checker is structural only.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Monotonicity:** What happens to positive-payment PV as rate rises? **Answer:** It falls, all else equal.",
+    "review": "Positive monotonic direction source-tested in mapped21.1 evidence.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Negative payment:** What happens to its PV as rate rises? **Answer:** It rises toward zero, all else equal.",
+    "review": "Negative payment reverses direction source-tested in21.1.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Label:** Does `USD` perform FX conversion? **Answer:** No; it is metadata.",
+    "review": "Currency label metadata only;actual preserved-label tuple in prior source evidence.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Type:** Is integer `110` accepted by Section 21.1? **Answer:** No; it requires a built-in float.",
+    "review": "Integer payment rejected by21.1 strictfloat interface;not requirements record type assumption.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Boolean:** Is `True` a valid rate? **Answer:** No.",
+    "review": "Boolean rate rejected in prior valuation evidence,including optimized suite.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Nonfinite:** Is NaN permitted? **Answer:** No; inputs must be finite.",
+    "review": "NaN rejected by valuation source;bookkeeping checker does not calculate PV.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Output:** Is the float rounded to cents? **Answer:** No; displayed rounding is separate.",
+    "review": "Raw amount notcents-rounded;display format is separate.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Tolerance:** Does `1e-10` suit every use? **Answer:** No; justify it for units, scale and purpose.",
+    "review": "Illustrative1e-10 amount tolerance requires scope;not universal materiality.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Zero:** Why specify absolute tolerance near zero? **Answer:** Relative tolerance alone does not accommodate a nonzero difference from zero.",
+    "review": "Absolute tolerance near0 explained;referenceexact arithmetic separated from floats.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Overflow:** Can finite inputs produce infinity? **Answer:** Yes; R-06 requires rejection of a nonfinite result.",
+    "review": "OverflowValueError source case mapped;broader numerical range unproved.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Underflow:** Does a finite result prove accuracy? **Answer:** No; rounding and underflow remain possible.",
+    "review": "Documented subnormal loss retained,not presented as accuracy proof.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Model:** Does the formula include default? **Answer:** No.",
+    "review": "Default not in model;not independently suitable for risky instruments.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Software:** Does a correct implementation prove model suitability? **Answer:** No.",
+    "review": "Software/model evidence separate;R09 remainsopen.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Traceability:** What connects an acceptance result to a requirement? **Answer:** Its identifier, criterion, method and recorded evidence.",
+    "review": "Ten requirement mappings retained with actual predicate names and remaining scope.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Status:** Can a blocked check be recorded as passed? **Answer:** No.",
+    "review": "Blocked status returnsFalse even with a note;source tested.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Checker:** What does `ready_for_review` mean? **Answer:** All supplied records are structurally valid and marked passed with evidence strings; it is not approval.",
+    "review": "All supplied records structurally passed ->True;not project completeness or approval.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Evidence string:** Does a nonblank reference prove evidence authenticity? **Answer:** No.",
+    "review": "Nonblank synthetic evidence accepted as documented;no authenticity claimed.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Empty set:** Is an empty requirements list accepted by the checker? **Answer:** No; it raises `ValueError`.",
+    "review": "Empty list ValueError source checked.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Failure:** Does a failed item need an evidence reference in the checker? **Answer:** Yes.",
+    "review": "Failed status needs nonblank evidence;blank case source tested.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Performance:** What precedes a meaningful latency target? **Answer:** A defined workload, environment and measurement method.",
+    "review": "Performance target requires workload/env/method;no benchmark fabricated.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Privacy:** Should raw sensitive data appear in logs by default? **Answer:** No; minimize and protect it.",
+    "review": "Privacy/retention/access controls conceptual and pending;no sensitive data used.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Change:** What happens when a material assumption changes? **Answer:** Reassess requirements, tests, impact and review under the applicable process.",
+    "review": "Material assumption change calls for fresh review;not a deployed change-control process.",
+    "status": "assistant scoped review;external decisions pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the next locked section? **Answer:** 21.3 \u2014 Project Structure.",
+    "review": "Navigation21.03-project-structure.md verified;nextformalreview.",
+    "status": "assistant scoped review;external decisions pending"
+  }
+]

@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.2 scope:** [Requirements](chapter-21-requirements-review/README.md):32sourcepredicates,40answers/12labreviews and10requirement mappings. R08-10 and owner/independent gaps remain;next21.3.
+
 - **Latest21.1 scope:** [Architecture](chapter-21-architecture-review/README.md):oneworkflow/40answers/12labsteps,36sourcepredicates;3source-identicalcommands reused and2freshcommands pass. No codefix invented;owner/reviewer/install/platform and othergaps remain. Next21.2.
 
 - **Latest scoped batch —20.16:** [Exercises](chapter-20-exercises-review/README.md):40answers/12lab steps,28source predicates/eightcommands/three supplemental demonstrations pass;24existing methods/72invocations,zero new historical methods. Source unchanged. Chapter20 broader acceptance remains open;next21.1 formal review,with[resume observations](chapter-21-architecture-resume/README.md). F28/F32 and other gaps retained.
@@ -582,3 +584,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section21.2 partial runtime resume — OPEN
 
 [Requirements checkpoint](chapter-21-requirements-resume/README.md):three documented commands/twocompiledfences/12existingmethods pass;one separate fourth structural-only observation accepts a synthetic evidence string as documented,not authentic acceptance. No newhistoricalmethods or completedformalworkflow. Next formal21.2 register/traceability/40answers/12labsteps;owner/independent acceptance and othergaps remainopen. Reuse pin/digests to avoid duplicate runtime.
+
+
+## Section21.2 scoped requirements workflow and answers
+
+[Requirements evidence](chapter-21-requirements-review/README.md):oneworkflow/40answer records/12lab reviews;32structural source predicates pass,two designobservations and one supplemental monthly-rate derivation separate. Three prior documented commands reused byexactfence hashes;twofreshcommands pass. Checker evidencechain12existingmethods/24invocations,fivecorecommands/twocompiledfences,zero newhistoricalmethods;prior fourth structuralprobe separate. Ten-row mapping reuses unchanged21.1valuation evidence;R01-07scoped cases only,R08-10operationalstore/UNASSIGNEDowner/independent/futureintegration open. Stale Notexecuted matrixlabels reconciled;codefences unchanged,no defectinvented. Chapter21 now2scopedworkflows/80answers;next21.3Project Structure. F28/F32/F209,20.11static,F165/F185 and broader installed/platform/model/release acceptance retained.

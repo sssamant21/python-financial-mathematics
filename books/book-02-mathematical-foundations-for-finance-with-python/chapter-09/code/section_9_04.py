@@ -132,16 +132,33 @@ def single_shock(cash, years, rate, shock):
                 "quadratic_error":_single_report(exact-quadratic)}
 
 def portfolio_shock(cash_flows, rate, shock):
+    """Complete collective report,requiring an eligible aggregate baseline.
+
+    Per-leg normalized fields and positive rounded per-leg values are unused.
+    Error fields round the collective latent difference once.
+    """
     h, r = finite(shock,"shock"), finite(rate,"rate")
     flows = list(cash_flows)
-    base = cash_flow_portfolio(flows,r)
-    exact = sum(single_cash_flow(c,t,r)["value"]*math.expm1(-t*h)
-                for c,t in flows)
-    linear = taylor_change(base["first"],base["second"],h,1)
-    quadratic = taylor_change(base["first"],base["second"],h,2)
-    return {"shock":h,"exact_change":exact,"linear_change":linear,
-            "quadratic_change":quadratic,"linear_error":exact-linear,
-            "quadratic_error":exact-quadratic}
+    cash_flow_portfolio(flows,r)  # retained aggregate prerequisite
+    R,H = map(Fraction,(r,h))
+    with localcontext(Context(prec=1300)):
+        def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+        exact = linear = quadratic = Decimal(0)
+        for cash, years in flows:
+            C,T = map(Fraction,(float(cash),float(years)))
+            base_exponent, shifted_exponent = -T*R, -T*(R+H)
+            if shifted_exponent > 10000:
+                raise ValueError("portfolio shock report outside finite float range")
+            baseline = Decimal(0) if base_exponent < -10000 else dec(C)*dec(base_exponent).exp()
+            endpoint = Decimal(0) if shifted_exponent < -10000 else dec(C)*dec(shifted_exponent).exp()
+            exact += endpoint-baseline
+            linear += baseline*dec(-T*H)
+            quadratic += baseline*dec(-T*H+T*T*H*H/2)
+        return {"shock":h,"exact_change":_single_report(exact),
+                "linear_change":_single_report(linear),
+                "quadratic_change":_single_report(quadratic),
+                "linear_error":_single_report(exact-linear),
+                "quadratic_error":_single_report(exact-quadratic)}
 
 if __name__ == "__main__":
     import json

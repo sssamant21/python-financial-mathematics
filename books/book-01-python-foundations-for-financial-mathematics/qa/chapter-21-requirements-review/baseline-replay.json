@@ -1,0 +1,232 @@
+{
+  "selected_revision": "e9c762d3b81f5c998876c717443aed482b2cf3ec",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "fence_sha256": [
+    "6487bde3d933b5a7763bc15bcf78acfe846dd0c94be7c2d25a497267fe9fd2a2",
+    "204d2767f2a154f1ef45beb4ed16ee712640810f2f0f246d606e0704752dab59"
+  ],
+  "source_predicates": [
+    {
+      "name": "default not_run valid",
+      "actual": "None",
+      "expected": "None",
+      "passed": true
+    },
+    {
+      "name": "valid status not_run",
+      "actual": "None",
+      "expected": "None",
+      "passed": true
+    },
+    {
+      "name": "readiness not_run",
+      "actual": "False",
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "valid status blocked",
+      "actual": "None",
+      "expected": "None",
+      "passed": true
+    },
+    {
+      "name": "readiness blocked",
+      "actual": "False",
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "valid status passed",
+      "actual": "None",
+      "expected": "None",
+      "passed": true
+    },
+    {
+      "name": "readiness passed",
+      "actual": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "valid status failed",
+      "actual": "None",
+      "expected": "None",
+      "passed": true
+    },
+    {
+      "name": "readiness failed",
+      "actual": "False",
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "identifier rejects ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "identifier rejects None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "identifier rejects True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "statement rejects ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "statement rejects None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "statement rejects True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "criterion rejects ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "criterion rejects None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "criterion rejects True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "method rejects ''",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "method rejects None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "method rejects True",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "unknown status",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "bool status",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "nonstring evidence",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "passed blank",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "failed blank",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "container empty",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "container tuple",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "container None",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "container invalid later",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "passed": true
+    },
+    {
+      "name": "caller record unchanged",
+      "actual": "{'identifier': 'R-SYNTH', 'statement': 'Synthetic structural probe only', 'criterion': 'not an authentic acceptance record', 'method': 'structural check', 'status': 'not_run', 'evidence': ''}",
+      "expected": "{'identifier': 'R-SYNTH', 'statement': 'Synthetic structural probe only', 'criterion': 'not an authentic acceptance record', 'method': 'structural check', 'status': 'not_run', 'evidence': ''}",
+      "passed": true
+    },
+    {
+      "name": "normal frozen reassignment",
+      "actual": "'FrozenInstanceError'",
+      "expected": "'FrozenInstanceError'",
+      "passed": true
+    }
+  ],
+  "new_commands": [],
+  "reused_documented_commands": 3,
+  "reused_structural_probe_commands": 1,
+  "reused_requirements_source_revision": "b5808b7f52ce3ecec42e99a091e240bf29d5aa11",
+  "reused_valuation_evidence": "../chapter-21-architecture-review/results.json",
+  "reused_valuation_predicates": 36,
+  "design_observations": [
+    {
+      "name": "documented structural gate permits unauthenticated evidence strings",
+      "actual": true,
+      "status": "Documented design limitation;not financial/model acceptance."
+    },
+    {
+      "name": "duplicate identifiers not validated",
+      "actual": true,
+      "status": "No uniqueness contract;separate design observation,not failed financial case."
+    }
+  ],
+  "supplemental_arithmetic": {
+    "name": "independent effective monthly rate",
+    "actual": "0.0094887929345829741263550691934939563944607008457894756874682939803798467572333",
+    "printed_percent": "0.948879",
+    "passed": true
+  },
+  "existing_unique_methods": 12,
+  "new_method_invocations": 0,
+  "reused_method_invocations": 12,
+  "new_historical_unique_methods": 0,
+  "limits": "Bookkeeping source execution and mapped prior valuation evidence;not evidence authentication,owner/independent acceptance,operational store,full toolkit,installed artifact,security/platform/release acceptance. F28/F32 and other findings remain."
+}
