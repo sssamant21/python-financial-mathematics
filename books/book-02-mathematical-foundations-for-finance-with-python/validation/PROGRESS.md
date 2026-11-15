@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-178 portfolio-shock scope and V-179 full candidate Linux pass (621/408/622). Section9.5 numerical/bound and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-180 financial remainder scope and V-181 full candidate Linux pass (622/409/623). Polynomial/remaining review and independent/platform/release acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 621/621 at `f57b86902032643b6772d3b8ad377e885f2dcf9e`. [V-179](runtime-refresh-2026-11-15-r8.md). |
-| Automated script execution | Full candidate Linux pass | 408/408 at `f57b86902032643b6772d3b8ad377e885f2dcf9e`;622 required blobs verified before/after. [V-179](runtime-refresh-2026-11-15-r8.md). |
+| Python compilation | Full candidate Linux pass | 622/622 at `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`. [V-181](runtime-refresh-2026-11-15-r9.md). |
+| Automated script execution | Full candidate Linux pass | 409/409 at `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`;623 required blobs verified before/after. [V-181](runtime-refresh-2026-11-15-r9.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1491,4 +1491,14 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 
 ## V-180 checkpoint — Section9.5 complete financial remainder reports
 
-[Remainder evidence](chapter-09-remainder-report-followup.md):207corrected source predicates plus13separate independent oracle-bound controls pass. Initial125source passes/82source failures and actual identical replay retained;13oracle controls alreadypass,not82unique bugs. Independent1800/2400-digit endpoints/interval-extrema/Taylor/error/bound/utilization references. Final-field policy explicit;unused internalmax gates removed,zero-reported-bound utilizationNone and positive rounded baseline retained. Only financialreport/helper/imports change;polynomial_example untouched. Threefiles/threecommands/twocheckers pass;fresh622/409/623inventory notfullruntime. COV52partially advanced;all36selected categories partial,noneclosed. Next pinned refresh,then9.5polynomial/remainder/bound and remaining manuscript/exercise contracts. Historical diagnostics retained;resource/platform/independent/release acceptance open;Book1 separate.
+[Remainder evidence](chapter-09-remainder-report-followup.md):207corrected source predicates plus13separate independent oracle-bound controls pass. Initial125source passes/82source failures and actual identical replay retained;13oracle controls alreadypass,not82unique bugs. Independent1800/2400-digit endpoints/interval-extrema/Taylor/error/bound/utilization references. Final-field policy explicit;unused internalmax gates removed,zero-reported-bound utilizationNone and positive rounded baseline retained. Only financialreport/helper/imports change;polynomial_example untouched. Threefiles/threecommands/twocheckers pass;fresh622/409/623inventory notfullruntime. COV52partially advanced;COV52newlyregistered;all37selected categories partial,noneclosed. Next pinned refresh,then9.5polynomial/remainder/bound and remaining manuscript/exercise contracts. Historical diagnostics retained;resource/platform/independent/release acceptance open;Book1 separate.
+
+
+### Section9.5 polynomial resume — OPEN
+
+[Initial polynomial diagnostics](chapter-09-polynomial-resume-r9-initial.json),[actual identical replay](chapter-09-polynomial-resume-r9-replay.json),[runner](chapter-09-polynomial-resume-r9-probes.txt) at835777284697e2a6ce3f7fdc27dcd7efa3666e4e. Finite hugeinputraisesOverflowError withunrepresentable finalpolynomialfields (OPEN whole-report/error policy). Tinyshock analyticremainder is nonzero while subtractingrounded exact/quadraticdisplayfields gives0 (explicitsemantics review,notnewdefect). Two diagnostics,notpassingfinancialreportpredicates orcompletedpolynomial/manuscript/exerciseacceptance. Nextpolynomialcompletecontracts andremaining9.5review;historicalrecordsunchanged.
+
+
+## V-181 checkpoint — Full pinned candidate Linux refresh
+
+[V-181 fullruntime](runtime-refresh-2026-11-15-r9.md) at`835777284697e2a6ce3f7fdc27dcd7efa3666e4e`:622/622Pythoncompiled,409/409check-testscripts passed,623/623requiredsource/fixture blobs verifiedbefore-after. IncludesV-180financialreports;207sourcepredicates+13separateoracleboundcontrols pass,82initialsourcefailures/actualreplay retained,not82unique bugs. COV52newlyregisteredpartial;37selectedcategoriespartial,noneclosed (pinnedruntime'searlier36categorylimits annotated separately). Two polynomialdiagnosticsremainOPEN;fullruntime doesnotsettle unassertedcontracts. Next9.5polynomial/remainder/bound andremainingmanuscript/exercise review. Independentmathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.

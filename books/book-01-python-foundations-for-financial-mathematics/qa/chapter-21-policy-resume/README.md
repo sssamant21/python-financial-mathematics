@@ -1,0 +1,3 @@
+# Section21.4 partial runtime resume
+
+[Actual execution](results.json),[runnable checkpoint](checkpoint.py),pin835777284697e2a6ce3f7fdc27dcd7efa3666e4e. Twoexactsourcefences compiled;12existingreference methods ran12invocations. Threeadditional sourceobservations checkhalfeventies underconflictingambientprecision/rounding/traps,ambientrestoration,anddocumentedlargecoefficientInvalidOperation. Zero newhistoricalmethods. This is partialruntime,notformal40answers/12lab/fullpolicy review orcurrency/settlement/model/platform/release/independentacceptance. Reuseexactfencehashes ifunchanged;next21.4formalreview.

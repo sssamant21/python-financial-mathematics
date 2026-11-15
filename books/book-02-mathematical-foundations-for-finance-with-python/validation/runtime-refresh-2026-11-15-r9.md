@@ -1,0 +1,9 @@
+# V-181 — Full pinned Book2 candidate Linux runtime
+
+Executable source revision `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`. Derived from pinned tree:622/622Python files compiled,409/409check-test scripts exited0,623/623required Python/fixture Git blobs verified before and after execution. Assertions enabled;60second timeout per checker. Python 3.12.14;platform Linux-6.18.57-x86_64-with-glibc2.41. Actual elapsed 371.4seconds.
+
+[Exact staging runner](runtime-refresh-2026-11-15-r9-runner.txt),[full manifest/per-file outcomes](runtime-refresh-2026-11-15-r9.json). Run `python books/book-02-mathematical-foundations-for-finance-with-python/validation/runtime-refresh-2026-11-15-r9-runner.txt . 835777284697e2a6ce3f7fdc27dcd7efa3666e4e books/book-02-mathematical-foundations-for-finance-with-python/validation`. Required blobs staged from pinned Git source,not working files.
+
+Includes[V-180 financial remainder reports](chapter-09-remainder-report-followup.md):207source predicates plus13separate oracle-bound controls pass;82initial source failures/replay retained. Not82unique bugs. Final-report/internal-max,latent-error and reported-zero-bound utilization policy explicit. Threefiles/threecommands/twochecker scoped evidence distinct from full counts above. Polynomial_example is unchanged and remains pending;[two next diagnostics](chapter-09-polynomial-resume-r9-initial.json) are not passing acceptance predicates.
+
+This batch newly registers COV52aspartiallyaddressed;37selectedcategories nowpartial,noneclosed. The pinned runner/rawlimits retained the earlier36categorysnapshot;the JSONannotation distinguishes the current register change. Categories are not defectcounts orcompletionpercentages. Independent mathematical/editorial/model/platform/release/canonical acceptance,universalnumerical/resource and remaining9.5polynomial/manuscript/exercise review stayopen. Book1 independent.

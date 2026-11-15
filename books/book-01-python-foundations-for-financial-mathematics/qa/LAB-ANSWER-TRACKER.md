@@ -239,3 +239,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.3 scoped structure,packaging and answers
 
 [Structure evidence](chapter-21-structure-review/README.md):oneworkflow/40answers/12labreviews;11freshcommands pass (offlineeditable/build,cleanwheelinstall,outsidehidden-sourceexample/suite/importprovenance). Twelvewheelcontractpredicatespass. Buildvenvexposespreprovisionedsystemtools;cleanconsumerdoesnot;no-index/no-build-isolation/no-depsadaptationexplicit. Actualwheelhash/memberlistretained;binarynotcommitted. Threepriorsourcecommandsreusedbysixfencedigests. Evidencechain14commands,12existingmethods/36invocations,zero newhistoricalmethods. Fencesunchanged;unexecuteddraftwordingreconciled. Chapter21now3scopedworkflows/120answers;next21.4Numerical/DecimalPolicies. This scaffold'slocalartifactchecksdo not closeotherprojects'installgaps,F28/F32/F209,20.11static,F165/F185,R08-10/owner,platform/model/release/independentacceptance.
+
+
+### Section21.4 partial runtime resume — OPEN
+
+[Policy checkpoint](chapter-21-policy-resume/README.md):two sourcecommands/twocompiledfences/12existingmethods and3targetedpolicy observationspass;zero newhistoricalmethods. Conflictingambientcontext restored;largecoefficientlimitdocumented,notnewdefect. Formal40answers/12lab/context/conversion/range contractsremainnext;noadditionalcompletedworkflow.

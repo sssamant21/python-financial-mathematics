@@ -14,4 +14,11 @@ Baseline7f6de3a0495e0e3cb65fd3a0f3f5fbf67e902fdd. [Scope proof](chapter-09-remai
 
 Source computes latent collective expressions/private1700-digit context;all returned numeric fields finite,positive rounded baseline. Internal maxima can exceed float if complete bounds remain finite. None is retained for a reported-zero bound,even if its latent value is nonzero;ratios otherwise use latent fields. This is selected final-report policy,not evidence of every possible bound or precision behavior. ±10000exponent cutoffs exceed rescue by products formed from finite binary64 C,T,T^3,H^3;arbitrarily huge collections/resources remain unproved. Historical initial diagnostics unchanged;two saved financial numerical observations scoped resolved.
 
-Next:Section9.5 polynomial_example complete polynomial/remainder/bound contracts and remaining manuscript/exercise/error-bound review. COV52partially addressed with explicit endpoint references/nonvacuity;none of36selected COVcategories closed. No supportedplatform,independent mathematical/editorial/model/release/canonical acceptance. Book1 independent.
+Next:Section9.5 polynomial_example complete polynomial/remainder/bound contracts and remaining manuscript/exercise/error-bound review. COV52partially addressed with explicit endpoint references/nonvacuity;now37selected COVcategories partial,noneclosed (COV52newlyregistered). No supportedplatform,independent mathematical/editorial/model/release/canonical acceptance. Book1 independent.
+
+
+### Section9.5 polynomial resume — OPEN
+
+[Initial polynomial diagnostics](chapter-09-polynomial-resume-r9-initial.json),[actual identical replay](chapter-09-polynomial-resume-r9-replay.json),[runner](chapter-09-polynomial-resume-r9-probes.txt) at835777284697e2a6ce3f7fdc27dcd7efa3666e4e. Finite hugeinputraisesOverflowError withunrepresentable finalpolynomialfields (OPEN whole-report/error policy). Tinyshock analyticremainder is nonzero while subtractingrounded exact/quadraticdisplayfields gives0 (explicitsemantics review,notnewdefect). Two diagnostics,notpassingfinancialreportpredicates orcompletedpolynomial/manuscript/exerciseacceptance. Nextpolynomialcompletecontracts andremaining9.5review;historicalrecordsunchanged.
+
+Candidate source/evidence pin`835777284697e2a6ce3f7fdc27dcd7efa3666e4e`;[hash verification](chapter-09-remainder-report-publication-verification.json).

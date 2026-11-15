@@ -7,3 +7,5 @@ Source baseline7f6de3a0495e0e3cb65fd3a0f3f5fbf67e902fdd. [Runnable exact-fence h
 Twelvewheelcontractpredicates useindependentFraction references andinvalidinputs. Two12-methodsuites (editable,wheel) ran24newinvocations;[prior3sourcecommands](../chapter-21-structure-resume/results.json) reusedbyexact6fencedigests. Evidencechain14commands,12existinguniquemethods/36invocations,zero newhistoricalmethods. Predicates,methods,commands,40answers and12stepsremainseparate. All commands passedinitially;no inventedfailure/correction. Source codefencesunchanged;draftunexecuted wording reconciled.
 
 Localpackagingchecksarecompleteforthisscaffold only;otherBook1projects still have their own installation/integrationgaps. NotWindows/macOS/supportedmatrix,dependencyresolution/security,universalnumerics,financialmodel/release/independentacceptance. RetainF28/F32/F209,20.11static,F165/F185,R08-10/owner/independent and othertracker gaps. Chapter21now3scopedworkflows/120localanswers. Next21.4Numerical andDecimalPolicies.
+
+Candidate source/evidence pin`835777284697e2a6ce3f7fdc27dcd7efa3666e4e`;[hash verification](publication-verification.json).

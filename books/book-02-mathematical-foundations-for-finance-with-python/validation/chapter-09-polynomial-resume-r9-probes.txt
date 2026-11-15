@@ -1,0 +1,16 @@
+from pathlib import Path
+import subprocess,sys,tempfile,importlib,json,hashlib
+from fractions import Fraction
+r=Path(sys.argv[1]).resolve();pin='835777284697e2a6ce3f7fdc27dcd7efa3666e4e';rel='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_05.py';raw=subprocess.check_output(['git','-C',str(r),'show',pin+':'+rel]);v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation'
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp);(t/'section_9_05.py').write_bytes(raw);sys.path.insert(0,tmp);m=importlib.import_module('section_9_05');rows=[]
+ for name,h in [('whole polynomial range',1e308),('displayed error versus latent remainder',2**-55)]:
+  try:a=dict(returned=m.polynomial_example(h))
+  except Exception as e:a=dict(exception=type(e).__name__,message=str(e))
+  H=Fraction(h);refs={}
+  for k,x in dict(exact=(2+H)**3,linear=8+12*H,quadratic=8+12*H+6*H*H,remainder=H**3,bound=abs(H)**3).items():
+   try:refs[k]=repr(float(x))
+   except OverflowError:refs[k]='outside finite float range'
+  rows.append(dict(name=name,shock=repr(h),actual=a,independent_represented_input_reference=refs,status='OPEN whole-report/range exception policy' if h==1e308 else 'Documented analytic remainder vs subtraction of rounded display fields requires explicit contract;notnewdefect'))
+ d=dict(source_revision=pin,source_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),observations=rows,limits='Two polynomial diagnostics only;notaccepted policy or completed polynomial/manuscript/exercise review. Historical financialreport records unchanged.')
+(v/sys.argv[2]).write_text(json.dumps(d,indent=2)+'\n');print('2polynomial resume observations saved')

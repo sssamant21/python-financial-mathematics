@@ -1,0 +1,44 @@
+{
+  "source_revision": "835777284697e2a6ce3f7fdc27dcd7efa3666e4e",
+  "source_blob": "10746dfecceea5696b0c672b8ea625614c24ca2d",
+  "observations": [
+    {
+      "name": "whole polynomial range",
+      "shock": "1e+308",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "(34, 'Numerical result out of range')"
+      },
+      "independent_represented_input_reference": {
+        "exact": "outside finite float range",
+        "linear": "outside finite float range",
+        "quadratic": "outside finite float range",
+        "remainder": "outside finite float range",
+        "bound": "outside finite float range"
+      },
+      "status": "OPEN whole-report/range exception policy"
+    },
+    {
+      "name": "displayed error versus latent remainder",
+      "shock": "2.7755575615628914e-17",
+      "actual": {
+        "returned": {
+          "exact": 8.0,
+          "linear": 8.0,
+          "quadratic": 8.0,
+          "quadratic_remainder": 2.1382117680737565e-50,
+          "quadratic_bound": 2.1382117680737565e-50
+        }
+      },
+      "independent_represented_input_reference": {
+        "exact": "8.0",
+        "linear": "8.0",
+        "quadratic": "8.0",
+        "remainder": "2.1382117680737565e-50",
+        "bound": "2.1382117680737565e-50"
+      },
+      "status": "Documented analytic remainder vs subtraction of rounded display fields requires explicit contract;notnewdefect"
+    }
+  ],
+  "limits": "Two polynomial diagnostics only;notaccepted policy or completed polynomial/manuscript/exercise review. Historical financialreport records unchanged."
+}

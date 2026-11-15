@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `f57b86902032643b6772d3b8ad377e885f2dcf9e` (V-179)
-**Latest scoped source:** V-178 at `f57b86902032643b6772d3b8ad377e885f2dcf9e`;[seven-file source manifest](chapter-09-portfolio-shock-publication-verification.json).
+**Full-runtime candidate source revision:** `835777284697e2a6ce3f7fdc27dcd7efa3666e4e` (V-181)
+**Latest scoped source:** V-180 at `835777284697e2a6ce3f7fdc27dcd7efa3666e4e`;[three-file source manifest](chapter-09-remainder-report-publication-verification.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-178 portfolio-shock scope and V-179 full Python runtime pass;Section9.5 numerical/bound and independent/release approval remain open.
+**Disposition:** V-180 financial remainder scope and V-181 full runtime pass;polynomial/remaining9.5 and independent/release approval open.
 
 ## Reconciled evidence
 
@@ -1365,4 +1365,14 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 
 ## V-180 checkpoint — Section9.5 complete financial remainder reports
 
-[Remainder evidence](chapter-09-remainder-report-followup.md):207corrected source predicates plus13separate independent oracle-bound controls pass. Initial125source passes/82source failures and actual identical replay retained;13oracle controls alreadypass,not82unique bugs. Independent1800/2400-digit endpoints/interval-extrema/Taylor/error/bound/utilization references. Final-field policy explicit;unused internalmax gates removed,zero-reported-bound utilizationNone and positive rounded baseline retained. Only financialreport/helper/imports change;polynomial_example untouched. Threefiles/threecommands/twocheckers pass;fresh622/409/623inventory notfullruntime. COV52partially advanced;all36selected categories partial,noneclosed. Next pinned refresh,then9.5polynomial/remainder/bound and remaining manuscript/exercise contracts. Historical diagnostics retained;resource/platform/independent/release acceptance open;Book1 separate.
+[Remainder evidence](chapter-09-remainder-report-followup.md):207corrected source predicates plus13separate independent oracle-bound controls pass. Initial125source passes/82source failures and actual identical replay retained;13oracle controls alreadypass,not82unique bugs. Independent1800/2400-digit endpoints/interval-extrema/Taylor/error/bound/utilization references. Final-field policy explicit;unused internalmax gates removed,zero-reported-bound utilizationNone and positive rounded baseline retained. Only financialreport/helper/imports change;polynomial_example untouched. Threefiles/threecommands/twocheckers pass;fresh622/409/623inventory notfullruntime. COV52partially advanced;COV52newlyregistered;all37selected categories partial,noneclosed. Next pinned refresh,then9.5polynomial/remainder/bound and remaining manuscript/exercise contracts. Historical diagnostics retained;resource/platform/independent/release acceptance open;Book1 separate.
+
+
+### Section9.5 polynomial resume — OPEN
+
+[Initial polynomial diagnostics](chapter-09-polynomial-resume-r9-initial.json),[actual identical replay](chapter-09-polynomial-resume-r9-replay.json),[runner](chapter-09-polynomial-resume-r9-probes.txt) at835777284697e2a6ce3f7fdc27dcd7efa3666e4e. Finite hugeinputraisesOverflowError withunrepresentable finalpolynomialfields (OPEN whole-report/error policy). Tinyshock analyticremainder is nonzero while subtractingrounded exact/quadraticdisplayfields gives0 (explicitsemantics review,notnewdefect). Two diagnostics,notpassingfinancialreportpredicates orcompletedpolynomial/manuscript/exerciseacceptance. Nextpolynomialcompletecontracts andremaining9.5review;historicalrecordsunchanged.
+
+
+## V-181 checkpoint — Full pinned candidate Linux refresh
+
+[V-181 fullruntime](runtime-refresh-2026-11-15-r9.md) at`835777284697e2a6ce3f7fdc27dcd7efa3666e4e`:622/622Pythoncompiled,409/409check-testscripts passed,623/623requiredsource/fixture blobs verifiedbefore-after. IncludesV-180financialreports;207sourcepredicates+13separateoracleboundcontrols pass,82initialsourcefailures/actualreplay retained,not82unique bugs. COV52newlyregisteredpartial;37selectedcategoriespartial,noneclosed (pinnedruntime'searlier36categorylimits annotated separately). Two polynomialdiagnosticsremainOPEN;fullruntime doesnotsettle unassertedcontracts. Next9.5polynomial/remainder/bound andremainingmanuscript/exercise review. Independentmathematical/editorial/model/platform/release/canonical acceptance pending;Book1 independent.
