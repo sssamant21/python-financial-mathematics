@@ -363,6 +363,8 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F205 | Section20.5 complete represented-input comparison and finite gate. | RESOLVED (scoped) —seven initial failures/replay retained;64 corrected source predicates pass. Broader NPV/resources and financial/platform/independent acceptance open. [Evidence](chapter-20-float-review/README.md). |
 | F206 | Section20.6 complete Decimal return,private contexts and parser/range contract. | RESOLVED (scoped) —nine initial failures/replay retained;43 corrected source predicates pass. Lexical/exponent resources,all magnitudes/platform/independent acceptance open. [Evidence](chapter-20-decimal-review/README.md). |
 | F207 | Section20.7 complete return/dot,represented weight-budget and finite-input contracts. | RESOLVED (scoped) —11 initial failures/replay retained;39 corrected source predicates pass,without tolerance widening or renormalization. Broader NPV/resources/platform/independent acceptance open. [Evidence](chapter-20-invariants-review/README.md). |
+| F208 | Section20.8 finite-input/complete-return and iterator-stage error contracts. | RESOLVED (scoped) —eight initial failures/replay retained;45 corrected source predicates pass. NPV/resources/platform/independent acceptance open. [Evidence](chapter-20-input-review/README.md). |
+| F209 | Section20.8 arbitrary-iterable shape/order acceptance. | OPEN DESIGN —numeric mapping keys,set members and bytes can pass element validation;surrounding collection/order/resource/integration policy not established. Three executed observations are not source-failure predicates or financial acceptance. [Evidence](chapter-20-input-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -374,7 +376,7 @@ Add new findings with an ID, affected revision, severity, owner, reproduction, e
 4. Track corrections in the findings register; preserve original failure evidence and record the corrected revision and rerun.
 5. Complete V15–V16 only after agreed criteria, independent reviews and acceptance decisions are documented.
 
-**Next action:** V06 — continue Chapter20 Section20.8 formal workflow/local-answer review;broader acceptance gaps remain open.
+**Next action:** V06 — continue Chapter20 Section20.9 formal workflow/local-answer review;F209 and broader acceptance gaps remain open.
 
 
 ## Section 18.13 execution checkpoint (formal review unfinished)
@@ -505,3 +507,8 @@ Runtime restored. [Project](chapter-19-project-review/README.md):40 local answer
 ## Section20.7 scoped invariant workflow and answers
 
 [Invariant evidence](chapter-20-invariants-review/README.md):one workflow,40 local answers/12 steps;39 corrected source predicates/five commands pass,plus2 separate arithmetic controls. Eleven initial failures and identical replay retained;F207 fixes complete return/dot reporting,exact unchanged weight budget and finite oversized-input exceptions. Fourteen existing methods ran45 invocations:42 source-suite plus3 separate synthetic/control calls,zero new historical methods. Always-zero NPV passes scaling but fails known nonzero test. Chapter20 now7 workflows/280 local answers. NPV/resources/covariance/FX,F28/F32/F165/F185 and platform/independent acceptance open. Next:Section20.8 Input Validation.
+
+
+## Section20.8 scoped input-validation workflow and answers
+
+[Input evidence](chapter-20-input-review/README.md):one workflow,40 local answers/12 steps;45 corrected source predicates/five commands plus one separate unit control pass. Eight initial failures and identical replay retained;F208 fixes finite oversized-input exceptions,complete return reporting and late-iterator TypeError classification. Fourteen existing methods ran42 invocations;zero new historical methods. Three collection acceptances remain separate OPEN DESIGN observations(F209),not failed/accepted financial cases. Chapter20 now8 workflows/320 local answers. NPV/resources,F28/F32,F165 limits,F185 integration and platform/independent acceptance remain open. Next:Section20.9 Exception Handling.

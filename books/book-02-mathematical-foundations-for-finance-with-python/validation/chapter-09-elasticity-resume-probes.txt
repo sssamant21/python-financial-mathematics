@@ -1,10 +1,12 @@
 from pathlib import Path
 import importlib.util,json,sys,hashlib
 from fractions import Fraction
-r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'initial';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';p=b/'chapter-09/code/section_9_02.py';spec=importlib.util.spec_from_file_location('elasticity_resume_source',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';p=b/'chapter-09/code/section_9_02.py';sys.path.insert(0,str(p.parent));spec=importlib.util.spec_from_file_location('elasticity_resume_source',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 x,y,d=map(Fraction,(1e308,1e308,1e308));point=float(x*d/y);x1,x2,y1,y2=map(Fraction,(1e308,1.5e308,1e308,.5e308));arc=float((y2-y1)*(x1+x2)/((x2-x1)*(y1+y2)));rows=[]
 for name,fn,want in [('point complete product rescue',lambda:m.point_elasticity(1e308,1e308,1e308),repr(point)),('arc complete midpoint quotient',lambda:m.arc_elasticity(1e308,1.5e308,1e308,.5e308),repr(arc)),('rate true final overflow',lambda:m.discounted_rate_elasticity(1e308,1e308),'ValueError under a reviewed finite-report policy')]:
  try:a=repr(fn());kind='returned'
  except Exception as e:a=repr(e);kind=type(e).__name__
  rows.append(dict(name=name,actual=a,kind=kind,independent_expectation=want,status='OPEN — next Section9.2 review;not an acceptance pass'))
-d=dict(executable_source_revision='e1be84b08b955bb785a86aa6a1fe6114adbc0cf3',source_path=str(p.relative_to(r)),source_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),observations=rows,limits='Executed Section9.2 resume probes only;point/arc exact rational expectations and proposed final-output policy require broader review. No fix/acceptance claimed.');(b/'validation'/('chapter-09-elasticity-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(rows,indent=2))
+if tag not in ('initial','before-fix-replay'):
+ for item in rows:item['status']='DIAGNOSTIC OBSERVATION — not an acceptance result;consult explicit scoped dispositions'
+d=dict(executable_source_revision=None,baseline_source_revision='e1be84b08b955bb785a86aa6a1fe6114adbc0cf3',source_path=str(p.relative_to(r)),source_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),observations=rows,limits='Executed Section9.2 resume probes only;point/arc exact rational expectations and proposed final-output policy require broader review. No fix/acceptance claimed.');(b/'validation'/('chapter-09-elasticity-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(rows,indent=2))

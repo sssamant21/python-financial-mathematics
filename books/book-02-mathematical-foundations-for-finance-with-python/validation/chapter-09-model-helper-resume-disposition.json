@@ -1,0 +1,90 @@
+{
+  "original_record": "chapter-09-model-helper-resume-initial.json",
+  "before_fix_replay": "chapter-09-model-helper-resume-before-fix-replay.json",
+  "corrected_record": "chapter-09-model-contract-corrected.json",
+  "dispositions": [
+    {
+      "original_probe": "constant demand pre-power underflow",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicates": [
+        {
+          "name": "constant1 quantity",
+          "actual": "1e-308",
+          "expected": "1e-308",
+          "passed": true
+        },
+        {
+          "name": "constant1 derivative",
+          "actual": "-0.0",
+          "expected": "-0.0",
+          "passed": true
+        },
+        {
+          "name": "constant1 elasticity",
+          "actual": "-2.0",
+          "expected": "-2.0",
+          "passed": true
+        }
+      ],
+      "limits": "Selected complete model/report contract only;not universal conditioning or independent acceptance"
+    },
+    {
+      "original_probe": "income model normalization",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicates": [
+        {
+          "name": "income analytic1",
+          "actual": "-2.0",
+          "expected": "-2.0",
+          "passed": true
+        }
+      ],
+      "limits": "Selected complete model/report contract only;not universal conditioning or independent acceptance"
+    },
+    {
+      "original_probe": "linear positive quantity cancellation",
+      "disposition": "RESOLVED (scoped)",
+      "corrected_predicates": [
+        {
+          "name": "linear3 quantity",
+          "actual": "4.930380657631324e-32",
+          "expected": "4.930380657631324e-32",
+          "passed": true
+        },
+        {
+          "name": "linear3 derivative",
+          "actual": "-1.0000000000000002",
+          "expected": "-1.0000000000000002",
+          "passed": true
+        },
+        {
+          "name": "linear3 elasticity",
+          "actual": "-2.028240960365167e+31",
+          "expected": "-2.028240960365167e+31",
+          "passed": true
+        },
+        {
+          "name": "linear3 revenue",
+          "actual": "4.9303806576313227e-32",
+          "expected": "4.9303806576313227e-32",
+          "passed": true
+        },
+        {
+          "name": "linear3 revenue_derivative",
+          "actual": "-1.0",
+          "expected": "-1.0",
+          "passed": true
+        }
+      ],
+      "limits": "Selected complete model/report contract only;not universal conditioning or independent acceptance"
+    },
+    {
+      "original_probe": "centered nonfinite perturbation/callback consumption",
+      "disposition": "OPEN",
+      "limits": "Actual constant output0 is not a wrong analytic derivative claim;finite-preflight and callback-consumption contract remains for next scope."
+    }
+  ],
+  "COV_54": "PARTIAL",
+  "selected_categories_partial": 36,
+  "categories_closed": 0
+}

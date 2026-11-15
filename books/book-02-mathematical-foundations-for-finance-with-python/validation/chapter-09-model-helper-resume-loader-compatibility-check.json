@@ -1,0 +1,52 @@
+{
+  "executable_source_revision": null,
+  "baseline_source_revision": "2f3595ce24acb024f48ce9682d357863be8826bd",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_02.py",
+  "source_sha256": "a8936c70d7797cf1d68ee830d3ad0a323c9f287a76b24b79d842aae0d7f335ad",
+  "observations": [
+    {
+      "name": "constant demand pre-power underflow",
+      "actual": "{'quantity': 1e-308, 'derivative': -0.0, 'elasticity': -2.0}",
+      "kind": "returned",
+      "independent_expectation": {
+        "quantity": 1e-308,
+        "derivative": -0.0,
+        "elasticity": -2.0
+      },
+      "status": "DIAGNOSTIC OBSERVATION \u2014 not an acceptance result;consult explicit scoped dispositions"
+    },
+    {
+      "name": "income model normalization",
+      "actual": "-2.0",
+      "kind": "returned",
+      "independent_expectation": -2.0,
+      "status": "DIAGNOSTIC OBSERVATION \u2014 not an acceptance result;consult explicit scoped dispositions"
+    },
+    {
+      "name": "linear positive quantity cancellation",
+      "actual": "{'quantity': 4.930380657631324e-32, 'derivative': -1.0000000000000002, 'elasticity': -2.028240960365167e+31, 'revenue': 4.9303806576313227e-32, 'revenue_derivative': -1.0}",
+      "kind": "returned",
+      "independent_expectation": {
+        "quantity": 4.930380657631324e-32,
+        "derivative": -1.0000000000000002,
+        "elasticity": -2.028240960365167e+31,
+        "revenue": 4.9303806576313227e-32,
+        "revenue_derivative": -1.0
+      },
+      "status": "DIAGNOSTIC OBSERVATION \u2014 not an acceptance result;consult explicit scoped dispositions"
+    },
+    {
+      "name": "centered nonfinite perturbation/callback consumption",
+      "actual": "0.0",
+      "kind": "returned",
+      "independent_expectation": "Review finite-distinct preflight/zero-callback rejection policy;not a numeric derivative acceptance case",
+      "status": "DIAGNOSTIC OBSERVATION \u2014 not an acceptance result;consult explicit scoped dispositions"
+    }
+  ],
+  "centered_callback_nodes": [
+    "1e+308",
+    "inf",
+    "0.0"
+  ],
+  "limits": "Three executed model numeric probes and one separate callback/preflight design observation;no fixes or independent acceptance claimed."
+}

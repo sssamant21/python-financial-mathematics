@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-156 point/arc/rate scoped pass and V-157 full candidate Linux pass (610/397/611). Remaining model/centered helpers and independent/platform/release acceptance open.
+**Overall status:** In progress — V-158 model-helper scoped pass;V-157 remains latest full candidate Linux pass (610/397/611),pending refresh. Centered helper and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1332,3 +1332,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-157 checkpoint — Full pinned candidate Linux refresh
 
 [V-157 full runtime](runtime-refresh-2026-11-14-r8.md) at `2f3595ce24acb024f48ce9682d357863be8826bd`:610/610 Python files compiled,397/397 check-test scripts passed,611/611 required Python/fixture hashes verified before-after. Includes V-156 point/arc/rate changes;13 initial failed predicates/replay and three scoped probe resolutions retained separately. Remaining-helper checkpoint has three new OPEN model numeric cases plus a separate executed callback/preflight design observation,not passing script evidence. Exact staging runner,per-file output/digests and full manifest retained. Fresh main preserved concurrent quant/workflow changes. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.2 constant/linear/income helper contracts,resuming saved probes;then centered-elasticity scope. Book1 tracked independently.
+
+
+## V-158 checkpoint — Section9.2 constant/linear/income model contracts
+
+[Model evidence](chapter-09-model-contract-followup.md):94 corrected predicates pass;55 initial passes/39 failed predicates and identical replay retained. Independent1800/2400-digit powers/linear references,analytic income identity and input/report controls checked. Three numerical resume cases resolved only in explicit mapped scope;centered callback/preflight observation remains OPEN. Six files compiled,five commands/four checkers pass,six hashes verified before-after;earlier checkers unchanged. Lab escaped fences/dependency contract repaired;separate QA-loader import failure retained and two diagnostic loaders rerun. Fresh611/398/612 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.2 centered preflight/complete sampled report/callback contracts. Broader resource/platform/independent/release acceptance pending. Book1 tracked independently.

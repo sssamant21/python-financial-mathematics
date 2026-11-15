@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**NPV:** [\u2212100,110] at 10%. **Answer:** 0 in exact arithmetic.",
+    "review": "\u2212100+110/1.1=0 in printed exact arithmetic;source within absolute1e\u221210.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Rate \u2212.05:** Valid? **Answer:** Yes under this model.",
+    "review": "\u2212.05 is valid above\u22121;source PV95/.95=100.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Rate \u22121:** Valid? **Answer:** No.",
+    "review": "r\u22121 rejected;source boundary and original method.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Negative cash flow:** Automatically invalid? **Answer:** No.",
+    "review": "Signed negative cashflow accepted;source\u2212110/1.1=\u2212100.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Zero start:** Valid for simple return? **Answer:** No.",
+    "review": "Zero start rejects;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Zero end:** Return from 100 to 0. **Answer:** \u22121.",
+    "review": "Zero terminal price gives\u22121;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Negative end:** Accepted by this contract? **Answer:** No.",
+    "review": "Negative end rejects;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Empty flows:** Accepted? **Answer:** No.",
+    "review": "Empty flows reject;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**None flows:** Accepted? **Answer:** No.",
+    "review": "None flows reject before materialization;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**NaN:** Accepted? **Answer:** No.",
+    "review": "NaN member/rate rejects;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Infinity:** Accepted? **Answer:** No.",
+    "review": "Infinity member/rate/end rejects;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Boolean:** Accepted as cash flow? **Answer:** No.",
+    "review": "Exact bool type rejected despite int subclass;source member/rate/start cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**String number:** Accepted? **Answer:** No.",
+    "review": "Text container/members/rate/start reject;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Decimal input:** Accepted by this implementation? **Answer:** No.",
+    "review": "Decimal member/start rejected because source gate only built-in int/float.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Rate 5%:** Decimal value? **Answer:** .05.",
+    "review": "Separate exact5/100=.05 unit arithmetic,not a source conversion API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**100 bp:** Decimal value? **Answer:** .01.",
+    "review": "Separate100/10000=.01 unit arithmetic;not a source conversion API.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Currency:** Does npv validate it? **Answer:** No.",
+    "review": "No currency interface;conceptual cross-field validation remains external.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Dates:** Does npv validate them? **Answer:** No.",
+    "review": "No dated-flow interface;positional timing only.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Timing:** What does the first cash flow mean? **Answer:** Time zero.",
+    "review": "enumerate starts0,sofirst flow is time-zero;source formula inspection and known cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Missing:** Same as zero? **Answer:** No.",
+    "review": "None differs from numeric zero;None rejects whilezero flows are valid;source cases.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**assert:** Safe as sole production validation? **Answer:** No.",
+    "review": "Optimized suite passes explicit exception validation;not assert-only safeguards.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Error handling:** Should every exception become zero? **Answer:** No.",
+    "review": "Late iterator TypeError and RuntimeError propagate rather than becoming a plausible0.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Overflow:** Can it occur for valid mathematical inputs? **Answer:** Yes.",
+    "review": "True final return overflow rejects;broader nonzero NPV extreme range remains limited.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Underflow:** Does the code detect all cases? **Answer:** No.",
+    "review": "Not every log/exp discount underflow detected;scope limitation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Domain:** Does r>\u22121 establish an appropriate real-world rate? **Answer:** No.",
+    "review": "r>\u22121 is mathematical domain,not real-world model approval.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Price type:** Validated? **Answer:** No.",
+    "review": "No price-type identity check;conceptual missing contract.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Availability:** Validated? **Answer:** No.",
+    "review": "No availability timestamp API;earlier temporal evidence remains separate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Cross-field rule:** Example? **Answer:** Confirm both prices use the same currency.",
+    "review": "Matching currencies/units require a surrounding schema;not implemented here.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Timestamp:** Is a date alone an instant? **Answer:** No.",
+    "review": "A date alone lacks time/zone/offset;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Quarantine:** Purpose? **Answer:** Separate invalid records for review.",
+    "review": "Quarantine is a design proposal,not executed batch storage.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Partial batch:** Automatically complete? **Answer:** No.",
+    "review": "Materialized subset does not establish full source coverage/completeness;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Error text:** Should it expose secrets? **Answer:** No.",
+    "review": "Source messages omit supplied values,but arbitrary caller iterator exceptions need their own logging policy;no generic secret-redaction claim.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Model suitability:** Proved by valid types? **Answer:** No.",
+    "review": "Valid types do not establish model suitability;independent review pending.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Calendar:** Does the code validate trading days? **Answer:** No.",
+    "review": "No trading-calendar API;conceptual limitation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Rate \u22121.01:** Valid? **Answer:** No.",
+    "review": "r\u22121.01 rejects;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Zero rate:** Valid? **Answer:** Yes.",
+    "review": "Zero rate valid;source known-value case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Zero NPV:** Is it necessarily an error? **Answer:** No.",
+    "review": "Known NPV\u22480 valid,not an error sentinel;source case.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Source accuracy:** Does this code certify it? **Answer:** No.",
+    "review": "Input validation does not certify source provenance/freshness;conceptual review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Historical publication inclusion statement retained;actual scoped execution recorded.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production:** Do these checks alone certify readiness? **Answer:** No.",
+    "review": "No production/platform/financial-data/release certification.",
+    "status": "reviewed scoped"
+  }
+]

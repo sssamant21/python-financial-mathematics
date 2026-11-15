@@ -1,0 +1,51 @@
+{
+  "executable_source_revision": "2f3595ce24acb024f48ce9682d357863be8826bd",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_02.py",
+  "source_sha256": "dd14e4b6b4fb24fddf5956c8763d405ff1282c9032dc4372ebe663c70a45f92c",
+  "observations": [
+    {
+      "name": "constant demand pre-power underflow",
+      "actual": "ValueError('point elasticity requires nonzero input and output')",
+      "kind": "ValueError",
+      "independent_expectation": {
+        "quantity": 1e-308,
+        "derivative": -0.0,
+        "elasticity": -2.0
+      },
+      "status": "OPEN \u2014 next model/centered helper scope;not a passing acceptance case"
+    },
+    {
+      "name": "income model normalization",
+      "actual": "ValueError('point elasticity requires nonzero input and output')",
+      "kind": "ValueError",
+      "independent_expectation": -2.0,
+      "status": "OPEN \u2014 next model/centered helper scope;not a passing acceptance case"
+    },
+    {
+      "name": "linear positive quantity cancellation",
+      "actual": "ValueError('require positive price, intercept, slope, and quantity')",
+      "kind": "ValueError",
+      "independent_expectation": {
+        "quantity": 4.930380657631324e-32,
+        "derivative": -1.0000000000000002,
+        "elasticity": -2.028240960365167e+31,
+        "revenue": 4.9303806576313227e-32,
+        "revenue_derivative": -1.0
+      },
+      "status": "OPEN \u2014 next model/centered helper scope;not a passing acceptance case"
+    },
+    {
+      "name": "centered nonfinite perturbation/callback consumption",
+      "actual": "0.0",
+      "kind": "returned",
+      "independent_expectation": "Review finite-distinct preflight/zero-callback rejection policy;not a numeric derivative acceptance case",
+      "status": "OPEN \u2014 next model/centered helper scope;not a passing acceptance case"
+    }
+  ],
+  "centered_callback_nodes": [
+    "1e+308",
+    "inf",
+    "0.0"
+  ],
+  "limits": "Three executed model numeric probes and one separate callback/preflight design observation;no fixes or independent acceptance claimed."
+}

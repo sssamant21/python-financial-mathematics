@@ -1,6 +1,7 @@
 """Section 9.2: elasticity calculations and financial interpretation."""
 import math
 from fractions import Fraction
+from section_9_01 import demand_sensitivity as _reviewed_demand_sensitivity
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -46,25 +47,30 @@ def constant_elasticity_demand(price, scale=400, exponent=-1.5):
     p, a, e = finite(price,"price"), finite(scale,"scale"), finite(exponent,"exponent")
     if p <= 0 or a <= 0:
         raise ValueError("price and scale must be positive")
-    q = a*p**e
-    return {"quantity":q,"derivative":e*q/p,
-            "elasticity":point_elasticity(p,q,e*q/p)}
+    result = _reviewed_demand_sensitivity(p,a,e)
+    return {"quantity":result["quantity"], "derivative":result["absolute"],
+            "elasticity":result["elasticity"]}
 
 def linear_demand(price, intercept=100, slope=2):
     p, a, b = finite(price,"price"), finite(intercept,"intercept"), finite(slope,"slope")
-    if p <= 0 or a <= 0 or b <= 0 or a-b*p <= 0:
+    if p <= 0 or a <= 0 or b <= 0:
         raise ValueError("require positive price, intercept, slope, and quantity")
-    q = a-b*p
-    return {"quantity":q,"derivative":-b,
-            "elasticity":point_elasticity(p,q,-b),
-            "revenue":p*q,"revenue_derivative":q-b*p}
+    P,A,B = map(Fraction,(p,a,b))
+    q = A-B*P
+    if q <= 0:
+        raise ValueError("require positive price, intercept, slope, and quantity")
+    # The model knows exact q>0 even if its float report underflows.
+    return {"quantity":_rational_report(q), "derivative":-b,
+            "elasticity":_rational_report(-B*P/q),
+            "revenue":_rational_report(P*q),
+            "revenue_derivative":_rational_report(A-2*B*P)}
 
 def income_elasticity(income, scale=5, exponent=0.7):
     i, a, e = finite(income,"income"), finite(scale,"scale"), finite(exponent,"exponent")
     if i <= 0 or a <= 0:
         raise ValueError("income and scale must be positive")
-    q = a*i**e
-    return point_elasticity(i,q,e*q/i)
+    # Exact positive power model has I*Q'(I)/Q(I)=e;Q is not an output here.
+    return e
 
 def discounted_rate_elasticity(rate, years):
     r, t = finite(rate,"rate"), finite(years,"years")

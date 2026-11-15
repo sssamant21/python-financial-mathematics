@@ -1,0 +1,12 @@
+{
+  "scope": "QA loader dependency failure,not numerical source failure",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-model-helper-resume-probes.txt",
+    ".",
+    "dependency-check-initial"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-input-models/books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-model-helper-resume-probes.txt\", line 4, in <module>\n    r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'initial';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';p=b/'chapter-09/code/section_9_02.py';spec=importlib.util.spec_from_file_location('remaining_elasticity_helpers',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)\n                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap_external>\", line 999, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 488, in _call_with_frames_removed\n  File \"/workspace/scratch/e0bed2e906cb/validation-input-models/books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_02.py\", line 4, in <module>\n    from section_9_01 import demand_sensitivity as _reviewed_demand_sensitivity\nModuleNotFoundError: No module named 'section_9_01'\n"
+}

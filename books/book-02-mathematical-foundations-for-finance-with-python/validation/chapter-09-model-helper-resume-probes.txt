@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,json,importlib.util,hashlib,math
 from fractions import Fraction
-r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'initial';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';p=b/'chapter-09/code/section_9_02.py';spec=importlib.util.spec_from_file_location('remaining_elasticity_helpers',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+r=Path(sys.argv[1]).resolve();tag=sys.argv[2] if len(sys.argv)>2 else 'replay';b=r/'books/book-02-mathematical-foundations-for-finance-with-python';p=b/'chapter-09/code/section_9_02.py';sys.path.insert(0,str(p.parent));spec=importlib.util.spec_from_file_location('remaining_elasticity_helpers',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 low=Fraction(1e308);quantity=float(low*low**(-2));P=Fraction(1-math.ulp(1.));B=Fraction(1+math.ulp(1.));Q=1-B*P;linear=dict(quantity=float(Q),derivative=float(-B),elasticity=float(-B*P/Q),revenue=float(P*Q),revenue_derivative=float(1-2*B*P));seen=[]
 def callback(x):seen.append(repr(x));return 1.
 rows=[]
@@ -9,4 +9,6 @@ for name,fn,want in [('constant demand pre-power underflow',lambda:m.constant_el
  try:a=repr(fn());kind='returned'
  except Exception as e:a=repr(e);kind=type(e).__name__
  rows.append(dict(name=name,actual=a,kind=kind,independent_expectation=want,status='OPEN — next model/centered helper scope;not a passing acceptance case'))
-d=dict(executable_source_revision='2f3595ce24acb024f48ce9682d357863be8826bd',source_path=str(p.relative_to(r)),source_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),observations=rows,centered_callback_nodes=seen,limits='Three executed model numeric probes and one separate callback/preflight design observation;no fixes or independent acceptance claimed.');(b/'validation'/('chapter-09-model-helper-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(d,indent=2))
+if tag not in ('initial','before-fix-replay'):
+ for item in rows:item['status']='DIAGNOSTIC OBSERVATION — not an acceptance result;consult explicit scoped dispositions'
+d=dict(executable_source_revision=None,baseline_source_revision='2f3595ce24acb024f48ce9682d357863be8826bd',source_path=str(p.relative_to(r)),source_sha256=hashlib.sha256(p.read_bytes()).hexdigest(),observations=rows,centered_callback_nodes=seen,limits='Three executed model numeric probes and one separate callback/preflight design observation;no fixes or independent acceptance claimed.');(b/'validation'/('chapter-09-model-helper-resume-'+tag+'.json')).write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(d,indent=2))
