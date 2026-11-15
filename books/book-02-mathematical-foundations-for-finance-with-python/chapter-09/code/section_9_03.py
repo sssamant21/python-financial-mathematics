@@ -1,6 +1,7 @@
 """Book 02 Section 9.3: first-order Taylor approximation."""
 import math
 from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -51,7 +52,20 @@ def discount_value(cash_flow, years, rate):
     c, t, r = finite(cash_flow,"cash_flow"), finite(years,"years"), finite(rate,"rate")
     if c <= 0 or t < 0:
         raise ValueError("cash_flow must be positive and years nonnegative")
-    return c*math.exp(-t*r)
+    if t == 0:
+        return c
+    exponent = -Fraction(t)*Fraction(r)
+    # A finite binary64 coefficient cannot rescue these exponent bounds.
+    if exponent > 10000:
+        raise ValueError("discounted value outside finite float range")
+    if exponent < -10000:
+        return 0.0
+    with localcontext(Context(prec=1300)):
+        power = Decimal(exponent.numerator)/Decimal(exponent.denominator)
+        result = float(Decimal(c)*power.exp())
+    if not math.isfinite(result):
+        raise ValueError("discounted value outside finite float range")
+    return result
 
 def discount_shock(cash_flow, years, rate, shock):
     c, t, r, h = (finite(v,n) for v,n in

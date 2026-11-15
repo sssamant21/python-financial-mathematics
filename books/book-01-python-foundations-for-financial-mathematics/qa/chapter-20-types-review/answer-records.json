@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Type hint:** Purpose? **Answer:** Describe an interface for readers and tools.",
+    "review": "Annotations describe interface;runtime schema observations are separate from static analysis.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Runtime:** Are annotations automatically enforced? **Answer:** No.",
+    "review": "Intro zero-start call raises native ZeroDivisionError;annotations add no runtime enforcement.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Rate:** Does float specify percent versus decimal? **Answer:** No.",
+    "review": "Decimal-rate units require documentation;not encoded by float.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Price:** Does float specify currency? **Answer:** No.",
+    "review": "Currency not encoded by float.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Optional:** Meaning of float | None? **Answer:** Either a float or None in the annotation.",
+    "review": "get_type_hints resolves float|None optional annotation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Missing:** Is None the same as zero? **Answer:** No.",
+    "review": "None and zero separately rejected by require_price.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Iterable:** Can it be a generator? **Answer:** Yes.",
+    "review": "Actual generator source NPV passes.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Generator:** Does list(cashflows) consume it? **Answer:** Yes.",
+    "review": "Actual consumption order retained before invalid-rate rejection.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Empty iterable:** Accepted by reference NPV? **Answer:** No.",
+    "review": "Empty source iterable rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Known NPV:** [\u2212100.0,110.0] at .1. **Answer:** 0 in exact arithmetic.",
+    "review": "Independent represented-rate Fraction NPV benchmark;printed exact0,source tolerance1e\u221210.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Negative rate:** Is \u2212.05 valid here? **Answer:** Yes.",
+    "review": "Negative\u2212.05 accepted.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Rate \u22121:** Valid? **Answer:** No.",
+    "review": "Rate\u22121 rejected.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Boolean:** Accepted as float input? **Answer:** No, under the explicit runtime rule.",
+    "review": "Strict float-only runtime rejects bool.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Integer:** Accepted as a cash flow here? **Answer:** No.",
+    "review": "Strict float-only runtime rejects integer members.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Static checker:** Might it permit int for float? **Answer:** Yes.",
+    "review": "Static numerical-tower acceptance discussed conceptually;no mypy/pyright execution available.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Decimal:** Does its annotation define currency? **Answer:** No.",
+    "review": "Decimal annotation contains no currency semantics.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Decimal return:** 100\u2192101.50. **Answer:** .015.",
+    "review": "Independent1600/2000-digit return benchmark .015.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Decimal context:** Why specify it? **Answer:** Precision and rounding affect arithmetic.",
+    "review": "Private28-digit rounding/context now isolated;ambient trap/range/rounding checks executed.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**NewType:** What can it help a checker distinguish? **Answer:** Conceptually distinct types.",
+    "review": "NewType annotation concept reviewed;runtime identity observations separate.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**NewType:** Does it validate a rate at runtime? **Answer:** No.",
+    "review": "Actual NewType bool identity shows no runtime validation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Alias:** Does it enforce a domain? **Answer:** No.",
+    "review": "Alias domain enforcement conceptual;no alias API invented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Data class:** Do annotations alone validate fields? **Answer:** No.",
+    "review": "Data-class validation conceptual;no data-class API implemented.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**NaN:** Accepted here? **Answer:** No.",
+    "review": "NaN source controls reject.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Infinity:** Accepted here? **Answer:** No.",
+    "review": "Infinity source controls reject.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Zero price:** Accepted by require_price? **Answer:** No.",
+    "review": "Zero price rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**None:** Accepted by require_price? **Answer:** No.",
+    "review": "None price rejects.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Rate units:** Why document them? **Answer:** A number alone does not specify meaning.",
+    "review": "Rate-unit semantics conceptual;not inferred from annotations.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**assert:** Sole production validation? **Answer:** No.",
+    "review": "Optimized source suite passes explicit runtime validation.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Compilation:** Does it execute tests? **Answer:** No.",
+    "review": "Compilation separately executes compileall;does not execute source tests.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Static check:** Does it prove financial accuracy? **Answer:** No.",
+    "review": "No static-checker or financial correctness certification.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Model validation:** Replaced by annotations? **Answer:** No.",
+    "review": "Annotations do not replace model review.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Currency:** Checked by NPV example? **Answer:** No.",
+    "review": "No currency input in NPV model.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Dates:** Modeled by NPV example? **Answer:** No.",
+    "review": "No date contract in source NPV.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Cash-flow timing:** What does position zero mean? **Answer:** Time zero.",
+    "review": "Position0 is undiscouned t0 in independently derived ordinary NPV sum.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Overflow:** Can finite inputs trigger it? **Answer:** Yes.",
+    "review": "Numerical range remains bounded;all-range NPV not established.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Underflow:** Fully detected? **Answer:** No.",
+    "review": "All-underflow detection remains outside scope.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Checker version:** Why record it? **Answer:** Results depend on tool and configuration.",
+    "review": "Both optional checker packages absent;configuration/versioned execution pending.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Unsupported type:** What should contract say? **Answer:** Which types are accepted and how others fail.",
+    "review": "Actual float-only built-in policy and unsupported types documented/tested.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Tests:** Does inclusion mean execution? **Answer:** No.",
+    "review": "Twelve existing methods actually ran36 invocations;inclusion alone is not execution.",
+    "status": "reviewed scoped"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Production readiness:** Established by hints and these tests? **Answer:** No.",
+    "review": "No platform,financial/model or production acceptance.",
+    "status": "reviewed scoped"
+  }
+]

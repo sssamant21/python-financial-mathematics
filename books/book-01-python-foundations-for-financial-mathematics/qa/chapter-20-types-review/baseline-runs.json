@@ -1,0 +1,22 @@
+[
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-types-review/review.py",
+      "5386dc2e5da136dbb1f31bbcc015a86b4d4fb190"
+    ],
+    "returncode": 1,
+    "stdout": "46 source predicates; 5 failed;5 separate annotation controls;5 commands\n",
+    "stderr": "/workspace/scratch/e0bed2e906cb/validation-types-discount/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-types-review/review.py:48: SyntaxWarning: \"is\" with 'float' literal. Did you mean \"==\"?\n  ns={};exec(fences[0],ns);cases=[('intro zero',lambda:ns['simple_return'](0.,1.),'ZeroDivisionError'),('NewType float identity',lambda:m.DecimalRate(0.05) is 0.05,True),('NewType does not validate bool',lambda:m.DecimalRate(True) is True,True),('optional annotation',lambda:typing.get_type_hints(m.require_price)['value']==(float|None),True),('return annotation',lambda:typing.get_type_hints(m.decimal_return)['return'] is Decimal,True)]\nTraceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-types-discount/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-types-review/review.py\", line 55, in <module>\n    (OUT/('baseline.json' if REV else 'results.json')).write_text(json.dumps(d,indent=2)+'\\n');print(len(rows),'source predicates;',sum(not x['passed'] for x in rows),'failed;5 separate annotation controls;5 commands');assert all(x['passed'] for x in rows+supp) and all(x['returncode']==0 for x in commands)\n                                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-types-review/review.py",
+      "5386dc2e5da136dbb1f31bbcc015a86b4d4fb190"
+    ],
+    "returncode": 1,
+    "stdout": "46 source predicates; 5 failed;5 separate annotation controls;5 commands\n",
+    "stderr": "/workspace/scratch/e0bed2e906cb/validation-types-discount/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-types-review/review.py:48: SyntaxWarning: \"is\" with 'float' literal. Did you mean \"==\"?\n  ns={};exec(fences[0],ns);cases=[('intro zero',lambda:ns['simple_return'](0.,1.),'ZeroDivisionError'),('NewType float identity',lambda:m.DecimalRate(0.05) is 0.05,True),('NewType does not validate bool',lambda:m.DecimalRate(True) is True,True),('optional annotation',lambda:typing.get_type_hints(m.require_price)['value']==(float|None),True),('return annotation',lambda:typing.get_type_hints(m.decimal_return)['return'] is Decimal,True)]\nTraceback (most recent call last):\n  File \"/workspace/scratch/e0bed2e906cb/validation-types-discount/books/book-01-python-foundations-for-financial-mathematics/qa/chapter-20-types-review/review.py\", line 55, in <module>\n    (OUT/('baseline.json' if REV else 'results.json')).write_text(json.dumps(d,indent=2)+'\\n');print(len(rows),'source predicates;',sum(not x['passed'] for x in rows),'failed;5 separate annotation controls;5 commands');assert all(x['passed'] for x in rows+supp) and all(x['returncode']==0 for x in commands)\n                                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  }
+]

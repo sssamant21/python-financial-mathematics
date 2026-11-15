@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-14
-**Overall status:** In progress — V-162 affine/generic scope and V-163 full candidate Linux pass (613/400/614). Discounted Taylor helper failure and independent/platform/release acceptance remain open.
+**Overall status:** In progress — V-164 standalone discounted-value scoped pass;V-163 remains latest full candidate Linux pass (613/400/614),pending refresh. Discounted shock/error reports and independent/platform/release acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1367,3 +1367,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-163 checkpoint — Full pinned candidate Linux refresh
 
 [V-163 full runtime](runtime-refresh-2026-11-14-r11.md) at `067c4205c8339341e1f76352f60fdf4fd2615b78`:613/613 Python files compiled,400/400 check-test scripts passed,614/614 required Python/fixture hashes verified before-after. Includes V-162 affine/report contracts;39 initial failed predicates/replay,one first-correction signed-zero failure/replay and125 corrected predicates retained separately. Historical records unchanged;two selected prior probes scoped resolved. Actual post-affine diagnostics retain discounted-value rescue OPEN,not passing script evidence. Exact staging runner,per-file outcomes/digests and full manifest retained. One candidate Linux runtime;36 selected COV categories partial,none closed. Independent mathematical/editorial/platform/release/canonical acceptance pending. Next:Section9.3 discounted value/shock/error-report contracts,then ladder/revenue. Book1 tracked independently.
+
+
+## V-164 checkpoint — Section9.3 complete discounted value
+
+[Value evidence](chapter-09-discount-value-followup.md):34 corrected predicates pass;26 initial passes/eight failed predicates and identical replay retained. Independent1800/2400-digit complete-value references and input/private-context controls checked. Saved finite-value rescue scoped resolved;historical records unchanged. Four files compiled,four commands/three checkers pass,four hashes verified before-after;only discount_value text changed,downstream shock baseline benefits but shock/error report scope remains open. Fresh614/401/615 inventory is not full execution;full pinned refresh next. All36 selected COV categories partial,none closed. Next after refresh:Section9.3 discounted shock/error-report contracts,then ladder/revenue. Broader financial/resources/platform/independent acceptance pending. Book1 tracked independently.
