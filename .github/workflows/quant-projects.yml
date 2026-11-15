@@ -279,6 +279,13 @@ jobs:
           python -m unittest -v test_numerical_reference.py
           python -m compileall -q test_numerical_reference.py
 
+      - name: Validate Project 36 Asian option Monte Carlo
+        run: |
+          cd quant-projects/36-asian-option-monte-carlo
+          python -m unittest -v test_asian_option.py
+          python -m compileall -q asian_option.py test_asian_option.py
+          python asian_option.py --pairs 100 --observations 12 --seed 2026
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
