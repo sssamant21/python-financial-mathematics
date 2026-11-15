@@ -22,3 +22,18 @@ Try `--observations 1`, `12`, and `52` to explore averaging-frequency sensitivit
 ## Guardrails and validation boundaries
 
 Only finite positive spot, strike, maturity, and volatility are accepted; rates must be finite, and extreme exponents are rejected. Pair counts and monitoring counts are bounded. No downloaded data, historical calibration, dividends, stochastic volatility, volatility smile, jumps, liquidity, counterparty risk, broker access, or trading actions. The reported standard error is descriptive and does not prove coverage or pricing accuracy. Synthetic regression tests check reproducibility, a one-observation identity, zero payoff, finite results, and invalid inputs. Independent model review, exact-source hosted CI, and production suitability remain **unverified**.
+
+
+## Geometric-average benchmark and control variate
+
+The discrete geometric average is lognormal under the same risk-neutral GBM assumptions. For post-initial observation dates t_i=iT/n, log(G) has mean m=log(S0)+(r-sigma²/2)T(n+1)/(2n) and variance v=sigma² T(n+1)(2n+1)/(6n²). The discounted geometric-call expectation is exp(-rT)[exp(m+v/2)Phi((m+v-log K)/sqrt(v))-K Phi((m-log K)/sqrt(v))].
+
+`geometric_control.py` simulates the arithmetic and geometric payoffs on **identical antithetic paths**, then uses a **predeclared coefficient of 1**: controlled pair payoff = arithmetic pair payoff - (geometric pair payoff - exact geometric price). This avoids in-sample beta fitting; it does **not** guarantee lower variance for all parameters. Both standard errors are calculated across independent antithetic pair means. With one maturity observation, arithmetic and geometric payoffs coincide and the controlled estimator equals the exact geometric/vanilla price up to floating-point rounding.
+
+```sh
+python -m unittest -v test_geometric_control.py
+python -m compileall -q geometric_control.py test_geometric_control.py
+python geometric_control.py --pairs 5000 --observations 12 --seed 2026
+```
+
+The analytical expression is a same-model benchmark, **not** independently certified market pricing. The fixed-coefficient estimator can be negative in extreme finite-sample cases; do not interpret it as an arbitrage quote. Local standalone tests (5/5), compilation, and CLI smoke passed on the authored source; exact published-source hosted CI and independent review must be checked separately.
