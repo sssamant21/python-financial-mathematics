@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `0fb97b446e60fb02d2accb229e8104c02ded1cfd` (V-199)
-**Latest scoped source:** V-200 at `8d6d04dd896e46009785a33619a0fdef564eef78`; [six-source manifest](chapter-09-spot-publication-r21.json).
+**Full-runtime candidate source revision:** `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4` (V-202)
+**Latest scoped source:** V-201 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`;[three-source manifest](chapter-09-project-baseline-publication-r22.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-200 spot scoped pass;V-199 older-pin full runtime pass. Project baseline and broader report/independent/platform/release acceptance remain open.
+**Disposition:** V-201 project baseline scoped pass;V-202 full candidate Linux runtime pass. Scenario/bounds/report and broader independent/platform/release acceptance remain open.
 
 ## Reconciled evidence
 
@@ -1485,3 +1485,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-200 checkpoint — Section9.8 complete spot facade reports
 
 [Spot evidence](chapter-09-spot-followup-r21.md):147 corrected predicates pass;126 initial passes/21 failures and actual identical replay retained. Eight factor-range,eight rescued-endpoint and five lost-baseline-leg field observations,not21 unique defects. Independent1800/2400-digit original cash/rate/shock references;positive finite reported baseline and returned-field gates retained,no unused derivative gate. Metadata/ownership/iterator/schema properties explicit;parallel/helper text unchanged. Six files compiled/six commands/five checkers pass with before/after hashes. Fresh634/421/635 inventory is not full execution;V199 remains latest full pass at older pin. Section9.8 manuscript now links scoped policies/evidence,broader manuscript/exercise/provenance/policy obligations open. Next9.9 complete project baseline/range/normalization;fresh finite-five-field OverflowError diagnostic/replay checkpointed.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-201 checkpoint — Section9.9 complete project baseline
+
+[Baseline evidence](chapter-09-project-baseline-followup-r22.md):101 corrected predicates pass;81 initial passes/20 failures and actual identical replay retained.14 numerical fields and six range-policy observations from one true-overflow case,not20 unique defects. Independent1800/2400-digit original-input complete value/first/second/normalized/terms references;latent normalization before final conversion,finite positive reported value/all finite fields required. Three files compiled/three commands/two checkers pass with before/after hashes. Scenario/project function text unchanged. Manuscript third-derivative architecture corrected separately. Fresh scenario/bound diagnostics and replay remain OPEN.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+## V-202 checkpoint — Full pinned candidate Linux refresh
+
+[V-202 runtime](runtime-refresh-2026-11-15-r22.md) at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`:635/635 Python files compiled,422/422 scripts passed,636/636 required blobs verified before/after. Includes accumulated147 spot and101 project-baseline predicates with initial failures/replays and explicit policies. Full scenario/bounds/shifted-rate/report obligations remain OPEN;two fresh pinned diagnostics retained. Next complete9.9 scenario contracts.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.

@@ -1,0 +1,44 @@
+{
+  "mode": "baseline",
+  "baseline_revision": "e99a097131fc85ecc4109d84fd0039f8aea873a1",
+  "executable_source_revision": "a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py",
+      "sha": "2f4d5ef35404dd693908f90d16ebc7ef19ffe922",
+      "revision": "e99a097131fc85ecc4109d84fd0039f8aea873a1"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_09.py",
+      "sha": "d2254074fe6d07a6d2b6a8e6abed91f2c4df6095",
+      "revision": "a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_09_baseline_contracts.py",
+      "sha": "02c9304a7d35c376aff95554c206cdba5a453e7c",
+      "revision": "a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4"
+    }
+  ],
+  "compiled": [
+    "section_9_09.py",
+    "check_section_9_09.py",
+    "check_section_09_baseline_contracts.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_09_baseline_contracts.py",
+        "/workspace/scratch/e0bed2e906cb/validation-plot-r22/books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-project-baseline-isolated-replay-r22-predicates.json"
+      ],
+      "returncode": 1,
+      "stdout": "{\"predicates\": 101, \"passed\": 81, \"failed\": 20}\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp2slln1xs/check_section_09_baseline_contracts.py\", line 44, in <module>\n    print(json.dumps(dict(predicates=len(rows),passed=d['passed'],failed=d['failed'])));assert d['failed']==0\n                                                                                               ^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "limits": "Three-file scope; no full runtime or independent mathematical/model/platform/release/canonical acceptance. Baseline checker intentionally fails."
+}

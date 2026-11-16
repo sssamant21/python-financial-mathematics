@@ -1,0 +1,23 @@
+{
+  "predicates": [
+    {
+      "case": "core import without plotting dependency",
+      "passed": true
+    },
+    {
+      "case": "invalid input rejected before plotting import",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "case": "valid input requires optional plotting dependency",
+      "actual": "ImportError",
+      "expected": "ImportError",
+      "passed": true
+    }
+  ],
+  "passed": 3,
+  "failed": 0,
+  "limits": "Source import hook blocks optional dependency;not package metadata/extras/clean-wheel or installation approval."
+}

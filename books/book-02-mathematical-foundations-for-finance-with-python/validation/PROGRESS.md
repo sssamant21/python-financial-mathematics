@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-200 spot scoped pass (147 predicates); latest full Linux pass remains V-199 at older pin (633/420/634). Next project baseline contracts;broader report/model/platform acceptance open.
+**Overall status:** In progress — V-201 complete project-baseline scoped pass (101 predicates);V-202 full candidate Linux pass635/422/636 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`. Scenario/bounds/report and broader acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 633/633 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`. [V-199](runtime-refresh-2026-11-15-r20.md). |
-| Automated script execution | Full candidate Linux pass | 420/420 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`;634 required blobs verified before/after. [V-199](runtime-refresh-2026-11-15-r20.md). |
+| Python compilation | Full candidate Linux pass | 635/635 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`. [V-202](runtime-refresh-2026-11-15-r22.md). |
+| Automated script execution | Full candidate Linux pass | 422/422 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`;636 required blobs verified before/after. [V-202](runtime-refresh-2026-11-15-r22.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1611,3 +1611,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-200 checkpoint — Section9.8 complete spot facade reports
 
 [Spot evidence](chapter-09-spot-followup-r21.md):147 corrected predicates pass;126 initial passes/21 failures and actual identical replay retained. Eight factor-range,eight rescued-endpoint and five lost-baseline-leg field observations,not21 unique defects. Independent1800/2400-digit original cash/rate/shock references;positive finite reported baseline and returned-field gates retained,no unused derivative gate. Metadata/ownership/iterator/schema properties explicit;parallel/helper text unchanged. Six files compiled/six commands/five checkers pass with before/after hashes. Fresh634/421/635 inventory is not full execution;V199 remains latest full pass at older pin. Section9.8 manuscript now links scoped policies/evidence,broader manuscript/exercise/provenance/policy obligations open. Next9.9 complete project baseline/range/normalization;fresh finite-five-field OverflowError diagnostic/replay checkpointed.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-201 checkpoint — Section9.9 complete project baseline
+
+[Baseline evidence](chapter-09-project-baseline-followup-r22.md):101 corrected predicates pass;81 initial passes/20 failures and actual identical replay retained.14 numerical fields and six range-policy observations from one true-overflow case,not20 unique defects. Independent1800/2400-digit original-input complete value/first/second/normalized/terms references;latent normalization before final conversion,finite positive reported value/all finite fields required. Three files compiled/three commands/two checkers pass with before/after hashes. Scenario/project function text unchanged. Manuscript third-derivative architecture corrected separately. Fresh scenario/bound diagnostics and replay remain OPEN.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+## V-202 checkpoint — Full pinned candidate Linux refresh
+
+[V-202 runtime](runtime-refresh-2026-11-15-r22.md) at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`:635/635 Python files compiled,422/422 scripts passed,636/636 required blobs verified before/after. Includes accumulated147 spot and101 project-baseline predicates with initial failures/replays and explicit policies. Full scenario/bounds/shifted-rate/report obligations remain OPEN;two fresh pinned diagnostics retained. Next complete9.9 scenario contracts.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.

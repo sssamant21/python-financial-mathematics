@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.14 partial:** [Plot contracts/F215](chapter-21-visualization-contract-review/README.md):41 plot+3 dependency predicates,five commands and134 reference methods pass;PNG inspected. Formal40-answer/12-lab and updated plotting artifact remain OPEN;13 workflows/520 answers unchanged.
+
 - **Latest21.13:** [Validation review](chapter-21-validation-review/README.md):40 answers/12 labs,updated wheel and401 installed predicates;13 scoped workflows/520 local answers. Next21.14;F28/broad F32 and broader acceptance remain open.
 
 - **Latest21.13 partial:** [Source contracts/F214](chapter-21-validation-contract-review/README.md):46 corrected predicates/four commands and122 existing methods pass;initial UTC boundary failures/replay retained. Formal40-answer/12-lab and updated artifact remain OPEN;12 scoped workflows/480 local answers unchanged.
@@ -400,6 +402,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F212 | Section20.11 complete Decimal return and private context contract. | RESOLVED (scoped) —five source baseline failures/replay and46 corrected source predicates retained;five annotation controls separate. Static checker/configuration,Decimal resources,NPV/platform/independent acceptance remain open. [Evidence](chapter-20-types-review/README.md). |
 | F213 | Section20.12 documented noniterable ValueError/cause and iterator-stage contract. | RESOLVED (scoped) —two inputs/four baseline predicate failures/replay and32 corrected source predicates retained. Doc/help visibility observations separate;broader documentation/provenance/NPV/resource/platform acceptance open. [Evidence](chapter-20-docs-review/README.md). |
 | F214 | Section21.13 unsupported UTC conversion range leaked OverflowError. | RESOLVED (scoped source) —two initial boundary failures/identical replay,46 corrected source predicates and122 existing methods. Formal review/artifact and F28/broad F32 remain open. [Evidence](chapter-21-validation-contract-review/README.md). |
+| F215 | Section21.14 aware datetime UTC conversion extremes leaked OverflowError. | RESOLVED (scoped source) —two initial failures/identical replay,41 corrected plot+3 dependency predicates and134 reference methods. Formal review/wheel and F28/broad F32 open. [Evidence](chapter-21-visualization-contract-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -733,3 +736,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.13 — Scoped validation workflow, answers and updated wheel
 
 [Validation evidence](chapter-21-validation-review/README.md):40 answers/12 lab steps reviewed;12 fresh offline packaging commands pass;401 installed predicates (355 retained+46 validation) separate from122 existing methods/366 source-editable-wheel invocations,zero new historical methods. Three prior core source commands reused by21 exact hashes;corrected F214 initialfailures/replay retained,sourcefences unchanged this batch. New validation wheel/16exports differs fromsimulation artifact at sameillustrativeversion,not releaseapproval. Revision/freshness/authentication/adjustment/localtime policies and designobservations separate fromexecution. Chapter21 now13 scopedworkflows/520 localanswers. Next21.14 Visualization Layer. F28/broad F32,F209/static,F165/F185,R08–10 and broader data/resource/model/platform/release/independent acceptance remain OPEN.
+
+
+### Section21.14 — Partial visualization contracts and F215 (formal review OPEN)
+
+[Plot contract evidence](chapter-21-visualization-contract-review/README.md):41 corrected plot predicates plus3 separate dependency-boundary predicates/five source commands pass;134 existing reference methods/134 invocations,no newly authored unittest methods or historical-unique increment asserted. Initial39 passes/two UTC-range exception failures and actual identical replay retained. F215 normalizes UTC conversion failure to ValueError;only implementation fence changed. Synthetic exact-example PNG retained as base64/hash and visually inspected separately. Formal40 answers/12 labs and updated installed plotting artifact remain OPEN;Chapter21 remains13 scoped workflows/520 local answers. Next continue21.14 formal alignment/dependency/clean-consumer work. F28/broad F32,F209/static,F165/F185,R08–10 and broader source/data/resource/model/platform/release/independent acceptance remain OPEN.

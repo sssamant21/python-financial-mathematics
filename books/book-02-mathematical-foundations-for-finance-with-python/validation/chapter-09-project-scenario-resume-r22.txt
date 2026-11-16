@@ -1,0 +1,24 @@
+"""Next scenario/bounds diagnostics, separate from passing baseline checks.
+Usage: python THIS repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import subprocess,sys,json,tempfile,importlib.util,math
+r=Path(sys.argv[1]).resolve();out=Path(sys.argv[2]).resolve();pin='a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py';raw=subprocess.check_output(['git','show',pin+':'+path],cwd=r);rows=[]
+def oracle(flows,rate,bp,prec):
+ with localcontext(Context(prec=prec)):
+  R,H=map(Decimal,(rate,bp/10000.));V=S=L=K=M2=M3=Decimal(0);low=min(R,R+H)
+  for cash,time in flows:
+   C,T=map(Decimal,(cash,time));v=C*(-R*T).exp();V+=v;S+=C*(-(R+H)*T).exp();L-=T*v*H;K+=T*T*v*H*H/2;w=C*(-low*T).exp();M2+=T*T*w;M3+=T*T*T*w
+  E=S-V;Q=L+K
+  return dict(exact_change=float(E),linear_error=float(E-L),quadratic_error=float(E-Q),linear_bound=float(M2*H*H/2),quadratic_bound=float(M3*abs(H)**3/6))
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'project.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('scenario_pending',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for label,f,r0,bp in [('lost latent errors and cubic bound',[(1e308,1.)],0.,1e-196),('rescued vanished baseline leg',[(1e-308,2.),(1.,0.)],355.,-3550000.)]:
+  a=oracle(f,r0,bp,1800);b=oracle(f,r0,bp,2400);assert a==b and all(math.isfinite(x) for x in b.values())
+  try:
+   z=m.scenario(f,r0,bp);actual={k:z[k] for k in b};exc=None;passed=all(math.isclose(actual[k],b[k],rel_tol=5e-14,abs_tol=0.) for k in b)
+  except Exception as e:actual=None;exc=type(e).__name__;passed=False
+  rows.append(dict(case=label,flows=f,rate=r0,shock_bp=bp,expected=b,actual=actual,exception=exc,passed=passed,status='OPEN diagnostic'))
+d=dict(source_revision=pin,source_path=path,source_blob=subprocess.check_output(['git','rev-parse',pin+':'+path],cwd=r,text=True).strip(),diagnostics=rows,limits='Two fresh selected project scenario/bound observations,not101 baseline predicates or unique-defect counts. Independent original-input Decimal1800/2400 references;full scenario shifted-rate policy/report/provenance/bounds work pending.')
+out.write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(d));assert all(not x['passed'] for x in rows)

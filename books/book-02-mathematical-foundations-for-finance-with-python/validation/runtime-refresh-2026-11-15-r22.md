@@ -1,0 +1,11 @@
+# V-202 — Full pinned Book2 candidate Linux refresh
+
+Executable source `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`. Derived from this Git tree: **635/635 Python files compiled,422/422 check/test scripts passed,636/636 required Python/fixture blobs verified before and after execution**. Python3.12.14;Linux-6.18.57-x86_64-with-glibc2.41;assertions enabled,60-second timeout per script. Elapsed497.5 seconds.
+
+[Exact staging/execution runner](runtime-refresh-2026-11-15-r22-runner.txt), [full manifest/per-file outcomes/output digests](runtime-refresh-2026-11-15-r22.json). Reproduce: `python books/book-02-mathematical-foundations-for-finance-with-python/validation/runtime-refresh-2026-11-15-r22-runner.txt . a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4 books/book-02-mathematical-foundations-for-finance-with-python/validation`. All required files staged from pinned Git blobs,not working files.
+
+Includes accumulated [V-200 spot](chapter-09-spot-followup-r21.md)147 predicates and [V-201 project baseline](chapter-09-project-baseline-followup-r22.md)101 predicates,with original failures and identical actual replays retained. Initial21 spot field observations and20 baseline numerical/range observations are not unique defect counts. Baseline latent normalization,positive reported-value/all-finite guards and selected precision/resource policies remain explicit.
+
+[Fresh scenario/bound diagnostics](chapter-09-project-scenario-initial-r22.json), [identical replay](chapter-09-project-scenario-replay-r22.json) and [pinned runner](chapter-09-project-scenario-resume-r22.txt) remain OPEN:tiny latent errors/cubic bound lost,and a rescued vanished-baseline leg raises OverflowError. Full execution does not establish unasserted complete scenario/bounds/shifted-rate/report contracts. Next:Section9.9 scenario complete numerical/report/input/policy obligations;broader manuscript/exercise/provenance/resource acceptance remains open.
+
+All38 selected COV categories remain partial,none closed;categories are not defect counts or completion percentages. One Linux candidate pass is not supported-platform validation,universal accuracy/resource proof,independent mathematical/editorial/model/policy approval,release acceptance or canonical approval. Book1 has separate trackers.

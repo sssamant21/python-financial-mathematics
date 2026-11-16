@@ -1,0 +1,62 @@
+{
+  "source_revision": "a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py",
+  "source_blob": "91f7e3bfb19191971bd268fe329ec3b3903761f2",
+  "diagnostics": [
+    {
+      "case": "lost latent errors and cubic bound",
+      "flows": [
+        [
+          1e+308,
+          1.0
+        ]
+      ],
+      "rate": 0.0,
+      "shock_bp": 1e-196,
+      "expected": {
+        "exact_change": -1e+108,
+        "linear_error": 5e-93,
+        "quadratic_error": -1.6666666666666667e-293,
+        "linear_bound": 5e-93,
+        "quadratic_bound": 1.6666666666666667e-293
+      },
+      "actual": {
+        "exact_change": -1e+108,
+        "linear_error": 0.0,
+        "quadratic_error": 0.0,
+        "linear_bound": 5e-93,
+        "quadratic_bound": 0.0
+      },
+      "exception": null,
+      "passed": false,
+      "status": "OPEN diagnostic"
+    },
+    {
+      "case": "rescued vanished baseline leg",
+      "flows": [
+        [
+          1e-308,
+          2.0
+        ],
+        [
+          1.0,
+          0.0
+        ]
+      ],
+      "rate": 355.0,
+      "shock_bp": -3550000.0,
+      "expected": {
+        "exact_change": 1e-308,
+        "linear_error": 1e-308,
+        "quadratic_error": 1e-308,
+        "linear_bound": 2.5204999999999998e-303,
+        "quadratic_bound": 5.965183333333332e-301
+      },
+      "actual": null,
+      "exception": "OverflowError",
+      "passed": false,
+      "status": "OPEN diagnostic"
+    }
+  ],
+  "limits": "Two fresh selected project scenario/bound observations,not101 baseline predicates or unique-defect counts. Independent original-input Decimal1800/2400 references;full scenario shifted-rate policy/report/provenance/bounds work pending."
+}
