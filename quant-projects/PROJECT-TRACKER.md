@@ -784,3 +784,7 @@ The previously verified Project 38 CI run 43848309706 applies to the earlier
 review, or production certification. Next: confirm exact-source hosted CI,
 review near-equality floating-point boundary behavior and consider a distinct
 Project 39 after successful validation.
+
+### Project 38 adjacent-float quote-boundary regression (2026-11-16)
+
+Added two unittest methods to `38-put-call-parity/test_decimal_reference.py` that exercise lower/upper quote intervals one binary64 ULP below, at, and above an exactly representable zero-rate parity target. A manually reconstructed copy of `parity.py` and the two new methods passed **2/2 locally**, plus Python compilation. This was **not an exact published-source checkout**, and the full existing parity suite was **not executed**. Exact-revision hosted CI, independent mathematical review, real-market validation and production certification remain **unverified**. No trading or external data. Next: confirm the published combined parity suite in hosted CI, then consider a distinct Project 39.
