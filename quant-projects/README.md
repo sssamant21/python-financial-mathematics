@@ -234,3 +234,5 @@ Project 37 scale-aware tolerance follow-up: the joint solver now normalizes stri
 **Project 37 numerical reference:** `37-static-option-arbitrage/test_irregular_decimal_reference.py` compares irregular-grid point-quote classifications against an independent high-precision Decimal slope reference. Published-source CI and broader bid/ask interval reference validation remain pending.
 
 Project 37 also includes `test_interval_reference.py`, an independent exact-rational three-strike bid/ask interval-feasibility cross-check. Run `python -m unittest -v test_interval_reference.py` from `37-static-option-arbitrage/`; exact published-source CI and independent numerical review are tracked separately.
+
+Project 37 now also includes a five-strike exact-rational bid/ask interval oracle (`test_five_interval_reference.py`). Run `python -m unittest -v test_five_interval_reference.py` in its folder; hosted CI and independent numerical review must be checked on the exact revision.
