@@ -316,6 +316,14 @@ jobs:
           python fra.py --notional 1000000 --strike 0.04 --df-start 0.98 --df-end 0.96 --accrual 0.5
           python fra.py --pay-floating
 
+      - name: Validate Project 40 interest-rate swaps
+        run: |
+          cd quant-projects/40-interest-rate-swaps
+          python -m unittest -v test_swap.py
+          python -m compileall -q swap.py test_swap.py
+          python swap.py
+          python swap.py --receive-fixed
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
