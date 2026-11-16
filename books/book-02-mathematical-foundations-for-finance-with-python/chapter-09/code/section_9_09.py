@@ -67,35 +67,56 @@ def scenario(flows, rate, shock_bp):
     h = bp / 10000.0
     shifted_rate = finite(r + h, "shifted rate")
     base = baseline(items, r)
-    terms = base["terms"]
-    exact = math.fsum(v * math.expm1(-t * h)
-                      for (_, t), v in zip(items, terms))
-    linear = base["first"] * h
-    quadratic = linear + 0.5 * base["second"] * h * h
-    # Revalue directly: baseline + change can cancel a representable small PV.
-    exact_value = finite(math.fsum(c * math.exp(-shifted_rate * t)
-                                  for c, t in items), "exact value")
-    low_rate = min(r, shifted_rate)
-    worst = [c * math.exp(-low_rate * t) for c, t in items]
-    m2 = math.fsum(t * t * v for (_, t), v in zip(items, worst))
-    m3 = math.fsum(t * t * t * v for (_, t), v in zip(items, worst))
-    b1 = 0.5 * m2 * h * h
-    b2 = m3 * abs(h) ** 3 / 6.0
-    e1, e2 = exact - linear, exact - quadratic
-    values = (exact, linear, quadratic, b1, b2, e1, e2)
-    if not all(math.isfinite(x) for x in values):
-        raise ValueError("nonfinite scenario output")
+    # Keep the finite reported shifted-rate gate above, but form the
+    # mathematical endpoint and bounds from exact represented R + H.
+    R, H = map(Fraction, (r, h))
+    with localcontext(Context(prec=1700)):
+        def dec(value):
+            return Decimal(value.numerator) / Decimal(value.denominator)
+        def amount(C, exponent):
+            if exponent > 10000:
+                raise ValueError("scenario report outside finite float range")
+            return Decimal(0) if exponent < -10000 else dec(C) * dec(exponent).exp()
+        def reported(value):
+            result = float(value)
+            if not math.isfinite(result):
+                raise ValueError("scenario report outside finite float range")
+            return result
+        value = shifted = first = second = bound1 = bound2 = Decimal(0)
+        HH = dec(H)
+        low = min(R, R + H)
+        for cash, years in items:
+            C, T = map(Fraction, (cash, years))
+            TT = dec(T)
+            v = amount(C, -R * T)
+            value += v
+            shifted += amount(C, -(R + H) * T)
+            first -= TT * v
+            second += TT * TT * v
+            worst = amount(C, -low * T)
+            bound1 += TT * TT * worst * HH * HH / 2
+            bound2 += TT * TT * TT * worst * abs(HH) ** 3 / 6
+        exact = shifted - value
+        linear = first * HH
+        quadratic = linear + second * HH * HH / 2
+        error1, error2 = exact - linear, exact - quadratic
+        data = {"shock_bp": bp, "shock_decimal": h,
+                "exact_change": reported(exact),
+                "linear_change": reported(linear),
+                "quadratic_change": reported(quadratic),
+                "exact_value": reported(shifted),
+                "linear_error": reported(error1),
+                "quadratic_error": reported(error2),
+                "absolute_linear_error": reported(abs(error1)),
+                "absolute_quadratic_error": reported(abs(error2)),
+                "linear_bound": reported(bound1),
+                "quadratic_bound": reported(bound2)}
+    # Retain the existing reported-error/bound allowance policy; this is
+    # not certification of a latent mathematical bound or floating error.
     allowance = 1e-12 * max(1.0, abs(base["value"]))
-    return {"shock_bp": bp, "shock_decimal": h,
-            "exact_change": exact, "linear_change": linear,
-            "quadratic_change": quadratic,
-            "exact_value": exact_value,
-            "linear_error": e1, "quadratic_error": e2,
-            "absolute_linear_error": abs(e1),
-            "absolute_quadratic_error": abs(e2),
-            "linear_bound": b1, "quadratic_bound": b2,
-            "linear_bound_pass": abs(e1) <= b1 + allowance,
-            "quadratic_bound_pass": abs(e2) <= b2 + allowance}
+    data["linear_bound_pass"] = data["absolute_linear_error"] <= data["linear_bound"] + allowance
+    data["quadratic_bound_pass"] = data["absolute_quadratic_error"] <= data["quadratic_bound"] + allowance
+    return data
 
 def project_report(flows, rate, shock_grid_bp):
     items = validate_flows(flows)
