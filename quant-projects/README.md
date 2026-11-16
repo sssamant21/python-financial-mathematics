@@ -238,3 +238,5 @@ Project 37 also includes `test_interval_reference.py`, an independent exact-rati
 Project 37 now also includes a five-strike exact-rational bid/ask interval oracle (`test_five_interval_reference.py`). Run `python -m unittest -v test_five_interval_reference.py` in its folder; hosted CI and independent numerical review must be checked on the exact revision.
 
 **Project 37 five-strike numerical validation (2026-11-16):** Added two irregular-grid exact-rational cross-check fixtures for feasible and convexity-infeasible point quotes. See [Project 37](37-static-option-arbitrage/README.md). Exact published-source test execution and CI remain unverified.
+
+Project 37 numerical-conditioning regression: `python -m unittest -v test_near_zero_pivots.py` from its folder compares four small-gap/near-flat synthetic quote grids against the independent exact-rational three-strike oracle. Hosted CI and independent review must be checked before treating these as accepted.
