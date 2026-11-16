@@ -1,0 +1,19 @@
+"""Exact pinned source checks for Exercises9–13,independent original-input refs.
+Usage: python THIS source_revision output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import sys,subprocess,tempfile,importlib.util,json,hashlib,math,platform
+pin=sys.argv[1];out=Path(sys.argv[2]);path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py';raw=subprocess.check_output(['git','show',pin+':'+path]);rows=[]
+def expected(prec):
+ with localcontext(Context(prec=prec)):
+  R=Decimal(.04);H=Decimal(10./10000.);V=Decimal(10000)*(-5*R).exp();S=Decimal(10000)*(-5*(R+H)).exp();A=-5*V;B=25*V;E=S-V;L=A*H;Q=L+B*H*H/2;W=Decimal(10000)*(-5*min(R,R+H)).exp();b1=25*W*H*H/2;b2=125*W*abs(H)**3/6
+  base=dict(value=float(V),first=float(A),second=float(B),duration=5.,convexity=25.);values=[10.,float(H)]+[float(x) for x in (E,L,Q,S,E-L,E-Q,abs(E-L),abs(E-Q),b1,b2)];keys=['shock_bp','shock_decimal','exact_change','linear_change','quadratic_change','exact_value','linear_error','quadratic_error','absolute_linear_error','absolute_quadratic_error','linear_bound','quadratic_bound'];report=dict(zip(keys,values));allow=1e-12*max(1.,abs(base['value']));report.update(linear_bound_pass=values[8]<=values[10]+allow,quadratic_bound_pass=values[9]<=values[11]+allow);return base,report
+x=expected(1800);y=expected(2400);assert x==y
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'project.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('single_payment',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);actual=(m.baseline([(10000.,5.)],.04),m.scenario([(10000.,5.)],.04,10.))
+ for group,got,want in zip(('baseline','scenario'),actual,y):
+  for key,expect in want.items():
+   a=got[key];ok=type(a)is bool and a==expect if type(expect)is bool else type(a)is float and math.isfinite(a) and math.isclose(a,expect,rel_tol=5e-14,abs_tol=0.);rows.append(dict(group=group,field=key,actual=repr(a),expected=repr(expect),passed=ok))
+d=dict(source_revision=pin,manifest=[dict(path=path,sha=subprocess.check_output(['git','rev-parse',pin+':'+path],text=True).strip())],source_bytes_sha256=hashlib.sha256(raw).hexdigest(),predicates=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),reference_precisions=[1800,2400],argv=[sys.executable,*sys.argv],python=sys.version,platform=platform.platform(),relative_tolerance=5e-14,absolute_tolerance=0.,limits='Nineteen actual-source single-payment fields for Exercises9–13;printed nominal-decimal comparisons separate. Reported bound flags retain existing allowance policy,not mathematical/model/independent approval.')
+out.write_text(json.dumps(d,indent=2)+'\n');print(d['passed'],d['failed']);assert d['failed']==0

@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-O",
+    "-c",
+    "import json,section_9_10 as m;result={}\ntry:\n value=m.assessment();result={'outcome':'returned','in_model_checks_passed':value['in_model_checks_passed']}\nexcept Exception as e:result={'outcome':type(e).__name__,'message':str(e)}\nprint(json.dumps(result))"
+  ],
+  "cwd": "/workspace/scratch/e0bed2e906cb/validation-assessment-r25",
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'section_9_10'\n",
+  "initial_observation": "Parent checker asserted child returncode0 andfailed before writing predicates;actual reproduced diagnostic retained.",
+  "correction": "Run child from actual module directory soimports resolve;this is a harnesspathissue,not the assessment-mode finding."
+}

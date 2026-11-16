@@ -95,3 +95,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later Section9.8 baseline/metadata scope
 
 [V195 evidence](chapter-09-report-baseline-followup-r18.md) adds complete parallel baseline/normalized fields and consumed spot shock metadata, with initial failures/replay retained. COV53 is selected partial for metadata consistency; scenario exact-value reconstruction, complete error/tolerance flags, full spot numerics and manual/report provenance review remain open. These are scoped contracts,not completed exercise or independent acceptance records.
+
+
+### Later V-206 assessment scope
+
+[V-206](chapter-09-assessment-followup-r25.md) adds complete constant-assessment fields,selected kink controls/assertion-mode eligibility,actual-source Exercises9–13 comparisons andprinted rounding corrections. The24worked-answer/sixapplied-taskrecords distinguish analytical review fromexecution. E1–8/E14–16/E22exercise-specific helper cases andbroaderlab/extension/model/provenance/resources/independentapproval remainopen;thehistoricalmappingaboveisnotrelabelledcomplete.

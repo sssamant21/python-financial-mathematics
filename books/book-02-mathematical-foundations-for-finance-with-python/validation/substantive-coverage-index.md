@@ -1458,3 +1458,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-205 checkpoint — Full pinned candidate Linux refresh
 
 [V-205 runtime](runtime-refresh-2026-11-15-r24.md) at `7c666413cafc3481dc155723b4ca4f8b426e42a3`:637/637 Python files compiled,424/424 scripts passed,638/638 required blobs verified before/after. Includes accumulated269 scenario and290 report predicates with scoped policies and preserved earlier failure/replay evidence. Report certification/independent-review flags stay false;full execution does not settle unasserted assessment/provenance/resources/model/platform/release contracts. Next9.10.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-206 checkpoint — Cumulative assessment and printed answers
+
+[Assessment evidence](chapter-09-assessment-followup-r25.md):132correctedpredicates/fivecompiledfiles/fourscopedcommands pass,including -OO rejection. Baseline131pass/oneassertion-modepolicyfailure andidenticalpinnedreplayretained;optimizedmodecannotreturnuncheckedpassedstatus. Nineprintedcomparisons pass afterthreeoriginalroundingfailures/replay;19separateactualsourcesingle-paymentfields pass.24answer/sixappliedtaskrecords distinguishprosefromexecution. Harnesspathfailureandliveworking-replayexclusionrecorded;source-attributedclaimsuseimmutableGitblobs/hashes. Fresh638/425/639inventorynotfullexecution;V205remainslatestfullpassatolderpin. Nextremaining9.10E1–8/E14–16/E22helper/oraclecoverageandbroaderlab/extension/provenance/resources/independentreview.38COVcategoriespartial,noneclosed;nochapter/bookcertification. Book1separate.

@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Purpose:** Why document a financial function? **Answer:** To make its meaning, use and limitations clear.",
+    "review": "Documentation specifiesmeaning/accepteduses/limits;notautomaticapproval.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Timing:** When is the first Section 21.6 cash flow? **Answer:** At time zero.",
+    "review": "NPV index0 is timezero;differentfromoneend-periodPV.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Rate:** What must match a periodic rate? **Answer:** The cash-flow period.",
+    "review": "Periodicrate mustmatchcash-flowperiod;automaticconversionnotprovided.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Benchmark:** PV of 110 at 10% for one period? **Answer:** 100 in exact arithmetic.",
+    "review": "Separate exact110/(11/10)=100;actualsourcePV99.99999999999999 within1e-10 amount.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Units:** Why record them? **Answer:** They determine how inputs, outputs and tolerances are interpreted.",
+    "review": "Unitsgovernboth numericalmeaningandtolerance.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Assumption:** Does the one-period example model default? **Answer:** No.",
+    "review": "Certainpaymentformula excludesdefault/fees/taxes.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Scope:** Should planned features be described as implemented? **Answer:** No.",
+    "review": "Plansandunimplementedcontrols mustremainlabelled.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**API:** What belongs in a docstring? **Answer:** Inputs, output, units, domain, errors and material assumptions.",
+    "review": "Docstringcontractincludesinputs/outputs/units/domain/errors/limits.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Evidence:** Is a test definition an execution result? **Answer:** No.",
+    "review": "Definitions areseparatefromactualfirst/replaycommandsandoutputs.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Status:** How should an unexecuted check be recorded? **Answer:** `not_run`.",
+    "review": "Not_runissyntacticstate;programdoesnotinferexecution.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Blocked:** Is a blocked check a pass? **Answer:** No.",
+    "review": "Blockedstateisnotapass;fourstatusesacceptedsyntactically.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Revision:** Why record a source revision? **Answer:** To identify the code version used.",
+    "review": "PinnedGitrevisionandfencehashidentifyexecutedsource.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Local changes:** Why record them? **Answer:** A revision alone may not identify modified working-tree code.",
+    "review": "Localmutationscanescapecommitidentity;exactstaging/bytechecksusedhere.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Artifact:** Why record the wheel hash? **Answer:** To identify the tested artifact's bytes.",
+    "review": "Wheelhashidentifiestestedbytes;thisstandaloneexamplebuildsnone.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Hash:** Does a matching digest prove authorship? **Answer:** No.",
+    "review": "Hashdoesnotproveauthorship;noauthenticationimplemented.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Trust:** What is needed when comparing a digest? **Answer:** A trustworthy expected digest and appropriate verification process.",
+    "review": "Expectedbytes/digestneedtrustedchannel;ourmanualfixtureiscontrolledsyntheticdata.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Privacy:** Is hashing a low-entropy secret sufficient protection? **Answer:** No; it can be guessed.",
+    "review": "Lowentropyvaluehashcanbeenumerated;notprivacyprotection.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Metadata:** What does the example fingerprint cover? **Answer:** Its serialized metadata record only.",
+    "review": "Onlyfourserializedstringsarecovered.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Source tree:** Does it hash the source files? **Answer:** No.",
+    "review": "Sourcefilesarenothashedbythehelper;externalQAmanifestisseparate.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Truth:** Does `status=\"passed\"` prove a run passed? **Answer:** No.",
+    "review": "Passedstringacceptedisnotatruthcheck;explicitpredicateobservesacceptance.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**JSON:** Does the sample claim a universal canonical JSON standard? **Answer:** No; it defines a narrow encoding for its schema.",
+    "review": "NarrowdeterministicJSONformat;notuniversalcanonicalization.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Key order:** Why sort keys? **Answer:** To make the example's encoded bytes independent of dictionary insertion order.",
+    "review": "Manualexpectedbytesandreverse-keyinsertionproveordernormalizationforthesefixtures.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Change:** Can a serialization change alter a digest? **Answer:** Yes.",
+    "review": "Whitespace/escaping/fieldchangesalterencodedbytes;selecteddigestchangeisnotcollisionproof.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Inputs:** Why version datasets? **Answer:** To identify the data used in a calculation.",
+    "review": "Datasetidentityandvintageareexternalrequirements.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Availability:** Why retain availability timestamps? **Answer:** To assess point-in-time eligibility.",
+    "review": "Availabilitysupportsclaimedcutoffeligibility;doesnotauthenticateinput.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Revision history:** Does an event timestamp alone establish the historical version? **Answer:** No.",
+    "review": "Eventtimecannotestablishas-publishedrevision.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Environment:** Why record Python and dependency versions? **Answer:** Behavior or numerical results may differ across versions.",
+    "review": "Python/platformrecorded;otherenvironmentbehaviorremainsunvalidated.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Build tools:** Are they relevant to an artifact? **Answer:** Yes; they can affect the built package.",
+    "review": "Buildtoolsinfluenceartifactidentity;priorwheelrecordsremainseparate.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Seed:** Is it sufficient by itself for cross-version simulation identity? **Answer:** No.",
+    "review": "Seedaloneisnotalgorithm/environment/dataidentity.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Simulation:** What else should be recorded? **Answer:** Generator, algorithm, parameters, count and environment.",
+    "review": "Algorithm/generator/parameters/count/environmentrequired;helperdoesnotcollectthem.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Tolerance:** What should a numerical tolerance include? **Answer:** Magnitude, units and rationale.",
+    "review": "Magnitude/units/rationaleneeded;PVfixtureabsolute1e-10notanoperationalthreshold.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Bitwise:** Must all reproducible results be bitwise identical? **Answer:** No; the required criterion depends on the use and algorithm.",
+    "review": "Exactmetadata-byte/digestequalityandPVfloat.hexreplayusedhere;notuniversalbitwisepromise.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Float:** Can summation order change a result? **Answer:** Yes.",
+    "review": "Summationordercanchangefloatresults;onlydeclaredcontextreplaychecked.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Editable install:** Does it independently verify a built wheel? **Answer:** No.",
+    "review": "Editableandwheeltestrolesseparate;nonewinstalledartifactclaimedthisbatch.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Chart:** What should a plot record include? **Answer:** Data identity, library version, backend, settings and actual visual-review findings.",
+    "review": "Earlierplotrecordshowslibrary/backend/settings/inspection;metadatahelperdoesnotcreateit.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Security:** Should credentials go into a run manifest? **Answer:** No.",
+    "review": "Onlysyntheticsused;nocredentialsorfinancialprivatedata.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Correctness:** Can a repeatable calculation be wrong? **Answer:** Yes.",
+    "review": "Repeatablewronginputs/modelcanremainwrong;recorddigestdoesnotfixit.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Model:** Does reproducibility approve a model? **Answer:** No; independent review is needed.",
+    "review": "Noindependentmodelorfinancialapprovalfromrepeatability.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Reference tests:** Have these tests run? **Answer:** Scoped standalone source QA records their execution; cryptographic security, trusted provenance, platform and independent acceptance remain pending.",
+    "review": "Historicaldeferredanswercorrected;twoformal12-methodrunsrecorded.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.17 \u2014 Final Integrated Case Study.",
+    "review": "Nextsection21.17FinalIntegratedCaseStudy.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  }
+]

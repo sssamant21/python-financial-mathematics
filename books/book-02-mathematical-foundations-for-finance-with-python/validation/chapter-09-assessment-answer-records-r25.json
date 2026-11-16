@@ -1,0 +1,224 @@
+{
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/9.10-exercises-and-applied-problems.md",
+  "exercise_records": [
+    {
+      "exercise": 1,
+      "title": "Absolute and relative sensitivity.",
+      "prompt": "Let \\(f(x)=3x^2+2\\). Find \\(f'(4)\\) and the local relative sensitivity \\(xf'(x)/f(x)\\) at \\(x=4\\).",
+      "solution": "\\(f'(x)=6x\\), so \\(f'(4)=24\\). Since \\(f(4)=50\\), the elasticity is \\(4(24)/50=1.92\\). A 1% local change in \\(x\\) corresponds to approximately 1.92% change in \\(f\\).",
+      "review": "Derivative24/elasticity96/50=1.92 analytically correct;matching generic-helper execution remainspending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 2,
+      "title": "Exponential elasticity.",
+      "prompt": "For \\(f(x)=e^{2x}\\), derive \\(xf'(x)/f(x)\\) and evaluate at \\(x=0.5\\).",
+      "solution": "\\(f'=2e^{2x}\\), so elasticity is \\(2x\\); at \\(x=0.5\\), it equals 1.",
+      "review": "Elasticity2x=1 at.5;analytic review,not a newfunction execution here.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 3,
+      "title": "When relative sensitivity fails.",
+      "prompt": "Explain why \\(f'(x)/f(x)\\) is undefined when \\(f(x)=0\\). Give a financial reporting alternative.",
+      "solution": "The denominator vanishes. Report absolute sensitivity and scenario changes in currency units, or normalize by a documented nonzero reference scale rather than silently dividing by zero.",
+      "review": "Zero-output denominator undefined;absolute-currency/explicitnonzero-scale alternative isconceptual.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 4,
+      "title": "First-order approximation.",
+      "prompt": "Approximate \\(\\sqrt{101}\\) about \\(x_0=100\\).",
+      "solution": "\\(f(100)=10\\), \\(f'(100)=1/20\\), \\(h=1\\). Thus \\(T_1=10+0.05=10.05\\).",
+      "review": "Exact10+1/20=10.05;matching genericTaylor helper fixture remainspending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 5,
+      "title": "Second-order approximation.",
+      "prompt": "Improve Exercise 4 using \\(f''(x)=-1/(4x^{3/2})\\).",
+      "solution": "\\(f''(100)=-1/4000\\). The correction is \\(-1/8000=-0.000125\\), so \\(T_2=10.049875\\).",
+      "review": "Exact10+1/20-1/8000=10.049875;generichelper fixture pending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 6,
+      "title": "Cubic exact remainder.",
+      "prompt": "Expand \\(f(x)=x^3\\) about \\(x_0=2\\) through order two and find the exact remainder for \\(h=-0.1\\).",
+      "solution": "\\((2+h)^3=8+12h+6h^2+h^3\\). Therefore \\(R_2=h^3=-0.001\\) and \\(|R_2|=0.001\\).",
+      "review": "Exactcubicremainder(-1/10)^3=-1/1000;genericboundexecutionpending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 7,
+      "title": "First-order error bound.",
+      "prompt": "For \\(f(x)=x^3\\), \\(x_0=2\\), \\(h=0.1\\), bound the linear approximation error.",
+      "solution": "On \\([2,2.1]\\), \\(|f''(x)|=6x\\le12.6\\). Hence \\(|R_1|\\le12.6(0.1)^2/2=0.063\\). The actual signed error is \\(6(0.1)^2+(0.1)^3=0.061\\).",
+      "review": "M2=63/5 givesbound63/1000;actualsigned61/1000;genericfixturepending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 8,
+      "title": "Second-order error budget.",
+      "prompt": "Suppose \\(|f'''|\\le48\\) throughout \\(|h|\\le0.1\\). What is the largest \\(|h|\\) that guarantees second-order error at most \\(0.0008\\)?",
+      "solution": "\\(48|h|^3/6\\le0.0008\\), so \\(8|h|^3\\le0.0008\\), \\(|h|^3\\le0.0001\\), and \\(|h|\\le(0.0001)^{1/3}\\approx0.046416\\). This lies inside the stated domain.",
+      "review": "Printedcube-root budget checked independently atitsprintedprecision;genericinverse-budget helper mapping pending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 9,
+      "title": "Single-payment value.",
+      "prompt": "A payment of \\(10000\\) is due in five years. Find its value at \\(r=0.04\\).",
+      "solution": "\\(V=10000e^{-0.2}\\approx8187.307531\\).",
+      "review": "PrintedPV roundedcorrectly;actualsingle-payment source baseline fieldschecked in19-field probe.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 10,
+      "title": "Duration and convexity.",
+      "prompt": "For the payment in Exercise 9, calculate \\(V'\\), \\(V''\\), \\(D\\), and \\(K\\).",
+      "solution": "\\(V'=-5V\\approx-40936.537654\\), \\(V''=25V\\approx204682.688269\\), \\(D=5\\), and \\(K=25\\). Compute sensitivities from the unrounded value before rounding displayed results.",
+      "review": "Two displayed sensitivities corrected fromunroundedV: -40936.537654 and204682.688269;D5/K25 sourcechecked.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 11,
+      "title": "Ten-basis-point scenario.",
+      "prompt": "For Exercise 9, find the linear and quadratic value changes for \\(h=+0.001\\).",
+      "solution": "\\(\\Delta V_1=-5V(0.001)\\approx-40.936538\\). The quadratic correction is \\(25V(0.001)^2/2\\approx0.102341\\), so \\(\\Delta V_2\\approx-40.834196\\).",
+      "review": "Linear/quadratic/correction printedvaluespass independentdecimalrounding;actualscenario fieldschecked.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 12,
+      "title": "Exact scenario and error.",
+      "prompt": "For Exercise 11, write the exact change and the signed quadratic error.",
+      "solution": "\\(\\Delta V_{\\rm exact}=V\\operatorname{expm1}(-0.005)\\). The signed error is \\(E_2=V[\\operatorname{expm1}(-0.005)+0.005-0.005^2/2]\\), which is negative. Its magnitude is approximately \\(0.000170356\\).",
+      "review": "Absolute quadratic error corrected to0.000170356;actualsignederror/boundschecked separately.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 13,
+      "title": "Rigorous second-order bound.",
+      "prompt": "Bound the error in Exercise 12.",
+      "solution": "The interval is \\([0.04,0.041]\\), so \\(r_{\\min}=0.04\\). \\(M_3=5^3V=125V\\), and \\(|E_2|\\le125V(0.001)^3/6\\approx0.00017057\\).",
+      "review": "Printedbound0.00017057passes;independent interval-boundsourcecomparison recorded.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 14,
+      "title": "Two-payment portfolio.",
+      "prompt": "For payments \\((100,1)\\) and \\((1100,2)\\) at \\(r=0.04\\), express \\(V,D,K\\) in terms of \\(v_1=100e^{-0.04}\\), \\(v_2=1100e^{-0.08}\\).",
+      "solution": "\\(V=v_1+v_2\\), \\(D=(v_1+2v_2)/(v_1+v_2)\\), and \\(K=(v_1+4v_2)/(v_1+v_2)\\).",
+      "review": "Two-paymentweightedformulas correct;exactexercise-specifichelper mapping stillpendingdespiteearliergenericcontracts.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 15,
+      "title": "Duration/convexity inequality.",
+      "prompt": "Prove \\(K\\ge D^2\\) for positive fixed cash flows.",
+      "solution": "Let \\(w_i=C_ie^{-rt_i}/V\\), so \\(w_i>0\\) and \\(\\sum_iw_i=1\\). Then \\(K-D^2=\\sum_iw_i(t_i-D)^2\\ge0\\).",
+      "review": "Weightedvarianceproof valid forpositiveweights;not a universalfloatidentityornewindependentapproval.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 16,
+      "title": "Cash-flow sensitivity.",
+      "prompt": "Find \\(\\partial V/\\partial C_i\\) for a fixed payment \\(C_i\\) at \\(t_i\\).",
+      "solution": "\\(\\partial V/\\partial C_i=e^{-rt_i}\\). The elasticity of \\(V\\) with respect to \\(C_i\\) is \\(C_ie^{-rt_i}/V\\).",
+      "review": "Cashsensitivity exp(-rt) andrelativeweightderivationcorrect;exercise-specificsourceexecutionpending.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 17,
+      "title": "Call payoff.",
+      "prompt": "Let \\(g(S)=\\max(S-100,0)\\). Find its left and right derivatives at \\(S=100\\).",
+      "solution": "Left slope 0; right slope 1. There is no two-sided derivative.",
+      "review": "Callkinkleft0/right1anddifferentiablefalsecheckedwithactualhelper.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 18,
+      "title": "Centered difference trap.",
+      "prompt": "Calculate \\([g(102)-g(98)]/4\\) for Exercise 17. Explain why the result is misleading.",
+      "solution": "\\((2-0)/4=0.5\\), although the true one-sided slopes are 0 and 1. The centered quotient is not the derivative at the kink.",
+      "review": "Centeredquotient.5checked;not declared derivativeatkink.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 19,
+      "title": "Cap and floor.",
+      "prompt": "For \\(f(r)=1000\\min(\\max(r,0.02),0.05)\\), state the one-sided derivatives at \\(r=0.02\\) and \\(r=0.05\\).",
+      "solution": "At the floor: left 0, right 1000. At the cap: left 1000, right 0.",
+      "review": "Floor/capone-sided numericfieldscheckedwithactualhelper.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 20,
+      "title": "Offset of kinks.",
+      "prompt": "Show \\(\\max(S-K,0)-\\max(K-S,0)=S-K\\).",
+      "solution": "For \\(S\\ge K\\), the difference is \\((S-K)-0\\); for \\(S<K\\), it is \\(0-(K-S)\\). Thus the combined payoff is smooth despite nonsmooth components.",
+      "review": "Put-callidentitycheckedat98/100/102;proof coversbothregions,notmarketput-callparitypricing.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 21,
+      "title": "Scenario units.",
+      "prompt": "Convert \\(-75\\) bp to a decimal rate shock.",
+      "solution": "\\(-75/10000=-0.0075\\).",
+      "review": "-75/10000=-.0075;existingreferencecheckexecutesconversionexpression.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 22,
+      "title": "Nonparallel shocks.",
+      "prompt": "For independent spot rates \\(z_i\\) and shocks \\(h_i\\), derive a first-order value change.",
+      "solution": "\\(\\Delta V_1=-\\sum_i t_iC_ie^{-z_it_i}h_i\\). This is a cash-flow-level spot-rate sensitivity, not necessarily a market key-rate duration.",
+      "review": "Spotfirst-orderformula correct;matching cumulative exercise-specificspot fixture remainspending;earlier9.8evidence separate.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 23,
+      "title": "Error denominator.",
+      "prompt": "Why is \\(|E_2|/|\\Delta V_{\\rm exact}|\\) unreliable near a zero exact change?",
+      "solution": "It is undefined at zero and numerically unstable for tiny exact changes. Report absolute currency error and, if appropriate, error relative to a nonzero baseline value.",
+      "review": "Relativeerrorundefined/unstable nearzero;conceptualexplanation,notanimplementedrelative-reportcontract.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    },
+    {
+      "exercise": 24,
+      "title": "Acceptance decision.",
+      "prompt": "A report passes all mathematical remainder checks but uses an unverified cash-flow schedule. Can it be called production-certified?",
+      "solution": "No. A remainder bound verifies an approximation within the specified mathematical model. It does not validate source cash flows, curve calibration, financial assumptions, runtime evidence, or independent review.",
+      "review": "Assessmentcertification/reviewflagsfalse;normal/optimizedeligibility evidence doesnot grantproduction/modelacceptance.",
+      "status": "Assistant scoped review;source-execution limits explicit"
+    }
+  ],
+  "applied_task_records": [
+    {
+      "task": 1,
+      "review": "Four-flowV/D/Kcheckedhere;fullfirst/secondfieldsevidenceinV204underunchangedprojectmodule,notreturnedbyassessment summary."
+    },
+    {
+      "task": 2,
+      "review": "Sevenorderedshocksand14fieldsperrowcheckedagainstindependent1800/2400-digitreferences."
+    },
+    {
+      "task": 3,
+      "review": "Exact/linear/quadraticandlatenterrorssourcechecked;flagsremainreportednumericcomparisons."
+    },
+    {
+      "task": 4,
+      "review": "Independentintervalboundschecked;mathematicalpolicy/resource/independentreviewremainopen."
+    },
+    {
+      "task": 5,
+      "review": "No universalquadratic-improvementclaim;arbitrarymodel/shockexplanationisconceptual."
+    },
+    {
+      "task": 6,
+      "review": "StrictfiniteJSON/repeatability/containerownershipchecked;notdurableexportprovenanceorindependentcertification."
+    }
+  ],
+  "limits": "24workedanswersand6appliedtaskrecords areseparate from132assessmentpredicates,19single-paymentfieldchecks and9printedcomparisons. E1\u20138/E14\u201316/E22 andbroaderlab/extension/sourcealignment remainpartiallyopen."
+}

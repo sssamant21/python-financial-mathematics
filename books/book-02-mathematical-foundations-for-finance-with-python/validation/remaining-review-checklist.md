@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
-**Date:** 2026-11-15
+**Date:** 2026-11-16
 **Full-runtime candidate source revision:** `7c666413cafc3481dc155723b4ca4f8b426e42a3` (V-205)
-**Latest scoped source:** V-204 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`;[five-source manifest](chapter-09-project-report-publication-r24.json).
+**Latest scoped source:** V-206 at `3373d9baaad5cea1c91486829fcce04bf54705ef`;[five-source and manuscript manifest](chapter-09-assessment-publication-r25.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-204 report/assessment scoped pass;V-205 full candidate Linux runtime pass. Next9.10;broader independent/platform/release acceptance open.
+**Disposition:** V-206 assessment/printed-answer scoped pass;V-205 older-pin full runtime pass. Exercise-specific/helper,independent/platform/release acceptance remains open.
 
 ## Reconciled evidence
 
@@ -1508,3 +1508,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-205 checkpoint — Full pinned candidate Linux refresh
 
 [V-205 runtime](runtime-refresh-2026-11-15-r24.md) at `7c666413cafc3481dc155723b4ca4f8b426e42a3`:637/637 Python files compiled,424/424 scripts passed,638/638 required blobs verified before/after. Includes accumulated269 scenario and290 report predicates with scoped policies and preserved earlier failure/replay evidence. Report certification/independent-review flags stay false;full execution does not settle unasserted assessment/provenance/resources/model/platform/release contracts. Next9.10.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-206 checkpoint — Cumulative assessment and printed answers
+
+[Assessment evidence](chapter-09-assessment-followup-r25.md):132correctedpredicates/fivecompiledfiles/fourscopedcommands pass,including -OO rejection. Baseline131pass/oneassertion-modepolicyfailure andidenticalpinnedreplayretained;optimizedmodecannotreturnuncheckedpassedstatus. Nineprintedcomparisons pass afterthreeoriginalroundingfailures/replay;19separateactualsourcesingle-paymentfields pass.24answer/sixappliedtaskrecords distinguishprosefromexecution. Harnesspathfailureandliveworking-replayexclusionrecorded;source-attributedclaimsuseimmutableGitblobs/hashes. Fresh638/425/639inventorynotfullexecution;V205remainslatestfullpassatolderpin. Nextremaining9.10E1–8/E14–16/E22helper/oraclecoverageandbroaderlab/extension/provenance/resources/independentreview.38COVcategoriespartial,noneclosed;nochapter/bookcertification. Book1separate.

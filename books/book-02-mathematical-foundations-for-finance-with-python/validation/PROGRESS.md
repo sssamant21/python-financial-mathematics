@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
-**Updated:** 2026-11-15
-**Overall status:** In progress — V-204 project-report/assessment scoped pass (290 predicates);V-205 full candidate Linux pass637/424/638 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`. Next9.10;broader provenance/resources/independent/platform/release acceptance open.
+**Updated:** 2026-11-16
+**Overall status:** In progress — V-206 cumulative assessment/printed-answer scoped pass;latest full Linux pass remains V-205 at older pin (637/424/638). Remaining exercise-specific and broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1634,3 +1634,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-205 checkpoint — Full pinned candidate Linux refresh
 
 [V-205 runtime](runtime-refresh-2026-11-15-r24.md) at `7c666413cafc3481dc155723b4ca4f8b426e42a3`:637/637 Python files compiled,424/424 scripts passed,638/638 required blobs verified before/after. Includes accumulated269 scenario and290 report predicates with scoped policies and preserved earlier failure/replay evidence. Report certification/independent-review flags stay false;full execution does not settle unasserted assessment/provenance/resources/model/platform/release contracts. Next9.10.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-206 checkpoint — Cumulative assessment and printed answers
+
+[Assessment evidence](chapter-09-assessment-followup-r25.md):132correctedpredicates/fivecompiledfiles/fourscopedcommands pass,including -OO rejection. Baseline131pass/oneassertion-modepolicyfailure andidenticalpinnedreplayretained;optimizedmodecannotreturnuncheckedpassedstatus. Nineprintedcomparisons pass afterthreeoriginalroundingfailures/replay;19separateactualsourcesingle-paymentfields pass.24answer/sixappliedtaskrecords distinguishprosefromexecution. Harnesspathfailureandliveworking-replayexclusionrecorded;source-attributedclaimsuseimmutableGitblobs/hashes. Fresh638/425/639inventorynotfullexecution;V205remainslatestfullpassatolderpin. Nextremaining9.10E1–8/E14–16/E22helper/oraclecoverageandbroaderlab/extension/provenance/resources/independentreview.38COVcategoriespartial,noneclosed;nochapter/bookcertification. Book1separate.
