@@ -105,3 +105,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-207 early-exercise alignment
 
 [V-207](chapter-09-early-exercises-followup-r26.md) records Exercises 1–8 with 34 predicates: 29 direct-helper checks and five explicit composed/model-reference checks. Analytical supplied derivatives, base-plus-change composition and inverse-budget Decimal references remain distinct from native helper functionality. E14–16/E22 remain next; broader proof, lab, resource/model/provenance and independent acceptance gaps remain open. COV-52/54 remain partial. [V-208](runtime-refresh-2026-11-16-r26.md) refreshes full candidate Linux execution at the same source pin.
+
+
+### Later V-209 cash-flow exercise alignment
+
+[V-209](chapter-09-cashflow-exercises-followup-r27.md) adds explicit E14–16/22 mapping: complete direct portfolio/spot fields, separate algebraic weighted-variance proof, selected equality cases, caller payment perturbations, and mixed/zero/parallel spot changes.64 predicates/seven compiled/seven commands pass; mathematical identity, direct helper fields and caller/supplemental checks remain distinct. No market key-rate implementation or universal numerical theorem is inferred. Next:E25 six-task prompt/export/bound alignment using matching prior evidence; broader lab/extension/provenance/resource/model/independent acceptance remains open.38 selected COV categories remain partial,none closed.

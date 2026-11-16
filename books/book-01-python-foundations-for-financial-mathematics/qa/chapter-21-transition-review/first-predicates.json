@@ -1,0 +1,102 @@
+{
+  "records": [
+    {
+      "method": "test_present_value",
+      "actual": "99.99999999999999",
+      "actual_hex": "0x1.8ffffffffffffp+6",
+      "independent_expected": "100",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "method": "test_future_value",
+      "actual": "121.00000000000001",
+      "actual_hex": "0x1.e400000000001p+6",
+      "independent_expected": "121",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "method": "test_npv",
+      "actual": "-1.4210854715202004e-14",
+      "actual_hex": "-0x1.0000000000000p-46",
+      "independent_expected": "0",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "method": "test_price_return",
+      "actual": "0.10000000000000009",
+      "actual_hex": "0x1.99999999999a0p-4",
+      "independent_expected": "1/10",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_linked_return",
+      "actual": "-0.009999999999999898",
+      "actual_hex": "-0x1.47ae147ae1440p-7",
+      "independent_expected": "-1/100",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_portfolio_return",
+      "actual": "0.039999999999999994",
+      "actual_hex": "0x1.47ae147ae147ap-5",
+      "independent_expected": "1/25",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_cross_section_mean",
+      "actual": "0.025",
+      "actual_hex": "0x1.999999999999ap-6",
+      "independent_expected": "1/40",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_sample_variance",
+      "actual": "0.011250000000000003",
+      "actual_hex": "0x1.70a3d70a3d70cp-7",
+      "independent_expected": "9/800",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_bond_par",
+      "actual": "100.0",
+      "actual_hex": "0x1.9000000000000p+6",
+      "independent_expected": "100",
+      "absolute_tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "method": "test_simulation_model_expectation",
+      "actual": "100.0",
+      "actual_hex": "0x1.9000000000000p+6",
+      "independent_expected": "100",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_decimal_rounding_example",
+      "actual": "0.02",
+      "actual_hex": null,
+      "independent_expected": "0.02",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "method": "test_pv_rate_sensitivity_sign",
+      "actual": "-90.90909090909089",
+      "actual_hex": "-0x1.6ba2e8ba2e8b9p+6",
+      "independent_expected": "-1000/11",
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    }
+  ],
+  "passed": 12,
+  "limits": "Observes standalone exact manuscript test expressions, not toolkit imports or model validation. Rational/decimal targets and analytical derivative independent; no newly authored unittest method claimed."
+}

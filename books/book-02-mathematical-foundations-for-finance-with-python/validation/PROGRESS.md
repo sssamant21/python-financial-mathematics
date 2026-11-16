@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-207 early-exercise scoped pass and V-208 full candidate Linux pass (639/426/640). Remaining exercise-specific and broader acceptance gaps open.
+**Overall status:** In progress — V-209 cash-flow exercise scoped pass; V-208 remains latest full candidate Linux pass (639/426/640) at an older pin. Applied-project and broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1648,3 +1648,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-208 checkpoint — Full pinned Linux refresh
 
 [Full runtime](runtime-refresh-2026-11-16-r26.md): 639/639 Python files compiled, 426/426 scripts passed and 640/640 required blobs verified before/after at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`. Includes V-206 assertion-mode guard and V-207 checker; preserves historical failures and reruns. Candidate Linux execution is not independent review, supported-platform validation, release acceptance or canonical approval. Next: 9.10 Exercises 14–16/22. Neither book is declared complete; Book 1 remains separately tracked.
+
+
+## V-209 checkpoint — Cash-flow exercise/source alignment
+
+[Scoped evidence](chapter-09-cashflow-exercises-followup-r27.md): Exercises14–16/22 have four separate alignment/derivation records;64 predicates pass (47 direct numerical fields,4 direct rejections,10 caller compositions,3 supplemental controls). Seven files compiled/seven scoped commands/six checkers passed; probe/replay/scoped outcomes identical and hashes verified. Exact rational exponential-series oracle independent of source Decimal.exp. E15 algebraic proof distinct from sampled rounded-output comparisons; E22 independent spot rates distinct from market key rates. Six existing Python sources/manuscript at `ed7b907787e6851be71a31463b1818632ca415eb`, new checker separately blob-pinned. No numerical source defect or algorithm change. Fresh640/427/641 inventory is not full execution; V208 remains latest full639/426/640 at prior pin. Next:E25 six-task prompt/export/bound alignment, reusing matching V203/V204/V206 evidence, then broader lab/extension/provenance/resources/model/independent acceptance.38 selected COV categories partial,none closed;Book1 separate.

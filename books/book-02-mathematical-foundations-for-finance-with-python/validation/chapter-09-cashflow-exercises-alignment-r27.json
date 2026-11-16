@@ -1,0 +1,38 @@
+{
+  "exercises": [
+    {
+      "exercise": 14,
+      "prompt": "Two-payment V,D,K at continuously compounded r=.04",
+      "derivation": "v1=100exp(-r);v2=1100exp(-2r); V=v1+v2; D=(v1+2v2)/V;K=(v1+4v2)/V",
+      "execution": "All seven portfolio_sensitivity fields, including both list fields, compared with rational-series oracle. No displayed rounded values supplied by this exercise."
+    },
+    {
+      "exercise": 15,
+      "prompt": "Prove K>=D^2 for positive fixed cash flows",
+      "derivation": "For wi=vi/V and sum wi=1: sum wi(ti-D)^2=sum wi ti^2-2D sum wi ti+D^2 sum wi=K-D^2>=0. Equality iff every positive-weight time equals D. Assumptions finite positive C, finite nonnegative t, real finite r and representable helper report.",
+      "execution": "Selected E14, equal-time, all-time-zero and single-payment output variance comparisons. Caller composition subtracts rounded K and D^2 with1e-14 absolute allowance; this numerical sampling is not a universal proof or strict inequality gate."
+    },
+    {
+      "exercise": 16,
+      "prompt": "Cash-amount derivative and elasticity",
+      "derivation": "Holding times/rate/other payments fixed, V is linear in Ci: partialV/partialCi=exp(-rti); Ci*partialV/partialCi/V=vi/V.",
+      "execution": "Actual cash_flow_derivatives and value_weights checked in four families; two caller one-unit payment perturbations checked with3e-13 absolute amount allowance for subtracting returned floats. Signed/zero payments outside helper positive-flow domain."
+    },
+    {
+      "exercise": 22,
+      "prompt": "Independent spot-rate first-order changes",
+      "derivation": "With zi independent, partialV/partialzi=-tiCi exp(-ziti); dot with hi gives linear change. Mixed bumps(.001,-.002), zero and parallel controls at(.035,.04).",
+      "execution": "Complete spot_curve_sensitivity and spot_shock fields checked independently, including exact endpoint-minus-baseline and signed linear error; no market curve calibration/interpolation or market key-rate mapping implemented."
+    }
+  ],
+  "predicate_kinds": {
+    "direct helper": 47,
+    "caller composition": 10,
+    "direct rejection": 4,
+    "supplemental wrong-formula control": 3
+  },
+  "oracle": "100-term exact rational Maclaurin series on |exponent|<=.5; Lagrange tail <2*(.5)^101/101!; conversion to float only at comparison.",
+  "relative_tolerance": 5e-14,
+  "absolute_allowances": "1e-14 selected zero/small error/rounded variance compositions;3e-13 currency amount for one-unit perturbation subtraction.",
+  "remaining": "Exercise25 six-task prompt/export/bound alignment using existing exact V203/V204/V206 evidence wherever it already applies; then remaining chapter lab/extension/provenance/resource/model/independent acceptance audit."
+}

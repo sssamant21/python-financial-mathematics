@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Manuscript:** What does completion of the locked writing sequence mean? **Answer:** The planned sections have draft manuscript files; it does not itself establish QA completion.",
+    "review": "Draft file inventory is distinct from validated/accepted content.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Canonical:** Are all drafts automatically canonical? **Answer:** No; the project's review and acceptance workflow must be satisfied.",
+    "review": "Canonical status requires documented project gates; no assistant approval substitutes.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Testing:** Does a test definition prove a pass? **Answer:** No; actual execution evidence is required.",
+    "review": "Test definitions are not results; first/replay command receipts provide scoped results.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Model:** Does passing code verify model suitability? **Answer:** No; intended use and assumptions require review.",
+    "review": "Code behavior does not determine intended-use or model suitability.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**PV:** Present value of 110 at 10% for one period? **Answer:** 100 in exact arithmetic.",
+    "review": "Exact 110/(11/10)=100; observed float compared with 1e-10 currency tolerance.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**FV:** Future value of 100 at 10% for two periods? **Answer:** 121 in exact arithmetic.",
+    "review": "Exact 100*(11/10)^2=121; amount tolerance 1e-10.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**NPV:** NPV of `[-100, 110]` at 10%? **Answer:** Zero in exact arithmetic.",
+    "review": "Time-zero -100 plus exact terminal PV100 equals zero; absolute amount tolerance 1e-10.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Time zero:** Is the initial cash flow discounted? **Answer:** No under the capstone timeline.",
+    "review": "Cash-flow index zero is un-discounted; this differs from a one-period payment.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Domain:** Why require the periodic rate to exceed \u22121? **Answer:** The discount factor must be positive and nonzero under this model.",
+    "review": "1+r>0 defines this positive-factor model; no -100% boundary admitted.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Sensitivity:** What is the derivative of $`C/(1+r)`$ with respect to $`r`$? **Answer:** $`-C/(1+r)^2`$.",
+    "review": "Power rule gives -C*(1+r)^(-2) for fixed C and fixed period.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Sign:** For positive C and $`r>-1`$, is that derivative positive? **Answer:** No; it is negative.",
+    "review": "C>0 and positive squared denominator give strict negative sign.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Assumption:** Does the derivative establish the payment is risk-free? **Answer:** No.",
+    "review": "Derivative algebra assumes payment certainty and does not prove it.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Return:** Simple price return from 100 to 110? **Answer:** 10%.",
+    "review": "Exact 110/100-1=1/10; return units decimal.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Linking:** 10% followed by \u221210% gives what compounded return? **Answer:** \u22121% in exact arithmetic.",
+    "review": "Exact (11/10)*(9/10)-1=-1/100; percentage points not added.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Weights:** 60% at 10% and 40% at \u22125% gives what return? **Answer:** 4% in exact arithmetic.",
+    "review": "Exact 3/5*1/10+2/5*(-1/20)=1/25.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Mean:** What is the unweighted mean of those two asset returns? **Answer:** 2.5%.",
+    "review": "Exact (1/10-1/20)/2=1/40, unweighted cross-sectional mean.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Difference:** Why does that mean differ from the weighted return? **Answer:** The asset weights are unequal.",
+    "review": "Weights .6/.4 differ from .5/.5; the resulting quantities answer different questions.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Variance:** What is their two-observation sample variance? **Answer:** 0.01125 in squared decimal-return units.",
+    "review": "Deviations +/-3/40; squared sum/(2-1)=9/800 in squared return units.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Risk:** Is that cross-sectional variance portfolio volatility? **Answer:** No.",
+    "review": "Cross-sectional two-asset dispersion is not a portfolio time-series risk estimate.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Bond:** What is the simplified two-period par bond price with face 100 and matching 5% coupon and yield? **Answer:** 100 in exact arithmetic.",
+    "review": "Exact 5/(21/20)+105/(21/20)^2=100; no day counts/accrual.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Accrual:** Does that example model accrued interest? **Answer:** No.",
+    "review": "Simplified end-period cash-flow model omits accrued interest.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Simulation:** What is the model expectation of 90 and 110 with equal probabilities? **Answer:** 100.",
+    "review": "Equal-state expectation is (110+90)/2=100; this is model mean.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Sample:** Must a finite simulation sample average 100? **Answer:** No.",
+    "review": "Finite sample empirical weights vary; prior case actual11up/9down gives101, not100.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Seed:** Is it enough by itself to guarantee identical results across environments? **Answer:** No.",
+    "review": "Seed alone omits algorithm, version, inputs and environment.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Float:** Can binary arithmetic differ from an exact decimal expression? **Answer:** Yes.",
+    "review": "Observed float output/hex retained; exact rational values distinguish representations.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Decimal:** Does Decimal automatically define a financial rounding policy? **Answer:** No.",
+    "review": "Decimal context/rounding mode/rounding stage require an explicit policy.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Tolerance:** What should accompany an absolute tolerance? **Answer:** A rationale and output units.",
+    "review": "Tolerances recorded in amount, decimal return, squared-return or derivative units.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Near zero:** Why use absolute tolerance? **Answer:** Relative tolerance alone cannot allow nonzero error against zero.",
+    "review": "Against zero a relative tolerance contributes zero; absolute tolerance is needed.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Schema:** Does a valid record establish source accuracy? **Answer:** No.",
+    "review": "Schema checks establish shape/domain, not factual source accuracy.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Time:** Why record availability time? **Answer:** To assess whether information was available at a decision cutoff.",
+    "review": "Availability must precede decision cutoff; event time alone does not imply availability.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Revision:** Is an event timestamp sufficient to identify the historically available revision? **Answer:** No.",
+    "review": "Historical revision identity/availability must be recorded separately from event time.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Plot:** Does a well-labeled chart prove the underlying data is valid? **Answer:** No.",
+    "review": "No chart is generated or visually inspected by this standalone script.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Evidence:** What identifies a test run? **Answer:** Revision or artifact, commands, actual output, environment and review details.",
+    "review": "First/replay record source/fence hash, commands/output/Python/platform and observer results.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Artifact:** Why test an installed wheel in a clean environment? **Answer:** To reveal packaging and dependency issues masked by a source checkout.",
+    "review": "Earlier21.17 clean wheel evidence is separate and not rerun in this batch.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Hash:** Does a digest prove model correctness or authorship? **Answer:** No.",
+    "review": "Hash identifies bytes under its algorithm, not model validity or authorship.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Review:** Can a repeatable calculation still be wrong? **Answer:** Yes.",
+    "review": "Repeated wrong calculations can agree; independent references compare distinct derivations.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Book 2:** What topics deepen sensitivity analysis? **Answer:** Derivatives and Taylor approximation.",
+    "review": "Book2 TOC Chapters8/9 cover derivatives, Taylor and sensitivity.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Book 2:** What topics deepen portfolio representation? **Answer:** Vectors, matrices and quadratic forms.",
+    "review": "Book2 TOC Chapters12\u201314 cover vectors/matrices and matrix structure.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**QA status:** Were these reference tests run during publication? **Answer:** No; they remain pending.",
+    "review": "Original draft had no run record; current scoped runs are now retained and answer status reconciled.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next phase:** What follows manuscript completion? **Answer:** The agreed comprehensive validation and review phase.",
+    "review": "Comprehensive validation remains in progress; this terminal draft section is not book acceptance.",
+    "status": "Assistant scoped review; independent acceptance pending"
+  }
+]
