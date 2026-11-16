@@ -304,8 +304,8 @@ jobs:
       - name: Validate Project 38 European put-call parity
         run: |
           cd quant-projects/38-put-call-parity
-          python -m unittest -v test_parity.py
-          python -m compileall -q parity.py test_parity.py
+          python -m unittest -v test_parity.py test_decimal_reference.py
+          python -m compileall -q parity.py test_parity.py test_decimal_reference.py
           python parity.py
 
   quantlib-cross-check:
