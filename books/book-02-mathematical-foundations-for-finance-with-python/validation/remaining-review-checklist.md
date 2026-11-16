@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-16
 **Full-runtime candidate source revision:** `2ee81822af67357087e2af6193348f2b3c5dbdf8` (V-212)
-**Latest scoped source:** V-214 at `102b658e1580bdffd0c980c36616788d619ae89a`;[source manifest](chapter-09-lab-03-publication-r31.json).
+**Latest scoped source:** V-215 executable source at `1ba1206bc29ac02dbdbc0576fd41cc953463bc52`;[original/corrected manuscript manifest](chapter-09-lab-04-publication-r32.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-214 lab/exercise scoped pass;V-212 full runtime source identities preserved. Remaining chapter-lab/extension and independent/model/platform/release acceptance open.
+**Disposition:** V-215 quadratic lab/answer scoped pass;V-212 full runtime source identities preserved. Remaining chapter-lab/extension and independent/model/platform/release acceptance open.
 
 ## Reconciled evidence
 
@@ -1552,3 +1552,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-214 checkpoint — Section9.3 Taylorlab/exercise crosswalk
 
 [Evidence](chapter-09-lab-03-followup-r31.md):103predicatespass twice;twoexactPythonfilescompiled/threecommandsperrun,hashesverified.53CLI numericalfields/nineschemas,32callerhalvingfields/fourschemas,threeratiocomparisons/twoexercisefields separated. Genericroundedcallbackgrid/valuesdistinctfromnominalmathanswers andanalyticdiscountoutputs. Prescribedgridnotuniformhalving;separatecallerhalvingratios3.967011/3.983420/3.991688arenotforcedequal4. Sixlabunits/tenexercise dispositions are reviewunits,notnewtesttotals. No Pythonchange/defectinvented;all643requiredhashesmatchV212642/429/643atitsoriginalpin. Next9.4second-orderTaylorcrosswalk;broaderlab/extension/provenance/resources/model/platform/release/independent/canonicalacceptanceopen.38COVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-215 checkpoint — Section9.4 quadratic Taylor lab/answer alignment
+
+[Evidence](chapter-09-lab-04-followup-r32.md):82passes/two printed-rounding failures reproduced;corrected84predicates pass twice.52CLI numericalfields/11schemas/12selectedproperties/two nativeTaylorchanges/twocallerlevels/fiveprintchecks distinct. Two exactPythonfiles compiled/threecommandsperrun,hashes verified. Quadratic display−40.834197→−40.834196 andexact−40.834366→−40.834367;no Python implementation change. Initial harness guessed-path failure retained separately,not a source defect. Sixlabunits/tenexercise dispositions are reviewunits;selectedaccuracy doesnot imply universal/modelacceptance. All643requiredhashesmatchV212642/429/643;no newfullrun. Next9.5remainder/boundlabcrosswalk;38COVcategoriespartial,noneclosed;broaderlab/extension/provenance/resources/platform/release/independent/canonicalacceptanceopen.Book1separate.

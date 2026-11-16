@@ -1,0 +1,86 @@
+{
+  "lab_units": [
+    {
+      "unit": "Documented commands",
+      "evidence": "Both exact staged lab and reference check script exited0;two Python files compiled in each run.",
+      "limit": "Reference tests do not provide independent reviewer acceptance."
+    },
+    {
+      "unit": "Complete default report",
+      "evidence": "Single and portfolio baseline fields,six signed single-flow shocks and portfolio50bp report checked:52 numerical fields and11schemas.",
+      "limit": "Selected default schedule and shocks,not arbitrary-input validation."
+    },
+    {
+      "unit": "Taylor changes versus levels",
+      "evidence": "Two source taylor_change orders checked with analytical cubic derivatives12/12;adding baseline8 is caller work.",
+      "limit": "No native symbolic differentiator or cubic value API."
+    },
+    {
+      "unit": "Signed errors and accuracy",
+      "evidence": "Six source scenarios have expected third-order error signs and smaller selected quadratic absolute errors.",
+      "limit": "These selected improvements do not imply universal finite-shock superiority."
+    },
+    {
+      "unit": "Analytical references",
+      "evidence": "90/140-digit Decimal original-input sums/endpoints/Taylor/error calculations agree at float report precision.",
+      "limit": "Shared Decimal.exp primitive;independent report derivation,not independent transcendental implementation."
+    },
+    {
+      "unit": "Worked numeric displays",
+      "evidence": "Five nominal six-decimal expressions checked;two printed values corrected after82/2baseline replay.",
+      "limit": "Compute unrounded expressions before final display rounding;nominal decimals distinct from represented float inputs."
+    }
+  ],
+  "exercises": [
+    {
+      "exercise": 1,
+      "disposition": "Second-order polynomial includes baseline plus first/second changes;native taylor_change returns change only."
+    },
+    {
+      "exercise": 2,
+      "disposition": "For cubic at2,derivatives12 and12 are analytical inputs to source order1/order2 calls."
+    },
+    {
+      "exercise": 3,
+      "disposition": "Nominalh=.1 yields exact9.261,linear9.2,quadratic9.26 and errors.061/.001;source represented-h changes and caller levels checked separately."
+    },
+    {
+      "exercise": 4,
+      "disposition": "C3 continuity over interval supplies Lagrange third-derivative remainder;no runtime test proves the theorem."
+    },
+    {
+      "exercise": 5,
+      "disposition": "Continuous-discount derivatives -tV andt\u00b2V independently derive complete report expectations."
+    },
+    {
+      "exercise": 6,
+      "disposition": "Single-payment durationt andconvexityt\u00b2 checked as native fields;normalization convention continuous compounding."
+    },
+    {
+      "exercise": 7,
+      "disposition": "Curvature correction.102341 checked in nominal display;quadratic and exact changes corrected by unrounded calculation."
+    },
+    {
+      "exercise": 8,
+      "disposition": "Positive multi-flow aggregate value/derivatives/duration/convexity and50bpshock allnative default fields independently checked."
+    },
+    {
+      "exercise": 9,
+      "disposition": "Local Taylor approximation has omitted terms;selected six-scenario improvement is not universal."
+    },
+    {
+      "exercise": 10,
+      "disposition": "Callable/prepayment cashflow dependence is excluded;no optionality or option-adjusted pricing API claimed."
+    }
+  ],
+  "predicate_kinds": {
+    "CLI schema": 11,
+    "CLI numerical": 52,
+    "selected model property": 12,
+    "source with analytical derivatives": 2,
+    "caller level composition": 2,
+    "printed answer": 5
+  },
+  "next": "Section9.5 remainder/error-bound lab/exercise/acceptance crosswalk;reuse prior numerical contracts and fill genuine prompt/report/nonvacuity gaps.",
+  "reviewer": "Assistant scoped source/analytical verification;independent acceptance pending."
+}

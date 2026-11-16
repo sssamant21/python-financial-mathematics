@@ -1,0 +1,753 @@
+{
+  "source_revision": "1ba1206bc29ac02dbdbc0576fd41cc953463bc52",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.03-reproducible-simulation.md",
+  "source_blob": "51b1e7521992035eeef1ba41119e86309324483e",
+  "fence_sha256": [
+    "6fd6bdb0b377cc4cbfc2238e679b6aaabd940c54079c7d041fbba2e6b63e200f",
+    "4de076f16ac06e0d025a0e007daa57bf3c036976a53fca3a5bb03f3b7c27bed6",
+    "cc84007dc5c4a515145fb2f8dda33f1619517c068eb0fb338ee0bae14e09cd84",
+    "abb4967c2d830bdad467fff7fe31c43081a581979c6601d3f501d7f63708f6c1"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "reproducible_simulation.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"count\":10000,\"down_value\":90,\"generator\":\"random.Random / Mersenne Twister\",\"initial_value\":100,\"mean\":101.914,\"model\":\"two-outcome-terminal-value\",\"python_implementation\":\"CPython\",\"python_version\":\"3.12.14\",\"schema_version\":1,\"seed\":42,\"up_count\":5957,\"up_probability\":0.6,\"up_value\":110}\nmanifest_sha256: e01929a9367342d652ee617ccc88fb4b30bae184f179c18e6e494effe840d62e\n",
+      "stderr": "test_all_down (__main__.ReproducibilityTests.test_all_down) ... ok\ntest_all_up (__main__.ReproducibilityTests.test_all_up) ... ok\ntest_canonical_key_order (__main__.ReproducibilityTests.test_canonical_key_order) ... ok\ntest_digest_changes (__main__.ReproducibilityTests.test_digest_changes) ... ok\ntest_digest_replay (__main__.ReproducibilityTests.test_digest_replay) ... ok\ntest_invalid_count (__main__.ReproducibilityTests.test_invalid_count) ... ok\ntest_invalid_probability (__main__.ReproducibilityTests.test_invalid_probability) ... ok\ntest_replay (__main__.ReproducibilityTests.test_replay) ... ok\ntest_tolerance_fail (__main__.ReproducibilityTests.test_tolerance_fail) ... ok\ntest_tolerance_pass (__main__.ReproducibilityTests.test_tolerance_pass) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "reproducible_simulation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "rows": [
+    {
+      "name": "count 8",
+      "passed": true,
+      "actual": 4,
+      "expected": 4,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 8",
+      "passed": true,
+      "actual": 100.0,
+      "independent_expected": "100",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 8",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "native signature has no state/offset argument",
+      "passed": true,
+      "kind": "source API boundary"
+    },
+    {
+      "name": "count 2",
+      "passed": true,
+      "actual": 1,
+      "expected": 1,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 2",
+      "passed": true,
+      "actual": 100.0,
+      "independent_expected": "100",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 2",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "count 6",
+      "passed": true,
+      "actual": 3,
+      "expected": 3,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 6",
+      "passed": true,
+      "actual": 100.0,
+      "independent_expected": "100",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 6",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "partition 2 left fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 2 right fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 2 restarted draw mapping differs",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 2 aggregate count mean",
+      "passed": true,
+      "kind": "caller aggregate arithmetic"
+    },
+    {
+      "name": "partition 2 external continuation trace",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "partition 2 external continuation count",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "count 3",
+      "passed": true,
+      "actual": 2,
+      "expected": 2,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 3",
+      "passed": true,
+      "actual": 103.33333333333333,
+      "independent_expected": "310/3",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 3",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "count 5",
+      "passed": true,
+      "actual": 3,
+      "expected": 3,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 5",
+      "passed": true,
+      "actual": 102.0,
+      "independent_expected": "102",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 5",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "partition 3 left fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 3 right fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 3 restarted draw mapping differs",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 3 aggregate count mean",
+      "passed": true,
+      "kind": "caller aggregate arithmetic"
+    },
+    {
+      "name": "partition 3 external continuation trace",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "partition 3 external continuation count",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "count 4",
+      "passed": true,
+      "actual": 3,
+      "expected": 3,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 4",
+      "passed": true,
+      "actual": 105.0,
+      "independent_expected": "105",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 4",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "count 4",
+      "passed": true,
+      "actual": 3,
+      "expected": 3,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 4",
+      "passed": true,
+      "actual": 105.0,
+      "independent_expected": "105",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 4",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "partition 4 left fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 4 right fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 4 restarted draw mapping differs",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 4 aggregate count mean",
+      "passed": true,
+      "kind": "caller aggregate arithmetic"
+    },
+    {
+      "name": "partition 4 external continuation trace",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "partition 4 external continuation count",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "count 5",
+      "passed": true,
+      "actual": 3,
+      "expected": 3,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 5",
+      "passed": true,
+      "actual": 102.0,
+      "independent_expected": "102",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 5",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "count 3",
+      "passed": true,
+      "actual": 2,
+      "expected": 2,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 3",
+      "passed": true,
+      "actual": 103.33333333333333,
+      "independent_expected": "310/3",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 3",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "partition 5 left fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 5 right fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 5 restarted draw mapping differs",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 5 aggregate count mean",
+      "passed": true,
+      "kind": "caller aggregate arithmetic"
+    },
+    {
+      "name": "partition 5 external continuation trace",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "partition 5 external continuation count",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "count 6",
+      "passed": true,
+      "actual": 3,
+      "expected": 3,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 6",
+      "passed": true,
+      "actual": 100.0,
+      "independent_expected": "100",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 6",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "count 2",
+      "passed": true,
+      "actual": 1,
+      "expected": 1,
+      "kind": "source report from observed draws"
+    },
+    {
+      "name": "mean 2",
+      "passed": true,
+      "actual": 100.0,
+      "independent_expected": "100",
+      "kind": "independent count arithmetic"
+    },
+    {
+      "name": "constructor restored 2",
+      "passed": true,
+      "kind": "observer restoration"
+    },
+    {
+      "name": "partition 6 left fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 6 right fresh prefix",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 6 restarted draw mapping differs",
+      "passed": true,
+      "kind": "source draw-order observation"
+    },
+    {
+      "name": "partition 6 aggregate count mean",
+      "passed": true,
+      "kind": "caller aggregate arithmetic"
+    },
+    {
+      "name": "partition 6 external continuation trace",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "partition 6 external continuation count",
+      "passed": true,
+      "kind": "supplemental trusted-state continuation"
+    },
+    {
+      "name": "chosen4plus4restart changes mean",
+      "passed": true,
+      "kind": "selected source/caller illustration"
+    },
+    {
+      "name": "matching aggregates do not imply matching draw mapping",
+      "passed": true,
+      "kind": "reproducibility interpretation"
+    }
+  ],
+  "passed": 66,
+  "failed": 0,
+  "full_manifest": {
+    "schema_version": 1,
+    "model": "two-outcome-terminal-value",
+    "initial_value": 100,
+    "up_value": 110,
+    "down_value": 90,
+    "up_probability": 0.6,
+    "seed": 42,
+    "count": 8,
+    "generator": "random.Random / Mersenne Twister",
+    "python_implementation": "CPython",
+    "python_version": "3.12.14",
+    "up_count": 4,
+    "mean": 100.0
+  },
+  "full_manifest_digest": "3cf867afec00d81a4c0a0697faf80915543a7531bb673b81527851d3d76d20d5",
+  "partitions": [
+    {
+      "sizes": [
+        2,
+        6
+      ],
+      "left_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 2,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 1,
+        "mean": 100.0
+      },
+      "right_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 6,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 3,
+        "mean": 100.0
+      },
+      "restarted_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1"
+      ],
+      "full_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.c8cbc2a2e7490p-1",
+        "0x1.6419f92e55088p-4"
+      ],
+      "restarted_count": 4,
+      "full_count": 4,
+      "restarted_mean": 100.0,
+      "full_mean": 100.0,
+      "same_aggregate_mean": true,
+      "same_draw_mapping": false,
+      "external_state_resume_matches": true,
+      "checkpoint_state_sha256": "4e846e3900bd94da5c60383c9390c00d44677f54bd47b969f586c937d2f63381"
+    },
+    {
+      "sizes": [
+        3,
+        5
+      ],
+      "left_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 3,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 2,
+        "mean": 103.33333333333333
+      },
+      "right_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 5,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 3,
+        "mean": 102.0
+      },
+      "restarted_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1"
+      ],
+      "full_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.c8cbc2a2e7490p-1",
+        "0x1.6419f92e55088p-4"
+      ],
+      "restarted_count": 5,
+      "full_count": 4,
+      "restarted_mean": 102.5,
+      "full_mean": 100.0,
+      "same_aggregate_mean": false,
+      "same_draw_mapping": false,
+      "external_state_resume_matches": true,
+      "checkpoint_state_sha256": "aa02cb3b4b72f624f79e1591bd17619dda9d804723b97b925c4b8f4ff4b4e711"
+    },
+    {
+      "sizes": [
+        4,
+        4
+      ],
+      "left_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 4,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 3,
+        "mean": 105.0
+      },
+      "right_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 4,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 3,
+        "mean": 105.0
+      },
+      "restarted_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3"
+      ],
+      "full_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.c8cbc2a2e7490p-1",
+        "0x1.6419f92e55088p-4"
+      ],
+      "restarted_count": 6,
+      "full_count": 4,
+      "restarted_mean": 105.0,
+      "full_mean": 100.0,
+      "same_aggregate_mean": false,
+      "same_draw_mapping": false,
+      "external_state_resume_matches": true,
+      "checkpoint_state_sha256": "bfde08a8a86a1befeee58c6451f03083ef3d810a290afb14b6b80e1893f62dda"
+    },
+    {
+      "sizes": [
+        5,
+        3
+      ],
+      "left_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 5,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 3,
+        "mean": 102.0
+      },
+      "right_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 3,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 2,
+        "mean": 103.33333333333333
+      },
+      "restarted_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2"
+      ],
+      "full_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.c8cbc2a2e7490p-1",
+        "0x1.6419f92e55088p-4"
+      ],
+      "restarted_count": 5,
+      "full_count": 4,
+      "restarted_mean": 102.5,
+      "full_mean": 100.0,
+      "same_aggregate_mean": false,
+      "same_draw_mapping": false,
+      "external_state_resume_matches": true,
+      "checkpoint_state_sha256": "5a95ed2cba70676228396beb568f9055d0a3d1ae38a9f8e9473b37f8e07b4b1a"
+    },
+    {
+      "sizes": [
+        6,
+        2
+      ],
+      "left_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 6,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 3,
+        "mean": 100.0
+      },
+      "right_manifest": {
+        "schema_version": 1,
+        "model": "two-outcome-terminal-value",
+        "initial_value": 100,
+        "up_value": 110,
+        "down_value": 90,
+        "up_probability": 0.6,
+        "seed": 42,
+        "count": 2,
+        "generator": "random.Random / Mersenne Twister",
+        "python_implementation": "CPython",
+        "python_version": "3.12.14",
+        "up_count": 1,
+        "mean": 100.0
+      },
+      "restarted_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6"
+      ],
+      "full_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.c8cbc2a2e7490p-1",
+        "0x1.6419f92e55088p-4"
+      ],
+      "restarted_count": 4,
+      "full_count": 4,
+      "restarted_mean": 100.0,
+      "full_mean": 100.0,
+      "same_aggregate_mean": true,
+      "same_draw_mapping": false,
+      "external_state_resume_matches": true,
+      "checkpoint_state_sha256": "1b832fff99a132135fc6e5803fd3f3b57e17089fd09b8500962d0fbda7191005"
+    }
+  ],
+  "limits": "Source API always starts fresh local seed;trustedstatecontinuation andchunkaggregation are supplemental. Matchingmeans/digestsnotindependence/model/security/platformapproval;no nativecheckpointAPI invented."
+}

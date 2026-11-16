@@ -398,3 +398,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.2 generator/resolution assumptions
 
 [Evidence](v10-generator-resolution/README.md):47predicates pass twice across11thresholdcases;22actualsource map/callbackchecks,22conditional-gridalgebra checks,onenative-supportobservation andtwo supplementalinterpretations. Underexplicituniform-mass53bitgridassumption,q=ceil(2^53P)/2^53,0<=q−P<2^-53;subgridpositivePacceptsonecell. Controlledsourcecalls are notPRNGuniformity/independence/rare-eventcertification. Allsixpriorlistinghashesmatch;F174/78predicateandNumPy/state/spawn evidence retainedatoriginalscope. Fourcommands/20invocationsof10existingmethods;no newanswers/workflows/historicalmethods. Next18.3reproducibility/configuration/draw-ordercrosswalk. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.3 reproducibility/partition assumptions
+
+[Evidence](v10-reproducibility-partitions/README.md):66predicates pass twice,fivepartitions. Actualfresh-seedsourcecallsrestartprefixes;4+4callermean105versusfull100,while2+6/6+2matchmean100despitedifferentdrawmapping. Externaltrustedstatecontinuationmatchesfulltrace/count;notanativecheckpoint/parallelAPI. Independent90+20k/Nreportarithmeticseparatefromsame-librarydrawobservation. Fourformalcommands/20invocationsof10existingmethods;allfourpriorlistinghashesmatch,F175/63predicate/encoding/NumPyevidencepreservedatoriginalscope. No newanswers/workflows/historicalmethods. Next18.4outcome/model/measureandestimatorcrosswalk;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.

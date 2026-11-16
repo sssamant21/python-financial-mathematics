@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-214 Section9.3 lab/exercise scoped pass. V-212 remains latest full candidate Linux pass (642/429/643); all required code/fixture hashes match current inspected source. Broader acceptance gaps open.
+**Overall status:** In progress — V-215 Section9.4 lab/answer scoped pass. V-212 remains latest full candidate Linux pass (642/429/643); all required code/fixture hashes match current inspected source. Broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1678,3 +1678,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-214 checkpoint — Section9.3 Taylorlab/exercise crosswalk
 
 [Evidence](chapter-09-lab-03-followup-r31.md):103predicatespass twice;twoexactPythonfilescompiled/threecommandsperrun,hashesverified.53CLI numericalfields/nineschemas,32callerhalvingfields/fourschemas,threeratiocomparisons/twoexercisefields separated. Genericroundedcallbackgrid/valuesdistinctfromnominalmathanswers andanalyticdiscountoutputs. Prescribedgridnotuniformhalving;separatecallerhalvingratios3.967011/3.983420/3.991688arenotforcedequal4. Sixlabunits/tenexercise dispositions are reviewunits,notnewtesttotals. No Pythonchange/defectinvented;all643requiredhashesmatchV212642/429/643atitsoriginalpin. Next9.4second-orderTaylorcrosswalk;broaderlab/extension/provenance/resources/model/platform/release/independent/canonicalacceptanceopen.38COVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-215 checkpoint — Section9.4 quadratic Taylor lab/answer alignment
+
+[Evidence](chapter-09-lab-04-followup-r32.md):82passes/two printed-rounding failures reproduced;corrected84predicates pass twice.52CLI numericalfields/11schemas/12selectedproperties/two nativeTaylorchanges/twocallerlevels/fiveprintchecks distinct. Two exactPythonfiles compiled/threecommandsperrun,hashes verified. Quadratic display−40.834197→−40.834196 andexact−40.834366→−40.834367;no Python implementation change. Initial harness guessed-path failure retained separately,not a source defect. Sixlabunits/tenexercise dispositions are reviewunits;selectedaccuracy doesnot imply universal/modelacceptance. All643requiredhashesmatchV212642/429/643;no newfullrun. Next9.5remainder/boundlabcrosswalk;38COVcategoriespartial,noneclosed;broaderlab/extension/provenance/resources/platform/release/independent/canonicalacceptanceopen.Book1separate.

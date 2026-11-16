@@ -1,0 +1,45 @@
+{
+  "claims": [
+    {
+      "claim": "Fresh seed API",
+      "evidence": "Actual run signature is seed/count/up_probability;each run creates a new local generator.",
+      "limit": "No native offset/state/parallel-resume API."
+    },
+    {
+      "claim": "Partition draw identity",
+      "evidence": "Five partitions2+6,3+5,4+4,5+3,6+2capture actual source draw traces;both calls restart the same seed.",
+      "limit": "A restarted chunk is a prefix,not the next suffix."
+    },
+    {
+      "claim": "Aggregate coincidence",
+      "evidence": "Some restarted partitions match full mean100 despite different draw mapping;4+4 gives105 instead.",
+      "limit": "Matching aggregate output cannot establish correct partitioning."
+    },
+    {
+      "claim": "Correct continuation",
+      "evidence": "Supplemental trusted getstate/setstate continuation reproduces full trace/count for all five partitions.",
+      "limit": "External caller workflow,not a source checkpoint feature or portable state format."
+    },
+    {
+      "claim": "Independent report arithmetic",
+      "evidence": "Actual up counts and reported means compared with exact90+20k/N from captured draws.",
+      "limit": "Same-library draw observation is not an independent randomness oracle."
+    },
+    {
+      "claim": "Manifest boundary",
+      "evidence": "Full manifest/digest and child manifests retained;source-generated metadata omits offset/start-state and external code/data identity.",
+      "limit": "Digest covers encoded manifest,not correctness/authenticity/financial lineage."
+    },
+    {
+      "claim": "Model meaning",
+      "evidence": "Fictional terminal90/110,p.6 has analytical expectation102;selectedN8seed42actualmean100.",
+      "limit": "No forecast/measure calibration or sampling-accuracy gate."
+    },
+    {
+      "claim": "Progression",
+      "evidence": "Next18.4 outcomes/model/measure and estimator assumptions crosswalk;F175 historical corrections retained.",
+      "limit": "F28/F32/F209/F165/F185 and platform/model/independent acceptance open."
+    }
+  ],
+  "reviewer": "Assistant scoped source/analytical verification;external independent acceptance pending."
+}

@@ -130,3 +130,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-214 Section9.3 lab/exercise crosswalk
 
 [V-214](chapter-09-lab-03-followup-r31.md):sixlabunits/tenexercise dispositions;103predicates/tworuns,twoPythonfilescompiled/threecommandsperrun. Complete53numericCLIfieldsandprescribedgridchecked,separatehalvingstudyrecordsactualerrors/ratios. Roundedgenericcallbackoutputsandanalyticdiscountcalculationskeptdistinct. All643code/fixturehashesmatchV212;noPythonchange/newfullrun.Next9.4crosswalk;38selectedCOVcategoriespartial,noneclosed.
+
+
+### Later V-215 Section9.4 lab and worked-answer crosswalk
+
+[V-215](chapter-09-lab-04-followup-r32.md):sixlabunits/tenexercise dispositions;82/2baseline/replay retained,84correctedpredicates pass twice,twoPythonfilescompiled/threecommandsperrun. Complete default report,selectedproperties andnativechange/callerlevel semantics checked. Two displayed values corrected without changing numericalPython. Harness lookup failure distinct. All643code/fixtureidentitiesmatchV212;no newfullrun.Next9.5boundlabcrosswalk;38selectedCOVcategoriespartial,noneclosed.
