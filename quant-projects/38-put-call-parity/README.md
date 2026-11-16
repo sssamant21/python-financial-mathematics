@@ -44,3 +44,9 @@ A high-precision cross-check is useful evidence but is not an independent
 financial-model audit. Inputs are synthetic; the assumed continuously
 compounded rates and continuous dividend yield are not a verified
 executable-market financing model.
+
+## Adjacent-floating-point boundary regression
+
+Two additional deterministic tests use `math.nextafter(10.0, ±math.inf)` to put the lower or upper quote boundary one representable binary64 value either side of an exactly representable parity target. They intentionally use zero rates and yields to isolate quote-comparison behavior from discounting error. The diagnostic uses strict inclusive comparison without a market-derived tolerance; one-ULP classifications are **numerical behavior tests**, not evidence of executable mispricing. Tick sizes, stale quotes, fees and financing are outside the model.
+
+Run `python -m unittest -v test_parity.py test_decimal_reference.py`. Exact-revision CI and independent validation of these newly added cases remain pending until verified.
