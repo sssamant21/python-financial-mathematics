@@ -292,9 +292,10 @@ jobs:
       - name: Validate Project 37 option quote diagnostics
         run: |
           cd quant-projects/37-static-option-arbitrage
-          python -m unittest -v test_surface.py test_quote_intervals.py
-          python -m compileall -q surface.py test_surface.py quote_intervals.py test_quote_intervals.py
+          python -m unittest -v test_surface.py test_quote_intervals.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
+          python -m compileall -q surface.py quote_intervals.py joint_feasibility.py test_surface.py test_quote_intervals.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
           python surface.py
+          python joint_feasibility.py
           python quote_intervals.py
           python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
           python -m compileall -q joint_feasibility.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
