@@ -245,3 +245,5 @@ Project 37 now also includes a five-strike exact-rational bid/ask interval oracl
 Project 37 numerical-conditioning regression: `python -m unittest -v test_near_zero_pivots.py` from its folder compares four small-gap/near-flat synthetic quote grids against the independent exact-rational three-strike oracle. Hosted CI and independent review must be checked before treating these as accepted.
 
 Project 38 additionally includes adjacent-binary64 quote-boundary regression cases in `test_decimal_reference.py`. The one-ULP checks illustrate strict numerical comparisons, not executable market arbitrage; consult its README and the tracker for validation limitations.
+
+Project 40 also includes `test_curve_reconciliation.py`: independent period-by-period floating coupon projections, uneven-accrual and negative-rate scenarios, and terminal/interior discount-factor sensitivity. Run `python -m unittest -v test_swap.py test_curve_reconciliation.py` from its folder. The extension's exact-revision hosted CI remains unverified.
