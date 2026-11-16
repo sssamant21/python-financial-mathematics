@@ -319,8 +319,8 @@ jobs:
       - name: Validate Project 40 interest-rate swaps
         run: |
           cd quant-projects/40-interest-rate-swaps
-          python -m unittest -v test_swap.py
-          python -m compileall -q swap.py test_swap.py
+          python -m unittest -v test_swap.py test_curve_reconciliation.py
+          python -m compileall -q swap.py test_swap.py test_curve_reconciliation.py
           python swap.py
           python swap.py --receive-fixed
 
