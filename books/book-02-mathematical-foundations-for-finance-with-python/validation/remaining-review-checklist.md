@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-16
 **Full-runtime candidate source revision:** `2ee81822af67357087e2af6193348f2b3c5dbdf8` (V-212)
-**Latest scoped source:** V-215 executable source at `1ba1206bc29ac02dbdbc0576fd41cc953463bc52`;[original/corrected manuscript manifest](chapter-09-lab-04-publication-r32.json).
+**Latest scoped source:** V-216 financial source at `f557464a4f1e367f64d515a7818c5aac65c79766`,changed checker separately blob-pinned;[manifest](chapter-09-lab-05-publication-r33.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-215 quadratic lab/answer scoped pass;V-212 full runtime source identities preserved. Remaining chapter-lab/extension and independent/model/platform/release acceptance open.
+**Disposition:** V-216 lab/checker scope passes;V-212 full runtime remains at older pin. One checker changed;remaining chapter-lab/extension andindependent/model/platform/release acceptance open.
 
 ## Reconciled evidence
 
@@ -1557,3 +1557,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-215 checkpoint — Section9.4 quadratic Taylor lab/answer alignment
 
 [Evidence](chapter-09-lab-04-followup-r32.md):82passes/two printed-rounding failures reproduced;corrected84predicates pass twice.52CLI numericalfields/11schemas/12selectedproperties/two nativeTaylorchanges/twocallerlevels/fiveprintchecks distinct. Two exactPythonfiles compiled/threecommandsperrun,hashes verified. Quadratic display−40.834197→−40.834196 andexact−40.834366→−40.834367;no Python implementation change. Initial harness guessed-path failure retained separately,not a source defect. Sixlabunits/tenexercise dispositions are reviewunits;selectedaccuracy doesnot imply universal/modelacceptance. All643requiredhashesmatchV212642/429/643;no newfullrun. Next9.5remainder/boundlabcrosswalk;38COVcategoriespartial,noneclosed;broaderlab/extension/provenance/resources/platform/release/independent/canonicalacceptanceopen.Book1separate.
+
+
+## V-216 checkpoint — Section9.5 bound-checker nonvacuity andlabcrosswalk
+
+[Evidence](chapter-09-lab-05-followup-r33.md):62pass/4failbaseline/replay retained;66correctedpredicates pass twice,fourPythonfilescompiled/fivecommandsperrun. Threezero/negativeboundmutants nowrejected;validzeroerror/boundaccepted. Reference tolerance now1e-12*max(error,bound),withfinite/nonnegativeguards;financialsourceunchanged. Tenrunbookbackticksrepaired;twoexistingprintedboundsagree. Sixlabunits/tenexercise dispositions separatemathematicalpremises,sourceoutputs andcheckermutations. Retained207source+13oracle and117source+3exercise checkerresults separate,notnewunique totals. Freshcounts642/429/643unchanged;onecheckerblobdiffersfromV212,642/643identical;latestfullremainsoldpin,currentfour-file scope passes. Next9.6labcrosswalk;COV52/all38selectedcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.

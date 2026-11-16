@@ -1,0 +1,76 @@
+{
+  "baseline_failed_rows": [
+    {
+      "name": "zero linear bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": false,
+      "mutated_field": "linear_bound",
+      "mutated_value": 0.0,
+      "actual_reported_error": 1.0234134242905868e-11,
+      "original_bound": 1.0234134413474774e-11,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "zero quadratic bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": false,
+      "mutated_field": "quadratic_bound",
+      "mutated_value": 0.0,
+      "actual_reported_error": -1.705689047591349e-19,
+      "original_bound": 1.7056890689124624e-19,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "negative quadratic bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": false,
+      "mutated_field": "quadratic_bound",
+      "mutated_value": -1e-30,
+      "actual_reported_error": -1.705689047591349e-19,
+      "original_bound": 1.7056890689124624e-19,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "runnable command markup",
+      "kind": "static markup",
+      "passed": false
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "zero linear bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": false,
+      "mutated_field": "linear_bound",
+      "mutated_value": 0.0,
+      "actual_reported_error": 1.0234134242905868e-11,
+      "original_bound": 1.0234134413474774e-11,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "zero quadratic bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": false,
+      "mutated_field": "quadratic_bound",
+      "mutated_value": 0.0,
+      "actual_reported_error": -1.705689047591349e-19,
+      "original_bound": 1.7056890689124624e-19,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "negative quadratic bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": false,
+      "mutated_field": "quadratic_bound",
+      "mutated_value": -1e-30,
+      "actual_reported_error": -1.705689047591349e-19,
+      "original_bound": 1.7056890689124624e-19,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    }
+  ],
+  "policy": "Require finite error and finite nonnegative bound;use1e-12*max(error,bound) allowance rather than1e-9*max(1,baseline).",
+  "rationale": "An error-field scale cannot mask a positive error against zero bound,and negative bounds are rejected. Returned field comparisons still do not prove latent or universal floating-error bounds.",
+  "durable_tests": "Reference run() now includeszero linear bound,zero quadratic bound andnegative quadratic bound mutants ofactual1e-8shockreport;allmustraiseAssertionError.",
+  "markup": "Ten escaped backticks repaired;static command fence/inline code checks pass.",
+  "numeric_source_changed": false
+}

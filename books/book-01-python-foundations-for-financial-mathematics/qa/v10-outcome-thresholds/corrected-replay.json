@@ -1,0 +1,569 @@
+{
+  "source_revision": "f557464a4f1e367f64d515a7818c5aac65c79766",
+  "source_mode": "working",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.04-simulating-financial-outcomes.md",
+  "source_blob": "bf3632afbaac7f7b2559be8f4e1adb62921c52b7",
+  "fence_sha256": "c9b997da4ff026debb4790d6c124a7c219cc216835cbc7665291195c1fc2446f",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "financial_outcomes.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'count': 10000, 'mean_terminal': 99.96, 'mean_profit': -0.04, 'standard_error_mean': 0.1406051812050259, 'loss_count': 2481, 'loss_frequency': 0.2481}\n",
+      "stderr": "test_bad_count (__main__.OutcomeTests.test_bad_count) ... ok\ntest_bad_fee (__main__.OutcomeTests.test_bad_fee) ... ok\ntest_bad_rate (__main__.OutcomeTests.test_bad_rate) ... ok\ntest_constant_sample (__main__.OutcomeTests.test_constant_sample) ... ok\ntest_discount (__main__.OutcomeTests.test_discount) ... ok\ntest_fee (__main__.OutcomeTests.test_fee) ... ok\ntest_known_summary (__main__.OutcomeTests.test_known_summary) ... ok\ntest_replay (__main__.OutcomeTests.test_replay) ... ok\ntest_strict_threshold (__main__.OutcomeTests.test_strict_threshold) ... ok\ntest_values_in_model (__main__.OutcomeTests.test_values_in_model) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "financial_outcomes.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "rows": [
+    {
+      "name": "flat tinyfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": true,
+      "expected_latent_loss_count": 4,
+      "source_summary": null,
+      "exception": {
+        "type": "ValueError",
+        "message": "rounded terminal value changes strict loss classification at model cost 100"
+      }
+    },
+    {
+      "name": "flat tinyfee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "flat smallfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": true,
+      "expected_latent_loss_count": 4,
+      "source_summary": null,
+      "exception": {
+        "type": "ValueError",
+        "message": "rounded terminal value changes strict loss classification at model cost 100"
+      }
+    },
+    {
+      "name": "flat smallfee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "up adjacent feeabove20 classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": true,
+      "expected_latent_loss_count": 4,
+      "source_summary": null,
+      "exception": {
+        "type": "ValueError",
+        "message": "rounded terminal value changes strict loss classification at model cost 100"
+      }
+    },
+    {
+      "name": "up adjacent feeabove20 RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "up adjacent feebelow20 classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 0,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "name": "up adjacent feebelow20 RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "up exactfee20 classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 0,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "name": "up exactfee20 RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "flat representablefee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 99.999999999999,
+        "mean_profit": -1e-12,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "name": "flat representablefee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "flat nofee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 0,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "name": "flat nofee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "down tinyfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 80,
+        "mean_profit": -20,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "name": "down tinyfee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "up normalfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 0,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 118,
+        "mean_profit": 18,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "name": "up normalfee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "flat normalfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 98,
+        "mean_profit": -2,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "name": "flat normalfee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "down normalfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": true,
+      "ambiguous": false,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 78,
+        "mean_profit": -22,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "name": "down normalfee RNG restore",
+      "kind": "observer restoration",
+      "passed": true
+    },
+    {
+      "name": "model fee0 mean",
+      "kind": "supplemental exact distribution",
+      "actual": "100",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "model fee0 strict loss",
+      "kind": "supplemental exact distribution",
+      "actual": "1/4",
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "model fee0 variance",
+      "kind": "supplemental exact distribution",
+      "actual": "200",
+      "expected": "200",
+      "passed": true
+    },
+    {
+      "name": "model fee2 mean",
+      "kind": "supplemental exact distribution",
+      "actual": "98",
+      "expected": "98",
+      "passed": true
+    },
+    {
+      "name": "model fee2 strict loss",
+      "kind": "supplemental exact distribution",
+      "actual": "3/4",
+      "expected": "3/4",
+      "passed": true
+    },
+    {
+      "name": "model fee2 variance",
+      "kind": "supplemental exact distribution",
+      "actual": "200",
+      "expected": "200",
+      "passed": true
+    },
+    {
+      "name": "model fee20 mean",
+      "kind": "supplemental exact distribution",
+      "actual": "80",
+      "expected": "80",
+      "passed": true
+    },
+    {
+      "name": "model fee20 strict loss",
+      "kind": "supplemental exact distribution",
+      "actual": "3/4",
+      "expected": "3/4",
+      "passed": true
+    },
+    {
+      "name": "model fee20 variance",
+      "kind": "supplemental exact distribution",
+      "actual": "200",
+      "expected": "200",
+      "passed": true
+    }
+  ],
+  "passed": 31,
+  "failed": 0,
+  "cases": [
+    {
+      "label": "flat tinyfee",
+      "controlled_uniform": 0.5,
+      "input_fee": "1e-16",
+      "exact_net": "999999999999999999/10000000000000000",
+      "rounded_net": 100.0,
+      "latent_strict_loss": true,
+      "reported_strict_loss": false,
+      "classification_ambiguous": true,
+      "actual_values": null,
+      "summary": null,
+      "exception": {
+        "type": "ValueError",
+        "message": "rounded terminal value changes strict loss classification at model cost 100"
+      }
+    },
+    {
+      "label": "flat smallfee",
+      "controlled_uniform": 0.5,
+      "input_fee": "1e-15",
+      "exact_net": "99999999999999999/1000000000000000",
+      "rounded_net": 100.0,
+      "latent_strict_loss": true,
+      "reported_strict_loss": false,
+      "classification_ambiguous": true,
+      "actual_values": null,
+      "summary": null,
+      "exception": {
+        "type": "ValueError",
+        "message": "rounded terminal value changes strict loss classification at model cost 100"
+      }
+    },
+    {
+      "label": "up adjacent feeabove20",
+      "controlled_uniform": 0.9,
+      "input_fee": "20.000000000000004",
+      "exact_net": "24999999999999999/250000000000000",
+      "rounded_net": 100.0,
+      "latent_strict_loss": true,
+      "reported_strict_loss": false,
+      "classification_ambiguous": true,
+      "actual_values": null,
+      "summary": null,
+      "exception": {
+        "type": "ValueError",
+        "message": "rounded terminal value changes strict loss classification at model cost 100"
+      }
+    },
+    {
+      "label": "up adjacent feebelow20",
+      "controlled_uniform": 0.9,
+      "input_fee": "19.999999999999996",
+      "exact_net": "25000000000000001/250000000000000",
+      "rounded_net": 100.0,
+      "latent_strict_loss": false,
+      "reported_strict_loss": false,
+      "classification_ambiguous": false,
+      "actual_values": [
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "label": "up exactfee20",
+      "controlled_uniform": 0.9,
+      "input_fee": "20.0",
+      "exact_net": "100",
+      "rounded_net": 100.0,
+      "latent_strict_loss": false,
+      "reported_strict_loss": false,
+      "classification_ambiguous": false,
+      "actual_values": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "label": "flat representablefee",
+      "controlled_uniform": 0.5,
+      "input_fee": "1e-12",
+      "exact_net": "99999999999999/1000000000000",
+      "rounded_net": 99.999999999999,
+      "latent_strict_loss": true,
+      "reported_strict_loss": true,
+      "classification_ambiguous": false,
+      "actual_values": [
+        99.999999999999,
+        99.999999999999,
+        99.999999999999,
+        99.999999999999
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 99.999999999999,
+        "mean_profit": -1e-12,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "label": "flat nofee",
+      "controlled_uniform": 0.5,
+      "input_fee": "0.0",
+      "exact_net": "100",
+      "rounded_net": 100.0,
+      "latent_strict_loss": false,
+      "reported_strict_loss": false,
+      "classification_ambiguous": false,
+      "actual_values": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "label": "down tinyfee",
+      "controlled_uniform": 0.1,
+      "input_fee": "1e-16",
+      "exact_net": "799999999999999999/10000000000000000",
+      "rounded_net": 80.0,
+      "latent_strict_loss": true,
+      "reported_strict_loss": true,
+      "classification_ambiguous": false,
+      "actual_values": [
+        80.0,
+        80.0,
+        80.0,
+        80.0
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 80,
+        "mean_profit": -20,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "label": "up normalfee",
+      "controlled_uniform": 0.9,
+      "input_fee": "2.0",
+      "exact_net": "118",
+      "rounded_net": 118.0,
+      "latent_strict_loss": false,
+      "reported_strict_loss": false,
+      "classification_ambiguous": false,
+      "actual_values": [
+        118,
+        118,
+        118,
+        118
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 118,
+        "mean_profit": 18,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "label": "flat normalfee",
+      "controlled_uniform": 0.5,
+      "input_fee": "2.0",
+      "exact_net": "98",
+      "rounded_net": 98.0,
+      "latent_strict_loss": true,
+      "reported_strict_loss": true,
+      "classification_ambiguous": false,
+      "actual_values": [
+        98,
+        98,
+        98,
+        98
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 98,
+        "mean_profit": -2,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    },
+    {
+      "label": "down normalfee",
+      "controlled_uniform": 0.1,
+      "input_fee": "2.0",
+      "exact_net": "78",
+      "rounded_net": 78.0,
+      "latent_strict_loss": true,
+      "reported_strict_loss": true,
+      "classification_ambiguous": false,
+      "actual_values": [
+        78,
+        78,
+        78,
+        78
+      ],
+      "summary": {
+        "count": 4,
+        "mean_terminal": 78,
+        "mean_profit": -22,
+        "standard_error_mean": 0.0,
+        "loss_count": 4,
+        "loss_frequency": 1.0
+      },
+      "exception": null
+    }
+  ],
+  "limits": "Fixedmodelcost100/strictless-thanclassification. Controlledsourcecalls,reportedvalues andlatentFractionexpectations distinct;notarbitrarythreshold/currency/measure/rare-event/platformapproval."
+}

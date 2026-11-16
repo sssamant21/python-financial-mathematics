@@ -403,3 +403,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.3 reproducibility/partition assumptions
 
 [Evidence](v10-reproducibility-partitions/README.md):66predicates pass twice,fivepartitions. Actualfresh-seedsourcecallsrestartprefixes;4+4callermean105versusfull100,while2+6/6+2matchmean100despitedifferentdrawmapping. Externaltrustedstatecontinuationmatchesfulltrace/count;notanativecheckpoint/parallelAPI. Independent90+20k/Nreportarithmeticseparatefromsame-librarydrawobservation. Fourformalcommands/20invocationsof10existingmethods;allfourpriorlistinghashesmatch,F175/63predicate/encoding/NumPyevidencepreservedatoriginalscope. No newanswers/workflows/historicalmethods. Next18.4outcome/model/measureandestimatorcrosswalk;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
+
+
+## V10 / F216 — Section18.4 fee and threshold integration
+
+[Evidence](v10-outcome-thresholds/README.md):28pass/3failbaseline andidenticalreplay retained;31correctedpredicates pass twice,plus75retainedregressionpredicates/threecommands. Source rejects reported netvalues if rounding changes strictlatentnet<100classification;exacttiesvalid. This narrowmodelcost100policy doesnot recoverlatentfees orvalidatearbitrarythresholds/nonstrictloss/modelmeasure. Sixassumptionrecords keepactualsource,controlledmapping andexactdistributionreferences separate. No newanswers/workflows/historicalmethods. Next18.5return-model/estimatorcrosswalk;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.

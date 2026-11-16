@@ -1,0 +1,59 @@
+{
+  "finding": "F216",
+  "severity": "medium educational numerical/integration contract",
+  "owner": "Book1 manuscript maintainers",
+  "baseline_failures": [
+    {
+      "name": "flat tinyfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": false,
+      "ambiguous": true,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "name": "flat smallfee classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": false,
+      "ambiguous": true,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    },
+    {
+      "name": "up adjacent feeabove20 classification or explicit range rejection",
+      "kind": "source integration",
+      "passed": false,
+      "ambiguous": true,
+      "expected_latent_loss_count": 4,
+      "source_summary": {
+        "count": 4,
+        "mean_terminal": 100,
+        "mean_profit": 0,
+        "standard_error_mean": 0.0,
+        "loss_count": 0,
+        "loss_frequency": 0.0
+      },
+      "exception": null
+    }
+  ],
+  "decision": "Reject an observed terminal report when rounding changes strict latent-net-value <100 classification. Exact ties remain valid.",
+  "resolved_scope": "Three controlled rounding-induced false nonloss reports now raise ValueError;31 corrected predicates twice plus75 retained regression predicates/three commands pass.",
+  "remaining": "Arbitrary thresholds,nonstrict comparisons,recovery of latent fee information from supplied rounded observations,currency/timing/measure,data/model/platform and independent acceptance remain open.",
+  "reviewer": "Assistant scoped verification;no independent reviewer/canonical approval."
+}

@@ -135,3 +135,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-215 Section9.4 lab and worked-answer crosswalk
 
 [V-215](chapter-09-lab-04-followup-r32.md):sixlabunits/tenexercise dispositions;82/2baseline/replay retained,84correctedpredicates pass twice,twoPythonfilescompiled/threecommandsperrun. Complete default report,selectedproperties andnativechange/callerlevel semantics checked. Two displayed values corrected without changing numericalPython. Harness lookup failure distinct. All643code/fixtureidentitiesmatchV212;no newfullrun.Next9.5boundlabcrosswalk;38selectedCOVcategoriespartial,noneclosed.
+
+
+### Later V-216 Section9.5 lab andbound-checker nonvacuity
+
+[V-216](chapter-09-lab-05-followup-r33.md):sixlabunits/tenexercise dispositions;62/4baseline retained,66correctedpredicates pass twice,fourfilescompiled/fivecommandsperrun. Baseline-scaled allowancefalsepasses removed;finite/nonnegativeerror-boundfieldpolicy andthree durablemutationcontrols added. Financialreportsourceunchanged;runbookmarkupfixed. Onechecker differsfromV212;current scopedpass notfull-bookrerun.Next9.6crosswalk;COV52/all38selectedcategoriespartial,noneclosed.

@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-215 Section9.4 lab/answer scoped pass. V-212 remains latest full candidate Linux pass (642/429/643); all required code/fixture hashes match current inspected source. Broader acceptance gaps open.
+**Overall status:** In progress — V-216 Section9.5 lab/checker scoped pass. V-212 remains latest full execution (642/429/643) at older pin;one reference checker changed andpassed scoped validation. Broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1683,3 +1683,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-215 checkpoint — Section9.4 quadratic Taylor lab/answer alignment
 
 [Evidence](chapter-09-lab-04-followup-r32.md):82passes/two printed-rounding failures reproduced;corrected84predicates pass twice.52CLI numericalfields/11schemas/12selectedproperties/two nativeTaylorchanges/twocallerlevels/fiveprintchecks distinct. Two exactPythonfiles compiled/threecommandsperrun,hashes verified. Quadratic display−40.834197→−40.834196 andexact−40.834366→−40.834367;no Python implementation change. Initial harness guessed-path failure retained separately,not a source defect. Sixlabunits/tenexercise dispositions are reviewunits;selectedaccuracy doesnot imply universal/modelacceptance. All643requiredhashesmatchV212642/429/643;no newfullrun. Next9.5remainder/boundlabcrosswalk;38COVcategoriespartial,noneclosed;broaderlab/extension/provenance/resources/platform/release/independent/canonicalacceptanceopen.Book1separate.
+
+
+## V-216 checkpoint — Section9.5 bound-checker nonvacuity andlabcrosswalk
+
+[Evidence](chapter-09-lab-05-followup-r33.md):62pass/4failbaseline/replay retained;66correctedpredicates pass twice,fourPythonfilescompiled/fivecommandsperrun. Threezero/negativeboundmutants nowrejected;validzeroerror/boundaccepted. Reference tolerance now1e-12*max(error,bound),withfinite/nonnegativeguards;financialsourceunchanged. Tenrunbookbackticksrepaired;twoexistingprintedboundsagree. Sixlabunits/tenexercise dispositions separatemathematicalpremises,sourceoutputs andcheckermutations. Retained207source+13oracle and117source+3exercise checkerresults separate,notnewunique totals. Freshcounts642/429/643unchanged;onecheckerblobdiffersfromV212,642/643identical;latestfullremainsoldpin,currentfour-file scope passes. Next9.6labcrosswalk;COV52/all38selectedcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.

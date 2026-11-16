@@ -13,11 +13,13 @@ def rejects(exc,fn,*args):
     raise AssertionError("expected "+exc.__name__)
 
 def bound_holds(report):
-    # Mathematical bound with a small allowance for floating-point arithmetic.
+    # Scale rounding allowance to error/bound fields, never to the baseline value.
     for name in ("linear","quadratic"):
         error=abs(report[name+"_error"])
         bound=report[name+"_bound"]
-        assert error<=bound+1e-9*max(1,abs(report["baseline_value"])),(name,error,bound)
+        assert math.isfinite(error) and math.isfinite(bound) and bound >= 0,(name,error,bound)
+        allowance=1e-12*max(error,bound)
+        assert error<=bound+allowance,(name,error,bound)
 
 def run():
     for h in (-0.2,-0.1,0,0.1,0.2):
@@ -39,6 +41,11 @@ def run():
     flows=[(100,1),(1100,2),(500,4)]
     for h in (-0.01,-0.001,0,0.001,0.01):
         bound_holds(portfolio_report(flows,0.04,h))
+    # A baseline-scaled allowance used to accept these deliberately invalid bounds.
+    tiny=single_report(10000,5,0.04,1e-8)
+    for key,value in (("linear_bound",0.0),("quadratic_bound",0.0),("quadratic_bound",-1e-30)):
+        changed=dict(tiny);changed[key]=value
+        rejects(AssertionError,bound_holds,changed)
     zero=single_report(10000,5,0.04,0)
     assert zero["linear_bound_utilization"] is None
     assert zero["quadratic_bound_utilization"] is None

@@ -1,0 +1,703 @@
+{
+  "source_revision": "f557464a4f1e367f64d515a7818c5aac65c79766",
+  "mode": "working",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_05.py",
+      "sha": "900b21bc58a04efee0ca6143b95c23b9c0088c50",
+      "revision": "f557464a4f1e367f64d515a7818c5aac65c79766"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_05.py",
+      "sha": "1a78d25e788e5c97e0cd53dc0a4a4ebc1ac6fa92",
+      "revision": "working checker"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_05_complete_reports.py",
+      "sha": "789da75acf711de947b248c50e81876ef9cd0434",
+      "revision": "f557464a4f1e367f64d515a7818c5aac65c79766"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_05_polynomial_contracts.py",
+      "sha": "daac6b2ae19d4112d1cd564dd6bd517f15e7383e",
+      "revision": "f557464a4f1e367f64d515a7818c5aac65c79766"
+    }
+  ],
+  "manuscript_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/9.05-remainder-and-error-bounds.md",
+  "manuscript_blob": "eef5af9d8c9267a6fd7cb68412b6070ad23f0734",
+  "compiled": [
+    "section_9_05.py",
+    "check_section_9_05.py",
+    "check_section_05_complete_reports.py",
+    "check_section_05_polynomial_contracts.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"polynomial\": {\n    \"exact\": 9.261,\n    \"linear\": 9.2,\n    \"quadratic\": 9.26,\n    \"quadratic_remainder\": 0.0010000000000000002,\n    \"quadratic_bound\": 0.0010000000000000002\n  },\n  \"single_10bp\": {\n    \"baseline_value\": 8187.307530779819,\n    \"first_derivative\": -40936.53765389909,\n    \"second_derivative\": 204682.68826949547,\n    \"exact_change\": -40.83436666567314,\n    \"linear_change\": -40.936537653899094,\n    \"quadratic_change\": -40.834196309764344,\n    \"linear_error\": 0.10217098822595652,\n    \"quadratic_error\": -0.00017035590879121667,\n    \"linear_bound\": 0.10234134413474774,\n    \"quadratic_bound\": 0.00017056890689124622,\n    \"linear_bound_utilization\": 0.9983354145850682,\n    \"quadratic_bound_utilization\": 0.998751248959077\n  },\n  \"single_minus_10bp\": {\n    \"baseline_value\": 8187.307530779819,\n    \"first_derivative\": -40936.53765389909,\n    \"second_derivative\": 204682.68826949547,\n    \"exact_change\": 41.039049780365254,\n    \"linear_change\": 40.936537653899094,\n    \"quadratic_change\": 41.038878998033844,\n    \"linear_error\": 0.10251212646616154,\n    \"quadratic_error\": 0.00017078233141379684,\n    \"linear_bound\": 0.1028543322570023,\n    \"quadratic_bound\": 0.00017142388709500385,\n    \"linear_bound_utilization\": 0.9966729083420065,\n    \"quadratic_bound_utilization\": 0.9962574895944842\n  },\n  \"portfolio_50bp\": {\n    \"baseline_value\": 1111.5069249405317,\n    \"first_derivative\": -2126.934905965831,\n    \"second_derivative\": 4157.79086801643,\n    \"exact_change\": -10.582872958870686,\n    \"linear_change\": -10.634674529829155,\n    \"quadratic_change\": -10.58270214397895,\n    \"linear_error\": 0.0518015709584692,\n    \"quadratic_error\": -0.0001708148917361776,\n    \"linear_bound\": 0.051972385850205374,\n    \"quadratic_bound\": 0.00017123964150245058,\n    \"linear_bound_utilization\": 0.9967133528903502,\n    \"quadratic_bound_utilization\": 0.9975195593581824\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_05.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.5 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_05_complete_reports.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"predicates\": 220, \"passed\": 220, \"failed\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_05_polynomial_contracts.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"source_predicates\": 117, \"passed\": 117, \"failed\": 0, \"supplemental_controls\": 3}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_9_05.py",
+        "check_section_9_05.py",
+        "check_section_05_complete_reports.py",
+        "check_section_05_polynomial_contracts.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "top report",
+      "kind": "CLI schema",
+      "actual": [
+        "polynomial",
+        "portfolio_50bp",
+        "single_10bp",
+        "single_minus_10bp"
+      ],
+      "independent_expected": [
+        "polynomial",
+        "portfolio_50bp",
+        "single_10bp",
+        "single_minus_10bp"
+      ],
+      "passed": true
+    },
+    {
+      "name": "polynomial schema",
+      "kind": "CLI schema",
+      "actual": [
+        "exact",
+        "linear",
+        "quadratic",
+        "quadratic_bound",
+        "quadratic_remainder"
+      ],
+      "independent_expected": [
+        "exact",
+        "linear",
+        "quadratic",
+        "quadratic_bound",
+        "quadratic_remainder"
+      ],
+      "passed": true
+    },
+    {
+      "name": "polynomial exact",
+      "kind": "CLI numerical",
+      "actual": 9.261,
+      "independent_expected": 9.261,
+      "passed": true
+    },
+    {
+      "name": "polynomial linear",
+      "kind": "CLI numerical",
+      "actual": 9.2,
+      "independent_expected": 9.2,
+      "passed": true
+    },
+    {
+      "name": "polynomial quadratic",
+      "kind": "CLI numerical",
+      "actual": 9.26,
+      "independent_expected": 9.26,
+      "passed": true
+    },
+    {
+      "name": "polynomial quadratic_remainder",
+      "kind": "CLI numerical",
+      "actual": 0.0010000000000000002,
+      "independent_expected": 0.0010000000000000002,
+      "passed": true
+    },
+    {
+      "name": "polynomial quadratic_bound",
+      "kind": "CLI numerical",
+      "actual": 0.0010000000000000002,
+      "independent_expected": 0.0010000000000000002,
+      "passed": true
+    },
+    {
+      "name": "single_10bp schema",
+      "kind": "CLI schema",
+      "actual": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "independent_expected": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "passed": true
+    },
+    {
+      "name": "single_10bp baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "passed": true
+    },
+    {
+      "name": "single_10bp first_derivative",
+      "kind": "CLI numerical",
+      "actual": -40936.53765389909,
+      "independent_expected": -40936.53765389909,
+      "passed": true
+    },
+    {
+      "name": "single_10bp second_derivative",
+      "kind": "CLI numerical",
+      "actual": 204682.68826949547,
+      "independent_expected": 204682.68826949547,
+      "passed": true
+    },
+    {
+      "name": "single_10bp exact_change",
+      "kind": "CLI numerical",
+      "actual": -40.83436666567314,
+      "independent_expected": -40.83436666567314,
+      "passed": true
+    },
+    {
+      "name": "single_10bp linear_change",
+      "kind": "CLI numerical",
+      "actual": -40.936537653899094,
+      "independent_expected": -40.936537653899094,
+      "passed": true
+    },
+    {
+      "name": "single_10bp quadratic_change",
+      "kind": "CLI numerical",
+      "actual": -40.834196309764344,
+      "independent_expected": -40.834196309764344,
+      "passed": true
+    },
+    {
+      "name": "single_10bp linear_error",
+      "kind": "CLI numerical",
+      "actual": 0.10217098822595652,
+      "independent_expected": 0.10217098822595652,
+      "passed": true
+    },
+    {
+      "name": "single_10bp quadratic_error",
+      "kind": "CLI numerical",
+      "actual": -0.00017035590879121667,
+      "independent_expected": -0.00017035590879121667,
+      "passed": true
+    },
+    {
+      "name": "single_10bp linear_bound",
+      "kind": "CLI numerical",
+      "actual": 0.10234134413474774,
+      "independent_expected": 0.10234134413474774,
+      "passed": true
+    },
+    {
+      "name": "single_10bp quadratic_bound",
+      "kind": "CLI numerical",
+      "actual": 0.00017056890689124622,
+      "independent_expected": 0.00017056890689124622,
+      "passed": true
+    },
+    {
+      "name": "single_10bp linear_bound_utilization",
+      "kind": "CLI numerical",
+      "actual": 0.9983354145850682,
+      "independent_expected": 0.9983354145850682,
+      "passed": true
+    },
+    {
+      "name": "single_10bp quadratic_bound_utilization",
+      "kind": "CLI numerical",
+      "actual": 0.998751248959077,
+      "independent_expected": 0.998751248959077,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp schema",
+      "kind": "CLI schema",
+      "actual": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "independent_expected": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp first_derivative",
+      "kind": "CLI numerical",
+      "actual": -40936.53765389909,
+      "independent_expected": -40936.53765389909,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp second_derivative",
+      "kind": "CLI numerical",
+      "actual": 204682.68826949547,
+      "independent_expected": 204682.68826949547,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp exact_change",
+      "kind": "CLI numerical",
+      "actual": 41.039049780365254,
+      "independent_expected": 41.039049780365254,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp linear_change",
+      "kind": "CLI numerical",
+      "actual": 40.936537653899094,
+      "independent_expected": 40.936537653899094,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp quadratic_change",
+      "kind": "CLI numerical",
+      "actual": 41.038878998033844,
+      "independent_expected": 41.038878998033844,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp linear_error",
+      "kind": "CLI numerical",
+      "actual": 0.10251212646616154,
+      "independent_expected": 0.10251212646616154,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp quadratic_error",
+      "kind": "CLI numerical",
+      "actual": 0.00017078233141379684,
+      "independent_expected": 0.00017078233141379684,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp linear_bound",
+      "kind": "CLI numerical",
+      "actual": 0.1028543322570023,
+      "independent_expected": 0.1028543322570023,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp quadratic_bound",
+      "kind": "CLI numerical",
+      "actual": 0.00017142388709500385,
+      "independent_expected": 0.00017142388709500385,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp linear_bound_utilization",
+      "kind": "CLI numerical",
+      "actual": 0.9966729083420065,
+      "independent_expected": 0.9966729083420065,
+      "passed": true
+    },
+    {
+      "name": "single_minus_10bp quadratic_bound_utilization",
+      "kind": "CLI numerical",
+      "actual": 0.9962574895944842,
+      "independent_expected": 0.9962574895944842,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp schema",
+      "kind": "CLI schema",
+      "actual": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "independent_expected": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp baseline_value",
+      "kind": "CLI numerical",
+      "actual": 1111.5069249405317,
+      "independent_expected": 1111.5069249405317,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp first_derivative",
+      "kind": "CLI numerical",
+      "actual": -2126.934905965831,
+      "independent_expected": -2126.934905965831,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp second_derivative",
+      "kind": "CLI numerical",
+      "actual": 4157.79086801643,
+      "independent_expected": 4157.79086801643,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp exact_change",
+      "kind": "CLI numerical",
+      "actual": -10.582872958870686,
+      "independent_expected": -10.582872958870686,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp linear_change",
+      "kind": "CLI numerical",
+      "actual": -10.634674529829155,
+      "independent_expected": -10.634674529829155,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp quadratic_change",
+      "kind": "CLI numerical",
+      "actual": -10.58270214397895,
+      "independent_expected": -10.58270214397895,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp linear_error",
+      "kind": "CLI numerical",
+      "actual": 0.0518015709584692,
+      "independent_expected": 0.0518015709584692,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp quadratic_error",
+      "kind": "CLI numerical",
+      "actual": -0.0001708148917361776,
+      "independent_expected": -0.0001708148917361776,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp linear_bound",
+      "kind": "CLI numerical",
+      "actual": 0.051972385850205374,
+      "independent_expected": 0.051972385850205374,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp quadratic_bound",
+      "kind": "CLI numerical",
+      "actual": 0.00017123964150245058,
+      "independent_expected": 0.00017123964150245058,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp linear_bound_utilization",
+      "kind": "CLI numerical",
+      "actual": 0.9967133528903502,
+      "independent_expected": 0.9967133528903502,
+      "passed": true
+    },
+    {
+      "name": "portfolio_50bp quadratic_bound_utilization",
+      "kind": "CLI numerical",
+      "actual": 0.9975195593581824,
+      "independent_expected": 0.9975195593581824,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report schema",
+      "kind": "caller schema",
+      "actual": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "independent_expected": [
+        "baseline_value",
+        "exact_change",
+        "first_derivative",
+        "linear_bound",
+        "linear_bound_utilization",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_utilization",
+        "quadratic_change",
+        "quadratic_error",
+        "second_derivative"
+      ],
+      "passed": true
+    },
+    {
+      "name": "tiny caller report baseline_value",
+      "kind": "caller numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report first_derivative",
+      "kind": "caller numerical",
+      "actual": -40936.53765389909,
+      "independent_expected": -40936.53765389909,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report second_derivative",
+      "kind": "caller numerical",
+      "actual": 204682.68826949547,
+      "independent_expected": 204682.68826949547,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report exact_change",
+      "kind": "caller numerical",
+      "actual": -0.0004093653663048567,
+      "independent_expected": -0.0004093653663048567,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report linear_change",
+      "kind": "caller numerical",
+      "actual": -0.0004093653765389909,
+      "independent_expected": -0.0004093653765389909,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report quadratic_change",
+      "kind": "caller numerical",
+      "actual": -0.00040936536630485653,
+      "independent_expected": -0.00040936536630485653,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report linear_error",
+      "kind": "caller numerical",
+      "actual": 1.0234134242905868e-11,
+      "independent_expected": 1.0234134242905868e-11,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report quadratic_error",
+      "kind": "caller numerical",
+      "actual": -1.705689047591349e-19,
+      "independent_expected": -1.705689047591349e-19,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report linear_bound",
+      "kind": "caller numerical",
+      "actual": 1.0234134413474774e-11,
+      "independent_expected": 1.0234134413474774e-11,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report quadratic_bound",
+      "kind": "caller numerical",
+      "actual": 1.7056890689124624e-19,
+      "independent_expected": 1.7056890689124624e-19,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report linear_bound_utilization",
+      "kind": "caller numerical",
+      "actual": 0.9999999833333335,
+      "independent_expected": 0.9999999833333335,
+      "passed": true
+    },
+    {
+      "name": "tiny caller report quadratic_bound_utilization",
+      "kind": "caller numerical",
+      "actual": 0.9999999875000001,
+      "independent_expected": 0.9999999875000001,
+      "passed": true
+    },
+    {
+      "name": "zero linear bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": true,
+      "mutated_field": "linear_bound",
+      "mutated_value": 0.0,
+      "actual_reported_error": 1.0234134242905868e-11,
+      "original_bound": 1.0234134413474774e-11,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "zero quadratic bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": true,
+      "mutated_field": "quadratic_bound",
+      "mutated_value": 0.0,
+      "actual_reported_error": -1.705689047591349e-19,
+      "original_bound": 1.7056890689124624e-19,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "negative quadratic bound must be rejected",
+      "kind": "reference-predicate negative control",
+      "passed": true,
+      "mutated_field": "quadratic_bound",
+      "mutated_value": -1e-30,
+      "actual_reported_error": -1.705689047591349e-19,
+      "original_bound": 1.7056890689124624e-19,
+      "legacy_baseline_allowance": 8.18730753077982e-06
+    },
+    {
+      "name": "valid zero bound and zero error accepted",
+      "kind": "reference-predicate positive control",
+      "actual": true,
+      "independent_expected": true,
+      "passed": true
+    },
+    {
+      "name": "runnable command markup",
+      "kind": "static markup",
+      "passed": true
+    },
+    {
+      "name": "printed B1",
+      "kind": "printed answer",
+      "expected": "0.1023413",
+      "passed": true
+    },
+    {
+      "name": "printed B2",
+      "kind": "printed answer",
+      "expected": "0.00017057",
+      "passed": true
+    }
+  ],
+  "passed": 66,
+  "failed": 0,
+  "tiny_report": {
+    "baseline_value": 8187.307530779819,
+    "first_derivative": -40936.53765389909,
+    "second_derivative": 204682.68826949547,
+    "exact_change": -0.0004093653663048567,
+    "linear_change": -0.0004093653765389909,
+    "quadratic_change": -0.00040936536630485653,
+    "linear_error": 1.0234134242905868e-11,
+    "quadratic_error": -1.705689047591349e-19,
+    "linear_bound": 1.0234134413474774e-11,
+    "quadratic_bound": 1.7056890689124624e-19,
+    "linear_bound_utilization": 0.9999999833333335,
+    "quadratic_bound_utilization": 0.9999999875000001
+  },
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "limits": "Sourcefinancialreportexpectationsandreference-checkernegativecontrolsdistinct. SharedDecimal.exp primitive,not independenttranscendentallibrary. Staticmarkupnotrenderedacceptance;allrange/model/platformapprovalopen."
+}
