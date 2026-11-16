@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Purpose:** What does the chart show? **Answer:** A single labeled price series.",
+    "review": "Single synthetic series;one line with two markers checked.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Data truth:** Does a plotted point prove its price is correct? **Answer:** No.",
+    "review": "Schema/plotting does not authenticate data;design review only.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Validation:** Does this plotting function invoke Section 21.13's validator? **Answer:** No; the caller must validate separately.",
+    "review": "No automatic Section21.13 call;caller integration/data truth remain broader F32.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Instrument:** Why label it? **Answer:** So readers know which series they are viewing.",
+    "review": "Instrument appears in title and line label;no global identity guarantee.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Currency:** What does the y-axis label identify? **Answer:** The supplied currency label.",
+    "review": "Supplied USD string labels price units;no FX.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Currency code:** Does the format check establish ISO membership? **Answer:** No.",
+    "review": "ZZZ accepted structurally;no ISO registry check.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Price basis:** Why state whether prices are adjusted? **Answer:** Different bases can represent different financial information.",
+    "review": "Price-basis label required butsemantic adjustment definition remains upstream.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Return:** What is the price return from 100 to 110? **Answer:** 10% in exact arithmetic.",
+    "review": "Independent (110-100)/100=1/10;binaryfloat allowance recorded separately.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Dividends:** Does this chart automatically include them? **Answer:** No.",
+    "review": "No dividend input or adjustment performed.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Time zone:** What timezone is used for plotted tick labels? **Answer:** UTC.",
+    "review": "DateFormatter explicitly UTC;installed structure predicate.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Naive time:** Is a timezone-naive timestamp accepted? **Answer:** No.",
+    "review": "Naive timestamps rejected.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Ordering:** Must timestamps be strictly increasing instants? **Answer:** Yes.",
+    "review": "UTC instant order checked including repeated local-hour fold.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Duplicate:** Are equal instants with different offsets accepted? **Answer:** No.",
+    "review": "Equivalent instants with differing offsets rejected as duplicates.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Local ambiguity:** Does UTC conversion fix an incorrectly assigned local offset? **Answer:** No.",
+    "review": "Awareness and UTC conversion do not repair incorrect local-time assignments.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Interpolation:** Does the line prove intermediate prices were observed? **Answer:** No; it visually connects observations.",
+    "review": "Line connects observations;intermediate price truth not established.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Gaps:** Does the function enforce a market calendar? **Answer:** No.",
+    "review": "No calendar enforcement.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Missing data:** Does it fill missing observations? **Answer:** No.",
+    "review": "No fill/resampling implementation.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Smoothing:** Does it smooth values? **Answer:** No.",
+    "review": "No smoothing implementation.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**FX:** Does it convert currencies? **Answer:** No.",
+    "review": "No currency conversion implementation.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Start price:** Is a zero price accepted? **Answer:** No; this chart's teaching contract requires positive prices.",
+    "review": "Positive finite price contract rejects zero.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**NaN:** Is NaN accepted? **Answer:** No.",
+    "review": "NaN rejected before plot creation.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Type:** Is integer `100` accepted as a price? **Answer:** No; use `100.0`.",
+    "review": "Exact built-in float requirement rejects integer and bool.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Length:** What is the minimum point count? **Answer:** Two.",
+    "review": "Minimum two points;too-short check.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Maximum:** What is the maximum point count? **Answer:** 10,000.",
+    "review": "10000 accepted and10001 rejected in scoped predicate.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Length mismatch:** Are unequal timestamp and price lengths accepted? **Answer:** No.",
+    "review": "Equal lengths required;reference method andprobe.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Input mutation:** Are the supplied sequences changed? **Answer:** No.",
+    "review": "Caller sequences retained;figure ownership separate.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Dependency:** Is Matplotlib a Python standard-library module? **Answer:** No.",
+    "review": "Matplotlib third-party default dependency closure recorded from provided installed metadata.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Core import:** Why use a lazy Matplotlib import? **Answer:** The core package can import without it until the plotting function is called.",
+    "review": "Core import/lazy missing-dependency boundary tested with blocked imports in source and installed consumer.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Backend:** Who selects the backend? **Answer:** The calling environment or application.",
+    "review": "Calling environment sets MPLBACKEND=Agg beforeprocess;function doesnot select global backend.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Headless:** What backend is suggested for the deferred tests? **Answer:** Agg.",
+    "review": "Agg tested here;not Windows/macOS/interactive backend approval.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Ownership:** Who closes the figure? **Answer:** The caller.",
+    "review": "Caller closes returned figure;no-leak predicate.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Saving:** Does the function write a file? **Answer:** No; the caller may save one.",
+    "review": "Function returns figure/axes;only example caller saves PNG.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Privacy:** Can an image contain sensitive financial information? **Answer:** Yes; protect the output location and access.",
+    "review": "Synthetic-only data used;image privacy/control remains owner policy.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Axis:** Can a truncated y-axis exaggerate apparent movement? **Answer:** Yes.",
+    "review": "Inspected source PNG uses truncated price axis;not a zero-baseline magnitude chart.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Precision:** Does a smooth line prove continuous data? **Answer:** No.",
+    "review": "Continuous line is a visual connection,not evidence of continuous price observations.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Tests:** Do structural plot tests prove the chart is readable? **Answer:** No; visual inspection is needed.",
+    "review": "Automated structure and one scoped visual inspection recorded separately;accessibility/full visual acceptance remains open.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Evidence:** Has a representative figure been visually reviewed here? **Answer:** One synthetic Agg figure has a scoped visual inspection record; broader accessibility, platform and independent financial review remain pending.",
+    "review": "Historical deferred wording corrected;prior exact-source synthetic PNG visual inspection reused by unchanged fences.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Model:** Does a clear chart validate a model's assumptions? **Answer:** No.",
+    "review": "Chart readability doesnot validate financial/model assumptions.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Test status:** Have the reference tests run? **Answer:** Scoped source and installed-package QA records execution in the recorded Linux environment; supported-platform, model and independent acceptance remain pending.",
+    "review": "Historical deferred wording reconciled with source/installed scoped execution;broader acceptance pending.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.15 \u2014 Testing and Verification.",
+    "review": "Next source links21.15 Testing and Verification.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  }
+]

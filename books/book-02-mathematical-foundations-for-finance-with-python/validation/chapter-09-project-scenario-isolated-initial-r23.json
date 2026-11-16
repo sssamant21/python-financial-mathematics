@@ -1,0 +1,50 @@
+{
+  "mode": "baseline",
+  "baseline_revision": "24e7b298abd29b03a5295b2f57eced895f0dd773",
+  "executable_source_revision": "25980273180287c94f76456f0ba7dc068edf9505",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py",
+      "sha": "91f7e3bfb19191971bd268fe329ec3b3903761f2",
+      "revision": "24e7b298abd29b03a5295b2f57eced895f0dd773"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_09.py",
+      "sha": "d2254074fe6d07a6d2b6a8e6abed91f2c4df6095",
+      "revision": "25980273180287c94f76456f0ba7dc068edf9505"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_09_baseline_contracts.py",
+      "sha": "02c9304a7d35c376aff95554c206cdba5a453e7c",
+      "revision": "25980273180287c94f76456f0ba7dc068edf9505"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_09_scenario_contracts.py",
+      "sha": "b451edaf7eb31d5c38f13d66e1baa89397e826b5",
+      "revision": "25980273180287c94f76456f0ba7dc068edf9505"
+    }
+  ],
+  "compiled": [
+    "section_9_09.py",
+    "check_section_9_09.py",
+    "check_section_09_baseline_contracts.py",
+    "check_section_09_scenario_contracts.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_09_scenario_contracts.py",
+        "/workspace/scratch/e0bed2e906cb/validation-scenario-r23/books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-project-scenario-isolated-initial-r23-predicates.json"
+      ],
+      "returncode": 1,
+      "stdout": "{\"predicates\": 269, \"passed\": 190, \"failed\": 79}\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmptmyl2qp2/check_section_09_scenario_contracts.py\", line 47, in <module>\n    print(json.dumps(dict(predicates=len(rows),passed=d['passed'],failed=d['failed'])));assert d['failed']==0\n                                                                                               ^^^^^^^^^^^^^^\nAssertionError\n"
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "limits": "Four-file scope; no full runtime or independent mathematical/model/platform/release/canonical acceptance. Baseline checker intentionally fails."
+}

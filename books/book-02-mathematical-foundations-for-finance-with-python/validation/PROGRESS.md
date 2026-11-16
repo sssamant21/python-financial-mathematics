@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-201 complete project-baseline scoped pass (101 predicates);V-202 full candidate Linux pass635/422/636 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`. Scenario/bounds/report and broader acceptance open.
+**Overall status:** In progress — V-203 complete project-scenario scoped pass (269 predicates);latest full Linux pass remains V-202 at older pin (635/422/636). Project facade/assessment/provenance and broader acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1620,3 +1620,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-202 checkpoint — Full pinned candidate Linux refresh
 
 [V-202 runtime](runtime-refresh-2026-11-15-r22.md) at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`:635/635 Python files compiled,422/422 scripts passed,636/636 required blobs verified before/after. Includes accumulated147 spot and101 project-baseline predicates with initial failures/replays and explicit policies. Full scenario/bounds/shifted-rate/report obligations remain OPEN;two fresh pinned diagnostics retained. Next complete9.9 scenario contracts.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-203 checkpoint — Section9.9 complete project scenario rows
+
+[Scenario evidence](chapter-09-project-scenario-followup-r23.md):269 corrected predicates pass;190 initial passes/79 failed field observations and actual identical replay retained. Nine direct numerical fields plus70 whole-row exception observations across five cases,not79 unique defects;kind counts69 numeric/10 flag fields. Independent1800/2400-digit original-input complete endpoint/change/error/bound references. Finite reported shifted-rate and full-baseline gates retained;latent R+H endpoint/interval and reported-error/bound allowance policy explicit. Four files compiled/four commands/three checkers pass with before/after hashes. Baseline and project-report text unchanged;manuscript architecture/policies clarified separately. Fresh636/423/637 inventory not full execution;V202 remains latest full pass at older pin. Next complete project_report facade/metadata/grid/priority/JSON/bound aggregation and Section9.9 assessment obligations,checkpointed.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.

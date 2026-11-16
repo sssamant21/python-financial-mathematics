@@ -1,0 +1,11 @@
+{
+  "kind": "Harness/tooling setup failures,not financial/source defects",
+  "first_parent_failure": "dependency snapshot returned zero wheels;parent assert len(dep_wheels)==11 failed. Original parent traceback observed;command-level details retained by actual captured rerun.",
+  "captured_rerun": "setup-initial-captured.json",
+  "captured_rerun_reason": "wheel0.48 provides wheel._commands.pack instead of wheel.cli.pack",
+  "second_failure": "dependency-preflight-initial.json",
+  "second_reason": "Static assumption of six dependency was wrong;provided python-dateutil4 declares tzdata instead.",
+  "correction": "Support current/older wheel pack API and derive full default dependency closure from installed metadata,checking active version specifiers and RECORD hashes.",
+  "corrected": "package-results.json:18 actual commands exited zero,11 dependency snapshots/2745 payload files,clean consumer pip check passed.",
+  "limits": "These failures are not F215 regressions or additional numerical defects. No claim of identical full setup replay;initial parent and captured diagnostic reruns are distinguished."
+}
