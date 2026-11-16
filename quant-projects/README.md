@@ -53,7 +53,7 @@ Thirty-nine self-contained labs complement the financial-mathematics books witho
 | [36](36-asian-option-monte-carlo/README.md) | Discrete arithmetic-average Asian call with antithetic Monte Carlo, exact geometric-average benchmark and paired control variate | Seeded synthetic | `asian_option.py`, `geometric_control.py` |
 | [37](37-static-option-arbitrage/README.md) | European call strike-grid, bid/ask interval and common-forward calendar necessary-condition diagnostics | Synthetic only | `surface.py`, `quote_intervals.py` |
 | [38](38-put-call-parity/README.md) | European put–call parity with dividend/discount conventions and bid/ask consistency | Synthetic only | `parity.py` |
-| [39](39-forward-rate-agreements/README.md) | Single-period forward-rate agreements, implied forwards, start-date settlement and PV identity | Hypothetical only | `fra.py` |
+| [39](39-forward-rate-agreements/README.md) | Single-period forward-rate agreements, implied forwards, start-date settlement, PV identity and independent curve-sensitivity checks | Hypothetical only | `fra.py` |
 
 ## Quick start (Windows PowerShell)
 
