@@ -48,5 +48,28 @@ class DecimalReferenceTests(unittest.TestCase):
         self.assertEqual(result['gap'], 0)
 
 
+    def test_one_ulp_quote_boundary_behavior(self):
+        # At a zero-rate exact target, adjacent representable quotes bracket 10.
+        target = 10.0
+        below = math.nextafter(target, -math.inf)
+        above = math.nextafter(target, math.inf)
+        for lower, expected in [(below, True), (target, True), (above, False)]:
+            with self.subTest(lower=lower):
+                result = parity_bounds(110, 100, 1, 0, 0,
+                                       lower, lower + 2, 0, 0)
+                self.assertEqual(result['compatible'], expected)
+                self.assertEqual(result['gap'], max(lower - target, 0.0))
+
+    def test_one_ulp_upper_boundary_behavior(self):
+        target = 10.0
+        below = math.nextafter(target, -math.inf)
+        above = math.nextafter(target, math.inf)
+        for upper, expected in [(below, False), (target, True), (above, True)]:
+            with self.subTest(upper=upper):
+                result = parity_bounds(110, 100, 1, 0, 0,
+                                       5, upper, 0, 0)
+                self.assertEqual(result['compatible'], expected)
+                self.assertEqual(result['gap'], max(target - upper, 0.0))
+
 if __name__ == '__main__':
     unittest.main()
