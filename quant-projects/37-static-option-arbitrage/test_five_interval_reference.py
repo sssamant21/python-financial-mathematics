@@ -78,6 +78,18 @@ class FiveStrikeReferenceTests(unittest.TestCase):
         self.compare([80, 90, 100, 110, 120],
                      [21, 15, 10, 11, 3], [23, 17, 12, 12, 5], False)
 
+    def test_irregular_strike_feasible_point_quotes(self):
+        # Exact slopes -0.7, -0.5, -0.3, -0.1: valid and convex.
+        self.compare([80, 85, 100, 110, 130],
+                     [40, 36.5, 29, 26, 24],
+                     [40, 36.5, 29, 26, 24], True)
+
+    def test_irregular_strike_infeasible_convexity(self):
+        # Slopes -0.7, -0.5, -0.9, -0.1 violate convexity.
+        self.compare([80, 85, 100, 110, 130],
+                     [40, 36.5, 29, 20, 18],
+                     [40, 36.5, 29, 20, 18], False)
+
     def test_invalid_grid(self):
         with self.assertRaises(ValueError):
             exact_five_feasible([80, 90, 90, 110, 120], [1]*5, [2]*5)
