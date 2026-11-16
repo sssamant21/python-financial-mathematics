@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Thirty-seven self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Thirty-eight self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -52,6 +52,7 @@ Thirty-seven self-contained labs complement the financial-mathematics books with
 | [35](35-barrier-option-monte-carlo/README.md) | Discretely monitored up-and-out European call, antithetic Monte Carlo, matched monitoring and Brownian-bridge continuous survival, reflection-density analytical pricing and independent numerical quadrature | Seeded synthetic | `barrier.py`, `matched_convergence.py` |
 | [36](36-asian-option-monte-carlo/README.md) | Discrete arithmetic-average Asian call with antithetic Monte Carlo, exact geometric-average benchmark and paired control variate | Seeded synthetic | `asian_option.py`, `geometric_control.py` |
 | [37](37-static-option-arbitrage/README.md) | European call strike-grid, bid/ask interval and common-forward calendar necessary-condition diagnostics | Synthetic only | `surface.py`, `quote_intervals.py` |
+| [38](38-put-call-parity/README.md) | European put–call parity with dividend/discount conventions and bid/ask consistency | Synthetic only | `parity.py` |
 
 ## Quick start (Windows PowerShell)
 
