@@ -311,8 +311,8 @@ jobs:
       - name: Validate Project 39 forward rate agreements
         run: |
           cd quant-projects/39-forward-rate-agreements
-          python -m unittest -v test_fra.py
-          python -m compileall -q fra.py test_fra.py
+          python -m unittest -v test_fra.py test_curve_sensitivity.py
+          python -m compileall -q fra.py test_fra.py test_curve_sensitivity.py
           python fra.py --notional 1000000 --strike 0.04 --df-start 0.98 --df-end 0.96 --accrual 0.5
           python fra.py --pay-floating
 
