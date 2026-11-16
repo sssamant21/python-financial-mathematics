@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-216 Section9.5 lab/checker scoped pass. V-212 remains latest full execution (642/429/643) at older pin;one reference checker changed andpassed scoped validation. Broader acceptance gaps open.
+**Overall status:** In progress — V-217 Section9.6 lab/answer scoped pass. V-212 remains latest full execution (642/429/643) at older pin;one reference checker changed andpassed scoped validation. Broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1688,3 +1688,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-216 checkpoint — Section9.5 bound-checker nonvacuity andlabcrosswalk
 
 [Evidence](chapter-09-lab-05-followup-r33.md):62pass/4failbaseline/replay retained;66correctedpredicates pass twice,fourPythonfilescompiled/fivecommandsperrun. Threezero/negativeboundmutants nowrejected;validzeroerror/boundaccepted. Reference tolerance now1e-12*max(error,bound),withfinite/nonnegativeguards;financialsourceunchanged. Tenrunbookbackticksrepaired;twoexistingprintedboundsagree. Sixlabunits/tenexercise dispositions separatemathematicalpremises,sourceoutputs andcheckermutations. Retained207source+13oracle and117source+3exercise checkerresults separate,notnewunique totals. Freshcounts642/429/643unchanged;onecheckerblobdiffersfromV212,642/643identical;latestfullremainsoldpin,currentfour-file scope passes. Next9.6labcrosswalk;COV52/all38selectedcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.
+
+
+## V-217 checkpoint — Section9.6 discounted-value lab/answer crosswalk
+
+[Evidence](chapter-09-lab-06-followup-r34.md):54passes/3failuresbaseline/replay retained;57correctedpredicates pass twice,twoPythonfilescompiled/threecommandsperrun.35CLInumericfields/12schemas/threeExercise7sourcefields/sixprintchecks/onemarkupcheck distinct. Printedfirst−40936.537655→−40936.537654,second204682.688274→204682.688269;eightbackticks/status/checkboxreconciled. Completeparallel/spot/cash-derivativefieldschecked;new8000/D4/25bpfixturegives−80. Sixlabunits/twelveexercise dispositions,notnewtesttotals. NoPythonchange;counts642/429/643unchanged,onepriorV216checkerblobdiffersfromV212fullpin. Next9.7kinkslabcrosswalk;38COVcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.

@@ -1,0 +1,530 @@
+{
+  "source_revision": "4251353f502d823654eb7920618e545903f37f7e",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.05-return-simulations.md",
+  "source_blob": "befc61be91c768676a08b15136583fd1673f71b0",
+  "fence_sha256": "137d024e676855b700632c62ea33c9c4c7045ff738a8a15b06754d13357c763a",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "return_simulations.py"
+      ],
+      "returncode": 0,
+      "stdout": "simulation: {'count': 10000, 'mean_terminal': 106.1983037392661, 'mean_simple_return': 0.06198303739266091, 'standard_error_terminal': 0.21806875180228977, 'loss_frequency': 0.4237}\nanalytical mean: 106.18365465453596\n",
+      "stderr": "test_bad_count (__main__.ReturnTests.test_bad_count) ... ok\ntest_bad_initial (__main__.ReturnTests.test_bad_initial) ... ok\ntest_bad_volatility (__main__.ReturnTests.test_bad_volatility) ... ok\ntest_constant_summary (__main__.ReturnTests.test_constant_summary) ... ok\ntest_expectation (__main__.ReturnTests.test_expectation) ... ok\ntest_loss_threshold (__main__.ReturnTests.test_loss_threshold) ... ok\ntest_seed_replay (__main__.ReturnTests.test_seed_replay) ... ok\ntest_terminal_known (__main__.ReturnTests.test_terminal_known) ... ok\ntest_terminal_zero_return (__main__.ReturnTests.test_terminal_zero_return) ... ok\ntest_zero_volatility (__main__.ReturnTests.test_zero_volatility) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "return_simulations.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "rows": [
+    {
+      "name": "(0.0, 0.2) log0",
+      "kind": "source numeric",
+      "actual": -0.2,
+      "independent_expected": "-1/5",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) log1",
+      "kind": "source numeric",
+      "actual": 0.2,
+      "independent_expected": "1/5",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) controlled standard draw/restoration",
+      "kind": "observer contract",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) terminal0",
+      "kind": "source numeric",
+      "actual": 81.87307530779819,
+      "independent_expected": "81.8730753077981858669935508619039424358591256269015672478028761616508777402491098623457204084321421790715698688252221651",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) terminal1",
+      "kind": "source numeric",
+      "actual": 122.14027581601698,
+      "independent_expected": "122.140275816016983392107199463967417030758094152050364127342509859920623308363781624228874401337247396902783756582071223",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) summary count",
+      "kind": "summary from supplied observations",
+      "actual": 2,
+      "independent_expected": "2",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) summary mean_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 102.00667556190758,
+      "independent_expected": "20401335112381517/200000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) summary mean_simple_return",
+      "kind": "summary from supplied observations",
+      "actual": 0.02006675561907585,
+      "independent_expected": "401335112381517/20000000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) summary standard_error_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 20.133600254109396,
+      "independent_expected": "20.133600254109395",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) summary loss_frequency",
+      "kind": "summary from supplied observations",
+      "actual": 0.5,
+      "independent_expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) normal analytic mean API",
+      "kind": "source numeric",
+      "actual": 102.02013400267558,
+      "independent_expected": "102.020134002675581016014392048315143530350899119392557727424105598976469800179947365114092904889774756778380083424502883",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) controlled pair mean",
+      "kind": "supplemental two-point law",
+      "actual": 102.00667556190758,
+      "independent_expected": "102.006675561907584629550375162935679733308609889475965687572693010785750524306445743287297404884694787987176812703646694",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) caller geometric mean",
+      "kind": "caller composition",
+      "actual": 100.0,
+      "independent_expected": "100",
+      "passed": true
+    },
+    {
+      "name": "(0.0, 0.2) same log moments do not fix exp mean",
+      "kind": "supplemental distribution assumption",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) log0",
+      "kind": "source numeric",
+      "actual": -0.16,
+      "independent_expected": "-4/25",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) log1",
+      "kind": "source numeric",
+      "actual": 0.24,
+      "independent_expected": "6/25",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) controlled standard draw/restoration",
+      "kind": "observer contract",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) terminal0",
+      "kind": "source numeric",
+      "actual": 85.21437889662113,
+      "independent_expected": "85.2143788966211338456346981468562659774170325949425944169446844072091426574584480574793828982414904102789200708203194352",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) terminal1",
+      "kind": "source numeric",
+      "actual": 127.12491503214046,
+      "independent_expected": "127.124915032140469161344105122777724162734268820827901966389035953384982410485901970507675380030541242380559352268723633",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) summary count",
+      "kind": "summary from supplied observations",
+      "actual": 2,
+      "independent_expected": "2",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) summary mean_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 106.16964696438079,
+      "independent_expected": "21233929392876159/200000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) summary mean_simple_return",
+      "kind": "summary from supplied observations",
+      "actual": 0.06169646964380795,
+      "independent_expected": "1233929392876159/20000000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) summary standard_error_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 20.955268067759665,
+      "independent_expected": "20.955268067759665",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) summary loss_frequency",
+      "kind": "summary from supplied observations",
+      "actual": 0.5,
+      "independent_expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) normal analytic mean API",
+      "kind": "source numeric",
+      "actual": 106.18365465453596,
+      "independent_expected": "106.183654654535962222468487716837232842826042033007905977294622488557261464608479502872710754025402846272597907947881786",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) controlled pair mean",
+      "kind": "supplemental two-point law",
+      "actual": 106.16964696438079,
+      "independent_expected": "106.169646964380801503489401634816995070075650707885248191666860180297062533972175013993529139136015826329739711544521534",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) caller geometric mean",
+      "kind": "caller composition",
+      "actual": 104.08107741923881,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.2) same log moments do not fix exp mean",
+      "kind": "supplemental distribution assumption",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) log0",
+      "kind": "source numeric",
+      "actual": -0.36,
+      "independent_expected": "-9/25",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) log1",
+      "kind": "source numeric",
+      "actual": 0.44,
+      "independent_expected": "11/25",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) controlled standard draw/restoration",
+      "kind": "observer contract",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) terminal0",
+      "kind": "source numeric",
+      "actual": 69.76763260710311,
+      "independent_expected": "69.7676326071031057209129263838160330228704450795367501526890022932511189627576517877333614107434312121296516430533804918",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) terminal1",
+      "kind": "source numeric",
+      "actual": 155.2707218511336,
+      "independent_expected": "155.270721851133604205007964619169496853517530950213491627299115394813891686969779921272721279065258788648610350969649379",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) summary count",
+      "kind": "summary from supplied observations",
+      "actual": 2,
+      "independent_expected": "2",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) summary mean_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 112.51917722911836,
+      "independent_expected": "22503835445823671/200000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) summary mean_simple_return",
+      "kind": "summary from supplied observations",
+      "actual": 0.12519177229118356,
+      "independent_expected": "2503835445823671/20000000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) summary standard_error_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 42.751544622015246,
+      "independent_expected": "42.751544622015245",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) summary loss_frequency",
+      "kind": "summary from supplied observations",
+      "actual": 0.5,
+      "independent_expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) normal analytic mean API",
+      "kind": "source numeric",
+      "actual": 112.74968515793756,
+      "independent_expected": "112.749685157937567147926556937484847073428652782555713220457542260026827679241613909612271273818098251113353604130887532",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) controlled pair mean",
+      "kind": "supplemental two-point law",
+      "actual": 112.51917722911836,
+      "independent_expected": "112.519177229118354962960445501492764938193988014875120889994058844032505324863715854503041344904345000389130997011514936",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) caller geometric mean",
+      "kind": "caller composition",
+      "actual": 104.08107741923882,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.4) same log moments do not fix exp mean",
+      "kind": "supplemental distribution assumption",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) log0",
+      "kind": "source numeric",
+      "actual": 0.04,
+      "independent_expected": "1/25",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) log1",
+      "kind": "source numeric",
+      "actual": 0.04,
+      "independent_expected": "1/25",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) controlled standard draw/restoration",
+      "kind": "observer contract",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) terminal0",
+      "kind": "source numeric",
+      "actual": 104.08107741923882,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) terminal1",
+      "kind": "source numeric",
+      "actual": 104.08107741923882,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) summary count",
+      "kind": "summary from supplied observations",
+      "actual": 2,
+      "independent_expected": "2",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) summary mean_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 104.08107741923882,
+      "independent_expected": "5204053870961941/50000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) summary mean_simple_return",
+      "kind": "summary from supplied observations",
+      "actual": 0.0408107741923882,
+      "independent_expected": "204053870961941/5000000000000000",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) summary standard_error_terminal",
+      "kind": "summary from supplied observations",
+      "actual": 0.0,
+      "independent_expected": "0",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) summary loss_frequency",
+      "kind": "summary from supplied observations",
+      "actual": 0.0,
+      "independent_expected": "0",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) normal analytic mean API",
+      "kind": "source numeric",
+      "actual": 104.08107741923882,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) controlled pair mean",
+      "kind": "supplemental two-point law",
+      "actual": 104.08107741923882,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) caller geometric mean",
+      "kind": "caller composition",
+      "actual": 104.08107741923882,
+      "independent_expected": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "passed": true
+    },
+    {
+      "name": "(0.04, 0.0) same log moments do not fix exp mean",
+      "kind": "supplemental distribution assumption",
+      "passed": true
+    }
+  ],
+  "passed": 56,
+  "failed": 0,
+  "cases": [
+    {
+      "mean_log": 0.0,
+      "sd_log": 0.2,
+      "controlled_standard_draws": [
+        -1,
+        1
+      ],
+      "source_log_returns": [
+        -0.2,
+        0.2
+      ],
+      "source_terminal_values": [
+        81.87307530779819,
+        122.14027581601698
+      ],
+      "source_summary": {
+        "count": 2,
+        "mean_terminal": 102.00667556190758,
+        "mean_simple_return": 0.02006675561907585,
+        "standard_error_terminal": 20.133600254109396,
+        "loss_frequency": 0.5
+      },
+      "two_point_expected_terminal": "102.006675561907584629550375162935679733308609889475965687572693010785750524306445743287297404884694787987176812703646694",
+      "normal_expected_terminal": "102.020134002675581016014392048315143530350899119392557727424105598976469800179947365114092904889774756778380083424502883",
+      "geometric_center": "100",
+      "population_log_mean": "0",
+      "population_log_variance": "1/25",
+      "normal_formula_applies_to_controlled_law": false
+    },
+    {
+      "mean_log": 0.04,
+      "sd_log": 0.2,
+      "controlled_standard_draws": [
+        -1,
+        1
+      ],
+      "source_log_returns": [
+        -0.16,
+        0.24
+      ],
+      "source_terminal_values": [
+        85.21437889662113,
+        127.12491503214046
+      ],
+      "source_summary": {
+        "count": 2,
+        "mean_terminal": 106.16964696438079,
+        "mean_simple_return": 0.06169646964380795,
+        "standard_error_terminal": 20.955268067759665,
+        "loss_frequency": 0.5
+      },
+      "two_point_expected_terminal": "106.169646964380801503489401634816995070075650707885248191666860180297062533972175013993529139136015826329739711544521534",
+      "normal_expected_terminal": "106.183654654535962222468487716837232842826042033007905977294622488557261464608479502872710754025402846272597907947881786",
+      "geometric_center": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "population_log_mean": "1/25",
+      "population_log_variance": "1/25",
+      "normal_formula_applies_to_controlled_law": false
+    },
+    {
+      "mean_log": 0.04,
+      "sd_log": 0.4,
+      "controlled_standard_draws": [
+        -1,
+        1
+      ],
+      "source_log_returns": [
+        -0.36,
+        0.44
+      ],
+      "source_terminal_values": [
+        69.76763260710311,
+        155.2707218511336
+      ],
+      "source_summary": {
+        "count": 2,
+        "mean_terminal": 112.51917722911836,
+        "mean_simple_return": 0.12519177229118356,
+        "standard_error_terminal": 42.751544622015246,
+        "loss_frequency": 0.5
+      },
+      "two_point_expected_terminal": "112.519177229118354962960445501492764938193988014875120889994058844032505324863715854503041344904345000389130997011514936",
+      "normal_expected_terminal": "112.749685157937567147926556937484847073428652782555713220457542260026827679241613909612271273818098251113353604130887532",
+      "geometric_center": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "population_log_mean": "1/25",
+      "population_log_variance": "4/25",
+      "normal_formula_applies_to_controlled_law": false
+    },
+    {
+      "mean_log": 0.04,
+      "sd_log": 0.0,
+      "controlled_standard_draws": [
+        -1,
+        1
+      ],
+      "source_log_returns": [
+        0.04,
+        0.04
+      ],
+      "source_terminal_values": [
+        104.08107741923882,
+        104.08107741923882
+      ],
+      "source_summary": {
+        "count": 2,
+        "mean_terminal": 104.08107741923882,
+        "mean_simple_return": 0.0408107741923882,
+        "standard_error_terminal": 0.0,
+        "loss_frequency": 0.0
+      },
+      "two_point_expected_terminal": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "normal_expected_terminal": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "geometric_center": "104.081077419238822675704475791685474408297705031231203523395718605284804416831777835360548975807166488726768357464329202",
+      "population_log_mean": "1/25",
+      "population_log_variance": "0",
+      "normal_formula_applies_to_controlled_law": true
+    }
+  ],
+  "limits": "Controlledstandarddraws[-1,+1]formtwo-pointlaw,notnormalgeneratorvalidation. Source summarySEfieldisconditionalarithmetic,not validuncertaintyforthefixedpairedquadrature. SharedDecimalexp backend;no normalCDF/tailF165orfinancialmeasure/platform/independentacceptance."
+}

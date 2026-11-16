@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-16
 **Full-runtime candidate source revision:** `2ee81822af67357087e2af6193348f2b3c5dbdf8` (V-212)
-**Latest scoped source:** V-216 financial source at `f557464a4f1e367f64d515a7818c5aac65c79766`,changed checker separately blob-pinned;[manifest](chapter-09-lab-05-publication-r33.json).
+**Latest scoped source:** V-217 executable source at `4251353f502d823654eb7920618e545903f37f7e`;[original/corrected manuscript manifest](chapter-09-lab-06-publication-r34.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-216 lab/checker scope passes;V-212 full runtime remains at older pin. One checker changed;remaining chapter-lab/extension andindependent/model/platform/release acceptance open.
+**Disposition:** V-217 discounted-value lab/answer scope passes;V-212 full runtime remains at older pin. One checker changed;remaining chapter-lab/extension andindependent/model/platform/release acceptance open.
 
 ## Reconciled evidence
 
@@ -1562,3 +1562,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-216 checkpoint — Section9.5 bound-checker nonvacuity andlabcrosswalk
 
 [Evidence](chapter-09-lab-05-followup-r33.md):62pass/4failbaseline/replay retained;66correctedpredicates pass twice,fourPythonfilescompiled/fivecommandsperrun. Threezero/negativeboundmutants nowrejected;validzeroerror/boundaccepted. Reference tolerance now1e-12*max(error,bound),withfinite/nonnegativeguards;financialsourceunchanged. Tenrunbookbackticksrepaired;twoexistingprintedboundsagree. Sixlabunits/tenexercise dispositions separatemathematicalpremises,sourceoutputs andcheckermutations. Retained207source+13oracle and117source+3exercise checkerresults separate,notnewunique totals. Freshcounts642/429/643unchanged;onecheckerblobdiffersfromV212,642/643identical;latestfullremainsoldpin,currentfour-file scope passes. Next9.6labcrosswalk;COV52/all38selectedcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.
+
+
+## V-217 checkpoint — Section9.6 discounted-value lab/answer crosswalk
+
+[Evidence](chapter-09-lab-06-followup-r34.md):54passes/3failuresbaseline/replay retained;57correctedpredicates pass twice,twoPythonfilescompiled/threecommandsperrun.35CLInumericfields/12schemas/threeExercise7sourcefields/sixprintchecks/onemarkupcheck distinct. Printedfirst−40936.537655→−40936.537654,second204682.688274→204682.688269;eightbackticks/status/checkboxreconciled. Completeparallel/spot/cash-derivativefieldschecked;new8000/D4/25bpfixturegives−80. Sixlabunits/twelveexercise dispositions,notnewtesttotals. NoPythonchange;counts642/429/643unchanged,onepriorV216checkerblobdiffersfromV212fullpin. Next9.7kinkslabcrosswalk;38COVcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.

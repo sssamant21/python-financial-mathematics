@@ -1,0 +1,543 @@
+{
+  "source_revision": "4251353f502d823654eb7920618e545903f37f7e",
+  "mode": "working",
+  "manuscript_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/9.06-discounted-value-sensitivity.md",
+  "manuscript_blob": "cf089f95b9ed69eecf783242f8fb2bf145f57311",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_06.py",
+      "sha": "02c76b5877e0a369b077b4b5b509310ff4aa19f7"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_06.py",
+      "sha": "1a25a6920d171fe60f1c9012e0270c4b41584c37"
+    }
+  ],
+  "compiled": [
+    "section_9_06.py",
+    "check_section_9_06.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"single\": {\n    \"value\": 8187.307530779819,\n    \"first\": -40936.53765389909,\n    \"second\": 204682.68826949547,\n    \"duration\": 5.0,\n    \"convexity\": 25.0,\n    \"cash_flow_derivatives\": [\n      0.8187307530779818\n    ],\n    \"value_weights\": [\n      1.0\n    ]\n  },\n  \"single_10bp\": {\n    \"shock\": 0.001,\n    \"exact_change\": -40.83436666567314,\n    \"linear_change\": -40.936537653899094,\n    \"quadratic_change\": -40.834196309764344,\n    \"linear_error\": 0.10217098822595652,\n    \"quadratic_error\": -0.00017035590879121667\n  },\n  \"portfolio\": {\n    \"value\": 1111.5069249405317,\n    \"first\": -2126.934905965831,\n    \"second\": 4157.79086801643,\n    \"duration\": 1.9135597433004092,\n    \"convexity\": 3.740679229901228,\n    \"cash_flow_derivatives\": [\n      0.9607894391523232,\n      0.9231163463866358\n    ],\n    \"value_weights\": [\n      0.08644025669959077,\n      0.9135597433004092\n    ]\n  },\n  \"parallel_50bp\": {\n    \"shock\": 0.005,\n    \"exact_change\": -10.582872958870686,\n    \"linear_change\": -10.634674529829155,\n    \"quadratic_change\": -10.58270214397895,\n    \"linear_error\": 0.0518015709584692,\n    \"quadratic_error\": -0.0001708148917361776\n  },\n  \"spot_curve\": {\n    \"value\": 1111.988522651056,\n    \"spot_derivatives\": [\n      -96.56054162575664,\n      -2030.8559620505987\n    ],\n    \"parallel_first\": -2127.416503676355\n  },\n  \"nonparallel\": {\n    \"exact_change\": 3.9733339125767553,\n    \"linear_change\": 3.9651513824754407,\n    \"linear_error\": 0.008182530101314386\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.6 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_9_06.py",
+        "check_section_9_06.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "report keys",
+      "kind": "CLI schema",
+      "actual": [
+        "nonparallel",
+        "parallel_50bp",
+        "portfolio",
+        "single",
+        "single_10bp",
+        "spot_curve"
+      ],
+      "expected": [
+        "nonparallel",
+        "parallel_50bp",
+        "portfolio",
+        "single",
+        "single_10bp",
+        "spot_curve"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.single keys",
+      "kind": "CLI schema",
+      "actual": [
+        "cash_flow_derivatives",
+        "convexity",
+        "duration",
+        "first",
+        "second",
+        "value",
+        "value_weights"
+      ],
+      "expected": [
+        "cash_flow_derivatives",
+        "convexity",
+        "duration",
+        "first",
+        "second",
+        "value",
+        "value_weights"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.single.value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "expected": 8187.307530779819,
+      "passed": true
+    },
+    {
+      "name": "report.single.first",
+      "kind": "CLI numerical",
+      "actual": -40936.53765389909,
+      "expected": -40936.53765389909,
+      "passed": true
+    },
+    {
+      "name": "report.single.second",
+      "kind": "CLI numerical",
+      "actual": 204682.68826949547,
+      "expected": 204682.68826949547,
+      "passed": true
+    },
+    {
+      "name": "report.single.duration",
+      "kind": "CLI numerical",
+      "actual": 5.0,
+      "expected": 5.0,
+      "passed": true
+    },
+    {
+      "name": "report.single.convexity",
+      "kind": "CLI numerical",
+      "actual": 25.0,
+      "expected": 25.0,
+      "passed": true
+    },
+    {
+      "name": "report.single.cash_flow_derivatives length",
+      "kind": "CLI schema",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "report.single.cash_flow_derivatives[0]",
+      "kind": "CLI numerical",
+      "actual": 0.8187307530779818,
+      "expected": 0.8187307530779818,
+      "passed": true
+    },
+    {
+      "name": "report.single.value_weights length",
+      "kind": "CLI schema",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "report.single.value_weights[0]",
+      "kind": "CLI numerical",
+      "actual": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp keys",
+      "kind": "CLI schema",
+      "actual": [
+        "exact_change",
+        "linear_change",
+        "linear_error",
+        "quadratic_change",
+        "quadratic_error",
+        "shock"
+      ],
+      "expected": [
+        "exact_change",
+        "linear_change",
+        "linear_error",
+        "quadratic_change",
+        "quadratic_error",
+        "shock"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp.shock",
+      "kind": "CLI numerical",
+      "actual": 0.001,
+      "expected": 0.001,
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp.exact_change",
+      "kind": "CLI numerical",
+      "actual": -40.83436666567314,
+      "expected": -40.83436666567314,
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp.linear_change",
+      "kind": "CLI numerical",
+      "actual": -40.936537653899094,
+      "expected": -40.936537653899094,
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp.quadratic_change",
+      "kind": "CLI numerical",
+      "actual": -40.834196309764344,
+      "expected": -40.834196309764344,
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp.linear_error",
+      "kind": "CLI numerical",
+      "actual": 0.10217098822595652,
+      "expected": 0.10217098822595652,
+      "passed": true
+    },
+    {
+      "name": "report.single_10bp.quadratic_error",
+      "kind": "CLI numerical",
+      "actual": -0.00017035590879121667,
+      "expected": -0.00017035590879121667,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio keys",
+      "kind": "CLI schema",
+      "actual": [
+        "cash_flow_derivatives",
+        "convexity",
+        "duration",
+        "first",
+        "second",
+        "value",
+        "value_weights"
+      ],
+      "expected": [
+        "cash_flow_derivatives",
+        "convexity",
+        "duration",
+        "first",
+        "second",
+        "value",
+        "value_weights"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.value",
+      "kind": "CLI numerical",
+      "actual": 1111.5069249405317,
+      "expected": 1111.5069249405317,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.first",
+      "kind": "CLI numerical",
+      "actual": -2126.934905965831,
+      "expected": -2126.934905965831,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.second",
+      "kind": "CLI numerical",
+      "actual": 4157.79086801643,
+      "expected": 4157.79086801643,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.duration",
+      "kind": "CLI numerical",
+      "actual": 1.9135597433004092,
+      "expected": 1.9135597433004092,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.convexity",
+      "kind": "CLI numerical",
+      "actual": 3.740679229901228,
+      "expected": 3.740679229901228,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.cash_flow_derivatives length",
+      "kind": "CLI schema",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.cash_flow_derivatives[0]",
+      "kind": "CLI numerical",
+      "actual": 0.9607894391523232,
+      "expected": 0.9607894391523232,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.cash_flow_derivatives[1]",
+      "kind": "CLI numerical",
+      "actual": 0.9231163463866358,
+      "expected": 0.9231163463866358,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.value_weights length",
+      "kind": "CLI schema",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.value_weights[0]",
+      "kind": "CLI numerical",
+      "actual": 0.08644025669959077,
+      "expected": 0.08644025669959077,
+      "passed": true
+    },
+    {
+      "name": "report.portfolio.value_weights[1]",
+      "kind": "CLI numerical",
+      "actual": 0.9135597433004092,
+      "expected": 0.9135597433004092,
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp keys",
+      "kind": "CLI schema",
+      "actual": [
+        "exact_change",
+        "linear_change",
+        "linear_error",
+        "quadratic_change",
+        "quadratic_error",
+        "shock"
+      ],
+      "expected": [
+        "exact_change",
+        "linear_change",
+        "linear_error",
+        "quadratic_change",
+        "quadratic_error",
+        "shock"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp.shock",
+      "kind": "CLI numerical",
+      "actual": 0.005,
+      "expected": 0.005,
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp.exact_change",
+      "kind": "CLI numerical",
+      "actual": -10.582872958870686,
+      "expected": -10.582872958870686,
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp.linear_change",
+      "kind": "CLI numerical",
+      "actual": -10.634674529829155,
+      "expected": -10.634674529829155,
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp.quadratic_change",
+      "kind": "CLI numerical",
+      "actual": -10.58270214397895,
+      "expected": -10.58270214397895,
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp.linear_error",
+      "kind": "CLI numerical",
+      "actual": 0.0518015709584692,
+      "expected": 0.0518015709584692,
+      "passed": true
+    },
+    {
+      "name": "report.parallel_50bp.quadratic_error",
+      "kind": "CLI numerical",
+      "actual": -0.0001708148917361776,
+      "expected": -0.0001708148917361776,
+      "passed": true
+    },
+    {
+      "name": "report.spot_curve keys",
+      "kind": "CLI schema",
+      "actual": [
+        "parallel_first",
+        "spot_derivatives",
+        "value"
+      ],
+      "expected": [
+        "parallel_first",
+        "spot_derivatives",
+        "value"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.spot_curve.value",
+      "kind": "CLI numerical",
+      "actual": 1111.988522651056,
+      "expected": 1111.988522651056,
+      "passed": true
+    },
+    {
+      "name": "report.spot_curve.spot_derivatives length",
+      "kind": "CLI schema",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "report.spot_curve.spot_derivatives[0]",
+      "kind": "CLI numerical",
+      "actual": -96.56054162575664,
+      "expected": -96.56054162575664,
+      "passed": true
+    },
+    {
+      "name": "report.spot_curve.spot_derivatives[1]",
+      "kind": "CLI numerical",
+      "actual": -2030.8559620505987,
+      "expected": -2030.8559620505987,
+      "passed": true
+    },
+    {
+      "name": "report.spot_curve.parallel_first",
+      "kind": "CLI numerical",
+      "actual": -2127.416503676355,
+      "expected": -2127.416503676355,
+      "passed": true
+    },
+    {
+      "name": "report.nonparallel keys",
+      "kind": "CLI schema",
+      "actual": [
+        "exact_change",
+        "linear_change",
+        "linear_error"
+      ],
+      "expected": [
+        "exact_change",
+        "linear_change",
+        "linear_error"
+      ],
+      "passed": true
+    },
+    {
+      "name": "report.nonparallel.exact_change",
+      "kind": "CLI numerical",
+      "actual": 3.9733339125767553,
+      "expected": 3.9733339125767553,
+      "passed": true
+    },
+    {
+      "name": "report.nonparallel.linear_change",
+      "kind": "CLI numerical",
+      "actual": 3.9651513824754407,
+      "expected": 3.9651513824754407,
+      "passed": true
+    },
+    {
+      "name": "report.nonparallel.linear_error",
+      "kind": "CLI numerical",
+      "actual": 0.008182530101314386,
+      "expected": 0.008182530101314386,
+      "passed": true
+    },
+    {
+      "name": "Exercise7 baseline",
+      "kind": "exercise source field",
+      "actual": 8000.0,
+      "expected": 8000.0,
+      "passed": true
+    },
+    {
+      "name": "Exercise7 duration",
+      "kind": "exercise source field",
+      "actual": 4.0,
+      "expected": 4.0,
+      "passed": true
+    },
+    {
+      "name": "Exercise7 25bp linear change",
+      "kind": "exercise source field",
+      "actual": -80.0,
+      "expected": -80.0,
+      "passed": true
+    },
+    {
+      "name": "printed value",
+      "kind": "printed answer",
+      "expected": "8187.307531",
+      "passed": true
+    },
+    {
+      "name": "printed first",
+      "kind": "printed answer",
+      "expected": "-40936.537654",
+      "passed": true
+    },
+    {
+      "name": "printed second",
+      "kind": "printed answer",
+      "expected": "204682.688269",
+      "passed": true
+    },
+    {
+      "name": "printed linear",
+      "kind": "printed answer",
+      "expected": "-40.936538",
+      "passed": true
+    },
+    {
+      "name": "printed quadratic",
+      "kind": "printed answer",
+      "expected": "-40.834196",
+      "passed": true
+    },
+    {
+      "name": "printed exact",
+      "kind": "printed answer",
+      "expected": "-40.834367",
+      "passed": true
+    },
+    {
+      "name": "runnable command fence",
+      "kind": "static markup",
+      "passed": true
+    }
+  ],
+  "passed": 57,
+  "failed": 0,
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "limits": "Complete default six-reportCLIandExercise7sourcefixture;nominalprintedderivativesseparatefromrepresented-inputreferences.SharedDecimal.exp primitive,not independenttranscendentallibraryorfinancialcurve/platform/independentapproval."
+}

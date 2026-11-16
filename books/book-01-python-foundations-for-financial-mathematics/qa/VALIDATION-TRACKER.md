@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest V10/18.5:** [Return distribution assumptions](v10-return-distribution/README.md):56predicates pass twice,four controlled laws;matchinglogmean/variance not sufficient fornormal exponential expectation. Source unchanged;next18.6path/horizon/discretizationcrosswalk. No newanswer/workflow/historicalmethod totals.
+
 - **Latest V10/18.4 (F216):** [Fee/threshold integration](v10-outcome-thresholds/README.md):28/3 baseline/replay retained;31 corrected predicates pass twice plus75 retained regression predicates/three commands. Strict cost100 classification guard added;arbitrary thresholds/measure andbroaderacceptance open. Next18.5return-modelcrosswalk.
 
 - **Latest V10/18.3:** [Partition/replay assumptions](v10-reproducibility-partitions/README.md):66predicates pass twice,five chunk designs;native fresh-seed prefixes differ fromexternal statecontinuation. Allfourpriorfences identical;next18.4outcome/model/measurecrosswalk. No newanswer/workflow/historicalmethod totals.
@@ -819,3 +821,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 / F216 — Section18.4 fee and threshold integration
 
 [Evidence](v10-outcome-thresholds/README.md):28pass/3failbaseline andidenticalreplay retained;31correctedpredicates pass twice,plus75retainedregressionpredicates/threecommands. Source rejects reported netvalues if rounding changes strictlatentnet<100classification;exacttiesvalid. This narrowmodelcost100policy doesnot recoverlatentfees orvalidatearbitrarythresholds/nonstrictloss/modelmeasure. Sixassumptionrecords keepactualsource,controlledmapping andexactdistributionreferences separate. No newanswers/workflows/historicalmethods. Next18.5return-model/estimatorcrosswalk;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.5 return-distribution assumptions
+
+[Evidence](v10-return-distribution/README.md):56predicates pass twice acrossfour(m,s)cases. Controlledtwo-pointstandarddraws andnative transformations/summary fields distinct fromnormalexpected_terminal formula;exp(m)cosh(s) differsfromexp(m+s²/2)despitematchinglogmean/variance. Geometriccenter iscallerwork,notuniquetwo-pointmedian. Fixedpairedquadrature isnotIID;sourceSEfield arithmetic doesnotvalidateitsuncertainty. Fourformalcommands/20invocationsof10existingmethods,priorF177/78predicate listingidentityverified. No sourcechange/defect ornewanswers/workflows/historicalmethods. Next18.6path/horizon/discretization/dependencecrosswalk;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.

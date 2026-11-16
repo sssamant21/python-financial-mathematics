@@ -140,3 +140,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-216 Section9.5 lab andbound-checker nonvacuity
 
 [V-216](chapter-09-lab-05-followup-r33.md):sixlabunits/tenexercise dispositions;62/4baseline retained,66correctedpredicates pass twice,fourfilescompiled/fivecommandsperrun. Baseline-scaled allowancefalsepasses removed;finite/nonnegativeerror-boundfieldpolicy andthree durablemutationcontrols added. Financialreportsourceunchanged;runbookmarkupfixed. Onechecker differsfromV212;current scopedpass notfull-bookrerun.Next9.6crosswalk;COV52/all38selectedcategoriespartial,noneclosed.
+
+
+### Later V-217 Section9.6 lab andexercise crosswalk
+
+[V-217](chapter-09-lab-06-followup-r34.md):sixlabunits/twelveexercise dispositions;54/3baseline retained,57correctedpredicates pass twice,twofilescompiled/threecommandsperrun. CompleteCLI35numericfields,Exercise7−80sourcefixture,printedderivative/status/markupcorrections recorded. NumericalPythonunchanged;priorV216checkerremainsoneblobdeltafromV212. Next9.7crosswalk;38selectedCOVcategoriespartial,noneclosed.
