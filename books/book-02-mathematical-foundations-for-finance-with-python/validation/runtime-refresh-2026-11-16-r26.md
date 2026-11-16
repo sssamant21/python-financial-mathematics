@@ -1,0 +1,9 @@
+# V-208 — Full pinned Book 2 candidate Linux refresh
+
+Executable source `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`. Fresh pinned-tree counts: **639/639 Python files compiled, 426/426 check/test scripts passed, 640/640 required source/fixture blobs verified before and after execution**. Python 3.12.14; Linux-6.18.57-x86_64-with-glibc2.41; assertions enabled; 60-second timeout per script. Elapsed 407.9 seconds.
+
+[Runnable staging/execution procedure](runtime-refresh-2026-11-16-r26-runner.txt) · [Manifest and actual per-file results](runtime-refresh-2026-11-16-r26.json). Reproduce from the repository root with `python books/book-02-mathematical-foundations-for-finance-with-python/validation/runtime-refresh-2026-11-16-r26-runner.txt . 7ae2227b1f243fe8bb2af7e1f437168fe15ff213 books/book-02-mathematical-foundations-for-finance-with-python/validation`. All required files are staged from immutable Git blobs.
+
+This refresh includes the [V-206 assessment assertion-mode guard and printed-answer corrections](chapter-09-assessment-followup-r25.md) and [V-207 early-exercise helper checker](chapter-09-early-exercises-followup-r26.md), added since V-205. V-206 initial failures and corrected reruns remain in their own records; V-207 probes/replay passed without an implementation defect. No earlier failure is overwritten by this full run.
+
+Next: Section 9.10 Exercises 14–16 and 22 helper/source alignment, followed by broader lab, extension, model, provenance and resource obligations. Full execution does not establish unasserted contracts or independent mathematical/editorial review. All 38 selected COV categories remain partially addressed, none closed; these are neither defect counts nor completion percentages. This is one candidate Linux runtime, not supported-platform validation, release acceptance or canonical approval. Book 1 retains separate trackers.

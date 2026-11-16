@@ -100,3 +100,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-206 assessment scope
 
 [V-206](chapter-09-assessment-followup-r25.md) adds complete constant-assessment fields,selected kink controls/assertion-mode eligibility,actual-source Exercises9–13 comparisons andprinted rounding corrections. The24worked-answer/sixapplied-taskrecords distinguish analytical review fromexecution. E1–8/E14–16/E22exercise-specific helper cases andbroaderlab/extension/model/provenance/resources/independentapproval remainopen;thehistoricalmappingaboveisnotrelabelledcomplete.
+
+
+### Later V-207 early-exercise alignment
+
+[V-207](chapter-09-early-exercises-followup-r26.md) records Exercises 1–8 with 34 predicates: 29 direct-helper checks and five explicit composed/model-reference checks. Analytical supplied derivatives, base-plus-change composition and inverse-budget Decimal references remain distinct from native helper functionality. E14–16/E22 remain next; broader proof, lab, resource/model/provenance and independent acceptance gaps remain open. COV-52/54 remain partial. [V-208](runtime-refresh-2026-11-16-r26.md) refreshes full candidate Linux execution at the same source pin.

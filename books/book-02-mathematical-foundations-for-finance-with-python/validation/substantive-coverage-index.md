@@ -1463,3 +1463,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-206 checkpoint — Cumulative assessment and printed answers
 
 [Assessment evidence](chapter-09-assessment-followup-r25.md):132correctedpredicates/fivecompiledfiles/fourscopedcommands pass,including -OO rejection. Baseline131pass/oneassertion-modepolicyfailure andidenticalpinnedreplayretained;optimizedmodecannotreturnuncheckedpassedstatus. Nineprintedcomparisons pass afterthreeoriginalroundingfailures/replay;19separateactualsourcesingle-paymentfields pass.24answer/sixappliedtaskrecords distinguishprosefromexecution. Harnesspathfailureandliveworking-replayexclusionrecorded;source-attributedclaimsuseimmutableGitblobs/hashes. Fresh638/425/639inventorynotfullexecution;V205remainslatestfullpassatolderpin. Nextremaining9.10E1–8/E14–16/E22helper/oraclecoverageandbroaderlab/extension/provenance/resources/independentreview.38COVcategoriespartial,noneclosed;nochapter/bookcertification. Book1separate.
+
+
+## V-207 checkpoint — Early-exercise helper alignment
+
+[Scoped report](chapter-09-early-exercises-followup-r26.md) at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`: 34 predicates passed (29 direct-helper predicates and five explicit composed/model-reference comparisons); 11 pinned Python files compiled and 11 commands passed, including six checkers. Initial probe, pinned replay and scoped results agree. Exercises 1–8 have distinct analytical, direct-helper and caller-composition records; supplied derivatives are not automatic differentiation. Decimal cube-root/adjacent-float budget references do not create a native inverse-budget solver. No implementation defect found or numerical algorithm changed. Next: remaining 9.10 Exercises 14–16/22 and broader lab/extension/provenance/resources/independent review. COV-52/54 remain partial; 38 selected categories partial, none closed.
+
+## V-208 checkpoint — Full pinned Linux refresh
+
+[Full runtime](runtime-refresh-2026-11-16-r26.md): 639/639 Python files compiled, 426/426 scripts passed and 640/640 required blobs verified before/after at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`. Includes V-206 assertion-mode guard and V-207 checker; preserves historical failures and reruns. Candidate Linux execution is not independent review, supported-platform validation, release acceptance or canonical approval. Next: 9.10 Exercises 14–16/22. Neither book is declared complete; Book 1 remains separately tracked.

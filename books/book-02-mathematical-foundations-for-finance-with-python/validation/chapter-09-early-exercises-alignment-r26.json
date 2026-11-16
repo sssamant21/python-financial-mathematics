@@ -1,0 +1,69 @@
+{
+  "records": [
+    {
+      "exercise": 1,
+      "source": "section_9_02.point_elasticity(4,50,24)",
+      "expected": "48/25=1.92",
+      "distinction": "fprime4=24 isanalyticallysupplied,notdifferentiatedbyhelper."
+    },
+    {
+      "exercise": 2,
+      "source": "section_9_02.point_elasticity(.5,e,2e)",
+      "expected": "1",
+      "distinction": "Analyticalderivativeandexpfixtureprovidedbycaller."
+    },
+    {
+      "exercise": 3,
+      "source": "point_elasticity zero/nearzero/subnormal/large inputs",
+      "expected": "y0ValueError;selected nonzero ratios finite/correct",
+      "distinction": "Absolute-risk alternative remainsanalyticalreportdesign;sourcealsoexplicitlyrejectsx0."
+    },
+    {
+      "exercise": 4,
+      "source": "section_9_03.linear_taylor(10,1/20,1)",
+      "expected": "201/20=10.05",
+      "distinction": "Value/derivativeareknownanalyticalinputs."
+    },
+    {
+      "exercise": 5,
+      "source": "section_9_04.taylor_change(1/20,-1/4000,1)",
+      "expected": "change399/8000;value80399/8000",
+      "distinction": "Addingbase10isexplicitcallercomposition,notnativequadratic-valuesolver."
+    },
+    {
+      "exercise": 6,
+      "source": "section_9_05.polynomial_example(-.1)",
+      "expected": "represented-inputexact/linear/quadratic/remainder/boundfields",
+      "distinction": "IndependentFractionreferencesuseactualfloatH;nominalh=-1/10 explanatorybenchmarkseparate."
+    },
+    {
+      "exercise": 7,
+      "source": "section_9_03.compare_change(cubic,derivative,2,.1)",
+      "expected": "completefields;nominalsignederror.061andbound.063",
+      "distinction": "Samplepoint/functionoutputsareroundedcallbackvalues;intervalmax12.6/derivedboundprovidedanalytically."
+    },
+    {
+      "exercise": 8,
+      "source": "polynomial_example at adjacentfloatsaroundhighprecisioncube-root",
+      "expected": "sourceboundH^3;8xboundpassesbelowrootandfailsabove",
+      "distinction": "Root/8xscalingaresupplementalcompositionsfora48thirdderivative;no nativeinverse-budgetAPI."
+    }
+  ],
+  "predicates": 34,
+  "direct_source_helper_predicates": 29,
+  "explicit_composition_or_nominal_reference_predicates": 5,
+  "inverse_budget_observation": {
+    "root": "0.04641588833612778892410076350919446576551349125011243637650692858684777869692844826189959070897571379841543308228265404820510270287495774377362322395030214650943",
+    "printed_approximation": 0.046416,
+    "printed_as_input_bound": 0.000800005773754368,
+    "budget": 0.0008,
+    "printed_exceeds_exact_admissible_root": true,
+    "interpretation": "Exercise states the exactcube-root bound and an approximate decimal;rounded displayed value isnot a conservative admissible input. No native inverse-budget helper isclaimed."
+  },
+  "remaining": [
+    "E14\u201316 two-payment/weight-variance/cash-sensitivity helper/source alignment",
+    "E22 nonparallel first-order source alignment",
+    "Broader exercise/lab extensions,resource/provenance/model/policy/independent/platform/release obligations"
+  ],
+  "limits": "Eight scoped alignment records are not eight newgenericimplementationsorwholeChapter9coverage. Suppliedderivativesandmanualproofsnotrelabelledasautomaticdifferentiation."
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Asset A:** Return from 100 to 110? **Answer:** 10%.",
+    "review": "Exact110/100-1=1/10;installedcase checked.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Asset B:** Return from 100 to 95? **Answer:** \u22125%.",
+    "review": "Exact95/100-1=-1/20;installedcase checked.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Weights:** What are the beginning weights? **Answer:** 60% A and 40% B.",
+    "review": "Beginningweights3/5and2/5tracedinactualscript.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Portfolio:** What is the weighted return? **Answer:** 4% in exact arithmetic.",
+    "review": "Exactdot product1/25;differentfromsimpleunweightedmean.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Alignment:** Why must A's return match A's weight? **Answer:** Swapping inputs changes the economic meaning and may change the result.",
+    "review": "Controlledreversedreturnschangesresultto1%;variantisnotasourcedefectoridentityenforcement.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Timing:** Are weights beginning or ending weights? **Answer:** Beginning weights for the observation period.",
+    "review": "Weightsbeginningoftheoneobservationperiod;fixed-ordercasecontract.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Price basis:** Does the example include dividends? **Answer:** No; it uses price returns.",
+    "review": "Price-onlyreturns;nodatadividendsinput.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Currency:** Does the example perform FX conversion? **Answer:** No.",
+    "review": "USDlabels/noFX;tracedcurrencyconsistencyisnotsourceauthentication.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Cutoff:** Are both observations available before the decision cutoff? **Answer:** Yes, under the synthetic timestamps.",
+    "review": "Observed/availableJan2/Jan3at16UTC,cutoffJan3at18UTC;traced.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Provenance:** Do those timestamps prove real source accuracy? **Answer:** No.",
+    "review": "Synthetictimestampsdonotprovedataaccuracy.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Revision:** Does the validator establish historical revision correctness? **Answer:** No.",
+    "review": "Noas-publishedrevisionselectorortrustedvintageevidence.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Average:** What is the unweighted mean of the two asset returns? **Answer:** 2.5%.",
+    "review": "Exactunweightedmean1/40=2.5%;sourcechecked.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Portfolio versus mean:** Why are 4% and 2.5% different? **Answer:** The portfolio uses unequal weights; the mean is unweighted.",
+    "review": "Unequalweighted4%versusunweighted2.5%;differentstatistics.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Variance:** What is their sample variance? **Answer:** 0.01125 in squared decimal-return units.",
+    "review": "Pairwise-gapsvariance(3/20)^2/2=9/800;sourcechecked.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Standard deviation:** What is its square root? **Answer:** Approximately 0.106066, or 10.6066 percentage points.",
+    "review": "Decimal100square-rootreference0.106066017177982...;notportfolioorannualrisk.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Risk:** Is that cross-sectional statistic portfolio volatility? **Answer:** No.",
+    "review": "Twocross-sectionalassetreturnsarenotportfoliotime-seriesvolatility.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Sample:** Is two observations a strong basis for inference? **Answer:** No; uncertainty and sample design matter.",
+    "review": "Twoassetsdonotestablishinferencesuitability;sampledesignnotvalidated.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**PV:** PV of 110 at 10% for one period? **Answer:** 100 in exact arithmetic.",
+    "review": "Independent110/(11/10)=100;separateillustrativevaluation,notportfolioleg.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**NPV:** NPV of `[-100, 110]` at 10%? **Answer:** Zero in exact arithmetic.",
+    "review": "Independent-100+110/(11/10)=0;absoluteamounttolerance1e-10.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Time zero:** Is the initial \u2212100 discounted? **Answer:** No.",
+    "review": "Timezerolegisnotdiscounted;explicitNPVconvention.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Loan:** One-period payment on 1,000 at 10%? **Answer:** 1,100 in exact arithmetic.",
+    "review": "Independentone-paymentdiscountsumgives1100;1e-9amounttolerance.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Loan scope:** Does that amount include fees or insurance? **Answer:** No.",
+    "review": "Noactualdates/fees/insurance/defaultinput.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Bond:** Two-period face 100, coupon 5%, yield 5% price? **Answer:** 100 under the stated model.",
+    "review": "Independent5/(21/20)+105/(21/20)^2=100.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Bond timing:** When is the bond valued in the model? **Answer:** On a coupon date immediately after the current payment.",
+    "review": "Simplifiedcoupon-datevaluationimmediatelyaftercurrentcoupon.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Accrued:** Does it calculate accrued interest? **Answer:** No.",
+    "review": "Noaccruedinterestcalculation.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Simulation:** What are the possible terminal values? **Answer:** 90 and 110.",
+    "review": "Nominalterminalsupport90/110;actualfloat110.00000000000001allowedwithin1e-10amount.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Expectation:** What is their equal-probability model mean? **Answer:** 100.",
+    "review": "Analyticalequal-probabilitymean100;notnativesampleconstraint.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Sample mean:** Must 20 random scenarios average exactly 100? **Answer:** No.",
+    "review": "Native20drawsseed42give11up/9downand101.00000000000001meanhere;count-derivedreferenceagrees.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Seed:** Does 42 guarantee identical sequences in every environment? **Answer:** No.",
+    "review": "Same-environmentreplaychecked;notcross-versionRNGidentity.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Model:** Is the toy simulation calibrated to the portfolio? **Answer:** No.",
+    "review": "Toyinitial100simulationisnotcalibratedfromobservedtwoassetreturns.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Plot:** Does this script generate a chart? **Answer:** No.",
+    "review": "Caseitselfmakesnochart;retainedplotchecksareseparate.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Visual review:** Has a chart been inspected for this draft? **Answer:** No.",
+    "review": "Nochartforthiscaseinspected;priorvisualexampleisadifferentrecord.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Tolerance:** Why use an absolute tolerance for near-zero NPV? **Answer:** Relative tolerance alone cannot allow a nonzero difference from zero.",
+    "review": "NearzeroNPVrequiresabsolutetolerance;unitsrecorded.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Integration:** Does a cross-module check prove all modules correct? **Answer:** No; boundaries, independent benchmarks and domains need further checks.",
+    "review": "Selectedboundaries/integrationdonotproveallmoduleinputdomainsormodels.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Data:** Does matching instrument labels prove identifiers are globally correct? **Answer:** No.",
+    "review": "MatchingA/Blabelliteraldoesnotproveglobalidentifiermapping.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Evidence:** Does the returned dictionary persist an audit record? **Answer:** No.",
+    "review": "Dictionaryisin-memory;externalQAretainsrecord,separatefromcasefunction.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Security:** Should real sensitive inputs be printed to public logs? **Answer:** No; use appropriate controls.",
+    "review": "Onlysyntheticvaluesprinted;realdataneedsappropriateprotectedlogging.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Tests:** Have these reference tests been run? **Answer:** Scoped source, editable and installed-toolkit case QA records execution; broader input, model, platform and independent acceptance remain pending.",
+    "review": "Historicaldeferredstatuscorrected;source/editable/installedcasesuitesrun.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Approval:** Is the case a production certification? **Answer:** No.",
+    "review": "Noproduction/modelcertificationorindependentfinancialapproval.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the final locked section? **Answer:** 21.18 \u2014 Further Study and Transition to Book 2.",
+    "review": "Nextlocked21.18FurtherStudyandTransitiontoBook2;broaderBook1gapsremain.",
+    "status": "Assistant scoped review;independent acceptance pending"
+  }
+]

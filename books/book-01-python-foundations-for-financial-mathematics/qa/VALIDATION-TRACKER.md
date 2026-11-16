@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.17:** [Integratedcase](chapter-21-integrated-case-review/README.md):40answers/12labs;23commands/491installedpredicates,158methods.17workflows/680answers;next21.18. Broadergapsopen.
+
 - **Latest21.16:** [Documentation/reproducibility](chapter-21-documentation-review/README.md):40answers/12labs,34predicates/twoformalruns,12reference methods.16workflows/640answers;next21.17. Broadersecurity/independent/platformgapsopen.
 
 - **Latest21.15:** [Verification review](chapter-21-verification-review/README.md):40answers/12labs,12traceabilityrows;22commands/459installedpredicates,146reference methods.15workflows/600answers;next21.16. Broadergaps remainopen.
@@ -159,7 +161,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 | 18 | Monte Carlo Simulation for Finance | PASS (scoped) — 7 supplemental workflows / 9 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 154 reference tests; 18.15 snippet ran; [evidence](chapter-18-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 19 | Financial Data Engineering Foundations | PASS — 158 reference tests; 19.15 snippet ran; [evidence](chapters-19-20-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 20 | Testing and Engineering Financial Python | PASS — 204 reference tests across 16 suites; [evidence](chapters-19-20-runtime/README.md) and [initial run](initial-2026-10-27/README.md) | Pending | Pending | NOT CERTIFIED |
-| 21 | Integrated Capstone: Financial Mathematics Toolkit | PASS (scoped) — 10 supplemental workflows / 19 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 218 reference tests, including DST regressions; one chart inspected; [evidence](initial-2026-10-27/README.md) | PASS (scoped) —16formalworkflows/640localanswers;[documentationreview](chapter-21-documentation-review/README.md);broaderreviewopen | Pending | NOT CERTIFIED |
+| 21 | Integrated Capstone: Financial Mathematics Toolkit | PASS (scoped) — 10 supplemental workflows / 19 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 218 reference tests, including DST regressions; one chart inspected; [evidence](initial-2026-10-27/README.md) | PASS (scoped) —17formalworkflows/680localanswers;[casereview](chapter-21-integrated-case-review/README.md);broaderreviewopen | Pending | NOT CERTIFIED |
 
 A chapter's runtime entry does not mean all snippets, lab steps, exercise answers, platforms or dependencies have been tested. Refer to each evidence record for the exact scope.
 
@@ -762,3 +764,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.16 — Scoped documentation and reproducibility workflow
 
 [Documentation review](chapter-21-documentation-review/README.md):40answers/12labsteps;34predicates pass ineachoftwoformalruns,eightPythoncommands/twelveexternalSHA-256subcommands.12currentreference methods/24invocations,no newlyauthored unittestmethods/historical-unique increment asserted. Exactmanualbytes/restrictedfingerprints andseparatePVsourceoutputrepeat;actual99.99999999999999matchesindependent100within1e-10amount. Fingerprintcoversfourstringsonly,notauthenticity/security/fullsourceorfinancialrecord. Standalonehelpernotintegratedintoearliertoolkit;prior146-method/wheelevidenceseparate. Statusanswer39corrected,codefencesunchanged. Chapter21now16scopedworkflows/640localanswers. Next21.17FinalIntegratedCaseStudy. F28/broadF32,F209/static,F165/F185,R08–10 andbroadersecurity/provenance/data/resource/model/platform/release/independentacceptance remainOPEN.
+
+
+## Section21.17 — Scoped final integrated-case workflow
+
+[Case review](chapter-21-integrated-case-review/README.md):40answers/12labs;23freshcommands and491installedpredicates pass,including32casecontrols.158currentreference methods/474source-editable-wheelinvocations,no newlyauthored unittestmethods/historical-unique increment asserted. Exactexternalcase/testpathworkswithinstalledtoolkit;caseisnotwheelmember. Independentreturns/weighting/crossstats/separatevaluations,actualpair/timing/ordertrace,controlledfutureavailability/misalignment/RNGchecks distinctfrommodelapproval. Native20drawsseed42produce11up/9down,mean101.00000000000001,count-derivedreferenceagrees;nominalmodelmean100notnativesampleconstraint. Harnesssyntaxfailure/correctionretained;codefencesunchanged,statusanswer38reconciled. Chapter21now17scopedworkflows/680answers;next21.18. F28/broadF32,F209/static,F165/F185,R08–10andbroaderdependency/data/resource/model/platform/release/independentacceptanceopen.

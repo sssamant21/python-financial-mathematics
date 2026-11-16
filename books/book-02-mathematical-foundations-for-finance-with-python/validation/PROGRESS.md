@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-206 cumulative assessment/printed-answer scoped pass;latest full Linux pass remains V-205 at older pin (637/424/638). Remaining exercise-specific and broader acceptance gaps open.
+**Overall status:** In progress — V-207 early-exercise scoped pass and V-208 full candidate Linux pass (639/426/640). Remaining exercise-specific and broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 637/637 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`. [V-205](runtime-refresh-2026-11-15-r24.md). |
-| Automated script execution | Full candidate Linux pass | 424/424 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`;638 required blobs verified before/after. [V-205](runtime-refresh-2026-11-15-r24.md). |
+| Python compilation | Full candidate Linux pass | 639/639 at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`. [V-208](runtime-refresh-2026-11-16-r26.md). |
+| Automated script execution | Full candidate Linux pass | 426/426 at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`; 640 required blobs verified before/after. [V-208](runtime-refresh-2026-11-16-r26.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1639,3 +1639,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-206 checkpoint — Cumulative assessment and printed answers
 
 [Assessment evidence](chapter-09-assessment-followup-r25.md):132correctedpredicates/fivecompiledfiles/fourscopedcommands pass,including -OO rejection. Baseline131pass/oneassertion-modepolicyfailure andidenticalpinnedreplayretained;optimizedmodecannotreturnuncheckedpassedstatus. Nineprintedcomparisons pass afterthreeoriginalroundingfailures/replay;19separateactualsourcesingle-paymentfields pass.24answer/sixappliedtaskrecords distinguishprosefromexecution. Harnesspathfailureandliveworking-replayexclusionrecorded;source-attributedclaimsuseimmutableGitblobs/hashes. Fresh638/425/639inventorynotfullexecution;V205remainslatestfullpassatolderpin. Nextremaining9.10E1–8/E14–16/E22helper/oraclecoverageandbroaderlab/extension/provenance/resources/independentreview.38COVcategoriespartial,noneclosed;nochapter/bookcertification. Book1separate.
+
+
+## V-207 checkpoint — Early-exercise helper alignment
+
+[Scoped report](chapter-09-early-exercises-followup-r26.md) at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`: 34 predicates passed (29 direct-helper predicates and five explicit composed/model-reference comparisons); 11 pinned Python files compiled and 11 commands passed, including six checkers. Initial probe, pinned replay and scoped results agree. Exercises 1–8 have distinct analytical, direct-helper and caller-composition records; supplied derivatives are not automatic differentiation. Decimal cube-root/adjacent-float budget references do not create a native inverse-budget solver. No implementation defect found or numerical algorithm changed. Next: remaining 9.10 Exercises 14–16/22 and broader lab/extension/provenance/resources/independent review. COV-52/54 remain partial; 38 selected categories partial, none closed.
+
+## V-208 checkpoint — Full pinned Linux refresh
+
+[Full runtime](runtime-refresh-2026-11-16-r26.md): 639/639 Python files compiled, 426/426 scripts passed and 640/640 required blobs verified before/after at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`. Includes V-206 assertion-mode guard and V-207 checker; preserves historical failures and reruns. Candidate Linux execution is not independent review, supported-platform validation, release acceptance or canonical approval. Next: 9.10 Exercises 14–16/22. Neither book is declared complete; Book 1 remains separately tracked.
