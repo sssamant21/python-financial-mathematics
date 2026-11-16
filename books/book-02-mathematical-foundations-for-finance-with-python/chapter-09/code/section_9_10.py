@@ -5,6 +5,8 @@ from section_9_09 import project_report
 from section_9_07 import call_payoff, call_slopes
 
 def assessment():
+    if not __debug__:
+        raise RuntimeError("assessment requires assertions enabled;do not use -O or -OO")
     flows=[(120,0.5),(120,1),(120,2),(1120,3)]
     report=project_report(flows,0.04,[-100,-50,-25,0,25,50,100])
     assert report["convexity"]+1e-12>=report["duration"]**2
