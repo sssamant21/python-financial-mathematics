@@ -301,6 +301,13 @@ jobs:
           python -m compileall -q joint_feasibility.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py test_five_interval_reference.py test_near_zero_pivots.py
           python joint_feasibility.py
 
+      - name: Validate Project 38 European put-call parity
+        run: |
+          cd quant-projects/38-put-call-parity
+          python -m unittest -v test_parity.py
+          python -m compileall -q parity.py test_parity.py
+          python parity.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
