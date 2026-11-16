@@ -79,3 +79,7 @@ The dedicated workflow previously invoked only `test_surface.py` and `test_quote
 python -m unittest -v test_surface.py test_quote_intervals.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
 python -m compileall -q surface.py quote_intervals.py joint_feasibility.py test_surface.py test_quote_intervals.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
 ```
+
+## Five-strike exact-rational interval reference (2026-11-16)
+
+`test_five_interval_reference.py` independently enumerates vertices of a bounded five-dimensional bid/ask quote polytope using exact `fractions.Fraction` arithmetic and Gaussian elimination. It checks a feasible interval grid, an impossible monotonicity grid, and duplicate-strike rejection against `joint_feasibility.py`. The reference is intentionally exhaustive and only appropriate for small synthetic fixtures. Run `python -m unittest -v test_five_interval_reference.py` from this directory. **The local exact-arithmetic oracle alone was exercised on two fixtures (feasible=True, infeasible=False), and compilation passed; the combined solver/reference tests and exact-revision CI have not yet been verified.** Near-zero pivots, extreme strike spacing, independent review and licensed market-data validation remain outstanding.
