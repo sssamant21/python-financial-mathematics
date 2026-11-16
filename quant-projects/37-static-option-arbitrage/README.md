@@ -70,3 +70,12 @@ Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py te
 ### Independent interval-feasibility reference
 
 Run `python -m unittest -v test_interval_reference.py` from this directory. The standard-library `fractions.Fraction` oracle enumerates vertices of the bounded three-strike quote polytope instead of using Fourier–Motzkin elimination. Five deterministic tests compare both methods for point quotes, nonzero bid/ask intervals and irregular strikes. This is a small-grid cross-check, **not** proof of floating-point stability, five-strike correctness or production readiness. No market data is bundled.
+
+## CI coverage correction (2026-11-16)
+
+The dedicated workflow previously invoked only `test_surface.py` and `test_quote_intervals.py` in its Project 37 step. Earlier workflow success therefore **did not validate** the joint-feasibility, scaling, Decimal, or Fraction reference suites. The workflow has now been updated to run all seven test modules and compile their Python files. Until the new exact-source workflow completes, the expanded tests are **not CI-verified**. Run locally with:
+
+```sh
+python -m unittest -v test_surface.py test_quote_intervals.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
+python -m compileall -q surface.py quote_intervals.py joint_feasibility.py test_surface.py test_quote_intervals.py test_joint_feasibility.py test_boundary_scaling.py test_normalized_tolerance.py test_irregular_decimal_reference.py test_interval_reference.py
+```
