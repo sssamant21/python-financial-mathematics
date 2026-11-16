@@ -388,3 +388,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## F209 — Scoped collection/order boundary follow-up
 
 [Evidence](collection-f209-review/README.md):14baseline passes/21 new policy failures reproduced;35/35 corrected predicates pass twice,with45 retained source predicates,one supplemental units check andfive commands. Reject Mapping/Set/text/buffer before iteration;retain list/tuple/generator/range/reversed/explicit-values-view behavior,late iterator exception identity,ownership and selected rational NPVs. Historical three design observations stay separate. F209 remains OPEN for hidden upstream order/provenance and ingestion resources;F28/F32/F165/F185 andbroader model/platform/release/independent/canonical acceptance remainOPEN. No new answer/workflow/historical-method counts. Next:V10 simulation/statistical evidence crosswalk,starting18.1.
+
+
+## V10 — Scoped Section18.1 estimator assumptions
+
+[Evidence](v10-simulation-foundations/README.md):105predicates pass twice with16exhaustiveIIDfour-drawpaths;80direct summary fields,16callerinterval decisions,sixIIDdistribution aggregates,two dependent-sampleSE fields andone dependent-joint variance kept distinct. ExactP(estimatedSE0)=1/8;callermean±1.96SEcoverage7/8onlyforthestatedN4two-pointIIDmodel. DependencecomparisonhasVar(mean)100withsourceSE0;no seed/IID/generatorquality ornominalcoveragecertification. Fourcommands/20invocationsof10existingmethods;source-identicalprior55predicate/F173evidenceretained. No newanswers/workflows/historicalmethods counted. V10INPROGRESS,next18.2generator/seed/finite-resolutioncrosswalk. F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.

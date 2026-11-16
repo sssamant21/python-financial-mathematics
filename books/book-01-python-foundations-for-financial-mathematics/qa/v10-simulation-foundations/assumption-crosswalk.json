@@ -1,0 +1,54 @@
+{
+  "claims": [
+    {
+      "claim": "Expected terminal value",
+      "assumptions": "Two outcomes90/110with probability1/2each",
+      "derivation": "(90+110)/2=100;population variance100",
+      "evidence": "Exact model arithmetic;no market calibration."
+    },
+    {
+      "claim": "IID mean sampling variance",
+      "assumptions": "Four independent identically distributed observations",
+      "derivation": "Var(mean)=100/4=25;SE5",
+      "evidence": "All16equiprobableorderedpaths enumerated;E estimatedSE\u00b2=25."
+    },
+    {
+      "claim": "EstimatedSE=s/sqrtN",
+      "assumptions": "IID finite variance;sample variance usesN-1",
+      "derivation": "s\u00b2=400k(4-k)/(4*3);SE\u00b2=s\u00b2/4",
+      "evidence": "Actual source summarize compared for every orderedpath;not an IID detector."
+    },
+    {
+      "claim": "A constant sample can report zero uncertainty",
+      "assumptions": "Constant observed sample,not degenerate underlying model",
+      "derivation": "All-up/all-down paths haveSE0;IIDprobability2/16=1/8",
+      "evidence": "Observed zeroSE doesnot establish zero populationvariance."
+    },
+    {
+      "claim": "Mean\u00b11.96estimatedSE",
+      "assumptions": "ExplicitcallerintervalforN4two-pointIIDmodel",
+      "derivation": "Cover iff(5k-10)\u00b2<=(49/25)\u00b2*(100k(4-k)/12);k1/2/3cover,k0/4fail;coverage14/16=7/8",
+      "evidence": "Exact model enumeration andfloat intervaldecision agree;no native intervalAPI orallNnominal95%acceptance."
+    },
+    {
+      "claim": "Dependence changes estimator uncertainty",
+      "assumptions": "One shared fairBernoulli selects90x4or110x4",
+      "derivation": "Var(mean)=100while both samples reportSE0;covariances invalidateIIDformula",
+      "evidence": "Sameonedrawmarginal,specifieddifferentjointlaw;not producedbyindependent source generator."
+    },
+    {
+      "claim": "Seed/generator evidence",
+      "assumptions": "Local Pythonrandom.Random finite53-bitdraws;fixedenvironment/draworder",
+      "derivation": "Reproducibility is distinct fromIID/streamquality/modelvalidation",
+      "evidence": "Prior source-identical seed/countmappingevidence reused;no new distribution-quality/rare-event assertion."
+    },
+    {
+      "claim": "F165 tail gap",
+      "assumptions": "Separate integratedCDF/tail andmodel/converter work",
+      "derivation": "This two-point enumeration hasnofulltailCDF ornormal-returnintegration",
+      "evidence": "F165/F185/F28/F32/F209 remainopen;cannotclose fromtheseresults."
+    }
+  ],
+  "next": "V10Section18.2generator/seed/finite-resolution crosswalk using existing source-identical stream evidence;identify missing model/error claims,retainF165tailgap.",
+  "reviewer": "Assistant scoped numerical/analytical review;independentacceptancepending."
+}

@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-211 Section9.1 lab/source scoped pass and V-212 full candidate Linux pass (642/429/643). Chapter-lab/extension and broader acceptance gaps open.
+**Overall status:** In progress — V-213 Section9.2 lab/exercise scoped pass. V-212 remains latest full candidate Linux pass (642/429/643); all required code/fixture hashes match current inspected source. Broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1668,3 +1668,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-212 checkpoint — Full pinned candidate Linux refresh
 
 [Fullruntime](runtime-refresh-2026-11-16-r29.md) at `2ee81822af67357087e2af6193348f2b3c5dbdf8`:642/642Pythonfilescompiled,429/429scripts passed,643/643requiredblobhashesverifiedbefore/after. IncludesV209/V210/V211checkeradditions sinceV208. V211default18CLI/unitchecks differfrom22manuscript-scopedchecks;priorfailures/replaysremainretained. Finalmanuscriptclarification changesnoPython/fixtureblobs;643identitiesverified. Next9.2lab/exercise/acceptancecrosswalk;broaderlab/extension/provenance/resource/model/platform/release/independent/canonicalacceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-213 checkpoint — Section9.2 lab/exercise crosswalk
+
+[Evidence](chapter-09-lab-02-followup-r30.md):41predicates pass twice;threecompiledfiles/threecommands perrun,hashesverified. SixCLIlabels/16numericfields,Exercise3 exponent−2sourcecase,fourstepcallercenteredstudy andsource/revenueidentitychecks keptdistinct. Sixlabunits/tenexercise dispositions are reviewunits,notnewtestcounts. Actual roundedcallbackratios andideal third-derivative bound withseparate samplingallowance recorded;no universalstepselector/optimizer/differentiatorclaim. No sourcecode changes ordefectinvented. All643requiredPython/fixturehashesmatchV212;latest fullrun642/429/643atitsrecordedpin,notnewexecution. Next9.3Taylorlab/exercise/acceptancecrosswalk;broaderchapterlab/extension/provenance/resource/model/platform/release/independent/canonicalacceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.

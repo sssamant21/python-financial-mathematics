@@ -120,3 +120,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-211 Section9.1 lab/source crosswalk
 
 [V-211](chapter-09-lab-01-followup-r29.md) records sixlabunits/tenexercise dispositions,actual four-dictionary CLI output,documented commands,printedrounding andstaticrunbookmarkup. Baseline20/2replays preserved;corrected22predicates/threecompiled/fourcommands pass. Defaultchecker18CLI/unit predicates excludes manuscriptchecks. Demand/portfolio sensitivity outputs distinguished from discounted-shock API;independent reviewer/model/platform/extension/otherlab acceptance remains open. Next9.2labcrosswalk.38selectedCOVcategoriespartial,noneclosed.
+
+
+### Later V-213 Section9.2 lab/exercise crosswalk
+
+[V-213](chapter-09-lab-02-followup-r30.md):sixlabunits/tenexercise dispositions;41predicates/twofresh runs,threecompiled/threecommands perrun. ActualCLI16fields,nondefaultExercise3 powercase,fourstepcallercenteredstudy andthree revenueidentitychecks distinct fromanalyticalproofs andnativeAPIs. Prioronefixedstep checksnotdescribedasseveralsteps. All643code/fixtureidentitiesmatchV212;no newfullrunorcodechange. Next9.3labcrosswalk;38selectedCOVcategoriespartial,noneclosed.

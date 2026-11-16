@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest V10/18.1:** [Estimator assumptions](v10-simulation-foundations/README.md):105predicates pass twice,16IIDpaths exhaustivelyenumerated;source-summary/callerinterval/dependent-joint references distinct. V10 scopedINPROGRESS;next18.2generator/seedcrosswalk. No sourcechange ornewanswer/workflow/historical-method totals.
+
 - **Latest F209:** [Collection boundary](collection-f209-review/README.md):21 explicit-policy baseline failures/replay;35 corrected predicates pass twice;45 retained source predicates/five commands pass. Direct mapping/set/text/buffer ingestion rejected;upstream order/resources remain OPEN. Next:V10 simulation/statistical crosswalk starting18.1.
 
 - **Latest F32 follow-up:** [Shared-input guards](shared-input-f32-review/README.md):22 baseline failures/replay retained;38 corrected predicates pass twice plus34-case/256-predicate regression. Representation crashes addressed;F32 broader parsing/context/integration remains OPEN. Next:F209 collection/order boundary.
@@ -133,7 +135,7 @@ Work through the validation checklist and chapter matrix. For each check, record
 | V07 | Mathematical and financial correctness | Independently derive formulas and benchmarks; verify units, signs, timelines, rates, assumptions and edge cases. | IN PROGRESS — Chapter 2 bounded analyzer fixtures checked against closed-form accumulation; broader independent review pending |
 | V08 | Numerical behavior | Assess precision, cancellation, overflow, underflow, convergence, tolerances and supported ranges. | IN PROGRESS — Section 10.7 and other scoped numerical findings addressed; broader review pending |
 | V09 | Integration and data validation | Check module contracts, limits, data alignment, timestamps, availability, revisions, missingness and security boundaries. | IN PROGRESS — scoped Chapter 21 tests and DST fix |
-| V10 | Simulation and statistical review | Review model assumptions, generator and seed, distribution behavior, sampling uncertainty and reproducibility. | NOT STARTED — reference runtime evidence exists |
+| V10 | Simulation and statistical review | Review model assumptions, generator and seed, distribution behavior, sampling uncertainty and reproducibility. | IN PROGRESS — [18.1 finite-model uncertainty crosswalk](v10-simulation-foundations/README.md);105predicates/two runs;broadergenerator/tail/dependence/model/independent review remains open |
 | V11 | Visualization and accessibility | Render representative outputs and inspect data, labels, units, time zones, scale, readability and accessibility. | IN PROGRESS — selected Chapter 8/21 charts inspected; fresh dashboard and price-chart artifacts retained; [evidence](later-examples-2026-10-28/README.md) |
 | V12 | Packaging and platform | Build and hash artifacts, install in clean environments, run outside checkout, review dependency versions and test supported operating systems. | IN PROGRESS — Chapter 5 offline fixture/env and regular installed-wheel workflows passed; cross-platform review pending |
 | V13 | Security and privacy | Review secrets, sensitive data, file/network behavior, dependencies and evidence handling appropriate to the work. | NOT STARTED |
@@ -790,3 +792,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## F209 — Scoped collection/order boundary follow-up
 
 [Evidence](collection-f209-review/README.md):14baseline passes/21 new policy failures reproduced;35/35 corrected predicates pass twice,with45 retained source predicates,one supplemental units check andfive commands. Reject Mapping/Set/text/buffer before iteration;retain list/tuple/generator/range/reversed/explicit-values-view behavior,late iterator exception identity,ownership and selected rational NPVs. Historical three design observations stay separate. F209 remains OPEN for hidden upstream order/provenance and ingestion resources;F28/F32/F165/F185 andbroader model/platform/release/independent/canonical acceptance remainOPEN. No new answer/workflow/historical-method counts. Next:V10 simulation/statistical evidence crosswalk,starting18.1.
+
+
+## V10 — Scoped Section18.1 estimator assumptions
+
+[Evidence](v10-simulation-foundations/README.md):105predicates pass twice with16exhaustiveIIDfour-drawpaths;80direct summary fields,16callerinterval decisions,sixIIDdistribution aggregates,two dependent-sampleSE fields andone dependent-joint variance kept distinct. ExactP(estimatedSE0)=1/8;callermean±1.96SEcoverage7/8onlyforthestatedN4two-pointIIDmodel. DependencecomparisonhasVar(mean)100withsourceSE0;no seed/IID/generatorquality ornominalcoveragecertification. Fourcommands/20invocationsof10existingmethods;source-identicalprior55predicate/F173evidenceretained. No newanswers/workflows/historicalmethods counted. V10INPROGRESS,next18.2generator/seed/finite-resolutioncrosswalk. F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
