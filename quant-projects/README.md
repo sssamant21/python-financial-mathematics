@@ -241,3 +241,5 @@ Project 37 now also includes a five-strike exact-rational bid/ask interval oracl
 **Project 37 five-strike numerical validation (2026-11-16):** Added two irregular-grid exact-rational cross-check fixtures for feasible and convexity-infeasible point quotes. See [Project 37](37-static-option-arbitrage/README.md). Exact published-source test execution and CI remain unverified.
 
 Project 37 numerical-conditioning regression: `python -m unittest -v test_near_zero_pivots.py` from its folder compares four small-gap/near-flat synthetic quote grids against the independent exact-rational three-strike oracle. Hosted CI and independent review must be checked before treating these as accepted.
+
+Project 38 additionally includes adjacent-binary64 quote-boundary regression cases in `test_decimal_reference.py`. The one-ULP checks illustrate strict numerical comparisons, not executable market arbitrage; consult its README and the tracker for validation limitations.
