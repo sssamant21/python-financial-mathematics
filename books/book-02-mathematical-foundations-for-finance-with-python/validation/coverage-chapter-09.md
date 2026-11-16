@@ -110,3 +110,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-209 cash-flow exercise alignment
 
 [V-209](chapter-09-cashflow-exercises-followup-r27.md) adds explicit E14–16/22 mapping: complete direct portfolio/spot fields, separate algebraic weighted-variance proof, selected equality cases, caller payment perturbations, and mixed/zero/parallel spot changes.64 predicates/seven compiled/seven commands pass; mathematical identity, direct helper fields and caller/supplemental checks remain distinct. No market key-rate implementation or universal numerical theorem is inferred. Next:E25 six-task prompt/export/bound alignment using matching prior evidence; broader lab/extension/provenance/resource/model/independent acceptance remains open.38 selected COV categories remain partial,none closed.
+
+
+### Later V-210 applied-project alignment
+
+[V-210](chapter-09-applied-alignment-followup-r28.md) maps all six Exercise25 tasks to direct native report fields,independent rational-series seven-grid/bound expectations,separate analytical counterexample and caller finite JSON export.119 recorded predicates/six compiled/six commands pass. PriorV204 schema/ownership evidence reused only after source/checker hash equality. File persistence is QA-caller work;financial lineage and independent acceptance remain open. Next:Chapter9 lab/extension audit,starting9.1 statedlab/source/check/evidence crosswalk.38 selected COV categories remain partial,none closed.

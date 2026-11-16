@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-209 cash-flow exercise scoped pass; V-208 remains latest full candidate Linux pass (639/426/640) at an older pin. Applied-project and broader acceptance gaps open.
+**Overall status:** In progress — V-210 applied-project scoped alignment pass; V-208 remains latest full candidate Linux pass (639/426/640) at older pin. Chapter-lab/extension and broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1653,3 +1653,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-209 checkpoint — Cash-flow exercise/source alignment
 
 [Scoped evidence](chapter-09-cashflow-exercises-followup-r27.md): Exercises14–16/22 have four separate alignment/derivation records;64 predicates pass (47 direct numerical fields,4 direct rejections,10 caller compositions,3 supplemental controls). Seven files compiled/seven scoped commands/six checkers passed; probe/replay/scoped outcomes identical and hashes verified. Exact rational exponential-series oracle independent of source Decimal.exp. E15 algebraic proof distinct from sampled rounded-output comparisons; E22 independent spot rates distinct from market key rates. Six existing Python sources/manuscript at `ed7b907787e6851be71a31463b1818632ca415eb`, new checker separately blob-pinned. No numerical source defect or algorithm change. Fresh640/427/641 inventory is not full execution; V208 remains latest full639/426/640 at prior pin. Next:E25 six-task prompt/export/bound alignment, reusing matching V203/V204/V206 evidence, then broader lab/extension/provenance/resources/model/independent acceptance.38 selected COV categories partial,none closed;Book1 separate.
+
+
+## V-210 checkpoint — Applied-project six-task alignment
+
+[Evidence](chapter-09-applied-alignment-followup-r28.md):six Exercise25 task records;119predicates pass(89direct numerical,14bound flags,4metadata,6cross-module projections,3actual rejections,2caller exports,1supplemental counterexample). Six files compiled/six scoped commands/three checkers pass;probe/replay/scoped results and actual finite JSON exports agree exactly,hashes verified. Independent Fraction exponential-series references cover exact seven-shock grid;native project fullbaseline distinguished from assessment summary. Caller export and analytical non-universal-improvement example not native features. PriorV204 unchanged source/checker identities verified and historical290predicates reused at originalscope,not recounted. Fresh641/428/642inventory notfullruntime;V208older-pin639/426/640remains latestfull. Next:Chapter9lab/extension audit starting9.1lab/source/check/evidence crosswalk;broaderprovenance/resources/model/platform/release/independent/canonical acceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.

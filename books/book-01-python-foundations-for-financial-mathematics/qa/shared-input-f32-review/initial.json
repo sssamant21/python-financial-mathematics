@@ -1,0 +1,399 @@
+{
+  "mode": "baseline",
+  "baseline_revision": "e9ec4a06368bd666e2e50ed77efdb224d5faad0e",
+  "source_blob": "2ece6adb2ffa659ed8efef86534da501d77d1094",
+  "fence_sha256": "baa5c59f06f49cabce2d24a5af3d6e8257538b24e3b0d5a5917c342de1012a40",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "records": [
+    {
+      "case": "initial_investment str",
+      "kind": "representation guard",
+      "fixture_expression": "'25000'",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'str' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment int",
+      "kind": "representation guard",
+      "fixture_expression": "25000",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'int' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment float",
+      "kind": "representation guard",
+      "fixture_expression": "25000.0",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'float' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment bool",
+      "kind": "representation guard",
+      "fixture_expression": "True",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'bool' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment None",
+      "kind": "representation guard",
+      "fixture_expression": "None",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'NoneType' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment list",
+      "kind": "representation guard",
+      "fixture_expression": "[]",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'list' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment bytes",
+      "kind": "representation guard",
+      "fixture_expression": "b'25000'",
+      "expected": "Initial investment must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'bytes' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "initial_investment NaN",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "initial_investment sNaN",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "initial_investment Infinity",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "initial_investment -Infinity",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Initial investment must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "annual_contribution str",
+      "kind": "representation guard",
+      "fixture_expression": "'25000'",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'str' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution int",
+      "kind": "representation guard",
+      "fixture_expression": "25000",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'int' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution float",
+      "kind": "representation guard",
+      "fixture_expression": "25000.0",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'float' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution bool",
+      "kind": "representation guard",
+      "fixture_expression": "True",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'bool' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution None",
+      "kind": "representation guard",
+      "fixture_expression": "None",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'NoneType' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution list",
+      "kind": "representation guard",
+      "fixture_expression": "[]",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'list' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution bytes",
+      "kind": "representation guard",
+      "fixture_expression": "b'25000'",
+      "expected": "Annual contribution must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'bytes' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "annual_contribution NaN",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "annual_contribution sNaN",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "annual_contribution Infinity",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "annual_contribution -Infinity",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Annual contribution must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "target_balance str",
+      "kind": "representation guard",
+      "fixture_expression": "'25000'",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'str' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance int",
+      "kind": "representation guard",
+      "fixture_expression": "25000",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'int' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance float",
+      "kind": "representation guard",
+      "fixture_expression": "25000.0",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'float' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance bool",
+      "kind": "representation guard",
+      "fixture_expression": "True",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'bool' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance None",
+      "kind": "representation guard",
+      "fixture_expression": "None",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'NoneType' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance list",
+      "kind": "representation guard",
+      "fixture_expression": "[]",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'list' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance bytes",
+      "kind": "representation guard",
+      "fixture_expression": "b'25000'",
+      "expected": "Target balance must be Decimal.",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'bytes' object has no attribute 'is_finite'"
+      },
+      "stdout": "",
+      "passed": false
+    },
+    {
+      "case": "target_balance NaN",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "target_balance sNaN",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "target_balance Infinity",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "target_balance -Infinity",
+      "kind": "finite guard",
+      "exception": null,
+      "stdout": "Input Validation Errors\n------------------------------------------------------------\n- Target balance must be finite.\n",
+      "passed": true
+    },
+    {
+      "case": "supported 3/100",
+      "kind": "independent finance",
+      "expected_year": 12,
+      "actual_year": 12,
+      "expected_balance": "4264166799154038581766781/40000000000000000000",
+      "actual_balance": "106604.1699788509645441695250",
+      "absolute_tolerance": "4264166799154038581766781/4000000000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "case": "supported 1/20",
+      "kind": "independent finance",
+      "expected_year": 10,
+      "actual_year": 10,
+      "expected_balance": "8487880978201/81920000",
+      "actual_balance": "103611.8283471801757812500000",
+      "absolute_tolerance": "8487880978201/8192000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "case": "supported 7/100",
+      "kind": "independent finance",
+      "expected_year": 9,
+      "actual_year": 9,
+      "expected_balance": "4234056962192024527/40000000000000",
+      "actual_balance": "105851.42405480061317500000",
+      "absolute_tolerance": "4234056962192024527/4000000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "case": "supported 9/100",
+      "kind": "independent finance",
+      "expected_year": 8,
+      "actual_year": 8,
+      "expected_balance": "41982574010017301/400000000000",
+      "actual_balance": "104956.435025043252500000",
+      "absolute_tolerance": "41982574010017301/40000000000000000000000000000000000000",
+      "passed": true
+    },
+    {
+      "case": "all shared representations",
+      "kind": "aggregate guard",
+      "stdout": "",
+      "exception": {
+        "type": "AttributeError",
+        "message": "'str' object has no attribute 'is_finite'"
+      },
+      "passed": false
+    }
+  ],
+  "passed": 16,
+  "failed": 22,
+  "limits": "Declared AST fixture assignments only;rest of exact fence unchanged. Typed Decimal rejection policy,not arbitrary external parsing or all-range Decimal/model/independent approval."
+}

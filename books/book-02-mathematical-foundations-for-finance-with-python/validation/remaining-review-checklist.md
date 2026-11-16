@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-16
 **Full-runtime candidate source revision:** `7ae2227b1f243fe8bb2af7e1f437168fe15ff213` (V-208)
-**Latest scoped source:** V-209 six existing Python sources at `ed7b907787e6851be71a31463b1818632ca415eb` plus separately blob-pinned checker; [manifest](chapter-09-cashflow-exercises-publication-r27.json).
+**Latest scoped source:** V-210 five existing Python sources at `e9ec4a06368bd666e2e50ed77efdb224d5faad0e` plus separately blob-pinned checker;[manifest](chapter-09-applied-alignment-publication-r28.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-209 cash-flow exercise scoped pass; V-208 older-pin full candidate Linux pass. Applied-project/lab/extension, independent/platform/release acceptance remains open.
+**Disposition:** V-210 applied-project scoped alignment pass; V-208 older-pin full candidate Linux pass. Chapter-lab/extension, independent/platform/release acceptance remains open.
 
 ## Reconciled evidence
 
@@ -1527,3 +1527,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-209 checkpoint — Cash-flow exercise/source alignment
 
 [Scoped evidence](chapter-09-cashflow-exercises-followup-r27.md): Exercises14–16/22 have four separate alignment/derivation records;64 predicates pass (47 direct numerical fields,4 direct rejections,10 caller compositions,3 supplemental controls). Seven files compiled/seven scoped commands/six checkers passed; probe/replay/scoped outcomes identical and hashes verified. Exact rational exponential-series oracle independent of source Decimal.exp. E15 algebraic proof distinct from sampled rounded-output comparisons; E22 independent spot rates distinct from market key rates. Six existing Python sources/manuscript at `ed7b907787e6851be71a31463b1818632ca415eb`, new checker separately blob-pinned. No numerical source defect or algorithm change. Fresh640/427/641 inventory is not full execution; V208 remains latest full639/426/640 at prior pin. Next:E25 six-task prompt/export/bound alignment, reusing matching V203/V204/V206 evidence, then broader lab/extension/provenance/resources/model/independent acceptance.38 selected COV categories partial,none closed;Book1 separate.
+
+
+## V-210 checkpoint — Applied-project six-task alignment
+
+[Evidence](chapter-09-applied-alignment-followup-r28.md):six Exercise25 task records;119predicates pass(89direct numerical,14bound flags,4metadata,6cross-module projections,3actual rejections,2caller exports,1supplemental counterexample). Six files compiled/six scoped commands/three checkers pass;probe/replay/scoped results and actual finite JSON exports agree exactly,hashes verified. Independent Fraction exponential-series references cover exact seven-shock grid;native project fullbaseline distinguished from assessment summary. Caller export and analytical non-universal-improvement example not native features. PriorV204 unchanged source/checker identities verified and historical290predicates reused at originalscope,not recounted. Fresh641/428/642inventory notfullruntime;V208older-pin639/426/640remains latestfull. Next:Chapter9lab/extension audit starting9.1lab/source/check/evidence crosswalk;broaderprovenance/resources/model/platform/release/independent/canonical acceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.

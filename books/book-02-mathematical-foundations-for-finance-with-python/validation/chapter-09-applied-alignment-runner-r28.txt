@@ -1,0 +1,23 @@
+"""Stage five immutable project/assessment sources and SHA-pinned Exercise25 checker.
+Usage: python THIS repository_root probe|scope output.json
+"""
+from pathlib import Path
+import sys,subprocess,tempfile,hashlib,json,py_compile,platform
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];out=Path(sys.argv[3]).resolve();assert mode in ('probe','scope');assert __debug__
+pin='e9ec4a06368bd666e2e50ed77efdb224d5faad0e';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/'
+new='check_section_10_applied_alignment.py';new_sha='0e25533ad7e83610da417e30a9c7b346ac9cf8ef'
+names=['section_9_07.py','section_9_09.py','section_9_10.py','check_section_9_10.py','check_section_10_assessment_contracts.py',new];manifest=[];commands=[];compiled=[]
+def blob(raw):return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp)
+ for n in names:
+  raw=(r/(prefix+n)).read_bytes() if n==new else subprocess.check_output(['git','show',pin+':'+prefix+n],cwd=r)
+  sha=new_sha if n==new else subprocess.check_output(['git','rev-parse',pin+':'+prefix+n],cwd=r,text=True).strip()
+  assert blob(raw)==sha;(t/n).write_bytes(raw);manifest.append(dict(path=prefix+n,sha=sha,revision='new checker Git blob' if n==new else pin))
+ for n in names:py_compile.compile(str(t/n),doraise=True);compiled.append(n)
+ for n in ([new] if mode=='probe' else names):
+  argv=[sys.executable,n]+([str(out.with_name(out.stem+'-predicates.json'))] if n==new else [])
+  z=subprocess.run(argv,cwd=t,capture_output=True,text=True,timeout=60);commands.append(dict(argv=argv,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+ after=all(blob((t/Path(x['path']).name).read_bytes())==x['sha'] for x in manifest)
+ d=dict(source_revision=pin,new_checker_sha=new_sha,mode=mode,manifest=manifest,compiled=compiled,commands=commands,hashes_verified_before=True,hashes_verified_after=after,python=sys.version,platform=platform.platform(),limits='Selected E25 exact-grid report/caller-export alignment; no independent approval or financial lineage.')
+ out.write_text(json.dumps(d,indent=2)+'\n');print(mode,len(compiled),'compiled',len(commands),'commands',[x['returncode'] for x in commands]);assert after and all(x['returncode']==0 for x in commands)

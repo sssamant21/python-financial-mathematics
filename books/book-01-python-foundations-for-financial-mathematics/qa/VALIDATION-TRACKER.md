@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest F32 follow-up:** [Shared-input guards](shared-input-f32-review/README.md):22 baseline failures/replay retained;38 corrected predicates pass twice plus34-case/256-predicate regression. Representation crashes addressed;F32 broader parsing/context/integration remains OPEN. Next:F209 collection/order boundary.
+
 - **Latest 21.18:** [Transition](chapter-21-transition-review/README.md): 40 answers/12 lab steps; six commands and12 independent observer predicates pass twice.18 scoped workflows/720 answers; next F32 shared-input integration follow-up. Comprehensive validation remains open.
 
 - **Latest21.17:** [Integratedcase](chapter-21-integrated-case-review/README.md):40answers/12labs;23commands/491installedpredicates,158methods.17workflows/680answers;next21.18. Broadergapsopen.
@@ -210,7 +212,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 
 | F31 | Companion 2.13.33–60 includes rule/result-only answers and input-only integrated code; the model checklist omits explicit failure consequences. | SUPPLEMENTED (scoped) — full analyzer, applied/validation implementations, conceptual detail and review checklist linked; 133 predicates passed; [evidence](chapter-02-applied-review/README.md). Original numeric claims and source code unchanged. | Section 2.12 requirements, section checklists and independent acceptance remain open. |
 
-| F32 | Section 2.12 shared monetary values assume Decimal literals; a string principal raises AttributeError before validation. | OPEN INTEGRATION LIMIT — exact-source probe retained alongside 33 supported cases; 24 project and 53 checklist review units record scoped/partial/open dispositions; [evidence](chapter-02-project-review/README.md). | Add explicit shared representation/conversion policy before exposing arbitrary external inputs; broader numerical, platform and independent acceptance remain open. |
+| F32 | Section2.12 shared-input representation crash; broader parsing/context integration. | OPEN INTEGRATION — explicit Decimal guards now prevent21 individual andone aggregate representation crashes;38 corrected predicates/two runs and34-case/256-predicate regression pass. Original failures retained. [Follow-up](shared-input-f32-review/README.md) · [Historical evidence](chapter-02-project-review/README.md). | External parsing, currency/unit schema, Decimal context/traps/resources and independent integration acceptance remain open; no silent conversion policy introduced. |
 
 | F33 | New Sections5.6–5.8 QA observer failed to restore direct-script sibling import semantics; evidence aggregation then tried decoding absent5.8 stdout. | RESOLVED QA HARNESS — low severity; owner QA executor; affected new harness against main `aae5aa16`; original observer/runner and reproduced failure retained in [failure/rerun record](chapter-05-environment-review/FAILURE-AND-RERUN.md). Observer now matches direct-file path/argv; source remains unchanged;27 final predicates pass. | Broader input/platform/independent acceptance remains open; this was not a manuscript defect. |
 
@@ -776,3 +778,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section 21.18 — Scoped further-study and transition workflow
 
 [Transition review](chapter-21-transition-review/README.md): 40 answers/12 lab-step contracts, six successful commands, 12 existing reference methods/24 script-suite plus24 observer-driven invocations (48 total), and 12 independent observed-expression predicates repeated in first/replay. Exact rational/decimal references distinguish amount, return, squared-return and sensitivity units. Standalone script does not import/validate toolkit; prior wheel/model/visual evidence remains separate. Deferred status paragraph and Exercise39 reconciled; Python fence unchanged. Chapter21 now18 scoped workflows/720 local answers. Reaching final numbered draft is not completion of comprehensive Book1 validation. Next: F32 Section2.12 shared monetary-input representation/conversion integration follow-up using prior33 supported cases and AttributeError record. F28/F32/F209/F165/F185,V10/V13/V14,R08–10 and broader owner/data/model/platform/release/independent/canonical acceptance remain OPEN.
+
+
+## F32 — Shared-input representation follow-up
+
+[Evidence](shared-input-f32-review/README.md):16baseline passes/22failures reproduced identically;three explicit Decimal guards now yield38/38 corrected predicates in both runs and34/34 regression cases with256 predicates. The33 prior supported cases retain independent rational first-crossing/balance references;the formerly crashing string fixture is now a validation diagnostic. Historical failure evidence retained;no new exercise/workflow or historical-method counts added. Representation crash addressed,F32 broader parsing/context/currency/resource integration remains OPEN,as doF28/F209/F165/F185 andV10/V13/V14/independent/model/platform/release/canonical acceptance. Next:F209 Section20.8 iterable shape/order boundary review.

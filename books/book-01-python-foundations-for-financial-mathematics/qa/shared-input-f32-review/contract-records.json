@@ -1,0 +1,9 @@
+{
+  "policy": "Already-constructed Decimal only for the three shared monetary fields; match scenario representation policy, no coercion.",
+  "rationale": "Explicit representation guard prevents method access on strings/int/float/bool/None/list/bytes. Silent float/string conversion would introduce unapproved parsing/rounding semantics.",
+  "initial": "21 individual representation cases plus one aggregate case failed twice with AttributeError;16 finite/financial checks passed.",
+  "corrected": "38 checks pass twice, including all22 originally failed cases.",
+  "regression": "34 cases/256predicates all pass:33 retained supported cases and former limitation now a diagnostic case.",
+  "open": "F32 remains OPEN INTEGRATION: no external input parser, currency/unit schema, configurable Decimal context/traps or comprehensive input/resource policy. F28 remains open.",
+  "reviewer": "Assistant scoped verification; no independent reviewer or canonical acceptance."
+}
