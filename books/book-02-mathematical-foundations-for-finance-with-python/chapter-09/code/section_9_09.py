@@ -1,6 +1,8 @@
 """Section 9.9: chapter project for fixed-cash-flow valuation sensitivity."""
 import json
 import math
+from fractions import Fraction
+from decimal import Decimal, Context, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -28,15 +30,35 @@ def validate_flows(flows):
 def baseline(flows, rate):
     items = validate_flows(flows)
     r = finite(rate, "rate")
-    terms = [c * math.exp(-r * t) for c, t in items]
-    value = math.fsum(terms)
-    first = -math.fsum(t * v for (_, t), v in zip(items, terms))
-    second = math.fsum(t * t * v for (_, t), v in zip(items, terms))
-    if not all(math.isfinite(x) for x in (value, first, second)) or value <= 0:
-        raise ValueError("nonfinite valuation or derivatives")
-    return {"value": value, "first": first, "second": second,
-            "duration": -first / value, "convexity": second / value,
-            "terms": terms}
+    R = Fraction(r)
+    with localcontext(Context(prec=1500)):
+        def dec(value):
+            return Decimal(value.numerator) / Decimal(value.denominator)
+        def reported(value):
+            result = float(value)
+            if not math.isfinite(result):
+                raise ValueError("baseline report outside finite float range")
+            return result
+        value = first = second = Decimal(0)
+        amounts = []
+        for cash, years in items:
+            C, T = map(Fraction, (cash, years))
+            exponent = -R * T
+            if exponent > 10000:
+                raise ValueError("baseline report outside finite float range")
+            amount = Decimal(0) if exponent < -10000 else dec(C) * dec(exponent).exp()
+            TT = dec(T)
+            value += amount
+            first -= TT * amount
+            second += TT * TT * amount
+            amounts.append(amount)
+        v = reported(value)
+        if v <= 0:
+            raise ValueError("baseline value must report positive")
+        return {"value": v, "first": reported(first), "second": reported(second),
+                "duration": reported(-first / value),
+                "convexity": reported(second / value),
+                "terms": [reported(x) for x in amounts]}
 
 def scenario(flows, rate, shock_bp):
     items = validate_flows(flows)
