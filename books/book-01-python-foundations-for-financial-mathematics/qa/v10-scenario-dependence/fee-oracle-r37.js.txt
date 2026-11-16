@@ -1,0 +1,7 @@
+(()=>{
+const laws=[["same",[[1,1],[-1,-1]]],["independent",[[1,1],[1,-1],[-1,1],[-1,-1]]],["opposite",[[1,-1],[-1,1]]]],cases=[],checks=[];
+for(const[name,states]of laws){let previous=0;for(const fee of[0,2,10,11]){const f=BigInt(fee),out=states.map(([a,b])=>6n*BigInt(a)+4n*BigInt(b)-f),n=BigInt(out.length),sum=out.reduce((a,b)=>a+b,0n),loss=out.filter(x=>x<0n).length;checks.push({name:name+" fee"+fee+" expected pnl",passed:sum===-f*n});checks.push({name:name+" fee"+fee+" monotonic strict-loss count",passed:loss>=previous});previous=loss;
+const prescribed={same:[1,1,1,2],independent:[2,2,3,4],opposite:[1,1,2,2]}[name][[0,2,10,11].indexOf(fee)];checks.push({name:name+" fee"+fee+" strict loss/tie reference",passed:loss===prescribed});
+cases.push({name,states,fee,terminal:out.map(x=>String(100n+x)),pnl:out.map(String),expected_terminal:String(100n-f),expected_pnl:String(-f),loss_probability:loss/states.length,ties:out.filter(x=>x===0n).length});}}
+return{scope:"independent exact finite-law fee and strict-threshold arithmetic;not Python execution",cases,checks,passed:checks.filter(x=>x.passed).length,failed:checks.filter(x=>!x.passed).length};
+})()

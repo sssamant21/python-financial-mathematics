@@ -423,3 +423,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section18.7 partial dependence checkpoint (runtime unavailable)
 
 [Partial evidence](v10-scenario-dependence/README.md):18 supplemental exact BigInt algebra checks pass twice for three explicitly weighted joint laws with identical±10% asset marginals,E(terminal)100/P(loss)1/2 but populationP&Lvariance100/52/4 andconditionalmeanloss10/6/2. No Python/source/demo/unittest/compile executed:executionenvironment unavailable. PriorF179/69predicate/21failure evidence retained at originalscope. Preparedsource runner explicitlyunexecuted;no newanswers/workflows/historicalmethods orsourceimplementationchange. Nextremains18.7nativefixture replay/completion,then18.8. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderintegration/model/platform/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Section18.7 fee/dependence partial checkpoint
+
+[New evidence](v10-scenario-dependence/fee-checkpoint-r37.md):36 supplemental exact BigInt checks pass twice across12fee/joint-law fixtures. Fee10 givesexpectedP&L−10foreachlaw butstrictlossprobabilities1/2,3/4,1;ties/fee-once/monotonicity distinguished. Preparednative runner extendspriorcases butremainsunexecuted;Python/source/demo/unittest/compile blockedbyunavailableexecutor. No sourcechange/defect ornewanswers/workflows/historicalmethods. Nextremains18.7nativefixture replay/completion,then18.8. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.

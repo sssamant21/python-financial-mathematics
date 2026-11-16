@@ -1,7 +1,7 @@
 """Pending Python execution. Not executed when created. Run from repository root."""
 from pathlib import Path
 import subprocess,re,tempfile,importlib.util,json,sys
-pin='17a15f56db324709638d7fe5b7cc1500f9d0b2fa'
+pin='ecd8f947c1aaa69a905e220d86f8f5a2c55d9edd'
 source='books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.07-scenario-analysis.md'
 here=Path(__file__).resolve().parent;root=here.parents[3]
 raw=subprocess.check_output(['git','show',pin+':'+source],cwd=root)
@@ -15,6 +15,14 @@ with tempfile.TemporaryDirectory() as tmp:
    assert row==dict(baseline=100,terminal=int(fixture['terminal'][i]),pnl=int(fixture['pnl'][i]))
   summary=m.weighted_summary(actual,[1/len(actual)]*len(actual));assert summary==dict(expected_terminal=100,expected_pnl=0,loss_probability=.5)
   rows.append(dict(name=fixture['name'],actual=actual,summary=summary))
+ fee_fixtures=json.loads((here/'fee-oracle-results-r37.json').read_text())['cases']
+ for fixture in fee_fixtures:
+  actual=[m.value_scenario([60,40],[a/10,b/10],fixture['fee']) for a,b in fixture['states']]
+  expected=[dict(baseline=100,terminal=int(t),pnl=int(p)) for t,p in zip(fixture['terminal'],fixture['pnl'])]
+  assert actual==expected
+  summary=m.weighted_summary(actual,[1/len(actual)]*len(actual))
+  assert summary==dict(expected_terminal=int(fixture['expected_terminal']),expected_pnl=int(fixture['expected_pnl']),loss_probability=fixture['loss_probability'])
+  rows.append(dict(name=fixture['name'],fee=fixture['fee'],actual=actual,summary=summary))
  for args in [[sys.executable,p.name],[sys.executable,'-m','compileall','-q',p.name]]:
   r=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=r.returncode,stdout=r.stdout,stderr=r.stderr))
 result=dict(pin=pin,rows=rows,commands=commands,all_commands_passed=all(c['returncode']==0 for c in commands))

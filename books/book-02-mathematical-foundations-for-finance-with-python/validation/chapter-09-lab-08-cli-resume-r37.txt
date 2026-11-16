@@ -1,0 +1,33 @@
+"""Prepared, unexecuted default CLI comparison. Run twice when Python is restored."""
+from pathlib import Path
+import subprocess,tempfile,json,sys,math,importlib.util
+here=Path(__file__).resolve().parent;root=here.parents[2];pin='ecd8f947c1aaa69a905e220d86f8f5a2c55d9edd'
+prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/'
+expected=json.loads((here/'chapter-09-lab-08-cli-oracle-r37.json').read_text())['expected_cli'];commands=[];rows=[]
+def compare(actual,want,path='CLI'):
+ if isinstance(want,dict):
+  ok=isinstance(actual,dict) and set(actual)==set(want);rows.append(dict(path=path,kind='schema',passed=ok))
+  if ok:
+   for key in want:compare(actual[key],want[key],path+'.'+key)
+ elif isinstance(want,list):
+  ok=isinstance(actual,list) and len(actual)==len(want);rows.append(dict(path=path,kind='schema',passed=ok))
+  if ok:
+   for i,value in enumerate(want):compare(actual[i],value,path+'.'+str(i))
+ else:
+  if type(want) in (bool,str) or want is None:ok=type(actual)==type(want) and actual==want
+  elif want==0:ok=type(actual) in (int,float) and actual==0
+  else:ok=type(actual) in (int,float) and math.isfinite(actual) and math.isclose(actual,want,rel_tol=5e-14,abs_tol=1e-12)
+  rows.append(dict(path=path,kind='leaf',actual=actual,expected=want,passed=ok))
+with tempfile.TemporaryDirectory() as tmp:
+ for name in ['section_9_08.py','check_section_9_08.py']:
+  raw=subprocess.check_output(['git','show',pin+':'+prefix+name],cwd=root);(Path(tmp)/name).write_bytes(raw)
+ for args in [[sys.executable,'section_9_08.py'],[sys.executable,'check_section_9_08.py'],[sys.executable,'-m','compileall','-q','section_9_08.py','check_section_9_08.py']]:
+  r=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=r.returncode,stdout=r.stdout,stderr=r.stderr))
+ if commands[0]['returncode']==0:compare(json.loads(commands[0]['stdout']),expected)
+ spec=importlib.util.spec_from_file_location('report_reference',Path(tmp)/'section_9_08.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for control in json.loads((here/'chapter-09-lab-08-cli-oracle-r37.json').read_text())['tolerance_controls']:
+  actual=m.parallel_report([(100,1),(1100,2)],.04,[-100,-50,-25,-10,0,10,25,50,100],error_tolerance=control['tolerance'])
+  compare(actual['scenarios'],control['scenarios'],'tolerance='+str(control['tolerance']))
+result=dict(pin=pin,commands=commands,rows=rows,passed=sum(r['passed'] for r in rows),failed=sum(not r['passed'] for r in rows))
+(here/('chapter-09-lab-08-cli-source-'+(sys.argv[1] if len(sys.argv)>1 else 'first')+'-r37.json')).write_text(json.dumps(result,indent=2)+'\n')
+assert rows and result['failed']==0 and all(c['returncode']==0 for c in commands)

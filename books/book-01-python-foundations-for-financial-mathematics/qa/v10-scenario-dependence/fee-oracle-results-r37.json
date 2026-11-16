@@ -1,0 +1,516 @@
+{
+  "scope": "independent exact finite-law fee and strict-threshold arithmetic;not Python execution",
+  "cases": [
+    {
+      "name": "same",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 0,
+      "terminal": [
+        "110",
+        "90"
+      ],
+      "pnl": [
+        "10",
+        "-10"
+      ],
+      "expected_terminal": "100",
+      "expected_pnl": "0",
+      "loss_probability": 0.5,
+      "ties": 0
+    },
+    {
+      "name": "same",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 2,
+      "terminal": [
+        "108",
+        "88"
+      ],
+      "pnl": [
+        "8",
+        "-12"
+      ],
+      "expected_terminal": "98",
+      "expected_pnl": "-2",
+      "loss_probability": 0.5,
+      "ties": 0
+    },
+    {
+      "name": "same",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 10,
+      "terminal": [
+        "100",
+        "80"
+      ],
+      "pnl": [
+        "0",
+        "-20"
+      ],
+      "expected_terminal": "90",
+      "expected_pnl": "-10",
+      "loss_probability": 0.5,
+      "ties": 1
+    },
+    {
+      "name": "same",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 11,
+      "terminal": [
+        "99",
+        "79"
+      ],
+      "pnl": [
+        "-1",
+        "-21"
+      ],
+      "expected_terminal": "89",
+      "expected_pnl": "-11",
+      "loss_probability": 1,
+      "ties": 0
+    },
+    {
+      "name": "independent",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 0,
+      "terminal": [
+        "110",
+        "102",
+        "98",
+        "90"
+      ],
+      "pnl": [
+        "10",
+        "2",
+        "-2",
+        "-10"
+      ],
+      "expected_terminal": "100",
+      "expected_pnl": "0",
+      "loss_probability": 0.5,
+      "ties": 0
+    },
+    {
+      "name": "independent",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 2,
+      "terminal": [
+        "108",
+        "100",
+        "96",
+        "88"
+      ],
+      "pnl": [
+        "8",
+        "0",
+        "-4",
+        "-12"
+      ],
+      "expected_terminal": "98",
+      "expected_pnl": "-2",
+      "loss_probability": 0.5,
+      "ties": 1
+    },
+    {
+      "name": "independent",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 10,
+      "terminal": [
+        "100",
+        "92",
+        "88",
+        "80"
+      ],
+      "pnl": [
+        "0",
+        "-8",
+        "-12",
+        "-20"
+      ],
+      "expected_terminal": "90",
+      "expected_pnl": "-10",
+      "loss_probability": 0.75,
+      "ties": 1
+    },
+    {
+      "name": "independent",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "fee": 11,
+      "terminal": [
+        "99",
+        "91",
+        "87",
+        "79"
+      ],
+      "pnl": [
+        "-1",
+        "-9",
+        "-13",
+        "-21"
+      ],
+      "expected_terminal": "89",
+      "expected_pnl": "-11",
+      "loss_probability": 1,
+      "ties": 0
+    },
+    {
+      "name": "opposite",
+      "states": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "fee": 0,
+      "terminal": [
+        "102",
+        "98"
+      ],
+      "pnl": [
+        "2",
+        "-2"
+      ],
+      "expected_terminal": "100",
+      "expected_pnl": "0",
+      "loss_probability": 0.5,
+      "ties": 0
+    },
+    {
+      "name": "opposite",
+      "states": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "fee": 2,
+      "terminal": [
+        "100",
+        "96"
+      ],
+      "pnl": [
+        "0",
+        "-4"
+      ],
+      "expected_terminal": "98",
+      "expected_pnl": "-2",
+      "loss_probability": 0.5,
+      "ties": 1
+    },
+    {
+      "name": "opposite",
+      "states": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "fee": 10,
+      "terminal": [
+        "92",
+        "88"
+      ],
+      "pnl": [
+        "-8",
+        "-12"
+      ],
+      "expected_terminal": "90",
+      "expected_pnl": "-10",
+      "loss_probability": 1,
+      "ties": 0
+    },
+    {
+      "name": "opposite",
+      "states": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "fee": 11,
+      "terminal": [
+        "91",
+        "87"
+      ],
+      "pnl": [
+        "-9",
+        "-13"
+      ],
+      "expected_terminal": "89",
+      "expected_pnl": "-11",
+      "loss_probability": 1,
+      "ties": 0
+    }
+  ],
+  "checks": [
+    {
+      "name": "same fee0 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "same fee0 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "same fee0 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "same fee2 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "same fee2 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "same fee2 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "same fee10 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "same fee10 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "same fee10 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "same fee11 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "same fee11 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "same fee11 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "independent fee0 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "independent fee0 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "independent fee0 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "independent fee2 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "independent fee2 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "independent fee2 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "independent fee10 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "independent fee10 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "independent fee10 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "independent fee11 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "independent fee11 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "independent fee11 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "opposite fee0 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "opposite fee0 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "opposite fee0 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "opposite fee2 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "opposite fee2 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "opposite fee2 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "opposite fee10 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "opposite fee10 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "opposite fee10 strict loss/tie reference",
+      "passed": true
+    },
+    {
+      "name": "opposite fee11 expected pnl",
+      "passed": true
+    },
+    {
+      "name": "opposite fee11 monotonic strict-loss count",
+      "passed": true
+    },
+    {
+      "name": "opposite fee11 strict loss/tie reference",
+      "passed": true
+    }
+  ],
+  "passed": 36,
+  "failed": 0,
+  "source_pin": "ecd8f947c1aaa69a905e220d86f8f5a2c55d9edd",
+  "source_blob": "39fd28700fcab4e125d97ee5924c812a9cba20dd",
+  "evaluation": "JavaScript BigInt, two identical complete evaluations; no Python source execution"
+}
