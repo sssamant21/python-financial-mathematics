@@ -1,0 +1,73 @@
+{
+  "scope": "supplemental exact integer-scaled exercise algebra; no Python source execution",
+  "checks": [
+    {
+      "name": "E2 +25bp denominator",
+      "actual": "100",
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "E2 -50bp scaled",
+      "actual": "-100",
+      "expected": "-100",
+      "passed": true
+    },
+    {
+      "name": "E6 linear cents",
+      "actual": "-8000",
+      "expected": "-8000",
+      "passed": true
+    },
+    {
+      "name": "E7 convexity cents",
+      "actual": "45",
+      "expected": "45",
+      "passed": true
+    },
+    {
+      "name": "E7 quadratic cents",
+      "actual": "-7955",
+      "expected": "-7955",
+      "passed": true
+    },
+    {
+      "name": "duration weight numerator",
+      "actual": "12",
+      "expected": "12",
+      "passed": true
+    },
+    {
+      "name": "convexity weight numerator",
+      "actual": "54",
+      "expected": "54",
+      "passed": true
+    }
+  ],
+  "passed": 7,
+  "failed": 0,
+  "fixture": {
+    "flows": [
+      [
+        8000,
+        2
+      ],
+      [
+        16000,
+        5
+      ]
+    ],
+    "rate": 0,
+    "baseline_value": 24000,
+    "duration": 4,
+    "convexity": 18,
+    "shock_bp": 25,
+    "linear_change": -240,
+    "quadratic_correction": 1.35,
+    "quadratic_change": -238.65,
+    "scale_to_exercise": 3
+  },
+  "limits": "integer flows use three times exercise6/7 value; caller divides currency fields by3; not a source output",
+  "source_pin": "17a15f56db324709638d7fe5b7cc1500f9d0b2fa",
+  "execution": "functions JavaScript BigInt; executed twice with identical results"
+}

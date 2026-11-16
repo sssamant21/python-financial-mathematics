@@ -1,0 +1,176 @@
+{
+  "scope": "supplemental exact BigInt joint-law arithmetic; no Python source execution",
+  "checks": [
+    {
+      "name": "same_direction zero mean pnl",
+      "passed": true
+    },
+    {
+      "name": "same_direction population variance",
+      "passed": true
+    },
+    {
+      "name": "same_direction loss probability half",
+      "passed": true
+    },
+    {
+      "name": "same_direction conditional mean loss",
+      "passed": true
+    },
+    {
+      "name": "same_direction A symmetric marginal",
+      "passed": true
+    },
+    {
+      "name": "same_direction B symmetric marginal",
+      "passed": true
+    },
+    {
+      "name": "independent zero mean pnl",
+      "passed": true
+    },
+    {
+      "name": "independent population variance",
+      "passed": true
+    },
+    {
+      "name": "independent loss probability half",
+      "passed": true
+    },
+    {
+      "name": "independent conditional mean loss",
+      "passed": true
+    },
+    {
+      "name": "independent A symmetric marginal",
+      "passed": true
+    },
+    {
+      "name": "independent B symmetric marginal",
+      "passed": true
+    },
+    {
+      "name": "opposite_direction zero mean pnl",
+      "passed": true
+    },
+    {
+      "name": "opposite_direction population variance",
+      "passed": true
+    },
+    {
+      "name": "opposite_direction loss probability half",
+      "passed": true
+    },
+    {
+      "name": "opposite_direction conditional mean loss",
+      "passed": true
+    },
+    {
+      "name": "opposite_direction A symmetric marginal",
+      "passed": true
+    },
+    {
+      "name": "opposite_direction B symmetric marginal",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "name": "same_direction",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "terminal": [
+        "110",
+        "90"
+      ],
+      "pnl": [
+        "10",
+        "-10"
+      ],
+      "probability_each": "1/2",
+      "mean_terminal": "100",
+      "mean_pnl": "0",
+      "population_variance": "100",
+      "strict_loss_probability": "1/2",
+      "conditional_mean_loss": "10"
+    },
+    {
+      "name": "independent",
+      "states": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1
+        ]
+      ],
+      "terminal": [
+        "110",
+        "102",
+        "98",
+        "90"
+      ],
+      "pnl": [
+        "10",
+        "2",
+        "-2",
+        "-10"
+      ],
+      "probability_each": "1/4",
+      "mean_terminal": "100",
+      "mean_pnl": "0",
+      "population_variance": "52",
+      "strict_loss_probability": "1/2",
+      "conditional_mean_loss": "6"
+    },
+    {
+      "name": "opposite_direction",
+      "states": [
+        [
+          1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "terminal": [
+        "102",
+        "98"
+      ],
+      "pnl": [
+        "2",
+        "-2"
+      ],
+      "probability_each": "1/2",
+      "mean_terminal": "100",
+      "mean_pnl": "0",
+      "population_variance": "4",
+      "strict_loss_probability": "1/2",
+      "conditional_mean_loss": "2"
+    }
+  ],
+  "passed": 18,
+  "failed": 0,
+  "source_pin": "17a15f56db324709638d7fe5b7cc1500f9d0b2fa",
+  "execution": "functions JavaScript BigInt; executed twice with identical results"
+}

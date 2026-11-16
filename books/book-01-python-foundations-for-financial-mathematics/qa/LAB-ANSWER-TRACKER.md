@@ -418,3 +418,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.6 path-grid/dependence assumptions
 
 [Evidence](v10-path-monitoring/README.md):51 supplemental predicates pass twice. Three caller-coupled coarse/fine pairs share terminal100/SE0 but native lower95 monitor seesone finehit/zero coarsehits. T4/8steps vsT1/2steps verifies equal dt and distinctgridlengths withoutchangingpathcount. Fixed antitheticdraws are notIID/model/continuous-monitoringvalidation. Fourformalcommands/20invocationsof10existingmethods;priorF178/76predicate listingidentityverified,originalfailurespreserved. No sourcechange/defect ornewanswers/workflows/historicalmethods. Next18.7scenario-analysisassumptions;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Section18.7 partial dependence checkpoint (runtime unavailable)
+
+[Partial evidence](v10-scenario-dependence/README.md):18 supplemental exact BigInt algebra checks pass twice for three explicitly weighted joint laws with identical±10% asset marginals,E(terminal)100/P(loss)1/2 but populationP&Lvariance100/52/4 andconditionalmeanloss10/6/2. No Python/source/demo/unittest/compile executed:executionenvironment unavailable. PriorF179/69predicate/21failure evidence retained at originalscope. Preparedsource runner explicitlyunexecuted;no newanswers/workflows/historicalmethods orsourceimplementationchange. Nextremains18.7nativefixture replay/completion,then18.8. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderintegration/model/platform/release/independent/canonicalacceptanceopen.

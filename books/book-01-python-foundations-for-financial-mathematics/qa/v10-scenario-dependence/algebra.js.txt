@@ -1,0 +1,18 @@
+(()=>{
+ const cases=[],checks=[];
+ for(const [name,states,varExpected,lossSeverity] of [
+  ["same_direction",[[1,1],[-1,-1]],100,10],
+  ["independent",[[1,1],[1,-1],[-1,1],[-1,-1]],52,6],
+  ["opposite_direction",[[1,-1],[-1,1]],4,2]]){
+  const n=BigInt(states.length),pnl=states.map(([a,b])=>6n*BigInt(a)+4n*BigInt(b));
+  const total=pnl.reduce((a,b)=>a+b,0n),sq=pnl.reduce((a,b)=>a+b*b,0n),loss=pnl.filter(x=>x<0n);
+  const test=(label,ok)=>checks.push({name:name+" "+label,passed:ok});
+  test("zero mean pnl",total===0n);test("population variance",sq===BigInt(varExpected)*n);
+  test("loss probability half",2n*BigInt(loss.length)===n);
+  test("conditional mean loss",loss.reduce((a,b)=>a-b,0n)===BigInt(lossSeverity)*BigInt(loss.length));
+  test("A symmetric marginal",states.filter(x=>x[0]===1).length*2===states.length);
+  test("B symmetric marginal",states.filter(x=>x[1]===1).length*2===states.length);
+  cases.push({name,states,terminal:pnl.map(x=>String(100n+x)),pnl:pnl.map(String),probability_each:"1/"+n,mean_terminal:"100",mean_pnl:"0",population_variance:String(sq/n),strict_loss_probability:"1/2",conditional_mean_loss:String(lossSeverity)});
+ }
+ return {scope:"supplemental exact BigInt joint-law arithmetic; no Python source execution",checks,cases,passed:checks.filter(x=>x.passed).length,failed:checks.filter(x=>!x.passed).length};
+})()

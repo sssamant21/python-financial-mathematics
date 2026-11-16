@@ -1,0 +1,20 @@
+"""Prepared unexecuted runtime checkpoint; run from repository root twice."""
+from pathlib import Path
+import subprocess,tempfile,importlib.util,json,sys,math
+pin='17a15f56db324709638d7fe5b7cc1500f9d0b2fa';prefix='books/book-02-mathematical-foundations-for-finance-with-python/'
+here=Path(__file__).resolve().parent;root=here.parents[2];commands=[]
+with tempfile.TemporaryDirectory() as tmp:
+ for name in ['section_9_08.py','check_section_9_08.py']:
+  raw=subprocess.check_output(['git','show',pin+':'+prefix+'chapter-09/code/'+name],cwd=root);(Path(tmp)/name).write_bytes(raw)
+ spec=importlib.util.spec_from_file_location('report_reference',Path(tmp)/'section_9_08.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ fixture=m.parallel_report([(8000,2),(16000,5)],0,[0,25],error_tolerance=0)
+ assert fixture['baseline_value']==24000 and fixture['duration']==4 and fixture['convexity']==18
+ zero,bump=fixture['scenarios'];assert zero['exact_change']==zero['linear_change']==zero['quadratic_change']==0
+ for key,want in [('linear_change',-240),('quadratic_change',-238.65)]:assert math.isclose(bump[key],want,rel_tol=5e-14,abs_tol=1e-12)
+ # Supplemental independent expm1 reference for this selected r=0 fixture.
+ exact=8000*math.expm1(-2*.0025)+16000*math.expm1(-5*.0025)
+ assert math.isclose(bump['exact_change'],exact,rel_tol=5e-14,abs_tol=1e-12)
+ for args in [[sys.executable,'section_9_08.py'],[sys.executable,'check_section_9_08.py'],[sys.executable,'-m','compileall','-q','section_9_08.py','check_section_9_08.py']]:
+  r=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=r.returncode,stdout=r.stdout,stderr=r.stderr))
+result=dict(pin=pin,exercise_fixture=fixture,commands=commands,all_commands_passed=all(c['returncode']==0 for c in commands))
+(here/'chapter-09-lab-08-pending-source-output-r36.json').write_text(json.dumps(result,indent=2)+'\n');assert result['all_commands_passed']

@@ -1,0 +1,12 @@
+(()=>{
+ const checks=[];const check=(name,actual,want)=>checks.push({name,actual:String(actual),expected:String(want),passed:actual===want});
+ // All integer-scaled values; changes below stored in hundredths of currency.
+ const V=8000n,D=4n,hNumerator=25n,hDenominator=10000n,K=18n;
+ const linearCents=-V*D*hNumerator*100n/hDenominator;
+ const correctionCents=V*K*hNumerator*hNumerator*100n/(2n*hDenominator*hDenominator);
+ check("E2 +25bp denominator",25n*4n,100n);check("E2 -50bp scaled", -50n*2n,-100n);
+ check("E6 linear cents",linearCents,-8000n);check("E7 convexity cents",correctionCents,45n);check("E7 quadratic cents",linearCents+correctionCents,-7955n);
+ // Feasible positive cash flows consistent with V,D,K: weights 1/3 at2years,2/3 at5years.
+ check("duration weight numerator",2n+2n*5n,3n*D);check("convexity weight numerator",4n+2n*25n,3n*K);
+ return {scope:"supplemental exact integer-scaled exercise algebra; no Python source execution",checks,passed:checks.filter(x=>x.passed).length,failed:checks.filter(x=>!x.passed).length,fixture:{flows:[[8000,2],[16000,5]],rate:0,baseline_value:24000,duration:4,convexity:18,shock_bp:25,linear_change:-240,quadratic_correction:1.35,quadratic_change:-238.65,scale_to_exercise:3},limits:"integer flows use three times exercise6/7 value; caller divides currency fields by3; not a source output"};
+})()

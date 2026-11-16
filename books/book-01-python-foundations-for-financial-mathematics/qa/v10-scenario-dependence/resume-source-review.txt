@@ -1,0 +1,21 @@
+"""Pending Python execution. Not executed when created. Run from repository root."""
+from pathlib import Path
+import subprocess,re,tempfile,importlib.util,json,sys
+pin='17a15f56db324709638d7fe5b7cc1500f9d0b2fa'
+source='books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.07-scenario-analysis.md'
+here=Path(__file__).resolve().parent;root=here.parents[3]
+raw=subprocess.check_output(['git','show',pin+':'+source],cwd=root)
+listing=re.findall(r'^~~~python\n(.*?)^~~~',raw.decode(),re.M|re.S);assert len(listing)==1
+fixtures=json.loads((here/'algebra-results.json').read_text())['cases'];rows=[];commands=[]
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'scenario_analysis.py';p.write_text(listing[0]);spec=importlib.util.spec_from_file_location('scenario_reference',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for fixture in fixtures:
+  actual=[m.value_scenario([60,40],[a/10,b/10]) for a,b in fixture['states']]
+  for i,row in enumerate(actual):
+   assert row==dict(baseline=100,terminal=int(fixture['terminal'][i]),pnl=int(fixture['pnl'][i]))
+  summary=m.weighted_summary(actual,[1/len(actual)]*len(actual));assert summary==dict(expected_terminal=100,expected_pnl=0,loss_probability=.5)
+  rows.append(dict(name=fixture['name'],actual=actual,summary=summary))
+ for args in [[sys.executable,p.name],[sys.executable,'-m','compileall','-q',p.name]]:
+  r=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=r.returncode,stdout=r.stdout,stderr=r.stderr))
+result=dict(pin=pin,rows=rows,commands=commands,all_commands_passed=all(c['returncode']==0 for c in commands))
+(here/'source-execution-pending-output.json').write_text(json.dumps(result,indent=2)+'\n');assert result['all_commands_passed']
