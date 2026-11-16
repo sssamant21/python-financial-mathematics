@@ -22,3 +22,25 @@ python parity.py
 The examples are synthetic and do not provide financial advice or broker actions. Inputs require positive spot/strike and maturity, finite quotes, nonnegative ordered bid/ask prices, and bounded rate/yield conventions. Assumes same timestamp, currency, underlying, exercise style, maturity and strike, with deterministic rates and dividend yield. Real equity options with early exercise, discrete dividends or borrow constraints require different treatment. Floating-point boundary equality may need independent high-precision review.
 
 **Validation:** see the master tracker for exact execution evidence. No independent review, licensed live quote validation, or production certification is claimed.
+
+## Independent numerical reference and boundary tests
+
+`test_decimal_reference.py` computes the parity target separately with Python's
+60-digit `decimal.Decimal.exp()`, using decimal-string inputs. Four test methods
+cover zero/negative/positive discount rates, dividend-yield sensitivity, quote
+intervals deliberately separated from the theoretical boundary by 0.000001,
+and an exactly representable zero-rate case. The interval test leaves a
+positive ask spread and tests a lower-bound crossing; it does **not** assert
+bitwise equality at a floating-point boundary.
+
+From this folder:
+
+```sh
+python -m unittest -v test_parity.py test_decimal_reference.py
+python -m compileall -q parity.py test_parity.py test_decimal_reference.py
+```
+
+A high-precision cross-check is useful evidence but is not an independent
+financial-model audit. Inputs are synthetic; the assumed continuously
+compounded rates and continuous dividend yield are not a verified
+executable-market financing model.
