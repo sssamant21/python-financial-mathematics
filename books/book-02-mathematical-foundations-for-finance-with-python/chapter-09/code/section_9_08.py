@@ -161,11 +161,38 @@ def spot_scenario(flows,spot_rates,shock_bp):
     bumps=[bp_to_decimal(x) for x in used_bp]
     if len(items)!=len(rates) or len(items)!=len(bumps):
         raise ValueError("one spot rate and shock required per cash flow")
-    terms=[c*math.exp(-z*t) for (c,t),z in zip(items,rates)]
-    value=math.fsum(terms)
-    if not math.isfinite(value) or value<=0:
-        raise ValueError("baseline spot value must be finite and positive")
-    data=scenario_from_terms(terms,[t for _,t in items],bumps)
+    # Form the complete report from original cash/rate inputs. Rounded
+    # baseline coefficients cannot recover a rescued scenario endpoint.
+    with localcontext(Context(prec=1700)):
+        def dec(value):return Decimal(value.numerator)/Decimal(value.denominator)
+        def amount(C,exponent):
+            if exponent>10000:
+                raise ValueError("spot report outside finite float range")
+            return Decimal(0) if exponent < -10000 else dec(C)*dec(exponent).exp()
+        def reported(value):
+            result=float(value)
+            if not math.isfinite(result):
+                raise ValueError("spot report outside finite float range")
+            return result
+        baseline=Decimal(0);latent=[]
+        for (cash,years),rate,h in zip(items,rates,bumps):
+            C,T,R,H=map(Fraction,(cash,years,rate,h));v=amount(C,-R*T)
+            baseline+=v;latent.append((C,T,R,H,v))
+        value=reported(baseline)
+        if value<=0:
+            raise ValueError("baseline spot value must report positive")
+        shifted=linear=second=Decimal(0)
+        for C,T,R,H,v in latent:
+            TT,HH=dec(T),dec(H);shifted+=amount(C,-(R+H)*T)
+            linear-=TT*v*HH;second+=TT*TT*v*HH*HH/2
+        exact=shifted-baseline;quadratic=linear+second
+        data={"exact_change":reported(exact),"linear_change":reported(linear),
+              "quadratic_change":reported(quadratic),
+              "linear_error":reported(exact-linear),
+              "quadratic_error":reported(exact-quadratic),
+              "absolute_linear_error":reported(abs(exact-linear)),
+              "absolute_quadratic_error":reported(abs(exact-quadratic))}
+
     return {"model":"independent cash-flow spot rates; continuous annual",
             "baseline_value":value,"spot_rates":rates,
             "shock_bp":used_bp,
