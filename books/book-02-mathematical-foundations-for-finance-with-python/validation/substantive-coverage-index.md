@@ -1517,3 +1517,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-217 checkpoint — Section9.6 discounted-value lab/answer crosswalk
 
 [Evidence](chapter-09-lab-06-followup-r34.md):54passes/3failuresbaseline/replay retained;57correctedpredicates pass twice,twoPythonfilescompiled/threecommandsperrun.35CLInumericfields/12schemas/threeExercise7sourcefields/sixprintchecks/onemarkupcheck distinct. Printedfirst−40936.537655→−40936.537654,second204682.688274→204682.688269;eightbackticks/status/checkboxreconciled. Completeparallel/spot/cash-derivativefieldschecked;new8000/D4/25bpfixturegives−80. Sixlabunits/twelveexercise dispositions,notnewtesttotals. NoPythonchange;counts642/429/643unchanged,onepriorV216checkerblobdiffersfromV212fullpin. Next9.7kinkslabcrosswalk;38COVcategoriespartial,noneclosed;broaderacceptanceopen.Book1separate.
+
+
+## V-218 checkpoint — Section9.7 kink lab/exercise crosswalk
+
+[Evidence](chapter-09-lab-07-followup-r35.md):63pass/oneescaped-markupfailure reproduced;corrected64predicates pass twice,twoexactPythonfilescompiled/threecommandsperrun. CompleteCLI24leaves/sevenschemas;caller9-point/stepcases27quotientfields,two cross-kinktraps,threepayoffidentityvalues/onemarkupcheck. Eightbackticks/status/checkboxrepaired;operationalthreshold/distance fields explicitlycallerwork. Sixlabunits/twelveexercisedispositions separateproofs,sourceoutputs andcallerstepstudy. NoPythonchange;fresh642/429/643inventory,642/643V212requiredhashesidentical,onlypriorV216check9.05differs. LatestfullV212retainsolderpin;broaderphysicaldomain/resources/model/platform/release/independent/canonicalacceptanceopen. Next9.8sensitivity-reportlabcrosswalk.38selectedCOVcategoriespartial,noneclosed;Book1separate.

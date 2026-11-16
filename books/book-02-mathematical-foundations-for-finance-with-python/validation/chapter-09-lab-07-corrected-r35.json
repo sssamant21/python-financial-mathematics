@@ -1,0 +1,712 @@
+{
+  "validation": "V218",
+  "pin": "c539a0d935facc2a11c510516c7fa3b23271806f",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_07.py",
+      "sha256": "34583712c6caa81842e62b99bf8710e214eea0f5947ef24ef49acf171c736ef8"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_07.py",
+      "sha256": "e6d8a32ba4834d7401a24cce32387644c95db5bd679addfff04eeee324144d5a"
+    }
+  ],
+  "manuscript_sha256": "808bd2cc3ee599504104e009861ec26bbbec5fbc33864446fa613d7cad8a7f29",
+  "rows": [
+    {
+      "name": "CLI keys",
+      "kind": "schema",
+      "actual": [
+        "call_at_strike",
+        "call_down",
+        "call_up",
+        "cap_at_threshold",
+        "finite_differences",
+        "put_at_strike"
+      ],
+      "expected": "['call_at_strike', 'call_down', 'call_up', 'cap_at_threshold', 'finite_differences', 'put_at_strike']",
+      "passed": true
+    },
+    {
+      "name": "call_at_strike keys",
+      "kind": "schema",
+      "actual": [
+        "differentiable",
+        "left",
+        "right"
+      ],
+      "expected": "['differentiable', 'left', 'right']",
+      "passed": true
+    },
+    {
+      "name": "call_at_strike.left",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "call_at_strike.right",
+      "kind": "CLI numeric",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "call_at_strike.differentiable",
+      "kind": "bool",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "put_at_strike keys",
+      "kind": "schema",
+      "actual": [
+        "differentiable",
+        "left",
+        "right"
+      ],
+      "expected": "['differentiable', 'left', 'right']",
+      "passed": true
+    },
+    {
+      "name": "put_at_strike.left",
+      "kind": "CLI numeric",
+      "actual": -1.0,
+      "expected": "-1",
+      "passed": true
+    },
+    {
+      "name": "put_at_strike.right",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "put_at_strike.differentiable",
+      "kind": "bool",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "finite_differences keys",
+      "kind": "schema",
+      "actual": [
+        "centered_difference",
+        "left_difference",
+        "right_difference"
+      ],
+      "expected": "['centered_difference', 'left_difference', 'right_difference']",
+      "passed": true
+    },
+    {
+      "name": "finite_differences.left_difference",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "finite_differences.right_difference",
+      "kind": "CLI numeric",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "finite_differences.centered_difference",
+      "kind": "CLI numeric",
+      "actual": 0.5,
+      "expected": "0.5",
+      "passed": true
+    },
+    {
+      "name": "cap_at_threshold keys",
+      "kind": "schema",
+      "actual": [
+        "differentiable",
+        "left",
+        "right"
+      ],
+      "expected": "['differentiable', 'left', 'right']",
+      "passed": true
+    },
+    {
+      "name": "cap_at_threshold.left",
+      "kind": "CLI numeric",
+      "actual": 1000.0,
+      "expected": "1000",
+      "passed": true
+    },
+    {
+      "name": "cap_at_threshold.right",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cap_at_threshold.differentiable",
+      "kind": "bool",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "call_up keys",
+      "kind": "schema",
+      "actual": [
+        "baseline_value",
+        "differentiable",
+        "exact_change",
+        "left_slope",
+        "right_slope",
+        "shocked_value"
+      ],
+      "expected": "['baseline_value', 'differentiable', 'exact_change', 'left_slope', 'right_slope', 'shocked_value']",
+      "passed": true
+    },
+    {
+      "name": "call_up.baseline_value",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "call_up.shocked_value",
+      "kind": "CLI numeric",
+      "actual": 1.8462326927732715,
+      "expected": "1.846232692773271565821519699",
+      "passed": true
+    },
+    {
+      "name": "call_up.exact_change",
+      "kind": "CLI numeric",
+      "actual": 1.8462326927732715,
+      "expected": "1.846232692773271565821519699",
+      "passed": true
+    },
+    {
+      "name": "call_up.left_slope",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "call_up.right_slope",
+      "kind": "CLI numeric",
+      "actual": 0.9231163463866358,
+      "expected": "0.923116346386635782910759849572388810043583063146086499387892996062409093823619404019017851126291766247371263586042983481",
+      "passed": true
+    },
+    {
+      "name": "call_up.differentiable",
+      "kind": "bool",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "call_down keys",
+      "kind": "schema",
+      "actual": [
+        "baseline_value",
+        "differentiable",
+        "exact_change",
+        "left_slope",
+        "right_slope",
+        "shocked_value"
+      ],
+      "expected": "['baseline_value', 'differentiable', 'exact_change', 'left_slope', 'right_slope', 'shocked_value']",
+      "passed": true
+    },
+    {
+      "name": "call_down.baseline_value",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "call_down.shocked_value",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0E-120",
+      "passed": true
+    },
+    {
+      "name": "call_down.exact_change",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0E-120",
+      "passed": true
+    },
+    {
+      "name": "call_down.left_slope",
+      "kind": "CLI numeric",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "call_down.right_slope",
+      "kind": "CLI numeric",
+      "actual": 0.9231163463866358,
+      "expected": "0.923116346386635782910759849572388810043583063146086499387892996062409093823619404019017851126291766247371263586042983481",
+      "passed": true
+    },
+    {
+      "name": "call_down.differentiable",
+      "kind": "bool",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 2.0, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 2.0, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 2.0, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 0.5, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 0.5, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 0.5, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 0.1, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 0.1, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (99.0, 0.1, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 2.0, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 2.0, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 2.0, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 0.5, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 0.5, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 0.5, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 0.1, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 0.1, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.9999999999999432,
+      "expected": "3602879701896192/3602879701896397",
+      "passed": true
+    },
+    {
+      "name": "ladder (100.0, 0.1, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.4999999999999716,
+      "expected": "1801439850948096/3602879701896397",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 2.0, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 2.0, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 2.0, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.75,
+      "expected": "3/4",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 0.5, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 0.5, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 0.5, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 0.1, 'left_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.9999999999999432,
+      "expected": "3602879701896192/3602879701896397",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 0.1, 'right_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.9999999999999432,
+      "expected": "3602879701896192/3602879701896397",
+      "passed": true
+    },
+    {
+      "name": "ladder (101.0, 0.1, 'centered_difference')",
+      "kind": "rounded-grid source quotient",
+      "actual": 0.9999999999999432,
+      "expected": "3602879701896192/3602879701896397",
+      "passed": true
+    },
+    {
+      "name": "crossing step at101 is not local derivative",
+      "kind": "trap",
+      "actual": 0.75,
+      "expected": "0.75",
+      "passed": true
+    },
+    {
+      "name": "smaller step at101 recovers branch",
+      "kind": "trap",
+      "actual": 1.0,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "exercise9 payoff cancellation 98",
+      "kind": "exercise source identity",
+      "actual": -2.0,
+      "expected": "-2",
+      "passed": true
+    },
+    {
+      "name": "exercise9 payoff cancellation 100",
+      "kind": "exercise source identity",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "exercise9 payoff cancellation 102",
+      "kind": "exercise source identity",
+      "actual": 2.0,
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "name": "renderable runbook",
+      "kind": "manuscript markup",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "ladder": [
+    {
+      "point": 99.0,
+      "step": 2.0,
+      "neighbors": [
+        97.0,
+        101.0
+      ],
+      "crosses_strike": true,
+      "report": {
+        "left_difference": 0.0,
+        "right_difference": 0.5,
+        "centered_difference": 0.25
+      },
+      "analytic_slopes": {
+        "left": 0.0,
+        "right": 0.0,
+        "differentiable": true
+      }
+    },
+    {
+      "point": 99.0,
+      "step": 0.5,
+      "neighbors": [
+        98.5,
+        99.5
+      ],
+      "crosses_strike": false,
+      "report": {
+        "left_difference": 0.0,
+        "right_difference": 0.0,
+        "centered_difference": 0.0
+      },
+      "analytic_slopes": {
+        "left": 0.0,
+        "right": 0.0,
+        "differentiable": true
+      }
+    },
+    {
+      "point": 99.0,
+      "step": 0.1,
+      "neighbors": [
+        98.9,
+        99.1
+      ],
+      "crosses_strike": false,
+      "report": {
+        "left_difference": 0.0,
+        "right_difference": 0.0,
+        "centered_difference": 0.0
+      },
+      "analytic_slopes": {
+        "left": 0.0,
+        "right": 0.0,
+        "differentiable": true
+      }
+    },
+    {
+      "point": 100.0,
+      "step": 2.0,
+      "neighbors": [
+        98.0,
+        102.0
+      ],
+      "crosses_strike": true,
+      "report": {
+        "left_difference": 0.0,
+        "right_difference": 1.0,
+        "centered_difference": 0.5
+      },
+      "analytic_slopes": {
+        "left": 0.0,
+        "right": 1.0,
+        "differentiable": false
+      }
+    },
+    {
+      "point": 100.0,
+      "step": 0.5,
+      "neighbors": [
+        99.5,
+        100.5
+      ],
+      "crosses_strike": true,
+      "report": {
+        "left_difference": 0.0,
+        "right_difference": 1.0,
+        "centered_difference": 0.5
+      },
+      "analytic_slopes": {
+        "left": 0.0,
+        "right": 1.0,
+        "differentiable": false
+      }
+    },
+    {
+      "point": 100.0,
+      "step": 0.1,
+      "neighbors": [
+        99.9,
+        100.1
+      ],
+      "crosses_strike": true,
+      "report": {
+        "left_difference": 0.0,
+        "right_difference": 0.9999999999999432,
+        "centered_difference": 0.4999999999999716
+      },
+      "analytic_slopes": {
+        "left": 0.0,
+        "right": 1.0,
+        "differentiable": false
+      }
+    },
+    {
+      "point": 101.0,
+      "step": 2.0,
+      "neighbors": [
+        99.0,
+        103.0
+      ],
+      "crosses_strike": true,
+      "report": {
+        "left_difference": 0.5,
+        "right_difference": 1.0,
+        "centered_difference": 0.75
+      },
+      "analytic_slopes": {
+        "left": 1.0,
+        "right": 1.0,
+        "differentiable": true
+      }
+    },
+    {
+      "point": 101.0,
+      "step": 0.5,
+      "neighbors": [
+        100.5,
+        101.5
+      ],
+      "crosses_strike": false,
+      "report": {
+        "left_difference": 1.0,
+        "right_difference": 1.0,
+        "centered_difference": 1.0
+      },
+      "analytic_slopes": {
+        "left": 1.0,
+        "right": 1.0,
+        "differentiable": true
+      }
+    },
+    {
+      "point": 101.0,
+      "step": 0.1,
+      "neighbors": [
+        100.9,
+        101.1
+      ],
+      "crosses_strike": false,
+      "report": {
+        "left_difference": 0.9999999999999432,
+        "right_difference": 0.9999999999999432,
+        "centered_difference": 0.9999999999999432
+      },
+      "analytic_slopes": {
+        "left": 1.0,
+        "right": 1.0,
+        "differentiable": true
+      }
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"call_at_strike\": {\n    \"left\": 0.0,\n    \"right\": 1.0,\n    \"differentiable\": false\n  },\n  \"put_at_strike\": {\n    \"left\": -1.0,\n    \"right\": 0.0,\n    \"differentiable\": false\n  },\n  \"finite_differences\": {\n    \"left_difference\": 0.0,\n    \"right_difference\": 1.0,\n    \"centered_difference\": 0.5\n  },\n  \"call_up\": {\n    \"baseline_value\": 0.0,\n    \"shocked_value\": 1.8462326927732715,\n    \"exact_change\": 1.8462326927732715,\n    \"left_slope\": 0.0,\n    \"right_slope\": 0.9231163463866358,\n    \"differentiable\": false\n  },\n  \"call_down\": {\n    \"baseline_value\": 0.0,\n    \"shocked_value\": 0.0,\n    \"exact_change\": 0.0,\n    \"left_slope\": 0.0,\n    \"right_slope\": 0.9231163463866358,\n    \"differentiable\": false\n  },\n  \"cap_at_threshold\": {\n    \"left\": 1000.0,\n    \"right\": 0.0,\n    \"differentiable\": false\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.7 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_9_07.py",
+        "check_section_9_07.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 64,
+  "failed": 0
+}

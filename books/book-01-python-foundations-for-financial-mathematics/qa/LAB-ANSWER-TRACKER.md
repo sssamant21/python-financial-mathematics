@@ -413,3 +413,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.5 return-distribution assumptions
 
 [Evidence](v10-return-distribution/README.md):56predicates pass twice acrossfour(m,s)cases. Controlledtwo-pointstandarddraws andnative transformations/summary fields distinct fromnormalexpected_terminal formula;exp(m)cosh(s) differsfromexp(m+s²/2)despitematchinglogmean/variance. Geometriccenter iscallerwork,notuniquetwo-pointmedian. Fixedpairedquadrature isnotIID;sourceSEfield arithmetic doesnotvalidateitsuncertainty. Fourformalcommands/20invocationsof10existingmethods,priorF177/78predicate listingidentityverified. No sourcechange/defect ornewanswers/workflows/historicalmethods. Next18.6path/horizon/discretization/dependencecrosswalk;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.6 path-grid/dependence assumptions
+
+[Evidence](v10-path-monitoring/README.md):51 supplemental predicates pass twice. Three caller-coupled coarse/fine pairs share terminal100/SE0 but native lower95 monitor seesone finehit/zero coarsehits. T4/8steps vsT1/2steps verifies equal dt and distinctgridlengths withoutchangingpathcount. Fixed antitheticdraws are notIID/model/continuous-monitoringvalidation. Fourformalcommands/20invocationsof10existingmethods;priorF178/76predicate listingidentityverified,originalfailurespreserved. No sourcechange/defect ornewanswers/workflows/historicalmethods. Next18.7scenario-analysisassumptions;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
