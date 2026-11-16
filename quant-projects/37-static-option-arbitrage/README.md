@@ -66,3 +66,7 @@ Run `python -m unittest -v test_joint_feasibility.py test_boundary_scaling.py te
 ## Irregular-grid Decimal reference checkpoint (2026-11-15)
 
 `test_irregular_decimal_reference.py` independently checks **point quotes** (bid equals ask) using 70-digit `decimal.Decimal` arithmetic on irregular three- and five-strike grids. It compares exact secant-slope monotonicity, vertical-spread limits, and convexity with the Fourier–Motzkin classification, including common unit scaling. Run `python -m unittest -v test_irregular_decimal_reference.py` from this directory. The dedicated workflow includes this suite. **Tests have been authored, not yet verified passing on the published revision.** This is not an independent linear-programming oracle for interval quotes; near-zero elimination pivots and extreme strike spacing remain unverified. No live market data or production certification.
+
+### Independent interval-feasibility reference
+
+Run `python -m unittest -v test_interval_reference.py` from this directory. The standard-library `fractions.Fraction` oracle enumerates vertices of the bounded three-strike quote polytope instead of using Fourier–Motzkin elimination. Five deterministic tests compare both methods for point quotes, nonzero bid/ask intervals and irregular strikes. This is a small-grid cross-check, **not** proof of floating-point stability, five-strike correctness or production readiness. No market data is bundled.
