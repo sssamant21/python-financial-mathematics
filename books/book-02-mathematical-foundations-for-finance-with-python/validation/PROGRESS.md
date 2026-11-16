@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-198 parallel rows scoped pass (270 predicates); V-199 full candidate Linux pass633/420/634 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`. Full spot and broader acceptance remain open.
+**Overall status:** In progress — V-200 spot scoped pass (147 predicates); latest full Linux pass remains V-199 at older pin (633/420/634). Next project baseline contracts;broader report/model/platform acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1606,3 +1606,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-199 checkpoint — Full pinned candidate Linux refresh
 
 [V-199 runtime](runtime-refresh-2026-11-15-r20.md) at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`:633/633 Python files compiled,420/420 scripts passed,634/634 required blobs verified before/after. Includes accumulated137 helper and270 parallel predicates with retained initial failures/replays and explicit policies. Full spot obligations remain OPEN with two fresh pinned diagnostics;full execution does not settle unasserted contracts.38 COV categories partial,none closed. Next complete9.8 spot numerical/report contracts. Independent mathematical/editorial/model/policy/platform/release/canonical acceptance remains pending;Book1 separate.
+
+
+## V-200 checkpoint — Section9.8 complete spot facade reports
+
+[Spot evidence](chapter-09-spot-followup-r21.md):147 corrected predicates pass;126 initial passes/21 failures and actual identical replay retained. Eight factor-range,eight rescued-endpoint and five lost-baseline-leg field observations,not21 unique defects. Independent1800/2400-digit original cash/rate/shock references;positive finite reported baseline and returned-field gates retained,no unused derivative gate. Metadata/ownership/iterator/schema properties explicit;parallel/helper text unchanged. Six files compiled/six commands/five checkers pass with before/after hashes. Fresh634/421/635 inventory is not full execution;V199 remains latest full pass at older pin. Section9.8 manuscript now links scoped policies/evidence,broader manuscript/exercise/provenance/policy obligations open. Next9.9 complete project baseline/range/normalization;fresh finite-five-field OverflowError diagnostic/replay checkpointed.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.

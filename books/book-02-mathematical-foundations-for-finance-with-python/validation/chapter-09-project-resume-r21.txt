@@ -1,0 +1,14 @@
+"""Pinned next project baseline diagnostic; no project source correction yet.
+Usage: python THIS repository_root output.json
+"""
+from pathlib import Path
+from decimal import Decimal,Context,localcontext
+import subprocess,sys,tempfile,importlib.util,json,math
+r=Path(sys.argv[1]).resolve();out=Path(sys.argv[2]).resolve();pin='8d6d04dd896e46009785a33619a0fdef564eef78';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py';raw=subprocess.check_output(['git','show',pin+':'+path],cwd=r)
+with localcontext(Context(prec=1800)):v=Decimal(1e-308)*(Decimal(710)).exp();expected=dict(value=float(v),first=float(-2*v),second=float(4*v),duration=2.,convexity=4.)
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'project.py';p.write_bytes(raw);spec=importlib.util.spec_from_file_location('project_pending',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ try:a=m.baseline([(1e-308,2.)],-355.);actual={k:a[k] for k in expected};exception=None
+ except Exception as e:actual=None;exception=type(e).__name__
+ d=dict(source_revision=pin,source_path=path,source_blob=subprocess.check_output(['git','rev-parse',pin+':'+path],cwd=r,text=True).strip(),case='finite original cash times overflowing exponential factor',flows=[[1e-308,2.]],rate=-355.,expected_fields=expected,actual_fields=actual,exception=exception,status='OPEN checkpoint, not a failed spot predicate or project acceptance',limits='One five-field project-baseline diagnostic with original-input Decimal1800 oracle. Full project numerical/domain/policy/report contracts pending.')
+ out.write_text(json.dumps(d,indent=2)+'\n');print(json.dumps(d));assert exception=='OverflowError'

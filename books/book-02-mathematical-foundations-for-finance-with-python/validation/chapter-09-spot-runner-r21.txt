@@ -1,0 +1,19 @@
+"""Stage pinned source/checker bytes, retain baseline failures and scoped reruns.
+Usage: python THIS repository_root baseline|corrected output.json
+"""
+from pathlib import Path
+import json,hashlib,subprocess,tempfile,sys,py_compile,platform
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];out=Path(sys.argv[3]).resolve();assert mode in ('baseline','corrected');base='45aaa9b6d5bfc84b24d970e75c0810a7bd5de66d';pin='8d6d04dd896e46009785a33619a0fdef564eef78';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/';names=['section_9_08.py','check_section_9_08.py','check_section_08_baseline_metadata.py','check_section_08_scenario_terms.py','check_section_08_parallel_rows.py','check_section_08_spot_contracts.py'];manifest=[];commands=[];compiled=[]
+def blob(raw):return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+with tempfile.TemporaryDirectory() as temp:
+ t=Path(temp)
+ for n in names:
+  revision=base if mode=='baseline' and n=='section_9_08.py' else pin;raw=subprocess.check_output(['git','show',revision+':'+prefix+n],cwd=r);sha=subprocess.check_output(['git','rev-parse',revision+':'+prefix+n],cwd=r,text=True).strip();assert blob(raw)==sha;(t/n).write_bytes(raw);manifest.append(dict(path=prefix+n,sha=sha,revision=revision))
+ for n in names:
+  py_compile.compile(str(t/n),doraise=True);compiled.append(n)
+ todo=['check_section_08_spot_contracts.py'] if mode=='baseline' else names
+ for n in todo:
+  argv=[sys.executable,n]+([str(out.with_name(out.stem+'-predicates.json'))] if n=='check_section_08_spot_contracts.py' else []);z=subprocess.run(argv,cwd=t,capture_output=True,text=True,timeout=60);commands.append(dict(argv=argv,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+ after=all(blob((t/Path(x['path']).name).read_bytes())==x['sha'] for x in manifest)
+ d=dict(mode=mode,baseline_revision=base,executable_source_revision=pin,manifest=manifest,compiled=compiled,commands=commands,hashes_verified_before=True,hashes_verified_after=after,python=sys.version,platform=platform.platform(),limits='Six-file scope; no full runtime or independent mathematical/model/platform/release/canonical acceptance. Baseline checker intentionally fails.')
+ out.write_text(json.dumps(d,indent=2)+'\n');print(mode,len(compiled),'compiled',len(commands),'commands',[x['returncode'] for x in commands]);assert after and all(x['returncode']==(1 if mode=='baseline' else 0) for x in commands)

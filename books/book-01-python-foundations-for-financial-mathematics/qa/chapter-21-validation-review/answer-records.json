@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Schema:** How many record fields are required? **Answer:** Six.",
+    "review": "Six exact keys required; schema predicate and source key set agree.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Extra field:** Is an unknown field accepted? **Answer:** No; the schema is exact.",
+    "review": "Unknown fields rejected by exact-key equality; extra-field source predicate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Missing field:** Is an absent source accepted? **Answer:** No.",
+    "review": "Missing source rejected; exact schema applies even before blank-label test.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Instrument:** Does a nonblank identifier prove global identity? **Answer:** No.",
+    "review": "Identifier check is structural nonblank/trimmed string only; no registry or identity oracle.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Currency:** Is `USD` structurally accepted? **Answer:** Yes; it is three uppercase ASCII letters.",
+    "review": "USD accepted by ASCII-uppercase length-three rule; fixture uses USD.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**Currency validity:** Does that format check prove ISO membership? **Answer:** No.",
+    "review": "ZZZ structurally accepted in installed predicate; no ISO registry lookup or approval.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**FX:** Does a currency label perform conversion? **Answer:** No.",
+    "review": "No FX transformation exists; currency pair mismatch is rejected.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Price:** Is zero accepted by this validation layer? **Answer:** No; this contract requires a strictly positive price.",
+    "review": "Zero price rejected; validated-record domain deliberately strictly positive.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Lower layer:** Can Section 21.9 represent an ending price of zero? **Answer:** Yes; this layer deliberately has a narrower contract.",
+    "review": "Lower simple_price_return accepts zero ending amount and gives -1; separate installed predicate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Type:** Is integer `100` accepted as a price? **Answer:** No; use a built-in float such as `100.0`.",
+    "review": "Exact built-in float required, integer100 rejected; no implicit coercion.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Boolean:** Is `True` accepted as a price? **Answer:** No.",
+    "review": "bool rejected by exact float type check.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**NaN:** Is it accepted? **Answer:** No.",
+    "review": "NaN rejected by isfinite; installed predicate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Infinity:** Is it accepted? **Answer:** No.",
+    "review": "Infinity rejected by isfinite; installed predicate.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Observed time:** What does it represent? **Answer:** The time of the price observation under the source contract.",
+    "review": "Observed time is supplied under source semantics; no independent acquisition timestamp.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Availability:** What does it represent? **Answer:** When the record was available to the consumer under the source contract.",
+    "review": "Availability is supplied, not measured by this module; upstream source agreement needed.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Decision time:** What is `as_of`? **Answer:** The supplied cutoff for availability.",
+    "review": "as_of supplied by caller; code tests available<=as_of in UTC, not business-cutoff correctness.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Timezone:** Is a naive datetime accepted? **Answer:** No.",
+    "review": "Naive datetime rejected; offsets checked, external IANA database required for DST fixtures.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Ordering:** May availability precede observation? **Answer:** No.",
+    "review": "observed<=available by UTC instant; reversed availability rejection including repeated local hour.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Cutoff:** May availability follow `as_of`? **Answer:** No.",
+    "review": "available<=as_of; future availability rejected.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Boundary:** Is availability exactly at `as_of` accepted? **Answer:** Yes.",
+    "review": "Equality at cutoff accepted; before/after microsecond boundary probes.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Pair:** Must observation times strictly increase? **Answer:** Yes.",
+    "review": "Pair observation instants must strictly increase; DST fold independently maps to UTC.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**Identity:** Must instrument labels match? **Answer:** Yes.",
+    "review": "Instrument labels compared exactly; no identifier normalization/registry.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Currency match:** Must currency labels match? **Answer:** Yes.",
+    "review": "Currency labels compared exactly; no conversion.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Source match:** Must source labels match in this example? **Answer:** No; a real contract may require it.",
+    "review": "Source labels need not match; installed different-source fixture returns10%. No authenticity inference.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Basis:** Does this code verify adjusted-price consistency? **Answer:** No.",
+    "review": "No adjusted/unadjusted basis field exists; contract upstream, design review only.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Revisions:** Does an availability timestamp alone prove correct historical revision selection? **Answer:** No.",
+    "review": "No vintage/version field or historical revision selector exists; no point-in-time data proof.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Look-ahead:** Can a revised record be unsuitable for a historical decision? **Answer:** Yes, if the revision was unavailable at that time.",
+    "review": "A vendor label can claim old availability while supplying later revision; timeline design example saved separately.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Freshness:** Does the code reject a stale but available price? **Answer:** No; freshness needs a separate rule.",
+    "review": "Available but old prices pass, since no maximum-age parameter; separate policy needed.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Parsing:** Does it parse date strings? **Answer:** No; it requires aware `datetime` objects.",
+    "review": "No string parser; exact datetime objects/awareness required. Nonexistent local wall-time observation retained.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Normalization:** Does it normalize labels or timezone storage? **Answer:** No; values are preserved.",
+    "review": "Provided labels and datetime timezone object retained; source ownership/offset probes. No normalization for storage.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Return:** What is the simple return from 100 to 110? **Answer:** 10% in exact arithmetic.",
+    "review": "Independent (110-100)/100=1/10; actual binary float0.10000000000000009 compared with declared tolerance.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Distributions:** Does that return include dividends? **Answer:** No.",
+    "review": "Only two prices used; no dividend inputs.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Fees:** Does it include fees and taxes? **Answer:** No.",
+    "review": "No transaction-cost/tax inputs.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Mutation:** Does validation modify the input dictionary? **Answer:** No.",
+    "review": "Input dictionaries unchanged in source/wheel ownership predicates.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Frozen:** Is a frozen record a durable audit log? **Answer:** No.",
+    "review": "Frozen dataclass prevents ordinary assignment; no durable audit persistence/authentication exists.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Quality:** Does a successful validation prove the source is accurate? **Answer:** No.",
+    "review": "Success is structural/schema/instant validation only; upstream data quality independent.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Range:** Can extreme finite prices cause return overflow? **Answer:** Yes; the lower-level function rejects a nonfinite result.",
+    "review": "Finite input ratio may overflow; lower return ValueError propagation tested.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Logging:** Should raw sensitive data be logged automatically? **Answer:** No; apply an explicit data-protection policy.",
+    "review": "No logging implemented; data-protection/retention/access policies remain owner decisions.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Evidence:** Do the scoped passing checks certify the layer? **Answer:** No; wider numerical, data and model review remains pending.",
+    "review": "Answer correctly denies certification. Source and installed checks executed, independent/model/platform acceptance pending.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What follows this section? **Answer:** 21.14 \u2014 Visualization Layer.",
+    "review": "Next section link points21.14 Visualization Layer; no visualization acceptance inferred.",
+    "status": "Assistant scoped technical review; independent acceptance pending"
+  }
+]

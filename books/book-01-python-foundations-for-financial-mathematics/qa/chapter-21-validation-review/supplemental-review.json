@@ -1,0 +1,36 @@
+{
+  "kind": "Conceptual/design review, separate from executed source and wheel predicates",
+  "synthetic_contract": {
+    "instrument": "EXAMPLE",
+    "currency": "USD",
+    "price_basis": "illustrative unadjusted closing price; no distributions",
+    "source": "synthetic",
+    "owner": "No external data owner acceptance recorded"
+  },
+  "timeline": [
+    {
+      "price": 100,
+      "observed": "2025-01-02T16:00:00+00:00",
+      "available": "2025-01-02T16:00:00+00:00"
+    },
+    {
+      "price": 110,
+      "observed": "2025-01-03T16:00:00+00:00",
+      "available": "2025-01-03T16:00:00+00:00"
+    }
+  ],
+  "decision": "2025-01-03T18:00:00+00:00",
+  "independent_return": {
+    "numerator": 10,
+    "denominator": 100,
+    "exact": "1/10"
+  },
+  "revision_counterexample": "A Jan3 quote revised Jan4 but labelled with original Jan3 availability can pass supplied schema/timestamps; an upstream as-published vintage selector and authenticated lineage are required.",
+  "proposed_unimplemented_policies": {
+    "missing": "Reject/quarantine and explain; no silent forward fill.",
+    "freshness": "Owner selects instrument/calendar/horizon-specific age bound.",
+    "basis": "Specify adjusted/unadjusted and distributions consistently per pair.",
+    "authentication": "Verify source rights/identity,content checksum,vintage and acquisition lineage separately."
+  },
+  "limits": "These proposals are not implemented controls or independent data/model/acceptance sign-off."
+}

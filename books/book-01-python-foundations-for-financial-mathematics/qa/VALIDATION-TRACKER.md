@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.13:** [Validation review](chapter-21-validation-review/README.md):40 answers/12 labs,updated wheel and401 installed predicates;13 scoped workflows/520 local answers. Next21.14;F28/broad F32 and broader acceptance remain open.
+
 - **Latest21.13 partial:** [Source contracts/F214](chapter-21-validation-contract-review/README.md):46 corrected predicates/four commands and122 existing methods pass;initial UTC boundary failures/replay retained. Formal40-answer/12-lab and updated artifact remain OPEN;12 scoped workflows/480 local answers unchanged.
 
 - **Latest21.12:** [Simulation review](chapter-21-simulation-review/README.md):40 answers /12 labs,updated clean-consumer wheel,355 predicates;12 scoped workflows /480 local answers. Next21.13;broader F28/F32/model/platform/independent gaps remain open.
@@ -149,7 +151,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 | 18 | Monte Carlo Simulation for Finance | PASS (scoped) — 7 supplemental workflows / 9 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 154 reference tests; 18.15 snippet ran; [evidence](chapter-18-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 19 | Financial Data Engineering Foundations | PASS — 158 reference tests; 19.15 snippet ran; [evidence](chapters-19-20-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 20 | Testing and Engineering Financial Python | PASS — 204 reference tests across 16 suites; [evidence](chapters-19-20-runtime/README.md) and [initial run](initial-2026-10-27/README.md) | Pending | Pending | NOT CERTIFIED |
-| 21 | Integrated Capstone: Financial Mathematics Toolkit | PASS (scoped) — 10 supplemental workflows / 19 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 218 reference tests, including DST regressions; one chart inspected; [evidence](initial-2026-10-27/README.md) | Pending | Pending | NOT CERTIFIED |
+| 21 | Integrated Capstone: Financial Mathematics Toolkit | PASS (scoped) — 10 supplemental workflows / 19 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 218 reference tests, including DST regressions; one chart inspected; [evidence](initial-2026-10-27/README.md) | PASS (scoped) — 13 formal workflows /520 local answers; [validation review](chapter-21-validation-review/README.md); broader review open | Pending | NOT CERTIFIED |
 
 A chapter's runtime entry does not mean all snippets, lab steps, exercise answers, platforms or dependencies have been tested. Refer to each evidence record for the exact scope.
 
@@ -726,3 +728,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.13 — Partial source contracts and F214 correction (formal review OPEN)
 
 [Contract evidence](chapter-21-validation-contract-review/README.md):46 corrected source predicates/four fresh commands pass;122 existing methods/122 invocations,zero new historical methods. Initial44 passes/two UTC-range exception failures and actual identical replay retained. F214 normalizes unsupported UTC conversion range to ValueError;only the implementation fence changed. Two design observations are separate from predicates. No new wheel or40-answer/12-lab review claimed;Chapter21 remains12 scoped workflows/480 local answers. Next:21.13 formal alignment/steps and updated installed artifact using corrected fence hashes. F28/broad F32,F209/static,F165/F185,R08–10 and broader provenance/data/resource/model/platform/release/independent acceptance remain OPEN.
+
+
+## Section21.13 — Scoped validation workflow, answers and updated wheel
+
+[Validation evidence](chapter-21-validation-review/README.md):40 answers/12 lab steps reviewed;12 fresh offline packaging commands pass;401 installed predicates (355 retained+46 validation) separate from122 existing methods/366 source-editable-wheel invocations,zero new historical methods. Three prior core source commands reused by21 exact hashes;corrected F214 initialfailures/replay retained,sourcefences unchanged this batch. New validation wheel/16exports differs fromsimulation artifact at sameillustrativeversion,not releaseapproval. Revision/freshness/authentication/adjustment/localtime policies and designobservations separate fromexecution. Chapter21 now13 scopedworkflows/520 localanswers. Next21.14 Visualization Layer. F28/broad F32,F209/static,F165/F185,R08–10 and broader data/resource/model/platform/release/independent acceptance remain OPEN.
