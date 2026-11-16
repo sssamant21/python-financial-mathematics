@@ -39,3 +39,16 @@ Seven deterministic tests check the par zero-PV identity, payer/receiver symmetr
 **Not modeled:** multi-curve projection and collateral discounting, historical fixings, forward-starting swaps, reset/payment lags, holiday calendars, day-count conventions, stub periods, credit/funding adjustments, basis, bid/ask, counterparty exposure or calibration. No survivorship or look-ahead claims arise from the synthetic fixture; a real-data extension would need point-in-time provenance and release-date discipline. Local synthetic test success does **not** establish exact-published-revision CI acceptance, independent model review, or production certification.
 
 **Next exercise:** validate an independently constructed period-by-period floating coupon schedule and sensitivity to curve bumps; compare the telescoping identity against explicitly projected forwards.
+
+## Independent cash-flow reconciliation and curve sensitivity
+
+The extension `test_curve_reconciliation.py` independently constructs each floating coupon using `F_i=(D_{i-1}/D_i-1)/a_i`, with `D_0=1`, then discounts it by `D_i`. The sum telescopes to `N(1-D_last)` only under the stated single-curve, spot-start assumptions. Six deterministic tests cover coupon-by-coupon reconciliation, negative forwards, uneven accruals, par valuation, and independent terminal/interior discount-factor bumps. An interior bump changes fixed-leg PV but leaves telescoping floating-leg PV unchanged; a terminal bump changes both. This is not a multi-curve or real-market sensitivity model.
+
+Run from this folder:
+
+```bash
+python -m unittest -v test_swap.py test_curve_reconciliation.py
+python -m compileall -q swap.py test_swap.py test_curve_reconciliation.py
+```
+
+Six extension tests passed locally against a source-equivalent copy of the published `swap.py` implementation on 2026-11-16; full exact-GitHub-source integration and hosted CI for the extension remain unverified. The extension uses only the Python standard library and synthetic inputs.
