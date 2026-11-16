@@ -1,0 +1,25 @@
+"""Compare exact report outcomes while canonicalizing unordered set repr fields.
+Raw evidence remains unchanged. Usage: python THIS repository_root
+"""
+from pathlib import Path
+import ast,json,hashlib,sys
+r=Path(sys.argv[1]).resolve();v=r/'books/book-02-mathematical-foundations-for-finance-with-python/validation';names=['chapter-09-project-report-initial-r24.json','chapter-09-project-report-probe-initial-r24-predicates.json','chapter-09-project-report-probe-replay-r24-predicates.json','chapter-09-project-report-results-r24-predicates.json'];data=[json.loads((v/n).read_text()) for n in names]
+def literal(x):
+ if isinstance(x,set):return {'__unordered_set__':sorted(literal(a) for a in x)}
+ if isinstance(x,list):return [literal(a) for a in x]
+ if isinstance(x,dict):return {k:literal(a) for k,a in x.items()}
+ return x
+def normalize(d):
+ d=json.loads(json.dumps(d))
+ for row in d['source_predicates']:
+  for k in ('actual','expected'):
+   try:row[k]=literal(ast.literal_eval(row[k]))
+   except (ValueError,SyntaxError):pass
+ return d
+normal=[normalize(d) for d in data];assert all(d==normal[0] for d in normal);assert all(d['passed']==290 and d['failed']==0 for d in data)
+diffs=[]
+for j,d in enumerate(data[1:],1):
+ for a,b in zip(data[0]['source_predicates'],d['source_predicates']):
+  if a!=b:diffs.append(dict(file=names[j],case=a['case'],field=a['field'],initial_actual=a['actual'],other_actual=b['actual'],initial_expected=a['expected'],other_expected=b['expected']))
+result=dict(raw_byte_hashes={n:hashlib.sha256((v/n).read_bytes()).hexdigest() for n in names},raw_json_equal=all(d==data[0] for d in data),canonical_results_equal=True,canonical_sha256=hashlib.sha256(json.dumps(normal[0],sort_keys=True,separators=(',',':')).encode()).hexdigest(),raw_representation_differences=diffs,interpretation='Initial evidence-comparison assertion required identical JSON and failed because set repr order varies with process hash seed. Canonicalize only literal actual/expected fields;preserve original results and all cases/fields/kinds/passed flags/source blob.',limits='This is an evidence comparison adjustment,not a financial/source predicate failure or an invented code defect. All four actual runs passed290predicates. Raw outputs are not claimed byte-identical.')
+(v/'chapter-09-project-report-comparison-r24.json').write_text(json.dumps(result,indent=2)+'\n');print('raw_json_equal',result['raw_json_equal'],'canonical_results_equal',True,'raw differences',len(diffs))

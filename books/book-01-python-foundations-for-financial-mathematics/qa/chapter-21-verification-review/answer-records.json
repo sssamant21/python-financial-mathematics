@@ -1,0 +1,242 @@
+[
+  {
+    "exercise": 1,
+    "source_record": "**Verification:** What does software verification assess? **Answer:** Whether the implementation meets specified behavior.",
+    "review": "Software behavior versus stated contracts;not model approval.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 2,
+    "source_record": "**Validation:** What does model validation assess? **Answer:** Suitability of conceptual design, implementation and outcomes for intended use.",
+    "review": "Conceptual/implementation/outcome suitability depends on intended use and independent decision.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 3,
+    "source_record": "**Status:** Have the reference checks in this section run? **Answer:** Scoped source, editable and installed-wheel QA records their execution in the recorded Linux environment; broader model, platform and independent acceptance remain pending.",
+    "review": "Historical No reconciled with scoped source/editable/wheel suite execution.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 4,
+    "source_record": "**Known PV:** PV of 110 at 10% for one period? **Answer:** 100 in exact arithmetic.",
+    "review": "Exact110/(1+1/10)=100;separate rational benchmark.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 5,
+    "source_record": "**Known FV:** FV of 100 at 10% for two periods? **Answer:** 121 in exact arithmetic.",
+    "review": "Exact100*(1+1/10)^2=121;separate rational benchmark.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 6,
+    "source_record": "**NPV:** NPV of `[-100, 110]` at 10%? **Answer:** Zero in exact arithmetic.",
+    "review": "Time-zero -100+110/(1+1/10)=0;separate rational benchmark.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 7,
+    "source_record": "**Loan:** One-period payment on 1,000 at 10%? **Answer:** 1,100 in exact arithmetic.",
+    "review": "Independent one-payment discounted sum gives1100;1e-9 amount tolerance.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 8,
+    "source_record": "**Bond:** Two-period bond with 5% coupon and yield on face 100? **Answer:** 100 under the stated model.",
+    "review": "Independent5/1.05+105/1.05^2=100 under simplified fixed-coupon model.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 9,
+    "source_record": "**Returns:** Link 10% and \u221210%. **Answer:** \u22121% in exact arithmetic.",
+    "review": "Exact(11/10)*(9/10)-1=-1/100;not sum of returns.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 10,
+    "source_record": "**Portfolio:** 60% at 10% and 40% at \u22125%? **Answer:** 4% in exact arithmetic.",
+    "review": "Exact(3/5)*(1/10)+(2/5)*(-1/20)=1/25.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 11,
+    "source_record": "**Statistics:** Sample variance of 1, 2 and 3? **Answer:** 1.",
+    "review": "Pairwise-gap identity gives sample variance1 andmean2;different fromsource two-pass variance.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 12,
+    "source_record": "**Simulation:** At zero up probability, which outcome is selected? **Answer:** The down outcome.",
+    "review": "Probability-zero fixture deterministically chooses down0return;no RNG quality inference.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 13,
+    "source_record": "**Timing:** Is the first cash flow discounted? **Answer:** No; it is at time zero in the specified module.",
+    "review": "Index0 cash flow has discount exponent0;timing convention explicit.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 14,
+    "source_record": "**Sign:** How are borrower payments represented in an NPV schedule? **Answer:** As negative outflows, with proceeds positive.",
+    "review": "Borrower+proceeds/-payments is cashflow sign convention,not a universal investor-view rule.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 15,
+    "source_record": "**Period:** Must rate frequency match payment frequency? **Answer:** Yes.",
+    "review": "Rate period and cash-payment period must match;no automatic frequency conversion.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 16,
+    "source_record": "**Tolerance:** What units does a price absolute tolerance use? **Answer:** Price or amount units.",
+    "review": "Absolute tolerances have output units;fixture scales do not establish trade acceptance.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 17,
+    "source_record": "**Near zero:** Why specify absolute tolerance? **Answer:** Relative tolerance alone cannot allow nonzero error against zero.",
+    "review": "Relative-only comparison tozero requires actualzero;absolute tolerance explicitlyused.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 18,
+    "source_record": "**Round trip:** Does it establish independent correctness? **Answer:** No; shared errors may cancel.",
+    "review": "Supplemental rational wrong-scale/inverse pair can roundtrip yetmiss independentbenchmark.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 19,
+    "source_record": "**Integration:** Does a bond-to-cash-flow comparison use independent implementations here? **Answer:** No; the bond function calls the cash-flow module.",
+    "review": "Bond and NPV shareactualsource;external rationalcashsum is independentnumericalexpectation.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 20,
+    "source_record": "**Benchmark:** Why derive expected values separately? **Answer:** To reduce the chance of repeating an implementation error.",
+    "review": "Separate expectations reduce correlatedimplementationerrors;not independent reviewer approval.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 21,
+    "source_record": "**Boundary:** Why test \u22121 as a periodic discount rate? **Answer:** It creates a zero denominator and is outside the contract.",
+    "review": "Periodic rate-1 rejected beforedivision;contract not merely a floatingerror case.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 22,
+    "source_record": "**NaN:** Why test it? **Answer:** Nonfinite inputs must be explicitly rejected where specified.",
+    "review": "NaN/Inf rejections sampled ininstalled controls;not allcustomnumeric types validated.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 23,
+    "source_record": "**Boolean:** Why test it separately from integers? **Answer:** Python Boolean values are integer subtypes, while the contracts reject them.",
+    "review": "Exact-type guards rejectbool despite integer inheritance;controlled cases retained.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 24,
+    "source_record": "**Overflow:** Can finite inputs overflow? **Answer:** Yes.",
+    "review": "Finite inputs mayoverflow;retained module numerical limits separatefromfailedpredicates.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 25,
+    "source_record": "**Underflow:** Can a nonzero exact value become zero? **Answer:** Yes.",
+    "review": "Exact nonzero quantities mayunderflow;documented observations retained,not silent correctness claims.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 26,
+    "source_record": "**Coverage:** Does 100% line coverage prove model suitability? **Answer:** No.",
+    "review": "Linecoverage measuresexecution,not assertionquality or model suitability.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 27,
+    "source_record": "**Property:** When is scaling a valid check? **Answer:** Under the relevant formula and fixed assumptions, with numerical tolerance and domain limits.",
+    "review": "Scaling needslinearform/unchangedparameters andscoped domains;tolerances/rounding limitexact identities.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 28,
+    "source_record": "**Data:** Does a valid schema prove source accuracy? **Answer:** No.",
+    "review": "Schema validity is not source authentication or data truth.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 29,
+    "source_record": "**Time:** Why record data availability time? **Answer:** To assess whether information was available at the decision cutoff.",
+    "review": "Availability cutoff checks supplied timestamps;upstreamvintage semantics need review.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 30,
+    "source_record": "**Revision:** Does one timestamp prove the correct historical revision was used? **Answer:** No.",
+    "review": "Timestampalone lacks vintage/source identity;revisedinput policy remainsopen.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 31,
+    "source_record": "**Simulation:** Does a seed alone guarantee cross-version reproducibility? **Answer:** No.",
+    "review": "Seeddoesnotpinimplementation/Python/RNG/data;currentprobabilityzero testavoidsdistributionassumptions.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 32,
+    "source_record": "**Plot:** Do structural tests prove readability? **Answer:** No; visual inspection is needed.",
+    "review": "Earlier exact-source synthetic PNG inspected;newstructuraltests are distinctfromvisual/accessibilityapproval.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 33,
+    "source_record": "**Dependency:** What if Matplotlib is missing during required visualization checks? **Answer:** Report the import failure or blocked check; do not claim it passed.",
+    "review": "Optionaldependencyfailuresmustbereported;provided-runtime snapshots workhere,approvedvendorprovenanceopen.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 34,
+    "source_record": "**Editable:** Does an editable install independently validate a wheel? **Answer:** No.",
+    "review": "Editable evidence andcleanwheel evidence areseparate;sourcehidden/-I/noPYTHONPATH installedconsumer.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 35,
+    "source_record": "**Artifact:** Why record a wheel hash? **Answer:** To identify the exact artifact tested.",
+    "review": "Artifactshaidentifiesbytes tested;doesnot prove canonicalorigin or byte reproducibility.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 36,
+    "source_record": "**Evidence:** Is a test definition the same as a test result? **Answer:** No.",
+    "review": "Actualcommands/results savedseparatelyfromtestdefinitions.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 37,
+    "source_record": "**Skipped:** Should a skipped test count as passed? **Answer:** No; report its actual status and reason.",
+    "review": "No skipped check counted aspassed;unexecuted widerplatform/model checks explicitlyopen.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 38,
+    "source_record": "**Privacy:** Should sensitive inputs be copied into public logs? **Answer:** No; use appropriate controlled evidence handling.",
+    "review": "Syntheticinputs only;controlledhandlingforreal confidentialdata remainsownerpolicy.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 39,
+    "source_record": "**Approval:** Do passing tests automatically approve a model? **Answer:** No; appropriate independent review and decision remain necessary.",
+    "review": "Passing software checks do notgrant model/financial releaseapproval.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  },
+  {
+    "exercise": 40,
+    "source_record": "**Next:** What is the next locked section? **Answer:** 21.16 \u2014 Documentation and Reproducibility.",
+    "review": "Nextlocked source links21.16 Documentation andReproducibility.",
+    "status": "Assistant scoped technical review;independent acceptance pending"
+  }
+]

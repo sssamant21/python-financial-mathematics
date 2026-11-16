@@ -1,0 +1,219 @@
+[
+  {
+    "method": "test_future_value_known",
+    "requirement": "FV",
+    "inputs": {
+      "amount": 100,
+      "periodic_rate": "1/10",
+      "periods": 2
+    },
+    "independent_expected": "121",
+    "absolute_tolerance": "1e-10",
+    "relative_tolerance": 0,
+    "units": "amount",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_future_value_known(self):\n        self.assertTrue(math.isclose(future_value(100.0, 0.1, 2), 121.0,\n                                     rel_tol=0.0, abs_tol=1e-10))"
+  },
+  {
+    "method": "test_present_value_known",
+    "requirement": "PV",
+    "inputs": {
+      "payment": 110,
+      "periodic_rate": "1/10",
+      "periods": 1
+    },
+    "independent_expected": "100",
+    "absolute_tolerance": "1e-10",
+    "relative_tolerance": 0,
+    "units": "amount",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_present_value_known(self):\n        self.assertTrue(math.isclose(present_value(110.0, 0.1, 1), 100.0,\n                                     rel_tol=0.0, abs_tol=1e-10))"
+  },
+  {
+    "method": "test_npv_time_zero",
+    "requirement": "NPV",
+    "inputs": {
+      "cashflows": [
+        -100,
+        110
+      ],
+      "periodic_rate": "1/10"
+    },
+    "independent_expected": "0",
+    "absolute_tolerance": "1e-10",
+    "relative_tolerance": 0,
+    "units": "amount",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_npv_time_zero(self):\n        self.assertTrue(math.isclose(net_present_value([-100.0, 110.0], 0.1),\n                                     0.0, rel_tol=0.0, abs_tol=1e-10))"
+  },
+  {
+    "method": "test_loan_one_period",
+    "requirement": "Loan",
+    "inputs": {
+      "principal": 1000,
+      "periodic_rate": "1/10",
+      "periods": 1
+    },
+    "independent_expected": "1100",
+    "absolute_tolerance": "1e-9",
+    "relative_tolerance": 0,
+    "units": "amount per period",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_loan_one_period(self):\n        self.assertTrue(math.isclose(level_payment(1000.0, 0.1, 1), 1100.0,\n                                     rel_tol=0.0, abs_tol=1e-9))"
+  },
+  {
+    "method": "test_bond_par",
+    "requirement": "Bond",
+    "inputs": {
+      "face": 100,
+      "coupon": "1/20",
+      "yield_rate": "1/20",
+      "periods": 2
+    },
+    "independent_expected": "100",
+    "absolute_tolerance": "1e-10",
+    "relative_tolerance": 0,
+    "units": "amount",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_bond_par(self):\n        price = fixed_coupon_bond_price(100.0, 0.05, 0.05, 2)\n        self.assertTrue(math.isclose(price, 100.0, rel_tol=0.0, abs_tol=1e-10))"
+  },
+  {
+    "method": "test_linked_returns_known",
+    "requirement": "Linked returns",
+    "inputs": {
+      "returns": [
+        "1/10",
+        "-1/10"
+      ]
+    },
+    "independent_expected": "-1/100",
+    "absolute_tolerance": "1e-12",
+    "relative_tolerance": 0,
+    "units": "return fraction",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_linked_returns_known(self):\n        self.assertTrue(math.isclose(linked_return([0.1, -0.1]), -0.01,\n                                     rel_tol=0.0, abs_tol=1e-12))"
+  },
+  {
+    "method": "test_portfolio_known",
+    "requirement": "Portfolio",
+    "inputs": {
+      "weights": [
+        "3/5",
+        "2/5"
+      ],
+      "returns": [
+        "1/10",
+        "-1/20"
+      ]
+    },
+    "independent_expected": "1/25",
+    "absolute_tolerance": "1e-12",
+    "relative_tolerance": 0,
+    "units": "return fraction",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_portfolio_known(self):\n        result = portfolio_return([0.6, 0.4], [0.1, -0.05])\n        self.assertTrue(math.isclose(result, 0.04, rel_tol=0.0, abs_tol=1e-12))"
+  },
+  {
+    "method": "test_sample_variance_known",
+    "requirement": "Statistics",
+    "inputs": {
+      "sample": [
+        1,
+        2,
+        3
+      ]
+    },
+    "independent_expected": "mean2/samplevariance1",
+    "absolute_tolerance": "0 exact fixture",
+    "relative_tolerance": 0,
+    "units": "sample/squared units",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_sample_variance_known(self):\n        summary = summarize_sample([1.0, 2.0, 3.0])\n        self.assertEqual((summary.mean, summary.sample_variance), (2.0, 1.0))"
+  },
+  {
+    "method": "test_simulation_endpoint",
+    "requirement": "Simulation",
+    "inputs": {
+      "initial": 100,
+      "up_return": "1/10",
+      "down_return": 0,
+      "up_probability": 0,
+      "scenarios": 3,
+      "seed": 42
+    },
+    "independent_expected": "(100,100,100)",
+    "absolute_tolerance": "0 exact deterministic endpoint",
+    "relative_tolerance": 0,
+    "units": "amount tuple",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_simulation_endpoint(self):\n        run = simulate_two_outcome(100.0, 0.1, 0.0, 0.0, 3, 42)\n        self.assertEqual(run.terminal_values, (100.0, 100.0, 100.0))"
+  },
+  {
+    "method": "test_price_return_integration",
+    "requirement": "Validated return",
+    "inputs": {
+      "instrument": "X",
+      "currency": "USD",
+      "source": "synthetic",
+      "first_price": 100.0,
+      "first_observed_available": "2025-01-02T16:00:00+00:00",
+      "second_price": 110.0,
+      "second_observed_available": "2025-01-03T16:00:00+00:00",
+      "as_of": "2025-01-03T18:00:00+00:00",
+      "timestamp_type": "aware datetime objects,not string parser inputs"
+    },
+    "independent_expected": "1/10 plussharedlowerfunctioncomparison",
+    "absolute_tolerance": "1e-12",
+    "relative_tolerance": 0,
+    "units": "return fraction",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_price_return_integration(self):\n        utc = timezone.utc\n        first_time = datetime(2025, 1, 2, 16, tzinfo=utc)\n        second_time = datetime(2025, 1, 3, 16, tzinfo=utc)\n        cutoff = datetime(2025, 1, 3, 18, tzinfo=utc)\n        first = dict(instrument=\"X\", currency=\"USD\", price=100.0,\n                     observed_at=first_time, available_at=first_time, source=\"synthetic\")\n        second = dict(instrument=\"X\", currency=\"USD\", price=110.0,\n                      observed_at=second_time, available_at=second_time, source=\"synthetic\")\n        result = validated_price_return(first, second, cutoff)\n        self.assertTrue(math.isclose(result, 0.1, rel_tol=0.0, abs_tol=1e-12))\n        self.assertEqual(result, simple_price_return(100.0, 110.0))"
+  },
+  {
+    "method": "test_invalid_rate",
+    "requirement": "Invalid rate",
+    "inputs": {
+      "amount": 100.0,
+      "rate": -1.0,
+      "periods": 1
+    },
+    "independent_expected": "ValueError",
+    "absolute_tolerance": "not numeric",
+    "relative_tolerance": 0,
+    "units": "exception",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_invalid_rate(self):\n        with self.assertRaises(ValueError):\n            present_value(100.0, -1.0, 1)"
+  },
+  {
+    "method": "test_invalid_weights",
+    "requirement": "Invalid weights",
+    "inputs": {
+      "weights": [
+        0.4,
+        0.4
+      ],
+      "returns": [
+        0.1,
+        0.2
+      ]
+    },
+    "independent_expected": "ValueError",
+    "absolute_tolerance": "not numeric",
+    "relative_tolerance": 0,
+    "units": "exception",
+    "evidence": "package-results.json andoracles.py;sharedreturncomparison identified separately",
+    "status": "Scoped;not full requirement/domain or independent acceptance",
+    "exact_source_method": "def test_invalid_weights(self):\n        with self.assertRaises(ValueError):\n            portfolio_return([0.4, 0.4], [0.1, 0.2])"
+  }
+]

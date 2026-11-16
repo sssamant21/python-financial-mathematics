@@ -1,0 +1,117 @@
+{
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/9.09-valuation-sensitivity-and-approximation-report-project.md",
+  "records": [
+    {
+      "exercise": 1,
+      "prompt": "Derive the first and second derivatives of \\(V(r)=\\sum_i C_ie^{-rt_i}\\).",
+      "source_solution": "\\(V'=-\\sum_i t_iC_ie^{-rt_i}\\); \\(V''=\\sum_i t_i^2C_ie^{-rt_i}\\).",
+      "review": "Differentiate each fixed-payment exponential:coefficient -t andt\u00b2;independentcomplete-baseline reference inV201/reportoracle.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 2,
+      "prompt": "Derive the third derivative and explain its role.",
+      "source_solution": "\\(V'''=-\\sum_i t_i^3C_ie^{-rt_i}\\). Its magnitude provides a second-order Taylor remainder bound.",
+      "review": "Thirdderivative coefficient -t\u00b3;absolute derivative bound usespositivepayments andminimumrate overinterval;notaseparatebaselineoutput.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 3,
+      "prompt": "Convert \\(-75\\) bp to a decimal rate shock.",
+      "source_solution": "\\(-75/10000=-0.0075\\).",
+      "review": "Exact-75/10000=-3/400;single-time3reportfixture includes-75bp.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 4,
+      "prompt": "For one cash flow at \\(t=3\\), calculate duration and convexity.",
+      "source_solution": "\\(D=3\\), \\(K=9\\).",
+      "review": "Single-payment normalizedt andt\u00b2giveD3/K9;report independentreference verifiesboth.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 5,
+      "prompt": "Explain why \\(K\\ge D^2\\) for positive fixed cash flows.",
+      "source_solution": "With present-value weights \\(w_i>0\\), \\(K-D^2=\\sum_i w_i(t_i-D)^2\\ge0\\).",
+      "review": "K-D\u00b2=sumw(t-D)\u00b2nonnegative forpositive normalizedweights;proof/assumption review,not a universalfloatinequality guarantee.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 6,
+      "prompt": "Write the exact change formula for a 25 bp parallel rise.",
+      "source_solution": "\\(\\sum_i C_ie^{-rt_i}\\operatorname{expm1}(-0.0025t_i)\\).",
+      "review": "ExactsumCash*exp(-rt)*expm1(-t/400)matchesendpointdifference inexactarithmetic;25bpreportfixture checked againstindependentDecimalendpoint.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 7,
+      "prompt": "Write the quadratic approximation for a \\(-50\\) bp shock.",
+      "source_solution": "\\(\\Delta V_2=V'(-0.005)+\\tfrac12V''(0.005)^2\\).",
+      "review": "At h=-1/200,linear=-V'/200 andquadratic addsV''/80000;originalprojectchecker/scenarioindependentchecks covernegative shocks.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 8,
+      "prompt": "Derive the maximum second derivative magnitude over a shock interval.",
+      "source_solution": "\\(M_2=\\sum_i t_i^2C_ie^{-r_{\\min}t_i}\\), with \\(r_{\\min}=\\min(r,r+h)\\).",
+      "review": "ForC>0,t>=0,secondderivative decreaseswithr;maximumat min(r,r+h);independentboundreferencescoverbothdirections.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 9,
+      "prompt": "Why must a remainder bound cover the entire interval?",
+      "source_solution": "The unknown Taylor remainder evaluation point lies somewhere between the baseline and shocked rate, not necessarily at either endpoint.",
+      "review": "Lagrangerevaluationpoint isunknownwithininterval;endpoint-onlynonmaximumboundwouldbeunjustified.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 10,
+      "prompt": "Why is a zero-shock scenario mandatory?",
+      "source_solution": "It checks rate conversion, scenario arithmetic, and the expected identity that no shock produces no change.",
+      "review": "Zeroshock giveszerochanges/errors/boundswithineligiblebaseline/shifted-ratepolicy;mandatoryzero gridtested.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 11,
+      "prompt": "Why is an observed small approximation error not proof of model accuracy?",
+      "source_solution": "It only compares an approximation with the chosen mathematical model; the model's cash-flow and discount assumptions can still be wrong.",
+      "review": "Approximationerrorcomparesagainstspecifiedfixedcashflowmodel,notrealcashflow/curve/modeltruth.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    },
+    {
+      "exercise": 12,
+      "prompt": "What evidence is required before declaring the project independently certified?",
+      "source_solution": "Recorded runtime test evidence, mathematical/financial review, and an explicit approval decision under a defined acceptance process.",
+      "review": "Runtimeevidencehereisnotsignoff;mathematical/financialreview andexplicitindependentapprovalremainunassigned/open.",
+      "status": "Assistant scoped technical review;independent acceptance pending"
+    }
+  ],
+  "extension_records": [
+    {
+      "extension": 1,
+      "scope": "Nonparallel spot report integration;Section9.8 supplies an analogue butproject_report hasno term-structure interface.",
+      "status": "Design review;not implemented inthisproject"
+    },
+    {
+      "extension": 2,
+      "scope": "Threshold payoff requirespiecewiseone-sided/kinkrevaluation;fixed-positivecashflowmodeldoesnotcoverit.",
+      "status": "Design review;not implemented inthisproject"
+    },
+    {
+      "extension": 3,
+      "scope": "CSVviewmustpreserveunits/order/precision andJSONschema;exportnotimplemented.",
+      "status": "Design review;not executed"
+    },
+    {
+      "extension": 4,
+      "scope": "Currencyerror-toleranceflag requiresdeclaredreported/latentcomparisonpolicy;currentprojectflagsareTaylor-boundcheckswithallowance.",
+      "status": "Design review;not implemented inthisproject"
+    },
+    {
+      "extension": 5,
+      "scope": "Externalvalidationrunnersnowrecordpin/Python/platform/commands/results;reportobjectitselfstilllacksas-of/source/reviewerlineage.",
+      "status": "Scoped external evidence available;notdurable report provenance"
+    }
+  ],
+  "limits": "Twelve answers reviewed;fiveextensiondesigns distinguishedfromexecutedimplementation. No extensioncompletion/model/reviewer/independentprojectcertification claimed."
+}

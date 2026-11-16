@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-203 complete project-scenario scoped pass (269 predicates);latest full Linux pass remains V-202 at older pin (635/422/636). Project facade/assessment/provenance and broader acceptance open.
+**Overall status:** In progress — V-204 project-report/assessment scoped pass (290 predicates);V-205 full candidate Linux pass637/424/638 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`. Next9.10;broader provenance/resources/independent/platform/release acceptance open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 635/635 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`. [V-202](runtime-refresh-2026-11-15-r22.md). |
-| Automated script execution | Full candidate Linux pass | 422/422 at `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4`;636 required blobs verified before/after. [V-202](runtime-refresh-2026-11-15-r22.md). |
+| Python compilation | Full candidate Linux pass | 637/637 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`. [V-205](runtime-refresh-2026-11-15-r24.md). |
+| Automated script execution | Full candidate Linux pass | 424/424 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`;638 required blobs verified before/after. [V-205](runtime-refresh-2026-11-15-r24.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1625,3 +1625,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-203 checkpoint — Section9.9 complete project scenario rows
 
 [Scenario evidence](chapter-09-project-scenario-followup-r23.md):269 corrected predicates pass;190 initial passes/79 failed field observations and actual identical replay retained. Nine direct numerical fields plus70 whole-row exception observations across five cases,not79 unique defects;kind counts69 numeric/10 flag fields. Independent1800/2400-digit original-input complete endpoint/change/error/bound references. Finite reported shifted-rate and full-baseline gates retained;latent R+H endpoint/interval and reported-error/bound allowance policy explicit. Four files compiled/four commands/three checkers pass with before/after hashes. Baseline and project-report text unchanged;manuscript architecture/policies clarified separately. Fresh636/423/637 inventory not full execution;V202 remains latest full pass at older pin. Next complete project_report facade/metadata/grid/priority/JSON/bound aggregation and Section9.9 assessment obligations,checkpointed.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-204 checkpoint — Section9.9 project report and assessment contracts
+
+[Report evidence](chapter-09-project-report-followup-r24.md):290 predicates pass across four selected reports,with216 complete field expectations,48 metadata/schema/approval/limitation checks,12 rejections and14 collection/priority/JSON/ownership properties. Five files compiled/five commands/four checkers pass with before/after hashes. Initial/replay/scoped outcomes agree canonically;raw set repr order differs and comparison assertion/normalization record retained. No implementation defect invented. Twelve worked solutions/five extension designs reviewed separately;unimplemented extensions and provenance/resources/model/policy gaps remain open. Runbook Markdown restored and scoped runtime links added. Next9.10 cumulative assessment/exercise coverage.38 COV categories partial,none closed;Book1 separate.
+
+## V-205 checkpoint — Full pinned candidate Linux refresh
+
+[V-205 runtime](runtime-refresh-2026-11-15-r24.md) at `7c666413cafc3481dc155723b4ca4f8b426e42a3`:637/637 Python files compiled,424/424 scripts passed,638/638 required blobs verified before/after. Includes accumulated269 scenario and290 report predicates with scoped policies and preserved earlier failure/replay evidence. Report certification/independent-review flags stay false;full execution does not settle unasserted assessment/provenance/resources/model/platform/release contracts. Next9.10.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.

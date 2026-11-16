@@ -1,0 +1,11 @@
+# V-205 — Full pinned Book 2 candidate Linux refresh
+
+Executable source `7c666413cafc3481dc155723b4ca4f8b426e42a3`. Derived from this Git tree: **637/637 Python files compiled,424/424 check/test scripts passed,638/638 required Python/fixture blobs verified before and after execution**. Python3.12.14;Linux-6.18.57-x86_64-with-glibc2.41;assertions enabled,60-second timeout per script. Elapsed501.5 seconds.
+
+[Exact staging/execution runner](runtime-refresh-2026-11-15-r24-runner.txt), [full manifest/per-file outcomes/output digests](runtime-refresh-2026-11-15-r24.json). Reproduce: `python books/book-02-mathematical-foundations-for-finance-with-python/validation/runtime-refresh-2026-11-15-r24-runner.txt . 7c666413cafc3481dc155723b4ca4f8b426e42a3 books/book-02-mathematical-foundations-for-finance-with-python/validation`. Required files are staged from pinned Git blobs,not working files.
+
+Includes accumulated [V-203 scenario contracts](chapter-09-project-scenario-followup-r23.md)269 predicates and [V-204 report contracts](chapter-09-project-report-followup-r24.md)290 predicates. Earlier scenario failures and actual replay remain unchanged. All report probes passed;raw set-representation ordering differs across processes,so the [comparison record](chapter-09-project-report-comparison-r24.json) preserves raw differences and a canonical comparison. No failed numerical predicate was concealed or invented.
+
+Reported errors/bounds plus baseline allowance remain numerical flags,not mathematical certification. The educational report keeps runtime_certified and independent_review_completed false;its metadata is not durable financial lineage. Twelve project solutions and five extension designs have scoped review;unimplemented extensions and broader provenance/resources/model/policy acceptance remain open.
+
+Next:Section9.10 cumulative assessment/exercise coverage,with [pinned checkpoint](chapter-09-assessment-checkpoint-r24.json). Full script execution does not establish unasserted contracts. All38 selected COV categories remain partially addressed,none closed;categories are not defect counts or completion percentages. This one Linux candidate pass is not supported-platform validation,universal numerical/resource proof,independent mathematical/editorial/model approval,release acceptance or canonical approval. Book1 has separate trackers.

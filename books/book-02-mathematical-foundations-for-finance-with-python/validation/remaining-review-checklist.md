@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `a7ceb573b0c51a3442a1b6f468ea9a40bc84c6e4` (V-202)
-**Latest scoped source:** V-203 at `25980273180287c94f76456f0ba7dc068edf9505`;[four-source manifest](chapter-09-project-scenario-publication-r23.json).
+**Full-runtime candidate source revision:** `7c666413cafc3481dc155723b4ca4f8b426e42a3` (V-205)
+**Latest scoped source:** V-204 at `7c666413cafc3481dc155723b4ca4f8b426e42a3`;[five-source manifest](chapter-09-project-report-publication-r24.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-203 scenario scoped pass;V-202 older-pin full runtime pass. Project facade/assessment and broader independent/platform/release acceptance remain open.
+**Disposition:** V-204 report/assessment scoped pass;V-205 full candidate Linux runtime pass. Next9.10;broader independent/platform/release acceptance open.
 
 ## Reconciled evidence
 
@@ -1499,3 +1499,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-203 checkpoint — Section9.9 complete project scenario rows
 
 [Scenario evidence](chapter-09-project-scenario-followup-r23.md):269 corrected predicates pass;190 initial passes/79 failed field observations and actual identical replay retained. Nine direct numerical fields plus70 whole-row exception observations across five cases,not79 unique defects;kind counts69 numeric/10 flag fields. Independent1800/2400-digit original-input complete endpoint/change/error/bound references. Finite reported shifted-rate and full-baseline gates retained;latent R+H endpoint/interval and reported-error/bound allowance policy explicit. Four files compiled/four commands/three checkers pass with before/after hashes. Baseline and project-report text unchanged;manuscript architecture/policies clarified separately. Fresh636/423/637 inventory not full execution;V202 remains latest full pass at older pin. Next complete project_report facade/metadata/grid/priority/JSON/bound aggregation and Section9.9 assessment obligations,checkpointed.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+
+## V-204 checkpoint — Section9.9 project report and assessment contracts
+
+[Report evidence](chapter-09-project-report-followup-r24.md):290 predicates pass across four selected reports,with216 complete field expectations,48 metadata/schema/approval/limitation checks,12 rejections and14 collection/priority/JSON/ownership properties. Five files compiled/five commands/four checkers pass with before/after hashes. Initial/replay/scoped outcomes agree canonically;raw set repr order differs and comparison assertion/normalization record retained. No implementation defect invented. Twelve worked solutions/five extension designs reviewed separately;unimplemented extensions and provenance/resources/model/policy gaps remain open. Runbook Markdown restored and scoped runtime links added. Next9.10 cumulative assessment/exercise coverage.38 COV categories partial,none closed;Book1 separate.
+
+## V-205 checkpoint — Full pinned candidate Linux refresh
+
+[V-205 runtime](runtime-refresh-2026-11-15-r24.md) at `7c666413cafc3481dc155723b4ca4f8b426e42a3`:637/637 Python files compiled,424/424 scripts passed,638/638 required blobs verified before/after. Includes accumulated269 scenario and290 report predicates with scoped policies and preserved earlier failure/replay evidence. Report certification/independent-review flags stay false;full execution does not settle unasserted assessment/provenance/resources/model/platform/release contracts. Next9.10.38 COV categories partial,none closed;independent mathematical/editorial/model/policy/platform/release/canonical acceptance pending;Book1 separate.

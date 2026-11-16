@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.15:** [Verification review](chapter-21-verification-review/README.md):40answers/12labs,12traceabilityrows;22commands/459installedpredicates,146reference methods.15workflows/600answers;next21.16. Broadergaps remainopen.
+
 - **Latest21.14:** [Plot formal review](chapter-21-visualization-review/README.md):40 answers/12 labs,updated wheel/445 installed predicates;14 workflows/560 answers. Next21.15;provided dependency provenance and broader gaps remain open.
 
 - **Latest21.14 partial:** [Plot contracts/F215](chapter-21-visualization-contract-review/README.md):41 plot+3 dependency predicates,five commands and134 reference methods pass;PNG inspected. Formal40-answer/12-lab and updated plotting artifact remain OPEN;13 workflows/520 answers unchanged.
@@ -155,7 +157,7 @@ The runtime column reports only evidence explicitly reviewed for this tracker. *
 | 18 | Monte Carlo Simulation for Finance | PASS (scoped) — 7 supplemental workflows / 9 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 154 reference tests; 18.15 snippet ran; [evidence](chapter-18-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 19 | Financial Data Engineering Foundations | PASS — 158 reference tests; 19.15 snippet ran; [evidence](chapters-19-20-runtime/README.md) | Pending | Pending | NOT CERTIFIED |
 | 20 | Testing and Engineering Financial Python | PASS — 204 reference tests across 16 suites; [evidence](chapters-19-20-runtime/README.md) and [initial run](initial-2026-10-27/README.md) | Pending | Pending | NOT CERTIFIED |
-| 21 | Integrated Capstone: Financial Mathematics Toolkit | PASS (scoped) — 10 supplemental workflows / 19 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 218 reference tests, including DST regressions; one chart inspected; [evidence](initial-2026-10-27/README.md) | PASS (scoped) —14 formal workflows/560 local answers;[plot review](chapter-21-visualization-review/README.md);broader review open | Pending | NOT CERTIFIED |
+| 21 | Integrated Capstone: Financial Mathematics Toolkit | PASS (scoped) — 10 supplemental workflows / 19 mapped source fences; [follow-up](later-examples-2026-10-28/README.md); earlier 218 reference tests, including DST regressions; one chart inspected; [evidence](initial-2026-10-27/README.md) | PASS (scoped) —15formalworkflows/600localanswers;[verificationreview](chapter-21-verification-review/README.md);broaderreviewopen | Pending | NOT CERTIFIED |
 
 A chapter's runtime entry does not mean all snippets, lab steps, exercise answers, platforms or dependencies have been tested. Refer to each evidence record for the exact scope.
 
@@ -748,3 +750,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## Section21.14 — Scoped formal visualization workflow and installed artifact
 
 [Visualization review](chapter-21-visualization-review/README.md):40 answers/12 lab steps;18 fresh offline commands and445 installed predicates pass. Clean consumer receives11 repacked provided-runtime dependency snapshots/2745 payload files,verified RECORD hashes/default closure and pip compatibility;not vendor artifacts or approved dependency provenance.134 existing reference methods/402 source-editable-wheel invocations,no newly authored unittest methods/historical-unique increment asserted. Three core source commands reused by23 exact hashes;prior visual PNG inspection separate fromnewinstalledstructurechecks. Harness API/dependency-assumption failures retained with corrected reruns;not numerical defects. Exercises37/39 status answers corrected,Python fences unchanged. Chapter21 now14 scoped workflows/560 local answers. Next21.15 Testing and Verification. F28/broad F32,F209/static,F165/F185,R08–10 and broader dependency/data/resource/model/platform/release/independent acceptance remain OPEN.
+
+
+## Section21.15 — Scoped testing/verification workflow and installed evidence
+
+[Verification review](chapter-21-verification-review/README.md):40answers/12labsteps/12traceabilityrows;22freshcommands pass.146existing currentreference methods/438source-editable-wheel invocations,no newlyauthored unittestmethods/historical-unique increment asserted.459installedpredicates=445retained+14new benchmark/contract predicates;sharedreturnintegration anddeterministicp0boundary distinctfrom10independentnumeric fields andtwoinvalidcontracts. Toolkitpayload/17exportsunchanged,new12-checkfence executed;statusanswer3corrected. Provideddependency snapshots/pipcompatibility/cleanprefixprovenance retained,notvendorapproval. Priorvisualrecord andfailurehistory separate. Chapter21now15scopedworkflows/600localanswers. Next21.16DocumentationandReproducibility. F28/broadF32,F209/static,F165/F185,R08–10 andbroader dependency/data/resource/model/platform/release/independent acceptance remainOPEN.

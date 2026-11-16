@@ -1,0 +1,18 @@
+"""Pinned project facade probe/replay or five-file scope. No source fix needed.
+Usage: python THIS repository_root probe|scope output.json
+"""
+from pathlib import Path
+import sys,json,subprocess,tempfile,hashlib,py_compile,platform
+r=Path(sys.argv[1]).resolve();mode=sys.argv[2];out=Path(sys.argv[3]).resolve();assert mode in ('probe','scope');assert __debug__;pin='7c666413cafc3481dc155723b4ca4f8b426e42a3';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/';names=['section_9_09.py','check_section_9_09.py','check_section_09_baseline_contracts.py','check_section_09_scenario_contracts.py','check_section_09_report_contracts.py'];manifest=[];compiled=[];commands=[]
+def blob(raw):return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp)
+ for n in names:
+  raw=subprocess.check_output(['git','show',pin+':'+prefix+n],cwd=r);sha=subprocess.check_output(['git','rev-parse',pin+':'+prefix+n],cwd=r,text=True).strip();assert blob(raw)==sha;(t/n).write_bytes(raw);manifest.append(dict(path=prefix+n,sha=sha))
+ for n in names:py_compile.compile(str(t/n),doraise=True);compiled.append(n)
+ todo=['check_section_09_report_contracts.py'] if mode=='probe' else names
+ for n in todo:
+  argv=[sys.executable,n]+([str(out.with_name(out.stem+'-predicates.json'))] if n=='check_section_09_report_contracts.py' else []);z=subprocess.run(argv,cwd=t,capture_output=True,text=True,timeout=60);commands.append(dict(argv=argv,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+ after=all(blob((t/Path(x['path']).name).read_bytes())==x['sha'] for x in manifest)
+ d=dict(mode=mode,executable_source_revision=pin,manifest=manifest,compiled=compiled,commands=commands,hashes_verified_before=True,hashes_verified_after=after,python=sys.version,platform=platform.platform(),limits='Five-file scoped execution;290 report predicates are distinct from101 baseline/269 scenario checks. No source fix needed or new defect invented;independent/model/platform/release acceptance open.')
+ out.write_text(json.dumps(d,indent=2)+'\n');print(mode,len(compiled),'compiled',len(commands),'commands',[x['returncode'] for x in commands]);assert after and all(x['returncode']==0 for x in commands)
