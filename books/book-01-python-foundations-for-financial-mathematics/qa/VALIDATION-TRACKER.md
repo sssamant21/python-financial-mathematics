@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest21.13 partial:** [Source contracts/F214](chapter-21-validation-contract-review/README.md):46 corrected predicates/four commands and122 existing methods pass;initial UTC boundary failures/replay retained. Formal40-answer/12-lab and updated artifact remain OPEN;12 scoped workflows/480 local answers unchanged.
+
 - **Latest21.12:** [Simulation review](chapter-21-simulation-review/README.md):40 answers /12 labs,updated clean-consumer wheel,355 predicates;12 scoped workflows /480 local answers. Next21.13;broader F28/F32/model/platform/independent gaps remain open.
 
 - **Latest21.11:** [Statistics review](chapter-21-statistical-review/README.md):40 answers /12 labs,updated clean-consumer wheel,299 predicates;11 scoped workflows /440 local answers. Next21.12;broader F28/F32/model/platform/independent gaps remain open.
@@ -395,6 +397,7 @@ A chapter's runtime entry does not mean all snippets, lab steps, exercise answer
 | F211 | Section20.10 oversized-input exception and emitted category contract. | RESOLVED (scoped) —two oversized-input cases raised OverflowError/logged numerical;four baseline predicate failures/replay and50 corrected source/event predicates retained. Broader logging/privacy/audit/NPV acceptance open. [Evidence](chapter-20-logging-review/README.md). |
 | F212 | Section20.11 complete Decimal return and private context contract. | RESOLVED (scoped) —five source baseline failures/replay and46 corrected source predicates retained;five annotation controls separate. Static checker/configuration,Decimal resources,NPV/platform/independent acceptance remain open. [Evidence](chapter-20-types-review/README.md). |
 | F213 | Section20.12 documented noniterable ValueError/cause and iterator-stage contract. | RESOLVED (scoped) —two inputs/four baseline predicate failures/replay and32 corrected source predicates retained. Doc/help visibility observations separate;broader documentation/provenance/NPV/resource/platform acceptance open. [Evidence](chapter-20-docs-review/README.md). |
+| F214 | Section21.13 unsupported UTC conversion range leaked OverflowError. | RESOLVED (scoped source) —two initial boundary failures/identical replay,46 corrected source predicates and122 existing methods. Formal review/artifact and F28/broad F32 remain open. [Evidence](chapter-21-validation-contract-review/README.md). |
 
 Add new findings with an ID, affected revision, severity, owner, reproduction, evidence, status, decision and rerun result. Do not delete historical failures when corrected.
 
@@ -718,3 +721,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.13 — Partial data-validation source checkpoint (OPEN)
 
 [Validation checkpoint](chapter-21-validation-resume/README.md):three source commands /122 existing methods pass (14 validation including two prior DST regressions,plus108 retained). Explicit source injection; no new historical methods or completed formal workflow. Simulation wheel excludes validation. Next21.13 schema/identity/currency/availability/return contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains12 scoped workflows /480 local answers. F28/F32 and broader acceptance remain open.
+
+
+### Section 21.13 — Partial source contracts and F214 correction (formal review OPEN)
+
+[Contract evidence](chapter-21-validation-contract-review/README.md):46 corrected source predicates/four fresh commands pass;122 existing methods/122 invocations,zero new historical methods. Initial44 passes/two UTC-range exception failures and actual identical replay retained. F214 normalizes unsupported UTC conversion range to ValueError;only the implementation fence changed. Two design observations are separate from predicates. No new wheel or40-answer/12-lab review claimed;Chapter21 remains12 scoped workflows/480 local answers. Next:21.13 formal alignment/steps and updated installed artifact using corrected fence hashes. F28/broad F32,F209/static,F165/F185,R08–10 and broader provenance/data/resource/model/platform/release/independent acceptance remain OPEN.

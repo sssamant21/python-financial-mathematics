@@ -1,0 +1,347 @@
+{
+  "source_predicates": [
+    {
+      "case": "validated rational return 100.0 to 110.0",
+      "actual": "0.10000000000000009",
+      "expected": "0.1",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "validated rational return 100.0 to 90.0",
+      "actual": "-0.09999999999999998",
+      "expected": "-0.1",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "validated rational return 100.0 to 100.0",
+      "actual": "0.0",
+      "expected": "0.0",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "validated rational return 1e-200 to 1.1e-200",
+      "actual": "0.10000000000000009",
+      "expected": "0.10000000000000009",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "validated rational return 1e+200 to 1.1e+200",
+      "actual": "0.10000000000000009",
+      "expected": "0.10000000000000003",
+      "kind": "numeric",
+      "passed": true
+    },
+    {
+      "case": "missing source",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "extra field",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "integer price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "boolean price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "zero price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "negative price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "nan price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "infinite price",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "instrument spaces",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "empty source",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "lowercase currency",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "unicode currency",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "naive observed",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "naive available",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "reversed availability",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "future availability",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "none record",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "naive cutoff",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "none cutoff",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "availability equality accepted",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "availability just before accepted",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "instrument mismatch",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "currency mismatch",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "equal observation time",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "decreasing observation time",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "zero ending price narrower layer",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "lower-level total-loss domain",
+      "actual": "-1.0",
+      "expected": "-1.0",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "different source labels deliberately accepted",
+      "actual": "0.10000000000000009",
+      "expected": "0.1",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "currency format not ISO authentication",
+      "actual": "'ZZZ'",
+      "expected": "'ZZZ'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "equivalent offsets accepted",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "provided timezone preserved",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "DST first UTC reference",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "DST second UTC reference",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "DST fold pair by instant",
+      "actual": "0.10000000000000009",
+      "expected": "0.1",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "DST reversed availability",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "dictionary ownership",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "frozen record type",
+      "actual": "True",
+      "expected": "True",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "ordinary frozen assignment",
+      "actual": "'FrozenInstanceError'",
+      "expected": "'FrozenInstanceError'",
+      "kind": "contract",
+      "passed": true
+    },
+    {
+      "case": "UTC lower range",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "UTC range/exception contract",
+      "passed": true
+    },
+    {
+      "case": "UTC upper range",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "UTC range/exception contract",
+      "passed": true
+    },
+    {
+      "case": "extreme finite price ratio overflow",
+      "actual": "'ValueError'",
+      "expected": "'ValueError'",
+      "kind": "contract",
+      "passed": true
+    }
+  ],
+  "passed": 46,
+  "failed": 0,
+  "timezone_search_path": [
+    "/usr/share/zoneinfo",
+    "/usr/lib/zoneinfo",
+    "/usr/share/lib/zoneinfo",
+    "/etc/zoneinfo"
+  ],
+  "observations": [
+    {
+      "case": "revision/freshness not authenticated",
+      "actual": "PriceObservation(instrument='EXAMPLE', currency='USD', price=100.0, observed_at=datetime.datetime(2025, 1, 2, 16, 0, tzinfo=datetime.timezone.utc), available_at=datetime.datetime(2025, 1, 2, 16, 0, tzinfo=datetime.timezone.utc), source='unverified-revision')",
+      "status": "OPEN broader F32/source/adjustment/freshness/version-history design; structural pass is not authenticity"
+    },
+    {
+      "case": "nonexistent local wall time",
+      "actual": "PriceObservation(instrument='EXAMPLE', currency='USD', price=100.0, observed_at=datetime.datetime(2025, 3, 9, 2, 30, tzinfo=zoneinfo.ZoneInfo(key='America/New_York')), available_at=datetime.datetime(2025, 3, 9, 8, 0, tzinfo=datetime.timezone.utc), source='synthetic')",
+      "status": "Local-time parsing/resolution belongs to upstream boundary; no nonexistent-time certification"
+    }
+  ],
+  "limits": "Selected exact source validation contracts on this Python/Linux tzdb. Frozen record not audit proof; F28/F32, custom tzinfo policies, source revisions, freshness, adjusted basis and platform/independent acceptance remain open. No formal40-answer/12-lab/wheel acceptance claimed by this source probe."
+}

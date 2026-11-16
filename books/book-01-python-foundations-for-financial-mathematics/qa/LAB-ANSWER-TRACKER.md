@@ -338,3 +338,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ### Section 21.13 — Partial data-validation source checkpoint (OPEN)
 
 [Validation checkpoint](chapter-21-validation-resume/README.md):three source commands /122 existing methods pass (14 validation including two prior DST regressions,plus108 retained). Explicit source injection; no new historical methods or completed formal workflow. Simulation wheel excludes validation. Next21.13 schema/identity/currency/availability/return contracts,40 answers /12 labs and updated installed artifact. Chapter21 remains12 scoped workflows /480 local answers. F28/F32 and broader acceptance remain open.
+
+
+### Section 21.13 — Partial source contracts and F214 correction (formal review OPEN)
+
+[Contract evidence](chapter-21-validation-contract-review/README.md):46 corrected source predicates/four fresh commands pass;122 existing methods/122 invocations,zero new historical methods. Initial44 passes/two UTC-range exception failures and actual identical replay retained. F214 normalizes unsupported UTC conversion range to ValueError;only the implementation fence changed. Two design observations are separate from predicates. No new wheel or40-answer/12-lab review claimed;Chapter21 remains12 scoped workflows/480 local answers. Next:21.13 formal alignment/steps and updated installed artifact using corrected fence hashes. F28/broad F32,F209/static,F165/F185,R08–10 and broader provenance/data/resource/model/platform/release/independent acceptance remain OPEN.

@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-15
-**Full-runtime candidate source revision:** `aed197ca5c003269f68c85a87cff502fbb18fac6` (V-196)
-**Latest scoped source:** V-197 at `9d368dcaebb13a212403a6bf33503b219d69e720`; [four-source manifest](chapter-09-scenario-terms-publication-r19.json).
+**Full-runtime candidate source revision:** `0fb97b446e60fb02d2accb229e8104c02ded1cfd` (V-199)
+**Latest scoped source:** V-198 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`; [five-source manifest](chapter-09-parallel-rows-publication-r20.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-197 helper scoped pass;V-196 older-pin full runtime pass. Wrapper/spot contracts and broader independent/platform/release acceptance remain open.
+**Disposition:** V-198 parallel rows scoped pass;V-199 full candidate Linux runtime pass. Full spot and broader independent/platform/release acceptance remain open.
 
 ## Reconciled evidence
 
@@ -1471,3 +1471,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-197 checkpoint — Section9.8 complete scenario-term helper
 
 [Helper evidence](chapter-09-scenario-terms-followup-r19.md):137 corrected predicates pass;97 initial passes /40 failures and actual identical replay retained.29 numerical fields,9 direct-policy and2 collection checks,not40 unique defects. Independent1800/2400-digit collective changes/latent signed/absolute errors; equal-length nonnegative term/time and finite shock preconditions explicit,one traversal,empty allowed,no baseline valuation gate. Only helper body changed;facade/baseline text unchanged. Four files compiled /four commands /three checkers pass with before/after hashes. Fresh632/419/633 inventory not full execution;V196 remains latest full pass at older pin. Next wrapper endpoint/value/tolerance and full spot contracts;three fresh facade diagnostics remain OPEN.38 COV categories partial,none closed;broader independent/model/platform/release/canonical approval pending;Book1 separate.
+
+
+## V-198 checkpoint — Section9.8 complete parallel facade rows
+
+[Parallel-row evidence](chapter-09-parallel-rows-followup-r20.md):270 corrected predicates pass;248 initial passes/22 failures and actual identical replay retained. Six numerical,two flag and14 whole-report range/prerequisite fields,not22 unique defects. Independent1800/2400-digit original cash/rate latent complete row references;direct endpoint and vanished baseline-leg cases repaired. Full baseline eligibility,reported h conversion and reported-error tolerance policy explicit. Five files compiled/five commands/four checkers pass with before/after hashes. Fresh spot diagnostics/replay remain OPEN;next complete spot baseline/scenario/metadata and input/range contracts.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+## V-199 checkpoint — Full pinned candidate Linux refresh
+
+[V-199 runtime](runtime-refresh-2026-11-15-r20.md) at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`:633/633 Python files compiled,420/420 scripts passed,634/634 required blobs verified before/after. Includes accumulated137 helper and270 parallel predicates with retained initial failures/replays and explicit policies. Full spot obligations remain OPEN with two fresh pinned diagnostics;full execution does not settle unasserted contracts.38 COV categories partial,none closed. Next complete9.8 spot numerical/report contracts. Independent mathematical/editorial/model/policy/platform/release/canonical acceptance remains pending;Book1 separate.

@@ -1,0 +1,50 @@
+{
+  "source_revision": "0fb97b446e60fb02d2accb229e8104c02ded1cfd",
+  "source_path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_08.py",
+  "source_blob": "724c1ee5b8351b1c9b5609366962393e5ecc5b8d",
+  "diagnostics": [
+    {
+      "case": "lost rescued endpoint",
+      "flows": [
+        [
+          1e+308,
+          1000.0
+        ]
+      ],
+      "spot_rates": [
+        1.0
+      ],
+      "shock_bp": [
+        -10000.0
+      ],
+      "expected_baseline": 5.075958897549457e-127,
+      "expected_exact_change": 1e+308,
+      "actual_exact_change": null,
+      "exception": "ValueError",
+      "passed": false,
+      "status": "OPEN diagnostic"
+    },
+    {
+      "case": "finite baseline factor overflow",
+      "flows": [
+        [
+          1e-308,
+          2.0
+        ]
+      ],
+      "spot_rates": [
+        -355.0
+      ],
+      "shock_bp": [
+        0.0
+      ],
+      "expected_baseline": 2.233994766161711,
+      "expected_exact_change": 0.0,
+      "actual_exact_change": null,
+      "exception": "OverflowError",
+      "passed": false,
+      "status": "OPEN diagnostic"
+    }
+  ],
+  "limits": "Two selected unresolved spot diagnostics, not parallel predicates or unique-defect counts. Original cash/rate Decimal2400 reference; independent spot facade policy and complete numerical/input/metadata checks remain pending."
+}

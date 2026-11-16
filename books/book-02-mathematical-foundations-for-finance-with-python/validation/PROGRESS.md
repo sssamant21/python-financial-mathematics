@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-15
-**Overall status:** In progress — V-197 scenario-term helper scoped pass (137 predicates); latest full Linux pass remains V-196 at its older pin (631/418/632). Wrapper value/tolerance and spot numerical contracts remain open.
+**Overall status:** In progress — V-198 parallel rows scoped pass (270 predicates); V-199 full candidate Linux pass633/420/634 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`. Full spot and broader acceptance remain open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 631/631 at `aed197ca5c003269f68c85a87cff502fbb18fac6`. [V-196](runtime-refresh-2026-11-15-r18.md). |
-| Automated script execution | Full candidate Linux pass | 418/418 at `aed197ca5c003269f68c85a87cff502fbb18fac6`;632 required blobs verified before/after. [V-196](runtime-refresh-2026-11-15-r18.md). |
+| Python compilation | Full candidate Linux pass | 633/633 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`. [V-199](runtime-refresh-2026-11-15-r20.md). |
+| Automated script execution | Full candidate Linux pass | 420/420 at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`;634 required blobs verified before/after. [V-199](runtime-refresh-2026-11-15-r20.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1597,3 +1597,12 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-197 checkpoint — Section9.8 complete scenario-term helper
 
 [Helper evidence](chapter-09-scenario-terms-followup-r19.md):137 corrected predicates pass;97 initial passes /40 failures and actual identical replay retained.29 numerical fields,9 direct-policy and2 collection checks,not40 unique defects. Independent1800/2400-digit collective changes/latent signed/absolute errors; equal-length nonnegative term/time and finite shock preconditions explicit,one traversal,empty allowed,no baseline valuation gate. Only helper body changed;facade/baseline text unchanged. Four files compiled /four commands /three checkers pass with before/after hashes. Fresh632/419/633 inventory not full execution;V196 remains latest full pass at older pin. Next wrapper endpoint/value/tolerance and full spot contracts;three fresh facade diagnostics remain OPEN.38 COV categories partial,none closed;broader independent/model/platform/release/canonical approval pending;Book1 separate.
+
+
+## V-198 checkpoint — Section9.8 complete parallel facade rows
+
+[Parallel-row evidence](chapter-09-parallel-rows-followup-r20.md):270 corrected predicates pass;248 initial passes/22 failures and actual identical replay retained. Six numerical,two flag and14 whole-report range/prerequisite fields,not22 unique defects. Independent1800/2400-digit original cash/rate latent complete row references;direct endpoint and vanished baseline-leg cases repaired. Full baseline eligibility,reported h conversion and reported-error tolerance policy explicit. Five files compiled/five commands/four checkers pass with before/after hashes. Fresh spot diagnostics/replay remain OPEN;next complete spot baseline/scenario/metadata and input/range contracts.38 COV categories partial,none closed;broader independent/model/platform/release/canonical acceptance pending;Book1 separate.
+
+## V-199 checkpoint — Full pinned candidate Linux refresh
+
+[V-199 runtime](runtime-refresh-2026-11-15-r20.md) at `0fb97b446e60fb02d2accb229e8104c02ded1cfd`:633/633 Python files compiled,420/420 scripts passed,634/634 required blobs verified before/after. Includes accumulated137 helper and270 parallel predicates with retained initial failures/replays and explicit policies. Full spot obligations remain OPEN with two fresh pinned diagnostics;full execution does not settle unasserted contracts.38 COV categories partial,none closed. Next complete9.8 spot numerical/report contracts. Independent mathematical/editorial/model/policy/platform/release/canonical acceptance remains pending;Book1 separate.
