@@ -2,9 +2,9 @@
 
 **Date:** 2026-11-16
 **Full-runtime candidate source revision:** `2ee81822af67357087e2af6193348f2b3c5dbdf8` (V-212)
-**Latest scoped source:** V-213 at `3a7a9f6df3ca6210ebe50504ed8f7324b5057320`;[source manifest](chapter-09-lab-02-publication-r30.json).
+**Latest scoped source:** V-214 at `102b658e1580bdffd0c980c36616788d619ae89a`;[source manifest](chapter-09-lab-03-publication-r31.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-213 lab/exercise scoped pass;V-212 full runtime source identities preserved. Remaining chapter-lab/extension and independent/model/platform/release acceptance open.
+**Disposition:** V-214 lab/exercise scoped pass;V-212 full runtime source identities preserved. Remaining chapter-lab/extension and independent/model/platform/release acceptance open.
 
 ## Reconciled evidence
 
@@ -1547,3 +1547,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-213 checkpoint — Section9.2 lab/exercise crosswalk
 
 [Evidence](chapter-09-lab-02-followup-r30.md):41predicates pass twice;threecompiledfiles/threecommands perrun,hashesverified. SixCLIlabels/16numericfields,Exercise3 exponent−2sourcecase,fourstepcallercenteredstudy andsource/revenueidentitychecks keptdistinct. Sixlabunits/tenexercise dispositions are reviewunits,notnewtestcounts. Actual roundedcallbackratios andideal third-derivative bound withseparate samplingallowance recorded;no universalstepselector/optimizer/differentiatorclaim. No sourcecode changes ordefectinvented. All643requiredPython/fixturehashesmatchV212;latest fullrun642/429/643atitsrecordedpin,notnewexecution. Next9.3Taylorlab/exercise/acceptancecrosswalk;broaderchapterlab/extension/provenance/resource/model/platform/release/independent/canonicalacceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-214 checkpoint — Section9.3 Taylorlab/exercise crosswalk
+
+[Evidence](chapter-09-lab-03-followup-r31.md):103predicatespass twice;twoexactPythonfilescompiled/threecommandsperrun,hashesverified.53CLI numericalfields/nineschemas,32callerhalvingfields/fourschemas,threeratiocomparisons/twoexercisefields separated. Genericroundedcallbackgrid/valuesdistinctfromnominalmathanswers andanalyticdiscountoutputs. Prescribedgridnotuniformhalving;separatecallerhalvingratios3.967011/3.983420/3.991688arenotforcedequal4. Sixlabunits/tenexercise dispositions are reviewunits,notnewtesttotals. No Pythonchange/defectinvented;all643requiredhashesmatchV212642/429/643atitsoriginalpin. Next9.4second-orderTaylorcrosswalk;broaderlab/extension/provenance/resources/model/platform/release/independent/canonicalacceptanceopen.38COVcategoriespartial,noneclosed;Book1separate.

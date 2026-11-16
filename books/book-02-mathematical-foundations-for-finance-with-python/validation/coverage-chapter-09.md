@@ -125,3 +125,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-213 Section9.2 lab/exercise crosswalk
 
 [V-213](chapter-09-lab-02-followup-r30.md):sixlabunits/tenexercise dispositions;41predicates/twofresh runs,threecompiled/threecommands perrun. ActualCLI16fields,nondefaultExercise3 powercase,fourstepcallercenteredstudy andthree revenueidentitychecks distinct fromanalyticalproofs andnativeAPIs. Prioronefixedstep checksnotdescribedasseveralsteps. All643code/fixtureidentitiesmatchV212;no newfullrunorcodechange. Next9.3labcrosswalk;38selectedCOVcategoriespartial,noneclosed.
+
+
+### Later V-214 Section9.3 lab/exercise crosswalk
+
+[V-214](chapter-09-lab-03-followup-r31.md):sixlabunits/tenexercise dispositions;103predicates/tworuns,twoPythonfilescompiled/threecommandsperrun. Complete53numericCLIfieldsandprescribedgridchecked,separatehalvingstudyrecordsactualerrors/ratios. Roundedgenericcallbackoutputsandanalyticdiscountcalculationskeptdistinct. All643code/fixturehashesmatchV212;noPythonchange/newfullrun.Next9.4crosswalk;38selectedCOVcategoriespartial,noneclosed.

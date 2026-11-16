@@ -1,0 +1,891 @@
+{
+  "source_revision": "102b658e1580bdffd0c980c36616788d619ae89a",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.02-random-number-generators.md",
+  "source_blob": "53aa2eb4463973e7bbce1bb123a55d07e7815999",
+  "fence_sha256": [
+    "5ad64096cfe654c2a6cace85d482f22416e7c9454d582a919a4f0c570efeaafe",
+    "826bfbdb211a3e74968dc87b2b82e6177e642933f99b98ed51e6c68c280ff9e2",
+    "100e0a9b558c2ee4c475976ac29f6b5bb406b77460a6e7015c21800b48ffbc1a",
+    "0f32e10ff689231c55d5b397bc01b8cc0bd130e30e95766e9ebb26285e08bbfa",
+    "a31ac77271c4d164095ae23c2be0a92482d814c6414ac26c94b0e05125a64885",
+    "f5b9657faa5518adf2b690fa628e044327212a029cdd5d0b24feec6c0a52ee74"
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "random_generators.py"
+      ],
+      "returncode": 0,
+      "stdout": "{'count': 10000, 'mean': 101.914, 'sample_variance': 96.34623862386239, 'standard_error': 0.0981561198417411}\n",
+      "stderr": "test_bad_probability (__main__.GeneratorTests.test_bad_probability) ... ok\ntest_bad_return (__main__.GeneratorTests.test_bad_return) ... ok\ntest_bad_sd (__main__.GeneratorTests.test_bad_sd) ... ok\ntest_known_summary (__main__.GeneratorTests.test_known_summary) ... ok\ntest_normal_zero_sd (__main__.GeneratorTests.test_normal_zero_sd) ... ok\ntest_probability_one (__main__.GeneratorTests.test_probability_one) ... ok\ntest_probability_zero (__main__.GeneratorTests.test_probability_zero) ... ok\ntest_range (__main__.GeneratorTests.test_range) ... ok\ntest_replay (__main__.GeneratorTests.test_replay) ... ok\ntest_terminal_value (__main__.GeneratorTests.test_terminal_value) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "random_generators.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "rows": [
+    {
+      "name": "0.0 actual threshold map",
+      "passed": true,
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        1,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "0.0 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          3,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "0.0 exact ceil cell",
+      "passed": true,
+      "count": 0,
+      "scaled_threshold": "0",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.0 grid probability error",
+      "passed": true,
+      "effective_probability": "0",
+      "specified_display_probability": "0",
+      "absolute_error": "0",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.0 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "grid_indices": [
+        0,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "1.0 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          2,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "1.0 exact ceil cell",
+      "passed": true,
+      "count": 9007199254740992,
+      "scaled_threshold": "9007199254740992",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.0 grid probability error",
+      "passed": true,
+      "effective_probability": "1",
+      "specified_display_probability": "1",
+      "absolute_error": "0",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.1 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        900719925474099,
+        900719925474100,
+        900719925474101,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "0.1 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          5,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "0.1 exact ceil cell",
+      "passed": true,
+      "count": 900719925474100,
+      "scaled_threshold": "4503599627370496/5",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.1 grid probability error",
+      "passed": true,
+      "effective_probability": "225179981368525/2251799813685248",
+      "specified_display_probability": "1/10",
+      "absolute_error": "1/11258999068426240",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.5 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        4503599627370495,
+        4503599627370496,
+        4503599627370497,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "0.5 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          5,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "0.5 exact ceil cell",
+      "passed": true,
+      "count": 4503599627370496,
+      "scaled_threshold": "4503599627370496",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.5 grid probability error",
+      "passed": true,
+      "effective_probability": "1/2",
+      "specified_display_probability": "1/2",
+      "absolute_error": "0",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.6 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        5404319552844595,
+        5404319552844596,
+        5404319552844597,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "0.6 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          5,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "0.6 exact ceil cell",
+      "passed": true,
+      "count": 5404319552844596,
+      "scaled_threshold": "27021597764222976/5",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.6 grid probability error",
+      "passed": true,
+      "effective_probability": "1351079888211149/2251799813685248",
+      "specified_display_probability": "3/5",
+      "absolute_error": "1/11258999068426240",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "5e-324 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "5e-324 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          4,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "5e-324 exact ceil cell",
+      "passed": true,
+      "count": 1,
+      "scaled_threshold": "1/22204460492503130808472633361816406250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "5e-324 grid probability error",
+      "passed": true,
+      "effective_probability": "1/9007199254740992",
+      "specified_display_probability": "1/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "absolute_error": "22204460492503130808472633361816406249999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "5.551115123125783e-17 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "5.551115123125783e-17 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          4,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "5.551115123125783e-17 exact ceil cell",
+      "passed": true,
+      "count": 1,
+      "scaled_threshold": "11641532182693482070016/23283064365386962890625",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "5.551115123125783e-17 grid probability error",
+      "passed": true,
+      "effective_probability": "1/9007199254740992",
+      "specified_display_probability": "5551115123125783/100000000000000000000000000000000",
+      "absolute_error": "11641532182693480820609/209715200000000000000000000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.1102230246251564e-16 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "1.1102230246251564e-16 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          4,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "1.1102230246251564e-16 exact ceil cell",
+      "passed": true,
+      "count": 1,
+      "scaled_threshold": "23283064365386959945728/23283064365386962890625",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.1102230246251564e-16 grid probability error",
+      "passed": true,
+      "effective_probability": "1/9007199254740992",
+      "specified_display_probability": "2775557561562891/25000000000000000000000000000000",
+      "absolute_error": "2944897/209715200000000000000000000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.1102230246251565e-16 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "1.1102230246251565e-16 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          4,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "1.1102230246251565e-16 exact ceil cell",
+      "passed": true,
+      "count": 1,
+      "scaled_threshold": "4656612873077392408576/4656612873077392578125",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.1102230246251565e-16 grid probability error",
+      "passed": true,
+      "effective_probability": "1/9007199254740992",
+      "specified_display_probability": "2220446049250313/20000000000000000000000000000000",
+      "absolute_error": "169549/41943040000000000000000000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.1102230246251568e-16 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "grid_indices": [
+        0,
+        1,
+        2,
+        3,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "1.1102230246251568e-16 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          5,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "1.1102230246251568e-16 exact ceil cell",
+      "passed": true,
+      "count": 2,
+      "scaled_threshold": "23283064365386968334336/23283064365386962890625",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "1.1102230246251568e-16 grid probability error",
+      "passed": true,
+      "effective_probability": "1/4503599627370496",
+      "specified_display_probability": "693889390390723/6250000000000000000000000000000",
+      "absolute_error": "11641532182693478723457/104857600000000000000000000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.9999999999999999 actual threshold map",
+      "passed": true,
+      "actual": [
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1
+      ],
+      "grid_indices": [
+        0,
+        9007199254740991
+      ]
+    },
+    {
+      "name": "0.9999999999999999 source callback contract",
+      "passed": true,
+      "actual": [
+        [
+          2,
+          7
+        ]
+      ]
+    },
+    {
+      "name": "0.9999999999999999 exact ceil cell",
+      "passed": true,
+      "count": 9007199254740992,
+      "scaled_threshold": "1374389534719999862561046528/152587890625",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "0.9999999999999999 grid probability error",
+      "passed": true,
+      "effective_probability": "1",
+      "specified_display_probability": "9999999999999999/10000000000000000",
+      "absolute_error": "1/10000000000000000",
+      "kind": "supplemental conditional-grid algebra"
+    },
+    {
+      "name": "selected native draws on declared grid",
+      "passed": true,
+      "native_draw_hex": [
+        "0x1.4762f307200c5p-1",
+        "0x1.99c6b5eeb2060p-6",
+        "0x1.19a1491f589dcp-2",
+        "0x1.c922b623b8c1cp-3",
+        "0x1.7912c1468f47ep-1",
+        "0x1.5a785aef6719ap-1",
+        "0x1.c8cbc2a2e7490p-1",
+        "0x1.6419f92e55088p-4",
+        "0x1.b00c460411746p-2",
+        "0x1.e83298bfe34a0p-6",
+        "0x1.bfc5443b8faa0p-3",
+        "0x1.02bdeda687799p-1",
+        "0x1.b2c3ec7d6e0c0p-6",
+        "0x1.973831b74d0f8p-3",
+        "0x1.4cbda72ce2822p-1",
+        "0x1.170291dad969ap-1",
+        "0x1.c3765f72ff5d0p-3",
+        "0x1.2db43b51cde06p-1",
+        "0x1.9e6dab37a29ddp-1",
+        "0x1.a9e7184826600p-8",
+        "0x1.9c94574a37dbbp-1",
+        "0x1.657286db0c1d4p-1",
+        "0x1.5c6aa1a39149cp-2",
+        "0x1.3e6c09371ecd4p-3",
+        "0x1.ea17d4f0dd167p-1",
+        "0x1.58ac3d8d1539ep-2",
+        "0x1.7be310c285d48p-4",
+        "0x1.8c2678b7cc250p-4",
+        "0x1.b1eac816035edp-1",
+        "0x1.351b9410ede8ep-1",
+        "0x1.9d3feac2c7e45p-1",
+        "0x1.759f679d67379p-1"
+      ]
+    },
+    {
+      "name": "subgrid positive threshold has one accepted cell",
+      "passed": true,
+      "kind": "supplemental resolution interpretation"
+    },
+    {
+      "name": "next grid-adjacent higher displayed threshold has two cells",
+      "passed": true,
+      "kind": "supplemental resolution interpretation"
+    }
+  ],
+  "passed": 47,
+  "failed": 0,
+  "grid_size": 9007199254740992,
+  "cases": [
+    {
+      "input_probability": "0.0",
+      "displayed_probability": "0",
+      "binary_input_probability": "0",
+      "grid_count": 0,
+      "conditional_effective_probability": "0",
+      "absolute_probability_error": "0",
+      "indices": [
+        0,
+        1,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        1.1102230246251565e-16,
+        0.9999999999999999
+      ],
+      "source_events": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "1.0",
+      "displayed_probability": "1",
+      "binary_input_probability": "1",
+      "grid_count": 9007199254740992,
+      "conditional_effective_probability": "1",
+      "absolute_probability_error": "0",
+      "indices": [
+        0,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        1
+      ]
+    },
+    {
+      "input_probability": "0.1",
+      "displayed_probability": "1/10",
+      "binary_input_probability": "3602879701896397/36028797018963968",
+      "grid_count": 900719925474100,
+      "conditional_effective_probability": "225179981368525/2251799813685248",
+      "absolute_probability_error": "1/11258999068426240",
+      "indices": [
+        0,
+        900719925474099,
+        900719925474100,
+        900719925474101,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        0.09999999999999998,
+        0.10000000000000009,
+        0.1000000000000002,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "0.5",
+      "displayed_probability": "1/2",
+      "binary_input_probability": "1/2",
+      "grid_count": 4503599627370496,
+      "conditional_effective_probability": "1/2",
+      "absolute_probability_error": "0",
+      "indices": [
+        0,
+        4503599627370495,
+        4503599627370496,
+        4503599627370497,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        0.4999999999999999,
+        0.5,
+        0.5000000000000001,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "0.6",
+      "displayed_probability": "3/5",
+      "binary_input_probability": "5404319552844595/9007199254740992",
+      "grid_count": 5404319552844596,
+      "conditional_effective_probability": "1351079888211149/2251799813685248",
+      "absolute_probability_error": "1/11258999068426240",
+      "indices": [
+        0,
+        5404319552844595,
+        5404319552844596,
+        5404319552844597,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        0.6,
+        0.6000000000000001,
+        0.6000000000000002,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "5e-324",
+      "displayed_probability": "1/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "binary_input_probability": "1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "grid_count": 1,
+      "conditional_effective_probability": "1/9007199254740992",
+      "absolute_probability_error": "22204460492503130808472633361816406249999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999/200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        1.1102230246251565e-16,
+        2.220446049250313e-16,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "5.551115123125783e-17",
+      "displayed_probability": "5551115123125783/100000000000000000000000000000000",
+      "binary_input_probability": "1/18014398509481984",
+      "grid_count": 1,
+      "conditional_effective_probability": "1/9007199254740992",
+      "absolute_probability_error": "11641532182693480820609/209715200000000000000000000000000000000",
+      "indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        1.1102230246251565e-16,
+        2.220446049250313e-16,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "1.1102230246251564e-16",
+      "displayed_probability": "2775557561562891/25000000000000000000000000000000",
+      "binary_input_probability": "9007199254740991/81129638414606681695789005144064",
+      "grid_count": 1,
+      "conditional_effective_probability": "1/9007199254740992",
+      "absolute_probability_error": "2944897/209715200000000000000000000000000000000",
+      "indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        1.1102230246251565e-16,
+        2.220446049250313e-16,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "1.1102230246251565e-16",
+      "displayed_probability": "2220446049250313/20000000000000000000000000000000",
+      "binary_input_probability": "1/9007199254740992",
+      "grid_count": 1,
+      "conditional_effective_probability": "1/9007199254740992",
+      "absolute_probability_error": "169549/41943040000000000000000000000000000000",
+      "indices": [
+        0,
+        1,
+        2,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        1.1102230246251565e-16,
+        2.220446049250313e-16,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "1.1102230246251568e-16",
+      "displayed_probability": "693889390390723/6250000000000000000000000000000",
+      "binary_input_probability": "4503599627370497/40564819207303340847894502572032",
+      "grid_count": 2,
+      "conditional_effective_probability": "1/4503599627370496",
+      "absolute_probability_error": "11641532182693478723457/104857600000000000000000000000000000000",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        1.1102230246251565e-16,
+        2.220446049250313e-16,
+        3.3306690738754696e-16,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "input_probability": "0.9999999999999999",
+      "displayed_probability": "9999999999999999/10000000000000000",
+      "binary_input_probability": "9007199254740991/9007199254740992",
+      "grid_count": 9007199254740992,
+      "conditional_effective_probability": "1",
+      "absolute_probability_error": "1/10000000000000000",
+      "indices": [
+        0,
+        9007199254740991
+      ],
+      "uniform_values": [
+        0.0,
+        0.9999999999999999
+      ],
+      "source_events": [
+        1,
+        1
+      ]
+    }
+  ],
+  "limits": "Controlledthresholdsourcecalls distinct fromsupplementaluniform-mass53-bitgridprobabilities. No enumerationofall2^53draws,no MTuniformity/independence/cryptographic/rare-event/model/platformcertification;normalCDFtailF165unresolved."
+}

@@ -1,0 +1,49 @@
+"""Section9.3 exact CLI report and halving-study crosswalk.
+Usage: python THIS repository_root first|replay
+"""
+from pathlib import Path
+import sys,json,subprocess,tempfile,hashlib,platform,importlib.util,math
+from fractions import Fraction as F
+from decimal import Decimal,localcontext
+r=Path(sys.argv[1]).resolve();stem=sys.argv[2];out=Path(__file__).resolve().parent;pin='102b658e1580bdffd0c980c36616788d619ae89a';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/';names=['section_9_03.py','check_section_9_03.py'];manifest=[];commands=[];rows=[];halving=[]
+def blob(raw):return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+def check(name,got,want,kind='CLI numerical'):
+ if isinstance(want,(list,str,bool)) or want is None:ok=got==want
+ else:ok=math.isclose(float(got),float(want),rel_tol=5e-14,abs_tol=1e-12)
+ rows.append(dict(name=name,kind=kind,actual=got,independent_expected=float(want) if isinstance(want,(F,Decimal)) else want,relative_tolerance=5e-14,absolute_tolerance=1e-12,passed=ok));assert ok,name
+
+def generic(v,w,d,h):
+ V,W,D,H=map(F,(v,w,d,h));exact=W-V;linear=D*H;error=exact-linear
+ return dict(baseline_value=float(V),exact_change=float(exact),linear_change=float(linear),linear_value=float(V+linear),signed_error=float(error),absolute_error=float(abs(error)),relative_change_error=None if exact==0 else float(abs(error)/abs(exact)))
+def discount(h,precision):
+ with localcontext() as ctx:
+  ctx.prec=precision;R=Decimal.from_float(.04);H=Decimal.from_float(h);V=Decimal(10000)*(-5*R).exp();shifted=Decimal(10000)*(-5*(R+H)).exp();change=shifted-V;linear=-5*V*H;error=change-linear
+  return dict(baseline_value=float(V),exact_change=float(change),linear_change=float(linear),linear_value=float(V+linear),signed_error=float(error),absolute_error=float(abs(error)),relative_change_error=float(abs(error)/abs(change)) if change else None)
+def fields(label,got,want,kind='CLI numerical'):
+ check(label+' schema',sorted(got),sorted(want),'CLI schema' if kind=='CLI numerical' else 'caller schema')
+ for key,value in want.items():check(label+' '+key,got[key],value,kind)
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp)
+ for n in names:
+  raw=subprocess.check_output(['git','show',pin+':'+prefix+n],cwd=r);sha=subprocess.check_output(['git','rev-parse',pin+':'+prefix+n],cwd=r,text=True).strip();assert blob(raw)==sha;(t/n).write_bytes(raw);manifest.append(dict(path=prefix+n,sha=sha))
+ for argv in [[sys.executable,names[0]],[sys.executable,names[1]],[sys.executable,'-m','compileall','-q',*names]]:
+  z=subprocess.run(argv,cwd=t,capture_output=True,text=True,timeout=60);commands.append(dict(argv=argv,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+ got=json.loads(commands[0]['stdout']);check('top report schema',sorted(got),['discount_10bp','discount_ladder','quadratic','revenue'],'CLI schema')
+ P=float(F(3)+F(.2));W=float(F(P)**2);fields('quadratic rounded callback',got['quadratic'],generic(9.,W,6.,.2))
+ a=discount(.001,90);assert a==discount(.001,140);fields('discount10bp',got['discount_10bp'],a)
+ check('prescribed ladder length',len(got['discount_ladder']),4,'CLI schema')
+ for row,h in zip(got['discount_ladder'],(.01,.005,.001,.0001)):
+  a=discount(h,90);assert a==discount(h,140);fields('ladder '+str(h),row,dict(shock=h,**a))
+ fields('revenue',got['revenue'],generic(3000.,3097.5,20.,5.))
+ spec=importlib.util.spec_from_file_location('exact_taylor',t/names[0]);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ extra=m.discount_step_ladder(10000,5,.04,[.01,.005,.0025,.00125])
+ for row,h in zip(extra,(.01,.005,.0025,.00125)):
+  a=discount(h,110);fields('caller halving '+str(h),row,dict(shock=h,**a),'caller halving source fields');halving.append(dict(shock=h,signed_error=row['signed_error'],exact_change=row['exact_change'],linear_change=row['linear_change']))
+ for i in range(3):
+  ratio=extra[i]['signed_error']/extra[i+1]['signed_error'];reference=discount(extra[i]['shock'],110)['signed_error']/discount(extra[i+1]['shock'],110)['signed_error'];check('halving error ratio '+str(i),ratio,reference,'caller error-ratio comparison');halving[i]['ratio_to_next']=ratio
+ # Exact revenue coefficient convention and narrative benchmark independent of generic callback arithmetic.
+ check('Exercise9 nominal revenue105',m.revenue(105),F(6195,2),'exercise source field')
+ check('Exercise9 nominal slope100',m.revenue_derivative(100),20,'exercise source field')
+ after=all(blob((t/Path(x['path']).name).read_bytes())==x['sha'] for x in manifest);assert after
+result=dict(source_revision=pin,manifest=manifest,compiled=names,commands=commands,python=sys.version,platform=platform.platform(),rows=rows,passed=len(rows),failed=0,halving_study=halving,hashes_verified_before=True,hashes_verified_after=after,limits='Complete default CLI andselectedcallerhalvingstudy. Generic polynomial expectations followroundedcallbackpoints/values andnominalh;discount fields followanalyticrepresented-inputmodel. Not universalconvergence/conditioning/model/platform/independentacceptance.')
+(out/('chapter-09-lab-03-'+stem+'-r31.json')).write_text(json.dumps(result,indent=2)+'\n');print(len(rows),'predicates;',len(commands),'commands')

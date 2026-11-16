@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-213 Section9.2 lab/exercise scoped pass. V-212 remains latest full candidate Linux pass (642/429/643); all required code/fixture hashes match current inspected source. Broader acceptance gaps open.
+**Overall status:** In progress — V-214 Section9.3 lab/exercise scoped pass. V-212 remains latest full candidate Linux pass (642/429/643); all required code/fixture hashes match current inspected source. Broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -1673,3 +1673,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-213 checkpoint — Section9.2 lab/exercise crosswalk
 
 [Evidence](chapter-09-lab-02-followup-r30.md):41predicates pass twice;threecompiledfiles/threecommands perrun,hashesverified. SixCLIlabels/16numericfields,Exercise3 exponent−2sourcecase,fourstepcallercenteredstudy andsource/revenueidentitychecks keptdistinct. Sixlabunits/tenexercise dispositions are reviewunits,notnewtestcounts. Actual roundedcallbackratios andideal third-derivative bound withseparate samplingallowance recorded;no universalstepselector/optimizer/differentiatorclaim. No sourcecode changes ordefectinvented. All643requiredPython/fixturehashesmatchV212;latest fullrun642/429/643atitsrecordedpin,notnewexecution. Next9.3Taylorlab/exercise/acceptancecrosswalk;broaderchapterlab/extension/provenance/resource/model/platform/release/independent/canonicalacceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-214 checkpoint — Section9.3 Taylorlab/exercise crosswalk
+
+[Evidence](chapter-09-lab-03-followup-r31.md):103predicatespass twice;twoexactPythonfilescompiled/threecommandsperrun,hashesverified.53CLI numericalfields/nineschemas,32callerhalvingfields/fourschemas,threeratiocomparisons/twoexercisefields separated. Genericroundedcallbackgrid/valuesdistinctfromnominalmathanswers andanalyticdiscountoutputs. Prescribedgridnotuniformhalving;separatecallerhalvingratios3.967011/3.983420/3.991688arenotforcedequal4. Sixlabunits/tenexercise dispositions are reviewunits,notnewtesttotals. No Pythonchange/defectinvented;all643requiredhashesmatchV212642/429/643atitsoriginalpin. Next9.4second-orderTaylorcrosswalk;broaderlab/extension/provenance/resources/model/platform/release/independent/canonicalacceptanceopen.38COVcategoriespartial,noneclosed;Book1separate.

@@ -13,6 +13,8 @@ Work through the validation checklist and chapter matrix. For each check, record
 
 ## Current snapshot
 
+- **Latest V10/18.2:** [Generator resolution](v10-generator-resolution/README.md):47predicates pass twice,11thresholdcases;controlledsource maps andconditionaluniform-gridreferences distinct. Allsixpriorfencesidentical;no sourcechange/newanswer/workflow/historicalmethodcounts. Next18.3reproducibility/draw-ordercrosswalk.
+
 - **Latest V10/18.1:** [Estimator assumptions](v10-simulation-foundations/README.md):105predicates pass twice,16IIDpaths exhaustivelyenumerated;source-summary/callerinterval/dependent-joint references distinct. V10 scopedINPROGRESS;next18.2generator/seedcrosswalk. No sourcechange ornewanswer/workflow/historical-method totals.
 
 - **Latest F209:** [Collection boundary](collection-f209-review/README.md):21 explicit-policy baseline failures/replay;35 corrected predicates pass twice;45 retained source predicates/five commands pass. Direct mapping/set/text/buffer ingestion rejected;upstream order/resources remain OPEN. Next:V10 simulation/statistical crosswalk starting18.1.
@@ -797,3 +799,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.1 estimator assumptions
 
 [Evidence](v10-simulation-foundations/README.md):105predicates pass twice with16exhaustiveIIDfour-drawpaths;80direct summary fields,16callerinterval decisions,sixIIDdistribution aggregates,two dependent-sampleSE fields andone dependent-joint variance kept distinct. ExactP(estimatedSE0)=1/8;callermean±1.96SEcoverage7/8onlyforthestatedN4two-pointIIDmodel. DependencecomparisonhasVar(mean)100withsourceSE0;no seed/IID/generatorquality ornominalcoveragecertification. Fourcommands/20invocationsof10existingmethods;source-identicalprior55predicate/F173evidenceretained. No newanswers/workflows/historicalmethods counted. V10INPROGRESS,next18.2generator/seed/finite-resolutioncrosswalk. F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.2 generator/resolution assumptions
+
+[Evidence](v10-generator-resolution/README.md):47predicates pass twice across11thresholdcases;22actualsource map/callbackchecks,22conditional-gridalgebra checks,onenative-supportobservation andtwo supplementalinterpretations. Underexplicituniform-mass53bitgridassumption,q=ceil(2^53P)/2^53,0<=q−P<2^-53;subgridpositivePacceptsonecell. Controlledsourcecalls are notPRNGuniformity/independence/rare-eventcertification. Allsixpriorlistinghashesmatch;F174/78predicateandNumPy/state/spawn evidence retainedatoriginalscope. Fourcommands/20invocationsof10existingmethods;no newanswers/workflows/historicalmethods. Next18.3reproducibility/configuration/draw-ordercrosswalk. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderplatform/model/release/independent/canonicalacceptanceopen.

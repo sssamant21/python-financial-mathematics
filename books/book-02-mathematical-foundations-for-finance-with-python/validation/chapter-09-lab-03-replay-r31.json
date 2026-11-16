@@ -1,0 +1,1217 @@
+{
+  "source_revision": "102b658e1580bdffd0c980c36616788d619ae89a",
+  "manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_03.py",
+      "sha": "d5f3bb52dea43c8b0b2555ff1d4d13ebeadbc67b"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_03.py",
+      "sha": "8c6caf782aab8692fef814e90dd1e7bcc67d0db3"
+    }
+  ],
+  "compiled": [
+    "section_9_03.py",
+    "check_section_9_03.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"quadratic\": {\n    \"baseline_value\": 9.0,\n    \"exact_change\": 1.240000000000002,\n    \"linear_change\": 1.2000000000000002,\n    \"linear_value\": 10.2,\n    \"signed_error\": 0.04000000000000192,\n    \"absolute_error\": 0.04000000000000192,\n    \"relative_change_error\": 0.03225806451613053\n  },\n  \"discount_10bp\": {\n    \"baseline_value\": 8187.307530779819,\n    \"exact_change\": -40.83436666567314,\n    \"linear_change\": -40.936537653899094,\n    \"linear_value\": 8146.370993125919,\n    \"signed_error\": 0.10217098822595652,\n    \"absolute_error\": 0.10217098822595652,\n    \"relative_change_error\": 0.0025020833324652784\n  },\n  \"discount_ladder\": [\n    {\n      \"shock\": 0.01,\n      \"baseline_value\": 8187.307530779819,\n      \"exact_change\": -399.2997000657699,\n      \"linear_change\": -409.3653765389909,\n      \"linear_value\": 7777.942154240827,\n      \"signed_error\": 10.065676473221025,\n      \"absolute_error\": 10.065676473221025,\n      \"relative_change_error\": 0.025208324653294447\n    },\n    {\n      \"shock\": 0.005,\n      \"baseline_value\": 8187.307530779819,\n      \"exact_change\": -202.14534318604817,\n      \"linear_change\": -204.68268826949546,\n      \"linear_value\": 7982.624842510323,\n      \"signed_error\": 2.5373450834473066,\n      \"absolute_error\": 2.5373450834473066,\n      \"relative_change_error\": 0.012552082790806685\n    },\n    {\n      \"shock\": 0.001,\n      \"baseline_value\": 8187.307530779819,\n      \"exact_change\": -40.83436666567314,\n      \"linear_change\": -40.936537653899094,\n      \"linear_value\": 8146.370993125919,\n      \"signed_error\": 0.10217098822595652,\n      \"absolute_error\": 0.10217098822595652,\n      \"relative_change_error\": 0.0025020833324652784\n    },\n    {\n      \"shock\": 0.0001,\n      \"baseline_value\": 8187.307530779819,\n      \"exact_change\": -4.09263052249615,\n      \"linear_change\": -4.093653765389909,\n      \"linear_value\": 8183.213877014428,\n      \"signed_error\": 0.0010232428937595676,\n      \"absolute_error\": 0.0010232428937595676,\n      \"relative_change_error\": 0.00025002083333324653\n    }\n  ],\n  \"revenue\": {\n    \"baseline_value\": 3000.0,\n    \"exact_change\": 97.5,\n    \"linear_change\": 100.0,\n    \"linear_value\": 3100.0,\n    \"signed_error\": -2.5,\n    \"absolute_error\": 2.5,\n    \"relative_change_error\": 0.02564102564102564\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.3 reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_9_03.py",
+        "check_section_9_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "top report schema",
+      "kind": "CLI schema",
+      "actual": [
+        "discount_10bp",
+        "discount_ladder",
+        "quadratic",
+        "revenue"
+      ],
+      "independent_expected": [
+        "discount_10bp",
+        "discount_ladder",
+        "quadratic",
+        "revenue"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback baseline_value",
+      "kind": "CLI numerical",
+      "actual": 9.0,
+      "independent_expected": 9.0,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback exact_change",
+      "kind": "CLI numerical",
+      "actual": 1.240000000000002,
+      "independent_expected": 1.240000000000002,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback linear_change",
+      "kind": "CLI numerical",
+      "actual": 1.2000000000000002,
+      "independent_expected": 1.2000000000000002,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback linear_value",
+      "kind": "CLI numerical",
+      "actual": 10.2,
+      "independent_expected": 10.2,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback signed_error",
+      "kind": "CLI numerical",
+      "actual": 0.04000000000000192,
+      "independent_expected": 0.04000000000000192,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback absolute_error",
+      "kind": "CLI numerical",
+      "actual": 0.04000000000000192,
+      "independent_expected": 0.04000000000000192,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "quadratic rounded callback relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.03225806451613053,
+      "independent_expected": 0.03225806451613053,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp exact_change",
+      "kind": "CLI numerical",
+      "actual": -40.83436666567314,
+      "independent_expected": -40.83436666567314,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp linear_change",
+      "kind": "CLI numerical",
+      "actual": -40.936537653899094,
+      "independent_expected": -40.936537653899094,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp linear_value",
+      "kind": "CLI numerical",
+      "actual": 8146.370993125919,
+      "independent_expected": 8146.370993125919,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp signed_error",
+      "kind": "CLI numerical",
+      "actual": 0.10217098822595652,
+      "independent_expected": 0.10217098822595652,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp absolute_error",
+      "kind": "CLI numerical",
+      "actual": 0.10217098822595652,
+      "independent_expected": 0.10217098822595652,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "discount10bp relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.0025020833324652784,
+      "independent_expected": 0.0025020833324652784,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "prescribed ladder length",
+      "kind": "CLI schema",
+      "actual": 4,
+      "independent_expected": 4,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 shock",
+      "kind": "CLI numerical",
+      "actual": 0.01,
+      "independent_expected": 0.01,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 exact_change",
+      "kind": "CLI numerical",
+      "actual": -399.2997000657699,
+      "independent_expected": -399.2997000657699,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 linear_change",
+      "kind": "CLI numerical",
+      "actual": -409.3653765389909,
+      "independent_expected": -409.3653765389909,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 linear_value",
+      "kind": "CLI numerical",
+      "actual": 7777.942154240827,
+      "independent_expected": 7777.942154240827,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 signed_error",
+      "kind": "CLI numerical",
+      "actual": 10.065676473221025,
+      "independent_expected": 10.065676473221025,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 absolute_error",
+      "kind": "CLI numerical",
+      "actual": 10.065676473221025,
+      "independent_expected": 10.065676473221025,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.01 relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.025208324653294447,
+      "independent_expected": 0.025208324653294447,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 shock",
+      "kind": "CLI numerical",
+      "actual": 0.005,
+      "independent_expected": 0.005,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 exact_change",
+      "kind": "CLI numerical",
+      "actual": -202.14534318604817,
+      "independent_expected": -202.14534318604817,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 linear_change",
+      "kind": "CLI numerical",
+      "actual": -204.68268826949546,
+      "independent_expected": -204.68268826949546,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 linear_value",
+      "kind": "CLI numerical",
+      "actual": 7982.624842510323,
+      "independent_expected": 7982.624842510323,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 signed_error",
+      "kind": "CLI numerical",
+      "actual": 2.5373450834473066,
+      "independent_expected": 2.5373450834473066,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 absolute_error",
+      "kind": "CLI numerical",
+      "actual": 2.5373450834473066,
+      "independent_expected": 2.5373450834473066,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.005 relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.012552082790806685,
+      "independent_expected": 0.012552082790806685,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 shock",
+      "kind": "CLI numerical",
+      "actual": 0.001,
+      "independent_expected": 0.001,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 exact_change",
+      "kind": "CLI numerical",
+      "actual": -40.83436666567314,
+      "independent_expected": -40.83436666567314,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 linear_change",
+      "kind": "CLI numerical",
+      "actual": -40.936537653899094,
+      "independent_expected": -40.936537653899094,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 linear_value",
+      "kind": "CLI numerical",
+      "actual": 8146.370993125919,
+      "independent_expected": 8146.370993125919,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 signed_error",
+      "kind": "CLI numerical",
+      "actual": 0.10217098822595652,
+      "independent_expected": 0.10217098822595652,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 absolute_error",
+      "kind": "CLI numerical",
+      "actual": 0.10217098822595652,
+      "independent_expected": 0.10217098822595652,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.001 relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.0025020833324652784,
+      "independent_expected": 0.0025020833324652784,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 shock",
+      "kind": "CLI numerical",
+      "actual": 0.0001,
+      "independent_expected": 0.0001,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 baseline_value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 exact_change",
+      "kind": "CLI numerical",
+      "actual": -4.09263052249615,
+      "independent_expected": -4.09263052249615,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 linear_change",
+      "kind": "CLI numerical",
+      "actual": -4.093653765389909,
+      "independent_expected": -4.093653765389909,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 linear_value",
+      "kind": "CLI numerical",
+      "actual": 8183.213877014428,
+      "independent_expected": 8183.213877014428,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 signed_error",
+      "kind": "CLI numerical",
+      "actual": 0.0010232428937595676,
+      "independent_expected": 0.0010232428937595676,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 absolute_error",
+      "kind": "CLI numerical",
+      "actual": 0.0010232428937595676,
+      "independent_expected": 0.0010232428937595676,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "ladder 0.0001 relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.00025002083333324653,
+      "independent_expected": 0.00025002083333324653,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue schema",
+      "kind": "CLI schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue baseline_value",
+      "kind": "CLI numerical",
+      "actual": 3000.0,
+      "independent_expected": 3000.0,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue exact_change",
+      "kind": "CLI numerical",
+      "actual": 97.5,
+      "independent_expected": 97.5,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue linear_change",
+      "kind": "CLI numerical",
+      "actual": 100.0,
+      "independent_expected": 100.0,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue linear_value",
+      "kind": "CLI numerical",
+      "actual": 3100.0,
+      "independent_expected": 3100.0,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue signed_error",
+      "kind": "CLI numerical",
+      "actual": -2.5,
+      "independent_expected": -2.5,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue absolute_error",
+      "kind": "CLI numerical",
+      "actual": 2.5,
+      "independent_expected": 2.5,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "revenue relative_change_error",
+      "kind": "CLI numerical",
+      "actual": 0.02564102564102564,
+      "independent_expected": 0.02564102564102564,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 schema",
+      "kind": "caller schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 shock",
+      "kind": "caller halving source fields",
+      "actual": 0.01,
+      "independent_expected": 0.01,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 baseline_value",
+      "kind": "caller halving source fields",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 exact_change",
+      "kind": "caller halving source fields",
+      "actual": -399.2997000657699,
+      "independent_expected": -399.2997000657699,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 linear_change",
+      "kind": "caller halving source fields",
+      "actual": -409.3653765389909,
+      "independent_expected": -409.3653765389909,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 linear_value",
+      "kind": "caller halving source fields",
+      "actual": 7777.942154240827,
+      "independent_expected": 7777.942154240827,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 signed_error",
+      "kind": "caller halving source fields",
+      "actual": 10.065676473221025,
+      "independent_expected": 10.065676473221025,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 absolute_error",
+      "kind": "caller halving source fields",
+      "actual": 10.065676473221025,
+      "independent_expected": 10.065676473221025,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.01 relative_change_error",
+      "kind": "caller halving source fields",
+      "actual": 0.025208324653294447,
+      "independent_expected": 0.025208324653294447,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 schema",
+      "kind": "caller schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 shock",
+      "kind": "caller halving source fields",
+      "actual": 0.005,
+      "independent_expected": 0.005,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 baseline_value",
+      "kind": "caller halving source fields",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 exact_change",
+      "kind": "caller halving source fields",
+      "actual": -202.14534318604817,
+      "independent_expected": -202.14534318604817,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 linear_change",
+      "kind": "caller halving source fields",
+      "actual": -204.68268826949546,
+      "independent_expected": -204.68268826949546,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 linear_value",
+      "kind": "caller halving source fields",
+      "actual": 7982.624842510323,
+      "independent_expected": 7982.624842510323,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 signed_error",
+      "kind": "caller halving source fields",
+      "actual": 2.5373450834473066,
+      "independent_expected": 2.5373450834473066,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 absolute_error",
+      "kind": "caller halving source fields",
+      "actual": 2.5373450834473066,
+      "independent_expected": 2.5373450834473066,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.005 relative_change_error",
+      "kind": "caller halving source fields",
+      "actual": 0.012552082790806685,
+      "independent_expected": 0.012552082790806685,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 schema",
+      "kind": "caller schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 shock",
+      "kind": "caller halving source fields",
+      "actual": 0.0025,
+      "independent_expected": 0.0025,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 baseline_value",
+      "kind": "caller halving source fields",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 exact_change",
+      "kind": "caller halving source fields",
+      "actual": -101.70436756529394,
+      "independent_expected": -101.70436756529394,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 linear_change",
+      "kind": "caller halving source fields",
+      "actual": -102.34134413474773,
+      "independent_expected": -102.34134413474773,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 linear_value",
+      "kind": "caller halving source fields",
+      "actual": 8084.966186645071,
+      "independent_expected": 8084.966186645071,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 signed_error",
+      "kind": "caller halving source fields",
+      "actual": 0.6369765694538052,
+      "independent_expected": 0.6369765694538052,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 absolute_error",
+      "kind": "caller halving source fields",
+      "actual": 0.6369765694538052,
+      "independent_expected": 0.6369765694538052,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.0025 relative_change_error",
+      "kind": "caller halving source fields",
+      "actual": 0.006263020799425039,
+      "independent_expected": 0.006263020799425039,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 schema",
+      "kind": "caller schema",
+      "actual": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "independent_expected": [
+        "absolute_error",
+        "baseline_value",
+        "exact_change",
+        "linear_change",
+        "linear_value",
+        "relative_change_error",
+        "shock",
+        "signed_error"
+      ],
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 shock",
+      "kind": "caller halving source fields",
+      "actual": 0.00125,
+      "independent_expected": 0.00125,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 baseline_value",
+      "kind": "caller halving source fields",
+      "actual": 8187.307530779819,
+      "independent_expected": 8187.307530779819,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 exact_change",
+      "kind": "caller halving source fields",
+      "actual": -51.011096339674594,
+      "independent_expected": -51.011096339674594,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 linear_change",
+      "kind": "caller halving source fields",
+      "actual": -51.170672067373864,
+      "independent_expected": -51.170672067373864,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 linear_value",
+      "kind": "caller halving source fields",
+      "actual": 8136.136858712444,
+      "independent_expected": 8136.136858712444,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 signed_error",
+      "kind": "caller halving source fields",
+      "actual": 0.15957572769927397,
+      "independent_expected": 0.15957572769927397,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 absolute_error",
+      "kind": "caller halving source fields",
+      "actual": 0.15957572769927397,
+      "independent_expected": 0.15957572769927397,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "caller halving 0.00125 relative_change_error",
+      "kind": "caller halving source fields",
+      "actual": 0.003128255206214059,
+      "independent_expected": 0.003128255206214059,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "halving error ratio 0",
+      "kind": "caller error-ratio comparison",
+      "actual": 3.967011242927005,
+      "independent_expected": 3.967011242927005,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "halving error ratio 1",
+      "kind": "caller error-ratio comparison",
+      "actual": 3.9834198071414617,
+      "independent_expected": 3.9834198071414617,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "halving error ratio 2",
+      "kind": "caller error-ratio comparison",
+      "actual": 3.9916883265242555,
+      "independent_expected": 3.9916883265242555,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "Exercise9 nominal revenue105",
+      "kind": "exercise source field",
+      "actual": 3097.5,
+      "independent_expected": 3097.5,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "Exercise9 nominal slope100",
+      "kind": "exercise source field",
+      "actual": 20.0,
+      "independent_expected": 20,
+      "relative_tolerance": 5e-14,
+      "absolute_tolerance": 1e-12,
+      "passed": true
+    }
+  ],
+  "passed": 103,
+  "failed": 0,
+  "halving_study": [
+    {
+      "shock": 0.01,
+      "signed_error": 10.065676473221025,
+      "exact_change": -399.2997000657699,
+      "linear_change": -409.3653765389909,
+      "ratio_to_next": 3.967011242927005
+    },
+    {
+      "shock": 0.005,
+      "signed_error": 2.5373450834473066,
+      "exact_change": -202.14534318604817,
+      "linear_change": -204.68268826949546,
+      "ratio_to_next": 3.9834198071414617
+    },
+    {
+      "shock": 0.0025,
+      "signed_error": 0.6369765694538052,
+      "exact_change": -101.70436756529394,
+      "linear_change": -102.34134413474773,
+      "ratio_to_next": 3.9916883265242555
+    },
+    {
+      "shock": 0.00125,
+      "signed_error": 0.15957572769927397,
+      "exact_change": -51.011096339674594,
+      "linear_change": -51.170672067373864
+    }
+  ],
+  "hashes_verified_before": true,
+  "hashes_verified_after": true,
+  "limits": "Complete default CLI andselectedcallerhalvingstudy. Generic polynomial expectations followroundedcallbackpoints/values andnominalh;discount fields followanalyticrepresented-inputmodel. Not universalconvergence/conditioning/model/platform/independentacceptance."
+}
