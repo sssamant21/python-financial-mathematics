@@ -383,3 +383,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## F32 — Shared-input representation follow-up
 
 [Evidence](shared-input-f32-review/README.md):16baseline passes/22failures reproduced identically;three explicit Decimal guards now yield38/38 corrected predicates in both runs and34/34 regression cases with256 predicates. The33 prior supported cases retain independent rational first-crossing/balance references;the formerly crashing string fixture is now a validation diagnostic. Historical failure evidence retained;no new exercise/workflow or historical-method counts added. Representation crash addressed,F32 broader parsing/context/currency/resource integration remains OPEN,as doF28/F209/F165/F185 andV10/V13/V14/independent/model/platform/release/canonical acceptance. Next:F209 Section20.8 iterable shape/order boundary review.
+
+
+## F209 — Scoped collection/order boundary follow-up
+
+[Evidence](collection-f209-review/README.md):14baseline passes/21 new policy failures reproduced;35/35 corrected predicates pass twice,with45 retained source predicates,one supplemental units check andfive commands. Reject Mapping/Set/text/buffer before iteration;retain list/tuple/generator/range/reversed/explicit-values-view behavior,late iterator exception identity,ownership and selected rational NPVs. Historical three design observations stay separate. F209 remains OPEN for hidden upstream order/provenance and ingestion resources;F28/F32/F165/F185 andbroader model/platform/release/independent/canonical acceptance remainOPEN. No new answer/workflow/historical-method counts. Next:V10 simulation/statistical evidence crosswalk,starting18.1.

@@ -1,0 +1,162 @@
+{
+  "records": [
+    {
+      "name": "Discounted sensitivity schema",
+      "kind": "CLI schema",
+      "passed": true
+    },
+    {
+      "name": "Discounted sensitivity value",
+      "kind": "CLI numerical",
+      "actual": 8187.307530779819,
+      "expected": 8187.307530779819,
+      "passed": true
+    },
+    {
+      "name": "Discounted sensitivity absolute",
+      "kind": "CLI numerical",
+      "actual": -40936.53765389909,
+      "expected": -40936.53765389909,
+      "passed": true
+    },
+    {
+      "name": "Discounted sensitivity normalized_rate",
+      "kind": "CLI numerical",
+      "actual": 5.0,
+      "expected": 5.0,
+      "passed": true
+    },
+    {
+      "name": "Discounted sensitivity elasticity",
+      "kind": "CLI numerical",
+      "actual": -0.2,
+      "expected": -0.2,
+      "passed": true
+    },
+    {
+      "name": "1bp shock schema",
+      "kind": "CLI schema",
+      "passed": true
+    },
+    {
+      "name": "1bp shock first_order",
+      "kind": "CLI numerical",
+      "actual": -4.093653765389909,
+      "expected": -4.093653765389909,
+      "passed": true
+    },
+    {
+      "name": "1bp shock exact",
+      "kind": "CLI numerical",
+      "actual": -4.09263052249615,
+      "expected": -4.09263052249615,
+      "passed": true
+    },
+    {
+      "name": "Demand schema",
+      "kind": "CLI schema",
+      "passed": true
+    },
+    {
+      "name": "Demand quantity",
+      "kind": "CLI numerical",
+      "actual": 4.47213595499958,
+      "expected": 4.47213595499958,
+      "passed": true
+    },
+    {
+      "name": "Demand absolute",
+      "kind": "CLI numerical",
+      "actual": -0.33541019662496846,
+      "expected": -0.33541019662496846,
+      "passed": true
+    },
+    {
+      "name": "Demand elasticity",
+      "kind": "CLI numerical",
+      "actual": -1.5,
+      "expected": -1.5,
+      "passed": true
+    },
+    {
+      "name": "Portfolio schema",
+      "kind": "CLI schema",
+      "passed": true
+    },
+    {
+      "name": "Portfolio value",
+      "kind": "CLI numerical",
+      "actual": 2000.0,
+      "expected": 2000.0,
+      "passed": true
+    },
+    {
+      "name": "Portfolio absolute",
+      "kind": "CLI numerical",
+      "actual": 20.0,
+      "expected": 20.0,
+      "passed": true
+    },
+    {
+      "name": "Portfolio elasticity",
+      "kind": "CLI numerical",
+      "actual": 0.5,
+      "expected": 0.5,
+      "passed": true
+    },
+    {
+      "name": "printed value",
+      "kind": "printed answer",
+      "expected": "8187.307531",
+      "found": true,
+      "passed": true
+    },
+    {
+      "name": "printed derivative",
+      "kind": "printed answer",
+      "expected": "-40936.537654",
+      "found": true,
+      "passed": true
+    },
+    {
+      "name": "printed one bp",
+      "kind": "printed answer",
+      "expected": "-4.093654",
+      "found": true,
+      "passed": true
+    },
+    {
+      "name": "runnable command fence and inline code",
+      "kind": "static markup",
+      "passed": true
+    },
+    {
+      "name": "one percent of four percent",
+      "kind": "supplemental unit derivation",
+      "actual": "1/2500",
+      "expected": "1/2500",
+      "passed": true
+    },
+    {
+      "name": "one percentage point",
+      "kind": "supplemental unit derivation",
+      "actual": "1/20",
+      "expected": "1/20",
+      "passed": true
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "source_cli": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/tmpws2rgw0y/section_9_01.py"
+    ],
+    "returncode": 0,
+    "stdout": "Discounted sensitivity: {'value': 8187.307530779819, 'absolute': -40936.53765389909, 'normalized_rate': 5.0, 'elasticity': -0.2}\n1bp shock: {'first_order': -4.093653765389909, 'exact': -4.09263052249615}\nDemand: {'quantity': 4.47213595499958, 'absolute': -0.33541019662496846, 'elasticity': -1.5}\nPortfolio: {'value': 2000.0, 'absolute': 20.0, 'elasticity': 0.5}\n",
+    "stderr": ""
+  },
+  "oracle": "90/140-digit independent Decimal exp discount references; demand closed form uses sqrt rather than source logarithm/exponential scaling; exact rational units.",
+  "limits": "Lab default CLI and selected printed answers/static command fence. No comprehensive arbitrary-input,rendered visual,extension,financial/model/platform or independent acceptance.",
+  "manuscript_checks_executed": true
+}

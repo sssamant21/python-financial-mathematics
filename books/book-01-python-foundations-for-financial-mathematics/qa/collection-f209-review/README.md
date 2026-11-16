@@ -1,0 +1,15 @@
+# F209 — Cash-flow collection shape/order boundary
+
+Baseline `00b08db5c71f1f72f53395728d25dcf1d4fffcb0`, corrected source `2ee81822af67357087e2af6193348f2b3c5dbdf8`. [Runnable policy probes](review.py), [initial](initial.json), [identical baseline replay](initial-replay.json), [corrected](corrected.json), [corrected replay](corrected-replay.json), [retained regression runner](regression.py), [regression results](results.json), [policy/disposition records](policy-records.json), [source manifest](publication-verification.json).
+
+Both baseline runs have **14 passed /21 failed new policy predicates**. These comprise18 API-level acceptances across nine mapping/set/buffer families,two text diagnostic-category mismatches(text already rejected),andone mapping iteration side effect. The [original three design observations](../chapter-20-input-review/README.md) remain historical design observations;they are not retrospectively labelled failed financial tests. Their previous acceptance motivated an explicit surrounding positional-input policy.
+
+The exact source now rejects `Mapping`, `Set`, text and byte/buffer collections before calling `iter`. Lists,tuples,generators,ranges,reversed iterators and explicitly selected ordered values views remain supported. Existing finite-element/rate/financial calculations are unchanged. Actual late iterator TypeError/RuntimeError identity still propagates;rejected mapping iteration is not invoked;returned lists remain fresh and caller inputs unchanged.
+
+**35 predicates pass in both corrected runs**:20shape-policy checks,six retained iterable families,three consumption contracts,two ownership checks andfour independent rational NPV comparisons. Rational references use represented rate powers and1e-10 currency-amount tolerance for selected ordinary cases. The retained regression separately passes45 source predicates,one supplemental unit predicate andfive source commands. Its14 existing methods run direct/module/optimized(42invocations);none is a new historical unique method. Three updated shape observations remain separate from the counted checks. No new answer/exercise/workflow totals are added.
+
+**F209 remains OPEN ORDER/RESOURCE INTEGRATION**:a generator can hide unordered upstream data;validation cannot infer its financial period meaning. Unlimited materialization/resource exposure remains. These guards do not certify financial provenance,currency/calendar/timing,all-range NPV accuracy or caller security. F28,F32 broader parsing/context,F165/F185 and independent/model/platform/release/canonical acceptance remain open.
+
+Reproduce baseline with `python books/book-01-python-foundations-for-financial-mathematics/qa/collection-f209-review/review.py baseline initial`;after fetching source candidate use mode `corrected` and output stem `corrected`/`corrected-replay`. `regression.py` executes the current checked-out manuscript;its fence hash must match this record.
+
+Next:V10 simulation/statistical evidence inventory,starting Chapter18.1's model/generator/seed assumptions crosswalk. This feasible queue is separate from external independent acceptance;Book1 is not complete.

@@ -115,3 +115,8 @@ These extend COV-01–COV-51. No new defect or independent sign-off is claimed. 
 ### Later V-210 applied-project alignment
 
 [V-210](chapter-09-applied-alignment-followup-r28.md) maps all six Exercise25 tasks to direct native report fields,independent rational-series seven-grid/bound expectations,separate analytical counterexample and caller finite JSON export.119 recorded predicates/six compiled/six commands pass. PriorV204 schema/ownership evidence reused only after source/checker hash equality. File persistence is QA-caller work;financial lineage and independent acceptance remain open. Next:Chapter9 lab/extension audit,starting9.1 statedlab/source/check/evidence crosswalk.38 selected COV categories remain partial,none closed.
+
+
+### Later V-211 Section9.1 lab/source crosswalk
+
+[V-211](chapter-09-lab-01-followup-r29.md) records sixlabunits/tenexercise dispositions,actual four-dictionary CLI output,documented commands,printedrounding andstaticrunbookmarkup. Baseline20/2replays preserved;corrected22predicates/threecompiled/fourcommands pass. Defaultchecker18CLI/unit predicates excludes manuscriptchecks. Demand/portfolio sensitivity outputs distinguished from discounted-shock API;independent reviewer/model/platform/extension/otherlab acceptance remains open. Next9.2labcrosswalk.38selectedCOVcategoriespartial,noneclosed.

@@ -1,0 +1,23 @@
+"""Stage pinned lab module/checks/manuscript; new checker fixed to source candidate.
+Usage: python THIS repository_root source_revision probe|scope output.json
+"""
+from pathlib import Path
+import sys,json,subprocess,tempfile,hashlib,platform,py_compile
+r=Path(sys.argv[1]).resolve();pin=sys.argv[2];mode=sys.argv[3];out=Path(sys.argv[4]).resolve();candidate='2ee81822af67357087e2af6193348f2b3c5dbdf8';prefix='books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/';names=['section_9_01.py','check_section_9_01.py','check_section_01_lab_alignment.py'];md='9.01-absolute-and-relative-sensitivity.md';manifest=[];commands=[]
+def blob(raw):return hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+with tempfile.TemporaryDirectory() as tmp:
+ t=Path(tmp)
+ for name in names+[md]:
+  path=prefix+('code/' if name.endswith('.py') else '')+name;rev=candidate if name==names[-1] else pin
+  raw=subprocess.check_output(['git','show',rev+':'+path],cwd=r);sha=subprocess.check_output(['git','rev-parse',rev+':'+path],cwd=r,text=True).strip();assert blob(raw)==sha;(t/name).write_bytes(raw);manifest.append(dict(path=path,sha=sha,revision=rev))
+ for name in names:py_compile.compile(str(t/name),doraise=True)
+ todo=[names[-1]] if mode=='probe' else names
+ for name in todo:
+  argv=[sys.executable,name]+([md,str(out.with_name(out.stem+'-predicates.json'))] if name==names[-1] else [])
+  z=subprocess.run(argv,cwd=t,capture_output=True,text=True,timeout=60);commands.append(dict(argv=argv,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+ if mode=='scope':
+  z=subprocess.run([sys.executable,names[-1]],cwd=t,capture_output=True,text=True,timeout=60);commands.append(dict(argv=[sys.executable,names[-1]],returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+ after=all(blob((t/Path(x['path']).name).read_bytes())==x['sha'] for x in manifest)
+ result=dict(source_revision=pin,checker_revision=candidate,mode=mode,manifest=manifest,compiled=names,commands=commands,hashes_verified_before=True,hashes_verified_after=after,python=sys.version,platform=platform.platform(),limits='Default CLI/current manuscript scoped lab crosswalk; fullbook runtime counted separately.')
+ out.write_text(json.dumps(result,indent=2)+'\n');print(pin[:8],mode,[x['returncode'] for x in commands]);assert after
+ raise SystemExit(any(x['returncode']!=0 for x in commands))

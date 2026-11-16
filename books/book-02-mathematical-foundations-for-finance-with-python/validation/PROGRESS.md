@@ -1,7 +1,7 @@
 # Book 02 — Validation Progress Tracker
 
 **Updated:** 2026-11-16
-**Overall status:** In progress — V-210 applied-project scoped alignment pass; V-208 remains latest full candidate Linux pass (639/426/640) at older pin. Chapter-lab/extension and broader acceptance gaps open.
+**Overall status:** In progress — V-211 Section9.1 lab/source scoped pass and V-212 full candidate Linux pass (642/429/643). Chapter-lab/extension and broader acceptance gaps open.
 
 This tracker records evidence and open work. A passed script is not a validated chapter, an independent review, or canonical approval. Update the evidence and revision whenever a status changes; do not treat a draft, missing result, or an unchecked item as a pass.
 
@@ -10,8 +10,8 @@ This tracker records evidence and open work. A passed script is not a validated 
 | Workstream | Status | Progress / evidence |
 |---|---|---|
 | Numbered manuscript inventory | Initial inventory complete | 215/215 section files found across 21 chapters at revision `a20484672beae64e7c61037af0b11baba2fd7e54`; content completeness and index consistency not yet audited. |
-| Python compilation | Full candidate Linux pass | 639/639 at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`. [V-208](runtime-refresh-2026-11-16-r26.md). |
-| Automated script execution | Full candidate Linux pass | 426/426 at `7ae2227b1f243fe8bb2af7e1f437168fe15ff213`; 640 required blobs verified before/after. [V-208](runtime-refresh-2026-11-16-r26.md). |
+| Python compilation | Full candidate Linux pass | 642/642 at `2ee81822af67357087e2af6193348f2b3c5dbdf8`. [V-212](runtime-refresh-2026-11-16-r29.md). |
+| Automated script execution | Full candidate Linux pass | 429/429 at `2ee81822af67357087e2af6193348f2b3c5dbdf8`;643 required blobs verified before/after. [V-212](runtime-refresh-2026-11-16-r29.md). |
 | Initial failures | Fixed and rerun locally; independent review pending | Six failed checks were addressed; the follow-up pass returned zero exits. Numerical and cross-platform review remains open. |
 | Test coverage and dependencies | Mapping complete; gaps open | Filename mapping covers 215 sections; substantive mapping covers 215/215 sections (all Chapters 1–21), with ninety recorded gap categories and no coverage certification. [4.1–4.6 map](coverage-sections-04-01-06.md) · [4.7–4.8 map](coverage-sections-04-07-08.md). Focused [Chapter 21](chapter-21-capstone-review.md), [Chapter 20](chapter-20-boundary-review.md) [Chapter 19](chapter-19-continuous-time-review.md) and [Chapter 18](chapter-18-solver-boundary-review.md) reviews identified fixes; gap remediation and dependency review remain pending. [All-section coverage index](substantive-coverage-index.md). [Inventory](section-check-inventory.md). |
 | Mathematical and numerical review | Pending | Review derivations, examples, solutions, assumptions, error bounds and numerical edge cases, including the six fixes. |
@@ -1658,3 +1658,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-210 checkpoint — Applied-project six-task alignment
 
 [Evidence](chapter-09-applied-alignment-followup-r28.md):six Exercise25 task records;119predicates pass(89direct numerical,14bound flags,4metadata,6cross-module projections,3actual rejections,2caller exports,1supplemental counterexample). Six files compiled/six scoped commands/three checkers pass;probe/replay/scoped results and actual finite JSON exports agree exactly,hashes verified. Independent Fraction exponential-series references cover exact seven-shock grid;native project fullbaseline distinguished from assessment summary. Caller export and analytical non-universal-improvement example not native features. PriorV204 unchanged source/checker identities verified and historical290predicates reused at originalscope,not recounted. Fresh641/428/642inventory notfullruntime;V208older-pin639/426/640remains latestfull. Next:Chapter9lab/extension audit starting9.1lab/source/check/evidence crosswalk;broaderprovenance/resources/model/platform/release/independent/canonical acceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-211 checkpoint — Section9.1 lab/source crosswalk
+
+[Evidence](chapter-09-lab-01-followup-r29.md):two pinned baseline20pass/twofailure probes retain misrounded derivative and escaped-command markup. Corrected22predicates pass identically inprobe/replay/scope;threefilescompiled/fourcommands pass,hashes verified.12CLI numerical fields/fourschemas/threeprintedanswers/onestaticmarkup/twosupplementalunits separated. Defaultchecker18CLI/unit predicates explicitly excludes manuscriptchecks. Numerical helper sources unchanged;printed derivative fixedto-40936.537654 andeightbackticks repaired. Sixlabunits/tenexercise records distinguish directCLI,analyticalproofs andcallerunitwork;no demand/portfolio finite-shock API implied. Next9.2lab/source/acceptancecrosswalk;broaderchapterlab/extension/provenance/resources/model/platform/independentacceptanceopen.38COVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-212 checkpoint — Full pinned candidate Linux refresh
+
+[Fullruntime](runtime-refresh-2026-11-16-r29.md) at `2ee81822af67357087e2af6193348f2b3c5dbdf8`:642/642Pythonfilescompiled,429/429scripts passed,643/643requiredblobhashesverifiedbefore/after. IncludesV209/V210/V211checkeradditions sinceV208. V211default18CLI/unitchecks differfrom22manuscript-scopedchecks;priorfailures/replaysremainretained. Finalmanuscriptclarification changesnoPython/fixtureblobs;643identitiesverified. Next9.2lab/exercise/acceptancecrosswalk;broaderlab/extension/provenance/resource/model/platform/release/independent/canonicalacceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.

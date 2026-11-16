@@ -1,10 +1,10 @@
 # Book 02 — Remaining Review and Release Checklist
 
 **Date:** 2026-11-16
-**Full-runtime candidate source revision:** `7ae2227b1f243fe8bb2af7e1f437168fe15ff213` (V-208)
-**Latest scoped source:** V-210 five existing Python sources at `e9ec4a06368bd666e2e50ed77efdb224d5faad0e` plus separately blob-pinned checker;[manifest](chapter-09-applied-alignment-publication-r28.json).
+**Full-runtime candidate source revision:** `2ee81822af67357087e2af6193348f2b3c5dbdf8` (V-212)
+**Latest scoped source:** V-211 manuscript at `c9e5ed28e2485ed3dbeb6fe6eaba4b7b9a59b098`, checker at `2ee81822af67357087e2af6193348f2b3c5dbdf8`;[four-source manifest](chapter-09-lab-01-publication-r29.json).
 **Latest static checkpoint:** V-144 at `66ae5eaf6d8c0ea6fcd301407001c13bdab46341`;[assessment mapping and runtime blocker](chapter-08-assessment-checkpoint/README.md).
-**Disposition:** V-210 applied-project scoped alignment pass; V-208 older-pin full candidate Linux pass. Chapter-lab/extension, independent/platform/release acceptance remains open.
+**Disposition:** V-211 lab/source scoped pass;V-212 full candidate Linux pass. Remaining chapter-lab/extension and independent/model/platform/release acceptance open.
 
 ## Reconciled evidence
 
@@ -1532,3 +1532,13 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-210 checkpoint — Applied-project six-task alignment
 
 [Evidence](chapter-09-applied-alignment-followup-r28.md):six Exercise25 task records;119predicates pass(89direct numerical,14bound flags,4metadata,6cross-module projections,3actual rejections,2caller exports,1supplemental counterexample). Six files compiled/six scoped commands/three checkers pass;probe/replay/scoped results and actual finite JSON exports agree exactly,hashes verified. Independent Fraction exponential-series references cover exact seven-shock grid;native project fullbaseline distinguished from assessment summary. Caller export and analytical non-universal-improvement example not native features. PriorV204 unchanged source/checker identities verified and historical290predicates reused at originalscope,not recounted. Fresh641/428/642inventory notfullruntime;V208older-pin639/426/640remains latestfull. Next:Chapter9lab/extension audit starting9.1lab/source/check/evidence crosswalk;broaderprovenance/resources/model/platform/release/independent/canonical acceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-211 checkpoint — Section9.1 lab/source crosswalk
+
+[Evidence](chapter-09-lab-01-followup-r29.md):two pinned baseline20pass/twofailure probes retain misrounded derivative and escaped-command markup. Corrected22predicates pass identically inprobe/replay/scope;threefilescompiled/fourcommands pass,hashes verified.12CLI numerical fields/fourschemas/threeprintedanswers/onestaticmarkup/twosupplementalunits separated. Defaultchecker18CLI/unit predicates explicitly excludes manuscriptchecks. Numerical helper sources unchanged;printed derivative fixedto-40936.537654 andeightbackticks repaired. Sixlabunits/tenexercise records distinguish directCLI,analyticalproofs andcallerunitwork;no demand/portfolio finite-shock API implied. Next9.2lab/source/acceptancecrosswalk;broaderchapterlab/extension/provenance/resources/model/platform/independentacceptanceopen.38COVcategoriespartial,noneclosed;Book1separate.
+
+
+## V-212 checkpoint — Full pinned candidate Linux refresh
+
+[Fullruntime](runtime-refresh-2026-11-16-r29.md) at `2ee81822af67357087e2af6193348f2b3c5dbdf8`:642/642Pythonfilescompiled,429/429scripts passed,643/643requiredblobhashesverifiedbefore/after. IncludesV209/V210/V211checkeradditions sinceV208. V211default18CLI/unitchecks differfrom22manuscript-scopedchecks;priorfailures/replaysremainretained. Finalmanuscriptclarification changesnoPython/fixtureblobs;643identitiesverified. Next9.2lab/exercise/acceptancecrosswalk;broaderlab/extension/provenance/resource/model/platform/release/independent/canonicalacceptanceopen.38selectedCOVcategoriespartial,noneclosed;Book1separate.
