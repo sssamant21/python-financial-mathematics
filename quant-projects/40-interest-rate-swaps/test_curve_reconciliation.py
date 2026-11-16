@@ -66,5 +66,19 @@ class CurveReconciliationTests(unittest.TestCase):
         self.assertAlmostEqual(result['net_pv'], f-k, places=7)
 
 
+    def test_notional_linearity_and_payer_receiver_sign(self):
+        base = value_swap(250_000, .035, self.a, self.d)
+        scaled = value_swap(1_000_000, .035, self.a, self.d)
+        receiver = value_swap(1_000_000, .035, self.a, self.d, pay_fixed=False)
+        self.assertAlmostEqual(scaled['net_pv'], 4 * base['net_pv'], places=7)
+        self.assertAlmostEqual(receiver['net_pv'], -scaled['net_pv'], places=7)
+        self.assertAlmostEqual(scaled['par_rate'], base['par_rate'], places=12)
+
+    def test_extreme_finite_input_overflow_rejected(self):
+        # Finite inputs can still overflow in intermediate PV arithmetic.
+        with self.assertRaises(ValueError):
+            value_swap(1e308, 1e308, [0.5], [0.98])
+
+
 if __name__ == '__main__':
     unittest.main()
