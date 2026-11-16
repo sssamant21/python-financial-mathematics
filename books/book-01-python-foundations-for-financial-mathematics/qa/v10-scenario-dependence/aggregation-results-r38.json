@@ -1,0 +1,165 @@
+{
+  "scope": "exact small-integer aggregation/overlap references;not Python execution",
+  "atomic_pnl": [
+    10,
+    2,
+    -2,
+    -10
+  ],
+  "atomic_probabilities": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "atomic_expected": {
+    "expected_terminal": 100,
+    "expected_pnl": 0,
+    "loss_probability": 0.5
+  },
+  "cases": [
+    {
+      "name": "overlapping_event_conditional_means",
+      "indices": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "results": [
+        {
+          "terminal": 106,
+          "pnl": 6
+        },
+        {
+          "terminal": 104,
+          "pnl": 4
+        }
+      ],
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "expected": {
+        "expected_terminal": 105,
+        "expected_pnl": 5,
+        "loss_probability": 0
+      },
+      "expanded_atomic_mass": [
+        0.5,
+        0.25,
+        0.25,
+        0
+      ]
+    },
+    {
+      "name": "disjoint_groups_collapsed_to_means",
+      "indices": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "results": [
+        {
+          "terminal": 100,
+          "pnl": 0
+        },
+        {
+          "terminal": 100,
+          "pnl": 0
+        }
+      ],
+      "probabilities": [
+        0.5,
+        0.5
+      ],
+      "expected": {
+        "expected_terminal": 100,
+        "expected_pnl": 0,
+        "loss_probability": 0
+      },
+      "expanded_atomic_mass": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "atomic expected pnl zero",
+      "passed": true
+    },
+    {
+      "name": "atomic strict loss half",
+      "passed": true
+    },
+    {
+      "name": "overlapping_event_conditional_means assigned group weights sum one",
+      "passed": true
+    },
+    {
+      "name": "overlapping_event_conditional_means mean reference",
+      "passed": true
+    },
+    {
+      "name": "overlapping_event_conditional_means strict loss of group means",
+      "passed": true
+    },
+    {
+      "name": "overlapping_event_conditional_means expanded-state mass one",
+      "passed": true
+    },
+    {
+      "name": "overlapping_event_conditional_means mean agrees with expanded mass",
+      "passed": true
+    },
+    {
+      "name": "disjoint_groups_collapsed_to_means assigned group weights sum one",
+      "passed": true
+    },
+    {
+      "name": "disjoint_groups_collapsed_to_means mean reference",
+      "passed": true
+    },
+    {
+      "name": "disjoint_groups_collapsed_to_means strict loss of group means",
+      "passed": true
+    },
+    {
+      "name": "disjoint_groups_collapsed_to_means expanded-state mass one",
+      "passed": true
+    },
+    {
+      "name": "disjoint_groups_collapsed_to_means mean agrees with expanded mass",
+      "passed": true
+    },
+    {
+      "name": "overlap changes probability law",
+      "passed": true
+    },
+    {
+      "name": "disjoint grouping preserves original law",
+      "passed": true
+    },
+    {
+      "name": "loss indicator does not commute with conditional mean",
+      "passed": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "source_pin": "d62a1c118702ff64aca3c656c94ddb334a8443c8",
+  "source_blob": "39fd28700fcab4e125d97ee5924c812a9cba20dd",
+  "evaluation": "JavaScript twice; identical results; no Python source execution"
+}

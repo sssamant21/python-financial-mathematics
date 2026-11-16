@@ -1,0 +1,14 @@
+"""Prepared, unexecuted source replay;run from repository root with first/replay label."""
+from pathlib import Path
+import subprocess,re,tempfile,importlib.util,json,sys
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='d62a1c118702ff64aca3c656c94ddb334a8443c8'
+path='books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.07-scenario-analysis.md';raw=subprocess.check_output(['git','show',pin+':'+path],cwd=root)
+listing=re.findall(r'^~~~python\n(.*?)^~~~',raw.decode(),re.M|re.S);assert len(listing)==1
+fixture=json.loads((here/'aggregation-results-r38.json').read_text());rows=[]
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'scenario_analysis.py';p.write_text(listing[0]);spec=importlib.util.spec_from_file_location('scenario_reference',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ cases=[dict(name='atomic',results=[dict(terminal=100+x,pnl=x) for x in fixture['atomic_pnl']],probabilities=fixture['atomic_probabilities'],expected=fixture['atomic_expected']),*fixture['cases']]
+ for case in cases:
+  actual=m.weighted_summary(case['results'],case['probabilities']);rows.append(dict(name=case['name'],actual=actual,expected=case['expected'],passed=actual==case['expected']))
+result=dict(pin=pin,scope='native weighted-summary row behavior,not approval of aggregation model',rows=rows,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows))
+(here/('aggregation-source-'+(sys.argv[1] if len(sys.argv)>1 else 'first')+'-r38.json')).write_text(json.dumps(result,indent=2)+'\n');assert result['failed']==0

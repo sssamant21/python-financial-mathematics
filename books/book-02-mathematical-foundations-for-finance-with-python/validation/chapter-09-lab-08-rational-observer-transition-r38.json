@@ -1,0 +1,36 @@
+{
+  "python_source_executed": false,
+  "initial_resource_attempt": {
+    "terms": 100,
+    "next_term": 101,
+    "outcome": "stopped without result after extended execution",
+    "source_failure": false
+  },
+  "initial_domain_attempt": {
+    "outcome": "rejected represented exponent slightly greater than nominal0.1",
+    "source_failure": false,
+    "actual_replay": [
+      {
+        "attempt": 1,
+        "error_name": "Error",
+        "error_message": "selected domain",
+        "scope": "observer preflight;not source failure"
+      },
+      {
+        "attempt": 2,
+        "error_name": "Error",
+        "error_message": "selected domain",
+        "scope": "observer preflight;not source failure"
+      }
+    ]
+  },
+  "final": {
+    "terms": 24,
+    "next_term": 25,
+    "cache": true,
+    "proved_domain": "0<=a<=1/8",
+    "passed": 104,
+    "failed": 0
+  },
+  "explanation": "The alternating-series bound needs decreasing term magnitudes,which holds on the stated domain.The selected rate+shock uses exact represented inputs rather than rounded nominal0.1.No source defect or full-runtime pass inferred."
+}

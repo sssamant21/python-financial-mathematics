@@ -1,0 +1,14 @@
+(()=>{
+const atomic=[10,2,-2,-10],checks=[],cases=[];function check(name,passed){checks.push({name,passed});}
+function mean(values){return values.reduce((a,b)=>a+BigInt(b),0n)/BigInt(values.length);}
+const truthMean=mean(atomic),truthLoss=atomic.filter(x=>x<0).length/4;
+check("atomic expected pnl zero",truthMean===0n);check("atomic strict loss half",truthLoss===.5);
+const groups=[{name:"overlapping_event_conditional_means",indices:[[0,1],[0,2]],wantedMean:5,wantedLoss:0},{name:"disjoint_groups_collapsed_to_means",indices:[[0,3],[1,2]],wantedMean:0,wantedLoss:0}];
+for(const g of groups){const pnl=g.indices.map(indices=>Number(mean(indices.map(i=>atomic[i])))),term=pnl.map(x=>100+x),avg=Number(mean(pnl)),loss=pnl.filter(x=>x<0).length/2,mass=[0,0,0,0];for(const group of g.indices)for(const i of group)mass[i]+=.5/group.length;
+ check(g.name+" assigned group weights sum one",.5+.5===1);check(g.name+" mean reference",avg===g.wantedMean);check(g.name+" strict loss of group means",loss===g.wantedLoss);check(g.name+" expanded-state mass one",mass.reduce((a,b)=>a+b,0)===1);check(g.name+" mean agrees with expanded mass",atomic.reduce((s,x,i)=>s+x*mass[i],0)===avg);
+ cases.push({name:g.name,indices:g.indices,results:pnl.map((p,i)=>({terminal:term[i],pnl:p})),probabilities:[.5,.5],expected:{expected_terminal:100+avg,expected_pnl:avg,loss_probability:loss},expanded_atomic_mass:mass});}
+check("overlap changes probability law",cases[0].expanded_atomic_mass.join(",")===".5,.25,.25,0".replaceAll(/^\./g,"0.").replaceAll(",.",",0."));
+check("disjoint grouping preserves original law",cases[1].expanded_atomic_mass.every(x=>x===.25));
+check("loss indicator does not commute with conditional mean",cases[1].expected.loss_probability!==truthLoss);
+return{scope:"exact small-integer aggregation/overlap references;not Python execution",atomic_pnl:atomic,atomic_probabilities:[.25,.25,.25,.25],atomic_expected:{expected_terminal:100,expected_pnl:0,loss_probability:.5},cases,checks,passed:checks.filter(x=>x.passed).length,failed:checks.filter(x=>!x.passed).length};
+})()

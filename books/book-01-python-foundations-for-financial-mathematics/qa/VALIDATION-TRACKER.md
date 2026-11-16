@@ -841,3 +841,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Section18.7 fee/dependence partial checkpoint
 
 [New evidence](v10-scenario-dependence/fee-checkpoint-r37.md):36 supplemental exact BigInt checks pass twice across12fee/joint-law fixtures. Fee10 givesexpectedP&L−10foreachlaw butstrictlossprobabilities1/2,3/4,1;ties/fee-once/monotonicity distinguished. Preparednative runner extendspriorcases butremainsunexecuted;Python/source/demo/unittest/compile blockedbyunavailableexecutor. No sourcechange/defect ornewanswers/workflows/historicalmethods. Nextremains18.7nativefixture replay/completion,then18.8. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Section18.7 aggregation/overlap partial checkpoint
+
+[New evidence](v10-scenario-dependence/aggregation-checkpoint-r38.md):15supplemental checks pass twice. Overlappingconditional-meanrows normalizebutchangeatomiclaw/mean0→5;disjointgroupspreservemean0butcollapsingtozeromeans erasesstrictlossprobability1/2→0. Theseareexternalmodel-contractcounterexamples,not sourcebugs. Nativeaggregationrunner preparedbutunexecuted;Python/source/demo/unittest/compile stillblockedbyunavailableexecutor. No sourcechange/newanswers/workflows/historicalmethods. Nextremains18.7nativeaggregation/fee/dependencereplay/completion,then18.8. V10INPROGRESS;F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.
