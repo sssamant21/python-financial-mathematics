@@ -236,3 +236,5 @@ Project 37 scale-aware tolerance follow-up: the joint solver now normalizes stri
 Project 37 also includes `test_interval_reference.py`, an independent exact-rational three-strike bid/ask interval-feasibility cross-check. Run `python -m unittest -v test_interval_reference.py` from `37-static-option-arbitrage/`; exact published-source CI and independent numerical review are tracked separately.
 
 Project 37 now also includes a five-strike exact-rational bid/ask interval oracle (`test_five_interval_reference.py`). Run `python -m unittest -v test_five_interval_reference.py` in its folder; hosted CI and independent numerical review must be checked on the exact revision.
+
+**Project 37 five-strike numerical validation (2026-11-16):** Added two irregular-grid exact-rational cross-check fixtures for feasible and convexity-infeasible point quotes. See [Project 37](37-static-option-arbitrage/README.md). Exact published-source test execution and CI remain unverified.
