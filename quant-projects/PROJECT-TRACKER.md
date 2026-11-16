@@ -766,3 +766,21 @@ Published `38-put-call-parity/` with a beginner-friendly European put–call par
 ### Project 38 exact-source hosted CI checkpoint (2026-11-16)
 
 GitHub Actions [run 43848309706](https://github.com/sssamant21/python-financial-mathematics/actions/runs/43848309706) completed **successfully** on source commit `bac298d9876a38ffa668b12cec8093313f5475f8`. The `quant-labs` job reports the dedicated **Validate Project 38 European put-call parity** step successful, alongside the Project 37 option-quote diagnostics step; `quantlib-cross-check` also passed but is unrelated to parity. This verifies configured hosted execution on the exact source revision, not independent parity-model review, boundary high-precision correctness, or live executable-quote validation. The five Project 38 unittest methods are present in the published source; the step summary does not independently establish a numerical test count. No new local tests were executed for this checkpoint. Next: add independent Decimal-based boundary and discount-factor sensitivity tests, verify their exact-revision CI, then advance to a distinct Project 39.
+
+### Project 38 independent Decimal reference checkpoint (2026-11-16)
+
+Published `38-put-call-parity/test_decimal_reference.py` with four standard-library
+unittest methods: a four-scenario independent 60-digit Decimal discount-factor
+grid, rate/dividend directional checks, a deliberately nonzero 1e-6 quote-boundary
+margin, and an exact zero-rate/zero-yield integer parity case. Local tests on a
+source-equivalent copy of the existing `parity.py` and the authored new module
+passed **4/4 methods**; Python `compileall` also passed. An initial boundary
+fixture failed because it mistakenly used a zero-width interval; the fixture
+was corrected to give the ask a positive spread, then rerun successfully.
+This is not exact published-source execution. The dedicated workflow now
+includes the new module, but **exact-revision hosted CI is not yet verified**.
+The previously verified Project 38 CI run 43848309706 applies to the earlier
+`bac298d` source revision only. No licensed live quotes, independent mathematical
+review, or production certification. Next: confirm exact-source hosted CI,
+review near-equality floating-point boundary behavior and consider a distinct
+Project 39 after successful validation.
