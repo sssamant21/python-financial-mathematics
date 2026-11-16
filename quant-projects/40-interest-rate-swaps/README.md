@@ -52,3 +52,5 @@ python -m compileall -q swap.py test_swap.py test_curve_reconciliation.py
 ```
 
 Six extension tests passed locally against a source-equivalent copy of the published `swap.py` implementation on 2026-11-16; full exact-GitHub-source integration and hosted CI for the extension remain unverified. The extension uses only the Python standard library and synthetic inputs.
+
+Two additional synthetic regression cases check linear notional scaling, pay/receive sign symmetry at a non-par strike, and rejection of finite inputs whose intermediate present values overflow. Run the same combined `unittest` command above (15 total test methods). The two added checks passed locally against a manually reconstructed, source-equivalent implementation on 2026-11-16; exact published-source and hosted execution of the expanded suite remain unverified.
