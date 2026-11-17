@@ -922,3 +922,7 @@ After reconciling main at `c734e2384f8c86da4bbf89382efab837bb6972f6`, added a te
 ### Project 43 exponent-boundary regression (2026-11-17)
 
 Reconciled `main`: dedicated workflow already invokes `test_fx_forward.py` and `test_funding_basis.py`; no workflow modification required. Added a basis-adjusted exponent-boundary regression to the funding suite. **20 authored tests** total (9 baseline + 11 funding/basis). New exact-revision test execution and hosted CI are **unverified**; container clone attempt failed because `github.com` DNS could not resolve. Next: inspect hosted CI logs for the new commit, fix any failures, and then begin Project 44. No licensed-market calibration or independent review.
+
+### Project 43 tiny-bump numerical stability (2026-11-17)
+
+Reconciled `main` at `41c54b2` before changes. Replaced the funding-basis bump subtraction with `F * expm1(delta * T)` to avoid catastrophic cancellation for tiny positive basis shocks; preserved shifted-exponent guardrails. Added a deterministic `1e-8` bp regression test (21 authored Project 43 tests total: 9 base + 12 funding/basis). Local standalone arithmetic identity was checked, but **published Project 43 tests were not executed locally** because cloning failed on GitHub DNS resolution. Exact-revision hosted CI, market calibration, independent review, and production certification remain **unverified**. Next: inspect hosted CI for the new revision, fix failures, then begin a distinct Project 44.
