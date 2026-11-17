@@ -37,6 +37,14 @@ class FundingBasisTests(unittest.TestCase):
         self.assertAlmostEqual(result["d_forward_d_basis"], years * expected_forward, places=12)
         self.assertAlmostEqual(result["bumped_change"], expected_change, places=12)
 
+    def test_tiny_basis_bump_stable_against_expm1_reference(self):
+        # A tiny bump exposes cancellation in subtracting two nearly equal forwards.
+        spot, rd, rf, years, basis, bump_bp = 1.15, .035, .02, 2.5, -.005, 1e-8
+        result = basis_sensitivity(spot, rd, rf, years, basis, bump_bp)
+        expected = result["forward"] * math.expm1(bump_bp * 1e-4 * years)
+        self.assertGreater(result["bumped_change"], 0)
+        self.assertAlmostEqual(result["bumped_change"] / expected, 1.0, places=12)
+
     def test_tenor_and_notional_convention(self):
         x = basis_sensitivity(1.1, .04, .02, 2)
         self.assertAlmostEqual(x["d_forward_d_basis"], 2*x["forward"])
