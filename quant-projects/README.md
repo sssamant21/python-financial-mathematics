@@ -252,3 +252,5 @@ Project 38 additionally includes adjacent-binary64 quote-boundary regression cas
 Project 40 also includes `test_curve_reconciliation.py`: independent period-by-period floating coupon projections, uneven-accrual and negative-rate scenarios, and terminal/interior discount-factor sensitivity. Run `python -m unittest -v test_swap.py test_curve_reconciliation.py` from its folder. The extension's exact-revision hosted CI remains unverified.
 
 Project 42 off-grid extension: `42-key-rate-curve-risk/offgrid.py` adds piecewise-linear zero-rate interpolation, exact node gradients and finite-difference cross-checks for synthetic off-node payments. Run `python -m unittest -v test_key_rate.py test_offgrid.py` from Project 42. New tests require exact-revision execution/CI confirmation.
+
+Project 43 funding/basis regression now includes an independent `expm1`-based 2-bp sensitivity identity with a negative synthetic basis (`test_funding_basis.py`); 19 total Project 43 tests are authored. Run `python -m unittest -v test_fx_forward.py test_funding_basis.py` from `43-fx-forward-parity/`. The new case's runtime and exact-revision CI remain unverified.
