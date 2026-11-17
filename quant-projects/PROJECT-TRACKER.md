@@ -926,3 +926,7 @@ Reconciled `main`: dedicated workflow already invokes `test_fx_forward.py` and `
 ### Project 43 tiny-bump numerical stability (2026-11-17)
 
 Reconciled `main` at `41c54b2` before changes. Replaced the funding-basis bump subtraction with `F * expm1(delta * T)` to avoid catastrophic cancellation for tiny positive basis shocks; preserved shifted-exponent guardrails. Added a deterministic `1e-8` bp regression test (21 authored Project 43 tests total: 9 base + 12 funding/basis). Local standalone arithmetic identity was checked, but **published Project 43 tests were not executed locally** because cloning failed on GitHub DNS resolution. Exact-revision hosted CI, market calibration, independent review, and production certification remain **unverified**. Next: inspect hosted CI for the new revision, fix failures, then begin a distinct Project 44.
+
+### Project 44 synthetic CDS fundamentals (2026-11-17)
+
+Published `44-credit-default-swap-basics/` with a standard-library discrete CDS premium/protection model, mathematical and business context, CLI and 10 authored deterministic synthetic tests. **No local runtime execution or exact-revision hosted CI has been verified**; independent mathematical review, real-market calibration and production certification remain outstanding. Next: execute all ten tests and CLI smoke checks against the published revision, inspect hosted CI, correct defects, and add accrued-on-default convention sensitivity only after baseline validation.
