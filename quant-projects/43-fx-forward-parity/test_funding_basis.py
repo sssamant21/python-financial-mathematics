@@ -62,6 +62,15 @@ class FundingBasisTests(unittest.TestCase):
             with self.subTest(bump=bump), self.assertRaises(ValueError):
                 basis_sensitivity(1.1,.04,.02,1,bump_bp=bump)
 
+    def test_exponent_guardrail_boundary(self):
+        # Classroom exponent cap applies to the basis-adjusted forward, too.
+        at_limit = basis_sensitivity(1.0, .5, 0.0, 100, basis=0.0, bump_bp=1.0)
+        self.assertTrue(math.isfinite(at_limit["forward"]))
+        with self.assertRaises(ValueError):
+            basis_sensitivity(1.0, .5, 0.0, 100, basis=.001, bump_bp=1.0)
+        with self.assertRaises(ValueError):
+            funding_interval(1.0, 1.0, .5, .5, 0.0, 0.0, 100, .001, .001)
+
     def test_no_mutation_and_determinism(self):
         args = (1.09,1.11,.03,.05,.01,.03,1)
         self.assertEqual(funding_interval(*args), funding_interval(*args))
