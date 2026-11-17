@@ -327,10 +327,11 @@ jobs:
       - name: Validate Project 41 par-swap curve bootstrap
         run: |
           cd quant-projects/41-par-swap-curve-bootstrap
-          python -m unittest -v test_curve.py
-          python -m compileall -q curve.py test_curve.py
+          python -m unittest -v test_curve.py test_reconciliation.py
+          python -m compileall -q curve.py test_curve.py test_reconciliation.py
           python curve.py
           python curve.py --rates 0.02 0.025 0.03
+          python curve.py --rates 0.02 0.035 0.04 0.037
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
