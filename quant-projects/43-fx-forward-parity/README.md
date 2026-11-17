@@ -58,3 +58,7 @@ Nine additional deterministic regression cases check zero-spread parity, interva
 ### Exponent-boundary regression checkpoint (2026-11-17)
 
 Added a deterministic test for basis-adjusted exponent guardrails: an in-range positive basis bump must remain finite, while a scenario exceeding the classroom exponent limit must raise `ValueError`. The combined Project 43 suite now contains **20 authored tests** (9 base, 11 funding/basis). The existing dedicated CI workflow invokes both test modules, but this newly published test has **not been executed on its exact revision**; CI outcome, independent review, and licensed-market validation remain unverified.
+
+### Tiny-bump numerical stability (2026-11-17)
+
+`basis_sensitivity` now computes the positive basis-bump difference as `F * expm1(bump_bp * 1e-4 * T)` rather than subtracting nearly equal forward levels. It still checks the bumped exponent against the existing ±50 classroom limit. A new deterministic regression test covers a `1e-8` basis-point bump against the analytical `expm1` identity. **21 Project 43 tests are now authored (9 base, 12 funding/basis); the new exact-revision hosted CI result is pending.** The arithmetic identity was checked separately with local Python, but the repository test suite was not executed locally because GitHub DNS resolution failed. Licensed-market calibration, independent review, and production certification remain unverified.
