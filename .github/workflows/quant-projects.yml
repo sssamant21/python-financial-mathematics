@@ -345,10 +345,11 @@ jobs:
       - name: Validate Project 43 FX forward parity
         run: |
           cd quant-projects/43-fx-forward-parity
-          python -m unittest -v test_fx_forward.py
-          python -m compileall -q fx_forward.py test_fx_forward.py
+          python -m unittest -v test_fx_forward.py test_funding_basis.py
+          python -m compileall -q fx_forward.py funding_basis.py test_fx_forward.py test_funding_basis.py
           python fx_forward.py
           python fx_forward.py --spot 1.2 --domestic-rate 0.05 --foreign-rate 0.03 --years 2
+          python funding_basis.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
