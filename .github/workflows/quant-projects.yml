@@ -336,10 +336,11 @@ jobs:
       - name: Validate Project 42 key-rate curve risk
         run: |
           cd quant-projects/42-key-rate-curve-risk
-          python -m unittest -v test_key_rate.py
-          python -m compileall -q key_rate.py test_key_rate.py
+          python -m unittest -v test_key_rate.py test_offgrid.py
+          python -m compileall -q key_rate.py offgrid.py test_key_rate.py test_offgrid.py
           python key_rate.py
           python key_rate.py --bump-bp 0.5
+          python offgrid.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
