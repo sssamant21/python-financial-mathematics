@@ -34,7 +34,12 @@ def _inputs(spot: float, domestic_rate: float, foreign_rate: float, years: float
 def fair_forward(spot: float, domestic_rate: float, foreign_rate: float, years: float) -> float:
     """Domestic/foreign forward F = S exp((rd-rf) T)."""
     s, rd, rf, t = _inputs(spot, domestic_rate, foreign_rate, years)
-    result = s * math.exp((rd - rf) * t)
+    exponent = (rd - rf) * t
+    # Guard extreme synthetic combinations even when exp() remains finite.
+    # Such values are not useful for a classroom parity comparison.
+    if abs(exponent) > 50:
+        raise ValueError("rate differential times tenor exceeds classroom bound")
+    result = s * math.exp(exponent)
     if not math.isfinite(result) or result <= 0:
         raise ValueError("forward is nonfinite or underflowed")
     return result
