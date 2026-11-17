@@ -57,7 +57,7 @@ Forty-three self-contained labs complement the financial-mathematics books witho
 | [40](40-interest-rate-swaps/README.md) | Spot-start fixed/floating interest-rate swaps, par coupon, coupon reconciliation, curve sensitivity, notional scaling and overflow guardrails | Hypothetical only | `swap.py` |
 | [41](41-par-swap-curve-bootstrap/README.md) | Annual par-swap quote bootstrap, discount factors, implied forwards, cash-flow reconciliation and one-basis-point quote sensitivity | Hypothetical only | `curve.py` |
 | [42](42-key-rate-curve-risk/README.md) | Key-rate PV01, curve-shape sensitivity, and parallel-bump reconciliation | Synthetic only | `key_rate.py` |
-| [43](43-fx-forward-parity/README.md) | FX forward covered-interest parity, synthetic mark-to-market and bid/ask interval diagnostics | Synthetic only | `fx_forward.py` |
+| [43](43-fx-forward-parity/README.md) | FX forward parity, funding-side bid/ask interval scenarios and hypothetical basis sensitivity | Synthetic only | `fx_forward.py` |
 
 ## Quick start (Windows PowerShell)
 
