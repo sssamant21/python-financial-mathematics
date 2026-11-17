@@ -333,6 +333,14 @@ jobs:
           python curve.py --rates 0.02 0.025 0.03
           python curve.py --rates 0.02 0.035 0.04 0.037
 
+      - name: Validate Project 42 key-rate curve risk
+        run: |
+          cd quant-projects/42-key-rate-curve-risk
+          python -m unittest -v test_key_rate.py
+          python -m compileall -q key_rate.py test_key_rate.py
+          python key_rate.py
+          python key_rate.py --bump-bp 0.5
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
