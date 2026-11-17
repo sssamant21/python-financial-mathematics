@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Forty-one self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Forty-two self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -56,6 +56,7 @@ Forty-one self-contained labs complement the financial-mathematics books without
 | [39](39-forward-rate-agreements/README.md) | Single-period forward-rate agreements, implied forwards, start-date settlement, PV identity and independent curve-sensitivity checks | Hypothetical only | `fra.py` |
 | [40](40-interest-rate-swaps/README.md) | Spot-start fixed/floating interest-rate swaps, par coupon, coupon reconciliation, curve sensitivity, notional scaling and overflow guardrails | Hypothetical only | `swap.py` |
 | [41](41-par-swap-curve-bootstrap/README.md) | Annual par-swap quote bootstrap, discount factors, implied forwards, cash-flow reconciliation and one-basis-point quote sensitivity | Hypothetical only | `curve.py` |
+| [42](42-key-rate-curve-risk/README.md) | Key-rate PV01, curve-shape sensitivity, and parallel-bump reconciliation | Synthetic only | `key_rate.py` |
 
 ## Quick start (Windows PowerShell)
 
