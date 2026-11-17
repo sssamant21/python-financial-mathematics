@@ -54,3 +54,7 @@ python funding_basis.py
 ```
 
 Nine additional deterministic regression cases check zero-spread parity, interval widening, basis shocks, analytical derivatives, bounded inputs and overflow. Standard library only, Python 3.11–3.13. **The extension tests have been authored but not yet executed on the published revision; hosted CI and independent review remain unverified.** A real-market study needs licensed timestamped two-sided quotes and consistent funding/collateral terms before any empirical comparison.
+
+### Exponent-boundary regression checkpoint (2026-11-17)
+
+Added a deterministic test for basis-adjusted exponent guardrails: an in-range positive basis bump must remain finite, while a scenario exceeding the classroom exponent limit must raise `ValueError`. The combined Project 43 suite now contains **20 authored tests** (9 base, 11 funding/basis). The existing dedicated CI workflow invokes both test modules, but this newly published test has **not been executed on its exact revision**; CI outcome, independent review, and licensed-market validation remain unverified.
