@@ -27,6 +27,16 @@ class FundingBasisTests(unittest.TestCase):
         approx = x["bumped_change"] / (.01 * 1e-4)
         self.assertAlmostEqual(approx / x["d_forward_d_basis"], 1, places=5)
 
+    def test_basis_sensitivity_exact_exponential_bump(self):
+        # Synthetic analytic identity, independent of the implementation's bump subtraction.
+        spot, rd, rf, years, basis, bump_bp = 1.15, .035, .02, 2.5, -.005, 2.0
+        result = basis_sensitivity(spot, rd, rf, years, basis, bump_bp)
+        expected_forward = spot * math.exp((rd - rf + basis) * years)
+        expected_change = expected_forward * math.expm1(bump_bp * 1e-4 * years)
+        self.assertAlmostEqual(result["forward"], expected_forward, places=12)
+        self.assertAlmostEqual(result["d_forward_d_basis"], years * expected_forward, places=12)
+        self.assertAlmostEqual(result["bumped_change"], expected_change, places=12)
+
     def test_tenor_and_notional_convention(self):
         x = basis_sensitivity(1.1, .04, .02, 2)
         self.assertAlmostEqual(x["d_forward_d_basis"], 2*x["forward"])
