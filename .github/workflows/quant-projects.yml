@@ -324,6 +324,14 @@ jobs:
           python swap.py
           python swap.py --receive-fixed
 
+      - name: Validate Project 41 par-swap curve bootstrap
+        run: |
+          cd quant-projects/41-par-swap-curve-bootstrap
+          python -m unittest -v test_curve.py
+          python -m compileall -q curve.py test_curve.py
+          python curve.py
+          python curve.py --rates 0.02 0.025 0.03
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
