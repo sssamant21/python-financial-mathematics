@@ -64,8 +64,11 @@ def basis_sensitivity(spot, domestic_rate, foreign_rate, years, basis=0.0,
     delta = bump * 1e-4
     base = _exp_bound(s, exponent)
     shifted = _exp_bound(s, exponent + delta*t)
+    # expm1 preserves relative accuracy for very small positive basis bumps.
+    # Keep shifted-value validation above so the classroom exponent guard applies.
+    change = base * math.expm1(delta * t)
     return {"forward": base, "d_forward_d_basis": t*base,
-            "bump_bp": bump, "bumped_change": shifted-base}
+            "bump_bp": bump, "bumped_change": change}
 
 
 if __name__ == "__main__":
