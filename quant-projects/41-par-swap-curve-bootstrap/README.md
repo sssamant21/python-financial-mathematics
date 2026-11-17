@@ -34,4 +34,19 @@ Seven deterministic tests check flat-curve closed-form values, input quote repri
 
 This bootstrap assumes one quote for each consecutive annual maturity, no stubs, fixed annual accrual of one, start today, single-curve projection/discounting, no spreads or notional exchange. It omits day-count rules, calendars, coupon dates, deposits/OIS instruments, interpolation, collateral, multi-curve projection, bid/ask, quote uncertainty, and curve arbitrage diagnostics. A production curve requires instrument conventions, point-in-time sourced quotes, robust calibration and independent validation. No trading advice or broker connectivity is included.
 
-**Next exercise:** independently reconcile period cash flows and test sensitivity to individual par quotes, then add a dedicated hosted CI step.
+**Next exercise:** verify the expanded tests on exact published-source GitHub Actions CI, then examine realistic instrument conventions before Project 42.
+
+## Independent cash-flow reconciliation and quote sensitivity
+
+For unit notional and one-year periods, the discounted floating coupon in period `i` is `D_i * F_(i-1,i) = D_(i-1) - D_i`. Summing the coupons telescopes to `1 - D_n`, independently of the fixed-leg par-rate formula. The fixed leg is `S_n * sum(D_i)`; the difference should be zero for every quoted maturity. Negative coupons are possible when forwards are negative.
+
+A one-basis-point quote bump is `0.0001` in decimal-rate units. Bump **one par quote at a time**, rebuild the entire curve, and check that each bumped quote reprices. Earlier discount factors must be invariant to later quote changes (triangular bootstrap). This is a numerical quote-sensitivity exercise, **not** a calibrated market DV01: conventions, hedging instruments, multi-curve discounting and real quotes are absent.
+
+```bash
+cd quant-projects/41-par-swap-curve-bootstrap
+python -m unittest -v test_curve.py test_reconciliation.py
+python -m compileall -q curve.py test_curve.py test_reconciliation.py
+python curve.py --rates 0.02 0.035 0.04 0.037
+```
+
+The six new tests use deterministic hypothetical quotes and require no third-party dependencies. The original seven tests remain unchanged. **Execution and exact-revision hosted CI of the expanded 13-test suite are pending verification**; independent model review and market calibration are unverified.
