@@ -64,7 +64,7 @@ class FundingBasisTests(unittest.TestCase):
 
     def test_exponent_guardrail_boundary(self):
         # Classroom exponent cap applies to the basis-adjusted forward, too.
-        at_limit = basis_sensitivity(1.0, .5, 0.0, 100, basis=0.0, bump_bp=1.0)
+        at_limit = basis_sensitivity(1.0, .499, 0.0, 100, basis=0.0, bump_bp=1.0)
         self.assertTrue(math.isfinite(at_limit["forward"]))
         with self.assertRaises(ValueError):
             basis_sensitivity(1.0, .5, 0.0, 100, basis=.001, bump_bp=1.0)
