@@ -67,5 +67,20 @@ class TestCDSRiskAnalyticalRegression(unittest.TestCase):
         self.assertAlmostEqual(x['hazard01'], pv(bump, .012) - pv(0, .012), places=8)
 
 
+    def test_coupon_linearity_and_exact_dv01(self):
+        for hazard in (0.0, 0.01, 0.15):
+            with self.subTest(hazard=hazard):
+                a, _ = legs(hazard, maturity=3, frequency=4)
+                base = pv(hazard, 0.01, maturity=3, frequency=4)
+                bumped = pv(hazard, 0.0101, maturity=3, frequency=4)
+                self.assertAlmostEqual(bumped - base, -1_000_000 * a * 0.0001, places=7)
+
+    def test_zero_hazard_coupon_pv_identity(self):
+        a, protection = legs(0.0, maturity=2, rate=0.03, frequency=4)
+        self.assertEqual(protection, 0.0)
+        self.assertAlmostEqual(pv(0.0, 0.015, maturity=2, rate=0.03),
+                               -1_000_000 * 0.015 * a, places=8)
+
+
 if __name__ == '__main__':
     unittest.main()
