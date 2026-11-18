@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Forty-five self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Forty-six self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -62,6 +62,8 @@ Forty-five self-contained labs complement the financial-mathematics books withou
 | [44](44-credit-default-swap-basics/README.md) | Synthetic CDS par spread, hazard/survival, recovery, discounted legs, accrued-on-default and numerical edge-case sensitivity | Synthetic only | `cds.py`, `accrued_default.py` |
 
 | [45](45-cds-survival-curve-bootstrap/README.md) | Piecewise-constant CDS hazard calibration from synthetic par spreads, bounded bisection, infeasibility and boolean-input rejection | Synthetic only | `bootstrap.py` |
+
+| [46](46-cds-credit-sensitivity/README.md) | Synthetic CDS protection-buyer PV, par spread, coupon DV01 and finite-difference hazard sensitivity | Synthetic only | `cds_risk.py` |
 
 ## Quick start (Windows PowerShell)
 
