@@ -52,6 +52,22 @@ class BootstrapTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     bootstrap([1], [0.0], **kwargs)
 
+    def test_boolean_numeric_inputs_rejected(self):
+        for kwargs in [{"recovery": True}, {"rate": False}, {"frequency": True}]:
+            with self.subTest(kwargs=kwargs):
+                with self.assertRaises(ValueError):
+                    bootstrap([1], [0.01], **kwargs)
+        for maturities, spreads in [([True], [0.01]), ([1], [False])]:
+            with self.subTest(maturities=maturities, spreads=spreads):
+                with self.assertRaises(ValueError):
+                    bootstrap(maturities, spreads)
+        with self.assertRaises(ValueError):
+            survival(True, [0.01], [1])
+        with self.assertRaises(ValueError):
+            survival(0.5, [True], [1])
+        with self.assertRaises(ValueError):
+            survival(0.5, [0.01], [True])
+
     def test_maturity_grid(self):
         with self.assertRaises(ValueError):
             par_spread(1.1, [0.02], [1.1])
