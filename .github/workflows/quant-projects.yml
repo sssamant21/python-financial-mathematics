@@ -368,6 +368,13 @@ jobs:
           python -m compileall -q bootstrap.py test_bootstrap.py
           python bootstrap.py
 
+      - name: Validate Project 46 synthetic CDS credit sensitivity
+        run: |
+          cd quant-projects/46-cds-credit-sensitivity
+          python -m unittest -v test_cds_risk.py
+          python -m compileall -q cds_risk.py test_cds_risk.py
+          python cds_risk.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
