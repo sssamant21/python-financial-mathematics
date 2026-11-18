@@ -34,11 +34,17 @@ The optional `accrued_default.py` adds continuous default-time protection settle
 ```bash
 python accrued_default.py
 python accrued_default.py --hazard 0.05 --recovery 0.25
-python -m unittest -v test_cds.py test_accrued_default.py
-python -m compileall -q cds.py accrued_default.py test_cds.py test_accrued_default.py
+python -m unittest -v test_cds.py test_accrued_default.py test_edge_cases.py
+python -m compileall -q cds.py accrued_default.py test_cds.py test_accrued_default.py test_edge_cases.py
 ```
 
 The extension's nine deterministic test methods cover independent midpoint quadrature, protection-leg reconciliation, recovery, zero hazard, notional invariance, accrued annuity, baseline comparison and input rejection. All 19 baseline-plus-extension tests passed in [hosted run 44234866544](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44234866544) at commit `4184fbf` (the log reports `Ran 19 tests` and `OK`); compilation and synthetic CLI checks also passed. This does not certify market conventions. An earlier test incorrectly asserted the continuous-premium identity for discrete scheduled coupons; it has been replaced by an independent quadrature comparison. The model is still not an ISDA-convention pricer; real CDS curves, accrual calendars, quote conventions, upfront amounts, licensed market data and independent model review remain outside scope.
+
+## Numerical edge-case regression extension
+
+The five deterministic methods in `test_edge_cases.py` stress exactly zero and nearly zero combined hazard-plus-discount rate, negative discount rates, coupon-frequency effects, and extreme permitted hazard/rate bounds. The discrete scheduled-coupon convention produces a spread **above** the continuous-premium limit `h*(1-R)` in the specified positive-rate fixture; increasing coupon frequency moves it toward that limit. This is a convention-specific test, not a universal monotonicity theorem.
+
+A locally reconstructed, source-equivalent copy of the published pricing functions passed **5/5** new tests and Python compilation on 2026-11-18. The new tests were added to the dedicated CI workflow, but **exact-revision hosted execution is pending**. The previously verified 19/19 hosted tests do not include these five.
 
 ## Validation and limits
 
