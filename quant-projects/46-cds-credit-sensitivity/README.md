@@ -21,7 +21,7 @@ The CLI prints synthetic PV, par spread in basis points, coupon DV01 and hazard0
 
 ## Validation evidence and limitations
 
-Seven deterministic tests **passed locally on 2026-11-18** (`python -m unittest -q`), together with Python compilation and a CLI smoke test on source-equivalent code. Tests check zero par PV, zero-hazard protection, exact coupon DV01, hazard sensitivity direction, boundary finite differences, recovery monotonicity, and invalid-input rejection. **Exact published-revision GitHub Actions, licensed-market calibration, and independent mathematical review are unverified.** No production certification or financial recommendation is implied. For future empirical studies, obtain authorized point-in-time CDS quotes, document convention versions, timestamp observations, and do not redistribute unlicensed quotes.
+The original seven deterministic tests passed locally on source-equivalent code on 2026-11-18. The subsequently expanded 13-test `test_cds_risk.py` suite passed on GitHub Actions [run 44387307924](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44387307924), commit `2eaec784`; Python compilation and synthetic CLI also passed in that job. This **does not verify** the newer eight-test `test_quote_cs01.py` extension or the combined 21-test suite at the latest revision. Licensed-market calibration and independent mathematical review remain unverified. No production certification or financial recommendation is implied. For future empirical studies, obtain authorized point-in-time CDS quotes, document convention versions, timestamp observations, and do not redistribute unlicensed quotes.
 
 ## Analytical and boundary regression extension (2026-11-18)
 
