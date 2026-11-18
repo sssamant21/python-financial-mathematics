@@ -63,7 +63,7 @@ Forty-six self-contained labs complement the financial-mathematics books without
 
 | [45](45-cds-survival-curve-bootstrap/README.md) | Piecewise-constant CDS hazard calibration from synthetic par spreads, bounded bisection, infeasibility and boolean-input rejection | Synthetic only | `bootstrap.py` |
 
-| [46](46-cds-credit-sensitivity/README.md) | Synthetic CDS protection-buyer PV, par spread, coupon DV01 and finite-difference hazard sensitivity | Synthetic only | `cds_risk.py` |
+| [46](46-cds-credit-sensitivity/README.md) | Synthetic CDS protection-buyer PV, par spread, coupon DV01, finite-difference hazard sensitivity and analytical regression checks | Synthetic only | `cds_risk.py` |
 
 ## Quick start (Windows PowerShell)
 
