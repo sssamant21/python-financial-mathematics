@@ -371,9 +371,10 @@ jobs:
       - name: Validate Project 46 synthetic CDS credit sensitivity
         run: |
           cd quant-projects/46-cds-credit-sensitivity
-          python -m unittest -v test_cds_risk.py
-          python -m compileall -q cds_risk.py test_cds_risk.py
+          python -m unittest -v test_cds_risk.py test_quote_cs01.py
+          python -m compileall -q cds_risk.py quote_cs01.py test_cds_risk.py test_quote_cs01.py
           python cds_risk.py
+          python quote_cs01.py
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
