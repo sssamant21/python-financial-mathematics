@@ -354,10 +354,12 @@ jobs:
       - name: Validate Project 44 CDS fundamentals
         run: |
           cd quant-projects/44-credit-default-swap-basics
-          python -m unittest -v test_cds.py
-          python -m compileall -q cds.py test_cds.py
+          python -m unittest -v test_cds.py test_accrued_default.py
+          python -m compileall -q cds.py accrued_default.py test_cds.py test_accrued_default.py
           python cds.py
           python cds.py --hazard 0.05 --recovery 0.25
+          python accrued_default.py
+          python accrued_default.py --hazard 0.05 --recovery 0.25
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
