@@ -39,5 +39,33 @@ class TestCDSRisk(unittest.TestCase):
             sensitivities(bump_bp=0)
 
 
+class TestCDSRiskAnalyticalRegression(unittest.TestCase):
+    def test_flat_hazard_par_spread_closed_form(self):
+        import math
+        for h in (0.0, 0.01, 0.2):
+            for f in (1, 4, 12):
+                with self.subTest(h=h, frequency=f):
+                    annuity, protection = legs(h, maturity=2, frequency=f, rate=0.03, recovery=0.4)
+                    self.assertAlmostEqual(protection / annuity, 0.6 * f * math.expm1(h / f), places=11)
+
+    def test_notional_scaling(self):
+        a = sensitivities(notional=100_000)
+        b = sensitivities(notional=1_000_000)
+        for key in ('pv', 'coupon_dv01', 'hazard01'):
+            self.assertAlmostEqual(b[key], 10 * a[key], places=7)
+        self.assertAlmostEqual(a['par_spread_bp'], b['par_spread_bp'])
+
+    def test_upper_hazard_bump_guardrail(self):
+        with self.assertRaisesRegex(ValueError, 'hazard bump exceeds'):
+            sensitivities(hazard=5, bump_bp=1)
+
+    def test_forward_hazard_difference_at_zero(self):
+        bump_bp = 2
+        bump = bump_bp / 10000
+        x = sensitivities(hazard=0, bump_bp=bump_bp)
+        self.assertEqual(x['hazard_difference'], 'forward')
+        self.assertAlmostEqual(x['hazard01'], pv(bump, .012) - pv(0, .012), places=8)
+
+
 if __name__ == '__main__':
     unittest.main()
