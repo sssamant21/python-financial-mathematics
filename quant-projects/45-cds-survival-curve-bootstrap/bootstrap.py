@@ -3,7 +3,8 @@ import math
 
 
 def survival(t, hazards, maturities):
-    if not math.isfinite(t) or t < 0 or len(hazards) != len(maturities):
+    if (not math.isfinite(t) or t < 0 or not hazards
+            or len(hazards) != len(maturities)):
         raise ValueError("invalid survival inputs")
     previous = cumulative = 0.0
     for h, end in zip(hazards, maturities):
@@ -42,6 +43,11 @@ def par_spread(maturity, hazards, maturities, recovery=0.4, rate=0.02, frequency
 def bootstrap(maturities, spreads, recovery=0.4, rate=0.02, frequency=4, max_hazard=5.0):
     if not maturities or len(maturities) != len(spreads):
         raise ValueError("mismatched quotes")
+    if (not isinstance(max_hazard, (int, float)) or isinstance(max_hazard, bool)
+            or not math.isfinite(max_hazard) or max_hazard <= 0):
+        raise ValueError("max_hazard must be finite and positive")
+    # Validate contract parameters even when all quoted spreads are zero.
+    par_spread(maturities[0], [0.0], [maturities[0]], recovery, rate, frequency)
     hazards = []
     for i, (m, s) in enumerate(zip(maturities, spreads)):
         if (not math.isfinite(m) or m <= (maturities[i-1] if i else 0)
