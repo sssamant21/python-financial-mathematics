@@ -19,14 +19,27 @@ class AccruedDefaultTests(unittest.TestCase):
         self.assertAlmostEqual(x["total_annuity_per_notional"],
             x["scheduled_annuity_per_notional"]+x["accrual_annuity_per_notional"])
 
-    def test_flat_continuous_identity(self):
-        # Continuous settlement of protection and default accrual exactly
-        # cancels interval-end premium discounting under flat curves.
-        for h, r, freq in [(0.02,0.03,4), (0.05,-0.02,12),
-                           (0.000001,0,1), (0.2,0.1,2)]:
-            with self.subTest(h=h,r=r,freq=freq):
-                x=accrued_legs(hazard=h,rate=r,payments_per_year=freq)
-                self.assertAlmostEqual(x["par_spread"], (1-.4)*h, places=9)
+    def test_independent_midpoint_quadrature(self):
+        # Coupon-date survival premiums are discrete; therefore h*(1-R)
+        # is NOT an exact par-spread identity with this payment convention.
+        for h, r, freq in [(0.02, 0.03, 4), (0.05, -0.02, 12),
+                           (0.000001, 0, 1), (0.2, 0.1, 2)]:
+            with self.subTest(h=h, r=r, freq=freq):
+                years, recovery, intervals, subdivisions = 5, 0.4, 5*freq, 2000
+                dt = 1/freq
+                scheduled = sum(dt*math.exp(-(h+r)*i*dt)
+                                for i in range(1, intervals+1))
+                accrued = 0.0
+                protection_unit = 0.0
+                for i in range(intervals):
+                    for j in range(subdivisions):
+                        u = (j+0.5)*dt/subdivisions
+                        discounted_default = h*math.exp(-(h+r)*(i*dt+u))*dt/subdivisions
+                        accrued += u*discounted_default
+                        protection_unit += discounted_default
+                expected = (1-recovery)*protection_unit/(scheduled+accrued)
+                x = accrued_legs(hazard=h, rate=r, payments_per_year=freq)
+                self.assertAlmostEqual(x["par_spread"], expected, delta=2e-9)
 
     def test_reconcile_protection(self):
         x=accrued_legs()
