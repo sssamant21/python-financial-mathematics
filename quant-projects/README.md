@@ -61,7 +61,7 @@ Forty-five self-contained labs complement the financial-mathematics books withou
 
 | [44](44-credit-default-swap-basics/README.md) | Synthetic CDS par spread, hazard/survival, recovery, discounted legs, accrued-on-default and numerical edge-case sensitivity | Synthetic only | `cds.py`, `accrued_default.py` |
 
-| [45](45-cds-survival-curve-bootstrap/README.md) | Piecewise-constant CDS hazard calibration from synthetic par spreads, bounded bisection and infeasibility rejection | Synthetic only | `bootstrap.py` |
+| [45](45-cds-survival-curve-bootstrap/README.md) | Piecewise-constant CDS hazard calibration from synthetic par spreads, bounded bisection, infeasibility and boolean-input rejection | Synthetic only | `bootstrap.py` |
 
 ## Quick start (Windows PowerShell)
 
