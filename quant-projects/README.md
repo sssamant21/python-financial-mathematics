@@ -59,7 +59,7 @@ Forty-four self-contained labs complement the financial-mathematics books withou
 | [42](42-key-rate-curve-risk/README.md) | Key-rate PV01, curve-shape sensitivity, and parallel-bump reconciliation | Synthetic only | `key_rate.py` |
 | [43](43-fx-forward-parity/README.md) | FX forward parity, funding-side bid/ask scenarios, hypothetical basis sensitivity and tiny-bump numerical stability (21 authored tests; exact-revision CI pending) | Synthetic only | `fx_forward.py`, `funding_basis.py` |
 
-| [44](44-credit-default-swap-basics/README.md) | Synthetic CDS par spread, hazard/survival, recovery, discounted legs and accrued-on-default sensitivity | Synthetic only | `cds.py`, `accrued_default.py` |
+| [44](44-credit-default-swap-basics/README.md) | Synthetic CDS par spread, hazard/survival, recovery, discounted legs, accrued-on-default and numerical edge-case sensitivity | Synthetic only | `cds.py`, `accrued_default.py` |
 
 ## Quick start (Windows PowerShell)
 
