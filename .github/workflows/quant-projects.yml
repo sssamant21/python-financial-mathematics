@@ -351,6 +351,14 @@ jobs:
           python fx_forward.py --spot 1.2 --domestic-rate 0.05 --foreign-rate 0.03 --years 2
           python funding_basis.py
 
+      - name: Validate Project 44 CDS fundamentals
+        run: |
+          cd quant-projects/44-credit-default-swap-basics
+          python -m unittest -v test_cds.py
+          python -m compileall -q cds.py test_cds.py
+          python cds.py
+          python cds.py --hazard 0.05 --recovery 0.25
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
