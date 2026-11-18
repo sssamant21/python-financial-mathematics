@@ -32,6 +32,26 @@ class BootstrapTests(unittest.TestCase):
         self.assertGreater(par_spread(1, [0.03], [1], recovery=0.2),
                            par_spread(1, [0.03], [1], recovery=0.6))
 
+    def test_invalid_hazard_bounds(self):
+        for bound in [0, -1, float("nan"), float("inf"), -float("inf"), True]:
+            with self.subTest(bound=bound):
+                with self.assertRaises(ValueError):
+                    bootstrap([1], [0.01], max_hazard=bound)
+
+    def test_hazard_bound_infeasible(self):
+        with self.assertRaises(ValueError):
+            bootstrap([1], [0.1], max_hazard=0.001)
+
+    def test_empty_survival_curve_rejected(self):
+        with self.assertRaises(ValueError):
+            survival(0.5, [], [])
+
+    def test_invalid_contract_even_with_zero_quote(self):
+        for kwargs in [{"recovery": 1.0}, {"rate": float("nan")}, {"frequency": 0}]:
+            with self.subTest(kwargs=kwargs):
+                with self.assertRaises(ValueError):
+                    bootstrap([1], [0.0], **kwargs)
+
     def test_maturity_grid(self):
         with self.assertRaises(ValueError):
             par_spread(1.1, [0.02], [1.1])
