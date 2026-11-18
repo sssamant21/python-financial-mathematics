@@ -38,7 +38,7 @@ python -m unittest -v test_cds.py test_accrued_default.py
 python -m compileall -q cds.py accrued_default.py test_cds.py test_accrued_default.py
 ```
 
-The extension's nine deterministic test methods cover the flat-hazard identity, protection-leg reconciliation, recovery, zero hazard, notional invariance, accrued annuity, baseline comparison and input rejection. These are **authored checks, not verified passing results** until run against the exact published revision. The model is still not an ISDA-convention pricer; real CDS curves, accrual calendars, quote conventions, upfront amounts, licensed market data and independent model review remain outside scope.
+The extension's nine deterministic test methods cover independent midpoint quadrature, protection-leg reconciliation, recovery, zero hazard, notional invariance, accrued annuity, baseline comparison and input rejection. These are **authored checks, not verified passing results** until run against the exact published revision. An earlier test incorrectly asserted the continuous-premium identity for discrete scheduled coupons; it has been replaced by an independent quadrature comparison. The model is still not an ISDA-convention pricer; real CDS curves, accrual calendars, quote conventions, upfront amounts, licensed market data and independent model review remain outside scope.
 
 ## Validation and limits
 
