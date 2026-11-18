@@ -3,12 +3,13 @@ import math
 
 
 def survival(t, hazards, maturities):
-    if (not math.isfinite(t) or t < 0 or not hazards
+    if (isinstance(t, bool) or not math.isfinite(t) or t < 0 or not hazards
             or len(hazards) != len(maturities)):
         raise ValueError("invalid survival inputs")
     previous = cumulative = 0.0
     for h, end in zip(hazards, maturities):
-        if not math.isfinite(h) or h < 0 or not math.isfinite(end) or end <= previous:
+        if (isinstance(h, bool) or isinstance(end, bool) or not math.isfinite(h) 
+                or h < 0 or not math.isfinite(end) or end <= previous):
             raise ValueError("invalid hazard curve")
         cumulative += h * max(0.0, min(t, end) - previous)
         previous = end
@@ -18,10 +19,11 @@ def survival(t, hazards, maturities):
 
 
 def par_spread(maturity, hazards, maturities, recovery=0.4, rate=0.02, frequency=4):
-    if not (math.isfinite(maturity) and maturity > 0 and math.isfinite(rate)
-            and -0.1 <= rate <= 1 and math.isfinite(recovery)
+    if not (not isinstance(maturity, bool) and math.isfinite(maturity) and maturity > 0
+            and not isinstance(rate, bool) and math.isfinite(rate)
+            and -0.1 <= rate <= 1 and not isinstance(recovery, bool) and math.isfinite(recovery)
             and 0 <= recovery < 1 and isinstance(frequency, int)
-            and 1 <= frequency <= 24):
+            and not isinstance(frequency, bool) and 1 <= frequency <= 24):
         raise ValueError("invalid contract")
     steps = round(maturity * frequency)
     if abs(steps / frequency - maturity) > 1e-10 or steps < 1:
@@ -50,7 +52,8 @@ def bootstrap(maturities, spreads, recovery=0.4, rate=0.02, frequency=4, max_haz
     par_spread(maturities[0], [0.0], [maturities[0]], recovery, rate, frequency)
     hazards = []
     for i, (m, s) in enumerate(zip(maturities, spreads)):
-        if (not math.isfinite(m) or m <= (maturities[i-1] if i else 0)
+        if (isinstance(m, bool) or isinstance(s, bool) or not math.isfinite(m)
+                or m <= (maturities[i-1] if i else 0)
                 or not math.isfinite(s) or s < 0):
             raise ValueError("invalid ordered quotes")
         def model(h):
