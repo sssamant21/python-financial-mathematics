@@ -361,6 +361,13 @@ jobs:
           python accrued_default.py
           python accrued_default.py --hazard 0.05 --recovery 0.25
 
+      - name: Validate Project 45 synthetic CDS survival-curve bootstrap
+        run: |
+          cd quant-projects/45-cds-survival-curve-bootstrap
+          python -m unittest -v test_bootstrap.py
+          python -m compileall -q bootstrap.py test_bootstrap.py
+          python bootstrap.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
