@@ -68,6 +68,26 @@ class BootstrapTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             survival(0.5, [0.01], [True])
 
+    def test_flat_hazard_closed_form_repricing(self):
+        # Independent interval-end identity: each coupon's protection/premium
+        # ratio equals (1-R)*f*(exp(h/f)-1), regardless of tenor and flat rate.
+        for hazard in [0.0, 0.01, 0.2]:
+            for rate in [-0.02, 0.0, 0.05]:
+                for frequency in [1, 4, 12]:
+                    with self.subTest(hazard=hazard, rate=rate, frequency=frequency):
+                        tenors = [1, 2, 3]
+                        quotes = [par_spread(t, [hazard] * (i + 1),
+                                             tenors[:i + 1], rate=rate,
+                                             frequency=frequency)
+                                  for i, t in enumerate(tenors)]
+                        expected = 0.6 * frequency * math.expm1(hazard / frequency)
+                        for quote in quotes:
+                            self.assertAlmostEqual(quote, expected, places=11)
+                        calibrated = bootstrap(tenors, quotes, rate=rate,
+                                               frequency=frequency)
+                        for recovered in calibrated:
+                            self.assertAlmostEqual(recovered, hazard, places=9)
+
     def test_maturity_grid(self):
         with self.assertRaises(ValueError):
             par_spread(1.1, [0.02], [1.1])
