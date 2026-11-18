@@ -88,6 +88,27 @@ class BootstrapTests(unittest.TestCase):
                         for recovered in calibrated:
                             self.assertAlmostEqual(recovered, hazard, places=9)
 
+
+    def test_piecewise_hazard_manual_coupon_reconciliation(self):
+        # Independent two-period coupon-end calculation; no par_spread used
+        # to construct the expected quote.
+        h1, h2, rate, recovery = 0.01, 0.04, 0.02, 0.4
+        q1 = math.exp(-h1)
+        q2 = math.exp(-(h1 + h2))
+        d1, d2 = math.exp(-rate), math.exp(-2 * rate)
+        premium = d1 * q1 + d2 * q2
+        protection = (1 - recovery) * (
+            d1 * (1 - q1) + d2 * (q1 - q2))
+        expected = protection / premium
+        observed = par_spread(2, [h1, h2], [1, 2],
+                              recovery=recovery, rate=rate, frequency=1)
+        self.assertAlmostEqual(observed, expected, places=12)
+        first_quote = (1 - recovery) * (1 - q1) / q1
+        fitted = bootstrap([1, 2], [first_quote, expected],
+                           recovery=recovery, rate=rate, frequency=1)
+        self.assertAlmostEqual(fitted[0], h1, places=10)
+        self.assertAlmostEqual(fitted[1], h2, places=10)
+
     def test_maturity_grid(self):
         with self.assertRaises(ValueError):
             par_spread(1.1, [0.02], [1.1])
