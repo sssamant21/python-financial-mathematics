@@ -26,3 +26,15 @@ Seven deterministic tests **passed locally on 2026-11-18** (`python -m unittest 
 ## Analytical and boundary regression extension (2026-11-18)
 
 Four additional standard-library tests cover the closed-form flat-hazard par spread `s=(1-recovery)*frequency*expm1(hazard/frequency)` across nine synthetic cases, linear notional scaling of PV and sensitivities, rejection of a hazard bump beyond the supported upper bound, and the explicit forward difference at zero hazard. Run `python -m unittest -v test_cds_risk.py` from this directory. The four checks passed in a local source-equivalent standalone execution; **the expanded 11-test suite and exact published GitHub Actions revision have not yet been verified**. This discrete-coupon identity does not establish ISDA pricing equivalence, quote-based CS01, or independent model validation.
+
+## Single-tenor quote-based CS01 extension (2026-11-18)
+
+`quote_cs01.py` recalibrates a **flat hazard rate from a single synthetic par CDS quote** using the exact discrete-coupon identity `spread=(1-recovery)*frequency*expm1(hazard/frequency)`. It bumps the **quoted spread**, recalibrates the hazard, and reprices a fixed-coupon protection-buyer contract. `quote_cs01` is the PV change per **+1 bp quoted spread**, estimated with a central difference (one-sided near zero). This is different from `hazard01`, which directly bumps default intensity. The exercise assumes the same recovery, discount rate, maturity and coupon grid for calibration and valuation; it is not a multi-tenor curve or ISDA-standard market CS01.
+
+```bash
+python -m unittest -v test_cds_risk.py test_quote_cs01.py
+python -m compileall -q cds_risk.py quote_cs01.py test_cds_risk.py test_quote_cs01.py
+python quote_cs01.py
+```
+
+Eight new deterministic tests cover quote/par calibration, at-par PV, quote sensitivity, independent repricing, zero-quote forward differences, notional scaling, near-zero handling, and invalid-input guardrails. **The new suite and exact-revision hosted CI have not yet been verified**; previous 13/13 results apply only to the older baseline revision. No external data, independent mathematical review, or production certification.
