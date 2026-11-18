@@ -256,3 +256,8 @@ Project 40 also includes `test_curve_reconciliation.py`: independent period-by-p
 Project 42 off-grid extension: `42-key-rate-curve-risk/offgrid.py` adds piecewise-linear zero-rate interpolation, exact node gradients and finite-difference cross-checks for synthetic off-node payments. Run `python -m unittest -v test_key_rate.py test_offgrid.py` from Project 42. New tests require exact-revision execution/CI confirmation.
 
 Project 43 funding/basis regression now includes an independent `expm1`-based 2-bp sensitivity identity with a negative synthetic basis (`test_funding_basis.py`); 19 total Project 43 tests are authored. Run `python -m unittest -v test_fx_forward.py test_funding_basis.py` from `43-fx-forward-parity/`. The new case's runtime and exact-revision CI remain unverified.
+
+
+### Project 45 — CDS survival-curve bootstrap
+
+[Project 45: Piecewise-constant default hazard curve calibration](45-cds-survival-curve-bootstrap/README.md) uses synthetic par CDS quotes, a bounded sequential bisection solver, explicit infeasibility rejection, and seven deterministic regression tests. Run `python -m unittest -v test_bootstrap.py` from the project directory. Local authored-source tests passed 7/7; exact-revision CI and independent model review remain unverified.
