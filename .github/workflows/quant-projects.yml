@@ -377,6 +377,13 @@ jobs:
           python quote_cs01.py
           python multi_tenor_cs01.py
 
+      - name: Validate Project 47 tranche-loss synthetic tests
+        run: |
+          cd quant-projects/47-credit-portfolio-tranche-loss
+          python -m unittest -v test_tranche_loss.py
+          python -m compileall -q tranche_loss.py test_tranche_loss.py
+          python tranche_loss.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
