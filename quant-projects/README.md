@@ -69,7 +69,7 @@ Forty-nine self-contained labs complement the financial-mathematics books withou
 
 | [48](48-credit-rating-migration/README.md) | Four-state rating transitions, time-varying stress, and year-end discounted expected loss | Synthetic only | `migration.py`, `time_varying.py`, `discounted_loss.py` |
 
-| [49](49-counterparty-exposure-pfe/README.md) | Synthetic counterparty EPE/PFE95, collateral threshold sensitivity and simplified independent-default CVA | Synthetic only | `exposure.py` |
+| [49](49-counterparty-exposure-pfe/README.md) | Synthetic counterparty EPE/PFE95, simplified independent-default CVA and analytical Brownian benchmarks | Synthetic only | `exposure.py`, `diagnostics.py` |
 
 ## Quick start (Windows PowerShell)
 
