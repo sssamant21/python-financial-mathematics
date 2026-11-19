@@ -1104,3 +1104,7 @@ Added `48-credit-rating-migration/time_varying.py` and `test_time_varying.py`: a
 ### Project 48 dedicated CI coverage (2026-11-19)
 
 Dedicated quant-projects GitHub Actions workflow updated at commit [9936a31](https://github.com/sssamant21/python-financial-mathematics/commit/9936a31db292af40ee5e87f091e0762e673d5587) to run both Project 48 unittest modules (16 authored tests), Python compilation and both synthetic CLIs. This is **workflow configuration, not an observed passing run**. Exact-revision CI outcome, independent review, empirical point-in-time cohort calibration and production readiness remain **unverified**. Project 47's expanded 21-test suite also requires exact-revision CI evidence. Next: inspect hosted jobs/logs for the new workflow commit, repair any failures, then start a distinct Project 49.
+
+### Project 48 discounted-loss timing checkpoint (2026-11-19)
+
+Added `discounted_loss.py` and `test_discounted_loss.py`: year-end discounting of annual first-default mass, zero-rate reconciliation with existing cumulative expected loss, rate monotonicity, LGD and matrix validation. **Eight local deterministic tests passed** with source-equivalent copies of the published baseline modules; compilation and synthetic CLI passed. Exact published revision integration and hosted CI remain unverified. Next: verify Project 47's 21 tests and Project 48's 24 tests in exact-revision CI, investigate failures, then plan distinct Project 49. No market calibration or independent review.
