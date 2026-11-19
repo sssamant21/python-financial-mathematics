@@ -38,3 +38,18 @@ python quote_cs01.py
 ```
 
 Eight new deterministic tests cover quote/par calibration, at-par PV, quote sensitivity, independent repricing, zero-quote forward differences, notional scaling, near-zero handling, and invalid-input guardrails. **The new suite and exact-revision hosted CI have not yet been verified**; previous 13/13 results apply only to the older baseline revision. No external data, independent mathematical review, or production certification.
+
+## Multi-tenor quote-recalibrated bucket CS01 (2026-11-19)
+
+`multi_tenor_cs01.py` extends the simplified quarterly-coupon CDS model to a **piecewise-constant hazard curve** calibrated sequentially from synthetic 1-, 3-, and 5-year par quotes. Each bucket CS01 bumps one quote, recalibrates **all** hazard segments, and reprices the unchanged protection-buyer contract. `parallel_sum` sums bucket derivatives; it is a first-order parallel-shift approximation, not an exact finite-shock P&L. Zero quotes use forward differences. Infeasible bumped curves raise an error rather than silently using negative hazards.
+
+The premium leg is `A = Σ D(t_i)Q(t_i)/f`, protection leg `P = (1-R)Σ D(t_i)(Q(t_{i-1})-Q(t_i))`, and PV `N(P-cA)`. No ISDA calendars, accrued-on-default, upfronts, credit-risk discounting or real-market data are modeled. The bisection tolerance is educational, and numerical derivative stability should be assessed across multiple bump sizes.
+
+```bash
+cd quant-projects/46-cds-credit-sensitivity
+python multi_tenor_cs01.py
+python -m unittest -v test_multi_tenor_cs01.py
+python -m compileall -q multi_tenor_cs01.py test_multi_tenor_cs01.py
+```
+
+Seven synthetic unittest methods are authored for quote reproduction, bucket aggregation, scaling, one-sided zero quotes, infeasibility and malformed inputs. **Execution and exact-revision hosted CI are not verified** for this extension. The previous hosted evidence applies only to earlier revisions. Independent mathematical review, licensed-market validation, and production certification remain outstanding.
