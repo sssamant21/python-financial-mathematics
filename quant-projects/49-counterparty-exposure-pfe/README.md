@@ -23,3 +23,13 @@ Output columns: `year,epe,pfe95,default_mass,incremental_cva`; a final line repo
 ## Model validation and limits
 
 Tests cover deterministic reproducibility, nonnegative exposure, zero-volatility and zero-default limiting cases, monotonic threshold effects on matched paths, hazard-mass accounting, quantile interpolation and invalid inputs. Additional research should compare EPE with analytical Brownian positive-part expectations, quantify Monte Carlo standard errors and seeds, introduce exposure/default dependence, and independently review financial conventions. No historical market calibration, CI pass for this publication, independent validation, or production certification is claimed.
+
+## Analytical benchmark and uncertainty extension (2026-11-19)
+
+Run `python -m unittest -v test_exposure.py test_diagnostics.py` and `python -m py_compile exposure.py diagnostics.py test_exposure.py test_diagnostics.py` from this directory. Standard library only; no market data download.
+
+For the stylized model, `V_t = N σ sqrt(t) Z`, with `s = N σ sqrt(t)`, the analytical expected positive exposure after threshold `H` is `EPE(t) = s φ(H/s) - H Φ(-H/s)` for `s > 0`, and zero when `s = 0`. The population PFE at quantile `q` is `max(s Φ⁻¹(q) - H, 0)`. Compare these to the simulated `epe` and `pfe95` in `exposure.py`; sample quantiles fluctuate, and the quantile interpolation convention is not identical to the population definition at finite path counts.
+
+`diagnostics.epe_standard_error(exposures)` estimates the IID-path standard error of **mean exposure at one year**, not uncertainty in PFE or aggregate CVA. Cross-year exposures on the same paths are dependent, so do not combine yearwise standard errors as if independent. The benchmarks do not validate real derivative pricing, collateral mechanics, default dependence, or market calibration.
+
+**Evidence:** Six new deterministic analytical test methods passed locally on authored source; Python compilation passed. Existing eight tests and exact published-revision CI were not executed in that local run. Independent model review remains pending.
