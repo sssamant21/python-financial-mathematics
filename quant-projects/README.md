@@ -67,6 +67,8 @@ Forty-eight self-contained labs complement the financial-mathematics books witho
 
 | [47](47-credit-portfolio-tranche-loss/README.md) | Exact independent-default tranche loss, one-factor Gaussian correlated-default stress, Monte Carlo uncertainty and convergence/reconciliation diagnostics | Synthetic only | `tranche_loss.py`, `correlated_defaults.py` |
 
+| [48](48-credit-rating-migration/README.md) | Four-state rating transitions, cumulative defaults, and time-varying annual stress matrices | Synthetic only | `migration.py`, `time_varying.py` |
+
 ## Quick start (Windows PowerShell)
 
 ```powershell
