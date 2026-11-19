@@ -39,3 +39,15 @@ python -m compileall -q tranche_loss.py correlated_defaults.py test_tranche_loss
 The output reports expected loss **per portfolio notional**, its Monte Carlo standard error `SE=s/sqrt(paths)`, an approximate clipped `mean +/- 1.96*SE` interval, and the **exact independent-default** benchmark. This interval describes simulation noise conditional on assumed parameters, **not** model uncertainty or a forecast interval. Compare senior-tranche outcomes across predeclared correlations (0, 0.25, 0.60); do not assume every tranche's loss increases monotonically with correlation. Use the same fixed seed for reproducibility; scenarios are not paired common-random-number estimators. Maximum workload is 5 million obligor-path draws; no external dependencies, live orders, or market downloads.
 
 **Validation status:** Seven new tests passed locally against a source-equivalent temporary baseline shim, after correcting a floating-point equality assertion; the actual published integration and exact-revision GitHub Actions run remain **unverified**. The previously published nine baseline tests passed hosted CI. The Gaussian copula, constant PD/LGD, one-year horizon, homogeneous obligors, independent idiosyncratic shocks, normal-approximation CI, and absence of calibration are material limitations. This is not a market tranche-pricing model, investment advice, or production-certified code.
+
+## Monte Carlo convergence and accounting diagnostics
+
+The separate `test_mc_diagnostics.py` suite checks four **predeclared synthetic** properties: the estimated standard error decreases as paths increase (2,000 versus 16,000); full-capital expected loss remains close to `PD × LGD` at latent correlations 0, 0.25 and 0.60; a 0–5%, 5–20%, 20–100% tranche partition reconciles to portfolio expected loss; and senior-tranche outputs remain finite and bounded. Statistical checks use fixed seeds, conservative multiple-SE tolerances, and a small absolute numerical allowance. They are **regression checks, not formal confidence-interval coverage tests**; fixed-seed success cannot establish market calibration.
+
+```bash
+cd quant-projects/47-credit-portfolio-tranche-loss
+python -m unittest -v test_tranche_loss.py test_correlated_defaults.py test_mc_diagnostics.py
+python -m compileall -q tranche_loss.py correlated_defaults.py test_tranche_loss.py test_correlated_defaults.py test_mc_diagnostics.py
+```
+
+The same seed across separate tranche runs produces identical underlying draws with the same portfolio inputs; the reconciliation test conservatively sums individual standard errors rather than claiming independent errors. Tests use synthetic draws only. **The four new tests are authored and wired into CI; runtime and exact-revision CI success have not yet been verified.** Independent model review and real-world calibration remain outstanding.
