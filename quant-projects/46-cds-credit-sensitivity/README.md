@@ -64,3 +64,15 @@ python -m compileall -q multi_tenor_cs01.py test_parallel_reconciliation.py
 ```
 
 Four reconciliation tests have been **authored and added to dedicated CI**. Their runtime outcome and exact-revision hosted CI are **not yet verified**; do not treat publication as a passing test result.
+
+## Quote-bump convergence regression (2026-11-19)
+
+`test_bump_convergence.py` adds five deterministic synthetic checks for central-difference bucket and parallel quote-CS01 stability as the quote bump decreases from 1 bp to 0.1 bp to 0.01 bp; direct fully recalibrated parallel repricing; one-sided differences at zero quotes; and rejection of unsupported tiny bumps. These are numerical consistency checks, **not** proof of calibrated convergence order or ISDA equivalence. Very small bumps can amplify floating-point and bisection error, so the model enforces a 0.001-bp minimum.
+
+```bash
+cd quant-projects/46-cds-credit-sensitivity
+python -m unittest -v test_cds_risk.py test_quote_cs01.py test_multi_tenor_cs01.py test_parallel_reconciliation.py test_bump_convergence.py
+python -m compileall -q multi_tenor_cs01.py test_bump_convergence.py
+```
+
+The five new tests are authored and included in dedicated CI; **their execution and exact-revision CI outcome are unverified** at publication. Previously verified 32/32 tests belong to the earlier revision (see tracker). No licensed CDS quotes or live trading are used; independent review and production certification remain pending.
