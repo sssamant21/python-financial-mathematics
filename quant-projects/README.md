@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Forty-eight self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Forty-nine self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -68,6 +68,8 @@ Forty-eight self-contained labs complement the financial-mathematics books witho
 | [47](47-credit-portfolio-tranche-loss/README.md) | Exact independent-default tranche loss, one-factor Gaussian correlated-default stress, Monte Carlo uncertainty and convergence/reconciliation diagnostics | Synthetic only | `tranche_loss.py`, `correlated_defaults.py` |
 
 | [48](48-credit-rating-migration/README.md) | Four-state rating transitions, time-varying stress, and year-end discounted expected loss | Synthetic only | `migration.py`, `time_varying.py`, `discounted_loss.py` |
+
+| [49](49-counterparty-exposure-pfe/README.md) | Synthetic counterparty EPE/PFE95, collateral threshold sensitivity and simplified independent-default CVA | Synthetic only | `exposure.py` |
 
 ## Quick start (Windows PowerShell)
 
