@@ -1100,3 +1100,7 @@ Published `48-credit-rating-migration/` with a four-state absorbing Markov-chain
 ### Project 48 time-varying transition extension (2026-11-19)
 
 Added `48-credit-rating-migration/time_varying.py` and `test_time_varying.py`: annual transition-matrix sequences, transient/persistent stress comparisons, incremental default-mass reconciliation, absorbing-default edge case and input guards. **7/7 local tests passed** with a source-equivalent baseline shim; Python compilation and synthetic CLI smoke passed. The exact GitHub revision, hosted CI, licensed cohort calibration and independent model review are **unverified**. Next: add Project 48 to dedicated CI, verify both test suites against a pinned SHA, then consider Project 49 as a distinct lab.
+
+### Project 48 dedicated CI coverage (2026-11-19)
+
+Dedicated quant-projects GitHub Actions workflow updated at commit [9936a31](https://github.com/sssamant21/python-financial-mathematics/commit/9936a31db292af40ee5e87f091e0762e673d5587) to run both Project 48 unittest modules (16 authored tests), Python compilation and both synthetic CLIs. This is **workflow configuration, not an observed passing run**. Exact-revision CI outcome, independent review, empirical point-in-time cohort calibration and production readiness remain **unverified**. Project 47's expanded 21-test suite also requires exact-revision CI evidence. Next: inspect hosted jobs/logs for the new workflow commit, repair any failures, then start a distinct Project 49.
