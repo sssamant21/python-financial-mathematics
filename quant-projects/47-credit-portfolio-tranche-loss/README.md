@@ -23,7 +23,7 @@ The CLI uses invented assumptions and prints expected loss in portfolio-notional
 
 This is **not** a credit-correlation, copula, tranche-pricing, discounting, recovery-timing, or CDS-convention model. Independent defaults strongly understate clustered-loss possibilities; homogeneous exposure, fixed LGD, and a single period are additional material limitations. No survival or selection bias is inferred from synthetic data. To study empirical portfolios, source authorized point-in-time constituents, defaults and recoveries with observation dates and licenses; never commit third-party raw datasets.
 
-**Validation:** Nine deterministic tests authored. Exact published-revision CI, independent review, market calibration, and production certification remain unverified until separately confirmed.
+**Validation:** Nine baseline deterministic tests passed in hosted GitHub Actions [run 44484700465](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44484700465). Independent review, market calibration, and production certification remain unverified.
 
 ## Correlated-default stress extension (one-factor Gaussian model)
 
@@ -38,7 +38,7 @@ python -m compileall -q tranche_loss.py correlated_defaults.py test_tranche_loss
 
 The output reports expected loss **per portfolio notional**, its Monte Carlo standard error `SE=s/sqrt(paths)`, an approximate clipped `mean +/- 1.96*SE` interval, and the **exact independent-default** benchmark. This interval describes simulation noise conditional on assumed parameters, **not** model uncertainty or a forecast interval. Compare senior-tranche outcomes across predeclared correlations (0, 0.25, 0.60); do not assume every tranche's loss increases monotonically with correlation. Use the same fixed seed for reproducibility; scenarios are not paired common-random-number estimators. Maximum workload is 5 million obligor-path draws; no external dependencies, live orders, or market downloads.
 
-**Validation status:** Seven new tests passed locally against a source-equivalent temporary baseline shim, after correcting a floating-point equality assertion; the actual published integration and exact-revision GitHub Actions run remain **unverified**. The previously published nine baseline tests passed hosted CI. The Gaussian copula, constant PD/LGD, one-year horizon, homogeneous obligors, independent idiosyncratic shocks, normal-approximation CI, and absence of calibration are material limitations. This is not a market tranche-pricing model, investment advice, or production-certified code.
+**Validation status:** The seven correlated-default tests were initially checked against a source-equivalent temporary baseline shim. Subsequently, the combined baseline and correlated-default workflow steps passed in hosted [GitHub Actions run 44511969707](https://github.com/sssamant21/python-financial-mathematics/actions/runs/44511969707) on commit `9e9cc9d`; individual test counts were not extracted from that run. The four later Monte Carlo diagnostic tests were not included in that evidence. The Gaussian copula, constant PD/LGD, one-year horizon, homogeneous obligors, independent idiosyncratic shocks, normal-approximation CI, and absence of calibration are material limitations. This is not a market tranche-pricing model, investment advice, or production-certified code.
 
 ## Monte Carlo convergence and accounting diagnostics
 
