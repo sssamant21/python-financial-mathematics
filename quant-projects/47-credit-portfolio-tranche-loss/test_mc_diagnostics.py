@@ -33,6 +33,19 @@ class MonteCarloDiagnostics(unittest.TestCase):
         discrepancy = abs(sum(x["mean"] for x in results) - .07)
         self.assertLess(discrepancy, 5 * sum(x["se"] for x in results) + .002)
 
+    def test_seeded_pathwise_tranche_partition_identity(self):
+        # Identical seeds and simulation parameters produce identical default
+        # paths across tranche calls. Their losses must add up path by path,
+        # hence the sample means must reconcile to floating-point precision.
+        common = dict(n=20, pd=.1, lgd=.7, rho=.45, paths=2000, seed=91)
+        portfolio = simulate(attachment=0, detachment=1, **common)
+        layers = [(0, .05), (.05, .2), (.2, 1)]
+        layer_means = [
+            simulate(attachment=a, detachment=d, **common)["mean"]
+            for a, d in layers
+        ]
+        self.assertAlmostEqual(sum(layer_means), portfolio["mean"], places=11)
+
     def test_stress_results_are_bounded_and_finite(self):
         for rho in (0, .25, .6):
             with self.subTest(rho=rho):
