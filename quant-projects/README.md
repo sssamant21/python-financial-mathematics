@@ -267,3 +267,5 @@ Project 43 funding/basis regression now includes an independent `expm1`-based 2-
 [Project 45: Piecewise-constant default hazard curve calibration](45-cds-survival-curve-bootstrap/README.md) uses synthetic par CDS quotes, a bounded sequential bisection solver, explicit infeasibility rejection, and seven deterministic regression tests. Run `python -m unittest -v test_bootstrap.py` from the project directory. Local authored-source tests passed 7/7; exact-revision CI and independent model review remain unverified.
 
 Project 45 additionally includes an independent two-period, piecewise-hazard coupon-PV reconciliation regression test. Run `python -m unittest -v test_bootstrap.py` in `45-cds-survival-curve-bootstrap/`; 14 tests are authored, but exact-revision execution and CI are not yet verified.
+
+Project 46 update: [synthetic multi-tenor bucket-CS01 parallel-shock reconciliation](46-cds-credit-sensitivity/README.md) adds four independent derivative/finite-shock checks; execution and exact-revision CI remain unverified.
