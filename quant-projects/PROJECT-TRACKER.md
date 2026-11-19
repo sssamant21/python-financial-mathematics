@@ -1116,3 +1116,7 @@ Verified [GitHub Actions run 44604365679](https://github.com/sssamant21/python-f
 ### Project 49 — Counterparty exposure and PFE (2026-11-19)
 
 Authored a standard-library synthetic Monte Carlo exposure model, EPE/PFE95, collateral threshold and independent-default CVA, with eight deterministic unittest methods, tutorial and CLI. **Tests are authored; exact published-revision execution and hosted CI are unverified at publication.** No licensed market data, independent model review, or production certification. Next: execute Project 49 in CI, add analytical Brownian EPE benchmark and seed-to-seed Monte Carlo error diagnostics before Project 50.
+
+### Project 49 analytical benchmark extension (2026-11-19)
+
+Added `49-counterparty-exposure-pfe/diagnostics.py` and `test_diagnostics.py`: Brownian positive-part analytical EPE, population PFE quantile, and IID-path EPE sample-mean standard error with input guardrails. **Six deterministic tests passed locally on authored source** and Python compilation passed. The original eight tests were not run in that local execution; exact published-revision CI, independent validation, and licensed-market calibration remain unverified. Next: execute both Project 49 suites against the published SHA in GitHub Actions, add seed/path-count convergence and correlated exposure/default stress, then begin distinct Project 50.
