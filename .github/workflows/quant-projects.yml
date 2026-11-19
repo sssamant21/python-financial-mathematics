@@ -371,8 +371,8 @@ jobs:
       - name: Validate Project 46 synthetic CDS credit sensitivity
         run: |
           cd quant-projects/46-cds-credit-sensitivity
-          python -m unittest -v test_cds_risk.py test_quote_cs01.py test_multi_tenor_cs01.py test_parallel_reconciliation.py test_bump_convergence.py
-          python -m compileall -q cds_risk.py quote_cs01.py multi_tenor_cs01.py test_cds_risk.py test_quote_cs01.py test_multi_tenor_cs01.py test_parallel_reconciliation.py test_bump_convergence.py
+          python -m unittest -v test_cds_risk.py test_quote_cs01.py test_multi_tenor_cs01.py test_parallel_reconciliation.py test_bump_convergence.py test_flat_curve_reference.py
+          python -m compileall -q cds_risk.py quote_cs01.py multi_tenor_cs01.py test_cds_risk.py test_quote_cs01.py test_multi_tenor_cs01.py test_parallel_reconciliation.py test_bump_convergence.py test_flat_curve_reference.py
           python cds_risk.py
           python quote_cs01.py
           python multi_tenor_cs01.py
