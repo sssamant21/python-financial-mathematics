@@ -31,7 +31,7 @@ class TrancheTests(unittest.TestCase):
             with self.subTest(kwargs=kwargs),self.assertRaises(ValueError):
                 expected_tranche_loss(**kwargs)
     def test_tranche_payoff(self):
-        self.assertEqual(tranche_loss(.2,.05,.15),.1)
+        self.assertAlmostEqual(tranche_loss(.2,.05,.15),.1)
 
 
 if __name__=="__main__":
