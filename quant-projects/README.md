@@ -65,7 +65,7 @@ Forty-seven self-contained labs complement the financial-mathematics books witho
 
 | [46](46-cds-credit-sensitivity/README.md) | Synthetic CDS protection-buyer PV, par spread, coupon DV01, finite-difference hazard sensitivity, single- and multi-tenor quote-recalibrated bucket CS01 and analytical regression checks | Synthetic only | `cds_risk.py`, `multi_tenor_cs01.py` |
 
-| [47](47-credit-portfolio-tranche-loss/README.md) | Exact binomial expected tranche loss, attachment/detachment layers, and loss conservation under independent defaults | Synthetic only | `tranche_loss.py` |
+| [47](47-credit-portfolio-tranche-loss/README.md) | Exact independent-default tranche loss and seeded one-factor Gaussian correlated-default stress with Monte Carlo uncertainty | Synthetic only | `tranche_loss.py`, `correlated_defaults.py` |
 
 ## Quick start (Windows PowerShell)
 
