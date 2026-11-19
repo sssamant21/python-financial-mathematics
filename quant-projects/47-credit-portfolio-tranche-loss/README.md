@@ -51,3 +51,5 @@ python -m compileall -q tranche_loss.py correlated_defaults.py test_tranche_loss
 ```
 
 The same seed across separate tranche runs produces identical underlying draws with the same portfolio inputs; the reconciliation test conservatively sums individual standard errors rather than claiming independent errors. Tests use synthetic draws only. **The four new tests are authored and wired into CI; runtime and exact-revision CI success have not yet been verified.** Independent model review and real-world calibration remain outstanding.
+
+The fifth diagnostic checks **pathwise tranche-loss conservation**: separate simulations with identical seed, obligors, PD, LGD, correlation, and path count generate the same default paths, so the sum of disjoint layer sample means equals the full-capital sample mean up to floating-point rounding. This is a stronger deterministic accounting check than comparing separately simulated means to theoretical PD×LGD. The five-test diagnostic suite and expanded 21-test Project 47 suite remain **unverified at the published revision**; an authored test is not a passing test.
