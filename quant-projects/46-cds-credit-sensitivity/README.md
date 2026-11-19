@@ -53,3 +53,14 @@ python -m compileall -q multi_tenor_cs01.py test_multi_tenor_cs01.py
 ```
 
 Seven synthetic unittest methods are authored for quote reproduction, bucket aggregation, scaling, one-sided zero quotes, infeasibility and malformed inputs. **Execution and exact-revision hosted CI are not verified** for this extension. The previous hosted evidence applies only to earlier revisions. Independent mathematical review, licensed-market validation, and production certification remain outstanding.
+
+## Independent parallel-shock reconciliation checkpoint (2026-11-19)
+
+The standard-library `test_parallel_reconciliation.py` suite independently reprices a fully recalibrated curve under simultaneous quote bumps and compares its central-difference derivative with the sum of bucket CS01 values. It also checks first-order approximation behavior under a larger shock, notional scaling and infeasible quote rejection. The comparison uses a finite tolerance because nonlinear curve recalibration introduces second-order terms. These tests use synthetic quotes only and are not ISDA or market-data validation.
+
+```bash
+python -m unittest -v test_multi_tenor_cs01.py test_parallel_reconciliation.py
+python -m compileall -q multi_tenor_cs01.py test_parallel_reconciliation.py
+```
+
+Four reconciliation tests have been **authored and added to dedicated CI**. Their runtime outcome and exact-revision hosted CI are **not yet verified**; do not treat publication as a passing test result.
