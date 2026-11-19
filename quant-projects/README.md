@@ -269,3 +269,5 @@ Project 43 funding/basis regression now includes an independent `expm1`-based 2-
 Project 45 additionally includes an independent two-period, piecewise-hazard coupon-PV reconciliation regression test. Run `python -m unittest -v test_bootstrap.py` in `45-cds-survival-curve-bootstrap/`; 14 tests are authored, but exact-revision execution and CI are not yet verified.
 
 Project 46 update: [synthetic multi-tenor bucket-CS01 parallel-shock reconciliation](46-cds-credit-sensitivity/README.md) adds four independent derivative/finite-shock checks; execution and exact-revision CI remain unverified.
+
+Project 46 bump-size convergence extension: [Project 46](46-cds-credit-sensitivity/README.md) adds `test_bump_convergence.py`, five synthetic finite-difference stability/boundary checks across 1, 0.1 and 0.01 bp quote bumps. Run `python -m unittest -v test_bump_convergence.py` from that directory. Newly authored checks and exact-revision hosted CI remain unverified.
