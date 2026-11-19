@@ -76,3 +76,11 @@ python -m compileall -q multi_tenor_cs01.py test_bump_convergence.py
 ```
 
 The five new tests are authored and included in dedicated CI; **their execution and exact-revision CI outcome are unverified** at publication. Previously verified 32/32 tests belong to the earlier revision (see tracker). No licensed CDS quotes or live trading are used; independent review and production certification remain pending.
+
+## Independent flat-curve analytical reference (2026-11-19)
+
+The synthetic coupon-end settlement model has a useful exact check when hazard `h` is constant across all tenors and payments occur `f` times per year:
+
+`par_spread = (1 - recovery) * f * expm1(h / f)`, so `h = f * log1p(par_spread / ((1 - recovery) * f))`.
+
+This identity is independent of the flat discount rate **within this simplified discrete model**, and should not be generalized to market-standard CDS conventions. The new `test_flat_curve_reference.py` checks this formula, flat multi-tenor bootstraps, par-spread reconciliation, and par-coupon zero PV. Run `python -m unittest -v test_flat_curve_reference.py`. **Four new tests authored; local runtime and exact-revision CI unverified at publication.** Licensed quotes, ISDA equivalence and independent model review remain unverified.
