@@ -271,3 +271,5 @@ Project 45 additionally includes an independent two-period, piecewise-hazard cou
 Project 46 update: [synthetic multi-tenor bucket-CS01 parallel-shock reconciliation](46-cds-credit-sensitivity/README.md) adds four independent derivative/finite-shock checks; execution and exact-revision CI remain unverified.
 
 Project 46 bump-size convergence extension: [Project 46](46-cds-credit-sensitivity/README.md) adds `test_bump_convergence.py`, five synthetic finite-difference stability/boundary checks across 1, 0.1 and 0.01 bp quote bumps. Run `python -m unittest -v test_bump_convergence.py` from that directory. Newly authored checks and exact-revision hosted CI remain unverified.
+
+Project 46 additionally includes an independent closed-form flat-hazard reference in `test_flat_curve_reference.py`. Run `python -m unittest -v test_flat_curve_reference.py` in `46-cds-credit-sensitivity/`; the four new synthetic tests require exact-revision CI confirmation and independent review.
