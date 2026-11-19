@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Forty-seven self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Forty-eight self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -277,3 +277,4 @@ Project 46 bump-size convergence extension: [Project 46](46-cds-credit-sensitivi
 Project 46 additionally includes an independent closed-form flat-hazard reference in `test_flat_curve_reference.py`. Run `python -m unittest -v test_flat_curve_reference.py` in `46-cds-credit-sensitivity/`; the four new synthetic tests require exact-revision CI confirmation and independent review.
 
 Project 47 update: [credit portfolio tranche-loss Monte Carlo diagnostics](47-credit-portfolio-tranche-loss/README.md) now include a seeded pathwise loss-partition conservation test alongside convergence, correlation and bounded-loss checks. **21 synthetic tests authored; exact-revision CI remains unverified.** Run `python -m unittest -v test_tranche_loss.py test_correlated_defaults.py test_mc_diagnostics.py` from the Project 47 directory.
+| [48](48-credit-rating-migration/README.md) | Four-state absorbing Markov rating migration, cumulative default probability, hypothetical stress matrix, and expected-loss accounting | Synthetic only | `migration.py` |
