@@ -1096,3 +1096,7 @@ Added a fifth diagnostic regression test asserting the sum of three disjoint tra
 ### Project 48 — Credit rating migration (2026-11-19)
 
 Published `48-credit-rating-migration/` with a four-state absorbing Markov-chain model, illustrative baseline and stressed one-year transition matrices, cumulative default probability, LGD-based expected-loss accounting, tutorial, and nine deterministic tests. **Nine tests passed locally on authored source**, Python compilation and CLI smoke passed. GitHub DNS resolution prevented exact checkout; **published-revision CI and independent review remain unverified**. No third-party data, market calibration, broker connectivity, or production certification. Next: verify Project 48 exact-revision CI, add time-varying transition-matrix sensitivity and point-in-time calibration guidance, and revisit Project 47's unverified expanded 21-test CI.
+
+### Project 48 time-varying transition extension (2026-11-19)
+
+Added `48-credit-rating-migration/time_varying.py` and `test_time_varying.py`: annual transition-matrix sequences, transient/persistent stress comparisons, incremental default-mass reconciliation, absorbing-default edge case and input guards. **7/7 local tests passed** with a source-equivalent baseline shim; Python compilation and synthetic CLI smoke passed. The exact GitHub revision, hosted CI, licensed cohort calibration and independent model review are **unverified**. Next: add Project 48 to dedicated CI, verify both test suites against a pinned SHA, then consider Project 49 as a distinct lab.
