@@ -385,6 +385,15 @@ jobs:
           python tranche_loss.py
           python correlated_defaults.py
 
+
+      - name: Validate Project 48 synthetic credit-rating migration
+        run: |
+          cd quant-projects/48-credit-rating-migration
+          python -m unittest -v test_migration.py test_time_varying.py
+          python -m compileall -q migration.py time_varying.py test_migration.py test_time_varying.py
+          python migration.py
+          python time_varying.py
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
