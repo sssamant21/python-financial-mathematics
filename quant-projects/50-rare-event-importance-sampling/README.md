@@ -30,3 +30,15 @@ The CLI reports exact, ordinary Monte Carlo and importance-sampling event probab
 Six deterministic tests cover analytical limiting examples, seeded repeatability, a loose five-standard-error comparison with the exact benchmark, nonnegative outputs, and invalid-input rejection. The authored implementation passed **6/6 local tests**, compilation and a 1,000-path CLI smoke test on 2026-11-20. **The exact published GitHub revision, hosted CI, historical calibration, and independent model review remain unverified.**
 
 Assumptions include independent homogeneous defaults, deterministic severity, one-year horizon and known p. The model excludes default correlation, exposure at default, recovery uncertainty, parameter estimation, time variation and portfolio concentration. Sample standard errors are not model-risk bounds. The comparison is illustrative, not proof that a particular tilt is optimal.
+
+## Fixed tilt sensitivity extension
+
+`tilt_diagnostics.py` compares predeclared artificial default probabilities using independent, seeded synthetic draws. It reports weighted event estimates, pathwise standard errors, event hits, the exact binomial reference, mean likelihood weight and the conventional **full-weight effective sample size** `(sum w)^2 / sum(w^2)`. ESS is a descriptive weight-degeneracy diagnostic, **not** an event-specific variance reduction guarantee; low ESS or high standard error can reveal a poor tilt. Each tilt has its own deterministic seed stream, so cross-tilt estimates are not paired.
+
+```bash
+python -m unittest -v test_rare_event.py test_tilt_diagnostics.py
+python -m py_compile rare_event.py tilt_diagnostics.py test_rare_event.py test_tilt_diagnostics.py
+python tilt_diagnostics.py --paths 1000 --seed 50 --tilts 0.08 0.17 0.35
+```
+
+Six new deterministic tests are authored for reproducibility, exact-reference consistency, ESS bounds, the identity-tilt limit, and input guardrails. **Execution of these new tests and exact-revision CI remain unverified.** The grid is fixed in advance and does not use held-out outcomes to tune `q`. The default model is independent, homogeneous, and synthetic; no production calibration or independent review is claimed.
