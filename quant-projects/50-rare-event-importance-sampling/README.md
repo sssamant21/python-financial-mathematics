@@ -42,3 +42,16 @@ python tilt_diagnostics.py --paths 1000 --seed 50 --tilts 0.08 0.17 0.35
 ```
 
 Six new deterministic tests are authored for reproducibility, exact-reference consistency, ESS bounds, the identity-tilt limit, and input guardrails. **Execution of these new tests and exact-revision CI remain unverified.** The grid is fixed in advance and does not use held-out outcomes to tune `q`. The default model is independent, homogeneous, and synthetic; no production calibration or independent review is claimed.
+
+
+## Independent-seed precision diagnostics
+
+`repeated_precision.py` repeats the same **predeclared** tilt grid with distinct seeded simulation runs. For each tilt, it reports the across-run standard deviation of ordinary and weighted Monte Carlo probability estimates, their empirical variance ratio (ordinary variance divided by importance-sampling variance), and the mean within-run importance-sampling standard error. A ratio greater than one indicates lower observed variance for importance sampling **in this finite synthetic experiment**, not guaranteed future improvement. When the weighted standard deviation is zero, the ratio is reported as `None` rather than infinity.
+
+```bash
+python -m unittest -v test_repeated_precision.py
+python -m py_compile repeated_precision.py test_repeated_precision.py
+python repeated_precision.py --paths 1000 --repetitions 12 --seed 500 --tilts 0.08 0.17 0.35
+```
+
+All runs share the same seed labels for comparability but ordinary and tilted samples are independently drawn within each run. No grid search or out-of-sample tilt selection is performed. Small numbers of repetitions, rare-event zero counts, and parameter assumptions make empirical variance ratios noisy. Computation is capped at 120 million Bernoulli draws, with bounded paths, repetitions, borrowers and tilt counts. Five new tests were authored; **local execution and exact-revision hosted CI for this extension are unverified**. Previous Project 49–50 hosted workflow steps passed on commit `7ee8083`, before this extension. No historical calibration, independent review, or production certification is claimed.
