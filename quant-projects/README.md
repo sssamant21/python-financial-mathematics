@@ -282,3 +282,5 @@ Project 46 additionally includes an independent closed-form flat-hazard referenc
 
 Project 47 update: [credit portfolio tranche-loss Monte Carlo diagnostics](47-credit-portfolio-tranche-loss/README.md) now include a seeded pathwise loss-partition conservation test alongside convergence, correlation and bounded-loss checks. **21 synthetic tests authored; exact-revision CI remains unverified.** Run `python -m unittest -v test_tranche_loss.py test_correlated_defaults.py test_mc_diagnostics.py` from the Project 47 directory.
 | [48](48-credit-rating-migration/README.md) | Four-state absorbing Markov rating migration, cumulative default probability, hypothetical stress matrix, and expected-loss accounting | Synthetic only | `migration.py` |
+
+Project 49 extension: [multi-seed Brownian EPE convergence](49-counterparty-exposure-pfe/README.md) compares independent-seed Monte Carlo estimates with analytical EPE, reports between-seed standard error and benchmark error, and includes nine new deterministic tests. Run `python -m unittest -v test_convergence.py` from the Project 49 directory. Exact published-revision CI remains pending.
