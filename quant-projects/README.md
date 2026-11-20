@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Forty-nine self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Fifty self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -70,6 +70,8 @@ Forty-nine self-contained labs complement the financial-mathematics books withou
 | [48](48-credit-rating-migration/README.md) | Four-state rating transitions, time-varying stress, and year-end discounted expected loss | Synthetic only | `migration.py`, `time_varying.py`, `discounted_loss.py` |
 
 | [49](49-counterparty-exposure-pfe/README.md) | Synthetic counterparty EPE/PFE95, simplified independent-default CVA and analytical Brownian benchmarks | Synthetic only | `exposure.py`, `diagnostics.py` |
+
+| [50](50-rare-event-importance-sampling/README.md) | Independent-default rare credit-loss events, exact binomial benchmark and likelihood-ratio importance sampling | Seeded synthetic | `rare_event.py` |
 
 ## Quick start (Windows PowerShell)
 
