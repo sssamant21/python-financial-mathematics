@@ -1,6 +1,6 @@
 # Quantitative Finance — Hands-on Python Projects
 
-Fifty self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
+Fifty-one self-contained labs complement the financial-mathematics books without duplicating their manuscript chapters.
 
 | Project | Topic | Data | Main script |
 |---|---|---|---|
@@ -72,6 +72,8 @@ Fifty self-contained labs complement the financial-mathematics books without dup
 | [49](49-counterparty-exposure-pfe/README.md) | Synthetic counterparty EPE/PFE95, simplified independent-default CVA and analytical Brownian benchmarks | Synthetic only | `exposure.py`, `diagnostics.py` |
 
 | [50](50-rare-event-importance-sampling/README.md) | Independent-default rare credit-loss events, exact binomial benchmark and likelihood-ratio importance sampling, fixed tilt sensitivity and repeated-seed variance diagnostics | Seeded synthetic | `rare_event.py`, `tilt_diagnostics.py`, `repeated_precision.py` |
+
+| [51](51-poisson-binomial-credit-loss/README.md) | Exact heterogeneous independent-default count distribution, analytical tail probability and expectation | Synthetic only | `poisson_binomial.py` |
 
 ## Quick start (Windows PowerShell)
 
