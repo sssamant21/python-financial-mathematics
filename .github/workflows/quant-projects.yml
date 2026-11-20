@@ -399,10 +399,11 @@ jobs:
       - name: Validate Project 49 synthetic counterparty exposure and analytical diagnostics
         run: |
           cd quant-projects/49-counterparty-exposure-pfe
-          python -m unittest -v test_exposure.py test_diagnostics.py
-          python -m compileall -q exposure.py diagnostics.py test_exposure.py test_diagnostics.py
+          python -m unittest -v test_exposure.py test_diagnostics.py test_convergence.py
+          python -m compileall -q exposure.py diagnostics.py convergence.py test_exposure.py test_diagnostics.py test_convergence.py
           python exposure.py --paths 1000 --seed 49 --threshold 0
           python exposure.py --paths 1000 --seed 49 --threshold 100000
+          python convergence.py --paths 100 400 --seeds 11 23 37
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
