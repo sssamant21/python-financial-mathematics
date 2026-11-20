@@ -407,6 +407,13 @@ jobs:
           python cva_benchmark.py
           python dependence_stress.py --paths 1000 --seed 49
 
+      - name: Validate Project 50 rare-event importance sampling
+        run: |
+          cd quant-projects/50-rare-event-importance-sampling
+          python -m unittest -v test_rare_event.py
+          python -m py_compile rare_event.py test_rare_event.py
+          python rare_event.py --n 30 --p 0.02 --threshold 5 --q 0.17 --paths 1000 --seed 50
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
