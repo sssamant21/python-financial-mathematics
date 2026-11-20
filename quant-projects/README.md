@@ -284,3 +284,5 @@ Project 47 update: [credit portfolio tranche-loss Monte Carlo diagnostics](47-cr
 | [48](48-credit-rating-migration/README.md) | Four-state absorbing Markov rating migration, cumulative default probability, hypothetical stress matrix, and expected-loss accounting | Synthetic only | `migration.py` |
 
 Project 49 extension: [multi-seed Brownian EPE convergence](49-counterparty-exposure-pfe/README.md) compares independent-seed Monte Carlo estimates with analytical EPE, reports between-seed standard error and benchmark error, and includes nine new deterministic tests. Run `python -m unittest -v test_convergence.py` from the Project 49 directory. Exact published-revision CI remains pending.
+
+Project 49 additionally provides `cva_benchmark.py` and `test_cva_benchmark.py` for an analytical Brownian EPE-based CVA reconciliation under the same synthetic independent-default and year-end discount conventions. Run `python -m unittest -v test_cva_benchmark.py` in its directory; exact-revision CI is pending.
