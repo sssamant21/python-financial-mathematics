@@ -33,3 +33,17 @@ For the stylized model, `V_t = N σ sqrt(t) Z`, with `s = N σ sqrt(t)`, the ana
 `diagnostics.epe_standard_error(exposures)` estimates the IID-path standard error of **mean exposure at one year**, not uncertainty in PFE or aggregate CVA. Cross-year exposures on the same paths are dependent, so do not combine yearwise standard errors as if independent. The benchmarks do not validate real derivative pricing, collateral mechanics, default dependence, or market calibration.
 
 **Evidence:** Six new deterministic analytical test methods passed locally on authored source; Python compilation passed. Existing eight tests and exact published-revision CI were not executed in that local run. Independent model review remains pending.
+
+## Multi-seed Monte Carlo convergence (2026-11-19)
+
+Run from this directory (Python 3.11+, standard library only):
+
+```bash
+python -m unittest -v test_exposure.py test_diagnostics.py test_convergence.py
+python -m py_compile exposure.py diagnostics.py convergence.py test_convergence.py
+python convergence.py --paths 200 800 3200 --seeds 11 23 37 49 71
+```
+
+For each path count, independent random seeds generate estimates of EPE at a fixed year. The report compares their average with the analytical Brownian EPE, records absolute benchmark error, and estimates the **between-seed standard error of the average** as sample standard deviation of the independent run estimates divided by the square root of the number of seeds. This is not a PFE confidence interval, a CVA uncertainty bound, or a guarantee of monotonic error reduction as path count grows. Larger path counts should reduce sampling variability *on average*, but an individual realized absolute error can increase. All seeds and path budgets are explicitly bounded; fixtures are synthetic and no market data is redistributed.
+
+The new regression tests check deterministic repeatability, zero-volatility limits, benchmark threshold sensitivity, error arithmetic, invalid seeds/path counts/economic inputs, and the simulation budget. **Exact published-revision CI and independent model review remain unverified until a workflow completes.** This extension assumes independent exposure and default; wrong-way-risk scenarios require a separate explicitly qualified model.
