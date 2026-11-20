@@ -395,6 +395,15 @@ jobs:
           python time_varying.py
           python discounted_loss.py
 
+
+      - name: Validate Project 49 synthetic counterparty exposure and analytical diagnostics
+        run: |
+          cd quant-projects/49-counterparty-exposure-pfe
+          python -m unittest -v test_exposure.py test_diagnostics.py
+          python -m compileall -q exposure.py diagnostics.py test_exposure.py test_diagnostics.py
+          python exposure.py --paths 1000 --seed 49 --threshold 0
+          python exposure.py --paths 1000 --seed 49 --threshold 100000
+
   quantlib-cross-check:
     runs-on: ubuntu-latest
     timeout-minutes: 8
