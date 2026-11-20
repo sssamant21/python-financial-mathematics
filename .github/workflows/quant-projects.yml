@@ -410,9 +410,10 @@ jobs:
       - name: Validate Project 50 rare-event importance sampling
         run: |
           cd quant-projects/50-rare-event-importance-sampling
-          python -m unittest -v test_rare_event.py
-          python -m py_compile rare_event.py test_rare_event.py
+          python -m unittest -v test_rare_event.py test_tilt_diagnostics.py
+          python -m py_compile rare_event.py tilt_diagnostics.py test_rare_event.py test_tilt_diagnostics.py
           python rare_event.py --n 30 --p 0.02 --threshold 5 --q 0.17 --paths 1000 --seed 50
+          python tilt_diagnostics.py --paths 1000 --seed 50 --tilts 0.08 0.17 0.35
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
