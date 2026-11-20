@@ -26,3 +26,19 @@ Inputs accept 1–500 finite probabilities between zero and one, including deter
 ## Validation status
 
 The original seven regression tests passed in the previously verified hosted CI checkpoint. Six additional independent-enumeration and log-tail tests are authored; execution on their published revision is not yet verified. They check analytical two-borrower probabilities, normalization, expected count, deterministic defaults, tail limits, ordering invariance and guardrails. The earlier baseline hosted CI passed, but new numerical diagnostics, historical default calibration and independent model validation remain **unverified**. Run `python -m unittest -v test_poisson_binomial.py test_numerical_checks.py` and `python numerical_checks.py --probabilities 0.01 0.02 0.05 0.10`. The second module enumerates all 2^n outcomes for n <= 16 with 80-digit Decimal arithmetic to cross-check the dynamic program. It also computes log P(all default) = sum(log(p_i)), showing when binary64 underflows to zero. This log-domain identity applies only to the all-default event; it does not make arbitrary tail sums numerically stable. Enumeration is exponential and deliberately capped. Next: add dedicated CI coverage, verify new tests, and extend to heterogeneous EAD/LGD with explicit discretization error.
+
+
+## Heterogeneous monetary loss extension (synthetic)
+
+`monetary_loss.py` adds an **independent-default** exact distribution of monetary loss in integer cents, using per-borrower exposure at default (EAD) and loss given default (LGD). Each borrower contributes either zero or `EAD_i × LGD_i`; a sparse dynamic program combines the outcomes. Expected loss is `sum(p_i × EAD_i × LGD_i)` in cents, and the tail is the sum of mass at losses greater than or equal to the chosen threshold. Distinct borrowers can have the same loss, so their masses coalesce.
+
+This is **not** a discretized approximation: inputs whose product cannot be represented as a whole cent are rejected. For sub-cent precision, choose a finer integer unit and adapt the implementation explicitly; do not silently round. The method has up to `2^n` distinct loss states, hence the deliberate **16-borrower** limit. Probabilities are floating-point, so numerical rounding and extreme-tail underflow remain possible. This is not a dependence model, regulatory loss forecast, or production risk engine.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_monetary_loss.py
+python -m py_compile monetary_loss.py test_monetary_loss.py
+python monetary_loss.py --probabilities 0.01 0.05 --exposures-cents 10000 20000 --lgds 0.4 0.5 --threshold-cents 10000
+```
+
+Six new regression tests are authored but **runtime execution and hosted CI for this extension are unverified**. No real credit observations or licensed data are included. Independent mathematical review and calibration remain pending.
