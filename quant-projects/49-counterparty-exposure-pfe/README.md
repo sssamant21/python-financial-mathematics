@@ -59,3 +59,19 @@ python cva_benchmark.py
 ```
 
 `cva_benchmark.py` reports simulated CVA, analytical CVA and their absolute difference for a seeded synthetic scenario. Seven deterministic tests cover zero-default and zero-volatility limits, first-default probability accounting, collateral/discount sensitivity, repeatability and input guardrails. **Python compilation passed on authored source; the seven runtime tests and exact published-revision CI have not been executed in this milestone.** No external prices or credit data are included.
+
+## One-year exposure/default dependence stress (2026-11-20)
+
+The independent-default approximation can understate losses if positive exposure and counterparty default occur together. `dependence_stress.py` uses two seeded independent standard normals `Z,U`. A stylized exposure is `E=max(NσZ-H,0)`; a latent default variable is `D=ρZ+sqrt(1-ρ²)U`. Default occurs when `D<Φ⁻¹(p)`. Thus **negative** `ρ` is *wrong-way* in this sign convention (higher exposure coincides with higher default probability); positive `ρ` is *right-way*. Marginal one-year default probability remains `p`, but realized finite-sample frequencies fluctuate. One-year discounted loss is `LGD exp(-r) E[E 1(default)]`; at `ρ=0` its analytical benchmark is `LGD exp(-r) p EPE`.
+
+From this folder, using **Python 3.11+ standard library only**:
+
+```bash
+python -m unittest -v test_dependence_stress.py
+python -m py_compile dependence_stress.py test_dependence_stress.py
+python dependence_stress.py --paths 20000 --seed 49
+```
+
+The CLI compares predeclared `ρ=+0.6,0,-0.6` with common random numbers and reports an IID-path standard error for each **single** CVA estimate. These are **not** standard errors for differences between correlated scenarios, nor proof of statistical significance. The test suite covers reproducibility, zero-risk limits, analytical EPE, matched-path collateral monotonicity, directionality, independence tolerance and invalid-input guardrails. A locally executed source-equivalent prototype passed **8/8 tests**, compilation and a 1,000-path CLI smoke test; exact published-revision CI is **unverified**.
+
+This is a **one-year joint-normal toy stress**, not the earlier multi-year first-default CVA model. It does not model dynamic hazard rates, wrong-way-risk calibration, market derivative pricing, stochastic collateral, margin periods, bilateral CVA, or regulatory capital. No historical data is used. Independent validation and production certification remain outstanding.
