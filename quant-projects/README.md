@@ -71,7 +71,7 @@ Fifty self-contained labs complement the financial-mathematics books without dup
 
 | [49](49-counterparty-exposure-pfe/README.md) | Synthetic counterparty EPE/PFE95, simplified independent-default CVA and analytical Brownian benchmarks | Synthetic only | `exposure.py`, `diagnostics.py` |
 
-| [50](50-rare-event-importance-sampling/README.md) | Independent-default rare credit-loss events, exact binomial benchmark and likelihood-ratio importance sampling | Seeded synthetic | `rare_event.py` |
+| [50](50-rare-event-importance-sampling/README.md) | Independent-default rare credit-loss events, exact binomial benchmark and likelihood-ratio importance sampling with fixed tilt sensitivity | Seeded synthetic | `rare_event.py`, `tilt_diagnostics.py` |
 
 ## Quick start (Windows PowerShell)
 
