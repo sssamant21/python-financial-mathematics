@@ -1167,3 +1167,7 @@ Updated `.github/workflows/quant-projects.yml` on `main` (commit `cccaeb0f712cb6
 ### Project 50 tilt sensitivity diagnostics (2026-11-20)
 
 Added `tilt_diagnostics.py` and `test_tilt_diagnostics.py` for predeclared synthetic tilt comparisons, exact binomial reference, pathwise standard errors, event hits, likelihood-weight ESS and deterministic guardrails. **Six tests authored; runtime execution, exact-revision CI, and independent mathematical review unverified.** ESS is a full-weight descriptive diagnostic rather than an event-specific optimality measure. Next: run both Project 50 suites on the exact published revision, inspect hosted CI and repair any failures, then assess tilt-specific variance and move to a distinct Project 51. No historical calibration or production certification.
+
+### Project 50 tilt-diagnostics CI coverage (2026-11-20)
+
+Reconciled `main` (50 projects) and added `test_tilt_diagnostics.py` to the dedicated quant-projects workflow, together with Python compilation and a seeded synthetic tilt-grid CLI smoke test. Workflow change commit `eeb59c055b20bd7a45f536a701ca84a4ef05c6fb`. The six newly authored tilt tests are now **configured**, not yet verified as passing on hosted CI. Previous six baseline tests remain configured. Next: inspect the exact-revision Actions run, fix any failures, then add independently seeded variance-reduction and tilt-sensitivity diagnostics before Project 51. No licensed market data, independent review, or production certification.
