@@ -47,3 +47,15 @@ python convergence.py --paths 200 800 3200 --seeds 11 23 37 49 71
 For each path count, independent random seeds generate estimates of EPE at a fixed year. The report compares their average with the analytical Brownian EPE, records absolute benchmark error, and estimates the **between-seed standard error of the average** as sample standard deviation of the independent run estimates divided by the square root of the number of seeds. This is not a PFE confidence interval, a CVA uncertainty bound, or a guarantee of monotonic error reduction as path count grows. Larger path counts should reduce sampling variability *on average*, but an individual realized absolute error can increase. All seeds and path budgets are explicitly bounded; fixtures are synthetic and no market data is redistributed.
 
 The new regression tests check deterministic repeatability, zero-volatility limits, benchmark threshold sensitivity, error arithmetic, invalid seeds/path counts/economic inputs, and the simulation budget. **Exact published-revision CI and independent model review remain unverified until a workflow completes.** This extension assumes independent exposure and default; wrong-way-risk scenarios require a separate explicitly qualified model.
+
+## Analytical CVA reconciliation (2026-11-19)
+
+The independent-default year-end CVA approximation has a deterministic benchmark: substitute the closed-form Brownian EPE at each year into the same discounted first-default mass used by the simulation. This separates Monte Carlo sampling error from the mathematical exposure convention; it does **not** validate market hazard rates, wrong-way risk, derivative valuation, collateral operations, or regulatory CVA.
+
+```bash
+python -m unittest -v test_cva_benchmark.py
+python -m py_compile cva_benchmark.py test_cva_benchmark.py
+python cva_benchmark.py
+```
+
+`cva_benchmark.py` reports simulated CVA, analytical CVA and their absolute difference for a seeded synthetic scenario. Seven deterministic tests cover zero-default and zero-volatility limits, first-default probability accounting, collateral/discount sensitivity, repeatability and input guardrails. **Python compilation passed on authored source; the seven runtime tests and exact published-revision CI have not been executed in this milestone.** No external prices or credit data are included.
