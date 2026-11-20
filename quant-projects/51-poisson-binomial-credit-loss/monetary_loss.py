@@ -41,7 +41,9 @@ def loss_distribution(probabilities, exposures_cents, lgds):
         for total, mass in pmf.items():
             updated[total] += mass * (1 - p)
             updated[total + loss] += mass * p
-        pmf = dict(updated)
+        # Deterministic p=0/1 cases create zero-mass states; exclude them.
+        # This also avoids exposing impossible losses as PMF support.
+        pmf = {loss_cents: mass for loss_cents, mass in updated.items() if mass > 0.0}
     return dict(sorted(pmf.items()))
 
 
