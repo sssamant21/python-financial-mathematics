@@ -1,0 +1,37 @@
+"""Pinned source estimates for IID pairs; exhaustive exact finite-law reference."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal,localcontext
+import json,subprocess,re,tempfile,importlib.util,sys,hashlib,platform,itertools,math
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='e3ea11cfbfcd0563d2306de43b97c4ab2a0ef9b5';path='books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.08-monte-carlo-estimation.md';raw=subprocess.check_output(['git','show',pin+':'+path],cwd=root);listing=re.findall(r'^~~~python\n(.*?)^~~~',raw.decode(),re.M|re.S);assert len(listing)==1;rows=[];cases=[];commands=[]
+def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+def check(name,got,want,kind='source numeric'):
+ ok=got==want if type(want)is bool else math.isclose(float(got),float(want),rel_tol=5e-14,abs_tol=1e-12)
+ rows.append(dict(name=name,actual=got,independent_expected=str(want),kind=kind,passed=ok))
+def moments(values):
+ n=len(values);mean=sum(values)/n;var=sum((x-mean)**2 for x in values)/(n-1)
+ with localcontext() as c:
+  c.prec=120;sd=dec(var).sqrt();se=(dec(var)/n).sqrt();lo=dec(mean)-Decimal('1.96')*se;hi=dec(mean)+Decimal('1.96')*se
+ return mean,var,dict(count=n,mean=mean,sample_sd=sd,standard_error=se,lower=lo,upper=hi)
+with tempfile.TemporaryDirectory() as tmp:
+ p=Path(tmp)/'monte_carlo_estimation.py';p.write_text(listing[0]);spec=importlib.util.spec_from_file_location('estimation_reference',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ for args in [[sys.executable,p.name],[sys.executable,'-m','compileall','-q',p.name]]:
+  r=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0
+ mass=F(0);mean_estimator=F(0);second_estimator=F(0);expected_estimated_variance=F(0);expected_naive_variance=F(0);coverage=F(0)
+ support=[80,100,120];weights={80:F(1,4),100:F(1,2),120:F(1,4)}
+ for sequence in itertools.product(support,repeat=3):
+  X=list(map(F,sequence));Y=[x/2+50 for x in X];D=[y-x for x,y in zip(X,Y)];prob=math.prod(weights[int(x)] for x in X);reports={};stats={}
+  for name,values in [('X',X),('Y',Y),('paired_difference',D)]:
+   got=m.estimate_mean([int(x) for x in values]);mean,var,refs=moments(values);reports[name]=got;stats[name]=(mean,var)
+   actual=dict(count=got['count'],mean=got['mean'],sample_sd=got['sample_sd'],standard_error=got['standard_error'],lower=got['normal_95_interval'][0],upper=got['normal_95_interval'][1])
+   for field,want in refs.items():check(str(sequence)+' '+name+' '+field,actual[field],want)
+  mean,var=stats['paired_difference'];naive=(stats['X'][1]+stats['Y'][1])/3
+  check(str(sequence)+' covariance omitted factor5',naive,5*var/3,'caller exact covariance comparison')
+  nominal_contains=mean*mean<=F(49,25)**2*var/3
+  check(str(sequence)+' reported interval decision',reports['paired_difference']['normal_95_interval'][0]<=0<=reports['paired_difference']['normal_95_interval'][1],nominal_contains,'source interval vs exact decision')
+  cases.append(dict(x=sequence,y=list(map(int,Y)),difference=list(map(int,D)),probability=str(prob),reports=reports,nominal_interval_contains_model_mean=nominal_contains))
+  mass+=prob;mean_estimator+=prob*mean;second_estimator+=prob*mean*mean;expected_estimated_variance+=prob*var/3;expected_naive_variance+=prob*naive;coverage+=prob*nominal_contains
+ for name,got,want in [('probability mass',mass,F(1)),('unbiased paired mean',mean_estimator,F(0)),('true variance paired mean',second_estimator,F(50,3)),('unbiased estimated paired variance',expected_estimated_variance,F(50,3)),('naive independent variance',expected_naive_variance,F(250,3))]:check(name,got,want,'exact model aggregate')
+result=dict(pin=pin,path=path,source_sha256=hashlib.sha256(raw).hexdigest(),listing_sha256=hashlib.sha256(listing[0].encode()).hexdigest(),python=platform.python_version(),platform=platform.platform(),rows=rows,cases=cases,commands=commands,passed=sum(r['passed'] for r in rows),failed=sum(not r['passed'] for r in rows),exact_coverage=str(coverage),scope='IID joint-pair model references and source arithmetic; no sampler independence, nominal coverage or model acceptance')
+(here/((sys.argv[1] if len(sys.argv)>1 else 'first')+'.json')).write_text(json.dumps(result,indent=2,default=str)+'\n');print(json.dumps(dict(passed=result['passed'],failed=result['failed'],coverage=str(coverage))));assert result['failed']==0

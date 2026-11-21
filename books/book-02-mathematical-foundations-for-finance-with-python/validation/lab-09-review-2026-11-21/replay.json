@@ -1,0 +1,2313 @@
+{
+  "pin": "e3ea11cfbfcd0563d2306de43b97c4ab2a0ef9b5",
+  "executed_at_utc": "2026-11-21T13:10:04.826416+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "source_manifest": [
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/section_9_09.py",
+      "sha256": "e91ca1bd35903da60ed3f06f240b16e057952584d4293b8e96f13d2f596f38dd"
+    },
+    {
+      "path": "books/book-02-mathematical-foundations-for-finance-with-python/chapter-09/code/check_section_9_09.py",
+      "sha256": "489f2892c84e30983f9be0e42564591f6429bef535ae0a2d48a56b6104c7ecc1"
+    }
+  ],
+  "manuscript_sha256": "63fbadb3653e4a89571c8b7cc89c39b48adf512ad23b0f394e62011d3b152d8b",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_9_09.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"model\": \"positive fixed cash flows\",\n  \"rate_convention\": \"decimal annual continuously compounded\",\n  \"baseline_rate\": 0.04,\n  \"cash_flows\": [\n    {\n      \"cash\": 120.0,\n      \"years\": 0.5\n    },\n    {\n      \"cash\": 120.0,\n      \"years\": 1.0\n    },\n    {\n      \"cash\": 120.0,\n      \"years\": 2.0\n    },\n    {\n      \"cash\": 1120.0,\n      \"years\": 3.0\n    }\n  ],\n  \"baseline_value\": 1337.0434241847022,\n  \"first_derivative\": -3375.707243599126,\n  \"second_derivative\": 9527.954541272014,\n  \"duration\": 2.5247551295183652,\n  \"convexity\": 7.126136944341908,\n  \"scenarios\": [\n    {\n      \"shock_bp\": -100.0,\n      \"shock_decimal\": -0.01,\n      \"exact_change\": 34.23814412737178,\n      \"linear_change\": 33.75707243599126,\n      \"quadratic_change\": 34.23347016305486,\n      \"exact_value\": 1371.281568312074,\n      \"linear_error\": 0.48107169138052275,\n      \"quadratic_error\": 0.004673964316922019,\n      \"absolute_linear_error\": 0.48107169138052275,\n      \"absolute_quadratic_error\": 0.004673964316922019,\n      \"linear_bound\": 0.49052400729341666,\n      \"quadratic_bound\": 0.004778767189660448,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": -50.0,\n      \"shock_decimal\": -0.005,\n      \"exact_change\": 16.9982177313459,\n      \"linear_change\": 16.87853621799563,\n      \"quadratic_change\": 16.99763564976153,\n      \"exact_value\": 1354.041641916048,\n      \"linear_error\": 0.11968151335026803,\n      \"quadratic_error\": 0.0005820815843678415,\n      \"absolute_linear_error\": 0.11968151335026803,\n      \"absolute_quadratic_error\": 0.0005820815843678415,\n      \"linear_bound\": 0.12085215547806591,\n      \"quadratic_bound\": 0.0005885734179917556,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": -25.0,\n      \"shock_decimal\": -0.0025,\n      \"exact_change\": 8.469115592493631,\n      \"linear_change\": 8.439268108997815,\n      \"quadratic_change\": 8.46904296693929,\n      \"exact_value\": 1345.5125397771958,\n      \"linear_error\": 0.029847483495815553,\n      \"quadratic_error\": 7.262555434050665e-05,\n      \"absolute_linear_error\": 0.029847483495815553,\n      \"absolute_quadratic_error\": 7.262555434050665e-05,\n      \"linear_bound\": 0.029993138134532738,\n      \"quadratic_bound\": 7.30294849580199e-05,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": -10.0,\n      \"shock_decimal\": -0.001,\n      \"exact_change\": 3.380475863747226,\n      \"linear_change\": 3.375707243599126,\n      \"quadratic_change\": 3.380471220869762,\n      \"exact_value\": 1340.4239000484495,\n      \"linear_error\": 0.00476862014809985,\n      \"quadratic_error\": 4.6428774638433375e-06,\n      \"absolute_linear_error\": 0.00476862014809985,\n      \"absolute_quadratic_error\": 4.6428774638433375e-06,\n      \"linear_bound\": 0.0047779162118906544,\n      \"quadratic_bound\": 4.653190418211459e-06,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": 0.0,\n      \"shock_decimal\": 0.0,\n      \"exact_change\": 0.0,\n      \"linear_change\": -0.0,\n      \"quadratic_change\": 0.0,\n      \"exact_value\": 1337.0434241847022,\n      \"linear_error\": 0.0,\n      \"quadratic_error\": 0.0,\n      \"absolute_linear_error\": 0.0,\n      \"absolute_quadratic_error\": 0.0,\n      \"linear_bound\": 0.0,\n      \"quadratic_bound\": 0.0,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": 10.0,\n      \"shock_decimal\": 0.001,\n      \"exact_change\": -3.3709479023429143,\n      \"linear_change\": -3.375707243599126,\n      \"quadratic_change\": -3.37094326632849,\n      \"exact_value\": 1333.6724762823592,\n      \"linear_error\": 0.0047593412562118315,\n      \"quadratic_error\": -4.6360144241762176e-06,\n      \"absolute_linear_error\": 0.0047593412562118315,\n      \"absolute_quadratic_error\": 4.6360144241762176e-06,\n      \"linear_bound\": 0.0047639772706360075,\n      \"quadratic_bound\": 4.639443901942649e-06,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": 25.0,\n      \"shock_decimal\": 0.0025,\n      \"exact_change\": -8.409565608522778,\n      \"linear_change\": -8.439268108997815,\n      \"quadratic_change\": -8.40949325105634,\n      \"exact_value\": 1328.6338585761794,\n      \"linear_error\": 0.029702500475038165,\n      \"quadratic_error\": -7.235746643688198e-05,\n      \"absolute_linear_error\": 0.029702500475038165,\n      \"absolute_quadratic_error\": 7.235746643688198e-05,\n      \"linear_bound\": 0.029774857941475046,\n      \"quadratic_bound\": 7.249131096785389e-05,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": 50.0,\n      \"shock_decimal\": 0.005,\n      \"exact_change\": -16.76001457838383,\n      \"linear_change\": -16.87853621799563,\n      \"quadratic_change\": -16.75943678622973,\n      \"exact_value\": 1320.2834096063184,\n      \"linear_error\": 0.11852163961179774,\n      \"quadratic_error\": -0.0005777921541024536,\n      \"absolute_linear_error\": 0.11852163961179774,\n      \"absolute_quadratic_error\": 0.0005777921541024536,\n      \"linear_bound\": 0.11909943176590018,\n      \"quadratic_bound\": 0.0005799304877428311,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    },\n    {\n      \"shock_bp\": 100.0,\n      \"shock_decimal\": 0.01,\n      \"exact_change\": -33.28528004083664,\n      \"linear_change\": -33.75707243599126,\n      \"quadratic_change\": -33.28067470892766,\n      \"exact_value\": 1303.7581441438656,\n      \"linear_error\": 0.4717923951546209,\n      \"quadratic_error\": -0.004605331908979823,\n      \"absolute_linear_error\": 0.4717923951546209,\n      \"absolute_quadratic_error\": 0.004605331908979823,\n      \"linear_bound\": 0.47639772706360073,\n      \"quadratic_bound\": 0.004639443901942649,\n      \"linear_bound_pass\": true,\n      \"quadratic_bound_pass\": true\n    }\n  ],\n  \"validation\": {\n    \"in_model_bound_checks_pass\": true,\n    \"runtime_certified\": false,\n    \"independent_review_completed\": false\n  },\n  \"limitations\": [\n    \"Fixed positive cash flows; no optionality or credit effects\",\n    \"Flat continuously compounded annual discount rate\",\n    \"Floating-point rounding not included in mathematical Taylor bounds\",\n    \"Educational model; not production pricing software\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_9_09.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 9.9 project reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "section_9_09.py",
+        "check_section_9_09.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "rows": [
+    {
+      "name": "CLI keys",
+      "kind": "schema",
+      "actual": [
+        "baseline_rate",
+        "baseline_value",
+        "cash_flows",
+        "convexity",
+        "duration",
+        "first_derivative",
+        "limitations",
+        "model",
+        "rate_convention",
+        "scenarios",
+        "second_derivative",
+        "validation"
+      ],
+      "expected": "['baseline_rate', 'baseline_value', 'cash_flows', 'convexity', 'duration', 'first_derivative', 'limitations', 'model', 'rate_convention', 'scenarios', 'second_derivative', 'validation']",
+      "passed": true
+    },
+    {
+      "name": "CLI.model",
+      "kind": "boolean/text",
+      "actual": "positive fixed cash flows",
+      "expected": "positive fixed cash flows",
+      "passed": true
+    },
+    {
+      "name": "CLI.rate_convention",
+      "kind": "boolean/text",
+      "actual": "decimal annual continuously compounded",
+      "expected": "decimal annual continuously compounded",
+      "passed": true
+    },
+    {
+      "name": "CLI.baseline_rate",
+      "kind": "numeric",
+      "actual": 0.04,
+      "expected": "0.04",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows length",
+      "kind": "schema",
+      "actual": 4,
+      "expected": "4",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.0 keys",
+      "kind": "schema",
+      "actual": [
+        "cash",
+        "years"
+      ],
+      "expected": "['cash', 'years']",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.0.cash",
+      "kind": "numeric",
+      "actual": 120.0,
+      "expected": "120.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.0.years",
+      "kind": "numeric",
+      "actual": 0.5,
+      "expected": "0.5",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.1 keys",
+      "kind": "schema",
+      "actual": [
+        "cash",
+        "years"
+      ],
+      "expected": "['cash', 'years']",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.1.cash",
+      "kind": "numeric",
+      "actual": 120.0,
+      "expected": "120.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.1.years",
+      "kind": "numeric",
+      "actual": 1.0,
+      "expected": "1.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.2 keys",
+      "kind": "schema",
+      "actual": [
+        "cash",
+        "years"
+      ],
+      "expected": "['cash', 'years']",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.2.cash",
+      "kind": "numeric",
+      "actual": 120.0,
+      "expected": "120.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.2.years",
+      "kind": "numeric",
+      "actual": 2.0,
+      "expected": "2.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.3 keys",
+      "kind": "schema",
+      "actual": [
+        "cash",
+        "years"
+      ],
+      "expected": "['cash', 'years']",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.3.cash",
+      "kind": "numeric",
+      "actual": 1120.0,
+      "expected": "1120.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.cash_flows.3.years",
+      "kind": "numeric",
+      "actual": 3.0,
+      "expected": "3.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.baseline_value",
+      "kind": "numeric",
+      "actual": 1337.0434241847022,
+      "expected": "1337.0434241847022",
+      "passed": true
+    },
+    {
+      "name": "CLI.first_derivative",
+      "kind": "numeric",
+      "actual": -3375.707243599126,
+      "expected": "-3375.707243599126",
+      "passed": true
+    },
+    {
+      "name": "CLI.second_derivative",
+      "kind": "numeric",
+      "actual": 9527.954541272014,
+      "expected": "9527.954541272014",
+      "passed": true
+    },
+    {
+      "name": "CLI.duration",
+      "kind": "numeric",
+      "actual": 2.5247551295183652,
+      "expected": "2.5247551295183652",
+      "passed": true
+    },
+    {
+      "name": "CLI.convexity",
+      "kind": "numeric",
+      "actual": 7.126136944341908,
+      "expected": "7.126136944341908",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios length",
+      "kind": "schema",
+      "actual": 9,
+      "expected": "9",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.shock_bp",
+      "kind": "numeric",
+      "actual": -100.0,
+      "expected": "-100.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.shock_decimal",
+      "kind": "numeric",
+      "actual": -0.01,
+      "expected": "-0.01",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.exact_change",
+      "kind": "numeric",
+      "actual": 34.23814412737178,
+      "expected": "34.23814412737178",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.linear_change",
+      "kind": "numeric",
+      "actual": 33.75707243599126,
+      "expected": "33.75707243599126",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.quadratic_change",
+      "kind": "numeric",
+      "actual": 34.23347016305486,
+      "expected": "34.23347016305486",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.exact_value",
+      "kind": "numeric",
+      "actual": 1371.281568312074,
+      "expected": "1371.281568312074",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.linear_error",
+      "kind": "numeric",
+      "actual": 0.48107169138052275,
+      "expected": "0.48107169138052275",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.quadratic_error",
+      "kind": "numeric",
+      "actual": 0.004673964316922019,
+      "expected": "0.004673964316922019",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.48107169138052275,
+      "expected": "0.48107169138052275",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 0.004673964316922019,
+      "expected": "0.004673964316922019",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.linear_bound",
+      "kind": "numeric",
+      "actual": 0.49052400729341666,
+      "expected": "0.49052400729341666",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.quadratic_bound",
+      "kind": "numeric",
+      "actual": 0.004778767189660448,
+      "expected": "0.004778767189660448",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.0.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.shock_bp",
+      "kind": "numeric",
+      "actual": -50.0,
+      "expected": "-50.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.shock_decimal",
+      "kind": "numeric",
+      "actual": -0.005,
+      "expected": "-0.005",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.exact_change",
+      "kind": "numeric",
+      "actual": 16.9982177313459,
+      "expected": "16.9982177313459",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.linear_change",
+      "kind": "numeric",
+      "actual": 16.87853621799563,
+      "expected": "16.87853621799563",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.quadratic_change",
+      "kind": "numeric",
+      "actual": 16.99763564976153,
+      "expected": "16.99763564976153",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.exact_value",
+      "kind": "numeric",
+      "actual": 1354.041641916048,
+      "expected": "1354.041641916048",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.linear_error",
+      "kind": "numeric",
+      "actual": 0.11968151335026803,
+      "expected": "0.11968151335026803",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.quadratic_error",
+      "kind": "numeric",
+      "actual": 0.0005820815843678415,
+      "expected": "0.0005820815843678415",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.11968151335026803,
+      "expected": "0.11968151335026803",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 0.0005820815843678415,
+      "expected": "0.0005820815843678415",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.linear_bound",
+      "kind": "numeric",
+      "actual": 0.12085215547806591,
+      "expected": "0.12085215547806591",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.quadratic_bound",
+      "kind": "numeric",
+      "actual": 0.0005885734179917556,
+      "expected": "0.0005885734179917556",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.1.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.shock_bp",
+      "kind": "numeric",
+      "actual": -25.0,
+      "expected": "-25.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.shock_decimal",
+      "kind": "numeric",
+      "actual": -0.0025,
+      "expected": "-0.0025",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.exact_change",
+      "kind": "numeric",
+      "actual": 8.469115592493631,
+      "expected": "8.469115592493631",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.linear_change",
+      "kind": "numeric",
+      "actual": 8.439268108997815,
+      "expected": "8.439268108997815",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.quadratic_change",
+      "kind": "numeric",
+      "actual": 8.46904296693929,
+      "expected": "8.46904296693929",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.exact_value",
+      "kind": "numeric",
+      "actual": 1345.5125397771958,
+      "expected": "1345.5125397771958",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.linear_error",
+      "kind": "numeric",
+      "actual": 0.029847483495815553,
+      "expected": "0.029847483495815553",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.quadratic_error",
+      "kind": "numeric",
+      "actual": 7.262555434050665e-05,
+      "expected": "7.262555434050665e-05",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.029847483495815553,
+      "expected": "0.029847483495815553",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 7.262555434050665e-05,
+      "expected": "7.262555434050665e-05",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.linear_bound",
+      "kind": "numeric",
+      "actual": 0.029993138134532738,
+      "expected": "0.029993138134532738",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.quadratic_bound",
+      "kind": "numeric",
+      "actual": 7.30294849580199e-05,
+      "expected": "7.30294849580199e-05",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.2.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.shock_bp",
+      "kind": "numeric",
+      "actual": -10.0,
+      "expected": "-10.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.shock_decimal",
+      "kind": "numeric",
+      "actual": -0.001,
+      "expected": "-0.001",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.exact_change",
+      "kind": "numeric",
+      "actual": 3.380475863747226,
+      "expected": "3.380475863747226",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.linear_change",
+      "kind": "numeric",
+      "actual": 3.375707243599126,
+      "expected": "3.375707243599126",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.quadratic_change",
+      "kind": "numeric",
+      "actual": 3.380471220869762,
+      "expected": "3.380471220869762",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.exact_value",
+      "kind": "numeric",
+      "actual": 1340.4239000484495,
+      "expected": "1340.4239000484495",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.linear_error",
+      "kind": "numeric",
+      "actual": 0.00476862014809985,
+      "expected": "0.00476862014809985",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.quadratic_error",
+      "kind": "numeric",
+      "actual": 4.6428774638433375e-06,
+      "expected": "4.6428774638433375e-06",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.00476862014809985,
+      "expected": "0.00476862014809985",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 4.6428774638433375e-06,
+      "expected": "4.6428774638433375e-06",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.linear_bound",
+      "kind": "numeric",
+      "actual": 0.0047779162118906544,
+      "expected": "0.0047779162118906544",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.quadratic_bound",
+      "kind": "numeric",
+      "actual": 4.653190418211459e-06,
+      "expected": "4.653190418211459e-06",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.3.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.shock_bp",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.shock_decimal",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.exact_change",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.linear_change",
+      "kind": "numeric",
+      "actual": -0.0,
+      "expected": "-0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.quadratic_change",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.exact_value",
+      "kind": "numeric",
+      "actual": 1337.0434241847022,
+      "expected": "1337.0434241847022",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.linear_error",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.quadratic_error",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.linear_bound",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.quadratic_bound",
+      "kind": "numeric",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.4.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.shock_bp",
+      "kind": "numeric",
+      "actual": 10.0,
+      "expected": "10.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.shock_decimal",
+      "kind": "numeric",
+      "actual": 0.001,
+      "expected": "0.001",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.exact_change",
+      "kind": "numeric",
+      "actual": -3.3709479023429143,
+      "expected": "-3.3709479023429143",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.linear_change",
+      "kind": "numeric",
+      "actual": -3.375707243599126,
+      "expected": "-3.375707243599126",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.quadratic_change",
+      "kind": "numeric",
+      "actual": -3.37094326632849,
+      "expected": "-3.37094326632849",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.exact_value",
+      "kind": "numeric",
+      "actual": 1333.6724762823592,
+      "expected": "1333.6724762823592",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.linear_error",
+      "kind": "numeric",
+      "actual": 0.0047593412562118315,
+      "expected": "0.0047593412562118315",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.quadratic_error",
+      "kind": "numeric",
+      "actual": -4.6360144241762176e-06,
+      "expected": "-4.6360144241762176e-06",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.0047593412562118315,
+      "expected": "0.0047593412562118315",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 4.6360144241762176e-06,
+      "expected": "4.6360144241762176e-06",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.linear_bound",
+      "kind": "numeric",
+      "actual": 0.0047639772706360075,
+      "expected": "0.0047639772706360075",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.quadratic_bound",
+      "kind": "numeric",
+      "actual": 4.639443901942649e-06,
+      "expected": "4.639443901942649e-06",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.5.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.shock_bp",
+      "kind": "numeric",
+      "actual": 25.0,
+      "expected": "25.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.shock_decimal",
+      "kind": "numeric",
+      "actual": 0.0025,
+      "expected": "0.0025",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.exact_change",
+      "kind": "numeric",
+      "actual": -8.409565608522778,
+      "expected": "-8.409565608522778",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.linear_change",
+      "kind": "numeric",
+      "actual": -8.439268108997815,
+      "expected": "-8.439268108997815",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.quadratic_change",
+      "kind": "numeric",
+      "actual": -8.40949325105634,
+      "expected": "-8.40949325105634",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.exact_value",
+      "kind": "numeric",
+      "actual": 1328.6338585761794,
+      "expected": "1328.6338585761794",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.linear_error",
+      "kind": "numeric",
+      "actual": 0.029702500475038165,
+      "expected": "0.029702500475038165",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.quadratic_error",
+      "kind": "numeric",
+      "actual": -7.235746643688198e-05,
+      "expected": "-7.235746643688198e-05",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.029702500475038165,
+      "expected": "0.029702500475038165",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 7.235746643688198e-05,
+      "expected": "7.235746643688198e-05",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.linear_bound",
+      "kind": "numeric",
+      "actual": 0.029774857941475046,
+      "expected": "0.029774857941475046",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.quadratic_bound",
+      "kind": "numeric",
+      "actual": 7.249131096785389e-05,
+      "expected": "7.249131096785389e-05",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.6.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.shock_bp",
+      "kind": "numeric",
+      "actual": 50.0,
+      "expected": "50.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.shock_decimal",
+      "kind": "numeric",
+      "actual": 0.005,
+      "expected": "0.005",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.exact_change",
+      "kind": "numeric",
+      "actual": -16.76001457838383,
+      "expected": "-16.76001457838383",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.linear_change",
+      "kind": "numeric",
+      "actual": -16.87853621799563,
+      "expected": "-16.87853621799563",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.quadratic_change",
+      "kind": "numeric",
+      "actual": -16.75943678622973,
+      "expected": "-16.75943678622973",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.exact_value",
+      "kind": "numeric",
+      "actual": 1320.2834096063184,
+      "expected": "1320.2834096063184",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.linear_error",
+      "kind": "numeric",
+      "actual": 0.11852163961179774,
+      "expected": "0.11852163961179774",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.quadratic_error",
+      "kind": "numeric",
+      "actual": -0.0005777921541024536,
+      "expected": "-0.0005777921541024536",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.11852163961179774,
+      "expected": "0.11852163961179774",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 0.0005777921541024536,
+      "expected": "0.0005777921541024536",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.linear_bound",
+      "kind": "numeric",
+      "actual": 0.11909943176590018,
+      "expected": "0.11909943176590018",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.quadratic_bound",
+      "kind": "numeric",
+      "actual": 0.0005799304877428311,
+      "expected": "0.0005799304877428311",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.7.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8 keys",
+      "kind": "schema",
+      "actual": [
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "exact_change",
+        "exact_value",
+        "linear_bound",
+        "linear_bound_pass",
+        "linear_change",
+        "linear_error",
+        "quadratic_bound",
+        "quadratic_bound_pass",
+        "quadratic_change",
+        "quadratic_error",
+        "shock_bp",
+        "shock_decimal"
+      ],
+      "expected": "['absolute_linear_error', 'absolute_quadratic_error', 'exact_change', 'exact_value', 'linear_bound', 'linear_bound_pass', 'linear_change', 'linear_error', 'quadratic_bound', 'quadratic_bound_pass', 'quadratic_change', 'quadratic_error', 'shock_bp', 'shock_decimal']",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.shock_bp",
+      "kind": "numeric",
+      "actual": 100.0,
+      "expected": "100.0",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.shock_decimal",
+      "kind": "numeric",
+      "actual": 0.01,
+      "expected": "0.01",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.exact_change",
+      "kind": "numeric",
+      "actual": -33.28528004083664,
+      "expected": "-33.28528004083664",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.linear_change",
+      "kind": "numeric",
+      "actual": -33.75707243599126,
+      "expected": "-33.75707243599126",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.quadratic_change",
+      "kind": "numeric",
+      "actual": -33.28067470892766,
+      "expected": "-33.28067470892766",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.exact_value",
+      "kind": "numeric",
+      "actual": 1303.7581441438656,
+      "expected": "1303.7581441438656",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.linear_error",
+      "kind": "numeric",
+      "actual": 0.4717923951546209,
+      "expected": "0.4717923951546209",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.quadratic_error",
+      "kind": "numeric",
+      "actual": -0.004605331908979823,
+      "expected": "-0.004605331908979823",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.absolute_linear_error",
+      "kind": "numeric",
+      "actual": 0.4717923951546209,
+      "expected": "0.4717923951546209",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.absolute_quadratic_error",
+      "kind": "numeric",
+      "actual": 0.004605331908979823,
+      "expected": "0.004605331908979823",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.linear_bound",
+      "kind": "numeric",
+      "actual": 0.47639772706360073,
+      "expected": "0.47639772706360073",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.quadratic_bound",
+      "kind": "numeric",
+      "actual": 0.004639443901942649,
+      "expected": "0.004639443901942649",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.linear_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.scenarios.8.quadratic_bound_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.validation keys",
+      "kind": "schema",
+      "actual": [
+        "in_model_bound_checks_pass",
+        "independent_review_completed",
+        "runtime_certified"
+      ],
+      "expected": "['in_model_bound_checks_pass', 'independent_review_completed', 'runtime_certified']",
+      "passed": true
+    },
+    {
+      "name": "CLI.validation.in_model_bound_checks_pass",
+      "kind": "boolean/text",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CLI.validation.runtime_certified",
+      "kind": "boolean/text",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "CLI.validation.independent_review_completed",
+      "kind": "boolean/text",
+      "actual": false,
+      "expected": "False",
+      "passed": true
+    },
+    {
+      "name": "CLI.limitations length",
+      "kind": "schema",
+      "actual": 4,
+      "expected": "4",
+      "passed": true
+    },
+    {
+      "name": "CLI.limitations.0",
+      "kind": "boolean/text",
+      "actual": "Fixed positive cash flows; no optionality or credit effects",
+      "expected": "Fixed positive cash flows; no optionality or credit effects",
+      "passed": true
+    },
+    {
+      "name": "CLI.limitations.1",
+      "kind": "boolean/text",
+      "actual": "Flat continuously compounded annual discount rate",
+      "expected": "Flat continuously compounded annual discount rate",
+      "passed": true
+    },
+    {
+      "name": "CLI.limitations.2",
+      "kind": "boolean/text",
+      "actual": "Floating-point rounding not included in mathematical Taylor bounds",
+      "expected": "Floating-point rounding not included in mathematical Taylor bounds",
+      "passed": true
+    },
+    {
+      "name": "CLI.limitations.3",
+      "kind": "boolean/text",
+      "actual": "Educational model; not production pricing software",
+      "expected": "Educational model; not production pricing software",
+      "passed": true
+    },
+    {
+      "name": "CSV row count",
+      "kind": "caller CSV",
+      "actual": 9,
+      "expected": "9",
+      "passed": true
+    },
+    {
+      "name": "CSV column order",
+      "kind": "caller CSV",
+      "actual": [
+        "shock_bp",
+        "shock_decimal",
+        "exact_change",
+        "linear_change",
+        "quadratic_change",
+        "exact_value",
+        "linear_error",
+        "quadratic_error",
+        "absolute_linear_error",
+        "absolute_quadratic_error",
+        "linear_bound",
+        "quadratic_bound",
+        "linear_bound_pass",
+        "quadratic_bound_pass"
+      ],
+      "expected": "['shock_bp', 'shock_decimal', 'exact_change', 'linear_change', 'quadratic_change', 'exact_value', 'linear_error', 'quadratic_error', 'absolute_linear_error', 'absolute_quadratic_error', 'linear_bound', 'quadratic_bound', 'linear_bound_pass', 'quadratic_bound_pass']",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 shock_bp",
+      "kind": "caller CSV",
+      "actual": -100.0,
+      "expected": "-100.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 shock_decimal",
+      "kind": "caller CSV",
+      "actual": -0.01,
+      "expected": "-0.01",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 exact_change",
+      "kind": "caller CSV",
+      "actual": 34.23814412737178,
+      "expected": "34.23814412737178",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 linear_change",
+      "kind": "caller CSV",
+      "actual": 33.75707243599126,
+      "expected": "33.75707243599126",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 quadratic_change",
+      "kind": "caller CSV",
+      "actual": 34.23347016305486,
+      "expected": "34.23347016305486",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 exact_value",
+      "kind": "caller CSV",
+      "actual": 1371.281568312074,
+      "expected": "1371.281568312074",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.48107169138052275,
+      "expected": "0.48107169138052275",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.004673964316922019,
+      "expected": "0.004673964316922019",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.48107169138052275,
+      "expected": "0.48107169138052275",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.004673964316922019,
+      "expected": "0.004673964316922019",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.49052400729341666,
+      "expected": "0.49052400729341666",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 0.004778767189660448,
+      "expected": "0.004778767189660448",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 0 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 shock_bp",
+      "kind": "caller CSV",
+      "actual": -50.0,
+      "expected": "-50.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 shock_decimal",
+      "kind": "caller CSV",
+      "actual": -0.005,
+      "expected": "-0.005",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 exact_change",
+      "kind": "caller CSV",
+      "actual": 16.9982177313459,
+      "expected": "16.9982177313459",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 linear_change",
+      "kind": "caller CSV",
+      "actual": 16.87853621799563,
+      "expected": "16.87853621799563",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 quadratic_change",
+      "kind": "caller CSV",
+      "actual": 16.99763564976153,
+      "expected": "16.99763564976153",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 exact_value",
+      "kind": "caller CSV",
+      "actual": 1354.041641916048,
+      "expected": "1354.041641916048",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.11968151335026803,
+      "expected": "0.11968151335026803",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.0005820815843678415,
+      "expected": "0.0005820815843678415",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.11968151335026803,
+      "expected": "0.11968151335026803",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.0005820815843678415,
+      "expected": "0.0005820815843678415",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.12085215547806591,
+      "expected": "0.12085215547806591",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 0.0005885734179917556,
+      "expected": "0.0005885734179917556",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 1 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 shock_bp",
+      "kind": "caller CSV",
+      "actual": -25.0,
+      "expected": "-25.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 shock_decimal",
+      "kind": "caller CSV",
+      "actual": -0.0025,
+      "expected": "-0.0025",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 exact_change",
+      "kind": "caller CSV",
+      "actual": 8.469115592493631,
+      "expected": "8.469115592493631",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 linear_change",
+      "kind": "caller CSV",
+      "actual": 8.439268108997815,
+      "expected": "8.439268108997815",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 quadratic_change",
+      "kind": "caller CSV",
+      "actual": 8.46904296693929,
+      "expected": "8.46904296693929",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 exact_value",
+      "kind": "caller CSV",
+      "actual": 1345.5125397771958,
+      "expected": "1345.5125397771958",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.029847483495815553,
+      "expected": "0.029847483495815553",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 quadratic_error",
+      "kind": "caller CSV",
+      "actual": 7.262555434050665e-05,
+      "expected": "7.262555434050665e-05",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.029847483495815553,
+      "expected": "0.029847483495815553",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 7.262555434050665e-05,
+      "expected": "7.262555434050665e-05",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.029993138134532738,
+      "expected": "0.029993138134532738",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 7.30294849580199e-05,
+      "expected": "7.30294849580199e-05",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 2 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 shock_bp",
+      "kind": "caller CSV",
+      "actual": -10.0,
+      "expected": "-10.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 shock_decimal",
+      "kind": "caller CSV",
+      "actual": -0.001,
+      "expected": "-0.001",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 exact_change",
+      "kind": "caller CSV",
+      "actual": 3.380475863747226,
+      "expected": "3.380475863747226",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 linear_change",
+      "kind": "caller CSV",
+      "actual": 3.375707243599126,
+      "expected": "3.375707243599126",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 quadratic_change",
+      "kind": "caller CSV",
+      "actual": 3.380471220869762,
+      "expected": "3.380471220869762",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 exact_value",
+      "kind": "caller CSV",
+      "actual": 1340.4239000484495,
+      "expected": "1340.4239000484495",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.00476862014809985,
+      "expected": "0.00476862014809985",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 quadratic_error",
+      "kind": "caller CSV",
+      "actual": 4.6428774638433375e-06,
+      "expected": "4.6428774638433375e-06",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.00476862014809985,
+      "expected": "0.00476862014809985",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 4.6428774638433375e-06,
+      "expected": "4.6428774638433375e-06",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.0047779162118906544,
+      "expected": "0.0047779162118906544",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 4.653190418211459e-06,
+      "expected": "4.653190418211459e-06",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 3 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 shock_bp",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 shock_decimal",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 exact_change",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 linear_change",
+      "kind": "caller CSV",
+      "actual": -0.0,
+      "expected": "-0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 quadratic_change",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 exact_value",
+      "kind": "caller CSV",
+      "actual": 1337.0434241847022,
+      "expected": "1337.0434241847022",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 4 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 shock_bp",
+      "kind": "caller CSV",
+      "actual": 10.0,
+      "expected": "10.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 shock_decimal",
+      "kind": "caller CSV",
+      "actual": 0.001,
+      "expected": "0.001",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 exact_change",
+      "kind": "caller CSV",
+      "actual": -3.3709479023429143,
+      "expected": "-3.3709479023429143",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 linear_change",
+      "kind": "caller CSV",
+      "actual": -3.375707243599126,
+      "expected": "-3.375707243599126",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 quadratic_change",
+      "kind": "caller CSV",
+      "actual": -3.37094326632849,
+      "expected": "-3.37094326632849",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 exact_value",
+      "kind": "caller CSV",
+      "actual": 1333.6724762823592,
+      "expected": "1333.6724762823592",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.0047593412562118315,
+      "expected": "0.0047593412562118315",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 quadratic_error",
+      "kind": "caller CSV",
+      "actual": -4.6360144241762176e-06,
+      "expected": "-4.6360144241762176e-06",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.0047593412562118315,
+      "expected": "0.0047593412562118315",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 4.6360144241762176e-06,
+      "expected": "4.6360144241762176e-06",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.0047639772706360075,
+      "expected": "0.0047639772706360075",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 4.639443901942649e-06,
+      "expected": "4.639443901942649e-06",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 5 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 shock_bp",
+      "kind": "caller CSV",
+      "actual": 25.0,
+      "expected": "25.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 shock_decimal",
+      "kind": "caller CSV",
+      "actual": 0.0025,
+      "expected": "0.0025",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 exact_change",
+      "kind": "caller CSV",
+      "actual": -8.409565608522778,
+      "expected": "-8.409565608522778",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 linear_change",
+      "kind": "caller CSV",
+      "actual": -8.439268108997815,
+      "expected": "-8.439268108997815",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 quadratic_change",
+      "kind": "caller CSV",
+      "actual": -8.40949325105634,
+      "expected": "-8.40949325105634",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 exact_value",
+      "kind": "caller CSV",
+      "actual": 1328.6338585761794,
+      "expected": "1328.6338585761794",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.029702500475038165,
+      "expected": "0.029702500475038165",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 quadratic_error",
+      "kind": "caller CSV",
+      "actual": -7.235746643688198e-05,
+      "expected": "-7.235746643688198e-05",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.029702500475038165,
+      "expected": "0.029702500475038165",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 7.235746643688198e-05,
+      "expected": "7.235746643688198e-05",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.029774857941475046,
+      "expected": "0.029774857941475046",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 7.249131096785389e-05,
+      "expected": "7.249131096785389e-05",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 6 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 shock_bp",
+      "kind": "caller CSV",
+      "actual": 50.0,
+      "expected": "50.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 shock_decimal",
+      "kind": "caller CSV",
+      "actual": 0.005,
+      "expected": "0.005",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 exact_change",
+      "kind": "caller CSV",
+      "actual": -16.76001457838383,
+      "expected": "-16.76001457838383",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 linear_change",
+      "kind": "caller CSV",
+      "actual": -16.87853621799563,
+      "expected": "-16.87853621799563",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 quadratic_change",
+      "kind": "caller CSV",
+      "actual": -16.75943678622973,
+      "expected": "-16.75943678622973",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 exact_value",
+      "kind": "caller CSV",
+      "actual": 1320.2834096063184,
+      "expected": "1320.2834096063184",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.11852163961179774,
+      "expected": "0.11852163961179774",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 quadratic_error",
+      "kind": "caller CSV",
+      "actual": -0.0005777921541024536,
+      "expected": "-0.0005777921541024536",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.11852163961179774,
+      "expected": "0.11852163961179774",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.0005777921541024536,
+      "expected": "0.0005777921541024536",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.11909943176590018,
+      "expected": "0.11909943176590018",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 0.0005799304877428311,
+      "expected": "0.0005799304877428311",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 7 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 shock_bp",
+      "kind": "caller CSV",
+      "actual": 100.0,
+      "expected": "100.0",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 shock_decimal",
+      "kind": "caller CSV",
+      "actual": 0.01,
+      "expected": "0.01",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 exact_change",
+      "kind": "caller CSV",
+      "actual": -33.28528004083664,
+      "expected": "-33.28528004083664",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 linear_change",
+      "kind": "caller CSV",
+      "actual": -33.75707243599126,
+      "expected": "-33.75707243599126",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 quadratic_change",
+      "kind": "caller CSV",
+      "actual": -33.28067470892766,
+      "expected": "-33.28067470892766",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 exact_value",
+      "kind": "caller CSV",
+      "actual": 1303.7581441438656,
+      "expected": "1303.7581441438656",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 linear_error",
+      "kind": "caller CSV",
+      "actual": 0.4717923951546209,
+      "expected": "0.4717923951546209",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 quadratic_error",
+      "kind": "caller CSV",
+      "actual": -0.004605331908979823,
+      "expected": "-0.004605331908979823",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 absolute_linear_error",
+      "kind": "caller CSV",
+      "actual": 0.4717923951546209,
+      "expected": "0.4717923951546209",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 absolute_quadratic_error",
+      "kind": "caller CSV",
+      "actual": 0.004605331908979823,
+      "expected": "0.004605331908979823",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 linear_bound",
+      "kind": "caller CSV",
+      "actual": 0.47639772706360073,
+      "expected": "0.47639772706360073",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 quadratic_bound",
+      "kind": "caller CSV",
+      "actual": 0.004639443901942649,
+      "expected": "0.004639443901942649",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 linear_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "CSV 8 quadratic_bound_pass",
+      "kind": "caller CSV",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "JSON unchanged after CSV export",
+      "kind": "caller CSV",
+      "actual": "{\"baseline_rate\": 0.04, \"baseline_value\": 1337.0434241847022, \"cash_flows\": [{\"cash\": 120.0, \"years\": 0.5}, {\"cash\": 120.0, \"years\": 1.0}, {\"cash\": 120.0, \"years\": 2.0}, {\"cash\": 1120.0, \"years\": 3.0}], \"convexity\": 7.126136944341908, \"duration\": 2.5247551295183652, \"first_derivative\": -3375.707243599126, \"limitations\": [\"Fixed positive cash flows; no optionality or credit effects\", \"Flat continuously compounded annual discount rate\", \"Floating-point rounding not included in mathematical Taylor bounds\", \"Educational model; not production pricing software\"], \"model\": \"positive fixed cash flows\", \"rate_convention\": \"decimal annual continuously compounded\", \"scenarios\": [{\"absolute_linear_error\": 0.48107169138052275, \"absolute_quadratic_error\": 0.004673964316922019, \"exact_change\": 34.23814412737178, \"exact_value\": 1371.281568312074, \"linear_bound\": 0.49052400729341666, \"linear_bound_pass\": true, \"linear_change\": 33.75707243599126, \"linear_error\": 0.48107169138052275, \"quadratic_bound\": 0.004778767189660448, \"quadratic_bound_pass\": true, \"quadratic_change\": 34.23347016305486, \"quadratic_error\": 0.004673964316922019, \"shock_bp\": -100.0, \"shock_decimal\": -0.01}, {\"absolute_linear_error\": 0.11968151335026803, \"absolute_quadratic_error\": 0.0005820815843678415, \"exact_change\": 16.9982177313459, \"exact_value\": 1354.041641916048, \"linear_bound\": 0.12085215547806591, \"linear_bound_pass\": true, \"linear_change\": 16.87853621799563, \"linear_error\": 0.11968151335026803, \"quadratic_bound\": 0.0005885734179917556, \"quadratic_bound_pass\": true, \"quadratic_change\": 16.99763564976153, \"quadratic_error\": 0.0005820815843678415, \"shock_bp\": -50.0, \"shock_decimal\": -0.005}, {\"absolute_linear_error\": 0.029847483495815553, \"absolute_quadratic_error\": 7.262555434050665e-05, \"exact_change\": 8.469115592493631, \"exact_value\": 1345.5125397771958, \"linear_bound\": 0.029993138134532738, \"linear_bound_pass\": true, \"linear_change\": 8.439268108997815, \"linear_error\": 0.029847483495815553, \"quadratic_bound\": 7.30294849580199e-05, \"quadratic_bound_pass\": true, \"quadratic_change\": 8.46904296693929, \"quadratic_error\": 7.262555434050665e-05, \"shock_bp\": -25.0, \"shock_decimal\": -0.0025}, {\"absolute_linear_error\": 0.00476862014809985, \"absolute_quadratic_error\": 4.6428774638433375e-06, \"exact_change\": 3.380475863747226, \"exact_value\": 1340.4239000484495, \"linear_bound\": 0.0047779162118906544, \"linear_bound_pass\": true, \"linear_change\": 3.375707243599126, \"linear_error\": 0.00476862014809985, \"quadratic_bound\": 4.653190418211459e-06, \"quadratic_bound_pass\": true, \"quadratic_change\": 3.380471220869762, \"quadratic_error\": 4.6428774638433375e-06, \"shock_bp\": -10.0, \"shock_decimal\": -0.001}, {\"absolute_linear_error\": 0.0, \"absolute_quadratic_error\": 0.0, \"exact_change\": 0.0, \"exact_value\": 1337.0434241847022, \"linear_bound\": 0.0, \"linear_bound_pass\": true, \"linear_change\": -0.0, \"linear_error\": 0.0, \"quadratic_bound\": 0.0, \"quadratic_bound_pass\": true, \"quadratic_change\": 0.0, \"quadratic_error\": 0.0, \"shock_bp\": 0.0, \"shock_decimal\": 0.0}, {\"absolute_linear_error\": 0.0047593412562118315, \"absolute_quadratic_error\": 4.6360144241762176e-06, \"exact_change\": -3.3709479023429143, \"exact_value\": 1333.6724762823592, \"linear_bound\": 0.0047639772706360075, \"linear_bound_pass\": true, \"linear_change\": -3.375707243599126, \"linear_error\": 0.0047593412562118315, \"quadratic_bound\": 4.639443901942649e-06, \"quadratic_bound_pass\": true, \"quadratic_change\": -3.37094326632849, \"quadratic_error\": -4.6360144241762176e-06, \"shock_bp\": 10.0, \"shock_decimal\": 0.001}, {\"absolute_linear_error\": 0.029702500475038165, \"absolute_quadratic_error\": 7.235746643688198e-05, \"exact_change\": -8.409565608522778, \"exact_value\": 1328.6338585761794, \"linear_bound\": 0.029774857941475046, \"linear_bound_pass\": true, \"linear_change\": -8.439268108997815, \"linear_error\": 0.029702500475038165, \"quadratic_bound\": 7.249131096785389e-05, \"quadratic_bound_pass\": true, \"quadratic_change\": -8.40949325105634, \"quadratic_error\": -7.235746643688198e-05, \"shock_bp\": 25.0, \"shock_decimal\": 0.0025}, {\"absolute_linear_error\": 0.11852163961179774, \"absolute_quadratic_error\": 0.0005777921541024536, \"exact_change\": -16.76001457838383, \"exact_value\": 1320.2834096063184, \"linear_bound\": 0.11909943176590018, \"linear_bound_pass\": true, \"linear_change\": -16.87853621799563, \"linear_error\": 0.11852163961179774, \"quadratic_bound\": 0.0005799304877428311, \"quadratic_bound_pass\": true, \"quadratic_change\": -16.75943678622973, \"quadratic_error\": -0.0005777921541024536, \"shock_bp\": 50.0, \"shock_decimal\": 0.005}, {\"absolute_linear_error\": 0.4717923951546209, \"absolute_quadratic_error\": 0.004605331908979823, \"exact_change\": -33.28528004083664, \"exact_value\": 1303.7581441438656, \"linear_bound\": 0.47639772706360073, \"linear_bound_pass\": true, \"linear_change\": -33.75707243599126, \"linear_error\": 0.4717923951546209, \"quadratic_bound\": 0.004639443901942649, \"quadratic_bound_pass\": true, \"quadratic_change\": -33.28067470892766, \"quadratic_error\": -0.004605331908979823, \"shock_bp\": 100.0, \"shock_decimal\": 0.01}], \"second_derivative\": 9527.954541272014, \"validation\": {\"in_model_bound_checks_pass\": true, \"independent_review_completed\": false, \"runtime_certified\": false}}",
+      "expected": "{\"baseline_rate\": 0.04, \"baseline_value\": 1337.0434241847022, \"cash_flows\": [{\"cash\": 120.0, \"years\": 0.5}, {\"cash\": 120.0, \"years\": 1.0}, {\"cash\": 120.0, \"years\": 2.0}, {\"cash\": 1120.0, \"years\": 3.0}], \"convexity\": 7.126136944341908, \"duration\": 2.5247551295183652, \"first_derivative\": -3375.707243599126, \"limitations\": [\"Fixed positive cash flows; no optionality or credit effects\", \"Flat continuously compounded annual discount rate\", \"Floating-point rounding not included in mathematical Taylor bounds\", \"Educational model; not production pricing software\"], \"model\": \"positive fixed cash flows\", \"rate_convention\": \"decimal annual continuously compounded\", \"scenarios\": [{\"absolute_linear_error\": 0.48107169138052275, \"absolute_quadratic_error\": 0.004673964316922019, \"exact_change\": 34.23814412737178, \"exact_value\": 1371.281568312074, \"linear_bound\": 0.49052400729341666, \"linear_bound_pass\": true, \"linear_change\": 33.75707243599126, \"linear_error\": 0.48107169138052275, \"quadratic_bound\": 0.004778767189660448, \"quadratic_bound_pass\": true, \"quadratic_change\": 34.23347016305486, \"quadratic_error\": 0.004673964316922019, \"shock_bp\": -100.0, \"shock_decimal\": -0.01}, {\"absolute_linear_error\": 0.11968151335026803, \"absolute_quadratic_error\": 0.0005820815843678415, \"exact_change\": 16.9982177313459, \"exact_value\": 1354.041641916048, \"linear_bound\": 0.12085215547806591, \"linear_bound_pass\": true, \"linear_change\": 16.87853621799563, \"linear_error\": 0.11968151335026803, \"quadratic_bound\": 0.0005885734179917556, \"quadratic_bound_pass\": true, \"quadratic_change\": 16.99763564976153, \"quadratic_error\": 0.0005820815843678415, \"shock_bp\": -50.0, \"shock_decimal\": -0.005}, {\"absolute_linear_error\": 0.029847483495815553, \"absolute_quadratic_error\": 7.262555434050665e-05, \"exact_change\": 8.469115592493631, \"exact_value\": 1345.5125397771958, \"linear_bound\": 0.029993138134532738, \"linear_bound_pass\": true, \"linear_change\": 8.439268108997815, \"linear_error\": 0.029847483495815553, \"quadratic_bound\": 7.30294849580199e-05, \"quadratic_bound_pass\": true, \"quadratic_change\": 8.46904296693929, \"quadratic_error\": 7.262555434050665e-05, \"shock_bp\": -25.0, \"shock_decimal\": -0.0025}, {\"absolute_linear_error\": 0.00476862014809985, \"absolute_quadratic_error\": 4.6428774638433375e-06, \"exact_change\": 3.380475863747226, \"exact_value\": 1340.4239000484495, \"linear_bound\": 0.0047779162118906544, \"linear_bound_pass\": true, \"linear_change\": 3.375707243599126, \"linear_error\": 0.00476862014809985, \"quadratic_bound\": 4.653190418211459e-06, \"quadratic_bound_pass\": true, \"quadratic_change\": 3.380471220869762, \"quadratic_error\": 4.6428774638433375e-06, \"shock_bp\": -10.0, \"shock_decimal\": -0.001}, {\"absolute_linear_error\": 0.0, \"absolute_quadratic_error\": 0.0, \"exact_change\": 0.0, \"exact_value\": 1337.0434241847022, \"linear_bound\": 0.0, \"linear_bound_pass\": true, \"linear_change\": -0.0, \"linear_error\": 0.0, \"quadratic_bound\": 0.0, \"quadratic_bound_pass\": true, \"quadratic_change\": 0.0, \"quadratic_error\": 0.0, \"shock_bp\": 0.0, \"shock_decimal\": 0.0}, {\"absolute_linear_error\": 0.0047593412562118315, \"absolute_quadratic_error\": 4.6360144241762176e-06, \"exact_change\": -3.3709479023429143, \"exact_value\": 1333.6724762823592, \"linear_bound\": 0.0047639772706360075, \"linear_bound_pass\": true, \"linear_change\": -3.375707243599126, \"linear_error\": 0.0047593412562118315, \"quadratic_bound\": 4.639443901942649e-06, \"quadratic_bound_pass\": true, \"quadratic_change\": -3.37094326632849, \"quadratic_error\": -4.6360144241762176e-06, \"shock_bp\": 10.0, \"shock_decimal\": 0.001}, {\"absolute_linear_error\": 0.029702500475038165, \"absolute_quadratic_error\": 7.235746643688198e-05, \"exact_change\": -8.409565608522778, \"exact_value\": 1328.6338585761794, \"linear_bound\": 0.029774857941475046, \"linear_bound_pass\": true, \"linear_change\": -8.439268108997815, \"linear_error\": 0.029702500475038165, \"quadratic_bound\": 7.249131096785389e-05, \"quadratic_bound_pass\": true, \"quadratic_change\": -8.40949325105634, \"quadratic_error\": -7.235746643688198e-05, \"shock_bp\": 25.0, \"shock_decimal\": 0.0025}, {\"absolute_linear_error\": 0.11852163961179774, \"absolute_quadratic_error\": 0.0005777921541024536, \"exact_change\": -16.76001457838383, \"exact_value\": 1320.2834096063184, \"linear_bound\": 0.11909943176590018, \"linear_bound_pass\": true, \"linear_change\": -16.87853621799563, \"linear_error\": 0.11852163961179774, \"quadratic_bound\": 0.0005799304877428311, \"quadratic_bound_pass\": true, \"quadratic_change\": -16.75943678622973, \"quadratic_error\": -0.0005777921541024536, \"shock_bp\": 50.0, \"shock_decimal\": 0.005}, {\"absolute_linear_error\": 0.4717923951546209, \"absolute_quadratic_error\": 0.004605331908979823, \"exact_change\": -33.28528004083664, \"exact_value\": 1303.7581441438656, \"linear_bound\": 0.47639772706360073, \"linear_bound_pass\": true, \"linear_change\": -33.75707243599126, \"linear_error\": 0.4717923951546209, \"quadratic_bound\": 0.004639443901942649, \"quadratic_bound_pass\": true, \"quadratic_change\": -33.28067470892766, \"quadratic_error\": -0.004605331908979823, \"shock_bp\": 100.0, \"shock_decimal\": 0.01}], \"second_derivative\": 9527.954541272014, \"validation\": {\"in_model_bound_checks_pass\": true, \"independent_review_completed\": false, \"runtime_certified\": false}}",
+      "passed": true
+    },
+    {
+      "name": "acceptance matches complete-expression implementation",
+      "kind": "manuscript contract",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "passed": 297,
+  "failed": 0,
+  "scope": "exact source CLI/checker/compile vsindependent120-term exponential-series reference;caller CSV is supplemental"
+}
