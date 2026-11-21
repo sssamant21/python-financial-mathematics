@@ -68,3 +68,16 @@ python log_default_diagnostic.py --probabilities 1e-200 1e-200
 ```
 
 Four new synthetic tests are authored for ordinary probabilities, underflow, endpoints and invalid inputs. Execution against the published revision, independent review and historical calibration remain unverified.
+
+## High-precision monetary tail reference
+
+`stable_monetary_tail.py` independently enumerates up to 2^16 default masks with Decimal arithmetic, retaining extreme independent-default monetary tail probabilities that underflow in binary64. It reuses the existing cent-exact EAD/LGD input guardrails, but **does not** use the floating-point PMF to calculate its result. The default 100-digit precision is configurable from 32 to 1000 digits; Decimal input is constructed from the supplied probability's string representation, so information already lost when a caller first creates a float cannot be recovered. Runtime is exponential; this is a **small-portfolio reference**, not a scalable general tail engine.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_stable_monetary_tail.py
+python -m py_compile stable_monetary_tail.py test_stable_monetary_tail.py
+python stable_monetary_tail.py --probabilities 1e-200 1e-200 --exposures-cents 100 100 --lgds 1 1 --threshold-cents 200
+```
+
+Five synthetic tests are authored, including the expected 1e-400 two-default event, comparison with the float PMF for ordinary probabilities, deterministic endpoints, and invalid inputs. **Tests and exact-revision CI have not been executed or verified in this publication milestone.** No licensed data, independent model review, dependence calibration, or production certification.
