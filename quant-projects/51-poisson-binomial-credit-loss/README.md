@@ -94,3 +94,14 @@ python sparse_monetary_tail.py --probabilities 1e-200 1e-200 --exposures-cents 1
 ```
 
 The six synthetic tests compare small portfolios to independent Decimal default-mask enumeration, exercise an underflowing 1e-400 joint tail, deterministic endpoints, borrower ordering, state-limit rejection, and invalid inputs. **New tests and exact-revision hosted CI remain unverified until executed.** This remains an independent-default educational model, not a scalable production engine or a calibrated credit-risk estimate. For very many borrower states, more specialized methods and independent numerical validation are required.
+
+### Larger synthetic state-growth checks (2026-11-21)
+
+Three additional regression tests exercise a 20-borrower equal-severity portfolio against the analytical binomial tail (21 possible loss states rather than 2^20 default masks), confirm fail-closed behavior at a 20-state cap, check deterministic endpoint behavior at the 128-borrower input limit, and compare 32/100/1000-digit settings for a 1e-400 event. These are **synthetic mathematical invariants**, not evidence of historical calibration or general scalability. Run:
+
+```bash
+python -m unittest -v test_sparse_monetary_tail.py
+python -m py_compile sparse_monetary_tail.py test_sparse_monetary_tail.py
+```
+
+Project 51 now contains **45 authored tests**. These three additions have **not been verified by exact-revision CI**; the last verified 36-test checkpoint is documented in the tracker. The sparse state cap bounds retained states, not CPU time or memory to a fixed operational service-level target. Independent mathematical review remains pending.
