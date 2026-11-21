@@ -177,3 +177,17 @@ Five new synthetic tests are authored and included in dedicated CI configuration
 ### Bounded larger-portfolio memory comparison (2026-11-21)
 
 `python memory_comparison.py --sizes 4 8 12 16 20` extends the equal-severity synthetic cases to 16 and 20 borrowers. Distinct power-of-two severity cases remain capped at 12 borrowers (4,096 states), so counts above 12 intentionally run **equal severity only**. Every row checks the independent-default identity `P(L >= 1 cent) = 1 - 0.75**n` using the selected Decimal precision. `tracemalloc` records Python allocation peaks, **not** process RSS, hard memory limits, or comparable timings across machines. No external prices or historical defaults are used. Run `python -m unittest -v test_memory_comparison.py` to exercise the two new regression cases; published-revision CI and independent mathematical review must be verified separately.
+
+
+### Observational benchmark report (2026-11-21)
+
+`benchmark_report.py` runs the bounded equal-versus-distinct synthetic cases and emits JSON containing Python/platform information, UTC observation time, scenario parameters, analytical tail reconciliation, retained-state counts, per-case `tracemalloc` allocations and **whole-batch** elapsed seconds. This captures context for a repeatable experiment; observed seconds/bytes are **not reproducible across hosts**, are not process RSS, and do not constitute capacity or latency guarantees. The default sizes are 4, 8, 12, 16, 20 borrowers; distinct-loss cases remain limited to 12. The state cap fails closed.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_benchmark_report.py
+python -m py_compile benchmark_report.py test_benchmark_report.py
+python benchmark_report.py --sizes 4 8 12 16 20 --precision 100 --max-states 10000 --output /tmp/project51-benchmark.json
+```
+
+The JSON is created locally on demand and is not committed as a supposedly portable benchmark result. Three synthetic report-contract tests are authored; their exact-revision CI outcome and any actual benchmark measurements remain **unverified** until execution. No licensed market data or production calibration is included.
