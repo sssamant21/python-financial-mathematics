@@ -7,12 +7,14 @@ from decimal import Decimal, InvalidOperation, localcontext
 
 
 def sparse_tail(probabilities, exposures_cents, lgds, threshold_cents,
-                precision=100, max_states=10000):
+                precision=100, max_states=10000, return_diagnostics=False):
     """Return Decimal P(total loss >= threshold) using bounded sparse states.
 
     Each state is an exact integer-cent loss.  Computation stops with ValueError
     rather than approximating or silently dropping states when the cap is hit.
     """
+    if not isinstance(return_diagnostics, bool):
+        raise ValueError("return_diagnostics must be boolean")
     if (isinstance(precision, bool) or not isinstance(precision, int)
             or not 32 <= precision <= 1000):
         raise ValueError("precision must be an integer in [32,1000]")
@@ -44,14 +46,17 @@ def sparse_tail(probabilities, exposures_cents, lgds, threshold_cents,
             raise ValueError("non-integral cent loss; use finer units")
         ps.append(probability)
         losses.append(int(amount))
-    if threshold_cents == 0:
-        return Decimal(1)
-    if threshold_cents > sum(losses):
-        return Decimal(0)
+    if threshold_cents == 0 or threshold_cents > sum(losses):
+        result = Decimal(1) if threshold_cents == 0 else Decimal(0)
+        return (result, {"peak_states": 0, "final_states": 0, "processed_borrowers": 0,
+                         "early_exit": True}) if return_diagnostics else result
     with localcontext() as ctx:
         ctx.prec = precision
         states = {0: Decimal(1)}
+        peak_states = 1
+        processed = 0
         for p, amount in zip(ps, losses):
+            processed += 1
             if p == 0 or amount == 0:
                 continue
             if p == 1:
@@ -64,7 +69,12 @@ def sparse_tail(probabilities, exposures_cents, lgds, threshold_cents,
             if len(updated) > max_states:
                 raise ValueError("state limit exceeded; no approximate result returned")
             states = updated
-        return +sum((mass for loss, mass in states.items() if loss >= threshold_cents), Decimal(0))
+            peak_states = max(peak_states, len(states))
+        result = +sum((mass for loss, mass in states.items() if loss >= threshold_cents), Decimal(0))
+        if return_diagnostics:
+            return result, {"peak_states": peak_states, "final_states": len(states),
+                            "processed_borrowers": processed, "early_exit": False}
+        return result
 
 
 if __name__ == "__main__":
