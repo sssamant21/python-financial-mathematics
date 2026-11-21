@@ -119,3 +119,15 @@ python state_benchmark.py --precision 100 --max-states 10000
 ```
 
 Five new deterministic regression tests are authored, including state-cap rejection and invalid-input checks. Local syntax compilation succeeded for an authored-source copy; full runtime execution and exact-revision GitHub Actions remain **unverified** until checked. The benchmark is intentionally bounded (40 equal-loss borrowers, 12 distinct-loss borrowers); the underlying sparse solver still has exponential worst-case growth. The exhaustive reference uses exactly representable 0.25 probabilities because its legacy validation accepts float inputs. Independent mathematical review, correlated-default modeling, historical calibration and production certification remain pending.
+
+### Benchmark reproducibility and precision regression extension (2026-11-21)
+
+Three additional synthetic unittest methods check that repeated runs agree after excluding hardware-dependent elapsed time, that 32/100/1000-digit Decimal settings match the independent equal-loss binomial reference for a 12-borrower fixture, and that the distinct-loss four-borrower case accepts exactly 16 states but rejects a 15-state cap. These checks exercise mathematical invariants rather than make timing or production-memory guarantees.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_state_benchmark.py
+python -m py_compile state_benchmark.py test_state_benchmark.py
+```
+
+**53 Project 51 test methods are authored, not all newly verified.** The three new tests were not executed locally because this runtime cannot resolve github.com for exact-revision checkout. Hosted CI for the new commit and independent review remain unverified.
