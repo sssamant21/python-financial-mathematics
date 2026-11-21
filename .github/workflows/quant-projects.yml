@@ -419,12 +419,13 @@ jobs:
       - name: Validate Project 51 heterogeneous default counts
         run: |
           cd quant-projects/51-poisson-binomial-credit-loss
-          python -m unittest -v test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py test_log_default_diagnostic.py
-          python -m py_compile poisson_binomial.py numerical_checks.py monetary_loss.py test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py log_default_diagnostic.py test_log_default_diagnostic.py
+          python -m unittest -v test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py test_log_default_diagnostic.py test_stable_monetary_tail.py
+          python -m py_compile poisson_binomial.py numerical_checks.py monetary_loss.py test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py log_default_diagnostic.py test_log_default_diagnostic.py stable_monetary_tail.py test_stable_monetary_tail.py
           python poisson_binomial.py --probabilities 0.01 0.02 0.05 0.10 --threshold 2
           python numerical_checks.py --probabilities 0.01 0.02 0.05 0.10
           python monetary_loss.py --probabilities 0.01 0.05 --exposures-cents 10000 20000 --lgds 0.4 0.5 --threshold-cents 10000
           python log_default_diagnostic.py --probabilities 1e-200 1e-200
+          python stable_monetary_tail.py --probabilities 1e-200 1e-200 --exposures-cents 100 100 --lgds 1 1 --threshold-cents 200
 
   quantlib-cross-check:
     runs-on: ubuntu-latest
