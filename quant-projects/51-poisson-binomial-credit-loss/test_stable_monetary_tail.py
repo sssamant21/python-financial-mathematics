@@ -23,6 +23,20 @@ class StableTailTests(unittest.TestCase):
         self.assertEqual(stable_tail([1, 0], [100, 200], [1, 1], 100), Decimal(1))
         self.assertEqual(stable_tail([1, 0], [100, 200], [1, 1], 101), Decimal(0))
 
+    def test_threshold_zero_and_unreachable(self):
+        self.assertEqual(stable_tail([0.2, 0.3], [100, 200], [1, 1], 0), Decimal(1))
+        self.assertEqual(stable_tail([0.2, 0.3], [100, 200], [1, 1], 301), Decimal(0))
+
+    def test_order_invariance_and_colliding_losses(self):
+        a = stable_tail([0.1, 0.2, 0.3], [100, 100, 100], [1, 1, 1], 200)
+        b = stable_tail([0.3, 0.1, 0.2], [100, 100, 100], [1, 1, 1], 200)
+        self.assertEqual(a, b)
+        self.assertEqual(a, Decimal("0.098"))
+
+    def test_zero_lgd_and_deterministic_mass(self):
+        self.assertEqual(stable_tail([1, 0.4], [100, 200], [1, 0], 100), Decimal(1))
+        self.assertEqual(stable_tail([1, 0.4], [100, 200], [1, 0], 101), Decimal(0))
+
     def test_guards(self):
         for precision in [True, 31, 1001, 42.5]:
             with self.assertRaises(ValueError):
