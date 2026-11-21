@@ -1,6 +1,8 @@
 """Section 10.4: substitution and integration by parts in finance."""
 import json
 import math
+from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -21,10 +23,25 @@ def nonnegative_horizon(T):
 
 def exponential_growth_integral(scale, growth, horizon):
     c, g, t = finite(scale,"scale"), finite(growth,"growth"), nonnegative_horizon(horizon)
-    x = g*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    result = c*t if g == 0 else c*t*(math.expm1(x)/x if x else 1.0)
+    if c == 0 or t == 0:
+        return 0.0
+    if g == 0:
+        value = Fraction(c)*Fraction(t)
+        try:
+            result = float(value)
+        except OverflowError as exc:
+            raise ValueError("nonfinite integral") from exc
+    else:
+        exponent = Fraction(g)*Fraction(t)
+        high, gap = max(Fraction(0),exponent), abs(exponent)
+        if high > 10000:
+            raise ValueError("nonfinite integral")
+        with localcontext(Context(prec=800)):
+            def decimal(value):
+                return Decimal(value.numerator)/Decimal(value.denominator)
+            tail = Decimal(1) if gap > 10000 else Decimal(1)-(-decimal(gap)).exp()
+            magnitude = abs(decimal(Fraction(c)/Fraction(g)))*decimal(high).exp()*tail
+            result = float(-magnitude if c < 0 else magnitude)
     if not math.isfinite(result):
         raise ValueError("nonfinite integral")
     return result

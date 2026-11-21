@@ -1,0 +1,227 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "eligible price return",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "source label preserved",
+      "actual": "source-B",
+      "expected": "source-B",
+      "passed": true
+    },
+    {
+      "name": "instrument preserved",
+      "actual": "XYZ",
+      "expected": "XYZ",
+      "passed": true
+    },
+    {
+      "name": "currency preserved",
+      "actual": "USD",
+      "expected": "USD",
+      "passed": true
+    },
+    {
+      "name": "caller dictionaries unchanged",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "same price different source remains eligible",
+      "actual": 0.25,
+      "expected": "0.25",
+      "passed": true
+    },
+    {
+      "name": "future availability rejected",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "currency mismatch rejected",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "instrument mismatch rejected",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "p0.25 source observation unchanged",
+      "actual": 0.25,
+      "expected": "0.25",
+      "passed": true
+    },
+    {
+      "name": "p0.25 native probability retained",
+      "actual": 0.25,
+      "expected": "0.25",
+      "passed": true
+    },
+    {
+      "name": "p0.25 empirical mean",
+      "actual": 100.0,
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "p0.25 empirical variance",
+      "actual": 833.3333333333334,
+      "expected": "2500/3",
+      "passed": true
+    },
+    {
+      "name": "p0.25 empirical SD",
+      "actual": 28.867513459481287,
+      "expected": "28.867513459481287",
+      "passed": true
+    },
+    {
+      "name": "p0.25 support",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "p0.75 source observation unchanged",
+      "actual": 0.25,
+      "expected": "0.25",
+      "passed": true
+    },
+    {
+      "name": "p0.75 native probability retained",
+      "actual": 0.75,
+      "expected": "0.75",
+      "passed": true
+    },
+    {
+      "name": "p0.75 empirical mean",
+      "actual": 125.0,
+      "expected": "125",
+      "passed": true
+    },
+    {
+      "name": "p0.75 empirical variance",
+      "actual": 0.0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "p0.75 empirical SD",
+      "actual": 0.0,
+      "expected": "0.0",
+      "passed": true
+    },
+    {
+      "name": "p0.75 support",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "same eligible data permits different stated model means",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "models": [
+    {
+      "probability": 0.25,
+      "caller_model_mean": "175/2",
+      "native_values": [
+        75.0,
+        125.0,
+        75.0,
+        125.0
+      ],
+      "native_summary": {
+        "count": 4,
+        "mean": 100.0,
+        "variance": 833.3333333333334,
+        "SD": 28.867513459481287
+      },
+      "provenance": {
+        "instrument": "XYZ",
+        "currency": "USD",
+        "price_observation_days": 1,
+        "source_labels": [
+          "source-A",
+          "source-B"
+        ],
+        "decision_cutoff": "2026-01-03T00:00:00+00:00",
+        "model_horizon": "hypothetical one-period choice; not inferred from price dates",
+        "measure": "hypothetical caller Bernoulli law; not market/risk-neutral calibration",
+        "seed": 42,
+        "scenarios": 4
+      }
+    },
+    {
+      "probability": 0.75,
+      "caller_model_mean": "225/2",
+      "native_values": [
+        125.0,
+        125.0,
+        125.0,
+        125.0
+      ],
+      "native_summary": {
+        "count": 4,
+        "mean": 125.0,
+        "variance": 0.0,
+        "SD": 0.0
+      },
+      "provenance": {
+        "instrument": "XYZ",
+        "currency": "USD",
+        "price_observation_days": 1,
+        "source_labels": [
+          "source-A",
+          "source-B"
+        ],
+        "decision_cutoff": "2026-01-03T00:00:00+00:00",
+        "model_horizon": "hypothetical one-period choice; not inferred from price dates",
+        "measure": "hypothetical caller Bernoulli law; not market/risk-neutral calibration",
+        "seed": 42,
+        "scenarios": 4
+      }
+    }
+  ],
+  "observations": [
+    {
+      "scope": "Conceptual/design disposition, not a new predicate/API",
+      "statement": "No native price-to-probability/return calibration adapter exists. Eligibility of a historical price return does not establish predictive horizon, probability measure, independence, freshness, adjustment basis or model suitability."
+    },
+    {
+      "scope": "External record, not ScenarioResult durability",
+      "statement": "Instrument/currency/source/decision cutoff/model horizon/measure are caller provenance; ScenarioResult stores numeric parameters/seed/values but does not authenticate or durably retain this context."
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "installed_modules": {
+    "financial_toolkit.validation": {
+      "path": "/tmp/book1-v10-wheel-2k7r29sr/consumer/lib/python3.12/site-packages/financial_toolkit/validation.py",
+      "sha256": "5c30b81f305f8dc408404c1f7cb4f0573f2ea3f840d277e02d9c3b58e149b4ce"
+    },
+    "financial_toolkit.simulation": {
+      "path": "/tmp/book1-v10-wheel-2k7r29sr/consumer/lib/python3.12/site-packages/financial_toolkit/simulation.py",
+      "sha256": "cc3bd9f8756782c77df6c866585b8bf3a7194447eb30e0a0c4e583bc17f28b43"
+    },
+    "financial_toolkit.statistics": {
+      "path": "/tmp/book1-v10-wheel-2k7r29sr/consumer/lib/python3.12/site-packages/financial_toolkit/statistics.py",
+      "sha256": "2ec2bb681ef7ca1ca323aa592889540fda10bb233b76be0a08633940cf1efcc0"
+    }
+  },
+  "scope": "Selected native price validation, explicit caller model alternatives and empirical summaries; no calibration adapter or model acceptance"
+}

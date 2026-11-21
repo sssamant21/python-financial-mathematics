@@ -1,0 +1,67 @@
+"""Growth/discount kernel subset and independent ordinary assessment references."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,localcontext,Context
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='c13faeefbb83044100436a01e6190c3439018743';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py';check=path.replace('section_10_04.py','check_section_10_04.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def exp_series(x):
+ count=0
+ while abs(x)>D('.5'):x/=2;count+=1
+ total=term=D(1)
+ for n in range(1,1200):
+  term*=x/n;new=total+term
+  if new==total:break
+  total=new
+ else:raise RuntimeError('oracle convergence')
+ for _ in range(count):total*=total
+ return total
+def growth(c,g,t):
+ c,g,t=map(F,(c,g,t))
+ if not c or not t:return 0.0
+ if not g:return float(c*t)
+ if g*t < -10000:return float(-c/g)
+ with localcontext(Context(prec=800)):
+  def dec(x):return D(x.numerator)/D(x.denominator)
+  return float(dec(c/g)*(exp_series(dec(g*t))-1))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('substitution_reference',Path(tmp)/'section_10_04.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want,exc=None,kind='kernel contract',absolute=0):
+  try:got=fn();ok=exc is None and (got==want if isinstance(want,(bool,str)) else math.isclose(got,float(want),rel_tol=5e-14,abs_tol=absolute));actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,absolute_tolerance=absolute,passed=ok))
+ cases=[('ordinary growth',500,.02,2),('zero growth',500,0,2),('decaying growth',500,-.02,2),('negative scale',-500,.02,2),('zero scale extreme exponent',0,1e308,1e308),('zero horizon',1e308,1e308,0),('complete scale/time cancellation',1e308,-1,2),('negative complete cancellation',-1e308,-1,2),('rescaled growing integral',1e-300,1,1000),('minimum scale finite large exponential',math.ulp(0.),1,745),('huge negative exponent finite result',1e308,-1e308,1e308),('tiny growth',500,1e-300,2),('underflow report allowed',1e-308,0,1e-308)]
+ for name,c,g,t in cases:test(name,lambda c=c,g=g,t=t:m.exponential_growth_integral(c,g,t),growth(c,g,t),kind='selected finite-range/identity contract')
+ test('discount ordinary',lambda:m.discount_integral(.04,2),growth(1,-.04,2))
+ test('discount huge positive rate/horizon',lambda:m.discount_integral(1e308,1e308),float(1/F(1e308)),kind='selected finite-result range extension')
+ test('true final positive overflow',lambda:m.exponential_growth_integral(1,1,1000),None,ValueError)
+ test('constant true overflow',lambda:m.exponential_growth_integral(1e308,0,2),None,ValueError)
+ test('negative horizon',lambda:m.exponential_growth_integral(0,1,-1),None,ValueError)
+ test('bool scale',lambda:m.exponential_growth_integral(True,1,2),None,TypeError)
+ test('nonfinite rate',lambda:m.discount_integral(math.inf,2),None,ValueError)
+ # Full ordinary assessment: distinct independent series and midpoint recurrence.
+ z=subprocess.run([sys.executable,'section_10_04.py'],cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=[sys.executable,'section_10_04.py'],returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0;report=json.loads(z.stdout)
+ for key,want in [('model','linear cash-flow rate with flat continuous discount'),('horizon_years',2),('runtime_certified',False),('independent_review_completed',False)]:test('report '+key,lambda key=key:report[key],want,kind='ordinary report contract')
+ test('scenario count',lambda:len(report['scenarios']),5,kind='ordinary report schema')
+ with localcontext(Context(prec=140)):
+  for i,rate in enumerate([-.01,0,.01,.04,.08]):
+   r=D.from_float(rate);t=D(2);x=-r*t
+   # Integral moment series sums powers directly, not the implementation phi recurrence.
+   term=D(1);I=J=D(0)
+   for k in range(120):
+    if k:term*=x/k
+    I+=term/(k+1);J+=term/(k+2)
+   I*=t;J*=t*t;pv=1000*I+100*J;h=t/1000;q=exp_series(-r*h);factor=exp_series(-r*h/2);mid=D(0);power=D(1)
+   for k in range(1000):mid+=(1000+100*h*(D(k)+D('.5')))*power;power*=q
+   mid*=h*factor
+   expected=dict(rate=rate,discount_integral=I,time_weighted_integral=J,present_value=pv,midpoint_reference=mid,absolute_difference=abs(pv-mid))
+   for key,want in expected.items():test(str(i)+' report '+key,lambda key=key,i=i:report['scenarios'][i][key],want,kind='ordinary assessment field',absolute=5e-11)
+ for args in [[sys.executable,'check_section_10_04.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='growth/discount kernel plus ordinary full report; phi, time-weighted/PV/midpoint range and callback contracts remain unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0 and all(c['returncode']==0 for c in commands)

@@ -43,6 +43,13 @@ def run():
     rejects(ValueError,midpoint_reference,lambda t:t,0,1,0)
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,finite,float("nan"),"value")
+    assert exponential_growth_integral(0,1e308,1e308)==0
+    close(exponential_growth_integral(1e308,-1,2),8.646647167633873e307)
+    close(exponential_growth_integral(-1e308,-1,2),-8.646647167633873e307)
+    close(exponential_growth_integral(1e-300,1,1000),1.970071114017047e134)
+    assert exponential_growth_integral(1e308,-1e308,1e308)==1
+    close(discount_integral(1e308,1e308),1e-308,abs_tol=0)
+    rejects(ValueError,exponential_growth_integral,1,1,1000)
     print("PASS: Section 10.4 independent reference checks")
 
 if __name__=="__main__":

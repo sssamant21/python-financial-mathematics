@@ -1,0 +1,530 @@
+{
+  "pin": "c13faeefbb83044100436a01e6190c3439018743",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-21T22:12:45.123651+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py": {
+      "sha256": "470951f914c6a0849b941d7133ed439bd853cc685ae65d066ddeb05fd5f91de9",
+      "git_blob": "58d9cce8abca69ba075a8917565ea7a4519116c2"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_04.py": {
+      "sha256": "0397c4a2170b4f9e46153b056dafac90f2d87d6be944f98bfef73c84760f3dfe",
+      "git_blob": "f49298aa3a05ee83b427166c054729ea6ea23bbc"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary growth",
+      "actual": 1020.2693548097055,
+      "expected": "1020.2693548097056",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero growth",
+      "actual": 1000.0,
+      "expected": "1000.0",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "decaying growth",
+      "actual": 980.2640211919197,
+      "expected": "980.2640211919197",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative scale",
+      "actual": -1020.2693548097055,
+      "expected": "-1020.2693548097056",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "zero scale extreme exponent",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite exponent"
+      },
+      "expected": "0.0",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "zero horizon",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "complete scale/time cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite integral"
+      },
+      "expected": "8.646647167633874e+307",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "negative complete cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite integral"
+      },
+      "expected": "-8.646647167633874e+307",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "rescaled growing integral",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "1.970071114017047e+134",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "minimum scale finite large exponential",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "1.750546594039472",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "huge negative exponent finite result",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite exponent"
+      },
+      "expected": "1.0",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "tiny growth",
+      "actual": 1000.0,
+      "expected": "1000.0",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "underflow report allowed",
+      "actual": 0.0,
+      "expected": "0.0",
+      "kind": "selected finite-range/identity contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "discount ordinary",
+      "actual": 1.9220913403341053,
+      "expected": "1.9220913403341053",
+      "kind": "kernel contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "discount huge positive rate/horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite exponent"
+      },
+      "expected": "1e-308",
+      "kind": "selected finite-result range extension",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "true final positive overflow",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "math range error"
+      },
+      "expected": "ValueError",
+      "kind": "kernel contract",
+      "absolute_tolerance": 0,
+      "passed": false
+    },
+    {
+      "name": "constant true overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite integral"
+      },
+      "expected": "ValueError",
+      "kind": "kernel contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "negative horizon",
+      "actual": {
+        "exception": "ValueError",
+        "message": "horizon must be nonnegative"
+      },
+      "expected": "ValueError",
+      "kind": "kernel contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "bool scale",
+      "actual": {
+        "exception": "TypeError",
+        "message": "scale must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "kernel contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "nonfinite rate",
+      "actual": {
+        "exception": "ValueError",
+        "message": "rate must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "kernel contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "report model",
+      "actual": "linear cash-flow rate with flat continuous discount",
+      "expected": "linear cash-flow rate with flat continuous discount",
+      "kind": "ordinary report contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "report horizon_years",
+      "actual": 2,
+      "expected": "2",
+      "kind": "ordinary report contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "report runtime_certified",
+      "actual": false,
+      "expected": "False",
+      "kind": "ordinary report contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "report independent_review_completed",
+      "actual": false,
+      "expected": "False",
+      "kind": "ordinary report contract",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "scenario count",
+      "actual": 5,
+      "expected": "5",
+      "kind": "ordinary report schema",
+      "absolute_tolerance": 0,
+      "passed": true
+    },
+    {
+      "name": "0 report rate",
+      "actual": -0.01,
+      "expected": "-0.01",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "0 report discount_integral",
+      "actual": 2.020134002675581,
+      "expected": "2.0201340026755810164363186540090985792193419801369087786103359742545036544284808330434887546580694737096581495215573610664409569462414110322",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "0 report time_weighted_integral",
+      "actual": 2.02686773779306,
+      "expected": "2.0268677377930604311530844351606205186600375205471114325616929661867011605377492640383239568874474970796090447645667272007531058792055493559",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "0 report present_value",
+      "actual": 2222.820776454887,
+      "expected": "2222.8207764548870595516270975251606310853457321916199218665052708731737704822557594473211503468142234176190539980140337865162675341619659678",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "0 report midpoint_reference",
+      "actual": 2222.820775744462,
+      "expected": "2222.8207757444620457349963273321743738481947383173407626664483559701658555977904919366347517833536330977397323704754382830872691878861852956",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "0 report absolute_difference",
+      "actual": 7.104249561962206e-07,
+      "expected": "7.104250138166307701929862572371509938742791592000569149030079148844652675106863985634605903198793216275385955034289983462757806722E-7",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "1 report rate",
+      "actual": 0,
+      "expected": "0",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "1 report discount_integral",
+      "actual": 2.0,
+      "expected": "2",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "1 report time_weighted_integral",
+      "actual": 2.0,
+      "expected": "2.0",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "1 report present_value",
+      "actual": 2200.0,
+      "expected": "2200.0",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "1 report midpoint_reference",
+      "actual": 2200.0,
+      "expected": "2200.0000000",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "1 report absolute_difference",
+      "actual": 0.0,
+      "expected": "0E-7",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "2 report rate",
+      "actual": 0.01,
+      "expected": "0.01",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "2 report discount_integral",
+      "actual": 1.9801326693244699,
+      "expected": "1.9801326693244697775077656461169639153058066386478390462661333530057851814903506481617880547248372794164132730805651219675455702968625015329",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "2 report time_weighted_integral",
+      "actual": 1.9735322710959171,
+      "expected": "1.9735322710959173471492858173340399964378329947265495967386955745799114417353879530227584731811307208211121264589058094517860782398480037464",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "2 report present_value",
+      "actual": 2177.4858964340615,
+      "expected": "2177.4858964340615122226942278503679149495899381204940059400029104637763256638894434640639020429503514985244857264557029127241781208473019075",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "2 report midpoint_reference",
+      "actual": 2177.4858970578143,
+      "expected": "2177.4858970578143037086388422080409094580124101064827794045725426787427820357865694669629860558998365637304315153279029899833220219488467661",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "2 report absolute_difference",
+      "actual": 6.237528396013658e-07,
+      "expected": "6.237527914859446143576729945084224719859887734645696322149664563718971260028990840129494850652059457888722000772591439011015448586E-7",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "3 report rate",
+      "actual": 0.04,
+      "expected": "0.04",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "3 report discount_integral",
+      "actual": 1.9220913403341053,
+      "expected": "1.9220913403341054256518784393347286889189999454127084928765883246621205863811536589779832467674047865987985973204472599579807934201388925927",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "3 report time_weighted_integral",
+      "actual": 1.8964661890208463,
+      "expected": "1.8964661890208465331457121333320856991775381013834232912764913664736934751914748222741986520418383265186623730843339205109799149208980074518",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "3 report present_value",
+      "actual": 2111.73795923619,
+      "expected": "2111.7379592361900789664496526679372588367537555510508220042374613094899339003011412054031119715886192506648346288806520090787849122286933379",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "3 report midpoint_reference",
+      "actual": 2111.7379612358486,
+      "expected": "2111.7379612358484094306161627231963901566809365856496115047720256497711009819513823035604541298076747513126963813045359850225363490962968950",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "3 report absolute_difference",
+      "actual": 1.999658707063645e-06,
+      "expected": "0.0000019996583304641665100552591313199271810345987895005345643402811670816502410981573421582190555006478617524238839759437514368676035571",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "4 report rate",
+      "actual": 0.08,
+      "expected": "0.08",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "4 report discount_integral",
+      "actual": 1.8482026379223582,
+      "expected": "1.8482026379223582662998287343091453068762542064009402130918157723047476510369174473504066639213189546226866009839925374039332691225548093022",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "4 report time_weighted_integral",
+      "actual": 1.798938249874195,
+      "expected": "1.7989382498741949008464837855981003694445261419589056973369449989635962725879215638835763443712430966511926823985278358971202916326647888104",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "4 report present_value",
+      "actual": 2028.0964629097778,
+      "expected": "2028.0964629097777563844771128689553438207068205968307828255102722011072782957096037387642983584432642878058692238453209936452982858212881832",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "4 report midpoint_reference",
+      "actual": 2028.0964656750152,
+      "expected": "2028.0964656750152246623154465264895730251885292399450574308061003740547690107045564352104098277896423911462661399566662920256422599091681143",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    },
+    {
+      "name": "4 report absolute_difference",
+      "actual": 2.765237468338455e-06,
+      "expected": "0.0000027652374682778383336575342292044817086431142746052958281729474907149949526964461114693463781033403969161113452983803439740878799311",
+      "kind": "ordinary assessment field",
+      "absolute_tolerance": 5e-11,
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_04.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"model\": \"linear cash-flow rate with flat continuous discount\",\n  \"horizon_years\": 2,\n  \"scenarios\": [\n    {\n      \"rate\": -0.01,\n      \"discount_integral\": 2.020134002675581,\n      \"time_weighted_integral\": 2.02686773779306,\n      \"present_value\": 2222.820776454887,\n      \"midpoint_reference\": 2222.820775744462,\n      \"absolute_difference\": 7.104249561962206e-07\n    },\n    {\n      \"rate\": 0,\n      \"discount_integral\": 2.0,\n      \"time_weighted_integral\": 2.0,\n      \"present_value\": 2200.0,\n      \"midpoint_reference\": 2200.0,\n      \"absolute_difference\": 0.0\n    },\n    {\n      \"rate\": 0.01,\n      \"discount_integral\": 1.9801326693244699,\n      \"time_weighted_integral\": 1.9735322710959171,\n      \"present_value\": 2177.4858964340615,\n      \"midpoint_reference\": 2177.4858970578143,\n      \"absolute_difference\": 6.237528396013658e-07\n    },\n    {\n      \"rate\": 0.04,\n      \"discount_integral\": 1.9220913403341053,\n      \"time_weighted_integral\": 1.8964661890208463,\n      \"present_value\": 2111.73795923619,\n      \"midpoint_reference\": 2111.7379612358486,\n      \"absolute_difference\": 1.999658707063645e-06\n    },\n    {\n      \"rate\": 0.08,\n      \"discount_integral\": 1.8482026379223582,\n      \"time_weighted_integral\": 1.798938249874195,\n      \"present_value\": 2028.0964629097778,\n      \"midpoint_reference\": 2028.0964656750152,\n      \"absolute_difference\": 2.765237468338455e-06\n    }\n  ],\n  \"runtime_certified\": false,\n  \"independent_review_completed\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_04.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.4 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 47,
+  "failed": 8,
+  "scope": "growth/discount kernel plus ordinary full report; phi, time-weighted/PV/midpoint range and callback contracts remain unfinished"
+}
