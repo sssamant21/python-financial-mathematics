@@ -293,3 +293,5 @@ Project 49 additionally provides `cva_benchmark.py` and `test_cva_benchmark.py` 
 
 
 Project 49 also includes `dependence_stress.py` and `test_dependence_stress.py` for seeded one-year exposure/default dependence stress, a closed-form independence benchmark, and explicit wrong-way/right-way sign conventions. This is synthetic only; exact published-revision CI and independent review are pending.
+
+Project 51 additionally includes `stable_monetary_tail.py` and `test_stable_monetary_tail.py` for small-portfolio high-precision monetary-loss tail enumeration (synthetic only). Run `python -m unittest -v test_stable_monetary_tail.py` from its directory; exact-revision CI and independent review are pending.
