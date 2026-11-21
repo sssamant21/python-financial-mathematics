@@ -1,0 +1,48 @@
+"""Exponential complete-expression references via independent rational/Taylor arithmetic."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='ce38a04197aef40afd31e54adbb8d0bdadc588a3';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_02.py';check=path.replace('section_10_02.py','check_section_10_02.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def series(x):
+ # Independent exp: argument halving, converged Taylor sum, repeated squaring.
+ count=0
+ while abs(x)>D('.5'):x/=2;count+=1
+ term=total=D(1)
+ for n in range(1,1200):
+  term*=x/n;new=total+term
+  if new==total:break
+  total=new
+ else:raise RuntimeError('oracle did not converge')
+ for _ in range(count):total*=total
+ return total
+
+def oracle(args):
+ c,k,a,b=map(F,args)
+ if c==0 or a==b:return 0.0
+ if k==0:return float(c*(b-a))
+ with localcontext() as ctx:
+  ctx.prec=800
+  def dec(x):return D(x.numerator)/D(x.denominator)
+  return float(dec(c/k)*(series(dec(k*b))-series(dec(k*a))))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('exp_reference',Path(tmp)/'section_10_02.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ cases=[('ordinary',(500,.03,0,2)),('reverse',(500,.03,2,0)),('negative scale',(-500,.03,0,2)),('negative growth',(500,-.03,0,2)),('zero growth',(500,0,0,2)),('zero scale overflowing exponent',(0,1,1000,1001)),('zero width overflowing exponent',(1,1,1000,1000)),('wide zero scale',(0,0,-1e308,1e308)),('wide constant finite result',(1e-308,0,-1e308,1e308)),('tiny constant integral',(1e-308,0,0,1e-308)),('rescaled growing integral',(1e-300,1,1000,1001)),('rescaled decaying integral',(1e300,1,-1000,-999)),('tiny growth',(3,1e-300,0,2)),('tiny interval large exponent',(1e-300,1,700,math.nextafter(700,701))),('large negative growth',(2,-1000,0,1)),('very wide decaying',(1,-1,0,1e308))]
+ for name,args in cases:
+  try:want=oracle(args) if name!='very wide decaying' else 1.0;got=m.exponential_definite(*args);ok=math.isclose(got,want,rel_tol=5e-14,abs_tol=0);observed=got
+  except Exception as e:ok=False;observed=dict(exception=type(e).__name__,message=str(e));want='finite independent reference'
+  rows.append(dict(name=name,args=args,actual=observed,expected=want,passed=ok))
+ for name,args,exc in [('final overflow',(1,1,1000,1001),ValueError),('invalid bool',(True,1,0,1),TypeError),('nonfinite endpoint',(1,1,0,math.inf),ValueError),('extreme growth zero width',(1,1e308,1e308,1e308),None),('extreme positive exponent',(1,1e308,1,2),ValueError),('extreme negative exponent',(1,1e308,-2,-1),None)]:
+  try:got=m.exponential_definite(*args);ok=exc is None and got==0;observed=got
+  except Exception as e:ok=exc is not None and type(e) is exc;observed=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,args=[str(x) for x in args],actual=observed,expected=exc.__name__ if exc else 0,passed=ok))
+ for args in [[sys.executable,'section_10_02.py'],[sys.executable,'check_section_10_02.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='selected exact-float-input exponential contracts; independent 800-digit halving/Taylor/squaring oracle, not canonical rounding or platform approval')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0 and all(c['returncode']==0 for c in commands)

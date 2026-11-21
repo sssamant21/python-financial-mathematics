@@ -62,6 +62,12 @@ def run():
             1,math.nextafter(1,2),2)
     assert calls==[]
     rejects(ValueError,midpoint_sum,lambda t:1,0,math.ulp(0.0),2)
+    assert exponential_definite(0,1,1000,1001)==0
+    assert exponential_definite(1,1,1000,1000)==0
+    close(exponential_definite(1e-308,0,-1e308,1e308),2)
+    close(exponential_definite(1e-300,1,1000,1001),3.3851373959875596e+134)
+    assert exponential_definite(1,1e308,-2,-1)==0
+    rejects(ValueError,exponential_definite,1,1,1000,1001)
     print("PASS: Section 10.2 independent reference checks")
 
 if __name__=="__main__":

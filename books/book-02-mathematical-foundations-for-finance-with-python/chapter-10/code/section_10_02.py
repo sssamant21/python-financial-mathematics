@@ -2,6 +2,7 @@
 import json
 import math
 from fractions import Fraction
+from decimal import Context, Decimal, localcontext
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -50,11 +51,27 @@ def polynomial_definite(coefficients,a,b):
 def exponential_definite(scale,growth,a,b):
     c,k,left,right=(finite(v,name) for v,name in
                     ((scale,"scale"),(growth,"growth"),(a,"a"),(b,"b")))
-    width=right-left
-    if k==0:
-        result=c*width
-    else:
-        result=c*math.exp(k*left)*math.expm1(k*width)/k
+    if c == 0 or left == right:
+        return 0.0
+    width = Fraction(right)-Fraction(left)
+    if k == 0:
+        return _polynomial_report(Fraction(c)*width, "integral")
+    # Anchor at the larger exponent; combine scale/growth before reporting.
+    lo, hi = sorted((Fraction(k)*Fraction(left), Fraction(k)*Fraction(right)))
+    gap = hi-lo
+    # Finite binary64 inputs bound |c/k| and a nonzero gap. These cutoffs
+    # are far outside their possible compensation range (see manuscript).
+    if hi > 10000:
+        raise ValueError("nonfinite integral")
+    if hi < -10000:
+        return 0.0
+    with localcontext(Context(prec=800)):
+        def decimal(value):
+            return Decimal(value.numerator)/Decimal(value.denominator)
+        tail = Decimal(1) if gap > 10000 else Decimal(1)-(-decimal(gap)).exp()
+        magnitude = abs(decimal(Fraction(c)/Fraction(k)))*decimal(hi).exp()*tail
+        sign = -1 if (c < 0) != (width < 0) else 1
+        result = float(sign*magnitude)
     if not math.isfinite(result):
         raise ValueError("nonfinite integral")
     return result

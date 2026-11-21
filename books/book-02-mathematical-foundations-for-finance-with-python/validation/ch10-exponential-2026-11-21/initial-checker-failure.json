@@ -1,0 +1,330 @@
+{
+  "pin": "ce38a04197aef40afd31e54adbb8d0bdadc588a3",
+  "source_selection": "candidate",
+  "executed_at_utc": "2026-11-21T18:12:20.280369+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_02.py": {
+      "sha256": "bc079188e756131aad100b4c77ed19e2f0bd50e99ad8b4fb5e0e3ea5fdddb472",
+      "git_blob": "48eac7f85e19c105998304931aef068427a8d79d"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_02.py": {
+      "sha256": "be08dd340ab159894442b85fad46cabf106bf4aa3ba3a3a63bac397bf5df1c95",
+      "git_blob": "2e6855f709e0f8452b96dbf8c634d5a12265c253"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary",
+      "args": [
+        500,
+        0.03,
+        0,
+        2
+      ],
+      "actual": 1030.6091090893271,
+      "expected": 1030.6091090893271,
+      "passed": true
+    },
+    {
+      "name": "reverse",
+      "args": [
+        500,
+        0.03,
+        2,
+        0
+      ],
+      "actual": -1030.6091090893271,
+      "expected": -1030.6091090893271,
+      "passed": true
+    },
+    {
+      "name": "negative scale",
+      "args": [
+        -500,
+        0.03,
+        0,
+        2
+      ],
+      "actual": -1030.6091090893271,
+      "expected": -1030.6091090893271,
+      "passed": true
+    },
+    {
+      "name": "negative growth",
+      "args": [
+        500,
+        -0.03,
+        0,
+        2
+      ],
+      "actual": 970.5911069291882,
+      "expected": 970.5911069291882,
+      "passed": true
+    },
+    {
+      "name": "zero growth",
+      "args": [
+        500,
+        0,
+        0,
+        2
+      ],
+      "actual": 1000.0,
+      "expected": 1000.0,
+      "passed": true
+    },
+    {
+      "name": "zero scale overflowing exponent",
+      "args": [
+        0,
+        1,
+        1000,
+        1001
+      ],
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "zero width overflowing exponent",
+      "args": [
+        1,
+        1,
+        1000,
+        1000
+      ],
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "wide zero scale",
+      "args": [
+        0,
+        0,
+        -1e+308,
+        1e+308
+      ],
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "wide constant finite result",
+      "args": [
+        1e-308,
+        0,
+        -1e+308,
+        1e+308
+      ],
+      "actual": 1.9999999999999998,
+      "expected": 1.9999999999999998,
+      "passed": true
+    },
+    {
+      "name": "tiny constant integral",
+      "args": [
+        1e-308,
+        0,
+        0,
+        1e-308
+      ],
+      "actual": 0.0,
+      "expected": 0.0,
+      "passed": true
+    },
+    {
+      "name": "rescaled growing integral",
+      "args": [
+        1e-300,
+        1,
+        1000,
+        1001
+      ],
+      "actual": 3.3851373959875596e+134,
+      "expected": 3.3851373959875596e+134,
+      "passed": true
+    },
+    {
+      "name": "rescaled decaying integral",
+      "args": [
+        1e+300,
+        1,
+        -1000,
+        -999
+      ],
+      "actual": 8.72192793566424e-135,
+      "expected": 8.72192793566424e-135,
+      "passed": true
+    },
+    {
+      "name": "tiny growth",
+      "args": [
+        3,
+        1e-300,
+        0,
+        2
+      ],
+      "actual": 6.0,
+      "expected": 6.0,
+      "passed": true
+    },
+    {
+      "name": "tiny interval large exponent",
+      "args": [
+        1e-300,
+        1,
+        700,
+        700.0000000000001
+      ],
+      "actual": 1.153048350187262e-09,
+      "expected": 1.153048350187262e-09,
+      "passed": true
+    },
+    {
+      "name": "large negative growth",
+      "args": [
+        2,
+        -1000,
+        0,
+        1
+      ],
+      "actual": 0.002,
+      "expected": 0.002,
+      "passed": true
+    },
+    {
+      "name": "very wide decaying",
+      "args": [
+        1,
+        -1,
+        0,
+        1e+308
+      ],
+      "actual": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "final overflow",
+      "args": [
+        "1",
+        "1",
+        "1000",
+        "1001"
+      ],
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite integral"
+      },
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "invalid bool",
+      "args": [
+        "True",
+        "1",
+        "0",
+        "1"
+      ],
+      "actual": {
+        "exception": "TypeError",
+        "message": "scale must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "passed": true
+    },
+    {
+      "name": "nonfinite endpoint",
+      "args": [
+        "1",
+        "1",
+        "0",
+        "inf"
+      ],
+      "actual": {
+        "exception": "ValueError",
+        "message": "b must be finite"
+      },
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "extreme growth zero width",
+      "args": [
+        "1",
+        "1e+308",
+        "1e+308",
+        "1e+308"
+      ],
+      "actual": 0.0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "extreme positive exponent",
+      "args": [
+        "1",
+        "1e+308",
+        "1",
+        "2"
+      ],
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite integral"
+      },
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "extreme negative exponent",
+      "args": [
+        "1",
+        "1e+308",
+        "-2",
+        "-1"
+      ],
+      "actual": 0.0,
+      "expected": 0,
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_02.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"linear_antiderivative_at_2\": 240.0,\n  \"linear_integral_0_to_2\": 240.0,\n  \"signed_integral\": 0.0,\n  \"growing_payment_integral\": 1030.6091090893271,\n  \"midpoint_checks\": [\n    {\n      \"n\": 4,\n      \"estimate\": 1030.5994471923354\n    },\n    {\n      \"n\": 16,\n      \"estimate\": 1030.60850521705\n    },\n    {\n      \"n\": 64,\n      \"estimate\": 1030.6090713472952\n    },\n    {\n      \"n\": 256,\n      \"estimate\": 1030.60910673045\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_02.py"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/tmp1wx9e2bf/check_section_10_02.py\", line 74, in <module>\n    run()\n  File \"/tmp/tmp1wx9e2bf/check_section_10_02.py\", line 68, in run\n    close(exponential_definite(1e-300,1,1000,1001),3.385746970890998e134)\n  File \"/tmp/tmp1wx9e2bf/check_section_10_02.py\", line 8, in close\n    assert math.isclose(a,b,rel_tol=rel_tol,abs_tol=abs_tol),(a,b)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: (3.3851373959875596e+134, 3.385746970890998e+134)\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "scope": "selected exact-float-input exponential contracts; independent 800-digit halving/Taylor/squaring oracle, not canonical rounding or platform approval"
+}
