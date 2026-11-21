@@ -28,11 +28,14 @@ class MemoryBenchmarkTests(unittest.TestCase):
                 measure_peak_allocations(*args)
 
     def test_equal_tail_matches_independent_analytic_formula(self):
-        from decimal import Decimal
+        from decimal import Decimal, localcontext
         for n in (1, 4, 12, 20):
             with self.subTest(n=n):
                 row = measure_peak_allocations(n, "equal", precision=100)
-                expected = Decimal(1) - (Decimal(3) / 4) ** n
+                # Match the model precision; the ambient Decimal context defaults to 28 digits.
+                with localcontext() as ctx:
+                    ctx.prec = 100
+                    expected = Decimal(1) - (Decimal(3) / 4) ** n
                 self.assertEqual(Decimal(row["tail_probability"]), expected)
                 self.assertEqual(row["peak_states"], n + 1)
                 self.assertEqual(row["final_states"], n + 1)
