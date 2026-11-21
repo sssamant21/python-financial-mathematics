@@ -159,3 +159,16 @@ python memory_benchmark.py --borrowers 8 --pattern distinct --max-states 1000
 ```
 
 Five synthetic regression tests are authored for state counts, tracing cleanup, guardrails and preexisting tracing. **60 Project 51 test methods are now authored; these five have not been runtime-verified, and the new exact-revision GitHub Actions result remains unverified.** Previously confirmed CI baseline: 45 tests. Memory byte values are observational, not reproducible acceptance thresholds. No licensed data, default dependence, calibration, independent review, or production certification is claimed.
+
+### Matched synthetic memory/state comparison (2026-11-21)
+
+`memory_comparison.py` measures **traced Python allocations** for equal-loss and distinct-loss portfolios at the same borrower counts (default 4, 8, 12). It verifies the exact support-size identities `n+1` versus `2**n` and checks the common analytical probability `1 - 0.75**n` for at least one default. The severity pattern changes the state count, not the event probability. Each measurement runs separately with `tracemalloc`; peak bytes are environment-sensitive, **not** process RSS, a hard memory bound, or proof that one implementation scales to real credit portfolios. Inputs and state caps are bounded; no historical data is used.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_memory_comparison.py
+python -m py_compile memory_comparison.py test_memory_comparison.py
+python memory_comparison.py --sizes 4 8 12 --precision 100 --max-states 10000
+```
+
+Five new synthetic tests are authored and included in dedicated CI configuration. Their exact-revision CI outcome, independent review, historical calibration and production certification remain **unverified** until observed. The earlier 62-test passing CI checkpoint is the last verified baseline.
