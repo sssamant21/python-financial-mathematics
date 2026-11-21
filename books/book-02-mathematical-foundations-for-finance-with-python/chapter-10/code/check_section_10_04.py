@@ -50,6 +50,15 @@ def run():
     assert exponential_growth_integral(1e308,-1e308,1e308)==1
     close(discount_integral(1e308,1e308),1e-308,abs_tol=0)
     rejects(ValueError,exponential_growth_integral,1,1,1000)
+    close(phi(-710),3.142039851633908e+305,abs_tol=0)
+    close(phi(-716),1.2569819458368153e+308,abs_tol=0)
+    close(time_weighted_discount_integral(-1e308,1e-305),1.9681010429030442e-179,abs_tol=0)
+    close(time_weighted_discount_integral(1,1e200),1)
+    assert time_weighted_discount_integral(1e200,1e200)==0
+    assert time_weighted_discount_integral(1e308,1e308)==0
+    close(time_weighted_discount_integral(0,1.5e154),1.125e308)
+    rejects(ValueError,phi,-717)
+    rejects(ValueError,time_weighted_discount_integral,-1,720)
     print("PASS: Section 10.4 independent reference checks")
 
 if __name__=="__main__":

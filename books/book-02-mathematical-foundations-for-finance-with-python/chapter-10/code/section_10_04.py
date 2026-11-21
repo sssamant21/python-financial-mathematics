@@ -50,31 +50,47 @@ def discount_integral(rate, horizon):
     r, t = finite(rate,"rate"), nonnegative_horizon(horizon)
     return exponential_growth_integral(1.0,-r,t)
 
-def phi(x):
-    x = finite(x,"x")
-    if abs(x) < 0.1:
-        term = 0.5
-        total = term
-        for k in range(1,100):
-            term *= (-x)*(k+1)/(k*(k+2))
-            total += term
-            if abs(term) <= 1e-16*max(1.0,abs(total)):
-                break
-        return total
-    result = (-math.expm1(-x)-x*math.exp(-x))/(x*x)
+def _moment_report(value):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite time-weighted result") from exc
     if not math.isfinite(result):
-        raise ValueError("nonfinite phi")
+        raise ValueError("nonfinite time-weighted result")
     return result
 
+def _fraction_decimal(value):
+    return Decimal(value.numerator)/Decimal(value.denominator)
+
+def _moment_decimal(x):
+    if x < -10000:
+        raise ValueError("nonfinite time-weighted result")
+    if x > 10000:
+        return _fraction_decimal(1/(x*x))
+    value = _fraction_decimal(x)
+    if abs(x) < Fraction(1,10):
+        term = total = Decimal("0.5")
+        for k in range(1,2000):
+            term *= (-value)*(k+1)/(k*(k+2))
+            updated = total+term
+            if updated == total:
+                return total
+            total = updated
+        raise ValueError("moment series did not converge")
+    return (1-(1+value)*(-value).exp())/(value*value)
+
+def phi(x):
+    value = Fraction(finite(x,"x"))
+    with localcontext(Context(prec=800)):
+        return _moment_report(_moment_decimal(value))
+
 def time_weighted_discount_integral(rate,horizon):
-    r, t = finite(rate,"rate"), nonnegative_horizon(horizon)
-    x = r*t
-    if not math.isfinite(x):
-        raise ValueError("nonfinite exponent")
-    result = t*t*phi(x)
-    if not math.isfinite(result):
-        raise ValueError("nonfinite integral")
-    return result
+    r, t = Fraction(finite(rate,"rate")), Fraction(nonnegative_horizon(horizon))
+    if not t:
+        return 0.0
+    with localcontext(Context(prec=800)):
+        result = _fraction_decimal(t*t)*_moment_decimal(r*t)
+        return _moment_report(result)
 
 def linear_cashflow_pv(intercept,slope,rate,horizon):
     a,b = finite(intercept,"intercept"),finite(slope,"slope")

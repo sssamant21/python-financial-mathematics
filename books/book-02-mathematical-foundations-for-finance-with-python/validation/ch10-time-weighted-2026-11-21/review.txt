@@ -1,0 +1,46 @@
+"""Independent integral-moment series for phi and scaled time-weighted integrals."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal as D,Context,localcontext
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='6673f03dc6d20f4fcb9c01c34e7878b84addfc6d';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_04.py';check=path.replace('section_10_04.py','check_section_10_04.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+def dec(x):return D(x.numerator)/D(x.denominator)
+def moment(x):
+ # Integrate the exponential power series termwise on [0,1].
+ # Positive x>1000 has relative omitted tail below1001*exp(-1000).
+ if x>1000:return D(1)/(x*x)
+ term=D(1);total=D('.5')
+ for k in range(1,12000):
+  term*=(-x)/k;new=total+term/(k+2)
+  if new==total:return total
+  total=new
+ raise RuntimeError('oracle series did not converge')
+def reference_phi(x):
+ with localcontext(Context(prec=800)):return float(moment(dec(F(x))))
+def reference_time(r,t):
+ with localcontext(Context(prec=800)):
+  R,T=map(F,(r,t));return float(dec(T*T)*moment(dec(R*T)))
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('time_weighted_reference',Path(tmp)/'section_10_04.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want,exc=None,kind='moment contract'):
+  try:got=fn();ok=exc is None and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0);actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,passed=ok))
+ for x in [0.,1e-12,-1e-12,.0999999999,-.0999999999,.1,-.1,.1000000001,-.1000000001,1.,10.,100.,1e200,-710.,-716.]:test('phi '+str(x),lambda x=x:m.phi(x),reference_phi(x))
+ for r,t in [(0,2),(.04,2),(-.04,2),(1,1e200),(1e200,1e200),(1e308,1e308),(1e-200,1),(-1e308,1e-305),(1e308,math.ulp(0.0)),(0,1e154),(0,1.5e154),(0,1e-200),(-1,700),(1,0),(1e308,0),(0,math.ulp(0.0))]:test('time r'+str(r)+' T'+str(t),lambda r=r,t=t:m.time_weighted_discount_integral(r,t),reference_time(r,t),kind='selected complete-expression/time moment contract')
+ test('phi true final overflow',lambda:m.phi(-717),None,ValueError)
+ test('time true final overflow zero rate',lambda:m.time_weighted_discount_integral(0,2e154),None,ValueError)
+ test('time true final overflow negative rate',lambda:m.time_weighted_discount_integral(-1,720),None,ValueError)
+ test('negative horizon',lambda:m.time_weighted_discount_integral(.04,-1),None,ValueError)
+ test('bool phi input',lambda:m.phi(True),None,TypeError)
+ test('nonfinite rate with zero horizon',lambda:m.time_weighted_discount_integral(math.inf,0),None,ValueError)
+ for args in [[sys.executable,'section_10_04.py'],[sys.executable,'check_section_10_04.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='phi/time-weighted subset, independent800-digit moment series; PV/midpoint/report range still unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0 and all(c['returncode']==0 for c in commands)

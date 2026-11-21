@@ -1,0 +1,159 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "v1 eligible by old cutoff",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "later revision unavailable at old cutoff",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "older version remains natively eligible at new cutoff",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "newer version eligible at new cutoff",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "caller latest-at-old version",
+      "actual": "v1",
+      "expected": "v1",
+      "passed": true
+    },
+    {
+      "name": "caller latest-at-new version",
+      "actual": "v2",
+      "expected": "v2",
+      "passed": true
+    },
+    {
+      "name": "caller-selected old return",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "caller-selected new return",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "native schema rejects revision key",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "backdated supplied metadata passes structural rules",
+      "actual": 0.5,
+      "expected": "1/2",
+      "passed": true
+    },
+    {
+      "name": "raw/raw fictional return",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "mixed basis still natively eligible",
+      "actual": -0.375,
+      "expected": "-3/8",
+      "passed": true
+    },
+    {
+      "name": "consistent adjusted basis fictional return",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "native schema rejects basis key",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true
+    },
+    {
+      "name": "very old pair still natively eligible",
+      "actual": 0.25,
+      "expected": "1/4",
+      "passed": true
+    },
+    {
+      "name": "caller one-day freshness would reject stale observation",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "scope": "Supplemental fixture policy",
+      "statement": "latest_available selects maximum supplied availability among eligible fixture versions; not a native revision-history/authentication implementation or accepted real-source policy."
+    },
+    {
+      "scope": "Native schema limit",
+      "statement": "Multiple versions can individually pass. A caller must retain version/adjustment provenance externally; added keys are rejected by the exact native schema."
+    },
+    {
+      "scope": "Conceptual supplied-metadata limit",
+      "statement": "Backdating a fictional supplied availability field can pass schema/time rules. The validator cannot authenticate real source publication/revision times."
+    },
+    {
+      "scope": "Fictional split/basis example",
+      "statement": "The two-for-one adjusted example illustrates raw/adjusted mixing; source labels do not authenticate price basis or corporate-action treatment. No real data or model calibration accepted."
+    },
+    {
+      "scope": "Freshness policy",
+      "statement": "One-day threshold is an illustrative caller decision, not a native limit or a proposed universal market policy. Structural eligibility is not current-data/model suitability."
+    }
+  ],
+  "fixture_versions": [
+    {
+      "version": "v1",
+      "basis": "raw",
+      "record": {
+        "instrument": "XYZ",
+        "currency": "USD",
+        "price": 125.0,
+        "observed_at": "2026-01-02 00:00:00+00:00",
+        "available_at": "2026-01-02 00:00:00+00:00",
+        "source": "fictional-source"
+      }
+    },
+    {
+      "version": "v2",
+      "basis": "raw",
+      "record": {
+        "instrument": "XYZ",
+        "currency": "USD",
+        "price": 150.0,
+        "observed_at": "2026-01-02 00:00:00+00:00",
+        "available_at": "2026-01-04 00:00:00+00:00",
+        "source": "fictional-source"
+      }
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "installed_modules": {
+    "financial_toolkit.validation": {
+      "path": "/tmp/book1-v10-wheel-95hgocw3/consumer/lib/python3.12/site-packages/financial_toolkit/validation.py",
+      "sha256": "5c30b81f305f8dc408404c1f7cb4f0573f2ea3f840d277e02d9c3b58e149b4ce"
+    }
+  },
+  "scope": "Selected installed revision/basis/freshness boundary; caller selection separate; no source authentication, calibration or independent acceptance"
+}
