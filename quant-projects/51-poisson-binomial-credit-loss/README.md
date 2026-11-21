@@ -131,3 +131,16 @@ python -m py_compile state_benchmark.py test_state_benchmark.py
 ```
 
 **53 Project 51 test methods are authored, not all newly verified.** The three new tests were not executed locally because this runtime cannot resolve github.com for exact-revision checkout. Hosted CI for the new commit and independent review remain unverified.
+
+
+### Opt-in observed sparse-state diagnostics (2026-11-21)
+
+The sparse solver now accepts `return_diagnostics=True` and returns `(Decimal tail, diagnostics)` rather than only the Decimal tail. Diagnostics report `peak_states` (largest retained state map **after** a borrower update), `final_states`, `processed_borrowers`, and `early_exit`. The default API remains unchanged. A threshold of zero or above maximum loss returns early with zero processed borrowers; these values **do not measure peak process memory**. Transient `updated` dictionaries can coexist with the previous map, so retained-state count is not a byte-memory upper bound. A state-limit exception still fails closed without a partial result.
+
+```bash
+python -m unittest -v test_state_benchmark.py
+python -m py_compile sparse_monetary_tail.py test_state_benchmark.py
+python -c "from sparse_monetary_tail import sparse_tail; print(sparse_tail(['0.25']*4,[1,2,4,8],[1]*4,1,return_diagnostics=True))"
+```
+
+Two new synthetic tests cover observed 9-state equal-severity and 16-state distinct-severity maps, default-output parity, early exits, and type validation. **55 authored Project 51 tests; execution of these additions and exact-revision CI remain unverified.**
