@@ -55,3 +55,16 @@ python -m py_compile monetary_loss.py test_monetary_reference.py
 ```
 
 Five new tests are authored; only local syntax compilation of the new test module has been confirmed. Runtime execution, exact-revision hosted CI and independent model review remain unverified.
+
+
+## Log-domain all-default diagnostic
+
+`log_default_diagnostic.py` computes `log P(all default) = sum(log(p_i))` for independent borrowers. This retains a finite log probability when `P(all default)` underflows to zero in ordinary binary64 arithmetic (for example, two probabilities of `1e-200`). A true zero input yields negative infinity. This **does not** calculate a general loss-tail probability, repair the monetary-loss PMF, or validate a dependence model. It is a narrow diagnostic for a specified joint event, not a replacement for a stable general tail algorithm.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_log_default_diagnostic.py
+python log_default_diagnostic.py --probabilities 1e-200 1e-200
+```
+
+Four new synthetic tests are authored for ordinary probabilities, underflow, endpoints and invalid inputs. Execution against the published revision, independent review and historical calibration remain unverified.
