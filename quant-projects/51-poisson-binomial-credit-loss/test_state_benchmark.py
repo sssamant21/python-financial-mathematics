@@ -28,6 +28,25 @@ class BenchmarkTests(unittest.TestCase):
             with self.subTest(n=n, kind=kind), self.assertRaises(ValueError):
                 benchmark_case(n, kind)
 
+    def test_repeated_synthetic_results_ignore_timing(self):
+        first = benchmark_case(8, "equal")
+        second = benchmark_case(8, "equal")
+        first.pop("elapsed_seconds")
+        second.pop("elapsed_seconds")
+        self.assertEqual(first, second)
+
+    def test_precision_sensitivity_against_independent_reference(self):
+        for digits in (32, 100, 1000):
+            with self.subTest(precision=digits):
+                row = benchmark_case(12, "equal", precision=digits)
+                self.assertEqual(Decimal(row["absolute_error"]), 0)
+                self.assertEqual(row["precision_digits"], digits)
+
+    def test_distinct_support_boundary(self):
+        self.assertEqual(benchmark_case(4, "distinct", max_states=16)["expected_states"], 16)
+        with self.assertRaisesRegex(ValueError, "state limit"):
+            benchmark_case(4, "distinct", max_states=15)
+
     def test_inventory(self):
         self.assertEqual(len(run_suite()), 8)
         self.assertEqual(binomial_reference(2, "0.5", 1), Decimal("0.75"))
