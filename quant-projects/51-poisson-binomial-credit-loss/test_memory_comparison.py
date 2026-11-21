@@ -28,9 +28,20 @@ class MemoryComparisonTests(unittest.TestCase):
         self.assertFalse(tracemalloc.is_tracing())
 
     def test_invalid_sizes(self):
-        for sizes in ((), (0,), (13,), (True,), ("4",), 4):
+        for sizes in ((), (0,), (21,), (True,), ("4",), 4):
             with self.subTest(sizes=sizes), self.assertRaises(ValueError):
                 compare_patterns(sizes)
+
+    def test_larger_equal_loss_cases_are_bounded(self):
+        rows = compare_patterns((16, 20))
+        self.assertEqual([(r["borrowers"], r["pattern"], r["final_states"]) for r in rows],
+                         [(16, "equal", 17), (20, "equal", 21)])
+        self.assertFalse(tracemalloc.is_tracing())
+
+    def test_large_distinct_cases_are_not_silently_attempted(self):
+        rows = compare_patterns((12, 16))
+        self.assertEqual([(r["borrowers"], r["pattern"]) for r in rows],
+                         [(12, "equal"), (12, "distinct"), (16, "equal")])
 
     def test_state_limit_fails_closed_and_cleans_up(self):
         with self.assertRaisesRegex(ValueError, "state limit"):
