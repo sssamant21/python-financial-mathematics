@@ -43,6 +43,17 @@ def run():
     rejects(ValueError,midpoint_sum,lambda t:t,0,1,0)
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,finite,float("inf"),"value")
+    close(polynomial_definite(iter([100,20]),0,2),240)
+    right=math.nextafter(1.0,2.0)
+    close(polynomial_definite([1e308],1,right),1e308*(right-1))
+    assert polynomial_definite([1e308],2,2)==0
+    close(polynomial_antiderivative([0,1e-308],1e200),5e91)
+    close(polynomial_antiderivative([1,0],1e200),1e200)
+    close(polynomial_antiderivative([1e308],2,-1e308),1e308)
+    assert polynomial_antiderivative([1e308,-1e308],2)==0
+    right=math.nextafter(2.0,3.0)
+    close(polynomial_definite([1e308],2,right),1e308*(right-2))
+    rejects(ValueError,polynomial_antiderivative,[0,1],1e200)
     print("PASS: Section 10.2 independent reference checks")
 
 if __name__=="__main__":

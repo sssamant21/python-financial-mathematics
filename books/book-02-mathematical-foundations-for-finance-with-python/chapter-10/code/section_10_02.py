@@ -1,6 +1,7 @@
 """Section 10.2: definite and indefinite integrals."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -13,23 +14,38 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return result
 
-def polynomial_antiderivative(coefficients,t,constant=0):
-    x=finite(t,"t")
-    c=finite(constant,"constant")
-    values=[finite(a,"coefficient") for a in coefficients]
+def _polynomial_coefficients(coefficients):
+    values = [Fraction(finite(a, "coefficient")) for a in coefficients]
     if not values:
         raise ValueError("at least one coefficient required")
-    result=math.fsum(a*x**(i+1)/(i+1) for i,a in enumerate(values))+c
+    return values
+
+def _polynomial_report(value, name):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite " + name) from exc
     if not math.isfinite(result):
-        raise ValueError("nonfinite antiderivative")
+        raise ValueError("nonfinite " + name)
     return result
 
+def polynomial_antiderivative(coefficients,t,constant=0):
+    x = Fraction(finite(t, "t"))
+    c = Fraction(finite(constant, "constant"))
+    values = _polynomial_coefficients(coefficients)
+    result = c + sum((a*x**power/power
+                      for power,a in enumerate(values,1) if a), Fraction(0))
+    return _polynomial_report(result, "antiderivative")
+
 def polynomial_definite(coefficients,a,b):
-    left,right=finite(a,"a"),finite(b,"b")
-    result=polynomial_antiderivative(coefficients,right)-polynomial_antiderivative(coefficients,left)
-    if not math.isfinite(result):
-        raise ValueError("nonfinite integral")
-    return result
+    left,right = Fraction(finite(a,"a")),Fraction(finite(b,"b"))
+    values = _polynomial_coefficients(coefficients)
+    if left == right:
+        return 0.0
+    result = sum((coefficient*(right**power-left**power)/power
+                  for power,coefficient in enumerate(values,1) if coefficient),
+                 Fraction(0))
+    return _polynomial_report(result, "integral")
 
 def exponential_definite(scale,growth,a,b):
     c,k,left,right=(finite(v,name) for v,name in

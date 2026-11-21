@@ -458,3 +458,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.11 moments/correlation/joint-tail assumptions
 
 [Evidence](v10-portfolio-moments-tails/README.md):32checks pass twicefortwo64-rowfinitecallerjointlaws. Equalassetmarginals/covariance0/portfolio variance.02butseverelossprobabilities1/64versus1/16;sourceanalytical/summaryfields andexactmomentschecked. Thesearedeterministicnon-Gaussianenumerations,notnativeGaussian-samplerorIID-SEacceptance. Fourformalcommands/24invocationsof12existingmethods;priorF183/90predicate listingidentityverified,15originalfailurespreserved. No sourcechange/defect/newanswers/workflows/historicalmethods. Next18.12risksimulation;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.12 VaR/ES aggregation assumptions
+
+[Evidence](v10-risk-aggregation/README.md): 62 checks pass twice for an explicit 625-state equal-weight joint law. Three conversion lists, 27 numeric fields, 24 permutation results and eight caller aggregation decisions remain separate. At alpha .95, component VaRs sum to 0 while combined VaR is 100; component ES sums to 160 versus combined ES 103.2. Exact enumeration is not IID simulation or confidence/backtest acceptance. Four formal commands invoke the twelve existing methods 24 times. Prior F184/58-predicate listing identity and fourteen initial failures are preserved. F185 negative-terminal and F32 shared-model integration remain OPEN. No source change or new answer/workflow/historical-method totals. Next: 18.13 computational-performance assumptions. V10 remains IN PROGRESS; F28/F32/F209/F165/F185 and broader acceptance remain open.
