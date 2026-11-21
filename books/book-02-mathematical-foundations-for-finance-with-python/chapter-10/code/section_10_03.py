@@ -29,40 +29,52 @@ def _polynomial_report(value, name):
         raise ValueError("nonfinite " + name)
     return result
 
+def _polynomial_value_exact(coeff,x):
+    return sum((c*x**i for i,c in enumerate(coeff) if c), Fraction(0))
+
+def _polynomial_accumulation_exact(coeff,left,right):
+    if left == right:
+        return Fraction(0)
+    return sum((c*(right**i-left**i)/i
+                for i,c in enumerate(coeff,1) if c), Fraction(0))
+
 def polynomial_value(coefficients,x):
     t = Fraction(finite(x,"x"))
     coeff = _polynomial_coefficients(coefficients)
-    result = sum((c*t**i for i,c in enumerate(coeff) if c), Fraction(0))
-    return _polynomial_report(result,"polynomial")
+    return _polynomial_report(_polynomial_value_exact(coeff,t),"polynomial")
 
 def polynomial_accumulation(coefficients,a,b):
     left,right = Fraction(finite(a,"a")),Fraction(finite(b,"b"))
     coeff = _polynomial_coefficients(coefficients)
-    if left == right:
-        return 0.0
-    value = sum((c*(right**i-left**i)/i
-                 for i,c in enumerate(coeff,1) if c), Fraction(0))
-    return _polynomial_report(value,"accumulation")
+    return _polynomial_report(_polynomial_accumulation_exact(coeff,left,right),"accumulation")
 
 def balance(initial,coefficients,start,time):
-    return finite(initial,"initial")+polynomial_accumulation(coefficients,start,time)
+    value = Fraction(finite(initial,"initial"))
+    a,b = Fraction(finite(start,"start")),Fraction(finite(time,"time"))
+    coeff = _polynomial_coefficients(coefficients)
+    return _polynomial_report(value+_polynomial_accumulation_exact(coeff,a,b),"balance")
 
 def endpoint_derivative(coefficients,lower,upper,lower_rate,upper_rate):
-    a,b=finite(lower,"lower"),finite(upper,"upper")
-    ap,bp=finite(lower_rate,"lower_rate"),finite(upper_rate,"upper_rate")
-    return polynomial_value(coefficients,b)*bp-polynomial_value(coefficients,a)*ap
+    a,b = Fraction(finite(lower,"lower")),Fraction(finite(upper,"upper"))
+    ap,bp = Fraction(finite(lower_rate,"lower_rate")),Fraction(finite(upper_rate,"upper_rate"))
+    coeff = _polynomial_coefficients(coefficients)
+    result = _polynomial_value_exact(coeff,b)*bp-_polynomial_value_exact(coeff,a)*ap
+    return _polynomial_report(result,"endpoint derivative")
+
+def _rolling_arguments(coefficients,time,window):
+    t,w = Fraction(finite(time,"time")),Fraction(finite(window,"window"))
+    if w<=0:
+        raise ValueError("window must be positive")
+    return _polynomial_coefficients(coefficients),t,w
 
 def rolling_accumulation(coefficients,time,window=1):
-    t,w=finite(time,"time"),finite(window,"window")
-    if w<=0:
-        raise ValueError("window must be positive")
-    return polynomial_accumulation(coefficients,t-w,t)
+    coeff,t,w = _rolling_arguments(coefficients,time,window)
+    return _polynomial_report(_polynomial_accumulation_exact(coeff,t-w,t),"rolling accumulation")
 
 def rolling_derivative(coefficients,time,window=1):
-    t,w=finite(time,"time"),finite(window,"window")
-    if w<=0:
-        raise ValueError("window must be positive")
-    return polynomial_value(coefficients,t)-polynomial_value(coefficients,t-w)
+    coeff,t,w = _rolling_arguments(coefficients,time,window)
+    result = _polynomial_value_exact(coeff,t)-_polynomial_value_exact(coeff,t-w)
+    return _polynomial_report(result,"rolling derivative")
 
 def centered_derivative(function,x,step=1e-5):
     if not callable(function):

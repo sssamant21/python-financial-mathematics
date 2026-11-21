@@ -1,0 +1,249 @@
+{
+  "pin": "99b03b4ce334912f4731ee730d8fbdf60f06bb6a",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-21T20:07:47.987851+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_03.py": {
+      "sha256": "100f436e2c119489ad0e6fa02638653bd381b1e1ceffb9615b8c3e6fc40d5d06",
+      "git_blob": "ac077cdba7f0a09080a1b0aade214a88e56a6335"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_03.py": {
+      "sha256": "5879501c2d6a211b5a79c2c67943832a31a4a279de8d8d1a9c48b8aeae22bc90",
+      "git_blob": "1a7aa3e7ea6a864f73404187ad0b544f3e91f82d"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary balance",
+      "actual": 3025.0,
+      "expected": "3025",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "balance whole expression",
+      "actual": 0.0,
+      "expected": "1/2",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "balance primitive range cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite accumulation"
+      },
+      "expected": "100000000000000001097906362944045541740492309677311846336810682903157585404911491537163328978494688899061249669721172515611590283743140088328307009198146046031271664502933027185697489699588559043338384466165001178426897626212945177628091195786707458122783970171784415105291802893207873272974885715430223118336",
+      "kind": "selected complete-expression range extension",
+      "passed": false
+    },
+    {
+      "name": "balance true final overflow",
+      "actual": Infinity,
+      "expected": "ValueError",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "one pass balance",
+      "actual": 38.0,
+      "expected": "38",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "ordinary endpoint signs",
+      "actual": 26.0,
+      "expected": "26",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "one pass endpoint",
+      "actual": {
+        "exception": "ValueError",
+        "message": "at least one coefficient required"
+      },
+      "expected": "26",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "endpoint complete product cancellation",
+      "actual": NaN,
+      "expected": "0",
+      "kind": "selected complete-expression range extension",
+      "passed": false
+    },
+    {
+      "name": "endpoint polynomial range cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite polynomial"
+      },
+      "expected": "0",
+      "kind": "selected complete-expression range extension",
+      "passed": false
+    },
+    {
+      "name": "endpoint true final overflow",
+      "actual": Infinity,
+      "expected": "ValueError",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "endpoint zero rates validate coefficients",
+      "actual": {
+        "exception": "ValueError",
+        "message": "at least one coefficient required"
+      },
+      "expected": "ValueError",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "endpoint bool rate",
+      "actual": {
+        "exception": "TypeError",
+        "message": "upper_rate must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "ordinary rolling amount",
+      "actual": 675.0,
+      "expected": "675",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "ordinary rolling derivative",
+      "actual": 50.0,
+      "expected": "50",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "one pass rolling derivative",
+      "actual": {
+        "exception": "ValueError",
+        "message": "at least one coefficient required"
+      },
+      "expected": "50",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "rolling amount preserves exact window",
+      "actual": 0.0,
+      "expected": "1",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "rolling derivative preserves exact window",
+      "actual": 0.0,
+      "expected": "1",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "rolling tiny nonzero window",
+      "actual": 0.0,
+      "expected": "5e-324",
+      "kind": "composition contract",
+      "passed": false
+    },
+    {
+      "name": "rolling negative time",
+      "actual": -2.5,
+      "expected": "-5/2",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "rolling primitive cancellation",
+      "actual": 0.0,
+      "expected": "59418788842699360651808861378813089797541728108707399489486696614434950214988837829336614598903484822950132764959799221178433502519043081743603863867605214254872968077434853322577972092580479873202278168471961851192989912000078442810875744714018024293139622585119003362270813240067903650035917382746437368946240041550147702540422736208433598610755079898282279238305763123579815971120887689919890595511469260283837973085577885067847/59418788842699363513810810410075173890709349027824210913980298839525080795343881557271766095429447401456068089218037505160830881024033620026931794266412896601422282596642939883885269890651535547530842459257085075164504300012961843621772906071581094128712169683287649793753447308616298076573249122983815975161185817698397494043522795416920324833345403997278589243804791817714311947379341825845139053036433452151443637972515210395648",
+      "kind": "selected complete-expression range extension",
+      "passed": false
+    },
+    {
+      "name": "rolling derivative true final overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite polynomial"
+      },
+      "expected": "ValueError",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "rolling invalid zero window",
+      "actual": {
+        "exception": "ValueError",
+        "message": "window must be positive"
+      },
+      "expected": "ValueError",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "rolling nonfinite window",
+      "actual": {
+        "exception": "ValueError",
+        "message": "window must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "composition contract",
+      "passed": true
+    },
+    {
+      "name": "rolling underflow allowed",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "composition contract",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"accumulated_0_to_3\": 2025.0,\n  \"balance_at_3\": 3025.0,\n  \"instantaneous_rate_at_2\": 700.0,\n  \"numeric_rate_at_2\": 700.0000000061845,\n  \"rolling_amount_at_2\": 675.0,\n  \"rolling_derivative_at_2\": 50.0,\n  \"variable_endpoint_derivative\": 26.0\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.3 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 12,
+  "failed": 12,
+  "scope": "balance/endpoint/rolling composition; centered-derivative full contracts remain unfinished"
+}

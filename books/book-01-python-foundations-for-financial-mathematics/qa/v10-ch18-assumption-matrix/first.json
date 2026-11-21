@@ -1,0 +1,287 @@
+{
+  "pin": "99b03b4ce334912f4731ee730d8fbdf60f06bb6a",
+  "executed_at_utc": "2026-11-21T20:09:11.252213+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.06-price-path-simulation.md": {
+      "source_sha256": "e34e70ac0fff752cd5cd70c5b36d140eae400fd5f98239b8c26f55ba9503f415",
+      "listing_sha256": "47d05af03e9010f46d9530db24b9229314492daed5c067769eb34570bfc5288a"
+    },
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.11-portfolio-simulation.md": {
+      "source_sha256": "aba53a14be3dae561d97ce18995b8ed106666d9c1e993783e1d28cf1e8bd0976",
+      "listing_sha256": "17a815af999ab34085cac95ee2f6afd241a18583d00f5abbf118ff098a8ca2d8"
+    },
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.12-risk-simulation.md": {
+      "source_sha256": "264016a19685c018a861a501e1651dba195ec4016a1e554dabae91b67f9a105d",
+      "listing_sha256": "2118e7a9a229068594859308de9dda718bf8a3eac82e45373647748460996788"
+    },
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.13-computational-performance.md": {
+      "source_sha256": "9758db6a50d35c1dc39cf0627f3d45c8ef49c3dcc38639c336a7263c13d72bec",
+      "listing_sha256": "f01d44be5069f5592dc1ffaac70078a64269b74b048296f697e7bd33d2d337b8"
+    }
+  },
+  "rows": [
+    {
+      "name": "31 time step",
+      "actual": "1/12",
+      "expected": "0.08333333333333333",
+      "kind": "caller dimensional arithmetic",
+      "passed": true
+    },
+    {
+      "name": "32 log drift",
+      "actual": "3/100",
+      "expected": "3/100",
+      "kind": "caller model arithmetic",
+      "passed": true
+    },
+    {
+      "name": "33 GBM expectation",
+      "actual": 105.1271096376024,
+      "expected": "105.1271096376024039697517636335645220174821296055062528783938479166279869650561268909887381693097468",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "34 coarse barrier misses selected crossing",
+      "actual": false,
+      "expected": "False",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "34 refined selected path hits barrier",
+      "actual": true,
+      "expected": "True",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "35 portfolio return",
+      "actual": 0.04,
+      "expected": "1/25",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "35 deterministic variance",
+      "actual": 0,
+      "expected": "0",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "36 portfolio variance",
+      "actual": 0.0184,
+      "expected": "23/1250",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "36 centered model mean",
+      "actual": 0,
+      "expected": "0",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "37 drifted first weight",
+      "actual": "33/52",
+      "expected": "33/52",
+      "kind": "caller buy-and-hold arithmetic",
+      "passed": true
+    },
+    {
+      "name": "37 first weight changed",
+      "actual": true,
+      "expected": "True",
+      "kind": "caller buy-and-hold decision",
+      "passed": true
+    },
+    {
+      "name": "38 down/up loss",
+      "actual": [
+        20,
+        -10
+      ],
+      "expected": "[20, -10]",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "39 nearest rank VaR",
+      "actual": 20,
+      "expected": "20",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "40 empirical ES",
+      "actual": 40,
+      "expected": "40",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "41 fractional ES",
+      "actual": 33.333333333333336,
+      "expected": "100/3",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "42 discrete VaR",
+      "actual": 40,
+      "expected": "40",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "42 strict exceedance probability",
+      "actual": "0",
+      "expected": "0",
+      "kind": "caller atom probability",
+      "passed": true
+    },
+    {
+      "name": "42 exceedance differs from nominal tail",
+      "actual": true,
+      "expected": "True",
+      "kind": "caller discrete-tail decision",
+      "passed": true
+    },
+    {
+      "name": "43 element storage",
+      "actual": 202400000,
+      "expected": "202400000",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "43 MiB",
+      "actual": 193.023681640625,
+      "expected": "790625/4096",
+      "kind": "caller unit conversion",
+      "passed": true
+    },
+    {
+      "name": "44 caller partition sum",
+      "actual": 100001,
+      "expected": "100001",
+      "kind": "caller partition arithmetic",
+      "passed": true
+    },
+    {
+      "name": "44 caller final partial batch",
+      "actual": 1,
+      "expected": "1",
+      "kind": "caller partition arithmetic",
+      "passed": true
+    },
+    {
+      "name": "44 native batch count",
+      "actual": 100001,
+      "expected": "100001",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "44 same serial stream state",
+      "actual": true,
+      "expected": "True",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "47 stress return",
+      "actual": -0.16,
+      "expected": "-4/25",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "47 stress loss",
+      "actual": [
+        16
+      ],
+      "expected": "[16]",
+      "kind": "native exact-source field",
+      "passed": true
+    },
+    {
+      "name": "48 base USD value",
+      "actual": "110",
+      "expected": "110",
+      "kind": "caller FX quote arithmetic",
+      "passed": true
+    },
+    {
+      "name": "48 new USD value",
+      "actual": "105",
+      "expected": "105",
+      "kind": "caller FX quote arithmetic",
+      "passed": true
+    },
+    {
+      "name": "48 USD profit",
+      "actual": "-5",
+      "expected": "-5",
+      "kind": "caller FX quote arithmetic",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "paths.py"
+      ],
+      "returncode": 0,
+      "stdout": "terminal summary: {'count': 10000, 'mean': 105.08580059649347, 'standard_error': 0.21254296482289836}\nanalytical mean: 105.1271096376024\n",
+      "stderr": "test_barrier (__main__.PathTests.test_barrier) ... ok\ntest_benchmark (__main__.PathTests.test_benchmark) ... ok\ntest_initial (__main__.PathTests.test_initial) ... ok\ntest_invalid_steps (__main__.PathTests.test_invalid_steps) ... ok\ntest_invalid_volatility (__main__.PathTests.test_invalid_volatility) ... ok\ntest_positive (__main__.PathTests.test_positive) ... ok\ntest_replay (__main__.PathTests.test_replay) ... ok\ntest_shape (__main__.PathTests.test_shape) ... ok\ntest_summary (__main__.PathTests.test_summary) ... ok\ntest_zero_volatility (__main__.PathTests.test_zero_volatility) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "portfolio.py"
+      ],
+      "returncode": 0,
+      "stdout": "simulation: {'count': 10000, 'mean_return': 0.06490227947066025, 'return_sd': 0.13571761623558326, 'mean_terminal': 106.49022794706603, 'standard_error_terminal': 0.13571761623558326, 'loss_frequency': 0.3155, 'paths_with_asset_return_below_minus_one': 0}\nanalytical mean and variance: (0.064, 0.0184)\n",
+      "stderr": "test_analytical_mean (__main__.PortfolioTests.test_analytical_mean) ... ok\ntest_analytical_variance (__main__.PortfolioTests.test_analytical_variance) ... ok\ntest_count (__main__.PortfolioTests.test_count) ... ok\ntest_invalid_correlation (__main__.PortfolioTests.test_invalid_correlation) ... ok\ntest_invalid_initial (__main__.PortfolioTests.test_invalid_initial) ... ok\ntest_invalid_return_count (__main__.PortfolioTests.test_invalid_return_count) ... ok\ntest_invalid_sd (__main__.PortfolioTests.test_invalid_sd) ... ok\ntest_invalid_weights (__main__.PortfolioTests.test_invalid_weights) ... ok\ntest_replay (__main__.PortfolioTests.test_replay) ... ok\ntest_singular_correlation (__main__.PortfolioTests.test_singular_correlation) ... ok\ntest_summary (__main__.PortfolioTests.test_summary) ... ok\ntest_zero_volatility (__main__.PortfolioTests.test_zero_volatility) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "risk.py"
+      ],
+      "returncode": 0,
+      "stdout": "loss probability: 0.5\nVaR 75%: 20\nES 75%: 40\n",
+      "stderr": "test_bad_alpha (__main__.RiskTests.test_bad_alpha) ... ok\ntest_boundary_mass (__main__.RiskTests.test_boundary_mass) ... ok\ntest_constant (__main__.RiskTests.test_constant) ... ok\ntest_empty (__main__.RiskTests.test_empty) ... ok\ntest_es (__main__.RiskTests.test_es) ... ok\ntest_fractional_es (__main__.RiskTests.test_fractional_es) ... ok\ntest_loss_frequency (__main__.RiskTests.test_loss_frequency) ... ok\ntest_loss_sign (__main__.RiskTests.test_loss_sign) ... ok\ntest_negative_terminal (__main__.RiskTests.test_negative_terminal) ... ok\ntest_nonfinite (__main__.RiskTests.test_nonfinite) ... ok\ntest_sorting (__main__.RiskTests.test_sorting) ... ok\ntest_var (__main__.RiskTests.test_var) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "performance.py"
+      ],
+      "returncode": 0,
+      "stdout": "count: 10000 mean: 99.96000000000006 standard error: 0.1406051812050256 seconds: 0.003503785000020798\n",
+      "stderr": "test_array_size (__main__.PerformanceTests.test_array_size) ... ok\ntest_bad_batch (__main__.PerformanceTests.test_bad_batch) ... ok\ntest_bad_count (__main__.PerformanceTests.test_bad_count) ... ok\ntest_bad_dimensions (__main__.PerformanceTests.test_bad_dimensions) ... ok\ntest_batches_match_stream_order (__main__.PerformanceTests.test_batches_match_stream_order) ... ok\ntest_constant (__main__.PerformanceTests.test_constant) ... ok\ntest_mean (__main__.PerformanceTests.test_mean) ... ok\ntest_nonfinite (__main__.PerformanceTests.test_nonfinite) ... ok\ntest_replay (__main__.PerformanceTests.test_replay) ... ok\ntest_short_sample (__main__.PerformanceTests.test_short_sample) ... ok\ntest_standard_error (__main__.PerformanceTests.test_standard_error) ... ok\ntest_variance (__main__.PerformanceTests.test_variance) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 29,
+  "failed": 0,
+  "scope": "remaining Section18.15 selected exercise contracts; not full V10/book/model/independent acceptance"
+}
