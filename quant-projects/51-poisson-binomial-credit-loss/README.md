@@ -172,3 +172,8 @@ python memory_comparison.py --sizes 4 8 12 --precision 100 --max-states 10000
 ```
 
 Five new synthetic tests are authored and included in dedicated CI configuration. Their exact-revision CI outcome, independent review, historical calibration and production certification remain **unverified** until observed. The earlier 62-test passing CI checkpoint is the last verified baseline.
+
+
+### Bounded larger-portfolio memory comparison (2026-11-21)
+
+`python memory_comparison.py --sizes 4 8 12 16 20` extends the equal-severity synthetic cases to 16 and 20 borrowers. Distinct power-of-two severity cases remain capped at 12 borrowers (4,096 states), so counts above 12 intentionally run **equal severity only**. Every row checks the independent-default identity `P(L >= 1 cent) = 1 - 0.75**n` using the selected Decimal precision. `tracemalloc` records Python allocation peaks, **not** process RSS, hard memory limits, or comparable timings across machines. No external prices or historical defaults are used. Run `python -m unittest -v test_memory_comparison.py` to exercise the two new regression cases; published-revision CI and independent mathematical review must be verified separately.
