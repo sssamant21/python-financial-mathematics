@@ -105,3 +105,17 @@ python -m py_compile sparse_monetary_tail.py test_sparse_monetary_tail.py
 ```
 
 Project 51 now contains **45 authored tests**. These three additions have **not been verified by exact-revision CI**; the last verified 36-test checkpoint is documented in the tracker. The sparse state cap bounds retained states, not CPU time or memory to a fixed operational service-level target. Independent mathematical review remains pending.
+
+
+## Reproducible sparse-state growth benchmark (2026-11-21)
+
+`state_benchmark.py` compares five equal-severity portfolios (4, 8, 12, 20, 40 borrowers) with an **independent combinatorial binomial formula**, and three distinct power-of-two severity portfolios (4, 8, 12 borrowers) with **exhaustive Decimal enumeration**. Default probabilities are fixed at 0.25; all values are synthetic. The equal-severity cases have exactly `n+1` possible loss states, while the distinct-severity cases have `2**n` possible states. These counts describe mathematical support, not measured peak memory. Each case records the probability, independent reference, absolute difference, expected support size, precision, state cap and descriptive elapsed seconds. Timings vary by hardware and are **not** service-level benchmarks. No third-party market data is downloaded.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_state_benchmark.py
+python -m py_compile state_benchmark.py test_state_benchmark.py
+python state_benchmark.py --precision 100 --max-states 10000
+```
+
+Five new deterministic regression tests are authored, including state-cap rejection and invalid-input checks. Local syntax compilation succeeded for an authored-source copy; full runtime execution and exact-revision GitHub Actions remain **unverified** until checked. The benchmark is intentionally bounded (40 equal-loss borrowers, 12 distinct-loss borrowers); the underlying sparse solver still has exponential worst-case growth. The exhaustive reference uses exactly representable 0.25 probabilities because its legacy validation accepts float inputs. Independent mathematical review, correlated-default modeling, historical calibration and production certification remain pending.
