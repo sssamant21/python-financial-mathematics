@@ -1,0 +1,48 @@
+"""Section10.3 polynomial value/amount subset, with exact represented-input references."""
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='3a9dddb78f225bef1cd59241f28ea8d5e0a87744';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_03.py';check=path.replace('section_10_03.py','check_section_10_03.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('ftc_reference',Path(tmp)/'section_10_03.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want,exc=None,kind='selected polynomial contract'):
+  try:got=fn();ok=exc is None and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0);actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,passed=ok))
+ test('ordinary linear rate',lambda:m.polynomial_value([600,50],2),700)
+ test('ordinary linear accumulation',lambda:m.polynomial_accumulation([600,50],0,3),2025)
+ test('reverse amount',lambda:m.polynomial_accumulation([0,4],3,1),-16)
+ test('signed cancellation',lambda:m.polynomial_accumulation([-1,1],0,2),0)
+ test('one pass value',lambda:m.polynomial_value(iter([3,2]),4),11)
+ test('one pass accumulation',lambda:m.polynomial_accumulation(iter([3,2]),0,4),28)
+ test('value tiny coefficient large power',lambda:m.polynomial_value([0,0,1e-308],1e200),F(1e-308)*F(1e200)**2,kind='selected finite-result range extension')
+ test('zero coefficient overflowing power',lambda:m.polynomial_value([1,0,0],1e200),1)
+ test('value complete term cancellation',lambda:m.polynomial_value([0,1e308,-1e308],2),-2*F(1e308),exc=ValueError,kind='true final overflow policy')
+ test('value overflowing products cancel',lambda:m.polynomial_value([0,1e308,-5e307],2),0,kind='selected finite-result range extension')
+ right=math.nextafter(1.0,2.0)
+ test('small endpoint difference preserved',lambda:m.polynomial_accumulation([1e308],1,right),F(1e308)*(F(right)-1))
+ test('zero width avoids primitive overflow',lambda:m.polynomial_accumulation([0,1],1e200,1e200),0)
+ test('primitive overflowing products cancel',lambda:m.polynomial_accumulation([1e308,-1e308],0,2),0,kind='selected finite-result range extension')
+ test('small coefficient large primitive',lambda:m.polynomial_accumulation([0,1e-308],0,1e200),F(1e-308)*F(1e200)**2/2,kind='selected finite-result range extension')
+ test('zero primitive coefficient skipped',lambda:m.polynomial_accumulation([1,0],0,1e200),1e200)
+ test('empty coefficients including zero width',lambda:m.polynomial_accumulation([],1,1),None,ValueError)
+ test('bool coefficient',lambda:m.polynomial_value([True],1),None,TypeError)
+ test('nonfinite coefficient',lambda:m.polynomial_accumulation([math.inf],0,1),None,ValueError)
+ test('unreportable final primitive',lambda:m.polynomial_accumulation([0,1],0,1e200),None,ValueError)
+ test('primitive underflow zero allowed',lambda:m.polynomial_accumulation([1e-308],0,1e-308),0)
+ # Supplemental complete CLI contract; finite-difference row has its own truncation tolerance.
+ z=subprocess.run([sys.executable,'section_10_03.py'],cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=[sys.executable,'section_10_03.py'],returncode=z.returncode,stdout=z.stdout,stderr=z.stderr));assert z.returncode==0
+ report=json.loads(z.stdout)
+ for key,want in dict(accumulated_0_to_3=2025,balance_at_3=3025,instantaneous_rate_at_2=700,rolling_amount_at_2=675,rolling_derivative_at_2=50,variable_endpoint_derivative=26).items():test('CLI '+key,lambda key=key:report[key],want,kind='ordinary CLI field')
+ test('CLI numeric derivative',lambda:report['numeric_rate_at_2'],700,kind='ordinary finite-difference tolerance')
+ rows[-1]['passed']=math.isclose(report['numeric_rate_at_2'],700,rel_tol=1e-8,abs_tol=1e-8)
+ for args in [[sys.executable,'check_section_10_03.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='polynomial value/accumulation subset and ordinary CLI only; composition and centered derivative contracts remain unfinished')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0 and all(c['returncode']==0 for c in commands)

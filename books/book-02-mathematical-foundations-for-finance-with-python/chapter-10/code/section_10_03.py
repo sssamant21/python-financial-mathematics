@@ -80,12 +80,16 @@ def centered_derivative(function,x,step=1e-5):
     if not callable(function):
         raise TypeError("function must be callable")
     t,h=finite(x,"x"),finite(step,"step")
-    if h<=0 or t+h==t or t-h==t:
+    if h<=0:
         raise ValueError("step must be positive and representable")
-    result=(finite(function(t+h),"function")-finite(function(t-h),"function"))/(2*h)
-    if not math.isfinite(result):
-        raise ValueError("nonfinite derivative estimate")
-    return result
+    right,left = t+h,t-h
+    if not math.isfinite(right) or not math.isfinite(left) or not left<t<right:
+        raise ValueError("finite distinct stencil points required")
+    upper = Fraction(finite(function(right),"function"))
+    lower = Fraction(finite(function(left),"function"))
+    # The actual rounded stencil span preserves affine secant identities.
+    result = (upper-lower)/(Fraction(right)-Fraction(left))
+    return _polynomial_report(result,"derivative estimate")
 
 if __name__=="__main__":
     coeff=[600,50]

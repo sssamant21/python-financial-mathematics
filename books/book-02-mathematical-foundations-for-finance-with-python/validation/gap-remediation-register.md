@@ -1522,3 +1522,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-232 checkpoint — Section10.3 balance/endpoint/rolling composition
 
 [Evidence](ch10-ftc-composition-2026-11-21/README.md):twelve passes/twelve baseline failed predicates reproduced; corrected24 predicates pass twice. Complete exact balance/endpoint expressions, one-pass coefficients and exact rolling windows fix selected reporting/iterator/rounding contracts; finite-result range extensions explicit. Eleven native regressions, prior27 polynomial/33 chapter-support predicates and all21 Chapter10 files/11checkers/10CLIs pass. Next remains10.3 centered-difference stencil/preflight/callback/complete-quotient/reporting contracts, then full refresh before10.4. Fresh642/429/643 inventory,641/643 V230 blobs match; only10.3 source/checker differ. No new full runtime or section/book/independent acceptance. All38 selected COV categories partial, none closed; broader acceptance stays open. Book1 separate.
+
+
+## V-233 checkpoint — Section10.3 finite-stencil/secant contracts
+
+[Evidence](ch10-ftc-centered-2026-11-21/README.md):17 passes/five baseline failed predicates reproduced; corrected22 predicates pass twice. Explicit actual-rounded-span secant policy, finite distinct stencil preflight and complete represented quotient handle selected range/callback contracts. Policies/extensions are distinct from defect counts; derivative/truncation/domain limits explicit. Six native regressions, prior27 polynomial/24 composition/33 chapter-support predicates and all21 Chapter10 files/11checkers/10CLIs pass. Next: atomic publication then full pinned runtime refresh before10.4. All38 selected COV categories remain partial, none closed; broader acceptance stays open. Book1 separate.

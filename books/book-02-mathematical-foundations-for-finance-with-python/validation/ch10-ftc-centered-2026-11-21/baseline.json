@@ -1,0 +1,244 @@
+{
+  "pin": "878d165ae1d5ea05ff93b19a5963059fd1cf45ce",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-21T21:08:52.685094+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_03.py": {
+      "sha256": "6125e7132f10a62d5a93f07697acb83f573a6af58de2a27ce5d586e628eeb424",
+      "git_blob": "09ef9f7109f4d01aa6a1336f8afefcad6cf63425"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_03.py": {
+      "sha256": "ee35e5f803349a66a8604c0dd780f65a964730118e1876dbdc021d62453dd565",
+      "git_blob": "440837dc6adc7c16a2f54b1e541f7a192a4cc00f"
+    }
+  },
+  "rows": [
+    {
+      "name": "linear ordinary",
+      "actual": 3.0,
+      "expected": "3",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic symmetric stencil",
+      "actual": 4.0,
+      "expected": "4",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "cubic finite difference is not exact derivative",
+      "actual": 3.25,
+      "expected": "3.25",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "constant",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "actual rounded span affine identity",
+      "actual": 1.3333333333333333,
+      "expected": "1",
+      "kind": "explicit actual-span secant policy",
+      "passed": false
+    },
+    {
+      "name": "denominator overflow finite quotient",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite derivative estimate"
+      },
+      "expected": "1",
+      "kind": "selected complete-quotient range extension",
+      "passed": false
+    },
+    {
+      "name": "numerator overflow finite quotient",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite derivative estimate"
+      },
+      "expected": "1e+308",
+      "kind": "selected complete-quotient range extension",
+      "passed": false
+    },
+    {
+      "name": "true quotient overflow",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite derivative estimate"
+      },
+      "expected": "ValueError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "subnormal stencil affine identity",
+      "actual": 1.0,
+      "expected": "1",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "final underflow allowed",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "overflowing stencil rejected before callback",
+      "actual": 0.0,
+      "expected": "ValueError",
+      "kind": "explicit finite-stencil preflight policy",
+      "passed": false
+    },
+    {
+      "name": "invalid stencil no callback effects",
+      "actual": [
+        Infinity,
+        0.0
+      ],
+      "expected": "[]",
+      "kind": "explicit finite-stencil preflight policy",
+      "passed": false
+    },
+    {
+      "name": "rounded-away step rejected",
+      "actual": {
+        "exception": "ValueError",
+        "message": "step must be positive and representable"
+      },
+      "expected": "ValueError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "rounded-away no callback effects",
+      "actual": [],
+      "expected": "[]",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "callback order result",
+      "actual": 1.0,
+      "expected": "1",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "callback order right then left",
+      "actual": [
+        2.5,
+        1.5
+      ],
+      "expected": "[2.5, 1.5]",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "callback exception preserved",
+      "actual": {
+        "exception": "LookupError",
+        "message": "caller sentinel"
+      },
+      "expected": "LookupError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "nonfinite callback",
+      "actual": {
+        "exception": "ValueError",
+        "message": "function must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "bool callback",
+      "actual": {
+        "exception": "TypeError",
+        "message": "function must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "noncallable",
+      "actual": {
+        "exception": "TypeError",
+        "message": "function must be callable"
+      },
+      "expected": "TypeError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "negative step",
+      "actual": {
+        "exception": "ValueError",
+        "message": "step must be positive and representable"
+      },
+      "expected": "ValueError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    },
+    {
+      "name": "bool step",
+      "actual": {
+        "exception": "TypeError",
+        "message": "step must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "existing callback/input contract",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"accumulated_0_to_3\": 2025.0,\n  \"balance_at_3\": 3025.0,\n  \"instantaneous_rate_at_2\": 700.0,\n  \"numeric_rate_at_2\": 700.0000000061845,\n  \"rolling_amount_at_2\": 675.0,\n  \"rolling_derivative_at_2\": 50.0,\n  \"variable_endpoint_derivative\": 26.0\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.3 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 17,
+  "failed": 5,
+  "scope": "selected finite-stencil/represented-secant contracts; not universal derivative accuracy or independent acceptance"
+}

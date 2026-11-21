@@ -1,0 +1,17 @@
+# V10 — Installed simulation/statistics finite-model integration
+
+Pin: `878d165ae1d5ea05ff93b19a5963059fd1cf45ce`. [Runnable offline review](review.py), [isolated probe](probe.py), [first](first.json), [replay](replay.json), [commands](commands.json), [artifact/source manifest](artifact-manifest.json), [initial harness failure](initial-probe-commands.json).
+
+```bash
+python books/book-01-python-foundations-for-financial-mathematics/qa/v10-installed-simulation/review.py
+```
+
+Seven new offline commands pass: local build environment/tool versions, exact-scaffold wheel build, clean consumer environment/local wheel installation, and two isolated probes. The scaffold is hidden before the consumer runs `-I` outside it. Installed simulation/statistics files are under the consumer prefix and match exact source-fence hashes. All selected staged files match the earlier scaffold evidence. Build tooling uses preprovisioned system packages; the consumer is clean. No index, dependency download or global install occurs. Binary artifacts/environments are temporary; source/member hashes are retained. Wheel hash is not a byte-reproducibility or release/version approval.
+
+Both installed probes pass **153 predicates** with identical rows. There are 128 fields over all sixteen length-four Bernoulli product paths, four weighted aggregate checks, fifteen native-run descriptive fields and six probability-endpoint checks. The controlled model uses initial100, up return.25, down−.25, up probability.25, four scenarios and seed42. Possible terminals75/125 have exact mean87.5 and variance468.75. The independent pairwise identity derives sample variance without reusing the source's rounded-mean squared deviations; it sums all six unordered pairs for each four-value sample. Exact product path weights sum to one. Exact mean-sampling variance is468.75/4=117.1875 and equals the weighted expected caller SE squared.
+
+Controlled probes replace only the installed module's Random factory, restoring it in finally. They verify actual installed mapping/draw count/metadata and actual statistics calls; they do not validate the real PRNG distribution or independence. The three native seed0/7/42 runs are checked against their observed atom counts, not required to equal model probabilities. Endpoint p=0/1 is deterministic. Caller SE is sample_stddev/sqrt(n); the module does not implement a confidence interval. Arithmetic tolerance is rtol5e-13/atol0; tuple/decision checks exact.
+
+An initial probe failed serializing a Fraction after its calculations. Its actual command/trace is retained; the serializer was corrected before both saved successful probes. This is a harness failure, not a financial source defect or an omitted failed acceptance predicate. No financial source changed. The earlier355 installed predicates,108 existing methods,40 answers/twelve labs and policy observations remain at their original scope and are not counted as rerun here.
+
+This selected installed interface crosswalk advances V10; it does not close the broader model, generator, tail, dependence, source-platform or independent gates. Finite IID product laws are caller assumptions, not inferred from a seeded output. Next:21.12 threshold/grid probability and small-value terminal/statistics limits, using the declared floating-point/underflow policies. F28/F32/F209/F165/F185, resource/data/model/platform/release/independent/canonical acceptance remain open. Book1 and V10 remain IN PROGRESS.

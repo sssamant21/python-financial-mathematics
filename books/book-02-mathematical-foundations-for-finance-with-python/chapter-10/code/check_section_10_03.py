@@ -61,6 +61,13 @@ def run():
     assert rolling_accumulation([1],1e16,1)==1
     assert rolling_derivative([0,1],1e16,1)==1
     assert rolling_accumulation([1],1,math.ulp(0.0))==math.ulp(0.0)
+    assert centered_derivative(lambda x:x,1e16,3)==1
+    assert centered_derivative(lambda x:x,0,1e308)==1
+    close(centered_derivative(lambda x:1e308 if x>0 else -1e308,0,1),1e308)
+    calls=[]
+    rejects(ValueError,centered_derivative,lambda x:calls.append(x) or 0,1e308,1e308)
+    assert calls==[]
+    assert centered_derivative(lambda x:x,0,math.ulp(0.0))==1
     print("PASS: Section 10.3 independent reference checks")
 
 if __name__=="__main__":

@@ -1,0 +1,46 @@
+"""Finite stencil, callback order and represented secant quotient contracts."""
+from pathlib import Path
+from datetime import datetime,timezone
+import subprocess,tempfile,importlib.util,json,sys,math,hashlib,platform
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='878d165ae1d5ea05ff93b19a5963059fd1cf45ce';path='books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_03.py';check=path.replace('section_10_03.py','check_section_10_03.py');baseline='--baseline' in sys.argv;rows=[];commands=[];manifest={}
+def load(p):
+ b=subprocess.check_output(['git','show',pin+':'+p],cwd=root) if baseline else (root/p).read_bytes();manifest[p]=dict(sha256=hashlib.sha256(b).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest());return b
+with tempfile.TemporaryDirectory() as tmp:
+ for p in [path,check]:(Path(tmp)/Path(p).name).write_bytes(load(p))
+ spec=importlib.util.spec_from_file_location('ftc_centered',Path(tmp)/'section_10_03.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ def test(name,fn,want,exc=None,kind='existing callback/input contract'):
+  try:got=fn();ok=exc is None and (got==want if isinstance(want,list) else math.isclose(got,float(want),rel_tol=5e-14,abs_tol=0));actual=got
+  except Exception as e:ok=exc is not None and type(e) is exc;actual=dict(exception=type(e).__name__,message=str(e))
+  rows.append(dict(name=name,actual=actual,expected=exc.__name__ if exc else str(want),kind=kind,passed=ok))
+ test('linear ordinary',lambda:m.centered_derivative(lambda x:3*x+7,2,.5),3)
+ test('quadratic symmetric stencil',lambda:m.centered_derivative(lambda x:x*x,2,.5),4)
+ test('cubic finite difference is not exact derivative',lambda:m.centered_derivative(lambda x:x*x*x,1,.5),3.25)
+ test('constant',lambda:m.centered_derivative(lambda x:7,2,.5),0)
+ test('actual rounded span affine identity',lambda:m.centered_derivative(lambda x:x,1e16,3),1,kind='explicit actual-span secant policy')
+ test('denominator overflow finite quotient',lambda:m.centered_derivative(lambda x:x,0,1e308),1,kind='selected complete-quotient range extension')
+ test('numerator overflow finite quotient',lambda:m.centered_derivative(lambda x:1e308 if x>0 else -1e308,0,1),1e308,kind='selected complete-quotient range extension')
+ test('true quotient overflow',lambda:m.centered_derivative(lambda x:1e308 if x>0 else -1e308,0,1e-308),None,ValueError)
+ test('subnormal stencil affine identity',lambda:m.centered_derivative(lambda x:x,0,math.ulp(0.0)),1)
+ test('final underflow allowed',lambda:m.centered_derivative(lambda x:math.ulp(0.0) if x>0 else 0.,0,1e308),0)
+ calls=[]
+ test('overflowing stencil rejected before callback',lambda:m.centered_derivative(lambda x:calls.append(x) or 0,1e308,1e308),None,ValueError,kind='explicit finite-stencil preflight policy')
+ test('invalid stencil no callback effects',lambda:calls,[],kind='explicit finite-stencil preflight policy')
+ calls=[]
+ test('rounded-away step rejected',lambda:m.centered_derivative(lambda x:calls.append(x) or 0,1e16,1),None,ValueError)
+ test('rounded-away no callback effects',lambda:calls,[])
+ calls=[]
+ test('callback order result',lambda:m.centered_derivative(lambda x:calls.append(x) or x,2,.5),1)
+ test('callback order right then left',lambda:calls,[2.5,1.5])
+ def raised(x):raise LookupError('caller sentinel')
+ test('callback exception preserved',lambda:m.centered_derivative(raised,2,.5),None,LookupError)
+ test('nonfinite callback',lambda:m.centered_derivative(lambda x:math.inf,2,.5),None,ValueError)
+ test('bool callback',lambda:m.centered_derivative(lambda x:True,2,.5),None,TypeError)
+ test('noncallable',lambda:m.centered_derivative(None,2,.5),None,TypeError)
+ test('negative step',lambda:m.centered_derivative(lambda x:x,2,-.5),None,ValueError)
+ test('bool step',lambda:m.centered_derivative(lambda x:x,2,True),None,TypeError)
+ for args in [[sys.executable,'section_10_03.py'],[sys.executable,'check_section_10_03.py'],[sys.executable,'-m','compileall','-q','.']]:
+  z=subprocess.run(args,cwd=tmp,capture_output=True,text=True,timeout=60);commands.append(dict(argv=args,returncode=z.returncode,stdout=z.stdout,stderr=z.stderr))
+result=dict(pin=pin,source_selection='baseline' if baseline else 'candidate',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,rows=rows,commands=commands,passed=sum(x['passed'] for x in rows),failed=sum(not x['passed'] for x in rows),scope='selected finite-stencil/represented-secant contracts; not universal derivative accuracy or independent acceptance')
+(here/(sys.argv[1]+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(result['passed'],result['failed']);print([x['name'] for x in rows if not x['passed']])
+if not baseline:assert result['failed']==0 and all(c['returncode']==0 for c in commands)

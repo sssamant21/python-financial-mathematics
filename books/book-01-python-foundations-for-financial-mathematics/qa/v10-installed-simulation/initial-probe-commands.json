@@ -1,0 +1,90 @@
+{
+  "source_pin": "878d165ae1d5ea05ff93b19a5963059fd1cf45ce",
+  "executed_at_utc": "2026-11-21T21:10:27.870587+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "label": "build environment local tools",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "--system-site-packages",
+        "/tmp/book1-v10-wheel-2u4678tj/build"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "tool versions",
+      "argv": [
+        "/tmp/book1-v10-wheel-2u4678tj/build/bin/python",
+        "-c",
+        "import importlib.metadata as m;print({x:m.version(x) for x in [\"pip\",\"setuptools\",\"wheel\"]})"
+      ],
+      "returncode": 0,
+      "stdout": "{'pip': '25.0.1', 'setuptools': '84.2.1', 'wheel': '0.48.0'}\n",
+      "stderr": ""
+    },
+    {
+      "label": "offline exact-scaffold wheel build",
+      "argv": [
+        "/tmp/book1-v10-wheel-2u4678tj/build/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-build-isolation",
+        "--no-deps",
+        "--wheel-dir",
+        "/tmp/book1-v10-wheel-2u4678tj/wheels",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-v10-wheel-2u4678tj/project\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: financial-toolkit-educational\n  Building wheel for financial-toolkit-educational (pyproject.toml): started\n  Building wheel for financial-toolkit-educational (pyproject.toml): finished with status 'done'\n  Created wheel for financial-toolkit-educational: filename=financial_toolkit_educational-0.1.0-py3-none-any.whl size=8776 sha256=d1a6d9d4456936982167a432d263fa112e4d01ced90e5c70a4c1622811e99cf9\n  Stored in directory: /tmp/pip-ephem-wheel-cache-rckzqq0a/wheels/25/1a/8e/77b9274c4cdb8f496d263f52009afc4ed557f2b7cf335ffeed\nSuccessfully built financial-toolkit-educational\n",
+      "stderr": ""
+    },
+    {
+      "label": "clean consumer",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "venv",
+        "/tmp/book1-v10-wheel-2u4678tj/consumer"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "offline local wheel install",
+      "argv": [
+        "/tmp/book1-v10-wheel-2u4678tj/consumer/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/tmp/book1-v10-wheel-2u4678tj/wheels/financial_toolkit_educational-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing /tmp/book1-v10-wheel-2u4678tj/wheels/financial_toolkit_educational-0.1.0-py3-none-any.whl\nInstalling collected packages: financial-toolkit-educational\nSuccessfully installed financial-toolkit-educational-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated installed first",
+      "argv": [
+        "/tmp/book1-v10-wheel-2u4678tj/consumer/bin/python",
+        "-I",
+        "/tmp/book1-v10-wheel-2u4678tj/outside/probe.py",
+        "/tmp/book1-v10-wheel-2u4678tj/outside/first.json"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/tmp/book1-v10-wheel-2u4678tj/outside/probe.py\", line 46, in <module>\n    Path(sys.argv[1]).write_text(json.dumps(result,indent=2)+'\\n');print(result['passed'],result['failed']);assert result['failed']==0\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 326, in _iterencode_list\n    yield from chunks\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 439, in _iterencode\n    o = _default(o)\n        ^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type Fraction is not JSON serializable\n"
+    }
+  ],
+  "scope": "New selected clean-wheel probes, not rerun of355 historical predicates or108 methods; no global/index installation or release acceptance"
+}
