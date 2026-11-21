@@ -41,6 +41,15 @@ def run():
     rejects(ValueError,centered_derivative,lambda t:t,1,0)
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,finite,float("nan"),"value")
+    close(polynomial_value(iter([3,2]),4),11)
+    close(polynomial_value([0,0,1e-308],1e200),1e92)
+    assert polynomial_value([1,0,0],1e200)==1
+    assert polynomial_value([0,1e308,-5e307],2)==0
+    assert polynomial_accumulation([0,1],1e200,1e200)==0
+    assert polynomial_accumulation([1e308,-1e308],0,2)==0
+    close(polynomial_accumulation([0,1e-308],0,1e200),5e91)
+    close(polynomial_accumulation([1,0],0,1e200),1e200)
+    rejects(ValueError,polynomial_accumulation,[0,1],0,1e200)
     print("PASS: Section 10.3 independent reference checks")
 
 if __name__=="__main__":

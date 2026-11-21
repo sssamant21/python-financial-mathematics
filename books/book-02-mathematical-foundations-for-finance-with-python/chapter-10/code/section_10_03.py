@@ -1,6 +1,7 @@
 """Section 10.3: Fundamental Theorem of Calculus."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value,name):
     if type(value) not in (int,float):
@@ -13,26 +14,35 @@ def finite(value,name):
         raise ValueError(f"{name} must be finite")
     return result
 
-def polynomial_value(coefficients,x):
-    t=finite(x,"x")
-    coeff=[finite(c,"coefficient") for c in coefficients]
-    if not coeff:
+def _polynomial_coefficients(coefficients):
+    values = [Fraction(finite(c,"coefficient")) for c in coefficients]
+    if not values:
         raise ValueError("at least one coefficient required")
-    result=math.fsum(c*t**i for i,c in enumerate(coeff))
+    return values
+
+def _polynomial_report(value, name):
+    try:
+        result = float(value)
+    except OverflowError as exc:
+        raise ValueError("nonfinite " + name) from exc
     if not math.isfinite(result):
-        raise ValueError("nonfinite polynomial")
+        raise ValueError("nonfinite " + name)
     return result
 
+def polynomial_value(coefficients,x):
+    t = Fraction(finite(x,"x"))
+    coeff = _polynomial_coefficients(coefficients)
+    result = sum((c*t**i for i,c in enumerate(coeff) if c), Fraction(0))
+    return _polynomial_report(result,"polynomial")
+
 def polynomial_accumulation(coefficients,a,b):
-    left,right=finite(a,"a"),finite(b,"b")
-    coeff=[finite(c,"coefficient") for c in coefficients]
-    if not coeff:
-        raise ValueError("at least one coefficient required")
-    value=math.fsum(c*(right**(i+1)-left**(i+1))/(i+1)
-                    for i,c in enumerate(coeff))
-    if not math.isfinite(value):
-        raise ValueError("nonfinite accumulation")
-    return value
+    left,right = Fraction(finite(a,"a")),Fraction(finite(b,"b"))
+    coeff = _polynomial_coefficients(coefficients)
+    if left == right:
+        return 0.0
+    value = sum((c*(right**i-left**i)/i
+                 for i,c in enumerate(coeff,1) if c), Fraction(0))
+    return _polynomial_report(value,"accumulation")
 
 def balance(initial,coefficients,start,time):
     return finite(initial,"initial")+polynomial_accumulation(coefficients,start,time)

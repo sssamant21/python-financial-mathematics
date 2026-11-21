@@ -1,0 +1,258 @@
+{
+  "pin": "3a9dddb78f225bef1cd59241f28ea8d5e0a87744",
+  "source_selection": "candidate",
+  "executed_at_utc": "2026-11-21T19:14:13.692864+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_03.py": {
+      "sha256": "100f436e2c119489ad0e6fa02638653bd381b1e1ceffb9615b8c3e6fc40d5d06",
+      "git_blob": "ac077cdba7f0a09080a1b0aade214a88e56a6335"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_03.py": {
+      "sha256": "5879501c2d6a211b5a79c2c67943832a31a4a279de8d8d1a9c48b8aeae22bc90",
+      "git_blob": "1a7aa3e7ea6a864f73404187ad0b544f3e91f82d"
+    }
+  },
+  "rows": [
+    {
+      "name": "ordinary linear rate",
+      "actual": 700.0,
+      "expected": "700",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "ordinary linear accumulation",
+      "actual": 2025.0,
+      "expected": "2025",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "reverse amount",
+      "actual": -16.0,
+      "expected": "-16",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "signed cancellation",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "one pass value",
+      "actual": 11.0,
+      "expected": "11",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "one pass accumulation",
+      "actual": 28.0,
+      "expected": "28",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "value tiny coefficient large power",
+      "actual": 9.999999999999999e+91,
+      "expected": "99999999999999984879286976226919171930328528129628013471704022339838932413530352417438171136",
+      "kind": "selected finite-result range extension",
+      "passed": true
+    },
+    {
+      "name": "zero coefficient overflowing power",
+      "actual": 1.0,
+      "expected": "1",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "value complete term cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite polynomial"
+      },
+      "expected": "ValueError",
+      "kind": "true final overflow policy",
+      "passed": true
+    },
+    {
+      "name": "value overflowing products cancel",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "selected finite-result range extension",
+      "passed": true
+    },
+    {
+      "name": "small endpoint difference preserved",
+      "actual": 2.220446049250313e+292,
+      "expected": "22204460492503131052256817966405031792407844743422594987871817130011283892823457439194740676512360466401674245977820313504922441204123570630170505335187157942849292991501337010284420281267205653139203850569005899912444240976260351778235601247037380306444724935973503733353374232796867032252416",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "zero width avoids primitive overflow",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "primitive overflowing products cancel",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "selected finite-result range extension",
+      "passed": true
+    },
+    {
+      "name": "small coefficient large primitive",
+      "actual": 4.9999999999999995e+91,
+      "expected": "49999999999999992439643488113459585965164264064814006735852011169919466206765176208719085568",
+      "kind": "selected finite-result range extension",
+      "passed": true
+    },
+    {
+      "name": "zero primitive coefficient skipped",
+      "actual": 1e+200,
+      "expected": "1e+200",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "empty coefficients including zero width",
+      "actual": {
+        "exception": "ValueError",
+        "message": "at least one coefficient required"
+      },
+      "expected": "ValueError",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "bool coefficient",
+      "actual": {
+        "exception": "TypeError",
+        "message": "coefficient must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "nonfinite coefficient",
+      "actual": {
+        "exception": "ValueError",
+        "message": "coefficient must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "unreportable final primitive",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite accumulation"
+      },
+      "expected": "ValueError",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "primitive underflow zero allowed",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "selected polynomial contract",
+      "passed": true
+    },
+    {
+      "name": "CLI accumulated_0_to_3",
+      "actual": 2025.0,
+      "expected": "2025",
+      "kind": "ordinary CLI field",
+      "passed": true
+    },
+    {
+      "name": "CLI balance_at_3",
+      "actual": 3025.0,
+      "expected": "3025",
+      "kind": "ordinary CLI field",
+      "passed": true
+    },
+    {
+      "name": "CLI instantaneous_rate_at_2",
+      "actual": 700.0,
+      "expected": "700",
+      "kind": "ordinary CLI field",
+      "passed": true
+    },
+    {
+      "name": "CLI rolling_amount_at_2",
+      "actual": 675.0,
+      "expected": "675",
+      "kind": "ordinary CLI field",
+      "passed": true
+    },
+    {
+      "name": "CLI rolling_derivative_at_2",
+      "actual": 50.0,
+      "expected": "50",
+      "kind": "ordinary CLI field",
+      "passed": true
+    },
+    {
+      "name": "CLI variable_endpoint_derivative",
+      "actual": 26.0,
+      "expected": "26",
+      "kind": "ordinary CLI field",
+      "passed": true
+    },
+    {
+      "name": "CLI numeric derivative",
+      "actual": 700.0000000061845,
+      "expected": "700",
+      "kind": "ordinary finite-difference tolerance",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"accumulated_0_to_3\": 2025.0,\n  \"balance_at_3\": 3025.0,\n  \"instantaneous_rate_at_2\": 700.0,\n  \"numeric_rate_at_2\": 700.0000000061845,\n  \"rolling_amount_at_2\": 675.0,\n  \"rolling_derivative_at_2\": 50.0,\n  \"variable_endpoint_derivative\": 26.0\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_03.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.3 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 27,
+  "failed": 0,
+  "scope": "polynomial value/accumulation subset and ordinary CLI only; composition and centered derivative contracts remain unfinished"
+}
