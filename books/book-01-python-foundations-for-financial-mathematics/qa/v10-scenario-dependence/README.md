@@ -34,3 +34,8 @@ Exact algebra:P&L=6a+4b for signs a,b. Every marginal, expected terminal and str
 [Prepared source runner](resume-source-review.txt) is **unexecuted**. When Python returns, run it twice, retaining actual output and failures before repairs, then run prior formal review if required by source changes. It imports the exact pinned fence, compares all three proposed laws to the saved independent fixtures, and runs exact reference demo/ten existing methods plus compilation. Do not treat runner preparation as syntax/runtime verification. Source unchanged in this batch.
 
 Next remains §18.7 source replay and completion of the V10 assumptions batch; only then proceed to §18.8. F28/F32/F209/F165/F185, broader integration, model, resource, platform, release, independent and canonical acceptance remain open. No certification.
+
+
+## Runtime update — 2026-11-21
+
+The prepared native dependence/fee/aggregation checks have now executed twice with matching outputs;see[verified runtime checkpoint](../v10-scenario-runtime-2026-11-21/README.md). Earlier unavailable-executor statements above describe the historical partial checkpoint. Next18.8;broader integration/model/independent acceptance remains open.

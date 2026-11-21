@@ -1,0 +1,25 @@
+from pathlib import Path
+import sys,json,subprocess,hashlib,platform,runpy,io,contextlib
+from unittest.mock import patch
+if not __debug__:raise RuntimeError('Run with assertions enabled')
+here=Path(__file__).resolve().parent
+root=here.parents[3]
+pin='468fcff19ca47c9090945fd29cc746a0a5ee891f'
+label=sys.argv[1] if len(sys.argv)>1 else 'first'
+commands=[];redirects=[]
+def execute(relative,args,mapping):
+ script=root/relative;stdout=io.StringIO();stderr=io.StringIO();original=Path.write_text
+ def write(path,text,*a,**kw):
+  if path.name in mapping:
+   target=here/(label+'-'+mapping[path.name]);redirects.append(dict(original=str(path.relative_to(root)),saved=target.name));return original(target,text,*a,**kw)
+  raise RuntimeError('Unexpected write '+str(path))
+ code=0
+ with patch.object(sys,'argv',[str(script),*args]),patch.object(Path,'write_text',write),contextlib.redirect_stdout(stdout),contextlib.redirect_stderr(stderr):
+  try:runpy.run_path(str(script),run_name='__main__')
+  except SystemExit as e:code=e.code or 0
+ commands.append(dict(script=relative,args=args,returncode=code,stdout=stdout.getvalue(),stderr=stderr.getvalue()))
+ assert code==0,(relative,stdout.getvalue(),stderr.getvalue())
+execute('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-lab-08-cli-resume-r37.txt',[label],{'chapter-09-lab-08-cli-source-'+label+'-r37.json':'cli-tolerance.json'})
+execute('books/book-02-mathematical-foundations-for-finance-with-python/validation/chapter-09-lab-08-resume-r36.txt',[],{'chapter-09-lab-08-pending-source-output-r36.json':'exercise-fixture.json'})
+result=dict(pin=pin,python=platform.python_version(),platform=platform.platform(),assertions_enabled=__debug__,observer_output_redirection_only=True,commands=commands,redirects=redirects)
+(here/(label+'-driver.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(dict(label=label,drivers=len(commands),outputs=len(redirects))))

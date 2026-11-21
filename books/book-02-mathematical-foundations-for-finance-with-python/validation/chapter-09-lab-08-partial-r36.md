@@ -43,3 +43,8 @@ These are six review units/twelve dispositions,notnew test-method orcompletion t
 ## Exact resume checkpoint
 
 [Prepared source runner](chapter-09-lab-08-resume-r36.txt) is unexecuted andnot syntax/runtime verified. It checks the positive-flow Exercise6/7 fixture,zero-shock,selected independent math.expm1 exact value,then exact CLI/checker/compile commands from the pin. Run twice when Python is restored;retain failures before fixes. Complete the defaultCLI leaf/schema oracle andoptional reported-tolerance/nonparallel alignment before closing this crosswalk. No need to re-derive the saved exercise/dependence fixtures. Next remains §9.8 runtime/complete lab crosswalk,then §9.9;do not skip ahead as thoughthispartial item passed.38selectedCOVcategories partial,noneclosed;broader provenance/resource/model/platform/release/independent/canonical gates open. Book1 separatelytracked.
+
+
+## Runtime update — 2026-11-21
+
+[V222 source execution](lab-08-runtime-2026-11-21/README.md) now records695CLI/schema/tolerance predicates andthe nativeExercise6/7 fixture passing twice. Earlier unexecuted statements describe the historical partial checkpoint. Next9.9project-lab crosswalk;independent/model/platform/release acceptance remains open.
