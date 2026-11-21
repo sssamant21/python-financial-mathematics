@@ -1,0 +1,174 @@
+{
+  "pin": "278fe361a26394ce4d2c5d1e1955d804994e150a",
+  "executed_at_utc": "2026-11-21T18:19:36.624165+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.15-exercises-and-applied-problems.md": {
+      "source_sha256": "04a487c4a384f7ca40a39ab15ba0a3f0ac30a949ae1cad22e3d87e59975ace62",
+      "listing_sha256": "1488e1e7a14ce5fb23554cec234460f0489beb5e29b2ed22738a5a342ac722e1"
+    },
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.14-chapter-project-monte-carlo-financial-simulator.md": {
+      "source_sha256": "930a87b1dfc3476db1dbd6edc044db2c99b67c000372edcb28040a4895caf05f",
+      "listing_sha256": "915f3b91e8eedc255367551f24d1f29dd56788c78bff18ca72be6f589b2e7650"
+    },
+    "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.13-computational-performance.md": {
+      "source_sha256": "9758db6a50d35c1dc39cf0627f3d45c8ef49c3dcc38639c336a7263c13d72bec",
+      "listing_sha256": "f01d44be5069f5592dc1ffaac70078a64269b74b048296f697e7bd33d2d337b8"
+    }
+  },
+  "rows": [
+    {
+      "name": "exact snippet mean",
+      "actual": 99.96,
+      "expected": "2499/25",
+      "passed": true
+    },
+    {
+      "name": "exact snippet SE",
+      "actual": 0.1406051812050259,
+      "expected": "0.1406051812050259",
+      "passed": true
+    },
+    {
+      "name": "0 count",
+      "actual": 8,
+      "expected": "8",
+      "passed": true
+    },
+    {
+      "name": "0 mean",
+      "actual": 100.0,
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "0 M2",
+      "actual": 8.000000000000032,
+      "expected": "8",
+      "passed": true
+    },
+    {
+      "name": "0 variance",
+      "actual": 1.1428571428571475,
+      "expected": "8/7",
+      "passed": true
+    },
+    {
+      "name": "0 SE",
+      "actual": 0.377964473009228,
+      "expected": "0.3779644730092272",
+      "passed": true
+    },
+    {
+      "name": "0 VaR 0.75",
+      "actual": 0,
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "0 ES 0.75",
+      "actual": 1,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "0 VaR 0.9",
+      "actual": 2,
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "name": "0 ES 0.9",
+      "actual": 2,
+      "expected": "2",
+      "passed": true
+    },
+    {
+      "name": "1 count",
+      "actual": 8,
+      "expected": "8",
+      "passed": true
+    },
+    {
+      "name": "1 mean",
+      "actual": 100.0,
+      "expected": "100",
+      "passed": true
+    },
+    {
+      "name": "1 M2",
+      "actual": 7.999999999999959,
+      "expected": "8",
+      "passed": true
+    },
+    {
+      "name": "1 variance",
+      "actual": 1.142857142857137,
+      "expected": "8/7",
+      "passed": true
+    },
+    {
+      "name": "1 SE",
+      "actual": 0.37796447300922625,
+      "expected": "0.3779644730092272",
+      "passed": true
+    },
+    {
+      "name": "1 VaR 0.75",
+      "actual": 1,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "1 ES 0.75",
+      "actual": 1,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "1 VaR 0.9",
+      "actual": 1,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "1 ES 0.9",
+      "actual": 1,
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "same running moments within arithmetic tolerance",
+      "actual": true,
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "exercises.py"
+      ],
+      "returncode": 0,
+      "stdout": "mean: 99.96 estimated SE: 0.1406051812050259\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 21,
+  "failed": 0,
+  "scope": "Exercise45 only plus exact snippet arithmetic; no complete Section18.15 acceptance"
+}
