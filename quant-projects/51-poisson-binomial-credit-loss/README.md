@@ -144,3 +144,18 @@ python -c "from sparse_monetary_tail import sparse_tail; print(sparse_tail(['0.2
 ```
 
 Two new synthetic tests cover observed 9-state equal-severity and 16-state distinct-severity maps, default-output parity, early exits, and type validation. **55 authored Project 51 tests; execution of these additions and exact-revision CI remain unverified.**
+
+
+### Bounded Python allocation measurement (2026-11-21)
+
+`memory_benchmark.py` measures peak and final **tracemalloc-traced Python allocations** for a single bounded sparse-tail call. It reports solver state counts alongside measured bytes, without claiming process RSS, hardware-independent results, or an enforced memory cap. Tracing is stopped even if the solver rejects an oversized state set; existing tracing is never overwritten. Distinct-loss cases are limited to 12 borrowers, equal-loss cases to 20, and the solver's state cap remains fail-closed.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_memory_benchmark.py
+python -m py_compile memory_benchmark.py test_memory_benchmark.py
+python memory_benchmark.py --borrowers 8 --pattern equal
+python memory_benchmark.py --borrowers 8 --pattern distinct --max-states 1000
+```
+
+Five synthetic regression tests are authored for state counts, tracing cleanup, guardrails and preexisting tracing. **60 Project 51 test methods are now authored; these five have not been runtime-verified, and the new exact-revision GitHub Actions result remains unverified.** Previously confirmed CI baseline: 45 tests. Memory byte values are observational, not reproducible acceptance thresholds. No licensed data, default dependence, calibration, independent review, or production certification is claimed.
