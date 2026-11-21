@@ -36,6 +36,12 @@ def run():
     rejects(ValueError,riemann_sum,lambda t:t,[0,1],"unknown")
     rejects(TypeError,finite,True,"value")
     rejects(ValueError,finite,float("nan"),"value")
+    assert boundaries(0,1e308,4)==[0.,2.5e307,5e307,7.5e307,1e308]
+    close(riemann_sum(lambda t:1e308 if t<2 else -1e308,[0,1,2,3,4],"left"),0)
+    close(riemann_sum(lambda t:1e308 if t<2 else -1e308,[0,2,4],"left"),0)
+    rejects(ValueError,riemann_sum,lambda t:1e308,[0,1,2],"left")
+    rejects(ValueError,convergence_report,lambda t:-1e308,0,1,[1],1e308)
+    assert riemann_sum(lambda t:5e-324,[0,.25],"left")==0
     print("PASS: Section 10.1 independent reference checks")
 
 if __name__=="__main__":

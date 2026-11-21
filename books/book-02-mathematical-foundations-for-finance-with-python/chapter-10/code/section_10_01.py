@@ -1,6 +1,7 @@
 """Section 10.1: accumulation and Riemann sums."""
 import json
 import math
+from fractions import Fraction
 
 def finite(value, name):
     if type(value) not in (int, float):
@@ -22,9 +23,9 @@ def boundaries(a, b, n):
     step = (right-left)/n
     if not math.isfinite(step) or step <= 0:
         raise ValueError("invalid partition width")
-    points = [left+(right-left)*i/n for i in range(n)]
+    points = [left+(right-left)*(i/n) for i in range(n)]
     points.append(right)
-    if any(x >= y for x, y in zip(points, points[1:])):
+    if any(not math.isfinite(x) for x in points) or any(x >= y for x, y in zip(points, points[1:])):
         raise ValueError("partition points are not distinct")
     return points
 
@@ -38,10 +39,14 @@ def riemann_sum(function, partition, rule="midpoint"):
         raise ValueError("partition must contain strictly increasing points")
     terms = []
     for a, b in zip(points, points[1:]):
-        sample = a if rule == "left" else b if rule == "right" else a+(b-a)/2
+        width = finite(b-a, "interval width")
+        sample = a if rule == "left" else b if rule == "right" else a+width/2
         rate = finite(function(sample), "payment rate")
-        terms.append(rate*(b-a))
-    total = math.fsum(terms)
+        terms.append(Fraction(rate)*Fraction(width))
+    try:
+        total = float(sum(terms, Fraction(0)))
+    except OverflowError as exc:
+        raise ValueError("nonfinite accumulated amount") from exc
     if not math.isfinite(total):
         raise ValueError("nonfinite accumulated amount")
     return total
@@ -59,7 +64,7 @@ def convergence_report(function, a, b, counts, exact):
     for n in counts:
         row = uniform_sums(function, a, b, n)
         for rule in ("left","right","midpoint"):
-            row[rule+"_absolute_error"] = abs(row[rule]-target)
+            row[rule+"_absolute_error"] = finite(abs(row[rule]-target), "absolute error")
         rows.append(row)
     return {"interval":[finite(a,"a"),finite(b,"b")],
             "exact":target,"rows":rows}

@@ -1,0 +1,60 @@
+"""Section10.1 fullCLI/finite-product contracts. --baseline readsimmutableGit;defaultreadscandidateworkingtree."""
+from pathlib import Path
+from fractions import Fraction as F
+from datetime import datetime,timezone
+import subprocess,json,sys,tempfile,hashlib,platform,math,importlib.util
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='51991b60a598dd4167a26cfcc245821655fd8621';prefix='books/book-02-mathematical-foundations-for-finance-with-python/';code=prefix+'chapter-10/code/';doc=prefix+'chapter-10/10.01-accumulation-and-riemann-sums.md';label=sys.argv[1] if len(sys.argv)>1 else 'first';baseline='--baseline' in sys.argv;chapter='--chapter' in sys.argv;rows=[];commands=[];manifest=[]
+def test(name,got,want,kind='numeric'):
+ if type(want)in(bool,str,list,set):ok=type(got)==type(want) and got==want
+ elif want==0:ok=type(got)in(int,float) and got==0
+ else:ok=type(got)in(int,float) and math.isfinite(got) and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=1e-12)
+ rows.append(dict(name=name,kind=kind,actual=sorted(got) if isinstance(got,set) else got,expected=str(sorted(want) if isinstance(want,set) else want),passed=ok))
+def compare(a,w,path='CLI'):
+ if isinstance(w,dict):
+  test(path+' keys',set(a),set(w),'schema')
+  for k in w:compare(a[k],w[k],path+'.'+k)
+ elif isinstance(w,list):
+  test(path+' length',len(a),len(w),'schema')
+  for i,x in enumerate(w):compare(a[i],x,path+'.'+str(i))
+ else:test(path,a,w)
+def outcome(fn):
+ try:return fn()
+ except Exception as e:return type(e).__name__+': '+str(e)
+def exception(fn):
+ try:fn();return 'no exception'
+ except Exception as e:return type(e).__name__
+with tempfile.TemporaryDirectory() as tmp:
+ paths=subprocess.check_output(['git','ls-tree','-r','--name-only',pin,'--',code],cwd=root,text=True).splitlines();paths=[p for p in paths if p.endswith('.py')]
+ for path in paths:
+  raw=subprocess.check_output(['git','show',pin+':'+path],cwd=root) if baseline else (root/path).read_bytes();(Path(tmp)/Path(path).name).write_bytes(raw);manifest.append(dict(path=path,sha256=hashlib.sha256(raw).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest()))
+ names=sorted(Path(p).name for p in paths) if chapter else ['section_10_01.py','check_section_10_01.py']
+ for name in names:
+  r=subprocess.run([sys.executable,name],cwd=tmp,capture_output=True,text=True,timeout=90);commands.append(dict(argv=[sys.executable,name],returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0
+ r=subprocess.run([sys.executable,'-m','compileall','-q','.'],cwd=tmp,capture_output=True,text=True,timeout=90);commands.append(dict(argv=[sys.executable,'-m','compileall','-q','.'],returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0
+ cli=json.loads(next(c for c in commands if c['argv'][-1]=='section_10_01.py')['stdout']);spec=importlib.util.spec_from_file_location('riemann_reference',Path(tmp)/'section_10_01.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ expected={}
+ for label2,counts,target,a,b in [('linear',[2,4,8,16],F(240),0,2),('quadratic',[2,4,8,16,32],F(1,3),0,1)]:
+  table=[]
+  for n in counts:
+   if label2=='linear':values=dict(left=F(240)-F(40,n),right=F(240)+F(40,n),midpoint=F(240))
+   else:values=dict(left=F((n-1)*n*(2*n-1),6*n**3),right=F(n*(n+1)*(2*n+1),6*n**3),midpoint=F(4*n*n-1,12*n*n))
+   row=dict(n=n,mesh=(b-a)/n,**{k:float(v) for k,v in values.items()});row.update({k+'_absolute_error':abs(float(v)-float(target)) for k,v in values.items()});table.append(row)
+  expected[label2]=dict(interval=[float(a),float(b)],exact=float(target),rows=table)
+ expected['nonuniform']=240.;compare(cli,expected)
+ # Dyadic nonuniform partition gives exact independent sample/width expressions.
+ points=[F(0),F(1,4),F(3,4),F(1)]
+ for rule in ['left','right','midpoint']:
+  samples=[a if rule=='left' else b if rule=='right' else (a+b)/2 for a,b in zip(points,points[1:])];want=sum(t*t*(b-a) for t,a,b in zip(samples,points,points[1:]));seen=[]
+  def quadratic(t):seen.append(t);return t*t
+  got=m.riemann_sum(quadratic,list(map(float,points)),rule);test('nonuniform '+rule+' value',got,want,'nonuniform source');test('nonuniform '+rule+' callback samples',seen,list(map(float,samples)),'callback contract')
+ test('exercise1 rate times years',m.riemann_sum(lambda t:800,[0,.25],'left'),200,'exercise source')
+ for rule,want in [('left',2),('right',6),('midpoint',4)]:test('exercise3-5 '+rule,m.riemann_sum(lambda t:2*t,[0,1,2],rule),want,'exercise source')
+ test('finite partition nodes',outcome(lambda:m.boundaries(0,1e308,4)),[0.,2.5e307,5e307,7.5e307,1e308],'finite range')
+ test('complete cancellation finite terms',outcome(lambda:m.riemann_sum(lambda t:1e308 if t<2 else -1e308,[0,1,2,3,4],'left')),0,'finite range')
+ test('complete cancellation overflowing products',outcome(lambda:m.riemann_sum(lambda t:1e308 if t<2 else -1e308,[0,2,4],'left')),0,'explicit support extension')
+ test('true total overflow guarded',exception(lambda:m.riemann_sum(lambda t:1e308,[0,1,2],'left')),'ValueError','output policy')
+ test('unreportable absolute error guarded',exception(lambda:m.convergence_report(lambda t:-1e308,0,1,[1],1e308)),'ValueError','output policy')
+text=subprocess.check_output(['git','show',pin+':'+doc],cwd=root).decode() if baseline else (root/doc).read_text();test('renderable runbook',r'\`' not in text,True,'markup')
+result=dict(pin=pin,source_selection='immutable baseline' if baseline else 'candidate blobs',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,manuscript_sha256=hashlib.sha256(text.encode()).hexdigest(),commands=commands,rows=rows,passed=sum(r['passed'] for r in rows),failed=sum(not r['passed'] for r in rows))
+(here/(label+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(dict(passed=result['passed'],failed=result['failed'],failures=[r['name'] for r in rows if not r['passed']])));assert result['failed']==0

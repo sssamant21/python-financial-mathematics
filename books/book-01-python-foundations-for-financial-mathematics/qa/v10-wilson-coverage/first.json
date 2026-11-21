@@ -1,0 +1,3300 @@
+{
+  "pin": "51991b60a598dd4167a26cfcc245821655fd8621",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.10-confidence-and-simulation-error.md",
+  "source_sha256": "481bdf67b9c8cce91663eb05051bf88f74757f8a54caea7c0a5a327726f067ad",
+  "listing_sha256": "82e8b6ddb28e9c90ab8a08c21ad23804a03ddc0ee0b4deb6ae4ac86852e6817e",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "simulation_error.py"
+      ],
+      "returncode": 0,
+      "stdout": "mean example: {'count': 3, 'mean': 100, 'standard_error': 11.547005383792515, 'interval': (77.36786944776667, 122.63213055223333), 'critical_value': 1.96}\nzero events Wilson: (0, 0.03699480747600191)\nplanned paths: 6147\n",
+      "stderr": "test_bad_count (__main__.ErrorTests.test_bad_count) ... ok\ntest_bad_events (__main__.ErrorTests.test_bad_events) ... ok\ntest_bad_width (__main__.ErrorTests.test_bad_width) ... ok\ntest_constant (__main__.ErrorTests.test_constant) ... ok\ntest_mean (__main__.ErrorTests.test_mean) ... ok\ntest_nonfinite (__main__.ErrorTests.test_nonfinite) ... ok\ntest_planning (__main__.ErrorTests.test_planning) ... ok\ntest_se (__main__.ErrorTests.test_se) ... ok\ntest_short_sample (__main__.ErrorTests.test_short_sample) ... ok\ntest_wilson_boundary (__main__.ErrorTests.test_wilson_boundary) ... ok\ntest_wilson_bounds (__main__.ErrorTests.test_wilson_bounds) ... ok\ntest_wilson_center (__main__.ErrorTests.test_wilson_center) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "simulation_error.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "rows": [
+    {
+      "name": "(10, 0) lower",
+      "actual": 0,
+      "expected": "0",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 0) upper",
+      "actual": 0.2775401687666166,
+      "expected": "0.2775401687666165761183678187492775401687666165761183678187492775401687666165761183678187492775401687666165761183678187492775401687666165761183678187492775401688",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 1) lower",
+      "actual": 0.017875749515721146,
+      "expected": "0.01787574951572114784201295195312592488654750135805969564977687346136094329723277012569380836817482927888172086638412159989790106751435185150201564900382537899983",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 1) upper",
+      "actual": 0.4041563854975721,
+      "expected": "0.4041563854975721130526813030462961072484657919028349986052225485707740699960281245685611910538573057344115400283101333995241310674989414093926786059955966531351",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 2) lower",
+      "actual": 0.056680947980693334,
+      "expected": "0.05668094798069333692229526893793751047921777088727027059125265448313196870893357302389671647810711914711027827828000979720832138458141185726376554083835477710333",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 2) upper",
+      "actual": 0.5098431532792767,
+      "expected": "0.5098431532792766087487254223116290136220421990584007500999969120409692912610120979967945330884169821128596673927406814523582027166785580884072551504112117469978",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 3) lower",
+      "actual": 0.10778928748621183,
+      "expected": "0.1077892874862118279016465467608822628040194904293105306186585442501639538748754165191958989625342265472529664806813796412311608726289052776199289831498073243328",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 3) upper",
+      "actual": 0.6032267800204348,
+      "expected": "0.6032267800204348025457005807388287532634871562011368165088411667659035527717550308279316007484818409593936639666657478584798551948777413528274181443499036917347",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 4) lower",
+      "actual": 0.1681775812035097,
+      "expected": "0.1681775812035096957866016553032733323627098628441019741803862798051092647332581404757036277574793485864248161075103665935184314463897453209107152595781774591609",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 4) upper",
+      "actual": 0.6873304525498136,
+      "expected": "0.6873304525498136194370719084465821756710434604711216993833635757029244885900570831978601220980286851668984991161631971563370765873635779943129583041716780488730",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 5) lower",
+      "actual": 0.23658959361548726,
+      "expected": "0.2365895936154872714448837752704065668568090575577997774840969126771144539339987675192199145573096020788735252912046534279458417642431152974802803985002154052628",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 5) upper",
+      "actual": 0.7634104063845127,
+      "expected": "0.7634104063845127285551162247295934331431909424422002225159030873228855460660012324807800854426903979211264747087953465720541582357568847025197196014997845947372",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 6) lower",
+      "actual": 0.3126695474501864,
+      "expected": "0.3126695474501863805629280915534178243289565395288783006166364242970755114099429168021398779019713148331015008838368028436629234126364220056870416958283219511271",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 6) upper",
+      "actual": 0.8318224187964903,
+      "expected": "0.8318224187964903042133983446967266676372901371558980258196137201948907352667418595242963722425206514135751838924896334064815685536102546790892847404218225408392",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 7) lower",
+      "actual": 0.3967732199795652,
+      "expected": "0.3967732199795651974542994192611712467365128437988631834911588332340964472282449691720683992515181590406063360333342521415201448051222586471725818556500963082653",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 7) upper",
+      "actual": 0.8922107125137881,
+      "expected": "0.8922107125137881720983534532391177371959805095706894693813414557498360461251245834808041010374657734527470335193186203587688391273710947223800710168501926756672",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 8) lower",
+      "actual": 0.4901568467207234,
+      "expected": "0.4901568467207233912512745776883709863779578009415992499000030879590307087389879020032054669115830178871403326072593185476417972833214419115927448495887882530022",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 8) upper",
+      "actual": 0.9433190520193067,
+      "expected": "0.9433190520193066630777047310620624895207822291127297294087473455168680312910664269761032835218928808528897217217199902027916786154185881427362344591616452228966",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 9) lower",
+      "actual": 0.5958436145024278,
+      "expected": "0.5958436145024278869473186969537038927515342080971650013947774514292259300039718754314388089461426942655884599716898666004758689325010585906073213940044033468649",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 9) upper",
+      "actual": 0.9821242504842789,
+      "expected": "0.9821242504842788521579870480468740751134524986419403043502231265386390567027672298743061916318251707211182791336158784001020989324856481484979843509961746210001",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 10) lower",
+      "actual": 0.7224598312333834,
+      "expected": "0.7224598312333834238816321812507224598312333834238816321812507224598312333834238816321812507224598312333834238816321812507224598312333834238816321812507224598312",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, 10) upper",
+      "actual": 1,
+      "expected": "1",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '0') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 1) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 2) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 1) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 2) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 3) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 4) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 5) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 2) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 3) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 4) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 5) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 6) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 7) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 8) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/2') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 5) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 6) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 7) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 8) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 9) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4', 10) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '3/4') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 8) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 9) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10', 10) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '9/10') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100', 10) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '99/100') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1', 10) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(10, '1') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '0') complement coverage",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/100') complement coverage",
+      "actual": "90438207500880449001/100000000000000000000",
+      "expected": "90438207500880449001/100000000000000000000",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/10') complement coverage",
+      "actual": "1162261467/1250000000",
+      "expected": "1162261467/1250000000",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(10, '1/4') complement coverage",
+      "actual": "513945/524288",
+      "expected": "513945/524288",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, 0) lower",
+      "actual": 0,
+      "expected": "0",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 0) upper",
+      "actual": 0.16113012549493322,
+      "expected": "0.1611301254949332259579893966847862559559761089859740956982752835380175827125696261995839205422454868800751627407556539829541641500570431514663445406348567210254",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 1) lower",
+      "actual": 0.008881219432873125,
+      "expected": "0.008881219432873124889524576413317443469806424767069339183972638355155607878249893529516322263832387076958626087632535285653732215752552833278984677125741190320490",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 1) upper",
+      "actual": 0.23613589351256678,
+      "expected": "0.2361358935125667784726658806029901868905720733203073469444751168290602165630627700501092062241885511151090203790475532990050155192987860030407254094456298586024",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 2) lower",
+      "actual": 0.02786589398415322,
+      "expected": "0.02786589398415321937036942569428236510357708942883326757332273829474650094805356778398888272292423105482375158335812382180061415388972906156673622241174459886428",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 2) upper",
+      "actual": 0.30103820641179335,
+      "expected": "0.3010382064117933613960220916535466396612037977599460089852974885356675652220021331756782537108721584492363786092463993645627171661559054596063394100961407779561",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 3) lower",
+      "actual": 0.052367791959495855,
+      "expected": "0.05236779195949585192208301525271258887279190925774903817831909228271152560032437294814719095433233090251074893588841665495305536751645615776601406567522711787820",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 3) upper",
+      "actual": 0.36042329588695743,
+      "expected": "0.3604232958869574062485095624266377902963913670324328288104736061939007822984743653915615534252395099135418649826405411331148595375234740482604271127691725868396",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 4) lower",
+      "actual": 0.08065635327120003,
+      "expected": "0.08065635327120003426506606424584829919173314846153305204382707143695110865198483952323140818992809467136293578624974425711482955274076893378758931697882162600381",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 4) upper",
+      "actual": 0.4160217220257599,
+      "expected": "0.4160217220257599013097275737650234543818525169300514053751380986858594409755569361965189441354191974566821618582036481326576689372934569570922174074020924066114",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 5) lower",
+      "actual": 0.11186005278940306,
+      "expected": "0.1118600527894030527807995382835125233718050236240568426791432738624491323077009505921646031241499646105865104937169903973581934578043626477126659596183553889553",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 5) upper",
+      "actual": 0.4687050099580636,
+      "expected": "0.4687050099580635601981951600588806046061830308689302051699943679065596590485838625076273571469727788294510708766608365941188886172241589280205063106990729715574",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 6) lower",
+      "actual": 0.14547527396899387,
+      "expected": "0.1454752739689938783906249185684091264399355792247473361186641433269491562991728724322160748974943323408219818379725589393786530707880807991732912556982180804744",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 6) upper",
+      "actual": 0.5189767762289794,
+      "expected": "0.5189767762289794119925708401055053759424548643696423021606459700882578767858549780476174933194038624112080832583297026538030125892347364614132465605557246079358",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 7) lower",
+      "actual": 0.18118954786794464,
+      "expected": "0.1811895478679446260791277185463717378560473992907627256267742785426306575139016168679551472783348989653075467212632355482232794739585570280782748044661917089823",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 7) upper",
+      "actual": 0.5671494897805354,
+      "expected": "0.5671494897805353417082691004590641389307454334050295030827083065187746172998692709919200288843387470987150021009634606466629697710585559173616285577242653073253",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 8) lower",
+      "actual": 0.2188039674141927,
+      "expected": "0.2188039674141926866939677194240886436657778360222234341799997955352046125724132051640915835577903709381332810034850446311539777782264870769650200233767196427326",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 8) upper",
+      "actual": 0.613422057684794,
+      "expected": "0.6134220576847939584976301599128686075254173857749713849596552611723989039701007200758252005506587264378817515446660861654368550517849215533282488847502517014725",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 9) lower",
+      "actual": 0.25819502085709295,
+      "expected": "0.2581950208570929533408449289461251739607824156324833833305401360062747506867866476204352382836721775063395661119320124575447856499976485042570747356317169006265",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 9) upper",
+      "actual": 0.6579179916924004,
+      "expected": "0.6579179916924003692549540107223534516348151952661140262392873923475270075844703149995231537705523711816679501621435529407506307650080558108895597184317687714760",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 10) lower",
+      "actual": 0.2992949144298199,
+      "expected": "0.2992949144298199241828077492099976923069333236025090555477405858592512794866899115389700390220135589821154436866510296731685617491931041286382015151706237007936",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 10) upper",
+      "actual": 0.7007050855701801,
+      "expected": "0.7007050855701800758171922507900023076930666763974909444522594141407487205133100884610299609779864410178845563133489703268314382508068958713617984848293762992064",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 11) lower",
+      "actual": 0.3420820083075996,
+      "expected": "0.3420820083075996307450459892776465483651848047338859737607126076524729924155296850004768462294476288183320498378564470592493692349919441891104402815682312285240",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 11) upper",
+      "actual": 0.741804979142907,
+      "expected": "0.7418049791429070466591550710538748260392175843675166166694598639937252493132133523795647617163278224936604338880679875424552143500023514957429252643682830993735",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 12) lower",
+      "actual": 0.38657794231520604,
+      "expected": "0.3865779423152060415023698400871313924745826142250286150403447388276010960298992799241747994493412735621182484553339138345631449482150784466717511152497482985275",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 12) upper",
+      "actual": 0.7811960325858073,
+      "expected": "0.7811960325858073133060322805759113563342221639777765658200002044647953874275867948359084164422096290618667189965149553688460222217735129230349799766232803572674",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 13) lower",
+      "actual": 0.43285051021946463,
+      "expected": "0.4328505102194646582917308995409358610692545665949704969172916934812253827001307290080799711156612529012849978990365393533370302289414440826383714422757346926747",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 13) upper",
+      "actual": 0.8188104521320554,
+      "expected": "0.8188104521320553739208722814536282621439526007092372743732257214573693424860983831320448527216651010346924532787367644517767205260414429719217251955338082910177",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 14) lower",
+      "actual": 0.4810232237710206,
+      "expected": "0.4810232237710205880074291598944946240575451356303576978393540299117421232141450219523825066805961375887919167416702973461969874107652635385867534394442753920642",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 14) upper",
+      "actual": 0.8545247260310062,
+      "expected": "0.8545247260310061216093750814315908735600644207752526638813358566730508437008271275677839251025056676591780181620274410606213469292119192008267087443017819195256",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 15) lower",
+      "actual": 0.5312949900419365,
+      "expected": "0.5312949900419364398018048399411193953938169691310697948300056320934403409514161374923726428530272211705489291233391634058811113827758410719794936893009270284426",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 15) upper",
+      "actual": 0.888139947210597,
+      "expected": "0.8881399472105969472192004617164874766281949763759431573208567261375508676922990494078353968758500353894134895062830096026418065421956373522873340403816446110447",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 16) lower",
+      "actual": 0.5839782779742401,
+      "expected": "0.5839782779742400986902724262349765456181474830699485946248619013141405590244430638034810558645808025433178381417963518673423310627065430429077825925979075933886",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 16) upper",
+      "actual": 0.9193436467288,
+      "expected": "0.9193436467287999657349339357541517008082668515384669479561729285630488913480151604767685918100719053286370642137502557428851704472592310662124106830211783739962",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 17) lower",
+      "actual": 0.6395767041130426,
+      "expected": "0.6395767041130425937514904375733622097036086329675671711895263938060992177015256346084384465747604900864581350173594588668851404624765259517395728872308274131604",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 17) upper",
+      "actual": 0.9476322080405042,
+      "expected": "0.9476322080405041480779169847472874111272080907422509618216809077172884743996756270518528090456676690974892510641115833450469446324835438422339859343247728821218",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 18) lower",
+      "actual": 0.6989617935882066,
+      "expected": "0.6989617935882066386039779083464533603387962022400539910147025114643324347779978668243217462891278415507636213907536006354372828338440945403936605899038592220439",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 18) upper",
+      "actual": 0.9721341060158468,
+      "expected": "0.9721341060158467806296305743057176348964229105711667324266772617052534990519464322160111172770757689451762484166418761781993858461102709384332637775882554011357",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 19) lower",
+      "actual": 0.7638641064874332,
+      "expected": "0.7638641064874332215273341193970098131094279266796926530555248831709397834369372299498907937758114488848909796209524467009949844807012139969592745905543701413976",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 19) upper",
+      "actual": 0.9911187805671269,
+      "expected": "0.9911187805671268751104754235866825565301935752329306608160273616448443921217501064704836777361676129230413739123674647143462677842474471667210153228742588096795",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 20) lower",
+      "actual": 0.8388698745050668,
+      "expected": "0.8388698745050667740420106033152137440440238910140259043017247164619824172874303738004160794577545131199248372592443460170458358499429568485336554593651432789746",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, 20) upper",
+      "actual": 1,
+      "expected": "1",
+      "kind": "source Wilson endpoint",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0', 20) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '0') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 1) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100', 20) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 0) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 1) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 2) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 3) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 4) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10', 20) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 2) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 3) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 4) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 5) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 6) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 7) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 8) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4', 20) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 6) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 7) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 8) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 9) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 10) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 11) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 12) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 13) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 14) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2', 20) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/2') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 12) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 13) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 14) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 15) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 16) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 17) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 18) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4', 20) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '3/4') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 16) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 17) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 18) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 19) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10', 20) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '9/10') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 19) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100', 20) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '99/100') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 0) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 1) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 2) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 3) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 4) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 5) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 6) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 7) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 8) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 9) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 10) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 11) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 12) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 13) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 14) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 15) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 16) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 17) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 18) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 19) score containment",
+      "actual": false,
+      "expected": "False",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1', 20) score containment",
+      "actual": true,
+      "expected": "True",
+      "kind": "native interval vs exact score decision",
+      "passed": true
+    },
+    {
+      "name": "(20, '1') binomial mass",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact model aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '0') complement coverage",
+      "actual": "1",
+      "expected": "1",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/100') complement coverage",
+      "actual": "9831406623643482185435822283310707735981/10000000000000000000000000000000000000000",
+      "expected": "9831406623643482185435822283310707735981/10000000000000000000000000000000000000000",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/10') complement coverage",
+      "actual": "23920637617888415469/25000000000000000000",
+      "expected": "23920637617888415469/25000000000000000000",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    },
+    {
+      "name": "(20, '1/4') complement coverage",
+      "actual": "1027781916273/1099511627776",
+      "expected": "1027781916273/1099511627776",
+      "kind": "exact symmetry aggregate",
+      "passed": true
+    }
+  ],
+  "intervals": [
+    {
+      "trials": 10,
+      "events": 0,
+      "native": [
+        0,
+        0.2775401687666166
+      ],
+      "reference": [
+        "0",
+        "0.2775401687666165761183678187492775401687666165761183678187492775401687666165761183678187492775401687666165761183678187492775401687666165761183678187492775401688"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 1,
+      "native": [
+        0.017875749515721146,
+        0.4041563854975721
+      ],
+      "reference": [
+        "0.01787574951572114784201295195312592488654750135805969564977687346136094329723277012569380836817482927888172086638412159989790106751435185150201564900382537899983",
+        "0.4041563854975721130526813030462961072484657919028349986052225485707740699960281245685611910538573057344115400283101333995241310674989414093926786059955966531351"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 2,
+      "native": [
+        0.056680947980693334,
+        0.5098431532792767
+      ],
+      "reference": [
+        "0.05668094798069333692229526893793751047921777088727027059125265448313196870893357302389671647810711914711027827828000979720832138458141185726376554083835477710333",
+        "0.5098431532792766087487254223116290136220421990584007500999969120409692912610120979967945330884169821128596673927406814523582027166785580884072551504112117469978"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 3,
+      "native": [
+        0.10778928748621183,
+        0.6032267800204348
+      ],
+      "reference": [
+        "0.1077892874862118279016465467608822628040194904293105306186585442501639538748754165191958989625342265472529664806813796412311608726289052776199289831498073243328",
+        "0.6032267800204348025457005807388287532634871562011368165088411667659035527717550308279316007484818409593936639666657478584798551948777413528274181443499036917347"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 4,
+      "native": [
+        0.1681775812035097,
+        0.6873304525498136
+      ],
+      "reference": [
+        "0.1681775812035096957866016553032733323627098628441019741803862798051092647332581404757036277574793485864248161075103665935184314463897453209107152595781774591609",
+        "0.6873304525498136194370719084465821756710434604711216993833635757029244885900570831978601220980286851668984991161631971563370765873635779943129583041716780488730"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 5,
+      "native": [
+        0.23658959361548726,
+        0.7634104063845127
+      ],
+      "reference": [
+        "0.2365895936154872714448837752704065668568090575577997774840969126771144539339987675192199145573096020788735252912046534279458417642431152974802803985002154052628",
+        "0.7634104063845127285551162247295934331431909424422002225159030873228855460660012324807800854426903979211264747087953465720541582357568847025197196014997845947372"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 6,
+      "native": [
+        0.3126695474501864,
+        0.8318224187964903
+      ],
+      "reference": [
+        "0.3126695474501863805629280915534178243289565395288783006166364242970755114099429168021398779019713148331015008838368028436629234126364220056870416958283219511271",
+        "0.8318224187964903042133983446967266676372901371558980258196137201948907352667418595242963722425206514135751838924896334064815685536102546790892847404218225408392"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 7,
+      "native": [
+        0.3967732199795652,
+        0.8922107125137881
+      ],
+      "reference": [
+        "0.3967732199795651974542994192611712467365128437988631834911588332340964472282449691720683992515181590406063360333342521415201448051222586471725818556500963082653",
+        "0.8922107125137881720983534532391177371959805095706894693813414557498360461251245834808041010374657734527470335193186203587688391273710947223800710168501926756672"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 8,
+      "native": [
+        0.4901568467207234,
+        0.9433190520193067
+      ],
+      "reference": [
+        "0.4901568467207233912512745776883709863779578009415992499000030879590307087389879020032054669115830178871403326072593185476417972833214419115927448495887882530022",
+        "0.9433190520193066630777047310620624895207822291127297294087473455168680312910664269761032835218928808528897217217199902027916786154185881427362344591616452228966"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 9,
+      "native": [
+        0.5958436145024278,
+        0.9821242504842789
+      ],
+      "reference": [
+        "0.5958436145024278869473186969537038927515342080971650013947774514292259300039718754314388089461426942655884599716898666004758689325010585906073213940044033468649",
+        "0.9821242504842788521579870480468740751134524986419403043502231265386390567027672298743061916318251707211182791336158784001020989324856481484979843509961746210001"
+      ]
+    },
+    {
+      "trials": 10,
+      "events": 10,
+      "native": [
+        0.7224598312333834,
+        1
+      ],
+      "reference": [
+        "0.7224598312333834238816321812507224598312333834238816321812507224598312333834238816321812507224598312333834238816321812507224598312333834238816321812507224598312",
+        "1"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 0,
+      "native": [
+        0,
+        0.16113012549493322
+      ],
+      "reference": [
+        "0",
+        "0.1611301254949332259579893966847862559559761089859740956982752835380175827125696261995839205422454868800751627407556539829541641500570431514663445406348567210254"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 1,
+      "native": [
+        0.008881219432873125,
+        0.23613589351256678
+      ],
+      "reference": [
+        "0.008881219432873124889524576413317443469806424767069339183972638355155607878249893529516322263832387076958626087632535285653732215752552833278984677125741190320490",
+        "0.2361358935125667784726658806029901868905720733203073469444751168290602165630627700501092062241885511151090203790475532990050155192987860030407254094456298586024"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 2,
+      "native": [
+        0.02786589398415322,
+        0.30103820641179335
+      ],
+      "reference": [
+        "0.02786589398415321937036942569428236510357708942883326757332273829474650094805356778398888272292423105482375158335812382180061415388972906156673622241174459886428",
+        "0.3010382064117933613960220916535466396612037977599460089852974885356675652220021331756782537108721584492363786092463993645627171661559054596063394100961407779561"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 3,
+      "native": [
+        0.052367791959495855,
+        0.36042329588695743
+      ],
+      "reference": [
+        "0.05236779195949585192208301525271258887279190925774903817831909228271152560032437294814719095433233090251074893588841665495305536751645615776601406567522711787820",
+        "0.3604232958869574062485095624266377902963913670324328288104736061939007822984743653915615534252395099135418649826405411331148595375234740482604271127691725868396"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 4,
+      "native": [
+        0.08065635327120003,
+        0.4160217220257599
+      ],
+      "reference": [
+        "0.08065635327120003426506606424584829919173314846153305204382707143695110865198483952323140818992809467136293578624974425711482955274076893378758931697882162600381",
+        "0.4160217220257599013097275737650234543818525169300514053751380986858594409755569361965189441354191974566821618582036481326576689372934569570922174074020924066114"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 5,
+      "native": [
+        0.11186005278940306,
+        0.4687050099580636
+      ],
+      "reference": [
+        "0.1118600527894030527807995382835125233718050236240568426791432738624491323077009505921646031241499646105865104937169903973581934578043626477126659596183553889553",
+        "0.4687050099580635601981951600588806046061830308689302051699943679065596590485838625076273571469727788294510708766608365941188886172241589280205063106990729715574"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 6,
+      "native": [
+        0.14547527396899387,
+        0.5189767762289794
+      ],
+      "reference": [
+        "0.1454752739689938783906249185684091264399355792247473361186641433269491562991728724322160748974943323408219818379725589393786530707880807991732912556982180804744",
+        "0.5189767762289794119925708401055053759424548643696423021606459700882578767858549780476174933194038624112080832583297026538030125892347364614132465605557246079358"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 7,
+      "native": [
+        0.18118954786794464,
+        0.5671494897805354
+      ],
+      "reference": [
+        "0.1811895478679446260791277185463717378560473992907627256267742785426306575139016168679551472783348989653075467212632355482232794739585570280782748044661917089823",
+        "0.5671494897805353417082691004590641389307454334050295030827083065187746172998692709919200288843387470987150021009634606466629697710585559173616285577242653073253"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 8,
+      "native": [
+        0.2188039674141927,
+        0.613422057684794
+      ],
+      "reference": [
+        "0.2188039674141926866939677194240886436657778360222234341799997955352046125724132051640915835577903709381332810034850446311539777782264870769650200233767196427326",
+        "0.6134220576847939584976301599128686075254173857749713849596552611723989039701007200758252005506587264378817515446660861654368550517849215533282488847502517014725"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 9,
+      "native": [
+        0.25819502085709295,
+        0.6579179916924004
+      ],
+      "reference": [
+        "0.2581950208570929533408449289461251739607824156324833833305401360062747506867866476204352382836721775063395661119320124575447856499976485042570747356317169006265",
+        "0.6579179916924003692549540107223534516348151952661140262392873923475270075844703149995231537705523711816679501621435529407506307650080558108895597184317687714760"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 10,
+      "native": [
+        0.2992949144298199,
+        0.7007050855701801
+      ],
+      "reference": [
+        "0.2992949144298199241828077492099976923069333236025090555477405858592512794866899115389700390220135589821154436866510296731685617491931041286382015151706237007936",
+        "0.7007050855701800758171922507900023076930666763974909444522594141407487205133100884610299609779864410178845563133489703268314382508068958713617984848293762992064"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 11,
+      "native": [
+        0.3420820083075996,
+        0.741804979142907
+      ],
+      "reference": [
+        "0.3420820083075996307450459892776465483651848047338859737607126076524729924155296850004768462294476288183320498378564470592493692349919441891104402815682312285240",
+        "0.7418049791429070466591550710538748260392175843675166166694598639937252493132133523795647617163278224936604338880679875424552143500023514957429252643682830993735"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 12,
+      "native": [
+        0.38657794231520604,
+        0.7811960325858073
+      ],
+      "reference": [
+        "0.3865779423152060415023698400871313924745826142250286150403447388276010960298992799241747994493412735621182484553339138345631449482150784466717511152497482985275",
+        "0.7811960325858073133060322805759113563342221639777765658200002044647953874275867948359084164422096290618667189965149553688460222217735129230349799766232803572674"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 13,
+      "native": [
+        0.43285051021946463,
+        0.8188104521320554
+      ],
+      "reference": [
+        "0.4328505102194646582917308995409358610692545665949704969172916934812253827001307290080799711156612529012849978990365393533370302289414440826383714422757346926747",
+        "0.8188104521320553739208722814536282621439526007092372743732257214573693424860983831320448527216651010346924532787367644517767205260414429719217251955338082910177"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 14,
+      "native": [
+        0.4810232237710206,
+        0.8545247260310062
+      ],
+      "reference": [
+        "0.4810232237710205880074291598944946240575451356303576978393540299117421232141450219523825066805961375887919167416702973461969874107652635385867534394442753920642",
+        "0.8545247260310061216093750814315908735600644207752526638813358566730508437008271275677839251025056676591780181620274410606213469292119192008267087443017819195256"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 15,
+      "native": [
+        0.5312949900419365,
+        0.888139947210597
+      ],
+      "reference": [
+        "0.5312949900419364398018048399411193953938169691310697948300056320934403409514161374923726428530272211705489291233391634058811113827758410719794936893009270284426",
+        "0.8881399472105969472192004617164874766281949763759431573208567261375508676922990494078353968758500353894134895062830096026418065421956373522873340403816446110447"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 16,
+      "native": [
+        0.5839782779742401,
+        0.9193436467288
+      ],
+      "reference": [
+        "0.5839782779742400986902724262349765456181474830699485946248619013141405590244430638034810558645808025433178381417963518673423310627065430429077825925979075933886",
+        "0.9193436467287999657349339357541517008082668515384669479561729285630488913480151604767685918100719053286370642137502557428851704472592310662124106830211783739962"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 17,
+      "native": [
+        0.6395767041130426,
+        0.9476322080405042
+      ],
+      "reference": [
+        "0.6395767041130425937514904375733622097036086329675671711895263938060992177015256346084384465747604900864581350173594588668851404624765259517395728872308274131604",
+        "0.9476322080405041480779169847472874111272080907422509618216809077172884743996756270518528090456676690974892510641115833450469446324835438422339859343247728821218"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 18,
+      "native": [
+        0.6989617935882066,
+        0.9721341060158468
+      ],
+      "reference": [
+        "0.6989617935882066386039779083464533603387962022400539910147025114643324347779978668243217462891278415507636213907536006354372828338440945403936605899038592220439",
+        "0.9721341060158467806296305743057176348964229105711667324266772617052534990519464322160111172770757689451762484166418761781993858461102709384332637775882554011357"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 19,
+      "native": [
+        0.7638641064874332,
+        0.9911187805671269
+      ],
+      "reference": [
+        "0.7638641064874332215273341193970098131094279266796926530555248831709397834369372299498907937758114488848909796209524467009949844807012139969592745905543701413976",
+        "0.9911187805671268751104754235866825565301935752329306608160273616448443921217501064704836777361676129230413739123674647143462677842474471667210153228742588096795"
+      ]
+    },
+    {
+      "trials": 20,
+      "events": 20,
+      "native": [
+        0.8388698745050668,
+        1
+      ],
+      "reference": [
+        "0.8388698745050667740420106033152137440440238910140259043017247164619824172874303738004160794577545131199248372592443460170458358499429568485336554593651432789746",
+        "1"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "trials": 10,
+      "true_probability": "0",
+      "coverage": "1",
+      "coverage_decimal": 1.0,
+      "zero_event_probability": "1",
+      "covered_event_counts": [
+        0
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "1/100",
+      "coverage": "90438207500880449001/100000000000000000000",
+      "coverage_decimal": 0.9043820750088045,
+      "zero_event_probability": "90438207500880449001/100000000000000000000",
+      "covered_event_counts": [
+        0
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "1/10",
+      "coverage": "1162261467/1250000000",
+      "coverage_decimal": 0.9298091736,
+      "zero_event_probability": "3486784401/10000000000",
+      "covered_event_counts": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "1/4",
+      "coverage": "513945/524288",
+      "coverage_decimal": 0.9802722930908203,
+      "zero_event_probability": "59049/1048576",
+      "covered_event_counts": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "1/2",
+      "coverage": "501/512",
+      "coverage_decimal": 0.978515625,
+      "zero_event_probability": "1/1024",
+      "covered_event_counts": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "3/4",
+      "coverage": "513945/524288",
+      "coverage_decimal": 0.9802722930908203,
+      "zero_event_probability": "1/1048576",
+      "covered_event_counts": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "9/10",
+      "coverage": "1162261467/1250000000",
+      "coverage_decimal": 0.9298091736,
+      "zero_event_probability": "1/10000000000",
+      "covered_event_counts": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "99/100",
+      "coverage": "90438207500880449001/100000000000000000000",
+      "coverage_decimal": 0.9043820750088045,
+      "zero_event_probability": "1/100000000000000000000",
+      "covered_event_counts": [
+        10
+      ]
+    },
+    {
+      "trials": 10,
+      "true_probability": "1",
+      "coverage": "1",
+      "coverage_decimal": 1.0,
+      "zero_event_probability": "0",
+      "covered_event_counts": [
+        10
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "0",
+      "coverage": "1",
+      "coverage_decimal": 1.0,
+      "zero_event_probability": "1",
+      "covered_event_counts": [
+        0
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "1/100",
+      "coverage": "9831406623643482185435822283310707735981/10000000000000000000000000000000000000000",
+      "coverage_decimal": 0.9831406623643483,
+      "zero_event_probability": "8179069375972308708891986605443361898001/10000000000000000000000000000000000000000",
+      "covered_event_counts": [
+        0,
+        1
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "1/10",
+      "coverage": "23920637617888415469/25000000000000000000",
+      "coverage_decimal": 0.9568255047155366,
+      "zero_event_probability": "12157665459056928801/100000000000000000000",
+      "covered_event_counts": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "1/4",
+      "coverage": "1027781916273/1099511627776",
+      "coverage_decimal": 0.9347622074283208,
+      "zero_event_probability": "3486784401/1099511627776",
+      "covered_event_counts": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "1/2",
+      "coverage": "125647/131072",
+      "coverage_decimal": 0.9586105346679688,
+      "zero_event_probability": "1/1048576",
+      "covered_event_counts": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "3/4",
+      "coverage": "1027781916273/1099511627776",
+      "coverage_decimal": 0.9347622074283208,
+      "zero_event_probability": "1/1099511627776",
+      "covered_event_counts": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "9/10",
+      "coverage": "23920637617888415469/25000000000000000000",
+      "coverage_decimal": 0.9568255047155366,
+      "zero_event_probability": "1/100000000000000000000",
+      "covered_event_counts": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "99/100",
+      "coverage": "9831406623643482185435822283310707735981/10000000000000000000000000000000000000000",
+      "coverage_decimal": 0.9831406623643483,
+      "zero_event_probability": "1/10000000000000000000000000000000000000000",
+      "covered_event_counts": [
+        19,
+        20
+      ]
+    },
+    {
+      "trials": 20,
+      "true_probability": "1",
+      "coverage": "1",
+      "coverage_decimal": 1.0,
+      "zero_event_probability": "0",
+      "covered_event_counts": [
+        20
+      ]
+    }
+  ],
+  "passed": 378,
+  "failed": 0,
+  "scope": "fixedN independentBernoulli model;coverage diagnostic,notsampler/independence/sequential/95%approval"
+}
