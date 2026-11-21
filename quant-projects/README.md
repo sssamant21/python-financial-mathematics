@@ -297,3 +297,6 @@ Project 49 also includes `dependence_stress.py` and `test_dependence_stress.py` 
 Project 51 additionally includes `stable_monetary_tail.py` and `test_stable_monetary_tail.py` for small-portfolio high-precision monetary-loss tail enumeration (synthetic only). Run `python -m unittest -v test_stable_monetary_tail.py` from its directory; exact-revision CI and independent review are pending.
 
 Project 51 sparse-precision extension: [bounded Decimal monetary-loss DP](51-poisson-binomial-credit-loss/README.md#bounded-sparse-high-precision-monetary-loss-dp) uses cent-exact loss states, explicit state/precision limits, and synthetic exhaustive-enumeration cross-checks. Run `python -m unittest -v test_sparse_monetary_tail.py` from Project 51. Authored tests are **not yet confirmed passing on the published revision**; independent review and historical calibration remain pending.
+
+
+Project 51 observational benchmark: [synthetic scaling report](51-poisson-binomial-credit-loss/README.md#observational-benchmark-report-2026-11-21) adds a bounded JSON measurement harness with UTC/runtime context, traced Python allocation diagnostics and analytical tail checks. Run `python benchmark_report.py --sizes 4 8 12 16 20` from Project 51. Newly authored tests and exact-revision CI are pending verification; measured bytes are not RSS or capacity guarantees.
