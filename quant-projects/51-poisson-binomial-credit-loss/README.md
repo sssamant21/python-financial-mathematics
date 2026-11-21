@@ -42,3 +42,16 @@ python monetary_loss.py --probabilities 0.01 0.05 --exposures-cents 10000 20000 
 ```
 
 Six new regression tests are authored but **runtime execution and hosted CI for this extension are unverified**. No real credit observations or licensed data are included. Independent mathematical review and calibration remain pending.
+
+
+## Independent monetary-loss reference tests
+
+`test_monetary_reference.py` enumerates all default/no-default combinations independently of the monetary-loss dynamic program, then reconciles the loss probability mass, direct expected-loss identity, and threshold tail sums on small synthetic portfolios. It includes colliding losses, deterministic borrowers, zero LGD, order invariance, and a deliberately underflowing rare joint-default event. Underflow yielding zero in binary64 **does not mean the true event is impossible**. The reference is an internal educational cross-check, not an independent external audit.
+
+```bash
+cd quant-projects/51-poisson-binomial-credit-loss
+python -m unittest -v test_poisson_binomial.py test_numerical_checks.py test_monetary_loss.py test_monetary_reference.py
+python -m py_compile monetary_loss.py test_monetary_reference.py
+```
+
+Five new tests are authored; only local syntax compilation of the new test module has been confirmed. Runtime execution, exact-revision hosted CI and independent model review remain unverified.
