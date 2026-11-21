@@ -1,0 +1,238 @@
+{
+  "pin": "477083a59f74be60e5e5766f4cd9ec5c8b1656b9",
+  "source_selection": "baseline",
+  "executed_at_utc": "2026-11-21T17:12:42.151578+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "manifest": {
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/section_10_02.py": {
+      "sha256": "860f69851a54b97907202c5b1a2c036a4add4a20d289333156f4016ef46bbfa9",
+      "git_blob": "d073c33965fd214a03c2dbc16aeb51b15b58c413"
+    },
+    "books/book-02-mathematical-foundations-for-finance-with-python/chapter-10/code/check_section_10_02.py": {
+      "sha256": "fd415f0bd5b2b234e94ef4202141bc25efdb5f524ef685a6067024b62c3e8d31",
+      "git_blob": "a495b98f58754119e0baccdbec3956199b226bbf"
+    }
+  },
+  "rows": [
+    {
+      "name": "linear signed amount",
+      "actual": 240.0,
+      "expected": "240",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "reverse orientation",
+      "actual": -240.0,
+      "expected": "-240",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N1",
+      "actual": 0.25,
+      "expected": "1/4",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N2",
+      "actual": 0.3125,
+      "expected": "5/16",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N4",
+      "actual": 0.328125,
+      "expected": "21/64",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N16",
+      "actual": 0.3330078125,
+      "expected": "341/1024",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "quadratic N64",
+      "actual": 0.33331298828125,
+      "expected": "5461/16384",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "zero width amount",
+      "actual": 0.0,
+      "expected": "0",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "zero width skips callback",
+      "actual": [],
+      "expected": "[]",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "invalid n bool",
+      "actual": {
+        "exception": "ValueError",
+        "message": "n must be a positive integer"
+      },
+      "expected": "ValueError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "noncallable",
+      "actual": {
+        "exception": "TypeError",
+        "message": "function must be callable"
+      },
+      "expected": "TypeError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "nonfinite callback",
+      "actual": {
+        "exception": "ValueError",
+        "message": "integrand must be finite"
+      },
+      "expected": "ValueError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "bool callback",
+      "actual": {
+        "exception": "TypeError",
+        "message": "integrand must be numeric, excluding bool"
+      },
+      "expected": "TypeError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "caller exception preserved",
+      "actual": {
+        "exception": "LookupError",
+        "message": "sentinel caller failure"
+      },
+      "expected": "LookupError",
+      "kind": "existing numerical contract",
+      "passed": true
+    },
+    {
+      "name": "product overflow cancellation",
+      "actual": {
+        "exception": "ValueError",
+        "message": "-inf + inf in fsum"
+      },
+      "expected": "0",
+      "kind": "selected finite-result support extension",
+      "passed": false
+    },
+    {
+      "name": "unreportable final sum",
+      "actual": {
+        "exception": "OverflowError",
+        "message": "intermediate overflow in fsum"
+      },
+      "expected": "ValueError",
+      "kind": "existing numerical contract",
+      "passed": false
+    },
+    {
+      "name": "wide interval finite result",
+      "actual": {
+        "exception": "ValueError",
+        "message": "nonfinite midpoint result"
+      },
+      "expected": "1.9999999999999998",
+      "kind": "selected finite-result support extension",
+      "passed": false
+    },
+    {
+      "name": "unrepresentable tiny grid rejected",
+      "actual": 0.0,
+      "expected": "ValueError",
+      "kind": "selected explicit grid policy",
+      "passed": false
+    },
+    {
+      "name": "adjacent endpoints rejected",
+      "actual": 2.220446049250313e-16,
+      "expected": "ValueError",
+      "kind": "selected explicit grid policy",
+      "passed": false
+    },
+    {
+      "name": "invalid grid callback atomicity",
+      "actual": [
+        1.0,
+        1.0000000000000002
+      ],
+      "expected": "[]",
+      "kind": "selected explicit grid policy",
+      "passed": false
+    },
+    {
+      "name": "interior overflow midpoint avoided",
+      "actual": 6.999999999999999e+307,
+      "expected": "6.999999999999999e+307",
+      "kind": "selected finite-result support extension",
+      "passed": true
+    },
+    {
+      "name": "midpoint positions",
+      "actual": [
+        1.175e+308,
+        1.5249999999999999e+308
+      ],
+      "expected": "[1.175e+308, 1.5249999999999999e+308]",
+      "kind": "existing numerical contract",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "section_10_02.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"linear_antiderivative_at_2\": 240.0,\n  \"linear_integral_0_to_2\": 240.0,\n  \"signed_integral\": 0.0,\n  \"growing_payment_integral\": 1030.609109089327,\n  \"midpoint_checks\": [\n    {\n      \"n\": 4,\n      \"estimate\": 1030.5994471923354\n    },\n    {\n      \"n\": 16,\n      \"estimate\": 1030.60850521705\n    },\n    {\n      \"n\": 64,\n      \"estimate\": 1030.6090713472952\n    },\n    {\n      \"n\": 256,\n      \"estimate\": 1030.60910673045\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "check_section_10_02.py"
+      ],
+      "returncode": 0,
+      "stdout": "PASS: Section 10.2 independent reference checks\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "."
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 16,
+  "failed": 6,
+  "scope": "midpoint subset only; exponential remains unchanged/unfinished; no resource or independent acceptance"
+}

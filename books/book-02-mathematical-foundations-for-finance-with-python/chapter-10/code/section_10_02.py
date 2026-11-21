@@ -67,9 +67,23 @@ def midpoint_sum(function,a,b,n):
         raise ValueError("n must be a positive integer")
     if left==right:
         return 0.0
-    width=(right-left)/n
-    result=math.fsum(finite(function(left+(i+0.5)*width),"integrand")*width
-                     for i in range(n))
+    # Build all rounded sample points before calling user code. Exact endpoint
+    # arithmetic avoids overflow in right-left and in the midpoint expression.
+    origin = Fraction(left)
+    width = (Fraction(right)-origin)/n
+    samples = []
+    for i in range(n):
+        start, stop = origin+i*width, origin+(i+1)*width
+        sample = float((start+stop)/2)
+        if not min(start,stop) < Fraction(sample) < max(start,stop):
+            raise ValueError("midpoint not representable inside its subinterval")
+        samples.append(sample)
+    total = sum((Fraction(finite(function(x),"integrand"))*width
+                 for x in samples), Fraction(0))
+    try:
+        result = float(total)
+    except OverflowError as exc:
+        raise ValueError("nonfinite midpoint result") from exc
     if not math.isfinite(result):
         raise ValueError("nonfinite midpoint result")
     return result

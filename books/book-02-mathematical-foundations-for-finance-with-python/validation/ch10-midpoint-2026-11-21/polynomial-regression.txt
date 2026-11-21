@@ -1,0 +1,55 @@
+"""Section10.2 polynomial contracts andordinaryCLI;exponential/midpointrangesremainpending."""
+from pathlib import Path
+from fractions import Fraction as F
+from decimal import Decimal,localcontext
+from datetime import datetime,timezone
+import subprocess,json,sys,tempfile,math,hashlib,platform,importlib.util
+if not __debug__:raise RuntimeError('Assertions required')
+here=Path(__file__).resolve().parent;root=here.parents[3];pin='4e4dba9e89d0448ab378b6c6a1d8735bec198942';prefix='books/book-02-mathematical-foundations-for-finance-with-python/';code=prefix+'chapter-10/code/';doc=prefix+'chapter-10/10.02-definite-and-indefinite-integrals.md';label=sys.argv[1] if len(sys.argv)>1 else 'first';baseline='--baseline' in sys.argv;chapter='--chapter' in sys.argv;rows=[];commands=[];manifest=[]
+def ck(name,got,want,kind='numeric'):
+ if type(want)in(bool,str,set):ok=type(got)==type(want) and got==want
+ elif want==0:ok=type(got)in(int,float) and got==0
+ else:ok=type(got)in(int,float) and math.isfinite(got) and math.isclose(got,float(want),rel_tol=5e-14,abs_tol=1e-12)
+ rows.append(dict(name=name,kind=kind,actual=sorted(got) if isinstance(got,set) else got,expected=str(sorted(want) if isinstance(want,set) else want),passed=ok))
+def compare(a,w,path='CLI'):
+ if isinstance(w,dict):
+  ck(path+' keys',set(a),set(w),'schema')
+  for k in w:compare(a[k],w[k],path+'.'+k)
+ elif isinstance(w,list):
+  ck(path+' length',len(a),len(w),'schema')
+  for i,x in enumerate(w):compare(a[i],x,path+'.'+str(i))
+ else:ck(path,a,w)
+def outcome(fn):
+ try:return fn()
+ except Exception as e:return type(e).__name__+': '+str(e)
+def exception(fn):
+ try:fn();return 'no exception'
+ except Exception as e:return type(e).__name__
+def dec(x):return Decimal(x.numerator)/Decimal(x.denominator)
+def exponential(x):
+ total=term=Decimal(1)
+ for n in range(1,121):term=term*x/n;total+=term
+ return total
+with tempfile.TemporaryDirectory() as tmp:
+ paths=subprocess.check_output(['git','ls-tree','-r','--name-only',pin,'--',code],cwd=root,text=True).splitlines();paths=[p for p in paths if p.endswith('.py')]
+ for path in paths:
+  raw=subprocess.check_output(['git','show',pin+':'+path],cwd=root) if baseline else (root/path).read_bytes();(Path(tmp)/Path(path).name).write_bytes(raw);manifest.append(dict(path=path,sha256=hashlib.sha256(raw).hexdigest(),git_blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+bytes([0])+raw).hexdigest()))
+ names=sorted(Path(p).name for p in paths) if chapter else ['section_10_02.py','check_section_10_02.py']
+ for name in names:
+  r=subprocess.run([sys.executable,name],cwd=tmp,capture_output=True,text=True,timeout=90);commands.append(dict(argv=[sys.executable,name],returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0
+ r=subprocess.run([sys.executable,'-m','compileall','-q','.'],cwd=tmp,capture_output=True,text=True,timeout=90);commands.append(dict(argv=[sys.executable,'-m','compileall','-q','.'],returncode=r.returncode,stdout=r.stdout,stderr=r.stderr));assert r.returncode==0
+ cli=json.loads(next(c for c in commands if c['argv'][-1]=='section_10_02.py')['stdout']);spec=importlib.util.spec_from_file_location('integral_reference',Path(tmp)/'section_10_02.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+ with localcontext() as ctx:
+  ctx.prec=140;K=F(.03);growing=500*(exponential(dec(K*2))-1)/dec(K);midpoints=[]
+  for n in [4,16,64,256]:
+   width=F(2,n);value=sum(500*exponential(dec(K*(F(i)+F(1,2))*width))*dec(width) for i in range(n));midpoints.append(dict(n=n,estimate=float(value)))
+ expected=dict(linear_antiderivative_at_2=240.,linear_integral_0_to_2=240.,signed_integral=0.,growing_payment_integral=float(growing),midpoint_checks=midpoints);compare(cli,expected)
+ for name,fn,want in [('antiderivative constant',lambda:m.polynomial_antiderivative([0,0,6],2,5),21),('oriented integral',lambda:m.polynomial_definite([0,0,3],2,0),-8),('balance iscallercomposition',lambda:500+m.polynomial_definite([100,20],0,2),740),('quadratic ordinary',lambda:m.polynomial_definite([0,0,1],0,1),F(1,3))]:ck(name,outcome(fn),want,'exercise source/caller')
+ next1=math.nextafter(1.,2.);next2=math.nextafter(2.,3.)
+ fixtures=[('one-pass coefficients',lambda:m.polynomial_definite(iter([100,20]),0,2),240,'iterator contract'),('near-endpoint cancellation',lambda:m.polynomial_definite([1e308],1,next1),F(1e308)*(F(next1)-1),'complete polynomial'),('zero width despiteunreportable primitive',lambda:m.polynomial_definite([1e308],2,2),0,'selected support extension'),('small coefficient large power',lambda:m.polynomial_antiderivative([0,1e-308],1e200),F(1e-308)*F(1e200)*F(1e200)/2,'selected support extension'),('zero coefficient power',lambda:m.polynomial_antiderivative([1,0],1e200),F(1e200),'complete polynomial'),('constant cancels primitive',lambda:m.polynomial_antiderivative([1e308],2,-1e308),F(1e308),'complete polynomial'),('finite definite unreportable primitives',lambda:m.polynomial_definite([1e308],2,next2),F(1e308)*(F(next2)-2),'selected support extension'),('signed terms cancel',lambda:m.polynomial_antiderivative([1e308,-1e308],2),0,'complete polynomial')]
+ for name,fn,want,kind in fixtures:ck(name,outcome(fn),want,kind)
+ ck('true primitive overflow normalized',exception(lambda:m.polynomial_antiderivative([0,1],1e200)),'ValueError','output policy')
+ ck('empty coefficient iterable rejected',exception(lambda:m.polynomial_definite(iter([]),0,1)),'ValueError','input policy')
+text=subprocess.check_output(['git','show',pin+':'+doc],cwd=root).decode() if baseline else (root/doc).read_text();ck('renderable runbook',r'\`' not in text,True,'markup')
+result=dict(pin=pin,source_selection='immutable baseline' if baseline else 'candidate Gitblobs',executed_at_utc=datetime.now(timezone.utc).isoformat(),python=platform.python_version(),platform=platform.platform(),manifest=manifest,manuscript_sha256=hashlib.sha256(text.encode()).hexdigest(),commands=commands,rows=rows,passed=sum(r['passed'] for r in rows),failed=sum(not r['passed'] for r in rows),scope='polynomial APIcontracts/ordinaryCLI;exponential/midpoint rangeandcallbackobligationsremainopen')
+(here/(label+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(dict(passed=result['passed'],failed=result['failed'],failures=[r['name'] for r in rows if not r['passed']])));assert result['failed']==0

@@ -54,6 +54,14 @@ def run():
     right=math.nextafter(2.0,3.0)
     close(polynomial_definite([1e308],2,right),1e308*(right-2))
     rejects(ValueError,polynomial_antiderivative,[0,1],1e200)
+    assert midpoint_sum(lambda t:1e308 if t<2 else -1e308,0,4,2)==0
+    rejects(ValueError,midpoint_sum,lambda t:1e308,0,4,4)
+    close(midpoint_sum(lambda t:1e-308,-1e308,1e308,2),2)
+    calls=[]
+    rejects(ValueError,midpoint_sum,lambda t:calls.append(t) or 1,
+            1,math.nextafter(1,2),2)
+    assert calls==[]
+    rejects(ValueError,midpoint_sum,lambda t:1,0,math.ulp(0.0),2)
     print("PASS: Section 10.2 independent reference checks")
 
 if __name__=="__main__":
