@@ -453,3 +453,8 @@ Section21.1 partial runtime checkpoint:[three documented commands/two compiled f
 ## V10 — Scoped Section18.10 Wilson finite-coverage assumptions
 
 [Evidence](v10-wilson-coverage/README.md):378checks pass twice:64nativeendpoints/288nativeintervalvsexactscoredecisions/18exactbinomialmass/eightsymmetryaggregates.32nativeWilsoncallscachedfor18N/pcoveragecases. Coveragevaries(e.g.N10,p.01→.9043820750),notanexactnominal95%guarantee/defect. Fourformalcommands/24invocationsof12existingmethods;priorF182/88predicate listingidentityverified,19originalfailures/observertransitionspreserved. No sourcechange/newanswers/workflows/historicalmethods. Next18.11portfolio-simulationassumptions;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.
+
+
+## V10 — Scoped Section18.11 moments/correlation/joint-tail assumptions
+
+[Evidence](v10-portfolio-moments-tails/README.md):32checks pass twicefortwo64-rowfinitecallerjointlaws. Equalassetmarginals/covariance0/portfolio variance.02butseverelossprobabilities1/64versus1/16;sourceanalytical/summaryfields andexactmomentschecked. Thesearedeterministicnon-Gaussianenumerations,notnativeGaussian-samplerorIID-SEacceptance. Fourformalcommands/24invocationsof12existingmethods;priorF183/90predicate listingidentityverified,15originalfailurespreserved. No sourcechange/defect/newanswers/workflows/historicalmethods. Next18.12risksimulation;V10INPROGRESS,F28/F32/F209/F165/F185 andbroaderintegration/resource/model/platform/release/independent/canonicalacceptanceopen.

@@ -1,0 +1,23 @@
+# V-226 — Full pinned Book2 runtime refresh
+
+Executedsource `ad0f11b8eb295b0c062256a47d869044b874aa77`,reviewed2026-11-21. [Runnable full runner](review.txt),[complete runtime evidence](runtime.json),[pinned-tree verification](verification.json). All643requiredPython/fixtureblobs stagedfromimmutableGitandverifiedbefore/afterexecution. CPython3.12.14/Linux,assertionsenabled,60secondtimeoutperscript;actualstdout/stderr,exitstatuses/timingsandhashesretained.
+
+| Scope | Actual outcome |
+|---|---:|
+|Pythonfilescompiled|642/642pass|
+|Check/testscriptsrun|429/429pass|
+|Requiredsource/fixtureblobsverified|643/643beforeandafter|
+
+ThisisonefullcandidateLinuxruntime,not supported-platformvalidation,independentmathematical/editorial/financialreview,releaseacceptanceorcanonicalapproval. Scriptsarefilesnamedcheck_*/test_*;otherPythonfilesarecompiled,notallclaimedexecutedasCLI. Individualpredicatecountsaretheirownscopedinventories,notaddedintoCOVcountsorcompletionpercentages.
+
+Runfromrepositoryroot:
+
+```bash
+python books/book-02-mathematical-foundations-for-finance-with-python/validation/full-runtime-2026-11-21/review.txt . ad0f11b8eb295b0c062256a47d869044b874aa77 books/book-02-mathematical-foundations-for-finance-with-python/validation/full-runtime-2026-11-21
+```
+
+TherefreshincludesthreechangedrequiredblobsrelativeV212:earliernonvacuouscheck9.05andV225source/checker10.01. V225retains105pass/sixfailurebaseline/replayand111correctedpredicates/sourceblobs;theyarenoterasedorreclassifiedbythisfullpass. CompleteRiemannproducts,finitegridconstruction,total/errorguardsandexplicitfinal-underflowpolicyarecoveredbytheupdatednativechecker. ScopedChapter10CLIrun(21files/22commands)anditsreplayremainseparate;thisfullrunisnotanindependentendorsementofthemathematicalpolicy.
+
+Theadditionalrequiredfixtureischapter-01/data/section-1.14-cases.json,alongsideall642Pythonfiles. Countsderivedfromthispinnedtree,ratherthanreusedfromtheolder444/233orV212counts. Thefullruntimehashmanifestnowmatchesallrequiredblobsattherecordedsourcepin;no laterrevisionisequatedwithoutidentitychecks.
+
+Next10.2definite/indefinite-integralslab/sourcecrosswalk.38selectedCOVcategoriesremainpartiallyaddressed,noneclosed. Broadernumerical/resource/provenance/model/platform/release/independent/canonicalobligationsremainopen.Book1hasseparatetrackers:18.10Wilsonand18.11portfolio-moment/tailbatcheshaveindependentevidence.NextBook118.12.

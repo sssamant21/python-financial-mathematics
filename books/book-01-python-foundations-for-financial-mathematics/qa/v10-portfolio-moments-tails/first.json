@@ -1,0 +1,952 @@
+{
+  "pin": "ad0f11b8eb295b0c062256a47d869044b874aa77",
+  "source_path": "books/book-01-python-foundations-for-financial-mathematics/chapter-18/18.11-portfolio-simulation.md",
+  "source_sha256": "aba53a14be3dae561d97ce18995b8ed106666d9c1e993783e1d28cf1e8bd0976",
+  "listing_sha256": "17a815af999ab34085cac95ee2f6afd241a18583d00f5abbf118ff098a8ca2d8",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "rows": [
+    {
+      "name": "native analytical mean",
+      "actual": 0,
+      "expected": "0",
+      "kind": "analytical source",
+      "passed": true
+    },
+    {
+      "name": "native analytical variance",
+      "actual": 0.02,
+      "expected": "1/50",
+      "kind": "analytical source",
+      "passed": true
+    },
+    {
+      "name": "independent mean1",
+      "actual": "0",
+      "expected": "0",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent mean2",
+      "actual": "0",
+      "expected": "0",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent variance1",
+      "actual": "1/25",
+      "expected": "1/25",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent variance2",
+      "actual": "1/25",
+      "expected": "1/25",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent covariance",
+      "actual": "0",
+      "expected": "0",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent portfolio_variance",
+      "actual": "1/50",
+      "expected": "1/50",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent cross_fourth_moment",
+      "actual": "1/625",
+      "expected": "1/625",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "independent count",
+      "actual": 64,
+      "expected": "64",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent mean_return",
+      "actual": 0,
+      "expected": "0",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent return_sd",
+      "actual": 0.14253932901995967,
+      "expected": "0.142539329019959671831761856469201878162134087915380074144904589231239434525978629637211805531214459866704422427723884859",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent mean_terminal",
+      "actual": 100,
+      "expected": "100",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent standard_error_terminal",
+      "actual": 1.7817416127494958,
+      "expected": "1.781741612749495897897023206",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent loss_frequency",
+      "actual": 0.203125,
+      "expected": "13/64",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent paths_with_asset_return_below_minus_one",
+      "actual": 0,
+      "expected": "0",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "independent caller severe loss frequency",
+      "actual": "1/64",
+      "expected": "1/64",
+      "kind": "caller tail indicator",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent mean1",
+      "actual": "0",
+      "expected": "0",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent mean2",
+      "actual": "0",
+      "expected": "0",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent variance1",
+      "actual": "1/25",
+      "expected": "1/25",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent variance2",
+      "actual": "1/25",
+      "expected": "1/25",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent covariance",
+      "actual": "0",
+      "expected": "0",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent portfolio_variance",
+      "actual": "1/50",
+      "expected": "1/50",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent cross_fourth_moment",
+      "actual": "4/625",
+      "expected": "4/625",
+      "kind": "exact finite-model moment",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent count",
+      "actual": 64,
+      "expected": "64",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent mean_return",
+      "actual": 0,
+      "expected": "0",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent return_sd",
+      "actual": 0.14253932901995967,
+      "expected": "0.142539329019959671831761856469201878162134087915380074144904589231239434525978629637211805531214459866704422427723884859",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent mean_terminal",
+      "actual": 100,
+      "expected": "100",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent standard_error_terminal",
+      "actual": 1.7817416127494958,
+      "expected": "1.781741612749495897897023206",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent loss_frequency",
+      "actual": 0.0625,
+      "expected": "1/16",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent paths_with_asset_return_below_minus_one",
+      "actual": 0,
+      "expected": "0",
+      "kind": "source summary",
+      "passed": true
+    },
+    {
+      "name": "same_abs_dependent caller severe loss frequency",
+      "actual": "1/16",
+      "expected": "1/16",
+      "kind": "caller tail indicator",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "name": "independent",
+      "rows": [
+        [
+          -0.4,
+          -0.4,
+          -0.4
+        ],
+        [
+          -0.4,
+          0.0,
+          -0.2
+        ],
+        [
+          -0.4,
+          0.0,
+          -0.2
+        ],
+        [
+          -0.4,
+          0.0,
+          -0.2
+        ],
+        [
+          -0.4,
+          0.0,
+          -0.2
+        ],
+        [
+          -0.4,
+          0.0,
+          -0.2
+        ],
+        [
+          -0.4,
+          0.0,
+          -0.2
+        ],
+        [
+          -0.4,
+          0.4,
+          0.0
+        ],
+        [
+          0.0,
+          -0.4,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.4,
+          0.2
+        ],
+        [
+          0.0,
+          -0.4,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.4,
+          0.2
+        ],
+        [
+          0.0,
+          -0.4,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.4,
+          0.2
+        ],
+        [
+          0.0,
+          -0.4,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.4,
+          0.2
+        ],
+        [
+          0.0,
+          -0.4,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.4,
+          0.2
+        ],
+        [
+          0.0,
+          -0.4,
+          -0.2
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.4,
+          0.2
+        ],
+        [
+          0.4,
+          -0.4,
+          0.0
+        ],
+        [
+          0.4,
+          0.0,
+          0.2
+        ],
+        [
+          0.4,
+          0.0,
+          0.2
+        ],
+        [
+          0.4,
+          0.0,
+          0.2
+        ],
+        [
+          0.4,
+          0.0,
+          0.2
+        ],
+        [
+          0.4,
+          0.0,
+          0.2
+        ],
+        [
+          0.4,
+          0.0,
+          0.2
+        ],
+        [
+          0.4,
+          0.4,
+          0.4
+        ]
+      ],
+      "summary": {
+        "count": 64,
+        "mean_return": 0,
+        "return_sd": 0.14253932901995967,
+        "mean_terminal": 100,
+        "standard_error_terminal": 1.7817416127494958,
+        "loss_frequency": 0.203125,
+        "paths_with_asset_return_below_minus_one": 0
+      },
+      "moments": {
+        "mean1": "0",
+        "mean2": "0",
+        "variance1": "1/25",
+        "variance2": "1/25",
+        "covariance": "0",
+        "portfolio_variance": "1/50",
+        "cross_fourth_moment": "1/625"
+      },
+      "severe_return_threshold": "-3/10",
+      "severe_loss_frequency": "1/64"
+    },
+    {
+      "name": "same_abs_dependent",
+      "rows": [
+        [
+          -0.4,
+          -0.4,
+          -0.4
+        ],
+        [
+          -0.4,
+          -0.4,
+          -0.4
+        ],
+        [
+          -0.4,
+          -0.4,
+          -0.4
+        ],
+        [
+          -0.4,
+          -0.4,
+          -0.4
+        ],
+        [
+          -0.4,
+          0.4,
+          0.0
+        ],
+        [
+          -0.4,
+          0.4,
+          0.0
+        ],
+        [
+          -0.4,
+          0.4,
+          0.0
+        ],
+        [
+          -0.4,
+          0.4,
+          0.0
+        ],
+        [
+          0.4,
+          -0.4,
+          0.0
+        ],
+        [
+          0.4,
+          -0.4,
+          0.0
+        ],
+        [
+          0.4,
+          -0.4,
+          0.0
+        ],
+        [
+          0.4,
+          -0.4,
+          0.0
+        ],
+        [
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.4,
+          0.4,
+          0.4
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "summary": {
+        "count": 64,
+        "mean_return": 0,
+        "return_sd": 0.14253932901995967,
+        "mean_terminal": 100,
+        "standard_error_terminal": 1.7817416127494958,
+        "loss_frequency": 0.0625,
+        "paths_with_asset_return_below_minus_one": 0
+      },
+      "moments": {
+        "mean1": "0",
+        "mean2": "0",
+        "variance1": "1/25",
+        "variance2": "1/25",
+        "covariance": "0",
+        "portfolio_variance": "1/50",
+        "cross_fourth_moment": "4/625"
+      },
+      "severe_return_threshold": "-3/10",
+      "severe_loss_frequency": "1/16"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "portfolio_simulation.py"
+      ],
+      "returncode": 0,
+      "stdout": "simulation: {'count': 10000, 'mean_return': 0.06490227947066025, 'return_sd': 0.13571761623558326, 'mean_terminal': 106.49022794706603, 'standard_error_terminal': 0.13571761623558326, 'loss_frequency': 0.3155, 'paths_with_asset_return_below_minus_one': 0}\nanalytical mean and variance: (0.064, 0.0184)\n",
+      "stderr": "test_analytical_mean (__main__.PortfolioTests.test_analytical_mean) ... ok\ntest_analytical_variance (__main__.PortfolioTests.test_analytical_variance) ... ok\ntest_count (__main__.PortfolioTests.test_count) ... ok\ntest_invalid_correlation (__main__.PortfolioTests.test_invalid_correlation) ... ok\ntest_invalid_initial (__main__.PortfolioTests.test_invalid_initial) ... ok\ntest_invalid_return_count (__main__.PortfolioTests.test_invalid_return_count) ... ok\ntest_invalid_sd (__main__.PortfolioTests.test_invalid_sd) ... ok\ntest_invalid_weights (__main__.PortfolioTests.test_invalid_weights) ... ok\ntest_replay (__main__.PortfolioTests.test_replay) ... ok\ntest_singular_correlation (__main__.PortfolioTests.test_singular_correlation) ... ok\ntest_summary (__main__.PortfolioTests.test_summary) ... ok\ntest_zero_volatility (__main__.PortfolioTests.test_zero_volatility) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "portfolio_simulation.py"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "passed": 32,
+  "failed": 0,
+  "scope": "finitecaller jointlaws,notsourceGaussian sampler/independence/validSEcertification"
+}

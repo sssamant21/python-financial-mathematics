@@ -1557,3 +1557,8 @@ Next substantive item:COV-51 conditioning/noise limits for suggested steps and d
 ## V-225 checkpoint — Section10.1 Riemann lab/numerical contracts
 
 [Evidence](lab-01-review-ch10-2026-11-21/README.md):105pass/sixbaselinefailuresreproduced;corrected111predicatespass twice. Stablefinitegridconstruction,completeFractionproducts/sum,guardedtotal/errorreports;overflowing-productcancellationexplicitselectedsupportextension. Nativecheckerstrengthened;21Chapter10filescompiled/verified,11checkers/10CLIlabspass(22firstcommands);scopedreplaythreecommands. Eightbackticks/status/runtimecheckboxreconciled;14exercise/sixlabdispositionsnotnewtests. Candidateexactblobsrecorded;base51991b60doesnotitselfcontainfixes. Fresh642/429/643candidateinventory,640/643V212hashesmatch;earliercheck9.05andnewsource/checker10.01differ. NextatomicpublicationthenfullpinnedBook2runtimerefresh,before10.2labcrosswalk.38selectedCOVcategoriespartial,noneclosed;broaderresource/provenance/model/platform/release/independent/canonicalacceptanceopen.Book1separate.
+
+
+## V-226 checkpoint — Full pinned Book2 runtime refresh
+
+[Full evidence](full-runtime-2026-11-21/README.md) atad0f11b8eb295b0c062256a47d869044b874aa77:642/642Pythonfilescompile,429/429check/testscriptspass,643/643requiredsource/fixturehashesverifiedbefore/after. Includesearliercheck9.05andV225source/checker10.01changes;retainsallbaselinefailures/scopedreruns. Actualstdout/stderr/timings/exitstatusandmanifestretained. OnecandidateLinuxruntime,notindependentreview/supported-platform/release/canonicalapproval. Next10.2definite/indefinite-integralslab/sourcecrosswalk.38selectedCOVcategoriespartial,noneclosed;broadernumerical/resource/provenance/model/platform/release/independent/canonicalgatesopen.Book1separate,next18.12.
