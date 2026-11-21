@@ -2,6 +2,7 @@
 import unittest
 from decimal import Decimal
 from state_benchmark import benchmark_case, binomial_reference, run_suite
+from sparse_monetary_tail import sparse_tail
 
 
 class BenchmarkTests(unittest.TestCase):
@@ -46,6 +47,29 @@ class BenchmarkTests(unittest.TestCase):
         self.assertEqual(benchmark_case(4, "distinct", max_states=16)["expected_states"], 16)
         with self.assertRaisesRegex(ValueError, "state limit"):
             benchmark_case(4, "distinct", max_states=15)
+
+    def test_observed_state_counts_equal_and_distinct(self):
+        for exposures, expected in (([100]*8, 9), ([1, 2, 4, 8], 16)):
+            with self.subTest(exposures=exposures):
+                probability, diag = sparse_tail(["0.25"]*len(exposures), exposures,
+                                                [1]*len(exposures), 1,
+                                                return_diagnostics=True)
+                baseline = sparse_tail(["0.25"]*len(exposures), exposures,
+                                       [1]*len(exposures), 1)
+                self.assertEqual(probability, baseline)
+                self.assertEqual(diag["peak_states"], expected)
+                self.assertEqual(diag["final_states"], expected)
+                self.assertEqual(diag["processed_borrowers"], len(exposures))
+                self.assertFalse(diag["early_exit"])
+
+    def test_diagnostics_early_exit_and_type_guard(self):
+        probability, diag = sparse_tail(["0.25"], [100], [1], 101,
+                                        return_diagnostics=True)
+        self.assertEqual(probability, Decimal(0))
+        self.assertTrue(diag["early_exit"])
+        self.assertEqual(diag["processed_borrowers"], 0)
+        with self.assertRaisesRegex(ValueError, "return_diagnostics"):
+            sparse_tail(["0.25"], [100], [1], 1, return_diagnostics=1)
 
     def test_inventory(self):
         self.assertEqual(len(run_suite()), 8)
