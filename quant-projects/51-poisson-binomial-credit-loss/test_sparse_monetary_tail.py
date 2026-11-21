@@ -1,5 +1,6 @@
 """Deterministic, synthetic cross-checks for bounded sparse Decimal DP."""
 import unittest
+from math import comb
 from decimal import Decimal
 from sparse_monetary_tail import sparse_tail
 from stable_monetary_tail import stable_tail
@@ -54,6 +55,30 @@ class SparseTailTests(unittest.TestCase):
         b = sparse_tail([0.3, 0.1, 0.2], [300, 100, 200], [1, 1, 1], 300)
         self.assertEqual(a, b)
 
+
+    def test_twenty_borrower_binomial_reference(self):
+        # Equal cent losses collapse 2**20 outcomes to only 21 loss states.
+        expected = Decimal(sum(comb(20, k) for k in range(10, 21))) / Decimal(2**20)
+        actual = sparse_tail(["0.5"] * 20, [100] * 20, [1] * 20,
+                             1000, max_states=21)
+        self.assertEqual(actual, expected)
+        with self.assertRaisesRegex(ValueError, "state limit"):
+            sparse_tail(["0.5"] * 20, [100] * 20, [1] * 20,
+                        1000, max_states=20)
+
+    def test_maximum_borrowers_deterministic(self):
+        self.assertEqual(sparse_tail([1] * 128, [100] * 128,
+                                     [1] * 128, 12800), Decimal(1))
+        self.assertEqual(sparse_tail([1] * 128, [100] * 128,
+                                     [1] * 128, 12801), Decimal(0))
+
+    def test_precision_extreme_tail_identity(self):
+        for digits in (32, 100, 1000):
+            with self.subTest(precision=digits):
+                self.assertEqual(
+                    sparse_tail(["1e-200", "1e-200"], [100, 100],
+                                [1, 1], 200, precision=digits),
+                    Decimal("1e-400"))
 
 if __name__ == "__main__":
     unittest.main()
